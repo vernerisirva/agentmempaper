@@ -16,6 +16,7 @@ from paper_scout.http import HttpRequestError
 from paper_scout.models import PaperCandidate
 from paper_scout.relevance import classify_with_rules
 from paper_scout.scout import run_scout
+from paper_scout.source_errors import source_error_message
 from paper_scout.state import PaperStore
 
 
@@ -252,7 +253,7 @@ def _source_error(source: str, term: str, exc: Exception) -> dict[str, object]:
         "source": source,
         "query": term,
         "type": _classify_error(exc),
-        "message": str(exc),
+        "message": source_error_message(source, exc),
     }
 
 

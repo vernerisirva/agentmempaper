@@ -112,7 +112,7 @@ Required: none for deterministic local operation.
 
 Optional source settings:
 
-- `SEMANTIC_SCHOLAR_API_KEY`: raises Semantic Scholar rate limits.
+- `SEMANTIC_SCHOLAR_API_KEY`: raises Semantic Scholar rate limits. In GitHub Actions, add a repository secret with this exact name; the workflow passes it through to both live smoke validation and the daily run.
 - `OPENALEX_MAILTO`: polite-pool contact email for OpenAlex.
 
 Optional state/output setting:
@@ -137,7 +137,19 @@ Optional notifications:
 - `PAPER_SCOUT_EMAIL_TO`
 - `PAPER_SCOUT_EMAIL_FROM`
 
-Secrets are never written to smoke reports.
+Secrets are never written to smoke reports. If Semantic Scholar returns HTTP 429, Paper Scout treats it as a source warning rather than a run failure; this is expected without `SEMANTIC_SCHOLAR_API_KEY`, and arXiv/OpenAlex can still produce a digest.
+
+## Digest Quality
+
+The daily run writes an advisory report:
+
+```text
+reports/paper_scout/digest-quality-YYYY-MM-DD.md
+```
+
+It flags likely false positives when digest papers mention infrastructure-memory terms such as GPU memory, CUDA memory, memory bandwidth, memory allocation, memory-efficient attention, operating-system memory, or database memory without strong agent-memory terms such as agent memory, LLM agent, autonomous agent, deep research agent, persistent memory, episodic memory, semantic memory, Engram, or parametric memory.
+
+This report does not fail the workflow by default. It is a triage aid for keeping the daily digest useful.
 
 ## GitHub Actions
 
@@ -159,7 +171,7 @@ python -m paper_scout run
 
 The live smoke step uses GitHub-hosted Python TLS defaults and a temporary SQLite state path. One failed source is reported but should not fail the workflow; the workflow should fail only if the Paper Scout code crashes unexpectedly. Markdown, JSON, and command logs are uploaded as artifacts, and the live smoke summary is included in the GitHub Actions step summary.
 
-The daily run may commit the persistent SQLite state, digests, and non-smoke validation Markdown reports when they change. It does not commit live-smoke JSON artifacts.
+The daily run may commit the persistent SQLite state, digests, digest-quality reports, and non-smoke validation Markdown reports when they change. It does not commit live-smoke JSON artifacts.
 
 ## TLS Troubleshooting
 

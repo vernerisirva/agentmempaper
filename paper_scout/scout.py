@@ -7,11 +7,13 @@ from pathlib import Path
 
 from paper_scout.config import ScoutConfig
 from paper_scout.digest import DigestMetadata, render_digest, write_digest
+from paper_scout.digest_quality import write_digest_quality_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
 from paper_scout.llm import classify_with_optional_llm
 from paper_scout.models import PaperCandidate
 from paper_scout.notifications import send_optional_notifications
 from paper_scout.relevance import classify_with_rules, should_consider_for_llm
+from paper_scout.source_errors import format_source_failure
 from paper_scout.state import PaperStore
 
 LOGGER = logging.getLogger(__name__)
@@ -64,7 +66,7 @@ def run_scout(config: ScoutConfig, fetchers=None, digest_date: str | None = None
                 try:
                     candidates = fetcher.search(term, config.days, config.max_results_per_source)
                 except Exception as exc:  # noqa: BLE001
-                    message = f"{source} failed for {term!r}: {exc}"
+                    message = format_source_failure(source, term, exc)
                     LOGGER.warning("Fetcher %s failed for %r: %s", source, term, exc)
                     source_failures.append(message)
                     continue
@@ -93,6 +95,7 @@ def run_scout(config: ScoutConfig, fetchers=None, digest_date: str | None = None
             source_failures=source_failures,
         )
         write_digest(digest_path, active_date, digest_papers, metadata)
+        write_digest_quality_report(config.report_dir, active_date, digest_papers)
         notified_count = 0
         if digest_papers:
             notification_ok = active_notifier(render_digest(active_date, digest_papers, metadata))

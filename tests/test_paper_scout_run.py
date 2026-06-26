@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 
 from paper_scout.config import ScoutConfig
+from paper_scout.http import HttpRequestError
 from paper_scout.models import PaperCandidate
 from paper_scout.scout import run_scout
 from paper_scout.validation import run_live_smoke, validate_idempotency
@@ -34,6 +35,13 @@ class FailingFetcher:
         raise RuntimeError("temporary outage")
 
 
+class SemanticScholarRateLimitedFetcher:
+    source = "semantic_scholar"
+
+    def search(self, term, days, max_results):
+        raise HttpRequestError("http", "https://api.semanticscholar.org/graph/v1/paper/search", "HTTP Error 429")
+
+
 class PaperScoutRunTest(unittest.TestCase):
     def test_run_survives_fetcher_failure_and_does_not_notify_twice(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -43,6 +51,7 @@ class PaperScoutRunTest(unittest.TestCase):
                 max_results_per_source=5,
                 sqlite_path=Path(tmpdir) / "state.sqlite3",
                 digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
             )
 
             logging.disable(logging.CRITICAL)
@@ -63,6 +72,55 @@ class PaperScoutRunTest(unittest.TestCase):
                 second.digest_path.read_text(encoding="utf-8"),
             )
 
+    def test_semantic_scholar_429_is_clear_and_non_fatal(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config = ScoutConfig(
+                terms=["agent memory"],
+                days=7,
+                max_results_per_source=5,
+                sqlite_path=Path(tmpdir) / "state.sqlite3",
+                digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
+            )
+
+            logging.disable(logging.CRITICAL)
+            try:
+                result = run_scout(
+                    config,
+                    fetchers=[SemanticScholarRateLimitedFetcher(), FakeFetcher()],
+                    digest_date="2026-06-26",
+                )
+            finally:
+                logging.disable(logging.NOTSET)
+
+            digest = result.digest_path.read_text(encoding="utf-8")
+
+            self.assertEqual(result.new_digest_count, 1)
+            self.assertIn("Semantic Scholar rate limit (HTTP 429)", digest)
+            self.assertIn("expected without SEMANTIC_SCHOLAR_API_KEY", digest)
+            self.assertIn("arXiv and OpenAlex can still work", digest)
+
+    def test_run_writes_digest_quality_report_without_failing(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config = ScoutConfig(
+                terms=["agent memory"],
+                days=7,
+                max_results_per_source=5,
+                sqlite_path=Path(tmpdir) / "state.sqlite3",
+                digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
+            )
+
+            logging.disable(logging.CRITICAL)
+            try:
+                result = run_scout(config, fetchers=[FakeFetcher()], digest_date="2026-06-26")
+            finally:
+                logging.disable(logging.NOTSET)
+
+            quality_report = Path(tmpdir) / "reports" / "digest-quality-2026-06-26.md"
+            self.assertEqual(result.new_digest_count, 1)
+            self.assertTrue(quality_report.exists())
+
     def test_notification_failure_does_not_mark_papers_notified(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             config = ScoutConfig(
@@ -71,6 +129,7 @@ class PaperScoutRunTest(unittest.TestCase):
                 max_results_per_source=5,
                 sqlite_path=Path(tmpdir) / "state.sqlite3",
                 digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
             )
 
             def failing_notifier(markdown):

@@ -6,12 +6,17 @@ Latest daily digest: [2026-06-26](2026-06-26.md).
 
 ## Run Summary
 
-- **Run ID:** 7
+- **Run ID:** 8
 - **Candidates fetched:** 594
 - **New unique papers:** 292
 - **Relevant:** 76
 - **Maybe relevant:** 168
 - **Irrelevant:** 350
 - **Source summary:** arxiv: 29, openalex: 557, semantic_scholar: 8
+
+## Source Warnings
+
+- semantic_scholar failed for 'persistent memory agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'deep research memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 
 No new relevant or maybe-relevant papers found.

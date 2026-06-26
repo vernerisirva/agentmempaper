@@ -1,0 +1,103 @@
+name: Paper Scout
+
+on:
+  schedule:
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-scout-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate rules, idempotency, and live source payloads
+        env:
+          PAPER_SCOUT_STATE_PATH: ${{ runner.temp }}/paper_scout_smoke.sqlite3
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
+        run: |
+          set -o pipefail
+          python -m paper_scout evaluate-relevance | tee relevance-eval.log
+          python -m paper_scout validate-idempotency | tee idempotency.log
+          python -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke.log
+
+      - name: Run daily paper scout
+        env:
+          PAPER_SCOUT_STATE_PATH: data/paper_scout.sqlite3
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
+          PAPER_SCOUT_LLM_PROVIDER: ${{ secrets.PAPER_SCOUT_LLM_PROVIDER }}
+          PAPER_SCOUT_LLM_MODEL: ${{ secrets.PAPER_SCOUT_LLM_MODEL }}
+          PAPER_SCOUT_LLM_API_KEY: ${{ secrets.PAPER_SCOUT_LLM_API_KEY }}
+          PAPER_SCOUT_LLM_BASE_URL: ${{ secrets.PAPER_SCOUT_LLM_BASE_URL }}
+          PAPER_SCOUT_WEBHOOK_URL: ${{ secrets.PAPER_SCOUT_WEBHOOK_URL }}
+        run: |
+          set -o pipefail
+          python -m paper_scout run | tee paper-scout-run.log
+
+      - name: Write run summary
+        if: always()
+        run: |
+          {
+            echo "## Paper Scout"
+            echo
+            echo "### Command output"
+            echo
+            echo '```text'
+            cat relevance-eval.log idempotency.log live-smoke.log paper-scout-run.log 2>/dev/null || true
+            echo '```'
+            echo
+            echo "### Generated files"
+            find digests reports -type f 2>/dev/null | sort || true
+            echo
+            echo "### Live smoke report"
+            for report in reports/paper_scout/live-smoke-*.md; do
+              [ -f "$report" ] || continue
+              cat "$report"
+            done
+            echo
+            echo "### Live smoke JSON"
+            for report in reports/paper_scout/live-smoke-*.json; do
+              [ -f "$report" ] || continue
+              echo '```json'
+              cat "$report"
+              echo '```'
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload reports and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-scout-reports
+          path: |
+            reports/paper_scout/
+            *.log
+          if-no-files-found: ignore
+
+      - name: Commit scout updates
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/paper_scout.sqlite3 digests/*.md reports/paper_scout/idempotency-*.md reports/paper_scout/relevance-eval-*.md
+          if git diff --cached --quiet; then
+            echo "No paper scout changes to commit."
+          else
+            git commit -m "chore: update paper scout digest"
+            git push
+          fi

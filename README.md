@@ -1,0 +1,189 @@
+# Paper Scout
+
+Paper Scout is a local-first daily research-monitoring agent for papers related to agentic memory, LLM agent memory, memory mechanisms for long-running or deep-research agents, and Engram-style or parametric-memory mechanisms when they connect to language-model behavior.
+
+It fetches candidates from arXiv, Semantic Scholar, and OpenAlex; deduplicates canonical papers; classifies relevance with deterministic rules by default; stores state in SQLite; and writes Markdown digests under `digests/`.
+
+## Scope
+
+The default config in `config/paper_scout.yaml` tracks:
+
+- agentic memory, persistent memory, episodic/semantic/procedural memory, memory policies, and agent-memory benchmarks;
+- deep research agents, autonomous research agents, and literature-review agents;
+- Engram, Megatron-LM Engram, parametric memory, model-internal memory, and memory mechanisms.
+
+The Engram/Megatron-LM context is treated as research context, not as proof that Engram-style approaches cannot work.
+
+## Commands
+
+Run the normal daily scout:
+
+```bash
+python3 -m paper_scout run
+```
+
+Search without writing state:
+
+```bash
+python3 -m paper_scout search --days 7
+```
+
+Render a digest from stored papers:
+
+```bash
+python3 -m paper_scout digest --date 2026-06-26
+```
+
+Evaluate deterministic relevance fixtures:
+
+```bash
+python3 -m paper_scout evaluate-relevance
+```
+
+Validate idempotent notification behavior:
+
+```bash
+python3 -m paper_scout validate-idempotency
+```
+
+Run a local live-source smoke test without notifications:
+
+```bash
+python3 -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify
+```
+
+Run CI-mode live-source smoke validation, writing Markdown and JSON reports:
+
+```bash
+python3 -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci
+```
+
+Reports are written under `reports/paper_scout/`.
+
+## Live Smoke Reports
+
+`smoke-live` is a validation command, not a notification command. It initializes the SQLite schema, fetches live payloads, classifies normalized candidates, runs the idempotency validator in a temporary directory, and writes a human-readable Markdown report.
+
+In `--ci` mode it also writes:
+
+```text
+reports/paper_scout/live-smoke-YYYY-MM-DD.json
+```
+
+The JSON report includes `run_id`, `date`, `ci`, `sources_attempted`, `sources_succeeded`, `sources_failed`, `total_raw_records`, `total_candidates`, `unique_candidates`, relevance counts, `source_errors`, `state_initialized`, `idempotency_passed`, and per-source details.
+
+Source outcomes are separated so real zero-result responses are not confused with failures:
+
+- success with one sample normalized candidate when available;
+- success with zero results;
+- HTTP/API error;
+- TLS/certificate error;
+- timeout/network error;
+- parsing/conversion error;
+- provider error.
+
+The command does not send email or webhook notifications and does not mark papers as notified.
+
+## State Strategy
+
+- Default persistent state: `data/paper_scout.sqlite3`.
+- Override state with `PAPER_SCOUT_STATE_PATH`.
+- `data/.gitkeep` keeps the state directory present.
+- SQLite sidecar files are ignored: `*.sqlite3-journal`, `*.sqlite3-wal`, and `*.sqlite3-shm`.
+- `data/paper_scout.sqlite3` is explicitly not ignored because the daily GitHub Actions workflow may intentionally commit persistent state.
+- CI live smoke uses a temporary state path so validation does not mutate the daily state file.
+
+Local smoke-test state files that contain no useful real paper data should not be committed.
+
+## Notification Semantics
+
+Paper Scout enforces "not before found" through the `notifications` table:
+
+- canonical identity prefers DOI, then arXiv ID, Semantic Scholar ID, OpenAlex ID, then normalized title + first author + year;
+- only papers that are relevant or maybe relevant and not already notified are included in a new digest;
+- papers are marked notified only after digest generation succeeds and enabled notifications succeed;
+- when email and webhook notifications are disabled, successful digest writing is enough to mark papers notified;
+- if email or webhook notification is enabled and fails, papers remain unnotified so the next run can retry;
+- rerunning the same fetched data should not duplicate digest entries or notifications.
+
+## Environment Variables
+
+Required: none for deterministic local operation.
+
+Optional source settings:
+
+- `SEMANTIC_SCHOLAR_API_KEY`: raises Semantic Scholar rate limits.
+- `OPENALEX_MAILTO`: polite-pool contact email for OpenAlex.
+
+Optional state/output setting:
+
+- `PAPER_SCOUT_STATE_PATH`: override the SQLite state file.
+
+Optional OpenAI-compatible classifier:
+
+- `PAPER_SCOUT_LLM_API_KEY` or `OPENAI_API_KEY`
+- `PAPER_SCOUT_LLM_PROVIDER=auto`
+- `PAPER_SCOUT_LLM_MODEL`
+- `PAPER_SCOUT_LLM_BASE_URL`, default `https://api.openai.com/v1`
+
+Optional notifications:
+
+- `PAPER_SCOUT_WEBHOOK_URL`
+- `PAPER_SCOUT_SMTP_HOST`
+- `PAPER_SCOUT_SMTP_PORT`
+- `PAPER_SCOUT_SMTP_STARTTLS`
+- `PAPER_SCOUT_SMTP_USERNAME`
+- `PAPER_SCOUT_SMTP_PASSWORD`
+- `PAPER_SCOUT_EMAIL_TO`
+- `PAPER_SCOUT_EMAIL_FROM`
+
+Secrets are never written to smoke reports.
+
+## GitHub Actions
+
+The workflow in `.github/workflows/paper-scout.yml` runs daily and on manual dispatch.
+
+It first validates:
+
+```bash
+python -m paper_scout evaluate-relevance
+python -m paper_scout validate-idempotency
+python -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci
+```
+
+Then it runs the daily scout:
+
+```bash
+python -m paper_scout run
+```
+
+The live smoke step uses GitHub-hosted Python TLS defaults and a temporary SQLite state path. One failed source is reported but should not fail the workflow; the workflow should fail only if the Paper Scout code crashes unexpectedly. Markdown, JSON, and command logs are uploaded as artifacts, and the live smoke summary is included in the GitHub Actions step summary.
+
+The daily run may commit the persistent SQLite state, digests, and non-smoke validation Markdown reports when they change. It does not commit live-smoke JSON artifacts.
+
+## TLS Troubleshooting
+
+Paper Scout uses Python's default TLS verification. It does not globally disable certificate checks and does not use `verify=False`.
+
+If local macOS/Python runs report TLS or certificate failures while GitHub-hosted CI succeeds, common fixes are:
+
+- run the Python.org `Install Certificates.command` for that Python installation;
+- upgrade or reinstall `certifi` if your local Python distribution uses it;
+- check whether `SSL_CERT_FILE` or `REQUESTS_CA_BUNDLE` points to a stale certificate bundle;
+- verify that a corporate proxy or VPN is not intercepting TLS without a trusted local root certificate.
+
+`smoke-live` reports TLS/certificate failures separately from HTTP/API errors, timeouts, parser failures, and true zero-result responses.
+
+## Tests
+
+Run Paper Scout tests:
+
+```bash
+python3 -m unittest tests/test_paper_scout_*.py
+```
+
+Run all repository tests:
+
+```bash
+python3 -m unittest discover -s tests -p '*.py'
+```

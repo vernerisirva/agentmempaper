@@ -6,24 +6,25 @@ Latest daily digest: [2026-06-26](2026-06-26.md).
 
 ## Run Summary
 
-- **Run ID:** 2
-- **Candidates fetched:** 569
-- **New unique papers:** 286
-- **Relevant:** 66
-- **Maybe relevant:** 140
-- **Irrelevant:** 363
-- **Source summary:** arxiv: 29, openalex: 537, semantic_scholar: 3
+- **Run ID:** 3
+- **Candidates fetched:** 586
+- **New unique papers:** 279
+- **Relevant:** 71
+- **Maybe relevant:** 157
+- **Irrelevant:** 358
+- **Source summary:** arxiv: 29, openalex: 556, semantic_scholar: 1
 
 ## Source Warnings
 
-- semantic_scholar failed for 'agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'agentic memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'LLM agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'long-term memory agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'persistent memory agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'episodic memory LLM agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'semantic memory LLM agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'procedural memory LLM agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'memory-augmented language agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'memory retrieval policy agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'memory write policy agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'agent memory benchmark': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'deep research agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'deep research agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'deep research memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
@@ -31,41 +32,32 @@ Latest daily digest: [2026-06-26](2026-06-26.md).
 - semantic_scholar failed for 'agentic memory deep research': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'autonomous research agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'literature review agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'parametric memory LLM': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- semantic_scholar failed for 'research agent long-term memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'Engram LLM': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'Engram memory LLM': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'multilingual Engram': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- arxiv failed for 'Megatron-LM Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - semantic_scholar failed for 'Megatron-LM Engram': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 - semantic_scholar failed for 'memory mechanism language model': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
 
 ## Maybe Relevant
 
-### [Novelty-Aware Agentic Retrieval: Comparing Research Contributions Through Structured Multi-Step Reasoning](https://arxiv.org/abs/2606.22151)
+### [AgentCAT: Simulating Computerized Adaptive Testing via Multi-Agent Large Language Models](https://arxiv.org/abs/2606.21832)
 
-- **Authors:** Shou-Tzu Han
+- **Authors:** Weiyuan Zhou, Haiping Ma, Xiaoshan Yu, Changqian Wang, Shangshang Yang, Xingyi Zhang
 - **Date:** 2026-06-20
 - **Source:** openalex
 - **Relevance:** maybe (40/100)
 - **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
+- **Tags:** memory-policy
+- **Abstract summary:** Computerized Adaptive Testing (CAT), as a key technology for personalized education, aims to accurately assess examinee proficiency by retrieving exercises dynamically matching current ability estimates. However, existing CAT research is constrained by limitations of static offline data and isolated component optimi...
+
+### [Negative Knowledge as Failure-aware Shared Memory for AutoResearch](https://arxiv.org/abs/2606.21024)
+
+- **Authors:** Hao Wang
+- **Date:** 2026-06-19
+- **Source:** openalex
+- **Relevance:** maybe (40/100)
+- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
 - **Tags:** deep-research
-- **Abstract summary:** Scientific literature search is an information retrieval (IR) task in which ranked lists are insufficient: a researcher entering a new area needs to know not only which papers are relevant, but how they relate, where they overlap, how they differ, and what problem-method combinations are absent. Standard retrieval-a...
-
-### [ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents](https://www.semanticscholar.org/paper/57563394951aebb6d7f5611808eac0ba14a5bb87)
-
-- **Authors:** Qirui Mi, Zhijian Ma, Mengyue Yang, Haoxuan Li, Yisen Wang, Haifeng Zhang, et al.
-- **Date:** 2026
-- **Source:** semantic_scholar
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** memory-types
-- **Abstract summary:** No abstract available.
-
-### [LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis](https://www.semanticscholar.org/paper/acebe7c7c6bfc937e8cb26b4c01413b390812899)
-
-- **Authors:** R. Sultimov, Aleksandr Volkov, Mile Mitrovic, Yury Maximov
-- **Date:** unknown
-- **Source:** semantic_scholar
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** memory-types
-- **Abstract summary:** We demonstrate 1 an LLM-guided multi-agent platform for coor-dinating evacuations during wildfires. A lightweight Commander agent observes traffic congestion and wildfire spread in a simulated environment and issues high-level routing decisions that mimic emergency management actions. User agents receive these decis...
+- **Abstract summary:** AI-assisted research systems generate many failed attempts, but those failures rarely become a durable, shared knowledge asset. We propose a negative knowledge memory layer: a curator agent converts each failed attempt into a bounded, typed record in a shared bank, and a downstream research agent explicitly adopts o...

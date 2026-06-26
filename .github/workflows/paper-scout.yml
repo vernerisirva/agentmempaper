@@ -29,9 +29,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Validate rules, idempotency, and live source payloads
         env:
           PAPER_SCOUT_STATE_PATH: ${{ runner.temp }}/paper_scout_smoke.sqlite3
@@ -112,6 +109,12 @@ jobs:
             git commit -m "chore: update paper scout digest"
             git push
           fi
+
+      - name: Configure GitHub Pages
+        if: success()
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload Pages artifact
         if: success()

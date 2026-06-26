@@ -876,7 +876,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
             <span class="nav-links">
               <a href="latest.html">Latest discoveries</a>
               <a href="archive.html">Archive</a>
-              <a href="about.html">Methodology</a>
+              <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -953,7 +953,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
-              <a href="about.html">Methodology</a>
+              <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -1012,7 +1012,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="latest.html">Latest discoveries</a>
-              <a href="about.html">Methodology</a>
+              <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Latest Markdown</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -1028,7 +1028,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
 
 def _render_about_page() -> str:
     return _page(
-        "Paper Scout Methodology",
+        "About Paper Scout",
         """
         <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
@@ -1040,7 +1040,7 @@ def _render_about_page() -> str:
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
           </nav>
-          <p class="eyebrow">Methodology</p>
+          <p class="eyebrow">About</p>
           <h1>How Paper Scout works</h1>
           <p class="hero-copy">A static daily research monitor for papers around agentic memory, LLM agent memory, deep research agents, and memory mechanisms.</p>
         </header>

@@ -2,7 +2,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.site import build_site
+from paper_scout.state import PaperStore
 
 
 SAMPLE_DIGEST = """# Paper Scout Digest - 2026-06-26
@@ -48,14 +50,94 @@ SAMPLE_DIGEST = """# Paper Scout Digest - 2026-06-26
 
 
 class PaperScoutSiteTest(unittest.TestCase):
+    def _write_state_fixture(self, state_path: Path) -> None:
+        store = PaperStore(state_path)
+        old_run_id = store.start_run(days=7)
+        old_candidate = PaperCandidate(
+            title="Older Episodic Memory for Agents",
+            authors=["Alan Turing"],
+            abstract="A study of episodic memory for autonomous LLM agents.",
+            source="semantic_scholar",
+            source_id="s2-old",
+            semantic_scholar_id="s2-old",
+            url="https://example.test/old",
+            published_date="2025-12-15",
+            raw={"paperId": "s2-old"},
+        )
+        old_key = store.upsert_paper(
+            old_candidate,
+            ClassificationResult(
+                score=88,
+                decision="relevant",
+                reason="Studies episodic memory for autonomous agents.",
+                tags=["episodic-memory", "agent-memory"],
+                abstract_summary="Older but relevant autonomous-agent memory work.",
+            ),
+        )
+        store.record_sighting(old_run_id, old_key, old_candidate, "episodic memory LLM agent")
+        store.finish_run(old_run_id, fetched_count=1, new_count=1, notified_count=1)
+        store.mark_notified([old_key], "2026-06-25")
+
+        latest_run_id = store.start_run(days=7)
+        latest_candidate = PaperCandidate(
+            title="Latest Deep Research Memory",
+            authors=["Ada Lovelace", "Grace Hopper"],
+            abstract="Persistent semantic memory for deep research agents.",
+            source="openalex",
+            source_id="W123",
+            doi="10.1234/latest",
+            openalex_id="W123",
+            url="https://example.test/latest",
+            published_date=None,
+            raw={"id": "W123"},
+        )
+        latest_key = store.upsert_paper(
+            latest_candidate,
+            ClassificationResult(
+                score=51,
+                decision="maybe",
+                reason="Connects semantic memory to deep research agents.",
+                tags=["deep-research", "semantic-memory"],
+                abstract_summary="A latest-run paper about semantic memory for research agents.",
+            ),
+        )
+        store.record_sighting(latest_run_id, latest_key, latest_candidate, "deep research agent memory")
+        duplicate_candidate = PaperCandidate(
+            title="Latest Deep Research Memory",
+            authors=["Ada Lovelace", "Grace Hopper"],
+            abstract="Persistent semantic memory for deep research agents.",
+            source="arxiv",
+            source_id="2606.12345",
+            doi="10.1234/latest-v2",
+            arxiv_id="2606.12345",
+            url="https://arxiv.org/abs/2606.12345",
+            published_date=None,
+            raw={"id": "2606.12345"},
+        )
+        duplicate_key = store.upsert_paper(
+            duplicate_candidate,
+            ClassificationResult(
+                score=76,
+                decision="relevant",
+                reason="A duplicate source variant with a stronger agent-memory score.",
+                tags=["deep-research", "agent-memory"],
+                abstract_summary="A duplicate latest-run paper variant from arXiv.",
+            ),
+        )
+        store.record_sighting(latest_run_id, duplicate_key, duplicate_candidate, "deep research agent memory")
+        store.finish_run(latest_run_id, fetched_count=1, new_count=1, notified_count=1)
+        store.mark_notified([latest_key], "2026-06-26")
+
     def test_generates_static_dashboard_files_and_latest_pointer(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
             digest_dir = root / "digests"
             report_dir = root / "reports" / "paper_scout"
             docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
             digest_dir.mkdir()
             report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
             (digest_dir / "2026-06-25.md").write_text(
                 SAMPLE_DIGEST.replace("2026-06-26", "2026-06-25"),
                 encoding="utf-8",
@@ -66,7 +148,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 encoding="utf-8",
             )
 
-            result = build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir)
+            result = build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
             self.assertTrue(result.built)
             self.assertEqual(result.latest_date, "2026-06-26")
@@ -79,14 +161,93 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertTrue((digest_dir / "latest.md").exists())
             html = (docs_dir / "index.html").read_text(encoding="utf-8")
             archive_html = (docs_dir / "archive.html").read_text(encoding="utf-8")
-            self.assertIn("Daily agent-memory research briefing", html)
-            self.assertIn("Candidates fetched", html)
-            self.assertIn("New unique papers", html)
+            self.assertIn("Agentic Memory Paper Library", html)
+            self.assertIn("Total known papers", html)
+            self.assertIn("New in latest run", html)
             self.assertIn("Highly relevant", html)
             self.assertIn("Maybe relevant", html)
-            self.assertIn("Digest-quality warnings", html)
+            self.assertIn("Publication date, newest first", html)
+            self.assertIn("First seen date", html)
             self.assertIn("2026-06-25", archive_html)
             self.assertIn("2026-06-26", archive_html)
+            self.assertIn("daily digests are kept for provenance", archive_html)
+
+    def test_cumulative_library_data_and_latest_discoveries_are_split(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
+            latest_json = (docs_dir / "data" / "latest.json").read_text(encoding="utf-8")
+            self.assertIn("Older Episodic Memory for Agents", papers_json)
+            self.assertIn("Latest Deep Research Memory", papers_json)
+            self.assertIn("\"first_seen_date\"", papers_json)
+            self.assertIn("\"appeared_in_latest_run\": true", papers_json)
+            self.assertIn("\"doi\": \"10.1234/latest-v2\"", papers_json)
+            self.assertIn("https://doi.org/10.1234/latest", papers_json)
+            self.assertIn("\"newly_discovered_papers\"", latest_json)
+            self.assertIn("Latest Deep Research Memory", latest_json)
+            self.assertNotIn("Older Episodic Memory for Agents", latest_json)
+
+    def test_duplicate_title_variants_are_collapsed_with_sources_and_urls_preserved(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertEqual(papers_json.count('"title": "Latest Deep Research Memory"'), 1)
+            self.assertEqual(index_html.count("<h3>Latest Deep Research Memory</h3>"), 1)
+            self.assertIn('"sources": [', papers_json)
+            self.assertIn('"arxiv"', papers_json)
+            self.assertIn('"openalex"', papers_json)
+            self.assertIn('"alternate_urls": [', papers_json)
+            self.assertIn("https://example.test/latest", papers_json)
+            self.assertIn("https://arxiv.org/abs/2606.12345", papers_json)
+            self.assertIn("76/100", index_html)
+
+    def test_index_and_latest_pages_have_library_and_latest_run_framing(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            self.assertIn("Sort library", index_html)
+            self.assertIn("Publication date, newest first", index_html)
+            self.assertIn("First seen by Paper Scout", index_html)
+            self.assertIn("Published", index_html)
+            self.assertIn("Latest discoveries", latest_html)
+            self.assertIn("Papers first seen in the latest Paper Scout run.", latest_html)
+            self.assertIn("Latest Deep Research Memory", latest_html)
+            self.assertNotIn("Older Episodic Memory for Agents", latest_html)
 
     def test_paper_cards_include_required_fields_and_compact_warnings(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -98,7 +259,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             report_dir.mkdir(parents=True)
             (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
 
-            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir)
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
 
             html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Persistent Memory for LLM Agents", html)
@@ -141,12 +302,17 @@ class PaperScoutSiteTest(unittest.TestCase):
             )
             (digest_dir / "2026-06-26.md").write_text(digest, encoding="utf-8")
 
-            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir)
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
 
-            html = (docs_dir / "latest.html").read_text(encoding="utf-8")
-            latest_json = (docs_dir / "data" / "latest.json").read_text(encoding="utf-8")
-            self.assertNotIn(secret, html)
-            self.assertNotIn(secret, latest_json)
+            generated = [
+                docs_dir / "index.html",
+                docs_dir / "latest.html",
+                docs_dir / "archive.html",
+                docs_dir / "data" / "latest.json",
+                docs_dir / "data" / "papers.json",
+            ]
+            for path in generated:
+                self.assertNotIn(secret, path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

@@ -1,15 +1,7 @@
 {
-  "date": "2026-06-26",
   "digest_quality_warning_count": 0,
-  "papers": [],
-  "source_warnings": [
-    "semantic_scholar failed for 'LLM agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.",
-    "semantic_scholar failed for 'deep research agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.",
-    "semantic_scholar failed for 'Engram memory LLM': http error for https://api.semanticscholar.org/graph/v1/paper/search?query=Engram+memory+LLM&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds: request failed after 3 attempts: HTTP Error 500: Internal Server Error",
-    "arxiv failed for 'Megatron-LM Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable",
-    "arxiv failed for 'memory mechanism language model': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+mechanism+language+model%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable"
-  ],
-  "summary": {
+  "latest_run_date": "2026-06-26",
+  "latest_run_summary": {
     "Candidates fetched": "592",
     "Irrelevant": "350",
     "Maybe relevant": "166",
@@ -17,5 +9,13 @@
     "Relevant": "76",
     "Run ID": "5",
     "Source summary": "arxiv: 29, openalex: 557, semantic_scholar: 6"
-  }
+  },
+  "newly_discovered_papers": [],
+  "source_diagnostics": [
+    "semantic_scholar failed for 'LLM agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.",
+    "semantic_scholar failed for 'deep research agents': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.",
+    "semantic_scholar failed for 'Engram memory LLM': http error for https://api.semanticscholar.org/graph/v1/paper/search?query=Engram+memory+LLM&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds: request failed after 3 attempts: HTTP Error 500: Internal Server Error",
+    "arxiv failed for 'Megatron-LM Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable",
+    "arxiv failed for 'memory mechanism language model': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+mechanism+language+model%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable"
+  ]
 }

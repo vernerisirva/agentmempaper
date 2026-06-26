@@ -109,7 +109,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if report["passed"] else 1
 
     if args.command == "build-site":
-        result = build_site(digest_dir=config.digest_dir, report_dir=config.report_dir, docs_dir=args.docs_dir)
+        result = build_site(digest_dir=config.digest_dir, report_dir=config.report_dir, docs_dir=args.docs_dir, state_path=config.sqlite_path)
         print(result.message)
         return 0
 

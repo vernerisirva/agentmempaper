@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paper Scout</title>
+  <title>Latest Paper Scout Discoveries</title>
   <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,43 +11,42 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <main class="page" id="main-content">
     
-        <header class="briefing-hero">
+        <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="index.html">Paper Scout</a>
             <span class="nav-links">
+              <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
           </nav>
-          <div class="hero-grid">
-            <div>
-              <p class="eyebrow">Daily agent-memory research briefing</p>
-              <h1>Paper Scout</h1>
-              <p class="hero-copy">New papers on agentic memory, deep research agents, and memory mechanisms.</p>
-              <div class="hero-actions">
-                <a class="button primary" href="#highly-relevant">Read latest papers</a>
-                <a class="button secondary" href="archive.html">Browse archive</a>
-              </div>
-            </div>
-            <aside class="digest-note" aria-label="Latest digest metadata">
-              <span>Latest digest</span>
-              <strong>2026-06-26</strong>
-              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/2026-06-26.md">Open Markdown digest</a>
-            </aside>
-          </div>
+          <p class="eyebrow">Latest update 2026-06-26</p>
+          <h1>Latest discoveries</h1>
+          <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         
-    <section class="summary-strip" aria-label="Run summary metrics">
-      <div><span>Candidates fetched</span><strong>592</strong></div><div><span>New unique papers</span><strong>291</strong></div><div><span>Highly relevant</span><strong>76</strong></div><div><span>Maybe relevant</span><strong>166</strong></div><div><span>Digest-quality warnings</span><strong>0</strong></div>
-      <div class="source-summary"><span>Source summary</span><strong>arxiv: 29, openalex: 557, semantic_scholar: 6</strong></div>
+    <section class="summary-strip" aria-label="Latest run summary metrics">
+      <div><span>Latest update date</span><strong>2026-06-26</strong></div><div><span>New in latest run</span><strong>0</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Maybe relevant</span><strong>0</strong></div><div><span>Source warning count</span><strong>5</strong></div>
+      <div class="source-summary"><span>Run summary</span><strong>arxiv: 29, openalex: 557, semantic_scholar: 6</strong></div>
     </section>
     
         
-    <section class="reading-controls" aria-label="Reading controls">
+    <section class="reading-controls library-controls" aria-label="Library controls">
       <label class="search-field" for="paper-search">
         <span>Search papers</span>
-        <input id="paper-search" type="search" placeholder="Search title, abstract, tags">
+        <input id="paper-search" type="search" placeholder="Search title, authors, summary, tags">
+      </label>
+      <label class="select-field" for="paper-sort">
+        <span>Sort library</span>
+        <select id="paper-sort">
+          <option value="published-desc">Publication date, newest first</option>
+          <option value="published-asc">Publication date, oldest first</option>
+          <option value="first-seen-desc">First seen date, newest first</option>
+          <option value="score-desc">Relevance score, highest first</option>
+          <option value="title-asc">Title A-Z</option>
+          <option value="source-asc">Source</option>
+        </select>
       </label>
       <div class="control-group">
         <span>Relevance</span>
@@ -57,9 +56,13 @@
           <button data-decision="maybe">Maybe relevant</button>
         </div>
       </div>
-      <label class="high-toggle">
-        <input id="high-only" type="checkbox">
-        <span>Show only highly relevant</span>
+      
+      <label class="select-field tag-filter" for="tag-filter">
+        <span>Tag</span>
+        <select id="tag-filter">
+          <option value="all">All tags</option>
+          
+        </select>
       </label>
       <div class="control-group sources">
         <span>Source</span>
@@ -70,21 +73,14 @@
       </div>
     </section>
     
-        <section class="paper-section primary-section" id="highly-relevant" data-section="relevant">
+        <section class="paper-section primary-section" id="paper-library" data-section="latest">
           <div class="section-heading">
-            <p class="section-kicker">Start here</p>
-            <h2>Highly relevant</h2>
-            <p>Papers most directly connected to long-running agent memory, deep research agents, and memory mechanisms.</p>
+            <p class="section-kicker">New this run</p>
+            <h2>Papers first seen in the latest Paper Scout run.</h2>
           </div>
-          <p class="empty">No papers in this section.</p>
-        </section>
-        <section class="paper-section secondary-section" data-section="maybe">
-          <div class="section-heading">
-            <p class="section-kicker">Worth a scan</p>
-            <h2>Maybe relevant</h2>
-            <p>Adjacent work that may be useful after the strongest candidates.</p>
+          <div class="paper-list" id="paper-list">
+            <p class="empty">No papers in this section.</p>
           </div>
-          <p class="empty">No papers in this section.</p>
         </section>
         <details class="source-diagnostics"><summary>Source diagnostics <span>5 warnings</span></summary><ul><li>semantic_scholar failed for &#x27;LLM agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
 <li>semantic_scholar failed for &#x27;deep research agents&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
@@ -93,8 +89,8 @@
 <li>arxiv failed for &#x27;memory mechanism language model&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+mechanism+language+model%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li></ul></details>
         <section class="archive-strip" aria-labelledby="recent-archive-heading">
           <div>
-            <p class="section-kicker">Earlier briefings</p>
-            <h2 id="recent-archive-heading">Archive</h2>
+            <p class="section-kicker">Context</p>
+            <h2 id="recent-archive-heading">Daily run archive</h2>
           </div>
           <div class="archive-links"><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/2026-06-26.md">2026-06-26</a></div>
         </section>
@@ -102,18 +98,40 @@
 <script>
 (() => {
   const search = document.querySelector('#paper-search');
-  const highOnly = document.querySelector('#high-only');
+  const latestOnly = document.querySelector('#latest-only');
+  const tagFilter = document.querySelector('#tag-filter');
+  const sortSelect = document.querySelector('#paper-sort');
+  const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
   let decision = 'all';
   let source = 'all';
+  function sortableDate(card, attr) {
+    const value = card.dataset[attr] || '';
+    return /^\d{4}-\d{2}-\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
+  }
+  function sortCards() {
+    if (!list || !sortSelect) return;
+    const mode = sortSelect.value || 'published-desc';
+    const sorted = [...cards].sort((a, b) => {
+      if (mode === 'published-asc') return sortableDate(a, 'published').localeCompare(sortableDate(b, 'published')) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
+      if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'source-asc') return a.dataset.source.localeCompare(b.dataset.source) || a.dataset.title.localeCompare(b.dataset.title);
+      return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
+    });
+    for (const card of sorted) list.appendChild(card);
+  }
   function update() {
     const query = (search.value || '').toLowerCase();
+    const tag = tagFilter ? tagFilter.value : 'all';
     for (const card of cards) {
       const matchesQuery = !query || card.dataset.search.includes(query);
-      const effectiveDecision = highOnly && highOnly.checked ? 'relevant' : decision;
-      const matchesDecision = effectiveDecision === 'all' || card.dataset.decision === effectiveDecision;
-      const matchesSource = source === 'all' || card.dataset.source === source;
-      card.hidden = !(matchesQuery && matchesDecision && matchesSource);
+      const matchesDecision = decision === 'all' || card.dataset.decision === decision;
+      const matchesSource = source === 'all' || (card.dataset.sources || card.dataset.source || '').split(' ').includes(source);
+      const matchesTag = tag === 'all' || (card.dataset.tags || '').split(' ').includes(tag);
+      const matchesLatest = !latestOnly || !latestOnly.checked || card.dataset.latestRun === 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesSource && matchesTag && matchesLatest);
     }
   }
   function bindButtons(selector, attr, setter) {
@@ -127,9 +145,26 @@
     });
   }
   if (search) search.addEventListener('input', update);
-  if (highOnly) highOnly.addEventListener('change', update);
+  if (latestOnly) latestOnly.addEventListener('change', update);
+  if (tagFilter) tagFilter.addEventListener('change', update);
+  if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
   bindButtons('#relevance-filters button', 'decision', value => decision = value);
   bindButtons('#source-filters button', 'source', value => source = value);
+  document.querySelectorAll('.citation-button').forEach(button => {
+    button.addEventListener('click', async () => {
+      const status = button.parentElement.querySelector('.copy-status');
+      const citation = button.dataset.citation || '';
+      try {
+        if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(citation);
+        if (status) status.textContent = 'Copied';
+      } catch (error) {
+        if (status) status.textContent = 'Select citation text from the page source if copying is unavailable.';
+      }
+    });
+  });
+  sortCards();
+  update();
 })();
 </script>
 

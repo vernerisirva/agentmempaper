@@ -58,6 +58,12 @@ Run CI-mode live-source smoke validation, writing Markdown and JSON reports:
 python3 -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci
 ```
 
+Build the static reading dashboard:
+
+```bash
+python3 -m paper_scout build-site
+```
+
 Reports are written under `reports/paper_scout/`.
 
 ## Live Smoke Reports
@@ -151,6 +157,34 @@ It flags likely false positives when digest papers mention infrastructure-memory
 
 This report does not fail the workflow by default. It is a triage aid for keeping the daily digest useful.
 
+## User-Friendly Daily Reading
+
+Do not watch individual GitHub Actions run pages for daily reading. Actions are useful for debugging failed runs, but the reading surfaces are, in order:
+
+- GitHub Pages dashboard.
+- `digests/latest.md` as a stable Markdown fallback.
+- `digests/YYYY-MM-DD.md` for dated Markdown archives.
+- `reports/paper_scout/` for validation and digest-quality reports.
+- GitHub Actions run pages only for debugging.
+
+`python3 -m paper_scout build-site` generates:
+
+```text
+docs/index.html
+docs/latest.html
+docs/archive.html
+docs/data/papers.json
+docs/data/latest.json
+docs/style.css
+digests/latest.md
+```
+
+The dashboard is static, readable without JavaScript, and includes latest run summary, compact source warnings, digest-quality warning count, highly relevant papers, maybe relevant papers, archive links, and light browser-side search/filter controls.
+
+GitHub Pages setup is intentionally simple: in repository settings, open **Pages**, then set **Build and deployment → Source** to **GitHub Actions**. This is preferred over branch-based `main` / `/docs` deployment because daily `docs/` updates are committed by GitHub Actions, and those commits may not reliably trigger a separate branch-based Pages rebuild.
+
+The Paper Scout workflow still commits `docs/` to `main` as a useful artifact, then deploys the same static `docs/` directory with the official Pages Actions: `actions/configure-pages`, `actions/upload-pages-artifact`, and `actions/deploy-pages`.
+
 ## GitHub Actions
 
 The workflow in `.github/workflows/paper-scout.yml` runs daily and on manual dispatch.
@@ -167,11 +201,12 @@ Then it runs the daily scout:
 
 ```bash
 python -m paper_scout run
+python -m paper_scout build-site
 ```
 
 The live smoke step uses GitHub-hosted Python TLS defaults and a temporary SQLite state path. One failed source is reported but should not fail the workflow; the workflow should fail only if the Paper Scout code crashes unexpectedly. Markdown, JSON, and command logs are uploaded as artifacts, and the live smoke summary is included in the GitHub Actions step summary.
 
-The daily run may commit the persistent SQLite state, digests, digest-quality reports, and non-smoke validation Markdown reports when they change. It does not commit live-smoke JSON artifacts.
+The daily run may commit the persistent SQLite state, Markdown digests, `digests/latest.md`, `docs/` dashboard files, digest-quality reports, and non-smoke validation Markdown reports when they change. It also deploys `docs/` to GitHub Pages through Actions. It does not commit live-smoke JSON artifacts.
 
 ## TLS Troubleshooting
 

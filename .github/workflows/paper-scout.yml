@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: paper-scout-${{ github.ref }}
@@ -15,6 +17,9 @@ concurrency:
 jobs:
   scout:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -23,6 +28,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Validate rules, idempotency, and live source payloads
         env:
@@ -48,6 +56,7 @@ jobs:
         run: |
           set -o pipefail
           python -m paper_scout run | tee paper-scout-run.log
+          python -m paper_scout build-site | tee paper-scout-build-site.log
 
       - name: Write run summary
         if: always()
@@ -58,11 +67,12 @@ jobs:
             echo "### Command output"
             echo
             echo '```text'
-            cat relevance-eval.log idempotency.log live-smoke.log paper-scout-run.log 2>/dev/null || true
+            cat relevance-eval.log idempotency.log live-smoke.log paper-scout-run.log paper-scout-build-site.log 2>/dev/null || true
             echo '```'
             echo
             echo "### Generated files"
             find digests reports -type f 2>/dev/null | sort || true
+            find docs -type f 2>/dev/null | sort || true
             echo
             echo "### Live smoke report"
             for report in reports/paper_scout/live-smoke-*.md; do
@@ -86,6 +96,7 @@ jobs:
           name: paper-scout-reports
           path: |
             reports/paper_scout/
+            docs/
             *.log
           if-no-files-found: ignore
 
@@ -94,10 +105,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/paper_scout.sqlite3 digests/*.md reports/paper_scout/digest-quality-*.md reports/paper_scout/idempotency-*.md reports/paper_scout/relevance-eval-*.md
+          git add data/paper_scout.sqlite3 digests/*.md docs/ reports/paper_scout/digest-quality-*.md reports/paper_scout/idempotency-*.md reports/paper_scout/relevance-eval-*.md
           if git diff --cached --quiet; then
             echo "No paper scout changes to commit."
           else
             git commit -m "chore: update paper scout digest"
             git push
           fi
+
+      - name: Upload Pages artifact
+        if: success()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from paper_scout.cli import main
+from paper_scout.site import SiteBuildResult
 
 
 class PaperScoutCliTest(unittest.TestCase):
@@ -41,6 +42,34 @@ class PaperScoutCliTest(unittest.TestCase):
             self.assertTrue(run_live_smoke.call_args.kwargs["ci"])
             self.assertEqual(run_live_smoke.call_args.kwargs["days"], 14)
             self.assertEqual(run_live_smoke.call_args.kwargs["max_results_per_source"], 25)
+
+    def test_build_site_invokes_static_generator(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config_path = Path(tmpdir) / "missing.yaml"
+            docs_dir = Path(tmpdir) / "docs"
+            with patch("paper_scout.cli.build_site") as build_site:
+                build_site.return_value = SiteBuildResult(
+                    built=True,
+                    message="Built Paper Scout dashboard",
+                    latest_date="2026-06-26",
+                    output_dir=docs_dir,
+                )
+
+                output = io.StringIO()
+                with redirect_stdout(output):
+                    exit_code = main(
+                        [
+                            "--config",
+                            str(config_path),
+                            "build-site",
+                            "--docs-dir",
+                            str(docs_dir),
+                        ]
+                    )
+
+            self.assertEqual(exit_code, 0)
+            self.assertIn("Built Paper Scout dashboard", output.getvalue())
+            self.assertEqual(build_site.call_args.kwargs["docs_dir"], str(docs_dir))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Scout Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    
+        <header class="site-header">
+          <p class="eyebrow">Paper Scout</p>
+          <h1>Daily agent-memory papers</h1>
+          <p class="subtle">Latest digest: <strong>2026-06-26</strong></p>
+          <nav><a href="latest.html">Latest</a><a href="archive.html">Archive</a><a href="../digests/latest.md">Markdown fallback</a></nav>
+        </header>
+        <section class="summary-grid"><div><span>Candidates fetched</span><strong>569</strong></div><div><span>New unique papers</span><strong>286</strong></div><div><span>Relevant</span><strong>66</strong></div><div><span>Maybe relevant</span><strong>140</strong></div><div><span>Source summary</span><strong>arxiv: 29, openalex: 537, semantic_scholar: 3</strong></div><div><span>Digest-quality warnings</span><strong>0</strong></div></section>
+        
+    <section class="controls">
+      <input id="paper-search" type="search" placeholder="Search title, abstract, tags">
+      <div class="button-row" id="relevance-filters">
+        <button data-decision="all" class="active">All</button>
+        <button data-decision="relevant">Highly relevant</button>
+        <button data-decision="maybe">Maybe relevant</button>
+      </div>
+      <div class="button-row" id="source-filters">
+        <button data-source="all" class="active">All sources</button>
+        <button data-source="openalex">openalex</button><button data-source="semantic_scholar">semantic_scholar</button>
+      </div>
+    </section>
+    
+        <details class="warnings"><summary>Source warnings (21)</summary><ul><li>semantic_scholar failed for &#x27;agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;LLM agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;long-term memory agents&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;persistent memory agents&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;semantic memory LLM agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;procedural memory LLM agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;memory-augmented language agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;memory retrieval policy agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;deep research agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;deep research agents&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;deep research memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;deep research agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;agentic memory deep research&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;autonomous research agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;literature review agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;parametric memory LLM&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;Engram LLM&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;Engram memory LLM&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;multilingual Engram&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;Megatron-LM Engram&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;memory mechanism language model&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li></ul></details>
+        <section class="paper-section" data-section="relevant">
+          <h2>Highly relevant</h2>
+          <p class="empty">No papers in this section.</p>
+        </section>
+        <section class="paper-section" data-section="maybe">
+          <h2>Maybe relevant</h2>
+          
+    <article class="paper-card" data-source="openalex" data-decision="maybe" data-search="novelty-aware agentic retrieval: comparing research contributions through structured multi-step reasoning scientific literature search is an information retrieval (ir) task in which ranked lists are insufficient: a researcher entering a new area needs to know not only which papers are relevant, but how they relate, where they overlap, how they differ, and what problem-method combinations are absent. standard retrieval-a... deep-research openalex maybe">
+      <div class="card-top">
+        <span class="badge source">openalex</span>
+        <span class="badge relevance">maybe · 40/100</span>
+      </div>
+      <h3>Novelty-Aware Agentic Retrieval: Comparing Research Contributions Through Structured Multi-Step Reasoning</h3>
+      <p class="meta">Shou-Tzu Han · 2026-06-20</p>
+      <p><strong>Reason:</strong> Touches memory concepts that may be relevant if connected to agent behavior.</p>
+      <p>Scientific literature search is an information retrieval (IR) task in which ranked lists are insufficient: a researcher entering a new area needs to know not only which papers are relevant, but how they relate, where they overlap, how they differ, and what problem-method combinations are absent. Standard retrieval-a...</p>
+      <div class="tags"><span class="badge tag">deep-research</span></div>
+      <div class="card-actions"><a class="paper-link" href="https://arxiv.org/abs/2606.22151">Open paper</a></div>
+      <details class="citation"><summary>Copy citation</summary><textarea readonly>Novelty-Aware Agentic Retrieval: Comparing Research Contributions Through Structured Multi-Step Reasoning. Shou-Tzu Han. 2026-06-20. https://arxiv.org/abs/2606.22151</textarea></details>
+    </article>
+    
+
+    <article class="paper-card" data-source="semantic_scholar" data-decision="maybe" data-search="procmem: learning reusable procedural memory from experience via non-parametric ppo for llm agents no abstract available. memory-types semantic_scholar maybe">
+      <div class="card-top">
+        <span class="badge source">semantic_scholar</span>
+        <span class="badge relevance">maybe · 40/100</span>
+      </div>
+      <h3>ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents</h3>
+      <p class="meta">Qirui Mi, Zhijian Ma, Mengyue Yang, Haoxuan Li, Yisen Wang, Haifeng Zhang, et al. · 2026</p>
+      <p><strong>Reason:</strong> Touches memory concepts that may be relevant if connected to agent behavior.</p>
+      <p>No abstract available.</p>
+      <div class="tags"><span class="badge tag">memory-types</span></div>
+      <div class="card-actions"><a class="paper-link" href="https://www.semanticscholar.org/paper/57563394951aebb6d7f5611808eac0ba14a5bb87">Open paper</a></div>
+      <details class="citation"><summary>Copy citation</summary><textarea readonly>ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents. Qirui Mi, Zhijian Ma, Mengyue Yang, Haoxuan Li, Yisen Wang, Haifeng Zhang, et al.. 2026. https://www.semanticscholar.org/paper/57563394951aebb6d7f5611808eac0ba14a5bb87</textarea></details>
+    </article>
+    
+
+    <article class="paper-card" data-source="semantic_scholar" data-decision="maybe" data-search="llm-guided multi-agent evacuation coordination via episodic memory and cognitive task analysis we demonstrate 1 an llm-guided multi-agent platform for coor-dinating evacuations during wildfires. a lightweight commander agent observes traffic congestion and wildfire spread in a simulated environment and issues high-level routing decisions that mimic emergency management actions. user agents receive these decis... memory-types semantic_scholar maybe">
+      <div class="card-top">
+        <span class="badge source">semantic_scholar</span>
+        <span class="badge relevance">maybe · 40/100</span>
+      </div>
+      <h3>LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis</h3>
+      <p class="meta">R. Sultimov, Aleksandr Volkov, Mile Mitrovic, Yury Maximov · unknown</p>
+      <p><strong>Reason:</strong> Touches memory concepts that may be relevant if connected to agent behavior.</p>
+      <p>We demonstrate 1 an LLM-guided multi-agent platform for coor-dinating evacuations during wildfires. A lightweight Commander agent observes traffic congestion and wildfire spread in a simulated environment and issues high-level routing decisions that mimic emergency management actions. User agents receive these decis...</p>
+      <div class="tags"><span class="badge tag">memory-types</span></div>
+      <div class="card-actions"><a class="paper-link" href="https://www.semanticscholar.org/paper/acebe7c7c6bfc937e8cb26b4c01413b390812899">Open paper</a></div>
+      <details class="citation"><summary>Copy citation</summary><textarea readonly>LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis. R. Sultimov, Aleksandr Volkov, Mile Mitrovic, Yury Maximov. https://www.semanticscholar.org/paper/acebe7c7c6bfc937e8cb26b4c01413b390812899</textarea></details>
+    </article>
+    
+        </section>
+        <section class="archive-strip">
+          <h2>Archive</h2>
+          <div class="archive-links"><a href="../digests/2026-06-26.md">2026-06-26</a></div>
+        </section>
+        
+<script>
+(() => {
+  const search = document.querySelector('#paper-search');
+  const cards = Array.from(document.querySelectorAll('.paper-card'));
+  let decision = 'all';
+  let source = 'all';
+  function update() {
+    const query = (search.value || '').toLowerCase();
+    for (const card of cards) {
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const matchesDecision = decision === 'all' || card.dataset.decision === decision;
+      const matchesSource = source === 'all' || card.dataset.source === source;
+      card.hidden = !(matchesQuery && matchesDecision && matchesSource);
+    }
+  }
+  function bindButtons(selector, attr, setter) {
+    document.querySelectorAll(selector).forEach(button => {
+      button.addEventListener('click', () => {
+        button.parentElement.querySelectorAll('button').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        setter(button.dataset[attr]);
+        update();
+      });
+    });
+  }
+  if (search) search.addEventListener('input', update);
+  bindButtons('#relevance-filters button', 'decision', value => decision = value);
+  bindButtons('#source-filters button', 'source', value => source = value);
+})();
+</script>
+
+        
+  </main>
+</body>
+</html>

@@ -10,6 +10,7 @@ from paper_scout.evaluation import evaluate_relevance_examples, relevance_fixtur
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
 from paper_scout.relevance import classify_with_rules
 from paper_scout.scout import run_scout, search_sources
+from paper_scout.site import build_site
 from paper_scout.state import PaperStore
 from paper_scout.validation import run_live_smoke, validate_idempotency
 
@@ -46,6 +47,9 @@ def main(argv: list[str] | None = None) -> int:
 
     idem_parser = subparsers.add_parser("validate-idempotency", help="Validate duplicate notification protection")
     idem_parser.add_argument("--date", default=date.today().isoformat())
+
+    build_site_parser = subparsers.add_parser("build-site", help="Build the static Paper Scout dashboard under docs/")
+    build_site_parser.add_argument("--docs-dir", default="docs")
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
@@ -103,6 +107,11 @@ def main(argv: list[str] | None = None) -> int:
         report = validate_idempotency(report_date=args.date, report_dir=config.report_dir)
         print(f"passed={report['passed']} first={report['first_digest_count']} second={report['second_digest_count']} report={report['report_path']}")
         return 0 if report["passed"] else 1
+
+    if args.command == "build-site":
+        result = build_site(digest_dir=config.digest_dir, report_dir=config.report_dir, docs_dir=args.docs_dir)
+        print(result.message)
+        return 0
 
     parser.error(f"unknown command {args.command}")
     return 2

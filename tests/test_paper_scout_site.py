@@ -56,6 +56,10 @@ class PaperScoutSiteTest(unittest.TestCase):
             docs_dir = root / "docs"
             digest_dir.mkdir()
             report_dir.mkdir(parents=True)
+            (digest_dir / "2026-06-25.md").write_text(
+                SAMPLE_DIGEST.replace("2026-06-26", "2026-06-25"),
+                encoding="utf-8",
+            )
             (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
             (report_dir / "digest-quality-2026-06-26.md").write_text(
                 "# Paper Scout Digest Quality - 2026-06-26\n\n- Likely false positives flagged: 2\n",
@@ -73,6 +77,16 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertTrue((docs_dir / "data" / "latest.json").exists())
             self.assertTrue((docs_dir / "style.css").exists())
             self.assertTrue((digest_dir / "latest.md").exists())
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            archive_html = (docs_dir / "archive.html").read_text(encoding="utf-8")
+            self.assertIn("Daily agent-memory research briefing", html)
+            self.assertIn("Candidates fetched", html)
+            self.assertIn("New unique papers", html)
+            self.assertIn("Highly relevant", html)
+            self.assertIn("Maybe relevant", html)
+            self.assertIn("Digest-quality warnings", html)
+            self.assertIn("2026-06-25", archive_html)
+            self.assertIn("2026-06-26", archive_html)
 
     def test_paper_cards_include_required_fields_and_compact_warnings(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -94,8 +108,9 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("Directly studies persistent memory for LLM agents.", html)
             self.assertIn("agent-memory", html)
             self.assertIn("https://example.test/persistent", html)
+            self.assertIn("Open paper", html)
             self.assertIn("<details", html)
-            self.assertIn("Source warnings", html)
+            self.assertIn("Source diagnostics", html)
             self.assertIn("Copy citation", html)
 
     def test_build_site_exits_gracefully_when_no_digest_exists(self):

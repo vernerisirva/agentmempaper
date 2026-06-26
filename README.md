@@ -167,19 +167,30 @@ Do not watch individual GitHub Actions run pages for daily reading. Actions are 
 - `reports/paper_scout/` for validation and digest-quality reports.
 - GitHub Actions run pages only for debugging.
 
+Live dashboard:
+
+```text
+https://vernerisirva.github.io/agentmempaper/
+```
+
 `python3 -m paper_scout build-site` generates:
 
 ```text
 docs/index.html
 docs/latest.html
 docs/archive.html
+docs/about.html
 docs/data/papers.json
 docs/data/latest.json
+docs/data/papers.csv
+docs/data/papers.bib
 docs/style.css
 digests/latest.md
 ```
 
-The dashboard is static, readable without JavaScript, and includes latest run summary, compact source warnings, digest-quality warning count, highly relevant papers, maybe relevant papers, archive links, and light browser-side search/filter controls.
+The dashboard is static, readable without JavaScript, and includes recommended reading, a cumulative paper library, latest-run discoveries, compact source warnings, digest-quality warning counts, archive links, and light browser-side search/filter/sort controls. `docs/about.html` explains sources, deduplication, relevance scoring, and known limitations. The data exports support quick sharing through CSV, BibTeX, and JSON.
+
+Manual dashboard curation is optional and lives in `config/curation.yaml`. It can pin papers into recommended reading, hide false positives from the static dashboard without deleting SQLite state, add manual research notes, override dashboard relevance scores/tags, and show review statuses such as `unread`, `skimmed`, `read`, `important`, or `thesis_candidate`.
 
 GitHub Pages setup is intentionally simple: in repository settings, open **Pages**, then set **Build and deployment → Source** to **GitHub Actions**. This is preferred over branch-based `main` / `/docs` deployment because daily `docs/` updates are committed by GitHub Actions, and those commits may not reliably trigger a separate branch-based Pages rebuild.
 

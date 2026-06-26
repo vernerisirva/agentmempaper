@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import csv
 from dataclasses import dataclass, field
+from datetime import date
 from html import escape
+import io
 import json
 from pathlib import Path
 import re
@@ -78,6 +81,11 @@ class LibraryPaper:
     sources: list[str] = field(default_factory=list)
     source_ids: dict[str, list[str]] = field(default_factory=dict)
     alternate_urls: list[str] = field(default_factory=list)
+    pinned: bool = False
+    research_note: str | None = None
+    review_status: str | None = None
+    relevance_label: str | None = None
+    future_date: bool = False
 
     @property
     def authors_text(self) -> str:
@@ -103,11 +111,31 @@ class LibraryPaper:
         return ". ".join(parts)
 
 
+@dataclass(frozen=True)
+class CurationRule:
+    title: str | None = None
+    canonical_id: str | None = None
+    note: str | None = None
+    decision: str | None = None
+    score: int | None = None
+    tags: list[str] = field(default_factory=list)
+    review_status: str | None = None
+    reason: str | None = None
+
+
+@dataclass(frozen=True)
+class CurationConfig:
+    pinned: list[CurationRule] = field(default_factory=list)
+    overrides: list[CurationRule] = field(default_factory=list)
+    excluded: list[CurationRule] = field(default_factory=list)
+
+
 def build_site(
     digest_dir: Path | str = Path("digests"),
     report_dir: Path | str = Path("reports/paper_scout"),
     docs_dir: Path | str = Path("docs"),
     state_path: Path | str = Path("data/paper_scout.sqlite3"),
+    curation_path: Path | str = Path("config/curation.yaml"),
 ) -> SiteBuildResult:
     digest_path = _latest_digest_path(Path(digest_dir))
     if digest_path is None:
@@ -123,6 +151,8 @@ def build_site(
     if not library_papers:
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
+    library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
+    library_papers = _sort_recommended(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
     if not using_state and not latest_discoveries:
         latest_discoveries = _library_from_digest(latest, latest_run=True, newly_discovered=True)
@@ -133,8 +163,11 @@ def build_site(
     (docs_root / "index.html").write_text(_render_library_page(library_papers, latest, archive_digests), encoding="utf-8")
     (docs_root / "latest.html").write_text(_render_latest_discoveries_page(latest_discoveries, latest, archive_digests), encoding="utf-8")
     (docs_root / "archive.html").write_text(_render_archive_page(archive_digests), encoding="utf-8")
+    (docs_root / "about.html").write_text(_render_about_page(), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
+    (docs_root / "data" / "papers.csv").write_text(_papers_csv(library_papers), encoding="utf-8")
+    (docs_root / "data" / "papers.bib").write_text(_papers_bibtex(library_papers), encoding="utf-8")
     _write_latest_markdown(digest_root, latest.date, digest_path)
 
     return SiteBuildResult(True, f"Built Paper Scout dashboard for {latest.date} in {docs_root}", latest.date, docs_root)
@@ -359,6 +392,197 @@ def _merge_dashboard_duplicates(papers: list[LibraryPaper]) -> list[LibraryPaper
         ),
         reverse=True,
     )
+
+
+def _sort_recommended(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+    return sorted(papers, key=_recommended_sort_key)
+
+
+def _recommended_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
+    return (
+        0 if paper.pinned else 1,
+        0 if paper.decision == "relevant" else 1,
+        -paper.score,
+        1 if paper.future_date else 0,
+        _reverse_date_sort_value(paper.published_date),
+        _reverse_date_sort_value(paper.first_seen_date),
+        paper.title.lower(),
+    )
+
+
+def _reverse_date_sort_value(value: str | None) -> int:
+    parsed = _date_ordinal(value)
+    return -parsed if parsed is not None else 0
+
+
+def _date_ordinal(value: str | None) -> int | None:
+    date_value = _date_part(value)
+    if not date_value:
+        return None
+    try:
+        return date.fromisoformat(date_value).toordinal()
+    except ValueError:
+        return None
+
+
+def _is_future_date(published_date: str | None, build_date: str) -> bool:
+    published = _date_ordinal(published_date)
+    built = _date_ordinal(build_date)
+    return bool(published is not None and built is not None and published > built)
+
+
+def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_date: str) -> list[LibraryPaper]:
+    curated: list[LibraryPaper] = []
+    for paper in papers:
+        if _matching_rule(paper, curation.excluded):
+            continue
+        pinned_rule = _matching_rule(paper, curation.pinned)
+        override_rule = _matching_rule(paper, curation.overrides)
+        updated = paper
+        if override_rule:
+            updated = _apply_override(updated, override_rule)
+        if pinned_rule:
+            updated = LibraryPaper(
+                **{
+                    **updated.__dict__,
+                    "pinned": True,
+                    "research_note": pinned_rule.note or updated.research_note,
+                    "review_status": pinned_rule.review_status or updated.review_status,
+                }
+            )
+        updated = LibraryPaper(
+            **{
+                **updated.__dict__,
+                "future_date": _is_future_date(updated.published_date, build_date),
+                "relevance_label": _relevance_label(updated),
+            }
+        )
+        curated.append(updated)
+    return curated
+
+
+def _apply_override(paper: LibraryPaper, rule: CurationRule) -> LibraryPaper:
+    decision = paper.decision
+    if rule.decision:
+        decision = "relevant" if rule.decision in {"highly_relevant", "relevant"} else rule.decision
+    tags = _ordered_unique([*(rule.tags or []), *paper.tags]) if rule.tags else paper.tags
+    return LibraryPaper(
+        **{
+            **paper.__dict__,
+            "decision": decision,
+            "score": rule.score if rule.score is not None else paper.score,
+            "tags": tags,
+            "research_note": rule.note or paper.research_note,
+            "review_status": rule.review_status or paper.review_status,
+        }
+    )
+
+
+def _matching_rule(paper: LibraryPaper, rules: list[CurationRule]) -> CurationRule | None:
+    normalized = _normalized_title(paper.title)
+    for rule in rules:
+        if rule.canonical_id and rule.canonical_id == paper.canonical_id:
+            return rule
+        if rule.title and _normalized_title(rule.title) == normalized:
+            return rule
+    return None
+
+
+def _load_curation(path: Path) -> CurationConfig:
+    if not path.exists():
+        return CurationConfig()
+    sections = _parse_curation_yaml(path.read_text(encoding="utf-8"))
+    return CurationConfig(
+        pinned=[_curation_rule(item) for item in sections.get("pinned", [])],
+        overrides=[_curation_rule(item) for item in sections.get("overrides", [])],
+        excluded=[_curation_rule(item) for item in sections.get("excluded", [])],
+    )
+
+
+def _parse_curation_yaml(text: str) -> dict[str, list[dict[str, object]]]:
+    sections: dict[str, list[dict[str, object]]] = {"pinned": [], "overrides": [], "excluded": []}
+    current_section: str | None = None
+    current_item: dict[str, object] | None = None
+    current_list_key: str | None = None
+    for raw_line in text.splitlines():
+        line = raw_line.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+        if not line.startswith(" ") and line.endswith(":"):
+            current_section = line[:-1].strip()
+            sections.setdefault(current_section, [])
+            current_item = None
+            current_list_key = None
+            continue
+        if current_section not in sections:
+            continue
+        stripped = line.strip()
+        if stripped.startswith("- ") and current_list_key and current_item is not None:
+            value = _clean_yaml_value(stripped[2:])
+            current_item.setdefault(current_list_key, [])
+            if isinstance(current_item[current_list_key], list):
+                current_item[current_list_key].append(value)  # type: ignore[index]
+            continue
+        if stripped.startswith("- "):
+            current_item = {}
+            sections[current_section].append(current_item)
+            current_list_key = None
+            rest = stripped[2:].strip()
+            if ":" in rest:
+                key, value = rest.split(":", 1)
+                current_item[key.strip()] = _clean_yaml_value(value)
+            continue
+        if current_item is None:
+            continue
+        if stripped.endswith(":"):
+            current_list_key = stripped[:-1].strip()
+            current_item[current_list_key] = []
+            continue
+        if ":" in stripped:
+            key, value = stripped.split(":", 1)
+            current_list_key = None
+            current_item[key.strip()] = _clean_yaml_value(value)
+    return sections
+
+
+def _clean_yaml_value(value: object) -> str:
+    return str(value).strip().strip('"').strip("'")
+
+
+def _curation_rule(item: dict[str, object]) -> CurationRule:
+    score_value = item.get("score")
+    try:
+        score = int(str(score_value)) if score_value not in {None, ""} else None
+    except ValueError:
+        score = None
+    tags_value = item.get("tags", [])
+    tags = [_redact_secrets(str(tag)) for tag in tags_value] if isinstance(tags_value, list) else []
+    return CurationRule(
+        title=_redact_secrets(str(item["title"])) if item.get("title") else None,
+        canonical_id=_redact_secrets(str(item["canonical_id"])) if item.get("canonical_id") else None,
+        note=_redact_secrets(str(item["note"])) if item.get("note") else None,
+        decision=_redact_secrets(str(item["decision"])) if item.get("decision") else None,
+        score=score,
+        tags=tags,
+        review_status=_redact_secrets(str(item["review_status"])) if item.get("review_status") else None,
+        reason=_redact_secrets(str(item["reason"])) if item.get("reason") else None,
+    )
+
+
+def _relevance_label(paper: LibraryPaper) -> str:
+    tags = set(paper.tags)
+    text = " ".join([paper.title, paper.reason, paper.abstract_summary, " ".join(paper.tags)]).lower()
+    if "benchmark" in tags or "evaluation" in text or "benchmark" in text:
+        return "Memory benchmark/evaluation"
+    if {"memory-policy", "procedural-memory"} & tags or "write" in text or "read" in text or "retrieval policy" in text or "architecture" in text:
+        return "Memory architecture or policy"
+    if "deep-research" in tags or "deep research" in text or "literature review" in text:
+        return "Deep research agent relevance"
+    if "parametric-memory" in tags or "engram" in text or "parametric" in text:
+        return "Parametric/Engram-style memory"
+    if paper.decision == "relevant" and ("agent-memory" in tags or "memory" in text and "agent" in text):
+        return "Core agent-memory paper"
+    return "Peripheral/maybe relevant"
 
 
 def _with_aggregates(paper: LibraryPaper) -> LibraryPaper:
@@ -597,6 +821,7 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "authors": paper.authors,
         "abstract_summary": paper.abstract_summary,
         "relevance_reason": paper.reason,
+        "relevance_label": paper.relevance_label or _relevance_label(paper),
         "relevance_score": paper.score,
         "relevance_decision": paper.decision,
         "tags": paper.tags,
@@ -619,6 +844,10 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "notified_at": paper.notified_at,
         "appeared_in_latest_run": paper.appeared_in_latest_run,
         "newly_discovered_in_latest_run": paper.newly_discovered_in_latest_run,
+        "future_date": paper.future_date,
+        "pinned": paper.pinned,
+        "research_note": paper.research_note,
+        "review_status": paper.review_status,
         "citation": paper.citation,
     }
 
@@ -637,6 +866,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
     source_buttons = sorted({source for paper in papers for source in (paper.sources or [paper.source]) if source})
     tag_options = sorted({tag for paper in papers for tag in paper.tags})
     latest_markdown_url = f"https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(latest.date)}.md"
+    recommended = _recommended_papers(papers)
     return _page(
         "Agentic Memory Paper Library",
         f"""
@@ -646,6 +876,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
             <span class="nav-links">
               <a href="latest.html">Latest discoveries</a>
               <a href="archive.html">Archive</a>
+              <a href="about.html">Methodology</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -658,6 +889,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
               <div class="hero-actions">
                 <a class="button primary" href="#paper-library">Browse library</a>
                 <a class="button secondary" href="latest.html">Latest discoveries</a>
+                <a class="button secondary" href="data/papers.bib">Download BibTeX</a>
                 <a class="button secondary" href="archive.html">Browse archive</a>
               </div>
             </div>
@@ -668,13 +900,29 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
             </aside>
           </div>
         </header>
+        <section class="paper-section recommended-section" id="recommended-reading">
+          <div class="section-heading">
+            <p class="section-kicker">Start here</p>
+            <h2>Recommended reading</h2>
+            <p>The strongest current matches, ranked by curation, relevance, score, source-date quality, and recency.</p>
+          </div>
+          <div class="recommended-grid">
+            {_recommended_cards(recommended)}
+          </div>
+        </section>
+        <section class="export-strip" aria-label="Export library">
+          <span>Share or export the library</span>
+          <a href="data/papers.csv">Download CSV</a>
+          <a href="data/papers.bib">Download BibTeX</a>
+          <a href="data/papers.json">Download JSON</a>
+        </section>
         {_library_controls(source_buttons, tag_options)}
         {_library_summary_strip(papers, latest)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
             <p class="section-kicker">Cumulative collection</p>
-            <h2>Known relevant papers</h2>
-            <p>The full Paper Scout library across all daily runs. Use latest-run only when you want the old daily-discovery view.</p>
+            <h2>Full library</h2>
+            <p>The full Paper Scout library across all daily runs. Highly relevant papers rank first by default; maybe-relevant papers remain available for edge cases.</p>
           </div>
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers)}
@@ -705,6 +953,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
+              <a href="about.html">Methodology</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -763,6 +1012,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="latest.html">Latest discoveries</a>
+              <a href="about.html">Methodology</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Latest Markdown</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -772,6 +1022,54 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
           <p class="hero-copy">The main library is cumulative; daily digests are kept for provenance and for seeing what changed on a specific day.</p>
         </header>
         <section class="archive-list" aria-label="Digest archive">{rows}</section>
+        """,
+    )
+
+
+def _render_about_page() -> str:
+    return _page(
+        "Paper Scout Methodology",
+        """
+        <header class="archive-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="index.html">Paper Scout</a>
+            <span class="nav-links">
+              <a href="index.html">Library</a>
+              <a href="latest.html">Latest discoveries</a>
+              <a href="archive.html">Archive</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Methodology</p>
+          <h1>How Paper Scout works</h1>
+          <p class="hero-copy">A static daily research monitor for papers around agentic memory, LLM agent memory, deep research agents, and memory mechanisms.</p>
+        </header>
+        <section class="about-grid">
+          <article>
+            <h2>What Paper Scout tracks</h2>
+            <p>Paper Scout watches for work on agentic memory, LLM agent memory, long-term, episodic, semantic, and procedural memory, memory benchmarks, deep research agents, and Engram-style or parametric memory mechanisms.</p>
+          </article>
+          <article>
+            <h2>Sources</h2>
+            <p>The daily scout queries arXiv, OpenAlex, and Semantic Scholar. Source metadata can disagree, lag, or contain future publication dates from publisher feeds.</p>
+          </article>
+          <article>
+            <h2>Deduplication</h2>
+            <p>Candidate papers are canonicalized by DOI, arXiv ID, Semantic Scholar ID, OpenAlex work ID, then normalized title, first author, and year. The dashboard also collapses duplicate titles while preserving alternate source links.</p>
+          </article>
+          <article>
+            <h2>Relevance scoring</h2>
+            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; maybe relevant means it may be useful but needs human judgment.</p>
+          </article>
+          <article>
+            <h2>Manual curation</h2>
+            <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
+          </article>
+          <article>
+            <h2>Limitations</h2>
+            <p>Relevance scoring can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
+          </article>
+        </section>
         """,
     )
 
@@ -903,10 +1201,11 @@ def _library_controls(sources: list[str], tags: list[str], latest_toggle: bool =
       <label class="select-field" for="paper-sort">
         <span>Sort library</span>
         <select id="paper-sort">
+          <option value="recommended" selected>Recommended</option>
+          <option value="score-desc">Relevance score, highest first</option>
           <option value="published-desc">Publication date, newest first</option>
           <option value="published-asc">Publication date, oldest first</option>
           <option value="first-seen-desc">First seen date, newest first</option>
-          <option value="score-desc">Relevance score, highest first</option>
           <option value="title-asc">Title A-Z</option>
           <option value="source-asc">Source</option>
         </select>
@@ -945,6 +1244,38 @@ def _warnings(warnings: list[str]) -> str:
     return f'<details class="source-diagnostics"><summary>Source diagnostics <span>{len(warnings)} warnings</span></summary><ul>{compact}</ul></details>'
 
 
+def _recommended_papers(papers: list[LibraryPaper], limit: int = 8) -> list[LibraryPaper]:
+    highly = [paper for paper in papers if paper.pinned or paper.decision == "relevant"]
+    pool = highly if len(highly) >= min(limit, 5) else papers
+    return _sort_recommended(pool)[:limit]
+
+
+def _recommended_cards(papers: list[LibraryPaper]) -> str:
+    if not papers:
+        return '<p class="empty">No recommended papers yet.</p>'
+    return "\n".join(_recommended_card(paper) for paper in papers)
+
+
+def _recommended_card(paper: LibraryPaper) -> str:
+    tags = "".join(f'<span class="badge tag">{escape(tag)}</span>' for tag in paper.tags[:4])
+    sources = paper.sources or [paper.source]
+    source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
+    link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
+    pinned = '<span class="badge pinned">Pinned</span>' if paper.pinned else ""
+    status = f'<span class="badge review">{escape(paper.review_status)}</span>' if paper.review_status else ""
+    return f"""
+    <article class="recommended-card">
+      <div class="paper-kicker">{source_badges}<span class="badge relevance">{escape(_decision_label(paper.decision))} · {paper.score}/100</span>{pinned}{status}</div>
+      <h3>{escape(paper.title)}</h3>
+      <p class="meta">{escape(paper.authors_text)} · {_published_text(paper)}</p>
+      <p class="relevance-label">{escape(paper.relevance_label or _relevance_label(paper))}</p>
+      <p class="reason">{escape(_short_reason(paper))}</p>
+      <div class="tags">{tags}</div>
+      {link}
+    </article>
+    """
+
+
 def _library_paper_cards(papers: list[LibraryPaper]) -> str:
     if not papers:
         return '<p class="empty">No papers in this section.</p>'
@@ -957,18 +1288,24 @@ def _library_paper_card(paper: LibraryPaper) -> str:
     source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
     secondary_links = _secondary_links(paper)
-    published = paper.published_date or "unknown"
-    search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
+    published = _published_text(paper)
+    search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, paper.research_note or "", paper.relevance_label or "", " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
     tag_text = " ".join(paper.tags)
     source_text = " ".join(sources)
     density = "primary" if paper.decision == "relevant" else "compact"
+    pinned = '<span class="badge pinned">Pinned</span>' if paper.pinned else ""
+    status = f'<span class="badge review">{escape(paper.review_status)}</span>' if paper.review_status else ""
+    note = f'<p class="research-note"><strong>Research note</strong> {escape(paper.research_note)}</p>' if paper.research_note else ""
+    relevance_label = paper.relevance_label or _relevance_label(paper)
     return f"""
-    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}">
+    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}">
       <div class="paper-main">
         <div class="paper-kicker">
           {source_badges}
           <span class="badge relevance">{escape(_decision_label(paper.decision))} · {paper.score}/100</span>
           {('<span class="badge latest">latest run</span>' if paper.newly_discovered_in_latest_run else '')}
+          {pinned}
+          {status}
         </div>
         <h3>{escape(paper.title)}</h3>
         <p class="meta">{escape(paper.authors_text)}</p>
@@ -976,7 +1313,9 @@ def _library_paper_card(paper: LibraryPaper) -> str:
           <div><dt>Published</dt><dd>{escape(published)}</dd></div>
           <div><dt>First seen by Paper Scout</dt><dd>{escape(paper.first_seen_date)}</dd></div>
         </dl>
-        <p class="reason">{escape(paper.reason)}</p>
+        <p class="relevance-label">{escape(relevance_label)}</p>
+        <p class="reason">{escape(_short_reason(paper))}</p>
+        {note}
         <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
         <div class="tags">{tags}</div>
       </div>
@@ -1063,6 +1402,89 @@ def _source_label(source: str) -> str:
 
 def _decision_label(decision: str) -> str:
     return "Highly relevant" if decision == "relevant" else "Maybe relevant" if decision == "maybe" else decision
+
+
+def _published_text(paper: LibraryPaper) -> str:
+    if not paper.published_date:
+        return "unknown"
+    if paper.future_date:
+        return f"Published: {paper.published_date} · source date"
+    return paper.published_date
+
+
+def _short_reason(paper: LibraryPaper) -> str:
+    reason = paper.reason.strip() or (paper.relevance_label or _relevance_label(paper))
+    sentence = re.split(r"(?<=[.!?])\s+", reason, maxsplit=1)[0].strip()
+    return sentence if sentence else reason
+
+
+def _papers_csv(papers: list[LibraryPaper]) -> str:
+    output = io.StringIO()
+    writer = csv.DictWriter(
+        output,
+        fieldnames=[
+            "title",
+            "authors",
+            "publication_date",
+            "first_seen_date",
+            "relevance_decision",
+            "relevance_score",
+            "tags",
+            "sources",
+            "url",
+            "doi",
+            "arxiv_id",
+        ],
+    )
+    writer.writeheader()
+    for paper in papers:
+        writer.writerow(
+            {
+                "title": paper.title,
+                "authors": paper.authors_text,
+                "publication_date": paper.published_date or "",
+                "first_seen_date": paper.first_seen_date,
+                "relevance_decision": paper.decision,
+                "relevance_score": paper.score,
+                "tags": "; ".join(paper.tags),
+                "sources": "; ".join(paper.sources or [paper.source]),
+                "url": paper.url or "",
+                "doi": paper.doi or "",
+                "arxiv_id": paper.arxiv_id or "",
+            }
+        )
+    return output.getvalue()
+
+
+def _papers_bibtex(papers: list[LibraryPaper]) -> str:
+    entries = [_paper_bibtex(paper) for paper in papers]
+    return "\n\n".join(entries) + ("\n" if entries else "")
+
+
+def _paper_bibtex(paper: LibraryPaper) -> str:
+    year = _paper_year(paper) or _paper_year(LibraryPaper(**{**paper.__dict__, "published_date": paper.first_seen_date}))
+    key = _bibtex_key(paper, year)
+    fields = [
+        ("title", paper.title),
+        ("author", " and ".join(paper.authors) if paper.authors else ""),
+        ("year", year),
+        ("url", paper.url or ""),
+        ("doi", paper.doi or ""),
+        ("eprint", paper.arxiv_id or ""),
+        ("note", f"Paper Scout relevance: {_decision_label(paper.decision)} ({paper.score}/100)"),
+    ]
+    rendered = [f"  {name} = {{{_bibtex_escape(value)}}}" for name, value in fields if value]
+    return "@misc{" + key + ",\n" + ",\n".join(rendered) + "\n}"
+
+
+def _bibtex_key(paper: LibraryPaper, year: str) -> str:
+    first = _normalized_title(paper.authors[0]).split(" ")[-1] if paper.authors else "paper"
+    title_word = _normalized_title(paper.title).split(" ")[0] if _normalized_title(paper.title) else "memory"
+    return re.sub(r"[^A-Za-z0-9_:-]", "", f"{first}{year or 'n.d.'}{title_word}")
+
+
+def _bibtex_escape(value: str) -> str:
+    return value.replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
 
 
 STYLE_CSS = """
@@ -1222,6 +1644,65 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing:
   font-size: 1.7rem;
   font-variant-numeric: tabular-nums;
 }
+.recommended-section {
+  margin-top: 1.5rem;
+  padding: 1.35rem;
+  background: rgba(255, 253, 248, .54);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: .9rem;
+}
+.recommended-card {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  min-height: 100%;
+  padding: 1rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent-dark);
+  border-radius: .75rem;
+  box-shadow: 0 16px 34px rgba(64, 48, 32, .055);
+}
+.recommended-card h3 {
+  margin: .1rem 0 0;
+  font-size: clamp(1.18rem, 1.7vw, 1.55rem);
+}
+.recommended-card .paper-link { margin-top: auto; }
+.recommended-card .reason {
+  margin: 0;
+  padding: .65rem .75rem;
+}
+.export-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem;
+  margin: 1.2rem 0;
+  padding: .75rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: rgba(255, 253, 248, .62);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.export-strip span {
+  color: var(--muted);
+  font-weight: 720;
+  margin-right: .25rem;
+}
+.export-strip a {
+  padding: .38rem .58rem;
+  border: 1px solid var(--line);
+  border-radius: .42rem;
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 700;
+}
 .summary-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
@@ -1334,6 +1815,7 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 .paper-card.compact {
   background: rgba(255, 253, 248, .68);
   box-shadow: none;
+  border-top-color: rgba(200, 185, 168, .72);
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -1381,6 +1863,34 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   border-radius: .35rem .55rem .55rem .35rem;
   font-weight: 600;
 }
+.relevance-label {
+  display: inline-flex;
+  width: fit-content;
+  margin: .9rem 0 0;
+  padding: .28rem .5rem;
+  border-radius: .35rem;
+  background: #e9f2f0;
+  color: var(--accent-dark);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .82rem;
+  font-weight: 760;
+}
+.research-note {
+  margin: .85rem 0 0;
+  padding: .75rem .85rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: .55rem;
+  background: rgba(255, 253, 248, .74);
+  color: var(--muted);
+}
+.research-note strong {
+  display: block;
+  color: var(--accent-dark);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
 .abstract-summary {
   max-width: 67ch;
   margin: .95rem 0 0;
@@ -1400,6 +1910,8 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 .source { background: #e7f0ee; color: var(--accent-dark); border-color: #c9dfdc; }
 .relevance { background: #fff1d8; color: var(--amber); border-color: #ecd6ad; }
 .latest { background: #edf1df; color: #586723; border-color: #d7dfb5; }
+.pinned { background: #efe8d8; color: #5f4520; border-color: #dac7a3; }
+.review { background: #ece7f0; color: #554361; border-color: #d8cddf; }
 .tag { background: #f2eee7; color: #574f47; }
 .tags { margin-top: .95rem; }
 .paper-side {
@@ -1569,6 +2081,26 @@ textarea {
   font-size: 1.2rem;
   font-weight: 760;
 }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+.about-grid article {
+  padding: 1.15rem;
+  background: rgba(255, 253, 248, .72);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+.about-grid h2 {
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+}
+.about-grid p {
+  margin: .75rem 0 0;
+  color: var(--muted);
+  text-wrap: pretty;
+}
 [hidden] { display: none !important; }
 @media (max-width: 640px) {
   .page { width: min(100% - 22px, 1180px); padding-top: 18px; }
@@ -1578,13 +2110,14 @@ textarea {
   .summary-strip { grid-template-columns: repeat(2, 1fr); }
   .summary-strip div:nth-child(odd) { border-left: 0; }
   .reading-controls { grid-template-columns: 1fr; }
+  .recommended-section { padding: .9rem; }
   .paper-dates { grid-template-columns: 1fr; }
   .archive-entry dl { grid-template-columns: 1fr; }
   h1 { font-size: clamp(3.4rem, 24vw, 5.3rem); }
 }
 @media print {
   body { background: #fff; }
-  body::before, .reading-controls, .hero-actions, .source-diagnostics, .archive-strip, .top-nav { display: none; }
+  body::before, .reading-controls, .hero-actions, .source-diagnostics, .archive-strip, .top-nav, .export-strip { display: none; }
   .page { width: 100%; padding: 0; }
   .paper-card { break-inside: avoid; box-shadow: none; }
 }
@@ -1606,10 +2139,24 @@ FILTER_SCRIPT = """
     const value = card.dataset[attr] || '';
     return /^\\d{4}-\\d{2}-\\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
   }
+  function recommendedRank(a, b) {
+    const pinned = (b.dataset.pinned === 'true') - (a.dataset.pinned === 'true');
+    if (pinned) return pinned;
+    const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
+    if (rel) return rel;
+    const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+    if (score) return score;
+    const future = (a.dataset.futureDate === 'true' ? 1 : 0) - (b.dataset.futureDate === 'true' ? 1 : 0);
+    if (future) return future;
+    return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) ||
+      sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) ||
+      a.dataset.title.localeCompare(b.dataset.title);
+  }
   function sortCards() {
     if (!list || !sortSelect) return;
-    const mode = sortSelect.value || 'published-desc';
+    const mode = sortSelect.value || 'recommended';
     const sorted = [...cards].sort((a, b) => {
+      if (mode === 'recommended') return recommendedRank(a, b);
       if (mode === 'published-asc') return sortableDate(a, 'published').localeCompare(sortableDate(b, 'published')) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);

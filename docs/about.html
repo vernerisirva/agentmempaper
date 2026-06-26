@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Scout Methodology</title>
+  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+    
+        <header class="archive-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="index.html">Paper Scout</a>
+            <span class="nav-links">
+              <a href="index.html">Library</a>
+              <a href="latest.html">Latest discoveries</a>
+              <a href="archive.html">Archive</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Methodology</p>
+          <h1>How Paper Scout works</h1>
+          <p class="hero-copy">A static daily research monitor for papers around agentic memory, LLM agent memory, deep research agents, and memory mechanisms.</p>
+        </header>
+        <section class="about-grid">
+          <article>
+            <h2>What Paper Scout tracks</h2>
+            <p>Paper Scout watches for work on agentic memory, LLM agent memory, long-term, episodic, semantic, and procedural memory, memory benchmarks, deep research agents, and Engram-style or parametric memory mechanisms.</p>
+          </article>
+          <article>
+            <h2>Sources</h2>
+            <p>The daily scout queries arXiv, OpenAlex, and Semantic Scholar. Source metadata can disagree, lag, or contain future publication dates from publisher feeds.</p>
+          </article>
+          <article>
+            <h2>Deduplication</h2>
+            <p>Candidate papers are canonicalized by DOI, arXiv ID, Semantic Scholar ID, OpenAlex work ID, then normalized title, first author, and year. The dashboard also collapses duplicate titles while preserving alternate source links.</p>
+          </article>
+          <article>
+            <h2>Relevance scoring</h2>
+            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; maybe relevant means it may be useful but needs human judgment.</p>
+          </article>
+          <article>
+            <h2>Manual curation</h2>
+            <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
+          </article>
+          <article>
+            <h2>Limitations</h2>
+            <p>Relevance scoring can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
+          </article>
+        </section>
+        
+  </main>
+</body>
+</html>

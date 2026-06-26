@@ -17,6 +17,7 @@
             <span class="nav-links">
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
+              <a href="about.html">Methodology</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
@@ -40,10 +41,11 @@
       <label class="select-field" for="paper-sort">
         <span>Sort library</span>
         <select id="paper-sort">
+          <option value="recommended" selected>Recommended</option>
+          <option value="score-desc">Relevance score, highest first</option>
           <option value="published-desc">Publication date, newest first</option>
           <option value="published-asc">Publication date, oldest first</option>
           <option value="first-seen-desc">First seen date, newest first</option>
-          <option value="score-desc">Relevance score, highest first</option>
           <option value="title-asc">Title A-Z</option>
           <option value="source-asc">Source</option>
         </select>
@@ -105,10 +107,24 @@
     const value = card.dataset[attr] || '';
     return /^\d{4}-\d{2}-\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
   }
+  function recommendedRank(a, b) {
+    const pinned = (b.dataset.pinned === 'true') - (a.dataset.pinned === 'true');
+    if (pinned) return pinned;
+    const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
+    if (rel) return rel;
+    const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+    if (score) return score;
+    const future = (a.dataset.futureDate === 'true' ? 1 : 0) - (b.dataset.futureDate === 'true' ? 1 : 0);
+    if (future) return future;
+    return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) ||
+      sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) ||
+      a.dataset.title.localeCompare(b.dataset.title);
+  }
   function sortCards() {
     if (!list || !sortSelect) return;
-    const mode = sortSelect.value || 'published-desc';
+    const mode = sortSelect.value || 'recommended';
     const sorted = [...cards].sort((a, b) => {
+      if (mode === 'recommended') return recommendedRank(a, b);
       if (mode === 'published-asc') return sortableDate(a, 'published').localeCompare(sortableDate(b, 'published')) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);

@@ -1,0 +1,21 @@
+# Optional dashboard-only curation.
+# Match papers by canonical_id when known, otherwise by normalized title.
+# These annotations affect the static site and exports only; SQLite state is left intact.
+
+pinned:
+  # - title: "MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery"
+  #   note: "Important benchmark candidate for agent-memory evaluation."
+  #   review_status: thesis_candidate
+
+overrides:
+  # - title: "Some Paper Title"
+  #   decision: highly_relevant
+  #   score: 92
+  #   tags:
+  #     - agent-memory
+  #     - benchmark
+  #   note: "Manual relevance override after review."
+
+excluded:
+  # - title: "Clearly irrelevant paper title"
+  #   reason: "False positive: not about agent memory."

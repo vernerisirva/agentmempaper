@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+import json
 from pathlib import Path
 
 from paper_scout.models import ClassificationResult, PaperCandidate
@@ -128,6 +129,84 @@ class PaperScoutSiteTest(unittest.TestCase):
         store.finish_run(latest_run_id, fetched_count=1, new_count=1, notified_count=1)
         store.mark_notified([latest_key], "2026-06-26")
 
+    def _write_ranking_fixture(self, state_path: Path) -> None:
+        store = PaperStore(state_path)
+        run_id = store.start_run(days=7)
+        examples = [
+            (
+                PaperCandidate(
+                    title="Maybe Future Memory Paper",
+                    authors=["Future Author"],
+                    abstract="A maybe relevant future-dated memory paper.",
+                    source="openalex",
+                    source_id="future",
+                    url="https://example.test/future",
+                    published_date="2026-07-04",
+                    raw={},
+                ),
+                ClassificationResult(45, "maybe", "May touch agent memory.", ["long-term-memory"], "Future-dated maybe paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Core Agent Memory Architecture",
+                    authors=["Ada Lovelace"],
+                    abstract="Long-term memory architecture and read/write policies for LLM agents.",
+                    source="arxiv",
+                    source_id="core",
+                    arxiv_id="2606.11111",
+                    url="https://example.test/core",
+                    published_date="2026-06-20",
+                    raw={},
+                ),
+                ClassificationResult(91, "relevant", "Studies long-term memory architecture for LLM agents.", ["agent-memory", "memory-policy"], "Core agent memory architecture."),
+            ),
+            (
+                PaperCandidate(
+                    title="Memory Benchmark for Agents",
+                    authors=["Grace Hopper"],
+                    abstract="Benchmark for evaluating persistent memory in autonomous agents.",
+                    source="semantic_scholar",
+                    source_id="benchmark",
+                    semantic_scholar_id="benchmark",
+                    url="https://example.test/benchmark",
+                    published_date="2026-06-18",
+                    raw={},
+                ),
+                ClassificationResult(86, "relevant", "Evaluates persistent memory in agents.", ["benchmark", "agent-memory"], "Agent-memory benchmark."),
+            ),
+            (
+                PaperCandidate(
+                    title="Pinned Thesis Candidate",
+                    authors=["Katherine Johnson"],
+                    abstract="Procedural memory for tool-using research agents.",
+                    source="openalex",
+                    source_id="pinned",
+                    openalex_id="W999",
+                    url="https://example.test/pinned",
+                    published_date="2025-11-01",
+                    raw={},
+                ),
+                ClassificationResult(64, "maybe", "May inform procedural memory in research agents.", ["deep-research"], "Possible thesis candidate."),
+            ),
+            (
+                PaperCandidate(
+                    title="Excluded False Positive",
+                    authors=["Cache Engineer"],
+                    abstract="Cache memory optimization with no agent memory.",
+                    source="openalex",
+                    source_id="excluded",
+                    url="https://example.test/excluded",
+                    published_date="2026-06-19",
+                    raw={},
+                ),
+                ClassificationResult(41, "maybe", "Touches memory terms.", ["long-term-memory"], "False positive."),
+            ),
+        ]
+        for candidate, classification in examples:
+            key = store.upsert_paper(candidate, classification)
+            store.record_sighting(run_id, key, candidate, "agent memory")
+        store.finish_run(run_id, fetched_count=len(examples), new_count=len(examples), notified_count=len(examples))
+
     def test_generates_static_dashboard_files_and_latest_pointer(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
@@ -155,8 +234,11 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertTrue((docs_dir / "index.html").exists())
             self.assertTrue((docs_dir / "latest.html").exists())
             self.assertTrue((docs_dir / "archive.html").exists())
+            self.assertTrue((docs_dir / "about.html").exists())
             self.assertTrue((docs_dir / "data" / "papers.json").exists())
             self.assertTrue((docs_dir / "data" / "latest.json").exists())
+            self.assertTrue((docs_dir / "data" / "papers.csv").exists())
+            self.assertTrue((docs_dir / "data" / "papers.bib").exists())
             self.assertTrue((docs_dir / "style.css").exists())
             self.assertTrue((digest_dir / "latest.md").exists())
             html = (docs_dir / "index.html").read_text(encoding="utf-8")
@@ -166,7 +248,8 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("New in latest run", html)
             self.assertIn("Highly relevant", html)
             self.assertIn("Maybe relevant", html)
-            self.assertIn("Publication date, newest first", html)
+            self.assertIn("Recommended reading", html)
+            self.assertIn('<option value="recommended" selected>Recommended</option>', html)
             self.assertIn("First seen date", html)
             self.assertIn("2026-06-25", archive_html)
             self.assertIn("2026-06-26", archive_html)
@@ -215,7 +298,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             self.assertEqual(papers_json.count('"title": "Latest Deep Research Memory"'), 1)
-            self.assertEqual(index_html.count("<h3>Latest Deep Research Memory</h3>"), 1)
+            self.assertEqual(index_html.count('data-title="latest deep research memory"'), 1)
             self.assertIn('"sources": [', papers_json)
             self.assertIn('"arxiv"', papers_json)
             self.assertIn('"openalex"', papers_json)
@@ -241,6 +324,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Sort library", index_html)
+            self.assertIn("Recommended", index_html)
             self.assertIn("Publication date, newest first", index_html)
             self.assertIn("First seen by Paper Scout", index_html)
             self.assertIn("Published", index_html)
@@ -308,11 +392,99 @@ class PaperScoutSiteTest(unittest.TestCase):
                 docs_dir / "index.html",
                 docs_dir / "latest.html",
                 docs_dir / "archive.html",
+                docs_dir / "about.html",
                 docs_dir / "data" / "latest.json",
                 docs_dir / "data" / "papers.json",
+                docs_dir / "data" / "papers.csv",
+                docs_dir / "data" / "papers.bib",
             ]
             for path in generated:
                 self.assertNotIn(secret, path.read_text(encoding="utf-8"))
+
+    def test_recommended_sort_future_dates_and_curation(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            curation_path = root / "config" / "curation.yaml"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir()
+            self._write_ranking_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+            curation_path.write_text(
+                """
+pinned:
+  - title: "Pinned Thesis Candidate"
+    note: "Important thesis candidate for procedural memory in research agents."
+    review_status: thesis_candidate
+overrides:
+  - title: "Pinned Thesis Candidate"
+    decision: highly_relevant
+    score: 93
+    tags:
+      - deep-research
+      - procedural-memory
+    note: "Manual review found this connects directly to deep research agent memory."
+  - title: "Memory Benchmark for Agents"
+    review_status: important
+excluded:
+  - title: "Excluded False Positive"
+    reason: "False positive: cache optimization, not agent memory."
+""",
+                encoding="utf-8",
+            )
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            titles = [paper["title"] for paper in papers]
+            self.assertEqual(titles[0], "Pinned Thesis Candidate")
+            self.assertLess(titles.index("Core Agent Memory Architecture"), titles.index("Maybe Future Memory Paper"))
+            self.assertNotIn("Excluded False Positive", index_html)
+            self.assertIn("Research note", index_html)
+            self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
+            self.assertIn("thesis_candidate", index_html)
+            self.assertIn("Published: 2026-07-04 · source date", index_html)
+            future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
+            pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
+            self.assertTrue(future["future_date"])
+            self.assertTrue(pinned["pinned"])
+            self.assertEqual(pinned["review_status"], "thesis_candidate")
+            self.assertEqual(pinned["relevance_score"], 93)
+
+    def test_about_page_and_exports_are_generated(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            about_html = (docs_dir / "about.html").read_text(encoding="utf-8")
+            csv_text = (docs_dir / "data" / "papers.csv").read_text(encoding="utf-8")
+            bib_text = (docs_dir / "data" / "papers.bib").read_text(encoding="utf-8")
+            self.assertIn("What Paper Scout tracks", about_html)
+            self.assertIn("arXiv", about_html)
+            self.assertIn("OpenAlex", about_html)
+            self.assertIn("Semantic Scholar", about_html)
+            self.assertIn("Deduplication", about_html)
+            self.assertIn("relevance scoring", about_html.lower())
+            self.assertIn("future publication dates", about_html)
+            self.assertIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8"))
+            self.assertIn("title,authors,publication_date,first_seen_date,relevance_decision,relevance_score,tags,sources,url,doi,arxiv_id", csv_text.splitlines()[0])
+            self.assertIn("Latest Deep Research Memory", csv_text)
+            self.assertIn("@misc", bib_text)
+            self.assertIn("title = {Latest Deep Research Memory}", bib_text)
 
 
 if __name__ == "__main__":

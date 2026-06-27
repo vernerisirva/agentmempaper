@@ -152,7 +152,7 @@ def build_site(
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
-    library_papers = _sort_recommended(library_papers)
+    library_papers = _sort_latest_relevant(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
     if not using_state and not latest_discoveries:
         latest_discoveries = _library_from_digest(latest, latest_run=True, newly_discovered=True)
@@ -394,20 +394,31 @@ def _merge_dashboard_duplicates(papers: list[LibraryPaper]) -> list[LibraryPaper
     )
 
 
+def _sort_latest_relevant(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+    return sorted(papers, key=_latest_relevant_sort_key)
+
+
 def _sort_recommended(papers: list[LibraryPaper]) -> list[LibraryPaper]:
-    return sorted(papers, key=_recommended_sort_key)
+    return _sort_latest_relevant(papers)
+
+
+def _latest_relevant_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
+    return (
+        0 if paper.decision == "relevant" else 1,
+        _reverse_date_sort_value(_latest_relevant_date(paper)),
+        -paper.score,
+        paper.title.lower(),
+    )
 
 
 def _recommended_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
-    return (
-        0 if paper.pinned else 1,
-        0 if paper.decision == "relevant" else 1,
-        -paper.score,
-        1 if paper.future_date else 0,
-        _reverse_date_sort_value(paper.published_date),
-        _reverse_date_sort_value(paper.first_seen_date),
-        paper.title.lower(),
-    )
+    return _latest_relevant_sort_key(paper)
+
+
+def _latest_relevant_date(paper: LibraryPaper) -> str | None:
+    if paper.published_date and not paper.future_date:
+        return paper.published_date
+    return paper.first_seen_date
 
 
 def _reverse_date_sort_value(value: str | None) -> int:
@@ -886,6 +897,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
             <h2>Papers to look at</h2>
+            <p>Newest relevant papers first.</p>
           </div>
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers, default_decision=default_decision)}
@@ -1160,7 +1172,7 @@ def _library_controls(default_decision: str = "all") -> str:
       <label class="select-field" for="paper-sort">
         <span>Sort</span>
         <select id="paper-sort">
-          <option value="recommended" selected>Recommended</option>
+          <option value="latest-relevant" selected>Latest relevant</option>
           <option value="score-desc">Relevance</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
@@ -1461,6 +1473,7 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
             "doi",
             "arxiv_id",
         ],
+        lineterminator="\n",
     )
     writer.writeheader()
     for paper in papers:
@@ -2261,24 +2274,25 @@ FILTER_SCRIPT = """
     const value = card.dataset[attr] || '';
     return /^\\d{4}-\\d{2}-\\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
   }
-  function recommendedRank(a, b) {
-    const pinned = (b.dataset.pinned === 'true') - (a.dataset.pinned === 'true');
-    if (pinned) return pinned;
+  function latestRelevantDate(card) {
+    return card.dataset.futureDate === 'true'
+      ? sortableDate(card, 'firstSeen')
+      : sortableDate(card, 'published');
+  }
+  function latestRelevantRank(a, b) {
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
+    if (date) return date;
     const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
     if (score) return score;
-    const future = (a.dataset.futureDate === 'true' ? 1 : 0) - (b.dataset.futureDate === 'true' ? 1 : 0);
-    if (future) return future;
-    return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) ||
-      sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) ||
-      a.dataset.title.localeCompare(b.dataset.title);
+    return a.dataset.title.localeCompare(b.dataset.title);
   }
   function sortCards() {
     if (!list || !sortSelect) return;
-    const mode = sortSelect.value || 'recommended';
+    const mode = sortSelect.value || 'latest-relevant';
     const sorted = [...cards].sort((a, b) => {
-      if (mode === 'recommended') return recommendedRank(a, b);
+      if (mode === 'latest-relevant') return latestRelevantRank(a, b);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);

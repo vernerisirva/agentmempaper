@@ -148,6 +148,45 @@ class PaperScoutSiteTest(unittest.TestCase):
             ),
             (
                 PaperCandidate(
+                    title="Future Source Relevant Memory Paper",
+                    authors=["Future Relevant Author"],
+                    abstract="A relevant paper with a future source-provided publication date.",
+                    source="openalex",
+                    source_id="future-relevant",
+                    url="https://example.test/future-relevant",
+                    published_date="2026-07-05",
+                    raw={},
+                ),
+                ClassificationResult(50, "relevant", "Relevant but future-dated by source metadata.", ["agent-memory"], "Future source date relevant paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Fresh First Seen Agent Memory",
+                    authors=["No Date Author"],
+                    abstract="A relevant paper without a publication date, first seen in the current run.",
+                    source="openalex",
+                    source_id="fresh-first-seen",
+                    url="https://example.test/fresh-first-seen",
+                    published_date=None,
+                    raw={},
+                ),
+                ClassificationResult(70, "relevant", "Relevant and missing publication date.", ["agent-memory"], "Fresh first-seen relevant paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Newer Low Score Agent Memory",
+                    authors=["Recent Author"],
+                    abstract="A newer relevant paper with a lower score than older relevant papers.",
+                    source="arxiv",
+                    source_id="newer-low-score",
+                    url="https://example.test/newer-low-score",
+                    published_date="2026-06-21",
+                    raw={},
+                ),
+                ClassificationResult(70, "relevant", "Newer relevant work should rank before older high-score papers.", ["agent-memory"], "Newer lower-score relevant paper."),
+            ),
+            (
+                PaperCandidate(
                     title="Core Agent Memory Architecture",
                     authors=["Ada Lovelace"],
                     abstract="Long-term memory architecture and read/write policies for LLM agents.",
@@ -179,6 +218,58 @@ class PaperScoutSiteTest(unittest.TestCase):
                     raw={},
                 ),
                 ClassificationResult(86, "relevant", "Evaluates persistent memory in agents.", ["benchmark", "agent-memory"], "Agent-memory benchmark."),
+            ),
+            (
+                PaperCandidate(
+                    title="Same Date Higher Score Agent Memory",
+                    authors=["Tie Break Author"],
+                    abstract="A relevant paper sharing a publication date with a lower-scored paper.",
+                    source="arxiv",
+                    source_id="same-date-high",
+                    url="https://example.test/same-date-high",
+                    published_date="2026-06-17",
+                    raw={},
+                ),
+                ClassificationResult(82, "relevant", "Higher relevance should break same-date ties.", ["agent-memory"], "Same-date higher-score paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Same Date Lower Score Agent Memory",
+                    authors=["Tie Break Author"],
+                    abstract="A relevant paper sharing a publication date with a higher-scored paper.",
+                    source="arxiv",
+                    source_id="same-date-low",
+                    url="https://example.test/same-date-low",
+                    published_date="2026-06-17",
+                    raw={},
+                ),
+                ClassificationResult(60, "relevant", "Lower relevance should follow on same-date ties.", ["agent-memory"], "Same-date lower-score paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Alpha Stable Tie Agent Memory",
+                    authors=["Stable Sort Author"],
+                    abstract="A relevant paper with the same date and score as another paper.",
+                    source="openalex",
+                    source_id="alpha-stable",
+                    url="https://example.test/alpha-stable",
+                    published_date="2026-06-16",
+                    raw={},
+                ),
+                ClassificationResult(65, "relevant", "Title should break final ties.", ["agent-memory"], "Alphabetical stable tie paper."),
+            ),
+            (
+                PaperCandidate(
+                    title="Zulu Stable Tie Agent Memory",
+                    authors=["Stable Sort Author"],
+                    abstract="A relevant paper with the same date and score as another paper.",
+                    source="openalex",
+                    source_id="zulu-stable",
+                    url="https://example.test/zulu-stable",
+                    published_date="2026-06-16",
+                    raw={},
+                ),
+                ClassificationResult(65, "relevant", "Title should break final ties.", ["agent-memory"], "Alphabetical stable tie paper."),
             ),
             (
                 PaperCandidate(
@@ -261,7 +352,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertNotIn("Source warning count", html)
             self.assertNotIn("Candidates fetched", html.split("</header>", 1)[0])
             self.assertNotIn("Run ID", html.split("</header>", 1)[0])
-            self.assertIn('<option value="recommended" selected>Recommended</option>', html)
+            self.assertIn('<option value="latest-relevant" selected>Latest relevant</option>', html)
             self.assertIn("First seen", html)
             self.assertIn("2026-06-25", archive_html)
             self.assertIn("2026-06-26", archive_html)
@@ -336,7 +427,8 @@ class PaperScoutSiteTest(unittest.TestCase):
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Sort", index_html)
-            self.assertIn("Recommended", index_html)
+            self.assertIn("Latest relevant", index_html)
+            self.assertIn("Newest relevant papers first.", index_html)
             self.assertIn("Publication date", index_html)
             self.assertIn("First seen", index_html)
             self.assertIn("Published", index_html)
@@ -449,7 +541,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             for path in generated:
                 self.assertNotIn(secret, path.read_text(encoding="utf-8"))
 
-    def test_recommended_sort_future_dates_and_curation(self):
+    def test_latest_relevant_sort_future_dates_and_curation(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
             digest_dir = root / "digests"
@@ -490,7 +582,13 @@ excluded:
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             titles = [paper["title"] for paper in papers]
-            self.assertEqual(titles[0], "Pinned Thesis Candidate")
+            self.assertEqual(titles[0], "Fresh First Seen Agent Memory")
+            self.assertLess(titles.index("Fresh First Seen Agent Memory"), titles.index("Future Source Relevant Memory Paper"))
+            self.assertLess(titles.index("Newer Low Score Agent Memory"), titles.index("Core Agent Memory Architecture"))
+            self.assertLess(titles.index("Core Agent Memory Architecture"), titles.index("Memory Benchmark for Agents"))
+            self.assertLess(titles.index("Same Date Higher Score Agent Memory"), titles.index("Same Date Lower Score Agent Memory"))
+            self.assertLess(titles.index("Alpha Stable Tie Agent Memory"), titles.index("Zulu Stable Tie Agent Memory"))
+            self.assertLess(titles.index("Memory Benchmark for Agents"), titles.index("Pinned Thesis Candidate"))
             self.assertLess(titles.index("Core Agent Memory Architecture"), titles.index("Maybe Future Memory Paper"))
             self.assertNotIn("Excluded False Positive", index_html)
             self.assertIn("Research note", index_html)
@@ -500,8 +598,10 @@ excluded:
             self.assertIn('<span class="badge tag tag-more">+1 more</span>', index_html)
             self.assertNotIn('class="maybe-separator"', index_html)
             future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
+            future_relevant = next(paper for paper in papers if paper["title"] == "Future Source Relevant Memory Paper")
             pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
             self.assertTrue(future["future_date"])
+            self.assertTrue(future_relevant["future_date"])
             self.assertTrue(pinned["pinned"])
             self.assertEqual(pinned["review_status"], "thesis_candidate")
             self.assertEqual(pinned["relevance_score"], 93)

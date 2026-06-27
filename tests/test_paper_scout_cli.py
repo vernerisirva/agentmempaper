@@ -1,4 +1,5 @@
 import io
+import json
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -70,6 +71,46 @@ class PaperScoutCliTest(unittest.TestCase):
             self.assertEqual(exit_code, 0)
             self.assertIn("Built Paper Scout dashboard", output.getvalue())
             self.assertEqual(build_site.call_args.kwargs["docs_dir"], str(docs_dir))
+
+    def test_explain_paper_reports_rule_matches_for_arxiv_id(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            data_path = Path(tmpdir) / "papers.json"
+            data_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "title": "Are We Ready For An Agent-Native Memory System?",
+                            "authors": ["Wei Zhou"],
+                            "abstract_summary": "Memory for large language model agents supports storage, retrieval, update, and consolidation.",
+                            "source": "arxiv",
+                            "source_id": "2606.24775",
+                            "arxiv_id": "2606.24775",
+                            "url": "https://arxiv.org/abs/2606.24775",
+                            "publication_date": "2026-06-23",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            output = io.StringIO()
+            with redirect_stdout(output):
+                exit_code = main(
+                    [
+                        "explain-paper",
+                        "--arxiv-id",
+                        "2606.24775",
+                        "--data-path",
+                        str(data_path),
+                    ]
+                )
+
+            text = output.getvalue()
+            self.assertEqual(exit_code, 0)
+            self.assertIn("Are We Ready For An Agent-Native Memory System?", text)
+            self.assertIn("decision=relevant", text)
+            self.assertIn("memory-systems", text)
+            self.assertIn("agent-native memory", text)
 
 
 if __name__ == "__main__":

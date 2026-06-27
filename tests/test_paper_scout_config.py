@@ -6,6 +6,26 @@ from paper_scout.config import load_config
 
 
 class PaperScoutConfigTest(unittest.TestCase):
+    def test_default_config_includes_agent_native_memory_search_terms(self):
+        config = load_config("config/paper_scout.yaml")
+
+        for term in [
+            "agent-native memory",
+            "agent native memory",
+            "agent memory system",
+            "agent memory systems",
+            "LLM agent memory system",
+            "memory system for LLM agents",
+            "memory module LLM agent",
+            "persistent memory LLM agent",
+            "long-term memory LLM agent",
+            "memory retrieval LLM agent",
+            "memory consolidation LLM agent",
+            "agent memory evaluation",
+            "agent memory benchmark",
+        ]:
+            self.assertIn(term, config.terms)
+
     def test_loads_research_context_and_env_state_override(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             config_path = Path(tmpdir) / "paper_scout.yaml"

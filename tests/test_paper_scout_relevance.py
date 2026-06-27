@@ -6,6 +6,54 @@ from paper_scout.evaluation import relevance_fixture_examples, evaluate_relevanc
 
 
 class PaperScoutRelevanceTest(unittest.TestCase):
+    def test_rules_mark_agent_native_memory_system_paper_highly_relevant(self):
+        candidate = PaperCandidate(
+            title="Are We Ready For An Agent-Native Memory System?",
+            authors=["Wei Zhou", "Guoliang Li", "Fan Wu"],
+            abstract=(
+                "Memory for large language model (LLM) agents has rapidly evolved "
+                "from retrieval-augmented mechanisms into a data management system "
+                "that supports persistent information storage, retrieval, update, "
+                "consolidation, and lifecycle governance throughout agent execution. "
+                "We evaluate agent-native memory systems for LLM agents."
+            ),
+            source="arxiv",
+            source_id="2606.24775",
+            arxiv_id="2606.24775",
+            url="https://arxiv.org/abs/2606.24775",
+            published_date="2026-06-23",
+        )
+
+        result = classify_with_rules(candidate)
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("agent-memory", result.tags)
+        self.assertIn("memory-systems", result.tags)
+        self.assertIn("llm-agents", result.tags)
+        self.assertIn("evaluation", result.tags)
+
+    def test_rules_mark_memory_systems_for_llm_agents_highly_relevant(self):
+        candidate = PaperCandidate(
+            title="Memory Modules for LLM Agents",
+            authors=["Ada Lovelace"],
+            abstract=(
+                "This paper studies a memory system for LLM agents with memory "
+                "representation, storage, retrieval, maintenance, and consolidation."
+            ),
+            source="fixture",
+            source_id="memory-system-llm-agents",
+            url="https://example.test/memory-system",
+            published_date="2026-01-01",
+        )
+
+        result = classify_with_rules(candidate)
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("memory-systems", result.tags)
+        self.assertIn("memory-policy", result.tags)
+
     def test_rules_mark_agent_memory_paper_relevant(self):
         candidate = PaperCandidate(
             title="Long-Term Memory for LLM Agents",

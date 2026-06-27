@@ -6,33 +6,16 @@ Latest daily digest: [2026-06-27](2026-06-27.md).
 
 ## Run Summary
 
-- **Run ID:** 18
+- **Run ID:** 19
 - **Candidates fetched:** 892
 - **New unique papers:** 305
 - **Relevant:** 321
 - **Maybe relevant:** 80
 - **Irrelevant:** 491
-- **Source summary:** arxiv: 27, openalex: 856, semantic_scholar: 9
+- **Source summary:** arxiv: 29, openalex: 856, semantic_scholar: 7
 
 ## Source Warnings
 
-- arxiv failed for 'memory system for LLM agents': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+system+for+LLM+agents%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'memory module LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+module+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'persistent memory LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22persistent+memory+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'long-term memory LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22long-term+memory+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'memory retrieval LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'memory consolidation LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+consolidation+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'agent memory evaluation': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agent+memory+evaluation%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'agent memory benchmark': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agent+memory+benchmark%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'deep research agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'deep research agents': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agents%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'deep research memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'deep research agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'agentic memory deep research': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agentic+memory+deep+research%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'autonomous research agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22autonomous+research+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'literature review agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22literature+review+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'research agent long-term memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+agent+long-term+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'parametric memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22parametric+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'Engram LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'Engram memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'multilingual Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22multilingual+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error

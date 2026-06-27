@@ -1,6 +1,7 @@
 import tempfile
 import unittest
 import json
+import re
 from pathlib import Path
 
 from paper_scout.models import ClassificationResult, PaperCandidate
@@ -48,6 +49,17 @@ SAMPLE_DIGEST = """# Paper Scout Digest - 2026-06-26
 - **Tags:** deep-research, retrieval
 - **Abstract summary:** A compact summary of retrieval memory for deep research agents.
 """
+
+
+def _visible_card_html(html: str, title_slug: str) -> str:
+    match = re.search(
+        rf'<article class="paper-card[^"]*"[^>]+data-title="{re.escape(title_slug)}"[^>]*>(.*?)<details class="paper-more">',
+        html,
+        flags=re.DOTALL,
+    )
+    if not match:
+        raise AssertionError(f"Could not find visible card for {title_slug!r}")
+    return match.group(1)
 
 
 class PaperScoutSiteTest(unittest.TestCase):
@@ -409,6 +421,10 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("https://example.test/latest", papers_json)
             self.assertIn("https://arxiv.org/abs/2606.12345", papers_json)
             self.assertIn("76/100", index_html)
+            visible_card = _visible_card_html(index_html, "latest deep research memory")
+            self.assertNotIn("/100", visible_card)
+            self.assertNotIn("Memory architecture or policy", visible_card)
+            self.assertIn("Screening details", index_html)
 
     def test_index_and_latest_pages_have_library_and_latest_run_framing(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -434,6 +450,8 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("Published", index_html)
             self.assertIn('<label class="select-field relevance-filter" for="relevance-filter">', index_html)
             self.assertIn('<option value="relevant" selected>Highly relevant</option>', index_html)
+            self.assertIn('<option value="all">All papers</option>', index_html)
+            self.assertIn('<option value="maybe">Maybe relevant</option>', index_html)
             self.assertNotIn('id="source-filters"', index_html)
             self.assertNotIn('id="tag-filter"', index_html)
             self.assertIn("Technical diagnostics", index_html)
@@ -481,10 +499,13 @@ class PaperScoutSiteTest(unittest.TestCase):
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
 
             html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
             self.assertIn("Persistent Memory for LLM Agents", html)
             self.assertIn("2026-06-26", html)
             self.assertIn("arxiv", html)
-            self.assertIn("94/100", html)
+            self.assertIn("Screening details", html)
+            self.assertIn("Score: 94/100", html)
+            self.assertIn('"relevance_score": 94', papers_json)
             self.assertIn("Directly studies persistent memory for LLM agents.", html)
             self.assertIn("agent-memory", html)
             self.assertIn("https://example.test/persistent", html)
@@ -497,6 +518,13 @@ class PaperScoutSiteTest(unittest.TestCase):
                 html,
                 r'<article class="paper-card compact"[^>]+data-title="deep research agent retrieval memory"[^>]+hidden>',
             )
+            visible_card = _visible_card_html(html, "persistent memory for llm agents")
+            self.assertIn("Why included", visible_card)
+            self.assertIn("Published 2026-06-26", visible_card)
+            self.assertIn("Source: arXiv", visible_card)
+            self.assertNotIn("/100", visible_card)
+            self.assertNotIn("Memory architecture or policy", visible_card)
+            self.assertNotIn("agent-memory", visible_card)
 
     def test_build_site_exits_gracefully_when_no_digest_exists(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -595,7 +623,9 @@ excluded:
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
             self.assertIn("Published: 2026-07-04 · source date", index_html)
-            self.assertIn('<span class="badge tag tag-more">+1 more</span>', index_html)
+            core_visible = _visible_card_html(index_html, "core agent memory architecture")
+            self.assertNotIn("benchmark", core_visible)
+            self.assertIn("benchmark", index_html)
             self.assertNotIn('class="maybe-separator"', index_html)
             future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
             future_relevant = next(paper for paper in papers if paper["title"] == "Future Source Relevant Memory Paper")

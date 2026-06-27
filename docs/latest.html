@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Latest Paper Scout Discoveries</title>
+  <title>Latest Paper Scout Run</title>
   <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,7 +23,7 @@
             </span>
           </nav>
           <p class="eyebrow">Latest update 2026-06-27</p>
-          <h1>Latest discoveries</h1>
+          <h1>Latest run</h1>
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
 
@@ -64,11 +64,11 @@
             <h2>Papers first seen in the latest Paper Scout run.</h2>
           </div>
           <div class="paper-list" id="paper-list">
-            <p class="empty">No papers in this section.</p>
+            <p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>
           </div>
           <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
         </section>
-        <details class="source-diagnostics"><summary>Source diagnostics <span>5 warnings</span></summary><ul><li>arxiv failed for &#x27;Engram LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
+        <details class="source-diagnostics"><summary>Source diagnostics <span>5 source queries were rate-limited</span></summary><ul><li>arxiv failed for &#x27;Engram LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
 <li>arxiv failed for &#x27;Engram memory LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+memory+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
 <li>arxiv failed for &#x27;multilingual Engram&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22multilingual+Engram%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
 <li>arxiv failed for &#x27;Megatron-LM Engram&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
@@ -102,6 +102,8 @@
   function latestRelevantRank(a, b) {
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
+    if (bucket) return bucket;
     const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
     if (date) return date;
     const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);

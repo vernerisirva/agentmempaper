@@ -790,6 +790,107 @@ excluded:
             self.assertEqual(paper["publication_date_source"], "ssrn")
             self.assertEqual(paper["publication_date_confidence"], "high")
 
+    def test_ssrn_date_override_and_relevance_refresh_for_agentic_ai_architecture(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            curation_path = root / "config" / "curation.yaml"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir()
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=365)
+            title = "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems"
+            candidate = PaperCandidate(
+                title=title,
+                authors=["Konstantinos I. Roumeliotis", "Ranjan Sapkota"],
+                abstract=(
+                    "The rapid transition from reactive large language model interfaces to persistent, "
+                    "action-capable systems has revealed fundamental gaps in the architectural understanding "
+                    "of Agentic AI, particularly in disentangling inference, orchestration, and execution layers."
+                ),
+                source="semantic_scholar",
+                source_id="openclaw",
+                doi="10.2139/ssrn.6584998",
+                url="https://www.semanticscholar.org/paper/openclaw",
+                published_date="2026",
+                publication_year="2026",
+                publication_date_precision="year",
+                publication_date_source="semantic_scholar",
+            )
+            key = store.upsert_paper(
+                candidate,
+                ClassificationResult(
+                    91,
+                    "relevant",
+                    "Focuses on persistent or long-term memory for agent behavior.",
+                    ["long-term-memory", "agent-memory", "memory-systems", "llm-agents"],
+                    candidate.abstract,
+                ),
+            )
+            store.record_sighting(run_id, key, candidate, "agentic ai memory")
+            memory_candidate = PaperCandidate(
+                title="Core Persistent Memory for LLM Agents",
+                authors=["Ada Lovelace"],
+                abstract="Persistent memory storage, retrieval, update, and consolidation for LLM agents.",
+                source="arxiv",
+                source_id="core-memory",
+                url="https://example.test/core-memory",
+                published_date="2026-06-20",
+            )
+            memory_key = store.upsert_paper(
+                memory_candidate,
+                ClassificationResult(
+                    90,
+                    "relevant",
+                    "Studies persistent memory storage and retrieval for LLM agents.",
+                    ["agent-memory", "memory-systems", "llm-agents"],
+                    memory_candidate.abstract,
+                ),
+            )
+            store.record_sighting(run_id, memory_key, memory_candidate, "agent memory")
+            store.finish_run(run_id, fetched_count=2, new_count=2, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+            curation_path.write_text(
+                """
+date_overrides:
+  - doi: "10.2139/ssrn.6584998"
+    title: "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems"
+    publication_date: "2026-04-15"
+    publication_date_precision: "exact"
+    publication_date_source: "ssrn"
+    publication_date_confidence: "high"
+    display_label: "Date written"
+    note: "SSRN landing page lists Date Written: April 15, 2026."
+""",
+                encoding="utf-8",
+            )
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            paper = next(paper for paper in papers if paper["title"] == title)
+            visible_card = _visible_card_html(html, title.lower())
+            self.assertEqual(paper["publication_date"], "2026-04-15")
+            self.assertEqual(paper["publication_date_precision"], "exact")
+            self.assertEqual(paper["publication_date_source"], "ssrn")
+            self.assertEqual(paper["publication_date_confidence"], "high")
+            self.assertEqual(paper["relevance_decision"], "maybe")
+            self.assertLess(paper["relevance_score"], 70)
+            self.assertNotIn("long-term-memory", paper["tags"])
+            self.assertNotIn("memory-systems", paper["tags"])
+            self.assertIn("Date written 2026-04-15", html)
+            self.assertIn("Peripheral candidate", paper["relevance_reason"])
+            self.assertNotIn("persistent or long-term memory", visible_card)
+            self.assertRegex(
+                html,
+                r'<article class="paper-card compact"[^>]+data-title="openclaw and ollama in agentic ai: toward fully autonomous and scalable ai agent systems"[^>]+hidden>',
+            )
+
     def test_build_site_refreshes_stale_relevance_classifications(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)

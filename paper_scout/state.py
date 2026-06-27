@@ -56,15 +56,15 @@ class PaperStore:
                     abstract = CASE WHEN excluded.abstract != '' THEN excluded.abstract ELSE papers.abstract END,
                     source = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.source ELSE papers.source END,
                     source_id = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.source_id ELSE papers.source_id END,
                     doi = COALESCE(papers.doi, excluded.doi),
                     arxiv_id = COALESCE(papers.arxiv_id, excluded.arxiv_id),
@@ -73,28 +73,28 @@ class PaperStore:
                     url = COALESCE(excluded.url, papers.url),
                     published_date = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.published_date ELSE COALESCE(papers.published_date, excluded.published_date) END,
                     publication_year = COALESCE(papers.publication_year, excluded.publication_year),
                     publication_date_precision = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.publication_date_precision ELSE COALESCE(papers.publication_date_precision, excluded.publication_date_precision) END,
                     publication_date_source = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.publication_date_source ELSE COALESCE(papers.publication_date_source, excluded.publication_date_source) END,
                     publication_date_confidence = CASE
                         WHEN (
-                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) > (
-                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.publication_date_confidence ELSE COALESCE(papers.publication_date_confidence, excluded.publication_date_confidence) END,
                     updated_date = COALESCE(excluded.updated_date, papers.updated_date),
                     raw_json = excluded.raw_json,

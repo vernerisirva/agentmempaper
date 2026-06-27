@@ -9,6 +9,7 @@ PRECISION_RANK = {
     "year": 1,
     "month": 2,
     "day": 3,
+    "exact": 3,
 }
 
 

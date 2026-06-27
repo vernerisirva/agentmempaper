@@ -185,6 +185,33 @@ class PaperScoutRelevanceTest(unittest.TestCase):
                 self.assertNotEqual(result.decision, "relevant")
                 self.assertLess(result.score, 70)
 
+    def test_persistent_action_capable_systems_do_not_imply_persistent_memory(self):
+        result = classify_with_rules(
+            PaperCandidate(
+                title="OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems",
+                authors=["Konstantinos I. Roumeliotis", "Ranjan Sapkota"],
+                abstract=(
+                    "The rapid transition from reactive large language model interfaces to persistent, "
+                    "action-capable systems has revealed gaps in architectural understanding of Agentic AI, "
+                    "particularly in disentangling inference, orchestration, and execution layers. "
+                    "The architecture discusses memory hierarchy and says persistent memory can emerge "
+                    "from system integration as one autonomous capability among tool use, planning, "
+                    "orchestration, execution, governance, and benchmarking."
+                ),
+                source="semantic_scholar",
+                source_id="openclaw",
+                doi="10.2139/ssrn.6584998",
+                published_date="2026",
+            )
+        )
+
+        self.assertEqual(result.decision, "maybe")
+        self.assertLess(result.score, 70)
+        self.assertIn("Peripheral candidate", result.reason)
+        self.assertNotIn("persistent or long-term memory", result.reason)
+        self.assertNotIn("long-term-memory", result.tags)
+        self.assertNotIn("memory-systems", result.tags)
+
     def test_rules_exclude_biological_and_human_memory_without_ai_agent_context(self):
         examples = [
             (

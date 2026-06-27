@@ -54,7 +54,8 @@ def enrich_candidate_publication_date(
         return _with_metadata(candidate, current.value, current.year, current.precision, current.source, candidate.publication_date_confidence, doi, raw)
 
     published = publication_date(enriched.value, enriched.source)
-    return _with_metadata(candidate, published.value, published.year, published.precision, enriched.source, enriched.confidence, doi, raw)
+    precision = "exact" if enriched.source == "ssrn" and published.precision == "day" else published.precision
+    return _with_metadata(candidate, published.value, published.year, precision, enriched.source, enriched.confidence, doi, raw)
 
 
 def extract_ssrn_id(value: str | None) -> str | None:

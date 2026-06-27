@@ -138,10 +138,24 @@ class CurationRule:
 
 
 @dataclass(frozen=True)
+class DateOverride:
+    title: str | None = None
+    canonical_id: str | None = None
+    doi: str | None = None
+    publication_date: str | None = None
+    publication_date_precision: str | None = None
+    publication_date_source: str | None = None
+    publication_date_confidence: str | None = None
+    display_label: str | None = None
+    note: str | None = None
+
+
+@dataclass(frozen=True)
 class CurationConfig:
     pinned: list[CurationRule] = field(default_factory=list)
     overrides: list[CurationRule] = field(default_factory=list)
     excluded: list[CurationRule] = field(default_factory=list)
+    date_overrides: list[DateOverride] = field(default_factory=list)
 
 
 def build_site(
@@ -585,9 +599,12 @@ def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_
             continue
         pinned_rule = _matching_rule(paper, curation.pinned)
         override_rule = _matching_rule(paper, curation.overrides)
+        date_override = _matching_date_override(paper, curation.date_overrides)
         updated = paper
         if override_rule:
             updated = _apply_override(updated, override_rule)
+        if date_override:
+            updated = _apply_date_override(updated, date_override)
         if pinned_rule:
             updated = LibraryPaper(
                 **{
@@ -606,6 +623,33 @@ def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_
         )
         curated.append(updated)
     return curated
+
+
+def _matching_date_override(paper: LibraryPaper, overrides: list[DateOverride]) -> DateOverride | None:
+    normalized = _normalized_title(paper.title)
+    for override in overrides:
+        if override.canonical_id and override.canonical_id == paper.canonical_id:
+            return override
+        if override.doi and paper.doi and override.doi.lower() == paper.doi.lower():
+            return override
+        if override.title and _normalized_title(override.title) == normalized:
+            return override
+    return None
+
+
+def _apply_date_override(paper: LibraryPaper, override: DateOverride) -> LibraryPaper:
+    published = publication_date(override.publication_date, override.publication_date_source or "manual", paper.publication_year)
+    return LibraryPaper(
+        **{
+            **paper.__dict__,
+            "published_date": published.value or paper.published_date,
+            "publication_year": published.year or paper.publication_year,
+            "publication_date_precision": override.publication_date_precision or published.precision,
+            "publication_date_source": override.publication_date_source or published.source or paper.publication_date_source,
+            "publication_date_confidence": override.publication_date_confidence or paper.publication_date_confidence,
+            "research_note": paper.research_note or override.note,
+        }
+    )
 
 
 def _refresh_rule_classifications(papers: list[LibraryPaper]) -> list[LibraryPaper]:
@@ -679,6 +723,7 @@ def _load_curation(path: Path) -> CurationConfig:
         pinned=[_curation_rule(item) for item in sections.get("pinned", [])],
         overrides=[_curation_rule(item) for item in sections.get("overrides", [])],
         excluded=[_curation_rule(item) for item in sections.get("excluded", [])],
+        date_overrides=[_date_override(item) for item in sections.get("date_overrides", [])],
     )
 
 
@@ -749,6 +794,20 @@ def _curation_rule(item: dict[str, object]) -> CurationRule:
         tags=tags,
         review_status=_redact_secrets(str(item["review_status"])) if item.get("review_status") else None,
         reason=_redact_secrets(str(item["reason"])) if item.get("reason") else None,
+    )
+
+
+def _date_override(item: dict[str, object]) -> DateOverride:
+    return DateOverride(
+        title=_redact_secrets(str(item["title"])) if item.get("title") else None,
+        canonical_id=_redact_secrets(str(item["canonical_id"])) if item.get("canonical_id") else None,
+        doi=_redact_secrets(str(item["doi"])) if item.get("doi") else None,
+        publication_date=_redact_secrets(str(item["publication_date"])) if item.get("publication_date") else None,
+        publication_date_precision=_redact_secrets(str(item["publication_date_precision"])) if item.get("publication_date_precision") else None,
+        publication_date_source=_redact_secrets(str(item["publication_date_source"])) if item.get("publication_date_source") else None,
+        publication_date_confidence=_redact_secrets(str(item["publication_date_confidence"])) if item.get("publication_date_confidence") else None,
+        display_label=_redact_secrets(str(item["display_label"])) if item.get("display_label") else None,
+        note=_redact_secrets(str(item["note"])) if item.get("note") else None,
     )
 
 
@@ -1800,7 +1859,7 @@ def _bibtex_key(paper: LibraryPaper, year: str) -> str:
 def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: list[LibraryPaper]) -> None:
     report_dir.mkdir(parents=True, exist_ok=True)
     year_only = [paper for paper in papers if _publication_precision(paper) == "year"]
-    high_without_exact = [paper for paper in papers if paper.decision == "relevant" and _publication_precision(paper) != "day"]
+    high_without_exact = [paper for paper in papers if paper.decision == "relevant" and precision_rank(_publication_precision(paper)) < precision_rank("day")]
     future_or_imprecise = [paper for paper in papers if paper.future_date or _publication_precision(paper) in {"year", "month"}]
     high_generic_reason = [
         paper
@@ -1816,11 +1875,24 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         if paper.decision == "maybe"
         and re.search(r"agent[- ]native memory|llm agents?.{0,80}memory|memory systems?.{0,80}llm agents?|autonomous llm agents?.{0,80}memory", " ".join([paper.title, paper.abstract_summary]), flags=re.I)
     ]
+    persistent_reason_without_memory = [
+        paper
+        for paper in papers
+        if re.search(r"persistent or long[- ]term memory", paper.reason, flags=re.I)
+        and not _has_explicit_agent_memory_evidence(paper)
+    ]
+    high_agentic_without_memory = [
+        paper
+        for paper in papers
+        if paper.score >= 70
+        and re.search(r"\bagentic ai\b|\bagentic artificial intelligence\b|\borchestration\b|\bexecution layers?\b", " ".join([paper.title, paper.abstract_summary]), flags=re.I)
+        and not _has_explicit_agent_memory_evidence(paper)
+    ]
     enrichment_warnings = [paper for paper in papers if paper.metadata_warnings]
     ssrn_or_doi_weak = [
         paper
         for paper in papers
-        if _publication_precision(paper) != "day"
+        if precision_rank(_publication_precision(paper)) < precision_rank("day")
         and (
             (paper.url and "ssrn.com" in paper.url)
             or (paper.doi and paper.doi.lower().startswith("10.2139/ssrn."))
@@ -1849,6 +1921,8 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         f"- **Highly relevant without exact date:** {len(high_without_exact)}",
         f"- **Biological/cognitive high-relevance risks:** {len(biological_high)}",
         f"- **Highly relevant with generic/peripheral reasons:** {len(high_generic_reason)}",
+        f"- **Persistent-memory reason without explicit memory evidence:** {len(persistent_reason_without_memory)}",
+        f"- **High-scoring agentic-AI papers without explicit memory evidence:** {len(high_agentic_without_memory)}",
         f"- **Maybe papers with core memory phrases:** {len(maybe_core)}",
         f"- **Future or imprecise source dates:** {len(future_or_imprecise)}",
         "",
@@ -1862,6 +1936,8 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         ("Highly Relevant Without Exact Date", high_without_exact),
         ("Biological/Cognitive High-Relevance Risks", biological_high),
         ("Highly Relevant With Generic Reasons", high_generic_reason),
+        ("Persistent-Memory Reasons Without Explicit Memory Evidence", persistent_reason_without_memory),
+        ("High-Scoring Agentic-AI Papers Without Explicit Memory Evidence", high_agentic_without_memory),
         ("Maybe Papers With Core Memory Phrases", maybe_core),
         ("Future Or Imprecise Source Dates", future_or_imprecise),
     ]
@@ -1877,6 +1953,24 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
                 lines.append(f"  - {warning}")
         lines.append("")
     (report_dir / f"metadata-quality-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def _has_explicit_agent_memory_evidence(paper: LibraryPaper) -> bool:
+    text = " ".join([paper.title, paper.abstract_summary, paper.reason, " ".join(paper.tags)]).lower()
+    patterns = [
+        r"\bagent[- ]native memory\b",
+        r"\bagent memory\b",
+        r"\bmemory systems?\b",
+        r"\bmemory modules?\b",
+        r"\bpersistent memory\b",
+        r"\blong[- ]term memory\b",
+        r"\b(episodic|semantic|procedural) memory\b",
+        r"\bmemory (storage|retrieval|update|consolidation|governance|policy|benchmark|evaluation)\b",
+        r"\bshared memory\b",
+        r"\bparametric memory\b",
+        r"\bengram\b",
+    ]
+    return any(re.search(pattern, text) for pattern in patterns)
 
 
 def _bibtex_escape(value: str) -> str:

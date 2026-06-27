@@ -12,6 +12,7 @@ import sqlite3
 
 from .deduplication import normalize_arxiv_id
 from .dates import effective_sort_date, precision_rank, publication_date, sort_date_value
+from .enrichment import DateEnrichmentDiagnostics, enrich_candidate_publication_date
 from .fetchers.arxiv import parse_arxiv_feed
 from .http import HttpClient
 from .models import PaperCandidate
@@ -86,6 +87,7 @@ class LibraryPaper:
     publication_year: str | None = None
     publication_date_precision: str | None = None
     publication_date_source: str | None = None
+    publication_date_confidence: str | None = None
     appeared_in_latest_run: bool = False
     newly_discovered_in_latest_run: bool = False
     sources: list[str] = field(default_factory=list)
@@ -97,6 +99,7 @@ class LibraryPaper:
     relevance_label: str | None = None
     future_date: bool = False
     screening_abstract: str | None = None
+    metadata_warnings: list[str] = field(default_factory=list)
 
     @property
     def authors_text(self) -> str:
@@ -162,7 +165,7 @@ def build_site(
     if not library_papers:
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
-    library_papers = _enrich_library_arxiv_dates(library_papers)
+    library_papers = _enrich_library_dates(library_papers)
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
@@ -420,19 +423,31 @@ def _merge_dashboard_duplicates(papers: list[LibraryPaper]) -> list[LibraryPaper
     )
 
 
-def _enrich_library_arxiv_dates(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+def _enrich_library_dates(papers: list[LibraryPaper]) -> list[LibraryPaper]:
     http = HttpClient(retries=1, pause_seconds=0.1)
     cache: dict[str, tuple[str | None, str | None]] = {}
     enriched: list[LibraryPaper] = []
     for paper in papers:
+        candidate = _paper_to_candidate(paper)
+        diagnostics = DateEnrichmentDiagnostics()
+        enriched_candidate = enrich_candidate_publication_date(candidate, http=http, diagnostics=diagnostics)
+        if enriched_candidate.published_date and (
+            enriched_candidate.published_date != paper.published_date
+            or enriched_candidate.publication_date_source != paper.publication_date_source
+        ):
+            enriched.append(_paper_with_candidate_date(paper, enriched_candidate, diagnostics.warnings))
+            continue
         if _publication_precision(paper) != "year" or not paper.arxiv_id:
-            enriched.append(paper)
+            if diagnostics.warnings:
+                enriched.append(LibraryPaper(**{**paper.__dict__, "metadata_warnings": [*paper.metadata_warnings, *diagnostics.warnings]}))
+            else:
+                enriched.append(paper)
             continue
         if paper.arxiv_id not in cache:
             cache[paper.arxiv_id] = _fetch_arxiv_publication_date(paper.arxiv_id, http)
         published_date, updated_date = cache[paper.arxiv_id]
         if not published_date:
-            enriched.append(paper)
+            enriched.append(LibraryPaper(**{**paper.__dict__, "metadata_warnings": [*paper.metadata_warnings, *diagnostics.warnings]}))
             continue
         enriched.append(
             LibraryPaper(
@@ -442,15 +457,61 @@ def _enrich_library_arxiv_dates(papers: list[LibraryPaper]) -> list[LibraryPaper
                     "publication_year": _paper_year_from_value(published_date) or paper.publication_year,
                     "publication_date_precision": "day",
                     "publication_date_source": "arxiv",
+                    "publication_date_confidence": "high",
                     "last_seen_at": paper.last_seen_at,
                     "alternate_urls": _ordered_unique([*paper.alternate_urls, f"https://arxiv.org/abs/{paper.arxiv_id}"]),
                     "sources": _ordered_unique([*paper.sources, "arxiv"]),
                     "source_ids": _merge_source_ids(paper.source_ids, {"arxiv": [paper.arxiv_id]}),
                     "screening_abstract": paper.screening_abstract,
+                    "metadata_warnings": [*paper.metadata_warnings, *diagnostics.warnings],
                 }
             )
         )
     return enriched
+
+
+def _paper_to_candidate(paper: LibraryPaper) -> PaperCandidate:
+    return PaperCandidate(
+        title=paper.title,
+        authors=paper.authors,
+        abstract=paper.screening_abstract or paper.abstract_summary,
+        source=paper.source,
+        source_id=paper.source_id or paper.canonical_id,
+        doi=paper.doi,
+        arxiv_id=paper.arxiv_id,
+        semantic_scholar_id=paper.semantic_scholar_id,
+        openalex_id=paper.openalex_id,
+        url=paper.url,
+        published_date=paper.published_date,
+        publication_year=paper.publication_year,
+        publication_date_precision=paper.publication_date_precision,
+        publication_date_source=paper.publication_date_source,
+        publication_date_confidence=paper.publication_date_confidence,
+        raw={},
+    )
+
+
+def _paper_with_candidate_date(paper: LibraryPaper, candidate: PaperCandidate, warnings: list[str]) -> LibraryPaper:
+    alternate_urls = paper.alternate_urls
+    if candidate.doi:
+        alternate_urls = _ordered_unique([*alternate_urls, f"https://doi.org/{candidate.doi}"])
+    sources = paper.sources
+    if candidate.publication_date_source == "ssrn":
+        sources = _ordered_unique([*sources, "ssrn"])
+    return LibraryPaper(
+        **{
+            **paper.__dict__,
+            "doi": candidate.doi or paper.doi,
+            "published_date": candidate.published_date,
+            "publication_year": candidate.publication_year,
+            "publication_date_precision": candidate.publication_date_precision,
+            "publication_date_source": candidate.publication_date_source,
+            "publication_date_confidence": candidate.publication_date_confidence,
+            "alternate_urls": alternate_urls,
+            "sources": sources,
+            "metadata_warnings": [*paper.metadata_warnings, *warnings],
+        }
+    )
 
 
 def _fetch_arxiv_publication_date(arxiv_id: str, http: HttpClient) -> tuple[str | None, str | None]:
@@ -751,12 +812,14 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         publication_year=best_date.year,
         publication_date_precision=best_date.precision,
         publication_date_source=best_date.source,
+        publication_date_confidence=_best_publication_confidence(left, right, best_date.source),
         appeared_in_latest_run=left.appeared_in_latest_run or right.appeared_in_latest_run,
         newly_discovered_in_latest_run=left.newly_discovered_in_latest_run or right.newly_discovered_in_latest_run,
         sources=sources,
         source_ids=source_ids,
         alternate_urls=alternate_urls,
         screening_abstract=best.screening_abstract or left.screening_abstract or right.screening_abstract,
+        metadata_warnings=[*left.metadata_warnings, *right.metadata_warnings],
     )
 
 
@@ -766,6 +829,14 @@ def _best_publication_metadata(left: LibraryPaper, right: LibraryPaper):
     if precision_rank(right_date.precision) > precision_rank(left_date.precision):
         return right_date
     return left_date
+
+
+def _best_publication_confidence(left: LibraryPaper, right: LibraryPaper, source: str | None) -> str | None:
+    if source == right.publication_date_source:
+        return right.publication_date_confidence
+    if source == left.publication_date_source:
+        return left.publication_date_confidence
+    return left.publication_date_confidence or right.publication_date_confidence
 
 
 def _merge_source_ids(*groups: dict[str, list[str]]) -> dict[str, list[str]]:
@@ -794,6 +865,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         _ensure_site_column(db, "publication_year", "TEXT")
         _ensure_site_column(db, "publication_date_precision", "TEXT")
         _ensure_site_column(db, "publication_date_source", "TEXT")
+        _ensure_site_column(db, "publication_date_confidence", "TEXT")
         latest_run = db.execute("SELECT id, started_at FROM runs ORDER BY id DESC LIMIT 1").fetchone()
         latest_run_id = int(latest_run["id"]) if latest_run else None
         latest_started_at = str(latest_run["started_at"]) if latest_run else None
@@ -862,6 +934,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 publication_year=str(row["publication_year"]) if row["publication_year"] else _paper_year_from_value(row["published_date"]),
                 publication_date_precision=str(row["publication_date_precision"]) if row["publication_date_precision"] else publication_date(row["published_date"], None).precision,
                 publication_date_source=str(row["publication_date_source"]) if row["publication_date_source"] else str(row["source"]),
+                publication_date_confidence=str(row["publication_date_confidence"]) if row["publication_date_confidence"] else _date_confidence(str(row["publication_date_precision"]) if row["publication_date_precision"] else None, str(row["publication_date_source"]) if row["publication_date_source"] else str(row["source"])),
                 appeared_in_latest_run=appeared_in_latest_run,
                 newly_discovered_in_latest_run=newly_discovered,
                 sources=sources,
@@ -930,6 +1003,7 @@ def _library_from_digest(digest: ParsedDigest, latest_run: bool, newly_discovere
                 publication_year=published.year,
                 publication_date_precision=published.precision,
                 publication_date_source=published.source,
+                publication_date_confidence=_date_confidence(published.precision, published.source),
                 appeared_in_latest_run=latest_run,
                 newly_discovered_in_latest_run=newly_discovered,
             )
@@ -997,6 +1071,7 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "publication_year": paper.publication_year or _paper_year_from_value(paper.published_date),
         "publication_date_precision": _publication_precision(paper),
         "publication_date_source": paper.publication_date_source,
+        "publication_date_confidence": paper.publication_date_confidence,
         "effective_sort_date": _latest_relevant_date(paper),
         "first_seen_date": paper.first_seen_date,
         "first_seen_at": paper.first_seen_at,
@@ -1440,7 +1515,6 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
     secondary_links = _secondary_links(paper)
     published = _published_text(paper)
-    published_meta = published if published.startswith("Published") else f"Published {published}"
     search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, paper.research_note or "", " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
     tag_text = " ".join(paper.tags)
     source_text = " ".join(sources)
@@ -1456,7 +1530,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
       <div class="paper-main">
         <h3>{escape(paper.title)}</h3>
-        <p class="meta">{escape(paper.authors_text)} · {escape(published_meta)} · Source: {escape(source_names)}</p>
+        <p class="meta">{escape(paper.authors_text)} · {escape(published)} · Source: {escape(source_names)}</p>
         <p class="reason"><strong>Why included:</strong> {escape(_short_reason(paper))}</p>
       </div>
       <div class="paper-side">
@@ -1595,6 +1669,7 @@ def _source_label(source: str) -> str:
         "arxiv": "arXiv",
         "openalex": "OpenAlex",
         "semantic_scholar": "Semantic Scholar",
+        "ssrn": "SSRN",
     }
     return labels.get(source, source)
 
@@ -1607,12 +1682,14 @@ def _published_text(paper: LibraryPaper) -> str:
     precision = _publication_precision(paper)
     if precision == "year":
         year = paper.publication_year or _paper_year_from_value(paper.published_date)
-        return f"Published date unavailable · Year: {year}" if year else "Published date unavailable"
+        return f"Published date unavailable · Year: {year}" if year else "Publication date unavailable"
     if not paper.published_date:
-        return "unknown"
+        return "Publication date unavailable"
     if paper.future_date:
-        return f"Published: {paper.published_date} · source date"
-    return paper.published_date
+        return f"Date from source {paper.published_date}"
+    if paper.publication_date_source == "ssrn":
+        return f"Date written {paper.published_date}"
+    return f"Published {paper.published_date}"
 
 
 def _publication_precision(paper: LibraryPaper) -> str:
@@ -1622,6 +1699,20 @@ def _publication_precision(paper: LibraryPaper) -> str:
 def _paper_year_from_value(value: object) -> str | None:
     match = re.match(r"(\d{4})", str(value or ""))
     return match.group(1) if match else None
+
+
+def _date_confidence(precision: str | None, source: str | None) -> str | None:
+    if not precision or precision == "unknown":
+        return None
+    if precision == "year":
+        return "low"
+    if source in {"arxiv", "ssrn"}:
+        return "high"
+    if source and source.startswith(("crossref-created", "crossref-deposited")):
+        return "low"
+    if source and source.startswith("crossref"):
+        return "medium"
+    return "medium"
 
 
 def _short_reason(paper: LibraryPaper) -> str:
@@ -1649,6 +1740,7 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
             "publication_year",
             "publication_date_precision",
             "publication_date_source",
+            "publication_date_confidence",
             "effective_sort_date",
         ],
         lineterminator="\n",
@@ -1671,6 +1763,7 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
                 "publication_year": paper.publication_year or "",
                 "publication_date_precision": _publication_precision(paper),
                 "publication_date_source": paper.publication_date_source or "",
+                "publication_date_confidence": paper.publication_date_confidence or "",
                 "effective_sort_date": _latest_relevant_date(paper) or "",
             }
         )
@@ -1723,10 +1816,36 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         if paper.decision == "maybe"
         and re.search(r"agent[- ]native memory|llm agents?.{0,80}memory|memory systems?.{0,80}llm agents?|autonomous llm agents?.{0,80}memory", " ".join([paper.title, paper.abstract_summary]), flags=re.I)
     ]
+    enrichment_warnings = [paper for paper in papers if paper.metadata_warnings]
+    ssrn_or_doi_weak = [
+        paper
+        for paper in papers
+        if _publication_precision(paper) != "day"
+        and (
+            (paper.url and "ssrn.com" in paper.url)
+            or (paper.doi and paper.doi.lower().startswith("10.2139/ssrn."))
+            or any("ssrn.com" in url for url in paper.alternate_urls)
+        )
+    ]
+    first_seen_sort_fallback = [
+        paper
+        for paper in papers
+        if _latest_relevant_date(paper) == paper.first_seen_date and _publication_precision(paper) in {"unknown", "year"}
+    ]
+    low_confidence_dates = [
+        paper
+        for paper in papers
+        if paper.publication_date_confidence == "low"
+        or (paper.publication_date_source or "").startswith(("crossref-created", "crossref-deposited"))
+    ]
     lines = [
         f"# Paper Scout Metadata Quality - {report_date}",
         "",
         f"- **Year-only publication dates:** {len(year_only)}",
+        f"- **SSRN/DOI date enrichment warnings:** {len(enrichment_warnings)}",
+        f"- **SSRN/DOI papers still without exact dates:** {len(ssrn_or_doi_weak)}",
+        f"- **First-seen sort fallbacks:** {len(first_seen_sort_fallback)}",
+        f"- **Low-confidence date fields:** {len(low_confidence_dates)}",
         f"- **Highly relevant without exact date:** {len(high_without_exact)}",
         f"- **Biological/cognitive high-relevance risks:** {len(biological_high)}",
         f"- **Highly relevant with generic/peripheral reasons:** {len(high_generic_reason)}",
@@ -1736,6 +1855,10 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
     ]
     sections = [
         ("Year-Only Publication Dates", year_only),
+        ("SSRN/DOI Date Enrichment Warnings", enrichment_warnings),
+        ("SSRN/DOI Papers Still Without Exact Dates", ssrn_or_doi_weak),
+        ("First-Seen Sort Fallbacks", first_seen_sort_fallback),
+        ("Low-Confidence Date Fields", low_confidence_dates),
         ("Highly Relevant Without Exact Date", high_without_exact),
         ("Biological/Cognitive High-Relevance Risks", biological_high),
         ("Highly Relevant With Generic Reasons", high_generic_reason),
@@ -1750,6 +1873,8 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         for paper in items[:50]:
             date_text = paper.published_date or "unknown"
             lines.append(f"- **{paper.title}** — {paper.decision}, {date_text}, precision={_publication_precision(paper)}, source={paper.publication_date_source or 'unknown'}")
+            for warning in paper.metadata_warnings[:3]:
+                lines.append(f"  - {warning}")
         lines.append("")
     (report_dir / f"metadata-quality-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
 

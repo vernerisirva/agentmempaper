@@ -45,11 +45,11 @@ class PaperStore:
                 INSERT INTO papers(
                     canonical_key, title, authors_json, abstract, source, source_id, doi, arxiv_id,
                     semantic_scholar_id, openalex_id, url, published_date, publication_year,
-                    publication_date_precision, publication_date_source, updated_date, raw_json,
+                    publication_date_precision, publication_date_source, publication_date_confidence, updated_date, raw_json,
                     relevance_score, relevance_decision, relevance_reason, tags_json, abstract_summary,
                     first_seen_at, last_seen_at
                 )
-                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
                 ON CONFLICT(canonical_key) DO UPDATE SET
                     title = excluded.title,
                     authors_json = excluded.authors_json,
@@ -90,6 +90,12 @@ class PaperStore:
                         ) > (
                             CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.publication_date_source ELSE COALESCE(papers.publication_date_source, excluded.publication_date_source) END,
+                    publication_date_confidence = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.publication_date_confidence ELSE COALESCE(papers.publication_date_confidence, excluded.publication_date_confidence) END,
                     updated_date = COALESCE(excluded.updated_date, papers.updated_date),
                     raw_json = excluded.raw_json,
                     relevance_score = excluded.relevance_score,
@@ -115,6 +121,7 @@ class PaperStore:
                     candidate.publication_year,
                     candidate.publication_date_precision,
                     candidate.publication_date_source,
+                    candidate.publication_date_confidence,
                     candidate.updated_date,
                     json.dumps(candidate.raw),
                     classification.score,
@@ -208,6 +215,7 @@ class PaperStore:
                     publication_year TEXT,
                     publication_date_precision TEXT,
                     publication_date_source TEXT,
+                    publication_date_confidence TEXT,
                     updated_date TEXT,
                     raw_json TEXT NOT NULL,
                     relevance_score INTEGER NOT NULL,
@@ -250,6 +258,7 @@ class PaperStore:
             _ensure_column(db, "papers", "publication_year", "TEXT")
             _ensure_column(db, "papers", "publication_date_precision", "TEXT")
             _ensure_column(db, "papers", "publication_date_source", "TEXT")
+            _ensure_column(db, "papers", "publication_date_confidence", "TEXT")
 
 
 def _row_to_digest_paper(row: sqlite3.Row) -> DigestPaper:
@@ -269,6 +278,7 @@ def _row_to_digest_paper(row: sqlite3.Row) -> DigestPaper:
         publication_year=row["publication_year"],
         publication_date_precision=row["publication_date_precision"],
         publication_date_source=row["publication_date_source"],
+        publication_date_confidence=row["publication_date_confidence"] if "publication_date_confidence" in row.keys() else None,
     )
 
 
@@ -285,8 +295,23 @@ def _with_publication_metadata(candidate: PaperCandidate) -> PaperCandidate:
             "publication_year": published.year,
             "publication_date_precision": candidate.publication_date_precision or published.precision,
             "publication_date_source": candidate.publication_date_source or published.source,
+            "publication_date_confidence": candidate.publication_date_confidence or _publication_confidence(candidate.publication_date_precision or published.precision, candidate.publication_date_source or published.source),
         }
     )
+
+
+def _publication_confidence(precision: str | None, source: str | None) -> str | None:
+    if not precision or precision == "unknown":
+        return None
+    if precision == "year":
+        return "low"
+    if source in {"arxiv", "ssrn"}:
+        return "high"
+    if source and source.startswith(("crossref-created", "crossref-deposited")):
+        return "low"
+    if source and source.startswith("crossref"):
+        return "medium"
+    return "medium"
 
 
 def _ensure_column(db: sqlite3.Connection, table: str, column: str, definition: str) -> None:

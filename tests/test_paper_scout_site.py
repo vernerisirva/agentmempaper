@@ -3,7 +3,9 @@ import unittest
 import json
 import re
 from pathlib import Path
+from unittest.mock import patch
 
+from paper_scout.http import HttpRequestError
 from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.site import build_site
 from paper_scout.state import PaperStore
@@ -62,7 +64,22 @@ def _visible_card_html(html: str, title_slug: str) -> str:
     return match.group(1)
 
 
+class NoNetworkDateHttp:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def get_text(self, url, params=None, headers=None):
+        raise HttpRequestError("network", url, "network disabled in site unit tests")
+
+
 class PaperScoutSiteTest(unittest.TestCase):
+    def setUp(self):
+        self._http_patch = patch("paper_scout.site.HttpClient", NoNetworkDateHttp)
+        self._http_patch.start()
+
+    def tearDown(self):
+        self._http_patch.stop()
+
     def _write_state_fixture(self, state_path: Path) -> None:
         store = PaperStore(state_path)
         old_run_id = store.start_run(days=7)
@@ -639,7 +656,7 @@ excluded:
             self.assertIn("Research note", index_html)
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
-            self.assertIn("Published: 2026-07-04 · source date", index_html)
+            self.assertIn("Date from source 2026-07-04", index_html)
             self.assertNotIn("Published 2026 · Source", index_html)
             self.assertIn("Published date unavailable · Year: 2026", index_html)
             core_visible = _visible_card_html(index_html, "core agent memory architecture")
@@ -722,6 +739,56 @@ excluded:
             self.assertNotRegex(html, r"Published 2026(?:\s| · Source|<)")
             self.assertIn("Published 2026-02-02", html)
             self.assertTrue((report_dir / "metadata-quality-2026-06-26.md").exists())
+
+    def test_ssrn_date_written_is_displayed_as_date_written(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=365)
+            candidate = PaperCandidate(
+                title="Toward Fully Autonomous and Scalable AI Agent Systems",
+                authors=["Agent Author"],
+                abstract="A working paper about autonomous AI agent systems.",
+                source="openalex",
+                source_id="ssrn-agent-systems",
+                doi="10.2139/ssrn.6584998",
+                url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6584998",
+                published_date="2026-04-15",
+                publication_year="2026",
+                publication_date_precision="day",
+                publication_date_source="ssrn",
+                publication_date_confidence="high",
+            )
+            key = store.upsert_paper(
+                candidate,
+                ClassificationResult(
+                    82,
+                    "relevant",
+                    "Relevant because it discusses autonomous AI agent systems.",
+                    ["llm-agents"],
+                    "Autonomous AI agent systems working paper.",
+                ),
+            )
+            store.record_sighting(run_id, key, candidate, "autonomous research agent memory")
+            store.finish_run(run_id, fetched_count=1, new_count=1, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            paper = next(paper for paper in papers if paper["title"] == "Toward Fully Autonomous and Scalable AI Agent Systems")
+            self.assertIn("Date written 2026-04-15", html)
+            self.assertNotRegex(html, r"Published 2026(?:\s| · Source|<)")
+            self.assertEqual(paper["publication_date"], "2026-04-15")
+            self.assertEqual(paper["publication_date_source"], "ssrn")
+            self.assertEqual(paper["publication_date_confidence"], "high")
 
     def test_build_site_refreshes_stale_relevance_classifications(self):
         with tempfile.TemporaryDirectory() as tmpdir:

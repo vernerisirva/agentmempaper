@@ -20,6 +20,7 @@ class PaperCandidate:
     publication_year: str | None = None
     publication_date_precision: str | None = None
     publication_date_source: str | None = None
+    publication_date_confidence: str | None = None
     updated_date: str | None = None
     raw: dict[str, Any] = field(default_factory=dict)
 
@@ -57,3 +58,4 @@ class DigestPaper:
     publication_year: str | None = None
     publication_date_precision: str | None = None
     publication_date_source: str | None = None
+    publication_date_confidence: str | None = None

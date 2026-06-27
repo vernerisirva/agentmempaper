@@ -244,13 +244,14 @@ class PaperScoutSiteTest(unittest.TestCase):
             html = (docs_dir / "index.html").read_text(encoding="utf-8")
             archive_html = (docs_dir / "archive.html").read_text(encoding="utf-8")
             self.assertIn("Agentic Memory Paper Library", html)
-            self.assertIn("Total known papers", html)
-            self.assertIn("New in latest run", html)
+            self.assertIn("A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.", html)
             self.assertIn("Highly relevant", html)
-            self.assertIn("Maybe relevant", html)
-            self.assertIn("Recommended reading", html)
+            self.assertNotIn("Recommended reading", html)
+            self.assertNotIn("Full library", html)
+            self.assertNotIn("New in latest run", html)
+            self.assertNotIn("Source warning count", html)
             self.assertIn('<option value="recommended" selected>Recommended</option>', html)
-            self.assertIn("First seen date", html)
+            self.assertIn("First seen", html)
             self.assertIn("2026-06-25", archive_html)
             self.assertIn("2026-06-26", archive_html)
             self.assertIn("daily digests are kept for provenance", archive_html)
@@ -323,17 +324,44 @@ class PaperScoutSiteTest(unittest.TestCase):
 
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
-            self.assertIn("Sort library", index_html)
+            self.assertIn("Sort", index_html)
             self.assertIn("Recommended", index_html)
-            self.assertIn("Publication date, newest first", index_html)
-            self.assertIn("First seen by Paper Scout", index_html)
+            self.assertIn("Publication date", index_html)
+            self.assertIn("First seen", index_html)
             self.assertIn("Published", index_html)
+            self.assertIn("Technical diagnostics", index_html)
             self.assertIn("Latest discoveries", latest_html)
             self.assertIn("Papers first seen in the latest Paper Scout run.", latest_html)
             self.assertIn("Latest Deep Research Memory", latest_html)
             self.assertNotIn("Older Episodic Memory for Agents", latest_html)
 
-    def test_paper_cards_include_required_fields_and_compact_warnings(self):
+    def test_homepage_has_one_main_list_and_secondary_details(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertEqual(html.count('id="paper-list"'), 1)
+            self.assertEqual(html.count('data-title="latest deep research memory"'), 1)
+            self.assertNotIn("recommended-card", html)
+            self.assertNotIn("recommended-section", html)
+            self.assertLess(html.index("Search papers"), html.index("Latest Deep Research Memory"))
+            self.assertIn('<details class="technical-diagnostics">', html)
+            self.assertIn("<summary>Technical diagnostics</summary>", html)
+            self.assertIn('<details class="export-library">', html)
+            self.assertLess(html.index("Latest Deep Research Memory"), html.index("Export library"))
+            self.assertNotIn("Download CSV", html.split("</header>", 1)[0])
+
+    def test_paper_cards_include_required_fields_and_secondary_metadata(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
             digest_dir = root / "digests"
@@ -345,7 +373,7 @@ class PaperScoutSiteTest(unittest.TestCase):
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
 
-            html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
             self.assertIn("Persistent Memory for LLM Agents", html)
             self.assertIn("2026-06-26", html)
             self.assertIn("arxiv", html)
@@ -354,9 +382,9 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("agent-memory", html)
             self.assertIn("https://example.test/persistent", html)
             self.assertIn("Open paper", html)
-            self.assertIn("<details", html)
-            self.assertIn("Source diagnostics", html)
+            self.assertIn('<details class="paper-more">', html)
             self.assertIn("Copy citation", html)
+            self.assertIn("Maybe relevant", html)
 
     def test_build_site_exits_gracefully_when_no_digest_exists(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -449,6 +477,7 @@ excluded:
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
             self.assertIn("Published: 2026-07-04 · source date", index_html)
+            self.assertLess(index_html.index("Core Agent Memory Architecture"), index_html.index('class="maybe-separator"'))
             future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
             pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
             self.assertTrue(future["future_date"])
@@ -481,6 +510,7 @@ excluded:
             self.assertIn("relevance scoring", about_html.lower())
             self.assertIn("future publication dates", about_html)
             self.assertIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8"))
+            self.assertNotIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8").split("</header>", 1)[0])
             self.assertIn("title,authors,publication_date,first_seen_date,relevance_decision,relevance_score,tags,sources,url,doi,arxiv_id", csv_text.splitlines()[0])
             self.assertIn("Latest Deep Research Memory", csv_text)
             self.assertIn("@misc", bib_text)

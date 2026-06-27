@@ -865,77 +865,35 @@ def _latest_to_json(latest: ParsedDigest, latest_discoveries: list[LibraryPaper]
 def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
     source_buttons = sorted({source for paper in papers for source in (paper.sources or [paper.source]) if source})
     tag_options = sorted({tag for paper in papers for tag in paper.tags})
-    latest_markdown_url = f"https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(latest.date)}.md"
-    recommended = _recommended_papers(papers)
     return _page(
         "Agentic Memory Paper Library",
         f"""
         <header class="briefing-hero">
           <nav class="top-nav" aria-label="Primary">
-            <a class="brand" href="index.html">Paper Scout</a>
+            <a class="brand" href="index.html">Library</a>
             <span class="nav-links">
-              <a href="latest.html">Latest discoveries</a>
-              <a href="archive.html">Archive</a>
               <a href="about.html">About</a>
-              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
-              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+              <a href="archive.html">Archive</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
-          <div class="hero-grid">
-            <div>
-              <p class="eyebrow">Paper Scout</p>
-              <h1>Agentic Memory Paper Library</h1>
-              <p class="hero-copy">Updated daily with new papers on agentic memory, deep research agents, and memory mechanisms.</p>
-              <div class="hero-actions">
-                <a class="button primary" href="#paper-library">Browse library</a>
-                <a class="button secondary" href="latest.html">Latest discoveries</a>
-                <a class="button secondary" href="data/papers.bib">Download BibTeX</a>
-                <a class="button secondary" href="archive.html">Browse archive</a>
-              </div>
-            </div>
-            <aside class="digest-note" aria-label="Latest digest metadata">
-              <span>Latest update</span>
-              <strong>{escape(latest.date)}</strong>
-              <a href="{latest_markdown_url}">Open Markdown digest</a>
-            </aside>
+          <div class="library-hero">
+            <h1>Agentic Memory Paper Library</h1>
+            <p class="hero-copy">A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.</p>
+            {_hero_facts(papers, latest)}
           </div>
         </header>
-        <section class="paper-section recommended-section" id="recommended-reading">
-          <div class="section-heading">
-            <p class="section-kicker">Start here</p>
-            <h2>Recommended reading</h2>
-            <p>The strongest current matches, ranked by curation, relevance, score, source-date quality, and recency.</p>
-          </div>
-          <div class="recommended-grid">
-            {_recommended_cards(recommended)}
-          </div>
-        </section>
-        <section class="export-strip" aria-label="Export library">
-          <span>Share or export the library</span>
-          <a href="data/papers.csv">Download CSV</a>
-          <a href="data/papers.bib">Download BibTeX</a>
-          <a href="data/papers.json">Download JSON</a>
-        </section>
-        {_library_controls(source_buttons, tag_options)}
-        {_library_summary_strip(papers, latest)}
+        {_library_controls(source_buttons, tag_options, latest_toggle=False)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
-            <p class="section-kicker">Cumulative collection</p>
-            <h2>Full library</h2>
-            <p>The full Paper Scout library across all daily runs. Highly relevant papers rank first by default; maybe-relevant papers remain available for edge cases.</p>
+            <p class="section-kicker">Ranked library</p>
+            <h2>Papers to look at</h2>
           </div>
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers)}
           </div>
         </section>
-        {_warnings(latest.source_warnings)}
-        <section class="archive-strip" aria-labelledby="recent-archive-heading">
-          <div>
-            <p class="section-kicker">Provenance</p>
-            <h2 id="recent-archive-heading">Daily digests</h2>
-          </div>
-          <div class="archive-links">{''.join(f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(item.date)}.md">{escape(item.date)}</a>' for item in reversed(archive[:8]))}</div>
-        </section>
+        {_secondary_footer(latest, archive)}
         {FILTER_SCRIPT}
         """,
     )
@@ -955,7 +913,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
               <a href="archive.html">Archive</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
-              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
           <p class="eyebrow">Latest update {escape(latest.date)}</p>
@@ -1014,7 +972,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
               <a href="latest.html">Latest discoveries</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Latest Markdown</a>
-              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
           <p class="eyebrow">Paper Scout provenance</p>
@@ -1037,7 +995,7 @@ def _render_about_page() -> str:
               <a href="index.html">Library</a>
               <a href="latest.html">Latest discoveries</a>
               <a href="archive.html">Archive</a>
-              <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
           <p class="eyebrow">About</p>
@@ -1075,7 +1033,7 @@ def _render_about_page() -> str:
 
 
 def _page(title: str, body: str) -> str:
-    return f"""<!doctype html>
+    html = f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -1092,6 +1050,7 @@ def _page(title: str, body: str) -> str:
 </body>
 </html>
 """
+    return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
 
 
 def _summary_strip(digest: ParsedDigest) -> str:
@@ -1109,6 +1068,17 @@ def _summary_strip(digest: ParsedDigest) -> str:
       <div class="source-summary"><span>Source summary</span><strong>{escape(digest.summary.get("Source summary", "none"))}</strong></div>
     </section>
     """
+
+
+def _hero_facts(papers: list[LibraryPaper], latest: ParsedDigest) -> str:
+    cells = [
+        ("Latest update", latest.date),
+        ("Total papers", str(len(papers))),
+        ("Highly relevant", str(sum(1 for paper in papers if paper.decision == "relevant"))),
+    ]
+    return '<div class="hero-facts">' + "".join(
+        f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells
+    ) + "</div>"
 
 
 def _library_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> str:
@@ -1199,15 +1169,13 @@ def _library_controls(sources: list[str], tags: list[str], latest_toggle: bool =
         <input id="paper-search" type="search" placeholder="Search title, authors, summary, tags">
       </label>
       <label class="select-field" for="paper-sort">
-        <span>Sort library</span>
+        <span>Sort</span>
         <select id="paper-sort">
           <option value="recommended" selected>Recommended</option>
-          <option value="score-desc">Relevance score, highest first</option>
-          <option value="published-desc">Publication date, newest first</option>
-          <option value="published-asc">Publication date, oldest first</option>
-          <option value="first-seen-desc">First seen date, newest first</option>
-          <option value="title-asc">Title A-Z</option>
-          <option value="source-asc">Source</option>
+          <option value="score-desc">Relevance score</option>
+          <option value="published-desc">Publication date</option>
+          <option value="first-seen-desc">First seen</option>
+          <option value="title-asc">Title</option>
         </select>
       </label>
       <div class="control-group">
@@ -1242,6 +1210,51 @@ def _warnings(warnings: list[str]) -> str:
         return '<details class="source-diagnostics"><summary>Source diagnostics <span>0 warnings</span></summary><p>No source warnings.</p></details>'
     compact = "\n".join(f"<li>{escape(warning)}</li>" for warning in warnings)
     return f'<details class="source-diagnostics"><summary>Source diagnostics <span>{len(warnings)} warnings</span></summary><ul>{compact}</ul></details>'
+
+
+def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
+    recent = "".join(
+        f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(item.date)}.md">{escape(item.date)}</a>'
+        for item in reversed(archive[:8])
+    )
+    warnings = "\n".join(f"<li>{escape(warning)}</li>" for warning in latest.source_warnings) or "<li>No source warnings.</li>"
+    return f"""
+    <footer class="library-footer">
+      <details class="export-library">
+        <summary>Export library</summary>
+        <div class="footer-links">
+          <a href="data/papers.csv">Download CSV</a>
+          <a href="data/papers.bib">Download BibTeX</a>
+          <a href="data/papers.json">Download JSON</a>
+        </div>
+      </details>
+      <details class="technical-diagnostics">
+        <summary>Technical diagnostics</summary>
+        <div class="diagnostic-grid">
+          <div>
+            <h3>Run metadata</h3>
+            <p>Latest update: {escape(latest.date)}</p>
+            <p>Candidates fetched: {escape(latest.summary.get("Candidates fetched", "0"))}</p>
+            <p>New unique papers: {escape(latest.summary.get("New unique papers", "0"))}</p>
+            <p>Digest-quality warnings: {latest.digest_quality_warning_count}</p>
+          </div>
+          <div>
+            <h3>Sources</h3>
+            <p>{escape(latest.summary.get("Source summary", "none"))}</p>
+          </div>
+          <div>
+            <h3>Source warnings</h3>
+            <ul>{warnings}</ul>
+          </div>
+        </div>
+      </details>
+      <nav class="footer-links" aria-label="Secondary">
+        <a href="latest.html">Latest discoveries</a>
+        <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
+        {recent}
+      </nav>
+    </footer>
+    """
 
 
 def _recommended_papers(papers: list[LibraryPaper], limit: int = 8) -> list[LibraryPaper]:
@@ -1279,7 +1292,14 @@ def _recommended_card(paper: LibraryPaper) -> str:
 def _library_paper_cards(papers: list[LibraryPaper]) -> str:
     if not papers:
         return '<p class="empty">No papers in this section.</p>'
-    return "\n".join(_library_paper_card(paper) for paper in papers)
+    parts: list[str] = []
+    inserted_maybe_separator = False
+    for paper in papers:
+        if paper.decision == "maybe" and not inserted_maybe_separator:
+            parts.append('<div class="maybe-separator" role="separator"><span>Maybe relevant</span></div>')
+            inserted_maybe_separator = True
+        parts.append(_library_paper_card(paper))
+    return "\n".join(parts)
 
 
 def _library_paper_card(paper: LibraryPaper) -> str:
@@ -1297,6 +1317,8 @@ def _library_paper_card(paper: LibraryPaper) -> str:
     status = f'<span class="badge review">{escape(paper.review_status)}</span>' if paper.review_status else ""
     note = f'<p class="research-note"><strong>Research note</strong> {escape(paper.research_note)}</p>' if paper.research_note else ""
     relevance_label = paper.relevance_label or _relevance_label(paper)
+    ids = _identifier_list(paper)
+    more_items = "".join(f"<li>{item}</li>" for item in ids) or "<li>No additional identifiers.</li>"
     return f"""
     <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}">
       <div class="paper-main">
@@ -1308,12 +1330,8 @@ def _library_paper_card(paper: LibraryPaper) -> str:
           {status}
         </div>
         <h3>{escape(paper.title)}</h3>
-        <p class="meta">{escape(paper.authors_text)}</p>
-        <dl class="paper-dates">
-          <div><dt>Published</dt><dd>{escape(published)}</dd></div>
-          <div><dt>First seen by Paper Scout</dt><dd>{escape(paper.first_seen_date)}</dd></div>
-        </dl>
-        <p class="relevance-label">{escape(relevance_label)}</p>
+        <p class="meta">{escape(paper.authors_text)} · Published {escape(published)}</p>
+        <p class="relevance-label">{escape(relevance_label)} · {paper.score}/100</p>
         <p class="reason">{escape(_short_reason(paper))}</p>
         {note}
         <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
@@ -1321,9 +1339,16 @@ def _library_paper_card(paper: LibraryPaper) -> str:
       </div>
       <div class="paper-side">
         {link}
-        {secondary_links}
-        <button class="citation-button" type="button" data-citation="{escape(paper.citation)}">Copy citation</button>
-        <span class="copy-status" aria-live="polite"></span>
+        <details class="paper-more">
+          <summary>More details</summary>
+          <ul>
+            <li>First seen: {escape(paper.first_seen_date)}</li>
+            {more_items}
+          </ul>
+          {secondary_links}
+          <button class="citation-button" type="button" data-citation="{escape(paper.citation)}">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
       </div>
     </article>
     """
@@ -1342,6 +1367,22 @@ def _secondary_links(paper: LibraryPaper) -> str:
         return ""
     rendered = "".join(f'<a href="{escape(url)}">{escape(label)}</a>' for label, url in links[:4])
     return f'<div class="secondary-links">{rendered}</div>'
+
+
+def _identifier_list(paper: LibraryPaper) -> list[str]:
+    identifiers: list[str] = []
+    if paper.doi:
+        identifiers.append(f"DOI: {escape(paper.doi)}")
+    if paper.arxiv_id:
+        identifiers.append(f"arXiv: {escape(paper.arxiv_id)}")
+    if paper.semantic_scholar_id:
+        identifiers.append(f"Semantic Scholar: {escape(paper.semantic_scholar_id)}")
+    if paper.openalex_id:
+        identifiers.append(f"OpenAlex: {escape(paper.openalex_id)}")
+    for source, values in paper.source_ids.items():
+        if values:
+            identifiers.append(f"{escape(_source_label(source))} IDs: {escape(', '.join(values))}")
+    return _ordered_unique(identifiers)
 
 
 def _url_label(url: str) -> str:
@@ -1567,6 +1608,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 }
 .nav-links a:hover { color: var(--accent-dark); }
 .briefing-hero, .archive-hero { padding: 1rem 0 2rem; }
+.library-hero {
+  max-width: 52rem;
+  padding: 2.25rem 0 1rem;
+}
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(220px, 310px);
@@ -1590,6 +1635,10 @@ h1 {
   letter-spacing: -.055em;
 }
 .archive-hero h1 { max-width: 12ch; font-size: clamp(3.4rem, 11vw, 7rem); }
+.library-hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3.25rem, 9vw, 7.5rem);
+}
 h2 { font-size: clamp(1.95rem, 4vw, 3.2rem); line-height: .95; letter-spacing: -.035em; }
 h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing: -.018em; }
 .hero-copy {
@@ -1601,6 +1650,33 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing:
   text-wrap: pretty;
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.55rem; }
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.45rem;
+}
+.hero-facts div {
+  min-width: 8rem;
+  padding: .7rem .8rem;
+  background: rgba(255, 253, 248, .7);
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+}
+.hero-facts span {
+  display: block;
+  color: var(--faint);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .72rem;
+  font-weight: 720;
+}
+.hero-facts strong {
+  display: block;
+  margin-top: .08rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
 .button, .paper-link, .citation-button {
   display: inline-flex;
   align-items: center;
@@ -1735,10 +1811,10 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing:
 }
 .reading-controls {
   display: grid;
-  grid-template-columns: minmax(18rem, 1.35fr) minmax(15rem, .9fr) minmax(15rem, 1fr) auto;
+  grid-template-columns: minmax(18rem, 1.35fr) minmax(11rem, .65fr) minmax(15rem, 1fr);
   gap: .9rem;
   align-items: end;
-  margin: 1.4rem 0 2.6rem;
+  margin: 1.2rem 0 2rem;
   padding: .95rem;
   background: rgba(248, 245, 238, .8);
   border: 1px solid var(--line);
@@ -1789,6 +1865,7 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 }
 .toggle-control input { accent-color: var(--accent-dark); }
 .tag-filter { min-width: 12rem; }
+.tag-filter span { color: var(--faint); }
 .sources { grid-column: 1 / -1; }
 .paper-section { margin-top: 2.5rem; }
 .section-heading {
@@ -1802,10 +1879,10 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 }
 .paper-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(11rem, 14rem);
-  gap: clamp(1rem, 3vw, 2rem);
-  margin: 1rem 0;
-  padding: clamp(1.1rem, 3vw, 1.65rem);
+  grid-template-columns: minmax(0, 1fr) minmax(8.5rem, 11rem);
+  gap: clamp(.9rem, 2vw, 1.3rem);
+  margin: .8rem 0;
+  padding: clamp(.95rem, 2vw, 1.25rem);
   background: var(--paper);
   border-top: 1px solid var(--line-strong);
   border-radius: .75rem;
@@ -1818,12 +1895,13 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   border-top-color: rgba(200, 185, 168, .72);
   padding-top: 1rem;
   padding-bottom: 1rem;
+  opacity: .9;
 }
 .paper-card.compact h3 {
   font-size: clamp(1.15rem, 1.6vw, 1.45rem);
 }
 .paper-kicker, .tags { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
-.paper-card h3 { margin-top: .7rem; }
+.paper-card h3 { margin-top: .55rem; }
 .meta, .empty {
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1855,8 +1933,8 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   font-variant-numeric: tabular-nums;
 }
 .reason {
-  margin: 1rem 0 0;
-  padding: .85rem .95rem;
+  margin: .75rem 0 0;
+  padding: .65rem .75rem;
   border-left: 3px solid rgba(39, 97, 93, .45);
   background: #f3f8f6;
   color: #244c49;
@@ -1893,7 +1971,7 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 }
 .abstract-summary {
   max-width: 67ch;
-  margin: .95rem 0 0;
+  margin: .75rem 0 0;
   color: #3d3934;
   text-wrap: pretty;
 }
@@ -1918,7 +1996,7 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: .75rem;
+  gap: .6rem;
 }
 .paper-link.disabled {
   background: #eee7dc;
@@ -1949,6 +2027,36 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   background: var(--paper-soft);
   color: var(--accent-dark);
   cursor: pointer;
+}
+.paper-more {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .84rem;
+}
+.paper-more summary {
+  cursor: pointer;
+  color: var(--faint);
+  font-weight: 700;
+}
+.paper-more ul {
+  margin: .55rem 0;
+  padding-left: 1rem;
+}
+.maybe-separator {
+  margin: 1.8rem 0 .65rem;
+  border-top: 1px solid var(--line);
+}
+.maybe-separator span {
+  display: inline-flex;
+  transform: translateY(-50%);
+  background: var(--bg);
+  padding-right: .75rem;
+  color: var(--faint);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .76rem;
+  font-weight: 760;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
 .citation-button:hover {
   background: var(--paper);
@@ -1986,6 +2094,55 @@ textarea {
   border-radius: .65rem;
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.library-footer {
+  display: grid;
+  gap: .8rem;
+  margin-top: 2.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.export-library, .technical-diagnostics {
+  padding: .8rem .9rem;
+  background: rgba(255, 253, 248, .52);
+  border: 1px solid var(--line);
+  border-radius: .65rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.export-library summary, .technical-diagnostics summary {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 760;
+}
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-top: .85rem;
+}
+.diagnostic-grid h3 {
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+.diagnostic-grid p, .diagnostic-grid ul {
+  margin: .35rem 0 0;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+.footer-links a {
+  padding: .38rem .55rem;
+  border: 1px solid var(--line);
+  border-radius: .42rem;
+  background: rgba(255, 253, 248, .62);
+  color: var(--accent-dark);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .86rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 .source-diagnostics summary {
   cursor: pointer;
@@ -2133,6 +2290,7 @@ FILTER_SCRIPT = """
   const sortSelect = document.querySelector('#paper-sort');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
+  const maybeSeparator = document.querySelector('.maybe-separator');
   let decision = 'all';
   let source = 'all';
   function sortableDate(card, attr) {
@@ -2164,7 +2322,15 @@ FILTER_SCRIPT = """
       if (mode === 'source-asc') return a.dataset.source.localeCompare(b.dataset.source) || a.dataset.title.localeCompare(b.dataset.title);
       return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
     });
-    for (const card of sorted) list.appendChild(card);
+    if (maybeSeparator) maybeSeparator.remove();
+    let insertedMaybeSeparator = false;
+    for (const card of sorted) {
+      if (maybeSeparator && !insertedMaybeSeparator && card.dataset.decision === 'maybe') {
+        list.appendChild(maybeSeparator);
+        insertedMaybeSeparator = true;
+      }
+      list.appendChild(card);
+    }
   }
   function update() {
     const query = (search.value || '').toLowerCase();
@@ -2176,6 +2342,12 @@ FILTER_SCRIPT = """
       const matchesTag = tag === 'all' || (card.dataset.tags || '').split(' ').includes(tag);
       const matchesLatest = !latestOnly || !latestOnly.checked || card.dataset.latestRun === 'true';
       card.hidden = !(matchesQuery && matchesDecision && matchesSource && matchesTag && matchesLatest);
+    }
+    if (maybeSeparator) {
+      const visibleCards = cards.filter(card => !card.hidden);
+      const hasVisibleRelevant = visibleCards.some(card => card.dataset.decision === 'relevant');
+      const hasVisibleMaybe = visibleCards.some(card => card.dataset.decision === 'maybe');
+      maybeSeparator.hidden = !(hasVisibleRelevant && hasVisibleMaybe);
     }
   }
   function bindButtons(selector, attr, setter) {

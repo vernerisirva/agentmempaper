@@ -22,14 +22,14 @@
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub repo</a>
             </span>
           </nav>
-          <p class="eyebrow">Latest update 2026-06-26</p>
+          <p class="eyebrow">Latest update 2026-06-27</p>
           <h1>Latest discoveries</h1>
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         
     <section class="summary-strip" aria-label="Latest run summary metrics">
-      <div><span>Latest update date</span><strong>2026-06-26</strong></div><div><span>New in latest run</span><strong>0</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Maybe relevant</span><strong>0</strong></div><div><span>Source warning count</span><strong>5</strong></div>
-      <div class="source-summary"><span>Run summary</span><strong>arxiv: 29, openalex: 557, semantic_scholar: 6</strong></div>
+      <div><span>Latest update date</span><strong>2026-06-27</strong></div><div><span>New in latest run</span><strong>1</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Maybe relevant</span><strong>1</strong></div><div><span>Source warning count</span><strong>12</strong></div>
+      <div class="source-summary"><span>Run summary</span><strong>arxiv: 25, openalex: 556, semantic_scholar: 4</strong></div>
     </section>
     
         
@@ -63,14 +63,14 @@
         <span>Tag</span>
         <select id="tag-filter">
           <option value="all">All tags</option>
-          
+          <option value="agent-memory">agent-memory</option>
         </select>
       </label>
       <div class="control-group sources">
         <span>Source</span>
         <div class="source-buttons" id="source-filters">
           <button data-source="all" class="active">All sources</button>
-          
+          <button data-source="openalex">OpenAlex</button>
         </div>
       </div>
     </section>
@@ -81,20 +81,56 @@
             <h2>Papers first seen in the latest Paper Scout run.</h2>
           </div>
           <div class="paper-list" id="paper-list">
-            <p class="empty">No papers in this section.</p>
+            
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="agent-memory" data-latest-run="true" data-published="2026-06-21" data-first-seen="2026-06-27" data-score="55" data-pinned="false" data-future-date="false" data-title="agent context memory: a governance-first specification for ai agent context memory" data-search="agent context memory: a governance-first specification for ai agent context memory nils wendelboe holmager what this is. a specification for governance-first context memory in autonomous ai agent systems. the contribution. acm recognizes that agent memory is fundamentally an authorization problem and applies established access control patterns — the &quot;authorization before action&quot; principle common to rbac, mac, and capabil... touches memory concepts that may be relevant if connected to agent behavior.  peripheral/maybe relevant agent-memory openalex maybe">
+      <div class="paper-main">
+        <div class="paper-kicker">
+          <span class="badge source">OpenAlex</span>
+          <span class="badge relevance">Maybe relevant · 55/100</span>
+          <span class="badge latest">latest run</span>
+          
+          
+        </div>
+        <h3>Agent Context Memory: A Governance-First Specification for AI Agent Context Memory</h3>
+        <p class="meta">Nils Wendelboe Holmager</p>
+        <dl class="paper-dates">
+          <div><dt>Published</dt><dd>2026-06-21</dd></div>
+          <div><dt>First seen by Paper Scout</dt><dd>2026-06-27</dd></div>
+        </dl>
+        <p class="relevance-label">Peripheral/maybe relevant</p>
+        <p class="reason">Touches memory concepts that may be relevant if connected to agent behavior.</p>
+        
+        <p class="abstract-summary">What this is. A specification for governance-first context memory in autonomous AI agent systems. The contribution. ACM recognizes that agent memory is fundamentally an authorization problem and applies established access control patterns — the &quot;authorization before action&quot; principle common to RBAC, MAC, and capabil...</p>
+        <div class="tags"><span class="badge tag">agent-memory</span></div>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://doi.org/10.5281/zenodo.20785506">Open paper</a>
+        <div class="secondary-links"><a href="https://openalex.org/W7165478502">OpenAlex</a></div>
+        <button class="citation-button" type="button" data-citation="Agent Context Memory: A Governance-First Specification for AI Agent Context Memory. Nils Wendelboe Holmager. 2026-06-21. https://doi.org/10.5281/zenodo.20785506">Copy citation</button>
+        <span class="copy-status" aria-live="polite"></span>
+      </div>
+    </article>
+    
           </div>
         </section>
-        <details class="source-diagnostics"><summary>Source diagnostics <span>5 warnings</span></summary><ul><li>semantic_scholar failed for &#x27;procedural memory LLM agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+        <details class="source-diagnostics"><summary>Source diagnostics <span>12 warnings</span></summary><ul><li>semantic_scholar failed for &#x27;procedural memory LLM agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;memory retrieval policy agent&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;deep research agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>semantic_scholar failed for &#x27;autonomous research agent memory&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
 <li>arxiv failed for &#x27;parametric memory LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22parametric+memory+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
 <li>arxiv failed for &#x27;Engram LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
 <li>arxiv failed for &#x27;Engram memory LLM&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+memory+LLM%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
-<li>arxiv failed for &#x27;multilingual Engram&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22multilingual+Engram%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li></ul></details>
+<li>arxiv failed for &#x27;multilingual Engram&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22multilingual+Engram%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
+<li>arxiv failed for &#x27;Megatron-LM Engram&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
+<li>semantic_scholar failed for &#x27;Megatron-LM Engram&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li>
+<li>arxiv failed for &#x27;memory mechanism language model&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+mechanism+language+model%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error</li>
+<li>semantic_scholar failed for &#x27;memory mechanism language model&#x27;: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.</li></ul></details>
         <section class="archive-strip" aria-labelledby="recent-archive-heading">
           <div>
             <p class="section-kicker">Context</p>
             <h2 id="recent-archive-heading">Daily run archive</h2>
           </div>
-          <div class="archive-links"><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/2026-06-26.md">2026-06-26</a></div>
+          <div class="archive-links"><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/2026-06-27.md">2026-06-27</a><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/2026-06-26.md">2026-06-26</a></div>
         </section>
         
 <script>

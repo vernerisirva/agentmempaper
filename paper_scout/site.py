@@ -10,6 +10,10 @@ from pathlib import Path
 import re
 import sqlite3
 
+from .deduplication import normalize_arxiv_id
+from .dates import effective_sort_date, precision_rank, publication_date, sort_date_value
+from .fetchers.arxiv import parse_arxiv_feed
+from .http import HttpClient
 from .models import PaperCandidate
 from .relevance import classify_with_rules
 
@@ -79,6 +83,9 @@ class LibraryPaper:
     last_seen_at: str | None
     notified_at: str | None
     notified_date: str | None
+    publication_year: str | None = None
+    publication_date_precision: str | None = None
+    publication_date_source: str | None = None
     appeared_in_latest_run: bool = False
     newly_discovered_in_latest_run: bool = False
     sources: list[str] = field(default_factory=list)
@@ -155,6 +162,7 @@ def build_site(
     if not library_papers:
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
+    library_papers = _enrich_library_arxiv_dates(library_papers)
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
@@ -174,6 +182,7 @@ def build_site(
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "papers.csv").write_text(_papers_csv(library_papers), encoding="utf-8")
     (docs_root / "data" / "papers.bib").write_text(_papers_bibtex(library_papers), encoding="utf-8")
+    _write_metadata_quality_report(report_root, latest.date, library_papers)
     _write_latest_markdown(digest_root, latest.date, digest_path)
 
     return SiteBuildResult(True, f"Built Paper Scout dashboard for {latest.date} in {docs_root}", latest.date, docs_root)
@@ -328,11 +337,12 @@ def _ordered_unique(values: list[str | None]) -> list[str]:
     return result
 
 
-def _initial_sources(row: sqlite3.Row, sightings: list[sqlite3.Row]) -> list[str]:
-    return _ordered_unique([str(row["source"])] + [str(sighting["source"]) for sighting in sightings])
+def _initial_sources(row: sqlite3.Row, sightings: list[sqlite3.Row], arxiv_id: str | None = None) -> list[str]:
+    inferred = ["arxiv"] if arxiv_id else []
+    return _ordered_unique([str(row["source"])] + [str(sighting["source"]) for sighting in sightings] + inferred)
 
 
-def _initial_source_ids(row: sqlite3.Row, sightings: list[sqlite3.Row]) -> dict[str, list[str]]:
+def _initial_source_ids(row: sqlite3.Row, sightings: list[sqlite3.Row], arxiv_id: str | None = None) -> dict[str, list[str]]:
     source_ids: dict[str, list[str]] = {}
 
     def add(source: str | None, value: str | None) -> None:
@@ -341,7 +351,7 @@ def _initial_source_ids(row: sqlite3.Row, sightings: list[sqlite3.Row]) -> dict[
         source_ids[source] = _ordered_unique([*source_ids.get(source, []), value])
 
     add(str(row["source"]), str(row["source_id"]) if row["source_id"] else None)
-    add("arxiv", str(row["arxiv_id"]) if row["arxiv_id"] else None)
+    add("arxiv", str(row["arxiv_id"]) if row["arxiv_id"] else arxiv_id)
     add("semantic_scholar", str(row["semantic_scholar_id"]) if row["semantic_scholar_id"] else None)
     add("openalex", str(row["openalex_id"]) if row["openalex_id"] else None)
     for sighting in sightings:
@@ -349,12 +359,12 @@ def _initial_source_ids(row: sqlite3.Row, sightings: list[sqlite3.Row]) -> dict[
     return source_ids
 
 
-def _initial_urls(row: sqlite3.Row) -> list[str]:
+def _initial_urls(row: sqlite3.Row, arxiv_id: str | None = None) -> list[str]:
     urls = [str(row["url"]) if row["url"] else None]
     if row["doi"]:
         urls.append(f"https://doi.org/{row['doi']}")
-    if row["arxiv_id"]:
-        urls.append(f"https://arxiv.org/abs/{row['arxiv_id']}")
+    if row["arxiv_id"] or arxiv_id:
+        urls.append(f"https://arxiv.org/abs/{row['arxiv_id'] or arxiv_id}")
     if row["semantic_scholar_id"]:
         urls.append(f"https://www.semanticscholar.org/paper/{row['semantic_scholar_id']}")
     if row["openalex_id"]:
@@ -367,8 +377,18 @@ def _normalized_title(title: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", title.lower())).strip()
 
 
+def _infer_arxiv_id_from_text(value: str) -> str | None:
+    doi_match = re.search(r"10\.48550/arxiv\.([0-9]{4}\.[0-9]{4,5}(?:v\d+)?)", value, flags=re.I)
+    if doi_match:
+        return normalize_arxiv_id(doi_match.group(1))
+    url_match = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#\s\"}]+)", value, flags=re.I)
+    if url_match:
+        return normalize_arxiv_id(url_match.group(1))
+    return None
+
+
 def _paper_year(paper: LibraryPaper) -> str:
-    date_value = paper.published_date or paper.first_seen_date
+    date_value = paper.publication_year or paper.published_date or paper.first_seen_date
     match = re.match(r"(\d{4})", date_value or "")
     return match.group(1) if match else ""
 
@@ -392,12 +412,57 @@ def _merge_dashboard_duplicates(papers: list[LibraryPaper]) -> list[LibraryPaper
     return sorted(
         merged.values(),
         key=lambda paper: (
-            paper.published_date or paper.first_seen_date or "",
+            _latest_relevant_date(paper) or "",
             paper.score,
             paper.title.lower(),
         ),
         reverse=True,
     )
+
+
+def _enrich_library_arxiv_dates(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+    http = HttpClient(retries=1, pause_seconds=0.1)
+    cache: dict[str, tuple[str | None, str | None]] = {}
+    enriched: list[LibraryPaper] = []
+    for paper in papers:
+        if _publication_precision(paper) != "year" or not paper.arxiv_id:
+            enriched.append(paper)
+            continue
+        if paper.arxiv_id not in cache:
+            cache[paper.arxiv_id] = _fetch_arxiv_publication_date(paper.arxiv_id, http)
+        published_date, updated_date = cache[paper.arxiv_id]
+        if not published_date:
+            enriched.append(paper)
+            continue
+        enriched.append(
+            LibraryPaper(
+                **{
+                    **paper.__dict__,
+                    "published_date": published_date,
+                    "publication_year": _paper_year_from_value(published_date) or paper.publication_year,
+                    "publication_date_precision": "day",
+                    "publication_date_source": "arxiv",
+                    "last_seen_at": paper.last_seen_at,
+                    "alternate_urls": _ordered_unique([*paper.alternate_urls, f"https://arxiv.org/abs/{paper.arxiv_id}"]),
+                    "sources": _ordered_unique([*paper.sources, "arxiv"]),
+                    "source_ids": _merge_source_ids(paper.source_ids, {"arxiv": [paper.arxiv_id]}),
+                    "screening_abstract": paper.screening_abstract,
+                }
+            )
+        )
+    return enriched
+
+
+def _fetch_arxiv_publication_date(arxiv_id: str, http: HttpClient) -> tuple[str | None, str | None]:
+    try:
+        payload = http.get_text("https://export.arxiv.org/api/query", params={"id_list": arxiv_id, "max_results": 1})
+        papers = parse_arxiv_feed(payload)
+    except Exception:
+        return None, None
+    match = next((paper for paper in papers if paper.arxiv_id == arxiv_id), None)
+    if not match or match.publication_date_precision != "day":
+        return None, None
+    return match.published_date, match.updated_date
 
 
 def _sort_latest_relevant(papers: list[LibraryPaper]) -> list[LibraryPaper]:
@@ -422,13 +487,16 @@ def _recommended_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
 
 
 def _latest_relevant_date(paper: LibraryPaper) -> str | None:
-    if paper.published_date and not paper.future_date:
-        return paper.published_date
-    return paper.first_seen_date
+    return effective_sort_date(
+        paper.published_date,
+        _publication_precision(paper),
+        paper.first_seen_date,
+        paper.future_date,
+    )
 
 
 def _reverse_date_sort_value(value: str | None) -> int:
-    parsed = _date_ordinal(value)
+    parsed = _date_ordinal(sort_date_value(value, publication_date(value, None).precision))
     return -parsed if parsed is not None else 0
 
 
@@ -443,7 +511,8 @@ def _date_ordinal(value: str | None) -> int | None:
 
 
 def _is_future_date(published_date: str | None, build_date: str) -> bool:
-    published = _date_ordinal(published_date)
+    published_meta = publication_date(published_date, None)
+    published = _date_ordinal(sort_date_value(published_meta.value, published_meta.precision))
     built = _date_ordinal(build_date)
     return bool(published is not None and built is not None and published > built)
 
@@ -493,6 +562,9 @@ def _refresh_rule_classifications(papers: list[LibraryPaper]) -> list[LibraryPap
             openalex_id=paper.openalex_id,
             url=paper.url,
             published_date=paper.published_date,
+            publication_year=paper.publication_year,
+            publication_date_precision=paper.publication_date_precision,
+            publication_date_source=paper.publication_date_source,
             raw={},
         )
         classification = classify_with_rules(candidate)
@@ -645,6 +717,7 @@ def _with_aggregates(paper: LibraryPaper) -> LibraryPaper:
 def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
     right = _with_aggregates(right)
     best = left if left.score >= right.score else right
+    best_date = _best_publication_metadata(left, right)
     sources = _ordered_unique([*left.sources, left.source, *right.sources, right.source])
     source_ids = _merge_source_ids(left.source_ids, right.source_ids)
     alternate_urls = _ordered_unique([left.url, right.url, *left.alternate_urls, *right.alternate_urls])
@@ -670,11 +743,14 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         semantic_scholar_id=best.semantic_scholar_id or left.semantic_scholar_id or right.semantic_scholar_id,
         openalex_id=best.openalex_id or left.openalex_id or right.openalex_id,
         url=best.url or left.url or right.url or (alternate_urls[0] if alternate_urls else None),
-        published_date=_max_date_value(left.published_date, right.published_date),
+        published_date=best_date.value,
         first_seen_at=first_seen_at,
         last_seen_at=last_seen_at,
         notified_at=notified_at,
         notified_date=notified_date,
+        publication_year=best_date.year,
+        publication_date_precision=best_date.precision,
+        publication_date_source=best_date.source,
         appeared_in_latest_run=left.appeared_in_latest_run or right.appeared_in_latest_run,
         newly_discovered_in_latest_run=left.newly_discovered_in_latest_run or right.newly_discovered_in_latest_run,
         sources=sources,
@@ -682,6 +758,14 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         alternate_urls=alternate_urls,
         screening_abstract=best.screening_abstract or left.screening_abstract or right.screening_abstract,
     )
+
+
+def _best_publication_metadata(left: LibraryPaper, right: LibraryPaper):
+    left_date = publication_date(left.published_date, left.publication_date_source, left.publication_year)
+    right_date = publication_date(right.published_date, right.publication_date_source, right.publication_year)
+    if precision_rank(right_date.precision) > precision_rank(left_date.precision):
+        return right_date
+    return left_date
 
 
 def _merge_source_ids(*groups: dict[str, list[str]]) -> dict[str, list[str]]:
@@ -707,6 +791,9 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         return []
     with sqlite3.connect(state_path) as db:
         db.row_factory = sqlite3.Row
+        _ensure_site_column(db, "publication_year", "TEXT")
+        _ensure_site_column(db, "publication_date_precision", "TEXT")
+        _ensure_site_column(db, "publication_date_source", "TEXT")
         latest_run = db.execute("SELECT id, started_at FROM runs ORDER BY id DESC LIMIT 1").fetchone()
         latest_run_id = int(latest_run["id"]) if latest_run else None
         latest_started_at = str(latest_run["started_at"]) if latest_run else None
@@ -743,6 +830,12 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         first_seen_at = str(row["first_seen_at"]) if row["first_seen_at"] else None
         appeared_in_latest_run = canonical_id in latest_keys
         newly_discovered = appeared_in_latest_run and bool(latest_started_at and first_seen_at and first_seen_at >= latest_started_at)
+        doi = _redact_secrets(str(row["doi"])) if row["doi"] else None
+        url = _redact_secrets(str(row["url"])) if row["url"] else None
+        arxiv_id = _redact_secrets(str(row["arxiv_id"])) if row["arxiv_id"] else _infer_arxiv_id_from_text(" ".join([str(row["doi"] or ""), str(row["url"] or ""), str(row["raw_json"] or "")]))
+        sources = _initial_sources(row, row_sightings, arxiv_id)
+        source_ids = _initial_source_ids(row, row_sightings, arxiv_id)
+        alternate_urls = _initial_urls(row, arxiv_id)
         papers.append(
             LibraryPaper(
                 canonical_id=_redact_secrets(canonical_id),
@@ -756,24 +849,33 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 tags=[_redact_secrets(tag) for tag in _json_list(row["tags_json"])],
                 source=str(row["source"]),
                 source_id=_redact_secrets(str(row["source_id"])) if row["source_id"] else None,
-                doi=_redact_secrets(str(row["doi"])) if row["doi"] else None,
-                arxiv_id=_redact_secrets(str(row["arxiv_id"])) if row["arxiv_id"] else None,
+                doi=doi,
+                arxiv_id=arxiv_id,
                 semantic_scholar_id=_redact_secrets(str(row["semantic_scholar_id"])) if row["semantic_scholar_id"] else None,
                 openalex_id=_redact_secrets(str(row["openalex_id"])) if row["openalex_id"] else None,
-                url=_redact_secrets(str(row["url"])) if row["url"] else None,
+                url=url,
                 published_date=str(row["published_date"]) if row["published_date"] else None,
                 first_seen_at=first_seen_at,
                 last_seen_at=str(row["last_seen_at"]) if row["last_seen_at"] else None,
                 notified_at=str(row["notified_at"]) if row["notified_at"] else None,
                 notified_date=str(row["digest_date"]) if row["digest_date"] else None,
+                publication_year=str(row["publication_year"]) if row["publication_year"] else _paper_year_from_value(row["published_date"]),
+                publication_date_precision=str(row["publication_date_precision"]) if row["publication_date_precision"] else publication_date(row["published_date"], None).precision,
+                publication_date_source=str(row["publication_date_source"]) if row["publication_date_source"] else str(row["source"]),
                 appeared_in_latest_run=appeared_in_latest_run,
                 newly_discovered_in_latest_run=newly_discovered,
-                sources=_initial_sources(row, row_sightings),
-                source_ids=_initial_source_ids(row, row_sightings),
-                alternate_urls=_initial_urls(row),
+                sources=sources,
+                source_ids=source_ids,
+                alternate_urls=alternate_urls,
             )
         )
     return papers
+
+
+def _ensure_site_column(db: sqlite3.Connection, column: str, definition: str) -> None:
+    columns = {row["name"] for row in db.execute("PRAGMA table_info(papers)").fetchall()}
+    if column not in columns:
+        db.execute(f"ALTER TABLE papers ADD COLUMN {column} {definition}")
 
 
 def _library_from_digests(digests: list[ParsedDigest]) -> list[LibraryPaper]:
@@ -802,6 +904,7 @@ def _library_from_digest(digest: ParsedDigest, latest_run: bool, newly_discovere
     papers: list[LibraryPaper] = []
     for paper in digest.papers:
         score_match = re.match(r"(\d+)", paper.score)
+        published = publication_date(None if paper.date == "unknown" else paper.date, paper.source)
         papers.append(
             LibraryPaper(
                 canonical_id=f"digest:{digest.date}:{paper.title.lower()}",
@@ -819,11 +922,14 @@ def _library_from_digest(digest: ParsedDigest, latest_run: bool, newly_discovere
                 semantic_scholar_id=None,
                 openalex_id=None,
                 url=paper.url,
-                published_date=None if paper.date == "unknown" else paper.date,
+                published_date=published.value,
                 first_seen_at=digest.date,
                 last_seen_at=digest.date,
                 notified_at=None,
                 notified_date=digest.date,
+                publication_year=published.year,
+                publication_date_precision=published.precision,
+                publication_date_source=published.source,
                 appeared_in_latest_run=latest_run,
                 newly_discovered_in_latest_run=newly_discovered,
             )
@@ -888,6 +994,10 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "url": paper.url,
         "alternate_urls": paper.alternate_urls,
         "publication_date": paper.published_date,
+        "publication_year": paper.publication_year or _paper_year_from_value(paper.published_date),
+        "publication_date_precision": _publication_precision(paper),
+        "publication_date_source": paper.publication_date_source,
+        "effective_sort_date": _latest_relevant_date(paper),
         "first_seen_date": paper.first_seen_date,
         "first_seen_at": paper.first_seen_at,
         "last_seen_date": paper.last_seen_date,
@@ -1330,7 +1440,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
     secondary_links = _secondary_links(paper)
     published = _published_text(paper)
-    published_meta = published if published.startswith("Published:") else f"Published {published}"
+    published_meta = published if published.startswith("Published") else f"Published {published}"
     search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, paper.research_note or "", " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
     tag_text = " ".join(paper.tags)
     source_text = " ".join(sources)
@@ -1494,11 +1604,24 @@ def _decision_label(decision: str) -> str:
 
 
 def _published_text(paper: LibraryPaper) -> str:
+    precision = _publication_precision(paper)
+    if precision == "year":
+        year = paper.publication_year or _paper_year_from_value(paper.published_date)
+        return f"Published date unavailable · Year: {year}" if year else "Published date unavailable"
     if not paper.published_date:
         return "unknown"
     if paper.future_date:
         return f"Published: {paper.published_date} · source date"
     return paper.published_date
+
+
+def _publication_precision(paper: LibraryPaper) -> str:
+    return paper.publication_date_precision or publication_date(paper.published_date, paper.publication_date_source, paper.publication_year).precision
+
+
+def _paper_year_from_value(value: object) -> str | None:
+    match = re.match(r"(\d{4})", str(value or ""))
+    return match.group(1) if match else None
 
 
 def _short_reason(paper: LibraryPaper) -> str:
@@ -1523,6 +1646,10 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
             "url",
             "doi",
             "arxiv_id",
+            "publication_year",
+            "publication_date_precision",
+            "publication_date_source",
+            "effective_sort_date",
         ],
         lineterminator="\n",
     )
@@ -1541,6 +1668,10 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
                 "url": paper.url or "",
                 "doi": paper.doi or "",
                 "arxiv_id": paper.arxiv_id or "",
+                "publication_year": paper.publication_year or "",
+                "publication_date_precision": _publication_precision(paper),
+                "publication_date_source": paper.publication_date_source or "",
+                "effective_sort_date": _latest_relevant_date(paper) or "",
             }
         )
     return output.getvalue()
@@ -1571,6 +1702,56 @@ def _bibtex_key(paper: LibraryPaper, year: str) -> str:
     first = _normalized_title(paper.authors[0]).split(" ")[-1] if paper.authors else "paper"
     title_word = _normalized_title(paper.title).split(" ")[0] if _normalized_title(paper.title) else "memory"
     return re.sub(r"[^A-Za-z0-9_:-]", "", f"{first}{year or 'n.d.'}{title_word}")
+
+
+def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: list[LibraryPaper]) -> None:
+    report_dir.mkdir(parents=True, exist_ok=True)
+    year_only = [paper for paper in papers if _publication_precision(paper) == "year"]
+    high_without_exact = [paper for paper in papers if paper.decision == "relevant" and _publication_precision(paper) != "day"]
+    future_or_imprecise = [paper for paper in papers if paper.future_date or _publication_precision(paper) in {"year", "month"}]
+    high_generic_reason = [
+        paper
+        for paper in papers
+        if paper.decision == "relevant"
+        and re.search(r"peripheral|does not clearly|mentions memory", paper.reason, flags=re.I)
+    ]
+    biological_terms = re.compile(r"protein synthesis|fear memory|neural inactivation|hippocampus|amygdala|animal memory|human cognitive|psychology|neuroscience", re.I)
+    biological_high = [paper for paper in papers if paper.decision == "relevant" and biological_terms.search(" ".join([paper.title, paper.abstract_summary, paper.reason]))]
+    maybe_core = [
+        paper
+        for paper in papers
+        if paper.decision == "maybe"
+        and re.search(r"agent[- ]native memory|llm agents?.{0,80}memory|memory systems?.{0,80}llm agents?|autonomous llm agents?.{0,80}memory", " ".join([paper.title, paper.abstract_summary]), flags=re.I)
+    ]
+    lines = [
+        f"# Paper Scout Metadata Quality - {report_date}",
+        "",
+        f"- **Year-only publication dates:** {len(year_only)}",
+        f"- **Highly relevant without exact date:** {len(high_without_exact)}",
+        f"- **Biological/cognitive high-relevance risks:** {len(biological_high)}",
+        f"- **Highly relevant with generic/peripheral reasons:** {len(high_generic_reason)}",
+        f"- **Maybe papers with core memory phrases:** {len(maybe_core)}",
+        f"- **Future or imprecise source dates:** {len(future_or_imprecise)}",
+        "",
+    ]
+    sections = [
+        ("Year-Only Publication Dates", year_only),
+        ("Highly Relevant Without Exact Date", high_without_exact),
+        ("Biological/Cognitive High-Relevance Risks", biological_high),
+        ("Highly Relevant With Generic Reasons", high_generic_reason),
+        ("Maybe Papers With Core Memory Phrases", maybe_core),
+        ("Future Or Imprecise Source Dates", future_or_imprecise),
+    ]
+    for title, items in sections:
+        lines.extend([f"## {title}", ""])
+        if not items:
+            lines.extend(["- None", ""])
+            continue
+        for paper in items[:50]:
+            date_text = paper.published_date or "unknown"
+            lines.append(f"- **{paper.title}** — {paper.decision}, {date_text}, precision={_publication_precision(paper)}, source={paper.publication_date_source or 'unknown'}")
+        lines.append("")
+    (report_dir / f"metadata-quality-{report_date}.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def _bibtex_escape(value: str) -> str:

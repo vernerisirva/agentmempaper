@@ -7,6 +7,7 @@ from contextlib import contextmanager
 from pathlib import Path
 
 from paper_scout.deduplication import canonical_key
+from paper_scout.dates import publication_date
 from paper_scout.models import ClassificationResult, DigestPaper, PaperCandidate
 
 
@@ -36,22 +37,59 @@ class PaperStore:
             )
 
     def upsert_paper(self, candidate: PaperCandidate, classification: ClassificationResult) -> str:
+        candidate = _with_publication_metadata(candidate)
         key = canonical_key(candidate)
         with self._connect() as db:
             db.execute(
                 """
                 INSERT INTO papers(
                     canonical_key, title, authors_json, abstract, source, source_id, doi, arxiv_id,
-                    semantic_scholar_id, openalex_id, url, published_date, updated_date, raw_json,
+                    semantic_scholar_id, openalex_id, url, published_date, publication_year,
+                    publication_date_precision, publication_date_source, updated_date, raw_json,
                     relevance_score, relevance_decision, relevance_reason, tags_json, abstract_summary,
                     first_seen_at, last_seen_at
                 )
-                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'))
                 ON CONFLICT(canonical_key) DO UPDATE SET
                     title = excluded.title,
                     authors_json = excluded.authors_json,
                     abstract = CASE WHEN excluded.abstract != '' THEN excluded.abstract ELSE papers.abstract END,
+                    source = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.source ELSE papers.source END,
+                    source_id = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.source_id ELSE papers.source_id END,
+                    doi = COALESCE(papers.doi, excluded.doi),
+                    arxiv_id = COALESCE(papers.arxiv_id, excluded.arxiv_id),
+                    semantic_scholar_id = COALESCE(papers.semantic_scholar_id, excluded.semantic_scholar_id),
+                    openalex_id = COALESCE(papers.openalex_id, excluded.openalex_id),
                     url = COALESCE(excluded.url, papers.url),
+                    published_date = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.published_date ELSE COALESCE(papers.published_date, excluded.published_date) END,
+                    publication_year = COALESCE(papers.publication_year, excluded.publication_year),
+                    publication_date_precision = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.publication_date_precision ELSE COALESCE(papers.publication_date_precision, excluded.publication_date_precision) END,
+                    publication_date_source = CASE
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.publication_date_source ELSE COALESCE(papers.publication_date_source, excluded.publication_date_source) END,
                     updated_date = COALESCE(excluded.updated_date, papers.updated_date),
                     raw_json = excluded.raw_json,
                     relevance_score = excluded.relevance_score,
@@ -74,6 +112,9 @@ class PaperStore:
                     candidate.openalex_id,
                     candidate.url,
                     candidate.published_date,
+                    candidate.publication_year,
+                    candidate.publication_date_precision,
+                    candidate.publication_date_source,
                     candidate.updated_date,
                     json.dumps(candidate.raw),
                     classification.score,
@@ -164,6 +205,9 @@ class PaperStore:
                     openalex_id TEXT,
                     url TEXT,
                     published_date TEXT,
+                    publication_year TEXT,
+                    publication_date_precision TEXT,
+                    publication_date_source TEXT,
                     updated_date TEXT,
                     raw_json TEXT NOT NULL,
                     relevance_score INTEGER NOT NULL,
@@ -203,6 +247,9 @@ class PaperStore:
                 );
                 """
             )
+            _ensure_column(db, "papers", "publication_year", "TEXT")
+            _ensure_column(db, "papers", "publication_date_precision", "TEXT")
+            _ensure_column(db, "papers", "publication_date_source", "TEXT")
 
 
 def _row_to_digest_paper(row: sqlite3.Row) -> DigestPaper:
@@ -219,4 +266,30 @@ def _row_to_digest_paper(row: sqlite3.Row) -> DigestPaper:
         reason=row["relevance_reason"],
         tags=json.loads(row["tags_json"]),
         abstract_summary=row["abstract_summary"],
+        publication_year=row["publication_year"],
+        publication_date_precision=row["publication_date_precision"],
+        publication_date_source=row["publication_date_source"],
     )
+
+
+def _with_publication_metadata(candidate: PaperCandidate) -> PaperCandidate:
+    published = publication_date(
+        candidate.published_date,
+        candidate.publication_date_source or candidate.source,
+        candidate.publication_year,
+    )
+    return PaperCandidate(
+        **{
+            **candidate.__dict__,
+            "published_date": published.value,
+            "publication_year": published.year,
+            "publication_date_precision": candidate.publication_date_precision or published.precision,
+            "publication_date_source": candidate.publication_date_source or published.source,
+        }
+    )
+
+
+def _ensure_column(db: sqlite3.Connection, table: str, column: str, definition: str) -> None:
+    columns = {row["name"] for row in db.execute(f"PRAGMA table_info({table})").fetchall()}
+    if column not in columns:
+        db.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")

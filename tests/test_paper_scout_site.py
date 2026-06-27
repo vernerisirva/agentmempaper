@@ -160,6 +160,22 @@ class PaperScoutSiteTest(unittest.TestCase):
             ),
             (
                 PaperCandidate(
+                    title="Year Only Relevant Memory Paper",
+                    authors=["Year Author"],
+                    abstract="Persistent memory systems for LLM agents with only year-level source metadata.",
+                    source="semantic_scholar",
+                    source_id="year-only",
+                    url="https://example.test/year-only",
+                    published_date="2026",
+                    publication_year="2026",
+                    publication_date_precision="year",
+                    publication_date_source="semantic_scholar",
+                    raw={},
+                ),
+                ClassificationResult(78, "relevant", "Relevant but source only has a year.", ["agent-memory"], "Year-only relevant paper."),
+            ),
+            (
+                PaperCandidate(
                     title="Future Source Relevant Memory Paper",
                     authors=["Future Relevant Author"],
                     abstract="Persistent memory systems for LLM agents with a future source-provided publication date.",
@@ -612,6 +628,7 @@ excluded:
             titles = [paper["title"] for paper in papers]
             self.assertEqual(titles[0], "Fresh First Seen Agent Memory")
             self.assertLess(titles.index("Fresh First Seen Agent Memory"), titles.index("Future Source Relevant Memory Paper"))
+            self.assertLess(titles.index("Fresh First Seen Agent Memory"), titles.index("Year Only Relevant Memory Paper"))
             self.assertLess(titles.index("Newer Low Score Agent Memory"), titles.index("Core Agent Memory Architecture"))
             self.assertLess(titles.index("Core Agent Memory Architecture"), titles.index("Memory Benchmark for Agents"))
             self.assertLess(titles.index("Same Date Higher Score Agent Memory"), titles.index("Same Date Lower Score Agent Memory"))
@@ -623,18 +640,88 @@ excluded:
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
             self.assertIn("Published: 2026-07-04 · source date", index_html)
+            self.assertNotIn("Published 2026 · Source", index_html)
+            self.assertIn("Published date unavailable · Year: 2026", index_html)
             core_visible = _visible_card_html(index_html, "core agent memory architecture")
             self.assertNotIn("benchmark", core_visible)
             self.assertIn("benchmark", index_html)
             self.assertNotIn('class="maybe-separator"', index_html)
             future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
             future_relevant = next(paper for paper in papers if paper["title"] == "Future Source Relevant Memory Paper")
+            year_only = next(paper for paper in papers if paper["title"] == "Year Only Relevant Memory Paper")
             pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
             self.assertTrue(future["future_date"])
             self.assertTrue(future_relevant["future_date"])
+            self.assertEqual(year_only["publication_date"], "2026")
+            self.assertEqual(year_only["publication_year"], "2026")
+            self.assertEqual(year_only["publication_date_precision"], "year")
+            self.assertEqual(year_only["publication_date_source"], "semantic_scholar")
+            self.assertEqual(year_only["effective_sort_date"], year_only["first_seen_date"])
             self.assertTrue(pinned["pinned"])
             self.assertEqual(pinned["review_status"], "thesis_candidate")
             self.assertEqual(pinned["relevance_score"], 93)
+
+    def test_source_merge_uses_exact_arxiv_date_over_semantic_scholar_year(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=365)
+            title = "ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents"
+            semantic = PaperCandidate(
+                title=title,
+                authors=["Ada Lovelace"],
+                abstract="Procedural memory for LLM agents.",
+                source="semantic_scholar",
+                source_id="S2-PROCMEM",
+                doi="10.48550/arxiv.2602.01869",
+                arxiv_id="2602.01869",
+                semantic_scholar_id="S2-PROCMEM",
+                url="https://www.semanticscholar.org/paper/S2-PROCMEM",
+                published_date="2026",
+                publication_year="2026",
+                publication_date_precision="year",
+                publication_date_source="semantic_scholar",
+            )
+            arxiv = PaperCandidate(
+                title=title,
+                authors=["Ada Lovelace"],
+                abstract="Procedural memory for LLM agents.",
+                source="arxiv",
+                source_id="2602.01869",
+                doi="10.48550/arxiv.2602.01869",
+                arxiv_id="2602.01869",
+                url="https://arxiv.org/abs/2602.01869",
+                published_date="2026-02-02",
+                publication_year="2026",
+                publication_date_precision="day",
+                publication_date_source="arxiv",
+            )
+            classification = ClassificationResult(91, "relevant", "Studies procedural memory for LLM agents.", ["agent-memory"], "Procedural memory for LLM agents.")
+            for candidate in [semantic, arxiv]:
+                key = store.upsert_paper(candidate, classification)
+                store.record_sighting(run_id, key, candidate, "procedural memory LLM agent")
+            store.finish_run(run_id, fetched_count=2, new_count=1, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            paper = next(paper for paper in papers if paper["title"] == title)
+            self.assertEqual(paper["publication_date"], "2026-02-02")
+            self.assertEqual(paper["publication_date_precision"], "day")
+            self.assertEqual(paper["publication_date_source"], "arxiv")
+            self.assertIn("arxiv", paper["sources"])
+            self.assertIn("semantic_scholar", paper["sources"])
+            self.assertNotRegex(html, r"Published 2026(?:\s| · Source|<)")
+            self.assertIn("Published 2026-02-02", html)
+            self.assertTrue((report_dir / "metadata-quality-2026-06-26.md").exists())
 
     def test_build_site_refreshes_stale_relevance_classifications(self):
         with tempfile.TemporaryDirectory() as tmpdir:

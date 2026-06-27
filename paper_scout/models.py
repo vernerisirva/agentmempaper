@@ -17,6 +17,9 @@ class PaperCandidate:
     openalex_id: str | None = None
     url: str | None = None
     published_date: str | None = None
+    publication_year: str | None = None
+    publication_date_precision: str | None = None
+    publication_date_source: str | None = None
     updated_date: str | None = None
     raw: dict[str, Any] = field(default_factory=dict)
 
@@ -51,3 +54,6 @@ class DigestPaper:
     reason: str
     tags: list[str] = field(default_factory=list)
     abstract_summary: str | None = None
+    publication_year: str | None = None
+    publication_date_precision: str | None = None
+    publication_date_source: str | None = None

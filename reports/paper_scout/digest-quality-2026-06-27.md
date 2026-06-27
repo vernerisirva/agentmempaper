@@ -1,6 +1,6 @@
 # Paper Scout Digest Quality - 2026-06-27
 
-- **Digest papers checked:** 0
+- **Digest papers checked:** 23
 - Likely false positives flagged: 0
 - Maybe-relevant core-memory papers flagged: 0
 - Suspicious high-relevance papers flagged: 0

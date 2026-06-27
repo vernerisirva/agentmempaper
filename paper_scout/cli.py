@@ -1,14 +1,17 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 from datetime import date
+from pathlib import Path
 
 from paper_scout.config import load_config
 from paper_scout.digest import write_digest
 from paper_scout.evaluation import evaluate_relevance_examples, relevance_fixture_examples, write_relevance_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
-from paper_scout.relevance import classify_with_rules
+from paper_scout.models import PaperCandidate
+from paper_scout.relevance import classify_with_rules, explain_rule_matches
 from paper_scout.scout import run_scout, search_sources
 from paper_scout.site import build_site
 from paper_scout.state import PaperStore
@@ -50,6 +53,11 @@ def main(argv: list[str] | None = None) -> int:
 
     build_site_parser = subparsers.add_parser("build-site", help="Build the static Paper Scout dashboard under docs/")
     build_site_parser.add_argument("--docs-dir", default="docs")
+
+    explain_parser = subparsers.add_parser("explain-paper", help="Explain deterministic relevance rules for a generated paper")
+    explain_parser.add_argument("--arxiv-id")
+    explain_parser.add_argument("--title")
+    explain_parser.add_argument("--data-path", default="docs/data/papers.json")
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
@@ -113,8 +121,76 @@ def main(argv: list[str] | None = None) -> int:
         print(result.message)
         return 0
 
+    if args.command == "explain-paper":
+        return _explain_paper(args)
+
     parser.error(f"unknown command {args.command}")
     return 2
+
+
+def _explain_paper(args: argparse.Namespace) -> int:
+    data_path = Path(args.data_path)
+    if not data_path.exists():
+        print(f"papers data not found: {data_path}")
+        return 1
+    papers = json.loads(data_path.read_text(encoding="utf-8"))
+    paper = _find_generated_paper(papers, arxiv_id=args.arxiv_id, title=args.title)
+    if paper is None:
+        print("paper not found")
+        return 1
+    candidate = _candidate_from_generated_paper(paper)
+    result = classify_with_rules(candidate)
+    evidence = explain_rule_matches(candidate)
+    source_ids = paper.get("source_ids") if isinstance(paper.get("source_ids"), dict) else {}
+    print(f"title={candidate.title}")
+    print(f"url={candidate.url or ''}")
+    print(f"source={candidate.source} source_id={candidate.source_id}")
+    print(f"arxiv_id={candidate.arxiv_id or paper.get('arxiv_id') or ''}")
+    print(f"source_ids={json.dumps(source_ids, sort_keys=True)}")
+    print(f"decision={result.decision}")
+    print(f"score={result.score}")
+    print(f"tags={', '.join(result.tags)}")
+    print(f"reason={result.reason}")
+    print(f"include_tags={', '.join(evidence['include_tags'])}")
+    print(f"high_confidence_rules={', '.join(evidence['high_confidence_hits']) or 'none'}")
+    print(f"agent_context_rules={len(evidence['agent_context_hits'])}")
+    print(f"exclude_rules={len(evidence['exclude_hits'])}")
+    return 0
+
+
+def _find_generated_paper(papers: list[dict[str, object]], arxiv_id: str | None, title: str | None) -> dict[str, object] | None:
+    title_query = title.lower() if title else None
+    for paper in papers:
+        arxiv_values = [str(paper.get("arxiv_id") or "")]
+        source_ids = paper.get("source_ids")
+        if isinstance(source_ids, dict):
+            arxiv_values.extend(str(value) for value in source_ids.get("arxiv", []) if value)
+        alternate_urls = paper.get("alternate_urls")
+        if isinstance(alternate_urls, list):
+            arxiv_values.extend(str(value) for value in alternate_urls)
+        if arxiv_id and any(arxiv_id in value for value in arxiv_values):
+            return paper
+        if title_query and str(paper.get("title", "")).lower() == title_query:
+            return paper
+    return None
+
+
+def _candidate_from_generated_paper(paper: dict[str, object]) -> PaperCandidate:
+    authors = paper.get("authors")
+    return PaperCandidate(
+        title=str(paper.get("title", "")),
+        authors=[str(author) for author in authors] if isinstance(authors, list) else [],
+        abstract=str(paper.get("abstract") or paper.get("abstract_summary") or ""),
+        source=str(paper.get("source") or "generated"),
+        source_id=str(paper.get("source_id") or paper.get("canonical_id") or ""),
+        doi=str(paper.get("doi") or "") or None,
+        arxiv_id=str(paper.get("arxiv_id") or "") or None,
+        semantic_scholar_id=str(paper.get("semantic_scholar_id") or "") or None,
+        openalex_id=str(paper.get("openalex_id") or "") or None,
+        url=str(paper.get("url") or "") or None,
+        published_date=str(paper.get("publication_date") or "") or None,
+        raw=paper,
+    )
 
 
 if __name__ == "__main__":

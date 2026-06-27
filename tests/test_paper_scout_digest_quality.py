@@ -6,7 +6,7 @@ from paper_scout.digest_quality import analyze_digest_quality, write_digest_qual
 from paper_scout.models import DigestPaper
 
 
-def digest_paper(title: str, abstract: str) -> DigestPaper:
+def digest_paper(title: str, abstract: str, decision: str = "relevant", score: int = 77) -> DigestPaper:
     return DigestPaper(
         canonical_key=title.lower().replace(" ", "-"),
         title=title,
@@ -15,8 +15,8 @@ def digest_paper(title: str, abstract: str) -> DigestPaper:
         source="fixture",
         url="https://example.test/paper",
         published_date="2026-06-26",
-        score=77,
-        decision="relevant",
+        score=score,
+        decision=decision,
         reason="fixture",
         tags=[],
     )
@@ -51,6 +51,23 @@ class PaperScoutDigestQualityTest(unittest.TestCase):
         report = analyze_digest_quality(papers)
 
         self.assertEqual(report.flagged_count, 0)
+
+    def test_flags_maybe_papers_with_core_agent_memory_phrases(self):
+        papers = [
+            digest_paper(
+                "Are We Ready For An Agent-Native Memory System?",
+                "A memory system for LLM agents with storage, retrieval, maintenance, and consolidation.",
+                decision="maybe",
+                score=55,
+            )
+        ]
+
+        report = analyze_digest_quality(papers)
+
+        self.assertEqual(report.flagged_count, 1)
+        self.assertEqual(report.flagged[0].title, "Are We Ready For An Agent-Native Memory System?")
+        self.assertIn("agent-native memory", report.flagged[0].matched_core_terms)
+        self.assertIn("memory system for LLM agents", report.flagged[0].matched_core_terms)
 
     def test_writes_markdown_report(self):
         papers = [digest_paper("GPU Memory Bandwidth", "Memory bandwidth optimization for accelerators.")]

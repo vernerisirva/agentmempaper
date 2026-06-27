@@ -6,7 +6,7 @@ Latest daily digest: [2026-06-27](2026-06-27.md).
 
 ## Run Summary
 
-- **Run ID:** 12
+- **Run ID:** 13
 - **Candidates fetched:** 589
 - **New unique papers:** 269
 - **Relevant:** 85
@@ -14,54 +14,4 @@ Latest daily digest: [2026-06-27](2026-06-27.md).
 - **Irrelevant:** 329
 - **Source summary:** arxiv: 25, openalex: 556, semantic_scholar: 8
 
-## Maybe Relevant
-
-### [Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents](https://doi.org/10.48550/arxiv.2606.26627)
-
-- **Authors:** Nada Lahjouji, Ashwin Gerard Colaco
-- **Date:** 2026-06-25
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** agent-memory
-- **Abstract summary:** Large language model agents increasingly query databases, search document collections, call external APIs, remember past interactions, and act on a user's behalf. As they move from answering questions to operating over sensitive data, privacy becomes harder to enforce. An agent touches many data sources, runs multi-...
-
-### [Knowledge Classification Protocol (KCP): An Ontological Architecture for Persistent Memory, Multimodal Perception, and Metacognition in LLM Agents](https://doi.org/10.5281/zenodo.20921419)
-
-- **Authors:** GABRIEL ALCARAZ ORENES
-- **Date:** 2026-06-24
-- **Source:** openalex
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** long-term-memory
-- **Abstract summary:** This paper presents the Knowledge Classification Protocol (KCP), a framework that decomposes reality into seven ontological registries — Knowledge, Events, Artifacts, Episodic, Contextual, Procedural, and Evidence — each with its own storage semantics and query interface, governed by a deterministic binary decision...
-
-### [Memory Makes the Difference: Evaluating How Different Memory Roles Shape Conversational Agents](https://arxiv.org/abs/2606.25361)
-
-- **Authors:** Yuxin Wang, Paul Thomas, Zhiwei Yu, Yuan Gao, Saeed Hassanpour, Soroush Vosoughi, et al.
-- **Date:** 2026-06-24
-- **Source:** openalex
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** parametric-memory
-- **Abstract summary:** Prior research on memory mechanism in RAG-based conversational system has emphasized how memory is stored and retrieved. However, far less is known about how memories with different functional roles influence response quality. Specifically, how they shape an agent's responses under varying conversational contexts an...
-
-### [Lacuna: A Research Map for Machine Learning](https://doi.org/10.48550/arxiv.2606.26246)
-
-- **Authors:** Martin Weiss, Miles Q. Li, Alejandro H. Artiles, Yacine Mkhinini, Chris Pal, Hugo Larochelle, et al.
-- **Date:** 2026-06-24
-- **Source:** openalex
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** deep-research
-- **Abstract summary:** Lacuna is a research map for machine learning that uses LLMs to turn papers and scholarly metadata into markdown summaries, concept elements, research directions, and research proposals. Each item keeps links to the primary source records and papers that support it. We release the map with web, markdown, and MCP int...
-
-### [Memory Retrieval in Visuomotor Policies for Long-Horizon Robot Control](https://arxiv.org/abs/2606.25136)
-
-- **Authors:** Rutav Shah, Yisu Li, Femi Bello, Yuke Zhu, Roberto Martín-Martín
-- **Date:** 2026-06-23
-- **Source:** openalex
-- **Relevance:** maybe (40/100)
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** memory-policy
-- **Abstract summary:** General-purpose robots operating in partially observable environments, such as homes, require memory to support autonomy. They must recall diverse information from the past, such as where objects were placed, which tasks a human partner has completed, and when an appliance was turned on. Achieving this versatility r...
+No new relevant or maybe-relevant papers found.

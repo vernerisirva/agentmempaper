@@ -185,6 +185,121 @@ class PaperScoutRelevanceTest(unittest.TestCase):
                 self.assertNotEqual(result.decision, "relevant")
                 self.assertLess(result.score, 70)
 
+    def test_rules_exclude_biological_and_human_memory_without_ai_agent_context(self):
+        examples = [
+            (
+                "No evidence for a protein-synthesis-dependent form of long-term fear memory",
+                "Translational inhibition and neural inactivation disrupt short- and long-term memory measures in animal fear memory to the same degree.",
+            ),
+            (
+                "Hippocampus and Amygdala Contributions to Long-Term Memory",
+                "Neuroscience experiments examine hippocampus, amygdala, neural inactivation, and animal memory consolidation.",
+            ),
+            (
+                "Human Cognitive Memory Recall in Psychology",
+                "Psychology experiments study human cognitive memory, working memory, and recall without AI agents.",
+            ),
+        ]
+
+        for title, abstract in examples:
+            with self.subTest(title=title):
+                result = classify_with_rules(
+                    PaperCandidate(
+                        title=title,
+                        authors=["Memory Researcher"],
+                        abstract=abstract,
+                        source="fixture",
+                        source_id=title,
+                        published_date="2026-01-01",
+                    )
+                )
+
+                self.assertEqual(result.decision, "irrelevant")
+                self.assertLess(result.score, 40)
+                self.assertIn("biological/cognitive", result.reason)
+
+    def test_rules_keep_memory_security_benchmarks_for_autonomous_llm_agents_highly_relevant(self):
+        result = classify_with_rules(
+            PaperCandidate(
+                title="AgentShield Bench v2: Evaluating Memory Security, Persistent Jailbreaks, and Cross Session Compromise in Autonomous LLM Agents",
+                authors=["Security Researcher"],
+                abstract=(
+                    "We evaluate memory security, persistent jailbreaks, cross-session compromise, "
+                    "and memory isolation failures in autonomous LLM agents."
+                ),
+                source="fixture",
+                source_id="agentshield",
+                published_date="2026-01-01",
+            )
+        )
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("benchmark", result.tags)
+        self.assertIn("agent-memory", result.tags)
+
+    def test_rules_review_strong_agent_memory_candidates(self):
+        examples = [
+            (
+                "Memory Contagion: Cross-Temporal Propagation of Evaluator Bias via Agent Memory",
+                "This paper studies how evaluator bias propagates across sessions via persistent agent memory in LLM agent evaluations.",
+            ),
+            (
+                "Governed Shared Memory for Multi-Agent LLM Systems",
+                "We propose governed shared memory for multi-agent LLM systems with memory access control, write policies, and retrieval governance.",
+            ),
+            (
+                "MiS Protocol: A Cognitive Memory Protocol for Personal AI Agents",
+                "A cognitive memory protocol for personal AI agents manages persistent memory storage, retrieval, and update.",
+            ),
+            (
+                "Negative Knowledge as Failure-aware Shared Memory for AutoResearch",
+                "AutoResearch agents share failure-aware memory across literature-review and experiment-planning sessions.",
+            ),
+        ]
+
+        for title, abstract in examples:
+            with self.subTest(title=title):
+                result = classify_with_rules(
+                    PaperCandidate(
+                        title=title,
+                        authors=["Agent Memory Researcher"],
+                        abstract=abstract,
+                        source="fixture",
+                        source_id=title,
+                        published_date="2026-01-01",
+                    )
+                )
+
+                self.assertEqual(result.decision, "relevant")
+                self.assertGreaterEqual(result.score, 70)
+
+    def test_reason_text_is_conservative_for_weak_memory_or_agent_evidence(self):
+        weak_memory = classify_with_rules(
+            PaperCandidate(
+                title="Memory Mentioned in Agentic Software Engineering",
+                authors=["Ada Lovelace"],
+                abstract="This paper mentions memory in passing while discussing agents, but not persistent LLM-agent memory systems.",
+                source="fixture",
+                source_id="weak-memory",
+                published_date="2026-01-01",
+            )
+        )
+        generic_agent = classify_with_rules(
+            PaperCandidate(
+                title="Agents for Enterprise Task Routing",
+                authors=["Ada Lovelace"],
+                abstract="LLM agents route tasks and call tools, but the system does not include persistent memory.",
+                source="fixture",
+                source_id="generic-agent",
+                published_date="2026-01-01",
+            )
+        )
+
+        self.assertIn("Peripheral candidate", weak_memory.reason)
+        self.assertNotIn("Studies memory storage, retrieval, update, or consolidation for LLM agents", weak_memory.reason)
+        self.assertIn("Peripheral candidate", generic_agent.reason)
+
     def test_fixture_evaluation_has_no_rule_false_negatives_or_false_positives(self):
         report = evaluate_relevance_examples(relevance_fixture_examples(), use_llm=False)
 

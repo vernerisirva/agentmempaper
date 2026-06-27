@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 
 from paper_scout.deduplication import normalize_arxiv_id
+from paper_scout.dates import publication_date
 from paper_scout.http import HttpClient
 from paper_scout.models import PaperCandidate, SourceFetchResult
 
@@ -45,6 +46,7 @@ def parse_arxiv_feed(xml_text: str) -> list[PaperCandidate]:
         authors = [_clean_text(author.findtext(f"{ATOM}name") or "") for author in entry.findall(f"{ATOM}author")]
         doi = _text(entry, f"{ARXIV}doi")
         url = _alternate_link(entry) or (f"https://arxiv.org/abs/{arxiv_id}" if arxiv_id else entry_id)
+        published = publication_date(_date_part(_text(entry, f"{ATOM}published")), "arxiv")
         papers.append(
             PaperCandidate(
                 title=_clean_text(_text(entry, f"{ATOM}title") or ""),
@@ -55,7 +57,10 @@ def parse_arxiv_feed(xml_text: str) -> list[PaperCandidate]:
                 doi=doi,
                 arxiv_id=arxiv_id,
                 url=url,
-                published_date=_date_part(_text(entry, f"{ATOM}published")),
+                published_date=published.value,
+                publication_year=published.year,
+                publication_date_precision=published.precision,
+                publication_date_source=published.source,
                 updated_date=_date_part(_text(entry, f"{ATOM}updated")),
                 raw={"entry_id": entry_id},
             )

@@ -16,6 +16,19 @@ class FakeHttp:
         return self.payload
 
 
+class RoutingHttp:
+    def __init__(self, semantic_payload, arxiv_payload):
+        self.semantic_payload = semantic_payload
+        self.arxiv_payload = arxiv_payload
+        self.calls = []
+
+    def get_text(self, url, params=None, headers=None):
+        self.calls.append((url, params or {}, headers or {}))
+        if "export.arxiv.org" in url:
+            return self.arxiv_payload
+        return self.semantic_payload
+
+
 class PaperScoutFetchersTest(unittest.TestCase):
     def test_parses_arxiv_feed(self):
         xml = """<?xml version="1.0" encoding="UTF-8"?>
@@ -77,6 +90,73 @@ class PaperScoutFetchersTest(unittest.TestCase):
         self.assertEqual(len(papers), 1)
         self.assertEqual(papers[0].semantic_scholar_id, "S2")
         self.assertEqual(papers[0].arxiv_id, "2601.12345")
+        self.assertEqual(papers[0].publication_date_precision, "day")
+        self.assertEqual(papers[0].publication_date_source, "semantic_scholar")
+
+    def test_semantic_scholar_year_only_preserves_precision_and_parses_arxiv_id(self):
+        payload = {
+            "data": [
+                {
+                    "paperId": "S2-YEAR",
+                    "title": "ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents",
+                    "abstract": "Procedural memory for LLM agents.",
+                    "url": "https://arxiv.org/abs/2602.01869",
+                    "year": 2026,
+                    "authors": [{"name": "Ada Lovelace"}],
+                    "externalIds": {"DOI": "10.48550/arXiv.2602.01869"},
+                }
+            ]
+        }
+
+        papers = parse_semantic_scholar_results(json.dumps(payload))
+
+        self.assertEqual(papers[0].arxiv_id, "2602.01869")
+        self.assertEqual(papers[0].published_date, "2026")
+        self.assertEqual(papers[0].publication_year, "2026")
+        self.assertEqual(papers[0].publication_date_precision, "year")
+        self.assertEqual(papers[0].publication_date_source, "semantic_scholar")
+
+    def test_semantic_scholar_year_only_enriches_exact_arxiv_date(self):
+        semantic_payload = json.dumps(
+            {
+                "data": [
+                    {
+                        "paperId": "S2-PROCMEM",
+                        "title": "ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents",
+                        "abstract": "Procedural memory for LLM agents.",
+                        "url": "https://www.semanticscholar.org/paper/S2-PROCMEM",
+                        "year": 2026,
+                        "authors": [{"name": "Ada Lovelace"}],
+                        "externalIds": {"DOI": "10.48550/arXiv.2602.01869"},
+                    }
+                ]
+            }
+        )
+        arxiv_payload = """<?xml version="1.0" encoding="UTF-8"?>
+        <feed xmlns="http://www.w3.org/2005/Atom">
+          <entry>
+            <id>http://arxiv.org/abs/2602.01869v1</id>
+            <published>2026-02-02T00:00:00Z</published>
+            <updated>2026-02-02T00:00:00Z</updated>
+            <title>ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents</title>
+            <summary>Procedural memory for LLM agents.</summary>
+          </entry>
+        </feed>"""
+
+        result = SemanticScholarFetcher(http=RoutingHttp(semantic_payload, arxiv_payload)).search_with_diagnostics(
+            "procedural memory LLM agent",
+            days=365,
+            max_results=5,
+        )
+
+        self.assertEqual(len(result.candidates), 1)
+        paper = result.candidates[0]
+        self.assertEqual(paper.arxiv_id, "2602.01869")
+        self.assertEqual(paper.published_date, "2026-02-02")
+        self.assertEqual(paper.publication_year, "2026")
+        self.assertEqual(paper.publication_date_precision, "day")
+        self.assertEqual(paper.publication_date_source, "arxiv")
+        self.assertIn("arxiv", paper.raw.get("enriched_sources", []))
 
     def test_semantic_scholar_search_with_diagnostics_reports_raw_record_count(self):
         payload = {

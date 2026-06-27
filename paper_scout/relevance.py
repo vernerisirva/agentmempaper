@@ -20,11 +20,12 @@ INCLUDE_PATTERNS = {
     "long-term-memory": [r"\blong[- ]term memory\b", r"\bpersistent memory\b"],
     "memory-types": [r"\bepisodic memory\b", r"\bsemantic memory\b", r"\bprocedural memory\b"],
     "memory-policy": [
-        r"\bmemory (write|read|retrieval|update|maintenance|governance|policy|policies|representation|storage|consolidation)\b",
+        r"\bmemory (write|read|retrieval|update|maintenance|governance|policy|policies|representation|storage|consolidation|security|isolation|access control)\b",
         r"\b(write|read|retrieval) polic(y|ies)\b",
+        r"\bshared memory\b.*\b(governance|access control|write polic(y|ies)|retrieval)\b",
         r"\bmemory\b.*\bstorage\b.*\bretrieval\b.*\bmaintenance\b",
     ],
-    "benchmark": [r"\b(agent )?memory benchmark\b", r"\bmemory\b.{0,60}\bbenchmark\b", r"\bagent memory evaluation\b", r"\blongmemeval\b", r"\blocomo\b"],
+    "benchmark": [r"\b(agent )?memory benchmark\b", r"\bmemory\b.{0,60}\bbenchmark\b", r"\bagent memory evaluation\b", r"\blongmemeval\b", r"\blocomo\b", r"\bagentshield bench\b"],
     "evaluation": [
         r"\bagent memory evaluation\b",
         r"\bmemory\b.{0,80}\bevaluat(e|es|ed|ion|ing)\b",
@@ -56,6 +57,26 @@ EXCLUDE_PATTERNS = [
     r"\bhuman memory\b",
     r"\bhuman cognitive memory\b",
     r"\bworking memory in humans\b",
+    r"\bprotein[- ]synthesis[- ]dependent\b",
+    r"\bfear memory\b",
+    r"\bneural inactivation\b",
+    r"\bhippocampus\b",
+    r"\bamygdala\b",
+    r"\banimal memory\b",
+    r"\bpsychology experiments?\b",
+    r"\bneuroscience\b",
+]
+
+BIOLOGICAL_MEMORY_PATTERNS = [
+    r"\bprotein[- ]synthesis[- ]dependent\b",
+    r"\bfear memory\b",
+    r"\bneural inactivation\b",
+    r"\bhippocampus\b",
+    r"\bamygdala\b",
+    r"\banimal memory\b",
+    r"\bhuman cognitive memory\b",
+    r"\bpsychology experiments?\b",
+    r"\bneuroscience\b",
 ]
 
 AGENT_CONTEXT = [
@@ -65,6 +86,15 @@ AGENT_CONTEXT = [
     r"\blanguage model\b",
     r"\bautonomous research\b",
     r"\bdeep research\b",
+]
+
+AI_MEMORY_CONTEXT = [
+    r"\bllm\b",
+    r"\blarge language model\b",
+    r"\blanguage model agents?\b",
+    r"\bai agents?\b",
+    r"\bagent memory\b",
+    r"\bagent[- ]native memory\b",
 ]
 
 HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS = {
@@ -82,6 +112,11 @@ HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS = {
     "memory consolidation agent": r"\bmemory consolidation\b.*\bagents?\b|\bagents?\b.*\bmemory consolidation\b",
     "agent memory evaluation": r"\bagent memory evaluation\b",
     "memory benchmark agent": r"\bmemory\b.{0,60}\bbenchmark\b.*\bagents?\b|\bagents?\b.*\bmemory\b.{0,60}\bbenchmark\b",
+    "memory security autonomous LLM agents": r"\bmemory security\b.*\bautonomous llm agents?\b|\bautonomous llm agents?\b.*\bmemory security\b",
+    "shared memory multi-agent LLM": r"\bshared memory\b.*\bmulti[- ]agent llm systems?\b|\bmulti[- ]agent llm systems?\b.*\bshared memory\b",
+    "personal AI agent memory protocol": r"\bmemory protocol\b.*\bpersonal ai agents?\b|\bpersonal ai agents?\b.*\bmemory protocol\b",
+    "autoresearch shared memory": r"\bautoresearch\b.*\bshared memory\b|\bshared memory\b.*\bautoresearch\b",
+    "agent memory cross-session": r"\bagent memory\b.*\b(cross[- ]session|cross[- ]temporal|persistent)\b|\b(cross[- ]session|cross[- ]temporal|persistent)\b.*\bagent memory\b",
     "parametric memory LLM": r"\b(parametric memory|engram)\b.*\b(llm|large language model|language model|agents?)\b",
 }
 
@@ -104,13 +139,20 @@ SYSTEM_LEVEL_HIGH_CONFIDENCE = {
     "memory module LLM agent",
     "agent memory evaluation",
     "memory benchmark agent",
+    "memory security autonomous LLM agents",
+    "shared memory multi-agent LLM",
+    "personal AI agent memory protocol",
+    "autoresearch shared memory",
+    "agent memory cross-session",
     "parametric memory LLM",
 }
 NEGATED_AGENT_MEMORY_PATTERNS = [
     r"\bwithout (studying )?(persistent |long[- ]term |agent[- ]native )?agent memory\b",
     r"\bwithout (studying )?(persistent |long[- ]term )?memory\b",
     r"\bnot (a |about |studying )?(persistent |long[- ]term )?agent memory\b",
+    r"\bdoes not (include|use|study|address|evaluate) (persistent |long[- ]term |agent[- ]native )?memory\b",
     r"\bdoes not (study|address|evaluate) (persistent |long[- ]term |agent[- ]native )?agent memory systems?\b",
+    r"\bnot (persistent )?(llm[- ]agent|llm agent|agent) memory systems?\b",
     r"\bnot (a |about |studying )?(persistent |long[- ]term )?memory systems?\b",
 ]
 
@@ -119,6 +161,7 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
     evidence = explain_rule_matches(candidate)
     text = evidence["text"]
     exclude_hits = evidence["exclude_hits"]
+    biological_hits = evidence["biological_memory_hits"]
     include_tags = list(evidence["include_tags"])
     high_confidence_hits = evidence["high_confidence_hits"]
     has_agent_context = bool(evidence["agent_context_hits"])
@@ -128,11 +171,29 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
     if broad_hits and not any(hit in SYSTEM_LEVEL_HIGH_CONFIDENCE for hit in effective_high_confidence_hits):
         effective_high_confidence_hits = []
 
+    if biological_hits and not _matches(AI_MEMORY_CONTEXT, text):
+        return ClassificationResult(
+            score=5,
+            decision="irrelevant",
+            reason="Excluded: memory topic is biological/cognitive, not LLM-agent memory.",
+            tags=["excluded-memory-sense"],
+            abstract_summary=_summary(candidate.abstract),
+        )
+
+    if negated_memory_focus:
+        return ClassificationResult(
+            score=20 if has_agent_context else 10,
+            decision="irrelevant",
+            reason="Peripheral candidate: mentions memory, but not clearly LLM-agent memory.",
+            tags=[tag for tag in include_tags if tag in WEAK_CONTEXT_TAGS],
+            abstract_summary=_summary(candidate.abstract),
+        )
+
     if exclude_hits and (not include_tags or _matches([r"\bwithout agent memory\b", r"\bwithout persistent memory\b"], text)):
         return ClassificationResult(
             score=5,
             decision="irrelevant",
-            reason="Matches excluded memory sense such as GPU, database, or human memory.",
+            reason="Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.",
             tags=["excluded-memory-sense"],
             abstract_summary=_summary(candidate.abstract),
         )
@@ -142,7 +203,7 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
         return ClassificationResult(
             score=20 if has_agent_context else 10,
             decision="irrelevant",
-            reason="Peripheral: mentions agents or evaluation, but does not clearly study agent memory.",
+            reason="Peripheral candidate: discusses agents, but not persistent agent memory." if has_agent_context else "Peripheral candidate: mentions memory, but not clearly LLM-agent memory.",
             tags=include_tags,
             abstract_summary=_summary(candidate.abstract),
         )
@@ -168,7 +229,7 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
         reason = _focused_reason(include_tags)
     elif score >= 40:
         decision = "maybe"
-        reason = "Peripheral: mentions memory or agents, but does not clearly study agent memory."
+        reason = "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory."
     else:
         decision = "irrelevant"
         reason = "Does not clearly address persistent memory for LLM agents."
@@ -203,6 +264,7 @@ def explain_rule_matches(candidate: PaperCandidate) -> dict[str, object]:
         "text": text,
         "include_tags": include_tags,
         "exclude_hits": _matches(EXCLUDE_PATTERNS, text),
+        "biological_memory_hits": _matches(BIOLOGICAL_MEMORY_PATTERNS, text),
         "agent_context_hits": _matches(AGENT_CONTEXT, text),
         "high_confidence_hits": high_confidence_hits,
         "broad_peripheral_hits": _matches_labeled(BROAD_PERIPHERAL_PATTERNS, text),
@@ -229,6 +291,10 @@ def _matches_labeled(patterns: dict[str, str], text: str) -> list[str]:
 def _high_confidence_reason(matches: list[str]) -> str:
     if any("benchmark" in match or "evaluation" in match for match in matches):
         return "Evaluates memory mechanisms or benchmarks for LLM agents."
+    if any("security" in match for match in matches):
+        return "Evaluates memory security or cross-session memory risks in autonomous LLM agents."
+    if any("shared memory" in match or "protocol" in match or "cross-session" in match for match in matches):
+        return "Studies governed shared memory or persistent memory protocols for LLM agents."
     if any("parametric" in match or "Engram" in match for match in matches):
         return "Discusses Engram-style or parametric memory mechanisms for language models."
     if any("consolidation" in match or "policy" in match or "storage" in match or "retrieval" in match for match in matches):

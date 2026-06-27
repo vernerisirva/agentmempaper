@@ -5,6 +5,7 @@ import os
 from datetime import date, timedelta
 
 from paper_scout.deduplication import normalize_doi, normalize_openalex_id
+from paper_scout.dates import publication_date
 from paper_scout.http import HttpClient
 from paper_scout.models import PaperCandidate, SourceFetchResult
 
@@ -37,6 +38,7 @@ def parse_openalex_works(json_text: str) -> list[PaperCandidate]:
     for item in payload.get("results", []):
         openalex_id = normalize_openalex_id(item.get("id"))
         landing_page_url = ((item.get("primary_location") or {}).get("landing_page_url")) or item.get("id")
+        published = publication_date(item.get("publication_date"), "openalex")
         papers.append(
             PaperCandidate(
                 title=item.get("title") or item.get("display_name") or "",
@@ -51,7 +53,10 @@ def parse_openalex_works(json_text: str) -> list[PaperCandidate]:
                 doi=normalize_doi(item.get("doi")),
                 openalex_id=openalex_id,
                 url=landing_page_url,
-                published_date=item.get("publication_date"),
+                published_date=published.value,
+                publication_year=published.year,
+                publication_date_precision=published.precision,
+                publication_date_source=published.source,
                 updated_date=(item.get("updated_date") or "")[:10] or None,
                 raw=item,
             )

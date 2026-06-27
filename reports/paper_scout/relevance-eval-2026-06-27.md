@@ -109,7 +109,7 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### CUDA memory fragmentation
@@ -117,7 +117,7 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### memory-efficient attention only
@@ -125,7 +125,7 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### database in-memory indexing
@@ -133,7 +133,7 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### operating system memory paging
@@ -141,7 +141,7 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### human memory psychology without AI agents
@@ -149,31 +149,31 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### generic RAG without persistent memory
 
 - **Expected:** irrelevant
 - **Decision:** irrelevant
-- **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
-- **Tags:** excluded-memory-sense
+- **Score:** 10
+- **Reason:** Peripheral candidate: mentions memory, but not clearly LLM-agent memory.
+- **Tags:** none
 
 ### vector database retrieval without agent memory
 
 - **Expected:** irrelevant
 - **Decision:** irrelevant
-- **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
-- **Tags:** excluded-memory-sense
+- **Score:** 20
+- **Reason:** Peripheral candidate: mentions memory, but not clearly LLM-agent memory.
+- **Tags:** none
 
 ### memory bandwidth optimization
 
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense
 
 ### cache optimization
@@ -181,5 +181,5 @@
 - **Expected:** irrelevant
 - **Decision:** irrelevant
 - **Score:** 5
-- **Reason:** Matches excluded memory sense such as GPU, database, or human memory.
+- **Reason:** Excluded: memory topic is biological/cognitive, hardware, database, or otherwise not LLM-agent memory.
 - **Tags:** excluded-memory-sense

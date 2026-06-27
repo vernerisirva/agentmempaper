@@ -10,6 +10,9 @@ from pathlib import Path
 import re
 import sqlite3
 
+from .models import PaperCandidate
+from .relevance import classify_with_rules
+
 
 @dataclass(frozen=True)
 class SiteBuildResult:
@@ -86,6 +89,7 @@ class LibraryPaper:
     review_status: str | None = None
     relevance_label: str | None = None
     future_date: bool = False
+    screening_abstract: str | None = None
 
     @property
     def authors_text(self) -> str:
@@ -151,6 +155,8 @@ def build_site(
     if not library_papers:
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
+    if using_state:
+        library_papers = _refresh_rule_classifications(library_papers)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
     library_papers = _sort_latest_relevant(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
@@ -472,6 +478,39 @@ def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_
     return curated
 
 
+def _refresh_rule_classifications(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+    refreshed: list[LibraryPaper] = []
+    for paper in papers:
+        candidate = PaperCandidate(
+            title=paper.title,
+            authors=paper.authors,
+            abstract=paper.screening_abstract or paper.abstract_summary,
+            source=paper.source,
+            source_id=paper.source_id or paper.canonical_id,
+            doi=paper.doi,
+            arxiv_id=paper.arxiv_id,
+            semantic_scholar_id=paper.semantic_scholar_id,
+            openalex_id=paper.openalex_id,
+            url=paper.url,
+            published_date=paper.published_date,
+            raw={},
+        )
+        classification = classify_with_rules(candidate)
+        refreshed.append(
+            LibraryPaper(
+                **{
+                    **paper.__dict__,
+                    "abstract_summary": classification.abstract_summary or paper.abstract_summary,
+                    "reason": classification.reason,
+                    "score": classification.score,
+                    "decision": classification.decision,
+                    "tags": classification.tags,
+                }
+            )
+        )
+    return refreshed
+
+
 def _apply_override(paper: LibraryPaper, rule: CurationRule) -> LibraryPaper:
     decision = paper.decision
     if rule.decision:
@@ -641,6 +680,7 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         sources=sources,
         source_ids=source_ids,
         alternate_urls=alternate_urls,
+        screening_abstract=best.screening_abstract or left.screening_abstract or right.screening_abstract,
     )
 
 
@@ -709,6 +749,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 title=_redact_secrets(str(row["title"])),
                 authors=[_redact_secrets(author) for author in _json_list(row["authors_json"])],
                 abstract_summary=_redact_secrets(str(row["abstract_summary"] or row["abstract"] or "")),
+                screening_abstract=_redact_secrets(str(row["abstract"] or row["abstract_summary"] or "")),
                 reason=_redact_secrets(str(row["relevance_reason"] or "")),
                 score=int(row["relevance_score"]),
                 decision=str(row["relevance_decision"]),

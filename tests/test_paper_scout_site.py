@@ -158,7 +158,13 @@ class PaperScoutSiteTest(unittest.TestCase):
                     published_date="2026-06-20",
                     raw={},
                 ),
-                ClassificationResult(91, "relevant", "Studies long-term memory architecture for LLM agents.", ["agent-memory", "memory-policy"], "Core agent memory architecture."),
+                ClassificationResult(
+                    91,
+                    "relevant",
+                    "Studies long-term memory architecture for LLM agents.",
+                    ["agent-memory", "memory-policy", "long-term-memory", "procedural-memory", "benchmark"],
+                    "Core agent memory architecture.",
+                ),
             ),
             (
                 PaperCandidate(
@@ -245,11 +251,16 @@ class PaperScoutSiteTest(unittest.TestCase):
             archive_html = (docs_dir / "archive.html").read_text(encoding="utf-8")
             self.assertIn("Agentic Memory Paper Library", html)
             self.assertIn("A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.", html)
+            self.assertIn("Updated 2026-06-26", html)
+            self.assertIn("2 papers", html)
+            self.assertIn("2 highly relevant", html)
             self.assertIn("Highly relevant", html)
             self.assertNotIn("Recommended reading", html)
             self.assertNotIn("Full library", html)
             self.assertNotIn("New in latest run", html)
             self.assertNotIn("Source warning count", html)
+            self.assertNotIn("Candidates fetched", html.split("</header>", 1)[0])
+            self.assertNotIn("Run ID", html.split("</header>", 1)[0])
             self.assertIn('<option value="recommended" selected>Recommended</option>', html)
             self.assertIn("First seen", html)
             self.assertIn("2026-06-25", archive_html)
@@ -329,6 +340,10 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("Publication date", index_html)
             self.assertIn("First seen", index_html)
             self.assertIn("Published", index_html)
+            self.assertIn('<label class="select-field relevance-filter" for="relevance-filter">', index_html)
+            self.assertIn('<option value="relevant" selected>Highly relevant</option>', index_html)
+            self.assertNotIn('id="source-filters"', index_html)
+            self.assertNotIn('id="tag-filter"', index_html)
             self.assertIn("Technical diagnostics", index_html)
             self.assertIn("Latest discoveries", latest_html)
             self.assertIn("Papers first seen in the latest Paper Scout run.", latest_html)
@@ -354,7 +369,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertEqual(html.count('data-title="latest deep research memory"'), 1)
             self.assertNotIn("recommended-card", html)
             self.assertNotIn("recommended-section", html)
-            self.assertLess(html.index("Search papers"), html.index("Latest Deep Research Memory"))
+            self.assertLess(html.index("Search papers..."), html.index("Latest Deep Research Memory"))
             self.assertIn('<details class="technical-diagnostics">', html)
             self.assertIn("<summary>Technical diagnostics</summary>", html)
             self.assertIn('<details class="export-library">', html)
@@ -384,7 +399,12 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("Open paper", html)
             self.assertIn('<details class="paper-more">', html)
             self.assertIn("Copy citation", html)
-            self.assertIn("Maybe relevant", html)
+            self.assertLess(html.index("Open paper"), html.index("Copy citation"))
+            self.assertLess(html.index('<details class="paper-more">'), html.index("A compact summary of persistent memory for LLM agents."))
+            self.assertRegex(
+                html,
+                r'<article class="paper-card compact"[^>]+data-title="deep research agent retrieval memory"[^>]+hidden>',
+            )
 
     def test_build_site_exits_gracefully_when_no_digest_exists(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -477,7 +497,8 @@ excluded:
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
             self.assertIn("Published: 2026-07-04 · source date", index_html)
-            self.assertLess(index_html.index("Core Agent Memory Architecture"), index_html.index('class="maybe-separator"'))
+            self.assertIn('<span class="badge tag tag-more">+1 more</span>', index_html)
+            self.assertNotIn('class="maybe-separator"', index_html)
             future = next(paper for paper in papers if paper["title"] == "Maybe Future Memory Paper")
             pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
             self.assertTrue(future["future_date"])

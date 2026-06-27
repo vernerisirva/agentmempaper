@@ -863,8 +863,7 @@ def _latest_to_json(latest: ParsedDigest, latest_discoveries: list[LibraryPaper]
 
 
 def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
-    source_buttons = sorted({source for paper in papers for source in (paper.sources or [paper.source]) if source})
-    tag_options = sorted({tag for paper in papers for tag in paper.tags})
+    default_decision = _default_homepage_decision(papers)
     return _page(
         "Agentic Memory Paper Library",
         f"""
@@ -880,18 +879,18 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
           <div class="library-hero">
             <h1>Agentic Memory Paper Library</h1>
             <p class="hero-copy">A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.</p>
-            {_hero_facts(papers, latest)}
+            <p class="hero-line">{_hero_line(papers, latest)}</p>
           </div>
         </header>
-        {_library_controls(source_buttons, tag_options, latest_toggle=False)}
+        {_library_controls(default_decision=default_decision)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
-            <p class="section-kicker">Ranked library</p>
             <h2>Papers to look at</h2>
           </div>
           <div class="paper-list" id="paper-list">
-            {_library_paper_cards(papers)}
+            {_library_paper_cards(papers, default_decision=default_decision)}
           </div>
+          <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
         </section>
         {_secondary_footer(latest, archive)}
         {FILTER_SCRIPT}
@@ -900,8 +899,6 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
 
 
 def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
-    source_buttons = sorted({source for paper in papers for source in (paper.sources or [paper.source]) if source})
-    tag_options = sorted({tag for paper in papers for tag in paper.tags})
     return _page(
         "Latest Paper Scout Discoveries",
         f"""
@@ -921,15 +918,16 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         {_latest_summary_strip(papers, latest)}
-        {_library_controls(source_buttons, tag_options, latest_toggle=False)}
+        {_library_controls(default_decision="all")}
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
           <div class="section-heading">
             <p class="section-kicker">New this run</p>
             <h2>Papers first seen in the latest Paper Scout run.</h2>
           </div>
           <div class="paper-list" id="paper-list">
-            {_library_paper_cards(papers)}
+            {_library_paper_cards(papers, default_decision="all")}
           </div>
+          <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
         </section>
         {_warnings(latest.source_warnings)}
         <section class="archive-strip" aria-labelledby="recent-archive-heading">
@@ -1070,15 +1068,13 @@ def _summary_strip(digest: ParsedDigest) -> str:
     """
 
 
-def _hero_facts(papers: list[LibraryPaper], latest: ParsedDigest) -> str:
-    cells = [
-        ("Latest update", latest.date),
-        ("Total papers", str(len(papers))),
-        ("Highly relevant", str(sum(1 for paper in papers if paper.decision == "relevant"))),
-    ]
-    return '<div class="hero-facts">' + "".join(
-        f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells
-    ) + "</div>"
+def _hero_line(papers: list[LibraryPaper], latest: ParsedDigest) -> str:
+    highly = sum(1 for paper in papers if paper.decision == "relevant")
+    return f"Updated {escape(latest.date)} · {len(papers)} papers · {highly} highly relevant"
+
+
+def _default_homepage_decision(papers: list[LibraryPaper]) -> str:
+    return "relevant" if any(paper.decision == "relevant" for paper in papers) else "all"
 
 
 def _library_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> str:
@@ -1149,58 +1145,36 @@ def _controls(sources: list[str]) -> str:
     """
 
 
-def _library_controls(sources: list[str], tags: list[str], latest_toggle: bool = True) -> str:
-    source_buttons = "".join(f'<button data-source="{escape(source)}">{escape(_source_label(source))}</button>' for source in sources)
-    tag_options = "".join(f'<option value="{escape(tag)}">{escape(tag)}</option>' for tag in tags)
-    latest_toggle_markup = (
-        """
-      <label class="toggle-control">
-        <input id="latest-only" type="checkbox">
-        <span>Latest-run only</span>
-      </label>
-        """
-        if latest_toggle
-        else ""
-    )
+def _library_controls(default_decision: str = "all") -> str:
+    selected = {
+        "all": " selected" if default_decision == "all" else "",
+        "relevant": " selected" if default_decision == "relevant" else "",
+        "maybe": " selected" if default_decision == "maybe" else "",
+    }
     return f"""
-    <section class="reading-controls library-controls" aria-label="Library controls">
+    <section class="reading-controls library-controls" aria-label="Library controls" data-default-decision="{escape(default_decision)}">
       <label class="search-field" for="paper-search">
-        <span>Search papers</span>
-        <input id="paper-search" type="search" placeholder="Search title, authors, summary, tags">
+        <span>Search</span>
+        <input id="paper-search" type="search" placeholder="Search papers...">
       </label>
       <label class="select-field" for="paper-sort">
         <span>Sort</span>
         <select id="paper-sort">
           <option value="recommended" selected>Recommended</option>
-          <option value="score-desc">Relevance score</option>
+          <option value="score-desc">Relevance</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
           <option value="title-asc">Title</option>
         </select>
       </label>
-      <div class="control-group">
-        <span>Relevance</span>
-        <div class="segmented" id="relevance-filters">
-          <button data-decision="all" class="active">All</button>
-          <button data-decision="relevant">Highly relevant</button>
-          <button data-decision="maybe">Maybe relevant</button>
-        </div>
-      </div>
-      {latest_toggle_markup}
-      <label class="select-field tag-filter" for="tag-filter">
-        <span>Tag</span>
-        <select id="tag-filter">
-          <option value="all">All tags</option>
-          {tag_options}
+      <label class="select-field relevance-filter" for="relevance-filter">
+        <span>Show</span>
+        <select id="relevance-filter">
+          <option value="relevant"{selected["relevant"]}>Highly relevant</option>
+          <option value="all"{selected["all"]}>All papers</option>
+          <option value="maybe"{selected["maybe"]}>Maybe relevant</option>
         </select>
       </label>
-      <div class="control-group sources">
-        <span>Source</span>
-        <div class="source-buttons" id="source-filters">
-          <button data-source="all" class="active">All sources</button>
-          {source_buttons}
-        </div>
-      </div>
     </section>
     """
 
@@ -1289,21 +1263,15 @@ def _recommended_card(paper: LibraryPaper) -> str:
     """
 
 
-def _library_paper_cards(papers: list[LibraryPaper]) -> str:
+def _library_paper_cards(papers: list[LibraryPaper], default_decision: str = "all") -> str:
     if not papers:
         return '<p class="empty">No papers in this section.</p>'
-    parts: list[str] = []
-    inserted_maybe_separator = False
-    for paper in papers:
-        if paper.decision == "maybe" and not inserted_maybe_separator:
-            parts.append('<div class="maybe-separator" role="separator"><span>Maybe relevant</span></div>')
-            inserted_maybe_separator = True
-        parts.append(_library_paper_card(paper))
-    return "\n".join(parts)
+    return "\n".join(_library_paper_card(paper, default_decision=default_decision) for paper in papers)
 
 
-def _library_paper_card(paper: LibraryPaper) -> str:
-    tags = "".join(f'<span class="badge tag">{escape(tag)}</span>' for tag in paper.tags) or '<span class="badge tag">untagged</span>'
+def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> str:
+    visible_tags = _visible_tag_badges(paper.tags)
+    details_tags = _all_tag_badges(paper.tags)
     sources = paper.sources or [paper.source]
     source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
@@ -1319,13 +1287,12 @@ def _library_paper_card(paper: LibraryPaper) -> str:
     relevance_label = paper.relevance_label or _relevance_label(paper)
     ids = _identifier_list(paper)
     more_items = "".join(f"<li>{item}</li>" for item in ids) or "<li>No additional identifiers.</li>"
+    hidden = " hidden" if default_decision != "all" and paper.decision != default_decision else ""
     return f"""
-    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}">
+    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
       <div class="paper-main">
         <div class="paper-kicker">
-          {source_badges}
           <span class="badge relevance">{escape(_decision_label(paper.decision))} · {paper.score}/100</span>
-          {('<span class="badge latest">latest run</span>' if paper.newly_discovered_in_latest_run else '')}
           {pinned}
           {status}
         </div>
@@ -1333,25 +1300,43 @@ def _library_paper_card(paper: LibraryPaper) -> str:
         <p class="meta">{escape(paper.authors_text)} · Published {escape(published)}</p>
         <p class="relevance-label">{escape(relevance_label)} · {paper.score}/100</p>
         <p class="reason">{escape(_short_reason(paper))}</p>
-        {note}
-        <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
-        <div class="tags">{tags}</div>
+        <div class="tags">{visible_tags}</div>
       </div>
       <div class="paper-side">
         {link}
         <details class="paper-more">
           <summary>More details</summary>
+          <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
+          {note}
+          <div class="details-group"><strong>Sources</strong><div class="tags">{source_badges}</div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags">{details_tags}</div></div>
           <ul>
             <li>First seen: {escape(paper.first_seen_date)}</li>
             {more_items}
           </ul>
           {secondary_links}
+          <p class="details-reason"><strong>Classifier reason</strong> {escape(paper.reason)}</p>
           <button class="citation-button" type="button" data-citation="{escape(paper.citation)}">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
       </div>
     </article>
     """
+
+
+def _visible_tag_badges(tags: list[str], limit: int = 4) -> str:
+    if not tags:
+        return '<span class="badge tag">untagged</span>'
+    visible = tags[:limit]
+    badges = "".join(f'<span class="badge tag">{escape(tag)}</span>' for tag in visible)
+    remaining = len(tags) - len(visible)
+    if remaining > 0:
+        badges += f'<span class="badge tag tag-more">+{remaining} more</span>'
+    return badges
+
+
+def _all_tag_badges(tags: list[str]) -> str:
+    return "".join(f'<span class="badge tag">{escape(tag)}</span>' for tag in tags) or '<span class="badge tag">untagged</span>'
 
 
 def _secondary_links(paper: LibraryPaper) -> str:
@@ -1650,31 +1635,12 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing:
   text-wrap: pretty;
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.55rem; }
-.hero-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .65rem;
-  margin-top: 1.45rem;
-}
-.hero-facts div {
-  min-width: 8rem;
-  padding: .7rem .8rem;
-  background: rgba(255, 253, 248, .7);
-  border: 1px solid var(--line);
-  border-radius: .65rem;
-}
-.hero-facts span {
-  display: block;
+.hero-line {
+  margin: 1rem 0 0;
   color: var(--faint);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: .72rem;
-  font-weight: 720;
-}
-.hero-facts strong {
-  display: block;
-  margin-top: .08rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 1rem;
+  font-size: .96rem;
+  line-height: 1.6;
   font-variant-numeric: tabular-nums;
 }
 .button, .paper-link, .citation-button {
@@ -1811,14 +1777,14 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.95rem); line-height: 1.12; letter-spacing:
 }
 .reading-controls {
   display: grid;
-  grid-template-columns: minmax(18rem, 1.35fr) minmax(11rem, .65fr) minmax(15rem, 1fr);
-  gap: .9rem;
+  grid-template-columns: minmax(20rem, 1fr) minmax(11rem, .42fr) minmax(12rem, .48fr);
+  gap: .7rem;
   align-items: end;
-  margin: 1.2rem 0 2rem;
-  padding: .95rem;
-  background: rgba(248, 245, 238, .8);
+  margin: .8rem 0 1.7rem;
+  padding: .75rem;
+  background: rgba(248, 245, 238, .64);
   border: 1px solid var(--line);
-  border-radius: .85rem;
+  border-radius: .75rem;
 }
 .search-field, .select-field, .control-group { display: grid; gap: .45rem; }
 input[type="search"], select {
@@ -1879,16 +1845,16 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 }
 .paper-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(8.5rem, 11rem);
+  grid-template-columns: minmax(0, 1fr) minmax(8rem, 10rem);
   gap: clamp(.9rem, 2vw, 1.3rem);
-  margin: .8rem 0;
-  padding: clamp(.95rem, 2vw, 1.25rem);
+  margin: .65rem 0;
+  padding: clamp(.85rem, 1.6vw, 1.05rem);
   background: var(--paper);
   border-top: 1px solid var(--line-strong);
-  border-radius: .75rem;
-  box-shadow: 0 18px 46px rgba(64, 48, 32, .055);
+  border-radius: .62rem;
+  box-shadow: 0 12px 30px rgba(64, 48, 32, .045);
 }
-.paper-card.primary { border-top: 4px solid var(--accent-dark); }
+.paper-card.primary { border-top: 3px solid var(--accent-dark); }
 .paper-card.compact {
   background: rgba(255, 253, 248, .68);
   box-shadow: none;
@@ -1901,7 +1867,10 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   font-size: clamp(1.15rem, 1.6vw, 1.45rem);
 }
 .paper-kicker, .tags { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
-.paper-card h3 { margin-top: .55rem; }
+.paper-card h3 {
+  margin-top: .5rem;
+  font-size: clamp(1.18rem, 1.8vw, 1.65rem);
+}
 .meta, .empty {
   color: var(--muted);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -1933,18 +1902,18 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   font-variant-numeric: tabular-nums;
 }
 .reason {
-  margin: .75rem 0 0;
-  padding: .65rem .75rem;
-  border-left: 3px solid rgba(39, 97, 93, .45);
-  background: #f3f8f6;
+  max-width: 68ch;
+  margin: .55rem 0 0;
+  padding: 0;
+  border-left: 0;
+  background: transparent;
   color: #244c49;
-  border-radius: .35rem .55rem .55rem .35rem;
   font-weight: 600;
 }
 .relevance-label {
   display: inline-flex;
   width: fit-content;
-  margin: .9rem 0 0;
+  margin: .65rem 0 0;
   padding: .28rem .5rem;
   border-radius: .35rem;
   background: #e9f2f0;
@@ -1971,7 +1940,7 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 }
 .abstract-summary {
   max-width: 67ch;
-  margin: .75rem 0 0;
+  margin: .75rem 0;
   color: #3d3934;
   text-wrap: pretty;
 }
@@ -1991,7 +1960,8 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
 .pinned { background: #efe8d8; color: #5f4520; border-color: #dac7a3; }
 .review { background: #ece7f0; color: #554361; border-color: #d8cddf; }
 .tag { background: #f2eee7; color: #574f47; }
-.tags { margin-top: .95rem; }
+.tags { margin-top: .65rem; }
+.tag-more { color: var(--faint); }
 .paper-side {
   display: flex;
   flex-direction: column;
@@ -2042,21 +2012,17 @@ button.active { background: var(--accent-dark); border-color: var(--accent-dark)
   margin: .55rem 0;
   padding-left: 1rem;
 }
-.maybe-separator {
-  margin: 1.8rem 0 .65rem;
-  border-top: 1px solid var(--line);
+.details-group {
+  margin: .75rem 0;
 }
-.maybe-separator span {
-  display: inline-flex;
-  transform: translateY(-50%);
-  background: var(--bg);
-  padding-right: .75rem;
-  color: var(--faint);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: .76rem;
+.details-group strong, .details-reason strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: .25rem;
   font-weight: 760;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+}
+.details-reason {
+  margin: .75rem 0;
 }
 .citation-button:hover {
   background: var(--paper);
@@ -2285,14 +2251,12 @@ FILTER_SCRIPT = """
 <script>
 (() => {
   const search = document.querySelector('#paper-search');
-  const latestOnly = document.querySelector('#latest-only');
-  const tagFilter = document.querySelector('#tag-filter');
+  const relevanceFilter = document.querySelector('#relevance-filter');
   const sortSelect = document.querySelector('#paper-sort');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
-  const maybeSeparator = document.querySelector('.maybe-separator');
-  let decision = 'all';
-  let source = 'all';
+  const emptyState = document.querySelector('#no-results');
+  let decision = relevanceFilter ? relevanceFilter.value : 'all';
   function sortableDate(card, attr) {
     const value = card.dataset[attr] || '';
     return /^\\d{4}-\\d{2}-\\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
@@ -2315,57 +2279,29 @@ FILTER_SCRIPT = """
     const mode = sortSelect.value || 'recommended';
     const sorted = [...cards].sort((a, b) => {
       if (mode === 'recommended') return recommendedRank(a, b);
-      if (mode === 'published-asc') return sortableDate(a, 'published').localeCompare(sortableDate(b, 'published')) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
-      if (mode === 'source-asc') return a.dataset.source.localeCompare(b.dataset.source) || a.dataset.title.localeCompare(b.dataset.title);
       return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
     });
-    if (maybeSeparator) maybeSeparator.remove();
-    let insertedMaybeSeparator = false;
     for (const card of sorted) {
-      if (maybeSeparator && !insertedMaybeSeparator && card.dataset.decision === 'maybe') {
-        list.appendChild(maybeSeparator);
-        insertedMaybeSeparator = true;
-      }
       list.appendChild(card);
     }
   }
   function update() {
     const query = (search.value || '').toLowerCase();
-    const tag = tagFilter ? tagFilter.value : 'all';
+    let visibleCount = 0;
     for (const card of cards) {
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
-      const matchesSource = source === 'all' || (card.dataset.sources || card.dataset.source || '').split(' ').includes(source);
-      const matchesTag = tag === 'all' || (card.dataset.tags || '').split(' ').includes(tag);
-      const matchesLatest = !latestOnly || !latestOnly.checked || card.dataset.latestRun === 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesSource && matchesTag && matchesLatest);
+      card.hidden = !(matchesQuery && matchesDecision);
+      if (!card.hidden) visibleCount += 1;
     }
-    if (maybeSeparator) {
-      const visibleCards = cards.filter(card => !card.hidden);
-      const hasVisibleRelevant = visibleCards.some(card => card.dataset.decision === 'relevant');
-      const hasVisibleMaybe = visibleCards.some(card => card.dataset.decision === 'maybe');
-      maybeSeparator.hidden = !(hasVisibleRelevant && hasVisibleMaybe);
-    }
-  }
-  function bindButtons(selector, attr, setter) {
-    document.querySelectorAll(selector).forEach(button => {
-      button.addEventListener('click', () => {
-        button.parentElement.querySelectorAll('button').forEach(item => item.classList.remove('active'));
-        button.classList.add('active');
-        setter(button.dataset[attr]);
-        update();
-      });
-    });
+    if (emptyState) emptyState.hidden = visibleCount > 0;
   }
   if (search) search.addEventListener('input', update);
-  if (latestOnly) latestOnly.addEventListener('change', update);
-  if (tagFilter) tagFilter.addEventListener('change', update);
+  if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
-  bindButtons('#relevance-filters button', 'decision', value => decision = value);
-  bindButtons('#source-filters button', 'source', value => source = value);
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {
       const status = button.parentElement.querySelector('.copy-status');

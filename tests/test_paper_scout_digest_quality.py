@@ -69,6 +69,36 @@ class PaperScoutDigestQualityTest(unittest.TestCase):
         self.assertIn("agent-native memory", report.flagged[0].matched_core_terms)
         self.assertIn("memory system for LLM agents", report.flagged[0].matched_core_terms)
 
+    def test_flags_suspicious_high_relevance_broad_agent_papers(self):
+        papers = [
+            digest_paper(
+                "Exploring Recommender System Evaluation: A Multi-Modal LLM Agent Framework for A/B Testing",
+                "LLM agents evaluate recommender A/B testing pipelines without studying persistent memory.",
+                decision="relevant",
+                score=84,
+            )
+        ]
+
+        report = analyze_digest_quality(papers)
+
+        self.assertEqual(report.flagged_count, 1)
+        self.assertEqual(report.flagged[0].kind, "suspicious_high_relevance")
+        self.assertIn("recommender-system evaluation", report.flagged[0].matched_broad_terms)
+
+    def test_does_not_flag_high_relevance_agent_native_memory_system(self):
+        papers = [
+            digest_paper(
+                "Are We Ready For An Agent-Native Memory System?",
+                "A memory system for LLM agents with storage, retrieval, update, and consolidation.",
+                decision="relevant",
+                score=95,
+            )
+        ]
+
+        report = analyze_digest_quality(papers)
+
+        self.assertEqual(report.flagged_count, 0)
+
     def test_writes_markdown_report(self):
         papers = [digest_paper("GPU Memory Bandwidth", "Memory bandwidth optimization for accelerators.")]
 

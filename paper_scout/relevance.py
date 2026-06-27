@@ -13,19 +13,24 @@ INCLUDE_PATTERNS = {
     "memory-systems": [
         r"\bagent[- ]native memory\b",
         r"\bagent memory systems?\b",
-        r"\bmemory systems?\b",
-        r"\bmemory modules?\b",
-        r"\bdata management systems?\b",
+        r"\bmemory systems?\b.*\b(llm|large language model|language model|autonomous) agents?\b",
+        r"\b(llm|large language model|language model|autonomous) agents?\b.*\bmemory systems?\b",
+        r"\bmemory modules?\b.*\b(llm|large language model|language model|autonomous) agents?\b",
     ],
     "long-term-memory": [r"\blong[- ]term memory\b", r"\bpersistent memory\b"],
     "memory-types": [r"\bepisodic memory\b", r"\bsemantic memory\b", r"\bprocedural memory\b"],
     "memory-policy": [
         r"\bmemory (write|read|retrieval|update|maintenance|governance|policy|policies|representation|storage|consolidation)\b",
         r"\b(write|read|retrieval) polic(y|ies)\b",
-        r"\bstorage\b.*\bretrieval\b.*\bmaintenance\b",
+        r"\bmemory\b.*\bstorage\b.*\bretrieval\b.*\bmaintenance\b",
     ],
-    "benchmark": [r"\b(agent )?memory benchmark\b", r"\bagent memory evaluation\b", r"\blongmemeval\b", r"\blocomo\b"],
-    "evaluation": [r"\bevaluat(e|es|ed|ion|ing)\b", r"\bbenchmark\b"],
+    "benchmark": [r"\b(agent )?memory benchmark\b", r"\bmemory\b.{0,60}\bbenchmark\b", r"\bagent memory evaluation\b", r"\blongmemeval\b", r"\blocomo\b"],
+    "evaluation": [
+        r"\bagent memory evaluation\b",
+        r"\bmemory\b.{0,80}\bevaluat(e|es|ed|ion|ing)\b",
+        r"\bevaluat(e|es|ed|ion|ing)\b.{0,80}\bmemory\b",
+        r"\bare we ready\b.{0,120}\b(agent[- ]native )?memory systems?\b",
+    ],
     "deep-research": [r"\bdeep research\b", r"\bautoresearch\b", r"\bliterature[- ]review agents?\b", r"\bresearch agents?\b"],
     "parametric-memory": [r"\bparametric memory\b", r"\bengram\b", r"\bmodel[- ]internal memory\b", r"\bmemory mechanism\b"],
     "memory-augmented": [r"\bmemory[- ]augmented (llm|language model|agent)\b", r"\bmemory[- ]augmented language agents?\b"],
@@ -66,16 +71,48 @@ HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS = {
     "agent-native memory": r"\bagent[- ]native memory\b",
     "agent memory system": r"\bagent memory systems?\b",
     "memory system for LLM agents": r"\bmemory systems?\b.*\b(llm|large language model|language model)(?:\s+\([^)]+\))? agents?\b|\bmemory (for|in) (llm|large language model|language model)(?:\s+\([^)]+\))? agents?\b.*\b(systems?|storage|retrieval|update|consolidation|maintenance|governance)\b",
-    "memory systems and LLM agents": r"\bmemory systems?\b.*\bagents?\b|\bagents?\b.*\bmemory systems?\b",
+    "memory systems and LLM agents": r"\b(llm|large language model|language model) agents?\b.*\bmemory systems?\b|\bmemory systems?\b.*\b(llm|large language model|language model) agents?\b",
     "memory module LLM agent": r"\bmemory modules?\b.*\b(llm|large language model|language model)?\s*agents?\b",
     "persistent memory agent": r"\bpersistent memory\b.*\bagents?\b|\bagents?\b.*\bpersistent memory\b",
     "long-term memory agent": r"\blong[- ]term memory\b.*\bagents?\b|\bagents?\b.*\blong[- ]term memory\b",
+    "memory type agent": r"\b(episodic|semantic|procedural) memory\b.*\bagents?\b|\bagents?\b.*\b(episodic|semantic|procedural) memory\b",
+    "memory policy LLM agent": r"\bmemory (write|read|retrieval|update|maintenance|governance|policy|policies)\b.*\b(llm|large language model|language model)?\s*agents?\b",
     "memory representation retrieval agent": r"\bmemory representation\b.*\bretrieval\b.*\bagents?\b|\bagents?\b.*\bmemory representation\b.*\bretrieval\b",
-    "storage retrieval maintenance memory": r"\bstorage\b.*\bretrieval\b.*\bmaintenance\b.*\bmemory\b|\bmemory\b.*\bstorage\b.*\bretrieval\b.*\bmaintenance\b",
+    "storage retrieval maintenance memory": r"\b(llm|agent|agents)\b.*\bmemory\b.*\bstorage\b.*\bretrieval\b.*\bmaintenance\b|\bmemory\b.*\bstorage\b.*\bretrieval\b.*\bmaintenance\b.*\b(llm|agent|agents)\b",
     "memory consolidation agent": r"\bmemory consolidation\b.*\bagents?\b|\bagents?\b.*\bmemory consolidation\b",
     "agent memory evaluation": r"\bagent memory evaluation\b",
-    "memory benchmark agent": r"\bmemory benchmark\b.*\bagents?\b|\bagents?\b.*\bmemory benchmark\b",
+    "memory benchmark agent": r"\bmemory\b.{0,60}\bbenchmark\b.*\bagents?\b|\bagents?\b.*\bmemory\b.{0,60}\bbenchmark\b",
+    "parametric memory LLM": r"\b(parametric memory|engram)\b.*\b(llm|large language model|language model|agents?)\b",
 }
+
+BROAD_PERIPHERAL_PATTERNS = {
+    "recommender-system evaluation": r"\brecommender\b|\ba/b testing\b",
+    "broad agentic AI/AGI": r"\bagentic artificial intelligence\b|\bartificial general intelligence\b|\bagi\b",
+    "personality/empathy": r"\bpersonality\b|\bempathy\b|\bhuman shaping\b",
+    "cybersecurity/phishing": r"\bphishing\b|\bcybersecurity\b|\bvulnerabilit(y|ies)\b",
+    "evacuation/traffic/simulation": r"\bevacuation\b|\btraffic\b|\bsimulation\b|\bphysics-based building\b",
+    "GPU/infrastructure": r"\bgpu\b|\bscheduling\b|\bserving\b|\binfrastructure\b|\blow-latency\b",
+    "generic RAG": r"\brag\b|\bretrieval augmented generation\b",
+}
+
+WEAK_CONTEXT_TAGS = {"llm-agents", "evaluation"}
+SYSTEM_LEVEL_HIGH_CONFIDENCE = {
+    "agent-native memory",
+    "agent memory system",
+    "memory system for LLM agents",
+    "memory systems and LLM agents",
+    "memory module LLM agent",
+    "agent memory evaluation",
+    "memory benchmark agent",
+    "parametric memory LLM",
+}
+NEGATED_AGENT_MEMORY_PATTERNS = [
+    r"\bwithout (studying )?(persistent |long[- ]term |agent[- ]native )?agent memory\b",
+    r"\bwithout (studying )?(persistent |long[- ]term )?memory\b",
+    r"\bnot (a |about |studying )?(persistent |long[- ]term )?agent memory\b",
+    r"\bdoes not (study|address|evaluate) (persistent |long[- ]term |agent[- ]native )?agent memory systems?\b",
+    r"\bnot (a |about |studying )?(persistent |long[- ]term )?memory systems?\b",
+]
 
 
 def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
@@ -85,6 +122,11 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
     include_tags = list(evidence["include_tags"])
     high_confidence_hits = evidence["high_confidence_hits"]
     has_agent_context = bool(evidence["agent_context_hits"])
+    broad_hits = evidence["broad_peripheral_hits"]
+    negated_memory_focus = bool(evidence["negated_memory_focus_hits"])
+    effective_high_confidence_hits = [] if negated_memory_focus else list(high_confidence_hits)
+    if broad_hits and not any(hit in SYSTEM_LEVEL_HIGH_CONFIDENCE for hit in effective_high_confidence_hits):
+        effective_high_confidence_hits = []
 
     if exclude_hits and (not include_tags or _matches([r"\bwithout agent memory\b", r"\bwithout persistent memory\b"], text)):
         return ClassificationResult(
@@ -95,26 +137,38 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
             abstract_summary=_summary(candidate.abstract),
         )
 
-    score = min(95, len(include_tags) * 22 + (18 if has_agent_context else 0))
+    core_tags = [tag for tag in include_tags if tag not in WEAK_CONTEXT_TAGS]
+    if not core_tags and not effective_high_confidence_hits:
+        return ClassificationResult(
+            score=20 if has_agent_context else 10,
+            decision="irrelevant",
+            reason="Peripheral: mentions agents or evaluation, but does not clearly study agent memory.",
+            tags=include_tags,
+            abstract_summary=_summary(candidate.abstract),
+        )
+
+    score = min(85, len(core_tags) * 18 + (10 if has_agent_context else 0))
     if "agent-memory" in include_tags:
         score += 15
     if "memory-systems" in include_tags and has_agent_context:
         score += 12
     if "benchmark" in include_tags:
         score += 8
-    if high_confidence_hits:
+    if effective_high_confidence_hits:
         score = max(score, 90)
+    if broad_hits and not effective_high_confidence_hits:
+        score = min(score, 62)
     score = min(100, score)
 
-    if high_confidence_hits:
+    if effective_high_confidence_hits:
         decision = "relevant"
-        reason = "Directly discusses agent-native memory systems or memory modules for LLM agents."
+        reason = _high_confidence_reason(effective_high_confidence_hits)
     elif score >= 70:
         decision = "relevant"
-        reason = "Matches the agent-memory rubric with explicit LLM or agent context."
+        reason = _focused_reason(include_tags)
     elif score >= 40:
         decision = "maybe"
-        reason = "Touches memory concepts that may be relevant if connected to agent behavior."
+        reason = "Peripheral: mentions memory or agents, but does not clearly study agent memory."
     else:
         decision = "irrelevant"
         reason = "Does not clearly address persistent memory for LLM agents."
@@ -136,7 +190,8 @@ def explain_rule_matches(candidate: PaperCandidate) -> dict[str, object]:
         if _matches(patterns, text)
     ]
     high_confidence_hits = _matches_labeled(HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS, text)
-    if high_confidence_hits:
+    negated_memory_focus_hits = _matches(NEGATED_AGENT_MEMORY_PATTERNS, text)
+    if high_confidence_hits and not negated_memory_focus_hits:
         for tag in ["agent-memory", "memory-systems", "llm-agents"]:
             if tag not in include_tags:
                 include_tags.append(tag)
@@ -150,6 +205,8 @@ def explain_rule_matches(candidate: PaperCandidate) -> dict[str, object]:
         "exclude_hits": _matches(EXCLUDE_PATTERNS, text),
         "agent_context_hits": _matches(AGENT_CONTEXT, text),
         "high_confidence_hits": high_confidence_hits,
+        "broad_peripheral_hits": _matches_labeled(BROAD_PERIPHERAL_PATTERNS, text),
+        "negated_memory_focus_hits": negated_memory_focus_hits,
     }
 
 
@@ -167,6 +224,34 @@ def _matches(patterns: list[str], text: str) -> list[str]:
 
 def _matches_labeled(patterns: dict[str, str], text: str) -> list[str]:
     return [label for label, pattern in patterns.items() if re.search(pattern, text, flags=re.I)]
+
+
+def _high_confidence_reason(matches: list[str]) -> str:
+    if any("benchmark" in match or "evaluation" in match for match in matches):
+        return "Evaluates memory mechanisms or benchmarks for LLM agents."
+    if any("parametric" in match or "Engram" in match for match in matches):
+        return "Discusses Engram-style or parametric memory mechanisms for language models."
+    if any("consolidation" in match or "policy" in match or "storage" in match or "retrieval" in match for match in matches):
+        return "Studies memory storage, retrieval, update, or consolidation for LLM agents."
+    if any("persistent" in match or "long-term" in match for match in matches):
+        return "Focuses on persistent or long-term memory for agent behavior."
+    return "Studies memory systems or memory modules for LLM agents."
+
+
+def _focused_reason(tags: list[str]) -> str:
+    if "benchmark" in tags or "evaluation" in tags:
+        return "Evaluates memory mechanisms or benchmarks for LLM agents."
+    if "parametric-memory" in tags:
+        return "Discusses Engram-style or parametric memory mechanisms for language models."
+    if "memory-policy" in tags:
+        return "Studies memory storage, retrieval, update, or consolidation for LLM agents."
+    if "long-term-memory" in tags:
+        return "Focuses on persistent or long-term memory for agent behavior."
+    if "memory-types" in tags:
+        return "Studies episodic, semantic, or procedural memory for agents."
+    if "memory-systems" in tags:
+        return "Studies memory systems or memory modules for LLM agents."
+    return "Studies agent memory with explicit LLM or agent context."
 
 
 def _summary(abstract: str, max_chars: int = 320) -> str:

@@ -54,6 +54,46 @@ class PaperScoutRelevanceTest(unittest.TestCase):
         self.assertIn("memory-systems", result.tags)
         self.assertIn("memory-policy", result.tags)
 
+    def test_rules_mark_memory_consolidation_for_llm_agents_highly_relevant(self):
+        candidate = PaperCandidate(
+            title="Trustworthy Memory Consolidation for LLM Agents",
+            authors=["Ada Lovelace"],
+            abstract=(
+                "We study memory consolidation for LLM agents with persistent memory, "
+                "retrieval, and update policies across long-horizon tasks."
+            ),
+            source="fixture",
+            source_id="memory-consolidation",
+            url="https://example.test/memory-consolidation",
+            published_date="2026-01-01",
+        )
+
+        result = classify_with_rules(candidate)
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("memory-policy", result.tags)
+
+    def test_rules_mark_agent_memory_benchmarks_highly_relevant(self):
+        candidate = PaperCandidate(
+            title="MGBench: Memory Governance Benchmark for Agentic Long-Term Memory",
+            authors=["Grace Hopper"],
+            abstract=(
+                "This benchmark evaluates memory governance, retrieval, update, and "
+                "long-term memory behavior in LLM agents."
+            ),
+            source="fixture",
+            source_id="agent-memory-benchmark",
+            url="https://example.test/benchmark",
+            published_date="2026-01-01",
+        )
+
+        result = classify_with_rules(candidate)
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("benchmark", result.tags)
+
     def test_rules_mark_agent_memory_paper_relevant(self):
         candidate = PaperCandidate(
             title="Long-Term Memory for LLM Agents",
@@ -91,6 +131,59 @@ class PaperScoutRelevanceTest(unittest.TestCase):
         self.assertEqual(result.decision, "irrelevant")
         self.assertLess(result.score, 30)
         self.assertFalse(should_consider_for_llm(result))
+
+    def test_rules_do_not_make_broad_agent_papers_highly_relevant(self):
+        examples = [
+            (
+                "Exploring Recommender System Evaluation: A Multi-Modal LLM Agent Framework for A/B Testing",
+                "We propose LLM agents for recommender-system A/B testing and evaluation, with updating experiment dashboards.",
+            ),
+            (
+                "Agentic Artificial Intelligence and Artificial General Intelligence: Emerging Paradigms",
+                "A broad survey of agentic AI and AGI foundations, autonomy, planning, and societal impact.",
+            ),
+            (
+                "The meek shall inherit the Earth: personality, empathy, and the human shaping of LLMs",
+                "We study personality, empathy, and human preference shaping in LLM behavior over long-term interactions.",
+            ),
+            (
+                "A Lightweight Agentic AI Framework with DeepSeek-R1 for Adaptive Phishing URL Detection",
+                "LLM agents coordinate tool calls for phishing URL detection and cybersecurity classification.",
+            ),
+            (
+                "LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis",
+                "Agents coordinate evacuation and traffic simulation with cognitive task analysis, but not persistent agent memory systems.",
+            ),
+            (
+                "SwarmX: Agentic Scheduling for Low-Latency Agentic Systems",
+                "Agentic scheduling improves GPU serving throughput and low-latency model inference.",
+            ),
+            (
+                "Memory-Efficient Attention for LLM Agents",
+                "Attention kernels reduce KV cache use and GPU memory allocation for serving agents.",
+            ),
+            (
+                "RAVEN: Agentic RAG for Automated Vulnerability Repair",
+                "A generic RAG system retrieves repository context for software repair without persistent memory.",
+            ),
+        ]
+
+        for title, abstract in examples:
+            with self.subTest(title=title):
+                result = classify_with_rules(
+                    PaperCandidate(
+                        title=title,
+                        authors=["Fixture Author"],
+                        abstract=abstract,
+                        source="fixture",
+                        source_id=title,
+                        url="https://example.test/peripheral",
+                        published_date="2026-01-01",
+                    )
+                )
+
+                self.assertNotEqual(result.decision, "relevant")
+                self.assertLess(result.score, 70)
 
     def test_fixture_evaluation_has_no_rule_false_negatives_or_false_positives(self):
         report = evaluate_relevance_examples(relevance_fixture_examples(), use_llm=False)

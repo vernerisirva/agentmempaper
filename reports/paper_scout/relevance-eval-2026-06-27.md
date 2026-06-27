@@ -20,89 +20,89 @@
 
 - **Expected:** relevant
 - **Decision:** relevant
-- **Score:** 100
-- **Reason:** Directly discusses agent-native memory systems or memory modules for LLM agents.
+- **Score:** 91
+- **Reason:** Focuses on persistent or long-term memory for agent behavior.
 - **Tags:** agent-memory, llm-agents, long-term-memory, memory-systems
 
 ### episodic memory in autonomous agents
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 62
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** llm-agents, memory-types
+- **Decision:** relevant
+- **Score:** 91
+- **Reason:** Studies memory systems or memory modules for LLM agents.
+- **Tags:** llm-agents, memory-types, agent-memory, memory-systems
 
 ### semantic memory for deep research agents
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 62
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** memory-types, deep-research
+- **Decision:** relevant
+- **Score:** 100
+- **Reason:** Studies memory systems or memory modules for LLM agents.
+- **Tags:** memory-types, deep-research, agent-memory, memory-systems, llm-agents
 
 ### procedural memory for tool-using agents
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 40
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** memory-types
+- **Decision:** relevant
+- **Score:** 91
+- **Reason:** Studies memory systems or memory modules for LLM agents.
+- **Tags:** memory-types, agent-memory, memory-systems, llm-agents
 
 ### persistent memory in literature-review agents
 
 - **Expected:** relevant
 - **Decision:** relevant
 - **Score:** 100
-- **Reason:** Directly discusses agent-native memory systems or memory modules for LLM agents.
+- **Reason:** Focuses on persistent or long-term memory for agent behavior.
 - **Tags:** long-term-memory, deep-research, agent-memory, memory-systems, llm-agents
 
 ### memory write/read policies for LLM agents
 
 - **Expected:** relevant
 - **Decision:** relevant
-- **Score:** 84
-- **Reason:** Matches the agent-memory rubric with explicit LLM or agent context.
-- **Tags:** llm-agents, memory-policy, evaluation
+- **Score:** 91
+- **Reason:** Studies memory storage, retrieval, update, or consolidation for LLM agents.
+- **Tags:** llm-agents, memory-policy, evaluation, agent-memory, memory-systems
 
 ### agent memory benchmark
 
 - **Expected:** relevant
 - **Decision:** relevant
 - **Score:** 100
-- **Reason:** Directly discusses agent-native memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, long-term-memory, benchmark, evaluation, memory-systems
+- **Reason:** Evaluates memory mechanisms or benchmarks for LLM agents.
+- **Tags:** agent-memory, llm-agents, long-term-memory, benchmark, memory-systems
 
 ### agent-native memory system
 
 - **Expected:** relevant
 - **Decision:** relevant
-- **Score:** 100
-- **Reason:** Directly discusses agent-native memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, memory-systems
+- **Score:** 90
+- **Reason:** Studies memory systems or memory modules for LLM agents.
+- **Tags:** agent-memory, llm-agents, memory-systems, evaluation
 
 ### parametric memory for language agents
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 62
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** evaluation, parametric-memory
+- **Decision:** relevant
+- **Score:** 91
+- **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
+- **Tags:** evaluation, parametric-memory, agent-memory, memory-systems, llm-agents
 
 ### Engram-style mechanisms in LLMs
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 40
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** parametric-memory
+- **Decision:** relevant
+- **Score:** 91
+- **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
+- **Tags:** parametric-memory, agent-memory, memory-systems, llm-agents
 
 ### multilingual Engram-style memory
 
 - **Expected:** relevant
-- **Decision:** maybe
-- **Score:** 62
-- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** llm-agents, parametric-memory
+- **Decision:** relevant
+- **Score:** 91
+- **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
+- **Tags:** llm-agents, parametric-memory, agent-memory, memory-systems
 
 ### GPU memory allocation
 

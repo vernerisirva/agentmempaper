@@ -162,7 +162,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Future Source Relevant Memory Paper",
                     authors=["Future Relevant Author"],
-                    abstract="A relevant paper with a future source-provided publication date.",
+                    abstract="Persistent memory systems for LLM agents with a future source-provided publication date.",
                     source="openalex",
                     source_id="future-relevant",
                     url="https://example.test/future-relevant",
@@ -175,7 +175,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Fresh First Seen Agent Memory",
                     authors=["No Date Author"],
-                    abstract="A relevant paper without a publication date, first seen in the current run.",
+                    abstract="Long-term memory systems for LLM agents without a publication date, first seen in the current run.",
                     source="openalex",
                     source_id="fresh-first-seen",
                     url="https://example.test/fresh-first-seen",
@@ -188,7 +188,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Newer Low Score Agent Memory",
                     authors=["Recent Author"],
-                    abstract="A newer relevant paper with a lower score than older relevant papers.",
+                    abstract="A newer study of persistent memory for LLM agents with a lower stored score than older relevant papers.",
                     source="arxiv",
                     source_id="newer-low-score",
                     url="https://example.test/newer-low-score",
@@ -235,7 +235,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Same Date Higher Score Agent Memory",
                     authors=["Tie Break Author"],
-                    abstract="A relevant paper sharing a publication date with a lower-scored paper.",
+                    abstract="LLM agent memory systems sharing a publication date with a lower-scored paper.",
                     source="arxiv",
                     source_id="same-date-high",
                     url="https://example.test/same-date-high",
@@ -248,7 +248,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Same Date Lower Score Agent Memory",
                     authors=["Tie Break Author"],
-                    abstract="A relevant paper sharing a publication date with a higher-scored paper.",
+                    abstract="LLM agent memory systems sharing a publication date with a higher-scored paper.",
                     source="arxiv",
                     source_id="same-date-low",
                     url="https://example.test/same-date-low",
@@ -261,7 +261,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Alpha Stable Tie Agent Memory",
                     authors=["Stable Sort Author"],
-                    abstract="A relevant paper with the same date and score as another paper.",
+                    abstract="Persistent memory for LLM agents with the same date and score as another paper.",
                     source="openalex",
                     source_id="alpha-stable",
                     url="https://example.test/alpha-stable",
@@ -274,7 +274,7 @@ class PaperScoutSiteTest(unittest.TestCase):
                 PaperCandidate(
                     title="Zulu Stable Tie Agent Memory",
                     authors=["Stable Sort Author"],
-                    abstract="A relevant paper with the same date and score as another paper.",
+                    abstract="Persistent memory for LLM agents with the same date and score as another paper.",
                     source="openalex",
                     source_id="zulu-stable",
                     url="https://example.test/zulu-stable",
@@ -420,7 +420,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn('"alternate_urls": [', papers_json)
             self.assertIn("https://example.test/latest", papers_json)
             self.assertIn("https://arxiv.org/abs/2606.12345", papers_json)
-            self.assertIn("76/100", index_html)
+            self.assertRegex(index_html, r"Score: \d+/100")
             visible_card = _visible_card_html(index_html, "latest deep research memory")
             self.assertNotIn("/100", visible_card)
             self.assertNotIn("Memory architecture or policy", visible_card)
@@ -635,6 +635,88 @@ excluded:
             self.assertTrue(pinned["pinned"])
             self.assertEqual(pinned["review_status"], "thesis_candidate")
             self.assertEqual(pinned["relevance_score"], 93)
+
+    def test_build_site_refreshes_stale_relevance_classifications(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=7)
+            stale_false_positive = PaperCandidate(
+                title="Exploring Recommender System Evaluation: A Multi-Modal LLM Agent Framework for A/B Testing",
+                authors=["Evaluation Author"],
+                abstract=(
+                    "This paper studies recommender-system A/B testing with multi-modal LLM agents and user feedback. "
+                    "It does not study persistent agent memory systems."
+                ),
+                source="openalex",
+                source_id="broad-recommender",
+                url="https://example.test/recommender",
+                published_date="2026-06-20",
+                raw={},
+            )
+            agent_native = PaperCandidate(
+                title="Are We Ready For An Agent-Native Memory System?",
+                authors=["Memory Author"],
+                abstract=(
+                    "We study agent-native memory systems for LLM agents, including memory modules, "
+                    "retrieval, storage, consolidation, and evaluation benchmarks."
+                ),
+                source="arxiv",
+                source_id="2606.24775",
+                arxiv_id="2606.24775",
+                url="https://arxiv.org/abs/2606.24775",
+                published_date="2026-06-26",
+                raw={},
+            )
+            stale_key = store.upsert_paper(
+                stale_false_positive,
+                ClassificationResult(
+                    84,
+                    "relevant",
+                    "Stale stored classification from older broad matching rules.",
+                    ["llm-agents", "memory-policy", "evaluation"],
+                    "A stale broad recommender-system evaluation paper.",
+                ),
+            )
+            native_key = store.upsert_paper(
+                agent_native,
+                ClassificationResult(
+                    52,
+                    "maybe",
+                    "Stale stored maybe classification before agent-native memory rules.",
+                    ["agent-memory"],
+                    "A stale agent-native memory-system paper.",
+                ),
+            )
+            store.record_sighting(run_id, stale_key, stale_false_positive, "agent memory")
+            store.record_sighting(run_id, native_key, agent_native, "agent-native memory system")
+            store.finish_run(run_id, fetched_count=2, new_count=2, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            broad = next(paper for paper in papers if paper["title"].startswith("Exploring Recommender"))
+            surfaced = next(paper for paper in papers if paper["title"] == "Are We Ready For An Agent-Native Memory System?")
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertNotEqual(broad["relevance_decision"], "relevant")
+            self.assertLess(broad["relevance_score"], 70)
+            self.assertEqual(surfaced["relevance_decision"], "relevant")
+            self.assertGreaterEqual(surfaced["relevance_score"], 80)
+            self.assertRegex(
+                index_html,
+                r'<article class="paper-card compact"[^>]+data-title="exploring recommender system evaluation: a multi-modal llm agent framework for a/b testing"[^>]+hidden>',
+            )
+            self.assertRegex(
+                index_html,
+                r'<article class="paper-card primary"[^>]+data-title="are we ready for an agent-native memory system\?"(?![^>]+hidden)',
+            )
 
     def test_about_page_and_exports_are_generated(self):
         with tempfile.TemporaryDirectory() as tmpdir:

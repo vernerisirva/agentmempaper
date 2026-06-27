@@ -122,7 +122,7 @@ HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS = {
 
 BROAD_PERIPHERAL_PATTERNS = {
     "recommender-system evaluation": r"\brecommender\b|\ba/b testing\b",
-    "broad agentic AI/AGI": r"\bagentic artificial intelligence\b|\bartificial general intelligence\b|\bagi\b",
+    "broad agentic AI/AGI": r"\bagentic ai\b|\bagentic artificial intelligence\b|\bartificial general intelligence\b|\bagi\b",
     "personality/empathy": r"\bpersonality\b|\bempathy\b|\bhuman shaping\b",
     "cybersecurity/phishing": r"\bphishing\b|\bcybersecurity\b|\bvulnerabilit(y|ies)\b",
     "evacuation/traffic/simulation": r"\bevacuation\b|\btraffic\b|\bsimulation\b|\bphysics-based building\b",
@@ -200,6 +200,14 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
 
     core_tags = [tag for tag in include_tags if tag not in WEAK_CONTEXT_TAGS]
     if not core_tags and not effective_high_confidence_hits:
+        if broad_hits and has_agent_context:
+            return ClassificationResult(
+                score=45,
+                decision="maybe",
+                reason="Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+                tags=[tag for tag in include_tags if tag in WEAK_CONTEXT_TAGS],
+                abstract_summary=_summary(candidate.abstract),
+            )
         return ClassificationResult(
             score=20 if has_agent_context else 10,
             decision="irrelevant",
@@ -218,7 +226,8 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
     if effective_high_confidence_hits:
         score = max(score, 90)
     if broad_hits and not effective_high_confidence_hits:
-        score = min(score, 62)
+        include_tags = [tag for tag in include_tags if tag in WEAK_CONTEXT_TAGS]
+        score = max(45, min(score, 62))
     score = min(100, score)
 
     if effective_high_confidence_hits:
@@ -229,7 +238,11 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
         reason = _focused_reason(include_tags)
     elif score >= 40:
         decision = "maybe"
-        reason = "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory."
+        reason = (
+            "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory."
+            if broad_hits
+            else "Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory."
+        )
     else:
         decision = "irrelevant"
         reason = "Does not clearly address persistent memory for LLM agents."

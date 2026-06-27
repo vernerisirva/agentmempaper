@@ -56,6 +56,7 @@ def main(argv: list[str] | None = None) -> int:
 
     explain_parser = subparsers.add_parser("explain-paper", help="Explain deterministic relevance rules for a generated paper")
     explain_parser.add_argument("--arxiv-id")
+    explain_parser.add_argument("--doi")
     explain_parser.add_argument("--title")
     explain_parser.add_argument("--data-path", default="docs/data/papers.json")
 
@@ -134,7 +135,7 @@ def _explain_paper(args: argparse.Namespace) -> int:
         print(f"papers data not found: {data_path}")
         return 1
     papers = json.loads(data_path.read_text(encoding="utf-8"))
-    paper = _find_generated_paper(papers, arxiv_id=args.arxiv_id, title=args.title)
+    paper = _find_generated_paper(papers, arxiv_id=args.arxiv_id, doi=args.doi, title=args.title)
     if paper is None:
         print("paper not found")
         return 1
@@ -158,17 +159,22 @@ def _explain_paper(args: argparse.Namespace) -> int:
     return 0
 
 
-def _find_generated_paper(papers: list[dict[str, object]], arxiv_id: str | None, title: str | None) -> dict[str, object] | None:
+def _find_generated_paper(papers: list[dict[str, object]], arxiv_id: str | None, doi: str | None, title: str | None) -> dict[str, object] | None:
     title_query = title.lower() if title else None
+    doi_query = doi.lower() if doi else None
     for paper in papers:
         arxiv_values = [str(paper.get("arxiv_id") or "")]
+        doi_values = [str(paper.get("doi") or "")]
         source_ids = paper.get("source_ids")
         if isinstance(source_ids, dict):
             arxiv_values.extend(str(value) for value in source_ids.get("arxiv", []) if value)
         alternate_urls = paper.get("alternate_urls")
         if isinstance(alternate_urls, list):
             arxiv_values.extend(str(value) for value in alternate_urls)
+            doi_values.extend(str(value) for value in alternate_urls)
         if arxiv_id and any(arxiv_id in value for value in arxiv_values):
+            return paper
+        if doi_query and any(doi_query in value.lower() for value in doi_values):
             return paper
         if title_query and str(paper.get("title", "")).lower() == title_query:
             return paper

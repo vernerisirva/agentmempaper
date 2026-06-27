@@ -112,6 +112,44 @@ class PaperScoutCliTest(unittest.TestCase):
             self.assertIn("memory-systems", text)
             self.assertIn("agent-native memory", text)
 
+    def test_explain_paper_can_find_generated_paper_by_doi(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            data_path = Path(tmpdir) / "papers.json"
+            data_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "title": "OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems",
+                            "authors": ["Konstantinos I. Roumeliotis"],
+                            "abstract_summary": "Agentic AI architecture with persistent, action-capable systems and orchestration layers.",
+                            "source": "semantic_scholar",
+                            "source_id": "openclaw",
+                            "doi": "10.2139/ssrn.6584998",
+                            "url": "https://www.semanticscholar.org/paper/openclaw",
+                            "publication_date": "2026",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            output = io.StringIO()
+            with redirect_stdout(output):
+                exit_code = main(
+                    [
+                        "explain-paper",
+                        "--doi",
+                        "10.2139/ssrn.6584998",
+                        "--data-path",
+                        str(data_path),
+                    ]
+                )
+
+            text = output.getvalue()
+            self.assertEqual(exit_code, 0)
+            self.assertIn("Toward Fully Autonomous and Scalable AI Agent Systems", text)
+            self.assertIn("decision=maybe", text)
+
 
 if __name__ == "__main__":
     unittest.main()

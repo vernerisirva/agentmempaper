@@ -74,7 +74,7 @@ class PaperScoutEnrichmentTest(unittest.TestCase):
 
         self.assertEqual(enriched.published_date, "2026-04-15")
         self.assertEqual(enriched.publication_year, "2026")
-        self.assertEqual(enriched.publication_date_precision, "day")
+        self.assertEqual(enriched.publication_date_precision, "exact")
         self.assertEqual(enriched.publication_date_source, "ssrn")
         self.assertEqual(enriched.publication_date_confidence, "high")
         self.assertEqual(enriched.doi, "10.2139/ssrn.6584998")
@@ -103,6 +103,36 @@ class PaperScoutEnrichmentTest(unittest.TestCase):
 
         self.assertEqual(enriched.published_date, "2026")
         self.assertTrue(any("SSRN enrichment failed" in warning and "6584998" in warning for warning in diagnostics.warnings))
+
+    def test_ssrn_403_attempts_crossref_fallback_for_inferred_doi(self):
+        candidate = PaperCandidate(
+            title="Toward Fully Autonomous and Scalable AI Agent Systems",
+            authors=[],
+            abstract="",
+            source="semantic_scholar",
+            source_id="ssrn-blocked-crossref",
+            url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6584998",
+            published_date="2026",
+            publication_year="2026",
+            publication_date_precision="year",
+            publication_date_source="semantic_scholar",
+        )
+        diagnostics = DateEnrichmentDiagnostics()
+        payload = json.dumps({"message": {"published-online": {"date-parts": [[2026, 4, 15]]}}})
+        enriched = enrich_candidate_publication_date(
+            candidate,
+            http=FakeHttp(
+                responses={"https://api.crossref.org/works/10.2139%2Fssrn.6584998": payload},
+                errors={"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6584998": HttpRequestError("http", candidate.url or "", "HTTP Error 403: Forbidden")},
+            ),
+            diagnostics=diagnostics,
+        )
+
+        self.assertEqual(enriched.doi, "10.2139/ssrn.6584998")
+        self.assertEqual(enriched.published_date, "2026-04-15")
+        self.assertEqual(enriched.publication_date_source, "crossref-published-online")
+        self.assertEqual(enriched.publication_date_confidence, "medium")
+        self.assertTrue(any("SSRN enrichment failed" in warning for warning in diagnostics.warnings))
 
     def test_crossref_published_date_fallback(self):
         candidate = PaperCandidate(

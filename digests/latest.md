@@ -6,37 +6,42 @@ Latest daily digest: [2026-06-27](2026-06-27.md).
 
 ## Run Summary
 
-- **Run ID:** 10
-- **Candidates fetched:** 585
-- **New unique papers:** 273
-- **Relevant:** 77
-- **Maybe relevant:** 152
-- **Irrelevant:** 356
-- **Source summary:** arxiv: 25, openalex: 556, semantic_scholar: 4
-
-## Source Warnings
-
-- semantic_scholar failed for 'procedural memory LLM agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'memory retrieval policy agent': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'deep research agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- semantic_scholar failed for 'autonomous research agent memory': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- arxiv failed for 'parametric memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22parametric+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'Engram LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'Engram memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'multilingual Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22multilingual+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'Megatron-LM Engram': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Megatron-LM+Engram%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- semantic_scholar failed for 'Megatron-LM Engram': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
-- arxiv failed for 'memory mechanism language model': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+mechanism+language+model%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- semantic_scholar failed for 'memory mechanism language model': Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work.
+- **Run ID:** 11
+- **Candidates fetched:** 589
+- **New unique papers:** 274
+- **Relevant:** 76
+- **Maybe relevant:** 163
+- **Irrelevant:** 350
+- **Source summary:** arxiv: 25, openalex: 556, semantic_scholar: 8
 
 ## Maybe Relevant
 
-### [Agent Context Memory: A Governance-First Specification for AI Agent Context Memory](https://doi.org/10.5281/zenodo.20785506)
+### [Knowledge Classification Protocol (KCP): An Ontological Architecture for Persistent Memory, Multimodal Perception, and Metacognition in LLM Agents](https://doi.org/10.5281/zenodo.20921420)
 
-- **Authors:** Nils Wendelboe Holmager
-- **Date:** 2026-06-21
+- **Authors:** GABRIEL ALCARAZ ORENES
+- **Date:** 2026-06-24
 - **Source:** openalex
-- **Relevance:** maybe (55/100)
+- **Relevance:** maybe (40/100)
 - **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
-- **Tags:** agent-memory
-- **Abstract summary:** What this is. A specification for governance-first context memory in autonomous AI agent systems. The contribution. ACM recognizes that agent memory is fundamentally an authorization problem and applies established access control patterns — the "authorization before action" principle common to RBAC, MAC, and capabil...
+- **Tags:** long-term-memory
+- **Abstract summary:** This paper presents the Knowledge Classification Protocol (KCP), a framework that decomposes reality into seven ontological registries — Knowledge, Events, Artifacts, Episodic, Contextual, Procedural, and Evidence — each with its own storage semantics and query interface, governed by a deterministic binary decision...
+
+### [Staying In Character: Perspective-Bounded Memory For Book-Based Role-Playing Agents](https://arxiv.org/abs/2606.25632)
+
+- **Authors:** Xushuo Tang, Junhe Zhang, Zihan Yang, Yifu Tang, Sichao Li, Longbin Lai, et al.
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** maybe (40/100)
+- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
+- **Tags:** parametric-memory
+- **Abstract summary:** Recent LLM role-playing systems build character agents from novels by extracting characters, scenes, and relations. Yet long-narrative role-playing suffers from two failures: Factual Overreach, where shared retrieval or parametric memory lets a character use facts outside its perspective, and Stylistic Monotony, whe...
+
+### [TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory](https://arxiv.org/abs/2606.25161)
+
+- **Authors:** Tianyu Yang, Sudipta Paul, Vijay Srinivasan, Vivek Kulkarni, Srinivas Chappidi
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** maybe (40/100)
+- **Reason:** Touches memory concepts that may be relevant if connected to agent behavior.
+- **Tags:** long-term-memory
+- **Abstract summary:** Large language model (LLM) agents rely on long-term memory to support extended interactions and personalized assistance beyond finite context windows. Existing memory agents actively update external memory through generated write, revise, and delete operations, but these updates may omit important information, corru...

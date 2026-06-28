@@ -2,6 +2,7 @@ import tempfile
 import unittest
 import logging
 from pathlib import Path
+from unittest.mock import patch
 
 from paper_scout.config import ScoutConfig
 from paper_scout.http import HttpRequestError
@@ -96,9 +97,38 @@ class PaperScoutRunTest(unittest.TestCase):
             digest = result.digest_path.read_text(encoding="utf-8")
 
             self.assertEqual(result.new_digest_count, 1)
-            self.assertIn("Semantic Scholar rate limit (HTTP 429)", digest)
-            self.assertIn("expected without SEMANTIC_SCHOLAR_API_KEY", digest)
-            self.assertIn("arXiv and OpenAlex can still work", digest)
+            self.assertIn("Semantic Scholar returned HTTP 429", digest)
+            self.assertIn("Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits.", digest)
+            self.assertNotIn("expected without SEMANTIC_SCHOLAR_API_KEY", digest)
+
+    def test_semantic_scholar_429_mentions_api_key_when_present(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config = ScoutConfig(
+                terms=["agent memory"],
+                days=7,
+                max_results_per_source=5,
+                sqlite_path=Path(tmpdir) / "state.sqlite3",
+                digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
+            )
+
+            logging.disable(logging.CRITICAL)
+            try:
+                with patch.dict("os.environ", {"SEMANTIC_SCHOLAR_API_KEY": "test-key"}):
+                    result = run_scout(
+                        config,
+                        fetchers=[SemanticScholarRateLimitedFetcher(), FakeFetcher()],
+                        digest_date="2026-06-26",
+                    )
+            finally:
+                logging.disable(logging.NOTSET)
+
+            digest = result.digest_path.read_text(encoding="utf-8")
+
+            self.assertIn("Semantic Scholar returned HTTP 429 despite an API key", digest)
+            self.assertIn("query volume was high", digest)
+            self.assertIn("The run continued with other sources.", digest)
+            self.assertNotIn("expected without SEMANTIC_SCHOLAR_API_KEY", digest)
 
     def test_run_writes_digest_quality_report_without_failing(self):
         with tempfile.TemporaryDirectory() as tmpdir:

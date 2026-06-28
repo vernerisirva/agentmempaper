@@ -238,7 +238,7 @@ def _parse_digest(path: Path, report_dir: Path) -> ParsedDigest:
                 summary[key] = value
             continue
         if current_section == "Source Warnings" and line.startswith("- "):
-            warnings.append(_redact_secrets(line[2:].strip()))
+            warnings.append(_normalize_source_warning(_redact_secrets(line[2:].strip())))
             continue
         if current_section in {"Highly Relevant", "Maybe Relevant"}:
             if line.startswith("### "):
@@ -273,6 +273,13 @@ def _parse_bold_bullet(line: str) -> tuple[str | None, str]:
     if not match:
         return None, ""
     return match.group(1), match.group(2).strip()
+
+
+def _normalize_source_warning(warning: str) -> str:
+    if "semantic_scholar" in warning and re.search(r"\b429\b|rate[- ]?limit", warning, flags=re.IGNORECASE):
+        prefix = re.split(r":\s*Semantic Scholar", warning, maxsplit=1)[0]
+        return f"{prefix}: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources."
+    return warning
 
 
 def _parse_heading_link(text: str) -> tuple[str, str | None]:
@@ -833,7 +840,7 @@ def _relevance_label(paper: LibraryPaper) -> str:
         return "Parametric/Engram-style memory"
     if paper.decision == "relevant" and ("agent-memory" in tags or "memory" in text and "agent" in text):
         return "Core agent-memory paper"
-    return "Peripheral/maybe relevant"
+    return "Peripheral review candidate"
 
 
 def _with_aggregates(paper: LibraryPaper) -> LibraryPaper:
@@ -1206,7 +1213,19 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
 
 
 def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
-    paper_cards = _library_paper_cards(papers, default_decision="all") if papers else '<p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>'
+    has_highly_relevant = any(paper.decision == "relevant" for paper in papers)
+    if not papers:
+        paper_cards = '<p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>'
+        latest_heading = "Papers first seen in the latest Paper Scout run."
+        latest_notice = ""
+    elif not has_highly_relevant:
+        paper_cards = _library_paper_cards(papers, default_decision="all")
+        latest_heading = "Review candidates found in the latest run"
+        latest_notice = '<p class="empty latest-empty">No highly relevant papers were found in the latest run. The cumulative library was refreshed.</p>'
+    else:
+        paper_cards = _library_paper_cards(papers, default_decision="all")
+        latest_heading = "Papers first seen in the latest Paper Scout run."
+        latest_notice = ""
     return _page(
         "Latest Paper Scout Run",
         f"""
@@ -1230,8 +1249,9 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
           <div class="section-heading">
             <p class="section-kicker">New this run</p>
-            <h2>Papers first seen in the latest Paper Scout run.</h2>
+            <h2>{escape(latest_heading)}</h2>
           </div>
+          {latest_notice}
           <div class="paper-list" id="paper-list">
             {paper_cards}
           </div>
@@ -1260,7 +1280,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
           </div>
           <dl>
             <div><dt>Highly relevant</dt><dd>{_section_count(item, 'Highly Relevant')}</dd></div>
-            <div><dt>Maybe relevant</dt><dd>{_section_count(item, 'Maybe Relevant')}</dd></div>
+            <div><dt>Review candidates</dt><dd>{_section_count(item, 'Maybe Relevant')}</dd></div>
             <div><dt>Warnings</dt><dd>{len(item.source_warnings)}</dd></div>
           </dl>
         </article>
@@ -1323,7 +1343,7 @@ def _render_about_page() -> str:
           </article>
           <article>
             <h2>Relevance scoring</h2>
-            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; maybe relevant means it may be useful but needs human judgment.</p>
+            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment.</p>
           </article>
           <article>
             <h2>Manual curation</h2>
@@ -1364,7 +1384,7 @@ def _summary_strip(digest: ParsedDigest) -> str:
         ("Candidates fetched", digest.summary.get("Candidates fetched", "0")),
         ("New unique papers", digest.summary.get("New unique papers", "0")),
         ("Highly relevant", digest.summary.get("Relevant", "0")),
-        ("Maybe relevant", digest.summary.get("Maybe relevant", "0")),
+        ("Review candidates", digest.summary.get("Maybe relevant", "0")),
         ("Digest-quality warnings", str(digest.digest_quality_warning_count)),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
@@ -1393,7 +1413,7 @@ def _library_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> 
         ("Total known papers", str(len(papers))),
         ("New in latest run", str(latest_count)),
         ("Highly relevant", str(highly)),
-        ("Maybe relevant", str(maybe)),
+        ("Review candidates", str(maybe)),
         ("Latest update date", latest.date),
         ("Source warning count", str(len(latest.source_warnings))),
     ]
@@ -1410,7 +1430,7 @@ def _latest_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> s
         ("Latest update date", latest.date),
         ("New in latest run", str(len(papers))),
         ("Highly relevant", str(sum(1 for paper in papers if paper.decision == "relevant"))),
-        ("Maybe relevant", str(sum(1 for paper in papers if paper.decision == "maybe"))),
+        ("Review candidates", str(sum(1 for paper in papers if paper.decision == "maybe"))),
         ("Source warning count", str(len(latest.source_warnings))),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
@@ -1435,7 +1455,7 @@ def _controls(sources: list[str]) -> str:
         <div class="segmented" id="relevance-filters">
           <button data-decision="all" class="active">All</button>
           <button data-decision="relevant">Highly relevant</button>
-          <button data-decision="maybe">Maybe relevant</button>
+          <button data-decision="maybe">Review candidates</button>
         </div>
       </div>
       <label class="high-toggle">
@@ -1480,7 +1500,7 @@ def _library_controls(default_decision: str = "all") -> str:
         <select id="relevance-filter">
           <option value="relevant"{selected["relevant"]}>Highly relevant</option>
           <option value="all"{selected["all"]}>All papers</option>
-          <option value="maybe"{selected["maybe"]}>Maybe relevant</option>
+          <option value="maybe"{selected["maybe"]}>Review candidates</option>
         </select>
       </label>
     </section>
@@ -1500,14 +1520,11 @@ def _source_warning_summary(warnings: list[str]) -> str:
         return "0 warnings"
     rate_limited = sum(1 for warning in warnings if re.search(r"\b(429|rate[- ]?limit)", warning, flags=re.IGNORECASE))
     other = len(warnings) - rate_limited
-    parts: list[str] = []
+    if rate_limited and not other:
+        return "Some source queries were rate-limited. The library was still refreshed from available sources."
     if rate_limited:
-        noun = "query was" if rate_limited == 1 else "queries were"
-        parts.append(f"{rate_limited} source {noun} rate-limited")
-    if other:
-        noun = "warning" if other == 1 else "warnings"
-        parts.append(f"{other} other source {noun}")
-    return "; ".join(parts) if parts else f"{len(warnings)} source warnings"
+        return "Some source queries were rate-limited. Details are available below."
+    return "Some source diagnostics need review. Details are available below."
 
 
 def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
@@ -1762,7 +1779,7 @@ def _source_label(source: str) -> str:
 
 
 def _decision_label(decision: str) -> str:
-    return "Highly relevant" if decision == "relevant" else "Maybe relevant" if decision == "maybe" else decision
+    return "Highly relevant" if decision == "relevant" else "Review candidate" if decision == "maybe" else decision
 
 
 def _published_text(paper: LibraryPaper) -> str:

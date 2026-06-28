@@ -597,6 +597,7 @@ def _sort_recommended(papers: list[LibraryPaper]) -> list[LibraryPaper]:
 
 def _latest_relevant_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
     return (
+        0 if paper.is_new else 1,
         0 if paper.decision == "relevant" else 1,
         _latest_relevant_date_bucket(paper),
         _reverse_date_sort_value(_latest_relevant_date(paper)),
@@ -1322,7 +1323,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
             <h2>Papers to look at</h2>
-            <p>Newest relevant papers first.</p>
+            <p>Newest relevant papers first. New papers are shown first for 24 hours.</p>
           </div>
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers, default_decision=default_decision)}
@@ -3144,6 +3145,8 @@ FILTER_SCRIPT = """
       : sortableDate(card, 'published');
   }
   function latestRelevantRank(a, b) {
+    const newness = (a.dataset.isNew === 'true' ? 0 : 1) - (b.dataset.isNew === 'true' ? 0 : 1);
+    if (newness) return newness;
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
     const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
@@ -3162,7 +3165,8 @@ FILTER_SCRIPT = """
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
-      return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
+      if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
+      return latestRelevantRank(a, b);
     });
     for (const card of sorted) {
       list.appendChild(card);

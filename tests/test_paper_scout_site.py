@@ -65,6 +65,21 @@ def _visible_card_html(html: str, title_slug: str) -> str:
     return match.group(1)
 
 
+def _card_opening_tag(html: str, title_slug: str) -> str:
+    match = re.search(
+        rf'<article class="paper-card[^"]*"[^>]+data-title="{re.escape(title_slug)}"[^>]*>',
+        html,
+        flags=re.DOTALL,
+    )
+    if not match:
+        raise AssertionError(f"Could not find article tag for {title_slug!r}")
+    return match.group(0)
+
+
+def _card_order(html: str) -> list[str]:
+    return re.findall(r'<article class="paper-card[^"]*"[^>]+data-title="([^"]+)"', html)
+
+
 class NoNetworkDateHttp:
     def __init__(self, *args, **kwargs):
         pass
@@ -390,6 +405,73 @@ class PaperScoutSiteTest(unittest.TestCase):
             store.record_sighting(run_id, key, candidate, "agent memory")
         store.finish_run(run_id, fetched_count=len(examples), new_count=len(examples), notified_count=len(examples))
 
+    def _write_new_sort_fixture(self, state_path: Path) -> None:
+        store = PaperStore(state_path)
+        run_id = store.start_run(days=7)
+        examples = [
+            (
+                PaperCandidate(
+                    title="New Highly Relevant Agent Memory",
+                    authors=["New Author"],
+                    abstract="Persistent memory systems and write policies for LLM agents.",
+                    source="openalex",
+                    source_id="new-high",
+                    url="https://example.test/new-high",
+                    published_date="2026-06-01",
+                    raw={},
+                ),
+                ClassificationResult(90, "relevant", "Studies persistent memory for LLM agents.", ["agent-memory"], "New highly relevant paper."),
+                "2026-06-28 10:30:00",
+            ),
+            (
+                PaperCandidate(
+                    title="Older Highly Relevant Recent Publication",
+                    authors=["Older Author"],
+                    abstract="Persistent memory systems and retrieval policies for LLM agents.",
+                    source="openalex",
+                    source_id="old-high-recent",
+                    url="https://example.test/old-high-recent",
+                    published_date="2026-06-27",
+                    raw={},
+                ),
+                ClassificationResult(92, "relevant", "Studies persistent memory for LLM agents.", ["agent-memory"], "Older highly relevant paper."),
+                "2026-06-26 09:00:00",
+            ),
+            (
+                PaperCandidate(
+                    title="New Review Candidate Agent System",
+                    authors=["Review Author"],
+                    abstract="Broad agentic AI architecture that may inform agent memory but lacks explicit persistent memory evidence.",
+                    source="openalex",
+                    source_id="new-review",
+                    url="https://example.test/new-review",
+                    published_date="2026-06-28",
+                    raw={},
+                ),
+                ClassificationResult(55, "maybe", "Peripheral candidate for agent-memory review.", ["llm-agents"], "New review candidate."),
+                "2026-06-28 11:00:00",
+            ),
+            (
+                PaperCandidate(
+                    title="Older Review Candidate Agent System",
+                    authors=["Review Author"],
+                    abstract="Broad agentic AI system architecture without explicit persistent agent memory.",
+                    source="openalex",
+                    source_id="old-review",
+                    url="https://example.test/old-review",
+                    published_date="2026-06-28",
+                    raw={},
+                ),
+                ClassificationResult(54, "maybe", "Peripheral candidate for agent-memory review.", ["llm-agents"], "Older review candidate."),
+                "2026-06-26 09:00:00",
+            ),
+        ]
+        for candidate, classification, first_seen_at in examples:
+            key = store.upsert_paper(candidate, classification)
+            store.record_sighting(run_id, key, candidate, "agent memory")
+            self._set_first_seen(state_path, key, first_seen_at)
+        store.finish_run(run_id, fetched_count=len(examples), new_count=len(examples), notified_count=0)
+
     def test_generates_static_dashboard_files_and_latest_pointer(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
@@ -639,6 +721,131 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("First seen by Paper Scout: 2026-06-28 10:30", index_html)
             self.assertIn("First seen by Paper Scout: 2026-06-28", index_html)
             self.assertIn('class="new-badge"', latest_html)
+
+    def test_latest_relevant_default_sort_boosts_new_papers(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            curation_path = root / "config" / "curation.yaml"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir(parents=True)
+            self._write_new_sort_fixture(state_path)
+            curation_path.write_text(
+                """
+overrides:
+  - title: "New Review Candidate Agent System"
+    decision: maybe
+    score: 55
+  - title: "Older Review Candidate Agent System"
+    decision: maybe
+    score: 54
+""",
+                encoding="utf-8",
+            )
+            (digest_dir / "2026-06-28.md").write_text(SAMPLE_DIGEST.replace("2026-06-26", "2026-06-28"), encoding="utf-8")
+
+            build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=state_path,
+                curation_path=curation_path,
+                build_time="2026-06-28 12:00:00",
+            )
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            by_title = {paper["title"]: paper for paper in papers}
+            self.assertTrue(by_title["New Highly Relevant Agent Memory"]["is_new"])
+            self.assertTrue(by_title["New Review Candidate Agent System"]["is_new"])
+            self.assertFalse(by_title["Older Highly Relevant Recent Publication"]["is_new"])
+            self.assertFalse(by_title["Older Review Candidate Agent System"]["is_new"])
+
+            order = _card_order(index_html)
+            self.assertLess(order.index("new highly relevant agent memory"), order.index("new review candidate agent system"))
+            self.assertLess(order.index("new review candidate agent system"), order.index("older highly relevant recent publication"))
+            self.assertLess(order.index("older highly relevant recent publication"), order.index("older review candidate agent system"))
+            self.assertIn("New papers are shown first for 24 hours.", index_html)
+            self.assertIn("a.dataset.isNew === 'true' ? 0 : 1", index_html)
+            self.assertIn("b.dataset.isNew === 'true' ? 0 : 1", index_html)
+            self.assertIn("if (mode === 'latest-relevant') return latestRelevantRank(a, b);", index_html)
+
+            review_tag = _card_opening_tag(index_html, "new review candidate agent system")
+            self.assertIn("hidden", review_tag)
+            self.assertIn('data-decision="maybe"', review_tag)
+
+    def test_new_boost_expires_after_24_hours(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            curation_path = root / "config" / "curation.yaml"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir(parents=True)
+            self._write_new_sort_fixture(state_path)
+            curation_path.write_text(
+                """
+overrides:
+  - title: "New Review Candidate Agent System"
+    decision: maybe
+    score: 55
+  - title: "Older Review Candidate Agent System"
+    decision: maybe
+    score: 54
+""",
+                encoding="utf-8",
+            )
+            (digest_dir / "2026-06-29.md").write_text(SAMPLE_DIGEST.replace("2026-06-26", "2026-06-29"), encoding="utf-8")
+
+            build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=state_path,
+                curation_path=curation_path,
+                build_time="2026-06-29 12:00:00",
+            )
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            self.assertFalse(any(paper["is_new"] for paper in papers))
+            order = _card_order(index_html)
+            self.assertLess(order.index("older highly relevant recent publication"), order.index("new highly relevant agent memory"))
+            self.assertNotIn('class="new-badge"', _visible_card_html(index_html, "new highly relevant agent memory"))
+
+    def test_publication_date_sort_does_not_use_new_boost(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_new_sort_fixture(state_path)
+            (digest_dir / "2026-06-28.md").write_text(SAMPLE_DIGEST.replace("2026-06-26", "2026-06-28"), encoding="utf-8")
+
+            build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=state_path,
+                build_time="2026-06-28 12:00:00",
+            )
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            script = index_html.split("<script>", 1)[1]
+            publication_branch = re.search(r"if \(mode === 'published-desc'\).*?;", script)
+            self.assertIsNotNone(publication_branch)
+            self.assertNotIn("isNew", publication_branch.group(0))
+            self.assertIn("sortableDate(b, 'published').localeCompare(sortableDate(a, 'published'))", publication_branch.group(0))
 
     def test_index_and_latest_pages_have_library_and_latest_run_framing(self):
         with tempfile.TemporaryDirectory() as tmpdir:

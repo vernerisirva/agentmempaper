@@ -1415,7 +1415,6 @@ def _library_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> 
         ("Highly relevant", str(highly)),
         ("Review candidates", str(maybe)),
         ("Latest update date", latest.date),
-        ("Source warning count", str(len(latest.source_warnings))),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
     return f"""
@@ -1431,7 +1430,6 @@ def _latest_summary_strip(papers: list[LibraryPaper], latest: ParsedDigest) -> s
         ("New in latest run", str(len(papers))),
         ("Highly relevant", str(sum(1 for paper in papers if paper.decision == "relevant"))),
         ("Review candidates", str(sum(1 for paper in papers if paper.decision == "maybe"))),
-        ("Source warning count", str(len(latest.source_warnings))),
     ]
     metric_cells = "".join(f"<div><span>{escape(label)}</span><strong>{escape(value)}</strong></div>" for label, value in cells)
     return f"""

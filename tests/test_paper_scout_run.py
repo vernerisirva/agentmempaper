@@ -99,6 +99,7 @@ class PaperScoutRunTest(unittest.TestCase):
             self.assertEqual(result.new_digest_count, 1)
             self.assertIn("Semantic Scholar returned HTTP 429", digest)
             self.assertIn("Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits.", digest)
+            self.assertIn("The run continued with other sources.", digest)
             self.assertNotIn("expected without SEMANTIC_SCHOLAR_API_KEY", digest)
 
     def test_semantic_scholar_429_mentions_api_key_when_present(self):

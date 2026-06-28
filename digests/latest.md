@@ -6,7 +6,7 @@ Latest daily digest: [2026-06-28](2026-06-28.md).
 
 ## Run Summary
 
-- **Run ID:** 28
+- **Run ID:** 29
 - **Candidates fetched:** 888
 - **New unique papers:** 287
 - **Relevant:** 347

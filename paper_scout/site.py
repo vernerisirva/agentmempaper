@@ -18,6 +18,7 @@ from .fetchers.arxiv import parse_arxiv_feed
 from .http import HttpClient
 from .models import PaperCandidate
 from .relevance import classify_with_rules
+from .structured_cards import SCHEMA_VERSION, paper_card_schema, related_topics_for_paper, structured_card_for_paper
 
 
 @dataclass(frozen=True)
@@ -199,7 +200,8 @@ def build_site(
 
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / "data").mkdir(parents=True, exist_ok=True)
-    _write_paper_detail_pages(docs_root, library_papers)
+    generated_at = site_build_time.isoformat(sep=" ")
+    _write_paper_detail_pages(docs_root, library_papers, generated_at)
     (docs_root / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (docs_root / "index.html").write_text(_render_library_page(library_papers, latest, archive_digests), encoding="utf-8")
     (docs_root / "latest.html").write_text(_render_latest_discoveries_page(latest_discoveries, latest, archive_digests), encoding="utf-8")
@@ -207,6 +209,7 @@ def build_site(
     (docs_root / "about.html").write_text(_render_about_page(), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
+    (docs_root / "data" / "paper-card.schema.json").write_text(json.dumps(paper_card_schema(), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "papers.csv").write_text(_papers_csv(library_papers), encoding="utf-8")
     (docs_root / "data" / "papers.bib").write_text(_papers_bibtex(library_papers), encoding="utf-8")
     _write_metadata_quality_report(report_root, latest.date, library_papers)
@@ -1157,7 +1160,7 @@ def _write_latest_markdown(digest_dir: Path, latest_date: str, latest_path: Path
     )
 
 
-def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper]) -> None:
+def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper], generated_at: str) -> None:
     papers_dir = docs_root / "papers"
     papers_dir.mkdir(parents=True, exist_ok=True)
     for stale_path in papers_dir.iterdir():
@@ -1167,7 +1170,7 @@ def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper]) -> No
         slug = _paper_slug(paper)
         (papers_dir / f"{slug}.html").write_text(_render_paper_detail_page(paper), encoding="utf-8")
         (papers_dir / f"{slug}.json").write_text(
-            json.dumps(_paper_detail_json(paper), indent=2, sort_keys=True),
+            json.dumps(_paper_detail_json(paper, generated_at), indent=2, sort_keys=True),
             encoding="utf-8",
         )
 
@@ -1187,30 +1190,57 @@ def _paper_detail_json_url(paper: LibraryPaper) -> str:
     return f"papers/{_paper_slug(paper)}.json"
 
 
-def _paper_detail_json(paper: LibraryPaper) -> dict[str, object]:
+def _paper_detail_json(paper: LibraryPaper, generated_at: str) -> dict[str, object]:
     data = _library_paper_to_json(paper)
     data["detail_page"] = _paper_detail_url(paper)
     data["detail_json"] = _paper_detail_json_url(paper)
-    data["provenance"] = _paper_provenance(paper)
+    structured_card = structured_card_for_paper(paper)
+    data["schema_version"] = SCHEMA_VERSION
+    data["ssrn_id"] = _ssrn_id(paper)
+    data["publication"] = {
+        "date": paper.published_date,
+        "year": paper.publication_year or _paper_year_from_value(paper.published_date),
+        "precision": _publication_precision(paper),
+        "source": paper.publication_date_source,
+        "confidence": paper.publication_date_confidence or "unknown",
+        "publication_date_confidence": paper.publication_date_confidence or "unknown",
+        "display": _published_text(paper),
+    }
+    data["relevance"] = {
+        "decision": paper.decision,
+        "public_label": _decision_label(paper.decision),
+        "score": paper.score,
+        "reason": paper.reason,
+        "tags": paper.tags,
+        "curation_note": paper.research_note,
+        "review_status": paper.review_status,
+    }
+    data["structured_card"] = structured_card
+    data["related_topics"] = related_topics_for_paper(paper)
+    data["provenance"] = _paper_provenance(paper, generated_at)
     data["structured_sections"] = {
         "possible_key_claims": [],
-        "method_or_system_type": "Not extracted yet",
+        "method_or_system_type": structured_card["method_or_system_type"]["value"],
         "evidence_or_evaluation_signals": [],
-        "relation_to_agentic_memory": "Not extracted yet",
+        "relation_to_agentic_memory": structured_card["relation_to_agentic_memory"]["value"],
     }
     return data
 
 
-def _paper_provenance(paper: LibraryPaper) -> dict[str, object]:
+def _paper_provenance(paper: LibraryPaper, generated_at: str | None = None) -> dict[str, object]:
     has_curation = bool(paper.research_note or paper.pinned or paper.review_status)
     return {
+        "screening_source": "deterministic rules + curation" if has_curation else "deterministic rules",
         "metadata_sources": paper.sources or [paper.source],
         "source_ids": paper.source_ids,
+        "date_source": paper.publication_date_source,
         "publication_date_source": paper.publication_date_source,
         "publication_date_precision": _publication_precision(paper),
         "publication_date_confidence": paper.publication_date_confidence,
         "relevance_source": "deterministic screening + curation" if has_curation else "deterministic screening",
         "curation_note": "manually added" if has_curation else None,
+        "curated": has_curation,
+        "generated_at": generated_at,
         "first_seen_at": paper.first_seen_at,
         "last_seen_at": paper.last_seen_at,
     }
@@ -1474,8 +1504,9 @@ def _render_about_page() -> str:
             <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
           </article>
           <article>
-            <h2>Structured paper details</h2>
-            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; extracted fields may be incomplete and should be verified against the source paper.</p>
+            <h2>Structured paper cards</h2>
+            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
+            <p>Structured cards are generated from title, abstract or summary, metadata, deterministic screening, and curation notes. They do not claim that Paper Scout has deeply read the full paper.</p>
           </article>
           <article>
             <h2>Limitations</h2>
@@ -1486,11 +1517,41 @@ def _render_about_page() -> str:
     )
 
 
+def _structured_card_html(card: dict[str, dict[str, str]]) -> str:
+    rows = []
+    labels = [
+        ("research_relevance", "Research relevance"),
+        ("method_or_system_type", "Method / system type"),
+        ("key_contribution", "Key contribution"),
+        ("evidence_or_evaluation", "Evidence / evaluation"),
+        ("relation_to_agentic_memory", "Relation to agentic memory"),
+        ("limitations_or_uncertainty", "Limitations / uncertainty"),
+    ]
+    for key, label in labels:
+        field = card.get(key, {})
+        value = field.get("value", "Not extracted yet")
+        confidence = field.get("confidence", "unknown")
+        provenance = field.get("provenance", "unknown")
+        value_class = ' class="structured-empty"' if value == "Not extracted yet" else ""
+        rows.append(
+            f"""
+            <div>
+              <dt>{escape(label)}</dt>
+              <dd{value_class}>{escape(value)}</dd>
+              <dd class="structured-provenance">Confidence: {escape(confidence)} · Provenance: {escape(provenance)}</dd>
+            </div>
+            """
+        )
+    return f'<dl class="detail-metadata structured-card-fields">{"".join(rows)}</dl>'
+
+
 def _render_paper_detail_page(paper: LibraryPaper) -> str:
     sources = paper.sources or [paper.source]
     source_items = "".join(f"<li>{escape(_source_label(source))}</li>" for source in sources)
     alternate_links = _secondary_links(paper) or '<p class="muted">No alternate source links recorded.</p>'
     identifiers = "".join(f"<li>{item}</li>" for item in _identifier_list(paper)) or "<li>No additional identifiers recorded.</li>"
+    structured_card = structured_card_for_paper(paper)
+    structured_card_html = _structured_card_html(structured_card)
     research_note = (
         f"""
         <section class="detail-panel">
@@ -1567,21 +1628,9 @@ def _render_paper_detail_page(paper: LibraryPaper) -> str:
             <p class="section-kicker">Abstract / summary</p>
             <p>{escape(paper.abstract_summary or "No abstract summary available.")}</p>
           </section>
-          <section class="detail-panel">
-            <p class="section-kicker">Possible key claims</p>
-            <p class="structured-empty">Not extracted yet</p>
-          </section>
-          <section class="detail-panel">
-            <p class="section-kicker">Method / system type</p>
-            <p class="structured-empty">Not extracted yet</p>
-          </section>
-          <section class="detail-panel">
-            <p class="section-kicker">Evidence / evaluation signals</p>
-            <p class="structured-empty">Not extracted yet</p>
-          </section>
-          <section class="detail-panel">
-            <p class="section-kicker">Relation to agentic memory</p>
-            <p class="structured-empty">Not extracted yet</p>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            {structured_card_html}
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Screening details</p>
@@ -1976,6 +2025,15 @@ def _identifier_list(paper: LibraryPaper) -> list[str]:
         if values:
             identifiers.append(f"{escape(_source_label(source))} IDs: {escape(', '.join(values))}")
     return _ordered_unique(identifiers)
+
+
+def _ssrn_id(paper: LibraryPaper) -> str | None:
+    candidates = [paper.doi or "", paper.url or "", *paper.alternate_urls]
+    for candidate in candidates:
+        match = re.search(r"(?:ssrn\.|abstract_id=)(\d+)", candidate, flags=re.IGNORECASE)
+        if match:
+            return match.group(1)
+    return None
 
 
 def _url_label(url: str) -> str:
@@ -2910,6 +2968,11 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 .detail-metadata dd {
   margin: 0;
   color: var(--text);
+}
+.structured-card-fields .structured-provenance {
+  grid-column: 2;
+  color: var(--faint);
+  font-size: .8rem;
 }
 .structured-empty, .muted {
   color: var(--faint);

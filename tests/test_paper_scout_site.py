@@ -201,6 +201,10 @@ class PaperScoutSiteTest(unittest.TestCase):
                 (first_seen_at, first_seen_at, canonical_key),
             )
 
+    def _set_run_started(self, state_path: Path, run_id: int, started_at: str) -> None:
+        with sqlite3.connect(state_path) as db:
+            db.execute("UPDATE runs SET started_at = ? WHERE id = ?", (started_at, run_id))
+
     def _write_ranking_fixture(self, state_path: Path) -> None:
         store = PaperStore(state_path)
         run_id = store.start_run(days=7)
@@ -504,6 +508,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertTrue((docs_dir / "data" / "latest.json").exists())
             self.assertTrue((docs_dir / "data" / "papers.csv").exists())
             self.assertTrue((docs_dir / "data" / "papers.bib").exists())
+            self.assertTrue((docs_dir / "data" / "paper-card.schema.json").exists())
             self.assertTrue((docs_dir / "papers").exists())
             self.assertTrue(list((docs_dir / "papers").glob("*.html")))
             self.assertTrue(list((docs_dir / "papers").glob("*.json")))
@@ -563,14 +568,62 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("Publication date confidence", detail_html)
             self.assertIn("Provenance", detail_html)
             self.assertIn("Download paper JSON", detail_html)
-            self.assertIn("Possible key claims", detail_html)
+            self.assertIn("Structured research card", detail_html)
+            self.assertIn("Key contribution", detail_html)
             self.assertIn("Not extracted yet", detail_html)
+            self.assertEqual(detail_json["schema_version"], "paper-scout-card-v1")
+            self.assertIn("publication", detail_json)
+            self.assertIn("relevance", detail_json)
+            self.assertIn("structured_card", detail_json)
             self.assertIn("publication_date_precision", detail_json)
             self.assertIn("publication_date_source", detail_json)
             self.assertIn("publication_date_confidence", detail_json)
             self.assertIn("provenance", detail_json)
             self.assertIn("structured_sections", detail_json)
             self.assertIn("citation", detail_json)
+            self.assertIn("publication_date_confidence", detail_json["publication"])
+            self.assertIn("decision", detail_json["relevance"])
+            self.assertIn("reason", detail_json["relevance"])
+            self.assertIn("tags", detail_json["relevance"])
+            self.assertIn("generated_at", detail_json["provenance"])
+
+    def test_structured_card_sidecars_are_schema_documented_and_conservative(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_ranking_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            schema = json.loads((docs_dir / "data" / "paper-card.schema.json").read_text(encoding="utf-8"))
+            self.assertEqual(schema["title"], "Paper Scout Structured Paper Card")
+            self.assertEqual(schema["properties"]["schema_version"]["const"], "paper-scout-card-v1")
+            sidecars = [json.loads(path.read_text(encoding="utf-8")) for path in (docs_dir / "papers").glob("*.json")]
+            by_title = {paper["title"]: paper for paper in sidecars}
+            core = by_title["Core Agent Memory Architecture"]
+            benchmark = by_title["Memory Benchmark for Agents"]
+
+            self.assertEqual(core["structured_card"]["method_or_system_type"]["value"], "Memory architecture / system")
+            self.assertEqual(
+                core["structured_card"]["relation_to_agentic_memory"]["value"],
+                "Studies memory mechanisms or governance for LLM agents",
+            )
+            self.assertEqual(core["structured_card"]["key_contribution"]["value"], "Not extracted yet")
+            self.assertEqual(benchmark["structured_card"]["method_or_system_type"]["value"], "Benchmark / evaluation")
+            self.assertIn("Abstract-level signal", benchmark["structured_card"]["evidence_or_evaluation"]["value"])
+            self.assertEqual(benchmark["publication"]["precision"], "day")
+            self.assertEqual(benchmark["relevance"]["decision"], "relevant")
+            self.assertIn("agent-memory", benchmark["related_topics"])
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertNotIn("Structured research card", index_html)
+            self.assertNotIn("Method / system type", index_html)
 
     def test_cumulative_library_data_and_latest_discoveries_are_split(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -639,6 +692,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             report_dir.mkdir(parents=True)
             store = PaperStore(state_path)
             run_id = store.start_run(days=7)
+            self._set_run_started(state_path, run_id, "2026-06-28 09:00:00")
 
             examples = [
                 (

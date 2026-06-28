@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import csv
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import UTC, date, datetime, timedelta
 from html import escape
 import io
 import json
@@ -98,6 +98,7 @@ class LibraryPaper:
     review_status: str | None = None
     relevance_label: str | None = None
     future_date: bool = False
+    is_new: bool = False
     screening_abstract: str | None = None
     metadata_warnings: list[str] = field(default_factory=list)
 
@@ -164,6 +165,7 @@ def build_site(
     docs_dir: Path | str = Path("docs"),
     state_path: Path | str = Path("data/paper_scout.sqlite3"),
     curation_path: Path | str = Path("config/curation.yaml"),
+    build_time: datetime | str | None = None,
 ) -> SiteBuildResult:
     digest_path = _latest_digest_path(Path(digest_dir))
     if digest_path is None:
@@ -174,6 +176,7 @@ def build_site(
     docs_root = Path(docs_dir)
     archive_digests = [_parse_digest(path, report_root) for path in _daily_digest_paths(digest_root)]
     latest = archive_digests[-1]
+    site_build_time = _site_build_time(build_time)
     library_papers = _load_library_papers(Path(state_path))
     using_state = bool(library_papers)
     if not library_papers:
@@ -183,10 +186,15 @@ def build_site(
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
+    library_papers = _mark_new_papers(library_papers, site_build_time, latest.date)
     library_papers = _sort_latest_relevant(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
     if not using_state and not latest_discoveries:
-        latest_discoveries = _library_from_digest(latest, latest_run=True, newly_discovered=True)
+        latest_discoveries = _mark_new_papers(
+            _library_from_digest(latest, latest_run=True, newly_discovered=True),
+            site_build_time,
+            latest.date,
+        )
 
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / "data").mkdir(parents=True, exist_ok=True)
@@ -336,6 +344,36 @@ def _date_part(value: str | None) -> str | None:
         return None
     match = re.search(r"\d{4}-\d{2}-\d{2}", value)
     return match.group(0) if match else None
+
+
+def _site_build_time(value: datetime | str | None) -> datetime:
+    if isinstance(value, datetime):
+        return value.replace(microsecond=0)
+    if isinstance(value, str):
+        parsed = _datetime_value(value)
+        if parsed:
+            return parsed
+    return datetime.now(UTC).replace(tzinfo=None, microsecond=0)
+
+
+def _datetime_value(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    match = re.search(r"(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?", value.strip())
+    if not match:
+        return None
+    seconds = match.group(3) or "00"
+    try:
+        return datetime.fromisoformat(f"{match.group(1)} {match.group(2)}:{seconds}")
+    except ValueError:
+        return None
+
+
+def _first_seen_display(value: str | None) -> str:
+    parsed = _datetime_value(value)
+    if parsed:
+        return parsed.strftime("%Y-%m-%d %H:%M")
+    return _date_part(value) or "unknown"
 
 
 def _json_list(value: str | None) -> list[str]:
@@ -606,6 +644,27 @@ def _is_future_date(published_date: str | None, build_date: str) -> bool:
     published = _date_ordinal(sort_date_value(published_meta.value, published_meta.precision))
     built = _date_ordinal(build_date)
     return bool(published is not None and built is not None and published > built)
+
+
+def _mark_new_papers(papers: list[LibraryPaper], build_time: datetime, fallback_date: str) -> list[LibraryPaper]:
+    return [
+        LibraryPaper(
+            **{
+                **paper.__dict__,
+                "is_new": _is_new_since_first_seen(paper.first_seen_at, build_time, fallback_date),
+            }
+        )
+        for paper in papers
+    ]
+
+
+def _is_new_since_first_seen(first_seen_at: str | None, build_time: datetime, fallback_date: str) -> bool:
+    first_seen_time = _datetime_value(first_seen_at)
+    if first_seen_time:
+        age = build_time - first_seen_time
+        return timedelta(0) <= age <= timedelta(hours=24)
+    first_seen_date = _date_part(first_seen_at)
+    return bool(first_seen_date and first_seen_date == fallback_date)
 
 
 def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_date: str) -> list[LibraryPaper]:
@@ -1151,6 +1210,7 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "latest_relevant_date_bucket": _latest_relevant_date_bucket(paper),
         "first_seen_date": paper.first_seen_date,
         "first_seen_at": paper.first_seen_at,
+        "is_new": paper.is_new,
         "last_seen_date": paper.last_seen_date,
         "last_seen_at": paper.last_seen_at,
         "notified_date": paper.notified_date,
@@ -1501,6 +1561,10 @@ def _library_controls(default_decision: str = "all") -> str:
           <option value="maybe"{selected["maybe"]}>Review candidates</option>
         </select>
       </label>
+      <label class="toggle-control new-only-filter" for="new-only">
+        <input id="new-only" type="checkbox">
+        <span>New only</span>
+      </label>
     </section>
     """
 
@@ -1628,10 +1692,12 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     ids = _identifier_list(paper)
     more_items = "".join(f"<li>{item}</li>" for item in ids) or "<li>No additional identifiers.</li>"
     hidden = " hidden" if default_decision != "all" and paper.decision != default_decision else ""
+    new_badge = '<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span>' if paper.is_new else ""
+    first_seen_text = _first_seen_display(paper.first_seen_at)
     return f"""
-    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-date-bucket="{_latest_relevant_date_bucket(paper)}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
+    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-is-new="{str(paper.is_new).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-date-bucket="{_latest_relevant_date_bucket(paper)}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
       <div class="paper-main">
-        <h3>{escape(paper.title)}</h3>
+        <h3>{escape(paper.title)}{new_badge}</h3>
         <p class="meta">{escape(paper.authors_text)} · {escape(published)} · Source: {escape(source_names)}</p>
         <p class="reason"><strong>Why included:</strong> {escape(_short_reason(paper))}</p>
       </div>
@@ -1654,7 +1720,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
           <div class="details-group"><strong>Sources</strong><div class="tags">{source_badges}</div></div>
           <div class="details-group"><strong>Tags</strong><div class="tags">{details_tags}</div></div>
           <ul>
-            <li>First seen: {escape(paper.first_seen_date)}</li>
+            <li>First seen by Paper Scout: {escape(first_seen_text)}</li>
             {more_items}
           </ul>
           {secondary_links}
@@ -2306,7 +2372,7 @@ h3 {
 }
 .reading-controls {
   display: grid;
-  grid-template-columns: minmax(20rem, 1fr) minmax(11rem, .42fr) minmax(12rem, .48fr);
+  grid-template-columns: minmax(18rem, 1fr) minmax(10rem, .38fr) minmax(11rem, .44fr) max-content;
   gap: .8rem;
   align-items: end;
   margin: .9rem 0 1.65rem;
@@ -2405,6 +2471,10 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 }
 .paper-kicker, .tags { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
 .paper-card h3 {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  flex-wrap: wrap;
   margin-top: .55rem;
   font-size: clamp(1.16rem, 1.65vw, 1.46rem);
   overflow-wrap: anywhere;
@@ -2493,6 +2563,19 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 .pinned { background: #f2f0ff; color: #514a93; border-color: #ddd9ff; }
 .review { background: #f4f4f6; color: #4f5560; border-color: var(--line-soft); }
 .tag { background: #f4f5f7; color: #555b64; }
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .16rem .42rem;
+  border: 1px solid #cfe1f7;
+  background: #eef6ff;
+  color: #1e5f9f;
+  font-size: .72rem;
+  font-weight: 680;
+  letter-spacing: .01em;
+  vertical-align: middle;
+}
 .tags { margin-top: .65rem; }
 .tag-more { color: var(--faint); }
 .paper-side {
@@ -2778,6 +2861,7 @@ FILTER_SCRIPT = """
 (() => {
   const search = document.querySelector('#paper-search');
   const relevanceFilter = document.querySelector('#relevance-filter');
+  const newOnly = document.querySelector('#new-only');
   const sortSelect = document.querySelector('#paper-sort');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
@@ -2823,13 +2907,15 @@ FILTER_SCRIPT = """
     for (const card of cards) {
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
-      card.hidden = !(matchesQuery && matchesDecision);
+      const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0;
   }
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
+  if (newOnly) newOnly.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {

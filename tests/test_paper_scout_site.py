@@ -2,6 +2,7 @@ import tempfile
 import unittest
 import json
 import re
+import sqlite3
 from pathlib import Path
 from unittest.mock import patch
 
@@ -177,6 +178,13 @@ class PaperScoutSiteTest(unittest.TestCase):
         store.record_sighting(latest_run_id, duplicate_key, duplicate_candidate, "deep research agent memory")
         store.finish_run(latest_run_id, fetched_count=1, new_count=1, notified_count=1)
         store.mark_notified([latest_key], "2026-06-26")
+
+    def _set_first_seen(self, state_path: Path, canonical_key: str, first_seen_at: str) -> None:
+        with sqlite3.connect(state_path) as db:
+            db.execute(
+                "UPDATE papers SET first_seen_at = ?, last_seen_at = ? WHERE canonical_key = ?",
+                (first_seen_at, first_seen_at, canonical_key),
+            )
 
     def _write_ranking_fixture(self, state_path: Path) -> None:
         store = PaperStore(state_path)
@@ -495,6 +503,100 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertNotIn("/100", visible_card)
             self.assertNotIn("Memory architecture or policy", visible_card)
             self.assertIn("Screening details", index_html)
+
+    def test_new_badge_uses_first_seen_within_last_24_hours(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=7)
+
+            examples = [
+                (
+                    "Recent Timestamp Agent Memory",
+                    "recent-timestamp",
+                    "2026-06-28 10:30:00",
+                    True,
+                ),
+                (
+                    "Old Timestamp Agent Memory",
+                    "old-timestamp",
+                    "2026-06-27 10:30:00",
+                    False,
+                ),
+                (
+                    "Date Only Current Agent Memory",
+                    "date-current",
+                    "2026-06-28",
+                    True,
+                ),
+                (
+                    "Date Only Old Agent Memory",
+                    "date-old",
+                    "2026-06-27",
+                    False,
+                ),
+            ]
+            for title, source_id, first_seen_at, _is_new in examples:
+                candidate = PaperCandidate(
+                    title=title,
+                    authors=["Memory Author"],
+                    abstract="Persistent memory for LLM agents.",
+                    source="openalex",
+                    source_id=source_id,
+                    url=f"https://example.test/{source_id}",
+                    published_date="2026-06-20",
+                    raw={},
+                )
+                key = store.upsert_paper(
+                    candidate,
+                    ClassificationResult(88, "relevant", "Studies persistent memory for LLM agents.", ["agent-memory"], "Agent memory paper."),
+                )
+                store.record_sighting(run_id, key, candidate, "agent memory")
+                self._set_first_seen(state_path, key, first_seen_at)
+            store.finish_run(run_id, fetched_count=4, new_count=4, notified_count=0)
+            (digest_dir / "2026-06-28.md").write_text(SAMPLE_DIGEST.replace("2026-06-26", "2026-06-28"), encoding="utf-8")
+
+            build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=state_path,
+                build_time="2026-06-28 12:00:00",
+            )
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            by_title = {paper["title"]: paper for paper in papers}
+            self.assertTrue(by_title["Recent Timestamp Agent Memory"]["is_new"])
+            self.assertFalse(by_title["Old Timestamp Agent Memory"]["is_new"])
+            self.assertTrue(by_title["Date Only Current Agent Memory"]["is_new"])
+            self.assertFalse(by_title["Date Only Old Agent Memory"]["is_new"])
+
+            recent_visible = _visible_card_html(index_html, "recent timestamp agent memory")
+            old_visible = _visible_card_html(index_html, "old timestamp agent memory")
+            current_date_visible = _visible_card_html(index_html, "date only current agent memory")
+            old_date_visible = _visible_card_html(index_html, "date only old agent memory")
+            self.assertIn('class="new-badge"', recent_visible)
+            self.assertIn('aria-label="New in the last 24 hours"', recent_visible)
+            self.assertIn(">New</span>", recent_visible)
+            self.assertNotIn('class="new-badge"', old_visible)
+            self.assertIn('class="new-badge"', current_date_visible)
+            self.assertNotIn('class="new-badge"', old_date_visible)
+
+            self.assertIn('data-is-new="true"', index_html)
+            self.assertIn('data-is-new="false"', index_html)
+            self.assertIn('<input id="new-only" type="checkbox">', index_html)
+            self.assertIn("card.dataset.isNew === 'true'", index_html)
+            self.assertIn("First seen by Paper Scout: 2026-06-28 10:30", index_html)
+            self.assertIn("First seen by Paper Scout: 2026-06-28", index_html)
+            self.assertIn('class="new-badge"', latest_html)
 
     def test_index_and_latest_pages_have_library_and_latest_run_framing(self):
         with tempfile.TemporaryDirectory() as tmpdir:

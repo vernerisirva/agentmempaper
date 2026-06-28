@@ -1358,7 +1358,7 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
           <div class="paper-list" id="paper-list">
             {_library_paper_cards(papers, default_decision=default_decision)}
           </div>
-          <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
+          <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
         </section>
         {_secondary_footer(latest, archive)}
         {FILTER_SCRIPT}
@@ -1409,7 +1409,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
           <div class="paper-list" id="paper-list">
             {paper_cards}
           </div>
-          <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
+          <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
         </section>
         {_warnings(latest.source_warnings)}
         <section class="archive-strip" aria-labelledby="recent-archive-heading">
@@ -1496,7 +1496,7 @@ def _render_about_page() -> str:
             <p>Candidate papers are canonicalized by DOI, arXiv ID, Semantic Scholar ID, OpenAlex work ID, then normalized title, first author, and year. The dashboard also collapses duplicate titles while preserving alternate source links.</p>
           </article>
           <article>
-            <h2>Relevance scoring</h2>
+            <h2>Relevance screening</h2>
             <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment.</p>
           </article>
           <article>
@@ -1510,7 +1510,7 @@ def _render_about_page() -> str:
           </article>
           <article>
             <h2>Limitations</h2>
-            <p>Relevance scoring can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
+            <p>Relevance screening can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
           </article>
         </section>
         """,
@@ -1633,11 +1633,11 @@ def _render_paper_detail_page(paper: LibraryPaper) -> str:
             {structured_card_html}
           </section>
           <section class="detail-panel">
-            <p class="section-kicker">Screening details</p>
+            <p class="section-kicker">Review metadata</p>
             <ul>
               <li>Decision: {escape(_decision_label(paper.decision))}</li>
-              <li>Score: {paper.score}/100</li>
-              <li>Classifier label: {escape(paper.relevance_label or _relevance_label(paper))}</li>
+              <li>Internal screening score: {paper.score}/100</li>
+              <li>Screening category: {escape(paper.relevance_label or _relevance_label(paper))}</li>
               <li>Tags: {escape(", ".join(paper.tags) or "untagged")}</li>
             </ul>
           </section>
@@ -1925,7 +1925,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
     source_names = ", ".join(_source_label(source) for source in sources)
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
-    detail_link = f'<a class="paper-detail-link" href="{escape(_paper_detail_url(paper))}">Details</a>'
+    detail_link = f'<a class="paper-detail-link" href="{escape(_paper_detail_url(paper))}">Research card</a>'
     secondary_links = _secondary_links(paper)
     published = _published_text(paper)
     search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, paper.research_note or "", " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
@@ -1952,15 +1952,15 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
         {link}
         {detail_link}
         <details class="paper-more">
-          <summary>Details</summary>
+          <summary>More metadata</summary>
           <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
           {note}
           <div class="details-group">
-            <strong>Screening details</strong>
+            <strong>Review metadata</strong>
             <ul>
               <li>Decision: {escape(_decision_label(paper.decision))}</li>
-              <li>Score: {paper.score}/100</li>
-              <li>Classifier label: {escape(relevance_label)}</li>
+              <li>Internal screening score: {paper.score}/100</li>
+              <li>Screening category: {escape(relevance_label)}</li>
               {pinned_detail}
               {status_detail}
             </ul>
@@ -2068,13 +2068,13 @@ def _paper_card(paper: ParsedPaper, density: str) -> str:
       <div class="paper-side">
         {link}
         <details class="paper-more">
-          <summary>Details</summary>
+          <summary>More metadata</summary>
           <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
           <div class="details-group">
-            <strong>Screening details</strong>
+            <strong>Review metadata</strong>
             <ul>
               <li>Decision: {escape(paper.decision)}</li>
-              <li>Score: {escape(paper.score)}</li>
+              <li>Internal screening score: {escape(paper.score)}</li>
             </ul>
           </div>
           <div class="details-group"><strong>Tags</strong><div class="tags">{tags}</div></div>

@@ -422,6 +422,9 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertTrue((docs_dir / "data" / "latest.json").exists())
             self.assertTrue((docs_dir / "data" / "papers.csv").exists())
             self.assertTrue((docs_dir / "data" / "papers.bib").exists())
+            self.assertTrue((docs_dir / "papers").exists())
+            self.assertTrue(list((docs_dir / "papers").glob("*.html")))
+            self.assertTrue(list((docs_dir / "papers").glob("*.json")))
             self.assertTrue((docs_dir / "style.css").exists())
             self.assertTrue((digest_dir / "latest.md").exists())
             html = (docs_dir / "index.html").read_text(encoding="utf-8")
@@ -447,6 +450,45 @@ class PaperScoutSiteTest(unittest.TestCase):
             about_html = (docs_dir / "about.html").read_text(encoding="utf-8")
             for public_html in (html, latest_html, archive_html, about_html):
                 self.assertNotIn("Maybe relevant", public_html)
+
+    def test_generates_structured_paper_detail_pages_and_sidecars(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            self._write_state_fixture(state_path)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertRegex(index_html, r'<a class="paper-detail-link" href="papers/[^"]+\.html">Details</a>')
+            detail_pages = sorted((docs_dir / "papers").glob("*.html"))
+            detail_json_files = sorted((docs_dir / "papers").glob("*.json"))
+            self.assertGreaterEqual(len(detail_pages), 1)
+            self.assertEqual(len(detail_pages), len(detail_json_files))
+            detail_html = detail_pages[0].read_text(encoding="utf-8")
+            detail_json = json.loads(detail_json_files[0].read_text(encoding="utf-8"))
+            self.assertIn("<h1>", detail_html)
+            self.assertIn("Authors", detail_html)
+            self.assertIn("Why included", detail_html)
+            self.assertIn("Publication date source", detail_html)
+            self.assertIn("Publication date precision", detail_html)
+            self.assertIn("Publication date confidence", detail_html)
+            self.assertIn("Provenance", detail_html)
+            self.assertIn("Download paper JSON", detail_html)
+            self.assertIn("Possible key claims", detail_html)
+            self.assertIn("Not extracted yet", detail_html)
+            self.assertIn("publication_date_precision", detail_json)
+            self.assertIn("publication_date_source", detail_json)
+            self.assertIn("publication_date_confidence", detail_json)
+            self.assertIn("provenance", detail_json)
+            self.assertIn("structured_sections", detail_json)
+            self.assertIn("citation", detail_json)
 
     def test_cumulative_library_data_and_latest_discoveries_are_split(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -739,6 +781,8 @@ class PaperScoutSiteTest(unittest.TestCase):
                 docs_dir / "data" / "papers.csv",
                 docs_dir / "data" / "papers.bib",
             ]
+            generated.extend((docs_dir / "papers").glob("*.html"))
+            generated.extend((docs_dir / "papers").glob("*.json"))
             for path in generated:
                 self.assertNotIn(secret, path.read_text(encoding="utf-8"))
 
@@ -1374,6 +1418,8 @@ date_overrides:
             self.assertIn("Deduplication", about_html)
             self.assertIn("relevance scoring", about_html.lower())
             self.assertIn("future publication dates", about_html)
+            self.assertIn("structured detail", about_html)
+            self.assertIn("sidecar JSON", about_html)
             self.assertIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8"))
             self.assertNotIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8").split("</header>", 1)[0])
             self.assertIn("title,authors,publication_date,first_seen_date,relevance_decision,relevance_score,tags,sources,url,doi,arxiv_id", csv_text.splitlines()[0])

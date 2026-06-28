@@ -171,13 +171,27 @@ h3 {
   color: #fff;
   box-shadow: 0 10px 24px rgba(23, 105, 210, .18);
 }
+.paper-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: .56rem .86rem;
+  background: rgba(255, 255, 255, .72);
+  color: var(--accent-strong);
+  font-size: .9rem;
+  font-weight: 610;
+  text-decoration: none;
+}
 .button.secondary {
   background: rgba(255, 255, 255, .74);
   border: 1px solid var(--line-soft);
   color: var(--accent-strong);
 }
-.button:hover, .paper-link:hover { transform: translateY(-1px); }
-.button:active, .paper-link:active, button:active { transform: translateY(1px); }
+.button:hover, .paper-link:hover, .paper-detail-link:hover { transform: translateY(-1px); }
+.button:active, .paper-link:active, .paper-detail-link:active, button:active { transform: translateY(1px); }
 .digest-note {
   background: rgba(255, 255, 255, .78);
   border: 1px solid var(--line-soft);
@@ -559,6 +573,60 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
   color: var(--faint);
   font-size: .78rem;
 }
+.paper-detail-hero {
+  margin-bottom: 2rem;
+}
+.paper-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.35rem;
+}
+.paper-detail-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.detail-panel {
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+.detail-panel.wide {
+  grid-column: 1 / -1;
+}
+.detail-panel p {
+  margin: .35rem 0 0;
+}
+.detail-panel ul {
+  margin: .55rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+.detail-metadata {
+  display: grid;
+  gap: .55rem;
+  margin: .5rem 0 0;
+}
+.detail-metadata div {
+  display: grid;
+  grid-template-columns: minmax(8rem, .65fr) 1fr;
+  gap: .75rem;
+  border-top: 1px solid var(--line-soft);
+  padding-top: .55rem;
+}
+.detail-metadata dt {
+  color: var(--faint);
+  font-size: .84rem;
+}
+.detail-metadata dd {
+  margin: 0;
+  color: var(--text);
+}
+.structured-empty, .muted {
+  color: var(--faint);
+}
 .citation summary {
   cursor: pointer;
   color: var(--muted);
@@ -756,6 +824,7 @@ textarea {
   .recommended-section { padding: .9rem; }
   .paper-dates { grid-template-columns: 1fr; }
   .paper-card { border-radius: 1rem; }
+  .paper-detail-layout, .detail-metadata div { grid-template-columns: 1fr; }
   .archive-entry dl { grid-template-columns: 1fr; }
   h1 { font-size: clamp(2.7rem, 14vw, 4.35rem); }
 }

@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, timedelta
+import hashlib
 from html import escape
 import io
 import json
@@ -198,6 +199,7 @@ def build_site(
 
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / "data").mkdir(parents=True, exist_ok=True)
+    _write_paper_detail_pages(docs_root, library_papers)
     (docs_root / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     (docs_root / "index.html").write_text(_render_library_page(library_papers, latest, archive_digests), encoding="utf-8")
     (docs_root / "latest.html").write_text(_render_latest_discoveries_page(latest_discoveries, latest, archive_digests), encoding="utf-8")
@@ -1154,6 +1156,65 @@ def _write_latest_markdown(digest_dir: Path, latest_date: str, latest_path: Path
     )
 
 
+def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper]) -> None:
+    papers_dir = docs_root / "papers"
+    papers_dir.mkdir(parents=True, exist_ok=True)
+    for stale_path in papers_dir.iterdir():
+        if stale_path.suffix in {".html", ".json"}:
+            stale_path.unlink()
+    for paper in papers:
+        slug = _paper_slug(paper)
+        (papers_dir / f"{slug}.html").write_text(_render_paper_detail_page(paper), encoding="utf-8")
+        (papers_dir / f"{slug}.json").write_text(
+            json.dumps(_paper_detail_json(paper), indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
+
+
+def _paper_slug(paper: LibraryPaper) -> str:
+    title = re.sub(r"[^a-z0-9]+", "-", paper.title.lower()).strip("-") or "paper"
+    title = title[:84].strip("-") or "paper"
+    digest = hashlib.sha1(paper.canonical_id.encode("utf-8")).hexdigest()[:8]
+    return f"{title}-{digest}"
+
+
+def _paper_detail_url(paper: LibraryPaper) -> str:
+    return f"papers/{_paper_slug(paper)}.html"
+
+
+def _paper_detail_json_url(paper: LibraryPaper) -> str:
+    return f"papers/{_paper_slug(paper)}.json"
+
+
+def _paper_detail_json(paper: LibraryPaper) -> dict[str, object]:
+    data = _library_paper_to_json(paper)
+    data["detail_page"] = _paper_detail_url(paper)
+    data["detail_json"] = _paper_detail_json_url(paper)
+    data["provenance"] = _paper_provenance(paper)
+    data["structured_sections"] = {
+        "possible_key_claims": [],
+        "method_or_system_type": "Not extracted yet",
+        "evidence_or_evaluation_signals": [],
+        "relation_to_agentic_memory": "Not extracted yet",
+    }
+    return data
+
+
+def _paper_provenance(paper: LibraryPaper) -> dict[str, object]:
+    has_curation = bool(paper.research_note or paper.pinned or paper.review_status)
+    return {
+        "metadata_sources": paper.sources or [paper.source],
+        "source_ids": paper.source_ids,
+        "publication_date_source": paper.publication_date_source,
+        "publication_date_precision": _publication_precision(paper),
+        "publication_date_confidence": paper.publication_date_confidence,
+        "relevance_source": "deterministic screening + curation" if has_curation else "deterministic screening",
+        "curation_note": "manually added" if has_curation else None,
+        "first_seen_at": paper.first_seen_at,
+        "last_seen_at": paper.last_seen_at,
+    }
+
+
 def _digest_to_json(digest: ParsedDigest) -> dict[str, object]:
     return {
         "date": digest.date,
@@ -1201,6 +1262,8 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "openalex_id": paper.openalex_id,
         "url": paper.url,
         "alternate_urls": paper.alternate_urls,
+        "detail_page": _paper_detail_url(paper),
+        "detail_json": _paper_detail_json_url(paper),
         "publication_date": paper.published_date,
         "publication_year": paper.publication_year or _paper_year_from_value(paper.published_date),
         "publication_date_precision": _publication_precision(paper),
@@ -1410,6 +1473,10 @@ def _render_about_page() -> str:
             <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
           </article>
           <article>
+            <h2>Structured paper details</h2>
+            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; extracted fields may be incomplete and should be verified against the source paper.</p>
+          </article>
+          <article>
             <h2>Limitations</h2>
             <p>Relevance scoring can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
           </article>
@@ -1418,7 +1485,136 @@ def _render_about_page() -> str:
     )
 
 
-def _page(title: str, body: str) -> str:
+def _render_paper_detail_page(paper: LibraryPaper) -> str:
+    sources = paper.sources or [paper.source]
+    source_items = "".join(f"<li>{escape(_source_label(source))}</li>" for source in sources)
+    alternate_links = _secondary_links(paper) or '<p class="muted">No alternate source links recorded.</p>'
+    identifiers = "".join(f"<li>{item}</li>" for item in _identifier_list(paper)) or "<li>No additional identifiers recorded.</li>"
+    research_note = (
+        f"""
+        <section class="detail-panel">
+          <p class="section-kicker">Research note</p>
+          <p>{escape(paper.research_note)}</p>
+        </section>
+        """
+        if paper.research_note
+        else ""
+    )
+    json_href = f"{_paper_slug(paper)}.json"
+    open_link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
+    provenance = _paper_provenance(paper)
+    provenance_items = "".join(
+        f"<li>{escape(label)}: {escape(_display_value(value))}</li>"
+        for label, value in [
+            ("Metadata sources", ", ".join(str(source) for source in provenance["metadata_sources"])),
+            ("Publication date source", provenance["publication_date_source"]),
+            ("Publication date precision", provenance["publication_date_precision"]),
+            ("Publication date confidence", provenance["publication_date_confidence"]),
+            ("Relevance source", provenance["relevance_source"]),
+            ("Curation note", provenance["curation_note"]),
+            ("First seen by Paper Scout", provenance["first_seen_at"] or paper.first_seen_date),
+            ("Last seen by Paper Scout", provenance["last_seen_at"] or paper.last_seen_date),
+        ]
+    )
+    return _page(
+        paper.title,
+        f"""
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links">
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>{escape(paper.title)}</h1>
+          <p class="hero-copy">{escape(paper.authors_text)}</p>
+          <div class="paper-detail-actions">
+            {open_link}
+            <a class="paper-detail-link" href="{escape(json_href)}">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>{escape(paper.authors_text)}</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>{escape(_published_text(paper))}</dd></div>
+              <div><dt>Publication date</dt><dd>{escape(_display_value(paper.published_date))}</dd></div>
+              <div><dt>Publication year</dt><dd>{escape(_display_value(paper.publication_year or _paper_year_from_value(paper.published_date)))}</dd></div>
+              <div><dt>Publication date source</dt><dd>{escape(_display_value(paper.publication_date_source))}</dd></div>
+              <div><dt>Publication date precision</dt><dd>{escape(_display_value(_publication_precision(paper)))}</dd></div>
+              <div><dt>Publication date confidence</dt><dd>{escape(_display_value(paper.publication_date_confidence))}</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul>{source_items}</ul>
+            {alternate_links}
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>{escape(_short_reason(paper))}</p>
+          </section>
+          {research_note}
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>{escape(paper.abstract_summary or "No abstract summary available.")}</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Possible key claims</p>
+            <p class="structured-empty">Not extracted yet</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Method / system type</p>
+            <p class="structured-empty">Not extracted yet</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Evidence / evaluation signals</p>
+            <p class="structured-empty">Not extracted yet</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Relation to agentic memory</p>
+            <p class="structured-empty">Not extracted yet</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Screening details</p>
+            <ul>
+              <li>Decision: {escape(_decision_label(paper.decision))}</li>
+              <li>Score: {paper.score}/100</li>
+              <li>Classifier label: {escape(paper.relevance_label or _relevance_label(paper))}</li>
+              <li>Tags: {escape(", ".join(paper.tags) or "untagged")}</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul>{provenance_items}</ul>
+            <ul>{identifiers}</ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="{escape(json_href)}">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>{escape(paper.citation)}</p>
+            </details>
+          </section>
+        </section>
+        """,
+        stylesheet="../style.css",
+    )
+
+
+def _display_value(value: object) -> str:
+    return str(value) if value is not None and value != "" else "unknown"
+
+
+def _page(title: str, body: str, stylesheet: str = "style.css") -> str:
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -1426,7 +1622,7 @@ def _page(title: str, body: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(title)}</title>
   <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{escape(stylesheet)}">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -1679,6 +1875,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
     source_names = ", ".join(_source_label(source) for source in sources)
     link = f'<a class="paper-link" href="{escape(paper.url)}">Open paper</a>' if paper.url else '<span class="paper-link disabled">No link available</span>'
+    detail_link = f'<a class="paper-detail-link" href="{escape(_paper_detail_url(paper))}">Details</a>'
     secondary_links = _secondary_links(paper)
     published = _published_text(paper)
     search_text = " ".join([paper.title, paper.authors_text, paper.abstract_summary, paper.reason, paper.research_note or "", " ".join(paper.tags), " ".join(sources), paper.decision]).lower()
@@ -1703,6 +1900,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
       </div>
       <div class="paper-side">
         {link}
+        {detail_link}
         <details class="paper-more">
           <summary>Details</summary>
           <p class="abstract-summary">{escape(paper.abstract_summary)}</p>
@@ -2259,13 +2457,27 @@ h3 {
   color: #fff;
   box-shadow: 0 10px 24px rgba(23, 105, 210, .18);
 }
+.paper-detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 999px;
+  padding: .56rem .86rem;
+  background: rgba(255, 255, 255, .72);
+  color: var(--accent-strong);
+  font-size: .9rem;
+  font-weight: 610;
+  text-decoration: none;
+}
 .button.secondary {
   background: rgba(255, 255, 255, .74);
   border: 1px solid var(--line-soft);
   color: var(--accent-strong);
 }
-.button:hover, .paper-link:hover { transform: translateY(-1px); }
-.button:active, .paper-link:active, button:active { transform: translateY(1px); }
+.button:hover, .paper-link:hover, .paper-detail-link:hover { transform: translateY(-1px); }
+.button:active, .paper-link:active, .paper-detail-link:active, button:active { transform: translateY(1px); }
 .digest-note {
   background: rgba(255, 255, 255, .78);
   border: 1px solid var(--line-soft);
@@ -2647,6 +2859,60 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
   color: var(--faint);
   font-size: .78rem;
 }
+.paper-detail-hero {
+  margin-bottom: 2rem;
+}
+.paper-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.35rem;
+}
+.paper-detail-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.detail-panel {
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+.detail-panel.wide {
+  grid-column: 1 / -1;
+}
+.detail-panel p {
+  margin: .35rem 0 0;
+}
+.detail-panel ul {
+  margin: .55rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+.detail-metadata {
+  display: grid;
+  gap: .55rem;
+  margin: .5rem 0 0;
+}
+.detail-metadata div {
+  display: grid;
+  grid-template-columns: minmax(8rem, .65fr) 1fr;
+  gap: .75rem;
+  border-top: 1px solid var(--line-soft);
+  padding-top: .55rem;
+}
+.detail-metadata dt {
+  color: var(--faint);
+  font-size: .84rem;
+}
+.detail-metadata dd {
+  margin: 0;
+  color: var(--text);
+}
+.structured-empty, .muted {
+  color: var(--faint);
+}
 .citation summary {
   cursor: pointer;
   color: var(--muted);
@@ -2844,6 +3110,7 @@ textarea {
   .recommended-section { padding: .9rem; }
   .paper-dates { grid-template-columns: 1fr; }
   .paper-card { border-radius: 1rem; }
+  .paper-detail-layout, .detail-metadata div { grid-template-columns: 1fr; }
   .archive-entry dl { grid-template-columns: 1fr; }
   h1 { font-size: clamp(2.7rem, 14vw, 4.35rem); }
 }

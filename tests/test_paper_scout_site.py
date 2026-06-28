@@ -206,6 +206,19 @@ class PaperScoutSiteTest(unittest.TestCase):
             ),
             (
                 PaperCandidate(
+                    title="Exact Current Memory Paper",
+                    authors=["Current Author"],
+                    abstract="A current exact-date study of persistent memory systems for LLM agents.",
+                    source="arxiv",
+                    source_id="current-exact",
+                    url="https://example.test/current-exact",
+                    published_date="2026-06-26",
+                    raw={},
+                ),
+                ClassificationResult(58, "relevant", "Current exact-date memory work should outrank future source dates.", ["agent-memory"], "Current exact-date paper."),
+            ),
+            (
+                PaperCandidate(
                     title="Fresh First Seen Agent Memory",
                     authors=["No Date Author"],
                     abstract="Long-term memory systems for LLM agents without a publication date, first seen in the current run.",
@@ -488,7 +501,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertNotIn('id="source-filters"', index_html)
             self.assertNotIn('id="tag-filter"', index_html)
             self.assertIn("Technical diagnostics", index_html)
-            self.assertIn("Latest discoveries", latest_html)
+            self.assertIn("Latest run", latest_html)
             self.assertIn("Papers first seen in the latest Paper Scout run.", latest_html)
             self.assertIn("Latest Deep Research Memory", latest_html)
             self.assertNotIn("Older Episodic Memory for Agents", latest_html)
@@ -514,7 +527,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertNotIn("recommended-section", html)
             self.assertLess(html.index("Search papers..."), html.index("Latest Deep Research Memory"))
             self.assertIn('<details class="technical-diagnostics">', html)
-            self.assertIn("<summary>Technical diagnostics</summary>", html)
+            self.assertIn("<summary>Technical diagnostics <span>1 source query was rate-limited</span></summary>", html)
             self.assertIn('<details class="export-library">', html)
             self.assertLess(html.index("Latest Deep Research Memory"), html.index("Export library"))
             self.assertNotIn("Download CSV", html.split("</header>", 1)[0])
@@ -643,7 +656,9 @@ excluded:
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             titles = [paper["title"] for paper in papers]
-            self.assertEqual(titles[0], "Fresh First Seen Agent Memory")
+            self.assertEqual(titles[0], "Exact Current Memory Paper")
+            self.assertLess(titles.index("Exact Current Memory Paper"), titles.index("Future Source Relevant Memory Paper"))
+            self.assertLess(titles.index("Newer Low Score Agent Memory"), titles.index("Future Source Relevant Memory Paper"))
             self.assertLess(titles.index("Fresh First Seen Agent Memory"), titles.index("Future Source Relevant Memory Paper"))
             self.assertLess(titles.index("Fresh First Seen Agent Memory"), titles.index("Year Only Relevant Memory Paper"))
             self.assertLess(titles.index("Newer Low Score Agent Memory"), titles.index("Core Agent Memory Architecture"))
@@ -669,6 +684,8 @@ excluded:
             pinned = next(paper for paper in papers if paper["title"] == "Pinned Thesis Candidate")
             self.assertTrue(future["future_date"])
             self.assertTrue(future_relevant["future_date"])
+            self.assertEqual(future_relevant["publication_date"], "2026-07-05")
+            self.assertEqual(future_relevant["effective_sort_date"], future_relevant["first_seen_date"])
             self.assertEqual(year_only["publication_date"], "2026")
             self.assertEqual(year_only["publication_year"], "2026")
             self.assertEqual(year_only["publication_date_precision"], "year")
@@ -677,6 +694,117 @@ excluded:
             self.assertTrue(pinned["pinned"])
             self.assertEqual(pinned["review_status"], "thesis_candidate")
             self.assertEqual(pinned["relevance_score"], 93)
+
+    def test_latest_run_empty_state_and_warning_summary_are_public_facing(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            (digest_dir / "2026-06-26.md").write_text(
+                """# Paper Scout Digest - 2026-06-26
+
+## Run Summary
+
+- **Run ID:** 11
+- **Candidates fetched:** 0
+- **New unique papers:** 0
+- **Relevant:** 0
+- **Maybe relevant:** 0
+- **Irrelevant:** 0
+- **Source summary:** arxiv: 0, openalex: 0, semantic_scholar: 0
+
+## Source Warnings
+
+- semantic_scholar failed for 'agent memory' at https://api.semanticscholar.org/graph/v1/paper/search: Semantic Scholar rate limit (HTTP 429).
+- semantic_scholar failed for 'LLM agent memory' at https://api.semanticscholar.org/graph/v1/paper/search: Semantic Scholar rate limit (HTTP 429).
+""",
+                encoding="utf-8",
+            )
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
+
+            latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            self.assertIn("Latest run", latest_html)
+            self.assertIn("No new papers were found in the latest run. The cumulative library was refreshed.", latest_html)
+            self.assertIn("2 source queries were rate-limited", latest_html)
+            self.assertIn("<summary>Source diagnostics", latest_html)
+            empty_index = latest_html.index("No new papers were found")
+            raw_index = latest_html.index("https://api.semanticscholar.org")
+            self.assertLess(empty_index, raw_index)
+
+    def test_curation_can_downgrade_broad_architecture_and_add_research_notes(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            curation_path = root / "config" / "curation.yaml"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir()
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=7)
+            broad = PaperCandidate(
+                title="Broad Agentic AI System Architecture",
+                authors=["Architecture Author"],
+                abstract="This broad agentic AI system architecture paper discusses autonomous agents but not persistent memory.",
+                source="openalex",
+                source_id="broad-agentic",
+                url="https://example.test/broad-agentic",
+                published_date="2026-06-24",
+                raw={},
+            )
+            core = PaperCandidate(
+                title="TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory",
+                authors=["Memory Author"],
+                abstract="Long-term memory consolidation and evaluation for LLM agents.",
+                source="openalex",
+                source_id="trustmem",
+                url="https://example.test/trustmem",
+                published_date="2026-06-23",
+                raw={},
+            )
+            broad_key = store.upsert_paper(broad, ClassificationResult(91, "relevant", "Stale broad architecture match.", ["llm-agents"], "Broad architecture paper."))
+            core_key = store.upsert_paper(core, ClassificationResult(100, "relevant", "Studies memory consolidation for LLM agents.", ["agent-memory", "memory-policy"], "Core memory paper."))
+            store.record_sighting(run_id, broad_key, broad, "agentic AI")
+            store.record_sighting(run_id, core_key, core, "LLM agent memory")
+            store.finish_run(run_id, fetched_count=2, new_count=2, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+            curation_path.write_text(
+                """
+overrides:
+  - title: "Broad Agentic AI System Architecture"
+    decision: maybe
+    score: 62
+    tags:
+      - llm-agents
+    note: "Peripheral: broad agentic AI architecture without clear persistent-memory contribution."
+  - title: "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory"
+    note: "Important because it studies trustworthy consolidation policies for long-term memory in LLM agents."
+""",
+                encoding="utf-8",
+            )
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
+
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            broad_paper = next(paper for paper in papers if paper["title"] == "Broad Agentic AI System Architecture")
+            core_paper = next(paper for paper in papers if paper["title"].startswith("TRUSTMEM"))
+            self.assertEqual(broad_paper["relevance_decision"], "maybe")
+            self.assertEqual(core_paper["relevance_decision"], "relevant")
+            self.assertIn("trustworthy consolidation policies", core_paper["research_note"])
+            core_visible = _visible_card_html(index_html, "trustmem: learning trustworthy memory consolidation for llm agents with long-term memory")
+            self.assertIn("Important because it studies trustworthy consolidation policies", core_visible)
+            self.assertRegex(
+                index_html,
+                r'<article class="paper-card compact"[^>]+data-title="broad agentic ai system architecture"[^>]+hidden>',
+            )
+            self.assertIn("Important because it studies trustworthy consolidation policies", index_html)
 
     def test_source_merge_uses_exact_arxiv_date_over_semantic_scholar_year(self):
         with tempfile.TemporaryDirectory() as tmpdir:

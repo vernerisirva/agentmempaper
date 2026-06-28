@@ -551,6 +551,7 @@ def _sort_recommended(papers: list[LibraryPaper]) -> list[LibraryPaper]:
 def _latest_relevant_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
     return (
         0 if paper.decision == "relevant" else 1,
+        _latest_relevant_date_bucket(paper),
         _reverse_date_sort_value(_latest_relevant_date(paper)),
         -paper.score,
         paper.title.lower(),
@@ -568,6 +569,14 @@ def _latest_relevant_date(paper: LibraryPaper) -> str | None:
         paper.first_seen_date,
         paper.future_date,
     )
+
+
+def _latest_relevant_date_bucket(paper: LibraryPaper) -> int:
+    if paper.future_date:
+        return 2
+    if precision_rank(_publication_precision(paper)) >= precision_rank("month"):
+        return 0
+    return 1
 
 
 def _reverse_date_sort_value(value: str | None) -> int:
@@ -1132,6 +1141,7 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "publication_date_source": paper.publication_date_source,
         "publication_date_confidence": paper.publication_date_confidence,
         "effective_sort_date": _latest_relevant_date(paper),
+        "latest_relevant_date_bucket": _latest_relevant_date_bucket(paper),
         "first_seen_date": paper.first_seen_date,
         "first_seen_at": paper.first_seen_at,
         "last_seen_date": paper.last_seen_date,
@@ -1196,8 +1206,9 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
 
 
 def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
+    paper_cards = _library_paper_cards(papers, default_decision="all") if papers else '<p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>'
     return _page(
-        "Latest Paper Scout Discoveries",
+        "Latest Paper Scout Run",
         f"""
         <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
@@ -1211,7 +1222,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
             </span>
           </nav>
           <p class="eyebrow">Latest update {escape(latest.date)}</p>
-          <h1>Latest discoveries</h1>
+          <h1>Latest run</h1>
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         {_latest_summary_strip(papers, latest)}
@@ -1222,7 +1233,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
             <h2>Papers first seen in the latest Paper Scout run.</h2>
           </div>
           <div class="paper-list" id="paper-list">
-            {_library_paper_cards(papers, default_decision="all")}
+            {paper_cards}
           </div>
           <p class="empty no-results" id="no-results" hidden>No papers match the current search.</p>
         </section>
@@ -1264,7 +1275,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
             <a class="brand" href="index.html">Paper Scout</a>
             <span class="nav-links">
               <a href="index.html">Library</a>
-              <a href="latest.html">Latest discoveries</a>
+              <a href="latest.html">Latest run</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Latest Markdown</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
@@ -1288,7 +1299,7 @@ def _render_about_page() -> str:
             <a class="brand" href="index.html">Paper Scout</a>
             <span class="nav-links">
               <a href="index.html">Library</a>
-              <a href="latest.html">Latest discoveries</a>
+              <a href="latest.html">Latest run</a>
               <a href="archive.html">Archive</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
@@ -1479,8 +1490,24 @@ def _library_controls(default_decision: str = "all") -> str:
 def _warnings(warnings: list[str]) -> str:
     if not warnings:
         return '<details class="source-diagnostics"><summary>Source diagnostics <span>0 warnings</span></summary><p>No source warnings.</p></details>'
+    summary = _source_warning_summary(warnings)
     compact = "\n".join(f"<li>{escape(warning)}</li>" for warning in warnings)
-    return f'<details class="source-diagnostics"><summary>Source diagnostics <span>{len(warnings)} warnings</span></summary><ul>{compact}</ul></details>'
+    return f'<details class="source-diagnostics"><summary>Source diagnostics <span>{escape(summary)}</span></summary><ul>{compact}</ul></details>'
+
+
+def _source_warning_summary(warnings: list[str]) -> str:
+    if not warnings:
+        return "0 warnings"
+    rate_limited = sum(1 for warning in warnings if re.search(r"\b(429|rate[- ]?limit)", warning, flags=re.IGNORECASE))
+    other = len(warnings) - rate_limited
+    parts: list[str] = []
+    if rate_limited:
+        noun = "query was" if rate_limited == 1 else "queries were"
+        parts.append(f"{rate_limited} source {noun} rate-limited")
+    if other:
+        noun = "warning" if other == 1 else "warnings"
+        parts.append(f"{other} other source {noun}")
+    return "; ".join(parts) if parts else f"{len(warnings)} source warnings"
 
 
 def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
@@ -1489,6 +1516,7 @@ def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
         for item in reversed(archive[:8])
     )
     warnings = "\n".join(f"<li>{escape(warning)}</li>" for warning in latest.source_warnings) or "<li>No source warnings.</li>"
+    warning_summary = _source_warning_summary(latest.source_warnings)
     return f"""
     <footer class="library-footer">
       <details class="export-library">
@@ -1500,7 +1528,7 @@ def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
         </div>
       </details>
       <details class="technical-diagnostics">
-        <summary>Technical diagnostics</summary>
+        <summary>Technical diagnostics <span>{escape(warning_summary)}</span></summary>
         <div class="diagnostic-grid">
           <div>
             <h3>Run metadata</h3>
@@ -1520,7 +1548,7 @@ def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
         </div>
       </details>
       <nav class="footer-links" aria-label="Secondary">
-        <a href="latest.html">Latest discoveries</a>
+        <a href="latest.html">Latest run</a>
         <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
         {recent}
       </nav>
@@ -1586,7 +1614,7 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     more_items = "".join(f"<li>{item}</li>" for item in ids) or "<li>No additional identifiers.</li>"
     hidden = " hidden" if default_decision != "all" and paper.decision != default_decision else ""
     return f"""
-    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
+    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-date-bucket="{_latest_relevant_date_bucket(paper)}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
       <div class="paper-main">
         <h3>{escape(paper.title)}</h3>
         <p class="meta">{escape(paper.authors_text)} · {escape(published)} · Source: {escape(source_names)}</p>
@@ -1775,7 +1803,7 @@ def _date_confidence(precision: str | None, source: str | None) -> str | None:
 
 
 def _short_reason(paper: LibraryPaper) -> str:
-    reason = paper.reason.strip() or (paper.relevance_label or _relevance_label(paper))
+    reason = (paper.research_note or paper.reason).strip() or (paper.relevance_label or _relevance_label(paper))
     sentence = re.split(r"(?<=[.!?])\s+", reason, maxsplit=1)[0].strip()
     return sentence if sentence else reason
 
@@ -2752,6 +2780,8 @@ FILTER_SCRIPT = """
   function latestRelevantRank(a, b) {
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
+    if (bucket) return bucket;
     const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
     if (date) return date;
     const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);

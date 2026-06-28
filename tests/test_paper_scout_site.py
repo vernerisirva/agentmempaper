@@ -435,6 +435,10 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("2026-06-25", archive_html)
             self.assertIn("2026-06-26", archive_html)
             self.assertIn("daily digests are kept for provenance", archive_html)
+            latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            about_html = (docs_dir / "about.html").read_text(encoding="utf-8")
+            for public_html in (html, latest_html, archive_html, about_html):
+                self.assertNotIn("Maybe relevant", public_html)
 
     def test_cumulative_library_data_and_latest_discoveries_are_split(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -750,6 +754,7 @@ excluded:
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Latest run", latest_html)
             self.assertIn("No new papers were found in the latest run. The cumulative library was refreshed.", latest_html)
+            self.assertNotIn("Source warning count", latest_html)
             self.assertIn("Some source queries were rate-limited. The library was still refreshed from available sources.", latest_html)
             self.assertIn("<summary>Source diagnostics", latest_html)
             self.assertIn("Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.", latest_html)
@@ -797,6 +802,7 @@ excluded:
             self.assertIn("Review candidates found in the latest run", latest_html)
             self.assertIn("Review candidates", latest_html)
             self.assertNotIn("Maybe relevant", latest_html)
+            self.assertNotIn("Source warning count", latest_html)
 
     def test_curation_can_downgrade_broad_architecture_and_add_research_notes(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -831,11 +837,32 @@ excluded:
                 published_date="2026-06-23",
                 raw={},
             )
+            benchmark = PaperCandidate(
+                title="MGBench: Memory Governance Benchmark for Agentic Long-Term Memory",
+                authors=["Benchmark Author"],
+                abstract="Benchmark for governance failures in agentic long-term memory systems.",
+                source="openalex",
+                source_id="mgbench",
+                url="https://example.test/mgbench",
+                published_date="2026-06-22",
+                raw={},
+            )
             broad_key = store.upsert_paper(broad, ClassificationResult(91, "relevant", "Stale broad architecture match.", ["llm-agents"], "Broad architecture paper."))
             core_key = store.upsert_paper(core, ClassificationResult(100, "relevant", "Studies memory consolidation for LLM agents.", ["agent-memory", "memory-policy"], "Core memory paper."))
+            benchmark_key = store.upsert_paper(
+                benchmark,
+                ClassificationResult(
+                    100,
+                    "relevant",
+                    "Focuses on persistent or long-term memory for agent behavior.",
+                    ["agent-memory", "benchmark"],
+                    "Benchmark paper.",
+                ),
+            )
             store.record_sighting(run_id, broad_key, broad, "agentic AI")
             store.record_sighting(run_id, core_key, core, "LLM agent memory")
-            store.finish_run(run_id, fetched_count=2, new_count=2, notified_count=0)
+            store.record_sighting(run_id, benchmark_key, benchmark, "agent memory benchmark")
+            store.finish_run(run_id, fetched_count=3, new_count=3, notified_count=0)
             (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
             curation_path.write_text(
                 """
@@ -848,6 +875,10 @@ overrides:
     note: "Peripheral: broad agentic AI architecture without clear persistent-memory contribution."
   - title: "TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory"
     note: "Important because it studies trustworthy consolidation policies for long-term memory in LLM agents."
+  - title: "MGBench: Memory Governance Benchmark for Agentic Long-Term Memory"
+    decision: highly_relevant
+    score: 94
+    note: "Benchmarks governance failures in agentic long-term memory systems."
 """,
                 encoding="utf-8",
             )
@@ -858,11 +889,17 @@ overrides:
             index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
             broad_paper = next(paper for paper in papers if paper["title"] == "Broad Agentic AI System Architecture")
             core_paper = next(paper for paper in papers if paper["title"].startswith("TRUSTMEM"))
+            benchmark_paper = next(paper for paper in papers if paper["title"].startswith("MGBench"))
             self.assertEqual(broad_paper["relevance_decision"], "maybe")
             self.assertEqual(core_paper["relevance_decision"], "relevant")
+            self.assertEqual(benchmark_paper["relevance_decision"], "relevant")
             self.assertIn("trustworthy consolidation policies", core_paper["research_note"])
+            self.assertIn("governance failures", benchmark_paper["research_note"])
             core_visible = _visible_card_html(index_html, "trustmem: learning trustworthy memory consolidation for llm agents with long-term memory")
+            benchmark_visible = _visible_card_html(index_html, "mgbench: memory governance benchmark for agentic long-term memory")
             self.assertIn("Important because it studies trustworthy consolidation policies", core_visible)
+            self.assertIn("Benchmarks governance failures in agentic long-term memory systems.", benchmark_visible)
+            self.assertNotIn("Focuses on persistent or long-term memory for agent behavior.", benchmark_visible)
             self.assertRegex(
                 index_html,
                 r'<article class="paper-card compact"[^>]+data-title="broad agentic ai system architecture"[^>]+hidden>',

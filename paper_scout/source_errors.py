@@ -21,7 +21,7 @@ def _format_semantic_scholar_rate_limit(source: str, exc: Exception) -> str | No
         return None
     if os.environ.get("SEMANTIC_SCHOLAR_API_KEY"):
         return "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources."
-    return "Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits."
+    return "Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources."
 
 
 def _is_429(exc: Exception) -> bool:

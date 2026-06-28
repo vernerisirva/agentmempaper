@@ -143,7 +143,7 @@ Optional notifications:
 - `PAPER_SCOUT_EMAIL_TO`
 - `PAPER_SCOUT_EMAIL_FROM`
 
-Secrets are never written to smoke reports. If Semantic Scholar returns HTTP 429, Paper Scout treats it as a source warning rather than a run failure; this is expected without `SEMANTIC_SCHOLAR_API_KEY`, and arXiv/OpenAlex can still produce a digest.
+Secrets are never written to smoke reports. If Semantic Scholar returns HTTP 429, Paper Scout treats it as a source warning rather than a run failure. Configure `SEMANTIC_SCHOLAR_API_KEY` for higher rate limits; if rate limits still occur, the run continues with arXiv/OpenAlex and any other available sources.
 
 ## Digest Quality
 

@@ -72,6 +72,26 @@ class NoNetworkDateHttp:
         raise HttpRequestError("network", url, "network disabled in site unit tests")
 
 
+class ArxivDateHttp:
+    def __init__(self, *args, **kwargs):
+        self.calls = []
+
+    def get_text(self, url, params=None, headers=None):
+        self.calls.append((url, params or {}, headers or {}))
+        if "export.arxiv.org" not in url:
+            raise HttpRequestError("network", url, "unexpected URL")
+        return """<?xml version="1.0" encoding="UTF-8"?>
+        <feed xmlns="http://www.w3.org/2005/Atom">
+          <entry>
+            <id>http://arxiv.org/abs/2602.01869v1</id>
+            <published>2026-02-02T00:00:00Z</published>
+            <updated>2026-02-02T00:00:00Z</updated>
+            <title>ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents</title>
+            <summary>Procedural memory for LLM agents.</summary>
+          </entry>
+        </feed>"""
+
+
 class PaperScoutSiteTest(unittest.TestCase):
     def setUp(self):
         self._http_patch = patch("paper_scout.site.HttpClient", NoNetworkDateHttp)
@@ -497,7 +517,8 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn('<label class="select-field relevance-filter" for="relevance-filter">', index_html)
             self.assertIn('<option value="relevant" selected>Highly relevant</option>', index_html)
             self.assertIn('<option value="all">All papers</option>', index_html)
-            self.assertIn('<option value="maybe">Maybe relevant</option>', index_html)
+            self.assertIn('<option value="maybe">Review candidates</option>', index_html)
+            self.assertNotIn('<option value="maybe">Maybe relevant</option>', index_html)
             self.assertNotIn('id="source-filters"', index_html)
             self.assertNotIn('id="tag-filter"', index_html)
             self.assertIn("Technical diagnostics", index_html)
@@ -527,7 +548,7 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertNotIn("recommended-section", html)
             self.assertLess(html.index("Search papers..."), html.index("Latest Deep Research Memory"))
             self.assertIn('<details class="technical-diagnostics">', html)
-            self.assertIn("<summary>Technical diagnostics <span>1 source query was rate-limited</span></summary>", html)
+            self.assertIn("<summary>Technical diagnostics <span>Some source queries were rate-limited. The library was still refreshed from available sources.</span></summary>", html)
             self.assertIn('<details class="export-library">', html)
             self.assertLess(html.index("Latest Deep Research Memory"), html.index("Export library"))
             self.assertNotIn("Download CSV", html.split("</header>", 1)[0])
@@ -718,7 +739,7 @@ excluded:
 
 ## Source Warnings
 
-- semantic_scholar failed for 'agent memory' at https://api.semanticscholar.org/graph/v1/paper/search: Semantic Scholar rate limit (HTTP 429).
+- semantic_scholar failed for 'agent memory' at https://api.semanticscholar.org/graph/v1/paper/search: Semantic Scholar rate limit (HTTP 429). This is expected without SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable SEMANTIC_SCHOLAR_API_KEY to raise limits.
 - semantic_scholar failed for 'LLM agent memory' at https://api.semanticscholar.org/graph/v1/paper/search: Semantic Scholar rate limit (HTTP 429).
 """,
                 encoding="utf-8",
@@ -729,11 +750,53 @@ excluded:
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Latest run", latest_html)
             self.assertIn("No new papers were found in the latest run. The cumulative library was refreshed.", latest_html)
-            self.assertIn("2 source queries were rate-limited", latest_html)
+            self.assertIn("Some source queries were rate-limited. The library was still refreshed from available sources.", latest_html)
             self.assertIn("<summary>Source diagnostics", latest_html)
+            self.assertIn("Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.", latest_html)
+            self.assertNotIn("expected without SEMANTIC_SCHOLAR_API_KEY", latest_html)
             empty_index = latest_html.index("No new papers were found")
             raw_index = latest_html.index("https://api.semanticscholar.org")
             self.assertLess(empty_index, raw_index)
+
+    def test_latest_run_review_candidates_have_calm_heading(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=7)
+            candidate = PaperCandidate(
+                title="Peripheral Agent Memory Candidate",
+                authors=["Review Author"],
+                abstract="A peripheral paper that may inform agent memory but needs human review.",
+                source="openalex",
+                source_id="review-candidate",
+                url="https://example.test/review",
+                published_date="2026-06-26",
+                raw={},
+            )
+            key = store.upsert_paper(
+                candidate,
+                ClassificationResult(48, "maybe", "May be useful but requires review.", ["llm-agents"], "Review candidate."),
+            )
+            store.record_sighting(run_id, key, candidate, "agent memory")
+            store.finish_run(run_id, fetched_count=1, new_count=1, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(
+                SAMPLE_DIGEST.replace("- **Relevant:** 1", "- **Relevant:** 0").replace("- **Maybe relevant:** 1", "- **Maybe relevant:** 1"),
+                encoding="utf-8",
+            )
+
+            build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
+            self.assertIn("No highly relevant papers were found in the latest run. The cumulative library was refreshed.", latest_html)
+            self.assertIn("Review candidates found in the latest run", latest_html)
+            self.assertIn("Review candidates", latest_html)
+            self.assertNotIn("Maybe relevant", latest_html)
 
     def test_curation_can_downgrade_broad_architecture_and_add_research_notes(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -867,6 +930,53 @@ overrides:
             self.assertNotRegex(html, r"Published 2026(?:\s| · Source|<)")
             self.assertIn("Published 2026-02-02", html)
             self.assertTrue((report_dir / "metadata-quality-2026-06-26.md").exists())
+
+    def test_arxiv_doi_infers_id_and_enriches_year_only_site_date(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests"
+            report_dir = root / "reports" / "paper_scout"
+            docs_dir = root / "docs"
+            state_path = root / "data" / "paper_scout.sqlite3"
+            digest_dir.mkdir()
+            report_dir.mkdir(parents=True)
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=365)
+            title = "ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents"
+            candidate = PaperCandidate(
+                title=title,
+                authors=["Ada Lovelace"],
+                abstract="Procedural memory for LLM agents.",
+                source="semantic_scholar",
+                source_id="S2-PROCMEM",
+                doi="10.48550/arXiv.2602.01869",
+                semantic_scholar_id="S2-PROCMEM",
+                url="https://www.semanticscholar.org/paper/S2-PROCMEM",
+                published_date="2026",
+                publication_year="2026",
+                publication_date_precision="year",
+                publication_date_source="semantic_scholar",
+            )
+            key = store.upsert_paper(
+                candidate,
+                ClassificationResult(91, "relevant", "Studies procedural memory for LLM agents.", ["agent-memory"], "Procedural memory for LLM agents."),
+            )
+            store.record_sighting(run_id, key, candidate, "procedural memory LLM agent")
+            store.finish_run(run_id, fetched_count=1, new_count=1, notified_count=0)
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+
+            with patch("paper_scout.site.HttpClient", ArxivDateHttp):
+                build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
+            paper = next(paper for paper in papers if paper["title"] == title)
+            self.assertEqual(paper["arxiv_id"], "2602.01869")
+            self.assertEqual(paper["publication_date"], "2026-02-02")
+            self.assertEqual(paper["publication_date_precision"], "day")
+            self.assertEqual(paper["publication_date_source"], "arxiv")
+            self.assertIn("Published 2026-02-02", html)
+            self.assertNotRegex(html, r"Published 2026(?:\\s| · Source|<)")
 
     def test_ssrn_date_written_is_displayed_as_date_written(self):
         with tempfile.TemporaryDirectory() as tmpdir:

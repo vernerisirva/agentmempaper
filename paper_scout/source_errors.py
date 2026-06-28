@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 from paper_scout.http import HttpRequestError
 
 
@@ -17,11 +19,9 @@ def source_error_message(source: str, exc: Exception) -> str:
 def _format_semantic_scholar_rate_limit(source: str, exc: Exception) -> str | None:
     if source != "semantic_scholar" or not _is_429(exc):
         return None
-    return (
-        "Semantic Scholar rate limit (HTTP 429). This is expected without "
-        "SEMANTIC_SCHOLAR_API_KEY; configure the GitHub secret/environment variable "
-        "SEMANTIC_SCHOLAR_API_KEY to raise limits. arXiv and OpenAlex can still work."
-    )
+    if os.environ.get("SEMANTIC_SCHOLAR_API_KEY"):
+        return "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources."
+    return "Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits."
 
 
 def _is_429(exc: Exception) -> bool:

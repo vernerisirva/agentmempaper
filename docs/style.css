@@ -284,7 +284,7 @@ h3 {
 }
 .reading-controls {
   display: grid;
-  grid-template-columns: minmax(20rem, 1fr) minmax(11rem, .42fr) minmax(12rem, .48fr);
+  grid-template-columns: minmax(18rem, 1fr) minmax(10rem, .38fr) minmax(11rem, .44fr) max-content;
   gap: .8rem;
   align-items: end;
   margin: .9rem 0 1.65rem;
@@ -383,6 +383,10 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 }
 .paper-kicker, .tags { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
 .paper-card h3 {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  flex-wrap: wrap;
   margin-top: .55rem;
   font-size: clamp(1.16rem, 1.65vw, 1.46rem);
   overflow-wrap: anywhere;
@@ -471,6 +475,19 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 .pinned { background: #f2f0ff; color: #514a93; border-color: #ddd9ff; }
 .review { background: #f4f4f6; color: #4f5560; border-color: var(--line-soft); }
 .tag { background: #f4f5f7; color: #555b64; }
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: .16rem .42rem;
+  border: 1px solid #cfe1f7;
+  background: #eef6ff;
+  color: #1e5f9f;
+  font-size: .72rem;
+  font-weight: 680;
+  letter-spacing: .01em;
+  vertical-align: middle;
+}
 .tags { margin-top: .65rem; }
 .tag-more { color: var(--faint); }
 .paper-side {

@@ -56,6 +56,10 @@
           <option value="maybe">Review candidates</option>
         </select>
       </label>
+      <label class="toggle-control new-only-filter" for="new-only">
+        <input id="new-only" type="checkbox">
+        <span>New only</span>
+      </label>
     </section>
 
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
@@ -88,6 +92,7 @@
 (() => {
   const search = document.querySelector('#paper-search');
   const relevanceFilter = document.querySelector('#relevance-filter');
+  const newOnly = document.querySelector('#new-only');
   const sortSelect = document.querySelector('#paper-sort');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
@@ -133,13 +138,15 @@
     for (const card of cards) {
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
-      card.hidden = !(matchesQuery && matchesDecision);
+      const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0;
   }
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
+  if (newOnly) newOnly.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {

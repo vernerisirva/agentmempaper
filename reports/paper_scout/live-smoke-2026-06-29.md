@@ -1,0 +1,286 @@
+# Paper Scout Live Smoke Report - 2026-06-29
+
+- **CI mode:** True
+- **Sources attempted:** 3
+- **Sources succeeded:** 1
+- **Sources failed:** 2
+- **Raw records:** 994
+- **Candidates fetched:** 913
+- **Unique papers:** 361
+- **State initialized:** True
+- **Idempotency passed:** True
+
+## Sources
+
+### arxiv
+
+- Status: Failed
+- Queries attempted: 21
+- Raw records: 133
+- Converted candidates: 52
+- Sample title: DMV-Bench: Diagnosing Long-Horizon Multimodal Agents' Visual Memory with Incidental Cue Injection
+- Sample source ID: 2606.27499
+- Sample URL: https://arxiv.org/abs/2606.27499v1
+- Sample published date: 2026-06-25
+- Abstract: yes
+- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+
+### openalex
+
+- Status: Success
+- Queries attempted: 38
+- Raw records: 861
+- Converted candidates: 861
+- Sample title: RhizoDB: A Bounded Activation-Flow Architecture for Graph-Based Memory Systems
+- Sample source ID: W4293651439
+- Sample URL: https://doi.org/10.5281/zenodo.20695702
+- Sample published date: 2026-06-15
+- Abstract: yes
+
+### semantic_scholar
+
+- Status: Failed
+- Queries attempted: 1
+- Raw records: 0
+- Converted candidates: 0
+- Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+
+
+## Decisions
+
+- relevant: 91
+- maybe: 116
+- irrelevant: 154
+
+## Top Relevant Or Maybe Papers
+
+- **Verification-Gated Persona State Transitions for Memory-Augmented Language Agents** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.3390/sym18061037
+- **Towards Root Memories: Benchmarking and Enhancing Implicit Logical Memory Retrieval for Personalized LLMs** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.48550/arxiv.2606.23283
+- **Towards Root Memories: Benchmarking and Enhancing Implicit Logical Memory Retrieval for Personalized LLMs** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://arxiv.org/abs/2606.23283
+- **TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://doi.org/10.48550/arxiv.2606.25161
+- **TRUSTMEM: Learning Trustworthy Memory Consolidation for LLM Agents with Long-Term Memory** (relevant, 100/100): Studies memory storage, retrieval, update, or consolidation for LLM agents. https://arxiv.org/abs/2606.25161
+- **Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees** (relevant, 100/100): Evaluates memory mechanisms or benchmarks for LLM agents. https://doi.org/10.48550/arxiv.2606.24322
+- **Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees** (relevant, 100/100): Evaluates memory mechanisms or benchmarks for LLM agents. https://arxiv.org/abs/2606.24322v1
+- **Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees** (relevant, 100/100): Evaluates memory mechanisms or benchmarks for LLM agents. https://arxiv.org/abs/2606.24322
+- **MGBench: Memory Governance Benchmark for Agentic Long-Term Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://github.com/ostinatocc/MGBench/tree/v0.1.1
+- **MGBench: Memory Governance Benchmark for Agentic Long-Term Memory** (relevant, 100/100): Focuses on persistent or long-term memory for agent behavior. https://doi.org/10.5281/zenodo.20793097
+
+## Source Failures
+
+- semantic_scholar (HTTP/API error) for `agent memory`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- arxiv (HTTP/API error) for `memory retrieval LLM agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+
+## Deduplication Examples
+
+- arxiv:2606.27499: arxiv:2606.27499, arxiv:2606.27499, arxiv:2606.27499, arxiv:2606.27499
+- arxiv:2606.26627: arxiv:2606.26627, arxiv:2606.26627
+- arxiv:2606.25206: arxiv:2606.25206, arxiv:2606.25206, arxiv:2606.25206, arxiv:2606.25206
+- arxiv:2606.25115: arxiv:2606.25115, arxiv:2606.25115
+- arxiv:2606.24775: arxiv:2606.24775, arxiv:2606.24775, arxiv:2606.24775, arxiv:2606.24775
+- arxiv:2606.24595: arxiv:2606.24595, arxiv:2606.24595
+- arxiv:2606.24535: arxiv:2606.24535, arxiv:2606.24535
+- arxiv:2606.24322: arxiv:2606.24322, arxiv:2606.24322, arxiv:2606.24322
+- arxiv:2606.23195: arxiv:2606.23195, arxiv:2606.23195
+- arxiv:2606.22844: arxiv:2606.22844, arxiv:2606.22844
+- arxiv:2606.22263: arxiv:2606.22263, arxiv:2606.22263
+- arxiv:2606.22030: arxiv:2606.22030, arxiv:2606.22030
+- arxiv:2606.21649: arxiv:2606.21649, arxiv:2606.21649, arxiv:2606.21649, arxiv:2606.21649
+- arxiv:2606.21562: arxiv:2606.21562, arxiv:2606.21562
+- arxiv:2606.20954: arxiv:2606.20954, arxiv:2606.20954
+- arxiv:2606.20515: arxiv:2606.20515, arxiv:2606.20515
+- arxiv:2606.19857: arxiv:2606.19857, arxiv:2606.19857
+- arxiv:2606.19409: arxiv:2606.19409, arxiv:2606.19409
+- arxiv:2606.18950: arxiv:2606.18950, arxiv:2606.18950
+- arxiv:2606.18746: arxiv:2606.18746, arxiv:2606.18746
+- arxiv:2606.16903: arxiv:2606.16903, arxiv:2606.16903
+- doi:10.5281/zenodo.20695702: openalex:W4293651439, openalex:W4293651439, openalex:W4293651439, openalex:W4293651439
+- doi:10.5281/zenodo.19212118: openalex:W7140295929, openalex:W7140295929
+- doi:10.5281/zenodo.20571515: openalex:W7163749483, openalex:W7163749483
+- doi:10.5281/zenodo.20775891: openalex:W7165463614, openalex:W7165463614
+- doi:10.5281/zenodo.20787349: openalex:W7165480353, openalex:W7165480353
+- doi:10.5281/zenodo.20787348: openalex:W7165473560, openalex:W7165473560
+- doi:10.5281/zenodo.20803113: openalex:W7165570319, openalex:W7165570319, openalex:W7165570319, openalex:W7165570319
+- doi:10.5281/zenodo.20803114: openalex:W7165559080, openalex:W7165559080, openalex:W7165559080, openalex:W7165559080
+- openalex:W7165816678: openalex:W7165816678, openalex:W7165816678, openalex:W7165816678, openalex:W7165816678, openalex:W7165816678, openalex:W7165816678, openalex:W7165816678, openalex:W7165816678
+- doi:10.5281/zenodo.20706464: openalex:W7164860994, openalex:W7164860994, openalex:W7164860994
+- doi:10.5281/zenodo.20706465: openalex:W7164804853, openalex:W7164804853, openalex:W7164804853
+- openalex:W7165818182: openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182, openalex:W7165818182
+- doi:10.48550/arxiv.2606.22844: openalex:W7165657632, openalex:W7165657632, openalex:W7165657632, openalex:W7165657632, openalex:W7165657632
+- doi:10.48550/arxiv.2606.23195: openalex:W7165616412, openalex:W7165616412, openalex:W7165616412, openalex:W7165616412, openalex:W7165616412, openalex:W7165616412
+- openalex:W7165817650: openalex:W7165817650, openalex:W7165817650, openalex:W7165817650, openalex:W7165817650
+- doi:10.5281/zenodo.20731951: openalex:W7165042171, openalex:W7165042171
+- doi:10.5281/zenodo.20731950: openalex:W7165045973, openalex:W7165045973
+- doi:10.48550/arxiv.2606.21649: openalex:W7165628106, openalex:W7165628106
+- openalex:W7165816075: openalex:W7165816075, openalex:W7165816075, openalex:W7165816075, openalex:W7165816075
+- doi:10.48550/arxiv.2606.22030: openalex:W7165665211, openalex:W7165665211, openalex:W7165665211
+- doi:10.5281/zenodo.20780695: openalex:W7165482832, openalex:W7165482832
+- doi:10.5281/zenodo.20780696: openalex:W7165482614, openalex:W7165482614
+- doi:10.5281/zenodo.20780689: openalex:W7165490738, openalex:W7165490738, openalex:W7165490738
+- doi:10.5281/zenodo.20780690: openalex:W7165482389, openalex:W7165482389, openalex:W7165482389
+- doi:10.5281/zenodo.20780709: openalex:W7165476017, openalex:W7165476017, openalex:W7165476017
+- doi:10.5281/zenodo.20698357: openalex:W7164844219, openalex:W7164844219
+- doi:10.5281/zenodo.20698356: openalex:W7164825893, openalex:W7164825893, openalex:W7164825893, openalex:W7164825893
+- openalex:W7165973042: openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042, openalex:W7165973042
+- doi:10.1145/3821566: openalex:W4415108625, openalex:W4415108625
+- openalex:W7166252915: openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915, openalex:W7166252915
+- doi:10.48550/arxiv.2606.24535: openalex:W7165779598, openalex:W7165779598, openalex:W7165779598, openalex:W7165779598, openalex:W7165779598, openalex:W7165779598, openalex:W7165779598, openalex:W7165779598
+- doi:10.48550/arxiv.2606.25161: openalex:W7165844965, openalex:W7165844965, openalex:W7165844965, openalex:W7165844965, openalex:W7165844965, openalex:W7165844965, openalex:W7165844965
+- openalex:W7165816431: openalex:W7165816431, openalex:W7165816431, openalex:W7165816431, openalex:W7165816431, openalex:W7165816431, openalex:W7165816431, openalex:W7165816431
+- doi:10.48550/arxiv.2606.23127: openalex:W7165652918, openalex:W7165652918, openalex:W7165652918, openalex:W7165652918, openalex:W7165652918
+- doi:10.3389/fphy.2026.1700712: openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812, openalex:W4399911812
+- doi:10.5281/zenodo.20837220: openalex:W7165783514, openalex:W7165783514, openalex:W7165783514
+- doi:10.5281/zenodo.20837219: openalex:W7165745580, openalex:W7165745580, openalex:W7165745580
+- doi:10.5281/zenodo.20710741: openalex:W7164894442, openalex:W7164894442, openalex:W7164894442, openalex:W7164894442
+- openalex:W7165424292: openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292, openalex:W7165424292
+- openalex:W7165972610: openalex:W7165972610, openalex:W7165972610, openalex:W7165972610, openalex:W7165972610, openalex:W7165972610, openalex:W7165972610
+- doi:10.48550/arxiv.2606.19847: openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110, openalex:W7165402110
+- doi:10.17632/m8xf3cdjwb: openalex:W7165207691, openalex:W7165207691, openalex:W7165207691
+- doi:10.17632/m8xf3cdjwb.1: openalex:W7165161310, openalex:W7165161310, openalex:W7165161310
+- doi:10.48550/arxiv.2606.24322: openalex:W7165756039, openalex:W7165756039, openalex:W7165756039
+- doi:10.5281/zenodo.20756085: openalex:W7165395522, openalex:W7165395522, openalex:W7165395522, openalex:W7165395522, openalex:W7165395522, openalex:W7165395522, openalex:W7165395522, openalex:W7165395522
+- doi:10.5281/zenodo.20756086: openalex:W7165363342, openalex:W7165363342, openalex:W7165363342, openalex:W7165363342, openalex:W7165363342, openalex:W7165363342, openalex:W7165363342, openalex:W7165363342
+- doi:10.5281/zenodo.20793096: openalex:W7165545275, openalex:W7165545275, openalex:W7165545275
+- doi:10.5281/zenodo.20793097: openalex:W7165546284, openalex:W7165546284, openalex:W7165546284
+- openalex:W7165972584: openalex:W7165972584, openalex:W7165972584, openalex:W7165972584, openalex:W7165972584, openalex:W7165972584
+- doi:10.48550/arxiv.2606.24595: openalex:W7165807432, openalex:W7165807432
+- openalex:W7165218878: openalex:W7165218878, openalex:W7165218878
+- doi:10.5281/zenodo.20949890: openalex:W7166334177, openalex:W7166334177, openalex:W7166334177, openalex:W7166334177
+- doi:10.5281/zenodo.20949889: openalex:W7166352124, openalex:W7166352124, openalex:W7166352124, openalex:W7166352124
+- doi:10.5281/zenodo.20706582: openalex:W7164809435, openalex:W7164809435, openalex:W7164809435, openalex:W7164809435, openalex:W7164809435
+- doi:10.5281/zenodo.20706583: openalex:W7164810095, openalex:W7164810095, openalex:W7164810095, openalex:W7164810095, openalex:W7164810095
+- doi:10.5281/zenodo.19324351: openalex:W7143316772, openalex:W7143316772, openalex:W7143316772, openalex:W7143316772
+- doi:10.5281/zenodo.19324575: openalex:W7143401746, openalex:W7143401746, openalex:W7143401746, openalex:W7143401746
+- doi:10.5281/zenodo.19363278: openalex:W7147642147, openalex:W7147642147, openalex:W7147642147, openalex:W7147642147
+- doi:10.5281/zenodo.20964647: openalex:W7166322180, openalex:W7166322180, openalex:W7166322180, openalex:W7166322180
+- doi:10.5281/zenodo.20921420: openalex:W7166127422, openalex:W7166127422, openalex:W7166127422, openalex:W7166127422
+- doi:10.5281/zenodo.20921419: openalex:W7166191258, openalex:W7166191258, openalex:W7166191258, openalex:W7166191258
+- doi:10.5281/zenodo.20740200: openalex:W7165196005, openalex:W7165196005, openalex:W7165196005
+- doi:10.5281/zenodo.20747732: openalex:W7165112027, openalex:W7165112027, openalex:W7165112027
+- doi:10.5281/zenodo.20684023: openalex:W7164665857, openalex:W7164665857, openalex:W7164665857
+- doi:10.5281/zenodo.20731135: openalex:W7165023540, openalex:W7165023540, openalex:W7165023540, openalex:W7165023540
+- doi:10.5281/zenodo.20724717: openalex:W7165041115, openalex:W7165041115
+- doi:10.5281/zenodo.20724718: openalex:W7165045412, openalex:W7165045412
+- openalex:W7166253061: openalex:W7166253061, openalex:W7166253061, openalex:W7166253061, openalex:W7166253061, openalex:W7166253061
+- doi:10.48550/arxiv.2606.25632: openalex:W7165893626, openalex:W7165893626, openalex:W7165893626
+- openalex:W7165219309: openalex:W7165219309, openalex:W7165219309, openalex:W7165219309
+- openalex:W7165065273: openalex:W7165065273, openalex:W7165065273, openalex:W7165065273, openalex:W7165065273, openalex:W7165065273
+- openalex:W7165064464: openalex:W7165064464, openalex:W7165064464, openalex:W7165064464
+- openalex:W7165218853: openalex:W7165218853, openalex:W7165218853, openalex:W7165218853, openalex:W7165218853, openalex:W7165218853, openalex:W7165218853, openalex:W7165218853, openalex:W7165218853
+- openalex:W7165816137: openalex:W7165816137, openalex:W7165816137, openalex:W7165816137, openalex:W7165816137, openalex:W7165816137, openalex:W7165816137
+- doi:10.48550/arxiv.2606.23283: openalex:W7165647601, openalex:W7165647601, openalex:W7165647601, openalex:W7165647601, openalex:W7165647601, openalex:W7165647601
+- doi:10.1007/s10462-026-11590-x: openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649
+- doi:10.1145/3821637: openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855
+- doi:10.5281/zenodo.20842692: openalex:W7165946629, openalex:W7165946629, openalex:W7165946629, openalex:W7165946629
+- doi:10.5281/zenodo.20842693: openalex:W7165906364, openalex:W7165906364, openalex:W7165906364, openalex:W7165906364
+- openalex:W7165818581: openalex:W7165818581, openalex:W7165818581, openalex:W7165818581
+- openalex:W7165219978: openalex:W7165219978, openalex:W7165219978
+- doi:10.48550/arxiv.2606.18356: openalex:W7165183485, openalex:W7165183485
+- doi:10.5281/zenodo.20819013: openalex:W7165619649, openalex:W7165619649, openalex:W7165619649
+- openalex:W7165424366: openalex:W7165424366, openalex:W7165424366, openalex:W7165424366, openalex:W7165424366, openalex:W7165424366, openalex:W7165424366, openalex:W7165424366
+- doi:10.48550/arxiv.2606.19911: openalex:W7165394589, openalex:W7165394589
+- openalex:W7165816278: openalex:W7165816278, openalex:W7165816278, openalex:W7165816278
+- openalex:W7165424632: openalex:W7165424632, openalex:W7165424632, openalex:W7165424632
+- openalex:W7165218563: openalex:W7165218563, openalex:W7165218563
+- openalex:W7165816092: openalex:W7165816092, openalex:W7165816092, openalex:W7165816092, openalex:W7165816092, openalex:W7165816092, openalex:W7165816092
+- openalex:W7165973388: openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388, openalex:W7165973388
+- doi:10.48550/arxiv.2606.24775: openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444, openalex:W7165761444
+- doi:10.5281/zenodo.20738982: openalex:W7165027430, openalex:W7165027430, openalex:W7165027430
+- doi:10.5281/zenodo.20738981: openalex:W7164994135, openalex:W7164994135, openalex:W7164994135
+- doi:10.64898/2026.06.15.26355735: openalex:W7164988430, openalex:W7164988430
+- openalex:W7165817601: openalex:W7165817601, openalex:W7165817601
+- doi:10.4018/979-8-2600-2601-4.ch004: openalex:W7165782897, openalex:W7165782897
+- doi:10.1007/s11831-026-10675-8: openalex:W7164841116, openalex:W7164841116, openalex:W7164841116, openalex:W7164841116, openalex:W7164841116
+- openalex:W7166400113: openalex:W7166400113, openalex:W7166400113, openalex:W7166400113, openalex:W7166400113
+- doi:10.25258/ijddt.16.55s.1: openalex:W7165023325, openalex:W7165023325, openalex:W7165023325
+- openalex:W7165064357: openalex:W7165064357, openalex:W7165064357, openalex:W7165064357
+- openalex:W7165818236: openalex:W7165818236, openalex:W7165818236, openalex:W7165818236, openalex:W7165818236, openalex:W7165818236
+- doi:10.48550/arxiv.2606.26627: openalex:W7166065244, openalex:W7166065244, openalex:W7166065244
+- doi:10.48550/arxiv.2606.21144: openalex:W7165614137, openalex:W7165614137, openalex:W7165614137, openalex:W7165614137, openalex:W7165614137
+- doi:10.5281/zenodo.20700881: openalex:W7164833044, openalex:W7164833044
+- doi:10.5281/zenodo.20700880: openalex:W7164800865, openalex:W7164800865
+- doi:10.5281/zenodo.20701345: openalex:W7164830585, openalex:W7164830585
+- openalex:W7165065381: openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381, openalex:W7165065381
+- openalex:W7165219648: openalex:W7165219648, openalex:W7165219648, openalex:W7165219648, openalex:W7165219648
+- openalex:W7165817398: openalex:W7165817398, openalex:W7165817398
+- openalex:W7165817742: openalex:W7165817742, openalex:W7165817742
+- doi:10.5281/zenodo.20819012: openalex:W7165664690, openalex:W7165664690
+- doi:10.48550/arxiv.2606.22142: openalex:W7165686397, openalex:W7165686397
+- openalex:W7165816234: openalex:W7165816234, openalex:W7165816234
+- doi:10.48550/arxiv.2606.23743: openalex:W7165727884, openalex:W7165727884
+- openalex:W7166252822: openalex:W7166252822, openalex:W7166252822
+- doi:10.1201/9781003743774-10: openalex:W7165521704, openalex:W7165521704, openalex:W7165521704
+- openalex:W7165219339: openalex:W7165219339, openalex:W7165219339
+- doi:10.48550/arxiv.2606.19341: openalex:W7165191037, openalex:W7165191037
+- doi:10.48550/arxiv.2606.18847: openalex:W7165109696, openalex:W7165109696, openalex:W7165109696
+- openalex:W7165219242: openalex:W7165219242, openalex:W7165219242, openalex:W7165219242
+- openalex:W7166252308: openalex:W7166252308, openalex:W7166252308, openalex:W7166252308, openalex:W7166252308, openalex:W7166252308, openalex:W7166252308
+- openalex:W7165817525: openalex:W7165817525, openalex:W7165817525
+- doi:10.48550/arxiv.2606.23449: openalex:W7165681941, openalex:W7165681941
+- openalex:W7165972448: openalex:W7165972448, openalex:W7165972448
+- doi:10.48550/arxiv.2606.24626: openalex:W7165786667, openalex:W7165786667
+- openalex:W7165816848: openalex:W7165816848, openalex:W7165816848
+- doi:10.5281/zenodo.20759080: openalex:W7165378470, openalex:W7165378470
+- doi:10.5281/zenodo.20763397: openalex:W7165391954, openalex:W7165391954
+- doi:10.5281/zenodo.20759081: openalex:W7165405182, openalex:W7165405182
+- doi:10.5281/zenodo.20771808: openalex:W7165447018, openalex:W7165447018
+- doi:10.5281/zenodo.20786402: openalex:W7165474476, openalex:W7165474476
+- doi:10.5281/zenodo.20735884: openalex:W7165046186, openalex:W7165046186, openalex:W7165046186, openalex:W7165046186, openalex:W7165046186
+- doi:10.5281/zenodo.20740059: openalex:W7165203205, openalex:W7165203205, openalex:W7165203205, openalex:W7165203205, openalex:W7165203205
+- doi:10.5281/zenodo.20747104: openalex:W7165161447, openalex:W7165161447, openalex:W7165161447, openalex:W7165161447, openalex:W7165161447
+- doi:10.5281/zenodo.20735883: openalex:W7164990121, openalex:W7164990121, openalex:W7164990121, openalex:W7164990121, openalex:W7164990121
+- doi:10.5281/zenodo.20768936: openalex:W7165538268, openalex:W7165538268
+- doi:10.5281/zenodo.20799360: openalex:W7165535262, openalex:W7165535262
+- doi:10.5281/zenodo.20730915: openalex:W7165011140, openalex:W7165011140
+- doi:10.5281/zenodo.20730914: openalex:W7165023750, openalex:W7165023750
+- doi:10.5281/zenodo.20952564: openalex:W7166326996, openalex:W7166326996, openalex:W7166326996
+- openalex:W3100612496: openalex:W3100612496, openalex:W3100612496
+- doi:10.1016/j.trc.2026.105818: openalex:W4416434619, openalex:W4416434619
+- openalex:W7166252930: openalex:W7166252930, openalex:W7166252930, openalex:W7166252930, openalex:W7166252930, openalex:W7166252930
+- doi:10.21203/rs.3.rs-9934951/v1: openalex:W7165962600, openalex:W7165962600
+- openalex:W7165816906: openalex:W7165816906, openalex:W7165816906
+- openalex:W7165818240: openalex:W7165818240, openalex:W7165818240
+- doi:10.5281/zenodo.20936468: openalex:W7166176039, openalex:W7166176039
+- doi:10.5281/zenodo.20936467: openalex:W7166053562, openalex:W7166053562
+- openalex:W7165424312: openalex:W7165424312, openalex:W7165424312
+- doi:10.48550/arxiv.2606.20047: openalex:W7165356640, openalex:W7165356640
+- doi:10.48550/arxiv.2606.22330: openalex:W7165695099, openalex:W7165695099
+- doi:10.5281/zenodo.20745520: openalex:W7165130941, openalex:W7165130941
+- doi:10.5281/zenodo.20745821: openalex:W7165207977, openalex:W7165207977
+- doi:10.48550/arxiv.2606.25361: openalex:W7165916144, openalex:W7165916144
+- doi:10.48550/arxiv.2606.18829: openalex:W7165126558, openalex:W7165126558
+- openalex:W7165973564: openalex:W7165973564, openalex:W7165973564, openalex:W7165973564
+- doi:10.1609/aaaiss.v9i1.42945: openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059
+- openalex:W7165063777: openalex:W7165063777, openalex:W7165063777, openalex:W7165063777, openalex:W7165063777
+- doi:10.48550/arxiv.2606.17029: openalex:W7164941083, openalex:W7164941083
+- openalex:W7165220055: openalex:W7165220055, openalex:W7165220055, openalex:W7165220055, openalex:W7165220055, openalex:W7165220055, openalex:W7165220055
+- doi:10.48550/arxiv.2606.18648: openalex:W7165173206, openalex:W7165173206, openalex:W7165173206, openalex:W7165173206, openalex:W7165173206, openalex:W7165173206
+- doi:10.5281/zenodo.20822051: openalex:W7165792392, openalex:W7165792392
+- doi:10.4171/ecr/23/11: openalex:W4403444398, openalex:W4403444398
+- doi:10.1038/s41598-026-57117-w: openalex:W4390572748, openalex:W4390572748, openalex:W4390572748, openalex:W4390572748
+- openalex:W7165423777: openalex:W7165423777, openalex:W7165423777
+- openalex:W7165219111: openalex:W7165219111, openalex:W7165219111, openalex:W7165219111, openalex:W7165219111, openalex:W7165219111
+- doi:10.48550/arxiv.2606.19893: openalex:W7165377301, openalex:W7165377301
+- doi:10.48550/arxiv.2606.17458: openalex:W7165028274, openalex:W7165028274
+- openalex:W7165423976: openalex:W7165423976, openalex:W7165423976
+- doi:10.48550/arxiv.2606.20122: openalex:W7165359052, openalex:W7165359052
+- openalex:W7165220203: openalex:W7165220203, openalex:W7165220203, openalex:W7165220203, openalex:W7165220203
+- doi:10.48550/arxiv.2606.18191: openalex:W7165059973, openalex:W7165059973
+- doi:10.26434/chemrxiv.15005137/v1: openalex:W7165775338, openalex:W7165775338
+- openalex:W7165818466: openalex:W7165818466, openalex:W7165818466
+- doi:10.48550/arxiv.2606.21401: openalex:W7165642208, openalex:W7165642208
+- doi:10.17869/enu.236998: openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597
+- doi:10.5281/zenodo.20729328: openalex:W7165023922, openalex:W7165023922
+- doi:10.5281/zenodo.20729329: openalex:W7165027671, openalex:W7165027671
+- doi:10.1201/9781003667766-2: openalex:W7165651067, openalex:W7165651067
+- doi:10.4018/979-8-3693-5638-8.ch049: openalex:W7165359508, openalex:W7165359508
+- doi:10.5281/zenodo.20773255: openalex:W7165448260, openalex:W7165448260, openalex:W7165448260
+- doi:10.5281/zenodo.20773254: openalex:W7165446469, openalex:W7165446469, openalex:W7165446469
+- doi:10.5281/zenodo.20807565: openalex:W7165674733, openalex:W7165674733
+- doi:10.5281/zenodo.20807566: openalex:W7165622461, openalex:W7165622461
+- openalex:W7165816743: openalex:W7165816743, openalex:W7165816743
+- doi:10.1007/s11831-026-10655-y: openalex:W7164810621, openalex:W7164810621
+- doi:10.5281/zenodo.20706528: openalex:W7164853028, openalex:W7164853028
+- openalex:W7165218715: openalex:W7165218715, openalex:W7165218715, openalex:W7165218715
+- doi:10.5281/zenodo.20821870: openalex:W7165750122, openalex:W7165750122
+- doi:10.5281/zenodo.20821869: openalex:W7165747317, openalex:W7165747317
+- openalex:W7165817235: openalex:W7165817235, openalex:W7165817235

@@ -7,10 +7,10 @@ NOT_EXTRACTED = "Not extracted yet"
 SCHEMA_VERSION = "paper-scout-card-v1"
 
 
-def structured_card_for_paper(paper: Any) -> dict[str, dict[str, str]]:
+def structured_card_for_paper(paper: Any, relevance_profile: str = "agent_memory") -> dict[str, dict[str, str]]:
     """Build a conservative, provenance-aware structured card from existing metadata."""
-    method, relation, provenance = _classify_method_and_relation(paper)
-    research_relevance = _research_relevance(paper)
+    method, relation, provenance = _classify_method_and_relation(paper, relevance_profile=relevance_profile)
+    research_relevance = _research_relevance(paper, relevance_profile=relevance_profile)
     evidence = _evidence_field(method, provenance)
     return {
         "research_relevance": research_relevance,
@@ -109,19 +109,31 @@ def paper_card_schema() -> dict[str, Any]:
     }
 
 
-def _research_relevance(paper: Any) -> dict[str, str]:
+def _research_relevance(paper: Any, relevance_profile: str = "agent_memory") -> dict[str, str]:
     note = getattr(paper, "research_note", None)
     if note:
         return _field(note, "high", "curation")
     if getattr(paper, "decision", "") == "relevant":
+        if _is_deep_research_paper(paper, relevance_profile):
+            return _field("Directly relevant to autonomous/deep research workflows based on screening evidence.", "medium", "rule")
         return _field("Directly relevant to agentic-memory research based on screening evidence.", "medium", "rule")
     if getattr(paper, "decision", "") == "maybe":
         return _field("Review candidate", "low", "rule")
     return _not_extracted()
 
 
-def _classify_method_and_relation(paper: Any) -> tuple[str, str, str]:
+def _classify_method_and_relation(paper: Any, relevance_profile: str = "agent_memory") -> tuple[str, str, str]:
     text = _combined_text(paper)
+    if _is_deep_research_paper(paper, relevance_profile):
+        if _contains_any(text, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"]):
+            provenance = _keyword_provenance(paper, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"])
+            return "Source-grounded research workflow", "Supports evidence-grounded deep research or autonomous research review workflows", provenance
+        if _contains_any(text, ["ai scientist", "scientific discovery", "hypothesis", "experiment design"]):
+            provenance = _keyword_provenance(paper, ["ai scientist", "scientific discovery", "hypothesis", "experiment design"])
+            return "AI-scientist / discovery workflow", "Studies autonomous scientific-discovery or hypothesis-generation workflows", provenance
+        if _contains_any(text, ["multi-agent research", "autonomous research agent", "deep research agent"]):
+            provenance = _keyword_provenance(paper, ["multi-agent research", "autonomous research agent", "deep research agent"])
+            return "Autonomous research-agent system", "Studies agents that perform or evaluate multi-step research workflows", provenance
     if _is_peripheral_memory_candidate(text, paper):
         return NOT_EXTRACTED, "Agentic-AI connection exists, but memory focus is weak or indirect", "rule"
     if _contains_any(text, ["poisoning", "jailbreak", "cross-session", "security", "robustness"]):
@@ -192,6 +204,27 @@ def _combined_text(paper: Any) -> str:
 def _tags(paper: Any) -> list[str]:
     tags = getattr(paper, "tags", []) or []
     return [str(tag) for tag in tags]
+
+
+def _is_deep_research_paper(paper: Any, relevance_profile: str = "agent_memory") -> bool:
+    if relevance_profile != "deep_research":
+        return False
+    text = _combined_text(paper)
+    return bool(
+        {"deep-research-agents", "ai-scientist", "literature-review", "citation-grounding", "research-planning", "multi-agent-research"}
+        & set(_tags(paper))
+    ) or _contains_any(
+        text,
+        [
+            "deep research",
+            "autonomous research",
+            "ai scientist",
+            "scientific discovery",
+            "literature review",
+            "citation verification",
+            "source-grounded research",
+        ],
+    )
 
 
 def _contains_any(text: str, needles: list[str]) -> bool:

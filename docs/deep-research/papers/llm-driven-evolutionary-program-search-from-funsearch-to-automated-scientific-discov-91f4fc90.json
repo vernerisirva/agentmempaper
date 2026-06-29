@@ -28,11 +28,11 @@
   "openalex_id": "W7165647483",
   "pinned": false,
   "provenance": {
-    "curated": false,
-    "curation_note": null,
+    "curated": true,
+    "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:17:11",
-    "generated_at": "2026-06-29 05:47:17",
+    "generated_at": "2026-06-29 06:18:50",
     "last_seen_at": "2026-06-29 05:18:42",
     "metadata_sources": [
       "openalex"
@@ -40,8 +40,8 @@
     "publication_date_confidence": "medium",
     "publication_date_precision": "day",
     "publication_date_source": "openalex",
-    "relevance_source": "deterministic screening",
-    "screening_source": "deterministic rules",
+    "relevance_source": "deterministic screening + curation",
+    "screening_source": "deterministic rules + curation",
     "source_ids": {
       "openalex": [
         "W7165647483"
@@ -64,26 +64,30 @@
   "publication_year": "2026",
   "related_topics": [
     "ai-scientist",
-    "deep-research-agents"
+    "deep-research-agents",
+    "research-adjacent",
+    "scientific-discovery"
   ],
   "relevance": {
-    "curation_note": null,
-    "decision": "relevant",
-    "public_label": "Highly relevant",
-    "reason": "Studies AI-scientist or scientific-discovery agents.",
-    "review_status": null,
-    "score": 93,
+    "curation_note": "Review candidate: relevant to automated scientific discovery, but the available metadata reads more like LLM/evolutionary program search than a full autonomous research-agent workflow.",
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Review candidate: surveys LLM-driven program search for scientific discovery, but the autonomous research-agent workflow evidence is limited.",
+    "review_status": "needs manual review",
+    "score": 55,
     "tags": [
+      "research-adjacent",
+      "scientific-discovery",
       "ai-scientist",
       "deep-research-agents"
     ]
   },
-  "relevance_decision": "relevant",
-  "relevance_label": "Core agent-memory paper",
-  "relevance_reason": "Studies AI-scientist or scientific-discovery agents.",
-  "relevance_score": 93,
-  "research_note": null,
-  "review_status": null,
+  "relevance_decision": "maybe",
+  "relevance_label": "Research-adjacent review candidate",
+  "relevance_reason": "Review candidate: surveys LLM-driven program search for scientific discovery, but the autonomous research-agent workflow evidence is limited.",
+  "relevance_score": 55,
+  "research_note": "Review candidate: relevant to automated scientific discovery, but the available metadata reads more like LLM/evolutionary program search than a full autonomous research-agent workflow.",
+  "review_status": "needs manual review",
   "schema_version": "paper-scout-card-v1",
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -114,28 +118,30 @@
       "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
     },
     "method_or_system_type": {
-      "confidence": "not_extracted",
-      "provenance": "not_extracted",
-      "value": "Not extracted yet"
+      "confidence": "medium",
+      "provenance": "curation",
+      "value": "AI-scientist / discovery workflow"
     },
     "relation_to_agentic_memory": {
-      "confidence": "not_extracted",
-      "provenance": "not_extracted",
-      "value": "Not extracted yet"
+      "confidence": "medium",
+      "provenance": "curation",
+      "value": "Studies autonomous scientific-discovery or hypothesis-generation workflows"
     },
     "research_relevance": {
-      "confidence": "medium",
-      "provenance": "rule",
-      "value": "Directly relevant to agentic-memory research based on screening evidence."
+      "confidence": "high",
+      "provenance": "curation",
+      "value": "Review candidate: relevant to automated scientific discovery, but the available metadata reads more like LLM/evolutionary program search than a full autonomous research-agent workflow."
     }
   },
   "structured_sections": {
     "evidence_or_evaluation_signals": [],
-    "method_or_system_type": "Not extracted yet",
+    "method_or_system_type": "AI-scientist / discovery workflow",
     "possible_key_claims": [],
-    "relation_to_agentic_memory": "Not extracted yet"
+    "relation_to_agentic_memory": "Studies autonomous scientific-discovery or hypothesis-generation workflows"
   },
   "tags": [
+    "research-adjacent",
+    "scientific-discovery",
     "ai-scientist",
     "deep-research-agents"
   ],

@@ -33,11 +33,11 @@
   "openalex_id": "W7165861361",
   "pinned": false,
   "provenance": {
-    "curated": false,
-    "curation_note": null,
+    "curated": true,
+    "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:16:54",
-    "generated_at": "2026-06-29 05:47:17",
+    "generated_at": "2026-06-29 06:18:50",
     "last_seen_at": "2026-06-29 05:16:54",
     "metadata_sources": [
       "openalex"
@@ -45,8 +45,8 @@
     "publication_date_confidence": "medium",
     "publication_date_precision": "day",
     "publication_date_source": "openalex",
-    "relevance_source": "deterministic screening",
-    "screening_source": "deterministic rules",
+    "relevance_source": "deterministic screening + curation",
+    "screening_source": "deterministic rules + curation",
     "source_ids": {
       "openalex": [
         "W7165861361",
@@ -69,25 +69,29 @@
   "publication_date_source": "openalex",
   "publication_year": "2026",
   "related_topics": [
+    "benchmark",
     "deep-research-agents",
+    "evaluation",
     "memory-benchmark"
   ],
   "relevance": {
-    "curation_note": null,
-    "decision": "maybe",
-    "public_label": "Review candidate",
-    "reason": "Review candidate: may support deep research workflows but needs human judgment.",
+    "curation_note": "Relevant benchmark candidate because it compares how AI research agents interpret the same omics dataset across multiple modalities.",
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Benchmarks how AI research agents interpret the same omics dataset across multiple modalities.",
     "review_status": null,
-    "score": 51,
+    "score": 88,
     "tags": [
-      "deep-research-agents"
+      "deep-research-agents",
+      "benchmark",
+      "evaluation"
     ]
   },
-  "relevance_decision": "maybe",
-  "relevance_label": "Memory benchmark/evaluation",
-  "relevance_reason": "Review candidate: may support deep research workflows but needs human judgment.",
-  "relevance_score": 51,
-  "research_note": null,
+  "relevance_decision": "relevant",
+  "relevance_label": "Research-agent benchmark/evaluation",
+  "relevance_reason": "Benchmarks how AI research agents interpret the same omics dataset across multiple modalities.",
+  "relevance_score": 88,
+  "research_note": "Relevant benchmark candidate because it compares how AI research agents interpret the same omics dataset across multiple modalities.",
   "review_status": null,
   "schema_version": "paper-scout-card-v1",
   "semantic_scholar_id": null,
@@ -106,7 +110,7 @@
   "structured_card": {
     "evidence_or_evaluation": {
       "confidence": "medium",
-      "provenance": "metadata",
+      "provenance": "curation",
       "value": "Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata."
     },
     "key_contribution": {
@@ -121,18 +125,18 @@
     },
     "method_or_system_type": {
       "confidence": "medium",
-      "provenance": "metadata",
+      "provenance": "curation",
       "value": "Benchmark / evaluation"
     },
     "relation_to_agentic_memory": {
       "confidence": "medium",
-      "provenance": "metadata",
+      "provenance": "curation",
       "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
     },
     "research_relevance": {
-      "confidence": "low",
-      "provenance": "rule",
-      "value": "Review candidate"
+      "confidence": "high",
+      "provenance": "curation",
+      "value": "Relevant benchmark candidate because it compares how AI research agents interpret the same omics dataset across multiple modalities."
     }
   },
   "structured_sections": {
@@ -142,7 +146,9 @@
     "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
   },
   "tags": [
-    "deep-research-agents"
+    "deep-research-agents",
+    "benchmark",
+    "evaluation"
   ],
   "title": "Multi-Omics AI Agent Benchmarking Framework",
   "url": "https://doi.org/10.5281/zenodo.20841171"

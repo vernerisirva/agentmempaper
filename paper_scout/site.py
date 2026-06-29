@@ -192,7 +192,7 @@ def build_site(
     library_papers = _enrich_library_dates(library_papers)
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers, relevance_profile=relevance_profile)
-    library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
+    library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date, relevance_profile=relevance_profile)
     library_papers = _mark_new_papers(library_papers, site_build_time, latest.date)
     library_papers = _sort_latest_relevant(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
@@ -206,7 +206,7 @@ def build_site(
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / "data").mkdir(parents=True, exist_ok=True)
     generated_at = site_build_time.isoformat(sep=" ")
-    _write_paper_detail_pages(docs_root, library_papers, generated_at)
+    _write_paper_detail_pages(docs_root, library_papers, generated_at, relevance_profile=relevance_profile)
     (docs_root / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     digest_link_prefix = _digest_link_prefix(digest_root)
     (docs_root / "index.html").write_text(
@@ -231,7 +231,10 @@ def build_site(
         ),
         encoding="utf-8",
     )
-    (docs_root / "archive.html").write_text(_render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix), encoding="utf-8")
+    (docs_root / "archive.html").write_text(
+        _render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix, site_title=site_title),
+        encoding="utf-8",
+    )
     (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
@@ -705,7 +708,12 @@ def _is_new_since_first_seen(first_seen_at: str | None, build_time: datetime, fa
     return bool(first_seen_date and first_seen_date == fallback_date)
 
 
-def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_date: str) -> list[LibraryPaper]:
+def _apply_curation(
+    papers: list[LibraryPaper],
+    curation: CurationConfig,
+    build_date: str,
+    relevance_profile: str = "agent_memory",
+) -> list[LibraryPaper]:
     curated: list[LibraryPaper] = []
     for paper in papers:
         if _matching_rule(paper, curation.excluded):
@@ -731,7 +739,7 @@ def _apply_curation(papers: list[LibraryPaper], curation: CurationConfig, build_
             **{
                 **updated.__dict__,
                 "future_date": _is_future_date(updated.published_date, build_date),
-                "relevance_label": _relevance_label(updated),
+                "relevance_label": _relevance_label(updated, relevance_profile=relevance_profile),
             }
         )
         curated.append(updated)
@@ -812,6 +820,7 @@ def _apply_override(paper: LibraryPaper, rule: CurationRule) -> LibraryPaper:
             "decision": decision,
             "score": rule.score if rule.score is not None else paper.score,
             "tags": tags,
+            "reason": rule.reason or paper.reason,
             "research_note": rule.note or paper.research_note,
             "review_status": rule.review_status or paper.review_status,
         }
@@ -858,7 +867,7 @@ def _parse_curation_yaml(text: str) -> dict[str, list[dict[str, object]]]:
         if current_section not in sections:
             continue
         stripped = line.strip()
-        if stripped.startswith("- ") and current_list_key and current_item is not None:
+        if stripped.startswith("- ") and current_list_key and current_item is not None and ":" not in stripped[2:]:
             value = _clean_yaml_value(stripped[2:])
             current_item.setdefault(current_list_key, [])
             if isinstance(current_item[current_list_key], list):
@@ -924,9 +933,27 @@ def _date_override(item: dict[str, object]) -> DateOverride:
     )
 
 
-def _relevance_label(paper: LibraryPaper) -> str:
+def _relevance_label(paper: LibraryPaper, relevance_profile: str = "agent_memory") -> str:
     tags = set(paper.tags)
     text = " ".join([paper.title, paper.reason, paper.abstract_summary, " ".join(paper.tags)]).lower()
+    if relevance_profile == "deep_research":
+        if paper.decision == "maybe":
+            return "Research-adjacent review candidate"
+        if paper.decision == "irrelevant":
+            return "Peripheral or excluded research topic"
+        if "ai-scientist" in tags or "ai scientist" in text or "scientific discovery" in text:
+            return "AI scientist / discovery system"
+        if "benchmark" in tags or "evaluation" in text or "benchmark" in text:
+            return "Research-agent benchmark/evaluation"
+        if "citation-grounding" in tags or "citation" in text or "evidence-ground" in text or "source-grounded" in text:
+            return "Source-grounded research workflow"
+        if "multi-agent-research" in tags or "multi-agent research" in text:
+            return "Multi-agent research workflow"
+        if "deep-research-agents" in tags or "autonomous research" in text or "deep research agent" in text:
+            return "Autonomous research agent workflow"
+        if paper.decision == "maybe":
+            return "Research-adjacent review candidate"
+        return "Deep research review topic"
     if "benchmark" in tags or "evaluation" in text or "benchmark" in text:
         return "Memory benchmark/evaluation"
     if {"memory-policy", "procedural-memory"} & tags or "write" in text or "read" in text or "retrieval policy" in text or "architecture" in text:
@@ -1192,7 +1219,12 @@ def _write_latest_markdown(digest_dir: Path, latest_date: str, latest_path: Path
     )
 
 
-def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper], generated_at: str) -> None:
+def _write_paper_detail_pages(
+    docs_root: Path,
+    papers: list[LibraryPaper],
+    generated_at: str,
+    relevance_profile: str = "agent_memory",
+) -> None:
     papers_dir = docs_root / "papers"
     papers_dir.mkdir(parents=True, exist_ok=True)
     for stale_path in papers_dir.iterdir():
@@ -1200,9 +1232,12 @@ def _write_paper_detail_pages(docs_root: Path, papers: list[LibraryPaper], gener
             stale_path.unlink()
     for paper in papers:
         slug = _paper_slug(paper)
-        (papers_dir / f"{slug}.html").write_text(_render_paper_detail_page(paper), encoding="utf-8")
+        (papers_dir / f"{slug}.html").write_text(
+            _render_paper_detail_page(paper, relevance_profile=relevance_profile),
+            encoding="utf-8",
+        )
         (papers_dir / f"{slug}.json").write_text(
-            json.dumps(_paper_detail_json(paper, generated_at), indent=2, sort_keys=True),
+            json.dumps(_paper_detail_json(paper, generated_at, relevance_profile=relevance_profile), indent=2, sort_keys=True),
             encoding="utf-8",
         )
 
@@ -1222,11 +1257,15 @@ def _paper_detail_json_url(paper: LibraryPaper) -> str:
     return f"papers/{_paper_slug(paper)}.json"
 
 
-def _paper_detail_json(paper: LibraryPaper, generated_at: str) -> dict[str, object]:
+def _paper_detail_json(
+    paper: LibraryPaper,
+    generated_at: str,
+    relevance_profile: str = "agent_memory",
+) -> dict[str, object]:
     data = _library_paper_to_json(paper)
     data["detail_page"] = _paper_detail_url(paper)
     data["detail_json"] = _paper_detail_json_url(paper)
-    structured_card = structured_card_for_paper(paper)
+    structured_card = structured_card_for_paper(paper, relevance_profile=relevance_profile)
     data["schema_version"] = SCHEMA_VERSION
     data["ssrn_id"] = _ssrn_id(paper)
     data["publication"] = {
@@ -1405,6 +1444,7 @@ def _render_library_page(
         {_secondary_footer(latest, archive)}
         {FILTER_SCRIPT}
         """,
+        description=_description_for_site(site_title),
     )
 
 
@@ -1476,10 +1516,15 @@ def _render_latest_discoveries_page(
         </section>
         {FILTER_SCRIPT}
         """,
+        description=_description_for_site(site_title),
     )
 
 
-def _render_archive_page(archive: list[ParsedDigest], digest_link_prefix: str = "digests") -> str:
+def _render_archive_page(
+    archive: list[ParsedDigest],
+    digest_link_prefix: str = "digests",
+    site_title: str = "Agentic Memory Paper Library",
+) -> str:
     rows = "\n".join(
         f"""
         <article class="archive-entry">
@@ -1516,6 +1561,7 @@ def _render_archive_page(archive: list[ParsedDigest], digest_link_prefix: str = 
         </header>
         <section class="archive-list" aria-label="Digest archive">{rows}</section>
         """,
+        description=_description_for_site(site_title),
     )
 
 
@@ -1529,6 +1575,11 @@ def _render_about_page(
         "Paper Scout watches for work on agentic memory, LLM agent memory, long-term, episodic, semantic, and procedural memory, memory benchmarks, deep research agents, and Engram-style or parametric memory mechanisms."
         if is_agent_memory
         else f"{site_title} is generated by Paper Scout from a track-specific search configuration, relevance rubric, SQLite state, and optional curation file."
+    )
+    relevance_text = (
+        "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment."
+        if is_agent_memory
+        else "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports autonomous/deep research workflows; review candidates may be useful but need human judgment."
     )
     return _page(
         page_title,
@@ -1562,7 +1613,7 @@ def _render_about_page(
           </article>
           <article>
             <h2>Relevance screening</h2>
-            <p>The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports agent-memory research; review candidates may be useful but need human judgment.</p>
+            <p>{escape(relevance_text)}</p>
           </article>
           <article>
             <h2>Manual curation</h2>
@@ -1579,17 +1630,23 @@ def _render_about_page(
           </article>
         </section>
         """,
+        description=_description_for_site(site_title),
     )
 
 
-def _structured_card_html(card: dict[str, dict[str, str]]) -> str:
+def _structured_card_html(card: dict[str, dict[str, str]], relevance_profile: str = "agent_memory") -> str:
+    relation_label = (
+        "Relation to deep research / autonomous research"
+        if relevance_profile == "deep_research"
+        else "Relation to agentic memory"
+    )
     rows = []
     labels = [
         ("research_relevance", "Research relevance"),
         ("method_or_system_type", "Method / system type"),
         ("key_contribution", "Key contribution"),
         ("evidence_or_evaluation", "Evidence / evaluation"),
-        ("relation_to_agentic_memory", "Relation to agentic memory"),
+        ("relation_to_agentic_memory", relation_label),
         ("limitations_or_uncertainty", "Limitations / uncertainty"),
     ]
     for key, label in labels:
@@ -1610,13 +1667,13 @@ def _structured_card_html(card: dict[str, dict[str, str]]) -> str:
     return f'<dl class="detail-metadata structured-card-fields">{"".join(rows)}</dl>'
 
 
-def _render_paper_detail_page(paper: LibraryPaper) -> str:
+def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "agent_memory") -> str:
     sources = paper.sources or [paper.source]
     source_items = "".join(f"<li>{escape(_source_label(source))}</li>" for source in sources)
     alternate_links = _secondary_links(paper) or '<p class="muted">No alternate source links recorded.</p>'
     identifiers = "".join(f"<li>{item}</li>" for item in _identifier_list(paper)) or "<li>No additional identifiers recorded.</li>"
-    structured_card = structured_card_for_paper(paper)
-    structured_card_html = _structured_card_html(structured_card)
+    structured_card = structured_card_for_paper(paper, relevance_profile=relevance_profile)
+    structured_card_html = _structured_card_html(structured_card, relevance_profile=relevance_profile)
     research_note = (
         f"""
         <section class="detail-panel">
@@ -1722,6 +1779,7 @@ def _render_paper_detail_page(paper: LibraryPaper) -> str:
         </section>
         """,
         stylesheet="../style.css",
+        description=_description_for_profile(relevance_profile),
     )
 
 
@@ -1729,14 +1787,31 @@ def _display_value(value: object) -> str:
     return str(value) if value is not None and value != "" else "unknown"
 
 
-def _page(title: str, body: str, stylesheet: str = "style.css") -> str:
+def _description_for_site(site_title: str) -> str:
+    if site_title == "Deep Research Paper Library":
+        return "Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows."
+    return "Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms."
+
+
+def _description_for_profile(relevance_profile: str) -> str:
+    if relevance_profile == "deep_research":
+        return _description_for_site("Deep Research Paper Library")
+    return _description_for_site("Agentic Memory Paper Library")
+
+
+def _page(
+    title: str,
+    body: str,
+    stylesheet: str = "style.css",
+    description: str = "Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.",
+) -> str:
     html = f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(title)}</title>
-  <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
+  <meta name="description" content="{escape(description)}">
   <link rel="stylesheet" href="{escape(stylesheet)}">
 </head>
 <body>

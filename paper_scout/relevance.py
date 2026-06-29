@@ -231,6 +231,7 @@ DEEP_RESEARCH_EXCLUDE_PATTERNS = {
     "generic deep learning": r"\bgeneric deep learning\b|\bdeep learning\b.*\b(image classification|training method|optimization)\b",
     "generic automl": r"\bautoml\b(?!.*\b(research workflow|research agent|scientific discovery|hypothesis|experiment design)\b)",
     "market research": r"\bmarket research\b|\bbusiness research\b|\bcustomer surveys?\b",
+    "human ai scientist bibliometrics": r"\byoung ai scientists?\b|\bcareer novelty\b|\bresearch trajectories\b|\bbibliometric\b.*\bhuman ai researchers?\b",
     "robotics/autonomous driving": r"\bautonomous driving\b|\brobotics\b|\bmobile robots?\b",
     "general chatbot": r"\bchatbots?\b(?!.*\b(research|citation|evidence|literature review)\b)",
     "generic rag": r"\brag\b(?!.*\b(research|citation|evidence|literature review|source[- ]grounded)\b)|\bretrieval augmented generation\b(?!.*\b(research|citation|evidence|literature review|source[- ]grounded)\b)",
@@ -246,7 +247,9 @@ DEEP_RESEARCH_REVIEW_PATTERNS = {
 
 NEGATED_DEEP_RESEARCH_PATTERNS = [
     r"\bwithout (an? )?(autonomous |agentic |source[- ]grounded )?research workflows?\b",
+    r"\bdoes not (include|study|evaluate|address) (autonomous |agentic |source[- ]grounded )?research (planning|workflows?|agents?)\b",
     r"\bwithout (citation verification|evidence[- ]grounding|source[- ]grounded research)\b",
+    r"\bdoes not (include|study|evaluate|address) (citation[- ]verification|evidence[- ]grounding|source[- ]grounded research)( agents?)?\b",
     r"\bnot about research agents?\b",
     r"\bunrelated to research workflows?\b",
     r"\bnot (a |about )?(deep research|autonomous research|research[- ]agent) systems?\b",
@@ -373,7 +376,7 @@ def _classify_deep_research_with_rules(candidate: PaperCandidate) -> Classificat
             abstract_summary=summary,
         )
 
-    if exclude_hits and not high_confidence_hits:
+    if exclude_hits and (not high_confidence_hits or "human ai scientist bibliometrics" in exclude_hits):
         if review_hits or include_tags:
             return ClassificationResult(
                 score=45,

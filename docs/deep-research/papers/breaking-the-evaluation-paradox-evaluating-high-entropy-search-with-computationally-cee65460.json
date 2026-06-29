@@ -37,11 +37,11 @@
   "openalex_id": "W7165816808",
   "pinned": false,
   "provenance": {
-    "curated": false,
-    "curation_note": null,
+    "curated": true,
+    "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-06-29 05:16:18",
-    "generated_at": "2026-06-29 05:47:17",
+    "generated_at": "2026-06-29 06:18:50",
     "last_seen_at": "2026-06-29 05:44:34",
     "metadata_sources": [
       "openalex",
@@ -50,8 +50,8 @@
     "publication_date_confidence": "medium",
     "publication_date_precision": "day",
     "publication_date_source": "openalex",
-    "relevance_source": "deterministic screening",
-    "screening_source": "deterministic rules",
+    "relevance_source": "deterministic screening + curation",
+    "screening_source": "deterministic rules + curation",
     "source_ids": {
       "arxiv": [
         "2606.22783"
@@ -78,25 +78,29 @@
   "publication_year": "2026",
   "related_topics": [
     "deep-research-agents",
-    "memory-benchmark"
+    "evaluation",
+    "memory-benchmark",
+    "research-adjacent"
   ],
   "relevance": {
-    "curation_note": null,
-    "decision": "relevant",
-    "public_label": "Highly relevant",
-    "reason": "Studies autonomous or deep research agents.",
-    "review_status": null,
-    "score": 91,
+    "curation_note": "Review candidate: relevant to evaluating difficult search behavior, but not clearly about research agents or AI-scientist workflows from the available metadata.",
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Review candidate: evaluates high-entropy search constraints, but the autonomous research-agent connection is indirect.",
+    "review_status": "needs manual review",
+    "score": 50,
     "tags": [
+      "research-adjacent",
+      "evaluation",
       "deep-research-agents"
     ]
   },
-  "relevance_decision": "relevant",
-  "relevance_label": "Memory benchmark/evaluation",
-  "relevance_reason": "Studies autonomous or deep research agents.",
-  "relevance_score": 91,
-  "research_note": null,
-  "review_status": null,
+  "relevance_decision": "maybe",
+  "relevance_label": "Research-adjacent review candidate",
+  "relevance_reason": "Review candidate: evaluates high-entropy search constraints, but the autonomous research-agent connection is indirect.",
+  "relevance_score": 50,
+  "research_note": "Review candidate: relevant to evaluating difficult search behavior, but not clearly about research agents or AI-scientist workflows from the available metadata.",
+  "review_status": "needs manual review",
   "schema_version": "paper-scout-card-v1",
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -142,9 +146,9 @@
       "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
     },
     "research_relevance": {
-      "confidence": "medium",
-      "provenance": "rule",
-      "value": "Directly relevant to agentic-memory research based on screening evidence."
+      "confidence": "high",
+      "provenance": "curation",
+      "value": "Review candidate: relevant to evaluating difficult search behavior, but not clearly about research agents or AI-scientist workflows from the available metadata."
     }
   },
   "structured_sections": {
@@ -154,6 +158,8 @@
     "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
   },
   "tags": [
+    "research-adjacent",
+    "evaluation",
     "deep-research-agents"
   ],
   "title": "Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints",

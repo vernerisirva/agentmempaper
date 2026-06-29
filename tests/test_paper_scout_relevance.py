@@ -377,6 +377,38 @@ class PaperScoutRelevanceTest(unittest.TestCase):
         self.assertEqual(generic_deep_learning.decision, "irrelevant")
         self.assertNotEqual(market_research.decision, "relevant")
 
+    def test_deep_research_profile_keeps_generic_rag_automl_and_human_ai_bibliometrics_out_of_high_relevance(self):
+        examples = [
+            (
+                "Generic RAG for Enterprise Knowledge Search",
+                "Retrieval augmented generation improves document search, but does not include autonomous research planning, citation verification, or literature-review agents.",
+            ),
+            (
+                "AutoML Optimization for Tabular Prediction",
+                "AutoML searches model hyperparameters for generic deep learning and tabular prediction without scientific-discovery agents or research workflows.",
+            ),
+            (
+                "Young AI Scientists in the New AI Age",
+                "A bibliometric study of human AI researchers, career novelty, and research trajectories in the AI field.",
+            ),
+        ]
+
+        for title, abstract in examples:
+            with self.subTest(title=title):
+                result = classify_with_rules(
+                    PaperCandidate(
+                        title=title,
+                        authors=["Researcher"],
+                        abstract=abstract,
+                        source="fixture",
+                        source_id=title,
+                    ),
+                    profile="deep_research",
+                )
+
+                self.assertNotEqual(result.decision, "relevant")
+                self.assertLess(result.score, 70)
+
 
 if __name__ == "__main__":
     unittest.main()

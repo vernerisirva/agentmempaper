@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from paper_scout.http import HttpRequestError
 from paper_scout.models import ClassificationResult, PaperCandidate
-from paper_scout.site import build_site
+from paper_scout.site import _load_curation, build_site
 from paper_scout.state import PaperStore
 
 
@@ -115,6 +115,39 @@ class PaperScoutSiteTest(unittest.TestCase):
 
     def tearDown(self):
         self._http_patch.stop()
+
+    def test_curation_parser_starts_new_items_after_tag_lists(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "curation.yaml"
+            path.write_text(
+                """
+pinned:
+overrides:
+  - title: "First Deep Research Paper"
+    note: "Specific first note."
+    decision: relevant
+    tags:
+      - deep-research-agents
+      - evaluation
+  - title: "Second Deep Research Paper"
+    note: "Specific second note."
+    decision: maybe
+    score: 45
+    tags:
+      - research-adjacent
+excluded:
+date_overrides:
+""",
+                encoding="utf-8",
+            )
+
+            curation = _load_curation(path)
+
+            self.assertEqual(len(curation.overrides), 2)
+            self.assertEqual(curation.overrides[0].title, "First Deep Research Paper")
+            self.assertEqual(curation.overrides[0].tags, ["deep-research-agents", "evaluation"])
+            self.assertEqual(curation.overrides[1].title, "Second Deep Research Paper")
+            self.assertEqual(curation.overrides[1].decision, "maybe")
 
     def _write_state_fixture(self, state_path: Path) -> None:
         store = PaperStore(state_path)
@@ -649,6 +682,107 @@ date_overrides:
             self.assertIn("Agentic Memory Library", html)
             self.assertIn("Research card", html)
             self.assertIn("structured detail page and sidecar JSON", about_html)
+            self.assertNotIn("agent-memory research", about_html)
+            self.assertIn("autonomous/deep research workflows", about_html)
+
+    def test_deep_research_dashboard_uses_track_specific_review_wording(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests" / "deep_research"
+            report_dir = root / "reports" / "paper_scout" / "deep_research"
+            docs_dir = root / "docs" / "deep-research"
+            curation_path = root / "config" / "curation" / "deep_research.yaml"
+            state_path = root / "data" / "deep_research" / "paper_scout.sqlite3"
+            digest_dir.mkdir(parents=True)
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir(parents=True)
+            curation_path.write_text(
+                """
+pinned:
+overrides:
+excluded:
+date_overrides:
+""",
+                encoding="utf-8",
+            )
+            (digest_dir / "2026-06-26.md").write_text(SAMPLE_DIGEST, encoding="utf-8")
+            store = PaperStore(state_path)
+            run_id = store.start_run(days=7)
+            core = PaperCandidate(
+                title="Autonomous Research Agents for Source-Grounded Scientific Discovery",
+                authors=["Ada Researcher"],
+                abstract=(
+                    "A deep research agent plans multi-step literature reviews, verifies citations, "
+                    "and generates source-grounded research reports for scientific discovery."
+                ),
+                source="arxiv",
+                source_id="2606.deep",
+                url="https://example.test/deep",
+                published_date="2026-06-26",
+            )
+            review = PaperCandidate(
+                title="Research-Adjacent RAG for Literature Search",
+                authors=["Grace Reviewer"],
+                abstract=(
+                    "Retrieval augmented generation supports literature review search and evidence lookup, "
+                    "but it does not include autonomous research planning or citation-verification agents."
+                ),
+                source="openalex",
+                source_id="W-deep-review",
+                url="https://example.test/review",
+                published_date="2026-06-25",
+            )
+            for candidate in [core, review]:
+                key = store.upsert_paper(
+                    candidate,
+                    ClassificationResult(90, "relevant", "Seed classification.", ["deep-research-agents"], "Seed summary."),
+                )
+                store.record_sighting(run_id, key, candidate, "deep research agent")
+            store.finish_run(run_id, fetched_count=2, new_count=2, notified_count=0)
+
+            build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=state_path,
+                curation_path=curation_path,
+                site_title="Deep Research Paper Library",
+                site_subtitle="A daily updated library of papers on autonomous research agents, deep research systems, and AI-assisted scientific discovery.",
+                cross_track_label="Agentic Memory Library",
+                cross_track_href="../index.html",
+                relevance_profile="deep_research",
+            )
+
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            self.assertIn("Deep Research Paper Library", html)
+            self.assertIn("Agentic Memory Library", html)
+            self.assertNotIn("Agentic Memory Paper Library", html)
+            self.assertIn("Research card", html)
+            self.assertIn("More metadata", html)
+            self.assertIn("Review metadata", html)
+            self.assertIn("Screening category", html)
+            self.assertIn("Internal screening score", html)
+            self.assertNotIn("Maybe relevant", html)
+            self.assertNotIn("Core agent-memory paper", html)
+            self.assertNotIn("Memory benchmark/evaluation", html)
+            self.assertNotIn("Memory architecture or policy", html)
+            self.assertIn("AI scientist / discovery system", html)
+            self.assertIn("Review candidate", html)
+
+            detail_pages = sorted((docs_dir / "papers").glob("*.html"))
+            self.assertTrue(detail_pages)
+            detail_html = "\n".join(path.read_text(encoding="utf-8") for path in detail_pages)
+            self.assertIn("Structured research card", detail_html)
+            self.assertIn("Research relevance", detail_html)
+            self.assertIn("Method / system type", detail_html)
+            self.assertIn("Key contribution", detail_html)
+            self.assertIn("Evidence / evaluation", detail_html)
+            self.assertIn("Relation to deep research / autonomous research", detail_html)
+            self.assertIn("Limitations / uncertainty", detail_html)
+            self.assertIn("Review metadata", detail_html)
+            self.assertIn("Not extracted yet", detail_html)
+            detail_json = json.loads(sorted((docs_dir / "papers").glob("*.json"))[0].read_text(encoding="utf-8"))
+            self.assertIn("relation_to_agentic_memory", detail_json["structured_card"])
 
     def test_structured_card_sidecars_are_schema_documented_and_conservative(self):
         with tempfile.TemporaryDirectory() as tmpdir:

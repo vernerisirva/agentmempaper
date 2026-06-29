@@ -2,11 +2,11 @@
 
 - **CI mode:** True
 - **Sources attempted:** 3
-- **Sources succeeded:** 1
-- **Sources failed:** 2
-- **Raw records:** 994
-- **Candidates fetched:** 913
-- **Unique papers:** 361
+- **Sources succeeded:** 2
+- **Sources failed:** 1
+- **Raw records:** 1299
+- **Candidates fetched:** 932
+- **Unique papers:** 372
 - **State initialized:** True
 - **Idempotency passed:** True
 
@@ -14,16 +14,15 @@
 
 ### arxiv
 
-- Status: Failed
-- Queries attempted: 21
-- Raw records: 133
-- Converted candidates: 52
+- Status: Success
+- Queries attempted: 38
+- Raw records: 188
+- Converted candidates: 64
 - Sample title: DMV-Bench: Diagnosing Long-Horizon Multimodal Agents' Visual Memory with Incidental Cue Injection
 - Sample source ID: 2606.27499
 - Sample URL: https://arxiv.org/abs/2606.27499v1
 - Sample published date: 2026-06-25
 - Abstract: yes
-- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 
 ### openalex
 
@@ -40,17 +39,22 @@
 ### semantic_scholar
 
 - Status: Failed
-- Queries attempted: 1
-- Raw records: 0
-- Converted candidates: 0
+- Queries attempted: 11
+- Raw records: 250
+- Converted candidates: 7
+- Sample title: LLM-Guided Multi-Agent Evacuation Coordination via Episodic Memory and Cognitive Task Analysis
+- Sample source ID: acebe7c7c6bfc937e8cb26b4c01413b390812899
+- Sample URL: https://www.semanticscholar.org/paper/acebe7c7c6bfc937e8cb26b4c01413b390812899
+- Sample published date: unknown
+- Abstract: yes
 - Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 
 ## Decisions
 
-- relevant: 91
-- maybe: 116
-- irrelevant: 154
+- relevant: 92
+- maybe: 120
+- irrelevant: 160
 
 ## Top Relevant Or Maybe Papers
 
@@ -67,8 +71,7 @@
 
 ## Source Failures
 
-- semantic_scholar (HTTP/API error) for `agent memory`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- arxiv (HTTP/API error) for `memory retrieval LLM agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar (HTTP/API error) for `memory retrieval policy agent`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Deduplication Examples
 
@@ -78,7 +81,7 @@
 - arxiv:2606.25115: arxiv:2606.25115, arxiv:2606.25115
 - arxiv:2606.24775: arxiv:2606.24775, arxiv:2606.24775, arxiv:2606.24775, arxiv:2606.24775
 - arxiv:2606.24595: arxiv:2606.24595, arxiv:2606.24595
-- arxiv:2606.24535: arxiv:2606.24535, arxiv:2606.24535
+- arxiv:2606.24535: arxiv:2606.24535, arxiv:2606.24535, semantic_scholar:cbe226378202698435093f69ef7d8e2db382f96c
 - arxiv:2606.24322: arxiv:2606.24322, arxiv:2606.24322, arxiv:2606.24322
 - arxiv:2606.23195: arxiv:2606.23195, arxiv:2606.23195
 - arxiv:2606.22844: arxiv:2606.22844, arxiv:2606.22844
@@ -158,6 +161,7 @@
 - doi:10.5281/zenodo.20747732: openalex:W7165112027, openalex:W7165112027, openalex:W7165112027
 - doi:10.5281/zenodo.20684023: openalex:W7164665857, openalex:W7164665857, openalex:W7164665857
 - doi:10.5281/zenodo.20731135: openalex:W7165023540, openalex:W7165023540, openalex:W7165023540, openalex:W7165023540
+- semantic_scholar:16086f872f1c52a6a5ea2c7ce7ac79b026c2b3c7: semantic_scholar:16086f872f1c52a6a5ea2c7ce7ac79b026c2b3c7, semantic_scholar:16086f872f1c52a6a5ea2c7ce7ac79b026c2b3c7
 - doi:10.5281/zenodo.20724717: openalex:W7165041115, openalex:W7165041115
 - doi:10.5281/zenodo.20724718: openalex:W7165045412, openalex:W7165045412
 - openalex:W7166253061: openalex:W7166253061, openalex:W7166253061, openalex:W7166253061, openalex:W7166253061, openalex:W7166253061
@@ -249,6 +253,12 @@
 - doi:10.48550/arxiv.2606.25361: openalex:W7165916144, openalex:W7165916144
 - doi:10.48550/arxiv.2606.18829: openalex:W7165126558, openalex:W7165126558
 - openalex:W7165973564: openalex:W7165973564, openalex:W7165973564, openalex:W7165973564
+- arxiv:2606.22783: arxiv:2606.22783, arxiv:2606.22783
+- arxiv:2606.20122: arxiv:2606.20122, arxiv:2606.20122
+- arxiv:2606.19893: arxiv:2606.19893, arxiv:2606.19893
+- arxiv:2606.18648: arxiv:2606.18648, arxiv:2606.18648
+- arxiv:2606.17458: arxiv:2606.17458, arxiv:2606.17458
+- arxiv:2606.17029: arxiv:2606.17029, arxiv:2606.17029
 - doi:10.1609/aaaiss.v9i1.42945: openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059
 - openalex:W7165063777: openalex:W7165063777, openalex:W7165063777, openalex:W7165063777, openalex:W7165063777
 - doi:10.48550/arxiv.2606.17029: openalex:W7164941083, openalex:W7164941083

@@ -4,35 +4,35 @@
   "idempotency_passed": true,
   "irrelevant_count": 326,
   "maybe_count": 50,
-  "relevant_count": 58,
+  "relevant_count": 51,
   "run_id": "live-smoke-2026-06-29",
   "source_errors": [
     {
-      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
-      "query": "deep research agent",
-      "source": "semantic_scholar",
+      "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+      "query": "AI research agent",
+      "source": "arxiv",
       "type": "http"
     },
     {
-      "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+planning+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
-      "query": "research planning agent",
-      "source": "arxiv",
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "AI research agent",
+      "source": "semantic_scholar",
       "type": "http"
     }
   ],
   "source_results": [
     {
-      "candidates": 20,
+      "candidates": 12,
       "errors": [
         {
-          "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+planning+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
-          "query": "research planning agent",
+          "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+          "query": "AI research agent",
           "source": "arxiv",
           "type": "http"
         }
       ],
-      "queries_attempted": 14,
-      "raw_records": 168,
+      "queries_attempted": 6,
+      "raw_records": 87,
       "sample_candidate": {
         "has_abstract": true,
         "published_date": "2026-06-22",
@@ -63,13 +63,13 @@
       "errors": [
         {
           "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
-          "query": "deep research agent",
+          "query": "AI research agent",
           "source": "semantic_scholar",
           "type": "http"
         }
       ],
-      "queries_attempted": 1,
-      "raw_records": 0,
+      "queries_attempted": 6,
+      "raw_records": 125,
       "sample_candidate": null,
       "source": "semantic_scholar",
       "status": "failed"
@@ -79,7 +79,7 @@
   "sources_failed": 2,
   "sources_succeeded": 1,
   "state_initialized": true,
-  "total_candidates": 650,
-  "total_raw_records": 798,
-  "unique_candidates": 434
+  "total_candidates": 642,
+  "total_raw_records": 842,
+  "unique_candidates": 427
 }

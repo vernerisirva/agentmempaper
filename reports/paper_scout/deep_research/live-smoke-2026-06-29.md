@@ -4,9 +4,9 @@
 - **Sources attempted:** 3
 - **Sources succeeded:** 1
 - **Sources failed:** 2
-- **Raw records:** 798
-- **Candidates fetched:** 650
-- **Unique papers:** 434
+- **Raw records:** 842
+- **Candidates fetched:** 642
+- **Unique papers:** 427
 - **State initialized:** True
 - **Idempotency passed:** True
 
@@ -15,15 +15,15 @@
 ### arxiv
 
 - Status: Failed
-- Queries attempted: 14
-- Raw records: 168
-- Converted candidates: 20
+- Queries attempted: 6
+- Raw records: 87
+- Converted candidates: 12
 - Sample title: Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints
 - Sample source ID: 2606.22783
 - Sample URL: https://arxiv.org/abs/2606.22783v1
 - Sample published date: 2026-06-22
 - Abstract: yes
-- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+planning+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 
 ### openalex
 
@@ -40,35 +40,35 @@
 ### semantic_scholar
 
 - Status: Failed
-- Queries attempted: 1
-- Raw records: 0
+- Queries attempted: 6
+- Raw records: 125
 - Converted candidates: 0
 - Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 
 ## Decisions
 
-- relevant: 58
+- relevant: 51
 - maybe: 50
 - irrelevant: 326
 
 ## Top Relevant Or Maybe Papers
 
 - **Socratic agents for autonomous scientific discovery in high-dimensional physical systems** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.48550/arxiv.2606.26722
-- **Socratic agents for autonomous scientific discovery in high-dimensional physical systems** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2606.26722v1
 - **Socratic agents for autonomous scientific discovery in high-dimensional physical systems** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://arxiv.org/abs/2606.26722
 - **Cybernetics After Prompt Engineering: SkillOpt, AutoResearch, and the Governance of Externalized State** (relevant, 95/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.5281/zenodo.20705508
-- **Young AI Scientists in the New AI Age: Increasingly Early and Growing Dominance of Career Novelty in their Research Trajectories** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.1007/978-981-95-9877-9_8
 - **Why Sense Matters: Answer-Key Leakage and the Specification Boundary in Agentic Citation Verification** (relevant, 93/100): Studies source-grounded research workflows, citation verification, or evidence-backed research reports. https://doi.org/10.5281/zenodo.20710741
 - **Why Sense Matters: Answer-Key Leakage and the Specification Boundary in Agentic Citation Verification** (relevant, 93/100): Studies source-grounded research workflows, citation verification, or evidence-backed research reports. https://doi.org/10.5281/zenodo.20710740
 - **VERIFY-DD: An Evidence-Grounded Agentic AI Framework for Hallucination Detection and Mitigation in LLM-Assisted Drug Discovery** (relevant, 93/100): Studies source-grounded research workflows, citation verification, or evidence-backed research reports. https://doi.org/10.25258/ijddt.16.54s.157
 - **Towards Reliable AI Scientists** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.6082/gep96-ycs43
 - **Towards Reliable AI Scientists** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.6082/324p4-ymb14
+- **Tool Use and "AI Scientists"** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.59350/7zgzc-yk365
+- **Tool Use and "AI Scientists"** (relevant, 93/100): Studies AI-scientist or scientific-discovery agents. https://doi.org/10.59350/2y9n3-6vk07
 
 ## Source Failures
 
-- semantic_scholar (HTTP/API error) for `deep research agent`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- arxiv (HTTP/API error) for `research planning agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+planning+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv (HTTP/API error) for `AI research agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar (HTTP/API error) for `AI research agent`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Deduplication Examples
 
@@ -143,7 +143,6 @@
 - doi:10.1145/3805689.3812399: openalex:W7155637802, openalex:W7155637802
 - doi:10.1007/s10462-026-11590-x: openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649, openalex:W4403662649
 - doi:10.1007/s11831-026-10675-8: openalex:W7164841116, openalex:W7164841116, openalex:W7164841116, openalex:W7164841116
-- arxiv:2606.22859: arxiv:2606.22859, arxiv:2606.22859
 - doi:10.6082/gep96-ycs43: openalex:W7165788481, openalex:W7165788481
 - doi:10.6082/324p4-ymb14: openalex:W7165772541, openalex:W7165772541
 - openalex:W7165816672: openalex:W7165816672, openalex:W7165816672, openalex:W7165816672, openalex:W7165816672

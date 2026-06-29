@@ -73,7 +73,7 @@ def run_scout(config: ScoutConfig, fetchers=None, digest_date: str | None = None
                 fetched_count += len(candidates)
                 source_counts[source] = source_counts.get(source, 0) + len(candidates)
                 for candidate in candidates:
-                    rule_result = classify_with_rules(candidate)
+                    rule_result = classify_with_rules(candidate, profile=config.relevance_profile)
                     classification = (
                         classify_with_optional_llm(candidate, rule_result)
                         if should_consider_for_llm(rule_result)

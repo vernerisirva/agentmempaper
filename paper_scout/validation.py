@@ -20,7 +20,40 @@ from paper_scout.source_errors import source_error_message
 from paper_scout.state import PaperStore
 
 
-def deterministic_candidates() -> list[PaperCandidate]:
+def deterministic_candidates(profile: str = "agent_memory") -> list[PaperCandidate]:
+    if profile == "deep_research":
+        return [
+            PaperCandidate(
+                title="Source-Grounded Deep Research Agents",
+                authors=["Ada Lovelace"],
+                abstract="Deep research agents plan literature reviews, verify citations, and write source-grounded research reports.",
+                source="fixture_arxiv",
+                source_id="D1",
+                doi="10.1/deep-research-agents",
+                url="https://example.test/d1",
+                published_date="2026-06-26",
+            ),
+            PaperCandidate(
+                title="Source-Grounded Deep Research Agents",
+                authors=["Ada Lovelace"],
+                abstract="The same deep research agent paper mirrored from another source.",
+                source="fixture_openalex",
+                source_id="DW1",
+                doi="10.1/deep-research-agents",
+                url="https://example.test/dw1",
+                published_date="2026-06-26",
+            ),
+            PaperCandidate(
+                title="Citation Verification Agents for Literature Reviews",
+                authors=["Grace Hopper"],
+                abstract="A citation verification agent checks evidence grounding in automated literature-review workflows.",
+                source="fixture_semantic_scholar",
+                source_id="DS1",
+                semantic_scholar_id="DS1",
+                url="https://example.test/ds1",
+                published_date="2026-06-26",
+            ),
+        ]
     return [
         PaperCandidate(
             title="Persistent Memory for LLM Agents",
@@ -65,7 +98,13 @@ class StaticFetcher:
         return self.candidates[:max_results]
 
 
-def validate_idempotency(base_dir: Path | None = None, report_date: str | None = None, report_dir: Path | None = None) -> dict[str, object]:
+def validate_idempotency(
+    base_dir: Path | None = None,
+    report_date: str | None = None,
+    report_dir: Path | None = None,
+    track_id: str = "agent_memory",
+    relevance_profile: str = "agent_memory",
+) -> dict[str, object]:
     active_date = report_date or date.today().isoformat()
     if base_dir is None:
         temp = tempfile.TemporaryDirectory()
@@ -77,14 +116,16 @@ def validate_idempotency(base_dir: Path | None = None, report_date: str | None =
         output_dir = report_dir or (root / "reports")
     try:
         config = ScoutConfig(
-            terms=["agent memory"],
+            terms=["agent memory"] if relevance_profile == "agent_memory" else ["deep research agent"],
+            track_id=track_id,
             days=7,
             max_results_per_source=10,
             sqlite_path=root / "state.sqlite3",
             digest_dir=root / "digests",
             report_dir=root / "reports",
+            relevance_profile=relevance_profile,
         )
-        fetcher = StaticFetcher(deterministic_candidates())
+        fetcher = StaticFetcher(deterministic_candidates(relevance_profile))
         first = run_scout(config, fetchers=[fetcher], digest_date=active_date, notifier=lambda markdown: True)
         second = run_scout(config, fetchers=[fetcher], digest_date=active_date, notifier=lambda markdown: True)
         store = PaperStore(config.sqlite_path)
@@ -183,14 +224,20 @@ def run_live_smoke(
 
     top_papers = []
     for key, candidate in by_key.items():
-        classification = classify_with_rules(candidate)
+        classification = classify_with_rules(candidate, profile=config.relevance_profile)
         decision_counts[classification.decision] += 1
         if classification.decision in {"relevant", "maybe"}:
             top_papers.append((classification.score, candidate.title, classification.decision, classification.reason, candidate.url))
     top_papers.sort(reverse=True)
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        idempotency = validate_idempotency(Path(tmpdir), active_date, Path(tmpdir) / "reports")
+        idempotency = validate_idempotency(
+            Path(tmpdir),
+            active_date,
+            Path(tmpdir) / "reports",
+            track_id=config.track_id,
+            relevance_profile=config.relevance_profile,
+        )
     source_failures = [_format_source_error(error) for error in source_errors]
     source_result_list = [source_results[source] for source in sorted(source_results)]
     sources_succeeded = sum(1 for result in source_result_list if not result["errors"])

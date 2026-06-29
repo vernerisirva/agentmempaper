@@ -31,18 +31,19 @@ jobs:
 
       - name: Validate rules, idempotency, and live source payloads
         env:
-          PAPER_SCOUT_STATE_PATH: ${{ runner.temp }}/paper_scout_smoke.sqlite3
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
         run: |
           set -o pipefail
-          python -m paper_scout evaluate-relevance | tee relevance-eval.log
-          python -m paper_scout validate-idempotency | tee idempotency.log
-          python -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke.log
+          python -m paper_scout evaluate-relevance --track agent_memory | tee relevance-eval-agent-memory.log
+          python -m paper_scout evaluate-relevance --track deep_research | tee relevance-eval-deep-research.log
+          python -m paper_scout validate-idempotency --track agent_memory | tee idempotency-agent-memory.log
+          python -m paper_scout validate-idempotency --track deep_research | tee idempotency-deep-research.log
+          PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_agent_memory_smoke.sqlite3 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-agent-memory.log
+          PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_deep_research_smoke.sqlite3 python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-deep-research.log
 
       - name: Run daily paper scout
         env:
-          PAPER_SCOUT_STATE_PATH: data/paper_scout.sqlite3
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
           PAPER_SCOUT_LLM_PROVIDER: ${{ secrets.PAPER_SCOUT_LLM_PROVIDER }}
@@ -52,8 +53,10 @@ jobs:
           PAPER_SCOUT_WEBHOOK_URL: ${{ secrets.PAPER_SCOUT_WEBHOOK_URL }}
         run: |
           set -o pipefail
-          python -m paper_scout run | tee paper-scout-run.log
-          python -m paper_scout build-site | tee paper-scout-build-site.log
+          python -m paper_scout run --track agent_memory | tee paper-scout-run-agent-memory.log
+          python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
+          python -m paper_scout run --track deep_research | tee paper-scout-run-deep-research.log
+          python -m paper_scout build-site --track deep_research | tee paper-scout-build-site-deep-research.log
 
       - name: Write run summary
         if: always()
@@ -64,7 +67,7 @@ jobs:
             echo "### Command output"
             echo
             echo '```text'
-            cat relevance-eval.log idempotency.log live-smoke.log paper-scout-run.log paper-scout-build-site.log 2>/dev/null || true
+            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log 2>/dev/null || true
             echo '```'
             echo
             echo "### Generated files"
@@ -102,7 +105,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/paper_scout.sqlite3 digests/*.md docs/ reports/paper_scout/digest-quality-*.md reports/paper_scout/idempotency-*.md reports/paper_scout/relevance-eval-*.md
+          git add data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 digests docs reports/paper_scout
           if git diff --cached --quiet; then
             echo "No paper scout changes to commit."
           else

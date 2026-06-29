@@ -168,6 +168,11 @@ def build_site(
     state_path: Path | str = Path("data/paper_scout.sqlite3"),
     curation_path: Path | str = Path("config/curation.yaml"),
     build_time: datetime | str | None = None,
+    site_title: str = "Agentic Memory Paper Library",
+    site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
+    cross_track_label: str | None = "Deep Research Library",
+    cross_track_href: str | None = "deep-research/index.html",
+    relevance_profile: str = "agent_memory",
 ) -> SiteBuildResult:
     digest_path = _latest_digest_path(Path(digest_dir))
     if digest_path is None:
@@ -186,7 +191,7 @@ def build_site(
     library_papers = _merge_dashboard_duplicates(library_papers)
     library_papers = _enrich_library_dates(library_papers)
     if using_state:
-        library_papers = _refresh_rule_classifications(library_papers)
+        library_papers = _refresh_rule_classifications(library_papers, relevance_profile=relevance_profile)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date)
     library_papers = _mark_new_papers(library_papers, site_build_time, latest.date)
     library_papers = _sort_latest_relevant(library_papers)
@@ -203,16 +208,37 @@ def build_site(
     generated_at = site_build_time.isoformat(sep=" ")
     _write_paper_detail_pages(docs_root, library_papers, generated_at)
     (docs_root / "style.css").write_text(STYLE_CSS, encoding="utf-8")
-    (docs_root / "index.html").write_text(_render_library_page(library_papers, latest, archive_digests), encoding="utf-8")
-    (docs_root / "latest.html").write_text(_render_latest_discoveries_page(latest_discoveries, latest, archive_digests), encoding="utf-8")
-    (docs_root / "archive.html").write_text(_render_archive_page(archive_digests), encoding="utf-8")
-    (docs_root / "about.html").write_text(_render_about_page(), encoding="utf-8")
+    digest_link_prefix = _digest_link_prefix(digest_root)
+    (docs_root / "index.html").write_text(
+        _render_library_page(
+            library_papers,
+            latest,
+            archive_digests,
+            site_title=site_title,
+            site_subtitle=site_subtitle,
+            cross_track_label=cross_track_label,
+            cross_track_href=cross_track_href,
+        ),
+        encoding="utf-8",
+    )
+    (docs_root / "latest.html").write_text(
+        _render_latest_discoveries_page(
+            latest_discoveries,
+            latest,
+            archive_digests,
+            site_title=site_title,
+            digest_link_prefix=digest_link_prefix,
+        ),
+        encoding="utf-8",
+    )
+    (docs_root / "archive.html").write_text(_render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix), encoding="utf-8")
+    (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "paper-card.schema.json").write_text(json.dumps(paper_card_schema(), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "papers.csv").write_text(_papers_csv(library_papers), encoding="utf-8")
     (docs_root / "data" / "papers.bib").write_text(_papers_bibtex(library_papers), encoding="utf-8")
-    _write_metadata_quality_report(report_root, latest.date, library_papers)
+    _write_metadata_quality_report(report_root, latest.date, library_papers, relevance_profile=relevance_profile)
     _write_latest_markdown(digest_root, latest.date, digest_path)
 
     return SiteBuildResult(True, f"Built Paper Scout dashboard for {latest.date} in {docs_root}", latest.date, docs_root)
@@ -227,6 +253,12 @@ def _daily_digest_paths(digest_dir: Path) -> list[Path]:
     if not digest_dir.exists():
         return []
     return sorted(path for path in digest_dir.glob("*.md") if re.fullmatch(r"\d{4}-\d{2}-\d{2}", path.stem))
+
+
+def _digest_link_prefix(digest_dir: Path) -> str:
+    if digest_dir.is_absolute():
+        return "digests"
+    return digest_dir.as_posix().strip("/") or "digests"
 
 
 def _parse_digest(path: Path, report_dir: Path) -> ParsedDigest:
@@ -733,7 +765,7 @@ def _apply_date_override(paper: LibraryPaper, override: DateOverride) -> Library
     )
 
 
-def _refresh_rule_classifications(papers: list[LibraryPaper]) -> list[LibraryPaper]:
+def _refresh_rule_classifications(papers: list[LibraryPaper], relevance_profile: str = "agent_memory") -> list[LibraryPaper]:
     refreshed: list[LibraryPaper] = []
     for paper in papers:
         candidate = PaperCandidate(
@@ -753,7 +785,7 @@ def _refresh_rule_classifications(papers: list[LibraryPaper]) -> list[LibraryPap
             publication_date_source=paper.publication_date_source,
             raw={},
         )
-        classification = classify_with_rules(candidate)
+        classification = classify_with_rules(candidate, profile=relevance_profile)
         refreshed.append(
             LibraryPaper(
                 **{
@@ -1329,10 +1361,19 @@ def _latest_to_json(latest: ParsedDigest, latest_discoveries: list[LibraryPaper]
     }
 
 
-def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
+def _render_library_page(
+    papers: list[LibraryPaper],
+    latest: ParsedDigest,
+    archive: list[ParsedDigest],
+    site_title: str = "Agentic Memory Paper Library",
+    site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
+    cross_track_label: str | None = "Deep Research Library",
+    cross_track_href: str | None = "deep-research/index.html",
+) -> str:
     default_decision = _default_homepage_decision(papers)
+    cross_track_link = _cross_track_link(cross_track_label, cross_track_href)
     return _page(
-        "Agentic Memory Paper Library",
+        site_title,
         f"""
         <header class="briefing-hero">
           <nav class="top-nav" aria-label="Primary">
@@ -1340,12 +1381,13 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
             <span class="nav-links">
               <a href="about.html">About</a>
               <a href="archive.html">Archive</a>
+              {cross_track_link}
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
           <div class="library-hero">
-            <h1>Agentic Memory Paper Library</h1>
-            <p class="hero-copy">A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.</p>
+            <h1>{escape(site_title)}</h1>
+            <p class="hero-copy">{escape(site_subtitle)}</p>
             <p class="hero-line">{_hero_line(papers, latest)}</p>
           </div>
         </header>
@@ -1366,7 +1408,19 @@ def _render_library_page(papers: list[LibraryPaper], latest: ParsedDigest, archi
     )
 
 
-def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
+def _cross_track_link(label: str | None, href: str | None) -> str:
+    if not label or not href:
+        return ""
+    return f'<a href="{escape(href)}">{escape(label)}</a>'
+
+
+def _render_latest_discoveries_page(
+    papers: list[LibraryPaper],
+    latest: ParsedDigest,
+    archive: list[ParsedDigest],
+    site_title: str = "Agentic Memory Paper Library",
+    digest_link_prefix: str = "digests",
+) -> str:
     has_highly_relevant = any(paper.decision == "relevant" for paper in papers)
     if not papers:
         paper_cards = '<p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>'
@@ -1380,8 +1434,9 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
         paper_cards = _library_paper_cards(papers, default_decision="all")
         latest_heading = "Papers first seen in the latest Paper Scout run."
         latest_notice = ""
+    page_title = "Latest Paper Scout Run" if site_title == "Agentic Memory Paper Library" else f"Latest Paper Scout Run - {site_title}"
     return _page(
-        "Latest Paper Scout Run",
+        page_title,
         f"""
         <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
@@ -1390,7 +1445,7 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
               <a href="about.html">About</a>
-              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
+              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
@@ -1417,19 +1472,19 @@ def _render_latest_discoveries_page(papers: list[LibraryPaper], latest: ParsedDi
             <p class="section-kicker">Context</p>
             <h2 id="recent-archive-heading">Daily run archive</h2>
           </div>
-          <div class="archive-links">{''.join(f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(item.date)}.md">{escape(item.date)}</a>' for item in reversed(archive[:8]))}</div>
+          <div class="archive-links">{''.join(f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/{escape(item.date)}.md">{escape(item.date)}</a>' for item in reversed(archive[:8]))}</div>
         </section>
         {FILTER_SCRIPT}
         """,
     )
 
 
-def _render_archive_page(archive: list[ParsedDigest]) -> str:
+def _render_archive_page(archive: list[ParsedDigest], digest_link_prefix: str = "digests") -> str:
     rows = "\n".join(
         f"""
         <article class="archive-entry">
           <div>
-            <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(item.date)}.md">{escape(item.date)}</a>
+            <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/{escape(item.date)}.md">{escape(item.date)}</a>
             <p>{escape(item.summary.get('Candidates fetched', '0'))} candidates fetched · {escape(item.summary.get('New unique papers', '0'))} new unique papers</p>
           </div>
           <dl>
@@ -1451,7 +1506,7 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
               <a href="index.html">Library</a>
               <a href="latest.html">Latest run</a>
               <a href="about.html">About</a>
-              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Latest Markdown</a>
+              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/latest.md">Latest Markdown</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
@@ -1464,10 +1519,20 @@ def _render_archive_page(archive: list[ParsedDigest]) -> str:
     )
 
 
-def _render_about_page() -> str:
+def _render_about_page(
+    site_title: str = "Agentic Memory Paper Library",
+    site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
+) -> str:
+    is_agent_memory = site_title == "Agentic Memory Paper Library"
+    page_title = "About Paper Scout" if is_agent_memory else f"About {site_title}"
+    tracking_text = (
+        "Paper Scout watches for work on agentic memory, LLM agent memory, long-term, episodic, semantic, and procedural memory, memory benchmarks, deep research agents, and Engram-style or parametric memory mechanisms."
+        if is_agent_memory
+        else f"{site_title} is generated by Paper Scout from a track-specific search configuration, relevance rubric, SQLite state, and optional curation file."
+    )
     return _page(
-        "About Paper Scout",
-        """
+        page_title,
+        f"""
         <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="index.html">Paper Scout</a>
@@ -1480,12 +1545,12 @@ def _render_about_page() -> str:
           </nav>
           <p class="eyebrow">About</p>
           <h1>How Paper Scout works</h1>
-          <p class="hero-copy">A static daily research monitor for papers around agentic memory, LLM agent memory, deep research agents, and memory mechanisms.</p>
+          <p class="hero-copy">{escape(site_subtitle)}</p>
         </header>
         <section class="about-grid">
           <article>
             <h2>What Paper Scout tracks</h2>
-            <p>Paper Scout watches for work on agentic memory, LLM agent memory, long-term, episodic, semantic, and procedural memory, memory benchmarks, deep research agents, and Engram-style or parametric memory mechanisms.</p>
+            <p>{escape(tracking_text)}</p>
           </article>
           <article>
             <h2>Sources</h2>
@@ -2222,7 +2287,7 @@ def _bibtex_key(paper: LibraryPaper, year: str) -> str:
     return re.sub(r"[^A-Za-z0-9_:-]", "", f"{first}{year or 'n.d.'}{title_word}")
 
 
-def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: list[LibraryPaper]) -> None:
+def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: list[LibraryPaper], relevance_profile: str = "agent_memory") -> None:
     report_dir.mkdir(parents=True, exist_ok=True)
     year_only = [paper for paper in papers if _publication_precision(paper) == "year"]
     high_without_exact = [paper for paper in papers if paper.decision == "relevant" and precision_rank(_publication_precision(paper)) < precision_rank("day")]
@@ -2287,12 +2352,15 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         f"- **Highly relevant without exact date:** {len(high_without_exact)}",
         f"- **Biological/cognitive high-relevance risks:** {len(biological_high)}",
         f"- **Highly relevant with generic/peripheral reasons:** {len(high_generic_reason)}",
-        f"- **Persistent-memory reason without explicit memory evidence:** {len(persistent_reason_without_memory)}",
-        f"- **High-scoring agentic-AI papers without explicit memory evidence:** {len(high_agentic_without_memory)}",
-        f"- **Maybe papers with core memory phrases:** {len(maybe_core)}",
         f"- **Future or imprecise source dates:** {len(future_or_imprecise)}",
         "",
     ]
+    if relevance_profile == "agent_memory":
+        lines[11:11] = [
+            f"- **Persistent-memory reason without explicit memory evidence:** {len(persistent_reason_without_memory)}",
+            f"- **High-scoring agentic-AI papers without explicit memory evidence:** {len(high_agentic_without_memory)}",
+            f"- **Maybe papers with core memory phrases:** {len(maybe_core)}",
+        ]
     sections = [
         ("Year-Only Publication Dates", year_only),
         ("SSRN/DOI Date Enrichment Warnings", enrichment_warnings),
@@ -2302,11 +2370,14 @@ def _write_metadata_quality_report(report_dir: Path, report_date: str, papers: l
         ("Highly Relevant Without Exact Date", high_without_exact),
         ("Biological/Cognitive High-Relevance Risks", biological_high),
         ("Highly Relevant With Generic Reasons", high_generic_reason),
-        ("Persistent-Memory Reasons Without Explicit Memory Evidence", persistent_reason_without_memory),
-        ("High-Scoring Agentic-AI Papers Without Explicit Memory Evidence", high_agentic_without_memory),
-        ("Maybe Papers With Core Memory Phrases", maybe_core),
         ("Future Or Imprecise Source Dates", future_or_imprecise),
     ]
+    if relevance_profile == "agent_memory":
+        sections[9:9] = [
+            ("Persistent-Memory Reasons Without Explicit Memory Evidence", persistent_reason_without_memory),
+            ("High-Scoring Agentic-AI Papers Without Explicit Memory Evidence", high_agentic_without_memory),
+            ("Maybe Papers With Core Memory Phrases", maybe_core),
+        ]
     for title, items in sections:
         lines.extend([f"## {title}", ""])
         if not items:

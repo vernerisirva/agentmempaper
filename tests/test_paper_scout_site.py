@@ -587,6 +587,69 @@ class PaperScoutSiteTest(unittest.TestCase):
             self.assertIn("tags", detail_json["relevance"])
             self.assertIn("generated_at", detail_json["provenance"])
 
+    def test_generates_deep_research_dashboard_under_separate_directory(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            digest_dir = root / "digests" / "deep_research"
+            report_dir = root / "reports" / "paper_scout" / "deep_research"
+            docs_root = root / "docs"
+            docs_dir = docs_root / "deep-research"
+            curation_path = root / "config" / "curation" / "deep_research.yaml"
+            digest_dir.mkdir(parents=True)
+            report_dir.mkdir(parents=True)
+            curation_path.parent.mkdir(parents=True)
+            curation_path.write_text(
+                """
+pinned:
+overrides:
+excluded:
+date_overrides:
+""",
+                encoding="utf-8",
+            )
+            deep_digest = SAMPLE_DIGEST.replace("Persistent Memory for LLM Agents", "Source-Grounded Deep Research Agents")
+            deep_digest = deep_digest.replace(
+                "Directly studies persistent memory for LLM agents.",
+                "Studies source-grounded autonomous research agents.",
+            )
+            deep_digest = deep_digest.replace(
+                "A compact summary of persistent memory for LLM agents.",
+                "A compact summary of citation-grounded deep research agents.",
+            )
+            (digest_dir / "2026-06-26.md").write_text(deep_digest, encoding="utf-8")
+
+            result = build_site(
+                digest_dir=digest_dir,
+                report_dir=report_dir,
+                docs_dir=docs_dir,
+                state_path=root / "data" / "deep_research" / "missing.sqlite3",
+                curation_path=curation_path,
+                site_title="Deep Research Paper Library",
+                site_subtitle="A daily updated library of papers on autonomous research agents, deep research systems, and AI-assisted scientific discovery.",
+                cross_track_label="Agentic Memory Library",
+                cross_track_href="../index.html",
+                relevance_profile="deep_research",
+            )
+
+            self.assertTrue(result.built)
+            self.assertTrue((docs_dir / "index.html").exists())
+            self.assertTrue((docs_dir / "latest.html").exists())
+            self.assertTrue((docs_dir / "archive.html").exists())
+            self.assertTrue((docs_dir / "about.html").exists())
+            self.assertTrue((docs_dir / "data" / "papers.json").exists())
+            self.assertTrue((docs_dir / "data" / "paper-card.schema.json").exists())
+            self.assertTrue(list((docs_dir / "papers").glob("*.html")))
+            self.assertTrue(list((docs_dir / "papers").glob("*.json")))
+            self.assertFalse((docs_root / "index.html").exists())
+            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            about_html = (docs_dir / "about.html").read_text(encoding="utf-8")
+            self.assertIn("Deep Research Paper Library", html)
+            self.assertIn("autonomous research agents, deep research systems, and AI-assisted scientific discovery", html)
+            self.assertIn('href="../index.html"', html)
+            self.assertIn("Agentic Memory Library", html)
+            self.assertIn("Research card", html)
+            self.assertIn("structured detail page and sidecar JSON", about_html)
+
     def test_structured_card_sidecars_are_schema_documented_and_conservative(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)

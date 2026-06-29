@@ -156,8 +156,106 @@ NEGATED_AGENT_MEMORY_PATTERNS = [
     r"\bnot (a |about |studying )?(persistent |long[- ]term )?memory systems?\b",
 ]
 
+DEEP_RESEARCH_INCLUDE_PATTERNS = {
+    "deep-research-agents": [
+        r"\bdeep research agents?\b",
+        r"\bautonomous research agents?\b",
+        r"\bautomated research agents?\b",
+        r"\bai research agents?\b",
+        r"\bresearch assistant agents?\b",
+        r"\bllm research assistants?\b",
+    ],
+    "ai-scientist": [
+        r"\bai scientists?\b",
+        r"\bai scientific discovery\b",
+        r"\bautomated scientific discovery\b",
+        r"\bscientific discovery (llm|language model) agents?\b",
+    ],
+    "literature-review": [
+        r"\bliterature[- ]review agents?\b",
+        r"\bautomated literature review\b",
+        r"\bllm literature review\b",
+    ],
+    "citation-grounding": [
+        r"\bcitation verification\b",
+        r"\bevidence[- ]ground(ed|ing)\b",
+        r"\bsource[- ]grounded research\b",
+        r"\bresearch reports?\b.{0,80}\bcitations?\b",
+        r"\bcitations?\b.{0,80}\bresearch reports?\b",
+    ],
+    "research-planning": [
+        r"\bresearch planning agents?\b",
+        r"\bresearch task decomposition\b",
+        r"\bmulti[- ]step research planning\b",
+        r"\bresearch workflow agents?\b",
+    ],
+    "multi-agent-research": [
+        r"\bmulti[- ]agent research systems?\b",
+        r"\bmulti[- ]agent research workflows?\b",
+    ],
+    "hypothesis-experiment": [
+        r"\bhypothesis generation agents?\b",
+        r"\bexperiment design agents?\b",
+        r"\bhypothesis generation\b.{0,80}\bexperiment design\b",
+    ],
+    "web-research": [
+        r"\bweb[- ]browsing research agents?\b",
+        r"\bopenresearch agents?\b",
+        r"\bautoresearch\b",
+    ],
+    "research-memory": [
+        r"\bresearch[- ]agent memory\b",
+        r"\bresearch state\b",
+        r"\biterative research state\b",
+    ],
+    "benchmark": [
+        r"\bresearch agents?\b.{0,80}\bbenchmark\b",
+        r"\bbenchmark\b.{0,80}\bresearch agents?\b",
+    ],
+}
 
-def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
+HIGH_CONFIDENCE_DEEP_RESEARCH_PATTERNS = {
+    "autonomous research agent": r"\b(autonomous|automated|deep) research agents?\b",
+    "source-grounded research agent": r"\bsource[- ]grounded research agents?\b",
+    "citation verification": r"\bcitation verification\b|\bevidence[- ]ground(ed|ing)\b.*\bresearch\b",
+    "AI scientist": r"\bai scientists?\b|\bai scientific discovery\b|\bautomated scientific discovery\b|\bscientific discovery (llm|language model) agents?\b",
+    "literature review agent": r"\bliterature[- ]review agents?\b|\bautomated literature review\b.*\b(llm|agent|agents)\b",
+    "research planning": r"\bmulti[- ]step research planning\b|\bresearch planning agents?\b|\bresearch task decomposition\b",
+    "multi-agent research workflow": r"\bmulti[- ]agent research (workflow|system)s?\b",
+    "hypothesis experiment agent": r"\bhypothesis generation agents?\b|\bexperiment design agents?\b",
+    "research reports with citations": r"\bresearch reports?\b.{0,80}\bcitations?\b|\bcitations?\b.{0,80}\bresearch reports?\b",
+    "research-agent memory": r"\bresearch[- ]agent memory\b|\biterative research state\b",
+}
+
+DEEP_RESEARCH_EXCLUDE_PATTERNS = {
+    "generic deep learning": r"\bgeneric deep learning\b|\bdeep learning\b.*\b(image classification|training method|optimization)\b",
+    "generic automl": r"\bautoml\b(?!.*\b(research workflow|research agent|scientific discovery|hypothesis|experiment design)\b)",
+    "market research": r"\bmarket research\b|\bbusiness research\b|\bcustomer surveys?\b",
+    "robotics/autonomous driving": r"\bautonomous driving\b|\brobotics\b|\bmobile robots?\b",
+    "general chatbot": r"\bchatbots?\b(?!.*\b(research|citation|evidence|literature review)\b)",
+    "generic rag": r"\brag\b(?!.*\b(research|citation|evidence|literature review|source[- ]grounded)\b)|\bretrieval augmented generation\b(?!.*\b(research|citation|evidence|literature review|source[- ]grounded)\b)",
+    "generic benchmark": r"\bbenchmark\b(?!.*\b(research agent|deep research|literature review|citation|scientific discovery)\b)",
+}
+
+DEEP_RESEARCH_REVIEW_PATTERNS = {
+    "general LLM agent research workflow": r"\bllm agents?\b.*\bresearch\b|\bresearch\b.*\bllm agents?\b",
+    "research-adjacent rag": r"\b(rag|retrieval augmented generation)\b.*\b(citation|evidence|literature review|research)\b",
+    "scientific automl": r"\bautoml\b.*\b(scientific discovery|experiment design|hypothesis|research workflow)\b",
+    "web browsing agent": r"\bweb[- ]browsing agents?\b.*\bresearch\b|\bresearch\b.*\bweb[- ]browsing agents?\b",
+}
+
+NEGATED_DEEP_RESEARCH_PATTERNS = [
+    r"\bwithout (an? )?(autonomous |agentic |source[- ]grounded )?research workflows?\b",
+    r"\bwithout (citation verification|evidence[- ]grounding|source[- ]grounded research)\b",
+    r"\bnot about research agents?\b",
+    r"\bunrelated to research workflows?\b",
+    r"\bnot (a |about )?(deep research|autonomous research|research[- ]agent) systems?\b",
+]
+
+
+def classify_with_rules(candidate: PaperCandidate, profile: str = "agent_memory") -> ClassificationResult:
+    if profile == "deep_research":
+        return _classify_deep_research_with_rules(candidate)
     evidence = explain_rule_matches(candidate)
     text = evidence["text"]
     exclude_hits = evidence["exclude_hits"]
@@ -256,8 +354,114 @@ def classify_with_rules(candidate: PaperCandidate) -> ClassificationResult:
     )
 
 
-def explain_rule_matches(candidate: PaperCandidate) -> dict[str, object]:
+def _classify_deep_research_with_rules(candidate: PaperCandidate) -> ClassificationResult:
+    evidence = explain_rule_matches(candidate, profile="deep_research")
+    include_tags = list(evidence["include_tags"])
+    high_confidence_hits = list(evidence["high_confidence_hits"])
+    exclude_hits = list(evidence["exclude_hits"])
+    review_hits = list(evidence["review_hits"])
+    negated_research_focus = bool(evidence["negated_research_focus_hits"])
+    text = evidence["text"]
+    summary = _summary(candidate.abstract)
+
+    if negated_research_focus:
+        return ClassificationResult(
+            score=10,
+            decision="irrelevant",
+            reason="Excluded: explicitly lacks autonomous research-agent or citation-grounded workflow focus.",
+            tags=[],
+            abstract_summary=summary,
+        )
+
+    if exclude_hits and not high_confidence_hits:
+        if review_hits or include_tags:
+            return ClassificationResult(
+                score=45,
+                decision="maybe",
+                reason="Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.",
+                tags=include_tags or ["research-adjacent"],
+                abstract_summary=summary,
+            )
+        return ClassificationResult(
+            score=10,
+            decision="irrelevant",
+            reason="Excluded: not clearly about autonomous research agents or source-grounded research workflows.",
+            tags=["excluded-research-sense"],
+            abstract_summary=summary,
+        )
+
+    if high_confidence_hits:
+        score = min(100, 86 + len(high_confidence_hits) * 3 + len(include_tags) * 2)
+        return ClassificationResult(
+            score=score,
+            decision="relevant",
+            reason=_deep_research_reason(high_confidence_hits, include_tags),
+            tags=include_tags,
+            abstract_summary=summary,
+        )
+
+    if include_tags:
+        score = min(78, 42 + len(include_tags) * 9 + len(review_hits) * 4)
+        decision = "relevant" if score >= 70 and len(include_tags) >= 3 else "maybe"
+        reason = (
+            "Studies autonomous or source-grounded research-agent workflows."
+            if decision == "relevant"
+            else "Review candidate: may support deep research workflows but needs human judgment."
+        )
+        return ClassificationResult(score=score, decision=decision, reason=reason, tags=include_tags, abstract_summary=summary)
+
+    if review_hits:
+        return ClassificationResult(
+            score=45,
+            decision="maybe",
+            reason="Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.",
+            tags=["research-adjacent"],
+            abstract_summary=summary,
+        )
+
+    if _matches([r"\bresearch\b", r"\bscientific\b", r"\bliterature review\b"], text):
+        return ClassificationResult(
+            score=25,
+            decision="irrelevant",
+            reason="Peripheral candidate: mentions research, but not autonomous research agents or citation-grounded workflows.",
+            tags=[],
+            abstract_summary=summary,
+        )
+
+    return ClassificationResult(
+        score=10,
+        decision="irrelevant",
+        reason="Does not clearly address autonomous research agents or AI-assisted scientific discovery workflows.",
+        tags=[],
+        abstract_summary=summary,
+    )
+
+
+def explain_rule_matches(candidate: PaperCandidate, profile: str = "agent_memory") -> dict[str, object]:
     text = _paper_text(candidate)
+    if profile == "deep_research":
+        include_tags = [
+            tag
+            for tag, patterns in DEEP_RESEARCH_INCLUDE_PATTERNS.items()
+            if _matches(patterns, text)
+        ]
+        high_confidence_hits = _matches_labeled(HIGH_CONFIDENCE_DEEP_RESEARCH_PATTERNS, text)
+        if high_confidence_hits:
+            for tag in ["deep-research-agents"]:
+                if tag not in include_tags:
+                    include_tags.append(tag)
+        return {
+            "text": text,
+            "include_tags": include_tags,
+            "exclude_hits": _matches_labeled(DEEP_RESEARCH_EXCLUDE_PATTERNS, text),
+            "biological_memory_hits": [],
+            "agent_context_hits": [],
+            "high_confidence_hits": high_confidence_hits,
+            "broad_peripheral_hits": [],
+            "negated_memory_focus_hits": [],
+            "negated_research_focus_hits": _matches(NEGATED_DEEP_RESEARCH_PATTERNS, text),
+            "review_hits": _matches_labeled(DEEP_RESEARCH_REVIEW_PATTERNS, text),
+        }
     include_tags = [
         tag
         for tag, patterns in INCLUDE_PATTERNS.items()
@@ -282,6 +486,8 @@ def explain_rule_matches(candidate: PaperCandidate) -> dict[str, object]:
         "high_confidence_hits": high_confidence_hits,
         "broad_peripheral_hits": _matches_labeled(BROAD_PERIPHERAL_PATTERNS, text),
         "negated_memory_focus_hits": negated_memory_focus_hits,
+        "negated_research_focus_hits": [],
+        "review_hits": [],
     }
 
 
@@ -331,6 +537,20 @@ def _focused_reason(tags: list[str]) -> str:
     if "memory-systems" in tags:
         return "Studies memory systems or memory modules for LLM agents."
     return "Studies agent memory with explicit LLM or agent context."
+
+
+def _deep_research_reason(matches: list[str], tags: list[str]) -> str:
+    if any("citation" in match or "source-grounded" in match or "reports" in match for match in matches):
+        return "Studies source-grounded research workflows, citation verification, or evidence-backed research reports."
+    if any("AI scientist" in match or "scientific discovery" in match for match in matches):
+        return "Studies AI-scientist or scientific-discovery agents."
+    if any("literature" in match for match in matches) or "literature-review" in tags:
+        return "Studies automated literature-review systems or literature-review agents."
+    if any("planning" in match or "multi-agent" in match or "hypothesis" in match for match in matches):
+        return "Studies multi-step planning, multi-agent workflows, or hypothesis and experiment-design agents for research."
+    if "research-memory" in tags:
+        return "Studies research-agent memory or iterative research state."
+    return "Studies autonomous or deep research agents."
 
 
 def _summary(abstract: str, max_chars: int = 320) -> str:

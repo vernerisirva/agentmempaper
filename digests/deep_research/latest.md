@@ -1,0 +1,583 @@
+# Latest Paper Scout Digest
+
+Latest daily digest: [2026-06-29](2026-06-29.md).
+
+# Paper Scout Digest - 2026-06-29
+
+## Run Summary
+
+- **Run ID:** 1
+- **Candidates fetched:** 634
+- **New unique papers:** 408
+- **Relevant:** 51
+- **Maybe relevant:** 44
+- **Irrelevant:** 539
+- **Source summary:** arxiv: 9, openalex: 624, semantic_scholar: 1
+
+## Source Warnings
+
+- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'deep research agents': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'autonomous research agents': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'automated research agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'AI scientific discovery': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'automated scientific discovery': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'literature review agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'source-grounded research agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'citation verification agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'research planning agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'research workflow agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'multi-agent research workflow': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'OpenResearch agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'web browsing research agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'hypothesis generation agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'research assistant agent': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'LLM research assistant': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar failed for 'LLM literature review': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+
+## Highly Relevant
+
+### [Socratic agents for autonomous scientific discovery in high-dimensional physical systems](https://arxiv.org/abs/2606.26722v1)
+
+- **Authors:** Xianrui Zeng, Pengfei Liu, Yirui Zang, Yang Shen, Fei Yu, Chunlei Yu, et al.
+- **Date:** 2026-06-25
+- **Source:** arxiv
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, citation-grounding, deep-research-agents
+- **Abstract summary:** The automation of scientific discovery has reached an inflection point. While AI systems now operate instruments, optimize parameters and generate hypotheses, most remain procedural: they execute workflows fixed by human designers. True autonomous science demands epistemic autonomy--the capacity to construct, challe...
+
+### [Socratic agents for autonomous scientific discovery in high-dimensional physical systems](https://doi.org/10.48550/arxiv.2606.26722)
+
+- **Authors:** Xianrui Zeng, Pengfei Liu, Yirui Zang, Yang Shen, Fei Yu, C Shijia Yu, et al.
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, citation-grounding, deep-research-agents
+- **Abstract summary:** The automation of scientific discovery has reached an inflection point. While AI systems now operate instruments, optimize parameters and generate hypotheses, most remain procedural: they execute workflows fixed by human designers. True autonomous science demands epistemic autonomy--the capacity to construct, challe...
+
+### [Socratic agents for autonomous scientific discovery in high-dimensional physical systems](https://arxiv.org/abs/2606.26722)
+
+- **Authors:** Xianrui Zeng, Pengfei Liu, Yirui Zang, Yang Shen, Fei Yu, Chunlei Yu, et al.
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, citation-grounding, deep-research-agents
+- **Abstract summary:** The automation of scientific discovery has reached an inflection point. While AI systems now operate instruments, optimize parameters and generate hypotheses, most remain procedural: they execute workflows fixed by human designers. True autonomous science demands epistemic autonomy--the capacity to construct, challe...
+
+### [Towards Reliable AI Scientists](https://doi.org/10.6082/gep96-ycs43)
+
+- **Authors:** H T Liu
+- **Date:** 2026-08-01
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Scientific discovery often follows a loop. Scientists form hypotheses and ideas, decide which are worth pursuing, and then test them. The challenging part to scale is the decision step, because "good" can mean many things, including explanatory value, novelty, feasibility, and potential impact. My early work, Litera...
+
+### [Towards Reliable AI Scientists](https://doi.org/10.6082/324p4-ymb14)
+
+- **Authors:** H T Liu
+- **Date:** 2026-08-01
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Scientific discovery often follows a loop. Scientists form hypotheses and ideas, decide which are worth pursuing, and then test them. The challenging part to scale is the decision step, because "good" can mean many things, including explanatory value, novelty, feasibility, and potential impact. My early work, Litera...
+
+### [GVIM 2.0: A Multi-Agent Research System for Chemistry and Materials Science](https://doi.org/10.26434/chemrxiv.15005228/v1)
+
+- **Authors:** Kangyong Ma
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies multi-step planning, multi-agent workflows, or hypothesis and experiment-design agents for research.
+- **Tags:** multi-agent-research, deep-research-agents
+- **Abstract summary:** Large language models are increasingly used as natural-language interfaces for chemistry and materials research, but their utility in scientific workflows depends on their ability to connect user requests with executable tools, structured data handling, and verifiable outputs. Here, we present GVIM 2.0, a multi-agen...
+
+### [Juicing Is All You Need: Why AI Scientists Are Irreplaceable as the Supreme Fruit Processors of Humanity](https://doi.org/10.5281/zenodo.20840963)
+
+- **Authors:** P S Chen
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Juicing Is All You Need: Why AI Scientists Are Irreplaceable as the Supreme Fruit Processors of Humanity Po-Chen Chen THE AMNIS, a Luxury Collection Hotel, Kaohsiung, Taiwan Email:amnischenadrian@gmail.com ——————————————————————————————————————— Abstract This paper proposes a radical transdisciplinary re-evaluation...
+
+### [Juicing Is All You Need: Why AI Scientists Are Irreplaceable as the Supreme Fruit Processors of Humanity](https://zenodo.org/communities/narrquest)
+
+- **Authors:** P S Chen
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Juicing Is All You Need: Why AI Scientists Are Irreplaceable as the Supreme Fruit Processors of Humanity Po-Chen Chen THE AMNIS, a Luxury Collection Hotel, Kaohsiung, Taiwan Email:amnischenadrian@gmail.com ——————————————————————————————————————— Abstract This paper proposes a radical transdisciplinary re-evaluation...
+
+### [Agentic evolution of physically constrained foundation models](https://arxiv.org/abs/2606.25532v1)
+
+- **Authors:** Jiangwei Zhang, Wen Sun, Chong Wang, Shiyao Li, Cheng Che, Chunjing Han, et al.
+- **Date:** 2026-06-24
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence increasingly drives automated scientific discovery, yet contemporary generalist agents lack physical grounding, frequently hallucinating hardware-incompatible designs. Here, we present a physically grounded, multi-agent discovery engine that autonomously architects hardware-compliant computin...
+
+### [Agentic evolution of physically constrained foundation models](https://arxiv.org/abs/2606.25532)
+
+- **Authors:** Jiangwei Zhang, Wen Sun, Chong Wang, Shiyao Li, Cheng Che, Chunjing Han, et al.
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence increasingly drives automated scientific discovery, yet contemporary generalist agents lack physical grounding, frequently hallucinating hardware-incompatible designs. Here, we present a physically grounded, multi-agent discovery engine that autonomously architects hardware-compliant computin...
+
+### [Agentic evolution of physically constrained foundation models](https://doi.org/10.48550/arxiv.2606.25532)
+
+- **Authors:** Jiangwei Zhang, Wen Sun, Chong Wang, Shiyao Li, Cheng Che, Chunjing Han, et al.
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence increasingly drives automated scientific discovery, yet contemporary generalist agents lack physical grounding, frequently hallucinating hardware-incompatible designs. Here, we present a physically grounded, multi-agent discovery engine that autonomously architects hardware-compliant computin...
+
+### [LLM-Driven Evolutionary Program Search: From FunSearch to Automated Scientific Discovery](https://doi.org/10.54254/2755-2721/2026.34758)
+
+- **Authors:** Jiale Mao
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Large language models (LLMs) suffer from logical illusions, while evolutionary algorithms (EAs) face search blindness in program generation. The LLM + EA paradigm addresses these issues.This paper systematically discusses its core technologies: program search space representation, memory-based semantic mutation, hie...
+
+### [Position: Correct Answer, Wrong Mechanism -- When AI Scientists Defend General Claims Their Own Data Contradicts](https://arxiv.org/abs/2606.23175v1)
+
+- **Authors:** Steven Young Eulig
+- **Date:** 2026-06-22
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI scientist systems are described as tools, coauthors, or founders, but we evaluate them as if only the final answer matters. This position paper argues that outcome-only evaluation is insufficient, and that task outcome, mechanism fidelity, and epistemic honesty must be measured separately. Our evidence comes from...
+
+### [AI Scientists as Engines of Discovery: A Case for Development within Reformed Institutions](https://arxiv.org/abs/2606.22859v1)
+
+- **Authors:** Raul Jimenez, Boris Bolliet, Francisco Villaescusa-Navarro, Rabih Zbib, Benjamin Wandelt, David N. Spergel, et al.
+- **Date:** 2026-06-22
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Agentic artificial intelligence (AI) systems are beginning to assist, accelerate, and partially automate scientific discovery, performing tasks that span literature synthesis, code generation, data analysis, hypothesis proposal, and model criticism. We argue that this transition is qualitative rather than incrementa...
+
+### [AI Scientists as Engines of Discovery: A Case for Development within Reformed Institutions](https://arxiv.org/abs/2606.22859)
+
+- **Authors:** Raúl Jiménez, Boris Bolliet, Francisco Villaescusa-Navarro, Rabih Zbib, Benjamin Wandelt, David N. Spergel, et al.
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Agentic artificial intelligence (AI) systems are beginning to assist, accelerate, and partially automate scientific discovery, performing tasks that span literature synthesis, code generation, data analysis, hypothesis proposal, and model criticism. We argue that this transition is qualitative rather than incrementa...
+
+### [AI Scientists as Engines of Discovery: A Case for Development within Reformed Institutions](https://doi.org/10.48550/arxiv.2606.22859)
+
+- **Authors:** Raúl Jiménez, Boris Bolliet, Francisco Villaescusa-Navarro, Rabih Zbib, Benjamin Wandelt, David N. Spergel, et al.
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Agentic artificial intelligence (AI) systems are beginning to assist, accelerate, and partially automate scientific discovery, performing tasks that span literature synthesis, code generation, data analysis, hypothesis proposal, and model criticism. We argue that this transition is qualitative rather than incrementa...
+
+### [Position: Correct Answer, Wrong Mechanism -- When AI Scientists Defend General Claims Their Own Data Contradicts](https://arxiv.org/abs/2606.23175)
+
+- **Authors:** Steven Young Eulig
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI scientist systems are described as tools, coauthors, or founders, but we evaluate them as if only the final answer matters. This position paper argues that outcome-only evaluation is insufficient, and that task outcome, mechanism fidelity, and epistemic honesty must be measured separately. Our evidence comes from...
+
+### [Position: Correct Answer, Wrong Mechanism -- When AI Scientists Defend General Claims Their Own Data Contradicts](https://doi.org/10.48550/arxiv.2606.23175)
+
+- **Authors:** Steven Young Eulig
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI scientist systems are described as tools, coauthors, or founders, but we evaluate them as if only the final answer matters. This position paper argues that outcome-only evaluation is insufficient, and that task outcome, mechanism fidelity, and epistemic honesty must be measured separately. Our evidence comes from...
+
+### [Young AI Scientists in the New AI Age: Increasingly Early and Growing Dominance of Career Novelty in their Research Trajectories](https://doi.org/10.1007/978-981-95-9877-9_8)
+
+- **Authors:** Hui Zou, Jingjing Qu, Pinlong Cai, Xiaoming Fu
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** No abstract available.
+
+### [Agentic Artificial Intelligence for Hospital Readmission Review: A Single-Center Blinded Evaluation and Exploratory Qualitative Analysis](https://doi.org/10.64898/2026.06.17.26355917)
+
+- **Authors:** Michael F. Gensheimer, Rishav Adhikari, Caitlin Parmer, Nancy Liu, Stephen Ma, Lisa Shieh
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
+- **Tags:** citation-grounding, deep-research-agents
+- **Abstract summary:** Abstract Background Manual review of 30-day hospital readmissions can identify actionable quality and safety problems, but it is labor-intensive. We developed and evaluated an agentic AI workflow for evidence-grounded readmission review. Materials and methods We studied adult patients with unplanned 30-day readmissi...
+
+### [Agent-Fence: Mapping Security Vulnerabilities Across Deep Research Agents](https://doi.org/10.1609/aaaiss.v9i1.42945)
+
+- **Authors:** Sai Puppala, Ismail Hossain, Md Jahangir Alam, Yoonpyo Lee, Jay Yoo, Tanzim Ahad, et al.
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Large language models are becoming deep agents that plan, persist state, and invoke tools, shifting safety failures from unsafe text to unsafe trajectories. We introduce AgentFence, an architecture-centric security evaluation that defines 14 trust-boundary attack classes across planning, memory, retrieval, tool use,...
+
+### [Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints](https://arxiv.org/abs/2606.22783v1)
+
+- **Authors:** Juntao Wu, Wei Wen, Xianting Huang, Shuai Pang, Ruizhi Qiao, Xing Sun, et al.
+- **Date:** 2026-06-22
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Evaluating the exhaustive search capabilities of large language models (LLMs) is plagued by a fundamental paradox: verifying completeness requires complete ground truth, yet high-entropy enumeration tasks make such ground truth impossible for humans to create. This causes benchmarks to systematically penalize models...
+
+### [Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints](https://arxiv.org/abs/2606.22783)
+
+- **Authors:** Juntao Wu, Wei Wen, XJ Huang, Shuai Pang, Ruizhi Qiao, Xing Sun, et al.
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Evaluating the exhaustive search capabilities of large language models (LLMs) is plagued by a fundamental paradox: verifying completeness requires complete ground truth, yet high-entropy enumeration tasks make such ground truth impossible for humans to create. This causes benchmarks to systematically penalize models...
+
+### [Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints](https://doi.org/10.48550/arxiv.2606.22783)
+
+- **Authors:** Juntao Wu, Wei Wen, XJ Huang, Shuai Pang, Ruizhi Qiao, Xing Sun, et al.
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Evaluating the exhaustive search capabilities of large language models (LLMs) is plagued by a fundamental paradox: verifying completeness requires complete ground truth, yet high-entropy enumeration tasks make such ground truth impossible for humans to create. This causes benchmarks to systematically penalize models...
+
+## Maybe Relevant
+
+### [A template/ approach to Reproducible Generative Research](https://doi.org/10.5281/zenodo.20419007)
+
+- **Authors:** Daniel Ari Friedman
+- **Date:** 2026-06-27
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** The reproducibility crisis in computational research is fundamentally structural: research artifacts are scattered across disconnected tools—LaTeX editors, Jupyter notebooks, ad-hoc shell scripts—with no enforced mechanism to keep code, data, and manuscript synchronized. Studies have shown that most published findin...
+
+### [A template/ approach to Reproducible Generative Research](https://doi.org/10.5281/zenodo.20976048)
+
+- **Authors:** Daniel Ari Friedman
+- **Date:** 2026-06-27
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** The reproducibility crisis in computational research is fundamentally structural: research artifacts are scattered across disconnected tools—LaTeX editors, Jupyter notebooks, ad-hoc shell scripts—with no enforced mechanism to keep code, data, and manuscript synchronized. Studies have shown that most published findin...
+
+### [Reproducibility Scripts for "The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting"](https://doi.org/10.5281/zenodo.19556624)
+
+- **Authors:** Carlos Baquero
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** Reproducibility scripts and data for the paper "The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting" by Carlos Baquero and Daniel Tinoco. This package contains all evaluation scripts, Bitcoin price data, and on-chain activity signals needed to reproduce the paper's results, including: the mu...
+
+### [Reproducibility Scripts for "The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting"](https://doi.org/10.5281/zenodo.20933994)
+
+- **Authors:** Carlos Baquero
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** Reproducibility scripts and data for the paper "The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting" by Carlos Baquero and Daniel Tinoco. This package contains all evaluation scripts, Bitcoin price data, and on-chain activity signals needed to reproduce the paper's results, including: the mu...
+
+### [A template/ approach to Reproducible Generative Research](https://doi.org/10.5281/zenodo.20932076)
+
+- **Authors:** Daniel Ari Friedman
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** The reproducibility crisis in computational research is fundamentally structural: research artifacts are scattered across disconnected tools—LaTeX editors, Jupyter notebooks, ad-hoc shell scripts—with no enforced mechanism to keep code, data, and manuscript synchronized. Studies have shown that most published findin...
+
+### [Multi-Omics AI Agent Benchmarking Framework](https://doi.org/10.5281/zenodo.20841171)
+
+- **Authors:** N. V. Basov, Yosef Tirta, Zihan Li, Kiryl D. Piatkevich
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** A reproducible Python framework for comparing how different AI research agents interpret the same omics dataset across three modalities: transcriptomics, proteomics, and metabolomics. Each modality is a self-contained project with the same core pipeline and modality-specific domain scoring. The framework evaluates a...
+
+### [Multi-Omics AI Agent Benchmarking Framework](https://doi.org/10.5281/zenodo.20841170)
+
+- **Authors:** N. V. Basov, Yosef Tirta, Zihan Li, Kiryl D. Piatkevich
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** A reproducible Python framework for comparing how different AI research agents interpret the same omics dataset across three modalities: transcriptomics, proteomics, and metabolomics. Each modality is a self-contained project with the same core pipeline and modality-specific domain scoring. The framework evaluates a...
+
+### [augchan42/king-wen-agi-framework: v2.2.0: Corrected references, added figures, fixed attribution](https://github.com/augchan42/king-wen-agi-framework/tree/v2.2.0)
+
+- **Authors:** George Kour, Augustin Chan, T. E. Kalaycı, dan mackinlay, Danny Garside, Delip Rao, et al.
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** What's changed Corrected two fabricated reference author names flagged by a reader: arXiv:2511.18903 is Luo et al. (not "Agarwal"), arXiv:2506.11300 is Zhang et al. (not "Jia") — plus their paraphrased titles. Added two figures that were previously bundled but never referenced: sequence transition metrics, and cross...
+
+### [Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty](https://arxiv.org/abs/2606.25198)
+
+- **Authors:** Antonis Antoniades, Deepak Nathani, Ritam Saha, Alfonso Amayuelas, Ivan Bercovich, Zhaotian Weng, et al.
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous AI Research promises to accelerate the scientific progress of machine learning. To realise this goal, current Large Language Model (LLM)-based agents need to go beyond just writing code, to mastering the exploration of simultaneously performant, diverse and novel ideas. To this end, we introduce Heuresis,...
+
+### [Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty](https://doi.org/10.48550/arxiv.2606.25198)
+
+- **Authors:** Antonis Antoniades, Deepak Nathani, Ritam Saha, Alfonso Amayuelas, Ivan Bercovich, Zhaotian Weng, et al.
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous AI Research promises to accelerate the scientific progress of machine learning. To realise this goal, current Large Language Model (LLM)-based agents need to go beyond just writing code, to mastering the exploration of simultaneously performant, diverse and novel ideas. To this end, we introduce Heuresis,...
+
+### [Heuresis: Search Strategies for Autonomous AI Research Agents Across Quality, Diversity and Novelty](https://arxiv.org/abs/2606.25198v1)
+
+- **Authors:** Antonis Antoniades, Deepak Nathani, Ritam Saha, Alfonso Amayuelas, Ivan Bercovich, Zhaotian Weng, et al.
+- **Date:** 2026-06-23
+- **Source:** arxiv
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous AI Research promises to accelerate the scientific progress of machine learning. To realise this goal, current Large Language Model (LLM)-based agents need to go beyond just writing code, to mastering the exploration of simultaneously performant, diverse and novel ideas. To this end, we introduce Heuresis,...
+
+### [Before AutoResearch: Making the World Development Indicators Legible](https://doi.org/10.5281/zenodo.20791381)
+
+- **Authors:** Peter Bell
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** This working paper develops a WDI-focused case study in catalog governance before exploratory AI-assisted public data science. It uses a local World Bank World Development Indicators workflow to show why access, catalog legibility, and analytic readiness must be separated before values are treated as evidence. The p...
+
+### [The Missingness Atlas: What Public Data Catalogs Do Not Show](https://doi.org/10.5281/zenodo.20801176)
+
+- **Authors:** Peter Bell
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** This working paper develops a missingness atlas for a local World Bank World Development Indicators workflow. It treats missingness not merely as a cleanup problem, but as a pre-discovery governance surface for catalog-first AutoResearch. The motivating question is simple: why should a researcher care about missing...
+
+### [Data-Visible Macro Profiles](https://doi.org/10.5281/zenodo.20806324)
+
+- **Authors:** Peter Bell
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** This working paper uses a governed World Bank World Development Indicators profile panel to examine what country comparison looks like when the comparison is restricted to sufficiently observed indicators. The empirical surface is deliberately compact: eight countries, twelve indicators, and annual observations from...
+
+### [Before the Dataset: Catalog Legibility and AI-Assisted Public Data Science](https://doi.org/10.5281/zenodo.20789913)
+
+- **Authors:** Peter Bell
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** Public economic data are increasingly abundant, machine-readable, and accessible through APIs. That does not make them immediately usable for AI-assisted research. This working paper develops catalog legibility as a workflow-level condition for catalog-first AutoResearch: the ability to enumerate a public data unive...
+
+### [SEGMENTAÇÃO LINEAR HOMOGÊNEA DE PAVIMENTOS: COMPARAÇÃO ENTRE MÉTODOS CLÁSSICOS, CLUSTERING WARD 1D E PELT COM AUTORESEARCH](https://www.semanticscholar.org/paper/bb4010c89b8edcdd1aa638740c696fb744dbe103)
+
+- **Authors:** Rafael Roriz DE Menezes Pereira, Yago Dos Santos Barros Martins, Juliana Costa Normandes, E. S. Preussler, Victor Emmanuel dos Reis
+- **Date:** 2026
+- **Source:** semantic_scholar
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** A segmentação homogênea é etapa fundamental na Gestão de Pavimentos, permitindo dividir a rodovia em trechos com características uniformes para planejamento de intervenções. Este trabalho compara três abordagens para segmentação linear de rodovias: o método CDA (Diferença Acumulada), tradicionalmente aplicado em pav...
+
+### [Improving core facility service discovery with an AI assistant grounded in institutional web content](https://doi.org/10.7171/001c.162898)
+
+- **Authors:** Eviatar Weizman, Dan Ben-Avraham, Robert Fluhr
+- **Date:** 2026-06-27
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Core facilities source advanced technologies and expertise but can remain under-utilized because researchers, students and early-career scientists, struggle to identify relevant units or cannot articulate appropriate technical inquiries. To enhance access to users, we implemented a domain grounded conversational app...
+
+### [Deterministic, Model-Independent Grounding-Integrity Mechanisms for Retrieval-Augmented and Agentic Language-Model Systems.](https://doi.org/10.5281/zenodo.20951506)
+
+- **Authors:** Roberto Wenzel
+- **Date:** 2026-06-27
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Retrieval-augmented generation (RAG) and tool-using LLM agents routinely emit citations that purport to tie a claim to a retrieved source, but a well-known failure mode is the dangling or fabricated citation that resolves to nothing. Existing mitigations largely rely on the model policing itself or on probabilistic...
+
+### [Deterministic, Model-Independent Grounding-Integrity Mechanisms for Retrieval-Augmented and Agentic Language-Model Systems.](https://doi.org/10.5281/zenodo.20951505)
+
+- **Authors:** Roberto Wenzel
+- **Date:** 2026-06-27
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Retrieval-augmented generation (RAG) and tool-using LLM agents routinely emit citations that purport to tie a claim to a retrieved source, but a well-known failure mode is the dangling or fabricated citation that resolves to nothing. Existing mitigations largely rely on the model policing itself or on probabilistic...
+
+### [The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting](https://doi.org/10.5281/zenodo.19558173)
+
+- **Authors:** Carlos Baquero, Daniel Tinoco
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** web-research
+- **Abstract summary:** Bitcoin's price follows a well-documented power law over long time scales, yet this trend alone is a poor short-term predictor: at horizons of a few months, today's price outperforms any trend extrapolation. We construct a deliberately minimal baseline, the Naive–Power Law blend (NvPL), which interpolates smoothly f...
+
+### [The Naive–Power Law Blend as a Robust Baseline for Bitcoin Price Forecasting](https://doi.org/10.5281/zenodo.20937229)
+
+- **Authors:** Carlos Baquero, Daniel Tinoco
+- **Date:** 2026-06-26
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** web-research
+- **Abstract summary:** Bitcoin's price follows a well-documented power law over long time scales, yet this trend alone is a poor short-term predictor: at horizons of a few months, today's price outperforms any trend extrapolation. We construct a deliberately minimal baseline, the Naive–Power Law blend (NvPL), which interpolates smoothly f...
+
+### [Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents](https://arxiv.org/abs/2606.26627)
+
+- **Authors:** Nada Lahjouji, Ashwin Gerard Colaco
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** Large language model agents increasingly query databases, search document collections, call external APIs, remember past interactions, and act on a user's behalf. As they move from answering questions to operating over sensitive data, privacy becomes harder to enforce. An agent touches many data sources, runs multi-...
+
+### [Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents](https://doi.org/10.48550/arxiv.2606.26627)
+
+- **Authors:** Nada Lahjouji, Ashwin Gerard Colaco
+- **Date:** 2026-06-25
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** Large language model agents increasingly query databases, search document collections, call external APIs, remember past interactions, and act on a user's behalf. As they move from answering questions to operating over sensitive data, privacy becomes harder to enforce. An agent touches many data sources, runs multi-...
+
+### [Aligning LLM agents with human learning and adjustment behavior: A dual agent approach](https://doi.org/10.1016/j.trc.2026.105818)
+
+- **Authors:** Tianming Liu, Jirong Yang, Yafeng Yin, M. H. Li, Linghao Wang, Zheng Zhu
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Effective modeling of how human travelers learn and adjust their travel behavior from interacting with transportation systems is critical for system assessment and planning. However, this task is also difficult due to the complex cognition and decision-making involved in such behavior. Recent research has begun to l...
+
+### [Mapping Methodological Paradigms in LLM and Generative AI Applications to Macroeconomic Research (2023–2026): A Systematic Review with Hybrid Multi-LLM Workflow and Multiple Correspondence Analysis](https://doi.org/10.17605/osf.io/7dvcp)
+
+- **Authors:** Manuel Chau
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** This systematic literature review examines how Large Language Models (LLMs) and Generative AI have been applied to macroeconomic and financial research published between 2023 and 2026. Since the release of ChatGPT in late 2022, researchers have rapidly adopted LLMs for tasks such as macroeconomic forecasting and now...
+
+### [Divergence-Driven Navigation in Agent Identity: A Zero-Cost Semantic State Architecture](https://doi.org/10.5281/zenodo.20837420)
+
+- **Authors:** Djair Guilherme da Silva Junior
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Standard Retrieval-Augmented Generation (RAG) treats vector databases as passive dictionaries. This technical report introduces a structural identity layer for LLM agents where the retrieval space is dynamic and reshaped by execution feedback. Core Contributions: Divergence-Driven Navigation: When an agent tests a h...
+
+### [Divergence-Driven Navigation in Agent Identity: A Zero-Cost Semantic State Architecture](https://doi.org/10.5281/zenodo.20837421)
+
+- **Authors:** Djair Guilherme da Silva Junior
+- **Date:** 2026-06-24
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Standard Retrieval-Augmented Generation (RAG) treats vector databases as passive dictionaries. This technical report introduces a structural identity layer for LLM agents where the retrieval space is dynamic and reshaped by execution feedback. Core Contributions: Divergence-Driven Navigation: When an agent tests a h...
+
+### [Poisoned Playbooks: Demystifying Knowledge Poisoning Effects on AI Security Agents](https://arxiv.org/abs/2606.24402)
+
+- **Authors:** Juho Park, Hyunmin Choi, Kevin Nam
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** AI security agents increasingly rely on Retrieval-Augmented Generation (RAG) to use external security knowledge for vulnerability analysis and exploit reasoning. This creates a new risk: poisoned write-ups can be operationalized into incorrect exploit behavior. Yet, prior work on RAG poisoning has mostly studied ans...
+
+### [The Agentic AI Army That Never Was: Projecting LLM Swarm Narratives with ‘Noisy’ LLM Sock Puppets and Whaley’s Theory of Outs](https://doi.org/10.1609/aaaiss.v9i1.42944)
+
+- **Authors:** Tim Pappa, Christopher Williams
+- **Date:** 2026-06-23
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** This short position paper suggests there may be greater deception and influence of an attacker’s perceptions of a fictional ‘Agentic AI Army’ swarm of LLM sock puppet network defenders than deploying real LLM agent swarms. We model a counterintuitive industry approach integrating Whaley’s lesser-known Theory of Outs...
+
+### [Retrieval-Augmented Generation and Multi-Agent Arbitration for Construction Code Compliance in AEC](https://doi.org/10.22260/isarc2026/0233)
+
+- **Authors:** Hao Yin, Xichen Chen, Yang Zou, Liupengfei Wu
+- **Date:** 2026-06-22
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Construction code retrieval is a recurring bottleneck in AEC compliance workflows, where decisions require clauseaddressable evidence and cross-discipline reference completion under incomplete project attributes.We present a clause-centric retrieval-augmented generation (RAG) pipeline that treats retrieval as audita...

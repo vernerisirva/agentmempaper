@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "arxiv_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authors": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "canonical_id": {
+      "type": "string"
+    },
+    "doi": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "first_seen_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_seen_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "openalex_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "publication": {
+      "type": "object"
+    },
+    "related_topics": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "relevance": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "paper-scout-card-v1"
+    },
+    "semantic_scholar_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ids": {
+      "type": "object"
+    },
+    "sources": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ssrn_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "structured_card": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_or_evaluation": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        },
+        "key_contribution": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        },
+        "limitations_or_uncertainty": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        },
+        "method_or_system_type": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        },
+        "relation_to_agentic_memory": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        },
+        "research_relevance": {
+          "additionalProperties": false,
+          "properties": {
+            "confidence": {
+              "enum": [
+                "high",
+                "medium",
+                "low",
+                "unknown",
+                "not_extracted"
+              ]
+            },
+            "provenance": {
+              "enum": [
+                "curation",
+                "abstract",
+                "metadata",
+                "rule",
+                "not_extracted"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value",
+            "confidence",
+            "provenance"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "research_relevance",
+        "method_or_system_type",
+        "key_contribution",
+        "evidence_or_evaluation",
+        "relation_to_agentic_memory",
+        "limitations_or_uncertainty"
+      ],
+      "type": "object"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "canonical_id",
+    "title",
+    "authors",
+    "publication",
+    "relevance",
+    "structured_card",
+    "provenance"
+  ],
+  "title": "Paper Scout Structured Paper Card",
+  "type": "object"
+}

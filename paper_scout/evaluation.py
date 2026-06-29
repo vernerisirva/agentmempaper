@@ -16,7 +16,9 @@ class RelevanceExample:
     candidate: PaperCandidate
 
 
-def relevance_fixture_examples() -> list[RelevanceExample]:
+def relevance_fixture_examples(profile: str = "agent_memory") -> list[RelevanceExample]:
+    if profile == "deep_research":
+        return deep_research_fixture_examples()
     relevant = [
         ("long-term memory for LLM agents", "Long-Term Memory for LLM Agents", "Persistent long-term memory for language model agents with retrieval and update policies."),
         ("episodic memory in autonomous agents", "Episodic Memory in Autonomous Agents", "Autonomous LLM agents store episodic memory across multi-step tasks."),
@@ -62,14 +64,54 @@ def relevance_fixture_examples() -> list[RelevanceExample]:
     return examples
 
 
-def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool = False) -> dict[str, object]:
+def deep_research_fixture_examples() -> list[RelevanceExample]:
+    relevant = [
+        ("deep research agent", "Deep Research Agents for Source-Grounded Reports", "A deep research agent decomposes research tasks, browses sources, verifies citations, and writes source-grounded research reports."),
+        ("autonomous research agent", "Autonomous Research Agents", "Autonomous research agents plan multi-step scientific literature reviews and synthesize evidence."),
+        ("AI scientist", "AI Scientist for Automated Scientific Discovery", "An AI scientist agent proposes hypotheses, designs experiments, and evaluates scientific evidence."),
+        ("automated literature review", "Automated Literature Review Agents", "LLM literature review agents search papers, extract evidence, and maintain citation-grounded review state."),
+        ("citation verification agent", "Citation Verification Agents for Research Reports", "A citation verification agent checks source support and evidence grounding in generated research reports."),
+        ("multi-agent research workflow", "Multi-Agent Research Workflow System", "A multi-agent research workflow coordinates planning, source analysis, and report writing."),
+        ("hypothesis and experiment agent", "Hypothesis Generation and Experiment Design Agents", "Agents generate hypotheses and design experiments for AI-assisted scientific discovery."),
+        ("research-agent memory", "Iterative Research State for Deep Research Agents", "Research-agent memory preserves iterative research state across literature search sessions."),
+    ]
+    irrelevant = [
+        ("generic deep learning", "Deep Learning Optimization for Image Classification", "A generic deep learning optimization method for image classification."),
+        ("generic AutoML", "AutoML for Hyperparameter Search", "AutoML selects model hyperparameters without autonomous research workflows."),
+        ("market research", "Market Research Automation with Chatbots", "A chatbot automates customer survey analysis for business market research."),
+        ("autonomous driving", "Autonomous Driving Planning Benchmark", "Robotics and autonomous driving planning benchmark unrelated to research workflows."),
+        ("generic chatbot", "General Chatbot Alignment", "A general chatbot paper without research, citation, evidence, or literature-review workflow."),
+        ("generic RAG", "Generic RAG for Question Answering", "A generic RAG system retrieves documents without research workflow or citation verification."),
+        ("generic benchmark", "General LLM Benchmark Suite", "A generic benchmark paper not about research agents."),
+    ]
+    examples: list[RelevanceExample] = []
+    for name, title, abstract in relevant:
+        examples.append(
+            RelevanceExample(
+                name=name,
+                expected_relevant=True,
+                candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/deep-relevant", published_date="2026-01-01"),
+            )
+        )
+    for name, title, abstract in irrelevant:
+        examples.append(
+            RelevanceExample(
+                name=name,
+                expected_relevant=False,
+                candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/deep-irrelevant", published_date="2026-01-01"),
+            )
+        )
+    return examples
+
+
+def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool = False, profile: str = "agent_memory") -> dict[str, object]:
     rows: list[dict[str, object]] = []
     false_positives: list[str] = []
     false_negatives: list[str] = []
     true_positive = false_positive = true_negative = false_negative = 0
 
     for example in examples:
-        rule_result = classify_with_rules(example.candidate)
+        rule_result = classify_with_rules(example.candidate, profile=profile)
         result = (
             classify_with_optional_llm(example.candidate, rule_result)
             if use_llm and should_consider_for_llm(rule_result)
@@ -111,6 +153,7 @@ def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool 
         "false_negatives": false_negatives,
         "rows": rows,
         "used_llm": use_llm,
+        "profile": profile,
     }
 
 
@@ -131,6 +174,7 @@ def render_relevance_report(report: dict[str, object], report_date: str) -> str:
         f"- **False positives:** {len(report['false_positives'])}",
         f"- **False negatives:** {len(report['false_negatives'])}",
         f"- **LLM classifier used:** {report['used_llm']}",
+        f"- **Profile:** {report.get('profile', 'agent_memory')}",
         "",
         "## False Positives",
         "",

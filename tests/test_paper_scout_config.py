@@ -58,6 +58,26 @@ exclusions:
             self.assertIn("Deep research agents are relevant", config.research_context[0])
             self.assertIn("GPU memory", config.exclusions)
 
+    def test_loads_deep_research_track_config(self):
+        config = load_config(track_id="deep_research")
+
+        self.assertEqual(config.track_id, "deep_research")
+        self.assertEqual(config.title, "Deep Research Paper Library")
+        self.assertEqual(config.docs_dir, Path("docs/deep-research"))
+        self.assertEqual(config.sqlite_path, Path("data/deep_research/paper_scout.sqlite3"))
+        self.assertEqual(config.report_dir, Path("reports/paper_scout/deep_research"))
+        self.assertEqual(config.curation_path, Path("config/curation/deep_research.yaml"))
+        self.assertEqual(config.relevance_profile, "deep_research")
+        for term in [
+            "deep research agent",
+            "autonomous research agent",
+            "AI scientist",
+            "automated literature review",
+            "citation verification agent",
+            "scientific discovery LLM agent",
+        ]:
+            self.assertIn(term, config.terms)
+
 
 if __name__ == "__main__":
     unittest.main()

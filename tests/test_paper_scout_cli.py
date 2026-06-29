@@ -70,7 +70,28 @@ class PaperScoutCliTest(unittest.TestCase):
 
             self.assertEqual(exit_code, 0)
             self.assertIn("Built Paper Scout dashboard", output.getvalue())
-            self.assertEqual(build_site.call_args.kwargs["docs_dir"], str(docs_dir))
+            self.assertEqual(build_site.call_args.kwargs["docs_dir"], docs_dir)
+
+    def test_build_site_uses_track_specific_defaults(self):
+        with patch("paper_scout.cli.build_site") as build_site:
+            build_site.return_value = SiteBuildResult(
+                built=True,
+                message="Built deep research dashboard",
+                latest_date="2026-06-26",
+                output_dir=Path("docs/deep-research"),
+            )
+
+            output = io.StringIO()
+            with redirect_stdout(output):
+                exit_code = main(["build-site", "--track", "deep_research"])
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Built deep research dashboard", output.getvalue())
+        self.assertEqual(build_site.call_args.kwargs["docs_dir"], Path("docs/deep-research"))
+        self.assertEqual(build_site.call_args.kwargs["digest_dir"], Path("digests/deep_research"))
+        self.assertEqual(build_site.call_args.kwargs["report_dir"], Path("reports/paper_scout/deep_research"))
+        self.assertEqual(build_site.call_args.kwargs["state_path"], Path("data/deep_research/paper_scout.sqlite3"))
+        self.assertEqual(build_site.call_args.kwargs["relevance_profile"], "deep_research")
 
     def test_explain_paper_reports_rule_matches_for_arxiv_id(self):
         with tempfile.TemporaryDirectory() as tmpdir:

@@ -335,6 +335,48 @@ class PaperScoutRelevanceTest(unittest.TestCase):
         self.assertGreaterEqual(report["precision"], 0.95)
         self.assertGreaterEqual(report["recall"], 0.95)
 
+    def test_deep_research_profile_surfaces_autonomous_research_agents(self):
+        result = classify_with_rules(
+            PaperCandidate(
+                title="Autonomous Research Agents for Source-Grounded Scientific Discovery",
+                authors=["Researcher"],
+                abstract="A deep research agent plans multi-step literature reviews, verifies citations, and generates source-grounded research reports.",
+                source="fixture",
+                source_id="deep-research-core",
+            ),
+            profile="deep_research",
+        )
+
+        self.assertEqual(result.decision, "relevant")
+        self.assertGreaterEqual(result.score, 85)
+        self.assertIn("deep-research-agents", result.tags)
+        self.assertIn("citation-grounding", result.tags)
+
+    def test_deep_research_profile_downgrades_generic_deep_learning_and_market_research(self):
+        generic_deep_learning = classify_with_rules(
+            PaperCandidate(
+                title="Deep Learning Optimization for Image Classification",
+                authors=["Researcher"],
+                abstract="A generic deep learning training method unrelated to autonomous research workflows.",
+                source="fixture",
+                source_id="generic-dl",
+            ),
+            profile="deep_research",
+        )
+        market_research = classify_with_rules(
+            PaperCandidate(
+                title="Market Research Automation with Chatbots",
+                authors=["Researcher"],
+                abstract="Business market research automation using a chatbot for customer surveys.",
+                source="fixture",
+                source_id="market-research",
+            ),
+            profile="deep_research",
+        )
+
+        self.assertEqual(generic_deep_learning.decision, "irrelevant")
+        self.assertNotEqual(market_research.decision, "relevant")
+
 
 if __name__ == "__main__":
     unittest.main()

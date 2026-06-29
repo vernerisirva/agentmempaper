@@ -66,6 +66,17 @@ python3 -m paper_scout build-site
 
 Reports are written under `reports/paper_scout/`.
 
+Paper Scout also supports separate monitoring tracks. Commands without `--track` remain backward compatible and run the `agent_memory` track. The deep research track uses its own search terms, relevance rubric, curation file, SQLite state, reports, digests, and dashboard:
+
+```bash
+python3 -m paper_scout run --track deep_research
+python3 -m paper_scout build-site --track deep_research
+python3 -m paper_scout evaluate-relevance --track deep_research
+python3 -m paper_scout validate-idempotency --track deep_research
+```
+
+Track config lives in `config/tracks/`. The current agent-memory dashboard remains at `docs/index.html`; the deep research dashboard is generated under `docs/deep-research/index.html`.
+
 ## Live Smoke Reports
 
 `smoke-live` is a validation command, not a notification command. It initializes the SQLite schema, fetches live payloads, classifies normalized candidates, runs the idempotency validator in a temporary directory, and writes a human-readable Markdown report.
@@ -93,7 +104,9 @@ The command does not send email or webhook notifications and does not mark paper
 ## State Strategy
 
 - Default persistent state: `data/paper_scout.sqlite3`.
+- Deep research persistent state: `data/deep_research/paper_scout.sqlite3`.
 - Override state with `PAPER_SCOUT_STATE_PATH`.
+- Track-specific state can also be overridden with `PAPER_SCOUT_AGENT_MEMORY_STATE_PATH` or `PAPER_SCOUT_DEEP_RESEARCH_STATE_PATH`.
 - `data/.gitkeep` keeps the state directory present.
 - SQLite sidecar files are ignored: `*.sqlite3-journal`, `*.sqlite3-wal`, and `*.sqlite3-shm`.
 - `data/paper_scout.sqlite3` is explicitly not ignored because the daily GitHub Actions workflow may intentionally commit persistent state.
@@ -188,9 +201,16 @@ docs/style.css
 digests/latest.md
 ```
 
-The dashboard is static, readable without JavaScript, and includes recommended reading, a cumulative paper library, latest-run discoveries, compact source warnings, digest-quality warning counts, archive links, and light browser-side search/filter/sort controls. `docs/about.html` explains sources, deduplication, relevance scoring, and known limitations. The data exports support quick sharing through CSV, BibTeX, and JSON.
+`python3 -m paper_scout build-site --track deep_research` generates the same static dashboard shape under:
 
-Manual dashboard curation is optional and lives in `config/curation.yaml`. It can pin papers into recommended reading, hide false positives from the static dashboard without deleting SQLite state, add manual research notes, override dashboard relevance scores/tags, and show review statuses such as `unread`, `skimmed`, `read`, `important`, or `thesis_candidate`.
+```text
+docs/deep-research/
+digests/deep_research/latest.md
+```
+
+The dashboard is static, readable without JavaScript, and includes a cumulative paper library, latest-run discoveries, compact source warnings, archive links, structured research-card pages, JSON sidecars, and light browser-side search/filter/sort controls. `docs/about.html` and `docs/deep-research/about.html` explain sources, deduplication, relevance screening, and known limitations. The data exports support quick sharing through CSV, BibTeX, and JSON.
+
+Manual dashboard curation is optional. The agent-memory track uses `config/curation.yaml`; the deep research track uses `config/curation/deep_research.yaml`. Curation can pin papers, hide false positives from the static dashboard without deleting SQLite state, add manual research notes, override dashboard relevance scores/tags, and show review statuses such as `unread`, `skimmed`, `read`, `important`, or `thesis_candidate`.
 
 GitHub Pages setup is intentionally simple: in repository settings, open **Pages**, then set **Build and deployment → Source** to **GitHub Actions**. This is preferred over branch-based `main` / `/docs` deployment because daily `docs/` updates are committed by GitHub Actions, and those commits may not reliably trigger a separate branch-based Pages rebuild.
 
@@ -203,16 +223,21 @@ The workflow in `.github/workflows/paper-scout.yml` runs daily and on manual dis
 It first validates:
 
 ```bash
-python -m paper_scout evaluate-relevance
-python -m paper_scout validate-idempotency
-python -m paper_scout smoke-live --days 14 --max-results-per-source 25 --no-notify --ci
+python -m paper_scout evaluate-relevance --track agent_memory
+python -m paper_scout evaluate-relevance --track deep_research
+python -m paper_scout validate-idempotency --track agent_memory
+python -m paper_scout validate-idempotency --track deep_research
+python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci
+python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci
 ```
 
-Then it runs the daily scout:
+Then it runs both daily tracks:
 
 ```bash
-python -m paper_scout run
-python -m paper_scout build-site
+python -m paper_scout run --track agent_memory
+python -m paper_scout build-site --track agent_memory
+python -m paper_scout run --track deep_research
+python -m paper_scout build-site --track deep_research
 ```
 
 The live smoke step uses GitHub-hosted Python TLS defaults and a temporary SQLite state path. One failed source is reported but should not fail the workflow; the workflow should fail only if the Paper Scout code crashes unexpectedly. Markdown, JSON, and command logs are uploaded as artifacts, and the live smoke summary is included in the GitHub Actions step summary.

@@ -1,0 +1,63 @@
+track:
+  id: "deep_research"
+  title: "Deep Research Paper Library"
+  subtitle: "A daily updated library of papers on autonomous research agents, deep research systems, and AI-assisted scientific discovery."
+  relevance_profile: "deep_research"
+  cross_track_label: "Agentic Memory Library"
+  cross_track_href: "../index.html"
+
+search:
+  days: 7
+  max_results_per_source: 25
+  terms:
+    - "deep research agent"
+    - "deep research agents"
+    - "autonomous research agent"
+    - "autonomous research agents"
+    - "automated research agent"
+    - "AI research agent"
+    - "AI scientist"
+    - "AI scientific discovery"
+    - "automated scientific discovery"
+    - "literature review agent"
+    - "automated literature review"
+    - "source-grounded research agent"
+    - "citation verification agent"
+    - "research planning agent"
+    - "research workflow agent"
+    - "multi-agent research system"
+    - "multi-agent research workflow"
+    - "AutoResearch"
+    - "OpenResearch agent"
+    - "web browsing research agent"
+    - "hypothesis generation agent"
+    - "experiment design agent"
+    - "research assistant agent"
+    - "LLM research assistant"
+    - "LLM literature review"
+    - "scientific discovery LLM agent"
+
+state:
+  sqlite_path: "data/deep_research/paper_scout.sqlite3"
+
+output:
+  digest_dir: "digests/deep_research"
+  report_dir: "reports/paper_scout/deep_research"
+  docs_dir: "docs/deep-research"
+
+curation:
+  path: "config/curation/deep_research.yaml"
+
+research_context:
+  - "Deep research agents are relevant to this track."
+  - "The track monitors autonomous research agents, deep research systems, AI scientists, literature-review agents, citation verification, evidence grounding, and AI-assisted scientific discovery workflows."
+  - "Review candidates may include adjacent RAG, AutoML, or web-browsing agent work when it could support research workflows."
+
+exclusions:
+  - "generic deep learning unrelated to research agents"
+  - "generic AutoML without agentic research workflow"
+  - "market research or business research automation"
+  - "robotics or autonomous driving without research workflow"
+  - "general chatbot papers without research or citation workflow"
+  - "generic RAG without research workflow or citation verification"
+  - "generic benchmarks not about research agents"

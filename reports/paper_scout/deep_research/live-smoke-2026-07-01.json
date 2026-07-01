@@ -1,0 +1,86 @@
+{
+  "ci": true,
+  "date": "2026-07-01",
+  "idempotency_passed": true,
+  "irrelevant_count": 0,
+  "maybe_count": 0,
+  "relevant_count": 0,
+  "run_id": "live-smoke-2026-07-01",
+  "source_errors": [
+    {
+      "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+      "query": "deep research agent",
+      "source": "arxiv",
+      "type": "http"
+    },
+    {
+      "message": "http error for https://api.semanticscholar.org/graph/v1/paper/search?query=deep+research+agent&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds: request failed after 3 attempts: HTTP Error 500: Internal Server Error",
+      "query": "deep research agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    },
+    {
+      "message": "http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-17&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable",
+      "query": "deep research agent",
+      "source": "openalex",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+          "query": "deep research agent",
+          "source": "arxiv",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "arxiv",
+      "status": "failed"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-17&per-page=25: request failed after 3 attempts: HTTP Error 503: Service Unavailable",
+          "query": "deep research agent",
+          "source": "openalex",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "openalex",
+      "status": "failed"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "http error for https://api.semanticscholar.org/graph/v1/paper/search?query=deep+research+agent&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds: request failed after 3 attempts: HTTP Error 500: Internal Server Error",
+          "query": "deep research agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 3,
+  "sources_succeeded": 0,
+  "state_initialized": true,
+  "total_candidates": 0,
+  "total_raw_records": 0,
+  "unique_candidates": 0
+}

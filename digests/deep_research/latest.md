@@ -6,19 +6,17 @@ Latest daily digest: [2026-07-04](2026-07-04.md).
 
 ## Run Summary
 
-- **Run ID:** 9
-- **Candidates fetched:** 7
-- **New unique papers:** 6
+- **Run ID:** 10
+- **Candidates fetched:** 8
+- **New unique papers:** 7
 - **Relevant:** 3
 - **Maybe relevant:** 2
-- **Irrelevant:** 2
-- **Source summary:** semantic_scholar: 7
+- **Irrelevant:** 3
+- **Source summary:** arxiv: 0, semantic_scholar: 8
 
 ## Source Warnings
 
-- arxiv failed for 'deep research agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex failed for 'deep research agent': http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-27&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- arxiv failed for 'deep research agents': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agents%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex failed for 'deep research agents': http error for https://api.openalex.org/works?search=deep+research+agents&filter=from_publication_date%3A2026-06-27&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - arxiv failed for 'autonomous research agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22autonomous+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex failed for 'autonomous research agent': http error for https://api.openalex.org/works?search=autonomous+research+agent&filter=from_publication_date%3A2026-06-27&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
@@ -69,14 +67,4 @@ Latest daily digest: [2026-07-04](2026-07-04.md).
 - arxiv failed for 'scientific discovery LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22scientific+discovery+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex failed for 'scientific discovery LLM agent': http error for https://api.openalex.org/works?search=scientific+discovery+LLM+agent&filter=from_publication_date%3A2026-06-27&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 
-## Maybe Relevant
-
-### [ACSS-PSL at #SMM4H-HeaRD 2026: An LLM-Driven Autoresearch Loop for Opioid-Impact NER](https://www.semanticscholar.org/paper/7522887867a6b88399228e535e5bdd45dd2609e6)
-
-- **Authors:** O. Caron, Bruno Chaves Ferreira, Christophe Benavent
-- **Date:** 2026
-- **Source:** semantic_scholar
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** No abstract available.
+No new relevant or maybe-relevant papers found.

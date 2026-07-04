@@ -4,9 +4,9 @@
 - **Sources attempted:** 3
 - **Sources succeeded:** 1
 - **Sources failed:** 2
-- **Raw records:** 1004
-- **Candidates fetched:** 634
-- **Unique papers:** 413
+- **Raw records:** 1129
+- **Candidates fetched:** 638
+- **Unique papers:** 411
 - **State initialized:** True
 - **Idempotency passed:** True
 
@@ -15,10 +15,15 @@
 ### arxiv
 
 - Status: Failed
-- Queries attempted: 1
-- Raw records: 0
-- Converted candidates: 0
-- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- Queries attempted: 3
+- Raw records: 50
+- Converted candidates: 2
+- Sample title: Breaking the Evaluation Paradox: Evaluating High-Entropy Search with Computationally Irreducible Constraints
+- Sample source ID: 2606.22783
+- Sample URL: https://arxiv.org/abs/2606.22783v1
+- Sample published date: 2026-06-22
+- Abstract: yes
+- Error: HTTP/API error: http error for https://export.arxiv.org/api/query?search_query=all%3A%22autonomous+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 
 ### openalex
 
@@ -35,9 +40,9 @@
 ### semantic_scholar
 
 - Status: Failed
-- Queries attempted: 16
-- Raw records: 375
-- Converted candidates: 5
+- Queries attempted: 19
+- Raw records: 450
+- Converted candidates: 7
 - Sample title: Clarus: Coordinating Autonomous Research Agents toward Web-Scale Scientific Collaboration
 - Sample source ID: e665c4bbc454de8ffcf98bd92f6da212cf3780b1
 - Sample URL: https://www.semanticscholar.org/paper/e665c4bbc454de8ffcf98bd92f6da212cf3780b1
@@ -49,8 +54,8 @@
 ## Decisions
 
 - relevant: 47
-- maybe: 43
-- irrelevant: 323
+- maybe: 45
+- irrelevant: 319
 
 ## Top Relevant Or Maybe Papers
 
@@ -67,11 +72,12 @@
 
 ## Source Failures
 
-- arxiv (HTTP/API error) for `deep research agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- semantic_scholar (HTTP/API error) for `multi-agent research system`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- arxiv (HTTP/API error) for `autonomous research agent`: http error for https://export.arxiv.org/api/query?search_query=all%3A%22autonomous+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar (HTTP/API error) for `OpenResearch agent`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Deduplication Examples
 
+- arxiv:2606.22783: arxiv:2606.22783, arxiv:2606.22783
 - doi:10.1609/aaaiss.v9i1.42945: openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059, openalex:W7165677059
 - doi:10.14801/jkiit.2026.24.6.1: openalex:W7167079006, openalex:W7167079006
 - doi:10.5281/zenodo.20822051: openalex:W7165792392, openalex:W7165792392, openalex:W7165792392
@@ -87,11 +93,11 @@
 - doi:10.26434/chemrxiv.15005137/v1: openalex:W7165775338, openalex:W7165775338
 - doi:10.1145/3821637: openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855, openalex:W4387724855
 - doi:10.17869/enu.236998: openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597, openalex:W1641964597
-- doi:10.5281/zenodo.21140609: openalex:W7167092641, openalex:W7167092641
 - doi:10.5281/zenodo.21140610: openalex:W7167075364, openalex:W7167075364
+- doi:10.5281/zenodo.21140609: openalex:W7167092641, openalex:W7167092641
+- openalex:W7166900994: openalex:W7166900994, openalex:W7166900994, openalex:W7166900994
 - doi:10.1201/9781003667766-2: openalex:W7165651067, openalex:W7165651067
 - openalex:W7166399911: openalex:W7166399911, openalex:W7166399911
-- openalex:W7166900994: openalex:W7166900994, openalex:W7166900994, openalex:W7166900994
 - doi:10.3390/computers15070401: openalex:W7165680067, openalex:W7165680067
 - doi:10.1527/tjsai.41-4_c-p102: openalex:W7166873740, openalex:W7166873740
 - openalex:W7165818408: openalex:W7165818408, openalex:W7165818408, openalex:W7165818408, openalex:W7165818408, openalex:W7165818408
@@ -104,7 +110,7 @@
 - doi:10.5281/zenodo.20775222: openalex:W7165461832, openalex:W7165461832
 - doi:10.5281/zenodo.20775223: openalex:W7165458917, openalex:W7165458917
 - openalex:W7165817655: openalex:W7165817655, openalex:W7165817655, openalex:W7165817655, openalex:W7165817655, openalex:W7165817655, openalex:W7165817655
-- doi:10.48550/arxiv.2606.22610: openalex:W7165659369, openalex:W7165659369, openalex:W7165659369, openalex:W7165659369
+- doi:10.48550/arxiv.2606.22610: openalex:W7165659369, openalex:W7165659369, openalex:W7165659369
 - doi:10.17605/osf.io/ugkv5: openalex:W7167026573, openalex:W7167026573, openalex:W7167026573, openalex:W7167026573, openalex:W7167026573
 - openalex:W7166252298: openalex:W7166252298, openalex:W7166252298, openalex:W7166252298
 - doi:10.48550/arxiv.2606.25198: openalex:W7165885460, openalex:W7165885460, openalex:W7165885460
@@ -115,8 +121,8 @@
 - doi:10.5281/zenodo.20826453: openalex:W7165744339, openalex:W7165744339, openalex:W7165744339
 - doi:10.1080/23311975.2026.2692205: openalex:W7165951177, openalex:W7165951177
 - openalex:W7165816936: openalex:W7165816936, openalex:W7165816936
-- doi:10.1201/9781003743774-10: openalex:W7165521704, openalex:W7165521704
 - doi:10.48550/arxiv.2606.31478: openalex:W7166808931, openalex:W7166808931
+- doi:10.1201/9781003743774-10: openalex:W7165521704, openalex:W7165521704
 - openalex:W7167155031: openalex:W7167155031, openalex:W7167155031
 - doi:10.48550/arxiv.2606.22774: openalex:W7165619005, openalex:W7165619005
 - openalex:W7165973403: openalex:W7165973403, openalex:W7165973403
@@ -128,19 +134,20 @@
 - doi:10.5281/zenodo.21040068: openalex:W7166593969, openalex:W7166593969, openalex:W7166593969, openalex:W7166593969
 - openalex:W7166900081: openalex:W7166900081, openalex:W7166900081
 - doi:10.48550/arxiv.2606.30111: openalex:W7166698998, openalex:W7166698998
+- doi:10.1007/s10115-026-02806-1: openalex:W4406880911, openalex:W4406880911, openalex:W4406880911, openalex:W4406880911, openalex:W4406880911
 - doi:10.5281/zenodo.20792042: openalex:W7165544293, openalex:W7165544293, openalex:W7165544293
+- openalex:W7167154310: openalex:W7167154310, openalex:W7167154310, openalex:W7167154310, openalex:W7167154310, openalex:W7167154310, openalex:W7167154310, openalex:W7167154310
 - doi:10.5281/zenodo.20792041: openalex:W7165564166, openalex:W7165564166, openalex:W7165564166
-- openalex:W7167154310: openalex:W7167154310, openalex:W7167154310, openalex:W7167154310, openalex:W7167154310
-- openalex:W7166900713: openalex:W7166900713, openalex:W7166900713, openalex:W7166900713, openalex:W7166900713, openalex:W7166900713
+- openalex:W7166900713: openalex:W7166900713, openalex:W7166900713, openalex:W7166900713, openalex:W7166900713
 - openalex:W7166901100: openalex:W7166901100, openalex:W7166901100, openalex:W7166901100
-- doi:10.48550/arxiv.2606.31229: openalex:W7166805631, openalex:W7166805631, openalex:W7166805631, openalex:W7166805631
+- doi:10.48550/arxiv.2606.31229: openalex:W7166805631, openalex:W7166805631, openalex:W7166805631
 - doi:10.5281/zenodo.21117754: openalex:W7166881449, openalex:W7166881449, openalex:W7166881449
 - doi:10.1145/3805689.3806504: openalex:W4399695245, openalex:W4399695245, openalex:W4399695245
 - doi:10.1145/3805689.3812399: openalex:W7155637802, openalex:W7155637802
+- doi:10.1145/3805689.3812265: openalex:W4403364743, openalex:W4403364743
 - doi:10.5281/zenodo.21080396: openalex:W7166650293, openalex:W7166650293, openalex:W7166650293
 - doi:10.5281/zenodo.21080395: openalex:W7166665405, openalex:W7166665405, openalex:W7166665405
 - openalex:W7166399708: openalex:W7166399708, openalex:W7166399708
-- doi:10.5281/zenodo.20799847: openalex:W7165523892, openalex:W7165523892
 - doi:10.6082/324p4-ymb14: openalex:W7165772541, openalex:W7165772541
 - doi:10.6082/gep96-ycs43: openalex:W7165788481, openalex:W7165788481
 - openalex:W7165816672: openalex:W7165816672, openalex:W7165816672, openalex:W7165816672
@@ -163,8 +170,8 @@
 - doi:10.5281/zenodo.20777544: openalex:W7165444033, openalex:W7165444033
 - doi:10.5281/zenodo.20777543: openalex:W7165446266, openalex:W7165446266
 - doi:10.31234/osf.io/xnvak_v2: openalex:W7165453853, openalex:W7165453853
-- doi:10.5281/zenodo.20777488: openalex:W7165460456, openalex:W7165460456
 - doi:10.5281/zenodo.20777489: openalex:W7165446464, openalex:W7165446464
+- doi:10.5281/zenodo.20777488: openalex:W7165460456, openalex:W7165460456
 - doi:10.5281/zenodo.3406497: openalex:W4400118483, openalex:W4400118483, openalex:W4400118483
 - doi:10.5194/epsc2026-276: openalex:W7167024696, openalex:W7167024696, openalex:W7167024696
 - doi:10.26434/chemrxiv.15005228/v1: openalex:W7166062973, openalex:W7166062973, openalex:W7166062973, openalex:W7166062973
@@ -182,3 +189,4 @@
 - doi:10.22214/ijraset.2026.81730: openalex:W7165519270, openalex:W7165519270
 - doi:10.21981/ke2k-gd71: openalex:W7167019083, openalex:W7167019083
 - doi:10.21981/axzb-pv51: openalex:W7165867525, openalex:W7165867525
+- doi:10.1016/j.inffus.2026.104579: openalex:W4414875577, openalex:W4414875577

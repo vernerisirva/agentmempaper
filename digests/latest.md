@@ -1,81 +1,132 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-05](2026-07-05.md).
+Latest daily digest: [2026-07-06](2026-07-06.md).
 
-# Paper Scout Digest - 2026-07-05
+# Paper Scout Digest - 2026-07-06
 
 ## Run Summary
 
-- **Run ID:** 40
-- **Candidates fetched:** 875
-- **New unique papers:** 303
-- **Relevant:** 214
-- **Maybe relevant:** 184
-- **Irrelevant:** 477
-- **Source summary:** arxiv: 26, openalex: 833, semantic_scholar: 16
+- **Run ID:** 41
+- **Candidates fetched:** 729
+- **New unique papers:** 259
+- **Relevant:** 212
+- **Maybe relevant:** 163
+- **Irrelevant:** 354
+- **Source summary:** arxiv: 26, openalex: 687, semantic_scholar: 16
 
 ## Source Warnings
 
-- semantic_scholar failed for 'LLM agent memory': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'semantic memory LLM agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'procedural memory LLM agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'long-term memory LLM agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- arxiv failed for 'memory system for LLM agents': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+system+for+LLM+agents%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'memory module LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+module+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'persistent memory LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22persistent+memory+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'long-term memory LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22long-term+memory+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'memory retrieval LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+retrieval+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'memory consolidation LLM agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+consolidation+LLM+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'agent memory evaluation': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agent+memory+evaluation%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - semantic_scholar failed for 'agent memory evaluation': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'agent memory evaluation': http error for https://api.openalex.org/works?search=agent+memory+evaluation&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - arxiv failed for 'agent memory benchmark': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agent+memory+benchmark%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'deep research agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'deep research agent': http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - arxiv failed for 'deep research agents': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agents%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'deep research memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'deep research agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'deep research agent memory': http error for https://api.openalex.org/works?search=deep+research+agent+memory&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - arxiv failed for 'agentic memory deep research': http error for https://export.arxiv.org/api/query?search_query=all%3A%22agentic+memory+deep+research%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'agentic memory deep research': http error for https://api.openalex.org/works?search=agentic+memory+deep+research&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 - arxiv failed for 'autonomous research agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22autonomous+research+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'literature review agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22literature+review+agent+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'research agent long-term memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+agent+long-term+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'parametric memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22parametric+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'Engram LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'Engram memory LLM': http error for https://export.arxiv.org/api/query?search_query=all%3A%22Engram+memory+LLM%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- semantic_scholar failed for 'Megatron-LM Engram': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'Megatron-LM Engram': http error for https://api.openalex.org/works?search=Megatron-LM+Engram&filter=from_publication_date%3A2026-06-28&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'memory mechanism language model': http error for https://api.openalex.org/works?search=memory+mechanism+language+model&filter=from_publication_date%3A2026-06-28&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'literature review agent memory': http error for https://api.openalex.org/works?search=literature+review+agent+memory&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'research agent long-term memory': http error for https://api.openalex.org/works?search=research+agent+long-term+memory&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'multilingual Engram': http error for https://api.openalex.org/works?search=multilingual+Engram&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'Megatron-LM Engram': http error for https://api.openalex.org/works?search=Megatron-LM+Engram&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'memory mechanism language model': http error for https://api.openalex.org/works?search=memory+mechanism+language+model&filter=from_publication_date%3A2026-06-29&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 
 ## Highly Relevant
 
-### [A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory](https://arxiv.org/abs/2607.01935)
+### [MemoryBioRAG: A Reproducible Methodology for Vector-Free Biomimetic Agent Memory Using Conceptual Spaces and Synaptic Graphs on SQLite](https://doi.org/10.5281/zenodo.21204977)
 
-- **Authors:** Zitong Shi, Yixuan Tang, Anthony Kum Hoe Tung
+- **Authors:** Dennys José Márquez Reyes
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** relevant (100/100)
+- **Reason:** Evaluates memory mechanisms or benchmarks for LLM agents.
+- **Tags:** agent-memory, memory-policy, benchmark, memory-systems, llm-agents
+- **Abstract summary:** MemoryBioRAG v12.0 This project presents MemoryBioRAG, a reproducible methodology for building biomimetic memory systems for AI agents without vector embeddings. Key Principles 5-axis conceptual space: emotion, entity, action, quality, coordinate 39 semantic dimensions for dimensional tagging SQLite FTS5 with trigra...
+
+### [MemoryBioRAG: A Reproducible Methodology for Vector-Free Biomimetic Agent Memory Using Conceptual Spaces and Synaptic Graphs on SQLite](https://doi.org/10.5281/zenodo.21204978)
+
+- **Authors:** Dennys José Márquez Reyes
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** relevant (100/100)
+- **Reason:** Evaluates memory mechanisms or benchmarks for LLM agents.
+- **Tags:** agent-memory, memory-policy, benchmark, memory-systems, llm-agents
+- **Abstract summary:** MemoryBioRAG v12.0 This project presents MemoryBioRAG, a reproducible methodology for building biomimetic memory systems for AI agents without vector embeddings. Key Principles 5-axis conceptual space: emotion, entity, action, quality, coordinate 39 semantic dimensions for dimensional tagging SQLite FTS5 with trigra...
+
+### [Episodic-to-Semantic Consolidation Without Identity Drift](https://arxiv.org/abs/2607.01988)
+
+- **Authors:** Xue Qin, Simin Luan, C R Yang, Zhijun Li
 - **Date:** 2026-07-02
 - **Source:** openalex
 - **Relevance:** relevant (100/100)
-- **Reason:** Focuses on persistent or long-term memory for agent behavior.
-- **Tags:** agent-memory, llm-agents, memory-systems, long-term-memory, benchmark, evaluation
-- **Abstract summary:** Long term memory lets LLM agents act as persistent assistants, but user facts change. A useful memory system must know what is true now, what used to be true, and what changed. We study \emph{ghost memory}, a state coordination failure in which old, current, and transition facts coexist in the memory bank, remain mi...
+- **Reason:** Studies memory storage, retrieval, update, or consolidation for LLM agents.
+- **Tags:** memory-types, memory-policy, agent-memory, memory-systems, llm-agents
+- **Abstract summary:** Long-running adaptive intelligent agents face a structural tension between knowledge consolidation and information integrity. Memory consolidation is conventionally treated as an agent-changing operation: a model is fine-tuned, a prompt rewritten, a policy distilled, or a reflection appended to the context that gove...
 
-### [ElephantAgent: Contextual State Continuity in Agentic Systems](https://arxiv.org/abs/2607.01919)
+### [MemoryBioRAG: A Reproducible Methodology for Vector-Free Biomimetic Agent Memory Using Conceptual Spaces and Synaptic Graphs on SQLite](https://doi.org/10.17605/osf.io/q63yw)
 
-- **Authors:** Jiankai Jin, Xiangzheng Zhang, Zhao Liu, Wenzhuo Xu, D Yang, Deyue Zhang, et al.
-- **Date:** 2026-07-02
+- **Authors:** Dennys Jose Marquez Reyes
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies memory storage, retrieval, update, or consolidation for LLM agents.
+- **Tags:** agent-memory, memory-systems, memory-policy, llm-agents
+- **Abstract summary:** This paper presents MemoryBioRAG, a reproducible methodology for building biomimetic agent memory systems without vector embeddings. The system uses a 5-axis conceptual space (emotion, entity, action, quality, coordinate) with 39 semantic dimensions, SQLite FTS5 trigram search, and synaptic plasticity (LTP/LTD) for...
+
+### [Deterministic Long-Term Memory for LLM Agents: Hybrid Retrieval, Document Graph, and Write-Path Scalability in Air-Gapped Environments](https://doi.org/10.5281/zenodo.21210732)
+
+- **Authors:** Alexandr Slednev
+- **Date:** 2026-07-05
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Focuses on persistent or long-term memory for agent behavior.
-- **Tags:** long-term-memory, agent-memory, memory-systems, llm-agents
-- **Abstract summary:** Agentic systems enhance their capabilities by invoking external tools and maintaining persistent memory. However, these external dependencies introduce novel attack surfaces. Recent tool and memory poisoning attacks show that maliciously crafted tool descriptors and poisoned memory can covertly bias agent behavior....
+- **Tags:** agent-memory, llm-agents, long-term-memory, memory-systems
+- **Abstract summary:** This preprint presents a deterministic long-term memory architecture for LLM agents operating in air-gapped enterprise environments. The proposed architecture uses Markdown documents as the source of truth and constructs deterministic derived representations, including PostgreSQL full-text indexes, a document graph,...
 
-### [MeMAT: Multi-agent transformer with deep long-term memory, short-term memory, and persistent memory](https://doi.org/10.1016/j.neucom.2026.134438)
+### [Deterministic Long-Term Memory for LLM Agents: Hybrid Retrieval, Document Graph, and Write-Path Scalability in Air-Gapped Environments](https://doi.org/10.5281/zenodo.21210731)
 
-- **Authors:** G. X. Sun, Weiqiang Jin, Yu Zhang, Guizhong Liu
-- **Date:** 2026-07-01
+- **Authors:** Alexandr Slednev
+- **Date:** 2026-07-05
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Focuses on persistent or long-term memory for agent behavior.
-- **Tags:** long-term-memory, agent-memory, memory-systems, llm-agents
-- **Abstract summary:** No abstract available.
+- **Tags:** agent-memory, llm-agents, long-term-memory, memory-systems
+- **Abstract summary:** This preprint presents a deterministic long-term memory architecture for LLM agents operating in air-gapped enterprise environments. The proposed architecture uses Markdown documents as the source of truth and constructs deterministic derived representations, including PostgreSQL full-text indexes, a document graph,...
+
+### [Borrowable Skills as Lean Un-Ganglia Subgraphs: trainable, composable, bounded-loop standard operating procedures in a co-located, owner-held, indelible knowledge multi-graph](https://doi.org/10.5281/zenodo.21205599)
+
+- **Authors:** Nelu Lazar
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
+- **Tags:** parametric-memory, agent-memory, memory-systems, llm-agents
+- **Abstract summary:** The Graphnosis Skill Subgraph is a procedural layer in which a trained Skill — a standard operating procedure (SOP) with eight goal categories (Trigger, Prerequisites, Requires, Produces, Success, Out of scope, On failure, On completion) and a numbered step body — is compiled into a typed-edge subgraph stored in the...
+
+### [Borrowable Skills as Lean Un-Ganglia Subgraphs: trainable, composable, bounded-loop standard operating procedures in a co-located, owner-held, indelible knowledge multi-graph](https://doi.org/10.5281/zenodo.21205598)
+
+- **Authors:** Nelu Lazar
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
+- **Tags:** parametric-memory, agent-memory, memory-systems, llm-agents
+- **Abstract summary:** The Graphnosis Skill Subgraph is a procedural layer in which a trained Skill — a standard operating procedure (SOP) with eight goal categories (Trigger, Prerequisites, Requires, Produces, Success, Out of scope, On failure, On completion) and a numbered step body — is compiled into a typed-edge subgraph stored in the...
 
 ## Maybe Relevant
 
-### [E.M.B.E.R. A Fully Autonomous, Resource-Efficient Cognitive Architecture with Persistent Event-Driven Reflection and Native Vision-Language](https://doi.org/10.5281/zenodo.21189243)
+### [E.M.B.E.R. A Fully Autonomous, Resource-Efficient Cognitive Architecture with Persistent Event-Driven Reflection and Native Vision-Language](https://doi.org/10.5281/zenodo.21201568)
 
 - **Authors:** Patrick Schildgen
 - **Date:** 2026-07-04
@@ -83,104 +134,74 @@ Latest daily digest: [2026-07-05](2026-07-05.md).
 - **Relevance:** maybe (62/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** llm-agents
-- **Abstract summary:** This report presents EMBER (Evolutionary MariaDB-driven Backend-integrated EPYC-accelerated Reflective-Agent), a production-ready, fully autonomous cognitive architecture in continuous operation since October 2025. The architecture runs entirely on non-accelerated CPU hardware — 16 dedicated cores of an AMD EPYC 964...
+- **Abstract summary:** This technical report presents EMBER (Evolutionary MariaDB-driven Backend-integrated EPYC-accelerated Reflective-Agent), a production-ready, autonomous cognitive architecture for a browser-based science-fiction MMO environment. EMBER has been in continuous operation since October 2025 and runs entirely on non-accele...
 
-### [Poor Man's Agentic Modeling: A Systematic Review and Scaling Toolkit for Low-Parameter Surrogates of LLM-Agent Societies](https://doi.org/10.5281/zenodo.21198322)
+### [AgentTelemetry: A Fault Detection Benchmark and Toolkit for LLM Agent Observability](https://doi.org/10.1145/3805760.3814931)
 
-- **Authors:** Igor Itkin
+- **Authors:** Krishna Chaitanya Balusu
 - **Date:** 2026-07-05
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** llm-agents
-- **Abstract summary:** Simulations in which every agent is a large language model (LLM) are powerful but costly, and the questions asked of them are almost always macroscopic — phase behaviour, stylised facts, scaling with the number of agents N — not the cognition of any single agent. This survey organises the literature behind a cheaper...
+- **Abstract summary:** LLM-based autonomous agents fail in ways that existing observability infrastructure cannot detect. OpenTelemetry’s GenAI semantic conventions cover LLM invocation and tool execution but leave five critical agent orchestration phases—planning, reasoning, safety monitoring, inter-agent delegation, and memory managemen...
 
-### [Poor Man's Agentic Modeling: A Systematic Review and Scaling Toolkit for Low-Parameter Surrogates of LLM-Agent Societies](https://doi.org/10.5281/zenodo.21198323)
+### [PaperProof: Sui-Native Artifact Infrastructure for Durable, Verifiable, and Agent-Readable Knowledge Objects](https://doi.org/10.5281/zenodo.21201491)
 
-- **Authors:** Igor Itkin
+- **Authors:** PaperProof Labs
 - **Date:** 2026-07-05
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Simulations in which every agent is a large language model (LLM) are powerful but costly, and the questions asked of them are almost always macroscopic — phase behaviour, stylised facts, scaling with the number of agents N — not the cognition of any single agent. This survey organises the literature behind a cheaper...
+- **Tags:** untagged
+- **Abstract summary:** Important digital works increasingly live across unstable boundaries: storage links, social feeds, repository releases, preprint pages, chat archives, and application databases. These surfaces are useful, but none of them alone provides a neutral and composable protocol identity for the work itself. PaperProof is a...
 
-### [Calibrating the Instrument: Controllability of an LLM-Driven Synthetic Population](https://arxiv.org/abs/2607.00910)
+### [PaperProof: Sui-Native Artifact Infrastructure for Durable, Verifiable, and Agent-Readable Knowledge Objects](https://doi.org/10.5281/zenodo.21201490)
 
-- **Authors:** Mirko Degli Esposti
+- **Authors:** PaperProof Labs
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
+- **Tags:** untagged
+- **Abstract summary:** Important digital works increasingly live across unstable boundaries: storage links, social feeds, repository releases, preprint pages, chat archives, and application databases. These surfaces are useful, but none of them alone provides a neutral and composable protocol identity for the work itself. PaperProof is a...
+
+### [Research on multi-agent reinforcement learning optimization of personalized decision-making system for sports training](https://doi.org/10.1007/s10791-026-10231-9)
+
+- **Authors:** Cuicui Guo, Chengcheng Xu
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
+- **Tags:** untagged
+- **Abstract summary:** This study constructs a personalized sports training decision-making system using multi-agent reinforcement learning. Integrating IoT sensors for real-time data and serious games for simulation, the system utilizes a centralized training and distributed execution framework combining fuzzy logic and deep residual net...
+
+### [Next-Generation Agentic Reinforcement Learning Systems Enable Self-Evolving Agents](https://arxiv.org/abs/2607.01120)
+
+- **Authors:** Ran Yan, Wei Fu, Jiale Li, S Xu, Zhiyu Mei, Gao, et al.
 - **Date:** 2026-07-01
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** llm-agents
-- **Abstract summary:** Generative Synthetic Populations (GSP) -- the convergence of population synthesis, agent-based modelling, and LLM agents -- are attracting growing interest for urban simulation and institutional communication research. Before any GSP instrument is used on a real population, a more basic question must be answered: do...
+- **Abstract summary:** LLM agents are rapidly being deployed in production, including coding assistants, customer-support chatbots, and scientific research assistants, yet they remain fundamentally static in enterprise deployment. The LLM weights, system prompts, tool repertoires, and in-context harnesses are frozen at deployment time, an...
 
-### [Antaeus: Hunting Repository-Level Logic Vulnerabilities via Context-Grounded LLM Reasoning](https://arxiv.org/abs/2607.01138)
+### [Plausibly wrong: peer-voted retention can fall below random in capped shared memory for LLM agents](https://doi.org/10.5281/zenodo.21208555)
 
-- **Authors:** Michele Armillotta, Nicolò Romandini, Rebecca Montanari, Lorenzo Cavallaro
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** LLM-based vulnerability detectors have shown promising results in identifying memory-safety bugs and vulnerability classes whose violations can often be expressed through established security properties. Logic vulnerabilities, however, pose a different challenge, as their identification requires inferring applicatio...
-
-### [KidnapRAG: A Black-Box Attack for Hijacking Reasoning in Agentic Retrieval-Augmented Generation Systems](https://arxiv.org/abs/2607.00422)
-
-- **Authors:** Chan-Woo Choi, Euntae Kim, Kyuho Lee, Youngsam Chun, Jinhee Jeong, E Kim, et al.
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Retrieval-Augmented Generation (RAG) systems are vulnerable to poisoning attacks that inject malicious documents into the retrieval process to manipulate model outputs. Recent Agentic RAG systems are more robust to such attacks because they iteratively perform retrieval and reasoning, allowing them to ignore weakly...
-
-### [AI Native Games: A Survey and Roadmap](https://arxiv.org/abs/2607.00527)
-
-- **Authors:** Zhewei Xu, Fandi Meng, Kaijie Xu, Clark Verbrugge, Simon Lucas, Jian Zhao
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Generative AI now enables games to produce dialogue, quests, characters, images, and worlds at runtime. Yet generation alone does not make a game AI-native, nor does it guarantee playability. This paper defines AI-native games by whether runtime generative AI is constitutive of the core loop: if the AI component wer...
-
-### [Agent-to-Agent Finance: Blockchain Payments and Trust Infrastructure for Autonomous AI Agents](https://arxiv.org/abs/2607.00245)
-
-- **Authors:** Hui Gong
-- **Date:** 2026-06-30
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Autonomous AI agents are beginning to occupy a position between analytical tools and transacting counterparties. They can interpret goals, call external tools, negotiate with other agents, access data and computation, and in some settings initiate payments or blockchain transactions. This development creates a disti...
-
-### [MultiUAV-Plat: An LLM-Oriented Platform, Benchmark and Framework for Multi-UAV Collaborative Task Planning](https://arxiv.org/abs/2606.31073)
-
-- **Authors:** Sheng Zhang, Qinglin Li, Yuechao Zang, XJ Huang, Y Fu, Cheng Zhu
-- **Date:** 2026-06-30
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Large language models (LLMs) provide a promising interface for high-level robotic task planning, but their use in multi-UAV collaboration remains difficult to evaluate systematically. Existing UAV simulators mainly emphasize dynamics, perception, or low-level control, while existing LLM-agent benchmarks rarely captu...
-
-### [FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents](https://arxiv.org/abs/2606.31522)
-
-- **Authors:** Muhammad Usman Safder, Ayesha Gull, Rania Elbadry, F Zhang, Yankai Chen, Xueqing Peng, et al.
-- **Date:** 2026-06-30
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large Language Models (LLMs) are increasingly deployed as autonomous financial agents initialized with explicit behavioral mandates such as "preserve capital" or "avoid speculative bets" that are meant to govern every decision throughout deployment. In practice, however, as market context accumulates over long horiz...
-
-### [MemSyco-Bench: Benchmarking Sycophancy in Agent Memory](https://arxiv.org/abs/2607.01071)
-
-- **Authors:** Zhiyi Xiang, Zerui Chen, Yunbo Tang, Zhimin Wei, Ruqin Ning, Yujie Lin, et al.
-- **Date:** 2026-07-01
+- **Authors:** Tymofii Pidlisnyi
+- **Date:** 2026-07-05
 - **Source:** openalex
 - **Relevance:** maybe (43/100)
 - **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, evaluation
-- **Abstract summary:** Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factua...
+- **Tags:** agent-memory, llm-agents
+- **Abstract summary:** Peer-voted retention kept a worse shared memory than random selection in 4 of 5 replicates (mean truth 0.475 vs. 0.700). Voting selects for plausibility, and plausibility is the one property correct and incorrect entries share, so the junk it keeps is fluent by selection. That is the headline of a controlled isolati...
+
+### [Plausibly wrong: peer-voted retention can fall below random in capped shared memory for LLM agents](https://doi.org/10.5281/zenodo.21208554)
+
+- **Authors:** Tymofii Pidlisnyi
+- **Date:** 2026-07-05
+- **Source:** openalex
+- **Relevance:** maybe (43/100)
+- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
+- **Tags:** agent-memory, llm-agents
+- **Abstract summary:** Peer-voted retention kept a worse shared memory than random selection in 4 of 5 replicates (mean truth 0.475 vs. 0.700). Voting selects for plausibility, and plausibility is the one property correct and incorrect entries share, so the junk it keeps is fluent by selection. That is the headline of a controlled isolati...

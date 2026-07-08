@@ -1,216 +1,73 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-07](2026-07-07.md).
+Latest daily digest: [2026-07-08](2026-07-08.md).
 
-# Paper Scout Digest - 2026-07-07
+# Paper Scout Digest - 2026-07-08
 
 ## Run Summary
 
-- **Run ID:** 14
-- **Candidates fetched:** 238
-- **New unique papers:** 178
-- **Relevant:** 25
-- **Maybe relevant:** 20
-- **Irrelevant:** 193
-- **Source summary:** arxiv: 16, openalex: 217, semantic_scholar: 5
+- **Run ID:** 15
+- **Candidates fetched:** 12
+- **New unique papers:** 9
+- **Relevant:** 5
+- **Maybe relevant:** 0
+- **Irrelevant:** 7
+- **Source summary:** arxiv: 9, semantic_scholar: 3
 
 ## Source Warnings
 
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'deep research agents': http error for https://api.openalex.org/works?search=deep+research+agents&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'automated research agent': http error for https://api.openalex.org/works?search=automated+research+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- semantic_scholar failed for 'AI research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'AI research agent': http error for https://api.openalex.org/works?search=AI+research+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'AI scientist': http error for https://api.openalex.org/works?search=AI+scientist&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'AI scientific discovery': http error for https://api.openalex.org/works?search=AI+scientific+discovery&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'automated scientific discovery': http error for https://api.openalex.org/works?search=automated+scientific+discovery&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'literature review agent': http error for https://api.openalex.org/works?search=literature+review+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'source-grounded research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'source-grounded research agent': http error for https://api.openalex.org/works?search=source-grounded+research+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'citation verification agent': http error for https://api.openalex.org/works?search=citation+verification+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'research planning agent': http error for https://api.openalex.org/works?search=research+planning+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'research workflow agent': http error for https://api.openalex.org/works?search=research+workflow+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'multi-agent research system': http error for https://api.openalex.org/works?search=multi-agent+research+system&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'multi-agent research workflow': http error for https://api.openalex.org/works?search=multi-agent+research+workflow&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'OpenResearch agent': http error for https://api.openalex.org/works?search=OpenResearch+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- semantic_scholar failed for 'web browsing research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- openalex failed for 'experiment design agent': http error for https://api.openalex.org/works?search=experiment+design+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'research assistant agent': http error for https://api.openalex.org/works?search=research+assistant+agent&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
-- openalex failed for 'LLM literature review': http error for https://api.openalex.org/works?search=LLM+literature+review&filter=from_publication_date%3A2026-06-30&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'deep research agent': http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'deep research agents': http error for https://api.openalex.org/works?search=deep+research+agents&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'autonomous research agent': http error for https://api.openalex.org/works?search=autonomous+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'autonomous research agents': http error for https://api.openalex.org/works?search=autonomous+research+agents&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- semantic_scholar failed for 'automated research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'automated research agent': http error for https://api.openalex.org/works?search=automated+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'AI research agent': http error for https://api.openalex.org/works?search=AI+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'AI scientist': http error for https://api.openalex.org/works?search=AI+scientist&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'AI scientific discovery': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientific+discovery%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'AI scientific discovery': http error for https://api.openalex.org/works?search=AI+scientific+discovery&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'automated scientific discovery': http error for https://export.arxiv.org/api/query?search_query=all%3A%22automated+scientific+discovery%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar failed for 'automated scientific discovery': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'automated scientific discovery': http error for https://api.openalex.org/works?search=automated+scientific+discovery&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'literature review agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22literature+review+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'literature review agent': http error for https://api.openalex.org/works?search=literature+review+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3A%22automated+literature+review%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'automated literature review': http error for https://api.openalex.org/works?search=automated+literature+review&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'source-grounded research agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22source-grounded+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'source-grounded research agent': http error for https://api.openalex.org/works?search=source-grounded+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'citation verification agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22citation+verification+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'citation verification agent': http error for https://api.openalex.org/works?search=citation+verification+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'research planning agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+planning+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'research planning agent': http error for https://api.openalex.org/works?search=research+planning+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'research workflow agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22research+workflow+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'research workflow agent': http error for https://api.openalex.org/works?search=research+workflow+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'multi-agent research system': http error for https://export.arxiv.org/api/query?search_query=all%3A%22multi-agent+research+system%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- openalex failed for 'multi-agent research system': http error for https://api.openalex.org/works?search=multi-agent+research+system&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'multi-agent research workflow': http error for https://export.arxiv.org/api/query?search_query=all%3A%22multi-agent+research+workflow%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar failed for 'multi-agent research workflow': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'multi-agent research workflow': http error for https://api.openalex.org/works?search=multi-agent+research+workflow&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'AutoResearch': http error for https://export.arxiv.org/api/query?search_query=all%3A%22AutoResearch%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar failed for 'AutoResearch': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'AutoResearch': http error for https://api.openalex.org/works?search=AutoResearch&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'OpenResearch agent': http error for https://export.arxiv.org/api/query?search_query=all%3A%22OpenResearch+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- semantic_scholar failed for 'OpenResearch agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- openalex failed for 'OpenResearch agent': http error for https://api.openalex.org/works?search=OpenResearch+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'web browsing research agent': http error for https://api.openalex.org/works?search=web+browsing+research+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'hypothesis generation agent': http error for https://api.openalex.org/works?search=hypothesis+generation+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'experiment design agent': http error for https://api.openalex.org/works?search=experiment+design+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'research assistant agent': http error for https://api.openalex.org/works?search=research+assistant+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'LLM research assistant': http error for https://api.openalex.org/works?search=LLM+research+assistant&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'LLM literature review': http error for https://api.openalex.org/works?search=LLM+literature+review&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- openalex failed for 'scientific discovery LLM agent': http error for https://api.openalex.org/works?search=scientific+discovery+LLM+agent&filter=from_publication_date%3A2026-07-01&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests
 
 ## Highly Relevant
 
-### [CausalGame: Benchmarking Causal Thinking of LLM Agents in Games](https://arxiv.org/abs/2607.04293v1)
+### [FirstResearch: Auditable Question Formation for LLM Scientific Discovery Agents](https://arxiv.org/abs/2607.05682v1)
 
-- **Authors:** Zhenhao Chen, Yongqiang Chen, Chenxi Liu, Junchi Yu, Xiangchen Song, Zijian Li, et al.
-- **Date:** 2026-07-05
+- **Authors:** Yufeng Wang
+- **Date:** 2026-07-06
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Building AI Scientist agents with Large Language Models (LLMs) has recently attracted growing attention. Since scientific discovery fundamentally relies on uncovering causal relationships from observations, the capability of causal thinking, i.e., distinguishing causation from correlation and recognizing hidden bias...
-
-### [FORGE: Research-Trajectory Hijacking Attacks on Deep Research Agents](https://arxiv.org/abs/2607.04718v1)
-
-- **Authors:** Yue Pan, Ziheng Zhang, Junxiang Lei, Changhao Jia, Qingyi Si, Hongcheng Guo
-- **Date:** 2026-07-06
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents decompose open-ended queries into subtasks, retrieve web evidence over multiple rounds, and synthesize long-form reports. This workflow creates a planning-layer poisoning surface: adversarial documents that enter the retrieval pool can steer follow-up questions and turn a local injection into re...
-
-## Maybe Relevant
-
-### [pesobreiro/algo-autoresearch-paper: v1.0.0 – Initial release accompanying MDPI Forecasting submission](https://github.com/pesobreiro/algo-autoresearch-paper/tree/v1.0.0)
-
-- **Authors:** Pedro Sobreiro
-- **Date:** 2026-07-03
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** Overview This release accompanies the manuscript submission to MDPI Forecasting, "A Season-Structured Validation and Governance Architecture for Autonomous Prescriptive Algorithmic Trading Pipelines". It provides the full autonomous research pipeline described in the paper: the season-structured LLM agent (autoresea...
-
-### [pesobreiro/algo-autoresearch-paper: algo-autoresearch-paper v1.0.1](https://doi.org/10.5281/zenodo.21176309)
-
-- **Authors:** Pedro Sobreiro
-- **Date:** 2026-07-03
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** This release corrects a data-labeling error and improves citation accuracy and calibration throughout the manuscript. No experimental results, trained models, or reported metrics changed as a result of any of these corrections — only labels, citations, and phrasing were affected. Asset-pair correction: The Season 12...
-
-### [pesobreiro/algo-autoresearch-paper: v1.0.3](https://github.com/pesobreiro/algo-autoresearch-paper/tree/v1.0.3)
-
-- **Authors:** Pedro Sobreiro
-- **Date:** 2026-07-03
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** The BTC/USDT fix from v1.0.1 had not reached the supporting files. We finished the job: README, program.md, deployment scripts, CHANGELOG, and the remaining Markdown tables now show BTC/USDT instead of BTC/USDC.\n\nWe also added a preprint version built with a generic article class (manuscript_preprint.tex/pdf) so t...
-
-### [pesobreiro/algo-autoresearch-paper: v1.0.3](https://doi.org/10.5281/zenodo.21160587)
-
-- **Authors:** Pedro Sobreiro
-- **Date:** 2026-07-03
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** The BTC/USDT fix from v1.0.1 had not reached the supporting files. We finished the job: README, program.md, deployment scripts, CHANGELOG, and the remaining Markdown tables now show BTC/USDT instead of BTC/USDC.\n\nWe also added a preprint version built with a generic article class (manuscript_preprint.tex/pdf) so t...
-
-### [SwarmResearch: Orchestrating Coding Agents for Open-Ended Discovery](https://arxiv.org/abs/2607.02807v1)
-
-- **Authors:** Yuvraj Virk, Zack Edds, Chunqiu Steven Xia, Lingming Zhang
-- **Date:** 2026-07-02
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** Long-running coding agents such as autoresearch can persistently discover optimizations for open-ended problems. However, they tend to converge onto a single high-level approach, then proceed with low-level edits while missing other superior approaches to the problem. We hypothesize two harness-level design choices...
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.21105578)
-
-- **Authors:** Bishoyi, Alok Kumar
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.21100325)
-
-- **Authors:** Bishoyi, Alok Kumar
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.21102009)
-
-- **Authors:** Bishoyi, Alok Kumar
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.20447922)
-
-- **Authors:** Alok Kumar Bishoyi
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.21107476)
-
-- **Authors:** Bishoyi, Alok Kumar
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [evo: an autoresearch orchestrator for codebases](https://doi.org/10.5281/zenodo.21057592)
-
-- **Authors:** Bishoyi, Alok Kumar
-- **Date:** 2026-06-30
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** evo is a plugin for agentic frameworks that optimizes code through experiments. Given a codebase, it discovers metrics to optimize, sets up the evaluation, and runs experiments in a loop using tree search over parallel semi-autonomous agents, keeping changes that improve the score and discarding those that do not.
-
-### [AI-Assisted Discovery of Convex Relaxations via Dual Agents](https://doi.org/10.48550/arxiv.2606.31182)
-
-- **Authors:** Sungyoon Kim, Mert Pilancı
-- **Date:** 2026-06-30
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** web-research
-- **Abstract summary:** Recent work shows that LLM agents can improve sharp-constant inequalities by searching for extremal constructions, which yield upper bounds. We address the complementary side: a lower bound holds for every admissible function and follows from a convex relaxation of the nonconvex problem, with tighter relaxations giv...
-
-### [pesobreiro/algo-autoresearch-paper: algo-autoresearch-paper v1.0.2](https://github.com/pesobreiro/algo-autoresearch-paper/tree/v1.0.1)
-
-- **Authors:** Pedro Sobreiro
-- **Date:** 2026-07-03
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** web-research
-- **Abstract summary:** This release corrects a data-labeling error and improves citation accuracy and calibration throughout the manuscript. No experimental results, trained models, or reported metrics changed as a result of any of these corrections — only labels, citations, and phrasing were affected. Asset-pair correction: The Season 12...
-
-### [Next-Generation Agentic Reinforcement Learning Systems Enable Self-Evolving Agents](https://arxiv.org/abs/2607.01120)
-
-- **Authors:** Ran Yan, Wei Fu, Jiale Li, S Xu, Zhiyu Mei, Gao, et al.
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** LLM agents are rapidly being deployed in production, including coding assistants, customer-support chatbots, and scientific research assistants, yet they remain fundamentally static in enterprise deployment. The LLM weights, system prompts, tool repertoires, and in-context harnesses are frozen at deployment time, an...
-
-### [Calibrating the Instrument: Controllability of an LLM-Driven Synthetic Population](https://arxiv.org/abs/2607.00910)
-
-- **Authors:** Mirko Degli Esposti
-- **Date:** 2026-07-01
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Generative Synthetic Populations (GSP) -- the convergence of population synthesis, agent-based modelling, and LLM agents -- are attracting growing interest for urban simulation and institutional communication research. Before any GSP instrument is used on a real population, a more basic question must be answered: do...
+- **Abstract summary:** LLM systems for scientific discovery increasingly assist with ideation, literature synthesis, experiment planning, and report generation, but the first research question they propose can remain difficult to audit: it may sound plausible without exposing the mechanism, falsifier, or assumption that a scientist should...

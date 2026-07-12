@@ -1,0 +1,92 @@
+{
+  "ci": true,
+  "date": "2026-07-12",
+  "idempotency_passed": true,
+  "irrelevant_count": 5,
+  "maybe_count": 2,
+  "relevant_count": 3,
+  "run_id": "live-smoke-2026-07-12",
+  "source_errors": [
+    {
+      "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+      "query": "deep research agent",
+      "source": "arxiv",
+      "type": "http"
+    },
+    {
+      "message": "http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-28&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
+      "query": "deep research agent",
+      "source": "openalex",
+      "type": "http"
+    },
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "scientific discovery LLM agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "http error for https://export.arxiv.org/api/query?search_query=all%3A%22deep+research+agent%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+          "query": "deep research agent",
+          "source": "arxiv",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "arxiv",
+      "status": "failed"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "http error for https://api.openalex.org/works?search=deep+research+agent&filter=from_publication_date%3A2026-06-28&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
+          "query": "deep research agent",
+          "source": "openalex",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "openalex",
+      "status": "failed"
+    },
+    {
+      "candidates": 11,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "scientific discovery LLM agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 26,
+      "raw_records": 625,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-06-29",
+        "source_id": "e665c4bbc454de8ffcf98bd92f6da212cf3780b1",
+        "title": "Clarus: Coordinating Autonomous Research Agents toward Web-Scale Scientific Collaboration",
+        "url": "https://www.semanticscholar.org/paper/e665c4bbc454de8ffcf98bd92f6da212cf3780b1"
+      },
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 3,
+  "sources_succeeded": 0,
+  "state_initialized": true,
+  "total_candidates": 11,
+  "total_raw_records": 625,
+  "unique_candidates": 10
+}

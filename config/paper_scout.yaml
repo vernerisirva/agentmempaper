@@ -1,6 +1,6 @@
 search:
-  days: 7
-  max_results_per_source: 25
+  days: 10
+  max_results_per_source: 100
   terms:
     - "agent memory"
     - "agentic memory"
@@ -40,6 +40,54 @@ search:
     - "multilingual Engram"
     - "Megatron-LM Engram"
     - "memory mechanism language model"
+    - "procedural memory"
+    - "procedural memory distillation"
+    - "memory distillation"
+    - "cross-episode memory"
+    - "cross-episode learning"
+    - "online reflection language model"
+    - "self-improving language models"
+    - "reusable procedural memory"
+    - "parametric memory language model"
+    - "memory internalization language model"
+    - "memory distilled into weights"
+
+discovery_queries:
+  arxiv:
+    - query: "agent memory"
+      mode: all_terms
+    - query: "procedural memory"
+      mode: all_terms
+    - query: "parametric memory"
+      mode: all_terms
+    - query: "memory distillation"
+      mode: all_terms
+    - query: "self-improving language models"
+      mode: all_terms
+  openalex:
+    - "agent memory"
+    - "procedural memory language model"
+    - "memory distillation language model"
+    - "parametric memory language model"
+  semantic_scholar:
+    - "agent memory"
+    - "procedural memory language model"
+    - "memory distillation"
+    - "parametric memory LLM"
+
+query_budgets:
+  arxiv: 6
+  openalex: 4
+  semantic_scholar: 4
+
+arxiv_sweep:
+  enabled: true
+  categories:
+    - cs.AI
+    - cs.CL
+    - cs.LG
+  days: 10
+  max_results: 300
 
 state:
   sqlite_path: "data/paper_scout.sqlite3"

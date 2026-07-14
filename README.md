@@ -28,6 +28,26 @@ Search without writing state:
 python3 -m paper_scout search --days 7
 ```
 
+Recover papers missed during provider outages or indexing delays without sending notifications:
+
+```bash
+python3 -m paper_scout backfill --track agent_memory --days 45 --no-notify
+```
+
+Ingest a researcher-identified paper through the normal deduplication and relevance pipeline:
+
+```bash
+python3 -m paper_scout ingest-paper --track agent_memory --arxiv-id 2607.01480
+python3 -m paper_scout ingest-paper --track agent_memory --doi 10.48550/arXiv.2607.01480
+```
+
+Inspect unresolved provider queries and run fixture-based discovery regression coverage:
+
+```bash
+python3 -m paper_scout failed-queries --track agent_memory
+python3 -m paper_scout evaluate-discovery --track agent_memory
+```
+
 Render a digest from stored papers:
 
 ```bash
@@ -100,6 +120,14 @@ Source outcomes are separated so real zero-result responses are not confused wit
 - provider error.
 
 The command does not send email or webhook notifications and does not mark papers as notified.
+
+## Discovery And Recovery
+
+Discovery queries are intentionally separate from the larger relevance vocabulary. Each source receives a small, deduplicated plan with a request budget; arXiv supports phrase, all-terms, and raw query modes. The Agentic Memory track also performs one bounded recent-category sweep over `cs.AI`, `cs.CL`, and `cs.LG`. Every broadly retrieved candidate still passes through the normal conservative relevance classifier.
+
+Failed source queries are persisted in the track's SQLite state with bounded exponential retry timing. Daily runs retry due failures within the source budget. A separate weekly 45-day Agentic Memory backfill workflow recovers papers missed through outages or indexing delays, preserves the publication date, records the actual recovery time as `first_seen_at`, and does not notify by default. That backfill workflow can also be triggered manually.
+
+`evaluate-discovery` writes `discovery-eval-YYYY-MM-DD.md` in the track report directory. It is synthetic regression coverage for known retrieval routes, not an estimate of production discovery recall.
 
 ## State Strategy
 

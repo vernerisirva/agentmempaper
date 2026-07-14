@@ -5,7 +5,7 @@ import logging
 import socket
 import ssl
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -21,11 +21,13 @@ class HttpRequestError(RuntimeError):
         self.message = message
 
 
-@dataclass(frozen=True)
+@dataclass
 class HttpClient:
     timeout_seconds: int = 30
     retries: int = 3
     pause_seconds: float = 1.0
+    min_interval_seconds: float = 0.0
+    _last_request_at: float = field(default=0.0, init=False, repr=False)
 
     def get_text(self, url: str, params: dict[str, str | int] | None = None, headers: dict[str, str] | None = None) -> str:
         full_url = _with_params(url, params)
@@ -40,6 +42,7 @@ class HttpClient:
         last_error: Exception | None = None
         for attempt in range(1, self.retries + 1):
             try:
+                self._throttle()
                 request = Request(
                     url,
                     data=body,
@@ -47,6 +50,7 @@ class HttpClient:
                     method=method,
                 )
                 with urlopen(request, timeout=self.timeout_seconds) as response:
+                    self._last_request_at = time.monotonic()
                     return response.read().decode("utf-8")
             except (HTTPError, URLError, TimeoutError) as exc:
                 last_error = exc
@@ -56,6 +60,13 @@ class HttpClient:
         kind = _classify_request_error(last_error)
         message = str(last_error) if last_error else "unknown request failure"
         raise HttpRequestError(kind, url, f"request failed after {self.retries} attempts: {message}") from last_error
+
+    def _throttle(self) -> None:
+        if self.min_interval_seconds <= 0 or not self._last_request_at:
+            return
+        remaining = self.min_interval_seconds - (time.monotonic() - self._last_request_at)
+        if remaining > 0:
+            time.sleep(remaining)
 
 
 def _with_params(url: str, params: dict[str, str | int] | None) -> str:

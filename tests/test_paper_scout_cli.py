@@ -7,10 +7,39 @@ from pathlib import Path
 from unittest.mock import patch
 
 from paper_scout.cli import main
+from paper_scout.models import PaperCandidate
 from paper_scout.site import SiteBuildResult
 
 
 class PaperScoutCliTest(unittest.TestCase):
+    def test_ingest_paper_by_arxiv_id_uses_normal_classification_and_state(self):
+        candidate = PaperCandidate(
+            title="Procedural Memory Distillation: Online Reflection for Self-Improving Language Models",
+            authors=["Ada"],
+            abstract="Cross-episode signals create reusable procedural memory distilled into language model weights.",
+            source="arxiv",
+            source_id="2607.01480",
+            arxiv_id="2607.01480",
+            published_date="2026-07-01",
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config_path = Path(tmpdir) / "config.yaml"
+            state_path = Path(tmpdir) / "state.sqlite3"
+            config_path.write_text(f'state:\n  sqlite_path: "{state_path}"\n', encoding="utf-8")
+            output = io.StringIO()
+            with patch("paper_scout.cli.ArxivFetcher.fetch_by_id", return_value=candidate), redirect_stdout(output):
+                code = main(["--config", str(config_path), "ingest-paper", "--arxiv-id", "2607.01480"])
+            self.assertEqual(code, 0)
+            self.assertIn("status=new", output.getvalue())
+            self.assertIn("decision=relevant", output.getvalue())
+
+    def test_evaluate_discovery_command_writes_report(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            report_path = Path(tmpdir) / "discovery.md"
+            with patch("paper_scout.cli.write_discovery_report", return_value=report_path), redirect_stdout(io.StringIO()):
+                code = main(["--config", "config/tracks/agent_memory.yaml", "evaluate-discovery", "--date", "2026-07-14"])
+            self.assertEqual(code, 0)
+
     def test_smoke_live_accepts_ci_flag(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             config_path = Path(tmpdir) / "missing.yaml"

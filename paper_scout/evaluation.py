@@ -29,6 +29,11 @@ def relevance_fixture_examples(profile: str = "agent_memory") -> list[RelevanceE
         ("agent memory benchmark", "Agent Memory Benchmark", "A benchmark for persistent memory in language model agents."),
         ("agent-native memory system", "Are We Ready For An Agent-Native Memory System?", "Memory for large language model agents supports persistent information storage, retrieval, update, consolidation, and lifecycle governance throughout agent execution."),
         ("parametric memory for language agents", "Parametric Memory for Language Agents", "Parametric memory mechanisms are evaluated in agent behavior."),
+        (
+            "procedural memory distillation",
+            "Procedural Memory Distillation: Online Reflection for Self-Improving Language Models",
+            "Cross-episode signals and online reflection convert experience into reusable procedural memory distilled into a language model's weights for self-improvement.",
+        ),
         ("Engram-style mechanisms in LLMs", "Engram-Style Mechanisms in LLMs", "Engram memory mechanisms alter language model behavior for long-running agents."),
         ("multilingual Engram-style memory", "Multilingual Engram-Style Memory", "A multilingual Engram memory mechanism for language model agents."),
     ]

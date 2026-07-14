@@ -3,16 +3,18 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import re
 from datetime import date
 from pathlib import Path
 
 from paper_scout.config import load_config
+from paper_scout.discovery_evaluation import evaluate_discovery, write_discovery_report
 from paper_scout.digest import write_digest
 from paper_scout.evaluation import evaluate_relevance_examples, relevance_fixture_examples, write_relevance_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
 from paper_scout.models import PaperCandidate
 from paper_scout.relevance import classify_with_rules, explain_rule_matches
-from paper_scout.scout import run_scout, search_sources
+from paper_scout.scout import ingest_candidate, run_backfill, run_scout, search_sources
 from paper_scout.site import build_site
 from paper_scout.state import PaperStore
 from paper_scout.validation import run_live_smoke, validate_idempotency
@@ -68,6 +70,27 @@ def main(argv: list[str] | None = None) -> int:
     explain_parser.add_argument("--title")
     explain_parser.add_argument("--data-path", default=None)
     _add_track_argument(explain_parser)
+
+    discovery_parser = subparsers.add_parser("evaluate-discovery", help="Evaluate fixture-based discovery regression coverage")
+    discovery_parser.add_argument("--date", default=date.today().isoformat())
+    _add_track_argument(discovery_parser)
+
+    backfill_parser = subparsers.add_parser("backfill", help="Recover papers missed during the normal daily lookback")
+    backfill_parser.add_argument("--days", type=int, default=45)
+    backfill_parser.add_argument("--sources", default="arxiv,openalex,semantic_scholar")
+    backfill_parser.add_argument("--no-notify", action="store_true")
+    backfill_parser.add_argument("--date", default=date.today().isoformat())
+    _add_track_argument(backfill_parser)
+
+    failed_parser = subparsers.add_parser("failed-queries", help="List unresolved source queries awaiting retry")
+    failed_parser.add_argument("--include-resolved", action="store_true")
+    _add_track_argument(failed_parser)
+
+    ingest_parser = subparsers.add_parser("ingest-paper", help="Fetch and ingest one paper without notifications")
+    ingest_parser.add_argument("--arxiv-id")
+    ingest_parser.add_argument("--doi")
+    ingest_parser.add_argument("--url")
+    _add_track_argument(ingest_parser)
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
@@ -155,6 +178,46 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "explain-paper":
         return _explain_paper(args, config)
 
+    if args.command == "evaluate-discovery":
+        report = evaluate_discovery(config)
+        path = write_discovery_report(report, config.report_dir, args.date)
+        print(f"recall={report['recall']:.3f} discovered={report['discovered_count']}/{report['fixture_count']} missed={len(report['missed'])} report={path}")
+        return 0 if not report["missed"] else 1
+
+    if args.command == "backfill":
+        sources = {value.strip() for value in args.sources.split(",") if value.strip()}
+        unknown = sources - {"arxiv", "openalex", "semantic_scholar"}
+        if unknown:
+            print(f"unknown sources: {','.join(sorted(unknown))}")
+            return 2
+        result = run_backfill(config, days=args.days, sources=sources, report_date=args.date)
+        print(f"run_id={result.run_id} fetched={result.fetched_count} unique={result.unique_count} report={result.digest_path}")
+        return 0
+
+    if args.command == "failed-queries":
+        store = PaperStore(config.sqlite_path)
+        rows = store.failed_queries(config.track_id, include_resolved=args.include_resolved)
+        for row in rows:
+            print(f"{row['source']} attempts={row['attempt_count']} days={row['requested_days']} next={row['next_retry_at']} resolved={row['resolved_at'] or '-'} query={row['normalized_query']}")
+        print(f"count={len(rows)}")
+        return 0
+
+    if args.command == "ingest-paper":
+        try:
+            candidate = _fetch_direct_paper(args)
+        except Exception as exc:  # noqa: BLE001 - direct recovery should fail cleanly on provider/network errors.
+            logging.getLogger(__name__).error("Direct paper fetch failed: %s", exc)
+            print(f"paper could not be fetched: {exc}")
+            return 1
+        if candidate is None:
+            print("paper could not be fetched")
+            return 1
+        status, key, classification = ingest_candidate(config, candidate)
+        print(f"status={status} canonical_key={key} decision={classification.decision} score={classification.score} title={candidate.title}")
+        print(f"tags={','.join(classification.tags)}")
+        print(f"reason={classification.reason}")
+        return 0
+
     parser.error(f"unknown command {args.command}")
     return 2
 
@@ -231,6 +294,31 @@ def _candidate_from_generated_paper(paper: dict[str, object]) -> PaperCandidate:
         published_date=str(paper.get("publication_date") or "") or None,
         raw=paper,
     )
+
+
+def _fetch_direct_paper(args: argparse.Namespace) -> PaperCandidate | None:
+    arxiv_id = args.arxiv_id
+    doi = args.doi
+    url = args.url
+    if url and not arxiv_id:
+        match = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#/]+)", url, flags=re.I)
+        if match:
+            arxiv_id = match.group(1).removesuffix(".pdf")
+    if url and not doi:
+        match = re.search(r"(?:doi\.org/)?(10\.\d{4,9}/[^?#\s]+)", url, flags=re.I)
+        if match:
+            doi = match.group(1)
+    if arxiv_id:
+        try:
+            return ArxivFetcher().fetch_by_id(arxiv_id)
+        except Exception:
+            return OpenAlexFetcher().fetch_by_doi(f"10.48550/arXiv.{arxiv_id}")
+    if doi:
+        try:
+            return SemanticScholarFetcher().fetch_by_identifier(f"DOI:{doi}")
+        except Exception:
+            return OpenAlexFetcher().fetch_by_doi(doi)
+    raise ValueError("ingest-paper requires --arxiv-id, --doi, or a supported --url")
 
 
 if __name__ == "__main__":

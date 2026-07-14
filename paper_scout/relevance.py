@@ -118,6 +118,7 @@ HIGH_CONFIDENCE_AGENT_MEMORY_PATTERNS = {
     "autoresearch shared memory": r"\bautoresearch\b.*\bshared memory\b|\bshared memory\b.*\bautoresearch\b",
     "agent memory cross-session": r"\bagent memory\b.*\b(cross[- ]session|cross[- ]temporal|persistent)\b|\b(cross[- ]session|cross[- ]temporal|persistent)\b.*\bagent memory\b",
     "parametric memory LLM": r"\b(parametric memory|engram)\b.*\b(llm|large language model|language model|agents?)\b",
+    "procedural memory distillation": r"\b(procedural memory distillation|memory distillation|cross[- ]episode signals?)\b.*\b(language models?|llms?|model weights?|policy)\b|\b(language models?|llms?)\b.*\b(procedural memory distillation|memory distillation|cross[- ]episode signals?)\b|\breusable procedural memory\b.*\b(distill(?:ed|ing|ation)?|model weights?|online reflection|cross[- ]episode)\b",
 }
 
 BROAD_PERIPHERAL_PATTERNS = {
@@ -145,6 +146,7 @@ SYSTEM_LEVEL_HIGH_CONFIDENCE = {
     "autoresearch shared memory",
     "agent memory cross-session",
     "parametric memory LLM",
+    "procedural memory distillation",
 }
 NEGATED_AGENT_MEMORY_PATTERNS = [
     r"\bwithout (studying )?(persistent |long[- ]term |agent[- ]native )?agent memory\b",
@@ -265,6 +267,10 @@ def classify_with_rules(candidate: PaperCandidate, profile: str = "agent_memory"
     biological_hits = evidence["biological_memory_hits"]
     include_tags = list(evidence["include_tags"])
     high_confidence_hits = evidence["high_confidence_hits"]
+    if "procedural memory distillation" in high_confidence_hits:
+        for tag in ["procedural-memory", "parametric-memory", "memory-distillation", "self-improvement", "language-model-memory", "cross-episode-learning"]:
+            if tag not in include_tags:
+                include_tags.append(tag)
     has_agent_context = bool(evidence["agent_context_hits"])
     broad_hits = evidence["broad_peripheral_hits"]
     negated_memory_focus = bool(evidence["negated_memory_focus_hits"])
@@ -511,6 +517,8 @@ def _matches_labeled(patterns: dict[str, str], text: str) -> list[str]:
 
 
 def _high_confidence_reason(matches: list[str]) -> str:
+    if "procedural memory distillation" in matches:
+        return "Studies how cross-episode experience can be converted into reusable procedural memory and distilled into a language model's weights."
     if any("benchmark" in match or "evaluation" in match for match in matches):
         return "Evaluates memory mechanisms or benchmarks for LLM agents."
     if any("security" in match for match in matches):

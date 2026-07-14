@@ -8,6 +8,7 @@ from paper_scout.deduplication import normalize_arxiv_id
 from paper_scout.dates import publication_date
 from paper_scout.http import HttpClient
 from paper_scout.models import PaperCandidate, SourceFetchResult
+from paper_scout.query_planner import PlannedQuery
 
 LOGGER = logging.getLogger(__name__)
 ATOM = "{http://www.w3.org/2005/Atom}"
@@ -18,14 +19,31 @@ class ArxivFetcher:
     source = "arxiv"
 
     def __init__(self, http: HttpClient | None = None) -> None:
-        self.http = http or HttpClient(pause_seconds=3.0)
+        self.http = http or HttpClient(pause_seconds=3.0, min_interval_seconds=3.0)
 
     def search(self, term: str, days: int, max_results: int) -> list[PaperCandidate]:
         return self.search_with_diagnostics(term, days, max_results).candidates
 
     def search_with_diagnostics(self, term: str, days: int, max_results: int) -> SourceFetchResult:
+        return self._search_query(f'all:"{term}"', days, max_results)
+
+    def search_planned(self, query: PlannedQuery, days: int, max_results: int) -> list[PaperCandidate]:
+        return self._search_query(query.provider_query, days, query.max_results or max_results).candidates
+
+    def search_planned_with_diagnostics(self, query: PlannedQuery, days: int, max_results: int) -> SourceFetchResult:
+        return self._search_query(query.provider_query, days, query.max_results or max_results)
+
+    def fetch_by_id(self, arxiv_id: str) -> PaperCandidate | None:
+        payload = self.http.get_text(
+            "https://export.arxiv.org/api/query",
+            params={"id_list": normalize_arxiv_id(arxiv_id) or arxiv_id, "max_results": 1},
+        )
+        papers = parse_arxiv_feed(payload)
+        return papers[0] if papers else None
+
+    def _search_query(self, provider_query: str, days: int, max_results: int) -> SourceFetchResult:
         params = {
-            "search_query": f'all:"{term}"',
+            "search_query": provider_query,
             "start": 0,
             "max_results": max_results,
             "sortBy": "submittedDate",

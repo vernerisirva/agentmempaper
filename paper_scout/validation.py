@@ -14,6 +14,7 @@ from paper_scout.config import ScoutConfig
 from paper_scout.deduplication import canonical_key
 from paper_scout.http import HttpRequestError
 from paper_scout.models import PaperCandidate
+from paper_scout.query_planner import PlannedQuery, plan_queries
 from paper_scout.relevance import classify_with_rules
 from paper_scout.scout import run_scout
 from paper_scout.source_errors import source_error_message
@@ -186,29 +187,31 @@ def run_live_smoke(
             "errors": [],
         }
 
-    for term in config.terms:
-        for fetcher in fetchers:
-            source = getattr(fetcher, "source", fetcher.__class__.__name__)
-            if source in disabled_sources:
-                continue
-            source_result = source_results[source]
-            source_result["queries_attempted"] = int(source_result["queries_attempted"]) + 1
-            try:
-                raw_count, fetched = _search_for_smoke(fetcher, term, active_days, active_max)
-            except Exception as exc:  # noqa: BLE001
-                error = _source_error(source, term, exc)
-                source_errors.append(error)
-                source_result["errors"].append(error)  # type: ignore[union-attr]
-                source_result["status"] = "failed"
-                disabled_sources.add(source)
-                continue
-            candidates.extend(fetched)
-            source_counts[source] += len(fetched)
-            source_result["raw_records"] = int(source_result["raw_records"]) + raw_count
-            source_result["candidates"] = int(source_result["candidates"]) + len(fetched)
-            if source_result["sample_candidate"] is None and fetched:
-                source_result["sample_candidate"] = _sample_candidate(fetched[0])
-            source_result["status"] = "success" if int(source_result["candidates"]) else "zero_results"
+    fetchers_by_source = {getattr(fetcher, "source", fetcher.__class__.__name__): fetcher for fetcher in fetchers}
+    planned = plan_queries(config, sources=set(fetchers_by_source))
+    for query in planned:
+        source = query.source
+        if source in disabled_sources:
+            continue
+        fetcher = fetchers_by_source[source]
+        source_result = source_results[source]
+        source_result["queries_attempted"] = int(source_result["queries_attempted"]) + 1
+        try:
+            raw_count, fetched = _search_for_smoke(fetcher, query, query.days_override or active_days, active_max)
+        except Exception as exc:  # noqa: BLE001
+            error = _source_error(source, query.query, exc)
+            source_errors.append(error)
+            source_result["errors"].append(error)  # type: ignore[union-attr]
+            source_result["status"] = "failed"
+            disabled_sources.add(source)
+            continue
+        candidates.extend(fetched)
+        source_counts[source] += len(fetched)
+        source_result["raw_records"] = int(source_result["raw_records"]) + raw_count
+        source_result["candidates"] = int(source_result["candidates"]) + len(fetched)
+        if source_result["sample_candidate"] is None and fetched:
+            source_result["sample_candidate"] = _sample_candidate(fetched[0])
+        source_result["status"] = "success" if int(source_result["candidates"]) else "zero_results"
 
     for source_result in source_results.values():
         if source_result["status"] == "not_attempted":
@@ -257,6 +260,7 @@ def run_live_smoke(
         "irrelevant_count": decision_counts.get("irrelevant", 0),
         "source_errors": source_errors,
         "source_results": source_result_list,
+        "query_plan_counts": {source: sum(1 for query in planned if query.source == source) for source in source_results},
         "source_counts": dict(source_counts),
         "candidate_count": len(candidates),
         "unique_count": len(by_key),
@@ -277,11 +281,14 @@ def run_live_smoke(
     return report
 
 
-def _search_for_smoke(fetcher, term: str, days: int, max_results: int) -> tuple[int, list[PaperCandidate]]:
-    if hasattr(fetcher, "search_with_diagnostics"):
-        result = fetcher.search_with_diagnostics(term, days, max_results)
+def _search_for_smoke(fetcher, query: PlannedQuery, days: int, max_results: int) -> tuple[int, list[PaperCandidate]]:
+    if hasattr(fetcher, "search_planned_with_diagnostics"):
+        result = fetcher.search_planned_with_diagnostics(query, days, max_results)
         return int(result.raw_count), list(result.candidates)
-    candidates = list(fetcher.search(term, days, max_results))
+    if hasattr(fetcher, "search_with_diagnostics"):
+        result = fetcher.search_with_diagnostics(query.query, days, max_results)
+        return int(result.raw_count), list(result.candidates)
+    candidates = list(fetcher.search(query.query, days, max_results))
     return len(candidates), candidates
 
 
@@ -437,6 +444,7 @@ def _write_live_smoke_json(report: dict[str, object], report_dir: Path, report_d
         "state_initialized",
         "idempotency_passed",
         "source_results",
+        "query_plan_counts",
     ]
     payload = {field: report[field] for field in fields}
     (report_dir / f"live-smoke-{report_date}.json").write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")

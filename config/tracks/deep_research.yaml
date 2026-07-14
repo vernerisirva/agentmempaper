@@ -37,6 +37,32 @@ search:
     - "LLM literature review"
     - "scientific discovery LLM agent"
 
+discovery_queries:
+  arxiv:
+    - query: "deep research agent"
+      mode: all_terms
+    - query: "autonomous research agent"
+      mode: all_terms
+    - query: "AI scientist"
+      mode: phrase
+    - query: "automated literature review"
+      mode: all_terms
+  openalex:
+    - "deep research agent"
+    - "autonomous research agent"
+    - "AI scientist"
+    - "automated literature review"
+  semantic_scholar:
+    - "deep research agent"
+    - "autonomous research agent"
+    - "AI scientist"
+    - "automated literature review"
+
+query_budgets:
+  arxiv: 4
+  openalex: 4
+  semantic_scholar: 4
+
 state:
   sqlite_path: "data/deep_research/paper_scout.sqlite3"
 

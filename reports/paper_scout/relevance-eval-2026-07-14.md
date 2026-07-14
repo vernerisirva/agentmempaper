@@ -89,6 +89,14 @@
 - **Reason:** Discusses Engram-style or parametric memory mechanisms for language models.
 - **Tags:** evaluation, parametric-memory, agent-memory, memory-systems, llm-agents
 
+### procedural memory distillation
+
+- **Expected:** relevant
+- **Decision:** relevant
+- **Score:** 100
+- **Reason:** Studies how cross-episode experience can be converted into reusable procedural memory and distilled into a language model's weights.
+- **Tags:** memory-types, agent-memory, memory-systems, llm-agents, procedural-memory, parametric-memory, memory-distillation, self-improvement, language-model-memory, cross-episode-learning
+
 ### Engram-style mechanisms in LLMs
 
 - **Expected:** relevant

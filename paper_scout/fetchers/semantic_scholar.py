@@ -10,13 +10,14 @@ from paper_scout.dates import publication_date
 from paper_scout.fetchers.arxiv import parse_arxiv_feed
 from paper_scout.http import HttpClient
 from paper_scout.models import PaperCandidate, SourceFetchResult
+from paper_scout.query_planner import PlannedQuery
 
 
 class SemanticScholarFetcher:
     source = "semantic_scholar"
 
     def __init__(self, http: HttpClient | None = None) -> None:
-        self.http = http or HttpClient()
+        self.http = http or HttpClient(min_interval_seconds=1.0)
 
     def search(self, term: str, days: int, max_results: int) -> list[PaperCandidate]:
         return self.search_with_diagnostics(term, days, max_results).candidates
@@ -34,6 +35,26 @@ class SemanticScholarFetcher:
         cutoff = date.today() - timedelta(days=days)
         papers = _enrich_year_only_arxiv_papers(parse_semantic_scholar_results(payload), self.http)
         return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=[paper for paper in papers if _is_recent(paper, cutoff)])
+
+    def search_planned(self, query: PlannedQuery, days: int, max_results: int) -> list[PaperCandidate]:
+        return self.search(query.provider_query, days, max_results)
+
+    def search_planned_with_diagnostics(self, query: PlannedQuery, days: int, max_results: int) -> SourceFetchResult:
+        return self.search_with_diagnostics(query.provider_query, days, max_results)
+
+    def fetch_by_identifier(self, identifier: str) -> PaperCandidate | None:
+        headers = {}
+        if os.environ.get("SEMANTIC_SCHOLAR_API_KEY"):
+            headers["x-api-key"] = os.environ["SEMANTIC_SCHOLAR_API_KEY"]
+        fields = "paperId,title,abstract,url,year,publicationDate,authors,externalIds"
+        payload = self.http.get_text(
+            f"https://api.semanticscholar.org/graph/v1/paper/{identifier}",
+            params={"fields": fields},
+            headers=headers,
+        )
+        item = json.loads(payload)
+        papers = parse_semantic_scholar_results(json.dumps({"data": [item]}))
+        return papers[0] if papers else None
 
 
 def parse_semantic_scholar_results(json_text: str) -> list[PaperCandidate]:

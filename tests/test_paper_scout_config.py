@@ -78,6 +78,15 @@ exclusions:
         ]:
             self.assertIn(term, config.terms)
 
+    def test_loads_nested_discovery_queries_and_sweep(self):
+        config = load_config(track_id="agent_memory")
+
+        self.assertEqual(config.discovery_queries["arxiv"][1].query, "procedural memory")
+        self.assertEqual(config.discovery_queries["arxiv"][1].mode, "all_terms")
+        self.assertEqual(config.query_budgets["semantic_scholar"], 4)
+        self.assertTrue(config.arxiv_sweep.enabled)
+        self.assertEqual(config.arxiv_sweep.categories, ("cs.AI", "cs.CL", "cs.LG"))
+
 
 if __name__ == "__main__":
     unittest.main()

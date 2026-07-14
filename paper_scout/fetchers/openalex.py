@@ -8,6 +8,7 @@ from paper_scout.deduplication import normalize_doi, normalize_openalex_id
 from paper_scout.dates import publication_date
 from paper_scout.http import HttpClient
 from paper_scout.models import PaperCandidate, SourceFetchResult
+from paper_scout.query_planner import PlannedQuery
 
 
 class OpenAlexFetcher:
@@ -30,6 +31,27 @@ class OpenAlexFetcher:
             params["mailto"] = os.environ["OPENALEX_MAILTO"]
         payload = self.http.get_text("https://api.openalex.org/works", params=params)
         return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=parse_openalex_works(payload))
+
+    def search_planned(self, query: PlannedQuery, days: int, max_results: int) -> list[PaperCandidate]:
+        return self.search(query.provider_query, days, max_results)
+
+    def search_planned_with_diagnostics(self, query: PlannedQuery, days: int, max_results: int) -> SourceFetchResult:
+        return self.search_with_diagnostics(query.provider_query, days, max_results)
+
+    def fetch_by_doi(self, doi: str) -> PaperCandidate | None:
+        headers: dict[str, str] = {}
+        params: dict[str, str] = {}
+        if os.environ.get("OPENALEX_MAILTO"):
+            params["mailto"] = os.environ["OPENALEX_MAILTO"]
+        normalized = normalize_doi(doi) or doi
+        payload = self.http.get_text(f"https://api.openalex.org/works/https://doi.org/{normalized}", params=params, headers=headers)
+        item = json.loads(payload)
+        papers = parse_openalex_works(json.dumps({"results": [item]}))
+        paper = papers[0] if papers else None
+        if paper and normalized.lower().startswith("10.48550/arxiv.") and not paper.arxiv_id:
+            arxiv_id = normalized.split("arxiv.", 1)[-1]
+            return PaperCandidate(**{**paper.__dict__, "arxiv_id": arxiv_id, "raw": {**paper.raw, "direct_lookup": "openalex-doi"}})
+        return paper
 
 
 def parse_openalex_works(json_text: str) -> list[PaperCandidate]:

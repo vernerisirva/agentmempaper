@@ -73,6 +73,20 @@ TRACK_CONFIG_PATHS = {
 
 
 @dataclass(frozen=True)
+class DiscoveryQuery:
+    query: str
+    mode: str = "all_terms"
+
+
+@dataclass(frozen=True)
+class ArxivSweepConfig:
+    enabled: bool = False
+    categories: tuple[str, ...] = ()
+    days: int = 10
+    max_results: int = 300
+
+
+@dataclass(frozen=True)
 class ScoutConfig:
     terms: list[str]
     track_id: str = "agent_memory"
@@ -90,6 +104,9 @@ class ScoutConfig:
     cross_track_href: str = "deep-research/index.html"
     research_context: list[str] = field(default_factory=lambda: list(DEFAULT_RESEARCH_CONTEXT))
     exclusions: list[str] = field(default_factory=lambda: list(DEFAULT_EXCLUSIONS))
+    discovery_queries: dict[str, tuple[DiscoveryQuery, ...]] = field(default_factory=dict)
+    query_budgets: dict[str, int] = field(default_factory=lambda: {"arxiv": 6, "openalex": 5, "semantic_scholar": 5})
+    arxiv_sweep: ArxivSweepConfig = field(default_factory=ArxivSweepConfig)
 
 
 def load_config(
@@ -113,7 +130,8 @@ def load_config(
             exclusions=DEFAULT_EXCLUSIONS,
         )
 
-    data = _parse_simple_yaml(config_path.read_text(encoding="utf-8"))
+    config_text = config_path.read_text(encoding="utf-8")
+    data = _parse_simple_yaml(config_text)
     track = data.get("track", {})
     search = data.get("search", {})
     output = data.get("output", {})
@@ -124,6 +142,11 @@ def load_config(
     state_values = state if isinstance(state, dict) else {}
     curation_values = curation if isinstance(curation, dict) else {}
     search_values = search if isinstance(search, dict) else {}
+    discovery_queries = _parse_discovery_queries(config_text)
+    if not discovery_queries:
+        discovery_queries = _fallback_discovery_queries(search_values.get("terms") or DEFAULT_TERMS)
+    query_budgets = _parse_int_mapping(config_text, "query_budgets") or {"arxiv": 6, "openalex": 5, "semantic_scholar": 5}
+    sweep_values = _parse_mapping(config_text, "arxiv_sweep")
 
     loaded_track_id = str(track_values.get("id") or active_track_id or "agent_memory")
     terms = search_values.get("terms") or DEFAULT_TERMS
@@ -146,6 +169,14 @@ def load_config(
         cross_track_href=str(track_values.get("cross_track_href") or "deep-research/index.html"),
         research_context=[str(item) for item in data.get("research_context", DEFAULT_RESEARCH_CONTEXT)],
         exclusions=[str(item) for item in data.get("exclusions", DEFAULT_EXCLUSIONS)],
+        discovery_queries=discovery_queries,
+        query_budgets=query_budgets,
+        arxiv_sweep=ArxivSweepConfig(
+            enabled=_as_bool(sweep_values.get("enabled"), False),
+            categories=tuple(_parse_section_list(config_text, "arxiv_sweep", "categories")),
+            days=int(sweep_values.get("days", 10)),
+            max_results=int(sweep_values.get("max_results", 300)),
+        ),
     )
 
 
@@ -194,3 +225,106 @@ def _parse_simple_yaml(text: str) -> dict[str, object]:
             current_section[key.strip()] = value.strip().strip('"').strip("'")
 
     return root
+
+
+def _fallback_discovery_queries(terms: object) -> dict[str, tuple[DiscoveryQuery, ...]]:
+    values = [str(term) for term in terms if str(term).strip()] if isinstance(terms, list) else list(DEFAULT_TERMS)
+    bounded = tuple(DiscoveryQuery(term, "all_terms") for term in values[:5])
+    return {source: bounded for source in ("arxiv", "openalex", "semantic_scholar")}
+
+
+def _parse_discovery_queries(text: str) -> dict[str, tuple[DiscoveryQuery, ...]]:
+    lines = text.splitlines()
+    start = _section_start(lines, "discovery_queries")
+    if start is None:
+        return {}
+    result: dict[str, list[DiscoveryQuery]] = {}
+    source: str | None = None
+    pending: dict[str, str] | None = None
+    for raw in lines[start + 1 :]:
+        if raw.strip() and not raw.startswith(" "):
+            break
+        stripped = raw.split("#", 1)[0].strip()
+        indent = len(raw) - len(raw.lstrip(" "))
+        if not stripped:
+            continue
+        if indent == 2 and stripped.endswith(":"):
+            if source and pending and pending.get("query"):
+                result.setdefault(source, []).append(DiscoveryQuery(pending["query"], pending.get("mode", "all_terms")))
+            source = stripped[:-1]
+            pending = None
+            continue
+        if source is None or not stripped.startswith("-") and pending is None:
+            continue
+        if stripped.startswith("- "):
+            if pending and pending.get("query"):
+                result.setdefault(source, []).append(DiscoveryQuery(pending["query"], pending.get("mode", "all_terms")))
+            value = stripped[2:].strip()
+            if value.startswith("query:"):
+                pending = {"query": _scalar(value.split(":", 1)[1])}
+            else:
+                result.setdefault(source, []).append(DiscoveryQuery(_scalar(value), "all_terms"))
+                pending = None
+            continue
+        if pending is not None and ":" in stripped:
+            key, value = stripped.split(":", 1)
+            pending[key.strip()] = _scalar(value)
+    if source and pending and pending.get("query"):
+        result.setdefault(source, []).append(DiscoveryQuery(pending["query"], pending.get("mode", "all_terms")))
+    return {key: tuple(values) for key, values in result.items()}
+
+
+def _parse_mapping(text: str, section: str) -> dict[str, str]:
+    lines = text.splitlines()
+    start = _section_start(lines, section)
+    if start is None:
+        return {}
+    values: dict[str, str] = {}
+    for raw in lines[start + 1 :]:
+        if raw.strip() and not raw.startswith(" "):
+            break
+        stripped = raw.split("#", 1)[0].strip()
+        indent = len(raw) - len(raw.lstrip(" "))
+        if indent == 2 and ":" in stripped and not stripped.endswith(":"):
+            key, value = stripped.split(":", 1)
+            values[key.strip()] = _scalar(value)
+    return values
+
+
+def _parse_int_mapping(text: str, section: str) -> dict[str, int]:
+    return {key: int(value) for key, value in _parse_mapping(text, section).items()}
+
+
+def _parse_section_list(text: str, section: str, key: str) -> list[str]:
+    lines = text.splitlines()
+    start = _section_start(lines, section)
+    if start is None:
+        return []
+    in_list = False
+    values: list[str] = []
+    for raw in lines[start + 1 :]:
+        if raw.strip() and not raw.startswith(" "):
+            break
+        stripped = raw.split("#", 1)[0].strip()
+        indent = len(raw) - len(raw.lstrip(" "))
+        if indent == 2:
+            in_list = stripped == f"{key}:"
+            continue
+        if in_list and stripped.startswith("- "):
+            values.append(_scalar(stripped[2:]))
+    return values
+
+
+def _section_start(lines: list[str], section: str) -> int | None:
+    marker = f"{section}:"
+    return next((index for index, line in enumerate(lines) if line.strip() == marker and not line.startswith(" ")), None)
+
+
+def _scalar(value: str) -> str:
+    return value.strip().strip('"').strip("'")
+
+
+def _as_bool(value: str | None, default: bool) -> bool:
+    if value is None:
+        return default
+    return value.lower() in {"1", "true", "yes", "on"}

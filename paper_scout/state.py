@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
 from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
@@ -9,6 +11,19 @@ from pathlib import Path
 from paper_scout.deduplication import canonical_key
 from paper_scout.dates import publication_date
 from paper_scout.models import ClassificationResult, DigestPaper, PaperCandidate
+
+
+@dataclass(frozen=True)
+class FailedQuery:
+    track: str
+    source: str
+    normalized_query: str
+    requested_days: int
+    failure_type: str
+    attempt_count: int
+    first_failure_at: str
+    latest_failure_at: str
+    next_retry_at: str
 
 
 class PaperStore:
@@ -182,6 +197,101 @@ class PaperStore:
                     (key, digest_date),
                 )
 
+    def paper_exists(self, candidate: PaperCandidate) -> bool:
+        key = canonical_key(candidate)
+        with self._connect() as db:
+            return db.execute("SELECT 1 FROM papers WHERE canonical_key = ?", (key,)).fetchone() is not None
+
+    def paper_count(self) -> int:
+        with self._connect() as db:
+            return int(db.execute("SELECT COUNT(*) FROM papers").fetchone()[0])
+
+    def record_failed_query(
+        self,
+        track: str,
+        source: str,
+        normalized_query: str,
+        requested_days: int,
+        failure_type: str,
+    ) -> None:
+        now = datetime.now(UTC).replace(microsecond=0)
+        with self._connect() as db:
+            row = db.execute(
+                "SELECT attempt_count FROM failed_queries WHERE track = ? AND source = ? AND normalized_query = ? AND requested_days = ?",
+                (track, source, normalized_query, requested_days),
+            ).fetchone()
+            attempts = int(row["attempt_count"]) + 1 if row else 1
+            delay_hours = min(24 * 7, 2 ** min(attempts - 1, 7))
+            next_retry = now + timedelta(hours=delay_hours)
+            db.execute(
+                """
+                INSERT INTO failed_queries(
+                    track, source, normalized_query, requested_days, first_failure_at,
+                    latest_failure_at, failure_type, attempt_count, next_retry_at, resolved_at
+                ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+                ON CONFLICT(track, source, normalized_query, requested_days) DO UPDATE SET
+                    latest_failure_at = excluded.latest_failure_at,
+                    failure_type = excluded.failure_type,
+                    attempt_count = excluded.attempt_count,
+                    next_retry_at = excluded.next_retry_at,
+                    resolved_at = NULL
+                """,
+                (
+                    track,
+                    source,
+                    normalized_query,
+                    requested_days,
+                    now.isoformat(),
+                    now.isoformat(),
+                    failure_type,
+                    attempts,
+                    next_retry.isoformat(),
+                ),
+            )
+
+    def resolve_failed_query(self, track: str, source: str, normalized_query: str, requested_days: int) -> None:
+        with self._connect() as db:
+            db.execute(
+                """
+                UPDATE failed_queries SET resolved_at = datetime('now')
+                WHERE track = ? AND source = ? AND normalized_query = ? AND requested_days = ? AND resolved_at IS NULL
+                """,
+                (track, source, normalized_query, requested_days),
+            )
+
+    def retryable_failed_queries(self, track: str, limit: int = 10, include_not_due: bool = False) -> list[FailedQuery]:
+        due_clause = "" if include_not_due else "AND next_retry_at <= ?"
+        params: list[object] = [track]
+        if not include_not_due:
+            params.append(datetime.now(UTC).replace(microsecond=0).isoformat())
+        params.append(limit)
+        with self._connect() as db:
+            rows = db.execute(
+                f"""
+                SELECT * FROM failed_queries
+                WHERE track = ? AND resolved_at IS NULL {due_clause}
+                ORDER BY next_retry_at, latest_failure_at LIMIT ?
+                """,
+                params,
+            ).fetchall()
+        return [
+            FailedQuery(
+                track=row["track"], source=row["source"], normalized_query=row["normalized_query"],
+                requested_days=row["requested_days"], failure_type=row["failure_type"],
+                attempt_count=row["attempt_count"], first_failure_at=row["first_failure_at"],
+                latest_failure_at=row["latest_failure_at"], next_retry_at=row["next_retry_at"],
+            )
+            for row in rows
+        ]
+
+    def failed_queries(self, track: str, include_resolved: bool = False) -> list[sqlite3.Row]:
+        resolved_clause = "" if include_resolved else "AND resolved_at IS NULL"
+        with self._connect() as db:
+            return db.execute(
+                f"SELECT * FROM failed_queries WHERE track = ? {resolved_clause} ORDER BY latest_failure_at DESC",
+                (track,),
+            ).fetchall()
+
     @contextmanager
     def _connect(self) -> Iterator[sqlite3.Connection]:
         db = sqlite3.connect(self.path)
@@ -252,6 +362,21 @@ class PaperStore:
                     canonical_key TEXT PRIMARY KEY,
                     digest_date TEXT NOT NULL,
                     notified_at TEXT NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS failed_queries(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    track TEXT NOT NULL,
+                    source TEXT NOT NULL,
+                    normalized_query TEXT NOT NULL,
+                    requested_days INTEGER NOT NULL,
+                    first_failure_at TEXT NOT NULL,
+                    latest_failure_at TEXT NOT NULL,
+                    failure_type TEXT NOT NULL,
+                    attempt_count INTEGER NOT NULL,
+                    next_retry_at TEXT NOT NULL,
+                    resolved_at TEXT,
+                    UNIQUE(track, source, normalized_query, requested_days)
                 );
                 """
             )

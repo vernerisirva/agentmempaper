@@ -1,155 +1,79 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-14](2026-07-14.md).
+Latest daily digest: [2026-07-15](2026-07-15.md).
 
-# Paper Scout Digest - 2026-07-14
+# Paper Scout Digest - 2026-07-15
 
 ## Run Summary
 
-- **Run ID:** 22
-- **Candidates fetched:** 130
-- **New unique papers:** 125
-- **Relevant:** 15
-- **Maybe relevant:** 6
-- **Irrelevant:** 109
-- **Source summary:** arxiv: 30, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Run ID:** 23
+- **Candidates fetched:** 133
+- **New unique papers:** 127
+- **Relevant:** 16
+- **Maybe relevant:** 12
+- **Irrelevant:** 105
+- **Source summary:** arxiv: 33, openalex: 100, semantic_scholar: 0
 
 ## Highly Relevant
 
-### [Humanities Writing Companion: An Agent Skill for Voice-Preserving Humanities Academic Writing](https://github.com/tizzy916/claude-skill-humanities-writing-companion)
+### [FinResearchBench II: A Deep Research Benchmark with Consensus-Derived Gold Rubrics for Distinguishing Financial Report Quality](https://arxiv.org/abs/2607.12252v1)
 
-- **Authors:** Cong Shen
-- **Date:** 2026-07-13
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** An end-to-end agent skill, in the open Agent Skills (SKILL.md) format, for humanities scholars (history, philosophy, literature, cultural studies, art history, religious studies, classics, intellectual history, science studies, and adjacent fields) whose primary deliverable is a long-form argumentative text. Not a r...
-
-### [Humanities Writing Companion: An Agent Skill for Voice-Preserving Humanities Academic Writing](https://doi.org/10.5281/zenodo.21340923)
-
-- **Authors:** Cong Shen
-- **Date:** 2026-07-13
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** An end-to-end agent skill, in the open Agent Skills (SKILL.md) format, for humanities scholars (history, philosophy, literature, cultural studies, art history, religious studies, classics, intellectual history, science studies, and adjacent fields) whose primary deliverable is a long-form argumentative text. Not a r...
-
-### [Humanities Writing Companion: An Agent Skill for Voice-Preserving Humanities Academic Writing](https://doi.org/10.5281/zenodo.21332301)
-
-- **Authors:** Cong Shen
-- **Date:** 2026-07-13
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** An end-to-end agent skill, in the open Agent Skills (SKILL.md) format, for humanities scholars (history, philosophy, literature, cultural studies, art history, religious studies, classics, intellectual history, science studies, and adjacent fields) whose primary deliverable is a long-form argumentative text. Not a r...
-
-### [Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents](https://doi.org/10.48550/arxiv.2607.09195)
-
-- **Authors:** Izumi Takahara, Teruyasu Mizoguchi
-- **Date:** 2026-07-10
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Large language model (LLM) agents are increasingly expected to play a central role in AI-driven scientific discovery. Equipped with broad knowledge, flexible reasoning, and tool use, they have the potential to autonomously explore and solve scientific problems by repeatedly proposing hypotheses, testing them, and re...
-
-### [Which ‘AI scientist’ suits your lab? A guide for the perplexed](https://doi.org/10.1038/d41586-026-02091-6)
-
-- **Authors:** Ewen Callaway
-- **Date:** 2026-07-10
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
-
-### [MMGPE vs. General-Purpose Biomedical AI Agents Differentiating Structured Multi-Mechanism Disease Reasoning from Autonomous Biomedical Research Systems](https://doi.org/10.5281/zenodo.21313591)
-
-- **Authors:** Melinda B. Chu
-- **Date:** 2026-07-11
-- **Source:** openalex
+- **Authors:** Beidi Luan, Rui Sun, Sinuo Wang, Yan Gu, Chao Li, Zhenliang Xiong, et al.
+- **Date:** 2026-07-14
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Abstract Recent advances in biomedical artificial intelligence have produced powerful autonomous research agents capable of literature synthesis, data analysis, workflow generation, and computational tool orchestration. Representative examples include Biomni, K-Dense Analyst, Edison/Kosmos, Phylo, and STELLA. These...
-
-### [MMGPE vs. General-Purpose Biomedical AI Agents Differentiating Structured Multi-Mechanism Disease Reasoning from Autonomous Biomedical Research Systems](https://doi.org/10.5281/zenodo.21313592)
-
-- **Authors:** Melinda B. Chu
-- **Date:** 2026-07-11
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Abstract Recent advances in biomedical artificial intelligence have produced powerful autonomous research agents capable of literature synthesis, data analysis, workflow generation, and computational tool orchestration. Representative examples include Biomni, K-Dense Analyst, Edison/Kosmos, Phylo, and STELLA. These...
+- **Abstract summary:** Deep research agents are increasingly used to produce long-form financial reports, yet large-scale evaluation remains bottlenecked by the need for human experts to define and execute high-quality rubrics. We address this problem by proposing a scalable pipeline for generating high-quality rubrics without human exper...
 
 ## Maybe Relevant
 
-### [MANILA26: SIGIR 2026 Tutorial on Information Retrieval for Climate Change Impact](https://doi.org/10.1145/3805712.3808642)
+### [Can Induced Emotion Bias LLM Behaviors in Sequential Decision Making?](https://arxiv.org/abs/2607.12631v1)
 
-- **Authors:** Maarten de Rijke, Flora D. Salim
-- **Date:** 2026-07-10
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** literature-review
-- **Abstract summary:** This three-hour tutorial uses climate change evidence synthesis as a high-stakes ''stress test'' for state-of-the-art IR and AI methods. Participants will explore why this domain, which is characterized by high levels of interdisciplinarity, multi-modal data (geospatial and time-series), and a lack of controlled voc...
-
-### [DeepResearch-9K: A Challenging Benchmark Dataset of Deep-Research Agent](https://doi.org/10.1145/3805712.3808597)
-
-- **Authors:** Tongzhou Wu, Yue Wang, Xinyu Ma, Xiuqiang He, S Q Wang, Dawei Yin, et al.
-- **Date:** 2026-07-10
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** benchmark
-- **Abstract summary:** Deep-research agents are capable of executing multi-step web exploration, targeted retrieval, and sophisticated question answering. Despite their powerful capabilities, deep-research agents face two critical bottlenecks: (1) the lack of large-scale, challenging datasets with real-world difficulty, and (2) the absenc...
-
-### [WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search](https://arxiv.org/abs/2607.08662v1)
-
-- **Authors:** Xiaoshuai Song, Liancheng Zhang, Kangzhi Zhao, Yutao Zhu, Zhongyuan Wang, Guanting Dong, et al.
-- **Date:** 2026-07-09
+- **Authors:** Minh Khoi Ho, Zihao Zhu, Runchuan Zhu, Levina Li, Zhiwen Fan, Zhangyang Wang, et al.
+- **Date:** 2026-07-14
 - **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ReAct-style agent is constrained by one long trajectory and limited context, making it difficult to handle depth and...
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** As Large Language Models (LLMs) are increasingly deployed as autonomous agents in high-stakes domains, understanding contextual factors that may modulate their decision-making becomes critical. While LLMs are trained to perceive and resonate with users' emotions, it remains unclear whether induced emotion can influe...
 
-### [WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search](https://arxiv.org/abs/2607.08662)
+### [An Agentic AI Scientific Community for Automated Neural Operator Discovery](https://arxiv.org/abs/2607.12122v1)
 
-- **Authors:** Xiaoshuai Song, Liancheng Zhang, Kangzhi Zhao, Yutao Zhu, Zhongyuan Wang, Guanting Dong, et al.
-- **Date:** 2026-07-09
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ReAct-style agent is constrained by one long trajectory and limited context, making it difficult to handle depth and...
+- **Authors:** Luis Loo, Ulisses Braga-Neto
+- **Date:** 2026-07-13
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** We present an agentic approach to autonomous neural operator discovery based on an AI scientific community, which consists of a swarm of virtual laboratories that interact under a citation-based economy of influence. Highly-cited labs found new labs that follow their research direction and replace non-performing lab...
 
-### [WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search](https://doi.org/10.48550/arxiv.2607.08662)
+### [State-Aware Runtime for Long-Horizon LLM Agents: A Conceptual Framework and Research Agenda](https://doi.org/10.33774/coe-2026-vt9t2-v2)
 
-- **Authors:** Xiaoshuai Song, Liancheng Zhang, Kangzhi Zhao, Yutao Zhu, Zhongyuan Wang, Guanting Dong, et al.
-- **Date:** 2026-07-09
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Large language model (LLM)-based web search agents are transforming information seeking from simple factoid question answering into complex, deep-and-wide search and research-oriented tasks. A single ReAct-style agent is constrained by one long trajectory and limited context, making it difficult to handle depth and...
-
-### [Towards Knowledgeable Deep Research: Framework and Benchmark](https://doi.org/10.1145/3805712.3809617)
-
-- **Authors:** Wenxuan Liu, Zixuan Li, Long Bai, Chunmao Zhang, Fenghui Zhang, Zhuo Chen, et al.
-- **Date:** 2026-07-10
+- **Authors:** Xiwei Chen
+- **Date:** 2026-07-11
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Deep Research (DR) requires LLM agents to autonomously perform multi-step information seeking, processing, and reasoning to generate comprehensive reports. In contrast to existing studies that mainly focus on unstructured web content, a more challenging DR task should additionally utilize structured knowledge to pro...
+- **Abstract summary:** Long-horizon LLM agents are increasingly expected to operate across extended interactions, evolving tasks, tool calls, memory updates, and multi-step plans. However, many failures in such systems are not adequately explained by single-turn reasoning errors or insufficient model capability. Instead, they arise from u...
+
+### [AI-POWERED AUTONOMOUS FREIGHT DISPATCHING SYSTEM USING LARGE LANGUAGE MODELS AND MULTI-AGENT ARCHITECTURE](https://doi.org/10.5281/zenodo.21252806)
+
+- **Authors:** Sardorbek Sherdullaev, Worldly Knowledge Publishing Centre
+- **Date:** 2026-07-08
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** The rapid digital transformation of the freight transportation industry has accelerated the adoption of Artificial Intelligence (AI) to improve operational efficiency, reduce transportation costs, and support real-time decision-making. Despite significant advances in Transportation Management Systems (TMS), freight...
+
+### [AI-POWERED AUTONOMOUS FREIGHT DISPATCHING SYSTEM USING LARGE LANGUAGE MODELS AND MULTI-AGENT ARCHITECTURE](https://doi.org/10.5281/zenodo.21252805)
+
+- **Authors:** Sardorbek Sherdullaev, Worldly Knowledge Publishing Centre
+- **Date:** 2026-07-08
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** The rapid digital transformation of the freight transportation industry has accelerated the adoption of Artificial Intelligence (AI) to improve operational efficiency, reduce transportation costs, and support real-time decision-making. Despite significant advances in Transportation Management Systems (TMS), freight...

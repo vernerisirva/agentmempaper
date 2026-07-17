@@ -1,46 +1,22 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-16](2026-07-16.md).
+Latest daily digest: [2026-07-17](2026-07-17.md).
 
-# Paper Scout Digest - 2026-07-16
+# Paper Scout Digest - 2026-07-17
 
 ## Run Summary
 
-- **Run ID:** 24
-- **Candidates fetched:** 131
-- **New unique papers:** 127
-- **Relevant:** 22
-- **Maybe relevant:** 9
-- **Irrelevant:** 100
-- **Source summary:** arxiv: 31, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Run ID:** 25
+- **Candidates fetched:** 133
+- **New unique papers:** 128
+- **Relevant:** 28
+- **Maybe relevant:** 6
+- **Irrelevant:** 99
+- **Source summary:** arxiv: 33, openalex: 100, semantic_scholar: 0
 
 ## Highly Relevant
 
-### [From AI-assisted writing to AI scientist authorship: a field record of agentic research orchestration in biophysics](https://doi.org/10.5281/zenodo.21352896)
-
-- **Authors:** Hafumi Nishi, GPT-5.5 Pro, Codex, Claude Code, Research-Orchestrator
-- **Date:** 2026-07-15
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
-
-### [From AI-assisted writing to AI scientist authorship: a field record of agentic research orchestration in biophysics](https://doi.org/10.5281/zenodo.21352895)
-
-- **Authors:** Hafumi Nishi, GPT-5.5 Pro, Codex, Claude Code, Research-Orchestrator
-- **Date:** 2026-07-15
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
-
-### [Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists](https://doi.org/10.48550/arxiv.2607.11079)
+### [Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists](https://arxiv.org/abs/2607.11079)
 
 - **Authors:** Chuhan Shi, Xiaoquan Ren, Sicheng Song, Haobo Li, Rui Sheng, Yushi Sun
 - **Date:** 2026-07-13
@@ -50,9 +26,9 @@ Latest daily digest: [2026-07-16](2026-07-16.md).
 - **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** Existing benchmarks for scientific data analysis evaluate LLMs primarily on code execution or workflow completion, overlooking that scientific analysis serves to support distinct types of scientific claims: hypothesis exploration, statistical inference, mechanistic explanation, each with different assumptions and va...
 
-### [NVAITC AI Scientist: A Governed End-to-End Research System -- A Hypertension GWAS Case Study](https://doi.org/10.48550/arxiv.2607.11084)
+### [NVAITC AI Scientist: A Governed End-to-End Research System -- A Hypertension GWAS Case Study](https://arxiv.org/abs/2607.11084)
 
-- **Authors:** Eddie Huang, Ken Liao, Iven Fu, Yang-Hsien Lin, Chao-Shun Zhan, Andy Liao, et al.
+- **Authors:** Eddie Huang, Ken Ying-Kai Liao, Iven Fu, Yang-Hsien Lin, Chao-Shun Zhan, Andy Liao, et al.
 - **Date:** 2026-07-13
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
@@ -60,22 +36,42 @@ Latest daily digest: [2026-07-16](2026-07-16.md).
 - **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** Agentic research systems are emerging as a new paradigm for coordinating scientific workflows beyond isolated model inference, code generation, or statistical analysis. However, deployment in institutional biomedical environments requires governed mechanisms for research planning, data access, workflow orchestration...
 
-### [Toward Auditable AI Scientists: A Hypothesis Evolution Protocol for LLM Agents](https://arxiv.org/abs/2607.09195)
+### [Total Recall QA: A Verifiable Evaluation Suite for Deep Research Agents](https://doi.org/10.1145/3805712.3808629)
 
-- **Authors:** Izumi Takahara, Teruyasu Mizoguchi
-- **Date:** 2026-07-10
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Large language model (LLM) agents are increasingly expected to play a central role in AI-driven scientific discovery. Equipped with broad knowledge, flexible reasoning, and tool use, they have the potential to autonomously explore and solve scientific problems by repeatedly proposing hypotheses, testing them, and re...
-
-### [Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis](https://arxiv.org/abs/2607.13602v1)
-
-- **Authors:** Yongqiang Chen, Guangyi Chen, Yuewen Sun, Kun Zhang
+- **Authors:** Mahta Rafiee, Heydar Soudani, Zahra Abbasiantaeb, Mohammad Aliannejadi, Faegheh Hasibi, Hamed Zamani
 - **Date:** 2026-07-15
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Systematic comparisons between current situations and structurally similar past events in the historical, i.e., historical analogies, is among the most powerful tools for foresight analysis. In this work, we present a new task called Analogical Deep Research (ADR) to Large Language Model (LLM) agents and construct t...
+- **Abstract summary:** No abstract available.
+
+### [Sustained Autonomous Research Agents in Biomedicine: ARIA, an 18-Week Multi-Domain Deployment, and a Cross-Platform Retinal Biomarker Result](https://doi.org/10.5281/zenodo.21383332)
+
+- **Authors:** Justin H. Johnson, Nicholas Bedworth
+- **Date:** 2026-07-15
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous AI research agents have so far been demonstrated in single runs lasting hours, too short to accumulate signal across a biomedical research programme. We present ARIA, a multi-agent system that conducts sustained autonomous scientific research across multi-week deployments, and report a 50-day continuous d...
+
+### [Sustained Autonomous Research Agents in Biomedicine: ARIA, an 18-Week Multi-Domain Deployment, and a Cross-Platform Retinal Biomarker Result](https://doi.org/10.5281/zenodo.21383331)
+
+- **Authors:** Justin H. Johnson, Nicholas Bedworth
+- **Date:** 2026-07-15
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous AI research agents have so far been demonstrated in single runs lasting hours, too short to accumulate signal across a biomedical research programme. We present ARIA, a multi-agent system that conducts sustained autonomous scientific research across multi-week deployments, and report a 50-day continuous d...
+
+### [FinResearchBench II: A Deep Research Benchmark with Consensus-Derived Gold Rubrics for Distinguishing Financial Report Quality](https://doi.org/10.48550/arxiv.2607.12252)
+
+- **Authors:** Beidi Luan, Rui Sun, Sinuo Wang, Yan Gu, Chao Li, Zhenliang Xiong, et al.
+- **Date:** 2026-07-14
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents are increasingly used to produce long-form financial reports, yet large-scale evaluation remains bottlenecked by the need for human experts to define and execute high-quality rubrics. We address this problem by proposing a scalable pipeline for generating high-quality rubrics without human exper...

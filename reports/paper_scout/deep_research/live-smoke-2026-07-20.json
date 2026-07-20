@@ -1,0 +1,77 @@
+{
+  "ci": true,
+  "date": "2026-07-20",
+  "idempotency_passed": true,
+  "irrelevant_count": 101,
+  "maybe_count": 8,
+  "query_plan_counts": {
+    "arxiv": 4,
+    "openalex": 4,
+    "semantic_scholar": 4
+  },
+  "relevant_count": 32,
+  "run_id": "live-smoke-2026-07-20",
+  "source_errors": [
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "automated literature review",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 48,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-07-17",
+        "source_id": "2607.15935",
+        "title": "Learning Reach-Avoid Task with Reinforcement Learning: Vectorized Simulation and Benchmark",
+        "url": "https://arxiv.org/abs/2607.15935v1"
+      },
+      "source": "arxiv",
+      "status": "success"
+    },
+    {
+      "candidates": 100,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-07-15",
+        "source_id": "W7168405860",
+        "title": "Total Recall QA: A Verifiable Evaluation Suite for Deep Research Agents",
+        "url": "https://doi.org/10.1145/3805712.3808629"
+      },
+      "source": "openalex",
+      "status": "success"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "automated literature review",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 4,
+      "raw_records": 75,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 1,
+  "sources_succeeded": 2,
+  "state_initialized": true,
+  "total_candidates": 148,
+  "total_raw_records": 275,
+  "unique_candidates": 141
+}

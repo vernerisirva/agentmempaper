@@ -1,419 +1,67 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-24](2026-07-24.md).
+Latest daily digest: [2026-07-25](2026-07-25.md).
 
-# Paper Scout Digest - 2026-07-24
+# Paper Scout Digest - 2026-07-25
 
 ## Run Summary
 
-- **Run ID:** 61
-- **Candidates fetched:** 887
-- **New unique papers:** 809
-- **Relevant:** 48
-- **Maybe relevant:** 144
-- **Irrelevant:** 695
-- **Source summary:** arxiv: 477, openalex: 400, semantic_scholar: 10
-
-## Highly Relevant
-
-### [Dimension Reduction for Quantum Adaptive Agents](https://doi.org/10.48550/arxiv.2607.19156)
-
-- **Authors:** Rishi Sundar, Thomas J. Elliott
-- **Date:** 2026-07-21
-- **Source:** openalex
-- **Relevance:** relevant (99/100)
-- **Reason:** Evaluates memory mechanisms or benchmarks for LLM agents.
-- **Tags:** benchmark, agent-memory, memory-systems, llm-agents
-- **Abstract summary:** Adaptive agents realise complex reactive behaviours by using a memory of past input stimuli and output actions to guide structured future responses. Quantum adaptive agents can operate while storing less information in memory than optimal classical counterparts; yet, this does not necessarily translate into a reduce...
-
-### [From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents](https://arxiv.org/abs/2607.16621)
-
-- **Authors:** B Tang, Yang Zhang, Guomian Zhuang, Wenqiang Wei, Gaoyang Zheng, Lindong Xie, et al.
-- **Date:** 2026-07-18
-- **Source:** openalex
-- **Relevance:** relevant (99/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** llm-agents, memory-systems, benchmark, agent-memory
-- **Abstract summary:** Existing memory systems for long-horizon LLM agents often retrieve prior traces as passive context rather than converting them into executable capabilities. In this paper, we propose MSCE, a training-free Memory--Skill Co-Evolution framework that organizes agent experience into grounded step traces, reusable procedu...
-
-### [Precompiled KV Memory Modules: Relocatable, Composable Agent Memory for LLM Inference Runtimes](https://doi.org/10.5281/zenodo.21499494)
-
-- **Authors:** Luis Andrés González Picazo
-- **Date:** 2026-07-22
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, evaluation, memory-systems
-- **Abstract summary:** Persistent memories for LLM agents are stored today as text files (Markdown) that are re-prefilled every session, or indexed in RAG systems that re-inject text fragments. The same holds for skill, plan, and agent-definition files (SKILLS.md, PLANS.md, AGENTS.md) and the JSON tool schemas an agent loads, directly or...
-
-### [Precompiled KV Memory Modules: Relocatable, Composable Agent Memory for LLM Inference Runtimes](https://doi.org/10.5281/zenodo.21499493)
-
-- **Authors:** Luis Andrés González Picazo
-- **Date:** 2026-07-22
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, evaluation, memory-systems
-- **Abstract summary:** Persistent memories for LLM agents are stored today as text files (Markdown) that are re-prefilled every session, or indexed in RAG systems that re-inject text fragments. The same holds for skill, plan, and agent-definition files (SKILLS.md, PLANS.md, AGENTS.md) and the JSON tool schemas an agent loads, directly or...
-
-### [Precompiled KV Memory Modules: Relocatable, Composable Agent Memory for LLM Inference Runtimes](https://doi.org/10.5281/zenodo.21499668)
-
-- **Authors:** Luis Andrés González Picazo
-- **Date:** 2026-07-22
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, evaluation, memory-systems
-- **Abstract summary:** Persistent memories for LLM agents are stored today as text files (Markdown) that are re-prefilled every session, or indexed in RAG systems that re-inject text fragments. The same holds for skill, plan, and agent-definition files (SKILLS.md, PLANS.md, AGENTS.md) and the JSON tool schemas an agent loads, directly or...
+- **Run ID:** 62
+- **Candidates fetched:** 856
+- **New unique papers:** 793
+- **Relevant:** 39
+- **Maybe relevant:** 128
+- **Irrelevant:** 689
+- **Source summary:** arxiv: 445, openalex: 400, semantic_scholar: 11
 
 ## Maybe Relevant
 
-### [Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems](https://arxiv.org/abs/2607.21503v1)
+### [Towards an AI-Enabled Metaverse: Architecture, Resource Allocation, and Multimodal Benchmarking](http://hdl.handle.net/10393/51853)
 
-- **Authors:** Gaurav Dadhich
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (69/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, benchmark
-- **Abstract summary:** Production AI agents' failures are less often due to an inability to reason well and more often because they cannot manage what is in their reasoning context: conversation histories, large prompts, large tool definitions, and ballooning tool outputs. Agents drown in their own accumulating history while paying a toke...
-
-### [Supra Cognitive Modes: A Routed Architecture for Agent Memory](https://doi.org/10.48550/arxiv.2607.19096)
-
-- **Authors:** Joshua Tobkin, D Yang
-- **Date:** 2026-07-21
-- **Source:** openalex
-- **Relevance:** maybe (69/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, benchmark
-- **Abstract summary:** Agent-memory workloads mix direct factual lookup, relation-chain and current-state reasoning, and broad synthesis over long histories. We describe Supra Cognitive Modes (SCM), an architecture that maps explicit or automatically selected per-query modes to retrieval and synthesis payloads over one shared ingest subst...
-
-### [NVIDIA-labs OO Agents: Native Python Object-Oriented Agents](https://arxiv.org/abs/2607.20709v1)
-
-- **Authors:** Paul Furgale, Severin Klingler, James Nolan, Matt Staats, Gaia Di Lorenzo, Elisa Martinez Abad, et al.
-- **Date:** 2026-07-22
-- **Source:** arxiv
-- **Relevance:** maybe (62/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Traditional agent development is split across prompt templates, tool schemas, callback code, and workflow graphs. We present NVIDIA Object-Oriented Agents (NOOA), a model-agnostic Python framework for building reliable AI agents. NOOA takes a simpler approach: an agent is a Python object. Its methods are the actions...
-
-### [MEMTIER: Tiered Retrieval, Session-Level Injection, and Typed Consolidation for Long-Running LLM Agents](https://doi.org/10.3390/a19070607)
-
-- **Authors:** Bronislav Sidik, Lior Rokach
-- **Date:** 2026-07-22
-- **Source:** openalex
-- **Relevance:** maybe (62/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents, evaluation
-- **Abstract summary:** Long-running large language model (LLM) agents accumulate memory across many sessions, yet most agent runtimes store it as flat text. We present MEMTIER, a tiered memory architecture and consolidation framework for an open-source agent runtime and study three questions: what to store, what to inject, and what to kee...
-
-### [Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration](https://arxiv.org/abs/2607.16848)
-
-- **Authors:** Maksim Sheverev, David Finkelstein, Sergey Nikolenko
-- **Date:** 2026-07-18
-- **Source:** openalex
-- **Relevance:** maybe (62/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents, evaluation
-- **Abstract summary:** Long-term memory is becoming a core component of LLM agents, but most memory benchmarks evaluate conversations or compact summaries, while research agents need to restore evidence from full scientific papers. We introduce two full-text scientific-memory benchmarks, Public AI Memory (PAIM; 81 papers, 66 questions) an...
-
-### [MemTools: A Unified Research Framework for Interoperable Agent Memory](https://arxiv.org/abs/2607.21404v1)
-
-- **Authors:** Chengfeng Zhao, Jinhui Chen, Sirui Liang, Shizhu He, Yequan Wang, Jun Zhao, et al.
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** evaluation
-- **Abstract summary:** While memory systems are essential for agent architectures, pervasive architectural fragmentation restricts systematic research. Existing implementations typically couple different stages of the memory lifecycle, entangle evaluation logic with specific datasets, and provide limited support for the management of hete...
-
-### [OpenForgeRL: Train Harness-native Agents in Any Environment](https://arxiv.org/abs/2607.21557v1)
-
-- **Authors:** Xiao Yu, Baolin Peng, Ruize Xu, Hao Zou, Qianhui Wu, Hao Cheng, et al.
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external systems. While powerful, these complex harnesses also make agents hard to train end-to-end with open infrastructure, whose SFT/RL stacks cannot natively expr...
-
-### [GS-Agent: Creating 4D Physical Worlds With Generative Simulation](https://arxiv.org/abs/2607.21522v1)
-
-- **Authors:** Hongxin Zhang, Chunru Lin, Junyan Li, Zhou Xian, Tsun-Hsuan Wang, Chuang Gan
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Creating dynamic and physically realistic 4D worlds from natural language descriptions is both fascinating and challenging. Traditional computer graphics methods rely on manual creation, requiring extensive human effort to fine-tune materials, motions, and visual fidelity. Recent advances in generative foundation mo...
-
-### [Same Dangerous Objective, Opposite Advice: Direct Exposure versus Multi-Agent Mediation](https://arxiv.org/abs/2607.21518v1)
-
-- **Authors:** Linjun Li
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Even a current high-capability LLM can appear safer when shown a dangerous objective directly than when other agents transform and relay its direction. Using OpenAI's gpt-5.6-sol model alias, we test 25 pre-specified mirrored trade-off profiles. Direct exposure to an objective authorizing concealment, fabrication, a...
-
-### [Euclid-MCP: A Model Context Protocol Server for Deterministic Logical Reasoning via Prolog](https://arxiv.org/abs/2607.21412v1)
-
-- **Authors:** Bartolomeo Bogliolo
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large Language Models (LLMs) excel at natural language understanding and generation but remain unreliable for multi-step logical reasoning, especially in safety-critical or compliance-sensitive domains. Recent neuro-symbolic approaches address this gap by coupling neural models with external symbolic engines, yet mo...
-
-### [GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG](https://arxiv.org/abs/2607.21324v1)
-
-- **Authors:** Paolo Pedinotti, Enrico Santus
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Retrieval-Augmented Generation (RAG) systems increasingly employ multiple LLM agents. Yet, most prior work optimizes components in isolation rather than coordinating improvements across the pipeline. We introduce GRADRAG, a framework for cross-component prompt adaptation that models the RAG pipeline as a computation...
-
-### [AI Assistants Overassist](https://arxiv.org/abs/2607.21306v1)
-
-- **Authors:** Verona Teo, Raghav Jain, Tobias Gerstenberg, Max Kleiman-Weiner
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large language models (LLMs) are increasingly used as tutors and thought partners, helping users reason through problems. While guidance from AI assistants can scaffold thinking and foster learning, such benefits depend on how they help--for instance, intervening too early or too frequently may hinder true learning...
-
-### [An LLM-Driven Workflow for Automated Process Control Strategy Generation and Tuning from Dynamic Process Models](https://arxiv.org/abs/2607.21292v1)
-
-- **Authors:** Ari Luna Rueda, Eike Cramer, Klaus Hellgardt, Mehmet Mercangöz
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** We present a structured large-language-model-driven workflow for automated multi-variable control design from dynamic process models. The workflow decomposes the design task into constrained code-generation steps: plant-interface construction, normalization, manipulated-variable controlled-variable (MV-CV) pairing,...
-
-### [ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders](https://arxiv.org/abs/2607.21217v1)
-
-- **Authors:** Zhongyuan Peng, Dan Huang, Chuyu Zhang, Caijun Xu, Changyi Xiao, Shibo Hong, et al.
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** The recent emergence of vibe-coding workflows is changing what coding agents are expected to do. Instead of merely completing code under fully specified instructions, agents are increasingly expected to transform incomplete product intent into working software by combining various abilities including planning, requi...
-
-### [Faster IndexTTS-2: Accelerating and Streaming Autoregressive Zero-Shot Text-to-Speech Synthesis on GPUs](https://arxiv.org/abs/2607.21042v1)
-
-- **Authors:** Muyang Du, Shuang Yu, Junjie Lai
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Autoregressive text-to-speech models achieve strong naturalness but suffer from slow inference due to sequential token generation, limiting their deployment in production applications that require low latency. IndexTTS-2 is a state-of-the-art autoregressive TTS model consisting of a GPT, a flow-matching Diffusion Tr...
-
-### [Transformer-Assisted LLM-Based Source Code Summarisation: to Enable More Secure Software Development](https://arxiv.org/abs/2607.20933v1)
-
-- **Authors:** Jesse Phillips, Tracy Hall, Paul Rayson, Mo El-Haj
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Neural Source Code Summarisation (NSCS) aims to generate natural language summaries of source code to improve developers' and maintainers' understanding of code. Source code summaries are vital during the maintenance phase of the Secure Software Development Lifecycle (SSDLC), as they improve maintainers' understandi...
-
-### [Traceable Scholarship: Page Anchors and Ariadne's Thread for Humanistic Inquiry in the Age of Generative AI](https://arxiv.org/abs/2607.20916v1)
-
-- **Authors:** Deyu Jing
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Generative AI lets large language models produce scholarly-looking text within seconds, yet fluency does not equal valid explanation. The deepest risk is not factual error alone but the appearance that an explanation is already established without clear sources, page numbers, editions, or evidence. We liken the page...
-
-### [Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions](https://arxiv.org/abs/2607.20891v1)
-
-- **Authors:** Pengyu Zhu, Lijun Li, Longju Yang, Sen Su
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Deep Research agents extend LLM-based assistants into long-horizon workflows involving planning, retrieval, evidence synthesis, and report generation, yet their reliability in open information environments remains underexplored. A key concern is whether apparently credible but factually misleading knowledge encounte...
-
-### [Enhancing Explainable Cardiac Diagnosis with Guide-Grounded Multimodal LLMs](https://arxiv.org/abs/2607.20814v1)
-
-- **Authors:** Hai-Nam Duy Vuong, Duy-Anh Bui, Trong-Nghia Nguyen, Kim-Ngan Thi Nguyen, Trang Mai Xuan, Tien-Cuong Nguyen, et al.
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** The electrocardiogram (ECG) is a cornerstone of cardiac as- sessment, yet clinical deployment of deep learning models remains con- strained by limited interpretability and the hallucination risk of large language models (LLMs). Existing CNN+Grad-CAM+multimodal LLM frameworks can generate ECG reports, but their expla...
-
-### [The Geometry of Personality: Activation Steering with Jungian Cognitive Functions](https://arxiv.org/abs/2607.20803v1)
-
-- **Authors:** Liu Zai, Yumeng Wang, Junchen Fu, Joemon M. Jose
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Activation steering enables control and interpretation of LLMs, yet existing work primarily models personality through static trait frameworks such as the Big Five. We investigate whether personality can instead be represented and controlled as a set of cognitive processes using the eight Jungian Cognitive Functions...
-
-### [IssueTrojanBench: Benchmarking AI Coding Agents Against Malicious Issue Requests](https://arxiv.org/abs/2607.20759v1)
-
-- **Authors:** Ankur Singh, Jinqiu Yang, Tse-Hsun Chen
-- **Date:** 2026-07-22
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** AI coding agents powered by LLMs are increasingly integrated into real-world software development, where they generate, edit, and execute code with autonomous access to local files and tools. Coding agents inherit security risks from both the LLM backbone, where adversarial prompts, poisoned training data, and backd...
-
-### [GaugeQuant: Online Learning of Quantization-Optimal Bases from LLM Symmetries](https://arxiv.org/abs/2607.20757v1)
-
-- **Authors:** Miguel P. Bento, João Seabra
-- **Date:** 2026-07-22
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Transformers are known to have internal continuous symmetries that leave outputs invariant, while modifying quantization. GaugeQuant leverages this in-training by introducing a LogSumExp term to the loss that breaks the symmetries, thus selecting a basis that minimizes activation outliers. A stop-gradient operator e...
-
-### [Machine Learning for Water and Environmental Modeling in the Sacramento–San Joaquin Delta of California: A 30-Year Retrospective and Future Prospects](https://doi.org/10.3390/w18141763)
-
-- **Authors:** Minxue He, Prabhjot Sandhu
-- **Date:** 2026-07-21
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** The Sacramento–San Joaquin Delta (Delta) is a critical hub for California’s water supply and ecological health, necessitating rapid and accurate modeling for decision-support. This paper reviews three decades of machine learning (ML) applications in the Delta, tracing the evolution from early artificial neural netwo...
-
-### [HindsightBench: A Black-Box Behavioral Audit Protocol for Parametric Hindsight in Time-Indexed LLM Decision Tasks](https://doi.org/10.48550/arxiv.2607.18867)
-
-- **Authors:** Haozhe Jia
-- **Date:** 2026-07-21
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large language models leak parametric knowledge of realized outcomes into historical financial decision tasks. Existence is settled; what users lack is a cheap way to audit a given model for it. We present HindsightBench, a black-box behavioral audit protocol that profiles parametric hindsight in any time-indexed LL...
-
-### [Using large language models for enhancing accessibility for Monte Carlo photon transport simulations and beyond](https://doi.org/10.64898/2026.07.20.738933)
-
-- **Authors:** Fan-Yu Yen, Yiyi Liu, Qianqian Fang
-- **Date:** 2026-07-21
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Significance: Computational modeling and the use of simulation software tools are essential for biomedical optics research. Designing effective simulations often requires in-depth understanding of the underlying physical problems and proper configuration of the software settings, which often constitute key barriers...
-
-### [LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization](https://arxiv.org/abs/2607.16066)
-
-- **Authors:** Mazene Ameur, Abdelkader Mekrache, Bouziane Brik, Adlen Ksentini
-- **Date:** 2026-07-17
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Agentic Artificial Intelligence (AI), enabled by Large Language Models, marks a shift from rule-based automation toward autonomous, goal-driven control of Next-Generation Networks (NGNs). Existing surveys treat the two domains in isolation, leaving protocol integration, evaluation, and standardization alignment unde...
-
-### [EduGuard: A Safe RAG-Based LLM Tutor for Programming Education](https://arxiv.org/abs/2607.15738)
-
-- **Authors:** S M Asif Hossain, Ruksat Khan Shayoni, M. F. Mridha, Jungpil Shin
-- **Date:** 2026-07-17
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Generative AI (GenAI) is increasingly used by students for programming explanation, debugging, and assignment support. Yet unrestricted large language model (LLM) tutors can hallucinate, contradict course policy, reveal complete solutions, and foster passive dependence. This paper presents EduGuard, a safe retrieval...
-
-### [Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving](https://arxiv.org/abs/2607.15621)
-
-- **Authors:** Yun Li, Jiachen Gong, Simon Thompson, Ehsan Javanmardi, Qunli Zhang, Zifan Zeng, et al.
-- **Date:** 2026-07-17
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** Large language models bring instruction following and scene reasoning to end-to-end driving, but their inference latency collides with the control rate a vehicle requires. Existing closed-loop agents hide this gap by invoking the model on alternate simulation ticks and replaying the previous command in between, so h...
-
-### [xHC: Expanded Hyper-Connections](https://arxiv.org/abs/2607.14530)
-
-- **Authors:** Xiangdong Zhang, Xiaohan Qin, Sunan Zou, Tuo Dai, Xiaoming Shi, H. Wu, et al.
+- **Authors:** Zijian Long
 - **Date:** 2026-07-16
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** untagged
-- **Abstract summary:** Hyper-Connections (HC) expand the residual stream of Transformers into $N$ parallel streams, providing a form of memory scaling beyond model width and depth. Manifold-Constrained HC (mHC) stabilizes this formulation at scale. The large gains from $N{=}1$ to $N{=}4$ suggest residual-stream expansion as a promising sc...
+- **Abstract summary:** The metaverse, envisioned as a paradigm for next-generation digital environments, remains fundamentally constrained by isolated, pre-defined, and reactive virtual systems. Artificial intelligence (AI) provides a conceptual and technical foundation for overcoming these limitations by enabling persistent perception, a...
 
-### [DS@GT ARC at LongEval: Citation Integrity and Factual Grounding in Scientific QA](https://arxiv.org/abs/2607.14400)
+### [Bridge Evidence: Static Retrieval Utility Does Not Predict Causal Utility in Multi-Step Agentic Search](https://arxiv.org/abs/2607.15253)
 
-- **Authors:** Brandon Michaels, Brendon Johnson
+- **Authors:** Debayan Mukhopadhyay, Utshab Kumar Ghosh, Shubham Chatterjee
+- **Date:** 2026-07-16
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
+- **Tags:** untagged
+- **Abstract summary:** Retrieval systems are trained and evaluated on a static idea of usefulness: hand a document and a question to a reader model, see whether the answer improves, and score the document accordingly. The idea holds up when a document is read on its own. It breaks when a language model works as a search agent, issuing sev...
+
+### [Non-Markovian Memory and the Thermodynamic Necessity of Temporal Accumulation](https://doi.org/10.5281/zenodo.18574342)
+
+- **Authors:** Sidong Liu
 - **Date:** 2026-07-15
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** untagged
-- **Abstract summary:** This paper describes DS@GT ARC's submission to the CLEF 2026 LongEval Task 4 on Retrieval-Augmented Generation (RAG). In this submission, we examine a divergence between traditional natural language evaluation metrics and citation integrity as applied to RAG QA systems. We evaluate a corrective pipeline using Correc...
+- **Abstract summary:** Version 2 adds a Numerical Demonstration section (Section 7) containing a minimal two-state hidden Markov model with aliased observations. An exact Bayes-filter agent is compared against finite-order Markov-window agents across 15 correlation lengths and 10 seeds. The simulation reproduces two signatures predicted b...
 
-### [HeteroMosaic: Exposing and Exploiting Heterogeneous Execution Opportunities for Energy-Efficient Edge LLM Inference](https://arxiv.org/abs/2607.12839)
+### [Learning Engagement Assistant (LEA): Cross-Course Scalability and Classroom Evaluation of an Agentic AI Tutoring System](https://arxiv.org/abs/2607.13370)
 
-- **Authors:** Gregory Hyegang Jun, Wesley Pang, Eddie Richter, Mehdi Saeedi, Aporva Amarnath, Pallavi Ferrao, et al.
-- **Date:** 2026-07-14
+- **Authors:** Teri Rumble, Javad Zarrin, P. George Lovell, Ruth Falconer
+- **Date:** 2026-07-15
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
 - **Tags:** untagged
-- **Abstract summary:** Modern edge system-on-chips (SoCs) combine CPUs, integrated GPUs (iGPUs), and neural processing units (NPUs), yet existing LLM runtimes typically make coarse device-level decisions or optimize operators in isolation. As a result, they underutilize heterogeneous resources, particularly on unified-memory platforms whe...
+- **Abstract summary:** This paper is an extension of a paper presented at the ICAART 2026 conference, which introduced LEA (Learning Engagement Assistant), an adaptive AI tutoring agent combining course-specific Retrieval-Augmented Generation (RAG) with structured Knowledge Component (KC) models across integrated Chat, Tutor, and Quiz mod...
 
-### [RUMBA: Russian User Memory Benchmark](https://arxiv.org/abs/2607.21447v1)
+### [AI Agents Do Not Fail Alone:The Context Fails First](https://arxiv.org/abs/2607.14275)
 
-- **Authors:** Elizaveta Shevtsova, Inna Glebkina, Mark Baushenko, Pavel Gulyaev, Alena Fenogenova
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (44/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** long-term-memory, benchmark, evaluation
-- **Abstract summary:** The ability to handle long-term memory in LLMs is becoming increasingly critical, yet existing benchmarks remain English-centric and rely on aggregate retrieval metrics, failing to capture interactions between long-range context, temporal information, and reasoning. To address this, we introduce RUMBA (Russian User...
-
-### [AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning](https://arxiv.org/abs/2607.21106v1)
-
-- **Authors:** Qinfeng Li, Yuntai Bao, Xinyan Yu, Hongze Chen, Wenqi Zhang, Xuhong Zhang
-- **Date:** 2026-07-23
-- **Source:** arxiv
-- **Relevance:** maybe (43/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, llm-agents
-- **Abstract summary:** Effective memory is crucial for LLM agents, yet constructing it effectively remains challenging. A memory-construction policy decides what information to extract, store, update, compress, or discard as interactions accumulate. Heuristic memory methods rely on subjective, task-specific rules, which can misalign with...
-
-### [Mechanistic Attention Guidance for Agent Memory Refinement](https://arxiv.org/abs/2607.17621)
-
-- **Authors:** Yechao Hong, Haiquan Qiu, Yaqing Wang, Quanming Yao
-- **Date:** 2026-07-20
+- **Authors:** Fouad Bousetouane
+- **Date:** 2026-07-15
 - **Source:** openalex
-- **Relevance:** maybe (43/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory
-- **Abstract summary:** Existing self-evolving memory systems mainly improve agent memory based on textual outputs, such as task trajectories and reflections. However, this text-based paradigm rarely incorporates internal mechanistic signals, leaving how retrieved memory is actually utilized during task execution underexplored. This limita...
-
-### [RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts](https://arxiv.org/abs/2607.16716)
-
-- **Authors:** Mihir Shriniwas Arya
-- **Date:** 2026-07-18
-- **Source:** openalex
-- **Relevance:** maybe (43/100)
-- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
-- **Tags:** agent-memory, evaluation
-- **Abstract summary:** Large language models and LLM-based agents are widely used as personal chat assistants, enterprise copilots, and autonomous workflow agents. In all these applications, memory (the ability to retain, access, and reason over information accumulated over long contexts and multiple interactions) plays a crucial role in...
+- **Relevance:** maybe (45/100)
+- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
+- **Tags:** llm-agents
+- **Abstract summary:** Context engineering has become central to building reliable AI agents, yet it remains largely unmeasured. Agents do not fail in isolation: their behavior is shaped by the instructions, tools, memory, retrieved knowledge, guardrails, and untrusted inputs accumulated in their context. When this context is weak, agents...

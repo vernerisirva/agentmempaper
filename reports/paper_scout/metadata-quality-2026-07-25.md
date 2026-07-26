@@ -69,7 +69,7 @@
 
 ## Maybe Papers With Core Memory Phrases
 
-- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning** — maybe, 2026-07-23, precision=day, source=arxiv
+- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning** — maybe, 2026-07-23, precision=day, source=openalex
 - **MEMTIER: Tiered Retrieval, Session-Level Injection, and Typed Consolidation for Long-Running LLM Agents** — maybe, 2026-07-22, precision=day, source=openalex
 - **MemoryChain: Declarative Dependency Injection for Structured Memory Recall in LLM Agents** — maybe, 2026-07-19, precision=day, source=openalex
 - **Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration** — maybe, 2026-07-18, precision=day, source=openalex

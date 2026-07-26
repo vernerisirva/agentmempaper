@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agentic AI Systems as a Persistent Attack Surface: How Memory Poisoning, Skill Injection, Trace Leakage, Delegation Opacity, Instruction Hierarchy Collapse, and Prompt Injection Jointly Define a Candidate Framework for Runtime Integrity Failure</title>
+  <title>GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents</title>
   <meta name="description" content="Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -21,17 +21,17 @@
             </span>
           </nav>
           <p class="eyebrow">Structured paper detail</p>
-          <h1>Agentic AI Systems as a Persistent Attack Surface: How Memory Poisoning, Skill Injection, Trace Leakage, Delegation Opacity, Instruction Hierarchy Collapse, and Prompt Injection Jointly Define a Candidate Framework for Runtime Integrity Failure</h1>
-          <p class="hero-copy">Saluca Agentic AI Research Team</p>
+          <h1>GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents</h1>
+          <p class="hero-copy">Z Ren, Yibo Yang, Yimeng Chen, Z. Zhao, Benshuo Fu, Zhihao Shu, Bingjie Zhang, Yan Xu, Dandan Guo, Su Yan</p>
           <div class="paper-detail-actions">
-            <a class="paper-link" href="https://doi.org/10.5281/zenodo.20731628">Open paper</a>
-            <a class="paper-detail-link" href="agentic-ai-systems-as-a-persistent-attack-surface-how-memory-poisoning-skill-injecti-5b314eb2.json">Download paper JSON</a>
+            <a class="paper-link" href="https://arxiv.org/abs/2606.18829">Open paper</a>
+            <a class="paper-detail-link" href="gatemem-benchmarking-memory-governance-in-multi-principal-shared-memory-agents-71e816c8.json">Download paper JSON</a>
           </div>
         </header>
         <section class="paper-detail-layout">
           <section class="detail-panel">
             <p class="section-kicker">Authors</p>
-            <p>Saluca Agentic AI Research Team</p>
+            <p>Z Ren, Yibo Yang, Yimeng Chen, Z. Zhao, Benshuo Fu, Zhihao Shu, Bingjie Zhang, Yan Xu, Dandan Guo, Su Yan</p>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Publication/date metadata</p>
@@ -46,31 +46,31 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Sources</p>
-            <ul><li>OpenAlex</li></ul>
-            <div class="secondary-links"><a href="https://doi.org/10.5281/zenodo.20731135">DOI</a><a href="https://openalex.org/W7164987426">OpenAlex</a><a href="https://openalex.org/W7165023540">OpenAlex</a></div>
+            <ul><li>OpenAlex</li><li>arXiv</li></ul>
+            <div class="secondary-links"><a href="https://openalex.org/W7165218853">OpenAlex</a></div>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Why included</p>
-            <p>Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+            <p>Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
           </section>
 
           <section class="detail-panel wide">
             <p class="section-kicker">Abstract / summary</p>
-            <p>Version 2 — revised in response to an external structural review and an automated critique pass. See &quot;Response to Review&quot; appendix in the PDF for the change log. Agentic AI systems — LLM-powered agents that plan, invoke tools, maintain persistent memory, and delegate to sub-agents — are being deployed in production...</p>
+            <p>Memory benchmarks for LLM agents largely assume single-user settings, leaving shared assistants for hospitals, workplaces, campuses, and households understudied. In these deployments, multiple principals write to a common memory pool and query it under different roles, scopes, and relationships, so memory quality re...</p>
           </section>
           <section class="detail-panel wide structured-card-panel">
             <p class="section-kicker">Structured research card</p>
             <dl class="detail-metadata structured-card-fields">
             <div>
               <dt>Research relevance</dt>
-              <dd>Review candidate</dd>
-              <dd class="structured-provenance">Confidence: low · Provenance: rule</dd>
+              <dd>Directly relevant to agentic-memory research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
             </div>
 
             <div>
               <dt>Method / system type</dt>
-              <dd class="structured-empty">Not extracted yet</dd>
-              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+              <dd>Benchmark / evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
             </div>
 
             <div>
@@ -81,14 +81,14 @@
 
             <div>
               <dt>Evidence / evaluation</dt>
-              <dd class="structured-empty">Not extracted yet</dd>
-              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+              <dd>Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
             </div>
 
             <div>
               <dt>Relation to agentic memory</dt>
-              <dd>Agentic-AI connection exists, but memory focus is weak or indirect</dd>
-              <dd class="structured-provenance">Confidence: low · Provenance: rule</dd>
+              <dd>Evaluates memory behavior, safety, or retrieval in LLM agents</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
             </div>
 
             <div>
@@ -101,23 +101,23 @@
           <section class="detail-panel">
             <p class="section-kicker">Review metadata</p>
             <ul>
-              <li>Decision: Review candidate</li>
-              <li>Internal screening score: 62/100</li>
-              <li>Screening category: Memory architecture or policy</li>
-              <li>Tags: llm-agents</li>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 91/100</li>
+              <li>Screening category: Memory benchmark/evaluation</li>
+              <li>Tags: llm-agents, memory-policy, evaluation, agent-memory, memory-systems</li>
             </ul>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-07-19 07:48:48</li><li>Last seen by Paper Scout: 2026-07-19 07:48:49</li></ul>
-            <ul><li>DOI: 10.5281/zenodo.20731628</li><li>OpenAlex: W7164987426</li><li>OpenAlex IDs: W7164987426, W7165023540</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-07-26 07:57:46</li><li>Last seen by Paper Scout: 2026-07-26 07:57:46</li></ul>
+            <ul><li>arXiv: 2606.18829</li><li>OpenAlex: W7165218853</li><li>OpenAlex IDs: W7165218853</li><li>arXiv IDs: 2606.18829</li></ul>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Exports</p>
-            <p><a href="agentic-ai-systems-as-a-persistent-attack-surface-how-memory-poisoning-skill-injecti-5b314eb2.json">Download paper JSON</a></p>
+            <p><a href="gatemem-benchmarking-memory-governance-in-multi-principal-shared-memory-agents-71e816c8.json">Download paper JSON</a></p>
             <details class="paper-more">
               <summary>Citation text</summary>
-              <p>Agentic AI Systems as a Persistent Attack Surface: How Memory Poisoning, Skill Injection, Trace Leakage, Delegation Opacity, Instruction Hierarchy Collapse, and Prompt Injection Jointly Define a Candidate Framework for Runtime Integrity Failure. Saluca Agentic AI Research Team. 2026-06-17. https://doi.org/10.5281/zenodo.20731628</p>
+              <p>GateMem: Benchmarking Memory Governance in Multi-Principal Shared-Memory Agents. Z Ren, Yibo Yang, Yimeng Chen, Z. Zhao, Benshuo Fu, Zhihao Shu, Bingjie Zhang, Yan Xu, Dandan Guo, Su Yan. 2026-06-17. https://arxiv.org/abs/2606.18829</p>
             </details>
           </section>
         </section>

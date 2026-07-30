@@ -1,47 +1,41 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-29](2026-07-29.md).
+Latest daily digest: [2026-07-30](2026-07-30.md).
 
-# Paper Scout Digest - 2026-07-29
+# Paper Scout Digest - 2026-07-30
 
 ## Run Summary
 
-- **Run ID:** 37
-- **Candidates fetched:** 125
-- **New unique papers:** 116
-- **Relevant:** 25
-- **Maybe relevant:** 1
-- **Irrelevant:** 99
-- **Source summary:** arxiv: 25, openalex: 100, semantic_scholar: 0
+- **Run ID:** 38
+- **Candidates fetched:** 130
+- **New unique papers:** 122
+- **Relevant:** 22
+- **Maybe relevant:** 3
+- **Irrelevant:** 105
+- **Source summary:** arxiv: 30, openalex: 100, semantic_scholar: 0
 
-## Highly Relevant
+## Source Warnings
 
-### [OmniQEC: discovering practical quantum error-correcting codes by an AI scientist](https://arxiv.org/abs/2607.25865v1)
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
-- **Authors:** Ge Yan, Shanchuan Li, Pengyue Ma, Qixin Zhang, Pingchuan Ma, Jianping Wang, et al.
+## Maybe Relevant
+
+### [An Extension to BigCodeBench for Task Characterization and LLM-based Agent Evaluation](https://doi.org/10.5281/zenodo.21632192)
+
+- **Authors:** Inês Barata, Naghmeh Ivaki, Luis Macedo
 - **Date:** 2026-07-28
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Quantum error correction (QEC) is indispensable for scalable fault-tolerant quantum computing. However, discovering QEC codes that remain effective is challenging, as logical performance depends on the interplay between code structure, hardware, syndrome extraction, and decoding, which often impose competing require...
-
-### [LegalCiteTrust: Benchmarking Citation Trustworthiness in Chinese Long-Form Legal Research Reports](https://doi.org/10.48550/arxiv.2607.20872)
-
-- **Authors:** Yunhan Li, M Xie, Zeyang Shi, Gengshen Wu, Min Yang
-- **Date:** 2026-07-23
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** Long-form legal research reports increasingly rely on LLMs and agentic research systems, but their reliability depends not only on answering the task, but also on whether cited legal authorities are trustworthy. A citation can be risky even when it points to a real source: the report may omit limiting conditions, mi...
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** This upload contains two complementary datasets derived from "BigCodeBench". The first dataset focuses on task characterization, while the second contains information about LLM agents, their responses to the coding tasks, and the corresponding LLM-as-a-judge evaluations. Task characterization dataset The task charac...
 
-### [Benchmarking Agents for Proving Theorems in Quantum Algorithms and Quantum Information](https://arxiv.org/abs/2607.21533)
+### [An Extension to BigCodeBench for Task Characterization and LLM-based Agent Evaluation](https://doi.org/10.5281/zenodo.21632193)
 
-- **Authors:** Lei Zhang, Yusheng Zhao, Y Cao, Ranyiliu Chen, Mingrui Jing, Jizhe Lai, et al.
-- **Date:** 2026-07-23
+- **Authors:** Inês Barata, Naghmeh Ivaki, Luis Macedo
+- **Date:** 2026-07-28
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Formal verification is becoming increasingly practical for quantum computing, yet the ability of AI agents to construct machine-checkable proofs in this domain remains unmeasured. We introduce Lean-QuantumAlg-Bench and Lean-QIT-Bench, two Lean 4 benchmarks containing 36 and 40 theorem-completion tasks for quantum al...
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** This upload contains two complementary datasets derived from "BigCodeBench". The first dataset focuses on task characterization, while the second contains information about LLM agents, their responses to the coding tasks, and the corresponding LLM-as-a-judge evaluations. Task characterization dataset The task charac...

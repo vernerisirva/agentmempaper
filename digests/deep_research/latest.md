@@ -1,41 +1,59 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-07-30](2026-07-30.md).
+Latest daily digest: [2026-07-31](2026-07-31.md).
 
-# Paper Scout Digest - 2026-07-30
+# Paper Scout Digest - 2026-07-31
 
 ## Run Summary
 
-- **Run ID:** 38
-- **Candidates fetched:** 130
-- **New unique papers:** 122
-- **Relevant:** 22
-- **Maybe relevant:** 3
-- **Irrelevant:** 105
-- **Source summary:** arxiv: 30, openalex: 100, semantic_scholar: 0
+- **Run ID:** 39
+- **Candidates fetched:** 134
+- **New unique papers:** 124
+- **Relevant:** 10
+- **Maybe relevant:** 6
+- **Irrelevant:** 118
+- **Source summary:** arxiv: 34, openalex: 100, semantic_scholar: 0
 
-## Source Warnings
+## Highly Relevant
 
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+### [Google DeepMind and Edison Are Building the AI Scientist](https://doi.org/10.1177/27681572261475914)
+
+- **Authors:** Fay Lin
+- **Date:** 2026-07-29
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** No abstract available.
+
+### [OmniQEC: discovering practical quantum error-correcting codes by an AI scientist](https://doi.org/10.48550/arxiv.2607.25865)
+
+- **Authors:** Ge Yan, S. X. Li, Pengyue Ma, Qixin Zhang, Pingchuan Ma, Jianping Wang, et al.
+- **Date:** 2026-07-28
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Quantum error correction (QEC) is indispensable for scalable fault-tolerant quantum computing. However, discovering QEC codes that remain effective is challenging, as logical performance depends on the interplay between code structure, hardware, syndrome extraction, and decoding, which often impose competing require...
 
 ## Maybe Relevant
 
-### [An Extension to BigCodeBench for Task Characterization and LLM-based Agent Evaluation](https://doi.org/10.5281/zenodo.21632192)
+### [FinanceHarness: Autonomous Financial Deep Research Framework](https://arxiv.org/abs/2607.27853v1)
 
-- **Authors:** Inês Barata, Naghmeh Ivaki, Luis Macedo
-- **Date:** 2026-07-28
-- **Source:** openalex
+- **Authors:** Yijia Xiao, Rujun Han, Yanfei Chen, Zifeng Wang, Ke Jiang, Zhongying CuiZhu, et al.
+- **Date:** 2026-07-30
+- **Source:** arxiv
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** benchmark
+- **Abstract summary:** Powered by advances in LLMs and autonomous agents, deep research has become one of the most widely adopted agentic products. However, most deep research systems write general-purpose reports, which are inadequate for financial deep research. Financial research demands specialized knowledge to analyze historical patt...
+
+### [Baikal: Structured Search for Deep Research over Data Lakes](https://arxiv.org/abs/2607.27726v1)
+
+- **Authors:** Dhruv Agarwal, Rishitha Guttapalle Mohan, Aarti Kumari, Ashi Sinha, Athulya Anil, Kavitha Srinivas, et al.
+- **Date:** 2026-07-30
+- **Source:** arxiv
 - **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** This upload contains two complementary datasets derived from "BigCodeBench". The first dataset focuses on task characterization, while the second contains information about LLM agents, their responses to the coding tasks, and the corresponding LLM-as-a-judge evaluations. Task characterization dataset The task charac...
-
-### [An Extension to BigCodeBench for Task Characterization and LLM-based Agent Evaluation](https://doi.org/10.5281/zenodo.21632193)
-
-- **Authors:** Inês Barata, Naghmeh Ivaki, Luis Macedo
-- **Date:** 2026-07-28
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** research-adjacent
-- **Abstract summary:** This upload contains two complementary datasets derived from "BigCodeBench". The first dataset focuses on task characterization, while the second contains information about LLM agents, their responses to the coding tasks, and the corresponding LLM-as-a-judge evaluations. Task characterization dataset The task charac...
+- **Abstract summary:** Deep research over data lakes requires an LLM agent to investigate evidence across thousands of heterogeneous tables and passages to synthesize a report. Existing methods perform iterative retrieval and generation, letting accumulated context determine what to investigate next, which can overexploit locally promisin...

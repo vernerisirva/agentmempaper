@@ -63,7 +63,7 @@ class PaperScoutFetchersTest(unittest.TestCase):
           </entry>
         </feed>"""
 
-        result = ArxivFetcher(http=FakeHttp(xml)).search_with_diagnostics("agent memory", days=30, max_results=5)
+        result = ArxivFetcher(http=FakeHttp(xml)).search_with_diagnostics("agent memory", days=365, max_results=5)
 
         self.assertEqual(result.raw_count, 1)
         self.assertEqual(len(result.candidates), 1)
@@ -172,7 +172,7 @@ class PaperScoutFetchersTest(unittest.TestCase):
             ]
         }
 
-        result = SemanticScholarFetcher(http=FakeHttp(json.dumps(payload))).search_with_diagnostics("agent memory", days=30, max_results=5)
+        result = SemanticScholarFetcher(http=FakeHttp(json.dumps(payload))).search_with_diagnostics("agent memory", days=365, max_results=5)
 
         self.assertEqual(result.raw_count, 1)
         self.assertEqual(len(result.candidates), 1)

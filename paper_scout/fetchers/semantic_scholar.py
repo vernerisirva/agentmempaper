@@ -29,7 +29,7 @@ class SemanticScholarFetcher:
         params = {
             "query": term,
             "limit": max_results,
-            "fields": "paperId,title,abstract,url,year,publicationDate,authors,externalIds",
+            "fields": "paperId,title,abstract,url,year,publicationDate,authors,externalIds,openAccessPdf",
         }
         payload = self.http.get_text("https://api.semanticscholar.org/graph/v1/paper/search", params=params, headers=headers)
         cutoff = date.today() - timedelta(days=days)
@@ -46,7 +46,7 @@ class SemanticScholarFetcher:
         headers = {}
         if os.environ.get("SEMANTIC_SCHOLAR_API_KEY"):
             headers["x-api-key"] = os.environ["SEMANTIC_SCHOLAR_API_KEY"]
-        fields = "paperId,title,abstract,url,year,publicationDate,authors,externalIds"
+        fields = "paperId,title,abstract,url,year,publicationDate,authors,externalIds,openAccessPdf"
         payload = self.http.get_text(
             f"https://api.semanticscholar.org/graph/v1/paper/{identifier}",
             params={"fields": fields},

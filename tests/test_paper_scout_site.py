@@ -604,7 +604,7 @@ date_overrides:
             self.assertIn("Structured research card", detail_html)
             self.assertIn("Key contribution", detail_html)
             self.assertIn("Not extracted yet", detail_html)
-            self.assertEqual(detail_json["schema_version"], "paper-scout-card-v1")
+            self.assertEqual(detail_json["schema_version"], "paper-scout-card-v2")
             self.assertIn("publication", detail_json)
             self.assertIn("relevance", detail_json)
             self.assertIn("structured_card", detail_json)
@@ -800,7 +800,7 @@ date_overrides:
 
             schema = json.loads((docs_dir / "data" / "paper-card.schema.json").read_text(encoding="utf-8"))
             self.assertEqual(schema["title"], "Paper Scout Structured Paper Card")
-            self.assertEqual(schema["properties"]["schema_version"]["const"], "paper-scout-card-v1")
+            self.assertEqual(schema["properties"]["schema_version"]["const"], "paper-scout-card-v2")
             sidecars = [json.loads(path.read_text(encoding="utf-8")) for path in (docs_dir / "papers").glob("*.json")]
             by_title = {paper["title"]: paper for paper in sidecars}
             core = by_title["Core Agent Memory Architecture"]

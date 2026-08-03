@@ -3,11 +3,19 @@ from __future__ import annotations
 import json
 import logging
 import os
+from dataclasses import dataclass
 
 from paper_scout.http import HttpClient
 from paper_scout.models import ClassificationResult, PaperCandidate
 
 LOGGER = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class OpenAICompatibleSettings:
+    api_key: str
+    model: str
+    base_url: str
 
 
 class LlmClassifier:
@@ -75,15 +83,26 @@ def classifier_from_env() -> LlmClassifier:
     if provider in {"", "none", "off", "rules"}:
         return NoopLlmClassifier()
 
-    api_key = os.environ.get("PAPER_SCOUT_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
-    if not api_key:
+    settings = openai_compatible_settings_from_env()
+    if settings is None:
         return NoopLlmClassifier()
+    return OpenAICompatibleClassifier(api_key=settings.api_key, model=settings.model, base_url=settings.base_url)
 
-    model = os.environ.get("PAPER_SCOUT_LLM_MODEL")
-    if not model:
-        return NoopLlmClassifier()
-    base_url = os.environ.get("PAPER_SCOUT_LLM_BASE_URL", "https://api.openai.com/v1")
-    return OpenAICompatibleClassifier(api_key=api_key, model=model, base_url=base_url)
+
+def openai_compatible_settings_from_env(model_override_env: str | None = None) -> OpenAICompatibleSettings | None:
+    provider = os.environ.get("PAPER_SCOUT_LLM_PROVIDER", "auto").lower()
+    if provider in {"", "none", "off", "rules"}:
+        return None
+    api_key = os.environ.get("PAPER_SCOUT_LLM_API_KEY") or os.environ.get("OPENAI_API_KEY")
+    model = os.environ.get(model_override_env or "") if model_override_env else None
+    model = model or os.environ.get("PAPER_SCOUT_LLM_MODEL")
+    if not api_key or not model:
+        return None
+    return OpenAICompatibleSettings(
+        api_key=api_key,
+        model=model,
+        base_url=os.environ.get("PAPER_SCOUT_LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/"),
+    )
 
 
 def classify_with_optional_llm(

@@ -42,6 +42,7 @@
         <span>Sort</span>
           <select id="paper-sort">
           <option value="latest-relevant" selected>Latest relevant</option>
+          <option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>
           <option value="score-desc">Screening match</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
@@ -60,6 +61,45 @@
         <input id="new-only" type="checkbox">
         <span>New only</span>
       </label>
+
+      <details class="quality-controls">
+        <summary>Scholarly quality filters</summary>
+        <div class="quality-control-grid">
+          <label class="select-field" for="quality-minimum">
+            <span>Minimum score</span>
+            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
+          </label>
+          <label class="select-field" for="quality-recommendation">
+            <span>Recommendation</span>
+            <select id="quality-recommendation">
+              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-confidence">
+            <span>Confidence</span>
+            <select id="quality-confidence">
+              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-scope">
+            <span>Assessment scope</span>
+            <select id="quality-scope">
+              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-visibility">
+            <span>Weak assessments</span>
+            <select id="quality-visibility">
+              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
+            </select>
+          </label>
+          <label class="toggle-control" for="quality-include-unknown">
+            <input id="quality-include-unknown" type="checkbox" checked>
+            <span>Include unassessed papers</span>
+          </label>
+        </div>
+      </details>
+
     </section>
 
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
@@ -70,11 +110,12 @@
 
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="citation-grounding deep-research-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="educating the agentic engineer: curricula, collaboration, and continuous learning in the ai era" data-search="educating the agentic engineer: curricula, collaboration, and continuous learning in the ai era mamdouh alenezi generative and agentic artificial intelligence (ai) are reconfiguring software and systems engineering from a discipline centered on human authorship of artifacts to one focused on directing, verifying, and governing autonomous systems. this transition demands a new professional archetype, the \emph{agentic engineer... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  citation-grounding deep-research-agents arxiv relevant">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="citation-grounding deep-research-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="educating the agentic engineer: curricula, collaboration, and continuous learning in the ai era" data-search="educating the agentic engineer: curricula, collaboration, and continuous learning in the ai era mamdouh alenezi generative and agentic artificial intelligence (ai) are reconfiguring software and systems engineering from a discipline centered on human authorship of artifacts to one focused on directing, verifying, and governing autonomous systems. this transition demands a new professional archetype, the \emph{agentic engineer... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  citation-grounding deep-research-agents arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.930000">
       <div class="paper-main">
         <h3>Educating the Agentic Engineer: Curricula, Collaboration, and Continuous Learning in the AI Era<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Mamdouh Alenezi · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29610v1">Open paper</a>
@@ -101,6 +142,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29610">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
+
           <button class="citation-button" type="button" data-citation="Educating the Agentic Engineer: Curricula, Collaboration, and Continuous Learning in the AI Era. Mamdouh Alenezi. 2026-07-31. https://arxiv.org/abs/2607.29610v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -108,11 +150,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="research-adjacent" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="the agentic memory dilemma: designing the first true working memory system for ai agents" data-search="the agentic memory dilemma: designing the first true working memory system for ai agents aakash bhattacharya the systems community is facing a deep architectural dilemma that vector databases are a default solution for agentic ai. as the industry is moving towards advancements in ai specifically towards a fully autonomous ai, the current systems heavily depend on variations of retrieval augmented generation (rag) which rel... review candidate: adjacent to research-agent workflows, but not clearly a deep research system.  research-adjacent openalex maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="research-adjacent" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="the agentic memory dilemma: designing the first true working memory system for ai agents" data-search="the agentic memory dilemma: designing the first true working memory system for ai agents aakash bhattacharya the systems community is facing a deep architectural dilemma that vector databases are a default solution for agentic ai. as the industry is moving towards advancements in ai specifically towards a fully autonomous ai, the current systems heavily depend on variations of retrieval augmented generation (rag) which rel... review candidate: adjacent to research-agent workflows, but not clearly a deep research system.  research-adjacent openalex maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Aakash Bhattacharya · Published 2026-07-29 · Source: OpenAlex</p>
         <p class="reason"><strong>Why included:</strong> Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://doi.org/10.5281/zenodo.21660775">Open paper</a>
@@ -139,6 +182,7 @@
           </ul>
           <div class="secondary-links"><a href="https://doi.org/10.5281/zenodo.21660774">DOI</a><a href="https://openalex.org/W7172147138">OpenAlex</a><a href="https://openalex.org/W7172126518">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.</p>
+
           <button class="citation-button" type="button" data-citation="The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents. Aakash Bhattacharya. 2026-07-29. https://doi.org/10.5281/zenodo.21660775">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -146,11 +190,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="benchmark" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="51" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="financeharness: autonomous financial deep research framework" data-search="financeharness: autonomous financial deep research framework yijia xiao, rujun han, yanfei chen, zifeng wang, ke jiang, zhongying cuizhu, vishy tirumalashetty, wei wang, burak göktürk, tomas pfister, chen‐yu lee powered by advances in llms and autonomous agents, deep research has become one of the most widely adopted agentic products. however, most deep research systems write general-purpose reports, which are inadequate for financial deep research. financial research demands specialized knowledge to analyze historical patt... review candidate: may support deep research workflows but needs human judgment.  benchmark openalex arxiv maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="benchmark" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="51" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="financeharness: autonomous financial deep research framework" data-search="financeharness: autonomous financial deep research framework yijia xiao, rujun han, yanfei chen, zifeng wang, ke jiang, zhongying cuizhu, vishy tirumalashetty, wei wang, burak göktürk, tomas pfister, chen‐yu lee powered by advances in llms and autonomous agents, deep research has become one of the most widely adopted agentic products. however, most deep research systems write general-purpose reports, which are inadequate for financial deep research. financial research demands specialized knowledge to analyze historical patt... review candidate: may support deep research workflows but needs human judgment.  benchmark openalex arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.510000">
       <div class="paper-main">
         <h3>FinanceHarness: Autonomous Financial Deep Research Framework</h3>
         <p class="meta">Yijia Xiao, Rujun Han, Yanfei Chen, Zifeng Wang, Ke Jiang, Zhongying CuiZhu, Vishy Tirumalashetty, Wei Wang, Burak Göktürk, Tomas Pfister, Chen‐Yu Lee · Published 2026-07-30 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Review candidate: may support deep research workflows but needs human judgment.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27853">Open paper</a>
@@ -177,6 +222,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27853v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2607.27853">DOI</a><a href="https://openalex.org/W7172172436">OpenAlex</a><a href="https://openalex.org/W7172007986">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Review candidate: may support deep research workflows but needs human judgment.</p>
+
           <button class="citation-button" type="button" data-citation="FinanceHarness: Autonomous Financial Deep Research Framework. Yijia Xiao, Rujun Han, Yanfei Chen, Zifeng Wang, Ke Jiang, Zhongying CuiZhu, Vishy Tirumalashetty, Wei Wang, Burak Göktürk, Tomas Pfister, Chen‐Yu Lee. 2026-07-30. https://arxiv.org/abs/2607.27853">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -184,11 +230,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="research-adjacent" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="baikal: structured search for deep research over data lakes" data-search="baikal: structured search for deep research over data lakes dhruv agarwal, rishitha guttapalle mohan, aarti kumari, ashi sinha, athulya anil, kavitha srinivas, horst samulowitz, andrew mccallum deep research over data lakes requires an llm agent to investigate evidence across thousands of heterogeneous tables and passages to synthesize a report. existing methods perform iterative retrieval and generation, letting accumulated context determine what to investigate next, which can overexploit locally promisin... review candidate: adjacent to research-agent workflows, but not clearly a deep research system.  research-adjacent openalex arxiv maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="research-adjacent" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="baikal: structured search for deep research over data lakes" data-search="baikal: structured search for deep research over data lakes dhruv agarwal, rishitha guttapalle mohan, aarti kumari, ashi sinha, athulya anil, kavitha srinivas, horst samulowitz, andrew mccallum deep research over data lakes requires an llm agent to investigate evidence across thousands of heterogeneous tables and passages to synthesize a report. existing methods perform iterative retrieval and generation, letting accumulated context determine what to investigate next, which can overexploit locally promisin... review candidate: adjacent to research-agent workflows, but not clearly a deep research system.  research-adjacent openalex arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Baikal: Structured Search for Deep Research over Data Lakes</h3>
         <p class="meta">Dhruv Agarwal, Rishitha Guttapalle Mohan, Aarti Kumari, Ashi Sinha, Athulya Anil, Kavitha Srinivas, Horst Samulowitz, Andrew McCallum · Published 2026-07-30 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27726">Open paper</a>
@@ -215,6 +262,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27726v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2607.27726">DOI</a><a href="https://openalex.org/W7172172230">OpenAlex</a><a href="https://openalex.org/W7171940224">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.</p>
+
           <button class="citation-button" type="button" data-citation="Baikal: Structured Search for Deep Research over Data Lakes. Dhruv Agarwal, Rishitha Guttapalle Mohan, Aarti Kumari, Ashi Sinha, Athulya Anil, Kavitha Srinivas, Horst Samulowitz, Andrew McCallum. 2026-07-30. https://arxiv.org/abs/2607.27726">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -239,6 +287,12 @@
   const relevanceFilter = document.querySelector('#relevance-filter');
   const newOnly = document.querySelector('#new-only');
   const sortSelect = document.querySelector('#paper-sort');
+  const qualityMinimum = document.querySelector('#quality-minimum');
+  const qualityRecommendation = document.querySelector('#quality-recommendation');
+  const qualityConfidence = document.querySelector('#quality-confidence');
+  const qualityScope = document.querySelector('#quality-scope');
+  const qualityVisibility = document.querySelector('#quality-visibility');
+  const qualityIncludeUnknown = document.querySelector('#quality-include-unknown');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
   const emptyState = document.querySelector('#no-results');
@@ -257,6 +311,10 @@
     if (newness) return newness;
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    if (!qualityVisibility || qualityVisibility.value === 'configured') {
+      const qualityRank = (a.dataset.qualityDownranked === 'true' ? 1 : 0) - (b.dataset.qualityDownranked === 'true' ? 1 : 0);
+      if (qualityRank) return qualityRank;
+    }
     const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
     if (bucket) return bucket;
     const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
@@ -272,6 +330,8 @@
       if (mode === 'latest-relevant') return latestRelevantRank(a, b);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'quality-desc') return Number(b.dataset.qualityScore || -1) - Number(a.dataset.qualityScore || -1) || latestRelevantRank(a, b);
+      if (mode === 'combined-desc') return Number(b.dataset.combinedScore || 0) - Number(a.dataset.combinedScore || 0) || latestRelevantRank(a, b);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
       return latestRelevantRank(a, b);
@@ -287,7 +347,14 @@
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
       const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly);
+      const qualityKnown = card.dataset.qualityScore !== '';
+      const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
+      const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
+      const matchesQualityRecommendation = !qualityRecommendation || qualityRecommendation.value === 'all' || card.dataset.qualityRecommendation === qualityRecommendation.value;
+      const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
+      const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
+      const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0;
@@ -296,6 +363,8 @@
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (newOnly) newOnly.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
+  [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
+  if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {
       const status = button.parentElement.querySelector('.copy-status');

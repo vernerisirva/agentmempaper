@@ -57,7 +57,142 @@
       "type": "object"
     },
     "schema_version": {
-      "const": "paper-scout-card-v1"
+      "const": "paper-scout-card-v2"
+    },
+    "scholarly_quality": {
+      "additionalProperties": true,
+      "properties": {
+        "applied_score_cap": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "applied_score_cap_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assessed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assessment_scope": {
+          "enum": [
+            "metadata_only",
+            "title_and_abstract",
+            "partial_full_text",
+            "full_text"
+          ]
+        },
+        "assessment_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assessor_model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assessor_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "concerns": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "concise_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "dimension_scores": {
+          "type": "object"
+        },
+        "evidence": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "missing_information": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "overall_quality_score": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "paper_type": {
+          "type": "string"
+        },
+        "positive_signals": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "recommendation": {
+          "enum": [
+            "strong",
+            "promising",
+            "uncertain",
+            "weak",
+            "unknown"
+          ]
+        },
+        "rubric_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_content_hash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "overall_quality_score",
+        "confidence",
+        "recommendation",
+        "paper_type",
+        "assessment_scope",
+        "dimension_scores",
+        "positive_signals",
+        "concerns",
+        "evidence",
+        "missing_information"
+      ],
+      "type": "object"
     },
     "semantic_scholar_id": {
       "type": [
@@ -303,6 +438,7 @@
     "authors",
     "publication",
     "relevance",
+    "scholarly_quality",
     "structured_card",
     "provenance"
   ],

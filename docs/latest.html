@@ -42,6 +42,7 @@
         <span>Sort</span>
           <select id="paper-sort">
           <option value="latest-relevant" selected>Latest relevant</option>
+          <option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>
           <option value="score-desc">Screening match</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
@@ -60,6 +61,45 @@
         <input id="new-only" type="checkbox">
         <span>New only</span>
       </label>
+
+      <details class="quality-controls">
+        <summary>Scholarly quality filters</summary>
+        <div class="quality-control-grid">
+          <label class="select-field" for="quality-minimum">
+            <span>Minimum score</span>
+            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
+          </label>
+          <label class="select-field" for="quality-recommendation">
+            <span>Recommendation</span>
+            <select id="quality-recommendation">
+              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-confidence">
+            <span>Confidence</span>
+            <select id="quality-confidence">
+              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-scope">
+            <span>Assessment scope</span>
+            <select id="quality-scope">
+              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-visibility">
+            <span>Weak assessments</span>
+            <select id="quality-visibility">
+              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
+            </select>
+          </label>
+          <label class="toggle-control" for="quality-include-unknown">
+            <input id="quality-include-unknown" type="checkbox" checked>
+            <span>Include unassessed papers</span>
+          </label>
+        </div>
+      </details>
+
     </section>
 
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
@@ -70,11 +110,12 @@
 
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="llm-agents long-term-memory memory-policy agent-memory memory-systems" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memory provenance laundering in llm agents: a non-amplification firewall for persistent memory" data-search="memory provenance laundering in llm agents: a non-amplification firewall for persistent memory jinghan xu, yiyong xiao, wanru shao, hankai liu, xinjin li long-term memory lets large language model(llm) agents reuse prior preferences and work flows, but it also turns untrusted observations into persistent action context. we identify memory provenance laundering: during llm-based memory consolidation, an external observation may be rewritten as apparent user history or... studies memory storage, retrieval, update, or consolidation for llm agents.  llm-agents long-term-memory memory-policy agent-memory memory-systems arxiv relevant">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="llm-agents long-term-memory memory-policy agent-memory memory-systems" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memory provenance laundering in llm agents: a non-amplification firewall for persistent memory" data-search="memory provenance laundering in llm agents: a non-amplification firewall for persistent memory jinghan xu, yiyong xiao, wanru shao, hankai liu, xinjin li long-term memory lets large language model(llm) agents reuse prior preferences and work flows, but it also turns untrusted observations into persistent action context. we identify memory provenance laundering: during llm-based memory consolidation, an external observation may be rewritten as apparent user history or... studies memory storage, retrieval, update, or consolidation for llm agents.  llm-agents long-term-memory memory-policy agent-memory memory-systems arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Jinghan Xu, Yiyong Xiao, Wanru Shao, Hankai Liu, Xinjin Li · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29167v1">Open paper</a>
@@ -101,6 +142,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29167">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+
           <button class="citation-button" type="button" data-citation="Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory. Jinghan Xu, Yiyong Xiao, Wanru Shao, Hankai Liu, Xinjin Li. 2026-07-31. https://arxiv.org/abs/2607.29167v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -108,11 +150,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv semantic_scholar" data-decision="relevant" data-tags="llm-agents memory-systems benchmark parametric-memory agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="transmem: transforming hidden states into memory for large language models" data-search="transmem: transforming hidden states into memory for large language models haodong lei, junming liu, yirong chen, pinlong cai, botian shi, ding wang, hongsong wang large language model (llm) agents increasingly operate over long interaction histories, where effective reasoning requires identifying and exploiting task-relevant evidence distributed across past observations and actions. however, useful information encoded in previously computed representations is often underutili... discusses engram-style or parametric memory mechanisms for language models.  llm-agents memory-systems benchmark parametric-memory agent-memory arxiv semantic_scholar relevant">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv semantic_scholar" data-decision="relevant" data-tags="llm-agents memory-systems benchmark parametric-memory agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="transmem: transforming hidden states into memory for large language models" data-search="transmem: transforming hidden states into memory for large language models haodong lei, junming liu, yirong chen, pinlong cai, botian shi, ding wang, hongsong wang large language model (llm) agents increasingly operate over long interaction histories, where effective reasoning requires identifying and exploiting task-relevant evidence distributed across past observations and actions. however, useful information encoded in previously computed representations is often underutili... discusses engram-style or parametric memory mechanisms for language models.  llm-agents memory-systems benchmark parametric-memory agent-memory arxiv semantic_scholar relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>TransMem: Transforming Hidden States into Memory for Large Language Models<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Haodong Lei, Junming Liu, Yirong Chen, Pinlong Cai, Botian Shi, Ding Wang, Hongsong Wang · Published 2026-07-31 · Source: arXiv, Semantic Scholar</p>
         <p class="reason"><strong>Why included:</strong> Discusses Engram-style or parametric memory mechanisms for language models.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://www.semanticscholar.org/paper/32b5fed31c80b4c25ae918b7a2a2d32a4b4e59c9">Open paper</a>
@@ -139,6 +182,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29032">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Discusses Engram-style or parametric memory mechanisms for language models.</p>
+
           <button class="citation-button" type="button" data-citation="TransMem: Transforming Hidden States into Memory for Large Language Models. Haodong Lei, Junming Liu, Yirong Chen, Pinlong Cai, Botian Shi, Ding Wang, Hongsong Wang. 2026-07-31. https://www.semanticscholar.org/paper/32b5fed31c80b4c25ae918b7a2a2d32a4b4e59c9">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -146,11 +190,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="long-term-memory agent-memory memory-systems llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution" data-search="codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution jonathan harrison we present codette , a modular cognitive architecture that models multi-perspective reasoning as a constrained dynamical system converging toward stable cognitive attractors under explicit modeling assumptions. the system integrates six heterogeneous reasoning agents (analytical, creative, ethical, philosophical, pr... focuses on persistent or long-term memory for agent behavior.  long-term-memory agent-memory memory-systems llm-agents openalex relevant">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="long-term-memory agent-memory memory-systems llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution" data-search="codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution jonathan harrison we present codette , a modular cognitive architecture that models multi-perspective reasoning as a constrained dynamical system converging toward stable cognitive attractors under explicit modeling assumptions. the system integrates six heterogeneous reasoning agents (analytical, creative, ethical, philosophical, pr... focuses on persistent or long-term memory for agent behavior.  long-term-memory agent-memory memory-systems llm-agents openalex relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Jonathan Harrison · Published 2026-07-31 · Source: OpenAlex</p>
         <p class="reason"><strong>Why included:</strong> Focuses on persistent or long-term memory for agent behavior.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://doi.org/10.1038/s41598-026-64449-0">Open paper</a>
@@ -177,6 +222,7 @@
           </ul>
           <div class="secondary-links"><a href="https://openalex.org/W7171934815">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Focuses on persistent or long-term memory for agent behavior.</p>
+
           <button class="citation-button" type="button" data-citation="Codette: a multi-perspective cognitive architecture with memory and meta-cognitive strategy evolution. Jonathan Harrison. 2026-07-31. https://doi.org/10.1038/s41598-026-64449-0">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -184,11 +230,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="memory-types agent-memory memory-systems llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="self-play meets skill evolution: self-evolving search agents that pose, solve, and remember" data-search="self-play meets skill evolution: self-evolving search agents that pose, solve, and remember zenghuang fu, zhaoyang li, qiuyuan ai, haoyu wu, minghui wu, chenxu zhao, ante wang, guannan he, changwei wang self-play agents can generate training problems without questions from target benchmarks, but their curricula lack persistent state: failures affect gradients yet do not explicitly shape future practice. external skill memories preserve procedural experience but are typically learned from fixed task distributions. w... studies memory systems or memory modules for llm agents.  memory-types agent-memory memory-systems llm-agents arxiv relevant">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="memory-types agent-memory memory-systems llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="self-play meets skill evolution: self-evolving search agents that pose, solve, and remember" data-search="self-play meets skill evolution: self-evolving search agents that pose, solve, and remember zenghuang fu, zhaoyang li, qiuyuan ai, haoyu wu, minghui wu, chenxu zhao, ante wang, guannan he, changwei wang self-play agents can generate training problems without questions from target benchmarks, but their curricula lack persistent state: failures affect gradients yet do not explicitly shape future practice. external skill memories preserve procedural experience but are typically learned from fixed task distributions. w... studies memory systems or memory modules for llm agents.  memory-types agent-memory memory-systems llm-agents arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Zenghuang Fu, Zhaoyang Li, Qiuyuan Ai, Haoyu Wu, Minghui Wu, Chenxu Zhao, Ante Wang, Guannan He, Changwei Wang · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies memory systems or memory modules for LLM agents.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29468v1">Open paper</a>
@@ -215,6 +262,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29468">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies memory systems or memory modules for LLM agents.</p>
+
           <button class="citation-button" type="button" data-citation="Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember. Zenghuang Fu, Zhaoyang Li, Qiuyuan Ai, Haoyu Wu, Minghui Wu, Chenxu Zhao, Ante Wang, Guannan He, Changwei Wang. 2026-07-31. https://arxiv.org/abs/2607.29468v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -222,11 +270,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-08-02" data-first-seen="2026-08-03" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="recursive contextual closure: longitudinal loss of epistemic permeability in persistent human-ai ecosystems (position paper)" data-search="recursive contextual closure: longitudinal loss of epistemic permeability in persistent human-ai ecosystems (position paper) zoltan varga position paper, bilingual: full hungarian and english texts included, with a supplementary evidence pack (hashed dated note exports, model-analysis annexes, architecture manifest, control-run documentation, claim-revision ledger, citation.cff). this paper names and operationalizes recursive contextual closure: the p... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  llm-agents openalex maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-08-02" data-first-seen="2026-08-03" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="recursive contextual closure: longitudinal loss of epistemic permeability in persistent human-ai ecosystems (position paper)" data-search="recursive contextual closure: longitudinal loss of epistemic permeability in persistent human-ai ecosystems (position paper) zoltan varga position paper, bilingual: full hungarian and english texts included, with a supplementary evidence pack (hashed dated note exports, model-analysis annexes, architecture manifest, control-run documentation, claim-revision ledger, citation.cff). this paper names and operationalizes recursive contextual closure: the p... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  llm-agents openalex maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.620000">
       <div class="paper-main">
         <h3>Recursive Contextual Closure: Longitudinal Loss of Epistemic Permeability in Persistent Human-AI Ecosystems (Position Paper)<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Zoltan Varga · Published 2026-08-02 · Source: OpenAlex</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://doi.org/10.5281/zenodo.21744316">Open paper</a>
@@ -253,6 +302,7 @@
           </ul>
           <div class="secondary-links"><a href="https://openalex.org/W7172117387">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Recursive Contextual Closure: Longitudinal Loss of Epistemic Permeability in Persistent Human-AI Ecosystems (Position Paper). Zoltan Varga. 2026-08-02. https://doi.org/10.5281/zenodo.21744316">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -260,11 +310,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="evaluation llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="reproducing lightmem: naive rag is just as good for memory management" data-search="reproducing lightmem: naive rag is just as good for memory management yongjie zhou, shuai wang, bevan koopman, guido zuccon long-term conversational agents require access to information from earlier interactions, such as a user&#x27;s preferences, past requests, or previously mentioned facts. repeatedly providing the full dialogue history can be expensive as conversations grow, so many memory approaches instead transform past interactions int... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation llm-agents arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="evaluation llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="reproducing lightmem: naive rag is just as good for memory management" data-search="reproducing lightmem: naive rag is just as good for memory management yongjie zhou, shuai wang, bevan koopman, guido zuccon long-term conversational agents require access to information from earlier interactions, such as a user&#x27;s preferences, past requests, or previously mentioned facts. repeatedly providing the full dialogue history can be expensive as conversations grow, so many memory approaches instead transform past interactions int... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation llm-agents arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.620000">
       <div class="paper-main">
         <h3>Reproducing LightMem: Naive RAG Is Just as Good for Memory Management<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Yongjie Zhou, Shuai Wang, Bevan Koopman, Guido Zuccon · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29104v1">Open paper</a>
@@ -291,6 +342,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29104">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Reproducing LightMem: Naive RAG Is Just as Good for Memory Management. Yongjie Zhou, Shuai Wang, Bevan Koopman, Guido Zuccon. 2026-07-31. https://arxiv.org/abs/2607.29104v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -298,11 +350,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="evaluation" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="agenticrepair: multi-faceted program context engineering for agentic vulnerability repair" data-search="agenticrepair: multi-faceted program context engineering for agentic vulnerability repair michael fu, qiyue mei, patanamon thongtanunam, kla tantithamthavorn automated vulnerability repair aims to reduce the time and effort required to patch security flaws from a vulnerability triage report. recent agentic ai approaches have shown promising results in automated program repair. however, vulnerability repair demands richer program context than general bug repair - context... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="evaluation" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="agenticrepair: multi-faceted program context engineering for agentic vulnerability repair" data-search="agenticrepair: multi-faceted program context engineering for agentic vulnerability repair michael fu, qiyue mei, patanamon thongtanunam, kla tantithamthavorn automated vulnerability repair aims to reduce the time and effort required to patch security flaws from a vulnerability triage report. recent agentic ai approaches have shown promising results in automated program repair. however, vulnerability repair demands richer program context than general bug repair - context... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Michael Fu, Qiyue Mei, Patanamon Thongtanunam, Kla Tantithamthavorn · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29422v1">Open paper</a>
@@ -329,6 +382,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29422">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="AgenticRepair: Multi-Faceted Program Context Engineering for Agentic Vulnerability Repair. Michael Fu, Qiyue Mei, Patanamon Thongtanunam, Kla Tantithamthavorn. 2026-07-31. https://arxiv.org/abs/2607.29422v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -336,11 +390,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="autonomous repair for multi-agent systems via monte-carlo tree search" data-search="autonomous repair for multi-agent systems via monte-carlo tree search hanxiao lu, tianyi zhang multi-agent systems (mas) are increasingly deployed to solve complex tasks. in case of incorrect or unsatisfactory outputs, users have to manually locate agent mistakes by inspecting agent trajectories (i.e., {\em failure attribution}) and provide feedback to refine the outputs (i.e., {\em repair}). despite some rec... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="autonomous repair for multi-agent systems via monte-carlo tree search" data-search="autonomous repair for multi-agent systems via monte-carlo tree search hanxiao lu, tianyi zhang multi-agent systems (mas) are increasingly deployed to solve complex tasks. in case of incorrect or unsatisfactory outputs, users have to manually locate agent mistakes by inspecting agent trajectories (i.e., {\em failure attribution}) and provide feedback to refine the outputs (i.e., {\em repair}). despite some rec... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Hanxiao Lu, Tianyi Zhang · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29055v1">Open paper</a>
@@ -367,6 +422,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29055">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Autonomous Repair for Multi-Agent Systems via Monte-Carlo Tree Search. Hanxiao Lu, Tianyi Zhang. 2026-07-31. https://arxiv.org/abs/2607.29055v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -374,11 +430,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="beyond component testing: validating agentic ai systems" data-search="beyond component testing: validating agentic ai systems fabio orazio mirto, luca d&#x27;agati, giuseppe tricomi, stefano silvestri, francesco longo, antonio puliafito, giovanni merlino agentic ai systems act through multi-step trajectories that combine planning, tool use, memory, interaction, and adaptation. this behavior stretches validation practice beyond component testing and one-shot input--output evaluation, because acceptable system behavior now depends on how decisions unfold over time and... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="beyond component testing: validating agentic ai systems" data-search="beyond component testing: validating agentic ai systems fabio orazio mirto, luca d&#x27;agati, giuseppe tricomi, stefano silvestri, francesco longo, antonio puliafito, giovanni merlino agentic ai systems act through multi-step trajectories that combine planning, tool use, memory, interaction, and adaptation. this behavior stretches validation practice beyond component testing and one-shot input--output evaluation, because acceptable system behavior now depends on how decisions unfold over time and... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Beyond Component Testing: Validating Agentic AI Systems<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Fabio Orazio Mirto, Luca D&#x27;Agati, Giuseppe Tricomi, Stefano Silvestri, Francesco Longo, Antonio Puliafito, Giovanni Merlino · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29405v1">Open paper</a>
@@ -405,6 +462,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29405">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Beyond Component Testing: Validating Agentic AI Systems. Fabio Orazio Mirto, Luca D&#x27;Agati, Giuseppe Tricomi, Stefano Silvestri, Francesco Longo, Antonio Puliafito, Giovanni Merlino. 2026-07-31. https://arxiv.org/abs/2607.29405v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -412,11 +470,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="merchantbench: benchmarking llm agents for long-term coherence in e-commerce operations" data-search="merchantbench: benchmarking llm agents for long-term coherence in e-commerce operations qiming shi, yulong tao, linbo jin, zhaolu kang, yibo dou, jiawen zhu, tianjun pan, shaokang fu, chengyu wang, siyue li, yaping cheng, di weng, chengfu huo large language model agents are increasingly evaluated as autonomous tool users, yet most benchmarks focus on bounded tasks with immediate success criteria. real-world deployments often require long-term coherence, the capacity to preserve purposeful behavior across extended horizons while adapting decisions to accu... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  llm-agents arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="merchantbench: benchmarking llm agents for long-term coherence in e-commerce operations" data-search="merchantbench: benchmarking llm agents for long-term coherence in e-commerce operations qiming shi, yulong tao, linbo jin, zhaolu kang, yibo dou, jiawen zhu, tianjun pan, shaokang fu, chengyu wang, siyue li, yaping cheng, di weng, chengfu huo large language model agents are increasingly evaluated as autonomous tool users, yet most benchmarks focus on bounded tasks with immediate success criteria. real-world deployments often require long-term coherence, the capacity to preserve purposeful behavior across extended horizons while adapting decisions to accu... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  llm-agents arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>MerchantBench: Benchmarking LLM Agents for Long-Term Coherence in E-Commerce Operations<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Qiming Shi, Yulong Tao, Linbo Jin, Zhaolu Kang, Yibo Dou, Jiawen Zhu, Tianjun Pan, Shaokang Fu, Chengyu Wang, Siyue Li, Yaping Cheng, Di Weng, Chengfu Huo · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.28956v1">Open paper</a>
@@ -443,6 +502,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.28956">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="MerchantBench: Benchmarking LLM Agents for Long-Term Coherence in E-Commerce Operations. Qiming Shi, Yulong Tao, Linbo Jin, Zhaolu Kang, Yibo Dou, Jiawen Zhu, Tianjun Pan, Shaokang Fu, Chengyu Wang, Siyue Li, Yaping Cheng, Di Weng, Chengfu Huo. 2026-07-31. https://arxiv.org/abs/2607.28956v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -450,11 +510,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="recharness: a bandit-routed agentic harness for self-evolving recommender systems" data-search="recharness: a bandit-routed agentic harness for self-evolving recommender systems haoran ling, yuecheng li, zeyu song, jing yao, shuwen kang, chi lu, wenjin wu, peng jiang optimizing modern recommender models still depends heavily on engineers manually iterating over architectural, objective, and training-strategy changes. while llm-based agents can automate this trial-and-error process, allowing the llm to both select modification directions and generate concrete hypotheses often lea... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="recharness: a bandit-routed agentic harness for self-evolving recommender systems" data-search="recharness: a bandit-routed agentic harness for self-evolving recommender systems haoran ling, yuecheng li, zeyu song, jing yao, shuwen kang, chi lu, wenjin wu, peng jiang optimizing modern recommender models still depends heavily on engineers manually iterating over architectural, objective, and training-strategy changes. while llm-based agents can automate this trial-and-error process, allowing the llm to both select modification directions and generate concrete hypotheses often lea... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>RecHarness: A Bandit-Routed Agentic Harness for Self-Evolving Recommender Systems<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Haoran Ling, Yuecheng Li, Zeyu Song, Jing Yao, Shuwen Kang, Chi Lu, Wenjin Wu, Peng Jiang · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29241v1">Open paper</a>
@@ -481,6 +542,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29241">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="RecHarness: A Bandit-Routed Agentic Harness for Self-Evolving Recommender Systems. Haoran Ling, Yuecheng Li, Zeyu Song, Jing Yao, Shuwen Kang, Chi Lu, Wenjin Wu, Peng Jiang. 2026-07-31. https://arxiv.org/abs/2607.29241v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -488,11 +550,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="simulation code generation for fluid systems using large language models: benchmarking models and prompting strategies" data-search="simulation code generation for fluid systems using large language models: benchmarking models and prompting strategies jan marius stürmer, jascha knack, tobias koch, andreas weinmann large language models (llms) have demonstrated a strong ability to generate syntactically correct code from natural-language specifications. in this study, we explore how llms can be harnessed to automatically translate a neutral graph representation of fluid system models into executable code for two widely adopted... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="simulation code generation for fluid systems using large language models: benchmarking models and prompting strategies" data-search="simulation code generation for fluid systems using large language models: benchmarking models and prompting strategies jan marius stürmer, jascha knack, tobias koch, andreas weinmann large language models (llms) have demonstrated a strong ability to generate syntactically correct code from natural-language specifications. in this study, we explore how llms can be harnessed to automatically translate a neutral graph representation of fluid system models into executable code for two widely adopted... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Simulation Code Generation for Fluid Systems using Large Language Models: Benchmarking Models and Prompting Strategies<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Jan Marius Stürmer, Jascha Knack, Tobias Koch, Andreas Weinmann · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29389v1">Open paper</a>
@@ -519,6 +582,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29389">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Simulation Code Generation for Fluid Systems using Large Language Models: Benchmarking Models and Prompting Strategies. Jan Marius Stürmer, Jascha Knack, Tobias Koch, Andreas Weinmann. 2026-07-31. https://arxiv.org/abs/2607.29389v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -526,11 +590,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="toktier: exact stateful tokenization for agentic llm serving" data-search="toktier: exact stateful tokenization for agentic llm serving zhenyu zhang, zhichao cao llm serving systems cache prompt kv state, yet most front ends still re-tokenize the full request text on every call. the cost lands on coding agents, which resubmit a long transcript after each small tool result, and reuse is hard because even a short append can change token boundaries near the end of the previous... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="toktier: exact stateful tokenization for agentic llm serving" data-search="toktier: exact stateful tokenization for agentic llm serving zhenyu zhang, zhichao cao llm serving systems cache prompt kv state, yet most front ends still re-tokenize the full request text on every call. the cost lands on coding agents, which resubmit a long transcript after each small tool result, and reuse is hard because even a short append can change token boundaries near the end of the previous... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>TokTier: Exact Stateful Tokenization for Agentic LLM Serving<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Zhenyu Zhang, Zhichao Cao · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29678v1">Open paper</a>
@@ -557,6 +622,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29678">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="TokTier: Exact Stateful Tokenization for Agentic LLM Serving. Zhenyu Zhang, Zhichao Cao. 2026-07-31. https://arxiv.org/abs/2607.29678v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -564,11 +630,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="towards agentic ai for point-of-care echocardiography reasoning and interpretation" data-search="towards agentic ai for point-of-care echocardiography reasoning and interpretation matin daghyani cardiovascular disease remains the leading cause of death worldwide, and point-of-care ultrasound (pocus) has expanded cardiac assessment beyond the specialist echocardiography laboratory. however, interpreting a focused bedside examination requires more than visual recognition. clinicians must determine which measu... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="towards agentic ai for point-of-care echocardiography reasoning and interpretation" data-search="towards agentic ai for point-of-care echocardiography reasoning and interpretation matin daghyani cardiovascular disease remains the leading cause of death worldwide, and point-of-care ultrasound (pocus) has expanded cardiac assessment beyond the specialist echocardiography laboratory. however, interpreting a focused bedside examination requires more than visual recognition. clinicians must determine which measu... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Towards agentic AI for point-of-care echocardiography reasoning and interpretation<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Matin Daghyani · Published 2026-07-31 · Source: OpenAlex</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="http://hdl.handle.net/2429/94900">Open paper</a>
@@ -595,6 +662,7 @@
           </ul>
           <div class="secondary-links"><a href="https://doi.org/10.14288/1.0454176">DOI</a><a href="https://openalex.org/W7171956949">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Towards agentic AI for point-of-care echocardiography reasoning and interpretation. Matin Daghyani. 2026-07-31. http://hdl.handle.net/2429/94900">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -602,11 +670,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="transcript-managed transformers: monotone multi-agent collapse and universality with two pop-enabled transcripts" data-search="transcript-managed transformers: monotone multi-agent collapse and universality with two pop-enabled transcripts sergey salishev we study transcript management for fixed, finite-precision causal transformers. a transcript is partitioned into channels of bounded blocks. each transition consults a fixed visible suffix and may append one block, leaving the model, weights, and token protocol unchanged. the operation $p_c:=\popcontext(c)$ deletes... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="transcript-managed transformers: monotone multi-agent collapse and universality with two pop-enabled transcripts" data-search="transcript-managed transformers: monotone multi-agent collapse and universality with two pop-enabled transcripts sergey salishev we study transcript management for fixed, finite-precision causal transformers. a transcript is partitioned into channels of bounded blocks. each transition consults a fixed visible suffix and may append one block, leaving the model, weights, and token protocol unchanged. the operation $p_c:=\popcontext(c)$ deletes... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Transcript-Managed Transformers: Monotone Multi-Agent Collapse and Universality with Two Pop-Enabled Transcripts<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Sergey Salishev · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29496v1">Open paper</a>
@@ -633,6 +702,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29496">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Transcript-Managed Transformers: Monotone Multi-Agent Collapse and Universality with Two Pop-Enabled Transcripts. Sergey Salishev. 2026-07-31. https://arxiv.org/abs/2607.29496v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -640,11 +710,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="ham-vln: harnessing hierarchical agentic memory for zero-shot vision-and-language navigation" data-search="ham-vln: harnessing hierarchical agentic memory for zero-shot vision-and-language navigation an liu, bingxi liu, hongyu ding, yixuan jiang, yaran chen, fulin tang, cong leng, hong zhang, jian cheng vision-and-language navigation (vln) enables robots to follow instructions in previously unseen environments. recently, a training-free paradigm has emerged: the robot queries a multimodal llm to understand its observations and plan the next action. however, long-horizon navigation based on either image streams or d... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="ham-vln: harnessing hierarchical agentic memory for zero-shot vision-and-language navigation" data-search="ham-vln: harnessing hierarchical agentic memory for zero-shot vision-and-language navigation an liu, bingxi liu, hongyu ding, yixuan jiang, yaran chen, fulin tang, cong leng, hong zhang, jian cheng vision-and-language navigation (vln) enables robots to follow instructions in previously unseen environments. recently, a training-free paradigm has emerged: the robot queries a multimodal llm to understand its observations and plan the next action. however, long-horizon navigation based on either image streams or d... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.430000">
       <div class="paper-main">
         <h3>HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">An Liu, Bingxi Liu, Hongyu Ding, Yixuan Jiang, Yaran Chen, Fulin Tang, Cong Leng, Hong Zhang, Jian Cheng · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29600v1">Open paper</a>
@@ -671,6 +742,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29600">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation. An Liu, Bingxi Liu, Hongyu Ding, Yixuan Jiang, Yaran Chen, Fulin Tang, Cong Leng, Hong Zhang, Jian Cheng. 2026-07-31. https://arxiv.org/abs/2607.29600v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -678,11 +750,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="zero-mem: zero-token memory operations for llm agents" data-search="zero-mem: zero-token memory operations for llm agents yilin xiao, zhehan zhu, yujing zhang, jin chen, zijin hong, luyao zhuang, qinggang zhang, shengyuan chen, xiaocao ouyang, lingfei ren, xiao huang llm agents need memory to act consistently over long interactions, yet many systems use additional llm calls to operate that memory. generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. we ask whether str... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory llm-agents arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory llm-agents" data-latest-run="true" data-is-new="true" data-published="2026-07-31" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="zero-mem: zero-token memory operations for llm agents" data-search="zero-mem: zero-token memory operations for llm agents yilin xiao, zhehan zhu, yujing zhang, jin chen, zijin hong, luyao zhuang, qinggang zhang, shengyuan chen, xiaocao ouyang, lingfei ren, xiao huang llm agents need memory to act consistently over long interactions, yet many systems use additional llm calls to operate that memory. generating intermediate records and mediating their retrieval adds recurring token and time costs, while omitted or merged details can obscure the original evidence. we ask whether str... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory llm-agents arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.430000">
       <div class="paper-main">
         <h3>Zero-Mem: Zero-Token Memory Operations for LLM Agents<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Yilin Xiao, Zhehan Zhu, Yujing Zhang, Jin Chen, Zijin Hong, Luyao Zhuang, Qinggang Zhang, Shengyuan Chen, Xiaocao Ouyang, Lingfei Ren, Xiao Huang · Published 2026-07-31 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.29377v1">Open paper</a>
@@ -709,6 +782,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.29377">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Zero-Mem: Zero-Token Memory Operations for LLM Agents. Yilin Xiao, Zhehan Zhu, Yujing Zhang, Jin Chen, Zijin Hong, Luyao Zhuang, Qinggang Zhang, Shengyuan Chen, Xiaocao Ouyang, Lingfei Ren, Xiao Huang. 2026-07-31. https://arxiv.org/abs/2607.29377v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -716,11 +790,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="deltaserve: host-agnostic co-serving of inference and fine-tuning for llms" data-search="deltaserve: host-agnostic co-serving of inference and fine-tuning for llms jiaxuan chen, jianshu she, ye yuan, rajat ghosh, karan gupta, qirong ho, xue liu, oana balmau llm serving systems are provisioned for peak load to meet strict latency targets, leaving substantial gpu compute idle whenever traffic falls below peak. we present deltaserve, a host-agnostic co-serving design that converts this idle inference capacity into lora fine-tuning throughput while preserving inference ser... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="deltaserve: host-agnostic co-serving of inference and fine-tuning for llms" data-search="deltaserve: host-agnostic co-serving of inference and fine-tuning for llms jiaxuan chen, jianshu she, ye yuan, rajat ghosh, karan gupta, qirong ho, xue liu, oana balmau llm serving systems are provisioned for peak load to meet strict latency targets, leaving substantial gpu compute idle whenever traffic falls below peak. we present deltaserve, a host-agnostic co-serving design that converts this idle inference capacity into lora fine-tuning throughput while preserving inference ser... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>DeltaServe: Host-Agnostic Co-Serving of Inference and Fine-Tuning for LLMs<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Jiaxuan Chen, Jianshu She, Ye Yuan, Rajat Ghosh, Karan Gupta, Qirong Ho, Xue Liu, Oana Balmau · Published 2026-07-30 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.28848v1">Open paper</a>
@@ -747,6 +822,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.28848">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="DeltaServe: Host-Agnostic Co-Serving of Inference and Fine-Tuning for LLMs. Jiaxuan Chen, Jianshu She, Ye Yuan, Rajat Ghosh, Karan Gupta, Qirong Ho, Xue Liu, Oana Balmau. 2026-07-30. https://arxiv.org/abs/2607.28848v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -754,11 +830,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="distilling knowledge from large language models into lightweight reinforcement learning agents for autonomous cyber operations" data-search="distilling knowledge from large language models into lightweight reinforcement learning agents for autonomous cyber operations konur tholl, françois rivest, mariam el mezouar, adrian taylor, ranwa al mallah autonomous cyber operations (aco) are increasingly important for defending enterprise networks as cyber threats continue to evolve in sophistication. aco applications commonly employ reinforcement learning (rl) agents to learn defensive behaviors through interaction with environments. however, rl agents typically re... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="distilling knowledge from large language models into lightweight reinforcement learning agents for autonomous cyber operations" data-search="distilling knowledge from large language models into lightweight reinforcement learning agents for autonomous cyber operations konur tholl, françois rivest, mariam el mezouar, adrian taylor, ranwa al mallah autonomous cyber operations (aco) are increasingly important for defending enterprise networks as cyber threats continue to evolve in sophistication. aco applications commonly employ reinforcement learning (rl) agents to learn defensive behaviors through interaction with environments. however, rl agents typically re... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Distilling Knowledge from Large Language Models into Lightweight Reinforcement Learning Agents for Autonomous Cyber Operations<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Konur Tholl, François Rivest, Mariam El Mezouar, Adrian Taylor, Ranwa Al Mallah · Published 2026-07-30 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.28826v1">Open paper</a>
@@ -785,6 +862,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.28826">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Distilling Knowledge from Large Language Models into Lightweight Reinforcement Learning Agents for Autonomous Cyber Operations. Konur Tholl, François Rivest, Mariam El Mezouar, Adrian Taylor, Ranwa Al Mallah. 2026-07-30. https://arxiv.org/abs/2607.28826v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -792,11 +870,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="open-source llm-driven formal verification: a multi-agent pipeline for rtl repair" data-search="open-source llm-driven formal verification: a multi-agent pipeline for rtl repair ha trung tran verification consumes the majority of modern chip design effort, yet the formal verification tools that provide mathematical guarantees of correctness remain expensive and restrictively licensed. while large language models (llms) have shown promise for hardware design, existing approaches to rtl repair validate the... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-30" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="open-source llm-driven formal verification: a multi-agent pipeline for rtl repair" data-search="open-source llm-driven formal verification: a multi-agent pipeline for rtl repair ha trung tran verification consumes the majority of modern chip design effort, yet the formal verification tools that provide mathematical guarantees of correctness remain expensive and restrictively licensed. while large language models (llms) have shown promise for hardware design, existing approaches to rtl repair validate the... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Open-Source LLM-Driven Formal Verification: A Multi-Agent Pipeline for RTL Repair<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Ha Trung Tran · Published 2026-07-30 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.28877v1">Open paper</a>
@@ -823,6 +902,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.28877">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Open-Source LLM-Driven Formal Verification: A Multi-Agent Pipeline for RTL Repair. Ha Trung Tran. 2026-07-30. https://arxiv.org/abs/2607.28877v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -830,11 +910,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="the agentic memory dilemma: designing the first true working memory system for ai agents" data-search="the agentic memory dilemma: designing the first true working memory system for ai agents aakash bhattacharya the systems community is facing a deep architectural dilemma that vector databases are a default solution for agentic ai. as the industry is moving towards advancements in ai specifically towards a fully autonomous ai, the current systems heavily depend on variations of retrieval augmented generation (rag) which rel... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="the agentic memory dilemma: designing the first true working memory system for ai agents" data-search="the agentic memory dilemma: designing the first true working memory system for ai agents aakash bhattacharya the systems community is facing a deep architectural dilemma that vector databases are a default solution for agentic ai. as the industry is moving towards advancements in ai specifically towards a fully autonomous ai, the current systems heavily depend on variations of retrieval augmented generation (rag) which rel... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Aakash Bhattacharya · Published 2026-07-29 · Source: OpenAlex</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://doi.org/10.5281/zenodo.21660775">Open paper</a>
@@ -861,6 +942,7 @@
           </ul>
           <div class="secondary-links"><a href="https://doi.org/10.5281/zenodo.21660774">DOI</a><a href="https://openalex.org/W7172147138">OpenAlex</a><a href="https://openalex.org/W7172126518">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents. Aakash Bhattacharya. 2026-07-29. https://doi.org/10.5281/zenodo.21660775">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -868,11 +950,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="visage: constructing self-correcting memories for long-form video understanding" data-search="visage: constructing self-correcting memories for long-form video understanding xinkui zhao, enbo chen, yifan zhang, chang liu, guanjie cheng, naibo wang, yueshen xu multimodal agents operating in long-horizon environments must build and continually update multimedia memories to support entity-consistent, temporally grounded reasoning. however, existing agentic memory approaches often discard fine-grained dentity cues under aggressive compression and segment-wise processing. the... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory arxiv maybe">
+    <article class="paper-card compact" data-source="arxiv" data-sources="arxiv" data-decision="maybe" data-tags="agent-memory" data-latest-run="true" data-is-new="true" data-published="2026-07-29" data-first-seen="2026-08-03" data-score="43" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="visage: constructing self-correcting memories for long-form video understanding" data-search="visage: constructing self-correcting memories for long-form video understanding xinkui zhao, enbo chen, yifan zhang, chang liu, guanjie cheng, naibo wang, yueshen xu multimodal agents operating in long-horizon environments must build and continually update multimedia memories to support entity-consistent, temporally grounded reasoning. however, existing agentic memory approaches often discard fine-grained dentity cues under aggressive compression and segment-wise processing. the... peripheral candidate: mentions memory or agents, but not clearly llm-agent memory.  agent-memory arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.430000">
       <div class="paper-main">
         <h3>ViSAGE: Constructing Self-Correcting Memories for Long-Form Video Understanding<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Xinkui Zhao, Enbo Chen, Yifan Zhang, Chang Liu, Guanjie Cheng, Naibo Wang, Yueshen Xu · Published 2026-07-29 · Source: arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.28678v1">Open paper</a>
@@ -899,6 +982,7 @@
           </ul>
           <div class="secondary-links"><a href="https://doi.org/10.1145/3767308.3835852">DOI</a><a href="https://arxiv.org/abs/2607.28678">arXiv</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="ViSAGE: Constructing Self-Correcting Memories for Long-Form Video Understanding. Xinkui Zhao, Enbo Chen, Yifan Zhang, Chang Liu, Guanjie Cheng, Naibo Wang, Yueshen Xu. 2026-07-29. https://arxiv.org/abs/2607.28678v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -906,11 +990,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-systems long-term-memory memory-policy" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="chronomem: version control and semantic rollback for large language model agent memory" data-search="chronomem: version control and semantic rollback for large language model agent memory yongye su, wujiang xu, chaoji zuo, elisa bertino llm agents increasingly rely on long-term memory to support multi-session interaction and personalization. however, existing agent memory systems are designed around forward-only evolution, continuously accumulating, consolidating, and overwriting knowledge, with no principled mechanism to inspect, version, or rever... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-systems long-term-memory memory-policy openalex arxiv relevant">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-systems long-term-memory memory-policy" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="chronomem: version control and semantic rollback for large language model agent memory" data-search="chronomem: version control and semantic rollback for large language model agent memory yongye su, wujiang xu, chaoji zuo, elisa bertino llm agents increasingly rely on long-term memory to support multi-session interaction and personalization. however, existing agent memory systems are designed around forward-only evolution, continuously accumulating, consolidating, and overwriting knowledge, with no principled mechanism to inspect, version, or rever... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-systems long-term-memory memory-policy openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory</h3>
         <p class="meta">Yongye Su, Wujiang Xu, Chaoji Zuo, Elisa Bertino · Published 2026-07-30 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27773">Open paper</a>
@@ -937,6 +1022,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27773v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2607.27773">DOI</a><a href="https://openalex.org/W7172172962">OpenAlex</a><a href="https://openalex.org/W7171942477">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies memory storage, retrieval, update, or consolidation for LLM agents.</p>
+
           <button class="citation-button" type="button" data-citation="ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory. Yongye Su, Wujiang Xu, Chaoji Zuo, Elisa Bertino. 2026-07-30. https://arxiv.org/abs/2607.27773">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -944,11 +1030,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents long-term-memory benchmark memory-systems" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memtxn: a transaction boundary for source-supported updates and complete-state recovery in agent memory" data-search="memtxn: a transaction boundary for source-supported updates and complete-state recovery in agent memory hanshuai cui, zhiqing tang, zhi yao, fanshuai meng, qianli ma, weijia jia persistent memory lets long-running large language model agents reuse information across sessions and tasks. yet errors in writable memory can persist and corrupt future behavior. existing systems improve storage and retrieval, but they do not provide a transaction boundary for reliable updates and recovery. we ther... focuses on persistent or long-term memory for agent behavior.  agent-memory llm-agents long-term-memory benchmark memory-systems openalex arxiv relevant">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents long-term-memory benchmark memory-systems" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memtxn: a transaction boundary for source-supported updates and complete-state recovery in agent memory" data-search="memtxn: a transaction boundary for source-supported updates and complete-state recovery in agent memory hanshuai cui, zhiqing tang, zhi yao, fanshuai meng, qianli ma, weijia jia persistent memory lets long-running large language model agents reuse information across sessions and tasks. yet errors in writable memory can persist and corrupt future behavior. existing systems improve storage and retrieval, but they do not provide a transaction boundary for reliable updates and recovery. we ther... focuses on persistent or long-term memory for agent behavior.  agent-memory llm-agents long-term-memory benchmark memory-systems openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory</h3>
         <p class="meta">Hanshuai Cui, Zhiqing Tang, Zhi Yao, Fanshuai Meng, Qianli Ma, Weijia Jia · Published 2026-07-30 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Focuses on persistent or long-term memory for agent behavior.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27834">Open paper</a>
@@ -975,6 +1062,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27834v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2607.27834">DOI</a><a href="https://openalex.org/W7172172453">OpenAlex</a><a href="https://openalex.org/W7171977615">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Focuses on persistent or long-term memory for agent behavior.</p>
+
           <button class="citation-button" type="button" data-citation="MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory. Hanshuai Cui, Zhiqing Tang, Zhi Yao, Fanshuai Meng, Qianli Ma, Weijia Jia. 2026-07-30. https://arxiv.org/abs/2607.27834">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -982,11 +1070,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="llm-agents memory-systems agent-memory" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="90" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="$σ$-mem: an online reliability memory for llm-based multi-agent systems" data-search="$σ$-mem: an online reliability memory for llm-based multi-agent systems peilin feng, suorong yang, soujanya poria memory is central to long-horizon llm agents, yet existing memory systems primarily preserve interaction content rather than modeling which agents can be trusted and under what conditions. this limitation is particularly important in multi-agent systems, where a central model may be unable to directly verify plausib... studies memory systems or memory modules for llm agents.  llm-agents memory-systems agent-memory openalex arxiv relevant">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="llm-agents memory-systems agent-memory" data-latest-run="true" data-is-new="false" data-published="2026-07-30" data-first-seen="2026-07-31" data-score="90" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="$σ$-mem: an online reliability memory for llm-based multi-agent systems" data-search="$σ$-mem: an online reliability memory for llm-based multi-agent systems peilin feng, suorong yang, soujanya poria memory is central to long-horizon llm agents, yet existing memory systems primarily preserve interaction content rather than modeling which agents can be trusted and under what conditions. this limitation is particularly important in multi-agent systems, where a central model may be unable to directly verify plausib... studies memory systems or memory modules for llm agents.  llm-agents memory-systems agent-memory openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.900000">
       <div class="paper-main">
         <h3>$Σ$-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems</h3>
         <p class="meta">Peilin Feng, Suorong Yang, Soujanya Poria · Published 2026-07-30 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies memory systems or memory modules for LLM agents.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27958">Open paper</a>
@@ -1013,6 +1102,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27958v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2607.27958">DOI</a><a href="https://openalex.org/W7172172625">OpenAlex</a><a href="https://openalex.org/W7171979022">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies memory systems or memory modules for LLM agents.</p>
+
           <button class="citation-button" type="button" data-citation="$Σ$-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems. Peilin Feng, Suorong Yang, Soujanya Poria. 2026-07-30. https://arxiv.org/abs/2607.27958">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -1020,11 +1110,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory memory-policy memory-systems llm-agents" data-latest-run="true" data-is-new="false" data-published="2026-07-29" data-first-seen="2026-07-30" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="metis: memory foundation model" data-search="metis: memory foundation model zeyu zhang, ziliang guo, yihang sun, xichong zhang, xixuan hao, zehao lin, yang zhang, xiaoyan zhao, tong shen, bo tang, zhi-qin john xu, junchi yan, haofen wang, xu chen, feiyu xiong, zhiyu li, tat-seng chua recent advances in ai agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. however, agent memory is still primarily implemented through external modules, leaving the native memory capability largely... studies governed shared memory or persistent memory protocols for llm agents.  agent-memory memory-policy memory-systems llm-agents openalex arxiv relevant">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory memory-policy memory-systems llm-agents" data-latest-run="true" data-is-new="false" data-published="2026-07-29" data-first-seen="2026-07-30" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="metis: memory foundation model" data-search="metis: memory foundation model zeyu zhang, ziliang guo, yihang sun, xichong zhang, xixuan hao, zehao lin, yang zhang, xiaoyan zhao, tong shen, bo tang, zhi-qin john xu, junchi yan, haofen wang, xu chen, feiyu xiong, zhiyu li, tat-seng chua recent advances in ai agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. however, agent memory is still primarily implemented through external modules, leaving the native memory capability largely... studies governed shared memory or persistent memory protocols for llm agents.  agent-memory memory-policy memory-systems llm-agents openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Metis: Memory Foundation Model</h3>
         <p class="meta">Zeyu Zhang, Ziliang Guo, Yihang Sun, Xichong Zhang, Xixuan Hao, Zehao Lin, Yang Zhang, Xiaoyan Zhao, Tong Shen, Bo Tang, Zhi-Qin John Xu, Junchi Yan, Haofen Wang, Xu Chen, Feiyu Xiong, Zhiyu Li, Tat-Seng Chua · Published 2026-07-29 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Studies governed shared memory or persistent memory protocols for LLM agents.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.26760">Open paper</a>
@@ -1051,6 +1142,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.26760v1">arXiv</a><a href="https://openalex.org/W7172067819">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies governed shared memory or persistent memory protocols for LLM agents.</p>
+
           <button class="citation-button" type="button" data-citation="Metis: Memory Foundation Model. Zeyu Zhang, Ziliang Guo, Yihang Sun, Xichong Zhang, Xixuan Hao, Zehao Lin, Yang Zhang, Xiaoyan Zhao, Tong Shen, Bo Tang, Zhi-Qin John Xu, Junchi Yan, Haofen Wang, Xu Chen, Feiyu Xiong, Zhiyu Li, Tat-Seng Chua. 2026-07-29. https://arxiv.org/abs/2607.26760">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -1058,11 +1150,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="evaluation llm-agents" data-latest-run="true" data-is-new="false" data-published="2026-07-29" data-first-seen="2026-07-30" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="setoka: a benchmark for hierarchical user understanding in personalized agents over heterogeneous data" data-search="setoka: a benchmark for hierarchical user understanding in personalized agents over heterogeneous data lingyang zeng, guangze chen, kaichen yu, zhicheng pan, siyang weng, zirui hu, xiangyun du, hailin he, rong zhang, chengcheng yang, kai huang, xuan zhou personalized agents are increasingly applied to assist users across a wide range of tasks. effective personalized assistance requires not only retrieving explicit facts from past interactions stored in agent memory, but also inferring abstract personal characteristics. however, existing memory benchmarks primarily e... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation llm-agents openalex arxiv maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="evaluation llm-agents" data-latest-run="true" data-is-new="false" data-published="2026-07-29" data-first-seen="2026-07-30" data-score="62" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="setoka: a benchmark for hierarchical user understanding in personalized agents over heterogeneous data" data-search="setoka: a benchmark for hierarchical user understanding in personalized agents over heterogeneous data lingyang zeng, guangze chen, kaichen yu, zhicheng pan, siyang weng, zirui hu, xiangyun du, hailin he, rong zhang, chengcheng yang, kai huang, xuan zhou personalized agents are increasingly applied to assist users across a wide range of tasks. effective personalized assistance requires not only retrieving explicit facts from past interactions stored in agent memory, but also inferring abstract personal characteristics. however, existing memory benchmarks primarily e... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.  evaluation llm-agents openalex arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.620000">
       <div class="paper-main">
         <h3>Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data</h3>
         <p class="meta">Lingyang Zeng, Guangze Chen, Kaichen Yu, Zhicheng Pan, Siyang Weng, Zirui Hu, Xiangyun Du, Hailin He, Rong Zhang, Chengcheng Yang, Kai Huang, Xuan Zhou · Published 2026-07-29 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.27056">Open paper</a>
@@ -1089,6 +1182,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.27056v1">arXiv</a><a href="https://openalex.org/W7172067802">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data. Lingyang Zeng, Guangze Chen, Kaichen Yu, Zhicheng Pan, Siyang Weng, Zirui Hu, Xiangyun Du, Hailin He, Rong Zhang, Chengcheng Yang, Kai Huang, Xuan Zhou. 2026-07-29. https://arxiv.org/abs/2607.27056">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -1096,11 +1190,12 @@
     </article>
 
 
-    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="false" data-published="2026-07-27" data-first-seen="2026-07-28" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="simulating tenant responses to energy policy interventions with transaction-cost-aware llm age" data-search="simulating tenant responses to energy policy interventions with transaction-cost-aware llm age weijie xia, stefanie horian, hanyue huang, queena k. qian, jie yang, p. barrios recent studies use large language models (llms) to simulate human opinions and decisions by prompting models with demographic, attitudinal, or persona-based descriptions. yet such simulations rarely model the practical, cognitive, or social frictions that shape how people respond to policy interventions. perceived t... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex arxiv maybe">
+    <article class="paper-card compact" data-source="openalex" data-sources="openalex arxiv" data-decision="maybe" data-tags="" data-latest-run="true" data-is-new="false" data-published="2026-07-27" data-first-seen="2026-07-28" data-score="45" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="simulating tenant responses to energy policy interventions with transaction-cost-aware llm age" data-search="simulating tenant responses to energy policy interventions with transaction-cost-aware llm age weijie xia, stefanie horian, hanyue huang, queena k. qian, jie yang, p. barrios recent studies use large language models (llms) to simulate human opinions and decisions by prompting models with demographic, attitudinal, or persona-based descriptions. yet such simulations rarely model the practical, cognitive, or social frictions that shape how people respond to policy interventions. perceived t... peripheral candidate: discusses agentic ai system architecture, but does not clearly study persistent agent memory.   openalex arxiv maybe" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.450000">
       <div class="paper-main">
         <h3>Simulating Tenant Responses to Energy Policy Interventions with Transaction-Cost-Aware LLM Age</h3>
         <p class="meta">Weijie Xia, Stefanie Horian, Hanyue Huang, Queena K. Qian, Jie Yang, P. Barrios · Published 2026-07-27 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Why included:</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2607.24341">Open paper</a>
@@ -1127,6 +1222,7 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2607.24341v1">arXiv</a><a href="https://openalex.org/W7171902146">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.</p>
+
           <button class="citation-button" type="button" data-citation="Simulating Tenant Responses to Energy Policy Interventions with Transaction-Cost-Aware LLM Age. Weijie Xia, Stefanie Horian, Hanyue Huang, Queena K. Qian, Jie Yang, P. Barrios. 2026-07-27. https://arxiv.org/abs/2607.24341">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
@@ -1151,6 +1247,12 @@
   const relevanceFilter = document.querySelector('#relevance-filter');
   const newOnly = document.querySelector('#new-only');
   const sortSelect = document.querySelector('#paper-sort');
+  const qualityMinimum = document.querySelector('#quality-minimum');
+  const qualityRecommendation = document.querySelector('#quality-recommendation');
+  const qualityConfidence = document.querySelector('#quality-confidence');
+  const qualityScope = document.querySelector('#quality-scope');
+  const qualityVisibility = document.querySelector('#quality-visibility');
+  const qualityIncludeUnknown = document.querySelector('#quality-include-unknown');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
   const emptyState = document.querySelector('#no-results');
@@ -1169,6 +1271,10 @@
     if (newness) return newness;
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    if (!qualityVisibility || qualityVisibility.value === 'configured') {
+      const qualityRank = (a.dataset.qualityDownranked === 'true' ? 1 : 0) - (b.dataset.qualityDownranked === 'true' ? 1 : 0);
+      if (qualityRank) return qualityRank;
+    }
     const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
     if (bucket) return bucket;
     const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
@@ -1184,6 +1290,8 @@
       if (mode === 'latest-relevant') return latestRelevantRank(a, b);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'quality-desc') return Number(b.dataset.qualityScore || -1) - Number(a.dataset.qualityScore || -1) || latestRelevantRank(a, b);
+      if (mode === 'combined-desc') return Number(b.dataset.combinedScore || 0) - Number(a.dataset.combinedScore || 0) || latestRelevantRank(a, b);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
       return latestRelevantRank(a, b);
@@ -1199,7 +1307,14 @@
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
       const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly);
+      const qualityKnown = card.dataset.qualityScore !== '';
+      const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
+      const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
+      const matchesQualityRecommendation = !qualityRecommendation || qualityRecommendation.value === 'all' || card.dataset.qualityRecommendation === qualityRecommendation.value;
+      const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
+      const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
+      const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0;
@@ -1208,6 +1323,8 @@
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (newOnly) newOnly.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
+  [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
+  if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {
       const status = button.parentElement.querySelector('.copy-status');

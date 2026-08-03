@@ -1,6 +1,8 @@
-# Optional dashboard-only curation.
+# Optional curation. Relevance fields affect the generated dashboard; scholarly-
+# quality overrides and suppression fields also affect quality-aware digest policy.
 # Match papers by canonical_id when known, otherwise by normalized title.
-# These annotations affect the static site and exports only; SQLite state is left intact.
+# Relevance annotations remain site/export-only. Quality directives are recorded
+# as versioned manual assessments or suppression state so their provenance is auditable.
 
 pinned:
   - title: "Are We Ready For An Agent-Native Memory System?"
@@ -115,6 +117,12 @@ overrides:
   #     - agent-memory
   #     - benchmark
   #   note: "Manual relevance override after review."
+  #   quality_score_override: 72
+  #   quality_recommendation_override: promising
+  #   quality_note: "Manual quality review based on the complete paper."
+  #   include_despite_quality: true
+  # Use suppress_for_quality: true only after human review. Pinned papers and
+  # include_despite_quality always take precedence over automated suppression.
 
 date_overrides:
   - doi: "10.2139/ssrn.6584998"

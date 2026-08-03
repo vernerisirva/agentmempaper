@@ -87,6 +87,60 @@ class ArxivSweepConfig:
 
 
 @dataclass(frozen=True)
+class QualityAssessmentConfig:
+    version: str = "quality-v1"
+    rubric_version: str = "scholarly-rubric-v1"
+    assess_relevant: bool = True
+    assess_maybe_relevant: bool = True
+    assess_irrelevant: bool = False
+    max_assessments_per_run: int = 5
+
+
+@dataclass(frozen=True)
+class QualityFullTextConfig:
+    enabled: bool = True
+    cache_dir: Path = Path("data/cache/full_text")
+    timeout_seconds: int = 20
+    max_pdf_megabytes: int = 20
+    max_pages: int = 80
+    max_extracted_characters: int = 120_000
+    max_prompt_characters: int = 60_000
+    max_section_characters: int = 8_000
+
+
+@dataclass(frozen=True)
+class QualityRankingConfig:
+    behavior: str = "downrank"
+    relevance_weight: float = 0.75
+    quality_weight: float = 0.25
+    downrank_below: int = 60
+    weak_below: int = 55
+    hide_below: int = 40
+    minimum_confidence_for_hiding: str = "high"
+    unknown_quality_is_neutral: bool = True
+
+
+@dataclass(frozen=True)
+class QualityDisplayConfig:
+    show_score: bool = True
+    show_confidence: bool = True
+    show_scope: bool = True
+    show_strengths: int = 2
+    show_concerns: int = 3
+    show_evidence: bool = True
+
+
+@dataclass(frozen=True)
+class QualityConfig:
+    enabled: bool = False
+    mode: str = "auto"
+    assessment: QualityAssessmentConfig = field(default_factory=QualityAssessmentConfig)
+    full_text: QualityFullTextConfig = field(default_factory=QualityFullTextConfig)
+    ranking: QualityRankingConfig = field(default_factory=QualityRankingConfig)
+    display: QualityDisplayConfig = field(default_factory=QualityDisplayConfig)
+
+
+@dataclass(frozen=True)
 class ScoutConfig:
     terms: list[str]
     track_id: str = "agent_memory"
@@ -107,6 +161,7 @@ class ScoutConfig:
     discovery_queries: dict[str, tuple[DiscoveryQuery, ...]] = field(default_factory=dict)
     query_budgets: dict[str, int] = field(default_factory=lambda: {"arxiv": 6, "openalex": 5, "semantic_scholar": 5})
     arxiv_sweep: ArxivSweepConfig = field(default_factory=ArxivSweepConfig)
+    quality: QualityConfig = field(default_factory=QualityConfig)
 
 
 def load_config(
@@ -147,6 +202,7 @@ def load_config(
         discovery_queries = _fallback_discovery_queries(search_values.get("terms") or DEFAULT_TERMS)
     query_budgets = _parse_int_mapping(config_text, "query_budgets") or {"arxiv": 6, "openalex": 5, "semantic_scholar": 5}
     sweep_values = _parse_mapping(config_text, "arxiv_sweep")
+    quality_values = _parse_nested_mapping(config_text, "quality")
 
     loaded_track_id = str(track_values.get("id") or active_track_id or "agent_memory")
     terms = search_values.get("terms") or DEFAULT_TERMS
@@ -176,6 +232,70 @@ def load_config(
             categories=tuple(_parse_section_list(config_text, "arxiv_sweep", "categories")),
             days=int(sweep_values.get("days", 10)),
             max_results=int(sweep_values.get("max_results", 300)),
+        ),
+        quality=_quality_config(quality_values),
+    )
+
+
+def _quality_config(values: dict[str, str]) -> QualityConfig:
+    mode = values.get("mode", "auto").lower()
+    if mode not in {"off", "deterministic", "llm", "hybrid", "auto"}:
+        raise ValueError(f"unsupported quality mode: {mode}")
+    behavior = values.get("ranking.behavior", "downrank").lower()
+    if behavior not in {"ignore", "annotate", "downrank", "hide"}:
+        raise ValueError(f"unsupported quality ranking behavior: {behavior}")
+    minimum_confidence = values.get("ranking.minimum_confidence_for_hiding", "high").lower()
+    if minimum_confidence not in {"low", "medium", "high"}:
+        raise ValueError(f"unsupported quality hiding confidence: {minimum_confidence}")
+    relevance_weight = float(values.get("ranking.relevance_weight", 0.75))
+    quality_weight = float(values.get("ranking.quality_weight", 0.25))
+    if relevance_weight < 0 or quality_weight < 0 or relevance_weight + quality_weight <= 0:
+        raise ValueError("quality ranking weights must be non-negative and have a positive total")
+    thresholds = {
+        "downrank_below": int(values.get("ranking.downrank_below", 60)),
+        "weak_below": int(values.get("ranking.weak_below", 55)),
+        "hide_below": int(values.get("ranking.hide_below", 40)),
+    }
+    if any(value < 0 or value > 100 for value in thresholds.values()):
+        raise ValueError("quality ranking thresholds must be between 0 and 100")
+    return QualityConfig(
+        enabled=_as_bool(values.get("enabled"), False),
+        mode=mode,
+        assessment=QualityAssessmentConfig(
+            version=values.get("assessment.version", "quality-v1"),
+            rubric_version=values.get("assessment.rubric_version", "scholarly-rubric-v1"),
+            assess_relevant=_as_bool(values.get("assessment.assess_relevant"), True),
+            assess_maybe_relevant=_as_bool(values.get("assessment.assess_maybe_relevant"), True),
+            assess_irrelevant=_as_bool(values.get("assessment.assess_irrelevant"), False),
+            max_assessments_per_run=max(0, int(values.get("assessment.max_assessments_per_run", 5))),
+        ),
+        full_text=QualityFullTextConfig(
+            enabled=_as_bool(values.get("full_text.enabled"), True),
+            cache_dir=Path(values.get("full_text.cache_dir", "data/cache/full_text")),
+            timeout_seconds=max(1, int(values.get("full_text.timeout_seconds", 20))),
+            max_pdf_megabytes=max(1, int(values.get("full_text.max_pdf_megabytes", 20))),
+            max_pages=max(1, int(values.get("full_text.max_pages", 80))),
+            max_extracted_characters=max(1_000, int(values.get("full_text.max_extracted_characters", 120_000))),
+            max_prompt_characters=max(1_000, int(values.get("full_text.max_prompt_characters", 60_000))),
+            max_section_characters=max(500, int(values.get("full_text.max_section_characters", 8_000))),
+        ),
+        ranking=QualityRankingConfig(
+            behavior=behavior,
+            relevance_weight=relevance_weight,
+            quality_weight=quality_weight,
+            downrank_below=thresholds["downrank_below"],
+            weak_below=thresholds["weak_below"],
+            hide_below=thresholds["hide_below"],
+            minimum_confidence_for_hiding=minimum_confidence,
+            unknown_quality_is_neutral=_as_bool(values.get("ranking.unknown_quality_is_neutral"), True),
+        ),
+        display=QualityDisplayConfig(
+            show_score=_as_bool(values.get("display.show_score"), True),
+            show_confidence=_as_bool(values.get("display.show_confidence"), True),
+            show_scope=_as_bool(values.get("display.show_scope"), True),
+            show_strengths=max(0, int(values.get("display.show_strengths", 2))),
+            show_concerns=max(0, int(values.get("display.show_concerns", 3))),
+            show_evidence=_as_bool(values.get("display.show_evidence"), True),
         ),
     )
 
@@ -293,6 +413,31 @@ def _parse_mapping(text: str, section: str) -> dict[str, str]:
 
 def _parse_int_mapping(text: str, section: str) -> dict[str, int]:
     return {key: int(value) for key, value in _parse_mapping(text, section).items()}
+
+
+def _parse_nested_mapping(text: str, section: str) -> dict[str, str]:
+    lines = text.splitlines()
+    start = _section_start(lines, section)
+    if start is None:
+        return {}
+    result: dict[str, str] = {}
+    stack: list[tuple[int, str]] = []
+    for raw in lines[start + 1 :]:
+        if raw.strip() and not raw.startswith(" "):
+            break
+        content = raw.split("#", 1)[0].rstrip()
+        if not content.strip() or ":" not in content:
+            continue
+        indent = len(content) - len(content.lstrip(" "))
+        key, value = content.strip().split(":", 1)
+        while stack and stack[-1][0] >= indent:
+            stack.pop()
+        if not value.strip():
+            stack.append((indent, key.strip()))
+            continue
+        path = ".".join([item[1] for item in stack] + [key.strip()])
+        result[path] = _scalar(value)
+    return result
 
 
 def _parse_section_list(text: str, section: str, key: str) -> list[str]:

@@ -12,11 +12,15 @@ import re
 import sqlite3
 
 from .deduplication import normalize_arxiv_id
+from .config import QualityConfig, QualityDisplayConfig
+from .curation import parse_curation_sections
 from .dates import effective_sort_date, precision_rank, publication_date, sort_date_value
 from .enrichment import DateEnrichmentDiagnostics, enrich_candidate_publication_date
 from .fetchers.arxiv import parse_arxiv_feed
 from .http import HttpClient
 from .models import PaperCandidate
+from .quality import combined_rank_score
+from .quality_models import QualityAssessment, QualityEvidence, recommendation_for_score
 from .relevance import classify_with_rules
 from .structured_cards import SCHEMA_VERSION, paper_card_schema, related_topics_for_paper, structured_card_for_paper
 
@@ -103,6 +107,31 @@ class LibraryPaper:
     is_new: bool = False
     screening_abstract: str | None = None
     metadata_warnings: list[str] = field(default_factory=list)
+    quality_score: int | None = None
+    quality_recommendation: str | None = None
+    quality_confidence: str | None = None
+    quality_scope: str | None = None
+    quality_summary: str | None = None
+    quality_strengths: list[str] = field(default_factory=list)
+    quality_concerns: list[str] = field(default_factory=list)
+    quality_evidence: list[dict[str, object]] = field(default_factory=list)
+    quality_assessment_version: str | None = None
+    quality_rubric_version: str | None = None
+    quality_assessed_at: str | None = None
+    quality_assessor_type: str | None = None
+    quality_assessor_model: str | None = None
+    quality_paper_type: str | None = None
+    quality_source_content_hash: str | None = None
+    quality_dimension_scores: dict[str, int | None] = field(default_factory=dict)
+    quality_missing_information: list[str] = field(default_factory=list)
+    quality_applied_score_cap: int | None = None
+    quality_applied_score_cap_reason: str | None = None
+    quality_suppressed: bool = False
+    combined_rank_score: float | None = None
+    quality_downranked: bool = False
+    quality_note: str | None = None
+    quality_manual_override: bool = False
+    include_despite_quality: bool = False
 
     @property
     def authors_text(self) -> str:
@@ -138,6 +167,11 @@ class CurationRule:
     tags: list[str] = field(default_factory=list)
     review_status: str | None = None
     reason: str | None = None
+    quality_score_override: int | None = None
+    quality_recommendation_override: str | None = None
+    quality_note: str | None = None
+    include_despite_quality: bool = False
+    suppress_for_quality: bool = False
 
 
 @dataclass(frozen=True)
@@ -173,6 +207,7 @@ def build_site(
     cross_track_label: str | None = "Deep Research Library",
     cross_track_href: str | None = "deep-research/index.html",
     relevance_profile: str = "agent_memory",
+    quality_config: QualityConfig | None = None,
 ) -> SiteBuildResult:
     digest_path = _latest_digest_path(Path(digest_dir))
     if digest_path is None:
@@ -192,7 +227,9 @@ def build_site(
     library_papers = _enrich_library_dates(library_papers)
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers, relevance_profile=relevance_profile)
+    active_quality = quality_config or QualityConfig(enabled=False)
     library_papers = _apply_curation(library_papers, _load_curation(Path(curation_path)), latest.date, relevance_profile=relevance_profile)
+    library_papers = _apply_quality_presentation(library_papers, active_quality)
     library_papers = _mark_new_papers(library_papers, site_build_time, latest.date)
     library_papers = _sort_latest_relevant(library_papers)
     latest_discoveries = [paper for paper in library_papers if paper.newly_discovered_in_latest_run]
@@ -218,6 +255,8 @@ def build_site(
             site_subtitle=site_subtitle,
             cross_track_label=cross_track_label,
             cross_track_href=cross_track_href,
+            quality_enabled=active_quality.enabled,
+            quality_display=active_quality.display,
         ),
         encoding="utf-8",
     )
@@ -228,6 +267,8 @@ def build_site(
             archive_digests,
             site_title=site_title,
             digest_link_prefix=digest_link_prefix,
+            quality_enabled=active_quality.enabled,
+            quality_display=active_quality.display,
         ),
         encoding="utf-8",
     )
@@ -235,7 +276,7 @@ def build_site(
         _render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix, site_title=site_title),
         encoding="utf-8",
     )
-    (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle), encoding="utf-8")
+    (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle, quality_enabled=active_quality.enabled), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "paper-card.schema.json").write_text(json.dumps(paper_card_schema(), indent=2, sort_keys=True), encoding="utf-8")
@@ -637,8 +678,10 @@ def _latest_relevant_sort_key(paper: LibraryPaper) -> tuple[object, ...]:
     return (
         0 if paper.is_new else 1,
         0 if paper.decision == "relevant" else 1,
+        1 if paper.quality_downranked else 0,
         _latest_relevant_date_bucket(paper),
         _reverse_date_sort_value(_latest_relevant_date(paper)),
+        -(paper.combined_rank_score or 0),
         -paper.score,
         paper.title.lower(),
     )
@@ -746,6 +789,75 @@ def _apply_curation(
     return curated
 
 
+def _apply_quality_presentation(papers: list[LibraryPaper], config: QualityConfig) -> list[LibraryPaper]:
+    if not config.enabled:
+        return papers
+    presented: list[LibraryPaper] = []
+    for paper in papers:
+        assessment = _library_quality_assessment(paper, config)
+        combined = (
+            combined_rank_score(
+                paper.score,
+                assessment,
+                config.ranking.relevance_weight,
+                config.ranking.quality_weight,
+                config.ranking.unknown_quality_is_neutral,
+            )
+            if config.ranking.behavior in {"downrank", "hide"}
+            else paper.score / 100
+        )
+        sufficiently_supported = bool(
+            paper.quality_score is not None
+            and paper.quality_confidence in {"medium", "high"}
+            and paper.quality_scope in {"partial_full_text", "full_text"}
+        )
+        downranked = bool(
+            config.ranking.behavior == "downrank"
+            and sufficiently_supported
+            and paper.quality_score is not None
+            and paper.quality_score < config.ranking.downrank_below
+            and not paper.pinned
+            and not paper.include_despite_quality
+        )
+        hidden = bool(
+            (config.ranking.behavior == "hide" or paper.quality_manual_override)
+            and paper.quality_suppressed
+            and not paper.pinned
+            and not paper.include_despite_quality
+        )
+        if hidden:
+            continue
+        presented.append(LibraryPaper(**{**paper.__dict__, "combined_rank_score": combined, "quality_downranked": downranked}))
+    return presented
+
+
+def _library_quality_assessment(paper: LibraryPaper, config: QualityConfig) -> QualityAssessment | None:
+    if not paper.quality_recommendation:
+        return None
+    return QualityAssessment(
+        canonical_id=paper.canonical_id,
+        overall_quality_score=paper.quality_score,
+        confidence=paper.quality_confidence or "low",
+        recommendation=paper.quality_recommendation,
+        paper_type=paper.quality_paper_type or "unclear",
+        assessment_scope=paper.quality_scope or "metadata_only",
+        assessment_version=paper.quality_assessment_version or config.assessment.version,
+        rubric_version=paper.quality_rubric_version or config.assessment.rubric_version,
+        assessor_type=paper.quality_assessor_type or "deterministic",
+        assessor_model=paper.quality_assessor_model,
+        source_content_hash=paper.quality_source_content_hash or "site",
+        assessed_at=paper.quality_assessed_at or "unknown",
+        dimension_scores=paper.quality_dimension_scores,
+        positive_signals=paper.quality_strengths,
+        concerns=paper.quality_concerns,
+        evidence=[QualityEvidence.from_dict(item) for item in paper.quality_evidence],
+        missing_information=paper.quality_missing_information,
+        concise_summary=paper.quality_summary or "",
+        applied_score_cap=paper.quality_applied_score_cap,
+        applied_score_cap_reason=paper.quality_applied_score_cap_reason,
+    )
+
+
 def _matching_date_override(paper: LibraryPaper, overrides: list[DateOverride]) -> DateOverride | None:
     normalized = _normalized_title(paper.title)
     for override in overrides:
@@ -814,6 +926,10 @@ def _apply_override(paper: LibraryPaper, rule: CurationRule) -> LibraryPaper:
     if rule.decision:
         decision = "relevant" if rule.decision in {"highly_relevant", "relevant"} else rule.decision
     tags = _ordered_unique([*(rule.tags or []), *paper.tags]) if rule.tags else paper.tags
+    manual_quality_score = rule.quality_score_override if rule.quality_score_override is not None else paper.quality_score
+    manual_quality_recommendation = rule.quality_recommendation_override or paper.quality_recommendation
+    if rule.quality_score_override is not None and not rule.quality_recommendation_override:
+        manual_quality_recommendation = recommendation_for_score(rule.quality_score_override, paper.quality_confidence or "high")
     return LibraryPaper(
         **{
             **paper.__dict__,
@@ -823,6 +939,21 @@ def _apply_override(paper: LibraryPaper, rule: CurationRule) -> LibraryPaper:
             "reason": rule.reason or paper.reason,
             "research_note": rule.note or paper.research_note,
             "review_status": rule.review_status or paper.review_status,
+            "quality_score": manual_quality_score,
+            "quality_recommendation": manual_quality_recommendation,
+            "quality_note": rule.quality_note or paper.quality_note,
+            "quality_manual_override": bool(
+                rule.quality_score_override is not None
+                or rule.quality_recommendation_override
+                or rule.quality_note
+                or rule.suppress_for_quality
+                or rule.include_despite_quality
+            ),
+            "quality_assessor_type": "manual_override" if (rule.quality_score_override is not None or rule.quality_recommendation_override) else paper.quality_assessor_type,
+            "quality_confidence": (paper.quality_confidence or "high") if (rule.quality_score_override is not None or rule.quality_recommendation_override) else paper.quality_confidence,
+            "quality_scope": (paper.quality_scope or "metadata_only") if (rule.quality_score_override is not None or rule.quality_recommendation_override) else paper.quality_scope,
+            "include_despite_quality": rule.include_despite_quality,
+            "quality_suppressed": rule.suppress_for_quality or paper.quality_suppressed,
         }
     )
 
@@ -850,49 +981,7 @@ def _load_curation(path: Path) -> CurationConfig:
 
 
 def _parse_curation_yaml(text: str) -> dict[str, list[dict[str, object]]]:
-    sections: dict[str, list[dict[str, object]]] = {"pinned": [], "overrides": [], "excluded": []}
-    current_section: str | None = None
-    current_item: dict[str, object] | None = None
-    current_list_key: str | None = None
-    for raw_line in text.splitlines():
-        line = raw_line.split("#", 1)[0].rstrip()
-        if not line.strip():
-            continue
-        if not line.startswith(" ") and line.endswith(":"):
-            current_section = line[:-1].strip()
-            sections.setdefault(current_section, [])
-            current_item = None
-            current_list_key = None
-            continue
-        if current_section not in sections:
-            continue
-        stripped = line.strip()
-        if stripped.startswith("- ") and current_list_key and current_item is not None and ":" not in stripped[2:]:
-            value = _clean_yaml_value(stripped[2:])
-            current_item.setdefault(current_list_key, [])
-            if isinstance(current_item[current_list_key], list):
-                current_item[current_list_key].append(value)  # type: ignore[index]
-            continue
-        if stripped.startswith("- "):
-            current_item = {}
-            sections[current_section].append(current_item)
-            current_list_key = None
-            rest = stripped[2:].strip()
-            if ":" in rest:
-                key, value = rest.split(":", 1)
-                current_item[key.strip()] = _clean_yaml_value(value)
-            continue
-        if current_item is None:
-            continue
-        if stripped.endswith(":"):
-            current_list_key = stripped[:-1].strip()
-            current_item[current_list_key] = []
-            continue
-        if ":" in stripped:
-            key, value = stripped.split(":", 1)
-            current_list_key = None
-            current_item[key.strip()] = _clean_yaml_value(value)
-    return sections
+    return parse_curation_sections(text)
 
 
 def _clean_yaml_value(value: object) -> str:
@@ -905,6 +994,11 @@ def _curation_rule(item: dict[str, object]) -> CurationRule:
         score = int(str(score_value)) if score_value not in {None, ""} else None
     except ValueError:
         score = None
+    quality_score_value = item.get("quality_score_override")
+    try:
+        quality_score = int(str(quality_score_value)) if quality_score_value not in {None, ""} else None
+    except ValueError:
+        quality_score = None
     tags_value = item.get("tags", [])
     tags = [_redact_secrets(str(tag)) for tag in tags_value] if isinstance(tags_value, list) else []
     return CurationRule(
@@ -916,7 +1010,16 @@ def _curation_rule(item: dict[str, object]) -> CurationRule:
         tags=tags,
         review_status=_redact_secrets(str(item["review_status"])) if item.get("review_status") else None,
         reason=_redact_secrets(str(item["reason"])) if item.get("reason") else None,
+        quality_score_override=quality_score,
+        quality_recommendation_override=_redact_secrets(str(item["quality_recommendation_override"])) if item.get("quality_recommendation_override") else None,
+        quality_note=_redact_secrets(str(item["quality_note"])) if item.get("quality_note") else None,
+        include_despite_quality=_yaml_bool(item.get("include_despite_quality")),
+        suppress_for_quality=_yaml_bool(item.get("suppress_for_quality")),
     )
+
+
+def _yaml_bool(value: object) -> bool:
+    return str(value or "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _date_override(item: dict[str, object]) -> DateOverride:
@@ -1065,6 +1168,8 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         _ensure_site_column(db, "publication_date_precision", "TEXT")
         _ensure_site_column(db, "publication_date_source", "TEXT")
         _ensure_site_column(db, "publication_date_confidence", "TEXT")
+        has_quality = _site_table_exists(db, "paper_quality_assessments")
+        has_suppressions = _site_table_exists(db, "quality_suppressions")
         latest_run = db.execute("SELECT id, started_at FROM runs ORDER BY id DESC LIMIT 1").fetchone()
         latest_run_id = int(latest_run["id"]) if latest_run else None
         latest_started_at = str(latest_run["started_at"]) if latest_run else None
@@ -1074,11 +1179,23 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 str(row["canonical_key"])
                 for row in db.execute("SELECT DISTINCT canonical_key FROM sightings WHERE run_id = ?", (latest_run_id,)).fetchall()
             }
+        quality_select = "qa.payload_json AS quality_payload_json" if has_quality else "NULL AS quality_payload_json"
+        suppression_select = "CASE WHEN qs.canonical_key IS NULL THEN 0 ELSE 1 END AS quality_suppressed" if has_suppressions else "0 AS quality_suppressed"
+        quality_join = """
+            LEFT JOIN paper_quality_assessments qa ON qa.id = (
+                SELECT current_qa.id FROM paper_quality_assessments current_qa
+                WHERE current_qa.canonical_id = p.canonical_key
+                ORDER BY current_qa.assessed_at DESC, current_qa.id DESC LIMIT 1
+            )
+        """ if has_quality else ""
+        suppression_join = "LEFT JOIN quality_suppressions qs ON qs.canonical_key = p.canonical_key AND qs.active = 1" if has_suppressions else ""
         rows = db.execute(
-            """
-            SELECT p.*, n.digest_date, n.notified_at
+            f"""
+            SELECT p.*, n.digest_date, n.notified_at, {quality_select}, {suppression_select}
             FROM papers p
             LEFT JOIN notifications n ON n.canonical_key = p.canonical_key
+            {quality_join}
+            {suppression_join}
             WHERE p.relevance_decision IN ('relevant', 'maybe')
             ORDER BY
               CASE WHEN p.published_date IS NULL OR p.published_date = '' THEN 1 ELSE 0 END,
@@ -1107,6 +1224,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         sources = _initial_sources(row, row_sightings, arxiv_id)
         source_ids = _initial_source_ids(row, row_sightings, arxiv_id)
         alternate_urls = _initial_urls(row, arxiv_id)
+        quality = _site_quality_assessment(row["quality_payload_json"])
         papers.append(
             LibraryPaper(
                 canonical_id=_redact_secrets(canonical_id),
@@ -1139,6 +1257,26 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 sources=sources,
                 source_ids=source_ids,
                 alternate_urls=alternate_urls,
+                quality_score=quality.overall_quality_score if quality else None,
+                quality_recommendation=quality.recommendation if quality else None,
+                quality_confidence=quality.confidence if quality else None,
+                quality_scope=quality.assessment_scope if quality else None,
+                quality_summary=quality.concise_summary if quality else None,
+                quality_strengths=quality.positive_signals if quality else [],
+                quality_concerns=quality.concerns if quality else [],
+                quality_evidence=[item.to_dict() if hasattr(item, "to_dict") else item.__dict__ for item in quality.evidence] if quality else [],
+                quality_assessment_version=quality.assessment_version if quality else None,
+                quality_rubric_version=quality.rubric_version if quality else None,
+                quality_assessed_at=quality.assessed_at if quality else None,
+                quality_assessor_type=quality.assessor_type if quality else None,
+                quality_assessor_model=quality.assessor_model if quality else None,
+                quality_paper_type=quality.paper_type if quality else None,
+                quality_source_content_hash=quality.source_content_hash if quality else None,
+                quality_dimension_scores=quality.dimension_scores if quality else {},
+                quality_missing_information=quality.missing_information if quality else [],
+                quality_applied_score_cap=quality.applied_score_cap if quality else None,
+                quality_applied_score_cap_reason=quality.applied_score_cap_reason if quality else None,
+                quality_suppressed=bool(row["quality_suppressed"]),
             )
         )
     return papers
@@ -1148,6 +1286,19 @@ def _ensure_site_column(db: sqlite3.Connection, column: str, definition: str) ->
     columns = {row["name"] for row in db.execute("PRAGMA table_info(papers)").fetchall()}
     if column not in columns:
         db.execute(f"ALTER TABLE papers ADD COLUMN {column} {definition}")
+
+
+def _site_table_exists(db: sqlite3.Connection, table: str) -> bool:
+    return db.execute("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?", (table,)).fetchone() is not None
+
+
+def _site_quality_assessment(payload: object) -> QualityAssessment | None:
+    if not payload:
+        return None
+    try:
+        return QualityAssessment.from_dict(json.loads(str(payload)))
+    except (ValueError, TypeError, json.JSONDecodeError):
+        return None
 
 
 def _library_from_digests(digests: list[ParsedDigest]) -> list[LibraryPaper]:
@@ -1344,7 +1495,7 @@ def _digest_to_json(digest: ParsedDigest) -> dict[str, object]:
 
 
 def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
-    return {
+    data = {
         "canonical_id": paper.canonical_id,
         "title": paper.title,
         "authors": paper.authors,
@@ -1388,6 +1539,37 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "review_status": paper.review_status,
         "citation": paper.citation,
     }
+    data["scholarly_quality"] = _quality_to_json(paper)
+    return data
+
+
+def _quality_to_json(paper: LibraryPaper) -> dict[str, object]:
+    return {
+        "overall_quality_score": paper.quality_score,
+        "confidence": paper.quality_confidence or "unknown",
+        "recommendation": paper.quality_recommendation or "unknown",
+        "paper_type": paper.quality_paper_type or "unclear",
+        "assessment_scope": paper.quality_scope or "metadata_only",
+        "assessment_version": paper.quality_assessment_version,
+        "rubric_version": paper.quality_rubric_version,
+        "assessor_type": paper.quality_assessor_type,
+        "assessor_model": paper.quality_assessor_model,
+        "source_content_hash": paper.quality_source_content_hash,
+        "assessed_at": paper.quality_assessed_at,
+        "dimension_scores": paper.quality_dimension_scores,
+        "positive_signals": paper.quality_strengths,
+        "concerns": paper.quality_concerns,
+        "evidence": paper.quality_evidence,
+        "missing_information": paper.quality_missing_information,
+        "concise_summary": paper.quality_summary,
+        "applied_score_cap": paper.quality_applied_score_cap,
+        "applied_score_cap_reason": paper.quality_applied_score_cap_reason,
+        "combined_rank_score": paper.combined_rank_score,
+        "downranked": paper.quality_downranked,
+        "suppressed": paper.quality_suppressed,
+        "manual_override": paper.quality_manual_override,
+        "curation_note": paper.quality_note,
+    }
 
 
 def _latest_to_json(latest: ParsedDigest, latest_discoveries: list[LibraryPaper]) -> dict[str, object]:
@@ -1408,6 +1590,8 @@ def _render_library_page(
     site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
     cross_track_label: str | None = "Deep Research Library",
     cross_track_href: str | None = "deep-research/index.html",
+    quality_enabled: bool = False,
+    quality_display: QualityDisplayConfig | None = None,
 ) -> str:
     default_decision = _default_homepage_decision(papers)
     cross_track_link = _cross_track_link(cross_track_label, cross_track_href)
@@ -1430,14 +1614,14 @@ def _render_library_page(
             <p class="hero-line">{_hero_line(papers, latest)}</p>
           </div>
         </header>
-        {_library_controls(default_decision=default_decision)}
+        {_library_controls(default_decision=default_decision, quality_enabled=quality_enabled)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
             <h2>Papers to look at</h2>
             <p>Newest relevant papers first. New papers are shown first for 24 hours.</p>
           </div>
           <div class="paper-list" id="paper-list">
-            {_library_paper_cards(papers, default_decision=default_decision)}
+            {_library_paper_cards(papers, default_decision=default_decision, quality_display=quality_display)}
           </div>
           <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
         </section>
@@ -1460,6 +1644,8 @@ def _render_latest_discoveries_page(
     archive: list[ParsedDigest],
     site_title: str = "Agentic Memory Paper Library",
     digest_link_prefix: str = "digests",
+    quality_enabled: bool = False,
+    quality_display: QualityDisplayConfig | None = None,
 ) -> str:
     has_highly_relevant = any(paper.decision == "relevant" for paper in papers)
     if not papers:
@@ -1467,11 +1653,11 @@ def _render_latest_discoveries_page(
         latest_heading = "Papers first seen in the latest Paper Scout run."
         latest_notice = ""
     elif not has_highly_relevant:
-        paper_cards = _library_paper_cards(papers, default_decision="all")
+        paper_cards = _library_paper_cards(papers, default_decision="all", quality_display=quality_display)
         latest_heading = "Review candidates found in the latest run"
         latest_notice = '<p class="empty latest-empty">No highly relevant papers were found in the latest run. The cumulative library was refreshed.</p>'
     else:
-        paper_cards = _library_paper_cards(papers, default_decision="all")
+        paper_cards = _library_paper_cards(papers, default_decision="all", quality_display=quality_display)
         latest_heading = "Papers first seen in the latest Paper Scout run."
         latest_notice = ""
     page_title = "Latest Paper Scout Run" if site_title == "Agentic Memory Paper Library" else f"Latest Paper Scout Run - {site_title}"
@@ -1494,7 +1680,7 @@ def _render_latest_discoveries_page(
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         {_latest_summary_strip(papers, latest)}
-        {_library_controls(default_decision="all")}
+        {_library_controls(default_decision="all", quality_enabled=quality_enabled)}
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
           <div class="section-heading">
             <p class="section-kicker">New this run</p>
@@ -1568,6 +1754,7 @@ def _render_archive_page(
 def _render_about_page(
     site_title: str = "Agentic Memory Paper Library",
     site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
+    quality_enabled: bool = False,
 ) -> str:
     is_agent_memory = site_title == "Agentic Memory Paper Library"
     page_title = "About Paper Scout" if is_agent_memory else f"About {site_title}"
@@ -1615,6 +1802,11 @@ def _render_about_page(
             <h2>Relevance screening</h2>
             <p>{escape(relevance_text)}</p>
           </article>
+          {f'''<article>
+            <h2>Scholarly-quality assessment</h2>
+            <p>Scholarly quality is assessed separately from topic relevance. The optional, versioned assessment uses paper-type-aware deterministic evidence checks and may use a configured LLM to validate the structured result. Scores are confidence- and scope-qualified; missing full text remains unknown rather than being treated as weak.</p>
+            <p>Automated assessments are triage aids, not peer review. Evidence, concerns, assessor provenance, rubric version, and assessment scope are available in paper records and exports.</p>
+          </article>''' if quality_enabled else ''}
           <article>
             <h2>Manual curation</h2>
             <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
@@ -1700,6 +1892,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
             ("Last seen by Paper Scout", provenance["last_seen_at"] or paper.last_seen_date),
         ]
     )
+    quality_detail = _paper_quality_detail_section(paper)
     return _page(
         paper.title,
         f"""
@@ -1750,6 +1943,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
             <p class="section-kicker">Abstract / summary</p>
             <p>{escape(paper.abstract_summary or "No abstract summary available.")}</p>
           </section>
+          {quality_detail}
           <section class="detail-panel wide structured-card-panel">
             <p class="section-kicker">Structured research card</p>
             {structured_card_html}
@@ -1781,6 +1975,54 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
         stylesheet="../style.css",
         description=_description_for_profile(relevance_profile),
     )
+
+
+def _paper_quality_detail_section(paper: LibraryPaper) -> str:
+    if paper.combined_rank_score is None:
+        return ""
+    if paper.quality_score is None:
+        return """
+        <section class="detail-panel wide quality-detail-panel">
+          <p class="section-kicker">Automated evidence-based assessment</p>
+          <h2>Not enough evidence assessed yet</h2>
+          <p>A missing assessment is treated as unknown, not as evidence that the paper is weak.</p>
+        </section>
+        """
+    strengths = "".join(f"<li>{escape(item)}</li>" for item in paper.quality_strengths) or "<li>No positive signal recorded.</li>"
+    concerns = "".join(f"<li>{escape(item)}</li>" for item in paper.quality_concerns) or "<li>No automated concern recorded.</li>"
+    missing = "".join(f"<li>{escape(item)}</li>" for item in paper.quality_missing_information) or "<li>No missing-information note recorded.</li>"
+    evidence = "".join(
+        f"<li><strong>{escape(str(item.get('dimension', 'evidence')).replace('_', ' '))}</strong>: "
+        f"{escape(str(item.get('paraphrase') or item.get('explanation') or 'Evidence signal'))}"
+        f"{_evidence_page_suffix(item, ' - page ')}</li>"
+        for item in paper.quality_evidence
+    ) or "<li>No evidence excerpt recorded.</li>"
+    cap = (
+        f'<p class="quality-cap"><strong>Applied cap:</strong> {paper.quality_applied_score_cap}/100. {escape(paper.quality_applied_score_cap_reason or "")}</p>'
+        if paper.quality_applied_score_cap is not None
+        else ""
+    )
+    return f"""
+    <section class="detail-panel wide quality-detail-panel">
+      <p class="section-kicker">Automated evidence-based assessment</p>
+      <h2>{paper.quality_score}/100 · {escape((paper.quality_recommendation or 'unknown').title())}</h2>
+      <p>{escape(paper.quality_summary or 'Automated assessment summary unavailable.')}</p>
+      <dl class="detail-metadata quality-overview">
+        <div><dt>Confidence</dt><dd>{escape(paper.quality_confidence or 'unknown')}</dd></div>
+        <div><dt>Scope</dt><dd>{escape((paper.quality_scope or 'metadata_only').replace('_', ' '))}</dd></div>
+        <div><dt>Paper type</dt><dd>{escape((paper.quality_paper_type or 'unclear').replace('_', ' '))}</dd></div>
+        <div><dt>Assessor</dt><dd>{escape(paper.quality_assessor_type or 'unknown')}</dd></div>
+        <div><dt>Assessment version</dt><dd>{escape(paper.quality_assessment_version or 'unknown')}</dd></div>
+        <div><dt>Rubric version</dt><dd>{escape(paper.quality_rubric_version or 'unknown')}</dd></div>
+      </dl>
+      {cap}
+      <div class="quality-columns">
+        <div><h3>Positive signals</h3><ul>{strengths}</ul></div>
+        <div><h3>Concerns</h3><ul>{concerns}</ul></div>
+      </div>
+      <details class="quality-evidence"><summary>Evidence and missing information</summary><h3>Evidence</h3><ul>{evidence}</ul><h3>Missing information</h3><ul>{missing}</ul></details>
+    </section>
+    """
 
 
 def _display_value(value: object) -> str:
@@ -1917,12 +2159,51 @@ def _controls(sources: list[str]) -> str:
     """
 
 
-def _library_controls(default_decision: str = "all") -> str:
+def _library_controls(default_decision: str = "all", quality_enabled: bool = False) -> str:
     selected = {
         "all": " selected" if default_decision == "all" else "",
         "relevant": " selected" if default_decision == "relevant" else "",
         "maybe": " selected" if default_decision == "maybe" else "",
     }
+    quality_controls = """
+      <details class="quality-controls">
+        <summary>Scholarly quality filters</summary>
+        <div class="quality-control-grid">
+          <label class="select-field" for="quality-minimum">
+            <span>Minimum score</span>
+            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
+          </label>
+          <label class="select-field" for="quality-recommendation">
+            <span>Recommendation</span>
+            <select id="quality-recommendation">
+              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-confidence">
+            <span>Confidence</span>
+            <select id="quality-confidence">
+              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-scope">
+            <span>Assessment scope</span>
+            <select id="quality-scope">
+              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-visibility">
+            <span>Weak assessments</span>
+            <select id="quality-visibility">
+              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
+            </select>
+          </label>
+          <label class="toggle-control" for="quality-include-unknown">
+            <input id="quality-include-unknown" type="checkbox" checked>
+            <span>Include unassessed papers</span>
+          </label>
+        </div>
+      </details>
+    """ if quality_enabled else ""
     return f"""
     <section class="reading-controls library-controls" aria-label="Library controls" data-default-decision="{escape(default_decision)}">
       <label class="search-field" for="paper-search">
@@ -1933,6 +2214,7 @@ def _library_controls(default_decision: str = "all") -> str:
         <span>Sort</span>
           <select id="paper-sort">
           <option value="latest-relevant" selected>Latest relevant</option>
+          {('<option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>' if quality_enabled else '')}
           <option value="score-desc">Screening match</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
@@ -1951,6 +2233,7 @@ def _library_controls(default_decision: str = "all") -> str:
         <input id="new-only" type="checkbox">
         <span>New only</span>
       </label>
+      {quality_controls}
     </section>
     """
 
@@ -2053,13 +2336,24 @@ def _recommended_card(paper: LibraryPaper) -> str:
     """
 
 
-def _library_paper_cards(papers: list[LibraryPaper], default_decision: str = "all") -> str:
+def _library_paper_cards(
+    papers: list[LibraryPaper],
+    default_decision: str = "all",
+    quality_display: QualityDisplayConfig | None = None,
+) -> str:
     if not papers:
         return '<p class="empty">No papers in this section.</p>'
-    return "\n".join(_library_paper_card(paper, default_decision=default_decision) for paper in papers)
+    return "\n".join(
+        _library_paper_card(paper, default_decision=default_decision, quality_display=quality_display)
+        for paper in papers
+    )
 
 
-def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> str:
+def _library_paper_card(
+    paper: LibraryPaper,
+    default_decision: str = "all",
+    quality_display: QualityDisplayConfig | None = None,
+) -> str:
     details_tags = _all_tag_badges(paper.tags)
     sources = paper.sources or [paper.source]
     source_badges = "".join(f'<span class="badge source">{escape(_source_label(source))}</span>' for source in sources)
@@ -2081,12 +2375,17 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
     hidden = " hidden" if default_decision != "all" and paper.decision != default_decision else ""
     new_badge = '<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span>' if paper.is_new else ""
     first_seen_text = _first_seen_display(paper.first_seen_at)
+    quality_summary = _paper_quality_summary(paper, quality_display)
+    quality_metadata = _paper_quality_metadata(paper, quality_display)
+    quality_score_data = "" if paper.quality_score is None else str(paper.quality_score)
+    combined_score_data = "" if paper.combined_rank_score is None else f"{paper.combined_rank_score:.6f}"
     return f"""
-    <article class="paper-card {escape(density)}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-is-new="{str(paper.is_new).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-date-bucket="{_latest_relevant_date_bucket(paper)}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}"{hidden}>
+    <article class="paper-card {escape(density)}{' quality-downranked' if paper.quality_downranked else ''}" data-source="{escape(paper.source)}" data-sources="{escape(source_text)}" data-decision="{escape(paper.decision)}" data-tags="{escape(tag_text)}" data-latest-run="{str(paper.newly_discovered_in_latest_run).lower()}" data-is-new="{str(paper.is_new).lower()}" data-published="{escape(paper.published_date or '')}" data-first-seen="{escape(paper.first_seen_date)}" data-score="{paper.score}" data-pinned="{str(paper.pinned).lower()}" data-future-date="{str(paper.future_date).lower()}" data-date-bucket="{_latest_relevant_date_bucket(paper)}" data-title="{escape(paper.title.lower())}" data-search="{escape(search_text)}" data-quality-score="{quality_score_data}" data-quality-recommendation="{escape(paper.quality_recommendation or 'unknown')}" data-quality-confidence="{escape(paper.quality_confidence or 'unknown')}" data-quality-scope="{escape(paper.quality_scope or 'metadata_only')}" data-quality-downranked="{str(paper.quality_downranked).lower()}" data-combined-score="{combined_score_data}"{hidden}>
       <div class="paper-main">
         <h3>{escape(paper.title)}{new_badge}</h3>
         <p class="meta">{escape(paper.authors_text)} · {escape(published)} · Source: {escape(source_names)}</p>
         <p class="reason"><strong>Why included:</strong> {escape(_short_reason(paper))}</p>
+        {quality_summary}
       </div>
       <div class="paper-side">
         {link}
@@ -2113,12 +2412,95 @@ def _library_paper_card(paper: LibraryPaper, default_decision: str = "all") -> s
           </ul>
           {secondary_links}
           <p class="details-reason"><strong>Screening rationale</strong> {escape(paper.reason)}</p>
+          {quality_metadata}
           <button class="citation-button" type="button" data-citation="{escape(paper.citation)}">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
       </div>
     </article>
     """
+
+
+def _paper_quality_summary(paper: LibraryPaper, display: QualityDisplayConfig | None = None) -> str:
+    if paper.combined_rank_score is None:
+        return ""
+    if paper.quality_assessment_version is None:
+        return ""
+    if paper.quality_score is None:
+        return """
+        <div class="quality-summary quality-unknown">
+          <strong>Automated evidence-based assessment</strong>
+          <span>Not enough evidence assessed yet.</span>
+        </div>
+        """
+    active = display or QualityDisplayConfig()
+    labels = [(paper.quality_recommendation or "unknown").replace("_", " ").title()]
+    if active.show_score:
+        labels.insert(0, f"{paper.quality_score}/100")
+    if active.show_confidence:
+        labels.append(f"{(paper.quality_confidence or 'unknown').title()} confidence")
+    if active.show_scope:
+        labels.append((paper.quality_scope or "metadata_only").replace("_", " "))
+    label_text = " · ".join(labels)
+    strengths = "".join(f"<li><strong>Strength:</strong> {escape(item)}</li>" for item in paper.quality_strengths[: active.show_strengths])
+    concerns = "".join(f"<li><strong>Concern:</strong> {escape(item)}</li>" for item in paper.quality_concerns[: active.show_concerns])
+    evidence = ""
+    if strengths or concerns:
+        evidence = f'<ul class="quality-signal-list">{strengths}{concerns}</ul>'
+    return f"""
+    <div class="quality-summary">
+      <strong>Automated evidence-based assessment</strong>
+      <span>{escape(label_text)}</span>
+      {evidence}
+    </div>
+    """
+
+
+def _paper_quality_metadata(paper: LibraryPaper, display: QualityDisplayConfig | None = None) -> str:
+    if paper.combined_rank_score is None:
+        return ""
+    if paper.quality_assessment_version is None:
+        return ""
+    if paper.quality_score is None:
+        return '<div class="details-group"><strong>Scholarly quality</strong><p>Not enough evidence assessed yet.</p></div>'
+    dimensions = "".join(
+        f"<li>{escape(name.replace('_', ' ').title())}: {escape('unknown' if score is None else f'{score}/5')}</li>"
+        for name, score in paper.quality_dimension_scores.items()
+    ) or "<li>No dimension scores recorded.</li>"
+    active = display or QualityDisplayConfig()
+    evidence = "".join(
+        f"<li>{escape(str(item.get('paraphrase') or item.get('explanation') or 'Evidence signal'))}"
+        f"{_evidence_page_suffix(item, ' (page ', ')')}</li>"
+        for item in paper.quality_evidence[:8]
+    ) if active.show_evidence else ""
+    evidence = evidence or "<li>Evidence display is disabled or no excerpts were recorded.</li>"
+    cap = (
+        f"<li>Applied score cap: {paper.quality_applied_score_cap}/100 - {escape(paper.quality_applied_score_cap_reason or '')}</li>"
+        if paper.quality_applied_score_cap is not None
+        else ""
+    )
+    return f"""
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>{escape(paper.quality_summary or 'Automated assessment summary unavailable.')}</p>
+      <ul>
+        <li>Recommendation: {escape((paper.quality_recommendation or 'unknown').replace('_', ' '))}</li>
+        <li>Confidence: {escape(paper.quality_confidence or 'unknown')}</li>
+        <li>Assessment scope: {escape((paper.quality_scope or 'metadata_only').replace('_', ' '))}</li>
+        <li>Paper type: {escape((paper.quality_paper_type or 'unclear').replace('_', ' '))}</li>
+        <li>Assessment: {escape(paper.quality_assessment_version or 'unknown')} / rubric {escape(paper.quality_rubric_version or 'unknown')}</li>
+        <li>Assessor: {escape(paper.quality_assessor_type or 'unknown')}{f' ({escape(paper.quality_assessor_model)})' if paper.quality_assessor_model else ''}</li>
+        {cap}
+      </ul>
+      <h4>Dimension scores</h4><ul>{dimensions}</ul>
+      <h4>Evidence</h4><ul>{evidence}</ul>
+    </details>
+    """
+
+
+def _evidence_page_suffix(item: dict[str, object], prefix: str, suffix: str = "") -> str:
+    page = item.get("page")
+    return f"{prefix}{int(page)}{suffix}" if page else ""
 
 
 def _visible_tag_badges(tags: list[str], limit: int = 4) -> str:
@@ -2307,6 +2689,25 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
             "publication_date_source",
             "publication_date_confidence",
             "effective_sort_date",
+            "quality_score",
+            "quality_recommendation",
+            "quality_confidence",
+            "quality_assessment_scope",
+            "quality_paper_type",
+            "quality_assessment_version",
+            "quality_rubric_version",
+            "quality_assessor_type",
+            "quality_assessor_model",
+            "quality_assessed_at",
+            "quality_summary",
+            "quality_strengths",
+            "quality_concerns",
+            "quality_missing_information",
+            "quality_score_cap",
+            "quality_score_cap_reason",
+            "combined_rank_score",
+            "quality_downranked",
+            "quality_suppressed",
         ],
         lineterminator="\n",
     )
@@ -2330,6 +2731,25 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
                 "publication_date_source": paper.publication_date_source or "",
                 "publication_date_confidence": paper.publication_date_confidence or "",
                 "effective_sort_date": _latest_relevant_date(paper) or "",
+                "quality_score": "" if paper.quality_score is None else paper.quality_score,
+                "quality_recommendation": paper.quality_recommendation or "unknown",
+                "quality_confidence": paper.quality_confidence or "unknown",
+                "quality_assessment_scope": paper.quality_scope or "metadata_only",
+                "quality_paper_type": paper.quality_paper_type or "unclear",
+                "quality_assessment_version": paper.quality_assessment_version or "",
+                "quality_rubric_version": paper.quality_rubric_version or "",
+                "quality_assessor_type": paper.quality_assessor_type or "",
+                "quality_assessor_model": paper.quality_assessor_model or "",
+                "quality_assessed_at": paper.quality_assessed_at or "",
+                "quality_summary": paper.quality_summary or "",
+                "quality_strengths": "; ".join(paper.quality_strengths),
+                "quality_concerns": "; ".join(paper.quality_concerns),
+                "quality_missing_information": "; ".join(paper.quality_missing_information),
+                "quality_score_cap": "" if paper.quality_applied_score_cap is None else paper.quality_applied_score_cap,
+                "quality_score_cap_reason": paper.quality_applied_score_cap_reason or "",
+                "combined_rank_score": "" if paper.combined_rank_score is None else f"{paper.combined_rank_score:.4f}",
+                "quality_downranked": paper.quality_downranked,
+                "quality_suppressed": paper.quality_suppressed,
             }
         )
     return output.getvalue()
@@ -2343,6 +2763,13 @@ def _papers_bibtex(papers: list[LibraryPaper]) -> str:
 def _paper_bibtex(paper: LibraryPaper) -> str:
     year = _paper_year(paper) or _paper_year(LibraryPaper(**{**paper.__dict__, "published_date": paper.first_seen_date}))
     key = _bibtex_key(paper, year)
+    note = f"Paper Scout relevance: {_decision_label(paper.decision)} ({paper.score}/100)"
+    if paper.quality_score is not None:
+        note += (
+            f"; automated scholarly quality: {paper.quality_score}/100, "
+            f"{paper.quality_recommendation or 'unknown'}, {paper.quality_confidence or 'unknown'} confidence, "
+            f"{(paper.quality_scope or 'metadata_only').replace('_', ' ')}"
+        )
     fields = [
         ("title", paper.title),
         ("author", " and ".join(paper.authors) if paper.authors else ""),
@@ -2350,7 +2777,7 @@ def _paper_bibtex(paper: LibraryPaper) -> str:
         ("url", paper.url or ""),
         ("doi", paper.doi or ""),
         ("eprint", paper.arxiv_id or ""),
-        ("note", f"Paper Scout relevance: {_decision_label(paper.decision)} ({paper.score}/100)"),
+        ("note", note),
     ]
     rendered = [f"  {name} = {{{_bibtex_escape(value)}}}" for name, value in fields if value]
     return "@misc{" + key + ",\n" + ",\n".join(rendered) + "\n}"
@@ -2800,7 +3227,7 @@ h3 {
   box-shadow: 0 14px 38px rgba(28, 35, 48, .055);
 }
 .search-field, .select-field, .control-group { display: grid; gap: .45rem; }
-input[type="search"], select {
+input[type="search"], input[type="number"], select {
   width: 100%;
   min-height: 2.8rem;
   border: 1px solid var(--line);
@@ -2819,6 +3246,27 @@ select {
   padding-right: 2rem;
 }
 input[type="search"]::placeholder { color: var(--faint); }
+.quality-controls {
+  grid-column: 1 / -1;
+  padding-top: .15rem;
+  color: var(--muted);
+}
+.quality-controls > summary {
+  width: max-content;
+  cursor: pointer;
+  color: var(--accent-strong);
+  font-size: .88rem;
+  font-weight: 620;
+}
+.quality-control-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: .7rem;
+  align-items: end;
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--line-soft);
+}
 .segmented, .source-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -2886,6 +3334,39 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 .paper-card.compact h3 {
   font-size: clamp(1.08rem, 1.5vw, 1.32rem);
 }
+.paper-card.quality-downranked {
+  border-color: var(--line-soft);
+}
+.quality-summary {
+  display: grid;
+  gap: .28rem;
+  margin-top: .8rem;
+  padding: .68rem .75rem;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--accent-soft);
+  color: var(--muted);
+  font-size: .84rem;
+}
+.quality-summary strong { color: var(--text); font-size: .86rem; }
+.quality-summary.quality-unknown { border-left-color: var(--line); background: var(--surface-muted); }
+.quality-signal-list { margin: .25rem 0 0; padding-left: 1rem; }
+.quality-signal-list li + li { margin-top: .18rem; }
+.quality-evidence {
+  margin: .8rem 0;
+  padding: .7rem .75rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+}
+.quality-evidence summary { cursor: pointer; color: var(--text); font-weight: 620; }
+.quality-evidence h4, .quality-evidence h3 { margin: .8rem 0 .25rem; font-size: .92rem; }
+.quality-detail-panel { border-left: 3px solid var(--accent); }
+.quality-detail-panel h2 { margin-top: .25rem; font-size: 1.55rem; }
+.quality-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.quality-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.quality-columns h3 { margin-top: .8rem; font-size: 1rem; }
+.quality-cap { padding: .65rem .75rem; background: var(--warning-soft); color: var(--warning-text); border-radius: var(--radius-sm); }
 .paper-kicker, .tags { display: flex; gap: .45rem; flex-wrap: wrap; align-items: center; }
 .paper-card h3 {
   display: flex;
@@ -3320,7 +3801,7 @@ textarea {
   .recommended-section { padding: .9rem; }
   .paper-dates { grid-template-columns: 1fr; }
   .paper-card { border-radius: 1rem; }
-  .paper-detail-layout, .detail-metadata div { grid-template-columns: 1fr; }
+  .paper-detail-layout, .detail-metadata div, .quality-columns, .quality-overview { grid-template-columns: 1fr; }
   .archive-entry dl { grid-template-columns: 1fr; }
   h1 { font-size: clamp(2.7rem, 14vw, 4.35rem); }
 }
@@ -3340,6 +3821,12 @@ FILTER_SCRIPT = """
   const relevanceFilter = document.querySelector('#relevance-filter');
   const newOnly = document.querySelector('#new-only');
   const sortSelect = document.querySelector('#paper-sort');
+  const qualityMinimum = document.querySelector('#quality-minimum');
+  const qualityRecommendation = document.querySelector('#quality-recommendation');
+  const qualityConfidence = document.querySelector('#quality-confidence');
+  const qualityScope = document.querySelector('#quality-scope');
+  const qualityVisibility = document.querySelector('#quality-visibility');
+  const qualityIncludeUnknown = document.querySelector('#quality-include-unknown');
   const list = document.querySelector('#paper-list');
   const cards = Array.from(document.querySelectorAll('.paper-card'));
   const emptyState = document.querySelector('#no-results');
@@ -3358,6 +3845,10 @@ FILTER_SCRIPT = """
     if (newness) return newness;
     const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
     if (rel) return rel;
+    if (!qualityVisibility || qualityVisibility.value === 'configured') {
+      const qualityRank = (a.dataset.qualityDownranked === 'true' ? 1 : 0) - (b.dataset.qualityDownranked === 'true' ? 1 : 0);
+      if (qualityRank) return qualityRank;
+    }
     const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
     if (bucket) return bucket;
     const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
@@ -3373,6 +3864,8 @@ FILTER_SCRIPT = """
       if (mode === 'latest-relevant') return latestRelevantRank(a, b);
       if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
       if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'quality-desc') return Number(b.dataset.qualityScore || -1) - Number(a.dataset.qualityScore || -1) || latestRelevantRank(a, b);
+      if (mode === 'combined-desc') return Number(b.dataset.combinedScore || 0) - Number(a.dataset.combinedScore || 0) || latestRelevantRank(a, b);
       if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
       if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
       return latestRelevantRank(a, b);
@@ -3388,7 +3881,14 @@ FILTER_SCRIPT = """
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
       const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly);
+      const qualityKnown = card.dataset.qualityScore !== '';
+      const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
+      const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
+      const matchesQualityRecommendation = !qualityRecommendation || qualityRecommendation.value === 'all' || card.dataset.qualityRecommendation === qualityRecommendation.value;
+      const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
+      const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
+      const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0;
@@ -3397,6 +3897,8 @@ FILTER_SCRIPT = """
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (newOnly) newOnly.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
+  [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
+  if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });
   document.querySelectorAll('.citation-button').forEach(button => {
     button.addEventListener('click', async () => {
       const status = button.parentElement.querySelector('.copy-status');

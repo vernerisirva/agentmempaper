@@ -87,6 +87,27 @@ exclusions:
         self.assertTrue(config.arxiv_sweep.enabled)
         self.assertEqual(config.arxiv_sweep.categories, ("cs.AI", "cs.CL", "cs.LG"))
 
+    def test_loads_quality_configuration_for_both_tracks(self):
+        for track in ("agent_memory", "deep_research"):
+            config = load_config(track_id=track)
+            self.assertTrue(config.quality.enabled)
+            self.assertEqual(config.quality.mode, "auto")
+            self.assertEqual(config.quality.assessment.version, "quality-v1")
+            self.assertEqual(config.quality.assessment.rubric_version, "scholarly-rubric-v1")
+            self.assertEqual(config.quality.ranking.behavior, "downrank")
+            self.assertTrue(config.quality.ranking.unknown_quality_is_neutral)
+            self.assertIn(track, str(config.quality.full_text.cache_dir))
+
+    def test_rejects_invalid_quality_ranking_configuration(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config_path = Path(tmpdir) / "invalid.yaml"
+            config_path.write_text(
+                """quality:\n  enabled: true\n  ranking:\n    behavior: hide\n    quality_weight: -1\n""",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "ranking weights"):
+                load_config(config_path)
+
 
 if __name__ == "__main__":
     unittest.main()

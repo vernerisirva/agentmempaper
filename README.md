@@ -14,6 +14,16 @@ The default config in `config/paper_scout.yaml` tracks:
 
 The Engram/Megatron-LM context is treated as research context, not as proof that Engram-style approaches cannot work.
 
+## Setup
+
+Paper Scout requires Python 3.11 or newer. The only non-standard dependency is `pypdf`, used for bounded open-access full-text extraction:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
 ## Commands
 
 Run the normal daily scout:
@@ -58,6 +68,19 @@ Evaluate deterministic relevance fixtures:
 
 ```bash
 python3 -m paper_scout evaluate-relevance
+```
+
+Evaluate the separate scholarly-quality rubric and reassess stored papers:
+
+```bash
+python3 -m paper_scout evaluate-quality --track agent_memory
+python3 -m paper_scout evaluate-quality --track deep_research
+python3 -m paper_scout reassess-quality --track agent_memory --days 30
+python3 -m paper_scout reassess-quality --track agent_memory --paper-id doi:10.0000/example --force
+python3 -m paper_scout reassess-quality --track agent_memory --assessment-version quality-v2 --rubric-version scholarly-rubric-v2
+python3 -m paper_scout reassess-quality --track agent_memory --model your-quality-model --force
+python3 -m paper_scout reassess-quality --track agent_memory --no-full-text --no-llm
+python3 -m paper_scout reassess-quality --track agent_memory --report-only
 ```
 
 Validate idempotent notification behavior:
@@ -172,6 +195,7 @@ Optional OpenAI-compatible classifier:
 - `PAPER_SCOUT_LLM_PROVIDER=auto`
 - `PAPER_SCOUT_LLM_MODEL`
 - `PAPER_SCOUT_LLM_BASE_URL`, default `https://api.openai.com/v1`
+- `PAPER_SCOUT_QUALITY_LLM_MODEL`, optional model override for scholarly-quality validation; it reuses the same provider, API key, and base URL
 
 Optional notifications:
 
@@ -197,6 +221,39 @@ reports/paper_scout/digest-quality-YYYY-MM-DD.md
 It flags likely false positives when digest papers mention infrastructure-memory terms such as GPU memory, CUDA memory, memory bandwidth, memory allocation, memory-efficient attention, operating-system memory, or database memory without strong agent-memory terms such as agent memory, LLM agent, autonomous agent, deep research agent, persistent memory, episodic memory, semantic memory, Engram, or parametric memory.
 
 This report does not fail the workflow by default. It is a triage aid for keeping the daily digest useful.
+
+## Scholarly Quality Assessment
+
+Topic relevance and scholarly quality are separate. Relevance decides whether a paper belongs in an Agentic Memory or Deep Research library. The optional quality layer asks how strongly the available material supports the paper's contribution. A paper can therefore be highly relevant but weakly validated, or only moderately relevant but methodologically strong.
+
+The feature is configured per track under the `quality:` section of `config/tracks/agent_memory.yaml` and `config/tracks/deep_research.yaml`. Supported modes are:
+
+- `off`: no quality assessment;
+- `deterministic`: paper-type-aware evidence rules only;
+- `llm`: use the configured OpenAI-compatible model, with deterministic fallback;
+- `hybrid`: deterministic assessment plus model validation;
+- `auto`: hybrid when credentials are available, deterministic otherwise.
+
+Each versioned assessment stores an optional 0-100 score, confidence, recommendation, paper type, assessment scope, per-dimension scores, positive and negative signals, evidence references, missing information, assessor/model provenance, content hash, timestamp, rubric version, and any applied score cap. Null scores mean **not enough evidence**, not zero quality. Abstract-only assessments are low confidence and are never hidden automatically.
+
+The deterministic rubric first classifies the paper as empirical, systems/application, methods, theoretical, survey/review, position/conceptual, dataset/benchmark, case study, replication, or unclear. It then applies type-appropriate expectations. Surveys are not penalized for lacking experiments, and theoretical papers can be validated through formal reasoning. Systems papers that only combine a familiar PDF/RAG/vector/graph/UI stack without comparative evidence receive explicit integration-only and functionality-only concerns and a score cap.
+
+Full-text enrichment is optional and bounded. Paper Scout tries, in order, an explicitly supplied open-access PDF URL, arXiv PDF, Semantic Scholar `openAccessPdf`, and OpenAlex open-access locations. Downloads require public HTTP(S), use normal TLS verification, validate PDF content, follow at most five safe redirects, and enforce configured timeout, size, page, extraction-character, section, and prompt limits. Extracted text is cached under `data/cache/`; PDFs and cache files are ignored by Git and never committed. Scanned or malformed PDFs degrade to partial/abstract evidence without failing the daily scout.
+
+Cached content is reused for routine runs. `reassess-quality --force` bypasses the extracted-text cache and is the explicit way to check for a changed PDF at the same URL; a new assessment version, rubric version, model, or content hash creates a new immutable assessment record.
+
+Quality-aware ranking supports `ignore`, `annotate`, `downrank`, and `hide`. Unknown quality is neutral. The configured default uses relevance as the larger signal and quality as a confidence/scope-weighted secondary signal. Human curation in `config/curation.yaml` or `config/curation/deep_research.yaml` can set `quality_score_override`, `quality_recommendation_override`, `quality_note`, `include_despite_quality`, or `suppress_for_quality`; pinned and explicit-include decisions override automated suppression.
+
+Daily quality diagnostics are written to:
+
+```text
+reports/paper_scout/paper-quality-YYYY-MM-DD.md
+reports/paper_scout/quality-eval-YYYY-MM-DD.md
+reports/paper_scout/deep_research/paper-quality-YYYY-MM-DD.md
+reports/paper_scout/deep_research/quality-eval-YYYY-MM-DD.md
+```
+
+The static dashboard, paper detail JSON, library JSON, and CSV expose quality provenance and evidence. Advanced quality filters remain collapsed by default. Automated quality assessment is advisory triage, not peer review, and does not use venue prestige, author identity, institution, citation count, or paper age as quality signals.
 
 ## User-Friendly Daily Reading
 
@@ -253,6 +310,8 @@ It first validates:
 ```bash
 python -m paper_scout evaluate-relevance --track agent_memory
 python -m paper_scout evaluate-relevance --track deep_research
+python -m paper_scout evaluate-quality --track agent_memory
+python -m paper_scout evaluate-quality --track deep_research
 python -m paper_scout validate-idempotency --track agent_memory
 python -m paper_scout validate-idempotency --track deep_research
 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci

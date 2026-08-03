@@ -70,7 +70,7 @@ def _render_paper(paper: DigestPaper) -> list[str]:
     title = _escape_brackets(paper.title)
     link = paper.url or ""
     linked_title = f"[{title}]({link})" if link else title
-    return [
+    lines = [
         f"### {linked_title}",
         "",
         f"- **Authors:** {authors}",
@@ -80,8 +80,26 @@ def _render_paper(paper: DigestPaper) -> list[str]:
         f"- **Reason:** {paper.reason}",
         f"- **Tags:** {tags}",
         f"- **Abstract summary:** {summary or 'No abstract available.'}",
-        "",
     ]
+    if paper.quality_recommendation:
+        lines.append(f"- **Automated evidence-based assessment:** {_quality_label(paper)}")
+        if paper.quality_concerns:
+            lines.append(f"- **Main concerns:** {'; '.join(paper.quality_concerns[:3])}")
+        if paper.quality_strengths:
+            lines.append(f"- **Positive signals:** {'; '.join(paper.quality_strengths[:2])}")
+    lines.append("")
+    return lines
+
+
+def _quality_label(paper: DigestPaper) -> str:
+    scope = (paper.quality_scope or "unknown").replace("_", " ")
+    if paper.quality_score is None:
+        return f"Not enough evidence · {scope}"
+    warning = " · Limited abstract-only assessment" if paper.quality_scope == "title_and_abstract" else ""
+    return (
+        f"{paper.quality_score}/100 · {(paper.quality_recommendation or 'unknown').title()} · "
+        f"{(paper.quality_confidence or 'low').title()} confidence · {scope}{warning}"
+    )
 
 
 def _summary(abstract: str, max_chars: int = 420) -> str:

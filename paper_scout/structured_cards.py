@@ -4,7 +4,7 @@ from typing import Any
 
 
 NOT_EXTRACTED = "Not extracted yet"
-SCHEMA_VERSION = "paper-scout-card-v1"
+SCHEMA_VERSION = "paper-scout-card-v2"
 
 
 def structured_card_for_paper(paper: Any, relevance_profile: str = "agent_memory") -> dict[str, dict[str, str]]:
@@ -19,7 +19,7 @@ def structured_card_for_paper(paper: Any, relevance_profile: str = "agent_memory
         "evidence_or_evaluation": evidence,
         "relation_to_agentic_memory": _field(relation, _relation_confidence(relation), provenance) if relation != NOT_EXTRACTED else _not_extracted(),
         "limitations_or_uncertainty": _field(
-            "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.",
+            _limitations_text(paper),
             "high",
             "rule",
         ),
@@ -62,6 +62,7 @@ def paper_card_schema() -> dict[str, Any]:
             "authors",
             "publication",
             "relevance",
+            "scholarly_quality",
             "structured_card",
             "provenance",
         ],
@@ -82,6 +83,43 @@ def paper_card_schema() -> dict[str, Any]:
             "first_seen_at": {"type": ["string", "null"]},
             "last_seen_at": {"type": ["string", "null"]},
             "relevance": {"type": "object"},
+            "scholarly_quality": {
+                "type": "object",
+                "required": [
+                    "overall_quality_score",
+                    "confidence",
+                    "recommendation",
+                    "paper_type",
+                    "assessment_scope",
+                    "dimension_scores",
+                    "positive_signals",
+                    "concerns",
+                    "evidence",
+                    "missing_information",
+                ],
+                "properties": {
+                    "overall_quality_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+                    "confidence": {"enum": ["low", "medium", "high", "unknown"]},
+                    "recommendation": {"enum": ["strong", "promising", "uncertain", "weak", "unknown"]},
+                    "paper_type": {"type": "string"},
+                    "assessment_scope": {"enum": ["metadata_only", "title_and_abstract", "partial_full_text", "full_text"]},
+                    "assessment_version": {"type": ["string", "null"]},
+                    "rubric_version": {"type": ["string", "null"]},
+                    "assessor_type": {"type": ["string", "null"]},
+                    "assessor_model": {"type": ["string", "null"]},
+                    "source_content_hash": {"type": ["string", "null"]},
+                    "assessed_at": {"type": ["string", "null"]},
+                    "dimension_scores": {"type": "object"},
+                    "positive_signals": {"type": "array", "items": {"type": "string"}},
+                    "concerns": {"type": "array", "items": {"type": "string"}},
+                    "evidence": {"type": "array", "items": {"type": "object"}},
+                    "missing_information": {"type": "array", "items": {"type": "string"}},
+                    "concise_summary": {"type": ["string", "null"]},
+                    "applied_score_cap": {"type": ["integer", "null"]},
+                    "applied_score_cap_reason": {"type": ["string", "null"]},
+                },
+                "additionalProperties": True,
+            },
             "structured_card": {
                 "type": "object",
                 "required": [
@@ -120,6 +158,16 @@ def _research_relevance(paper: Any, relevance_profile: str = "agent_memory") -> 
     if getattr(paper, "decision", "") == "maybe":
         return _field("Review candidate", "low", "rule")
     return _not_extracted()
+
+
+def _limitations_text(paper: Any) -> str:
+    quality_scope = getattr(paper, "quality_scope", None)
+    if quality_scope in {"partial_full_text", "full_text"}:
+        return (
+            "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. "
+            "A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+        )
+    return "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
 
 
 def _classify_method_and_relation(paper: Any, relevance_profile: str = "agent_memory") -> tuple[str, str, str]:

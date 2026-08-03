@@ -10,11 +10,18 @@ from paper_scout.digest import DigestMetadata, render_digest, write_digest
 from paper_scout.digest_quality import write_digest_quality_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
 from paper_scout.llm import classify_with_optional_llm
-from paper_scout.models import PaperCandidate
+from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.notifications import send_optional_notifications
 from paper_scout.relevance import classify_with_rules, should_consider_for_llm
 from paper_scout.http import HttpRequestError
 from paper_scout.query_planner import PlannedQuery, normalize_query, plan_queries
+from paper_scout.quality_report import write_paper_quality_report
+from paper_scout.quality_service import (
+    QualityRunStats,
+    assess_and_store_candidate,
+    quality_assessment_matches_mode,
+    reconcile_quality_curation,
+)
 from paper_scout.source_errors import format_source_failure
 from paper_scout.state import PaperStore
 
@@ -78,6 +85,8 @@ def run_scout(
         active_fetchers = [fetcher for fetcher in active_fetchers if getattr(fetcher, "source", "") in sources]
     fetchers_by_source = {getattr(fetcher, "source", fetcher.__class__.__name__): fetcher for fetcher in active_fetchers}
     active_notifier = notifier or send_optional_notifications
+    quality_stats = QualityRunStats()
+    quality_queue: dict[str, tuple[PaperCandidate, ClassificationResult]] = {}
 
     try:
         queries = _queries_for_run(config, store, set(fetchers_by_source), active_days)
@@ -114,8 +123,15 @@ def run_scout(
                 seen_keys.add(key)
                 decision_counts[classification.decision] = decision_counts.get(classification.decision, 0) + 1
                 store.record_sighting(run_id, key, candidate, f"{query.route}:{query.query}")
+                if config.quality.enabled and _quality_decision_enabled(config, classification.decision):
+                    quality_queue.setdefault(key, (candidate, classification))
 
-        digest_papers = store.get_unnotified_digest_papers()
+        _run_bounded_quality_queue(config, store, quality_queue, quality_stats)
+
+        digest_papers = store.get_unnotified_digest_papers(
+            exclude_quality_suppressed=config.quality.enabled and config.quality.ranking.behavior == "hide"
+        )
+        digest_papers = _rank_digest_papers(digest_papers, config)
         digest_path = digest_path_override or config.digest_dir / f"{active_date}.md"
         metadata = DigestMetadata(
             run_id=run_id,
@@ -128,6 +144,14 @@ def run_scout(
         write_digest(digest_path, active_date, digest_papers, metadata)
         if write_quality_report:
             write_digest_quality_report(config.report_dir, active_date, digest_papers)
+            if config.quality.enabled:
+                write_paper_quality_report(
+                    config.report_dir,
+                    active_date,
+                    quality_stats,
+                    config.quality.assessment.version,
+                    config.quality.assessment.rubric_version,
+                )
         notified_count = 0
         if digest_papers and notifications_enabled:
             notification_ok = active_notifier(render_digest(active_date, digest_papers, metadata))
@@ -189,7 +213,107 @@ def ingest_candidate(config: ScoutConfig, candidate: PaperCandidate) -> tuple[st
     existed = store.paper_exists(candidate)
     classification = classify_with_rules(candidate, profile=config.relevance_profile)
     key = store.upsert_paper(candidate, classification)
+    if config.quality.enabled and classification.decision in {"relevant", "maybe"}:
+        try:
+            assess_and_store_candidate(config.quality, store, candidate, key, classification, curation_path=config.curation_path)
+        except Exception as exc:  # noqa: BLE001 - direct ingestion remains useful when quality enrichment fails.
+            LOGGER.warning("Quality assessment failed during direct ingestion for %s: %s", candidate.title, exc)
     return ("already_known" if existed else "new", key, classification)
+
+
+def _quality_decision_enabled(config: ScoutConfig, decision: str) -> bool:
+    return {
+        "relevant": config.quality.assessment.assess_relevant,
+        "maybe": config.quality.assessment.assess_maybe_relevant,
+        "irrelevant": config.quality.assessment.assess_irrelevant,
+    }.get(decision, False)
+
+
+def _run_bounded_quality_queue(
+    config: ScoutConfig,
+    store: PaperStore,
+    queue: dict[str, tuple[PaperCandidate, ClassificationResult]],
+    stats: QualityRunStats,
+) -> None:
+    if not config.quality.enabled or config.quality.mode == "off":
+        return
+    ranked: list[tuple[int, str, PaperCandidate, ClassificationResult]] = []
+    for canonical_id, (candidate, classification) in queue.items():
+        current = store.get_current_quality_assessment(
+            canonical_id,
+            assessment_version=config.quality.assessment.version,
+            rubric_version=config.quality.assessment.rubric_version,
+        )
+        current_matches = bool(current and quality_assessment_matches_mode(config.quality, current))
+        priority = 0 if current is None or not current_matches else 1 if current.assessment_scope in {"metadata_only", "title_and_abstract"} else 2
+        if priority == 2 and current is not None:
+            reconcile_quality_curation(config.quality, store, candidate, current, config.curation_path)
+        ranked.append((priority, canonical_id, candidate, classification))
+    limit = config.quality.assessment.max_assessments_per_run
+    attempted = 0
+    for priority, canonical_id, candidate, classification in sorted(ranked, key=lambda item: (item[0], item[1])):
+        if priority == 2:
+            continue
+        if attempted >= limit:
+            break
+        attempted += 1
+        try:
+            assess_and_store_candidate(
+                config.quality,
+                store,
+                candidate,
+                canonical_id,
+                classification,
+                stats=stats,
+                curation_path=config.curation_path,
+            )
+        except Exception as exc:  # noqa: BLE001 - assessment must never break discovery or persistence.
+            LOGGER.warning("Quality assessment failed for %s: %s", candidate.title, exc)
+            stats.failures.append(f"{candidate.title}: {exc}")
+
+
+def _rank_digest_papers(papers, config: ScoutConfig):
+    if not config.quality.enabled or config.quality.ranking.behavior in {"ignore", "annotate"}:
+        return papers
+    from dataclasses import replace
+
+    from paper_scout.quality import combined_rank_score
+    from paper_scout.quality_models import QualityAssessment
+
+    ranked = []
+    for paper in papers:
+        assessment = None
+        if paper.quality_recommendation:
+            assessment = QualityAssessment(
+                canonical_id=paper.canonical_key,
+                overall_quality_score=paper.quality_score,
+                confidence=paper.quality_confidence or "low",
+                recommendation=paper.quality_recommendation,
+                paper_type="unclear",
+                assessment_scope=paper.quality_scope or "metadata_only",
+                assessment_version=paper.quality_assessment_version or config.quality.assessment.version,
+                rubric_version=config.quality.assessment.rubric_version,
+                assessor_type="deterministic",
+                source_content_hash="digest",
+                assessed_at=paper.quality_assessed_at or "unknown",
+            )
+        combined = combined_rank_score(
+            paper.score,
+            assessment,
+            config.quality.ranking.relevance_weight,
+            config.quality.ranking.quality_weight,
+            config.quality.ranking.unknown_quality_is_neutral,
+        )
+        ranked.append(replace(paper, combined_rank_score=combined))
+    return sorted(
+        ranked,
+        key=lambda paper: (
+            paper.decision == "maybe",
+            -(paper.combined_rank_score or 0),
+            -(paper.score or 0),
+            paper.title.lower(),
+        ),
+    )
 
 
 def _queries_for_run(config: ScoutConfig, store: PaperStore, sources: set[str], active_days: int) -> list[PlannedQuery]:

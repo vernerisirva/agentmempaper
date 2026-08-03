@@ -98,6 +98,42 @@ arxiv_sweep:
   days: 10
   max_results: 300
 
+quality:
+  enabled: true
+  mode: auto
+  assessment:
+    version: "quality-v1"
+    rubric_version: "scholarly-rubric-v1"
+    assess_relevant: true
+    assess_maybe_relevant: true
+    assess_irrelevant: false
+    max_assessments_per_run: 5
+  full_text:
+    enabled: true
+    cache_dir: "data/cache/full_text/agent_memory"
+    timeout_seconds: 20
+    max_pdf_megabytes: 20
+    max_pages: 80
+    max_extracted_characters: 120000
+    max_prompt_characters: 60000
+    max_section_characters: 8000
+  ranking:
+    behavior: downrank
+    relevance_weight: 0.75
+    quality_weight: 0.25
+    downrank_below: 60
+    weak_below: 55
+    hide_below: 40
+    minimum_confidence_for_hiding: high
+    unknown_quality_is_neutral: true
+  display:
+    show_score: true
+    show_confidence: true
+    show_scope: true
+    show_strengths: 2
+    show_concerns: 3
+    show_evidence: true
+
 state:
   sqlite_path: "data/paper_scout.sqlite3"
 

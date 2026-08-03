@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 import re
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
@@ -12,8 +14,11 @@ from paper_scout.discovery_evaluation import evaluate_discovery, write_discovery
 from paper_scout.digest import write_digest
 from paper_scout.evaluation import evaluate_relevance_examples, relevance_fixture_examples, write_relevance_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
-from paper_scout.models import PaperCandidate
+from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.relevance import classify_with_rules, explain_rule_matches
+from paper_scout.quality_evaluation import evaluate_quality_fixtures, write_quality_evaluation_report
+from paper_scout.quality_report import write_paper_quality_report
+from paper_scout.quality_service import QualityRunStats, assess_and_store_candidate
 from paper_scout.scout import ingest_candidate, run_backfill, run_scout, search_sources
 from paper_scout.site import build_site
 from paper_scout.state import PaperStore
@@ -90,7 +95,26 @@ def main(argv: list[str] | None = None) -> int:
     ingest_parser.add_argument("--arxiv-id")
     ingest_parser.add_argument("--doi")
     ingest_parser.add_argument("--url")
+    ingest_parser.add_argument("--pdf-url", help="Optional direct open-access PDF URL used only for quality assessment")
     _add_track_argument(ingest_parser)
+
+    quality_eval_parser = subparsers.add_parser("evaluate-quality", help="Evaluate deterministic scholarly-quality rules on fixture papers")
+    quality_eval_parser.add_argument("--date", default=date.today().isoformat())
+    _add_track_argument(quality_eval_parser)
+
+    reassess_parser = subparsers.add_parser("reassess-quality", help="Assess or reassess stored relevant papers")
+    reassess_parser.add_argument("--days", type=int, default=None)
+    reassess_parser.add_argument("--paper-id")
+    reassess_parser.add_argument("--mode", choices=["off", "deterministic", "llm", "hybrid", "auto"], default=None)
+    reassess_parser.add_argument("--assessment-version")
+    reassess_parser.add_argument("--rubric-version")
+    reassess_parser.add_argument("--model", help="Optional quality LLM model override for this process")
+    reassess_parser.add_argument("--force", action="store_true")
+    reassess_parser.add_argument("--no-full-text", action="store_true")
+    reassess_parser.add_argument("--no-llm", action="store_true")
+    reassess_parser.add_argument("--report-only", action="store_true")
+    reassess_parser.add_argument("--date", default=date.today().isoformat())
+    _add_track_argument(reassess_parser)
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
@@ -171,6 +195,7 @@ def main(argv: list[str] | None = None) -> int:
             cross_track_label=config.cross_track_label,
             cross_track_href=config.cross_track_href,
             relevance_profile=config.relevance_profile,
+            quality_config=config.quality,
         )
         print(result.message)
         return 0
@@ -212,10 +237,64 @@ def main(argv: list[str] | None = None) -> int:
         if candidate is None:
             print("paper could not be fetched")
             return 1
+        if args.pdf_url:
+            candidate = PaperCandidate(**{**candidate.__dict__, "raw": {**candidate.raw, "direct_pdf_url": args.pdf_url}})
         status, key, classification = ingest_candidate(config, candidate)
         print(f"status={status} canonical_key={key} decision={classification.decision} score={classification.score} title={candidate.title}")
         print(f"tags={','.join(classification.tags)}")
         print(f"reason={classification.reason}")
+        return 0
+
+    if args.command == "evaluate-quality":
+        report = evaluate_quality_fixtures()
+        path = write_quality_evaluation_report(report, config.report_dir, args.date)
+        print(f"passed={report['passed']} fixtures={len(report['fixtures'])} failures={len(report['failures'])} report={path}")
+        return 0 if report["passed"] else 1
+
+    if args.command == "reassess-quality":
+        if not config.quality.enabled:
+            print("quality assessment is disabled for this track")
+            return 0
+        assessment_config = replace(
+            config.quality.assessment,
+            version=args.assessment_version or config.quality.assessment.version,
+            rubric_version=args.rubric_version or config.quality.assessment.rubric_version,
+        )
+        quality_config = replace(config.quality, mode=args.mode or config.quality.mode, assessment=assessment_config)
+        if args.model:
+            os.environ["PAPER_SCOUT_QUALITY_LLM_MODEL"] = args.model
+        stats = QualityRunStats()
+        store = PaperStore(config.sqlite_path)
+        if args.report_only:
+            for assessment in store.list_current_quality_assessments():
+                stats.record(assessment, cache_hit=True)
+        else:
+            for canonical_id, candidate, decision in store.quality_candidates(days=args.days, paper_id=args.paper_id):
+                classification = ClassificationResult(0, decision, "Stored relevance classification.")
+                try:
+                    assess_and_store_candidate(
+                        quality_config,
+                        store,
+                        candidate,
+                        canonical_id,
+                        classification,
+                        stats=stats,
+                        force=args.force,
+                        no_full_text=args.no_full_text,
+                        no_llm=args.no_llm,
+                        curation_path=config.curation_path,
+                    )
+                except Exception as exc:  # noqa: BLE001 - one assessment must not stop a batch.
+                    logging.getLogger(__name__).warning("Quality reassessment failed for %s: %s", candidate.title, exc)
+                    stats.failures.append(f"{candidate.title}: {exc}")
+        path = write_paper_quality_report(
+            config.report_dir,
+            args.date,
+            stats,
+            quality_config.assessment.version,
+            quality_config.assessment.rubric_version,
+        )
+        print(f"assessed={len(stats.assessed)} failures={len(stats.failures)} extraction_failures={len(stats.extraction_failures)} report={path}")
         return 0
 
     parser.error(f"unknown command {args.command}")

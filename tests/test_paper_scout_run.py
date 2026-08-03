@@ -4,7 +4,7 @@ import logging
 from pathlib import Path
 from unittest.mock import patch
 
-from paper_scout.config import ScoutConfig
+from paper_scout.config import QualityConfig, QualityFullTextConfig, ScoutConfig
 from paper_scout.http import HttpRequestError
 from paper_scout.models import PaperCandidate
 from paper_scout.scout import run_scout
@@ -44,6 +44,22 @@ class SemanticScholarRateLimitedFetcher:
 
 
 class PaperScoutRunTest(unittest.TestCase):
+    def test_quality_assessment_failure_does_not_fail_daily_run(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config = ScoutConfig(
+                terms=["agent memory"],
+                sqlite_path=Path(tmpdir) / "state.sqlite3",
+                digest_dir=Path(tmpdir) / "digests",
+                report_dir=Path(tmpdir) / "reports",
+                quality=QualityConfig(enabled=True, mode="deterministic", full_text=QualityFullTextConfig(enabled=False)),
+            )
+            with patch("paper_scout.scout.assess_and_store_candidate", side_effect=RuntimeError("quality unavailable")):
+                result = run_scout(config, fetchers=[FakeFetcher()], digest_date="2026-08-03", notifications_enabled=False)
+            self.assertEqual(result.new_digest_count, 1)
+            self.assertIn("Persistent Memory for LLM Agents", result.digest_path.read_text(encoding="utf-8"))
+            report = Path(tmpdir) / "reports" / "paper-quality-2026-08-03.md"
+            self.assertIn("Assessment failures: 1", report.read_text(encoding="utf-8"))
+
     def test_run_survives_fetcher_failure_and_does_not_notify_twice(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             config = ScoutConfig(

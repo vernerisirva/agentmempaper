@@ -29,6 +29,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
       - name: Validate rules, idempotency, and live source payloads
         env:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
@@ -37,6 +40,8 @@ jobs:
           set -o pipefail
           python -m paper_scout evaluate-relevance --track agent_memory | tee relevance-eval-agent-memory.log
           python -m paper_scout evaluate-relevance --track deep_research | tee relevance-eval-deep-research.log
+          python -m paper_scout evaluate-quality --track agent_memory | tee quality-eval-agent-memory.log
+          python -m paper_scout evaluate-quality --track deep_research | tee quality-eval-deep-research.log
           python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
           python -m paper_scout validate-idempotency --track agent_memory | tee idempotency-agent-memory.log
           python -m paper_scout validate-idempotency --track deep_research | tee idempotency-deep-research.log
@@ -49,6 +54,7 @@ jobs:
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
           PAPER_SCOUT_LLM_PROVIDER: ${{ secrets.PAPER_SCOUT_LLM_PROVIDER }}
           PAPER_SCOUT_LLM_MODEL: ${{ secrets.PAPER_SCOUT_LLM_MODEL }}
+          PAPER_SCOUT_QUALITY_LLM_MODEL: ${{ secrets.PAPER_SCOUT_QUALITY_LLM_MODEL }}
           PAPER_SCOUT_LLM_API_KEY: ${{ secrets.PAPER_SCOUT_LLM_API_KEY }}
           PAPER_SCOUT_LLM_BASE_URL: ${{ secrets.PAPER_SCOUT_LLM_BASE_URL }}
           PAPER_SCOUT_WEBHOOK_URL: ${{ secrets.PAPER_SCOUT_WEBHOOK_URL }}
@@ -68,7 +74,7 @@ jobs:
             echo "### Command output"
             echo
             echo '```text'
-            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log discovery-eval-agent-memory.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log 2>/dev/null || true
+            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log quality-eval-agent-memory.log quality-eval-deep-research.log discovery-eval-agent-memory.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log 2>/dev/null || true
             echo '```'
             echo
             echo "### Generated files"

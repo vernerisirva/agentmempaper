@@ -59,3 +59,14 @@ class DigestPaper:
     publication_date_precision: str | None = None
     publication_date_source: str | None = None
     publication_date_confidence: str | None = None
+    quality_score: int | None = None
+    quality_recommendation: str | None = None
+    quality_confidence: str | None = None
+    quality_scope: str | None = None
+    quality_summary: str | None = None
+    quality_strengths: list[str] = field(default_factory=list)
+    quality_concerns: list[str] = field(default_factory=list)
+    quality_assessment_version: str | None = None
+    quality_assessed_at: str | None = None
+    combined_rank_score: float | None = None
+    quality_suppressed: bool = False

@@ -1,0 +1,77 @@
+{
+  "ci": true,
+  "date": "2026-08-04",
+  "idempotency_passed": true,
+  "irrelevant_count": 101,
+  "maybe_count": 9,
+  "query_plan_counts": {
+    "arxiv": 4,
+    "openalex": 4,
+    "semantic_scholar": 4
+  },
+  "relevant_count": 29,
+  "run_id": "live-smoke-2026-08-04",
+  "source_errors": [
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "autonomous research agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 50,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-03",
+        "source_id": "2608.01913",
+        "title": "Diagnosing Search Behavior and Failure Modes in Long-Horizon Search Agents",
+        "url": "https://arxiv.org/abs/2608.01913v1"
+      },
+      "source": "arxiv",
+      "status": "success"
+    },
+    {
+      "candidates": 100,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-07-24",
+        "source_id": "W4390730779",
+        "title": "Exploring Large Language Model\u2010Based Intelligent Agents: Definitions, Methods, and Prospects",
+        "url": "https://doi.org/10.1002/widm.70111"
+      },
+      "source": "openalex",
+      "status": "success"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "autonomous research agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 2,
+      "raw_records": 25,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 1,
+  "sources_succeeded": 2,
+  "state_initialized": true,
+  "total_candidates": 150,
+  "total_raw_records": 225,
+  "unique_candidates": 139
+}

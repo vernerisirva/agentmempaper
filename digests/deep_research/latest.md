@@ -1,73 +1,90 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-03](2026-08-03.md).
+Latest daily digest: [2026-08-04](2026-08-04.md).
 
-# Paper Scout Digest - 2026-08-03
+# Paper Scout Digest - 2026-08-04
 
 ## Run Summary
 
-- **Run ID:** 42
-- **Candidates fetched:** 129
-- **New unique papers:** 122
-- **Relevant:** 8
+- **Run ID:** 43
+- **Candidates fetched:** 136
+- **New unique papers:** 128
+- **Relevant:** 15
 - **Maybe relevant:** 12
 - **Irrelevant:** 109
-- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Source summary:** arxiv: 36, openalex: 100, semantic_scholar: 0
 
 ## Highly Relevant
 
-### [Educating the Agentic Engineer: Curricula, Collaboration, and Continuous Learning in the AI Era](https://arxiv.org/abs/2607.29610v1)
+### [A New Paradigm: Agentic AI for Scientific Discovery](https://doi.org/10.65649/ukh4n33x)
 
-- **Authors:** Mamdouh Alenezi
-- **Date:** 2026-07-31
-- **Source:** arxiv
+- **Authors:** Alexander Taktakidze
+- **Date:** 2026-08-02
+- **Source:** openalex
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** citation-grounding, deep-research-agents
-- **Abstract summary:** Generative and agentic artificial intelligence (AI) are reconfiguring software and systems engineering from a discipline centered on human authorship of artifacts to one focused on directing, verifying, and governing autonomous systems. This transition demands a new professional archetype, the \emph{agentic engineer...
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial intelligence in science is undergoing a foundational change. Rather than serving as a passive analytical instrument — classifying images, predicting structures, spotting patterns — AI systems are beginning to act as autonomous research collaborators. These systems, built on large language models and tool-...
 
-## Maybe Relevant
+### [An Independent Evaluation of AI Scientist v2 on Biomedical Research Tasks](https://doi.org/10.5281/zenodo.21754161)
 
-### [FinanceHarness: Autonomous Financial Deep Research Framework](https://arxiv.org/abs/2607.27853)
-
-- **Authors:** Yijia Xiao, Rujun Han, Yanfei Chen, Zifeng Wang, Ke Jiang, Zhongying CuiZhu, et al.
-- **Date:** 2026-07-30
+- **Authors:** Dyuthi Vallamsetty
+- **Date:** 2026-08-02
 - **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** benchmark
-- **Abstract summary:** Powered by advances in LLMs and autonomous agents, deep research has become one of the most widely adopted agentic products. However, most deep research systems write general-purpose reports, which are inadequate for financial deep research. Financial research demands specialized knowledge to analyze historical patt...
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** We conduct a pre-registered independent evaluation of Sakana AI’s AI Scientist v2 on 11 biomedical research prompts spanning epidemiology, pharmacovigilance, medical imaging, respiratory acoustics, drug repurposing, cancer omics, chem-informatics, variant pathogenicity, and adolescent health. Our scoring corpus is 2...
 
-### [Baikal: Structured Search for Deep Research over Data Lakes](https://arxiv.org/abs/2607.27726)
+### [An Independent Evaluation of AI Scientist v2 on Biomedical Research Tasks](https://doi.org/10.5281/zenodo.21754162)
 
-- **Authors:** Dhruv Agarwal, Rishitha Guttapalle Mohan, Aarti Kumari, Ashi Sinha, Athulya Anil, Kavitha Srinivas, et al.
-- **Date:** 2026-07-30
+- **Authors:** Dyuthi Vallamsetty
+- **Date:** 2026-08-02
 - **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Deep research over data lakes requires an LLM agent to investigate evidence across thousands of heterogeneous tables and passages to synthesize a report. Existing methods perform iterative retrieval and generation, letting accumulated context determine what to investigate next, which can overexploit locally promisin...
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** We conduct a pre-registered independent evaluation of Sakana AI’s AI Scientist v2 on 11 biomedical research prompts spanning epidemiology, pharmacovigilance, medical imaging, respiratory acoustics, drug repurposing, cancer omics, chem-informatics, variant pathogenicity, and adolescent health. Our scoring corpus is 2...
 
-### [The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents](https://doi.org/10.5281/zenodo.21660775)
+### [Same Atomic Content, Different Falsification Histories: A causal protocol for testing whether AI scientists inherit falsification](https://doi.org/10.5281/zenodo.21758297)
 
-- **Authors:** Aakash Bhattacharya
-- **Date:** 2026-07-29
+- **Authors:** Yifan Chen
+- **Date:** 2026-08-02
 - **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** The systems community is facing a deep architectural dilemma that Vector Databases are a default solution for agentic AI. As the industry is moving towards advancements in AI specifically towards a fully autonomous AI, the current systems heavily depend on variations of Retrieval Augmented Generation (RAG) which rel...
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI-scientist evaluations usually ask whether an agent stores facts, remembers failures, retrieves relevant experience, or improves after feedback. These measurements do not identify whether a successor system inherits why a scientific route was rejected. This concept-and-protocol preprint proposes a five-arm causal...
 
-### [The Agentic Memory Dilemma: Designing the First True Working Memory System for AI Agents](https://doi.org/10.5281/zenodo.21660774)
+### [Same Atomic Content, Different Falsification Histories: A causal protocol for testing whether AI scientists inherit falsification](https://doi.org/10.5281/zenodo.21758298)
 
-- **Authors:** Aakash Bhattacharya
-- **Date:** 2026-07-29
+- **Authors:** Yifan Chen
+- **Date:** 2026-08-02
 - **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** The systems community is facing a deep architectural dilemma that Vector Databases are a default solution for agentic AI. As the industry is moving towards advancements in AI specifically towards a fully autonomous AI, the current systems heavily depend on variations of Retrieval Augmented Generation (RAG) which rel...
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** AI-scientist evaluations usually ask whether an agent stores facts, remembers failures, retrieves relevant experience, or improves after feedback. These measurements do not identify whether a successor system inherits why a scientific route was rejected. This concept-and-protocol preprint proposes a five-arm causal...
+
+### [FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction](https://arxiv.org/abs/2608.00764v1)
+
+- **Authors:** Chaoqun Yang, Fengbin Zhu, Xinyu Lin, Long Bai, Xiaoluan Liu, Ke-Wei Huang, et al.
+- **Date:** 2026-08-01
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Financial indicators are essential tools for transforming raw financial data into interpretable measures for various downstream tasks, such as valuation, risk assessment, and economic analysis. However, existing financial benchmarks largely focus on answer-level accuracy and often assume that relevant data are alrea...
+
+### [Deep Research Pretraining via Predictive Navigation](https://arxiv.org/abs/2608.00432v1)
+
+- **Authors:** Jiang Zhou, Zhiyuan Fan, Xing Wu, Tinghao Yu, Feng Zhang, Lilin Wang
+- **Date:** 2026-08-01
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...
+- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Meaningful evaluation appears to be deferred to future work in the available text.; Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.

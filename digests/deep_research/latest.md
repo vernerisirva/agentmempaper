@@ -1,90 +1,57 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-04](2026-08-04.md).
+Latest daily digest: [2026-08-05](2026-08-05.md).
 
-# Paper Scout Digest - 2026-08-04
+# Paper Scout Digest - 2026-08-05
 
 ## Run Summary
 
-- **Run ID:** 43
-- **Candidates fetched:** 136
-- **New unique papers:** 128
+- **Run ID:** 44
+- **Candidates fetched:** 138
+- **New unique papers:** 130
 - **Relevant:** 15
 - **Maybe relevant:** 12
-- **Irrelevant:** 109
-- **Source summary:** arxiv: 36, openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 111
+- **Source summary:** arxiv: 38, openalex: 100, semantic_scholar: 0
+
+## Source Warnings
+
+- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [A New Paradigm: Agentic AI for Scientific Discovery](https://doi.org/10.65649/ukh4n33x)
+### [Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities](https://arxiv.org/abs/2608.03569v1)
 
-- **Authors:** Alexander Taktakidze
-- **Date:** 2026-08-02
-- **Source:** openalex
+- **Authors:** William Bolton, Philip Torr
+- **Date:** 2026-08-04
+- **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Artificial intelligence in science is undergoing a foundational change. Rather than serving as a passive analytical instrument — classifying images, predicting structures, spotting patterns — AI systems are beginning to act as autonomous research collaborators. These systems, built on large language models and tool-...
+- **Abstract summary:** Benchmarking the ability of AI scientists to generate novel ideas is notoriously difficult. Existing benchmarks in this field have made progress in evaluating scientific reasoning and research replication, but often rely on synthetic tasks or retrospective targets, which may be confounded by prior exposure. We hypot...
+- **Automated evidence-based assessment:** 82/100 · Promising · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
 
-### [An Independent Evaluation of AI Scientist v2 on Biomedical Research Tasks](https://doi.org/10.5281/zenodo.21754161)
+### [A PRISMA-Aligned Agentic Framework for Medical Systematic Reviews and Evidence Synthesis](https://doi.org/10.64898/2026.07.30.26359375)
 
-- **Authors:** Dyuthi Vallamsetty
+- **Authors:** Haoming Huang, Qiaoyu Zheng, Pengcheng Qiu, Weike Zhao, Ya Zhang, Weidi Xie, et al.
 - **Date:** 2026-08-02
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** We conduct a pre-registered independent evaluation of Sakana AI’s AI Scientist v2 on 11 biomedical research prompts spanning epidemiology, pharmacovigilance, medical imaging, respiratory acoustics, drug repurposing, cancer omics, chem-informatics, variant pathogenicity, and adolescent health. Our scoring corpus is 2...
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Medical systematic reviews are central to evidence-based medicine, but they remain slow, labor-intensive, and difficult to maintain under the full Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) workflow. Recent LLM-based deep research agents offer a promising route to addressing this cha...
 
-### [An Independent Evaluation of AI Scientist v2 on Biomedical Research Tasks](https://doi.org/10.5281/zenodo.21754162)
+### [Training Documents Reranker with Search Rubrics for Deep Research Agent](https://arxiv.org/abs/2608.03527v1)
 
-- **Authors:** Dyuthi Vallamsetty
-- **Date:** 2026-08-02
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** We conduct a pre-registered independent evaluation of Sakana AI’s AI Scientist v2 on 11 biomedical research prompts spanning epidemiology, pharmacovigilance, medical imaging, respiratory acoustics, drug repurposing, cancer omics, chem-informatics, variant pathogenicity, and adolescent health. Our scoring corpus is 2...
-
-### [Same Atomic Content, Different Falsification Histories: A causal protocol for testing whether AI scientists inherit falsification](https://doi.org/10.5281/zenodo.21758297)
-
-- **Authors:** Yifan Chen
-- **Date:** 2026-08-02
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** AI-scientist evaluations usually ask whether an agent stores facts, remembers failures, retrieves relevant experience, or improves after feedback. These measurements do not identify whether a successor system inherits why a scientific route was rejected. This concept-and-protocol preprint proposes a five-arm causal...
-
-### [Same Atomic Content, Different Falsification Histories: A causal protocol for testing whether AI scientists inherit falsification](https://doi.org/10.5281/zenodo.21758298)
-
-- **Authors:** Yifan Chen
-- **Date:** 2026-08-02
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** AI-scientist evaluations usually ask whether an agent stores facts, remembers failures, retrieves relevant experience, or improves after feedback. These measurements do not identify whether a successor system inherits why a scientific route was rejected. This concept-and-protocol preprint proposes a five-arm causal...
-
-### [FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction](https://arxiv.org/abs/2608.00764v1)
-
-- **Authors:** Chaoqun Yang, Fengbin Zhu, Xinyu Lin, Long Bai, Xiaoluan Liu, Ke-Wei Huang, et al.
-- **Date:** 2026-08-01
+- **Authors:** Wenhan Liu, Yu Lu, Qiaolin Xia, Hui Xu, Tong Zhao, Jian Xi, et al.
+- **Date:** 2026-08-04
 - **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Financial indicators are essential tools for transforming raw financial data into interpretable measures for various downstream tasks, such as valuation, risk assessment, and economic analysis. However, existing financial benchmarks largely focus on answer-level accuracy and often assume that relevant data are alrea...
-
-### [Deep Research Pretraining via Predictive Navigation](https://arxiv.org/abs/2608.00432v1)
-
-- **Authors:** Jiang Zhou, Zhiyuan Fan, Xing Wu, Tinghao Yu, Feng Zhang, Lilin Wang
-- **Date:** 2026-08-01
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...
-- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
-- **Main concerns:** Meaningful evaluation appears to be deferred to future work in the available text.; Comparative claims were detected without a suitable baseline in the available text.
+- **Abstract summary:** Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \textit{set} that satisfies the complex information needs of...
+- **Automated evidence-based assessment:** 64/100 · Uncertain · Medium confidence · partial full text
+- **Main concerns:** Meaningful evaluation appears to be deferred to future work in the available text.
 - **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.

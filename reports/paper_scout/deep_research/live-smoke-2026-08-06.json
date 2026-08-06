@@ -1,0 +1,77 @@
+{
+  "ci": true,
+  "date": "2026-08-06",
+  "idempotency_passed": true,
+  "irrelevant_count": 110,
+  "maybe_count": 8,
+  "query_plan_counts": {
+    "arxiv": 4,
+    "openalex": 4,
+    "semantic_scholar": 4
+  },
+  "relevant_count": 32,
+  "run_id": "live-smoke-2026-08-06",
+  "source_errors": [
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "autonomous research agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 58,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-05",
+        "source_id": "2608.05026",
+        "title": "ArtAnno: Annotating Implicit Semantics in Artworks through LLM Agent-Driven Bidirectional Human-AI Augmentation",
+        "url": "https://arxiv.org/abs/2608.05026v1"
+      },
+      "source": "arxiv",
+      "status": "success"
+    },
+    {
+      "candidates": 100,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-07-24",
+        "source_id": "W4390730779",
+        "title": "Exploring Large Language Model\u2010Based Intelligent Agents: Definitions, Methods, and Prospects",
+        "url": "https://doi.org/10.1002/widm.70111"
+      },
+      "source": "openalex",
+      "status": "success"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "autonomous research agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 2,
+      "raw_records": 25,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 1,
+  "sources_succeeded": 2,
+  "state_initialized": true,
+  "total_candidates": 158,
+  "total_raw_records": 225,
+  "unique_candidates": 150
+}

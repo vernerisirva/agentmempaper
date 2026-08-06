@@ -31,8 +31,8 @@
   "first_seen_date": "2026-07-31",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-05 09:08:30",
-  "last_seen_date": "2026-08-05",
+  "last_seen_at": "2026-08-06 09:08:58",
+  "last_seen_date": "2026-08-06",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-31 09:19:12",
@@ -44,8 +44,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-07-31 09:18:49",
-    "generated_at": "2026-08-05 09:09:04",
-    "last_seen_at": "2026-08-05 09:08:30",
+    "generated_at": "2026-08-06 09:09:25",
+    "last_seen_at": "2026-08-06 09:08:58",
     "metadata_sources": [
       "arxiv"
     ],
@@ -96,27 +96,69 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-06T09:09:24+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4617,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Setup and Metrics Our dataset consists of human-labeled Windows endpoint sensordetectionscollectedfromalargeS",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "aches 82.6% accuracy\u2014well above ev- ery zero-shot baseline, including frontier models far larger than our 30B classifier. Thisworkaddresse",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "that governs automated triage, improves be- nign recall by 43.0% and malicious recall by 18.3% over a direct-label LLM classifier. We further show that the trained calibrato",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 54,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected."
+    ],
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "2554aa9c73a74dfa92056855fc8cd0d9e0ac333f5276a5c7add34f6be7b72fb5",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -145,7 +187,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

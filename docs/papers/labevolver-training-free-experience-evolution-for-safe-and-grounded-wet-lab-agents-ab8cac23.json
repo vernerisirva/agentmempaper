@@ -23,8 +23,8 @@
   "first_seen_date": "2026-07-31",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-05 09:08:26",
-  "last_seen_date": "2026-08-05",
+  "last_seen_at": "2026-08-06 09:08:54",
+  "last_seen_date": "2026-08-06",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-31 09:19:12",
@@ -36,8 +36,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-07-31 09:18:28",
-    "generated_at": "2026-08-05 09:09:04",
-    "last_seen_at": "2026-08-05 09:08:26",
+    "generated_at": "2026-08-06 09:09:25",
+    "last_seen_at": "2026-08-06 09:08:54",
     "metadata_sources": [
       "arxiv"
     ],
@@ -94,29 +94,103 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": null,
-    "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "applied_score_cap": 54,
+    "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
+    "assessed_at": "2026-08-06T09:09:22+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.8619000000000001,
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ements outer-loop experience evolution. ALFW orld benchmark.We evaluate scalable outer-loop experience evolution on long-horizon tasks usin",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ce this vision by integrat- ing robotics for high-throughput autonomous ex- periments [2\u20135]. However, most SDLs still depend on predefined interfaces and workflows, which",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ntific experiments remains bounded by prac- tical limitations: 1) End-to-end policies often require costly scenario-specific data and are dif",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text."
+    ],
+    "overall_quality_score": 54,
+    "paper_type": "systems_or_application",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "ba7d4be53569a17d3b4bdb6374abe8c7f7d78a4b4e719ebec98ba49282bae5ec",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -145,7 +219,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

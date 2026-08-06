@@ -1,57 +1,64 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-05](2026-08-05.md).
+Latest daily digest: [2026-08-06](2026-08-06.md).
 
-# Paper Scout Digest - 2026-08-05
+# Paper Scout Digest - 2026-08-06
 
 ## Run Summary
 
-- **Run ID:** 44
-- **Candidates fetched:** 138
-- **New unique papers:** 130
-- **Relevant:** 15
-- **Maybe relevant:** 12
+- **Run ID:** 45
+- **Candidates fetched:** 140
+- **New unique papers:** 131
+- **Relevant:** 19
+- **Maybe relevant:** 10
 - **Irrelevant:** 111
-- **Source summary:** arxiv: 38, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Source summary:** arxiv: 39, openalex: 100, semantic_scholar: 1
 
 ## Highly Relevant
 
-### [Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities](https://arxiv.org/abs/2608.03569v1)
+### [FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction](https://doi.org/10.48550/arxiv.2608.00764)
 
-- **Authors:** William Bolton, Philip Torr
-- **Date:** 2026-08-04
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Benchmarking the ability of AI scientists to generate novel ideas is notoriously difficult. Existing benchmarks in this field have made progress in evaluating scientific reasoning and research replication, but often rely on synthetic tasks or retrospective targets, which may be confounded by prior exposure. We hypot...
-- **Automated evidence-based assessment:** 82/100 · Promising · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
-
-### [A PRISMA-Aligned Agentic Framework for Medical Systematic Reviews and Evidence Synthesis](https://doi.org/10.64898/2026.07.30.26359375)
-
-- **Authors:** Haoming Huang, Qiaoyu Zheng, Pengcheng Qiu, Weike Zhao, Ya Zhang, Weidi Xie, et al.
-- **Date:** 2026-08-02
+- **Authors:** Chaoqun Yang, Fengbin Zhu, Xinyu Lin, Long Bai, Xiaoluan Liu, Ke-Wei Huang, et al.
+- **Date:** 2026-08-01
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Medical systematic reviews are central to evidence-based medicine, but they remain slow, labor-intensive, and difficult to maintain under the full Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) workflow. Recent LLM-based deep research agents offer a promising route to addressing this cha...
+- **Abstract summary:** Financial indicators are essential tools for transforming raw financial data into interpretable measures for various downstream tasks, such as valuation, risk assessment, and economic analysis. However, existing financial benchmarks largely focus on answer-level accuracy and often assume that relevant data are alrea...
 
-### [Training Documents Reranker with Search Rubrics for Deep Research Agent](https://arxiv.org/abs/2608.03527v1)
+### [Deep Research Pretraining via Predictive Navigation](https://doi.org/10.48550/arxiv.2608.00432)
 
-- **Authors:** Wenhan Liu, Yu Lu, Qiaolin Xia, Hui Xu, Tong Zhao, Jian Xi, et al.
-- **Date:** 2026-08-04
+- **Authors:** Jiang Zhou, Zhiyuan Fan, Xing Wu, Tinghao Yu, Feng Zhang, Lilin Wang
+- **Date:** 2026-08-01
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.
+
+### [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning](https://arxiv.org/abs/2608.04457v1)
+
+- **Authors:** Hans-Martin Will, Allen L. Brown, Matthew Fuchs
+- **Date:** 2026-08-05
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, typed knowledge-gr...
+- **Automated evidence-based assessment:** 60/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** Code, data, or research artifacts are described as available.; Formal definitions or proof-oriented evidence is present.
+
+### [EviGraph: Evidence-Guided Autonomous Research Agents](https://www.semanticscholar.org/paper/84171611669441638d18bf3266065b796ed5cd5d)
+
+- **Authors:** Zhenjiang Ren, Ruiji Li, Xujing Zhang, Ziliang Pang, Shuo Ren, Jiajun Zhang
+- **Date:** 2026-08-05
 - **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \textit{set} that satisfies the complex information needs of...
-- **Automated evidence-based assessment:** 64/100 · Uncertain · Medium confidence · partial full text
-- **Main concerns:** Meaningful evaluation appears to be deferred to future work in the available text.
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Abstract summary:** Autonomous research agents can generate hypotheses, execute experiments, and draft manuscripts, yet their outputs often contain unsupported claims and inconsistencies between research questions, experiments, results, and conclusions. We argue that this problem is partly architectural: existing systems organize resea...
+- **Automated evidence-based assessment:** 67/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.

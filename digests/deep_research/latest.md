@@ -1,22 +1,54 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-06](2026-08-06.md).
+Latest daily digest: [2026-08-07](2026-08-07.md).
 
-# Paper Scout Digest - 2026-08-06
+# Paper Scout Digest - 2026-08-07
 
 ## Run Summary
 
-- **Run ID:** 45
-- **Candidates fetched:** 140
-- **New unique papers:** 131
-- **Relevant:** 19
-- **Maybe relevant:** 10
+- **Run ID:** 46
+- **Candidates fetched:** 138
+- **New unique papers:** 134
+- **Relevant:** 26
+- **Maybe relevant:** 1
 - **Irrelevant:** 111
-- **Source summary:** arxiv: 39, openalex: 100, semantic_scholar: 1
+- **Source summary:** arxiv: 37, openalex: 100, semantic_scholar: 1
 
 ## Highly Relevant
 
-### [FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction](https://doi.org/10.48550/arxiv.2608.00764)
+### [De la hipótesis al manuscrito: ¿puede una inteligencia artificial conducir una investigación computacional completa?](https://doi.org/10.5281/zenodo.21755495)
+
+- **Authors:** Jose Andres Viñán Carrasco
+- **Date:** 2026-08-02
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** La automatización científica basada en modelos fundacionales está evolucionando desde herramientas aisladas hacia flujos coordinados capaces de proponer ideas, consultar literatura, programar, ejecutar experimentos, interpretar resultados, redactar manuscritos y simular la revisión por pares. Esta revisión narrativa...
+
+### [Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities](https://doi.org/10.48550/arxiv.2608.03569)
+
+- **Authors:** William Bolton, Philip Torr
+- **Date:** 2026-08-04
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Benchmarking the ability of AI scientists to generate novel ideas is notoriously difficult. Existing benchmarks in this field have made progress in evaluating scientific reasoning and research replication, but often rely on synthetic tasks or retrospective targets, which may be confounded by prior exposure. We hypot...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** Quantitative evaluation signals were detected.
+
+### [Deep Research Pretraining via Predictive Navigation](https://arxiv.org/abs/2608.00432)
+
+- **Authors:** Jiang Zhou, Zhiyuan Fan, Xing Wu, Tinghao Yu, Feng Zhang, Lilin Wang
+- **Date:** 2026-08-01
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...
+
+### [FinDeepIndicator: Benchmarking Deep Research Agents in End-to-End Financial Indicator Construction](https://arxiv.org/abs/2608.00764)
 
 - **Authors:** Chaoqun Yang, Fengbin Zhu, Xinyu Lin, Long Bai, Xiaoluan Liu, Ke-Wei Huang, et al.
 - **Date:** 2026-08-01
@@ -26,39 +58,41 @@ Latest daily digest: [2026-08-06](2026-08-06.md).
 - **Tags:** deep-research-agents
 - **Abstract summary:** Financial indicators are essential tools for transforming raw financial data into interpretable measures for various downstream tasks, such as valuation, risk assessment, and economic analysis. However, existing financial benchmarks largely focus on answer-level accuracy and often assume that relevant data are alrea...
 
-### [Deep Research Pretraining via Predictive Navigation](https://doi.org/10.48550/arxiv.2608.00432)
+### [Training Documents Reranker with Search Rubrics for Deep Research Agent](https://doi.org/10.48550/arxiv.2608.03527)
 
-- **Authors:** Jiang Zhou, Zhiyuan Fan, Xing Wu, Tinghao Yu, Feng Zhang, Lilin Wang
-- **Date:** 2026-08-01
+- **Authors:** Wenhan Liu, Yu Lu, Qiaolin Xia, Hui Xu, Tong Zhao, Jian Xi, et al.
+- **Date:** 2026-08-04
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents are often trained on expensive, environment-grounded tool-use trajectories that require repeated retrieval, document inspection, and report evaluation. We introduce Deep Research Pretraining (DRP), an offline framework that derives predictive navigation supervision from naturally occurring evide...
+- **Abstract summary:** Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \textit{set} that satisfies the complex information needs of...
 - **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.
+- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
 
-### [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning](https://arxiv.org/abs/2608.04457v1)
+### [Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding](https://arxiv.org/abs/2608.05876v1)
 
-- **Authors:** Hans-Martin Will, Allen L. Brown, Matthew Fuchs
-- **Date:** 2026-08-05
+- **Authors:** Soojin Yoon, Dongha Lee
+- **Date:** 2026-08-06
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, typed knowledge-gr...
-- **Automated evidence-based assessment:** 60/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** Code, data, or research artifacts are described as available.; Formal definitions or proof-oriented evidence is present.
-
-### [EviGraph: Evidence-Guided Autonomous Research Agents](https://www.semanticscholar.org/paper/84171611669441638d18bf3266065b796ed5cd5d)
-
-- **Authors:** Zhenjiang Ren, Ruiji Li, Xujing Zhang, Ziliang Pang, Shuo Ren, Jiajun Zhang
-- **Date:** 2026-08-05
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents, citation-grounding
+- **Abstract summary:** User requests serve as research specifications for deep research agents, shaping what evidence to seek and how to synthesize it. In personalized deep research, these specifications must additionally reflect user goals, constraints, preferences, and evaluation criteria. User context can be incorporated either within...
+- **Automated evidence-based assessment:** 45/100 · Weak · Medium confidence · partial full text
+- **Positive signals:** A baseline or comparison system is described.
+
+## Maybe Relevant
+
+### [Differentiated memory and scientific cognition in AI research agents](https://doi.org/10.3389/fdata.2026.1916523)
+
+- **Authors:** Diego F. Cuadros, Abdoul-Aziz Maiga, Sid Thatham, Alvaro Ortiz, Margaret Powers-Fletcher, Ming Tang
+- **Date:** 2026-08-05
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents can generate hypotheses, execute experiments, and draft manuscripts, yet their outputs often contain unsupported claims and inconsistencies between research questions, experiments, results, and conclusions. We argue that this problem is partly architectural: existing systems organize resea...
-- **Automated evidence-based assessment:** 67/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
+- **Abstract summary:** AI research agents increasingly support ideation, literature search, coding, experimental execution, analysis, and manuscript drafting across the scientific workflow. This progress advances automated discovery, but workflow automation is not scientific cognition. Scientific reasoning is cumulative and path-dependent...
+- **Automated evidence-based assessment:** 51/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; Dataset documentation, quality control, licensing, or ethics is discussed.

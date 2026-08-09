@@ -11,7 +11,7 @@
 - **Future or imprecise source dates:** 2
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
-- **Maybe papers with core memory phrases:** 10
+- **Maybe papers with core memory phrases:** 11
 
 ## Year-Only Publication Dates
 
@@ -70,6 +70,7 @@
 - **fidelis: zero-LLM agent memory for Claude Code and AI agents** — maybe, 2026-08-05, precision=day, source=openalex
 - **CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization** — maybe, 2026-07-31, precision=day, source=openalex
 - **Zero-Mem: Zero-Token Memory Operations for LLM Agents** — maybe, 2026-07-31, precision=day, source=openalex
+- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Construction** — maybe, 2026-07-23, precision=day, source=openalex
 - **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning** — maybe, 2026-07-23, precision=day, source=openalex
 - **MEMTIER: Tiered Retrieval, Session-Level Injection, and Typed Consolidation for Long-Running LLM Agents** — maybe, 2026-07-22, precision=day, source=openalex
 - **MemoryChain: Declarative Dependency Injection for Structured Memory Recall in LLM Agents** — maybe, 2026-07-19, precision=day, source=openalex

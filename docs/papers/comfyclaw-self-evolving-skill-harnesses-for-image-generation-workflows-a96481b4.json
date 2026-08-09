@@ -4,7 +4,7 @@
     "https://arxiv.org/abs/2607.01709v1",
     "https://arxiv.org/abs/2607.01709"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": "2607.01709",
   "authors": [
     "Zongxia Li",
@@ -27,8 +27,8 @@
   "first_seen_date": "2026-07-04",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-02 07:52:16",
-  "last_seen_date": "2026-08-02",
+  "last_seen_at": "2026-08-09 06:27:07",
+  "last_seen_date": "2026-08-09",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-04 09:10:53",
@@ -40,8 +40,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-07-04 09:05:04",
-    "generated_at": "2026-08-08 07:18:25",
-    "last_seen_at": "2026-08-02 07:52:16",
+    "generated_at": "2026-08-09 06:27:36",
+    "last_seen_at": "2026-08-09 06:27:07",
     "metadata_sources": [
       "arxiv"
     ],
@@ -94,27 +94,70 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-09T06:27:35+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.43,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.42978125,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
+    "confidence": "low",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "distilled into reusable Agent Skills. Across four benchmark splits, three agent models, and two image backbones, COMFYCLAW achieves the bes",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ent configurations, outperforming a verifier-only baseline without skill evolution. Human annotations further show that annotators prefer",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 42,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "d034910f517b079473de02facd052fdd03a47cf4fe07c62a3c45c8e754dcff72",
     "suppressed": false
   },
   "semantic_scholar_id": null,

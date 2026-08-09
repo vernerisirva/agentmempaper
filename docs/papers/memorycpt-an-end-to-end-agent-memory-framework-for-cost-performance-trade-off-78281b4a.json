@@ -1,44 +1,48 @@
 {
-  "abstract_summary": "LLM agents that persist across sessions accumulate stored memories whose validity varies enormously by content type, yet existing memory architectures treat all memories as equally persistent and systematically contaminate retrieved context with outdated facts. We show that per-memory, type-conditioned temporal deca...",
+  "abstract_summary": "Long-horizon LLM agents require memory systems that recover useful evidence from large interaction histories without passing excessive context to downstream models. Existing memory pipelines often rely on hand-crafted heuristics and repeated LLM calls, which can introduce redundant context and high inference cost. W...",
   "alternate_urls": [
-    "https://doi.org/10.48550/arxiv.2608.04746",
-    "https://arxiv.org/abs/2608.04746v1",
-    "https://arxiv.org/abs/2608.04746",
-    "https://openalex.org/W7196925868"
+    "https://arxiv.org/abs/2608.04843",
+    "https://arxiv.org/abs/2608.04843v1",
+    "https://doi.org/10.48550/arxiv.2608.04843",
+    "https://openalex.org/W7201914722",
+    "https://openalex.org/W7197015072"
   ],
   "appeared_in_latest_run": true,
-  "arxiv_id": "2608.04746",
+  "arxiv_id": "2608.04843",
   "authors": [
-    "K. Bhandari",
-    "Aarya Wadhwani",
-    "Dhruv Kumar",
-    "Pratik Narang"
+    "Songxin Lei",
+    "Kun Ouyang",
+    "Weilin Ruan",
+    "Yuqian Wu",
+    "Zhijiang Guo",
+    "Yushi Sun",
+    "Fugee Tsung"
   ],
-  "canonical_id": "doi:10.48550/arxiv.2608.04746",
-  "citation": "Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems. K. Bhandari, Aarya Wadhwani, Dhruv Kumar, Pratik Narang. 2026-08-05. https://doi.org/10.48550/arxiv.2608.04746",
-  "detail_json": "papers/caching-for-the-future-scrub-jay-episodic-memory-principles-for-agent-memory-systems-71658d97.json",
-  "detail_page": "papers/caching-for-the-future-scrub-jay-episodic-memory-principles-for-agent-memory-systems-71658d97.html",
-  "doi": "10.48550/arxiv.2608.04746",
+  "canonical_id": "openalex:W7201914722",
+  "citation": "MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance Trade-off. Songxin Lei, Kun Ouyang, Weilin Ruan, Yuqian Wu, Zhijiang Guo, Yushi Sun, Fugee Tsung. 2026-08-05. https://arxiv.org/abs/2608.04843",
+  "detail_json": "papers/memorycpt-an-end-to-end-agent-memory-framework-for-cost-performance-trade-off-78281b4a.json",
+  "detail_page": "papers/memorycpt-an-end-to-end-agent-memory-framework-for-cost-performance-trade-off-78281b4a.html",
+  "doi": "10.48550/arxiv.2608.04843",
   "effective_sort_date": "2026-08-05",
   "first_seen_at": "2026-08-06 09:08:43",
   "first_seen_date": "2026-08-06",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-08 07:17:59",
-  "last_seen_date": "2026-08-08",
+  "last_seen_at": "2026-08-09 06:27:17",
+  "last_seen_date": "2026-08-09",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-08-06 09:09:25",
   "notified_date": "2026-08-06",
-  "openalex_id": "W7196925868",
+  "openalex_id": "W7201914722",
   "pinned": false,
   "provenance": {
     "curated": false,
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-06 09:08:43",
-    "generated_at": "2026-08-08 07:18:25",
-    "last_seen_at": "2026-08-08 07:17:59",
+    "generated_at": "2026-08-09 06:27:36",
+    "last_seen_at": "2026-08-09 06:27:17",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -50,10 +54,11 @@
     "screening_source": "deterministic rules",
     "source_ids": {
       "arxiv": [
-        "2608.04746"
+        "2608.04843"
       ],
       "openalex": [
-        "W7196925868"
+        "W7201914722",
+        "W7197015072"
       ]
     }
   },
@@ -73,28 +78,29 @@
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
+    "benchmark",
     "llm-agents",
-    "memory-systems",
-    "memory-types"
+    "memory-benchmark",
+    "memory-systems"
   ],
   "relevance": {
     "curation_note": null,
     "decision": "relevant",
     "public_label": "Highly relevant",
-    "reason": "Studies governed shared memory or persistent memory protocols for LLM agents.",
+    "reason": "Studies memory systems or memory modules for LLM agents.",
     "review_status": null,
-    "score": 91,
+    "score": 99,
     "tags": [
       "agent-memory",
       "llm-agents",
       "memory-systems",
-      "memory-types"
+      "benchmark"
     ]
   },
   "relevance_decision": "relevant",
-  "relevance_label": "Memory architecture or policy",
-  "relevance_reason": "Studies governed shared memory or persistent memory protocols for LLM agents.",
-  "relevance_score": 91,
+  "relevance_label": "Memory benchmark/evaluation",
+  "relevance_reason": "Studies memory systems or memory modules for LLM agents.",
+  "relevance_score": 99,
   "research_note": null,
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
@@ -106,7 +112,7 @@
     "assessment_version": null,
     "assessor_model": null,
     "assessor_type": null,
-    "combined_rank_score": 0.91,
+    "combined_rank_score": 0.99,
     "concerns": [],
     "concise_summary": null,
     "confidence": "unknown",
@@ -126,13 +132,14 @@
   },
   "semantic_scholar_id": null,
   "source": "openalex",
-  "source_id": "W7196925868",
+  "source_id": "W7201914722",
   "source_ids": {
     "arxiv": [
-      "2608.04746"
+      "2608.04843"
     ],
     "openalex": [
-      "W7196925868"
+      "W7201914722",
+      "W7197015072"
     ]
   },
   "sources": [
@@ -158,12 +165,12 @@
     },
     "method_or_system_type": {
       "confidence": "medium",
-      "provenance": "rule",
+      "provenance": "abstract",
       "value": "Memory architecture / system"
     },
     "relation_to_agentic_memory": {
       "confidence": "medium",
-      "provenance": "rule",
+      "provenance": "abstract",
       "value": "Studies memory mechanisms or governance for LLM agents"
     },
     "research_relevance": {
@@ -182,8 +189,8 @@
     "agent-memory",
     "llm-agents",
     "memory-systems",
-    "memory-types"
+    "benchmark"
   ],
-  "title": "Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems",
-  "url": "https://doi.org/10.48550/arxiv.2608.04746"
+  "title": "MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance Trade-off",
+  "url": "https://arxiv.org/abs/2608.04843"
 }

@@ -1,22 +1,36 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-09](2026-08-09.md).
+Latest daily digest: [2026-08-10](2026-08-10.md).
 
-# Paper Scout Digest - 2026-08-09
+# Paper Scout Digest - 2026-08-10
 
 ## Run Summary
 
-- **Run ID:** 48
-- **Candidates fetched:** 130
+- **Run ID:** 49
+- **Candidates fetched:** 129
 - **New unique papers:** 125
-- **Relevant:** 22
-- **Maybe relevant:** 0
+- **Relevant:** 17
+- **Maybe relevant:** 4
 - **Irrelevant:** 108
-- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 1
+- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 0
+
+## Source Warnings
+
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding](https://doi.org/10.48550/arxiv.2608.05876)
+### [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning](https://arxiv.org/abs/2608.04457)
+
+- **Authors:** Hans-Martin Will, Allen L. Brown Jr., Matthew Fuchs
+- **Date:** 2026-08-05
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, typed knowledge-gr...
+
+### [Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding](https://arxiv.org/abs/2608.05876)
 
 - **Authors:** Soojin Yoon, Dongha Lee
 - **Date:** 2026-08-06
@@ -25,5 +39,63 @@ Latest daily digest: [2026-08-09](2026-08-09.md).
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents, citation-grounding
 - **Abstract summary:** User requests serve as research specifications for deep research agents, shaping what evidence to seek and how to synthesize it. In personalized deep research, these specifications must additionally reflect user goals, constraints, preferences, and evaluation criteria. User context can be incorporated either within...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** A baseline or comparison system is described.
+
+### [EviGraph: Evidence-Guided Autonomous Research Agents](https://arxiv.org/abs/2608.04738)
+
+- **Authors:** 任振江, Ruiji Li, Xujing Zhang, Ziliang Pang, Shuo Ren, Jiajun Zhang
+- **Date:** 2026-08-05
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Autonomous research agents can generate hypotheses, execute experiments, and draft manuscripts, yet their outputs often contain unsupported claims and inconsistencies between research questions, experiments, results, and conclusions. We argue that this problem is partly architectural: existing systems organize resea...
+
+## Maybe Relevant
+
+### [A Taxonomy of Failure Modes in Autonomous Agentic Systems](https://doi.org/10.5281/zenodo.21855012)
+
+- **Authors:** Sahir Maharaj
+- **Date:** 2026-08-08
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** citation-grounding
+- **Abstract summary:** Autonomous agentic systems transform language-model outputs into executable sequences of state-changing actions, creating new failure modes - such as corrupted memory, unauthorized tool execution, and false declarations of success - where locally plausible responses cause globally incorrect outcomes. Synthesizing re...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.
+
+### [A Taxonomy of Failure Modes in Autonomous Agentic Systems](https://doi.org/10.5281/zenodo.21855013)
+
+- **Authors:** Sahir Maharaj
+- **Date:** 2026-08-08
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** citation-grounding
+- **Abstract summary:** Autonomous agentic systems transform language-model outputs into executable sequences of state-changing actions, creating new failure modes - such as corrupted memory, unauthorized tool execution, and false declarations of success - where locally plausible responses cause globally incorrect outcomes. Synthesizing re...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.
+
+### [Molecular Autonomous Scientist: A Closed-Loop AI-Driven Framework for Chemical Discovery](https://doi.org/10.5281/zenodo.21845250)
+
+- **Authors:** Jincheng Zhang
+- **Date:** 2026-08-08
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** hypothesis-experiment
+- **Abstract summary:** The acceleration of chemical and material discovery is fundamentally constrained by human cognitive bottlenecks, trial-and-error workflows, and the vast combinatorial explosion of chemical space. To address these limitations, this paper introduces the Molecular Autonomous Scientist (MAS), a comprehensive, closed-loo...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
+
+### [Molecular Autonomous Scientist: A Closed-Loop AI-Driven Framework for Chemical Discovery](https://doi.org/10.5281/zenodo.21845251)
+
+- **Authors:** Jincheng Zhang
+- **Date:** 2026-08-08
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** hypothesis-experiment
+- **Abstract summary:** The acceleration of chemical and material discovery is fundamentally constrained by human cognitive bottlenecks, trial-and-error workflows, and the vast combinatorial explosion of chemical space. To address these limitations, this paper introduces the Molecular Autonomous Scientist (MAS), a comprehensive, closed-loo...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.

@@ -24,8 +24,8 @@
   "first_seen_date": "2026-08-05",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-10 08:09:34",
-  "last_seen_date": "2026-08-10",
+  "last_seen_at": "2026-08-11 07:40:05",
+  "last_seen_date": "2026-08-11",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-05 09:09:04",
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-05 09:08:30",
-    "generated_at": "2026-08-10 08:10:02",
-    "last_seen_at": "2026-08-10 08:09:34",
+    "generated_at": "2026-08-11 07:40:37",
+    "last_seen_at": "2026-08-11 07:40:05",
     "metadata_sources": [
       "arxiv"
     ],
@@ -89,27 +89,79 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-11T07:40:35+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.489,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 75/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "1524/tcp bind shell the highest priority, so that baseline would plausibly repro- duce both repeatable successes. We therefore cannot show",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 13,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "run on smartphones, though size, context length, latency, and reliability remain con- straints [5]. Beyond feasibility, recent work argues that small models are not merely a com",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Background",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ound- ary described in Sect. 3. The first two are threats to validity that we consider serious enough to constrain the paper\u2019s central claims. No con",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 13,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "onsistently: the 1524/tcp bind shell (root- shell proof) and 21/tcp FTP/vsftpd. Every other service remained incomplete in every run (T",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 10,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Results",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 75,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "9b4e1a8598cd2633f507bd528ed19842232b48d821ac16c4e2f02964021a393f",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -138,7 +190,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

@@ -1,101 +1,73 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-10](2026-08-10.md).
+Latest daily digest: [2026-08-11](2026-08-11.md).
 
-# Paper Scout Digest - 2026-08-10
+# Paper Scout Digest - 2026-08-11
 
 ## Run Summary
 
-- **Run ID:** 49
-- **Candidates fetched:** 129
-- **New unique papers:** 125
-- **Relevant:** 17
-- **Maybe relevant:** 4
-- **Irrelevant:** 108
-- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 0
+- **Run ID:** 50
+- **Candidates fetched:** 133
+- **New unique papers:** 127
+- **Relevant:** 21
+- **Maybe relevant:** 6
+- **Irrelevant:** 106
+- **Source summary:** arxiv: 32, openalex: 100, semantic_scholar: 1
 
 ## Source Warnings
 
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Eigenius: A Typed Knowledge-Graph DBMS with Epistemic Stratification and Institution-Mediated Reasoning](https://arxiv.org/abs/2608.04457)
+### [Agentic Auto-Research is Fuzz Testing](https://arxiv.org/abs/2608.09855v1)
 
-- **Authors:** Hans-Martin Will, Allen L. Brown Jr., Matthew Fuchs
-- **Date:** 2026-08-05
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** As "AI Scientists" emerge to drive research via the Model Context Protocol (MCP), systems relying on ephemeral scripts will fail. The sheer scale of stateful, interconnected evidence requires a machine-walkable warranty grounded in a purpose-built database architecture. Eigenius is an open-source, typed knowledge-gr...
-
-### [Personalized Deep Research Query Refinement with Graph-Scaffolded Evidence Grounding](https://arxiv.org/abs/2608.05876)
-
-- **Authors:** Soojin Yoon, Dongha Lee
-- **Date:** 2026-08-06
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents, citation-grounding
-- **Abstract summary:** User requests serve as research specifications for deep research agents, shaping what evidence to seek and how to synthesize it. In personalized deep research, these specifications must additionally reflect user goals, constraints, preferences, and evaluation criteria. User context can be incorporated either within...
-
-### [EviGraph: Evidence-Guided Autonomous Research Agents](https://arxiv.org/abs/2608.04738)
-
-- **Authors:** 任振江, Ruiji Li, Xujing Zhang, Ziliang Pang, Shuo Ren, Jiajun Zhang
-- **Date:** 2026-08-05
-- **Source:** openalex
+- **Authors:** Yifeng He, Jicheng Wang, Yinzhe Zhao, Jiachen Liu, Hao Chen
+- **Date:** 2026-08-10
+- **Source:** arxiv
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Autonomous research agents can generate hypotheses, execute experiments, and draft manuscripts, yet their outputs often contain unsupported claims and inconsistencies between research questions, experiments, results, and conclusions. We argue that this problem is partly architectural: existing systems organize resea...
+- **Abstract summary:** Autonomous research agents can generate experiments faster than researchers can validate them. Researchers have responded by scaling the proposer and ranking more samples with a learned judge or human reviewers. We argue that this *generate-and-rank* paradigm misses the problem of sparse feedback. Within a declared...
+- **Automated evidence-based assessment:** 63/100 · Uncertain · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents](https://arxiv.org/abs/2608.08389v1)
+
+- **Authors:** Harshitha Kolukuluru, Reshma Ashok, Kirat Arora, Evan William Ciccarelli, Nischal Ashok Kumar, Lunyiu Nie, et al.
+- **Date:** 2026-08-09
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Long-horizon research agents solve open-ended tasks through iterative retrieval, aggregation, and synthesis, but context grows rapidly while the marginal value of additional evidence often declines. This leads to unnecessary token cost, higher latency, and noisier inputs for final report generation. We study margina...
+- **Automated evidence-based assessment:** 63/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** The available text identifies data or a benchmark used by the work.; A baseline or comparison system is described.
+
+### [Carnot: Interpretable, Interactive, and Optimized Execution of Deep Research Queries](https://arxiv.org/abs/2608.09532v1)
+
+- **Authors:** Matthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella, Omar Khattab, et al.
+- **Date:** 2026-08-10
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Enterprises increasingly seek to query data lakes using natural language via AI-driven tools like semantic operators or deep research agents. However, the latter operates as an opaque black box, hiding its intermediate reasoning and data retrieval steps, and failing to expose controls for managing API costs and exec...
+- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; Code, data, or research artifacts are described as available.
 
 ## Maybe Relevant
 
-### [A Taxonomy of Failure Modes in Autonomous Agentic Systems](https://doi.org/10.5281/zenodo.21855012)
+### [Beyond the Capability Boundary: Zeroth-Order Optimization for Self-Evolving LLM Agents](https://arxiv.org/abs/2608.09292v1)
 
-- **Authors:** Sahir Maharaj
-- **Date:** 2026-08-08
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Autonomous agentic systems transform language-model outputs into executable sequences of state-changing actions, creating new failure modes - such as corrupted memory, unauthorized tool execution, and false declarations of success - where locally plausible responses cause globally incorrect outcomes. Synthesizing re...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-### [A Taxonomy of Failure Modes in Autonomous Agentic Systems](https://doi.org/10.5281/zenodo.21855013)
-
-- **Authors:** Sahir Maharaj
-- **Date:** 2026-08-08
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Autonomous agentic systems transform language-model outputs into executable sequences of state-changing actions, creating new failure modes - such as corrupted memory, unauthorized tool execution, and false declarations of success - where locally plausible responses cause globally incorrect outcomes. Synthesizing re...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-### [Molecular Autonomous Scientist: A Closed-Loop AI-Driven Framework for Chemical Discovery](https://doi.org/10.5281/zenodo.21845250)
-
-- **Authors:** Jincheng Zhang
-- **Date:** 2026-08-08
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** hypothesis-experiment
-- **Abstract summary:** The acceleration of chemical and material discovery is fundamentally constrained by human cognitive bottlenecks, trial-and-error workflows, and the vast combinatorial explosion of chemical space. To address these limitations, this paper introduces the Molecular Autonomous Scientist (MAS), a comprehensive, closed-loo...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
-
-### [Molecular Autonomous Scientist: A Closed-Loop AI-Driven Framework for Chemical Discovery](https://doi.org/10.5281/zenodo.21845251)
-
-- **Authors:** Jincheng Zhang
-- **Date:** 2026-08-08
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** hypothesis-experiment
-- **Abstract summary:** The acceleration of chemical and material discovery is fundamentally constrained by human cognitive bottlenecks, trial-and-error workflows, and the vast combinatorial explosion of chemical space. To address these limitations, this paper introduces the Molecular Autonomous Scientist (MAS), a comprehensive, closed-loo...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
+- **Authors:** Bingzhen Liu, Xiaomeng Fan, Yuwei Wu, Zhi Gao, Mingyang Gao, Chuanhao Li, et al.
+- **Date:** 2026-08-10
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Self-evolving methods improve the capabilities of LLM agents by sampling trajectories from the underlying LLMs and learning from these trajectories. However, these methods struggle to learn beyond the inherent capability boundary of the agents, since the agents cannot sample correct trajectories on difficult example...
+- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.

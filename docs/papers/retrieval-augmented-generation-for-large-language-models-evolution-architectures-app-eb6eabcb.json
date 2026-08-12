@@ -22,8 +22,8 @@
   "first_seen_date": "2026-08-07",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-11 07:40:13",
-  "last_seen_date": "2026-08-11",
+  "last_seen_at": "2026-08-12 09:31:49",
+  "last_seen_date": "2026-08-12",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-07 07:44:36",
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-07 07:44:19",
-    "generated_at": "2026-08-11 07:40:37",
-    "last_seen_at": "2026-08-11 07:40:13",
+    "generated_at": "2026-08-12 09:34:31",
+    "last_seen_at": "2026-08-12 09:31:49",
     "metadata_sources": [
       "openalex"
     ],
@@ -85,27 +85,90 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-12T09:34:29+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.44934375000000004,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
+    "confidence": "low",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "or integration affect recall, precision, latency, robustness, and governance. It also compares explicit retrieval with long\u2010context promptin",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "rieval\u2010augmented generation (RAG) addresses these limitations by grounding generation in external evidence retrieved at inference time. This",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "t inference time. This Advanced Review presents a PRISMA\u2010guided synthesis of 91 studies published between January 2020 and December 2025",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "A review or study-selection methodology is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 42,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "A review or study-selection methodology is described."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "9f68f35d62abf4fb0da5b12a1b15cf5ee321d33292e54c8e5f16d9d6175f3b09",
     "suppressed": false
   },
   "semantic_scholar_id": null,

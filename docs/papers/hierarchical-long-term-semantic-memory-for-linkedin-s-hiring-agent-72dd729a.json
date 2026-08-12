@@ -29,8 +29,8 @@
   "first_seen_date": "2026-08-08",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-11 07:40:10",
-  "last_seen_date": "2026-08-11",
+  "last_seen_at": "2026-08-12 09:31:43",
+  "last_seen_date": "2026-08-12",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-08 07:18:24",
@@ -42,8 +42,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-08 07:18:00",
-    "generated_at": "2026-08-11 07:40:37",
-    "last_seen_at": "2026-08-11 07:40:10",
+    "generated_at": "2026-08-12 09:34:31",
+    "last_seen_at": "2026-08-12 09:31:43",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -108,27 +108,89 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-12T09:34:31+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 1.0,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.9558,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 66/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "acy constraints, adaptability, and observability. We introduce theHierarchical Long- Term Semantic Memory(HLTM) framework, which organizes tex",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "4.1 Dataset LinkedIn\u2019s Hiring Assistant Dataset.We constructed a human- labeled benchmark d",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "4.3 Baselines To comprehensively evaluateHLTM, we compare against both basic baselines and advanced RAG/memory methods. We hold the backbone LLM",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "answer correctness by more than 5% and retrieval F1 by more than 10%, while significantly advancing the Pareto frontier between query and indexing",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "on-NonCommercial- NoDerivatives 4.0 International License. KDD 2026, Jeju Island, Republic of Korea. \u00a92026 Copyright held by the owner/au",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 66,
+    "paper_type": "systems_or_application",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "fd6cc82ff6d8a918f0fd66b9346c357852919152d066be05cf784605c6c3affe",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -161,7 +223,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

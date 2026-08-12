@@ -13,6 +13,7 @@ permissions:
 concurrency:
   group: paper-scout-${{ github.ref }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   scout:
@@ -23,6 +24,19 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # The immediate parent is the normal one-time migration seed.
+          fetch-depth: 2
+
+      - name: Restore durable Paper Scout state
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/download-paper-scout-state.sh
+
+      - name: Bootstrap Paper Scout state when no durable snapshot exists
+        env:
+          PAPER_SCOUT_STATE_SEED_REF: 026158c36d109669e16b1c008b69d1031a2a357b
+        run: bash .github/scripts/restore-paper-scout-state.sh
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -108,11 +122,17 @@ jobs:
           if-no-files-found: ignore
 
       - name: Commit scout updates
+        id: commit-scout-updates
         if: success()
         run: |
+          python .github/scripts/check_generated_file_sizes.py digests docs reports/paper_scout
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 digests docs reports/paper_scout
+          git add -- digests docs reports/paper_scout
+          if git diff --cached --name-only | grep -E '(^|/).*\.sqlite3(-journal|-wal|-shm)?$'; then
+            echo "::error::Refusing to commit Paper Scout runtime state. Only generated digests, site files, and reports may be staged."
+            exit 1
+          fi
           if git diff --cached --quiet; then
             echo "No paper scout changes to commit."
           else
@@ -136,3 +156,16 @@ jobs:
         if: success()
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Source output is already published when this runs. Keep runtime state
+      # current even if Pages had a transient deployment failure.
+      - name: Prepare consistent Paper Scout state snapshot
+        if: ${{ steps.commit-scout-updates.outcome == 'success' }}
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3
+
+      - name: Persist durable Paper Scout state
+        id: persist-scout-state
+        if: ${{ steps.commit-scout-updates.outcome == 'success' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/upload-paper-scout-state.sh

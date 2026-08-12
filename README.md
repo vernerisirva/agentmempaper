@@ -160,7 +160,11 @@ Failed source queries are persisted in the track's SQLite state with bounded exp
 - Track-specific state can also be overridden with `PAPER_SCOUT_AGENT_MEMORY_STATE_PATH` or `PAPER_SCOUT_DEEP_RESEARCH_STATE_PATH`.
 - `data/.gitkeep` keeps the state directory present.
 - SQLite sidecar files are ignored: `*.sqlite3-journal`, `*.sqlite3-wal`, and `*.sqlite3-shm`.
-- `data/paper_scout.sqlite3` is explicitly not ignored because the daily GitHub Actions workflow may intentionally commit persistent state.
+- Runtime SQLite state is ignored and never committed. The scheduled daily and weekly workflows restore and replace one `paper-scout-runtime-state` GitHub Release asset after generated outputs have been committed successfully. A release asset is used instead of Actions cache because the state controls deduplication and the complete site library, so cache eviction would be unsafe.
+- The migration's first missing release bootstraps state from the explicitly named final Git-tracked commit (`026158c36d109669e16b1c008b69d1031a2a357b`), not merely the current parent. This preserves accumulated state even if another normal commit lands before the first workflow run. The fallback emits a workflow warning and is intended only for recovery; it may not contain work completed after that seed.
+- State writers share one queued workflow-concurrency group. Before each durable upload, the workflow verifies SQLite integrity, checkpoints WAL mode into the main database, switches it to rollback-journal mode, and removes sidecars. Do not delete the `paper-scout-runtime-state` release while scheduled workflows are active.
+- If the durable-state upload fails after source output has been pushed, the workflow fails loudly. The next run restores the previous durable snapshot and can reprocess recent papers (at-least-once recovery) rather than silently losing them; rerun the failed workflow promptly to minimize duplicate digest entries.
+- Before staging generated output, both workflows reject files at or above 95 MiB with a clear diagnostic. Runtime state is explicitly excluded from `git add` and checked again after staging.
 - CI live smoke uses a temporary state path so validation does not mutate the daily state file.
 
 Local smoke-test state files that contain no useful real paper data should not be committed.

@@ -1,0 +1,227 @@
+{
+  "abstract_summary": "Tokenizer vocabulary size is a foundational design choice in large language model (LLM) infrastructure, yet it is typically fixed at training time based on convention rather than deployment analysis. We show that the cost-optimal vocabulary is not a constant but a function of the serving regime. We formalize total d...",
+  "alternate_urls": [
+    "https://arxiv.org/abs/2608.11361v1",
+    "https://arxiv.org/abs/2608.11361"
+  ],
+  "appeared_in_latest_run": true,
+  "arxiv_id": "2608.11361",
+  "authors": [
+    "Rima Mittal",
+    "Ankit Gubrani",
+    "Satyanarayana Kakollu"
+  ],
+  "canonical_id": "arxiv:2608.11361",
+  "citation": "Lifecycle-Optimal Tokenization: Vocabulary Size as a Deployment-Regime-Dependent Infrastructure Parameter. Rima Mittal, Ankit Gubrani, Satyanarayana Kakollu. 2026-08-11. https://arxiv.org/abs/2608.11361v1",
+  "detail_json": "papers/lifecycle-optimal-tokenization-vocabulary-size-as-a-deployment-regime-dependent-infr-4afee655.json",
+  "detail_page": "papers/lifecycle-optimal-tokenization-vocabulary-size-as-a-deployment-regime-dependent-infr-4afee655.html",
+  "doi": null,
+  "effective_sort_date": "2026-08-11",
+  "first_seen_at": "2026-08-13 07:56:06",
+  "first_seen_date": "2026-08-13",
+  "future_date": false,
+  "is_new": true,
+  "last_seen_at": "2026-08-13 07:56:14",
+  "last_seen_date": "2026-08-13",
+  "latest_relevant_date_bucket": 0,
+  "newly_discovered_in_latest_run": true,
+  "notified_at": "2026-08-13 07:56:55",
+  "notified_date": "2026-08-13",
+  "openalex_id": null,
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "arxiv",
+    "first_seen_at": "2026-08-13 07:56:06",
+    "generated_at": "2026-08-13 07:56:55",
+    "last_seen_at": "2026-08-13 07:56:14",
+    "metadata_sources": [
+      "arxiv"
+    ],
+    "publication_date_confidence": "high",
+    "publication_date_precision": "day",
+    "publication_date_source": "arxiv",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "arxiv": [
+        "2608.11361"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "high",
+    "date": "2026-08-11",
+    "display": "Published 2026-08-11",
+    "precision": "day",
+    "publication_date_confidence": "high",
+    "source": "arxiv",
+    "year": "2026"
+  },
+  "publication_date": "2026-08-11",
+  "publication_date_confidence": "high",
+  "publication_date_precision": "day",
+  "publication_date_source": "arxiv",
+  "publication_year": "2026",
+  "related_topics": [],
+  "relevance": {
+    "curation_note": null,
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+    "review_status": null,
+    "score": 45,
+    "tags": []
+  },
+  "relevance_decision": "maybe",
+  "relevance_label": "Memory architecture or policy",
+  "relevance_reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+  "relevance_score": 45,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-08-13T07:56:54+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
+    "assessor_model": null,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.46950000000000003,
+    "concerns": [],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 60/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
+    "curation_note": null,
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": false,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "ers) and assessing novelty and differentiation of our contribution; (2) implement the experimental harness (bench_head.py, bench_body.py, train_mo",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Page 6 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "uld otherwise contribute to the transformer body. Corpus.Tokenizers were trained on English FineWeb- Edu. Compression curves differ for",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Page 6 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "tized across 256 sequences, reducing per-sequence cost by \u223c256\u00d7. Theoptimal vocabulary therefore depends on the serving batch size\u2013 a deployme",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "VII. LIMITATIONS Model scale.Our largest training run is 2.3B parameters. Tao\u2019s scaling law V \u2217",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Page 6 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
+    "manual_override": false,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 60,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "62523d3cd62a8cd9cdcca16c84232925ba8221624c58562c0a43d1a8090f3e0b",
+    "suppressed": false
+  },
+  "semantic_scholar_id": null,
+  "source": "arxiv",
+  "source_id": "2608.11361",
+  "source_ids": {
+    "arxiv": [
+      "2608.11361"
+    ]
+  },
+  "sources": [
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Agentic-AI connection exists, but memory focus is weak or indirect"
+    },
+    "research_relevance": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Review candidate"
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Not extracted yet",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Agentic-AI connection exists, but memory focus is weak or indirect"
+  },
+  "tags": [],
+  "title": "Lifecycle-Optimal Tokenization: Vocabulary Size as a Deployment-Regime-Dependent Infrastructure Parameter",
+  "url": "https://arxiv.org/abs/2608.11361v1"
+}

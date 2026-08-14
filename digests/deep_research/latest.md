@@ -1,71 +1,91 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-13](2026-08-13.md).
+Latest daily digest: [2026-08-14](2026-08-14.md).
 
-# Paper Scout Digest - 2026-08-13
+# Paper Scout Digest - 2026-08-14
 
 ## Run Summary
 
-- **Run ID:** 52
-- **Candidates fetched:** 176
-- **New unique papers:** 148
-- **Relevant:** 10
-- **Maybe relevant:** 6
-- **Irrelevant:** 160
-- **Source summary:** arxiv: 76, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Run ID:** 53
+- **Candidates fetched:** 131
+- **New unique papers:** 128
+- **Relevant:** 15
+- **Maybe relevant:** 9
+- **Irrelevant:** 107
+- **Source summary:** arxiv: 31, openalex: 100, semantic_scholar: 0
 
 ## Highly Relevant
 
-### [The Landscape of LLM-based Search Agents: A Survey](https://doi.org/10.20944/preprints202608.0572.v1)
+### [Ai tidak akan mampu mencapai ataupun melampaui kecerdasan manusia tapi ai dapat menghancurkan umat manusia](https://doi.org/10.5281/zenodo.21896870)
 
-- **Authors:** Fan Zhang, Jinyang Wu, Haoxuan Li, Zheng Lian, Hao Wu, Xinyu Geng, et al.
-- **Date:** 2026-08-10
+- **Authors:** Imam Maulana Maulana
+- **Date:** 2026-08-12
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents, citation-grounding
-- **Abstract summary:** Search is undergoing a structural shift from ranked retrieval and static retrieval-augmented generation (RAG) to agentic information seeking. Large language models (LLMs) now plan queries, browse pages, inspect evidence, maintain state, and synthesize answers or reports whose credibility depends on traceable externa...
-- **Automated evidence-based assessment:** 43/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** Quantitative evaluation signals were detected.
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** This journal proposes a radical paradigm in evaluating the existential risk of artificial intelligence through the formulation of the Asymptotic Limit Law: lim (n -> ∞) f(n) ≠ 0, where f(n) is specifically defined as the mathematical function representing the accumulation of fractional data, parameters, and binary s...
 
-### [Carnot: Interpretable, Interactive, and Optimized Execution of Deep Research Queries](https://doi.org/10.48550/arxiv.2608.09532)
+### [Ai tidak akan mampu mencapai ataupun melampaui kecerdasan manusia tapi ai dapat menghancurkan umat manusia](https://doi.org/10.5281/zenodo.21896869)
 
-- **Authors:** Matthew Russo, Yash Agarwal, Tianyu Li, Zhuohan Gu, Michael Cafarella, Omar Khattab, et al.
-- **Date:** 2026-08-10
+- **Authors:** Imam Maulana Maulana
+- **Date:** 2026-08-12
 - **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Enterprises increasingly seek to query data lakes using natural language via AI-driven tools like semantic operators or deep research agents. However, the latter operates as an opaque black box, hiding its intermediate reasoning and data retrieval steps, and failing to expose controls for managing API costs and exec...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-### [Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents](https://doi.org/10.48550/arxiv.2608.08389)
-
-- **Authors:** Harshitha Kolukuluru, Reshma Ashok, Kirat Arora, Evan William Ciccarelli, Nischal Ashok Kumar, Lunyiu Nie, et al.
-- **Date:** 2026-08-09
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Long-horizon research agents solve open-ended tasks through iterative retrieval, aggregation, and synthesis, but context grows rapidly while the marginal value of additional evidence often declines. This leads to unnecessary token cost, higher latency, and noisier inputs for final report generation. We study margina...
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** This journal proposes a radical paradigm in evaluating the existential risk of artificial intelligence through the formulation of the Asymptotic Limit Law: lim (n -> ∞) f(n) ≠ 0, where f(n) is specifically defined as the mathematical function representing the accumulation of fractional data, parameters, and binary s...
 - **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** Limitations or threats to validity are acknowledged.
+
+### [OmniScientist: An Omni-Modal Omni-Discipline AI Scientist](https://arxiv.org/abs/2608.13558v1)
+
+- **Authors:** Bobo Li, Hao Fei, Tianjie Ju, Mong-Li Lee, Wynne Hsu
+- **Date:** 2026-08-13
+- **Source:** arxiv
+- **Relevance:** relevant (95/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, citation-grounding, deep-research-agents
+- **Abstract summary:** Recent advances in foundation models have enabled AI scientists to automate increasingly complete research workflows, from hypothesis generation and code execution to manuscript preparation. Yet workflow coverage alone does not provide access to the full evidence on which scientific discovery depends. Existing syste...
+- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [Training AI Scientists to Replicate Research](https://arxiv.org/abs/2608.13331v1)
+
+- **Authors:** Damon Falck, Samer Sabri, Anja Surina, Thom Foster, Anya Sims, Sam Devlin, et al.
+- **Date:** 2026-08-13
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** The replicability of papers is a cornerstone of scientific knowledge, ensuring the reliability of existing results and providing a base for further experiments. The act of replication typically illuminates details that were previously underspecified, and thus requires similar hypothesis-driven exploration to open-en...
+- **Automated evidence-based assessment:** 49/100 · Weak · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; The work reports an error or qualitative analysis.
 
 ## Maybe Relevant
 
-### [Beyond the Capability Boundary: Zeroth-Order Optimization for Self-Evolving LLM Agents](https://doi.org/10.48550/arxiv.2608.09292)
+### [AQuA: Recursively Self-Improving Quantitative Trading Research Agents](https://arxiv.org/abs/2608.12841v1)
 
-- **Authors:** Bingzhen Liu, Xiaomeng Fan, Yuwei Wu, Zhi Gao, Mingyang Gao, Chuanhao Li, et al.
-- **Date:** 2026-08-10
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Self-evolving methods improve the capabilities of LLM agents by sampling trajectories from the underlying LLMs and learning from these trajectories. However, these methods struggle to learn beyond the inherent capability boundary of the agents, since the agents cannot sample correct trajectories on difficult example...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Authors:** Jiacheng Guo, Suozhi Huang, Yunlong Gao, Zihao Li, Jian Ge, Xu Kuang, et al.
+- **Date:** 2026-08-13
+- **Source:** arxiv
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** research-memory
+- **Abstract summary:** We study recursive self-improvement at the level of quantitative-investment research: whether an autonomous system can use evidence from earlier experiments to improve the hypotheses and candidates proposed in later iterations. We present AQuA, which comprises two separate language-model-driven research systems: one...
+- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
 - **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; Code, data, or research artifacts are described as available.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [Comparative benchmarking of AI research agents for omics data interpretation](https://doi.org/10.21203/rs.3.rs-10437888/v1)
+
+- **Authors:** N. V. Basov, Yosef K. Tirta, Zihan Li, Huan Zhou, Kiryl D. Piatkevich
+- **Date:** 2026-08-12
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** deep-research-agents
+- **Abstract summary:** No abstract available.
+- **Automated evidence-based assessment:** 49/100 · Weak · Medium confidence · partial full text
+- **Positive signals:** The available text identifies data or a benchmark used by the work.; Dataset documentation, quality control, licensing, or ethics is discussed.

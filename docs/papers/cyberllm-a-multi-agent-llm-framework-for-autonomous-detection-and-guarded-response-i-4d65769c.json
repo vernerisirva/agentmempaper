@@ -25,8 +25,8 @@
   "first_seen_date": "2026-08-10",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-14 07:53:26",
-  "last_seen_date": "2026-08-14",
+  "last_seen_at": "2026-08-15 06:59:24",
+  "last_seen_date": "2026-08-15",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-10 08:10:02",
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-10 08:09:18",
-    "generated_at": "2026-08-14 07:54:15",
-    "last_seen_at": "2026-08-14 07:53:26",
+    "generated_at": "2026-08-15 07:00:11",
+    "last_seen_at": "2026-08-15 06:59:24",
     "metadata_sources": [
       "arxiv"
     ],
@@ -93,27 +93,101 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-15T07:00:05+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4721,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 62/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 3
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "same scenarios. On an independent, ground-truthed benchmark of nine original automotive ECU modules in C, C++, and Rust seeding 47 layered",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "d source-tagged, to the incident store for future recall. Fig. 2 traces one scenario through the full pipeline, from raw input to committed fix.",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Page 4 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ainst agentic-security benchmarks to characterize robustness under adaptive adversaries. REFERENCES [1] K. Siu, Z. He, C. Montgomery, Y . Wa",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Page 6 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "his evaluation, is publicly available at https: //github.com/Jeddou10/CyberLLM. V. CONCLUSION This paper presented a multi-agent LLM framewo",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Page 6 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "steps from the topology graph. Orchestration and ethics guard.An attack orchestrator, the mirror of the decision agent, chains one to t",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Page 4 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 62,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected.",
+      "Robustness or statistical analysis is reported.",
+      "Code, data, or research artifacts are described as available.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "c36aad6b1a45552b67d26b80bb3a9be3000fe841352e897d02dd5801e70a1c9e",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -142,7 +216,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

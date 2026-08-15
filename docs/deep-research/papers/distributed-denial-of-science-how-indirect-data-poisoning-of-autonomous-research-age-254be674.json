@@ -4,7 +4,7 @@
     "https://osf.io/kjswy",
     "https://openalex.org/W7167446164"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": null,
   "authors": [
     "B\u00e1lint Gyevn\u00e1r"
@@ -19,8 +19,8 @@
   "first_seen_date": "2026-07-06",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-07-07 10:08:59",
-  "last_seen_date": "2026-07-07",
+  "last_seen_at": "2026-08-15 07:00:29",
+  "last_seen_date": "2026-08-15",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-06 11:21:05",
@@ -32,8 +32,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-06 11:14:34",
-    "generated_at": "2026-08-14 07:54:55",
-    "last_seen_at": "2026-07-07 10:08:59",
+    "generated_at": "2026-08-15 07:00:43",
+    "last_seen_at": "2026-08-15 07:00:29",
     "metadata_sources": [
       "openalex"
     ],
@@ -87,27 +87,80 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-15T07:00:41+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.91,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.90715625,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
+    "confidence": "low",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "and misleading metadata. To mitigate the attacks, we propose and evaluate two measures: a scientist persona and a data provenance audit with",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "poisoning, in which an adversary corrupts an open dataset and uploads the poisoned variant to a public repository. Autonomous research ag",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 78,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "66e580454da4a10505164f3bb944877ea6bb6763cc0a350565ef10d92ba2a56c",
     "suppressed": false
   },
   "semantic_scholar_id": null,

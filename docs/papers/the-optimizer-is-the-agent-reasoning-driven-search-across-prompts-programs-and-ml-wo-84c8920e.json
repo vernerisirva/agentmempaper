@@ -26,8 +26,8 @@
   "first_seen_date": "2026-08-10",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-14 07:53:26",
-  "last_seen_date": "2026-08-14",
+  "last_seen_at": "2026-08-15 06:59:24",
+  "last_seen_date": "2026-08-15",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-10 08:10:02",
@@ -39,8 +39,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-10 08:09:18",
-    "generated_at": "2026-08-14 07:54:15",
-    "last_seen_at": "2026-08-14 07:53:26",
+    "generated_at": "2026-08-15 07:00:11",
+    "last_seen_at": "2026-08-15 06:59:24",
     "metadata_sources": [
       "arxiv"
     ],
@@ -93,27 +93,81 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-15T07:00:08+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.62,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.6109,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 55/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 2,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "We propose ReASearch, a unified framework that turns optimization itself into a reason- in",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 10,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "compare our general-purpose framework against the state-of-the-art methods for that task category and demonstrate its advantages, while using a co",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ntic structure of natural language and code. This limitation has motivated a growing body of work that uses large language models as semanti",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "Extraction was limited to 120000 characters."
+    ],
+    "overall_quality_score": 55,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "9c7b1e3b40b1bccfdf36dad325232c1c8dd1f7573f2315aacb565c755a7a6cfb",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -142,7 +196,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

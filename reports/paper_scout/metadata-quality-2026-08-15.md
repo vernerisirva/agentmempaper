@@ -72,7 +72,7 @@
 - **CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization** — maybe, 2026-07-31, precision=day, source=openalex
 - **Zero-Mem: Zero-Token Memory Operations for LLM Agents** — maybe, 2026-07-31, precision=day, source=openalex
 - **AttriMem: Attribution-Guided Process Feedback for Agent Memory Construction** — maybe, 2026-07-23, precision=day, source=openalex
-- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning** — maybe, 2026-07-23, precision=day, source=openalex
+- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning** — maybe, 2026-07-23, precision=day, source=arxiv
 - **MEMTIER: Tiered Retrieval, Session-Level Injection, and Typed Consolidation for Long-Running LLM Agents** — maybe, 2026-07-22, precision=day, source=openalex
 - **MemoryChain: Declarative Dependency Injection for Structured Memory Recall in LLM Agents** — maybe, 2026-07-19, precision=day, source=openalex
 - **Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration** — maybe, 2026-07-18, precision=day, source=openalex

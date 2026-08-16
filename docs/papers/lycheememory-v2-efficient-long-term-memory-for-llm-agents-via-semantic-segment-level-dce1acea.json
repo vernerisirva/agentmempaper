@@ -1,91 +1,107 @@
 {
-  "abstract_summary": "Long-term agent memory is usually treated as select--store--retrieve, but retrieval does not decide whether contradictory, superseded, retracted, deleted, or stale records may support an outgoing claim. We introduce Governed Persistent Memory (GPM), an auditable bitemporal state-transition model with source-bound ad...",
+  "abstract_summary": "Long-horizon LLM agents must preserve information from past interactions to support future tasks. Existing memory systems typically rely on eager consolidation, invoking LLMs after each interaction to extract, summarize, or update memories. This design makes memory construction increasingly costly as conversations g...",
   "alternate_urls": [
-    "https://arxiv.org/abs/2608.12476v1",
-    "https://arxiv.org/abs/2608.12476"
+    "https://doi.org/10.48550/arxiv.2608.12990",
+    "https://arxiv.org/abs/2608.12990v1",
+    "https://arxiv.org/abs/2608.12990",
+    "https://openalex.org/W7203440641"
   ],
   "appeared_in_latest_run": true,
-  "arxiv_id": "2608.12476",
+  "arxiv_id": "2608.12990",
   "authors": [
-    "Guodong Xu"
+    "Dongfang Li",
+    "Zixuan Liu",
+    "Junmai Wang",
+    "Jiahe Huang",
+    "Fuhao Li",
+    "Bonian Jia",
+    "Baotian Hu",
+    "Min Zhang"
   ],
-  "canonical_id": "arxiv:2608.12476",
-  "citation": "Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents. Guodong Xu. 2026-08-12. https://arxiv.org/abs/2608.12476v1",
-  "detail_json": "papers/governed-persistent-memory-source-bound-state-semantics-and-fail-closed-release-for-99d8e448.json",
-  "detail_page": "papers/governed-persistent-memory-source-bound-state-semantics-and-fail-closed-release-for-99d8e448.html",
-  "doi": null,
-  "effective_sort_date": "2026-08-12",
+  "canonical_id": "doi:10.48550/arxiv.2608.12990",
+  "citation": "LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation. Dongfang Li, Zixuan Liu, Junmai Wang, Jiahe Huang, Fuhao Li, Bonian Jia, Baotian Hu, Min Zhang. 2026-08-13. https://doi.org/10.48550/arxiv.2608.12990",
+  "detail_json": "papers/lycheememory-v2-efficient-long-term-memory-for-llm-agents-via-semantic-segment-level-dce1acea.json",
+  "detail_page": "papers/lycheememory-v2-efficient-long-term-memory-for-llm-agents-via-semantic-segment-level-dce1acea.html",
+  "doi": "10.48550/arxiv.2608.12990",
+  "effective_sort_date": "2026-08-13",
   "first_seen_at": "2026-08-14 07:53:25",
   "first_seen_date": "2026-08-14",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-16 06:00:48",
+  "last_seen_at": "2026-08-16 07:02:53",
   "last_seen_date": "2026-08-16",
   "latest_relevant_date_bucket": 0,
-  "newly_discovered_in_latest_run": false,
+  "newly_discovered_in_latest_run": true,
   "notified_at": "2026-08-14 07:54:15",
   "notified_date": "2026-08-14",
-  "openalex_id": null,
+  "openalex_id": "W7203440641",
   "pinned": false,
   "provenance": {
     "curated": false,
     "curation_note": null,
-    "date_source": "arxiv",
+    "date_source": "openalex",
     "first_seen_at": "2026-08-14 07:53:25",
-    "generated_at": "2026-08-16 06:01:22",
-    "last_seen_at": "2026-08-16 06:00:48",
+    "generated_at": "2026-08-16 07:03:28",
+    "last_seen_at": "2026-08-16 07:02:53",
     "metadata_sources": [
+      "openalex",
       "arxiv"
     ],
-    "publication_date_confidence": "high",
+    "publication_date_confidence": "medium",
     "publication_date_precision": "day",
-    "publication_date_source": "arxiv",
+    "publication_date_source": "openalex",
     "relevance_source": "deterministic screening",
     "screening_source": "deterministic rules",
     "source_ids": {
       "arxiv": [
-        "2608.12476"
+        "2608.12990"
+      ],
+      "openalex": [
+        "W7203440641"
       ]
     }
   },
   "publication": {
-    "confidence": "high",
-    "date": "2026-08-12",
-    "display": "Published 2026-08-12",
+    "confidence": "medium",
+    "date": "2026-08-13",
+    "display": "Published 2026-08-13",
     "precision": "day",
-    "publication_date_confidence": "high",
-    "source": "arxiv",
+    "publication_date_confidence": "medium",
+    "source": "openalex",
     "year": "2026"
   },
-  "publication_date": "2026-08-12",
-  "publication_date_confidence": "high",
+  "publication_date": "2026-08-13",
+  "publication_date_confidence": "medium",
   "publication_date_precision": "day",
-  "publication_date_source": "arxiv",
+  "publication_date_source": "openalex",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
+    "benchmark",
     "llm-agents",
     "long-term-memory",
+    "memory-benchmark",
     "memory-systems"
   ],
   "relevance": {
     "curation_note": null,
     "decision": "relevant",
     "public_label": "Highly relevant",
-    "reason": "Studies governed shared memory or persistent memory protocols for LLM agents.",
+    "reason": "Focuses on persistent or long-term memory for agent behavior.",
     "review_status": null,
-    "score": 91,
+    "score": 100,
     "tags": [
       "agent-memory",
-      "long-term-memory",
+      "llm-agents",
       "memory-systems",
-      "llm-agents"
+      "long-term-memory",
+      "benchmark"
     ]
   },
   "relevance_decision": "relevant",
-  "relevance_label": "Core agent-memory paper",
-  "relevance_reason": "Studies governed shared memory or persistent memory protocols for LLM agents.",
-  "relevance_score": 91,
+  "relevance_label": "Memory benchmark/evaluation",
+  "relevance_reason": "Focuses on persistent or long-term memory for agent behavior.",
+  "relevance_score": 100,
   "research_note": null,
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
@@ -97,7 +113,7 @@
     "assessment_version": null,
     "assessor_model": null,
     "assessor_type": null,
-    "combined_rank_score": 0.91,
+    "combined_rank_score": 1.0,
     "concerns": [],
     "concise_summary": null,
     "confidence": "unknown",
@@ -116,14 +132,18 @@
     "suppressed": false
   },
   "semantic_scholar_id": null,
-  "source": "arxiv",
-  "source_id": "2608.12476",
+  "source": "openalex",
+  "source_id": "W7203440641",
   "source_ids": {
     "arxiv": [
-      "2608.12476"
+      "2608.12990"
+    ],
+    "openalex": [
+      "W7203440641"
     ]
   },
   "sources": [
+    "openalex",
     "arxiv"
   ],
   "ssrn_id": null,
@@ -145,12 +165,12 @@
     },
     "method_or_system_type": {
       "confidence": "medium",
-      "provenance": "rule",
+      "provenance": "abstract",
       "value": "Memory architecture / system"
     },
     "relation_to_agentic_memory": {
       "confidence": "medium",
-      "provenance": "rule",
+      "provenance": "abstract",
       "value": "Studies memory mechanisms or governance for LLM agents"
     },
     "research_relevance": {
@@ -167,10 +187,11 @@
   },
   "tags": [
     "agent-memory",
-    "long-term-memory",
+    "llm-agents",
     "memory-systems",
-    "llm-agents"
+    "long-term-memory",
+    "benchmark"
   ],
-  "title": "Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents",
-  "url": "https://arxiv.org/abs/2608.12476v1"
+  "title": "LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation",
+  "url": "https://doi.org/10.48550/arxiv.2608.12990"
 }

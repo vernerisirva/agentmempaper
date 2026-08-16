@@ -19,7 +19,7 @@
   "first_seen_date": "2026-08-10",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-16 06:00:15",
+  "last_seen_at": "2026-08-16 07:02:33",
   "last_seen_date": "2026-08-16",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
@@ -32,8 +32,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-10 08:09:18",
-    "generated_at": "2026-08-16 06:01:22",
-    "last_seen_at": "2026-08-16 06:00:15",
+    "generated_at": "2026-08-16 07:03:28",
+    "last_seen_at": "2026-08-16 07:02:33",
     "metadata_sources": [
       "arxiv"
     ],
@@ -86,27 +86,69 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-16T07:03:24+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.43,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4729,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 76/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "tion of the exploration-to-disturbance ratio. The cost law: deployed costrC (0)at high gain, distribution-free. The horizon law: the equilibrium migrates to t",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 17,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "g benefit is a statement about this record, not a theorem: an earlier in-house implementation behaved differently at a shorter horizon (A",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 16,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 76,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "7c4712db1db03ff8730c85c9786f0d7e89d0d28f99383ac5e65b5100eb350546",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -135,7 +177,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

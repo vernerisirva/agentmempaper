@@ -1,82 +1,55 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-16](2026-08-16.md).
+Latest daily digest: [2026-08-17](2026-08-17.md).
 
-# Paper Scout Digest - 2026-08-16
+# Paper Scout Digest - 2026-08-17
 
 ## Run Summary
 
-- **Run ID:** 55
-- **Candidates fetched:** 125
-- **New unique papers:** 121
+- **Run ID:** 56
+- **Candidates fetched:** 128
+- **New unique papers:** 124
 - **Relevant:** 21
-- **Maybe relevant:** 5
-- **Irrelevant:** 99
-- **Source summary:** arxiv: 25, openalex: 100, semantic_scholar: 0
-
-## Source Warnings
-
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- **Maybe relevant:** 6
+- **Irrelevant:** 101
+- **Source summary:** arxiv: 27, openalex: 100, semantic_scholar: 1
 
 ## Highly Relevant
 
-### [The AI scientist arrives: a new epoch in autonomous discovery](https://doi.org/10.66178/aie-0026-0017)
+### [What Constitutes an Omni-Modal Omni- Discipline AI Scientist -And What Good Is He?](https://doi.org/10.13140/rg.2.2.25199.80804)
 
-- **Authors:** Guang‐Guo Ying
+- **Authors:** Ijaz Durrani
+- **Date:** 2026-08-15
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** No abstract available.
+- **Automated evidence-based assessment:** Not enough evidence · metadata only
+
+### [The Past and Future of AI Scientists](https://arxiv.org/abs/2608.14407v1)
+
+- **Authors:** Ross D. King
 - **Date:** 2026-08-14
-- **Source:** openalex
-- **Relevance:** relevant (96/100)
+- **Source:** arxiv
+- **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** deep-research-agents, ai-scientist
-- **Abstract summary:** In 2026, three landmark Nature papers collectively announced that artificial intelligence has crossed a threshold, moving from a laboratory instrument to an autonomous research agent. The Empirical Research Assistant (ERA) writes expert-level scientific software across multiple domains. The AI Scientist executes the...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** Limitations or threats to validity are acknowledged.
-
-### [OmniScientist: An Omni-Modal Omni-Discipline AI Scientist](https://doi.org/10.48550/arxiv.2608.13558)
-
-- **Authors:** Bobo Li, Hao Fei, Tianjie Ju, Mong-Li Lee, Wynne Hsu
-- **Date:** 2026-08-13
-- **Source:** openalex
-- **Relevance:** relevant (95/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, citation-grounding, deep-research-agents
-- **Abstract summary:** Recent advances in foundation models have enabled AI scientists to automate increasingly complete research workflows, from hypothesis generation and code execution to manuscript preparation. Yet workflow coverage alone does not provide access to the full evidence on which scientific discovery depends. Existing syste...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** We present a survey of the past and future of AI Scientists: machines capable of automating science. AI Scientists can originate hypotheses, deduce their consequences, design and execute experiments, interpret their results, and revise their beliefs. Such systems are integrated scientific agents, connected to the li...
+- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
 - **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.
+- **Positive signals:** The contribution is stated explicitly.; Formal definitions or proof-oriented evidence is present.
 
-### [MIRA: Towards a General AI Scientist](https://doi.org/10.5281/zenodo.21930641)
+## Maybe Relevant
 
-- **Authors:** Deep Principle
+### [ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond](https://arxiv.org/abs/2608.14354v1)
+
+- **Authors:** Mingming Zhao, Jiqian Dong, Kangping Xu, Zadid Hasan, Chengrui Fan, Shan Jiang, et al.
 - **Date:** 2026-08-14
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Artificial intelligence now reaches into much of scientific practice, yet a gap persists between systems that answer scientific questions and systems that advance science. Scientific discovery is not a single response but an iterative loop that runs from hypothesis generation through execution to interpretation, car...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-### [MIRA: Towards a General AI Scientist](https://doi.org/10.5281/zenodo.21930642)
-
-- **Authors:** Deep Principle
-- **Date:** 2026-08-14
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Artificial intelligence now reaches into much of scientific practice, yet a gap persists between systems that answer scientific questions and systems that advance science. Scientific discovery is not a single response but an iterative loop that runs from hypothesis generation through execution to interpretation, car...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-### [Training AI Scientists to Replicate Research](https://doi.org/10.48550/arxiv.2608.13331)
-
-- **Authors:** Damon Falck, Samer Sabri, Anja Surina, Thom Foster, Anya Sims, Sam Devlin, et al.
-- **Date:** 2026-08-13
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** The replicability of papers is a cornerstone of scientific knowledge, ensuring the reliability of existing results and providing a base for further experiments. The act of replication typically illuminates details that were previously underspecified, and thus requires similar hypothesis-driven exploration to open-en...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; The work reports an error or qualitative analysis.
+- **Source:** arxiv
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** web-research
+- **Abstract summary:** Enabling LLM agents to sustain productive, stable, and goal-aligned research over extended horizons is a central challenge for autonomous machine learning and scientific discovery, as progress hinges on continuously managing evolving state, exploration decisions, and computational resources. Pioneering autoresearch...
+- **Automated evidence-based assessment:** 56/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.

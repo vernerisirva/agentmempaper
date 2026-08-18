@@ -1,55 +1,87 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-17](2026-08-17.md).
+Latest daily digest: [2026-08-18](2026-08-18.md).
 
-# Paper Scout Digest - 2026-08-17
+# Paper Scout Digest - 2026-08-18
 
 ## Run Summary
 
-- **Run ID:** 56
-- **Candidates fetched:** 128
-- **New unique papers:** 124
-- **Relevant:** 21
-- **Maybe relevant:** 6
-- **Irrelevant:** 101
-- **Source summary:** arxiv: 27, openalex: 100, semantic_scholar: 1
+- **Run ID:** 57
+- **Candidates fetched:** 133
+- **New unique papers:** 128
+- **Relevant:** 17
+- **Maybe relevant:** 8
+- **Irrelevant:** 108
+- **Source summary:** arxiv: 32, openalex: 100, semantic_scholar: 1
+
+## Source Warnings
+
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [What Constitutes an Omni-Modal Omni- Discipline AI Scientist -And What Good Is He?](https://doi.org/10.13140/rg.2.2.25199.80804)
+### [When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control](https://arxiv.org/abs/2608.15191v1)
 
-- **Authors:** Ijaz Durrani
+- **Authors:** Heydar Soudani, Elizabeth Lingg, Faegheh Hasibi, Navid Rekabsaz
 - **Date:** 2026-08-15
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** No abstract available.
-- **Automated evidence-based assessment:** Not enough evidence · metadata only
-
-### [The Past and Future of AI Scientists](https://arxiv.org/abs/2608.14407v1)
-
-- **Authors:** Ross D. King
-- **Date:** 2026-08-14
 - **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** We present a survey of the past and future of AI Scientists: machines capable of automating science. AI Scientists can originate hypotheses, deduce their consequences, design and execute experiments, interpret their results, and revise their beliefs. Such systems are integrated scientific agents, connected to the li...
-- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** In this paper, we analyze the reasoning trajectories of a variety of DRAs and show that existing agents often suffer from reasoning stagnation: the majority of iterations contribute little or no improvement to final performance, while agents lack awareness of their trajectories and are therefore ineffective at adapt...
+- **Automated evidence-based assessment:** 52/100 · Weak · Medium confidence · partial full text
 - **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; Formal definitions or proof-oriented evidence is present.
+- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.
 
 ## Maybe Relevant
 
-### [ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond](https://arxiv.org/abs/2608.14354v1)
+### [How Do Agents Fail on AutoResearch: End-to-End Diagnostic Evaluation on 100 Real-World Frontier Research Tasks](https://arxiv.org/abs/2608.14905v1)
 
-- **Authors:** Mingming Zhao, Jiqian Dong, Kangping Xu, Zadid Hasan, Chengrui Fan, Shan Jiang, et al.
+- **Authors:** Yanlin Fei, Nazhou Liu, Xinmiao Yu, Shaolong Chen, Lei Li, Rahul Thapa, et al.
 - **Date:** 2026-08-14
 - **Source:** arxiv
-- **Relevance:** maybe (55/100)
+- **Relevance:** maybe (51/100)
 - **Reason:** Review candidate: may support deep research workflows but needs human judgment.
 - **Tags:** web-research
-- **Abstract summary:** Enabling LLM agents to sustain productive, stable, and goal-aligned research over extended horizons is a central challenge for autonomous machine learning and scientific discovery, as progress hinges on continuously managing evolving state, exploration decisions, and computational resources. Pioneering autoresearch...
-- **Automated evidence-based assessment:** 56/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
+- **Abstract summary:** AI has long assisted scientific research, but the rapid advance of LLMs and agentic scaffolds is reshaping the landscape; a single system can now carry whole-stage research from an initial hypothesis all the way to final published paper, which is a paradigm now referred to as AutoResearch. Existing evaluations revea...
+- **Automated evidence-based assessment:** 55/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.
+
+### [AQuA: Recursively Self-Improving Quantitative Trading Research Agents](https://arxiv.org/abs/2608.12841)
+
+- **Authors:** Jiacheng Guo, Suozhi Huang, Yunlong Gao, Zihao Li, Jian Ge, Xu Kuang, et al.
+- **Date:** 2026-08-13
+- **Source:** openalex
+- **Relevance:** maybe (51/100)
+- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
+- **Tags:** research-memory
+- **Abstract summary:** We study recursive self-improvement at the level of quantitative-investment research: whether an autonomous system can use evidence from earlier experiments to improve the hypotheses and candidates proposed in later iterations. We present AQuA, which comprises two separate language-model-driven research systems: one...
+- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [WANDR: A Benchmark for Wide and Deep Research](https://arxiv.org/abs/2608.14747v1)
+
+- **Authors:** Vitaliy Polshkov, Marcin Pitera, Jeremy Yang, Kirill Priemko, Maksim Gaiduk, Aleksandr Nikolenko, et al.
+- **Date:** 2026-08-14
+- **Source:** arxiv
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** benchmark
+- **Abstract summary:** WANDR (Wide ANd Deep Research) is a benchmark of 500 realistic, challenging data-collection tasks for research agents. Each task requires a system to discover a large set of entities that satisfy specified criteria (breadth), investigate each entity through multiple coordinated web searches (depth), and return indep...
+- **Automated evidence-based assessment:** 59/100 · Uncertain · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The available text identifies data or a benchmark used by the work.; Quantitative evaluation signals were detected.
+
+### [Agent Skills Can Be Harmful: An Empirical Study of Skill-Induced Failures in LLM Agents](https://arxiv.org/abs/2608.11888)
+
+- **Authors:** Gen Dong, Yanjie Gao, Liqun Li, Tianyin Xu, Yu Hua, Fan Yang
+- **Date:** 2026-08-12
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** Agent skills are the de facto mechanism for extending LLM agents with reusable guidance. A skill can shape the agent's task execution, including planning, tool use, problem-solving, and validation. Prior work reported mixed results of agent skills: some skills improve task success rates, while others have no effect,...
+- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.

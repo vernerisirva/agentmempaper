@@ -22,8 +22,8 @@
   "first_seen_date": "2026-08-11",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-17 07:18:23",
-  "last_seen_date": "2026-08-17",
+  "last_seen_at": "2026-08-18 07:06:59",
+  "last_seen_date": "2026-08-18",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-11 07:40:37",
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-11 07:39:49",
-    "generated_at": "2026-08-17 07:19:29",
-    "last_seen_at": "2026-08-17 07:18:23",
+    "generated_at": "2026-08-18 07:07:50",
+    "last_seen_at": "2026-08-18 07:06:59",
     "metadata_sources": [
       "arxiv"
     ],
@@ -85,27 +85,99 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-18T07:07:48+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4812,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 69/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "spective of universal user preference interfaces. We propose AlignXada, which induces a reusable natural-language refinementpolicythroughver",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Benchmark.To evaluate profile refinement in multi- domain, lifelong personalization setti",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "mitigate sampling bias. The universal-preference baseline directly passes the universal preferencetothedownstreammodelwithoutrefinement.",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "e evaluate four-way choice ques- tions with exact accuracy, item ranking with Hit@1, rating prediction withRating-Score, and both generation tasks with ROUGE-L. Us",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "ry construction for lifelong personalized agents. Code is available at https://github.com/AntResearchNLP/AlignX-Family/tree/main/AlignXada. Keyword",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 69,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "4b3e1c580875876a2e71e36c4706d2e84fe88169d5ee0419929a9463c4a32303",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -134,7 +206,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

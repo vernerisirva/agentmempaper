@@ -21,8 +21,8 @@
   "first_seen_date": "2026-08-14",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-18 07:06:59",
-  "last_seen_date": "2026-08-18",
+  "last_seen_at": "2026-08-19 07:07:43",
+  "last_seen_date": "2026-08-19",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-14 07:54:15",
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-14 07:53:26",
-    "generated_at": "2026-08-18 07:07:50",
-    "last_seen_at": "2026-08-18 07:06:59",
+    "generated_at": "2026-08-19 07:08:28",
+    "last_seen_at": "2026-08-19 07:07:43",
     "metadata_sources": [
       "arxiv"
     ],
@@ -88,27 +88,79 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-19T07:08:26+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.62,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.6473,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 83/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "ss the quality of all included research articles. We propose a four-layer vulnerability taxonomy that maps thirteen vulnerability types to t",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 26,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "who coded the majority of papers included in the corpus. To assess reliability, 17% of the corpus, i.e., 15 papers, was chosen through",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Threats To Validity",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": ". To the best of our knowledge, this is the first PRISMA-based systematic review specifically focused on identifying vulnerabilities ass",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "A review or study-selection methodology is described.",
+        "section": "Contributions",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 83,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Limitations or threats to validity are acknowledged.",
+      "A review or study-selection methodology is described."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "7c9fab3975c003230ef76e09cc319d640930462a254a1b913d5a4b0d29a6959b",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -137,7 +189,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

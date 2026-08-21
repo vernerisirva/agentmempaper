@@ -1,87 +1,33 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-20](2026-08-20.md).
+Latest daily digest: [2026-08-21](2026-08-21.md).
 
-# Paper Scout Digest - 2026-08-20
+# Paper Scout Digest - 2026-08-21
 
 ## Run Summary
 
-- **Run ID:** 59
-- **Candidates fetched:** 133
-- **New unique papers:** 126
-- **Relevant:** 19
-- **Maybe relevant:** 13
-- **Irrelevant:** 101
-- **Source summary:** arxiv: 33, openalex: 100, semantic_scholar: 0
+- **Run ID:** 60
+- **Candidates fetched:** 130
+- **New unique papers:** 125
+- **Relevant:** 15
+- **Maybe relevant:** 11
+- **Irrelevant:** 104
+- **Source summary:** arxiv: 30, openalex: 100, semantic_scholar: 0
+
+## Source Warnings
+
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Measuring AI Scientists: From Exams to Discovery](https://doi.org/10.26434/chemrxiv.15007582/v1)
+### [Symposium: Trust via Auditable Records for Communities of AI Scientist Agents](https://arxiv.org/abs/2608.19511v1)
 
-- **Authors:** Yuanqi Du, Steven Dillmann, Jon Laurent, Peter Jansen, Haojun Jia, Ludwig Schmidt, et al.
-- **Date:** 2026-08-18
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Large language models and agentic systems are increasingly embedded across the scientific work-flow, from literature synthesis and hypothesis generation to code execution, data analysis and writing. This broadening of use exposes a mismatch in evaluation: current benchmarks can test whether models answer difficult s...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-
-### [Science Done on a Machine by a Machine: AI Agents in Computational Chemistry](https://arxiv.org/abs/2608.18508v1)
-
-- **Authors:** Pavlo O. Dral, Hassan Nawaz, Arif Ullah
-- **Date:** 2026-08-19
+- **Authors:** Dexter Pratt
+- **Date:** 2026-08-20
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** We are witnessing an explosion of agentic systems for computational chemistry simulations: from half a dozen in 2024 to a dozen in 2025, and the current number approaches fifty, surveyed in this Perspective as of 8 August 2026. The capabilities of these agentic systems are shifting from assisting in performing a sel...
-- **Automated evidence-based assessment:** 55/100 · Uncertain · Low confidence · partial full text
-- **Positive signals:** The available text identifies data or a benchmark used by the work.
-
-### [When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control](https://doi.org/10.48550/arxiv.2608.15191)
-
-- **Authors:** Heydar Soudani, Elizabeth Lingg, Faegheh Hasibi, Navid Rekabsaz
-- **Date:** 2026-08-15
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** In this paper, we analyze the reasoning trajectories of a variety of DRAs and show that existing agents often suffer from reasoning stagnation: the majority of iterations contribute little or no improvement to final performance, while agents lack awareness of their trajectories and are therefore ineffective at adapt...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.
-
-## Maybe Relevant
-
-### [TP-Agent: A LLM Agent for Frontier Theoretical Physics Research](https://doi.org/10.5281/zenodo.21998391)
-
-- **Authors:** Peng Wang
-- **Date:** 2026-08-18
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** research-adjacent
-- **Abstract summary:** We present TP-Agent, an autonomous LLM-based agent utilizing a Plan–Execute–Reflect architecture and external computational tools (Python, Mathematica) to assist in theoretical physics research. We evaluate it on two benchmarks: the comprehensive TPBench and the frontier-level PRL-Bench. While TP-Agent demonstrates...
-
-### [TP-Agent: A LLM Agent for Frontier Theoretical Physics Research](https://doi.org/10.5281/zenodo.21998392)
-
-- **Authors:** Peng Wang
-- **Date:** 2026-08-18
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** research-adjacent
-- **Abstract summary:** We present TP-Agent, an autonomous LLM-based agent utilizing a Plan–Execute–Reflect architecture and external computational tools (Python, Mathematica) to assist in theoretical physics research. We evaluate it on two benchmarks: the comprehensive TPBench and the frontier-level PRL-Bench. While TP-Agent demonstrates...
-
-### [WANDR: A Benchmark for Wide and Deep Research](https://doi.org/10.48550/arxiv.2608.14747)
-
-- **Authors:** Vitaliy Polshkov, Marcin Pitera, Jeremy Yang, Kirill Priemko, Maksim Gaiduk, Aleksandr Nikolenko, et al.
-- **Date:** 2026-08-14
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** benchmark
-- **Abstract summary:** WANDR (Wide ANd Deep Research) is a benchmark of 500 realistic, challenging data-collection tasks for research agents. Each task requires a system to discover a large set of entities that satisfy specified criteria (breadth), investigate each entity through multiple coordinated web searches (depth), and return indep...
-- **Automated evidence-based assessment:** 43/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The available text identifies data or a benchmark used by the work.; Quantitative evaluation signals were detected.
+- **Abstract summary:** Symposium is a formal framework and practical implementation to record the operation of AI agents deployed by small scientific research communities. Symposium provides long-term, immutable histories of agent-driven research activity, leaving auditable trails of analyses, hypotheses, data, and scientific discourse. T...
+- **Automated evidence-based assessment:** 49/100 · Weak · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.

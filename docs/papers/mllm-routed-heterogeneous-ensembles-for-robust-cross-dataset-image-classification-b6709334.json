@@ -23,8 +23,8 @@
   "first_seen_date": "2026-08-14",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-21 07:09:58",
-  "last_seen_date": "2026-08-21",
+  "last_seen_at": "2026-08-22 07:01:52",
+  "last_seen_date": "2026-08-22",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-14 07:54:15",
@@ -36,8 +36,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-14 07:53:40",
-    "generated_at": "2026-08-21 07:10:48",
-    "last_seen_at": "2026-08-21 07:09:58",
+    "generated_at": "2026-08-22 07:02:25",
+    "last_seen_at": "2026-08-22 07:01:52",
     "metadata_sources": [
       "arxiv"
     ],
@@ -90,27 +90,110 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-22T07:02:20+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4799,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 68/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "generalize across domains and difficulty levels. We propose ARMDIL, an Adaptive Router for Multi-Domain Image classification with LLMs. ARM",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "anguage reasoning traces. These advances in cross-dataset image classification pave the way for more reliable general-purpose vision syst",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "cy and1.28%in macro F1 score. It outperforms this baseline across all datasets with the exception of EuroSAT, a drop that directly aligns",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Method",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "unified dataset and the mean of per-dataset macro F1 values across unified-dataset domains. ARMDIL achieves an impressive 90.78% accuracy on the unified test set, outperforming the",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Method",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "datasets and computational resources limits their robustness and applicability in dynamic, real-world scenarios. Self-Supervised Image Repre",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "the MLLM router\u2019s lowest confidence scores. This limitation could likely be mitigated by refining the prompt to include a more comprehensiv",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Method",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "Dataset quality controls, licensing, ethics, or documentation were not detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "Dataset quality controls, licensing, ethics, or documentation were not detected."
+    ],
+    "overall_quality_score": 68,
+    "paper_type": "dataset_or_benchmark",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "24b0c8e83f43bb3c09d8eb8fa622322e8a25d12d106709ee5f302b6f0b3dc7ea",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -139,7 +222,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

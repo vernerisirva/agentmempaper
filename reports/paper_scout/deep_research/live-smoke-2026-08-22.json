@@ -1,0 +1,77 @@
+{
+  "ci": true,
+  "date": "2026-08-22",
+  "idempotency_passed": true,
+  "irrelevant_count": 96,
+  "maybe_count": 16,
+  "query_plan_counts": {
+    "arxiv": 4,
+    "openalex": 4,
+    "semantic_scholar": 4
+  },
+  "relevant_count": 27,
+  "run_id": "live-smoke-2026-08-22",
+  "source_errors": [
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "deep research agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 50,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-18",
+        "source_id": "2608.18279",
+        "title": "A Comprehensive Review of Large Language Models for Nanophotonics: From Surrogate Modeling to Autonomous Design",
+        "url": "https://arxiv.org/abs/2608.18279v1"
+      },
+      "source": "arxiv",
+      "status": "success"
+    },
+    {
+      "candidates": 100,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-09",
+        "source_id": "W7202203446",
+        "title": "Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents",
+        "url": "https://arxiv.org/abs/2608.08389"
+      },
+      "source": "openalex",
+      "status": "success"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "deep research agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 1,
+  "sources_succeeded": 2,
+  "state_initialized": true,
+  "total_candidates": 150,
+  "total_raw_records": 200,
+  "unique_candidates": 139
+}

@@ -19,7 +19,7 @@
   "first_seen_date": "2026-08-18",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-23 06:00:20",
+  "last_seen_at": "2026-08-23 07:04:06",
   "last_seen_date": "2026-08-23",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
@@ -32,8 +32,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-18 07:06:59",
-    "generated_at": "2026-08-23 06:01:27",
-    "last_seen_at": "2026-08-23 06:00:20",
+    "generated_at": "2026-08-23 07:05:07",
+    "last_seen_at": "2026-08-23 07:04:06",
     "metadata_sources": [
       "arxiv"
     ],
@@ -82,27 +82,91 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-23T07:05:03+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4721,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 62/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "ls in highly quantized, weight-dominated regimes. We release the eval- uated corpus and the anonymized AgentK reference framework to support",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ght-dominated regimes. We release the eval- uated corpus and the anonymized AgentK reference framework to support replication and extens",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "orm model matches or outperforms the best learned baseline on three of the four backbones (test MAPE 2.2\u20134.4% vs. 3.4\u20136.5%, with no signif",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "lytical modeling underperforms simple regression. Second (F2), compile success strictly bifurcates by backbone capacity (Phi-4-mini 5.7%, Mistral-7B 10.4%, Qwen2.5-Coder-7B 36.7%,",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "proved impossible at scale due to tracing-harness limitations. KernelBench requires specific PyTorch extension scaffolding (load_inline) that",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Page 7 excerpt",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 62,
+    "paper_type": "replication",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "e30190e500bee277c2f72fcb6d5e581773866121d010d824f5716c49393e3d09",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -131,7 +195,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

@@ -1,73 +1,79 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-22](2026-08-22.md).
+Latest daily digest: [2026-08-23](2026-08-23.md).
 
-# Paper Scout Digest - 2026-08-22
+# Paper Scout Digest - 2026-08-23
 
 ## Run Summary
 
-- **Run ID:** 61
-- **Candidates fetched:** 120
-- **New unique papers:** 116
-- **Relevant:** 11
-- **Maybe relevant:** 8
-- **Irrelevant:** 101
-- **Source summary:** arxiv: 20, openalex: 100, semantic_scholar: 0
+- **Run ID:** 62
+- **Candidates fetched:** 118
+- **New unique papers:** 113
+- **Relevant:** 12
+- **Maybe relevant:** 9
+- **Irrelevant:** 97
+- **Source summary:** arxiv: 18, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
 - semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [SGHA: Evidence-Grounded Research Problem Discovery with Local Language Models](https://doi.org/10.48550/arxiv.2608.17501)
+### [Evidence-Grounded AI Operations Workflow: Extending a Human-Designed Quality Monitoring Framework with Agentic AI](https://doi.org/10.5281/zenodo.22050591)
 
-- **Authors:** Sarvesh Gharat, Junpei Komiyama
-- **Date:** 2026-08-18
+- **Authors:** Saheli Basu
+- **Date:** 2026-08-21
 - **Source:** openalex
-- **Relevance:** relevant (98/100)
+- **Relevance:** relevant (93/100)
 - **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
-- **Tags:** ai-scientist, citation-grounding, deep-research-agents
-- **Abstract summary:** Recent efforts toward fully automated AI scientists have demonstrated that language-model agents can generate hypotheses, execute experiments, and draft scientific manuscripts. However, during the early stages of research, when research problems are formulated, these AI scientists often rely heavily on proprietary f...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Tags:** citation-grounding, deep-research-agents
+- **Abstract summary:** Evidence-Grounded AI Operations Workflow is an Applied AI Case Study documenting the later introduction of agentic AI within an established, human-designed quality monitoring and incident-response framework. The underlying governance model, operational definitions, quality taxonomy, decision boundaries, and human-re...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 
-### [A Persistent Fleet of AI Scientists Exhibits Cooperative and Autopoietic Behavior](https://doi.org/10.64898/2026.08.16.745122)
+### [Science Done on a Machine by a Machine: AI Agents in Computational Chemistry](https://doi.org/10.48550/arxiv.2608.18508)
 
-- **Authors:** M. Patel, Wesley A. Wierson, Stephen C. Ekker
-- **Date:** 2026-08-18
+- **Authors:** Pavlo O. Dral, Hassan Nawaz, Arif Ullah
+- **Date:** 2026-08-19
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Scientific work depends on memory, provenance, and continuity across projects, yet most agentic scientist systems are evaluated in bounded workflows or short benchmark runs. We describe a persistent fleet of cooperative AI scientist agents that operated continuously for nearly six months using shared memory, tools,...
+- **Abstract summary:** We are witnessing an explosion of agentic systems for computational chemistry simulations: from half a dozen in 2024 to a dozen in 2025, and the current number approaches fifty, surveyed in this Perspective as of 8 August 2026. The capabilities of these agentic systems are shifting from assisting in performing a sel...
 - **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The available text identifies data or a benchmark used by the work.
+
+### [Symposium: Trust via Auditable Records for Communities of AI Scientist Agents](https://doi.org/10.48550/arxiv.2608.19511)
+
+- **Authors:** Dexter Pratt
+- **Date:** 2026-08-20
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Symposium is a formal framework and practical implementation to record the operation of AI agents deployed by small scientific research communities. Symposium provides long-term, immutable histories of agent-driven research activity, leaving auditable trails of analyses, hypotheses, data, and scientific discourse. T...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+
+### [The Completeness Gap: Coverage Failures at Every Layer of an Agentic LLM Research Pipeline](https://doi.org/10.5281/zenodo.21992676)
+
+- **Authors:** Ritik Sharma, Balvir Singh Thakur
+- **Date:** 2026-08-18
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** General-purpose large language models (LLMs) are increasingly deployed as autonomous research agents: given a web-search tool and a task-specific instruction, they are expected to compile structured, factually complete documents from public sources with little human oversight. We report an empirical case study, span...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The available text identifies data or a benchmark used by the work.; A baseline or comparison system is described.
 
 ## Maybe Relevant
 
-### [Foundation Agents Meet Agentic Deep Research: Evidence-Grounded Clinical Code Forecasting](https://doi.org/10.48550/arxiv.2608.17075)
+### [Beyond Code Generation: Research Frontiers in Autonomous HPC Software Development with LLM Agents](https://doi.org/10.13140/rg.2.2.35158.00329)
 
-- **Authors:** Junda Wang, Meysam Ghaffari, Akshat Choube, Mohsen Sharifi Renani, Hong Yu, Carlos Morato
-- **Date:** 2026-08-17
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Next-encounter ICD forecasting predicts which standardized diagnosis codes will be documented at a future visit from the longitudinal record available beforehand. The task is prospective and multi-label: the target note does not yet exist, and several codes may be correct. Structured EHR foundation models capture re...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
-
-### [Deep Academic Survey: Stateful Agentic Closed-Loop Paradigm for Academic Survey Automation](https://doi.org/10.48550/arxiv.2608.18034)
-
-- **Authors:** Z. Xu, Zhucun Xue, Teng Hu, Yabiao Wang, Yong Liu, Jiangning Zhang
-- **Date:** 2026-08-18
+- **Authors:** Takahiro Katagiri
+- **Date:** 2026-08-20
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** citation-grounding
-- **Abstract summary:** Academic surveys play a central role in organizing rapidly expanding scholarly literature, yet their construction requires extensive paper analysis, coherent knowledge organization, fine-grained citation support, and reliable manuscript assembly. Existing Deep Research and automated survey generation systems address...
-- **Automated evidence-based assessment:** 77/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** No abstract available.
+- **Automated evidence-based assessment:** Not enough evidence · metadata only

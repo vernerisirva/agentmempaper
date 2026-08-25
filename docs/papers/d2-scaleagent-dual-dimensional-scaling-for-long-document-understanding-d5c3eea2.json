@@ -24,8 +24,8 @@
   "first_seen_date": "2026-08-18",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-24 07:30:55",
-  "last_seen_date": "2026-08-24",
+  "last_seen_at": "2026-08-25 07:11:20",
+  "last_seen_date": "2026-08-25",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-18 07:07:49",
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-18 07:06:59",
-    "generated_at": "2026-08-24 07:31:42",
-    "last_seen_at": "2026-08-24 07:30:55",
+    "generated_at": "2026-08-25 07:12:27",
+    "last_seen_at": "2026-08-25 07:11:20",
     "metadata_sources": [
       "arxiv"
     ],
@@ -87,27 +87,90 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-25T07:12:25+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.46950000000000003,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 60/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "eading to insufficient evidence. To address this, we propose D2-ScaleAgent, an agentic framework that introduces a dual-dimensional scaling",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ocurl: a com- prehensive multimodal long document benchmark integrating understanding, reasoning, and locating. InProceedings of the 63rd A",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "e end-to-end QA accuracy of D2-ScaleAgent and all baseline methods on the six benchmarks. Overall, D2-ScaleAgent achieves the best aver- a",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": ". While multi-agent systems mitigate single-model limitations in com- plex DocQA, their predetermined workflows and fixed budgets struggle to",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 60,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "5856c6dab2c617756edee3811bf5fe966fe28962125ac14518d52b0805638082",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -136,7 +199,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

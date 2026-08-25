@@ -22,8 +22,8 @@
   "first_seen_date": "2026-08-18",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-24 07:30:55",
-  "last_seen_date": "2026-08-24",
+  "last_seen_at": "2026-08-25 07:11:20",
+  "last_seen_date": "2026-08-25",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-18 07:07:49",
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-18 07:06:59",
-    "generated_at": "2026-08-24 07:31:42",
-    "last_seen_at": "2026-08-24 07:30:55",
+    "generated_at": "2026-08-25 07:12:27",
+    "last_seen_at": "2026-08-25 07:11:20",
     "metadata_sources": [
       "arxiv"
     ],
@@ -85,27 +85,81 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-25T07:12:23+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.46430000000000005,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 56/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "udget, artifact, approval, and audit constraints. We propose a policy algebra that defines the reliability enve- lope within which agent cap",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ty\u2013 capability trade-off rather than a capability benchmark: the policy-algebra runtime intervenes on 94.8% of policy-violating events whil",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "bra\u00b7Runtime governance\u00b7Trust-preserving execution\u00b7Cost-aware execution 1 arXiv:2608.16402v1 [cs.AI] 17 Aug 2026",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "Extraction was limited to 120000 characters."
+    ],
+    "overall_quality_score": 56,
+    "paper_type": "systems_or_application",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "b9db43449e31519742e53dc70bc063ad9611662188b702df2277273654714306",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -134,7 +188,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

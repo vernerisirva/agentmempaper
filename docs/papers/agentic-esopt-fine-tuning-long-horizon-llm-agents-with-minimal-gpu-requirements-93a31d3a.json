@@ -24,8 +24,8 @@
   "first_seen_date": "2026-08-19",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-25 07:11:20",
-  "last_seen_date": "2026-08-25",
+  "last_seen_at": "2026-08-26 07:13:14",
+  "last_seen_date": "2026-08-26",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-19 07:08:28",
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-19 07:07:42",
-    "generated_at": "2026-08-25 07:12:27",
-    "last_seen_at": "2026-08-25 07:11:20",
+    "generated_at": "2026-08-26 07:14:09",
+    "last_seen_at": "2026-08-26 07:13:14",
     "metadata_sources": [
       "arxiv"
     ],
@@ -91,27 +91,82 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-26T07:14:09+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.47600000000000003,
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "btain useful ES updates with smaller populations. Our contributions are summarized as follows: \u2022 We identify that, on long-horizon agentic reasonin",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "interactions and sparse rewards, exposing several limitations of RL: its heavyweight backpropagation makes it impractical to fine-tune larger",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "d baseline in 28 of 36 settings. GitHub :https://github.com/zz1358m/Agentic-ESOpt Correspondence:zhi.zheng@u.nus.edu Key Challenges in Lon",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "Extraction was limited to 120000 characters."
+    ],
+    "overall_quality_score": 65,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "2e5a3edf648771b7f81c5dd8f5fdabc66ff8290876ea3721f9540044e53abaa5",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -140,7 +195,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

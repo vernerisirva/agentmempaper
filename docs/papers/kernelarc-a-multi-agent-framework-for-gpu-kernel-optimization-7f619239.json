@@ -23,8 +23,8 @@
   "first_seen_date": "2026-08-19",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-25 07:11:20",
-  "last_seen_date": "2026-08-25",
+  "last_seen_at": "2026-08-26 07:13:14",
+  "last_seen_date": "2026-08-26",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-19 07:08:28",
@@ -36,8 +36,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-19 07:07:42",
-    "generated_at": "2026-08-25 07:12:27",
-    "last_seen_at": "2026-08-25 07:11:20",
+    "generated_at": "2026-08-26 07:14:09",
+    "last_seen_at": "2026-08-26 07:13:14",
     "metadata_sources": [
       "arxiv"
     ],
@@ -97,27 +97,89 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-26T07:14:07+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.99,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.9483999999999999,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 67/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "conclusions-only shared memory, a deter- ministic benchmark guard, and read-only cross-agent state with plateau-triggered drafting. We eval",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "on one fixed shape, 3.2% above the matched cuBLAS baseline measured during the campaign. This demonstrates depth along one narrow playbook",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "score, such as the inverse of the geometric mean latency across all workloads of a given problem. The constraint\ud835\udc36(\ud835\udc58,\ud835\udc64)= 1 2",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Methodology",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "efill attention, and custom GEMM development. The ablation study supports the coordination hypothesis: at a roughly 100-candidate budget,",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 67,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "eeaf6a796d80cfc9fa6c6129519ffd528da1f0dbcdc08afc892e3ab85d686d58",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -146,7 +208,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

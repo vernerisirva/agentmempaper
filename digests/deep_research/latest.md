@@ -1,69 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-08-28](2026-08-28.md).
+Latest daily digest: [2026-08-29](2026-08-29.md).
 
-# Paper Scout Digest - 2026-08-28
+# Paper Scout Digest - 2026-08-29
 
 ## Run Summary
 
-- **Run ID:** 67
-- **Candidates fetched:** 126
-- **New unique papers:** 120
-- **Relevant:** 20
+- **Run ID:** 68
+- **Candidates fetched:** 124
+- **New unique papers:** 117
+- **Relevant:** 19
 - **Maybe relevant:** 2
-- **Irrelevant:** 104
-- **Source summary:** arxiv: 26, openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 103
+- **Source summary:** arxiv: 24, openalex: 100, semantic_scholar: 0
 
-## Source Warnings
-
-- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
-
-## Highly Relevant
-
-### [AFDBench: A Reasoning-First AI Scientist for NationalWeather Service Forecast Discussions](https://doi.org/10.48550/arxiv.2608.24954)
-
-- **Authors:** Manmeet Singh, Somnath Luitel, Prabhjot Singh, Manraaj Banga, Naveen Sudharsan, Josh Durkee
-- **Date:** 2026-08-25
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Large language models (LLMs) hallucinate numerical values when generating high-stakes meteorological text, posing risks for weather communication. We present AFDBench, an AI meteorologist that generates professional Area Forecast Discussions (AFDs) by reasoning through structured AI weather forecast data from Google...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
-
-### [AdaVDR: Adaptive Tool Use and Reflection for Video Deep Research](https://doi.org/10.48550/arxiv.2608.25559)
-
-- **Authors:** Xintong Zhang, Xiaomeng Fan, Shilin Yan, Ekko He, Zicheng Liu, Zijian Zou, et al.
-- **Date:** 2026-08-26
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Video deep research answers complex questions by jointly understanding video content and retrieving external knowledge from the open Web. However, diverse questions and videos require different tool-use strategies, and inappropriate tool calls can produce incorrect results. Uncertain grounding and retrieval also mak...
-
-### [Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research](https://arxiv.org/abs/2608.26753v1)
-
-- **Authors:** Lezhi Yu, Xiaogang Xu, Yuhua Zhou, Shuibing He, Aimin Pan
-- **Date:** 2026-08-27
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** LLM agents used for scientific experimentation must do more than generate executable code: they must implement the reference method faithfully, design experiments that test the paper's claims, and provide evidence supporting those claims. We show that agents often produce methodological hallucinations: silently redu...
-- **Automated evidence-based assessment:** 64/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
-
-### [RATIO: A Benchmark for Retrieval Across Typed Ideation Operations in Scientific Literature](https://arxiv.org/abs/2608.27394v1)
-
-- **Authors:** Maayan Sharon, Tom Hope
-- **Date:** 2026-08-27
-- **Source:** arxiv
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Retrieved scientific literature can serve as inspiration for both human and AI scientists. Inspiration can take different forms: prior work may directly suggest how to address a problem, or surface directions at different levels of abstraction - zooming out to a more general view or zooming in to a concrete realizat...
-- **Automated evidence-based assessment:** 48/100 · Weak · Medium confidence · partial full text
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+No new relevant or maybe-relevant papers found.

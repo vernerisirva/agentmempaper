@@ -25,8 +25,8 @@
   "first_seen_date": "2026-08-25",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-08-30 11:59:11",
-  "last_seen_date": "2026-08-30",
+  "last_seen_at": "2026-08-31 13:57:26",
+  "last_seen_date": "2026-08-31",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-25 07:12:27",
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-25 07:11:19",
-    "generated_at": "2026-08-30 12:00:07",
-    "last_seen_at": "2026-08-30 11:59:11",
+    "generated_at": "2026-08-31 13:59:14",
+    "last_seen_at": "2026-08-31 13:57:26",
     "metadata_sources": [
       "arxiv"
     ],
@@ -88,27 +88,99 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-31T13:59:13+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4994,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 83/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "t a targeted mitigation. 4 Design of CodeMechanic We present the design ofCodeMechanicin Figure 3.Two-Dimensional Context Extractorprovides",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ointer types and memory addresses. Since the ARVO benchmark (Mei et al., 2024) and OSS- Fuzz (google, 2023b) enables aggressive compiler op",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Implementation",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "s that pass PoC- replay validation) than the best baseline while using 91% fewer tokens. Manual audit further shows thatCodeMechanicproduc",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "tes more plausible patches at substantially lower cost thanPatchAgentandSan2Patch, and it produces 240% and 325% more se- mantically equivalent patches, respectively. We release th",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 16,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "omatic production deployment. We discuss the main limitations below. 8.1 Internal Threats. LimitedValidation.CodeMechanicvalidatesbufferbound",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 15,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Threats To Validity",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "es and commonly validate them only by replaying a proof of concept (PoC). This weak oracle accepts patches that silence the observed cr",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 83,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "1a8a9249b54875574c6baf5b544ae5a89e17d3319b06e554bd1a35c9b6e99802",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -137,7 +209,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

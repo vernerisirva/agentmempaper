@@ -1,0 +1,77 @@
+{
+  "ci": true,
+  "date": "2026-09-01",
+  "idempotency_passed": true,
+  "irrelevant_count": 101,
+  "maybe_count": 7,
+  "query_plan_counts": {
+    "arxiv": 4,
+    "openalex": 4,
+    "semantic_scholar": 4
+  },
+  "relevant_count": 33,
+  "run_id": "live-smoke-2026-09-01",
+  "source_errors": [
+    {
+      "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+      "query": "deep research agent",
+      "source": "semantic_scholar",
+      "type": "http"
+    }
+  ],
+  "source_results": [
+    {
+      "candidates": 54,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-30",
+        "source_id": "2608.29685",
+        "title": "Last Step Matters: Early Uncertainty Cannot Predict Failure in Long-Horizon Agents",
+        "url": "https://arxiv.org/abs/2608.29685v1"
+      },
+      "source": "arxiv",
+      "status": "success"
+    },
+    {
+      "candidates": 100,
+      "errors": [],
+      "queries_attempted": 4,
+      "raw_records": 100,
+      "sample_candidate": {
+        "has_abstract": true,
+        "published_date": "2026-08-24",
+        "source_id": "W7204199332",
+        "title": "From Inertia to Objectivity: Improving Deep Research Agents with Noise Isolation",
+        "url": "https://arxiv.org/abs/2608.23045"
+      },
+      "source": "openalex",
+      "status": "success"
+    },
+    {
+      "candidates": 0,
+      "errors": [
+        {
+          "message": "Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.",
+          "query": "deep research agent",
+          "source": "semantic_scholar",
+          "type": "http"
+        }
+      ],
+      "queries_attempted": 1,
+      "raw_records": 0,
+      "sample_candidate": null,
+      "source": "semantic_scholar",
+      "status": "failed"
+    }
+  ],
+  "sources_attempted": 3,
+  "sources_failed": 1,
+  "sources_succeeded": 2,
+  "state_initialized": true,
+  "total_candidates": 154,
+  "total_raw_records": 200,
+  "unique_candidates": 141
+}

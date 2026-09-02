@@ -19,8 +19,8 @@
   "first_seen_date": "2026-08-26",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-01 11:43:48",
-  "last_seen_date": "2026-09-01",
+  "last_seen_at": "2026-09-02 11:23:14",
+  "last_seen_date": "2026-09-02",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-26 07:14:09",
@@ -32,8 +32,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-26 07:13:13",
-    "generated_at": "2026-09-01 11:46:01",
-    "last_seen_at": "2026-09-01 11:43:48",
+    "generated_at": "2026-09-02 11:25:01",
+    "last_seen_at": "2026-09-02 11:23:14",
     "metadata_sources": [
       "arxiv"
     ],
@@ -82,27 +82,120 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-02T11:25:00+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4864,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 73/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "RAM) using Qwen3-8B-AWQ, a 4-bit quantized model. We introduce three structural adap- tations for this setting: (1) system-managed layered mem",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ed in our reduced-scale port. 3.1 Environment and Baseline We adopt the Agentopia framework (Wang et al., 2026) with five active agents co",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "r experience-following behavior and computational cost (Xiong et al., 2026; Zhang et al., 2026). Our system-managed L2/L3 pipeline is motivated by this problem, but we evalua",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "h disabled; it is not a 52-week M+H leave-one-out ablation, so the time module\u2019s causal contribution to behav- ioral diversity remains unq",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "gical critiques therefore call for cali- bration, robustness checks, reproducible protocols, and explicit limits on population-level inferen",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ale and identify context growth as a long-horizon limitation observed in Run 3. 4.2 Observed Health Trajectories Figure 2 shows the weekly p",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "ure rate. The public research artifact at https://github.com/ luo675/Agentopia/tree/paper is maintained as a fork of the upstream Agentopia",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 73,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "c7a599ac06d9547748804a4d9321ff9e3be6a4d39db0b6b5a2f420f5c06e4d41",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -131,7 +224,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

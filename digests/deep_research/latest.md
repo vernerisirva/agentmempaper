@@ -1,60 +1,88 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-01](2026-09-01.md).
+Latest daily digest: [2026-09-02](2026-09-02.md).
 
-# Paper Scout Digest - 2026-09-01
+# Paper Scout Digest - 2026-09-02
 
 ## Run Summary
 
-- **Run ID:** 71
-- **Candidates fetched:** 129
-- **New unique papers:** 123
-- **Relevant:** 21
-- **Maybe relevant:** 4
-- **Irrelevant:** 104
-- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 0
+- **Run ID:** 72
+- **Candidates fetched:** 136
+- **New unique papers:** 129
+- **Relevant:** 22
+- **Maybe relevant:** 3
+- **Irrelevant:** 111
+- **Source summary:** arxiv: 36, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
-- semantic_scholar failed for 'deep research agent': http error for https://api.semanticscholar.org/graph/v1/paper/search?query=deep+research+agent&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds%2CopenAccessPdf: request failed after 3 attempts: HTTP Error 500: Internal Server Error
-- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'deep research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Closing the Loop in AI-Driven Biomedical Discovery](https://doi.org/10.20944/preprints202608.2107.v1)
+### [Dr. Claw: An AI Scientist Workspace for Vibe Research](https://arxiv.org/abs/2609.00365v1)
 
-- **Authors:** Ada Fang, K. Li, Ayush Noori, Lukas Fesser, Marinka Žitnik
-- **Date:** 2026-08-28
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** AI scientists generate hypotheses, propose experiments, and analyze datasets, and several have produced findings that were confirmed in the laboratory. Although they are opening a path to autonomous discovery, the loop from hypothesis to experiment to revised hypothesis is still often anecdotal. Here, we consider ho...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-
-### [PaperGym: Rubric-Centered Evolution for Research-Plan Generation](https://arxiv.org/abs/2608.31119v1)
-
-- **Authors:** Yuhan Wang, Zhengxi Lu, Yuchen Yan, Kaitao Song, Wenqi Zhang, Weiming Lu, et al.
+- **Authors:** Dingjie Song, Hanrong Zhang, Dawei Liu, Yixin Liu, Zongxia Li, Zhengqing Yuan, et al.
 - **Date:** 2026-08-31
 - **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Research planning is the decisive capability of AI scientists. Yet a research plan admits no verifiable answer, so reinforcement learning lacks the environment it requires: tasks paired with a critic. Rubrics extracted from scientific papers can supply the critic. Existing pipelines, however, draw the question and t...
-- **Automated evidence-based assessment:** 63/100 · Uncertain · Medium confidence · partial full text
+- **Abstract summary:** Command-line coding agents (e.g., Claude Code, Gemini CLI) can already read and write files and sustain long sessions, yet end-to-end research still fragments across chat tools, IDEs, terminals, and writing environments, and the decisions that make it auditable are rarely preserved. We present Dr. Claw, an open-sour...
+- **Automated evidence-based assessment:** 51/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
+
+### [Explore Before Committing: Hypothesis-Guided Search for Deep Research Agents](https://arxiv.org/abs/2609.01294v1)
+
+- **Authors:** Ruochen Zhou, Zhengyu Chen, Luan Zhang, Siyang Gao, Yee Whye Teh, Shiqi Chen
+- **Date:** 2026-09-01
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep-research agents answer complex questions by interacting with search and browsing tools, yet they often search along a single evolving trajectory. Our trajectory-level analysis reveals a common failure mode in which the agent may encounter an early search state with several plausible directions, but follow one d...
+- **Automated evidence-based assessment:** 64/100 · Uncertain · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
+
+### [RATIO: A Benchmark for Retrieval Across Typed Ideation Operations in Scientific Literature](https://arxiv.org/abs/2608.27394)
+
+- **Authors:** Maayan Sharon, Tom Hope
+- **Date:** 2026-08-27
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Retrieved scientific literature can serve as inspiration for both human and AI scientists. Inspiration can take different forms: prior work may directly suggest how to address a problem, or surface directions at different levels of abstraction - zooming out to a more general view or zooming in to a concrete realizat...
+- **Automated evidence-based assessment:** 48/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [DualStake: Dual-Path Confidence Calibration in Deep Research Agents](https://arxiv.org/abs/2609.00935v1)
+
+- **Authors:** Yinuo Xu, Yuwei Liang, Jianjie Cheng, Meng Wang, Yongcan Yu, Shuo Lu, et al.
+- **Date:** 2026-09-01
+- **Source:** arxiv
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Deep Research agents tackle knowledge-intensive tasks through multi-round retrieval and decision-oriented generation. However, these agents suffer from severe overconfidence, making their expressed confidence unreliable for user trust and downstream abstention. To address this, we augment the Deep Research pipeline...
+- **Automated evidence-based assessment:** 54/100 · Weak · Medium confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
 - **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
 
 ## Maybe Relevant
 
-### [BAITBENCH: Measuring Agent Reward Hacking with Optional Shortcuts Planted in ML Tasks](https://arxiv.org/abs/2608.30724v1)
+### [Beneath the Diff: Diagnosing and Mitigating Algorithmic Mode Collapse in Code-Level Autonomous Research Loops](https://arxiv.org/abs/2609.00077v1)
 
-- **Authors:** Pradyumna Shyama Prasad, Meiri Anto, Leon Eshuijs, Julian Moncarz, Kaustubh Kislay, Juan J. Vazquez
+- **Authors:** Bowei He, Weixu Zhang, Yili Jin, Xue Liu
 - **Date:** 2026-08-31
 - **Source:** arxiv
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** LLM agents are increasingly used to run autonomous ML experiments, iterating on target metrics with little human oversight. Prior work has documented reward hacking in these environments, bringing into question the validity of produced research and the broader safety case for AI R&D. Existing benchmarks do not measu...
-- **Automated evidence-based assessment:** 84/100 · Promising · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Abstract summary:** Code-level autonomous research loops (ARLs) have recently emerged as a concrete object of study in automated machine learning research. In such loops, an LLM agent proposes modifications to an experimental training pipeline, executes the modified pipeline, and retains edits that improve a verifiable in-loop metric....
+- **Automated evidence-based assessment:** 76/100 · Promising · Medium confidence · partial full text
+- **Positive signals:** The available text identifies data or a benchmark used by the work.; A baseline or comparison system is described.

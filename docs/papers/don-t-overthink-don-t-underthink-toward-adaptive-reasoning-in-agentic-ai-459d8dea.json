@@ -20,8 +20,8 @@
   "first_seen_date": "2026-08-28",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-02 11:23:14",
-  "last_seen_date": "2026-09-02",
+  "last_seen_at": "2026-09-03 11:20:38",
+  "last_seen_date": "2026-09-03",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-28 18:46:54",
@@ -33,8 +33,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-28 18:46:03",
-    "generated_at": "2026-09-02 11:25:01",
-    "last_seen_at": "2026-09-02 11:23:14",
+    "generated_at": "2026-09-03 11:21:57",
+    "last_seen_at": "2026-09-03 11:20:38",
     "metadata_sources": [
       "arxiv"
     ],
@@ -87,27 +87,89 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-03T11:21:57+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.62,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.6265000000000001,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 67/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "er inference cost or degraded task performance. \u2022 We present a quantitative analysis of reasoning allocation in a LangGraph-based agentic AI",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "e them on MATH-500 and the GAIA public validation benchmark. Using tool-decision latency, token consumption, token- limit exhaustion, and a",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "and the highest final inference time (180.80 s), compared with Qwen3.5-4B (1732.39 reasoning tokens, 2461.67 output tokens, 70.21 s) and Llama",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "t reasoning, resulting in increased computational cost or degraded task performance. The first major issue isover-reasoning. On MATH-500, Phi- 4-reasoning exhibits the highest over",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 67,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "6a958de5dc4e45ab620b5d59c702db3e037afb4c029cb01c46dbf69eb35f8960",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -136,7 +198,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import json
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -10,7 +11,7 @@ from paper_scout.digest import DigestMetadata, render_digest, write_digest
 from paper_scout.digest_quality import write_digest_quality_report
 from paper_scout.fetchers import ArxivFetcher, OpenAlexFetcher, SemanticScholarFetcher
 from paper_scout.llm import classify_with_optional_llm
-from paper_scout.models import ClassificationResult, PaperCandidate
+from paper_scout.models import ClassificationResult, PaperCandidate, SourceFetchResult
 from paper_scout.notifications import send_optional_notifications
 from paper_scout.relevance import classify_with_rules, should_consider_for_llm
 from paper_scout.http import HttpRequestError
@@ -40,16 +41,17 @@ class RunResult:
     source_failures: list[str] | None = None
     query_plan_counts: dict[str, int] | None = None
     failed_query_retry_count: int = 0
+    query_diagnostics: list[dict] | None = None
 
 
-def default_fetchers():
-    return [ArxivFetcher(), SemanticScholarFetcher(), OpenAlexFetcher()]
+def default_fetchers(config: ScoutConfig | None = None):
+    return [ArxivFetcher(), SemanticScholarFetcher(max_metadata_requests=config.max_metadata_requests if config else None), OpenAlexFetcher()]
 
 
 def search_sources(config: ScoutConfig, days: int | None = None, fetchers=None) -> list[PaperCandidate]:
     active_days = days if days is not None else config.days
     candidates: list[PaperCandidate] = []
-    active_fetchers = fetchers or default_fetchers()
+    active_fetchers = fetchers or default_fetchers(config)
     by_source = {getattr(fetcher, "source", fetcher.__class__.__name__): fetcher for fetcher in active_fetchers}
     for query in plan_queries(config, sources=set(by_source)):
         fetcher = by_source[query.source]
@@ -80,7 +82,8 @@ def run_scout(
     decision_counts = {"relevant": 0, "maybe": 0, "irrelevant": 0}
     seen_keys: set[str] = set()
     source_failures: list[str] = []
-    active_fetchers = fetchers or default_fetchers()
+    query_diagnostics: list[dict] = []
+    active_fetchers = fetchers or default_fetchers(config)
     if sources:
         active_fetchers = [fetcher for fetcher in active_fetchers if getattr(fetcher, "source", "") in sources]
     fetchers_by_source = {getattr(fetcher, "source", fetcher.__class__.__name__): fetcher for fetcher in active_fetchers}
@@ -95,12 +98,21 @@ def run_scout(
         for query in queries:
             fetcher = fetchers_by_source[query.source]
             query_days = max(active_days, query.days_override or active_days)
+            http = getattr(fetcher, "http", None)
+            before_requests = getattr(http, "request_count", 0)
+            before_retries = getattr(http, "retry_count", 0)
+            diagnostic = {"source": query.source, "query": query.provider_query, "route": query.route, "days": query_days,
+                          "page_limit": 1, "record_limit": query.max_results or config.max_results_per_source}
             try:
-                candidates = _execute_query(fetcher, query, query_days, config.max_results_per_source)
+                result = _execute_query_with_diagnostics(fetcher, query, query_days, config.max_results_per_source)
+                candidates = result.candidates
+                diagnostic.update(raw_count=result.raw_count, candidates=len(candidates), pages=result.page_count,
+                                  incomplete=result.incomplete, metadata_requests=result.metadata_requests)
             except Exception as exc:  # noqa: BLE001
                 message = format_source_failure(query.source, query.query, exc)
                 LOGGER.warning("Fetcher %s failed for %r: %s", query.source, query.query, exc)
                 source_failures.append(message)
+                diagnostic.update(status="failed", incomplete=True, error_type=_failure_type(exc))
                 store.record_failed_query(
                     config.track_id,
                     query.source,
@@ -109,14 +121,24 @@ def run_scout(
                     _failure_type(exc),
                 )
                 continue
-            store.resolve_failed_query(config.track_id, query.source, query.normalized_query, query_days)
+            finally:
+                diagnostic.update(http_attempts=getattr(http, "request_count", 0) - before_requests,
+                                  http_retries=getattr(http, "retry_count", 0) - before_retries)
+                query_diagnostics.append(diagnostic)
+            if result.incomplete:
+                diagnostic["status"] = "incomplete_window"
+                source_failures.append(f"{query.source}: incomplete discovery window for {query.query!r}; single-page record limit reached.")
+                store.record_failed_query(config.track_id, query.source, query.normalized_query, query_days, "incomplete_window")
+            else:
+                diagnostic["status"] = "success"
+                store.resolve_failed_query(config.track_id, query.source, query.normalized_query, query_days)
             fetched_count += len(candidates)
             source_counts[query.source] = source_counts.get(query.source, 0) + len(candidates)
             for candidate in candidates:
                 rule_result = classify_with_rules(candidate, profile=config.relevance_profile)
                 classification = (
                     classify_with_optional_llm(candidate, rule_result)
-                    if should_consider_for_llm(rule_result)
+                    if config.relevance_llm_enabled and should_consider_for_llm(rule_result)
                     else rule_result
                 )
                 key = store.upsert_paper(candidate, classification)
@@ -161,6 +183,13 @@ def run_scout(
             else:
                 LOGGER.warning("Digest written but notification failed; papers were not marked notified")
         store.finish_run(run_id, fetched_count=fetched_count, new_count=len(digest_papers), notified_count=notified_count)
+        config.report_dir.mkdir(parents=True, exist_ok=True)
+        report = {"track": config.track_id, "run_id": run_id, "query_diagnostics": query_diagnostics,
+                  "query_plan_counts": query_plan_counts, "failed_query_retries": failed_query_retry_count,
+                  "coverage_complete": False,
+                  "coverage_note": "Bounded query coverage only; source indexes and omitted queries may miss papers.",
+                  "quality_assessments": len(quality_stats.assessed), "notifications_sent": notified_count}
+        (config.report_dir / f"discovery-run-{run_id}.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         return RunResult(
             run_id=run_id,
             fetched_count=fetched_count,
@@ -172,6 +201,7 @@ def run_scout(
             source_failures=source_failures,
             query_plan_counts=query_plan_counts,
             failed_query_retry_count=failed_query_retry_count,
+            query_diagnostics=query_diagnostics,
         )
     except Exception:
         store.finish_run(run_id, fetched_count=fetched_count, new_count=0, notified_count=0, status="failed")
@@ -337,7 +367,9 @@ def _queries_for_run(config: ScoutConfig, store: PaperStore, sources: set[str], 
     selected: list[PlannedQuery] = []
     for source in sorted(by_source):
         seen: set[str] = set()
-        budget = config.query_budgets.get(source, 5)
+        budget = max(0, config.query_budgets.get(source, 5))
+        if budget == 0:
+            continue
         for query in by_source[source]:
             if query.normalized_query in seen:
                 continue
@@ -356,3 +388,10 @@ def _execute_query(fetcher, query: PlannedQuery, days: int, max_results: int) ->
 
 def _failure_type(exc: Exception) -> str:
     return exc.kind if isinstance(exc, HttpRequestError) else exc.__class__.__name__.lower()
+
+
+def _execute_query_with_diagnostics(fetcher, query: PlannedQuery, days: int, max_results: int) -> SourceFetchResult:
+    if hasattr(fetcher, "search_planned_with_diagnostics"):
+        return fetcher.search_planned_with_diagnostics(query, days, max_results)
+    candidates = _execute_query(fetcher, query, days, max_results)
+    return SourceFetchResult(len(candidates), candidates)

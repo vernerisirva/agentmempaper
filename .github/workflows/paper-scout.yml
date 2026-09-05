@@ -44,7 +44,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install --disable-pip-version-check -r requirements.txt
+        run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
 
       - name: Validate rules, idempotency, and live source payloads
         env:
@@ -52,11 +52,17 @@ jobs:
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
         run: |
           set -o pipefail
+          python -m unittest discover -s tests -p "*.py" | tee paper-scout-tests.log
           python -m paper_scout evaluate-relevance --track agent_memory | tee relevance-eval-agent-memory.log
           python -m paper_scout evaluate-relevance --track deep_research | tee relevance-eval-deep-research.log
           python -m paper_scout evaluate-quality --track agent_memory | tee quality-eval-agent-memory.log
           python -m paper_scout evaluate-quality --track deep_research | tee quality-eval-deep-research.log
           python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
+          python -m paper_scout evaluate-relevance --track engram | tee relevance-eval-engram.log
+          python -m paper_scout evaluate-quality --track engram | tee quality-eval-engram.log
+          python -m paper_scout evaluate-discovery --track deep_research | tee discovery-eval-deep-research.log
+          python -m paper_scout evaluate-discovery --track engram | tee discovery-eval-engram.log
+          python -m paper_scout validate-idempotency --track engram | tee idempotency-engram.log
           python -m paper_scout validate-idempotency --track agent_memory | tee idempotency-agent-memory.log
           python -m paper_scout validate-idempotency --track deep_research | tee idempotency-deep-research.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_agent_memory_smoke.sqlite3 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-agent-memory.log
@@ -78,6 +84,13 @@ jobs:
           python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
           python -m paper_scout run --track deep_research | tee paper-scout-run-deep-research.log
           python -m paper_scout build-site --track deep_research | tee paper-scout-build-site-deep-research.log
+          # Missing seed records only; repeat runs perform no direct-ID requests.
+          python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
+          python -m paper_scout run --track engram | tee paper-scout-run-engram.log
+          python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
+
+      - name: Validate generated schemas, links, and runtime exclusion
+        run: python .github/scripts/check_paper_scout_site.py
 
       - name: Write run summary
         if: always()
@@ -88,7 +101,7 @@ jobs:
             echo "### Command output"
             echo
             echo '```text'
-            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log quality-eval-agent-memory.log quality-eval-deep-research.log discovery-eval-agent-memory.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log 2>/dev/null || true
+            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log quality-eval-agent-memory.log quality-eval-deep-research.log discovery-eval-agent-memory.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log *engram.log discovery-eval-deep-research.log 2>/dev/null || true
             echo '```'
             echo
             echo "### Generated files"
@@ -161,7 +174,7 @@ jobs:
       # current even if Pages had a transient deployment failure.
       - name: Prepare consistent Paper Scout state snapshot
         if: ${{ steps.commit-scout-updates.outcome == 'success' }}
-        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
 
       - name: Persist durable Paper Scout state
         id: persist-scout-state

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latest Paper Scout Run - Engram &amp; Conditional Memory Paper Library</title>
+  <meta name="description" content="Daily Paper Scout library of Engram-style model memory, learned lookup tables, and transferable memory mechanisms.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="index.html">Paper Scout</a>
+            <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a>
+              <a href="index.html">Library</a>
+              <a href="archive.html">Archive</a>
+              <a href="about.html">About</a>
+              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/engram/latest.md">Markdown digest</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Latest update 2026-09-05</p>
+          <h1>Latest run</h1>
+          <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
+        </header>
+
+    <section class="summary-strip" aria-label="Latest run summary metrics">
+      <div><span>Latest update date</span><strong>2026-09-05</strong></div><div><span>New in latest run</span><strong>2</strong></div><div><span>Highly relevant</span><strong>2</strong></div><div><span>Review candidates</span><strong>0</strong></div>
+      <div class="source-summary"><span>Run summary</span><strong>arxiv: 6, openalex: 76, semantic_scholar: 0</strong></div>
+    </section>
+
+
+    <section class="reading-controls library-controls" aria-label="Library controls" data-default-decision="all">
+      <label class="search-field" for="paper-search">
+        <span>Search</span>
+        <input id="paper-search" type="search" placeholder="Search papers...">
+      </label>
+      <label class="select-field" for="paper-sort">
+        <span>Sort</span>
+          <select id="paper-sort">
+          <option value="latest-relevant" selected>Latest relevant</option>
+          <option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>
+          <option value="score-desc">Screening match</option>
+          <option value="published-desc">Publication date</option>
+          <option value="first-seen-desc">First seen</option>
+          <option value="title-asc">Title</option>
+        </select>
+      </label>
+      <label class="select-field relevance-filter" for="relevance-filter">
+        <span>Show</span>
+        <select id="relevance-filter">
+          <option value="relevant">Highly relevant</option>
+          <option value="all" selected>All papers</option>
+          <option value="maybe">Review candidates</option>
+        </select>
+      </label>
+      <label class="toggle-control new-only-filter" for="new-only">
+        <input id="new-only" type="checkbox">
+        <span>New only</span>
+      </label>
+
+      <details class="quality-controls">
+        <summary>Scholarly quality filters</summary>
+        <div class="quality-control-grid">
+          <label class="select-field" for="quality-minimum">
+            <span>Minimum score</span>
+            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
+          </label>
+          <label class="select-field" for="quality-recommendation">
+            <span>Recommendation</span>
+            <select id="quality-recommendation">
+              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-confidence">
+            <span>Confidence</span>
+            <select id="quality-confidence">
+              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-scope">
+            <span>Assessment scope</span>
+            <select id="quality-scope">
+              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
+            </select>
+          </label>
+          <label class="select-field" for="quality-visibility">
+            <span>Weak assessments</span>
+            <select id="quality-visibility">
+              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
+            </select>
+          </label>
+          <label class="toggle-control" for="quality-include-unknown">
+            <input id="quality-include-unknown" type="checkbox" checked>
+            <span>Include unassessed papers</span>
+          </label>
+        </div>
+      </details>
+
+    </section>
+
+        <section class="paper-section primary-section" id="paper-library" data-section="latest">
+          <div class="section-heading">
+            <p class="section-kicker">New this run</p>
+            <h2>Papers first seen in the latest Paper Scout run.</h2>
+          </div>
+
+          <div class="paper-list" id="paper-list">
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="true" data-published="2026-09-03" data-first-seen="2026-09-04" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory arxiv relevant" data-quality-score="78" data-quality-recommendation="uncertain" data-quality-confidence="low" data-quality-scope="title_and_abstract" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
+        <p class="meta">Yunao Zheng, Bin Wen, Xiaojie Wang · Published 2026-09-03 · Source: arXiv</p>
+        <p class="reason"><strong>Why included:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <div class="quality-summary">
+      <strong>Automated evidence-based assessment</strong>
+      <span>78/100 · Uncertain · Low confidence · title and abstract</span>
+      <ul class="quality-signal-list"><li><strong>Strength:</strong> The contribution is stated explicitly.</li><li><strong>Strength:</strong> A baseline or comparison system is described.</li></ul>
+    </div>
+
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2609.03426v1">Open paper</a>
+        <a class="paper-detail-link" href="papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-51bd40e0.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. Lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-04 21:02</li>
+            <li>arXiv: 2609.03426</li><li>arXiv IDs: 2609.03426</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2609.03426">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.</p>
+      <ul>
+        <li>Recommendation: uncertain</li>
+        <li>Confidence: low</li>
+        <li>Assessment scope: title and abstract</li>
+        <li>Paper type: unclear</li>
+        <li>Assessment: quality-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: deterministic</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: unknown</li><li>Evidence To Claim Alignment: unknown</li><li>Limitations And Uncertainty Handling: unknown</li><li>Methodological Rigor: unknown</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: unknown</li><li>Reproducibility And Transparency: unknown</li><li>Scholarly Novelty Or Value: unknown</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly.</li><li>A baseline or comparison system is described.</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations. Yunao Zheng, Bin Wen, Xiaojie Wang. 2026-09-03. https://arxiv.org/abs/2609.03426v1">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="engram conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="true" data-published="2026-08-29" data-first-seen="2026-09-04" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="when to adapt: conditional memory adapters for retention-preserving domain specialization" data-search="when to adapt: conditional memory adapters for retention-preserving domain specialization jiayu hou, lei wang large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (ood) performance. we pr... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  engram conditional-memory hashed-ngram-memory arxiv relevant" data-quality-score="78" data-quality-recommendation="uncertain" data-quality-confidence="low" data-quality-scope="title_and_abstract" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
+        <p class="meta">Jiayu Hou, Lei Wang · Published 2026-08-29 · Source: arXiv</p>
+        <p class="reason"><strong>Why included:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <div class="quality-summary">
+      <strong>Automated evidence-based assessment</strong>
+      <span>78/100 · Uncertain · Low confidence · title and abstract</span>
+      <ul class="quality-signal-list"><li><strong>Strength:</strong> The contribution is stated explicitly.</li><li><strong>Strength:</strong> Quantitative evaluation signals were detected.</li><li><strong>Concern:</strong> Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+    </div>
+
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2608.29327v1">Open paper</a>
+        <a class="paper-detail-link" href="papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. Existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (OOD) performance. We pr...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">engram</span><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-04 21:02</li>
+            <li>arXiv: 2608.29327</li><li>arXiv IDs: 2608.29327</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2608.29327">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.</p>
+      <ul>
+        <li>Recommendation: uncertain</li>
+        <li>Confidence: low</li>
+        <li>Assessment scope: title and abstract</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: deterministic</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: unknown</li><li>Evidence To Claim Alignment: unknown</li><li>Limitations And Uncertainty Handling: unknown</li><li>Methodological Rigor: unknown</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: unknown</li><li>Reproducibility And Transparency: unknown</li><li>Scholarly Novelty Or Value: unknown</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly.</li><li>Quantitative evaluation signals were detected.</li><li>No suitable baseline comparison was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization. Jiayu Hou, Lei Wang. 2026-08-29. https://arxiv.org/abs/2608.29327v1">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+          </div>
+          <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
+        </section>
+        <details class="source-diagnostics"><summary>Source diagnostics <span>Some source diagnostics need review. Details are available below.</span></summary><ul><li>openalex: incomplete_window for hashed memory language model</li>
+<li>openalex: incomplete_window for cross-model memory transfer</li>
+<li>openalex: incomplete_window for learned lookup memory language model</li>
+<li>semantic_scholar: failed for Engram</li>
+<li>semantic_scholar: failed for conditional memory language model</li>
+<li>semantic_scholar: failed for frozen memory reader adaptation</li>
+<li>semantic_scholar: failed for tokenizer-agnostic Engram</li></ul></details>
+        <section class="archive-strip" aria-labelledby="recent-archive-heading">
+          <div>
+            <p class="section-kicker">Context</p>
+            <h2 id="recent-archive-heading">Daily run archive</h2>
+          </div>
+          <div class="archive-links"><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/engram/2026-09-05.md">2026-09-05</a></div>
+        </section>
+
+<script>
+(() => {
+  const search = document.querySelector('#paper-search');
+  const relevanceFilter = document.querySelector('#relevance-filter');
+  const newOnly = document.querySelector('#new-only');
+  const sortSelect = document.querySelector('#paper-sort');
+  const qualityMinimum = document.querySelector('#quality-minimum');
+  const qualityRecommendation = document.querySelector('#quality-recommendation');
+  const qualityConfidence = document.querySelector('#quality-confidence');
+  const qualityScope = document.querySelector('#quality-scope');
+  const qualityVisibility = document.querySelector('#quality-visibility');
+  const qualityIncludeUnknown = document.querySelector('#quality-include-unknown');
+  const list = document.querySelector('#paper-list');
+  const cards = Array.from(document.querySelectorAll('.paper-card'));
+  const emptyState = document.querySelector('#no-results');
+  let decision = relevanceFilter ? relevanceFilter.value : 'all';
+  function sortableDate(card, attr) {
+    const value = card.dataset[attr] || '';
+    return /^\d{4}-\d{2}-\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
+  }
+  function latestRelevantDate(card) {
+    return card.dataset.futureDate === 'true'
+      ? sortableDate(card, 'firstSeen')
+      : sortableDate(card, 'published');
+  }
+  function latestRelevantRank(a, b) {
+    const newness = (a.dataset.isNew === 'true' ? 0 : 1) - (b.dataset.isNew === 'true' ? 0 : 1);
+    if (newness) return newness;
+    const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
+    if (rel) return rel;
+    if (!qualityVisibility || qualityVisibility.value === 'configured') {
+      const qualityRank = (a.dataset.qualityDownranked === 'true' ? 1 : 0) - (b.dataset.qualityDownranked === 'true' ? 1 : 0);
+      if (qualityRank) return qualityRank;
+    }
+    const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
+    if (bucket) return bucket;
+    const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
+    if (date) return date;
+    const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+    if (score) return score;
+    return a.dataset.title.localeCompare(b.dataset.title);
+  }
+  function sortCards() {
+    if (!list || !sortSelect) return;
+    const mode = sortSelect.value || 'latest-relevant';
+    const sorted = [...cards].sort((a, b) => {
+      if (mode === 'latest-relevant') return latestRelevantRank(a, b);
+      if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
+      if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'quality-desc') return Number(b.dataset.qualityScore || -1) - Number(a.dataset.qualityScore || -1) || latestRelevantRank(a, b);
+      if (mode === 'combined-desc') return Number(b.dataset.combinedScore || 0) - Number(a.dataset.combinedScore || 0) || latestRelevantRank(a, b);
+      if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
+      return latestRelevantRank(a, b);
+    });
+    for (const card of sorted) {
+      list.appendChild(card);
+    }
+  }
+  function update() {
+    const query = (search.value || '').toLowerCase();
+    let visibleCount = 0;
+    for (const card of cards) {
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const matchesDecision = decision === 'all' || card.dataset.decision === decision;
+      const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      const qualityKnown = card.dataset.qualityScore !== '';
+      const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
+      const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
+      const matchesQualityRecommendation = !qualityRecommendation || qualityRecommendation.value === 'all' || card.dataset.qualityRecommendation === qualityRecommendation.value;
+      const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
+      const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
+      const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
+      if (!card.hidden) visibleCount += 1;
+    }
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+  }
+  if (search) search.addEventListener('input', update);
+  if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
+  if (newOnly) newOnly.addEventListener('change', update);
+  if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
+  [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
+  if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });
+  document.querySelectorAll('.citation-button').forEach(button => {
+    button.addEventListener('click', async () => {
+      const status = button.parentElement.querySelector('.copy-status');
+      const citation = button.dataset.citation || '';
+      try {
+        if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(citation);
+        if (status) status.textContent = 'Copied';
+      } catch (error) {
+        if (status) status.textContent = 'Select citation text from the page source if copying is unavailable.';
+      }
+    });
+  });
+  sortCards();
+  update();
+})();
+</script>
+
+
+  </main>
+</body>
+</html>

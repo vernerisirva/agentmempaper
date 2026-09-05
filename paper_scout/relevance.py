@@ -259,6 +259,11 @@ NEGATED_DEEP_RESEARCH_PATTERNS = [
 
 
 def classify_with_rules(candidate: PaperCandidate, profile: str = "agent_memory") -> ClassificationResult:
+    from paper_scout.config import validate_track
+    validate_track(profile)
+    if profile == "engram":
+        from paper_scout.engram import classify_engram
+        return classify_engram(candidate)
     if profile == "deep_research":
         return _classify_deep_research_with_rules(candidate)
     evidence = explain_rule_matches(candidate)
@@ -447,6 +452,11 @@ def _classify_deep_research_with_rules(candidate: PaperCandidate) -> Classificat
 
 
 def explain_rule_matches(candidate: PaperCandidate, profile: str = "agent_memory") -> dict[str, object]:
+    from paper_scout.config import validate_track
+    validate_track(profile)
+    if profile == "engram":
+        from paper_scout.engram import engram_evidence
+        return engram_evidence(candidate)
     text = _paper_text(candidate)
     if profile == "deep_research":
         include_tags = [

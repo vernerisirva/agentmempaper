@@ -18,7 +18,15 @@ class DiscoveryFixture:
     expected_routes: tuple[str, ...]
 
 
-def discovery_fixtures() -> list[DiscoveryFixture]:
+def discovery_fixtures(profile: str = "agent_memory") -> list[DiscoveryFixture]:
+    from paper_scout.config import validate_track
+    validate_track(profile)
+    if profile == "engram":
+        from paper_scout.engram_evaluation import seed_fixtures
+        return [DiscoveryFixture(p.arxiv_id, p.title, p.abstract, p.arxiv_id, ("cs.CL",), ("keyword", "seed_manifest")) for p in seed_fixtures()]
+    if profile == "deep_research":
+        from paper_scout.evaluation import deep_research_fixture_examples
+        return [DiscoveryFixture(e.name, e.candidate.title, e.candidate.abstract, None, ("cs.AI",), ("keyword",)) for e in deep_research_fixture_examples()[:4]]
     return [
         DiscoveryFixture(
             "procedural-memory-distillation",
@@ -40,12 +48,12 @@ def evaluate_discovery(config: ScoutConfig) -> dict[str, object]:
     planned = plan_queries(config)
     results = []
     caught = 0
-    for fixture in discovery_fixtures():
+    for fixture in discovery_fixtures(config.relevance_profile):
         routes = _routes_for_fixture(fixture, planned, config)
         discovered = bool(routes)
         caught += int(discovered)
         results.append({"name": fixture.name, "title": fixture.title, "discovered": discovered, "routes": routes})
-    fixtures = discovery_fixtures()
+    fixtures = discovery_fixtures(config.relevance_profile)
     return {
         "fixture_count": len(fixtures),
         "discovered_count": caught,
@@ -87,10 +95,16 @@ def _routes_for_fixture(fixture: DiscoveryFixture, planned: list[PlannedQuery], 
                 routes.add("category_sweep")
             continue
         terms = _terms(query.query)
-        if terms and all(term in text for term in terms):
+        matched = query.query.lower() in text if query.mode == "phrase" else bool(terms) and all(term in text for term in terms)
+        if matched:
             routes.add("keyword")
     if fixture.arxiv_id:
-        routes.add("direct_id")
+        if config.seed_manifest:
+            from paper_scout.seeds import load_seed_manifest
+            if fixture.arxiv_id in {item["arxiv_id"] for item in load_seed_manifest(config)["papers"]}:
+                routes.add("seed_manifest")
+        elif config.relevance_profile == "agent_memory":
+            routes.add("direct_id")
     return sorted(routes)
 
 

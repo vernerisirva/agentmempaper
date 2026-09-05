@@ -22,6 +22,13 @@ from paper_scout.state import PaperStore
 
 
 def deterministic_candidates(profile: str = "agent_memory") -> list[PaperCandidate]:
+    from paper_scout.config import validate_track
+    validate_track(profile)
+    if profile == "engram":
+        from dataclasses import replace
+        from paper_scout.engram_evaluation import seed_fixtures
+        fixtures = seed_fixtures()
+        return [fixtures[0], replace(fixtures[0], source="fixture_openalex", source_id="EW1"), fixtures[3]]
     if profile == "deep_research":
         return [
             PaperCandidate(
@@ -117,7 +124,7 @@ def validate_idempotency(
         output_dir = report_dir or (root / "reports")
     try:
         config = ScoutConfig(
-            terms=["agent memory"] if relevance_profile == "agent_memory" else ["deep research agent"],
+            terms=[{"agent_memory": "agent memory", "deep_research": "deep research agent", "engram": "conditional memory"}[relevance_profile]],
             track_id=track_id,
             days=7,
             max_results_per_source=10,
@@ -125,6 +132,7 @@ def validate_idempotency(
             digest_dir=root / "digests",
             report_dir=root / "reports",
             relevance_profile=relevance_profile,
+            relevance_llm_enabled=False,
         )
         fetcher = StaticFetcher(deterministic_candidates(relevance_profile))
         first = run_scout(config, fetchers=[fetcher], digest_date=active_date, notifier=lambda markdown: True)

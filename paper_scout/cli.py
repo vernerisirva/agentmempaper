@@ -9,7 +9,7 @@ from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
-from paper_scout.config import load_config
+from paper_scout.config import TRACK_CONFIG_PATHS, load_config
 from paper_scout.discovery_evaluation import evaluate_discovery, write_discovery_report
 from paper_scout.digest import write_digest
 from paper_scout.evaluation import evaluate_relevance_examples, relevance_fixture_examples, write_relevance_report
@@ -32,6 +32,7 @@ def main(argv: list[str] | None = None) -> int:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     run_parser = subparsers.add_parser("run", help="Fetch, classify, persist, and write today's digest")
+    run_parser.add_argument("--no-notify", action="store_true")
     run_parser.add_argument("--date", default=date.today().isoformat())
     _add_track_argument(run_parser)
 
@@ -66,6 +67,7 @@ def main(argv: list[str] | None = None) -> int:
     _add_track_argument(idem_parser)
 
     build_site_parser = subparsers.add_parser("build-site", help="Build the static Paper Scout dashboard under docs/")
+    build_site_parser.add_argument("--offline", action="store_true", help="Build from saved metadata without network date enrichment")
     build_site_parser.add_argument("--docs-dir", default=None)
     _add_track_argument(build_site_parser)
 
@@ -81,6 +83,7 @@ def main(argv: list[str] | None = None) -> int:
     _add_track_argument(discovery_parser)
 
     backfill_parser = subparsers.add_parser("backfill", help="Recover papers missed during the normal daily lookback")
+    backfill_parser.add_argument("--since", help="One-time historical start date; never scheduled implicitly")
     backfill_parser.add_argument("--days", type=int, default=45)
     backfill_parser.add_argument("--sources", default="arxiv,openalex,semantic_scholar")
     backfill_parser.add_argument("--no-notify", action="store_true")
@@ -97,6 +100,9 @@ def main(argv: list[str] | None = None) -> int:
     ingest_parser.add_argument("--url")
     ingest_parser.add_argument("--pdf-url", help="Optional direct open-access PDF URL used only for quality assessment")
     _add_track_argument(ingest_parser)
+
+    seed_parser = subparsers.add_parser("ingest-seeds", help="Ingest missing declarative seed IDs outside the daily window; no notifications")
+    _add_track_argument(seed_parser)
 
     quality_eval_parser = subparsers.add_parser("evaluate-quality", help="Evaluate deterministic scholarly-quality rules on fixture papers")
     quality_eval_parser.add_argument("--date", default=date.today().isoformat())
@@ -118,11 +124,11 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(message)s")
-    track_id = getattr(args, "track", None) or "agent_memory"
+    track_id = getattr(args, "track", None)
     config = load_config(args.config, track_id=track_id)
 
     if args.command == "run":
-        result = run_scout(config, digest_date=args.date)
+        result = run_scout(config, digest_date=args.date, notifications_enabled=not args.no_notify)
         print(f"run_id={result.run_id} fetched={result.fetched_count} unique={result.unique_count} digest_items={result.new_digest_count} digest={result.digest_path}")
         return 0
 
@@ -158,12 +164,12 @@ def main(argv: list[str] | None = None) -> int:
         )
         path = write_relevance_report(report, config.report_dir, args.date)
         print(f"precision={report['precision']:.3f} recall={report['recall']:.3f} false_positives={len(report['false_positives'])} false_negatives={len(report['false_negatives'])} report={path}")
-        return 0 if not report["false_positives"] and not report["false_negatives"] else 1
+        return 0 if not report["false_positives"] and not report["false_negatives"] and not report.get("decision_mismatches") else 1
 
     if args.command == "smoke-live":
         report = run_live_smoke(
             config,
-            fetchers=[ArxivFetcher(), SemanticScholarFetcher(), OpenAlexFetcher()],
+            fetchers=[ArxivFetcher(), SemanticScholarFetcher(max_metadata_requests=config.max_metadata_requests), OpenAlexFetcher()],
             report_date=args.date,
             days=args.days,
             max_results_per_source=args.max_results_per_source,
@@ -196,6 +202,7 @@ def main(argv: list[str] | None = None) -> int:
             cross_track_href=config.cross_track_href,
             relevance_profile=config.relevance_profile,
             quality_config=config.quality,
+            enrich_dates=config.site_enrichment_enabled and not args.offline,
         )
         print(result.message)
         return 0
@@ -215,7 +222,12 @@ def main(argv: list[str] | None = None) -> int:
         if unknown:
             print(f"unknown sources: {','.join(sorted(unknown))}")
             return 2
-        result = run_backfill(config, days=args.days, sources=sources, report_date=args.date)
+        backfill_days = args.days
+        if args.since:
+            backfill_days = (date.today() - date.fromisoformat(args.since)).days + 1
+            if backfill_days < 1:
+                parser.error("--since must not be in the future")
+        result = run_backfill(config, days=backfill_days, sources=sources, report_date=args.date)
         print(f"run_id={result.run_id} fetched={result.fetched_count} unique={result.unique_count} report={result.digest_path}")
         return 0
 
@@ -226,6 +238,12 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{row['source']} attempts={row['attempt_count']} days={row['requested_days']} next={row['next_retry_at']} resolved={row['resolved_at'] or '-'} query={row['normalized_query']}")
         print(f"count={len(rows)}")
         return 0
+
+    if args.command == "ingest-seeds":
+        from paper_scout.seeds import ingest_seeds
+        report = ingest_seeds(config)
+        print(json.dumps(report, indent=2))
+        return 1 if report["unresolved"] else 0
 
     if args.command == "ingest-paper":
         try:
@@ -302,7 +320,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _add_track_argument(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--track", choices=["agent_memory", "deep_research"], default="agent_memory")
+    parser.add_argument("--track", choices=list(TRACK_CONFIG_PATHS), default=None)
 
 
 def _explain_paper(args: argparse.Namespace, config) -> int:
@@ -376,28 +394,8 @@ def _candidate_from_generated_paper(paper: dict[str, object]) -> PaperCandidate:
 
 
 def _fetch_direct_paper(args: argparse.Namespace) -> PaperCandidate | None:
-    arxiv_id = args.arxiv_id
-    doi = args.doi
-    url = args.url
-    if url and not arxiv_id:
-        match = re.search(r"arxiv\.org/(?:abs|pdf)/([^?#/]+)", url, flags=re.I)
-        if match:
-            arxiv_id = match.group(1).removesuffix(".pdf")
-    if url and not doi:
-        match = re.search(r"(?:doi\.org/)?(10\.\d{4,9}/[^?#\s]+)", url, flags=re.I)
-        if match:
-            doi = match.group(1)
-    if arxiv_id:
-        try:
-            return ArxivFetcher().fetch_by_id(arxiv_id)
-        except Exception:
-            return OpenAlexFetcher().fetch_by_doi(f"10.48550/arXiv.{arxiv_id}")
-    if doi:
-        try:
-            return SemanticScholarFetcher().fetch_by_identifier(f"DOI:{doi}")
-        except Exception:
-            return OpenAlexFetcher().fetch_by_doi(doi)
-    raise ValueError("ingest-paper requires --arxiv-id, --doi, or a supported --url")
+    from paper_scout.ingestion import fetch_direct_paper
+    return fetch_direct_paper(arxiv_id=args.arxiv_id, doi=args.doi, url=args.url)
 
 
 if __name__ == "__main__":

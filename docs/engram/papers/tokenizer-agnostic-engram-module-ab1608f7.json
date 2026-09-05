@@ -1,0 +1,233 @@
+{
+  "abstract_summary": "Deepseek's Engram, a conditional memory module, was introduced to trade-off storage versus reasoning in large language models. However, the module relies on token-level $N$-gram hashing for Engram embedding lookup, introducing a tight coupling to the tokenizer used: a model with a different tokenizer would have to t...",
+  "alternate_urls": [
+    "https://arxiv.org/abs/2607.29065v1",
+    "https://arxiv.org/abs/2607.29065"
+  ],
+  "appeared_in_latest_run": false,
+  "arxiv_id": "2607.29065",
+  "authors": [
+    "Jia Peng Lim",
+    "Hai Leong Chieu"
+  ],
+  "canonical_id": "arxiv:2607.29065",
+  "citation": "Tokenizer-Agnostic Engram Module. Jia Peng Lim, Hai Leong Chieu. 2026-07-31. https://arxiv.org/abs/2607.29065v1",
+  "detail_json": "papers/tokenizer-agnostic-engram-module-ab1608f7.json",
+  "detail_page": "papers/tokenizer-agnostic-engram-module-ab1608f7.html",
+  "doi": null,
+  "effective_sort_date": "2026-07-31",
+  "first_seen_at": "2026-09-04 20:53:47",
+  "first_seen_date": "2026-09-04",
+  "future_date": false,
+  "is_new": true,
+  "last_seen_at": "2026-09-04 20:53:47",
+  "last_seen_date": "2026-09-04",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": "2026-07-31",
+  "newly_discovered_in_latest_run": false,
+  "notified_at": null,
+  "notified_date": null,
+  "openalex_id": null,
+  "pinned": false,
+  "provenance": {
+    "curated": true,
+    "curation_note": "manually added",
+    "date_source": "arxiv",
+    "first_seen_at": "2026-09-04 20:53:47",
+    "generated_at": "2026-09-05 01:22:21",
+    "last_seen_at": "2026-09-04 20:53:47",
+    "metadata_sources": [
+      "arxiv"
+    ],
+    "publication_date_confidence": "high",
+    "publication_date_precision": "day",
+    "publication_date_source": "arxiv",
+    "relevance_source": "deterministic screening + curation",
+    "screening_source": "deterministic rules + curation",
+    "source_ids": {
+      "arxiv": [
+        "2607.29065"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "high",
+    "date": "2026-07-31",
+    "display": "Published 2026-07-31",
+    "latest_revision_date": "2026-07-31",
+    "precision": "day",
+    "publication_date_confidence": "high",
+    "source": "arxiv",
+    "year": "2026"
+  },
+  "publication_date": "2026-07-31",
+  "publication_date_confidence": "high",
+  "publication_date_precision": "day",
+  "publication_date_source": "arxiv",
+  "publication_year": "2026",
+  "related_topics": [
+    "agent-memory",
+    "conditional-memory",
+    "engram",
+    "hashed-ngram-memory",
+    "parametric-memory"
+  ],
+  "relevance": {
+    "curation_note": "Abstract-based curation (arXiv:2607.29065): changes Engram addressing to polynomial hashing of byte sequences in a shared embedding space across n-gram lengths. Studies tokenizer independence and its trade-offs; this does not establish unrestricted cross-model transfer.",
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.",
+    "review_status": null,
+    "score": 92,
+    "tags": [
+      "engram",
+      "conditional-memory",
+      "hashed-ngram-memory"
+    ]
+  },
+  "relevance_decision": "relevant",
+  "relevance_label": "Engram / conditional-memory study",
+  "relevance_reason": "Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.",
+  "relevance_score": 92,
+  "research_note": "Abstract-based curation (arXiv:2607.29065): changes Engram addressing to polynomial hashing of byte sequences in a shared embedding space across n-gram lengths. Studies tokenizer independence and its trade-offs; this does not establish unrestricted cross-model transfer.",
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-09-04T20:53:47+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
+    "assessor_model": null,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.92,
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
+    "confidence": "low",
+    "curation_note": null,
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
+    "downranked": false,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "To improve the reusability of Engram embeddings, we propose a change to the hashing routine, enabling compatibility between Engram models u",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      }
+    ],
+    "manual_override": false,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 78,
+    "paper_type": "methods_or_algorithm",
+    "positive_signals": [
+      "The contribution is stated explicitly."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "0665cbdee0243f4f84d45feae738ab0a56ed7d71108eac60677b5ec772a0e417",
+    "suppressed": false
+  },
+  "semantic_scholar_id": null,
+  "source": "arxiv",
+  "source_id": "2607.29065",
+  "source_ids": {
+    "arxiv": [
+      "2607.29065"
+    ]
+  },
+  "source_updated_date": "2026-07-31",
+  "sources": [
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+    },
+    "method_or_system_type": {
+      "confidence": "medium",
+      "provenance": "abstract",
+      "value": "Model-integrated conditional memory"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "medium",
+      "provenance": "abstract",
+      "value": "Title/abstract evidence connects this study to Engram or related learned lookup mechanisms; specific architectural details require source evidence."
+    },
+    "research_relevance": {
+      "confidence": "high",
+      "provenance": "curation",
+      "value": "Abstract-based curation (arXiv:2607.29065): changes Engram addressing to polynomial hashing of byte sequences in a shared embedding space across n-gram lengths. Studies tokenizer independence and its trade-offs; this does not establish unrestricted cross-model transfer."
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Model-integrated conditional memory",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Title/abstract evidence connects this study to Engram or related learned lookup mechanisms; specific architectural details require source evidence."
+  },
+  "tags": [
+    "engram",
+    "conditional-memory",
+    "hashed-ngram-memory"
+  ],
+  "title": "Tokenizer-Agnostic Engram Module",
+  "url": "https://arxiv.org/abs/2607.29065v1"
+}

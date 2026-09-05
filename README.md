@@ -14,9 +14,78 @@ The default config in `config/paper_scout.yaml` tracks:
 
 The Engram/Megatron-LM context is treated as research context, not as proof that Engram-style approaches cannot work.
 
+## Three independent libraries
+
+| Track | Site output | State | Curation |
+| --- | --- | --- | --- |
+| `agent_memory` (default) | `docs/` | `data/paper_scout.sqlite3` | `config/curation.yaml` |
+| `deep_research` | `docs/deep-research/` | `data/deep_research/paper_scout.sqlite3` | `config/curation/deep_research.yaml` |
+| `engram` | `docs/engram/` | `data/engram/paper_scout.sqlite3` | `config/curation/engram.yaml` |
+
+Each track has its own relevance, notes, notification history and first-seen timestamps. Bibliographic overlap is allowed. The explicit registry rejects unknown tracks and mismatched config IDs. Existing default commands remain Agentic Memory commands. Navigation derives relative paths for every registered track, including detail pages.
+
+The Engram library concerns memory integrated with language-model computation: conditional memory, learned lookup tables, hashed n-grams, memory readers and gates, frozen-memory transfer, tokenizer-independent addressing, memory grafting, capacity scaling, training, editing and efficient execution. It requires substantive title/abstract evidence and does not require the word “agent”. An Engram mention, generic parametric memory, or a related-work citation alone does not establish relevance. Adjacent neural memory layers, product-key memories, model-memory editing and test-time memory may remain review candidates. Biological engrams, unrelated software, generic RAG/chat history and generic fine-tuning/distillation are excluded. Negative results and memory-table offloading studies are eligible; relevance and methodological quality are separate.
+
+Engram generates the same index, latest, archive, about, JSON/CSV/BibTeX exports, schema and per-paper HTML/JSON cards as the existing libraries. Its intended Pages path after deployment is [the Engram library](https://vernerisirva.github.io/agentmempaper/engram/). The sidecar schema stays `paper-scout-card-v2`; the existing `relation_to_agentic_memory` key has track-appropriate visible wording. Seed curation is explicitly based on primary abstracts, with unsupported architectural/evaluation fields unextracted. Implementation discussions are separate links on About, without automatic GitHub monitoring.
+
+### Engram bootstrap and historical recovery
+
+```bash
+python3 -m paper_scout ingest-seeds --track engram
+python3 -m paper_scout run --track engram --no-notify
+python3 -m paper_scout build-site --track engram
+# Explicit one-time historical search; never run automatically each day:
+python3 -m paper_scout backfill --track engram --since 2026-01-12 --no-notify
+```
+
+`config/seeds/engram.json` declares four foundational arXiv IDs, expected titles and the historical start. `ingest-seeds` reuses canonical metadata ingestion outside the recent-publication window. It validates identity and complete dates/abstract/authors, reports unresolved records, skips known records without metadata requests, and never sends or marks notifications. Initial submission, latest revision and actual entry time remain distinct. The normal daily run may notify an unnotified seed once. A new arXiv version or later bibliographic alias resolves to the existing record and notification history.
+
+The daily and weekly workflows bootstrap missing seeds. Weekly Engram backfill uses 45 days and the existing provider planner/retry store. The explicit `--since` operation uses that same bounded planner over a longer window; it is not an exhaustive sweep, and capped windows remain reported as incomplete. Failed-query retries consume normal query slots. Search terms are relevance/discovery vocabulary, not a request-per-term list.
+
+“New” requires a real first-seen timestamp within 24 hours of the build time. Timezone offsets are normalized and future, malformed or date-only values cannot create a New badge. Foundational publication dates remain historical. Non-arXiv source-update dates are exposed separately and are not described as paper revision dates.
+
+### Incremental Engram budgets
+
+| Operation | Limit |
+| --- | --- |
+| Logical discovery queries | 4 per provider per daily or weekly run; 12 total, including due failed-query retries |
+| Pagination | 1 page per query, up to 25 records; no extra page requests or category sweep |
+| HTTP retries | Up to 3 total attempts per request (2 retries), counted separately |
+| Metadata enrichment | At most 4 Semantic Scholar → arXiv lookups across the entire run, each within the same retry limit |
+| Missing seed ingestion | 4 primary arXiv lookups; at most 4 OpenAlex DOI fallbacks if primary requests fail; no requests for known seeds |
+| Quality assessments | Up to 4 per scout run; initial seed bootstrap can add 4 deterministic assessments |
+| Model calls | 0 by default for relevance and quality; no new provider or required key |
+| Full-text/site enrichment | 0 for Engram by default; rendering uses saved metadata |
+
+Steady-state Engram discovery therefore permits at most 48 HTTP attempts (36 search + 12 metadata) and bootstrap can add at most 24 attempts. Successful no-retry search usually needs 12 requests. Provider throttling is shared by hostname across clients in a process, including arXiv metadata enrichment. The workflows execute tracks sequentially in the existing shared writer-concurrency group; an extra track does not imply a separate account quota. The three normal daily runs use 38 logical search slots combined. The two existing pre-run live-smoke checks add 26 slots; Engram has no duplicate live-smoke step. Quality remains optionally configurable through the existing interfaces; switching to a model-backed mode requires an explicit call budget and the existing provider credentials.
+
+Per-query raw counts, accepted candidates, page limits, truncation, attempts, retries and metadata requests are saved in `reports/paper_scout/engram/discovery-run-<run-id>.json`. These are bounded coverage diagnostics, not estimates of literature recall. Fixed regression results are labeled separately from live retrieval.
+
+### State compatibility and validation
+
+Durable archives now contain a SHA-256 manifest and all three allowlisted SQLite files. Every member and database is checked before restoration. A valid legacy archive containing exactly the two original databases is accepted and initializes only missing Engram state; existing Engram state is preserved. A corrupt, incomplete or unavailable snapshot fails closed. Missing original state cannot silently become an empty library. State stays outside Git and the public Pages artifact.
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+python3 -m unittest discover -s tests -p 'test_paper_scout_*.py'
+python3 -m unittest discover -s tests -p '*.py'
+for track in agent_memory deep_research engram; do
+  python3 -m paper_scout evaluate-relevance --track "$track"
+  python3 -m paper_scout evaluate-discovery --track "$track"
+  python3 -m paper_scout evaluate-quality --track "$track"
+  python3 -m paper_scout validate-idempotency --track "$track"
+  python3 -m paper_scout build-site --track "$track"
+done
+python3 .github/scripts/check_paper_scout_site.py
+python3 .github/scripts/check_generated_file_sizes.py digests docs reports/paper_scout
+git diff --check
+```
+
+`build-site --offline` is available for saved-metadata validation of any track; existing tracks retain online date enrichment by default. See the [Engram implementation validation report](reports/paper_scout/engram/implementation-validation.md) for actual retrieval, limitations and local validation results.
+
 ## Setup
 
-Paper Scout requires Python 3.11 or newer. The only non-standard dependency is `pypdf`, used for bounded open-access full-text extraction:
+Paper Scout requires Python 3.11 or newer. The runtime dependency is `pypdf`, used for bounded open-access full-text extraction. Tests and generated-site validation additionally use `jsonschema` and `PyYAML` from `requirements-dev.txt`:
 
 ```bash
 python3 -m venv .venv
@@ -333,7 +402,7 @@ python -m paper_scout build-site --track deep_research
 
 The live smoke step uses GitHub-hosted Python TLS defaults and a temporary SQLite state path. One failed source is reported but should not fail the workflow; the workflow should fail only if the Paper Scout code crashes unexpectedly. Markdown, JSON, and command logs are uploaded as artifacts, and the live smoke summary is included in the GitHub Actions step summary.
 
-The daily run may commit the persistent SQLite state, Markdown digests, `digests/latest.md`, `docs/` dashboard files, digest-quality reports, and non-smoke validation Markdown reports when they change. It also deploys `docs/` to GitHub Pages through Actions. It does not commit live-smoke JSON artifacts.
+The daily run commits generated Markdown digests, `digests/latest.md`, `docs/` dashboard files, digest-quality reports, and non-smoke validation Markdown reports when they change. It also deploys `docs/` to GitHub Pages through Actions. It never commits SQLite state, caches, PDFs, credentials, or live-smoke JSON artifacts.
 
 ## TLS Troubleshooting
 

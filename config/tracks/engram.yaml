@@ -1,0 +1,83 @@
+track:
+  id: engram
+  title: "Engram & Conditional Memory Paper Library"
+  subtitle: "A daily updated library of papers on Engram-style model memory, learned lookup tables, and transferable memory mechanisms."
+  relevance_profile: engram
+  relevance_llm_enabled: false
+  site_enrichment_enabled: false
+  seed_manifest: "config/seeds/engram.json"
+
+search:
+  days: 10
+  max_results_per_source: 25
+  max_metadata_requests: 4
+  terms:
+    - "Engram language model"
+    - "conditional memory language model"
+    - "hashed memory language model"
+    - "n-gram memory transformer"
+    - "cross-model memory transfer"
+    - "frozen memory reader adaptation"
+    - "tokenizer-agnostic Engram"
+    - "memory grafting"
+
+discovery_queries:
+  arxiv:
+    - query: "Engram language model"
+      mode: all_terms
+    - query: "conditional memory"
+      mode: phrase
+    - query: "n-gram memory transformer"
+      mode: all_terms
+    - query: "memory grafting"
+      mode: phrase
+  openalex:
+    - "DeepSeek Engram"
+    - "hashed memory language model"
+    - "cross-model memory transfer"
+    - "learned lookup memory language model"
+  semantic_scholar:
+    - "Engram"
+    - "conditional memory language model"
+    - "frozen memory reader adaptation"
+    - "tokenizer-agnostic Engram"
+
+query_budgets:
+  arxiv: 4
+  openalex: 4
+  semantic_scholar: 4
+
+arxiv_sweep:
+  enabled: false
+
+quality:
+  enabled: true
+  mode: deterministic
+  assessment:
+    max_assessments_per_run: 4
+  full_text:
+    enabled: false
+    cache_dir: "data/cache/full_text/engram"
+  ranking:
+    behavior: annotate
+
+state:
+  sqlite_path: "data/engram/paper_scout.sqlite3"
+
+output:
+  digest_dir: "digests/engram"
+  report_dir: "reports/paper_scout/engram"
+  docs_dir: "docs/engram"
+
+curation:
+  path: "config/curation/engram.yaml"
+
+research_context:
+  - "Learned external memory consumed inside language-model computation is distinct from retrieved text in a prompt."
+  - "Direct Engram extensions and substantively connected conditional-memory mechanisms belong here; related architectures are not assumed identical."
+  - "Include efficiency evaluations and negative results; topical relevance is independent of methodological quality."
+
+exclusions:
+  - "biological engrams without a relevant language-model mechanism"
+  - "unrelated software or agent databases named Engram"
+  - "generic RAG, chat history, fine-tuning, or distillation without conditional-memory evidence"

@@ -1,0 +1,18 @@
+# Notes checked against arXiv primary abstracts on 2026-09-04.
+# These annotations do not override deterministic relevance or quality scores.
+pinned:
+overrides:
+  - canonical_id: "arxiv:2601.07372"
+    title: "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models"
+    note: "Abstract-based curation (arXiv:2601.07372): foundational Engram study of conditional n-gram lookup alongside neural computation. Studies capacity allocation, reasoning and retrieval evaluation, and host-memory prefetching. These are author-reported findings, not independent replication."
+  - canonical_id: "arxiv:2605.20948"
+    title: "Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory"
+    note: "Abstract-based curation (arXiv:2605.20948): stores frozen hidden representations from an offline grafting model. The recipient uses longest-match suffix lookup, lightweight projections and gates, with an Engram hash fallback. Studies reuse of latent memory under matched pre-training budgets."
+  - canonical_id: "arxiv:2607.29065"
+    title: "Tokenizer-Agnostic Engram Module"
+    note: "Abstract-based curation (arXiv:2607.29065): changes Engram addressing to polynomial hashing of byte sequences in a shared embedding space across n-gram lengths. Studies tokenizer independence and its trade-offs; this does not establish unrestricted cross-model transfer."
+  - canonical_id: "arxiv:2608.17050"
+    title: "Cross-Model Memory Transfer via Target-Side Reader Adaptation"
+    note: "Abstract-based curation (arXiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader. Ablations examine memory content, addressing and reader alignment; compatible reader reuse is also considered."
+excluded:
+date_overrides:

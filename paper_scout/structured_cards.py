@@ -152,6 +152,8 @@ def _research_relevance(paper: Any, relevance_profile: str = "agent_memory") -> 
     if note:
         return _field(note, "high", "curation")
     if getattr(paper, "decision", "") == "relevant":
+        if relevance_profile == "engram":
+            return _field("Direct relation to Engram / conditional memory based on title/abstract screening.", "medium", "rule")
         if _is_deep_research_paper(paper, relevance_profile):
             return _field("Directly relevant to autonomous/deep research workflows based on screening evidence.", "medium", "rule")
         return _field("Directly relevant to agentic-memory research based on screening evidence.", "medium", "rule")
@@ -172,6 +174,17 @@ def _limitations_text(paper: Any) -> str:
 
 def _classify_method_and_relation(paper: Any, relevance_profile: str = "agent_memory") -> tuple[str, str, str]:
     text = _combined_text(paper)
+    if relevance_profile == "engram":
+        # Screen actual source text, never infer architecture from tags or curation.
+        from paper_scout.engram import classify_engram
+        from paper_scout.models import PaperCandidate
+        source_abstract = getattr(paper, "screening_abstract", None) or getattr(paper, "abstract_summary", "") or ""
+        decision = classify_engram(PaperCandidate(getattr(paper, "title", ""), [], source_abstract, "metadata", ""))
+        if decision.decision == "relevant":
+            return "Model-integrated conditional memory", "Title/abstract evidence connects this study to Engram or related learned lookup mechanisms; specific architectural details require source evidence.", "abstract" if source_abstract else "metadata"
+        if decision.decision == "maybe":
+            return "Adjacent learned-memory mechanism", "Possible relation to Engram / conditional memory requires review", "abstract" if source_abstract else "metadata"
+        return NOT_EXTRACTED, NOT_EXTRACTED, "not_extracted"
     if _is_deep_research_paper(paper, relevance_profile):
         if _contains_any(text, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"]):
             provenance = _keyword_provenance(paper, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"])

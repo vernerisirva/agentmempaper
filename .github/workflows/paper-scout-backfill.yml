@@ -38,10 +38,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate discovery plan
-        run: python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
+      - name: Install validation dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
 
-      - name: Run 45-day Agentic Memory backfill
+      - name: Validate discovery plan
+        run: |
+          set -o pipefail
+          python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
+          python -m paper_scout evaluate-discovery --track engram | tee discovery-eval-engram.log
+
+      - name: Run bounded 45-day backfill
         env:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
@@ -49,6 +55,12 @@ jobs:
           set -o pipefail
           python -m paper_scout backfill --track agent_memory --days 45 --no-notify | tee paper-scout-backfill-agent-memory.log
           python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
+          python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
+          python -m paper_scout backfill --track engram --days 45 --no-notify | tee paper-scout-backfill-engram.log
+          python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
+
+      - name: Validate generated schemas, links, and runtime exclusion
+        run: python .github/scripts/check_paper_scout_site.py
 
       - name: Write run summary
         if: always()
@@ -57,7 +69,7 @@ jobs:
             echo "## Paper Scout weekly backfill"
             echo
             echo '```text'
-            cat discovery-eval-agent-memory.log paper-scout-backfill-agent-memory.log paper-scout-build-site-agent-memory.log 2>/dev/null || true
+            cat discovery-eval-agent-memory.log paper-scout-backfill-agent-memory.log paper-scout-build-site-agent-memory.log *engram.log 2>/dev/null || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -92,7 +104,7 @@ jobs:
 
       - name: Prepare consistent Paper Scout state snapshot
         if: ${{ steps.commit-backfill-updates.outcome == 'success' }}
-        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
 
       - name: Persist durable Paper Scout state
         id: persist-backfill-state

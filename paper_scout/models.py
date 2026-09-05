@@ -29,6 +29,9 @@ class PaperCandidate:
 class SourceFetchResult:
     raw_count: int
     candidates: list[PaperCandidate]
+    page_count: int = 1
+    incomplete: bool = False
+    metadata_requests: int = 0
 
 
 @dataclass(frozen=True)

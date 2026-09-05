@@ -30,7 +30,7 @@ class OpenAlexFetcher:
         if os.environ.get("OPENALEX_MAILTO"):
             params["mailto"] = os.environ["OPENALEX_MAILTO"]
         payload = self.http.get_text("https://api.openalex.org/works", params=params)
-        return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=parse_openalex_works(payload))
+        return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=parse_openalex_works(payload), incomplete=_raw_record_count(payload) >= max_results)
 
     def search_planned(self, query: PlannedQuery, days: int, max_results: int) -> list[PaperCandidate]:
         return self.search(query.provider_query, days, max_results)

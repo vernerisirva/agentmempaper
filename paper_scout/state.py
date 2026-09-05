@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime, timedelta
 from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 
-from paper_scout.deduplication import canonical_key
+from paper_scout.deduplication import canonical_key, normalize_arxiv_id, normalize_doi
 from paper_scout.dates import publication_date
 from paper_scout.models import ClassificationResult, DigestPaper, PaperCandidate
 from paper_scout.quality_models import QualityAssessment
@@ -53,8 +53,9 @@ class PaperStore:
             )
 
     def upsert_paper(self, candidate: PaperCandidate, classification: ClassificationResult) -> str:
-        candidate = _with_publication_metadata(candidate)
-        key = canonical_key(candidate)
+        candidate = replace(_with_publication_metadata(candidate),
+                            arxiv_id=normalize_arxiv_id(candidate.arxiv_id), doi=normalize_doi(candidate.doi))
+        key = self.existing_key(candidate) or canonical_key(candidate)
         with self._connect() as db:
             db.execute(
                 """
@@ -214,10 +215,29 @@ class PaperStore:
                     (key, digest_date),
                 )
 
-    def paper_exists(self, candidate: PaperCandidate) -> bool:
+    def existing_key(self, candidate: PaperCandidate) -> str | None:
         key = canonical_key(candidate)
         with self._connect() as db:
-            return db.execute("SELECT 1 FROM papers WHERE canonical_key = ?", (key,)).fetchone() is not None
+            row = db.execute("SELECT canonical_key FROM papers WHERE canonical_key = ?", (key,)).fetchone()
+            if row:
+                return str(row[0])
+            for column, value in (("arxiv_id", normalize_arxiv_id(candidate.arxiv_id)),
+                                  ("doi", normalize_doi(candidate.doi)),
+                                  ("semantic_scholar_id", candidate.semantic_scholar_id),
+                                  ("openalex_id", candidate.openalex_id)):
+                if value:
+                    row = db.execute(f"SELECT canonical_key FROM papers WHERE {column} = ?", (value,)).fetchone()
+                    if row:
+                        return str(row[0])
+        return None
+
+    def candidate_by_key(self, key: str) -> PaperCandidate | None:
+        with self._connect() as db:
+            row = db.execute("SELECT * FROM papers WHERE canonical_key = ?", (key,)).fetchone()
+        return _row_to_candidate(row) if row else None
+
+    def paper_exists(self, candidate: PaperCandidate) -> bool:
+        return self.existing_key(candidate) is not None
 
     def paper_count(self) -> int:
         with self._connect() as db:

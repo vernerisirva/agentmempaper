@@ -19,8 +19,8 @@
   "first_seen_date": "2026-08-31",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-04 11:22:45",
-  "last_seen_date": "2026-09-04",
+  "last_seen_at": "2026-09-05 10:39:56",
+  "last_seen_date": "2026-09-05",
   "latest_relevant_date_bucket": 0,
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-31 13:59:14",
@@ -32,8 +32,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-08-31 13:57:25",
-    "generated_at": "2026-09-04 11:24:21",
-    "last_seen_at": "2026-09-04 11:22:45",
+    "generated_at": "2026-09-05 10:40:45",
+    "last_seen_at": "2026-09-05 10:39:56",
     "metadata_sources": [
       "arxiv"
     ],
@@ -84,29 +84,95 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": null,
-    "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "applied_score_cap": 54,
+    "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
+    "assessed_at": "2026-09-05T10:40:42+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4578,
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 51/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "d instructing it to preserve files. Now suppose a second record enters the memory: 1 arXiv:2608.28502v1 [cs.CR] 28 Aug 2026",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "phic construction under EUF-CMA, not an empirical robustness measure) while preserving legitimate operations. A separate adaptive red-team f",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "Extraction was limited to 80 pages.",
+      "Extraction was limited to 120000 characters."
+    ],
+    "overall_quality_score": 51,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "Quantitative evaluation signals were detected.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "1aab9307592a2f989932f1999b5bfc59e5d182b6f233c79b9b49b71e6b74cf0a",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -135,7 +201,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

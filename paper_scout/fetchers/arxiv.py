@@ -52,7 +52,7 @@ class ArxivFetcher:
         payload = self.http.get_text("https://export.arxiv.org/api/query", params=params)
         cutoff = date.today() - timedelta(days=days)
         papers = parse_arxiv_feed(payload)
-        return SourceFetchResult(raw_count=_raw_entry_count(payload), candidates=[paper for paper in papers if _is_recent(paper, cutoff)])
+        return SourceFetchResult(raw_count=_raw_entry_count(payload), candidates=[paper for paper in papers if _is_recent(paper, cutoff)], incomplete=_raw_entry_count(payload) >= max_results and all(_is_recent(paper, cutoff) for paper in papers))
 
 
 def parse_arxiv_feed(xml_text: str) -> list[PaperCandidate]:

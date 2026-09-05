@@ -16,8 +16,9 @@ from paper_scout.query_planner import PlannedQuery
 class SemanticScholarFetcher:
     source = "semantic_scholar"
 
-    def __init__(self, http: HttpClient | None = None) -> None:
+    def __init__(self, http: HttpClient | None = None, max_metadata_requests: int | None = None) -> None:
         self.http = http or HttpClient(min_interval_seconds=1.0)
+        self.metadata_remaining = max_metadata_requests
 
     def search(self, term: str, days: int, max_results: int) -> list[PaperCandidate]:
         return self.search_with_diagnostics(term, days, max_results).candidates
@@ -33,8 +34,13 @@ class SemanticScholarFetcher:
         }
         payload = self.http.get_text("https://api.semanticscholar.org/graph/v1/paper/search", params=params, headers=headers)
         cutoff = date.today() - timedelta(days=days)
-        papers = _enrich_year_only_arxiv_papers(parse_semantic_scholar_results(payload), self.http)
-        return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=[paper for paper in papers if _is_recent(paper, cutoff)])
+        parsed = parse_semantic_scholar_results(payload)
+        metadata_requests = sum(p.publication_date_precision == "year" and bool(p.arxiv_id) for p in parsed)
+        if self.metadata_remaining is not None:
+            metadata_requests = min(metadata_requests, self.metadata_remaining)
+            self.metadata_remaining -= metadata_requests
+        papers = _enrich_year_only_arxiv_papers(parsed, self.http, max_requests=metadata_requests)
+        return SourceFetchResult(raw_count=_raw_record_count(payload), candidates=[paper for paper in papers if _is_recent(paper, cutoff)], incomplete=_raw_record_count(payload) >= max_results, metadata_requests=metadata_requests)
 
     def search_planned(self, query: PlannedQuery, days: int, max_results: int) -> list[PaperCandidate]:
         return self.search(query.provider_query, days, max_results)
@@ -86,12 +92,17 @@ def parse_semantic_scholar_results(json_text: str) -> list[PaperCandidate]:
     return papers
 
 
-def _enrich_year_only_arxiv_papers(papers: list[PaperCandidate], http: HttpClient) -> list[PaperCandidate]:
+def _enrich_year_only_arxiv_papers(papers: list[PaperCandidate], http: HttpClient, max_requests: int | None = None) -> list[PaperCandidate]:
     enriched: list[PaperCandidate] = []
+    attempted = 0
     for paper in papers:
         if paper.publication_date_precision != "year" or not paper.arxiv_id:
             enriched.append(paper)
             continue
+        if max_requests is not None and attempted >= max_requests:
+            enriched.append(paper)
+            continue
+        attempted += 1
         try:
             payload = http.get_text("https://export.arxiv.org/api/query", params={"id_list": paper.arxiv_id, "max_results": 1})
             arxiv_papers = parse_arxiv_feed(payload)

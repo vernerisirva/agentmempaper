@@ -6,8 +6,9 @@ import socket
 import ssl
 import time
 from dataclasses import dataclass, field
+from typing import ClassVar
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 LOGGER = logging.getLogger(__name__)
@@ -28,6 +29,9 @@ class HttpClient:
     pause_seconds: float = 1.0
     min_interval_seconds: float = 0.0
     _last_request_at: float = field(default=0.0, init=False, repr=False)
+    request_count: int = field(default=0, init=False)
+    retry_count: int = field(default=0, init=False)
+    _provider_last: ClassVar[dict[str, float]] = {}
 
     def get_text(self, url: str, params: dict[str, str | int] | None = None, headers: dict[str, str] | None = None) -> str:
         full_url = _with_params(url, params)
@@ -42,7 +46,11 @@ class HttpClient:
         last_error: Exception | None = None
         for attempt in range(1, self.retries + 1):
             try:
-                self._throttle()
+                self._throttle(url)
+                self.request_count += 1
+                self.retry_count += int(attempt > 1)
+                self._last_request_at = time.monotonic()
+                self._provider_last[urlsplit(url).netloc] = self._last_request_at
                 request = Request(
                     url,
                     data=body,
@@ -61,12 +69,15 @@ class HttpClient:
         message = str(last_error) if last_error else "unknown request failure"
         raise HttpRequestError(kind, url, f"request failed after {self.retries} attempts: {message}") from last_error
 
-    def _throttle(self) -> None:
-        if self.min_interval_seconds <= 0 or not self._last_request_at:
-            return
-        remaining = self.min_interval_seconds - (time.monotonic() - self._last_request_at)
-        if remaining > 0:
-            time.sleep(remaining)
+    def _throttle(self, url: str) -> None:
+        host = urlsplit(url).netloc
+        provider_interval = {"export.arxiv.org": 3.0, "api.semanticscholar.org": 1.0}.get(host, 0.0)
+        interval = max(self.min_interval_seconds, provider_interval)
+        last = max(self._last_request_at, self._provider_last.get(host, 0.0))
+        if interval > 0 and last:
+            remaining = interval - (time.monotonic() - last)
+            if remaining > 0:
+                time.sleep(remaining)
 
 
 def _with_params(url: str, params: dict[str, str | int] | None) -> str:

@@ -9,7 +9,7 @@ error_path="${RUNNER_TEMP}/paper-scout-release-view.err"
 
 if gh release view "$release_tag" --json id >/dev/null 2>"$error_path"; then
   gh release download "$release_tag" --pattern "paper-scout-state.tar.gz" --dir "$RUNNER_TEMP"
-  tar -xzf "$archive_path"
+  python3 -m paper_scout.runtime_snapshot restore "$archive_path"
   echo "Restored Paper Scout state from durable GitHub Release asset."
 elif grep -qiE '(not found|http 404)' "$error_path"; then
   echo "No durable Paper Scout state release exists yet; migration bootstrap may seed state."

@@ -14,9 +14,18 @@ class RelevanceExample:
     name: str
     expected_relevant: bool
     candidate: PaperCandidate
+    expected_decision: str | None = None
 
 
 def relevance_fixture_examples(profile: str = "agent_memory") -> list[RelevanceExample]:
+    from paper_scout.config import validate_track
+    validate_track(profile)
+    if profile == "engram":
+        from paper_scout.engram_evaluation import seed_fixtures, regression_cases
+        examples = [RelevanceExample(p.arxiv_id, True, p, "relevant") for p in seed_fixtures()]
+        for title, abstract, decision in regression_cases():
+            examples.append(RelevanceExample(title, decision in {"relevant", "maybe"}, PaperCandidate(title, ["Synthetic fixture"], abstract, "fixture", title), decision))
+        return examples
     if profile == "deep_research":
         return deep_research_fixture_examples()
     relevant = [
@@ -111,6 +120,7 @@ def deep_research_fixture_examples() -> list[RelevanceExample]:
 
 def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool = False, profile: str = "agent_memory") -> dict[str, object]:
     rows: list[dict[str, object]] = []
+    decision_mismatches: list[str] = []
     false_positives: list[str] = []
     false_negatives: list[str] = []
     true_positive = false_positive = true_negative = false_negative = 0
@@ -122,6 +132,8 @@ def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool 
             if use_llm and should_consider_for_llm(rule_result)
             else rule_result
         )
+        if example.expected_decision and result.decision != example.expected_decision:
+            decision_mismatches.append(example.name)
         predicted_relevant = result.decision in {"relevant", "maybe"}
         if predicted_relevant and example.expected_relevant:
             true_positive += 1
@@ -137,7 +149,7 @@ def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool 
         rows.append(
             {
                 "name": example.name,
-                "expected": "relevant" if example.expected_relevant else "irrelevant",
+                "expected": example.expected_decision or ("relevant" if example.expected_relevant else "irrelevant"),
                 "decision": result.decision,
                 "score": result.score,
                 "reason": result.reason,
@@ -148,6 +160,7 @@ def evaluate_relevance_examples(examples: list[RelevanceExample], use_llm: bool 
     precision = true_positive / (true_positive + false_positive) if true_positive + false_positive else 1.0
     recall = true_positive / (true_positive + false_negative) if true_positive + false_negative else 1.0
     return {
+        "decision_mismatches": decision_mismatches,
         "precision": precision,
         "recall": recall,
         "true_positive": true_positive,
@@ -174,11 +187,14 @@ def render_relevance_report(report: dict[str, object], report_date: str) -> str:
     lines = [
         f"# Paper Scout Relevance Evaluation - {report_date}",
         "",
+        "> Fixed regression-set results; these scores do not measure production literature coverage.",
+        "",
         f"- **Precision-like score:** {report['precision']:.3f}",
         f"- **Recall-like score:** {report['recall']:.3f}",
         f"- **False positives:** {len(report['false_positives'])}",
         f"- **False negatives:** {len(report['false_negatives'])}",
         f"- **LLM classifier used:** {report['used_llm']}",
+        f"- **Exact decision mismatches:** {len(report.get('decision_mismatches', []))}",
         f"- **Profile:** {report.get('profile', 'agent_memory')}",
         "",
         "## False Positives",

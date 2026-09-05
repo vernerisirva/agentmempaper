@@ -12,7 +12,7 @@ import re
 import sqlite3
 
 from .deduplication import normalize_arxiv_id
-from .config import QualityConfig, QualityDisplayConfig
+from .config import QualityConfig, QualityDisplayConfig, track_links, validate_track
 from .curation import parse_curation_sections
 from .dates import effective_sort_date, precision_rank, publication_date, sort_date_value
 from .enrichment import DateEnrichmentDiagnostics, enrich_candidate_publication_date
@@ -90,6 +90,7 @@ class LibraryPaper:
     last_seen_at: str | None
     notified_at: str | None
     notified_date: str | None
+    updated_date: str | None = None
     publication_year: str | None = None
     publication_date_precision: str | None = None
     publication_date_source: str | None = None
@@ -208,7 +209,14 @@ def build_site(
     cross_track_href: str | None = "deep-research/index.html",
     relevance_profile: str = "agent_memory",
     quality_config: QualityConfig | None = None,
+    navigation: tuple[tuple[str, str], ...] | None = None,
+    enrich_dates: bool = True,
 ) -> SiteBuildResult:
+    validate_track(relevance_profile)
+    if navigation is None:
+        navigation = track_links(relevance_profile)
+        if cross_track_label and cross_track_href and (cross_track_label, cross_track_href) != ("Deep Research Library", "deep-research/index.html"):
+            navigation = tuple((cross_track_label, href) if href == cross_track_href else (label, href) for label, href in navigation)
     digest_path = _latest_digest_path(Path(digest_dir))
     if digest_path is None:
         return SiteBuildResult(False, f"No daily digest files found in {digest_dir}. Run `python3 -m paper_scout run` first.")
@@ -224,7 +232,8 @@ def build_site(
     if not library_papers:
         library_papers = _library_from_digests(archive_digests)
     library_papers = _merge_dashboard_duplicates(library_papers)
-    library_papers = _enrich_library_dates(library_papers)
+    if enrich_dates:
+        library_papers = _enrich_library_dates(library_papers)
     if using_state:
         library_papers = _refresh_rule_classifications(library_papers, relevance_profile=relevance_profile)
     active_quality = quality_config or QualityConfig(enabled=False)
@@ -243,7 +252,7 @@ def build_site(
     docs_root.mkdir(parents=True, exist_ok=True)
     (docs_root / "data").mkdir(parents=True, exist_ok=True)
     generated_at = site_build_time.isoformat(sep=" ")
-    _write_paper_detail_pages(docs_root, library_papers, generated_at, relevance_profile=relevance_profile)
+    _write_paper_detail_pages(docs_root, library_papers, generated_at, relevance_profile=relevance_profile, navigation=navigation)
     (docs_root / "style.css").write_text(STYLE_CSS, encoding="utf-8")
     digest_link_prefix = _digest_link_prefix(digest_root)
     (docs_root / "index.html").write_text(
@@ -253,8 +262,10 @@ def build_site(
             archive_digests,
             site_title=site_title,
             site_subtitle=site_subtitle,
-            cross_track_label=cross_track_label,
-            cross_track_href=cross_track_href,
+            digest_link_prefix=digest_link_prefix,
+            cross_track_label=None,
+            cross_track_href=None,
+            navigation=navigation,
             quality_enabled=active_quality.enabled,
             quality_display=active_quality.display,
         ),
@@ -267,16 +278,17 @@ def build_site(
             archive_digests,
             site_title=site_title,
             digest_link_prefix=digest_link_prefix,
+            navigation=navigation,
             quality_enabled=active_quality.enabled,
             quality_display=active_quality.display,
         ),
         encoding="utf-8",
     )
     (docs_root / "archive.html").write_text(
-        _render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix, site_title=site_title),
+        _render_archive_page(archive_digests, digest_link_prefix=digest_link_prefix, site_title=site_title, navigation=navigation),
         encoding="utf-8",
     )
-    (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle, quality_enabled=active_quality.enabled), encoding="utf-8")
+    (docs_root / "about.html").write_text(_render_about_page(site_title=site_title, site_subtitle=site_subtitle, quality_enabled=active_quality.enabled, relevance_profile=relevance_profile, navigation=navigation), encoding="utf-8")
     (docs_root / "data" / "papers.json").write_text(json.dumps([_library_paper_to_json(paper) for paper in library_papers], indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "latest.json").write_text(json.dumps(_latest_to_json(latest, latest_discoveries), indent=2, sort_keys=True), encoding="utf-8")
     (docs_root / "data" / "paper-card.schema.json").write_text(json.dumps(paper_card_schema(), indent=2, sort_keys=True), encoding="utf-8")
@@ -301,6 +313,11 @@ def _daily_digest_paths(digest_dir: Path) -> list[Path]:
 
 def _digest_link_prefix(digest_dir: Path) -> str:
     if digest_dir.is_absolute():
+        # Preserve the public track path when validating under an isolated root,
+        # without exposing the machine's absolute path in a published link.
+        if "digests" in digest_dir.parts:
+            start = len(digest_dir.parts) - 1 - tuple(reversed(digest_dir.parts)).index("digests")
+            return Path(*digest_dir.parts[start:]).as_posix()
         return "digests"
     return digest_dir.as_posix().strip("/") or "digests"
 
@@ -429,6 +446,8 @@ def _date_part(value: str | None) -> str | None:
 
 def _site_build_time(value: datetime | str | None) -> datetime:
     if isinstance(value, datetime):
+        if value.tzinfo is not None:
+            value = value.astimezone(UTC).replace(tzinfo=None)
         return value.replace(microsecond=0)
     if isinstance(value, str):
         parsed = _datetime_value(value)
@@ -440,12 +459,14 @@ def _site_build_time(value: datetime | str | None) -> datetime:
 def _datetime_value(value: str | None) -> datetime | None:
     if not value:
         return None
-    match = re.search(r"(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})(?::(\d{2}))?", value.strip())
-    if not match:
-        return None
-    seconds = match.group(3) or "00"
     try:
-        return datetime.fromisoformat(f"{match.group(1)} {match.group(2)}:{seconds}")
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+        # Dates alone do not establish a time of entry into a library.
+        if "T" not in value and " " not in value:
+            return None
+        if parsed.tzinfo is not None:
+            parsed = parsed.astimezone(UTC).replace(tzinfo=None)
+        return parsed
     except ValueError:
         return None
 
@@ -743,12 +764,12 @@ def _mark_new_papers(papers: list[LibraryPaper], build_time: datetime, fallback_
 
 
 def _is_new_since_first_seen(first_seen_at: str | None, build_time: datetime, fallback_date: str) -> bool:
+    build_time = _site_build_time(build_time)
     first_seen_time = _datetime_value(first_seen_at)
     if first_seen_time:
         age = build_time - first_seen_time
         return timedelta(0) <= age <= timedelta(hours=24)
-    first_seen_date = _date_part(first_seen_at)
-    return bool(first_seen_date and first_seen_date == fallback_date)
+    return False
 
 
 def _apply_curation(
@@ -1039,6 +1060,8 @@ def _date_override(item: dict[str, object]) -> DateOverride:
 def _relevance_label(paper: LibraryPaper, relevance_profile: str = "agent_memory") -> str:
     tags = set(paper.tags)
     text = " ".join([paper.title, paper.reason, paper.abstract_summary, " ".join(paper.tags)]).lower()
+    if relevance_profile == "engram":
+        return {"relevant": "Engram / conditional-memory study", "maybe": "Adjacent learned-memory review candidate"}.get(paper.decision, "Peripheral or excluded memory topic")
     if relevance_profile == "deep_research":
         if paper.decision == "maybe":
             return "Research-adjacent review candidate"
@@ -1107,6 +1130,8 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         openalex_id=best.openalex_id or left.openalex_id or right.openalex_id,
         url=best.url or left.url or right.url or (alternate_urls[0] if alternate_urls else None),
         published_date=best_date.value,
+        updated_date=(_max_date_value(left.updated_date, right.updated_date)
+                      if left.source == right.source else best.updated_date),
         first_seen_at=first_seen_at,
         last_seen_at=last_seen_at,
         notified_at=notified_at,
@@ -1244,6 +1269,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 openalex_id=_redact_secrets(str(row["openalex_id"])) if row["openalex_id"] else None,
                 url=url,
                 published_date=str(row["published_date"]) if row["published_date"] else None,
+                updated_date=str(row["updated_date"]) if "updated_date" in row.keys() and row["updated_date"] else None,
                 first_seen_at=first_seen_at,
                 last_seen_at=str(row["last_seen_at"]) if row["last_seen_at"] else None,
                 notified_at=str(row["notified_at"]) if row["notified_at"] else None,
@@ -1375,6 +1401,7 @@ def _write_paper_detail_pages(
     papers: list[LibraryPaper],
     generated_at: str,
     relevance_profile: str = "agent_memory",
+    navigation: tuple[tuple[str, str], ...] = (),
 ) -> None:
     papers_dir = docs_root / "papers"
     papers_dir.mkdir(parents=True, exist_ok=True)
@@ -1384,7 +1411,7 @@ def _write_paper_detail_pages(
     for paper in papers:
         slug = _paper_slug(paper)
         (papers_dir / f"{slug}.html").write_text(
-            _render_paper_detail_page(paper, relevance_profile=relevance_profile),
+            _render_paper_detail_page(paper, relevance_profile=relevance_profile, navigation=navigation),
             encoding="utf-8",
         )
         (papers_dir / f"{slug}.json").write_text(
@@ -1421,6 +1448,7 @@ def _paper_detail_json(
     data["ssrn_id"] = _ssrn_id(paper)
     data["publication"] = {
         "date": paper.published_date,
+        "latest_revision_date": paper.updated_date if paper.source == "arxiv" else None,
         "year": paper.publication_year or _paper_year_from_value(paper.published_date),
         "precision": _publication_precision(paper),
         "source": paper.publication_date_source,
@@ -1518,6 +1546,8 @@ def _library_paper_to_json(paper: LibraryPaper) -> dict[str, object]:
         "detail_page": _paper_detail_url(paper),
         "detail_json": _paper_detail_json_url(paper),
         "publication_date": paper.published_date,
+        "source_updated_date": paper.updated_date,
+        "latest_revision_date": paper.updated_date if paper.source == "arxiv" else None,
         "publication_year": paper.publication_year or _paper_year_from_value(paper.published_date),
         "publication_date_precision": _publication_precision(paper),
         "publication_date_source": paper.publication_date_source,
@@ -1592,6 +1622,8 @@ def _render_library_page(
     cross_track_href: str | None = "deep-research/index.html",
     quality_enabled: bool = False,
     quality_display: QualityDisplayConfig | None = None,
+    navigation: tuple[tuple[str, str], ...] = (),
+    digest_link_prefix: str = "digests",
 ) -> str:
     default_decision = _default_homepage_decision(papers)
     cross_track_link = _cross_track_link(cross_track_label, cross_track_href)
@@ -1625,10 +1657,11 @@ def _render_library_page(
           </div>
           <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
         </section>
-        {_secondary_footer(latest, archive)}
+        {_secondary_footer(latest, archive, digest_link_prefix=digest_link_prefix)}
         {FILTER_SCRIPT}
         """,
         description=_description_for_site(site_title),
+        navigation=navigation,
     )
 
 
@@ -1646,6 +1679,7 @@ def _render_latest_discoveries_page(
     digest_link_prefix: str = "digests",
     quality_enabled: bool = False,
     quality_display: QualityDisplayConfig | None = None,
+    navigation: tuple[tuple[str, str], ...] = (),
 ) -> str:
     has_highly_relevant = any(paper.decision == "relevant" for paper in papers)
     if not papers:
@@ -1703,6 +1737,7 @@ def _render_latest_discoveries_page(
         {FILTER_SCRIPT}
         """,
         description=_description_for_site(site_title),
+        navigation=navigation,
     )
 
 
@@ -1710,6 +1745,7 @@ def _render_archive_page(
     archive: list[ParsedDigest],
     digest_link_prefix: str = "digests",
     site_title: str = "Agentic Memory Paper Library",
+    navigation: tuple[tuple[str, str], ...] = (),
 ) -> str:
     rows = "\n".join(
         f"""
@@ -1748,6 +1784,7 @@ def _render_archive_page(
         <section class="archive-list" aria-label="Digest archive">{rows}</section>
         """,
         description=_description_for_site(site_title),
+        navigation=navigation,
     )
 
 
@@ -1755,6 +1792,8 @@ def _render_about_page(
     site_title: str = "Agentic Memory Paper Library",
     site_subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.",
     quality_enabled: bool = False,
+    relevance_profile: str = "agent_memory",
+    navigation: tuple[tuple[str, str], ...] = (),
 ) -> str:
     is_agent_memory = site_title == "Agentic Memory Paper Library"
     page_title = "About Paper Scout" if is_agent_memory else f"About {site_title}"
@@ -1768,6 +1807,18 @@ def _render_about_page(
         if is_agent_memory
         else "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports autonomous/deep research workflows; review candidates may be useful but need human judgment."
     )
+    references = ""
+    if relevance_profile == "engram":
+        tracking_text = "This library tracks Engram and closely related model-integrated conditional memory: learned lookup tables, hashed n-grams, memory readers, transfer, training, capacity scaling and efficient execution. Related mechanisms are not assumed to be identical architectures."
+        relevance_text = "Highly relevant papers substantively study these mechanisms. Product-key memories, neural memory layers, model-memory editing and test-time memory need a concrete connection and may remain review candidates. Name collisions, generic RAG and conversation storage are excluded. Negative findings and unsuccessful replications remain eligible; relevance is not an endorsement."
+        references = '''<article><h2>Implementation references</h2>
+            <p>Separate from the scholarly paper list: <a href="https://github.com/deepseek-ai/Engram">DeepSeek Engram repository</a>,
+            <a href="https://github.com/NVIDIA/Megatron-LM/pull/3689">Megatron-LM integration discussion (PR 3689)</a>, and
+            <a href="https://github.com/NVIDIA/Megatron-LM/issues/3382">Megatron-LM feature request (issue 3382)</a>.</p>
+            <p>These links provide implementation context; their status is not monitored automatically.</p></article>
+            <article><h2>Updates and coverage</h2><p>New means added to this library within the past 24 hours, not newly published. Initial submission, revision and first-seen dates remain separate.</p>
+            <p>Each provider has four logical daily queries and one result page per query, capped at 25 records. Incomplete windows and provider errors are retained in diagnostics. Foundational IDs are ingested separately; historical search is an explicit one-time operation.</p>
+            <p>Quality assessment uses deterministic metadata checks by default, up to four papers per run, with zero model calls. Missing full-paper evidence remains unknown.</p></article>'''
     return _page(
         page_title,
         f"""
@@ -1786,6 +1837,7 @@ def _render_about_page(
           <p class="hero-copy">{escape(site_subtitle)}</p>
         </header>
         <section class="about-grid">
+          {references}
           <article>
             <h2>What Paper Scout tracks</h2>
             <p>{escape(tracking_text)}</p>
@@ -1823,11 +1875,15 @@ def _render_about_page(
         </section>
         """,
         description=_description_for_site(site_title),
+        navigation=navigation,
     )
 
 
 def _structured_card_html(card: dict[str, dict[str, str]], relevance_profile: str = "agent_memory") -> str:
     relation_label = (
+        "Relation to Engram / conditional memory"
+        if relevance_profile == "engram"
+        else
         "Relation to deep research / autonomous research"
         if relevance_profile == "deep_research"
         else "Relation to agentic memory"
@@ -1859,7 +1915,7 @@ def _structured_card_html(card: dict[str, dict[str, str]], relevance_profile: st
     return f'<dl class="detail-metadata structured-card-fields">{"".join(rows)}</dl>'
 
 
-def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "agent_memory") -> str:
+def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "agent_memory", navigation: tuple[tuple[str, str], ...] = ()) -> str:
     sources = paper.sources or [paper.source]
     source_items = "".join(f"<li>{escape(_source_label(source))}</li>" for source in sources)
     alternate_links = _secondary_links(paper) or '<p class="muted">No alternate source links recorded.</p>'
@@ -1883,6 +1939,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
         f"<li>{escape(label)}: {escape(_display_value(value))}</li>"
         for label, value in [
             ("Metadata sources", ", ".join(str(source) for source in provenance["metadata_sources"])),
+            ("Latest revision / source update", paper.updated_date),
             ("Publication date source", provenance["publication_date_source"]),
             ("Publication date precision", provenance["publication_date_precision"]),
             ("Publication date confidence", provenance["publication_date_confidence"]),
@@ -1974,6 +2031,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
         """,
         stylesheet="../style.css",
         description=_description_for_profile(relevance_profile),
+        navigation=tuple((label, "../" + href) for label, href in navigation),
     )
 
 
@@ -2030,12 +2088,16 @@ def _display_value(value: object) -> str:
 
 
 def _description_for_site(site_title: str) -> str:
+    if site_title == "Engram & Conditional Memory Paper Library":
+        return "Daily Paper Scout library of Engram-style model memory, learned lookup tables, and transferable memory mechanisms."
     if site_title == "Deep Research Paper Library":
         return "Daily Paper Scout briefing for autonomous research agents, AI-scientist systems, and deep research workflows."
     return "Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms."
 
 
 def _description_for_profile(relevance_profile: str) -> str:
+    if relevance_profile == "engram":
+        return _description_for_site("Engram & Conditional Memory Paper Library")
     if relevance_profile == "deep_research":
         return _description_for_site("Deep Research Paper Library")
     return _description_for_site("Agentic Memory Paper Library")
@@ -2046,7 +2108,10 @@ def _page(
     body: str,
     stylesheet: str = "style.css",
     description: str = "Daily Paper Scout briefing for agentic memory, deep research agents, and memory mechanisms.",
+    navigation: tuple[tuple[str, str], ...] = (),
 ) -> str:
+    links = " ".join(_cross_track_link(label, href) for label, href in navigation)
+    body = body.replace('<span class="nav-links">', '<span class="nav-links">' + links, 1)
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -2258,9 +2323,9 @@ def _source_warning_summary(warnings: list[str]) -> str:
     return "Some source diagnostics need review. Details are available below."
 
 
-def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
+def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest], digest_link_prefix: str = "digests") -> str:
     recent = "".join(
-        f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/{escape(item.date)}.md">{escape(item.date)}</a>'
+        f'<a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/{escape(item.date)}.md">{escape(item.date)}</a>'
         for item in reversed(archive[:8])
     )
     warnings = "\n".join(f"<li>{escape(warning)}</li>" for warning in latest.source_warnings) or "<li>No source warnings.</li>"
@@ -2297,7 +2362,7 @@ def _secondary_footer(latest: ParsedDigest, archive: list[ParsedDigest]) -> str:
       </details>
       <nav class="footer-links" aria-label="Secondary">
         <a href="latest.html">Latest run</a>
-        <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/latest.md">Markdown digest</a>
+        <a href="https://github.com/vernerisirva/agentmempaper/blob/main/{escape(digest_link_prefix)}/latest.md">Markdown digest</a>
         {recent}
       </nav>
     </footer>
@@ -2708,6 +2773,9 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
             "combined_rank_score",
             "quality_downranked",
             "quality_suppressed",
+            "latest_revision_date",
+            "source_updated_date",
+            "first_seen_at",
         ],
         lineterminator="\n",
     )
@@ -2718,6 +2786,9 @@ def _papers_csv(papers: list[LibraryPaper]) -> str:
                 "title": paper.title,
                 "authors": paper.authors_text,
                 "publication_date": paper.published_date or "",
+                "latest_revision_date": (paper.updated_date or "") if paper.source == "arxiv" else "",
+                "first_seen_at": paper.first_seen_at or "",
+                "source_updated_date": paper.updated_date or "",
                 "first_seen_date": paper.first_seen_date,
                 "relevance_decision": paper.decision,
                 "relevance_score": paper.score,

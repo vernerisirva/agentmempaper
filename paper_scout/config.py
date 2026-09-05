@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 import os
+import posixpath
 from pathlib import Path
 
 
@@ -69,7 +70,30 @@ DEFAULT_CONFIG_PATH = Path("config/paper_scout.yaml")
 TRACK_CONFIG_PATHS = {
     "agent_memory": Path("config/tracks/agent_memory.yaml"),
     "deep_research": Path("config/tracks/deep_research.yaml"),
+    "engram": Path("config/tracks/engram.yaml"),
 }
+
+# Public paths, independent of local build/output overrides.
+TRACK_SITES = {
+    "agent_memory": ("Agentic Memory", "."),
+    "deep_research": ("Deep Research", "deep-research"),
+    "engram": ("Engram", "engram"),
+}
+
+
+def validate_track(track_id: str) -> str:
+    if track_id not in TRACK_CONFIG_PATHS:
+        raise ValueError(f"unknown Paper Scout track: {track_id}")
+    return track_id
+
+
+def track_links(track_id: str) -> tuple[tuple[str, str], ...]:
+    validate_track(track_id)
+    current = TRACK_SITES[track_id][1]
+    return tuple(
+        (label, posixpath.relpath(posixpath.join(path, "index.html"), current))
+        for key, (label, path) in TRACK_SITES.items() if key != track_id
+    )
 
 
 @dataclass(frozen=True)
@@ -148,12 +172,16 @@ class ScoutConfig:
     subtitle: str = "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms."
     days: int = 7
     max_results_per_source: int = 25
+    max_metadata_requests: int | None = None
     sqlite_path: Path = Path("data/paper_scout.sqlite3")
     digest_dir: Path = Path("digests")
     report_dir: Path = Path("reports/paper_scout")
     docs_dir: Path = Path("docs")
     curation_path: Path = Path("config/curation.yaml")
     relevance_profile: str = "agent_memory"
+    relevance_llm_enabled: bool = True
+    site_enrichment_enabled: bool = True
+    seed_manifest: Path | None = None
     cross_track_label: str = "Deep Research Library"
     cross_track_href: str = "deep-research/index.html"
     research_context: list[str] = field(default_factory=lambda: list(DEFAULT_RESEARCH_CONTEXT))
@@ -163,6 +191,10 @@ class ScoutConfig:
     arxiv_sweep: ArxivSweepConfig = field(default_factory=ArxivSweepConfig)
     quality: QualityConfig = field(default_factory=QualityConfig)
 
+    def __post_init__(self) -> None:
+        validate_track(self.track_id)
+        validate_track(self.relevance_profile)
+
 
 def load_config(
     path: Path | str = DEFAULT_CONFIG_PATH,
@@ -171,12 +203,14 @@ def load_config(
 ) -> ScoutConfig:
     active_env = os.environ if env is None else env
     config_path = Path(path)
-    active_track_id = track_id or "agent_memory"
+    active_track_id = validate_track(track_id or "agent_memory")
     if track_id and config_path == DEFAULT_CONFIG_PATH:
         track_path = TRACK_CONFIG_PATHS.get(active_track_id)
-        if track_path and track_path.exists():
+        if track_path:
             config_path = track_path
     if not config_path.exists():
+        if active_track_id != "agent_memory":
+            raise FileNotFoundError(f"missing track configuration: {config_path}")
         return ScoutConfig(
             terms=DEFAULT_TERMS,
             track_id=active_track_id,
@@ -204,7 +238,9 @@ def load_config(
     sweep_values = _parse_mapping(config_text, "arxiv_sweep")
     quality_values = _parse_nested_mapping(config_text, "quality")
 
-    loaded_track_id = str(track_values.get("id") or active_track_id or "agent_memory")
+    loaded_track_id = validate_track(str(track_values.get("id") or active_track_id))
+    if track_id and loaded_track_id != track_id:
+        raise ValueError(f"requested track {track_id} does not match config track {loaded_track_id}")
     terms = search_values.get("terms") or DEFAULT_TERMS
     default_sqlite = str(state_values.get("sqlite_path", "data/paper_scout.sqlite3"))
     sqlite_path = Path(_state_path_from_env(active_env, loaded_track_id, default_sqlite))
@@ -215,12 +251,16 @@ def load_config(
         subtitle=str(track_values.get("subtitle") or "A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms."),
         days=int(search_values.get("days", 7)),
         max_results_per_source=int(search_values.get("max_results_per_source", 25)),
+        max_metadata_requests=max(0, int(search_values["max_metadata_requests"])) if "max_metadata_requests" in search_values else None,
         sqlite_path=sqlite_path,
         digest_dir=Path(output_values.get("digest_dir", "digests")),
         report_dir=Path(output_values.get("report_dir", "reports/paper_scout")),
         docs_dir=Path(output_values.get("docs_dir", "docs")),
         curation_path=Path(curation_values.get("path", "config/curation.yaml")),
         relevance_profile=str(track_values.get("relevance_profile") or loaded_track_id),
+        relevance_llm_enabled=_as_bool(track_values.get("relevance_llm_enabled"), True),
+        site_enrichment_enabled=_as_bool(track_values.get("site_enrichment_enabled"), True),
+        seed_manifest=Path(track_values["seed_manifest"]) if track_values.get("seed_manifest") else None,
         cross_track_label=str(track_values.get("cross_track_label") or "Deep Research Library"),
         cross_track_href=str(track_values.get("cross_track_href") or "deep-research/index.html"),
         research_context=[str(item) for item in data.get("research_context", DEFAULT_RESEARCH_CONTEXT)],

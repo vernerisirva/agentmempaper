@@ -908,7 +908,7 @@ date_overrides:
                     "Date Only Current Agent Memory",
                     "date-current",
                     "2026-06-28",
-                    True,
+                    False,
                 ),
                 (
                     "Date Only Old Agent Memory",
@@ -951,7 +951,7 @@ date_overrides:
             by_title = {paper["title"]: paper for paper in papers}
             self.assertTrue(by_title["Recent Timestamp Agent Memory"]["is_new"])
             self.assertFalse(by_title["Old Timestamp Agent Memory"]["is_new"])
-            self.assertTrue(by_title["Date Only Current Agent Memory"]["is_new"])
+            self.assertFalse(by_title["Date Only Current Agent Memory"]["is_new"])
             self.assertFalse(by_title["Date Only Old Agent Memory"]["is_new"])
 
             recent_visible = _visible_card_html(index_html, "recent timestamp agent memory")
@@ -962,7 +962,7 @@ date_overrides:
             self.assertIn('aria-label="New in the last 24 hours"', recent_visible)
             self.assertIn(">New</span>", recent_visible)
             self.assertNotIn('class="new-badge"', old_visible)
-            self.assertIn('class="new-badge"', current_date_visible)
+            self.assertNotIn('class="new-badge"', current_date_visible)
             self.assertNotIn('class="new-badge"', old_date_visible)
 
             self.assertIn('data-is-new="true"', index_html)

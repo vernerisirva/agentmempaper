@@ -27,6 +27,15 @@ BIOLOGY = r"\b(?:hippocamp\w*|neuronal engrams?|engram cells?|neuroscience|synap
 CONTRIBUTION = r"\b(?:we|this (?:paper|work|study))\b.{0,100}\b(?:propos\w*|introduc\w*|stud\w*|evaluat\w*|replicat\w*|analy[sz]\w*|investigat\w*|adapt\w*|train\w*|test\w*|compar\w*|implement\w*|show\w*)\b"
 CITATION_ONLY = r"\b(?:related work|cites?|citing|mentioned|inspired by)\b|\b(?:prior|previous) work\b"
 NEGATED = r"\b(?:without|no|unrelated to|does not (?:use|study|evaluate))\b.{0,30}\b(?:conditional[- ]memory|learned lookup|engram[- ]style)\b"
+INDIRECT_CONNECTION = (
+    r"\b(?:indirect|unestablished|uncertain) (?:relation(?:ship)?|connection|link)\b.{0,60}\b(?:engram|conditional[- ]memory)\b"
+    r"|\b(?:relation(?:ship)?|connection|link)\b.{0,60}\b(?:engram|conditional[- ]memory)\b.{0,35}\b(?:indirect|unestablished|uncertain)\b"
+)
+MODEL_INTEGRATION = (
+    r"\b(?:integrat\w*|inject\w*|fus\w*|attach\w*|connect\w*|consum\w*)\b.{0,100}"
+    r"\b(?:backbones?|transformers?|hidden states?|activations?|model computation)\b"
+    r"|\b(?:memory|lookup) tables?\b.{0,120}\b(?:readers?|gating|projections?)\b.{0,120}\b(?:backbones?|transformers?|hidden states?|layers?)\b"
+)
 
 
 def _hits(patterns: dict[str, str], text: str) -> list[str]:
@@ -39,16 +48,24 @@ def engram_evidence(candidate: PaperCandidate) -> dict[str, object]:
     # A citation/background mention alone cannot supply the study's mechanism.
     sentences = re.split(r"(?<=[.!?;])\s+", abstract)
     focused = [s for s in sentences if not re.search(CITATION_ONLY, s) or re.search(CONTRIBUTION, s)]
-    text = title + "\n" + " ".join(focused)
+    # A memory-free baseline is not a denial of the mechanism being evaluated.
+    # Nor can a negated/background mechanism supply positive architecture hits.
+    negative = [s for s in [title, *focused] if re.search(NEGATED, s)]
+    negated = any(not re.search(r"\b(?:baselines?|controls?|ablations?)\b", s) for s in negative)
+    positive = [s for s in focused if s not in negative]
+    text = (title if title not in negative else "") + "\n" + " ".join(positive)
     mechanisms = _hits(MECHANISMS, text)
     model_context = bool(re.search(LM, text))
     named = bool(re.search(r"\bengram(?:-style)?\b", text))
     reader = bool(re.search(READERS, text))
     title_focus = bool(_hits(MECHANISMS, title) or re.search(r"\bengram\b", title))
-    study_focus = title_focus or any(re.search(CONTRIBUTION, s) and (_hits(MECHANISMS, s) or re.search(r"\bengram\b", s)) for s in focused)
-    negated = bool(re.search(NEGATED, text))
-    indirect = bool(re.search(r"\b(?:indirect|unestablished|uncertain)\b", text))
-    architecture = bool(set(mechanisms) & {"conditional-memory", "hashed-ngram-memory", "learned-lookup"})
+    study_focus = title_focus or any(re.search(CONTRIBUTION, s) and (_hits(MECHANISMS, s) or re.search(r"\bengram\b", s)) for s in positive)
+    indirect = bool(re.search(INDIRECT_CONNECTION, text))
+    # External/learned memory banks also occur in prompt-based RAG. A lookup
+    # bank alone needs evidence that its values participate inside the model.
+    architecture = bool(set(mechanisms) & {"conditional-memory", "hashed-ngram-memory"}) or (
+        "learned-lookup" in mechanisms and bool(re.search(MODEL_INTEGRATION, text))
+    )
     core = not indirect and model_context and architecture and study_focus and (named or reader) and not negated
     adjacent = _hits(ADJACENT, text) if model_context and not negated else []
     exclusions = []

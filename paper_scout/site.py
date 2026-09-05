@@ -1130,7 +1130,8 @@ def _merge_two_papers(left: LibraryPaper, right: LibraryPaper) -> LibraryPaper:
         openalex_id=best.openalex_id or left.openalex_id or right.openalex_id,
         url=best.url or left.url or right.url or (alternate_urls[0] if alternate_urls else None),
         published_date=best_date.value,
-        updated_date=_max_date_value(left.updated_date, right.updated_date),
+        updated_date=(_max_date_value(left.updated_date, right.updated_date)
+                      if left.source == right.source else best.updated_date),
         first_seen_at=first_seen_at,
         last_seen_at=last_seen_at,
         notified_at=notified_at,

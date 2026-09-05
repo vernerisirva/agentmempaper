@@ -113,7 +113,17 @@ class PaperStore:
                         ) > (
                             CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
                         ) THEN excluded.publication_date_confidence ELSE COALESCE(papers.publication_date_confidence, excluded.publication_date_confidence) END,
-                    updated_date = COALESCE(excluded.updated_date, papers.updated_date),
+                    updated_date = CASE
+                        WHEN excluded.source = papers.source THEN
+                            CASE WHEN papers.updated_date IS NULL THEN excluded.updated_date
+                                 WHEN excluded.updated_date IS NULL THEN papers.updated_date
+                                 ELSE MAX(papers.updated_date, excluded.updated_date) END
+                        WHEN (
+                            CASE excluded.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) > (
+                            CASE papers.publication_date_precision WHEN 'exact' THEN 3 WHEN 'day' THEN 3 WHEN 'month' THEN 2 WHEN 'year' THEN 1 ELSE 0 END
+                        ) THEN excluded.updated_date
+                        ELSE papers.updated_date END,
                     raw_json = excluded.raw_json,
                     relevance_score = excluded.relevance_score,
                     relevance_decision = excluded.relevance_decision,

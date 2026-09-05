@@ -2,9 +2,9 @@
 
 - **CI mode:** True
 - **Sources attempted:** 3
-- **Sources succeeded:** 3
-- **Sources failed:** 0
-- **Raw records:** 300
+- **Sources succeeded:** 2
+- **Sources failed:** 1
+- **Raw records:** 250
 - **Candidates fetched:** 155
 - **Unique papers:** 144
 - **State initialized:** True
@@ -38,10 +38,11 @@
 
 ### semantic_scholar
 
-- Status: Success - zero results
-- Queries attempted: 4
-- Raw records: 100
+- Status: Failed
+- Queries attempted: 3
+- Raw records: 50
 - Converted candidates: 0
+- Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 
 ## Decisions
@@ -65,7 +66,7 @@
 
 ## Source Failures
 
-- None
+- semantic_scholar (HTTP/API error) for `AI scientist`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Deduplication Examples
 

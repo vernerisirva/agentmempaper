@@ -7,22 +7,22 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 ## Run Summary
 
 - **Run ID:** 1
-- **Candidates fetched:** 82
+- **Candidates fetched:** 83
 - **New unique papers:** 76
-- **Relevant:** 4
+- **Relevant:** 5
 - **Maybe relevant:** 0
 - **Irrelevant:** 78
-- **Source summary:** arxiv: 6, openalex: 76, semantic_scholar: 0
+- **Source summary:** arxiv: 6, openalex: 76, semantic_scholar: 1
 
 ## Source Warnings
 
-- openalex: incomplete_window for hashed memory language model
-- openalex: incomplete_window for cross-model memory transfer
-- openalex: incomplete_window for learned lookup memory language model
-- semantic_scholar: failed for Engram
-- semantic_scholar: failed for conditional memory language model
-- semantic_scholar: failed for frozen memory reader adaptation
-- semantic_scholar: failed for tokenizer-agnostic Engram
+- openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
+- openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
+- openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
+- semantic_scholar failed for 'Engram': http error for https://api.semanticscholar.org/graph/v1/paper/search?query=Engram&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds%2CopenAccessPdf: request failed after 3 attempts: HTTP Error 500: Internal Server Error
+- semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
 
 ## Highly Relevant
 
@@ -38,9 +38,9 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 - **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 - **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
 
-### [When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization](https://arxiv.org/abs/2608.29327v1)
+### [When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization](https://www.semanticscholar.org/paper/25ac9303c7376abdf1dc80620c5408d049061536)
 
-- **Authors:** Jiayu Hou, Lei Wang
+- **Authors:** Jiaxuan Hou, Lei Wang
 - **Date:** 2026-08-29
 - **Source:** arxiv
 - **Relevance:** relevant (92/100)

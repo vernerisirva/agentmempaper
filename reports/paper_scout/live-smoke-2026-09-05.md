@@ -5,7 +5,7 @@
 - **Sources succeeded:** 3
 - **Sources failed:** 0
 - **Raw records:** 625
-- **Candidates fetched:** 524
+- **Candidates fetched:** 523
 - **Unique papers:** 493
 - **State initialized:** True
 - **Idempotency passed:** True
@@ -38,15 +38,10 @@
 
 ### semantic_scholar
 
-- Status: Success
+- Status: Success - zero results
 - Queries attempted: 4
 - Raw records: 100
-- Converted candidates: 1
-- Sample title: Modality Disentangled Learning for Incomplete Multimodal Emotion Recognition: A Primitive Memory Distillation Perspective
-- Sample source ID: 50b458d018f8452a620325eb4a6f80652a52e215
-- Sample URL: https://www.semanticscholar.org/paper/50b458d018f8452a620325eb4a6f80652a52e215
-- Sample published date: 2026-08-31
-- Abstract: yes
+- Converted candidates: 0
 
 
 ## Decisions
@@ -92,7 +87,6 @@
 - arxiv:2609.00291: arxiv:2609.00291, arxiv:2609.00291
 - arxiv:2608.26530: arxiv:2608.26530, arxiv:2608.26530
 - arxiv:2609.03937: arxiv:2609.03937, arxiv:2609.03937
-- arxiv:2608.30563: arxiv:2608.30563, semantic_scholar:50b458d018f8452a620325eb4a6f80652a52e215
 - arxiv:2609.03844: arxiv:2609.03844, arxiv:2609.03844
 - arxiv:2609.03350: arxiv:2609.03350, arxiv:2609.03350
 - doi:10.48550/arxiv.2608.23268: openalex:W7204175137, openalex:W7204175137

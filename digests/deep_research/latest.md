@@ -6,7 +6,7 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 
 ## Run Summary
 
-- **Run ID:** 75
+- **Run ID:** 76
 - **Candidates fetched:** 128
 - **New unique papers:** 123
 - **Relevant:** 14
@@ -14,16 +14,15 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 - **Irrelevant:** 111
 - **Source summary:** arxiv: 28, openalex: 100, semantic_scholar: 0
 
-## Highly Relevant
+## Source Warnings
 
-### [APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering](https://arxiv.org/abs/2609.02253)
+- openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
+- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
+- openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
-- **Authors:** Jie Ding, Rui Sun, Xinyuan Zhang, Zeyu Zhang, Xin Liu
-- **Date:** 2026-09-02
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents augment large language models with external tools to answer complex, long-horizon questions through multi-turn reasoning. Learning from prior experience is crucial for continual improvement, yet existing methods either retrieve verbose task-specific traces that burden decision-making, or distill...
-- **Automated evidence-based assessment:** 56/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
+No new relevant or maybe-relevant papers found.

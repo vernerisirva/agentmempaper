@@ -89,6 +89,7 @@ class PaperScoutRunTest(unittest.TestCase):
                 second.digest_path.read_text(encoding="utf-8"),
             )
 
+    @patch.dict("os.environ", {"SEMANTIC_SCHOLAR_API_KEY": ""})
     def test_semantic_scholar_429_is_clear_and_non_fatal(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             config = ScoutConfig(

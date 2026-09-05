@@ -1,13 +1,10 @@
 # Paper Scout Relevance Evaluation - 2026-09-05
 
-> Fixed regression-set results; these scores do not measure production literature coverage.
-
 - **Precision-like score:** 1.000
 - **Recall-like score:** 1.000
 - **False positives:** 0
 - **False negatives:** 0
 - **LLM classifier used:** False
-- **Exact decision mismatches:** 0
 - **Profile:** deep_research
 
 ## False Positives

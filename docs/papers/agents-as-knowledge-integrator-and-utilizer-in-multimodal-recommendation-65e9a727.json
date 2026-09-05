@@ -30,8 +30,8 @@
   "first_seen_date": "2026-09-01",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-04 11:22:45",
-  "last_seen_date": "2026-09-04",
+  "last_seen_at": "2026-09-05 10:39:56",
+  "last_seen_date": "2026-09-05",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-08-29",
   "newly_discovered_in_latest_run": false,
@@ -44,8 +44,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-01 11:43:48",
-    "generated_at": "2026-09-05 00:49:06",
-    "last_seen_at": "2026-09-04 11:22:45",
+    "generated_at": "2026-09-05 17:32:33",
+    "last_seen_at": "2026-09-05 10:39:56",
     "metadata_sources": [
       "arxiv"
     ],
@@ -100,27 +100,80 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-05T10:40:45+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4669,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 58/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "nstruct recommendation graphs or adjust rankings. We propose AgentMMRec, an agent-based multimodal recom- mendation framework with two coord",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "in Table 2 compare AgentMMRec with the strongest baseline under frozen test rankings. 4.1.3 Baselines.We compare AgentMMRec with 17 repre",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiment",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "recom- mendation studies [43, 52, 53], we report Recall@\ud835\udc41 and NDCG@\ud835\udc41 for\ud835\udc41= 10and \ud835\udc41= 20. For reranking, the backbone first retrieves a candidate list of size\ud835\udc40= 50, and",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experiment",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 58,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "bd8204797c24b6066e6e0d9fa7755267830dc1645167058c406b3b2f38c92a17",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -150,7 +203,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

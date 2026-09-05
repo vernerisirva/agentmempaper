@@ -1,68 +1,29 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-04](2026-09-04.md).
+Latest daily digest: [2026-09-05](2026-09-05.md).
 
-# Paper Scout Digest - 2026-09-04
+# Paper Scout Digest - 2026-09-05
 
 ## Run Summary
 
-- **Run ID:** 74
-- **Candidates fetched:** 133
-- **New unique papers:** 125
-- **Relevant:** 16
+- **Run ID:** 75
+- **Candidates fetched:** 128
+- **New unique papers:** 123
+- **Relevant:** 14
 - **Maybe relevant:** 3
-- **Irrelevant:** 114
-- **Source summary:** arxiv: 33, openalex: 100, semantic_scholar: 0
+- **Irrelevant:** 111
+- **Source summary:** arxiv: 28, openalex: 100, semantic_scholar: 0
 
 ## Highly Relevant
 
-### [Dr. Claw: An AI Scientist Workspace for Vibe Research](https://doi.org/10.48550/arxiv.2609.00365)
+### [APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering](https://arxiv.org/abs/2609.02253)
 
-- **Authors:** Dingjie Song, Hanrong Zhang, 刘大维, Yixin Liu, Zongxia Li, Zhengqing Yuan, et al.
-- **Date:** 2026-08-31
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Command-line coding agents (e.g., Claude Code, Gemini CLI) can already read and write files and sustain long sessions, yet end-to-end research still fragments across chat tools, IDEs, terminals, and writing environments, and the decisions that make it auditable are rarely preserved. We present Dr. Claw, an open-sour...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; Code, data, or research artifacts are described as available.
-
-### [DualStake: Dual-Path Confidence Calibration in Deep Research Agents](https://doi.org/10.48550/arxiv.2609.00935)
-
-- **Authors:** Yinuo Xu, Yuwei Liang, Jianjie Cheng, Meng Wang, Yongcan Yu, Shuo Lu, et al.
-- **Date:** 2026-09-01
+- **Authors:** Jie Ding, Rui Sun, Xinyuan Zhang, Zeyu Zhang, Xin Liu
+- **Date:** 2026-09-02
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** Deep Research agents tackle knowledge-intensive tasks through multi-round retrieval and decision-oriented generation. However, these agents suffer from severe overconfidence, making their expressed confidence unreliable for user trust and downstream abstention. To address this, we augment the Deep Research pipeline...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; Code, data, or research artifacts are described as available.
-
-### [Explore Before Committing: Hypothesis-Guided Search for Deep Research Agents](https://doi.org/10.48550/arxiv.2609.01294)
-
-- **Authors:** Ruochen Zhou, Zhengyu Chen, Luan Zhang, Siyang Gao, Yee Whye Teh, Shiqi Chen
-- **Date:** 2026-09-01
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep-research agents answer complex questions by interacting with search and browsing tools, yet they often search along a single evolving trajectory. Our trajectory-level analysis reveals a common failure mode in which the agent may encounter an early search state with several plausible directions, but follow one d...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
-
-## Maybe Relevant
-
-### [A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms](https://arxiv.org/abs/2609.04170v1)
-
-- **Authors:** Davide Paglieri, Logan Cross, Tim Genewein, Joel Z. Leibo, Nenad Tomasev, Alexander Sasha Vezhnevets
-- **Date:** 2026-09-03
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Multi-agent AI science ecosystems rely on agents possessing tools that allow them to communicate, coordinate, and build on each other's work. Yet this shared infrastructure can also introduce vulnerabilities by creating a substrate for the contagious spread of unintended and undesirable behaviors. We report a case s...
-- **Automated evidence-based assessment:** 82/100 · Promising · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Abstract summary:** Deep research agents augment large language models with external tools to answer complex, long-horizon questions through multi-turn reasoning. Learning from prior experience is crucial for continual improvement, yet existing methods either retrieve verbose task-specific traces that burden decision-making, or distill...
+- **Automated evidence-based assessment:** 56/100 · Uncertain · Medium confidence · partial full text
+- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.

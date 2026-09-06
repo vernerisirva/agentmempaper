@@ -24,8 +24,8 @@
   "first_seen_date": "2026-09-04",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-05 17:56:52",
-  "last_seen_date": "2026-09-05",
+  "last_seen_at": "2026-09-06 09:39:40",
+  "last_seen_date": "2026-09-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-03",
   "newly_discovered_in_latest_run": false,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-04 11:23:00",
-    "generated_at": "2026-09-05 17:58:08",
-    "last_seen_at": "2026-09-05 17:56:52",
+    "generated_at": "2026-09-06 09:41:55",
+    "last_seen_at": "2026-09-06 09:39:40",
     "metadata_sources": [
       "arxiv"
     ],
@@ -89,27 +89,89 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-06T09:41:54+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.47600000000000003,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "RQ1:How does \ud835\udc46\ud835\udc52\ud835\udc59\ud835\udc53\ud835\udc37\ud835\udc45 perform compared with existing baseline methods? RQ2:How does the performance of the \ud835\udc46\ud835\udc52\ud835\udc59\ud835\udc53\ud835\udc37\ud835\udc45 Reasoner",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Phase 2 Reward \ufffdReasoner \ufffdRecom. High Inference Latency Low Inference Latency \ufffdRecom. WRecom. Reward Figure 1: Two previous typical reasoning paradigms: (a) multi- step reasoning a",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "iciency of\ud835\udc46\ud835\udc52\ud835\udc59\ud835\udc53\ud835\udc37\ud835\udc45 . Codes are available at https://github.com/JiangDeccc/SelfDistillation. CCS Concepts \u2022Information systems\u2192Recommender syst",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "a Creative Commons Attribution 4.0 International License. CIKM \u201926, Rome, Italy \u00a92026 Copyright held by the owner/author(s). ACM ISBN 97",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 65,
+    "paper_type": "systems_or_application",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Code, data, or research artifacts are described as available.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "1c9f86139b53eb3962fb227f32c8a2dc99dc91c2b94de661577259eb6117bc93",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -139,7 +201,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

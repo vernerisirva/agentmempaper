@@ -1,61 +1,48 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-05](2026-09-05.md).
+Latest daily digest: [2026-09-06](2026-09-06.md).
 
-# Paper Scout Digest - 2026-09-05
+# Paper Scout Digest - 2026-09-06
 
 ## Run Summary
 
-- **Run ID:** 1
-- **Candidates fetched:** 83
+- **Run ID:** 3
+- **Candidates fetched:** 82
 - **New unique papers:** 76
 - **Relevant:** 5
 - **Maybe relevant:** 0
-- **Irrelevant:** 78
-- **Source summary:** arxiv: 6, openalex: 76, semantic_scholar: 1
+- **Irrelevant:** 77
+- **Source summary:** arxiv: 6, openalex: 75, semantic_scholar: 1
 
 ## Source Warnings
 
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
-- semantic_scholar failed for 'Engram': http error for https://api.semanticscholar.org/graph/v1/paper/search?query=Engram&limit=25&fields=paperId%2Ctitle%2Cabstract%2Curl%2Cyear%2CpublicationDate%2Cauthors%2CexternalIds%2CopenAccessPdf: request failed after 3 attempts: HTTP Error 500: Internal Server Error
+- semantic_scholar: incomplete discovery window for 'engram'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic engram'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations](https://arxiv.org/abs/2609.03426v1)
+### [Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning](https://www.semanticscholar.org/paper/d447f4f7bd455c4d384e8fc1fb932ba295581f3a)
 
-- **Authors:** Yunao Zheng, Bin Wen, Xiaojie Wang
-- **Date:** 2026-09-03
+- **Authors:** Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, et al.
+- **Date:** 2026-08-25
 - **Source:** arxiv
 - **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
-- **Tags:** conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. Lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due...
+- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.
+- **Tags:** conditional-memory
+- **Abstract summary:** Scientific reasoning requires language models to retrieve specialized knowledge and incorporate it reliably into multi-step computation. Conditional memory provides an explicit lookup pathway that complements dense neural representations, but its usefulness is inherently input- and computation-dependent: retrieved i...
 - **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 - **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
 
-### [When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization](https://www.semanticscholar.org/paper/25ac9303c7376abdf1dc80620c5408d049061536)
-
-- **Authors:** Jiaxuan Hou, Lei Wang
-- **Date:** 2026-08-29
-- **Source:** arxiv
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
-- **Tags:** engram, conditional-memory, hashed-ngram-memory
-- **Abstract summary:** Large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. Existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (OOD) performance. We pr...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.
-
-### [Cross-Model Memory Transfer via Target-Side Reader Adaptation](https://arxiv.org/abs/2608.17050v2)
+### [Cross-Model Memory Transfer via Target-Side Reader Adaptation](https://arxiv.org/abs/2608.17050)
 
 - **Authors:** Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji
 - **Date:** 2026-08-17
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (92/100)
 - **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory, memory-transfer.
 - **Tags:** engram, hashed-ngram-memory, memory-transfer
@@ -63,11 +50,11 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 - **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 - **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
 
-### [Tokenizer-Agnostic Engram Module](https://arxiv.org/abs/2607.29065v1)
+### [Tokenizer-Agnostic Engram Module](https://arxiv.org/abs/2607.29065)
 
-- **Authors:** Jia Peng Lim, Hai Leong Chieu
+- **Authors:** Ji Hyun Lim, Hai Leong Chieu
 - **Date:** 2026-07-31
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (92/100)
 - **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.
 - **Tags:** engram, conditional-memory, hashed-ngram-memory
@@ -75,28 +62,3 @@ Latest daily digest: [2026-09-05](2026-09-05.md).
 - **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 - **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
 - **Positive signals:** The contribution is stated explicitly.
-
-### [Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory](https://arxiv.org/abs/2605.20948v1)
-
-- **Authors:** Runxi Cheng, Yuchen Guan, Yongxian Wei, Qianpu Sun, Qixiu Li, Sinan Du, et al.
-- **Date:** 2026-05-20
-- **Source:** arxiv
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory, memory-grafting.
-- **Tags:** engram, conditional-memory, hashed-ngram-memory, memory-grafting
-- **Abstract summary:** Scaling conditional memory offers a promising way to increase language-model capacity, but existing methods such as Engram learn large memory tables from scratch during pre-training, making memory scaling expensive and sometimes ineffective. We propose Memory Grafting, a conditional memory scaling method that utiliz...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
-
-### [Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models](https://arxiv.org/abs/2601.07372v2)
-
-- **Authors:** Xin Cheng, Rui Tian, Wangding Zeng, Damai Dai, Qinyu Chen, Bingxuan Wang, et al.
-- **Date:** 2026-01-12
-- **Source:** arxiv
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.
-- **Tags:** engram, conditional-memory
-- **Abstract summary:** While Mixture-of-Experts (MoE) scales capacity via conditional computation, Transformers lack a native primitive for knowledge lookup, forcing them to inefficiently simulate retrieval through computation. To address this, we introduce conditional memory as a complementary sparsity axis, instantiated via Engram, a mo...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.

@@ -1,0 +1,218 @@
+{
+  "abstract_summary": "Prefix caching, in which a serving engine reuses the key and value tensors of a shared prompt prefix across requests, is enabled by default in the major open-source stacks and treated as a transparent optimization. We measure what it costs in reproducibility, and find that the cost rises sharply with weight quantiza...",
+  "alternate_urls": [
+    "https://arxiv.org/abs/2609.04748v1",
+    "https://arxiv.org/abs/2609.04748"
+  ],
+  "appeared_in_latest_run": true,
+  "arxiv_id": "2609.04748",
+  "authors": [
+    "Aditi Patodiya"
+  ],
+  "canonical_id": "arxiv:2609.04748",
+  "citation": "Same Request, Different Answer: Quantization Amplifies Cache-Induced Divergence in LLM Serving. Aditi Patodiya. 2026-09-04. https://arxiv.org/abs/2609.04748v1",
+  "detail_json": "papers/same-request-different-answer-quantization-amplifies-cache-induced-divergence-in-llm-64f9d253.json",
+  "detail_page": "papers/same-request-different-answer-quantization-amplifies-cache-induced-divergence-in-llm-64f9d253.html",
+  "doi": null,
+  "effective_sort_date": "2026-09-04",
+  "first_seen_at": "2026-09-07 12:40:26",
+  "first_seen_date": "2026-09-07",
+  "future_date": false,
+  "is_new": true,
+  "last_seen_at": "2026-09-07 12:40:26",
+  "last_seen_date": "2026-09-07",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": "2026-09-04",
+  "newly_discovered_in_latest_run": true,
+  "notified_at": "2026-09-07 12:41:27",
+  "notified_date": "2026-09-07",
+  "openalex_id": null,
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "arxiv",
+    "first_seen_at": "2026-09-07 12:40:26",
+    "generated_at": "2026-09-07 12:41:28",
+    "last_seen_at": "2026-09-07 12:40:26",
+    "metadata_sources": [
+      "arxiv"
+    ],
+    "publication_date_confidence": "high",
+    "publication_date_precision": "day",
+    "publication_date_source": "arxiv",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "arxiv": [
+        "2609.04748"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "high",
+    "date": "2026-09-04",
+    "display": "Published 2026-09-04",
+    "latest_revision_date": "2026-09-04",
+    "precision": "day",
+    "publication_date_confidence": "high",
+    "source": "arxiv",
+    "year": "2026"
+  },
+  "publication_date": "2026-09-04",
+  "publication_date_confidence": "high",
+  "publication_date_precision": "day",
+  "publication_date_source": "arxiv",
+  "publication_year": "2026",
+  "related_topics": [],
+  "relevance": {
+    "curation_note": null,
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+    "review_status": null,
+    "score": 45,
+    "tags": []
+  },
+  "relevance_decision": "maybe",
+  "relevance_label": "Memory architecture or policy",
+  "relevance_reason": "Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.",
+  "relevance_score": 45,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-09-07T12:41:26+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
+    "assessor_model": null,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4708,
+    "concerns": [],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 61/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
+    "curation_note": null,
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": false,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "ask outcomes without shifting aggregate accuracy. We release the harness, logs, and analysis pipeline. INDEX TERMSLarge language models, inf",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Shinn, P. Razavi, and K. Narasimhan, \u201c\u03c4-bench: A benchmark for tool-agent-user interaction in real-world domains,\u201d 2024. [Online]. Availab",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 13,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Page 13 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "obser- vation that compressed models can match a baseline on aggregate accuracy while disagreeing with it on many individual items [19].",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Page 7 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "trajectory on 36.2 percent of episodes at 16-bit precision and on 75.0 percent at four-bit, a gradient that survives re-measurement under a controlled",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      }
+    ],
+    "manual_override": false,
+    "missing_information": [
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 61,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "6eeca620efefff7f2da3a6642e405e8c6cb6314480ebcb43ad9208474934e50d",
+    "suppressed": false
+  },
+  "semantic_scholar_id": null,
+  "source": "arxiv",
+  "source_id": "2609.04748",
+  "source_ids": {
+    "arxiv": [
+      "2609.04748"
+    ]
+  },
+  "source_updated_date": "2026-09-04",
+  "sources": [
+    "arxiv"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Agentic-AI connection exists, but memory focus is weak or indirect"
+    },
+    "research_relevance": {
+      "confidence": "low",
+      "provenance": "rule",
+      "value": "Review candidate"
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Not extracted yet",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Agentic-AI connection exists, but memory focus is weak or indirect"
+  },
+  "tags": [],
+  "title": "Same Request, Different Answer: Quantization Amplifies Cache-Induced Divergence in LLM Serving",
+  "url": "https://arxiv.org/abs/2609.04748v1"
+}

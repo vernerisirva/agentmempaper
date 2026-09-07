@@ -20,8 +20,8 @@
   "first_seen_date": "2026-09-04",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-06 11:03:05",
-  "last_seen_date": "2026-09-06",
+  "last_seen_at": "2026-09-07 12:40:33",
+  "last_seen_date": "2026-09-07",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-03",
   "newly_discovered_in_latest_run": false,
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-04 11:23:03",
-    "generated_at": "2026-09-06 11:04:40",
-    "last_seen_at": "2026-09-06 11:03:05",
+    "generated_at": "2026-09-07 12:41:28",
+    "last_seen_at": "2026-09-07 12:40:33",
     "metadata_sources": [
       "arxiv"
     ],
@@ -83,29 +83,61 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": null,
-    "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "applied_score_cap": 49,
+    "applied_score_cap_reason": "No meaningful evaluation or suitable comparison was detected for the central systems/method claim.",
+    "assessed_at": "2026-09-07T12:41:24+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.4435,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 40/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": 0,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 40,
+    "paper_type": "systems_or_application",
     "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "8baf7dce13b09be30b5bd32537f86599004f80e9e146fab51e0872f07dc24e6d",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -135,7 +167,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

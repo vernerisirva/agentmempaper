@@ -1,39 +1,26 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-07](2026-09-07.md).
+Latest daily digest: [2026-09-08](2026-09-08.md).
 
-# Paper Scout Digest - 2026-09-07
+# Paper Scout Digest - 2026-09-08
 
 ## Run Summary
 
-- **Run ID:** 4
-- **Candidates fetched:** 90
-- **New unique papers:** 81
-- **Relevant:** 14
+- **Run ID:** 5
+- **Candidates fetched:** 82
+- **New unique papers:** 77
+- **Relevant:** 7
 - **Maybe relevant:** 0
-- **Irrelevant:** 76
-- **Source summary:** arxiv: 8, openalex: 75, semantic_scholar: 7
+- **Irrelevant:** 75
+- **Source summary:** arxiv: 7, openalex: 74, semantic_scholar: 1
 
 ## Source Warnings
 
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
-- openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'engram'; single-page record limit reached.
+- semantic_scholar failed for 'engram': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'tokenizer-agnostic engram'; single-page record limit reached.
 
-## Highly Relevant
-
-### [ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing](https://arxiv.org/abs/2609.04793v1)
-
-- **Authors:** Mingrui Li, Sixian Shen, Minzhang Li, Ruiyi Zhang, Kexin Zhang, Jiakai Zhang, et al.
-- **Date:** 2026-09-04
-- **Source:** arxiv
-- **Relevance:** relevant (92/100)
-- **Reason:** Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.
-- **Tags:** conditional-memory
-- **Abstract summary:** Proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. Protein language models (PLMs) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense Tran...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The contribution is stated explicitly.
+No new relevant or maybe-relevant papers found.

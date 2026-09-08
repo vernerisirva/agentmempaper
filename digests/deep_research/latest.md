@@ -1,90 +1,76 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-07](2026-09-07.md).
+Latest daily digest: [2026-09-08](2026-09-08.md).
 
-# Paper Scout Digest - 2026-09-07
+# Paper Scout Digest - 2026-09-08
 
 ## Run Summary
 
-- **Run ID:** 78
-- **Candidates fetched:** 129
-- **New unique papers:** 124
-- **Relevant:** 11
-- **Maybe relevant:** 8
-- **Irrelevant:** 110
-- **Source summary:** arxiv: 29, openalex: 100, semantic_scholar: 0
+- **Run ID:** 79
+- **Candidates fetched:** 120
+- **New unique papers:** 115
+- **Relevant:** 10
+- **Maybe relevant:** 7
+- **Irrelevant:** 103
+- **Source summary:** arxiv: 20, openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
 - openalex: incomplete discovery window for 'ai scientist'; single-page record limit reached.
-- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
+- semantic_scholar failed for 'autonomous research agent': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
 
-### [Enhancing Scientific Heritage Access Through AI-Powered Assistants and Collaboration Platforms in Academic Ecosystems](https://doi.org/10.55630/dipp.2026.16.16)
+### [(Human) Attention Is (Still) All You Need: Human Oversight Makes Ai-Assisted Social Science](https://doi.org/10.17863/cam.134096)
 
-- **Authors:** Evgeniya Georgieva, Tsvetozar Georgiev, Tsvetelina Stefanova
-- **Date:** 2026-09-05
+- **Authors:** Chen Zhu, Xiaolu Wang, Weilong Zhang
+- **Date:** 2026-09-01
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Large language models (LLMs) are increasingly delegated tasks once reserved for trained researchers: generating hypotheses, choosing specifications, drafting conclusions. Whether this delegation produces trustworthy science is not solely a technical question about model capability; it also depends on how cognitive l...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions](https://doi.org/10.64898/2026.09.03.749176)
+
+- **Authors:** Priyanka Bhutada, Nitin Goyal, Tatsam K. Lakhankiya, Sai D. Narahari, Shrish S. N. Thangaraju, Tushar S. Nayak, et al.
+- **Date:** 2026-09-07
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Artificial Intelligence (AI) frameworks for automating scientific research have shown strong performance on benchmarks, but their utility for real-world industrial research remains insufficiently characterized. Extending the analysis presented in the first paper of this series, we evaluated the same five advanced AI...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+
+### [Agent and Tool Search: Foundations, Techniques, and Open Challenges](https://doi.org/10.20944/preprints202609.0402.v1)
+
+- **Authors:** Bin Wu, Hossein A. Rahmani, To Eun Kim, Arastun Mammadli, Shuofei Qiao, Xiao Fu, et al.
+- **Date:** 2026-09-04
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
 - **Tags:** deep-research-agents
-- **Abstract summary:** This study investigates how artificial intelligence and collaboration platforms enhance scientific heritage access within academic ecosystems. Within the context of evolving infrastructures for scientific discovery and heritage preservation, the analysis examines advanced digitization methods, semantic networks, aut...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Abstract summary:** AI agents and tools are increasingly moving beyond passive information processing toward executable systems that can perceive inputs, reason over intermediate states, call external tools, interact with environments, and complete user-specified tasks. As coding agents, deep research agents, workflow automation system...
+- **Automated evidence-based assessment:** 43/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
 
 ## Maybe Relevant
 
-### [From Matching Models to Recruiting Agents: A Systematized Narrative Review of AI Recruitment Systems, Evaluation, and Governance](https://arxiv.org/abs/2609.04286v1)
+### [A review of the development, training, and application scenarios of multimodal large models for construction engineering](https://doi.org/10.1108/ecam-04-2026-0595)
 
-- **Authors:** Ziyi Zhao, Guanzheng Wei
-- **Date:** 2026-09-03
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: may support deep research workflows but needs human judgment.
-- **Tags:** citation-grounding
-- **Abstract summary:** Artificial intelligence in recruitment has shifted the object being automated from profile pairs and ranked lists to multi-stage workflows that retrieve evidence, compare candidates, and support or execute actions. This systematized narrative review traces that development from bilateral retrieval and behavioral ran...
-- **Automated evidence-based assessment:** 42/100 · Weak · Medium confidence · partial full text
-- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
-- **Positive signals:** Quantitative evaluation signals were detected.
-
-### [A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms](https://arxiv.org/abs/2609.04170)
-
-- **Authors:** Davide Paglieri, Logan Cross, Tim Genewein, Joel Z. Leibo, Nenad Tomašev, Alexander Sasha Vezhnevets
-- **Date:** 2026-09-03
+- **Authors:** Zhansheng Liu, Hao Zhou, Yungui Li, Meihao Zhu, Yanchi Mo, Haowen Sun
+- **Date:** 2026-09-07
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
 - **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Multi-agent AI science ecosystems rely on agents possessing tools that allow them to communicate, coordinate, and build on each other's work. Yet this shared infrastructure can also introduce vulnerabilities by creating a substrate for the contagious spread of unintended and undesirable behaviors. We report a case s...
-- **Automated evidence-based assessment:** 82/100 · Promising · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
-
-### [TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents](https://arxiv.org/abs/2609.05079v1)
-
-- **Authors:** Zhibo Yang, Chen Zhang, Yuewei Zhang, Hao Wang
-- **Date:** 2026-09-04
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** citation-grounding
-- **Abstract summary:** Autonomous coding agents are increasingly proposed as AI-scientist systems that conduct analyses and write research reports, but executing a prescribed analysis is not the same as making a discovery. Existing benchmarks are configured for reproduction: tasks, data, and rubrics are built around a hidden target study,...
-- **Automated evidence-based assessment:** 68/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; Quantitative evaluation signals were detected.
-
-### [AutoLR: Automating the Path from Research to Launch Review in Industrial Recommender Systems](https://arxiv.org/abs/2609.04871v1)
-
-- **Authors:** Qi Zhang, Yanlin Chen, Wenchao Xiao
-- **Date:** 2026-09-04
-- **Source:** arxiv
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
-- **Tags:** research-adjacent
-- **Abstract summary:** Improving an industrial recommender is an iterative research-and-engineering process rather than a direct path from idea to deployment. In \textbf{DASHEN, NetEase's gaming-community app}, algorithm engineers typically identify promising directions from research papers, technical reports, and prior production experim...
-- **Automated evidence-based assessment:** 60/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
+- **Abstract summary:** Purpose To address fragmented research and the lack of integrated development frameworks for multimodal large models (MLMs) in construction engineering, this study employs a systematic literature review approach and proposes a structured framework focusing on the design and construction stages. Design/methodology/ap...
+- **Automated evidence-based assessment:** 43/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** Limitations or threats to validity are acknowledged.

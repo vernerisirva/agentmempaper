@@ -21,11 +21,11 @@
   "first_seen_date": "2026-09-09",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-09 11:31:25",
-  "last_seen_date": "2026-09-09",
+  "last_seen_at": "2026-09-10 11:26:27",
+  "last_seen_date": "2026-09-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-07",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-09 11:31:57",
   "notified_date": "2026-09-09",
   "openalex_id": null,
@@ -35,8 +35,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-09 11:31:25",
-    "generated_at": "2026-09-09 11:31:57",
-    "last_seen_at": "2026-09-09 11:31:25",
+    "generated_at": "2026-09-10 11:27:00",
+    "last_seen_at": "2026-09-10 11:26:27",
     "metadata_sources": [
       "arxiv"
     ],
@@ -92,27 +92,70 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-10T11:26:59+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.93,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.878,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 53/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "eam optimization rather than by global fit alone. Our contributions are: \u2022 We formulate online surrogate repair, in which a scientific agent operat",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ean maximum-regret reductions of 0.424 and 0.409, compared with 0.063 and 0.052 for Global-UQ and Random. Conversely, Global-UQ and Random prod",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 53,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described."
+    ],
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -142,7 +185,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

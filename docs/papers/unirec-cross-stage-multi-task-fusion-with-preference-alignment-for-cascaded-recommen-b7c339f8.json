@@ -27,11 +27,11 @@
   "first_seen_date": "2026-09-11",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-11 11:26:40",
-  "last_seen_date": "2026-09-11",
+  "last_seen_at": "2026-09-12 10:52:03",
+  "last_seen_date": "2026-09-12",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-10",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-11 11:27:55",
   "notified_date": "2026-09-11",
   "openalex_id": null,
@@ -41,8 +41,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-11 11:26:40",
-    "generated_at": "2026-09-11 11:27:55",
-    "last_seen_at": "2026-09-11 11:26:40",
+    "generated_at": "2026-09-12 10:53:21",
+    "last_seen_at": "2026-09-12 10:52:03",
     "metadata_sources": [
       "arxiv"
     ],
@@ -90,29 +90,103 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": null,
-    "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "applied_score_cap": 49,
+    "applied_score_cap_reason": "No meaningful evaluation or suitable comparison was detected for the central systems/method claim.",
+    "assessed_at": "2026-09-12T10:53:20+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.45520000000000005,
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 49/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
-    "downranked": false,
-    "evidence": [],
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 0,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
+    "downranked": true,
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "remains largely unexplored. To address this gap, we propose UniRec, aUnified Cross-stage Recommendation Fusion model. First, the two fusion",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "erimental Settings 5.1.1 RecFlow: Public Cascaded Benchmark.RecFlow 1 is collected from Kuaishou\u2019s multi-stage short-video recommendation s",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "le fusion, and cross-stage coordination. 1https://github.com/RecFlow-ICLR/RecFlow",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text.",
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 49,
+    "paper_type": "systems_or_application",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "62b823b856312718aef6fdce63b63245a39ec8f24e691b9424be1b2a4865a16c",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -142,7 +216,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

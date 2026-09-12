@@ -23,11 +23,11 @@
   "first_seen_date": "2026-09-11",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-11 11:26:48",
-  "last_seen_date": "2026-09-11",
+  "last_seen_at": "2026-09-12 10:52:10",
+  "last_seen_date": "2026-09-12",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-10",
-  "newly_discovered_in_latest_run": true,
+  "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-11 11:27:55",
   "notified_date": "2026-09-11",
   "openalex_id": null,
@@ -37,8 +37,8 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-11 11:26:40",
-    "generated_at": "2026-09-11 11:27:55",
-    "last_seen_at": "2026-09-11 11:26:48",
+    "generated_at": "2026-09-12 10:53:21",
+    "last_seen_at": "2026-09-12 10:52:10",
     "metadata_sources": [
       "arxiv"
     ],
@@ -100,27 +100,79 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-12T10:53:21+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 1.0,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.9779,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 83/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "lize partial evidence, or retain stale knowledge. We introduce environment-probing curation, a deployment-compatible ex- tensionthatgivesanexi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "68. Across six APEX worlds, all 18 memory- versus-baseline mean reward comparisons are positive and task-agent tool calls fall by 16\u201375%;",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "eries from 8.8 to 4.7 per question and task-agent cost from $3.38 to $1.68. Across six APEX worlds, all 18 memory- versus-baseline mean reward comparisons are positive and task-age",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "egory, confidence, applica- bility scope, concise lemma, provenance, utility, and usage metadata. After curation, the committed store b",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Method",
+        "signal_type": "positive"
+      }
+    ],
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "overall_quality_score": 83,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -150,7 +202,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

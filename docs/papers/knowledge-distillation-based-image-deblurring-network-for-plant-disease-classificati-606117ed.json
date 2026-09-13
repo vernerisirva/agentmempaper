@@ -4,7 +4,7 @@
     "https://doi.org/10.1007/s44443-026-01080-z",
     "https://openalex.org/W7203609123"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": null,
   "authors": [
     "Juwon Seo",
@@ -24,8 +24,8 @@
   "first_seen_date": "2026-08-19",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-11 11:27:01",
-  "last_seen_date": "2026-09-11",
+  "last_seen_at": "2026-09-13 10:41:58",
+  "last_seen_date": "2026-09-13",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "newly_discovered_in_latest_run": false,
@@ -38,8 +38,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-19 07:08:07",
-    "generated_at": "2026-09-12 10:53:21",
-    "last_seen_at": "2026-09-11 11:27:01",
+    "generated_at": "2026-09-13 10:47:16",
+    "last_seen_at": "2026-09-13 10:41:58",
     "metadata_sources": [
       "openalex"
     ],
@@ -89,27 +89,70 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-13T10:47:14+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 0.45,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.45721875,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
+    "confidence": "low",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "he performance degradation caused by motion blur, we propose a knowledge distillation (KD)-based image deblurring network (KDID-Net). Our fr",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "of 0.9432 and 0.7571, respectively, outperforming state-of-the-art (SOTA) image restoration methods and KD methods in terms of classification accu",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
+    "overall_quality_score": 78,
+    "paper_type": "methods_or_algorithm",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "809958a59c7bb3e5b1c25081858b53e1eaee8d1670612a6db61e0576db66562b",
     "suppressed": false
   },
   "semantic_scholar_id": null,
@@ -120,7 +163,7 @@
       "W7203609123"
     ]
   },
-  "source_updated_date": "2026-09-10",
+  "source_updated_date": "2026-09-11",
   "sources": [
     "openalex"
   ],

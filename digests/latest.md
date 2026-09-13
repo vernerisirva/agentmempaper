@@ -1,26 +1,28 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-12](2026-09-12.md).
+Latest daily digest: [2026-09-13](2026-09-13.md).
 
-# Paper Scout Digest - 2026-09-12
+# Paper Scout Digest - 2026-09-13
 
 ## Run Summary
 
-- **Run ID:** 119
-- **Candidates fetched:** 785
-- **New unique papers:** 678
-- **Relevant:** 48
-- **Maybe relevant:** 88
-- **Irrelevant:** 649
-- **Source summary:** arxiv: 375, openalex: 400, semantic_scholar: 10
+- **Run ID:** 121
+- **Candidates fetched:** 398
+- **New unique papers:** 369
+- **Relevant:** 45
+- **Maybe relevant:** 39
+- **Irrelevant:** 314
+- **Source summary:** openalex: 385, semantic_scholar: 13
 
 ## Source Warnings
 
-- arxiv: incomplete discovery window for 'all:agent and all:memory'; single-page record limit reached.
-- arxiv: incomplete discovery window for 'cat:cs.ai or cat:cs.cl or cat:cs.lg'; single-page record limit reached.
-- arxiv: incomplete discovery window for 'all:memory and all:distillation'; single-page record limit reached.
+- arxiv failed for 'all:procedural and all:memory': http error for https://export.arxiv.org/api/query?search_query=all%3Aprocedural+and+all%3Amemory&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:parametric and all:memory': http error for https://export.arxiv.org/api/query?search_query=all%3Aparametric+and+all%3Amemory&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'agent memory': http error for https://export.arxiv.org/api/query?search_query=all%3Aagent+AND+all%3Amemory&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'memory distillation': http error for https://export.arxiv.org/api/query?search_query=all%3Amemory+AND+all%3Adistillation&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'self-improving language models': timeout error for https://export.arxiv.org/api/query?search_query=all%3Aself+AND+all%3Aimproving+AND+all%3Alanguage+AND+all%3Amodels&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
+- arxiv failed for 'cs.AI,cs.CL,cs.LG': timeout error for https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+OR+cat%3Acs.CL+OR+cat%3Acs.LG&start=0&max_results=300&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
 - openalex: incomplete discovery window for 'agent memory'; single-page record limit reached.
-- openalex: incomplete discovery window for 'memory distillation language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'parametric memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'procedural memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'agent memory'; single-page record limit reached.
@@ -30,154 +32,64 @@ Latest daily digest: [2026-09-12](2026-09-12.md).
 
 ## Highly Relevant
 
-### [Beyond Agentic Operating Systems A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority AIVORIX OS™ Architectural Research Series](https://doi.org/10.5281/zenodo.22682679)
+### [Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems](https://arxiv.org/abs/2609.08472)
 
-- **Authors:** Nicole Crossley-Townsend
-- **Date:** 2026-09-10
+- **Authors:** Yang Li, Sergey Volkov, Hai Liu, Zongsi Xu, Xiyu Chen, Tuo Zhou, et al.
+- **Date:** 2026-09-08
 - **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, long-term-memory, memory-systems, llm-agents
-- **Abstract summary:** Beyond Agentic Operating Systems: A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority examines the emerging Agentic Operating System (Agentic OS/AIOS) landscape and asks what additional architectural mechanisms may be required as AI agents become increasingly capa...
+- **Relevance:** relevant (100/100)
+- **Reason:** Evaluates memory mechanisms or benchmarks for LLM agents.
+- **Tags:** memory-policy, benchmark, agent-memory, memory-systems, llm-agents
+- **Abstract summary:** Agentic systems persist model-visible memory while mutating workspaces, while a runtime, registry, or approval service may hold authority state outside both. Identical final files can then require opposite safe actions. We call this the cross-substrate authority gap: decision- relevant authorization information resi...
 
-### [Beyond Agentic Operating Systems A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority AIVORIX OS™ Architectural Research Series](https://doi.org/10.5281/zenodo.22682680)
-
-- **Authors:** Nicole Crossley-Townsend
-- **Date:** 2026-09-10
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, long-term-memory, memory-systems, llm-agents
-- **Abstract summary:** Beyond Agentic Operating Systems: A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority examines the emerging Agentic Operating System (Agentic OS/AIOS) landscape and asks what additional architectural mechanisms may be required as AI agents become increasingly capa...
-
-### [Hierarchical Reinforcement Learning with Memory Networks](https://doi.org/10.5281/zenodo.22623238)
+### [Contextualized Reinforcement Learning with Episodic Memory Networks](https://doi.org/10.5281/zenodo.22587729)
 
 - **Authors:** Jincheng Zhang
 - **Date:** 2026-09-07
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
-- **Reason:** Focuses on persistent or long-term memory for agent behavior.
-- **Tags:** long-term-memory, agent-memory, memory-systems, llm-agents
-- **Abstract summary:** This paper proposes a novel approach to reinforcement learning (RL) that combines the strengths of hierarchical reinforcement learning (HRL) and memory networks. Traditional RL methods often struggle with complex tasks due to the curse of dimensionality and the difficulty of learning long-term dependencies. Hierarch...
-
-### [LLMs-Powered Agents](https://doi.org/10.1201/9781003650065-12)
-
-- **Authors:** P. R. Joe Dhanith, S. Geetha, A. Sheik Abdullah
-- **Date:** 2026-09-08
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
 - **Reason:** Studies memory systems or memory modules for LLM agents.
 - **Tags:** memory-types, agent-memory, memory-systems, llm-agents
-- **Abstract summary:** This chapter explores LLM-powered agents, which are intelligent systems capable of reasoning, decision-making, and performing complex tasks using natural language understanding. It explains how these agents integrate key components such as planning, feedback mechanisms, memory, and multiagent collaboration to operat...
+- **Abstract summary:** Reinforcement learning (RL) has demonstrated remarkable success in various domains, yet its performance often plateaus in complex, partially observable environments where the agent's state is not fully known. A key limitation is the agent's inability to effectively leverage past experiences for adaptation and learni...
 
-### [Rank-Bounded Memory: Self-Poisoning and Attribution Laundering in LLM Agents](https://doi.org/10.5281/zenodo.22685081)
+### [MADGDF: Multi-Agent Distributed Graph-State Deception Framework](https://doi.org/10.5281/zenodo.22278564)
 
-- **Authors:** Ivan Verbovoy
-- **Date:** 2026-09-10
+- **Authors:** Shailendra Mishra, Megha Rathi, Saumitya Srivastava, Saumya, Wazdan Almuteri
+- **Date:** 2026-09-03
 - **Source:** openalex
 - **Relevance:** relevant (91/100)
-- **Reason:** Focuses on persistent or long-term memory for agent behavior.
-- **Tags:** llm-agents, long-term-memory, agent-memory, memory-systems
-- **Abstract summary:** An agent that consolidates its own notes launders where its claims came from. With no attacker at all, 24–33% of its speculations resurface as the owner's words or as sensor facts, at the very first rewrite, across flat notes, a self-edit block and three production memory systems (mem0, Letta, Graphiti). Persistent...
+- **Reason:** Studies memory storage, retrieval, update, or consolidation for LLM agents.
+- **Tags:** memory-policy, evaluation, agent-memory, memory-systems, llm-agents
+- **Abstract summary:** Reference implementation and experimental pipeline for MADGDF, a defensive architecture for autonomous multi-agent systems combining graph neural network state estimation with a deterministic memory-canary mechanism to detect coordinated adversarial behavior and unauthorized persistent-memory retrieval. Evaluated on...
 
-### [AgentKG: Conversational Memory as a Knowledge Graph](https://doi.org/10.5281/zenodo.22682633)
+### [Hierarchical Reinforcement Learning with Temporal Abstraction and Memory](https://doi.org/10.5281/zenodo.22336737)
 
-- **Authors:** Eric G. Suchanek
-- **Date:** 2026-09-10
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, memory-systems, llm-agents
-- **Abstract summary:** AgentKG stores and retrieves conversational AI agent memory as a live, queryable knowledge graph. It provides persistent, structured memory for AI agents with semantic search, topic clustering, entity tracking, and MCP integration — enabling agents to recall prior context, build knowledge over time, and reason over...
-
-### [AgentKG: Conversational Memory as a Knowledge Graph](https://doi.org/10.5281/zenodo.22556443)
-
-- **Authors:** Eric G. Suchanek
-- **Date:** 2026-09-07
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies governed shared memory or persistent memory protocols for LLM agents.
-- **Tags:** agent-memory, memory-systems, llm-agents
-- **Abstract summary:** AgentKG stores and retrieves conversational AI agent memory as a live, queryable knowledge graph. It provides persistent, structured memory for AI agents with semantic search, topic clustering, entity tracking, and MCP integration — enabling agents to recall prior context, build knowledge over time, and reason over...
-
-### [Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee](https://doi.org/10.5281/zenodo.22699102)
-
-- **Authors:** Pranay M. Mahendrakar
-- **Date:** 2026-09-11
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, memory-systems
-- **Abstract summary:** (c) 2026 Pranay Mahendrakar. Licensed under CC BY 4.0. Memory systems for language-model agents almost all contain a step called consolidation, and almost all of them cite, or gesture at, the complementary learning systems account of hippocampus and neocortex when they name it. In that account consolidation is a spe...
-
-### [Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee](https://doi.org/10.5281/zenodo.22699101)
-
-- **Authors:** Pranay M. Mahendrakar
-- **Date:** 2026-09-11
-- **Source:** openalex
-- **Relevance:** relevant (90/100)
-- **Reason:** Studies memory systems or memory modules for LLM agents.
-- **Tags:** agent-memory, llm-agents, memory-systems
-- **Abstract summary:** (c) 2026 Pranay Mahendrakar. Licensed under CC BY 4.0. Memory systems for language-model agents almost all contain a step called consolidation, and almost all of them cite, or gesture at, the complementary learning systems account of hippocampus and neocortex when they name it. In that account consolidation is a spe...
-
-### [MBM-0: Memory Birth Metrics v0](https://doi.org/10.5281/zenodo.22671447)
-
-- **Authors:** FeiYing Dual-Agent System
-- **Date:** 2026-09-09
+- **Authors:** Jincheng Zhang
+- **Date:** 2026-09-05
 - **Source:** openalex
 - **Relevance:** relevant (90/100)
 - **Reason:** Studies memory systems or memory modules for LLM agents.
 - **Tags:** agent-memory, memory-systems, llm-agents
-- **Abstract summary:** MBM-0 (Memory Birth Metrics v0) is a black-box measurement protocol for the GROWTH dimension of agent memory systems: 6 metrics (Birth Rate, Survival Rate, Activation Rate, Behavior Impact Rate, Cross-scenario Reuse Rate, Node Contribution Score) plus an anti-gaming protocol. It applies to ANY memory system without...
+- **Abstract summary:** This paper presents a novel approach to hierarchical reinforcement learning (HRL) that integrates temporal abstraction and memory mechanisms. Traditional HRL methods often struggle with complex tasks due to the difficulty in effectively decomposing problems and retaining relevant experience. Our framework addresses...
 
-### [MBM-0: Memory Birth Metrics v0](https://doi.org/10.5281/zenodo.22671446)
+### [Hierarchical Reinforcement Learning with Temporal Abstraction and Memory](https://doi.org/10.5281/zenodo.22336736)
 
-- **Authors:** FeiYing Dual-Agent System
-- **Date:** 2026-09-09
+- **Authors:** Jincheng Zhang
+- **Date:** 2026-09-05
 - **Source:** openalex
 - **Relevance:** relevant (90/100)
 - **Reason:** Studies memory systems or memory modules for LLM agents.
 - **Tags:** agent-memory, memory-systems, llm-agents
-- **Abstract summary:** MBM-0 (Memory Birth Metrics v0) is a black-box measurement protocol for the GROWTH dimension of agent memory systems: 6 metrics (Birth Rate, Survival Rate, Activation Rate, Behavior Impact Rate, Cross-scenario Reuse Rate, Node Contribution Score) plus an anti-gaming protocol. It applies to ANY memory system without...
+- **Abstract summary:** This paper presents a novel approach to hierarchical reinforcement learning (HRL) that integrates temporal abstraction and memory mechanisms. Traditional HRL methods often struggle with complex tasks due to the difficulty in effectively decomposing problems and retaining relevant experience. Our framework addresses...
 
 ## Maybe Relevant
 
-### [Mastering Prompt Engineering](https://doi.org/10.1201/9788743813682)
+### [MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation](https://www.semanticscholar.org/paper/8f7789628df0f85cb0f54e60861b6fa3c3b3d1ec)
 
-- **Authors:** Akshay Bhuvaneswari Ramakrishnan, P. Padmakumari, R. Manikandan, S. Vidivelli, S. Magesh, Harish GARG
-- **Date:** 2026-09-08
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** This book explains the principles, structure, and real-world practice of prompt engineering in a way that anyone working with large language models can understand and apply. Rather than treating prompting as a collection of hacks, it walks the reader through how to think about role, context, task, constraints, and e...
-
-### [Predictive and context-aware temporal modeling for intelligent building automation systems](https://doi.org/10.1016/j.jestch.2026.102514)
-
-- **Authors:** Abdullah Sevin, Ihsan Eren Delibas, Hüseyin KAHRAMAN, Abdullah Hulusi Kökçam
-- **Date:** 2026-09-09
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** The inherent reliance on reactive, rule-based control in traditional building management systems leads to speculative energy consumption and compromised indoor environmental quality. To address this, we propose a novel cyber–physical architecture: Predictive and Context-Aware Temporal Modeling for Intelligent Buildi...
-
-### [Required simulated population ratios for valid assessment of shared autonomous vehicles’ impact using agent-based models](https://doi.org/10.1016/j.trip.2026.102244)
-
-- **Authors:** Yo Kamijo, Lichen Luo, Giancarlos Parady, Kiyoshi Takami
-- **Date:** 2026-09-07
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** untagged
-- **Abstract summary:** The potential impact of shared autonomous vehicles (SAV) on daily lives, urban systems, and transportation has drawn increasing attention, as their widespread adoption is anticipated. Agent-based simulation analysis has emerged as a key tool for exploring SAV operation methods and analyzing their impact. Due to high...
-
-### [UNISON: A Co-Designed Near-Memory Scheduler of Session KV Residency for LLM Agents](https://doi.org/10.48550/arxiv.2609.09643)
-
-- **Authors:** Fan He, Yan Li, Xiaoyang Zeng
-- **Date:** 2026-09-09
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Peripheral candidate: discusses agentic AI system architecture, but does not clearly study persistent agent memory.
-- **Tags:** llm-agents
-- **Abstract summary:** Large language models are increasingly composed into agent loops that plan, call tools, and resume the same task after each action. These loops press a shared memory hierarchy harder than conventional multi-turn chat, because they hold a growing key-value (KV) prefix across tool waits and place many sessions on one...
+- **Authors:** Yurui Chang, Yiran Wu, Qingyun Wu, Lu Lin
+- **Date:** 2026
+- **Source:** semantic_scholar
+- **Relevance:** maybe (43/100)
+- **Reason:** Peripheral candidate: mentions memory or agents, but not clearly LLM-agent memory.
+- **Tags:** agent-memory
+- **Abstract summary:** No abstract available.

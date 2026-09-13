@@ -4,7 +4,7 @@
     "https://doi.org/10.1145/3806774.3832787",
     "https://openalex.org/W7207764053"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": null,
   "authors": [
     "Erica Butts",
@@ -20,8 +20,8 @@
   "first_seen_date": "2026-09-05",
   "future_date": false,
   "is_new": false,
-  "last_seen_at": "2026-09-12 10:52:23",
-  "last_seen_date": "2026-09-12",
+  "last_seen_at": "2026-09-13 12:02:55",
+  "last_seen_date": "2026-09-13",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "newly_discovered_in_latest_run": false,
@@ -34,8 +34,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 10:40:16",
-    "generated_at": "2026-09-13 10:47:16",
-    "last_seen_at": "2026-09-12 10:52:23",
+    "generated_at": "2026-09-13 12:06:25",
+    "last_seen_at": "2026-09-13 12:02:55",
     "metadata_sources": [
       "openalex"
     ],
@@ -100,27 +100,60 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-13T12:06:22+00:00",
+    "assessment_scope": "title_and_abstract",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
-    "combined_rank_score": 1.0,
+    "assessor_type": "deterministic",
+    "combined_rank_score": 0.9873125,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
+    "confidence": "low",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 2,
+      "evaluation_or_validation_strength": null,
+      "evidence_to_claim_alignment": null,
+      "limitations_and_uncertainty_handling": null,
+      "methodological_rigor": null,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": null,
+      "reproducibility_and_transparency": null,
+      "scholarly_novelty_or_value": null
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "l scenarios were implemented, consisting of 4,320 recall observations and 1,080 adversarial trap probes. SMART-SLOT achieved the highest recall accuracy, cross",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text."
+    ],
+    "overall_quality_score": 42,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "Quantitative evaluation signals were detected."
+    ],
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "234612e2552b2b28309730c0083c6a9e54a68d35b679d0be7f1ddc65e235acd3",
     "suppressed": false
   },
   "semantic_scholar_id": null,

@@ -1,25 +1,25 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-13](2026-09-13.md).
+Latest daily digest: [2026-09-14](2026-09-14.md).
 
-# Paper Scout Digest - 2026-09-13
+# Paper Scout Digest - 2026-09-14
 
 ## Run Summary
 
-- **Run ID:** 84
+- **Run ID:** 85
 - **Candidates fetched:** 100
-- **New unique papers:** 95
-- **Relevant:** 4
-- **Maybe relevant:** 3
-- **Irrelevant:** 93
+- **New unique papers:** 94
+- **Relevant:** 8
+- **Maybe relevant:** 2
+- **Irrelevant:** 90
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
-- arxiv failed for 'deep research agent': http error for https://export.arxiv.org/api/query?search_query=all%3Adeep+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'autonomous research agent': http error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'AI scientist': timeout error for https://export.arxiv.org/api/query?search_query=all%3A%22AI+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
-- arxiv failed for 'automated literature review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+AND+all%3Aliterature+AND+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:deep and all:research and all:agent': http error for https://export.arxiv.org/api/query?search_query=all%3Adeep+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:autonomous and all:research and all:agent': http error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:"ai scientist"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22ai+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:automated and all:literature and all:review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+and+all%3Aliterature+and+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - openalex: incomplete discovery window for 'AI scientist'; single-page record limit reached.
@@ -31,14 +31,61 @@ Latest daily digest: [2026-09-13](2026-09-13.md).
 
 ## Highly Relevant
 
-### [Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery](https://arxiv.org/abs/2609.07655)
+### [Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents](https://doi.org/10.48550/arxiv.2609.11318)
 
-- **Authors:** Xiaotang Feng, Philip H. S. Torr, Bruno Andreis
-- **Date:** 2026-09-07
+- **Authors:** Minghao Guo, Meng Cao, Sui Zhao, Siyu Ning, Xin Wang, Haoze Zhao, et al.
+- **Date:** 2026-09-10
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents, benchmark
+- **Abstract summary:** Deep research agents are increasingly capable of web search, tool use, multimodal evidence analysis, and information synthesis. However, existing benchmarks mainly evaluate medium-horizon exploration and rarely test whether agents can sustain long, dependency-heavy research processes. We introduce Mr.LHDR (Multimoda...
+- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### [AI Scientists Need a Theory of Scientific Value](https://doi.org/10.6082/mgmw1-gw451)
+
+- **Authors:** Yunlong Xu
+- **Date:** 2026-09-08
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Closed-loop AI scientists can generate candidate designs at low marginal computational cost, whereas reliable feedback may require wet-lab synthesis, characterization, or high-fidelity computation. Addressing this imbalance through custom laboratory automation remains infrastructure-intensive and costly, while repla...
-- **Automated evidence-based assessment:** 53/100 · Weak · Medium confidence · partial full text
+- **Abstract summary:** An AI scientist must decide which questions deserve an answer and what would count as an advance. Current systems learn these judgments from scientific work, expert evaluations, and task-specific measures of success. As they take greater responsibility for choosing research, the grounds for those judgments become pa...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+
+### [AI Scientists Need a Theory of Scientific Value](https://doi.org/10.6082/eebvr-g1f33)
+
+- **Authors:** Yunlong Xu
+- **Date:** 2026-09-08
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** An AI scientist must decide which questions deserve an answer and what would count as an advance. Current systems learn these judgments from scientific work, expert evaluations, and task-specific measures of success. As they take greater responsibility for choosing research, the grounds for those judgments become pa...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+
+### [Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System](https://arxiv.org/abs/2609.10922)
+
+- **Authors:** Ming Li, Dai Li, Xuying Ning, Bo Sun, Rui Li, Yi Zhang, et al.
+- **Date:** 2026-09-10
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies autonomous or deep research agents.
+- **Tags:** deep-research-agents
+- **Abstract summary:** Auto-research agents have shown the potential to automate hypothesis generation, experiment execution, and iterative refinement. However, scaling this paradigm to industry-scale recommendation models introduces two challenges: (1) long feedback loops, where model training can take days, making serial iteration prohi...
+- **Automated evidence-based assessment:** 59/100 · Uncertain · Medium confidence · partial full text
 - **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
+
+## Maybe Relevant
+
+### [Who Reviews the Reviewer? A Multi‐Agent LLM Architecture With Meta‐Review Synthesis for Editorial Peer Review](https://doi.org/10.1002/sres.70163)
+
+- **Authors:** Sener Ali, Simona‐Vasilica Oprea, Adela Bârã
+- **Date:** 2026-09-11
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Tags:** research-adjacent
+- **Abstract summary:** ABSTRACT This study proposes an AI‐assisted peer‐review framework based on retrieval‐augmented generation (RAG), advanced prompt engineering and multi‐agent large language model (LLM) orchestration to support human reviewers and editorial decision‐making through structured, evidence‐aware manuscript assessment. Manu...
+- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment

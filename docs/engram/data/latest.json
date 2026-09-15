@@ -1,27 +1,122 @@
 {
   "digest_quality_warning_count": 0,
-  "latest_run_date": "2026-09-14",
+  "latest_run_date": "2026-09-15",
   "latest_run_summary": {
-    "Candidates fetched": "83",
-    "Irrelevant": "76",
+    "Candidates fetched": "75",
+    "Irrelevant": "73",
     "Maybe relevant": "0",
-    "New unique papers": "79",
-    "Relevant": "7",
-    "Run ID": "12",
-    "Source summary": "openalex: 75, semantic_scholar: 8"
+    "New unique papers": "68",
+    "Relevant": "2",
+    "Run ID": "13",
+    "Source summary": "openalex: 75, semantic_scholar: 0"
   },
-  "newly_discovered_papers": [],
+  "newly_discovered_papers": [
+    {
+      "abstract_summary": "Transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. Lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due...",
+      "alternate_urls": [
+        "https://arxiv.org/abs/2609.03426",
+        "https://arxiv.org/abs/2609.03426v1",
+        "https://doi.org/10.48550/arxiv.2609.03426",
+        "https://openalex.org/W7208730657"
+      ],
+      "appeared_in_latest_run": true,
+      "arxiv_id": "2609.03426",
+      "authors": [
+        "Yunao Zheng",
+        "Bin Wen",
+        "Xiaojie Wang"
+      ],
+      "canonical_id": "doi:10.48550/arxiv.2609.03426",
+      "citation": "Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations. Yunao Zheng, Bin Wen, Xiaojie Wang. 2026-09-03. https://arxiv.org/abs/2609.03426",
+      "detail_json": "papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.json",
+      "detail_page": "papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.html",
+      "doi": "10.48550/arxiv.2609.03426",
+      "effective_sort_date": "2026-09-03",
+      "first_seen_at": "2026-09-05 17:59:27",
+      "first_seen_date": "2026-09-05",
+      "future_date": false,
+      "is_new": false,
+      "last_seen_at": "2026-09-15 12:07:52",
+      "last_seen_date": "2026-09-15",
+      "latest_relevant_date_bucket": 0,
+      "latest_revision_date": null,
+      "newly_discovered_in_latest_run": true,
+      "notified_at": "2026-09-05 18:01:34",
+      "notified_date": "2026-09-05",
+      "openalex_id": "W7208730657",
+      "pinned": false,
+      "publication_date": "2026-09-03",
+      "publication_date_confidence": "medium",
+      "publication_date_precision": "day",
+      "publication_date_source": "openalex",
+      "publication_year": "2026",
+      "relevance_decision": "relevant",
+      "relevance_label": "Engram / conditional-memory study",
+      "relevance_reason": "Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.",
+      "relevance_score": 92,
+      "research_note": null,
+      "review_status": null,
+      "scholarly_quality": {
+        "applied_score_cap": null,
+        "applied_score_cap_reason": null,
+        "assessed_at": null,
+        "assessment_scope": "metadata_only",
+        "assessment_version": null,
+        "assessor_model": null,
+        "assessor_type": null,
+        "combined_rank_score": 0.92,
+        "concerns": [],
+        "concise_summary": null,
+        "confidence": "unknown",
+        "curation_note": null,
+        "dimension_scores": {},
+        "downranked": false,
+        "evidence": [],
+        "manual_override": false,
+        "missing_information": [],
+        "overall_quality_score": null,
+        "paper_type": "unclear",
+        "positive_signals": [],
+        "recommendation": "unknown",
+        "rubric_version": null,
+        "source_content_hash": null,
+        "suppressed": false
+      },
+      "semantic_scholar_id": null,
+      "source": "openalex",
+      "source_id": "W7208730657",
+      "source_ids": {
+        "arxiv": [
+          "2609.03426"
+        ],
+        "openalex": [
+          "W7208730657"
+        ]
+      },
+      "source_updated_date": "2026-09-13",
+      "sources": [
+        "openalex",
+        "arxiv"
+      ],
+      "tags": [
+        "conditional-memory",
+        "hashed-ngram-memory"
+      ],
+      "title": "Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations",
+      "url": "https://arxiv.org/abs/2609.03426"
+    }
+  ],
   "source_diagnostics": [
     "arxiv failed for 'all:engram and all:language and all:model': http error for https://export.arxiv.org/api/query?search_query=all%3Aengram+and+all%3Alanguage+and+all%3Amodel&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
     "arxiv failed for 'all:\"conditional memory\"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
     "arxiv failed for 'all:n and all:gram and all:memory and all:transformer': http error for https://export.arxiv.org/api/query?search_query=all%3An+and+all%3Agram+and+all%3Amemory+and+all%3Atransformer&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
-    "arxiv failed for 'all:\"memory grafting\"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error",
+    "arxiv failed for 'all:\"memory grafting\"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
+    "openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.",
     "openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.",
     "openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.",
-    "openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'engram'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.",
-    "semantic_scholar: incomplete discovery window for 'tokenizer-agnostic engram'; single-page record limit reached."
+    "semantic_scholar failed for 'tokenizer-agnostic engram': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources."
   ]
 }

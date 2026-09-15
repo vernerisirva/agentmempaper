@@ -1,12 +1,12 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-14](2026-09-14.md).
+Latest daily digest: [2026-09-15](2026-09-15.md).
 
-# Paper Scout Digest - 2026-09-14
+# Paper Scout Digest - 2026-09-15
 
 ## Run Summary
 
-- **Run ID:** 85
+- **Run ID:** 86
 - **Candidates fetched:** 100
 - **New unique papers:** 94
 - **Relevant:** 8
@@ -16,8 +16,8 @@ Latest daily digest: [2026-09-14](2026-09-14.md).
 
 ## Source Warnings
 
-- arxiv failed for 'all:deep and all:research and all:agent': http error for https://export.arxiv.org/api/query?search_query=all%3Adeep+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
-- arxiv failed for 'all:autonomous and all:research and all:agent': http error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
+- arxiv failed for 'all:deep and all:research and all:agent': http error for https://export.arxiv.org/api/query?search_query=all%3Adeep+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Too Many Requests
+- arxiv failed for 'all:autonomous and all:research and all:agent': timeout error for https://export.arxiv.org/api/query?search_query=all%3Aautonomous+and+all%3Aresearch+and+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: The read operation timed out
 - arxiv failed for 'all:"ai scientist"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22ai+scientist%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - arxiv failed for 'all:automated and all:literature and all:review': http error for https://export.arxiv.org/api/query?search_query=all%3Aautomated+and+all%3Aliterature+and+all%3Areview&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 429: Unknown Error
 - openalex: incomplete discovery window for 'deep research agent'; single-page record limit reached.
@@ -27,65 +27,31 @@ Latest daily digest: [2026-09-14](2026-09-14.md).
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Highly Relevant
 
-### [Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents](https://doi.org/10.48550/arxiv.2609.11318)
+### [Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents](https://arxiv.org/abs/2609.11243)
 
-- **Authors:** Minghao Guo, Meng Cao, Sui Zhao, Siyu Ning, Xin Wang, Haoze Zhao, et al.
+- **Authors:** Jiaqiang Li, Yajie Yang, Zhiheng Xi, Jiadong Chen, Enyu Zhou, Senjie Jin, et al.
 - **Date:** 2026-09-10
 - **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents, benchmark
-- **Abstract summary:** Deep research agents are increasingly capable of web search, tool use, multimodal evidence analysis, and information synthesis. However, existing benchmarks mainly evaluate medium-horizon exploration and rarely test whether agents can sustain long, dependency-heavy research processes. We introduce Mr.LHDR (Multimoda...
-- **Automated evidence-based assessment:** 78/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies source-grounded research workflows, citation verification, or evidence-backed research reports.
+- **Tags:** deep-research-agents, citation-grounding
+- **Abstract summary:** Autonomous research agents are increasingly expected to search the literature, analyze experimental evidence, and generate scientific hypotheses. These capabilities require multi-step evidence grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching a conclusion. Existing mul...
+- **Automated evidence-based assessment:** 53/100 · Uncertain · Low confidence · partial full text
+- **Main concerns:** Comparative claims were detected without a suitable baseline in the available text.
 - **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
 
-### [AI Scientists Need a Theory of Scientific Value](https://doi.org/10.6082/mgmw1-gw451)
+### [Closing the Empirical Loop: Autonomous AI Agents Conduct End‐to‐end Research With Human Participants](https://doi.org/10.1002/advs.76675)
 
-- **Authors:** Yunlong Xu
-- **Date:** 2026-09-08
+- **Authors:** Gabrielle Wehr, Reuben Rideaux, Amaya Fox, David R. Lightfoot, Jason M. Tangen, Jason B. Mattingley, et al.
+- **Date:** 2026-09-14
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** An AI scientist must decide which questions deserve an answer and what would count as an advance. Current systems learn these judgments from scientific work, expert evaluations, and task-specific measures of success. As they take greater responsibility for choosing research, the grounds for those judgments become pa...
+- **Abstract summary:** Artificial intelligence systems are transforming scientific discovery by accelerating specific research tasks, from protein structure prediction to materials design, yet remain confined to narrow domains requiring substantial human oversight. Exponential growth of scientific literature and increasing domain speciali...
 - **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-
-### [AI Scientists Need a Theory of Scientific Value](https://doi.org/10.6082/eebvr-g1f33)
-
-- **Authors:** Yunlong Xu
-- **Date:** 2026-09-08
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** An AI scientist must decide which questions deserve an answer and what would count as an advance. Current systems learn these judgments from scientific work, expert evaluations, and task-specific measures of success. As they take greater responsibility for choosing research, the grounds for those judgments become pa...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-
-### [Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System](https://arxiv.org/abs/2609.10922)
-
-- **Authors:** Ming Li, Dai Li, Xuying Ning, Bo Sun, Rui Li, Yi Zhang, et al.
-- **Date:** 2026-09-10
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Auto-research agents have shown the potential to automate hypothesis generation, experiment execution, and iterative refinement. However, scaling this paradigm to industry-scale recommendation models introduces two challenges: (1) long feedback loops, where model training can take days, making serial iteration prohi...
-- **Automated evidence-based assessment:** 59/100 · Uncertain · Medium confidence · partial full text
-- **Positive signals:** The contribution is stated explicitly.; A baseline or comparison system is described.
-
-## Maybe Relevant
-
-### [Who Reviews the Reviewer? A Multi‐Agent LLM Architecture With Meta‐Review Synthesis for Editorial Peer Review](https://doi.org/10.1002/sres.70163)
-
-- **Authors:** Sener Ali, Simona‐Vasilica Oprea, Adela Bârã
-- **Date:** 2026-09-11
-- **Source:** openalex
-- **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
-- **Tags:** research-adjacent
-- **Abstract summary:** ABSTRACT This study proposes an AI‐assisted peer‐review framework based on retrieval‐augmented generation (RAG), advanced prompt engineering and multi‐agent large language model (LLM) orchestration to support human reviewers and editorial decision‐making through structured, evidence‐aware manuscript assessment. Manu...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
+- **Positive signals:** User, expert, operational, or deployment evidence is described.; Limitations or threats to validity are acknowledged.

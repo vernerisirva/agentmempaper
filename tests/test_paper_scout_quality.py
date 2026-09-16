@@ -216,6 +216,7 @@ class PaperScoutQualityTest(unittest.TestCase):
         selected = select_assessment_text(candidate, None)
         deterministic = assess_quality_deterministically(candidate, "fixture:transport", selected)
         for base, expected in (("https://openrouter.ai/api/v1/", True),
+                               ("https://OPENROUTER.AI/api/v1", True),
                                ("https://api.openai.com/v1", False),
                                ("https://openrouter.ai.example.com/v1", False)):
             with self.subTest(base=base):
@@ -246,6 +247,8 @@ class PaperScoutQualityTest(unittest.TestCase):
         self.assertNotIn("PRIVATE", json.dumps(metrics))
         self.assertTrue(all(v is None for v in _reported_usage({}).values()))
         self.assertIsNone(_reported_usage({"usage": {"cost": float("nan"), "prompt_tokens": True}})["cost_usd"])
+        self.assertIsNone(_reported_usage({"usage": {"cost": True}})["cost_usd"])
+        self.assertIsNone(_reported_usage({"usage": {"cost": None}})["cost_usd"])
 
     def test_well_formed_llm_output_is_validated_and_keeps_deterministic_cap(self):
         deterministic = replace(

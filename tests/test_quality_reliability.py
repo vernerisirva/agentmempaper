@@ -157,7 +157,7 @@ class AnchorRegressionTest(unittest.TestCase):
                 ("experiment trajectories", "execution trajectories"),
                 ("81% accuracy", "18% accuracy"), ("is supported", "is not supported"),
                 ("not able", "notable"), ("a;b", "a; intervening clause; b"),
-                ("first ... last", "first middle last"), ("stateoftheart", "state-of-the-art")):
+                ("first ... last", "first middle last"), ("stateoftheart", "state-of-the-art"), ("x2", "x²"), ("R", "ℝ")):
             self.assertIsNone(self.anchor(quote, text), (quote, text))
 
     def test_unique_localization_corrects_page_and_records_actual_section(self):

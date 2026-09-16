@@ -225,7 +225,7 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
 
 
 def _normalized(text: str) -> str:
-    text = unicodedata.normalize("NFKC", text).casefold().replace("\u00ad", "")
+    text = unicodedata.normalize("NFC", text).casefold().replace("\u00ad", "")
     text = text.translate(str.maketrans({"‘": "'", "’": "'", "“": '\"', "”": '\"', "‐": "-", "‑": "-"}))
     # Only a hyphen at a physical line break can join a split word. Preserve
     # ordinary hyphens, punctuation, numbers and word boundaries.

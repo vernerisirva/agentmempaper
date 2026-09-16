@@ -102,11 +102,14 @@ def assess_with_optional_quality_llm(
             delay = max(2.0 * 2 ** attempt, exc.retry_after_seconds or 0)
             if transient and attempt == 0 and delay <= 60:
                 call["backoff_seconds"] = delay
-                if urlsplit(settings.base_url).hostname == "openrouter.ai" and call.get("provider"):
+                # Response display names are not routing slugs. Only use
+                # mappings verified against the public model endpoint metadata.
+                provider_slug = {"NextBit": "nextbit", "Fireworks": "fireworks", "DeepInfra": "deepinfra"}.get(call.get("provider"))
+                if urlsplit(settings.base_url).hostname == "openrouter.ai" and provider_slug:
                     # A named provider that terminated its response need not be
                     # selected again; preserve the exact scientific model.
                     payload = {**payload, "provider": {**payload.get("provider", {}),
-                                                       "ignore": [call["provider"]]}}
+                                                       "ignore": [provider_slug]}}
                 time.sleep(delay)
                 continue
         except Exception as exc:  # malformed output must not abort the run or become insufficient.

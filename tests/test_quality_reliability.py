@@ -321,6 +321,16 @@ class SameModelReroutingTest(unittest.TestCase):
         self.assertEqual(result.quality_status, "pass")
         self.assertEqual(result.execution["calls"][0]["provider"], "NextBit")
         self.assertNotIn("ignore", client.payloads[0]["provider"])
-        self.assertEqual(client.payloads[1]["provider"]["ignore"], ["NextBit"])
+        self.assertEqual(client.payloads[1]["provider"]["ignore"], ["nextbit"])
         self.assertEqual(client.payloads[0]["model"], client.payloads[1]["model"])
         self.assertEqual(len(client.payloads), 2)
+
+
+class UnknownProviderRoutingTest(unittest.TestCase):
+    def test_unknown_provider_display_name_does_not_become_a_guessed_slug(self):
+        first = json.loads(envelope(finish="error"))
+        first["provider"] = "New Provider Display Name"
+        client = SequenceHttp([json.dumps(first), envelope()])
+        result, _ = ReliabilityTest().assess(client)
+        self.assertEqual(result.quality_status, "pass")
+        self.assertNotIn("ignore", client.payloads[1]["provider"])

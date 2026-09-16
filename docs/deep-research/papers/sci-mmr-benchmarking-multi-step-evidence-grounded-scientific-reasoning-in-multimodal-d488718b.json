@@ -53,7 +53,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:10",
-    "generated_at": "2026-09-16 12:05:45",
+    "generated_at": "2026-09-16 16:58:07",
     "last_seen_at": "2026-09-15 12:04:20",
     "metadata_sources": [
       "openalex",
@@ -119,26 +119,602 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T11:43:20+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-recovery-v1",
+    "assessed_at": "2026-09-16T16:54:30+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-coverage-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.96,
-    "concerns": [],
-    "concise_summary": "The available evidence suggests a clearly supported scholarly contribution. Automated score 85/100, medium confidence, based on partial full text.",
-    "confidence": "medium",
+    "concerns": [
+      "LLM-based evaluation may introduce bias despite reported agreement",
+      "Argument graph construction involves some subjectivity",
+      "Benchmark is dominated by 2026 papers (54.5%), potentially limiting temporal diversity",
+      "No public code or dataset release details are explicitly stated in the main text"
+    ],
+    "concise_summary": "Sci-MMR introduces a benchmark of 235 multi-hop scientific reasoning tasks built on argument graphs linking claims, evidence, knowledge, and visual regions. The paper evaluates eight multimodal models across four settings and identifies evidence acquisition and integration as distinct bottlenecks. The work is methodologically rigorous with expert verification, multiple metrics, and controlled interventions, and it clearly positions itself against existing benchmarks.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 142653,
+      "assessment_input_sha256": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "characters_before_extraction_limit": 155189,
+      "eligible_characters": 138337,
+      "excluded_back_matter_characters": 14980,
+      "extracted_characters": 155261,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "extracted_pages": 37,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 155189,
+      "selected_characters": 138337,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "selected_sections": [
+        {
+          "characters": 2266,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1225,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2516,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1578,
+          "heading": "Experiment",
+          "page": 2
+        },
+        {
+          "characters": 131,
+          "heading": "Experiment",
+          "page": 3
+        },
+        {
+          "characters": 3659,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 427,
+          "heading": "Argument Graph Formulation",
+          "page": 3
+        },
+        {
+          "characters": 92,
+          "heading": "Argument Graph Formulation",
+          "page": 4
+        },
+        {
+          "characters": 69,
+          "heading": "Papers & Grounding",
+          "page": 4
+        },
+        {
+          "characters": 114,
+          "heading": "Task Generation",
+          "page": 4
+        },
+        {
+          "characters": 413,
+          "heading": "Argument Graphconstruction",
+          "page": 4
+        },
+        {
+          "characters": 2176,
+          "heading": "Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 330,
+          "heading": "Benchmark Construction And Composi-",
+          "page": 4
+        },
+        {
+          "characters": 3138,
+          "heading": "Benchmark Construction And Composi-",
+          "page": 5
+        },
+        {
+          "characters": 907,
+          "heading": "Evaluation Metrics",
+          "page": 5
+        },
+        {
+          "characters": 2814,
+          "heading": "Evaluation Metrics",
+          "page": 6
+        },
+        {
+          "characters": 97,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 2198,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 2006,
+          "heading": "Main Results",
+          "page": 7
+        },
+        {
+          "characters": 4267,
+          "heading": "Main Results",
+          "page": 8
+        },
+        {
+          "characters": 1798,
+          "heading": "Main Results",
+          "page": 9
+        },
+        {
+          "characters": 1520,
+          "heading": "Limitations",
+          "page": 9
+        },
+        {
+          "characters": 965,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 163,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 346,
+          "heading": "Appendix",
+          "page": 13
+        },
+        {
+          "characters": 2543,
+          "heading": "Appendix",
+          "page": 14
+        },
+        {
+          "characters": 1285,
+          "heading": "Appendix: Structural And Visual Complexity",
+          "page": 14
+        },
+        {
+          "characters": 514,
+          "heading": "Appendix: Audited Argument-Graph Example",
+          "page": 14
+        },
+        {
+          "characters": 3804,
+          "heading": "Appendix: Audited Argument-Graph Example",
+          "page": 15
+        },
+        {
+          "characters": 678,
+          "heading": "Appendix: Expert Verification Protocol",
+          "page": 15
+        },
+        {
+          "characters": 2833,
+          "heading": "Appendix: Expert Verification Protocol",
+          "page": 16
+        },
+        {
+          "characters": 2819,
+          "heading": "Appendix: Expert Verification Protocol",
+          "page": 17
+        },
+        {
+          "characters": 2308,
+          "heading": "Appendix: Expert Verification Protocol",
+          "page": 18
+        },
+        {
+          "characters": 2574,
+          "heading": "Appendix: Expert Verification Protocol",
+          "page": 19
+        },
+        {
+          "characters": 1323,
+          "heading": "Appendix: Evaluation Settings",
+          "page": 19
+        },
+        {
+          "characters": 475,
+          "heading": "Appendix: Coverage Metrics",
+          "page": 19
+        },
+        {
+          "characters": 1807,
+          "heading": "Appendix: Coverage Metrics",
+          "page": 20
+        },
+        {
+          "characters": 1803,
+          "heading": "Appendix: Human And Cross-Judge Audit",
+          "page": 20
+        },
+        {
+          "characters": 726,
+          "heading": "Appendix: Human And Cross-Judge Audit",
+          "page": 21
+        },
+        {
+          "characters": 299,
+          "heading": "Whether The Stem Supplies Enough Neu-",
+          "page": 21
+        },
+        {
+          "characters": 2131,
+          "heading": "Whether Answering Requires Combining",
+          "page": 21
+        },
+        {
+          "characters": 1713,
+          "heading": "Whether Answering Requires Combining",
+          "page": 22
+        },
+        {
+          "characters": 499,
+          "heading": "Appendix: Caption-Only Diagnostic",
+          "page": 22
+        },
+        {
+          "characters": 173,
+          "heading": "Appendix: Discipline And Difficulty Strata",
+          "page": 22
+        },
+        {
+          "characters": 1511,
+          "heading": "Appendix: Discipline And Difficulty Strata",
+          "page": 23
+        },
+        {
+          "characters": 1981,
+          "heading": "Appendix: Coverage And Correctness",
+          "page": 23
+        },
+        {
+          "characters": 189,
+          "heading": "Appendix: Evidence Hint Gains",
+          "page": 23
+        },
+        {
+          "characters": 1366,
+          "heading": "Appendix: Evidence Hint Gains",
+          "page": 24
+        },
+        {
+          "characters": 1165,
+          "heading": "Appendix: Agentic Tool-Use Changes",
+          "page": 24
+        },
+        {
+          "characters": 922,
+          "heading": "Appendix: Localization And Observed Rescue",
+          "page": 24
+        },
+        {
+          "characters": 152,
+          "heading": "This Definition Makes Hit Count A Conserva-",
+          "page": 24
+        },
+        {
+          "characters": 1558,
+          "heading": "This Definition Makes Hit Count A Conserva-",
+          "page": 25
+        },
+        {
+          "characters": 2192,
+          "heading": "Appendix: Routing Rules",
+          "page": 25
+        },
+        {
+          "characters": 844,
+          "heading": "Appendix: Routing Rules",
+          "page": 26
+        },
+        {
+          "characters": 1211,
+          "heading": "Appendix: Model-Level Subtype Composition",
+          "page": 26
+        },
+        {
+          "characters": 717,
+          "heading": "Appendix: Interpreting Zero-Count Subtypes",
+          "page": 26
+        },
+        {
+          "characters": 756,
+          "heading": "Appendix: Threshold Sensitivity",
+          "page": 26
+        },
+        {
+          "characters": 782,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 26
+        },
+        {
+          "characters": 2483,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 27
+        },
+        {
+          "characters": 4723,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 28
+        },
+        {
+          "characters": 1737,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 29
+        },
+        {
+          "characters": 4669,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 30
+        },
+        {
+          "characters": 92,
+          "heading": "Appendix: Representative Error-Pattern Cards",
+          "page": 31
+        },
+        {
+          "characters": 465,
+          "heading": "Appendix: Prompt Catalogue",
+          "page": 31
+        },
+        {
+          "characters": 7040,
+          "heading": "Appendix: Benchmark Construction",
+          "page": 31
+        },
+        {
+          "characters": 5899,
+          "heading": "Appendix: Benchmark Construction",
+          "page": 32
+        },
+        {
+          "characters": 104,
+          "heading": "Confirm The Best Reference Id From The Provided Reference",
+          "page": 32
+        },
+        {
+          "characters": 349,
+          "heading": "Rewrite The Original Evidence Into 'Visual_Evidence_Text':",
+          "page": 32
+        },
+        {
+          "characters": 22,
+          "heading": "If Only Part Of The Evidence Is Visible, Keep Only The",
+          "page": 32
+        },
+        {
+          "characters": 50,
+          "heading": "If No Directly Observable Support Is Found, Leave 'Visual_",
+          "page": 32
+        },
+        {
+          "characters": 6503,
+          "heading": "If No Directly Observable Support Is Found, Leave 'Visual_",
+          "page": 33
+        },
+        {
+          "characters": 8110,
+          "heading": "If No Directly Observable Support Is Found, Leave 'Visual_",
+          "page": 34
+        },
+        {
+          "characters": 6090,
+          "heading": "If No Directly Observable Support Is Found, Leave 'Visual_",
+          "page": 35
+        },
+        {
+          "characters": 560,
+          "heading": "Appendix: Reported Inference Settings",
+          "page": 35
+        },
+        {
+          "characters": 4352,
+          "heading": "Appendix: Reported Inference Settings",
+          "page": 36
+        },
+        {
+          "characters": 356,
+          "heading": "Appendix: Evaluation",
+          "page": 36
+        },
+        {
+          "characters": 12,
+          "heading": "You Are Judging Structural Coverage, Not Overall Quality Or",
+          "page": 36
+        },
+        {
+          "characters": 120,
+          "heading": "Allow Semantic Equivalence -- The Answer Does Not Need To",
+          "page": 36
+        },
+        {
+          "characters": 77,
+          "heading": "A Node Is Matched Only When The Answer Substantively",
+          "page": 36
+        },
+        {
+          "characters": 13,
+          "heading": "Only Output Node Ids That Appear In The Input. Never Invent",
+          "page": 36
+        },
+        {
+          "characters": 10,
+          "heading": "Do Not Output Coverage Scores -- Only Node-Level Yes/No",
+          "page": 36
+        },
+        {
+          "characters": 397,
+          "heading": "Treat Article Source Attributions Only As Provenance",
+          "page": 36
+        },
+        {
+          "characters": 696,
+          "heading": "Each Judgment Entry Should Contain Only The Schema-Required",
+          "page": 36
+        },
+        {
+          "characters": 2073,
+          "heading": "Each Judgment Entry Should Contain Only The Schema-Required",
+          "page": 37
+        },
+        {
+          "characters": 467,
+          "heading": "Each Judgment Entry Should Contain Only The Schema-Required",
+          "page": 37
+        }
+      ],
+      "selection_version": "representative-v1",
+      "source_pages": 37,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 4,
+      "contribution_clarity": 5,
       "evaluation_or_validation_strength": 5,
-      "evidence_to_claim_alignment": 4,
+      "evidence_to_claim_alignment": 5,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 5,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 4
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 5
     },
     "downranked": false,
     "evidence": [
@@ -153,11 +729,11 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ions. To address this gap, we introduceSci-MMR, a benchmark for evaluating multi-step evidence- arXiv:2609.11243v1 [cs.AI] 10 Sep 2026",
+        "excerpt": "ble scientific evidence. We in- troduceSci-MMR, a benchmark for multi-step evidence-grounded scientific reasoning built on structured argum",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 1,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Introduction",
+        "section": "Abstract / front matter",
         "signal_type": "positive"
       },
       {
@@ -171,11 +747,11 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "quipping models with visual cropping tools raises accuracy by 4.5 points, confirming that active localization does help, though its gains remain",
+        "excerpt": "t frontier multimodal models, we find that answer accuracy consistently exceeds complete-evidence recovery rate by more than 20%, revealing a substantial gap that answer-only evalu",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
+        "page": 1,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Introduction",
+        "section": "Abstract / front matter",
         "signal_type": "positive"
       },
       {
@@ -189,11 +765,11 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "own below retains the finer distinctions used for sensitivity analysis and representative cases. F.3. Interpreting Zero-Count Subtypes Zero entries in",
+        "excerpt": "own below retains the finer distinctions used for sensitivity analysis and representative cases.",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 26,
         "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "This Definition Makes Hit Count A Conserva-",
+        "section": "Appendix: Model-Level Subtype Composition",
         "signal_type": "positive"
       },
       {
@@ -216,92 +792,92 @@
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "Accuracy label \u2013 \u2013 \u2013 384 92% 0.80 Table 9| Human inter-annotator agreement before adjudication and Gemini 3.5 Flash agreement with adjudicated h",
+        "excerpt": "tial review- ers before adjudication. B. Question Quality Control The construction process begins with determinis- tic (rule-based) validation fo",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 22,
+        "page": 19,
         "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
-        "section": "Whether Answering Requires Combining",
+        "section": "Appendix: Expert Verification Protocol",
         "signal_type": "positive"
       },
       {
         "dimension": "contribution_clarity",
-        "excerpt": "We introduceSci-MMR, the first benchmark for multi-step evidence-grounded scientific reasoning. Built from peer-reviewed pub- lications, it comprises 235 multi-hop rea- soning tasks spanning four scientific disci- plines and 35 domains, grounded in struc- tured argument graphs connecting scientific claims, citation-grounded knowledge, visual evidence, and supporting image regions.",
-        "explanation": "The paper explicitly states its contribution as a benchmark with a defined structure and scope, making the contribution clear.",
+        "excerpt": "To address this gap, we introduceSci-MMR, a benchmark for evaluating multi-step evidence-grounded scientific reasoning in multimodal agents. Built from peer-reviewed scientific publications,Sci-MMRrepresents each task as a structured argument graph linking scientific claims, citation-grounded knowledge, visual evidence, and supporting image regions",
+        "explanation": "The contribution is explicitly defined in the introduction and elaborated throughout the paper.",
         "page": 2,
-        "paraphrase": "The contribution is stated explicitly.",
+        "paraphrase": "The paper clearly states its contribution: introducing Sci-MMR, a benchmark for multi-step evidence-grounded scientific reasoning built on structured argument graphs.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "scholarly_novelty_or_value",
-        "excerpt": "Existing multimodal benchmarks, however, largely evaluate final-answer accuracy, leaving open whether predictions are actually supported by traceable scientific evidence. We introduce Sci-MMR, a benchmark for multi-step evidence-grounded scientific reasoning built on structured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence, and supporting regions.",
-        "explanation": "The paper identifies a gap in existing benchmarks and positions its contribution as addressing that gap, indicating novelty and value.",
-        "page": 1,
-        "paraphrase": "The work identifies a gap in existing benchmarks and proposes a novel benchmark to address it.",
-        "section": "Introduction",
+        "excerpt": "Sci-MMRinstead disentangles evidence acquisition from evidence integration by evaluating evidence coverage and evidence-to-claim reasoning as complementary signals.",
+        "explanation": "The novelty is supported by the comparison table showing existing benchmarks lack the combination of multi-hop reasoning, agentic execution, and process-level evaluation.",
+        "page": 3,
+        "paraphrase": "The paper claims to be the first benchmark for multi-step evidence-grounded scientific reasoning with structured argument graphs and process-level evaluation.",
+        "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
         "excerpt": "We adopt a human-in-the-loop pipeline in which automated tools perform scalable extraction and graph construction, while domain experts intervene only where scientific judgment is required: evidence annotation and final verification.",
-        "explanation": "The paper describes a human-in-the-loop pipeline with expert verification, indicating methodological rigor in benchmark construction.",
-        "page": 4,
-        "paraphrase": "The benchmark construction uses a human-in-the-loop pipeline with expert verification.",
+        "explanation": "The multi-stage pipeline with expert verification and quality control demonstrates methodological rigor.",
+        "page": 5,
+        "paraphrase": "The benchmark construction uses a human-in-the-loop pipeline with automated extraction, LLM graph construction, expert annotation, automated quality control, and final expert verification.",
         "section": "Benchmark Construction And Composi-",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "Evaluating eight frontier multimodal models under four reasoning settings\u2014Caption-only,Direct Visual Reasoning,Evidence-Hint Reasoning,andAgentic Tool-Use\u2014reveals a consistent gap between answer accuracy and evidence coverage: models frequently reach correct conclusions while recovering only partial supporting evidence.",
-        "explanation": "The paper evaluates eight models under four settings and reports quantitative results, providing strong validation of its claims.",
-        "page": 2,
-        "paraphrase": "The work evaluates eight models under four settings and reports quantitative results.",
-        "section": "Introduction",
+        "excerpt": "We evaluate all models under four progressively constrained settings that isolate different stages of evidence-grounded scientific reasoning.",
+        "explanation": "The evaluation is comprehensive, with multiple models, settings, and metrics, plus intervention analyses.",
+        "page": 7,
+        "paraphrase": "The paper evaluates eight frontier multimodal models across four settings and reports three complementary metrics, with controlled interventions to isolate failure modes.",
+        "section": "Experiments",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "Evidence-related failures account for 57.2% of errors overall, dominated by access and localization failures at 40.1%, with gold underuse at 14.0% and visual extraction errors at 3.1% contributing smaller shares. Reasoning-related failures account for a further 31.8%, split between interpretation failures at 27.5% and final-answer mismatches at 4.2%; the remaining 11.0% fall outside these categories.",
-        "explanation": "The paper provides quantitative evidence for its claims about failure modes, aligning evidence with the stated conclusions.",
-        "page": 9,
-        "paraphrase": "The paper provides quantitative evidence for its claims about failure modes.",
+        "excerpt": "Averaged across models, accuracy rises by 27.4 points, from 46.1% to 73.5%, yet mean accuracy on hard tasks reaches only 54.8%, still far from ceiling.",
+        "explanation": "The results in Table 2 and Figure 4 directly support the claim that answer accuracy overestimates evidence-grounded reasoning.",
+        "page": 8,
+        "paraphrase": "The paper's central claim that answer accuracy exceeds evidence recovery is directly supported by reported results showing a consistent gap.",
         "section": "Main Results",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "Existing scientific multimodal benchmarks evaluate figure-grounded question answering, claim verification, and paper-level understanding, but typically treat reasoning as recovering a final answer rather than reconstructing the evidence supporting a scientific claim [Pramanick et al., 2024, Wang et al., 2025, Ansari et al., 2026, Zhao et al., 2026].",
-        "explanation": "The paper compares its approach to existing benchmarks and identifies a gap in evidence-grounded reasoning evaluation, though the comparison is brief and does not deeply analyze each prior work.",
+        "excerpt": "These approaches reveal intermediate failures beyond final-answer accuracy but do not evaluate whether models acquire the complete evidence supporting a scientific conclusion.",
+        "explanation": "The related work section explicitly contrasts Sci-MMR with existing benchmarks and explains the gap it fills.",
         "page": 3,
-        "paraphrase": "The paper positions its work relative to existing benchmarks and identifies a gap.",
+        "paraphrase": "The paper positions itself against existing benchmarks and process-level evaluations, identifying the gap of not evaluating complete evidence acquisition.",
         "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "All responses are evaluated by Gemini 3.5 Flash [Google Deep- Mind, 2026b] using a unified rubric for answer correctness and graph coverage. Human agree- ment and cross-judge validation are reported in Supplementary Sec. C.3.",
-        "explanation": "The paper describes its evaluation methodology and reports human agreement, indicating some transparency, though code and data availability are not explicitly stated in the provided text.",
-        "page": 7,
-        "paraphrase": "The paper describes its evaluation methodology and reports human agreement.",
-        "section": "Experiments",
+        "excerpt": "The catalogue reports the task-defining instructions, dynamic input fields, and downstream-consumed output contracts used by the benchmark.",
+        "explanation": "The extensive appendix with prompt catalogues and protocols supports reproducibility.",
+        "page": 31,
+        "paraphrase": "The appendix provides detailed prompt catalogues, construction protocols, evaluation settings, and routing rules.",
+        "section": "Appendix: Prompt Catalogue",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "First, an Argument Graph represents one plausible reconstruction of a paper\u2019s evidential structure rather than a unique ground truth. Evidence granularity, intermediate claims, and support relations may admit alternative yet valid interpretations.",
-        "explanation": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+        "excerpt": "First, an Argument Graph represents one plausible reconstruction of a paper's evidential structure rather than a unique ground truth. Evidence granularity, intermediate claims, and support relations may admit alternative yet valid interpretations.",
+        "explanation": "The limitations section addresses key concerns about construction subjectivity and evaluation bias.",
         "page": 9,
-        "paraphrase": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+        "paraphrase": "The paper explicitly acknowledges limitations including argument graph subjectivity and LLM-based evaluation concerns.",
         "section": "Limitations",
         "signal_type": "positive"
       },
       {
         "dimension": "presentation_and_precision",
-        "excerpt": "The node set is partitioned into four disjoint types: V = Vv \u222a Ve \u222a Vk \u222a Vc. \u2022 Vv: Visual source nodes denote figure panels, tables, and other visual elements containing experimental information.",
-        "explanation": "The paper provides formal definitions and precise notation for its argument graph structure, indicating precision in presentation.",
-        "page": 4,
-        "paraphrase": "The paper provides formal definitions and precise notation for its argument graph structure.",
-        "section": "Evaluation",
+        "excerpt": "The error-routing sensitivity analysis reruns the fine-grained router at IoU thresholds of 0.3 and 0.7, bracketing the default threshold of 0.5.",
+        "explanation": "The presentation is precise with extensive tables, figures, and appendices supporting the main claims.",
+        "page": 26,
+        "paraphrase": "The paper provides detailed quantitative results with difficulty stratification, model-level breakdowns, and sensitivity analyses.",
+        "section": "Appendix: Threshold Sensitivity",
         "signal_type": "positive"
       }
     ],
@@ -310,10 +886,12 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "Extraction was limited to 120000 characters."
+      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.",
+      "Dataset availability or release plan is not explicitly stated in the main text",
+      "Details on how the eight-dimensional rubric was calibrated or validated beyond the construction pipeline"
     ],
-    "overall_quality_score": 85,
-    "paper_type": "empirical_research",
+    "overall_quality_score": 88,
+    "paper_type": "dataset_or_benchmark",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
@@ -323,7 +901,15 @@
       "Robustness or statistical analysis is reported.",
       "Limitations or threats to validity are acknowledged.",
       "Formal definitions or proof-oriented evidence is present.",
-      "Dataset documentation, quality control, licensing, or ethics is discussed."
+      "Dataset documentation, quality control, licensing, or ethics is discussed.",
+      "Clear benchmark contribution with structured argument graphs",
+      "Human-in-the-loop construction with expert verification",
+      "Multiple complementary evaluation metrics (Accuracy, E-Cov., C-Cov.)",
+      "Controlled interventions (Evidence-Hint, Agentic Tool-Use) to isolate failure modes",
+      "Cross-judge and human agreement validation",
+      "Sensitivity analyses for IoU thresholds and error routing",
+      "Explicit limitations section",
+      "Detailed appendix with prompt catalogue and construction protocols"
     ],
     "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
     "recommendation": "strong",

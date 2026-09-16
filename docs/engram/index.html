@@ -25,7 +25,7 @@
           <div class="library-hero">
             <h1>Engram &amp; Conditional Memory Paper Library</h1>
             <p class="hero-copy">A daily updated library of papers on Engram-style model memory, learned lookup tables, and transferable memory mechanisms.</p>
-            <p class="hero-line">Updated 2026-09-15 · 3 papers</p>
+            <p class="hero-line">Updated 2026-09-15 · 4 papers</p>
           </div>
         </header>
 
@@ -222,6 +222,62 @@
     </details>
 
           <button class="citation-button" type="button" data-citation="Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning. Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, Zhixuan Chu, Bingyu Zhu, Jungang Lou. 2026-08-25. https://www.semanticscholar.org/paper/d447f4f7bd455c4d384e8fc1fb932ba295581f3a">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="engram conditional-memory hashed-ngram-memory memory-grafting" data-latest-run="false" data-is-new="false" data-published="2026-05-20" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memory grafting: scaling language model pre-training via offline conditional memory" data-search="memory grafting: scaling language model pre-training via offline conditional memory runxi cheng, yuchen guan, yongxian wei, qianpu sun, qixiu li, sinan du, feng xiong, chun yuan, yan lu, yeyun gong scaling conditional memory offers a promising way to increase language-model capacity, but existing methods such as engram learn large memory tables from scratch during pre-training, making memory scaling expensive and sometimes ineffective. we propose memory grafting, a conditional memory scaling method that utiliz... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory, memory-grafting. abstract-based curation (arxiv:2605.20948): stores frozen hidden representations from an offline grafting model. the recipient uses longest-match suffix lookup, lightweight projections and gates, with an engram hash fallback. studies reuse of latent memory under matched pre-training budgets. engram conditional-memory hashed-ngram-memory memory-grafting arxiv relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory</h3>
+        <p class="meta">Runxi Cheng, Yuchen Guan, Yongxian Wei, Qianpu Sun, Qixiu Li, Sinan Du, Feng Xiong, Chun Yuan, Yan Lu, Yeyun Gong · Published 2026-05-20 · Source: arXiv</p>
+        <p class="reason"><strong>Topic match:</strong> Abstract-based curation (arXiv:2605.20948): stores frozen hidden representations from an offline grafting model.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2605.20948v1">Open paper</a>
+        <a class="paper-detail-link" href="papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Scaling conditional memory offers a promising way to increase language-model capacity, but existing methods such as Engram learn large memory tables from scratch during pre-training, making memory scaling expensive and sometimes ineffective. We propose Memory Grafting, a conditional memory scaling method that utiliz...</p>
+          <p class="research-note"><strong>Research note</strong> Abstract-based curation (arXiv:2605.20948): stores frozen hidden representations from an offline grafting model. The recipient uses longest-match suffix lookup, lightweight projections and gates, with an Engram hash fallback. Studies reuse of latent memory under matched pre-training budgets.</p>
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">engram</span><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span><span class="badge tag">memory-grafting</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-05 17:59</li>
+            <li>arXiv: 2605.20948</li><li>arXiv IDs: 2605.20948</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2605.20948">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory, memory-grafting.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>Memory Grafting proposes using frozen hidden states from a pretrained grafting model as conditional n-gram memory for a smaller recipient model, with exact longest-match retrieval and an Engram fallback. The paper reports benchmark gains over MoE and vanilla Engram baselines, supported by ablations, CKA analysis, probe analysis, and efficiency measurements. The contribution is clear and the evaluation is reasonably thorough, though statistical rigor and comparative baselines could be strengthened.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-coverage-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper explicitly defines Memory Grafting as constructing conditional memory from a grafting model rather than learning the memory table from scratch. (page 2)</li><li>The paper positions Memory Grafting as a representation-level knowledge-transfer paradigm that reuses pretrained model hidden states as external memory. (page 2)</li><li>The authors ensure matched trainable parameters across baselines by reducing the number of experts when adding grafting projections. (page 6)</li><li>The paper reports benchmark results across nine tasks for the 2.8B setting and multiple grafting models for the 0.92B setting. (page 7)</li><li>Probe analysis shows that retrieved memory changes hidden states and output distributions at retrieval-hit positions. (page 24)</li><li>The paper contrasts Memory Grafting with RAG and KD, noting that RAG adds inference overhead and KD requires running the teacher across the entire corpus. (page 3)</li><li>The appendix provides detailed architecture and hyper-parameter tables for both model scales. (page 15)</li><li>The limitations section explicitly acknowledges the absence of a full knowledge-distillation comparison and explains the compute constraints. (page 25)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory. Runxi Cheng, Yuchen Guan, Yongxian Wei, Qianpu Sun, Qixiu Li, Sinan Du, Feng Xiong, Chun Yuan, Yan Lu, Yeyun Gong. 2026-05-20. https://arxiv.org/abs/2605.20948v1">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
       </div>

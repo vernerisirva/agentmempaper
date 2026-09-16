@@ -54,7 +54,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:14",
-    "generated_at": "2026-09-16 12:05:46",
+    "generated_at": "2026-09-16 16:58:08",
     "last_seen_at": "2026-09-05 17:59:14",
     "metadata_sources": [
       "arxiv"
@@ -117,29 +117,410 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T12:00:23+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-recovery-v1",
+    "assessed_at": "2026-09-16T16:55:15+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-coverage-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.92,
-    "concerns": [
-      "The supplied text does not include a dedicated limitations section, and the discussion of limitations is limited to brief remarks about under-training and benchmark noise.",
-      "Statistical significance or variance estimates are not reported for the benchmark improvements.",
-      "The paper relies on a single training run per configuration, and no evidence of repeated runs or uncertainty quantification is provided.",
-      "Some claims about infrastructure efficiency are based on a conservative baseline setup, but the fully optimized implementation is not evaluated."
-    ],
-    "concise_summary": "The paper introduces Engram, a conditional memory module that modernizes N-gram embeddings for O(1) lookup, and evaluates it against iso-parameter and iso-FLOPs MoE baselines. The available text shows clear contribution framing, extensive benchmark results, ablations, and mechanistic analyses supporting the claimed benefits. However, the partial text lacks a dedicated limitations section and statistical uncertainty reporting, leaving methodological completeness uncertain.",
+    "concerns": [],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on full text.",
     "confidence": "medium",
+    "coverage": {
+      "assessment_input_characters": 67217,
+      "assessment_input_sha256": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "characters_before_extraction_limit": 99912,
+      "eligible_characters": 64593,
+      "excluded_back_matter_characters": 34030,
+      "extracted_characters": 99980,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "extracted_pages": 35,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 99912,
+      "selected_characters": 64593,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        33,
+        34,
+        35
+      ],
+      "selected_sections": [
+        {
+          "characters": 505,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1618,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 635,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4227,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 831,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 782,
+          "heading": "Overview",
+          "page": 3
+        },
+        {
+          "characters": 148,
+          "heading": "Sparse Retrieval Via Hashed\ud835\udc41-Grams",
+          "page": 3
+        },
+        {
+          "characters": 1472,
+          "heading": "Sparse Retrieval Via Hashed\ud835\udc41-Grams",
+          "page": 4
+        },
+        {
+          "characters": 1510,
+          "heading": "Context-Aware Gating",
+          "page": 4
+        },
+        {
+          "characters": 1162,
+          "heading": "Context-Aware Gating",
+          "page": 5
+        },
+        {
+          "characters": 1067,
+          "heading": "Integration With Multi-Branch Architecture",
+          "page": 5
+        },
+        {
+          "characters": 446,
+          "heading": "Integration With Multi-Branch Architecture",
+          "page": 6
+        },
+        {
+          "characters": 2198,
+          "heading": "System Efficiency: Decoupling Compute And Memory",
+          "page": 6
+        },
+        {
+          "characters": 302,
+          "heading": "Scaling Laws And Sparsity Allocation",
+          "page": 6
+        },
+        {
+          "characters": 113,
+          "heading": "Allocation Under Finite Constraints.When Total Parameters And Training Compute Are Fixed",
+          "page": 6
+        },
+        {
+          "characters": 103,
+          "heading": "Infinite Memory Regime.Considering The Non-Scaling O( 1) Overhead Of Engram, If The",
+          "page": 6
+        },
+        {
+          "characters": 720,
+          "heading": "Infinite Memory Regime.Considering The Non-Scaling O( 1) Overhead Of Engram, If The",
+          "page": 7
+        },
+        {
+          "characters": 1628,
+          "heading": "Optimal Allocation Ratio Between Moe And Engram",
+          "page": 7
+        },
+        {
+          "characters": 1496,
+          "heading": "Optimal Allocation Ratio Between Moe And Engram",
+          "page": 8
+        },
+        {
+          "characters": 1756,
+          "heading": "Engram Under Infinite Memory Regime",
+          "page": 8
+        },
+        {
+          "characters": 2517,
+          "heading": "Large Scale Pre-Training",
+          "page": 9
+        },
+        {
+          "characters": 3317,
+          "heading": "Experimental Setup",
+          "page": 10
+        },
+        {
+          "characters": 1038,
+          "heading": "Experimental Setup",
+          "page": 11
+        },
+        {
+          "characters": 1726,
+          "heading": "Experimental Results",
+          "page": 11
+        },
+        {
+          "characters": 510,
+          "heading": "Long Context Training",
+          "page": 11
+        },
+        {
+          "characters": 1736,
+          "heading": "Experimental Setup",
+          "page": 12
+        },
+        {
+          "characters": 278,
+          "heading": "Experimental Results",
+          "page": 12
+        },
+        {
+          "characters": 1294,
+          "heading": "Long-Context Capability Beyond Attention Mechanics.While Attention Mechanisms",
+          "page": 12
+        },
+        {
+          "characters": 1411,
+          "heading": "Long-Context Capability Beyond Attention Mechanics.While Attention Mechanisms",
+          "page": 13
+        },
+        {
+          "characters": 314,
+          "heading": "Analysis",
+          "page": 13
+        },
+        {
+          "characters": 880,
+          "heading": "Is Engram Functionally Equivalent To Increasing The Model'S Depth?",
+          "page": 13
+        },
+        {
+          "characters": 1007,
+          "heading": "Is Engram Functionally Equivalent To Increasing The Model'S Depth?",
+          "page": 14
+        },
+        {
+          "characters": 1010,
+          "heading": "Accelerated Prediction Convergence",
+          "page": 14
+        },
+        {
+          "characters": 786,
+          "heading": "Representational Alignment And Effective Depth",
+          "page": 14
+        },
+        {
+          "characters": 2097,
+          "heading": "Representational Alignment And Effective Depth",
+          "page": 15
+        },
+        {
+          "characters": 279,
+          "heading": "Structural Ablation And Layer Sensitivity",
+          "page": 15
+        },
+        {
+          "characters": 3401,
+          "heading": "Structural Ablation And Layer Sensitivity",
+          "page": 16
+        },
+        {
+          "characters": 575,
+          "heading": "Structural Ablation And Layer Sensitivity",
+          "page": 17
+        },
+        {
+          "characters": 1055,
+          "heading": "Sensitivity Analysis",
+          "page": 17
+        },
+        {
+          "characters": 1009,
+          "heading": "System Efficiency",
+          "page": 17
+        },
+        {
+          "characters": 144,
+          "heading": "System Efficiency",
+          "page": 18
+        },
+        {
+          "characters": 1136,
+          "heading": "Experimental Setup",
+          "page": 18
+        },
+        {
+          "characters": 1522,
+          "heading": "Case Study: Gating Visualization",
+          "page": 18
+        },
+        {
+          "characters": 802,
+          "heading": "Case Study: Gating Visualization",
+          "page": 19
+        },
+        {
+          "characters": 2751,
+          "heading": "Related Work",
+          "page": 19
+        },
+        {
+          "characters": 3723,
+          "heading": "Related Work",
+          "page": 20
+        },
+        {
+          "characters": 1211,
+          "heading": "Related Work",
+          "page": 21
+        },
+        {
+          "characters": 1641,
+          "heading": "Conclusion",
+          "page": 21
+        },
+        {
+          "characters": 1073,
+          "heading": "Appendix: Detailed Model Architecture And Hyper Parameters",
+          "page": 33
+        },
+        {
+          "characters": 1154,
+          "heading": "Appendix: Full Benchmark Curves",
+          "page": 34
+        },
+        {
+          "characters": 477,
+          "heading": "Appendix: Case Study Of Tokenizer Compression",
+          "page": 35
+        }
+      ],
+      "selection_version": "representative-v1",
+      "source_pages": 35,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 4,
+      "evaluation_or_validation_strength": 3,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 2,
-      "methodological_rigor": 3,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 4,
+      "related_work_and_gap_positioning": 3,
       "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 4
     },
@@ -156,11 +537,11 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "del ConfigurationsAll models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3 (Liu et al.",
+        "excerpt": "ivated-parameter budget fixed. Full training-time benchmark trajectories are reported in Appendix B. Benchmark(Metric)# Shots Dense-4B MoE-",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 10,
+        "page": 9,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experimental Setup",
+        "section": "Large Scale Pre-Training",
         "signal_type": "positive"
       },
       {
@@ -174,20 +555,20 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ctly iso-parameter and iso-FLOPs MoE baselines. \u2022 Second, from a system perspective, we advocate for algorithm-system co-design. Exist- 19",
+        "excerpt": "e modeling effectiveness against the system-level latency constraints detailed in Section 2.5.",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 19,
+        "page": 5,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Related Work",
+        "section": "Context-Aware Gating",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "on loss. Specifically, for the \u201cw/o multi branch\u201d ablation, we retain the mHC backbone structure but replace the branch-specific gating wi",
+        "excerpt": "compute window available for hiding latency, our ablation in Section 6.2 shows that modeling performance favors early intervention to off",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 16,
+        "page": 6,
         "paraphrase": "An ablation analysis is reported.",
-        "section": "Structural Ablation And Layer Sensitivity",
+        "section": "System Efficiency: Decoupling Compute And Memory",
         "signal_type": "positive"
       },
       {
@@ -207,101 +588,17 @@
         "paraphrase": "Code, data, or research artifacts are described as available.",
         "section": "Abstract",
         "signal_type": "positive"
-      },
-      {
-        "dimension": "contribution_clarity",
-        "excerpt": "we advocate for a complementary axis of sparsity: conditional memory. Whereas conditional computation sparsely activates parameters to process dynamic logic",
-        "explanation": "The introduction clearly states the proposed paradigm and its instantiation, making the contribution identifiable.",
-        "page": 2,
-        "paraphrase": "The paper explicitly introduces conditional memory as a complementary sparsity axis and instantiates it via Engram.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "scholarly_novelty_or_value",
-        "excerpt": "In contrast, we treat conditional memory as a first-class modeling primitive instantiated via the carefully designed Engram module.",
-        "explanation": "The related work section explicitly contrasts the approach with prior methods such as SCONE and OverEncoding, supporting a claim of novelty in evaluation protocol and system co-design.",
-        "page": 19,
-        "paraphrase": "The paper positions Engram as distinct from prior N-gram embedding approaches by treating conditional memory as a first-class primitive and evaluating under strict iso-parameter and iso-FLOPs protocols.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "All models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3",
-        "explanation": "The paper specifies Dense-4B, MoE-27B, Engram-27B, and Engram-40B configurations with identical training data and activated parameters, supporting a controlled comparison.",
-        "page": 10,
-        "paraphrase": "The experimental setup describes controlled model configurations with matched activated parameters and token budgets.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "Engram-27B consistently improves over the iso-parameter and iso-FLOPs MoE-27B baseline.",
-        "explanation": "Table 1 and the accompanying text provide quantitative comparisons across a broad benchmark suite, supporting the evaluation strength.",
-        "page": 11,
-        "paraphrase": "The paper reports extensive benchmark results across multiple domains, including knowledge, reasoning, reading comprehension, code, and math.",
-        "section": "Experimental Results",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": "The consistent off-diagonal shift, which aligns with the LogitLens results (Section 6.1.1), confirms that Engram achieves deeper representations at earlier layers.",
-        "explanation": "The paper reports lower early-layer KL divergence and an upward shift in CKA alignment, directly supporting the central hypothesis about effective depth.",
-        "page": 15,
-        "paraphrase": "The mechanistic analyses using LogitLens and CKA provide evidence for the claim that Engram increases effective depth.",
-        "section": "Representational Alignment And Effective Depth",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "related_work_and_gap_positioning",
-        "excerpt": "existing approaches place embeddings strictly at the input layer (Layer 0), which inherently serializes memory access and computation",
-        "explanation": "The related work section explicitly identifies gaps in prior approaches, such as lack of strict iso-compute evaluation and input-layer-only placement, and positions Engram as addressing these gaps.",
-        "page": 20,
-        "paraphrase": "The paper distinguishes its approach from prior N-gram embedding and memory-augmented methods along modeling, evaluation, and system dimensions.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "Code available at:https://github.com/deepseek-ai/Engram.",
-        "explanation": "The abstract includes a code repository link, and the experimental setup describes model configurations, supporting reproducibility.",
-        "page": 1,
-        "paraphrase": "The paper states that code is available and provides detailed model configuration information.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "Although it does not yet strictly dominate Engram-27B on every task, this is likely an artifact of under-training.",
-        "explanation": "The available text mentions under-training and benchmark noise but does not systematically discuss limitations or provide statistical uncertainty estimates.",
-        "page": 11,
-        "paraphrase": "The paper does not provide a dedicated limitations section in the supplied text, and uncertainty is only briefly acknowledged.",
-        "section": "Experimental Results",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "presentation_and_precision",
-        "excerpt": "We define the allocation ratio \ud835\udf0c\u2208 [ 0, 1] as the fraction of the inactive-parameter budget assigned to MoE expert capacity",
-        "explanation": "The methods sections define allocation ratios, parameter metrics, and architectural equations, contributing to presentation precision.",
-        "page": 7,
-        "paraphrase": "The paper uses formal notation and precise definitions for the Sparsity Allocation problem and Engram architecture.",
-        "section": "Optimal Allocation Ratio Between Moe And Engram",
-        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": true,
+    "full_text_assessed": false,
     "full_text_url": "https://arxiv.org/pdf/2601.07372",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "Detailed hyperparameters and full training configuration are referenced as being in Appendix A but are not included in the supplied text.",
-      "Full benchmark trajectories and additional ablation details are referenced as being in Appendix B but are not included.",
-      "A dedicated limitations or broader impact section is not present in the supplied material.",
-      "Statistical significance or confidence intervals for benchmark results are not provided."
+      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
     ],
     "overall_quality_score": 65,
-    "paper_type": "empirical_research",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
@@ -309,21 +606,15 @@
       "Quantitative evaluation signals were detected.",
       "An ablation analysis is reported.",
       "Robustness or statistical analysis is reported.",
-      "Code, data, or research artifacts are described as available.",
-      "The contribution is stated explicitly and positioned as a complementary sparsity axis.",
-      "The paper reports extensive quantitative benchmarks across knowledge, reasoning, reading comprehension, code, and math domains.",
-      "Ablation studies isolate the contribution of key architectural components and layer placement.",
-      "Mechanistic analyses using LogitLens and CKA provide evidence for the claimed effective-depth effect.",
-      "The paper includes a controlled iso-parameter and iso-FLOPs comparison against a MoE baseline.",
-      "Code availability is stated in the abstract."
+      "Code, data, or research artifacts are described as available."
     ],
-    "rationale": "The manuscript presents a clearly articulated architectural contribution (Engram as conditional memory) with substantial quantitative evaluation, ablations, and mechanistic analyses. However, the supplied text is partial and omits several sections that would be needed to fully verify methodological details, statistical rigor, and limitations. The available evidence supports a credible but not fully established scholarly contribution.",
+    "rationale": "Scientific quality could not be assessed because of a protocol failure.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "The assessment is based on partial full text. Several sections, including detailed hyperparameters, full ablation tables, and a dedicated limitations discussion, are not present in the supplied material. This prevents a definitive judgment on methodological completeness and uncertainty handling."
+    "uncertainty": "The execution ledger records the failed attempts; no scientific judgment was inferred."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",

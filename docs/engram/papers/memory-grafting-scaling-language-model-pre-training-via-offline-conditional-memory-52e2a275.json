@@ -32,7 +32,7 @@
   "last_seen_date": "2026-09-05",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-05-20",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-05 18:01:34",
   "notified_date": "2026-09-05",
@@ -43,7 +43,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:20",
-    "generated_at": "2026-09-16 12:05:46",
+    "generated_at": "2026-09-16 16:58:08",
     "last_seen_at": "2026-09-05 17:59:20",
     "metadata_sources": [
       "arxiv"
@@ -109,101 +109,373 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T11:56:12+00:00",
+    "assessed_at": "2026-09-16T16:55:14+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-recovery-v1",
+    "assessment_version": "quality-coverage-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.92,
     "concerns": [
-      "Related work is summarized but not systematically compared against the actual claims or evaluated for how Memory Grafting differs in measured performance.",
-      "Reproducibility is limited because the supplied text does not include code, full hyperparameter details, or exact evaluation procedures.",
-      "Benchmark improvements are reported without statistical significance tests or confidence intervals.",
-      "Some efficiency and memory claims are based on figures without detailed measurement methodology."
+      "No statistical significance tests or multiple-run variance are reported for benchmark results.",
+      "The benchmark suite is relatively narrow and mostly zero-shot or few-shot classification tasks.",
+      "The direct comparison with knowledge distillation is omitted, limiting assessment of the transfer mechanism's relative value.",
+      "Some presentation issues exist, including inconsistent table references and typographical errors.",
+      "The claim that Memory Grafting is best on all nine benchmarks in Table 1 is based on single-run point estimates."
     ],
-    "concise_summary": "Memory Grafting proposes using frozen hidden states from a pretrained grafting model as conditional n-gram memory for a smaller recipient model. The paper reports benchmark gains over MoE and vanilla Engram baselines, ablations, efficiency results, and representational analyses. The contribution is clear and the evaluation is substantive, but related-work positioning, reproducibility, and statistical rigor are only partially supported in the available text.",
+    "concise_summary": "Memory Grafting proposes using frozen hidden states from a pretrained grafting model as conditional n-gram memory for a smaller recipient model, with exact longest-match retrieval and an Engram fallback. The paper reports benchmark gains over MoE and vanilla Engram baselines, supported by ablations, CKA analysis, probe analysis, and efficiency measurements. The contribution is clear and the evaluation is reasonably thorough, though statistical rigor and comparative baselines could be strengthened.",
     "confidence": "medium",
+    "coverage": {
+      "assessment_input_characters": 52253,
+      "assessment_input_sha256": "fd8e93ac3579c1037bc917859eec401bc3b21ec4a5e6c3089a4f113a9be574ff",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "characters_before_extraction_limit": 64111,
+      "eligible_characters": 49946,
+      "excluded_back_matter_characters": 12760,
+      "extracted_characters": 64159,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "extracted_pages": 25,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 64111,
+      "selected_characters": 49946,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "selected_sections": [
+        {
+          "characters": 1903,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2111,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2128,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 584,
+          "heading": "Conditional Memory And Modular Sparse Scaling",
+          "page": 2
+        },
+        {
+          "characters": 1176,
+          "heading": "Conditional Memory And Modular Sparse Scaling",
+          "page": 3
+        },
+        {
+          "characters": 1384,
+          "heading": "Retrieval-Augmented Generation And Knowledge Distillation",
+          "page": 3
+        },
+        {
+          "characters": 1296,
+          "heading": "Preliminaries On Engram",
+          "page": 3
+        },
+        {
+          "characters": 1373,
+          "heading": "Preliminaries On Engram",
+          "page": 4
+        },
+        {
+          "characters": 582,
+          "heading": "Memory Grafting",
+          "page": 4
+        },
+        {
+          "characters": 2508,
+          "heading": "Memory Grafting",
+          "page": 5
+        },
+        {
+          "characters": 225,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 2461,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 1863,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 1239,
+          "heading": "Main Results",
+          "page": 7
+        },
+        {
+          "characters": 1008,
+          "heading": "Main Results",
+          "page": 8
+        },
+        {
+          "characters": 1490,
+          "heading": "Impact Of The Grafting-Model Source Layer",
+          "page": 8
+        },
+        {
+          "characters": 1117,
+          "heading": "Cka Analysis Of Memory Grafting",
+          "page": 8
+        },
+        {
+          "characters": 1,
+          "heading": "Ablation Of Grafting Mechanism",
+          "page": 8
+        },
+        {
+          "characters": 2426,
+          "heading": "Ablation Of Grafting Mechanism",
+          "page": 9
+        },
+        {
+          "characters": 577,
+          "heading": "Impact Of Grafted Memory Capacity",
+          "page": 9
+        },
+        {
+          "characters": 226,
+          "heading": "Efficiency Analysis",
+          "page": 9
+        },
+        {
+          "characters": 758,
+          "heading": "Efficiency Analysis",
+          "page": 10
+        },
+        {
+          "characters": 1265,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 497,
+          "heading": "Appendix",
+          "page": 14
+        },
+        {
+          "characters": 698,
+          "heading": "Appendix: Additional Experiment 19",
+          "page": 14
+        },
+        {
+          "characters": 259,
+          "heading": "Appendix: Limitations & Discussion 25",
+          "page": 14
+        },
+        {
+          "characters": 21,
+          "heading": "Appendix: Limitations & Discussion 25",
+          "page": 15
+        },
+        {
+          "characters": 1313,
+          "heading": "Appendix: Model Architecture And Hyper Parameters",
+          "page": 15
+        },
+        {
+          "characters": 1370,
+          "heading": "Appendix: Model Architecture And Hyper Parameters",
+          "page": 16
+        },
+        {
+          "characters": 2285,
+          "heading": "Appendix: Construction Of Grafting-Model Memory",
+          "page": 17
+        },
+        {
+          "characters": 214,
+          "heading": "Appendix: Calculate Resources And Environment",
+          "page": 17
+        },
+        {
+          "characters": 673,
+          "heading": "Appendix: Appendix: Details Of The Grafting Gate",
+          "page": 18
+        },
+        {
+          "characters": 156,
+          "heading": "The Attention-Only Grafting Variant First Aggregates All Matchedn-Gram Embeddings And Adds The Resulting Value",
+          "page": 18
+        },
+        {
+          "characters": 770,
+          "heading": "The Attention-Gated Variant Uses The Same Attention-Based Memory But Modulates It With The Gate:",
+          "page": 18
+        },
+        {
+          "characters": 488,
+          "heading": "The Final Mechanism Adds Engram Fallback To The Gated Longest-Match Mechanism:",
+          "page": 18
+        },
+        {
+          "characters": 2339,
+          "heading": "Appendix: Additional Analysis Of Grafting-Model Memory Geometry",
+          "page": 19
+        },
+        {
+          "characters": 151,
+          "heading": "Appendix: Loss Curves For Memory Grafting",
+          "page": 20
+        },
+        {
+          "characters": 243,
+          "heading": "B Tokens",
+          "page": 20
+        },
+        {
+          "characters": 348,
+          "heading": "B Tokens",
+          "page": 20
+        },
+        {
+          "characters": 1362,
+          "heading": "Appendix: More Cka Analysis Results Of Memory Grafting",
+          "page": 21
+        },
+        {
+          "characters": 650,
+          "heading": "Appendix: Top-K N-Gram Hit Rate",
+          "page": 22
+        },
+        {
+          "characters": 1171,
+          "heading": "Appendix: Single-Layer Memory Grafting Results",
+          "page": 23
+        },
+        {
+          "characters": 1719,
+          "heading": "Appendix: Probe Analysis",
+          "page": 24
+        },
+        {
+          "characters": 1591,
+          "heading": "Appendix: Limitations",
+          "page": 25
+        },
+        {
+          "characters": 1927,
+          "heading": "Appendix: Future Work",
+          "page": 25
+        }
+      ],
+      "selection_version": "representative-v1",
+      "source_pages": 25,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 3,
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 3,
+      "methodological_rigor": 4,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 2,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 4,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "ce remains intact. Motivated by this observation, we propose Memory Grafting, which constructs conditional memory from a grafting model rath",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "Offline Construction High Frequency N-gram Corpus Forward Grafting Model Grafted Memory (Frozen) Engram Memory (Trainable) Input",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "100B-token setting. Benchmark(Metric)# Shots MoE Baseline Vanilla Engram Memory Grafting # Trainable Params 2.8B 2.8B 2.8B # Activated(w/",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 6,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "scale without increasing the recipient\u2019s training cost, while theO(1) lookup that makes conditional memory efficient at inference remains intact. Mo",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "03 -0.02 -0.01 \u0394 Loss vs. Engram Gating-mechanism ablation w/o Gate w/ Gate v1 w/ Gate v2 w/ Gate v2 + Engram fallback 5 10 Training T oke",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 9,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Ablation Of Grafting Mechanism",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "C. Limitations & Discussion C.1. Limitations We do not include a full comparison with knowledg",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 25,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "B Tokens",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing"
-      },
-      {
-        "dimension": "contribution_clarity",
-        "excerpt": "Motivated by this observation, we propose Memory Grafting, which constructs conditional memory from a grafting model rather than learning the memory table entirely from scratch.",
-        "explanation": "This statement clearly identifies the proposed method and its distinction from prior Engram memory learning.",
+        "excerpt": "we propose Memory Grafting, which constructs conditional memory from a grafting model rather than learning the memory table entirely from scratch.",
+        "explanation": "This clearly states the core contribution and distinguishes it from prior Engram work.",
         "page": 2,
         "paraphrase": "The paper explicitly defines Memory Grafting as constructing conditional memory from a grafting model rather than learning the memory table from scratch.",
         "section": "Introduction",
@@ -211,74 +483,101 @@
       },
       {
         "dimension": "scholarly_novelty_or_value",
-        "excerpt": "We introduceMemory Grafting, a representation-level knowledge-transfer paradigm for scaling conditional memory. It stores frozen grafting-model hidden states in an exactn-gram-indexed table, retains a hash-based Engram fallback for unmatched contexts, and grafts retrieved memories through a gated residual update.",
-        "explanation": "The novelty claim is supported by the described offline construction and O(1) lookup, distinguishing it from Engram and MoE approaches.",
+        "excerpt": "We introduceMemory Grafting, a representation-level knowledge-transfer paradigm for scaling conditional memory.",
+        "explanation": "This framing indicates a novel combination of conditional memory and offline knowledge transfer, distinct from RAG and KD.",
         "page": 2,
-        "paraphrase": "The paper positions Memory Grafting as a representation-level knowledge-transfer paradigm that scales conditional memory without increasing recipient training cost.",
+        "paraphrase": "The paper positions Memory Grafting as a representation-level knowledge-transfer paradigm that reuses pretrained model hidden states as external memory.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "Across all experiments, we ensure that the number of trainable parameters follows Memory Grafting\u2264vanilla Engram\u2264MoE baseline.",
-        "explanation": "The paper states that trainable parameters follow Memory Grafting \u2264 vanilla Engram \u2264 MoE baseline, which supports controlled comparison.",
+        "excerpt": "we reduce the corresponding number of experts to keep the fair comparison. Across all experiments, we ensure that the number of trainable parameters follows Memory Grafting\u2264vanilla Engram\u2264MoE baseline.",
+        "explanation": "This controlled comparison strengthens the validity of the benchmark gains.",
         "page": 6,
-        "paraphrase": "The experimental setup matches trainable parameters and activated parameters across baselines to ensure fair comparison.",
+        "paraphrase": "The authors ensure matched trainable parameters across baselines by reducing the number of experts when adding grafting projections.",
         "section": "Experimental Setup",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
         "excerpt": "Memory Grafting is best on all nine benchmarks: the average improves from51.95 for MoE and52.43 for vanilla Engram to53.86.",
-        "explanation": "Table 1 provides quantitative evidence for the main claim of improvement in the 2.8B-scale setting.",
+        "explanation": "Multiple benchmarks and grafting-model variants provide evidence for the method's effectiveness.",
         "page": 7,
-        "paraphrase": "The paper reports benchmark results showing Memory Grafting improves average score over MoE and vanilla Engram baselines.",
+        "paraphrase": "The paper reports benchmark results across nine tasks for the 2.8B setting and multiple grafting models for the 0.92B setting.",
         "section": "Main Results",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "Figure 11 shows that the gate is non-zero and the memory output has a clear magnitude at these positions, meaning that the retrieved memory is actually written into the recipient hidden states.",
-        "explanation": "The probe results directly support the claim that grafted memory is actively used rather than remaining an unused external table.",
+        "excerpt": "the next-token logits, target token log-probability, and prediction set all change after grafting. Therefore, the grafted memory is not only retrieved, but also participates in the model's computation and directly affects its predictions.",
+        "explanation": "This directly supports the claim that the recipient actually uses the grafted memory rather than ignoring it.",
         "page": 24,
-        "paraphrase": "Probing analysis shows that retrieved memory is written into recipient hidden states and affects predictions.",
-        "section": "B Tokens",
+        "paraphrase": "Probe analysis shows that retrieved memory changes hidden states and output distributions at retrieval-hit positions.",
+        "section": "Appendix: Probe Analysis",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "Such conditional memory offers a clear inference-side advantage, but scaling it still requires substantial computation when the memory itself is learned from scratch during pre-training.",
-        "explanation": "The paper describes Engram, Product-Key Memory, UltraMem, STEM, MoLE, RAG, and KD, but does not provide a detailed comparison of how Memory Grafting's empirical results relate to these methods beyond Engram and MoE.",
+        "excerpt": "RAG relies on retrieval and longer augmented contexts at inference, shifting substantial overhead to deployment and increasing latency [14, 23, 57]. KD instead internalizes external knowledge into the student's parameters, but logits-based distillation during from-scratch pre-training requires running the teacher across the entire corpus",
+        "explanation": "This positions the method relative to alternative knowledge-transfer approaches and motivates the offline construction design.",
         "page": 3,
-        "paraphrase": "Related work is summarized but not systematically compared against the actual claims or measured performance.",
-        "section": "Conditional Memory And Modular Sparse Scaling",
-        "signal_type": "concern"
+        "paraphrase": "The paper contrasts Memory Grafting with RAG and KD, noting that RAG adds inference overhead and KD requires running the teacher across the entire corpus.",
+        "section": "Retrieval-Augmented Generation And Knowledge Distillation",
+        "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "Please refer Section A for detailed training hyper-parameters.",
-        "explanation": "Reproducibility is limited because implementation details are referenced to Appendix A, which is not included in the extracted text, and no code or checkpoints are mentioned.",
-        "page": 7,
-        "paraphrase": "The paper does not provide code or full hyperparameter details in the supplied text.",
-        "section": "Experimental Setup",
-        "signal_type": "concern"
+        "excerpt": "Table 3: Architecture and training hyper-parameters for the 0.92B-class models.",
+        "explanation": "This level of detail supports reproducibility of the experiments.",
+        "page": 15,
+        "paraphrase": "The appendix provides detailed architecture and hyper-parameter tables for both model scales.",
+        "section": "Appendix: Model Architecture And Hyper Parameters",
+        "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "We do not include a full comparison with knowledge distillation. A from-scratch distillation baseline at the same pre-training scale would require running a large teacher model over the full training corpus and repeating this process under comparable recipient settings, which would require substantial additional computation and is difficult to complete under our compute budget.",
-        "explanation": "This limitation is explicitly discussed with a concrete compute estimate, showing awareness of a key missing baseline.",
+        "excerpt": "We do not include a full comparison with knowledge distillation. A from-scratch distillation baseline at the same pre-training scale would require running a large teacher model over the full training corpus",
+        "explanation": "This transparently addresses a significant evaluation gap.",
         "page": 25,
-        "paraphrase": "The paper acknowledges the absence of a full knowledge distillation comparison and explains the compute constraints.",
-        "section": "B Tokens",
+        "paraphrase": "The limitations section explicitly acknowledges the absence of a full knowledge-distillation comparison and explains the compute constraints.",
+        "section": "Appendix: Limitations",
         "signal_type": "positive"
       },
       {
         "dimension": "presentation_and_precision",
-        "excerpt": "The exact lookup is independent of the total memory size in expectation under hash-map or trie-style indexing, and costs only a constant number of suffix queries per token because the maximumn-gram order is fixed.",
-        "explanation": "The method is presented with equations and an algorithm, which improves precision and clarity.",
-        "page": 5,
-        "paraphrase": "The paper provides formal notation and algorithmic description of the Memory Grafting mechanism.",
-        "section": "Memory Grafting",
+        "excerpt": "the ablation in Figure?? shows that each component matters.",
+        "explanation": "These presentation issues reduce precision and polish but do not affect the scientific content.",
+        "page": 25,
+        "paraphrase": "The paper contains typographical errors and inconsistent references, such as 'Vallina' for 'Vanilla' and a broken figure reference.",
+        "section": "Appendix: Future Work",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Memory Grafting is best on all nine benchmarks: the average improves from51.95 for MoE and52.43 for vanilla Engram to53.86.",
+        "explanation": "Single-run point estimates make it difficult to assess whether the reported gains are robust.",
+        "page": 7,
+        "paraphrase": "The paper does not report statistical significance or variance for benchmark results.",
+        "section": "Main Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "We do not include a full comparison with knowledge distillation.",
+        "explanation": "This limits the comparative strength of the evaluation, though the omission is acknowledged.",
+        "page": 25,
+        "paraphrase": "The paper omits a direct knowledge-distillation baseline, which would help assess the relative value of the transfer mechanism.",
+        "section": "Appendix: Limitations",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "after memory grafting, the recipient begins to exhibit functions similar to the deep Qwen representations earlier in its own layer stack",
+        "explanation": "This supports the claim that grafted memory leaves a measurable signature in recipient representations.",
+        "page": 8,
+        "paraphrase": "CKA analysis shows stronger alignment between the recipient and deeper grafting-model layers after memory grafting.",
+        "section": "Cka Analysis Of Memory Grafting",
         "signal_type": "positive"
       }
     ],
@@ -287,13 +586,13 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected.",
-      "Code or model checkpoints are not provided in the supplied text.",
-      "Full training hyperparameters are referenced to Appendix A but not included in the extracted text.",
-      "Statistical significance or variance estimates for benchmark results are not reported.",
-      "Detailed methodology for throughput and memory measurements is not provided."
+      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.",
+      "Standard deviations or confidence intervals for benchmark scores.",
+      "Details on whether multiple random seeds were used.",
+      "A direct knowledge-distillation baseline under matched compute.",
+      "Perplexity or validation loss results on held-out data beyond training loss curves."
     ],
-    "overall_quality_score": 66,
+    "overall_quality_score": 78,
     "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
@@ -302,20 +601,21 @@
       "Quantitative evaluation signals were detected.",
       "An ablation analysis is reported.",
       "Limitations or threats to validity are acknowledged.",
-      "The contribution is stated explicitly and the method is described with formal notation.",
-      "The paper reports quantitative benchmark results against MoE and vanilla Engram baselines.",
-      "Ablations examine gating mechanisms, memory capacity, and grafting-model source layers.",
-      "Efficiency analysis reports training throughput, inference throughput, and memory usage.",
-      "Probing and CKA analyses provide evidence that grafted memory affects recipient representations and predictions.",
-      "Limitations are acknowledged, including the absence of a knowledge distillation comparison."
+      "The method is clearly motivated as a solution to Engram's training-cost scaling problem.",
+      "The paper provides matched trainable-parameter and activated-parameter comparisons against MoE and vanilla Engram baselines.",
+      "Multiple grafting models and source layers are evaluated, showing sensitivity to representation quality.",
+      "Ablations isolate the contribution of gating, longest-match selection, and Engram fallback.",
+      "CKA and probe analyses provide evidence that grafted memory is actually used by the recipient.",
+      "Efficiency measurements show limited training and inference overhead despite a large frozen memory bank.",
+      "The limitations section explicitly discusses the absence of a knowledge-distillation baseline and its rationale."
     ],
-    "rationale": "The paper presents a clear method, Memory Grafting, with matched baselines, quantitative benchmark results, ablations, efficiency analysis, and a limitations section. However, several scientific quality dimensions are only partially supported: related work is discussed but not systematically compared against the actual claims, reproducibility is limited by the absence of code or detailed hyperparameters in the supplied text, and some evaluation claims rely on figures and tables whose full statistical context is not provided. The work is substantive but not fully validated as a scholarly contribution from the available manuscript evidence.",
-    "recommendation": "uncertain",
+    "rationale": "The paper presents a clearly defined method, Memory Grafting, that constructs frozen conditional memory from a pretrained grafting model and grafts it into a recipient model with an Engram fallback. The contribution is well-motivated against Engram's training-cost limitation, and the empirical evaluation includes matched-parameter baselines, multiple grafting models, ablations, efficiency measurements, CKA and probe analyses, and a limitations section. The main claims about benchmark gains, memory usage, and scaling trends are supported by tables and figures in the supplied text. Some concerns remain around statistical significance, limited benchmark breadth, and a missing direct knowledge-distillation comparison, but these are acknowledged and do not undermine the central contribution.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "98ae2b04b13f48f41a06ecb74e04d231a9b8ad7a3921d10bcf1514910e36d7f1",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "The assessment is limited by the supplied text, which includes tables and figures but not all implementation details, statistical significance tests, or code. Some claims about efficiency and memory use are reported without full measurement methodology. The absence of a knowledge distillation comparison is acknowledged but leaves the relative value of the method partially unresolved."
+    "uncertainty": "The evaluation relies on single training runs without reported variance or significance testing, and the benchmark suite is relatively narrow. The paper also explicitly omits a direct knowledge-distillation baseline due to compute constraints. These factors create moderate uncertainty about the robustness and comparative strength of the reported gains, but the internal ablations and multiple grafting-model comparisons provide substantial supporting evidence."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",

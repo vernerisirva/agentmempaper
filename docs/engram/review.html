@@ -25,7 +25,7 @@
           <div class="library-hero">
             <h1>Engram &amp; Conditional Memory Paper Library</h1>
             <p class="hero-copy">Relevant discoveries awaiting quality review or a stronger topical match.</p>
-            <p class="hero-line">Updated 2026-09-15 · 5 papers</p>
+            <p class="hero-line">Updated 2026-09-15 · 4 papers</p>
           </div>
         </header>
 
@@ -69,7 +69,7 @@
           </div>
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-09-04" data-first-seen="2026-09-07" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="protlingo: efficient protein language modeling via conditional memory and expert routing" data-search="protlingo: efficient protein language modeling via conditional memory and expert routing mingrui li, sixian shen, minzhang li, ruiyi zhang, kexin zhang, jiakai zhang, jingyi yu proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. protein language models (plms) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense tran... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.  conditional-memory arxiv relevant" data-quality-status="uncertain" data-quality-score="68" data-quality-recommendation="uncertain" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-09-04" data-first-seen="2026-09-07" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="protlingo: efficient protein language modeling via conditional memory and expert routing" data-search="protlingo: efficient protein language modeling via conditional memory and expert routing mingrui li, sixian shen, minzhang li, ruiyi zhang, kexin zhang, jiakai zhang, jingyi yu proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. protein language models (plms) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense tran... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.  conditional-memory arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
         <h3>ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing</h3>
         <p class="meta">Mingrui Li, Sixian Shen, Minzhang Li, Ruiyi Zhang, Kexin Zhang, Jiakai Zhang, Jingyi Yu · Published 2026-09-04 · Source: arXiv</p>
@@ -104,18 +104,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>ProtLingo augments a pretrained ESM2-150M backbone with centered latent N-gram memory and sparse MoE upcycling. The paper reports competitive ProteinGym, FLIP, and CASP15 contact prediction results with 153M active parameters, supported by ablations and biological specialization analyses. The available text is partial but contains substantive implementation, evaluation, and limitation details.</p>
+      <p>ProtLingo augments a pretrained ESM2-150M protein language model with centered latent N-gram memory and sparse MoE upcycling to improve mutation-sensitive modeling at a compact parameter budget. The paper provides clear architectural descriptions, extensive implementation details, and evaluations on ProteinGym, FLIP, and CASP15 contact prediction, along with ablations and biological-specialization analyses. The gains over the backbone are modest and not accompanied by statistical uncertainty estimates, and some comparisons rely on literature-reported references. The paper is appropriately scoped and transparent about limitations, supporting a passing assessment with moderate confidence.</p>
       <ul>
-        <li>Recommendation: uncertain</li>
+        <li>Recommendation: promising</li>
         <li>Confidence: medium</li>
-        <li>Assessment scope: partial full text</li>
-        <li>Paper type: empirical research</li>
-        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment scope: full text</li>
+        <li>Paper type: methods or algorithm</li>
+        <li>Assessment: quality-coverage-v1 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 3/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 3/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 5)</li><li>A baseline or comparison system is described. (page 5)</li><li>Quantitative evaluation signals were detected. (page 10)</li><li>An ablation analysis is reported. (page 2)</li><li>Limitations or threats to validity are acknowledged. (page 1)</li><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 10)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 3/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 3/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 5)</li><li>A baseline or comparison system is described. (page 5)</li><li>Quantitative evaluation signals were detected. (page 6)</li><li>An ablation analysis is reported. (page 2)</li><li>Limitations or threats to validity are acknowledged. (page 1)</li><li>The paper states that ProtLingo augments a pretrained dense backbone with conditional memory and expert routing, and describes the two mechanisms explicitly. (page 2)</li><li>The paper positions conditional memory and expert routing as complementary mechanisms for reusing recurring local contexts and allocating computation adaptively. (page 2)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing. Mingrui Li, Sixian Shen, Minzhang Li, Ruiyi Zhang, Kexin Zhang, Jiakai Zhang, Jingyi Yu. 2026-09-04. https://arxiv.org/abs/2609.04793v1">Copy citation</button>
@@ -125,7 +125,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv semantic_scholar" data-decision="relevant" data-tags="engram hashed-ngram-memory memory-transfer" data-latest-run="false" data-is-new="false" data-published="2026-08-17" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="cross-model memory transfer via target-side reader adaptation" data-search="cross-model memory transfer via target-side reader adaptation mingyuan li, guangsheng yu, xu wang, shaoxiong ji methods for improving knowledge use in large language models typically fall into two regimes. non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. parametric adaptation is efficient at inference time, but... studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory, memory-transfer. abstract-based curation (arxiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader. ablations examine memory content, addressing and reader alignment; compatible reader reuse is also considered. engram hashed-ngram-memory memory-transfer openalex arxiv semantic_scholar relevant" data-quality-status="uncertain" data-quality-score="54" data-quality-recommendation="weak" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv semantic_scholar" data-decision="relevant" data-tags="engram hashed-ngram-memory memory-transfer" data-latest-run="false" data-is-new="false" data-published="2026-08-17" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="cross-model memory transfer via target-side reader adaptation" data-search="cross-model memory transfer via target-side reader adaptation mingyuan li, guangsheng yu, xu wang, shaoxiong ji methods for improving knowledge use in large language models typically fall into two regimes. non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. parametric adaptation is efficient at inference time, but... studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory, memory-transfer. abstract-based curation (arxiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader. ablations examine memory content, addressing and reader alignment; compatible reader reuse is also considered. engram hashed-ngram-memory memory-transfer openalex arxiv semantic_scholar relevant" data-quality-status="uncertain" data-quality-score="54" data-quality-recommendation="weak" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
         <h3>Cross-Model Memory Transfer via Target-Side Reader Adaptation</h3>
         <p class="meta">Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji · Published 2026-08-17 · Source: OpenAlex, arXiv, Semantic Scholar</p>
@@ -160,18 +160,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The model returned schema-valid JSON but repeated the deterministic seed assessment, including its statement that no semantic scientific assessment had occurred. Scientific quality remains unassessed pending a substantive response.</p>
+      <p>The paper studies whether Engram-style hashed external memory can be transferred across language model backbones by freezing the memory table and training only a lightweight target-side reader. It presents a transfer protocol with tokenizer-agnostic addressing, evaluates across multiple model families and scales, and shows that reader design is a first-order factor in transfer quality. The work includes extensive ablations, downstream QA evaluations, and supplementary analyses, but has some internal inconsistencies and limited formal statistical treatment of downstream results.</p>
       <ul>
         <li>Recommendation: weak</li>
         <li>Confidence: medium</li>
-        <li>Assessment scope: partial full text</li>
+        <li>Assessment scope: full text</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
-        <li>Assessor: manual_override (manual-review:0452e852632da2dc)</li>
+        <li>Assessment: quality-coverage-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
         <li>Applied score cap: 54/100 - Comparative claims were detected without a suitable baseline.</li>
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 3/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 5/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 2/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 2)</li><li>The available text identifies data or a benchmark used by the work. (page 3)</li><li>Quantitative evaluation signals were detected. (page 8)</li><li>An ablation analysis is reported. (page 2)</li><li>Robustness or statistical analysis is reported. (page 8)</li><li>Limitations or threats to validity are acknowledged. (page 3)</li><li>Code, data, or research artifacts are described as available. (page 1)</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. (page 3)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 3/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 2/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 2)</li><li>Quantitative evaluation signals were detected. (page 8)</li><li>An ablation analysis is reported. (page 2)</li><li>Robustness or statistical analysis is reported. (page 8)</li><li>Limitations or threats to validity are acknowledged. (page 3)</li><li>Code, data, or research artifacts are described as available. (page 1)</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. (page 3)</li><li>No suitable baseline comparison was detected in the available text.</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Cross-Model Memory Transfer via Target-Side Reader Adaptation. Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji. 2026-08-17. https://arxiv.org/abs/2608.17050">Copy citation</button>
@@ -237,63 +237,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="engram conditional-memory hashed-ngram-memory memory-grafting" data-latest-run="false" data-is-new="false" data-published="2026-05-20" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memory grafting: scaling language model pre-training via offline conditional memory" data-search="memory grafting: scaling language model pre-training via offline conditional memory runxi cheng, yuchen guan, yongxian wei, qianpu sun, qixiu li, sinan du, feng xiong, chun yuan, yan lu, yeyun gong scaling conditional memory offers a promising way to increase language-model capacity, but existing methods such as engram learn large memory tables from scratch during pre-training, making memory scaling expensive and sometimes ineffective. we propose memory grafting, a conditional memory scaling method that utiliz... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory, memory-grafting. abstract-based curation (arxiv:2605.20948): stores frozen hidden representations from an offline grafting model. the recipient uses longest-match suffix lookup, lightweight projections and gates, with an engram hash fallback. studies reuse of latent memory under matched pre-training budgets. engram conditional-memory hashed-ngram-memory memory-grafting arxiv relevant" data-quality-status="uncertain" data-quality-score="66" data-quality-recommendation="uncertain" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
-      <div class="paper-main">
-        <h3>Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory</h3>
-        <p class="meta">Runxi Cheng, Yuchen Guan, Yongxian Wei, Qianpu Sun, Qixiu Li, Sinan Du, Feng Xiong, Chun Yuan, Yan Lu, Yeyun Gong · Published 2026-05-20 · Source: arXiv</p>
-        <p class="reason"><strong>Topic match:</strong> Abstract-based curation (arXiv:2605.20948): stores frozen hidden representations from an offline grafting model.</p>
-        <p class="quality-summary"><strong>Quality pending</strong></p>
-      </div>
-      <div class="paper-side">
-        <a class="paper-link" href="https://arxiv.org/abs/2605.20948v1">Open paper</a>
-        <a class="paper-detail-link" href="papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.html">Research card</a>
-        <details class="paper-more">
-          <summary>More metadata</summary>
-          <p class="abstract-summary">Scaling conditional memory offers a promising way to increase language-model capacity, but existing methods such as Engram learn large memory tables from scratch during pre-training, making memory scaling expensive and sometimes ineffective. We propose Memory Grafting, a conditional memory scaling method that utiliz...</p>
-          <p class="research-note"><strong>Research note</strong> Abstract-based curation (arXiv:2605.20948): stores frozen hidden representations from an offline grafting model. The recipient uses longest-match suffix lookup, lightweight projections and gates, with an Engram hash fallback. Studies reuse of latent memory under matched pre-training budgets.</p>
-          <div class="details-group">
-            <strong>Review metadata</strong>
-            <ul>
-              <li>Decision: Highly relevant</li>
-              <li>Internal screening score: 92/100</li>
-              <li>Screening category: Engram / conditional-memory study</li>
-
-
-            </ul>
-          </div>
-          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span></div></div>
-          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">engram</span><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span><span class="badge tag">memory-grafting</span></div></div>
-          <ul>
-            <li>First seen by Paper Scout: 2026-09-05 17:59</li>
-            <li>arXiv: 2605.20948</li><li>arXiv IDs: 2605.20948</li>
-          </ul>
-          <div class="secondary-links"><a href="https://arxiv.org/abs/2605.20948">arXiv</a></div>
-          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory, memory-grafting.</p>
-
-    <details class="quality-evidence">
-      <summary>Scholarly quality evidence</summary>
-      <p>Memory Grafting proposes using frozen hidden states from a pretrained grafting model as conditional n-gram memory for a smaller recipient model. The paper reports benchmark gains over MoE and vanilla Engram baselines, ablations, efficiency results, and representational analyses. The contribution is clear and the evaluation is substantive, but related-work positioning, reproducibility, and statistical rigor are only partially supported in the available text.</p>
-      <ul>
-        <li>Recommendation: uncertain</li>
-        <li>Confidence: medium</li>
-        <li>Assessment scope: full text</li>
-        <li>Paper type: empirical research</li>
-        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
-        <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
-
-      </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 3/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 2/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 2)</li><li>The available text identifies data or a benchmark used by the work. (page 2)</li><li>A baseline or comparison system is described. (page 6)</li><li>Quantitative evaluation signals were detected. (page 2)</li><li>An ablation analysis is reported. (page 9)</li><li>Limitations or threats to validity are acknowledged. (page 25)</li><li>No reproducible review or selection methodology was detected.</li><li>The paper explicitly defines Memory Grafting as constructing conditional memory from a grafting model rather than learning the memory table from scratch. (page 2)</li></ul>
-    </details>
-
-          <button class="citation-button" type="button" data-citation="Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory. Runxi Cheng, Yuchen Guan, Yongxian Wei, Qianpu Sun, Qixiu Li, Sinan Du, Feng Xiong, Chun Yuan, Yan Lu, Yeyun Gong. 2026-05-20. https://arxiv.org/abs/2605.20948v1">Copy citation</button>
-          <span class="copy-status" aria-live="polite"></span>
-        </details>
-      </div>
-    </article>
-
-
-    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="engram conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-01-12" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="conditional memory via scalable lookup: a new axis of sparsity for large language models" data-search="conditional memory via scalable lookup: a new axis of sparsity for large language models xin cheng, rui tian, wangding zeng, damai dai, qinyu chen, bingxuan wang, zhenda xie, kezhao huang, xingkai yu, chengqi deng, shangyan zhou, chenggang zhao, zhewen hao, yukun li, han zhang, zhengyan zhang, yixu wei, m. y xu, huishuai zhang, dongyan zhao, wenfeng liang while mixture-of-experts (moe) scales capacity via conditional computation, transformers lack a native primitive for knowledge lookup, forcing them to inefficiently simulate retrieval through computation. to address this, we introduce conditional memory as a complementary sparsity axis, instantiated via engram, a mo... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory. abstract-based curation (arxiv:2601.07372): foundational engram study of conditional n-gram lookup alongside neural computation. studies capacity allocation, reasoning and retrieval evaluation, and host-memory prefetching. these are author-reported findings, not independent replication. engram conditional-memory arxiv relevant" data-quality-status="uncertain" data-quality-score="65" data-quality-recommendation="uncertain" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="engram conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-01-12" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="conditional memory via scalable lookup: a new axis of sparsity for large language models" data-search="conditional memory via scalable lookup: a new axis of sparsity for large language models xin cheng, rui tian, wangding zeng, damai dai, qinyu chen, bingxuan wang, zhenda xie, kezhao huang, xingkai yu, chengqi deng, shangyan zhou, chenggang zhao, zhewen hao, yukun li, han zhang, zhengyan zhang, yixu wei, m. y xu, huishuai zhang, dongyan zhao, wenfeng liang while mixture-of-experts (moe) scales capacity via conditional computation, transformers lack a native primitive for knowledge lookup, forcing them to inefficiently simulate retrieval through computation. to address this, we introduce conditional memory as a complementary sparsity axis, instantiated via engram, a mo... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory. abstract-based curation (arxiv:2601.07372): foundational engram study of conditional n-gram lookup alongside neural computation. studies capacity allocation, reasoning and retrieval evaluation, and host-memory prefetching. these are author-reported findings, not independent replication. engram conditional-memory arxiv relevant" data-quality-status="uncertain" data-quality-score="65" data-quality-recommendation="uncertain" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
         <h3>Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models</h3>
         <p class="meta">Xin Cheng, Rui Tian, Wangding Zeng, Damai Dai, Qinyu Chen, Bingxuan Wang, Zhenda Xie, Kezhao Huang, Xingkai Yu, Chengqi Deng, Shangyan Zhou, Chenggang Zhao, Zhewen Hao, Yukun Li, Han Zhang, Zhengyan Zhang, Yixu Wei, M. Y Xu, Huishuai Zhang, Dongyan Zhao, Wenfeng Liang · Published 2026-01-12 · Source: arXiv</p>
@@ -328,18 +272,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The paper introduces Engram, a conditional memory module that modernizes N-gram embeddings for O(1) lookup, and evaluates it against iso-parameter and iso-FLOPs MoE baselines. The available text shows clear contribution framing, extensive benchmark results, ablations, and mechanistic analyses supporting the claimed benefits. However, the partial text lacks a dedicated limitations section and statistical uncertainty reporting, leaving methodological completeness uncertain.</p>
+      <p>The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on full text.</p>
       <ul>
         <li>Recommendation: uncertain</li>
         <li>Confidence: medium</li>
-        <li>Assessment scope: partial full text</li>
-        <li>Paper type: empirical research</li>
-        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment scope: full text</li>
+        <li>Paper type: position or conceptual</li>
+        <li>Assessment: quality-coverage-v1 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 2/5</li><li>Methodological Rigor: 3/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 10)</li><li>A baseline or comparison system is described. (page 1)</li><li>Quantitative evaluation signals were detected. (page 19)</li><li>An ablation analysis is reported. (page 16)</li><li>Robustness or statistical analysis is reported.</li><li>Code, data, or research artifacts are described as available. (page 1)</li><li>The paper explicitly introduces conditional memory as a complementary sparsity axis and instantiates it via Engram. (page 2)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 1/5</li><li>Methodological Rigor: 2/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 3/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 9)</li><li>A baseline or comparison system is described. (page 1)</li><li>Quantitative evaluation signals were detected. (page 5)</li><li>An ablation analysis is reported. (page 6)</li><li>Robustness or statistical analysis is reported.</li><li>Code, data, or research artifacts are described as available. (page 1)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models. Xin Cheng, Rui Tian, Wangding Zeng, Damai Dai, Qinyu Chen, Bingxuan Wang, Zhenda Xie, Kezhao Huang, Xingkai Yu, Chengqi Deng, Shangyan Zhou, Chenggang Zhao, Zhewen Hao, Yukun Li, Han Zhang, Zhengyan Zhang, Yixu Wei, M. Y Xu, Huishuai Zhang, Dongyan Zhao, Wenfeng Liang. 2026-01-12. https://arxiv.org/abs/2601.07372v2">Copy citation</button>

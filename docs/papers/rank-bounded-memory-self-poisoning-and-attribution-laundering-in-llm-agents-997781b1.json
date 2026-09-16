@@ -27,7 +27,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-20 07:09:42",
   "notified_date": "2026-08-20",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-20 07:09:05",
-    "generated_at": "2026-09-16 12:05:37",
+    "generated_at": "2026-09-16 16:57:58",
     "last_seen_at": "2026-09-15 11:59:44",
     "metadata_sources": [
       "openalex"
@@ -106,113 +106,450 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T11:57:12+00:00",
-    "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-recovery-v1",
+    "assessed_at": "2026-09-16T16:56:53+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-coverage-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [
-      "The core empirical sections (Sections 3-7) are missing from the supplied text, so the central quantitative claims cannot be verified.",
-      "The paper relies on a single annotator (the author) for the primary label computability measurement, which is a methodological limitation acknowledged in the text.",
-      "The paper's abstract makes strong claims about attack resistance (1 of 128 tasks) but the supplied text does not include the experimental details to support this."
+      "Label-computability pilot relies on a single annotator who is also the owner and author; frozen-protocol replication is still owed.",
+      "Self-poisoning corpus is synthetic and authored by the authors; a live-feed realism check is only planned.",
+      "Adversarial evaluation uses one attacker (MINJA) and one framework (SuperRed); corpus poisoning and score-feedback optimizers are not run.",
+      "Some controls (C4', C5', rank-2 task, post-hoc read-side repair) are post-hoc rather than pre-specified.",
+      "Utility is measured only for information work; the action-side cost of the code-enforced read rule remains unpriced.",
+      "Ground-axis I1' is specified but not enforced in code; its violation rate is measured only in unlabeled stores."
     ],
-    "concise_summary": "The paper presents a novel rank-bounded memory schema for LLM agents with quantitative claims about self-poisoning and attack resistance. The supplied text includes the abstract, threat model, and related work sections, but omits the core methodological and results sections needed to validate the central empirical claims. The paper is classified as insufficient due to missing evidence for its quantitative assertions.",
-    "confidence": "medium",
+    "concise_summary": "The paper introduces rank-bounded memory, a storage schema that attaches ownership paths and grounds to every memory record, and argues by reachability induction that foreign content cannot silently become the agent's own belief. It measures self-poisoning without an adversary across flat notes, a self-edit block, and three production memory systems (24-33% laundering), shows the attributed store reduces this to 3-6%, and isolates verbatim storage from the structural label via a factorial control. Under MINJA injection, write-time promotion drops to zero with I2+I4, and end-to-end ASR falls from 47% to 10% with the read rule as a prompt and to 1 of 128 with it enforced in code. The paper is transparent about its trusted base, its specified-but-unenforced invariants, and its unpriced action-side utility cost.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 88358,
+      "assessment_input_sha256": "97f9cd401762d2a6a04c238c05a2ed90092427ab24909f834c5801f9ff69c249",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "characters_before_extraction_limit": 97873,
+      "eligible_characters": 86311,
+      "excluded_back_matter_characters": 11333,
+      "extracted_characters": 97933,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "extracted_pages": 31,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 97873,
+      "selected_characters": 86311,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "selected_sections": [
+        {
+          "characters": 157,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 2859,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 6,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 2660,
+          "heading": "The Problem: Memory Outlives The Defense",
+          "page": 2
+        },
+        {
+          "characters": 210,
+          "heading": "The Problem: Memory Outlives The Defense",
+          "page": 3
+        },
+        {
+          "characters": 2879,
+          "heading": "Threat Model: What \"By Design\" Covers, Exactly",
+          "page": 3
+        },
+        {
+          "characters": 156,
+          "heading": "Threat Model: What \"By Design\" Covers, Exactly",
+          "page": 4
+        },
+        {
+          "characters": 2760,
+          "heading": "Mechanism",
+          "page": 4
+        },
+        {
+          "characters": 3208,
+          "heading": "Mechanism",
+          "page": 5
+        },
+        {
+          "characters": 2739,
+          "heading": "Mechanism",
+          "page": 6
+        },
+        {
+          "characters": 3357,
+          "heading": "Mechanism",
+          "page": 7
+        },
+        {
+          "characters": 257,
+          "heading": "Why This Is A Class Defense, Not A Mitigation",
+          "page": 7
+        },
+        {
+          "characters": 3577,
+          "heading": "Why This Is A Class Defense, Not A Mitigation",
+          "page": 8
+        },
+        {
+          "characters": 2878,
+          "heading": "Why This Is A Class Defense, Not A Mitigation",
+          "page": 9
+        },
+        {
+          "characters": 1301,
+          "heading": "Why This Is A Class Defense, Not A Mitigation",
+          "page": 10
+        },
+        {
+          "characters": 1721,
+          "heading": "Is The Label Computable? First Measurements",
+          "page": 10
+        },
+        {
+          "characters": 3787,
+          "heading": "Is The Label Computable? First Measurements",
+          "page": 11
+        },
+        {
+          "characters": 3559,
+          "heading": "Is The Label Computable? First Measurements",
+          "page": 12
+        },
+        {
+          "characters": 7,
+          "heading": "Is The Label Computable? First Measurements",
+          "page": 13
+        },
+        {
+          "characters": 3655,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 13
+        },
+        {
+          "characters": 2875,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 14
+        },
+        {
+          "characters": 3817,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 15
+        },
+        {
+          "characters": 3647,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 16
+        },
+        {
+          "characters": 3693,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 17
+        },
+        {
+          "characters": 2612,
+          "heading": "Is The Label Needed? Self-Poisoning Without An Adversary",
+          "page": 18
+        },
+        {
+          "characters": 781,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 18
+        },
+        {
+          "characters": 3338,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 19
+        },
+        {
+          "characters": 2603,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 20
+        },
+        {
+          "characters": 3924,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 21
+        },
+        {
+          "characters": 3839,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 22
+        },
+        {
+          "characters": 1995,
+          "heading": "Does The Label Hold Against An Attacker? Delta-Asr",
+          "page": 23
+        },
+        {
+          "characters": 1207,
+          "heading": "Limitations And Non-Goals",
+          "page": 23
+        },
+        {
+          "characters": 2889,
+          "heading": "Limitations And Non-Goals",
+          "page": 24
+        },
+        {
+          "characters": 7,
+          "heading": "Limitations And Non-Goals",
+          "page": 25
+        },
+        {
+          "characters": 3809,
+          "heading": "Related Work",
+          "page": 25
+        },
+        {
+          "characters": 2138,
+          "heading": "Related Work",
+          "page": 26
+        },
+        {
+          "characters": 1397,
+          "heading": "Data Availability",
+          "page": 26
+        },
+        {
+          "characters": 7,
+          "heading": "Data Availability",
+          "page": 27
+        }
+      ],
+      "selection_version": "representative-v1",
+      "source_pages": 31,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 3,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": 2,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 4,
-      "scholarly_novelty_or_value": 3
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 5,
+      "limitations_and_uncertainty_handling": 5,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 5,
+      "reproducibility_and_transparency": 5,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "dentically without API calls. Repository: https://github.com/iverbovoy/self-poisoning-bench, release v1.2, archived through the GitHub\u2013Zenod",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 26,
-        "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Data Availability",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "l outputs runs/stats-en-{a,b}.txt); the Section 4 Proposition check is formal_check.py; the Section 7 utility grid summary is re-derived from",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 28,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Data Availability",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing"
-      },
-      {
         "dimension": "contribution_clarity",
-        "excerpt": "The defense is a storage schema, enforceable by any harness that mediates memory writes. Every record carries an ownership path ([self], [self, user], [self, user, self]) and a ground. Five invariants close the rank axis by construction: no promotion (I1), routing by origin (I2), de-quotation to the speaker's layer (I2\u2032), derivation labeling (I4), and an action monopoly for the agent's own layer (I3).",
-        "explanation": "The abstract and threat model sections provide a clear statement of the defense mechanism and its invariants.",
-        "page": 1,
-        "paraphrase": "The paper clearly articulates its central contribution: a storage schema with ownership paths and ground labels that prevents foreign content from becoming the agent's own belief.",
-        "section": "Abstract",
+        "excerpt": "What remains this paper's subject is the channel those instruments do not carry: the agent's own speculation re-graded by ordinary consolidation into owner or sensor evidence, with no attacker and no external source to bind; how much, and across which memory systems; and a schema that carries epistemic ownership (whose picture a claim belongs to), not only authority.",
+        "explanation": "This clearly delimits the contribution from concurrent work on authority binding, making the novelty claim specific and testable.",
+        "page": 2,
+        "paraphrase": "The paper states its subject precisely: the agent's own speculation re-graded by consolidation into owner or sensor evidence, with no attacker, and a schema carrying epistemic ownership.",
+        "section": "The Problem: Memory Outlives The Defense",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "What remains particular here is the axis those instruments do not carry: the agent's own speculation re-graded into owner or sensor evidence \u2014 ground and I1\u2032, a laundering channel with no external source to bind, and the dominant error direction of Section 6 \u2014 together with the longitudinal per-checkpoint instrument, the rewrite \u00d7 label factorial over production systems as shipped, and the rank-2 layer.",
+        "explanation": "The novelty claim is carefully scoped against prior and concurrent work, acknowledging shared observations while identifying the unoccupied channel.",
+        "page": 26,
+        "paraphrase": "The paper positions itself against TMA-NM and two concurrent works, claiming the remaining distinction is the epistemic ground axis and rank-2 layer.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "the same tracer is measured up to twelve times, so the 95% intervals are a cluster bootstrap over tracers (10,000 resamples of the 26 tracer clusters; artifact, stats.py, which is the single source for every interval and paired figure in this section); per-observation Wilson intervals would treat the repeats as independent and overstate precision roughly threefold.",
+        "explanation": "This shows statistical care appropriate to the repeated-measures design, avoiding overstated precision.",
+        "page": 15,
+        "paraphrase": "The paper uses cluster bootstrap over tracers rather than per-observation Wilson intervals, acknowledging repeated measurements of the same tracer.",
+        "section": "Is The Label Needed? Self-Poisoning Without An Adversary",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "The interaction is the finding. Without rewriting, stripping the labels costs little: verbatim records keep their lexical hedges, C4\u2032 (5.7%, haiku 9.5 / gemini 2.0) stays far below the band, and the rendered label's own effect (3.1% against 5.7%) is within these intervals. Under compression the label is decisive: the same records, model and budget return to the unlabeled band (28.0%) the moment the labels are gone",
+        "explanation": "This 2x2 design (rewrite or not, label or not) directly tests the mechanism rather than relying on a single comparison.",
+        "page": 16,
+        "paraphrase": "The factorial control C4' vs C5' isolates the effect of the label under compression, showing the label is decisive when rewriting is forced.",
+        "section": "Is The Label Needed? Self-Poisoning Without An Adversary",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "So this section reports a measured reduction, 24\u201333% brought to 3\u20136%, not unreachability. The \"by construction\" claim does not extend here, and the residual is what an enforced I1\u2032 would have to close.",
+        "explanation": "This prevents overclaiming: the formal guarantee is separated from the empirical reduction, and the residual is attributed to the unenforced I1'.",
+        "page": 13,
+        "paraphrase": "The paper explicitly limits the 'by construction' claim to the rank axis and reports a measured reduction, not unreachability, for the ground axis.",
+        "section": "Is The Label Needed? Self-Poisoning Without An Adversary",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "The closest prior design is TMA-NM [8], which binds authority to origin, is adversarial in framing, and names self-summarization laundering as a threat, the phenomenon Section 6 measures. Its four mechanisms are origin binding at write time (M1); non-malleable propagation, the keystone that closes the laundering channels, since a derived note inherits the maximum untrust of its sources (M2); Sybil-resistant corroboration-gated elevation, counting only independent trusted principals and decided at write time (M3); and a tamper-evident verdict log (M4).",
-        "explanation": "The related work section provides substantive comparisons that are adequate for the paper's claims about the gap in attribution storage.",
+        "excerpt": "TMA-NM's arms vary what authority is bound to (content trust scoring, derivation lineage, session capability IFC, origin) and include no arm that exposes the same origin labels through the prompt; our ladder varies where the same labels are enforced (read by a prompt they leave 10%, read by code 1 of 128), isolating a variable TMA-NM does not and landing on the same side: action authority enforced in code over the labels, not asked of the model.",
+        "explanation": "The related-work comparison is adequate for the actual claims: it identifies the precise complementary variable and concedes shared observations rather than overstating novelty.",
         "page": 25,
-        "paraphrase": "The paper provides detailed and specific comparisons to prior work, including TMA-NM, PPMF, AuthMem-Bench, and TrustMem, and clearly positions its contribution as complementary.",
+        "paraphrase": "The paper distinguishes its variable (where labels are enforced) from TMA-NM's variable (what authority is bound to), and acknowledges the storage-level seat is no longer empty.",
         "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "dentically without API calls. Repository: https://github.com/iverbovoy/self-poisoning-bench, release v1.2, archived through the GitHub\u2013Zenodo integration; the release DOI is recorded in this record's metadata as its supplement (isSupplementedBy), and the integration's own Zenodo record is the frozen copy",
-        "explanation": "The data availability section provides specific commands and repository information for reproducing the results.",
+        "excerpt": "The Self-Poisoning Bench of Section 6 is published in full as the artifact of this record: the deterministic corpus generator and both storylines in English and Russian, the replay harness with the five scripted policies and the adapters for mem0, Letta and Graphiti (pinned versions), the panel judge, every stored model output (memory snapshots per session, answers, judgments), the blind adjudication sample and scores, and a reproduction script that regenerates every verdict file and table byte-identically without API calls.",
+        "explanation": "This is a strong reproducibility commitment, including pre-registered rubric and artifact commands.",
         "page": 26,
-        "paraphrase": "The paper describes a public repository with a reproduction script that regenerates every verdict file and table byte-identically without API calls.",
+        "paraphrase": "The full benchmark, corpora, model outputs, and a byte-identical regeneration script are published with a DOI.",
         "section": "Data Availability",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "mis-attribution at annotation time, the agent confabulating a wrong path when writing the record. This is the architecture's own first-order risk (R1) and is treated as a measured quantity (Sections 5 and 6), not assumed away.",
-        "explanation": "The threat model section explicitly lists out-of-scope items and names the architecture's own first-order risk.",
-        "page": 3,
-        "paraphrase": "The paper explicitly names the scope boundary and the first-order risk of mis-attribution at annotation time.",
-        "section": "Abstract",
+        "excerpt": "I5 is specified, not evaluated. No task in Sections 6\u20137 plants an assumed-ground record; its isolation is a schema rule carried from the architecture document, not a measured one. promote is specified, never exercised. No run in Sections 6\u20137 executed the explicit promotion operation: zero executions across the program",
+        "explanation": "This is an exemplary limitations section that prevents readers from inferring guarantees the paper does not make.",
+        "page": 24,
+        "paraphrase": "The paper enumerates what is specified but not enforced (I5, promote, general I2'/I4) and what is measured but not priced (action-side utility).",
+        "section": "Limitations And Non-Goals",
         "signal_type": "positive"
       },
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": null,
-        "explanation": "The extraction is partial_full_text and omits the sections where the central empirical claims are validated.",
-        "page": null,
-        "paraphrase": "The core experimental sections (Sections 3-7) containing the measurement methodology and results are not present in the supplied text.",
-        "section": null,
-        "signal_type": "missing"
+        "dimension": "presentation_and_precision",
+        "excerpt": "Three kinds of number meet in this section, and they are not the same measurement: the human ceiling is test\u2013retest self-consistency, the panel numbers are accuracy against an adjudicated key, and the human's 87.0\u201388.9% is accuracy against a key the same annotator helped adjudicate. Each mismatch biases the comparison in the human's favor",
+        "explanation": "This precision about what each measurement means and how biases run is a mark of careful presentation.",
+        "page": 11,
+        "paraphrase": "The paper distinguishes three kinds of numbers in the annotation section (human ceiling, panel accuracy, human accuracy against a key the annotator helped adjudicate) and states the direction of bias.",
+        "section": "Is The Label Computable? First Measurements",
+        "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": null,
-        "explanation": "The abstract reports specific percentages (24-33%, 97.4%, 47% to 10% to 1/128) but the sections describing how these were measured are not included.",
-        "page": null,
-        "paraphrase": "The measurement methodology for the reported quantitative results is not present in the supplied text.",
-        "section": null,
-        "signal_type": "missing"
+        "excerpt": "A single annotator, who is also the owner and the author. Rank-2 evidence is six constructed records; zero rank-2 in 40 live records. The canon-rank2 key was adjudicated after the panel had run (circular for that deck; the live-40 key predates its panel run and is clean); rule R-quoted was written after the pilot disagreement was seen, so the pilot number is not a frozen-protocol number; the frozen-protocol phase (rules fixed, human annotation fixed, then the panel) is still owed.",
+        "explanation": "This is a disclosed limitation that weakens the generalizability of the annotation ceiling, though the panel agreement against adjudicated keys partially mitigates it.",
+        "page": 12,
+        "paraphrase": "The label-computability pilot uses a single annotator who is also the owner and author, and the frozen-protocol phase is still owed.",
+        "section": "Is The Label Computable? First Measurements",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Adversarial evaluation is one attacker, one framework. Section 7 measures MINJA through SuperRed [5] on two channels; corpus poisoning (PoisonedRAG-style), optimizers with score feedback, and an attacker who controls the owner's channel are out of scope",
+        "explanation": "The security claim is bounded to the measured attacker, and the paper states this explicitly rather than generalizing.",
+        "page": 24,
+        "paraphrase": "The adversarial evaluation uses one attacker (MINJA) and one framework (SuperRed); corpus poisoning and score-feedback optimizers are not run.",
+        "section": "Limitations And Non-Goals",
+        "signal_type": "concern"
       }
     ],
     "full_text_assessed": true,
@@ -220,28 +557,37 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected.",
-      "Sections 3-7 containing the formal specification, measurement methodology, and experimental results are not present in the supplied text.",
-      "The actual data tables (Tables 2 and 3) referenced in the appendix are not included in the extraction.",
-      "The statistical analysis details for the reported confidence intervals and agreement scores are not present."
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.",
+      "Frozen-protocol replication of the annotation pilot (rules fixed, human annotation fixed, then panel) is explicitly owed.",
+      "Live-feed column for the self-poisoning benchmark is planned but not yet reported.",
+      "Adversarial evaluation against PoisonedRAG-style corpus poisoning and optimizers with score feedback is not run.",
+      "Benign action tasks legitimately triggered through guests are not in the utility grid.",
+      "Human adjudication of the Section 7 answer judge is not yet completed."
     ],
-    "overall_quality_score": null,
+    "overall_quality_score": 82,
     "paper_type": "empirical_research",
     "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Limitations or threats to validity are acknowledged.",
       "Code, data, or research artifacts are described as available.",
       "Formal definitions or proof-oriented evidence is present.",
-      "The paper clearly articulates a novel defense mechanism (rank-bounded memory) with formal invariants.",
-      "The related work section provides detailed comparisons with TMA-NM, PPMF, AuthMem-Bench, and other prior work.",
-      "The paper describes a reproducible artifact with a public repository and byte-identical reproduction scripts.",
-      "The paper explicitly names limitations and out-of-scope conditions in the threat model section."
+      "Dataset documentation, quality control, licensing, or ethics is discussed.",
+      "Clear separation of rank and ground axes with explicit invariants and a reachability argument.",
+      "Self-poisoning benchmark spans five unlabeled policies and three production memory systems with cluster-bootstrapped intervals.",
+      "Factorial control (rewrite x label) isolates verbatim storage from the structural label.",
+      "Adversarial evaluation decomposes ASR into storage promotion and read-side violation, tracing the single residual failure.",
+      "Unusually thorough limitations section distinguishing specified vs enforced, measured vs assumed, and priced vs unpriced costs.",
+      "Full artifact release with byte-identical regeneration script and pre-registered rubric."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
-    "recommendation": "unknown",
+    "rationale": "The paper presents a coherent, well-scoped contribution: a storage-schema defense (rank-bounded memory) against attribution laundering in LLM agents, with a formal reachability argument, a measured self-poisoning benchmark, and adversarial evaluation. The claims are carefully bounded and the limitations section is unusually thorough. The empirical work includes multiple memory systems, two storylines, two languages, cluster-bootstrapped intervals, human and independent adjudication, and a factorial control isolating verbatim storage from the structural label. The adversarial section decomposes end-to-end ASR into storage promotion and read-side violation, and traces the single residual failure. The paper is transparent about what is specified versus enforced, what is measured versus assumed, and what remains unpriced. The main weaknesses are a single author-annotator for the label-computability pilot, a synthetic corpus, one attacker/framework, and some post-hoc controls, but these are explicitly disclosed and do not undermine the central measured claims.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "37fcb17e4ae17797bc9327897d1d3552a828d01c868f15d316501d57dd1bdc8f",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The central claims are well supported by the supplied text, but several measurements rest on a single annotator who is also the author, a synthetic corpus, one attacker, and some post-hoc controls. The frozen-protocol replication for the annotation pilot is explicitly owed. These are disclosed limitations rather than hidden flaws, so the uncertainty is scientific rather than a coverage failure."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

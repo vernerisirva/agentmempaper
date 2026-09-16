@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from http.client import IncompleteRead
+from email.utils import parsedate_to_datetime
+from datetime import UTC, datetime
 import json
 import logging
 import socket
@@ -15,11 +18,13 @@ LOGGER = logging.getLogger(__name__)
 
 
 class HttpRequestError(RuntimeError):
-    def __init__(self, kind: str, url: str, message: str) -> None:
+    def __init__(self, kind: str, url: str, message: str, *, status_code: int | None = None, retry_after_seconds: float | None = None) -> None:
         super().__init__(f"{kind} error for {url}: {message}")
         self.kind = kind
         self.url = url
         self.message = message
+        self.status_code = status_code
+        self.retry_after_seconds = retry_after_seconds
 
 
 @dataclass
@@ -60,14 +65,17 @@ class HttpClient:
                 with urlopen(request, timeout=self.timeout_seconds) as response:
                     self._last_request_at = time.monotonic()
                     return response.read().decode("utf-8")
-            except (HTTPError, URLError, TimeoutError) as exc:
+            except (HTTPError, URLError, TimeoutError, IncompleteRead, ConnectionError) as exc:
                 last_error = exc
                 LOGGER.warning("HTTP %s failed on attempt %s/%s for %s: %s", method, attempt, self.retries, url, exc)
                 if attempt < self.retries:
                     time.sleep(self.pause_seconds * attempt)
         kind = _classify_request_error(last_error)
         message = str(last_error) if last_error else "unknown request failure"
-        raise HttpRequestError(kind, url, f"request failed after {self.retries} attempts: {message}") from last_error
+        raise HttpRequestError(kind, url, f"request failed after {self.retries} attempts: {message}",
+                               status_code=last_error.code if isinstance(last_error, HTTPError) else None,
+                               retry_after_seconds=retry_after_seconds(last_error.headers.get("Retry-After"))
+                               if isinstance(last_error, HTTPError) and last_error.headers else None) from last_error
 
     def _throttle(self, url: str) -> None:
         host = urlsplit(url).netloc
@@ -88,10 +96,16 @@ def _with_params(url: str, params: dict[str, str | int] | None) -> str:
 
 
 def _classify_request_error(error: Exception | None) -> str:
+    if isinstance(error, IncompleteRead):
+        return "incomplete_response"
+    if isinstance(error, ConnectionError):
+        return "connection_error"
     if isinstance(error, HTTPError):
         return "http"
     if isinstance(error, URLError):
         reason = error.reason
+        if isinstance(reason, socket.gaierror):
+            return "dns"
         if isinstance(reason, (ssl.SSLError, ssl.CertificateError)):
             return "tls"
         if isinstance(reason, (TimeoutError, socket.timeout)):
@@ -105,3 +119,19 @@ def _classify_request_error(error: Exception | None) -> str:
     if isinstance(error, (TimeoutError, socket.timeout)):
         return "timeout"
     return "network"
+
+
+def retry_after_seconds(value: str | None) -> float | None:
+    """Parse seconds or an HTTP date without shortening a server-requested delay."""
+    if not value:
+        return None
+    try:
+        return max(0.0, float(int(value)))
+    except ValueError:
+        try:
+            date = parsedate_to_datetime(value)
+            if date.tzinfo is None:
+                date = date.replace(tzinfo=UTC)
+            return max(0.0, (date - datetime.now(UTC)).total_seconds())
+        except (TypeError, ValueError, OverflowError):
+            return None

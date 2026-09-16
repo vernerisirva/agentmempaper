@@ -40,6 +40,7 @@ def assess_with_optional_quality_llm(
         headers = {"Authorization": f"Bearer {settings.api_key}"}
         # Retrying a timed-out paid POST can charge twice for the same paper.
         # A later explicit reassessment may retry; the automatic path never does.
+        # HttpClient.retries is the total attempt count (range(1, retries + 1)).
         client = http or HttpClient(timeout_seconds=QUALITY_HTTP_TIMEOUT_SECONDS, retries=1)
         LOGGER.info("Quality model request %s", json.dumps({
             "canonical_id": deterministic.canonical_id, "model": settings.model,

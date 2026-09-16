@@ -211,6 +211,29 @@ class PaperScoutQualityTest(unittest.TestCase):
             self.assertEqual(result.quality_status, "uncertain")
             self.assertNotIn("test-only-key", "\n".join(logs.output))
 
+    def test_real_quality_transport_attempts_once_and_scopes_reasoning_to_openrouter(self):
+        candidate = _candidate()
+        selected = select_assessment_text(candidate, None)
+        deterministic = assess_quality_deterministically(candidate, "fixture:transport", selected)
+        for base, expected in (("https://openrouter.ai/api/v1/", True),
+                               ("https://api.openai.com/v1", False),
+                               ("https://openrouter.ai.example.com/v1", False)):
+            with self.subTest(base=base):
+                env = {"PAPER_SCOUT_LLM_PROVIDER": "auto", "PAPER_SCOUT_LLM_API_KEY": "test-only-key",
+                       "PAPER_SCOUT_LLM_MODEL": "test-model", "PAPER_SCOUT_LLM_BASE_URL": base,
+                       "PAPER_SCOUT_QUALITY_LLM_REASONING": "off"}
+                with patch.dict("os.environ", env, clear=True), patch(
+                    "paper_scout.http.urlopen", side_effect=TimeoutError("synthetic timeout")
+                ) as network, patch("paper_scout.http.time.sleep") as sleep:
+                    result = assess_with_optional_quality_llm(candidate, selected, deterministic, "llm")
+                network.assert_called_once()
+                sleep.assert_not_called()
+                self.assertEqual(network.call_args.kwargs["timeout"], 180)
+                request = network.call_args.args[0]
+                self.assertEqual(request.get_method(), "POST")
+                self.assertEqual("reasoning" in json.loads(request.data), expected)
+                self.assertEqual(result, deterministic)
+
     def test_quality_usage_logs_only_numeric_telemetry_and_missing_is_unknown(self):
         from paper_scout.quality_llm import _reported_usage
         raw = {"usage": {"prompt_tokens": 100, "completion_tokens": 20, "total_tokens": 120,

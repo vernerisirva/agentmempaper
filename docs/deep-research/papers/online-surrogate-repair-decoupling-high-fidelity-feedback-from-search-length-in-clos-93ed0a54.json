@@ -27,6 +27,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-09 11:31:57",
   "notified_date": "2026-09-09",
@@ -37,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:31:25",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-14 13:11:01",
     "metadata_sources": [
       "openalex",
@@ -65,12 +66,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-07",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "ai-scientist",
@@ -98,28 +103,86 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-16T09:02:51+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 61/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "eam optimization rather than by global fit alone. Our contributions are: \u2022 We formulate online surrogate repair, in which a scientific agent operat",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "et al., 2026), a closed-loop materials discovery benchmark. Each environment specifies a chemical system and its known phases, and the age",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ean maximum-regret reductions of 0.424 and 0.409, compared with 0.063 and 0.052 for Global-UQ and Random. Conversely, Global-UQ and Random prod",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ults are given in Appendix D.Boldbest, underlined second best per column. Method TabPFN-100 TabPFN-1000 TabICL-100 TabICL-1000 Mean\u2206RMean\u2206E Q90-UCB0.49780.23930.5909 0.3664 0.4236\u2212",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Methods",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": "https://arxiv.org/pdf/2609.07655",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "overall_quality_score": 61,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected."
+    ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -152,7 +215,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

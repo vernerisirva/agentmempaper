@@ -25,6 +25,7 @@
   "last_seen_date": "2026-08-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-17 07:20:09",
   "notified_date": "2026-08-17",
@@ -35,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-17 07:19:44",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-08-21 07:11:06",
     "metadata_sources": [
       "openalex",
@@ -63,12 +64,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-08-14",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "ai-scientist",
@@ -96,28 +101,91 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-08-20T07:10:16+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "sity of Technology, Gothenburg, Sweden. Abstract We present a survey of the past and future of AI Scientists: machines capable of automatin",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ve explanations. 5.2.1. Bayesian updating Bayes\u2019 theorem provides the fundamental rule for revising the probability assigned to a hypoth",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 18,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Page 18 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": null,
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Extraction was limited to 80 pages.",
+      "Extraction was limited to 120000 characters.",
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 54,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "db8454e030fbe329fc8adbdf2803ca767eb6323387ef368c282d1c63dbf58aed",
+    "status": "not_assessed",
+    "suppressed": false,
+    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -150,7 +218,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

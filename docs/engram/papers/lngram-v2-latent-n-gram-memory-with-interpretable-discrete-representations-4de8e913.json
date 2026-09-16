@@ -27,6 +27,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-09-05 18:01:34",
   "notified_date": "2026-09-05",
@@ -37,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:27",
-    "generated_at": "2026-09-15 12:10:14",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-15 12:07:52",
     "metadata_sources": [
       "openalex",
@@ -65,12 +66,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-03",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "conditional-memory",
@@ -98,28 +103,116 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-16T09:02:55+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.92,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 75/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "ility due to high parameter and activation costs. We propose Lngram v2, which decouples the number of routes, memory dimension, and backbone",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "capacity. On Keye30B, Lngram v2 improves the ten-benchmark average from 78.23 to 79.71, a gain of 1.48 points, demonstrating that the meth",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ding successful scaling to a 30B-parameter model. Compared with Lngram v1, Lngram v2 substantially reduces both total and ac- tivated memory pa",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ault. 4.3 EFFICIENCYEVALUATION We measure prefill latency at sequence lengths of 256, 512, and 1024 and single-token decode latency on one H800 GPU. Complete results are provided",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "nt in Lngram v2, we conduct a strictly controlled ablation in which the model architecture, forward computation, training data, and optimi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 16,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": ". Paired statistical tests on Keye30B yield a 95% confidence interval of[0.86,2.11]for the aver- age improvement. After Holm (Holm, 1979) correction,",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ross-modal inputs. Lngram v1 nevertheless has two limitations. First, its route count is coupled with backbone width, causing memory size and",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": "https://arxiv.org/pdf/2609.03426",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "overall_quality_score": 75,
+    "paper_type": "replication",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged."
+    ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "f7bd34f3005e2cbc60b197e6869f1d81fdeb9d63ed0e8a87c7270fb4205a05dd",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -152,7 +245,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

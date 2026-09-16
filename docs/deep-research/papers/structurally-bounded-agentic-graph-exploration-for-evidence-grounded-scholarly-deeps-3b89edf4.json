@@ -29,6 +29,7 @@
   "last_seen_date": "2026-09-01",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-26 07:14:45",
   "notified_date": "2026-08-26",
@@ -39,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-26 07:14:18",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-01 11:46:23",
     "metadata_sources": [
       "openalex",
@@ -67,12 +68,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-08-25",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "citation-grounding",
@@ -100,28 +105,97 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-01T11:48:22+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 59/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": null,
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "hen, D.; and Gao, T. 2024. LitSearch: A Retrieval Benchmark for Scien- tific Literature Search. In Al-Onaizan, Y.; Bansal, M.; and Chen, Y.",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ver its 1.5B counterpart based on its higher test accuracy. In Stage 3, the resulting weighted evidence graph is ranked using PPR, with teleportation",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "l@50 at roughly a third of the cost. Code:https://github.com/RadiantCrystal/CRASE",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": null,
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 59,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "8e6b7013374cfb1ef04daf02d8157c0d040154b777339ca7104080ecbf25f46b",
+    "status": "not_assessed",
+    "suppressed": false,
+    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -154,7 +228,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -17,6 +17,7 @@
             <span class="nav-links"><a href="../index.html">Agentic Memory Library</a> <a href="../engram/index.html">Engram</a>
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
+              <a href="review.html">Review candidates</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/deep_research/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
@@ -42,13 +43,13 @@
         <span>Sort</span>
           <select id="paper-sort">
           <option value="latest-relevant" selected>Latest relevant</option>
-          <option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>
           <option value="score-desc">Screening match</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
           <option value="title-asc">Title</option>
         </select>
       </label>
+
       <label class="select-field relevance-filter" for="relevance-filter">
         <span>Show</span>
         <select id="relevance-filter">
@@ -57,48 +58,11 @@
           <option value="maybe">Review candidates</option>
         </select>
       </label>
+
       <label class="toggle-control new-only-filter" for="new-only">
         <input id="new-only" type="checkbox">
         <span>New only</span>
       </label>
-
-      <details class="quality-controls">
-        <summary>Scholarly quality filters</summary>
-        <div class="quality-control-grid">
-          <label class="select-field" for="quality-minimum">
-            <span>Minimum score</span>
-            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
-          </label>
-          <label class="select-field" for="quality-recommendation">
-            <span>Recommendation</span>
-            <select id="quality-recommendation">
-              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-confidence">
-            <span>Confidence</span>
-            <select id="quality-confidence">
-              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-scope">
-            <span>Assessment scope</span>
-            <select id="quality-scope">
-              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-visibility">
-            <span>Weak assessments</span>
-            <select id="quality-visibility">
-              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
-            </select>
-          </label>
-          <label class="toggle-control" for="quality-include-unknown">
-            <input id="quality-include-unknown" type="checkbox" checked>
-            <span>Include unassessed papers</span>
-          </label>
-        </div>
-      </details>
 
     </section>
 
@@ -110,18 +74,12 @@
 
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="ai-scientist deep-research-agents" data-latest-run="true" data-is-new="true" data-published="2026-09-14" data-first-seen="2026-09-15" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="closing the empirical loop: autonomous ai agents conduct end‐to‐end research with human participants" data-search="closing the empirical loop: autonomous ai agents conduct end‐to‐end research with human participants gabrielle wehr, reuben rideaux, amaya fox, david r. lightfoot, jason m. tangen, jason b. mattingley, shane e. ehrhardt artificial intelligence systems are transforming scientific discovery by accelerating specific research tasks, from protein structure prediction to materials design, yet remain confined to narrow domains requiring substantial human oversight. exponential growth of scientific literature and increasing domain speciali... studies ai-scientist or scientific-discovery agents.  ai-scientist deep-research-agents openalex relevant" data-quality-score="42" data-quality-recommendation="uncertain" data-quality-confidence="low" data-quality-scope="title_and_abstract" data-quality-downranked="false" data-combined-score="0.918844">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="ai-scientist deep-research-agents" data-latest-run="true" data-is-new="true" data-published="2026-09-14" data-first-seen="2026-09-15" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="closing the empirical loop: autonomous ai agents conduct end‐to‐end research with human participants" data-search="closing the empirical loop: autonomous ai agents conduct end‐to‐end research with human participants gabrielle wehr, reuben rideaux, amaya fox, david r. lightfoot, jason m. tangen, jason b. mattingley, shane e. ehrhardt artificial intelligence systems are transforming scientific discovery by accelerating specific research tasks, from protein structure prediction to materials design, yet remain confined to narrow domains requiring substantial human oversight. exponential growth of scientific literature and increasing domain speciali... studies ai-scientist or scientific-discovery agents.  ai-scientist deep-research-agents openalex relevant" data-quality-status="uncertain" data-quality-score="42" data-quality-recommendation="uncertain" data-quality-confidence="low" data-quality-scope="title_and_abstract" data-quality-downranked="false" data-combined-score="0.930000">
       <div class="paper-main">
         <h3>Closing the Empirical Loop: Autonomous AI Agents Conduct End‐to‐end Research With Human Participants<span class="new-badge" title="New in the last 24 hours" aria-label="New in the last 24 hours">New</span></h3>
         <p class="meta">Gabrielle Wehr, Reuben Rideaux, Amaya Fox, David R. Lightfoot, Jason M. Tangen, Jason B. Mattingley, Shane E. Ehrhardt · Published 2026-09-14 · Source: OpenAlex</p>
-        <p class="reason"><strong>Why included:</strong> Studies AI-scientist or scientific-discovery agents.</p>
-
-    <div class="quality-summary">
-      <strong>Automated evidence-based assessment</strong>
-      <span>42/100 · Uncertain · Low confidence · title and abstract</span>
-      <ul class="quality-signal-list"><li><strong>Strength:</strong> User, expert, operational, or deployment evidence is described.</li><li><strong>Strength:</strong> Limitations or threats to validity are acknowledged.</li></ul>
-    </div>
-
+        <p class="reason"><strong>Topic match:</strong> Studies AI-scientist or scientific-discovery agents.</p>
+        <p class="quality-summary"><strong>Quality pending</strong></p>
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://doi.org/10.1002/advs.76675">Open paper</a>
@@ -157,7 +115,7 @@
         <li>Confidence: low</li>
         <li>Assessment scope: title and abstract</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: deterministic</li>
 
       </ul>
@@ -172,12 +130,12 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="deep-research-agents citation-grounding" data-latest-run="true" data-is-new="false" data-published="2026-09-10" data-first-seen="2026-09-11" data-score="96" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents" data-search="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents jiaqiang li, yajie yang, zhiheng xi, jiadong chen, enyu zhou, senjie jin, yang nan, jiazheng zhang, han wang, yanxin li, dingwei zhu, bicheng deng, yuhui wang, xiang zheng, qi zhang, lei bai, xingjun ma, tao gui autonomous research agents are increasingly expected to search the literature, analyze experimental evidence, and generate scientific hypotheses. these capabilities require multi-step evidence grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching a conclusion. existing mul... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  deep-research-agents citation-grounding openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.960000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="deep-research-agents citation-grounding" data-latest-run="true" data-is-new="false" data-published="2026-09-10" data-first-seen="2026-09-11" data-score="96" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents" data-search="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents jiaqiang li, yajie yang, zhiheng xi, jiadong chen, enyu zhou, senjie jin, yang nan, jiazheng zhang, han wang, yanxin li, dingwei zhu, bicheng deng, yuhui wang, xiang zheng, qi zhang, lei bai, xingjun ma, tao gui autonomous research agents are increasingly expected to search the literature, analyze experimental evidence, and generate scientific hypotheses. these capabilities require multi-step evidence grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching a conclusion. existing mul... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  deep-research-agents citation-grounding openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="76" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.960000">
       <div class="paper-main">
         <h3>Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents</h3>
         <p class="meta">Jiaqiang Li, Yajie Yang, Zhiheng Xi, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan, Jiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang Zheng, Qi Zhang, Lei Bai, Xingjun Ma, Tao Gui · Published 2026-09-10 · Source: OpenAlex, arXiv</p>
-        <p class="reason"><strong>Why included:</strong> Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
-
+        <p class="reason"><strong>Topic match:</strong> Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
+        <p class="quality-summary"><strong>Quality pending</strong></p>
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2609.11243">Open paper</a>
@@ -204,6 +162,22 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2609.11243v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2609.11243">DOI</a><a href="https://openalex.org/W7212281984">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies source-grounded research workflows, citation verification, or evidence-backed research reports.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>The available evidence suggests a credible contribution with some limitations. Automated score 76/100, medium confidence, based on partial full text.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: partial full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-v2 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: deterministic</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 3/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 8)</li><li>The available text identifies data or a benchmark used by the work. (page 2)</li><li>A baseline or comparison system is described. (page 3)</li><li>Quantitative evaluation signals were detected. (page 5)</li><li>The work reports an error or qualitative analysis. (page 9)</li><li>Limitations or threats to validity are acknowledged. (page 3)</li><li>Formal definitions or proof-oriented evidence is present. (page 5)</li></ul>
+    </details>
 
           <button class="citation-button" type="button" data-citation="Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents. Jiaqiang Li, Yajie Yang, Zhiheng Xi, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan, Jiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang Zheng, Qi Zhang, Lei Bai, Xingjun Ma, Tao Gui. 2026-09-10. https://arxiv.org/abs/2609.11243">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
@@ -310,7 +284,7 @@
       card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
-    if (emptyState) emptyState.hidden = visibleCount > 0;
+    if (emptyState) emptyState.hidden = visibleCount > 0 || cards.length === 0;
   }
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });

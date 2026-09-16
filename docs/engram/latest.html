@@ -17,6 +17,7 @@
             <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a>
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
+              <a href="review.html">Review candidates</a>
               <a href="about.html">About</a>
               <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/engram/latest.md">Markdown digest</a>
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
@@ -42,13 +43,13 @@
         <span>Sort</span>
           <select id="paper-sort">
           <option value="latest-relevant" selected>Latest relevant</option>
-          <option value="combined-desc">Relevance + quality</option><option value="quality-desc">Scholarly quality</option>
           <option value="score-desc">Screening match</option>
           <option value="published-desc">Publication date</option>
           <option value="first-seen-desc">First seen</option>
           <option value="title-asc">Title</option>
         </select>
       </label>
+
       <label class="select-field relevance-filter" for="relevance-filter">
         <span>Show</span>
         <select id="relevance-filter">
@@ -57,48 +58,11 @@
           <option value="maybe">Review candidates</option>
         </select>
       </label>
+
       <label class="toggle-control new-only-filter" for="new-only">
         <input id="new-only" type="checkbox">
         <span>New only</span>
       </label>
-
-      <details class="quality-controls">
-        <summary>Scholarly quality filters</summary>
-        <div class="quality-control-grid">
-          <label class="select-field" for="quality-minimum">
-            <span>Minimum score</span>
-            <input id="quality-minimum" type="number" min="0" max="100" step="5" value="0">
-          </label>
-          <label class="select-field" for="quality-recommendation">
-            <span>Recommendation</span>
-            <select id="quality-recommendation">
-              <option value="all">All</option><option value="strong">Strong</option><option value="promising">Promising</option><option value="uncertain">Uncertain</option><option value="weak">Weak</option><option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-confidence">
-            <span>Confidence</span>
-            <select id="quality-confidence">
-              <option value="all">All</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-scope">
-            <span>Assessment scope</span>
-            <select id="quality-scope">
-              <option value="all">All</option><option value="full_text">Full text</option><option value="partial_full_text">Partial full text</option><option value="title_and_abstract">Title and abstract</option><option value="metadata_only">Metadata only</option>
-            </select>
-          </label>
-          <label class="select-field" for="quality-visibility">
-            <span>Weak assessments</span>
-            <select id="quality-visibility">
-              <option value="configured">Use configured ranking</option><option value="show">Show without downranking</option><option value="hide">Hide downranked</option>
-            </select>
-          </label>
-          <label class="toggle-control" for="quality-include-unknown">
-            <input id="quality-include-unknown" type="checkbox" checked>
-            <span>Include unassessed papers</span>
-          </label>
-        </div>
-      </details>
 
     </section>
 
@@ -110,12 +74,12 @@
 
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-score="" data-quality-recommendation="unknown" data-quality-confidence="unknown" data-quality-scope="metadata_only" data-quality-downranked="false" data-combined-score="0.920000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="75" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
         <h3>Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations</h3>
         <p class="meta">Yunao Zheng, Bin Wen, Xiaojie Wang · Published 2026-09-03 · Source: OpenAlex, arXiv</p>
-        <p class="reason"><strong>Why included:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
-
+        <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+        <p class="quality-summary"><strong>Quality pending</strong></p>
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2609.03426">Open paper</a>
@@ -142,6 +106,22 @@
           </ul>
           <div class="secondary-links"><a href="https://arxiv.org/abs/2609.03426v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2609.03426">DOI</a><a href="https://openalex.org/W7208730657">OpenAlex</a></div>
           <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>The available evidence suggests a credible contribution with some limitations. Automated score 75/100, medium confidence, based on partial full text.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: partial full text</li>
+        <li>Paper type: replication</li>
+        <li>Assessment: quality-v2 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: deterministic</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 2/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 8)</li><li>A baseline or comparison system is described. (page 1)</li><li>Quantitative evaluation signals were detected. (page 9)</li><li>An ablation analysis is reported. (page 16)</li><li>Robustness or statistical analysis is reported. (page 8)</li><li>Limitations or threats to validity are acknowledged. (page 1)</li></ul>
+    </details>
 
           <button class="citation-button" type="button" data-citation="Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations. Yunao Zheng, Bin Wen, Xiaojie Wang. 2026-09-03. https://arxiv.org/abs/2609.03426">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
@@ -247,7 +227,7 @@
       card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
-    if (emptyState) emptyState.hidden = visibleCount > 0;
+    if (emptyState) emptyState.hidden = visibleCount > 0 || cards.length === 0;
   }
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });

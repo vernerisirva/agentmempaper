@@ -24,6 +24,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-08-29",
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-05 18:01:34",
   "notified_date": "2026-09-05",
@@ -34,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:24",
-    "generated_at": "2026-09-15 12:10:14",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -62,12 +63,16 @@
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-08-29",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "conditional-memory",
@@ -98,82 +103,179 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-05T18:01:34+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-09-16T09:14:49+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.92,
-    "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
-    ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concerns": [],
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 84/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "hich can degrade out-of-domain (OOD) performance. We propose Engram Adapter, a framework that repurposes pretraining-time conditional memory",
+        "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 2,
         "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experimental Setup",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "egal reasoning. Engram Adapter improves in-domain accuracy while preserving 99.4%--100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
+        "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 7,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
         "paraphrase": "Quantitative evaluation signals were detected.",
         "section": "Abstract",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing"
+        "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 14,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Limitations",
+        "signal_type": "positive"
       },
       {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": null,
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": null,
-        "signal_type": "concern"
+        "page": 16,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 14,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 16,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Related Work",
+        "signal_type": "positive"
       }
     ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.29327",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "No suitable baseline comparison was detected in the available text."
-    ],
-    "overall_quality_score": 78,
+    "missing_information": [],
+    "overall_quality_score": 84,
     "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
-      "Quantitative evaluation signals were detected."
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present."
     ],
-    "recommendation": "uncertain",
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "778bdec6ebf713c707283c2452a9bb566f055bb1b50a5e0654eed868528df50e",
-    "suppressed": false
+    "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": "25ac9303c7376abdf1dc80620c5408d049061536",
   "source": "arxiv",
@@ -206,7 +308,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

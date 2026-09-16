@@ -29,6 +29,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-09-15 12:05:47",
   "notified_date": "2026-09-15",
@@ -39,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 12:04:19",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-15 12:04:20",
     "metadata_sources": [
       "openalex"
@@ -63,12 +64,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "peer_reviewed",
+    "status_evidence": "OpenAlex records a published journal location: Advanced Science. Peer review inferred from venue metadata, not independently verified.",
     "year": "2026"
   },
   "publication_date": "2026-09-14",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "peer_reviewed",
+  "publication_status_evidence": "OpenAlex records a published journal location: Advanced Science. Peer review inferred from venue metadata, not independently verified.",
   "publication_year": "2026",
   "related_topics": [
     "ai-scientist",
@@ -96,12 +101,12 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-15T12:05:44+00:00",
+    "assessed_at": "2026-09-16T09:02:46+00:00",
     "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
-    "combined_rank_score": 0.9188437500000001,
+    "combined_rank_score": 0.93,
     "concerns": [],
     "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
     "confidence": "low",
@@ -147,6 +152,9 @@
         "signal_type": "missing"
       }
     ],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
       "No suitable baseline comparison was detected in the available text."
@@ -157,10 +165,13 @@
       "User, expert, operational, or deployment evidence is described.",
       "Limitations or threats to validity are acknowledged."
     ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "423a275f7186bbd771866ebf2c3cc71f69c188f7fee362142ba4359c278d7e6a",
-    "suppressed": false
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

@@ -23,6 +23,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-09-15 12:01:19",
   "notified_date": "2026-09-15",
@@ -33,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:44",
-    "generated_at": "2026-09-15 12:01:19",
+    "generated_at": "2026-09-16 10:12:51",
     "last_seen_at": "2026-09-15 11:59:44",
     "metadata_sources": [
       "openalex"
@@ -57,12 +58,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "repository_only",
+    "status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-08",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "repository_only",
+  "publication_status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
@@ -95,28 +100,181 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-16T09:13:41+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concerns": [
+      "The paper provides no empirical, formal, or case-based validation of the claim that human supervision is the current guarantee of attractor stabilization.",
+      "The related-work section asserts that recent technical movements are 'downstream confirmations' of the HibriMind ontology but does not analyze their methods, results, or limitations to substantiate this claim.",
+      "The paper does not address limitations of the proposed framework, such as scalability of human jurisdiction, cognitive overload, or the feasibility of continuous attractor comparison in practice.",
+      "The operational protocol is presented as a list of imperatives without evidence that following it prevents attractor capture or improves trajectory safety.",
+      "The paper relies heavily on proprietary terminology (JSA, Atenius, HibriMind) without defining the institutional or technical context in which these entities operate."
+    ],
+    "concise_summary": "The paper presents a clearly articulated conceptual framework for understanding human supervision as attractor stabilization in longitudinal human-AI interaction. However, it provides no empirical, formal, or operational validation of its central claims, does not engage substantively with related work, and does not address limitations. The contribution is primarily terminological.",
+    "confidence": "high",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 1,
+      "evidence_to_claim_alignment": 2,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 1,
+      "scholarly_novelty_or_value": 2
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "a problem already formalized within the HibriMind corpus: in longitudinal human-AI interaction, the object of work is not merely transmi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "direction Becoming autonomous from O0 Continuous comparison with O0 External content Evidence or context Becoming operational authority Data/ins",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "The resulting thesis is concise: human supervision stabilizes the attractor because only the human operator presently holds sovereign authority to validate whether a transformation belongs to the authorized object or constitutes a capture of the trajectory.",
+        "explanation": "The paper clearly articulates its main claim: human supervision stabilizes the attractor because only the human operator holds sovereign authority to validate transformations of the authorized object.",
+        "page": 1,
+        "paraphrase": "The central thesis is stated explicitly and concisely.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "O0 is the initial object, purpose, or jurisdictional nucleus authorized by the human operator. It is not merely the first prompt. It is the authorized direction of the work.",
+        "explanation": "The paper defines O0, operational attractor, and marginal attractor as distinct entities with specific functions and risks, making the conceptual framework understandable.",
+        "page": 3,
+        "paraphrase": "Core concepts are explicitly defined and distinguished.",
+        "section": "Core Concepts",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "The protocol for HibriMind/Atenius IH-001 is: 1. Before using external content, identify O0. 2. Classify incoming content as evidence, context, instruction, or ambiguous material.",
+        "explanation": "The paper proposes a conceptual model and operational protocol but provides no methodology for evaluating whether the protocol works, how attractor capture is detected in practice, or how the framework can be operationalized beyond a list of imperatives.",
+        "page": 6,
+        "paraphrase": "No method for testing or applying the framework is described.",
+        "section": "Operational Protocol",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": null,
+        "explanation": "The paper does not present any test, case study, simulation, or formal proof demonstrating that the proposed model or protocol achieves attractor stabilization or prevents indirect prompt injection.",
+        "page": null,
+        "paraphrase": "No empirical, formal, or operational evaluation of the proposed framework was detected.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Several recent technical directions appear as downstream confirmations of the HibriMind ontology.",
+        "explanation": "The paper lists several recent works and states they are 'downstream confirmations' but does not extract specific findings, compare methods, or show how their results support the HibriMind framework beyond thematic similarity.",
+        "page": 5,
+        "paraphrase": "The claim that recent technical movements confirm the HibriMind ontology is asserted without substantive analysis.",
+        "section": "Alignment With Recent Technical Movements",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "These works do not found the HibriMind object. They re-enter it as external confirmations. They remain, in large part, situated within a human-tool vocabulary.",
+        "explanation": "The paper references recent arXiv papers on trajectory safety, memory poisoning, and agent drift but does not analyze their methods, results, or limitations. The gap positioning relies on asserting that these works remain in a 'human-tool vocabulary' without demonstrating how or why this is insufficient.",
+        "page": 5,
+        "paraphrase": "Related work is cited but not engaged with substantively.",
+        "section": "Alignment With Recent Technical Movements",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": null,
+        "explanation": "The paper does not address potential failure modes of the framework, such as human cognitive overload, ambiguity in identifying O0, scalability of continuous attractor comparison, or the possibility that human operators themselves may be influenced by marginal attractors.",
+        "page": null,
+        "paraphrase": "No limitations or boundary conditions of the proposed framework are discussed.",
+        "section": null,
+        "signal_type": "missing"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "The central claim of this paper is that human supervision is the current guarantee of attractor stabilization in longitudinal human-AI trajectories.",
+        "explanation": "The paper introduces new terminology (O0, operational attractor, marginal attractor, object custody) to describe problems already identified in the literature (prompt injection, agent drift, memory poisoning). It does not demonstrate that this reframing enables new solutions, predictions, or analyses.",
+        "page": 7,
+        "paraphrase": "The contribution is primarily a terminological reframing without demonstrated practical or theoretical advance.",
+        "section": "Conclusion",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "The protocol for HibriMind/Atenius IH-001 is: 1. Before using external content, identify O0.",
+        "explanation": "The framework references JSA, Atenius, and HibriMind without defining their institutional or technical context. No code, data, or reproducible protocol artifacts are provided.",
+        "page": 6,
+        "paraphrase": "The paper relies on undefined proprietary entities and provides no artifacts or data for verification.",
+        "section": "Operational Protocol",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "3.1 O0: The Authorized Object; 3.2 Operational Attractor; 3.3 Marginal Attractor; 3.4 Attractor Stabilization",
+        "explanation": "The paper follows a clear logical progression from problem statement to concept definition to proposed model to implications. Terminology is used consistently across sections.",
+        "page": 3,
+        "paraphrase": "The paper is well-structured and uses consistent terminology throughout.",
+        "section": "Core Concepts",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://zenodo.org/records/22661593/files/Human_Supervision_as_Attractor_Stabilization_HibriMind.pdf",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+      "No empirical, formal, or operational evaluation of the proposed framework was detected in the available text.",
+      "No case study or worked example demonstrating how the protocol would detect or prevent an actual attractor capture was detected.",
+      "No discussion of limitations, failure modes, or boundary conditions of the proposed model was detected.",
+      "No evidence that the related technical works cited actually confirm the HibriMind ontology beyond superficial thematic similarity was detected."
+    ],
+    "overall_quality_score": 35,
+    "paper_type": "position_or_conceptual",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "The paper clearly defines its core concepts (O0, operational attractor, marginal attractor, attractor stabilization) and distinguishes them from one another.",
+      "The central thesis is stated explicitly and repeatedly, making the intended contribution easy to identify.",
+      "The paper proposes an operational protocol with ten concrete steps for maintaining object custody.",
+      "The paper identifies a genuine gap: existing agent-safety work is situated in a human-tool paradigm rather than a trajectory-custody paradigm."
+    ],
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "6a57e0680ed4e72f44cbe234441b20db0c6eb8cd2cb7b752282caaf4583c3363",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -145,7 +303,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

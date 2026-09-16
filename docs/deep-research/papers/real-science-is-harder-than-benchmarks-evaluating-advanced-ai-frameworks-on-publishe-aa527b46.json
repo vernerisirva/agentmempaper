@@ -34,6 +34,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-08 11:26:21",
   "notified_date": "2026-09-08",
@@ -44,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-08 11:25:53",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-14 13:10:59",
     "metadata_sources": [
       "openalex"
@@ -68,12 +69,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "Source metadata identifies a working manuscript/preprint; peer review is not established.",
     "year": "2026"
   },
   "publication_date": "2026-09-07",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "Source metadata identifies a working manuscript/preprint; peer review is not established.",
   "publication_year": "2026",
   "related_topics": [
     "ai-scientist",
@@ -102,60 +107,137 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-08T11:26:18+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessed_at": "2026-09-16T09:02:54+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
-    "combined_rank_score": 0.9188437500000001,
+    "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 72/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 2,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
-        "section": null,
-        "signal_type": "missing"
+        "dimension": "methodological_rigor",
+        "excerpt": "n design. Recent findings from the largest FLAb2 benchmark claim that while universal prediction remains a challenge, specific protein l",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Introduction",
+        "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
+        "excerpt": "evaluation. Finally, the outputs are analyzed and compared with internal, intermediate AI results and the original papers.",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "aditional methods while maintaining near-quantum accuracy. 21,22 These AI -driven approaches are increasingly combined with ML-predicted struct",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ological improvement that facilitates evaluating robustness of reported results. However, no AI framework approached the scale or comple",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "r -quantum accuracy while overcoming many of the limitations of conventional first - principles methods. This has opened the door to studyin",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "ailable in the FLAb benchmark repository https://github.com/Graylab/FLAb/tree/main/data The expression dataset can be accessed at: https:/",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 10,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Methods",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ickland AC, et al. GPQA: A Graduate -Level Google-Proof Q&A Benchmark. arXiv. 2023; doi: 10.48550/arXiv.2311.12022 4. Artificial Anal",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Methods",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": ") is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made The copyright holder for thi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
         "excerpt": null,
         "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
         "page": null,
-        "paraphrase": "No quantitative, user, expert, or operational evaluation was detected in the available text.",
+        "paraphrase": "No reproducible review or selection methodology was detected.",
         "section": null,
         "signal_type": "missing"
       }
     ],
+    "full_text_assessed": false,
+    "full_text_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text.",
-      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+      "No reproducible review or selection methodology was detected."
     ],
-    "overall_quality_score": 42,
-    "paper_type": "empirical_research",
-    "positive_signals": [],
-    "recommendation": "uncertain",
+    "overall_quality_score": 72,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available.",
+      "Formal definitions or proof-oriented evidence is present.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
+    ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "6b3648a903e22e62afb04c292ea2fb3e04fd242ebbb872eaab9e1c154feb39a3",
-    "suppressed": false
+    "source_content_hash": "08fadd217f29b1f7f28989d36bbbf53b5a899b433d4c3881aa7441c87dcd5bbb",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -184,7 +266,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

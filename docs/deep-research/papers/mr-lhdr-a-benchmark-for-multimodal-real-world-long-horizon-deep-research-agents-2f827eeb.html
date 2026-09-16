@@ -58,13 +58,19 @@
             <p class="section-kicker">Abstract / summary</p>
             <p>Deep research agents are increasingly capable of web search, tool use, multimodal evidence analysis, and information synthesis. However, existing benchmarks mainly evaluate medium-horizon exploration and rarely test whether agents can sustain long, dependency-heavy research processes. We introduce Mr. LHDR (Multimod...</p>
           </section>
-
-        <section class="detail-panel wide quality-detail-panel">
-          <p class="section-kicker">Automated evidence-based assessment</p>
-          <h2>Not enough evidence assessed yet</h2>
-          <p>A missing assessment is treated as unknown, not as evidence that the paper is weak.</p>
-        </section>
-
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a clearly scoped benchmark contribution with explicit construction principles, a defined evaluation protocol, and empirical results across 25 systems. The central claims are supported by quantitative evidence in the supplied text, including main results, an image ablation with bootstrap confidence intervals, checklist-length analysis, and failure-mode diagnostics. The authors explicitly distinguish what the metrics do and do not measure, and limitations are acknowledged. The related-work section positions Mr.LHDR against representative benchmarks and explains the gap it addresses. The available partial text is sufficient to establish substantive manuscript evidence for the six required dimensions.</p>
+      <p>The assessment is based on partial full text limited to 120,000 characters, so some appendix-level details, complete judge robustness analyses, and full split-level results are not available. Confidence intervals for many system comparisons overlap, and the authors themselves note that most per-model differences are not statistically separable. These factors limit the strength of ranking claims but do not undermine the benchmark contribution itself.</p>
+      <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Full text inspected: true. Scope: partial_full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-v2. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T09:12:58+00:00.</p>
+        <ul><li>The benchmark contribution is explicitly stated with its scope and distinguishing features. — page 2</li><li>The benchmark fills an identified gap in long-horizon, dependency-heavy multimodal research evaluation. — page 2</li><li>The construction pipeline includes explicit quality gates and a four-stage validation protocol. — page 8</li><li>The evaluation includes 25 systems across four model groups with four complementary metrics. — page 11</li><li>The central claim that final-answer accuracy overstates complete task success is directly supported by OA-SA gaps. — page 11</li><li>The related-work section compares Mr.LHDR with representative benchmarks along relevant dimensions. — page 5</li><li>The authors explicitly state what DACS does and does not measure. — page 3</li><li>The paper provides formal metric definitions and reports bootstrap confidence intervals for the ablation. — page 12</li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
           <section class="detail-panel wide structured-card-panel">
             <p class="section-kicker">Structured research card</p>
             <dl class="detail-metadata structured-card-fields">
@@ -100,7 +106,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

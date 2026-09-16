@@ -35,6 +35,13 @@
         "null"
       ]
     },
+    "library_admission": {
+      "enum": [
+        "main",
+        "review",
+        "not_surfaced"
+      ]
+    },
     "openalex_id": {
       "type": [
         "string",
@@ -46,6 +53,17 @@
     },
     "publication": {
       "type": "object"
+    },
+    "publication_status": {
+      "enum": [
+        "peer_reviewed",
+        "preprint",
+        "repository_only",
+        "unknown"
+      ]
+    },
+    "publication_status_evidence": {
+      "type": "string"
     },
     "related_topics": {
       "items": {
@@ -135,6 +153,21 @@
           },
           "type": "array"
         },
+        "full_text_assessed": {
+          "type": "boolean"
+        },
+        "full_text_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gate_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "missing_information": {
           "items": {
             "type": "string"
@@ -158,6 +191,9 @@
           },
           "type": "array"
         },
+        "rationale": {
+          "type": "string"
+        },
         "recommendation": {
           "enum": [
             "strong",
@@ -178,6 +214,17 @@
             "string",
             "null"
           ]
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "uncertain",
+            "insufficient",
+            "not_assessed"
+          ]
+        },
+        "uncertainty": {
+          "type": "string"
         }
       },
       "required": [

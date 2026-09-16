@@ -29,6 +29,7 @@
   "last_seen_date": "2026-09-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-04 11:25:22",
   "notified_date": "2026-09-04",
@@ -39,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-04 11:24:36",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-10 11:26:32",
     "metadata_sources": [
       "openalex",
@@ -67,12 +68,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-03",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "research-adjacent"
@@ -98,28 +103,78 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-07T12:42:15+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v1",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.45,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 82/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "rom, 1990). To protect the commons from exploits, we propose to adopt institutional mechanisms, such as graduated sanctioning and collective",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Page 1 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": ". Kohli. Formal Conjectures: An Open and Evolving Benchmark for Verified Discovery in Mathematics.arXiv preprint arXiv:2605.13171, May 2026",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 11,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Page 11 excerpt",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "026-08-27. L. de Moura and S. Ullrich. The Lean 4 theorem prover and programming language. In A. Platzer and G. Sutcliffe, editors,Automa",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 11,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Page 11 excerpt",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": null,
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+    ],
+    "overall_quality_score": 82,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "rationale": "Scientific quality has not been assessed under the manuscript evidence gate.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "79675effc26f8a7f68e9222e9f266fe3637407f2ed2ca15408a387b054e9c135",
+    "status": "not_assessed",
+    "suppressed": false,
+    "uncertainty": "Legacy assessment retained; manuscript review is required before promotion."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -152,7 +207,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

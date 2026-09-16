@@ -28,6 +28,7 @@
   "last_seen_date": "2026-09-12",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-10",
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-11 11:27:55",
   "notified_date": "2026-09-11",
@@ -38,7 +39,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-11 11:26:39",
-    "generated_at": "2026-09-15 12:01:19",
+    "generated_at": "2026-09-16 10:12:51",
     "last_seen_at": "2026-09-12 10:52:10",
     "metadata_sources": [
       "arxiv"
@@ -62,12 +63,16 @@
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-10",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
@@ -99,28 +104,128 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-16T09:04:28+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concerns": [
+      "Meaningful evaluation appears to be deferred to future work in the available text."
+    ],
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 69/100, high confidence, based on full text.",
+    "confidence": "high",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "utions of this work are summarized as follows: 1. We propose HROS, a layered embodied-agent runtime that unifies robot resources, autonomy s",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ped robots are a promising carrier for this task. Compared with wheeled platforms, which are most effective on regular surfaces, legged systems",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "zation error below 10 cm, local obstacle-response latency below 200 ms, representative hazard-detection rates of 85\u201395%, and 99% success in alarm delivery and structured-report gen",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "rtial fusion performance in terms of accuracy and robustness. Among recent representative methods, Fast-LIO2 is a typical LiDAR-Inertial Odo",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ecific adapters. This fragmentation creates three limitations. First, semantic task intent is easily disconnected from robot pose, observatio",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Hub repository, 2026. [Online]. Available:https://github.com/openclaw/openclaw [14] S. Bai, Y. Cai, R. Chen, et al., \u201cQwen3-VL technical rep",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 13,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ain reproducible and auditable. 8 Limitations and Future Work The current study demonstrates an integrated field system, but several limitati",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 12,
+        "paraphrase": "Meaningful evaluation appears to be deferred to future work in the available text.",
+        "section": "Discussion",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
+      }
+    ],
+    "full_text_assessed": false,
+    "full_text_url": "https://arxiv.org/pdf/2609.11225",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 69,
+    "paper_type": "survey_or_review",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available."
+    ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "recommendation": "uncertain",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "fdf3d3d1291697320ed9113e12815aabcb93b7e8397530a686d28b7d9ee2f53b",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -149,7 +254,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -39,6 +39,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-11 11:28:40",
   "notified_date": "2026-09-11",
@@ -49,7 +50,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:07",
-    "generated_at": "2026-09-15 12:05:47",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-15 12:04:19",
     "metadata_sources": [
       "openalex",
@@ -78,12 +79,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-10",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "benchmark",
@@ -112,28 +117,137 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-16T09:12:58+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concise_summary": "The paper introduces Mr.LHDR, a benchmark for long-horizon multimodal deep research with 102 items constructed from hidden Node-Relation graphs. It defines OA, SA, CS, and DACS metrics and evaluates 25 systems, finding that final-answer accuracy overstates dependency-consistent task success. The contribution is clearly scoped, the methodology is described with validation gates, and the central claims are supported by quantitative evidence including an image ablation and failure-mode analysis. Limitations are acknowledged, and the related-work positioning is adequate for the benchmark's claims.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "We introduce Mr.LHDR (Multimodal real-world Long-Horizon Deep Research), a benchmark for real-world open-web research tasks. Mr.LHDR contains 102 questions across eight categories.",
+        "explanation": "The introduction clearly defines Mr.LHDR as a benchmark for long-horizon multimodal deep research and lists three design principles and three contributions.",
+        "page": 2,
+        "paraphrase": "The benchmark contribution is explicitly stated with its scope and distinguishing features.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "MM-BrowseComp-style tasks add multimodal browsing, but remain concentrated on short- to medium-horizon research: MM-BrowseComp contains only 3.0 checklist items per question on average (Li et al., 2025d), leaving long chains of dependent evidence steps largely untested.",
+        "explanation": "The paper contrasts Mr.LHDR with existing benchmarks such as MM-BrowseComp, which averages only 3.0 checklist items per question, and positions the contribution around prerequisite-linked evidence structures.",
+        "page": 2,
+        "paraphrase": "The benchmark fills an identified gap in long-horizon, dependency-heavy multimodal research evaluation.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Table 2: Quality gates applied before an item enters the Mr.LHDR evaluation set. These gates operationalize answer uniqueness, no path leakage, irreducibility, source support, multimodal necessity, shortcut filtering, and metadata consistency.",
+        "explanation": "The paper describes answer uniqueness, no path leakage, irreducible checklist, source support, multimodal necessity, shortcut filtering, and metadata audit gates, with a structured validation protocol.",
+        "page": 8,
+        "paraphrase": "The construction pipeline includes explicit quality gates and a four-stage validation protocol.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Table 4: Main Mr.LHDR results for all 25 systems in the current evaluation scope, grouped by model capability. Overall columns report final-answer accuracy (OA), strict answer-and-process accuracy (SA), checklist score (CS), and dependency-aware checklist score (DACS).",
+        "explanation": "The main results table reports OA, SA, CS, and DACS for tool-augmented VLMs, tool-free VLMs, deep research systems, and framework-based agents.",
+        "page": 11,
+        "paraphrase": "The evaluation includes 25 systems across four model groups with four complementary metrics.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "GPT-5.5 drops from 43.1% OA to 34.3% SA, a gap of 8.8 points. Similarly, o4-mini drops from 35.3% OA to 20.6% SA, a gap of 14.7 points, and o3 Deep Research drops from 32.4% OA to 19.6% SA, a gap of 12.8 points.",
+        "explanation": "The paper reports specific OA-to-SA drops for representative systems, such as GPT-5.5 from 43.1% OA to 34.3% SA, supporting the claim that correct final answers often coexist with missing required conclusions.",
+        "page": 11,
+        "paraphrase": "The central claim that final-answer accuracy overstates complete task success is directly supported by OA-SA gaps.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Table 1 compares Mr.LHDR with representative short-answer browsing and structured-search benchmarks in terms of retrieval setting, multimodal requirements, output form, gold intermediate structure, and prerequisite-gated scoring.",
+        "explanation": "Table 1 compares Mr.LHDR with BrowseComp, MM-BrowseComp, MMSearch-Plus, BrowseComp-V 3, DeepSearchQA, and MC-Search on retrieval setting, multimodal requirements, output form, gold structure, and prerequisite-gated scoring, which is adequate for the benchmark's claims.",
+        "page": 5,
+        "paraphrase": "The related-work section compares Mr.LHDR with representative benchmarks along relevant dimensions.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Because these metrics neither observe the agent\u2019s internal reasoning nor establish that a stated conclusion came from actual retrieval, they evaluate dependency-consistent stated conclusions rather than actual evidence-chain completion.",
+        "explanation": "The paper clarifies that DACS evaluates dependency-consistent stated conclusions rather than actual evidence-chain completion, avoiding overclaiming about retrieval provenance.",
+        "page": 3,
+        "paraphrase": "The authors explicitly state what DACS does and does not measure.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "CS rises from 26.9% to 39.3% (gain 12.4, 95% CI [6.9, 18.3]), while DACS rises from 21.6% to 34.2% (gain 12.6, CI [6.9, 18.9]).",
+        "explanation": "Equations 1-5 define OA, SA, CS, and DACS, and the image ablation reports 95% bootstrap CIs with a specified seed.",
+        "page": 12,
+        "paraphrase": "The paper provides formal metric definitions and reports bootstrap confidence intervals for the ablation.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.11318",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "missing_information": [
+      "Extraction was limited to 120000 characters.",
+      "Extraction was limited to 120000 characters; appendix-level details and complete split-level results are not fully available."
+    ],
+    "overall_quality_score": 77,
+    "paper_type": "dataset_or_benchmark",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available.",
+      "The benchmark construction process is described with quality gates and validation stages.",
+      "The evaluation protocol defines four complementary metrics with formal equations.",
+      "Quantitative results are reported for 25 systems across four model groups.",
+      "A controlled image ablation with bootstrap confidence intervals is reported.",
+      "Checklist-length and dependency-depth analyses are reported.",
+      "Failure-mode analysis is reported with a defined taxonomy.",
+      "Limitations and scope boundaries are explicitly acknowledged.",
+      "Code and data availability are described."
+    ],
+    "rationale": "The paper presents a clearly scoped benchmark contribution with explicit construction principles, a defined evaluation protocol, and empirical results across 25 systems. The central claims are supported by quantitative evidence in the supplied text, including main results, an image ablation with bootstrap confidence intervals, checklist-length analysis, and failure-mode diagnostics. The authors explicitly distinguish what the metrics do and do not measure, and limitations are acknowledged. The related-work section positions Mr.LHDR against representative benchmarks and explains the gap it addresses. The available partial text is sufficient to establish substantive manuscript evidence for the six required dimensions.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "d316fe1ef881e74a901bebb4c374e20decdb3f062310656c075f4a5270ea8146",
+    "status": "pass",
+    "suppressed": false,
+    "uncertainty": "The assessment is based on partial full text limited to 120,000 characters, so some appendix-level details, complete judge robustness analyses, and full split-level results are not available. Confidence intervals for many system comparisons overlap, and the authors themselves note that most per-model differences are not statistically separable. These factors limit the strength of ranking claims but do not undermine the benchmark contribution itself."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -167,7 +281,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

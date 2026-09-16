@@ -43,6 +43,7 @@
   "last_seen_date": "2026-09-05",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-07-12",
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-05 18:01:34",
   "notified_date": "2026-09-05",
@@ -53,7 +54,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:14",
-    "generated_at": "2026-09-15 12:10:14",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-05 17:59:14",
     "metadata_sources": [
       "arxiv"
@@ -77,12 +78,16 @@
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-01-12",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "conditional-memory",
@@ -112,35 +117,44 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-05T17:59:14+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessed_at": "2026-09-16T09:04:41+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
     "combined_rank_score": 0.92,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 2,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "e retrieval through computation. To address this, we introduce conditional memory as a complementary sparsity axis, instantiated via Engram, a",
+        "excerpt": "e retrieval through computation. To address this, we introduce conditional memory as a complementary sparsity axis, instantiated viaEngram, a",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
         "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ivated-parameter budget fixed. Full training-time benchmark trajectories are reported in Appendix B. Benchmark(Metric)# Shots Dense-4B MoE-",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
         "section": "Abstract",
         "signal_type": "positive"
       },
@@ -148,24 +162,71 @@
         "dimension": "evaluation_or_validation_strength",
         "excerpt": "e over a strictly iso-parameter and iso-FLOPs MoE baseline. Most notably, while the memory module is expected to aid knowledge retrieval (",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
         "paraphrase": "A baseline or comparison system is described.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "e modeling effectiveness against the system-level latency constraints detailed in Section 2.5. 2.4. Integration with Multi-branch Architecture In this work, rather than standard",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "compute window available for hiding latency, our ablation in Section 6.2 shows that modeling performance favors early intervention to off",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "ension is largely preserved by the backbone. 6.3. Sensitivity Analysis To characterize the functional contribution of the Engram module, we evaluate t",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 17,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "neration sparse models. Code available at:https://github.com/deepseek-ai/Engram. 1. Introduction Sparsity is a recurring design principle fo",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
         "section": "Abstract",
         "signal_type": "positive"
       }
     ],
+    "full_text_assessed": false,
+    "full_text_url": "https://arxiv.org/pdf/2601.07372",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 78,
-    "paper_type": "unclear",
+    "overall_quality_score": 65,
+    "paper_type": "position_or_conceptual",
     "positive_signals": [
       "The contribution is stated explicitly.",
-      "A baseline or comparison system is described."
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Robustness or statistical analysis is reported.",
+      "Code, data, or research artifacts are described as available."
     ],
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "2ef089d959d8b6a2ebd667fe7af729861b900fc975acf724c47e18c2f4fdfd22",
-    "suppressed": false
+    "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -194,7 +255,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

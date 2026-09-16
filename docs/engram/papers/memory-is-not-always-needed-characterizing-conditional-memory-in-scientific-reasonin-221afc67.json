@@ -31,6 +31,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-08-25",
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-06 11:06:52",
   "notified_date": "2026-09-06",
@@ -41,7 +42,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-06 09:42:09",
-    "generated_at": "2026-09-15 12:10:14",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -69,12 +70,16 @@
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-08-25",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "conditional-memory"
@@ -100,60 +105,117 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-06T09:43:13+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
+    "assessed_at": "2026-09-16T09:04:39+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-v2",
     "assessor_model": null,
     "assessor_type": "deterministic",
     "combined_rank_score": 0.92,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 74/100, high confidence, based on full text.",
+    "confidence": "high",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 4,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "knowledge-circuit nodes. Based on these analyses, we propose a Knowledge Boundary-Aware Router that uses task-specific input proxies availab",
+        "excerpt": "knowledge-circuit nodes. Based on these analyses, we propose a Knowledge Boundary-Aware Router that uses task-specificinputproxiesavailableb",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Abstract",
         "signal_type": "positive"
       },
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ly across inputs, tasks, and injection locations. Compared with static and activation-rate-matched random routing, our approach more consistent",
+        "dimension": "methodological_rigor",
+        "excerpt": "routable back- bone families. For each family and benchmark, we com- pare the base model, its domain-adapted LoRA variant, a memory-only va",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 5,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "across in- puts, tasks, and injection locations. Compared with static and activation-rate-matched random routing, our approach more consistent",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
         "paraphrase": "A baseline or comparison system is described.",
         "section": "Abstract",
         "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ering Model Accuracy Macro Prec. Macro Rec. Macro F1 Exact Match Kendall Accuracy Brier\u2193 DeepSeek-V4-Pro0.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.57\u00b10.0100.82\u00b10.0080.70\u00b10.0070.19\u00b10",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "gnalsdefinetheanalysiscohortsforthebound- ary and ablation studies. For task-level performance, BioProBench ERR uses ac- curacy and macro",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "TEM knowl- edge, specialized problem solving, and theorem application (Hendrycks et al. 2021; Wang et al. 2024a; Rein et al. 2023; Chenet",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": null,
+        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+        "page": null,
+        "paraphrase": "No reproducible review or selection methodology was detected.",
+        "section": null,
+        "signal_type": "missing"
       }
     ],
+    "full_text_assessed": false,
+    "full_text_url": "https://arxiv.org/pdf/2608.23982",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 78,
-    "paper_type": "unclear",
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
+    "overall_quality_score": 74,
+    "paper_type": "survey_or_review",
     "positive_signals": [
       "The contribution is stated explicitly.",
-      "A baseline or comparison system is described."
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Formal definitions or proof-oriented evidence is present."
     ],
-    "recommendation": "uncertain",
+    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "bf0fc97a4e5185b0119b7f188a285dd6d9e9ccd30542371fcbc04413b50fbce4",
-    "suppressed": false
+    "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
   },
   "semantic_scholar_id": "d447f4f7bd455c4d384e8fc1fb932ba295581f3a",
   "source": "arxiv",
@@ -186,7 +248,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

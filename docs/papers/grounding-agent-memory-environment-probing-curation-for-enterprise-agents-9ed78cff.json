@@ -29,6 +29,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-09-11 11:27:55",
   "notified_date": "2026-09-11",
@@ -39,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:26:40",
-    "generated_at": "2026-09-15 12:01:19",
+    "generated_at": "2026-09-16 10:12:51",
     "last_seen_at": "2026-09-15 11:59:55",
     "metadata_sources": [
       "openalex",
@@ -67,12 +68,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-10",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
@@ -106,28 +111,180 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-16T09:14:21+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 1.0,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text."
+    ],
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 84/100, medium confidence, based on partial full text.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 1,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "lize partial evidence, or retain stale knowledge. We introduce environment-probing curation, a deployment-compatible ex- tensionthatgivesanexi",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "he number of task-agent tool calls counted by the benchmark. Its pass-discounted reward is ri =p i \u0010 1\u2212 qi B \u0011 .(3) We setB= 15SQL-query ca",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Method",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "eries from 8.8 to 4.7 per question and task-agent cost from $3.38 to $1.68. Across six APEX worlds, all 18 memory- versus-baseline mean reward comparisons are positive and task-age",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "0.748 on Sonnet and from 0.696 to 0.721 on Opus. Qualitative analysis of memory records.Figure 3 com- pares representative records rather than one-to",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "The work reports an error or qualitative analysis.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "opilot SDK. Software and docu- mentation: https://github.com/github/copilot-sdk. He,Z.;Wang,Y.;Zhi,C.;Hu,Y.;Chen,T.-P.;Yin,L.;Chen, Z.; Wu,",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "r TASK S\u1d62 Grade TASK S\u1d62 ... n32 Memory index id \u00b7 lemma \u00b7 usage metadata \u00b7 embedding query q memory records ASYNCHRONOUS CURATION \u03c4\u1d62: r",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "We introduce environment-probing curation, a deployment-compatible extension that gives an existing asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories.",
+        "explanation": "The abstract and introduction clearly define environment-probing curation as a deployment-compatible extension that gives the curator agent read-only world tools to check, scope, and refresh candidate memories.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "CLBench uses two schedules (Asawa et al. 2026). The primary 40-question drift schedule hides a SQLite schema that changes after question 20... Adapted APEX contributes 90 management-consulting tasks from six shared document worlds.",
+        "explanation": "The paper uses CLBench database exploration and 90 adapted APEX management-consulting tasks, with detailed descriptions of schedules, models, and metrics.",
+        "page": 4,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiment Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "On CLBench, probing raises pass rate from 39% to 73% and pass-discounted reward from 8.60 to 22.60 while reducing queries from 8.8 to 4.7 per question and task-agent cost from $3.38 to $1.68.",
+        "explanation": "The paper reports pass rates, rewards, tool calls, token usage, and costs across multiple configurations and models.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Qualitative analysis of memory records. Figure 3 compares representative records rather than one-to-one rewrites.",
+        "explanation": "The paper includes qualitative analysis of memory records, comparing trajectory-only and probing curator outputs.",
+        "page": 5,
+        "paraphrase": "The work reports an error or qualitative analysis.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent engine as GitHub Copilot CLI.",
+        "explanation": "The paper references the GitHub Copilot SDK and provides prompt templates and implementation details in appendices.",
+        "page": 9,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Appendix A",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Let S = (S1,...,SN) be an online stream of related tasks in an environment whose state is Ei when task Si arrives.",
+        "explanation": "The method section provides formal notation for the online setting, task agent, curator agent, and pass-discounted reward.",
+        "page": 3,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Method",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "GHCP + Mem (w/ Env Probing) achieves the best task-agent reward gain per dollar in five of six worlds (Table 2); GHCP + Mem is marginally better in the remaining world.",
+        "explanation": "The paper claims probing gives the best task-agent reward gain per dollar in five of six APEX worlds, but the available text does not provide a full statistical comparison or confidence intervals for the cost-adjusted efficiency metric in Table 2.",
+        "page": 6,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": "Results",
+        "signal_type": "concern"
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.11060",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "overall_quality_score": 84,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "Quantitative evaluation signals were detected.",
+      "The work reports an error or qualitative analysis.",
+      "Code, data, or research artifacts are described as available.",
+      "Formal definitions or proof-oriented evidence is present."
+    ],
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -160,7 +317,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

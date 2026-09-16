@@ -29,6 +29,7 @@
   "last_seen_date": "2026-09-12",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-04",
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-07 12:42:53",
   "notified_date": "2026-09-07",
@@ -39,7 +40,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-07 12:42:20",
-    "generated_at": "2026-09-15 12:10:14",
+    "generated_at": "2026-09-16 10:12:57",
     "last_seen_at": "2026-09-12 10:54:19",
     "metadata_sources": [
       "arxiv"
@@ -63,12 +64,16 @@
     "precision": "day",
     "publication_date_confidence": "high",
     "source": "arxiv",
+    "status": "preprint",
+    "status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-04",
   "publication_date_confidence": "high",
   "publication_date_precision": "day",
   "publication_date_source": "arxiv",
+  "publication_status": "preprint",
+  "publication_status_evidence": "arXiv manuscript identifier; no external publication established by the available metadata.",
   "publication_year": "2026",
   "related_topics": [
     "conditional-memory"
@@ -94,50 +99,214 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-07T12:42:53+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-09-16T09:13:55+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.92,
-    "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concerns": [
+      "Some baseline comparisons are literature-reported rather than controlled head-to-head.",
+      "The 80/20 sampling strategy is acknowledged as not fully validated through controlled ablation.",
+      "The paper is a preprint and has not undergone external peer review."
+    ],
+    "concise_summary": "ProtLingo augments a pretrained ESM2-150M backbone with centered latent N-gram memory and sparse MoE routing. The paper provides clear architectural details, training configuration, and evaluation protocols. Quantitative results on ProteinGym, FLIP, and CASP15 contact prediction, plus ablations and biological analyses, support the claims of parameter-efficient mutation-sensitive modeling and preserved structural representations. Limitations are acknowledged, including bounded gains and unvalidated sampling choices.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "istently improving mutation-sensitive prediction. We introduce ProtLingo, an efficient PLM framework that augments a pretrained single-sequenc",
+        "excerpt": "stently improving mutation- sensitive prediction. We introduce ProtLingo, an efficient PLM framework that augments a pretrained single-sequenc",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Abstract",
         "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "provided in the supplementary material. Training Dataset.ProtLingo is trained on the same large- scale sequence source as ESM. The train",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ctedCASP15subsetwith21domains.The650M- scale ESM2 baseline obtains the strongest absolute perfor- manceunderthisprotocol.ProtLingoachieves",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "as a claim of state-of-the-art contact prediction accuracy. 4.2 Protein Fitness Prediction We evaluate mutation-sensitive protein function pred",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "cture-relevantlong-rangeresiduerepresen- tations. Ablation studies further examine centered latentN- gram memory and MoE upcycling. The re",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "ownstream performance (Akiyama et al. 2026). This limitation motivates architectures that use model capacity more effectively and incorporat",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "We introduce ProtLingo, an efficient PLM framework that augments a pretrained single-sequence backbone with conditional local memory and sparse expert routing.",
+        "explanation": "The abstract and introduction clearly define ProtLingo as an efficient PLM framework augmenting a pretrained backbone with conditional local memory and sparse expert routing.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "Standard dense PLMs can model such dependencies implicitly, but provide no explicit mechanism for reusing recurring local contexts or adapting computation across residues.",
+        "explanation": "The introduction articulates that standard dense PLMs model local dependencies implicitly but provide no explicit mechanism for reusing recurring local contexts, motivating the proposed architecture.",
+        "page": 1,
+        "paraphrase": "The paper identifies a gap in single-sequence PLMs' explicit reuse of local contexts.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Model ArchitectureWe continued pretraining from the official pretrained ESM-2 150M checkpoint. The backbone contains 30 Transformer blocks with a hidden size of 640, 20 attention heads, and a feed-forward width of 2,560.",
+        "explanation": "The supplementary material specifies model architecture, MoE configuration, LNgram parameters, training data, optimization, and hardware, supporting reproducibility.",
+        "page": 10,
+        "paraphrase": "Implementation details sufficient for reproduction are provided.",
+        "section": "Supplementary Details",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Table 2 reports supervised long-range contact prediction on the selected CASP15 subset with 21 domains. The 650M-scale ESM2 baseline obtains the strongest absolute performance under this protocol. ProtLingo achieves P@L=0.485, P@L/2=0.657, and P@L/5=0.816 with only 153M active parameters.",
+        "explanation": "The paper reports Spearman correlation, AUC, and contact precision metrics across ProteinGym, FLIP, and CASP15 benchmarks.",
+        "page": 5,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Table3:AblationstudyrelativetofullProtLingo.\u2206denotes the ablated-model value minus the full-model value. Variant PG-DMS\u2206\u03c1\u2191\u2206PPL\u2193 Full ProtLingo \u2013 \u2013 \u2212MoE -0.093 +2.461 \u2212Lngram -0.357 +6.003 \u2212MoE\u2212Lngram -0.369 +6.035",
+        "explanation": "The paper ablates the MoE and LNgram modules, showing complementary gains in ProteinGym DMS Spearman and MLM perplexity.",
+        "page": 6,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Ablation Study",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "We use this experiment as a representation-preservation diagnostic rather than as a claim of state-of-the-art contact prediction accuracy.",
+        "explanation": "The paper explicitly frames contact prediction as a representation-preservation diagnostic rather than a state-of-the-art claim, aligning the claim with the experimental design.",
+        "page": 5,
+        "paraphrase": "Claims are appropriately scoped to the evidence.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Conditional memory provides a complementary way to increase model capacity by storing reusable patterns in addressable tables and retrieving entries conditioned on the current input.",
+        "explanation": "Related work sections cover PLMs, conditional memory, and MoE, and the introduction identifies the gap of single-sequence local-context reuse that ProtLingo addresses.",
+        "page": 2,
+        "paraphrase": "The paper positions itself against prior work and identifies a gap.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Although ProtLingo improves the compact ESM2 backbone across several settings, the gains over ESM2-150M are bounded by the lightweight nature of the current modules.",
+        "explanation": "The discussion acknowledges bounded gains and the unvalidated nature of the 80/20 sampling strategy.",
+        "page": 7,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Discussion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "This design should be regarded as a practical compromise and a working hypothesis, since the individual strategies and the 80/20 ratio have not yet been validated through a fully controlled ablation.",
+        "explanation": "The supplementary material explicitly states that the 80/20 sampling ratio has not been validated through controlled ablation.",
+        "page": 13,
+        "paraphrase": "The paper acknowledges an unvalidated design choice.",
+        "section": "Supplementary Details",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "We will release the source code and model checkpoints upon publication.",
+        "explanation": "The introduction commits to releasing source code and model checkpoints upon publication, supporting reproducibility.",
+        "page": 2,
+        "paraphrase": "The paper states code and checkpoints will be released.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "Spearman correlation and Area Under the Receiver Operating Characteristic Curve (AUC) are first computed independently within each assay. The reported ProteinGym scores use a nested aggregation procedure.",
+        "explanation": "The supplementary material defines Spearman correlation, AUC, and long-range precision metrics with formulas and aggregation details.",
+        "page": 11,
+        "paraphrase": "The paper provides precise metric definitions and aggregation procedures.",
+        "section": "Supplementary Details",
+        "signal_type": "positive"
       }
     ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.04793",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 78,
-    "paper_type": "unclear",
-    "positive_signals": [
-      "The contribution is stated explicitly."
+    "missing_information": [
+      "Full supplementary figures and tables are truncated in the supplied text.",
+      "No external peer-review record is available."
     ],
-    "recommendation": "uncertain",
+    "overall_quality_score": 72,
+    "paper_type": "empirical_research",
+    "positive_signals": [
+      "The contribution is stated explicitly.",
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "An ablation analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Implementation details sufficient for reproduction are provided.",
+      "The paper positions itself against prior work and identifies a gap."
+    ],
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "f34deb4fb3745e5e2247c0df2da7199719eb25ca549c4d31f1c7625f9c335039",
-    "suppressed": false
+    "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -166,7 +335,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

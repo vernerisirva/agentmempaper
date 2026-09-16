@@ -25,6 +25,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-12 10:53:21",
   "notified_date": "2026-09-12",
@@ -35,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-12 10:52:23",
-    "generated_at": "2026-09-15 12:01:19",
+    "generated_at": "2026-09-16 10:12:51",
     "last_seen_at": "2026-09-15 11:59:46",
     "metadata_sources": [
       "openalex"
@@ -60,12 +61,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "repository_only",
+    "status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-11",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "repository_only",
+  "publication_status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
@@ -95,28 +100,188 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-16T09:14:12+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-v2",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.9,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
+    "concerns": [
+      "Comparative claims were detected without a suitable baseline in the available text.",
+      "Several load-bearing sources are unrefereed preprints, and the paper acknowledges this as a threat to its contribution.",
+      "The absence claims (e.g., no located source measures generalization to unstored material) rest on a literature search conducted largely from abstracts, which the paper itself flags as its principal weakness.",
+      "The four commitments are stipulated rather than derived from a consensus definition, and the paper acknowledges that a different stipulation would yield a different verdict."
+    ],
+    "concise_summary": "A theoretical audit of the CLS analogy in LLM agent memory systems. The paper derives four commitments from the source theory, applies them to textual and parametric branches, and argues that neither instantiates the mechanism. The contribution is clear, the methodology is appropriate for the paper type, and limitations are handled explicitly. Main uncertainties stem from reliance on preprints and abstract-level literature search.",
+    "confidence": "medium",
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 5,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "solved problems from a single abstract reasoning benchmark. That last number is the most quotable and the least generalisable, and it shou",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 8,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "individual and emergent social behaviour, and the ablation reported is of the architecture's components. Packer et al. (2023) draw their i",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 5,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "f that abstract is stated with it. This is a real limitation on a paper whose argument is partly about what evaluations do and do not measur",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "literature search conducted for this paper, not a proof of absence; Section 14 treats this as the paper's principal weakness. Most sour",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "esponse those results recommend. What they do not license is keeping the vocabulary, and with it an implicit promise of generalisation, w",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": null,
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": null,
+        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
+        "section": null,
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "This paper does the audit against four commitments, stated in Section 3 and used as an instrument thereafter. Three things follow, and the second was not what the question's framing anticipated.",
+        "explanation": "The introduction clearly frames the paper's purpose and the structure of its argument, making the contribution easy to identify.",
+        "page": 2,
+        "paraphrase": "The paper states its contribution explicitly as an audit against four commitments, and identifies three things that follow.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "What has not been done is the audit. Agent memory systems borrow the word, and several borrow the theory by name... but no located source states what the analogy commits its user to and then checks whether the commitments hold.",
+        "explanation": "The paper explicitly positions its contribution as filling an unaddressed gap in the literature, which supports novelty.",
+        "page": 2,
+        "paraphrase": "The paper identifies a gap: no located source states what the CLS analogy commits its user to and then checks whether the commitments hold.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "From this the following four commitments are stipulated. They are this paper's instrument, not a claim about what any particular neuroscientist would endorse. C1. Substrate... C2. Interleaving... C3. Generalisation... C4. Relinquishment.",
+        "explanation": "The commitment-based audit provides a structured, reproducible analytical framework appropriate for a theoretical paper.",
+        "page": 4,
+        "paraphrase": "The paper derives four commitments (C1-C4) from the source theory and uses them consistently as an audit instrument.",
+        "section": "Section 3",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Structurally, that is replay of stored episodic traces through a parameter update, evaluated on material the store did not contain. C1 holds: parameters change. C2 appears to hold... C3 is the reported outcome.",
+        "explanation": "The identification of a positive case that instantiates the mechanism provides validation for the paper's analytical framework.",
+        "page": 11,
+        "paraphrase": "The paper validates its central claim by identifying a published configuration (Ferraz et al., 2026) that matches the theory's shape and reports the predicted generalization.",
+        "section": "Section 11",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "The contrast should be stated at the right strength. It is not established that textual consolidation always degrades, and it is not established that replay never would under some schedule nobody has run.",
+        "explanation": "The paper consistently marks conjectures and separates established findings from open questions, aligning evidence with claim strength.",
+        "page": 9,
+        "paraphrase": "The paper carefully scopes its claims, distinguishing between what is established, what is conjectured, and what is not known.",
+        "section": "Section 8",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Agent memory systems borrow the word, and several borrow the theory by name (Gutierrez et al., 2024; Li et al., 2026; Lerma-Torres, 2026; Xia et al., 2026), but no located source states what the analogy commits its user to and then checks whether the commitments hold.",
+        "explanation": "The paper surveys the relevant agent memory literature and the CLS neuroscience literature, and explicitly states that no prior source performs the commitment audit.",
+        "page": 2,
+        "paraphrase": "The paper extensively positions related work across both the textual and parametric branches, and identifies the specific gap it fills.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Five, in descending order of how much they would cost if correct. The absence claims are the weakest thing here... The four commitments are stipulated... The generic-usage escape is available... The parametric branch is four months old... Several load-bearing sources are unrefereed preprints.",
+        "explanation": "Section 14 explicitly addresses the paper's principal weaknesses, including the fragility of absence claims and reliance on preprints.",
+        "page": 13,
+        "paraphrase": "The paper includes a dedicated threats-to-validity section that identifies five specific weaknesses in descending order of cost.",
+        "section": "Section 14",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "Three terms are stipulated and used consistently. Parametric transfer means... Textual consolidation means... Isolated-parameter consolidation means...",
+        "explanation": "The stipulation of terms in Section 2 supports precision and reduces ambiguity in the subsequent analysis.",
+        "page": 3,
+        "paraphrase": "The paper defines three key terms (parametric transfer, textual consolidation, isolated-parameter consolidation) and uses them consistently.",
+        "section": "Section 2",
+        "signal_type": "positive"
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://zenodo.org/records/22699102/files/consolidation-without-weights.pdf",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "suppressed": false
+    "overall_quality_score": 78,
+    "paper_type": "theoretical",
+    "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "An ablation analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed.",
+      "The paper states four explicit commitments (C1-C4) and uses them as a consistent audit instrument.",
+      "The paper distinguishes between the textual and parametric branches of agent memory and analyzes each against the commitments.",
+      "The paper includes a dedicated threats-to-validity section (Section 14) that identifies five specific weaknesses.",
+      "The paper states five concrete measurements that would settle the open questions (Section 12).",
+      "The paper explicitly separates what is known from what is not known (Section 13).",
+      "The paper identifies a published configuration (Ferraz et al., 2026) that matches the theory's shape, providing a positive anchor for the argument."
+    ],
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "a733685a2c58ac3c283c2a00a3890849148112f764eacd95d0f2b2bbc34aef73",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -146,7 +311,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

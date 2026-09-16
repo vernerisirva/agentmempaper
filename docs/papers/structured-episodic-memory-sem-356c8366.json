@@ -25,17 +25,18 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
+  "library_admission": "review",
   "newly_discovered_in_latest_run": true,
   "notified_at": "2026-09-15 12:01:19",
   "notified_date": "2026-09-15",
   "openalex_id": "W7212420070",
   "pinned": false,
   "provenance": {
-    "curated": false,
-    "curation_note": null,
+    "curated": true,
+    "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:45",
-    "generated_at": "2026-09-15 12:01:19",
+    "generated_at": "2026-09-16 10:12:51",
     "last_seen_at": "2026-09-15 11:59:45",
     "metadata_sources": [
       "openalex"
@@ -43,8 +44,8 @@
     "publication_date_confidence": "medium",
     "publication_date_precision": "day",
     "publication_date_source": "openalex",
-    "relevance_source": "deterministic screening",
-    "screening_source": "deterministic rules",
+    "relevance_source": "deterministic screening + curation",
+    "screening_source": "deterministic rules + curation",
     "source_ids": {
       "openalex": [
         "W7212420070",
@@ -60,12 +61,16 @@
     "precision": "day",
     "publication_date_confidence": "medium",
     "source": "openalex",
+    "status": "repository_only",
+    "status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
     "year": "2026"
   },
   "publication_date": "2026-09-13",
   "publication_date_confidence": "medium",
   "publication_date_precision": "day",
   "publication_date_source": "openalex",
+  "publication_status": "repository_only",
+  "publication_status_evidence": "Zenodo deposit; no external journal/conference publication evidence in supplied metadata.",
   "publication_year": "2026",
   "related_topics": [
     "agent-memory",
@@ -76,12 +81,12 @@
     "memory-types"
   ],
   "relevance": {
-    "curation_note": null,
-    "decision": "relevant",
-    "public_label": "Highly relevant",
-    "reason": "Studies memory systems or memory modules for LLM agents.",
+    "curation_note": "Adjacent memory-based control; no LLM-agent or deep-research mechanism. The inspected manuscript describes a scoped non-neural Pong controller with quantitative ablations and explicit limitations. Scientific quality is separate from topical fit.",
+    "decision": "maybe",
+    "public_label": "Review candidate",
+    "reason": "Adjacent memory-based control; the manuscript does not study LLM agents.",
     "review_status": null,
-    "score": 91,
+    "score": 45,
     "tags": [
       "memory-types",
       "evaluation",
@@ -90,11 +95,11 @@
       "llm-agents"
     ]
   },
-  "relevance_decision": "relevant",
+  "relevance_decision": "maybe",
   "relevance_label": "Memory benchmark/evaluation",
-  "relevance_reason": "Studies memory systems or memory modules for LLM agents.",
-  "relevance_score": 91,
-  "research_note": null,
+  "relevance_reason": "Adjacent memory-based control; the manuscript does not study LLM agents.",
+  "relevance_score": 45,
+  "research_note": "Adjacent memory-based control; no LLM-agent or deep-research mechanism. The inspected manuscript describes a scoped non-neural Pong controller with quantitative ablations and explicit limitations. Scientific quality is separate from topical fit.",
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
@@ -105,7 +110,7 @@
     "assessment_version": null,
     "assessor_model": null,
     "assessor_type": null,
-    "combined_rank_score": 0.91,
+    "combined_rank_score": 0.45,
     "concerns": [],
     "concise_summary": null,
     "confidence": "unknown",
@@ -113,15 +118,21 @@
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
+    "full_text_assessed": false,
+    "full_text_url": null,
+    "gate_version": null,
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
     "paper_type": "unclear",
     "positive_signals": [],
+    "rationale": "Scientific quality has not yet been assessed.",
     "recommendation": "unknown",
     "rubric_version": null,
     "source_content_hash": null,
-    "suppressed": false
+    "status": "not_assessed",
+    "suppressed": false,
+    "uncertainty": "Manuscript evidence has not been reviewed."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -139,9 +150,9 @@
   "ssrn_id": null,
   "structured_card": {
     "evidence_or_evaluation": {
-      "confidence": "not_extracted",
-      "provenance": "not_extracted",
-      "value": "Not extracted yet"
+      "confidence": "medium",
+      "provenance": "metadata",
+      "value": "Abstract-level signal: benchmark or evaluation evidence is mentioned in title, abstract, tags, or screening metadata."
     },
     "key_contribution": {
       "confidence": "not_extracted",
@@ -155,25 +166,25 @@
     },
     "method_or_system_type": {
       "confidence": "medium",
-      "provenance": "rule",
-      "value": "Memory architecture / system"
+      "provenance": "metadata",
+      "value": "Benchmark / evaluation"
     },
     "relation_to_agentic_memory": {
       "confidence": "medium",
-      "provenance": "rule",
-      "value": "Studies memory mechanisms or governance for LLM agents"
+      "provenance": "metadata",
+      "value": "Evaluates memory behavior, safety, or retrieval in LLM agents"
     },
     "research_relevance": {
-      "confidence": "medium",
-      "provenance": "rule",
-      "value": "Directly relevant to agentic-memory research based on screening evidence."
+      "confidence": "high",
+      "provenance": "curation",
+      "value": "Adjacent memory-based control; no LLM-agent or deep-research mechanism. The inspected manuscript describes a scoped non-neural Pong controller with quantitative ablations and explicit limitations. Scientific quality is separate from topical fit."
     }
   },
   "structured_sections": {
     "evidence_or_evaluation_signals": [],
-    "method_or_system_type": "Memory architecture / system",
+    "method_or_system_type": "Benchmark / evaluation",
     "possible_key_claims": [],
-    "relation_to_agentic_memory": "Studies memory mechanisms or governance for LLM agents"
+    "relation_to_agentic_memory": "Evaluates memory behavior, safety, or retrieval in LLM agents"
   },
   "tags": [
     "memory-types",

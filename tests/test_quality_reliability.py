@@ -334,3 +334,32 @@ class UnknownProviderRoutingTest(unittest.TestCase):
         result, _ = ReliabilityTest().assess(client)
         self.assertEqual(result.quality_status, "pass")
         self.assertNotIn("ignore", client.payloads[1]["provider"])
+
+
+class LiteralLineWrapRegressionTest(unittest.TestCase):
+    def test_actual_autorecsys_and_lngram_quotes_preserve_line_wrap_parity(self):
+        check = AnchorRegressionTest().anchor
+        self.assertIsNotNone(check("de- pends on complex infrastructure", "de-\npends on complex infrastructure"))
+        self.assertIsNotNone(check("depends on complex infrastructure", "de-\npends on complex infrastructure"))
+        self.assertIsNotNone(check("sparse compu- tational capacity", "sparse compu-\ntational capacity"))
+        self.assertIsNone(check("sparse computational capacity", "sparse compu- tational capacity"))
+        self.assertIsNone(check("supports the claim", "does not support the claim"))
+
+    def test_both_views_still_require_visible_nonabstract_and_unique_evidence(self):
+        check = AnchorRegressionTest().anchor
+        quote = "de- pends on evidence"
+        source = "de-\npends on evidence"
+        self.assertIsNone(check(quote, source, sections=[SelectedSection("Abstract", source, 2)]))
+        self.assertIsNone(check(quote, "other visible text", sections=[SelectedSection("Methods", source, 2)]))
+        self.assertIsNone(check(quote, source, page=30, sections=[SelectedSection("Methods", source, 2), SelectedSection("Results", source, 3)]))
+        # Two normalization views matching the same section are not two locations.
+        self.assertIsNotNone(check("ordinary evidence", "ordinary evidence"))
+
+    def test_rejected_decision_preserves_its_original_rationale_for_audit(self):
+        from paper_scout.quality_llm import validate_llm_quality_response
+        selected, value = manuscript()
+        value["evidence"][0]["excerpt"] = "Invented evidence."
+        result = validate_llm_quality_response(value, assess_quality_deterministically(candidate(), "fixture", selected), "test-model", selected=selected)
+        self.assertEqual(result.quality_status, "uncertain")
+        self.assertEqual(result.execution["proposed_decision"], {key: value[key] for key in ("quality_status", "quality_rationale", "quality_uncertainty")})
+        self.assertNotEqual(result.quality_rationale, value["quality_rationale"])

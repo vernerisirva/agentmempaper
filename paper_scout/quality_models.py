@@ -111,7 +111,12 @@ class QualityAssessment:
 
     @property
     def full_text_assessed(self) -> bool:
-        return self.assessment_scope in {"partial_full_text", "full_text"} and (self.assessor_type in {"llm", "hybrid"} or (self.assessor_type == "manual_override" and self.quality_gate_version == QUALITY_GATE_VERSION))
+        semantic_assessor = self.assessor_type in {"llm", "hybrid"} or (
+            self.assessor_type == "manual_override"
+            and self.quality_gate_version == QUALITY_GATE_VERSION
+            and (self.assessor_model or "").startswith("manual-review:")
+        )
+        return self.assessment_scope in {"partial_full_text", "full_text"} and semantic_assessor
 
     def __post_init__(self) -> None:
         if self.publication_status not in {"peer_reviewed", "preprint", "repository_only", "unknown"}:

@@ -122,6 +122,21 @@ class ScientificGateTest(unittest.TestCase):
         text,_=manuscript()
         self.assertEqual(assess_quality_deterministically(candidate(),"fixture",text).quality_status,"uncertain")
 
+    def test_numeric_curation_does_not_manufacture_manuscript_review(self):
+        from paper_scout.curation import QualityCuration
+        from paper_scout.quality_service import _apply_manual_curation
+        text, _ = manuscript()
+        diagnostic = assess_quality_deterministically(candidate(), "fixture", text)
+        override = QualityCuration(quality_score_override=99)
+        curated = _apply_manual_curation(diagnostic, override)
+        self.assertEqual(curated.quality_status, "uncertain")
+        self.assertFalse(curated.full_text_assessed)
+        for status in ("pass", "uncertain"):
+            reviewed = replace(assessment(), quality_status=status)
+            curated = _apply_manual_curation(reviewed, override)
+            self.assertTrue(curated.full_text_assessed)
+            self.assertEqual(curated.assessor_model, reviewed.assessor_model)
+
     def test_each_core_dimension_is_required(self):
         text,full=manuscript()
         for dimension in REQUIRED_GATE_DIMENSIONS:

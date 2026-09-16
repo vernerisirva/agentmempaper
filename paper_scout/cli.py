@@ -109,6 +109,10 @@ def main(argv: list[str] | None = None) -> int:
     _add_track_argument(quality_eval_parser)
 
     reassess_parser = subparsers.add_parser("reassess-quality", help="Assess or reassess stored relevant papers")
+    reassess_parser.add_argument("--limit", type=int, default=None, help="Maximum papers (default: track run limit; hard ceiling 50)")
+    reassess_parser.add_argument("--assessment-json", type=Path, help="Import one manuscript review; requires --paper-id, validates excerpt anchors")
+    reassess_parser.add_argument("--pdf-url", help="Open PDF for a single-paper assessment")
+    reassess_parser.add_argument("--full-text", action="store_true", help="Explicitly enable bounded full-text acquisition")
     reassess_parser.add_argument("--days", type=int, default=None)
     reassess_parser.add_argument("--paper-id")
     reassess_parser.add_argument("--mode", choices=["off", "deterministic", "llm", "hybrid", "auto"], default=None)
@@ -273,12 +277,21 @@ def main(argv: list[str] | None = None) -> int:
         if not config.quality.enabled:
             print("quality assessment is disabled for this track")
             return 0
+        if args.limit is not None and not 1 <= args.limit <= 50:
+            parser.error("--limit must be between 1 and 50")
+        if (args.assessment_json or args.pdf_url) and not args.paper_id:
+            parser.error("--assessment-json and --pdf-url require --paper-id")
+        if args.full_text and args.no_full_text:
+            parser.error("--full-text conflicts with --no-full-text")
+        manual_assessment = json.loads(args.assessment_json.read_text()) if args.assessment_json else None
         assessment_config = replace(
             config.quality.assessment,
             version=args.assessment_version or config.quality.assessment.version,
             rubric_version=args.rubric_version or config.quality.assessment.rubric_version,
         )
         quality_config = replace(config.quality, mode=args.mode or config.quality.mode, assessment=assessment_config)
+        if args.full_text:
+            quality_config = replace(quality_config, full_text=replace(quality_config.full_text, enabled=True))
         if args.model:
             os.environ["PAPER_SCOUT_QUALITY_LLM_MODEL"] = args.model
         stats = QualityRunStats()
@@ -287,7 +300,16 @@ def main(argv: list[str] | None = None) -> int:
             for assessment in store.list_current_quality_assessments():
                 stats.record(assessment, cache_hit=True)
         else:
-            for canonical_id, candidate, decision in store.quality_candidates(days=args.days, paper_id=args.paper_id):
+            candidates = store.quality_candidates(days=args.days, paper_id=args.paper_id)
+            limit = args.limit if args.limit is not None else quality_config.assessment.max_assessments_per_run
+            if not args.force and not args.paper_id:
+                candidates = [row for row in candidates if not (
+                    (existing := store.get_current_quality_assessment(row[0]))
+                    and existing.quality_gate_version == "scientific-gate-v1"
+                    and existing.assessment_version == quality_config.assessment.version
+                )]
+            candidates = candidates[:limit]
+            for canonical_id, candidate, decision in candidates:
                 classification = ClassificationResult(0, decision, "Stored relevance classification.")
                 try:
                     assess_and_store_candidate(
@@ -300,6 +322,8 @@ def main(argv: list[str] | None = None) -> int:
                         force=args.force,
                         no_full_text=args.no_full_text,
                         no_llm=args.no_llm,
+                        direct_pdf_url=args.pdf_url,
+                        manual_assessment=manual_assessment,
                         curation_path=config.curation_path,
                     )
                 except Exception as exc:  # noqa: BLE001 - one assessment must not stop a batch.

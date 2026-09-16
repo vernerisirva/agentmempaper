@@ -547,13 +547,13 @@ date_overrides:
             self.assertTrue(list((docs_dir / "papers").glob("*.json")))
             self.assertTrue((docs_dir / "style.css").exists())
             self.assertTrue((digest_dir / "latest.md").exists())
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             archive_html = (docs_dir / "archive.html").read_text(encoding="utf-8")
             self.assertIn("Agentic Memory Paper Library", html)
-            self.assertIn("A daily updated library of papers on agentic memory, deep research agents, and memory mechanisms.", html)
+            self.assertIn("Relevant discoveries awaiting quality review", html)
             self.assertIn("Updated 2026-06-26", html)
             self.assertIn("2 papers", html)
-            self.assertIn("2 highly relevant", html)
+            self.assertIn("Quality pending", html)
             self.assertIn("Highly relevant", html)
             self.assertNotIn("Recommended reading", html)
             self.assertNotIn("Full library", html)
@@ -585,7 +585,7 @@ date_overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertRegex(index_html, r'<a class="paper-detail-link" href="papers/[^"]+\.html">Research card</a>')
             detail_pages = sorted((docs_dir / "papers").glob("*.html"))
             detail_json_files = sorted((docs_dir / "papers").glob("*.json"))
@@ -674,12 +674,12 @@ date_overrides:
             self.assertTrue(list((docs_dir / "papers").glob("*.html")))
             self.assertTrue(list((docs_dir / "papers").glob("*.json")))
             self.assertFalse((docs_root / "index.html").exists())
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             about_html = (docs_dir / "about.html").read_text(encoding="utf-8")
             self.assertIn("Deep Research Paper Library", html)
-            self.assertIn("autonomous research agents, deep research systems, and AI-assisted scientific discovery", html)
+            self.assertIn("Relevant discoveries awaiting quality review", html)
             self.assertIn('href="../index.html"', html)
-            self.assertIn("Agentic Memory Library", html)
+            self.assertIn("Agentic Memory", html)
             self.assertIn("Research card", html)
             self.assertIn("structured detail page and sidecar JSON", about_html)
             self.assertNotIn("agent-memory research", about_html)
@@ -753,9 +753,9 @@ date_overrides:
                 relevance_profile="deep_research",
             )
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertIn("Deep Research Paper Library", html)
-            self.assertIn("Agentic Memory Library", html)
+            self.assertIn("Agentic Memory", html)
             self.assertNotIn("Agentic Memory Paper Library", html)
             self.assertIn("Research card", html)
             self.assertIn("More metadata", html)
@@ -818,7 +818,7 @@ date_overrides:
             self.assertEqual(benchmark["relevance"]["decision"], "relevant")
             self.assertIn("agent-memory", benchmark["related_topics"])
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertNotIn("Structured research card", index_html)
             self.assertNotIn("Method / system type", index_html)
 
@@ -863,7 +863,7 @@ date_overrides:
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
             papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertEqual(papers_json.count('"title": "Latest Deep Research Memory"'), 1)
             self.assertEqual(index_html.count('data-title="latest deep research memory"'), 1)
             self.assertIn('"sources": [', papers_json)
@@ -945,7 +945,7 @@ date_overrides:
                 build_time="2026-06-28 12:00:00",
             )
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             by_title = {paper["title"]: paper for paper in papers}
@@ -1008,7 +1008,7 @@ overrides:
                 build_time="2026-06-28 12:00:00",
             )
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             by_title = {paper["title"]: paper for paper in papers}
             self.assertTrue(by_title["New Highly Relevant Agent Memory"]["is_new"])
@@ -1026,7 +1026,7 @@ overrides:
             self.assertIn("if (mode === 'latest-relevant') return latestRelevantRank(a, b);", index_html)
 
             review_tag = _card_opening_tag(index_html, "new review candidate agent system")
-            self.assertIn("hidden", review_tag)
+            self.assertNotIn("hidden", review_tag)
             self.assertIn('data-decision="maybe"', review_tag)
 
     def test_new_boost_expires_after_24_hours(self):
@@ -1064,7 +1064,7 @@ overrides:
                 build_time="2026-06-29 12:00:00",
             )
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             self.assertFalse(any(paper["is_new"] for paper in papers))
             order = _card_order(index_html)
@@ -1091,7 +1091,7 @@ overrides:
                 build_time="2026-06-28 12:00:00",
             )
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             script = index_html.split("<script>", 1)[1]
             publication_branch = re.search(r"if \(mode === 'published-desc'\).*?;", script)
             self.assertIsNotNone(publication_branch)
@@ -1112,17 +1112,17 @@ overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             latest_html = (docs_dir / "latest.html").read_text(encoding="utf-8")
             self.assertIn("Sort", index_html)
             self.assertIn("Latest relevant", index_html)
-            self.assertIn("Newest relevant papers first.", index_html)
+            self.assertIn("Quality pending does not mean scientifically weak.", index_html)
             self.assertIn("Publication date", index_html)
             self.assertIn("First seen", index_html)
             self.assertIn("Published", index_html)
             self.assertIn('<label class="select-field relevance-filter" for="relevance-filter">', index_html)
-            self.assertIn('<option value="relevant" selected>Highly relevant</option>', index_html)
-            self.assertIn('<option value="all">All papers</option>', index_html)
+            self.assertIn('<option value="relevant">Highly relevant</option>', index_html)
+            self.assertIn('<option value="all" selected>All papers</option>', index_html)
             self.assertIn('<option value="maybe">Review candidates</option>', index_html)
             self.assertNotIn('<option value="maybe">Maybe relevant</option>', index_html)
             self.assertNotIn('id="source-filters"', index_html)
@@ -1147,7 +1147,7 @@ overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertEqual(html.count('id="paper-list"'), 1)
             self.assertEqual(html.count('data-title="latest deep research memory"'), 1)
             self.assertNotIn("recommended-card", html)
@@ -1171,7 +1171,7 @@ overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=root / "data" / "missing.sqlite3")
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers_json = (docs_dir / "data" / "papers.json").read_text(encoding="utf-8")
             self.assertIn("Persistent Memory for LLM Agents", html)
             self.assertIn("2026-06-26", html)
@@ -1193,10 +1193,10 @@ overrides:
             self.assertLess(html.index('<details class="paper-more">'), html.index("A compact summary of persistent memory for LLM agents."))
             self.assertRegex(
                 html,
-                r'<article class="paper-card compact"[^>]+data-title="deep research agent retrieval memory"[^>]+hidden>',
+                r'<article class="paper-card compact"[^>]+data-title="deep research agent retrieval memory"[^>]*>',
             )
             visible_card = _visible_card_html(html, "persistent memory for llm agents")
-            self.assertIn("Why included", visible_card)
+            self.assertIn("Topic match", visible_card)
             self.assertIn("Published 2026-06-26", visible_card)
             self.assertIn("Source: arXiv", visible_card)
             self.assertNotIn("/100", visible_card)
@@ -1286,7 +1286,7 @@ excluded:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
 
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             titles = [paper["title"] for paper in papers]
             self.assertEqual(titles[0], "Exact Current Memory Paper")
@@ -1304,7 +1304,7 @@ excluded:
             self.assertIn("Research note", index_html)
             self.assertIn("Important thesis candidate for procedural memory in research agents.", index_html)
             self.assertIn("thesis_candidate", index_html)
-            self.assertIn("Date from source 2026-07-04", index_html)
+            self.assertIn("Date from source 2026-07-04", (docs_dir / next(p["detail_page"] for p in papers if p["title"] == "Maybe Future Memory Paper")).read_text())
             self.assertNotIn("Published 2026 · Source", index_html)
             self.assertIn("Published date unavailable · Year: 2026", index_html)
             core_visible = _visible_card_html(index_html, "core agent memory architecture")
@@ -1494,7 +1494,7 @@ overrides:
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
 
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             broad_paper = next(paper for paper in papers if paper["title"] == "Broad Agentic AI System Architecture")
             core_paper = next(paper for paper in papers if paper["title"].startswith("TRUSTMEM"))
             benchmark_paper = next(paper for paper in papers if paper["title"].startswith("MGBench"))
@@ -1510,7 +1510,7 @@ overrides:
             self.assertNotIn("Focuses on persistent or long-term memory for agent behavior.", benchmark_visible)
             self.assertRegex(
                 index_html,
-                r'<article class="paper-card compact"[^>]+data-title="broad agentic ai system architecture"[^>]+hidden>',
+                r'<article class="paper-card compact"[^>]+data-title="broad agentic ai system architecture"[^>]*>',
             )
             self.assertIn("Important because it studies trustworthy consolidation policies", index_html)
 
@@ -1564,7 +1564,7 @@ overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             paper = next(paper for paper in papers if paper["title"] == title)
             self.assertEqual(paper["publication_date"], "2026-02-02")
@@ -1613,7 +1613,7 @@ overrides:
             with patch("paper_scout.site.HttpClient", ArxivDateHttp):
                 build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             paper = next(paper for paper in papers if paper["title"] == title)
             self.assertEqual(paper["arxiv_id"], "2602.01869")
@@ -1664,10 +1664,10 @@ overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path)
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             paper = next(paper for paper in papers if paper["title"] == "Toward Fully Autonomous and Scalable AI Agent Systems")
-            self.assertIn("Date written 2026-04-15", html)
+            self.assertIn("Date written 2026-04-15", (docs_dir / paper["detail_page"]).read_text())
             self.assertNotRegex(html, r"Published 2026(?:\s| · Source|<)")
             self.assertEqual(paper["publication_date"], "2026-04-15")
             self.assertEqual(paper["publication_date_source"], "ssrn")
@@ -1754,7 +1754,7 @@ date_overrides:
 
             build_site(digest_dir=digest_dir, report_dir=report_dir, docs_dir=docs_dir, state_path=state_path, curation_path=curation_path)
 
-            html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            html = (docs_dir / "review.html").read_text(encoding="utf-8")
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             paper = next(paper for paper in papers if paper["title"] == title)
             visible_card = _visible_card_html(html, title.lower())
@@ -1766,12 +1766,12 @@ date_overrides:
             self.assertLess(paper["relevance_score"], 70)
             self.assertNotIn("long-term-memory", paper["tags"])
             self.assertNotIn("memory-systems", paper["tags"])
-            self.assertIn("Date written 2026-04-15", html)
+            self.assertIn("Date written 2026-04-15", (docs_dir / paper["detail_page"]).read_text())
             self.assertIn("Peripheral candidate", paper["relevance_reason"])
             self.assertNotIn("persistent or long-term memory", visible_card)
             self.assertRegex(
                 html,
-                r'<article class="paper-card compact"[^>]+data-title="openclaw and ollama in agentic ai: toward fully autonomous and scalable ai agent systems"[^>]+hidden>',
+                r'<article class="paper-card compact"[^>]+data-title="openclaw and ollama in agentic ai: toward fully autonomous and scalable ai agent systems"[^>]*>',
             )
 
     def test_build_site_refreshes_stale_relevance_classifications(self):
@@ -1842,15 +1842,13 @@ date_overrides:
             papers = json.loads((docs_dir / "data" / "papers.json").read_text(encoding="utf-8"))
             broad = next(paper for paper in papers if paper["title"].startswith("Exploring Recommender"))
             surfaced = next(paper for paper in papers if paper["title"] == "Are We Ready For An Agent-Native Memory System?")
-            index_html = (docs_dir / "index.html").read_text(encoding="utf-8")
+            index_html = (docs_dir / "review.html").read_text(encoding="utf-8")
             self.assertNotEqual(broad["relevance_decision"], "relevant")
             self.assertLess(broad["relevance_score"], 70)
             self.assertEqual(surfaced["relevance_decision"], "relevant")
             self.assertGreaterEqual(surfaced["relevance_score"], 80)
-            self.assertRegex(
-                index_html,
-                r'<article class="paper-card compact"[^>]+data-title="exploring recommender system evaluation: a multi-modal llm agent framework for a/b testing"[^>]+hidden>',
-            )
+            self.assertNotIn('data-title="exploring recommender system evaluation: a multi-modal llm agent framework for a/b testing"', index_html)
+            self.assertEqual(broad["library_admission"], "not_surfaced")
             self.assertRegex(
                 index_html,
                 r'<article class="paper-card primary"[^>]+data-title="are we ready for an agent-native memory system\?"(?![^>]+hidden)',
@@ -1882,8 +1880,8 @@ date_overrides:
             self.assertIn("future publication dates", about_html)
             self.assertIn("structured detail", about_html)
             self.assertIn("sidecar JSON", about_html)
-            self.assertIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8"))
-            self.assertNotIn("Download CSV", (docs_dir / "index.html").read_text(encoding="utf-8").split("</header>", 1)[0])
+            self.assertIn("Download CSV", (docs_dir / "review.html").read_text(encoding="utf-8"))
+            self.assertNotIn("Download CSV", (docs_dir / "review.html").read_text(encoding="utf-8").split("</header>", 1)[0])
             self.assertIn("title,authors,publication_date,first_seen_date,relevance_decision,relevance_score,tags,sources,url,doi,arxiv_id", csv_text.splitlines()[0])
             self.assertIn("Latest Deep Research Memory", csv_text)
             self.assertIn("@misc", bib_text)

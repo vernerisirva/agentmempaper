@@ -347,7 +347,7 @@ class PaperStore:
             params.append(paper_id)
         with self._connect() as db:
             rows = db.execute(
-                f"SELECT * FROM papers WHERE {' AND '.join(clauses)} ORDER BY first_seen_at DESC",
+                f"SELECT * FROM papers WHERE {' AND '.join(clauses)} ORDER BY first_seen_at DESC, canonical_key",
                 params,
             ).fetchall()
         return [(str(row["canonical_key"]), _row_to_candidate(row), str(row["relevance_decision"])) for row in rows]

@@ -51,9 +51,14 @@ def assess_and_store_candidate(
     no_llm: bool = False,
     direct_pdf_url: str | None = None,
     curation_path: Path | None = None,
+    manual_assessment: dict | None = None,
 ) -> QualityAssessment | None:
     if not config.enabled or config.mode == "off" or not _should_assess(config, classification.decision):
         return None
+    current = store.get_current_quality_assessment(canonical_id,
+        assessment_version=config.assessment.version, rubric_version=config.assessment.rubric_version)
+    if current and current.quality_status in {"pass", "insufficient"} and not force and manual_assessment is None:
+        return _finalize_assessment(config, store, candidate, current, curation_path, stats, cache_hit=True)
     document: FullTextDocument | None = None
     extraction_errors: list[str] = []
     if config.full_text.enabled and not no_full_text:
@@ -76,7 +81,7 @@ def assess_and_store_candidate(
         rubric_version=config.assessment.rubric_version,
         source_content_hash=selected.content_hash,
     )
-    if matching and not force and quality_assessment_matches_mode(config, matching, no_llm=no_llm):
+    if matching and not force and manual_assessment is None and quality_assessment_matches_mode(config, matching, no_llm=no_llm):
         if stats:
             stats.extraction_failures.extend(extraction_errors)
         return _finalize_assessment(config, store, candidate, matching, curation_path, stats, cache_hit=True)
@@ -88,8 +93,14 @@ def assess_and_store_candidate(
         assessment_version=config.assessment.version,
         rubric_version=config.assessment.rubric_version,
     )
+    deterministic = replace(deterministic, full_text_url=document.source_url if document else None)
     mode = "deterministic" if no_llm else config.mode
-    assessment = assess_with_optional_quality_llm(candidate, selected, deterministic, mode)
+    if manual_assessment is not None:
+        from paper_scout.quality_llm import validate_llm_quality_response
+        assessment = validate_llm_quality_response(manual_assessment, deterministic, "manual-review", selected=selected)
+        assessment = replace(assessment, assessor_type="manual_override", assessor_model="manual-review:" + hashlib.sha256(json.dumps(manual_assessment, sort_keys=True).encode()).hexdigest()[:16])
+    else:
+        assessment = assess_with_optional_quality_llm(candidate, selected, deterministic, mode)
     if stats:
         stats.extraction_failures.extend(extraction_errors)
     return _finalize_assessment(
@@ -182,8 +193,8 @@ def _apply_manual_curation(assessment: QualityAssessment, curation: QualityCurat
         overall_quality_score=score,
         recommendation=recommendation,
         confidence="high",
-        assessor_type="manual_override",
-        assessor_model="curation",
+        assessor_type=assessment.assessor_type if assessment.quality_status in {"pass", "insufficient"} else "manual_override",
+        assessor_model=assessment.assessor_model if assessment.quality_status in {"pass", "insufficient"} else "curation",
         source_content_hash=source_hash,
         assessed_at=datetime.now(UTC).replace(microsecond=0).isoformat(),
         concise_summary=summary,
@@ -203,7 +214,7 @@ def quality_assessment_matches_mode(
     assessment: QualityAssessment,
     no_llm: bool = False,
 ) -> bool:
-    if assessment.assessor_type == "manual_override":
+    if assessment.quality_status in {"pass", "insufficient"} or assessment.assessor_type == "manual_override":
         return True
     mode = "deterministic" if no_llm else config.mode
     settings = None if mode in {"off", "deterministic"} else openai_compatible_settings_from_env("PAPER_SCOUT_QUALITY_LLM_MODEL")

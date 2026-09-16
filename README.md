@@ -297,36 +297,41 @@ This report does not fail the workflow by default. It is a triage aid for keepin
 
 ## Scholarly Quality Assessment
 
-Topic relevance and scholarly quality are separate. Relevance decides whether a paper belongs in an Agentic Memory or Deep Research library. The optional quality layer asks how strongly the available material supports the paper's contribution. A paper can therefore be highly relevant but weakly validated, or only moderately relevant but methodologically strong.
+Paper Scout separates topical relevance, publication status, and scientific-quality screening across `agent_memory`, `deep_research`, and `engram`.
 
-The feature is configured per track under the `quality:` section of `config/tracks/agent_memory.yaml` and `config/tracks/deep_research.yaml`. Supported modes are:
+**Main-library admission:** `relevance_decision == relevant AND scholarly_quality.status == pass`, subject to explicit curation exclusion/suppression. Discovery remains broad. Pinning, a score override, a DOI, peer review, or institutional affiliation cannot bypass this rule. Ranking uses topical relevance and the existing date/New ordering; quality is a gate, not a prestige leaderboard.
 
-- `off`: no quality assessment;
-- `deterministic`: paper-type-aware evidence rules only;
-- `llm`: use the configured OpenAI-compatible model, with deterministic fallback;
-- `hybrid`: deterministic assessment plus model validation;
-- `auto`: hybrid when credentials are available, deterministic otherwise.
+The existing versioned `QualityAssessment` and SQLite assessment history are reused. Scientific status is `pass`, `uncertain`, `insufficient`, or `not_assessed`. Additive card-v2 fields retain status, concise rationale, uncertainty, gate version, assessor, timestamp, source hash, full-text scope and URL. Publication status (`peer_reviewed`, `preprint`, `repository_only`, `unknown`) has separate source evidence. Venue metadata is an inference about publication, never a quality pass; DOI registration and repository labels do not demonstrate external review.
 
-Each versioned assessment stores an optional 0-100 score, confidence, recommendation, paper type, assessment scope, per-dimension scores, positive and negative signals, evidence references, missing information, assessor/model provenance, content hash, timestamp, rubric version, and any applied score cap. Null scores mean **not enough evidence**, not zero quality. Abstract-only assessments are low confidence and are never hidden automatically.
+A manuscript-based pass requires located evidence of contribution clarity, methods, validation addressing the central claims, appropriate comparisons or a justified absence, claim/evidence alignment, and limitations. Expectations depend on paper type: theory, surveys and conceptual work need suitable scientific argument or synthesis, not necessarily experiments. Public code is helpful, not mandatory. Author identity, affiliation, employer, university, country and prestige are not quality criteria. Strong independent preprints and repository manuscripts can pass; weak institutional or peer-reviewed work can fail. Screening does not prove scientific correctness.
 
-The deterministic rubric first classifies the paper as empirical, systems/application, methods, theoretical, survey/review, position/conceptual, dataset/benchmark, case study, replication, or unclear. It then applies type-appropriate expectations. Surveys are not penalized for lacking experiments, and theoretical papers can be validated through formal reasoning. Systems papers that only combine a familiar PDF/RAG/vector/graph/UI stack without comparative evidence receive explicit integration-only and functionality-only concerns and a score cap.
+The existing deterministic rubric remains an internal diagnostic, but keyword matches and numeric scores cannot earn pass or insufficient. A semantic assessment uses the existing optional LLM, or an explicit reviewed JSON import, and verifies quoted evidence against supplied manuscript sections/pages. Abstract-only, missing text and ungrounded proposed decisions remain uncertain. Research cards show human-readable labels and concise conclusions; diagnostic scores remain in exports/collapsed metadata.
 
-Full-text enrichment is optional and bounded. Paper Scout tries, in order, an explicitly supplied open-access PDF URL, arXiv PDF, Semantic Scholar `openAccessPdf`, and OpenAlex open-access locations. Downloads require public HTTP(S), use normal TLS verification, validate PDF content, follow at most five safe redirects, and enforce configured timeout, size, page, extraction-character, section, and prompt limits. Extracted text is cached under `data/cache/`; PDFs and cache files are ignored by Git and never committed. Scanned or malformed PDFs degrade to partial/abstract evidence without failing the daily scout.
+### Migration and bounded backfill
 
-Cached content is reused for routine runs. `reassess-quality --force` bypasses the extracted-text cache and is the explicit way to check for a changed PDF at the same URL; a new assessment version, rubric version, model, or content hash creates a new immutable assessment record.
+No historical record is deleted, relabeled pass, or rewritten by migration. Legacy assessments lacking the new semantics load as `not_assessed` while preserving their original score, evidence and version. There were no compatible semantic assessments in the inspected 2026-09-15 durable snapshot: all were deterministic. Consequently the initial screened sections are empty by design. Each index explains this and links prominently to `review.html`, which preserves relevant historical reading candidates and their New/date/search behavior. Insufficient papers remain in audit exports and direct research cards. Dated digests remain discovery logs, not retrospective quality endorsements.
 
-Quality-aware ranking supports `ignore`, `annotate`, `downrank`, and `hide`. Unknown quality is neutral. The configured default uses relevance as the larger signal and quality as a confidence/scope-weighted secondary signal. Human curation in `config/curation.yaml` or `config/curation/deep_research.yaml` can set `quality_score_override`, `quality_recommendation_override`, `quality_note`, `include_despite_quality`, or `suppress_for_quality`; pinned and explicit-include decisions override automated suppression.
+Backfill is explicit and bounded: `reassess-quality` defaults to the track's existing assessment limit, accepts `--limit 1..50`, and skips candidates already assessed under the current gate/version unless explicitly targeted/forced. Uncertain candidates can be retried using `--paper-id` (and `--force` to refresh cached content/model output). Daily discovery budgets remain unchanged; no corpus-wide assessment job is introduced. Engram continues to use deterministic metadata checks and zero model calls by default, so promotion requires an explicit manuscript review. Merely rerunning deterministic backfill does not establish scientific quality.
 
-Daily quality diagnostics are written to:
-
-```text
-reports/paper_scout/paper-quality-YYYY-MM-DD.md
-reports/paper_scout/quality-eval-YYYY-MM-DD.md
-reports/paper_scout/deep_research/paper-quality-YYYY-MM-DD.md
-reports/paper_scout/deep_research/quality-eval-YYYY-MM-DD.md
+```bash
+# Inspect saved assessment history without calls:
+python3 -m paper_scout reassess-quality --track engram --report-only
+# At most two candidates; model use must be separately budgeted/configured:
+python3 -m paper_scout reassess-quality --track agent_memory --limit 2 --no-llm
+# Import one review through the same validated assessment/store path, no model call:
+python3 -m paper_scout reassess-quality --track engram --paper-id arxiv:2601.07372 \
+  --full-text --no-llm --assessment-json review.json
 ```
 
-The static dashboard, paper detail JSON, library JSON, and CSV expose quality provenance and evidence. Advanced quality filters remain collapsed by default. Automated quality assessment is advisory triage, not peer review, and does not use venue prestige, author identity, institution, citation count, or paper age as quality signals.
+A review JSON uses the existing LLM response shape plus `quality_status`, `quality_rationale`, and `quality_uncertainty`. Evidence objects require a dimension, positive/concern signal, concise paraphrase/explanation, an exact short excerpt and its supplied section start page. All six core dimensions need positive manuscript anchors for pass; the comparisons dimension is `related_work_and_gap_positioning`. Missing anchors downgrade to uncertain. Review imports are versioned by a content digest, so a revised review can coexist with its predecessor. The import is a scientific judgment, not a way to infer quality from bibliographic metadata.
+
+Full-text acquisition reuses the bounded downloader and extraction cache: explicit PDF, arXiv, Zenodo file metadata, Semantic Scholar and OpenAlex locations. Network timeout, download size, redirect, page, character and prompt bounds remain enforced. Page continuations and architecture/protocol sections are retained. `--full-text` explicitly enables acquisition for a track such as Engram; `--force` refreshes an existing decision and PDF cache. PDFs/cache/state stay outside Git and public output.
+
+Reports include run assessments and `library-quality-YYYY-MM-DD.json`: relevance-high counts, each scientific status, main admissions, repository-only population/evaluations and reasons for non-admission. Every newly generated research-card sidecar is schema-validated. `jsonschema` is now a runtime dependency (previously test-only).
+
+### Zenodo example
+
+Record [22735829](https://zenodo.org/records/22735829), *Structured Episodic Memory (SEM)* by Berat Araç, was fetched from the public API and its 13-page manuscript inspected on 2026-09-16. The API labels it a preprint, with no creator affiliation; the PDF cover says Independent Researcher. It is classified `repository_only` because no external journal/conference publication is documented. The manuscript supports a scoped scientific pass through explicit methods, numerical paired ablations and limitations; results were not independently reproduced. Small seed counts, engineered Pong tasks and absent conventional RL baselines limit generalization. Topically it is an adjacent Agentic Memory review candidate, and outside Deep Research/Engram. The curation correction is about topical fit, independent of quality and affiliation. The factual fixture retains metadata, file checksum and manuscript evidence, excluding mutable counters.
 
 ## User-Friendly Daily Reading
 
@@ -348,6 +353,7 @@ https://vernerisirva.github.io/agentmempaper/
 
 ```text
 docs/index.html
+docs/review.html
 docs/latest.html
 docs/archive.html
 docs/about.html

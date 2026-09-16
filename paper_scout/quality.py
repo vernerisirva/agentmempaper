@@ -6,10 +6,11 @@ import re
 
 from paper_scout.full_text import SelectedPaperText, SelectedSection, select_assessment_text
 from paper_scout.models import PaperCandidate
-from paper_scout.quality_models import QUALITY_DIMENSIONS, QualityAssessment, QualityEvidence, recommendation_for_score
+from paper_scout.publication import publication_status
+from paper_scout.quality_models import QUALITY_GATE_VERSION, QUALITY_DIMENSIONS, QualityAssessment, QualityEvidence, recommendation_for_score
 
 
-ASSESSMENT_VERSION = "quality-v1"
+ASSESSMENT_VERSION = "quality-v2"
 RUBRIC_VERSION = "scholarly-rubric-v1"
 
 COMMON_WEIGHTS = {
@@ -100,6 +101,7 @@ def assess_quality_deterministically(
     rubric_version: str = RUBRIC_VERSION,
 ) -> QualityAssessment:
     selected = selected_text or select_assessment_text(candidate, None)
+    publication = publication_status(candidate)
     paper_type = classify_paper_type(candidate.title, selected.text)
     if selected.scope == "metadata_only" or len(selected.text.strip()) < 80:
         missing = ["Not enough paper content was available for a defensible scholarly-quality score.", *selected.warnings]
@@ -113,6 +115,12 @@ def assess_quality_deterministically(
             assessment_version=assessment_version,
             rubric_version=rubric_version,
             assessor_type="deterministic",
+            publication_status=publication.status,
+            publication_status_evidence=publication.evidence,
+            quality_gate_version=QUALITY_GATE_VERSION,
+            quality_status="uncertain",
+            quality_rationale="Text-pattern signals are available, but scientific substance requires manuscript review.",
+            quality_uncertainty="No semantic quality assessment has established methods, evidence and claim alignment.",
             source_content_hash=selected.content_hash,
             assessed_at=_now(),
             dimension_scores={dimension: None for dimension in QUALITY_DIMENSIONS},
@@ -139,6 +147,12 @@ def assess_quality_deterministically(
         assessment_version=assessment_version,
         rubric_version=rubric_version,
         assessor_type="deterministic",
+        publication_status=publication.status,
+        publication_status_evidence=publication.evidence,
+        quality_gate_version=QUALITY_GATE_VERSION,
+        quality_status="uncertain",
+        quality_rationale="Text-pattern signals are available, but scientific substance requires manuscript review.",
+        quality_uncertainty="No semantic quality assessment has established methods, evidence and claim alignment.",
         source_content_hash=selected.content_hash,
         assessed_at=_now(),
         dimension_scores=dimensions,

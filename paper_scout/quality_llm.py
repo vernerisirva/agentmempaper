@@ -4,6 +4,9 @@ from dataclasses import replace
 from datetime import UTC, datetime
 import json
 import logging
+import math
+import os
+from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText
 from paper_scout.http import HttpClient
@@ -13,6 +16,8 @@ from paper_scout.quality_models import QUALITY_GATE_VERSION, REQUIRED_GATE_DIMEN
 
 
 LOGGER = logging.getLogger(__name__)
+QUALITY_MAX_OUTPUT_TOKENS = 8192
+QUALITY_HTTP_TIMEOUT_SECONDS = 180
 
 
 def assess_with_optional_quality_llm(
@@ -29,14 +34,47 @@ def assess_with_optional_quality_llm(
         return deterministic
     try:
         payload = _request_payload(candidate, selected, deterministic, settings.model)
+        if (urlsplit(settings.base_url).hostname == "openrouter.ai"
+                and os.environ.get("PAPER_SCOUT_QUALITY_LLM_REASONING", "").lower() == "off"):
+            payload["reasoning"] = {"enabled": False, "exclude": True}
         headers = {"Authorization": f"Bearer {settings.api_key}"}
-        response = (http or HttpClient()).post_json(f"{settings.base_url}/chat/completions", payload, headers=headers)
-        content = json.loads(response)["choices"][0]["message"]["content"]
+        # Retrying a timed-out paid POST can charge twice for the same paper.
+        # A later explicit reassessment may retry; the automatic path never does.
+        # HttpClient.retries is the total attempt count (range(1, retries + 1)).
+        client = http or HttpClient(timeout_seconds=QUALITY_HTTP_TIMEOUT_SECONDS, retries=1)
+        LOGGER.info("Quality model request %s", json.dumps({
+            "canonical_id": deterministic.canonical_id, "model": settings.model,
+            "max_output_tokens": QUALITY_MAX_OUTPUT_TOKENS, "attempt_limit": 1,
+        }, sort_keys=True))
+        response = json.loads(client.post_json(f"{settings.base_url}/chat/completions", payload, headers=headers))
+        LOGGER.info("Quality model usage %s", json.dumps({
+            "canonical_id": deterministic.canonical_id, "model": settings.model,
+            **_reported_usage(response),
+        }, sort_keys=True))
+        content = response["choices"][0]["message"]["content"]
         parsed = json.loads(_strip_json_fence(content))
         return validate_llm_quality_response(parsed, deterministic, settings.model, mode, selected=selected)
     except Exception as exc:  # noqa: BLE001 - malformed or unavailable LLM output must not fail a run.
         LOGGER.warning("Quality LLM assessment failed for %s: %s", candidate.title, exc)
         return deterministic
+
+
+def _reported_usage(response: dict) -> dict:
+    """Allowlist numeric billing telemetry; never log message/reasoning payloads."""
+    usage = response.get("usage")
+    usage = usage if isinstance(usage, dict) else {}
+    completion = usage.get("completion_tokens_details") or {}
+    prompt = usage.get("prompt_tokens_details") or {}
+    values = {
+        "prompt_tokens": usage.get("prompt_tokens"),
+        "completion_tokens": usage.get("completion_tokens"),
+        "total_tokens": usage.get("total_tokens"),
+        "reasoning_tokens": completion.get("reasoning_tokens") if isinstance(completion, dict) else None,
+        "cached_prompt_tokens": prompt.get("cached_tokens") if isinstance(prompt, dict) else None,
+        "cost_usd": usage.get("cost"),
+    }
+    return {key: value if type(value) in {int, float} and math.isfinite(value) and value >= 0 else None
+            for key, value in values.items()}
 
 
 def validate_llm_quality_response(
@@ -203,6 +241,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
     )
     return {
         "model": model,
+        "max_tokens": QUALITY_MAX_OUTPUT_TOKENS,
         "temperature": 0,
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": json.dumps(prompt)}],
     }

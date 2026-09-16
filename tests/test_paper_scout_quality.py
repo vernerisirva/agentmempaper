@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 import tempfile
+import json
 import unittest
 from unittest.mock import patch
 
@@ -188,6 +189,66 @@ class PaperScoutQualityTest(unittest.TestCase):
         with patch.dict("os.environ", env, clear=True):
             result = assess_with_optional_quality_llm(candidate, selected, deterministic, "hybrid", http=FailingQualityHttp())
         self.assertEqual(result, deterministic)
+
+    def test_quality_request_is_bounded_and_does_not_retry_paid_posts(self):
+        from paper_scout.quality_llm import QUALITY_MAX_OUTPUT_TOKENS, _request_payload
+        candidate = _candidate()
+        selected = select_assessment_text(candidate, None)
+        deterministic = assess_quality_deterministically(candidate, "fixture:bounded", selected)
+        self.assertEqual(_request_payload(candidate, selected, deterministic, "test-model")["max_tokens"], 8192)
+        env = {"PAPER_SCOUT_LLM_PROVIDER": "openrouter", "PAPER_SCOUT_LLM_API_KEY": "test-only-key",
+               "PAPER_SCOUT_LLM_MODEL": "test-model", "PAPER_SCOUT_LLM_BASE_URL": "https://openrouter.ai/api/v1",
+               "PAPER_SCOUT_QUALITY_LLM_REASONING": "off"}
+        with patch.dict("os.environ", env, clear=True), patch("paper_scout.quality_llm.HttpClient") as client:
+            client.return_value.post_json.side_effect = TimeoutError("synthetic timeout")
+            with self.assertLogs("paper_scout.quality_llm", level="INFO") as logs:
+                result = assess_with_optional_quality_llm(candidate, selected, deterministic, "llm")
+            client.assert_called_once_with(timeout_seconds=180, retries=1)
+            client.return_value.post_json.assert_called_once()
+            payload = client.return_value.post_json.call_args.args[1]
+            self.assertEqual(payload["max_tokens"], QUALITY_MAX_OUTPUT_TOKENS)
+            self.assertEqual(payload["reasoning"], {"enabled": False, "exclude": True})
+            self.assertEqual(result.quality_status, "uncertain")
+            self.assertNotIn("test-only-key", "\n".join(logs.output))
+
+    def test_real_quality_transport_attempts_once_and_scopes_reasoning_to_openrouter(self):
+        candidate = _candidate()
+        selected = select_assessment_text(candidate, None)
+        deterministic = assess_quality_deterministically(candidate, "fixture:transport", selected)
+        for base, expected in (("https://openrouter.ai/api/v1/", True),
+                               ("https://OPENROUTER.AI/api/v1", True),
+                               ("https://api.openai.com/v1", False),
+                               ("https://openrouter.ai.example.com/v1", False)):
+            with self.subTest(base=base):
+                env = {"PAPER_SCOUT_LLM_PROVIDER": "auto", "PAPER_SCOUT_LLM_API_KEY": "test-only-key",
+                       "PAPER_SCOUT_LLM_MODEL": "test-model", "PAPER_SCOUT_LLM_BASE_URL": base,
+                       "PAPER_SCOUT_QUALITY_LLM_REASONING": "off"}
+                with patch.dict("os.environ", env, clear=True), patch(
+                    "paper_scout.http.urlopen", side_effect=TimeoutError("synthetic timeout")
+                ) as network, patch("paper_scout.http.time.sleep") as sleep:
+                    result = assess_with_optional_quality_llm(candidate, selected, deterministic, "llm")
+                network.assert_called_once()
+                sleep.assert_not_called()
+                self.assertEqual(network.call_args.kwargs["timeout"], 180)
+                request = network.call_args.args[0]
+                self.assertEqual(request.get_method(), "POST")
+                self.assertEqual("reasoning" in json.loads(request.data), expected)
+                self.assertEqual(result, deterministic)
+
+    def test_quality_usage_logs_only_numeric_telemetry_and_missing_is_unknown(self):
+        from paper_scout.quality_llm import _reported_usage
+        raw = {"usage": {"prompt_tokens": 100, "completion_tokens": 20, "total_tokens": 120,
+                        "cost": 0.003, "completion_tokens_details": {"reasoning_tokens": 0},
+                        "prompt_tokens_details": {"cached_tokens": 25}, "reasoning": "PRIVATE_REASONING"},
+               "choices": [{"message": {"content": "PRIVATE_CONTENT", "reasoning": "PRIVATE_REASONING"}}]}
+        metrics = _reported_usage(raw)
+        self.assertEqual(metrics["cost_usd"], 0.003)
+        self.assertEqual(metrics["cached_prompt_tokens"], 25)
+        self.assertNotIn("PRIVATE", json.dumps(metrics))
+        self.assertTrue(all(v is None for v in _reported_usage({}).values()))
+        self.assertIsNone(_reported_usage({"usage": {"cost": float("nan"), "prompt_tokens": True}})["cost_usd"])
+        self.assertIsNone(_reported_usage({"usage": {"cost": True}})["cost_usd"])
+        self.assertIsNone(_reported_usage({"usage": {"cost": None}})["cost_usd"])
 
     def test_well_formed_llm_output_is_validated_and_keeps_deterministic_cap(self):
         deterministic = replace(

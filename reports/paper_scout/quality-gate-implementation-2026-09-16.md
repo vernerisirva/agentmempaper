@@ -74,3 +74,13 @@ The first accepted complete-patch verdict was CHANGES_REQUIRED. The standard run
 5. **Insufficient papers missing from normal navigation:** intentional policy requested by the user. Export links are publicly available in each page's Export library disclosure and include these records, with direct research-card paths in JSON; insufficient work is excluded from normal reading views.
 
 A separate local provenance audit fixed numeric curation being mistaken for manuscript inspection and preserves actual semantic-review provenance, including uncertain reviews. Final independent verdict and reported model costs are recorded in the PR after re-review.
+
+A subsequent full-context review returned PASS_WITH_NOTES. Its notes were triaged as follows:
+
+- Publication provenance: `_load_library_papers` computes it from durable raw JSON, independently of legacy assessment payloads. `_apply_quality_presentation` preserves every non-unknown classification; the alleged overwrite is not present.
+- Version caching: the service already passes assessment and rubric version filters into the SQL query, and the model validates gate semantics. A related real gap was found in the bulk CLI skip rule: it now also compares rubric version. The bounded-backfill test proves an explicit rubric change schedules a new assessment. Future gate-definition changes still require a deliberate migration policy.
+- Partial-text coverage: retain type-appropriate evidence across six core dimensions rather than an arbitrary page/character percentage. Partial assessment remains explicitly recorded; quotes alone do not establish truth, and the semantic reviewer must judge adequacy. No abstract-only promotion is allowed.
+- Extraction normalization: whitespace/case normalization and otherwise exact excerpt matching deliberately fail conservatively. Ligatures/hyphenation can require copying the exact extracted text or produce uncertainty; broader fuzzy matching is deferred.
+- Legacy reconstruction helper: `_library_quality_assessment` has no callers after removal of score-based site ranking. Admission uses the loaded scientific fields directly, so its older shape cannot downgrade or promote runtime records. Removing the unused helper is optional cleanup.
+
+No changed source patch is omitted from the final review packet; full model/service/validator code and relevant site functions supplement the diff. The optional reasoning channel is disabled for direct structured reviews after two low-effort runs exhausted their 16,384-token output budgets without accepted verdicts. Model identity, redaction and strict verdict validation are unchanged; the installed reviewer is not modified.

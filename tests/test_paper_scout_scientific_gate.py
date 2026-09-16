@@ -317,3 +317,5 @@ class ScientificGateTest(unittest.TestCase):
                 for n in (1,2,3,3):
                     self.assertEqual(main(["reassess-quality","--track","engram","--limit","1","--no-llm"]),0)
                     self.assertEqual(len(store.list_current_quality_assessments()),n)
+                self.assertEqual(main(["reassess-quality", "--track", "engram", "--limit", "1", "--no-llm", "--rubric-version", "revised-rubric"]), 0)
+                self.assertEqual(sum(a.rubric_version == "revised-rubric" for a in store.list_current_quality_assessments()), 1)

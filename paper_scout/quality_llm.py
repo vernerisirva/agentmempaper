@@ -12,6 +12,7 @@ import os
 from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, _section_kind
+from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.models import PaperCandidate
@@ -39,14 +40,15 @@ def assess_with_optional_quality_llm(
         return replace(deterministic, quality_status="uncertain",
                        quality_rationale="Scientific quality could not be assessed because manuscript-level evidence was unavailable.",
                        execution={"outcome": "manuscript_unavailable", "calls": []})
-    payload = _request_payload(candidate, selected, deterministic, settings.model)
+    context = build_evidence_context(deterministic.canonical_id, selected)
+    payload = _request_payload(candidate, selected, deterministic, settings.model, context=context)
     if urlsplit(settings.base_url).hostname == "openrouter.ai":
         payload["provider"] = {"require_parameters": True}
         if os.environ.get("PAPER_SCOUT_QUALITY_LLM_REASONING", "").lower() == "off":
             payload["reasoning"] = {"enabled": False, "exclude": True}
     headers = {"Authorization": f"Bearer {settings.api_key}"}
     # One initial call plus one SHARED retry for either transient transport or
-    # a schema-valid non-substantive response. No nested retry or model substitution.
+    # a schema-valid non-substantive response or truncated output. No nested retry or model substitution.
     client = http or HttpClient(timeout_seconds=QUALITY_HTTP_TIMEOUT_SECONDS, retries=1)
     if type(getattr(client, "retries", None)) is int and client.retries != 1:
         raise ValueError("quality HTTP client must use one attempt per call")
@@ -81,22 +83,34 @@ def assess_with_optional_quality_llm(
             call["finish_reason"] = choice.get("finish_reason")
             if choice.get("finish_reason") == "error":
                 raise HttpRequestError("provider_failure", settings.base_url, "provider terminated the completion")
-            content = choice["message"]["content"]
-            call["content_characters"] = len(content)
-            call["content_sha256"] = hashlib.sha256(content.encode()).hexdigest()
+            message = choice.get("message")
+            content = message.get("content") if isinstance(message, dict) else None
+            if isinstance(content, str):
+                call["content_characters"] = len(content)
+                call["content_sha256"] = hashlib.sha256(content.encode()).hexdigest()
+            if choice.get("finish_reason") in {"length", "max_tokens", "max_output_tokens"}:
+                call.update(error_kind="output_limit", response_problem="truncated_completion")
+                outcome = "protocol_failure"
+                if attempt == 0:
+                    payload = {**payload, "messages": [*payload["messages"], {"role": "user", "content":
+                        "The previous completion exceeded the output limit and was discarded. Return a compact COMPLETE assessment with the same required schema and context ID. Keep rationale under 600 characters and uncertainty/limitations under 400 characters. Use 6-9 evidence objects, one per necessary dimension, with short claims and support explanations and 1-2 supplied evidence IDs each. Preserve every required scientific criterion and material limitation. Do not copy manuscript quotations or repeat metadata. No hidden reasoning, continuation, or partial JSON."}]}
+                    continue
+                break
             if choice.get("finish_reason") not in {"stop", None}:
                 raise ValueError("response did not finish normally")
-            parsed = validate_manual_quality_review(json.loads(_strip_json_fence(content)))
+            if not isinstance(content, str):
+                raise ValueError("response content must be a string")
+            parsed = validate_block_review(json.loads(_strip_json_fence(content)))
             non_substantive = _non_substantive_reason(parsed, deterministic)
             if non_substantive:
                 outcome = 'protocol_failure'
                 call.update(error_kind='non_substantive_response', response_problem=non_substantive)
                 if attempt == 0:
                     payload = {**payload, 'messages': [*payload['messages'], {'role':'user', 'content':
-                        'The previous response contained no substantive scientific assessment. Return the required JSON schema with a paper-specific scientific rationale and manuscript-grounded evidence copied from the supplied non-Abstract text. Do not repeat seed/template text. Hidden reasoning is neither needed nor requested. If the manuscript leaves a scientific question unresolved, explain that uncertainty with located evidence.'}]}
+                        'The previous response contained no substantive scientific assessment. Return the required JSON schema with a paper-specific scientific rationale and evidence IDs from the supplied non-Abstract blocks, with substantive support explanations. Do not repeat seed/template text. Hidden reasoning is neither needed nor requested. If the manuscript leaves a scientific question unresolved, explain that uncertainty with located evidence.'}]}
                     continue
                 break
-            result = validate_llm_quality_response(parsed, deterministic, settings.model, mode, selected=selected)
+            result = validate_block_quality_response(parsed, deterministic, settings.model, selected, context, mode)
             call["status"] = "success"
             outcome = result.execution["outcome"]
             return replace(result, execution={**result.execution, "calls": calls, "attempt_limit": 2})
@@ -145,7 +159,7 @@ def _non_substantive_reason(value: dict, seed: QualityAssessment) -> str | None:
     if re.search(r"^(?:as an ai|i (?:cannot|can't|am unable to) (?:assess|evaluate|review)|sorry[, ])", rationale):
         return 'refusal_or_meta_commentary'
     evidence = value.get('evidence') or []
-    if not any(str(e.get('excerpt') or '').strip() and str(e.get('explanation') or '').strip()
+    if not any((str(e.get('excerpt') or '').strip() or e.get('evidence_ids')) and str(e.get('explanation') or '').strip()
                and not str(e.get('explanation')).startswith(('This automated signal', 'The item was not detected')) for e in evidence):
         return 'no_substantive_manuscript_evidence'
     return None
@@ -355,16 +369,18 @@ def validate_manual_quality_review(value: object) -> dict:
     return value
 
 
-def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, deterministic: QualityAssessment, model: str) -> dict[str, object]:
+def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, deterministic: QualityAssessment, model: str, *, context: EvidenceContext | None = None) -> dict[str, object]:
+    context = context or build_evidence_context(deterministic.canonical_id, selected)
     prompt = {
-        "paper": {"title": candidate.title, "text": selected.text},
+        "paper": {"title": candidate.title, "text": context.text},
         "extraction": {
             "scope": selected.scope,
             "section_detection_uncertain": selected.section_detection_uncertain,
             "warnings": selected.warnings,
             "coverage": selected.coverage,
         },
-        "required_schema": quality_review_schema(),
+        "evidence_context": context.metadata(),
+        "required_schema": block_review_schema(),
     }
     system = (
         "Assess scholarly quality only from the supplied paper text and extraction metadata. "
@@ -374,8 +390,13 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "Every major judgment needs evidence; distinguish missing text from absent evidence. Do not invent sections or accuse authors of misconduct. "
         "A pass requires substantive manuscript evidence of contribution clarity, methodological rigor, validation of the central claims, "
         "claim/evidence alignment, related-work comparisons (or justified absence for this type), and limitations/scope. "
-        "Supply positive evidence objects for all six dimensions, each with a short CONTIGUOUS exact excerpt copied from a supplied non-Abstract section and its [Page] label. "
-        "Copy 20-200 characters per excerpt, including extracted spacing and punctuation; never join passages with ellipses, correct wording, summarize tables as quotations, or invent evidence. "
+        "Supply positive evidence objects for all six dimensions, citing the exact evidence IDs printed on the supplied non-Abstract blocks. "
+        "Each object must state a concise scientific claim, explain how the cited blocks bear on that claim, and label support_status supported, partial, or unsupported. "
+        "ID existence proves provenance only: it does NOT make a claim true. Mark misleading, irrelevant, contradictory or inadequate support as partial/unsupported and retain scientific uncertainty where a core criterion is unresolved. "
+        "For concerns, support_status describes evidence for the concern, not approval of the paper. A concern based only on missing supplied material cannot establish insufficiency. "
+        "Return evidence_schema_version and evidence_context_id exactly as supplied. Never invent IDs. For cross-page evidence cite blocks on both pages as needed. "
+        "Do not return quotations, page numbers, manuscript metadata or duplicate evidence objects; Paper Scout derives exact source snippets and provenance. "
+        "Keep the entire response concise: normally 6-9 evidence objects with 1-2 IDs each, a short rationale and explicit uncertainty/limitations. "
         "For related_work_and_gap_positioning explain whether the comparisons are adequate for the actual claims. "
         "Do not infer evidence from keywords, a convincing abstract, DOI, publication status or institutional affiliation. "
         "Independent authors and preprints face identical scientific criteria. Lack of public code alone is not a failure. "
@@ -390,7 +411,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "max_tokens": QUALITY_MAX_OUTPUT_TOKENS,
         "temperature": 0,
         "response_format": {"type": "json_schema", "json_schema": {"name": "scientific_quality",
-                              "strict": True, "schema": _strict_schema(quality_review_schema())}},
+                              "strict": True, "schema": _strict_schema(block_review_schema())}},
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": json.dumps(prompt)}],
     }
 
@@ -422,3 +443,118 @@ def _strict_schema(schema: dict) -> dict:
                 visit(child)
     visit(value)
     return value
+
+
+def block_review_schema() -> dict:
+    """Compact wire protocol; the scientific dimensions and gate are unchanged."""
+    text = lambda maximum: {'type': 'string', 'minLength': 1, 'maxLength': maximum}
+    properties = {
+        'evidence_schema_version': {'const': EVIDENCE_VERSION},
+        'evidence_context_id': text(64),
+        'quality_status': {'enum': ['pass', 'uncertain', 'insufficient']},
+        'quality_rationale': text(1600), 'quality_uncertainty': text(900),
+        'uncertainty_reason': {'enum': ['scientific_uncertainty', 'text_coverage_failure', None]},
+        'overall_quality_score': {'type': ['integer', 'null'], 'minimum': 0, 'maximum': 100},
+        'confidence': {'enum': ['low', 'medium', 'high']}, 'paper_type': {'enum': sorted(PAPER_TYPES)},
+        'dimension_scores': {'type':'object', 'additionalProperties':False, 'required':list(QUALITY_DIMENSIONS),
+            'properties':{d:{'type':['integer','null'],'minimum':0,'maximum':5} for d in QUALITY_DIMENSIONS}},
+        'evidence': {'type': 'array', 'maxItems': 12, 'items': {
+            'type': 'object', 'additionalProperties': False,
+            'required': ['dimension', 'signal_type', 'claim', 'explanation', 'support_status', 'evidence_ids'],
+            'properties': {'dimension': {'enum': list(QUALITY_DIMENSIONS)},
+                'signal_type': {'enum': ['positive', 'concern', 'missing']},
+                'claim': text(320), 'explanation': text(480),
+                'support_status': {'enum': ['supported', 'partial', 'unsupported']},
+                'evidence_ids': {'type': 'array', 'maxItems': 3, 'uniqueItems': True, 'items': text(32)}}}},
+    }
+    return {'type': 'object', 'additionalProperties': False, 'required': list(properties), 'properties': properties}
+
+
+def validate_block_review(value: object) -> dict:
+    from jsonschema import Draft202012Validator
+    errors = list(Draft202012Validator(block_review_schema()).iter_errors(value))
+    if errors:
+        raise ValueError('invalid block-evidence response: ' + errors[0].validator)
+    return value
+
+
+def validate_block_quality_response(value: dict, seed: QualityAssessment, model: str,
+                                    selected: SelectedPaperText, context: EvidenceContext,
+                                    mode: str = 'llm') -> QualityAssessment:
+    """Separate reference integrity from the model's scientific interpretation.
+
+    Support labels/explanations remain model judgments, not deterministic proof.
+    An unresolved core criterion cannot pass even if every cited address exists.
+    Old reviewed decisions continue through the unchanged legacy reader/validator.
+    """
+    validate_block_review(value)
+    expected = build_evidence_context(seed.canonical_id, selected)
+    context_ok = (context == expected and context.source_hash == seed.source_content_hash
+                  and value['evidence_context_id'] == context.context_id)
+    errors = [] if context_ok else ['manuscript or assessment-context identity mismatch']
+    evidence = []
+    audit = []
+    for item in value['evidence']:
+        try:
+            if not context_ok:
+                raise ValueError('manuscript or assessment-context identity mismatch')
+            blocks = resolve_evidence_ids(item['evidence_ids'], context, expected_context_id=value['evidence_context_id'])
+        except ValueError as exc:
+            errors.append(str(exc))
+            audit.append({'dimension': item['dimension'], 'evidence_ids': item['evidence_ids'],
+                          'provenance_valid': False, 'reason': str(exc)})
+            continue
+        pages = sorted({p for b in blocks for p in b.pages})
+        source_blocks = [{'evidence_id': b.evidence_id, 'text': b.text, 'content_hash': b.content_hash,
+                          'pages': b.pages, 'section': b.spans[0].section,
+                          'source_spans': [dict(text=s.text, page=s.page, section=s.section,
+                              section_index=s.section_index, start=s.start, end=s.end) for s in b.spans]} for b in blocks]
+        evidence.append(QualityEvidence(item['dimension'], item['signal_type'], item['claim'], item['explanation'],
+            section=' / '.join(dict.fromkeys(b.spans[0].section for b in blocks)), page=pages[0] if pages else None,
+            excerpt='\n[… separate evidence block …]\n'.join(b.text for b in blocks),
+            evidence_ids=[b.evidence_id for b in blocks], context_id=context.context_id, pages=pages,
+            source_blocks=source_blocks, support_status=item['support_status']))
+        audit.append({'dimension': item['dimension'], 'evidence_ids': item['evidence_ids'],
+                      'provenance_valid': True, 'support_status': item['support_status']})
+    status = value['quality_status']
+    rationale, uncertainty = value['quality_rationale'], value['quality_uncertainty']
+    supported = [e for e in evidence if e.support_status == 'supported']
+    positive = {e.dimension for e in supported if e.signal_type == 'positive'}
+    semantic_ok = (bool(rationale.strip() and uncertainty.strip())
+        and (status != 'pass' or REQUIRED_GATE_DIMENSIONS <= positive and value['confidence'] in {'medium', 'high'})
+        and (status != 'insufficient' or any(e.signal_type == 'concern' for e in supported)))
+    coverage_failure = (value['uncertainty_reason'] == 'text_coverage_failure'
+        or status == 'insufficient' and (selected.scope not in {'full_text', 'partial_full_text'}
+            or selected.coverage.get('extraction_truncated') or selected.coverage.get('omitted_body_characters', 0) > 0
+            or selected.section_detection_uncertain))
+    outcome = 'scientific'
+    if coverage_failure:
+        status, outcome = 'uncertain', 'text_coverage_failure'
+        rationale = 'Scientific judgment is unresolved because supplied assessment material is incomplete. Missing input cannot establish scientific insufficiency.'
+    elif errors or selected.scope not in {'full_text', 'partial_full_text'}:
+        status, outcome = 'uncertain', 'evidence_validation_failure'
+        rationale = 'Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.'
+    elif not semantic_ok:
+        status = 'uncertain'
+        rationale = 'Source provenance validated, but the assessor did not establish every required scientific criterion. The proposed judgment is withheld.'
+    score = value['overall_quality_score']
+    if score is not None and seed.applied_score_cap is not None:
+        score = min(score, seed.applied_score_cap)
+    # No deterministic keyword evidence or model-produced quote is promoted into
+    # new provenance. Legacy storage remains unchanged; new evidence is separate.
+    return replace(seed, assessor_type='hybrid' if mode in {'auto', 'hybrid'} else 'llm', assessor_model=model,
+        assessed_at=datetime.now(UTC).replace(microsecond=0).isoformat(), overall_quality_score=score,
+        confidence=value['confidence'], recommendation=recommendation_for_score(score, value['confidence']),
+        paper_type=value['paper_type'], dimension_scores=value['dimension_scores'], missing_information=[],
+        quality_status=status, quality_rationale=rationale,
+        quality_uncertainty=uncertainty, quality_gate_version=QUALITY_GATE_VERSION, evidence=evidence,
+        positive_signals=[e.paraphrase for e in supported if e.signal_type == 'positive'],
+        concerns=[e.paraphrase for e in evidence if e.signal_type == 'concern'], concise_summary=value['quality_rationale'],
+        coverage={**seed.coverage, **context.metadata()},
+        execution={'outcome': outcome, 'evidence_protocol': EVIDENCE_VERSION,
+            'evidence_context': context.metadata(), 'reference_audit': audit, 'reference_errors': errors,
+            'interpretation_validation': 'Scientific support is assessed by the model, not implied by ID existence.',
+            'proposed_status': value['quality_status'], 'proposed_decision': {k: value[k] for k in
+                ('quality_status', 'quality_rationale', 'quality_uncertainty')},
+            'submitted_anchors': len(value['evidence']), 'validated_anchors': len(evidence),
+            'validated_dimensions': sorted(positive)})

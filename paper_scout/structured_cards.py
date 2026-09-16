@@ -122,7 +122,17 @@ def paper_card_schema() -> dict[str, Any]:
                     "dimension_scores": {"type": "object"},
                     "positive_signals": {"type": "array", "items": {"type": "string"}},
                     "concerns": {"type": "array", "items": {"type": "string"}},
-                    "evidence": {"type": "array", "items": {"type": "object"}},
+                    "evidence": {"type": "array", "items": {"type": "object", "properties": {
+                        "evidence_ids": {"type": "array", "items": {"type": "string"}},
+                        "context_id": {"type": ["string", "null"]},
+                        "pages": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+                        "support_status": {"type": ["string", "null"], "enum": ["supported", "partial", "unsupported", None]},
+                        "source_blocks": {"type": "array", "items": {"type": "object", "required": ["evidence_id", "text", "content_hash", "pages", "section", "source_spans"], "properties": {
+                            "evidence_id": {"type": "string"}, "text": {"type": "string"},
+                            "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+                            "pages": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+                            "section": {"type": "string"}, "source_spans": {"type": "array", "items": {"type": "object"}}}}}
+                    }}},
                     "missing_information": {"type": "array", "items": {"type": "string"}},
                     "concise_summary": {"type": ["string", "null"]},
                     "applied_score_cap": {"type": ["integer", "null"]},

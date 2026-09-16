@@ -1,0 +1,234 @@
+[
+  {
+    "track": "agent_memory",
+    "rank": 1,
+    "canonical_id": "doi:10.1007/s44206-026-00290-2",
+    "title": "As-If Agents: Misrecognition and the Ethics of Non-Agentive AI",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "Required claim-alignment quotation rewrites the source opening and omits \u201cI argued\u201d. Eight of nine model anchors locate. This is an unsupported quotation, not a truncation issue.",
+    "source": "https://link.springer.com/content/pdf/10.1007/s44206-026-00290-2.pdf",
+    "source_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+    "format": "PDF",
+    "canonical_context_characters": 95062,
+    "canonical_context_hash": "a228c70d07cd3775d009bfda1bc5e5f946dfc11aeed87b6ce6794c56072d94aa",
+    "finish_reason": "stop",
+    "output_tokens": 2619,
+    "input_tokens": 23165,
+    "grounding_reasons": [
+      "quote_copy_mismatch"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 9,
+      "located_items": 8,
+      "failed_dimensions": [
+        "evidence_to_claim_alignment"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "agent_memory",
+    "rank": 3,
+    "canonical_id": "doi:10.48550/arxiv.2609.12320",
+    "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+    "classification": "model_protocol_failure",
+    "audit_note": "Baidu ended at the 8192-output-token limit (finish_reason=length). The incomplete response is a protocol failure; no scientific decision was inferred and no JSON repair was attempted.",
+    "source": "https://arxiv.org/pdf/2609.12320",
+    "source_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+    "format": "PDF",
+    "canonical_context_characters": 82782,
+    "canonical_context_hash": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea",
+    "finish_reason": "length",
+    "output_tokens": 8192,
+    "input_tokens": 26745,
+    "grounding_reasons": [],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 0,
+      "located_items": 0,
+      "failed_dimensions": []
+    },
+    "validation_reason": "protocol_failure"
+  },
+  {
+    "track": "agent_memory",
+    "rank": 6,
+    "canonical_id": "doi:10.48550/arxiv.2609.11060",
+    "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "Seven of nine model anchors locate. Claim-alignment quote changes extracted word spacing; related-work quote crosses a page/section-label boundary. Mixed quotation fidelity and cross-page representation problems remain unresolved.",
+    "source": "https://arxiv.org/pdf/2609.11060",
+    "source_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+    "format": "PDF",
+    "canonical_context_characters": 88085,
+    "canonical_context_hash": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e",
+    "finish_reason": "stop",
+    "output_tokens": 2316,
+    "input_tokens": 30450,
+    "grounding_reasons": [
+      "page_boundary_artifact",
+      "normalization_mismatch"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 9,
+      "located_items": 7,
+      "failed_dimensions": [
+        "evidence_to_claim_alignment",
+        "related_work_and_gap_positioning"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "deep_research",
+    "rank": 2,
+    "canonical_id": "doi:10.48550/arxiv.2609.11243",
+    "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "Five of nine model anchors locate. Contribution text crosses a page/header boundary; claim-alignment quote inserts word boundaries absent in extraction. Some inline compound hyphens also differ. These are mixed extraction/context and quotation fidelity issues, not proven scientific uncertainty.",
+    "source": "https://arxiv.org/pdf/2609.11243",
+    "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+    "format": "PDF",
+    "canonical_context_characters": 142653,
+    "canonical_context_hash": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84",
+    "finish_reason": "stop",
+    "output_tokens": 1936,
+    "input_tokens": 44536,
+    "grounding_reasons": [
+      "page_boundary_artifact",
+      "normalization_mismatch"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 9,
+      "located_items": 5,
+      "failed_dimensions": [
+        "contribution_clarity",
+        "scholarly_novelty_or_value",
+        "evidence_to_claim_alignment",
+        "reproducibility_and_transparency"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "deep_research",
+    "rank": 8,
+    "canonical_id": "doi:10.64898/2026.09.03.749176",
+    "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "Eleven of thirteen anchors locate. The only positive contribution anchor is Abstract-only and is correctly excluded; an additional claim-alignment quotation also changes punctuation spacing. A separate claim-alignment anchor locates, so the decisive gate failure is the unsupported body contribution anchor.",
+    "source": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+    "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+    "format": "PDF",
+    "canonical_context_characters": 56526,
+    "canonical_context_hash": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0",
+    "finish_reason": "stop",
+    "output_tokens": 2871,
+    "input_tokens": 15357,
+    "grounding_reasons": [
+      "wrong_anchor",
+      "normalization_mismatch"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 13,
+      "located_items": 11,
+      "failed_dimensions": [
+        "contribution_clarity",
+        "evidence_to_claim_alignment"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "engram",
+    "rank": 1,
+    "canonical_id": "arxiv:2609.04793",
+    "title": "ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "Eight of twelve model anchors locate. Contribution and one concern span page-label/header boundaries; the methods quote omits a mathematical domain constraint, and the limitations quote changes a semicolon to a period. No blanket whitespace/fuzzy acceptance was introduced.",
+    "source": "https://arxiv.org/pdf/2609.04793",
+    "source_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+    "format": "PDF",
+    "canonical_context_characters": 58649,
+    "canonical_context_hash": "efe7ed6c8ea7fa971edfc24fb60e8d0b50c1561b5508c8a08483e5f3f897f8a2",
+    "finish_reason": "stop",
+    "output_tokens": 2800,
+    "input_tokens": 21403,
+    "grounding_reasons": [
+      "quote_copy_mismatch",
+      "page_boundary_artifact"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 12,
+      "located_items": 8,
+      "failed_dimensions": [
+        "contribution_clarity",
+        "methodological_rigor",
+        "limitations_and_uncertainty_handling",
+        "methodological_rigor"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "engram",
+    "rank": 5,
+    "canonical_id": "doi:10.48550/arxiv.2608.17050",
+    "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+    "classification": "evidence_grounding_failure",
+    "audit_note": "The previous non-substantive seed echo is gone. Six of nine substantive anchors locate, but claim alignment is a paraphrase placed in the excerpt field, a reproducibility quote replaces an arrow with a word, and a limitation quote changes an en dash to a hyphen. The paraphrased claim-alignment excerpt is independently disqualifying.",
+    "source": "https://arxiv.org/pdf/2608.17050",
+    "source_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+    "format": "PDF",
+    "canonical_context_characters": 111896,
+    "canonical_context_hash": "83c66e5aff97849c72ce43bd2f082746d9e6774a285b12d8ffca1261433ad5ab",
+    "finish_reason": "stop",
+    "output_tokens": 2589,
+    "input_tokens": 36223,
+    "grounding_reasons": [
+      "wrong_anchor",
+      "quote_copy_mismatch",
+      "normalization_mismatch"
+    ],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 9,
+      "located_items": 6,
+      "failed_dimensions": [
+        "evidence_to_claim_alignment",
+        "reproducibility_and_transparency",
+        "limitations_and_uncertainty_handling"
+      ]
+    },
+    "validation_reason": "evidence_validation_failure"
+  },
+  {
+    "track": "engram",
+    "rank": 8,
+    "canonical_id": "arxiv:2601.07372",
+    "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+    "classification": "model_protocol_failure",
+    "audit_note": "Alibaba ended at the 8192-output-token limit (finish_reason=length). This is a protocol failure with no scientific decision and no JSON repair.",
+    "source": "https://arxiv.org/pdf/2601.07372",
+    "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+    "format": "PDF",
+    "canonical_context_characters": 67217,
+    "canonical_context_hash": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580",
+    "finish_reason": "length",
+    "output_tokens": 8192,
+    "input_tokens": 24075,
+    "grounding_reasons": [],
+    "returned_evidence_structure": {
+      "schema": "legacy quote evidence",
+      "items": 0,
+      "located_items": 0,
+      "failed_dimensions": []
+    },
+    "validation_reason": "protocol_failure"
+  }
+]

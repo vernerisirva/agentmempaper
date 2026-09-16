@@ -2071,7 +2071,7 @@ def _render_paper_detail_page(paper: LibraryPaper, relevance_profile: str = "age
 
 
 def _paper_quality_detail_section(paper: LibraryPaper) -> str:
-    evidence = "".join(f"<li>{escape(str(e.get('paraphrase', '')))}{_evidence_page_suffix(e, ' — page ')}</li>" for e in paper.quality_evidence)
+    evidence = "".join(_quality_evidence_detail(e) for e in paper.quality_evidence)
     return f"""<section class="detail-panel wide quality-detail-panel">
       <h2>{'Quality reviewed' if paper.quality_status == 'pass' else 'Scientifically insufficient' if paper.quality_status == 'insufficient' else 'Quality pending'}</h2>
       <p>{escape(paper.quality_rationale)}</p>
@@ -2503,8 +2503,25 @@ def _paper_quality_metadata(paper: LibraryPaper, display: QualityDisplayConfig |
 
 
 def _evidence_page_suffix(item: dict[str, object], prefix: str, suffix: str = "") -> str:
+    pages = sorted(set(item.get("pages") or []))
+    if pages:
+        label = str(pages[0]) if len(pages) == 1 else (f"{pages[0]}–{pages[-1]}" if pages == list(range(pages[0], pages[-1] + 1)) else ", ".join(map(str, pages)))
+        return f"{prefix.replace('page ', 'pages ') if len(pages) > 1 else prefix}{label}{suffix}"
     page = item.get("page")
     return f"{prefix}{int(page)}{suffix}" if page else ""
+
+
+def _quality_evidence_detail(item: dict[str, object]) -> str:
+    claim = escape(str(item.get('paraphrase', '')))
+    location = _evidence_page_suffix(item, ' — page ')
+    if not item.get('evidence_ids'):
+        return f"<li>{claim}{location}</li>"
+    snippets = ''.join(f"<blockquote>{escape(str(b.get('text', '')))}</blockquote>" for b in item.get('source_blocks', []))
+    explanation = escape(str(item.get('explanation', '')))
+    support = escape(str(item.get('support_status') or 'unreviewed'))
+    return (f"<li><strong>{escape(str(item.get('dimension', '')).replace('_', ' ').capitalize())}{location}</strong>"
+            f"<p>{claim}</p><p>Assessor’s interpretation: {support}. {explanation}</p>"
+            f"<details><summary>Canonical source evidence</summary>{snippets}</details></li>")
 
 
 def _visible_tag_badges(tags: list[str], limit: int = 4) -> str:

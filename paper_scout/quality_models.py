@@ -52,6 +52,11 @@ class QualityEvidence:
     section: str | None = None
     page: int | None = None
     excerpt: str | None = None
+    evidence_ids: list[str] = field(default_factory=list)
+    context_id: str | None = None
+    pages: list[int] = field(default_factory=list)
+    source_blocks: list[dict[str, Any]] = field(default_factory=list)
+    support_status: str | None = None
 
     def __post_init__(self) -> None:
         if self.dimension not in QUALITY_DIMENSIONS:
@@ -76,6 +81,11 @@ class QualityEvidence:
             section=_optional_text(value.get("section")),
             page=int(value["page"]) if value.get("page") is not None else None,
             excerpt=_optional_text(value.get("excerpt")),
+            evidence_ids=list(value.get("evidence_ids") or []),
+            context_id=_optional_text(value.get("context_id")),
+            pages=list(value.get("pages") or []),
+            source_blocks=list(value.get("source_blocks") or []),
+            support_status=_optional_text(value.get("support_status")),
         )
 
 
@@ -131,7 +141,7 @@ class QualityAssessment:
                 raise ValueError("scientific decisions require a current manuscript-based assessment")
             if not self.quality_rationale.strip() or not self.quality_uncertainty.strip():
                 raise ValueError("scientific decisions require rationale and uncertainty")
-            grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive"}
+            grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive" and e.support_status in {None, "supported"}}
             if self.quality_status == "pass" and not REQUIRED_GATE_DIMENSIONS <= grounded:
                 raise ValueError("quality pass requires manuscript evidence across the core dimensions")
             if self.quality_status == "insufficient" and not any(e.signal_type == "concern" and e.excerpt and (e.section or e.page) for e in self.evidence):

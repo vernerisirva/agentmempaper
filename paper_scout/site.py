@@ -139,6 +139,7 @@ class LibraryPaper:
     quality_uncertainty: str = "Legacy scores and topical relevance do not establish scientific quality."
     quality_gate_version: str | None = None
     quality_full_text_assessed: bool = False
+    quality_coverage: dict = field(default_factory=dict)
     quality_full_text_url: str | None = None
     publication_status: str = "unknown"
     publication_status_evidence: str = "Insufficient publication provenance."
@@ -1291,6 +1292,7 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 quality_uncertainty=quality.quality_uncertainty if quality else "Manuscript evidence has not been reviewed.",
                 quality_gate_version=quality.quality_gate_version if quality else None,
                 quality_full_text_assessed=quality.full_text_assessed if quality else False,
+                quality_coverage=quality.coverage if quality else {},
                 quality_full_text_url=quality.full_text_url if quality else None,
                 publication_status=publication.status,
                 publication_status_evidence=publication.evidence,
@@ -1600,6 +1602,7 @@ def _quality_to_json(paper: LibraryPaper) -> dict[str, object]:
         "uncertainty": paper.quality_uncertainty,
         "gate_version": paper.quality_gate_version,
         "full_text_assessed": paper.quality_full_text_assessed,
+        "coverage": paper.quality_coverage,
         "full_text_url": paper.quality_full_text_url,
         "overall_quality_score": paper.quality_score,
         "confidence": paper.quality_confidence or "unknown",
@@ -2075,9 +2078,10 @@ def _paper_quality_detail_section(paper: LibraryPaper) -> str:
       <p>{escape(paper.quality_uncertainty)}</p>
       <p>Publication: {escape(paper.publication_status.replace('_', ' '))}. {escape(paper.publication_status_evidence)}</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Full text inspected: {str(paper.quality_full_text_assessed).lower()}. Scope: {escape(paper.quality_scope or 'not assessed')}.</p>
+        <p>Manuscript evidence assessed: {str(paper.quality_full_text_assessed).lower()}. Scope: {escape(paper.quality_scope or 'not assessed')}.</p>
         <p>Assessor: {escape(paper.quality_assessor_type or 'none')}. Assessment version: {escape(paper.quality_assessment_version or 'none')}. Gate: {escape(paper.quality_gate_version or 'not assessed')}.</p>
         <p>Assessed: {escape(paper.quality_assessed_at or 'not assessed')}.</p>
+        {("<p>Coverage: " + escape(str(paper.quality_coverage.get("selected_characters", "unknown"))) + " of " + escape(str(paper.quality_coverage.get("eligible_characters", "unknown"))) + " eligible manuscript characters; omitted body: " + escape(str(paper.quality_coverage.get("omitted_body_characters", "unknown"))) + ". Extraction complete: " + escape(str(paper.quality_coverage.get("extraction_complete", "unknown"))) + ".</p>") if paper.quality_coverage else ""}
         <ul>{evidence}</ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>

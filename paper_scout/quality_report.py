@@ -63,7 +63,7 @@ def write_paper_quality_report(
                 f"- Scientific quality: {item.quality_status}",
                 f"- Rationale: {item.quality_rationale}",
                 f"- Uncertainty: {item.quality_uncertainty}",
-                f"- Full text inspected: {item.full_text_assessed}; source: {item.full_text_url or 'not recorded'}",
+                f"- Manuscript evidence assessed: {item.full_text_assessed}; source: {item.full_text_url or 'not recorded'}",
                 f"- Automated score: {score}",
                 f"- Recommendation: {item.recommendation}",
                 f"- Confidence / scope: {item.confidence} / {item.assessment_scope}",

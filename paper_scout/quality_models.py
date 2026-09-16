@@ -109,6 +109,7 @@ class QualityAssessment:
     quality_gate_version: str | None = None
     full_text_url: str | None = None
     execution: dict[str, Any] = field(default_factory=dict)
+    coverage: dict[str, Any] = field(default_factory=dict)
 
     @property
     def full_text_assessed(self) -> bool:
@@ -118,7 +119,7 @@ class QualityAssessment:
             and (self.assessor_model or "").startswith("manual-review:")
         )
         return (self.assessment_scope in {"partial_full_text", "full_text"} and semantic_assessor
-                and self.execution.get("outcome") not in {"transport_failure", "protocol_failure", "manuscript_unavailable"})
+                and self.execution.get("outcome") not in {"transport_failure", "protocol_failure", "manuscript_unavailable", "text_coverage_failure"})
 
     def __post_init__(self) -> None:
         if self.publication_status not in {"peer_reviewed", "preprint", "repository_only", "unknown"}:
@@ -182,6 +183,7 @@ class QualityAssessment:
             quality_gate_version=_optional_text(value.get("quality_gate_version")),
             full_text_url=_optional_text(value.get("full_text_url")),
             execution=dict(value.get("execution") or {}),
+            coverage=dict(value.get("coverage") or {}),
             overall_quality_score=int(score) if score is not None else None,
             confidence=str(value.get("confidence", "low")),
             recommendation=str(value.get("recommendation", "unknown")),

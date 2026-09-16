@@ -221,7 +221,7 @@ class ProviderContractTest(unittest.TestCase):
         from paper_scout.quality_llm import _strict_schema, quality_review_schema
         schema = _strict_schema(quality_review_schema())
         Draft202012Validator.check_schema(schema)
-        value = {**manuscript()[1], "quality_status": "uncertain", "dimension_scores": {},
+        value = {**manuscript()[1], "quality_status": "uncertain", "uncertainty_reason": None, "dimension_scores": {},
                  "positive_signals": [], "concerns": [], "missing_information": [], "concise_summary": ""}
         for key in schema["properties"]["dimension_scores"]["properties"]:
             value["dimension_scores"][key] = None

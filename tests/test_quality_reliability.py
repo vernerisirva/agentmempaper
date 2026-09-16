@@ -297,3 +297,16 @@ class ReviewRegressionTest(unittest.TestCase):
         self.assertIn("Nested evidence.", document.text)
         self.assertTrue(any("outside section" in warning for warning in document.warnings))
         self.assertEqual(select_assessment_text(candidate(), document).scope, "partial_full_text")
+
+
+class ProviderTerminationTest(unittest.TestCase):
+    def test_http_200_provider_error_is_retried_once_and_never_a_scientific_failure(self):
+        result, _ = ReliabilityTest().assess(SequenceHttp([envelope(finish="error"), envelope()]))
+        self.assertEqual(result.quality_status, "pass")
+        self.assertEqual(result.execution["calls"][0]["error_kind"], "provider_failure")
+        self.assertEqual(result.execution["calls"][0]["finish_reason"], "error")
+        self.assertEqual([c["status"] for c in result.execution["calls"]], ["failed", "success"])
+        exhausted, _ = ReliabilityTest().assess(SequenceHttp([envelope(finish="error"), envelope(finish="error")]))
+        self.assertEqual(exhausted.quality_status, "uncertain")
+        self.assertEqual(exhausted.execution["outcome"], "transport_failure")
+        self.assertEqual(len(exhausted.execution["calls"]), 2)

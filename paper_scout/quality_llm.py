@@ -79,6 +79,8 @@ def assess_with_optional_quality_llm(
                                        status_code=code if type(code) is int else None)
             choice = response["choices"][0]
             call["finish_reason"] = choice.get("finish_reason")
+            if choice.get("finish_reason") == "error":
+                raise HttpRequestError("provider_failure", settings.base_url, "provider terminated the completion")
             content = choice["message"]["content"]
             call["content_characters"] = len(content)
             call["content_sha256"] = hashlib.sha256(content.encode()).hexdigest()
@@ -93,7 +95,7 @@ def assess_with_optional_quality_llm(
             outcome = "transport_failure"
             call.update(error_kind=exc.kind, http_status=exc.status_code,
                         retry_after_seconds=exc.retry_after_seconds)
-            transient = exc.kind in {"dns", "network", "timeout", "incomplete_response", "connection_error"} or (
+            transient = exc.kind in {"dns", "network", "timeout", "incomplete_response", "connection_error", "provider_failure"} or (
                 exc.kind == "http" and (exc.status_code in {408, 429} or
                                         (exc.status_code is not None and 500 <= exc.status_code <= 599)))
             delay = max(2.0 * 2 ** attempt, exc.retry_after_seconds or 0)

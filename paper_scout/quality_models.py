@@ -4,6 +4,14 @@ from dataclasses import asdict, dataclass, field
 from typing import Any
 
 
+QUALITY_STATUSES = {"pass", "uncertain", "insufficient", "not_assessed"}
+QUALITY_GATE_VERSION = "scientific-gate-v1"
+REQUIRED_GATE_DIMENSIONS = {
+    "contribution_clarity", "methodological_rigor", "evaluation_or_validation_strength",
+    "evidence_to_claim_alignment", "limitations_and_uncertainty_handling",
+    "related_work_and_gap_positioning",
+}
+
 PAPER_TYPES = {
     "empirical_research",
     "systems_or_application",
@@ -93,8 +101,38 @@ class QualityAssessment:
     assessor_model: str | None = None
     applied_score_cap: int | None = None
     applied_score_cap_reason: str | None = None
+    publication_status: str = "unknown"
+    publication_status_evidence: str = "Publication provenance was not recorded for this assessment."
+    quality_status: str = "not_assessed"
+    quality_rationale: str = "Scientific quality has not been assessed under the manuscript evidence gate."
+    quality_uncertainty: str = "Legacy scores and text-pattern signals do not establish scientific quality."
+    quality_gate_version: str | None = None
+    full_text_url: str | None = None
+
+    @property
+    def full_text_assessed(self) -> bool:
+        semantic_assessor = self.assessor_type in {"llm", "hybrid"} or (
+            self.assessor_type == "manual_override"
+            and self.quality_gate_version == QUALITY_GATE_VERSION
+            and (self.assessor_model or "").startswith("manual-review:")
+        )
+        return self.assessment_scope in {"partial_full_text", "full_text"} and semantic_assessor
 
     def __post_init__(self) -> None:
+        if self.publication_status not in {"peer_reviewed", "preprint", "repository_only", "unknown"}:
+            raise ValueError("unknown publication status")
+        if self.quality_status not in QUALITY_STATUSES:
+            raise ValueError("unknown scientific quality status")
+        if self.quality_status in {"pass", "insufficient"}:
+            if not self.full_text_assessed or self.quality_gate_version != QUALITY_GATE_VERSION:
+                raise ValueError("scientific decisions require a current manuscript-based assessment")
+            if not self.quality_rationale.strip() or not self.quality_uncertainty.strip():
+                raise ValueError("scientific decisions require rationale and uncertainty")
+            grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive"}
+            if self.quality_status == "pass" and not REQUIRED_GATE_DIMENSIONS <= grounded:
+                raise ValueError("quality pass requires manuscript evidence across the core dimensions")
+            if self.quality_status == "insufficient" and not any(e.signal_type == "concern" and e.excerpt and (e.section or e.page) for e in self.evidence):
+                raise ValueError("insufficient quality requires a manuscript-grounded concern")
         if not self.canonical_id.strip():
             raise ValueError("quality assessment requires a canonical identifier")
         if self.overall_quality_score is not None and not 0 <= self.overall_quality_score <= 100:
@@ -134,6 +172,13 @@ class QualityAssessment:
         evidence = value.get("evidence") or []
         return cls(
             canonical_id=str(value.get("canonical_id", "")),
+            publication_status=str(value.get("publication_status", "unknown")),
+            publication_status_evidence=str(value.get("publication_status_evidence", "Publication provenance was not recorded for this assessment.")),
+            quality_status=str(value.get("quality_status", "not_assessed")),
+            quality_rationale=str(value.get("quality_rationale", "Scientific quality has not been assessed under the manuscript evidence gate.")),
+            quality_uncertainty=str(value.get("quality_uncertainty", "Legacy assessment retained; manuscript review is required before promotion.")),
+            quality_gate_version=_optional_text(value.get("quality_gate_version")),
+            full_text_url=_optional_text(value.get("full_text_url")),
             overall_quality_score=int(score) if score is not None else None,
             confidence=str(value.get("confidence", "low")),
             recommendation=str(value.get("recommendation", "unknown")),

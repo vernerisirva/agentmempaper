@@ -32,6 +32,9 @@ def write_paper_quality_report(
         "## Summary",
         "",
         f"- Papers assessed or reused: {len(assessments)}",
+        f"- Scientific quality statuses: {_counts(Counter(item.quality_status for item in assessments))}",
+        f"- Publication statuses: {_counts(Counter(item.publication_status for item in assessments))}",
+        f"- Repository-only manuscripts inspected: {sum(item.publication_status == 'repository_only' and item.full_text_assessed for item in assessments)}",
         f"- Assessment scopes: {_counts(scope_counts)}",
         f"- Confidence: {_counts(confidence_counts)}",
         f"- Recommendations: {_counts(recommendation_counts)}",
@@ -57,6 +60,10 @@ def write_paper_quality_report(
             [
                 f"### `{item.canonical_id}`",
                 "",
+                f"- Scientific quality: {item.quality_status}",
+                f"- Rationale: {item.quality_rationale}",
+                f"- Uncertainty: {item.quality_uncertainty}",
+                f"- Full text inspected: {item.full_text_assessed}; source: {item.full_text_url or 'not recorded'}",
                 f"- Automated score: {score}",
                 f"- Recommendation: {item.recommendation}",
                 f"- Confidence / scope: {item.confidence} / {item.assessment_scope}",
@@ -94,3 +101,25 @@ def _score_band(score: int | None) -> str:
         return "unknown"
     lower = (score // 10) * 10
     return f"{lower:02d}-{min(100, lower + 9):02d}"
+
+
+def write_library_gate_report(report_dir: Path, report_date: str, papers: list) -> Path:
+    """Inventory after topical curation; historical SQLite assessments are retained."""
+    counts = Counter(p.quality_status for p in papers)
+    high = [p for p in papers if p.decision == "relevant"]
+    repository = [p for p in papers if p.publication_status == "repository_only"]
+    reasons = Counter("quality suppressed" if p.quality_suppressed else "topical review candidate" if p.decision != "relevant" else p.quality_status for p in papers if not (p.decision == "relevant" and p.quality_status == "pass" and not p.quality_suppressed))
+    payload = {
+        "population": "Current topical library after curation; records remain in SQLite",
+        "total": len(papers), "relevance_high": len(high),
+        "quality_statuses": {status: counts[status] for status in ("pass", "not_assessed", "uncertain", "insufficient")},
+        "main_library": sum(p.quality_status == "pass" and not p.quality_suppressed for p in high),
+        "repository_only": len(repository),
+        "repository_only_evaluated": sum(p.quality_full_text_assessed for p in repository),
+        "admission_blockers": dict(reasons),
+    }
+    import json
+    report_dir.mkdir(parents=True, exist_ok=True)
+    path = report_dir / f"library-quality-{report_date}.json"
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+    return path

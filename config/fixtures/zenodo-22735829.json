@@ -1,0 +1,131 @@
+{
+  "id": 22735829,
+  "doi": "10.5281/zenodo.22735829",
+  "metadata": {
+    "title": "Structured Episodic Memory (SEM)",
+    "doi": "10.5281/zenodo.22735829",
+    "publication_date": "2026-09-13",
+    "description": "<p>Structured Episodic Memory (SEM) is an experimental non-neural agent architecture that combines overlapping state abstractions, associative value memories, eligibility-based temporal credit assignment, goal-conditioned contact control, and context-dependent strategy memory. We evaluate SEM in Pong using structured state observations rather than pixels and without an analytical future-trajectory or interception solver. Across 40 sequential training runs comprising 2,200 incoming outcomes, the trained controller achieved a lifetime hit rate of 0.958, while frozen evaluation on six fresh seeds reached a mean hit rate of 0.974. Controlled ablations show that temporal eligibility improves motor learning, goal-conditioned aim memory improves contact control, fast memory accelerates adaptation to hidden opponent changes, and context-specific memory is required for high performance when action values conflict across contexts. Under a hard compound physics shift, the frozen controller retained a mean hit rate above 0.92; coarse overlapping abstractions preserved most of this performance even when exact fine-grained state keys were unavailable. SEM also partially re-learned a hidden actuator inversion from sparse hit/miss feedback and showed faster reacquisition on repeated exposure than on first exposure. These results do not establish superiority over neural or conventional reinforcement-learning methods, nor do they imply learned representations. Instead, they characterize how structured associative memory and sparse temporal credit can support motor control, contextual adaptation, transfer, and partial retention within the tested Pong environment.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Araç, Berat",
+        "affiliation": null,
+        "orcid": "0009-0008-7591-9675"
+      }
+    ],
+    "keywords": [
+      "Structured Episodic Memory",
+      "memory-based learning",
+      "non-neural learning",
+      "episodic control"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/berat-arac/structured-episodic-memory",
+        "relation": "isSupplementTo",
+        "resource_type": "software",
+        "scheme": "url"
+      }
+    ],
+    "version": "1.0.0",
+    "language": "eng",
+    "resource_type": {
+      "title": "Preprint",
+      "type": "publication",
+      "subtype": "preprint"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "22735828"
+          }
+        }
+      ]
+    }
+  },
+  "files": [
+    {
+      "id": "86c50991-9d13-46f1-a428-5ea6f63cfc05",
+      "key": "Structured_Episodic_Memory.pdf",
+      "size": 621489,
+      "checksum": "md5:27521c9027d6e8970bc25faf90a1e067",
+      "links": {
+        "self": "https://zenodo.org/api/records/22735829/files/Structured_Episodic_Memory.pdf/content"
+      }
+    }
+  ],
+  "retrieved_at": "2026-09-16",
+  "source_url": "https://zenodo.org/api/records/22735829",
+  "manuscript_sha256": "43b0b3bf0966c008f54c4d479f47c8e1aba0509b1a97dffaf96cb1b557a9185d",
+  "communities": [],
+  "journal": null,
+  "conference": null,
+  "manuscript_affiliation": "Independent Researcher (PDF cover); API creator affiliation is null.",
+  "inspection": {
+    "publication_status": "repository_only",
+    "declared_resource_type": "preprint",
+    "quality_status": "pass",
+    "full_text_inspected": true,
+    "pages": 13,
+    "rationale": "The scoped Pong systems study specifies associative updates, controls and training; paired ablations and frozen fresh-seed evaluation substantiate its component claims. Explicit limitations disclaim representation learning and superiority over conventional RL.",
+    "uncertainty": "Small seed counts (usually 6–8), one engineered task family, hand-designed state features, and no tuned conventional RL baselines limit generalization. Results and code were not independently reproduced.",
+    "relevance": {
+      "agent_memory": "review_candidate",
+      "deep_research": "not_relevant",
+      "engram": "not_relevant"
+    },
+    "relevance_rationale": "Adjacent non-neural memory-based control, not an LLM agent, deep-research workflow, or model-integrated language-model memory study."
+  },
+  "manuscript_excerpts": [
+    {
+      "dimension": "contribution_clarity",
+      "page": 10,
+      "section": "Discussion",
+      "excerpt": "The central result is not that Pong can be solved",
+      "conclusion": "The discussion frames a scoped associative-control systems contribution, not a new RL foundation."
+    },
+    {
+      "dimension": "methodological_rigor",
+      "page": 6,
+      "section": "Sparse temporal credit",
+      "excerpt": "The survival trace uses decay 0.88 and a maximum of 84 items.",
+      "conclusion": "Temporal credit, rewards, action readout and key construction are specified, with constants in the appendix."
+    },
+    {
+      "dimension": "evaluation_or_validation_strength",
+      "page": 7,
+      "section": "Results",
+      "excerpt": "Frozen evaluation on six fresh seeds yields a mean hit rate of 0.974.",
+      "conclusion": "Fresh-seed frozen evaluation and paired ablations test the scoped component claims; Table 1 reports numerical effects."
+    },
+    {
+      "dimension": "evidence_to_claim_alignment",
+      "page": 10,
+      "section": "Limitations",
+      "excerpt": "the work makes no claim of sam-\nple efficiency or performance superiority over established\nalternatives.",
+      "conclusion": "The authors explicitly avoid superiority and broad transfer claims; measured effects are confined to the tested Pong settings."
+    },
+    {
+      "dimension": "related_work_and_gap_positioning",
+      "page": 10,
+      "section": "Limitations",
+      "excerpt": "No comparison is made with tuned tabular Q learning, tile coded Sarsa,",
+      "conclusion": "External RL baselines are missing and explicitly acknowledged. Mechanistic ablations support the narrower component claims; no comparative-superiority claim is made."
+    },
+    {
+      "dimension": "limitations_and_uncertainty_handling",
+      "page": 10,
+      "section": "Limitations",
+      "excerpt": "The benchmark seed counts are small, usually between six and eight.",
+      "conclusion": "The manuscript states single-task, small-seed, engineered-feature and source-audit limitations."
+    }
+  ]
+}

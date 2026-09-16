@@ -91,6 +91,13 @@ def locate_full_text_urls(candidate: PaperCandidate, direct_pdf_url: str | None 
     if candidate.arxiv_id:
         urls.append(f"https://arxiv.org/pdf/{candidate.arxiv_id}.pdf")
     raw = candidate.raw if isinstance(candidate.raw, dict) else {}
+    for item in raw.get("files") or []:
+        if isinstance(item, dict) and str(item.get("key") or "").lower().endswith(".pdf"):
+            link = (item.get("links") or {}).get("self")
+            if link:
+                urls.append(str(link))
+    if candidate.url and candidate.url.lower().endswith(".pdf"):
+        urls.append(candidate.url)
     semantic_pdf = raw.get("openAccessPdf")
     if isinstance(semantic_pdf, dict) and semantic_pdf.get("url"):
         urls.append(str(semantic_pdf["url"]))
@@ -157,15 +164,17 @@ def select_assessment_text(
         ("introduction",),
         ("contribution",),
         ("related work", "background"),
-        ("method", "methodology", "proposed method", "system architecture", "implementation"),
-        ("experiment", "experimental setup", "evaluation", "results", "ablation"),
+        ("method", "methodology", "proposed method", "architecture", "implementation"),
+        ("experiment", "experimental setup", "experimental protocol", "evaluation", "results", "ablation"),
         ("limitations", "threats to validity"),
         ("conclusion", "discussion"),
     )
     for aliases in target_groups:
-        match = next((section for section in detected if any(alias in section.heading.lower() for alias in aliases)), None)
-        if match:
-            selected.append(SelectedSection(match.heading, match.text[:max_section_characters], match.first_page))
+        for match in detected:
+            if any(alias in match.heading.lower() for alias in aliases):
+                section = SelectedSection(match.heading, match.text[:max_section_characters], match.first_page)
+                if section not in selected:
+                    selected.append(section)
     uncertain = not selected
     if uncertain:
         pages = document.pages
@@ -180,7 +189,7 @@ def select_assessment_text(
     body = "\n\n".join(f"## {section.heading}\n[Page {section.first_page or 'unknown'}]\n{section.text}" for section in selected)
     text = (prefix + body)[:max_prompt_characters]
     covered_chars = sum(len(section.text) for section in selected)
-    scope = "full_text" if document.complete and covered_chars >= min(len(document.text), max_prompt_characters) * 0.65 else "partial_full_text"
+    scope = "full_text" if document.complete and len(prefix + body) <= max_prompt_characters and covered_chars >= min(len(document.text), max_prompt_characters) * 0.65 else "partial_full_text"
     warnings = list(document.warnings)
     if uncertain:
         warnings.append("Section headings could not be detected reliably; beginning, middle, and end passages were selected.")
@@ -252,12 +261,17 @@ def _extract_pdf(payload: bytes, url: str, max_pages: int, max_characters: int) 
 
 def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     heading_pattern = re.compile(
-        r"(?im)^(?:\d+(?:\.\d+)*\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|system architecture|implementation|experimental setup|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusion)\s*$"
+        r"(?im)^(?:\d+(?:\.\d+)*\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|(?:system )?architecture|implementation|experimental setup|experimental protocol|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusion)\s*$"
     )
     sections: list[SelectedSection] = []
+    current_heading = None
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
+        prefix = page.text[:matches[0].start()] if matches else page.text
+        if current_heading and prefix.strip():
+            sections.append(SelectedSection(current_heading, prefix.strip(), page.page))
         for index, match in enumerate(matches):
+            current_heading = match.group(1).title()
             end = matches[index + 1].start() if index + 1 < len(matches) else len(page.text)
             text = page.text[match.end() : end].strip()
             if text:

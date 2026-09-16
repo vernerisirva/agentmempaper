@@ -43,7 +43,7 @@ def eligible_for(block: EvidenceBlock, dimension: str, statement_kind: str) -> b
     if block.section_role == 'abstract':
         # An attributed statement of what the authors propose, never evidence
         # that the method/results are adequate or the contribution is novel.
-        return claim_role == 'contribution' and statement_kind == 'source_claim'
+        return dimension == 'contribution_clarity' and statement_kind == 'source_claim'
     allowed = BODY_ROLES if claim_role == 'limitation' and statement_kind == 'assessor_inference' else ROLE_COMPATIBILITY[claim_role]
     return block.section_role in allowed
 
@@ -53,11 +53,11 @@ def evidence_guidance(context: EvidenceContext) -> dict:
         'claim_roles_by_dimension': CLAIM_ROLES,
         'body_candidate_ids_by_dimension': {d: [b.evidence_id for b in context.blocks
             if b.section_role != 'abstract' and eligible_for(b, d, 'source_claim')] for d in CLAIM_ROLES},
-        'contribution_source_claim_only_abstract_ids': [b.evidence_id for b in context.blocks
+        'contribution_clarity_source_claim_only_abstract_ids': [b.evidence_id for b in context.blocks
             if b.section_role == 'abstract' and b.eligible],
         'limitation_inference_body_ids': [b.evidence_id for b in context.blocks
             if eligible_for(b, 'limitations_and_uncertainty_handling', 'assessor_inference')],
-        'rule': 'Candidate IDs establish section eligibility, not support. Unknown body/appendix headings are candidates only; their actual content must substantiate the claim. Abstracts may establish only attributed contribution/scope statements, never scientific adequacy or a verified result. Inference must stay within the cited observations.'}
+        'rule': 'Candidate IDs establish section eligibility, not support. Unknown body/appendix headings are candidates only; their actual content must substantiate the claim. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Inference must stay within the cited observations.'}
 
 
 # Do not read digits embedded in model names as quantities. Decimal equality
@@ -99,7 +99,8 @@ def verifier_items(value: dict, context: EvidenceContext) -> list[dict]:
         items.append({'item_id': f'evidence-{i}', 'dimension': e['dimension'],
                       'statement_kind': e['statement_kind'], 'claim': e['claim'],
                       'explanation': e['explanation'], 'sources': sources})
-        all_blocks.update({b['evidence_id']: b for b in sources})
+        all_blocks.update({source['evidence_id']: source for block, source in zip(blocks, sources)
+                           if eligible_for(block, e['dimension'], e['statement_kind'])})
     # Verify the published narrative too: a number cannot bypass checking by
     # moving from a structured evidence claim into rationale or uncertainty.
     for name in ('quality_rationale', 'quality_uncertainty'):

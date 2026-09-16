@@ -62,7 +62,7 @@ class SemanticsTests(unittest.TestCase):
                     if role=='abstract':
                         self.assertTrue(eligible_for(block,'contribution_clarity','source_claim'))
                         self.assertFalse(eligible_for(block,'contribution_clarity','assessor_inference'))
-                        for dimension in ('methodological_rigor','evaluation_or_validation_strength',
+                        for dimension in ('scholarly_novelty_or_value','methodological_rigor','evaluation_or_validation_strength',
                                           'evidence_to_claim_alignment','limitations_and_uncertainty_handling','reproducibility_and_transparency'):
                             for kind in ('source_claim','assessor_inference'):
                                 self.assertFalse(eligible_for(block,dimension,kind))
@@ -163,6 +163,31 @@ class SemanticsTests(unittest.TestCase):
             result=validate_block_quality_response(self.value,self.seed,'fixture',self.selected,self.context,verification=bad)
             self.assertEqual(result.quality_status,'uncertain')
 
+    def test_new_decision_loading_rejects_missing_or_unsupported_verification(self):
+        result=self.validate()
+        for status in (None,'unsupported','uncertain'):
+            stored=result.to_dict()
+            stored['evidence'][0]['support_verification']={} if status is None else {'status':status}
+            with self.assertRaisesRegex(ValueError,'supported claims'):QualityAssessment.from_dict(stored)
+        stored=result.to_dict();stored['execution'].pop('support_verification')
+        with self.assertRaisesRegex(ValueError,'claim-support verification'):QualityAssessment.from_dict(stored)
+
+    def test_narrative_union_excludes_dimension_ineligible_blocks(self):
+        self.value['evidence'][0]['dimension']='methodological_rigor'
+        items=verifier_items(self.value,self.context)
+        self.assertTrue(items[0]['sources'])
+        for narrative in items[-2:]:
+            self.assertNotIn(self.context.blocks[0].evidence_id,[b['evidence_id'] for b in narrative['sources']])
+        result=self.validate()
+        self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+
+    def test_numeric_comparisons_and_percentage_points_remain_checked(self):
+        self.assertEqual([n['value'] for n in numeric_mentions('39%→73%')],['39','73'])
+        self.assertEqual(numerical_support('exceeds 20 percentage points',['difference 19 points'])['status'],'unsupported')
+        self.assertEqual(numerical_support('exceeds 20 percentage points',['20% relative gain'])['status'],'unsupported')
+        self.assertEqual(numerical_support('42%→73%',['42%→72%'])['status'],'unsupported')
+        self.assertEqual(numerical_support('improved by 20 percentage points',['gain: 20 percentage points'])['status'],'requires_semantic_verification')
+
     def test_legacy_reviewed_assessment_remains_unchanged(self):
         old=assessment();stored=old.to_dict();self.assertEqual(QualityAssessment.from_dict(stored),old)
         self.assertEqual(old.quality_status,'pass');self.assertEqual(old.to_dict(),stored)
@@ -203,7 +228,7 @@ class VerifierExecutionTests(unittest.TestCase):
 
     def test_verifier_truncation_transport_and_bad_schema_fail_without_retry(self):
         malformed=json.loads(verifier_response());content=json.loads(malformed['choices'][0]['message']['content']);content['items'][1]['item_id']=content['items'][0]['item_id'];malformed['choices'][0]['message']['content']=json.dumps(content)
-        for response in (verifier_response(finish='length'),HttpRequestError('timeout','https://example.test','fixture'),'not json',json.dumps(malformed)):
+        for response in (verifier_response(finish='length'),HttpRequestError('timeout','https://example.test','fixture'),'not json',json.dumps({'error':{'code':503,'message':'fixture error'},'usage':{'prompt_tokens':80,'completion_tokens':0,'cost':.002}}),json.dumps(malformed)):
             result,client=self.assess([envelope(),response]);self.assertEqual(len(client.payloads),2)
             self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'protocol_failure')
             self.assertEqual(result.execution['calls'][-1]['status'],'failed')

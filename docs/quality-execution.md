@@ -58,7 +58,7 @@ not proof of methods or results. The prompt supplies explicit body candidate IDs
 per dimension, plus the limited Abstract contribution IDs.
 
 An Abstract may support an attributed high-level contribution/scope
-`source_claim`. It cannot establish scientific adequacy, novelty, verified
+`source_claim` in `contribution_clarity` only. The novelty/value dimension always requires body evidence. It cannot establish scientific adequacy, novelty, verified
 results, methods, evaluation, limitations, reproducibility or claim alignment.
 `assessor_inference` denotes bounded synthesis or critique of cited body facts;
 it need not be a literal manuscript sentence. A limitation inference may use
@@ -76,7 +76,7 @@ a number elsewhere in the manuscript cannot rescue an uncited assertion.
 
 A single separate request verifies all claims/explanations using only their
 respective cited canonical blocks. Published rationale and uncertainty are also
-checked against the union of those cited blocks. Items are isolated explicitly
+checked against the union of those cited blocks that pass eligibility for their originating evidence item. Items are isolated explicitly
 in the prompt; each response must cover every item exactly once. The local result
 binds the complete claim/source input hash. The verifier receives no proposed
 paper verdict, full manuscript, author or venue metadata, and may return only

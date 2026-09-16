@@ -20,6 +20,12 @@ from paper_scout.models import PaperCandidate
 
 LOGGER = logging.getLogger(__name__)
 USER_AGENT = "Paper-Scout/1.0 (+https://github.com/vernerisirva/agentmempaper)"
+EXTRACTION_GAP = "[Extraction gap: source text omitted]"
+
+
+def _source_characters(text: str) -> int:
+    """Exclude synthetic extraction barriers from manuscript character counts."""
+    return len(text.replace(EXTRACTION_GAP, ""))
 
 
 @dataclass(frozen=True)
@@ -162,7 +168,7 @@ def canonical_manuscript_text(text: str) -> str:
 
 def _section_kind(heading: str) -> str:
     value = heading.casefold()
-    if re.match(r'^(references|bibliography|acknowledg|funding|author contribution|conflict of interest)', value):
+    if re.fullmatch(r'references|bibliography|acknowledgements?|acknowledgments?|funding(?: statement)?|author contributions?|conflicts? of interest', value.strip()):
         return 'excluded'
     if value.startswith(('appendix', 'supplement')):
         return 'appendix'
@@ -191,6 +197,8 @@ def _spread_order(items: list) -> list:
 
 
 def _section_chunks(section: SelectedSection, size: int) -> list[SelectedSection]:
+    if size <= 0:
+        raise ValueError("chunk size must be positive")
     chunks = []
     start = 0
     while start < len(section.text):
@@ -212,6 +220,8 @@ def select_assessment_text(
     max_prompt_characters: int = 180_000,
     max_section_characters: int = 8_000,
 ) -> SelectedPaperText:
+    if max_prompt_characters <= 0 or max_section_characters <= 0:
+        raise ValueError("assessment text budgets must be positive")
     abstract = canonical_manuscript_text(candidate.abstract)
     if document is None or not any(p.text.strip() for p in document.pages):
         content = f'Title: {candidate.title}\n\nAbstract: {abstract}'[:max_prompt_characters]
@@ -262,9 +272,13 @@ def select_assessment_text(
                     selected.append(section)
                     text += render(section)
         all_text = text
-    body_chars = sum(len(s.text) for s in body)
-    selected_chars = sum(len(s.text) for s in selected)
+    if len(all_text) > max_prompt_characters:
+        raise ValueError("assessment text exceeded its configured budget")
+    body_chars = sum(_source_characters(s.text) for s in body)
+    selected_chars = sum(_source_characters(s.text) for s in selected)
     warnings = list(document.warnings)
+    if EXTRACTION_GAP in document.text:
+        warnings.append("Extraction gaps are explicit barriers, excluded from source-character counts; omitted extraction text is not available to the assessor.")
     if selection_used:
         warnings.append(f'Representative manuscript excerpts selected: {selected_chars} of {body_chars} eligible characters; omitted passages are unavailable to the assessor.')
     if excluded:
@@ -275,15 +289,17 @@ def select_assessment_text(
         'normalization_version': 'canonical-v1', 'source_pages': document.coverage.get('source_pages'),
         'page_unit': 'logical XML body section' if logical_xml else 'PDF page',
         'extracted_pages': len(document.pages), 'extracted_page_indices': [p.page for p in document.pages],
-        'extracted_characters': len(document.text), 'extraction_complete': document.complete,
+        'extracted_characters': len(document.text),
+        'retained_source_characters': sum(_source_characters(p.text) for p in document.pages),
+        'extraction_gap_markers': document.text.count(EXTRACTION_GAP), 'extraction_complete': document.complete,
         'extraction_truncated': not document.complete,
         'assessment_input_characters': len(all_text), 'assessment_input_sha256': _content_hash(all_text),
         'selected_pages': sorted({s.first_page for s in selected if s.first_page is not None}),
         'selected_characters': selected_chars, 'eligible_characters': body_chars,
         'omitted_body_characters': body_chars - selected_chars,
-        'excluded_back_matter_characters': sum(len(s.text) for s in excluded),
+        'excluded_back_matter_characters': sum(_source_characters(s.text) for s in excluded),
         'selected_instead_of_full_text': selection_used,
-        'selected_sections': [{'heading':s.heading, 'page':s.first_page, 'characters':len(s.text)} for s in selected],
+        'selected_sections': [{'heading':s.heading, 'page':s.first_page, 'characters':_source_characters(s.text)} for s in selected],
         'warnings': warnings}
     # No percentage heuristic: "full" requires complete extraction and all eligible text.
     scope = 'full_text' if document.complete and not selection_used and not uncertain else 'partial_full_text'
@@ -356,7 +372,7 @@ def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int)
 def _retain_page_text(text: str, budget: int) -> str:
     if len(text) <= budget:
         return text
-    marker = '\n[Extraction gap: source text omitted]\n'
+    marker = '\n' + EXTRACTION_GAP + '\n'
     # Each disjoint passage has a visible barrier, so validation cannot silently
     # join text from opposite sides of an extraction gap.
     part = max(0, (budget - 2 * len(marker)) // 3)

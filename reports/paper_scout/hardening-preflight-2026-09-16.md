@@ -39,4 +39,4 @@ OSF still exposes only the preregistration Markdown, without a supported complet
 
 ## Validation before paid work
 
-229 unit tests pass. All-track offline relevance, quality, discovery, idempotency, builds, schemas, links, exposure, workflow and size checks pass. Stable database rows remain unchanged. Independent review and merge must complete before paid assessment. No batch 2.
+231 unit tests pass. All-track offline relevance, quality, discovery, idempotency, builds, schemas, links, exposure, workflow and size checks pass. Stable database rows remain unchanged. Independent review and merge must complete before paid assessment. No batch 2.

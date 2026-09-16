@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from paper_scout.full_text import (ExtractedPage, FullTextDocument, SelectedSection, select_assessment_text,
-    _extract_pdf, _detect_sections, _bounded_pages)
+    _extract_pdf, _extract_jats, _detect_sections, _bounded_pages, _section_chunks, EXTRACTION_GAP)
 from paper_scout.quality import assess_quality_deterministically
 from paper_scout.quality_llm import _request_payload, locate_evidence, validate_llm_quality_response
 from paper_scout.quality_models import QualityEvidence, QualityAssessment
@@ -55,6 +55,28 @@ class CoverageTests(unittest.TestCase):
         self.assertTrue(all(s.text in selected.text for s in selected.sections))
         self.assertTrue(any('omitted' in w for w in selected.warnings))
 
+    def test_explicit_small_budgets_and_invalid_chunk_size(self):
+        doc=FullTextDocument('https://example.org/a.pdf',[ExtractedPage(1,'Methods\n'+'scientific evidence '*1000)],'sha',True)
+        for budget in (1, 100, 500, 10000, 50000):
+            selected=select_assessment_text(candidate(),doc,max_prompt_characters=budget)
+            self.assertLessEqual(len(selected.text),budget)
+        with self.assertRaises(ValueError):_section_chunks(SelectedSection('Methods','body',1),0)
+        with self.assertRaises(ValueError):select_assessment_text(candidate(),doc,max_prompt_characters=0)
+
+    def test_extraction_gap_counts_and_xml_body_titles(self):
+        page=ExtractedPage(1,'Methods\n'+('body text. '*1000))
+        bounded=_bounded_pages([page],700)
+        doc=FullTextDocument('https://example.org/a.pdf',bounded,'sha',False)
+        selected=select_assessment_text(candidate(),doc)
+        self.assertEqual(selected.coverage['extraction_gap_markers'],2)
+        self.assertEqual(selected.coverage['retained_source_characters'],len(bounded[0].text)-2*len(EXTRACTION_GAP))
+        self.assertEqual(selected.coverage['eligible_characters'],sum(len(s.text.replace(EXTRACTION_GAP,'')) for s in selected.sections))
+        self.assertTrue(any('Extraction gaps' in w for w in selected.warnings))
+        self.assertTrue(selected.coverage['extraction_truncated'])
+        xml=b'<article><body><sec><title>References as retrieval evidence</title><p>A scientific body result.</p></sec></body><back><ref-list><ref>A citation.</ref></ref-list></back></article>'
+        xml_doc=_extract_jats(xml,'https://example.org/fullTextXML',80,400000)
+        self.assertIn('A scientific body result.',select_assessment_text(candidate(),xml_doc).text)
+
     def test_rank_bounded_first_numbered_body_after_abstract_is_not_abstract(self):
         pages=[ExtractedPage(1,'Abstract\nAn abstract.'),ExtractedPage(2,'2 / 31\n1. The problem: memory outlives the defense\nReal body evidence.'),ExtractedPage(3,'2. Threat model: what by design covers\nThreat details.')]
         selected=select_assessment_text(candidate(),FullTextDocument('https://example.org/a.pdf',pages,'sha',True))
@@ -99,10 +121,15 @@ class CoverageTests(unittest.TestCase):
         value={**value,'quality_status':'insufficient','evidence':[{**e,'signal_type':'concern'} for e in value['evidence']]}
         result=validate_llm_quality_response(value,assess_quality_deterministically(candidate(),'id',selected),'model',selected=selected)
         self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'text_coverage_failure');self.assertFalse(result.full_text_assessed)
+        self.assertEqual(QualityAssessment.from_dict(result.to_dict()),result)
         complete=replace(selected,coverage={'extraction_truncated':False,'omitted_body_characters':0})
         result=validate_llm_quality_response(value,assess_quality_deterministically(candidate(),'id',complete),'model',selected=complete)
         self.assertEqual(result.quality_status,'insufficient')
         self.assertEqual(QualityAssessment.from_dict(result.to_dict()),result)
+        value['uncertainty_reason']='text_coverage_failure'
+        result=validate_llm_quality_response(value,assess_quality_deterministically(candidate(),'id',complete),'model',selected=complete)
+        self.assertEqual(result.quality_status,'uncertain')
+        self.assertEqual(result.execution['outcome'],'text_coverage_failure')
 
 
 class SubstantiveResponseTests(unittest.TestCase):

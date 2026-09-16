@@ -251,7 +251,7 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
         uncertainty = "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
     coverage_failure = bool(selected and (
         (status == 'insufficient' and (selected.coverage.get('extraction_truncated') or selected.coverage.get('omitted_body_characters', 0) > 0 or selected.section_detection_uncertain))
-        or (status == 'uncertain' and value.get('uncertainty_reason') == 'text_coverage_failure')))
+        or value.get('uncertainty_reason') == 'text_coverage_failure'))
     if coverage_failure:
         status = 'uncertain'
         rationale = 'Scientific judgment is unresolved because the available assessment text is incomplete. ' + rationale

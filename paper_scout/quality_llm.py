@@ -498,7 +498,7 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         try:
             if not context_ok:
                 raise ValueError('manuscript or assessment-context identity mismatch')
-            blocks = resolve_evidence_ids(item['evidence_ids'], context)
+            blocks = resolve_evidence_ids(item['evidence_ids'], context, expected_context_id=value['evidence_context_id'])
         except ValueError as exc:
             errors.append(str(exc))
             audit.append({'dimension': item['dimension'], 'evidence_ids': item['evidence_ids'],
@@ -530,13 +530,13 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
     outcome = 'scientific'
     if coverage_failure:
         status, outcome = 'uncertain', 'text_coverage_failure'
-        rationale = 'Missing assessment input cannot establish scientific insufficiency. ' + rationale
+        rationale = 'Scientific judgment is unresolved because supplied assessment material is incomplete. Missing input cannot establish scientific insufficiency.'
     elif errors or selected.scope not in {'full_text', 'partial_full_text'}:
         status, outcome = 'uncertain', 'evidence_validation_failure'
-        rationale = 'Evidence references failed manuscript-context validation; review is pending. ' + rationale
+        rationale = 'Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.'
     elif not semantic_ok:
         status = 'uncertain'
-        rationale = 'The cited material does not establish every required scientific criterion. ' + rationale
+        rationale = 'Source provenance validated, but the assessor did not establish every required scientific criterion. The proposed judgment is withheld.'
     score = value['overall_quality_score']
     if score is not None and seed.applied_score_cap is not None:
         score = min(score, seed.applied_score_cap)

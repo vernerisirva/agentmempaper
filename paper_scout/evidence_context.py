@@ -53,6 +53,7 @@ class EvidenceContext:
     context_id: str
     text: str
     blocks: tuple[EvidenceBlock, ...]
+    preamble: str
 
     def metadata(self) -> dict:
         return {'evidence_version': self.version, 'evidence_context_id': self.context_id,
@@ -69,13 +70,17 @@ def _span_text(spans: tuple[SourceSpan, ...]) -> str:
     The original text and offsets of both pages remain in SourceSpan.
     """
     result = ''
+    previous = None
     for span in spans:
         if not result:
             result = span.text
-        elif re.search(r'[A-Za-z]-\s*$', result) and re.match(r'\s*[a-z]', span.text):
+        elif (previous is not None and previous.page is not None and span.page == previous.page + 1
+              and previous.section == span.section and re.search(r'[A-Za-z]-\s*$', previous.text)
+              and re.match(r'\s*[a-z]', span.text)):
             result = result.rstrip() + span.text.lstrip()
         else:
             result += '\n' + span.text
+        previous = span
     return result
 
 
@@ -129,17 +134,35 @@ def build_evidence_context(canonical_id: str, selected: SelectedPaperText) -> Ev
                       and EXTRACTION_GAP not in text))
     # Version, manuscript bytes, selected context, offsets, eligibility and block
     # contents all bind the ID namespace. Same page numbers never imply same IDs.
-    identity = json.dumps({'version': EVIDENCE_VERSION, 'canonical_id': canonical_id,
-        'source_hash': selected.content_hash, 'selected_text_hash': digest(selected.text),
-        'blocks': [asdict(b) for b in blocks]}, sort_keys=True, ensure_ascii=False)
-    context_id = digest(identity)
-    blocks = tuple(replace(b, evidence_id=f'E{context_id[:16]}-B{b.sequence:04d}') for b in blocks)
     preamble = selected.text[:selected.text.find(selected.sections[0].text)] if selected.sections else selected.text
-    text = preamble + '\n\n'.join(f'[{b.evidence_id}] pages={",".join(map(str,b.pages)) or "unknown"}; section={b.spans[0].section}; gate_evidence={str(b.eligible).lower()}\n{b.text}' for b in blocks)
-    return EvidenceContext(EVIDENCE_VERSION, canonical_id, selected.content_hash, digest(selected.text), context_id, text, blocks)
+    context_id = _context_digest(EVIDENCE_VERSION, canonical_id, selected.content_hash,
+                                 digest(selected.text), preamble, tuple(blocks))
+    blocks = tuple(replace(b, evidence_id=f'E{context_id[:16]}-B{b.sequence:04d}') for b in blocks)
+    text = _render_context(preamble, blocks)
+    return EvidenceContext(EVIDENCE_VERSION, canonical_id, selected.content_hash, digest(selected.text), context_id, text, blocks, preamble)
 
 
-def resolve_evidence_ids(ids: list[str], context: EvidenceContext) -> tuple[EvidenceBlock, ...]:
+def _context_digest(version: str, canonical_id: str, source_hash: str, selected_text_hash: str,
+                    preamble: str, blocks: tuple[EvidenceBlock, ...]) -> str:
+    # selected_text_hash already binds the preamble. Its explicit hash also lets
+    # the standalone resolver verify rendered-context integrity without source IO.
+    return digest(json.dumps({'version': version, 'canonical_id': canonical_id,
+        'source_hash': source_hash, 'selected_text_hash': selected_text_hash,
+        'preamble_hash': digest(preamble),
+        'blocks': [asdict(replace(b, evidence_id='')) for b in blocks]}, sort_keys=True, ensure_ascii=False))
+
+
+def _render_context(preamble: str, blocks: tuple[EvidenceBlock, ...]) -> str:
+    return preamble + '\n\n'.join(f'[{b.evidence_id}] pages={",".join(map(str,b.pages)) or "unknown"}; section={b.spans[0].section}; gate_evidence={str(b.eligible).lower()}\n{b.text}' for b in blocks)
+
+
+def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_context_id: str) -> tuple[EvidenceBlock, ...]:
+    identity = _context_digest(context.version, context.canonical_id, context.source_hash,
+                               context.selected_text_hash, context.preamble, context.blocks)
+    if (context.version != EVIDENCE_VERSION or context.context_id != expected_context_id
+            or identity != context.context_id or _render_context(context.preamble, context.blocks) != context.text
+            or any(b.evidence_id != f'E{context.context_id[:16]}-B{b.sequence:04d}' for b in context.blocks)):
+        raise ValueError('evidence context integrity mismatch')
     index = {b.evidence_id: b for b in context.blocks}
     if not ids or len(set(ids)) != len(ids):
         raise ValueError('missing or duplicate evidence IDs')

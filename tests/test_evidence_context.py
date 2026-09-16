@@ -60,11 +60,22 @@ class EvidenceContextTests(unittest.TestCase):
     def test_hash_tampering_abstract_and_source_only_sections_are_rejected(self):
         tampered = replace(self.context, blocks=(replace(self.context.blocks[0], text='invented data'), *self.context.blocks[1:]))
         self.assertEqual(self.validate(context=tampered).quality_status, 'uncertain')
-        with self.assertRaises(ValueError):resolve_evidence_ids([tampered.blocks[0].evidence_id], tampered)
+        with self.assertRaises(ValueError):resolve_evidence_ids([tampered.blocks[0].evidence_id], tampered, expected_context_id=self.context.context_id)
         abstract = replace(self.selected, sections=[replace(s,heading='Abstract') for s in self.selected.sections])
         ctx = build_evidence_context('fixture', abstract)
-        with self.assertRaises(ValueError):resolve_evidence_ids([ctx.blocks[0].evidence_id],ctx)
+        with self.assertRaises(ValueError):resolve_evidence_ids([ctx.blocks[0].evidence_id],ctx,expected_context_id=ctx.context_id)
         with self.assertRaises(ValueError):build_evidence_context('fixture',replace(self.selected,text='not the source text'))
+
+    def test_preamble_and_standalone_resolver_bind_all_supplied_context(self):
+        selected=replace(self.selected,text='Preamble A\n'+self.selected.text)
+        first=build_evidence_context('fixture',selected)
+        second=build_evidence_context('fixture',replace(selected,text=selected.text.replace('Preamble A','Preamble B')))
+        self.assertNotEqual(first.context_id,second.context_id)
+        self.assertNotEqual(first.selected_text_hash,second.selected_text_hash)
+        for bad in (replace(first,preamble='tampered'),replace(first,source_hash='foreign'),
+                    replace(first,version='old'),replace(first,text=first.text+'hidden text')):
+            with self.assertRaises(ValueError):resolve_evidence_ids([bad.blocks[0].evidence_id],bad,expected_context_id=first.context_id)
+        with self.assertRaises(ValueError):resolve_evidence_ids([second.blocks[0].evidence_id],second,expected_context_id=first.context_id)
 
     def test_real_block_does_not_establish_an_unsupported_interpretation(self):
         self.value['evidence'][0].update(claim='This proves general intelligence.', support_status='unsupported',
@@ -84,7 +95,7 @@ class EvidenceContextTests(unittest.TestCase):
         selected=SelectedPaperText('\n\n'.join(parts),sections,'full_text','source',False,coverage={'extraction_complete':True})
         ctx=build_evidence_context('paper',selected);block=next(b for b in ctx.blocks if b.pages==[2,3])
         self.assertEqual([s.text for s in block.spans],parts)
-        self.assertEqual(resolve_evidence_ids([block.evidence_id],ctx)[0],block)
+        self.assertEqual(resolve_evidence_ids([block.evidence_id],ctx,expected_context_id=ctx.context_id)[0],block)
         self.assertEqual(_evidence_page_suffix({'pages':[2,3]},' — page '),' — pages 2–3')
         hyphen=replace(selected,text='long-\nterm memory',sections=[SelectedSection('Methods','long-',4),SelectedSection('Methods','term memory',5)])
         joined=build_evidence_context('paper',hyphen).blocks[0]
@@ -102,7 +113,10 @@ class EvidenceContextTests(unittest.TestCase):
         self.assertEqual(ctx.context_id,self.context.context_id)  # identical supplied bytes, no page joins here
         self.assertEqual(self.validate(selected=partial,context=ctx).execution['outcome'],'text_coverage_failure')
         self.value['evidence'][0]['evidence_ids']=['invented']
-        self.assertEqual(self.validate().quality_status,'uncertain')
+        rejected=self.validate()
+        self.assertEqual(rejected.quality_status,'uncertain')
+        self.assertNotIn(self.value['quality_rationale'],rejected.quality_rationale)
+        self.assertEqual(rejected.execution['proposed_decision']['quality_rationale'],self.value['quality_rationale'])
         self.assertEqual(old.to_dict(),stored)
 
 

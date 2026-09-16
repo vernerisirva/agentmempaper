@@ -69,6 +69,7 @@ def assess_with_optional_quality_llm(
                 raise ValueError("response envelope must be an object")
             call["usage"] = _reported_usage(response)
             call["response_id"] = response.get("id") if isinstance(response.get("id"), str) else None
+            call["provider"] = response.get("provider") if isinstance(response.get("provider"), str) else None
             LOGGER.info("Quality model usage %s", json.dumps({
                 "canonical_id": deterministic.canonical_id, "model": settings.model,
                 **call["usage"],
@@ -101,6 +102,11 @@ def assess_with_optional_quality_llm(
             delay = max(2.0 * 2 ** attempt, exc.retry_after_seconds or 0)
             if transient and attempt == 0 and delay <= 60:
                 call["backoff_seconds"] = delay
+                if urlsplit(settings.base_url).hostname == "openrouter.ai" and call.get("provider"):
+                    # A named provider that terminated its response need not be
+                    # selected again; preserve the exact scientific model.
+                    payload = {**payload, "provider": {**payload.get("provider", {}),
+                                                       "ignore": [call["provider"]]}}
                 time.sleep(delay)
                 continue
         except Exception as exc:  # malformed output must not abort the run or become insufficient.

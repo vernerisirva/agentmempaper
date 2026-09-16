@@ -310,3 +310,17 @@ class ProviderTerminationTest(unittest.TestCase):
         self.assertEqual(exhausted.quality_status, "uncertain")
         self.assertEqual(exhausted.execution["outcome"], "transport_failure")
         self.assertEqual(len(exhausted.execution["calls"]), 2)
+
+
+class SameModelReroutingTest(unittest.TestCase):
+    def test_named_failed_provider_is_excluded_only_on_the_bounded_retry(self):
+        first = json.loads(envelope(finish="error"))
+        first["provider"] = "NextBit"
+        client = SequenceHttp([json.dumps(first), envelope()])
+        result, _ = ReliabilityTest().assess(client)
+        self.assertEqual(result.quality_status, "pass")
+        self.assertEqual(result.execution["calls"][0]["provider"], "NextBit")
+        self.assertNotIn("ignore", client.payloads[0]["provider"])
+        self.assertEqual(client.payloads[1]["provider"]["ignore"], ["NextBit"])
+        self.assertEqual(client.payloads[0]["model"], client.payloads[1]["model"])
+        self.assertEqual(len(client.payloads), 2)

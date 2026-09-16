@@ -15,16 +15,36 @@ from paper_scout.full_text import ExtractedPage, FullTextDocument, SelectedPaper
 from paper_scout.http import HttpClient, HttpRequestError, retry_after_seconds
 from paper_scout.quality import assess_quality_deterministically
 from paper_scout.quality_llm import assess_with_optional_quality_llm, locate_evidence, _request_payload
-from paper_scout.quality_models import QualityAssessment, QualityEvidence
+from paper_scout.quality_models import QualityAssessment, QualityEvidence, QUALITY_DIMENSIONS
 
 ENV = {"PAPER_SCOUT_LLM_PROVIDER": "openrouter", "PAPER_SCOUT_LLM_API_KEY": "test-only-key",
        "PAPER_SCOUT_LLM_MODEL": "test-model", "PAPER_SCOUT_LLM_BASE_URL": "https://openrouter.ai/api/v1",
        "PAPER_SCOUT_QUALITY_LLM_REASONING": "off"}
 
 
+def block_fixture(value=None):
+    from paper_scout.evidence_context import build_evidence_context, EVIDENCE_VERSION
+    selected, original = manuscript()
+    value = original if value is None else value
+    if 'evidence_schema_version' in value:
+        return value
+    context = build_evidence_context('fixture', selected)
+    evidence = []
+    for e in value.get('evidence', []):
+        ids = [b.evidence_id for b in context.blocks if b.spans[0].section == e.get('section')]
+        evidence.append({'dimension': e['dimension'], 'signal_type': e['signal_type'],
+            'claim': e['paraphrase'], 'explanation': e['explanation'],
+            'support_status': 'supported', 'evidence_ids': ids})
+    return {**{k: value[k] for k in ('quality_status', 'quality_rationale', 'quality_uncertainty',
+                                   'overall_quality_score', 'confidence', 'paper_type')},
+            'evidence_schema_version': EVIDENCE_VERSION, 'evidence_context_id': context.context_id,
+            'uncertainty_reason': value.get('uncertainty_reason'), 'evidence': evidence,
+            'dimension_scores': {d: (value.get('dimension_scores') or {}).get(d, 4) for d in QUALITY_DIMENSIONS}}
+
+
 def envelope(value=None, finish="stop"):
     return json.dumps({"id": "fixture-request", "usage": {"prompt_tokens": 123, "completion_tokens": 55, "cost": 0.01},
-                       "choices": [{"finish_reason": finish, "message": {"content": json.dumps(value or manuscript()[1])}}]})
+                       "choices": [{"finish_reason": finish, "message": {"content": json.dumps(block_fixture(value))}}]})
 
 
 class SequenceHttp:
@@ -101,7 +121,7 @@ class ReliabilityTest(unittest.TestCase):
 
     def test_malformed_and_schema_invalid_responses_fail_closed_without_repair(self):
         invalid = {**manuscript()[1], "confidence": "absolutely", "quality_status": "insufficient"}
-        for raw in ("not-json", envelope(invalid), envelope(finish="length"), '{"choices":[]}',
+        for raw in ("not-json", envelope(invalid), '{"choices":[]}',
                     json.dumps({"choices": [{"message": {"content": '{"quality_status":"insufficient",'}}]})):
             result, sleep = self.assess(SequenceHttp([raw]))
             self.assertEqual(result.quality_status, "uncertain")
@@ -129,7 +149,7 @@ class ReliabilityTest(unittest.TestCase):
 
     def test_telemetry_does_not_include_content_or_credentials(self):
         with self.assertLogs("paper_scout.quality_llm", level="INFO") as logs:
-            result, _ = self.assess(SequenceHttp([envelope(finish="length")]))
+            result, _ = self.assess(SequenceHttp([envelope(finish="length"), envelope(finish="length")]))
         output = json.dumps(result.execution) + " ".join(logs.output)
         self.assertNotIn("test-only-key", output)
         self.assertNotIn(manuscript()[1]["quality_rationale"], output)

@@ -88,7 +88,8 @@ class CoverageTests(unittest.TestCase):
         text='The long-\nterm system supports ofﬁce memory. It does not improve recall.'
         selected=select_assessment_text(candidate(),FullTextDocument('https://example.org/a.pdf',[ExtractedPage(2,'Methods\n'+text)],'sha',True))
         supplied=json.loads(_request_payload(candidate(),selected,assess_quality_deterministically(candidate(),'id',selected),'model')['messages'][1]['content'])
-        self.assertEqual(supplied['paper']['text'],selected.text)
+        from paper_scout.evidence_context import build_evidence_context
+        self.assertEqual(supplied['paper']['text'],build_evidence_context('id',selected).text)
         self.assertNotIn('deterministic_assessment',supplied)
         self.assertIn('office',selected.text)
         evidence=QualityEvidence('methodological_rigor','positive','Test','Test',page=2,excerpt='long-term system supports office memory')

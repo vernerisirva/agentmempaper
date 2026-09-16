@@ -213,3 +213,43 @@ class JatsTest(unittest.TestCase):
         download.assert_called_once()
         self.assertEqual(first.pages, second.pages)
         self.assertTrue(second.cache_hit)
+
+
+class ProviderContractTest(unittest.TestCase):
+    def test_strict_schema_accepts_explicit_null_optional_locations(self):
+        from jsonschema import Draft202012Validator
+        from paper_scout.quality_llm import _strict_schema, quality_review_schema
+        schema = _strict_schema(quality_review_schema())
+        Draft202012Validator.check_schema(schema)
+        value = {**manuscript()[1], "quality_status": "uncertain", "dimension_scores": {},
+                 "positive_signals": [], "concerns": [], "missing_information": [], "concise_summary": ""}
+        for key in schema["properties"]["dimension_scores"]["properties"]:
+            value["dimension_scores"][key] = None
+        for evidence in value["evidence"]:
+            evidence.update(page=None, section=None, excerpt=None)
+        Draft202012Validator(schema).validate(value)
+        Draft202012Validator(quality_review_schema()).validate(value)
+
+    def test_recovered_retry_counts_one_failed_and_one_successful_attempt(self):
+        client = SequenceHttp([HttpRequestError("incomplete_response", "https://example.test", "fixture"), envelope()])
+        result, _ = ReliabilityTest().assess(client)
+        calls = result.execution["calls"]
+        self.assertEqual(len(client.payloads), 2)
+        self.assertEqual([c["status"] for c in calls], ["failed", "success"])
+        self.assertEqual(sum(c["usage"]["cost_usd"] or 0 for c in calls), 0.01)
+        self.assertEqual(sum(c["usage"]["cost_usd"] is None for c in calls), 1)
+
+    def test_deploy_only_keeps_site_validation_before_deployment(self):
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        workflow = yaml.load((root / ".github/workflows/paper-scout.yml").read_text(), Loader=yaml.BaseLoader)
+        self.assertEqual(workflow["on"]["workflow_dispatch"]["inputs"]["deploy_only"]["type"], "boolean")
+        self.assertEqual(workflow["on"]["workflow_dispatch"]["inputs"]["deploy_only"]["default"], "false")
+        steps = workflow["jobs"]["scout"]["steps"]
+        by_name = {s["name"]: s for s in steps}
+        for name in ("Restore durable Paper Scout state", "Run daily paper scout", "Commit scout updates"):
+            self.assertIn("!inputs.deploy_only", by_name[name]["if"])
+        validation = by_name["Validate generated schemas, links, and runtime exclusion"]
+        self.assertNotIn("if", validation)
+        self.assertLess(steps.index(validation), steps.index(by_name["Deploy to GitHub Pages"]))
+        self.assertEqual(by_name["Deploy to GitHub Pages"]["if"], "success()")

@@ -68,6 +68,10 @@ _NUMBER = re.compile(r'(?<![\w.])(?P<value>[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\
 def numeric_mentions(text: str) -> list[dict]:
     out = []
     for match in _NUMBER.finditer(text):
+        # Hyphenated lexical identifiers are not scientific quantities. Keep
+        # standalone signed values and both endpoints of numeric ranges.
+        if re.search(r'[A-Za-z_]\w*-$', text[:match.start()]):
+            continue
         unit = (match.group('unit') or '').strip().casefold().replace('x', '×')
         out.append({'literal': match.group().strip(), 'value': str(Decimal(match.group('value').replace(',', '')).normalize()),
                     'unit': unit, 'start': match.start(), 'end': match.end()})
@@ -130,7 +134,7 @@ VERIFIER_INSTRUCTIONS = (
     'An assessor_inference may synthesize cited facts without being stated literally, but its premises and conclusion must follow conservatively from these sources. '
     'A scoped critique of a shown experiment may be supported; do not infer manuscript-wide absence of experiments, baselines, code or limitations from a few excerpts. '
     'Check that the claim is relevant to its scientific dimension; relabelling a method/result claim as contribution cannot bypass body evidence requirements. '
-    'Assessment narratives must be supported by their cited evidence too; flag any unsupported substantive assertion. '
+    'For assessment_narrative items, the supplied sources are the union of eligible cited blocks from the evidence items. Verify the narrative only against that union; flag any unsupported substantive assertion. '
     'Supported means the complete claim/explanation is justified. Partial, uncertain or insufficient evidence is uncertain, not supported. '
     'Be type-sensitive: conceptual validation and argumentation may be valid evidence; empirical experiments are not universally required. '
     'Output only the strict JSON object supplied in response_format.'

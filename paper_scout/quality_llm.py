@@ -519,10 +519,20 @@ def _verify_support(value: dict, context: EvidenceContext, settings, client, hea
     try:
         call['request_sent'] = True
         response = json.loads(client.post_json(f'{settings.base_url}/chat/completions', payload, headers=headers))
+        if not isinstance(response, dict):
+            call['response_problem'] = 'non_object_envelope'
+            raise ValueError('verifier envelope must be an object')
         call['usage'] = _reported_usage(response)
         call['response_id'] = response.get('id')
         call['provider'] = response.get('provider')
-        choice = response['choices'][0]
+        if 'error' in response:
+            call['response_problem'] = 'provider_error_envelope'
+            raise ValueError('verifier provider returned an error envelope')
+        choices = response.get('choices')
+        if not isinstance(choices, list) or not choices or not isinstance(choices[0], dict):
+            call['response_problem'] = 'invalid_choices'
+            raise ValueError('verifier requires a nonempty choices array')
+        choice = choices[0]
         call['finish_reason'] = choice.get('finish_reason')
         # Verifier truncation and malformed output cannot establish support.
         if choice.get('finish_reason') not in {'stop', None}:

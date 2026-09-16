@@ -205,6 +205,16 @@ class SemanticsTests(unittest.TestCase):
         self.assertEqual(result.quality_status,'uncertain')
         self.assertFalse(any(e.dimension=='limitations_and_uncertainty_handling' for e in result.evidence))
 
+    def test_numeric_identifiers_are_excluded_without_losing_signed_values_or_ranges(self):
+        for text in ('GPT-5.5','K-2.7','Engram-27B','x-5.5','model123'):
+            self.assertEqual(numeric_mentions(text),[])
+        self.assertEqual([n['value'] for n in numeric_mentions('range 10-20; change -5.5; gain +3.2')],['1E+1','2E+1','-5.5','3.2'])
+
+    def test_narrative_sources_are_a_deterministic_deduplicated_union(self):
+        self.value['evidence'][5].update(statement_kind='assessor_inference',evidence_ids=self.value['evidence'][0]['evidence_ids'])
+        items=verifier_items(self.value,self.context);ids=[s['evidence_id'] for item in items[:-2] for s in item['sources']]
+        for item in items[-2:]:self.assertEqual([s['evidence_id'] for s in item['sources']],list(dict.fromkeys(ids)))
+
     def test_legacy_reviewed_assessment_remains_unchanged(self):
         old=assessment();stored=old.to_dict();self.assertEqual(QualityAssessment.from_dict(stored),old)
         self.assertEqual(old.quality_status,'pass');self.assertEqual(old.to_dict(),stored)
@@ -271,6 +281,15 @@ class VerifierExecutionTests(unittest.TestCase):
         with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',actual):
             accepted,client=self.assess([envelope(),verifier_response()])
         self.assertEqual(len(client.payloads),2);self.assertEqual(accepted.quality_status,'pass')
+
+    def test_nonobject_error_and_empty_envelopes_record_clear_protocol_failures(self):
+        for response,problem in (([], 'non_object_envelope'),(None,'non_object_envelope'),('text','non_object_envelope'),
+            ({},'invalid_choices'),({'choices':[]},'invalid_choices'),({'choices':[None]},'invalid_choices'),
+            ({'error':{'code':503}},'provider_error_envelope')):
+            result,client=self.assess([envelope(),json.dumps(response)])
+            self.assertEqual(result.execution['outcome'],'protocol_failure')
+            self.assertEqual(result.execution['calls'][-1]['response_problem'],problem)
+            self.assertEqual(len(client.payloads),2)
 
     def test_invalid_reference_prevents_verifier_call(self):
         for key in ('invented','Eforeign-B0001'):

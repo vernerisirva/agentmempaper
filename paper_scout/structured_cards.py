@@ -106,6 +106,7 @@ def paper_card_schema() -> dict[str, Any]:
                     "uncertainty": {"type": "string"},
                     "gate_version": {"type": ["string", "null"]},
                     "full_text_assessed": {"type": "boolean"},
+                    "coverage": {"type": "object"},
                     "full_text_url": {"type": ["string", "null"]},
                     "overall_quality_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
                     "confidence": {"enum": ["low", "medium", "high", "unknown"]},

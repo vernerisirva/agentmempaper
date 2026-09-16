@@ -8,6 +8,7 @@ import json
 import logging
 from pathlib import Path
 import re
+import unicodedata
 import xml.etree.ElementTree as ET
 from typing import Protocol
 from urllib.error import HTTPError, URLError
@@ -35,6 +36,7 @@ class FullTextDocument:
     complete: bool
     cache_hit: bool = False
     warnings: list[str] = field(default_factory=list)
+    coverage: dict = field(default_factory=dict)
 
     @property
     def text(self) -> str:
@@ -56,6 +58,7 @@ class SelectedPaperText:
     content_hash: str
     section_detection_uncertain: bool
     warnings: list[str] = field(default_factory=list)
+    coverage: dict = field(default_factory=dict)
 
 
 class FullTextSettings(Protocol):
@@ -146,102 +149,145 @@ def fetch_and_extract_pdf(url: str, settings: FullTextSettings, refresh: bool = 
     return document
 
 
+def canonical_manuscript_text(text: str) -> str:
+    """Lossless typography normalization shared by selected prompt and anchors.
+
+    Physical line breaks remain available so line-end hyphens can be interpreted
+    conservatively in multiple literal views. No words or numbers are repaired.
+    """
+    text = unicodedata.normalize("NFC", text)
+    text = text.translate(str.maketrans(dict(zip("ﬀﬁﬂﬃﬄﬅﬆ", ("ff", "fi", "fl", "ffi", "ffl", "st", "st")))))
+    return text.translate(str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"', "‐": "-", "‑": "-", "\u00ad": None})).replace("\r\n", "\n")
+
+
+def _section_kind(heading: str) -> str:
+    value = heading.casefold()
+    if re.match(r'^(references|bibliography|acknowledg|funding|author contribution|conflict of interest)', value):
+        return 'excluded'
+    if value.startswith(('appendix', 'supplement')):
+        return 'appendix'
+    for kind, pattern in (
+        ('abstract', r'abstract|front matter'), ('introduction', r'introduction|contribution|problem'),
+        ('methods', r'method|architecture|implementation|setup|protocol|training'),
+        ('results', r'result|evaluation|experiment|ablation|benchmark|validation'),
+        ('limitations', r'limitation|threat|uncertainty'), ('discussion', r'discussion|implication'),
+        ('conclusion', r'conclusion|outlook'), ('related', r'related work|background')):
+        if re.search(pattern, value):
+            return kind
+    return 'body'
+
+
+def _spread_order(items: list) -> list:
+    """Beginning, middle and end first, then evenly subdivide the remaining gaps."""
+    if not items:
+        return []
+    indices = list(dict.fromkeys((0, len(items) // 2, len(items) - 1)))
+    while len(indices) < len(items):
+        ordered = sorted(indices)
+        gaps = [(b - a, a, b) for a, b in zip(ordered, ordered[1:]) if b - a > 1]
+        _, left, right = max(gaps)
+        indices.append((left + right) // 2)
+    return [items[i] for i in indices]
+
+
+def _section_chunks(section: SelectedSection, size: int) -> list[SelectedSection]:
+    chunks = []
+    start = 0
+    while start < len(section.text):
+        end = min(start + size, len(section.text))
+        if end < len(section.text):
+            boundary = section.text.rfind('\n', start + size // 2, end)
+            if boundary < 0:
+                boundary = section.text.rfind(' ', start + size // 2, end)
+            if boundary > start:
+                end = boundary
+        chunks.append(SelectedSection(section.heading, section.text[start:end], section.first_page))
+        start = end
+    return chunks
+
+
 def select_assessment_text(
     candidate: PaperCandidate,
     document: FullTextDocument | None,
-    max_prompt_characters: int = 60_000,
+    max_prompt_characters: int = 180_000,
     max_section_characters: int = 8_000,
 ) -> SelectedPaperText:
-    abstract = " ".join(candidate.abstract.split())
-    if document is None or not document.pages:
-        content = f"Title: {candidate.title}\n\nAbstract: {abstract}".strip()
-        scope = "title_and_abstract" if abstract else "metadata_only"
-        return SelectedPaperText(
-            text=content[:max_prompt_characters],
-            sections=[SelectedSection("Abstract", abstract, None)] if abstract else [],
-            scope=scope,
-            content_hash=_content_hash(content),
-            section_detection_uncertain=False,
-            warnings=[] if abstract else ["No abstract or extractable full text was available."],
-        )
+    abstract = canonical_manuscript_text(candidate.abstract)
+    if document is None or not any(p.text.strip() for p in document.pages):
+        content = f'Title: {candidate.title}\n\nAbstract: {abstract}'[:max_prompt_characters]
+        return SelectedPaperText(content, [SelectedSection('Abstract', abstract, None)] if abstract else [],
+            'title_and_abstract' if abstract else 'metadata_only', _content_hash(content), False,
+            ['No extractable manuscript text was available.'],
+            {'version': 'coverage-v1', 'extraction_complete': False, 'assessment_input_characters': len(content)})
 
-    logical_xml = "JATS XML: Page labels are logical body-section numbers, not PDF pages." in document.warnings
-    detected = ([SelectedSection(page.text.split("\n", 1)[0], page.text.split("\n", 1)[-1], page.page)
-                 for page in document.pages] if logical_xml else _detect_sections(document.pages))
-    selected: list[SelectedSection] = []
-    target_groups = (
-        ("abstract", "summary"),
-        ("introduction",),
-        ("contribution",),
-        ("related work", "background"),
-        ("method", "methodology", "proposed method", "architecture", "implementation"),
-        ("experiment", "experimental setup", "experimental protocol", "evaluation", "results", "ablation"),
-        ("limitations", "threats to validity"),
-        ("conclusion", "discussion"),
-    )
-    ordered: list[SelectedSection] = []
-    for aliases in target_groups[:-1]:
-        ordered.extend(match for match in detected
-                       if any(alias in match.heading.lower() for alias in aliases))
-    # Descriptive body headings must precede a potentially long conclusion
-    # continuation. A heading budget spans pages, rather than resetting per page.
-    closing = target_groups[-1]
-    ordered.extend(match for match in detected
-                   if not any(alias in match.heading.lower() for alias in closing))
-    ordered.extend(match for match in detected
-                   if any(alias in match.heading.lower() for alias in closing))
-    seen: set[SelectedSection] = set()
-    heading_characters: dict[str, int] = {}
-    for match in ordered:
-        if match in seen:
-            continue
-        seen.add(match)
-        heading = match.heading.casefold()
-        remaining = max_section_characters - heading_characters.get(heading, 0)
-        if remaining <= 0:
-            continue
-        excerpt = match.text[:remaining]
-        selected.append(SelectedSection(match.heading, excerpt, match.first_page))
-        heading_characters[heading] = heading_characters.get(heading, 0) + len(excerpt)
-    uncertain = not selected
-    if uncertain:
-        pages = document.pages
-        fallback_pages = [pages[0], pages[len(pages) // 2], pages[-1]]
-        seen_pages: set[int] = set()
-        for page in fallback_pages:
-            if page.page in seen_pages:
-                continue
-            seen_pages.add(page.page)
-            selected.append(SelectedSection(f"Page {page.page} excerpt", page.text[:max_section_characters], page.page))
-    prefix = f"Title: {candidate.title}\n\nAbstract: {abstract}\n\n"
-    text = prefix[:max_prompt_characters]
-    visible: list[SelectedSection] = []
-    truncated = len(prefix) > max_prompt_characters
-    for section in selected:
-        label = f"## {section.heading}\n[Page {section.first_page or 'unknown'}]\n"
-        separator = "\n\n" if visible else ""
-        remaining = max_prompt_characters - len(text) - len(separator) - len(label)
-        if remaining <= 0:
-            truncated = True
-            break
-        excerpt = section.text[:remaining]
-        truncated = truncated or len(excerpt) < len(section.text)
-        text += separator + label + excerpt
-        visible.append(SelectedSection(section.heading, excerpt, section.first_page))
-    selected = visible
-    covered_chars = sum(len(section.text) for section in selected)
-    scope = "full_text" if document.complete and not truncated and covered_chars >= len(document.text) * 0.65 else "partial_full_text"
+    pages = [ExtractedPage(p.page, canonical_manuscript_text(p.text)) for p in document.pages]
+    logical_xml = document.coverage.get('format') == 'JATS' or any('JATS XML:' in w for w in document.warnings)
+    detected = ([SelectedSection(p.text.partition('\n')[0], p.text.partition('\n')[2], p.page) for p in pages]
+                if logical_xml else _detect_sections(pages))
+    uncertain = not any(_section_kind(s.heading) not in {'abstract', 'excluded'} for s in detected)
+    if not detected:
+        # Unknown boundaries are visible but cannot supply body evidence.
+        detected = [SelectedSection('Abstract / unclassified page', p.text, p.page) for p in pages]
+    excluded = [s for s in detected if _section_kind(s.heading) == 'excluded']
+    body = [s for s in detected if _section_kind(s.heading) != 'excluded']
+    prefix = f'Title: {candidate.title}\n\n'
+    # The extracted abstract is already in body. Avoid duplicating metadata text.
+    if not any(_section_kind(s.heading) == 'abstract' for s in body) and abstract:
+        prefix += f'Abstract (metadata): {abstract[:2400]}\n\n'
+    def render(s):
+        return f'## {s.heading}\n[Page {s.first_page or "unknown"}]\n{s.text}\n\n'
+    all_text = prefix + ''.join(render(s) for s in body)
+    selected = body
+    selection_used = len(all_text) > max_prompt_characters
+    if selection_used:
+        # Fair round-robin across scientific groups, with beginning/middle/end
+        # within each group. References never displace body or appendix content.
+        groups = {}
+        chunk_size = max(80, min(max_section_characters, max_prompt_characters // 24, 2000))
+        for s in body:
+            groups.setdefault(_section_kind(s.heading), []).extend(_section_chunks(s, chunk_size))
+        groups = {k: _spread_order(v) for k, v in groups.items()}
+        order = ('methods', 'results', 'limitations', 'discussion', 'conclusion', 'introduction', 'related', 'appendix', 'body', 'abstract')
+        selected = []
+        heading_usage = {}
+        text = prefix[:max_prompt_characters]
+        while any(groups.values()):
+            for kind in order:
+                if not groups.get(kind):
+                    continue
+                section = groups[kind].pop(0)
+                if (len(text) + len(render(section)) <= max_prompt_characters and
+                        heading_usage.get(section.heading, 0) + len(section.text) <= max_section_characters):
+                    heading_usage[section.heading] = heading_usage.get(section.heading, 0) + len(section.text)
+                    selected.append(section)
+                    text += render(section)
+        all_text = text
+    body_chars = sum(len(s.text) for s in body)
+    selected_chars = sum(len(s.text) for s in selected)
     warnings = list(document.warnings)
+    if selection_used:
+        warnings.append(f'Representative manuscript excerpts selected: {selected_chars} of {body_chars} eligible characters; omitted passages are unavailable to the assessor.')
+    if excluded:
+        warnings.append('References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.')
     if uncertain:
-        warnings.append("Section headings could not be detected reliably; beginning, middle, and end passages were selected.")
-    return SelectedPaperText(
-        text=text,
-        sections=selected,
-        scope=scope,
-        content_hash=document.content_hash,
-        section_detection_uncertain=uncertain,
-        warnings=warnings,
-    )
+        warnings.append('Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision.')
+    coverage = {**document.coverage, 'version': 'coverage-v1', 'selection_version': 'representative-v1',
+        'normalization_version': 'canonical-v1', 'source_pages': document.coverage.get('source_pages'),
+        'page_unit': 'logical XML body section' if logical_xml else 'PDF page',
+        'extracted_pages': len(document.pages), 'extracted_page_indices': [p.page for p in document.pages],
+        'extracted_characters': len(document.text), 'extraction_complete': document.complete,
+        'extraction_truncated': not document.complete,
+        'assessment_input_characters': len(all_text), 'assessment_input_sha256': _content_hash(all_text),
+        'selected_pages': sorted({s.first_page for s in selected if s.first_page is not None}),
+        'selected_characters': selected_chars, 'eligible_characters': body_chars,
+        'omitted_body_characters': body_chars - selected_chars,
+        'excluded_back_matter_characters': sum(len(s.text) for s in excluded),
+        'selected_instead_of_full_text': selection_used,
+        'selected_sections': [{'heading':s.heading, 'page':s.first_page, 'characters':len(s.text)} for s in selected],
+        'warnings': warnings}
+    # No percentage heuristic: "full" requires complete extraction and all eligible text.
+    scope = 'full_text' if document.complete and not selection_used and not uncertain else 'partial_full_text'
+    return SelectedPaperText(all_text, selected, scope, document.content_hash, uncertain, warnings, coverage)
 
 
 def _download_pdf(url: str, timeout_seconds: int, max_pdf_megabytes: int) -> tuple[bytes, str]:
@@ -290,11 +336,11 @@ def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int)
         content = "\n".join(" ".join(child.itertext()) for child in section if child is not title)
         text = heading + "\n" + content
         total += len(text)
-        if index <= max_pages and remaining > 0:
-            pages.append(ExtractedPage(index, text[:remaining]))
-            remaining -= len(text)
+        pages.append(ExtractedPage(index, text))
+    pages = sorted(_spread_order(pages)[:max(1, max_pages)], key=lambda p: p.page)
     if not any(p.text.partition("\n")[2].strip() for p in pages):
         raise ValueError("JATS body is empty")
+    pages = _bounded_pages(pages, max_characters)
     omitted_body_text = any(child.tag != "sec" and "".join(child.itertext()).strip() for child in body)
     complete = len(sections) <= max_pages and total <= max_characters and not omitted_body_text
     warnings = ["JATS XML: Page labels are logical body-section numbers, not PDF pages."]
@@ -302,55 +348,81 @@ def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int)
         warnings.append("JATS body text outside section elements was omitted; extraction is partial.")
     if len(sections) > max_pages or total > max_characters:
         warnings.append("JATS extraction was limited by the configured section/character bounds.")
-    return FullTextDocument(url, pages, hashlib.sha256(payload).hexdigest(), complete, warnings=warnings)
+    return FullTextDocument(url, pages, hashlib.sha256(payload).hexdigest(), complete, warnings=warnings,
+        coverage={"extractor_version":"bounded-v2", "format":"JATS", "source_pages":len(sections),
+                  "characters_before_extraction_limit":total, "max_pages":max_pages, "max_extracted_characters":max_characters})
+
+
+def _retain_page_text(text: str, budget: int) -> str:
+    if len(text) <= budget:
+        return text
+    marker = '\n[Extraction gap: source text omitted]\n'
+    # Each disjoint passage has a visible barrier, so validation cannot silently
+    # join text from opposite sides of an extraction gap.
+    part = max(0, (budget - 2 * len(marker)) // 3)
+    if part < 20:
+        return ''
+    middle = max(part, (len(text) - part) // 2)
+    return text[:part] + marker + text[middle:middle + part] + marker + text[-part:]
+
+
+def _bounded_pages(pages: list[ExtractedPage], budget: int) -> list[ExtractedPage]:
+    allocations = [0] * len(pages)
+    remaining = max(0, budget)
+    active = list(range(len(pages)))
+    while active and remaining:
+        share = max(1, remaining // len(active))
+        for i in active:
+            add = min(share, len(pages[i].text) - allocations[i], remaining)
+            allocations[i] += add
+            remaining -= add
+        active = [i for i in active if allocations[i] < len(pages[i].text)]
+    return [ExtractedPage(p.page, _retain_page_text(p.text, n)) for p, n in zip(pages, allocations)]
 
 
 def _extract_pdf(payload: bytes, url: str, max_pages: int, max_characters: int) -> FullTextDocument:
     try:
         from pypdf import PdfReader
-    except ImportError as exc:  # pragma: no cover - dependency presence is checked by workflow/tests.
-        raise RuntimeError("pypdf is required for full-text extraction") from exc
+    except ImportError as exc:  # pragma: no cover
+        raise RuntimeError('pypdf is required for full-text extraction') from exc
     reader = PdfReader(BytesIO(payload))
-    pages: list[ExtractedPage] = []
-    warnings: list[str] = []
-    character_count = 0
-    selected_pages = list(reader.pages[: max(1, max_pages)])
-    for index, page in enumerate(selected_pages, start=1):
+    count = len(reader.pages)
+    indices = sorted(_spread_order(list(range(count)))[:max(1, max_pages)])
+    pages = []
+    failed = []
+    for index in indices:
         try:
-            text = page.extract_text() or ""
-        except Exception as exc:  # noqa: BLE001 - one malformed page must not abort extraction.
-            warnings.append(f"Page {index} could not be extracted: {exc.__class__.__name__}.")
-            text = ""
-        remaining = max_characters - character_count
-        if remaining <= 0:
-            break
-        text = text[:remaining]
-        character_count += len(text)
-        pages.append(ExtractedPage(index, text))
-    complete = len(reader.pages) <= max_pages and character_count < max_characters
-    if len(reader.pages) > max_pages:
-        warnings.append(f"Extraction was limited to {max_pages} pages.")
-    if character_count >= max_characters:
-        warnings.append(f"Extraction was limited to {max_characters} characters.")
-    if not any(page.text.strip() for page in pages):
-        warnings.append("The PDF contained no extractable text; it may be scanned or malformed.")
-        complete = False
-    return FullTextDocument(
-        source_url=url,
-        pages=pages,
-        content_hash=hashlib.sha256(payload).hexdigest(),
-        complete=complete,
-        warnings=warnings,
-    )
+            text = reader.pages[index].extract_text() or ''
+        except Exception:  # One failed page cannot silently count as complete.
+            text = ''
+        if not text.strip():
+            failed.append(index + 1)
+        pages.append(ExtractedPage(index + 1, text))
+    characters = sum(len(p.text) for p in pages)
+    retained = _bounded_pages(pages, max_characters)
+    complete = len(indices) == count and characters <= max_characters and not failed
+    warnings = []
+    if len(indices) < count:
+        warnings.append(f'Page limit: extracted {len(indices)} of {count} source pages, spread across beginning/middle/end.')
+    if characters > max_characters:
+        warnings.append(f'Character limit: extracted passages capped at {max_characters} characters with explicit gaps; source text in attempted pages has {characters} characters.')
+    if failed:
+        warnings.append('Pages without extractable text (blank, image-only or failed): ' + ', '.join(map(str, failed)))
+    return FullTextDocument(url, retained, hashlib.sha256(payload).hexdigest(), complete, warnings=warnings,
+        coverage={'extractor_version':'bounded-v2', 'format':'PDF', 'source_pages':count,
+            'attempted_pages':[i + 1 for i in indices], 'unreadable_pages':failed,
+            'characters_before_extraction_limit':characters, 'max_pages':max_pages,
+            'max_extracted_characters':max_characters})
 
 
 def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     heading_pattern = re.compile(
-        r"(?im)^(?:\d+(?:\.\d+)*\.?\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|(?:system )?architecture|implementation|experimental setup|experimental protocol|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusions?)(?::[^\n]{1,100})?\s*$"
+        r"(?im)^(?:\d+(?:\.\d+)*\.?\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|(?:system )?architecture|implementation|experimental setup|experimental protocol|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusions?|references|bibliography|acknowledgements?|acknowledgments?|appendix|supplementary (?:material|details))(?::[^\n]{1,100})?\s*$"
     )
     numbered = re.compile(r"(?m)^\d{1,2}(?:\.\d{1,2})*\.?[ \t]+([A-Z][^\n]{2,110})$")
     sections: list[SelectedSection] = []
     current_heading = None
+    abstract_page = None
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
         # Generic numbered titles terminate a known body section; never infer
@@ -359,18 +431,39 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
         body_start = -1 if current_heading and current_heading.lower() != "abstract" else min(body_starts, default=len(page.text))
         occupied = {m.start() for m in matches}
         matches += [m for m in numbered.finditer(page.text)
-                    if m.start() > body_start and m.start() not in occupied
+                    if (m.start() > body_start or (current_heading == "Abstract" and abstract_page is not None and page.page > abstract_page)) and m.start() not in occupied
                     and not m.group(1).rstrip().endswith((".", ";", ","))]
+        appendix = re.compile(r"(?m)^(?:Appendix[ \t]+)?[A-Z](?:\.\d+)*\.?[ \t]+([A-Z][^\n]{3,100})$")
+        matches += [m for m in appendix.finditer(page.text) if m.start() not in {v.start() for v in matches}
+                    and not any(c in m.group(1) for c in ",;=")
+                    and (m.group(1).isupper() or re.match(r"[A-Z]\.\d", m.group(0))
+                         or re.match(r"(?i)(?:implementation|experimental|evaluation|additional|detailed|full benchmark|case study|training|hyperparameter|prompt|per-world|memory samples|limitations|diagnostic|proof|data)\b", m.group(1)))]
         matches.sort(key=lambda m: m.start())
+        named_starts = {m.start() for m in heading_pattern.finditer(page.text)}
+        filtered = []
+        in_back_matter = bool(current_heading and _section_kind(current_heading) == 'excluded')
+        for match in matches:
+            if match.start() in named_starts:
+                in_back_matter = _section_kind(match.group(1)) == 'excluded'
+            elif appendix.fullmatch(match.group(0)):
+                in_back_matter = False
+            elif in_back_matter:
+                continue
+            filtered.append(match)
+        matches = filtered
         prefix = page.text[:matches[0].start()] if matches else page.text
-        if current_heading and prefix.strip():
-            sections.append(SelectedSection(current_heading, prefix.strip(), page.page))
+        if prefix.strip():
+            sections.append(SelectedSection(current_heading or "Abstract / front matter", prefix.strip(), page.page))
         for index, match in enumerate(matches):
-            current_heading = match.group(1).title()
+            current_heading = match.group(1).strip().title()
+            if appendix.fullmatch(match.group(0)):
+                current_heading = "Appendix: " + current_heading
+            if current_heading == "Abstract":
+                abstract_page = page.page
             end = matches[index + 1].start() if index + 1 < len(matches) else len(page.text)
             text = page.text[match.end() : end].strip()
             if text:
-                sections.append(SelectedSection(match.group(1).title(), text, page.page))
+                sections.append(SelectedSection(current_heading, text, page.page))
     return sections
 
 
@@ -408,6 +501,7 @@ def _load_cached_document(path: Path) -> FullTextDocument | None:
             content_hash=str(data["content_hash"]),
             complete=bool(data.get("complete")),
             warnings=[str(item) for item in data.get("warnings", [])],
+            coverage=dict(data.get("coverage") or {}),
         )
     except (OSError, ValueError, KeyError, json.JSONDecodeError):
         return None
@@ -422,6 +516,7 @@ def _write_cached_document(path: Path, document: FullTextDocument) -> None:
                 "content_hash": document.content_hash,
                 "complete": document.complete,
                 "warnings": document.warnings,
+                "coverage": document.coverage,
                 "pages": [{"page": page.page, "text": page.text} for page in document.pages],
             },
             ensure_ascii=True,

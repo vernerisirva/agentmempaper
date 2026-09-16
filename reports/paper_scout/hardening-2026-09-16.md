@@ -82,9 +82,9 @@ AIM and Conditional Memory reached the 8192-token output limit at Baidu and Alib
 
 ## Validation and publication
 
-Full 231-test suite, all three relevance/quality/discovery checks, idempotency, offline builds, sidecar schemas, links, exposure scan, workflow validation, generated-file sizes, snapshot/restore and diff checks pass. Snapshot restore also rebuilds every track without mutating assessment state. Local browser verification passed for 18 pages, including all three libraries/review lists and the eleven reassessed cards. Public verification follows the single Pages deployment.
+Full 231-test suite, all three relevance/quality/discovery checks, idempotency, offline builds, sidecar schemas, links, exposure scan, workflow validation, generated-file sizes, snapshot/restore and diff checks pass. Snapshot restore also rebuilds every track without mutating assessment state. Local browser verification passed for 18 pages, including all three libraries/review lists and the eleven reassessed cards. Public verification passed for all 28 original calibration JSON cards and 18 browser pages; every public JSON card equals the reviewed local data.
 
-Expected main-library counts: **Agentic Memory 3, Deep Research 5, Engram 4**. Admission remains high topical relevance AND scientific pass. Publication is pending the single deployment; the final record will append the verified run and artifact hashes.
+Verified main-library counts: **Agentic Memory 3, Deep Research 5, Engram 4**. Admission remains high topical relevance AND scientific pass. [Pages run 35125950988](https://github.com/vernerisirva/agentmempaper/actions/runs/35125950988) succeeded, deploying `5c5a4dc2d811d893d7dee0ad70c4320aa79287bb` with `deploy_only=true`. Exactly one deployment was dispatched; discovery, paid assessment, state-writing and automatic commit steps were skipped. All 28 public calibration cards match the audited local data, and 18 public pages passed browser checks.
 
 ## Readiness
 
@@ -97,3 +97,5 @@ QUALITY_PIPELINE_READY_FOR_BATCH_2: NO
 No batch 2 was started.
 
 Durable runtime release asset published and downloaded for verification. SHA-256: `0a21a16569369bb711f2f6fbc82fb737cd572f816d090a8ead42328e86e95e59`. All three restored databases are byte-identical to the audited local snapshot.
+
+Public libraries: [Agentic Memory](https://vernerisirva.github.io/agentmempaper/), [Deep Research](https://vernerisirva.github.io/agentmempaper/deep-research/), [Engram](https://vernerisirva.github.io/agentmempaper/engram/). This completion note changes reports only and does not require a second Pages deployment.

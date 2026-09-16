@@ -2519,8 +2519,11 @@ def _quality_evidence_detail(item: dict[str, object]) -> str:
     snippets = ''.join(f"<blockquote>{escape(str(b.get('text', '')))}</blockquote>" for b in item.get('source_blocks', []))
     explanation = escape(str(item.get('explanation', '')))
     support = escape(str(item.get('support_status') or 'unreviewed'))
+    kind = 'Assessor inference' if item.get('statement_kind') == 'assessor_inference' else 'Attributed source statement' if item.get('statement_kind') == 'source_claim' else 'Assessor’s interpretation'
+    verification = item.get('support_verification') or {}
+    verification_label = ' Claim/evidence check: ' + escape(str(verification.get('status'))) + '.' if verification else ''
     return (f"<li><strong>{escape(str(item.get('dimension', '')).replace('_', ' ').capitalize())}{location}</strong>"
-            f"<p>{claim}</p><p>Assessor’s interpretation: {support}. {explanation}</p>"
+            f"<p>{claim}</p><p>{kind}: {support}. {explanation}{verification_label}</p>"
             f"<details><summary>Canonical source evidence</summary>{snippets}</details></li>")
 
 

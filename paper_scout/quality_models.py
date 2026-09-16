@@ -57,6 +57,9 @@ class QualityEvidence:
     pages: list[int] = field(default_factory=list)
     source_blocks: list[dict[str, Any]] = field(default_factory=list)
     support_status: str | None = None
+    statement_kind: str | None = None
+    claim_role: str | None = None
+    support_verification: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         if self.dimension not in QUALITY_DIMENSIONS:
@@ -86,6 +89,9 @@ class QualityEvidence:
             pages=list(value.get("pages") or []),
             source_blocks=list(value.get("source_blocks") or []),
             support_status=_optional_text(value.get("support_status")),
+            statement_kind=_optional_text(value.get("statement_kind")),
+            claim_role=_optional_text(value.get("claim_role")),
+            support_verification=dict(value.get("support_verification") or {}),
         )
 
 
@@ -141,6 +147,11 @@ class QualityAssessment:
                 raise ValueError("scientific decisions require a current manuscript-based assessment")
             if not self.quality_rationale.strip() or not self.quality_uncertainty.strip():
                 raise ValueError("scientific decisions require rationale and uncertainty")
+            if self.coverage.get('evidence_version') == 'block-evidence-v2':
+                if self.execution.get('support_verification', {}).get('status') != 'success':
+                    raise ValueError('new scientific decisions require claim-support verification')
+                if any(e.support_verification.get('status') != 'supported' for e in self.evidence):
+                    raise ValueError('new scientific decisions require supported claims')
             grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive" and e.support_status in {None, "supported"}}
             if self.quality_status == "pass" and not REQUIRED_GATE_DIMENSIONS <= grounded:
                 raise ValueError("quality pass requires manuscript evidence across the core dimensions")

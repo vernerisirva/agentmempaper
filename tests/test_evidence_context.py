@@ -4,6 +4,8 @@ import json
 import unittest
 
 from paper_scout.evidence_context import build_evidence_context, resolve_evidence_ids, digest
+from paper_scout.evidence_semantics import eligible_for, verifier_items
+from paper_scout.quality_llm import _support_input_hash
 from paper_scout.full_text import SelectedPaperText, SelectedSection
 from paper_scout.quality import assess_quality_deterministically
 from paper_scout.quality_llm import validate_block_quality_response, validate_block_review
@@ -12,6 +14,14 @@ from paper_scout.site import _quality_evidence_detail, _evidence_page_suffix
 from test_paper_scout_scientific_gate import candidate, manuscript, assessment
 from test_quality_reliability import block_fixture, envelope, SequenceHttp
 import test_quality_reliability as fixtures
+
+
+def verified_fixture(value, context, overrides=None):
+    try:items=verifier_items(value,context)
+    except ValueError:return None
+    return {'version':'claim-support-v1','status':'success','input_sha256':_support_input_hash(items),
+        'items':[{'item_id':item['item_id'],'status':(overrides or {}).get(item['item_id'],'supported'),
+                  'reason':'Mocked claim/evidence judgment.'} for item in items]}
 
 
 class EvidenceContextTests(unittest.TestCase):
@@ -23,7 +33,8 @@ class EvidenceContextTests(unittest.TestCase):
 
     def validate(self, value=None, context=None, selected=None):
         return validate_block_quality_response(value or self.value, self.seed, 'model',
-                                              selected or self.selected, context or self.context)
+                                              selected or self.selected, context or self.context,
+                                              verification=verified_fixture(value or self.value,context or self.context))
 
     def test_valid_ids_derive_exact_quotes_and_keep_interpretation_separate(self):
         self.value['evidence'][0]['claim'] = 'A paraphrased claim — punctuation need not copy the source.'
@@ -63,7 +74,8 @@ class EvidenceContextTests(unittest.TestCase):
         with self.assertRaises(ValueError):resolve_evidence_ids([tampered.blocks[0].evidence_id], tampered, expected_context_id=self.context.context_id)
         abstract = replace(self.selected, sections=[replace(s,heading='Abstract') for s in self.selected.sections])
         ctx = build_evidence_context('fixture', abstract)
-        with self.assertRaises(ValueError):resolve_evidence_ids([ctx.blocks[0].evidence_id],ctx,expected_context_id=ctx.context_id)
+        self.assertTrue(resolve_evidence_ids([ctx.blocks[0].evidence_id],ctx,expected_context_id=ctx.context_id))
+        self.assertFalse(eligible_for(ctx.blocks[0],'methodological_rigor','source_claim'))
         with self.assertRaises(ValueError):build_evidence_context('fixture',replace(self.selected,text='not the source text'))
 
     def test_preamble_and_standalone_resolver_bind_all_supplied_context(self):
@@ -126,7 +138,7 @@ class OutputRecoveryTests(unittest.TestCase):
         client=SequenceHttp([json.dumps(first),envelope()]);result,_=fixtures.ReliabilityTest().assess(client)
         self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),2)
         self.assertEqual(result.execution['calls'][0]['error_kind'],'output_limit')
-        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.02)
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.025)
         self.assertEqual(client.payloads[0]['messages'][1],client.payloads[1]['messages'][1])
         self.assertIn('compact COMPLETE',client.payloads[1]['messages'][-1]['content'])
         self.assertNotIn(first['choices'][0]['message']['content'],json.dumps(client.payloads[1]))

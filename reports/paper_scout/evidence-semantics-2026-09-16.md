@@ -108,7 +108,7 @@ All 273 unit tests pass, including the real four Abstract cases and Sci-MMR nume
 
 Snapshot/restore preserves all three databases and all prior assessment rows, adds exactly five rows, and changes exactly five current decisions. Discovery/source rows and all other 23 original assessments are unchanged. Legacy snapshot loading and rebuilds preserve database hashes.
 
-The single Pages deployment and public verification are pending; completion will be recorded here.
+[Pages run 35138875159](https://github.com/vernerisirva/agentmempaper/actions/runs/35138875159) succeeded, deploying `50e72fd1ad7721b0f871bc859f004c2761e80bac` with `deploy_only=true`. Exactly one deployment was dispatched; discovery, paid assessment, state-writing and automatic commit steps were skipped. All 28 public calibration JSON cards and all six library/review HTML pages match the audited local files. All 34 public pages passed browser checks.
 
 ## Readiness
 
@@ -135,3 +135,7 @@ Durable runtime asset published, downloaded and restored with identical database
 ## Continuation checkpoint
 
 Remaining work is to normalize equivalent percent spellings and make body-evidence eligibility less dependent on heading location while retaining the Abstract and claim-support protections. The JSON report preserves the four rejected body-role items and exact IDs for deterministic regression fixtures. AIM also demonstrates a real model/metric attribution error correctly caught by the verifier. This run made no further model calls after the frozen five-paper execution.
+
+Public libraries: [Agentic Memory](https://vernerisirva.github.io/agentmempaper/), [Deep Research](https://vernerisirva.github.io/agentmempaper/deep-research/), [Engram](https://vernerisirva.github.io/agentmempaper/engram/). This completion note changes reports only; no second Pages deployment.
+
+GitHub reported a nonfatal job-summary size limit: the combined summary exceeded 1 MiB. The report/log artifact upload and Pages deployment both succeeded.

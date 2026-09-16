@@ -153,6 +153,12 @@
         "evidence": {
           "items": {
             "properties": {
+              "claim_role": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
               "context_id": {
                 "type": [
                   "string",
@@ -192,6 +198,9 @@
                     "section": {
                       "type": "string"
                     },
+                    "section_role": {
+                      "type": "string"
+                    },
                     "source_spans": {
                       "items": {
                         "type": "object"
@@ -214,6 +223,17 @@
                 },
                 "type": "array"
               },
+              "statement_kind": {
+                "enum": [
+                  "source_claim",
+                  "assessor_inference",
+                  null
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
               "support_status": {
                 "enum": [
                   "supported",
@@ -225,6 +245,9 @@
                   "string",
                   "null"
                 ]
+              },
+              "support_verification": {
+                "type": "object"
               }
             },
             "type": "object"

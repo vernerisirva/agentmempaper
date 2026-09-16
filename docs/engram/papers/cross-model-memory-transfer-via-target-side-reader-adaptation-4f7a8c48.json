@@ -39,7 +39,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:23",
-    "generated_at": "2026-09-16 17:43:17",
+    "generated_at": "2026-09-16 19:02:41",
     "last_seen_at": "2026-09-15 12:07:52",
     "metadata_sources": [
       "openalex",
@@ -611,6 +611,7 @@
     "downranked": false,
     "evidence": [
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "contribution_clarity",
         "evidence_ids": [
@@ -666,9 +667,12 @@
             "text": "it to a different target model B, and train only\na lightweight target-side reader for memory extraction. If the frozen memory still improves the\ntarget after the original host is removed, then it contains usable information beyond source-specific\nco-adaptation. If it fails, then the apparent memory benefit was likely tied to the original backbone.\nFigure 1 illustrates the life cycle of memory reuse and transfer: source-side memory training,\nmemory export and freezing, and target-side extraction through a new reader. To make this test\nprecise, we separate three roles: (1)addressingdecides which entries are read, (2)memorydenotes\nthe stored vectors, and (3)readermaps them into the model. We standardize addressing, freeze the\nmemory, and adapt only the reader. This turns portability into a measurable question: can a target\nmodel learn to read a fixed memory artifact? We use a "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "methodological_rigor",
         "evidence_ids": [
@@ -746,9 +750,12 @@
             "text": "The training objective is the standard next-token language modeling loss on the target corpus. During\ntarget-side adaptation, both the exported source memory tables {En,j} and the target backbone\nparameters\u03b8B remain frozen; only the reader parameters{W (B,\u2113)}\u2113\u2208L are updated. Storage is fixed,\nand only extraction is learned. Algorithm 1 summarizes the procedure concisely. The key operations\nare to freeze the exported source memory, canonicalize target inputs into the shared address space,\nand update only the target-side reader.\nDeployment modes.The two-phase protocol above describes the general case in which the target\nrequires a model-specific reader. We additionally distinguish between two deployment modes. In\ndirect artifact reuse, a provider exports the frozen memory together with a reader whose residual\ninterface is compatible with the consumer model; the consumer performs no "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "evaluation_or_validation_strength",
         "evidence_ids": [
@@ -804,9 +811,12 @@
             "text": "insufficient; the\ntarget model must learn how to access it effectively.\nThe largest gain comes from reader placement. Moving from LLaMA{10}-R1 to LLaMA{2,10}-R1\nincreases average accuracy from 34.2 to 37.5. The improvement is broad rather than dataset-specific:\nNQ rises from 22.20 to 30.3, TriviaQA from 61.2 to 70.1, and HotpotQA from 22.3 to 27.4. These\nresults suggest that dual-layer injection provides the target model with multiple opportunities to\nintegrate retrieved memory throughout the forward pass, instead of forcing all memory interaction\nthrough a single late-layer interface.\nReader capacity explains the remaining improvement. Keeping the injection layers fixed at{2,10}\nand increasing the number of branches from R = 1 to R = 4 raises average accuracy from 37.5 to"
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "evidence_to_claim_alignment",
         "evidence_ids": [
@@ -862,9 +872,12 @@
             "text": "on average QA.\nThe task-level results show the same pattern. The transferred reader outperforms the parameter-\nmatched FFN on NQ, WebQA, TriviaQA, and HotpotQA, with particularly clear margins on NQ\n(30.3 versus 25.5), TriviaQA (69.9 versus 64.1), and HotpotQA (27.6 versus 23.6). The FFN control\nis slightly stronger only on TruthQA. Thus, simply attaching an equally parameterized target-side\nresidual module does not reproduce the downstream behavior of transferred memory.\nThe reader interface is critical.Removing context-dependent gating reduces average QA from\n38.5 to 33.7, a drop of 4.8 points. Replacing the reader with a single affine stitch similarly reduces\nthe average to 34.3, a 4.2-point decrease. These results indicate that transfer quality depends not\nonly on the presence of a memory table, but also on a sufficiently expressive interface for selecting,\ntransforming, and routing "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
@@ -950,9 +963,12 @@
             "text": "Cross-model transfer is often studied as representation or adapter alignment. Embedding-space\nwork suggests that independently trained models can sometimes be connected by simple linear maps\nbetween hidden representations (Mikolov et al., 2013; Kornblith et al., 2019; Huh et al., 2024; Chen\net al., 2025). PEFT transfer methods such as Cross-LoRA (Xia et al., 2025), LoRA-X (Farhadzadeh\net al., 2025), and Trans-LoRA (Wang et al., 2024) show that compact adapters or low-rank updates can\nsometimes be reused across heterogeneous models. These methods are useful baselines for parameter\ntransfer, but they do not directly address frozen external-memory reuse: there is no separate memory\ntable to address, freeze, and extract from after the source backbone is removed. In frozen-memory\nextraction, alignment starts earlier. The target model must first read the same memory entry as "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "reproducibility_and_transparency",
         "evidence_ids": [
@@ -1049,9 +1065,12 @@
             "text": "frozen memory\nremains useful after being moved to a different backbone. The experiments below test whether that\nconclusion survives several plausible alternative explanations. Specifically, we examine whether\nthe gains depend on shared tokenization, arise only when transferring from a smaller to a larger\nmodel, disappear for stronger targets, or can be explained by similarity between source and target\nrepresentations.\n24\nTable 10: Principal training and evaluation settings. \"LR / warm-up\" reports the learning rate and number\nof warm-up steps. Unless otherwise noted, training uses cosine decay, AdamW with weight decay 0.01, and\ngradient-norm clipping at 1.0. Alternative-corpus experiments follow the intrinsic reader-fitting protocol with\nLAMBADA or English C4 replacing WikiText-103. OOD rows are evaluation-only.\nRegime / phase Corpus Budget / cap Seq. / batch LR /\nwarm-up\nTrainable "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "limitations_and_uncertainty_handling",
         "evidence_ids": [
@@ -1128,9 +1147,12 @@
             "text": "or memory. We equip an existing multi-billion-parameter model with\nEngram and train it. So saying those multi-billion-parameter Engram models don't exist is not a good\nargument.\nAddressing and language diversity.Our default word-boundary addressing is effective for the\nevaluated English-like settings, but it is not universally tokenizer- or language-independent. In\nparticular, whitespace-based word units degenerate for non-segmented Chinese and Japanese. We\nshow that replacing word units with normalized character spans repairs this specific failure mode\nand produces positive transfer on Chinese and Japanese Wikipedia. These experiments demonstrate\nthat the model-independent addressing principle can extend beyond whitespace-delimited text,\nbut they do not establish a universally optimal canonical unit. Code, noisy Unicode, mixed-script\ntext, byte-level tokenizers, and additional writing "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "scholarly_novelty_or_value",
         "evidence_ids": [
@@ -1218,9 +1240,12 @@
             "text": "This section tests whether transfer remains useful once the source and target are both strong mid-\nscale models rather than a small source feeding a much larger target. Table 14 shows the results of\npeer-to-peer transfer between Phi-4-mini (Abouelenin et al., 2025) (3.8B) and Qwen3.5-4B.\nTable 14: Peer-to-peer transfer between Phi-4-mini (3.8B) and Qwen3.5-4B. Source memories trained on\nWikiText-103 (50M tokens). Mean\u00b1 std over 3 seeds. Deltas shown next to the transferred result are relative to\nthe no-memory baseline; negative values indicate better PPL.\nDirection Baseline Transferred Random\nPhi-4-mini\u2192Qwen3.5-4B 10.5 9.5\u00b10.0-10.1% 10.2\u00b10.0\nQwen3.5-4B\u2192Phi-4-mini 12.6 11.5\u00b10.0-9.2%12.3\u00b10.0\nThe gains remain bidirectional: Phi\u2192 Qwen improves by 10.1%, and Qwen\u2192 Phi improves by\n9.2%. Random memory is substantially weaker in both directions, even though it uses the same target-\nside reader "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
         "dimension": "presentation_and_precision",
         "evidence_ids": [
@@ -1287,7 +1312,9 @@
             "text": "does not perform a nearest-neighbor search over theM= 65,536 rows.\nAt one injection site of the target-side reader, the shared-value,R-branch reader performs one\ndmem\u00d7dB value projection andR key projections of the same shape, anddB for the hidden dimension\nof target modelB. If not, change it. The remaining reader operations include RMS normalization,\n31\nR key-query dot products, sigmoid gates, scalar\u2013vector products, and branch aggregation. These\noperations requireO(RdB) work. We refer to this as the non-projection, lower-order term because\nit scales linearly with dB, whereas the dense projections scale as dmemdB. With dmem = 512, the\nprojection term is substantially larger in the evaluated configurations. Lower than what? Thus, the\ndominant reader cost for a sequence of lengthTand batch sizeBis\nCreader =BTS [(R+ 1)dmemdB +O(RdB)] MAdds,(16)\nor, per token and ignoring the lower-order "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       }
     ],
     "full_text_assessed": true,

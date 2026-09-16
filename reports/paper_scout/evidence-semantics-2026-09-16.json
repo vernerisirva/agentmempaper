@@ -1,0 +1,1835 @@
+{
+  "date": "2026-09-16",
+  "baseline_sha": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+  "implementation": {
+    "pr_url": "https://github.com/vernerisirva/agentmempaper/pull/29",
+    "merge_sha": "e9a6199430f034e803a30e43c7c295c6fc06c443",
+    "reviewed_head": "53fca91cac364bbf3c7f0f9996dbe0e3b254ed42",
+    "evidence_version": "block-evidence-v2",
+    "assessment_version": "quality-semantics-v1",
+    "support_version": "claim-support-v1",
+    "ci_url": "https://github.com/vernerisirva/agentmempaper/actions/runs/35137139127"
+  },
+  "before": {
+    "pass": 16,
+    "scientific_uncertainty": 4,
+    "insufficient": 1,
+    "manuscript_unavailable": 3,
+    "evidence_grounding_failure": 4,
+    "model_protocol_failure": 0,
+    "text_coverage_failure": 0
+  },
+  "calibration_totals": {
+    "pass": 15,
+    "scientific_uncertainty": 6,
+    "insufficient": 1,
+    "manuscript_unavailable": 3,
+    "evidence_grounding_failure": 3,
+    "model_protocol_failure": 0,
+    "text_coverage_failure": 0
+  },
+  "tracks": {
+    "agent_memory": {
+      "pass": 4,
+      "scientific_uncertainty": 4,
+      "insufficient": 1,
+      "manuscript_unavailable": 1,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0
+    },
+    "deep_research": {
+      "pass": 5,
+      "scientific_uncertainty": 1,
+      "insufficient": 0,
+      "manuscript_unavailable": 2,
+      "evidence_grounding_failure": 2,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0
+    },
+    "engram": {
+      "pass": 6,
+      "scientific_uncertainty": 1,
+      "insufficient": 0,
+      "manuscript_unavailable": 0,
+      "evidence_grounding_failure": 1,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0
+    }
+  },
+  "public_library_counts": {
+    "agent_memory": 4,
+    "deep_research": 5,
+    "engram": 6
+  },
+  "paid_assessment_usage": {
+    "actual_requests": 7,
+    "normal_calls": 5,
+    "retry_calls": 0,
+    "verifier_calls": 2,
+    "successful_responses": 7,
+    "failed_responses": 0,
+    "input_tokens": 273324,
+    "output_tokens": 11727,
+    "known_cost_usd": 0.309376872072,
+    "unknown_cost_requests": 0,
+    "outcomes": {
+      "success": 7
+    },
+    "by_stage": {
+      "initial": {
+        "calls": 5,
+        "input_tokens": 240601,
+        "output_tokens": 10236,
+        "known_cost_usd": 0.281099126112
+      },
+      "retry": {
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost_usd": 0
+      },
+      "verifier": {
+        "calls": 2,
+        "input_tokens": 32723,
+        "output_tokens": 1491,
+        "known_cost_usd": 0.02827774596
+      }
+    }
+  },
+  "independent_reviews": [
+    {
+      "candidate": "79cfa2c695446179e581aeab3d4042cf70ee48dc",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "NextBit",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.087406044,
+      "api_request_attempts": 1,
+      "request_sha256": "f34dd0c4eb0c0355209171dd73cc570b467ea69accd98a7fd494cdae362acaeb",
+      "accepted": true,
+      "prompt_tokens": 74221,
+      "completion_tokens": 1227,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": false,
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "5ad115520b76c914d72d77f405da20253b157da2",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Baidu",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.04648762404,
+      "api_request_attempts": 1,
+      "request_sha256": "834e8b0c5a072f12be21f321d3a7cec2c00bbbaacf89b863d681ff9c4f7faabd",
+      "accepted": true,
+      "prompt_tokens": 75798,
+      "completion_tokens": 1475,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": false,
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "2dffb26113f0aa6b5356fb43e2c74a4816cc8a9a",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Alibaba",
+      "verdict": null,
+      "cost": 0.0729577728,
+      "api_request_attempts": 1,
+      "request_sha256": "bbd910e692cd43913705508f8946b514956e74fa2ffef81c69e6a729b90ff304",
+      "accepted": false,
+      "prompt_tokens": 76464,
+      "completion_tokens": 16384,
+      "reasoning_tokens": 16384,
+      "requested_reasoning": {
+        "enabled": true,
+        "effort": "low",
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "2dffb26113f0aa6b5356fb43e2c74a4816cc8a9a",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Venice",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.10717245,
+      "api_request_attempts": 1,
+      "request_sha256": "3b3752890b7bce37f1d2b074008b1627310f2934d362a4fa6db8e7379bbbf35d",
+      "accepted": true,
+      "prompt_tokens": 60147,
+      "completion_tokens": 1602,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": false,
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "0cf6da2cea2cf594de6d784f3b2bf00ebeb01127",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Sail Research",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.08619504322275,
+      "api_request_attempts": 1,
+      "request_sha256": "97945c3f8b42d462aff33c11c36288271d975fec5812c6073485c39886a31195",
+      "accepted": true,
+      "prompt_tokens": 61235,
+      "completion_tokens": 1464,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": false,
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "53fca91cac364bbf3c7f0f9996dbe0e3b254ed42",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Sail Research",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.06674346704025,
+      "api_request_attempts": 1,
+      "request_sha256": "080636a6362edc025a14afde320508810b6827e6c17ca46e484a15ff3687a9de",
+      "accepted": true,
+      "prompt_tokens": 45696,
+      "completion_tokens": 1707,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": false,
+        "exclude": true
+      }
+    },
+    {
+      "candidate": "53fca91cac364bbf3c7f0f9996dbe0e3b254ed42",
+      "baseline": "f9b2e5a17c92873d0543bd74167a8d94f37dd52e",
+      "requested_model": "anthropic/claude-opus-4.6",
+      "provider": "Claude Platform on AWS",
+      "verdict": "PASS",
+      "cost": 0.317335,
+      "api_request_attempts": 1,
+      "request_sha256": "3774d29d0fd01675ea46c79f5681d3fd62291dcfe3341955ea80ae6f957b8d87",
+      "accepted": true,
+      "prompt_tokens": 63162,
+      "completion_tokens": 61,
+      "reasoning_tokens": 0,
+      "requested_reasoning": {
+        "enabled": true,
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  ],
+  "review_cost_usd": 0.784297401103,
+  "combined_cost_usd": 1.093674273175,
+  "manifest": {
+    "assessment_version": "quality-semantics-v1",
+    "evidence_version": "block-evidence-v2",
+    "support_version": "claim-support-v1",
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "reasoning": "off",
+    "roster": [
+      {
+        "track": "agent_memory",
+        "rank": 3,
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+        "classification": "evidence_grounding_failure",
+        "source": "https://arxiv.org/pdf/2609.12320",
+        "source_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+        "canonical_context_hash": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea",
+        "payload_bytes": 149231,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v2",
+          "evidence_context_id": "0a873e8611a5b8ab96f0c90120b9273fcecd0730c39981d832cc8bf1e14e98f2",
+          "evidence_context_sha256": "01315f7ca427c7a66cddc4d85866c5678952cf1c131a6a72747928a6f84cc1fa",
+          "evidence_context_characters": 93370,
+          "evidence_block_count": 109,
+          "canonical_id": "doi:10.48550/arxiv.2609.12320",
+          "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+          "selected_text_sha256": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea"
+        }
+      },
+      {
+        "track": "agent_memory",
+        "rank": 6,
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+        "classification": "evidence_grounding_failure",
+        "source": "https://arxiv.org/pdf/2609.11060",
+        "source_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+        "canonical_context_hash": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e",
+        "payload_bytes": 154814,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v2",
+          "evidence_context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+          "evidence_context_sha256": "ac54fa3e8b5b8ec8e80d1039603425f7353c38f853b13461319d97a471e82f02",
+          "evidence_context_characters": 100022,
+          "evidence_block_count": 110,
+          "canonical_id": "doi:10.48550/arxiv.2609.11060",
+          "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+          "selected_text_sha256": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e"
+        }
+      },
+      {
+        "track": "deep_research",
+        "rank": 2,
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+        "classification": "pass",
+        "source": "https://arxiv.org/pdf/2609.11243",
+        "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+        "canonical_context_hash": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84",
+        "payload_bytes": 248312,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v2",
+          "evidence_context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+          "evidence_context_sha256": "68c1bbf21fec70d4ae9524ad17ddffd37d42fde949976c232074cecfb8cb04d7",
+          "evidence_context_characters": 162658,
+          "evidence_block_count": 186,
+          "canonical_id": "doi:10.48550/arxiv.2609.11243",
+          "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+          "selected_text_sha256": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84"
+        }
+      },
+      {
+        "track": "deep_research",
+        "rank": 8,
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+        "classification": "evidence_grounding_failure",
+        "source": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+        "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+        "canonical_context_hash": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0",
+        "payload_bytes": 95663,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v2",
+          "evidence_context_id": "dc6e037d4780825452a9074c78c1cec2968107d9b981bb57ec765e172912be57",
+          "evidence_context_sha256": "29d692a2979596c27a0de6576786da9a00758d187542970877a58ae46f764c3e",
+          "evidence_context_characters": 63249,
+          "evidence_block_count": 66,
+          "canonical_id": "doi:10.64898/2026.09.03.749176",
+          "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+          "selected_text_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0"
+        }
+      },
+      {
+        "track": "engram",
+        "rank": 8,
+        "canonical_id": "arxiv:2601.07372",
+        "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+        "classification": "evidence_grounding_failure",
+        "source": "https://arxiv.org/pdf/2601.07372",
+        "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+        "canonical_context_hash": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580",
+        "payload_bytes": 124722,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v2",
+          "evidence_context_id": "d88f8e69e24b589c03732cf1f558da0eee6c7eb11de70bb5d20a57fb221b2692",
+          "evidence_context_sha256": "518df98c8552df5bd8837c584a3b1fbb38568495686a5bad1c702daa7fb85c25",
+          "evidence_context_characters": 75802,
+          "evidence_block_count": 88,
+          "canonical_id": "arxiv:2601.07372",
+          "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+          "selected_text_sha256": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580"
+        }
+      }
+    ],
+    "normal_calls_maximum": 5,
+    "retry_calls_maximum": 5,
+    "verifier_calls_maximum": 5,
+    "verifier_retry_calls_maximum": 0,
+    "actual_requests_maximum": 15,
+    "per_paper_request_maximum": 3,
+    "json_repair_calls_maximum": 0,
+    "assessment_output_token_limit": 8192,
+    "verifier_input_byte_limit": 250000,
+    "verifier_output_token_limit": 4096,
+    "input_price_bound_per_token": 1.65e-06,
+    "output_price_bound_per_token": 4.95e-06,
+    "conservative_assessment_cost_usd": 3.0231366,
+    "conservative_verifier_cost_usd": 2.163876,
+    "review_reserve_usd": 4.118082401103,
+    "combined_conservative_reserve_usd": 9.305095001103,
+    "budget_ceiling_usd": 10,
+    "cost_bound_basis": "Scientific limits unchanged. Six completed DeepSeek reviews billed at reported actual $0.466962401103. User authorized a different reviewer; reserve two Claude Opus4.6 requests at250000 bytes and16384 output tokens each, using maximum current endpoint prices. Previously unused DeepSeek reserves released, not added to actual spend. No scientific reruns beyond frozen five.",
+    "preserved_original_roster_records": 23,
+    "second_batch_started": false,
+    "review_reasoning": {
+      "first_two": "off",
+      "third": "runner default low, hidden reasoning excluded",
+      "maximum_output_tokens_unchanged": 16384,
+      "fourth": "off; one recovery from third review length finish with zero visible content",
+      "fifth": "off; independent review after code and test fixes from fourth review",
+      "sixth": "off; after review-five diagnostics and regressions"
+    },
+    "review_calls_maximum": 8,
+    "alternative_review": {
+      "user_authorized": true,
+      "model": "anthropic/claude-opus-4.6",
+      "calls_maximum": 2,
+      "input_byte_limit": 250000,
+      "output_token_limit": 16384,
+      "input_price_bound": 5.5e-06,
+      "output_price_bound": 2.75e-05,
+      "cost_reserve_usd": 3.65112,
+      "reasoning": "runner default low, hidden reasoning excluded"
+    },
+    "completed_review_cost_usd": 0.466962401103,
+    "implementation_merge_sha": "e9a6199430f034e803a30e43c7c295c6fc06c443",
+    "reviewed_head": "53fca91cac364bbf3c7f0f9996dbe0e3b254ed42"
+  },
+  "call_ledger": [
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "track": "agent_memory",
+      "content_characters": 9184,
+      "content_sha256": "f49bb80aa343f1822c6612332dbce5a90ea22ddc8a23647d60726f11a5d19061",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Parasail",
+      "response_id": "gen-1789585127-Cu5esrKqj90M65HL71HJ",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2179,
+        "cost_usd": 0.07055532,
+        "prompt_tokens": 46914,
+        "reasoning_tokens": 0,
+        "total_tokens": 49093
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "track": "agent_memory",
+      "content_characters": 3482,
+      "content_sha256": "ac9f75a29013970ce105f1d3bc3c7e81288cdd6560e4aa3a218787367394a6af",
+      "finish_reason": "stop",
+      "kind": "verifier",
+      "provider": "Baidu",
+      "request_bytes": 62520,
+      "request_sent": true,
+      "response_id": "gen-1789585201-MUOZxNrl0GNWEOo3lRs0",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 783,
+        "cost_usd": 0.01131550596,
+        "prompt_tokens": 17178,
+        "reasoning_tokens": 0,
+        "total_tokens": 17961
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "track": "agent_memory",
+      "content_characters": 8761,
+      "content_sha256": "f2ae72472d3dc075c7f9cf6e5d8dfeec821376bb652e2f0b32cd5548499440d0",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789585216-c1XR3f3LvFRPxD4DpXHq",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 1024,
+        "completion_tokens": 1969,
+        "cost_usd": 0.032109323952,
+        "prompt_tokens": 50495,
+        "reasoning_tokens": 0,
+        "total_tokens": 52464
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "track": "agent_memory",
+      "content_characters": 3389,
+      "content_sha256": "b01711c1f7a3e32f9d1c2a7c82c9d85dbdf471a2f490c76f7fe4d5972bfbad41",
+      "finish_reason": "stop",
+      "kind": "verifier",
+      "provider": "Ionstream",
+      "request_bytes": 60349,
+      "request_sent": true,
+      "response_id": "gen-1789585255-CzMqNCBgtproT9NaXZVq",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 708,
+        "cost_usd": 0.01696224,
+        "prompt_tokens": 15545,
+        "reasoning_tokens": 0,
+        "total_tokens": 16253
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "track": "deep_research",
+      "content_characters": 8994,
+      "content_sha256": "f45c5bb715116fbc443b4277f40cf640d1e471d28c784747c641755deff1015e",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Together",
+      "response_id": "gen-1789585126-8eyKLar5u5Dqnsyy7fka",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2078,
+        "cost_usd": 0.11026356,
+        "prompt_tokens": 77299,
+        "reasoning_tokens": 0,
+        "total_tokens": 79377
+      }
+    },
+    {
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "track": "deep_research",
+      "content_characters": 8408,
+      "content_sha256": "066913d7ff6e7b3662d2169f784d7eaba2ac918b7a7437cfb6acddfc66a97c58",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Cloudflare",
+      "response_id": "gen-1789585187-Bq6zkVrZld3c5JWIPHRp",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1909,
+        "cost_usd": 0.04102692,
+        "prompt_tokens": 25354,
+        "reasoning_tokens": 0,
+        "total_tokens": 27263
+      }
+    },
+    {
+      "canonical_id": "arxiv:2601.07372",
+      "track": "engram",
+      "content_characters": 8784,
+      "content_sha256": "01efdd2ee1a38877f0cb1868d525144f8461b0fe7421cc9b65e8f834d161747a",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789585128-7JN5JFr91Vco6WSQg9VY",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2101,
+        "cost_usd": 0.02714400216,
+        "prompt_tokens": 40539,
+        "reasoning_tokens": 0,
+        "total_tokens": 42640
+      }
+    }
+  ],
+  "review_triage": {
+    "prior_review_triage": {
+      "blocking_1": "Rejected as a claimed defect: its own explanation says every accepted evidence item is supported and Evidence absent. Added loading regression that unsupported/missing item verification and absent execution verification fail closed. Existing full pass fixture succeeds.",
+      "blocking_2": "Rejected as a claimed defect: its explanation says No contradiction found. Added explicit provider error envelope to transport/schema/truncation regression; the verifier catches failure and records protocol_failure with a failed verifier ledger, no retry. Existing truncation/duplicate/malformed tests pass.",
+      "note_1": "Fixed: Abstract eligibility now requires dimension contribution_clarity AND source_claim, excluding scholarly_novelty_or_value. Prompt/guidance and regression enforce this.",
+      "note_2": "The stated regex examples were inaccurate: 39%\u219273% yields both values and 20 percentage points yields 20. Added exact comparison/percentage-point checks. Missing numeric values and percent-unit mismatches reject deterministically; matching value alone still requires metric/unit semantic verification. Spelled-out quantities/ambiguous OCR remain a documented verifier limitation, not claimed deterministic proof.",
+      "note_3": "Existing execution already skips the verifier if any origin evidence is ineligible, so no demonstrated runtime bypass. Added defense in depth: narrative union includes only source blocks eligible for their originating dimension/kind, with direct regression. Invalid origin references still reject the whole proposed judgment rather than silently repair it."
+    },
+    "second_review_triage": {
+      "blocking_1": "Contradicted by complete _verify_support: provider and reasoning fields are added BEFORE call request_bytes computation. A new exact-boundary OpenRouter regression measures actual payload bytes, refuses bytes-1, accepts exact bytes. HttpClient uses the same json.dumps(payload).encode(utf-8).",
+      "blocking_2": "The review explicitly admits no direct trigger and no mutation. Inputs are locally owned plain dicts; first validation does not mutate, second validation binds the actual verifier input hash. Rechecking is deliberate fail-closed behavior. No shared external mutation path exists.",
+      "blocking_3": "Contradicted by complete QualityAssessment.__post_init__: the whole v2 verification check is already nested inside quality_status in {pass, insufficient}. New regression roundtrips uncertain v2 with failed execution and missing item verification unchanged.",
+      "note_1": "Section roles nominate candidates rather than certify inferences. Bounded inference may use explicit scope in an introduction/conclusion, preserving conceptual-paper treatment; it still requires verifier support from the actual cited content. Added introduction inference rejected by unsupported verifier regression. No reason to exclude scientifically valid scope sources purely by heading.",
+      "note_2": "Contradicted by numeric_mentions: available tuples contain (value, unit), including distinct k/m/b. Existing regression rejects 128K vs 128 and accepts only harmless 128K vs 128k typography. No multiplier magnitude transformation occurs."
+    },
+    "review_3_execution": {
+      "result": "no accepted verdict",
+      "finish_reason": "length",
+      "completion_tokens": 16384,
+      "visible_content": false,
+      "disposition": "One bounded fourth review reserved before sending, same model, reasoning disabled, reduced redundant context, unchanged production code. Total conservative reserve $8.1514158 under approved $10."
+    },
+    "review_4_triage": {
+      "blocking_1": "The finding itself said Not blocking and correctly noted fail-closed behavior. Still fixed explicit envelope/object/choices/provider-error validation and added failure-category regression; verifier retry policy unchanged.",
+      "note_1": "Fixed lexical hyphenated identifier parsing, with signed value and numeric range regressions.",
+      "note_2": "Clarified narrative union in verifier prompt and added deduplication/order regression.",
+      "note_3": "Rejected nonexistent legacy v2 migration case. V2 first introduced in this PR; baseline all28 load as legacy v1/quote unchanged. Requiring new fields to select strict validation would allow stripping them to bypass it.",
+      "test_gaps": "Added all three requested regression groups. Existing mock tests already cover a successful assessment retry followed by one verifier."
+    },
+    "review_5_triage": {
+      "blocking_1": "Rejected requested appendix-location restriction: methods/results/reproducibility content may legitimately reside in appendices. Candidate section eligibility never proves content support. Added supported-content and rejected-interpretation regressions and explicit docs.",
+      "blocking_2": "Rejected false narrative leak: any numeric/semantic item failure makes semantic_ok false, which replaces proposed rationale and summary. Added both numeric and semantic rejection regressions even when narrative verifier independently approves.",
+      "note_1": "No reachable duplicate generation: enumerate creates unique evidence-N keys, separate fixed narrative keys; returned set and cardinality are already explicitly validated.",
+      "note_2": "Fixed explicit message/content shape validation and categorized protocol failures.",
+      "test_gaps": "Added both proposed scientific-gate regressions; full suite passes."
+    },
+    "review_6_triage": {
+      "blocking_1": "Rejected: v2 requires verification by design. Missing verification must not grant a scientific decision. Production references are only the two orchestration calls; first is deliberate pending validation and second binds verifier output. Legacy and deterministic code paths use their existing validators. Tests cover successful normal orchestration.",
+      "blocking_2": "Reviewer explicitly states No blocking issue and No change required. Consolidated with first as requested; no defect demonstrated.",
+      "note_1": "Rejected mathematically incorrect list-slice claim. Explicit supplemental checks with 0,1,2 evidence rows show items[-2:] always contains rationale and uncertainty; unsupported numerical uncertainty is removed in each case.",
+      "note_2": "Rejected impossible premise for deterministic classifier: identical heading strings always yield identical section kinds. Blocks only join adjacent same-heading spans; existing grouping tests enforce it.",
+      "note_3": "No action requested; diagnostics retain JSONDecodeError/provider_error_envelope and fail closed.",
+      "test_gaps": "Existing normal flow tests cover pending then verified assessment. Deterministic v2 decisions without verifier are intentionally prohibited. Added supplemental 0/1/2 evidence-item narrative reproduction outside production changes."
+    },
+    "alternative_review": {
+      "user_authorized_model_change": true,
+      "reviewer": "anthropic/claude-opus-4.6",
+      "verdict": "PASS",
+      "blocking_findings": 0,
+      "non_blocking_findings": 0,
+      "reviewed_head": "53fca91cac364bbf3c7f0f9996dbe0e3b254ed42",
+      "same_production_code_as_review6": true
+    }
+  },
+  "scientific_audit": {
+    "papers": {
+      "doi:10.48550/arxiv.2609.12320": "Automatic scientific uncertainty with all submitted references eligible. The verifier detects a real model/metric mismatch: the proposal assigns 58.8% strict and 70.5% state-aware operation accuracy to GPT-5.4, while the cited results attribute those values to GPT-5.4-mini. It also rejects unestablished whole-paper release claims and incomplete equation support. Deterministic checks additionally produce conservative representation false negatives where percentages appear in a table header rather than next to each value, or PDF text merges adjacent values. Therefore not every numeric rejection is a substantive scientific flaw. Five supported evidence items remain operative; rejected claims and the original narrative are withheld.",
+      "doi:10.48550/arxiv.2609.11060": "Automatic scientific uncertainty, but the sole support error is a reproducible numeric-normalization defect: the claim says \"95 percent\" and both cited canonical blocks say \"95%\". The semantic verifier supports the claim; the deterministic checker treats bare 95 and 95% as different units. This is a pipeline false rejection, not evidence of scientific insufficiency. Eight supported items remain operative, and the withheld method claim/proposed pass are not manually repaired. All references are valid and eligible; no Abstract selection failure remains.",
+      "doi:10.48550/arxiv.2609.11243": "New technical grounding failure. The methodological-rigor item mixes a results-classified benchmark-construction block B0024 with two eligible appendix blocks (B0050/B0067). The results block actually describes task generation and deterministic quality filtering, so a heading-based method restriction rejects relevant body content. The verifier is skipped for the entire proposal. A separate 57.2% numeric check also lacks that literal unit-bearing value in its cited blocks. The old >20% complete-recovery claim is absent from the new proposal and operative card, and the former automatic pass is withdrawn. No scientific pass or insufficiency can be concluded from this execution.",
+      "doi:10.64898/2026.09.03.749176": "New body-role conflicts preserve a technical grounding failure. The method item combines an Introduction protocol description (B0013) with a Methods block (B0052), while an attributed limitation cites a Methods passage explicitly stating the time-bound scope (B0053) plus a body discussion of verification difficulty (B0048). The compatibility matrix rejects Introduction for method and Methods for attributed limitation, despite relevant content. No Abstract IDs are responsible. The verifier is skipped, so the result is unresolved technical grounding, not an adverse scientific verdict.",
+      "arxiv:2601.07372": "New body-role conflict preserves a technical grounding failure. The attributed limitation cites Experimental Results B0040, which explicitly says Engram-40B does not dominate Engram-27B on every task and attributes this to under-training. The limitation/source_claim rule excludes results-classified blocks; the same relevant passage could have been a candidate for inference, but relabelling the output manually is prohibited. All cited IDs exist; no Abstract ID is responsible. Verifier execution is skipped and no scientific verdict is accepted."
+    },
+    "scimmr_known_claim_removed": true,
+    "scimmr_statement": "The known unsupported numerical claim was removed from the new proposal rather than newly grounded. Neither the current operative evidence (empty after failed grounding) nor its published rationale asserts that answer accuracy exceeds complete evidence recovery by more than 20%. Sci-MMR is now technical grounding uncertainty, not pass. The historical pass and its exact old claim remain unchanged in assessment history. This satisfies removal of the known false acceptance but does not resolve Sci-MMR end to end.",
+    "automatic_classification_caveat": "The reported two scientific_uncertainty classifications are the unchanged normal-pipeline outputs. Grounding Agent Memory is demonstrably a normalization false rejection, so the label must not be interpreted as a substantive scientific concern. No manual status correction was made.",
+    "unresolved_pipeline_defects": [
+      "The section compatibility matrix rejects substantively relevant body content under results/introduction/methods headings for some claim kinds.",
+      "Spelled percent and symbolic % are not normalized equivalently.",
+      "Unit-in-header tables and merged PDF values can trigger conservative numeric false rejection."
+    ],
+    "extra_paid_calls": 0,
+    "manual_corrections": 0
+  },
+  "preserved_original_records": 23,
+  "manual_corrections": 0,
+  "readiness_checks": {
+    "text_coverage_failures_zero": true,
+    "model_protocol_failures_zero": true,
+    "four_abstract_failures_resolved": false,
+    "abstract_cannot_satisfy_body_requirements": true,
+    "numerical_claims_require_cited_support": true,
+    "scimmr_known_unsupported_claim_removed": true,
+    "valid_ids_do_not_prove_support": true,
+    "inferences_require_support": true,
+    "no_new_technical_grounding_failure": false,
+    "full_validation_passes": true,
+    "no_manual_correction_required": true
+  },
+  "QUALITY_PIPELINE_READY_FOR_BATCH_2": "NO",
+  "second_batch_started": false,
+  "validation": {
+    "unit_tests": 273,
+    "all_three_relevance_quality_discovery_idempotency_builds": true,
+    "sidecar_schema_relative_links_exposure_workflow": true,
+    "state_read_and_build_preserved_hashes": true,
+    "snapshot": {
+      "snapshot_sha256": "bf1fd0ef43bc52a2004b183357daf649e8bbac325c2c5573f47e348db7807f45",
+      "snapshot_bytes": 45381645,
+      "tracks": [
+        {
+          "track": "agent_memory",
+          "changed_assessment_ids": [
+            "doi:10.48550/arxiv.2609.11060",
+            "doi:10.48550/arxiv.2609.12320"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        },
+        {
+          "track": "deep_research",
+          "changed_assessment_ids": [
+            "doi:10.48550/arxiv.2609.11243",
+            "doi:10.64898/2026.09.03.749176"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        },
+        {
+          "track": "engram",
+          "changed_assessment_ids": [
+            "arxiv:2601.07372"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        }
+      ]
+    },
+    "legacy_snapshot": [
+      {
+        "canonical_id": "doi:10.1007/s44206-026-00290-2",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22750153",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22661593",
+        "status": "insufficient",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22699102",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682679",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2609.11225",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22685081",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682633",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.1002/advs.76675",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11318",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.10922",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.6082/mgmw1-gw451",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07611",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07655",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.17605/osf.io/qm2c3",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2609.04793",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.03426",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2608.29327",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2608.23982",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2608.17050",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "openalex:W7172473936",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2605.20948",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2601.07372",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      }
+    ],
+    "local_browser_pages": 34,
+    "evidence_ui": {
+      "paper": "doi:10.48550/arxiv.2609.12320",
+      "source_block_count": 9,
+      "html_text_matches_canonical_after_existing_line_end_trim_and_browser_null_removal": true,
+      "canonical_source_null_characters": 2,
+      "source_statement_and_inference_labels_verified": true,
+      "support_status_visible": true,
+      "nested_disclosures_opened": true
+    }
+  },
+  "papers": [
+    {
+      "track": "agent_memory",
+      "rank": 1,
+      "canonical_id": "doi:10.1007/s44206-026-00290-2",
+      "title": "As-If Agents: Misrecognition and the Ethics of Non-Agentive AI",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 2,
+      "canonical_id": "doi:10.5281/zenodo.22750153",
+      "title": "The Intransitability of Hybrid Agents: Operational Memory, Drift Gradients, and the Limits of Agent Portability",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "66cf5688b877ae502d473e0255d349277f47703fe140e5b6809ae0d9c8db3253",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 3,
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "scientific_uncertainty",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-semantics-v1",
+      "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+      "execution_outcome": "scientific",
+      "automatically_validated": true,
+      "quality_rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+      "quality_uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 96.0% The cited sources support synthetic GPT-4o generation, manual validation without reported agreement, single-run LOCOMO comparison, and AIM underperforming Mem0, but the claim about adversarial queries being generated by the same model family and the three-scored-interaction basis Cited evidence does not establish numerical values/units: 7 Cited evidence does not establish numerical values/units: 96.0%, 58.8%, 70.5% Cited evidence does not establish numerical values/units: 96.0%, 96.0% The cited setup and appendix text confirm three trials on MUMBench and a single LOCOMO run, but the supplied excerpts do not state whether code or the MUMBench dataset is released.",
+      "section_roles": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "related"
+      ],
+      "reference_errors": [],
+      "support_errors": [
+        {
+          "item_id": "quality_rationale",
+          "numeric_check": {
+            "claimed_numbers": [
+              "672",
+              "96.0%",
+              "45.0%",
+              "35.5%"
+            ],
+            "missing_values_or_units": [
+              "96.0%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 96.0%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "quality_uncertainty",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The cited sources support synthetic GPT-4o generation, manual validation without reported agreement, single-run LOCOMO comparison, and AIM underperforming Mem0, but the claim about adversarial queries being generated by the same model family and the three-scored-interaction basis",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "7"
+            ],
+            "missing_values_or_units": [
+              "7"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 7",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "96.0%",
+              "58.8%",
+              "70.5%",
+              "1"
+            ],
+            "missing_values_or_units": [
+              "96.0%",
+              "58.8%",
+              "70.5%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 96.0%, 58.8%, 70.5%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [
+              "96.0%",
+              "96.0%",
+              "1",
+              "0.7"
+            ],
+            "missing_values_or_units": [
+              "96.0%",
+              "96.0%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 96.0%, 96.0%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-8",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The cited setup and appendix text confirm three trials on MUMBench and a single LOCOMO run, but the supplied excerpts do not state whether code or the MUMBench dataset is released.",
+          "status": "uncertain"
+        }
+      ],
+      "proposed_status": "pass",
+      "operative_evidence_items": 5,
+      "reference_items_submitted": 9,
+      "source_review": "Automatic scientific uncertainty with all submitted references eligible. The verifier detects a real model/metric mismatch: the proposal assigns 58.8% strict and 70.5% state-aware operation accuracy to GPT-5.4, while the cited results attribute those values to GPT-5.4-mini. It also rejects unestablished whole-paper release claims and incomplete equation support. Deterministic checks additionally produce conservative representation false negatives where percentages appear in a table header rather than next to each value, or PDF text merges adjacent values. Therefore not every numeric rejection is a substantive scientific flaw. Five supported evidence items remain operative; rejected claims and the original narrative are withheld.",
+      "rejected_eligibility_items": []
+    },
+    {
+      "track": "agent_memory",
+      "rank": 4,
+      "canonical_id": "doi:10.5281/zenodo.22661593",
+      "title": "Human Supervision as Attractor Stabilization: Indirect Prompt Injection, Longitudinal Object Custody, and the HibriMind Ontology",
+      "classification_before": "insufficient",
+      "classification": "insufficient",
+      "reassessed": false,
+      "quality_status": "insufficient",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6a57e0680ed4e72f44cbe234441b20db0c6eb8cd2cb7b752282caaf4583c3363",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 5,
+      "canonical_id": "doi:10.5281/zenodo.22699102",
+      "title": "Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "a733685a2c58ac3c283c2a00a3890849148112f764eacd95d0f2b2bbc34aef73",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 6,
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "scientific_uncertainty",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-semantics-v1",
+      "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+      "execution_outcome": "scientific",
+      "automatically_validated": true,
+      "quality_rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+      "quality_uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 95",
+      "section_roles": [
+        "appendix",
+        "body",
+        "introduction",
+        "related"
+      ],
+      "reference_errors": [],
+      "support_errors": [
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "95"
+            ],
+            "missing_values_or_units": [
+              "95"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 95",
+          "status": "unsupported"
+        }
+      ],
+      "proposed_status": "pass",
+      "operative_evidence_items": 8,
+      "reference_items_submitted": 9,
+      "source_review": "Automatic scientific uncertainty, but the sole support error is a reproducible numeric-normalization defect: the claim says \"95 percent\" and both cited canonical blocks say \"95%\". The semantic verifier supports the claim; the deterministic checker treats bare 95 and 95% as different units. This is a pipeline false rejection, not evidence of scientific insufficiency. Eight supported items remain operative, and the withheld method claim/proposed pass are not manually repaired. All references are valid and eligible; no Abstract selection failure remains.",
+      "rejected_eligibility_items": []
+    },
+    {
+      "track": "agent_memory",
+      "rank": 7,
+      "canonical_id": "doi:10.5281/zenodo.22682679",
+      "title": "Beyond Agentic Operating Systems A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority AIVORIX OS\u2122 Architectural Research Series",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "4d95d4d06619450fccbe69f1d39652f36c987b831828d31274096db45a3f4c53",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 8,
+      "canonical_id": "arxiv:2609.11225",
+      "title": "Harness Robotic OS: A Unified Embodied-Agent Runtime for Closed-Loop Quadruped Inspection",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "fdf3d3d1291697320ed9113e12815aabcb93b7e8397530a686d28b7d9ee2f53b",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 9,
+      "canonical_id": "doi:10.5281/zenodo.22685081",
+      "title": "Rank-Bounded Memory: Self-Poisoning and Attribution Laundering in LLM Agents",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "37fcb17e4ae17797bc9327897d1d3552a828d01c868f15d316501d57dd1bdc8f",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "agent_memory",
+      "rank": 10,
+      "canonical_id": "doi:10.5281/zenodo.22682633",
+      "title": "AgentKG: Conversational Memory as a Knowledge Graph",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "396af2b42db9c6132a2b7dd2f66256d4383e0296581838a27b4644f4f6273f51",
+      "execution_outcome": "manuscript_unavailable",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 1,
+      "canonical_id": "doi:10.1002/advs.76675",
+      "title": "Closing the Empirical Loop: Autonomous AI Agents Conduct End\u2010to\u2010end Research With Human Participants",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "ab2410ee72f45a51fdd2531a9400dc68c7a22b47e3dd55c237ff9b078f4c3a6a",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 2,
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+      "classification_before": "pass",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-semantics-v1",
+      "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+      "execution_outcome": "evidence_validation_failure",
+      "automatically_validated": true,
+      "quality_rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+      "quality_uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 57.2%",
+      "section_roles": [],
+      "reference_errors": [
+        "evidence section role is ineligible for this claim/dimension"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-0",
+          "numeric_check": {
+            "claimed_numbers": [
+              "235"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-1",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "27.4",
+              "46.1%",
+              "73.5%",
+              "54.8%"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1,014",
+              "57.2%",
+              "31.8%",
+              "0.3",
+              "0.5",
+              "0.7"
+            ],
+            "missing_values_or_units": [
+              "57.2%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 57.2%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-7",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-8",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        }
+      ],
+      "proposed_status": "pass",
+      "operative_evidence_items": 0,
+      "reference_items_submitted": 9,
+      "source_review": "New technical grounding failure. The methodological-rigor item mixes a results-classified benchmark-construction block B0024 with two eligible appendix blocks (B0050/B0067). The results block actually describes task generation and deterministic quality filtering, so a heading-based method restriction rejects relevant body content. The verifier is skipped for the entire proposal. A separate 57.2% numeric check also lacks that literal unit-bearing value in its cited blocks. The old >20% complete-recovery claim is absent from the new proposal and operative card, and the former automatic pass is withdrawn. No scientific pass or insufficiency can be concluded from this execution.",
+      "rejected_eligibility_items": [
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "statement_kind": "source_claim",
+          "claim": "The benchmark construction uses a human-in-the-loop pipeline with deterministic validation removing 54% of candidate tasks, an eight-dimensional rubric filtering a further 17%, and final expert review of 260 tasks yielding 235 retained tasks.",
+          "explanation": "The construction flow is documented with specific stage rates and expert-review dispositions, including independent dual review and adjudication, supporting the rigor of the pipeline.",
+          "evidence_ids": [
+            "Ee289dcbfc19bfb04-B0024",
+            "Ee289dcbfc19bfb04-B0050",
+            "Ee289dcbfc19bfb04-B0067"
+          ],
+          "eligibility_valid": false,
+          "sources": [
+            {
+              "id": "Ee289dcbfc19bfb04-B0024",
+              "role": "results",
+              "section": "Benchmark Construction And Composi-",
+              "pages": [
+                5
+              ]
+            },
+            {
+              "id": "Ee289dcbfc19bfb04-B0050",
+              "role": "appendix",
+              "section": "Appendix",
+              "pages": [
+                14
+              ]
+            },
+            {
+              "id": "Ee289dcbfc19bfb04-B0067",
+              "role": "appendix",
+              "section": "Appendix: Expert Verification Protocol",
+              "pages": [
+                17,
+                18
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "rank": 3,
+      "canonical_id": "doi:10.48550/arxiv.2609.11318",
+      "title": "Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-v2",
+      "source_content_hash": "d316fe1ef881e74a901bebb4c374e20decdb3f062310656c075f4a5270ea8146",
+      "execution_outcome": null,
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 4,
+      "canonical_id": "doi:10.48550/arxiv.2609.10922",
+      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "f4a5656658f30151b8399cb7e06826cea95b8a62162527682a37a19697b6bbf9",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 5,
+      "canonical_id": "doi:10.6082/mgmw1-gw451",
+      "title": "AI Scientists Need a Theory of Scientific Value",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6a95fed7d36453707c1c579938a86682ec05a8cd2def103ba03fd7ce367c4f57",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 6,
+      "canonical_id": "doi:10.48550/arxiv.2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "d76d8b7748237d0e1b460e44a7c4e042be9a3fd00ca70925492a175babedd6e9",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 7,
+      "canonical_id": "doi:10.48550/arxiv.2609.07655",
+      "title": "Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 8,
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-semantics-v1",
+      "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+      "execution_outcome": "evidence_validation_failure",
+      "automatically_validated": true,
+      "quality_rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+      "quality_uncertainty": "Scientific support remains unresolved. Support verification unavailable.",
+      "section_roles": [],
+      "reference_errors": [
+        "evidence section role is ineligible for this claim/dimension",
+        "evidence section role is ineligible for this claim/dimension"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-0",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-1",
+          "numeric_check": {
+            "claimed_numbers": [
+              "240",
+              "1"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "2",
+              "5",
+              "240",
+              "30"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "200",
+              "500"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-8",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "2"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        }
+      ],
+      "proposed_status": "pass",
+      "operative_evidence_items": 0,
+      "reference_items_submitted": 9,
+      "source_review": "New body-role conflicts preserve a technical grounding failure. The method item combines an Introduction protocol description (B0013) with a Methods block (B0052), while an attributed limitation cites a Methods passage explicitly stating the time-bound scope (B0053) plus a body discussion of verification difficulty (B0048). The compatibility matrix rejects Introduction for method and Methods for attributed limitation, despite relevant content. No Abstract IDs are responsible. The verifier is skipped, so the result is unresolved technical grounding, not an adverse scientific verdict.",
+      "rejected_eligibility_items": [
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "statement_kind": "source_claim",
+          "claim": "The evaluation protocol includes full-sized and smaller-scope prompts, multiple independent runs, and comparison with general-purpose AI systems.",
+          "explanation": "The introduction and methods describe the use of full-sized and smaller-scope prompts, up to four independent runs, and testing of Claude and ChatGPT. This multi-condition design supports the methodological claim.",
+          "evidence_ids": [
+            "Edc6e037d47808254-B0013",
+            "Edc6e037d47808254-B0052"
+          ],
+          "eligibility_valid": false,
+          "sources": [
+            {
+              "id": "Edc6e037d47808254-B0013",
+              "role": "introduction",
+              "section": "Introduction",
+              "pages": [
+                2
+              ]
+            },
+            {
+              "id": "Edc6e037d47808254-B0052",
+              "role": "methods",
+              "section": "Methods",
+              "pages": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "limitations_and_uncertainty_handling",
+          "statement_kind": "source_claim",
+          "claim": "The paper acknowledges limitations including the time-bound nature of AI framework performance and the difficulty of verifying AI outputs.",
+          "explanation": "The methods note that AI frameworks were run in January-March 2026 and conclusions reflect that state; the discussion notes that checking AI results versus redoing the project is not clearly time-effective. These statements acknowledge scope and uncertainty.",
+          "evidence_ids": [
+            "Edc6e037d47808254-B0053",
+            "Edc6e037d47808254-B0048"
+          ],
+          "eligibility_valid": false,
+          "sources": [
+            {
+              "id": "Edc6e037d47808254-B0053",
+              "role": "methods",
+              "section": "Methods",
+              "pages": [
+                8,
+                9
+              ]
+            },
+            {
+              "id": "Edc6e037d47808254-B0048",
+              "role": "body",
+              "section": "Ml Models On A Single Dataset And Offered Narrower (If Any)",
+              "pages": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "rank": 9,
+      "canonical_id": "doi:10.17605/osf.io/qm2c3",
+      "title": "Do AI Scientists' Results Replicate? Pre-registration of a multi-seed re-execution study of agent-generated empirical claims with matched human baselines and auditor calibration (AutoReplicate)",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "2f4ea2b74914a5dd86b1e8aadbe53acc88deb117546b28e5b1543d1afee19f86",
+      "execution_outcome": "manuscript_unavailable",
+      "automatically_validated": null
+    },
+    {
+      "track": "deep_research",
+      "rank": 10,
+      "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+      "title": "Generative artificial intelligence for nanomaterial discovery and nanoengineering: From data-driven design to autonomous laboratories",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "9e0149b697aed38a50c3478deb797102ccf6dbcdba1fb9e44195b8f6c292fcee",
+      "execution_outcome": "manuscript_unavailable",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 1,
+      "canonical_id": "arxiv:2609.04793",
+      "title": "ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 2,
+      "canonical_id": "doi:10.48550/arxiv.2609.03426",
+      "title": "Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "f7bd34f3005e2cbc60b197e6869f1d81fdeb9d63ed0e8a87c7270fb4205a05dd",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 3,
+      "canonical_id": "arxiv:2608.29327",
+      "title": "When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 4,
+      "canonical_id": "arxiv:2608.23982",
+      "title": "Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 5,
+      "canonical_id": "doi:10.48550/arxiv.2608.17050",
+      "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 6,
+      "canonical_id": "openalex:W7172473936",
+      "title": "Tokenizer-Agnostic Engram Module",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "528f4fe5c512abdcd932df1960da584132b85070437260d5d6618da0809f04f2",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 7,
+      "canonical_id": "arxiv:2605.20948",
+      "title": "Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "98ae2b04b13f48f41a06ecb74e04d231a9b8ad7a3921d10bcf1514910e36d7f1",
+      "execution_outcome": "scientific",
+      "automatically_validated": null
+    },
+    {
+      "track": "engram",
+      "rank": 8,
+      "canonical_id": "arxiv:2601.07372",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-semantics-v1",
+      "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+      "execution_outcome": "evidence_validation_failure",
+      "automatically_validated": true,
+      "quality_rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+      "quality_uncertainty": "Scientific support remains unresolved. Support verification unavailable.",
+      "section_roles": [],
+      "reference_errors": [
+        "evidence section role is ineligible for this claim/dimension"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-0",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-1",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1.7248",
+              "1.7109",
+              "80%",
+              "10B",
+              "0.0139"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [
+              "100B",
+              "2.8%",
+              "8B"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-8",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "Support verification unavailable.",
+          "status": "uncertain"
+        }
+      ],
+      "proposed_status": "pass",
+      "operative_evidence_items": 0,
+      "reference_items_submitted": 9,
+      "source_review": "New body-role conflict preserves a technical grounding failure. The attributed limitation cites Experimental Results B0040, which explicitly says Engram-40B does not dominate Engram-27B on every task and attributes this to under-training. The limitation/source_claim rule excludes results-classified blocks; the same relevant passage could have been a candidate for inference, but relabelling the output manually is prohibited. All cited IDs exist; no Abstract ID is responsible. Verifier execution is skipped and no scientific verdict is accepted.",
+      "rejected_eligibility_items": [
+        {
+          "item_id": "evidence-7",
+          "dimension": "limitations_and_uncertainty_handling",
+          "statement_kind": "source_claim",
+          "claim": "The paper acknowledges that Engram-40B does not strictly dominate Engram-27B on every task, attributing this to under-training rather than a fundamental limitation.",
+          "explanation": "The authors explicitly note the non-dominance of Engram-40B and provide a plausible explanation (under-training), though they do not provide a dedicated limitations section addressing broader constraints such as hash collision effects or scaling limits.",
+          "evidence_ids": [
+            "Ed88f8e69e24b589c-B0040"
+          ],
+          "eligibility_valid": false,
+          "sources": [
+            {
+              "id": "Ed88f8e69e24b589c-B0040",
+              "role": "results",
+              "section": "Experimental Results",
+              "pages": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "deployment": {
+    "status": "pending",
+    "maximum_dispatches": 1
+  },
+  "published_runtime_asset": {
+    "apiUrl": "https://api.github.com/repos/vernerisirva/agentmempaper/releases/assets/568604928",
+    "contentType": "application/x-gtar",
+    "createdAt": "2026-09-16T19:07:46Z",
+    "digest": "sha256:bf1fd0ef43bc52a2004b183357daf649e8bbac325c2c5573f47e348db7807f45",
+    "downloadCount": 0,
+    "id": "RA_kwDOTF7xZM4h5DkA",
+    "label": "",
+    "name": "paper-scout-state.tar.gz",
+    "size": 45381645,
+    "state": "uploaded",
+    "updatedAt": "2026-09-16T19:07:49Z",
+    "url": "https://github.com/vernerisirva/agentmempaper/releases/download/paper-scout-runtime-state/paper-scout-state.tar.gz",
+    "download_verified": true,
+    "restored_database_hashes_match": true
+  },
+  "remaining_work": [
+    "Normalize equivalent percent spellings without changing values.",
+    "Permit relevant body content under varied headings while preserving Abstract restrictions and substantive support verification.",
+    "Add regression fixtures for the four rejected body-role items and the 95 percent/95% false rejection before any new paid run."
+  ]
+}

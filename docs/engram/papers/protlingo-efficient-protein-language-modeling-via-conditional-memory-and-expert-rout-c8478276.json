@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-07 12:42:20",
-    "generated_at": "2026-09-16 17:43:17",
+    "generated_at": "2026-09-16 19:02:41",
     "last_seen_at": "2026-09-12 10:54:19",
     "metadata_sources": [
       "arxiv"
@@ -393,6 +393,7 @@
     "downranked": false,
     "evidence": [
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "contribution_clarity",
         "evidence_ids": [
@@ -468,9 +469,12 @@
             "text": "As shown in Figure 2, ProtLingo adapts a pretrained pro-\ntein language model through two complementary condi-\ntioning mechanisms: centered latentN-gram memory and\nsparse expert routing. The memory module retrieves motif-\nconditionedresidualsusingroute-specificdiscreteaddresses\nderived from centered residue neighborhoods. MoE up-\ncycling converts selected dense feed-forward blocks into\nN\nV\nS\nContact Map Prediction"
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "scholarly_novelty_or_value",
         "evidence_ids": [
@@ -526,9 +530,12 @@
             "text": "Al-\nthoughtheseapproachesimprovebiologicalgrounding,they\ndepend on homologous sequences, structural inputs, or ex-\nternal resources whose availability and quality vary across\nproteins. They also leave open a complementary question:\nhowcanasingle-sequencePLMbetterexploitthelocalcon-\ntext already present within its input? This question is espe-\ncially important for mutation-sensitive prediction, because\ntheeffectofasubstitutionoftendependsonnearbyconserved\nresidues,functionalsites,andlocalresidueenvironments(Ng\nand Henikoff 2003; Bogan and Thorn 1998; Porter, Bartlett,\nand Thornton 2004). Standard dense PLMs can model such\ndependencies implicitly, but provide no explicit mechanism\nfor reusing recurring local contexts or adapting computa-\ntion across residues. An effective architecture should there-\nfore preserve broad pretrained knowledge while introducing\nlocal-context memory and "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "methodological_rigor",
         "evidence_ids": [
@@ -564,9 +571,12 @@
             "text": "iandeachinsertionlayerhasitsownlearnable\nscale\u03b1.Inthemainconfiguration,each\u03b1isinitializedto1.0.\nDespitethisnonzeroscale,theLngraminsertioninitiallypre-\nserves the pretrained backbone output because the memory\ntableanddepthwiseconvolutionweightsarezero-initialized,\nyielding\u2206 = 0. ProtLingo therefore starts from the pre-\ntrained function while learning motif-conditioned residual\ncorrections through the memory pathway.\nSurrogate-gradient Path.The retrieved memory entries\nand latent compression layer are trained through standard\nbackpropagation, but discrete route addresses block gradi-\nents to the route projectionWq. ProtLingo therefore applies\na local counterfactual surrogate to each route bit: the model\nflips that bit while holding all others fixed and measures the\nresultingchangeintheretrievedmemoryrepresentation.This\ndifferenceprovidesasensitivitysignalfortheroutelogitsand\nWq. The "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "methodological_rigor",
         "evidence_ids": [
@@ -623,9 +633,12 @@
             "text": "feed-forward network were\nsplit into two complementary 1,280-channel partitions. One\npartition initialized an always-active shared expert, and the\nother initialized four routed experts.\nForeachtoken,thesharedexpertandonetop-1routedex-\npertwereactivated,preservinganactivefeed-forwardwidth\nof1,280 + 1,280 = 2,560. The router was initialized with\na standard deviation of 0.01. The load-balancing and router\nz-losscoefficientswere0.01and0.001,respectively.Noper-\nturbation was added to the routed experts at initialization;\nexpert specialization emerged during continued pretraining.\nLNgram ArchitectureLNgram modules were inserted\nbeforeblocks1,11,and21.Allthreemodulesusedacentered\nthree-tokenwindow,twobitsperroute,amemorydimension\nof 8, and a latent dimension of 256. With a hidden size of\n640,eachmodulecontained320routes.Eachrouteusedfour\nlearned codes and one boundary code, yielding53 = "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "evaluation_or_validation_strength",
         "evidence_ids": [
@@ -681,9 +694,12 @@
             "text": "compact active-parameter bud-\nget, and the comparison is intended to assess parameter-\nefficientrepresentationqualityratherthantoclaimuniversal\nstate-of-the-art contact prediction accuracy.\nModel Active Params P@LP@L/2P@L/5\nESM2-150M 150M 0.484 0.657 0.830\nESM2-650M 650M0.514 0.682 0.845\nProtBert 420M 0.281 0.353 0.435\nProtLingo 153M 0.485 0.657 0.816\nFLIP, we report task scores on GB1, AAV, and Meltome us-\ningthesamescoringprotocolforinternallyevaluatedmodels.\nTable 1 summarizes the results. Among models evaluated\nunder our unified setting, larger dense encoders generally\nachieve the strongest absolute scores, while ProtLingo at-\ntains the highest parameter-efficiency score. Here efficiency\nis defined as ProteinGym DMS Spearman divided by ac-\ntive parameters in billions. ProtLingo improves over ESM2-\n150MonProteinGymSpearmanandAUC,andremainsclose\nto the 150M-scale baseline on FLIP "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "evaluation_or_validation_strength",
         "evidence_ids": [
@@ -719,9 +735,12 @@
             "text": "We compare full ProtLingo with variants that remove the\nSparseMoEmodule,themotif-awareLngrammemorymod-\nule, or both. We evaluate whether the gains come primar-\nily from conditional computation, motif-aware memory re-\ntrieval,ortheirinteraction.WereportchangesinProteinGym\nDMS Spearman correlation (\u2206\u03c1) and language-model per-\nplexity (\u2206PPL) relative to full ProtLingo, where higher\u2206\u03c1\nand lower\u2206PPL indicate better performance.\nTable3:AblationstudyrelativetofullProtLingo.\u2206denotes\nthe ablated-model value minus the full-model value.\nVariant PG-DMS\u2206\u03c1\u2191\u2206PPL\u2193\nFull ProtLingo \u2013 \u2013\n\u2212MoE -0.093 +2.461\n\u2212Lngram -0.357 +6.003\n\u2212MoE\u2212Lngram -0.369 +6.035"
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "evidence_to_claim_alignment",
         "evidence_ids": [
@@ -787,9 +806,12 @@
             "text": "motif\naddressagreementreached54.2%,comparedwith23.4%for\ncontrols; Fig. 4c illustrates this concentration in a represen-\ntative route. Finally, across 21,958 functional anchors and\n18,290 identical-substitution controls outside motifs, non-\nconservative mutations caused 17.6\u201321.1% greater residual\nperturbation than conservative mutations. Motif mutations\nalso caused 16.8\u201322.8% greater perturbation than identical\nsubstitutions outside motifs, measured as the mean local L2\ndistance between scaled wild-type and mutant residuals.\nTogether, these results show that centered Lngram learns\nstable, motif-aware representations that cannot be explained\nby protein context or amino-acid composition alone and are\nA\nLeft Code\nCenter Code\nInput Hidden State\nLookUp\n[\n3 \n3 \n3]\nEmbedding ID\n29-th Route\nQuery\n[       ][       ][       ]\nLeft Code\nCenter Code\nRight Code\n99.0% concentration 26.8% "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "evidence_to_claim_alignment",
         "evidence_ids": [
@@ -845,9 +867,12 @@
             "text": "residue\nfromthesameprotein,prioritizingidenticalaminoacidsand\nrelative-position bins. Enrichment over these matched back-\ngrounds is reported in Table 4. To test whether these pref-\nerenceswerefunctionallyrelevant,wereplacedTop-1selec-\ntionswithalternativeexpertsatselectedlayersandmeasured\nperformance changes, as shown in Fig. 4b.\nTheseresultsrevealabiologicalhierarchyinMoErouting\nacross local structures, functional residues, and conserved\ndomains. Rather than interchangeable branches, experts ex-\nhibit multiscale specialization supporting remote-homology\ndetection,domainandfunctional-siteannotation,secondary-\nstructure prediction, and targeted adaptation.\nTable 4: Expert routing across biological annotations. Pfam\nresults are restricted to clans withnprot\u2265500\nAnnotation Classes Residues Target/Ref. (%)\nPfam clans 196 71.29M92.5/24.3\nSwiss-Prot sites 19 39.14M64.2/31.7\nTAPE Q3 3 "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "reproducibility_and_transparency",
         "evidence_ids": [
@@ -923,9 +948,12 @@
             "text": "reported downstream evaluations.\nOptimizationTwo-dimensional weight matrices were op-\ntimized with Muon using a learning rate of1.5\u00d710\u22123, mo-\nmentum 0.95, five Newton\u2013Schulz iterations, and Nesterov\nmomentum. Embeddings, normalization parameters, biases,\nthe MLM head, and router parameters were optimized with\nAdamW at1\u00d710 \u22124, using\u03b2= (0.9,0.98)and\u03f5= 10 \u22128.\nLNgram memory tables used an AdamW learning rate of\n2\u00d710 \u22124 without weight decay; the remaining parameter\ngroups used a weight decay of 0.01.\nWe used a warmup\u2013stable\u2013decay schedule with 10,000\nwarmup steps. An FP32 exponential moving average with\na decay of 0.9999 was updated after every optimizer step.\nThe backbone and the custom MoE and LNgram paths used\nBF16; FP8 was not enabled for the reported experiment.\nHardware and SoftwareExperiments were based on "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "limitations_and_uncertainty_handling",
         "evidence_ids": [
@@ -961,9 +989,12 @@
             "text": "Limitations.Although ProtLingo improves the compact\nESM2 backbone across several settings, the gains over\nESM2-150M are bounded by the lightweight nature of the\ncurrent modules, suggesting that richer routing designs may\nfurther unlock conditional specialization; future work could\nexplore alternative MoE routers such as hierarchical con-\nstrained routing (Vashkelis and Trukhina 2026).\nConclusion.We presented ProtLingo, an efficient protein\nlanguagemodelingframeworkthatcombinescenteredlatent\nN-grammemorywithsparseexpertrouting.Byintroducing\nreusable local-context memory and residue-dependent com-\nputation into a pretrained ESM2 backbone, ProtLingo im-\nproves mutation-sensitive modeling without relying on sub-\nstantiallylargerdensemodels.Experimentsacrosssequence-\nfunctionprediction,contactprediction,andlanguagemodel-\ningdemonstratestrongperformanceatthe150Mscalewhile\npreserving "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "limitations_and_uncertainty_handling",
         "evidence_ids": [
@@ -1029,9 +1060,12 @@
             "text": "lly\ncontrolled ablation."
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       },
       {
+        "claim_role": null,
         "context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
         "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
@@ -1107,7 +1141,9 @@
             "text": "Dense PLMs process every residue through the same feed-\nforwardparameterset,evenwhenresiduecontextsdiffersub-\nstantially. Increasing this uniformly activated capacity im-\nproves model expressiveness, but it also increases computa-\ntionforeverytoken.Conditionalcomputationoffersanalter-\nnativebydecouplingtotalmodelcapacityfromper-tokenac-\ntivecomputation,selectinginput-dependentparameterpath-\nways instead of activating the full model for every residue.\nMoE models instantiate this idea through sparse routing,\nwhereeachtokenisassignedtoasmallsubsetofexperts(Fe-\ndus,Zoph,andShazeer2022;Zophetal.2022).Sparseupcy-\nclingfurtheradaptsthisprincipletopretraineddensemodels\nbyreusinglearnedfeed-forwardparametersratherthantrain-\ning a sparse architecture from scratch (Komatsuzaki et al.\n2023). In protein modeling, sparse expert architectures have\nshown that model capacity can be expanded while "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": null,
+        "support_status": "supported",
+        "support_verification": {}
       }
     ],
     "full_text_assessed": true,

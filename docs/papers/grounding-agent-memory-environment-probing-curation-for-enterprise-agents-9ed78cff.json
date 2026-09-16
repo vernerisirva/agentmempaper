@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:26:40",
-    "generated_at": "2026-09-16 17:43:07",
+    "generated_at": "2026-09-16 19:02:32",
     "last_seen_at": "2026-09-15 11:59:55",
     "metadata_sources": [
       "openalex",
@@ -111,16 +111,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T17:41:15+00:00",
+    "assessed_at": "2026-09-16T19:01:41+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-evidence-v1",
+    "assessment_version": "quality-semantics-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
-    "concerns": [
-      "The paper reports uncertainty intervals and paired baselines, but the small number of runs and the use of selected qualitative examples limit the strength of some mechanistic conclusions."
-    ],
-    "concise_summary": "The paper presents a clear, well-motivated extension to agent-memory curation with a deployment-compatible read-only probing mechanism. The contribution is precisely defined, the related-work gap is well articulated, and the experimental design uses paired runs and fixed task-time interfaces to isolate the effect of curator-side probing. Quantitative results across CLBench and adapted APEX show consistent improvements in pass rate, reward, and cost, with confidence intervals reported. Qualitative examples illustrate the mechanism by which probing converts warnings and stale mappings into executable procedures. The main limitations are the relatively small number of runs, the use of selected qualitative examples for mechanistic claims, and the absence of a formal statistical test for some subgroup differences. Overall, the evidence supports the central claims, and the paper meets the criteria for a pass with moderate confidence.",
+    "concerns": [],
+    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 88085,
@@ -156,10 +154,10 @@
       "characters_before_extraction_limit": 89315,
       "eligible_characters": 85654,
       "evidence_block_count": 110,
-      "evidence_context_characters": 96900,
-      "evidence_context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-      "evidence_context_sha256": "3d3c55219e884b0550f4937d7b7080a6a68c8d63f65ae50f28d098c93be61df8",
-      "evidence_version": "block-evidence-v1",
+      "evidence_context_characters": 100022,
+      "evidence_context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+      "evidence_context_sha256": "ac54fa3e8b5b8ec8e80d1039603425f7353c38f853b13461319d97a471e82f02",
+      "evidence_version": "block-evidence-v2",
       "excluded_back_matter_characters": 2684,
       "extracted_characters": 89363,
       "extracted_page_indices": [
@@ -497,51 +495,110 @@
     "downranked": false,
     "evidence": [
       {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-        "dimension": "scholarly_novelty_or_value",
+        "claim_role": "contribution",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "contribution_clarity",
         "evidence_ids": [
-          "E81097e33595a5a5c-B0006",
-          "E81097e33595a5a5c-B0014"
+          "Ec3712c2c21924a10-B0007",
+          "Ec3712c2c21924a10-B0009"
         ],
-        "excerpt": "Claude Managed Agents Dreams, ACE,\nReasoningBank,andReMeoperatesoversomecombination\nofexistingrecords,completedtrajectories,feedback,andus-\nage signals (Chhikara et al. 2025; Anthropic 2026b; Zhang\net al. 2025; Ouyang et al. 2025; Cao et al. 2026).\nThis retrospective evidence boundary is fundamentally\nincomplete. A trajectory is a single, partial, and often\nmistake-laden observation of the environment. Its lemmas\ncan (i) memorize an instance answer rather than its proce-\ndure,(ii)inheritaninefficientpath,(iii)assertanunverifiable\nscope, (iv) leave blind spots in unvisited regions, or (v) go\nstale as the world changes. Deferring verification to task\ntime forces the responding agent to spend scarce tool calls\nrechecking uncertain memories rather than directly solving\nthe current task.\nWe therefore proposeenvironment-probing curation. Af-\nter each task, the harness instantiates a post-task \n[\u2026 separate evidence block \u2026]\nstill operates mainly over existing records,\nrecorded trajectories, grades, and usage signals. Conse-\nquently,strongerreflectioncannotrecoverstatesthetaskpol-\nicyneverobservedordeterminewhetheratrajectory-derived\nruleremainstrueafterenvironmentdrift.Ourcontributionis\northogonal: read-only world tools let either a factual or pro-\ncedural curator agent independently check a claim, re-enact\na procedure, inspect omitted states, test scope, and refresh\nstale knowledge before writing.",
-        "explanation": "The related-work section explicitly identifies the evidence boundary in prior systems and positions the contribution as orthogonal. This supports a clear novelty claim grounded in the literature.",
+        "excerpt": "curator\nagent with memory CRUD; it receives the completed tra-\njectory and grade after a non-writing distillation step, then\nuses read-only world tools to check candidate claims, test\ntheir scope across omitted states, re-enact procedures, and\nrefresh stale entries before writing. This is consistent with\n1Claude Managed Agents Memory: https://platform.claude.\ncom/docs/en/managed-agents/memory.\n2Copilot Studio Memory (preview): https://learn.microsoft.\ncom/en-us/microsoft-copilot-studio/agents-experience/memory-\noverview.\narXiv:2609.11060v1  [cs.AI]  10 Sep 2026\nSEQUENTIAL TASK S\u1d62EXECUTION\nPrompt\nTASK S\u1d62\nTask agent\nenv + memory_read\nAnswer\nTASK S\u1d62\nGrade\nTASK S\u1d62\n... n32\nMemory index\nid \u00b7 lemma \u00b7 usage\nmetadata \u00b7 embedding\nquery q\nmemory records\nASYNCHRONOUS CURATION\n\u03c4\u1d62: raw trajectory\nd\u1d62: optional distilled\ntrajectory\n+ grade g\u1d62\nCurator agent\nCRUD \n[\u2026 separate evidence block \u2026]\n2018).\nThemechanismisreadilyincorporatedintoexistingenter-\npriseagents.Itrequiresnoretrainingandleavestherespond-\ning agent, retriever, record representation, and production\nwrite authority unchanged. The asynchronous curator agent\nreceives only a least-privilege, read-only subset of existing\nconnectors or MCP tools (Microsoft 2026d,b). Probes re-\nmainofftheuser-facingcriticalpathandtaskbudget,inherit\nplatform authentication and auditing, and disappear without\na safe read surface. Figure 1 isolates this boundary: only\nthe asynchronous curator agent gains world tools. With the\ntask-time memory interface and CRUD lifecycle fixed, in-\ncremental gains measure write-time evidence quality rather\nthan added task-agent capacity.\nIn our production-like GitHub Copilot (GHCP) harness,\nbuilt on its SDK, each task gets a fresh agent session while\na persistent index spans sessions and external tools",
+        "explanation": "The introduction explicitly defines the proposed mechanism and its deployment constraints, and the body restates the unchanged components. This is a clear, bounded contribution statement.",
         "page": 1,
         "pages": [
           1,
-          2,
-          3
+          2
         ],
-        "paraphrase": "The proposed method is novel relative to prior agent-memory work because existing post-task curation operates mainly over completed trajectories, records, grades, and usage signals, whereas this work introduces environment probing as an orthogonal evidence source.",
-        "section": "Introduction / Related Work",
+        "paraphrase": "The paper introduces environment-probing curation, a deployment-compatible extension that gives an asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories without retraining or changing the task agent, retriever, memory representation, or production write path.",
+        "section": "Introduction",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "134fcf81c939b4a94585fbdbcc69e15da59d79148e1a659c744bb26af67e3127",
-            "evidence_id": "E81097e33595a5a5c-B0006",
+            "content_hash": "79e0217edfce57a7939b602b14c49b4e6005587af3bf851a0a9385468458e41e",
+            "evidence_id": "Ec3712c2c21924a10-B0007",
             "pages": [
-              1
+              1,
+              2
             ],
             "section": "Introduction",
+            "section_role": "introduction",
             "source_spans": [
               {
-                "end": 2695,
+                "end": 3262,
                 "page": 1,
                 "section": "Introduction",
                 "section_index": 2,
-                "start": 1795,
-                "text": "Claude Managed Agents Dreams, ACE,\nReasoningBank,andReMeoperatesoversomecombination\nofexistingrecords,completedtrajectories,feedback,andus-\nage signals (Chhikara et al. 2025; Anthropic 2026b; Zhang\net al. 2025; Ouyang et al. 2025; Cao et al. 2026).\nThis retrospective evidence boundary is fundamentally\nincomplete. A trajectory is a single, partial, and often\nmistake-laden observation of the environment. Its lemmas\ncan (i) memorize an instance answer rather than its proce-\ndure,(ii)inheritaninefficientpath,(iii)assertanunverifiable\nscope, (iv) leave blind spots in unvisited regions, or (v) go\nstale as the world changes. Deferring verification to task\ntime forces the responding agent to spend scarce tool calls\nrechecking uncertain memories rather than directly solving\nthe current task.\nWe therefore proposeenvironment-probing curation. Af-\nter each task, the harness instantiates a post-task "
+                "start": 2695,
+                "text": "curator\nagent with memory CRUD; it receives the completed tra-\njectory and grade after a non-writing distillation step, then\nuses read-only world tools to check candidate claims, test\ntheir scope across omitted states, re-enact procedures, and\nrefresh stale entries before writing. This is consistent with\n1Claude Managed Agents Memory: https://platform.claude.\ncom/docs/en/managed-agents/memory.\n2Copilot Studio Memory (preview): https://learn.microsoft.\ncom/en-us/microsoft-copilot-studio/agents-experience/memory-\noverview.\narXiv:2609.11060v1  [cs.AI]  10 Sep 2026"
+              },
+              {
+                "end": 290,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "SEQUENTIAL TASK S\u1d62EXECUTION\nPrompt\nTASK S\u1d62\nTask agent\nenv + memory_read\nAnswer\nTASK S\u1d62\nGrade\nTASK S\u1d62\n... n32\nMemory index\nid \u00b7 lemma \u00b7 usage\nmetadata \u00b7 embedding\nquery q\nmemory records\nASYNCHRONOUS CURATION\n\u03c4\u1d62: raw trajectory\nd\u1d62: optional distilled\ntrajectory\n+ grade g\u1d62\nCurator agent\nCRUD "
               }
             ],
-            "text": "Claude Managed Agents Dreams, ACE,\nReasoningBank,andReMeoperatesoversomecombination\nofexistingrecords,completedtrajectories,feedback,andus-\nage signals (Chhikara et al. 2025; Anthropic 2026b; Zhang\net al. 2025; Ouyang et al. 2025; Cao et al. 2026).\nThis retrospective evidence boundary is fundamentally\nincomplete. A trajectory is a single, partial, and often\nmistake-laden observation of the environment. Its lemmas\ncan (i) memorize an instance answer rather than its proce-\ndure,(ii)inheritaninefficientpath,(iii)assertanunverifiable\nscope, (iv) leave blind spots in unvisited regions, or (v) go\nstale as the world changes. Deferring verification to task\ntime forces the responding agent to spend scarce tool calls\nrechecking uncertain memories rather than directly solving\nthe current task.\nWe therefore proposeenvironment-probing curation. Af-\nter each task, the harness instantiates a post-task "
+            "text": "curator\nagent with memory CRUD; it receives the completed tra-\njectory and grade after a non-writing distillation step, then\nuses read-only world tools to check candidate claims, test\ntheir scope across omitted states, re-enact procedures, and\nrefresh stale entries before writing. This is consistent with\n1Claude Managed Agents Memory: https://platform.claude.\ncom/docs/en/managed-agents/memory.\n2Copilot Studio Memory (preview): https://learn.microsoft.\ncom/en-us/microsoft-copilot-studio/agents-experience/memory-\noverview.\narXiv:2609.11060v1  [cs.AI]  10 Sep 2026\nSEQUENTIAL TASK S\u1d62EXECUTION\nPrompt\nTASK S\u1d62\nTask agent\nenv + memory_read\nAnswer\nTASK S\u1d62\nGrade\nTASK S\u1d62\n... n32\nMemory index\nid \u00b7 lemma \u00b7 usage\nmetadata \u00b7 embedding\nquery q\nmemory records\nASYNCHRONOUS CURATION\n\u03c4\u1d62: raw trajectory\nd\u1d62: optional distilled\ntrajectory\n+ grade g\u1d62\nCurator agent\nCRUD "
           },
           {
+            "content_hash": "e1bbf9bce1721b82353353d443f0262fee957dcb3df77932ab12c01e15711348",
+            "evidence_id": "Ec3712c2c21924a10-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2011,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1112,
+                "text": "2018).\nThemechanismisreadilyincorporatedintoexistingenter-\npriseagents.Itrequiresnoretrainingandleavestherespond-\ning agent, retriever, record representation, and production\nwrite authority unchanged. The asynchronous curator agent\nreceives only a least-privilege, read-only subset of existing\nconnectors or MCP tools (Microsoft 2026d,b). Probes re-\nmainofftheuser-facingcriticalpathandtaskbudget,inherit\nplatform authentication and auditing, and disappear without\na safe read surface. Figure 1 isolates this boundary: only\nthe asynchronous curator agent gains world tools. With the\ntask-time memory interface and CRUD lifecycle fixed, in-\ncremental gains measure write-time evidence quality rather\nthan added task-agent capacity.\nIn our production-like GitHub Copilot (GHCP) harness,\nbuilt on its SDK, each task gets a fresh agent session while\na persistent index spans sessions and external tools "
+              }
+            ],
+            "text": "2018).\nThemechanismisreadilyincorporatedintoexistingenter-\npriseagents.Itrequiresnoretrainingandleavestherespond-\ning agent, retriever, record representation, and production\nwrite authority unchanged. The asynchronous curator agent\nreceives only a least-privilege, read-only subset of existing\nconnectors or MCP tools (Microsoft 2026d,b). Probes re-\nmainofftheuser-facingcriticalpathandtaskbudget,inherit\nplatform authentication and auditing, and disappear without\na safe read surface. Figure 1 isolates this boundary: only\nthe asynchronous curator agent gains world tools. With the\ntask-time memory interface and CRUD lifecycle fixed, in-\ncremental gains measure write-time evidence quality rather\nthan added task-agent capacity.\nIn our production-like GitHub Copilot (GHCP) harness,\nbuilt on its SDK, each task gets a fresh agent session while\na persistent index spans sessions and external tools "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-0",
+          "reason": "The cited introduction text explicitly describes the curator agent receiving read-only world tools to check, scope, and refresh candidate memories, and states that the responding agent, retriever, record representation, and production write authority remain unchanged with no retr",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [
+          "Ec3712c2c21924a10-B0014",
+          "Ec3712c2c21924a10-B0020"
+        ],
+        "excerpt": "still operates mainly over existing records,\nrecorded trajectories, grades, and usage signals. Conse-\nquently,strongerreflectioncannotrecoverstatesthetaskpol-\nicyneverobservedordeterminewhetheratrajectory-derived\nruleremainstrueafterenvironmentdrift.Ourcontributionis\northogonal: read-only world tools let either a factual or pro-\ncedural curator agent independently check a claim, re-enact\na procedure, inspect omitted states, test scope, and refresh\nstale knowledge before writing.\n[\u2026 separate evidence block \u2026]\nThe left column of Figure 3 in Appendix E.1 presents rep-\nresentative records produced by the trajectory-only curator\nagent during the CLBench database-exploration runs. They\nmake the retrospective evidence boundary described in Sec-\ntion 1 concrete: each source trajectory is a single, partial,\nand potentially mistake-laden observation. Consequently,\none record preserves an incorrect aggregation and its an-\nswer without supplying the replacement procedure, another\ngives only a broad domain map while omitting the needed\nrelation, and a third retains the removedattrs_g3name\nafterschemadrift.Ineachcase,memorytransferssomeprior\nknowledgebutleavesthenexttaskagenttoestablishwhether\nit is actionable and current.\nEnvironment-probing curation addresses this evidence\nboundary. It keeps the task agent, retriever, distillation set-\nting, curator agent, memory schema, and CRUD policy un-\nchanged.",
+        "explanation": "The related-work section identifies the evidence boundary of prior systems, and the method section contrasts trajectory-only records with probe-backed records. The novelty claim is supported by the manuscript's positioning.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "The proposed environment-probing curation is novel relative to prior memory systems because existing post-task curation operates mainly over existing records, completed trajectories, grades, and usage signals, without live environment verification.",
+        "section": "Related Work / Environment-Probing Curation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
             "content_hash": "d6809fd776e25e7e9fb79f5388f250ac049c22a855df549fe826314f498912dd",
-            "evidence_id": "E81097e33595a5a5c-B0014",
+            "evidence_id": "Ec3712c2c21924a10-B0014",
             "pages": [
               2,
               3
             ],
             "section": "Related Work",
+            "section_role": "related",
             "source_spans": [
               {
                 "end": 2736,
@@ -561,279 +618,208 @@
               }
             ],
             "text": "still operates mainly over existing records,\nrecorded trajectories, grades, and usage signals. Conse-\nquently,strongerreflectioncannotrecoverstatesthetaskpol-\nicyneverobservedordeterminewhetheratrajectory-derived\nruleremainstrueafterenvironmentdrift.Ourcontributionis\northogonal: read-only world tools let either a factual or pro-\ncedural curator agent independently check a claim, re-enact\na procedure, inspect omitted states, test scope, and refresh\nstale knowledge before writing."
+          },
+          {
+            "content_hash": "098e2fea94c7013ae6d36467940a9b152cbae6241c7a71ad25580cacaf48678a",
+            "evidence_id": "Ec3712c2c21924a10-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Environment-Probing Curation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 3,
+                "section": "Environment-Probing Curation",
+                "section_index": 8,
+                "start": 0,
+                "text": "The left column of Figure 3 in Appendix E.1 presents rep-\nresentative records produced by the trajectory-only curator\nagent during the CLBench database-exploration runs. They\nmake the retrospective evidence boundary described in Sec-\ntion 1 concrete: each source trajectory is a single, partial,\nand potentially mistake-laden observation. Consequently,\none record preserves an incorrect aggregation and its an-\nswer without supplying the replacement procedure, another\ngives only a broad domain map while omitting the needed\nrelation, and a third retains the removedattrs_g3name\nafterschemadrift.Ineachcase,memorytransferssomeprior\nknowledgebutleavesthenexttaskagenttoestablishwhether\nit is actionable and current.\nEnvironment-probing curation addresses this evidence\nboundary. It keeps the task agent, retriever, distillation set-\nting, curator agent, memory schema, and CRUD policy un-\nchanged. "
+              }
+            ],
+            "text": "The left column of Figure 3 in Appendix E.1 presents rep-\nresentative records produced by the trajectory-only curator\nagent during the CLBench database-exploration runs. They\nmake the retrospective evidence boundary described in Sec-\ntion 1 concrete: each source trajectory is a single, partial,\nand potentially mistake-laden observation. Consequently,\none record preserves an incorrect aggregation and its an-\nswer without supplying the replacement procedure, another\ngives only a broad domain map while omitting the needed\nrelation, and a third retains the removedattrs_g3name\nafterschemadrift.Ineachcase,memorytransferssomeprior\nknowledgebutleavesthenexttaskagenttoestablishwhether\nit is actionable and current.\nEnvironment-probing curation addresses this evidence\nboundary. It keeps the task agent, retriever, distillation set-\nting, curator agent, memory schema, and CRUD policy un-\nchanged. "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-1",
+          "reason": "The related-work source states that prior post-task curation operates mainly over existing records, trajectories, grades, and usage signals, and the body source contrasts trajectory-only records with environment-probing curation, supporting the claimed novelty positioning.",
+          "status": "supported"
+        }
       },
       {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-        "dimension": "methodological_rigor",
+        "claim_role": "evaluation",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "evaluation_or_validation_strength",
         "evidence_ids": [
-          "E81097e33595a5a5c-B0024",
-          "E81097e33595a5a5c-B0025"
+          "Ec3712c2c21924a10-B0027",
+          "Ec3712c2c21924a10-B0029"
         ],
-        "excerpt": "Systems and benchmarks.We compare four GitHub\nCopilot (GHCP) systems: GHCP (No Memory), GHCP +\nFull ICL, GHCP + Mem, and GHCP + Mem (w/ Env Prob-\ning).FullICLprependspriortrajectories,whilebothmemory\nsystems expose the samememory_readinterface; envi-\nronment probing adds only read-only tools for the curator\nagentandthecorrespondinginstructions.CLBenchusestwo\nschedules(Asawaetal.2026).Theprimary40-questiondrift\nschedule hides a SQLite schema that changes after question\n20, testing reuse and stale-memory repair. The 30-question\nno-driftschedule fixes the schema, separating validation of\nstable joins and encodings from migration recovery; it eval-\nuates both memory systems on Sonnet 4.6 and Opus 4.7\nwithpairedno-memorybaselines.Bothscheduleshidejoins\nand mix timestamp and price encodings; drift also renames\nfields and adds soft deletes. Adapted APEX contributes\n90 management-consulting \n[\u2026 separate evidence block \u2026]\ntasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark.",
-        "explanation": "The setup describes paired runs, shared shuffles, and identical task-time interfaces across memory conditions. This design supports causal attribution of performance differences to write-time evidence quality.",
+        "excerpt": "Table 1(a) shows that every memory configuration improves\nbothcorrectnessandpass-discountedrewardoverGHCP(No\nMemory). Pass rate rises from 39% to 61\u201373%, while total\nrewardrisesfrom8.60to20.00\u201322.60,or2.3\u20132.6\u00d7thebase-\nline.Thisisnotabrute-forceaccuracygain:queriesfallfrom\n8.8 to 3.0\u20135.6 per question and task-agent cost falls from\n$3.38 to $1.68\u2013$2.01. Memory therefore makes the agent\nboth more likely to pass and less likely to spend its budget\nrediscovering the schema, encodings, and tool conventions\nalready encountered earlier in the stream.\nRetention without prompt growth.GHCP + Full ICL\nconfirmsthatpriortrajectoriescontainusefulsignalanduses\nthe fewest SQL queries, but consumes 5.42M input tokens\nbecauseitscontextgrowswiththestream.GHCP+Memre-\ntrieves compact lemmas on demand, raises pass rate further\nto 70%, and uses 2.13M input tokens. Environment-probed\nmemory reaches the highest \n[\u2026 separate evidence block \u2026]\n(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c).\n(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env",
+        "explanation": "The results table reports these exact values with confidence intervals, and the text summarizes the same numbers. The evaluation provides quantitative evidence for the central claim.",
         "page": 4,
         "pages": [
-          4
+          4,
+          5
         ],
-        "paraphrase": "The experimental design uses paired seeded runs, fixed task-agent models and tools across memory conditions, and isolates the effect of curator-side probing by keeping the task-time memory interface identical.",
-        "section": "Experiment Setup",
+        "paraphrase": "On the CLBench drift schedule, environment probing raises pass rate from 39 percent to 73 percent and total reward from 8.60 to 22.60 while reducing task-agent cost from 3.38 dollars to 1.68 dollars.",
+        "section": "Clbench",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "5472d7f2765931cb02c142e84ef30944833e0b9a6df6a4f433c90e0650abf15e",
-            "evidence_id": "E81097e33595a5a5c-B0024",
+            "content_hash": "d0e0fe5cec72f155d884877ed49c6b5e652292e2d74202fe395dec57583884ff",
+            "evidence_id": "Ec3712c2c21924a10-B0027",
             "pages": [
               4
             ],
-            "section": "Experiment Setup",
+            "section": "Clbench",
+            "section_role": "body",
             "source_spans": [
               {
-                "end": 896,
+                "end": 899,
                 "page": 4,
-                "section": "Experiment Setup",
-                "section_index": 10,
+                "section": "Clbench",
+                "section_index": 11,
                 "start": 0,
-                "text": "Systems and benchmarks.We compare four GitHub\nCopilot (GHCP) systems: GHCP (No Memory), GHCP +\nFull ICL, GHCP + Mem, and GHCP + Mem (w/ Env Prob-\ning).FullICLprependspriortrajectories,whilebothmemory\nsystems expose the samememory_readinterface; envi-\nronment probing adds only read-only tools for the curator\nagentandthecorrespondinginstructions.CLBenchusestwo\nschedules(Asawaetal.2026).Theprimary40-questiondrift\nschedule hides a SQLite schema that changes after question\n20, testing reuse and stale-memory repair. The 30-question\nno-driftschedule fixes the schema, separating validation of\nstable joins and encodings from migration recovery; it eval-\nuates both memory systems on Sonnet 4.6 and Opus 4.7\nwithpairedno-memorybaselines.Bothscheduleshidejoins\nand mix timestamp and price encodings; drift also renames\nfields and adds soft deletes. Adapted APEX contributes\n90 management-consulting "
+                "text": "Table 1(a) shows that every memory configuration improves\nbothcorrectnessandpass-discountedrewardoverGHCP(No\nMemory). Pass rate rises from 39% to 61\u201373%, while total\nrewardrisesfrom8.60to20.00\u201322.60,or2.3\u20132.6\u00d7thebase-\nline.Thisisnotabrute-forceaccuracygain:queriesfallfrom\n8.8 to 3.0\u20135.6 per question and task-agent cost falls from\n$3.38 to $1.68\u2013$2.01. Memory therefore makes the agent\nboth more likely to pass and less likely to spend its budget\nrediscovering the schema, encodings, and tool conventions\nalready encountered earlier in the stream.\nRetention without prompt growth.GHCP + Full ICL\nconfirmsthatpriortrajectoriescontainusefulsignalanduses\nthe fewest SQL queries, but consumes 5.42M input tokens\nbecauseitscontextgrowswiththestream.GHCP+Memre-\ntrieves compact lemmas on demand, raises pass rate further\nto 70%, and uses 2.13M input tokens. Environment-probed\nmemory reaches the highest "
               }
             ],
-            "text": "Systems and benchmarks.We compare four GitHub\nCopilot (GHCP) systems: GHCP (No Memory), GHCP +\nFull ICL, GHCP + Mem, and GHCP + Mem (w/ Env Prob-\ning).FullICLprependspriortrajectories,whilebothmemory\nsystems expose the samememory_readinterface; envi-\nronment probing adds only read-only tools for the curator\nagentandthecorrespondinginstructions.CLBenchusestwo\nschedules(Asawaetal.2026).Theprimary40-questiondrift\nschedule hides a SQLite schema that changes after question\n20, testing reuse and stale-memory repair. The 30-question\nno-driftschedule fixes the schema, separating validation of\nstable joins and encodings from migration recovery; it eval-\nuates both memory systems on Sonnet 4.6 and Opus 4.7\nwithpairedno-memorybaselines.Bothscheduleshidejoins\nand mix timestamp and price encodings; drift also renames\nfields and adds soft deletes. Adapted APEX contributes\n90 management-consulting "
+            "text": "Table 1(a) shows that every memory configuration improves\nbothcorrectnessandpass-discountedrewardoverGHCP(No\nMemory). Pass rate rises from 39% to 61\u201373%, while total\nrewardrisesfrom8.60to20.00\u201322.60,or2.3\u20132.6\u00d7thebase-\nline.Thisisnotabrute-forceaccuracygain:queriesfallfrom\n8.8 to 3.0\u20135.6 per question and task-agent cost falls from\n$3.38 to $1.68\u2013$2.01. Memory therefore makes the agent\nboth more likely to pass and less likely to spend its budget\nrediscovering the schema, encodings, and tool conventions\nalready encountered earlier in the stream.\nRetention without prompt growth.GHCP + Full ICL\nconfirmsthatpriortrajectoriescontainusefulsignalanduses\nthe fewest SQL queries, but consumes 5.42M input tokens\nbecauseitscontextgrowswiththestream.GHCP+Memre-\ntrieves compact lemmas on demand, raises pass rate further\nto 70%, and uses 2.13M input tokens. Environment-probed\nmemory reaches the highest "
           },
           {
-            "content_hash": "896b80ad1ad32c4641e36888e2e81160a53422df6a6b885c231d7d2ee5e37b05",
-            "evidence_id": "E81097e33595a5a5c-B0025",
+            "content_hash": "03426b971a5e60be7e843b72795b8b47920c6f6f5df21be77d01731c80757265",
+            "evidence_id": "Ec3712c2c21924a10-B0029",
             "pages": [
-              4
+              4,
+              5
             ],
-            "section": "Experiment Setup",
+            "section": "Clbench",
+            "section_role": "body",
             "source_spans": [
               {
-                "end": 1793,
+                "end": 1900,
                 "page": 4,
-                "section": "Experiment Setup",
-                "section_index": 10,
-                "start": 896,
-                "text": "tasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark. "
+                "section": "Clbench",
+                "section_index": 11,
+                "start": 1797,
+                "text": "(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c)."
+              },
+              {
+                "end": 786,
+                "page": 5,
+                "section": "Clbench",
+                "section_index": 12,
+                "start": 0,
+                "text": "(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env "
               }
             ],
-            "text": "tasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark. "
+            "text": "(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c).\n(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-3",
+          "reason": "The results table and text report pass rate 39% to 73%, total reward 8.60 to 22.60, and task-agent cost $3.38 to $1.68 for the environment-probing condition, matching the claim.",
+          "status": "supported"
+        }
       },
       {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
+        "claim_role": "result",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
         "dimension": "evidence_to_claim_alignment",
         "evidence_ids": [
-          "E81097e33595a5a5c-B0034",
-          "E81097e33595a5a5c-B0070"
+          "Ec3712c2c21924a10-B0033",
+          "Ec3712c2c21924a10-B0074"
         ],
-        "excerpt": "probing raises drift CLBench re-\nward from 20.00 to 22.60, lowers queries from 5.6 to 4.7,\nand reduces task-agent cost from $1.99 to $1.68. Without\ndrift, mean reward rises from 0.673 to 0.748 on Sonnet and\nfrom 0.696 to 0.721 on Opus.\nQualitative analysis of memory records.Figure 3 com-\npares representative records rather than one-to-one rewrites.\nTrajectory-only curation records an answer-anchored warn-\ning: \"Do not answer withAVG(items_g2.prc_usd)\novernon-nullrows;thatproducesabout52.96,butthebench-\nmark'scorrectresultis96.23,soadifferentpricefieldand/or\nrow subset is required.\" The probing curator instead records\nan executable procedure: \"Joinitems_g2totaxn_g2\nonref_id; filtercat_lvl=1and the exactcat_nm;\nkeepitems_g2.prc>0;thencompareagainstthefiltered\nAVG(prc).\" The same shift appears in the other records: a\nbroadg1/g2/g3mapiscontrastedwithanexplicitref_id\njoin and aggregation \n[\u2026 separate evidence block \u2026]\nFigure3showsexamplesfromtheCLBenchdatabase-explorationtaskrunsandthekindsofmemoriesgeneratedbythecurator\nagent. The left column samples trajectory-only curation; the right column samples the same memory schema when the curator\nagent can make targeted read-only environment probes. Record text is lightly shortened for layout, while table names, fields,\nrelations, and values are preserved.\nGHCP + Mem\nT rajectory-only curator agent\n[trap]Answer-Anchored Warning\napplies_to:electronics average-listed-price questions\nlemma:Do not answer withAVG(items_g2.prc_usd)\nover non-null rows; that produces about 52.96, but the\nbenchmark's correct result is 96.23, so a different price field\nand/or row subset is required.\n[schema]Broad Map, Missing Relation\napplies_to:grouped product and review tables\nlemma:Across the grouped product/review tables,g1= office\nproducts,g2= electronics, andg3= musical",
-        "explanation": "The side-by-side examples in Figure 3 and the accompanying text directly illustrate the claimed mechanism: trajectory-only records are less actionable, while probed records specify executable operations. This aligns evidence with the central claim.",
+        "excerpt": "Memory amortizes environmental discovery.On drift\nCLBench, GHCP + Mem raises pass rate from 39% to 70%\nand total reward from 8.60 to 20.00 while reducing queries\nfrom 8.8 to 5.6 per task (Table 1). Across APEX, all 18\nsystem-versus-baselinerewardgainsarepositive,whiletask-\nagent calls fall from baseline means of 30.0\u201371.6 to 13.9\u2013\n28.4 (Table 3). Full ICL confirms that prior trajectories con-\ntain reusable information, but requires 5.42M CLBench in-\nput tokens, versus 2.13M for indexed memory and 1.69M\nwith probing. Indexed records therefore preserve reusable\nschemas, relations, file maps, and procedures without carry-\ning the full interaction history.\nProbing makes records more actionable.The two\nindexed-memoryconditionsretainthesametask-timemodel,\ntools,andread-onlymemoryinterface;probingprovidesad-\nditional environment evidence during curation. Relative to\ntrajectory-only memory, \n[\u2026 separate evidence block \u2026]\nrecords.\nForbothmemoryconditionsinthereportedruns,anon-writingdistillertransformedpriorcompletedtrajectoriesintoevidence\npackets, after which a separate curator agent used memory CRUD to reconcile candidate lemmas with the persistent index.\nOnlyProbegave that curator agent the read-only benchmark tools and the highlighted verification instructions in Appendix D.\nDuring the displayed task, both memory conditions expose onlymemory_read, and all three responding agents retain the\nsame environment-toolsurface. Thecomparison thereforeisolates thetask-time effectof previouslycurated memory,including\nthe additional environment evidence supplied by curator-side probes.\nEach case appears as sequential red (Base), gold (Mem), and blue (Probe) lanes. Agent calls and submitted answers are\nright-aligned; memory results, environment observations, call summaries, and grader evidence are left-aligned.",
+        "explanation": "The analysis and appendix explicitly state that only the curator agent gains probing tools while the task agent and memory interface remain unchanged. This aligns the causal interpretation with the experimental design.",
         "page": 5,
         "pages": [
           5,
-          13
+          14
         ],
-        "paraphrase": "The qualitative memory-record comparisons show that probing converts answer-anchored warnings and stale schema names into executable procedures with explicit joins, filters, aggregation grain, and current schema names.",
+        "paraphrase": "The reported improvements are attributable to write-time evidence quality rather than added task-agent capacity because the task-time model, tools, and read-only memory interface are held fixed across memory conditions.",
         "section": "Why Memory And Probing Work / Appendix: Clbench Curator Memory Examples",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "522db0e9e4cba4cdb62ee9ce0bfe5408605fa9b7548922b67d9aa45e6827b921",
-            "evidence_id": "E81097e33595a5a5c-B0034",
+            "content_hash": "2afa967279dcad87f6d91353ebf8c70671350be46f7afebee6f055bcc24761df",
+            "evidence_id": "Ec3712c2c21924a10-B0033",
             "pages": [
               5
             ],
             "section": "Why Memory And Probing Work",
+            "section_role": "body",
             "source_spans": [
               {
-                "end": 1792,
+                "end": 896,
                 "page": 5,
                 "section": "Why Memory And Probing Work",
                 "section_index": 14,
-                "start": 896,
-                "text": "probing raises drift CLBench re-\nward from 20.00 to 22.60, lowers queries from 5.6 to 4.7,\nand reduces task-agent cost from $1.99 to $1.68. Without\ndrift, mean reward rises from 0.673 to 0.748 on Sonnet and\nfrom 0.696 to 0.721 on Opus.\nQualitative analysis of memory records.Figure 3 com-\npares representative records rather than one-to-one rewrites.\nTrajectory-only curation records an answer-anchored warn-\ning: \"Do not answer withAVG(items_g2.prc_usd)\novernon-nullrows;thatproducesabout52.96,butthebench-\nmark'scorrectresultis96.23,soadifferentpricefieldand/or\nrow subset is required.\" The probing curator instead records\nan executable procedure: \"Joinitems_g2totaxn_g2\nonref_id; filtercat_lvl=1and the exactcat_nm;\nkeepitems_g2.prc>0;thencompareagainstthefiltered\nAVG(prc).\" The same shift appears in the other records: a\nbroadg1/g2/g3mapiscontrastedwithanexplicitref_id\njoin and aggregation "
+                "start": 0,
+                "text": "Memory amortizes environmental discovery.On drift\nCLBench, GHCP + Mem raises pass rate from 39% to 70%\nand total reward from 8.60 to 20.00 while reducing queries\nfrom 8.8 to 5.6 per task (Table 1). Across APEX, all 18\nsystem-versus-baselinerewardgainsarepositive,whiletask-\nagent calls fall from baseline means of 30.0\u201371.6 to 13.9\u2013\n28.4 (Table 3). Full ICL confirms that prior trajectories con-\ntain reusable information, but requires 5.42M CLBench in-\nput tokens, versus 2.13M for indexed memory and 1.69M\nwith probing. Indexed records therefore preserve reusable\nschemas, relations, file maps, and procedures without carry-\ning the full interaction history.\nProbing makes records more actionable.The two\nindexed-memoryconditionsretainthesametask-timemodel,\ntools,andread-onlymemoryinterface;probingprovidesad-\nditional environment evidence during curation. Relative to\ntrajectory-only memory, "
               }
             ],
-            "text": "probing raises drift CLBench re-\nward from 20.00 to 22.60, lowers queries from 5.6 to 4.7,\nand reduces task-agent cost from $1.99 to $1.68. Without\ndrift, mean reward rises from 0.673 to 0.748 on Sonnet and\nfrom 0.696 to 0.721 on Opus.\nQualitative analysis of memory records.Figure 3 com-\npares representative records rather than one-to-one rewrites.\nTrajectory-only curation records an answer-anchored warn-\ning: \"Do not answer withAVG(items_g2.prc_usd)\novernon-nullrows;thatproducesabout52.96,butthebench-\nmark'scorrectresultis96.23,soadifferentpricefieldand/or\nrow subset is required.\" The probing curator instead records\nan executable procedure: \"Joinitems_g2totaxn_g2\nonref_id; filtercat_lvl=1and the exactcat_nm;\nkeepitems_g2.prc>0;thencompareagainstthefiltered\nAVG(prc).\" The same shift appears in the other records: a\nbroadg1/g2/g3mapiscontrastedwithanexplicitref_id\njoin and aggregation "
+            "text": "Memory amortizes environmental discovery.On drift\nCLBench, GHCP + Mem raises pass rate from 39% to 70%\nand total reward from 8.60 to 20.00 while reducing queries\nfrom 8.8 to 5.6 per task (Table 1). Across APEX, all 18\nsystem-versus-baselinerewardgainsarepositive,whiletask-\nagent calls fall from baseline means of 30.0\u201371.6 to 13.9\u2013\n28.4 (Table 3). Full ICL confirms that prior trajectories con-\ntain reusable information, but requires 5.42M CLBench in-\nput tokens, versus 2.13M for indexed memory and 1.69M\nwith probing. Indexed records therefore preserve reusable\nschemas, relations, file maps, and procedures without carry-\ning the full interaction history.\nProbing makes records more actionable.The two\nindexed-memoryconditionsretainthesametask-timemodel,\ntools,andread-onlymemoryinterface;probingprovidesad-\nditional environment evidence during curation. Relative to\ntrajectory-only memory, "
           },
           {
-            "content_hash": "889750075dab93de32a5c29bd46220996fdbbe187054f55de53af74444299f3c",
-            "evidence_id": "E81097e33595a5a5c-B0070",
+            "content_hash": "c68985f4559281732202663c1ac7fa6ad30727beddac0bb606015ab17556319e",
+            "evidence_id": "Ec3712c2c21924a10-B0074",
             "pages": [
-              13
+              14
             ],
             "section": "Appendix: Clbench Curator Memory Examples",
+            "section_role": "appendix",
             "source_spans": [
               {
-                "end": 892,
-                "page": 13,
+                "end": 2168,
+                "page": 14,
                 "section": "Appendix: Clbench Curator Memory Examples",
-                "section_index": 33,
-                "start": 0,
-                "text": "Figure3showsexamplesfromtheCLBenchdatabase-explorationtaskrunsandthekindsofmemoriesgeneratedbythecurator\nagent. The left column samples trajectory-only curation; the right column samples the same memory schema when the curator\nagent can make targeted read-only environment probes. Record text is lightly shortened for layout, while table names, fields,\nrelations, and values are preserved.\nGHCP + Mem\nT rajectory-only curator agent\n[trap]Answer-Anchored Warning\napplies_to:electronics average-listed-price questions\nlemma:Do not answer withAVG(items_g2.prc_usd)\nover non-null rows; that produces about 52.96, but the\nbenchmark's correct result is 96.23, so a different price field\nand/or row subset is required.\n[schema]Broad Map, Missing Relation\napplies_to:grouped product and review tables\nlemma:Across the grouped product/review tables,g1= office\nproducts,g2= electronics, andg3= musical "
+                "section_index": 34,
+                "start": 1269,
+                "text": "records.\nForbothmemoryconditionsinthereportedruns,anon-writingdistillertransformedpriorcompletedtrajectoriesintoevidence\npackets, after which a separate curator agent used memory CRUD to reconcile candidate lemmas with the persistent index.\nOnlyProbegave that curator agent the read-only benchmark tools and the highlighted verification instructions in Appendix D.\nDuring the displayed task, both memory conditions expose onlymemory_read, and all three responding agents retain the\nsame environment-toolsurface. Thecomparison thereforeisolates thetask-time effectof previouslycurated memory,including\nthe additional environment evidence supplied by curator-side probes.\nEach case appears as sequential red (Base), gold (Mem), and blue (Probe) lanes. Agent calls and submitted answers are\nright-aligned; memory results, environment observations, call summaries, and grader evidence are left-aligned. "
               }
             ],
-            "text": "Figure3showsexamplesfromtheCLBenchdatabase-explorationtaskrunsandthekindsofmemoriesgeneratedbythecurator\nagent. The left column samples trajectory-only curation; the right column samples the same memory schema when the curator\nagent can make targeted read-only environment probes. Record text is lightly shortened for layout, while table names, fields,\nrelations, and values are preserved.\nGHCP + Mem\nT rajectory-only curator agent\n[trap]Answer-Anchored Warning\napplies_to:electronics average-listed-price questions\nlemma:Do not answer withAVG(items_g2.prc_usd)\nover non-null rows; that produces about 52.96, but the\nbenchmark's correct result is 96.23, so a different price field\nand/or row subset is required.\n[schema]Broad Map, Missing Relation\napplies_to:grouped product and review tables\nlemma:Across the grouped product/review tables,g1= office\nproducts,g2= electronics, andg3= musical "
+            "text": "records.\nForbothmemoryconditionsinthereportedruns,anon-writingdistillertransformedpriorcompletedtrajectoriesintoevidence\npackets, after which a separate curator agent used memory CRUD to reconcile candidate lemmas with the persistent index.\nOnlyProbegave that curator agent the read-only benchmark tools and the highlighted verification instructions in Appendix D.\nDuring the displayed task, both memory conditions expose onlymemory_read, and all three responding agents retain the\nsame environment-toolsurface. Thecomparison thereforeisolates thetask-time effectof previouslycurated memory,including\nthe additional environment evidence supplied by curator-side probes.\nEach case appears as sequential red (Base), gold (Mem), and blue (Probe) lanes. Agent calls and submitted answers are\nright-aligned; memory results, environment observations, call summaries, and grader evidence are left-aligned. "
           }
         ],
-        "support_status": "supported"
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-4",
+          "reason": "The body and appendix sources state that the two indexed-memory conditions retain the same task-time model, tools, and read-only memory interface, and that only the curator agent gains probing tools, supporting the causal attribution claim.",
+          "status": "supported"
+        }
       },
       {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [
-          "E81097e33595a5a5c-B0037",
-          "E81097e33595a5a5c-B0038"
-        ],
-        "excerpt": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory \n[\u2026 separate evidence block \u2026]\nalready\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution.",
-        "explanation": "The authors explicitly state that probing improves in five of six APEX worlds, that the largest increments vary, and that uncertainty intervals overlap, so the subgroup effect is treated as a mechanism interpretation rather than a resolved effect. This is a measured limitation statement.",
-        "page": 6,
-        "pages": [
-          6
-        ],
-        "paraphrase": "The paper acknowledges that probing gains vary across worlds and models, and that overlapping uncertainty intervals prevent treating subgroup differences as resolved effects.",
-        "section": "Why Memory And Probing Work",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "573f855777f8081791b57aa153a2a350c1bbb4fad8f4f5047c0684cad1144a28",
-            "evidence_id": "E81097e33595a5a5c-B0037",
-            "pages": [
-              6
-            ],
-            "section": "Why Memory And Probing Work",
-            "source_spans": [
-              {
-                "end": 2309,
-                "page": 6,
-                "section": "Why Memory And Probing Work",
-                "section_index": 15,
-                "start": 1415,
-                "text": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory "
-              }
-            ],
-            "text": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory "
-          },
-          {
-            "content_hash": "51a7aab796146c36406584f9563e86ad4e31098e2984a53b382031ecf0da8582",
-            "evidence_id": "E81097e33595a5a5c-B0038",
-            "pages": [
-              6
-            ],
-            "section": "Why Memory And Probing Work",
-            "source_spans": [
-              {
-                "end": 3088,
-                "page": 6,
-                "section": "Why Memory And Probing Work",
-                "section_index": 15,
-                "start": 2309,
-                "text": "already\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution."
-              }
-            ],
-            "text": "already\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution."
-          }
-        ],
-        "support_status": "supported"
-      },
-      {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [
-          "E81097e33595a5a5c-B0048",
-          "E81097e33595a5a5c-B0060"
-        ],
-        "excerpt": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. \n[\u2026 separate evidence block \u2026]\nThe distiller is a pure preprocessing step enabled for both memory conditions in our experiments. It sees the completed raw\ntrajectory, but not terminal benchmark feedback, and has no memory or environment tools. Its output is a compact evidence\npacket for the curator agent; it cannot create, update, or delete durable records.\nSystem message.\nROLE\nYou are the non-writing trajectory distiller in a continual-learning\nmemory pipeline.\nBOUNDARY\nThis is preprocessing only. You have no memory tools and must not\ncreate, update, delete, or propose durable memory records. You do not\nreceive terminal benchmark feedback. Treat the supplied rollout as\npartial evidence, not as ground truth.\nINPUT\nOne completed task-agent trajectory containing the user request,\nretrieved memories, assistant messages, tool calls, tool results,\nenvironment observations, and submitted answer.\nOBJECTIVE\nTransform the raw",
-        "explanation": "The appendices include the distiller prompt, curator prompts, runtime lifecycle, benchmark details, and metric definitions. This level of detail supports independent replication of the method and evaluation.",
-        "page": 9,
-        "pages": [
-          9,
-          10,
-          11
-        ],
-        "paraphrase": "The paper provides detailed prompts, runtime architecture, benchmark construction, metrics, and accounting in appendices, supporting reproducibility.",
-        "section": "Appendix: Runtime Architecture And Session Lifecycle / Appendix: Distiller Preprocessing Prompt",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "8ed51e183d2d38015ae79790ee05a7375ef940c8e846bc2940ad4e5d2e1895ff",
-            "evidence_id": "E81097e33595a5a5c-B0048",
-            "pages": [
-              9
-            ],
-            "section": "Appendix: Runtime Architecture And Session Lifecycle",
-            "source_spans": [
-              {
-                "end": 888,
-                "page": 9,
-                "section": "Appendix: Runtime Architecture And Session Lifecycle",
-                "section_index": 19,
-                "start": 0,
-                "text": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. "
-              }
-            ],
-            "text": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. "
-          },
-          {
-            "content_hash": "3eda0e25ef3e6f02ade6c322ea102f3bae388aa350f13892c91a54c90ab04c11",
-            "evidence_id": "E81097e33595a5a5c-B0060",
-            "pages": [
-              10,
-              11
-            ],
-            "section": "Appendix: Distiller Preprocessing Prompt",
-            "source_spans": [
-              {
-                "end": 647,
-                "page": 10,
-                "section": "Appendix: Distiller Preprocessing Prompt",
-                "section_index": 25,
-                "start": 0,
-                "text": "The distiller is a pure preprocessing step enabled for both memory conditions in our experiments. It sees the completed raw\ntrajectory, but not terminal benchmark feedback, and has no memory or environment tools. Its output is a compact evidence\npacket for the curator agent; it cannot create, update, or delete durable records.\nSystem message.\nROLE\nYou are the non-writing trajectory distiller in a continual-learning\nmemory pipeline.\nBOUNDARY\nThis is preprocessing only. You have no memory tools and must not\ncreate, update, delete, or propose durable memory records. You do not\nreceive terminal benchmark feedback. Treat the supplied rollout as"
-              },
-              {
-                "end": 252,
-                "page": 11,
-                "section": "Appendix: Distiller Preprocessing Prompt",
-                "section_index": 26,
-                "start": 0,
-                "text": "partial evidence, not as ground truth.\nINPUT\nOne completed task-agent trajectory containing the user request,\nretrieved memories, assistant messages, tool calls, tool results,\nenvironment observations, and submitted answer.\nOBJECTIVE\nTransform the raw "
-              }
-            ],
-            "text": "The distiller is a pure preprocessing step enabled for both memory conditions in our experiments. It sees the completed raw\ntrajectory, but not terminal benchmark feedback, and has no memory or environment tools. Its output is a compact evidence\npacket for the curator agent; it cannot create, update, or delete durable records.\nSystem message.\nROLE\nYou are the non-writing trajectory distiller in a continual-learning\nmemory pipeline.\nBOUNDARY\nThis is preprocessing only. You have no memory tools and must not\ncreate, update, delete, or propose durable memory records. You do not\nreceive terminal benchmark feedback. Treat the supplied rollout as\npartial evidence, not as ground truth.\nINPUT\nOne completed task-agent trajectory containing the user request,\nretrieved memories, assistant messages, tool calls, tool results,\nenvironment observations, and submitted answer.\nOBJECTIVE\nTransform the raw "
-          }
-        ],
-        "support_status": "supported"
-      },
-      {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
+        "claim_role": "positioning",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
         "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
-          "E81097e33595a5a5c-B0011",
-          "E81097e33595a5a5c-B0014"
+          "Ec3712c2c21924a10-B0011",
+          "Ec3712c2c21924a10-B0014"
         ],
         "excerpt": "Agentmemoryextendsretrieval-augmentedgenerationfrom\nexternal knowledge corpora to experience accumulated by\nthe agent itself (Lewis et al. 2020; Hu et al. 2026). We focus\nonprompt-basedsystemsthatleavemodelweightsfixedand\norganizetheliteraturebywhattheyaimtotransfer:persistent\nfacts about a user or environment, and procedures learned\nfrom prior execution.\nFactualmemory.Earlysystemsestablishthebasiccreate\u2013\nstore\u2013recall lifecycle. Generative Agents retrieves episodes\nby recency, importance, and relevance, while MemGPT ex-\nposes OS-like memory tiers that the agent manages through\ntools (Park et al. 2023; Packer et al. 2023). Later work\nstrengthens creation and maintenance: MemoryBank sum-\nmarizes dialogue with forgetting, Mem0 reconciles new\nrecordsthroughexplicitCRUDdecisions,MemoryOSsepa-\nratesshort-,mid-,andlong-termstores,andSeComchooses\ncoherent segments as the memory unit (Zhong et \n[\u2026 separate evidence block \u2026]\nstill operates mainly over existing records,\nrecorded trajectories, grades, and usage signals. Conse-\nquently,strongerreflectioncannotrecoverstatesthetaskpol-\nicyneverobservedordeterminewhetheratrajectory-derived\nruleremainstrueafterenvironmentdrift.Ourcontributionis\northogonal: read-only world tools let either a factual or pro-\ncedural curator agent independently check a claim, re-enact\na procedure, inspect omitted states, test scope, and refresh\nstale knowledge before writing.",
-        "explanation": "The related-work section organizes prior systems by factual and procedural memory and explicitly states that post-task curation still operates mainly over existing records and trajectories. This provides an adequate comparison for the actual claims.",
+        "explanation": "The related-work section organizes prior systems by transfer target and explicitly states that post-task curation still operates mainly over retrospective evidence. This provides an adequate comparison for the actual claims.",
         "page": 2,
         "pages": [
           2,
           3
         ],
-        "paraphrase": "The paper positions its contribution against a broad range of factual and procedural memory systems and identifies the retrospective evidence boundary as the gap it addresses.",
+        "paraphrase": "The paper positions its contribution against factual and procedural memory systems and identifies the retrospective evidence boundary as the gap addressed by environment probing.",
         "section": "Related Work",
         "signal_type": "positive",
         "source_blocks": [
           {
             "content_hash": "cffc247d51896bc0b84d4447e5a79f30ac133320ab164a35c13b491cb2deaf12",
-            "evidence_id": "E81097e33595a5a5c-B0011",
+            "evidence_id": "Ec3712c2c21924a10-B0011",
             "pages": [
               2
             ],
             "section": "Related Work",
+            "section_role": "related",
             "source_spans": [
               {
                 "end": 898,
@@ -848,12 +834,13 @@
           },
           {
             "content_hash": "d6809fd776e25e7e9fb79f5388f250ac049c22a855df549fe826314f498912dd",
-            "evidence_id": "E81097e33595a5a5c-B0014",
+            "evidence_id": "Ec3712c2c21924a10-B0014",
             "pages": [
               2,
               3
             ],
             "section": "Related Work",
+            "section_role": "related",
             "source_spans": [
               {
                 "end": 2736,
@@ -875,52 +862,127 @@
             "text": "still operates mainly over existing records,\nrecorded trajectories, grades, and usage signals. Conse-\nquently,strongerreflectioncannotrecoverstatesthetaskpol-\nicyneverobservedordeterminewhetheratrajectory-derived\nruleremainstrueafterenvironmentdrift.Ourcontributionis\northogonal: read-only world tools let either a factual or pro-\ncedural curator agent independently check a claim, re-enact\na procedure, inspect omitted states, test scope, and refresh\nstale knowledge before writing."
           }
         ],
-        "support_status": "supported"
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-5",
+          "reason": "The related-work sources organize prior systems by factual and procedural transfer targets and explicitly identify the retrospective evidence boundary as the gap addressed by environment probing.",
+          "status": "supported"
+        }
       },
       {
-        "context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
-        "dimension": "limitations_and_uncertainty_handling",
+        "claim_role": "reproducibility",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "reproducibility_and_transparency",
         "evidence_ids": [
-          "E81097e33595a5a5c-B0025",
-          "E81097e33595a5a5c-B0038"
+          "Ec3712c2c21924a10-B0048",
+          "Ec3712c2c21924a10-B0055"
         ],
-        "excerpt": "tasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark. \n[\u2026 separate evidence block \u2026]\nalready\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution.",
-        "explanation": "The authors use five paired runs for most configurations and three stateless runs for APEX baselines, and they acknowledge that selected cases do not establish aggregate effects. However, the limited run counts and selected examples leave some uncertainty about generalizability.",
-        "page": 4,
+        "excerpt": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. \n[\u2026 separate evidence block \u2026]\nThe primary 40-question CLBench and adapted APEX studies usegpt-5.4at xhigh reasoning effort for sessions of the task\nagent,distiller,andcuratoragent.Theno-driftstudyusesSonnet4.6athigheffortandOpus4.7atxhigheffortforallapplicable\nroles. Memory conditions useintfloat/e5-base-v2embeddings.\nThe primary CLBench study uses five independently shuffled, paired runs for every configuration. Adapted APEX uses five\nruns per stateful configuration and three stateless runs. Shuffles are seeded and shared across systems. Reported intervals are\n95% Student-tintervals over run-level aggregates. The no-drift study instead holds the canonical 30-question order fixed; each\nmodel\u2013memory comparison has five paired memory and GHCP (No Memory) runs, and uncertainty is the across-run standard\ndeviation.",
+        "explanation": "The runtime architecture and run protocol sections specify the SDK, session lifecycle, models, embeddings, and run counts, while appendices include prompts. This supports reproducibility of the method and evaluation.",
+        "page": 9,
         "pages": [
-          4,
-          6
+          9
         ],
-        "paraphrase": "The paper reports uncertainty intervals and paired baselines, but the small number of runs and the use of selected qualitative examples limit the strength of some mechanistic conclusions.",
-        "section": "Experiment Setup / Why Memory And Probing Work",
-        "signal_type": "concern",
+        "paraphrase": "The paper provides sufficient implementation detail for reproducibility, including the GitHub Copilot SDK harness, per-task lifecycle, model names, embedding model, run counts, and full prompt specifications in appendices.",
+        "section": "Appendix: Runtime Architecture And Session Lifecycle / Appendix: Models And Run Protocol",
+        "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "896b80ad1ad32c4641e36888e2e81160a53422df6a6b885c231d7d2ee5e37b05",
-            "evidence_id": "E81097e33595a5a5c-B0025",
+            "content_hash": "8ed51e183d2d38015ae79790ee05a7375ef940c8e846bc2940ad4e5d2e1895ff",
+            "evidence_id": "Ec3712c2c21924a10-B0048",
             "pages": [
-              4
+              9
             ],
-            "section": "Experiment Setup",
+            "section": "Appendix: Runtime Architecture And Session Lifecycle",
+            "section_role": "appendix",
             "source_spans": [
               {
-                "end": 1793,
-                "page": 4,
-                "section": "Experiment Setup",
-                "section_index": 10,
-                "start": 896,
-                "text": "tasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark. "
+                "end": 888,
+                "page": 9,
+                "section": "Appendix: Runtime Architecture And Session Lifecycle",
+                "section_index": 19,
+                "start": 0,
+                "text": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. "
               }
             ],
-            "text": "tasks from six shared document\nworlds, requiring PDF, XLSX, DOCX, and PPTX discov-\nery,quantitativeanalysis,andMCP-styletools(Vidgenetal.\n2026).Theoriginalbenchmarkandleaderboardareavailable\nat https://www.mercor.com/apex/apex-agents-leaderboard/.\nProtocol and metrics.The primary CLBench and APEX\nexperimentsusegpt-5.4;withineachexperiment,thetask\nagent,distiller,andcuratoragentsharethesamebasemodel.\nCLBench uses five paired seeded runs for every configu-\nration; APEX uses five runs per stateful configuration and\nthree stateless runs. We report run-level means with 95%\nStudent-tconfidence intervals. The no-drift study holds the\ncanonical 30-question order fixed and uses five paired runs\nper model\u2013memory comparison; Appendix B details its un-\ncertainty estimates.\nFor taski, letp i \u2208{0,1}be its binary pass score and\nletq i be the number of task-agent tool calls counted by the\nbenchmark. "
+            "text": "GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent\nengine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the\nSDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,\ncustom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool\ncalls, and observations used to construct each trajectory.\nPer-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.\nThe external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,\na fresh distiller session receives the raw trajectory\u03c4i\u2014not terminal feedback\u2014and produces the distilled trajectorydi. "
           },
           {
-            "content_hash": "51a7aab796146c36406584f9563e86ad4e31098e2984a53b382031ecf0da8582",
-            "evidence_id": "E81097e33595a5a5c-B0038",
+            "content_hash": "2474c2971c6aebe4b18c081a180b9549c44f9ebea7614da7ede49e87088014a9",
+            "evidence_id": "Ec3712c2c21924a10-B0055",
+            "pages": [
+              9
+            ],
+            "section": "Appendix: Models And Run Protocol",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 792,
+                "page": 9,
+                "section": "Appendix: Models And Run Protocol",
+                "section_index": 22,
+                "start": 0,
+                "text": "The primary 40-question CLBench and adapted APEX studies usegpt-5.4at xhigh reasoning effort for sessions of the task\nagent,distiller,andcuratoragent.Theno-driftstudyusesSonnet4.6athigheffortandOpus4.7atxhigheffortforallapplicable\nroles. Memory conditions useintfloat/e5-base-v2embeddings.\nThe primary CLBench study uses five independently shuffled, paired runs for every configuration. Adapted APEX uses five\nruns per stateful configuration and three stateless runs. Shuffles are seeded and shared across systems. Reported intervals are\n95% Student-tintervals over run-level aggregates. The no-drift study instead holds the canonical 30-question order fixed; each\nmodel\u2013memory comparison has five paired memory and GHCP (No Memory) runs, and uncertainty is the across-run standard\ndeviation."
+              }
+            ],
+            "text": "The primary 40-question CLBench and adapted APEX studies usegpt-5.4at xhigh reasoning effort for sessions of the task\nagent,distiller,andcuratoragent.Theno-driftstudyusesSonnet4.6athigheffortandOpus4.7atxhigheffortforallapplicable\nroles. Memory conditions useintfloat/e5-base-v2embeddings.\nThe primary CLBench study uses five independently shuffled, paired runs for every configuration. Adapted APEX uses five\nruns per stateful configuration and three stateless runs. Shuffles are seeded and shared across systems. Reported intervals are\n95% Student-tintervals over run-level aggregates. The no-drift study instead holds the canonical 30-question order fixed; each\nmodel\u2013memory comparison has five paired memory and GHCP (No Memory) runs, and uncertainty is the across-run standard\ndeviation."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-6",
+          "reason": "The appendix sources specify the GitHub Copilot SDK harness, per-task lifecycle, model names, embedding model, run counts, and reference prompt specifications in appendices, supporting the reproducibility claim.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "Ec3712c2c21924a10-B0037",
+          "Ec3712c2c21924a10-B0038"
+        ],
+        "excerpt": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory \n[\u2026 separate evidence block \u2026]\nalready\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution.",
+        "explanation": "The analysis reports a negative or negligible change in one world and explicitly cautions against overinterpreting subgroup effects due to overlapping intervals. This demonstrates bounded uncertainty handling.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "The paper acknowledges that probing does not improve over trajectory-only memory in all APEX worlds and that uncertainty intervals overlap, so subgroup effects are treated as mechanism interpretation rather than resolved findings.",
+        "section": "Why Memory And Probing Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "573f855777f8081791b57aa153a2a350c1bbb4fad8f4f5047c0684cad1144a28",
+            "evidence_id": "Ec3712c2c21924a10-B0037",
             "pages": [
               6
             ],
             "section": "Why Memory And Probing Work",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2309,
+                "page": 6,
+                "section": "Why Memory And Probing Work",
+                "section_index": 15,
+                "start": 1415,
+                "text": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory "
+              }
+            ],
+            "text": "each\nworld[difficulty,N]cellshowspass-discountedrewardgain\noverathree-runno-memorybaselineperdollarofcandidate\ntask-agent cost (top), then gain and mean cost/run over five\ncandidate runs (bottom); costs exclude distillation/curation,\ncalculationsuseunroundedmeans,andboldmarksthehigh-\nest ratio per world.\nwhere to search. Appendix E.1 gives the complete records;\nAppendicesE.2andE.3connectthemtotask-timebehavior.\nThe effect depends on the remaining evidence gap.\nProbing improves over trajectory-only memory in five of\nsix APEX worlds; the largest increments are+1.77in\n2a87e5cband+1.09in2f84c98b, while941eba66\nchanges by\u22120.04(Table 2). Its additional no-drift gain is\nalsolargeronSonnet(+0.075)thanonOpus(+0.025).This\nvariation is consistent with probing being most useful when\na trajectory leaves a join, workbook location, or procedure\nunresolved, while adding little when the trajectory "
+          },
+          {
+            "content_hash": "51a7aab796146c36406584f9563e86ad4e31098e2984a53b382031ecf0da8582",
+            "evidence_id": "Ec3712c2c21924a10-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Why Memory And Probing Work",
+            "section_role": "body",
             "source_spans": [
               {
                 "end": 3088,
@@ -934,7 +996,91 @@
             "text": "already\nsupportsanactionablerecord.Becauseuncertaintyintervals\noverlap, we treat this as a mechanism interpretation rather\nthan a resolved subgroup effect.\nMatchedtrajectoriesconnectrecordstobehavior.Inthe\nmatched CLBench task, no memory uses seven queries and\nfails,trajectory-onlymemoryusesnineandpasses,andprob-\ning supplies a validatedref_idrelation and passes in two\n(Appendix E.2). In hard APEX, no memory uses 96 calls\nand fails both criteria; trajectory-only memory transfers the\nrevenue-per-head procedure and passes in 11, while a vali-\ndatedworkbookmapreducesprobingtosix(AppendixE.3).\nTheseselectedcasesdonotestablishtheaggregateeffect,but\nthey illustrate how reusable computations and environment-\ninformed maps replace task-time rediscovery with direct ex-\necution."
           }
         ],
-        "support_status": "partial"
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-7",
+          "reason": "The body sources report a negative change in one APEX world and explicitly state that overlapping uncertainty intervals lead the authors to treat subgroup effects as mechanism interpretation rather than resolved findings.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "presentation",
+        "context_id": "c3712c2c21924a10a11de3f326209dc6c0127bc3489908166daf24bcb4dd6980",
+        "dimension": "presentation_and_precision",
+        "evidence_ids": [
+          "Ec3712c2c21924a10-B0029",
+          "Ec3712c2c21924a10-B0056"
+        ],
+        "excerpt": "(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c).\n(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env \n[\u2026 separate evidence block \u2026]\nFor taski, letpi\u2208{0,1}be its binary pass score and letqi be the number of task-agent tool calls counted by the benchmark.\nCLBench has one correctness criterion. For tasks with multiple grader criteria, we use a strict pass:pi = 1only when every\ncriterion passes, andpi = 0otherwise. We compute the primary pass-discounted rewardri using Equation 3, withB= 15\nexploratorySQLqueriesforCLBenchandB= 100ArchipelagotoolcallsforAPEX.Fortrajectorydiagnosisonly,APEXalso\nreportsthefractional-criteria scorer frac\ni = (ki/Ki)(1\u2212q i/B), whereki ofKi criteriapass. Wereport totalreward asthe sum\nof per-task rewards and mean reward as that total divided by the number of tasks.\nMemory-management and harness-internal calls are excluded fromqi. Reported tokens and USD cost cover the",
+        "explanation": "Tables include confidence intervals and the metrics appendix defines what is excluded from task-agent cost and tool calls. This supports precise interpretation of the reported numbers.",
+        "page": 4,
+        "pages": [
+          4,
+          5,
+          10
+        ],
+        "paraphrase": "The paper reports quantitative results with confidence intervals and clearly separates task-agent cost from distillation and curation cost, improving precision of the reported comparisons.",
+        "section": "Clbench / Appendix: Metrics And Accounting",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "03426b971a5e60be7e843b72795b8b47920c6f6f5df21be77d01731c80757265",
+            "evidence_id": "Ec3712c2c21924a10-B0029",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Clbench",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1900,
+                "page": 4,
+                "section": "Clbench",
+                "section_index": 11,
+                "start": 1797,
+                "text": "(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c)."
+              },
+              {
+                "end": 786,
+                "page": 5,
+                "section": "Clbench",
+                "section_index": 12,
+                "start": 0,
+                "text": "(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env "
+              }
+            ],
+            "text": "(0.748 and 0.721), and\nboth memory systems finish above their paired no-memory\ncurves in Figure 2(b\u2013c).\n(a) 40-question GPT-5.4 schedule with schema drift\nConfiguration Pass (%) Total reward\nQueries per\nquestion\nInput\ntokens\nOutput\ntokens\nTask-agent\ncost\nGHCP\n(No Memory)39\u00b14 8.60\u00b10.83 8.8\u00b10.3 3.14M\u00b114.5K 93.4K\u00b19.3K $3.38\u00b10.70\nGHCP +\nFull ICL61\u00b111 21.39\u00b13.83 3.0\u00b10.2 5.42M\u00b1569.5K 20.5K\u00b14.6K $2.01\u00b10.23\nGHCP +\nMem70\u00b116 20.00\u00b16.52 5.6\u00b11.4 2.13M\u00b1685.2K 55.9K\u00b122.1K $1.99\u00b10.65\nGHCP + Mem\n(w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14\n(b) 30-question cross-model schedule without schema drift\nModel Memory system\nPaired no-memory\nmean reward\nWith-memory\nmean reward Lift\nOpus 4.7 GHCP + Mem0.444\u00b10.050 0.696\u00b10.036 +0.252\nOpus 4.7 GHCP + Mem (w/ Env Probing)0.458\u00b10.0480.721\u00b10.062+0.263\nSonnet 4.6 GHCP + Mem0.322\u00b10.054 0.673\u00b10.097 +0.351\nSonnet 4.6 GHCP + Mem (w/ Env "
+          },
+          {
+            "content_hash": "44806866641ff83c2d4c2b30763cd83971c68d6db8df68e78777e24644124cec",
+            "evidence_id": "Ec3712c2c21924a10-B0056",
+            "pages": [
+              10
+            ],
+            "section": "Appendix: Metrics And Accounting",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 772,
+                "page": 10,
+                "section": "Appendix: Metrics And Accounting",
+                "section_index": 23,
+                "start": 0,
+                "text": "For taski, letpi\u2208{0,1}be its binary pass score and letqi be the number of task-agent tool calls counted by the benchmark.\nCLBench has one correctness criterion. For tasks with multiple grader criteria, we use a strict pass:pi = 1only when every\ncriterion passes, andpi = 0otherwise. We compute the primary pass-discounted rewardri using Equation 3, withB= 15\nexploratorySQLqueriesforCLBenchandB= 100ArchipelagotoolcallsforAPEX.Fortrajectorydiagnosisonly,APEXalso\nreportsthefractional-criteria scorer frac\ni = (ki/Ki)(1\u2212q i/B), whereki ofKi criteriapass. Wereport totalreward asthe sum\nof per-task rewards and mean reward as that total divided by the number of tasks.\nMemory-management and harness-internal calls are excluded fromqi. Reported tokens and USD cost cover the "
+              }
+            ],
+            "text": "For taski, letpi\u2208{0,1}be its binary pass score and letqi be the number of task-agent tool calls counted by the benchmark.\nCLBench has one correctness criterion. For tasks with multiple grader criteria, we use a strict pass:pi = 1only when every\ncriterion passes, andpi = 0otherwise. We compute the primary pass-discounted rewardri using Equation 3, withB= 15\nexploratorySQLqueriesforCLBenchandB= 100ArchipelagotoolcallsforAPEX.Fortrajectorydiagnosisonly,APEXalso\nreportsthefractional-criteria scorer frac\ni = (ki/Ki)(1\u2212q i/B), whereki ofKi criteriapass. Wereport totalreward asthe sum\nof per-task rewards and mean reward as that total divided by the number of tasks.\nMemory-management and harness-internal calls are excluded fromqi. Reported tokens and USD cost cover the "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-8",
+          "reason": "The results table includes confidence intervals and the metrics appendix defines exclusions from task-agent cost and tool calls, supporting the precision claim.",
+          "status": "supported"
+        }
       }
     ],
     "full_text_assessed": true,
@@ -945,20 +1091,22 @@
     "overall_quality_score": 78,
     "paper_type": "empirical_research",
     "positive_signals": [
-      "The proposed method is novel relative to prior agent-memory work because existing post-task curation operates mainly over completed trajectories, records, grades, and usage signals, whereas this work introduces environment probing as an orthogonal evidence source.",
-      "The experimental design uses paired seeded runs, fixed task-agent models and tools across memory conditions, and isolates the effect of curator-side probing by keeping the task-time memory interface identical.",
-      "The qualitative memory-record comparisons show that probing converts answer-anchored warnings and stale schema names into executable procedures with explicit joins, filters, aggregation grain, and current schema names.",
-      "The paper acknowledges that probing gains vary across worlds and models, and that overlapping uncertainty intervals prevent treating subgroup differences as resolved effects.",
-      "The paper provides detailed prompts, runtime architecture, benchmark construction, metrics, and accounting in appendices, supporting reproducibility.",
-      "The paper positions its contribution against a broad range of factual and procedural memory systems and identifies the retrospective evidence boundary as the gap it addresses."
+      "The paper introduces environment-probing curation, a deployment-compatible extension that gives an asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories without retraining or changing the task agent, retriever, memory representation, or production write path.",
+      "The proposed environment-probing curation is novel relative to prior memory systems because existing post-task curation operates mainly over existing records, completed trajectories, grades, and usage signals, without live environment verification.",
+      "On the CLBench drift schedule, environment probing raises pass rate from 39 percent to 73 percent and total reward from 8.60 to 22.60 while reducing task-agent cost from 3.38 dollars to 1.68 dollars.",
+      "The reported improvements are attributable to write-time evidence quality rather than added task-agent capacity because the task-time model, tools, and read-only memory interface are held fixed across memory conditions.",
+      "The paper positions its contribution against factual and procedural memory systems and identifies the retrospective evidence boundary as the gap addressed by environment probing.",
+      "The paper provides sufficient implementation detail for reproducibility, including the GitHub Copilot SDK harness, per-task lifecycle, model names, embedding model, run counts, and full prompt specifications in appendices.",
+      "The paper acknowledges that probing does not improve over trajectory-only memory in all APEX worlds and that uncertainty intervals overlap, so subgroup effects are treated as mechanism interpretation rather than resolved findings.",
+      "The paper reports quantitative results with confidence intervals and clearly separates task-agent cost from distillation and curation cost, improving precision of the reported comparisons."
     ],
-    "rationale": "Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.",
+    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "The primary uncertainty concerns the generalizability of the results given the small number of runs and the selected nature of the qualitative examples. The authors acknowledge that overlapping confidence intervals prevent resolving subgroup effects, but the aggregate claims rely on five paired runs for most configurations and three stateless runs for APEX baselines. Additionally, the paper does not report formal statistical significance tests for the main comparisons, relying instead on confidence intervals and descriptive differences. The absence of public code or data is not itself a failure, but it limits independent verification of the reported gains. These factors introduce scientific uncertainty about the robustness of the findings across different environments and model configurations."
+    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 95"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

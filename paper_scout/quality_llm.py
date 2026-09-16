@@ -230,12 +230,14 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
                    evidence=evidence if status in {"pass", "insufficient"} else assessment.evidence,
                    execution={"outcome": "evidence_validation_failure" if rejected else "scientific",
                               "proposed_status": str(value.get("quality_status", "uncertain")),
+                              "proposed_decision": {key: value.get(key) for key in
+                                  ("quality_status", "quality_rationale", "quality_uncertainty")},
                               "submitted_anchors": len(value.get("evidence") or []),
                               "validated_anchors": len(evidence),
                               "validated_dimensions": sorted(positive)})
 
 
-def _normalized(text: str) -> str:
+def _normalized(text: str, *, join_line_hyphens: bool = True) -> str:
     # casefold also expands these ligatures in Python; keep the accepted
     # compatibility mappings explicit, without conflating mathematical symbols.
     ligatures = dict(zip("ﬀﬁﬂﬃﬄﬅﬆ", ("ff", "fi", "fl", "ffi", "ffl", "st", "st")))
@@ -243,7 +245,8 @@ def _normalized(text: str) -> str:
     text = text.translate(str.maketrans({"‘": "'", "’": "'", "“": '\"', "”": '\"', "‐": "-", "‑": "-"}))
     # Only a hyphen at a physical line break can join a split word. Preserve
     # ordinary hyphens, punctuation, numbers and word boundaries.
-    text = re.sub(r"(?<=[^\W\d_])[ \t]*-[ \t]*\r?\n[ \t]*(?=[^\W\d_])", "", text)
+    if join_line_hyphens:
+        text = re.sub(r"(?<=[^\W\d_])[ \t]*-[ \t]*\r?\n[ \t]*(?=[^\W\d_])", "", text)
     text = re.sub(r"([([{])\s+", r"\1", text)
     text = re.sub(r"\s+([)\]}])", r"\1", text)
     return " ".join(text.split())
@@ -253,11 +256,21 @@ def locate_evidence(e: QualityEvidence, selected: SelectedPaperText) -> QualityE
     """Exact normalized, visible, non-abstract evidence; never semantic/fuzzy matching."""
     if not e.excerpt or not e.page or not _normalized(e.excerpt):
         return None
-    quote = _normalized(e.excerpt)
-    if quote not in _normalized(selected.text):
-        return None
-    matches = [s for s in selected.sections if s.heading.casefold() != "abstract"
-               and quote in _normalized(s.text)]
+    matches = []
+    # PDF line breaks may be copied as spaces in a JSON quotation. Preserve
+    # both literal layout and dehyphenated views; each match must use the SAME
+    # view for the quote, visible prompt and source section. Never erase an
+    # inline hyphen-space that is absent from the source.
+    for join_line_hyphens in (True, False):
+        def normalize(text):
+            return _normalized(text, join_line_hyphens=join_line_hyphens)
+        quote = normalize(e.excerpt)
+        if quote not in normalize(selected.text):
+            continue
+        for section in selected.sections:
+            if (section.heading.casefold() != "abstract" and quote in normalize(section.text)
+                    and section not in matches):
+                matches.append(section)
     claimed = [s for s in matches if s.first_page == e.page]
     if len(claimed) == 1:
         match = claimed[0]

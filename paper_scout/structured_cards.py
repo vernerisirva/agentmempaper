@@ -123,6 +123,9 @@ def paper_card_schema() -> dict[str, Any]:
                     "positive_signals": {"type": "array", "items": {"type": "string"}},
                     "concerns": {"type": "array", "items": {"type": "string"}},
                     "evidence": {"type": "array", "items": {"type": "object", "properties": {
+                        "statement_kind": {"type": ["string", "null"], "enum": ["source_claim", "assessor_inference", None]},
+                        "claim_role": {"type": ["string", "null"]},
+                        "support_verification": {"type": "object"},
                         "evidence_ids": {"type": "array", "items": {"type": "string"}},
                         "context_id": {"type": ["string", "null"]},
                         "pages": {"type": "array", "items": {"type": "integer", "minimum": 1}},
@@ -131,7 +134,7 @@ def paper_card_schema() -> dict[str, Any]:
                             "evidence_id": {"type": "string"}, "text": {"type": "string"},
                             "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
                             "pages": {"type": "array", "items": {"type": "integer", "minimum": 1}},
-                            "section": {"type": "string"}, "source_spans": {"type": "array", "items": {"type": "object"}}}}}
+                            "section": {"type": "string"}, "section_role": {"type": "string"}, "source_spans": {"type": "array", "items": {"type": "object"}}}}}
                     }}},
                     "missing_information": {"type": "array", "items": {"type": "string"}},
                     "concise_summary": {"type": ["string", "null"]},

@@ -13,6 +13,8 @@ from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, _section_kind
 from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
+from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, eligible_for, evidence_guidance,
+    numerical_support, verifier_items, verification_schema, VERIFIER_INSTRUCTIONS)
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.models import PaperCandidate
@@ -22,6 +24,8 @@ from paper_scout.quality_models import QUALITY_GATE_VERSION, REQUIRED_GATE_DIMEN
 LOGGER = logging.getLogger(__name__)
 QUALITY_MAX_OUTPUT_TOKENS = 8192
 QUALITY_HTTP_TIMEOUT_SECONDS = 180
+SUPPORT_MAX_OUTPUT_TOKENS = 4096
+SUPPORT_MAX_INPUT_BYTES = 250_000
 
 
 def assess_with_optional_quality_llm(
@@ -107,13 +111,19 @@ def assess_with_optional_quality_llm(
                 call.update(error_kind='non_substantive_response', response_problem=non_substantive)
                 if attempt == 0:
                     payload = {**payload, 'messages': [*payload['messages'], {'role':'user', 'content':
-                        'The previous response contained no substantive scientific assessment. Return the required JSON schema with a paper-specific scientific rationale and evidence IDs from the supplied non-Abstract blocks, with substantive support explanations. Do not repeat seed/template text. Hidden reasoning is neither needed nor requested. If the manuscript leaves a scientific question unresolved, explain that uncertainty with located evidence.'}]}
+                        'The previous response contained no substantive scientific assessment. Return the required JSON schema with a paper-specific scientific rationale and evidence IDs from the eligible candidates for each dimension, with substantive support explanations. Do not repeat seed/template text. Hidden reasoning is neither needed nor requested. If the manuscript leaves a scientific question unresolved, explain that uncertainty with located evidence.'}]}
                     continue
                 break
             result = validate_block_quality_response(parsed, deterministic, settings.model, selected, context, mode)
             call["status"] = "success"
+            if not result.execution['reference_errors'] and result.execution['outcome'] != 'text_coverage_failure':
+                verification, verifier_call = _verify_support(parsed, context, settings, client, headers)
+                calls.append(verifier_call)
+                result = validate_block_quality_response(parsed, deterministic, settings.model, selected, context, mode,
+                                                        verification=verification)
             outcome = result.execution["outcome"]
-            return replace(result, execution={**result.execution, "calls": calls, "attempt_limit": 2})
+            return replace(result, execution={**result.execution, "calls": calls,
+                "attempt_limit": 2, "verifier_attempt_limit": 1, "total_request_limit": 3})
         except HttpRequestError as exc:
             outcome = "transport_failure"
             call.update(error_kind=exc.kind, http_status=exc.status_code,
@@ -380,6 +390,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
             "coverage": selected.coverage,
         },
         "evidence_context": context.metadata(),
+        "evidence_guidance": evidence_guidance(context),
         "required_schema": block_review_schema(),
     }
     system = (
@@ -390,9 +401,9 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "Every major judgment needs evidence; distinguish missing text from absent evidence. Do not invent sections or accuse authors of misconduct. "
         "A pass requires substantive manuscript evidence of contribution clarity, methodological rigor, validation of the central claims, "
         "claim/evidence alignment, related-work comparisons (or justified absence for this type), and limitations/scope. "
-        "Supply positive evidence objects for all six dimensions, citing the exact evidence IDs printed on the supplied non-Abstract blocks. "
-        "Each object must state a concise scientific claim, explain how the cited blocks bear on that claim, and label support_status supported, partial, or unsupported. "
-        "ID existence proves provenance only: it does NOT make a claim true. Mark misleading, irrelevant, contradictory or inadequate support as partial/unsupported and retain scientific uncertainty where a core criterion is unresolved. "
+        "Supply positive evidence objects for all six dimensions, using the explicit body_candidate_ids_by_dimension for that criterion. "
+        "Each object must state a concise scientific claim, explain how the cited blocks bear on it, label support_status supported, partial, or unsupported, and set statement_kind source_claim or assessor_inference. A source_claim attributes a statement to the manuscript; assessor_inference is your bounded synthesis or critique of the cited facts. Abstract IDs may be used ONLY for attributed high-level contribution/scope source_claims. They cannot establish novelty, method adequacy, evaluation, verified numbers, reproducibility, limitations or claim alignment, including when mixed with body IDs. Use body evidence for those dimensions, including explicitly scoped inference from methods/results for limitations. "
+        "Every explicit number in the claim, explanation, rationale and uncertainty must occur with the correct unit in the cited sources; metric, population, denominator, comparison and direction must also match. Avoid unnecessary numbers and manuscript-wide absence claims. A bounded verifier sees only each claim and its cited evidence, and may reject it; do not rely on text elsewhere in the manuscript. ID existence proves provenance only: it does NOT make a claim true. Mark misleading, irrelevant, contradictory or inadequate support as partial/unsupported and retain scientific uncertainty where a core criterion is unresolved. "
         "For concerns, support_status describes evidence for the concern, not approval of the paper. A concern based only on missing supplied material cannot establish insufficiency. "
         "Return evidence_schema_version and evidence_context_id exactly as supplied. Never invent IDs. For cross-page evidence cite blocks on both pages as needed. "
         "Do not return quotations, page numbers, manuscript metadata or duplicate evidence objects; Paper Scout derives exact source snippets and provenance. "
@@ -460,11 +471,12 @@ def block_review_schema() -> dict:
             'properties':{d:{'type':['integer','null'],'minimum':0,'maximum':5} for d in QUALITY_DIMENSIONS}},
         'evidence': {'type': 'array', 'maxItems': 12, 'items': {
             'type': 'object', 'additionalProperties': False,
-            'required': ['dimension', 'signal_type', 'claim', 'explanation', 'support_status', 'evidence_ids'],
+            'required': ['dimension', 'signal_type', 'claim', 'explanation', 'support_status', 'evidence_ids', 'statement_kind'],
             'properties': {'dimension': {'enum': list(QUALITY_DIMENSIONS)},
                 'signal_type': {'enum': ['positive', 'concern', 'missing']},
                 'claim': text(320), 'explanation': text(480),
                 'support_status': {'enum': ['supported', 'partial', 'unsupported']},
+                'statement_kind': {'enum': list(STATEMENT_KINDS)},
                 'evidence_ids': {'type': 'array', 'maxItems': 3, 'uniqueItems': True, 'items': text(32)}}}},
     }
     return {'type': 'object', 'additionalProperties': False, 'required': list(properties), 'properties': properties}
@@ -478,49 +490,146 @@ def validate_block_review(value: object) -> dict:
     return value
 
 
+def _support_input_hash(items: list[dict]) -> str:
+    return hashlib.sha256(json.dumps(items, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def _verify_support(value: dict, context: EvidenceContext, settings, client, headers) -> tuple[dict, dict]:
+    """One separate claim/evidence request, no retry, repair or evidence generation."""
+    items = verifier_items(value, context)
+    ids = [item['item_id'] for item in items]
+    payload = {'model': settings.model, 'temperature': 0, 'max_tokens': SUPPORT_MAX_OUTPUT_TOKENS,
+        'messages': [{'role': 'system', 'content': VERIFIER_INSTRUCTIONS},
+                     {'role': 'user', 'content': json.dumps({'items': items})}],
+        'response_format': {'type': 'json_schema', 'json_schema': {'name': 'claim_support', 'strict': True,
+                            'schema': _strict_schema(verification_schema(ids))}}}
+    if urlsplit(settings.base_url).hostname == 'openrouter.ai':
+        payload['provider'] = {'require_parameters': True}
+        payload['reasoning'] = {'enabled': False, 'exclude': True}
+    call = {'kind': 'verifier', 'status': 'failed', 'usage': _reported_usage({})}
+    record = {'version': 'claim-support-v1', 'status': 'failed', 'model': settings.model,
+              'input_sha256': _support_input_hash(items), 'attempt_limit': 1, 'items': []}
+    call['request_bytes'] = len(json.dumps(payload).encode())
+    call['request_sent'] = False
+    if call['request_bytes'] > SUPPORT_MAX_INPUT_BYTES:
+        call.update(status='not_sent', error_kind='verifier_input_limit')
+        call['usage'] = {k: 0 for k in call['usage']}
+        record['failure'] = 'support_verifier_input_limit'
+        return record, call
+    try:
+        call['request_sent'] = True
+        response = json.loads(client.post_json(f'{settings.base_url}/chat/completions', payload, headers=headers))
+        call['usage'] = _reported_usage(response)
+        call['response_id'] = response.get('id')
+        call['provider'] = response.get('provider')
+        choice = response['choices'][0]
+        call['finish_reason'] = choice.get('finish_reason')
+        # Verifier truncation and malformed output cannot establish support.
+        if choice.get('finish_reason') not in {'stop', None}:
+            raise ValueError('verifier did not finish normally')
+        content = choice['message']['content']
+        call['content_sha256'] = hashlib.sha256(content.encode()).hexdigest()
+        call['content_characters'] = len(content)
+        parsed = json.loads(_strip_json_fence(content))
+        _validate_support_result(parsed, ids)
+        record.update(status='success', items=parsed['items'])
+        call['status'] = 'success'
+    except Exception as exc:
+        call['error_kind'] = exc.kind if isinstance(exc, HttpRequestError) else type(exc).__name__
+        if isinstance(exc, HttpRequestError):call['http_status'] = exc.status_code
+        record['failure'] = 'support_verifier_protocol_or_transport_failure'
+    LOGGER.info('Claim support verification %s', json.dumps({'canonical_id': context.canonical_id,
+        'status': call['status'], 'usage': call['usage'], 'attempt_limit': 1}, sort_keys=True))
+    return record, call
+
+
+def _validate_support_result(value: dict, item_ids: list[str]) -> None:
+    from jsonschema import Draft202012Validator
+    Draft202012Validator(verification_schema(item_ids)).validate(value)
+    ids = [item['item_id'] for item in value['items']]
+    if len(set(ids)) != len(ids) or set(ids) != set(item_ids):
+        raise ValueError('verifier omitted, duplicated or invented an item')
+
+
 def validate_block_quality_response(value: dict, seed: QualityAssessment, model: str,
                                     selected: SelectedPaperText, context: EvidenceContext,
-                                    mode: str = 'llm') -> QualityAssessment:
-    """Separate reference integrity from the model's scientific interpretation.
+                                    mode: str = 'llm', *, verification: dict | None = None) -> QualityAssessment:
+    """Check provenance, claim eligibility, numerals and separately assessed support.
 
-    Support labels/explanations remain model judgments, not deterministic proof.
-    An unresolved core criterion cannot pass even if every cited address exists.
-    Old reviewed decisions continue through the unchanged legacy reader/validator.
+    Evidence selection faults remain technical; unsupported interpretations are
+    scientific uncertainty. Neither an assessor label nor an ID can grant a pass.
+    Historic v1/quote records continue through their existing storage reader.
     """
     validate_block_review(value)
     expected = build_evidence_context(seed.canonical_id, selected)
     context_ok = (context == expected and context.source_hash == seed.source_content_hash
                   and value['evidence_context_id'] == context.context_id)
     errors = [] if context_ok else ['manuscript or assessment-context identity mismatch']
-    evidence = []
-    audit = []
-    for item in value['evidence']:
+    evidence, audit, support_errors = [], [], []
+    prepared = []
+    for i, item in enumerate(value['evidence']):
+        row = {'item_id': f'evidence-{i}', 'dimension': item['dimension'],
+               'statement_kind': item['statement_kind'], 'claim_role': CLAIM_ROLES[item['dimension']],
+               'claim': item['claim'], 'explanation': item['explanation'], 'evidence_ids': item['evidence_ids']}
         try:
-            if not context_ok:
-                raise ValueError('manuscript or assessment-context identity mismatch')
+            if not context_ok:raise ValueError('manuscript or assessment-context identity mismatch')
             blocks = resolve_evidence_ids(item['evidence_ids'], context, expected_context_id=value['evidence_context_id'])
+            row['provenance_valid'] = True
+            if not all(eligible_for(b, item['dimension'], item['statement_kind']) for b in blocks):
+                raise ValueError('evidence section role is ineligible for this claim/dimension')
+            row['eligibility_valid'] = True
         except ValueError as exc:
-            errors.append(str(exc))
-            audit.append({'dimension': item['dimension'], 'evidence_ids': item['evidence_ids'],
-                          'provenance_valid': False, 'reason': str(exc)})
+            errors.append(str(exc));row.update(eligibility_valid=False, reason=str(exc))
+            row.setdefault('provenance_valid', False);audit.append(row);continue
+        row['numeric_check'] = numerical_support(item['claim'] + '\n' + item['explanation'], [b.text for b in blocks])
+        audit.append(row);prepared.append((item, row, blocks))
+    support_record = verification or {'version': 'claim-support-v1', 'status': 'not_run', 'items': []}
+    verified = {}
+    if not errors:
+        items = verifier_items(value, context)
+        if verification is not None:
+            try:
+                if (verification.get('status') != 'success' or verification.get('version') != 'claim-support-v1'
+                        or verification.get('input_sha256') != _support_input_hash(items)):
+                    raise ValueError('support verification is missing or bound to different claims/evidence')
+                _validate_support_result({'items': verification['items']}, [v['item_id'] for v in items])
+                verified = {v['item_id']: v for v in verification['items']}
+            except (ValueError, KeyError, TypeError):
+                support_record = {**support_record, 'status': 'failed'}
+            except Exception:  # JSON-schema validation failure also fails closed.
+                support_record = {**support_record, 'status': 'failed'}
+        for narrative in items[-2:]:
+            numeric = numerical_support(narrative['claim'], [b['text'] for b in narrative['sources']])
+            finding = verified.get(narrative['item_id'], {'status': 'uncertain', 'reason': 'Support verification unavailable.'})
+            if numeric['status'] == 'unsupported' or finding['status'] != 'supported':
+                support_errors.append({**finding, 'item_id': narrative['item_id'], 'numeric_check': numeric,
+                    **({'status': 'unsupported', 'reason': 'Cited evidence does not establish numerical values/units: ' + ', '.join(numeric['missing_values_or_units'])} if numeric['status'] == 'unsupported' else {})})
+    for item, row, blocks in prepared:
+        finding = verified.get(row['item_id'], {'status': 'uncertain', 'reason': 'Support verification unavailable.'})
+        row['support_verification'] = finding
+        valid = row['numeric_check']['status'] != 'unsupported' and finding['status'] == 'supported'
+        if not valid:
+            support_errors.append({**finding, 'item_id': row['item_id'], 'numeric_check': row['numeric_check'],
+                **({'status': 'unsupported', 'reason': 'Cited evidence does not establish numerical values/units: ' + ', '.join(row['numeric_check']['missing_values_or_units'])} if row['numeric_check']['status'] == 'unsupported' else {})})
+            # Rejected statements remain in the audit, never authoritative source
+            # evidence, positive signals or a published scientific rationale.
             continue
         pages = sorted({p for b in blocks for p in b.pages})
         source_blocks = [{'evidence_id': b.evidence_id, 'text': b.text, 'content_hash': b.content_hash,
-                          'pages': b.pages, 'section': b.spans[0].section,
+                          'pages': b.pages, 'section': b.spans[0].section, 'section_role': b.section_role,
                           'source_spans': [dict(text=s.text, page=s.page, section=s.section,
                               section_index=s.section_index, start=s.start, end=s.end) for s in b.spans]} for b in blocks]
         evidence.append(QualityEvidence(item['dimension'], item['signal_type'], item['claim'], item['explanation'],
             section=' / '.join(dict.fromkeys(b.spans[0].section for b in blocks)), page=pages[0] if pages else None,
             excerpt='\n[… separate evidence block …]\n'.join(b.text for b in blocks),
             evidence_ids=[b.evidence_id for b in blocks], context_id=context.context_id, pages=pages,
-            source_blocks=source_blocks, support_status=item['support_status']))
-        audit.append({'dimension': item['dimension'], 'evidence_ids': item['evidence_ids'],
-                      'provenance_valid': True, 'support_status': item['support_status']})
+            source_blocks=source_blocks, support_status=item['support_status'], statement_kind=item['statement_kind'],
+            claim_role=CLAIM_ROLES[item['dimension']], support_verification=finding))
     status = value['quality_status']
     rationale, uncertainty = value['quality_rationale'], value['quality_uncertainty']
     supported = [e for e in evidence if e.support_status == 'supported']
     positive = {e.dimension for e in supported if e.signal_type == 'positive'}
-    semantic_ok = (bool(rationale.strip() and uncertainty.strip())
+    semantic_ok = (not support_errors and bool(rationale.strip() and uncertainty.strip())
         and (status != 'pass' or REQUIRED_GATE_DIMENSIONS <= positive and value['confidence'] in {'medium', 'high'})
         and (status != 'insufficient' or any(e.signal_type == 'concern' for e in supported)))
     coverage_failure = (value['uncertainty_reason'] == 'text_coverage_failure'
@@ -533,27 +642,31 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         rationale = 'Scientific judgment is unresolved because supplied assessment material is incomplete. Missing input cannot establish scientific insufficiency.'
     elif errors or selected.scope not in {'full_text', 'partial_full_text'}:
         status, outcome = 'uncertain', 'evidence_validation_failure'
-        rationale = 'Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.'
+        rationale = 'Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.'
+    elif support_record['status'] != 'success':
+        status, outcome = 'uncertain', 'support_verification_pending' if verification is None else 'protocol_failure'
+        rationale = 'Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.'
     elif not semantic_ok:
         status = 'uncertain'
-        rationale = 'Source provenance validated, but the assessor did not establish every required scientific criterion. The proposed judgment is withheld.'
+        rationale = 'The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.'
+    if status != value['quality_status'] or not semantic_ok or outcome != 'scientific':
+        uncertainty = ('Scientific support remains unresolved. ' + ' '.join(dict.fromkeys(
+            str(v.get('reason') or 'A numerical assertion was not established by its cited evidence.') for v in support_errors)))[:1600]
+        if not support_errors:uncertainty = 'The execution audit records the unresolved eligibility, coverage or verification checks.'
     score = value['overall_quality_score']
-    if score is not None and seed.applied_score_cap is not None:
-        score = min(score, seed.applied_score_cap)
-    # No deterministic keyword evidence or model-produced quote is promoted into
-    # new provenance. Legacy storage remains unchanged; new evidence is separate.
+    if score is not None and seed.applied_score_cap is not None:score = min(score, seed.applied_score_cap)
     return replace(seed, assessor_type='hybrid' if mode in {'auto', 'hybrid'} else 'llm', assessor_model=model,
         assessed_at=datetime.now(UTC).replace(microsecond=0).isoformat(), overall_quality_score=score,
         confidence=value['confidence'], recommendation=recommendation_for_score(score, value['confidence']),
         paper_type=value['paper_type'], dimension_scores=value['dimension_scores'], missing_information=[],
-        quality_status=status, quality_rationale=rationale,
-        quality_uncertainty=uncertainty, quality_gate_version=QUALITY_GATE_VERSION, evidence=evidence,
+        quality_status=status, quality_rationale=rationale, quality_uncertainty=uncertainty,
+        quality_gate_version=QUALITY_GATE_VERSION, evidence=evidence, concise_summary=rationale,
         positive_signals=[e.paraphrase for e in supported if e.signal_type == 'positive'],
-        concerns=[e.paraphrase for e in evidence if e.signal_type == 'concern'], concise_summary=value['quality_rationale'],
+        concerns=[e.paraphrase for e in evidence if e.signal_type == 'concern'],
         coverage={**seed.coverage, **context.metadata()},
-        execution={'outcome': outcome, 'evidence_protocol': EVIDENCE_VERSION,
-            'evidence_context': context.metadata(), 'reference_audit': audit, 'reference_errors': errors,
-            'interpretation_validation': 'Scientific support is assessed by the model, not implied by ID existence.',
+        execution={'outcome': outcome, 'evidence_protocol': EVIDENCE_VERSION, 'evidence_context': context.metadata(),
+            'reference_audit': audit, 'reference_errors': errors, 'support_errors': support_errors,
+            'support_verification': support_record, 'interpretation_validation': 'Bounded claim/evidence screening; not proof of scientific truth.',
             'proposed_status': value['quality_status'], 'proposed_decision': {k: value[k] for k in
                 ('quality_status', 'quality_rationale', 'quality_uncertainty')},
             'submitted_anchors': len(value['evidence']), 'validated_anchors': len(evidence),

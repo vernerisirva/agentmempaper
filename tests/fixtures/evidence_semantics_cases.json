@@ -1,0 +1,251 @@
+[
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.12320",
+    "source_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+    "rejected_items": [
+      {
+        "dimension": "contribution_clarity",
+        "blocks": [
+          {
+            "id": "E6f5745c068db81ad-B0002",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "Traditional Large Language Models (LLMs) are scoped to individual user sessions,\nlimiting the model's knowledge to what is exchanged within a single conversation.\nThis prevents LLMs from learning latent user preferences that evolve over long\nperiods of time. Existing agentic memory solutions attempt to address this gap, but\nthey operate only at the individual-user level, constraining the breadth of public\nknowledge that could otherwise be shared across users to improve downstream\nLLM responses. We introduceAIM(Agentic Interoperable Memory), a novel\nunified, privacy-aware memory frameworkthat enablesmulti-agent, multi-user\nLLM systemsto persistently manage both private and shared memory. Such\na capability is increasingly essential as modern LLM ecosystems rely on many\nagents collaborating across many users, where shared knowledge can improve\ncoordination, consistency, and overall system "
+          },
+          {
+            "id": "E6f5745c068db81ad-B0005",
+            "role": "introduction",
+            "eligible": true,
+            "pages": [
+              1
+            ],
+            "text": "Large language model (LLM) agents are increasingly deployed in settings that demand persistent\nmemory Yuan et al. [2025]. Examples include personal assistants that recall preferences across\nsessions, collaborative workflows where specialized agents coordinate on shared tasks, and enterprise\nagents that serve multiple users concurrently. Yet the vast majority of agents today operatestatelessly:\nthey cannot retain structured knowledge across sessions, separate private from shareable information\nacross users, nor exchange relevant context across heterogeneous agent platforms [Sumers et al.,\n2024]. This leads to repetitive interactions, fragmented context, limited personalization, and no\nunified memory lifecycle. To this end, we introduceAIM(Agentic Interoperable Memory), a\nunified, privacy-aware memory framework that enables multi-agent, multi-user LLM systems to\npersistently manage both "
+          }
+        ]
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "blocks": [
+          {
+            "id": "E6f5745c068db81ad-B0003",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "intelligence. AIM dynamically\nclassifies information asprivate(scoped to a single user and inaccessible to others)\norpublic(accessible to all users), and enforces index-level access controls so that\nmemories classified as private are retrievable only by their owning user. This design\nprotects sensitive data while still leveraging beneficial shared knowledge to improve\ninteractions acrossallusers. To evaluate AIM in a multi-user setting, we introduce\nMUMBench(Multi-User Memory Benchmark), a dataset containing interactions\nfrom many users spanning both private and shareable information across four\ndomains. To our knowledge, MUMBench is the first public dataset designed to\nassess an agentic memory system's multi-operation performance (memory retrieve,\ncreate, update and delete) in a multi -user environment. On MUMBench, across\nthree independent runs, AIM achieves96.0%visibility "
+          },
+          {
+            "id": "E6f5745c068db81ad-B0013",
+            "role": "related",
+            "eligible": true,
+            "pages": [
+              3
+            ],
+            "text": "may simultaneously require both a memory write and a retrieval, whereas prior\npipelines (e.g., Mem0) assume exactly one operation per turn. The result is, to our knowledge, the\nfirst end-to-end pipeline that unifies LLM-based extraction, automatic privacy classification, and\nindex-level access enforcement in a single modular, system-agnostic service.\nAgent Memory Benchmarks.In terms of existing agent memory benchmarks, MemoryAgent-\nBench [Hu et al., 2025] evaluates memory retrieval, test-time learning, long-range understanding,\nand selective forgetting in single-agent settings. LOCOMO [Maharana et al., 2024] provides a\nmulti-session conversational benchmark spanning hundreds of turns but is limited to single-user sce-\nnarios. No existing benchmark evaluates private versus shared memory classification, cross-session\nsynchronization, or memory integrity under concurrent multi-agent "
+          }
+        ]
+      }
+    ],
+    "unsupported_numeric_items": []
+  },
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.11060",
+    "source_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+    "rejected_items": [
+      {
+        "dimension": "contribution_clarity",
+        "blocks": [
+          {
+            "id": "E81097e33595a5a5c-B0002",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "Persistentmemoryisenteringproduction-orientedagentplat-\nforms to help long-horizon agents accumulate experience\nacross sessions. Yet a post-task curator agent restricted to\ncompleted trajectories can preserve errors, overgeneralize\npartial evidence, or retain stale knowledge. We introduce\nenvironment-probing curation, a deployment-compatible ex-\ntensionthatgivesanexistingasynchronouscuratoragentleast-\nprivilege, read-only world tools to check, scope, and refresh\ncandidatememories.Itrequiresnomodelretrainingandleaves\nthe task agent, retriever, memory representation, and produc-\ntion write authority unchanged. In a production-like GitHub\nCopilot (GHCP) harness built on its SDK, we compare state-\nless execution, full in-context learning,GHCP + Mem, and\nGHCP+Mem(w/EnvProbing)onCLBenchdatabaseexplo-\nration and 90 adapted APEX management-consulting tasks.\nOn CLBench, probing raises pass rate "
+          },
+          {
+            "id": "E81097e33595a5a5c-B0009",
+            "role": "introduction",
+            "eligible": true,
+            "pages": [
+              2
+            ],
+            "text": "2018).\nThemechanismisreadilyincorporatedintoexistingenter-\npriseagents.Itrequiresnoretrainingandleavestherespond-\ning agent, retriever, record representation, and production\nwrite authority unchanged. The asynchronous curator agent\nreceives only a least-privilege, read-only subset of existing\nconnectors or MCP tools (Microsoft 2026d,b). Probes re-\nmainofftheuser-facingcriticalpathandtaskbudget,inherit\nplatform authentication and auditing, and disappear without\na safe read surface. Figure 1 isolates this boundary: only\nthe asynchronous curator agent gains world tools. With the\ntask-time memory interface and CRUD lifecycle fixed, in-\ncremental gains measure write-time evidence quality rather\nthan added task-agent capacity.\nIn our production-like GitHub Copilot (GHCP) harness,\nbuilt on its SDK, each task gets a fresh agent session while\na persistent index spans sessions and external tools "
+          }
+        ]
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "blocks": [
+          {
+            "id": "E81097e33595a5a5c-B0003",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "from 39% to 73% and\npass-discounted reward from 8.60 to 22.60 while reducing\nqueries from 8.8 to 4.7 per question and task-agent cost from\n$3.38 to $1.68. Across six APEX worlds, all 18 memory-\nversus-baseline mean reward comparisons are positive and\ntask-agent tool calls fall by 16\u201375%; probing gives the best\ntask-agent reward gain per dollar in five worlds. Probing also\nattainshighermeanrewardthanGHCP+MemonbothSonnet\n4.6 and Opus 4.7 without schema drift. Environment prob-\ning therefore turns existing agent-memory curation into an\nenvironment-informed, auditable process while preserving a\ncompact task-time interface."
+          },
+          {
+            "id": "E81097e33595a5a5c-B0031",
+            "role": "body",
+            "eligible": true,
+            "pages": [
+              5
+            ],
+            "text": "Table 2 compares reward gain per task-agent dollar, with the\nunderlying reward gain and cost shown in each cell. All 18\ngains\u2014six worlds by three memory systems\u2014are positive.\nAppendixCreportsabsoluterewardandtask-agenttoolcalls.\nThe largest reduction occurs where baseline discovery is\nmost expensive: world941eba66falls from 71.6 tool calls\nto 17.7\u201319.3, while the indexed-memory systems reduce in-\nput consumption from 53.92M tokens to 6.56\u20137.67M and\ncost from $54.30 to $7\u2013$9 per run. GHCP + Mem (w/ Env\nProbing) achieves the best task-agent reward gain per dollar\nin five of six worlds (Table 2); GHCP + Mem is marginally\nbetterintheremainingworld.FullICLcanwinrawrewardin\nindividualworlds,butitsgrowingcontextmakesthosegains\nexpensive and even costs more than the stateless baseline in\none world.\nAcross APEX difficulty levels, memory can preserve an\nanswer with fewer tool calls, expose "
+          }
+        ]
+      }
+    ],
+    "unsupported_numeric_items": []
+  },
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.11243",
+    "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+    "rejected_items": [],
+    "unsupported_numeric_items": [
+      {
+        "claim": "The central empirical finding that answer accuracy exceeds complete evidence recovery by more than 20% is supported by the reported results across eight models.",
+        "explanation": "Table 2 reports Answer Accuracy, Evidence Coverage, and Claim Coverage for all eight models under Direct Visual Reasoning and Agentic Tool-Use, and the main results text explicitly notes the gap between answer accuracy and evidence coverage. The quantitative results directly support the abstract's claim.",
+        "sources": [
+          {
+            "content_hash": "b2c09f0125fbb574aaf571a931dc29d3ec3bb32ce43648a344192173b489acd0",
+            "evidence_id": "Eec559f9f72bc68b9-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Evaluation Metrics",
+            "source_spans": [
+              {
+                "end": 907,
+                "page": 5,
+                "section": "Evaluation Metrics",
+                "section_index": 14,
+                "start": 894,
+                "text": "represented\n5"
+              },
+              {
+                "end": 873,
+                "page": 6,
+                "section": "Evaluation Metrics",
+                "section_index": 15,
+                "start": 0,
+                "text": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents\nModel Easy(\ud835\udc5b=62)Medium(\ud835\udc5b=92)Hard(\ud835\udc5b=81)Overall(\ud835\udc5b=235)\nAcc. E-Cov. C-Cov. Acc. E-Cov. C-Cov. Acc. E-Cov. C-Cov. Acc. E-Cov. C-Cov.\nDirect Visual Reasoning\nGPT-5.596.866.0 56.381.560.7 46.429.650.3 36.567.758.5 46.1\nClaude Opus 4.8 95.2 75.7 64.666.3 54.851.411.1 51.839.7 54.9 59.3 51.5\nKimi K2.7 93.5 59.1 39.7 56.5 51.1 42.1 11.1 44.6 27.0 50.6 50.9 36.7\nGemini 3.1 Pro 90.3 58.0 43.1 58.7 42.1 40.6 9.9 35.0 34.6 50.2 43.8 39.4\nMiniMax-M3 93.577.857.9 48.960.850.6 4.9 49.947.545.561.5 51.7\nGLM-5V Turbo 83.9 58.9 40.6 41.3 45.6 32.3 8.6 41.3 29.9 41.3 47.6 33.9\nQwen3.7 Plus 71.0 57.9 43.9 28.3 40.3 31.3 4.9 40.7 30.4 31.5 45.1 34.6\nIntern-S2 71.0 57.5 38.8 16.3 38.1 33.6 4.9 33.9 21.1 26.8 41.8 31.2\nAverage86.9 63.9 48.1 49.7 49.2 41.0 10.6 43.4 33.3 46.1 51.1 40.6\nAgentic "
+              }
+            ],
+            "text": "represented\n5\nSci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents\nModel Easy(\ud835\udc5b=62)Medium(\ud835\udc5b=92)Hard(\ud835\udc5b=81)Overall(\ud835\udc5b=235)\nAcc. E-Cov. C-Cov. Acc. E-Cov. C-Cov. Acc. E-Cov. C-Cov. Acc. E-Cov. C-Cov.\nDirect Visual Reasoning\nGPT-5.596.866.0 56.381.560.7 46.429.650.3 36.567.758.5 46.1\nClaude Opus 4.8 95.2 75.7 64.666.3 54.851.411.1 51.839.7 54.9 59.3 51.5\nKimi K2.7 93.5 59.1 39.7 56.5 51.1 42.1 11.1 44.6 27.0 50.6 50.9 36.7\nGemini 3.1 Pro 90.3 58.0 43.1 58.7 42.1 40.6 9.9 35.0 34.6 50.2 43.8 39.4\nMiniMax-M3 93.577.857.9 48.960.850.6 4.9 49.947.545.561.5 51.7\nGLM-5V Turbo 83.9 58.9 40.6 41.3 45.6 32.3 8.6 41.3 29.9 41.3 47.6 33.9\nQwen3.7 Plus 71.0 57.9 43.9 28.3 40.3 31.3 4.9 40.7 30.4 31.5 45.1 34.6\nIntern-S2 71.0 57.5 38.8 16.3 38.1 33.6 4.9 33.9 21.1 26.8 41.8 31.2\nAverage86.9 63.9 48.1 49.7 49.2 41.0 10.6 43.4 33.3 46.1 51.1 40.6\nAgentic "
+          },
+          {
+            "content_hash": "3d038d0ccac13c17917da92972478e2bc138845e51f4db667e0b8ff6ea78ce47",
+            "evidence_id": "Eec559f9f72bc68b9-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Main Results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Main Results",
+                "section_index": 18,
+                "start": 0,
+                "text": "Table 2 reports Answer Accuracy, Evidence Cov-\nerage, and Claim Coverage under Direct Visual\nReasoning and Agentic Tool-Use across three task\ndifficulty tiers.\nDirect Visual Reasoning.GPT-5.5 achieves the\nhighest overall accuracy at 67.7%, followed by\nClaude Opus 4.8 at 54.9% and Kimi K2.7 at\n50.6%, while Intern-S2 ranks last at 26.8%. Per-\nformance deteriorates sharply with task difficulty\nfor every model, but the extent of degradation\nvaries substantially. GPT-5.5 drops from 96.8%\non easy tasks to 29.6% on hard tasks, yet remains\nthe strongest model on the hardest subset. In con-\ntrast, MiniMax-M3 declines from 93.5% to 4.9%,\nexhibiting the largest degradation of any model.\nThese results suggest that strong performance on\neasier tasks does not reliably translate to com-\nplex multi-hop scientific reasoning, where deeper\nevidence integration becomes the dominant bot-\ntleneck.\nAgentic "
+              }
+            ],
+            "text": "Table 2 reports Answer Accuracy, Evidence Cov-\nerage, and Claim Coverage under Direct Visual\nReasoning and Agentic Tool-Use across three task\ndifficulty tiers.\nDirect Visual Reasoning.GPT-5.5 achieves the\nhighest overall accuracy at 67.7%, followed by\nClaude Opus 4.8 at 54.9% and Kimi K2.7 at\n50.6%, while Intern-S2 ranks last at 26.8%. Per-\nformance deteriorates sharply with task difficulty\nfor every model, but the extent of degradation\nvaries substantially. GPT-5.5 drops from 96.8%\non easy tasks to 29.6% on hard tasks, yet remains\nthe strongest model on the hardest subset. In con-\ntrast, MiniMax-M3 declines from 93.5% to 4.9%,\nexhibiting the largest degradation of any model.\nThese results suggest that strong performance on\neasier tasks does not reliably translate to com-\nplex multi-hop scientific reasoning, where deeper\nevidence integration becomes the dominant bot-\ntleneck.\nAgentic "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "canonical_id": "doi:10.64898/2026.09.03.749176",
+    "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+    "rejected_items": [
+      {
+        "dimension": "contribution_clarity",
+        "blocks": [
+          {
+            "id": "Eb37f3399d50c848a-B0002",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "Artificial Intelligence (AI) frameworks for automating scientific research have shown strong performance on benchmarks, but t heir \nutility for real-world industrial research remains insufficiently characterized. Extending the analysis presented in the first  paper of this \nseries, we evaluated the same five advanced AI research frameworks (Kosmos, K -Dense, ToolUniverse, BioAgents from bio.xyz, and \nthe AI Scientist-v2 from Sakana AI) on two more projects of high practical importance for biopharmaceutical develo pment: predicting \nantibody developability properties with the use of pretrained protein language model embeddings, and modeling non -covalent lipid-\nRNA interactions in lipid nanoparticles with all-atom molecular dynamics (MD) simulations. The AI frameworks again showed genuine \nstrengths, including unprompted identification of subtle methodological issues, successful use of "
+          },
+          {
+            "id": "Eb37f3399d50c848a-B0007",
+            "role": "introduction",
+            "eligible": true,
+            "pages": [
+              2
+            ],
+            "text": "high practical importance for drug development: \nprediction of therapeutic antibody developability properties, and \ncharacterization of non-covalent interactions in lipid nanoparticle  \n(LNP) systems. From a technical viewpoint, these two projects \ncorrespond to two distinct classes of computational methodology: \nML based on pretrained protein language model embeddings, and \nall-atom molecular dynamics (MD) simulations of biomolecular \nsystems, adding more dimensions to the evaluation and probing \ncomplementary aspects of AI capability beyond those already \ncovered in the first paper of this series.  In both fields,  namely \nantibody property prediction and MD simulations of biomolecular \nsystems, AI and ML have already been used in the literature.  \nAntibody developability assessment is a critical phase in biologics \ndesign that evaluates key therapeutic factors such as stability, "
+          }
+        ]
+      }
+    ],
+    "unsupported_numeric_items": []
+  },
+  {
+    "canonical_id": "arxiv:2601.07372",
+    "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+    "rejected_items": [
+      {
+        "dimension": "contribution_clarity",
+        "blocks": [
+          {
+            "id": "E6f76e17964addb5d-B0002",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "While Mixture-of-Experts (MoE) scales capacity via conditional computation, Transformers lack\na native primitive for knowledge lookup, forcing them to inefficiently simulate retrieval through\ncomputation. To address this, we introduce conditional memory as a complementary sparsity\naxis, instantiated viaEngram, a module that modernizes classic \ud835\udc41-gram embedding forO( 1)\nlookup. By formulating theSparsity Allocationproblem, we uncover a U-shaped scaling law\nthat optimizes the trade-off between neural computation (MoE) and static memory (Engram).\nGuided by this law, we scale Engram to 27B parameters, achieving superior performance\nover a strictly iso-parameter and iso-FLOPs MoE baseline. Most notably, while the memory\nmodule is expected to aid knowledge retrieval (e.g., MMLU+3.4; CMMLU+4.0), we observe\neven larger gains in general reasoning (e.g., BBH+5.0; ARC-Challenge+3.7) and "
+          },
+          {
+            "id": "E6f76e17964addb5d-B0006",
+            "role": "introduction",
+            "eligible": true,
+            "pages": [
+              2
+            ],
+            "text": "reconstruction of a static lookup table, wasting valuable sequential\ndepth on trivial operations that could otherwise be allocated to higher-level reasoning.\nTo align model architecture with this linguistic duality, we advocate for a complementary\naxis of sparsity: conditional memory. Whereas conditional computation sparsely activates\nparameters to process dynamic logic (Bengio et al., 2013; Shazeer et al., 2017), conditional\nmemory relies on sparse lookup operations to retrieve static embeddings for fixed knowledge.\nAs a preliminary exploration of this paradigm, we revisit\ud835\udc41-gram embeddings (Bojanowski et al.,\n2017) as a canonical instantiation: local context serves as a key to index a massive embedding\ntable via constant-timeO( 1) lookups (Huang et al., 2025a; Pagnoni et al., 2025; Tito Svenstrup\net al., 2017; Yu et al., 2025). Our investigation reveals that, perhaps surprisingly, this "
+          }
+        ]
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "blocks": [
+          {
+            "id": "E6f76e17964addb5d-B0084",
+            "role": "appendix",
+            "eligible": true,
+            "pages": [
+              33
+            ],
+            "text": "Dense-4B MoE-27B Engram-27B Engram-40B\nTotal Params 4.1B 26.7B 26.7B 39.5B\nActive Params 3.8B\nTotal Tokens 262B\nLayers 30\nDimension 2560\nLeading Dense Layers - 1 1 1\nRouted Experts - 72 55 55\nActive Experts - 6 6 6\nShared Experts - 2 2 2\nLoad Balancing Method - Loss Free (Wang et al., 2024a)\nAttention module MLA (DeepSeek-AI, 2024)\nRoPE\ud835\udf0310000\nmHC Expansion Rate 4\nSequence Length 4096\nVocab Size 129280\nBatch Size 1280\nTraining Steps 50000\nBackbone Optimizer Muon (Jordan et al., 2024)\nEmbedding Optimizer Adam (Kingma, 2014)\nBase Learning Rate 4e-4\nLr Scheduler Step Decay (Bi et al., 2024)\nWeight Decay 0.1\nEngram Dim\ud835\udc51 mem - - 1280 1280\nEngram Vocab Size - - 2262400 7239680\nEngram Num Head - - 8 8\nEngram Layer - - [2,15] [2,15]\nEngram\ud835\udc41-gram - - [2,3] [2,3]\nEngram combine mHC - - True True\nEngram tokenizer compression - - True True\nEngram Conv Zero Init - - True True\nEngram Lr Multipler - - "
+          },
+          {
+            "id": "E6f76e17964addb5d-B0003",
+            "role": "abstract",
+            "eligible": false,
+            "pages": [
+              1
+            ],
+            "text": "code/math\ndomains (HumanEval+3.0; MATH+2.4). Mechanistic analyses reveal that Engram relieves\nthe backbone's early layers from static reconstruction, effectively deepening the network for\ncomplex reasoning. Furthermore, by delegating local dependencies to lookups, it frees up\nattention capacity for global context, substantially boosting long-context retrieval (e.g., Multi-\nQuery NIAH:84.2 \u2192 97.0). Finally, Engram establishes infrastructure-aware efficiency: its\ndeterministic addressing enables runtime prefetching from host memory, incurring negligible\noverhead. We envision conditional memory as an indispensable modeling primitive for next-\ngeneration sparse models. Code available at:https://github.com/deepseek-ai/Engram."
+          }
+        ]
+      }
+    ],
+    "unsupported_numeric_items": []
+  }
+]

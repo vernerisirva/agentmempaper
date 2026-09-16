@@ -1,0 +1,229 @@
+from dataclasses import replace
+import copy
+import json
+from pathlib import Path
+import unittest
+from unittest.mock import patch
+
+from paper_scout.evidence_context import EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
+from paper_scout.evidence_semantics import eligible_for, evidence_guidance, numerical_support, numeric_mentions, verifier_items
+from paper_scout.full_text import SelectedPaperText, SelectedSection
+from paper_scout.http import HttpRequestError
+from paper_scout.quality import assess_quality_deterministically
+from paper_scout.quality_llm import (_request_payload, assess_with_optional_quality_llm,
+    validate_block_quality_response, _support_input_hash)
+from paper_scout.quality_models import QualityAssessment
+from test_evidence_context import verified_fixture
+from test_paper_scout_scientific_gate import candidate, manuscript, assessment
+from test_quality_reliability import ENV, block_fixture, envelope
+
+CASES = json.loads((Path(__file__).parent / 'fixtures/evidence_semantics_cases.json').read_text())
+
+
+class StrictHttp:
+    """Every wire request must have an explicit queued mock response."""
+    retries = 1
+    def __init__(self, responses):self.responses=list(responses);self.payloads=[]
+    def post_json(self, url, payload, headers=None):
+        self.payloads.append(payload)
+        item=self.responses.pop(0)
+        if isinstance(item,Exception):raise item
+        return item
+
+
+def verifier_response(value=None, overrides=None, finish='stop'):
+    selected,_=manuscript();ctx=build_evidence_context('fixture',selected)
+    v=verified_fixture(value or block_fixture(),ctx,overrides)
+    return json.dumps({'usage':{'prompt_tokens':80,'completion_tokens':30,'cost':.005},
+        'choices':[{'finish_reason':finish,'message':{'content':json.dumps({'items':v['items']})}}]})
+
+
+class SemanticsTests(unittest.TestCase):
+    def setUp(self):
+        self.selected,_=manuscript();self.context=build_evidence_context('fixture',self.selected)
+        self.seed=assess_quality_deterministically(candidate(),'fixture',self.selected)
+        self.value=block_fixture()
+
+    def validate(self,value=None,overrides=None,verified=True):
+        value=value or self.value
+        return validate_block_quality_response(value,self.seed,'fixture',self.selected,self.context,
+            verification=verified_fixture(value,self.context,overrides) if verified else None)
+
+    def test_real_abstract_cases_have_body_alternatives_and_claim_specific_eligibility(self):
+        for case in CASES:
+            for rejected in case['rejected_items']:
+                for source in rejected['blocks']:
+                    role=source['role'];heading={'body':'Adapted Apex','related':'Related Work'}.get(role,role)
+                    selected=SelectedPaperText(source['text'],[SelectedSection(heading,source['text'],source['pages'][0])],
+                                               'full_text',case['source_hash'],False)
+                    ctx=build_evidence_context(case['canonical_id'],selected);block=ctx.blocks[0]
+                    self.assertEqual(block.section_role,role)
+                    self.assertTrue(resolve_evidence_ids([block.evidence_id],ctx,expected_context_id=ctx.context_id))
+                    if role=='abstract':
+                        self.assertTrue(eligible_for(block,'contribution_clarity','source_claim'))
+                        self.assertFalse(eligible_for(block,'contribution_clarity','assessor_inference'))
+                        for dimension in ('methodological_rigor','evaluation_or_validation_strength',
+                                          'evidence_to_claim_alignment','limitations_and_uncertainty_handling','reproducibility_and_transparency'):
+                            for kind in ('source_claim','assessor_inference'):
+                                self.assertFalse(eligible_for(block,dimension,kind))
+                    else:self.assertTrue(eligible_for(block,rejected['dimension'],'source_claim'))
+
+    def test_abstract_contribution_can_coexist_with_body_backed_gate(self):
+        # Same canonical introduction statement can be attributed from Abstract;
+        # methods, evaluation, alignment, related work and limitations stay body.
+        self.selected=replace(self.selected,sections=[replace(self.selected.sections[0],heading='Abstract'),*self.selected.sections[1:]])
+        self.context=build_evidence_context('fixture',self.selected);self.value['evidence_context_id']=self.context.context_id
+        for item,block in zip(self.value['evidence'],self.context.blocks):item['evidence_ids']=[block.evidence_id]
+        result=self.validate();self.assertEqual(result.quality_status,'pass')
+        self.assertEqual(result.evidence[0].source_blocks[0]['section_role'],'abstract')
+
+    def test_pass_cannot_be_assembled_from_abstract_claims(self):
+        self.selected=replace(self.selected,sections=[replace(s,heading='Abstract') for s in self.selected.sections])
+        self.context=build_evidence_context('fixture',self.selected);self.value['evidence_context_id']=self.context.context_id
+        for e,b in zip(self.value['evidence'],self.context.blocks):e['evidence_ids']=[b.evidence_id]
+        result=self.validate();self.assertEqual(result.quality_status,'uncertain')
+        self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+
+    def test_role_guidance_supplies_only_compatible_visible_candidates(self):
+        payload=_request_payload(candidate(),self.selected,self.seed,'fixture',context=self.context)
+        guidance=json.loads(payload['messages'][1]['content'])['evidence_guidance']
+        index={b.evidence_id:b for b in self.context.blocks}
+        for d,ids in guidance['body_candidate_ids_by_dimension'].items():
+            for i in ids:self.assertTrue(eligible_for(index[i],d,'source_claim'));self.assertNotEqual(index[i].section_role,'abstract')
+        methods=guidance['body_candidate_ids_by_dimension']['methodological_rigor']
+        self.assertIn(self.context.blocks[1].evidence_id,methods)
+        self.assertNotIn(self.context.blocks[2].evidence_id,methods)
+        self.assertIn('metric, population, denominator',payload['messages'][0]['content'])
+
+    def test_exact_and_formatting_equivalent_values_and_units_are_necessary(self):
+        for claim,source in [('42% accuracy.','Accuracy: 42 %.'),('0.73 score','score 0.730'),
+                             ('17 datasets','17 datasets'),('3.2× improvement','improvement 3.2 x'),('128K tokens','128k tokens')]:
+            self.assertEqual(numerical_support(claim,[source])['status'],'requires_semantic_verification')
+        for claim,source in [('43% accuracy','42% accuracy'),('42% accuracy','42 datasets'),
+                             ('3.2× improvement','3.3× improvement'),('128K tokens','128 tokens')]:
+            self.assertEqual(numerical_support(claim,[source])['status'],'unsupported')
+        self.assertEqual(numeric_mentions('score 0.73.')[0]['value'],'0.73')
+
+    def test_scimmr_real_claim_fails_despite_valid_canonical_sources(self):
+        case=next(c for c in CASES if c['unsupported_numeric_items']);e=case['unsupported_numeric_items'][0]
+        result=numerical_support(e['claim'],[b['text'] for b in e['sources']])
+        self.assertEqual(result['status'],'unsupported');self.assertIn('20%',result['missing_values_or_units'])
+
+    def test_absent_number_cannot_be_borrowed_from_other_cited_items_or_manuscript(self):
+        # 74% exists in the full fixture and the evaluation item, not this item's Methods citation.
+        self.value['evidence'][1]['claim']='The method achieves 74% retention.'
+        result=self.validate();self.assertEqual(result.quality_status,'uncertain')
+        self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertTrue(result.execution['support_errors'])
+        self.assertFalse(any('74%' in e.paraphrase and e.dimension=='methodological_rigor' for e in result.evidence))
+        self.assertNotEqual(result.quality_rationale,self.value['quality_rationale'])
+
+    def test_same_number_with_wrong_metric_requires_and_fails_semantic_verification(self):
+        self.value['evidence'][2]['claim']='Held-out precision is 74%.'
+        self.assertNotEqual(numerical_support(self.value['evidence'][2]['claim'],[self.context.blocks[2].text])['status'],'unsupported')
+        result=self.validate(overrides={'evidence-2':'unsupported'})
+        self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertFalse(any('precision' in e.paraphrase for e in result.evidence))
+
+    def test_supported_inference_need_not_be_a_literal_source_sentence(self):
+        self.value['evidence'][5].update(statement_kind='assessor_inference',
+            claim='The findings have limited demonstrated generality.',explanation='The stated design and unknown transfer leave broader scope unresolved.')
+        result=self.validate();self.assertEqual(result.quality_status,'pass')
+        self.assertNotIn(self.value['evidence'][5]['claim'],self.context.blocks[5].text)
+        self.assertEqual(result.evidence[5].statement_kind,'assessor_inference')
+
+    def test_unsupported_inference_is_removed_from_operational_assessment(self):
+        self.value['evidence'][5].update(statement_kind='assessor_inference',claim='All language models will fail in production.')
+        result=self.validate(overrides={'evidence-5':'unsupported'})
+        self.assertEqual(result.quality_status,'uncertain')
+        self.assertNotIn('All language models',result.concise_summary)
+        self.assertFalse(any('All language models' in e.paraphrase for e in result.evidence))
+        self.assertIn('All language models',result.execution['reference_audit'][5]['claim'])
+
+    def test_unverified_id_or_assessor_support_label_cannot_grant_pass(self):
+        result=self.validate(verified=False)
+        self.assertEqual(result.quality_status,'uncertain')
+        self.assertEqual(result.execution['outcome'],'support_verification_pending')
+        self.assertEqual(result.evidence,[])
+
+    def test_narrative_cannot_smuggle_unsupported_numerical_claim(self):
+        self.value['quality_rationale']='The paper establishes 99% retention.'
+        result=self.validate();self.assertEqual(result.quality_status,'uncertain')
+        self.assertNotIn('99%',result.quality_rationale)
+        self.assertNotIn('99%',result.concise_summary)
+        self.assertIn('99%',result.execution['proposed_decision']['quality_rationale'])
+
+    def test_support_result_must_bind_exact_claims_and_canonical_sources(self):
+        record=verified_fixture(self.value,self.context)
+        self.value['evidence'][0]['claim']='A different claim.'
+        result=validate_block_quality_response(self.value,self.seed,'fixture',self.selected,self.context,verification=record)
+        self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'protocol_failure')
+        for key in ('items','input_sha256'):
+            bad=verified_fixture(self.value,self.context);bad.pop(key)
+            result=validate_block_quality_response(self.value,self.seed,'fixture',self.selected,self.context,verification=bad)
+            self.assertEqual(result.quality_status,'uncertain')
+
+    def test_legacy_reviewed_assessment_remains_unchanged(self):
+        old=assessment();stored=old.to_dict();self.assertEqual(QualityAssessment.from_dict(stored),old)
+        self.assertEqual(old.quality_status,'pass');self.assertEqual(old.to_dict(),stored)
+        self.assertEqual(EVIDENCE_VERSION,'block-evidence-v2')
+
+    def test_verifier_gets_only_claims_and_their_cited_blocks(self):
+        text='Uncited private-looking manuscript appendix sentinel.'
+        selected=replace(self.selected,text=self.selected.text+'\n'+text,
+            sections=[*self.selected.sections,SelectedSection('Appendix',text,20)])
+        ctx=build_evidence_context('fixture',selected);v=copy.deepcopy(self.value);v['evidence_context_id']=ctx.context_id
+        for item,b in zip(v['evidence'],ctx.blocks):item['evidence_ids']=[b.evidence_id]
+        items=verifier_items(v,ctx);self.assertNotIn(text,json.dumps(items));self.assertNotIn('quality_status',json.dumps(items))
+        for item in items[:-2]:self.assertEqual(len(item['sources']),1)
+
+
+class VerifierExecutionTests(unittest.TestCase):
+    def assess(self,responses):
+        client=StrictHttp(responses);text,_=manuscript()
+        with patch.dict('os.environ',ENV,clear=True),patch('paper_scout.quality_llm.time.sleep'):
+            result=assess_with_optional_quality_llm(candidate(),text,assess_quality_deterministically(candidate(),'fixture',text),'llm',http=client)
+        return result,client
+
+    def test_one_bounded_verifier_call_and_complete_accounting(self):
+        result,client=self.assess([envelope(),verifier_response()])
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),2)
+        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial','verifier'])
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.015)
+        self.assertEqual(sum(c['usage']['prompt_tokens'] for c in result.execution['calls']),203)
+        self.assertEqual(result.execution['total_request_limit'],3)
+        self.assertEqual(client.payloads[1]['response_format']['json_schema']['name'],'claim_support')
+        self.assertEqual(client.payloads[1]['model'],client.payloads[0]['model'])
+
+    def test_two_assessment_attempts_plus_one_verifier_is_the_absolute_limit(self):
+        result,client=self.assess([envelope(finish='length'),envelope(),verifier_response()])
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),3)
+        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial','retry','verifier'])
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.025)
+
+    def test_verifier_truncation_transport_and_bad_schema_fail_without_retry(self):
+        malformed=json.loads(verifier_response());content=json.loads(malformed['choices'][0]['message']['content']);content['items'][1]['item_id']=content['items'][0]['item_id'];malformed['choices'][0]['message']['content']=json.dumps(content)
+        for response in (verifier_response(finish='length'),HttpRequestError('timeout','https://example.test','fixture'),'not json',json.dumps(malformed)):
+            result,client=self.assess([envelope(),response]);self.assertEqual(len(client.payloads),2)
+            self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'protocol_failure')
+            self.assertEqual(result.execution['calls'][-1]['status'],'failed')
+
+    def test_verifier_input_limit_is_enforced_before_any_request(self):
+        with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',1):
+            result,client=self.assess([envelope()])
+        self.assertEqual(len(client.payloads),1)
+        self.assertEqual(result.quality_status,'uncertain')
+        call=result.execution['calls'][-1]
+        self.assertFalse(call['request_sent']);self.assertEqual(call['status'],'not_sent')
+        self.assertEqual(call['usage']['cost_usd'],0)
+
+    def test_invalid_reference_prevents_verifier_call(self):
+        for key in ('invented','Eforeign-B0001'):
+            value=block_fixture();value['evidence'][0]['evidence_ids']=[key]
+            result,client=self.assess([envelope(value)]);self.assertEqual(len(client.payloads),1)
+            self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+
+    def test_verifier_unsupported_is_scientific_uncertainty_not_transport_failure(self):
+        result,client=self.assess([envelope(),verifier_response(overrides={'evidence-2':'unsupported'})])
+        self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertEqual(result.execution['calls'][-1]['status'],'success')

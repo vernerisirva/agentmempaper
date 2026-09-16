@@ -34,7 +34,7 @@ def block_fixture(value=None):
         ids = [b.evidence_id for b in context.blocks if b.spans[0].section == e.get('section')]
         evidence.append({'dimension': e['dimension'], 'signal_type': e['signal_type'],
             'claim': e['paraphrase'], 'explanation': e['explanation'],
-            'support_status': 'supported', 'evidence_ids': ids})
+            'support_status': 'supported', 'evidence_ids': ids, 'statement_kind': 'source_claim'})
     return {**{k: value[k] for k in ('quality_status', 'quality_rationale', 'quality_uncertainty',
                                    'overall_quality_score', 'confidence', 'paper_type')},
             'evidence_schema_version': EVIDENCE_VERSION, 'evidence_context_id': context.context_id,
@@ -51,8 +51,15 @@ class SequenceHttp:
     def __init__(self, responses):
         self.responses = list(responses)
         self.payloads = []
+        self.verifier_payloads = []
 
     def post_json(self, url, payload, headers=None):
+        if payload['response_format']['json_schema']['name'] == 'claim_support':
+            self.verifier_payloads.append(payload)
+            items = json.loads(payload['messages'][1]['content'])['items']
+            content = {'items': [{'item_id': v['item_id'], 'status': 'supported', 'reason': 'Mocked scoped support.'} for v in items]}
+            return json.dumps({'usage': {'prompt_tokens': 50, 'completion_tokens': 25, 'cost': 0.005},
+                'choices': [{'finish_reason': 'stop', 'message': {'content': json.dumps(content)}}]})
         self.payloads.append(payload)
         response = self.responses.pop(0)
         if isinstance(response, Exception):
@@ -75,7 +82,7 @@ class ReliabilityTest(unittest.TestCase):
             result, sleep = self.assess(client)
             self.assertEqual(result.quality_status, "pass")
             self.assertEqual(result.execution["outcome"], "scientific")
-            self.assertEqual([c["kind"] for c in result.execution["calls"]], ["initial", "retry"])
+            self.assertEqual([c["kind"] for c in result.execution["calls"]], ["initial", "retry", "verifier"])
             self.assertIsNone(result.execution["calls"][0]["usage"]["cost_usd"])
             sleep.assert_called_once_with(2.0)
             self.assertEqual(client.payloads[0], client.payloads[1])
@@ -95,7 +102,7 @@ class ReliabilityTest(unittest.TestCase):
         for status, delay, count in ((429, 5, 2), (503, 12, 2), (429, 120, 1), (403, None, 1)):
             result, sleep = self.assess(SequenceHttp([
                 HttpRequestError("http", "https://example.test", "fixture", status_code=status, retry_after_seconds=delay), envelope()]))
-            self.assertEqual(len(result.execution["calls"]), count)
+            self.assertEqual(len(result.execution["calls"]), count + (result.quality_status == "pass"))
             if count == 2:
                 sleep.assert_called_once_with(float(delay))
             else:
@@ -255,8 +262,8 @@ class ProviderContractTest(unittest.TestCase):
         result, _ = ReliabilityTest().assess(client)
         calls = result.execution["calls"]
         self.assertEqual(len(client.payloads), 2)
-        self.assertEqual([c["status"] for c in calls], ["failed", "success"])
-        self.assertEqual(sum(c["usage"]["cost_usd"] or 0 for c in calls), 0.01)
+        self.assertEqual([c["status"] for c in calls], ["failed", "success", "success"])
+        self.assertEqual(sum(c["usage"]["cost_usd"] or 0 for c in calls), 0.015)
         self.assertEqual(sum(c["usage"]["cost_usd"] is None for c in calls), 1)
 
     def test_deploy_only_keeps_site_validation_before_deployment(self):
@@ -325,7 +332,7 @@ class ProviderTerminationTest(unittest.TestCase):
         self.assertEqual(result.quality_status, "pass")
         self.assertEqual(result.execution["calls"][0]["error_kind"], "provider_failure")
         self.assertEqual(result.execution["calls"][0]["finish_reason"], "error")
-        self.assertEqual([c["status"] for c in result.execution["calls"]], ["failed", "success"])
+        self.assertEqual([c["status"] for c in result.execution["calls"]], ["failed", "success", "success"])
         exhausted, _ = ReliabilityTest().assess(SequenceHttp([envelope(finish="error"), envelope(finish="error")]))
         self.assertEqual(exhausted.quality_status, "uncertain")
         self.assertEqual(exhausted.execution["outcome"], "transport_failure")

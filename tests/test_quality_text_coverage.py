@@ -139,7 +139,7 @@ class SubstantiveResponseTests(unittest.TestCase):
         bad={**value,'quality_status':'uncertain','quality_rationale':seed.quality_rationale}
         client=SequenceHttp([envelope(bad),envelope(value)])
         result,_=fixtures.ReliabilityTest().assess(client)
-        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(result.execution['calls']),2)
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(result.execution['calls']),3)
         self.assertEqual(result.execution['calls'][0]['response_problem'],'deterministic_seed_echo')
         self.assertEqual(client.payloads[0]['messages'][1],client.payloads[1]['messages'][1])
         self.assertIn('Hidden reasoning is neither needed',client.payloads[1]['messages'][-1]['content'])

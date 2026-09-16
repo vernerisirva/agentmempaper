@@ -12,7 +12,7 @@ import re
 
 from paper_scout.full_text import SelectedPaperText, _section_kind, EXTRACTION_GAP
 
-EVIDENCE_VERSION = 'block-evidence-v1'
+EVIDENCE_VERSION = 'block-evidence-v2'
 BLOCK_CHARACTERS = 900
 
 
@@ -38,6 +38,7 @@ class EvidenceBlock:
     content_hash: str
     spans: tuple[SourceSpan, ...]
     eligible: bool
+    section_role: str
 
     @property
     def pages(self) -> list[int]:
@@ -130,8 +131,8 @@ def build_evidence_context(canonical_id: str, selected: SelectedPaperText) -> Ev
         spans = tuple(spans)
         text = _span_text(spans)
         blocks.append(EvidenceBlock('', len(blocks) + 1, text, digest(text), spans,
-                      all(_section_kind(s.section) not in {'abstract', 'excluded'} for s in spans)
-                      and EXTRACTION_GAP not in text))
+                      all(_section_kind(s.section) != 'excluded' for s in spans)
+                      and EXTRACTION_GAP not in text, _section_kind(spans[0].section)))
     # Version, manuscript bytes, selected context, offsets, eligibility and block
     # contents all bind the ID namespace. Same page numbers never imply same IDs.
     preamble = selected.text[:selected.text.find(selected.sections[0].text)] if selected.sections else selected.text
@@ -153,7 +154,7 @@ def _context_digest(version: str, canonical_id: str, source_hash: str, selected_
 
 
 def _render_context(preamble: str, blocks: tuple[EvidenceBlock, ...]) -> str:
-    return preamble + '\n\n'.join(f'[{b.evidence_id}] pages={",".join(map(str,b.pages)) or "unknown"}; section={b.spans[0].section}; gate_evidence={str(b.eligible).lower()}\n{b.text}' for b in blocks)
+    return preamble + '\n\n'.join(f'[{b.evidence_id}] pages={",".join(map(str,b.pages)) or "unknown"}; section={b.spans[0].section}; section_role={b.section_role}; provenance_eligible={str(b.eligible).lower()}\n{b.text}' for b in blocks)
 
 
 def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_context_id: str) -> tuple[EvidenceBlock, ...]:
@@ -172,7 +173,7 @@ def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_c
         if block is None:
             raise ValueError('evidence ID not supplied in this manuscript context')
         if not block.eligible:
-            raise ValueError('evidence block is Abstract, back matter or an extraction gap')
+            raise ValueError('evidence block is excluded back matter or an extraction gap')
         if digest(block.text) != block.content_hash or _span_text(block.spans) != block.text:
             raise ValueError('evidence block content hash mismatch')
         found.append(block)

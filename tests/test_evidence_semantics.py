@@ -188,6 +188,23 @@ class SemanticsTests(unittest.TestCase):
         self.assertEqual(numerical_support('42%→73%',['42%→72%'])['status'],'unsupported')
         self.assertEqual(numerical_support('improved by 20 percentage points',['gain: 20 percentage points'])['status'],'requires_semantic_verification')
 
+    def test_uncertain_v2_hydrates_even_when_verification_is_missing(self):
+        stored=self.validate().to_dict();stored['quality_status']='uncertain'
+        stored['execution']['support_verification']={'status':'failed'}
+        stored['evidence'][0]['support_verification']={}
+        loaded=QualityAssessment.from_dict(stored)
+        self.assertEqual(loaded.quality_status,'uncertain')
+        self.assertEqual(loaded.to_dict(),stored)
+
+    def test_limited_inference_from_introduction_is_only_a_candidate(self):
+        self.value['evidence'][5].update(statement_kind='assessor_inference',
+            claim='The evaluation proves nothing can generalize.', evidence_ids=[self.context.blocks[0].evidence_id])
+        self.assertTrue(eligible_for(self.context.blocks[0],'limitations_and_uncertainty_handling','assessor_inference'))
+        result=self.validate(overrides={'evidence-5':'unsupported'})
+        self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertEqual(result.quality_status,'uncertain')
+        self.assertFalse(any(e.dimension=='limitations_and_uncertainty_handling' for e in result.evidence))
+
     def test_legacy_reviewed_assessment_remains_unchanged(self):
         old=assessment();stored=old.to_dict();self.assertEqual(QualityAssessment.from_dict(stored),old)
         self.assertEqual(old.quality_status,'pass');self.assertEqual(old.to_dict(),stored)
@@ -241,6 +258,19 @@ class VerifierExecutionTests(unittest.TestCase):
         call=result.execution['calls'][-1]
         self.assertFalse(call['request_sent']);self.assertEqual(call['status'],'not_sent')
         self.assertEqual(call['usage']['cost_usd'],0)
+
+    def test_verifier_byte_limit_includes_provider_and_reasoning_fields(self):
+        result,client=self.assess([envelope(),verifier_response()])
+        payload=client.payloads[1];self.assertIn('provider',payload);self.assertIn('reasoning',payload)
+        actual=len(json.dumps(payload).encode())
+        self.assertEqual(result.execution['calls'][-1]['request_bytes'],actual)
+        with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',actual-1):
+            rejected,client=self.assess([envelope()])
+        self.assertEqual(len(client.payloads),1)
+        self.assertFalse(rejected.execution['calls'][-1]['request_sent'])
+        with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',actual):
+            accepted,client=self.assess([envelope(),verifier_response()])
+        self.assertEqual(len(client.payloads),2);self.assertEqual(accepted.quality_status,'pass')
 
     def test_invalid_reference_prevents_verifier_call(self):
         for key in ('invented','Eforeign-B0001'):

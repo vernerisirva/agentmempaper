@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "20 6 * * *"
   workflow_dispatch:
+    inputs:
+      deploy_only:
+        description: "Deploy the reviewed committed site without discovery or assessment"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,11 +34,13 @@ jobs:
           fetch-depth: 2
 
       - name: Restore durable Paper Scout state
+        if: ${{ !inputs.deploy_only }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: bash .github/scripts/download-paper-scout-state.sh
 
       - name: Bootstrap Paper Scout state when no durable snapshot exists
+        if: ${{ !inputs.deploy_only }}
         env:
           PAPER_SCOUT_STATE_SEED_REF: 026158c36d109669e16b1c008b69d1031a2a357b
         run: bash .github/scripts/restore-paper-scout-state.sh
@@ -47,6 +54,7 @@ jobs:
         run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
 
       - name: Validate rules, idempotency, and live source payloads
+        if: ${{ !inputs.deploy_only }}
         env:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
@@ -69,6 +77,7 @@ jobs:
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_deep_research_smoke.sqlite3 python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-deep-research.log
 
       - name: Run daily paper scout
+        if: ${{ !inputs.deploy_only }}
         env:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
@@ -136,7 +145,7 @@ jobs:
 
       - name: Commit scout updates
         id: commit-scout-updates
-        if: success()
+        if: ${{ success() && !inputs.deploy_only }}
         run: |
           python .github/scripts/check_generated_file_sizes.py digests docs reports/paper_scout
           git config user.name "github-actions[bot]"

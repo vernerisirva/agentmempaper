@@ -8,6 +8,7 @@ import json
 import logging
 from pathlib import Path
 import re
+import xml.etree.ElementTree as ET
 from typing import Protocol
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse
@@ -88,8 +89,12 @@ def locate_full_text_urls(candidate: PaperCandidate, direct_pdf_url: str | None 
     urls: list[str] = []
     if direct_pdf_url:
         urls.append(direct_pdf_url)
-    if candidate.arxiv_id:
-        urls.append(f"https://arxiv.org/pdf/{candidate.arxiv_id}.pdf")
+    arxiv_id = candidate.arxiv_id
+    if not arxiv_id and candidate.doi and candidate.doi.lower().startswith("10.48550/arxiv."):
+        arxiv_id = candidate.doi[len("10.48550/arxiv."):]
+    if arxiv_id:
+        urls.append(f"https://arxiv.org/pdf/{arxiv_id}")
+        urls.append(f"https://arxiv.org/pdf/{arxiv_id}.pdf")
     raw = candidate.raw if isinstance(candidate.raw, dict) else {}
     for item in raw.get("files") or []:
         if isinstance(item, dict) and str(item.get("key") or "").lower().endswith(".pdf"):
@@ -131,9 +136,12 @@ def fetch_and_extract_pdf(url: str, settings: FullTextSettings, refresh: bool = 
     if cached is not None:
         return FullTextDocument(**{**cached.__dict__, "cache_hit": True})
     payload, content_type = _download_pdf(url, settings.timeout_seconds, settings.max_pdf_megabytes)
-    if not _plausible_pdf(payload, content_type):
-        raise ValueError("full-text response was not a plausible PDF")
-    document = _extract_pdf(payload, url, settings.max_pages, settings.max_extracted_characters)
+    if _public_jats_url(url):
+        document = _extract_jats(payload, url, settings.max_pages, settings.max_extracted_characters)
+    else:
+        if not _plausible_pdf(payload, content_type):
+            raise ValueError("full-text response was not a plausible PDF")
+        document = _extract_pdf(payload, url, settings.max_pages, settings.max_extracted_characters)
     _write_cached_document(cache_path, document)
     return document
 
@@ -157,7 +165,9 @@ def select_assessment_text(
             warnings=[] if abstract else ["No abstract or extractable full text was available."],
         )
 
-    detected = _detect_sections(document.pages)
+    logical_xml = "JATS XML: Page labels are logical body-section numbers, not PDF pages." in document.warnings
+    detected = ([SelectedSection(page.text.split("\n", 1)[0], page.text.split("\n", 1)[-1], page.page)
+                 for page in document.pages] if logical_xml else _detect_sections(document.pages))
     selected: list[SelectedSection] = []
     target_groups = (
         ("abstract", "summary"),
@@ -175,6 +185,12 @@ def select_assessment_text(
                 section = SelectedSection(match.heading, match.text[:max_section_characters], match.first_page)
                 if section not in selected:
                     selected.append(section)
+    # Descriptive numbered headings are real body boundaries even when they do
+    # not use the conventional Methods/Results vocabulary. Include them too.
+    for match in detected:
+        section = SelectedSection(match.heading, match.text[:max_section_characters], match.first_page)
+        if section not in selected:
+            selected.append(section)
     uncertain = not selected
     if uncertain:
         pages = document.pages
@@ -206,7 +222,7 @@ def select_assessment_text(
 def _download_pdf(url: str, timeout_seconds: int, max_pdf_megabytes: int) -> tuple[bytes, str]:
     limit = max(1, max_pdf_megabytes) * 1024 * 1024
     opener = build_opener(SafeRedirectHandler(max_redirects=5))
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/pdf"})
+    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/xml" if _public_jats_url(url) else "application/pdf"})
     try:
         with opener.open(request, timeout=max(1, timeout_seconds)) as response:
             content_length = response.headers.get("Content-Length")
@@ -218,6 +234,45 @@ def _download_pdf(url: str, timeout_seconds: int, max_pdf_megabytes: int) -> tup
             return payload, str(response.headers.get("Content-Type") or "")
     except (HTTPError, URLError, TimeoutError) as exc:
         raise RuntimeError(f"full-text download failed: {exc}") from exc
+
+
+def _public_jats_url(url: str) -> bool:
+    parts = urlparse(url)
+    return parts.scheme == "https" and parts.hostname == "www.ebi.ac.uk" and bool(
+        re.fullmatch(r"/europepmc/webservices/rest/PMC\d+/fullTextXML", parts.path))
+
+
+def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int) -> FullTextDocument:
+    """Read public Europe PMC JATS body sections with explicit logical locations."""
+    # No entity expansion or external document declarations from remote XML.
+    if b"<!DOCTYPE" in payload.upper() or b"<!ENTITY" in payload.upper():
+        raise ValueError("JATS declarations are unsupported")
+    root = ET.fromstring(payload)
+    body = root.find("body") if root.tag == "article" else None
+    if body is None:
+        raise ValueError("JATS response has no article body")
+    sections = list(body.findall("sec"))
+    if not sections:
+        raise ValueError("JATS response has no body sections")
+    pages = []
+    remaining = max_characters
+    total = 0
+    for index, section in enumerate(sections, 1):
+        title = section.find("title")
+        heading = " ".join(title.itertext()) if title is not None else f"Body section {index}"
+        content = "\n".join(" ".join(child.itertext()) for child in section if child is not title)
+        text = heading + "\n" + content
+        total += len(text)
+        if index <= max_pages and remaining > 0:
+            pages.append(ExtractedPage(index, text[:remaining]))
+            remaining -= len(text)
+    if not any(p.text.partition("\n")[2].strip() for p in pages):
+        raise ValueError("JATS body is empty")
+    complete = len(sections) <= max_pages and total <= max_characters
+    warnings = ["JATS XML: Page labels are logical body-section numbers, not PDF pages."]
+    if not complete:
+        warnings.append("JATS extraction was limited by the configured section/character bounds.")
+    return FullTextDocument(url, pages, hashlib.sha256(payload).hexdigest(), complete, warnings=warnings)
 
 
 def _extract_pdf(payload: bytes, url: str, max_pages: int, max_characters: int) -> FullTextDocument:
@@ -261,12 +316,22 @@ def _extract_pdf(payload: bytes, url: str, max_pages: int, max_characters: int) 
 
 def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     heading_pattern = re.compile(
-        r"(?im)^(?:\d+(?:\.\d+)*\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|(?:system )?architecture|implementation|experimental setup|experimental protocol|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusion)\s*$"
+        r"(?im)^(?:\d+(?:\.\d+)*\.?\s+)?(abstract|introduction|contributions?|related work|background|method(?:s|ology)?|proposed method|(?:system )?architecture|implementation|experimental setup|experimental protocol|experiments?|evaluation|results(?: and discussion)?|ablation(?: study)?|limitations?|threats to validity|discussion|conclusions?)(?::[^\n]{1,100})?\s*$"
     )
+    numbered = re.compile(r"(?m)^\d{1,2}(?:\.\d{1,2})*\.?[ \t]+([A-Z][^\n]{2,110})$")
     sections: list[SelectedSection] = []
     current_heading = None
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
+        # Generic numbered titles terminate a known body section; never infer
+        # body evidence merely from an enumerated list inside an abstract.
+        body_starts = [m.start() for m in matches if m.group(1).lower() != "abstract"]
+        body_start = -1 if current_heading and current_heading.lower() != "abstract" else min(body_starts, default=len(page.text))
+        occupied = {m.start() for m in matches}
+        matches += [m for m in numbered.finditer(page.text)
+                    if m.start() > body_start and m.start() not in occupied
+                    and not m.group(1).rstrip().endswith((".", ";", ","))]
+        matches.sort(key=lambda m: m.start())
         prefix = page.text[:matches[0].start()] if matches else page.text
         if current_heading and prefix.strip():
             sections.append(SelectedSection(current_heading, prefix.strip(), page.page))

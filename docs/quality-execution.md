@@ -1,0 +1,13 @@
+# Scientific quality execution
+
+The admission policy remains high relevance AND a manuscript-grounded scientific quality pass. Numeric scores, prestige and publication status cannot grant admission. The six evidence dimensions and rubric are unchanged.
+
+Quality requests use strict JSON Schema and local validation, with a maximum of two same-model requests per paper: initial plus one transient retry. HTTP 408/429/5xx, DNS/network/timeout/incomplete-body/connection failures can retry. Other HTTP errors and invalid model answers do not. Retry-After is respected; a delay over 60 seconds ends this attempt instead of retrying early. There is no automatic repair or model substitution.
+
+The persisted `execution` ledger separates transport, protocol, evidence-validation, manuscript-access and scientific outcomes. Calls retain safe numeric usage, finish reasons, content hashes/lengths and response IDs; no credentials or hidden reasoning are saved. Missing billing fields are unknown, including for failed requests. A failed model execution does not count as full-text scientific assessment. Repeating a stored failed assessment in the same version uses the existing cache; explicit new assessment versions allow bounded recovery while preserving history.
+
+Anchors require normalized contiguous text visible in a non-Abstract manuscript section. Normalization handles Unicode compatibility/quotes, whitespace, line-break hyphens and spacing just inside brackets. It does not collapse word boundaries, remove arbitrary punctuation, alter numbers, use edit distance or join omitted passages. A mismatched page can be corrected only to a unique eligible section; the persisted anchor records that actual section/page.
+
+Full text ordinarily comes from PDFs. An explicitly supplied public Europe PMC `fullTextXML` URL also supports JATS article-body sections. Its Page labels are logical XML section numbers, never asserted PDF pagination. Source URL, content hash and the location warning survive the standard cache and assessment provenance. Downloads and extraction retain the existing size, section/page and character bounds; declarations/entities and non-article bodies are rejected.
+
+For a bounded recovery, use `reassess-quality --paper-id ID --limit 1 --assessment-version VERSION --full-text --mode llm --model MODEL` for each saved ID, reusing cached manuscripts. Keep an external manifest/cost bound and audit scientific decisions before publishing. `paper-scout.yml` can publish committed reviewed sites with `deploy_only=true`; its default daily discovery behavior is unchanged.

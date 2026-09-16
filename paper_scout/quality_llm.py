@@ -2,6 +2,10 @@ from __future__ import annotations
 
 from dataclasses import replace
 from datetime import UTC, datetime
+import hashlib
+import re
+import time
+import unicodedata
 import json
 import logging
 import math
@@ -9,7 +13,7 @@ import os
 from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText
-from paper_scout.http import HttpClient
+from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.models import PaperCandidate
 from paper_scout.quality_models import QUALITY_GATE_VERSION, REQUIRED_GATE_DIMENSIONS, QUALITY_DIMENSIONS, PAPER_TYPES, QualityAssessment, QualityEvidence, recommendation_for_score
@@ -32,31 +36,85 @@ def assess_with_optional_quality_llm(
     settings = openai_compatible_settings_from_env("PAPER_SCOUT_QUALITY_LLM_MODEL")
     if settings is None:
         return deterministic
-    try:
-        payload = _request_payload(candidate, selected, deterministic, settings.model)
-        if (urlsplit(settings.base_url).hostname == "openrouter.ai"
-                and os.environ.get("PAPER_SCOUT_QUALITY_LLM_REASONING", "").lower() == "off"):
+    if selected.scope not in {"full_text", "partial_full_text"}:
+        return replace(deterministic, quality_status="uncertain",
+                       quality_rationale="Scientific quality could not be assessed because manuscript-level evidence was unavailable.",
+                       execution={"outcome": "manuscript_unavailable", "calls": []})
+    payload = _request_payload(candidate, selected, deterministic, settings.model)
+    if urlsplit(settings.base_url).hostname == "openrouter.ai":
+        payload["provider"] = {"require_parameters": True}
+        if os.environ.get("PAPER_SCOUT_QUALITY_LLM_REASONING", "").lower() == "off":
             payload["reasoning"] = {"enabled": False, "exclude": True}
-        headers = {"Authorization": f"Bearer {settings.api_key}"}
-        # Retrying a timed-out paid POST can charge twice for the same paper.
-        # A later explicit reassessment may retry; the automatic path never does.
-        # HttpClient.retries is the total attempt count (range(1, retries + 1)).
-        client = http or HttpClient(timeout_seconds=QUALITY_HTTP_TIMEOUT_SECONDS, retries=1)
+    headers = {"Authorization": f"Bearer {settings.api_key}"}
+    # One initial call plus at most one transient retry. No nested HTTP retries,
+    # model substitution, or semantic regeneration/repair of invalid answers.
+    client = http or HttpClient(timeout_seconds=QUALITY_HTTP_TIMEOUT_SECONDS, retries=1)
+    if type(getattr(client, "retries", None)) is int and client.retries != 1:
+        raise ValueError("quality HTTP client must use one attempt per call")
+    calls = []
+    outcome = "protocol_failure"
+    for attempt in range(2):
+        call = {"kind": "initial" if attempt == 0 else "retry", "status": "failed",
+                "usage": _reported_usage({})}
+        calls.append(call)
         LOGGER.info("Quality model request %s", json.dumps({
             "canonical_id": deterministic.canonical_id, "model": settings.model,
-            "max_output_tokens": QUALITY_MAX_OUTPUT_TOKENS, "attempt_limit": 1,
+            "max_output_tokens": QUALITY_MAX_OUTPUT_TOKENS, "attempt_limit": 2,
+            "attempt": attempt + 1, "kind": call["kind"],
         }, sort_keys=True))
-        response = json.loads(client.post_json(f"{settings.base_url}/chat/completions", payload, headers=headers))
-        LOGGER.info("Quality model usage %s", json.dumps({
-            "canonical_id": deterministic.canonical_id, "model": settings.model,
-            **_reported_usage(response),
-        }, sort_keys=True))
-        content = response["choices"][0]["message"]["content"]
-        parsed = json.loads(_strip_json_fence(content))
-        return validate_llm_quality_response(parsed, deterministic, settings.model, mode, selected=selected)
-    except Exception as exc:  # noqa: BLE001 - malformed or unavailable LLM output must not fail a run.
-        LOGGER.warning("Quality LLM assessment failed for %s: %s", candidate.title, exc)
-        return deterministic
+        try:
+            raw = client.post_json(f"{settings.base_url}/chat/completions", payload, headers=headers)
+            response = json.loads(raw)
+            if not isinstance(response, dict):
+                raise ValueError("response envelope must be an object")
+            call["usage"] = _reported_usage(response)
+            call["response_id"] = response.get("id") if isinstance(response.get("id"), str) else None
+            LOGGER.info("Quality model usage %s", json.dumps({
+                "canonical_id": deterministic.canonical_id, "model": settings.model,
+                **call["usage"],
+            }, sort_keys=True))
+            if isinstance(response.get("error"), dict):
+                code = response["error"].get("code")
+                raise HttpRequestError("http", settings.base_url, "provider error envelope",
+                                       status_code=code if type(code) is int else None)
+            choice = response["choices"][0]
+            call["finish_reason"] = choice.get("finish_reason")
+            content = choice["message"]["content"]
+            call["content_characters"] = len(content)
+            call["content_sha256"] = hashlib.sha256(content.encode()).hexdigest()
+            if choice.get("finish_reason") not in {"stop", None}:
+                raise ValueError("response did not finish normally")
+            parsed = validate_manual_quality_review(json.loads(_strip_json_fence(content)))
+            result = validate_llm_quality_response(parsed, deterministic, settings.model, mode, selected=selected)
+            call["status"] = "success"
+            outcome = result.execution["outcome"]
+            return replace(result, execution={**result.execution, "calls": calls, "attempt_limit": 2})
+        except HttpRequestError as exc:
+            outcome = "transport_failure"
+            call.update(error_kind=exc.kind, http_status=exc.status_code,
+                        retry_after_seconds=exc.retry_after_seconds)
+            transient = exc.kind in {"dns", "network", "timeout", "incomplete_response", "connection_error"} or (
+                exc.kind == "http" and (exc.status_code in {408, 429} or
+                                        (exc.status_code is not None and 500 <= exc.status_code <= 599)))
+            delay = max(2.0 * 2 ** attempt, exc.retry_after_seconds or 0)
+            if transient and attempt == 0 and delay <= 60:
+                call["backoff_seconds"] = delay
+                time.sleep(delay)
+                continue
+        except Exception as exc:  # malformed output must not abort the run or become insufficient.
+            outcome = "protocol_failure"
+            call["error_kind"] = type(exc).__name__
+            if isinstance(exc, json.JSONDecodeError):
+                call["json_error"] = {"line": exc.lineno, "column": exc.colno, "position": exc.pos}
+        break
+    LOGGER.warning("Quality execution failed %s", json.dumps({
+        "canonical_id": deterministic.canonical_id, "outcome": outcome, "calls": calls,
+    }, sort_keys=True))
+    return replace(deterministic, assessor_type="hybrid" if mode in {"auto", "hybrid"} else "llm",
+                   assessor_model=settings.model, quality_status="uncertain",
+                   quality_rationale="Scientific quality could not be assessed because of a " + outcome.replace("_", " ") + ".",
+                   quality_uncertainty="The execution ledger records the failed attempts; no scientific judgment was inferred.",
+                   execution={"outcome": outcome, "calls": calls, "attempt_limit": 2})
 
 
 def _reported_usage(response: dict) -> dict:
@@ -140,13 +198,9 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
         e = QualityEvidence.from_dict(dict(item))
         # Only a located manuscript excerpt can ground admission. Abstract
         # echoes, invented quotes and unavailable pages cannot qualify.
-        if selected and e.excerpt and e.page and any(
-            section.first_page == e.page and section.heading.lower() != "abstract"
-            and _normalized(e.excerpt) in _normalized(section.text)
-            and _normalized(e.excerpt) in _normalized(selected.text)
-            for section in selected.sections
-        ):
-            evidence.append(e)
+        located = locate_evidence(e, selected) if selected else None
+        if located:
+            evidence.append(located)
     positive = {e.dimension for e in evidence if e.signal_type == "positive"}
     valid = bool(selected and selected.scope in {"partial_full_text", "full_text"}
                  and assessment.assessor_type in {"llm", "hybrid", "manual_override"}
@@ -155,17 +209,49 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
         valid = valid and REQUIRED_GATE_DIMENSIONS <= positive and assessment.confidence in {"medium", "high"}
     elif status == "insufficient":
         valid = valid and any(e.signal_type == "concern" for e in evidence)
-    if status in {"pass", "insufficient"} and not valid:
+    rejected = status in {"pass", "insufficient"} and not valid
+    if rejected:
         status = "uncertain"
         rationale = "The proposed decision lacked sufficient located manuscript evidence; review is pending."
         uncertainty = "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
     return replace(assessment, quality_status=status, quality_rationale=rationale,
                    quality_uncertainty=uncertainty, quality_gate_version=QUALITY_GATE_VERSION,
-                   evidence=evidence if status in {"pass", "insufficient"} else assessment.evidence)
+                   evidence=evidence if status in {"pass", "insufficient"} else assessment.evidence,
+                   execution={"outcome": "evidence_validation_failure" if rejected else "scientific",
+                              "proposed_status": str(value.get("quality_status", "uncertain")),
+                              "submitted_anchors": len(value.get("evidence") or []),
+                              "validated_anchors": len(evidence),
+                              "validated_dimensions": sorted(positive)})
 
 
 def _normalized(text: str) -> str:
-    return " ".join(text.casefold().split())
+    text = unicodedata.normalize("NFKC", text).casefold().replace("\u00ad", "")
+    text = text.translate(str.maketrans({"‘": "'", "’": "'", "“": '\"', "”": '\"', "‐": "-", "‑": "-"}))
+    # Only a hyphen at a physical line break can join a split word. Preserve
+    # ordinary hyphens, punctuation, numbers and word boundaries.
+    text = re.sub(r"(?<=[^\W\d_])[ \t]*-[ \t]*\r?\n[ \t]*(?=[^\W\d_])", "", text)
+    text = re.sub(r"([([{])\s+", r"\1", text)
+    text = re.sub(r"\s+([)\]}])", r"\1", text)
+    return " ".join(text.split())
+
+
+def locate_evidence(e: QualityEvidence, selected: SelectedPaperText) -> QualityEvidence | None:
+    """Exact normalized, visible, non-abstract evidence; never semantic/fuzzy matching."""
+    if not e.excerpt or not e.page or not _normalized(e.excerpt):
+        return None
+    quote = _normalized(e.excerpt)
+    if quote not in _normalized(selected.text):
+        return None
+    matches = [s for s in selected.sections if s.heading.casefold() != "abstract"
+               and quote in _normalized(s.text)]
+    claimed = [s for s in matches if s.first_page == e.page]
+    if len(claimed) == 1:
+        match = claimed[0]
+    elif len(matches) == 1:
+        match = matches[0]
+    else:
+        return None
+    return replace(e, page=match.first_page, section=match.heading)
 
 
 def quality_review_schema() -> dict:
@@ -231,7 +317,8 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "Every major judgment needs evidence; distinguish missing text from absent evidence. Do not invent sections or accuse authors of misconduct. "
         "A pass requires substantive manuscript evidence of contribution clarity, methodological rigor, validation of the central claims, "
         "claim/evidence alignment, related-work comparisons (or justified absence for this type), and limitations/scope. "
-        "Supply positive evidence objects for all six dimensions, each with an exact brief excerpt and the supplied section start page. "
+        "Supply positive evidence objects for all six dimensions, each with a short CONTIGUOUS exact excerpt copied from a supplied non-Abstract section and its [Page] label. "
+        "Copy 20-200 characters per excerpt, including extracted spacing and punctuation; never join passages with ellipses, correct wording, summarize tables as quotations, or invent evidence. "
         "For related_work_and_gap_positioning explain whether the comparisons are adequate for the actual claims. "
         "Do not infer evidence from keywords, a convincing abstract, DOI, publication status or institutional affiliation. "
         "Independent authors and preprints face identical scientific criteria. Lack of public code alone is not a failure. "
@@ -243,6 +330,8 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "model": model,
         "max_tokens": QUALITY_MAX_OUTPUT_TOKENS,
         "temperature": 0,
+        "response_format": {"type": "json_schema", "json_schema": {"name": "scientific_quality",
+                              "strict": True, "schema": _strict_schema(quality_review_schema())}},
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": json.dumps(prompt)}],
     }
 
@@ -258,3 +347,19 @@ def _strip_json_fence(content: str) -> str:
 
 def _ordered_unique(values: list[str]) -> list[str]:
     return list(dict.fromkeys(value for value in values if value))
+
+
+def _strict_schema(schema: dict) -> dict:
+    """Provider strict mode requires every declared property to be required."""
+    value = json.loads(json.dumps(schema))
+    def visit(node):
+        if isinstance(node, dict):
+            if node.get("type") == "object":
+                node["required"] = list(node.get("properties", {}))
+            for child in node.values():
+                visit(child)
+        elif isinstance(node, list):
+            for child in node:
+                visit(child)
+    visit(value)
+    return value

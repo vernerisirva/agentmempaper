@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-06 09:42:09",
-    "generated_at": "2026-09-16 16:58:08",
+    "generated_at": "2026-09-16 17:43:17",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -130,85 +130,130 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "Our contributions are threefold: \u2022We conduct a systematic empirical study of conditional memory in scientific reasoning across biological and chemical domains, two backbone families, and six task types.",
         "explanation": "This excerpt shows the authors clearly enumerate the main contributions, which supports contribution clarity.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper explicitly states its threefold contributions, including a systematic empirical study, boundary characterization, and a boundary-aware routing mechanism.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [],
         "excerpt": "Existing work emphasizes aggregate gains and we study when mem- ory is needed and causally useful at scientific boundaries.",
         "explanation": "This excerpt positions the work against existing memory-augmented LLM research and states the novel focus on boundary-dependent utility.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper identifies a gap in existing work by noting that prior studies emphasize aggregate gains rather than when memory is causally useful at scientific boundaries.",
         "section": "Conditional Memory-Based Llms",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "bA i =1[E ans(Mbase(xi),yi)<\u03c4 A],(1) bR i =1[E step(Mbase(xi),yi)<\u03c4 R],(2) bP i =1[C i <\u03c4 P ].(3)",
         "explanation": "This excerpt shows a formal definition of the boundary code, supporting methodological rigor in the analysis framework.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The behavioral boundary characterization is formalized with explicit indicators for final-answer failure, reasoning-step failure, and prediction instability.",
         "section": "Behavioral Scientific Knowledge Boundary",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "The empirical feature-based Data Router outperforms the Random Router in every displayed setting and provides a stronger trade-off than the fixed Always OFF and Always ON configurations.",
         "explanation": "This excerpt reports an ablation that isolates the effect of input-dependent routing from activation rate, strengthening evaluation validity.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The external data router is compared against activation-rate-matched random routing and static configurations, showing that gains depend on which samples activate memory.",
         "section": "External Routing Versus",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "Bio prediction-instability co- horts improve by 2.09 and 1.82 points, whereas the corre- sponding Chem cohorts decline by 4.45 and 3.81 points; Chem reasoning-failure-positive examples, in contrast, im- prove by 4.71 points.",
         "explanation": "This excerpt provides quantitative evidence that memory effects change sign across cohorts, aligning with the central claim of conditional utility.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The paper reports mixed memory effects across boundary cohorts, with gains in some regimes and regressions in others, directly supporting the claim that memory utility is non-uniform.",
         "section": "Boundary-Dependent Memory Effects",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Sparse key-value layers ex- pandcapacity(Lampleetal.2019)andlookup-basedcondi- tional memory, instantiated by Engram, uses suffixn-gram lookupasacomplementarysparsityaxis(Chengetal.2026).",
         "explanation": "This excerpt shows explicit comparison with sparse key-value layers, memory-expert architectures, datastore methods, and activation-based memories, positioning the gap adequately for the paper's claims.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper situates conditional memory within prior memory-augmented LLM approaches and distinguishes its focus on boundary-dependent causal utility.",
         "section": "Conditional Memory-Based Llms",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [],
         "excerpt": "When available, repeated-run variationisreportedasmean\u00b1standarddeviation.BoldindicatesthebestresultwithineachQwen-familyblockineachcolumn.",
         "explanation": "This excerpt shows that repeated-run standard deviations are reported, which supports transparency in evaluation.",
         "page": 5,
+        "pages": [],
         "paraphrase": "The paper reports repeated-run variation and specifies the benchmarks, models, and baselines used.",
         "section": "Datasets",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "Because this is a same-cohort offline replay, it provides mechanism- level validation rather than an independent generalization estimate.",
         "explanation": "This excerpt shows the authors acknowledge a limitation of the internal router evaluation, supporting limitations handling.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The paper explicitly states that the internal router validation is a same-cohort offline replay and therefore provides mechanism-level rather than independent generalization evidence.",
         "section": "Internal Routing Of Knowledge-Circuit Nodes",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "presentation_and_precision",
+        "evidence_ids": [],
         "excerpt": "bhi,\u03c4,l,s =h i,\u03c4,l,s +\u03c0t(xi)uL i,luS i,s \u00b7ai,l,sgi,\u03c4,l,s\u2206mi,\u03c4,l,s, (13)",
         "explanation": "This excerpt shows precise mathematical definitions of the memory injection and routing mechanism, supporting presentation precision.",
         "page": 4,
+        "pages": [],
         "paraphrase": "The paper provides formal notation for the knowledge-circuit node update and the routed hidden-state update.",
         "section": "Internal Boundary-Aware Parameter Routing",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

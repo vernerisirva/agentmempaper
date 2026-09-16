@@ -49,7 +49,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:10",
-    "generated_at": "2026-09-16 16:58:07",
+    "generated_at": "2026-09-16 17:43:16",
     "last_seen_at": "2026-09-15 12:04:19",
     "metadata_sources": [
       "openalex",
@@ -137,76 +137,116 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "We presentAuto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys supports the full experiment lifecycle, from idea formulation and implementation to validation, training, monitoring, debugging, and result analysis.",
         "explanation": "The introduction clearly defines the problem setting and the proposed system, making the contribution unambiguous.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper explicitly states its contribution as an autonomous research system for long-horizon experimentation on industry-scale recommendation models.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [],
         "excerpt": "Auto-RecSys is built around an agent harness that manages how research agents schedule experiments, preserve state, interact with infrastructure, recover from failures, and reuse accumulated execution knowledge.",
         "explanation": "The novelty lies in extending autonomous research to industry-scale, long-horizon experimentation with distributed parallel execution and persistent recovery, which is differentiated from prior small-scale systems.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper identifies a distinct operating regime for autonomous research and proposes three harness designs plus a dual-loop self-evolving architecture.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "The state machine enforces preconditions on each transition and triggers side effects, such as recording results to the experiment history when an idea is finalized and updating dead ends and pipeline recipes in the playbook.",
         "explanation": "The use of deterministic scripts for state transitions and structured data formats for state files demonstrates methodological care for operational correctness.",
         "page": 5,
+        "pages": [],
         "paraphrase": "The system design is grounded in a finite state machine with enforced preconditions and side effects, and a centralized memory store with structured data formats.",
         "section": "The Experiment State Machine",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "After absorbing these transition-specific lessons, the post-transition phase (iterations 26 to 31) reached 0.5 major fixes per iteration, with 5 of its 6 iterations requiring no operational fix at all, surpassing even the pre-transition stabilized performance.",
         "explanation": "The evaluation provides concrete, measurable evidence of improved execution reliability as the playbook matures, directly supporting the central claim.",
         "page": 11,
+        "pages": [],
         "paraphrase": "The paper reports quantitative metrics over 31 experiment iterations, showing a reduction in major fix steps from 4.0 to 0.5 per iteration and a zero-fix rate of 5 out of 6 in the post-transition phase.",
         "section": "Playbook Evolution And Execution Reliability",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "In human-in-the-loop mode, the researcher stays in control at two review checkpoints, idea selection and implementation review, and delegates the remaining execution, meaning validation, submission, monitoring, failure recovery, and analysis, to the system; for an idea of the same complexity, this reduces hands-on effort to minutes.",
         "explanation": "The paper explicitly states that human-in-the-loop mode reduces hands-on effort to minutes and autonomous mode minimizes it further, aligning with the claimed benefit of higher researcher throughput.",
         "page": 10,
+        "pages": [],
         "paraphrase": "The claim of reduced human time per experiment cycle is supported by a qualitative comparison between manual and autonomous modes.",
         "section": "Human Bandwidth Per Idea",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Auto-RecSys studies a different operating regime: industry-scale recommendation models whose training takes hours or days, de- pends on complex infrastructure, and requires comparison against continuously evolving baselines.",
         "explanation": "The related work section compares Auto-RecSys against systems like AI Scientist, AutoResearch, FARS, and agent harness frameworks, and explicitly states the different operating regime.",
         "page": 13,
+        "pages": [],
         "paraphrase": "The paper extensively reviews prior autonomous research systems and agent harnesses, and clearly positions the gap for industry-scale, long-horizon experimentation.",
         "section": "Related Work",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "A notable gap relative to SkillOpt (Yang et al., 2026) is the absence of a formal validation gate for playbook updates. SkillOpt\u2019s ablation shows that removing the validation gate degrades performance. Auto-RecSys currently accepts playbook updates unconditionally based on agent judgment.",
         "explanation": "The discussion section acknowledges gaps relative to SkillOpt and proposes future work for adaptive human-in-the-loop, demonstrating awareness of limitations.",
         "page": 14,
+        "pages": [],
         "paraphrase": "The paper explicitly discusses limitations, including the absence of a formal validation gate for playbook updates and the binary human-in-the-loop toggle.",
         "section": "Discussion And Future Work",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "presentation_and_precision",
+        "evidence_ids": [],
         "excerpt": "Major fix step.A session log step spent recovering from anoperationalfailure, such as a failed or resubmitted training job, a wrong hardware or entitlement setting, a package layer version mismatch, a metadata correction, or a baseline refresh.",
         "explanation": "The definitions of evaluation metrics are explicit and operationalized, contributing to clarity and precision.",
         "page": 11,
+        "pages": [],
         "paraphrase": "The paper uses precise terminology and defines metrics clearly, such as session log step, major fix step, and zero-fix rate.",
         "section": "Playbook Evolution And Execution Reliability",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

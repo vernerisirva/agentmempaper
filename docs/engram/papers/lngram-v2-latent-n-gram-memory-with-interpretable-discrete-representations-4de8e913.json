@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:27",
-    "generated_at": "2026-09-16 16:58:08",
+    "generated_at": "2026-09-16 17:43:17",
     "last_seen_at": "2026-09-15 12:07:52",
     "metadata_sources": [
       "openalex",
@@ -128,94 +128,144 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "Lngram v1 nevertheless has two limitations. First, its route count is coupled with backbone width, causing memory size and readout cost to increase with model dimension and limiting scalability.",
         "explanation": "The introduction clearly identifies the two limitations of Lngram v1 and states what Lngram v2 proposes to address.",
         "page": 1,
+        "pages": [],
         "paraphrase": "The contribution is stated explicitly and distinguished from Lngram v1.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "Lngram v2 discretizes the hidden states through an independent projection: U= RMSNorm(H), Z=UW q, W q\u2208R d\u00d7RM, whereRis the number of routes andMis the number of bits per route.",
         "explanation": "The multi-route discrete addressing section provides equations defining the discretization projection and symbol packing.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The proposed mechanism is described with formal notation.",
         "section": "Multi-Routediscreteaddressing",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "We also construct a parameter-matched Sparse FFN to determine whether the gains can be explained by additional parameters or sparse computational capacity.",
         "explanation": "The authors construct a Sparse FFN with nearly identical parameter and activation counts to test whether gains are due to added capacity alone.",
         "page": 7,
+        "pages": [],
         "paraphrase": "A parameter-matched control isolates the effect of the proposed mechanism.",
         "section": "Mainresults",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Paired statistical tests on Keye30B yield a 95% confidence interval of[0.86,2.11]for the aver- age improvement. After Holm (Holm, 1979) correction, AI2D and MMBench-EN remain statisti- cally significant",
         "explanation": "The Keye2B results use three seeds with mean and standard deviation, and Keye30B results include paired statistical tests with confidence intervals.",
         "page": 8,
+        "pages": [],
         "paraphrase": "Multi-seed results and statistical tests are reported.",
         "section": "Mainresults",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "In contrast, the parameter-matched Sparse FFN obtains only 45.86 despite nearly identical numbers of additional total and activated parameters. These results indicate that the gains of Lngram v2 cannot be simply attributed to additional parameters or sparse compu- tational capacity.",
         "explanation": "The parameter-matched Sparse FFN underperforms Lngram v2 despite nearly identical parameter and activation counts, supporting the claim that the mechanism itself contributes.",
         "page": 8,
+        "pages": [],
         "paraphrase": "The claim that gains are not due to added parameters is directly tested.",
         "section": "Mainresults",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Its addresses, however, depend on tokenizer IDs and fixed hashing, making the mechanism sensitive to tokenization boundaries, hash collisions, and difficult to extend uniformly beyond text. Lngram v1 instead discretizes hidden states into learnable symbols",
         "explanation": "The introduction contrasts Lngram v1 with token-ID n-gram memory and explains why latent addressing is needed for multimodal inputs.",
         "page": 1,
+        "pages": [],
         "paraphrase": "The paper positions itself against prior conditional memory and lookup mechanisms.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "To exclude nuisance-driven correlations, we additionally perform 500 document-level permutations of the reference signatures under the same nuisance conditions. In all six settings, the observed AP exceeds every permuted result.",
         "explanation": "The ID-only semantic readout is validated with a strict reference/held-out protocol and Monte Carlo permutation tests to exclude nuisance-driven correlations.",
         "page": 6,
+        "pages": [],
         "paraphrase": "Semantic analysis uses reference/held-out separation and permutation testing.",
         "section": "Readinghidden-Statesemantics Fromlngramidsalone",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "Based on this observation, in our formal comparison experiments we introduce Lngram v2 only after the model has entered the middle stage of training and its cross-modal representations have become more stable, rather than adding the module from the beginning of pretraining.",
         "explanation": "The appendix analysis identifies that introducing Lngram v2 too early in training is unfavorable, and the authors adjust their formal experiments accordingly.",
         "page": 20,
+        "pages": [],
         "paraphrase": "Training-stage sensitivity is acknowledged and addressed.",
         "section": "Text Keye2B 0.006358 0.11245 2.356",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Table 3 shows that increasing the number of routes is generally effective with modest activation overhead. Withm= 4and KV8 fixed, increasing routes from r16 to r64 improves the average from 54.20 to 55.71",
         "explanation": "Table 3 reports configurations varying routes, bits, KV heads, and memory dimension, with parameter counts and benchmark scores.",
         "page": 8,
+        "pages": [],
         "paraphrase": "Ablation studies isolate architectural hyperparameters.",
         "section": "Ablationstudies",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [],
         "excerpt": "On Keye30B, Lngram v2 improves the ten-benchmark average from 78.23 to 79.71, a gain of 1.48 points, demonstrating that the method scales to the 30B regime.",
         "explanation": "The Keye30B results show a 1.48-point average improvement across ten benchmarks, supporting the scalability claim.",
         "page": 8,
+        "pages": [],
         "paraphrase": "The work demonstrates scalability to a 30B-parameter model.",
         "section": "Mainresults",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

@@ -50,7 +50,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:07",
-    "generated_at": "2026-09-16 16:58:07",
+    "generated_at": "2026-09-16 17:43:16",
     "last_seen_at": "2026-09-15 12:04:19",
     "metadata_sources": [
       "openalex",
@@ -142,76 +142,116 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "We introduce Mr.LHDR (Multimodal real-world Long-Horizon Deep Research), a benchmark for real-world open-web research tasks. Mr.LHDR contains 102 questions across eight categories.",
         "explanation": "The introduction clearly defines Mr.LHDR as a benchmark for long-horizon multimodal deep research and lists three design principles and three contributions.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The benchmark contribution is explicitly stated with its scope and distinguishing features.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [],
         "excerpt": "MM-BrowseComp-style tasks add multimodal browsing, but remain concentrated on short- to medium-horizon research: MM-BrowseComp contains only 3.0 checklist items per question on average (Li et al., 2025d), leaving long chains of dependent evidence steps largely untested.",
         "explanation": "The paper contrasts Mr.LHDR with existing benchmarks such as MM-BrowseComp, which averages only 3.0 checklist items per question, and positions the contribution around prerequisite-linked evidence structures.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The benchmark fills an identified gap in long-horizon, dependency-heavy multimodal research evaluation.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "Table 2: Quality gates applied before an item enters the Mr.LHDR evaluation set. These gates operationalize answer uniqueness, no path leakage, irreducibility, source support, multimodal necessity, shortcut filtering, and metadata consistency.",
         "explanation": "The paper describes answer uniqueness, no path leakage, irreducible checklist, source support, multimodal necessity, shortcut filtering, and metadata audit gates, with a structured validation protocol.",
         "page": 8,
+        "pages": [],
         "paraphrase": "The construction pipeline includes explicit quality gates and a four-stage validation protocol.",
         "section": "Related Work",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Table 4: Main Mr.LHDR results for all 25 systems in the current evaluation scope, grouped by model capability. Overall columns report final-answer accuracy (OA), strict answer-and-process accuracy (SA), checklist score (CS), and dependency-aware checklist score (DACS).",
         "explanation": "The main results table reports OA, SA, CS, and DACS for tool-augmented VLMs, tool-free VLMs, deep research systems, and framework-based agents.",
         "page": 11,
+        "pages": [],
         "paraphrase": "The evaluation includes 25 systems across four model groups with four complementary metrics.",
         "section": "Experimental Setup",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "GPT-5.5 drops from 43.1% OA to 34.3% SA, a gap of 8.8 points. Similarly, o4-mini drops from 35.3% OA to 20.6% SA, a gap of 14.7 points, and o3 Deep Research drops from 32.4% OA to 19.6% SA, a gap of 12.8 points.",
         "explanation": "The paper reports specific OA-to-SA drops for representative systems, such as GPT-5.5 from 43.1% OA to 34.3% SA, supporting the claim that correct final answers often coexist with missing required conclusions.",
         "page": 11,
+        "pages": [],
         "paraphrase": "The central claim that final-answer accuracy overstates complete task success is directly supported by OA-SA gaps.",
         "section": "Experimental Setup",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Table 1 compares Mr.LHDR with representative short-answer browsing and structured-search benchmarks in terms of retrieval setting, multimodal requirements, output form, gold intermediate structure, and prerequisite-gated scoring.",
         "explanation": "Table 1 compares Mr.LHDR with BrowseComp, MM-BrowseComp, MMSearch-Plus, BrowseComp-V 3, DeepSearchQA, and MC-Search on retrieval setting, multimodal requirements, output form, gold structure, and prerequisite-gated scoring, which is adequate for the benchmark's claims.",
         "page": 5,
+        "pages": [],
         "paraphrase": "The related-work section compares Mr.LHDR with representative benchmarks along relevant dimensions.",
         "section": "Related Work",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "Because these metrics neither observe the agent\u2019s internal reasoning nor establish that a stated conclusion came from actual retrieval, they evaluate dependency-consistent stated conclusions rather than actual evidence-chain completion.",
         "explanation": "The paper clarifies that DACS evaluates dependency-consistent stated conclusions rather than actual evidence-chain completion, avoiding overclaiming about retrieval provenance.",
         "page": 3,
+        "pages": [],
         "paraphrase": "The authors explicitly state what DACS does and does not measure.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "presentation_and_precision",
+        "evidence_ids": [],
         "excerpt": "CS rises from 26.9% to 39.3% (gain 12.4, 95% CI [6.9, 18.3]), while DACS rises from 21.6% to 34.2% (gain 12.6, CI [6.9, 18.9]).",
         "explanation": "Equations 1-5 define OA, SA, CS, and DACS, and the image ablation reports 95% bootstrap CIs with a specified seed.",
         "page": 12,
+        "pages": [],
         "paraphrase": "The paper provides formal metric definitions and reports bootstrap confidence intervals for the ablation.",
         "section": "Experimental Setup",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

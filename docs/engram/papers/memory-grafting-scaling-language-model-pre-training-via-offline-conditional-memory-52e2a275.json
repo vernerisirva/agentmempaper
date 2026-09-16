@@ -43,7 +43,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:20",
-    "generated_at": "2026-09-16 16:58:08",
+    "generated_at": "2026-09-16 17:43:17",
     "last_seen_at": "2026-09-05 17:59:20",
     "metadata_sources": [
       "arxiv"
@@ -473,112 +473,172 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "we propose Memory Grafting, which constructs conditional memory from a grafting model rather than learning the memory table entirely from scratch.",
         "explanation": "This clearly states the core contribution and distinguishes it from prior Engram work.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper explicitly defines Memory Grafting as constructing conditional memory from a grafting model rather than learning the memory table from scratch.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [],
         "excerpt": "We introduceMemory Grafting, a representation-level knowledge-transfer paradigm for scaling conditional memory.",
         "explanation": "This framing indicates a novel combination of conditional memory and offline knowledge transfer, distinct from RAG and KD.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The paper positions Memory Grafting as a representation-level knowledge-transfer paradigm that reuses pretrained model hidden states as external memory.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "we reduce the corresponding number of experts to keep the fair comparison. Across all experiments, we ensure that the number of trainable parameters follows Memory Grafting\u2264vanilla Engram\u2264MoE baseline.",
         "explanation": "This controlled comparison strengthens the validity of the benchmark gains.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The authors ensure matched trainable parameters across baselines by reducing the number of experts when adding grafting projections.",
         "section": "Experimental Setup",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Memory Grafting is best on all nine benchmarks: the average improves from51.95 for MoE and52.43 for vanilla Engram to53.86.",
         "explanation": "Multiple benchmarks and grafting-model variants provide evidence for the method's effectiveness.",
         "page": 7,
+        "pages": [],
         "paraphrase": "The paper reports benchmark results across nine tasks for the 2.8B setting and multiple grafting models for the 0.92B setting.",
         "section": "Main Results",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "the next-token logits, target token log-probability, and prediction set all change after grafting. Therefore, the grafted memory is not only retrieved, but also participates in the model's computation and directly affects its predictions.",
         "explanation": "This directly supports the claim that the recipient actually uses the grafted memory rather than ignoring it.",
         "page": 24,
+        "pages": [],
         "paraphrase": "Probe analysis shows that retrieved memory changes hidden states and output distributions at retrieval-hit positions.",
         "section": "Appendix: Probe Analysis",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "RAG relies on retrieval and longer augmented contexts at inference, shifting substantial overhead to deployment and increasing latency [14, 23, 57]. KD instead internalizes external knowledge into the student's parameters, but logits-based distillation during from-scratch pre-training requires running the teacher across the entire corpus",
         "explanation": "This positions the method relative to alternative knowledge-transfer approaches and motivates the offline construction design.",
         "page": 3,
+        "pages": [],
         "paraphrase": "The paper contrasts Memory Grafting with RAG and KD, noting that RAG adds inference overhead and KD requires running the teacher across the entire corpus.",
         "section": "Retrieval-Augmented Generation And Knowledge Distillation",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [],
         "excerpt": "Table 3: Architecture and training hyper-parameters for the 0.92B-class models.",
         "explanation": "This level of detail supports reproducibility of the experiments.",
         "page": 15,
+        "pages": [],
         "paraphrase": "The appendix provides detailed architecture and hyper-parameter tables for both model scales.",
         "section": "Appendix: Model Architecture And Hyper Parameters",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "We do not include a full comparison with knowledge distillation. A from-scratch distillation baseline at the same pre-training scale would require running a large teacher model over the full training corpus",
         "explanation": "This transparently addresses a significant evaluation gap.",
         "page": 25,
+        "pages": [],
         "paraphrase": "The limitations section explicitly acknowledges the absence of a full knowledge-distillation comparison and explains the compute constraints.",
         "section": "Appendix: Limitations",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "presentation_and_precision",
+        "evidence_ids": [],
         "excerpt": "the ablation in Figure?? shows that each component matters.",
         "explanation": "These presentation issues reduce precision and polish but do not affect the scientific content.",
         "page": 25,
+        "pages": [],
         "paraphrase": "The paper contains typographical errors and inconsistent references, such as 'Vallina' for 'Vanilla' and a broken figure reference.",
         "section": "Appendix: Future Work",
-        "signal_type": "concern"
+        "signal_type": "concern",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Memory Grafting is best on all nine benchmarks: the average improves from51.95 for MoE and52.43 for vanilla Engram to53.86.",
         "explanation": "Single-run point estimates make it difficult to assess whether the reported gains are robust.",
         "page": 7,
+        "pages": [],
         "paraphrase": "The paper does not report statistical significance or variance for benchmark results.",
         "section": "Main Results",
-        "signal_type": "concern"
+        "signal_type": "concern",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "We do not include a full comparison with knowledge distillation.",
         "explanation": "This limits the comparative strength of the evaluation, though the omission is acknowledged.",
         "page": 25,
+        "pages": [],
         "paraphrase": "The paper omits a direct knowledge-distillation baseline, which would help assess the relative value of the transfer mechanism.",
         "section": "Appendix: Limitations",
-        "signal_type": "concern"
+        "signal_type": "concern",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "after memory grafting, the recipient begins to exhibit functions similar to the deep Qwen representations earlier in its own layer stack",
         "explanation": "This supports the claim that grafted memory leaves a measurable signature in recipient representations.",
         "page": 8,
+        "pages": [],
         "paraphrase": "CKA analysis shows stronger alignment between the recipient and deeper grafting-model layers after memory grafting.",
         "section": "Cka Analysis Of Memory Grafting",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

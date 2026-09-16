@@ -60,15 +60,216 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>The proposed decision lacked sufficient located manuscript evidence; review is pending.</p>
-      <p>Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations.</p>
+      <p>Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.</p>
+      <p>The primary uncertainty concerns the generalizability of the results given the small number of runs and the selected nature of the qualitative examples. The authors acknowledge that overlapping confidence intervals prevent resolving subgroup effects, but the aggregate claims rely on five paired runs for most configurations and three stateless runs for APEX baselines. Additionally, the paper does not report formal statistical significance tests for the main comparisons, relying instead on confidence intervals and descriptive differences. The absence of public code or data is not itself a failure, but it limits independent verification of the reported gains. These factors introduce scientific uncertainty about the robustness of the findings across different environments and model configurations.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-coverage-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T16:56:18+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-evidence-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T17:41:15+00:00.</p>
         <p>Coverage: 85654 of 85654 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li>The contribution is stated explicitly. — page 1</li><li>The available text identifies data or a benchmark used by the work. — page 4</li><li>Quantitative evaluation signals were detected. — page 1</li><li>The work reports an error or qualitative analysis. — page 5</li><li>Formal definitions or proof-oriented evidence is present. — page 2</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. — page 20</li><li>Comparative claims were detected without a suitable baseline in the available text.</li><li>The paper clearly states its three contributions: a diagnosis of trajectory-only generalization failure, a deployment-compatible propose-probe-commit curator agent, and a cost-aware evaluation. — page 2</li><li>The paper positions its contribution as orthogonal to existing memory systems, which change content, representation, retrieval, or rewriting but still operate over retrospective evidence. — page 3</li><li>The evaluation uses paired seeded runs, 95% Student-t confidence intervals, and a strict pass criterion requiring all rubric criteria to pass. — page 4</li><li>The paper evaluates across two benchmarks, four system configurations, and three model families, with both aggregate metrics and qualitative case studies. — page 4</li><li>The paper provides side-by-side trajectory evidence showing that probing reduces tool calls and improves correctness in matched tasks. — page 6</li><li>The paper organizes related work into factual memory, procedural memory, and evidence boundary, and identifies the gap that post-task curation operates mainly over retrospective evidence. — page 3</li><li>The paper provides detailed prompts, runtime architecture, benchmark construction, and run protocol in appendices. — page 9</li><li>The paper explicitly acknowledges that uncertainty intervals overlap and treats subgroup effects as mechanism interpretations rather than resolved effects. — page 6</li><li>The paper uses precise notation for the online setting, task agent, and curator agent, and defines the pass-discounted reward formula explicitly. — page 3</li></ul>
+        <ul><li><strong>Scholarly novelty or value — pages 1–3</strong><p>The proposed method is novel relative to prior agent-memory work because existing post-task curation operates mainly over completed trajectories, records, grades, and usage signals, whereas this work introduces environment probing as an orthogonal evidence source.</p><p>Assessor’s interpretation: supported. The related-work section explicitly identifies the evidence boundary in prior systems and positions the contribution as orthogonal. This supports a clear novelty claim grounded in the literature.</p><details><summary>Canonical source evidence</summary><blockquote>Claude Managed Agents Dreams, ACE,
+ReasoningBank,andReMeoperatesoversomecombination
+ofexistingrecords,completedtrajectories,feedback,andus-
+age signals (Chhikara et al. 2025; Anthropic 2026b; Zhang
+et al. 2025; Ouyang et al. 2025; Cao et al. 2026).
+This retrospective evidence boundary is fundamentally
+incomplete. A trajectory is a single, partial, and often
+mistake-laden observation of the environment. Its lemmas
+can (i) memorize an instance answer rather than its proce-
+dure,(ii)inheritaninefficientpath,(iii)assertanunverifiable
+scope, (iv) leave blind spots in unvisited regions, or (v) go
+stale as the world changes. Deferring verification to task
+time forces the responding agent to spend scarce tool calls
+rechecking uncertain memories rather than directly solving
+the current task.
+We therefore proposeenvironment-probing curation. Af-
+ter each task, the harness instantiates a post-task </blockquote><blockquote>still operates mainly over existing records,
+recorded trajectories, grades, and usage signals. Conse-
+quently,strongerreflectioncannotrecoverstatesthetaskpol-
+icyneverobservedordeterminewhetheratrajectory-derived
+ruleremainstrueafterenvironmentdrift.Ourcontributionis
+orthogonal: read-only world tools let either a factual or pro-
+cedural curator agent independently check a claim, re-enact
+a procedure, inspect omitted states, test scope, and refresh
+stale knowledge before writing.</blockquote></details></li><li><strong>Methodological rigor — page 4</strong><p>The experimental design uses paired seeded runs, fixed task-agent models and tools across memory conditions, and isolates the effect of curator-side probing by keeping the task-time memory interface identical.</p><p>Assessor’s interpretation: supported. The setup describes paired runs, shared shuffles, and identical task-time interfaces across memory conditions. This design supports causal attribution of performance differences to write-time evidence quality.</p><details><summary>Canonical source evidence</summary><blockquote>Systems and benchmarks.We compare four GitHub
+Copilot (GHCP) systems: GHCP (No Memory), GHCP +
+Full ICL, GHCP + Mem, and GHCP + Mem (w/ Env Prob-
+ing).FullICLprependspriortrajectories,whilebothmemory
+systems expose the samememory_readinterface; envi-
+ronment probing adds only read-only tools for the curator
+agentandthecorrespondinginstructions.CLBenchusestwo
+schedules(Asawaetal.2026).Theprimary40-questiondrift
+schedule hides a SQLite schema that changes after question
+20, testing reuse and stale-memory repair. The 30-question
+no-driftschedule fixes the schema, separating validation of
+stable joins and encodings from migration recovery; it eval-
+uates both memory systems on Sonnet 4.6 and Opus 4.7
+withpairedno-memorybaselines.Bothscheduleshidejoins
+and mix timestamp and price encodings; drift also renames
+fields and adds soft deletes. Adapted APEX contributes
+90 management-consulting </blockquote><blockquote>tasks from six shared document
+worlds, requiring PDF, XLSX, DOCX, and PPTX discov-
+ery,quantitativeanalysis,andMCP-styletools(Vidgenetal.
+2026).Theoriginalbenchmarkandleaderboardareavailable
+at https://www.mercor.com/apex/apex-agents-leaderboard/.
+Protocol and metrics.The primary CLBench and APEX
+experimentsusegpt-5.4;withineachexperiment,thetask
+agent,distiller,andcuratoragentsharethesamebasemodel.
+CLBench uses five paired seeded runs for every configu-
+ration; APEX uses five runs per stateful configuration and
+three stateless runs. We report run-level means with 95%
+Student-tconfidence intervals. The no-drift study holds the
+canonical 30-question order fixed and uses five paired runs
+per model–memory comparison; Appendix B details its un-
+certainty estimates.
+For taski, letp i ∈{0,1}be its binary pass score and
+letq i be the number of task-agent tool calls counted by the
+benchmark. </blockquote></details></li><li><strong>Evidence to claim alignment — pages 5, 13</strong><p>The qualitative memory-record comparisons show that probing converts answer-anchored warnings and stale schema names into executable procedures with explicit joins, filters, aggregation grain, and current schema names.</p><p>Assessor’s interpretation: supported. The side-by-side examples in Figure 3 and the accompanying text directly illustrate the claimed mechanism: trajectory-only records are less actionable, while probed records specify executable operations. This aligns evidence with the central claim.</p><details><summary>Canonical source evidence</summary><blockquote>probing raises drift CLBench re-
+ward from 20.00 to 22.60, lowers queries from 5.6 to 4.7,
+and reduces task-agent cost from $1.99 to $1.68. Without
+drift, mean reward rises from 0.673 to 0.748 on Sonnet and
+from 0.696 to 0.721 on Opus.
+Qualitative analysis of memory records.Figure 3 com-
+pares representative records rather than one-to-one rewrites.
+Trajectory-only curation records an answer-anchored warn-
+ing: &quot;Do not answer withAVG(items_g2.prc_usd)
+overnon-nullrows;thatproducesabout52.96,butthebench-
+mark&#x27;scorrectresultis96.23,soadifferentpricefieldand/or
+row subset is required.&quot; The probing curator instead records
+an executable procedure: &quot;Joinitems_g2totaxn_g2
+onref_id; filtercat_lvl=1and the exactcat_nm;
+keepitems_g2.prc&gt;0;thencompareagainstthefiltered
+AVG(prc).&quot; The same shift appears in the other records: a
+broadg1/g2/g3mapiscontrastedwithanexplicitref_id
+join and aggregation </blockquote><blockquote>Figure3showsexamplesfromtheCLBenchdatabase-explorationtaskrunsandthekindsofmemoriesgeneratedbythecurator
+agent. The left column samples trajectory-only curation; the right column samples the same memory schema when the curator
+agent can make targeted read-only environment probes. Record text is lightly shortened for layout, while table names, fields,
+relations, and values are preserved.
+GHCP + Mem
+T rajectory-only curator agent
+[trap]Answer-Anchored Warning
+applies_to:electronics average-listed-price questions
+lemma:Do not answer withAVG(items_g2.prc_usd)
+over non-null rows; that produces about 52.96, but the
+benchmark&#x27;s correct result is 96.23, so a different price field
+and/or row subset is required.
+[schema]Broad Map, Missing Relation
+applies_to:grouped product and review tables
+lemma:Across the grouped product/review tables,g1= office
+products,g2= electronics, andg3= musical </blockquote></details></li><li><strong>Limitations and uncertainty handling — page 6</strong><p>The paper acknowledges that probing gains vary across worlds and models, and that overlapping uncertainty intervals prevent treating subgroup differences as resolved effects.</p><p>Assessor’s interpretation: supported. The authors explicitly state that probing improves in five of six APEX worlds, that the largest increments vary, and that uncertainty intervals overlap, so the subgroup effect is treated as a mechanism interpretation rather than a resolved effect. This is a measured limitation statement.</p><details><summary>Canonical source evidence</summary><blockquote>each
+world[difficulty,N]cellshowspass-discountedrewardgain
+overathree-runno-memorybaselineperdollarofcandidate
+task-agent cost (top), then gain and mean cost/run over five
+candidate runs (bottom); costs exclude distillation/curation,
+calculationsuseunroundedmeans,andboldmarksthehigh-
+est ratio per world.
+where to search. Appendix E.1 gives the complete records;
+AppendicesE.2andE.3connectthemtotask-timebehavior.
+The effect depends on the remaining evidence gap.
+Probing improves over trajectory-only memory in five of
+six APEX worlds; the largest increments are+1.77in
+2a87e5cband+1.09in2f84c98b, while941eba66
+changes by−0.04(Table 2). Its additional no-drift gain is
+alsolargeronSonnet(+0.075)thanonOpus(+0.025).This
+variation is consistent with probing being most useful when
+a trajectory leaves a join, workbook location, or procedure
+unresolved, while adding little when the trajectory </blockquote><blockquote>already
+supportsanactionablerecord.Becauseuncertaintyintervals
+overlap, we treat this as a mechanism interpretation rather
+than a resolved subgroup effect.
+Matchedtrajectoriesconnectrecordstobehavior.Inthe
+matched CLBench task, no memory uses seven queries and
+fails,trajectory-onlymemoryusesnineandpasses,andprob-
+ing supplies a validatedref_idrelation and passes in two
+(Appendix E.2). In hard APEX, no memory uses 96 calls
+and fails both criteria; trajectory-only memory transfers the
+revenue-per-head procedure and passes in 11, while a vali-
+datedworkbookmapreducesprobingtosix(AppendixE.3).
+Theseselectedcasesdonotestablishtheaggregateeffect,but
+they illustrate how reusable computations and environment-
+informed maps replace task-time rediscovery with direct ex-
+ecution.</blockquote></details></li><li><strong>Reproducibility and transparency — pages 9–11</strong><p>The paper provides detailed prompts, runtime architecture, benchmark construction, metrics, and accounting in appendices, supporting reproducibility.</p><p>Assessor’s interpretation: supported. The appendices include the distiller prompt, curator prompts, runtime lifecycle, benchmark details, and metric definitions. This level of detail supports independent replication of the method and evaluation.</p><details><summary>Canonical source evidence</summary><blockquote>GitHub Copilot harness.We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent
+engine as GitHub Copilot CLI. Each containerized sandbox launches a headless Copilot CLI process in server mode, and the
+SDK communicates with it through JSON-RPC (GitHub 2026). An SDK session specifies the model, system instructions,
+custom tools, MCP servers, permission policy, and event callbacks. The callbacks provide the ordered model messages, tool
+calls, and observations used to construct each trajectory.
+Per-tasklifecycle.FortaskS i,theharnesscreatesafreshtask-agentsessionwiththeenvironmenttoolsandmemory_read.
+The external index persists across tasks, but the task agent has no memory-write tool. In the reported runs, after the task closes,
+a fresh distiller session receives the raw trajectoryτi—not terminal feedback—and produces the distilled trajectorydi. </blockquote><blockquote>The distiller is a pure preprocessing step enabled for both memory conditions in our experiments. It sees the completed raw
+trajectory, but not terminal benchmark feedback, and has no memory or environment tools. Its output is a compact evidence
+packet for the curator agent; it cannot create, update, or delete durable records.
+System message.
+ROLE
+You are the non-writing trajectory distiller in a continual-learning
+memory pipeline.
+BOUNDARY
+This is preprocessing only. You have no memory tools and must not
+create, update, delete, or propose durable memory records. You do not
+receive terminal benchmark feedback. Treat the supplied rollout as
+partial evidence, not as ground truth.
+INPUT
+One completed task-agent trajectory containing the user request,
+retrieved memories, assistant messages, tool calls, tool results,
+environment observations, and submitted answer.
+OBJECTIVE
+Transform the raw </blockquote></details></li><li><strong>Related work and gap positioning — pages 2–3</strong><p>The paper positions its contribution against a broad range of factual and procedural memory systems and identifies the retrospective evidence boundary as the gap it addresses.</p><p>Assessor’s interpretation: supported. The related-work section organizes prior systems by factual and procedural memory and explicitly states that post-task curation still operates mainly over existing records and trajectories. This provides an adequate comparison for the actual claims.</p><details><summary>Canonical source evidence</summary><blockquote>Agentmemoryextendsretrieval-augmentedgenerationfrom
+external knowledge corpora to experience accumulated by
+the agent itself (Lewis et al. 2020; Hu et al. 2026). We focus
+onprompt-basedsystemsthatleavemodelweightsfixedand
+organizetheliteraturebywhattheyaimtotransfer:persistent
+facts about a user or environment, and procedures learned
+from prior execution.
+Factualmemory.Earlysystemsestablishthebasiccreate–
+store–recall lifecycle. Generative Agents retrieves episodes
+by recency, importance, and relevance, while MemGPT ex-
+poses OS-like memory tiers that the agent manages through
+tools (Park et al. 2023; Packer et al. 2023). Later work
+strengthens creation and maintenance: MemoryBank sum-
+marizes dialogue with forgetting, Mem0 reconciles new
+recordsthroughexplicitCRUDdecisions,MemoryOSsepa-
+ratesshort-,mid-,andlong-termstores,andSeComchooses
+coherent segments as the memory unit (Zhong et </blockquote><blockquote>still operates mainly over existing records,
+recorded trajectories, grades, and usage signals. Conse-
+quently,strongerreflectioncannotrecoverstatesthetaskpol-
+icyneverobservedordeterminewhetheratrajectory-derived
+ruleremainstrueafterenvironmentdrift.Ourcontributionis
+orthogonal: read-only world tools let either a factual or pro-
+cedural curator agent independently check a claim, re-enact
+a procedure, inspect omitted states, test scope, and refresh
+stale knowledge before writing.</blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 4, 6</strong><p>The paper reports uncertainty intervals and paired baselines, but the small number of runs and the use of selected qualitative examples limit the strength of some mechanistic conclusions.</p><p>Assessor’s interpretation: partial. The authors use five paired runs for most configurations and three stateless runs for APEX baselines, and they acknowledge that selected cases do not establish aggregate effects. However, the limited run counts and selected examples leave some uncertainty about generalizability.</p><details><summary>Canonical source evidence</summary><blockquote>tasks from six shared document
+worlds, requiring PDF, XLSX, DOCX, and PPTX discov-
+ery,quantitativeanalysis,andMCP-styletools(Vidgenetal.
+2026).Theoriginalbenchmarkandleaderboardareavailable
+at https://www.mercor.com/apex/apex-agents-leaderboard/.
+Protocol and metrics.The primary CLBench and APEX
+experimentsusegpt-5.4;withineachexperiment,thetask
+agent,distiller,andcuratoragentsharethesamebasemodel.
+CLBench uses five paired seeded runs for every configu-
+ration; APEX uses five runs per stateful configuration and
+three stateless runs. We report run-level means with 95%
+Student-tconfidence intervals. The no-drift study holds the
+canonical 30-question order fixed and uses five paired runs
+per model–memory comparison; Appendix B details its un-
+certainty estimates.
+For taski, letp i ∈{0,1}be its binary pass score and
+letq i be the number of task-agent tool calls counted by the
+benchmark. </blockquote><blockquote>already
+supportsanactionablerecord.Becauseuncertaintyintervals
+overlap, we treat this as a mechanism interpretation rather
+than a resolved subgroup effect.
+Matchedtrajectoriesconnectrecordstobehavior.Inthe
+matched CLBench task, no memory uses seven queries and
+fails,trajectory-onlymemoryusesnineandpasses,andprob-
+ing supplies a validatedref_idrelation and passes in two
+(Appendix E.2). In hard APEX, no memory uses 96 calls
+and fails both criteria; trajectory-only memory transfers the
+revenue-per-head procedure and passes in 11, while a vali-
+datedworkbookmapreducesprobingtosix(AppendixE.3).
+Theseselectedcasesdonotestablishtheaggregateeffect,but
+they illustrate how reusable computations and environment-
+informed maps replace task-time rediscovery with direct ex-
+ecution.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

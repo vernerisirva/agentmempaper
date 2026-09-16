@@ -59,16 +59,369 @@
             <p>Proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. Protein language models (PLMs) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense Tran...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>The proposed decision lacked sufficient located manuscript evidence; review is pending.</p>
-      <p>Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper presents a clear and well-motivated methodological contribution combining conditional memory and sparse expert routing for efficient protein language modeling. The architecture is described with sufficient detail, and the initialization strategies for both modules are designed to preserve the pretrained function. The evaluation covers multiple benchmarks, including ProteinGym, FLIP, and contact prediction, with ablation studies supporting the complementary contributions of the two modules. The biological specialization analyses provide additional evidence for the interpretability and functional relevance of the learned mechanisms. The paper is transparent about limitations and includes detailed implementation and evaluation protocols. The main weaknesses are the lack of a fully controlled ablation for the data sampling strategy and the relatively modest absolute gains over the ESM2-150M baseline, which the authors acknowledge.</p>
+      <p>The paper does not report statistical significance or confidence intervals for the benchmark results, making it difficult to assess whether the small improvements over ESM2-150M are robust. The 80/20 sampling strategy is explicitly acknowledged as not fully validated through controlled ablation. The contact prediction evaluation uses a selected CASP15 subset of 21 domains, which may limit generalizability. The paper does not provide a direct comparison of computational cost or training time against baselines, which would strengthen the efficiency claims. These factors introduce some uncertainty about the robustness and generalizability of the reported gains.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-coverage-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T16:53:55+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-evidence-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T17:40:24+00:00.</p>
         <p>Coverage: 57184 of 57184 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li>The contribution is stated explicitly. — page 1</li><li>The available text identifies data or a benchmark used by the work. — page 5</li><li>A baseline or comparison system is described. — page 5</li><li>Quantitative evaluation signals were detected. — page 6</li><li>An ablation analysis is reported. — page 2</li><li>Limitations or threats to validity are acknowledged. — page 1</li><li>The paper states that ProtLingo augments a pretrained dense backbone with conditional memory and expert routing, and describes the two mechanisms explicitly. — page 2</li><li>The paper positions conditional memory and expert routing as complementary mechanisms for reusing recurring local contexts and allocating computation adaptively. — page 2</li><li>The paper provides detailed mathematical definitions for the centered latent N-gram memory, including route encoding, address construction, gating, and residual injection. — page 3</li><li>The paper evaluates on ProteinGym, FLIP, and CASP15 contact prediction, and reports ablations plus biological-specialization analyses. — page 5</li><li>The paper reports that ProtLingo improves over ESM2-150M on ProteinGym Spearman and AUC while remaining close on FLIP tasks. — page 6</li><li>The paper reviews prior PLMs, conditional memory approaches, and MoE methods, and identifies the gap of explicit local-context reuse in single-sequence PLMs. — page 2</li><li>The implementation details specify the backbone checkpoint, layer indices, window size, route bits, memory dimension, learning rates, optimizer, and hardware. — page 10</li><li>The paper acknowledges that the gains over ESM2-150M are bounded by the lightweight nature of the current modules. — page 7</li><li>The paper provides clear tables and figures comparing models on active parameters, efficiency, and benchmark scores. — page 11</li><li>The paper reports small performance differences over ESM2-150M without statistical significance tests or confidence intervals. — page 6</li><li>The paper acknowledges that the 80/20 sampling strategy has not been validated through a fully controlled ablation. — page 13</li><li>Some baseline comparisons rely on literature-reported reference numbers rather than controlled head-to-head evaluation. — page 6</li></ul>
+        <ul><li><strong>Contribution clarity — pages 1–3</strong><p>ProtLingo introduces a clear architectural contribution combining centered latent N-gram memory and sparse MoE routing on a pretrained ESM2 backbone.</p><p>Assessor’s interpretation: supported. The introduction and overview explicitly define the two complementary conditioning mechanisms and their integration into a pretrained backbone, making the contribution identifiable and well-scoped.</p><details><summary>Canonical source evidence</summary><blockquote>residue-dependent computation.
+We present ProtLingo, an efficient protein language mod-
+eling framework that augments a pretrained dense backbone
+arXiv:2609.04793v1  [cs.AI]  4 Sep 2026
+with conditional memory and expert routing. Its conditional
+memory maps contextual residue representations into route-
+specificdiscretecodesandcomposescodesfromcenteredlo-
+cal windows into latentN-gram addresses. These addresses
+retrieve reusable residual signals associated with recurring
+local sequence contexts. The retrieved memories are com-
+pressed and locally refined before being injected into se-
+lected backbone layers, allowing ProtLingo to adapt residue
+representations without overwriting the general knowledge
+encoded by pretraining. ProtLingo further upcycles selected
+dense feed-forward blocks into sparse Mixture-of-Experts
+layerscontainingasharedexpertandmultipleroutedexperts.
+A top-1 router </blockquote><blockquote>As shown in Figure 2, ProtLingo adapts a pretrained pro-
+tein language model through two complementary condi-
+tioning mechanisms: centered latentN-gram memory and
+sparse expert routing. The memory module retrieves motif-
+conditionedresidualsusingroute-specificdiscreteaddresses
+derived from centered residue neighborhoods. MoE up-
+cycling converts selected dense feed-forward blocks into
+N
+V
+S
+Contact Map Prediction</blockquote></details></li><li><strong>Scholarly novelty or value — page 1</strong><p>The proposed method is positioned as a novel alternative to dense scaling for mutation-sensitive protein modeling.</p><p>Assessor’s interpretation: supported. The paper motivates the work by noting that dense scaling does not consistently improve downstream performance and that existing approaches depend on external resources, framing conditional memory and expert routing as a complementary single-sequence strategy.</p><details><summary>Canonical source evidence</summary><blockquote>Proteins perform most cellular functions, and even a single
+amino-acidsubstitutioncanaltertheirstability,activity,orin-
+teractions. Predicting these sequence–function relationships
+is therefore crucial for protein engineering, variant inter-
+pretation, and therapeutic discovery, yet experiments cover
+only a tiny fraction of the vast sequence space. Protein lan-
+guagemodels(PLMs)offerascalablealternativebylearning
+transferable representations from large collections of unla-
+beled sequences, supporting tasks from structure prediction
+to fitness estimation (Rives et al. 2021; Jumper et al. 2021;
+Notinetal.2023).However,scalingdenseTransformerback-
+bonesbringsrapidlyincreasingcomputationalcostswithout
+consistently improving downstream performance (Akiyama
+et al. 2026). This limitation motivates architectures that use
+model capacity more effectively and incorporate inductive
+biases tailored </blockquote><blockquote>Al-
+thoughtheseapproachesimprovebiologicalgrounding,they
+depend on homologous sequences, structural inputs, or ex-
+ternal resources whose availability and quality vary across
+proteins. They also leave open a complementary question:
+howcanasingle-sequencePLMbetterexploitthelocalcon-
+text already present within its input? This question is espe-
+cially important for mutation-sensitive prediction, because
+theeffectofasubstitutionoftendependsonnearbyconserved
+residues,functionalsites,andlocalresidueenvironments(Ng
+and Henikoff 2003; Bogan and Thorn 1998; Porter, Bartlett,
+and Thornton 2004). Standard dense PLMs can model such
+dependencies implicitly, but provide no explicit mechanism
+for reusing recurring local contexts or adapting computa-
+tion across residues. An effective architecture should there-
+fore preserve broad pretrained knowledge while introducing
+local-context memory and </blockquote></details></li><li><strong>Methodological rigor — page 4</strong><p>The memory module is designed to preserve the pretrained function at initialization through zero-initialized tables and convolution weights.</p><p>Assessor’s interpretation: supported. The text states that zero initialization yields delta = 0, so the insertion initially preserves the pretrained backbone output, which is a sound initialization strategy for stable continuation training.</p><details><summary>Canonical source evidence</summary><blockquote>iandeachinsertionlayerhasitsownlearnable
+scaleα.Inthemainconfiguration,eachαisinitializedto1.0.
+Despitethisnonzeroscale,theLngraminsertioninitiallypre-
+serves the pretrained backbone output because the memory
+tableanddepthwiseconvolutionweightsarezero-initialized,
+yielding∆ = 0. ProtLingo therefore starts from the pre-
+trained function while learning motif-conditioned residual
+corrections through the memory pathway.
+Surrogate-gradient Path.The retrieved memory entries
+and latent compression layer are trained through standard
+backpropagation, but discrete route addresses block gradi-
+ents to the route projectionWq. ProtLingo therefore applies
+a local counterfactual surrogate to each route bit: the model
+flips that bit while holding all others fixed and measures the
+resultingchangeintheretrievedmemoryrepresentation.This
+differenceprovidesasensitivitysignalfortheroutelogitsand
+Wq. The </blockquote></details></li><li><strong>Methodological rigor — pages 4, 10</strong><p>MoE upcycling preserves the pretrained computation at initialization by splitting the dense feed-forward weights into shared and routed experts.</p><p>Assessor’s interpretation: supported. The paper describes splitting the 2560 intermediate channels into complementary 1280-channel partitions for the shared expert and four routed experts, maintaining the active feed-forward width and preserving the pretrained computation.</p><details><summary>Canonical source evidence</summary><blockquote>To increase conditional modeling capacity, ProtLingo re-
+places selected dense feed-forward blocks with sparse MoE
+layers.Eachselectedblockisupcycledintoonesharedexpert
+andmultipleroutedexperts,initializedfromcomplementary
+parts of the pretrained dense MLP weights, with optional
+smallperturbationsfornon-primaryroutedexperts.Thispre-
+serves the pretrained computation at initialization while al-
+lowing expert specialization during continuation training.
+For residuei, letUi denote the input to the feed-forward
+block.TheroutercomputeslogitsovertheEroutedexperts:
+ηi =W rLayerNorm(Ui)∈R E.(13)
+ProtLingo uses top-1 routing in the main configuration:
+ei = arg max
+e∈{1,...,E}
+[softmax(ηi)]e.(14)
+TheMoEoutputcombinesthesharedexpertwiththeselected
+routed expert:
+Yi =E sh( ¯Ui) +Eei( ¯Ui),(15)
+where ¯Ui = LayerNorm(Ui), andE sh andE ei denote </blockquote><blockquote>feed-forward network were
+split into two complementary 1,280-channel partitions. One
+partition initialized an always-active shared expert, and the
+other initialized four routed experts.
+Foreachtoken,thesharedexpertandonetop-1routedex-
+pertwereactivated,preservinganactivefeed-forwardwidth
+of1,280 + 1,280 = 2,560. The router was initialized with
+a standard deviation of 0.01. The load-balancing and router
+z-losscoefficientswere0.01and0.001,respectively.Noper-
+turbation was added to the routed experts at initialization;
+expert specialization emerged during continued pretraining.
+LNgram ArchitectureLNgram modules were inserted
+beforeblocks1,11,and21.Allthreemodulesusedacentered
+three-tokenwindow,twobitsperroute,amemorydimension
+of 8, and a latent dimension of 256. With a hidden size of
+640,eachmodulecontained320routes.Eachrouteusedfour
+learned codes and one boundary code, yielding53 = </blockquote></details></li><li><strong>Evaluation or validation strength — page 6</strong><p>ProtLingo achieves competitive performance on ProteinGym, FLIP, and contact prediction benchmarks with a 150M-scale backbone.</p><p>Assessor’s interpretation: supported. Tables 1 and 2 report quantitative results showing ProtLingo improves over ESM2-150M on ProteinGym Spearman and AUC and slightly improves P@L on contact prediction, supporting the performance claims.</p><details><summary>Canonical source evidence</summary><blockquote>parameters, highlighting ProtLingo&#x27;s parameter-efficient performance rather
+than claiming universal state-of-the-art accuracy on every benchmark.
+Model Active Params Efficiency ProteinGym FLIP
+Spearman AUC GB1 AAV Meltome
+†RITA XL (1.2B) 1.2B 0.31 0.373 0.708 – – –
+†CARP (640M) 640M 0.58 0.369 0.701 0.555 ‡ 0.670‡ 0.530‡
+†ESM-1b (650M) 650M 0.61 0.394 0.719 0.340 ‡ 0.360‡ 0.710‡
+ESM2-150M 150M 2.59 0.388 0.715 0.523 0.555 0.651
+ESM2-650M 650M 0.620.403 0.723 0.5550.606 0.676
+ProtBert 420M 0.82 0.343 0.688 0.5390.6080.658
+ProtLingo 153M 2.61 0.399 0.720 0.544 0.576 0.650
+Table 2: Supervised long-range contact prediction on the
+CASP15 subset. Best results are shown in bold and second-
+best results are underlined. For the 650M-scale baseline, we
+report the NVIDIA implementation results under the same
+model family. ProtLingo achieves competitive contact pre-
+diction performance with a </blockquote><blockquote>compact active-parameter bud-
+get, and the comparison is intended to assess parameter-
+efficientrepresentationqualityratherthantoclaimuniversal
+state-of-the-art contact prediction accuracy.
+Model Active Params P@LP@L/2P@L/5
+ESM2-150M 150M 0.484 0.657 0.830
+ESM2-650M 650M0.514 0.682 0.845
+ProtBert 420M 0.281 0.353 0.435
+ProtLingo 153M 0.485 0.657 0.816
+FLIP, we report task scores on GB1, AAV, and Meltome us-
+ingthesamescoringprotocolforinternallyevaluatedmodels.
+Table 1 summarizes the results. Among models evaluated
+under our unified setting, larger dense encoders generally
+achieve the strongest absolute scores, while ProtLingo at-
+tains the highest parameter-efficiency score. Here efficiency
+is defined as ProteinGym DMS Spearman divided by ac-
+tive parameters in billions. ProtLingo improves over ESM2-
+150MonProteinGymSpearmanandAUC,andremainsclose
+to the 150M-scale baseline on FLIP </blockquote></details></li><li><strong>Evaluation or validation strength — page 6</strong><p>Ablation studies show that both the MoE module and the LNgram memory module contribute complementary gains.</p><p>Assessor’s interpretation: supported. Table 3 reports that removing MoE, LNgram, or both degrades ProteinGym DMS Spearman and increases perplexity, with the combined removal causing the largest degradation, supporting the claim of complementary contributions.</p><details><summary>Canonical source evidence</summary><blockquote>We compare full ProtLingo with variants that remove the
+SparseMoEmodule,themotif-awareLngrammemorymod-
+ule, or both. We evaluate whether the gains come primar-
+ily from conditional computation, motif-aware memory re-
+trieval,ortheirinteraction.WereportchangesinProteinGym
+DMS Spearman correlation (∆ρ) and language-model per-
+plexity (∆PPL) relative to full ProtLingo, where higher∆ρ
+and lower∆PPL indicate better performance.
+Table3:AblationstudyrelativetofullProtLingo.∆denotes
+the ablated-model value minus the full-model value.
+Variant PG-DMS∆ρ↑∆PPL↓
+Full ProtLingo – –
+−MoE -0.093 +2.461
+−Lngram -0.357 +6.003
+−MoE−Lngram -0.369 +6.035</blockquote></details></li><li><strong>Evidence to claim alignment — pages 6–7</strong><p>The LNgram memory learns motif-aware representations that are not explained by amino-acid composition alone.</p><p>Assessor’s interpretation: supported. The analysis reports higher within-family residual similarity, higher motif address agreement versus composition-matched controls, and greater residual perturbation for motif-localized substitutions, directly supporting the motif-awareness claim.</p><details><summary>Canonical source evidence</summary><blockquote>Memory
+To test whether centered LNgram captures biologically
+meaningful motif representations, we asked whether (i) mo-
+tifs from the same family share similar discrete route ad-
+dresses and continuous residuals, (ii) motifs exhibit greater
+address concentration than matched non-motif one, and
+(iii)non-conservativeormotif-localizedsubstitutionsinduce
+greater residual changes than conservative or outside-motif
+controls.
+We first analyzed 10,573 curated occurrences from 10
+PROSITE families. The results showed that motifs from
+the same family formed similar route-local address com-
+binations while retaining protein-context variation. At layer
+21, the mean residual cosine similarity was 0.968 within
+families versus 0.756 between families. We then compared
+10,447 motifs with amino-acid-composition-matched non-
+motif windows from the same proteins. At layer 21, </blockquote><blockquote>motif
+addressagreementreached54.2%,comparedwith23.4%for
+controls; Fig. 4c illustrates this concentration in a represen-
+tative route. Finally, across 21,958 functional anchors and
+18,290 identical-substitution controls outside motifs, non-
+conservative mutations caused 17.6–21.1% greater residual
+perturbation than conservative mutations. Motif mutations
+also caused 16.8–22.8% greater perturbation than identical
+substitutions outside motifs, measured as the mean local L2
+distance between scaled wild-type and mutant residuals.
+Together, these results show that centered Lngram learns
+stable, motif-aware representations that cannot be explained
+by protein context or amino-acid composition alone and are
+A
+Left Code
+Center Code
+Input Hidden State
+LookUp
+[
+3
+3
+3]
+Embedding ID
+29-th Route
+Query
+[       ][       ][       ]
+Left Code
+Center Code
+Right Code
+99.0% concentration 26.8% </blockquote></details></li><li><strong>Evidence to claim alignment — page 7</strong><p>Sparse experts exhibit biological specialization across structural and functional annotations.</p><p>Assessor’s interpretation: supported. The paper reports high routing concentration for specific categories, enrichment over matched backgrounds, and performance degradation when alternative experts are selected, providing evidence for functional specialization.</p><details><summary>Canonical source evidence</summary><blockquote>We assessed MoE routing and specialization across anno-
+tated residues. From the complete Swiss-Prot collection, we
+retained461,859length-filtered,sequence-deduplicatedpro-
+teins(156,754,291residues),yielding4.23billionTop-1de-
+cisions across 27 MoE layers. Mean normalized assignment
+entropywas0.971,correspondingtoaneffective3.85offour
+experts and indicating no global expert collapse.
+To analyze expert specialization, we integrated three an-
+notationsources:19curatedSwiss-Protresidue-andregion-
+levelfeaturetypes,Pfam38.2scanscovering19,783families
+and844clans,andofficialTAPEQ3/Q8secondary-structure
+labels. Across categories spanning thousands to millions of
+residues, 80–99% of residues in specific categories were
+routed to one expert at particular layers, as illustrated in
+Fig. 4a. To control for amino-acid and positional biases, we
+paired each annotated residue with an unannotated </blockquote><blockquote>residue
+fromthesameprotein,prioritizingidenticalaminoacidsand
+relative-position bins. Enrichment over these matched back-
+grounds is reported in Table 4. To test whether these pref-
+erenceswerefunctionallyrelevant,wereplacedTop-1selec-
+tionswithalternativeexpertsatselectedlayersandmeasured
+performance changes, as shown in Fig. 4b.
+TheseresultsrevealabiologicalhierarchyinMoErouting
+across local structures, functional residues, and conserved
+domains. Rather than interchangeable branches, experts ex-
+hibit multiscale specialization supporting remote-homology
+detection,domainandfunctional-siteannotation,secondary-
+structure prediction, and targeted adaptation.
+Table 4: Expert routing across biological annotations. Pfam
+results are restricted to clans withnprot≥500
+Annotation Classes Residues Target/Ref. (%)
+Pfam clans 196 71.29M92.5/24.3
+Swiss-Prot sites 19 39.14M64.2/31.7
+TAPE Q3 3 </blockquote></details></li><li><strong>Reproducibility and transparency — page 10</strong><p>The paper provides sufficient implementation details for reproduction, including architecture, training configuration, and evaluation protocols.</p><p>Assessor’s interpretation: supported. The implementation details section specifies model architecture, MoE and LNgram configurations, training data, optimizer settings, hardware, and evaluation metrics, supporting reproducibility.</p><details><summary>Canonical source evidence</summary><blockquote>This section provides the implementation and training de-
+tails needed for reproduction. Unless otherwise stated, layer
+indices are zero-based.
+Model ArchitectureWe continued pretraining from the
+official pretrained ESM-2 150M checkpoint. The backbone
+contains 30 Transformer blocks with a hidden size of 640,
+20 attention heads, and a feed-forward width of 2,560. The
+maximuminputlengthwas1,024tokens,includingsequence
+boundary tokens. The tokenizer, vocabulary, positional en-
+coding,andmasked-language-modelheadfollowedtheorig-
+inal ESM-2 configuration. Transformer blocks were imple-
+mented with NVIDIA Transformer Engine and trained in
+BF16.
+MoE ArchitectureBlocks 0–2 retained their original
+dense feed-forward networks, while blocks 3–29 were con-
+verted to MoE layers using theshared_routed_split
+implementation.Ineachconvertedblock,the2,560interme-
+diate channels of the pretrained </blockquote><blockquote>125
+memory addresses for a three-token window.
+Memory tables were zero-initialized, the residual scale
+was initialized to 1.0, and LNgram dropout was disabled.
+Counterfactualsurrogategradientswerecomputedinchunks
+of 64 routes. For packed inputs, window construction and
+local convolution respectedcu_seq_lens, preventing in-
+formation flow across protein boundaries.
+Training ConfigurationTraining used eight-way Dis-
+tributedDataParallelonasinglenodewithoutgradientaccu-
+mulation. Protein sequences were packed with a maximum
+lengthof1,024.Theper-GPUtokenbudgetwas98,304,cor-
+responding to 786,432 tokens per optimizer step. The MLM
+corruption probability was 15%.
+TrainingusedtheNVIDIAESM-2UniRefpretrainingdata
+inParquetformat,withthecorrespondingheld-outsplitused
+for validation. The model was continuously pretrained for
+40,000 optimizer steps, and the step-40k checkpoint was
+used for the </blockquote><blockquote>reported downstream evaluations.
+OptimizationTwo-dimensional weight matrices were op-
+timized with Muon using a learning rate of1.5×10−3, mo-
+mentum 0.95, five Newton–Schulz iterations, and Nesterov
+momentum. Embeddings, normalization parameters, biases,
+the MLM head, and router parameters were optimized with
+AdamW at1×10 −4, usingβ= (0.9,0.98)andϵ= 10 −8.
+LNgram memory tables used an AdamW learning rate of
+2×10 −4 without weight decay; the remaining parameter
+groups used a weight decay of 0.01.
+We used a warmup–stable–decay schedule with 10,000
+warmup steps. An FP32 exponential moving average with
+a decay of 0.9999 was updated after every optimizer step.
+The backbone and the custom MoE and LNgram paths used
+BF16; FP8 was not enabled for the reported experiment.
+Hardware and SoftwareExperiments were based on </blockquote></details></li><li><strong>Limitations and uncertainty handling — page 7</strong><p>The paper acknowledges limitations, including bounded gains and the need for richer routing designs.</p><p>Assessor’s interpretation: supported. The limitations section explicitly states that gains over ESM2-150M are bounded by the lightweight nature of the modules and suggests future work on alternative routers, showing awareness of scope.</p><details><summary>Canonical source evidence</summary><blockquote>Limitations.Although ProtLingo improves the compact
+ESM2 backbone across several settings, the gains over
+ESM2-150M are bounded by the lightweight nature of the
+current modules, suggesting that richer routing designs may
+further unlock conditional specialization; future work could
+explore alternative MoE routers such as hierarchical con-
+strained routing (Vashkelis and Trukhina 2026).
+Conclusion.We presented ProtLingo, an efficient protein
+languagemodelingframeworkthatcombinescenteredlatent
+N-grammemorywithsparseexpertrouting.Byintroducing
+reusable local-context memory and residue-dependent com-
+putation into a pretrained ESM2 backbone, ProtLingo im-
+proves mutation-sensitive modeling without relying on sub-
+stantiallylargerdensemodels.Experimentsacrosssequence-
+functionprediction,contactprediction,andlanguagemodel-
+ingdemonstratestrongperformanceatthe150Mscalewhile
+preserving </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 12–13</strong><p>The 80/20 mixed sampling strategy has not been validated through a fully controlled ablation.</p><p>Assessor’s interpretation: supported. The paper explicitly states that the individual sampling strategies and the 80/20 ratio have not yet been validated through a fully controlled ablation, which is a transparent acknowledgment of an unresolved design choice.</p><details><summary>Canonical source evidence</summary><blockquote>Sec-
+ond,UniRef50representativesampling,whichusesonefixed
+sequencefromeachUniRef50cluster,improvesfamily-level
+balance but removes most within-family variation. Third,
+UniRef50-to-UniRef90 hierarchical sampling first selects a
+UniRef50 cluster uniformly and then randomly selects one
+of its UniRef90 members. This restores some within-family
+diversity but may distort the natural family-size distribution
+and repeatedly oversample members of small clusters.
+We therefore use a mixture of 80% UniRef50 representa-
+tivesamplingand20%UniRef90row-uniformsampling.The
+UniRef50 component is intended to provide broad family-
+level coverage, while the UniRef90 component partially re-
+stores natural sequence abundance and within-family varia-
+tion. This design should be regarded as a practical compro-miseandaworkinghypothesis,sincetheindividualstrategies
+andthe80/20ratiohavenotyetbeenvalidatedthroughafu</blockquote><blockquote>lly
+controlled ablation.</blockquote></details></li><li><strong>Related work and gap positioning — page 2</strong><p>The paper positions ProtLingo relative to prior PLMs and efficiency-oriented work.</p><p>Assessor’s interpretation: supported. The related work sections cover PLM development, conditional memory, and MoE approaches, and the introduction identifies the gap of single-sequence local-context exploitation, providing adequate positioning for the actual claims.</p><details><summary>Canonical source evidence</summary><blockquote>PLMslearntransferablerepresentationsfromlargeunlabeled
+sequence corpora via self-supervised pretraining. Early dis-
+tributed representations (Asgari and Mofrad 2015; Asgari,
+McHardy, and Mofrad 2019; Heinzinger et al. 2019; Rao
+et al. 2019) established that sequence modeling captures
+meaningful biological signal, and Transformer-based pre-
+training consolidated this paradigm at scale: masked (bidi-
+rectional) models such as ProtTrans (Elnaggar et al. 2021),
+ESM-1b (Rives et al. 2021), ESM2 (Lin et al. 2023), and
+XTrimoPGLM (Chen et al. 2024) learn contextual residue
+representationsthatencodeconservation,structure,andcon-
+tacts,enablingzero-shotvariant-effectprediction(Yangetal.
+2021), while autoregressive models (Hesslow et al. 2022;
+Nijkamp et al. 2022) extend PLMs to controllable sequence
+generation with experimentally validated designs (Madani
+et al. 2023). Subsequent work has </blockquote><blockquote>broadened the paradigm
+tostructure-andfunction-conditionedmodeling(Hayesetal.
+2025; Wang et al. 2024) and improved its efficiency through
+datacurationandtrainingrecipes(Fournieretal.2024;Notin
+etal. 2023;Chengetal. 2024).At thesame time,systematic
+evaluations indicate that downstream gains are not mono-
+tone in model size, with variant-effect performance saturat-
+ingbeyondmid-scaleregimes(Chengetal.2024;Notinetal.
+2023).</blockquote><blockquote>Dense PLMs process every residue through the same feed-
+forwardparameterset,evenwhenresiduecontextsdiffersub-
+stantially. Increasing this uniformly activated capacity im-
+proves model expressiveness, but it also increases computa-
+tionforeverytoken.Conditionalcomputationoffersanalter-
+nativebydecouplingtotalmodelcapacityfromper-tokenac-
+tivecomputation,selectinginput-dependentparameterpath-
+ways instead of activating the full model for every residue.
+MoE models instantiate this idea through sparse routing,
+whereeachtokenisassignedtoasmallsubsetofexperts(Fe-
+dus,Zoph,andShazeer2022;Zophetal.2022).Sparseupcy-
+clingfurtheradaptsthisprincipletopretraineddensemodels
+byreusinglearnedfeed-forwardparametersratherthantrain-
+ing a sparse architecture from scratch (Komatsuzaki et al.
+2023). In protein modeling, sparse expert architectures have
+shown that model capacity can be expanded while </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

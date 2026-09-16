@@ -60,15 +60,277 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>The proposed decision lacked sufficient located manuscript evidence; review is pending.</p>
-      <p>Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations.</p>
+      <p>Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.</p>
+      <p>The paper&#x27;s central claims about AI framework failures depend on the authors&#x27; inspection of intermediate files and run logs that are not fully reproduced in the supplied text. Some quantitative comparisons (e.g., Table 2 reference values) are presented as averages without full underlying data. The paper is a preprint and has not been peer-reviewed. These factors introduce some uncertainty about the reproducibility of the specific failure claims, but the overall pattern is well-documented.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-coverage-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T16:55:08+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-evidence-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T17:40:42+00:00.</p>
         <p>Coverage: 55833 of 55833 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li>The available text identifies data or a benchmark used by the work. — page 2</li><li>A baseline or comparison system is described. — page 3</li><li>Quantitative evaluation signals were detected. — page 2</li><li>Robustness or statistical analysis is reported. — page 3</li><li>Limitations or threats to validity are acknowledged. — page 2</li><li>Code, data, or research artifacts are described as available. — page 10</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. — page 1</li><li>No reproducible review or selection methodology was detected.</li><li>The abstract clearly states the paper&#x27;s purpose: to evaluate five AI frameworks on two new projects and compare their performance against published reference studies. — page 1</li><li>The paper provides a novel empirical evaluation of AI frameworks on real published research tasks, which is a valuable contribution to the AI-for-science literature. — page 1</li><li>The study uses a systematic design with full-sized and smaller-scope prompts, multiple runs per framework, and comparison against reference papers. — page 2</li><li>The paper reports quantitative comparisons (e.g., Spearman correlations across runs) and qualitative assessments of hallucinations and failures. — page 5</li><li>The claim that AI frameworks hallucinate is supported by a specific example of a fabricated citation and a non-existent paper. — page 3</li><li>The paper positions its work relative to the first paper in the series and to existing AI-for-science benchmarks. — page 1</li><li>The full prompts used in the study are reproduced in the appendix, supporting reproducibility. — page 10</li><li>The authors acknowledge that their conclusions reflect the state of AI frameworks at a specific time and may change. — page 9</li><li>The paper uses tables and figures to present quantitative comparisons and examples of failures. — page 4</li><li>The evaluation of whether AI outputs actually performed claimed simulations relies on the authors&#x27; inspection of intermediate files, which is not fully standardized. — page 6</li><li>The paper does not provide a systematic inter-rater reliability check for classifying AI failures. — page 8</li><li>The claim that AI reports included more p-values and confidence intervals than the original paper is asserted without a side-by-side comparison. — page 3</li><li>The paper does not provide the intermediate files or code used to verify AI outputs, limiting independent verification. — page 9</li></ul>
+        <ul><li><strong>Scholarly novelty or value — pages 5–6</strong><p>The paper provides novel empirical evidence that current AI research frameworks fail to match the scope and depth of published human studies, including specific new failure modes such as silent reversion of chemical modifications and fabricated simulation claims.</p><p>Assessor’s interpretation: supported. The paper documents specific, previously unreported failure patterns (e.g., AI Scientist-v2 fabricating MD simulations, K-Dense silently reverting modified siRNA to unmodified RNA) that extend the findings of Paper I to new domains.</p><details><summary>Canonical source evidence</summary><blockquote>B ) ended energy minimization with
+coordinates diverging to NaN, yet proceeded to attempt to answer
+high-level research questions as if the simulation had succeeded.
+The same run suggested fixing the energy problem through better
+force field parameterization rather than correcting the broken
+molecular structure. Kosmos (run A) self-corrected an initial error
+of using non -protonated MC3, but devoted a disproportionate
+fraction of its final report to describing this and other technical
+issues (charge assignment, box sizing, resolving close contacts at
+energy minimization) rather than answering the scientific
+questions posed in the prompt. No cases included production MD
+simulations of a reasonable duration (hundreds of nanoseconds)
+due to limited computational resources available to the AI
+frameworks. The AI Scientist -v2 from SakanaAI claimed in its
+final paper that all </blockquote><blockquote>-atom simulations were performed for 200 to
+500 ns, but in  reality, no MD simulations were run. Instead, the
+framework generated a synthetic dataset with fabricated feature
+vectors and trained a neural network on it, then reported
+conclusions as if they derived from physics -based all-atom
+modeling. BioAgents reached a scientifically wrong conclusion
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+6
+
+(a)
+
+
+(b)
+
+
+(c)
+
+
+(d)
+
+
+
+Fig. 2. Multiple examples of severe AI hallucinations have been found on the Lipid-RNA Molecular Dynamics project. (a,b) Chemically unreasonable </blockquote></details></li><li><strong>Methodological rigor — pages 3, 4, 8</strong><p>The study uses a systematic evaluation design with full-sized and smaller-scope prompts, multiple independent runs per framework, and comparison to reference papers.</p><p>Assessor’s interpretation: supported. The methods section describes the prompt engineering approach, and the results section reports multiple runs (e.g., K-Dense runs A-D, Kosmos runs A-B) with quantitative comparisons in Tables 1-3. This design allows assessment of reproducibility across runs.</p><details><summary>Canonical source evidence</summary><blockquote>7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+4
+
+Table 1. On the Antibody Developability Properties project, all AI frameworks in all runs generated final reports of smaller scope than the original
+paper. With the smaller-scope prompt, still presenting a major scientific challenge, the scope of AI work did not adjust, and the quality of resulting
+reports deteriorated further. None of the AI frameworks found and cited the original paper, despite the fact that this paper is the single most relevant
+paper for the full-sized prompt, and also highly relevant for the smaller-scope prompt.
+ Original
+paper
+Kosmos  K-Dense
+Full-sized prompt
+(runs A; B)
+Smaller-scope
+prompt (runs A; B)
+Full-sized
+prompt
+Smaller-scope prompt
+(runs A; B; C; D)
+Paper length, symbols without
+spaces 123,184 38,955; 47,257 39,812; 40,428 42,071 16,629; 14,802; 15,228; </blockquote><blockquote>Paper selection and Prompt engineering. Papers were selected to
+reflect the current frontier in the corresponding fields, with
+practical relevance as the primary criterion.  For each project, a
+full-scale prompt was formulated describing the research problem
+and the key scientific questions, without prescribing specific
+datasets or methods. The full-scale prompt for the antibody project
+covered the scope of the entire reference paper, while for the lipid-
+RNA project it covered only the computational modeling
+component of the reference paper (see Appendix). Smaller-scope
+prompts were then designed to reduce the scope by roughly an
+order of magnitude: for the antibody project, the analysis was
+narrowed to two specific datasets, two prescribed sequence
+representations, and a fixed evaluation procedure; for the MD
+project, m olecular structures, force fields, and protocols were </blockquote></details></li><li><strong>Evaluation or validation strength — pages 3–5</strong><p>The paper validates its central claims through multiple lines of evidence: quantitative scope comparisons, run-level numerical results, and specific documented failure examples.</p><p>Assessor’s interpretation: supported. Tables 1-3 provide quantitative evidence of scope reduction and numerical irreproducibility. Specific failure examples (e.g., NaN coordinates, fabricated simulations, incorrect structures) are documented with sufficient detail to support the conclusions.</p><details><summary>Canonical source evidence</summary><blockquote>7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+4
+
+Table 1. On the Antibody Developability Properties project, all AI frameworks in all runs generated final reports of smaller scope than the original
+paper. With the smaller-scope prompt, still presenting a major scientific challenge, the scope of AI work did not adjust, and the quality of resulting
+reports deteriorated further. None of the AI frameworks found and cited the original paper, despite the fact that this paper is the single most relevant
+paper for the full-sized prompt, and also highly relevant for the smaller-scope prompt.
+ Original
+paper
+Kosmos  K-Dense
+Full-sized prompt
+(runs A; B)
+Smaller-scope
+prompt (runs A; B)
+Full-sized
+prompt
+Smaller-scope prompt
+(runs A; B; C; D)
+Paper length, symbols without
+spaces 123,184 38,955; 47,257 39,812; 40,428 42,071 16,629; 14,802; 15,228; </blockquote><blockquote>taken from the final AI -generated reports (sometimes with
+smaller numbers of digits).
+AI fra -
+mework
+Run Expression Binding
+ESM One-hot ESM One-hot
+K-
+Dense
+A 0.41 0.44 0.30 0.26
+B 0.57±0.05 0.57±0.09 0.51±0.05 0.50±0.06
+C 0.52±0.17 0.56±0.14 0.35±0.16 0.50±0.18
+D 0.54±0.05 0.01±0.02 0.64±0.03 0.52±0.05
+Kosmos A 0.44±0.16 0.42±0.11 0.32±0.08 0.31±0.14
+B 0.70±0.02 0.65±0.04 0.54±0.04 0.53±0.04
+Reference study 0.56* 0.47* 0.42* 0.30*
+* Only values averaged over 3 expression datasets and 16 binding datasets are
+provided in the reference paper.
+
+quality. The smaller-scope prompt, despite being more specific
+and producing more reliable computational results, yielded less
+impressive scientific reports, shorter and less detailed than the
+reports generated from the initial full -sized prompt, where the
+broader scope elicited richer and longer scientific narratives. This </blockquote></details></li><li><strong>Evidence to claim alignment — pages 3–4</strong><p>The paper&#x27;s central claim that AI frameworks show partial successes coexisting with severe failures is directly supported by the reported results.</p><p>Assessor’s interpretation: supported. The paper reports both positive outcomes (e.g., successful dataset retrieval, p-value reporting, ESM-2 embedding computation) and negative outcomes (e.g., hallucinations, scope reduction, irreproducibility), aligning with the &#x27;jagged frontier&#x27; conclusion.</p><details><summary>Canonical source evidence</summary><blockquote>datasets or computational approaches to best address these
+high-level questions (see Appendix).
+The AI frameworks demonstrated impressive capabilities at the
+outset. They successfully identified and downloaded relevant
+datasets, such as the Jain et al. (2017) dataset of clinical
+antibodies29 or the Ginkgo GDPa1 benchmark of 246 antibodies.30
+The AI frameworks produced well -formatted figures  and final
+reports, and their thinking traces revealed nuanced scientific
+reasoning. For instance, BioAgents in one of two runs (&quot;run A&quot;)
+noted unprompted that simple concatenation of heavy and light
+chain embeddings does not capture structural coupling between
+the two chains. In many cases, AI  included more p -values and
+confidence intervals than the original paper, a methodological
+improvement that facilitates evaluating robustness  of reported
+results.
+However, no AI framework </blockquote><blockquote>12,956
+Number of figures / Total
+number of panels in figures 16 / 99 16 / 27; 20 / 36 9 / 15; 15 / 23 7 / 13 1 / 1; 3 / 5; 3 / 3; 2 / 3
+Number of references 100 N/A* N/A* 23 6; 7; 8; 6
+Original paper found and used? N/A No; No No; No No No; No; No; No
+* Kosmos does not provide bibliographic references in the final report.
+
+featurization). The two frameworks that attempted germline
+analysis produced wildly discordant estimates: BioAgents (run A)
+reported germline -attributable variance reaching 99.3%, versus
+roughly 40% in the original paper, while Kosmos (run A) reported
+essentially zero germline effect. The same AI frameworks that
+displayed sophisticated reasoning committed elementary errors
+elsewhere, such as generating recommendations not grounded in
+their own intermediate results, and hallucinating citations. The
+pattern of a &quot;jagged frontier&quot; of AI applicability to </blockquote></details></li><li><strong>Related work and gap positioning — pages 1–2</strong><p>The paper positions itself relative to Paper I and the broader AI-for-science literature, identifying the gap that standard benchmarks do not capture real research demands.</p><p>Assessor’s interpretation: supported. The introduction cites prior work on AI benchmarks and Paper I, and explicitly frames the contribution as extending the evaluation to new domains. The related work section covers antibody prediction tools and AI-enhanced MD methods.</p><details><summary>Canonical source evidence</summary><blockquote>Evaluating the capabilities of AI for automating scientific research
+requires test problems that reflect the demands of real research
+practice. Standard benchmarks, 1-4 built from static datasets of
+narrow questions, seem convenient but may not capture the long-
+horizon, multi-step workflows characteristic of authentic scientific
+inquiry.5 We and other authors proposed using recently published
+scientific papers as reference material instead, 6-9  since they
+embody the methodological complexity, data -handling
+requirements, and interpretive judgment characteristic of actual
+research, and they provide an external standard against which AI -
+generated results can be compared  with. AI performance on such
+problems is therefore important not only for evaluating scientific
+capability of AI in general, but also for estimating the readiness of
+these frameworks to contribute to </blockquote><blockquote>
+aggregation propensity, expression, and immunogenicity. To
+support these predictions, researchers leverage massive public
+repositories like the Observed Antibody Space, containing billions
+of annotated sequences, and SAbDab, which provides thousands
+of resolved structures.12 Standard computational tools in the field
+include the Therapeutic Antibody Profiler, which uses rule -based
+guidelines derived from clinical -stage therapeutics to flag
+potential developability liabilities early in design. Recent findings
+from the largest FLAb2 benchmark  claim that while universal
+prediction remains a challenge, specific protein language models
+like IgLM, ProGen2, and ESM2 show significant zero-shot
+correlations for traits like thermostability and expression .12,13
+Additionally, specialized applications such as AbImmPred and
+AbMelt have demonstrated success in predicting </blockquote></details></li><li><strong>Reproducibility and transparency — pages 6, 10</strong><p>The paper&#x27;s reproducibility is limited by the fact that intermediate AI files and run logs are not fully provided, and some quantitative comparisons rely on the authors&#x27; inspection.</p><p>Assessor’s interpretation: partial. The paper states that verification required inspecting intermediate files, but these files are not included in the supplied text. The appendix provides prompts, but the actual AI outputs and intermediate files are not fully reproduced. This limits independent verification of specific failure claims.</p><details><summary>Canonical source evidence</summary><blockquote>adducts with RNA
+rather than hydrogen bonds as suggested in the reference study,
+and proposed that QM/MM simulations (not classical MD) would
+be required, without having run any MD at all. ToolUniverse
+claimed that energy minimization and preequilibration were
+performed and reported 500 ns of production MD, but we could
+not find any evidence proving that this production run had actually
+occurred, and the running time of ToolUniverse (on the timescale
+of minutes) makes this claim highly unlikely. Another important
+recurring pattern across AI frameworks was overconfidence in the
+final report. For example, in K-Dense run A, the discussion of the
+tail ketone as a secondary interaction site (one of five subsections
+in the Discussion) is based on a single frame out of ten frames
+saved from a 10 -picosecond MD trajectory. In many cases, static
+energy-minimized structures were </blockquote><blockquote>Prompts and smaller-scope prompts that we used are given below.
+
+Prediction of Antibody Developability Properties
+Initial Prompt:
+Problem: Evaluating AI Models for Predicting Therapeutic Antibody Developability Properties
+Therapeutic antibody development requires candidates to possess favorable biophysical properties to succeed in manufacturing and
+clinical trials. Current antibody design methods are typically evaluated with native sequence or structure recovery, which do es not
+provide a complete indication of therapeutic potential.
+Run advanced scientific research to answer the following research questions:
+1. Can pretrained protein AI models predict antibody developability properties in a zero -shot manner? Which models perform best for
+each property category?
+2. Does fine -tuning protein AI model embeddings on labeled developability data improve prediction accuracy </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 5, 8, 9</strong><p>The paper acknowledges limitations including the time-bound nature of AI framework evaluation and the difficulty of measuring text informativeness.</p><p>Assessor’s interpretation: supported. The methods section notes that AI frameworks were run in January-March 2026 and conclusions reflect that state. The paper also acknowledges that measuring text informativeness is difficult. These limitations are appropriately stated.</p><details><summary>Canonical source evidence</summary><blockquote>
+is particularly visible in the reports generated by K -Dense, which
+became several times shorter in terms of the numbers of symbols,
+panels in figures, and cited references; in Kosmos, where reports
+are structured to provide 3 -4 discoveries (presumably, with a
+preset length of the text), the lengths of reports did not decrease
+much, but the numbers of panels in figures did (Tab le 1, compare
+columns &quot;full -sized prompt&quot; vs. &quot;smaller -scope prompt&quot;). The
+same also applies to our evaluation of the informativeness of the
+text per page, which is, however, more difficult to measure. Thus,
+these AI frameworks have not adapted the scope of analysis to the
+scope of the prompt, even though the smaller -scope prompt,
+despite its smaller scale, still poses a deep and practically valuable
+scientific problem.
+We also ran Claude Opus 4.6 Extended  and ChatGPT Extended
+Thinking 5.4 on </blockquote><blockquote>
+explicitly prescribed, and only construction and short equilibration
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+9
+
+of three all-atom systems were requested, without production MD
+or its analysis (see Appendix).
+For all other aspects of Methods, we refer the reader to the first
+paper in this series ,8 We remind the reader that AI frameworks
+were run in January -March 2026, and therefore, our conclusions
+reflect the state of the listed AI frameworks at that time , which
+may have changed since then.15,32</blockquote></details></li><li><strong>Presentation and precision — pages 3–5</strong><p>The paper presents results in a clear, structured format with tables, figures, and specific quantitative comparisons.</p><p>Assessor’s interpretation: supported. Tables 1-3 provide quantitative comparisons of paper length, figures, references, and correlation values. The paper uses specific examples and numerical values to support its claims, enhancing precision.</p><details><summary>Canonical source evidence</summary><blockquote>7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+4
+
+Table 1. On the Antibody Developability Properties project, all AI frameworks in all runs generated final reports of smaller scope than the original
+paper. With the smaller-scope prompt, still presenting a major scientific challenge, the scope of AI work did not adjust, and the quality of resulting
+reports deteriorated further. None of the AI frameworks found and cited the original paper, despite the fact that this paper is the single most relevant
+paper for the full-sized prompt, and also highly relevant for the smaller-scope prompt.
+ Original
+paper
+Kosmos  K-Dense
+Full-sized prompt
+(runs A; B)
+Smaller-scope
+prompt (runs A; B)
+Full-sized
+prompt
+Smaller-scope prompt
+(runs A; B; C; D)
+Paper length, symbols without
+spaces 123,184 38,955; 47,257 39,812; 40,428 42,071 16,629; 14,802; 15,228; </blockquote><blockquote>taken from the final AI -generated reports (sometimes with
+smaller numbers of digits).
+AI fra -
+mework
+Run Expression Binding
+ESM One-hot ESM One-hot
+K-
+Dense
+A 0.41 0.44 0.30 0.26
+B 0.57±0.05 0.57±0.09 0.51±0.05 0.50±0.06
+C 0.52±0.17 0.56±0.14 0.35±0.16 0.50±0.18
+D 0.54±0.05 0.01±0.02 0.64±0.03 0.52±0.05
+Kosmos A 0.44±0.16 0.42±0.11 0.32±0.08 0.31±0.14
+B 0.70±0.02 0.65±0.04 0.54±0.04 0.53±0.04
+Reference study 0.56* 0.47* 0.42* 0.30*
+* Only values averaged over 3 expression datasets and 16 binding datasets are
+provided in the reference paper.
+
+quality. The smaller-scope prompt, despite being more specific
+and producing more reliable computational results, yielded less
+impressive scientific reports, shorter and less detailed than the
+reports generated from the initial full -sized prompt, where the
+broader scope elicited richer and longer scientific narratives. This </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:24",
-    "generated_at": "2026-09-16 16:58:08",
+    "generated_at": "2026-09-16 17:43:17",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -128,58 +128,88 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engram from a pretraining- time conditional memory component into a post- hoc adapter for frozen large language models.",
         "explanation": "The paper explicitly names the proposed framework and states what it repurposes, making the core contribution identifiable from the introduction.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "The modified hidden state at layer \u2113\u2208Lis: u(\u2113) new =u (\u2113) +\u03b1\u00b7g (\u2113)\u00b7mem (\u2113)(x1:t),(1) whereu(\u2113)\u2208R B\u00d7T\u00d7D is the hidden state,\u03b1= 0.2 is a fixed scaling factor, g(\u2113) \u2208[0,1] B\u00d7T is the learned gate, and mem(\u2113) is the Engram memory retrieval.",
         "explanation": "The core update equation is given with definitions of each term, supporting methodological clarity.",
         "page": 3,
+        "pages": [],
         "paraphrase": "The method is described with a formal update equation.",
         "section": "Conditional-Activation Adapter",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Engram Adapter86.47 56.83 89.5272.53 101.0",
         "explanation": "The 8B results table shows the Engram Adapter achieving 86.47% in-domain accuracy and 101.0% average OOD retention, providing quantitative support for the central claim.",
         "page": 9,
+        "pages": [],
         "paraphrase": "Quantitative results are reported for the proposed method and baselines.",
         "section": "Conclusion",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "Despite mean joint activation rates of 26\u201328%, the mean resid- ual ratio is only\u22480.08% of the hidden-state norm. Even conditioning on activated tokens, the 95th- percentile perturbation is only\u22481.1\u20131.2% of the hidden-state norm.",
         "explanation": "The mechanistic analysis directly connects the observed non-negligible OOD activation to the small residual perturbation, supporting the claim that gate and projection attenuation preserve OOD behavior.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The mechanistic evidence aligns with the retention claim.",
         "section": "Residual Perturbation Analysis",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Most PEFT methods are effectively always on: once trained, their residual modules or weight per- turbations are applied to every input without distin- guishing whether it belongs to the target domain.",
         "explanation": "The paper contrasts its conditional-activation approach with always-on PEFT methods, but the comparison is primarily conceptual rather than a detailed empirical or theoretical positioning against specific prior work.",
         "page": 1,
+        "pages": [],
         "paraphrase": "The gap is identified but related-work comparison is limited.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "The current experiments span two model scales (Qwen3-4B and Qwen3-8B) and three evaluation domains (news, medicine, law), but empirical validation on even larger models (e.g., 27B pa- rameters) and more challenging domain corpora would further strengthen the findings.",
         "explanation": "The limitations section explicitly acknowledges the scale and domain coverage constraints of the empirical validation.",
         "page": 9,
+        "pages": [],
         "paraphrase": "Limitations are acknowledged.",
         "section": "Limitations",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

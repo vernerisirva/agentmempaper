@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:31:25",
-    "generated_at": "2026-09-16 16:58:07",
+    "generated_at": "2026-09-16 17:43:16",
     "last_seen_at": "2026-09-14 13:11:00",
     "metadata_sources": [
       "openalex",
@@ -136,85 +136,130 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "We introduce AGENTIDEABENCH, a benchmark that makes the mode of literature access the experimental variable, contrastingstatic observationof a curated literature pool withactive explorationin which the model gathers its own evidence.",
         "explanation": "The paper clearly introduces AgentIdeaBench as a benchmark evaluating scientific ideation under matched static and active settings.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "We curate 100 research subfields spanning com- puter science, physics, biology, chemistry, and medicine. They are chosen to cover both concept- driven fields, where a hypothesis is an argument, and experiment-heavy fields, where it is a protocol.",
         "explanation": "The benchmark construction, subfield curation, and scoring pipeline are described in detail.",
         "page": 4,
+        "pages": [],
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
         "section": "Tasks And Subfields",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "Unless noted, effect sizes are paired differences over shared model-and-subfield cells with Wilcoxon signed-rank tests, and uncer- tainty is a bootstrap 95% CI over 5000 resam- ples with a fixed seed.",
         "explanation": "The paper reports statistical tests, bootstrap intervals, and robustness checks for headline claims.",
         "page": 6,
+        "pages": [],
         "paraphrase": "Robustness or statistical analysis is reported.",
         "section": "Controls And Statistical Tests",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "A recall-only control sup- plies the discipline and subfield name with nei- ther curated references nor search tools, which separates having references from gathering them.",
         "explanation": "The paper compares against prior ideation benchmarks and includes control tracks such as recall-only and replay.",
         "page": 8,
+        "pages": [],
         "paraphrase": "A baseline or comparison system is described.",
         "section": "Alternative Explanations And Robustness",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Across the 28 matched primary-roster models the Active\u2212Static gain is strongly correlated with static ability, at Pearson r=+0.69 and p<10\u22124 (Fig- ure 3).",
         "explanation": "The paper reports quantitative scores, effect sizes, and significance tests across 33 models and 40 subfields.",
         "page": 7,
+        "pages": [],
         "paraphrase": "Quantitative evaluation signals were detected.",
         "section": "Active Gains Increase With Model",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "Grouped into static-ability quartiles, the weakest models lose\u22120.18 from being handed tools while the strongest gain +0.76.",
         "explanation": "The capability-gate claim is supported by correlation, quartile means, and replication on held-out models.",
         "page": 7,
+        "pages": [],
         "paraphrase": "Claims are supported by quantitative evidence and controls.",
         "section": "Active Gains Increase With Model",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "Two limitations recur across this line, and AGENTIDEABENCHis built to remove them. At generation time the model ei- ther reads a reference list assembled for it or works from no literature at all, so it never decides what to read.",
         "explanation": "Table 1 situates AgentIdeaBench against prior benchmarks and systems, and the narrative identifies two recurring limitations the benchmark removes.",
         "page": 4,
+        "pages": [],
         "paraphrase": "Related work is compared in a structured table and narrative.",
         "section": "Related Work",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "The scorer is a model.Every dimension score in this paper is an LLM judgment. We mitigate that with retrieved prior-art evidence, a critic ensemble, and human-landmark anchoring, and we report the validity checks in Appendices D and B, though mitigation falls short of validation.",
         "explanation": "The paper has a dedicated Limitations section covering LLM scoring, bundled Active effects, and unconfirmed generation-time results.",
         "page": 10,
+        "pages": [],
         "paraphrase": "Limitations or threats to validity are acknowledged.",
         "section": "Limitations",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [],
         "excerpt": "Models, data, and artifacts.All models we evaluate are publicly available and were accessed through a commercial API router under its terms of use.",
         "explanation": "The paper documents artifact licensing, redistribution terms, and ethics considerations.",
         "page": 10,
+        "pages": [],
         "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
         "section": "Limitations",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

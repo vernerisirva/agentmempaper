@@ -152,6 +152,81 @@
         },
         "evidence": {
           "items": {
+            "properties": {
+              "context_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "evidence_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "pages": {
+                "items": {
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "type": "array"
+              },
+              "source_blocks": {
+                "items": {
+                  "properties": {
+                    "content_hash": {
+                      "pattern": "^[a-f0-9]{64}$",
+                      "type": "string"
+                    },
+                    "evidence_id": {
+                      "type": "string"
+                    },
+                    "pages": {
+                      "items": {
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "type": "array"
+                    },
+                    "section": {
+                      "type": "string"
+                    },
+                    "source_spans": {
+                      "items": {
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "evidence_id",
+                    "text",
+                    "content_hash",
+                    "pages",
+                    "section",
+                    "source_spans"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "support_status": {
+                "enum": [
+                  "supported",
+                  "partial",
+                  "unsupported",
+                  null
+                ],
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
             "type": "object"
           },
           "type": "array"

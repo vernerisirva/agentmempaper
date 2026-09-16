@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:43",
-    "generated_at": "2026-09-16 16:57:58",
+    "generated_at": "2026-09-16 17:43:07",
     "last_seen_at": "2026-09-15 11:59:43",
     "metadata_sources": [
       "openalex",
@@ -119,14 +119,17 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T16:53:48+00:00",
+    "assessed_at": "2026-09-16T17:40:37+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-coverage-v1",
+    "assessment_version": "quality-evidence-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
-    "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 84/100, medium confidence, based on full text.",
+    "concerns": [
+      "Retrieval relevance is low, with the best model achieving only 45.0%, and tag overlap is weak at 35.5%.",
+      "The claim of privacy protection is not directly validated by an end-to-end leakage measurement under adversarial queries."
+    ],
+    "concise_summary": "The paper presents a coherent systems/methods contribution: a privacy-aware, multi-agent, multi-user memory framework with a new benchmark. The contribution is clearly scoped, the method is formally specified, and the evaluation includes multiple models, domains, and metrics. The central claims about visibility classification and multi-user access control are supported by reported results, while operation accuracy is modest and retrieval relevance is weak. The authors explicitly acknowledge these limitations and provide detailed benchmark construction and validation procedures. The paper is methodologically transparent and appropriately positioned relative to prior work.",
     "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 82782,
@@ -164,8 +167,14 @@
         30,
         31
       ],
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
       "characters_before_extraction_limit": 87184,
       "eligible_characters": 80016,
+      "evidence_block_count": 109,
+      "evidence_context_characters": 90273,
+      "evidence_context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+      "evidence_context_sha256": "505e12bcca41edb701b6342dce4a5fdab44c2dbbc113d5a517102021dd0ab3ca",
+      "evidence_version": "block-evidence-v1",
       "excluded_back_matter_characters": 5941,
       "extracted_characters": 87244,
       "extracted_page_indices": [
@@ -558,7 +567,9 @@
           "page": 31
         }
       ],
+      "selected_text_sha256": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea",
       "selection_version": "representative-v1",
+      "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
       "source_pages": 31,
       "unreadable_pages": [],
       "version": "coverage-v1",
@@ -569,106 +580,610 @@
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 4,
+      "evaluation_or_validation_strength": 3,
+      "evidence_to_claim_alignment": 3,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 5,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 2,
-      "scholarly_novelty_or_value": 4
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
       {
-        "dimension": "contribution_clarity",
-        "excerpt": "llusers. To evaluate AIM in a multi-user setting, we introduce MUMBench(Multi-User Memory Benchmark), a dataset containing interactions from m",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
-        "signal_type": "positive"
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0016",
+          "E6f5745c068db81ad-B0018"
+        ],
+        "excerpt": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3\nkeyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the \n[\u2026 separate evidence block \u2026]\nThe first inference problem is to determine which memory operations a messagex implies. We for-\nmulate this as amulti-label classificationtask where fop maps a message to a subset of{C,R,U,D}\n(create, read, update, delete) orNONEif no memory operation is required.\nA critical design choice is thatfop may returnmultiplelabels for a single input. For example, \"I just\nmoved to San Francisco. Can you recommend dinner spots?\" yields{C,R} : a new personal fact must\nbe storedandexisting memories should be retrieved. This multi-label formulation distinguishes AIM\nfrom prior systems that assume a single operation per turn.\nWe implementfop via in-context learning: the LLM receives a prompt containing the operation\ntaxonomy, few-shot exemplars for each label (including multi-label cases), and a privacy guard\n(queries attempting to elicit another user's private information are mapped to \u2205).",
+        "explanation": "The problem formulation defines the visibility constraint V(u,mi) and the methods sections detail each inference stage with equations and algorithmic descriptions, including the full lifecycle algorithm in the appendix.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "The memory lifecycle is formally specified with a visibility predicate, multi-label intent detection, structured extraction, scope-restricted deduplication, and cascaded retrieval.",
+        "section": "Problem Formulation / Multi-Label Intent Detection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2799741b1c846eb449317d1fedae53d70eefda7f07cb3573a8aa8fe2c96a1f88",
+            "evidence_id": "E6f5745c068db81ad-B0016",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Problem Formulation",
+            "source_spans": [
+              {
+                "end": 278,
+                "page": 3,
+                "section": "Problem Formulation",
+                "section_index": 7,
+                "start": 0,
+                "text": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3"
+              },
+              {
+                "end": 619,
+                "page": 4,
+                "section": "Problem Formulation",
+                "section_index": 8,
+                "start": 0,
+                "text": "keyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the "
+              }
+            ],
+            "text": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3\nkeyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the "
+          },
+          {
+            "content_hash": "7cb7047316dec3c336087e38910c5fb4b87a47be25661af5ce820fb3ca9dccac",
+            "evidence_id": "E6f5745c068db81ad-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Multi-Label Intent Detection",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 4,
+                "section": "Multi-Label Intent Detection",
+                "section_index": 9,
+                "start": 0,
+                "text": "The first inference problem is to determine which memory operations a messagex implies. We for-\nmulate this as amulti-label classificationtask where fop maps a message to a subset of{C,R,U,D}\n(create, read, update, delete) orNONEif no memory operation is required.\nA critical design choice is thatfop may returnmultiplelabels for a single input. For example, \"I just\nmoved to San Francisco. Can you recommend dinner spots?\" yields{C,R} : a new personal fact must\nbe storedandexisting memories should be retrieved. This multi-label formulation distinguishes AIM\nfrom prior systems that assume a single operation per turn.\nWe implementfop via in-context learning: the LLM receives a prompt containing the operation\ntaxonomy, few-shot exemplars for each label (including multi-label cases), and a privacy guard\n(queries attempting to elicit another user's private information are mapped to \u2205). "
+              }
+            ],
+            "text": "The first inference problem is to determine which memory operations a messagex implies. We for-\nmulate this as amulti-label classificationtask where fop maps a message to a subset of{C,R,U,D}\n(create, read, update, delete) orNONEif no memory operation is required.\nA critical design choice is thatfop may returnmultiplelabels for a single input. For example, \"I just\nmoved to San Francisco. Can you recommend dinner spots?\" yields{C,R} : a new personal fact must\nbe storedandexisting memories should be retrieved. This multi-label formulation distinguishes AIM\nfrom prior systems that assume a single operation per turn.\nWe implementfop via in-context learning: the LLM receives a prompt containing the operation\ntaxonomy, few-shot exemplars for each label (including multi-label cases), and a privacy guard\n(queries attempting to elicit another user's private information are mapped to \u2205). "
+          }
+        ],
+        "support_status": "supported"
       },
       {
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "eserving design choice: a private memory is never compared against another user's private memories, preventing cross-user information leakage thro",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0034",
+          "E6f5745c068db81ad-B0039"
+        ],
+        "excerpt": "We evaluate AIM on MUMBench across all four domains using 5 models from different model\nfamilies:GPT-5.4,GPT-5.4-mini,DeepSeek-V3.2,Mistral-Large-3, andLlama-3.3-70B-Instruct.\nThe memory store is cleared before each domain to ensure isolation. Interactions are replayed\nsequentially through the full inference pipeline (operation detection\u2192 extraction\u2192 classification\u2192\ndeduplication\u2192retrieval), executing every stage described in the Methods section.\nWe report results using each model as the primary model for all pipeline components\n(extraction, classification, operation detection, deduplication, reranking). Embeddings use\ntext-embedding-3-large (d= 3072 ) for memory storage, retrieval, and content similarity evalu-\nation. We run3trials of each model on every interaction in MUMBench to ensure consistency and\nestimate variability.\nTo validate AIM against existing agentic memory solutions, we \n[\u2026 separate evidence block \u2026]\n68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over",
+        "explanation": "The experimental setup specifies five models and three trials, and Table 1 reports strict, state-aware, visibility, and content quality metrics with standard deviations across domains.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "AIM is evaluated across five models, four domains, and multiple metrics with three independent runs, reporting visibility classification accuracy up to 96.0%.",
+        "section": "Experimental Setup / Evaluation Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "529f3459ffd10578d87011197f1d6169398c79b3751dc08c8db832078c3c1eb4",
+            "evidence_id": "E6f5745c068db81ad-B0034",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 19,
+                "start": 0,
+                "text": "We evaluate AIM on MUMBench across all four domains using 5 models from different model\nfamilies:GPT-5.4,GPT-5.4-mini,DeepSeek-V3.2,Mistral-Large-3, andLlama-3.3-70B-Instruct.\nThe memory store is cleared before each domain to ensure isolation. Interactions are replayed\nsequentially through the full inference pipeline (operation detection\u2192 extraction\u2192 classification\u2192\ndeduplication\u2192retrieval), executing every stage described in the Methods section.\nWe report results using each model as the primary model for all pipeline components\n(extraction, classification, operation detection, deduplication, reranking). Embeddings use\ntext-embedding-3-large (d= 3072 ) for memory storage, retrieval, and content similarity evalu-\nation. We run3trials of each model on every interaction in MUMBench to ensure consistency and\nestimate variability.\nTo validate AIM against existing agentic memory solutions, we "
+              }
+            ],
+            "text": "We evaluate AIM on MUMBench across all four domains using 5 models from different model\nfamilies:GPT-5.4,GPT-5.4-mini,DeepSeek-V3.2,Mistral-Large-3, andLlama-3.3-70B-Instruct.\nThe memory store is cleared before each domain to ensure isolation. Interactions are replayed\nsequentially through the full inference pipeline (operation detection\u2192 extraction\u2192 classification\u2192\ndeduplication\u2192retrieval), executing every stage described in the Methods section.\nWe report results using each model as the primary model for all pipeline components\n(extraction, classification, operation detection, deduplication, reranking). Embeddings use\ntext-embedding-3-large (d= 3072 ) for memory storage, retrieval, and content similarity evalu-\nation. We run3trials of each model on every interaction in MUMBench to ensure consistency and\nestimate variability.\nTo validate AIM against existing agentic memory solutions, we "
+          },
+          {
+            "content_hash": "d61e2eed0e2c37dd7e6271dac77f1fbd4d60b839ba3f41f8badee215d9e8848e",
+            "evidence_id": "E6f5745c068db81ad-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Evaluation Methodology",
+            "source_spans": [
+              {
+                "end": 3158,
+                "page": 8,
+                "section": "Evaluation Methodology",
+                "section_index": 21,
+                "start": 2261,
+                "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+              }
+            ],
+            "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+          }
+        ],
+        "support_status": "supported"
+      },
+      {
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0044",
+          "E6f5745c068db81ad-B0048"
+        ],
+        "excerpt": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect \n[\u2026 separate evidence block \u2026]\nJaccard similarity of tag sets per pair.\n\u2022 Retrieval relevance: LLM-judged relevance of retrieved memories to the user query for\nread operations.\nContent Fidelity.Content Fidelity averages81.7%across all domains for the highest-performing\nmodel (DeepSeek-V3.2), indicating that when AIM does extract a memory, the content closely\nmatches the gold standard. Coding achieves the highest scores on average, while Customer Support\nis lowest, likely due to the difficulty of extracting complex order preferences from conversations.\nRetrieval Relevance.While AIM extracts meaningful memories and performs well across various\nmetrics, its Retrieval Relevance is lower, with the best-performing model (GPT-5.4) achieving an\naverage score of45.0%. This likely stems from the fixed pre-filter retrieval count (5), which can\nsurface low-similarity memories. Tuning this count and exploring alternative",
+        "explanation": "The limitations section and supplementary metrics explicitly report these low scores, indicating that core retrieval and tag extraction components underperform despite strong visibility classification.",
+        "page": 9,
+        "pages": [
+          9,
+          12
+        ],
+        "paraphrase": "Retrieval relevance is low, with the best model achieving only 45.0%, and tag overlap is weak at 35.5%.",
+        "section": "Limitations / Appendix: Supplementary Metrics",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5e095b74b5b8d9ed1dd6c323bd028ca1fbd66816abdaff6045a3ec1316da12bd",
+            "evidence_id": "E6f5745c068db81ad-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 0,
+                "text": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect "
+              }
+            ],
+            "text": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect "
+          },
+          {
+            "content_hash": "d884cdfb9eb48e0216046408530b1ea5de3427e662be77dc8be2da50aed6fded",
+            "evidence_id": "E6f5745c068db81ad-B0048",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Supplementary Metrics",
+            "source_spans": [
+              {
+                "end": 1784,
+                "page": 12,
+                "section": "Appendix: Supplementary Metrics",
+                "section_index": 26,
+                "start": 893,
+                "text": "Jaccard similarity of tag sets per pair.\n\u2022 Retrieval relevance: LLM-judged relevance of retrieved memories to the user query for\nread operations.\nContent Fidelity.Content Fidelity averages81.7%across all domains for the highest-performing\nmodel (DeepSeek-V3.2), indicating that when AIM does extract a memory, the content closely\nmatches the gold standard. Coding achieves the highest scores on average, while Customer Support\nis lowest, likely due to the difficulty of extracting complex order preferences from conversations.\nRetrieval Relevance.While AIM extracts meaningful memories and performs well across various\nmetrics, its Retrieval Relevance is lower, with the best-performing model (GPT-5.4) achieving an\naverage score of45.0%. This likely stems from the fixed pre-filter retrieval count (5), which can\nsurface low-similarity memories. Tuning this count and exploring alternative "
+              }
+            ],
+            "text": "Jaccard similarity of tag sets per pair.\n\u2022 Retrieval relevance: LLM-judged relevance of retrieved memories to the user query for\nread operations.\nContent Fidelity.Content Fidelity averages81.7%across all domains for the highest-performing\nmodel (DeepSeek-V3.2), indicating that when AIM does extract a memory, the content closely\nmatches the gold standard. Coding achieves the highest scores on average, while Customer Support\nis lowest, likely due to the difficulty of extracting complex order preferences from conversations.\nRetrieval Relevance.While AIM extracts meaningful memories and performs well across various\nmetrics, its Retrieval Relevance is lower, with the best-performing model (GPT-5.4) achieving an\naverage score of45.0%. This likely stems from the fixed pre-filter retrieval count (5), which can\nsurface low-similarity memories. Tuning this count and exploring alternative "
+          }
+        ],
+        "support_status": "supported"
+      },
+      {
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0025",
+          "E6f5745c068db81ad-B0039"
+        ],
+        "excerpt": "Retrieval in AIM is a three-stage cascade that progressively refines candidate memories through\nscoring functions of increasing cost and precision (Figure 1). This follows theretrieve-then-rerank\nparadigm common in information retrieval Nogueira and Cho [2019], extended here with visibility\nconstraints and temporal fusion.\nStage 1: Visibility-Constrained Dense Retrieval.Given query q, useru, and agenta, we first\nconstruct the visibility predicateV(u,\u00b7) from Eq. 1 and push it into the vector index as a server-side\nfilter. The index returns the top-kcandidates ranked by cosine similarity:\nsvec(q,mi) = \u03d5(q)\u22a4emi\n\u2225\u03d5(q)\u2225\u00b7\u2225e mi\u2225, m i\u2208{m\u2208M:V(u,m)}.(3)\nThis stage is efficient ( O(log|M|) via HNSW) and provides the primary recall set, with Eq. 1\nenforced at the index level so other users' private memories arenevercandidates.\nStage 2: Tag-Level Semantic Rescoring.For each candidate mi with \n[\u2026 separate evidence block \u2026]\n68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over",
+        "explanation": "The paper reports visibility accuracy near or above 90% for all models and describes the retrieval stage as enforcing the visibility predicate at the index level so private memories are never candidates for unauthorized users.",
         "page": 5,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "In-Context Semantic Deduplication",
-        "signal_type": "positive"
+        "pages": [
+          5,
+          8
+        ],
+        "paraphrase": "The central privacy claim is supported by high visibility classification accuracy and deterministic index-level filtering.",
+        "section": "Cascaded Memory Retrieval / Evaluation Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ec8eadaf4f3396c0600a6a7b954265de8f62c4ff1481af77823ca86f89e23db2",
+            "evidence_id": "E6f5745c068db81ad-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Cascaded Memory Retrieval",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 5,
+                "section": "Cascaded Memory Retrieval",
+                "section_index": 14,
+                "start": 0,
+                "text": "Retrieval in AIM is a three-stage cascade that progressively refines candidate memories through\nscoring functions of increasing cost and precision (Figure 1). This follows theretrieve-then-rerank\nparadigm common in information retrieval Nogueira and Cho [2019], extended here with visibility\nconstraints and temporal fusion.\nStage 1: Visibility-Constrained Dense Retrieval.Given query q, useru, and agenta, we first\nconstruct the visibility predicateV(u,\u00b7) from Eq. 1 and push it into the vector index as a server-side\nfilter. The index returns the top-kcandidates ranked by cosine similarity:\nsvec(q,mi) = \u03d5(q)\u22a4emi\n\u2225\u03d5(q)\u2225\u00b7\u2225e mi\u2225, m i\u2208{m\u2208M:V(u,m)}.(3)\nThis stage is efficient ( O(log|M|) via HNSW) and provides the primary recall set, with Eq. 1\nenforced at the index level so other users' private memories arenevercandidates.\nStage 2: Tag-Level Semantic Rescoring.For each candidate mi with "
+              }
+            ],
+            "text": "Retrieval in AIM is a three-stage cascade that progressively refines candidate memories through\nscoring functions of increasing cost and precision (Figure 1). This follows theretrieve-then-rerank\nparadigm common in information retrieval Nogueira and Cho [2019], extended here with visibility\nconstraints and temporal fusion.\nStage 1: Visibility-Constrained Dense Retrieval.Given query q, useru, and agenta, we first\nconstruct the visibility predicateV(u,\u00b7) from Eq. 1 and push it into the vector index as a server-side\nfilter. The index returns the top-kcandidates ranked by cosine similarity:\nsvec(q,mi) = \u03d5(q)\u22a4emi\n\u2225\u03d5(q)\u2225\u00b7\u2225e mi\u2225, m i\u2208{m\u2208M:V(u,m)}.(3)\nThis stage is efficient ( O(log|M|) via HNSW) and provides the primary recall set, with Eq. 1\nenforced at the index level so other users' private memories arenevercandidates.\nStage 2: Tag-Level Semantic Rescoring.For each candidate mi with "
+          },
+          {
+            "content_hash": "d61e2eed0e2c37dd7e6271dac77f1fbd4d60b839ba3f41f8badee215d9e8848e",
+            "evidence_id": "E6f5745c068db81ad-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Evaluation Methodology",
+            "source_spans": [
+              {
+                "end": 3158,
+                "page": 8,
+                "section": "Evaluation Methodology",
+                "section_index": 21,
+                "start": 2261,
+                "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+              }
+            ],
+            "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+          }
+        ],
+        "support_status": "supported"
       },
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "runs, AIM achieves96.0%visibility classification accuracy, 58.8%strict operation accuracy, and70.5%state-aware operation accuracy across three independent runs.",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": ", or HNSW with a different ANN algorithm\u2014enabling ablation studies that isolate the contribution of individual components such as deduplic",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0029",
+          "E6f5745c068db81ad-B0039"
+        ],
+        "excerpt": "While there exist many benchmarks for assessing memory retention and retrieval capabilities, we were\nunable to find a standardized benchmark that assesses an agentic memory system's ability to handle\nprivateandpublicmemories acrossmultiple users. To address this, we developedMulti-User\nMemory Benchmark (MUMBench). MUMBench contains simulated user interactions between a\nuser and an agentic chatbot. These interactions contain user preferences, updates, requests, and more.\nThese interactions are spread across many unique users, and are intended to simulate an agentic\nsystem where many different users interact with the same chatbot. These interactions are categorized\ninto4 domains: Coding, Customer Support, Education, and Travel Planning. MUMBench\nevaluates a memory system's ability to properly classify user inputs asprivateorpublic, validate\nwhether any private memories scoped to an \n[\u2026 separate evidence block \u2026]\n68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over",
+        "explanation": "The benchmark includes adversarial queries and visibility classification is measured, but the paper does not report a separate metric confirming that no private memory was ever surfaced to an unauthorized user during retrieval.",
         "page": 6,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Modularity And Ablation",
-        "signal_type": "positive"
+        "pages": [
+          6,
+          8
+        ],
+        "paraphrase": "The claim of privacy protection is not directly validated by an end-to-end leakage measurement under adversarial queries.",
+        "section": "Mumbench / Evaluation Methodology",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "60ffb6d80fc05cd4b853d8db301548f6f55e17479cf91f4daa1a3b1a5479459b",
+            "evidence_id": "E6f5745c068db81ad-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Mumbench",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 6,
+                "section": "Mumbench",
+                "section_index": 17,
+                "start": 0,
+                "text": "While there exist many benchmarks for assessing memory retention and retrieval capabilities, we were\nunable to find a standardized benchmark that assesses an agentic memory system's ability to handle\nprivateandpublicmemories acrossmultiple users. To address this, we developedMulti-User\nMemory Benchmark (MUMBench). MUMBench contains simulated user interactions between a\nuser and an agentic chatbot. These interactions contain user preferences, updates, requests, and more.\nThese interactions are spread across many unique users, and are intended to simulate an agentic\nsystem where many different users interact with the same chatbot. These interactions are categorized\ninto4 domains: Coding, Customer Support, Education, and Travel Planning. MUMBench\nevaluates a memory system's ability to properly classify user inputs asprivateorpublic, validate\nwhether any private memories scoped to an "
+              }
+            ],
+            "text": "While there exist many benchmarks for assessing memory retention and retrieval capabilities, we were\nunable to find a standardized benchmark that assesses an agentic memory system's ability to handle\nprivateandpublicmemories acrossmultiple users. To address this, we developedMulti-User\nMemory Benchmark (MUMBench). MUMBench contains simulated user interactions between a\nuser and an agentic chatbot. These interactions contain user preferences, updates, requests, and more.\nThese interactions are spread across many unique users, and are intended to simulate an agentic\nsystem where many different users interact with the same chatbot. These interactions are categorized\ninto4 domains: Coding, Customer Support, Education, and Travel Planning. MUMBench\nevaluates a memory system's ability to properly classify user inputs asprivateorpublic, validate\nwhether any private memories scoped to an "
+          },
+          {
+            "content_hash": "d61e2eed0e2c37dd7e6271dac77f1fbd4d60b839ba3f41f8badee215d9e8848e",
+            "evidence_id": "E6f5745c068db81ad-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Evaluation Methodology",
+            "source_spans": [
+              {
+                "end": 3158,
+                "page": 8,
+                "section": "Evaluation Methodology",
+                "section_index": 21,
+                "start": 2261,
+                "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+              }
+            ],
+            "text": "68.2\u00b10.6\nDeepSeek-V3.279.8\u00b11.070.5\u00b11.1 66.0\u00b13.7 61.1\u00b11.2 69.4\u00b10.9\nMistral-Large-3 69.3\u00b11.3 62.7\u00b11.9 58.3\u00b10.7 57.4\u00b11.1 61.9\u00b10.8\nLlama-3.3-70B-Instruct 72.0\u00b10.7 70.5\u00b10.7 56.5\u00b11.6 61.3\u00b11.1 65.1\u00b10.9\nVisibility\nGPT-5.4-mini 92.7\u00b11.1 96.6\u00b10.8 90.6\u00b11.0100.0\u00b10.095.0\u00b10.3\nGPT-5.493.7\u00b11.6 97.4\u00b11.292.9\u00b11.8100.0\u00b10.0 96.0\u00b10.7\nDeepSeek-V3.2 90.7\u00b11.4 95.0\u00b12.694.3\u00b10.3 100.0\u00b10.095.0\u00b11.0\nMistral-Large-3 87.6\u00b11.2 93.8\u00b11.1 86.9\u00b10.4 95.0\u00b10.0 90.8\u00b10.5\nLlama-3.3-70B-Instruct 88.7\u00b11.0 88.7\u00b11.4 90.2\u00b11.0 90.3\u00b12.1 89.5\u00b10.4\nContent Quality\nGPT-5.4-mini 98.2\u00b10.6 89.7\u00b12.196.8\u00b10.6 81.8\u00b11.3 91.6\u00b10.3\nGPT-5.499.6\u00b10.7 96.1\u00b12.096.3\u00b10.3 67.5\u00b12.5 89.9\u00b10.4\nDeepSeek-V3.2 98.9\u00b10.0 81.8\u00b12.3 94.5\u00b10.3 80.9\u00b11.3 89.0\u00b10.9\nMistral-Large-3 97.8\u00b11.1 86.0\u00b11.8 95.8\u00b10.6 80.5\u00b11.2 90.0\u00b10.4\nLlama-3.3-70B-Instruct 91.3\u00b10.4 79.6\u00b11.2 90.1\u00b11.4 76.0\u00b10.4 84.3\u00b10.2\nTable 1: Core accuracy and quality metrics (%; mean\u00b1 sample standard deviation over "
+          }
+        ],
+        "support_status": "partial"
       },
       {
-        "dimension": "methodological_rigor",
-        "excerpt": "reports averages over 10 runs. This could reduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does not exercis",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 9,
-        "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Limitations",
-        "signal_type": "positive"
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0009",
+          "E6f5745c068db81ad-B0013"
+        ],
+        "excerpt": "Memory Architectures for LLM Agents.Generative Agents [Park et al., 2023] introduced\nthe foundational agent memory architecture combining observation, reflection, and planning with\nretrieval weighted by recency, importance, and relevance. The CoALA framework [Sumers et al.,\n2024] formalized these ideas into a taxonomy decomposing agents into working, episodic, semantic,\nand procedural memory modules. MemGPT [Packer et al., 2023] pioneered an OS-inspired tiered\nmemory with self-directed paging between main context and external storage. Subsequent work\nhas improved memory structure and maintenance. A-MEM [Xu et al., 2025] enables autonomous\nmemory reorganization across tasks. Mem0 [Chhikara et al., 2025] introduces a production-oriented\npipeline where the LLM selects among ADD, UPDATE, DELETE, and NOOP operations with\n91% lower latency versus full-context baselines. MemInsight [Salama et \n[\u2026 separate evidence block \u2026]\nmay simultaneously require both a memory write and a retrieval, whereas prior\npipelines (e.g., Mem0) assume exactly one operation per turn. The result is, to our knowledge, the\nfirst end-to-end pipeline that unifies LLM-based extraction, automatic privacy classification, and\nindex-level access enforcement in a single modular, system-agnostic service.\nAgent Memory Benchmarks.In terms of existing agent memory benchmarks, MemoryAgent-\nBench [Hu et al., 2025] evaluates memory retrieval, test-time learning, long-range understanding,\nand selective forgetting in single-agent settings. LOCOMO [Maharana et al., 2024] provides a\nmulti-session conversational benchmark spanning hundreds of turns but is limited to single-user sce-\nnarios. No existing benchmark evaluates private versus shared memory classification, cross-session\nsynchronization, or memory integrity under concurrent multi-agent",
+        "explanation": "The related work section reviews memory architectures, modular memory, and multi-user sharing, explicitly noting that existing systems lack multi-user access control and that no benchmark evaluates private versus shared memory classification.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "The paper positions AIM against prior single-user memory systems and identifies the gap in multi-user access control and cross-agent synchronization.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a5d5d58d2ae7e19d5b755eb11a41894bf87f85f4091eecb34d4b6f6c91a118ad",
+            "evidence_id": "E6f5745c068db81ad-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Related Work",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 0,
+                "text": "Memory Architectures for LLM Agents.Generative Agents [Park et al., 2023] introduced\nthe foundational agent memory architecture combining observation, reflection, and planning with\nretrieval weighted by recency, importance, and relevance. The CoALA framework [Sumers et al.,\n2024] formalized these ideas into a taxonomy decomposing agents into working, episodic, semantic,\nand procedural memory modules. MemGPT [Packer et al., 2023] pioneered an OS-inspired tiered\nmemory with self-directed paging between main context and external storage. Subsequent work\nhas improved memory structure and maintenance. A-MEM [Xu et al., 2025] enables autonomous\nmemory reorganization across tasks. Mem0 [Chhikara et al., 2025] introduces a production-oriented\npipeline where the LLM selects among ADD, UPDATE, DELETE, and NOOP operations with\n91% lower latency versus full-context baselines. MemInsight [Salama et "
+              }
+            ],
+            "text": "Memory Architectures for LLM Agents.Generative Agents [Park et al., 2023] introduced\nthe foundational agent memory architecture combining observation, reflection, and planning with\nretrieval weighted by recency, importance, and relevance. The CoALA framework [Sumers et al.,\n2024] formalized these ideas into a taxonomy decomposing agents into working, episodic, semantic,\nand procedural memory modules. MemGPT [Packer et al., 2023] pioneered an OS-inspired tiered\nmemory with self-directed paging between main context and external storage. Subsequent work\nhas improved memory structure and maintenance. A-MEM [Xu et al., 2025] enables autonomous\nmemory reorganization across tasks. Mem0 [Chhikara et al., 2025] introduces a production-oriented\npipeline where the LLM selects among ADD, UPDATE, DELETE, and NOOP operations with\n91% lower latency versus full-context baselines. MemInsight [Salama et "
+          },
+          {
+            "content_hash": "07d9beee3b439998d563475db852823478dd04d07f610e55b51b017710b41881",
+            "evidence_id": "E6f5745c068db81ad-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Related Work",
+            "source_spans": [
+              {
+                "end": 1515,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 622,
+                "text": "may simultaneously require both a memory write and a retrieval, whereas prior\npipelines (e.g., Mem0) assume exactly one operation per turn. The result is, to our knowledge, the\nfirst end-to-end pipeline that unifies LLM-based extraction, automatic privacy classification, and\nindex-level access enforcement in a single modular, system-agnostic service.\nAgent Memory Benchmarks.In terms of existing agent memory benchmarks, MemoryAgent-\nBench [Hu et al., 2025] evaluates memory retrieval, test-time learning, long-range understanding,\nand selective forgetting in single-agent settings. LOCOMO [Maharana et al., 2024] provides a\nmulti-session conversational benchmark spanning hundreds of turns but is limited to single-user sce-\nnarios. No existing benchmark evaluates private versus shared memory classification, cross-session\nsynchronization, or memory integrity under concurrent multi-agent "
+              }
+            ],
+            "text": "may simultaneously require both a memory write and a retrieval, whereas prior\npipelines (e.g., Mem0) assume exactly one operation per turn. The result is, to our knowledge, the\nfirst end-to-end pipeline that unifies LLM-based extraction, automatic privacy classification, and\nindex-level access enforcement in a single modular, system-agnostic service.\nAgent Memory Benchmarks.In terms of existing agent memory benchmarks, MemoryAgent-\nBench [Hu et al., 2025] evaluates memory retrieval, test-time learning, long-range understanding,\nand selective forgetting in single-agent settings. LOCOMO [Maharana et al., 2024] provides a\nmulti-session conversational benchmark spanning hundreds of turns but is limited to single-user sce-\nnarios. No existing benchmark evaluates private versus shared memory classification, cross-session\nsynchronization, or memory integrity under concurrent multi-agent "
+          }
+        ],
+        "support_status": "supported"
       },
       {
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0031",
+          "E6f5745c068db81ad-B0065"
+        ],
+        "excerpt": "MUMBench was generated synthetically usingGPT-4o. For each domain, the model was given a\nbase set of instructions (same across all 4 domains), and a set of domain-specific instructions. These\ninstructions were generated by GPT-4o and manually validated by a team of human researchers.\nOnce the samples were generated, the team of human researchers thenmanually validated each\nsampleusing the steps outlined in the Appendix. The validation markdown instructions file (see\nAppendix) was created using GPT-4o, and was also verified manually by humans. The validation\nensured that interactions took place in a chronological order, duplicate memories were removed,\nmemory operations and payloads were correct, no memories were incorrectly classified (private /\npublic), no private memories were accessed without permission, and that there is a diversity of users,\nscenarios, preferences, domain-specific \n[\u2026 separate evidence block \u2026]\n16\nSingle-Hop(282)Multi-Hop(321)Temporal(96)Open Domain(841)\nB1 F1 J B1 F1 J B1 F1 J B1 F1 J\nMem0 0.271 0.387 0.671 0.216 0.286 0.512 0.405 0.489 0.555 0.387 0.477 0.729\nAIM 0.111 0.175 0.280 0.197 0.220 0.240 0.139 0.170 0.365 0.185 0.219 0.338\nTable 5: AIM's results on LOCOMO, compared with Mem0.\n# Task\n# Synthetic Data Hand-Validation Template\nThis document provides a checklist and guide for manually validating synthetic conversation\ndata. Use this template when reviewing generated samples to ensure correctness of memory\noperations, privacy boundaries, and data consistency.\n---\n## 1. Memory Integrity\n### 1.1 Create\nMemories should **only** be created when a new, salient piece of information is provided.\nPlease check all memories to make sure:\n1) New memories are being created when important information is being provided. Make sure\nthat the extracted memory reflects the information",
+        "explanation": "The appendix includes the base generation prompt, domain-specific prompts, manual validation checklist, schema examples, and scoring definitions, providing substantial transparency about dataset creation and evaluation.",
+        "page": 7,
+        "pages": [
+          7,
+          16,
+          17
+        ],
+        "paraphrase": "The benchmark construction, validation guidelines, and evaluation methodology are documented in detail, supporting reproducibility.",
+        "section": "Mumbench Creation / Appendix: Data Validation Guidelines",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "89d95ae4b92c8b8ba3ffe93fbec69e1ffc95a713163eb2c15f9c9904cd8cf913",
+            "evidence_id": "E6f5745c068db81ad-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Mumbench Creation",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 7,
+                "section": "Mumbench Creation",
+                "section_index": 18,
+                "start": 0,
+                "text": "MUMBench was generated synthetically usingGPT-4o. For each domain, the model was given a\nbase set of instructions (same across all 4 domains), and a set of domain-specific instructions. These\ninstructions were generated by GPT-4o and manually validated by a team of human researchers.\nOnce the samples were generated, the team of human researchers thenmanually validated each\nsampleusing the steps outlined in the Appendix. The validation markdown instructions file (see\nAppendix) was created using GPT-4o, and was also verified manually by humans. The validation\nensured that interactions took place in a chronological order, duplicate memories were removed,\nmemory operations and payloads were correct, no memories were incorrectly classified (private /\npublic), no private memories were accessed without permission, and that there is a diversity of users,\nscenarios, preferences, domain-specific "
+              }
+            ],
+            "text": "MUMBench was generated synthetically usingGPT-4o. For each domain, the model was given a\nbase set of instructions (same across all 4 domains), and a set of domain-specific instructions. These\ninstructions were generated by GPT-4o and manually validated by a team of human researchers.\nOnce the samples were generated, the team of human researchers thenmanually validated each\nsampleusing the steps outlined in the Appendix. The validation markdown instructions file (see\nAppendix) was created using GPT-4o, and was also verified manually by humans. The validation\nensured that interactions took place in a chronological order, duplicate memories were removed,\nmemory operations and payloads were correct, no memories were incorrectly classified (private /\npublic), no private memories were accessed without permission, and that there is a diversity of users,\nscenarios, preferences, domain-specific "
+          },
+          {
+            "content_hash": "a4822f242958e27b62c1c8e5695fdbf77426547b26a746fa70f269efa316954b",
+            "evidence_id": "E6f5745c068db81ad-B0065",
+            "pages": [
+              16,
+              17
+            ],
+            "section": "Appendix: Data Validation Guidelines",
+            "source_spans": [
+              {
+                "end": 2,
+                "page": 16,
+                "section": "Appendix: Data Validation Guidelines",
+                "section_index": 37,
+                "start": 0,
+                "text": "16"
+              },
+              {
+                "end": 894,
+                "page": 17,
+                "section": "Appendix: Data Validation Guidelines",
+                "section_index": 38,
+                "start": 0,
+                "text": "Single-Hop(282)Multi-Hop(321)Temporal(96)Open Domain(841)\nB1 F1 J B1 F1 J B1 F1 J B1 F1 J\nMem0 0.271 0.387 0.671 0.216 0.286 0.512 0.405 0.489 0.555 0.387 0.477 0.729\nAIM 0.111 0.175 0.280 0.197 0.220 0.240 0.139 0.170 0.365 0.185 0.219 0.338\nTable 5: AIM's results on LOCOMO, compared with Mem0.\n# Task\n# Synthetic Data Hand-Validation Template\nThis document provides a checklist and guide for manually validating synthetic conversation\ndata. Use this template when reviewing generated samples to ensure correctness of memory\noperations, privacy boundaries, and data consistency.\n---\n## 1. Memory Integrity\n### 1.1 Create\nMemories should **only** be created when a new, salient piece of information is provided.\nPlease check all memories to make sure:\n1) New memories are being created when important information is being provided. Make sure\nthat the extracted memory reflects the information "
+              }
+            ],
+            "text": "16\nSingle-Hop(282)Multi-Hop(321)Temporal(96)Open Domain(841)\nB1 F1 J B1 F1 J B1 F1 J B1 F1 J\nMem0 0.271 0.387 0.671 0.216 0.286 0.512 0.405 0.489 0.555 0.387 0.477 0.729\nAIM 0.111 0.175 0.280 0.197 0.220 0.240 0.139 0.170 0.365 0.185 0.219 0.338\nTable 5: AIM's results on LOCOMO, compared with Mem0.\n# Task\n# Synthetic Data Hand-Validation Template\nThis document provides a checklist and guide for manually validating synthetic conversation\ndata. Use this template when reviewing generated samples to ensure correctness of memory\noperations, privacy boundaries, and data consistency.\n---\n## 1. Memory Integrity\n### 1.1 Create\nMemories should **only** be created when a new, salient piece of information is provided.\nPlease check all memories to make sure:\n1) New memories are being created when important information is being provided. Make sure\nthat the extracted memory reflects the information "
+          }
+        ],
+        "support_status": "supported"
+      },
+      {
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in Table 2) is notab",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0044",
+          "E6f5745c068db81ad-B0045"
+        ],
+        "excerpt": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect \n[\u2026 separate evidence block \u2026]\ninformation. The current scope of public memories is all users, and thus any\nindividual can add or edit public memories with information that is not factual.",
+        "explanation": "The limitations section identifies low tag overlap, low retrieval relevance, single-pass LOCOMO evaluation, and the risk of users creating factually incorrect public memories, with corresponding future work directions.",
         "page": 9,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "pages": [
+          9
+        ],
+        "paraphrase": "The authors explicitly acknowledge limitations in tag extraction, retrieval relevance, LOCOMO comparison methodology, and public memory integrity.",
         "section": "Limitations",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e095b74b5b8d9ed1dd6c323bd028ca1fbd66816abdaff6045a3ec1316da12bd",
+            "evidence_id": "E6f5745c068db81ad-B0044",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 0,
+                "text": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect "
+              }
+            ],
+            "text": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in\nTable 2) is notably lower than other content metrics, suggesting that AIM's tag extraction strategy\nneeds refinement. Additionally, retrieval relevance peaks at 45.0% (Table 2). Lastly, our LOCOMO\nevaluation (Table 5) uses a single pass, whereas Mem0 reports averages over 10 runs. This could\nreduce statistical significance of claims. Additionally, LOCOMO is a single-user benchmark and does\nnot exercise AIM's multi-user privacy classification or cross-agent synchronization\u2014the features\nthat most differentiate it from existing systems. Further work must be conducted to improve memory\nretrieval, such as changing the number of retrieved memories before filtering.\nIn terms of security, another limitation is the ability of users to create or alter public memories with\nfactually incorrect "
+          },
+          {
+            "content_hash": "f843e363108620f9f9e1582da2fbe00589ccf928d9eb48d36a811ff8af9666e4",
+            "evidence_id": "E6f5745c068db81ad-B0045",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "source_spans": [
+              {
+                "end": 1051,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 24,
+                "start": 894,
+                "text": "information. The current scope of public memories is all users, and thus any\nindividual can add or edit public memories with information that is not factual."
+              }
+            ],
+            "text": "information. The current scope of public memories is all users, and thus any\nindividual can add or edit public memories with information that is not factual."
+          }
+        ],
+        "support_status": "supported"
       },
       {
-        "dimension": "methodological_rigor",
-        "excerpt": "s, momentum 4. **Probability/Statistics**: Bayes' theorem, distributions, conditional probability 5. **Programming**: Code examples and a",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 29,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Appendix: Education Domain Prompt",
-        "signal_type": "positive"
+        "context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "dimension": "presentation_and_precision",
+        "evidence_ids": [
+          "E6f5745c068db81ad-B0016",
+          "E6f5745c068db81ad-B0055"
+        ],
+        "excerpt": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3\nkeyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the \n[\u2026 separate evidence block \u2026]\nwhere\n\u2022x j is the extracted content of the memory (salient information extracted from raw user input\nby the Memory Management Agent)\n\u2022uid j is theuniqueidentifier of the user\n\u2022t j is the list of keyword tags associated with the memory (extracted by Memory Management\nAgent)\n\u2022v j is the visibility of the memory ({PRIVATE, PUBLIC}), assigned by the Memory Manage-\nment Agent\nAn example of the MUMBench schema can be found in the Appendix.\n13\nAlgorithm 1AIM Memory Lifecycle\nRequire:Messagex\u2208\u03a3 \u2217, useru\u2208U, agenta\u2208A, memory storeM\nEnsure:Updated storeM \u2032, retrieved setR\n1:// Intent detection (multi-label classification)\n2:O\u2190f op(x)\u2286{C,R,U,D}\u222a{\u2205}\n3:ifO=\u2205then\n4:returnM,\u2205\n5:end if\n6:// Read path: cascaded retrieval (\u00a73.7)\n7:ifR\u2208Oorwrite context neededthen\n8:R\u2190RETRIEVE(x,u,a,M){Eq. 3\u20137}\n9:end if\n10:// Write path: extract\u2192classify\u2192deduplicate\u2192persist\n11:ifC\u2208OorU\u2208Othen\n12:{(c j,\u03baj,wj,\u03c4 j,\u00b5j)}J\nj=1\u2190f",
+        "explanation": "The methods section defines the visibility predicate and retrieval scoring equations, and the appendix includes the full memory lifecycle algorithm and detailed metric tables.",
+        "page": 3,
+        "pages": [
+          3,
+          4,
+          13,
+          14
+        ],
+        "paraphrase": "The paper provides formal notation, equations, tables, and an algorithm, contributing to precise technical communication.",
+        "section": "Problem Formulation / Appendix: Mumbench Characteristics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2799741b1c846eb449317d1fedae53d70eefda7f07cb3573a8aa8fe2c96a1f88",
+            "evidence_id": "E6f5745c068db81ad-B0016",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Problem Formulation",
+            "source_spans": [
+              {
+                "end": 278,
+                "page": 3,
+                "section": "Problem Formulation",
+                "section_index": 7,
+                "start": 0,
+                "text": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3"
+              },
+              {
+                "end": 619,
+                "page": 4,
+                "section": "Problem Formulation",
+                "section_index": 8,
+                "start": 0,
+                "text": "keyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the "
+              }
+            ],
+            "text": "Consider a set of users U, a set of agents A, and a persistent memory storeM={m 1,m 2,...} .\nEach memorymi is a structured record containing textual contentci, a dense embedding ei\u2208R d, an\nowning userui\u2208U and agentai\u2208A , memory's visibility scopevi\u2208{PUBLIC,PRIVATE} , a set of\n3\nkeyword tags \u03c4i, a timestampti, and auxiliary metadata \u00b5i capturing temporal context and domain\ncategory.\nAvisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff\nuserumay access memorym i:\nV(u,mi) =\n\u0000\nvi =PUBLIC\n\u0001\n\u2228\n\u0000\nvi =PRIVATE\u2227u i =u\n\u0001\n.(1)\nThis helps protect private memories so they are visible only to their owner regardless of which agent\ncreated them, while public memories are universally accessible. The constraint is enforced at every\nstage of the pipeline. Writes carry an additional ownership requirement: update and delete operations\nmay be performed only by the "
+          },
+          {
+            "content_hash": "3885e7d4ee05e8013fa3f64a85a44744822ce7a8bf6a38ba53825c0ee42c5b2a",
+            "evidence_id": "E6f5745c068db81ad-B0055",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Appendix: Mumbench Characteristics",
+            "source_spans": [
+              {
+                "end": 3032,
+                "page": 13,
+                "section": "Appendix: Mumbench Characteristics",
+                "section_index": 29,
+                "start": 2592,
+                "text": "where\n\u2022x j is the extracted content of the memory (salient information extracted from raw user input\nby the Memory Management Agent)\n\u2022uid j is theuniqueidentifier of the user\n\u2022t j is the list of keyword tags associated with the memory (extracted by Memory Management\nAgent)\n\u2022v j is the visibility of the memory ({PRIVATE, PUBLIC}), assigned by the Memory Manage-\nment Agent\nAn example of the MUMBench schema can be found in the Appendix.\n13"
+              },
+              {
+                "end": 457,
+                "page": 14,
+                "section": "Appendix: Mumbench Characteristics",
+                "section_index": 30,
+                "start": 0,
+                "text": "Algorithm 1AIM Memory Lifecycle\nRequire:Messagex\u2208\u03a3 \u2217, useru\u2208U, agenta\u2208A, memory storeM\nEnsure:Updated storeM \u2032, retrieved setR\n1:// Intent detection (multi-label classification)\n2:O\u2190f op(x)\u2286{C,R,U,D}\u222a{\u2205}\n3:ifO=\u2205then\n4:returnM,\u2205\n5:end if\n6:// Read path: cascaded retrieval (\u00a73.7)\n7:ifR\u2208Oorwrite context neededthen\n8:R\u2190RETRIEVE(x,u,a,M){Eq. 3\u20137}\n9:end if\n10:// Write path: extract\u2192classify\u2192deduplicate\u2192persist\n11:ifC\u2208OorU\u2208Othen\n12:{(c j,\u03baj,wj,\u03c4 j,\u00b5j)}J\nj=1\u2190f "
+              }
+            ],
+            "text": "where\n\u2022x j is the extracted content of the memory (salient information extracted from raw user input\nby the Memory Management Agent)\n\u2022uid j is theuniqueidentifier of the user\n\u2022t j is the list of keyword tags associated with the memory (extracted by Memory Management\nAgent)\n\u2022v j is the visibility of the memory ({PRIVATE, PUBLIC}), assigned by the Memory Manage-\nment Agent\nAn example of the MUMBench schema can be found in the Appendix.\n13\nAlgorithm 1AIM Memory Lifecycle\nRequire:Messagex\u2208\u03a3 \u2217, useru\u2208U, agenta\u2208A, memory storeM\nEnsure:Updated storeM \u2032, retrieved setR\n1:// Intent detection (multi-label classification)\n2:O\u2190f op(x)\u2286{C,R,U,D}\u222a{\u2205}\n3:ifO=\u2205then\n4:returnM,\u2205\n5:end if\n6:// Read path: cascaded retrieval (\u00a73.7)\n7:ifR\u2208Oorwrite context neededthen\n8:R\u2190RETRIEVE(x,u,a,M){Eq. 3\u20137}\n9:end if\n10:// Write path: extract\u2192classify\u2192deduplicate\u2192persist\n11:ifC\u2208OorU\u2208Othen\n12:{(c j,\u03baj,wj,\u03c4 j,\u00b5j)}J\nj=1\u2190f "
+          }
+        ],
+        "support_status": "supported"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.12320",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
-    ],
-    "overall_quality_score": 84,
-    "paper_type": "theoretical",
+    "missing_information": [],
+    "overall_quality_score": 72,
+    "paper_type": "systems_or_application",
     "positive_signals": [
-      "The contribution is stated explicitly.",
-      "A baseline or comparison system is described.",
-      "Quantitative evaluation signals were detected.",
-      "An ablation analysis is reported.",
-      "Robustness or statistical analysis is reported.",
-      "Limitations or threats to validity are acknowledged.",
-      "Formal definitions or proof-oriented evidence is present."
+      "The memory lifecycle is formally specified with a visibility predicate, multi-label intent detection, structured extraction, scope-restricted deduplication, and cascaded retrieval.",
+      "AIM is evaluated across five models, four domains, and multiple metrics with three independent runs, reporting visibility classification accuracy up to 96.0%.",
+      "The central privacy claim is supported by high visibility classification accuracy and deterministic index-level filtering.",
+      "The paper positions AIM against prior single-user memory systems and identifies the gap in multi-user access control and cross-agent synchronization.",
+      "The benchmark construction, validation guidelines, and evaluation methodology are documented in detail, supporting reproducibility.",
+      "The authors explicitly acknowledge limitations in tag extraction, retrieval relevance, LOCOMO comparison methodology, and public memory integrity.",
+      "The paper provides formal notation, equations, tables, and an algorithm, contributing to precise technical communication."
     ],
-    "rationale": "Scientific quality could not be assessed because of a protocol failure.",
+    "rationale": "Evidence references failed manuscript-context validation; the proposed scientific judgment is withheld pending review.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "The execution ledger records the failed attempts; no scientific judgment was inferred."
+    "uncertainty": "The evaluation relies on a synthetic, LLM-generated benchmark with manual validation, so generalizability to real-world multi-user deployments is uncertain. Retrieval relevance is low (45.0% best), and tag overlap is weak, indicating core retrieval components are not yet strong. The LOCOMO comparison uses a single run versus Mem0's ten runs, limiting statistical confidence. The paper does not report direct measurement of private-memory leakage under adversarial queries beyond visibility classification accuracy, so the strongest privacy guarantee is inferred from the index-level predicate rather than empirically demonstrated end-to-end."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

@@ -64,16 +64,281 @@
             <p>Methods for improving knowledge use in large language models typically fall into two regimes. Non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. Parametric adaptation is efficient at inference time, but...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>The proposed decision lacked sufficient located manuscript evidence; review is pending.</p>
-      <p>Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations.</p>
+      <h2>Quality reviewed</h2>
+      <p>This is a well-executed empirical study of cross-model frozen-memory transfer. The contribution is clearly formulated as an operational test of whether external memory remains useful after source backbone removal. The methodology is rigorous, with controlled ablations isolating memory content, addressing integrity, and reader design. The evaluation is extensive, spanning multiple model families, tokenizers, scales, and downstream tasks, with appropriate controls including permuted keys, random memory, and parameter-matched FFN baselines. The central claim that reader design is first-order is well supported by the dual-layer and multi-branch ablation results. The paper also demonstrates intellectual honesty by reporting negative results on TruthfulQA and acknowledging that transfer primarily improves initialization rather than asymptotic ceiling. Limitations are explicitly discussed. The main weaknesses are minor presentation issues in the appendix, including apparent internal notes or incomplete edits, and some informal phrasing. Overall, the evidence chain is strong and the conclusions are appropriately scoped.</p>
+      <p>The primary scientific uncertainty is whether the findings generalize beyond the evaluated model scales (up to 9B parameters) and the specific reader configurations tested. The paper acknowledges this limitation explicitly. Additionally, the evaluation-set overlap audit shows the QA results are not strictly contamination-free, though the paper appropriately interprets them as controlled comparisons rather than contamination-free state-of-the-art claims. The presentation issues in the appendix suggest the manuscript may benefit from further editing, but these do not affect the scientific validity of the core findings.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-coverage-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T16:54:39+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-evidence-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T17:41:04+00:00.</p>
         <p>Coverage: 108281 of 108281 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li>The contribution is stated explicitly. — page 2</li><li>Quantitative evaluation signals were detected. — page 8</li><li>An ablation analysis is reported. — page 2</li><li>Robustness or statistical analysis is reported. — page 8</li><li>Limitations or threats to validity are acknowledged. — page 3</li><li>Code, data, or research artifacts are described as available. — page 1</li><li>Dataset documentation, quality control, licensing, or ethics is discussed. — page 3</li><li>No suitable baseline comparison was detected in the available text.</li><li>Comparative claims were detected without a suitable baseline in the available text.</li><li>The paper formulates cross-model frozen-memory reuse as an evaluation problem and proposes a transfer protocol with target-side readers. — page 2</li><li>The work builds on Engram-style hashed memory and introduces the novel question of whether the memory artifact is portable across backbones. — page 2</li><li>The main transfer matrix includes all nine source-target pairs with no-memory and random-memory controls, showing consistent perplexity improvements. — page 7</li><li>The strongest reader configuration outperforms all included baselines on average QA accuracy. — page 8</li><li>The abstract claims an average score of 38.8, but the main results tables show 38.5 for the strongest configuration and 38.8 only for a token-scaling variant. — page 1</li><li>The related work section contrasts the approach with representation alignment and PEFT transfer methods, highlighting the gap of frozen external-memory reuse. — page 4</li><li>The paper specifies the exact dataset release and preprocessing pipeline used for the QA experiments. — page 24</li><li>The paper acknowledges that experiments are limited to models up to 9B parameters and that reader capacity scaling is not systematically characterized. — page 33</li><li>The paper contains an apparent drafting note stating that the wording of the main text&#x27;s claim is bad. — page 28</li></ul>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>The paper clearly formulates cross-model frozen-memory reuse as a distinct evaluation problem separating portable memory from backbone-specific co-adaptation.</p><p>Assessor’s interpretation: supported. The introduction explicitly defines the operational test: remove the source backbone and ask whether another model can extract useful signal from the frozen memory table. It separates addressing, memory, and reader roles, making the contribution precise and measurable.</p><details><summary>Canonical source evidence</summary><blockquote>addressable external table, yet consumes that table through
+a small neural interface rather than by inserting raw documents into the context. This hybrid design
+is attractive because it combines the modularity of external memory with the efficiency of learned
+representations. But it also exposes a sharper question:is the memory itself reusable or transferable,
+or is it merely a co-adapted extension of the model that trained it?
+The distinction matters: a memory table that is not portable is just another form of model-specific
+parameterization, not a reusable knowledge substrate. Thus, the portability requires an operational
+test:remove the source backbone and ask whether another model can still extract a useful signal from the
+frozen memory table.
+We study this test throughcross-model frozen-memory transfer. Given a memory table trained
+with a source model A, we freeze the table, attach </blockquote><blockquote>it to a different target model B, and train only
+a lightweight target-side reader for memory extraction. If the frozen memory still improves the
+target after the original host is removed, then it contains usable information beyond source-specific
+co-adaptation. If it fails, then the apparent memory benefit was likely tied to the original backbone.
+Figure 1 illustrates the life cycle of memory reuse and transfer: source-side memory training,
+memory export and freezing, and target-side extraction through a new reader. To make this test
+precise, we separate three roles: (1)addressingdecides which entries are read, (2)memorydenotes
+the stored vectors, and (3)readermaps them into the model. We standardize addressing, freeze the
+memory, and adapt only the reader. This turns portability into a measurable question: can a target
+model learn to read a fixed memory artifact? We use a </blockquote></details></li><li><strong>Methodological rigor — pages 4–6</strong><p>The proposed transfer protocol is methodologically sound, with tokenizer-agnostic canonicalization, frozen memory, and reader-only adaptation clearly specified.</p><p>Assessor’s interpretation: supported. The method section details three changes relative to native Engram: freezing exported memory, replacing token-ID lookup with canonicalization, and using a lightweight target-side reader. The training regime freezes both memory and backbone while updating only reader parameters, providing a controlled protocol.</p><details><summary>Canonical source evidence</summary><blockquote>Our method recasts Engram as a transferable artifact. We freeze the source memory and fit only a
+small target-side reader. This requires a shared address space, frozen memory, and a lightweight
+reader. Relative to native Engram, we make three changes: we (1) freeze the exported source memory,
+(2) replace model-specific token-ID lookup with tokenizer-agnostic canonicalization, and (3) use a
+lightweight target-side reader attached by residual injection to read the knowledge from Engram
+memory. Figure 1 illustrates the overall architecture and training and adaptation procedures, and
+Algorithm 1 summarizes the training procedure.
+Corpus 𝐶
+(e.g., 50M tokens)
+(1) Source Engram
+(trained on corpus  𝐶)
+Source Model 𝐴
+(e.g., Pythia-160M)
+Engram Training
+next-token prediction
+(unsupervised)
+Engram Table 𝐸𝐴
+learned &amp; frozen
+...
+Source model and Engram table
+are frozen at end of Phase 1.
+Phase 1: </blockquote><blockquote>The first obstacle to transfer is the address mismatch. Native Engram hashes model-specific token
+IDs inside the host model, which is sufficient when storage and read happen under one tokenizer, but
+does not define a stable cross-model address space. If source and target tokenizers segment the same
+text differently, then identical surface content may be routed to different memory entries. To avoid
+this failure mode, we build the lookup space on canonicalized decoded text rather than raw token
+IDs. LetTB be the tokenizer of target model B, and let s1:t = decode(TB(x1:t)) denote the decoded
+target prefix up to positiont. We normalize that prefix with a shared canonicalization functionP
+and extract the completed word sequence
+(w1,...,w m(t)) = words(P(s 1:t)),(3)
+where words(·) returns the canonicalized word-boundary units implied by the current decoded prefix.
+Word-boundary addressing is </blockquote><blockquote>The training objective is the standard next-token language modeling loss on the target corpus. During
+target-side adaptation, both the exported source memory tables {En,j} and the target backbone
+parametersθB remain frozen; only the reader parameters{W (B,ℓ)}ℓ∈L are updated. Storage is fixed,
+and only extraction is learned. Algorithm 1 summarizes the procedure concisely. The key operations
+are to freeze the exported source memory, canonicalize target inputs into the shared address space,
+and update only the target-side reader.
+Deployment modes.The two-phase protocol above describes the general case in which the target
+requires a model-specific reader. We additionally distinguish between two deployment modes. In
+direct artifact reuse, a provider exports the frozen memory together with a reader whose residual
+interface is compatible with the consumer model; the consumer performs no </blockquote></details></li><li><strong>Evaluation or validation strength — page 8</strong><p>The central claim that reader design is a first-order factor is validated by controlled ablations showing large gains from dual-layer injection and multi-branch gating.</p><p>Assessor’s interpretation: supported. Table 1 shows moving from single-layer to dual-layer injection raises average QA from 34.2 to 37.5, and increasing branches from R=1 to R=4 raises it to 38.5. These controlled comparisons directly support the claim that reader design, not just memory content, drives transfer quality.</p><details><summary>Canonical source evidence</summary><blockquote>10/0 21.81.229.60.360.62.933.11.122.31.433.5(+4.4%)
+Mistral Frozen{10}-R1 10/0 21.91.229.70.460.83.132.90.822.41.433.5(+4.4%)
+Mistral{10}-R1 10/20 22.11.531.62.461.13.432.80.722.31.334.0(+5.8%)
+LLaMA{10}-R1 10/20 22.21.532.63.361.23.632.90.822.31.334.2(+6.6%)
+LLaMA{2,10}-R1 10/20 30.39.728.7-0.670.112.431.0-1.127.46.437.5(+16.7%)
+LLaMA{2,10}-R4 10/20 30.39.7 33.74.4 69.912.3 30.9-1.2 27.66.7 38.5(+19.9%)
+The first pattern is that a weak or frozen reader improves only a small fraction of the performance.
+With a single injection layer at{10}, the frozen variants achieve only 33.5–33.5 average accuracy,
+a modest improvement over the 32.1 base model. Training the same single-layer reader raises
+performance to 34.0–34.2, indicating that target-side adaptation already contributes noticeably even
+before increasing reader capacity. This suggests that the transferred memory alone is </blockquote><blockquote>insufficient; the
+target model must learn how to access it effectively.
+The largest gain comes from reader placement. Moving from LLaMA{10}-R1 to LLaMA{2,10}-R1
+increases average accuracy from 34.2 to 37.5. The improvement is broad rather than dataset-specific:
+NQ rises from 22.20 to 30.3, TriviaQA from 61.2 to 70.1, and HotpotQA from 22.3 to 27.4. These
+results suggest that dual-layer injection provides the target model with multiple opportunities to
+integrate retrieved memory throughout the forward pass, instead of forcing all memory interaction
+through a single late-layer interface.
+Reader capacity explains the remaining improvement. Keeping the injection layers fixed at{2,10}
+and increasing the number of branches from R = 1 to R = 4 raises average accuracy from 37.5 to</blockquote></details></li><li><strong>Evidence to claim alignment — page 14</strong><p>The paper provides strong evidence that transferred memory outperforms controls and that gains are not explained by parameter count alone.</p><p>Assessor’s interpretation: supported. Table 5 shows transferred memory achieves 38.5 average QA versus 34.5 for a parameter-matched FFN control, despite the FFN having lower perplexity. Permuted keys reduce QA to 32.5, and random memory to 34.6, supporting the claim that addressing integrity and memory content matter.</p><details><summary>Canonical source evidence</summary><blockquote>38.5
+Interface Simplifications
+No gate10.1 [9.9,10.3] 24.2 27.7 61.6 31.0 24.1 33.7
+Affine stitch9.5 [9.4,9.7] 25.0 29.2 62.8 30.4 23.9 34.3
+Content and Training Controls
+Permuted keys8.7 [8.5,8.8] 18.3 34.5 57.7 30.6 21.4 32.5
+Random memory8.7 [8.6,8.9] 23.0 27.1 65.1 33.6 24.1 34.6
+Train from scratch8.1 [8.0,8.2] 29.9 33.0 70.4 30.9 27.9 38.4
+No-memory Control
+FFN only (param-matchedR=4)7.4 [7.2,7.5] 25.5 27.9 64.1 31.6 23.6 34.5
+Parameter count alone does not explain the gains.The full transferred reader improves average
+QA from 32.1 for the no-memory baseline to 38.5. More importantly, it clearly outperforms the
+parameter-matched FFN control, which reaches only 34.5 average accuracy. The difference cannot be
+attributed to intrinsic language-model fit: the FFN-only control actually obtains the lowest perplexity
+in the table (7.4 versus 8.7 for transfer), yet remains 4.0 points behind </blockquote><blockquote>on average QA.
+The task-level results show the same pattern. The transferred reader outperforms the parameter-
+matched FFN on NQ, WebQA, TriviaQA, and HotpotQA, with particularly clear margins on NQ
+(30.3 versus 25.5), TriviaQA (69.9 versus 64.1), and HotpotQA (27.6 versus 23.6). The FFN control
+is slightly stronger only on TruthQA. Thus, simply attaching an equally parameterized target-side
+residual module does not reproduce the downstream behavior of transferred memory.
+The reader interface is critical.Removing context-dependent gating reduces average QA from
+38.5 to 33.7, a drop of 4.8 points. Replacing the reader with a single affine stitch similarly reduces
+the average to 34.3, a 4.2-point decrease. These results indicate that transfer quality depends not
+only on the presence of a memory table, but also on a sufficiently expressive interface for selecting,
+transforming, and routing </blockquote></details></li><li><strong>Related work and gap positioning — pages 3–4</strong><p>The paper positions its work against retrieval-augmented, parametric, and other memory-augmented methods, clearly identifying the gap of frozen external-memory portability.</p><p>Assessor’s interpretation: supported. The related work sections distinguish Engram-style hashed memory from MoE, KNN-LM, RAG, RETRO, and larger learned memory layers. The paper argues these methods either lack a reusable memory artifact or do not test extraction after source backbone removal, establishing a clear gap.</p><details><summary>Canonical source evidence</summary><blockquote>MoE (Shazeer et al., 2017; Fedus et al., 2022; Dai et al., 2024) expands capacity through conditional
+computation, but its useful signal remains embedded in the host backbone rather than exposed as a
+reusable memory artifact. Other memory-augmented models also miss the extraction question for one
+of two reasons: they either retrieve from large dynamic memory banks at inference time (Graves et al.,
+2014; Weston et al., 2015), or they store information in model-specific hidden spaces, as in KNN-
+LM (Khandelwal et al., 2020). Retrieval-augmented generation and RETRO-style systems (Lewis
+3
+et al., 2020; Borgeaud et al., 2022; Izacard et al., 2023) are portable at the document level, but the
+reusable object is a text datastore rather than a trained memory representation. Larger learned
+memory layers (Lample et al., 2019; Berges et al., 2025; Behrouz and Zhong, 2025; Wei et al., 2026)
+improve </blockquote><blockquote>capacity or efficient knowledge access, but their stored representations are usually trained
+and consumed within the same model. Engram differs in the regime relevant here: deterministic
+hashing provides an explicit address space, the memory table is external and addressable, and a
+small learned reader mediates read by the backbone. This separation makes a frozen memory artifact
+well defined and allows portability to be tested as extraction rather than as additional model capacity.
+A broader qualitative comparison appears in Table 7.</blockquote><blockquote>Cross-model transfer is often studied as representation or adapter alignment. Embedding-space
+work suggests that independently trained models can sometimes be connected by simple linear maps
+between hidden representations (Mikolov et al., 2013; Kornblith et al., 2019; Huh et al., 2024; Chen
+et al., 2025). PEFT transfer methods such as Cross-LoRA (Xia et al., 2025), LoRA-X (Farhadzadeh
+et al., 2025), and Trans-LoRA (Wang et al., 2024) show that compact adapters or low-rank updates can
+sometimes be reused across heterogeneous models. These methods are useful baselines for parameter
+transfer, but they do not directly address frozen external-memory reuse: there is no separate memory
+table to address, freeze, and extract from after the source backbone is removed. In frozen-memory
+extraction, alignment starts earlier. The target model must first read the same memory entry as </blockquote></details></li><li><strong>Reproducibility and transparency — pages 22–25</strong><p>The paper provides substantial reproducibility details including model checkpoints, hyperparameters, training corpora, and evaluation protocols.</p><p>Assessor’s interpretation: supported. Appendix B specifies memory configuration (Nmax=3, K=4, M=65,536, dhead=64), reader configurations, model checkpoints with Hugging Face identifiers, training corpora, sequence lengths, learning rates, and seed values. This level of detail supports reproducibility.</p><details><summary>Canonical source evidence</summary><blockquote>Memory ConfigurationThe source Engram memory uses Nmax = 3 (bigram and trigram),K = 4
+hash heads per order, table sizeM = 65,536, and head dimensiondhead = 64, yieldingdmem = 512
+and approximately 33.5M total memory parameters.
+Reader ConfigurationWe use the reader configuration appropriate to each experimental regime
+rather than fitting a separate reader for each evaluation benchmark. For the experiments in Table 1,
+we use a single-layer one-branch reader, a dual-layer one-branch reader, and a stronger dual-layer,
+22
+Table 9: Models and checkpoints used in the transfer experiments. &quot;Source&quot; denotes memory construction, and
+&quot;target&quot; denotes reader fitting for a frozen memory. Here, d is the residual hidden size used by the memory
+interface.
+Family Model Experimental role Params.dCheckpoint Hugging Face
+identifier
+Pythia Pythia-160M Source: main matrix 160M 768 </blockquote><blockquote>BaseEleutherAI/pythia-160m
+Pythia-410M Target: main matrix 410M 1024 BaseEleutherAI/pythia-410m
+Qwen3.5
+Qwen3.5-0.8B Source: main matrix, scaling
+Target: downstream 0.8B 1024 BaseQwen/Qwen3.5-0.8B-Base
+Qwen3.5-2B Target: scaling, downstream 2B 2048 BaseQwen/Qwen3.5-2B-Base
+Qwen3.5-4B
+Source: peer, downstream
+Target: main matrix, peer,
+scaling, downstream
+4B 2560 BaseQwen/Qwen3.5-4B-Base
+Qwen3.5-9B Source: main matrix, downstream
+Target: scaling, downstream 9B 4096 BaseQwen/Qwen3.5-9B-Base
+TinyLlama TinyLlama-1.1B Target: main matrix 1.1B 2048 Chat-/instruction-
+tuned TinyLlama/TinyLlama-
+1.1B-Chat-v1.0
+Phi Phi-4-mini-instruct Source and target: peer transfer 3.8B 3072 Instruction-tunedmicrosoft/Phi-4-mini-
+instruct
+LLaMA 2 LLaMA-2-7B Source: open-domain QA, ablation 7B 4096 Basemeta-llama/Llama-2-7b-
+hf
+Mistral Mistral-7B-v0.3 Target: open-domain QA, ablation
+Source: self-transfer </blockquote><blockquote>frozen memory
+remains useful after being moved to a different backbone. The experiments below test whether that
+conclusion survives several plausible alternative explanations. Specifically, we examine whether
+the gains depend on shared tokenization, arise only when transferring from a smaller to a larger
+model, disappear for stronger targets, or can be explained by similarity between source and target
+representations.
+24
+Table 10: Principal training and evaluation settings. &quot;LR / warm-up&quot; reports the learning rate and number
+of warm-up steps. Unless otherwise noted, training uses cosine decay, AdamW with weight decay 0.01, and
+gradient-norm clipping at 1.0. Alternative-corpus experiments follow the intrinsic reader-fitting protocol with
+LAMBADA or English C4 replacing WikiText-103. OOD rows are evaluation-only.
+Regime / phase Corpus Budget / cap Seq. / batch LR /
+warm-up
+Trainable </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 10, 33</strong><p>The paper acknowledges limitations regarding scale, language diversity, and reader design space, and reports negative results on TruthfulQA.</p><p>Assessor’s interpretation: supported. The limitations section explicitly states experiments cover models up to 9B parameters without systematic scaling laws, notes word-boundary addressing degenerates for non-segmented languages, and acknowledges the reader design space is only partially explored. TruthfulQA negative results are reported as a boundary condition.</p><details><summary>Canonical source evidence</summary><blockquote>(Lozhkov et al.).
+TruthfulQA provides the clearest negative boundary. Performance decreases at every target scale,
+with changes ranging from−0.2 to−0.8 accuracy points. Unlike the other evaluated tasks, TruthfulQA
+rewards calibrated truthfulness and resistance to commonly repeated misconceptions, rather than the
+recovery of frequently observed factual associations alone. Additional memory-derived associations
+can therefore be unhelpful when the task requires the model to reject plausible but misleading
+information. This result defines an important practical limit: transferred memory is most beneficial
+when the task rewards access to factual or evidence-related information, but it may be neutral or
+mildly harmful when success depends on calibration or resistance to memorized misconceptions.
+Figure 3 establishes this task-dependent pattern, but does not by itself identify why it arises. </blockquote><blockquote>Scale and availability.Our experiments cover source and target models up to 9B parameters, but
+do not systematically characterize how target-side reader capacity should scale with backbone size,
+memory size, training data, or source–target heterogeneity. In particular, our two-phase protocol
+first trains the memory with the source model and then freezes both the transferred memory and
+the target backbone while adapting only the reader. We therefore do not explore joint training of
+the backbone, memory, and reader, nor establish a scaling law relating reader depth, branch count,
+injection placement, and parameter count to model scale. Although the present results show that
+stronger readers substantially improve frozen-memory extraction, it remains unclear whether the
+same reader configurations remain sufficient for much larger models or whether reader capacity
+must grow with the backbone </blockquote><blockquote>or memory. We equip an existing multi-billion-parameter model with
+Engram and train it. So saying those multi-billion-parameter Engram models don&#x27;t exist is not a good
+argument.
+Addressing and language diversity.Our default word-boundary addressing is effective for the
+evaluated English-like settings, but it is not universally tokenizer- or language-independent. In
+particular, whitespace-based word units degenerate for non-segmented Chinese and Japanese. We
+show that replacing word units with normalized character spans repairs this specific failure mode
+and produces positive transfer on Chinese and Japanese Wikipedia. These experiments demonstrate
+that the model-independent addressing principle can extend beyond whitespace-delimited text,
+but they do not establish a universally optimal canonical unit. Code, noisy Unicode, mixed-script
+text, byte-level tokenizers, and additional writing </blockquote></details></li><li><strong>Scholarly novelty or value — pages 7, 25, 26, 27</strong><p>The paper demonstrates transfer gains across diverse model families, tokenizers, and scales, supporting the novelty of portable external memory.</p><p>Assessor’s interpretation: supported. The 3x3 transfer matrix shows positive gains in all nine source-target pairs, with relative perplexity reductions from 1.6% to 15.7%. Peer-to-peer transfer between Phi-4-mini and Qwen3.5-4B shows bidirectional gains of 10.1% and 9.2%, supporting the claim of cross-model portability.</p><details><summary>Canonical source evidence</summary><blockquote>no-memory baseline.
+Qwen3.5-2B Qwen3.5-4B Qwen3.5-9B
+T arget Model Size
+8
+10
+12
+14T est Perplexity ( )
+-14.1%
+-8.9%
+-8.3%
+Baseline
+Random
+Transferred
+(b) Target-scale intrinsic transfer: the same transferred
+Qwen3.5-0.8B memory improves Qwen3.5 targets from 2B
+to 9B.
+Figure 2: The full 3x3 transfer matrix and target-scale transfer performance across different model types trained
+on Wikitext-103.
+Figure 2 summarizes this result together with the scaling trend. All nine cells in the main matrix
+in Figure 2a show PPL reduction in models with transferred memory over the no-memory baseline,
+and the same transferred Qwen3.5-0.8B memory continues to help as the target grows from 2B to 9B
+(Figure 2b), compared with the baseline without memory and the random memory control with a
+randomly initialized, untrained memory of the same architecture and size as the transferred memory.
+The full matrix </blockquote><blockquote>Table 11 reports the complete cross-architecture results for all nine source–target combinations used
+in the main transfer study in Figure 2a. For each source memory, we compare three conditions
+on each target model: the target backbone without memory augmentation (Baseline), the frozen
+source memory integrated through a fitted target reader (Transferred), and a size-matched randomly
+initialized memory evaluated under the same reader fitting protocol (Random). The transferred-
+memory condition improves test perplexity in every source–target pair, with relative reductions
+ranging from 1.6% to 15.7%. The strongest improvement occurs for Qwen3.5-0.8B→ TinyLlama-
+1.1B, while the random-memory control generally improves less than the corresponding transferred
+25
+memory.
+Table 11: Full cross-architecture transfer matrix: test PPL (↓) for 3 source memories× 3 target models.Random
+replaces the </blockquote><blockquote>This section tests whether transfer remains useful once the source and target are both strong mid-
+scale models rather than a small source feeding a much larger target. Table 14 shows the results of
+peer-to-peer transfer between Phi-4-mini (Abouelenin et al., 2025) (3.8B) and Qwen3.5-4B.
+Table 14: Peer-to-peer transfer between Phi-4-mini (3.8B) and Qwen3.5-4B. Source memories trained on
+WikiText-103 (50M tokens). Mean± std over 3 seeds. Deltas shown next to the transferred result are relative to
+the no-memory baseline; negative values indicate better PPL.
+Direction Baseline Transferred Random
+Phi-4-mini→Qwen3.5-4B 10.5 9.5±0.0-10.1% 10.2±0.0
+Qwen3.5-4B→Phi-4-mini 12.6 11.5±0.0-9.2%12.3±0.0
+The gains remain bidirectional: Phi→ Qwen improves by 10.1%, and Qwen→ Phi improves by
+9.2%. Random memory is substantially weaker in both directions, even though it uses the same target-
+side reader </blockquote></details></li><li><strong>Presentation and precision — pages 28, 31, 32</strong><p>The paper&#x27;s presentation is generally precise, but some passages contain informal or unclear phrasing that slightly reduces clarity.</p><p>Assessor’s interpretation: supported. The appendix contains phrases such as &#x27;the wording of the main text&#x27;s claim is bad&#x27; and &#x27;Lower than what?&#x27; that appear to be internal notes or incomplete edits rather than polished scientific prose. These reduce presentation quality but do not undermine the core technical content.</p><details><summary>Canonical source evidence</summary><blockquote>Nevertheless, Pythia-160M→ TinyLlama-1.1B is among the strongest cross-tokenizer transfer
+settings in Table 11, reducing perplexity by 10.6%. By comparison, the more representationally
+similar Pythia-160M→Pythia-410M pair improves perplexity by only 1.6%.
+Representational similarity alone does not predict the magnitude of transfer gains in these
+experiments. Nevertheless, this result is consistent with the reader analysis in Section 4.2: successful
+transfer depends on whether the target reader can recover and route useful information from the
+frozen memory, rather than requiring the source and target backbones to have closely aligned
+intermediate representation spaces. Also, the wording of &quot;the main text&#x27;s claim&quot; is bad.
+D Supplementary Analysis of Corpus-Dependent Downstream
+Transfer for RQ3
+These analyses extend RQ3 in Section 4.3 by separating corpus specialization, reader </blockquote><blockquote>does not perform a nearest-neighbor search over theM= 65,536 rows.
+At one injection site of the target-side reader, the shared-value,R-branch reader performs one
+dmem×dB value projection andR key projections of the same shape, anddB for the hidden dimension
+of target modelB. If not, change it. The remaining reader operations include RMS normalization,
+31
+R key-query dot products, sigmoid gates, scalar–vector products, and branch aggregation. These
+operations requireO(RdB) work. We refer to this as the non-projection, lower-order term because
+it scales linearly with dB, whereas the dense projections scale as dmemdB. With dmem = 512, the
+projection term is substantially larger in the evaluated configurations. Lower than what? Thus, the
+dominant reader cost for a sequence of lengthTand batch sizeBis
+Creader =BTS [(R+ 1)dmemdB +O(RdB)] MAdds,(16)
+or, per token and ignoring the lower-order </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

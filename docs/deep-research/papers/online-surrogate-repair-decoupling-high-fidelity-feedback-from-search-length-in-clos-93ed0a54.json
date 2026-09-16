@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:31:25",
-    "generated_at": "2026-09-16 16:58:07",
+    "generated_at": "2026-09-16 17:43:16",
     "last_seen_at": "2026-09-14 13:11:01",
     "metadata_sources": [
       "openalex",
@@ -128,58 +128,88 @@
     "downranked": false,
     "evidence": [
       {
+        "context_id": null,
         "dimension": "contribution_clarity",
+        "evidence_ids": [],
         "excerpt": "Our contributions are:\n\u2022 We formulate online surrogate repair, in which a scientific agent operates under inexpensive\nsurrogate feedback while a separate acquisition rule allocates a limited number of oracle\nqueries to update the surrogate during the search.",
         "explanation": "The introduction lists three explicit contributions, including the formulation of online surrogate repair and the identification of acquisition rules that improve optimization performance.",
         "page": 2,
+        "pages": [],
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "methodological_rigor",
+        "evidence_ids": [],
         "excerpt": "Each of the 20 held-out worlds is a frozen, seeded structural causal model (SCM) (Pearl,\n2009) inspired by TabPFN\u2019s sampled causal-graph prior (Hollmann et al., 2025), with a deterministic\nresponse and a single global maximum.",
         "explanation": "The methods section specifies the SCM construction, the number of worlds, the context sizes, the surrogates used, and the evaluation metrics, which supports methodological rigor.",
         "page": 7,
+        "pages": [],
         "paraphrase": "The paper describes the experimental setup in detail, including the synthetic world construction and the MADE benchmark configuration.",
         "section": "Synthetic Worlds",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
         "excerpt": "Across the four settings, Q90-UCB and EI achieve mean maximum-regret reductions of 0.424 and\n0.409, compared with 0.063 and 0.052 for Global-UQ and Random.",
         "explanation": "Tables 1, 2, and 3 report quantitative results comparing OSR methods against baselines such as Random, Global-UQ, Peak, Q90-UCB, EI, Static EI, Archive-BO, Tab-AICL, and full-feedback controls.",
         "page": 6,
+        "pages": [],
         "paraphrase": "The paper reports quantitative comparisons against multiple baselines and ablations.",
         "section": "Static Surrogate Repair",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [],
         "excerpt": "Table 3 shows that Control requires 7.23(28) and 6.36(20) times as many oracle queries to match\nOnline EI under DeepSeek and Luna, respectively, equivalent to 86% and 84% fewer queries for\nOnline EI.",
         "explanation": "The paper reports acceleration factors showing that full-feedback controls require 6.36-7.23 times more oracle queries to match Online EI under LLM orchestrators, directly supporting the claim of reduced oracle feedback.",
         "page": 8,
+        "pages": [],
         "paraphrase": "The central claim that Online EI reduces oracle queries is supported by quantitative results on MADE.",
         "section": "Madebenchmark",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [],
         "excerpt": "In standard Bayesian optimization,\nacquisition is itself the proposal policy. Multi-fidelity optimization also chooses among information\nsources (Poloczek et al., 2017), while Gemini learns a cross-fidelity correction that drives a Bayesian\noptimizer (Hickman et al., 2021). OSR leaves search to the scientific agent: acquisition only chooses\nwhich archived proposal receives a high-fidelity label to repair future feedback.",
         "explanation": "The related work section explicitly contrasts OSR with standard Bayesian optimization, multi-fidelity optimization, and active in-context learning, clarifying the gap that OSR fills.",
         "page": 3,
+        "pages": [],
         "paraphrase": "The paper positions OSR relative to active learning, Bayesian optimization, multi-fidelity search, and surrogate verifiers.",
         "section": "Active Learning, Bayesian Optimization,And Multi-Fidelity Search",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       },
       {
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [],
         "excerpt": "The current framework requires a tabular representation of the discovery problem and a tabular\nfoundation model that can incorporate new labels in context. Most closed-loop discovery problems\ncan be expressed in this form, as our MADE experiment illustrates, but some environments may fall\nout-of-distribution of the model\u2019s capabilities which we did not encounter or test in our experiments.",
         "explanation": "The discussion section explicitly notes that the framework requires a tabular representation and a tabular foundation model, and that OSR has not been tested with test-time training, reinforcement learning, or other surrogate classes.",
         "page": 9,
+        "pages": [],
         "paraphrase": "The paper acknowledges limitations of the current framework.",
         "section": "Discussions Andconclusion",
-        "signal_type": "positive"
+        "signal_type": "positive",
+        "source_blocks": [],
+        "support_status": null
       }
     ],
     "full_text_assessed": true,

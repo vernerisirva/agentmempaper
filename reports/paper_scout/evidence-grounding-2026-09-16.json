@@ -1,0 +1,1709 @@
+{
+  "date": "2026-09-16",
+  "baseline_sha": "4cc7c295946988a30e7b66638aecd307fee65f4b",
+  "implementation": {
+    "pr_url": "https://github.com/vernerisirva/agentmempaper/pull/28",
+    "merge_sha": "e558271054c5a0b57e4cd0267a92d71d25192392",
+    "reviewed_head": "1f1ec15ee3b5eadb7df0ab6527db07594f7627f5",
+    "ci_run": 35129344598,
+    "evidence_version": "block-evidence-v1",
+    "assessment_version": "quality-evidence-v1",
+    "sidecar_version": "paper-scout-card-v2 (additive optional provenance fields)"
+  },
+  "before": {
+    "pass": 12,
+    "scientific_uncertainty": 4,
+    "insufficient": 1,
+    "manuscript_unavailable": 3,
+    "model_protocol_failure": 2,
+    "evidence_grounding_failure": 6,
+    "text_coverage_failure": 0
+  },
+  "calibration_totals": {
+    "pass": 16,
+    "scientific_uncertainty": 4,
+    "insufficient": 1,
+    "manuscript_unavailable": 3,
+    "model_protocol_failure": 0,
+    "evidence_grounding_failure": 4,
+    "text_coverage_failure": 0
+  },
+  "tracks": {
+    "agent_memory": {
+      "pass": 4,
+      "scientific_uncertainty": 2,
+      "insufficient": 1,
+      "manuscript_unavailable": 1,
+      "model_protocol_failure": 0,
+      "evidence_grounding_failure": 2,
+      "text_coverage_failure": 0
+    },
+    "deep_research": {
+      "pass": 6,
+      "scientific_uncertainty": 1,
+      "insufficient": 0,
+      "manuscript_unavailable": 2,
+      "model_protocol_failure": 0,
+      "evidence_grounding_failure": 1,
+      "text_coverage_failure": 0
+    },
+    "engram": {
+      "pass": 6,
+      "scientific_uncertainty": 1,
+      "insufficient": 0,
+      "manuscript_unavailable": 0,
+      "model_protocol_failure": 0,
+      "evidence_grounding_failure": 1,
+      "text_coverage_failure": 0
+    }
+  },
+  "paid_assessment_usage": {
+    "actual_requests": 8,
+    "normal_calls": 8,
+    "retry_calls": 0,
+    "successful_responses": 8,
+    "failed_responses": 0,
+    "input_tokens": 254248,
+    "output_tokens": 16643,
+    "known_cost_usd": 0.23505824457975,
+    "unknown_cost_requests": 0,
+    "outcomes": {
+      "success": 8
+    }
+  },
+  "independent_reviews": [
+    {
+      "candidate": "201d20f5a86fed72acb30bb1b99c54f711bea558",
+      "baseline": "4cc7c295946988a30e7b66638aecd307fee65f4b",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "DeepInfra",
+      "verdict": "CHANGES_REQUIRED",
+      "cost": 0.0598109,
+      "api_request_attempts": 1,
+      "request_sha256": "8a9259af6da67005d73e9514f9b832637e888b1d4cebf73d2c7bc53fdf738630",
+      "accepted": true,
+      "prompt_tokens": 43417,
+      "completion_tokens": 1532
+    },
+    {
+      "candidate": "1f1ec15ee3b5eadb7df0ab6527db07594f7627f5",
+      "baseline": "4cc7c295946988a30e7b66638aecd307fee65f4b",
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "provider": "Fireworks",
+      "verdict": "PASS_WITH_NOTES",
+      "cost": 0.07557924,
+      "api_request_attempts": 1,
+      "request_sha256": "e6e23bf75b70a6abc075b6720f35118d0eac8f81fcbe1827fc18bdd24e8cdd35",
+      "accepted": true,
+      "prompt_tokens": 55406,
+      "completion_tokens": 617
+    }
+  ],
+  "review_cost_usd": 0.13539014,
+  "combined_cost_usd": 0.37044838457975,
+  "manifest": {
+    "assessment_version": "quality-evidence-v1",
+    "evidence_version": "block-evidence-v1",
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "reasoning": "off",
+    "roster": [
+      {
+        "track": "agent_memory",
+        "rank": 1,
+        "canonical_id": "doi:10.1007/s44206-026-00290-2",
+        "title": "As-If Agents: Misrecognition and the Ethics of Non-Agentive AI",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "Required claim-alignment quotation rewrites the source opening and omits \u201cI argued\u201d. Eight of nine model anchors locate. This is an unsupported quotation, not a truncation issue.",
+        "source": "https://link.springer.com/content/pdf/10.1007/s44206-026-00290-2.pdf",
+        "source_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+        "format": "PDF",
+        "canonical_context_characters": 95062,
+        "canonical_context_hash": "a228c70d07cd3775d009bfda1bc5e5f946dfc11aeed87b6ce6794c56072d94aa",
+        "finish_reason": "stop",
+        "output_tokens": 2619,
+        "input_tokens": 23165,
+        "grounding_reasons": [
+          "quote_copy_mismatch"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 9,
+          "located_items": 8,
+          "failed_dimensions": [
+            "evidence_to_claim_alignment"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 123572,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "6eac6bd1c2f29eb224905f59df8470cafff2421b44c63d5afa045ebc5a80c79c",
+          "evidence_context_sha256": "d63bb112963d15c21458a2da34cc44f559a23616c3a549a594f6020f8ec39061",
+          "evidence_context_characters": 104684,
+          "evidence_block_count": 110,
+          "canonical_id": "doi:10.1007/s44206-026-00290-2",
+          "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+          "selected_text_sha256": "a228c70d07cd3775d009bfda1bc5e5f946dfc11aeed87b6ce6794c56072d94aa"
+        }
+      },
+      {
+        "track": "agent_memory",
+        "rank": 3,
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+        "classification": "model_protocol_failure",
+        "audit_note": "Baidu ended at the 8192-output-token limit (finish_reason=length). The incomplete response is a protocol failure; no scientific decision was inferred and no JSON repair was attempted.",
+        "source": "https://arxiv.org/pdf/2609.12320",
+        "source_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+        "format": "PDF",
+        "canonical_context_characters": 82782,
+        "canonical_context_hash": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea",
+        "finish_reason": "length",
+        "output_tokens": 8192,
+        "input_tokens": 26745,
+        "grounding_reasons": [],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 0,
+          "located_items": 0,
+          "failed_dimensions": []
+        },
+        "validation_reason": "protocol_failure",
+        "payload_bytes": 115573,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+          "evidence_context_sha256": "505e12bcca41edb701b6342dce4a5fdab44c2dbbc113d5a517102021dd0ab3ca",
+          "evidence_context_characters": 90273,
+          "evidence_block_count": 109,
+          "canonical_id": "doi:10.48550/arxiv.2609.12320",
+          "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+          "selected_text_sha256": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea"
+        }
+      },
+      {
+        "track": "agent_memory",
+        "rank": 6,
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "Seven of nine model anchors locate. Claim-alignment quote changes extracted word spacing; related-work quote crosses a page/section-label boundary. Mixed quotation fidelity and cross-page representation problems remain unresolved.",
+        "source": "https://arxiv.org/pdf/2609.11060",
+        "source_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+        "format": "PDF",
+        "canonical_context_characters": 88085,
+        "canonical_context_hash": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e",
+        "finish_reason": "stop",
+        "output_tokens": 2316,
+        "input_tokens": 30450,
+        "grounding_reasons": [
+          "page_boundary_artifact",
+          "normalization_mismatch"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 9,
+          "located_items": 7,
+          "failed_dimensions": [
+            "evidence_to_claim_alignment",
+            "related_work_and_gap_positioning"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 119796,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
+          "evidence_context_sha256": "3d3c55219e884b0550f4937d7b7080a6a68c8d63f65ae50f28d098c93be61df8",
+          "evidence_context_characters": 96900,
+          "evidence_block_count": 110,
+          "canonical_id": "doi:10.48550/arxiv.2609.11060",
+          "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+          "selected_text_sha256": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e"
+        }
+      },
+      {
+        "track": "deep_research",
+        "rank": 2,
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "Five of nine model anchors locate. Contribution text crosses a page/header boundary; claim-alignment quote inserts word boundaries absent in extraction. Some inline compound hyphens also differ. These are mixed extraction/context and quotation fidelity issues, not proven scientific uncertainty.",
+        "source": "https://arxiv.org/pdf/2609.11243",
+        "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+        "format": "PDF",
+        "canonical_context_characters": 142653,
+        "canonical_context_hash": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84",
+        "finish_reason": "stop",
+        "output_tokens": 1936,
+        "input_tokens": 44536,
+        "grounding_reasons": [
+          "page_boundary_artifact",
+          "normalization_mismatch"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 9,
+          "located_items": 5,
+          "failed_dimensions": [
+            "contribution_clarity",
+            "scholarly_novelty_or_value",
+            "evidence_to_claim_alignment",
+            "reproducibility_and_transparency"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 191624,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "ec559f9f72bc68b9c1dc1201902d6e0e8719a9e47367bd324335307603b1042e",
+          "evidence_context_sha256": "557bc62177281b569b300c05d1034f28a7b22cfdaa625b8869c9d9e0aeac5beb",
+          "evidence_context_characters": 157469,
+          "evidence_block_count": 186,
+          "canonical_id": "doi:10.48550/arxiv.2609.11243",
+          "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+          "selected_text_sha256": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84"
+        }
+      },
+      {
+        "track": "deep_research",
+        "rank": 8,
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "Eleven of thirteen anchors locate. The only positive contribution anchor is Abstract-only and is correctly excluded; an additional claim-alignment quotation also changes punctuation spacing. A separate claim-alignment anchor locates, so the decisive gate failure is the unsupported body contribution anchor.",
+        "source": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+        "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+        "format": "PDF",
+        "canonical_context_characters": 56526,
+        "canonical_context_hash": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0",
+        "finish_reason": "stop",
+        "output_tokens": 2871,
+        "input_tokens": 15357,
+        "grounding_reasons": [
+          "wrong_anchor",
+          "normalization_mismatch"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 13,
+          "located_items": 11,
+          "failed_dimensions": [
+            "contribution_clarity",
+            "evidence_to_claim_alignment"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 77174,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "b37f3399d50c848a83b8ef8b76296044e549f1f7d53f2248c89f6bfdc15b2faf",
+          "evidence_context_sha256": "0e154eacca73d439d242c76d4203bd56ac9b17cab03a6c1118aedf41c0267dcb",
+          "evidence_context_characters": 61343,
+          "evidence_block_count": 66,
+          "canonical_id": "doi:10.64898/2026.09.03.749176",
+          "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+          "selected_text_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0"
+        }
+      },
+      {
+        "track": "engram",
+        "rank": 1,
+        "canonical_id": "arxiv:2609.04793",
+        "title": "ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "Eight of twelve model anchors locate. Contribution and one concern span page-label/header boundaries; the methods quote omits a mathematical domain constraint, and the limitations quote changes a semicolon to a period. No blanket whitespace/fuzzy acceptance was introduced.",
+        "source": "https://arxiv.org/pdf/2609.04793",
+        "source_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+        "format": "PDF",
+        "canonical_context_characters": 58649,
+        "canonical_context_hash": "efe7ed6c8ea7fa971edfc24fb60e8d0b50c1561b5508c8a08483e5f3f897f8a2",
+        "finish_reason": "stop",
+        "output_tokens": 2800,
+        "input_tokens": 21403,
+        "grounding_reasons": [
+          "quote_copy_mismatch",
+          "page_boundary_artifact"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 12,
+          "located_items": 8,
+          "failed_dimensions": [
+            "contribution_clarity",
+            "methodological_rigor",
+            "limitations_and_uncertainty_handling",
+            "methodological_rigor"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 83933,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
+          "evidence_context_sha256": "7907a78147476059f2afff138c26ec3672e6b2dc22c08e7316d609a44c332b3a",
+          "evidence_context_characters": 64712,
+          "evidence_block_count": 82,
+          "canonical_id": "arxiv:2609.04793",
+          "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+          "selected_text_sha256": "efe7ed6c8ea7fa971edfc24fb60e8d0b50c1561b5508c8a08483e5f3f897f8a2"
+        }
+      },
+      {
+        "track": "engram",
+        "rank": 5,
+        "canonical_id": "doi:10.48550/arxiv.2608.17050",
+        "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+        "classification": "evidence_grounding_failure",
+        "audit_note": "The previous non-substantive seed echo is gone. Six of nine substantive anchors locate, but claim alignment is a paraphrase placed in the excerpt field, a reproducibility quote replaces an arrow with a word, and a limitation quote changes an en dash to a hyphen. The paraphrased claim-alignment excerpt is independently disqualifying.",
+        "source": "https://arxiv.org/pdf/2608.17050",
+        "source_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+        "format": "PDF",
+        "canonical_context_characters": 111896,
+        "canonical_context_hash": "83c66e5aff97849c72ce43bd2f082746d9e6774a285b12d8ffca1261433ad5ab",
+        "finish_reason": "stop",
+        "output_tokens": 2589,
+        "input_tokens": 36223,
+        "grounding_reasons": [
+          "wrong_anchor",
+          "quote_copy_mismatch",
+          "normalization_mismatch"
+        ],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 9,
+          "located_items": 6,
+          "failed_dimensions": [
+            "evidence_to_claim_alignment",
+            "reproducibility_and_transparency",
+            "limitations_and_uncertainty_handling"
+          ]
+        },
+        "validation_reason": "evidence_validation_failure",
+        "payload_bytes": 150886,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
+          "evidence_context_sha256": "365d2592ab5614b4b99f2323472bc3d5156afd64726195e63c9e962be092fd80",
+          "evidence_context_characters": 122981,
+          "evidence_block_count": 138,
+          "canonical_id": "doi:10.48550/arxiv.2608.17050",
+          "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+          "selected_text_sha256": "83c66e5aff97849c72ce43bd2f082746d9e6774a285b12d8ffca1261433ad5ab"
+        }
+      },
+      {
+        "track": "engram",
+        "rank": 8,
+        "canonical_id": "arxiv:2601.07372",
+        "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+        "classification": "model_protocol_failure",
+        "audit_note": "Alibaba ended at the 8192-output-token limit (finish_reason=length). This is a protocol failure with no scientific decision and no JSON repair.",
+        "source": "https://arxiv.org/pdf/2601.07372",
+        "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+        "format": "PDF",
+        "canonical_context_characters": 67217,
+        "canonical_context_hash": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580",
+        "finish_reason": "length",
+        "output_tokens": 8192,
+        "input_tokens": 24075,
+        "grounding_reasons": [],
+        "returned_evidence_structure": {
+          "schema": "legacy quote evidence",
+          "items": 0,
+          "located_items": 0,
+          "failed_dimensions": []
+        },
+        "validation_reason": "protocol_failure",
+        "payload_bytes": 98696,
+        "evidence_context": {
+          "evidence_version": "block-evidence-v1",
+          "evidence_context_id": "6f76e17964addb5df275e4f6266d03acf07666f222454d219550111c13ad1a95",
+          "evidence_context_sha256": "d2b53f66fd642e1d5cf7c29b06ca7e3be3814ad9f20c08dd916b67ed1e867cce",
+          "evidence_context_characters": 73406,
+          "evidence_block_count": 88,
+          "canonical_id": "arxiv:2601.07372",
+          "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+          "selected_text_sha256": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580"
+        }
+      }
+    ],
+    "normal_calls_maximum": 8,
+    "retry_calls_maximum": 8,
+    "actual_requests_maximum": 16,
+    "per_paper_request_maximum": 2,
+    "json_repair_calls_maximum": 0,
+    "output_token_limit": 8192,
+    "input_price_bound_per_token": 1.65e-06,
+    "output_price_bound_per_token": 4.95e-06,
+    "conservative_assessment_cost_usd": 3.929079,
+    "review_reserve_usd": 1.7283024000000002,
+    "combined_conservative_reserve_usd": 5.6573814,
+    "budget_ceiling_usd": 10,
+    "cost_bound_basis": "UTF-8 serialized request bytes + 4096 per-call overhead as conservative token bound; maximum current endpoint prices including timed overrides; two actual requests maximum per paper. Review reserve allows three 300KB requests at 16384 output tokens; unused capacity is not permission for extra scientific calls.",
+    "preserved_original_roster_records": 20,
+    "second_batch_started": false
+  },
+  "call_ledger": [
+    {
+      "canonical_id": "doi:10.1007/s44206-026-00290-2",
+      "track": "agent_memory",
+      "content_characters": 9031,
+      "content_sha256": "e7ebb741025d915f47aacb09ecba220929a88840a8be98e082e90f481c83f90b",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Phala",
+      "response_id": "gen-1789580371-Jl118GeMkPVHYYydI3pr",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2126,
+        "cost_usd": 0.0334851066,
+        "prompt_tokens": 28597,
+        "reasoning_tokens": 0,
+        "total_tokens": 30723
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "track": "agent_memory",
+      "content_characters": 8757,
+      "content_sha256": "cf15900f918460a3ace335e3e4d3c7df81c6efd39e0d477d8724cf44ad0a9784",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Phala",
+      "response_id": "gen-1789580406-j9Px8RBKE7aGtkOSAp16",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2016,
+        "cost_usd": 0.0345657906,
+        "prompt_tokens": 30057,
+        "reasoning_tokens": 0,
+        "total_tokens": 32073
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "track": "agent_memory",
+      "content_characters": 9015,
+      "content_sha256": "f33b77888080364a4236afa7109de273105b9569dfe622185ed3a240209cec64",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789580437-mOQ34y5lofVqNLakZLAy",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 1024,
+        "completion_tokens": 2012,
+        "cost_usd": 0.022779116472,
+        "prompt_tokens": 34265,
+        "reasoning_tokens": 0,
+        "total_tokens": 36277
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "track": "deep_research",
+      "content_characters": 10516,
+      "content_sha256": "a08bf5d35fa194b9347e1a3ffcfec2398b3dde4f0798336947e9c963c6228894",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789580380-pb0YMuuvudtGFau74Un4",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2248,
+        "cost_usd": 0.03379875048,
+        "prompt_tokens": 51582,
+        "reasoning_tokens": 0,
+        "total_tokens": 53830
+      }
+    },
+    {
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "track": "deep_research",
+      "content_characters": 8262,
+      "content_sha256": "42f9543e93503772a50d88b2911540efa1d2643a2719e9a823d2d8e585d31b95",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Ionstream",
+      "response_id": "gen-1789580419-XVLOZurSgo7SCBuvJywt",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1890,
+        "cost_usd": 0.0225216,
+        "prompt_tokens": 17790,
+        "reasoning_tokens": 0,
+        "total_tokens": 19680
+      }
+    },
+    {
+      "canonical_id": "arxiv:2609.04793",
+      "track": "engram",
+      "content_characters": 9732,
+      "content_sha256": "a4492eeafe89ad36d42e5602dd010c74c975f1fc774d62bb34094eb8df1d2a0d",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789580385-43K0L7cvnnOVx7Q7iSax",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 2187,
+        "cost_usd": 0.01774193916,
+        "prompt_tokens": 24056,
+        "reasoning_tokens": 0,
+        "total_tokens": 26243
+      }
+    },
+    {
+      "canonical_id": "doi:10.48550/arxiv.2608.17050",
+      "track": "engram",
+      "content_characters": 9145,
+      "content_sha256": "664e7fcb64bd0ffa74aaeba2f7ff4575561bbafc1641cda7518ecd21cecfd34c",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Baidu",
+      "response_id": "gen-1789580424-DQhYQiOKeLXIF85sHCAk",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 1024,
+        "completion_tokens": 2182,
+        "cost_usd": 0.026940362352,
+        "prompt_tokens": 40936,
+        "reasoning_tokens": 0,
+        "total_tokens": 43118
+      }
+    },
+    {
+      "canonical_id": "arxiv:2601.07372",
+      "track": "engram",
+      "content_characters": 8454,
+      "content_sha256": "82ec980699b6365c97d0ad56485d39f762e778641e8f26e77343d0f9c55e2896",
+      "finish_reason": "stop",
+      "kind": "initial",
+      "provider": "Sail Research",
+      "response_id": "gen-1789580464-GTOngYrXeJ6m8QBLtZBH",
+      "status": "success",
+      "usage": {
+        "cached_prompt_tokens": 0,
+        "completion_tokens": 1982,
+        "cost_usd": 0.04322557891575,
+        "prompt_tokens": 26965,
+        "reasoning_tokens": 0,
+        "total_tokens": 28947
+      }
+    }
+  ],
+  "review_triage": {
+    "initial_verdict": "CHANGES_REQUIRED",
+    "findings": [
+      {
+        "finding": "Preamble omitted from identity",
+        "disposition": "Rejected premise; strengthened clarity and regression coverage",
+        "reason": "selected_text_hash already hashed all selected.text, including preamble, and was part of context_id. A preamble change could not preserve this hash. Added explicit preamble in identity and tampering tests."
+      },
+      {
+        "finding": "Standalone resolver identity checks",
+        "disposition": "Fixed",
+        "reason": "Resolver now requires expected full context ID and verifies namespace, complete identity, version, rendering and block hashes independently."
+      },
+      {
+        "finding": "Page-boundary hyphen predicate",
+        "disposition": "Strengthened",
+        "reason": "Joining explicitly checks immediate preceding span, adjacent pages and same section."
+      },
+      {
+        "finding": "Empty evidence schema minItems",
+        "disposition": "Rejected",
+        "reason": "Schema-valid empty evidence intentionally reaches the shared bounded non-substantive retry. Both attempts are recorded; repeated empty output remains technical uncertainty. Adding minItems would disable this recovery."
+      },
+      {
+        "finding": "Rejected proposal in final rationale",
+        "disposition": "Fixed",
+        "reason": "Final pending rationale is neutral; rejected proposal remains separate execution audit data."
+      },
+      {
+        "finding": "Provider exclusion after length",
+        "disposition": "No change needed",
+        "reason": "Length triggers compact output instructions on the same model; it is not a provider transport fault. Existing transport retries retain provider exclusion behavior."
+      }
+    ],
+    "validation": "241 unit tests pass; all eight contexts reconstructed with exact source spans; all 28 legacy assessments read unchanged.",
+    "final_verdict": "PASS_WITH_NOTES",
+    "final_notes": [
+      {
+        "finding": "Page-tail extraction gap might disappear from SourceSpan",
+        "disposition": "Rejected as inapplicable to actual code",
+        "evidence": "SourceSpan slices section.text directly; markers are retained. Any incomplete extraction or selected excerpts disable all page joining. Supplemental actual-code test checks a page-tail gap under complete and partial flags: no cross-page block, gap block ineligible."
+      },
+      {
+        "finding": "Multiple invalid IDs in a single item",
+        "disposition": "Supplemental check passed",
+        "evidence": "Two invalid IDs force evidence_validation_failure and uncertain even with other valid gate evidence."
+      }
+    ],
+    "unresolved_blockers": 0
+  },
+  "preserved_original_records": 20,
+  "manual_corrections": 0,
+  "readiness_checks": {
+    "text_coverage_failures_zero": true,
+    "quotation_copying_removed_from_new_protocol": true,
+    "references_bind_exact_supplied_context": true,
+    "no_page_boundary_grounding_failures_in_rerun": true,
+    "invented_foreign_ineligible_references_fail_closed": true,
+    "output_limit_detection_and_bounded_recovery_mock_tests_pass": true,
+    "protocol_failures_zero_in_rerun": true,
+    "no_manual_corrections": true,
+    "infrastructure_cannot_establish_insufficient": true,
+    "all_technical_failures_resolved": false,
+    "semantic_interpretation_fully_verified": false,
+    "full_validation_passes": true
+  },
+  "QUALITY_PIPELINE_READY_FOR_BATCH_2": "NO",
+  "second_batch_started": false,
+  "validation": {
+    "unit_tests": 241,
+    "all_three_relevance_quality_discovery_idempotency_builds": true,
+    "sidecar_schema_relative_links_exposure_workflow": true,
+    "state_read_and_build_preserved_hashes": true,
+    "snapshot": {
+      "snapshot_sha256": "660455a8cadcfb1dab8f387cadc9c3537e1a35d51b646007b8d9c958d3802f63",
+      "snapshot_bytes": 45343964,
+      "tracks": [
+        {
+          "track": "agent_memory",
+          "changed_assessment_ids": [
+            "doi:10.1007/s44206-026-00290-2",
+            "doi:10.48550/arxiv.2609.11060",
+            "doi:10.48550/arxiv.2609.12320"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        },
+        {
+          "track": "deep_research",
+          "changed_assessment_ids": [
+            "doi:10.48550/arxiv.2609.11243",
+            "doi:10.64898/2026.09.03.749176"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        },
+        {
+          "track": "engram",
+          "changed_assessment_ids": [
+            "arxiv:2601.07372",
+            "arxiv:2609.04793",
+            "doi:10.48550/arxiv.2608.17050"
+          ],
+          "roundtrip_identical": true,
+          "rebuild_preserves_state": true,
+          "discovery_rows_unchanged": true
+        }
+      ]
+    },
+    "legacy_snapshot": [
+      {
+        "canonical_id": "doi:10.1007/s44206-026-00290-2",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22750153",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22661593",
+        "status": "insufficient",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22699102",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682679",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2609.11225",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22685081",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682633",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.1002/advs.76675",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11318",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.10922",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.6082/mgmw1-gw451",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07611",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07655",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.17605/osf.io/qm2c3",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2609.04793",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.03426",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2608.29327",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2608.23982",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2608.17050",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "openalex:W7172473936",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2605.20948",
+        "status": "pass",
+        "read_without_rewriting": true
+      },
+      {
+        "canonical_id": "arxiv:2601.07372",
+        "status": "uncertain",
+        "read_without_rewriting": true
+      }
+    ],
+    "local_browser_pages": 34,
+    "evidence_ui": {
+      "paper": "arxiv:2609.04793",
+      "source_block_count": 23,
+      "all_html_blockquote_texts_equal_canonical_after_existing_line_end_whitespace_trim": true,
+      "nested_evidence_disclosures_opened": true
+    }
+  },
+  "papers": [
+    {
+      "track": "agent_memory",
+      "rank": 1,
+      "canonical_id": "doi:10.1007/s44206-026-00290-2",
+      "title": "As-If Agents: Misrecognition and the Ethics of Non-Agentive AI",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "pass",
+      "reassessed": true,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+      "execution_outcome": "scientific",
+      "assessment_context": {
+        "canonical_id": "doi:10.1007/s44206-026-00290-2",
+        "evidence_block_count": 110,
+        "evidence_context_characters": 104684,
+        "evidence_context_id": "6eac6bd1c2f29eb224905f59df8470cafff2421b44c63d5afa045ebc5a80c79c",
+        "evidence_context_sha256": "d63bb112963d15c21458a2da34cc44f559a23616c3a549a594f6020f8ec39061",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "a228c70d07cd3775d009bfda1bc5e5f946dfc11aeed87b6ce6794c56072d94aa",
+        "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760"
+      },
+      "automatic_reference_items_submitted": 9,
+      "automatic_reference_items_validated": 9,
+      "all_references_validated_automatically": true,
+      "cross_page_cited_blocks": 2,
+      "invalid_reference_items": [],
+      "source_review_note": "Source blocks support a conceptual argument, distinctions in epistemic authority, engagement with prior work and explicit objections. Pass is the automatic type-sensitive assessment, not an empirical proof of the philosophical thesis."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 2,
+      "canonical_id": "doi:10.5281/zenodo.22750153",
+      "title": "The Intransitability of Hybrid Agents: Operational Memory, Drift Gradients, and the Limits of Agent Portability",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "66cf5688b877ae502d473e0255d349277f47703fe140e5b6809ae0d9c8db3253",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 3,
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+      "classification_before": "model_protocol_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+      "execution_outcome": "evidence_validation_failure",
+      "assessment_context": {
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "evidence_block_count": 109,
+        "evidence_context_characters": 90273,
+        "evidence_context_id": "6f5745c068db81ada42bd1f3e1bfe64e6fe426c61d5944b47f52a271cdb579c1",
+        "evidence_context_sha256": "505e12bcca41edb701b6342dce4a5fdab44c2dbbc113d5a517102021dd0ab3ca",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "59b1dfb50b71ee1b5ee5475435a5422770a88f7d4a8a38aa9143a81b898211ea",
+        "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e"
+      },
+      "automatic_reference_items_submitted": 11,
+      "automatic_reference_items_validated": 9,
+      "all_references_validated_automatically": false,
+      "cross_page_cited_blocks": 4,
+      "invalid_reference_items": [
+        {
+          "dimension": "contribution_clarity",
+          "references": [
+            {
+              "id": "E6f5745c068db81ad-B0002",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "E6f5745c068db81ad-B0005",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Introduction"
+              ],
+              "pages": [
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "references": [
+            {
+              "id": "E6f5745c068db81ad-B0003",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "E6f5745c068db81ad-B0013",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Related Work"
+              ],
+              "pages": [
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "source_review_note": "All cited IDs exist in the correct supplied context, but the rejected items include explicitly ineligible Abstract blocks. No IDs, evidence or decisions were repaired."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 4,
+      "canonical_id": "doi:10.5281/zenodo.22661593",
+      "title": "Human Supervision as Attractor Stabilization: Indirect Prompt Injection, Longitudinal Object Custody, and the HibriMind Ontology",
+      "classification_before": "insufficient",
+      "classification": "insufficient",
+      "reassessed": false,
+      "quality_status": "insufficient",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6a57e0680ed4e72f44cbe234441b20db0c6eb8cd2cb7b752282caaf4583c3363",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 5,
+      "canonical_id": "doi:10.5281/zenodo.22699102",
+      "title": "Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "a733685a2c58ac3c283c2a00a3890849148112f764eacd95d0f2b2bbc34aef73",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 6,
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+      "execution_outcome": "evidence_validation_failure",
+      "assessment_context": {
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "evidence_block_count": 110,
+        "evidence_context_characters": 96900,
+        "evidence_context_id": "81097e33595a5a5ca30a608b075c54400447ac717aa0c8d946e020b40507bcb4",
+        "evidence_context_sha256": "3d3c55219e884b0550f4937d7b7080a6a68c8d63f65ae50f28d098c93be61df8",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "6d477765eb2f612d499ea0aff4ec3dc685781bbfeafbd8358e9939004cfa419e",
+        "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282"
+      },
+      "automatic_reference_items_submitted": 9,
+      "automatic_reference_items_validated": 7,
+      "all_references_validated_automatically": false,
+      "cross_page_cited_blocks": 3,
+      "invalid_reference_items": [
+        {
+          "dimension": "contribution_clarity",
+          "references": [
+            {
+              "id": "E81097e33595a5a5c-B0002",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "E81097e33595a5a5c-B0009",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Introduction"
+              ],
+              "pages": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "references": [
+            {
+              "id": "E81097e33595a5a5c-B0003",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "E81097e33595a5a5c-B0031",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Adapted Apex"
+              ],
+              "pages": [
+                5
+              ]
+            }
+          ]
+        }
+      ],
+      "source_review_note": "All cited IDs exist in the correct supplied context, but the rejected items include explicitly ineligible Abstract blocks. No IDs, evidence or decisions were repaired."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 7,
+      "canonical_id": "doi:10.5281/zenodo.22682679",
+      "title": "Beyond Agentic Operating Systems A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority AIVORIX OS\u2122 Architectural Research Series",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "4d95d4d06619450fccbe69f1d39652f36c987b831828d31274096db45a3f4c53",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 8,
+      "canonical_id": "arxiv:2609.11225",
+      "title": "Harness Robotic OS: A Unified Embodied-Agent Runtime for Closed-Loop Quadruped Inspection",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "fdf3d3d1291697320ed9113e12815aabcb93b7e8397530a686d28b7d9ee2f53b",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 9,
+      "canonical_id": "doi:10.5281/zenodo.22685081",
+      "title": "Rank-Bounded Memory: Self-Poisoning and Attribution Laundering in LLM Agents",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "37fcb17e4ae17797bc9327897d1d3552a828d01c868f15d316501d57dd1bdc8f",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "agent_memory",
+      "rank": 10,
+      "canonical_id": "doi:10.5281/zenodo.22682633",
+      "title": "AgentKG: Conversational Memory as a Knowledge Graph",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "396af2b42db9c6132a2b7dd2f66256d4383e0296581838a27b4644f4f6273f51",
+      "execution_outcome": "manuscript_unavailable",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 1,
+      "canonical_id": "doi:10.1002/advs.76675",
+      "title": "Closing the Empirical Loop: Autonomous AI Agents Conduct End\u2010to\u2010end Research With Human Participants",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "ab2410ee72f45a51fdd2531a9400dc68c7a22b47e3dd55c237ff9b078f4c3a6a",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 2,
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "pass",
+      "reassessed": true,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+      "execution_outcome": "scientific",
+      "assessment_context": {
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "evidence_block_count": 186,
+        "evidence_context_characters": 157469,
+        "evidence_context_id": "ec559f9f72bc68b9c1dc1201902d6e0e8719a9e47367bd324335307603b1042e",
+        "evidence_context_sha256": "557bc62177281b569b300c05d1034f28a7b22cfdaa625b8869c9d9e0aeac5beb",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84",
+        "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d"
+      },
+      "automatic_reference_items_submitted": 10,
+      "automatic_reference_items_validated": 10,
+      "all_references_validated_automatically": true,
+      "cross_page_cited_blocks": 5,
+      "invalid_reference_items": [],
+      "source_review_note": "Provenance passes, but one numerical alignment claim (answer accuracy exceeds complete evidence recovery by more than 20%) is not established by its cited Table 2 and main-results blocks. Those show answer accuracy and average evidence coverage, not complete-recovery rates. Another alignment item is directly supported by the 57.2% error breakdown. This is a concrete assessor-interpretation/reference-specificity concern; the automatic pass is retained unchanged under the no-manual-corrections instruction. It must not be described as independently verified scientific truth. The 900-character uncertainty field also ends mid-sentence, although it contains substantive limitations."
+    },
+    {
+      "track": "deep_research",
+      "rank": 3,
+      "canonical_id": "doi:10.48550/arxiv.2609.11318",
+      "title": "Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-v2",
+      "source_content_hash": "d316fe1ef881e74a901bebb4c374e20decdb3f062310656c075f4a5270ea8146",
+      "execution_outcome": null,
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 4,
+      "canonical_id": "doi:10.48550/arxiv.2609.10922",
+      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "f4a5656658f30151b8399cb7e06826cea95b8a62162527682a37a19697b6bbf9",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 5,
+      "canonical_id": "doi:10.6082/mgmw1-gw451",
+      "title": "AI Scientists Need a Theory of Scientific Value",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6a95fed7d36453707c1c579938a86682ec05a8cd2def103ba03fd7ce367c4f57",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 6,
+      "canonical_id": "doi:10.48550/arxiv.2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "d76d8b7748237d0e1b460e44a7c4e042be9a3fd00ca70925492a175babedd6e9",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 7,
+      "canonical_id": "doi:10.48550/arxiv.2609.07655",
+      "title": "Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 8,
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+      "execution_outcome": "evidence_validation_failure",
+      "assessment_context": {
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "evidence_block_count": 66,
+        "evidence_context_characters": 61343,
+        "evidence_context_id": "b37f3399d50c848a83b8ef8b76296044e549f1f7d53f2248c89f6bfdc15b2faf",
+        "evidence_context_sha256": "0e154eacca73d439d242c76d4203bd56ac9b17cab03a6c1118aedf41c0267dcb",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0",
+        "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651"
+      },
+      "automatic_reference_items_submitted": 9,
+      "automatic_reference_items_validated": 8,
+      "all_references_validated_automatically": false,
+      "cross_page_cited_blocks": 5,
+      "invalid_reference_items": [
+        {
+          "dimension": "contribution_clarity",
+          "references": [
+            {
+              "id": "Eb37f3399d50c848a-B0002",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "Eb37f3399d50c848a-B0007",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Introduction"
+              ],
+              "pages": [
+                2
+              ]
+            }
+          ]
+        }
+      ],
+      "source_review_note": "All cited IDs exist in the correct supplied context, but the rejected items include explicitly ineligible Abstract blocks. No IDs, evidence or decisions were repaired."
+    },
+    {
+      "track": "deep_research",
+      "rank": 9,
+      "canonical_id": "doi:10.17605/osf.io/qm2c3",
+      "title": "Do AI Scientists' Results Replicate? Pre-registration of a multi-seed re-execution study of agent-generated empirical claims with matched human baselines and auditor calibration (AutoReplicate)",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "2f4ea2b74914a5dd86b1e8aadbe53acc88deb117546b28e5b1543d1afee19f86",
+      "execution_outcome": "manuscript_unavailable",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "deep_research",
+      "rank": 10,
+      "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+      "title": "Generative artificial intelligence for nanomaterial discovery and nanoengineering: From data-driven design to autonomous laboratories",
+      "classification_before": "manuscript_unavailable",
+      "classification": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "9e0149b697aed38a50c3478deb797102ccf6dbcdba1fb9e44195b8f6c292fcee",
+      "execution_outcome": "manuscript_unavailable",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 1,
+      "canonical_id": "arxiv:2609.04793",
+      "title": "ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "pass",
+      "reassessed": true,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+      "execution_outcome": "scientific",
+      "assessment_context": {
+        "canonical_id": "arxiv:2609.04793",
+        "evidence_block_count": 82,
+        "evidence_context_characters": 64712,
+        "evidence_context_id": "557bb55098c0317b894d9c016e610ca9770c3457e3225047c8d004e9ab1b59d6",
+        "evidence_context_sha256": "7907a78147476059f2afff138c26ec3672e6b2dc22c08e7316d609a44c332b3a",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "efe7ed6c8ea7fa971edfc24fb60e8d0b50c1561b5508c8a08483e5f3f897f8a2",
+        "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c"
+      },
+      "automatic_reference_items_submitted": 12,
+      "automatic_reference_items_validated": 12,
+      "all_references_validated_automatically": true,
+      "cross_page_cited_blocks": 4,
+      "invalid_reference_items": [],
+      "source_review_note": "Blocks support initialization, benchmark results, ablations, motif/expert analyses, implementation details and the uncontrolled sampling limitation. The model appropriately retains uncertainty over small gains and limited contact-prediction sampling."
+    },
+    {
+      "track": "engram",
+      "rank": 2,
+      "canonical_id": "doi:10.48550/arxiv.2609.03426",
+      "title": "Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "f7bd34f3005e2cbc60b197e6869f1d81fdeb9d63ed0e8a87c7270fb4205a05dd",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 3,
+      "canonical_id": "arxiv:2608.29327",
+      "title": "When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 4,
+      "canonical_id": "arxiv:2608.23982",
+      "title": "Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 5,
+      "canonical_id": "doi:10.48550/arxiv.2608.17050",
+      "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+      "classification_before": "evidence_grounding_failure",
+      "classification": "pass",
+      "reassessed": true,
+      "quality_status": "pass",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+      "execution_outcome": "scientific",
+      "assessment_context": {
+        "canonical_id": "doi:10.48550/arxiv.2608.17050",
+        "evidence_block_count": 138,
+        "evidence_context_characters": 122981,
+        "evidence_context_id": "7e2e200f0391101ab1a9bb69b7e94d78c21227f684d29c1fc9152ad32b76bf95",
+        "evidence_context_sha256": "365d2592ab5614b4b99f2323472bc3d5156afd64726195e63c9e962be092fd80",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "83c66e5aff97849c72ce43bd2f082746d9e6774a285b12d8ffca1261433ad5ab",
+        "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867"
+      },
+      "automatic_reference_items_submitted": 9,
+      "automatic_reference_items_validated": 9,
+      "all_references_validated_automatically": true,
+      "cross_page_cited_blocks": 5,
+      "invalid_reference_items": [],
+      "source_review_note": "Blocks support controlled reader ablations, parameter-matched/permuted/random controls, transfer across families, negative TruthfulQA results and scale/language limitations. Model notes about unfinished appendix prose are visible in the cited text."
+    },
+    {
+      "track": "engram",
+      "rank": 6,
+      "canonical_id": "openalex:W7172473936",
+      "title": "Tokenizer-Agnostic Engram Module",
+      "classification_before": "scientific_uncertainty",
+      "classification": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-recovery-v1",
+      "source_content_hash": "528f4fe5c512abdcd932df1960da584132b85070437260d5d6618da0809f04f2",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 7,
+      "canonical_id": "arxiv:2605.20948",
+      "title": "Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory",
+      "classification_before": "pass",
+      "classification": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "assessment_version": "quality-coverage-v1",
+      "source_content_hash": "98ae2b04b13f48f41a06ecb74e04d231a9b8ad7a3921d10bcf1514910e36d7f1",
+      "execution_outcome": "scientific",
+      "assessment_context": null,
+      "automatic_reference_items_submitted": null,
+      "automatic_reference_items_validated": null,
+      "all_references_validated_automatically": null,
+      "cross_page_cited_blocks": null,
+      "invalid_reference_items": [],
+      "source_review_note": "Preserved without reassessment."
+    },
+    {
+      "track": "engram",
+      "rank": 8,
+      "canonical_id": "arxiv:2601.07372",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+      "classification_before": "model_protocol_failure",
+      "classification": "evidence_grounding_failure",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "assessment_version": "quality-evidence-v1",
+      "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+      "execution_outcome": "evidence_validation_failure",
+      "assessment_context": {
+        "canonical_id": "arxiv:2601.07372",
+        "evidence_block_count": 88,
+        "evidence_context_characters": 73406,
+        "evidence_context_id": "6f76e17964addb5df275e4f6266d03acf07666f222454d219550111c13ad1a95",
+        "evidence_context_sha256": "d2b53f66fd642e1d5cf7c29b06ca7e3be3814ad9f20c08dd916b67ed1e867cce",
+        "evidence_version": "block-evidence-v1",
+        "selected_text_sha256": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580",
+        "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d"
+      },
+      "automatic_reference_items_submitted": 9,
+      "automatic_reference_items_validated": 7,
+      "all_references_validated_automatically": false,
+      "cross_page_cited_blocks": 0,
+      "invalid_reference_items": [
+        {
+          "dimension": "contribution_clarity",
+          "references": [
+            {
+              "id": "E6f76e17964addb5d-B0002",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            },
+            {
+              "id": "E6f76e17964addb5d-B0006",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Introduction"
+              ],
+              "pages": [
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "references": [
+            {
+              "id": "E6f76e17964addb5d-B0084",
+              "exists_in_context": true,
+              "eligible": true,
+              "sections": [
+                "Appendix: Detailed Model Architecture And Hyper Parameters"
+              ],
+              "pages": [
+                33
+              ]
+            },
+            {
+              "id": "E6f76e17964addb5d-B0003",
+              "exists_in_context": true,
+              "eligible": false,
+              "sections": [
+                "Abstract"
+              ],
+              "pages": [
+                1
+              ]
+            }
+          ]
+        }
+      ],
+      "source_review_note": "All cited IDs exist in the correct supplied context, but the rejected items include explicitly ineligible Abstract blocks. No IDs, evidence or decisions were repaired."
+    }
+  ],
+  "deployment": {
+    "status": "pending",
+    "maximum_dispatches": 1
+  },
+  "published_runtime_asset": {
+    "apiUrl": "https://api.github.com/repos/vernerisirva/agentmempaper/releases/assets/568478859",
+    "contentType": "application/x-gtar",
+    "createdAt": "2026-09-16T17:47:20Z",
+    "digest": "sha256:660455a8cadcfb1dab8f387cadc9c3537e1a35d51b646007b8d9c958d3802f63",
+    "downloadCount": 0,
+    "id": "RA_kwDOTF7xZM4h4kyL",
+    "label": "",
+    "name": "paper-scout-state.tar.gz",
+    "size": 45343964,
+    "state": "uploaded",
+    "updatedAt": "2026-09-16T17:47:23Z",
+    "url": "https://github.com/vernerisirva/agentmempaper/releases/download/paper-scout-runtime-state/paper-scout-state.tar.gz",
+    "download_verified": true,
+    "restored_database_hashes_match": true
+  }
+}

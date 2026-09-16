@@ -25,7 +25,7 @@
           <div class="library-hero">
             <h1>Engram &amp; Conditional Memory Paper Library</h1>
             <p class="hero-copy">A daily updated library of papers on Engram-style model memory, learned lookup tables, and transferable memory mechanisms.</p>
-            <p class="hero-line">Updated 2026-09-15 · 4 papers</p>
+            <p class="hero-line">Updated 2026-09-15 · 6 papers</p>
           </div>
         </header>
 
@@ -59,6 +59,62 @@
 
           </div>
           <div class="paper-list" id="paper-list">
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv" data-decision="relevant" data-tags="conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-09-04" data-first-seen="2026-09-07" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="protlingo: efficient protein language modeling via conditional memory and expert routing" data-search="protlingo: efficient protein language modeling via conditional memory and expert routing mingrui li, sixian shen, minzhang li, ruiyi zhang, kexin zhang, jiakai zhang, jingyi yu proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. protein language models (plms) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense tran... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.  conditional-memory arxiv relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing</h3>
+        <p class="meta">Mingrui Li, Sixian Shen, Minzhang Li, Ruiyi Zhang, Kexin Zhang, Jiakai Zhang, Jingyi Yu · Published 2026-09-04 · Source: arXiv</p>
+        <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2609.04793v1">Open paper</a>
+        <a class="paper-detail-link" href="papers/protlingo-efficient-protein-language-modeling-via-conditional-memory-and-expert-rout-c8478276.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Proteins perform diverse cellular functions, and even single amino-acid substitutions can alter stability, activity, or molecular interactions. Protein language models (PLMs) provide a scalable approach for modeling such sequence--function relationships from unlabeled sequences, but increasing the size of dense Tran...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">conditional-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-07 12:42</li>
+            <li>arXiv: 2609.04793</li><li>arXiv IDs: 2609.04793</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2609.04793">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>The paper presents a clear and well-motivated methodological contribution combining conditional memory and sparse expert routing for efficient protein language modeling. The architecture is described with sufficient detail, and the initialization strategies for both modules are designed to preserve the pretrained function. The evaluation covers multiple benchmarks, including ProteinGym, FLIP, and contact prediction, with ablation studies supporting the complementary contributions of the two modules. The biological specialization analyses provide additional evidence for the interpretability and functional relevance of the learned mechanisms. The paper is transparent about limitations and includes detailed implementation and evaluation protocols. The main weaknesses are the lack of a fully controlled ablation for the data sampling strategy and the relatively modest absolute gains over the ESM2-150M baseline, which the authors acknowledge.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: full text</li>
+        <li>Paper type: methods or algorithm</li>
+        <li>Assessment: quality-evidence-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 3/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>ProtLingo introduces a clear architectural contribution combining centered latent N-gram memory and sparse MoE routing on a pretrained ESM2 backbone. (pages 1–3)</li><li>The proposed method is positioned as a novel alternative to dense scaling for mutation-sensitive protein modeling. (page 1)</li><li>The memory module is designed to preserve the pretrained function at initialization through zero-initialized tables and convolution weights. (page 4)</li><li>MoE upcycling preserves the pretrained computation at initialization by splitting the dense feed-forward weights into shared and routed experts. (pages 4, 10)</li><li>ProtLingo achieves competitive performance on ProteinGym, FLIP, and contact prediction benchmarks with a 150M-scale backbone. (page 6)</li><li>Ablation studies show that both the MoE module and the LNgram memory module contribute complementary gains. (page 6)</li><li>The LNgram memory learns motif-aware representations that are not explained by amino-acid composition alone. (pages 6–7)</li><li>Sparse experts exhibit biological specialization across structural and functional annotations. (page 7)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing. Mingrui Li, Sixian Shen, Minzhang Li, Ruiyi Zhang, Kexin Zhang, Jiakai Zhang, Jingyi Yu. 2026-09-04. https://arxiv.org/abs/2609.04793v1">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
 
     <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
@@ -222,6 +278,62 @@
     </details>
 
           <button class="citation-button" type="button" data-citation="Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning. Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, Zhixuan Chu, Bingyu Zhu, Jungang Lou. 2026-08-25. https://www.semanticscholar.org/paper/d447f4f7bd455c4d384e8fc1fb932ba295581f3a">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv semantic_scholar" data-decision="relevant" data-tags="engram hashed-ngram-memory memory-transfer" data-latest-run="false" data-is-new="false" data-published="2026-08-17" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="cross-model memory transfer via target-side reader adaptation" data-search="cross-model memory transfer via target-side reader adaptation mingyuan li, guangsheng yu, xu wang, shaoxiong ji methods for improving knowledge use in large language models typically fall into two regimes. non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. parametric adaptation is efficient at inference time, but... studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory, memory-transfer. abstract-based curation (arxiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader. ablations examine memory content, addressing and reader alignment; compatible reader reuse is also considered. engram hashed-ngram-memory memory-transfer openalex arxiv semantic_scholar relevant" data-quality-status="pass" data-quality-score="54" data-quality-recommendation="weak" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>Cross-Model Memory Transfer via Target-Side Reader Adaptation</h3>
+        <p class="meta">Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji · Published 2026-08-17 · Source: OpenAlex, arXiv, Semantic Scholar</p>
+        <p class="reason"><strong>Topic match:</strong> Abstract-based curation (arXiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2608.17050">Open paper</a>
+        <a class="paper-detail-link" href="papers/cross-model-memory-transfer-via-target-side-reader-adaptation-4f7a8c48.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Methods for improving knowledge use in large language models typically fall into two regimes. Non-parametric retrieval offers flexible access to external knowledge, but adds retrieval latency, context overhead, and only shallow integration with the backbone. Parametric adaptation is efficient at inference time, but...</p>
+          <p class="research-note"><strong>Research note</strong> Abstract-based curation (arXiv:2608.17050): transfers a frozen learned memory table between backbones and adapts a lightweight target-side reader. Ablations examine memory content, addressing and reader alignment; compatible reader reuse is also considered.</p>
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">OpenAlex</span><span class="badge source">arXiv</span><span class="badge source">Semantic Scholar</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">engram</span><span class="badge tag">hashed-ngram-memory</span><span class="badge tag">memory-transfer</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-05 17:59</li>
+            <li>DOI: 10.48550/arxiv.2608.17050</li><li>arXiv: 2608.17050</li><li>Semantic Scholar: 2bc97d02615ac66f4691feb5016874de1de23236</li><li>OpenAlex: W7203773971</li><li>OpenAlex IDs: W7203773971</li><li>arXiv IDs: 2608.17050</li><li>Semantic Scholar IDs: 2bc97d02615ac66f4691feb5016874de1de23236</li>
+          </ul>
+          <div class="secondary-links"><a href="https://www.semanticscholar.org/paper/2bc97d02615ac66f4691feb5016874de1de23236">Semantic Scholar</a><a href="https://doi.org/10.48550/arxiv.2608.17050">DOI</a><a href="https://openalex.org/W7203773971">OpenAlex</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: hashed-ngram-memory, memory-transfer.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>This is a well-executed empirical study of cross-model frozen-memory transfer. The contribution is clearly formulated as an operational test of whether external memory remains useful after source backbone removal. The methodology is rigorous, with controlled ablations isolating memory content, addressing integrity, and reader design. The evaluation is extensive, spanning multiple model families, tokenizers, scales, and downstream tasks, with appropriate controls including permuted keys, random memory, and parameter-matched FFN baselines. The central claim that reader design is first-order is well supported by the dual-layer and multi-branch ablation results. The paper also demonstrates intellectual honesty by reporting negative results on TruthfulQA and acknowledging that transfer primarily improves initialization rather than asymptotic ceiling. Limitations are explicitly discussed. The main weaknesses are minor presentation issues in the appendix, including apparent internal notes or incomplete edits, and some informal phrasing. Overall, the evidence chain is strong and the conclusions are appropriately scoped.</p>
+      <ul>
+        <li>Recommendation: weak</li>
+        <li>Confidence: high</li>
+        <li>Assessment scope: full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-evidence-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
+        <li>Applied score cap: 54/100 - Comparative claims were detected without a suitable baseline.</li>
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 5/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 5/5</li><li>Methodological Rigor: 5/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 5/5</li><li>Reproducibility And Transparency: 5/5</li><li>Scholarly Novelty Or Value: 5/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper clearly formulates cross-model frozen-memory reuse as a distinct evaluation problem separating portable memory from backbone-specific co-adaptation. (page 2)</li><li>The proposed transfer protocol is methodologically sound, with tokenizer-agnostic canonicalization, frozen memory, and reader-only adaptation clearly specified. (pages 4–6)</li><li>The central claim that reader design is a first-order factor is validated by controlled ablations showing large gains from dual-layer injection and multi-branch gating. (page 8)</li><li>The paper provides strong evidence that transferred memory outperforms controls and that gains are not explained by parameter count alone. (page 14)</li><li>The paper positions its work against retrieval-augmented, parametric, and other memory-augmented methods, clearly identifying the gap of frozen external-memory portability. (pages 3–4)</li><li>The paper provides substantial reproducibility details including model checkpoints, hyperparameters, training corpora, and evaluation protocols. (pages 22–25)</li><li>The paper acknowledges limitations regarding scale, language diversity, and reader design space, and reports negative results on TruthfulQA. (pages 10, 33)</li><li>The paper demonstrates transfer gains across diverse model families, tokenizers, and scales, supporting the novelty of portable external memory. (pages 7, 25, 26, 27)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="Cross-Model Memory Transfer via Target-Side Reader Adaptation. Mingyuan Li, Guangsheng Yu, Xu Wang, Shaoxiong Ji. 2026-08-17. https://arxiv.org/abs/2608.17050">Copy citation</button>
           <span class="copy-status" aria-live="polite"></span>
         </details>
       </div>

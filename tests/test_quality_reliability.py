@@ -279,3 +279,21 @@ class SelectionCoverageTest(unittest.TestCase):
         self.assertLessEqual(len(selected.text), 400)
         self.assertTrue(all(s.text in selected.text for s in selected.sections))
         self.assertEqual(selected.scope, "partial_full_text")
+
+
+class ReviewRegressionTest(unittest.TestCase):
+    def test_all_common_latin_ligatures_expand_without_math_compatibility_mapping(self):
+        from paper_scout.quality_llm import _normalized
+        for glyph, letters in zip("ﬀﬁﬂﬃﬄﬅﬆ", ("ff", "fi", "fl", "ffi", "ffl", "st", "st")):
+            self.assertEqual(_normalized(glyph), letters)
+        self.assertNotEqual(_normalized("x²"), _normalized("x2"))
+        self.assertNotEqual(_normalized("ℝ"), _normalized("R"))
+
+    def test_namespaced_jats_with_unselected_body_paragraph_is_partial(self):
+        from paper_scout.full_text import _extract_jats
+        payload = b'<article xmlns="urn:fixture-jats"><body><p>Body preface.</p><sec><title>Methods</title><p>Located evidence.</p><sec><title>Nested</title><p>Nested evidence.</p></sec></sec></body></article>'
+        document = _extract_jats(payload, "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC1/fullTextXML", 10, 1000)
+        self.assertFalse(document.complete)
+        self.assertIn("Nested evidence.", document.text)
+        self.assertTrue(any("outside section" in warning for warning in document.warnings))
+        self.assertEqual(select_assessment_text(candidate(), document).scope, "partial_full_text")

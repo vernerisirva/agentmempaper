@@ -225,7 +225,10 @@ def validate_scientific_decision(value: dict, assessment: QualityAssessment, sel
 
 
 def _normalized(text: str) -> str:
-    text = unicodedata.normalize("NFC", text).casefold().replace("\u00ad", "")
+    # casefold also expands these ligatures in Python; keep the accepted
+    # compatibility mappings explicit, without conflating mathematical symbols.
+    ligatures = dict(zip("ﬀﬁﬂﬃﬄﬅﬆ", ("ff", "fi", "fl", "ffi", "ffl", "st", "st")))
+    text = unicodedata.normalize("NFC", text).translate(str.maketrans(ligatures)).casefold().replace("\u00ad", "")
     text = text.translate(str.maketrans({"‘": "'", "’": "'", "“": '\"', "”": '\"', "‐": "-", "‑": "-"}))
     # Only a hyphen at a physical line break can join a split word. Preserve
     # ordinary hyphens, punctuation, numbers and word boundaries.

@@ -273,6 +273,8 @@ def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int)
     if b"<!DOCTYPE" in payload.upper() or b"<!ENTITY" in payload.upper():
         raise ValueError("JATS declarations are unsupported")
     root = ET.fromstring(payload)
+    for element in root.iter():
+        element.tag = element.tag.rsplit("}", 1)[-1]
     body = root.find("body") if root.tag == "article" else None
     if body is None:
         raise ValueError("JATS response has no article body")
@@ -293,9 +295,12 @@ def _extract_jats(payload: bytes, url: str, max_pages: int, max_characters: int)
             remaining -= len(text)
     if not any(p.text.partition("\n")[2].strip() for p in pages):
         raise ValueError("JATS body is empty")
-    complete = len(sections) <= max_pages and total <= max_characters
+    omitted_body_text = any(child.tag != "sec" and "".join(child.itertext()).strip() for child in body)
+    complete = len(sections) <= max_pages and total <= max_characters and not omitted_body_text
     warnings = ["JATS XML: Page labels are logical body-section numbers, not PDF pages."]
-    if not complete:
+    if omitted_body_text:
+        warnings.append("JATS body text outside section elements was omitted; extraction is partial.")
+    if len(sections) > max_pages or total > max_characters:
         warnings.append("JATS extraction was limited by the configured section/character bounds.")
     return FullTextDocument(url, pages, hashlib.sha256(payload).hexdigest(), complete, warnings=warnings)
 

@@ -38,7 +38,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-11 11:28:40",
   "notified_date": "2026-09-11",
@@ -49,7 +49,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:10",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:45",
     "last_seen_at": "2026-09-15 12:04:19",
     "metadata_sources": [
       "openalex",
@@ -112,18 +112,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:13:36+00:00",
+    "assessed_at": "2026-09-16T12:04:42+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": "deepseek/deepseek-v4-pro-0813",
-    "assessor_type": "llm",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "manual-review:a32ed9b8bd06e893",
+    "assessor_type": "manual_override",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "The evaluation is observational and lacks controlled comparisons or statistical significance testing for the reliability metrics.",
-      "The claim that human time per idea is reduced to minutes is supported by qualitative description rather than measured data.",
-      "No public code, data, or playbook artifacts are described as released, limiting independent reproduction."
-    ],
-    "concise_summary": "Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models, with a clear dual-loop architecture and a substantive 31-iteration reliability evaluation. The paper is candid about limitations and positions itself adequately against prior work. The main weaknesses are the observational nature of the evaluation and the lack of controlled comparisons or statistical testing.",
+    "concerns": [],
+    "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models. The architecture is clearly described, and the evaluation provides quantitative evidence of improved execution reliability and qualitative evidence of robust recovery. However, the evaluation is limited in scale and lacks statistical rigor, and the scientific value of generated ideas is not directly validated. Overall, the paper is a credible systems contribution with clear limitations.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
@@ -134,190 +130,82 @@
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 3,
+      "reproducibility_and_transparency": 2,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": null,
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "died primarily within individual task episodes or benchmark task streams, these two forms of memory are coupled to persistent, multi-server",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 14,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ent, including state transitions, idea selection, baseline management, and analysis methodology. Beneath it, each model type maintains its",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 4,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "24; Lyu et al., 2026). AutoResearch supports high-throughput experimentation on small-scale problems (Karpathy, 2025), while FARS demonstrates that autonomous agents can produce re",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "validation gate for playbook updates. SkillOpt\u2019s ablation shows that removing the validation gate degrades performance. Auto-RecSys curre",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 14,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "Loop addresses Challenge 2 (system complexity and robustness) by building an evolving institutional memory for each model. The abstraction i",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "2026. Andrej Karpathy. Autoresearch, 2025.https://github.com/karpathy/autoresearch. Omar Khattab, Arnav Singhvi, Paridhi Maheshwari, Zhiyuan",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 15,
-        "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Conclusion",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing"
-      },
-      {
-        "dimension": "contribution_clarity",
-        "excerpt": "We present Auto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys addresses these challenges through three harness designs: (1) distributed asynchronous execution for running multiple experiments in parallel across servers, (2) centralized cross-server memory for persistent and recoverable execution across sessions and failures, and (3) cognitive-procedural separation, where natural-language skill files guide LLM reasoning while deterministic scripts enforce operational correctness.",
-        "explanation": "The introduction clearly frames the contribution as addressing long feedback loops and system complexity through distributed asynchronous execution, centralized cross-server memory, and cognitive-procedural separation.",
+        "excerpt": "We presentAuto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys supports the full experiment lifecycle, from idea formulation and implementation to validation, training, monitoring, debugging, and result analysis.",
+        "explanation": "The introduction clearly defines the problem setting and the proposed system, making the contribution unambiguous.",
         "page": 2,
-        "paraphrase": "The paper explicitly states the two challenges and the three harness designs that constitute the contribution.",
+        "paraphrase": "The paper explicitly states its contribution as an autonomous research system for long-horizon experimentation on industry-scale recommendation models.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "scholarly_novelty_or_value",
-        "excerpt": "Challenge 1: Long feedback loops require parallel exploration. Existing autonomous research systems can iterate serially because experiments complete quickly... For industry-scale recommendation models, a single training run can consume days of GPU time.",
-        "explanation": "The comparison in Table 1 and the related-work section establish that prior systems assume short feedback loops and self-contained code, whereas Auto-RecSys targets multi-day training and infrastructure dependencies.",
+        "excerpt": "Auto-RecSys is built around an agent harness that manages how research agents schedule experiments, preserve state, interact with infrastructure, recover from failures, and reuse accumulated execution knowledge.",
+        "explanation": "The novelty lies in extending autonomous research to industry-scale, long-horizon experimentation with distributed parallel execution and persistent recovery, which is differentiated from prior small-scale systems.",
         "page": 2,
-        "paraphrase": "The paper identifies a distinct operating regime not addressed by prior autonomous research systems and proposes mechanisms specific to that regime.",
+        "paraphrase": "The paper identifies a distinct operating regime for autonomous research and proposes three harness designs plus a dual-loop self-evolving architecture.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "Major fix step. A session log step spent recovering from an operational failure, such as a failed or resubmitted training job, a wrong hardware or entitlement setting, a package layer version mismatch, a metadata correction, or a baseline refresh.",
-        "explanation": "The evaluation section defines session log steps, major fix steps, zero-fix rate, and error categories, and applies them consistently across 31 iterations with phase-level aggregation.",
-        "page": 11,
-        "paraphrase": "The paper defines operational metrics and a phase-based analysis protocol for evaluating execution reliability.",
-        "section": "Introduction",
+        "excerpt": "The state machine enforces preconditions on each transition and triggers side effects, such as recording results to the experiment history when an idea is finalized and updating dead ends and pipeline recipes in the playbook.",
+        "explanation": "The use of deterministic scripts for state transitions and structured data formats for state files demonstrates methodological care for operational correctness.",
+        "page": 5,
+        "paraphrase": "The system design is grounded in a finite state machine with enforced preconditions and side effects, and a centralized memory store with structured data formats.",
+        "section": "The Experiment State Machine",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "There is a baseline transition at iteration 21, when the baseline changed from a standard architecture to a combined configuration that integrated graph-mode compilation, a new embedding module, and task adapters; this altered the submission infrastructure... and created a natural experiment in playbook adaptability.",
-        "explanation": "The baseline shift at iteration 21 creates a learn-regress-recover cycle that provides evidence the playbook mechanism, rather than mere repetition, drives reliability improvements.",
+        "excerpt": "After absorbing these transition-specific lessons, the post-transition phase (iterations 26 to 31) reached 0.5 major fixes per iteration, with 5 of its 6 iterations requiring no operational fix at all, surpassing even the pre-transition stabilized performance.",
+        "explanation": "The evaluation provides concrete, measurable evidence of improved execution reliability as the playbook matures, directly supporting the central claim.",
         "page": 11,
-        "paraphrase": "The evaluation includes a natural experiment in the form of a baseline transition that tests playbook adaptability.",
-        "section": "Introduction",
+        "paraphrase": "The paper reports quantitative metrics over 31 experiment iterations, showing a reduction in major fix steps from 4.0 to 0.5 per iteration and a zero-fix rate of 5 out of 6 in the post-transition phase.",
+        "section": "Playbook Evolution And Execution Reliability",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "In evaluation, Auto-RecSys substantially reduces human effort per experiment cycle and decreases major execution fixes as its playbooks mature, from 4.0 to 0.5 fixes per iteration across 31 unique iterations, while rapidly adapting to changes in the underlying baseline architecture.",
-        "explanation": "The conclusion's claim of decreasing major execution fixes is directly backed by the reported per-phase averages and zero-fix rates in Figure 4 and the accompanying text.",
-        "page": 15,
-        "paraphrase": "The central claim of improving execution reliability is supported by quantitative phase-level data showing a reduction from 4.0 to 0.5 major fixes per iteration.",
-        "section": "Conclusion",
+        "excerpt": "In human-in-the-loop mode, the researcher stays in control at two review checkpoints, idea selection and implementation review, and delegates the remaining execution, meaning validation, submission, monitoring, failure recovery, and analysis, to the system; for an idea of the same complexity, this reduces hands-on effort to minutes.",
+        "explanation": "The paper explicitly states that human-in-the-loop mode reduces hands-on effort to minutes and autonomous mode minimizes it further, aligning with the claimed benefit of higher researcher throughput.",
+        "page": 10,
+        "paraphrase": "The claim of reduced human time per experiment cycle is supported by a qualitative comparison between manual and autonomous modes.",
+        "section": "Human Bandwidth Per Idea",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "Auto-RecSys combines these strands at the system level: execution trajectories update model-specific playbooks that improve how experiments are conducted, while experimental outcomes update research history that improves what is attempted next. Unlike prior methods studied primarily within individual task episodes or benchmark task streams, these two forms of memory are coupled to persistent, multi-server orchestration and multi-day industry-scale experiments.",
-        "explanation": "The comparisons are adequate for the actual claims: the paper does not claim to outperform prior systems on benchmark tasks but rather to address a different operating regime, and the related work supports this positioning.",
-        "page": 14,
-        "paraphrase": "The related-work section compares Auto-RecSys against autonomous research systems, agent harnesses, and procedural memory/skill methods, and identifies the specific gap of persistent multi-server orchestration for multi-day experiments.",
+        "excerpt": "Auto-RecSys studies a different operating regime: industry-scale recommendation models whose training takes hours or days, de- pends on complex infrastructure, and requires comparison against continuously evolving baselines.",
+        "explanation": "The related work section compares Auto-RecSys against systems like AI Scientist, AutoResearch, FARS, and agent harness frameworks, and explicitly states the different operating regime.",
+        "page": 13,
+        "paraphrase": "The paper extensively reviews prior autonomous research systems and agent harnesses, and clearly positions the gap for industry-scale, long-horizon experimentation.",
         "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "state/ registry.json # Global: active ideas across servers <model>/ active/<idea>.json # In-flight idea state (mutable) completed/<idea>.json # Archived (read-only) baselines.json # Shared baselines with lifecycle experiment_history.jsonl # Append-only log",
-        "explanation": "The persistence section provides a concrete directory layout and describes the recovery protocol, which supports architectural reproducibility even though code is not released.",
-        "page": 9,
-        "paraphrase": "The paper describes the storage layout, state machine, and playbook structure in sufficient detail to understand the system architecture.",
-        "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "A notable gap relative to SkillOpt (Yang et al., 2026) is the absence of a formal validation gate for playbook updates. SkillOpt's ablation shows that removing the validation gate degrades performance. Auto-RecSys currently accepts playbook updates unconditionally based on agent judgment.",
-        "explanation": "This candid limitation statement demonstrates awareness of a methodological weakness and proposes a concrete direction for improvement.",
+        "excerpt": "A notable gap relative to SkillOpt (Yang et al., 2026) is the absence of a formal validation gate for playbook updates. SkillOpt\u2019s ablation shows that removing the validation gate degrades performance. Auto-RecSys currently accepts playbook updates unconditionally based on agent judgment.",
+        "explanation": "The discussion section acknowledges gaps relative to SkillOpt and proposes future work for adaptive human-in-the-loop, demonstrating awareness of limitations.",
         "page": 14,
-        "paraphrase": "The discussion section explicitly acknowledges the absence of a formal validation gate for playbook updates and identifies it as a gap relative to SkillOpt.",
-        "section": "Related Work",
+        "paraphrase": "The paper explicitly discusses limitations, including the absence of a formal validation gate for playbook updates and the binary human-in-the-loop toggle.",
+        "section": "Discussion And Future Work",
         "signal_type": "positive"
       },
       {
         "dimension": "presentation_and_precision",
-        "excerpt": "The Execution Evolution Loop distills experiment trajectories into model-specific playbooks that record relevant files, validated commands, hardware requirements, recurring failures, and successful pipeline configurations. Failed attempts are retained as dead ends, while successful procedures are crystallized into reusable workflows.",
-        "explanation": "The dual-loop architecture is explained with a figure and consistent terminology throughout, and the evaluation metrics are defined before use.",
-        "page": 3,
-        "paraphrase": "The paper uses precise terminology and clearly separates the two evolution loops, the state machine, and the persistence architecture.",
-        "section": "Introduction",
+        "excerpt": "Major fix step.A session log step spent recovering from anoperationalfailure, such as a failed or resubmitted training job, a wrong hardware or entitlement setting, a package layer version mismatch, a metadata correction, or a baseline refresh.",
+        "explanation": "The definitions of evaluation metrics are explicit and operationalized, contributing to clarity and precision.",
+        "page": 11,
+        "paraphrase": "The paper uses precise terminology and defines metrics clearly, such as session log step, major fix step, and zero-fix rate.",
+        "section": "Playbook Evolution And Execution Reliability",
         "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "The rolling average shows a clear learn, regress, and recover cycle centered on this transition. During stabilization (iterations 5 to 20), the playbook absorbed hardware choices, submission parameters, build conventions, and input-naming rules, reducing major fixes from 4.0 to 1.3 per iteration.",
-        "explanation": "The reliability metrics are reported as descriptive statistics across phases without confidence intervals, significance tests, or a controlled comparison against a non-evolving baseline. This limits the strength of causal claims about the playbook mechanism.",
-        "page": 11,
-        "paraphrase": "The evaluation is observational and lacks controlled comparisons or statistical significance testing.",
-        "section": "Introduction",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": "In human-in-the-loop mode, the researcher stays in control at two review checkpoints, idea selection and implementation review, and delegates the remaining execution... for an idea of the same complexity, this reduces hands-on effort to minutes.",
-        "explanation": "The paper states that human-in-the-loop mode reduces hands-on effort to minutes and that one researcher's attention can cover more than a dozen ideas, but no measured human-time data is presented to substantiate these specific figures.",
-        "page": 10,
-        "paraphrase": "The claim that human time per idea is reduced to minutes is supported by qualitative description rather than measured data.",
-        "section": "Introduction",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "We analyze execution reliability across 31 unique experiment iterations on one model... We introduce the following metrics derived from the session trajectory logs.",
-        "explanation": "The paper references session transcripts and playbook metadata as evidence but does not state that these artifacts are publicly available, which limits independent verification of the reported reliability improvements.",
-        "page": 11,
-        "paraphrase": "No public release of code, session transcripts, or playbook artifacts is described.",
-        "section": "Introduction",
-        "signal_type": "concern"
       }
     ],
     "full_text_assessed": true,
@@ -326,9 +214,7 @@
     "manual_override": false,
     "missing_information": [
       "No reproducible review or selection methodology was detected.",
-      "No statistical significance testing or confidence intervals are reported for the reliability metrics.",
-      "No controlled comparison against a non-evolving or non-playbook baseline is provided.",
-      "No public release of code, session transcripts, or playbook artifacts is described."
+      "Limited 31-iteration systems evidence, no statistical causal estimate, no direct validation of generated research ideas, and no formal playbook-update validation gate. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     ],
     "overall_quality_score": 78,
     "paper_type": "systems_or_application",
@@ -339,21 +225,15 @@
       "Quantitative evaluation signals were detected.",
       "An ablation analysis is reported.",
       "Robustness or statistical analysis is reported.",
-      "Code, data, or research artifacts are described as available.",
-      "The contribution is stated explicitly and scoped to a distinct operating regime.",
-      "The paper defines concrete evaluation metrics (major fix steps, zero-fix rate, error categories) and reports quantitative results across 31 iterations.",
-      "The evaluation includes phase-level analysis and a natural baseline-transition experiment that tests playbook adaptability.",
-      "The related-work section compares against multiple relevant system families and identifies the specific gap addressed.",
-      "The discussion section explicitly acknowledges limitations, including the absence of a formal validation gate for playbook updates.",
-      "Concrete self-evolution examples are grounded in session transcript evidence."
+      "Code, data, or research artifacts are described as available."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models. The architecture is clearly described, and the evaluation provides quantitative evidence of improved execution reliability and qualitative evidence of robust recovery. However, the evaluation is limited in scale and lacks statistical rigor, and the scientific value of generated ideas is not directly validated. Overall, the paper is a credible systems contribution with clear limitations.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "f4a5656658f30151b8399cb7e06826cea95b8a62162527682a37a19697b6bbf9",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "Limited 31-iteration systems evidence, no statistical causal estimate, no direct validation of generated research ideas, and no formal playbook-update validation gate. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

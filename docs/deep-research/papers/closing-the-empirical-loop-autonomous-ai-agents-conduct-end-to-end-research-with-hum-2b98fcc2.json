@@ -24,7 +24,7 @@
   "first_seen_at": "2026-09-15 12:04:19",
   "first_seen_date": "2026-09-15",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-09-15 12:04:20",
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 12:04:19",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:45",
     "last_seen_at": "2026-09-15 12:04:20",
     "metadata_sources": [
       "openalex"
@@ -101,77 +101,212 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:02:46+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-09-16T12:04:43+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "manual-review:b472a8787ea817cb",
+    "assessor_type": "manual_override",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concerns": [
+      "The available results appear to demonstrate functionality rather than comparative effectiveness."
+    ],
+    "concise_summary": "Scientific quality remains uncertain because the supplied assessment excerpts truncate key Methods, Results and Discussion passages. The original model insufficient proposal relied on that missing input and is not a valid adverse scientific decision.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 2,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
+      "contribution_clarity": 3,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 3,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 3,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "vidness, executed online data collection with 288 participants, developed analysis pipelines through 8h+ continuous coding sessions, and produ",
+        "dimension": "methodological_rigor",
+        "excerpt": "ta; Studies 2\u20133 analyzed the same 288\u2011participant dataset from Study 1 with distinct hypotheses and analyses. Study 1 examined whether VW",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ciency . The system demonstrated efficiency gains compared with traditional research timelines, executing complete research projects in hours r",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 4,
+        "paraphrase": "A baseline or comparison system is described.",
+        "section": "Discussion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "7 h processing time and averaged a total marginal cost of \u223c$114 USD per research project (not including the human participant payments of \u223c$4,5",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "USD per research project (not including the human participant payments of \u223c$4,500 USD for the current experiment). We selected cognitive scie",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 1,
         "paraphrase": "User, expert, operational, or deployment evidence is described.",
-        "section": "Abstract",
+        "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "omparable to experienced researchers, though with limitations in conceptual nuance and theoretical interpretation. This is a step toward embo",
+        "excerpt": "searchers face increasing cognitive and practical limitations in their ability to synthesize existing knowledge and discover novel insights [",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
+        "page": 1,
         "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Abstract",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "study are openly available on GitHub at https://github.com/Explore\u2010Science/Virtuous\u2010Machines\u2010Towards\u2010Artificial\u2010General\u2010Science .",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Data Availability Statement",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "gents at any stage, providing a means of external quality control throughout the process. The system facilitates these collaborative capabilities",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Methods",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
+        "excerpt": "eview process per study. The data analysis agents successfully implemented mixed\u2010effects models and multi\u2010level modeling; handled 279 heterogeneous raw da",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 3,
+        "paraphrase": "The available results appear to demonstrate functionality rather than comparative effectiveness.",
+        "section": "Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "methodological_rigor",
         "excerpt": null,
         "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
         "page": null,
-        "paraphrase": "No suitable baseline comparison was detected in the available text.",
+        "paraphrase": "No reproducible review or selection methodology was detected.",
         "section": null,
         "signal_type": "missing"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "The contribution of this work is architectural rather than methodological at the model level: we use only standard, publicly available frontier LLMs, and demonstrate that when combined across providers, embedded in a hierarchical multi\u2010agent architecture, and augmented by the cognitive operators and dynamic memory systems described above \u2010 these techniques are jointly sufficient to conduct empirical science autonomously from hypothesis generation through to manuscript preparation.",
+        "explanation": "The contribution is explicitly stated in the Discussion section as architectural rather than methodological at the model level.",
+        "page": 4,
+        "paraphrase": "The paper clearly states its contribution as an architectural demonstration of end-to-end autonomous scientific discovery with human participants.",
+        "section": "Discussion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "The system leverages a hierarchical multi\u2010agent architecture [ 59 ] to autonomously produce scientific research through the coordinated and collaborative efforts of a task force of specialized AI agents (Figure\u00a0 1 ).",
+        "explanation": "The Methods section describes a hierarchical multi-agent architecture with orchestrators and specialists, and four cognitive operators (abstraction, metacognition, decomposition, autonomy).",
+        "page": 2,
+        "paraphrase": "The system architecture is described with specific components and cognitive operators.",
+        "section": "Methods",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "There are (currently) no objective tests with which to evaluate the quality of scientific manuscripts; thus, here we employed structured expert review (mirroring established peer review processes) to assess the AI\u2010generated manuscripts.",
+        "explanation": "The Results section describes structured expert review mirroring established peer review processes.",
+        "page": 3,
+        "paraphrase": "Human expert evaluation was conducted to assess the AI-generated manuscripts.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Theoretical models were occasionally misrepresented, including inappropriate extension of a VWM framework [ 120 ] to unrelated visuospatial tasks in Study 3, and Study 2's false claim about working memory resource al",
+        "explanation": "The negative aspects section of the expert evaluation reveals issues that undermine the claim of rigor comparable to experienced researchers.",
+        "page": 3,
+        "paraphrase": "The expert evaluation identified substantive problems in the AI-generated manuscripts, including theoretical misrepresentations and false claims.",
+        "section": "Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "The system executed full studies (from initial conception to manuscript) in \u223c17 h runtime on average per study, excluding data collection. Comparatively, typical human\u2010led workflows can require weeks to months of human expert time depending on experimental complexity.",
+        "explanation": "Runtime, token usage, cost, and code generation metrics are reported in Table 1 and the Results section.",
+        "page": 3,
+        "paraphrase": "The paper reports quantitative system performance metrics that support the feasibility claim.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Current end\u2010to\u2010end agentic scientific discovery frameworks continue to operate primarily in simulated or abstract digital environments [ 40 ,  41 ,  42 ,  43 ,  44 ,  45 ], typically producing outcomes with predictive power but lacking explanation of underlying causal mechanisms.",
+        "explanation": "The Introduction reviews prior work in AI scientific discovery and identifies the gap of systems operating only in simulated or abstract digital environments.",
+        "page": 1,
+        "paraphrase": "The paper positions its work relative to prior AI scientific discovery systems and identifies the gap of real-world empirical testing.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "The data and code that support the findings of this study are openly available on GitHub at  https://github.com/Explore\u2010Science/Virtuous\u2010Machines\u2010Towards\u2010Artificial\u2010General\u2010Science .",
+        "explanation": "The Data Availability Statement provides a GitHub repository link.",
+        "page": 9,
+        "paraphrase": "Data and code are described as openly available on GitHub.",
+        "section": "Data Availability Statement",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "While the framework is general by design, currently its physical capabilities are domain\u2010constrained to online experiments for which the necessary tools and interfaces are available.",
+        "explanation": "The Discussion section includes a dedicated limitations subsection addressing multiple challenges.",
+        "page": 4,
+        "paraphrase": "The paper acknowledges limitations including domain constraints, visual imperfections, and sensitivity to early-stage errors.",
+        "section": "Discussion",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
-    "full_text_url": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13573717/fullTextXML",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No suitable baseline comparison was detected in the available text."
+      "No reproducible review or selection methodology was detected.",
+      "JATS XML: Page labels are logical body-section numbers, not PDF pages.",
+      "The public Europe PMC manuscript XML was acquired, but the bounded context does not expose enough detail to resolve the scientific judgment. Logical XML section numbers are not PDF pages."
     ],
-    "overall_quality_score": 42,
-    "paper_type": "empirical_research",
+    "overall_quality_score": 54,
+    "paper_type": "systems_or_application",
     "positive_signals": [
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
       "User, expert, operational, or deployment evidence is described.",
-      "Limitations or threats to validity are acknowledged."
+      "Limitations or threats to validity are acknowledged.",
+      "Code, data, or research artifacts are described as available.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-    "recommendation": "uncertain",
+    "rationale": "Scientific quality remains uncertain because the supplied assessment excerpts truncate key Methods, Results and Discussion passages. The original model insufficient proposal relied on that missing input and is not a valid adverse scientific decision.",
+    "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "423a275f7186bbd771866ebf2c3cc71f69c188f7fee362142ba4359c278d7e6a",
+    "source_content_hash": "ab2410ee72f45a51fdd2531a9400dc68c7a22b47e3dd55c237ff9b078f4c3a6a",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The public Europe PMC manuscript XML was acquired, but the bounded context does not expose enough detail to resolve the scientific judgment. Logical XML section numbers are not PDF pages."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -200,7 +335,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

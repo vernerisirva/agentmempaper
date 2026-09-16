@@ -59,15 +59,15 @@
             <p>Large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. Existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (OOD) performance. We pr...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>The proposed decision lacked sufficient located manuscript evidence; review is pending.</p>
-      <p>Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations.</p>
+      <h2>Quality reviewed</h2>
+      <p>Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram&#x27;s hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.</p>
+      <p>The 8B table uses one seed; evidence covers two model scales and limited domains. The adapter trades some in-domain accuracy and inference overhead for retention; broader generality is not established. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Full text inspected: true. Scope: partial_full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-v2. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T09:14:49+00:00.</p>
-        <ul><li>The contribution is stated explicitly. — page 2</li><li>The available text identifies data or a benchmark used by the work. — page 6</li><li>A baseline or comparison system is described. — page 7</li><li>Quantitative evaluation signals were detected. — page 1</li><li>An ablation analysis is reported. — page 14</li><li>Limitations or threats to validity are acknowledged. — page 16</li><li>Formal definitions or proof-oriented evidence is present. — page 5</li><li>The contribution is stated explicitly. — page 2</li><li>The available text identifies data or a benchmark used by the work. — page 6</li><li>A baseline or comparison system is described. — page 7</li><li>Quantitative evaluation signals were detected. — page 1</li><li>An ablation analysis is reported. — page 14</li><li>Limitations or threats to validity are acknowledged. — page 16</li><li>Formal definitions or proof-oriented evidence is present. — page 5</li></ul>
+        <p>Assessor: manual_override. Assessment version: quality-recovery-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-16T12:04:43+00:00.</p>
+        <ul><li>The contribution is stated explicitly. — page 2</li><li>The method is described with a formal update equation. — page 3</li><li>Quantitative results are reported for the proposed method and baselines. — page 9</li><li>The mechanistic evidence aligns with the retention claim. — page 6</li><li>The gap is identified but related-work comparison is limited. — page 1</li><li>Limitations are acknowledged. — page 9</li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

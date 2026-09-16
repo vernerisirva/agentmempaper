@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-08 11:25:53",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:45",
     "last_seen_at": "2026-09-14 13:10:59",
     "metadata_sources": [
       "openalex"
@@ -107,26 +107,31 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:02:54+00:00",
+    "assessed_at": "2026-09-16T11:58:50+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 72/100, medium confidence, based on partial full text.",
+    "concerns": [
+      "The extracted text does not include complete results tables or intermediate-file evidence supporting all claims of hallucination and fabrication.",
+      "The paper relies on qualitative judgments about scope and depth that are only partially quantified in the supplied text.",
+      "The reproducibility of the evaluation itself is limited by the absence of full prompts and complete run-level data in the extracted material.",
+      "Some claims about the original reference study are presented without the original study's full results being available in the supplied text."
+    ],
+    "concise_summary": "This empirical study evaluates five AI research frameworks on antibody developability prediction and lipid-RNA MD simulation tasks, finding partial successes but severe failures, narrower scope, and irreproducibility compared with published reference studies. The available text supports a credible comparative evaluation, though incomplete results and intermediate evidence limit full verification.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 2,
+      "contribution_clarity": 4,
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 5,
+      "methodological_rigor": 4,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 4,
-      "scholarly_novelty_or_value": 3
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
@@ -141,11 +146,11 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "evaluation. Finally, the outputs are analyzed and compared with internal, intermediate AI results and the original papers.",
+        "excerpt": "rediction of antibody developabil ity properties compared with a simple sequence-based baseline representation. Use two publicly available ex",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
+        "page": 10,
         "paraphrase": "A baseline or comparison system is described.",
-        "section": "Introduction",
+        "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
         "signal_type": "positive"
       },
       {
@@ -181,16 +186,16 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 10,
         "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Methods",
+        "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ickland AC, et al. GPQA: A Graduate -Level Google-Proof Q&A Benchmark. arXiv. 2023; doi: 10.48550/arXiv.2311.12022 4. Artificial Anal",
+        "excerpt": null,
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 9,
+        "page": null,
         "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Methods",
+        "section": null,
         "signal_type": "positive"
       },
       {
@@ -210,17 +215,147 @@
         "paraphrase": "No reproducible review or selection methodology was detected.",
         "section": null,
         "signal_type": "missing"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "Extending the analysis presented in the first paper of this series, we evaluated the same five advanced AI research frameworks (Kosmos, K-Dense, ToolUniverse, BioAgents from bio.xyz, and the AI Scientist-v2 from Sakana AI) on two more projects of high practical importance for biopharmaceutical development",
+        "explanation": "The introduction explicitly frames the study as extending the first paper in the series to antibody developability and lipid-RNA interaction tasks.",
+        "page": 1,
+        "paraphrase": "The paper clearly states its extension of a prior evaluation to two new biopharmaceutical projects.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "AI performance on such problems is therefore important not only for evaluating scientific capability of AI in general, but also for estimating the readiness of these frameworks to contribute to industrial research workflows.",
+        "explanation": "The authors argue that published papers provide an external standard and that their results show real research is harder than benchmarks suggest.",
+        "page": 1,
+        "paraphrase": "The study provides a comparative evaluation of AI frameworks on real published research tasks, adding evidence beyond standard benchmarks.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "For each project, a full-scale prompt was formulated describing the research problem and the key scientific questions, without prescribing specific datasets or methods.",
+        "explanation": "The methods section describes full-scale and smaller-scope prompts and repeated runs to assess reproducibility.",
+        "page": 8,
+        "paraphrase": "The study uses a structured prompt design with full-scale and smaller-scope prompts and multiple runs.",
+        "section": "Methods",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Paper length, symbols without spaces 123,184 38,955; 47,257 39,812; 40,428 42,071 16,629; 14,802; 15,228; 12,956",
+        "explanation": "Table 1 reports paper length, number of figures, and references for AI frameworks versus the original paper.",
+        "page": 4,
+        "paraphrase": "The paper compares AI framework outputs against reference studies using quantitative scope metrics.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "justifying this switch by citing a hallucinated, non-existent paper (\u201cT. M. Wannier et al. Machine learning to predict continuous protein properties from simple directed evolution experiments;\u201d the real paper corresponding to the provided DOI is \u201cM. Case et al. Machine learning to predict continuous protein properties from binary cell sorting data and map unseen sequence space,\u201d",
+        "explanation": "The authors provide a concrete example of a hallucinated paper citation and the correct DOI.",
+        "page": 3,
+        "paraphrase": "The paper supports its claim of severe failures with specific examples, such as a hallucinated citation.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "In Paper I in this series,8 we applied this strategy to five advanced AI research frameworks (Kosmos, K-Dense, ToolUniverse, BioAgents from bio.xyz, and the AI Scientist-v2 from Sakana AI) across three projects",
+        "explanation": "The introduction reviews prior benchmark evaluations and AI applications in antibody prediction and MD simulation.",
+        "page": 2,
+        "paraphrase": "The paper situates its work within prior AI-for-science evaluations and domain-specific AI applications.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Use two publicly available experimental antibody datasets that measure different developability properties: the antibody expr ession dataset reported by Adams et al. (2017)",
+        "explanation": "The appendix provides the full prompt text and links to datasets used in the antibody project.",
+        "page": 10,
+        "paraphrase": "The paper includes prompts in an appendix and describes dataset sources.",
+        "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "We remind the reader that AI frameworks were run in January -March 2026, and therefore, our conclusions reflect the state of the listed AI frameworks at that time, which may have changed since then.",
+        "explanation": "The methods section notes that frameworks were run in January-March 2026 and may have changed since then.",
+        "page": 9,
+        "paraphrase": "The authors acknowledge that their conclusions reflect the state of AI frameworks at a specific time.",
+        "section": "Methods",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "Where the original paper evaluated 240 datasets, each AI framework used only one dataset. Where the original study benchmarked 30 diverse ML models including language models, inverse folding models, and structure prediction models, AI frameworks tested between 2 and 5 ML models",
+        "explanation": "The results section reports specific numbers of datasets, models, and statistical practices.",
+        "page": 3,
+        "paraphrase": "The paper reports specific quantitative comparisons and statistical observations.",
+        "section": "Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "However, no AI framework approached the scale or completeness of the original study.",
+        "explanation": "The paper states that no framework approached the scope of the original studies, but the supplied text does not provide complete quantitative metrics for all frameworks and runs.",
+        "page": 3,
+        "paraphrase": "The evaluation relies on qualitative judgments about scope and depth that are only partially quantified.",
+        "section": "Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "The AI Scientist -v2 from Sakana AI on the MD projec t claimed in its final paper to have run molecular dynamics simulations of hundreds of nanoseconds, whereas no simulations were run and a synthetic dataset with fabricated feature vectors was used instead.",
+        "explanation": "The paper claims that a synthetic dataset with fabricated feature vectors was used, but the underlying intermediate files are not supplied in the available text.",
+        "page": 8,
+        "paraphrase": "The full intermediate-file evidence supporting claims of fabrication and hallucination is not included in the extracted text.",
+        "section": "Ml Models On A Single Dataset And Offered Narrower (If Any)",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "no AI framework matched the scope or depth of the original studies; results varied substantially even across multiple runs of the same framework with the same prompt",
+        "explanation": "The claim that AI frameworks did not match the original studies relies on the original studies' scope, but the original papers are not fully reproduced in the supplied text.",
+        "page": 7,
+        "paraphrase": "The paper's validation of its central conclusion depends on comparisons with reference studies whose full results are not included.",
+        "section": "Discussion",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "but t heir utility for real-world industrial research remains insufficiently characterized.",
+        "explanation": "The text includes line-break artifacts and truncated passages, making some quantitative details difficult to verify.",
+        "page": 1,
+        "paraphrase": "The extracted text contains formatting artifacts and incomplete sentences that reduce precision.",
+        "section": "Introduction",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": null,
+        "explanation": "The available text describes some results but does not include full tables or intermediate files for all runs.",
+        "page": null,
+        "paraphrase": "Complete run-level quantitative results for all frameworks and both projects are not provided in the extracted text.",
+        "section": null,
+        "signal_type": "missing"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "No reproducible review or selection methodology was detected.",
+      "Complete results tables for all AI framework runs and both projects.",
+      "Full intermediate-file documentation supporting claims of fabricated datasets and hallucinated citations.",
+      "Complete appendix prompts for the lipid-RNA MD project.",
+      "Detailed run-level quantitative results for the smaller-scope prompts."
     ],
     "overall_quality_score": 72,
-    "paper_type": "survey_or_review",
+    "paper_type": "empirical_research",
     "positive_signals": [
       "The available text identifies data or a benchmark used by the work.",
       "A baseline or comparison system is described.",
@@ -229,15 +364,21 @@
       "Limitations or threats to validity are acknowledged.",
       "Code, data, or research artifacts are described as available.",
       "Formal definitions or proof-oriented evidence is present.",
-      "Dataset documentation, quality control, licensing, or ethics is discussed."
+      "Dataset documentation, quality control, licensing, or ethics is discussed.",
+      "The study extends a prior evaluation with two new case studies and five AI frameworks, providing a clear comparative design.",
+      "The paper reports both qualitative strengths and severe failures, including hallucinations and numerical irreproducibility.",
+      "The authors describe concrete reference-study comparisons, such as 240 datasets versus one dataset and 30 models versus 2-5 models.",
+      "The manuscript acknowledges limitations of the evaluation, including the time-bound nature of AI framework performance.",
+      "The paper identifies specific task categories that are systematically problematic for AI frameworks.",
+      "The authors report statistical practices such as p-values and confidence intervals in AI outputs."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The manuscript reports a multi-case evaluation of five AI research frameworks on two biopharmaceutical tasks, with explicit comparisons to reference studies and detailed qualitative and quantitative observations. The available partial text supports a credible empirical evaluation, but several central claims depend on intermediate files, full results tables, and appendices that are not fully supplied, so the strength of validation and reproducibility cannot be fully established from the extracted material alone.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "08fadd217f29b1f7f28989d36bbbf53b5a899b433d4c3881aa7441c87dcd5bbb",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The supplied text is partial full text with missing portions of the Results, Methods, and Appendix. Claims about fabricated datasets, hallucinated citations, and numerical irreproducibility are asserted but the underlying evidence is only partially visible. The absence of complete results tables and intermediate-file documentation limits confidence in the evaluation's completeness."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

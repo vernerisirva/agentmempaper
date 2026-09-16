@@ -25,7 +25,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-12 10:53:21",
   "notified_date": "2026-09-12",
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-12 10:52:23",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:46",
     "metadata_sources": [
       "openalex"
@@ -100,19 +100,16 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:14:12+00:00",
+    "assessed_at": "2026-09-16T11:54:26+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.9,
     "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text.",
-      "Several load-bearing sources are unrefereed preprints, and the paper acknowledges this as a threat to its contribution.",
-      "The absence claims (e.g., no located source measures generalization to unstored material) rest on a literature search conducted largely from abstracts, which the paper itself flags as its principal weakness.",
-      "The four commitments are stipulated rather than derived from a consensus definition, and the paper acknowledges that a different stipulation would yield a different verdict."
+      "Comparative claims were detected without a suitable baseline in the available text."
     ],
-    "concise_summary": "A theoretical audit of the CLS analogy in LLM agent memory systems. The paper derives four commitments from the source theory, applies them to textual and parametric branches, and argues that neither instantiates the mechanism. The contribution is clear, the methodology is appropriate for the paper type, and limitations are handled explicitly. Main uncertainties stem from reliance on preprints and abstract-level literature search.",
+    "concise_summary": "The paper is a theoretical audit of the term 'consolidation' in LLM agent memory systems against four commitments derived from complementary learning systems theory. It argues that neither the textual nor the parametric branch instantiates the mechanism, and identifies one published configuration that does. The contribution is clearly stated, the argument is well-structured, and limitations are explicitly addressed. The main weakness is that several load-bearing claims rest on literature-search absence assertions and unrefereed preprints, which the paper itself acknowledges.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
@@ -129,129 +126,57 @@
     "downranked": false,
     "evidence": [
       {
-        "dimension": "methodological_rigor",
-        "excerpt": "solved problems from a single abstract reasoning benchmark. That last number is the most quotable and the least generalisable, and it shou",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 8,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "individual and emergent social behaviour, and the ablation reported is of the architecture's components. Packer et al. (2023) draw their i",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "f that abstract is stated with it. This is a real limitation on a paper whose argument is partly about what evaluations do and do not measur",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "literature search conducted for this paper, not a proof of absence; Section 14 treats this as the paper's principal weakness. Most sour",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "esponse those results recommend. What they do not license is keeping the vocabulary, and with it an implicit promise of generalisation, w",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
-        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": null,
-        "signal_type": "concern"
-      },
-      {
         "dimension": "contribution_clarity",
         "excerpt": "This paper does the audit against four commitments, stated in Section 3 and used as an instrument thereafter. Three things follow, and the second was not what the question's framing anticipated.",
-        "explanation": "The introduction clearly frames the paper's purpose and the structure of its argument, making the contribution easy to identify.",
+        "explanation": "The paper explicitly states its contribution as an audit against four commitments, making the central claim and method clear.",
         "page": 2,
-        "paraphrase": "The paper states its contribution explicitly as an audit against four commitments, and identifies three things that follow.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "scholarly_novelty_or_value",
-        "excerpt": "What has not been done is the audit. Agent memory systems borrow the word, and several borrow the theory by name... but no located source states what the analogy commits its user to and then checks whether the commitments hold.",
-        "explanation": "The paper explicitly positions its contribution as filling an unaddressed gap in the literature, which supports novelty.",
-        "page": 2,
-        "paraphrase": "The paper identifies a gap: no located source states what the CLS analogy commits its user to and then checks whether the commitments hold.",
+        "paraphrase": "The paper states its contribution as an audit of agent memory consolidation against four commitments.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "From this the following four commitments are stipulated. They are this paper's instrument, not a claim about what any particular neuroscientist would endorse. C1. Substrate... C2. Interleaving... C3. Generalisation... C4. Relinquishment.",
-        "explanation": "The commitment-based audit provides a structured, reproducible analytical framework appropriate for a theoretical paper.",
+        "excerpt": "C1. Substrate. Consolidation changes the parameters of the system that generates behaviour. The fast store's content is not merely reorganised within the fast store.",
+        "explanation": "The paper derives four explicit commitments (C1-C4) from the source theory and uses them as a consistent audit instrument, providing a clear methodological framework.",
         "page": 4,
-        "paraphrase": "The paper derives four commitments (C1-C4) from the source theory and uses them consistently as an audit instrument.",
-        "section": "Section 3",
+        "paraphrase": "The paper stipulates four commitments from complementary learning systems theory as its audit instrument.",
+        "section": "What The Complementary Learning Systems Account Commits Its Borrower",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "Structurally, that is replay of stored episodic traces through a parameter update, evaluated on material the store did not contain. C1 holds: parameters change. C2 appears to hold... C3 is the reported outcome.",
-        "explanation": "The identification of a positive case that instantiates the mechanism provides validation for the paper's analytical framework.",
-        "page": 11,
-        "paraphrase": "The paper validates its central claim by identifying a published configuration (Ferraz et al., 2026) that matches the theory's shape and reports the predicted generalization.",
-        "section": "Section 11",
+        "excerpt": "Zhang et al. (2026) study agentic memory systems in which a language model rewrites past trajectories into a textual memory bank that it continuously updates, which is the Section 5 shape. Their reported finding is that memory utility first rises and then degrades, and can fall below the no-memory baseline",
+        "explanation": "The paper grounds its central dis-analogy claim in a controlled study reporting a non-monotonic utility curve, providing empirical validation for the argument.",
+        "page": 8,
+        "paraphrase": "The paper cites a controlled study showing iterated textual consolidation degrades utility below baseline.",
+        "section": "The Sign Of The Response To Repetition",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "The contrast should be stated at the right strength. It is not established that textual consolidation always degrades, and it is not established that replay never would under some schedule nobody has run.",
-        "explanation": "The paper consistently marks conjectures and separates established findings from open questions, aligning evidence with claim strength.",
-        "page": 9,
-        "paraphrase": "The paper carefully scopes its claims, distinguishing between what is established, what is conjectured, and what is not known.",
-        "section": "Section 8",
+        "excerpt": "The parametric branch satisfies C1. Whether it satisfies C2 and C3 is a different question, and the answer turns on a design choice that three of the four systems share.",
+        "explanation": "The paper carefully distinguishes which commitments each branch satisfies and which it does not, aligning evidence to specific claims rather than overgeneralizing.",
+        "page": 7,
+        "paraphrase": "The paper distinguishes which commitments the parametric branch satisfies and which remain open.",
+        "section": "Why Isolation Is Not Consolidation",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "Agent memory systems borrow the word, and several borrow the theory by name (Gutierrez et al., 2024; Li et al., 2026; Lerma-Torres, 2026; Xia et al., 2026), but no located source states what the analogy commits its user to and then checks whether the commitments hold.",
-        "explanation": "The paper surveys the relevant agent memory literature and the CLS neuroscience literature, and explicitly states that no prior source performs the commitment audit.",
+        "excerpt": "What has not been done is the audit. Agent memory systems borrow the word, and several borrow the theory by name (Gutierrez et al., 2024; Li et al., 2026; Lerma-Torres, 2026; Xia et al., 2026), but no located source states what the analogy commits its user to and then checks whether the commitments hold.",
+        "explanation": "The paper positions its contribution against a specific gap: no prior work has audited whether agent memory systems actually instantiate the mechanism they name.",
         "page": 2,
-        "paraphrase": "The paper extensively positions related work across both the textual and parametric branches, and identifies the specific gap it fills.",
+        "paraphrase": "The paper identifies the gap as the absence of an audit of consolidation commitments in agent memory literature.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "Five, in descending order of how much they would cost if correct. The absence claims are the weakest thing here... The four commitments are stipulated... The generic-usage escape is available... The parametric branch is four months old... Several load-bearing sources are unrefereed preprints.",
-        "explanation": "Section 14 explicitly addresses the paper's principal weaknesses, including the fragility of absence claims and reliance on preprints.",
+        "excerpt": "The absence claims are the weakest thing here. Sections 5, 11 and 12 rest on the assertion that no located source measures generalisation to unstored material, reports an interleaving ablation, or runs a shared-versus-isolated comparison in the agent setting.",
+        "explanation": "The paper dedicates an entire section to attacking its own contribution, explicitly identifying the literature-search absence claims as its principal weakness.",
         "page": 13,
-        "paraphrase": "The paper includes a dedicated threats-to-validity section that identifies five specific weaknesses in descending order of cost.",
-        "section": "Section 14",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "presentation_and_precision",
-        "excerpt": "Three terms are stipulated and used consistently. Parametric transfer means... Textual consolidation means... Isolated-parameter consolidation means...",
-        "explanation": "The stipulation of terms in Section 2 supports precision and reduces ambiguity in the subsequent analysis.",
-        "page": 3,
-        "paraphrase": "The paper defines three key terms (parametric transfer, textual consolidation, isolated-parameter consolidation) and uses them consistently.",
-        "section": "Section 2",
+        "paraphrase": "The paper explicitly identifies its absence claims as the weakest part of its argument.",
+        "section": "Threats To This Paper'S Contribution",
         "signal_type": "positive"
       }
     ],
@@ -268,20 +193,20 @@
       "Limitations or threats to validity are acknowledged.",
       "Formal definitions or proof-oriented evidence is present.",
       "Dataset documentation, quality control, licensing, or ethics is discussed.",
-      "The paper states four explicit commitments (C1-C4) and uses them as a consistent audit instrument.",
-      "The paper distinguishes between the textual and parametric branches of agent memory and analyzes each against the commitments.",
-      "The paper includes a dedicated threats-to-validity section (Section 14) that identifies five specific weaknesses.",
-      "The paper states five concrete measurements that would settle the open questions (Section 12).",
-      "The paper explicitly separates what is known from what is not known (Section 13).",
-      "The paper identifies a published configuration (Ferraz et al., 2026) that matches the theory's shape, providing a positive anchor for the argument."
+      "The paper explicitly states its contribution as an audit against four commitments.",
+      "The paper derives a clear methodological framework from the source theory.",
+      "The paper grounds its central claim in a controlled empirical study.",
+      "The paper carefully distinguishes which commitments each branch satisfies.",
+      "The paper positions its contribution against a specific gap in the literature.",
+      "The paper dedicates a section to attacking its own contribution and identifying weaknesses."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "rationale": "The paper is a theoretical audit with a clearly stated contribution, a well-defined methodological framework (four commitments), and careful alignment of evidence to claims. It grounds its central dis-analogy in a controlled study and explicitly addresses its own limitations, including the weakness of literature-search absence claims and reliance on preprints. The argument is well-structured and the paper type (theoretical) is appropriate for the absence of empirical experiments.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "a733685a2c58ac3c283c2a00a3890849148112f764eacd95d0f2b2bbc34aef73",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The assessment is based on partial full text. Several load-bearing claims rest on literature-search absence assertions and unrefereed preprints, which the paper itself acknowledges. The parametric branch sample is small (four systems) and recent, so the generalisation about isolation may not hold as the field evolves."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

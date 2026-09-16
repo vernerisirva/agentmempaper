@@ -25,7 +25,7 @@
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-12 10:53:21",
   "notified_date": "2026-09-12",
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-12 10:52:23",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:44",
     "metadata_sources": [
       "openalex"
@@ -102,220 +102,81 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:14:48+00:00",
+    "assessed_at": "2026-09-16T11:55:35+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "The central architectural claims are not yet empirically validated; the evaluation framework is proposed but not executed.",
-      "The prototype is described as a user interface rather than a demonstrated runtime, and the paper acknowledges this gap.",
-      "The paper does not provide implementation details, code, or data that would enable independent reproduction of the proposed architecture."
-    ],
-    "concise_summary": "A governance-centric enterprise AI operating system architecture paper that clearly scopes itself as a reference architecture and research agenda. It provides a central research question, a ten-layer architecture, a runtime governance cycle, an evaluation framework, and a detailed limitations section. Claims are consistently framed as proposals rather than demonstrated results, and related work is substantial and used to position the contribution honestly.",
+    "concerns": [],
+    "concise_summary": "The paper is a position/conceptual architecture paper proposing AIVORIX OS as a governance-centric enterprise AI operating system. It clearly scopes itself as research-stage, presents a ten-layer architecture and runtime cycle, and grounds its gap analysis in prior academic and commercial work. The main limitation is the absence of empirical validation, which the paper explicitly acknowledges and frames as future work.",
     "confidence": "high",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
       "evaluation_or_validation_strength": 2,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
+      "limitations_and_uncertainty_handling": 5,
       "methodological_rigor": 3,
       "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 2,
+      "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
       {
-        "dimension": "methodological_rigor",
-        "excerpt": "architectural research and position paper, not a benchmark report and not a claim of production validation. Its contribution is a referen",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 4,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": null,
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "a, enterprise applications, workflows, and human participants. Academic research and commercial platforms increasingly describe portions of t",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "User, expert, operational, or deployment evidence is described.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "otype and Evaluation Framework 10. Discussion and Limitations 11. Future Research 12. Conclusion References 1. Introduction Artificial intell",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "g their existing functions. The central research proposition is organizational continuity under increasing AI autonomy.",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
         "dimension": "contribution_clarity",
-        "excerpt": "Central research question: As agentic systems become increasingly capable of coordinating models, agents, tools, humans, data, and enterprise processes, what additional architectural mechanisms are required to preserve organizational memory, governance, human authority, and accountability across the AI lifecycle?",
-        "explanation": "The central research question is stated verbatim and the scope is explicitly defined as architectural research rather than empirical validation.",
+        "excerpt": "This is an architectural research and position paper, not a benchmark report and not a claim of production validation. Its contribution is a reference architecture and a set of testable propositions.",
+        "explanation": "The paper explicitly defines its contribution type and scope, distinguishing a reference architecture from empirical validation claims.",
         "page": 4,
-        "paraphrase": "The paper states a clear central research question and explicitly frames its contribution as a reference architecture and set of testable propositions.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "contribution_clarity",
-        "excerpt": "The term operating system is used as an architectural hypothesis: if AIVORIX ultimately provides shared runtime services, persistent state, resource abstraction, policy-mediated coordination, lifecycle management, and failure handling across multiple AI applications and agents, the operating-system abstraction is technically meaningful. If implementation remains only a dashboard that observes independently operating systems, the designation would require reconsideration.",
-        "explanation": "The paper states that the term operating system is used as an architectural hypothesis and that the designation would require reconsideration if implementation remains only a dashboard.",
-        "page": 4,
-        "paraphrase": "The paper explicitly separates its contribution from prior work and defines the operating-system terminology as a testable hypothesis.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "scholarly_novelty_or_value",
-        "excerpt": "The concepts in this question are not individually novel. The research proposition is their treatment as persistent, interdependent operating infrastructure across heterogeneous enterprise environments.",
-        "explanation": "The paper explicitly states that the concepts are not individually novel and that the research proposition is their treatment as persistent, interdependent operating infrastructure.",
-        "page": 8,
-        "paraphrase": "The paper identifies a specific architectural gap\u2014persistent, governed relationships across heterogeneous enterprise environments\u2014and frames it as a research proposition rather than claiming component-level novelty.",
-        "section": "Open Architectural Problems",
+        "paraphrase": "The paper clearly states its contribution as a reference architecture and testable propositions, not production validation.",
+        "section": "Scope And Contribution",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "A minimum meaningful demonstration should execute a real request through a governance evaluation, retrieve relevant persistent context, determine authority, invoke a real AI model or agent, return a response or coordinate an authorized action, capture the outcome, and create a persistent lifecycle record.",
-        "explanation": "The evaluation criteria are specific and testable, including multi-resource coordination, persistent organizational state, policy-mediated execution, authority representation, lifecycle traceability, cross-AI continuity, enterprise interoperability, provenance, memory governance, and governance latency.",
-        "page": 11,
-        "paraphrase": "The paper proposes a concrete evaluation framework with ten falsifiable criteria and a minimum functional demonstration requirement.",
-        "section": "Prototype and Evaluation Framework",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "Representative governance outcomes are PERMIT, PERMIT WITH RESTRICTIONS, REQUIRE HUMAN APPROVAL, ESCALATE, and DENY. The exact decision vocabulary is implementation-dependent; the important architectural requirement is that policy and authority can alter execution behavior.",
-        "explanation": "The runtime cycle specifies ten steps from request through lifecycle persistence, and the ten-layer architecture assigns primary responsibilities to each layer.",
-        "page": 10,
-        "paraphrase": "The paper defines a concrete runtime governance cycle with explicit decision outcomes and a ten-layer architecture with assigned responsibilities.",
-        "section": "Governance, Human Authority, and Runtime Coordination",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "A test could execute a governed workflow with Model A, replace it with Model B, and measure whether authorized organizational context, policy state, authority relationships, and lifecycle history remain interpretable and usable.",
-        "explanation": "The paper describes concrete future experiments, such as executing a governed workflow with Model A, replacing it with Model B, and measuring whether authorized organizational context, policy state, authority relationships, and lifecycle history remain interpretable and usable.",
-        "page": 12,
-        "paraphrase": "The paper proposes specific empirical research directions, including cross-model and cross-agent substitution experiments with measurable outcomes.",
-        "section": "Future Research",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "The current Governance Console should be interpreted as a user interface into portions of the proposed architecture, not as evidence that the complete operating system has been implemented.",
-        "explanation": "The paper states that the Governance Console should be interpreted as a user interface into portions of the proposed architecture, not as evidence that the complete operating system has been implemented.",
-        "page": 11,
-        "paraphrase": "The paper explicitly acknowledges that no empirical validation has been performed and that the prototype is not evidence of a complete operating system.",
-        "section": "Prototype and Evaluation Framework",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": "Whether AIVORIX fulfills that proposition cannot be established by architecture diagrams or terminology alone. It must be demonstrated through runtime implementation, cross-AI continuity tests, governance behavior, persistent memory controls, authority representation, and empirical evaluation.",
-        "explanation": "The scope statement explicitly separates the contribution from claims of production validation, and the conclusion reiterates that the proposition cannot be established by architecture diagrams alone.",
-        "page": 13,
-        "paraphrase": "The paper consistently frames its claims as proposals and testable propositions rather than demonstrated results, and explicitly disclaims production validation.",
-        "section": "Conclusion",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": "The paper intentionally avoids presenting conceptual demonstrations as production evidence. Claims about reliability, scalability, security, cost savings, or organizational outcomes require implementation and empirical validation.",
-        "explanation": "The limitations section states that claims about reliability, scalability, security, cost savings, or organizational outcomes require implementation and empirical validation.",
-        "page": 11,
-        "paraphrase": "The paper aligns its claims with the maturity of the work by explicitly separating conceptual demonstrations from production evidence.",
-        "section": "Discussion and Limitations",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "related_work_and_gap_positioning",
-        "excerpt": "This is especially important to AIVORIX positioning because it demonstrates that governance, human oversight, institutional knowledge, and traceability are not capabilities AIVORIX can plausibly claim are absent from the market.",
-        "explanation": "The paper reviews AIOS, OpenFang, Lyzr, C3 AI, Sycamore, Camunda, Amdocs, Infobip, and Anvilogic, and explicitly states that governance, human oversight, institutional knowledge, and traceability are not capabilities AIVORIX can plausibly claim are absent from the market.",
+        "excerpt": "For the term operating system to carry technical meaning, an enterprise AI architecture should eventually demonstrate more than a user interface. Candidate criteria include shared services used by multiple applications or agents; abstraction of heterogeneous resources; persistent operating state; runtime coordination; enforceable or coordinated access boundaries; lifecycle management; communication among components; observability; failure handling; and continuity when individual components are replaced.",
+        "explanation": "The paper defines explicit criteria for what would make the operating-system abstraction technically meaningful, providing a falsifiable methodological basis for the architecture.",
         "page": 5,
-        "paraphrase": "The paper provides a substantial review of academic and commercial prior work and uses it to position the contribution honestly, including explicit acknowledgment that many component capabilities already exist.",
-        "section": "The Emerging Agentic OS Landscape",
+        "paraphrase": "The paper establishes concrete criteria for evaluating whether the architecture qualifies as an operating system.",
+        "section": "Operating-System Criteria For Enterprise Ai",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "A minimum meaningful demonstration should execute a real request through a governance evaluation, retrieve relevant persistent context, determine authority, invoke a real AI model or agent, return a response or coordinate an authorized action, capture the outcome, and create a persistent lifecycle record.",
+        "explanation": "The paper specifies a minimum functional demonstration and an evaluation framework, though no empirical results are yet reported.",
+        "page": 11,
+        "paraphrase": "The paper defines a minimum functional demonstration and evaluation criteria but reports no empirical results.",
+        "section": "Minimum Functional Demonstration",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "AIVORIX remains at the research and prototype stage. The current Governance Console should be interpreted as a user interface into portions of the proposed architecture, not as evidence that the complete operating system has been implemented.",
+        "explanation": "The paper carefully aligns its claims with the actual state of the work, explicitly avoiding overclaiming about implementation status.",
+        "page": 11,
+        "paraphrase": "The paper aligns its claims with the research-stage status, clarifying that the Governance Console is not evidence of full implementation.",
+        "section": "Prototype And Evaluation Framework",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "The presence of sophisticated capabilities in current systems does not imply that enterprise agentic computing is architecturally complete. The problems below are framed as research questions that can exist even when individual products already address portions of them.",
-        "explanation": "The paper explicitly frames the open architectural problems as research questions that can exist even when individual products already address portions of them.",
-        "page": 6,
-        "paraphrase": "The paper identifies a specific gap\u2014persistent, governed relationships across heterogeneous enterprise environments\u2014that is framed as open even when individual products address portions of it.",
-        "section": "Open Architectural Problems",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "AIVORIX remains at the research and prototype stage. The current Governance Console should be interpreted as a user interface into portions of the proposed architecture, not as evidence that the complete operating system has been implemented.",
-        "explanation": "The paper is at the research and prototype stage and does not supply code, schemas, or reproducible artifacts; the evaluation framework is proposed but not executed.",
-        "page": 11,
-        "paraphrase": "The paper does not provide implementation details, code, or data that would enable independent reproduction of the proposed architecture.",
-        "section": "Prototype and Evaluation Framework",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "The first limitation is maturity. AIVORIX is a proposed architecture under prototype development. The paper intentionally avoids presenting conceptual demonstrations as production evidence.",
-        "explanation": "Six distinct limitations are explicitly enumerated, including the difficulty of persistent enterprise memory, governance latency, vendor boundaries, and the potential confusion caused by operating-system terminology.",
-        "page": 11,
-        "paraphrase": "The paper provides a detailed limitations section covering maturity, prior art, memory difficulty, governance latency, interoperability constraints, and terminology confusion.",
-        "section": "Discussion and Limitations",
+        "excerpt": "Sycamore explicitly positions itself as a trusted agent operating system for the enterprise. Its first-party materials describe progressive trust, runtime policy enforcement, human oversight, auditability, organizational intelligence, institutional knowledge, and a full lifecycle spanning build, deploy, observe, and evolve [7]. This is especially important to AIVORIX positioning because it demonstrates that governance, human oversight, institutional knowledge, and traceability are not capabilities AIVORIX can plausibly claim are absent from the market.",
+        "explanation": "The paper engages directly with commercial and academic prior work, using it to refine its gap positioning rather than claiming uniqueness for common capabilities.",
+        "page": 5,
+        "paraphrase": "The paper compares its approach against existing platforms and explicitly avoids claiming that governance and oversight capabilities are absent from the market.",
+        "section": "Enterprise Agent And Governance Platforms",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "Persistent enterprise memory is difficult. Organizational knowledge can be incomplete, contradictory, politically contested, stale, or legally restricted. A technically persistent record is not automatically a trustworthy record.",
-        "explanation": "The limitations section explicitly addresses the difficulty of organizational knowledge being incomplete, contradictory, politically contested, stale, or legally restricted.",
-        "page": 12,
-        "paraphrase": "The paper acknowledges that persistent enterprise memory is difficult and that a technically persistent record is not automatically a trustworthy record.",
-        "section": "Discussion and Limitations",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "presentation_and_precision",
-        "excerpt": "Table 2. AIVORIX OS ten-layer conceptual architecture.",
-        "explanation": "The paper includes a table of contents, a ten-layer architecture table, a convergence table, and consistent use of defined terms such as persistent enterprise memory, human authority, and decision lineage.",
-        "page": 8,
-        "paraphrase": "The paper is well-structured with clear sections, tables, and a consistent terminology framework.",
-        "section": "AIVORIX OS Governance-Centric Reference Architecture",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "presentation_and_precision",
-        "excerpt": "Agent memory helps an agent continue. Persistent enterprise memory helps an organization continue.",
-        "explanation": "The working definition is stated explicitly, and the central distinction between agent memory and enterprise memory is articulated clearly.",
-        "page": 6,
-        "paraphrase": "The paper defines key terms precisely, including the working definition of AIVORIX OS and the distinction between agent memory and enterprise memory.",
-        "section": "Persistent Enterprise Memory Infrastructure",
+        "excerpt": "The first limitation is maturity. AIVORIX is a proposed architecture under prototype development. The paper intentionally avoids presenting conceptual demonstrations as production evidence. Claims about reliability, scalability, security, cost savings, or organizational outcomes require implementation and empirical validation.",
+        "explanation": "The paper explicitly acknowledges its maturity limitation and refrains from making unvalidated production claims.",
+        "page": 11,
+        "paraphrase": "The paper acknowledges its prototype-stage maturity and avoids presenting conceptual demonstrations as production evidence.",
+        "section": "Discussion And Limitations",
         "signal_type": "positive"
       }
     ],
@@ -323,11 +184,7 @@
     "full_text_url": "https://zenodo.org/records/22682680/files/AIVORIX_Beyond_Agentic_Operating_Systems_Zenodo_Upload.pdf",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "No empirical results or measurements are provided.",
-      "No implementation details, code, or reproducible artifacts are supplied.",
-      "No evidence of prototype runtime behavior beyond the described Governance Console interface."
-    ],
+    "missing_information": [],
     "overall_quality_score": 68,
     "paper_type": "position_or_conceptual",
     "positive_signals": [
@@ -336,20 +193,19 @@
       "User, expert, operational, or deployment evidence is described.",
       "Limitations or threats to validity are acknowledged.",
       "Formal definitions or proof-oriented evidence is present.",
-      "The paper clearly states its central research question and research objectives.",
-      "The paper explicitly separates its contribution from prior work and avoids overclaiming novelty.",
-      "The paper provides a detailed limitations section acknowledging maturity, prior art, memory difficulty, governance latency, interoperability constraints, and terminology confusion.",
-      "The paper proposes a falsifiable evaluation framework with concrete criteria and future empirical tests.",
-      "The paper grounds its positioning in a substantial review of academic and commercial prior work.",
-      "The paper consistently frames claims as proposals, research questions, and testable propositions rather than demonstrated results."
+      "The paper clearly defines its contribution as a reference architecture with testable propositions.",
+      "The paper establishes explicit criteria for evaluating the operating-system abstraction.",
+      "The paper engages substantively with prior academic and commercial work.",
+      "The paper acknowledges its limitations and avoids overclaiming about implementation status.",
+      "The paper provides a falsifiable evaluation framework for future empirical work."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "rationale": "The paper is a well-scoped position/conceptual architecture paper. It clearly articulates its contribution, grounds its gap analysis in prior work, defines evaluation criteria, and handles limitations transparently. The absence of empirical validation is appropriate for the stated paper type and is explicitly acknowledged as future work.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "4d95d4d06619450fccbe69f1d39652f36c987b831828d31274096db45a3f4c53",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The assessment is based on the supplied full text, which is internally consistent and clearly scoped. The main uncertainty is whether the proposed architecture will ultimately demonstrate the runtime behavior required to justify its operating-system terminology, which the paper itself acknowledges as an open question."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

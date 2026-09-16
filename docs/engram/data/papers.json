@@ -52,29 +52,25 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:13:55+00:00",
+      "assessed_at": "2026-09-16T11:43:25+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
+      "assessment_version": "quality-recovery-v1",
       "assessor_model": "deepseek/deepseek-v4-pro-0813",
       "assessor_type": "llm",
       "combined_rank_score": 0.92,
-      "concerns": [
-        "Some baseline comparisons are literature-reported rather than controlled head-to-head.",
-        "The 80/20 sampling strategy is acknowledged as not fully validated through controlled ablation.",
-        "The paper is a preprint and has not undergone external peer review."
-      ],
-      "concise_summary": "ProtLingo augments a pretrained ESM2-150M backbone with centered latent N-gram memory and sparse MoE routing. The paper provides clear architectural details, training configuration, and evaluation protocols. Quantitative results on ProteinGym, FLIP, and CASP15 contact prediction, plus ablations and biological analyses, support the claims of parameter-efficient mutation-sensitive modeling and preserved structural representations. Limitations are acknowledged, including bounded gains and unvalidated sampling choices.",
+      "concerns": [],
+      "concise_summary": "ProtLingo augments a pretrained ESM2-150M backbone with centered latent N-gram memory and sparse MoE upcycling. The paper reports competitive ProteinGym, FLIP, and CASP15 contact prediction results with 153M active parameters, supported by ablations and biological specialization analyses. The available text is partial but contains substantive implementation, evaluation, and limitation details.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 4,
+        "evaluation_or_validation_strength": 3,
         "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 4,
+        "methodological_rigor": 3,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 4,
-        "reproducibility_and_transparency": 3,
+        "related_work_and_gap_positioning": 3,
+        "reproducibility_and_transparency": 2,
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
@@ -103,16 +99,16 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 5,
           "paraphrase": "A baseline or comparison system is described.",
-          "section": "Experiments",
+          "section": "Supervised Contact Map Prediction",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "as a claim of state-of-the-art contact prediction accuracy. 4.2 Protein Fitness Prediction We evaluate mutation-sensitive protein function pred",
+          "excerpt": "nder the receiver operating characteristic curve (AUC) on Pro- teinGym, Spearman\u2019s rank correlation on FLIP, and P@L, P@L/2, and P@L/5 on CASP15. Benchmarking ProteinGym.ProteinGym",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
+          "page": 10,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Experiments",
+          "section": "Benchmarking And Evaluation Metrics",
           "signal_type": "positive"
         },
         {
@@ -135,44 +131,35 @@
         },
         {
           "dimension": "contribution_clarity",
-          "excerpt": "We introduce ProtLingo, an efficient PLM framework that augments a pretrained single-sequence backbone with conditional local memory and sparse expert routing.",
-          "explanation": "The abstract and introduction clearly define ProtLingo as an efficient PLM framework augmenting a pretrained backbone with conditional local memory and sparse expert routing.",
+          "excerpt": "We present ProtLingo, an efficient protein language mod- eling framework that augments a pretrained dense backbone",
+          "explanation": "The contribution is stated explicitly in the introduction, identifying the two mechanisms added to the backbone.",
           "page": 1,
           "paraphrase": "The contribution is stated explicitly.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "scholarly_novelty_or_value",
-          "excerpt": "Standard dense PLMs can model such dependencies implicitly, but provide no explicit mechanism for reusing recurring local contexts or adapting computation across residues.",
-          "explanation": "The introduction articulates that standard dense PLMs model local dependencies implicitly but provide no explicit mechanism for reusing recurring local contexts, motivating the proposed architecture.",
-          "page": 1,
-          "paraphrase": "The paper identifies a gap in single-sequence PLMs' explicit reuse of local contexts.",
           "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
           "excerpt": "Model ArchitectureWe continued pretraining from the official pretrained ESM-2 150M checkpoint. The backbone contains 30 Transformer blocks with a hidden size of 640, 20 attention heads, and a feed-forward width of 2,560.",
-          "explanation": "The supplementary material specifies model architecture, MoE configuration, LNgram parameters, training data, optimization, and hardware, supporting reproducibility.",
+          "explanation": "The implementation details specify the backbone configuration, initialization checkpoint, and architectural parameters, supporting reproducibility of the method.",
           "page": 10,
-          "paraphrase": "Implementation details sufficient for reproduction are provided.",
-          "section": "Supplementary Details",
+          "paraphrase": "The available text identifies data or a benchmark used by the work.",
+          "section": "Implementation Details",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "Table 2 reports supervised long-range contact prediction on the selected CASP15 subset with 21 domains. The 650M-scale ESM2 baseline obtains the strongest absolute performance under this protocol. ProtLingo achieves P@L=0.485, P@L/2=0.657, and P@L/5=0.816 with only 153M active parameters.",
-          "explanation": "The paper reports Spearman correlation, AUC, and contact precision metrics across ProteinGym, FLIP, and CASP15 benchmarks.",
+          "excerpt": "Table 2 reports supervised long-range contact prediction ontheselectedCASP15subsetwith21domains.The650M- scale ESM2 baseline obtains the strongest absolute perfor- manceunderthisprotocol.ProtLingoachievesP@L=0.485, P@L/2=0.657, and P@L/5=0.816 with only 153M ac- tive parameters",
+          "explanation": "Quantitative results are reported against baselines on a supervised contact prediction benchmark, providing validation evidence for representation preservation.",
           "page": 5,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Experiments",
+          "paraphrase": "A baseline or comparison system is described.",
+          "section": "Supervised Contact Map Prediction",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "Table3:AblationstudyrelativetofullProtLingo.\u2206denotes the ablated-model value minus the full-model value. Variant PG-DMS\u2206\u03c1\u2191\u2206PPL\u2193 Full ProtLingo \u2013 \u2013 \u2212MoE -0.093 +2.461 \u2212Lngram -0.357 +6.003 \u2212MoE\u2212Lngram -0.369 +6.035",
-          "explanation": "The paper ablates the MoE and LNgram modules, showing complementary gains in ProteinGym DMS Spearman and MLM perplexity.",
+          "excerpt": "Variant PG-DMS\u2206\u03c1\u2191\u2206PPL\u2193 Full ProtLingo \u2013 \u2013 \u2212MoE -0.093 +2.461 \u2212Lngram -0.357 +6.003 \u2212MoE\u2212Lngram -0.369 +6.035",
+          "explanation": "The ablation table reports quantitative changes in ProteinGym DMS Spearman and perplexity when removing MoE, Lngram, or both, validating the contribution of each component.",
           "page": 6,
           "paraphrase": "An ablation analysis is reported.",
           "section": "Ablation Study",
@@ -180,56 +167,29 @@
         },
         {
           "dimension": "evidence_to_claim_alignment",
-          "excerpt": "We use this experiment as a representation-preservation diagnostic rather than as a claim of state-of-the-art contact prediction accuracy.",
-          "explanation": "The paper explicitly frames contact prediction as a representation-preservation diagnostic rather than a state-of-the-art claim, aligning the claim with the experimental design.",
-          "page": 5,
-          "paraphrase": "Claims are appropriately scoped to the evidence.",
-          "section": "Experiments",
+          "excerpt": "ProtLingo improves over ESM2- 150MonProteinGymSpearmanandAUC,andremainsclose to the 150M-scale baseline on FLIP tasks.",
+          "explanation": "The claim of improvement over the direct backbone baseline is directly supported by the reported ProteinGym Spearman and AUC values in Table 1.",
+          "page": 6,
+          "paraphrase": "Quantitative evaluation signals were detected.",
+          "section": "Protein Fitness Prediction",
           "signal_type": "positive"
         },
         {
           "dimension": "related_work_and_gap_positioning",
-          "excerpt": "Conditional memory provides a complementary way to increase model capacity by storing reusable patterns in addressable tables and retrieving entries conditioned on the current input.",
-          "explanation": "Related work sections cover PLMs, conditional memory, and MoE, and the introduction identifies the gap of single-sequence local-context reuse that ProtLingo addresses.",
-          "page": 2,
-          "paraphrase": "The paper positions itself against prior work and identifies a gap.",
-          "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "Although ProtLingo improves the compact ESM2 backbone across several settings, the gains over ESM2-150M are bounded by the lightweight nature of the current modules.",
-          "explanation": "The discussion acknowledges bounded gains and the unvalidated nature of the 80/20 sampling strategy.",
-          "page": 7,
-          "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Discussion",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "This design should be regarded as a practical compromise and a working hypothesis, since the individual strategies and the 80/20 ratio have not yet been validated through a fully controlled ablation.",
-          "explanation": "The supplementary material explicitly states that the 80/20 sampling ratio has not been validated through controlled ablation.",
-          "page": 13,
-          "paraphrase": "The paper acknowledges an unvalidated design choice.",
-          "section": "Supplementary Details",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "We will release the source code and model checkpoints upon publication.",
-          "explanation": "The introduction commits to releasing source code and model checkpoints upon publication, supporting reproducibility.",
-          "page": 2,
-          "paraphrase": "The paper states code and checkpoints will be released.",
+          "excerpt": "Although theseapproachesimprovebiologicalgrounding,they depend on homologous sequences, structural inputs, or ex- ternal resources whose availability and quality vary across proteins. They also leave open a complementary question: howcanasingle-sequencePLMbetterexploitthelocalcon- text already present within its input?",
+          "explanation": "The paper positions its work relative to MSA-based, structure-based, and retrieval-based PLMs and identifies the gap of single-sequence local context exploitation, which is adequate for the actual claims.",
+          "page": 1,
+          "paraphrase": "The related work and gap positioning are adequate for the actual claims.",
           "section": "Introduction",
           "signal_type": "positive"
         },
         {
-          "dimension": "presentation_and_precision",
-          "excerpt": "Spearman correlation and Area Under the Receiver Operating Characteristic Curve (AUC) are first computed independently within each assay. The reported ProteinGym scores use a nested aggregation procedure.",
-          "explanation": "The supplementary material defines Spearman correlation, AUC, and long-range precision metrics with formulas and aggregation details.",
-          "page": 11,
-          "paraphrase": "The paper provides precise metric definitions and aggregation procedures.",
-          "section": "Supplementary Details",
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "Although ProtLingo improves the compact ESM2 backbone across several settings, the gains over ESM2-150M are bounded by the lightweight nature of the current modules, suggesting that richer routing designs may further unlock conditional specialization",
+          "explanation": "The discussion explicitly acknowledges the bounded gains and suggests future directions, demonstrating limitations handling.",
+          "page": 7,
+          "paraphrase": "Limitations or threats to validity are acknowledged.",
+          "section": "Discussion",
           "signal_type": "positive"
         }
       ],
@@ -237,11 +197,8 @@
       "full_text_url": "https://arxiv.org/pdf/2609.04793",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
-      "missing_information": [
-        "Full supplementary figures and tables are truncated in the supplied text.",
-        "No external peer-review record is available."
-      ],
-      "overall_quality_score": 72,
+      "missing_information": [],
+      "overall_quality_score": 68,
       "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
@@ -249,17 +206,15 @@
         "A baseline or comparison system is described.",
         "Quantitative evaluation signals were detected.",
         "An ablation analysis is reported.",
-        "Limitations or threats to validity are acknowledged.",
-        "Implementation details sufficient for reproduction are provided.",
-        "The paper positions itself against prior work and identifies a gap."
+        "Limitations or threats to validity are acknowledged."
       ],
-      "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
-      "recommendation": "promising",
+      "rationale": "The paper presents a clear contribution with explicit implementation details, quantitative evaluations against baselines, ablations, and acknowledged limitations. The available text supports the central claims of competitive performance and parameter efficiency, though the partial full text limits assessment of some methodological details and reproducibility.",
+      "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+      "uncertainty": "The assessment is based on partial full text, and some sections such as complete training details, full results tables, and code availability statements may be incomplete or absent from the supplied material."
     },
     "semantic_scholar_id": null,
     "source": "arxiv",
@@ -308,7 +263,7 @@
     "last_seen_date": "2026-09-15",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": true,
     "notified_at": "2026-09-05 18:01:34",
     "notified_date": "2026-09-05",
@@ -330,24 +285,24 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:55+00:00",
+      "assessed_at": "2026-09-16T12:04:43+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:c674eadf971a4c05",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.92,
       "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 75/100, medium confidence, based on partial full text.",
+      "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Lngram v2 is a well-specified architectural extension that decouples memory capacity from backbone width, validated through controlled comparisons, ablations, statistical testing, and semantic analysis of discrete IDs. The evidence supports the central claims of parameter efficiency, scalability, and semantic preservation, though reproducibility is limited by absent code and partially deferred implementation details.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
-        "contribution_clarity": 4,
+        "contribution_clarity": 5,
         "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
         "methodological_rigor": 4,
-        "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 2,
+        "presentation_and_precision": 4,
+        "related_work_and_gap_positioning": 4,
         "reproducibility_and_transparency": 2,
         "scholarly_novelty_or_value": 4
       },
@@ -355,91 +310,119 @@
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": "ility due to high parameter and activation costs. We propose Lngram v2, which decouples the number of routes, memory dimension, and backbone",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "Lngram v1 nevertheless has two limitations. First, its route count is coupled with backbone width, causing memory size and readout cost to increase with model dimension and limiting scalability.",
+          "explanation": "The introduction clearly identifies the two limitations of Lngram v1 and states what Lngram v2 proposes to address.",
           "page": 1,
-          "paraphrase": "The contribution is stated explicitly.",
-          "section": "Abstract",
+          "paraphrase": "The contribution is stated explicitly and distinguished from Lngram v1.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "Lngram v2 discretizes the hidden states through an independent projection: U= RMSNorm(H), Z=UW q, W q\u2208R d\u00d7RM, whereRis the number of routes andMis the number of bits per route.",
+          "explanation": "The multi-route discrete addressing section provides equations defining the discretization projection and symbol packing.",
+          "page": 2,
+          "paraphrase": "The proposed mechanism is described with formal notation.",
+          "section": "Multi-Routediscreteaddressing",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "capacity. On Keye30B, Lngram v2 improves the ten-benchmark average from 78.23 to 79.71, a gain of 1.48 points, demonstrating that the meth",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "We also construct a parameter-matched Sparse FFN to determine whether the gains can be explained by additional parameters or sparse computational capacity.",
+          "explanation": "The authors construct a Sparse FFN with nearly identical parameter and activation counts to test whether gains are due to added capacity alone.",
+          "page": 7,
+          "paraphrase": "A parameter-matched control isolates the effect of the proposed mechanism.",
+          "section": "Mainresults",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Paired statistical tests on Keye30B yield a 95% confidence interval of[0.86,2.11]for the aver- age improvement. After Holm (Holm, 1979) correction, AI2D and MMBench-EN remain statisti- cally significant",
+          "explanation": "The Keye2B results use three seeds with mean and standard deviation, and Keye30B results include paired statistical tests with confidence intervals.",
           "page": 8,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experiments",
+          "paraphrase": "Multi-seed results and statistical tests are reported.",
+          "section": "Mainresults",
           "signal_type": "positive"
         },
         {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ding successful scaling to a 30B-parameter model. Compared with Lngram v1, Lngram v2 substantially reduces both total and ac- tivated memory pa",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "In contrast, the parameter-matched Sparse FFN obtains only 45.86 despite nearly identical numbers of additional total and activated parameters. These results indicate that the gains of Lngram v2 cannot be simply attributed to additional parameters or sparse compu- tational capacity.",
+          "explanation": "The parameter-matched Sparse FFN underperforms Lngram v2 despite nearly identical parameter and activation counts, supporting the claim that the mechanism itself contributes.",
+          "page": 8,
+          "paraphrase": "The claim that gains are not due to added parameters is directly tested.",
+          "section": "Mainresults",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Its addresses, however, depend on tokenizer IDs and fixed hashing, making the mechanism sensitive to tokenization boundaries, hash collisions, and difficult to extend uniformly beyond text. Lngram v1 instead discretizes hidden states into learnable symbols",
+          "explanation": "The introduction contrasts Lngram v1 with token-ID n-gram memory and explains why latent addressing is needed for multimodal inputs.",
           "page": 1,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ault. 4.3 EFFICIENCYEVALUATION We measure prefill latency at sequence lengths of 256, 512, and 1024 and single-token decode latency on one H800 GPU. Complete results are provided",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 9,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Experiments",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "nt in Lngram v2, we conduct a strictly controlled ablation in which the model architecture, forward computation, training data, and optimi",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 16,
-          "paraphrase": "An ablation analysis is reported.",
-          "section": "Conclusion",
+          "paraphrase": "The paper positions itself against prior conditional memory and lookup mechanisms.",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": ". Paired statistical tests on Keye30B yield a 95% confidence interval of[0.86,2.11]for the aver- age improvement. After Holm (Holm, 1979) correction,",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 8,
-          "paraphrase": "Robustness or statistical analysis is reported.",
-          "section": "Experiments",
+          "excerpt": "To exclude nuisance-driven correlations, we additionally perform 500 document-level permutations of the reference signatures under the same nuisance conditions. In all six settings, the observed AP exceeds every permuted result.",
+          "explanation": "The ID-only semantic readout is validated with a strict reference/held-out protocol and Monte Carlo permutation tests to exclude nuisance-driven correlations.",
+          "page": 6,
+          "paraphrase": "Semantic analysis uses reference/held-out separation and permutation testing.",
+          "section": "Readinghidden-Statesemantics Fromlngramidsalone",
           "signal_type": "positive"
         },
         {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "ross-modal inputs. Lngram v1 nevertheless has two limitations. First, its route count is coupled with backbone width, causing memory size and",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
-          "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Introduction",
+          "excerpt": "Based on this observation, in our formal comparison experiments we introduce Lngram v2 only after the model has entered the middle stage of training and its cross-modal representations have become more stable, rather than adding the module from the beginning of pretraining.",
+          "explanation": "The appendix analysis identifies that introducing Lngram v2 too early in training is unfavorable, and the authors adjust their formal experiments accordingly.",
+          "page": 20,
+          "paraphrase": "Training-stage sensitivity is acknowledged and addressed.",
+          "section": "Text Keye2B 0.006358 0.11245 2.356",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Table 3 shows that increasing the number of routes is generally effective with modest activation overhead. Withm= 4and KV8 fixed, increasing routes from r16 to r64 improves the average from 54.20 to 55.71",
+          "explanation": "Table 3 reports configurations varying routes, bits, KV heads, and memory dimension, with parameter counts and benchmark scores.",
+          "page": 8,
+          "paraphrase": "Ablation studies isolate architectural hyperparameters.",
+          "section": "Ablationstudies",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "On Keye30B, Lngram v2 improves the ten-benchmark average from 78.23 to 79.71, a gain of 1.48 points, demonstrating that the method scales to the 30B regime.",
+          "explanation": "The Keye30B results show a 1.48-point average improvement across ten benchmarks, supporting the scalability claim.",
+          "page": 8,
+          "paraphrase": "The work demonstrates scalability to a 30B-parameter model.",
+          "section": "Mainresults",
           "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2609.03426",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
-      "missing_information": [],
-      "overall_quality_score": 75,
-      "paper_type": "replication",
+      "missing_information": [
+        "Code and implementation detail are incomplete in supplied excerpts; some baselines are single-run and 30B comparisons do not repeat all controls. Early-training address instability limits applicability. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
+      ],
+      "overall_quality_score": 78,
+      "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
         "A baseline or comparison system is described.",
         "Quantitative evaluation signals were detected.",
-        "An ablation analysis is reported.",
         "Robustness or statistical analysis is reported.",
         "Limitations or threats to validity are acknowledged."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Lngram v2 is a well-specified architectural extension that decouples memory capacity from backbone width, validated through controlled comparisons, ablations, statistical testing, and semantic analysis of discrete IDs. The evidence supports the central claims of parameter efficiency, scalability, and semantic preservation, though reproducibility is limited by absent code and partially deferred implementation details.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "f7bd34f3005e2cbc60b197e6869f1d81fdeb9d63ed0e8a87c7270fb4205a05dd",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "Code and implementation detail are incomplete in supplied excerpts; some baselines are single-run and 30B comparisons do not repeat all controls. Early-training address instability limits applicability. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -490,7 +473,7 @@
     "last_seen_date": "2026-09-14",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": "2026-08-29",
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-05 18:01:34",
     "notified_date": "2026-09-05",
@@ -512,14 +495,14 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:14:49+00:00",
+      "assessed_at": "2026-09-16T12:04:43+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": "deepseek/deepseek-v4-pro-0813",
-      "assessor_type": "llm",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:8b7e5667d9be5f71",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.92,
       "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 84/100, medium confidence, based on partial full text.",
+      "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram's hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
@@ -527,7 +510,7 @@
         "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 5,
+        "methodological_rigor": 4,
         "presentation_and_precision": 3,
         "related_work_and_gap_positioning": 3,
         "reproducibility_and_transparency": 2,
@@ -537,8 +520,8 @@
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engram from a pretraining- time conditional memory component into a post- hoc adapter for frozen large language models.",
+          "explanation": "The paper explicitly names the proposed framework and states what it repurposes, making the core contribution identifiable from the introduction.",
           "page": 2,
           "paraphrase": "The contribution is stated explicitly.",
           "section": "Introduction",
@@ -546,119 +529,47 @@
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "The modified hidden state at layer \u2113\u2208Lis: u(\u2113) new =u (\u2113) +\u03b1\u00b7g (\u2113)\u00b7mem (\u2113)(x1:t),(1) whereu(\u2113)\u2208R B\u00d7T\u00d7D is the hidden state,\u03b1= 0.2 is a fixed scaling factor, g(\u2113) \u2208[0,1] B\u00d7T is the learned gate, and mem(\u2113) is the Engram memory retrieval.",
+          "explanation": "The core update equation is given with definitions of each term, supporting methodological clarity.",
+          "page": 3,
+          "paraphrase": "The method is described with a formal update equation.",
+          "section": "Conditional-Activation Adapter",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Engram Adapter86.47 56.83 89.5272.53 101.0",
+          "explanation": "The 8B results table shows the Engram Adapter achieving 86.47% in-domain accuracy and 101.0% average OOD retention, providing quantitative support for the central claim.",
+          "page": 9,
+          "paraphrase": "Quantitative results are reported for the proposed method and baselines.",
+          "section": "Conclusion",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Despite mean joint activation rates of 26\u201328%, the mean resid- ual ratio is only\u22480.08% of the hidden-state norm. Even conditioning on activated tokens, the 95th- percentile perturbation is only\u22481.1\u20131.2% of the hidden-state norm.",
+          "explanation": "The mechanistic analysis directly connects the observed non-negligible OOD activation to the small residual perturbation, supporting the claim that gate and projection attenuation preserve OOD behavior.",
           "page": 6,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experimental Setup",
+          "paraphrase": "The mechanistic evidence aligns with the retention claim.",
+          "section": "Residual Perturbation Analysis",
           "signal_type": "positive"
         },
         {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 7,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Experimental Setup",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Most PEFT methods are effectively always on: once trained, their residual modules or weight per- turbations are applied to every input without distin- guishing whether it belongs to the target domain.",
+          "explanation": "The paper contrasts its conditional-activation approach with always-on PEFT methods, but the comparison is primarily conceptual rather than a detailed empirical or theoretical positioning against specific prior work.",
           "page": 1,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 14,
-          "paraphrase": "An ablation analysis is reported.",
-          "section": "Limitations",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 16,
-          "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Limitations",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
-          "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-          "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "contribution_clarity",
-          "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 2,
-          "paraphrase": "The contribution is stated explicitly.",
+          "paraphrase": "The gap is identified but related-work comparison is limited.",
           "section": "Introduction",
           "signal_type": "positive"
         },
         {
-          "dimension": "methodological_rigor",
-          "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 6,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experimental Setup",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 7,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Experimental Setup",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 14,
-          "paraphrase": "An ablation analysis is reported.",
-          "section": "Limitations",
-          "signal_type": "positive"
-        },
-        {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 16,
-          "paraphrase": "Limitations or threats to validity are acknowledged.",
+          "excerpt": "The current experiments span two model scales (Qwen3-4B and Qwen3-8B) and three evaluation domains (news, medicine, law), but empirical validation on even larger models (e.g., 27B pa- rameters) and more challenging domain corpora would further strengthen the findings.",
+          "explanation": "The limitations section explicitly acknowledges the scale and domain coverage constraints of the empirical validation.",
+          "page": 9,
+          "paraphrase": "Limitations are acknowledged.",
           "section": "Limitations",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
-          "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-          "section": "Related Work",
           "signal_type": "positive"
         }
       ],
@@ -666,25 +577,26 @@
       "full_text_url": "https://arxiv.org/pdf/2608.29327",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
-      "missing_information": [],
-      "overall_quality_score": 84,
+      "missing_information": [
+        "The 8B table uses one seed; evidence covers two model scales and limited domains. The adapter trades some in-domain accuracy and inference overhead for retention; broader generality is not established. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
+      ],
+      "overall_quality_score": 78,
       "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
         "A baseline or comparison system is described.",
         "Quantitative evaluation signals were detected.",
-        "An ablation analysis is reported.",
         "Limitations or threats to validity are acknowledged.",
         "Formal definitions or proof-oriented evidence is present."
       ],
-      "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+      "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram's hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+      "uncertainty": "The 8B table uses one seed; evidence covers two model scales and limited domains. The adapter trades some in-domain accuracy and inference overhead for retention; broader generality is not established. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     },
     "semantic_scholar_id": "25ac9303c7376abdf1dc80620c5408d049061536",
     "source": "arxiv",
@@ -743,7 +655,7 @@
     "last_seen_date": "2026-09-14",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": "2026-08-25",
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-06 11:06:52",
     "notified_date": "2026-09-06",
@@ -765,102 +677,120 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:04:39+00:00",
-      "assessment_scope": "full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessed_at": "2026-09-16T12:04:43+00:00",
+      "assessment_scope": "partial_full_text",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:52cdd11618a118e3",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.92,
       "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 74/100, high confidence, based on full text.",
-      "confidence": "high",
+      "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper systematically studies conditional memory in scientific reasoning and proposes a Knowledge Boundary-Aware Router that selectively activates memory based on pre-inference input proxies. The central claim that memory utility is input- and computation-dependent is supported by boundary-cohort ablations, layer-stage interventions, and comparisons against static and activation-rate-matched random routing across biological and chemical benchmarks. The work is methodologically grounded and clearly positioned, though internal router validation is limited to offline replay and some reproducibility details are absent from the supplied text.",
+      "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
         "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
-        "limitations_and_uncertainty_handling": 1,
+        "limitations_and_uncertainty_handling": 3,
         "methodological_rigor": 4,
-        "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 3,
-        "reproducibility_and_transparency": 2,
+        "presentation_and_precision": 4,
+        "related_work_and_gap_positioning": 4,
+        "reproducibility_and_transparency": 3,
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": "knowledge-circuit nodes. Based on these analyses, we propose a Knowledge Boundary-Aware Router that uses task-specificinputproxiesavailableb",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
-          "paraphrase": "The contribution is stated explicitly.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "routable back- bone families. For each family and benchmark, we com- pare the base model, its domain-adapted LoRA variant, a memory-only va",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experimental Setup",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "across in- puts, tasks, and injection locations. Compared with static and activation-rate-matched random routing, our approach more consistent",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ering Model Accuracy Macro Prec. Macro Rec. Macro F1 Exact Match Kendall Accuracy Brier\u2193 DeepSeek-V4-Pro0.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.57\u00b10.0100.82\u00b10.0080.70\u00b10.0070.19\u00b10",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 4,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "gnalsdefinetheanalysiscohortsforthebound- ary and ablation studies. For task-level performance, BioProBench ERR uses ac- curacy and macro",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
-          "paraphrase": "An ablation analysis is reported.",
-          "section": "Experimental Setup",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "TEM knowl- edge, specialized problem solving, and theorem application (Hendrycks et al. 2021; Wang et al. 2024a; Rein et al. 2023; Chenet",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "Our contributions are threefold: \u2022We conduct a systematic empirical study of conditional memory in scientific reasoning across biological and chemical domains, two backbone families, and six task types.",
+          "explanation": "This excerpt shows the authors clearly enumerate the main contributions, which supports contribution clarity.",
           "page": 2,
-          "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-          "section": "Related Work",
+          "paraphrase": "The paper explicitly states its threefold contributions, including a systematic empirical study, boundary characterization, and a boundary-aware routing mechanism.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "Existing work emphasizes aggregate gains and we study when mem- ory is needed and causally useful at scientific boundaries.",
+          "explanation": "This excerpt positions the work against existing memory-augmented LLM research and states the novel focus on boundary-dependent utility.",
+          "page": 2,
+          "paraphrase": "The paper identifies a gap in existing work by noting that prior studies emphasize aggregate gains rather than when memory is causally useful at scientific boundaries.",
+          "section": "Conditional Memory-Based Llms",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": null,
-          "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-          "page": null,
-          "paraphrase": "No reproducible review or selection methodology was detected.",
-          "section": null,
-          "signal_type": "missing"
+          "excerpt": "bA i =1[E ans(Mbase(xi),yi)<\u03c4 A],(1) bR i =1[E step(Mbase(xi),yi)<\u03c4 R],(2) bP i =1[C i <\u03c4 P ].(3)",
+          "explanation": "This excerpt shows a formal definition of the boundary code, supporting methodological rigor in the analysis framework.",
+          "page": 2,
+          "paraphrase": "The behavioral boundary characterization is formalized with explicit indicators for final-answer failure, reasoning-step failure, and prediction instability.",
+          "section": "Behavioral Scientific Knowledge Boundary",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "The empirical feature-based Data Router outperforms the Random Router in every displayed setting and provides a stronger trade-off than the fixed Always OFF and Always ON configurations.",
+          "explanation": "This excerpt reports an ablation that isolates the effect of input-dependent routing from activation rate, strengthening evaluation validity.",
+          "page": 6,
+          "paraphrase": "The external data router is compared against activation-rate-matched random routing and static configurations, showing that gains depend on which samples activate memory.",
+          "section": "External Routing Versus",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Bio prediction-instability co- horts improve by 2.09 and 1.82 points, whereas the corre- sponding Chem cohorts decline by 4.45 and 3.81 points; Chem reasoning-failure-positive examples, in contrast, im- prove by 4.71 points.",
+          "explanation": "This excerpt provides quantitative evidence that memory effects change sign across cohorts, aligning with the central claim of conditional utility.",
+          "page": 6,
+          "paraphrase": "The paper reports mixed memory effects across boundary cohorts, with gains in some regimes and regressions in others, directly supporting the claim that memory utility is non-uniform.",
+          "section": "Boundary-Dependent Memory Effects",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Sparse key-value layers ex- pandcapacity(Lampleetal.2019)andlookup-basedcondi- tional memory, instantiated by Engram, uses suffixn-gram lookupasacomplementarysparsityaxis(Chengetal.2026).",
+          "explanation": "This excerpt shows explicit comparison with sparse key-value layers, memory-expert architectures, datastore methods, and activation-based memories, positioning the gap adequately for the paper's claims.",
+          "page": 2,
+          "paraphrase": "The paper situates conditional memory within prior memory-augmented LLM approaches and distinguishes its focus on boundary-dependent causal utility.",
+          "section": "Conditional Memory-Based Llms",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "When available, repeated-run variationisreportedasmean\u00b1standarddeviation.BoldindicatesthebestresultwithineachQwen-familyblockineachcolumn.",
+          "explanation": "This excerpt shows that repeated-run standard deviations are reported, which supports transparency in evaluation.",
+          "page": 5,
+          "paraphrase": "The paper reports repeated-run variation and specifies the benchmarks, models, and baselines used.",
+          "section": "Datasets",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "Because this is a same-cohort offline replay, it provides mechanism- level validation rather than an independent generalization estimate.",
+          "explanation": "This excerpt shows the authors acknowledge a limitation of the internal router evaluation, supporting limitations handling.",
+          "page": 6,
+          "paraphrase": "The paper explicitly states that the internal router validation is a same-cohort offline replay and therefore provides mechanism-level rather than independent generalization evidence.",
+          "section": "Internal Routing Of Knowledge-Circuit Nodes",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "bhi,\u03c4,l,s =h i,\u03c4,l,s +\u03c0t(xi)uL i,luS i,s \u00b7ai,l,sgi,\u03c4,l,s\u2206mi,\u03c4,l,s, (13)",
+          "explanation": "This excerpt shows precise mathematical definitions of the memory injection and routing mechanism, supporting presentation precision.",
+          "page": 4,
+          "paraphrase": "The paper provides formal notation for the knowledge-circuit node update and the routed hidden-state update.",
+          "section": "Internal Boundary-Aware Parameter Routing",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2608.23982",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "No reproducible review or selection methodology was detected."
+        "Internal-router evidence is same-cohort offline replay, not independent generalization. Some implementation details are absent from the bounded supplied text. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
       ],
-      "overall_quality_score": 74,
-      "paper_type": "survey_or_review",
+      "overall_quality_score": 82,
+      "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
@@ -869,13 +799,13 @@
         "An ablation analysis is reported.",
         "Formal definitions or proof-oriented evidence is present."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper systematically studies conditional memory in scientific reasoning and proposes a Knowledge Boundary-Aware Router that selectively activates memory based on pre-inference input proxies. The central claim that memory utility is input- and computation-dependent is supported by boundary-cohort ablations, layer-stage interventions, and comparisons against static and activation-rate-matched random routing across biological and chemical benchmarks. The work is methodologically grounded and clearly positioned, though internal router validation is limited to offline replay and some reproducibility details are absent from the supplied text.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "Internal-router evidence is same-cohort offline replay, not independent generalization. Some implementation details are absent from the bounded supplied text. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     },
     "semantic_scholar_id": "d447f4f7bd455c4d384e8fc1fb932ba295581f3a",
     "source": "arxiv",
@@ -951,16 +881,16 @@
     "scholarly_quality": {
       "applied_score_cap": 54,
       "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
-      "assessed_at": "2026-09-16T09:02:57+00:00",
+      "assessed_at": "2026-09-16T12:04:44+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:0452e852632da2dc",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.92,
       "concerns": [
         "Comparative claims were detected without a suitable baseline in the available text."
       ],
-      "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
+      "concise_summary": "The model returned schema-valid JSON but repeated the deterministic seed assessment, including its statement that no semantic scientific assessment had occurred. Scientific quality remains unassessed pending a substantive response.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
@@ -970,7 +900,7 @@
         "limitations_and_uncertainty_handling": 4,
         "methodological_rigor": 5,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 3,
+        "related_work_and_gap_positioning": 2,
         "reproducibility_and_transparency": 4,
         "scholarly_novelty_or_value": 4
       },
@@ -1000,7 +930,7 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 8,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Methods",
+          "section": "Rq2: How Much Does Reader Design Matter?",
           "signal_type": "positive"
         },
         {
@@ -1018,12 +948,12 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 8,
           "paraphrase": "Robustness or statistical analysis is reported.",
-          "section": "Methods",
+          "section": "The Most Visible Gain Appears On Webqa (28.7 To 33.7), While The Strong Improvements On",
           "signal_type": "positive"
         },
         {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H). 2 Background and Related Work 2.1 Engram Architecture Engram (Che",
+          "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H).",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 3,
           "paraphrase": "Limitations or threats to validity are acknowledged.",
@@ -1041,7 +971,7 @@
         },
         {
           "dimension": "reproducibility_and_transparency",
-          "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H). 2 Backgro",
+          "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H).",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 3,
           "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
@@ -1065,15 +995,79 @@
           "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
           "section": null,
           "signal_type": "concern"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "other knowledge-intensive benchmarks. In summary, our contributions are: \u2022 We formulate cross-model frozen-memory reuse as an evaluation problem fo",
+          "explanation": "The paper explicitly enumerates its contributions in the Introduction, providing a clear statement of what the work claims to deliver.",
+          "page": 2,
+          "paraphrase": "The contribution is stated explicitly.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "tream gains are task-dependent, separating source-corpus specialization, Phase-2 reader-fitting alignment, mixed-corpus behavior, and ou",
+          "explanation": "The paper describes a controlled diagnostic sequence in Appendix D that varies source-corpus specialization and reader-fitting distribution, indicating methodological attention to confounds.",
+          "page": 3,
+          "paraphrase": "The available text identifies data or a benchmark used by the work.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "e memory from different perspectives. Table 1: QA accuracy (%) on Mistral-7B-v0.3 for different reader variants and baselines. Budget notation follows Table 2 tr",
+          "explanation": "Table 1 reports quantitative QA accuracy across multiple reader variants and baselines, providing empirical validation of the central reader-design claim.",
+          "page": 8,
+          "paraphrase": "Quantitative evaluation signals were detected.",
+          "section": "Rq2: How Much Does Reader Design Matter?",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "rections between models of similar scale. Second, ablation experiments show that transferred memory clearly outperforms the permuted-key a",
+          "explanation": "The paper reports ablation experiments including permuted-key controls, which isolate the contribution of addressing integrity to transfer performance.",
+          "page": 2,
+          "paraphrase": "An ablation analysis is reported.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "er counts, we treat this experiment as a capacity-sensitivity analysis rather than a causal estimate of memory width alone. The same table also places",
+          "explanation": "The authors explicitly distinguish a capacity-sensitivity analysis from a causal estimate, showing careful interpretation of a confounded experiment.",
+          "page": 8,
+          "paraphrase": "Robustness or statistical analysis is reported.",
+          "section": "The Most Visible Gain Appears On Webqa (28.7 To 33.7), While The Strong Improvements On",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H).",
+          "explanation": "The paper explicitly includes a limitations appendix, indicating acknowledgment of scope boundaries and threats to validity.",
+          "page": 3,
+          "paraphrase": "Limitations or threats to validity are acknowledged.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H).",
+          "explanation": "The paper includes appendices on computational cost, ethics, and limitations, addressing transparency and responsible research practices.",
+          "page": 3,
+          "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+          "section": "Introduction",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2608.17050",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
         "No suitable baseline comparison was detected in the available text.",
-        "Extraction was limited to 120000 characters."
+        "Extraction was limited to 120000 characters.",
+        "This is a model-response problem, not evidence of poor science. The original response provenance and billed usage remain in assessment history; no additional call was made."
       ],
       "overall_quality_score": 54,
       "paper_type": "empirical_research",
@@ -1087,13 +1081,13 @@
         "Code, data, or research artifacts are described as available.",
         "Dataset documentation, quality control, licensing, or ethics is discussed."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The model returned schema-valid JSON but repeated the deterministic seed assessment, including its statement that no semantic scientific assessment had occurred. Scientific quality remains unassessed pending a substantive response.",
       "recommendation": "weak",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "This is a model-response problem, not evidence of poor science. The original response provenance and billed usage remain in assessment history; no additional call was made."
     },
     "semantic_scholar_id": "2bc97d02615ac66f4691feb5016874de1de23236",
     "source": "openalex",
@@ -1174,28 +1168,31 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:57+00:00",
+      "assessed_at": "2026-09-16T11:55:43+00:00",
       "assessment_scope": "full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.92,
       "concerns": [
-        "Comparative claims were detected without a suitable baseline in the available text."
+        "Comparative claims were detected without a suitable baseline in the available text.",
+        "The central cross-tokenizer transfer claim is supported by only one experiment with mixed results.",
+        "The paper does not explicitly discuss limitations or uncertainty in the transfer results.",
+        "The ablation for N=1 shows little contribution, but the paper does not fully rule out that the transfer gains come from other factors."
       ],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 64/100, high confidence, based on full text.",
-      "confidence": "high",
+      "concise_summary": "The paper proposes a polynomial hashing replacement for DeepSeek's Engram module to achieve tokenizer-agnosticism. The method is clearly described and the experiments show comparable performance to XOR hashing, but the central cross-tokenizer transfer claim is supported by only one experiment with modest and mixed results, and limitations are not discussed.",
+      "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 3,
-        "evidence_to_claim_alignment": 3,
+        "evaluation_or_validation_strength": 2,
+        "evidence_to_claim_alignment": 2,
         "limitations_and_uncertainty_handling": 1,
         "methodological_rigor": 3,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 2,
+        "related_work_and_gap_positioning": 3,
         "reproducibility_and_transparency": 3,
-        "scholarly_novelty_or_value": 4
+        "scholarly_novelty_or_value": 3
       },
       "downranked": false,
       "evidence": [
@@ -1252,15 +1249,91 @@
           "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
           "section": null,
           "signal_type": "concern"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "Hence, our goal is to modify the Engram Module such that it can be (re)used regardless of tokenizer choice.",
+          "explanation": "The paper clearly states its goal of achieving tokenizer-agnosticism by replacing XOR hashing with polynomial hashing.",
+          "page": 1,
+          "paraphrase": "The contribution is stated explicitly.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "We use several popular benchmarks, from EleutherAI\u2019s lm-evaluation-harness(Gao et al. 2024), that are commonly-used for pretraining evaluation:ARC(Clarketal. 2018), BoolQ (Clark et al. 2019), COPA (Roemmele, Bejan, and Gordon 2011), HellaSwag (Zellers et al. 2019), LAMBADA (Paperno et al. 2016; Radford et al. 2019), PIQA (Bisk et al. 2020), SCIQ (Johannes Welbl 2017), and Winogrande (Levesque, Davis, and Morgenstern 2011; Sakaguchietal. 2019).",
+          "explanation": "The paper specifies the benchmarks and datasets used for evaluation.",
+          "page": 4,
+          "paraphrase": "The available text identifies data or a benchmark used by the work.",
+          "section": "Experiments",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Base 1.7B + Engram 0.8B + Poly NO - 0.318 0.604 0.530 0.730 0.533 0.513 0.714 0.821 0.564 0.592 1.025",
+          "explanation": "The paper reports quantitative results across multiple benchmarks.",
+          "page": 6,
+          "paraphrase": "Quantitative evaluation signals were detected.",
+          "section": "Experiments",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "ModelC(N=1) NO 0.253 0.493 0.615 0.660 0.432 0.455 0.687 0.742 0.518 0.542 0.851 YES 0.254 0.491 0.615 0.670 0.431 0.457 0.691 0.743 0.514 0.544 0.851",
+          "explanation": "The paper includes an ablation study to isolate the contribution of N=1 grams.",
+          "page": 7,
+          "paraphrase": "An ablation analysis is reported.",
+          "section": "Ablation Study",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Code\u2014 https://github.com/jararap/polyhash-engram",
+          "explanation": "The paper provides a link to the code repository.",
+          "page": 1,
+          "paraphrase": "Code, data, or research artifacts are described as available.",
+          "section": "Abstract",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "ModelB0.7B + Pretrained ModelA\u2019s Engram Emb. 1.5B YES To B (%) -0.007 0.011 0.105 0.071 0.039 0.030 0.019 0.036 0.000 0.038 -0.012",
+          "explanation": "The paper claims tokenizer-agnosticism is achieved, but the transfer experiment shows only marginal improvements over the base model, with some benchmarks declining.",
+          "page": 7,
+          "paraphrase": "The central cross-tokenizer transfer claim is supported by only one experiment with modest results.",
+          "section": "Ablation Study",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "Our experiments show that these modifications are reasonable and enables effective cross-tokenizer transfer. Possible future work directions involve scaling Engram in a tokenizer-agnostic manner.",
+          "explanation": "The paper lacks a dedicated limitations section and does not discuss the modest transfer results or potential failure cases.",
+          "page": 7,
+          "paraphrase": "The paper does not explicitly discuss limitations or uncertainty in the main claims.",
+          "section": "Conclusion and Future Work",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Engram Module Adjacent. There are other alternative embedding modules/layers (Google Team 2025; Tseng and Sa 2026; Sadhukhan et al. 2026) whose mechanisms are different from Deepseek\u2019s Engram. Our work focuses on removing the latter\u2019s tokenizer requirement.",
+          "explanation": "The paper discusses related work on tokenization, Engram modules, and hash embeddings, and identifies the tokenizer lock-in gap.",
+          "page": 2,
+          "paraphrase": "The paper positions its work relative to existing Engram and hashing approaches.",
+          "section": "Related Works",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2607.29065",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
-      "missing_information": [],
-      "overall_quality_score": 64,
-      "paper_type": "position_or_conceptual",
+      "missing_information": [
+        "No explicit limitations section or discussion of failure cases.",
+        "No direct comparison of cross-tokenizer transfer against a tokenizer-locked baseline in the same experimental setup.",
+        "No statistical significance testing for the cross-tokenizer transfer results."
+      ],
+      "overall_quality_score": 55,
+      "paper_type": "methods_or_algorithm",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
@@ -1268,13 +1341,13 @@
         "An ablation analysis is reported.",
         "Code, data, or research artifacts are described as available."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The paper presents a clear technical contribution\u2014replacing XOR hashing with polynomial hashing to achieve tokenizer-agnostic Engram embeddings\u2014and provides quantitative experiments, ablations, and code availability. However, the evidence for the central cross-tokenizer transfer claim is mixed: the transferred Engram embeddings produce only marginal gains over the base model (mean 0.560 to 0.584, with several benchmark scores below the base), and the paper does not clearly establish that the observed improvements are attributable to byte-equivalent N-gram lookups rather than other factors. The methodological description is detailed but the validation of the core claim is weak, and limitations are not explicitly discussed.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "528f4fe5c512abdcd932df1960da584132b85070437260d5d6618da0809f04f2",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The paper's central claim of tokenizer-agnosticism is supported by a single cross-tokenizer transfer experiment with modest and mixed results. The absence of explicit limitations, the small performance differences, and the lack of a direct comparison against a tokenizer-locked baseline for the transfer scenario leave the strength of the contribution uncertain."
     },
     "semantic_scholar_id": "bc472d9b918257bc8bc824120889e8330d1c0222",
     "source": "openalex",
@@ -1361,14 +1434,19 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:04:40+00:00",
-      "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessed_at": "2026-09-16T11:56:12+00:00",
+      "assessment_scope": "full_text",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.92,
-      "concerns": [],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 67/100, medium confidence, based on partial full text.",
+      "concerns": [
+        "Related work is summarized but not systematically compared against the actual claims or evaluated for how Memory Grafting differs in measured performance.",
+        "Reproducibility is limited because the supplied text does not include code, full hyperparameter details, or exact evaluation procedures.",
+        "Benchmark improvements are reported without statistical significance tests or confidence intervals.",
+        "Some efficiency and memory claims are based on figures without detailed measurement methodology."
+      ],
+      "concise_summary": "Memory Grafting proposes using frozen hidden states from a pretrained grafting model as conditional n-gram memory for a smaller recipient model. The paper reports benchmark gains over MoE and vanilla Engram baselines, ablations, efficiency results, and representational analyses. The contribution is clear and the evaluation is substantive, but related-work positioning, reproducibility, and statistical rigor are only partially supported in the available text.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
@@ -1386,47 +1464,47 @@
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": null,
+          "excerpt": "ce remains intact. Motivated by this observation, we propose Memory Grafting, which constructs conditional memory from a grafting model rath",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": null,
+          "page": 2,
           "paraphrase": "The contribution is stated explicitly.",
-          "section": null,
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "n the 2.8B-scale setting, it improves the average benchmark score from51.95 for MoE and52.43 for vanilla Engram to53.86. In the 0.92B\u2013scale",
+          "excerpt": "Offline Construction High Frequency N-gram Corpus Forward Grafting Model Grafted Memory (Frozen) Engram Memory (Trainable) Input",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
+          "page": 2,
           "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Page 1 excerpt",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "cussion C.1. Limitations We do not include a full comparison with knowledge distillation. A from-scratch distillation baseline at the same pre-tr",
+          "excerpt": "100B-token setting. Benchmark(Metric)# Shots MoE Baseline Vanilla Engram Memory Grafting # Trainable Params 2.8B 2.8B 2.8B # Activated(w/",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 25,
+          "page": 6,
           "paraphrase": "A baseline or comparison system is described.",
-          "section": "Page 25 excerpt",
+          "section": "Experimental Setup",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "accounting[20, 25], the recipient\u2019s own training cost is roughly6\u00d70.2 B activated computation per token, while the teacher forward adds2\u00d73 B. Thus, o",
+          "excerpt": "scale without increasing the recipient\u2019s training cost, while theO(1) lookup that makes conditional memory efficient at inference remains intact. Mo",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 25,
+          "page": 2,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Page 25 excerpt",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "pdate at two layers\u2014is already effective, and the ablation in Figure?? shows that each component matters. Richer aggregation over multiple",
+          "excerpt": "03 -0.02 -0.01 \u0394 Loss vs. Engram Gating-mechanism ablation w/o Gate w/ Gate v1 w/ Gate v2 w/ Gate v2 + Engram fallback 5 10 Training T oke",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 25,
+          "page": 9,
           "paraphrase": "An ablation analysis is reported.",
-          "section": "Page 25 excerpt",
+          "section": "Ablation Of Grafting Mechanism",
           "signal_type": "positive"
         },
         {
@@ -1435,18 +1513,112 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 25,
           "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Page 25 excerpt",
+          "section": "B Tokens",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": null,
+          "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
+          "page": null,
+          "paraphrase": "No reproducible review or selection methodology was detected.",
+          "section": null,
+          "signal_type": "missing"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "Motivated by this observation, we propose Memory Grafting, which constructs conditional memory from a grafting model rather than learning the memory table entirely from scratch.",
+          "explanation": "This statement clearly identifies the proposed method and its distinction from prior Engram memory learning.",
+          "page": 2,
+          "paraphrase": "The paper explicitly defines Memory Grafting as constructing conditional memory from a grafting model rather than learning the memory table from scratch.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "We introduceMemory Grafting, a representation-level knowledge-transfer paradigm for scaling conditional memory. It stores frozen grafting-model hidden states in an exactn-gram-indexed table, retains a hash-based Engram fallback for unmatched contexts, and grafts retrieved memories through a gated residual update.",
+          "explanation": "The novelty claim is supported by the described offline construction and O(1) lookup, distinguishing it from Engram and MoE approaches.",
+          "page": 2,
+          "paraphrase": "The paper positions Memory Grafting as a representation-level knowledge-transfer paradigm that scales conditional memory without increasing recipient training cost.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "Across all experiments, we ensure that the number of trainable parameters follows Memory Grafting\u2264vanilla Engram\u2264MoE baseline.",
+          "explanation": "The paper states that trainable parameters follow Memory Grafting \u2264 vanilla Engram \u2264 MoE baseline, which supports controlled comparison.",
+          "page": 6,
+          "paraphrase": "The experimental setup matches trainable parameters and activated parameters across baselines to ensure fair comparison.",
+          "section": "Experimental Setup",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Memory Grafting is best on all nine benchmarks: the average improves from51.95 for MoE and52.43 for vanilla Engram to53.86.",
+          "explanation": "Table 1 provides quantitative evidence for the main claim of improvement in the 2.8B-scale setting.",
+          "page": 7,
+          "paraphrase": "The paper reports benchmark results showing Memory Grafting improves average score over MoE and vanilla Engram baselines.",
+          "section": "Main Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Figure 11 shows that the gate is non-zero and the memory output has a clear magnitude at these positions, meaning that the retrieved memory is actually written into the recipient hidden states.",
+          "explanation": "The probe results directly support the claim that grafted memory is actively used rather than remaining an unused external table.",
+          "page": 24,
+          "paraphrase": "Probing analysis shows that retrieved memory is written into recipient hidden states and affects predictions.",
+          "section": "B Tokens",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Such conditional memory offers a clear inference-side advantage, but scaling it still requires substantial computation when the memory itself is learned from scratch during pre-training.",
+          "explanation": "The paper describes Engram, Product-Key Memory, UltraMem, STEM, MoLE, RAG, and KD, but does not provide a detailed comparison of how Memory Grafting's empirical results relate to these methods beyond Engram and MoE.",
+          "page": 3,
+          "paraphrase": "Related work is summarized but not systematically compared against the actual claims or measured performance.",
+          "section": "Conditional Memory And Modular Sparse Scaling",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Please refer Section A for detailed training hyper-parameters.",
+          "explanation": "Reproducibility is limited because implementation details are referenced to Appendix A, which is not included in the extracted text, and no code or checkpoints are mentioned.",
+          "page": 7,
+          "paraphrase": "The paper does not provide code or full hyperparameter details in the supplied text.",
+          "section": "Experimental Setup",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "We do not include a full comparison with knowledge distillation. A from-scratch distillation baseline at the same pre-training scale would require running a large teacher model over the full training corpus and repeating this process under comparable recipient settings, which would require substantial additional computation and is difficult to complete under our compute budget.",
+          "explanation": "This limitation is explicitly discussed with a concrete compute estimate, showing awareness of a key missing baseline.",
+          "page": 25,
+          "paraphrase": "The paper acknowledges the absence of a full knowledge distillation comparison and explains the compute constraints.",
+          "section": "B Tokens",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "The exact lookup is independent of the total memory size in expectation under hash-map or trie-style indexing, and costs only a constant number of suffix queries per token because the maximumn-gram order is fixed.",
+          "explanation": "The method is presented with equations and an algorithm, which improves precision and clarity.",
+          "page": 5,
+          "paraphrase": "The paper provides formal notation and algorithmic description of the Memory Grafting mechanism.",
+          "section": "Memory Grafting",
           "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2605.20948",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "Section headings could not be detected reliably; beginning, middle, and end passages were selected."
+        "No reproducible review or selection methodology was detected.",
+        "Code or model checkpoints are not provided in the supplied text.",
+        "Full training hyperparameters are referenced to Appendix A but not included in the extracted text.",
+        "Statistical significance or variance estimates for benchmark results are not reported.",
+        "Detailed methodology for throughput and memory measurements is not provided."
       ],
-      "overall_quality_score": 67,
+      "overall_quality_score": 66,
       "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
@@ -1454,15 +1626,21 @@
         "A baseline or comparison system is described.",
         "Quantitative evaluation signals were detected.",
         "An ablation analysis is reported.",
-        "Limitations or threats to validity are acknowledged."
+        "Limitations or threats to validity are acknowledged.",
+        "The contribution is stated explicitly and the method is described with formal notation.",
+        "The paper reports quantitative benchmark results against MoE and vanilla Engram baselines.",
+        "Ablations examine gating mechanisms, memory capacity, and grafting-model source layers.",
+        "Efficiency analysis reports training throughput, inference throughput, and memory usage.",
+        "Probing and CKA analyses provide evidence that grafted memory affects recipient representations and predictions.",
+        "Limitations are acknowledged, including the absence of a knowledge distillation comparison."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The paper presents a clear method, Memory Grafting, with matched baselines, quantitative benchmark results, ablations, efficiency analysis, and a limitations section. However, several scientific quality dimensions are only partially supported: related work is discussed but not systematically compared against the actual claims, reproducibility is limited by the absence of code or detailed hyperparameters in the supplied text, and some evaluation claims rely on figures and tables whose full statistical context is not provided. The work is substantive but not fully validated as a scholarly contribution from the available manuscript evidence.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "98ae2b04b13f48f41a06ecb74e04d231a9b8ad7a3921d10bcf1514910e36d7f1",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The assessment is limited by the supplied text, which includes tables and figures but not all implementation details, statistical significance tests, or code. Some claims about efficiency and memory use are reported without full measurement methodology. The absence of a knowledge distillation comparison is acknowledged but leaves the relative value of the method partially unresolved."
     },
     "semantic_scholar_id": null,
     "source": "arxiv",
@@ -1552,24 +1730,29 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:04:41+00:00",
+      "assessed_at": "2026-09-16T12:00:23+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.92,
-      "concerns": [],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on partial full text.",
+      "concerns": [
+        "The supplied text does not include a dedicated limitations section, and the discussion of limitations is limited to brief remarks about under-training and benchmark noise.",
+        "Statistical significance or variance estimates are not reported for the benchmark improvements.",
+        "The paper relies on a single training run per configuration, and no evidence of repeated runs or uncertainty quantification is provided.",
+        "Some claims about infrastructure efficiency are based on a conservative baseline setup, but the fully optimized implementation is not evaluated."
+      ],
+      "concise_summary": "The paper introduces Engram, a conditional memory module that modernizes N-gram embeddings for O(1) lookup, and evaluates it against iso-parameter and iso-FLOPs MoE baselines. The available text shows clear contribution framing, extensive benchmark results, ablations, and mechanistic analyses supporting the claimed benefits. However, the partial text lacks a dedicated limitations section and statistical uncertainty reporting, leaving methodological completeness uncertain.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 3,
+        "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
-        "limitations_and_uncertainty_handling": 1,
-        "methodological_rigor": 2,
+        "limitations_and_uncertainty_handling": 2,
+        "methodological_rigor": 3,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 3,
+        "related_work_and_gap_positioning": 4,
         "reproducibility_and_transparency": 3,
         "scholarly_novelty_or_value": 4
       },
@@ -1586,11 +1769,11 @@
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "ivated-parameter budget fixed. Full training-time benchmark trajectories are reported in Appendix B. Benchmark(Metric)# Shots Dense-4B MoE-",
+          "excerpt": "del ConfigurationsAll models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3 (Liu et al.",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 9,
+          "page": 10,
           "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Abstract",
+          "section": "Experimental Setup",
           "signal_type": "positive"
         },
         {
@@ -1604,48 +1787,134 @@
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "e modeling effectiveness against the system-level latency constraints detailed in Section 2.5. 2.4. Integration with Multi-branch Architecture In this work, rather than standard",
+          "excerpt": "ctly iso-parameter and iso-FLOPs MoE baselines. \u2022 Second, from a system perspective, we advocate for algorithm-system co-design. Exist- 19",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
+          "page": 19,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Abstract",
+          "section": "Related Work",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "compute window available for hiding latency, our ablation in Section 6.2 shows that modeling performance favors early intervention to off",
+          "excerpt": "on loss. Specifically, for the \u201cw/o multi branch\u201d ablation, we retain the mHC backbone structure but replace the branch-specific gating wi",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 6,
+          "page": 16,
           "paraphrase": "An ablation analysis is reported.",
-          "section": "Abstract",
+          "section": "Structural Ablation And Layer Sensitivity",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "ension is largely preserved by the backbone. 6.3. Sensitivity Analysis To characterize the functional contribution of the Engram module, we evaluate t",
+          "excerpt": null,
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 17,
+          "page": null,
           "paraphrase": "Robustness or statistical analysis is reported.",
-          "section": "Abstract",
+          "section": null,
           "signal_type": "positive"
         },
         {
           "dimension": "reproducibility_and_transparency",
-          "excerpt": "neration sparse models. Code available at:https://github.com/deepseek-ai/Engram. 1. Introduction Sparsity is a recurring design principle fo",
+          "excerpt": "neration sparse models. Code available at:https://github.com/deepseek-ai/Engram.",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 1,
           "paraphrase": "Code, data, or research artifacts are described as available.",
           "section": "Abstract",
           "signal_type": "positive"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "we advocate for a complementary axis of sparsity: conditional memory. Whereas conditional computation sparsely activates parameters to process dynamic logic",
+          "explanation": "The introduction clearly states the proposed paradigm and its instantiation, making the contribution identifiable.",
+          "page": 2,
+          "paraphrase": "The paper explicitly introduces conditional memory as a complementary sparsity axis and instantiates it via Engram.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "In contrast, we treat conditional memory as a first-class modeling primitive instantiated via the carefully designed Engram module.",
+          "explanation": "The related work section explicitly contrasts the approach with prior methods such as SCONE and OverEncoding, supporting a claim of novelty in evaluation protocol and system co-design.",
+          "page": 19,
+          "paraphrase": "The paper positions Engram as distinct from prior N-gram embedding approaches by treating conditional memory as a first-class primitive and evaluating under strict iso-parameter and iso-FLOPs protocols.",
+          "section": "Related Work",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "All models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3",
+          "explanation": "The paper specifies Dense-4B, MoE-27B, Engram-27B, and Engram-40B configurations with identical training data and activated parameters, supporting a controlled comparison.",
+          "page": 10,
+          "paraphrase": "The experimental setup describes controlled model configurations with matched activated parameters and token budgets.",
+          "section": "Experimental Setup",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Engram-27B consistently improves over the iso-parameter and iso-FLOPs MoE-27B baseline.",
+          "explanation": "Table 1 and the accompanying text provide quantitative comparisons across a broad benchmark suite, supporting the evaluation strength.",
+          "page": 11,
+          "paraphrase": "The paper reports extensive benchmark results across multiple domains, including knowledge, reasoning, reading comprehension, code, and math.",
+          "section": "Experimental Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "The consistent off-diagonal shift, which aligns with the LogitLens results (Section 6.1.1), confirms that Engram achieves deeper representations at earlier layers.",
+          "explanation": "The paper reports lower early-layer KL divergence and an upward shift in CKA alignment, directly supporting the central hypothesis about effective depth.",
+          "page": 15,
+          "paraphrase": "The mechanistic analyses using LogitLens and CKA provide evidence for the claim that Engram increases effective depth.",
+          "section": "Representational Alignment And Effective Depth",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "existing approaches place embeddings strictly at the input layer (Layer 0), which inherently serializes memory access and computation",
+          "explanation": "The related work section explicitly identifies gaps in prior approaches, such as lack of strict iso-compute evaluation and input-layer-only placement, and positions Engram as addressing these gaps.",
+          "page": 20,
+          "paraphrase": "The paper distinguishes its approach from prior N-gram embedding and memory-augmented methods along modeling, evaluation, and system dimensions.",
+          "section": "Related Work",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Code available at:https://github.com/deepseek-ai/Engram.",
+          "explanation": "The abstract includes a code repository link, and the experimental setup describes model configurations, supporting reproducibility.",
+          "page": 1,
+          "paraphrase": "The paper states that code is available and provides detailed model configuration information.",
+          "section": "Abstract",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "Although it does not yet strictly dominate Engram-27B on every task, this is likely an artifact of under-training.",
+          "explanation": "The available text mentions under-training and benchmark noise but does not systematically discuss limitations or provide statistical uncertainty estimates.",
+          "page": 11,
+          "paraphrase": "The paper does not provide a dedicated limitations section in the supplied text, and uncertainty is only briefly acknowledged.",
+          "section": "Experimental Results",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "We define the allocation ratio \ud835\udf0c\u2208 [ 0, 1] as the fraction of the inactive-parameter budget assigned to MoE expert capacity",
+          "explanation": "The methods sections define allocation ratios, parameter metrics, and architectural equations, contributing to presentation precision.",
+          "page": 7,
+          "paraphrase": "The paper uses formal notation and precise definitions for the Sparsity Allocation problem and Engram architecture.",
+          "section": "Optimal Allocation Ratio Between Moe And Engram",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2601.07372",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
-      "missing_information": [],
+      "missing_information": [
+        "Detailed hyperparameters and full training configuration are referenced as being in Appendix A but are not included in the supplied text.",
+        "Full benchmark trajectories and additional ablation details are referenced as being in Appendix B but are not included.",
+        "A dedicated limitations or broader impact section is not present in the supplied material.",
+        "Statistical significance or confidence intervals for benchmark results are not provided."
+      ],
       "overall_quality_score": 65,
-      "paper_type": "position_or_conceptual",
+      "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
@@ -1653,15 +1922,21 @@
         "Quantitative evaluation signals were detected.",
         "An ablation analysis is reported.",
         "Robustness or statistical analysis is reported.",
-        "Code, data, or research artifacts are described as available."
+        "Code, data, or research artifacts are described as available.",
+        "The contribution is stated explicitly and positioned as a complementary sparsity axis.",
+        "The paper reports extensive quantitative benchmarks across knowledge, reasoning, reading comprehension, code, and math domains.",
+        "Ablation studies isolate the contribution of key architectural components and layer placement.",
+        "Mechanistic analyses using LogitLens and CKA provide evidence for the claimed effective-depth effect.",
+        "The paper includes a controlled iso-parameter and iso-FLOPs comparison against a MoE baseline.",
+        "Code availability is stated in the abstract."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The manuscript presents a clearly articulated architectural contribution (Engram as conditional memory) with substantial quantitative evaluation, ablations, and mechanistic analyses. However, the supplied text is partial and omits several sections that would be needed to fully verify methodological details, statistical rigor, and limitations. The available evidence supports a credible but not fully established scholarly contribution.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The assessment is based on partial full text. Several sections, including detailed hyperparameters, full ablation tables, and a dedicated limitations discussion, are not present in the supplied material. This prevents a definitive judgment on methodological completeness and uncertainty handling."
     },
     "semantic_scholar_id": null,
     "source": "arxiv",

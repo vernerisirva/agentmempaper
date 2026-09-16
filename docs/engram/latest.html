@@ -74,12 +74,12 @@
 
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="75" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
       <div class="paper-main">
         <h3>Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations</h3>
         <p class="meta">Yunao Zheng, Bin Wen, Xiaojie Wang · Published 2026-09-03 · Source: OpenAlex, arXiv</p>
         <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
-        <p class="quality-summary"><strong>Quality pending</strong></p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
       </div>
       <div class="paper-side">
         <a class="paper-link" href="https://arxiv.org/abs/2609.03426">Open paper</a>
@@ -109,18 +109,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The available evidence suggests a credible contribution with some limitations. Automated score 75/100, medium confidence, based on partial full text.</p>
+      <p>Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Lngram v2 is a well-specified architectural extension that decouples memory capacity from backbone width, validated through controlled comparisons, ablations, statistical testing, and semantic analysis of discrete IDs. The evidence supports the central claims of parameter efficiency, scalability, and semantic preservation, though reproducibility is limited by absent code and partially deferred implementation details.</p>
       <ul>
         <li>Recommendation: promising</li>
         <li>Confidence: medium</li>
         <li>Assessment scope: partial full text</li>
-        <li>Paper type: replication</li>
-        <li>Assessment: quality-v2 / rubric scholarly-rubric-v1</li>
-        <li>Assessor: deterministic</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: manual_override (manual-review:c674eadf971a4c05)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 2/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 1)</li><li>The available text identifies data or a benchmark used by the work. (page 8)</li><li>A baseline or comparison system is described. (page 1)</li><li>Quantitative evaluation signals were detected. (page 9)</li><li>An ablation analysis is reported. (page 16)</li><li>Robustness or statistical analysis is reported. (page 8)</li><li>Limitations or threats to validity are acknowledged. (page 1)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly and distinguished from Lngram v1. (page 1)</li><li>The proposed mechanism is described with formal notation. (page 2)</li><li>A parameter-matched control isolates the effect of the proposed mechanism. (page 7)</li><li>Multi-seed results and statistical tests are reported. (page 8)</li><li>The claim that gains are not due to added parameters is directly tested. (page 8)</li><li>The paper positions itself against prior conditional memory and lookup mechanisms. (page 1)</li><li>Semantic analysis uses reference/held-out separation and permutation testing. (page 6)</li><li>Training-stage sensitivity is acknowledged and addressed. (page 20)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations. Yunao Zheng, Bin Wen, Xiaojie Wang. 2026-09-03. https://arxiv.org/abs/2609.03426">Copy citation</button>

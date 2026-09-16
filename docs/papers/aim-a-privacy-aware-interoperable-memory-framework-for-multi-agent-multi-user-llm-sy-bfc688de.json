@@ -29,7 +29,7 @@
   "first_seen_at": "2026-09-15 11:59:43",
   "first_seen_date": "2026-09-15",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-09-15 11:59:43",
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
@@ -45,7 +45,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:43",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:43",
     "metadata_sources": [
       "openalex",
@@ -119,20 +119,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:13:14+00:00",
+    "assessed_at": "2026-09-16T11:53:14+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
-    "concerns": [
-      "Retrieval relevance is low (45.0% best model), which limits the practical utility of the read path.",
-      "Tag overlap is low (35.5% best model), indicating weak tag extraction.",
-      "The LOCOMO comparison uses only a single run, reducing statistical confidence.",
-      "The benchmark is synthetically generated, and the manual validation process is only partially described in the supplied text.",
-      "No public code or dataset link is visible in the supplied material, limiting reproducibility."
-    ],
-    "concise_summary": "AIM is a privacy-aware memory framework for multi-agent multi-user LLM systems, evaluated on a new benchmark (MUMBench). The paper provides clear contributions, quantitative validation, and candid limitations. The main weaknesses are low retrieval relevance and tag overlap, and limited reproducibility details in the supplied text.",
+    "concerns": [],
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 73/100, medium confidence, based on partial full text.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
@@ -140,10 +134,10 @@
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
+      "methodological_rigor": 3,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 3,
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
@@ -163,7 +157,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 5,
         "paraphrase": "A baseline or comparison system is described.",
-        "section": "Methods",
+        "section": "In-Context Semantic Deduplication",
         "signal_type": "positive"
       },
       {
@@ -177,11 +171,11 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "er typically scores\u226akmemories. 3.8 Modularity and Ablation Every inference component (fop,fext,fcls,fdedup,\u03d5,g\u03b8) and the vector index is d",
+        "excerpt": ", or HNSW with a different ANN algorithm\u2014enabling ablation studies that isolate the contribution of individual components such as deduplic",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 6,
         "paraphrase": "An ablation analysis is reported.",
-        "section": "Methods",
+        "section": "Modularity And Ablation",
         "signal_type": "positive"
       },
       {
@@ -204,87 +198,92 @@
       },
       {
         "dimension": "contribution_clarity",
-        "excerpt": "We introduce AIM (Agentic Interoperable Memory), a unified, privacy-aware memory framework that enables multi-agent, multi-user LLM systems to persistently manage private and shared memory.",
-        "explanation": "The abstract and introduction clearly define AIM and MUMBench, and the paper states the three axes along which AIM differs from prior systems.",
+        "excerpt": "llusers. To evaluate AIM in a multi-user setting, we introduce MUMBench(Multi-User Memory Benchmark), a dataset containing interactions from m",
+        "explanation": "The abstract and introduction clearly define AIM and MUMBench as the two main contributions.",
         "page": 1,
-        "paraphrase": "The contribution is stated explicitly and scoped clearly.",
+        "paraphrase": "The contribution is stated explicitly.",
         "section": "Abstract",
         "signal_type": "positive"
       },
       {
         "dimension": "scholarly_novelty_or_value",
-        "excerpt": "To our knowledge, MUMBench is the first public dataset designed to assess an agentic memory system\u2019s multi-operation performance (memory retrieve, create, update and delete) in a multi-user environment.",
-        "explanation": "The paper claims MUMBench is the first public dataset designed to evaluate multiple memory operations in a multi-user environment, and describes its creation and manual validation.",
-        "page": 6,
-        "paraphrase": "A novel benchmark (MUMBench) is introduced with documented creation and validation procedures.",
-        "section": "Methods",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "A visibility constraint governs every read and write. We define a predicate V(u, m_i) that is true iff user u may access memory m_i: V(u, m_i) = (v_i = PUBLIC) \u2228 (v_i = PRIVATE \u2227 u_i = u).",
-        "explanation": "The paper defines a formal visibility constraint V(u, m_i) and states that it is enforced at every stage of the pipeline, including index-level filtering.",
-        "page": 4,
-        "paraphrase": "The privacy enforcement mechanism is formalized with a visibility predicate and index-level access control.",
-        "section": "Methods",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "We evaluate AIM on MUMBench across all four domains using 5 models from different model families: GPT-5.4, GPT-5.4-mini, DeepSeek-V3.2, Mistral-Large-3, and Llama-3.3-70B-Instruct.",
-        "explanation": "The experimental setup states that five models are evaluated on MUMBench with three trials per model, and Table 1 reports mean and standard deviation across runs.",
-        "page": 7,
-        "paraphrase": "Quantitative evaluation is reported across five models and three independent runs.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evidence_to_claim_alignment",
-        "excerpt": "AIM performs best with GPT-5.4-mini as the primary model, scoring 58.8% strict, 70.5% state-aware operation accuracy, and 89.5% judge-decision operation accuracy.",
-        "explanation": "The abstract claims 96.0% visibility classification accuracy, 58.8% strict operation accuracy, and 70.5% state-aware operation accuracy, and Table 1 reports these values with standard deviations.",
-        "page": 8,
-        "paraphrase": "The central claims about privacy classification and operation accuracy are directly supported by reported results.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "related_work_and_gap_positioning",
-        "excerpt": "AIM differs from these systems along three axes. First, it infers visibility labels via LLM classification rather than requiring users to manually tag memories... Second, it enforces access control deterministically at the retrieval index level... Third, it supports multi-label operation detection.",
-        "explanation": "The related work section reviews memory architectures, modular memory, and multi-user sharing, and explicitly states how AIM differs along three axes. The LOCOMO comparison is reported in the appendix.",
+        "excerpt": "The result is, to our knowledge, the first end-to-end pipeline that unifies LLM-based extraction, automatic privacy classification, and index-level access enforcement in a single modular, system-agnostic service.",
+        "explanation": "The related work section explicitly contrasts AIM with prior systems along three axes and claims a first-of-its-kind integration.",
         "page": 3,
-        "paraphrase": "The paper compares against an existing benchmark (LOCOMO) and discusses differences from prior systems.",
+        "paraphrase": "The paper positions AIM as the first end-to-end pipeline unifying LLM-based extraction, automatic privacy classification, and index-level access enforcement.",
         "section": "Related Work",
         "signal_type": "positive"
       },
       {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in Table 2) is notably lower than other content metrics... Additionally, retrieval relevance peaks at 45.0% (Table 2).",
-        "explanation": "The limitations section candidly discusses low tag overlap, low retrieval relevance, single-run LOCOMO evaluation, and the risk of public memory misinformation.",
+        "dimension": "methodological_rigor",
+        "excerpt": "Avisibility constraintgoverns every read and write. We define a predicateV(u,m i)that is true iff userumay access memorym i:",
+        "explanation": "The formalization of the visibility constraint and memory lifecycle supports methodological clarity.",
+        "page": 4,
+        "paraphrase": "The paper provides a formal problem formulation and visibility predicate.",
+        "section": "Problem Formulation",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "runs, AIM achieves96.0%visibility classification accuracy, 58.8%strict operation accuracy, and70.5%state-aware operation accuracy across three independent runs.",
+        "explanation": "The paper reports three independent runs with mean and standard deviation across four domains and five models.",
+        "page": 1,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Privacy classification.Visibility classification is AIM\u2019s strongest capability, with all 5 models averagingnearly 90% or greateraccuracy, and 3 models achieving a perfect100% accuracyon the Travel domain.",
+        "explanation": "The visibility classification results are reported per domain and model, supporting the claim that privacy classification is AIM's strongest capability.",
         "page": 9,
-        "paraphrase": "Limitations are explicitly acknowledged, including low retrieval relevance and tag overlap.",
-        "section": "Limitations",
+        "paraphrase": "The paper reports results that directly support the claimed privacy classification strength.",
+        "section": "Mumbench Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "However, these systems are fundamentally single-agent and single-user, lacking multi-user access control or cross-agent synchronization.",
+        "explanation": "The related work section covers memory architectures, modular memory, multi-user sharing, and benchmarks, and explicitly identifies gaps.",
+        "page": 2,
+        "paraphrase": "The paper compares AIM against existing memory systems and benchmarks.",
+        "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "We evaluate AIM on MUMBench across all four domains using 5 models from different model families.",
-        "explanation": "The supplied text does not include a link to code or the MUMBench dataset, which limits reproducibility.",
+        "excerpt": "We evaluate AIM on MUMBench across all four domains using 5 models from different model families:GPT-5.4,GPT-5.4-mini,DeepSeek-V3.2,Mistral-Large-3, andLlama-3.3-70B-Instruct.",
+        "explanation": "The experimental setup section specifies models, embedding dimensions, number of trials, and pipeline stages.",
         "page": 7,
-        "paraphrase": "No public code or dataset link is visible in the supplied material.",
+        "paraphrase": "The paper describes the experimental setup in detail.",
         "section": "Experimental Setup",
-        "signal_type": "concern"
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Our evaluation has several limitations. First, tag overlap (35.5% on the best model; full results in Table 2) is notab",
+        "explanation": "The limitations section explicitly discusses tag overlap, retrieval relevance, LOCOMO single-pass evaluation, and security concerns.",
+        "page": 9,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "svec(q,mi) = \u03d5(q)\u22a4emi \u2225\u03d5(q)\u2225\u00b7\u2225e mi\u2225, m i\u2208{m\u2208M:V(u,m)}.(3)",
+        "explanation": "The cascaded retrieval section includes formal equations for vector scoring, tag scoring, and recency fusion.",
+        "page": 5,
+        "paraphrase": "The paper provides formal definitions and equations for the retrieval pipeline.",
+        "section": "Cascaded Memory Retrieval",
+        "signal_type": "positive"
       }
     ],
     "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.12320",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "Full ablation results are not visible in the supplied text.",
-      "Exact prompts for the LLM components are not fully included.",
-      "Code and dataset availability are not specified in the supplied material."
-    ],
-    "overall_quality_score": 78,
+    "missing_information": [],
+    "overall_quality_score": 73,
     "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
@@ -292,14 +291,7 @@
       "Quantitative evaluation signals were detected.",
       "An ablation analysis is reported.",
       "Robustness or statistical analysis is reported.",
-      "Limitations or threats to validity are acknowledged.",
-      "The contribution is stated explicitly and scoped clearly.",
-      "A novel benchmark (MUMBench) is introduced with documented creation and validation procedures.",
-      "Quantitative evaluation is reported across five models and three independent runs.",
-      "Multiple metrics are used, including strict, state-aware, and judge-decision operation accuracy.",
-      "The paper compares against an existing benchmark (LOCOMO) and discusses differences from prior systems.",
-      "Limitations are explicitly acknowledged, including low retrieval relevance and tag overlap.",
-      "The privacy enforcement mechanism is formalized with a visibility predicate and index-level access control."
+      "Limitations or threats to validity are acknowledged."
     ],
     "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
     "recommendation": "promising",

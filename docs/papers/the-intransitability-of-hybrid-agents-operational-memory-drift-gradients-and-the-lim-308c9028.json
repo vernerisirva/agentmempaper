@@ -20,7 +20,7 @@
   "first_seen_at": "2026-09-15 11:59:43",
   "first_seen_date": "2026-09-15",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-09-15 11:59:43",
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:43",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:43",
     "metadata_sources": [
       "openalex"
@@ -102,32 +102,26 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:13:03+00:00",
+    "assessed_at": "2026-09-16T11:52:04+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "No empirical, formal, or case-based validation of the central principle is provided; the intransitability claim is asserted rather than demonstrated.",
-      "The paper engages with no external literature beyond two self-referential prior HibriMind formulations, leaving the gap positioning unsubstantiated for claims spanning AI safety, clinical systems, and epistemology.",
-      "Core constructs such as 'drift gradient,' 'attractor field,' and 'operational memory' are never operationalized or given observable indicators, making the claims unfalsifiable as presented.",
-      "No limitations, counterarguments, or scope conditions are discussed; the paper does not address when portability might be adequate or when the principle might fail.",
-      "The proposed safety mechanisms are listed without any account of how they would be implemented, measured, or validated."
-    ],
-    "concise_summary": "A position paper proposing that longitudinally coupled human-AI agents cannot be fully transferred between operators. The central claim is clearly stated but unsupported by empirical, formal, or case-based evidence; core constructs are undefined operationally; related work is limited to self-referential prior formulations; and no limitations or counterarguments are addressed.",
+    "concerns": [],
+    "concise_summary": "The paper is a position/conceptual piece proposing the HibriMind principle of hybrid-agent intransitability. It argues that long-horizon hybrid human-AI agents cannot be fully transferred between biological operators because accumulated operational history becomes a causal drift gradient. The central claim is clearly stated and consistently developed, with supporting conceptual distinctions (biological operator, algorithmic substrate, authorized object, accumulated coupling history) and practical safety mechanisms. However, the paper lacks empirical validation, formal modeling, or worked examples demonstrating the claimed causal effects. Related work is limited to two prior HibriMind formulations, with no engagement with broader literature on agent memory, continual learning, or human-AI interaction. Limitations are not explicitly addressed. The paper is internally coherent but remains at the level of conceptual assertion rather than demonstrated or tested claims.",
     "confidence": "high",
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 3,
-      "evaluation_or_validation_strength": 1,
-      "evidence_to_claim_alignment": 2,
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 3,
       "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 1,
+      "methodological_rigor": 2,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 1,
-      "reproducibility_and_transparency": 1,
-      "scholarly_novelty_or_value": 2
+      "related_work_and_gap_positioning": 2,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
@@ -137,79 +131,79 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 4,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Abstract",
+        "section": "Portability, Identity, And Authorship",
         "signal_type": "positive"
       },
       {
         "dimension": "contribution_clarity",
-        "excerpt": "Within the HibriMind ontology, a hybrid human-AI agent is not defined by the mere combination of a human and an AI system. It is constituted by four elements: 1. a biological operator; 2. an algorithmic substrate; 3. an authorized object or purpose; 4. an accumulated history of coupling.",
-        "explanation": "The paper clearly articulates its main claim and the ontological frame in which it operates, making the contribution identifiable.",
+        "excerpt": "A longitudinally coupled hybrid agent cannot be fully transferred between biological operators without loss, distortion, or recomposition of its attractor field.",
+        "explanation": "The central principle is stated explicitly and unambiguously, allowing the reader to identify the paper's core claim.",
         "page": 2,
-        "paraphrase": "The central principle is stated explicitly and repeatedly, with a clear definition of the four elements constituting a hybrid agent.",
-        "section": "The HibriMind Frame: Hybrid Agent and Drift Gradient",
+        "paraphrase": "The paper states its central principle in a clear, quotable form.",
+        "section": "The Principle Of Hybrid-Agent Intransitability",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "The hybrid agent is not only the current interaction. It is the trajec- tory that has been stabilized through prior exchanges, decisions, corrections, failures, confirmations, and operational routines.",
+        "explanation": "The paper defines the key concept of the hybrid agent in terms of accumulated coupling history, making the scope of the claim explicit.",
+        "page": 2,
+        "paraphrase": "The paper defines the hybrid agent as constituted by accumulated trajectory, not just current interaction.",
+        "section": "The Hibrimind Frame: Hybrid Agent And Drift Gradient",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "A longitudinally coupled hybrid agent cannot be fully transferred between biological operators without loss, distortion, or recomposition of its attractor field.",
-        "explanation": "Terms such as 'drift gradient,' 'attractor field,' and 'intransitability' are used repeatedly but never given observable indicators or testable criteria. The argument proceeds by definitional assertion rather than by a method that could be evaluated.",
+        "excerpt": "Within the HibriMind ontology, a hybrid human-AI agent is not defined by the mere combination of a human and an AI system. It is constituted by four elements: 1. a biological operator; 2. an algorithmic substrate; 3. an authorized object or purpose; 4. an accumulated history of coupling.",
+        "explanation": "The paper provides a structured ontological framework with four defined elements, which serves as the conceptual apparatus for its claims. However, no formal or empirical method is used to test the framework.",
         "page": 2,
-        "paraphrase": "The paper provides no operational definition or measurement procedure for its core constructs, making the central claim unfalsifiable as presented.",
-        "section": "The Principle of Hybrid-Agent Intransitability",
-        "signal_type": "concern"
+        "paraphrase": "The paper offers a four-element ontology for hybrid agents but does not provide a formal or empirical method to test its claims.",
+        "section": "The Hibrimind Frame: Hybrid Agent And Drift Gradient",
+        "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "In long-horizon systems, the agent may already be inclined before the new instruction arrives. Its prior operational history may contain: residual goals from previous operators; stabilized framings from earlier tasks; relational patterns learned in prior interactions; tool-use habits formed in different contexts; unexamined assumptions embedded in memory; safety responses optimized for another environment; latent conflicts between old and new authorized objects.",
-        "explanation": "The paper asserts that accumulated history causally shapes future behavior but offers no demonstration, simulation, case study, or formal argument. The claim is presented as self-evident rather than validated.",
+        "excerpt": "In such cases, the drift does not begin in the new prompt. The prompt activates or negotiates with a history already present.",
+        "explanation": "The paper asserts a causal mechanism (drift arising from inherited history) but provides no empirical demonstration, case study, or simulation to validate this mechanism.",
         "page": 3,
-        "paraphrase": "No empirical, formal, or case-based validation of the central principle is provided.",
-        "section": "Why This Matters for Drift",
+        "paraphrase": "The paper asserts a causal mechanism for drift but does not validate it empirically.",
+        "section": "Why This Matters For Drift",
         "signal_type": "concern"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "Transferring memory does not transfer the hybrid. And: Copying the substrate transports residues of a trajectory, not the agentic relation that constituted it.",
-        "explanation": "The claim that 'transferring memory does not transfer the hybrid' is asserted as a conclusion without any supporting evidence or reasoning beyond the definitional frame. The lists of possible residues are hypothetical and not grounded in any observed or reported instance.",
-        "page": 3,
-        "paraphrase": "The paper's central claim is supported only by restatement and illustrative lists, not by evidence that the described causal mechanism occurs.",
-        "section": "The Principle of Hybrid-Agent Intransitability",
-        "signal_type": "concern"
+        "excerpt": "An agent coupled to one person may accumulate language, emotional tone, symbolic associations, risk patterns, relational expectations, and bodily or clinical context specific to that person. If that agent, memory, or harness is transferred to another person without strict reinitialization, the new interaction may inherit residues that do not belong to the new authorized object.",
+        "explanation": "The paper supports its clinical-domain claim with a plausible mechanism (accumulation of person-specific residues) but does not provide concrete evidence that such transfer actually produces harmful or distorting effects.",
+        "page": 4,
+        "paraphrase": "The paper provides a plausible mechanism for clinical-domain intransitability but no concrete evidence of actual effects.",
+        "section": "Clinical And Therapeutic-Adjacent Systems",
+        "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "This paper follows two prior HibriMind formulations. First, Human Supervision as Attractor Stabilization argued that the safety problem in longitudinal human-AI interaction is not reducible to isolated responses. Second, From Execution to Custody proposed functional non-derivation: the engineered capacity of an agent to monitor whether its own trajectory is ceasing to serve the authorized object.",
-        "explanation": "For claims spanning AI safety, clinical systems, multi-operator workflows, and epistemology, the absence of any engagement with existing work on agent memory, continual learning, context transfer, or safety frameworks leaves the gap positioning unsubstantiated. The paper does not establish what is already known or how its contribution differs.",
+        "excerpt": "This paper follows two prior HibriMind formulations. First, Human Supervision as Attractor Stabilization argued that the safety problem in longitudinal human-AI interaction is not reducible to isolated responses. Second, F rom Execution to Custody proposed functional non-derivation: the engineered capac- ity of an agent to monitor whether its own trajectory is ceasing to serve the authorized object.",
+        "explanation": "The paper positions itself relative to two prior HibriMind works but does not engage with broader literature on agent memory, continual learning, transfer learning, or human-AI interaction. For a position paper making claims about agent portability, this is a significant gap.",
         "page": 1,
-        "paraphrase": "The paper engages with no external literature; its only cited prior work consists of two self-referential HibriMind formulations.",
+        "paraphrase": "The paper cites only two prior HibriMind formulations and does not engage with broader related work on agent memory or portability.",
         "section": "Genealogical Note",
         "signal_type": "concern"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "For this reason, a hybrid agent cannot be fully transferred between biological operators as if it were neutral. The algorithmic substrate may be copied. The memory may be exported. The harness may be reused. But the hybrid agent itself remains tied to the situated history of coupling that formed it.",
-        "explanation": "There is no acknowledgment of when portability might be adequate, when the principle might fail, or what scope conditions apply. The paper presents the principle as universally applicable without qualification.",
+        "excerpt": "These mechanisms do not eliminate the problem. They make the inherited trajectory visible enough to be governed.",
+        "explanation": "The paper acknowledges that its proposed safety mechanisms do not eliminate the problem, but it does not discuss limitations of the central intransitability claim itself, such as conditions under which transfer might be more or less lossy, or the absence of empirical support.",
         "page": 5,
-        "paraphrase": "The paper does not discuss any limitations, boundary conditions, or potential counterexamples to the intransitability principle.",
-        "section": "Conclusion: The Agent as Inherited Trajectory",
-        "signal_type": "concern"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "Provenance maps: records of which operators, tasks, tools, and objects shaped the agent's current state. Object reset protocols: explicit clearing or compartmentalization of prior authorized objects before a new one is accepted. Gradient audits: inspection of inherited memories, routines, tool-use patterns, and relational tendencies.",
-        "explanation": "The paper enumerates mechanisms such as provenance maps, gradient audits, and context quarantine but provides no technical specification, no criteria for success, and no account of how these would be operationalized or tested.",
-        "page": 5,
-        "paraphrase": "The proposed safety mechanisms are listed without any account of how they would be implemented, measured, or validated.",
-        "section": "Safety Architecture for Non-Transitability",
+        "paraphrase": "The paper acknowledges limits of its proposed mechanisms but not of the central claim itself.",
+        "section": "Safety Architecture For Non-Transitability",
         "signal_type": "concern"
       },
       {
         "dimension": "presentation_and_precision",
-        "excerpt": "A shared agent is not neutral. It is an inherited trajectory. The agent does not continue only from the prompt. It continues from its own past. Transferring memory does not transfer the hybrid.",
-        "explanation": "The structure moves from introduction to ontological frame to principle to implications to safety architecture to conclusion, with key formulations restated for emphasis. The writing is coherent and the terminology is internally consistent.",
+        "excerpt": "The drift may not begin in the current prompt. It may arrive already embedded in the agent's inherited operational history.",
+        "explanation": "The paper uses consistent terminology (drift gradient, attractor field, authorized object) and restates key formulations clearly, aiding readability and precision.",
         "page": 5,
-        "paraphrase": "The paper is clearly organized and uses consistent terminology throughout.",
-        "section": "Key Formulations",
+        "paraphrase": "The paper maintains consistent terminology and clear restatement of key claims.",
+        "section": "Conclusion",
         "signal_type": "positive"
       }
     ],
@@ -217,27 +211,23 @@
     "full_text_url": "https://zenodo.org/records/22750153/files/The_Intransitability_of_Hybrid_Agents_HibriMind_v0.1.pdf",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "No empirical or formal evidence supporting the claim that accumulated history causally shapes future agent behavior in the specific way described.",
-      "No engagement with existing literature on continual learning, catastrophic forgetting, context transfer, memory-augmented agents, or AI safety frameworks.",
-      "No operational definitions or measurement procedures for drift gradients, attractor fields, or intransitability.",
-      "No discussion of limitations, boundary conditions, or potential counterexamples to the intransitability principle."
-    ],
-    "overall_quality_score": 35,
+    "missing_information": [],
+    "overall_quality_score": 55,
     "paper_type": "position_or_conceptual",
     "positive_signals": [
       "The available text identifies data or a benchmark used by the work.",
-      "The central principle is stated clearly and repeatedly, with explicit definitions of the four elements constituting a hybrid agent.",
-      "The paper identifies concrete downstream implications (safety architecture, clinical systems, multi-operator clusters) that could motivate future work.",
-      "The paper proposes specific safety mechanisms (provenance maps, object reset protocols, gradient audits, jurisdiction markers, context quarantine, reinitialization options, human reauthorization) that are at least nameable and enumerable."
+      "The paper clearly states its central principle and defines key concepts.",
+      "The paper provides a structured ontological framework for hybrid agents.",
+      "The paper proposes concrete safety mechanisms for non-transitability.",
+      "The paper maintains consistent terminology and clear restatement of key claims."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
-    "recommendation": "weak",
+    "rationale": "The paper is a coherent position piece with a clearly stated central claim and a structured conceptual framework. However, it lacks empirical validation, formal modeling, or worked examples to support its causal assertions about drift gradients and intransitability. Related work is limited to two prior HibriMind formulations, and limitations of the central claim are not addressed. The paper is internally consistent but remains at the level of conceptual assertion rather than demonstrated or tested claims.",
+    "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "66cf5688b877ae502d473e0255d349277f47703fe140e5b6809ae0d9c8db3253",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The paper's conceptual contribution is clear, but the absence of empirical or formal validation, limited related work, and unaddressed limitations make it difficult to assess the scientific substance of the claims. The paper may be valuable as a position piece, but its claims are not yet supported by evidence."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

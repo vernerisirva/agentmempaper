@@ -31,7 +31,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-08-25",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-06 11:06:52",
   "notified_date": "2026-09-06",
@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-06 09:42:09",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:46",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -105,102 +105,120 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:04:39+00:00",
-    "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-09-16T12:04:43+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "manual-review:52cdd11618a118e3",
+    "assessor_type": "manual_override",
     "combined_rank_score": 0.92,
     "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 74/100, high confidence, based on full text.",
-    "confidence": "high",
+    "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper systematically studies conditional memory in scientific reasoning and proposes a Knowledge Boundary-Aware Router that selectively activates memory based on pre-inference input proxies. The central claim that memory utility is input- and computation-dependent is supported by boundary-cohort ablations, layer-stage interventions, and comparisons against static and activation-rate-matched random routing across biological and chemical benchmarks. The work is methodologically grounded and clearly positioned, though internal router validation is limited to offline replay and some reproducibility details are absent from the supplied text.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
+      "limitations_and_uncertainty_handling": 3,
       "methodological_rigor": 4,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 2,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "knowledge-circuit nodes. Based on these analyses, we propose a Knowledge Boundary-Aware Router that uses task-specificinputproxiesavailableb",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "routable back- bone families. For each family and benchmark, we com- pare the base model, its domain-adapted LoRA variant, a memory-only va",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "across in- puts, tasks, and injection locations. Compared with static and activation-rate-matched random routing, our approach more consistent",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ering Model Accuracy Macro Prec. Macro Rec. Macro F1 Exact Match Kendall Accuracy Brier\u2193 DeepSeek-V4-Pro0.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.67\u00b10.0090.57\u00b10.0100.82\u00b10.0080.70\u00b10.0070.19\u00b10",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 4,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "gnalsdefinetheanalysiscohortsforthebound- ary and ablation studies. For task-level performance, BioProBench ERR uses ac- curacy and macro",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "TEM knowl- edge, specialized problem solving, and theorem application (Hendrycks et al. 2021; Wang et al. 2024a; Rein et al. 2023; Chenet",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "excerpt": "Our contributions are threefold: \u2022We conduct a systematic empirical study of conditional memory in scientific reasoning across biological and chemical domains, two backbone families, and six task types.",
+        "explanation": "This excerpt shows the authors clearly enumerate the main contributions, which supports contribution clarity.",
         "page": 2,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Related Work",
+        "paraphrase": "The paper explicitly states its threefold contributions, including a systematic empirical study, boundary characterization, and a boundary-aware routing mechanism.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "Existing work emphasizes aggregate gains and we study when mem- ory is needed and causally useful at scientific boundaries.",
+        "explanation": "This excerpt positions the work against existing memory-augmented LLM research and states the novel focus on boundary-dependent utility.",
+        "page": 2,
+        "paraphrase": "The paper identifies a gap in existing work by noting that prior studies emphasize aggregate gains rather than when memory is causally useful at scientific boundaries.",
+        "section": "Conditional Memory-Based Llms",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": null,
-        "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-        "page": null,
-        "paraphrase": "No reproducible review or selection methodology was detected.",
-        "section": null,
-        "signal_type": "missing"
+        "excerpt": "bA i =1[E ans(Mbase(xi),yi)<\u03c4 A],(1) bR i =1[E step(Mbase(xi),yi)<\u03c4 R],(2) bP i =1[C i <\u03c4 P ].(3)",
+        "explanation": "This excerpt shows a formal definition of the boundary code, supporting methodological rigor in the analysis framework.",
+        "page": 2,
+        "paraphrase": "The behavioral boundary characterization is formalized with explicit indicators for final-answer failure, reasoning-step failure, and prediction instability.",
+        "section": "Behavioral Scientific Knowledge Boundary",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "The empirical feature-based Data Router outperforms the Random Router in every displayed setting and provides a stronger trade-off than the fixed Always OFF and Always ON configurations.",
+        "explanation": "This excerpt reports an ablation that isolates the effect of input-dependent routing from activation rate, strengthening evaluation validity.",
+        "page": 6,
+        "paraphrase": "The external data router is compared against activation-rate-matched random routing and static configurations, showing that gains depend on which samples activate memory.",
+        "section": "External Routing Versus",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Bio prediction-instability co- horts improve by 2.09 and 1.82 points, whereas the corre- sponding Chem cohorts decline by 4.45 and 3.81 points; Chem reasoning-failure-positive examples, in contrast, im- prove by 4.71 points.",
+        "explanation": "This excerpt provides quantitative evidence that memory effects change sign across cohorts, aligning with the central claim of conditional utility.",
+        "page": 6,
+        "paraphrase": "The paper reports mixed memory effects across boundary cohorts, with gains in some regimes and regressions in others, directly supporting the claim that memory utility is non-uniform.",
+        "section": "Boundary-Dependent Memory Effects",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Sparse key-value layers ex- pandcapacity(Lampleetal.2019)andlookup-basedcondi- tional memory, instantiated by Engram, uses suffixn-gram lookupasacomplementarysparsityaxis(Chengetal.2026).",
+        "explanation": "This excerpt shows explicit comparison with sparse key-value layers, memory-expert architectures, datastore methods, and activation-based memories, positioning the gap adequately for the paper's claims.",
+        "page": 2,
+        "paraphrase": "The paper situates conditional memory within prior memory-augmented LLM approaches and distinguishes its focus on boundary-dependent causal utility.",
+        "section": "Conditional Memory-Based Llms",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "When available, repeated-run variationisreportedasmean\u00b1standarddeviation.BoldindicatesthebestresultwithineachQwen-familyblockineachcolumn.",
+        "explanation": "This excerpt shows that repeated-run standard deviations are reported, which supports transparency in evaluation.",
+        "page": 5,
+        "paraphrase": "The paper reports repeated-run variation and specifies the benchmarks, models, and baselines used.",
+        "section": "Datasets",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Because this is a same-cohort offline replay, it provides mechanism- level validation rather than an independent generalization estimate.",
+        "explanation": "This excerpt shows the authors acknowledge a limitation of the internal router evaluation, supporting limitations handling.",
+        "page": 6,
+        "paraphrase": "The paper explicitly states that the internal router validation is a same-cohort offline replay and therefore provides mechanism-level rather than independent generalization evidence.",
+        "section": "Internal Routing Of Knowledge-Circuit Nodes",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "bhi,\u03c4,l,s =h i,\u03c4,l,s +\u03c0t(xi)uL i,luS i,s \u00b7ai,l,sgi,\u03c4,l,s\u2206mi,\u03c4,l,s, (13)",
+        "explanation": "This excerpt shows precise mathematical definitions of the memory injection and routing mechanism, supporting presentation precision.",
+        "page": 4,
+        "paraphrase": "The paper provides formal notation for the knowledge-circuit node update and the routed hidden-state update.",
+        "section": "Internal Boundary-Aware Parameter Routing",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2608.23982",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "Internal-router evidence is same-cohort offline replay, not independent generalization. Some implementation details are absent from the bounded supplied text. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     ],
-    "overall_quality_score": 74,
-    "paper_type": "survey_or_review",
+    "overall_quality_score": 82,
+    "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
@@ -209,13 +227,13 @@
       "An ablation analysis is reported.",
       "Formal definitions or proof-oriented evidence is present."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper systematically studies conditional memory in scientific reasoning and proposes a Knowledge Boundary-Aware Router that selectively activates memory based on pre-inference input proxies. The central claim that memory utility is input- and computation-dependent is supported by boundary-cohort ablations, layer-stage interventions, and comparisons against static and activation-rate-matched random routing across biological and chemical benchmarks. The work is methodologically grounded and clearly positioned, though internal router validation is limited to offline replay and some reproducibility details are absent from the supplied text.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "Internal-router evidence is same-cohort offline replay, not independent generalization. Some implementation details are absent from the bounded supplied text. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
   },
   "semantic_scholar_id": "d447f4f7bd455c4d384e8fc1fb932ba295581f3a",
   "source": "arxiv",

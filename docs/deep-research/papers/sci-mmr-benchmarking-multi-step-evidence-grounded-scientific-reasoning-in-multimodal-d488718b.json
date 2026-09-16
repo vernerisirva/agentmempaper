@@ -53,7 +53,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:28:10",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:45",
     "last_seen_at": "2026-09-15 12:04:20",
     "metadata_sources": [
       "openalex",
@@ -119,25 +119,25 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:02:47+00:00",
+    "assessed_at": "2026-09-16T11:43:20+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.96,
     "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 76/100, medium confidence, based on partial full text.",
+    "concise_summary": "The available evidence suggests a clearly supported scholarly contribution. Automated score 85/100, medium confidence, based on partial full text.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 4,
+      "evaluation_or_validation_strength": 5,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
+      "methodological_rigor": 5,
       "presentation_and_precision": 3,
       "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 2,
+      "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
@@ -148,16 +148,16 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 8,
         "paraphrase": "The contribution is stated explicitly.",
-        "section": "Evaluation",
+        "section": "Main Results",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ed as fol- lows: \u2022 We introduceSci-MMR, the first benchmark for multi-step evidence-grounded scientific reasoning. Built from peer-reviewed",
+        "excerpt": "ions. To address this gap, we introduceSci-MMR, a benchmark for evaluating multi-step evidence- arXiv:2609.11243v1 [cs.AI] 10 Sep 2026",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
+        "page": 1,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experiment",
+        "section": "Introduction",
         "signal_type": "positive"
       },
       {
@@ -166,16 +166,16 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 3,
         "paraphrase": "A baseline or comparison system is described.",
-        "section": "Experiment",
+        "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ates three complementary dimensions: (1) An- swer Accuracy, (2) Evidence Coverage, and (3) Claim Coverage, measuring whether models re- cover the complete reasoning chai",
+        "excerpt": "quipping models with visual cropping tools raises accuracy by 4.5 points, confirming that active localization does help, though its gains remain",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
+        "page": 2,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Evaluation",
+        "section": "Introduction",
         "signal_type": "positive"
       },
       {
@@ -184,7 +184,16 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 9,
         "paraphrase": "The work reports an error or qualitative analysis.",
-        "section": "Evaluation",
+        "section": "Main Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "own below retains the finer distinctions used for sensitivity analysis and representative cases. F.3. Interpreting Zero-Count Subtypes Zero entries in",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 26,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "This Definition Makes Hit Count A Conserva-",
         "signal_type": "positive"
       },
       {
@@ -193,7 +202,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 3,
         "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Experiment",
+        "section": "Related Work",
         "signal_type": "positive"
       },
       {
@@ -202,18 +211,108 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 5,
         "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Accuracy label \u2013 \u2013 \u2013 384 92% 0.80 Table 9| Human inter-annotator agreement before adjudication and Gemini 3.5 Flash agreement with adjudicated h",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 22,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Whether Answering Requires Combining",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "We introduceSci-MMR, the first benchmark for multi-step evidence-grounded scientific reasoning. Built from peer-reviewed pub- lications, it comprises 235 multi-hop rea- soning tasks spanning four scientific disci- plines and 35 domains, grounded in struc- tured argument graphs connecting scientific claims, citation-grounded knowledge, visual evidence, and supporting image regions.",
+        "explanation": "The paper explicitly states its contribution as a benchmark with a defined structure and scope, making the contribution clear.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "Existing multimodal benchmarks, however, largely evaluate final-answer accuracy, leaving open whether predictions are actually supported by traceable scientific evidence. We introduce Sci-MMR, a benchmark for multi-step evidence-grounded scientific reasoning built on structured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence, and supporting regions.",
+        "explanation": "The paper identifies a gap in existing benchmarks and positions its contribution as addressing that gap, indicating novelty and value.",
+        "page": 1,
+        "paraphrase": "The work identifies a gap in existing benchmarks and proposes a novel benchmark to address it.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "We adopt a human-in-the-loop pipeline in which automated tools perform scalable extraction and graph construction, while domain experts intervene only where scientific judgment is required: evidence annotation and final verification.",
+        "explanation": "The paper describes a human-in-the-loop pipeline with expert verification, indicating methodological rigor in benchmark construction.",
+        "page": 4,
+        "paraphrase": "The benchmark construction uses a human-in-the-loop pipeline with expert verification.",
+        "section": "Benchmark Construction And Composi-",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Evaluating eight frontier multimodal models under four reasoning settings\u2014Caption-only,Direct Visual Reasoning,Evidence-Hint Reasoning,andAgentic Tool-Use\u2014reveals a consistent gap between answer accuracy and evidence coverage: models frequently reach correct conclusions while recovering only partial supporting evidence.",
+        "explanation": "The paper evaluates eight models under four settings and reports quantitative results, providing strong validation of its claims.",
+        "page": 2,
+        "paraphrase": "The work evaluates eight models under four settings and reports quantitative results.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Evidence-related failures account for 57.2% of errors overall, dominated by access and localization failures at 40.1%, with gold underuse at 14.0% and visual extraction errors at 3.1% contributing smaller shares. Reasoning-related failures account for a further 31.8%, split between interpretation failures at 27.5% and final-answer mismatches at 4.2%; the remaining 11.0% fall outside these categories.",
+        "explanation": "The paper provides quantitative evidence for its claims about failure modes, aligning evidence with the stated conclusions.",
+        "page": 9,
+        "paraphrase": "The paper provides quantitative evidence for its claims about failure modes.",
+        "section": "Main Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Existing scientific multimodal benchmarks evaluate figure-grounded question answering, claim verification, and paper-level understanding, but typically treat reasoning as recovering a final answer rather than reconstructing the evidence supporting a scientific claim [Pramanick et al., 2024, Wang et al., 2025, Ansari et al., 2026, Zhao et al., 2026].",
+        "explanation": "The paper compares its approach to existing benchmarks and identifies a gap in evidence-grounded reasoning evaluation, though the comparison is brief and does not deeply analyze each prior work.",
+        "page": 3,
+        "paraphrase": "The paper positions its work relative to existing benchmarks and identifies a gap.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "All responses are evaluated by Gemini 3.5 Flash [Google Deep- Mind, 2026b] using a unified rubric for answer correctness and graph coverage. Human agree- ment and cross-judge validation are reported in Supplementary Sec. C.3.",
+        "explanation": "The paper describes its evaluation methodology and reports human agreement, indicating some transparency, though code and data availability are not explicitly stated in the provided text.",
+        "page": 7,
+        "paraphrase": "The paper describes its evaluation methodology and reports human agreement.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "First, an Argument Graph represents one plausible reconstruction of a paper\u2019s evidential structure rather than a unique ground truth. Evidence granularity, intermediate claims, and support relations may admit alternative yet valid interpretations.",
+        "explanation": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+        "page": 9,
+        "paraphrase": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+        "section": "Limitations",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "The node set is partitioned into four disjoint types: V = Vv \u222a Ve \u222a Vk \u222a Vc. \u2022 Vv: Visual source nodes denote figure panels, tables, and other visual elements containing experimental information.",
+        "explanation": "The paper provides formal definitions and precise notation for its argument graph structure, indicating precision in presentation.",
+        "page": 4,
+        "paraphrase": "The paper provides formal definitions and precise notation for its argument graph structure.",
         "section": "Evaluation",
         "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.11243",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
       "Extraction was limited to 120000 characters."
     ],
-    "overall_quality_score": 76,
+    "overall_quality_score": 85,
     "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
@@ -221,16 +320,18 @@
       "A baseline or comparison system is described.",
       "Quantitative evaluation signals were detected.",
       "The work reports an error or qualitative analysis.",
+      "Robustness or statistical analysis is reported.",
       "Limitations or threats to validity are acknowledged.",
-      "Formal definitions or proof-oriented evidence is present."
+      "Formal definitions or proof-oriented evidence is present.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-    "recommendation": "promising",
+    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "recommendation": "strong",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

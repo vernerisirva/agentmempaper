@@ -38,7 +38,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:20",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:46",
     "last_seen_at": "2026-09-14 13:18:11",
     "metadata_sources": [
       "openalex",
@@ -112,28 +112,31 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:02:57+00:00",
+    "assessed_at": "2026-09-16T11:55:43+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.92,
     "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
+      "Comparative claims were detected without a suitable baseline in the available text.",
+      "The central cross-tokenizer transfer claim is supported by only one experiment with mixed results.",
+      "The paper does not explicitly discuss limitations or uncertainty in the transfer results.",
+      "The ablation for N=1 shows little contribution, but the paper does not fully rule out that the transfer gains come from other factors."
     ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 64/100, high confidence, based on full text.",
-    "confidence": "high",
+    "concise_summary": "The paper proposes a polynomial hashing replacement for DeepSeek's Engram module to achieve tokenizer-agnosticism. The method is clearly described and the experiments show comparable performance to XOR hashing, but the central cross-tokenizer transfer claim is supported by only one experiment with modest and mixed results, and limitations are not discussed.",
+    "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 3,
-      "evidence_to_claim_alignment": 3,
+      "evaluation_or_validation_strength": 2,
+      "evidence_to_claim_alignment": 2,
       "limitations_and_uncertainty_handling": 1,
       "methodological_rigor": 3,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
+      "related_work_and_gap_positioning": 3,
       "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 4
+      "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
@@ -190,15 +193,91 @@
         "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
         "section": null,
         "signal_type": "concern"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "Hence, our goal is to modify the Engram Module such that it can be (re)used regardless of tokenizer choice.",
+        "explanation": "The paper clearly states its goal of achieving tokenizer-agnosticism by replacing XOR hashing with polynomial hashing.",
+        "page": 1,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "We use several popular benchmarks, from EleutherAI\u2019s lm-evaluation-harness(Gao et al. 2024), that are commonly-used for pretraining evaluation:ARC(Clarketal. 2018), BoolQ (Clark et al. 2019), COPA (Roemmele, Bejan, and Gordon 2011), HellaSwag (Zellers et al. 2019), LAMBADA (Paperno et al. 2016; Radford et al. 2019), PIQA (Bisk et al. 2020), SCIQ (Johannes Welbl 2017), and Winogrande (Levesque, Davis, and Morgenstern 2011; Sakaguchietal. 2019).",
+        "explanation": "The paper specifies the benchmarks and datasets used for evaluation.",
+        "page": 4,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Base 1.7B + Engram 0.8B + Poly NO - 0.318 0.604 0.530 0.730 0.533 0.513 0.714 0.821 0.564 0.592 1.025",
+        "explanation": "The paper reports quantitative results across multiple benchmarks.",
+        "page": 6,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Experiments",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "ModelC(N=1) NO 0.253 0.493 0.615 0.660 0.432 0.455 0.687 0.742 0.518 0.542 0.851 YES 0.254 0.491 0.615 0.670 0.431 0.457 0.691 0.743 0.514 0.544 0.851",
+        "explanation": "The paper includes an ablation study to isolate the contribution of N=1 grams.",
+        "page": 7,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Ablation Study",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Code\u2014 https://github.com/jararap/polyhash-engram",
+        "explanation": "The paper provides a link to the code repository.",
+        "page": 1,
+        "paraphrase": "Code, data, or research artifacts are described as available.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "ModelB0.7B + Pretrained ModelA\u2019s Engram Emb. 1.5B YES To B (%) -0.007 0.011 0.105 0.071 0.039 0.030 0.019 0.036 0.000 0.038 -0.012",
+        "explanation": "The paper claims tokenizer-agnosticism is achieved, but the transfer experiment shows only marginal improvements over the base model, with some benchmarks declining.",
+        "page": 7,
+        "paraphrase": "The central cross-tokenizer transfer claim is supported by only one experiment with modest results.",
+        "section": "Ablation Study",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Our experiments show that these modifications are reasonable and enables effective cross-tokenizer transfer. Possible future work directions involve scaling Engram in a tokenizer-agnostic manner.",
+        "explanation": "The paper lacks a dedicated limitations section and does not discuss the modest transfer results or potential failure cases.",
+        "page": 7,
+        "paraphrase": "The paper does not explicitly discuss limitations or uncertainty in the main claims.",
+        "section": "Conclusion and Future Work",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Engram Module Adjacent. There are other alternative embedding modules/layers (Google Team 2025; Tseng and Sa 2026; Sadhukhan et al. 2026) whose mechanisms are different from Deepseek\u2019s Engram. Our work focuses on removing the latter\u2019s tokenizer requirement.",
+        "explanation": "The paper discusses related work on tokenization, Engram modules, and hash embeddings, and identifies the tokenizer lock-in gap.",
+        "page": 2,
+        "paraphrase": "The paper positions its work relative to existing Engram and hashing approaches.",
+        "section": "Related Works",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2607.29065",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 64,
-    "paper_type": "position_or_conceptual",
+    "missing_information": [
+      "No explicit limitations section or discussion of failure cases.",
+      "No direct comparison of cross-tokenizer transfer against a tokenizer-locked baseline in the same experimental setup.",
+      "No statistical significance testing for the cross-tokenizer transfer results."
+    ],
+    "overall_quality_score": 55,
+    "paper_type": "methods_or_algorithm",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
@@ -206,13 +285,13 @@
       "An ablation analysis is reported.",
       "Code, data, or research artifacts are described as available."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The paper presents a clear technical contribution\u2014replacing XOR hashing with polynomial hashing to achieve tokenizer-agnostic Engram embeddings\u2014and provides quantitative experiments, ablations, and code availability. However, the evidence for the central cross-tokenizer transfer claim is mixed: the transferred Engram embeddings produce only marginal gains over the base model (mean 0.560 to 0.584, with several benchmark scores below the base), and the paper does not clearly establish that the observed improvements are attributable to byte-equivalent N-gram lookups rather than other factors. The methodological description is detailed but the validation of the core claim is weak, and limitations are not explicitly discussed.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "528f4fe5c512abdcd932df1960da584132b85070437260d5d6618da0809f04f2",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The paper's central claim of tokenizer-agnosticism is supported by a single cross-tokenizer transfer experiment with modest and mixed results. The absence of explicit limitations, the small performance differences, and the lack of a direct comparison against a tokenizer-locked baseline for the transfer scenario leave the strength of the contribution uncertain."
   },
   "semantic_scholar_id": "bc472d9b918257bc8bc824120889e8330d1c0222",
   "source": "openalex",

@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-11 11:26:40",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:55",
     "metadata_sources": [
       "openalex",
@@ -111,9 +111,9 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:14:21+00:00",
+    "assessed_at": "2026-09-16T11:54:36+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
@@ -151,7 +151,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 4,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Method",
+        "section": "Experiment Setup",
         "signal_type": "positive"
       },
       {
@@ -169,7 +169,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 5,
         "paraphrase": "The work reports an error or qualitative analysis.",
-        "section": "Results",
+        "section": "Why Memory And Probing Work",
         "signal_type": "positive"
       },
       {
@@ -201,17 +201,17 @@
       },
       {
         "dimension": "contribution_clarity",
-        "excerpt": "We introduce environment-probing curation, a deployment-compatible extension that gives an existing asynchronous curator agent least-privilege, read-only world tools to check, scope, and refresh candidate memories.",
-        "explanation": "The abstract and introduction clearly define environment-probing curation as a deployment-compatible extension that gives the curator agent read-only world tools to check, scope, and refresh candidate memories.",
+        "excerpt": "We introduce environment-probing curation, a deployment-compatible ex- tensionthatgivesanexistingasynchronouscuratoragentleast- privilege, read-only world tools to check, scope, and refresh candidatememories.",
+        "explanation": "The paper introduces environment-probing curation as a deployment-compatible extension to post-task memory curation, with a clear propose\u2013probe\u2013commit mechanism.",
         "page": 1,
         "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
+        "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "CLBench uses two schedules (Asawa et al. 2026). The primary 40-question drift schedule hides a SQLite schema that changes after question 20... Adapted APEX contributes 90 management-consulting tasks from six shared document worlds.",
-        "explanation": "The paper uses CLBench database exploration and 90 adapted APEX management-consulting tasks, with detailed descriptions of schedules, models, and metrics.",
+        "excerpt": "CLBenchusestwo schedules(Asawaetal.2026).Theprimary40-questiondrift schedule hides a SQLite schema that changes after question 20, testing reuse and stale-memory repair.",
+        "explanation": "The paper uses CLBench and adapted APEX benchmarks with specified schedules, models, and run counts.",
         "page": 4,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
         "section": "Experiment Setup",
@@ -219,47 +219,47 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "On CLBench, probing raises pass rate from 39% to 73% and pass-discounted reward from 8.60 to 22.60 while reducing queries from 8.8 to 4.7 per question and task-agent cost from $3.38 to $1.68.",
-        "explanation": "The paper reports pass rates, rewards, tool calls, token usage, and costs across multiple configurations and models.",
+        "excerpt": "GHCP + Mem (w/ Env Probing)73\u00b15 22.60\u00b12.074.7\u00b10.31.69M\u00b197.8K 45.4K\u00b16.0K $1.68\u00b10.14",
+        "explanation": "The paper reports pass rates, rewards, tool calls, token counts, and costs with confidence intervals across multiple configurations.",
         "page": 5,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Results",
+        "section": "Clbench",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "Qualitative analysis of memory records. Figure 3 compares representative records rather than one-to-one rewrites.",
-        "explanation": "The paper includes qualitative analysis of memory records, comparing trajectory-only and probing curator outputs.",
+        "excerpt": "Qualitative analysis of memory records.Figure 3 com- pares representative records rather than one-to-one rewrites.",
+        "explanation": "The paper includes qualitative analysis of memory records, comparing trajectory-only and probing-curated records.",
         "page": 5,
         "paraphrase": "The work reports an error or qualitative analysis.",
-        "section": "Results",
+        "section": "Why Memory And Probing Work",
         "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "We implement the runtime with the Python GitHub Copilot SDK, which exposes the same agent engine as GitHub Copilot CLI.",
-        "explanation": "The paper references the GitHub Copilot SDK and provides prompt templates and implementation details in appendices.",
-        "page": 9,
+        "excerpt": "Theoriginalbenchmarkandleaderboardareavailable at https://www.mercor.com/apex/apex-agents-leaderboard/.",
+        "explanation": "The paper references the GitHub Copilot SDK and the APEX benchmark leaderboard as available resources.",
+        "page": 4,
         "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Appendix A",
+        "section": "Experiment Setup",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "Let S = (S1,...,SN) be an online stream of related tasks in an environment whose state is Ei when task Si arrives.",
-        "explanation": "The method section provides formal notation for the online setting, task agent, curator agent, and pass-discounted reward.",
+        "excerpt": "LetS= (S 1,...,S N)be an online stream of related tasks in an environment whose state isEi when taskSi arrives.",
+        "explanation": "The paper provides a formal online setting with task stream, environment state, and pass-discounted reward equation.",
         "page": 3,
         "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Method",
+        "section": "Online Setting And Task Agent",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "GHCP + Mem (w/ Env Probing) achieves the best task-agent reward gain per dollar in five of six worlds (Table 2); GHCP + Mem is marginally better in the remaining world.",
-        "explanation": "The paper claims probing gives the best task-agent reward gain per dollar in five of six APEX worlds, but the available text does not provide a full statistical comparison or confidence intervals for the cost-adjusted efficiency metric in Table 2.",
-        "page": 6,
+        "excerpt": "GHCP + Mem (w/ Env Probing) achieves the best task-agent reward gain per dollar in five of six worlds (Table 2); GHCP + Mem is marginally betterintheremainingworld.",
+        "explanation": "The paper claims probing gives the best reward gain per dollar in five of six APEX worlds, but the available text does not fully report the underlying absolute reward and cost values for all baselines in the main body.",
+        "page": 5,
         "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
-        "section": "Results",
+        "section": "Adapted Apex",
         "signal_type": "concern"
       }
     ],

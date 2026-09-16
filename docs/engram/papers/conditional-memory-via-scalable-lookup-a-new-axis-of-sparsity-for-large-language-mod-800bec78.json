@@ -54,7 +54,7 @@
     "curation_note": "manually added",
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:14",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:46",
     "last_seen_at": "2026-09-05 17:59:14",
     "metadata_sources": [
       "arxiv"
@@ -117,24 +117,29 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:04:41+00:00",
+    "assessed_at": "2026-09-16T12:00:23+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.92,
-    "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 65/100, medium confidence, based on partial full text.",
+    "concerns": [
+      "The supplied text does not include a dedicated limitations section, and the discussion of limitations is limited to brief remarks about under-training and benchmark noise.",
+      "Statistical significance or variance estimates are not reported for the benchmark improvements.",
+      "The paper relies on a single training run per configuration, and no evidence of repeated runs or uncertainty quantification is provided.",
+      "Some claims about infrastructure efficiency are based on a conservative baseline setup, but the fully optimized implementation is not evaluated."
+    ],
+    "concise_summary": "The paper introduces Engram, a conditional memory module that modernizes N-gram embeddings for O(1) lookup, and evaluates it against iso-parameter and iso-FLOPs MoE baselines. The available text shows clear contribution framing, extensive benchmark results, ablations, and mechanistic analyses supporting the claimed benefits. However, the partial text lacks a dedicated limitations section and statistical uncertainty reporting, leaving methodological completeness uncertain.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 3,
+      "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 1,
-      "methodological_rigor": 2,
+      "limitations_and_uncertainty_handling": 2,
+      "methodological_rigor": 3,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
+      "related_work_and_gap_positioning": 4,
       "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 4
     },
@@ -151,11 +156,11 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ivated-parameter budget fixed. Full training-time benchmark trajectories are reported in Appendix B. Benchmark(Metric)# Shots Dense-4B MoE-",
+        "excerpt": "del ConfigurationsAll models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3 (Liu et al.",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 9,
+        "page": 10,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Abstract",
+        "section": "Experimental Setup",
         "signal_type": "positive"
       },
       {
@@ -169,48 +174,134 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "e modeling effectiveness against the system-level latency constraints detailed in Section 2.5. 2.4. Integration with Multi-branch Architecture In this work, rather than standard",
+        "excerpt": "ctly iso-parameter and iso-FLOPs MoE baselines. \u2022 Second, from a system perspective, we advocate for algorithm-system co-design. Exist- 19",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
+        "page": 19,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
+        "section": "Related Work",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "compute window available for hiding latency, our ablation in Section 6.2 shows that modeling performance favors early intervention to off",
+        "excerpt": "on loss. Specifically, for the \u201cw/o multi branch\u201d ablation, we retain the mHC backbone structure but replace the branch-specific gating wi",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 6,
+        "page": 16,
         "paraphrase": "An ablation analysis is reported.",
-        "section": "Abstract",
+        "section": "Structural Ablation And Layer Sensitivity",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ension is largely preserved by the backbone. 6.3. Sensitivity Analysis To characterize the functional contribution of the Engram module, we evaluate t",
+        "excerpt": null,
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 17,
+        "page": null,
         "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Abstract",
+        "section": null,
         "signal_type": "positive"
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "neration sparse models. Code available at:https://github.com/deepseek-ai/Engram. 1. Introduction Sparsity is a recurring design principle fo",
+        "excerpt": "neration sparse models. Code available at:https://github.com/deepseek-ai/Engram.",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 1,
         "paraphrase": "Code, data, or research artifacts are described as available.",
         "section": "Abstract",
         "signal_type": "positive"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "we advocate for a complementary axis of sparsity: conditional memory. Whereas conditional computation sparsely activates parameters to process dynamic logic",
+        "explanation": "The introduction clearly states the proposed paradigm and its instantiation, making the contribution identifiable.",
+        "page": 2,
+        "paraphrase": "The paper explicitly introduces conditional memory as a complementary sparsity axis and instantiates it via Engram.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "In contrast, we treat conditional memory as a first-class modeling primitive instantiated via the carefully designed Engram module.",
+        "explanation": "The related work section explicitly contrasts the approach with prior methods such as SCONE and OverEncoding, supporting a claim of novelty in evaluation protocol and system co-design.",
+        "page": 19,
+        "paraphrase": "The paper positions Engram as distinct from prior N-gram embedding approaches by treating conditional memory as a first-class primitive and evaluating under strict iso-parameter and iso-FLOPs protocols.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "All models are pre-trained on a corpus of 262 billion tokens and we utilize the tokenizer from DeepSeek-v3",
+        "explanation": "The paper specifies Dense-4B, MoE-27B, Engram-27B, and Engram-40B configurations with identical training data and activated parameters, supporting a controlled comparison.",
+        "page": 10,
+        "paraphrase": "The experimental setup describes controlled model configurations with matched activated parameters and token budgets.",
+        "section": "Experimental Setup",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Engram-27B consistently improves over the iso-parameter and iso-FLOPs MoE-27B baseline.",
+        "explanation": "Table 1 and the accompanying text provide quantitative comparisons across a broad benchmark suite, supporting the evaluation strength.",
+        "page": 11,
+        "paraphrase": "The paper reports extensive benchmark results across multiple domains, including knowledge, reasoning, reading comprehension, code, and math.",
+        "section": "Experimental Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "The consistent off-diagonal shift, which aligns with the LogitLens results (Section 6.1.1), confirms that Engram achieves deeper representations at earlier layers.",
+        "explanation": "The paper reports lower early-layer KL divergence and an upward shift in CKA alignment, directly supporting the central hypothesis about effective depth.",
+        "page": 15,
+        "paraphrase": "The mechanistic analyses using LogitLens and CKA provide evidence for the claim that Engram increases effective depth.",
+        "section": "Representational Alignment And Effective Depth",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "existing approaches place embeddings strictly at the input layer (Layer 0), which inherently serializes memory access and computation",
+        "explanation": "The related work section explicitly identifies gaps in prior approaches, such as lack of strict iso-compute evaluation and input-layer-only placement, and positions Engram as addressing these gaps.",
+        "page": 20,
+        "paraphrase": "The paper distinguishes its approach from prior N-gram embedding and memory-augmented methods along modeling, evaluation, and system dimensions.",
+        "section": "Related Work",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Code available at:https://github.com/deepseek-ai/Engram.",
+        "explanation": "The abstract includes a code repository link, and the experimental setup describes model configurations, supporting reproducibility.",
+        "page": 1,
+        "paraphrase": "The paper states that code is available and provides detailed model configuration information.",
+        "section": "Abstract",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Although it does not yet strictly dominate Engram-27B on every task, this is likely an artifact of under-training.",
+        "explanation": "The available text mentions under-training and benchmark noise but does not systematically discuss limitations or provide statistical uncertainty estimates.",
+        "page": 11,
+        "paraphrase": "The paper does not provide a dedicated limitations section in the supplied text, and uncertainty is only briefly acknowledged.",
+        "section": "Experimental Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "We define the allocation ratio \ud835\udf0c\u2208 [ 0, 1] as the fraction of the inactive-parameter budget assigned to MoE expert capacity",
+        "explanation": "The methods sections define allocation ratios, parameter metrics, and architectural equations, contributing to presentation precision.",
+        "page": 7,
+        "paraphrase": "The paper uses formal notation and precise definitions for the Sparsity Allocation problem and Engram architecture.",
+        "section": "Optimal Allocation Ratio Between Moe And Engram",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2601.07372",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "Detailed hyperparameters and full training configuration are referenced as being in Appendix A but are not included in the supplied text.",
+      "Full benchmark trajectories and additional ablation details are referenced as being in Appendix B but are not included.",
+      "A dedicated limitations or broader impact section is not present in the supplied material.",
+      "Statistical significance or confidence intervals for benchmark results are not provided."
+    ],
     "overall_quality_score": 65,
-    "paper_type": "position_or_conceptual",
+    "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
@@ -218,15 +309,21 @@
       "Quantitative evaluation signals were detected.",
       "An ablation analysis is reported.",
       "Robustness or statistical analysis is reported.",
-      "Code, data, or research artifacts are described as available."
+      "Code, data, or research artifacts are described as available.",
+      "The contribution is stated explicitly and positioned as a complementary sparsity axis.",
+      "The paper reports extensive quantitative benchmarks across knowledge, reasoning, reading comprehension, code, and math domains.",
+      "Ablation studies isolate the contribution of key architectural components and layer placement.",
+      "Mechanistic analyses using LogitLens and CKA provide evidence for the claimed effective-depth effect.",
+      "The paper includes a controlled iso-parameter and iso-FLOPs comparison against a MoE baseline.",
+      "Code availability is stated in the abstract."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The manuscript presents a clearly articulated architectural contribution (Engram as conditional memory) with substantial quantitative evaluation, ablations, and mechanistic analyses. However, the supplied text is partial and omits several sections that would be needed to fully verify methodological details, statistical rigor, and limitations. The available evidence supports a credible but not fully established scholarly contribution.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The assessment is based on partial full text. Several sections, including detailed hyperparameters, full ablation tables, and a dedicated limitations discussion, are not present in the supplied material. This prevents a definitive judgment on methodological completeness and uncertainty handling."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",

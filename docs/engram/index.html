@@ -25,7 +25,7 @@
           <div class="library-hero">
             <h1>Engram &amp; Conditional Memory Paper Library</h1>
             <p class="hero-copy">A daily updated library of papers on Engram-style model memory, learned lookup tables, and transferable memory mechanisms.</p>
-            <p class="hero-line">Updated 2026-09-15 · 0 papers</p>
+            <p class="hero-line">Updated 2026-09-15 · 3 papers</p>
           </div>
         </header>
 
@@ -56,9 +56,176 @@
           <div class="section-heading">
             <h2>High-quality relevant papers</h2>
             <p>Quality-screened papers, newest first. New papers are shown first for 24 hours.</p>
-            <p class="empty">No papers have passed manuscript quality review yet. <a href="review.html">Browse review candidates</a> while the library is progressively assessed.</p>
+
           </div>
           <div class="paper-list" id="paper-list">
+
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="conditional-memory hashed-ngram-memory" data-latest-run="true" data-is-new="false" data-published="2026-09-03" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="lngram v2: latent n-gram memory with interpretable discrete representations" data-search="lngram v2: latent n-gram memory with interpretable discrete representations yunao zheng, bin wen, xiaojie wang transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  conditional-memory hashed-ngram-memory openalex arxiv relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations</h3>
+        <p class="meta">Yunao Zheng, Bin Wen, Xiaojie Wang · Published 2026-09-03 · Source: OpenAlex, arXiv</p>
+        <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://arxiv.org/abs/2609.03426">Open paper</a>
+        <a class="paper-detail-link" href="papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Transformers lack a native lookup mechanism, requiring repeated dense computation to recognize and reuse local static patterns. Lngram v1 introduces tokenizer-independent conditional memory through discrete latent n-gram addressing, but its memory capacity is coupled with the backbone width, limiting scalability due...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">OpenAlex</span><span class="badge source">arXiv</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-05 17:59</li>
+            <li>DOI: 10.48550/arxiv.2609.03426</li><li>arXiv: 2609.03426</li><li>OpenAlex: W7208730657</li><li>OpenAlex IDs: W7208730657</li><li>arXiv IDs: 2609.03426</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2609.03426v1">arXiv</a><a href="https://doi.org/10.48550/arxiv.2609.03426">DOI</a><a href="https://openalex.org/W7208730657">OpenAlex</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Lngram v2 is a well-specified architectural extension that decouples memory capacity from backbone width, validated through controlled comparisons, ablations, statistical testing, and semantic analysis of discrete IDs. The evidence supports the central claims of parameter efficiency, scalability, and semantic preservation, though reproducibility is limited by absent code and partially deferred implementation details.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: partial full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: manual_override (manual-review:c674eadf971a4c05)</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly and distinguished from Lngram v1. (page 1)</li><li>The proposed mechanism is described with formal notation. (page 2)</li><li>A parameter-matched control isolates the effect of the proposed mechanism. (page 7)</li><li>Multi-seed results and statistical tests are reported. (page 8)</li><li>The claim that gains are not due to added parameters is directly tested. (page 8)</li><li>The paper positions itself against prior conditional memory and lookup mechanisms. (page 1)</li><li>Semantic analysis uses reference/held-out separation and permutation testing. (page 6)</li><li>Training-stage sensitivity is acknowledged and addressed. (page 20)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations. Yunao Zheng, Bin Wen, Xiaojie Wang. 2026-09-03. https://arxiv.org/abs/2609.03426">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv semantic_scholar" data-decision="relevant" data-tags="engram conditional-memory hashed-ngram-memory" data-latest-run="false" data-is-new="false" data-published="2026-08-29" data-first-seen="2026-09-05" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="when to adapt: conditional memory adapters for retention-preserving domain specialization" data-search="when to adapt: conditional memory adapters for retention-preserving domain specialization jiaxuan hou, lei wang large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (ood) performance. we pr... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.  engram conditional-memory hashed-ngram-memory arxiv semantic_scholar relevant" data-quality-status="pass" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization</h3>
+        <p class="meta">Jiaxuan Hou, Lei Wang · Published 2026-08-29 · Source: arXiv, Semantic Scholar</p>
+        <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://www.semanticscholar.org/paper/25ac9303c7376abdf1dc80620c5408d049061536">Open paper</a>
+        <a class="paper-detail-link" href="papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Large language models deployed in specialized domains must improve in-domain performance without sacrificing general capabilities. Existing parameter-efficient fine-tuning methods are typically always on: their learned perturbations are applied to every input, which can degrade out-of-domain (OOD) performance. We pr...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span><span class="badge source">Semantic Scholar</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">engram</span><span class="badge tag">conditional-memory</span><span class="badge tag">hashed-ngram-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-05 17:59</li>
+            <li>arXiv: 2608.29327</li><li>Semantic Scholar: 25ac9303c7376abdf1dc80620c5408d049061536</li><li>arXiv IDs: 2608.29327</li><li>Semantic Scholar IDs: 25ac9303c7376abdf1dc80620c5408d049061536</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2608.29327">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory, hashed-ngram-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram&#x27;s hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: partial full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: manual_override (manual-review:8b7e5667d9be5f71)</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 3/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The contribution is stated explicitly. (page 2)</li><li>The method is described with a formal update equation. (page 3)</li><li>Quantitative results are reported for the proposed method and baselines. (page 9)</li><li>The mechanistic evidence aligns with the retention claim. (page 6)</li><li>The gap is identified but related-work comparison is limited. (page 1)</li><li>Limitations are acknowledged. (page 9)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization. Jiaxuan Hou, Lei Wang. 2026-08-29. https://www.semanticscholar.org/paper/25ac9303c7376abdf1dc80620c5408d049061536">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
+
+
+    <article class="paper-card primary" data-source="arxiv" data-sources="arxiv semantic_scholar" data-decision="relevant" data-tags="conditional-memory" data-latest-run="false" data-is-new="false" data-published="2026-08-25" data-first-seen="2026-09-06" data-score="92" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memory is not always needed: characterizing conditional memory in scientific reasoning" data-search="memory is not always needed: characterizing conditional memory in scientific reasoning zhen bi, xueshu chen, yan wang, zhizhi peng, haosen hong, zhen wang, zhixuan chu, bingyu zhu, jungang lou scientific reasoning requires language models to retrieve specialized knowledge and incorporate it reliably into multi-step computation. conditional memory provides an explicit lookup pathway that complements dense neural representations, but its usefulness is inherently input- and computation-dependent: retrieved i... studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.  conditional-memory arxiv semantic_scholar relevant" data-quality-status="pass" data-quality-score="82" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="partial_full_text" data-quality-downranked="false" data-combined-score="0.920000">
+      <div class="paper-main">
+        <h3>Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning</h3>
+        <p class="meta">Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, Zhixuan Chu, Bingyu Zhu, Jungang Lou · Published 2026-08-25 · Source: arXiv, Semantic Scholar</p>
+        <p class="reason"><strong>Topic match:</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.</p>
+        <p class="quality-summary"><strong>Quality reviewed</strong></p>
+      </div>
+      <div class="paper-side">
+        <a class="paper-link" href="https://www.semanticscholar.org/paper/d447f4f7bd455c4d384e8fc1fb932ba295581f3a">Open paper</a>
+        <a class="paper-detail-link" href="papers/memory-is-not-always-needed-characterizing-conditional-memory-in-scientific-reasonin-221afc67.html">Research card</a>
+        <details class="paper-more">
+          <summary>More metadata</summary>
+          <p class="abstract-summary">Scientific reasoning requires language models to retrieve specialized knowledge and incorporate it reliably into multi-step computation. Conditional memory provides an explicit lookup pathway that complements dense neural representations, but its usefulness is inherently input- and computation-dependent: retrieved i...</p>
+
+          <div class="details-group">
+            <strong>Review metadata</strong>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 92/100</li>
+              <li>Screening category: Engram / conditional-memory study</li>
+
+
+            </ul>
+          </div>
+          <div class="details-group"><strong>Sources</strong><div class="tags"><span class="badge source">arXiv</span><span class="badge source">Semantic Scholar</span></div></div>
+          <div class="details-group"><strong>Tags</strong><div class="tags"><span class="badge tag">conditional-memory</span></div></div>
+          <ul>
+            <li>First seen by Paper Scout: 2026-09-06 09:42</li>
+            <li>arXiv: 2608.23982</li><li>Semantic Scholar: d447f4f7bd455c4d384e8fc1fb932ba295581f3a</li><li>arXiv IDs: 2608.23982</li><li>Semantic Scholar IDs: d447f4f7bd455c4d384e8fc1fb932ba295581f3a</li>
+          </ul>
+          <div class="secondary-links"><a href="https://arxiv.org/abs/2608.23982">arXiv</a></div>
+          <p class="details-reason"><strong>Screening rationale</strong> Studies model-integrated conditional memory; matched title/abstract rules: conditional-memory.</p>
+
+    <details class="quality-evidence">
+      <summary>Scholarly quality evidence</summary>
+      <p>Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper systematically studies conditional memory in scientific reasoning and proposes a Knowledge Boundary-Aware Router that selectively activates memory based on pre-inference input proxies. The central claim that memory utility is input- and computation-dependent is supported by boundary-cohort ablations, layer-stage interventions, and comparisons against static and activation-rate-matched random routing across biological and chemical benchmarks. The work is methodologically grounded and clearly positioned, though internal router validation is limited to offline replay and some reproducibility details are absent from the supplied text.</p>
+      <ul>
+        <li>Recommendation: promising</li>
+        <li>Confidence: medium</li>
+        <li>Assessment scope: partial full text</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessor: manual_override (manual-review:52cdd11618a118e3)</li>
+
+      </ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 3/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper explicitly states its threefold contributions, including a systematic empirical study, boundary characterization, and a boundary-aware routing mechanism. (page 2)</li><li>The paper identifies a gap in existing work by noting that prior studies emphasize aggregate gains rather than when memory is causally useful at scientific boundaries. (page 2)</li><li>The behavioral boundary characterization is formalized with explicit indicators for final-answer failure, reasoning-step failure, and prediction instability. (page 2)</li><li>The external data router is compared against activation-rate-matched random routing and static configurations, showing that gains depend on which samples activate memory. (page 6)</li><li>The paper reports mixed memory effects across boundary cohorts, with gains in some regimes and regressions in others, directly supporting the claim that memory utility is non-uniform. (page 6)</li><li>The paper situates conditional memory within prior memory-augmented LLM approaches and distinguishes its focus on boundary-dependent causal utility. (page 2)</li><li>The paper reports repeated-run variation and specifies the benchmarks, models, and baselines used. (page 5)</li><li>The paper explicitly states that the internal router validation is a same-cohort offline replay and therefore provides mechanism-level rather than independent generalization evidence. (page 6)</li></ul>
+    </details>
+
+          <button class="citation-button" type="button" data-citation="Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning. Zhen Bi, Xueshu Chen, Yan Wang, Zhizhi Peng, Haosen Hong, Zhen Wang, Zhixuan Chu, Bingyu Zhu, Jungang Lou. 2026-08-25. https://www.semanticscholar.org/paper/d447f4f7bd455c4d384e8fc1fb932ba295581f3a">Copy citation</button>
+          <span class="copy-status" aria-live="polite"></span>
+        </details>
+      </div>
+    </article>
 
           </div>
           <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>

@@ -25,7 +25,7 @@
     "first_seen_at": "2026-09-15 12:04:19",
     "first_seen_date": "2026-09-15",
     "future_date": false,
-    "is_new": true,
+    "is_new": false,
     "last_seen_at": "2026-09-15 12:04:20",
     "last_seen_date": "2026-09-15",
     "latest_relevant_date_bucket": 0,
@@ -52,77 +52,212 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:46+00:00",
-      "assessment_scope": "title_and_abstract",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessed_at": "2026-09-16T12:04:43+00:00",
+      "assessment_scope": "partial_full_text",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:b472a8787ea817cb",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.93,
-      "concerns": [],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.",
-      "confidence": "low",
+      "concerns": [
+        "The available results appear to demonstrate functionality rather than comparative effectiveness."
+      ],
+      "concise_summary": "Scientific quality remains uncertain because the supplied assessment excerpts truncate key Methods, Results and Discussion passages. The original model insufficient proposal relied on that missing input and is not a valid adverse scientific decision.",
+      "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
-        "contribution_clarity": 2,
-        "evaluation_or_validation_strength": null,
-        "evidence_to_claim_alignment": null,
-        "limitations_and_uncertainty_handling": null,
-        "methodological_rigor": null,
+        "contribution_clarity": 3,
+        "evaluation_or_validation_strength": 2,
+        "evidence_to_claim_alignment": 3,
+        "limitations_and_uncertainty_handling": 4,
+        "methodological_rigor": 3,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": null,
-        "reproducibility_and_transparency": null,
-        "scholarly_novelty_or_value": null
+        "related_work_and_gap_positioning": 3,
+        "reproducibility_and_transparency": 4,
+        "scholarly_novelty_or_value": 3
       },
       "downranked": false,
       "evidence": [
         {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "vidness, executed online data collection with 288 participants, developed analysis pipelines through 8h+ continuous coding sessions, and produ",
+          "dimension": "methodological_rigor",
+          "excerpt": "ta; Studies 2\u20133 analyzed the same 288\u2011participant dataset from Study 1 with distinct hypotheses and analyses. Study 1 examined whether VW",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": null,
+          "page": 1,
+          "paraphrase": "The available text identifies data or a benchmark used by the work.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "ciency . The system demonstrated efficiency gains compared with traditional research timelines, executing complete research projects in hours r",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 4,
+          "paraphrase": "A baseline or comparison system is described.",
+          "section": "Discussion",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "7 h processing time and averaged a total marginal cost of \u223c$114 USD per research project (not including the human participant payments of \u223c$4,5",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 1,
+          "paraphrase": "Quantitative evaluation signals were detected.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "USD per research project (not including the human participant payments of \u223c$4,500 USD for the current experiment). We selected cognitive scie",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 1,
           "paraphrase": "User, expert, operational, or deployment evidence is described.",
-          "section": "Abstract",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "omparable to experienced researchers, though with limitations in conceptual nuance and theoretical interpretation. This is a step toward embo",
+          "excerpt": "searchers face increasing cognitive and practical limitations in their ability to synthesize existing knowledge and discover novel insights [",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": null,
+          "page": 1,
           "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Abstract",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "study are openly available on GitHub at https://github.com/Explore\u2010Science/Virtuous\u2010Machines\u2010Towards\u2010Artificial\u2010General\u2010Science .",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 9,
+          "paraphrase": "Code, data, or research artifacts are described as available.",
+          "section": "Data Availability Statement",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "gents at any stage, providing a means of external quality control throughout the process. The system facilitates these collaborative capabilities",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 2,
+          "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+          "section": "Methods",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
+          "excerpt": "eview process per study. The data analysis agents successfully implemented mixed\u2010effects models and multi\u2010level modeling; handled 279 heterogeneous raw da",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 3,
+          "paraphrase": "The available results appear to demonstrate functionality rather than comparative effectiveness.",
+          "section": "Results",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "methodological_rigor",
           "excerpt": null,
           "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
           "page": null,
-          "paraphrase": "No suitable baseline comparison was detected in the available text.",
+          "paraphrase": "No reproducible review or selection methodology was detected.",
           "section": null,
           "signal_type": "missing"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "The contribution of this work is architectural rather than methodological at the model level: we use only standard, publicly available frontier LLMs, and demonstrate that when combined across providers, embedded in a hierarchical multi\u2010agent architecture, and augmented by the cognitive operators and dynamic memory systems described above \u2010 these techniques are jointly sufficient to conduct empirical science autonomously from hypothesis generation through to manuscript preparation.",
+          "explanation": "The contribution is explicitly stated in the Discussion section as architectural rather than methodological at the model level.",
+          "page": 4,
+          "paraphrase": "The paper clearly states its contribution as an architectural demonstration of end-to-end autonomous scientific discovery with human participants.",
+          "section": "Discussion",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "The system leverages a hierarchical multi\u2010agent architecture [ 59 ] to autonomously produce scientific research through the coordinated and collaborative efforts of a task force of specialized AI agents (Figure\u00a0 1 ).",
+          "explanation": "The Methods section describes a hierarchical multi-agent architecture with orchestrators and specialists, and four cognitive operators (abstraction, metacognition, decomposition, autonomy).",
+          "page": 2,
+          "paraphrase": "The system architecture is described with specific components and cognitive operators.",
+          "section": "Methods",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "There are (currently) no objective tests with which to evaluate the quality of scientific manuscripts; thus, here we employed structured expert review (mirroring established peer review processes) to assess the AI\u2010generated manuscripts.",
+          "explanation": "The Results section describes structured expert review mirroring established peer review processes.",
+          "page": 3,
+          "paraphrase": "Human expert evaluation was conducted to assess the AI-generated manuscripts.",
+          "section": "Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Theoretical models were occasionally misrepresented, including inappropriate extension of a VWM framework [ 120 ] to unrelated visuospatial tasks in Study 3, and Study 2's false claim about working memory resource al",
+          "explanation": "The negative aspects section of the expert evaluation reveals issues that undermine the claim of rigor comparable to experienced researchers.",
+          "page": 3,
+          "paraphrase": "The expert evaluation identified substantive problems in the AI-generated manuscripts, including theoretical misrepresentations and false claims.",
+          "section": "Results",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "The system executed full studies (from initial conception to manuscript) in \u223c17 h runtime on average per study, excluding data collection. Comparatively, typical human\u2010led workflows can require weeks to months of human expert time depending on experimental complexity.",
+          "explanation": "Runtime, token usage, cost, and code generation metrics are reported in Table 1 and the Results section.",
+          "page": 3,
+          "paraphrase": "The paper reports quantitative system performance metrics that support the feasibility claim.",
+          "section": "Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Current end\u2010to\u2010end agentic scientific discovery frameworks continue to operate primarily in simulated or abstract digital environments [ 40 ,  41 ,  42 ,  43 ,  44 ,  45 ], typically producing outcomes with predictive power but lacking explanation of underlying causal mechanisms.",
+          "explanation": "The Introduction reviews prior work in AI scientific discovery and identifies the gap of systems operating only in simulated or abstract digital environments.",
+          "page": 1,
+          "paraphrase": "The paper positions its work relative to prior AI scientific discovery systems and identifies the gap of real-world empirical testing.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "The data and code that support the findings of this study are openly available on GitHub at  https://github.com/Explore\u2010Science/Virtuous\u2010Machines\u2010Towards\u2010Artificial\u2010General\u2010Science .",
+          "explanation": "The Data Availability Statement provides a GitHub repository link.",
+          "page": 9,
+          "paraphrase": "Data and code are described as openly available on GitHub.",
+          "section": "Data Availability Statement",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "While the framework is general by design, currently its physical capabilities are domain\u2010constrained to online experiments for which the necessary tools and interfaces are available.",
+          "explanation": "The Discussion section includes a dedicated limitations subsection addressing multiple challenges.",
+          "page": 4,
+          "paraphrase": "The paper acknowledges limitations including domain constraints, visual imperfections, and sensitivity to early-stage errors.",
+          "section": "Discussion",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
-      "full_text_url": null,
+      "full_text_assessed": true,
+      "full_text_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13573717/fullTextXML",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "No suitable baseline comparison was detected in the available text."
+        "No reproducible review or selection methodology was detected.",
+        "JATS XML: Page labels are logical body-section numbers, not PDF pages.",
+        "The public Europe PMC manuscript XML was acquired, but the bounded context does not expose enough detail to resolve the scientific judgment. Logical XML section numbers are not PDF pages."
       ],
-      "overall_quality_score": 42,
-      "paper_type": "empirical_research",
+      "overall_quality_score": 54,
+      "paper_type": "systems_or_application",
       "positive_signals": [
+        "The available text identifies data or a benchmark used by the work.",
+        "A baseline or comparison system is described.",
+        "Quantitative evaluation signals were detected.",
         "User, expert, operational, or deployment evidence is described.",
-        "Limitations or threats to validity are acknowledged."
+        "Limitations or threats to validity are acknowledged.",
+        "Code, data, or research artifacts are described as available.",
+        "Dataset documentation, quality control, licensing, or ethics is discussed."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-      "recommendation": "uncertain",
+      "rationale": "Scientific quality remains uncertain because the supplied assessment excerpts truncate key Methods, Results and Discussion passages. The original model insufficient proposal relied on that missing input and is not a valid adverse scientific decision.",
+      "recommendation": "weak",
       "rubric_version": "scholarly-rubric-v1",
-      "source_content_hash": "423a275f7186bbd771866ebf2c3cc71f69c188f7fee362142ba4359c278d7e6a",
+      "source_content_hash": "ab2410ee72f45a51fdd2531a9400dc68c7a22b47e3dd55c237ff9b078f4c3a6a",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The public Europe PMC manuscript XML was acquired, but the bounded context does not expose enough detail to resolve the scientific judgment. Logical XML section numbers are not PDF pages."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -209,25 +344,25 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:47+00:00",
+      "assessed_at": "2026-09-16T11:43:20+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.96,
       "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 76/100, medium confidence, based on partial full text.",
+      "concise_summary": "The available evidence suggests a clearly supported scholarly contribution. Automated score 85/100, medium confidence, based on partial full text.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 4,
+        "evaluation_or_validation_strength": 5,
         "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 4,
+        "methodological_rigor": 5,
         "presentation_and_precision": 3,
         "related_work_and_gap_positioning": 3,
-        "reproducibility_and_transparency": 2,
+        "reproducibility_and_transparency": 3,
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
@@ -238,16 +373,16 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 8,
           "paraphrase": "The contribution is stated explicitly.",
-          "section": "Evaluation",
+          "section": "Main Results",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "ed as fol- lows: \u2022 We introduceSci-MMR, the first benchmark for multi-step evidence-grounded scientific reasoning. Built from peer-reviewed",
+          "excerpt": "ions. To address this gap, we introduceSci-MMR, a benchmark for evaluating multi-step evidence- arXiv:2609.11243v1 [cs.AI] 10 Sep 2026",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 2,
+          "page": 1,
           "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experiment",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
@@ -256,16 +391,16 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 3,
           "paraphrase": "A baseline or comparison system is described.",
-          "section": "Experiment",
+          "section": "Related Work",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ates three complementary dimensions: (1) An- swer Accuracy, (2) Evidence Coverage, and (3) Claim Coverage, measuring whether models re- cover the complete reasoning chai",
+          "excerpt": "quipping models with visual cropping tools raises accuracy by 4.5 points, confirming that active localization does help, though its gains remain",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
+          "page": 2,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Evaluation",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
@@ -274,7 +409,16 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 9,
           "paraphrase": "The work reports an error or qualitative analysis.",
-          "section": "Evaluation",
+          "section": "Main Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "own below retains the finer distinctions used for sensitivity analysis and representative cases. F.3. Interpreting Zero-Count Subtypes Zero entries in",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 26,
+          "paraphrase": "Robustness or statistical analysis is reported.",
+          "section": "This Definition Makes Hit Count A Conserva-",
           "signal_type": "positive"
         },
         {
@@ -283,7 +427,7 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 3,
           "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Experiment",
+          "section": "Related Work",
           "signal_type": "positive"
         },
         {
@@ -292,18 +436,108 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 5,
           "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+          "section": "Evaluation Metrics",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Accuracy label \u2013 \u2013 \u2013 384 92% 0.80 Table 9| Human inter-annotator agreement before adjudication and Gemini 3.5 Flash agreement with adjudicated h",
+          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "page": 22,
+          "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+          "section": "Whether Answering Requires Combining",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "We introduceSci-MMR, the first benchmark for multi-step evidence-grounded scientific reasoning. Built from peer-reviewed pub- lications, it comprises 235 multi-hop rea- soning tasks spanning four scientific disci- plines and 35 domains, grounded in struc- tured argument graphs connecting scientific claims, citation-grounded knowledge, visual evidence, and supporting image regions.",
+          "explanation": "The paper explicitly states its contribution as a benchmark with a defined structure and scope, making the contribution clear.",
+          "page": 2,
+          "paraphrase": "The contribution is stated explicitly.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "Existing multimodal benchmarks, however, largely evaluate final-answer accuracy, leaving open whether predictions are actually supported by traceable scientific evidence. We introduce Sci-MMR, a benchmark for multi-step evidence-grounded scientific reasoning built on structured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence, and supporting regions.",
+          "explanation": "The paper identifies a gap in existing benchmarks and positions its contribution as addressing that gap, indicating novelty and value.",
+          "page": 1,
+          "paraphrase": "The work identifies a gap in existing benchmarks and proposes a novel benchmark to address it.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "We adopt a human-in-the-loop pipeline in which automated tools perform scalable extraction and graph construction, while domain experts intervene only where scientific judgment is required: evidence annotation and final verification.",
+          "explanation": "The paper describes a human-in-the-loop pipeline with expert verification, indicating methodological rigor in benchmark construction.",
+          "page": 4,
+          "paraphrase": "The benchmark construction uses a human-in-the-loop pipeline with expert verification.",
+          "section": "Benchmark Construction And Composi-",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Evaluating eight frontier multimodal models under four reasoning settings\u2014Caption-only,Direct Visual Reasoning,Evidence-Hint Reasoning,andAgentic Tool-Use\u2014reveals a consistent gap between answer accuracy and evidence coverage: models frequently reach correct conclusions while recovering only partial supporting evidence.",
+          "explanation": "The paper evaluates eight models under four settings and reports quantitative results, providing strong validation of its claims.",
+          "page": 2,
+          "paraphrase": "The work evaluates eight models under four settings and reports quantitative results.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Evidence-related failures account for 57.2% of errors overall, dominated by access and localization failures at 40.1%, with gold underuse at 14.0% and visual extraction errors at 3.1% contributing smaller shares. Reasoning-related failures account for a further 31.8%, split between interpretation failures at 27.5% and final-answer mismatches at 4.2%; the remaining 11.0% fall outside these categories.",
+          "explanation": "The paper provides quantitative evidence for its claims about failure modes, aligning evidence with the stated conclusions.",
+          "page": 9,
+          "paraphrase": "The paper provides quantitative evidence for its claims about failure modes.",
+          "section": "Main Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Existing scientific multimodal benchmarks evaluate figure-grounded question answering, claim verification, and paper-level understanding, but typically treat reasoning as recovering a final answer rather than reconstructing the evidence supporting a scientific claim [Pramanick et al., 2024, Wang et al., 2025, Ansari et al., 2026, Zhao et al., 2026].",
+          "explanation": "The paper compares its approach to existing benchmarks and identifies a gap in evidence-grounded reasoning evaluation, though the comparison is brief and does not deeply analyze each prior work.",
+          "page": 3,
+          "paraphrase": "The paper positions its work relative to existing benchmarks and identifies a gap.",
+          "section": "Related Work",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "All responses are evaluated by Gemini 3.5 Flash [Google Deep- Mind, 2026b] using a unified rubric for answer correctness and graph coverage. Human agree- ment and cross-judge validation are reported in Supplementary Sec. C.3.",
+          "explanation": "The paper describes its evaluation methodology and reports human agreement, indicating some transparency, though code and data availability are not explicitly stated in the provided text.",
+          "page": 7,
+          "paraphrase": "The paper describes its evaluation methodology and reports human agreement.",
+          "section": "Experiments",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "First, an Argument Graph represents one plausible reconstruction of a paper\u2019s evidential structure rather than a unique ground truth. Evidence granularity, intermediate claims, and support relations may admit alternative yet valid interpretations.",
+          "explanation": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+          "page": 9,
+          "paraphrase": "The paper acknowledges limitations in its argument graph construction and evaluation methodology.",
+          "section": "Limitations",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "The node set is partitioned into four disjoint types: V = Vv \u222a Ve \u222a Vk \u222a Vc. \u2022 Vv: Visual source nodes denote figure panels, tables, and other visual elements containing experimental information.",
+          "explanation": "The paper provides formal definitions and precise notation for its argument graph structure, indicating precision in presentation.",
+          "page": 4,
+          "paraphrase": "The paper provides formal definitions and precise notation for its argument graph structure.",
           "section": "Evaluation",
           "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2609.11243",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
         "Extraction was limited to 120000 characters."
       ],
-      "overall_quality_score": 76,
+      "overall_quality_score": 85,
       "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
@@ -311,16 +545,18 @@
         "A baseline or comparison system is described.",
         "Quantitative evaluation signals were detected.",
         "The work reports an error or qualitative analysis.",
+        "Robustness or statistical analysis is reported.",
         "Limitations or threats to validity are acknowledged.",
-        "Formal definitions or proof-oriented evidence is present."
+        "Formal definitions or proof-oriented evidence is present.",
+        "Dataset documentation, quality control, licensing, or ethics is discussed."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-      "recommendation": "promising",
+      "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+      "recommendation": "strong",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -604,7 +840,7 @@
     "last_seen_date": "2026-09-15",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-11 11:28:40",
     "notified_date": "2026-09-11",
@@ -626,18 +862,14 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:13:36+00:00",
+      "assessed_at": "2026-09-16T12:04:42+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": "deepseek/deepseek-v4-pro-0813",
-      "assessor_type": "llm",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:a32ed9b8bd06e893",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.91,
-      "concerns": [
-        "The evaluation is observational and lacks controlled comparisons or statistical significance testing for the reliability metrics.",
-        "The claim that human time per idea is reduced to minutes is supported by qualitative description rather than measured data.",
-        "No public code, data, or playbook artifacts are described as released, limiting independent reproduction."
-      ],
-      "concise_summary": "Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models, with a clear dual-loop architecture and a substantive 31-iteration reliability evaluation. The paper is candid about limitations and positions itself adequately against prior work. The main weaknesses are the observational nature of the evaluation and the lack of controlled comparisons or statistical testing.",
+      "concerns": [],
+      "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models. The architecture is clearly described, and the evaluation provides quantitative evidence of improved execution reliability and qualitative evidence of robust recovery. However, the evaluation is limited in scale and lacks statistical rigor, and the scientific value of generated ideas is not directly validated. Overall, the paper is a credible systems contribution with clear limitations.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
@@ -648,190 +880,82 @@
         "methodological_rigor": 4,
         "presentation_and_precision": 4,
         "related_work_and_gap_positioning": 4,
-        "reproducibility_and_transparency": 3,
+        "reproducibility_and_transparency": 2,
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": null,
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": null,
-          "paraphrase": "The contribution is stated explicitly.",
-          "section": null,
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "died primarily within individual task episodes or benchmark task streams, these two forms of memory are coupled to persistent, multi-server",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 14,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ent, including state transitions, idea selection, baseline management, and analysis methodology. Beneath it, each model type maintains its",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 4,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "24; Lyu et al., 2026). AutoResearch supports high-throughput experimentation on small-scale problems (Karpathy, 2025), while FARS demonstrates that autonomous agents can produce re",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "validation gate for playbook updates. SkillOpt\u2019s ablation shows that removing the validation gate degrades performance. Auto-RecSys curre",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 14,
-          "paraphrase": "An ablation analysis is reported.",
-          "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": "Loop addresses Challenge 2 (system complexity and robustness) by building an evolving institutional memory for each model. The abstraction i",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 5,
-          "paraphrase": "Robustness or statistical analysis is reported.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "2026. Andrej Karpathy. Autoresearch, 2025.https://github.com/karpathy/autoresearch. Omar Khattab, Arnav Singhvi, Paridhi Maheshwari, Zhiyuan",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 15,
-          "paraphrase": "Code, data, or research artifacts are described as available.",
-          "section": "Conclusion",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "methodological_rigor",
-          "excerpt": null,
-          "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-          "page": null,
-          "paraphrase": "No reproducible review or selection methodology was detected.",
-          "section": null,
-          "signal_type": "missing"
-        },
-        {
-          "dimension": "contribution_clarity",
-          "excerpt": "We present Auto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys addresses these challenges through three harness designs: (1) distributed asynchronous execution for running multiple experiments in parallel across servers, (2) centralized cross-server memory for persistent and recoverable execution across sessions and failures, and (3) cognitive-procedural separation, where natural-language skill files guide LLM reasoning while deterministic scripts enforce operational correctness.",
-          "explanation": "The introduction clearly frames the contribution as addressing long feedback loops and system complexity through distributed asynchronous execution, centralized cross-server memory, and cognitive-procedural separation.",
+          "excerpt": "We presentAuto-RecSys, an autonomous research system for long-horizon experimentation on industry-scale recommendation models. Auto-RecSys supports the full experiment lifecycle, from idea formulation and implementation to validation, training, monitoring, debugging, and result analysis.",
+          "explanation": "The introduction clearly defines the problem setting and the proposed system, making the contribution unambiguous.",
           "page": 2,
-          "paraphrase": "The paper explicitly states the two challenges and the three harness designs that constitute the contribution.",
+          "paraphrase": "The paper explicitly states its contribution as an autonomous research system for long-horizon experimentation on industry-scale recommendation models.",
           "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "scholarly_novelty_or_value",
-          "excerpt": "Challenge 1: Long feedback loops require parallel exploration. Existing autonomous research systems can iterate serially because experiments complete quickly... For industry-scale recommendation models, a single training run can consume days of GPU time.",
-          "explanation": "The comparison in Table 1 and the related-work section establish that prior systems assume short feedback loops and self-contained code, whereas Auto-RecSys targets multi-day training and infrastructure dependencies.",
+          "excerpt": "Auto-RecSys is built around an agent harness that manages how research agents schedule experiments, preserve state, interact with infrastructure, recover from failures, and reuse accumulated execution knowledge.",
+          "explanation": "The novelty lies in extending autonomous research to industry-scale, long-horizon experimentation with distributed parallel execution and persistent recovery, which is differentiated from prior small-scale systems.",
           "page": 2,
-          "paraphrase": "The paper identifies a distinct operating regime not addressed by prior autonomous research systems and proposes mechanisms specific to that regime.",
+          "paraphrase": "The paper identifies a distinct operating regime for autonomous research and proposes three harness designs plus a dual-loop self-evolving architecture.",
           "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "Major fix step. A session log step spent recovering from an operational failure, such as a failed or resubmitted training job, a wrong hardware or entitlement setting, a package layer version mismatch, a metadata correction, or a baseline refresh.",
-          "explanation": "The evaluation section defines session log steps, major fix steps, zero-fix rate, and error categories, and applies them consistently across 31 iterations with phase-level aggregation.",
-          "page": 11,
-          "paraphrase": "The paper defines operational metrics and a phase-based analysis protocol for evaluating execution reliability.",
-          "section": "Introduction",
+          "excerpt": "The state machine enforces preconditions on each transition and triggers side effects, such as recording results to the experiment history when an idea is finalized and updating dead ends and pipeline recipes in the playbook.",
+          "explanation": "The use of deterministic scripts for state transitions and structured data formats for state files demonstrates methodological care for operational correctness.",
+          "page": 5,
+          "paraphrase": "The system design is grounded in a finite state machine with enforced preconditions and side effects, and a centralized memory store with structured data formats.",
+          "section": "The Experiment State Machine",
           "signal_type": "positive"
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "There is a baseline transition at iteration 21, when the baseline changed from a standard architecture to a combined configuration that integrated graph-mode compilation, a new embedding module, and task adapters; this altered the submission infrastructure... and created a natural experiment in playbook adaptability.",
-          "explanation": "The baseline shift at iteration 21 creates a learn-regress-recover cycle that provides evidence the playbook mechanism, rather than mere repetition, drives reliability improvements.",
+          "excerpt": "After absorbing these transition-specific lessons, the post-transition phase (iterations 26 to 31) reached 0.5 major fixes per iteration, with 5 of its 6 iterations requiring no operational fix at all, surpassing even the pre-transition stabilized performance.",
+          "explanation": "The evaluation provides concrete, measurable evidence of improved execution reliability as the playbook matures, directly supporting the central claim.",
           "page": 11,
-          "paraphrase": "The evaluation includes a natural experiment in the form of a baseline transition that tests playbook adaptability.",
-          "section": "Introduction",
+          "paraphrase": "The paper reports quantitative metrics over 31 experiment iterations, showing a reduction in major fix steps from 4.0 to 0.5 per iteration and a zero-fix rate of 5 out of 6 in the post-transition phase.",
+          "section": "Playbook Evolution And Execution Reliability",
           "signal_type": "positive"
         },
         {
           "dimension": "evidence_to_claim_alignment",
-          "excerpt": "In evaluation, Auto-RecSys substantially reduces human effort per experiment cycle and decreases major execution fixes as its playbooks mature, from 4.0 to 0.5 fixes per iteration across 31 unique iterations, while rapidly adapting to changes in the underlying baseline architecture.",
-          "explanation": "The conclusion's claim of decreasing major execution fixes is directly backed by the reported per-phase averages and zero-fix rates in Figure 4 and the accompanying text.",
-          "page": 15,
-          "paraphrase": "The central claim of improving execution reliability is supported by quantitative phase-level data showing a reduction from 4.0 to 0.5 major fixes per iteration.",
-          "section": "Conclusion",
+          "excerpt": "In human-in-the-loop mode, the researcher stays in control at two review checkpoints, idea selection and implementation review, and delegates the remaining execution, meaning validation, submission, monitoring, failure recovery, and analysis, to the system; for an idea of the same complexity, this reduces hands-on effort to minutes.",
+          "explanation": "The paper explicitly states that human-in-the-loop mode reduces hands-on effort to minutes and autonomous mode minimizes it further, aligning with the claimed benefit of higher researcher throughput.",
+          "page": 10,
+          "paraphrase": "The claim of reduced human time per experiment cycle is supported by a qualitative comparison between manual and autonomous modes.",
+          "section": "Human Bandwidth Per Idea",
           "signal_type": "positive"
         },
         {
           "dimension": "related_work_and_gap_positioning",
-          "excerpt": "Auto-RecSys combines these strands at the system level: execution trajectories update model-specific playbooks that improve how experiments are conducted, while experimental outcomes update research history that improves what is attempted next. Unlike prior methods studied primarily within individual task episodes or benchmark task streams, these two forms of memory are coupled to persistent, multi-server orchestration and multi-day industry-scale experiments.",
-          "explanation": "The comparisons are adequate for the actual claims: the paper does not claim to outperform prior systems on benchmark tasks but rather to address a different operating regime, and the related work supports this positioning.",
-          "page": 14,
-          "paraphrase": "The related-work section compares Auto-RecSys against autonomous research systems, agent harnesses, and procedural memory/skill methods, and identifies the specific gap of persistent multi-server orchestration for multi-day experiments.",
+          "excerpt": "Auto-RecSys studies a different operating regime: industry-scale recommendation models whose training takes hours or days, de- pends on complex infrastructure, and requires comparison against continuously evolving baselines.",
+          "explanation": "The related work section compares Auto-RecSys against systems like AI Scientist, AutoResearch, FARS, and agent harness frameworks, and explicitly states the different operating regime.",
+          "page": 13,
+          "paraphrase": "The paper extensively reviews prior autonomous research systems and agent harnesses, and clearly positions the gap for industry-scale, long-horizon experimentation.",
           "section": "Related Work",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "state/ registry.json # Global: active ideas across servers <model>/ active/<idea>.json # In-flight idea state (mutable) completed/<idea>.json # Archived (read-only) baselines.json # Shared baselines with lifecycle experiment_history.jsonl # Append-only log",
-          "explanation": "The persistence section provides a concrete directory layout and describes the recovery protocol, which supports architectural reproducibility even though code is not released.",
-          "page": 9,
-          "paraphrase": "The paper describes the storage layout, state machine, and playbook structure in sufficient detail to understand the system architecture.",
-          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": "A notable gap relative to SkillOpt (Yang et al., 2026) is the absence of a formal validation gate for playbook updates. SkillOpt's ablation shows that removing the validation gate degrades performance. Auto-RecSys currently accepts playbook updates unconditionally based on agent judgment.",
-          "explanation": "This candid limitation statement demonstrates awareness of a methodological weakness and proposes a concrete direction for improvement.",
+          "excerpt": "A notable gap relative to SkillOpt (Yang et al., 2026) is the absence of a formal validation gate for playbook updates. SkillOpt\u2019s ablation shows that removing the validation gate degrades performance. Auto-RecSys currently accepts playbook updates unconditionally based on agent judgment.",
+          "explanation": "The discussion section acknowledges gaps relative to SkillOpt and proposes future work for adaptive human-in-the-loop, demonstrating awareness of limitations.",
           "page": 14,
-          "paraphrase": "The discussion section explicitly acknowledges the absence of a formal validation gate for playbook updates and identifies it as a gap relative to SkillOpt.",
-          "section": "Related Work",
+          "paraphrase": "The paper explicitly discusses limitations, including the absence of a formal validation gate for playbook updates and the binary human-in-the-loop toggle.",
+          "section": "Discussion And Future Work",
           "signal_type": "positive"
         },
         {
           "dimension": "presentation_and_precision",
-          "excerpt": "The Execution Evolution Loop distills experiment trajectories into model-specific playbooks that record relevant files, validated commands, hardware requirements, recurring failures, and successful pipeline configurations. Failed attempts are retained as dead ends, while successful procedures are crystallized into reusable workflows.",
-          "explanation": "The dual-loop architecture is explained with a figure and consistent terminology throughout, and the evaluation metrics are defined before use.",
-          "page": 3,
-          "paraphrase": "The paper uses precise terminology and clearly separates the two evolution loops, the state machine, and the persistence architecture.",
-          "section": "Introduction",
+          "excerpt": "Major fix step.A session log step spent recovering from anoperationalfailure, such as a failed or resubmitted training job, a wrong hardware or entitlement setting, a package layer version mismatch, a metadata correction, or a baseline refresh.",
+          "explanation": "The definitions of evaluation metrics are explicit and operationalized, contributing to clarity and precision.",
+          "page": 11,
+          "paraphrase": "The paper uses precise terminology and defines metrics clearly, such as session log step, major fix step, and zero-fix rate.",
+          "section": "Playbook Evolution And Execution Reliability",
           "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "The rolling average shows a clear learn, regress, and recover cycle centered on this transition. During stabilization (iterations 5 to 20), the playbook absorbed hardware choices, submission parameters, build conventions, and input-naming rules, reducing major fixes from 4.0 to 1.3 per iteration.",
-          "explanation": "The reliability metrics are reported as descriptive statistics across phases without confidence intervals, significance tests, or a controlled comparison against a non-evolving baseline. This limits the strength of causal claims about the playbook mechanism.",
-          "page": 11,
-          "paraphrase": "The evaluation is observational and lacks controlled comparisons or statistical significance testing.",
-          "section": "Introduction",
-          "signal_type": "concern"
-        },
-        {
-          "dimension": "evidence_to_claim_alignment",
-          "excerpt": "In human-in-the-loop mode, the researcher stays in control at two review checkpoints, idea selection and implementation review, and delegates the remaining execution... for an idea of the same complexity, this reduces hands-on effort to minutes.",
-          "explanation": "The paper states that human-in-the-loop mode reduces hands-on effort to minutes and that one researcher's attention can cover more than a dozen ideas, but no measured human-time data is presented to substantiate these specific figures.",
-          "page": 10,
-          "paraphrase": "The claim that human time per idea is reduced to minutes is supported by qualitative description rather than measured data.",
-          "section": "Introduction",
-          "signal_type": "concern"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "We analyze execution reliability across 31 unique experiment iterations on one model... We introduce the following metrics derived from the session trajectory logs.",
-          "explanation": "The paper references session transcripts and playbook metadata as evidence but does not state that these artifacts are publicly available, which limits independent verification of the reported reliability improvements.",
-          "page": 11,
-          "paraphrase": "No public release of code, session transcripts, or playbook artifacts is described.",
-          "section": "Introduction",
-          "signal_type": "concern"
         }
       ],
       "full_text_assessed": true,
@@ -840,9 +964,7 @@
       "manual_override": false,
       "missing_information": [
         "No reproducible review or selection methodology was detected.",
-        "No statistical significance testing or confidence intervals are reported for the reliability metrics.",
-        "No controlled comparison against a non-evolving or non-playbook baseline is provided.",
-        "No public release of code, session transcripts, or playbook artifacts is described."
+        "Limited 31-iteration systems evidence, no statistical causal estimate, no direct validation of generated research ideas, and no formal playbook-update validation gate. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
       ],
       "overall_quality_score": 78,
       "paper_type": "systems_or_application",
@@ -853,21 +975,15 @@
         "Quantitative evaluation signals were detected.",
         "An ablation analysis is reported.",
         "Robustness or statistical analysis is reported.",
-        "Code, data, or research artifacts are described as available.",
-        "The contribution is stated explicitly and scoped to a distinct operating regime.",
-        "The paper defines concrete evaluation metrics (major fix steps, zero-fix rate, error categories) and reports quantitative results across 31 iterations.",
-        "The evaluation includes phase-level analysis and a natural baseline-transition experiment that tests playbook adaptability.",
-        "The related-work section compares against multiple relevant system families and identifies the specific gap addressed.",
-        "The discussion section explicitly acknowledges limitations, including the absence of a formal validation gate for playbook updates.",
-        "Concrete self-evolution examples are grounded in session transcript evidence."
+        "Code, data, or research artifacts are described as available."
       ],
-      "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+      "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. Auto-RecSys presents a well-motivated systems contribution for autonomous experimentation on industry-scale recommendation models. The architecture is clearly described, and the evaluation provides quantitative evidence of improved execution reliability and qualitative evidence of robust recovery. However, the evaluation is limited in scale and lacks statistical rigor, and the scientific value of generated ideas is not directly validated. Overall, the paper is a credible systems contribution with clear limitations.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "f4a5656658f30151b8399cb7e06826cea95b8a62162527682a37a19697b6bbf9",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+      "uncertainty": "Limited 31-iteration systems evidence, no statistical causal estimate, no direct validation of generated research ideas, and no formal playbook-update validation gate. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -940,28 +1056,32 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:50+00:00",
+      "assessed_at": "2026-09-16T11:48:20+00:00",
       "assessment_scope": "full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.93,
       "concerns": [
-        "Comparative claims were detected without a suitable baseline in the available text."
+        "Comparative claims were detected without a suitable baseline in the available text.",
+        "The paper does not empirically test or implement the proposed theory of scientific value, leaving the practical feasibility of checkable value judgments unvalidated.",
+        "The formal apparatus is presented as a sketch; no complete derivation or worked end-to-end example is provided for the proposed judgment form.",
+        "The related-work discussion is broad but does not systematically compare the proposal against existing quantitative theories of scientific value or evaluation frameworks.",
+        "The extracted text appears incomplete in places, making it difficult to assess whether all supporting arguments and tables are fully developed."
       ],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 57/100, high confidence, based on full text.",
+      "concise_summary": "This position paper argues that AI-for-science should treat a theory of scientific value as a foundational research task. It offers a clear conceptual framework, formal illustrations, and engagement with alternative views, but it does not empirically validate the proposal or demonstrate operational feasibility. The contribution is plausible and well-articulated but remains a research agenda rather than an established result.",
       "confidence": "high",
       "curation_note": null,
       "dimension_scores": {
-        "contribution_clarity": 2,
+        "contribution_clarity": 4,
         "evaluation_or_validation_strength": 2,
         "evidence_to_claim_alignment": 3,
         "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 4,
+        "methodological_rigor": 3,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 2,
-        "reproducibility_and_transparency": 3,
-        "scholarly_novelty_or_value": 3
+        "related_work_and_gap_positioning": 3,
+        "reproducibility_and_transparency": 2,
+        "scholarly_novelty_or_value": 4
       },
       "downranked": false,
       "evidence": [
@@ -976,11 +1096,11 @@
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "rection: research selection involves uncertainty, cost, and possible achievements as well as existing ones. 3 From Scientific Contributions to Checkable Judgments Closing an experi",
+          "excerpt": "licit credit would allow it to be weighed against cost. 4",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 3,
+          "page": 4,
           "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Introduction",
+          "section": "What Improves When An Experimental Loophole Is Closed?",
           "signal_type": "positive"
         },
         {
@@ -989,16 +1109,7 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 7,
           "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "ftware, version 0.1.1. Zenodo, 2026. URL https: //github.com/BeibaiDraco/maieusis/tree/v0.1.1. 10",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 10,
-          "paraphrase": "Code, data, or research artifacts are described as available.",
-          "section": "Conclusion",
+          "section": "From Assessments To Research Objectives",
           "signal_type": "positive"
         },
         {
@@ -1007,7 +1118,7 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 2,
           "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-          "section": "Introduction",
+          "section": "What Should A Theory Of Scientific Value Explain?",
           "signal_type": "positive"
         },
         {
@@ -1027,31 +1138,120 @@
           "paraphrase": "No reproducible review or selection methodology was detected.",
           "section": null,
           "signal_type": "missing"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "AI for science should make the development of a theory of scientific value a foundational research task.",
+          "explanation": "This direct statement of the main claim makes the contribution clear and easy to identify.",
+          "page": 2,
+          "paraphrase": "The paper states its central thesis explicitly: AI for science should make the development of a theory of scientific value a foundational research task.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "As they take greater responsibility for choosing research, the grounds for those judgments become part of the design problem.",
+          "explanation": "The framing of value theory as a design problem for AI scientists is a distinctive contribution that goes beyond existing task-specific evaluation approaches.",
+          "page": 1,
+          "paraphrase": "The paper proposes a novel framing that connects scientific value theory to the design of AI scientists, arguing that value judgments become part of the design problem as AI takes on research choices.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "Local models obey|S|\u22642 forS=C 00 +C 01 +C 10\u2212C 11. Counting only detected trials can select different shared hidden states at different settings, however [Larsson, 2014].",
+          "explanation": "The use of a concrete formal example with specified correlations and a score exceeding the local bound demonstrates careful reasoning about evidential coverage.",
+          "page": 4,
+          "paraphrase": "The paper uses a formal Bell-test example to illustrate how closing an experimental loophole can strengthen the grounds for a conclusion, specifying the CHSH inequality and a local model that violates it under detection selection.",
+          "section": "What Improves When An Experimental Loophole Is Closed?",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Cases such as these can test a value theory before it is entrusted with directing research (Table 1).",
+          "explanation": "The paper is a position piece and explicitly frames the work as a research agenda, so the absence of empirical validation is expected but limits the strength of the central claims.",
+          "page": 7,
+          "paraphrase": "The paper does not provide empirical validation of the proposed theory of scientific value or demonstrate that the framework can be operationalized in AI systems.",
+          "section": "Evaluation",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Constructing the first accessible proof of a conjecture can be a major advance even if the conjecture was always a logical consequence of accepted axioms. Copying that proof adds neither a mathematical relation nor independent support.",
+          "explanation": "This example directly illustrates the paper's claim that the relevant background changes the contribution, aligning evidence with the central argument.",
+          "page": 2,
+          "paraphrase": "The paper supports its claim that value depends on what is already known by arguing that copying an existing proof adds no new relation or support, while the first accessible proof can be a major advance.",
+          "section": "What Should A Theory Of Scientific Value Explain?",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Success on assigned tasks gives it no automatic rule for making that choice.",
+          "explanation": "This comparison identifies a gap in existing systems: they learn evaluations from assigned tasks but do not provide principles for choosing research objectives.",
+          "page": 1,
+          "paraphrase": "The paper situates its proposal relative to existing AI-for-science systems, including Scientific Judge, Co-Scientist, and The AI Scientist, and notes that success on assigned tasks gives no automatic rule for choosing research questions.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "One possible form for such a judgment is \u0393;F;K\u22a2\u03c0:A\u2ab0 d,Q B.(1)",
+          "explanation": "The absence of implementation details limits reproducibility, though the paper is a position piece rather than an empirical study.",
+          "page": 5,
+          "paraphrase": "The paper does not provide code, data, or implementation details for the proposed checkable judgments, and the formal apparatus is presented as a sketch.",
+          "section": "A Judgment That Carries Its Grounds",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "A real-valued score orders every pair of assigned numbers, so it cannot exactly represent an incomplete comparison.",
+          "explanation": "This explicit discussion of incomparability and the limits of scalar scores shows careful handling of uncertainty and scope.",
+          "page": 5,
+          "paraphrase": "The paper acknowledges that a real-valued score cannot exactly represent an incomplete comparison and that proven incomparability is distinct from equal value.",
+          "section": "Comparisons Before A Universal Scale",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "Blackwell\u2019s theory compares experiments by the information they can provide [Blackwell, 1953, Fritz et al., 2023].",
+          "explanation": "The use of formal notation and specific examples enhances the precision and clarity of the presentation.",
+          "page": 5,
+          "paraphrase": "The paper uses precise formal notation and examples, such as the CHSH inequality and Blackwell's theory of experiment comparison, to make its arguments concrete.",
+          "section": "Comparisons Before A Universal Scale",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://knowledge.uchicago.edu/records/mgmw1-gw451/files/AI_Scientists_Need_a_Theory_of_Scientific_Value.pdf?download=1",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "No reproducible review or selection methodology was detected."
+        "No reproducible review or selection methodology was detected.",
+        "No empirical or simulation-based evaluation of the proposed value-theoretic framework is provided.",
+        "No complete formal derivation or proof of the proposed judgment form is included in the available text.",
+        "The full content of Table 1 and some section transitions are truncated or absent from the extraction.",
+        "No implementation details or code are provided for the proposed checkable judgments."
       ],
-      "overall_quality_score": 57,
-      "paper_type": "survey_or_review",
+      "overall_quality_score": 56,
+      "paper_type": "position_or_conceptual",
       "positive_signals": [
         "The available text identifies data or a benchmark used by the work.",
         "Quantitative evaluation signals were detected.",
         "Limitations or threats to validity are acknowledged.",
-        "Code, data, or research artifacts are described as available.",
-        "Formal definitions or proof-oriented evidence is present."
+        "Formal definitions or proof-oriented evidence is present.",
+        "The paper clearly states its central thesis and connects it to concrete AI-for-science systems.",
+        "It provides formal illustrations, including a Bell-test loophole example and Blackwell-style experiment comparisons, to ground the argument.",
+        "It engages alternative views, such as Polanyi's tacit expertise and the risk that explicit criteria could impoverish science.",
+        "It acknowledges limitations, including incomparability, certification bounds, and the cost of obtaining stronger assessments.",
+        "It situates the proposal within existing work on AI scientists, benchmarks, and formal evaluation."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The paper is a position/conceptual argument for making a theory of scientific value foundational to AI-for-science. It develops a substantive conceptual framework with formal illustrations (Bell-test loophole closure, Blackwell comparisons, potential-based rewards) and engages alternative views, but it does not empirically validate the proposed theory or demonstrate that the framework can be operationalized in AI systems. The central claims are argued rather than tested, and the paper explicitly frames the work as a research agenda, so the contribution is plausible and well-articulated but not yet established.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "6a95fed7d36453707c1c579938a86682ec05a8cd2def103ba03fd7ce367c4f57",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The manuscript is a preprint and the extracted text appears to omit some sections or tables (e.g., Table 1 is truncated, some section transitions are abrupt), so the assessment may not reflect the complete argument. Because the paper is a position piece, the absence of empirical validation is expected, but the strength of the contribution depends on whether the proposed formal apparatus can be made checkable and useful in practice, which the paper only sketches."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -1109,7 +1309,7 @@
     "last_seen_date": "2026-09-14",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-09 11:31:57",
     "notified_date": "2026-09-09",
@@ -1131,14 +1331,14 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:51+00:00",
+      "assessed_at": "2026-09-16T12:04:42+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "manual-review:59013a3e4701bfef",
+      "assessor_type": "manual_override",
       "combined_rank_score": 0.93,
       "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 77/100, medium confidence, based on partial full text.",
+      "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The available evidence suggests a credible contribution with some limitations. Automated score 77/100, medium confidence, based on partial full text.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
@@ -1156,86 +1356,96 @@
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": "be- comes less discriminative as models improve. We introduce AGENTIDEABENCH, a multidis- ciplinary benchmark that evaluates scientific ideat",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
+          "excerpt": "We introduce AGENTIDEABENCH, a benchmark that makes the mode of literature access the experimental variable, contrastingstatic observationof a curated literature pool withactive explorationin which the model gathers its own evidence.",
+          "explanation": "The paper clearly introduces AgentIdeaBench as a benchmark evaluating scientific ideation under matched static and active settings.",
+          "page": 2,
           "paraphrase": "The contribution is stated explicitly.",
-          "section": "Abstract",
+          "section": "Introduction",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "e introduce AGENTIDEABENCH, a multidis- ciplinary benchmark that evaluates scientific ideation under two matched settings,static observatio",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 1,
+          "excerpt": "We curate 100 research subfields spanning com- puter science, physics, biology, chemistry, and medicine. They are chosen to cover both concept- driven fields, where a hypothesis is an argument, and experiment-heavy fields, where it is a protocol.",
+          "explanation": "The benchmark construction, subfield curation, and scoring pipeline are described in detail.",
+          "page": 4,
           "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Abstract",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "iple-comparison correction nor a compute- matched baseline (\u00a76). These results recast scientific ideation as an agen- tic capability whose",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 3,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "semble LLM Aggregation trim highest of 3, O2 I1.5 F1 C.5 S.5 / 5.5 mean over 3 ideas 3 of 5 critics, T = 0, O/F/C/I/S scored 1-10, originality argued against the evidence Guards ca",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 3,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Introduction",
+          "section": "Tasks And Subfields",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "two deepseek-v4 backbones move +0.14 and\u22120.06 at p>0.6. In sampled reasoning traces the frontier backbones already run similar nove",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 3,
+          "excerpt": "Unless noted, effect sizes are paired differences over shared model-and-subfield cells with Wilcoxon signed-rank tests, and uncer- tainty is a bootstrap 95% CI over 5000 resam- ples with a fixed seed.",
+          "explanation": "The paper reports statistical tests, bootstrap intervals, and robustness checks for headline claims.",
+          "page": 6,
           "paraphrase": "Robustness or statistical analysis is reported.",
-          "section": "Introduction",
+          "section": "Controls And Statistical Tests",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "A recall-only control sup- plies the discipline and subfield name with nei- ther curated references nor search tools, which separates having references from gathering them.",
+          "explanation": "The paper compares against prior ideation benchmarks and includes control tracks such as recall-only and replay.",
+          "page": 8,
+          "paraphrase": "A baseline or comparison system is described.",
+          "section": "Alternative Explanations And Robustness",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Across the 28 matched primary-roster models the Active\u2212Static gain is strongly correlated with static ability, at Pearson r=+0.69 and p<10\u22124 (Fig- ure 3).",
+          "explanation": "The paper reports quantitative scores, effect sizes, and significance tests across 33 models and 40 subfields.",
+          "page": 7,
+          "paraphrase": "Quantitative evaluation signals were detected.",
+          "section": "Active Gains Increase With Model",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Grouped into static-ability quartiles, the weakest models lose\u22120.18 from being handed tools while the strongest gain +0.76.",
+          "explanation": "The capability-gate claim is supported by correlation, quartile means, and replication on held-out models.",
+          "page": 7,
+          "paraphrase": "Claims are supported by quantitative evidence and controls.",
+          "section": "Active Gains Increase With Model",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "Two limitations recur across this line, and AGENTIDEABENCHis built to remove them. At generation time the model ei- ther reads a reference list assembled for it or works from no literature at all, so it never decides what to read.",
+          "explanation": "Table 1 situates AgentIdeaBench against prior benchmarks and systems, and the narrative identifies two recurring limitations the benchmark removes.",
+          "page": 4,
+          "paraphrase": "Related work is compared in a structured table and narrative.",
+          "section": "Related Work",
           "signal_type": "positive"
         },
         {
           "dimension": "limitations_and_uncertainty_handling",
-          "excerpt": ", 2023). This static-observation paradigm has two limitations that motivate our benchmark. The first is a departure from how re- search actua",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 2,
-          "paraphrase": "Limitations or threats to validity are acknowledged.",
-          "section": "Introduction",
-          "signal_type": "positive"
-        },
-        {
-          "dimension": "reproducibility_and_transparency",
-          "excerpt": "ned loop would help stronger models remains open. Ethics Statement Models, data, and artifacts.All models we evaluate are publicly avail",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "The scorer is a model.Every dimension score in this paper is an LLM judgment. We mitigate that with retrieved prior-art evidence, a critic ensemble, and human-landmark anchoring, and we report the validity checks in Appendices D and B, though mitigation falls short of validation.",
+          "explanation": "The paper has a dedicated Limitations section covering LLM scoring, bundled Active effects, and unconfirmed generation-time results.",
           "page": 10,
-          "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+          "paraphrase": "Limitations or threats to validity are acknowledged.",
           "section": "Limitations",
           "signal_type": "positive"
         },
         {
-          "dimension": "methodological_rigor",
-          "excerpt": null,
-          "explanation": "The item was not detected in the available material; human review may find evidence outside the extracted text.",
-          "page": null,
-          "paraphrase": "No reproducible review or selection methodology was detected.",
-          "section": null,
-          "signal_type": "missing"
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Models, data, and artifacts.All models we evaluate are publicly available and were accessed through a commercial API router under its terms of use.",
+          "explanation": "The paper documents artifact licensing, redistribution terms, and ethics considerations.",
+          "page": 10,
+          "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+          "section": "Limitations",
+          "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2609.07611",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "No reproducible review or selection methodology was detected."
+        "No reproducible review or selection methodology was detected.",
+        "All dimension scores are LLM judgments; expert novelty validation is absent. Active mode bundles retrieval, turns and tool competence; the exploratory generation-time result is unconfirmed. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
       ],
       "overall_quality_score": 77,
-      "paper_type": "survey_or_review",
+      "paper_type": "dataset_or_benchmark",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
@@ -1245,13 +1455,13 @@
         "Limitations or threats to validity are acknowledged.",
         "Dataset documentation, quality control, licensing, or ethics is discussed."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The available evidence suggests a credible contribution with some limitations. Automated score 77/100, medium confidence, based on partial full text.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "d76d8b7748237d0e1b460e44a7c4e042be9a3fd00ca70925492a175babedd6e9",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "All dimension scores are LLM judgments; expert novelty validation is absent. Active mode bundles retrieval, turns and tool competence; the exploratory generation-time result is unconfirmed. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -1305,7 +1515,7 @@
     "last_seen_date": "2026-09-14",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-09 11:31:57",
     "notified_date": "2026-09-09",
@@ -1327,33 +1537,33 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:51+00:00",
-      "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessed_at": "2026-09-16T11:53:28+00:00",
+      "assessment_scope": "full_text",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.93,
       "concerns": [],
-      "concise_summary": "The available evidence is mixed or incomplete. Automated score 61/100, medium confidence, based on partial full text.",
-      "confidence": "medium",
+      "concise_summary": "The paper presents online surrogate repair (OSR), a closed-loop algorithm that uses sparse high-fidelity evaluations to update a surrogate during a longer agent search. The contribution is clearly stated, the methodology is described in detail, and the evaluation includes controlled synthetic worlds and the MADE benchmark with multiple baselines. The claims are supported by quantitative results, and limitations are acknowledged.",
+      "confidence": "high",
       "curation_note": null,
       "dimension_scores": {
-        "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 2,
+        "contribution_clarity": 5,
+        "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
-        "limitations_and_uncertainty_handling": 1,
-        "methodological_rigor": 3,
-        "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 2,
-        "reproducibility_and_transparency": 2,
+        "limitations_and_uncertainty_handling": 3,
+        "methodological_rigor": 4,
+        "presentation_and_precision": 4,
+        "related_work_and_gap_positioning": 4,
+        "reproducibility_and_transparency": 3,
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
       "evidence": [
         {
           "dimension": "contribution_clarity",
-          "excerpt": "eam optimization rather than by global fit alone. Our contributions are: \u2022 We formulate online surrogate repair, in which a scientific agent operat",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "Our contributions are:\n\u2022 We formulate online surrogate repair, in which a scientific agent operates under inexpensive\nsurrogate feedback while a separate acquisition rule allocates a limited number of oracle\nqueries to update the surrogate during the search.",
+          "explanation": "The introduction lists three explicit contributions, including the formulation of online surrogate repair and the identification of acquisition rules that improve optimization performance.",
           "page": 2,
           "paraphrase": "The contribution is stated explicitly.",
           "section": "Introduction",
@@ -1361,52 +1571,72 @@
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "et al., 2026), a closed-loop materials discovery benchmark. Each environment specifies a chemical system and its known phases, and the age",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+          "excerpt": "Each of the 20 held-out worlds is a frozen, seeded structural causal model (SCM) (Pearl,\n2009) inspired by TabPFN\u2019s sampled causal-graph prior (Hollmann et al., 2025), with a deterministic\nresponse and a single global maximum.",
+          "explanation": "The methods section specifies the SCM construction, the number of worlds, the context sizes, the surrogates used, and the evaluation metrics, which supports methodological rigor.",
+          "page": 7,
+          "paraphrase": "The paper describes the experimental setup in detail, including the synthetic world construction and the MADE benchmark configuration.",
+          "section": "Synthetic Worlds",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Across the four settings, Q90-UCB and EI achieve mean maximum-regret reductions of 0.424 and\n0.409, compared with 0.063 and 0.052 for Global-UQ and Random.",
+          "explanation": "Tables 1, 2, and 3 report quantitative results comparing OSR methods against baselines such as Random, Global-UQ, Peak, Q90-UCB, EI, Static EI, Archive-BO, Tab-AICL, and full-feedback controls.",
+          "page": 6,
+          "paraphrase": "The paper reports quantitative comparisons against multiple baselines and ablations.",
+          "section": "Static Surrogate Repair",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "Table 3 shows that Control requires 7.23(28) and 6.36(20) times as many oracle queries to match\nOnline EI under DeepSeek and Luna, respectively, equivalent to 86% and 84% fewer queries for\nOnline EI.",
+          "explanation": "The paper reports acceleration factors showing that full-feedback controls require 6.36-7.23 times more oracle queries to match Online EI under LLM orchestrators, directly supporting the claim of reduced oracle feedback.",
           "page": 8,
-          "paraphrase": "The available text identifies data or a benchmark used by the work.",
-          "section": "Experiments",
+          "paraphrase": "The central claim that Online EI reduces oracle queries is supported by quantitative results on MADE.",
+          "section": "Madebenchmark",
           "signal_type": "positive"
         },
         {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ean maximum-regret reductions of 0.424 and 0.409, compared with 0.063 and 0.052 for Global-UQ and Random. Conversely, Global-UQ and Random prod",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 6,
-          "paraphrase": "A baseline or comparison system is described.",
-          "section": "Experiments",
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "In standard Bayesian optimization,\nacquisition is itself the proposal policy. Multi-fidelity optimization also chooses among information\nsources (Poloczek et al., 2017), while Gemini learns a cross-fidelity correction that drives a Bayesian\noptimizer (Hickman et al., 2021). OSR leaves search to the scientific agent: acquisition only chooses\nwhich archived proposal receives a high-fidelity label to repair future feedback.",
+          "explanation": "The related work section explicitly contrasts OSR with standard Bayesian optimization, multi-fidelity optimization, and active in-context learning, clarifying the gap that OSR fills.",
+          "page": 3,
+          "paraphrase": "The paper positions OSR relative to active learning, Bayesian optimization, multi-fidelity search, and surrogate verifiers.",
+          "section": "Active Learning, Bayesian Optimization,And Multi-Fidelity Search",
           "signal_type": "positive"
         },
         {
-          "dimension": "evaluation_or_validation_strength",
-          "excerpt": "ults are given in Appendix D.Boldbest, underlined second best per column. Method TabPFN-100 TabPFN-1000 TabICL-100 TabICL-1000 Mean\u2206RMean\u2206E Q90-UCB0.49780.23930.5909 0.3664 0.4236\u2212",
-          "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 6,
-          "paraphrase": "Quantitative evaluation signals were detected.",
-          "section": "Methods",
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "The current framework requires a tabular representation of the discovery problem and a tabular\nfoundation model that can incorporate new labels in context. Most closed-loop discovery problems\ncan be expressed in this form, as our MADE experiment illustrates, but some environments may fall\nout-of-distribution of the model\u2019s capabilities which we did not encounter or test in our experiments.",
+          "explanation": "The discussion section explicitly notes that the framework requires a tabular representation and a tabular foundation model, and that OSR has not been tested with test-time training, reinforcement learning, or other surrogate classes.",
+          "page": 9,
+          "paraphrase": "The paper acknowledges limitations of the current framework.",
+          "section": "Discussions Andconclusion",
           "signal_type": "positive"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2609.07655",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [],
-      "overall_quality_score": 61,
+      "overall_quality_score": 78,
       "paper_type": "empirical_research",
       "positive_signals": [
         "The contribution is stated explicitly.",
         "The available text identifies data or a benchmark used by the work.",
         "A baseline or comparison system is described.",
-        "Quantitative evaluation signals were detected."
+        "Quantitative evaluation signals were detected.",
+        "The paper includes a limitations discussion.",
+        "The paper compares against multiple acquisition rules and feedback regimes."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-      "recommendation": "uncertain",
+      "rationale": "The paper presents a clearly formulated contribution (online surrogate repair) with explicit claims, a well-defined problem setting, and a systematic experimental design across static, synthetic, and MADE benchmark settings. The central claims are supported by quantitative results, including comparisons against multiple baselines and ablations, and the manuscript includes a limitations section. Methodological choices are described in sufficient detail to assess the validity of the main claims, and related work is positioned adequately for the stated scope.",
+      "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
-      "status": "uncertain",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "Some uncertainty remains because the paper is a preprint and the full text includes only partial sections; however, the supplied material contains enough substantive evidence across all six required dimensions to support a pass."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -1489,26 +1719,31 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:54+00:00",
+      "assessed_at": "2026-09-16T11:58:50+00:00",
       "assessment_scope": "partial_full_text",
-      "assessment_version": "quality-v2",
-      "assessor_model": null,
-      "assessor_type": "deterministic",
+      "assessment_version": "quality-recovery-v1",
+      "assessor_model": "deepseek/deepseek-v4-pro-0813",
+      "assessor_type": "llm",
       "combined_rank_score": 0.93,
-      "concerns": [],
-      "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 72/100, medium confidence, based on partial full text.",
+      "concerns": [
+        "The extracted text does not include complete results tables or intermediate-file evidence supporting all claims of hallucination and fabrication.",
+        "The paper relies on qualitative judgments about scope and depth that are only partially quantified in the supplied text.",
+        "The reproducibility of the evaluation itself is limited by the absence of full prompts and complete run-level data in the extracted material.",
+        "Some claims about the original reference study are presented without the original study's full results being available in the supplied text."
+      ],
+      "concise_summary": "This empirical study evaluates five AI research frameworks on antibody developability prediction and lipid-RNA MD simulation tasks, finding partial successes but severe failures, narrower scope, and irreproducibility compared with published reference studies. The available text supports a credible comparative evaluation, though incomplete results and intermediate evidence limit full verification.",
       "confidence": "medium",
       "curation_note": null,
       "dimension_scores": {
-        "contribution_clarity": 2,
+        "contribution_clarity": 4,
         "evaluation_or_validation_strength": 4,
         "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 5,
+        "methodological_rigor": 4,
         "presentation_and_precision": 3,
-        "related_work_and_gap_positioning": 2,
-        "reproducibility_and_transparency": 4,
-        "scholarly_novelty_or_value": 3
+        "related_work_and_gap_positioning": 4,
+        "reproducibility_and_transparency": 3,
+        "scholarly_novelty_or_value": 4
       },
       "downranked": false,
       "evidence": [
@@ -1523,11 +1758,11 @@
         },
         {
           "dimension": "evaluation_or_validation_strength",
-          "excerpt": "evaluation. Finally, the outputs are analyzed and compared with internal, intermediate AI results and the original papers.",
+          "excerpt": "rediction of antibody developabil ity properties compared with a simple sequence-based baseline representation. Use two publicly available ex",
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 3,
+          "page": 10,
           "paraphrase": "A baseline or comparison system is described.",
-          "section": "Introduction",
+          "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
           "signal_type": "positive"
         },
         {
@@ -1563,16 +1798,16 @@
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
           "page": 10,
           "paraphrase": "Code, data, or research artifacts are described as available.",
-          "section": "Methods",
+          "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
           "signal_type": "positive"
         },
         {
           "dimension": "methodological_rigor",
-          "excerpt": "ickland AC, et al. GPQA: A Graduate -Level Google-Proof Q&A Benchmark. arXiv. 2023; doi: 10.48550/arXiv.2311.12022 4. Artificial Anal",
+          "excerpt": null,
           "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-          "page": 9,
+          "page": null,
           "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-          "section": "Methods",
+          "section": null,
           "signal_type": "positive"
         },
         {
@@ -1592,17 +1827,147 @@
           "paraphrase": "No reproducible review or selection methodology was detected.",
           "section": null,
           "signal_type": "missing"
+        },
+        {
+          "dimension": "contribution_clarity",
+          "excerpt": "Extending the analysis presented in the first paper of this series, we evaluated the same five advanced AI research frameworks (Kosmos, K-Dense, ToolUniverse, BioAgents from bio.xyz, and the AI Scientist-v2 from Sakana AI) on two more projects of high practical importance for biopharmaceutical development",
+          "explanation": "The introduction explicitly frames the study as extending the first paper in the series to antibody developability and lipid-RNA interaction tasks.",
+          "page": 1,
+          "paraphrase": "The paper clearly states its extension of a prior evaluation to two new biopharmaceutical projects.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "scholarly_novelty_or_value",
+          "excerpt": "AI performance on such problems is therefore important not only for evaluating scientific capability of AI in general, but also for estimating the readiness of these frameworks to contribute to industrial research workflows.",
+          "explanation": "The authors argue that published papers provide an external standard and that their results show real research is harder than benchmarks suggest.",
+          "page": 1,
+          "paraphrase": "The study provides a comparative evaluation of AI frameworks on real published research tasks, adding evidence beyond standard benchmarks.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "For each project, a full-scale prompt was formulated describing the research problem and the key scientific questions, without prescribing specific datasets or methods.",
+          "explanation": "The methods section describes full-scale and smaller-scope prompts and repeated runs to assess reproducibility.",
+          "page": 8,
+          "paraphrase": "The study uses a structured prompt design with full-scale and smaller-scope prompts and multiple runs.",
+          "section": "Methods",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "Paper length, symbols without spaces 123,184 38,955; 47,257 39,812; 40,428 42,071 16,629; 14,802; 15,228; 12,956",
+          "explanation": "Table 1 reports paper length, number of figures, and references for AI frameworks versus the original paper.",
+          "page": 4,
+          "paraphrase": "The paper compares AI framework outputs against reference studies using quantitative scope metrics.",
+          "section": "Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "evidence_to_claim_alignment",
+          "excerpt": "justifying this switch by citing a hallucinated, non-existent paper (\u201cT. M. Wannier et al. Machine learning to predict continuous protein properties from simple directed evolution experiments;\u201d the real paper corresponding to the provided DOI is \u201cM. Case et al. Machine learning to predict continuous protein properties from binary cell sorting data and map unseen sequence space,\u201d",
+          "explanation": "The authors provide a concrete example of a hallucinated paper citation and the correct DOI.",
+          "page": 3,
+          "paraphrase": "The paper supports its claim of severe failures with specific examples, such as a hallucinated citation.",
+          "section": "Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "related_work_and_gap_positioning",
+          "excerpt": "In Paper I in this series,8 we applied this strategy to five advanced AI research frameworks (Kosmos, K-Dense, ToolUniverse, BioAgents from bio.xyz, and the AI Scientist-v2 from Sakana AI) across three projects",
+          "explanation": "The introduction reviews prior benchmark evaluations and AI applications in antibody prediction and MD simulation.",
+          "page": 2,
+          "paraphrase": "The paper situates its work within prior AI-for-science evaluations and domain-specific AI applications.",
+          "section": "Introduction",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "Use two publicly available experimental antibody datasets that measure different developability properties: the antibody expr ession dataset reported by Adams et al. (2017)",
+          "explanation": "The appendix provides the full prompt text and links to datasets used in the antibody project.",
+          "page": 10,
+          "paraphrase": "The paper includes prompts in an appendix and describes dataset sources.",
+          "section": "Estabrook Da, Huang L, Lucchese Or, Et Al. Buffer Optimization Of Sirna -",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "limitations_and_uncertainty_handling",
+          "excerpt": "We remind the reader that AI frameworks were run in January -March 2026, and therefore, our conclusions reflect the state of the listed AI frameworks at that time, which may have changed since then.",
+          "explanation": "The methods section notes that frameworks were run in January-March 2026 and may have changed since then.",
+          "page": 9,
+          "paraphrase": "The authors acknowledge that their conclusions reflect the state of AI frameworks at a specific time.",
+          "section": "Methods",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "Where the original paper evaluated 240 datasets, each AI framework used only one dataset. Where the original study benchmarked 30 diverse ML models including language models, inverse folding models, and structure prediction models, AI frameworks tested between 2 and 5 ML models",
+          "explanation": "The results section reports specific numbers of datasets, models, and statistical practices.",
+          "page": 3,
+          "paraphrase": "The paper reports specific quantitative comparisons and statistical observations.",
+          "section": "Results",
+          "signal_type": "positive"
+        },
+        {
+          "dimension": "methodological_rigor",
+          "excerpt": "However, no AI framework approached the scale or completeness of the original study.",
+          "explanation": "The paper states that no framework approached the scope of the original studies, but the supplied text does not provide complete quantitative metrics for all frameworks and runs.",
+          "page": 3,
+          "paraphrase": "The evaluation relies on qualitative judgments about scope and depth that are only partially quantified.",
+          "section": "Results",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": "The AI Scientist -v2 from Sakana AI on the MD projec t claimed in its final paper to have run molecular dynamics simulations of hundreds of nanoseconds, whereas no simulations were run and a synthetic dataset with fabricated feature vectors was used instead.",
+          "explanation": "The paper claims that a synthetic dataset with fabricated feature vectors was used, but the underlying intermediate files are not supplied in the available text.",
+          "page": 8,
+          "paraphrase": "The full intermediate-file evidence supporting claims of fabrication and hallucination is not included in the extracted text.",
+          "section": "Ml Models On A Single Dataset And Offered Narrower (If Any)",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "evaluation_or_validation_strength",
+          "excerpt": "no AI framework matched the scope or depth of the original studies; results varied substantially even across multiple runs of the same framework with the same prompt",
+          "explanation": "The claim that AI frameworks did not match the original studies relies on the original studies' scope, but the original papers are not fully reproduced in the supplied text.",
+          "page": 7,
+          "paraphrase": "The paper's validation of its central conclusion depends on comparisons with reference studies whose full results are not included.",
+          "section": "Discussion",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "presentation_and_precision",
+          "excerpt": "but t heir utility for real-world industrial research remains insufficiently characterized.",
+          "explanation": "The text includes line-break artifacts and truncated passages, making some quantitative details difficult to verify.",
+          "page": 1,
+          "paraphrase": "The extracted text contains formatting artifacts and incomplete sentences that reduce precision.",
+          "section": "Introduction",
+          "signal_type": "concern"
+        },
+        {
+          "dimension": "reproducibility_and_transparency",
+          "excerpt": null,
+          "explanation": "The available text describes some results but does not include full tables or intermediate files for all runs.",
+          "page": null,
+          "paraphrase": "Complete run-level quantitative results for all frameworks and both projects are not provided in the extracted text.",
+          "section": null,
+          "signal_type": "missing"
         }
       ],
-      "full_text_assessed": false,
+      "full_text_assessed": true,
       "full_text_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [
-        "No reproducible review or selection methodology was detected."
+        "No reproducible review or selection methodology was detected.",
+        "Complete results tables for all AI framework runs and both projects.",
+        "Full intermediate-file documentation supporting claims of fabricated datasets and hallucinated citations.",
+        "Complete appendix prompts for the lipid-RNA MD project.",
+        "Detailed run-level quantitative results for the smaller-scope prompts."
       ],
       "overall_quality_score": 72,
-      "paper_type": "survey_or_review",
+      "paper_type": "empirical_research",
       "positive_signals": [
         "The available text identifies data or a benchmark used by the work.",
         "A baseline or comparison system is described.",
@@ -1611,15 +1976,21 @@
         "Limitations or threats to validity are acknowledged.",
         "Code, data, or research artifacts are described as available.",
         "Formal definitions or proof-oriented evidence is present.",
-        "Dataset documentation, quality control, licensing, or ethics is discussed."
+        "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "The study extends a prior evaluation with two new case studies and five AI frameworks, providing a clear comparative design.",
+        "The paper reports both qualitative strengths and severe failures, including hallucinations and numerical irreproducibility.",
+        "The authors describe concrete reference-study comparisons, such as 240 datasets versus one dataset and 30 models versus 2-5 models.",
+        "The manuscript acknowledges limitations of the evaluation, including the time-bound nature of AI framework performance.",
+        "The paper identifies specific task categories that are systematically problematic for AI frameworks.",
+        "The authors report statistical practices such as p-values and confidence intervals in AI outputs."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "The manuscript reports a multi-case evaluation of five AI research frameworks on two biopharmaceutical tasks, with explicit comparisons to reference studies and detailed qualitative and quantitative observations. The available partial text supports a credible empirical evaluation, but several central claims depend on intermediate files, full results tables, and appendices that are not fully supplied, so the strength of validation and reproducibility cannot be fully established from the extracted material alone.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "08fadd217f29b1f7f28989d36bbbf53b5a899b433d4c3881aa7441c87dcd5bbb",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+      "uncertainty": "The supplied text is partial full text with missing portions of the Results, Methods, and Appendix. Claims about fabricated datasets, hallucinated citations, and numerical irreproducibility are asserted but the underlying evidence is only partially visible. The absence of complete results tables and intermediate-file documentation limits confidence in the evaluation's completeness."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -1687,9 +2058,9 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:54+00:00",
+      "assessed_at": "2026-09-16T11:58:50+00:00",
       "assessment_scope": "title_and_abstract",
-      "assessment_version": "quality-v2",
+      "assessment_version": "quality-recovery-v1",
       "assessor_model": null,
       "assessor_type": "deterministic",
       "combined_rank_score": 0.96,
@@ -1751,7 +2122,7 @@
       "positive_signals": [
         "The available text identifies data or a benchmark used by the work."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "Scientific quality could not be assessed because manuscript-level evidence was unavailable.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "2f4ea2b74914a5dd86b1e8aadbe53acc88deb117546b28e5b1543d1afee19f86",
@@ -1825,9 +2196,9 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T09:02:54+00:00",
+      "assessed_at": "2026-09-16T11:58:50+00:00",
       "assessment_scope": "title_and_abstract",
-      "assessment_version": "quality-v2",
+      "assessment_version": "quality-recovery-v1",
       "assessor_model": null,
       "assessor_type": "deterministic",
       "combined_rank_score": 0.93,
@@ -1889,7 +2260,7 @@
         "The available text identifies data or a benchmark used by the work.",
         "Limitations or threats to validity are acknowledged."
       ],
-      "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+      "rationale": "Scientific quality could not be assessed because manuscript-level evidence was unavailable.",
       "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "9e0149b697aed38a50c3478deb797102ccf6dbcdba1fb9e44195b8f6c292fcee",

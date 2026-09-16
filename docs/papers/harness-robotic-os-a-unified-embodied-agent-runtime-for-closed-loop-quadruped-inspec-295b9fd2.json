@@ -39,7 +39,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-11 11:26:39",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-12 10:52:10",
     "metadata_sources": [
       "arxiv"
@@ -104,16 +104,20 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:04:28+00:00",
+    "assessed_at": "2026-09-16T11:56:08+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [
-      "Meaningful evaluation appears to be deferred to future work in the available text."
+      "Meaningful evaluation appears to be deferred to future work in the available text.",
+      "The central cognitive-runtime claims (voice interaction, hierarchical memory, safety-gated self-evolution) are not empirically validated in the supplied text; numerical results for these controlled trials are explicitly deferred.",
+      "The field metrics in Table 1 are reported without sample sizes, trial counts, independent repetitions, or statistical intervals, limiting the strength of the quantitative validation.",
+      "The paper does not provide a direct comparison against an alternative integrated inspection system or a baseline without the HROS runtime, so the added value of the unified architecture over a conventional stack is asserted rather than measured.",
+      "The related-work section reviews individual component algorithms (SLAM, global planning, local planning) but does not deeply compare HROS against other embodied-agent runtimes or integrated quadruped inspection systems."
     ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 69/100, high confidence, based on full text.",
+    "concise_summary": "The paper presents HROS, a unified embodied-agent runtime, and Argos, its quadruped inspection realization, with detailed architecture and quantitative field results for navigation, hazard detection, and enterprise delivery. The contribution is clear and the system design is thoughtful, particularly the safety-gated self-evolution loop. However, the most distinctive cognitive-runtime claims\u2014voice grounding, hierarchical memory, and governed adaptation\u2014are explicitly deferred to future evaluation, and the reported field metrics lack sample sizes and statistical detail. The paper is a credible integrated field-system report but its validation is incomplete for the claims that distinguish it from a conventional navigation stack.",
     "confidence": "high",
     "curation_note": null,
     "dimension_scores": {
@@ -158,11 +162,11 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "rtial fusion performance in terms of accuracy and robustness. Among recent representative methods, Fast-LIO2 is a typical LiDAR-Inertial Odo",
+        "excerpt": "laboration:future deployments should evaluate ASR robustness in outdoor noise, confirmation design for safety-critical commands, operator wo",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
+        "page": 12,
         "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Related Work",
+        "section": "Agent Evaluation And Safety:The Memory And Self-Evolution Mechanisms Require Dedicated Bench-",
         "signal_type": "positive"
       },
       {
@@ -185,11 +189,11 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "ain reproducible and auditable. 8 Limitations and Future Work The current study demonstrates an integrated field system, but several limitati",
+        "excerpt": "ovement without uncontrolled online modification. Future work will extend the evaluation across sites, quantify the contribution of each cogn",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 12,
         "paraphrase": "Meaningful evaluation appears to be deferred to future work in the available text.",
-        "section": "Discussion",
+        "section": "Conclusion",
         "signal_type": "concern"
       },
       {
@@ -200,32 +204,132 @@
         "paraphrase": "No reproducible review or selection methodology was detected.",
         "section": null,
         "signal_type": "missing"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "utions of this work are summarized as follows: 1. We propose HROS, a layered embodied-agent runtime that unifies robot resources, autonomy s",
+        "explanation": "The contribution list is clearly enumerated in the introduction, making the paper's scope and claims easy to identify.",
+        "page": 2,
+        "paraphrase": "The paper explicitly states its main contributions, including the HROS runtime, the Argos realization, and the OpenClaw-orchestrated inspection workflow.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "We address this system-level gap throughHarness Robotic OS(HROS), an embodied-agent runtime that treats sensing, autonomy, reasoning, interaction, and operational feedback as composable capabilities",
+        "explanation": "The novelty claim is framed as an architectural contribution rather than a new algorithm, which is appropriate for a systems paper. The safety-gated self-evolution loop is a distinctive design element.",
+        "page": 2,
+        "paraphrase": "The paper identifies a system-level integration gap in existing quadruped inspection systems and proposes a unified runtime with shared context, hierarchical memory, and governed self-evolution.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "The field evaluation follows the same five-stage lifecycle used in routine deployment. This protocol tests not only individual navigation components but also the transfer of state and evidence across the HROS runtime.",
+        "explanation": "The evaluation protocol is structured around the operational lifecycle, which is a reasonable approach for a field system. However, the protocol description lacks detailed statistical methodology.",
+        "page": 9,
+        "paraphrase": "The paper describes a five-stage deployment and evaluation protocol that tests the transfer of state and evidence across the HROS runtime.",
+        "section": "Deployment And Evaluation Protocol",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "All configured waypoints were reached in the reported trials. The outdoor localization error remained below 10 cm, and the measured obstacle-response latency was below 200 ms.",
+        "explanation": "These results provide evidence that the deployed navigation and inspection pipeline functions in a real residential environment. However, the metrics lack sample sizes and statistical intervals.",
+        "page": 11,
+        "paraphrase": "The paper reports quantitative field results including 100% waypoint reachability, sub-10-cm localization error, sub-200-ms obstacle response, and 85-95% hazard detection rates.",
+        "section": "Experimental Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "The cognitive-runtime protocol in Sec. 5.6 defines the additional measurements required for voice,memory,andgoverned-adaptationresults;numericalvaluesarereportedonlyafterthecorresponding controlled trials are completed.",
+        "explanation": "The paper states that numerical values for voice, memory, and governed-adaptation results are reported only after the corresponding controlled trials are completed. This means the central cognitive-runtime claims lack empirical validation in the supplied text.",
+        "page": 10,
+        "paraphrase": "The controlled evaluation of the cognitive runtime is defined but its numerical results are explicitly deferred.",
+        "section": "Experimental Results",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Table1: System-levelperformanceofArgosintheresidentialinspectiondeployment. Resultsaregrouped by operational stage to connect component measurements with their role in the end-to-end inspection loop.",
+        "explanation": "The mapping between metrics and subsystems helps align evidence with claims. The navigation and inspection claims are supported by the reported field results, though the cognitive-runtime claims are not yet supported.",
+        "page": 11,
+        "paraphrase": "The paper's field results are linked to specific subsystems and evaluation roles in Table 1, connecting measurements to their role in the end-to-end inspection loop.",
+        "section": "Experimental Results",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Agent frameworks can coordinate model calls and external tools, but directly applying a generic agent loop to a mobile robot leaves unresolved questions of timing, safety, state consistency, and recovery.",
+        "explanation": "The related-work sections provide context for the chosen algorithms and identify the fragmentation problem HROS addresses. However, the comparison is mostly at the component level rather than against other integrated embodied-agent runtimes.",
+        "page": 4,
+        "paraphrase": "The paper reviews localization, global planning, local planning, and multimodal inspection literature, and positions HROS as addressing the integration gap between these components.",
+        "section": "Multimodal Inspection And Embodied Agents",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "The platform is equipped with stereo cameras, a 16-line LiDAR, an IMU, GNSS and 4G/5G connectivity, and an RDK S100P edge computer.",
+        "explanation": "The detailed component list (Vbot quadruped, Fast-LIO2, Hobot-Stereo, PCT-Planner, EGO-Planner, OpenClaw, Qwen3-VL) supports reproducibility of the system configuration, though no code or dataset release is described for the HROS runtime itself.",
+        "page": 5,
+        "paraphrase": "The paper specifies the hardware platform, sensor suite, and software components used in the Argos prototype.",
+        "section": "Robot Runtime: Vbot Quadruped Platform",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "Future work will extend the evaluation across sites, quantify the contribution of each cognitive component, and validate long-term memory, voice interaction, and governed adaptation under realistic operational noise and change.",
+        "explanation": "The limitations section and conclusion are candid about what has and has not been validated, which is a strength for a systems paper with deferred cognitive-runtime evaluation.",
+        "page": 12,
+        "paraphrase": "The paper explicitly acknowledges limitations and defers validation of memory, voice interaction, and governed adaptation to future work.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "For reproducibility, every reported value should include the number of commands, retrieval queries, missions, candidate updates, and independent repetitions, together with the noise condition or evaluation split.",
+        "explanation": "The paper states that every reported value should include the number of commands, retrieval queries, missions, candidate updates, and independent repetitions, but the actual Table 1 results do not include these details in the supplied text.",
+        "page": 10,
+        "paraphrase": "The field metrics are reported as single values without sample sizes, repetitions, or confidence intervals.",
+        "section": "Safety-Gated Self-Evolution",
+        "signal_type": "concern"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.11225",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "No reproducible review or selection methodology was detected.",
+      "Numerical results for the controlled voice-interaction, hierarchical-memory, and governed-adaptation experiments are not reported in the supplied text.",
+      "Sample sizes, trial counts, independent repetitions, and confidence intervals for the field metrics are not provided.",
+      "Details of the hazard-detection evaluation protocol, including the number of test instances per hazard class and the ground-truth labeling procedure, are not specified.",
+      "No direct baseline or comparison system is evaluated to isolate the contribution of the HROS runtime versus a conventional navigation stack."
     ],
     "overall_quality_score": 69,
-    "paper_type": "survey_or_review",
+    "paper_type": "systems_or_application",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "A baseline or comparison system is described.",
       "Quantitative evaluation signals were detected.",
       "Robustness or statistical analysis is reported.",
       "Limitations or threats to validity are acknowledged.",
-      "Code, data, or research artifacts are described as available."
+      "Code, data, or research artifacts are described as available.",
+      "The contribution is stated explicitly as a layered embodied-agent runtime with a clear separation between deterministic autonomy skills and the cognitive agent runtime.",
+      "The system architecture is described in detail, including robot runtime, embodied autonomy skills, cognitive agent runtime, and interaction/operations planes.",
+      "Quantitative field results are reported for waypoint reachability, localization error, obstacle-response latency, hazard detection, and enterprise delivery.",
+      "The paper acknowledges limitations and explicitly defers validation of memory, voice, and self-evolution to future work rather than overclaiming.",
+      "The safety-gated self-evolution design includes offline evaluation, provenance, versioned rollout, and rollback, showing attention to operational safety.",
+      "The paper positions its contribution against loosely coupled module-based inspection systems and explains the integration gap it addresses."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The paper presents a systems/application contribution: a unified embodied-agent runtime (HROS) and its Argos quadruped inspection realization. The architecture, component integration, and operational closed loop are described in substantial detail, and the paper reports quantitative field results for navigation, hazard detection, and enterprise delivery. However, the central cognitive-runtime claims\u2014voice interaction, hierarchical memory, and safety-gated self-evolution\u2014are explicitly deferred: the text states that numerical values for these controlled trials are reported only after the corresponding trials are completed, and the conclusion says future work will quantify the contribution of each cognitive component. This means the paper's most distinctive architectural claims are not yet validated by the supplied evidence. The navigation and inspection results are plausible and internally consistent, but the manuscript lacks sample sizes, trial counts, repetitions, confidence intervals, and detailed experimental conditions for the reported metrics. The paper is therefore a credible integrated field-system report with a clear contribution, but its validation is incomplete for the claims that distinguish it from a conventional navigation stack.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "fdf3d3d1291697320ed9113e12815aabcb93b7e8397530a686d28b7d9ee2f53b",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The main uncertainty is whether the cognitive-runtime components (voice grounding, hierarchical memory, governed self-evolution) have any empirical support beyond design description. The supplied text repeatedly defers these evaluations to future work or to controlled trials whose numerical values are not yet reported. Additionally, the field metrics in Table 1 are presented without trial counts, repetitions, noise conditions, or statistical intervals, so the strength of the navigation and inspection validation cannot be fully assessed from the available text. The paper type is best classified as systems_or_application rather than survey_or_review, because it describes and evaluates a deployed prototype system."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",

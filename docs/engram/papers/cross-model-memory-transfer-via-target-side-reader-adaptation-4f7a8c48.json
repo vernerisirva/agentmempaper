@@ -39,7 +39,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:23",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:46",
     "last_seen_at": "2026-09-15 12:07:52",
     "metadata_sources": [
       "openalex",
@@ -111,16 +111,16 @@
   "scholarly_quality": {
     "applied_score_cap": 54,
     "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
-    "assessed_at": "2026-09-16T09:02:57+00:00",
+    "assessed_at": "2026-09-16T12:04:44+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "manual-review:0452e852632da2dc",
+    "assessor_type": "manual_override",
     "combined_rank_score": 0.92,
     "concerns": [
       "Comparative claims were detected without a suitable baseline in the available text."
     ],
-    "concise_summary": "The available evidence suggests weak or incomplete scholarly validation. Automated score 54/100, medium confidence, based on partial full text.",
+    "concise_summary": "The model returned schema-valid JSON but repeated the deterministic seed assessment, including its statement that no semantic scientific assessment had occurred. Scientific quality remains unassessed pending a substantive response.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
@@ -130,7 +130,7 @@
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 5,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
+      "related_work_and_gap_positioning": 2,
       "reproducibility_and_transparency": 4,
       "scholarly_novelty_or_value": 4
     },
@@ -160,7 +160,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 8,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Methods",
+        "section": "Rq2: How Much Does Reader Design Matter?",
         "signal_type": "positive"
       },
       {
@@ -178,12 +178,12 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 8,
         "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Methods",
+        "section": "The Most Visible Gain Appears On Webqa (28.7 To 33.7), While The Strong Improvements On",
         "signal_type": "positive"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H). 2 Background and Related Work 2.1 Engram Architecture Engram (Che",
+        "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H).",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 3,
         "paraphrase": "Limitations or threats to validity are acknowledged.",
@@ -201,7 +201,7 @@
       },
       {
         "dimension": "reproducibility_and_transparency",
-        "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H). 2 Backgro",
+        "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H).",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 3,
         "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
@@ -225,15 +225,79 @@
         "paraphrase": "Comparative claims were detected without a suitable baseline in the available text.",
         "section": null,
         "signal_type": "concern"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "other knowledge-intensive benchmarks. In summary, our contributions are: \u2022 We formulate cross-model frozen-memory reuse as an evaluation problem fo",
+        "explanation": "The paper explicitly enumerates its contributions in the Introduction, providing a clear statement of what the work claims to deliver.",
+        "page": 2,
+        "paraphrase": "The contribution is stated explicitly.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "tream gains are task-dependent, separating source-corpus specialization, Phase-2 reader-fitting alignment, mixed-corpus behavior, and ou",
+        "explanation": "The paper describes a controlled diagnostic sequence in Appendix D that varies source-corpus specialization and reader-fitting distribution, indicating methodological attention to confounds.",
+        "page": 3,
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "e memory from different perspectives. Table 1: QA accuracy (%) on Mistral-7B-v0.3 for different reader variants and baselines. Budget notation follows Table 2 tr",
+        "explanation": "Table 1 reports quantitative QA accuracy across multiple reader variants and baselines, providing empirical validation of the central reader-design claim.",
+        "page": 8,
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Rq2: How Much Does Reader Design Matter?",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "rections between models of similar scale. Second, ablation experiments show that transferred memory clearly outperforms the permuted-key a",
+        "explanation": "The paper reports ablation experiments including permuted-key controls, which isolate the contribution of addressing integrity to transfer performance.",
+        "page": 2,
+        "paraphrase": "An ablation analysis is reported.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "er counts, we treat this experiment as a capacity-sensitivity analysis rather than a causal estimate of memory width alone. The same table also places",
+        "explanation": "The authors explicitly distinguish a capacity-sensitivity analysis from a causal estimate, showing careful interpretation of a confounded experiment.",
+        "page": 8,
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "The Most Visible Gain Appears On Webqa (28.7 To 33.7), While The Strong Improvements On",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "thics and impact considerations (Appendix G), and limitations (Appendix H).",
+        "explanation": "The paper explicitly includes a limitations appendix, indicating acknowledgment of scope boundaries and threats to validity.",
+        "page": 3,
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "computational cost analysis (Appendix F), broader ethics and impact considerations (Appendix G), and limitations (Appendix H).",
+        "explanation": "The paper includes appendices on computational cost, ethics, and limitations, addressing transparency and responsible research practices.",
+        "page": 3,
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Introduction",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2608.17050",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
       "No suitable baseline comparison was detected in the available text.",
-      "Extraction was limited to 120000 characters."
+      "Extraction was limited to 120000 characters.",
+      "This is a model-response problem, not evidence of poor science. The original response provenance and billed usage remain in assessment history; no additional call was made."
     ],
     "overall_quality_score": 54,
     "paper_type": "empirical_research",
@@ -247,13 +311,13 @@
       "Code, data, or research artifacts are described as available.",
       "Dataset documentation, quality control, licensing, or ethics is discussed."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The model returned schema-valid JSON but repeated the deterministic seed assessment, including its statement that no semantic scientific assessment had occurred. Scientific quality remains unassessed pending a substantive response.",
     "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "This is a model-response problem, not evidence of poor science. The original response provenance and billed usage remain in assessment history; no additional call was made."
   },
   "semantic_scholar_id": "2bc97d02615ac66f4691feb5016874de1de23236",
   "source": "openalex",

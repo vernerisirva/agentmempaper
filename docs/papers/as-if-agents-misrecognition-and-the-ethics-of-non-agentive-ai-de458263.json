@@ -18,7 +18,7 @@
   "first_seen_at": "2026-09-15 11:59:45",
   "first_seen_date": "2026-09-15",
   "future_date": false,
-  "is_new": true,
+  "is_new": false,
   "last_seen_at": "2026-09-15 11:59:45",
   "last_seen_date": "2026-09-15",
   "latest_relevant_date_bucket": 0,
@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-15 11:59:45",
-    "generated_at": "2026-09-16 10:12:51",
+    "generated_at": "2026-09-16 12:05:37",
     "last_seen_at": "2026-09-15 11:59:45",
     "metadata_sources": [
       "openalex"
@@ -99,25 +99,30 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:12:22+00:00",
+    "assessed_at": "2026-09-16T11:43:01+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
+    "assessment_version": "quality-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [],
-    "concise_summary": "A well-argued philosophical position paper that develops a clear thesis about AI's lack of episodic memory and its implications for epistemic authority. The argument is methodologically appropriate for its type, engages related work substantively, and carefully scopes its claims.",
+    "concerns": [
+      "The supplied text does not include an explicit limitations section or sustained discussion of objections to the central argument.",
+      "The paper relies heavily on the assumption that episodic memory is necessary for robust epistemic agency, but the defense of this necessity claim is not fully developed in the available text.",
+      "The empirical evidence cited is used to show that AI is treated as an authority, but the paper does not systematically assess the strength or representativeness of that evidence.",
+      "Some sections appear truncated, making it difficult to assess whether the argument addresses counterarguments or alternative views."
+    ],
+    "concise_summary": "This is a philosophical position paper arguing that current AI systems are widely treated as epistemic agents but lack episodic memory and the first-personal, diachronic standpoint required for robust epistemic agency. The author develops a distinction between thin reliability-based authority and stronger answerable epistemic standing, supports the claim with cognitive science literature on episodic and semantic memory, and cites empirical studies showing AI is treated as an authority in medicine, education, and everyday life. The argument is clear and well-structured, but the supplied text is partial and lacks an explicit limitations discussion.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 5,
-      "evaluation_or_validation_strength": 4,
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 3,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
+      "limitations_and_uncertainty_handling": 2,
+      "methodological_rigor": 3,
       "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 3,
+      "reproducibility_and_transparency": 2,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
@@ -128,16 +133,16 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 13,
         "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Introduction",
+        "section": "Ai Without Episodic Memory",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "the possession of abstract informa - tion, then a comparison with AI could proceed almost entirely at the level of accu - racy, retrieval, and co",
+        "excerpt": "developed in the previous section now allows the comparison with current AI systems to be stated more precisely. The issue is not whether AI ca",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 12,
         "paraphrase": "A baseline or comparison system is described.",
-        "section": "Introduction",
+        "section": "Ai Without Episodic Memory",
         "signal_type": "positive"
       },
       {
@@ -146,7 +151,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 9,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Introduction",
+        "section": "Episodic And Semantic Memory",
         "signal_type": "positive"
       },
       {
@@ -155,16 +160,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 6,
         "paraphrase": "User, expert, operational, or deployment evidence is described.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "ngs. It is also the background against which the limitations of current AI memory systems can now be more sharply understood. 3.2 AI withou",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 12,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Introduction",
+        "section": "Ai As Seen As An Epistemic Agent",
         "signal_type": "positive"
       },
       {
@@ -187,74 +183,83 @@
       },
       {
         "dimension": "contribution_clarity",
-        "excerpt": "I am not arguing that no artificial system could ever be counted as an epistemic agent, nor that all forms of epistemic authority require episodic memory. My claim is narrower: episodic memory is a necessary condition for the kind of robust, answerable, first-personal epistemic agency that would justify treating a system as a responsible testifier rather than as an instrument.",
-        "explanation": "The paper clearly articulates its thesis: current AI lacks episodic memory and therefore cannot be a responsible epistemic testifier, making our treatment of it a form of misrecognition. The claim is carefully scoped to current systems.",
-        "page": 3,
-        "paraphrase": "The central claim is stated with precision and scope conditions.",
+        "excerpt": "I argue that there is a deep mismatch between the practical stance many users adopt toward current AI and the kind of systems current AI actually is.",
+        "explanation": "The author clearly articulates the core thesis that treating AI as a responsible epistemic subject constitutes misrecognition, which provides a clear contribution for a philosophical paper.",
+        "page": 2,
+        "paraphrase": "The central claim is explicitly stated as a mismatch between how AI is treated and what it actually is.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "scholarly_novelty_or_value",
-        "excerpt": "Hauswald's framework also helps make the distinction that will later become central to my argument visible: the fact that a system can occupy a role of thin, reliability-based authority does not yet show that it possesses the stronger kind of epistemic standing associated with answerable, first-personal, or testimonial agency.",
-        "explanation": "The paper builds on Hauswald's account of artificial epistemic authority and Shin's algorithmic truth, but argues these accounts miss the distinction between thin reliability-based authority and stronger answerable agency grounded in episodic memory.",
-        "page": 5,
-        "paraphrase": "The paper identifies a specific gap in existing accounts of AI epistemic authority.",
+        "excerpt": "episodic memory is a necessary condition for the kind of robust, answerable, first-personal epistemic agency that would justify treating a system as a responsible testifier rather than as an instrument.",
+        "explanation": "The use of episodic memory as a necessary condition for robust epistemic agency offers a distinctive angle on AI ethics and epistemology, going beyond standard reliability-based accounts.",
+        "page": 3,
+        "paraphrase": "The paper connects the episodic/semantic memory distinction to debates about AI epistemic authority in a novel way.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "methodological_rigor",
         "excerpt": "I focus on episodic memory rather than experience as such for a methodological and epistemological reason. Experience is a notoriously difficult and contested notion, whereas episodic memory has a more traceable cognitive and psychological definition.",
-        "explanation": "The author explicitly addresses why episodic memory is chosen as the focal concept rather than the broader and more contested notion of experience, providing a clear methodological rationale.",
+        "explanation": "The paper distinguishes philosophical from engineering senses of agency and explains why episodic memory rather than experience is the focus, which strengthens conceptual precision.",
         "page": 3,
-        "paraphrase": "The paper justifies its methodological focus on episodic memory rather than experience.",
+        "paraphrase": "The author carefully defines key terms and narrows the scope of the argument.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "Logg et al. (2019) found that participants in several experiments adhered more strongly to advice when it was presented as coming from an algorithm than when the same advice was presented as coming from other people.",
-        "explanation": "The paper cites empirical studies (Logg et al. 2019, Tun et al. 2024, Shekar et al. 2024, Ruben et al. 2026, Jose et al. 2025) across medicine, education, and everyday life to support the claim that AI is practically treated as an authority.",
+        "excerpt": "Logg et al. ( 2019) found that participants in several experiments adhered more strongly to advice when it was presented as coming from an algorithm than when the same advice was presented as coming from other people.",
+        "explanation": "The paper draws on behavioral experiments, systematic reviews, and survey data from medicine, education, and mental health to substantiate the practical phenomenon it analyzes.",
         "page": 6,
-        "paraphrase": "The paper reviews empirical evidence from multiple domains to establish the phenomenon of AI being treated as an epistemic authority.",
-        "section": "Introduction",
+        "paraphrase": "Empirical studies are cited to support the claim that AI is treated as an epistemic authority.",
+        "section": "Ai As Seen As An Epistemic Agent",
         "signal_type": "positive"
       },
       {
         "dimension": "evidence_to_claim_alignment",
-        "excerpt": "Huet et al. (2025), in proposing an Episodic Memories Generation and Evaluation Benchmark, begin with the explicit premise that current LLMs lack a robust mechanism for episodic memory and that such capacities therefore need to be modeled and tested.",
-        "explanation": "The paper examines parametric memory, context windows, and external retrieval mechanisms, and cites AI research (Pritzel et al. 2017, Huet et al. 2025, Fountas et al. 2024, Dong et al. 2025) that treats episodic memory as missing or aspirational in current systems.",
-        "page": 13,
-        "paraphrase": "The paper's central claim about AI lacking episodic memory is supported by analysis of current AI architectures and AI research literature.",
-        "section": "Introduction",
+        "excerpt": "Nothing in this section shows that AI is an epistemic authority in exactly the same sense as a human witness, teacher, or expert. Nor does it show that users are justified in treating it as such.",
+        "explanation": "The paper carefully states that the section establishes only that AI is treated as an authority, not that such treatment is justified, aligning evidence with the narrower claim.",
+        "page": 8,
+        "paraphrase": "The author explicitly limits the conclusion to what the evidence supports.",
+        "section": "Ai As Seen As An Epistemic Agent",
         "signal_type": "positive"
       },
       {
         "dimension": "related_work_and_gap_positioning",
-        "excerpt": "Miranda Fricker's (2007) work on epistemic injustice makes clear that credibility and epistemic standing are socially structured, and that agents can be wronged in their capacity as knowers when credibility is allocated unjustly. My worry is not only that AI may be granted too much credibility, but that treating AI as a testimonial authority can help reorganize whose voices are heard, deferred to, or displaced.",
-        "explanation": "The paper discusses Hauswald's account of artificial epistemic authority, Shin's algorithmic truth, and Fricker's epistemic injustice, showing how each contributes to but does not fully address the paper's central concern about misrecognition.",
-        "page": 4,
-        "paraphrase": "The paper engages substantively with related philosophical work and positions its contribution relative to it.",
-        "section": "Introduction",
+        "excerpt": "Hauswald's account captures something that is plainly true about current AI systems: users often defer to them because they treat them as more competent than themselves in specific epistemic domains.",
+        "explanation": "The author situates the argument relative to Hauswald and Shin, showing how their accounts capture thin authority but leave open the question of stronger epistemic standing, which the paper addresses.",
+        "page": 5,
+        "paraphrase": "The paper engages with recent philosophical work on artificial epistemic authority and algorithmic truth.",
+        "section": "Ai As Seen As An Epistemic Agent",
         "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "Empirical research in behavioral decision-making and human-computer interaction supports the claim that users often grant AI outputs a practical authority.",
+        "explanation": "For a philosophical paper, this is not necessarily a failure, but the absence of a clear selection methodology makes it difficult to assess whether the cited evidence is representative.",
+        "page": 6,
+        "paraphrase": "The paper does not provide a systematic method for selecting or evaluating the empirical studies it cites.",
+        "section": "Ai As Seen As An Epistemic Agent",
+        "signal_type": "concern"
       },
       {
         "dimension": "limitations_and_uncertainty_handling",
         "excerpt": "I do not deny that experience may be the deeper background issue. Indeed, much of what matters about episodic memory, its first-personal character, its connection to personal history, and its role in answerability, may depend on experience in this broader sense.",
-        "explanation": "The author acknowledges that experience may be the deeper condition underlying episodic memory, and carefully limits the claim to current systems rather than making claims about all possible AI.",
+        "explanation": "The paper acknowledges that experience may be a deeper background issue, but it does not appear to systematically address counterarguments to the necessity of episodic memory for epistemic agency.",
         "page": 3,
-        "paraphrase": "The paper explicitly acknowledges the deeper background issue of experience and scopes its claims accordingly.",
+        "paraphrase": "No explicit limitations section or sustained discussion of objections is visible in the supplied text.",
         "section": "Introduction",
-        "signal_type": "positive"
+        "signal_type": "concern"
       },
       {
         "dimension": "presentation_and_precision",
-        "excerpt": "A terminological clarification is important from the outset. In this paper, I use 'agentive' and 'non-agentive' in a philosophical rather than an engineering sense. I do not mean 'agentic' in the now common technical sense of AI systems that can autonomously plan, call tools, or carry out multi-step tasks.",
-        "explanation": "The author distinguishes between 'agentive' in a philosophical sense versus the engineering sense of 'agentic', clarifying the scope of the argument from the beginning.",
-        "page": 2,
-        "paraphrase": "The paper provides clear terminological clarification at the outset.",
-        "section": "Introduction",
+        "excerpt": "In a thin sense, a system counts as epistemically authoritative when its outputs are reliable indicators of truth in some domain and when it is reasonable, under appropriate conditions, to defer to them.",
+        "explanation": "The distinction between thin and strong epistemic authority, and between episodic and semantic memory, is clearly articulated and consistently maintained throughout the available text.",
+        "page": 16,
+        "paraphrase": "The paper uses precise terminology and carefully distinguishes key concepts.",
+        "section": "Implications For Ai As An Epistemic Authority",
         "signal_type": "positive"
       }
     ],
@@ -264,32 +269,33 @@
     "manual_override": false,
     "missing_information": [
       "No reproducible review or selection methodology was detected.",
-      "The final ethical implications section and conclusion are not fully available in the extracted text."
+      "An explicit limitations or objections section is not visible in the supplied text.",
+      "The full development of the argument in the Implications section is partially missing.",
+      "No discussion of alternative views that might grant AI stronger epistemic standing without episodic memory is visible.",
+      "The paper does not provide a systematic methodology for selecting or evaluating the empirical studies it cites."
     ],
-    "overall_quality_score": 78,
+    "overall_quality_score": 68,
     "paper_type": "position_or_conceptual",
     "positive_signals": [
       "The available text identifies data or a benchmark used by the work.",
       "A baseline or comparison system is described.",
       "Quantitative evaluation signals were detected.",
       "User, expert, operational, or deployment evidence is described.",
-      "Limitations or threats to validity are acknowledged.",
       "Dataset documentation, quality control, licensing, or ethics is discussed.",
-      "The central thesis is clearly and repeatedly stated with precise scope conditions.",
-      "The paper engages substantively with related philosophical work (Hauswald, Shin, Fricker) and positions its contribution relative to them.",
-      "The argument draws on a well-established cognitive science distinction (episodic vs. semantic memory) with appropriate citations.",
-      "Empirical evidence of AI being treated as an epistemic authority is reviewed from multiple domains (medicine, education, mental health).",
-      "The paper explicitly distinguishes thin reliability-based authority from stronger answerable epistemic agency.",
-      "Limitations and scope are carefully acknowledged, including the possibility of future systems with episodic-like capacities.",
-      "The paper explicitly addresses the relationship between episodic memory and the deeper issue of experience, justifying its methodological focus."
+      "The central thesis is clearly stated and consistently developed across sections.",
+      "The paper engages substantively with recent philosophical work on artificial epistemic authority and algorithmic truth.",
+      "Empirical studies from medicine, education, and everyday AI use are cited to support the claim that AI is treated as an epistemic authority.",
+      "The distinction between episodic and semantic memory is carefully developed with reference to cognitive science and neuroscience literature.",
+      "The argument distinguishes thin reliability-based authority from stronger answerable epistemic standing, which is a precise and useful conceptual move.",
+      "The paper explicitly narrows its claim to current AI systems and does not overgeneralize to all possible artificial systems."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
-    "recommendation": "promising",
+    "rationale": "The paper is a philosophical position/conceptual argument rather than an empirical study. It develops a clear central thesis about misrecognition of non-agentive AI and supports it with conceptual distinctions, cited philosophical work, and empirical studies of AI use. However, the supplied text is partial and omits some sections, including parts of the argumentative center and any explicit limitations discussion. The central claims are largely aligned with the presented evidence, but the absence of a visible limitations section and the incomplete text prevent a full pass.",
+    "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The assessment is based on partial full text. Several sections appear truncated, and no explicit limitations or uncertainty-handling section is visible in the supplied material. The paper's philosophical argument is coherent and well-supported in the available text, but the missing portions could contain qualifications, objections, or limitations that would affect the evaluation."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

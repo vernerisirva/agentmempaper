@@ -24,7 +24,7 @@
   "last_seen_date": "2026-09-14",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-08-29",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-05 18:01:34",
   "notified_date": "2026-09-05",
@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-05 17:59:24",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:46",
     "last_seen_at": "2026-09-14 13:17:15",
     "metadata_sources": [
       "arxiv",
@@ -103,14 +103,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:14:49+00:00",
+    "assessed_at": "2026-09-16T12:04:43+00:00",
     "assessment_scope": "partial_full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": "deepseek/deepseek-v4-pro-0813",
-    "assessor_type": "llm",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "manual-review:8b7e5667d9be5f71",
+    "assessor_type": "manual_override",
     "combined_rank_score": 0.92,
     "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 84/100, medium confidence, based on partial full text.",
+    "concise_summary": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram's hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.",
     "confidence": "medium",
     "curation_note": null,
     "dimension_scores": {
@@ -118,7 +118,7 @@
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 5,
+      "methodological_rigor": 4,
       "presentation_and_precision": 3,
       "related_work_and_gap_positioning": 3,
       "reproducibility_and_transparency": 2,
@@ -128,8 +128,8 @@
     "evidence": [
       {
         "dimension": "contribution_clarity",
-        "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "excerpt": "To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engram from a pretraining- time conditional memory component into a post- hoc adapter for frozen large language models.",
+        "explanation": "The paper explicitly names the proposed framework and states what it repurposes, making the core contribution identifiable from the introduction.",
         "page": 2,
         "paraphrase": "The contribution is stated explicitly.",
         "section": "Introduction",
@@ -137,119 +137,47 @@
       },
       {
         "dimension": "methodological_rigor",
-        "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "excerpt": "The modified hidden state at layer \u2113\u2208Lis: u(\u2113) new =u (\u2113) +\u03b1\u00b7g (\u2113)\u00b7mem (\u2113)(x1:t),(1) whereu(\u2113)\u2208R B\u00d7T\u00d7D is the hidden state,\u03b1= 0.2 is a fixed scaling factor, g(\u2113) \u2208[0,1] B\u00d7T is the learned gate, and mem(\u2113) is the Engram memory retrieval.",
+        "explanation": "The core update equation is given with definitions of each term, supporting methodological clarity.",
+        "page": 3,
+        "paraphrase": "The method is described with a formal update equation.",
+        "section": "Conditional-Activation Adapter",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Engram Adapter86.47 56.83 89.5272.53 101.0",
+        "explanation": "The 8B results table shows the Engram Adapter achieving 86.47% in-domain accuracy and 101.0% average OOD retention, providing quantitative support for the central claim.",
+        "page": 9,
+        "paraphrase": "Quantitative results are reported for the proposed method and baselines.",
+        "section": "Conclusion",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Despite mean joint activation rates of 26\u201328%, the mean resid- ual ratio is only\u22480.08% of the hidden-state norm. Even conditioning on activated tokens, the 95th- percentile perturbation is only\u22481.1\u20131.2% of the hidden-state norm.",
+        "explanation": "The mechanistic analysis directly connects the observed non-negligible OOD activation to the small residual perturbation, supporting the claim that gate and projection attenuation preserve OOD behavior.",
         "page": 6,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experimental Setup",
+        "paraphrase": "The mechanistic evidence aligns with the retention claim.",
+        "section": "Residual Perturbation Analysis",
         "signal_type": "positive"
       },
       {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 7,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Most PEFT methods are effectively always on: once trained, their residual modules or weight per- turbations are applied to every input without distin- guishing whether it belongs to the target domain.",
+        "explanation": "The paper contrasts its conditional-activation approach with always-on PEFT methods, but the comparison is primarily conceptual rather than a detailed empirical or theoretical positioning against specific prior work.",
         "page": 1,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 14,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Limitations",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 16,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Limitations",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Related Work",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "contribution_clarity",
-        "excerpt": "n for this behavior? To address these challenges, we propose Engram Adapter, a parameter-efficient framework that re- purposes DeepSeek Engr",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "paraphrase": "The contribution is stated explicitly.",
+        "paraphrase": "The gap is identified but related-work comparison is limited.",
         "section": "Introduction",
         "signal_type": "positive"
       },
       {
-        "dimension": "methodological_rigor",
-        "excerpt": "ppendix B.3 pro- vides the full setup summary and benchmark de- tails. 4.2 Experiment 1: AG-News Domain Adaptation (4B) Table 1 presents th",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 6,
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "when activation is non-negligible. 6 Scaling and Baseline Ablations on Qwen3-8B To assess whether the Engram Adapter\u2019s properties hold at",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 7,
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Experimental Setup",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "al reasoning. Engram Adapter im- proves in-domain accuracy while preserving 99.4%\u2013100.1% of average OOD performance; on LegalBench it slightly exceeds the frozen base",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Abstract",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "evaluation_or_validation_strength",
-        "excerpt": "is small in our residual and output measurements. Ablation experiments (Sec- tion 5) further show that the gate provides a\u22481.8\u00d7 suppressio",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 14,
-        "paraphrase": "An ablation analysis is reported.",
-        "section": "Limitations",
-        "signal_type": "positive"
-      },
-      {
         "dimension": "limitations_and_uncertainty_handling",
-        "excerpt": "configuration artifact rather than a fundamental limitation of the method. (IA) 3 trained on MedMCQA de- grades ARC-Challenge from 88.99% t",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 16,
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "excerpt": "The current experiments span two model scales (Qwen3-4B and Qwen3-8B) and three evaluation domains (news, medicine, law), but empirical validation on even larger models (e.g., 27B pa- rameters) and more challenging domain corpora would further strengthen the findings.",
+        "explanation": "The limitations section explicitly acknowledges the scale and domain coverage constraints of the empirical validation.",
+        "page": 9,
+        "paraphrase": "Limitations are acknowledged.",
         "section": "Limitations",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "methodological_rigor",
-        "excerpt": "ated embedding remains numerically close to zero (Proposition C.1). Autoregressive support.A model-level for- ward pre-hook maintains a slidi",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 5,
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Related Work",
         "signal_type": "positive"
       }
     ],
@@ -257,25 +185,26 @@
     "full_text_url": "https://arxiv.org/pdf/2608.29327",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 84,
+    "missing_information": [
+      "The 8B table uses one seed; evidence covers two model scales and limited domains. The adapter trades some in-domain accuracy and inference overhead for retention; broader generality is not established. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
+    ],
+    "overall_quality_score": 78,
     "paper_type": "empirical_research",
     "positive_signals": [
       "The contribution is stated explicitly.",
       "The available text identifies data or a benchmark used by the work.",
       "A baseline or comparison system is described.",
       "Quantitative evaluation signals were detected.",
-      "An ablation analysis is reported.",
       "Limitations or threats to validity are acknowledged.",
       "Formal definitions or proof-oriented evidence is present."
     ],
-    "rationale": "The proposed decision lacked sufficient located manuscript evidence; review is pending.",
+    "rationale": "Codex evidence audit of the saved DeepSeek proposed pass, following the reviewed literal line-wrap correction. The paper proposes Engram Adapter, a conditional-memory PEFT method that repurposes DeepSeek Engram's hash-based n-gram lookup as a post-hoc adapter with occupancy-tracked joint masking and a learned scalar gate. The central claim is that conditional activation preserves OOD capabilities better than always-on PEFT while improving in-domain accuracy. The manuscript provides quantitative results on Qwen3-4B and Qwen3-8B across AG-News, MedMCQA, ARC-Challenge, FLORES, MBPP, and LegalBench, plus mechanistic residual and output-distribution analyses. The contribution is clearly stated, the method is described in sufficient architectural detail, and the empirical evidence generally supports the retention claim. However, the related-work positioning is somewhat thin for the actual claims, and reproducibility is limited by the absence of code or full implementation details in the supplied text.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Full-text evidence is required for contribution, methods, validation, comparisons or their justified absence, claim alignment, and limitations."
+    "uncertainty": "The 8B table uses one seed; evidence covers two model scales and limited domains. The adapter trades some in-domain accuracy and inference overhead for retention; broader generality is not established. The original rejected proposal rationale was not retained by the prior validator; this audit uses its preserved summary, explanations and exact quotes, and is explicitly a manual override rather than a new model assessment."
   },
   "semantic_scholar_id": "25ac9303c7376abdf1dc80620c5408d049061536",
   "source": "arxiv",

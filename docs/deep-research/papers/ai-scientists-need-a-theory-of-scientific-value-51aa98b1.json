@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-14 13:10:59",
-    "generated_at": "2026-09-16 10:12:57",
+    "generated_at": "2026-09-16 12:05:45",
     "last_seen_at": "2026-09-15 12:04:20",
     "metadata_sources": [
       "openalex"
@@ -99,28 +99,32 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-16T09:02:50+00:00",
+    "assessed_at": "2026-09-16T11:48:20+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [
-      "Comparative claims were detected without a suitable baseline in the available text."
+      "Comparative claims were detected without a suitable baseline in the available text.",
+      "The paper does not empirically test or implement the proposed theory of scientific value, leaving the practical feasibility of checkable value judgments unvalidated.",
+      "The formal apparatus is presented as a sketch; no complete derivation or worked end-to-end example is provided for the proposed judgment form.",
+      "The related-work discussion is broad but does not systematically compare the proposal against existing quantitative theories of scientific value or evaluation frameworks.",
+      "The extracted text appears incomplete in places, making it difficult to assess whether all supporting arguments and tables are fully developed."
     ],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 57/100, high confidence, based on full text.",
+    "concise_summary": "This position paper argues that AI-for-science should treat a theory of scientific value as a foundational research task. It offers a clear conceptual framework, formal illustrations, and engagement with alternative views, but it does not empirically validate the proposal or demonstrate operational feasibility. The contribution is plausible and well-articulated but remains a research agenda rather than an established result.",
     "confidence": "high",
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 2,
+      "contribution_clarity": 4,
       "evaluation_or_validation_strength": 2,
       "evidence_to_claim_alignment": 3,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
+      "methodological_rigor": 3,
       "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 2,
-      "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 3
+      "related_work_and_gap_positioning": 3,
+      "reproducibility_and_transparency": 2,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
@@ -135,11 +139,11 @@
       },
       {
         "dimension": "evaluation_or_validation_strength",
-        "excerpt": "rection: research selection involves uncertainty, cost, and possible achievements as well as existing ones. 3 From Scientific Contributions to Checkable Judgments Closing an experi",
+        "excerpt": "licit credit would allow it to be weighed against cost. 4",
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 3,
+        "page": 4,
         "paraphrase": "Quantitative evaluation signals were detected.",
-        "section": "Introduction",
+        "section": "What Improves When An Experimental Loophole Is Closed?",
         "signal_type": "positive"
       },
       {
@@ -148,16 +152,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 7,
         "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": "Introduction",
-        "signal_type": "positive"
-      },
-      {
-        "dimension": "reproducibility_and_transparency",
-        "excerpt": "ftware, version 0.1.1. Zenodo, 2026. URL https: //github.com/BeibaiDraco/maieusis/tree/v0.1.1. 10",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 10,
-        "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Conclusion",
+        "section": "From Assessments To Research Objectives",
         "signal_type": "positive"
       },
       {
@@ -166,7 +161,7 @@
         "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 2,
         "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Introduction",
+        "section": "What Should A Theory Of Scientific Value Explain?",
         "signal_type": "positive"
       },
       {
@@ -186,31 +181,120 @@
         "paraphrase": "No reproducible review or selection methodology was detected.",
         "section": null,
         "signal_type": "missing"
+      },
+      {
+        "dimension": "contribution_clarity",
+        "excerpt": "AI for science should make the development of a theory of scientific value a foundational research task.",
+        "explanation": "This direct statement of the main claim makes the contribution clear and easy to identify.",
+        "page": 2,
+        "paraphrase": "The paper states its central thesis explicitly: AI for science should make the development of a theory of scientific value a foundational research task.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "scholarly_novelty_or_value",
+        "excerpt": "As they take greater responsibility for choosing research, the grounds for those judgments become part of the design problem.",
+        "explanation": "The framing of value theory as a design problem for AI scientists is a distinctive contribution that goes beyond existing task-specific evaluation approaches.",
+        "page": 1,
+        "paraphrase": "The paper proposes a novel framing that connects scientific value theory to the design of AI scientists, arguing that value judgments become part of the design problem as AI takes on research choices.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "methodological_rigor",
+        "excerpt": "Local models obey|S|\u22642 forS=C 00 +C 01 +C 10\u2212C 11. Counting only detected trials can select different shared hidden states at different settings, however [Larsson, 2014].",
+        "explanation": "The use of a concrete formal example with specified correlations and a score exceeding the local bound demonstrates careful reasoning about evidential coverage.",
+        "page": 4,
+        "paraphrase": "The paper uses a formal Bell-test example to illustrate how closing an experimental loophole can strengthen the grounds for a conclusion, specifying the CHSH inequality and a local model that violates it under detection selection.",
+        "section": "What Improves When An Experimental Loophole Is Closed?",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "evaluation_or_validation_strength",
+        "excerpt": "Cases such as these can test a value theory before it is entrusted with directing research (Table 1).",
+        "explanation": "The paper is a position piece and explicitly frames the work as a research agenda, so the absence of empirical validation is expected but limits the strength of the central claims.",
+        "page": 7,
+        "paraphrase": "The paper does not provide empirical validation of the proposed theory of scientific value or demonstrate that the framework can be operationalized in AI systems.",
+        "section": "Evaluation",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "evidence_to_claim_alignment",
+        "excerpt": "Constructing the first accessible proof of a conjecture can be a major advance even if the conjecture was always a logical consequence of accepted axioms. Copying that proof adds neither a mathematical relation nor independent support.",
+        "explanation": "This example directly illustrates the paper's claim that the relevant background changes the contribution, aligning evidence with the central argument.",
+        "page": 2,
+        "paraphrase": "The paper supports its claim that value depends on what is already known by arguing that copying an existing proof adds no new relation or support, while the first accessible proof can be a major advance.",
+        "section": "What Should A Theory Of Scientific Value Explain?",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "related_work_and_gap_positioning",
+        "excerpt": "Success on assigned tasks gives it no automatic rule for making that choice.",
+        "explanation": "This comparison identifies a gap in existing systems: they learn evaluations from assigned tasks but do not provide principles for choosing research objectives.",
+        "page": 1,
+        "paraphrase": "The paper situates its proposal relative to existing AI-for-science systems, including Scientific Judge, Co-Scientist, and The AI Scientist, and notes that success on assigned tasks gives no automatic rule for choosing research questions.",
+        "section": "Introduction",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "reproducibility_and_transparency",
+        "excerpt": "One possible form for such a judgment is \u0393;F;K\u22a2\u03c0:A\u2ab0 d,Q B.(1)",
+        "explanation": "The absence of implementation details limits reproducibility, though the paper is a position piece rather than an empirical study.",
+        "page": 5,
+        "paraphrase": "The paper does not provide code, data, or implementation details for the proposed checkable judgments, and the formal apparatus is presented as a sketch.",
+        "section": "A Judgment That Carries Its Grounds",
+        "signal_type": "concern"
+      },
+      {
+        "dimension": "limitations_and_uncertainty_handling",
+        "excerpt": "A real-valued score orders every pair of assigned numbers, so it cannot exactly represent an incomplete comparison.",
+        "explanation": "This explicit discussion of incomparability and the limits of scalar scores shows careful handling of uncertainty and scope.",
+        "page": 5,
+        "paraphrase": "The paper acknowledges that a real-valued score cannot exactly represent an incomplete comparison and that proven incomparability is distinct from equal value.",
+        "section": "Comparisons Before A Universal Scale",
+        "signal_type": "positive"
+      },
+      {
+        "dimension": "presentation_and_precision",
+        "excerpt": "Blackwell\u2019s theory compares experiments by the information they can provide [Blackwell, 1953, Fritz et al., 2023].",
+        "explanation": "The use of formal notation and specific examples enhances the precision and clarity of the presentation.",
+        "page": 5,
+        "paraphrase": "The paper uses precise formal notation and examples, such as the CHSH inequality and Blackwell's theory of experiment comparison, to make its arguments concrete.",
+        "section": "Comparisons Before A Universal Scale",
+        "signal_type": "positive"
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://knowledge.uchicago.edu/records/mgmw1-gw451/files/AI_Scientists_Need_a_Theory_of_Scientific_Value.pdf?download=1",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [
-      "No reproducible review or selection methodology was detected."
+      "No reproducible review or selection methodology was detected.",
+      "No empirical or simulation-based evaluation of the proposed value-theoretic framework is provided.",
+      "No complete formal derivation or proof of the proposed judgment form is included in the available text.",
+      "The full content of Table 1 and some section transitions are truncated or absent from the extraction.",
+      "No implementation details or code are provided for the proposed checkable judgments."
     ],
-    "overall_quality_score": 57,
-    "paper_type": "survey_or_review",
+    "overall_quality_score": 56,
+    "paper_type": "position_or_conceptual",
     "positive_signals": [
       "The available text identifies data or a benchmark used by the work.",
       "Quantitative evaluation signals were detected.",
       "Limitations or threats to validity are acknowledged.",
-      "Code, data, or research artifacts are described as available.",
-      "Formal definitions or proof-oriented evidence is present."
+      "Formal definitions or proof-oriented evidence is present.",
+      "The paper clearly states its central thesis and connects it to concrete AI-for-science systems.",
+      "It provides formal illustrations, including a Bell-test loophole example and Blackwell-style experiment comparisons, to ground the argument.",
+      "It engages alternative views, such as Polanyi's tacit expertise and the risk that explicit criteria could impoverish science.",
+      "It acknowledges limitations, including incomparability, certification bounds, and the cost of obtaining stronger assessments.",
+      "It situates the proposal within existing work on AI scientists, benchmarks, and formal evaluation."
     ],
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
+    "rationale": "The paper is a position/conceptual argument for making a theory of scientific value foundational to AI-for-science. It develops a substantive conceptual framework with formal illustrations (Bell-test loophole closure, Blackwell comparisons, potential-based rewards) and engages alternative views, but it does not empirically validate the proposed theory or demonstrate that the framework can be operationalized in AI systems. The central claims are argued rather than tested, and the paper explicitly frames the work as a research agenda, so the contribution is plausible and well-articulated but not yet established.",
     "recommendation": "uncertain",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "6a95fed7d36453707c1c579938a86682ec05a8cd2def103ba03fd7ce367c4f57",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The manuscript is a preprint and the extracted text appears to omit some sections or tables (e.g., Table 1 is truncated, some section transitions are abrupt), so the assessment may not reflect the complete argument. Because the paper is a position piece, the absence of empirical validation is expected, but the strength of the contribution depends on whether the proposed formal apparatus can be made checkable and useful in practice, which the paper only sketches."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

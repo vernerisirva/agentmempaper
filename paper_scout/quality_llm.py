@@ -537,7 +537,14 @@ def _verify_support(value: dict, context: EvidenceContext, settings, client, hea
         # Verifier truncation and malformed output cannot establish support.
         if choice.get('finish_reason') not in {'stop', None}:
             raise ValueError('verifier did not finish normally')
-        content = choice['message']['content']
+        message = choice.get('message')
+        if not isinstance(message, dict):
+            call['response_problem'] = 'invalid_message'
+            raise ValueError('verifier message must be an object')
+        content = message.get('content')
+        if not isinstance(content, str):
+            call['response_problem'] = 'non_string_content'
+            raise ValueError('verifier content must be a string')
         call['content_sha256'] = hashlib.sha256(content.encode()).hexdigest()
         call['content_characters'] = len(content)
         parsed = json.loads(_strip_json_fence(content))

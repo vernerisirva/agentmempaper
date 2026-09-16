@@ -54,7 +54,7 @@ Section roles reuse the deterministic heading classifier (`abstract`,
 `introduction`, `methods`, `results`, `limitations`, `discussion`, `conclusion`,
 `related`, `appendix`, `body`, `excluded`). They are stored in blocks and hashed
 into the context identity. Unknown body headings and appendices are candidates,
-not proof of methods or results. The prompt supplies explicit body candidate IDs
+not proof of methods or results. Substantive methods, results, or reproducibility details in an appendix can be the cited evidence; manuscript location alone neither proves nor disproves support. The prompt supplies explicit body candidate IDs
 per dimension, plus the limited Abstract contribution IDs.
 
 An Abstract may support an attributed high-level contribution/scope
@@ -97,7 +97,7 @@ Invalid IDs/contexts/claim-role selections are technical grounding failures.
 A verifier transport/schema/output-limit failure is technical protocol
 uncertainty. Valid, eligible evidence that does not establish the proposed claim
 is scientific uncertainty. Rejected claims remain only in the execution audit;
-they cannot supply gate evidence, positive signals or an operative rationale.
+they cannot supply gate evidence, positive signals or an operative rationale. Any rejected item withholds the entire proposed narrative, even if the narrative verifier separately returned supported.
 The verifier never turns an infrastructure failure into scientific insufficiency.
 
 Legacy quote and `block-evidence-v1` assessments are read without revalidation or

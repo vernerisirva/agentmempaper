@@ -215,6 +215,31 @@ class SemanticsTests(unittest.TestCase):
         items=verifier_items(self.value,self.context);ids=[s['evidence_id'] for item in items[:-2] for s in item['sources']]
         for item in items[-2:]:self.assertEqual([s['evidence_id'] for s in item['sources']],list(dict.fromkeys(ids)))
 
+    def test_substantive_appendix_content_can_support_body_dimensions(self):
+        # Location in an appendix does not erase actual methods/results content.
+        self.selected=replace(self.selected,sections=[replace(s,heading='Appendix') for s in self.selected.sections])
+        self.context=build_evidence_context('fixture',self.selected);self.value['evidence_context_id']=self.context.context_id
+        for item,block in zip(self.value['evidence'],self.context.blocks):item['evidence_ids']=[block.evidence_id]
+        self.assertEqual(self.validate().quality_status,'pass')
+        # Eligible appendix IDs alone cannot establish adequacy for a generic or unsupported claim.
+        rejected=self.validate(overrides={'evidence-1':'unsupported'})
+        self.assertEqual(rejected.quality_status,'uncertain')
+        self.assertEqual(rejected.execution['outcome'],'scientific')
+
+    def test_rejected_item_cannot_leave_its_claim_in_published_narrative(self):
+        for numeric in (False,True):
+            value=copy.deepcopy(self.value)
+            claim='The method establishes universal generalization.' if not numeric else 'The method achieves 99% retention.'
+            value['evidence'][1]['claim']=claim;value['quality_rationale']=claim
+            # Even a mistaken narrative verifier approval cannot rescue an item
+            # rejected numerically or by its own verifier result.
+            result=self.validate(value,overrides={} if numeric else {'evidence-1':'unsupported'})
+            self.assertEqual(result.quality_status,'uncertain')
+            self.assertNotIn(claim,result.quality_rationale)
+            self.assertNotIn(claim,result.concise_summary)
+            self.assertFalse(any(claim==e.paraphrase for e in result.evidence))
+            self.assertEqual(result.execution['proposed_decision']['quality_rationale'],claim)
+
     def test_legacy_reviewed_assessment_remains_unchanged(self):
         old=assessment();stored=old.to_dict();self.assertEqual(QualityAssessment.from_dict(stored),old)
         self.assertEqual(old.quality_status,'pass');self.assertEqual(old.to_dict(),stored)
@@ -285,7 +310,9 @@ class VerifierExecutionTests(unittest.TestCase):
     def test_nonobject_error_and_empty_envelopes_record_clear_protocol_failures(self):
         for response,problem in (([], 'non_object_envelope'),(None,'non_object_envelope'),('text','non_object_envelope'),
             ({},'invalid_choices'),({'choices':[]},'invalid_choices'),({'choices':[None]},'invalid_choices'),
-            ({'error':{'code':503}},'provider_error_envelope')):
+            ({'error':{'code':503}},'provider_error_envelope'),
+            ({'choices':[{'finish_reason':'stop','message':None}]},'invalid_message'),
+            ({'choices':[{'finish_reason':'stop','message':{'content':[]}}]},'non_string_content')):
             result,client=self.assess([envelope(),json.dumps(response)])
             self.assertEqual(result.execution['outcome'],'protocol_failure')
             self.assertEqual(result.execution['calls'][-1]['response_problem'],problem)

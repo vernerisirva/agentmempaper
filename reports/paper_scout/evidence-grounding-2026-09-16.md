@@ -65,7 +65,7 @@ The four prior scientific uncertainties, one insufficient paper and three unavai
 
 All 241 unit tests, three relevance validations, three quality validations, discovery checks, idempotency, offline builds, sidecar schemas, relative links, exposure scans, workflow/YAML checks, generated-file sizes and diff checks pass. A post-merge test invocation initially used the system Git blocked by its Xcode licence; the complete rerun using Homebrew Git passed. Snapshot/restore reproduces all three databases, preserves every historical assessment and all discovery rows, and changes exactly the selected eight current records. The previous published snapshot loads without rewriting legacy assessments.
 
-Main-library counts: **Agentic Memory 4 / Deep Research 6 / Engram 6**. All 28 cards and all library/review placements are checked. The single Pages deployment and public verification are pending; final verification will be appended here.
+Main-library counts: **Agentic Memory 4 / Deep Research 6 / Engram 6**. All 28 cards and all library/review placements are checked. [Pages run 35130807226](https://github.com/vernerisirva/agentmempaper/actions/runs/35130807226) succeeded, deploying `d53d114fab88276b8c58364fd70d35a3841a8abe` with `deploy_only=true`. Exactly one deployment was dispatched; discovery, paid assessment, state-writing and automatic commit steps were skipped. All 28 public calibration JSON cards and all six library/review HTML pages exactly match the audited local files. All 34 public pages passed browser checks.
 
 ## Readiness and continuation
 
@@ -80,3 +80,5 @@ Batch 2 was not started.
 Local browser verification passed for all 28 cards plus six library/review pages (34 total). Expanded source-evidence controls work; all 23 ProtLingo HTML blockquotes match canonical text after the existing HTML writer trims line-end whitespace. Source-block text in the sidecar retains the exact canonical bytes.
 
 Durable runtime asset published, downloaded and restored with identical database bytes. SHA-256: `660455a8cadcfb1dab8f387cadc9c3537e1a35d51b646007b8d9c958d3802f63`.
+
+Public libraries: [Agentic Memory](https://vernerisirva.github.io/agentmempaper/), [Deep Research](https://vernerisirva.github.io/agentmempaper/deep-research/), [Engram](https://vernerisirva.github.io/agentmempaper/engram/). This final verification note changes reports only; no second Pages deployment.

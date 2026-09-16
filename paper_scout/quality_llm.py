@@ -9,7 +9,7 @@ from paper_scout.full_text import SelectedPaperText
 from paper_scout.http import HttpClient
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.models import PaperCandidate
-from paper_scout.quality_models import QUALITY_GATE_VERSION, REQUIRED_GATE_DIMENSIONS, QualityAssessment, QualityEvidence, recommendation_for_score
+from paper_scout.quality_models import QUALITY_GATE_VERSION, REQUIRED_GATE_DIMENSIONS, QUALITY_DIMENSIONS, PAPER_TYPES, QualityAssessment, QualityEvidence, recommendation_for_score
 
 
 LOGGER = logging.getLogger(__name__)
@@ -130,6 +130,50 @@ def _normalized(text: str) -> str:
     return " ".join(text.casefold().split())
 
 
+def quality_review_schema() -> dict:
+    text = {"type": "string", "minLength": 1}
+    strings = {"type": "array", "items": text}
+    return {
+        "type": "object", "additionalProperties": False,
+        "required": ["quality_status", "quality_rationale", "quality_uncertainty",
+                     "overall_quality_score", "confidence", "paper_type", "evidence"],
+        "properties": {
+            "quality_status": {"enum": ["pass", "uncertain", "insufficient"]},
+            "quality_rationale": text, "quality_uncertainty": text,
+            "overall_quality_score": {"type": ["integer", "null"], "minimum": 0, "maximum": 100},
+            "confidence": {"enum": ["low", "medium", "high"]},
+            "paper_type": {"enum": sorted(PAPER_TYPES)},
+            "dimension_scores": {"type": "object", "additionalProperties": False,
+                "properties": {d: {"type": ["integer", "null"], "minimum": 0, "maximum": 5} for d in QUALITY_DIMENSIONS}},
+            "positive_signals": strings, "concerns": strings, "missing_information": strings,
+            "concise_summary": {"type": "string"},
+            "evidence": {"type": "array", "items": {
+                "type": "object", "additionalProperties": False,
+                "required": ["dimension", "signal_type", "paraphrase", "explanation"],
+                "properties": {
+                    "dimension": {"enum": list(QUALITY_DIMENSIONS)},
+                    "signal_type": {"enum": ["positive", "concern", "missing"]},
+                    "paraphrase": text, "explanation": text,
+                    "section": {"type": ["string", "null"]},
+                    "page": {"type": ["integer", "null"], "minimum": 1},
+                    "excerpt": {"type": ["string", "null"]},
+                },
+            }},
+        },
+    }
+
+
+def validate_manual_quality_review(value: object) -> dict:
+    """Check import shape before acquisition/storage; semantic grounding follows."""
+    from jsonschema import Draft202012Validator
+    errors = list(Draft202012Validator(quality_review_schema()).iter_errors(value))
+    if errors:
+        error = errors[0]
+        location = ".".join(str(item) for item in error.absolute_path) or "review"
+        raise ValueError(f"invalid review JSON at {location}: {error.validator} constraint failed")
+    return value
+
+
 def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, deterministic: QualityAssessment, model: str) -> dict[str, object]:
     prompt = {
         "paper": {"title": candidate.title, "text": selected.text},
@@ -139,20 +183,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
             "warnings": selected.warnings,
         },
         "deterministic_assessment": deterministic.to_dict(),
-        "required_schema": {
-            "quality_status": "pass|uncertain|insufficient",
-            "quality_rationale": "concise evidence-based conclusion, not chain-of-thought",
-            "quality_uncertainty": "specific limitations and unverified claims",
-            "overall_quality_score": "integer 0-100 or null",
-            "confidence": "low|medium|high",
-            "paper_type": "validated paper type",
-            "dimension_scores": "object with 0-5 or null values",
-            "positive_signals": "array of cautious strings",
-            "concerns": "array of cautious strings",
-            "missing_information": "array of strings",
-            "evidence": "array of evidence objects",
-            "concise_summary": "string",
-        },
+        "required_schema": quality_review_schema(),
     }
     system = (
         "Assess scholarly quality only from the supplied paper text and extraction metadata. "

@@ -283,7 +283,13 @@ def main(argv: list[str] | None = None) -> int:
             parser.error("--assessment-json and --pdf-url require --paper-id")
         if args.full_text and args.no_full_text:
             parser.error("--full-text conflicts with --no-full-text")
-        manual_assessment = json.loads(args.assessment_json.read_text()) if args.assessment_json else None
+        manual_assessment = None
+        if args.assessment_json:
+            from paper_scout.quality_llm import validate_manual_quality_review
+            try:
+                manual_assessment = validate_manual_quality_review(json.loads(args.assessment_json.read_text()))
+            except (OSError, ValueError) as exc:
+                parser.error(str(exc))
         assessment_config = replace(
             config.quality.assessment,
             version=args.assessment_version or config.quality.assessment.version,

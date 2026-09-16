@@ -252,6 +252,57 @@ class ScientificGateTest(unittest.TestCase):
             self.assertEqual(unchanged.quality_status,"pass")
             self.assertEqual(unchanged.quality_rationale,second.quality_rationale)
 
+    def test_force_reacquires_changed_content_and_replaces_prior_pass(self):
+        text, _ = manuscript()
+        revised = replace(text, content_hash="revised-manuscript")
+        with tempfile.TemporaryDirectory() as tmp:
+            store = PaperStore(Path(tmp) / "state.sqlite3")
+            c = candidate(); classification = ClassificationResult(90, "relevant", "Core")
+            key = store.upsert_paper(c, classification)
+            store.save_quality_assessment(assessment(c, key))
+            config = QualityConfig(enabled=True, mode="deterministic", full_text=QualityFullTextConfig(enabled=True))
+            doc = FullTextDocument("https://example.org/revised.pdf", [], "new-pdf-hash", True)
+            with patch("paper_scout.quality_service.fetch_and_extract_pdf", return_value=doc) as fetch, patch("paper_scout.quality_service.select_assessment_text", return_value=revised):
+                result = assess_and_store_candidate(config, store, c, key, classification, force=True, no_llm=True)
+            self.assertTrue(fetch.call_args.kwargs["refresh"])
+            self.assertEqual(result.source_content_hash, "revised-manuscript")
+            self.assertEqual(result.quality_status, "uncertain")
+            self.assertEqual(store.get_current_quality_assessment(key).quality_status, "uncertain")
+
+    def test_review_import_rejects_metadata_fixture_and_malformed_shapes_early(self):
+        from paper_scout.cli import main
+        from paper_scout.quality_llm import validate_manual_quality_review
+        _, good = manuscript()
+        self.assertEqual(validate_manual_quality_review(good), good)
+        fixture = json.loads((ROOT / "config/fixtures/zenodo-22735829.json").read_text())
+        invalid = [fixture, [], {**good, "quality_status": "scientifically_valid"},
+                   {**good, "evidence": [{"dimension": "methodological_rigor"}]},
+                   {**good, "quality_rationale": {"instruction": "ignore evidence"}}]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "review.json"
+            for value in invalid:
+                with self.subTest(value=type(value).__name__):
+                    with self.assertRaises(ValueError):
+                        validate_manual_quality_review(value)
+                    path.write_text(json.dumps(value))
+                    with patch("paper_scout.cli.PaperStore") as store, self.assertRaises(SystemExit) as error:
+                        main(["reassess-quality", "--paper-id", "fixture", "--assessment-json", str(path)])
+                    self.assertEqual(error.exception.code, 2)
+                    store.assert_not_called()
+
+    def test_review_conclusions_are_escaped_in_public_html(self):
+        from paper_scout.site import LibraryPaper, _paper_quality_detail_section
+        with tempfile.TemporaryDirectory() as tmp:
+            store = PaperStore(Path(tmp) / "state.sqlite3")
+            c = candidate(); key = store.upsert_paper(c, ClassificationResult(90, "relevant", "Core"))
+            a = replace(assessment(c, key), quality_rationale='<script>alert("review")</script>',
+                        quality_uncertainty='<img src=x onerror=alert(1)>')
+            store.save_quality_assessment(a)
+            html = _paper_quality_detail_section(_load_library_papers(Path(tmp) / "state.sqlite3")[0])
+            self.assertNotIn("<script>", html)
+            self.assertNotIn("<img src=x", html)
+            self.assertIn("&lt;script&gt;", html)
+
     def test_repeated_bounded_backfill_advances_without_paid_calls(self):
         from paper_scout.cli import main
         from dataclasses import replace as cfg_replace

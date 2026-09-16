@@ -55,6 +55,9 @@ def assess_and_store_candidate(
 ) -> QualityAssessment | None:
     if not config.enabled or config.mode == "off" or not _should_assess(config, classification.decision):
         return None
+    if manual_assessment is not None:
+        from paper_scout.quality_llm import validate_manual_quality_review
+        validate_manual_quality_review(manual_assessment)
     current = store.get_current_quality_assessment(canonical_id,
         assessment_version=config.assessment.version, rubric_version=config.assessment.rubric_version)
     if current and current.quality_status in {"pass", "insufficient"} and not force and manual_assessment is None:

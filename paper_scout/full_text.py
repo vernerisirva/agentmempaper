@@ -179,18 +179,30 @@ def select_assessment_text(
         ("limitations", "threats to validity"),
         ("conclusion", "discussion"),
     )
-    for aliases in target_groups:
-        for match in detected:
-            if any(alias in match.heading.lower() for alias in aliases):
-                section = SelectedSection(match.heading, match.text[:max_section_characters], match.first_page)
-                if section not in selected:
-                    selected.append(section)
-    # Descriptive numbered headings are real body boundaries even when they do
-    # not use the conventional Methods/Results vocabulary. Include them too.
-    for match in detected:
-        section = SelectedSection(match.heading, match.text[:max_section_characters], match.first_page)
-        if section not in selected:
-            selected.append(section)
+    ordered: list[SelectedSection] = []
+    for aliases in target_groups[:-1]:
+        ordered.extend(match for match in detected
+                       if any(alias in match.heading.lower() for alias in aliases))
+    # Descriptive body headings must precede a potentially long conclusion
+    # continuation. A heading budget spans pages, rather than resetting per page.
+    closing = target_groups[-1]
+    ordered.extend(match for match in detected
+                   if not any(alias in match.heading.lower() for alias in closing))
+    ordered.extend(match for match in detected
+                   if any(alias in match.heading.lower() for alias in closing))
+    seen: set[SelectedSection] = set()
+    heading_characters: dict[str, int] = {}
+    for match in ordered:
+        if match in seen:
+            continue
+        seen.add(match)
+        heading = match.heading.casefold()
+        remaining = max_section_characters - heading_characters.get(heading, 0)
+        if remaining <= 0:
+            continue
+        excerpt = match.text[:remaining]
+        selected.append(SelectedSection(match.heading, excerpt, match.first_page))
+        heading_characters[heading] = heading_characters.get(heading, 0) + len(excerpt)
     uncertain = not selected
     if uncertain:
         pages = document.pages
@@ -202,10 +214,23 @@ def select_assessment_text(
             seen_pages.add(page.page)
             selected.append(SelectedSection(f"Page {page.page} excerpt", page.text[:max_section_characters], page.page))
     prefix = f"Title: {candidate.title}\n\nAbstract: {abstract}\n\n"
-    body = "\n\n".join(f"## {section.heading}\n[Page {section.first_page or 'unknown'}]\n{section.text}" for section in selected)
-    text = (prefix + body)[:max_prompt_characters]
+    text = prefix[:max_prompt_characters]
+    visible: list[SelectedSection] = []
+    truncated = len(prefix) > max_prompt_characters
+    for section in selected:
+        label = f"## {section.heading}\n[Page {section.first_page or 'unknown'}]\n"
+        separator = "\n\n" if visible else ""
+        remaining = max_prompt_characters - len(text) - len(separator) - len(label)
+        if remaining <= 0:
+            truncated = True
+            break
+        excerpt = section.text[:remaining]
+        truncated = truncated or len(excerpt) < len(section.text)
+        text += separator + label + excerpt
+        visible.append(SelectedSection(section.heading, excerpt, section.first_page))
+    selected = visible
     covered_chars = sum(len(section.text) for section in selected)
-    scope = "full_text" if document.complete and len(prefix + body) <= max_prompt_characters and covered_chars >= min(len(document.text), max_prompt_characters) * 0.65 else "partial_full_text"
+    scope = "full_text" if document.complete and not truncated and covered_chars >= len(document.text) * 0.65 else "partial_full_text"
     warnings = list(document.warnings)
     if uncertain:
         warnings.append("Section headings could not be detected reliably; beginning, middle, and end passages were selected.")

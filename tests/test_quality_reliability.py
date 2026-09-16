@@ -253,3 +253,29 @@ class ProviderContractTest(unittest.TestCase):
         self.assertNotIn("if", validation)
         self.assertLess(steps.index(validation), steps.index(by_name["Deploy to GitHub Pages"]))
         self.assertEqual(by_name["Deploy to GitHub Pages"]["if"], "success()")
+
+
+class SelectionCoverageTest(unittest.TestCase):
+    def test_descriptive_methods_and_results_precede_long_conclusion_continuations(self):
+        # Regression shape from Mr.LHDR: descriptive body headings plus many
+        # continuation pages previously labelled Conclusion consume the prompt.
+        pages = [ExtractedPage(1, "Abstract\nSummary.\n1. Introduction\n" + "Background. " * 60),
+                 ExtractedPage(2, "2. Quality Standards and Validation Protocol\nLocated methods evidence."),
+                 ExtractedPage(3, "3. Overall Capability\nLocated results evidence."),
+                 ExtractedPage(4, "Limitations\nOnly a scoped benchmark.\nConclusion\n" + "Closing. " * 200)]
+        pages += [ExtractedPage(i, "Continuation. " * 200) for i in range(5, 15)]
+        doc = FullTextDocument("https://example.test/p.pdf", pages, "hash", True)
+        selected = select_assessment_text(candidate(), doc, max_prompt_characters=1800, max_section_characters=500)
+        self.assertIn("Located methods evidence.", selected.text)
+        self.assertIn("Located results evidence.", selected.text)
+        self.assertLessEqual(sum(len(s.text) for s in selected.sections if s.heading == "Conclusion"), 500)
+        self.assertLessEqual(len(selected.text), 1800)
+        self.assertTrue(all(s.text in selected.text for s in selected.sections))
+        self.assertEqual(selected.scope, "partial_full_text")
+
+    def test_prompt_truncation_removes_unseen_section_text(self):
+        doc = FullTextDocument("https://example.test/p.pdf", [ExtractedPage(1, "Introduction\n" + "body " * 2000)], "hash", True)
+        selected = select_assessment_text(candidate(), doc, max_prompt_characters=400)
+        self.assertLessEqual(len(selected.text), 400)
+        self.assertTrue(all(s.text in selected.text for s in selected.sections))
+        self.assertEqual(selected.scope, "partial_full_text")

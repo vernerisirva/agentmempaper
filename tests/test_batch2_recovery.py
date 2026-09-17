@@ -227,4 +227,5 @@ class WindowsAndSupportTests(unittest.TestCase):
         for claim in ['This synthesis is not available in a single source elsewhere.', 'The manuscript does not provide a dedicated limitations section.']:
             self.assertTrue(scope_issues(claim,'',['A table of failure rates.']))
         self.assertFalse(scope_issues('The cited experiment is narrow relative to the claimed scope.','The shown experiment covers one benchmark.',['The experiment covers one benchmark.']))
+        self.assertFalse(scope_issues('The method does not consistently improve performance across all tasks.','',['Performance improved on two of three evaluated tasks.']))
         self.assertIn('directional entailment',VERIFIER_INSTRUCTIONS)

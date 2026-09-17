@@ -88,7 +88,11 @@ def scope_issues(claim: str, explanation: str, texts: list[str]) -> list[str]:
         issues.append('Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material.')
     # A source excerpt can support scoped synthesis, but an explicit partial
     # result cannot establish universal success even if a verifier says so.
-    if re.search(r'\b(?:all|every) (?:evaluated )?(?:tasks?|benchmarks?|datasets?)\b|\bconsistently (?:improves?|outperforms?)', text, re.I):
+    universal = re.search(r'\b(?:all|every) (?:evaluated )?(?:tasks?|benchmarks?|datasets?)\b|\bconsistently (?:improves?|outperforms?)', text, re.I)
+    # This guard only rejects positive universal assertions. Negative/scoped
+    # critiques still go through exact semantic verification.
+    negated = re.search(r'\b(?:not|never|cannot|no|unsupported|inconsistent)\b|fails? to', text, re.I)
+    if universal and not negated:
         if any(re.search(r'\b(?:two of three|2 (?:of|out of) 3|some but not all|fails? on|worse on)\b', s, re.I) for s in texts):
             issues.append('The cited evidence includes partial or contrary outcomes; universal improvement is not established.')
     return issues

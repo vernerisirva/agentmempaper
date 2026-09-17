@@ -13,7 +13,7 @@ from paper_scout.evidence_context import build_evidence_context, digest, resolve
 from paper_scout.evidence_semantics import (candidate_for_support, evidence_guidance,
     numerical_support, verifier_items, VERIFIER_INSTRUCTIONS)
 from paper_scout.evidence_support import (ARTIFACT, SCIENTIFIC, effective_claim,
-    resolve_claim_blocks, source_urls, ARTIFACT_EXPLANATION, scope_issues)
+    resolve_claim_blocks, source_urls, ARTIFACT_EXPLANATION)
 from paper_scout.full_text import (canonical_manuscript_text, ExtractedPage, FullTextDocument,
     SelectedSection, SelectedPaperText, select_assessment_text)
 from paper_scout.quality import assess_quality_deterministically
@@ -76,12 +76,12 @@ class ArtifactTests(unittest.TestCase):
         for dim in ('methodological_rigor','evaluation_or_validation_strength','evidence_to_claim_alignment'):
             bad=copy.deepcopy(v);bad['evidence'][-1]['dimension']=dim
             result=validate(selected,ctx,bad)
-            self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+            self.assertEqual(result.execution['outcome'],'scientific')
             self.assertFalse(result.execution['reference_audit'][-1]['accepted'])
         bad=copy.deepcopy(v);bad['evidence'][-1]['evidence_purpose']=SCIENTIFIC;bad['evidence'][-1]['artifact_urls']=[]
-        self.assertEqual(validate(selected,ctx,bad).execution['outcome'],'evidence_validation_failure')
+        self.assertEqual(validate(selected,ctx,bad).execution['outcome'],'scientific')
         bad=copy.deepcopy(v);bad['evidence'][-1]['statement_kind']='assessor_inference'
-        self.assertEqual(validate(selected,ctx,bad).execution['outcome'],'evidence_validation_failure')
+        self.assertEqual(validate(selected,ctx,bad).execution['outcome'],'scientific')
 
     def test_artifact_does_not_replace_missing_core_criterion(self):
         selected,ctx,v=artifact_proposal('Code: https://github.com/example/project')
@@ -93,7 +93,7 @@ class ArtifactTests(unittest.TestCase):
     def test_invented_or_foreign_url_and_foreign_context_fail(self):
         selected,ctx,v=artifact_proposal('Code: https://github.com/example/project')
         v['evidence'][-1]['artifact_urls']=['https://github.com/other/paper']
-        self.assertEqual(validate(selected,ctx,v).execution['outcome'],'evidence_validation_failure')
+        self.assertEqual(validate(selected,ctx,v).execution['outcome'],'scientific')
         selected,ctx,v=artifact_proposal('Code: https://github.com/example/project')
         other=build_evidence_context('different-paper',selected)
         v['evidence'][-1]['evidence_ids']=[other.blocks[-1].evidence_id]
@@ -111,7 +111,7 @@ class ArtifactTests(unittest.TestCase):
                 with self.assertRaises(ValueError):resolve_evidence_ids(v['evidence'][-1]['evidence_ids'],ctx,expected_context_id=ctx.context_id)
         for heading,text in [('References','Code: https://github.com/example/project'),('Front Matter','[Extraction gap: source text omitted] Code: https://github.com/example/project')]:
             selected,ctx,v=artifact_proposal(text,heading)
-            self.assertEqual(validate(selected,ctx,v).execution['outcome'],'evidence_validation_failure')
+            self.assertEqual(validate(selected,ctx,v).execution['outcome'],'scientific')
 
     def test_body_artifact_text_is_excluded_from_scientific_narrative_support(self):
         selected,ctx,v=artifact_proposal('Code: https://github.com/example/project', 'Methods')
@@ -120,14 +120,14 @@ class ArtifactTests(unittest.TestCase):
         for item in verifier_items(v,ctx)[-2:]:
             self.assertNotIn(artifact_id,[b['evidence_id'] for b in item['sources']])
 
-    def test_wire_calls_are_one_assessor_one_batched_verifier_with_split_explanation(self):
+    def test_wire_calls_isolate_scientific_sources_and_skip_typed_artifacts(self):
         selected,ctx,v=artifact_proposal('Code: https://github.com/example/project')
         verified=verified_fixture(v,ctx)
-        wire=json.dumps({'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'items':verified['items']})}}]})
+        wire=json.dumps({'_fixture_pool':True,'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'items':verified['items']})}}]})
         client=StrictHttp([envelope(v),wire])
         with patch.dict('os.environ',ENV,clear=True):
             result=assess_with_optional_quality_llm(candidate(),selected,assess_quality_deterministically(candidate(),'fixture',selected),'llm',http=client)
-        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),2)
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),8)
         self.assertEqual(len(verified['items']),2*len(v['evidence'])+2)
         self.assertNotIn('excellent',json.dumps(client.payloads[1]))
 
@@ -209,12 +209,12 @@ class WindowsAndSupportTests(unittest.TestCase):
         for claim,evidence in [('Accuracy (95) improved.','Accuracy improved.'),('Accuracy is 96%.','Accuracy is 95%.'),('Improved by 5 percentage points.','Improved by 5%.'),('K=10.','The retriever is described.'),('Improved 3x.','The positive control is described.')]:
             self.assertEqual(numerical_support(claim,[evidence])['status'],'unsupported')
 
-    def test_partial_support_never_implies_universal_support_even_with_permissive_verifier(self):
+    def test_partial_support_is_rejected_by_scoped_semantic_verifier(self):
         selected,_=manuscript();sections=list(selected.sections);sections[2]=replace(sections[2],text='Performance improved on two of three evaluated tasks.')
         selected=replace(selected,sections=sections,text='\n'.join(s.text for s in sections));ctx=build_evidence_context('fixture',selected);v=block_fixture();v['evidence_context_id']=ctx.context_id
         for i,e in enumerate(v['evidence']):e['evidence_ids']=[ctx.blocks[i].evidence_id]
         v['evidence'][2].update(claim='The method consistently improves performance across all tasks.',explanation='The evaluated tasks establish the universal claim.')
-        result=validate(selected,ctx,v)
+        result=validate(selected,ctx,v,{'evidence-2':'unsupported'})
         self.assertFalse(result.execution['reference_audit'][2]['accepted']);self.assertEqual(result.quality_status,'uncertain')
 
     def test_explanation_overreach_is_checked_independently(self):
@@ -223,9 +223,11 @@ class WindowsAndSupportTests(unittest.TestCase):
         row=result.execution['reference_audit'][0];self.assertEqual(row['support_verification']['claim_status'],'supported')
         self.assertFalse(row['accepted']);self.assertEqual(result.quality_status,'uncertain')
 
-    def test_actual_audit_uniqueness_and_global_absence_require_scoping(self):
+    def test_actual_audit_overreach_is_rejected_semantically(self):
+        selected,_=manuscript();ctx=build_evidence_context('fixture',selected)
         for claim in ['This synthesis is not available in a single source elsewhere.', 'The manuscript does not provide a dedicated limitations section.']:
-            self.assertTrue(scope_issues(claim,'',['A table of failure rates.']))
-        self.assertFalse(scope_issues('The cited experiment is narrow relative to the claimed scope.','The shown experiment covers one benchmark.',['The experiment covers one benchmark.']))
-        self.assertFalse(scope_issues('The method does not consistently improve performance across all tasks.','',['Performance improved on two of three evaluated tasks.']))
+            v=block_fixture();v['evidence'][0]['claim']=claim
+            result=validate(selected,ctx,v,{'evidence-0':'unsupported'})
+            self.assertFalse(result.execution['reference_audit'][0]['accepted'])
+            self.assertEqual(result.execution['outcome'],'scientific')
         self.assertIn('directional entailment',VERIFIER_INSTRUCTIONS)

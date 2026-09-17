@@ -138,7 +138,7 @@ class OutputRecoveryTests(unittest.TestCase):
         client=SequenceHttp([json.dumps(first),envelope()]);result,_=fixtures.ReliabilityTest().assess(client)
         self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),2)
         self.assertEqual(result.execution['calls'][0]['error_kind'],'output_limit')
-        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.025)
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.055)
         self.assertEqual(client.payloads[0]['messages'][1],client.payloads[1]['messages'][1])
         self.assertIn('compact COMPLETE',client.payloads[1]['messages'][-1]['content'])
         self.assertNotIn(first['choices'][0]['message']['content'],json.dumps(client.payloads[1]))

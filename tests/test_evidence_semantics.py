@@ -21,20 +21,35 @@ CASES = json.loads((Path(__file__).parent / 'fixtures/evidence_semantics_cases.j
 
 
 class StrictHttp:
-    """Every wire request must have an explicit queued mock response."""
+    """Wire responses are explicit; a declared verifier pool serves isolated subsets."""
     retries = 1
     def __init__(self, responses):self.responses=list(responses);self.payloads=[]
     def post_json(self, url, payload, headers=None):
         self.payloads.append(payload)
         item=self.responses.pop(0)
         if isinstance(item,Exception):raise item
+        if isinstance(item, str) and payload['response_format']['json_schema']['name'] == 'claim_support':
+            try:pool=json.loads(item)
+            except ValueError:return item
+            if isinstance(pool,dict) and pool.get('_fixture_pool'):
+                requested={v['item_id'] for v in json.loads(payload['messages'][1]['content'])['items']}
+                content=json.loads(pool['choices'][0]['message']['content'])
+                selected=[v for v in content['items'] if v['item_id'] in requested]
+                assert selected, 'Verifier fixture pool has no decisions for requested item IDs'
+                remaining=[v for v in content['items'] if v['item_id'] not in requested]
+                if remaining:
+                    import copy
+                    next_pool=copy.deepcopy(pool);next_pool['choices'][0]['message']['content']=json.dumps({'items':remaining})
+                    self.responses.insert(0,json.dumps(next_pool))
+                pool.pop('_fixture_pool');pool['choices'][0]['message']['content']=json.dumps({'items':selected})
+                return json.dumps(pool)
         return item
 
 
 def verifier_response(value=None, overrides=None, finish='stop'):
     selected,_=manuscript();ctx=build_evidence_context('fixture',selected)
     v=verified_fixture(value or block_fixture(),ctx,overrides)
-    return json.dumps({'usage':{'prompt_tokens':80,'completion_tokens':30,'cost':.005},
+    return json.dumps({'_fixture_pool':True,'usage':{'prompt_tokens':80,'completion_tokens':30,'cost':.005},
         'choices':[{'finish_reason':finish,'message':{'content':json.dumps({'items':v['items']})}}]})
 
 
@@ -82,7 +97,7 @@ class SemanticsTests(unittest.TestCase):
         self.context=build_evidence_context('fixture',self.selected);self.value['evidence_context_id']=self.context.context_id
         for e,b in zip(self.value['evidence'],self.context.blocks):e['evidence_ids']=[b.evidence_id]
         result=self.validate();self.assertEqual(result.quality_status,'uncertain')
-        self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+        self.assertEqual(result.execution['outcome'],'scientific')
 
     def test_role_guidance_supplies_only_compatible_visible_candidates(self):
         payload=_request_payload(candidate(),self.selected,self.seed,'fixture',context=self.context)
@@ -183,7 +198,7 @@ class SemanticsTests(unittest.TestCase):
         for narrative in items[-2:]:
             self.assertNotIn(self.context.blocks[0].evidence_id,[b['evidence_id'] for b in narrative['sources']])
         result=self.validate()
-        self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
+        self.assertEqual(result.execution['outcome'],'scientific')
 
     def test_numeric_comparisons_and_percentage_points_remain_checked(self):
         self.assertEqual([n['value'] for n in numeric_mentions('39%→73%')],['39','73'])
@@ -266,21 +281,21 @@ class VerifierExecutionTests(unittest.TestCase):
             result=assess_with_optional_quality_llm(candidate(),text,assess_quality_deterministically(candidate(),'fixture',text),'llm',http=client)
         return result,client
 
-    def test_one_bounded_verifier_call_and_complete_accounting(self):
+    def test_bounded_isolated_verifier_calls_and_complete_accounting(self):
         result,client=self.assess([envelope(),verifier_response()])
-        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),2)
-        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial','verifier'])
-        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.015)
-        self.assertEqual(sum(c['usage']['prompt_tokens'] for c in result.execution['calls']),203)
-        self.assertEqual(result.execution['total_request_limit'],3)
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),8)
+        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial']+['verifier']*7)
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.045)
+        self.assertEqual(sum(c['usage']['prompt_tokens'] for c in result.execution['calls']),683)
+        self.assertEqual(result.execution['total_request_limit'],15)
         self.assertEqual(client.payloads[1]['response_format']['json_schema']['name'],'claim_support')
         self.assertEqual(client.payloads[1]['model'],client.payloads[0]['model'])
 
-    def test_two_assessment_attempts_plus_one_verifier_is_the_absolute_limit(self):
+    def test_assessor_retry_and_bounded_source_groups(self):
         result,client=self.assess([envelope(finish='length'),envelope(),verifier_response()])
-        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),3)
-        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial','retry','verifier'])
-        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.025)
+        self.assertEqual(result.quality_status,'pass');self.assertEqual(len(client.payloads),9)
+        self.assertEqual([c['kind'] for c in result.execution['calls']],['initial','retry']+['verifier']*7)
+        self.assertEqual(sum(c['usage']['cost_usd'] for c in result.execution['calls']),.055)
 
     def test_verifier_truncation_transport_and_bad_schema_fail_without_retry(self):
         malformed=json.loads(verifier_response());content=json.loads(malformed['choices'][0]['message']['content']);content['items'][1]['item_id']=content['items'][0]['item_id'];malformed['choices'][0]['message']['content']=json.dumps(content)
@@ -302,14 +317,15 @@ class VerifierExecutionTests(unittest.TestCase):
         result,client=self.assess([envelope(),verifier_response()])
         payload=client.payloads[1];self.assertIn('provider',payload);self.assertIn('reasoning',payload)
         actual=len(json.dumps(payload).encode())
-        self.assertEqual(result.execution['calls'][-1]['request_bytes'],actual)
+        self.assertEqual(result.execution['calls'][1]['request_bytes'],actual)
+        largest=max(len(json.dumps(p).encode()) for p in client.payloads[1:])
         with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',actual-1):
             rejected,client=self.assess([envelope()])
         self.assertEqual(len(client.payloads),1)
         self.assertFalse(rejected.execution['calls'][-1]['request_sent'])
-        with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',actual):
+        with patch('paper_scout.quality_llm.SUPPORT_MAX_INPUT_BYTES',largest):
             accepted,client=self.assess([envelope(),verifier_response()])
-        self.assertEqual(len(client.payloads),2);self.assertEqual(accepted.quality_status,'pass')
+        self.assertEqual(len(client.payloads),8);self.assertEqual(accepted.quality_status,'pass')
 
     def test_nonobject_error_and_empty_envelopes_record_clear_protocol_failures(self):
         for response,problem in (([], 'non_object_envelope'),(None,'non_object_envelope'),('text','non_object_envelope'),

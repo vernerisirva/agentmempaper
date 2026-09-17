@@ -135,6 +135,25 @@ class ClaimTaxonomyTests(unittest.TestCase):
         self.assertEqual(result.execution['outcome'],'evidence_validation_failure')
         self.assertEqual(result.execution['claim_counts']['technical_failure'],6)
 
+    def test_all_citationless_claims_are_scientific_uncertainty_without_verifier_calls(self):
+        for e in self.value['evidence']:e['evidence_ids']=[]
+        client=SequenceHttp([envelope(self.value)])
+        with patch.dict('os.environ',ENV,clear=True):
+            result=assess_with_optional_quality_llm(candidate(),self.selected,
+                assess_quality_deterministically(candidate(),'fixture',self.selected),'llm',http=client)
+        self.assertEqual(result.quality_status,'uncertain');self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertEqual(len(client.verifier_payloads),0)
+        self.assertEqual(result.execution['claim_counts']['claim_rejected'],6)
+
+    def test_code_link_alone_never_proves_scientific_reproducibility(self):
+        selected,ctx,v=artifact_proposal('Code: https://example.org/repo','Methods')
+        v['evidence'][-1].update(evidence_purpose='scientific_claim',artifact_urls=[],
+            claim='The implementation reproduces all reported results.',explanation='The work is reproducible.')
+        result=validate(selected,ctx,v,{'evidence-6':'unsupported','explanation-6':'unsupported'})
+        self.assertFalse(result.execution['reference_audit'][-1]['accepted'])
+        self.assertEqual(result.execution['outcome'],'scientific')
+        self.assertEqual(result.quality_status,'pass')  # Other six criteria remain supported.
+
     def test_provider_failure_cannot_be_insufficient(self):
         self.value['quality_status']='insufficient';self.value['evidence'][1]['signal_type']='concern'
         from test_evidence_semantics import StrictHttp

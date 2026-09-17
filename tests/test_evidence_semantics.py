@@ -35,6 +35,7 @@ class StrictHttp:
                 requested={v['item_id'] for v in json.loads(payload['messages'][1]['content'])['items']}
                 content=json.loads(pool['choices'][0]['message']['content'])
                 selected=[v for v in content['items'] if v['item_id'] in requested]
+                assert selected, 'Verifier fixture pool has no decisions for requested item IDs'
                 remaining=[v for v in content['items'] if v['item_id'] not in requested]
                 if remaining:
                     import copy

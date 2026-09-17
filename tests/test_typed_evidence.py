@@ -179,6 +179,28 @@ class ClaimTaxonomyTests(unittest.TestCase):
         for a in raw['execution']['reference_audit']:a.pop('evidence_atoms',None)
         self.assertEqual(QualityAssessment.from_dict(raw).to_dict(),raw)
 
+    def test_maximum_schema_assessment_uses_at_most_thirteen_verifier_calls(self):
+        from paper_scout.full_text import SelectedSection
+        extra=[SelectedSection('Methods',f'Additional protocol {i} records independent runs.',20+i) for i in range(6)]
+        sections=[*self.selected.sections,*extra]
+        selected=replace(self.selected,sections=sections,text='\n'.join(s.text for s in sections))
+        ctx=build_evidence_context('fixture',selected);value=copy.deepcopy(self.value)
+        value['evidence_context_id']=ctx.context_id
+        for i,e in enumerate(value['evidence']):e['evidence_ids']=[ctx.blocks[i].evidence_id]
+        for i in range(6):
+            value['evidence'].append({**value['evidence'][1],
+                'evidence_ids':[ctx.blocks[6+i].evidence_id],
+                'claim':'The protocol records independent runs.',
+                'explanation':'The cited protocol describes independent runs.'})
+        client=SequenceHttp([envelope(value)])
+        with patch.dict('os.environ',ENV,clear=True):
+            result=assess_with_optional_quality_llm(candidate(),selected,
+                assess_quality_deterministically(candidate(),'fixture',selected),'llm',http=client)
+        self.assertEqual(result.quality_status,'pass')
+        self.assertEqual(len(client.verifier_payloads),13)
+        self.assertEqual(len(result.execution['calls']),14)
+        self.assertEqual(result.execution['total_request_limit'],15)
+
     def test_verifier_source_isolation_prevents_cross_item_evidence_leakage(self):
         client=SequenceHttp([envelope(self.value)])
         with patch.dict('os.environ',ENV,clear=True):

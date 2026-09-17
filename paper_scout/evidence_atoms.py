@@ -35,7 +35,7 @@ def url_mentions(text: str) -> list[dict]:
         try:
             parsed = urlsplit(url)
             _ = parsed.port
-            if not parsed.hostname or parsed.username or parsed.password:
+            if not parsed.hostname or any((parsed.username, parsed.password)):
                 continue
             if parsed.hostname.endswith('.'):
                 continue

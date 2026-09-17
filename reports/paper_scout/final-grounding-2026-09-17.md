@@ -138,10 +138,24 @@ response-reported charges, not independently reconciled invoices.
 
 ## Publication
 
-Validated output and durable-state publication are pending. At most one
-`deploy_only=true` Pages deployment will be dispatched, without discovery,
-assessment or batch-2 execution. Deployment identifiers and restore verification
-will be recorded after completion.
+[Pages run 35198170525](https://github.com/vernerisirva/agentmempaper/actions/runs/35198170525)
+succeeded, deploying `b0ca106ad3d4fb2932b33a2f6224420f8c51a0c5` with
+`deploy_only=true`. Exactly one deployment was dispatched. Discovery, paid
+assessment, automatic commit and state-writer steps were verified skipped.
+All **28 public JSON cards, 28 card HTML pages and six library/review pages**
+match the audited local bytes. Library admissions remain 4 / 5 / 6.
+
+The new durable runtime release asset was downloaded and restored; all three
+database hashes match the tested snapshot. Archive SHA-256:
+`16476605c0ccfa53f0c487164c1fd3bb2a9ff710c35fdece34432d462f3e0188`.
+The preceding published snapshot and all prior assessment history remain saved.
+Full private ledgers, reviewer reports, before/after snapshots and the deterministic
+B0014 reproduction are preserved under ignored
+`data/cache/operator/final-grounding-20260917/`.
+
+The final publication-evidence commit changes only this report and its JSON.
+Canonical main therefore advances beyond the deployed output commit without
+changing the deployed `docs/` tree. No second deployment is needed.
 
 ## Handoff
 

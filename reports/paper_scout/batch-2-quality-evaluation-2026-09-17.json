@@ -11380,6 +11380,829 @@
         "data/engram/paper_scout.sqlite3": "4a6eea3297a4ea03e6bc53538829b0d92d76f80dc22b614c97fe055c32cff334"
       },
       "history_preserved": true
+    },
+    "deployment-dispatch": {
+      "head_sha": "6509b03629ebe06b54c0897311955f21d793390a",
+      "started_at": "2026-09-17T09:39:14.440615+00:00",
+      "inputs": {
+        "deploy_only": true
+      },
+      "state": "dispatched",
+      "returncode": 0,
+      "stdout": "https://github.com/vernerisirva/agentmempaper/actions/runs/35206282238\n",
+      "stderr": ""
+    },
+    "deployment-run": {
+      "conclusion": "success",
+      "createdAt": "2026-09-17T09:39:16Z",
+      "databaseId": 35206282238,
+      "headSha": "6509b03629ebe06b54c0897311955f21d793390a",
+      "jobs": [
+        {
+          "completedAt": "2026-09-17T09:39:54Z",
+          "conclusion": "success",
+          "databaseId": 105152764019,
+          "name": "scout",
+          "startedAt": "2026-09-17T09:39:22Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-09-17T09:39:24Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-09-17T09:39:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:28Z",
+              "conclusion": "success",
+              "name": "Check out repository",
+              "number": 2,
+              "startedAt": "2026-09-17T09:39:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:28Z",
+              "conclusion": "skipped",
+              "name": "Restore durable Paper Scout state",
+              "number": 3,
+              "startedAt": "2026-09-17T09:39:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:28Z",
+              "conclusion": "skipped",
+              "name": "Bootstrap Paper Scout state when no durable snapshot exists",
+              "number": 4,
+              "startedAt": "2026-09-17T09:39:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:28Z",
+              "conclusion": "success",
+              "name": "Set up Python",
+              "number": 5,
+              "startedAt": "2026-09-17T09:39:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:30Z",
+              "conclusion": "success",
+              "name": "Install dependencies",
+              "number": 6,
+              "startedAt": "2026-09-17T09:39:28Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:30Z",
+              "conclusion": "skipped",
+              "name": "Validate rules, idempotency, and live source payloads",
+              "number": 7,
+              "startedAt": "2026-09-17T09:39:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:30Z",
+              "conclusion": "skipped",
+              "name": "Run daily paper scout",
+              "number": 8,
+              "startedAt": "2026-09-17T09:39:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:40Z",
+              "conclusion": "success",
+              "name": "Validate generated schemas, links, and runtime exclusion",
+              "number": 9,
+              "startedAt": "2026-09-17T09:39:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:40Z",
+              "conclusion": "success",
+              "name": "Write run summary",
+              "number": 10,
+              "startedAt": "2026-09-17T09:39:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:45Z",
+              "conclusion": "success",
+              "name": "Upload reports and logs",
+              "number": 11,
+              "startedAt": "2026-09-17T09:39:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:45Z",
+              "conclusion": "skipped",
+              "name": "Commit scout updates",
+              "number": 12,
+              "startedAt": "2026-09-17T09:39:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:45Z",
+              "conclusion": "success",
+              "name": "Configure GitHub Pages",
+              "number": 13,
+              "startedAt": "2026-09-17T09:39:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:47Z",
+              "conclusion": "success",
+              "name": "Upload Pages artifact",
+              "number": 14,
+              "startedAt": "2026-09-17T09:39:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "success",
+              "name": "Deploy to GitHub Pages",
+              "number": 15,
+              "startedAt": "2026-09-17T09:39:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "skipped",
+              "name": "Prepare consistent Paper Scout state snapshot",
+              "number": 16,
+              "startedAt": "2026-09-17T09:39:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "skipped",
+              "name": "Persist durable Paper Scout state",
+              "number": 17,
+              "startedAt": "2026-09-17T09:39:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "success",
+              "name": "Post Set up Python",
+              "number": 33,
+              "startedAt": "2026-09-17T09:39:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "success",
+              "name": "Post Check out repository",
+              "number": 34,
+              "startedAt": "2026-09-17T09:39:53Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-09-17T09:39:53Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 35,
+              "startedAt": "2026-09-17T09:39:53Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/vernerisirva/agentmempaper/actions/runs/35206282238/job/105152764019"
+        }
+      ],
+      "status": "completed",
+      "updatedAt": "2026-09-17T09:39:55Z",
+      "url": "https://github.com/vernerisirva/agentmempaper/actions/runs/35206282238",
+      "deploy_only_skipped_steps_verified": [
+        "Restore durable Paper Scout state",
+        "Bootstrap Paper Scout state when no durable snapshot exists",
+        "Validate rules, idempotency, and live source payloads",
+        "Run daily paper scout",
+        "Commit scout updates",
+        "Prepare consistent Paper Scout state snapshot",
+        "Persist durable Paper Scout state"
+      ],
+      "dispatch_count_for_head": 1
+    },
+    "public-verification": {
+      "cards_json": 48,
+      "cards_html": 48,
+      "library_and_review_pages": 6,
+      "all_match_local_bytes": true,
+      "records": [
+        {
+          "path": "docs/papers/mbm-0-memory-birth-metrics-v0-6173b79a.json",
+          "status": 200,
+          "sha256": "f526e24f9e13f45de7d47be664f08c350ff1df7ac57e9fa888656745d3470fdb",
+          "bytes": 7243
+        },
+        {
+          "path": "docs/papers/mbm-0-memory-birth-metrics-v0-6173b79a.html",
+          "status": 200,
+          "sha256": "a6a220e8b04b80d13b2144db21e562ab2e34b09b361dcf68e95398a26acbae7b",
+          "bytes": 7667
+        },
+        {
+          "path": "docs/papers/beyond-agent-harnesses-cross-substrate-authority-for-multi-agent-systems-eb3be139.json",
+          "status": 200,
+          "sha256": "fcb480a5da36641f7df02039feb211d21b1585e2c16832afb99ddaa071907c4a",
+          "bytes": 65023
+        },
+        {
+          "path": "docs/papers/beyond-agent-harnesses-cross-substrate-authority-for-multi-agent-systems-eb3be139.html",
+          "status": 200,
+          "sha256": "f3f9ed9ee8a4129acaaeb6aa780c2cee60095b77c7c2759de2742a66e089f243",
+          "bytes": 23540
+        },
+        {
+          "path": "docs/papers/personalizing-llm-agent-memory-using-biometrics-0729931b.json",
+          "status": 200,
+          "sha256": "43516b5f1ae364da39795c531cbffb141d4187112b5ddb9b0468ab4b7c3fc2c2",
+          "bytes": 60672
+        },
+        {
+          "path": "docs/papers/personalizing-llm-agent-memory-using-biometrics-0729931b.html",
+          "status": 200,
+          "sha256": "3e608ea24f27a595dfc32d7971abab02f9a1cf25473b1f39f777ab2f583336b3",
+          "bytes": 22149
+        },
+        {
+          "path": "docs/papers/memforest-efficient-agent-memory-management-via-eventtree-partitioning-and-progressi-1ccca021.json",
+          "status": 200,
+          "sha256": "7d9afc8e8c091e73f40bf5543c41e7d6bc1875a651856def88426f8c14dc86ec",
+          "bytes": 7006
+        },
+        {
+          "path": "docs/papers/memforest-efficient-agent-memory-management-via-eventtree-partitioning-and-progressi-1ccca021.html",
+          "status": 200,
+          "sha256": "89346ca522e4d5030d3563338f27df7da7abd87dde42d43957367d45d0bfb73c",
+          "bytes": 8118
+        },
+        {
+          "path": "docs/papers/what-eviction-destroys-a-restore-counterfactual-audit-of-forgetting-in-agent-memory-2bb4c7e1.json",
+          "status": 200,
+          "sha256": "4b88f747cc2df90753a60cdffecc3c1b310884e6b1c7bc5e765b2cc6c2dafde8",
+          "bytes": 73880
+        },
+        {
+          "path": "docs/papers/what-eviction-destroys-a-restore-counterfactual-audit-of-forgetting-in-agent-memory-2bb4c7e1.html",
+          "status": 200,
+          "sha256": "6f5119e1264c2c79f2bbf8d57ae87249338a42593397ed53c88f945fc30d141b",
+          "bytes": 26854
+        },
+        {
+          "path": "docs/papers/closing-the-consistency-gap-self-evolving-agents-that-learn-to-stay-on-course-0db8679f.json",
+          "status": 200,
+          "sha256": "ff5fd48983ef75ab29043f54e05f86933ddf265458390c843d2359fe5717160b",
+          "bytes": 12749
+        },
+        {
+          "path": "docs/papers/closing-the-consistency-gap-self-evolving-agents-that-learn-to-stay-on-course-0db8679f.html",
+          "status": 200,
+          "sha256": "0d33444f2ed2685c3c43715df3b1eca8e8091f10697c88408ba9e07661cfb067",
+          "bytes": 8482
+        },
+        {
+          "path": "docs/papers/creamem-a-scene-aware-memory-architecture-for-personalized-agents-b41a150f.json",
+          "status": 200,
+          "sha256": "fdffdece5f598239b94cd8bef1b0e57b9f5fac904e6d864f1e44638edb5a9ae1",
+          "bytes": 63977
+        },
+        {
+          "path": "docs/papers/creamem-a-scene-aware-memory-architecture-for-personalized-agents-b41a150f.html",
+          "status": 200,
+          "sha256": "b010db778b6aa6e008c2c004bf9d9136151370b8d62c58057ba72d9f6a551781",
+          "bytes": 23651
+        },
+        {
+          "path": "docs/papers/graph-based-personalized-memory-for-llm-agents-representation-evolution-retrieval-an-68b0fd87.json",
+          "status": 200,
+          "sha256": "d81b99ba93376772ff4d1d40a7bc7431815069c41c2752157ad5c203c41d2940",
+          "bytes": 81874
+        },
+        {
+          "path": "docs/papers/graph-based-personalized-memory-for-llm-agents-representation-evolution-retrieval-an-68b0fd87.html",
+          "status": 200,
+          "sha256": "b9eb1aa951b7dfc73acc3ff9d79a126d6525b4fe0cc417a5038744bfe22a9fca",
+          "bytes": 29971
+        },
+        {
+          "path": "docs/papers/meclear-cooperative-game-theoretic-attribution-and-risk-aware-memory-clearance-for-l-d338c80c.json",
+          "status": 200,
+          "sha256": "8490907044d9eede115299049349bdf3164602ffdcb68ea7607e33b34bf84009",
+          "bytes": 14023
+        },
+        {
+          "path": "docs/papers/meclear-cooperative-game-theoretic-attribution-and-risk-aware-memory-clearance-for-l-d338c80c.html",
+          "status": 200,
+          "sha256": "196533b33e8bdf3c06b6378ed153acc2b0497868cc706ef628375a80895eb04c",
+          "bytes": 8543
+        },
+        {
+          "path": "docs/papers/revoked-but-still-authoritative-an-empirical-study-of-revocation-enforcement-in-agen-a34dde4e.json",
+          "status": 200,
+          "sha256": "d30e5346f8d3c3776a4b6e0e0ba22c83a81146723aff8917a0db87f8fe8374cd",
+          "bytes": 15618
+        },
+        {
+          "path": "docs/papers/revoked-but-still-authoritative-an-empirical-study-of-revocation-enforcement-in-agen-a34dde4e.html",
+          "status": 200,
+          "sha256": "f4f93a0f1db92ef4d0ed43d40d46e86a4e0684c1e5dc228e44965595244bab4d",
+          "bytes": 8300
+        },
+        {
+          "path": "docs/deep-research/papers/a-new-paradigm-agentic-ai-for-scientific-discovery-93f54fc3.json",
+          "status": 200,
+          "sha256": "53b0564395f22bc85ce98b1b8b3956a12914a638819510a16a30e7becbd3ca18",
+          "bytes": 83445
+        },
+        {
+          "path": "docs/deep-research/papers/a-new-paradigm-agentic-ai-for-scientific-discovery-93f54fc3.html",
+          "status": 200,
+          "sha256": "5edc47b4ebc3b84b9a7a859e3cbf1ff20eb19ebf72a7b5e7f87f043a77712634",
+          "bytes": 22765
+        },
+        {
+          "path": "docs/deep-research/papers/a-prisma-aligned-agentic-framework-for-medical-systematic-reviews-and-evidence-synth-58121bec.json",
+          "status": 200,
+          "sha256": "ac81aeb8b6cc8b46d859f072d9019ae0ff1e9f3567065bc25c83fa23b95cd82f",
+          "bytes": 10819
+        },
+        {
+          "path": "docs/deep-research/papers/a-prisma-aligned-agentic-framework-for-medical-systematic-reviews-and-evidence-synth-58121bec.html",
+          "status": 200,
+          "sha256": "37fafcde094c65f378d3e0365ef1abe9aa1ea86d1ea2d55a3c423afc6e6f6511",
+          "bytes": 8400
+        },
+        {
+          "path": "docs/deep-research/papers/towards-reliable-ai-scientists-0fbfa2f6.json",
+          "status": 200,
+          "sha256": "3430594ad512b181ba80d15095fb6648639b12cedbb1a9df0f074a2230260436",
+          "bytes": 8701
+        },
+        {
+          "path": "docs/deep-research/papers/towards-reliable-ai-scientists-0fbfa2f6.html",
+          "status": 200,
+          "sha256": "674baf6457f8d883fab284d6316dfcefd65d32f557b2ba658ac6da488ec1db9e",
+          "bytes": 8237
+        },
+        {
+          "path": "docs/deep-research/papers/deep-research-agent-an-ai-powered-system-for-automated-research-paper-analysis-and-c-3dbe41de.json",
+          "status": 200,
+          "sha256": "e55a4f51ddda8ff7eca53e670257f88280f15a69e4645a29c5083145a0106f22",
+          "bytes": 10086
+        },
+        {
+          "path": "docs/deep-research/papers/deep-research-agent-an-ai-powered-system-for-automated-research-paper-analysis-and-c-3dbe41de.html",
+          "status": 200,
+          "sha256": "71ef6d61a0386d415da150306a236cdf68358d409464c9520aff3db9c5694996",
+          "bytes": 8487
+        },
+        {
+          "path": "docs/deep-research/papers/when-the-instrument-studies-itself-a-systematic-map-of-autonomous-ai-research-system-b433242d.json",
+          "status": 200,
+          "sha256": "cefd61b5b0a136837382225484c0040573ea0afe435f33cdbdb4e7085b4d57aa",
+          "bytes": 10914
+        },
+        {
+          "path": "docs/deep-research/papers/when-the-instrument-studies-itself-a-systematic-map-of-autonomous-ai-research-system-b433242d.html",
+          "status": 200,
+          "sha256": "fc291aa70ee89aa5101b15f55710a474494ab3f41b44fbf99ad5c5e02af135f9",
+          "bytes": 8606
+        },
+        {
+          "path": "docs/deep-research/papers/autoresearch-a-multi-agent-ai-system-for-automated-literature-review-paper-summariza-1a31e108.json",
+          "status": 200,
+          "sha256": "9533594e81d48d1cff9584642663698b362e6adedebaf2dbbe633fafe8dd8755",
+          "bytes": 10047
+        },
+        {
+          "path": "docs/deep-research/papers/autoresearch-a-multi-agent-ai-system-for-automated-literature-review-paper-summariza-1a31e108.html",
+          "status": 200,
+          "sha256": "9dbed47f67e9625c291ca83ef7b7a1f99a2bc4f88ba2ccc3a3242115ac975d2b",
+          "bytes": 8387
+        },
+        {
+          "path": "docs/deep-research/papers/benchmarking-agents-for-proving-theorems-in-quantum-algorithms-and-quantum-informati-40e5dee1.json",
+          "status": 200,
+          "sha256": "2c5581ba699d121fb4e3c7753e8e69da999790fffa594e83021956c573c5ac11",
+          "bytes": 11260
+        },
+        {
+          "path": "docs/deep-research/papers/benchmarking-agents-for-proving-theorems-in-quantum-algorithms-and-quantum-informati-40e5dee1.html",
+          "status": 200,
+          "sha256": "05ac031f72a7b0ad4a4b36fa7c6f9418fe5e01ab021e1f8472d9f98de371d86e",
+          "bytes": 8757
+        },
+        {
+          "path": "docs/deep-research/papers/is-deep-research-reliable-misleading-knowledge-induces-false-conclusions-bca45ce7.json",
+          "status": 200,
+          "sha256": "eb05a4ddc22393e9ac0eeeac584d47f9e9dc28c5cfb7a839372a899d087bcb39",
+          "bytes": 17092
+        },
+        {
+          "path": "docs/deep-research/papers/is-deep-research-reliable-misleading-knowledge-induces-false-conclusions-bca45ce7.html",
+          "status": 200,
+          "sha256": "19b7de4742f8ea393158589c276345c82bd44f29714083dbfc593e41479f4b3a",
+          "bytes": 8593
+        },
+        {
+          "path": "docs/deep-research/papers/legalcitetrust-benchmarking-citation-trustworthiness-in-chinese-long-form-legal-rese-8ff075eb.json",
+          "status": 200,
+          "sha256": "90053e0814f4cab1528b8ac02dc5c56635b4b5eda97dac9e96ab034fe7dcdbc5",
+          "bytes": 99329
+        },
+        {
+          "path": "docs/deep-research/papers/legalcitetrust-benchmarking-citation-trustworthiness-in-chinese-long-form-legal-rese-8ff075eb.html",
+          "status": 200,
+          "sha256": "9a40831ecaacba1f82bd132a32cb0f9bec5e904169a90a1e16b0a6d8306a84da",
+          "bytes": 31604
+        },
+        {
+          "path": "docs/deep-research/papers/arex-towards-a-recursively-self-improving-agent-for-deep-research-55755800.json",
+          "status": 200,
+          "sha256": "a6c93495f945b398008218dc0efb3534bdb2d76a7ad757f7d40976a9a0ff4399",
+          "bytes": 76723
+        },
+        {
+          "path": "docs/deep-research/papers/arex-towards-a-recursively-self-improving-agent-for-deep-research-55755800.html",
+          "status": 200,
+          "sha256": "82d0fea7bdcd373aacaf6cd86f51cac07a6eed49acfc0d43251754e141583be9",
+          "bytes": 27498
+        },
+        {
+          "path": "docs/papers/as-if-agents-misrecognition-and-the-ethics-of-non-agentive-ai-de458263.json",
+          "status": 200,
+          "sha256": "7cc9c1a511c11d31ad66d53a56c91fa50b409982098126079bb508133da0ac05",
+          "bytes": 90299
+        },
+        {
+          "path": "docs/papers/as-if-agents-misrecognition-and-the-ethics-of-non-agentive-ai-de458263.html",
+          "status": 200,
+          "sha256": "539682a31427fe07081f37fddf78689961f25aed4e4ff269dd0f22040f52a79c",
+          "bytes": 32056
+        },
+        {
+          "path": "docs/papers/the-intransitability-of-hybrid-agents-operational-memory-drift-gradients-and-the-lim-308c9028.json",
+          "status": 200,
+          "sha256": "cf1c2048776db3031de22824bc7c73d540c6fc58910dbb054cde1dda60f52671",
+          "bytes": 18447
+        },
+        {
+          "path": "docs/papers/the-intransitability-of-hybrid-agents-operational-memory-drift-gradients-and-the-lim-308c9028.html",
+          "status": 200,
+          "sha256": "60a9a304a6dcb60a966446943c7c27da4da990ce6bda4c11b0891bb84fa9fbdb",
+          "bytes": 9721
+        },
+        {
+          "path": "docs/papers/aim-a-privacy-aware-interoperable-memory-framework-for-multi-agent-multi-user-llm-sy-bfc688de.json",
+          "status": 200,
+          "sha256": "c9fe2ff9a39c870de4f7bf62ae2d8a8a8e5561d0631be6fd6f5f7e158fa214fa",
+          "bytes": 56085
+        },
+        {
+          "path": "docs/papers/aim-a-privacy-aware-interoperable-memory-framework-for-multi-agent-multi-user-llm-sy-bfc688de.html",
+          "status": 200,
+          "sha256": "e96a1d8bd0212e4866d2815aba11a2f89780daa941fc13ac48b5e3b0f98d812b",
+          "bytes": 20205
+        },
+        {
+          "path": "docs/papers/human-supervision-as-attractor-stabilization-indirect-prompt-injection-longitudinal-14c7cfb5.json",
+          "status": 200,
+          "sha256": "bebc01c95ce52d550ccd2a11d5a0f59d67be656a8758722d20b8694f9676a9fc",
+          "bytes": 14323
+        },
+        {
+          "path": "docs/papers/human-supervision-as-attractor-stabilization-indirect-prompt-injection-longitudinal-14c7cfb5.html",
+          "status": 200,
+          "sha256": "6fc4ca483c7f3775e87940baf7434d4be942c2383dd711b5066cde057be7b236",
+          "bytes": 9404
+        },
+        {
+          "path": "docs/papers/consolidation-without-weights-what-the-complementary-learning-systems-analogy-licens-457631a4.json",
+          "status": 200,
+          "sha256": "b828a34bc4a37945d06f75c1f51a3b81a928b815afecfdc6c30eddd25bd0a096",
+          "bytes": 15601
+        },
+        {
+          "path": "docs/papers/consolidation-without-weights-what-the-complementary-learning-systems-analogy-licens-457631a4.html",
+          "status": 200,
+          "sha256": "c4569d4d3f73fe0f1789786528e14b738c905b7cf5ccb537678d6609324a117d",
+          "bytes": 9559
+        },
+        {
+          "path": "docs/papers/grounding-agent-memory-environment-probing-curation-for-enterprise-agents-9ed78cff.json",
+          "status": 200,
+          "sha256": "4cd70f27e27ec89bf33907af81253d4d7fa8fc6366cff2aec1993acb936a71db",
+          "bytes": 83198
+        },
+        {
+          "path": "docs/papers/grounding-agent-memory-environment-probing-curation-for-enterprise-agents-9ed78cff.html",
+          "status": 200,
+          "sha256": "4d3b675af7396922894367a0bdb6431af424e2c510e510f5225495c934eca81b",
+          "bytes": 27168
+        },
+        {
+          "path": "docs/papers/beyond-agentic-operating-systems-a-governance-centric-architecture-for-persistent-en-dfe5906d.json",
+          "status": 200,
+          "sha256": "021f77ff50f368aff29b44ebe00d66705767164f0936a2c478517ba2cc6142ce",
+          "bytes": 16135
+        },
+        {
+          "path": "docs/papers/beyond-agentic-operating-systems-a-governance-centric-architecture-for-persistent-en-dfe5906d.html",
+          "status": 200,
+          "sha256": "00191981587cc0437f19c5d23566e246cb5e24fc21a69c44d222efba11e8a39f",
+          "bytes": 9623
+        },
+        {
+          "path": "docs/papers/harness-robotic-os-a-unified-embodied-agent-runtime-for-closed-loop-quadruped-inspec-295b9fd2.json",
+          "status": 200,
+          "sha256": "c7500e2ce3c6bb35fa8b1121fe983580ed50cf2f3a35a61e74b12bc45fea37bd",
+          "bytes": 29299
+        },
+        {
+          "path": "docs/papers/harness-robotic-os-a-unified-embodied-agent-runtime-for-closed-loop-quadruped-inspec-295b9fd2.html",
+          "status": 200,
+          "sha256": "a8e23d4c7d60e0872e8e90b6cee4a72c8d5862572e68b7ba5ba7f55c029be5db",
+          "bytes": 11962
+        },
+        {
+          "path": "docs/papers/rank-bounded-memory-self-poisoning-and-attribution-laundering-in-llm-agents-997781b1.json",
+          "status": 200,
+          "sha256": "ef0bbea842194d6137e3d0077e043a0e5dd58004ec22f8f80765a420b883aac7",
+          "bytes": 32446
+        },
+        {
+          "path": "docs/papers/rank-bounded-memory-self-poisoning-and-attribution-laundering-in-llm-agents-997781b1.html",
+          "status": 200,
+          "sha256": "b2a020241e869f67e7dc6a331d15d57166867a73de0468f2e5ca506cc7273e98",
+          "bytes": 11345
+        },
+        {
+          "path": "docs/papers/agentkg-conversational-memory-as-a-knowledge-graph-dc298c20.json",
+          "status": 200,
+          "sha256": "53f90187fb18a18e884118caed612fba00cda140c42d71af50b08c54db4c950b",
+          "bytes": 8018
+        },
+        {
+          "path": "docs/papers/agentkg-conversational-memory-as-a-knowledge-graph-dc298c20.html",
+          "status": 200,
+          "sha256": "7e74b8320cd54fd2d5d73e4da054233629ebe7ea12f0c8fb1591d5236047011b",
+          "bytes": 7794
+        },
+        {
+          "path": "docs/deep-research/papers/closing-the-empirical-loop-autonomous-ai-agents-conduct-end-to-end-research-with-hum-2b98fcc2.json",
+          "status": 200,
+          "sha256": "926d2b14239e5efb56741ef69a62de9a3bf1b60b228f2ca6fab37be16af66b7d",
+          "bytes": 26720
+        },
+        {
+          "path": "docs/deep-research/papers/closing-the-empirical-loop-autonomous-ai-agents-conduct-end-to-end-research-with-hum-2b98fcc2.html",
+          "status": 200,
+          "sha256": "f5f0b502fd0d1b061cd45a094bbba9294e18c2add2b4cfb323bc77af15d4fa22",
+          "bytes": 11699
+        },
+        {
+          "path": "docs/deep-research/papers/sci-mmr-benchmarking-multi-step-evidence-grounded-scientific-reasoning-in-multimodal-d488718b.json",
+          "status": 200,
+          "sha256": "9a18693e4c2a729ffcf8c0ae01cb5921db0fe9b63b46f45f4ba7f0cad555f1c8",
+          "bytes": 56747
+        },
+        {
+          "path": "docs/deep-research/papers/sci-mmr-benchmarking-multi-step-evidence-grounded-scientific-reasoning-in-multimodal-d488718b.html",
+          "status": 200,
+          "sha256": "e5c57c5ab082d0ca457572ade24efb239dcfd62125bb4e66089e5f3dc0fe7285",
+          "bytes": 19700
+        },
+        {
+          "path": "docs/deep-research/papers/mr-lhdr-a-benchmark-for-multimodal-real-world-long-horizon-deep-research-agents-2f827eeb.json",
+          "status": 200,
+          "sha256": "1be36fc7f6abeaa0f7b9efbd9b5e864700a29be015ce0ea2ff8459ae0656e92e",
+          "bytes": 18537
+        },
+        {
+          "path": "docs/deep-research/papers/mr-lhdr-a-benchmark-for-multimodal-real-world-long-horizon-deep-research-agents-2f827eeb.html",
+          "status": 200,
+          "sha256": "beb8f2710866b64da04f33cf26dcf7f5fd690db908b44963cd38b4547e368f77",
+          "bytes": 10427
+        },
+        {
+          "path": "docs/deep-research/papers/auto-recsys-harnessing-autonomous-research-agents-for-industry-scale-recommender-sys-7b7ede0f.json",
+          "status": 200,
+          "sha256": "fa8abc1768933a0468c5fc61c0aae01834615172f9c9a2f3f8937774b9b1c00d",
+          "bytes": 18536
+        },
+        {
+          "path": "docs/deep-research/papers/auto-recsys-harnessing-autonomous-research-agents-for-industry-scale-recommender-sys-7b7ede0f.html",
+          "status": 200,
+          "sha256": "634d2d8a18d1eec178ab74978aa7bdfe92ef1df8caf80b52ff999ff9bba889ee",
+          "bytes": 10707
+        },
+        {
+          "path": "docs/deep-research/papers/ai-scientists-need-a-theory-of-scientific-value-51aa98b1.json",
+          "status": 200,
+          "sha256": "572b6d6798d9eedbad68a155f1268cb84e8b4ce7f5e7fab1973b2f0103ae593b",
+          "bytes": 23502
+        },
+        {
+          "path": "docs/deep-research/papers/ai-scientists-need-a-theory-of-scientific-value-51aa98b1.html",
+          "status": 200,
+          "sha256": "77f979177f5b158aee220c55dfa36280d66f844f94312d9ab1b9c7756f318d24",
+          "bytes": 10961
+        },
+        {
+          "path": "docs/deep-research/papers/agentideabench-benchmarking-scientific-ideation-in-the-agent-era-802c09ca.json",
+          "status": 200,
+          "sha256": "77176c9097caf90b0f62d86fca20db4bc9b20fe4f2494f986a79152018168110",
+          "bytes": 16979
+        },
+        {
+          "path": "docs/deep-research/papers/agentideabench-benchmarking-scientific-ideation-in-the-agent-era-802c09ca.html",
+          "status": 200,
+          "sha256": "c0eab54dc0189044aced84e6ba8f926388c0e2fcc7ba904f267e519c5a61661d",
+          "bytes": 9487
+        },
+        {
+          "path": "docs/deep-research/papers/online-surrogate-repair-decoupling-high-fidelity-feedback-from-search-length-in-clos-93ed0a54.json",
+          "status": 200,
+          "sha256": "0d698ea01ff613a2829d7323d88075c0c81d0b72cbd84247c054442a9b5b1ca8",
+          "bytes": 15237
+        },
+        {
+          "path": "docs/deep-research/papers/online-surrogate-repair-decoupling-high-fidelity-feedback-from-search-length-in-clos-93ed0a54.html",
+          "status": 200,
+          "sha256": "bcfc64ca66abeedaa6ab3c9df3e821b3388f84a88e3f33229018178c0dced0e4",
+          "bytes": 9442
+        },
+        {
+          "path": "docs/deep-research/papers/real-science-is-harder-than-benchmarks-evaluating-advanced-ai-frameworks-on-publishe-aa527b46.json",
+          "status": 200,
+          "sha256": "b6eec0ddd525846bdf32954d094ccf81acd148d77dd6a9490751a2515b115dcf",
+          "bytes": 68300
+        },
+        {
+          "path": "docs/deep-research/papers/real-science-is-harder-than-benchmarks-evaluating-advanced-ai-frameworks-on-publishe-aa527b46.html",
+          "status": 200,
+          "sha256": "1b9a2c5e6f7394aaf05676e3230d9fe294f39b9fa0aea592898e99bfeaacadef",
+          "bytes": 25505
+        },
+        {
+          "path": "docs/deep-research/papers/do-ai-scientists-results-replicate-pre-registration-of-a-multi-seed-re-execution-stu-6cfce9e9.json",
+          "status": 200,
+          "sha256": "86f18f9ca55364316ca4f9260b6a007bc1321b76eff0e4803cc160ccea0eedb1",
+          "bytes": 9698
+        },
+        {
+          "path": "docs/deep-research/papers/do-ai-scientists-results-replicate-pre-registration-of-a-multi-seed-re-execution-stu-6cfce9e9.html",
+          "status": 200,
+          "sha256": "e41ac82ce215d2546bbd7fbefa7d8688af1f9ea38f3042411cbf82a3aa39f696",
+          "bytes": 8304
+        },
+        {
+          "path": "docs/deep-research/papers/generative-artificial-intelligence-for-nanomaterial-discovery-and-nanoengineering-fr-115b9b96.json",
+          "status": 200,
+          "sha256": "a258cacf41f022b5538d04c6d26fb58b6f4cec04e6993e5dcc517ebc7219f12c",
+          "bytes": 9641
+        },
+        {
+          "path": "docs/deep-research/papers/generative-artificial-intelligence-for-nanomaterial-discovery-and-nanoengineering-fr-115b9b96.html",
+          "status": 200,
+          "sha256": "3500af278734ae79008bbceade01f6dd7e4e9db872c24d8d6cd4b52b5718b014",
+          "bytes": 8144
+        },
+        {
+          "path": "docs/engram/papers/protlingo-efficient-protein-language-modeling-via-conditional-memory-and-expert-rout-c8478276.json",
+          "status": 200,
+          "sha256": "242c44fced18e08cdfae1b4519e0c9ea23cee3036e01eafd44753e1aafbb93cc",
+          "bytes": 101827
+        },
+        {
+          "path": "docs/engram/papers/protlingo-efficient-protein-language-modeling-via-conditional-memory-and-expert-rout-c8478276.html",
+          "status": 200,
+          "sha256": "1703a35513614802de2e2882367437153afa4d73b63613991b32d7757c85a95a",
+          "bytes": 34905
+        },
+        {
+          "path": "docs/engram/papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.json",
+          "status": 200,
+          "sha256": "2e5fd574e7541faf05d7daeeb1e3164a7aa684b45989efce0ab66aeba169a128",
+          "bytes": 18754
+        },
+        {
+          "path": "docs/engram/papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.html",
+          "status": 200,
+          "sha256": "8d397f5a30470a22cde53aa20e4af0ca8e6dce3a8f61b64b3bc4a428ca5438b4",
+          "bytes": 9833
+        },
+        {
+          "path": "docs/engram/papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.json",
+          "status": 200,
+          "sha256": "0b03b51dadbf2b5cad7794ae419ac81084c1557742fab9aa61a74dfd49fc129a",
+          "bytes": 16420
+        },
+        {
+          "path": "docs/engram/papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.html",
+          "status": 200,
+          "sha256": "988370220cb0b99a79fb74e549575f0743bee5bf239a1eb7f747c78fe7a191d2",
+          "bytes": 9936
+        },
+        {
+          "path": "docs/engram/papers/memory-is-not-always-needed-characterizing-conditional-memory-in-scientific-reasonin-221afc67.json",
+          "status": 200,
+          "sha256": "7700e9b993521fd4c66ce86b072db2d4e319fe24aa900aa942d02b4310b2eab8",
+          "bytes": 18791
+        },
+        {
+          "path": "docs/engram/papers/memory-is-not-always-needed-characterizing-conditional-memory-in-scientific-reasonin-221afc67.html",
+          "status": 200,
+          "sha256": "b21d807ac7a516ce19234e69d359d9df6e985479c3264296ec8527ac7d2965cb",
+          "bytes": 10956
+        },
+        {
+          "path": "docs/engram/papers/cross-model-memory-transfer-via-target-side-reader-adaptation-4f7a8c48.json",
+          "status": 200,
+          "sha256": "01bc6752f17b08898517d225c45da9aebb3f5451e42a5d8f3c6524153e8d903d",
+          "bytes": 112941
+        },
+        {
+          "path": "docs/engram/papers/cross-model-memory-transfer-via-target-side-reader-adaptation-4f7a8c48.html",
+          "status": 200,
+          "sha256": "982f46afa5e4ccd8dac8313781830224e5612f7f1f1647f0ebdb146d8fa6530a",
+          "bytes": 37148
+        },
+        {
+          "path": "docs/engram/papers/tokenizer-agnostic-engram-module-99f22b6f.json",
+          "status": 200,
+          "sha256": "e18752be066ca33b04156cb2cf397872e9e3572ae3d37430a35317c0c897dcda",
+          "bytes": 21870
+        },
+        {
+          "path": "docs/engram/papers/tokenizer-agnostic-engram-module-99f22b6f.html",
+          "status": 200,
+          "sha256": "78ebeeb8bf1602bc12c8615529028740e5f951444600d103c9253bb8ff9f7f39",
+          "bytes": 10933
+        },
+        {
+          "path": "docs/engram/papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.json",
+          "status": 200,
+          "sha256": "6a13943e357ee7a2cb904101deaea20af1722ec144cc7df95971f54cd834bc0c",
+          "bytes": 30592
+        },
+        {
+          "path": "docs/engram/papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.html",
+          "status": 200,
+          "sha256": "91d272da50e9ba8f21c742fd8b7ce05223dfbe6eeaa114cf6825812a4d553f29",
+          "bytes": 11868
+        },
+        {
+          "path": "docs/engram/papers/conditional-memory-via-scalable-lookup-a-new-axis-of-sparsity-for-large-language-mod-800bec78.json",
+          "status": 200,
+          "sha256": "c2490847aa7366b464db78fe76402f6c30e76089a2c49cd0aeb769ceee49b1e9",
+          "bytes": 90824
+        },
+        {
+          "path": "docs/engram/papers/conditional-memory-via-scalable-lookup-a-new-axis-of-sparsity-for-large-language-mod-800bec78.html",
+          "status": 200,
+          "sha256": "9d660a76b0542c59b372346b08a4bd5b2aad98bea30f9e76e56e6594591db193",
+          "bytes": 29902
+        },
+        {
+          "path": "docs/index.html",
+          "status": 200,
+          "sha256": "0f9327a8464da977d63058eb269251124d72ed91dac33a05668c4a229f54c703",
+          "bytes": 42343
+        },
+        {
+          "path": "docs/review.html",
+          "status": 200,
+          "sha256": "ad103e42149d42585433e010dd2b7609341d15d5a0d155bd079201d00c44455e",
+          "bytes": 8017723
+        },
+        {
+          "path": "docs/deep-research/index.html",
+          "status": 200,
+          "sha256": "a510d9be6a699bf31967dbecee9591fc0566934213af2a3cf053c140284d3a17",
+          "bytes": 47590
+        },
+        {
+          "path": "docs/deep-research/review.html",
+          "status": 200,
+          "sha256": "b61b86c6a3420115a7e1cdcbd7870ba116c11424d928121e849d00d6c0882237",
+          "bytes": 1021165
+        },
+        {
+          "path": "docs/engram/index.html",
+          "status": 200,
+          "sha256": "81d91d38507fcbe7d20a1d632d3d41fb43a4893f1e8231452d4f858b9bf1fe9a",
+          "bytes": 57689
+        },
+        {
+          "path": "docs/engram/review.html",
+          "status": 200,
+          "sha256": "ba4b91389e7b89e3b4969d76536e3661035b73c284970d8a83b1bcffab358ce5",
+          "bytes": 28883
+        }
+      ]
     }
   }
 }

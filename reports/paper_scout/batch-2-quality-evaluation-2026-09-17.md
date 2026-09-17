@@ -209,4 +209,6 @@ Validated runtime snapshot SHA-256: `2d7f756f2867c453a794ada7aea3a80e8eb9fa64afa
 
 Runtime state published to the established `paper-scout-runtime-state` release asset, then downloaded and restored with identical snapshot and database hashes.
 
-One deploy-only Pages dispatch is planned after persistence.
+Pages workflow [35206282238](https://github.com/vernerisirva/agentmempaper/actions/runs/35206282238): success; deployed `6509b03629ebe06b54c0897311955f21d793390a` using `deploy_only=true`. Exactly one dispatch was made. Scientific execution, runtime restore, discovery and snapshot-writing steps were skipped.
+
+Public verification: all 48 Batch-2/calibration JSON cards, 48 card HTML pages, and six library/review pages across all three tracks match the validated local bytes.

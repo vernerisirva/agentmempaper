@@ -4,7 +4,7 @@ import json
 import unittest
 
 from paper_scout.evidence_context import build_evidence_context, resolve_evidence_ids, digest
-from paper_scout.evidence_semantics import eligible_for, verifier_items
+from paper_scout.evidence_semantics import eligible_for, verifier_items, SUPPORT_VERSION
 from paper_scout.quality_llm import _support_input_hash
 from paper_scout.full_text import SelectedPaperText, SelectedSection
 from paper_scout.quality import assess_quality_deterministically
@@ -19,7 +19,7 @@ import test_quality_reliability as fixtures
 def verified_fixture(value, context, overrides=None):
     try:items=verifier_items(value,context)
     except ValueError:return None
-    return {'version':'claim-support-v1','status':'success','input_sha256':_support_input_hash(items),
+    return {'version':SUPPORT_VERSION,'status':'success','input_sha256':_support_input_hash(items),
         'items':[{'item_id':item['item_id'],'status':(overrides or {}).get(item['item_id'],'supported'),
                   'reason':'Mocked claim/evidence judgment.'} for item in items]}
 

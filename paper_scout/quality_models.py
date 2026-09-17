@@ -152,7 +152,7 @@ class QualityAssessment:
                     raise ValueError('new scientific decisions require claim-support verification')
                 if any(e.support_verification.get('status') != 'supported' for e in self.evidence):
                     raise ValueError('new scientific decisions require supported claims')
-            grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive" and e.support_status in {None, "supported"}}
+            grounded = {e.dimension for e in self.evidence if e.excerpt and (e.section or e.page) and e.signal_type == "positive" and e.claim_role != "artifact_availability" and e.support_status in {None, "supported"}}
             if self.quality_status == "pass" and not REQUIRED_GATE_DIMENSIONS <= grounded:
                 raise ValueError("quality pass requires manuscript evidence across the core dimensions")
             if self.quality_status == "insufficient" and not any(e.signal_type == "concern" and e.excerpt and (e.section or e.page) for e in self.evidence):

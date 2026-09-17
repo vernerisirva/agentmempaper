@@ -1,0 +1,1446 @@
+{
+  "inventory_completed_at": "2026-09-17T09:47:59.866555+00:00",
+  "before_source_edits": true,
+  "ORIGINAL_BATCH_2_GENERALIZATION_RESULT": "FAIL",
+  "original_code_sha": "82ecd6b577a420e14a569225b0442d9d679a0a08",
+  "canonical_baseline_sha": "9ab6976cd22bfc023bf0ecdc6600fde9555783cc",
+  "roster_sha256": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+  "immutable_files": {
+    "experiments/manifests/batch-2-roster-2026-09-17.json": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+    "experiments/manifests/batch-2-roster-2026-09-17.sha256": "de366371b37a65d32b822e22d83576f5c5efe84cfa0a78e5f918f76d3b174fc5",
+    "experiments/manifests/batch-2-protocol-2026-09-17.json": "f4598e327d6c12c85ec3a6d3bdd6c3343c1b88979d2d8b31539fe19b5ef92f50",
+    "experiments/manifests/batch-2-protocol-2026-09-17.sha256": "382fc269913f881d7716a6c79b1600fed8977801ebaad04ca54556894e6ff5ff",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.md": "b5f2fe042b440057cf4d6957aac0cfa1e47e452e27518c8030759d524dcc7272",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.json": "4a8e2238c76b4e5562687bb2a4bd65716340febf38af1bb84b2e872615b3f241"
+  },
+  "predefined_audit_sample": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    }
+  ],
+  "original_counts": {
+    "agent_memory": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 5,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 1,
+      "evidence_grounding_failure": 3,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 1
+    },
+    "deep_research": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 3,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 6,
+      "evidence_grounding_failure": 1,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 0
+    },
+    "engram": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 0,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 0,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 0
+    },
+    "overall": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 8,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 7,
+      "evidence_grounding_failure": 4,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 1
+    }
+  },
+  "papers": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "position": 1,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "agent_memory",
+        "position": 1,
+        "canonical_id": "doi:10.5281/zenodo.22671447",
+        "title": "MBM-0: Memory Birth Metrics v0",
+        "outcome": "manuscript_unavailable",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Sensible from title and abstract: a measurement protocol for agent-memory birth, survival, activation and behavior impact is directly on topic.",
+        "manuscript_evidence": "No manuscript source URL was present in the frozen candidate. No manuscript acquisition or model call occurred; title/abstract only.",
+        "status_defensibility": "Manuscript unavailable is appropriate. The abstract alone cannot establish validation of the six proposed metrics.",
+        "evidence_grounding": "No accepted evidence claims; no full-text scientific judgment was implied.",
+        "limitations": "The explicit no-manuscript/no-semantic-assessment statement bounds the result. Whether the metrics resist gaming or predict utility remains unassessed.",
+        "claim_calibration": "The pipeline withholds a scientific judgment; it does not treat the proposal as validated.",
+        "false_confidence": "No pass and no manuscript-level confidence.",
+        "excessive_conservatism": "No demonstrated structural conservatism; this is an acquisition limitation. No replacement URL or paper was supplied."
+      },
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08472",
+      "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+      "position": 2,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-1",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "2",
+              "3"
+            ],
+            "missing_values_or_units": [
+              "1",
+              "2",
+              "3"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 1, 2, 3",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "128",
+              "4",
+              "2",
+              "2",
+              "2",
+              "4",
+              "32",
+              "32",
+              "0",
+              "32",
+              "0",
+              "32",
+              "32",
+              "32",
+              "4.66",
+              "10"
+            ],
+            "missing_values_or_units": [
+              "4",
+              "2",
+              "2",
+              "2",
+              "4",
+              "4.66"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 4, 2, 2, 2, 4, 4.66",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "32",
+              "32",
+              "32",
+              "32"
+            ],
+            "missing_values_or_units": [
+              "1"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 1",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-8",
+          "numeric_check": {
+            "claimed_numbers": [
+              "11",
+              "32"
+            ],
+            "missing_values_or_units": [
+              "11"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 11",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08558",
+      "title": "Personalizing LLM Agent Memory Using Biometrics",
+      "position": 3,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "10"
+            ],
+            "missing_values_or_units": [
+              "10"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 10",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-7",
+          "numeric_check": {
+            "claimed_numbers": [
+              "10"
+            ],
+            "missing_values_or_units": [
+              "10"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 10",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08273",
+      "title": "MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging",
+      "position": 4,
+      "original_outcome": "other_technical_failure",
+      "manuscript_available": true,
+      "assessment_status": "not_stored",
+      "category": "technical",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "unpaired UTF-16 surrogate from extraction reaches canonical text hashing without normalization"
+      ],
+      "support_errors": [],
+      "exception": {
+        "type": "UnicodeEncodeError",
+        "message": "'utf-8' codec can't encode character '\\ud835' in position 12534: surrogates not allowed",
+        "boundary": "select_assessment_text -> assessment_input_sha256 -> _content_hash UTF-8 encode",
+        "escaped_input_context": "'ing\\n[Page 4]\\n6\\nKMeans clustering divides \\nhistorical memory \\ud835 into \\ninitial event units {\\ud835\\ud835}.\\nmemory nodes initial event '",
+        "bad_codepoints": [
+          "U+D835"
+        ]
+      }
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08279",
+      "title": "What Eviction Destroys: A Restore-Counterfactual Audit of Forgetting in Agent Memory",
+      "position": 5,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "10,000",
+              "3x",
+              "9"
+            ],
+            "missing_values_or_units": [
+              "3x"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 3x",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "position": 6,
+      "original_outcome": "evidence_grounding_failure",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "technical",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "agent_memory",
+        "position": 6,
+        "canonical_id": "doi:10.48550/arxiv.2609.08832",
+        "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+        "outcome": "evidence_grounding_failure",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Sensible: episodic guidelines derived from trajectory instability are an agent-memory mechanism with repeatability and transfer evaluation.",
+        "manuscript_evidence": "The title matches. All nine PDF pages extracted; methods, AppWorld evaluation, discussion/limitations and appendix were available, with no body omission or extraction truncation. The manuscript compares repeated runs and distinguishes stability from correctness.",
+        "status_defensibility": "This is an evidence-grounding failure, not scientific uncertainty about the paper. Withholding a scientific judgment is safe, but useful manuscript content did not produce an assessment.",
+        "evidence_grounding": "All eight proposed claims were withheld. The reproducibility item cited Eab63d8b945096f8e-B0003 (abstract code URL) together with B0029 (experimental setup). The abstract source is hard-ineligible for this role, so the verifier never ran. The IDs are from the correct manuscript; this is a role/selection failure, not cross-paper evidence.",
+        "limitations": "The manuscript discusses uncontrolled platform nondeterminism, stability versus correctness, limited agent/model coverage, admitting unvalidated guidelines and roughly 30-fold resampling cost. These were available but no scientific evidence survived the reference failure.",
+        "claim_calibration": "The proposed method/results claims included values absent from their exact snippets. Those proposals remain audit data; none is promoted to accepted evidence.",
+        "false_confidence": "No false pass; the safety gate withheld the proposed pass.",
+        "excessive_conservatism": "A real code URL located immediately below the abstract triggered an all-or-nothing role exclusion. The same abstract/reproducibility pattern appears in four papers; it is a systematic pipeline reliability limitation."
+      },
+      "claim_findings": [
+        {
+          "accepted": false,
+          "claim": "The paper provides code at https://github.com/AgentToolkit/altk-evolve and specifies experimental setup including model endpoints, benchmark split, and evaluation metrics.",
+          "claim_role": "reproducibility",
+          "dimension": "reproducibility_and_transparency",
+          "eligibility": [
+            {
+              "basis": "abstract_attribution_only",
+              "body_member": false,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "Eab63d8b945096f8e-B0003",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "hard_ineligible"
+            },
+            {
+              "basis": "section_role",
+              "body_member": true,
+              "claim_role": "reproducibility",
+              "compatible": true,
+              "evidence_id": "Eab63d8b945096f8e-B0029",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "directly_compatible"
+            }
+          ],
+          "eligibility_valid": false,
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0003",
+            "Eab63d8b945096f8e-B0029"
+          ],
+          "explanation": "Reproducibility is supported by the public code repository, explicit specification of the AppWorld test normal split (168 tasks), model endpoints (Azure for GPT-4.1, AWS for GPT-OSS-120B), and the five-run evaluation protocol with defined metrics.",
+          "item_id": "evidence-7",
+          "provenance_valid": true,
+          "reason": "evidence section role is ineligible for this claim/dimension",
+          "statement_kind": "source_claim",
+          "canonical_sources": [
+            {
+              "evidence_id": "Eab63d8b945096f8e-B0003",
+              "sequence": 3,
+              "text": "guidelines, committed to memory and injected into fu-\nture agent executions on similar tasks. On AppWorld with\nReAct/GPT-4.1, our framework raises the fraction of tasks\nthat succeed in all five runs by+16 pointson same-task eval-\nuation and+13 pointson similar-task generalization.\nCode:https://github.com/AgentToolkit/altk-evolve",
+              "content_hash": "df893f98d044266276ccca0d808523775e951a56d5cc6584442a8f1dfd857633",
+              "spans": [
+                {
+                  "text": "guidelines, committed to memory and injected into fu-\nture agent executions on similar tasks. On AppWorld with\nReAct/GPT-4.1, our framework raises the fraction of tasks\nthat succeed in all five runs by+16 pointson same-task eval-\nuation and+13 pointson similar-task generalization.\nCode:https://github.com/AgentToolkit/altk-evolve",
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 896,
+                  "end": 1226
+                }
+              ],
+              "eligible": true,
+              "section_role": "abstract"
+            },
+            {
+              "evidence_id": "Eab63d8b945096f8e-B0029",
+              "sequence": 29,
+              "text": "We evaluate on AppWorld (Trivedi et al. 2024), an interac-\ntive coding-agent benchmark in which an agent operates a\ncontrolled simulation of personal apps via Python tool calls,\ngraded by the AppWorld harness, on thetest normalsplit\n(168 tasks). AppWorld groups tasks intoscenariosof three\nvariants each, which we exploit below to test generalization\nto similar tasks. We evaluate a ReAct (Yao et al. 2023) agent\nbacked by GPT-4.1 and GPT-OSS-120B, running each task\nfive times and reporting Pass\u02c65, Mean@5, and (where rel-\nevant) Pass@5 as defined in Section 2.1. All experiments\nwere run against cloud-hosted model endpoints: GPT-4.1 on\nMicrosoft Azure and GPT-OSS-120B on Amazon Web Ser-\nvices (AWS).\nThe consistency analyzer parses the ReAct agent re-\nsponse at each step to extract actions as categorical pairs:\n(API name,API params). Each extracted pair is scored\nby average pairwise Jaccard ",
+              "content_hash": "69ae8d9a019657c56fb5931acfd5dc5e79147b2a5377e24c3df45789c76164ea",
+              "spans": [
+                {
+                  "text": "We evaluate on AppWorld (Trivedi et al. 2024), an interac-\ntive coding-agent benchmark in which an agent operates a\ncontrolled simulation of personal apps via Python tool calls,\ngraded by the AppWorld harness, on thetest normalsplit\n(168 tasks). AppWorld groups tasks intoscenariosof three\nvariants each, which we exploit below to test generalization\nto similar tasks. We evaluate a ReAct (Yao et al. 2023) agent\nbacked by GPT-4.1 and GPT-OSS-120B, running each task\nfive times and reporting Pass\u02c65, Mean@5, and (where rel-\nevant) Pass@5 as defined in Section 2.1. All experiments\nwere run against cloud-hosted model endpoints: GPT-4.1 on\nMicrosoft Azure and GPT-OSS-120B on Amazon Web Ser-\nvices (AWS).",
+                  "page": 4,
+                  "section": "Experimental Setup",
+                  "section_index": 13,
+                  "start": 0,
+                  "end": 703
+                },
+                {
+                  "text": "The consistency analyzer parses the ReAct agent re-\nsponse at each step to extract actions as categorical pairs:\n(API name,API params). Each extracted pair is scored\nby average pairwise Jaccard ",
+                  "page": 5,
+                  "section": "Experimental Setup",
+                  "section_index": 14,
+                  "start": 0,
+                  "end": 194
+                }
+              ],
+              "eligible": true,
+              "section_role": "methods"
+            }
+          ]
+        }
+      ],
+      "known_defects": [
+        "artifact_availability_conflated_with_scientific_reproducibility; abstract code/data URL hard-ineligible; entire verifier skipped"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "30",
+              "0.5",
+              "30",
+              "0.5"
+            ],
+            "missing_values_or_units": [
+              "30",
+              "0.5",
+              "30",
+              "0.5"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 30, 0.5, 30, 0.5",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "0.699",
+              "50",
+              "0.699",
+              "50"
+            ],
+            "missing_values_or_units": [
+              "0.699",
+              "0.699"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 0.699, 0.699",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [
+              "30x",
+              "30x"
+            ],
+            "missing_values_or_units": [
+              "30x",
+              "30x"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 30x, 30x",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08550",
+      "title": "CreaMem: A Scene-Aware Memory Architecture for Personalized Agents",
+      "position": 7,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": [
+        {
+          "item_id": "quality_rationale",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The narrative asserts hyperparameter sensitivity, a Gemini-3 ablation, and absence of significance testing, but the supplied sources do not mention hyperparameter sensitivity, Gemini-3, or statistical significance testing.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "quality_uncertainty",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1,000"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The narrative claims the main results use GPT-4o as judge and the ablation uses Gemini-3 as both backbone and judge, but the supplied sources do not identify the judge or backbone models for the main results or ablation.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1",
+              "54.61",
+              "66.40",
+              "2",
+              "45.62",
+              "57.60",
+              "41.07",
+              "60.20"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The cited table shows CreaMem with the highest values in the reported columns for both benchmarks, but the claim of 'all reported metrics' cannot be fully verified because the table columns are unlabeled and the cited text does not define which columns correspond to which metrics",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1,000",
+              "2",
+              "71.00%",
+              "83.00%",
+              "90.10%",
+              "80.50%",
+              "77.20%"
+            ],
+            "missing_values_or_units": [
+              "71.00%",
+              "83.00%",
+              "90.10%",
+              "80.50%",
+              "77.20%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 71.00%, 83.00%, 90.10%, 80.50%, 77.20%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [
+              "2,805",
+              "20,078",
+              "2,825",
+              "7,250",
+              "103,137"
+            ],
+            "missing_values_or_units": [
+              "2,805",
+              "20,078",
+              "2,825",
+              "7,250",
+              "103,137"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 2,805, 20,078, 2,825, 7,250, 103,137",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08599",
+      "title": "Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation",
+      "position": 8,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": []
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.09115",
+      "title": "MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents",
+      "position": 9,
+      "original_outcome": "evidence_grounding_failure",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "technical",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [
+        {
+          "accepted": false,
+          "claim": "The paper provides code at a GitHub repository and detailed experimental configurations including model names, hyperparameters, and dataset statistics.",
+          "claim_role": "reproducibility",
+          "dimension": "reproducibility_and_transparency",
+          "eligibility": [
+            {
+              "basis": "abstract_attribution_only",
+              "body_member": false,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E8763b130dd1e6560-B0003",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "hard_ineligible"
+            },
+            {
+              "basis": "atypical_body_requires_support",
+              "body_member": true,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E8763b130dd1e6560-B0062",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "requires_support_verification"
+            }
+          ],
+          "eligibility_valid": false,
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0003",
+            "E8763b130dd1e6560-B0062"
+          ],
+          "explanation": "The abstract includes a code link, and the appendix specifies task agent, judge evaluator, retrieval budget, permutation budget, and tolerance settings.",
+          "item_id": "evidence-6",
+          "provenance_valid": true,
+          "reason": "evidence section role is ineligible for this claim/dimension",
+          "statement_kind": "source_claim",
+          "canonical_sources": [
+            {
+              "evidence_id": "E8763b130dd1e6560-B0003",
+              "sequence": 3,
+              "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear",
+              "content_hash": "80034d9e9b01bc9e431695b78de3e4b19be93dcb4c9455e1f7c1fa264f6148c4",
+              "spans": [
+                {
+                  "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear",
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 803,
+                  "end": 1272
+                }
+              ],
+              "eligible": true,
+              "section_role": "abstract"
+            },
+            {
+              "evidence_id": "E8763b130dd1e6560-B0062",
+              "sequence": 62,
+              "text": "We evaluate MeClear on LoCoMo using Kimi-k2.6 as task\nagent and Qwen3.6-Flash as judge evaluator. The evaluation\nis constructed from 368 clean queries across ten conversa-\ntions and contains 745 causally verified cases with 1,115\nfault records. The cohort includes 375 direct conflicts with\n|M|= 1, 285 redundant conflicts with|M|= 2, and 85\nSetting Value\nMeClear retrieval budgetK5\nMeClear permutation budgetL16\nMeClear checkpoints 4, 8, 16\nMeClear screening tolerance\u03ba0.05\nMeClear harm tolerance\u03c40.05\nTask-value range[0,1]\nTask agent Kimi-k2.6\nJudge evaluator Qwen3.6-Flash\nMemory construction Moonshot-v1-32k\nFault generation Qwen3.7-Plus\nLOO threshold bdt,i <\u22120.05\nContextCite budget /\u03b132 / 0.01\nProxySPEX budget / order 32 / 2\nDirect LLM Qwen3.5-Plus\nDirect LLM threshold\u22650.5\nTable 4: Main method, model, and baseline settings.\njoint interactions with|M|= 2. Two of the 747 initially se-\nlected ",
+              "content_hash": "e26ecf71db5fb5f21509d0fc8d4fba1fb822193d2a0b79130e5ed912ceed6874",
+              "spans": [
+                {
+                  "text": "We evaluate MeClear on LoCoMo using Kimi-k2.6 as task\nagent and Qwen3.6-Flash as judge evaluator. The evaluation\nis constructed from 368 clean queries across ten conversa-\ntions and contains 745 causally verified cases with 1,115\nfault records. The cohort includes 375 direct conflicts with\n|M|= 1, 285 redundant conflicts with|M|= 2, and 85\nSetting Value\nMeClear retrieval budgetK5\nMeClear permutation budgetL16\nMeClear checkpoints 4, 8, 16\nMeClear screening tolerance\u03ba0.05\nMeClear harm tolerance\u03c40.05\nTask-value range[0,1]\nTask agent Kimi-k2.6\nJudge evaluator Qwen3.6-Flash\nMemory construction Moonshot-v1-32k\nFault generation Qwen3.7-Plus\nLOO threshold bdt,i <\u22120.05\nContextCite budget /\u03b132 / 0.01\nProxySPEX budget / order 32 / 2\nDirect LLM Qwen3.5-Plus\nDirect LLM threshold\u22650.5\nTable 4: Main method, model, and baseline settings.\njoint interactions with|M|= 2. Two of the 747 initially se-\nlected ",
+                  "page": 13,
+                  "section": "Appendix: Experimental Setup",
+                  "section_index": 25,
+                  "start": 0,
+                  "end": 900
+                }
+              ],
+              "eligible": true,
+              "section_role": "appendix"
+            }
+          ]
+        }
+      ],
+      "known_defects": [
+        "artifact_availability_conflated_with_scientific_reproducibility; abstract code/data URL hard-ineligible; entire verifier skipped"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "85.9 percent",
+              "82.3 percent",
+              "745",
+              "25.5 percentage point"
+            ],
+            "missing_values_or_units": [
+              "85.9 percent",
+              "82.3 percent",
+              "25.5 percentage point"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 85.9 percent, 82.3 percent, 25.5 percentage point",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "12.3 percent",
+              "6.3 percent",
+              "83.2 percent",
+              "68.4 percent"
+            ],
+            "missing_values_or_units": [
+              "12.3 percent",
+              "6.3 percent",
+              "83.2 percent",
+              "68.4 percent"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 12.3 percent, 6.3 percent, 83.2 percent, 68.4 percent",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "position": 10,
+      "original_outcome": "evidence_grounding_failure",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "technical",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "agent_memory",
+        "position": 10,
+        "canonical_id": "doi:10.48550/arxiv.2609.08258",
+        "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+        "outcome": "evidence_grounding_failure",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Strong fit: revoked versus current memory, retrieval enforcement, unsafe actions, write-back and propagation directly stress knowledge supersession.",
+        "manuscript_evidence": "The title matches. All 20 pages extracted; methods, nine-scenario/nine-model evaluation, defense conditions, guard design, appendices and compute accounting were present. No body omission or truncation was recorded.",
+        "status_defensibility": "Evidence-grounding failure is the correct top-level category. It cannot be counted as a scientific negative result or an insufficient paper.",
+        "evidence_grounding": "All nine proposals were withheld. E5950c57d2c67485e-B0003 contains the abstract code-release statement; B0063/B0064 contain compute costs. The former is hard-ineligible for reproducibility, preventing the batched verifier. All sources belong to this manuscript.",
+        "limitations": "The manuscript distinguishes natural from controlled direct write-back, limits the guard to exposed facts/marks and reports compute costs. Broader system coverage and deployment generalization require caution. The stored failure does not provide a scientific limitations synthesis.",
+        "claim_calibration": "The compute text supports 44,550 calls for the main grid and $79.08 total across experiments, rather than $79.08 for the main grid alone. These remain proposed claims. Another proposal referenced 44.2% outside its exact cited snippets.",
+        "false_confidence": "No pass; unsupported or unverified proposals did not become accepted evidence.",
+        "excessive_conservatism": "A genuine code-release sentence in the abstract plus substantive appendix evidence was rejected by the same shared role rule. No manual evidence relocation was performed."
+      },
+      "claim_findings": [
+        {
+          "accepted": false,
+          "claim": "The paper open-sources its code and reports compute resources, including 44,550 decision-model calls for the main grid and a total cost of $79.08.",
+          "claim_role": "reproducibility",
+          "dimension": "reproducibility_and_transparency",
+          "eligibility": [
+            {
+              "basis": "abstract_attribution_only",
+              "body_member": false,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E5950c57d2c67485e-B0003",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "hard_ineligible"
+            },
+            {
+              "basis": "atypical_body_requires_support",
+              "body_member": true,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E5950c57d2c67485e-B0063",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "requires_support_verification"
+            },
+            {
+              "basis": "atypical_body_requires_support",
+              "body_member": true,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E5950c57d2c67485e-B0064",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "requires_support_verification"
+            }
+          ],
+          "eligibility_valid": false,
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0003",
+            "E5950c57d2c67485e-B0063",
+            "E5950c57d2c67485e-B0064"
+          ],
+          "explanation": "The abstract states the code is open-sourced, and the compute resources appendix reports the number of model calls and cost for each experiment.",
+          "item_id": "evidence-6",
+          "provenance_valid": true,
+          "reason": "evidence section role is ineligible for this claim/dimension",
+          "statement_kind": "source_claim",
+          "canonical_sources": [
+            {
+              "evidence_id": "E5950c57d2c67485e-B0003",
+              "sequence": 3,
+              "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack.",
+              "content_hash": "78c8410e50347becd6bc7d6baa8a65db55620f36327206d0cddfbe74da075bb1",
+              "spans": [
+                {
+                  "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack.",
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 883,
+                  "end": 1031
+                }
+              ],
+              "eligible": true,
+              "section_role": "abstract"
+            },
+            {
+              "evidence_id": "E5950c57d2c67485e-B0063",
+              "sequence": 63,
+              "text": "This subsection reports the compute required to reproduce the measurements. The experiments\nrequire no training and no GPUs. All measurements ran on a single MacBook Air (M5) with 16 GB\n14\nof RAM, which hosted the five memory systems as local containers. No model weights were loaded\nlocally: the nine decision models and the shared extraction and embedding model were accessed\nthrough their providers' hosted APIs, routed through LiteLLM. Because no model is trained or\nserved locally, execution time is dominated by API latency rather than by local computation, so the\nmeaningful resource is the number of model calls rather than elapsed wall-clock time.\nTable 10: Decision-model calls and cost by experiment.\nexperiment calls cost share\nmain grid (reported)44,550 $71.78 90.7%\npropagation1,458 $2.35 3.0%\npersistence1,296 $2.09 2.6%\nexploit chain1,216 $1.84 2.5%\nparse audit486 $0.78 ",
+              "content_hash": "4930681f7901833cd4ec736c587916e7502f106ff1a2bdf97f36bb9dbed91760",
+              "spans": [
+                {
+                  "text": "This subsection reports the compute required to reproduce the measurements. The experiments\nrequire no training and no GPUs. All measurements ran on a single MacBook Air (M5) with 16 GB\n14",
+                  "page": 14,
+                  "section": "Appendix: Compute Resources",
+                  "section_index": 33,
+                  "start": 0,
+                  "end": 188
+                },
+                {
+                  "text": "of RAM, which hosted the five memory systems as local containers. No model weights were loaded\nlocally: the nine decision models and the shared extraction and embedding model were accessed\nthrough their providers' hosted APIs, routed through LiteLLM. Because no model is trained or\nserved locally, execution time is dominated by API latency rather than by local computation, so the\nmeaningful resource is the number of model calls rather than elapsed wall-clock time.\nTable 10: Decision-model calls and cost by experiment.\nexperiment calls cost share\nmain grid (reported)44,550 $71.78 90.7%\npropagation1,458 $2.35 3.0%\npersistence1,296 $2.09 2.6%\nexploit chain1,216 $1.84 2.5%\nparse audit486 $0.78 ",
+                  "page": 15,
+                  "section": "Appendix: Compute Resources",
+                  "section_index": 34,
+                  "start": 0,
+                  "end": 698
+                }
+              ],
+              "eligible": true,
+              "section_role": "appendix"
+            },
+            {
+              "evidence_id": "E5950c57d2c67485e-B0064",
+              "sequence": 64,
+              "text": "1.0%\nwrite-back115 $0.23 0.2%\ntotal49,121 $79.08 100%\nTable 10 reports the decision-model calls and cost for each experiment, priced from the unit prices\nthe LiteLLM serving layer publishes. The main grid reported in this paper covers 9 scenarios, 9\nmodels, and 10 trials per cell across the systems, configurations, defense conditions, and insertion\nmodes (Section 3.6). It accounts for 44,550 of the 49,121 decision-model calls and $71.78 of the\n$79.08 total. The remaining 4,571 calls funded the three studies reported in Section C (propagation,\nthe exploit chain, and write-back), a persistence study not reported here, and a parse audit of replies\nfrom which no action could be parsed. Only the persistence study and the parse audit contribute no\nnumber to this paper. Input and billed output token counts per call are recorded in the released results\nbundle. The full research project ",
+              "content_hash": "455f42b6d1c383b48fb61e576ccb22e125c93525ab470e5d575d1d91c2a4cae8",
+              "spans": [
+                {
+                  "text": "1.0%\nwrite-back115 $0.23 0.2%\ntotal49,121 $79.08 100%\nTable 10 reports the decision-model calls and cost for each experiment, priced from the unit prices\nthe LiteLLM serving layer publishes. The main grid reported in this paper covers 9 scenarios, 9\nmodels, and 10 trials per cell across the systems, configurations, defense conditions, and insertion\nmodes (Section 3.6). It accounts for 44,550 of the 49,121 decision-model calls and $71.78 of the\n$79.08 total. The remaining 4,571 calls funded the three studies reported in Section C (propagation,\nthe exploit chain, and write-back), a persistence study not reported here, and a parse audit of replies\nfrom which no action could be parsed. Only the persistence study and the parse audit contribute no\nnumber to this paper. Input and billed output token counts per call are recorded in the released results\nbundle. The full research project ",
+                  "page": 15,
+                  "section": "Appendix: Compute Resources",
+                  "section_index": 34,
+                  "start": 698,
+                  "end": 1589
+                }
+              ],
+              "eligible": true,
+              "section_role": "appendix"
+            }
+          ]
+        }
+      ],
+      "known_defects": [
+        "artifact_availability_conflated_with_scientific_reproducibility; abstract code/data URL hard-ineligible; entire verifier skipped"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "81",
+              "81",
+              "44.2%",
+              "42.1%"
+            ],
+            "missing_values_or_units": [
+              "44.2%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 44.2%",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "position": 1,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "deep_research",
+        "position": 1,
+        "canonical_id": "doi:10.65649/ukh4n33x",
+        "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+        "outcome": "scientific_uncertainty",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Sensible: the review concerns autonomous scientific workflows, literature synthesis, verification and research agents.",
+        "manuscript_evidence": "The title and DOI match the 45-page manuscript. All pages extracted and useful body/supplement-style content was selected. Whitespace and heading detection are noisy, but there is no recorded body omission or truncation. Definitions, workflow, evidence tables and limitations are present.",
+        "status_defensibility": "Uncertainty is defensible for the cited claim set. The exact snippets do not establish every domain/prior-system name asserted in the proposed narrative. This is not manuscript unavailability. It also should not be read as disproving those statements elsewhere in the paper.",
+        "evidence_grounding": "Seven accepted claims were checked against their saved snippets. The four characteristics, six-stage workflow, stated failure rates and explicit methodological limitations are present. A qualification remains: the novelty explanation says this synthesis is unavailable in a single source elsewhere; the cited table cannot establish that external uniqueness claim. PRISMA adherence is the authors' statement, not an independently verified search audit.",
+        "limitations": "Accepted evidence represents non-preregistration, qualitative risk-of-bias assessment, database restrictions, preprint dependence, heterogeneous evidence, narrow LLM scope and lack of empirical validation of the workflow. These are meaningful scientific limitations.",
+        "claim_calibration": "Most claims are manuscript-attributed and bounded, but the accepted external-uniqueness explanation is stronger than its canonical support. Reported rates were checked as statements in this manuscript, not independently replicated facts.",
+        "false_confidence": "No false pass. This accepted explanation is still a grounding/calibration concern despite the uncertain final status.",
+        "excessive_conservatism": "Some rejected text has genuine snippet-selection gaps; the numeric check also rejects a Table 2 locator/year when absent from the cited blocks. These mixed causes mean the uncertainty is not a clean measure of scientific weakness."
+      },
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present",
+        "excessive_conservatism and claim_overreach with reasonable_uncertainty; see exact audit observations"
+      ],
+      "support_errors": [
+        {
+          "item_id": "quality_rationale",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The narrative's claim that the paper reviews systems across chemistry, equation discovery, materials science, and ML research is not established by the supplied sources, which do not mention these domains.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "2",
+              "2025",
+              "2023",
+              "2026"
+            ],
+            "missing_values_or_units": [
+              "2",
+              "2023"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 2, 2023",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-6",
+          "numeric_check": {
+            "claimed_numbers": [
+              "1981"
+            ],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The cited text mentions BACON, Robot Scientist, and five verification frameworks, but does not explicitly mention Coscientist, ChemCrow, LLM-SR, or LaSR, so the full list of prior work is not established by the provided sources.",
+          "status": "uncertain"
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.64898/2026.07.30.26359375",
+      "title": "A PRISMA-Aligned Agentic Framework for Medical Systematic Reviews and Evidence Synthesis",
+      "position": 2,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "not_sampled",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.6082/gep96-ycs43",
+      "title": "Towards Reliable AI Scientists",
+      "position": 3,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "not_sampled",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65890/race.v2i2.204",
+      "title": "Deep Research Agent: An AI-Powered System for Automated Research Paper Analysis and Citation-Based Answer Generation",
+      "position": 4,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "not_sampled",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21577092",
+      "title": "When the Instrument Studies Itself: A Systematic Map of Autonomous AI Research Systems (2024-2026), Conducted by a Frontier Language Model",
+      "position": 5,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "not_sampled",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "position": 6,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "deep_research",
+        "position": 6,
+        "canonical_id": "doi:10.5281/zenodo.21523008",
+        "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+        "outcome": "manuscript_unavailable",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Sensible: the abstract describes a multi-agent literature-review, extraction, synthesis and citation-mapping architecture with memory and a worked case study.",
+        "manuscript_evidence": "No known manuscript URL in the frozen record; no manuscript or model call. The metadata itself says benchmark-scale quantitative evaluation is future work.",
+        "status_defensibility": "Manuscript unavailable is appropriate. The future-evaluation statement is not converted into scientific insufficiency without the manuscript.",
+        "evidence_grounding": "Three retained deterministic metadata signals are not verifier-accepted scientific claims. The abstract explicitly states the contribution and mentions evaluation; the heuristic concern that no review-selection methodology was detected is limited to available text.",
+        "limitations": "The public no-manuscript/no-semantic-assessment rationale is the main bound. The abstract's stated lack of completed benchmark-scale evaluation is visible in metadata but remains unaudited scientifically.",
+        "claim_calibration": "No main-library admission. Auxiliary heuristic scores/signals must not be interpreted as manuscript-verified methodological findings.",
+        "false_confidence": "No pass and full_text_assessed is false.",
+        "excessive_conservatism": "No demonstrated format penalty; manuscript acquisition was unavailable from the stored source candidates."
+      },
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268496",
+      "title": "Benchmarking Agents for Proving Theorems in Quantum Algorithms and Quantum Information",
+      "position": 7,
+      "original_outcome": "manuscript_unavailable",
+      "manuscript_available": false,
+      "assessment_status": "uncertain",
+      "category": "acquisition",
+      "audit_status": "not_sampled",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [],
+      "support_errors": []
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268620",
+      "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+      "position": 8,
+      "original_outcome": "evidence_grounding_failure",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "technical",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [
+        {
+          "accepted": false,
+          "claim": "The paper provides code and dataset availability links and describes the manual audit of all target false conclusions with 100% coverage, supporting reproducibility of the evaluation framework.",
+          "claim_role": "reproducibility",
+          "dimension": "reproducibility_and_transparency",
+          "eligibility": [
+            {
+              "basis": "abstract_attribution_only",
+              "body_member": false,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E5ecf27d3a2ac0fe6-B0003",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "hard_ineligible"
+            },
+            {
+              "basis": "atypical_body_requires_support",
+              "body_member": true,
+              "claim_role": "reproducibility",
+              "compatible": false,
+              "evidence_id": "E5ecf27d3a2ac0fe6-B0045",
+              "policy": "cross-section-support-v1",
+              "provenance_eligible": true,
+              "state": "requires_support_verification"
+            }
+          ],
+          "eligibility_valid": false,
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0003",
+            "E5ecf27d3a2ac0fe6-B0045"
+          ],
+          "explanation": "The abstract provides GitHub and Hugging Face links for code and dataset. The appendix describes exhaustive manual auditing of canonical target conclusions for every task, indicating transparency in the construction and validation process.",
+          "item_id": "evidence-7",
+          "provenance_valid": true,
+          "reason": "evidence section role is ineligible for this claim/dimension",
+          "statement_kind": "source_claim",
+          "canonical_sources": [
+            {
+              "evidence_id": "E5ecf27d3a2ac0fe6-B0003",
+              "sequence": 3,
+              "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively.",
+              "content_hash": "16ad5ce1e26e100781bc47c62b77edd0dc59026abd874a12a19fd55d7bb0fdf8",
+              "spans": [
+                {
+                  "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively.",
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 854,
+                  "end": 1727
+                }
+              ],
+              "eligible": true,
+              "section_role": "abstract"
+            },
+            {
+              "evidence_id": "E5ecf27d3a2ac0fe6-B0045",
+              "sequence": 45,
+              "text": "Thisauditwasdistinctfromtheinstance-levelhumanscreen-\ningusedtoassessdocumentquality.Weexhaustivelyaudited\nthecanonicaltargetconclusionforeverytaskinthecomplete\nbenchmark task set (100% coverage), rather than sampling\na subset. Because all generated documents for a task instan-\ntiate the same target conclusion, factuality was validated at\nthe conclusion level.\nFor each conclusion, we checked its central claim and,\nwhere applicable, its attributed source against primary\nsources, official records, or peer-reviewed literature. A con-\nclusionwasclassifiedasconfirmedfalseonlyifitwasdirectly\ncontradictedbyauthoritativeevidenceorifthenon-existence\nofitsassertedentity,method,event,artifact,orempiricalre-\nsultcouldbeestablishedfromaboundedauthoritativerecord\nModel Qualitative assessment Representative observation Potential effect\nKimi 2.6 Cross-language inconsis-\ntency\nSome Chinese documents ",
+              "content_hash": "5d5b3b72e994c56b42922e2b55862e170bce36343ae51ec34a31a35a18c30bcc",
+              "spans": [
+                {
+                  "text": "Thisauditwasdistinctfromtheinstance-levelhumanscreen-\ningusedtoassessdocumentquality.Weexhaustivelyaudited\nthecanonicaltargetconclusionforeverytaskinthecomplete\nbenchmark task set (100% coverage), rather than sampling\na subset. Because all generated documents for a task instan-\ntiate the same target conclusion, factuality was validated at\nthe conclusion level.\nFor each conclusion, we checked its central claim and,\nwhere applicable, its attributed source against primary\nsources, official records, or peer-reviewed literature. A con-\nclusionwasclassifiedasconfirmedfalseonlyifitwasdirectly\ncontradictedbyauthoritativeevidenceorifthenon-existence\nofitsassertedentity,method,event,artifact,orempiricalre-\nsultcouldbeestablishedfromaboundedauthoritativerecord",
+                  "page": 10,
+                  "section": "Conclusions",
+                  "section_index": 22,
+                  "start": 0,
+                  "end": 759
+                },
+                {
+                  "text": "Model Qualitative assessment Representative observation Potential effect\nKimi 2.6 Cross-language inconsis-\ntency\nSome Chinese documents ",
+                  "page": 11,
+                  "section": "Conclusions",
+                  "section_index": 23,
+                  "start": 0,
+                  "end": 136
+                }
+              ],
+              "eligible": true,
+              "section_role": "conclusion"
+            }
+          ]
+        }
+      ],
+      "known_defects": [
+        "artifact_availability_conflated_with_scientific_reproducibility; abstract code/data URL hard-ineligible; entire verifier skipped"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-1",
+          "numeric_check": {
+            "claimed_numbers": [
+              "0%",
+              "54.7%",
+              "100",
+              "0%",
+              "54.7%"
+            ],
+            "missing_values_or_units": [
+              "0%",
+              "54.7%",
+              "0%",
+              "54.7%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 0%, 54.7%, 0%, 54.7%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-2",
+          "numeric_check": {
+            "claimed_numbers": [
+              "85.5%",
+              "40.5%",
+              "44.2%"
+            ],
+            "missing_values_or_units": [
+              "40.5%",
+              "44.2%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 40.5%, 44.2%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "61.0%",
+              "57.7%",
+              "46.2%"
+            ],
+            "missing_values_or_units": [
+              "57.7%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 57.7%",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-4",
+          "numeric_check": {
+            "claimed_numbers": [
+              "61.0%",
+              "53.0%",
+              "44.0%",
+              "37.5%",
+              "23.5",
+              "14.8"
+            ],
+            "missing_values_or_units": [
+              "61.0%",
+              "53.0%",
+              "44.0%",
+              "23.5"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 61.0%, 53.0%, 44.0%, 23.5",
+          "status": "unsupported"
+        },
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [
+              "15%",
+              "62%"
+            ],
+            "missing_values_or_units": [
+              "15%"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 15%",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2607.20872",
+      "title": "LegalCiteTrust: Benchmarking Citation Trustworthiness in Chinese Long-Form Legal Research Reports",
+      "position": 9,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "posthoc_diagnostic",
+      "audit_observations": null,
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present"
+      ],
+      "support_errors": [
+        {
+          "item_id": "evidence-5",
+          "numeric_check": {
+            "claimed_numbers": [
+              "0.8199",
+              "0.8712",
+              "837"
+            ],
+            "missing_values_or_units": [
+              "837"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 837",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "position": 10,
+      "original_outcome": "scientific_uncertainty",
+      "manuscript_available": true,
+      "assessment_status": "uncertain",
+      "category": "scientific",
+      "audit_status": "predefined_sample",
+      "audit_observations": {
+        "track": "deep_research",
+        "position": 10,
+        "canonical_id": "openalex:W7171268386",
+        "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+        "outcome": "scientific_uncertainty",
+        "inclusion": [
+          "predefined_first_middle_last"
+        ],
+        "topical_fit": "Strong fit: recursive deep research, constraint-wise verification, context updating and multi-stage training directly address long-horizon research workflows.",
+        "manuscript_evidence": "The AREX title matches the acquired manuscript. All 20 pages extracted; framework, data construction, training, experimental setup, tables, ablations and conclusion were selected. References were excluded; no body omission or extraction truncation was recorded.",
+        "status_defensibility": "Uncertainty is defensible for the exact submitted evidence set. The six-benchmark statement and comparator value 77.5 exist in the full manuscript, but were not established by the snippets selected for the relevant claims/narrative. This is evidence selection friction, not proof that the experiment lacks six benchmarks.",
+        "evidence_grounding": "Eight accepted claims were checked. Inner/outer loop descriptions, novelty positioning and the BrowseComp ablation values 59.6, 71.4 and 82.5 are supported. Some explanation details are broader than the cited passages: the reproducibility claim mentions model links, yet cites training-data paragraphs rather than the front-matter links. Global absence-of-release/section claims require the broader manuscript, not just a local paragraph.",
+        "limitations": "The audit confirmed no dedicated related-work or limitations section in the supplied manuscript. The assessment notes unreleased training artifacts and open step-utility/credit-assignment questions. Presence of a future-work sentence is weaker than a full failure-mode or robustness analysis.",
+        "claim_calibration": "Numerical ablation claims are appropriately scoped to BrowseComp. Paper-wide absence inferences and uncited model-link details should be treated cautiously; the public uncertain status avoids a confident endorsement.",
+        "false_confidence": "No false pass. The accepted model-link/detail mismatch is an evidence-boundary concern.",
+        "excessive_conservatism": "The six-benchmark and 77.5 claims are supported elsewhere in the manuscript, so selected-snippet conservatism contributes. No evidence IDs were repaired and no proposal was rerun."
+      },
+      "claim_findings": [],
+      "known_defects": [
+        "diagnostic categories: evidence fragmentation / missing adjacent context / unsupported inference restriction / genuine scientific uncertainty; numeric formatting and locator false rejections where present",
+        "excessive_conservatism and claim_overreach with reasonable_uncertainty; see exact audit observations"
+      ],
+      "support_errors": [
+        {
+          "item_id": "quality_rationale",
+          "numeric_check": {
+            "claimed_numbers": [],
+            "missing_values_or_units": [],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "requires_semantic_verification"
+          },
+          "reason": "The narrative claims the evaluation spans six benchmarks, but the supplied sources do not establish six benchmarks; the cited evidence supports the framework, training pipeline, and BrowseComp ablations, but the six-benchmark assertion is not verified.",
+          "status": "uncertain"
+        },
+        {
+          "item_id": "evidence-3",
+          "numeric_check": {
+            "claimed_numbers": [
+              "82.5",
+              "4",
+              "77.5",
+              "74.1",
+              "79.4"
+            ],
+            "missing_values_or_units": [
+              "77.5"
+            ],
+            "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+            "status": "unsupported"
+          },
+          "reason": "Cited evidence does not establish numerical values/units: 77.5",
+          "status": "unsupported"
+        }
+      ]
+    }
+  ]
+}

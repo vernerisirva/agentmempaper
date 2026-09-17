@@ -226,9 +226,9 @@ Runtime snapshot SHA-256: `bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b4
 
 The existing runtime release asset was uploaded once, redownloaded, restored and verified against archive and database hashes.
 
-The one authorized deploy-only Pages publication is pending.
+Pages deployed **once** via [run 35221878575](https://github.com/vernerisirva/agentmempaper/actions/runs/35221878575) at `6c299f4c4a812606ec29fee126113d559eff1d41`, with `deploy_only=true`. Acquisition, discovery, inference and runtime-mutating workflow steps were verified skipped.
 
-Public byte-for-byte verification is pending the deployment.
+All 48 Batch-2/calibration JSON cards, 48 HTML detail pages and six library/review pages match the validated local bytes.
 
 ## Recovery-v2 verdict and readiness
 

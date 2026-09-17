@@ -1432,8 +1432,39 @@
   },
   "QUALITY_PIPELINE_READY_FOR_BATCH_2": "YES",
   "deployment": {
-    "status": "pending",
-    "dispatches": 0
+    "status": "success",
+    "dispatches": 1,
+    "run_id": 35202160673,
+    "head_sha": "87677ec5bf868f5412737d23675e60830127bb79",
+    "url": "https://github.com/vernerisirva/agentmempaper/actions/runs/35202160673",
+    "deploy_only": true,
+    "skipped_steps": [
+      "Restore durable Paper Scout state",
+      "Bootstrap Paper Scout state when no durable snapshot exists",
+      "Validate rules, idempotency, and live source payloads",
+      "Run daily paper scout",
+      "Commit scout updates",
+      "Prepare consistent Paper Scout state snapshot",
+      "Persist durable Paper Scout state"
+    ]
   },
-  "local_operator_artifacts": "data/cache/operator/cross-section-20260917/"
+  "local_operator_artifacts": "data/cache/operator/cross-section-20260917/",
+  "published_runtime_asset": {
+    "sha256": "d13defb96893ee652e292a6a8834b30a26e4e08f7679add629277df2d2e10c43",
+    "remote_digest_matches": true,
+    "redownload_matches": true,
+    "database_restore_hashes": {
+      "data/paper_scout.sqlite3": "c4c155d4f3395bdac7efd7338454b3de001a6e0d211596d76f8ad55608ca7935",
+      "data/deep_research/paper_scout.sqlite3": "25a05d5d98fdc1eae2c7922a08ff7929dbb12618225a90231067efb519e3f46a",
+      "data/engram/paper_scout.sqlite3": "4a6eea3297a4ea03e6bc53538829b0d92d76f80dc22b614c97fe055c32cff334"
+    },
+    "history_preserved": true
+  },
+  "canonical_main": "87677ec5bf868f5412737d23675e60830127bb79",
+  "public_verification": {
+    "cards_json": 28,
+    "cards_html": 28,
+    "library_and_review_pages": 6,
+    "all_match_local_bytes": true
+  }
 }

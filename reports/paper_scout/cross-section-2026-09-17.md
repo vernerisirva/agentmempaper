@@ -60,7 +60,7 @@ Final uncertainty: Scientific support remains unresolved. Cited evidence does no
 | model_protocol_failure | 0 |
 | text_coverage_failure | 0 |
 
-All **558** historical assessment rows are unchanged; exactly one new deep_research row was appended. The other **27** current decisions and all non-quality runtime tables are unchanged. Library admissions: **{'agent_memory': 4, 'deep_research': 5, 'engram': 6}**. Normal site regeneration updates generation timestamps without reassessing other papers.
+All **558** historical assessment rows are unchanged; exactly one new deep_research row was appended. The other **27** current decisions and all non-quality runtime tables are unchanged. Library admissions: **agent_memory 4 / deep_research 5 / engram 6**. Normal site regeneration updates generation timestamps without reassessing other papers.
 
 ## Costs
 
@@ -75,7 +75,11 @@ One interrupted DeepSeek review has **unknown cost**, not zero. Its conservative
 
 ## Publication
 
-Publication is pending validation and the conditional single deployment.
+[Pages run 35202160673](https://github.com/vernerisirva/agentmempaper/actions/runs/35202160673) succeeded with `deploy_only=true`, deploying `87677ec5bf868f5412737d23675e60830127bb79`. Exactly one deployment was dispatched. Discovery, paid assessment, automatic commit and state writers were verified skipped. All 28 public JSON cards, 28 HTML cards and six library/review pages match audited local bytes.
+
+The published runtime snapshot was downloaded and restored; database hashes match the tested snapshot. Archive SHA-256: `d13defb96893ee652e292a6a8834b30a26e4e08f7679add629277df2d2e10c43`. The preceding published snapshot and all history remain preserved.
+
+Canonical main at publication verification: `87677ec5bf868f5412737d23675e60830127bb79`. The final report-only commit advances main without changing the deployed docs tree; no second deployment is needed.
 
 Full operator ledgers, rejected review metadata, source audit, before-state snapshot and validation outputs are preserved under ignored `data/cache/operator/cross-section-20260917/`.
 

@@ -41,7 +41,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:15",
-    "generated_at": "2026-09-17 11:48:15",
+    "generated_at": "2026-09-17 12:30:45",
     "last_seen_at": "2026-09-15 11:59:44",
     "metadata_sources": [
       "openalex",
@@ -110,14 +110,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T10:50:17+00:00",
+    "assessed_at": "2026-09-17T12:11:57+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "concise_summary": "Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.",
     "confidence": "high",
     "coverage": {
       "assessment_input_characters": 60024,
@@ -363,7 +363,7 @@
     "dimension_scores": {
       "contribution_clarity": 5,
       "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 4,
+      "evidence_to_claim_alignment": 5,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
@@ -372,263 +372,22 @@
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [
-      {
-        "claim_role": "artifact_availability",
-        "context_id": "8763b130dd1e65607e16b902ef4bd354ee6ab77373852813995ecf0876b5dcdd",
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [
-          "E8763b130dd1e6560-B0003"
-        ],
-        "excerpt": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear",
-        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
-        "page": 1,
-        "pages": [
-          1
-        ],
-        "paraphrase": "The paper provides these artifact links: https://github.com/FudanSELab/MeClear",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "80034d9e9b01bc9e431695b78de3e4b19be93dcb4c9455e1f7c1fa264f6148c4",
-            "evidence_id": "E8763b130dd1e6560-B0003",
-            "pages": [
-              1
-            ],
-            "section": "Abstract",
-            "section_role": "abstract",
-            "source_spans": [
-              {
-                "end": 1272,
-                "page": 1,
-                "section": "Abstract",
-                "section_index": 1,
-                "start": 803,
-                "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear"
-              }
-            ],
-            "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear"
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [
-            "https://github.com/FudanSELab/MeClear"
-          ],
-          "claim_status": "supported",
-          "explanation_reason": "The URL is present in the supplied abstract, and the disclaimer about independent checking is part of the assessment description.",
-          "explanation_status": "supported",
-          "item_id": "evidence-0",
-          "primary_evidence_ids": [
-            "E8763b130dd1e6560-B0003"
-          ],
-          "reason": "The URL appears verbatim in the abstract source.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "contribution",
-        "context_id": "8763b130dd1e65607e16b902ef4bd354ee6ab77373852813995ecf0876b5dcdd",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
-          "E8763b130dd1e6560-B0009"
-        ],
-        "excerpt": "uncertainty-aware repair to maintain reliable long-term memory for LLM agents.\nresolving redundant conflict masking where local deletion\nfails. Based on attribution priorities, MeClear executes a\nquery scoped minimal clearance strategy over a nested can-\ndidate filtration, verifying task recovery prior to output gen-\nerationwithoutpermanentlyalteringtheunderlyingmemory\nbank. To the best of our knowledge, we are the first to lever-\nagecooperativegame-theoreticallocationtoaddressharmful\nmemorycontextclearanceinLLMagents.Ourcontributions\nare summarized as follows:\n\u2022We propose MeClear, a task conditioned memory clear-\nance framework for long horizon Large Language Model\nagents, unifying cooperative game attribution, structural\ninteraction diagnosis, and verified risk aware context\nclearance.\n\u2022We develop a cooperative memory attribution methodol-\nogy integrating Leave One Out screening with",
-        "explanation": "The introduction explicitly states MeClear combines LOO screening with sampled Shapley estimation and executes a query-scoped minimal clearance strategy with verification, matching the abstract-level contribution description.",
-        "page": 2,
-        "pages": [
-          2
-        ],
-        "paraphrase": "MeClear is a task-conditioned memory clearance framework that combines Leave-One-Out screening with sampled cooperative Shapley attribution and verified query-scoped clearance.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "663349a9bc9926275cb505493ebca928f351c4cd708a3ba781e7fd7175cda890",
-            "evidence_id": "E8763b130dd1e6560-B0009",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 1872,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 3,
-                "start": 973,
-                "text": "uncertainty-aware repair to maintain reliable long-term memory for LLM agents.\nresolving redundant conflict masking where local deletion\nfails. Based on attribution priorities, MeClear executes a\nquery scoped minimal clearance strategy over a nested can-\ndidate filtration, verifying task recovery prior to output gen-\nerationwithoutpermanentlyalteringtheunderlyingmemory\nbank. To the best of our knowledge, we are the first to lever-\nagecooperativegame-theoreticallocationtoaddressharmful\nmemorycontextclearanceinLLMagents.Ourcontributions\nare summarized as follows:\n\u2022We propose MeClear, a task conditioned memory clear-\nance framework for long horizon Large Language Model\nagents, unifying cooperative game attribution, structural\ninteraction diagnosis, and verified risk aware context\nclearance.\n\u2022We develop a cooperative memory attribution methodol-\nogy integrating Leave One Out screening with "
-              }
-            ],
-            "text": "uncertainty-aware repair to maintain reliable long-term memory for LLM agents.\nresolving redundant conflict masking where local deletion\nfails. Based on attribution priorities, MeClear executes a\nquery scoped minimal clearance strategy over a nested can-\ndidate filtration, verifying task recovery prior to output gen-\nerationwithoutpermanentlyalteringtheunderlyingmemory\nbank. To the best of our knowledge, we are the first to lever-\nagecooperativegame-theoreticallocationtoaddressharmful\nmemorycontextclearanceinLLMagents.Ourcontributions\nare summarized as follows:\n\u2022We propose MeClear, a task conditioned memory clear-\nance framework for long horizon Large Language Model\nagents, unifying cooperative game attribution, structural\ninteraction diagnosis, and verified risk aware context\nclearance.\n\u2022We develop a cooperative memory attribution methodol-\nogy integrating Leave One Out screening with "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited introduction text supports the described combination of LOO screening, sampled Shapley estimation, and query-scoped verified clearance.",
-          "explanation_status": "supported",
-          "item_id": "evidence-1",
-          "primary_evidence_ids": [
-            "E8763b130dd1e6560-B0009"
-          ],
-          "reason": "The introduction states MeClear is a task-conditioned memory clearance framework unifying cooperative game attribution, structural interaction diagnosis, and verified risk-aware clearance, and mentions LOO screening with sampled Shapley estimation.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "positioning",
-        "context_id": "8763b130dd1e65607e16b902ef4bd354ee6ab77373852813995ecf0876b5dcdd",
-        "dimension": "related_work_and_gap_positioning",
-        "evidence_ids": [
-          "E8763b130dd1e6560-B0005",
-          "E8763b130dd1e6560-B0006"
-        ],
-        "excerpt": "causally influ-\nence agent execution.\n\u2217These authors contributed equally.\nAs illustrated in Figure 1, jointly processed memories ex-\nhibit complex dependencies such as redundancy and joint\nharm, causing isolated record evaluations to fail. While\nrecent frameworks refine credit assignment via evidence-\nanchored rewards (Ma et al. 2026) or single-record causal\ninterventions (Srivastava 2026), single-record deletion col-\nlapses when redundant memories independently sustain\ntaskfailure,yieldingzeroobservablecounterfactualchange.\nCoalition-based attribution resolves this local masking by\nmeasuring marginal contributions across subset permuta-\ntions(GhorbaniandZou2019;Jiaetal.2019a;Nematovetal.\n2025). Because exact coalition enumeration is computation-\nally prohibitive for multi-record context windows, practical\nclearance must efficiently approximate cooperative interac-\ntion effects while \n[\u2026 separate evidence block \u2026]\npreserving sufficient contextual variation\nto uncover masked toxicity.\nDirectly modifying persistent memory introduces severe\nsafety risks due to the inherently query-conditioned nature\nofmemoryutilityacrosslong-horizondeployment.Astored\nrecordthatdegradesperformanceonaquerycanprovidein-\ndispensable contextual grounding for subsequent tasks, ren-\ndering permanent database overwrites prone to catastrophic\ncross-task performance regression (Wang et al. 2024b; Xu\n2025). Retrieval-time defenses mitigate this danger by dy-\nnamically regulating active context visibility during infer-\nence rather than altering database records (Ha et al. 2026;\nZhang et al. 2026a). Nevertheless, existing admission filters\nfail to isolate which interacting memories causally induce\ndownstream task failures, nor do they verify whether sup-\npressingrecordsrestoresexecutionaccuracy.Reliablemem-\nory maintenance",
-        "explanation": "The introduction contrasts single-record causal interventions with coalition-based attribution and states that existing admission filters fail to isolate interacting harmful memories or verify recovery, positioning MeClear against these limitations.",
-        "page": 1,
-        "pages": [
-          1
-        ],
-        "paraphrase": "The paper identifies a gap: single-record deletion fails under redundant harmful memories because each fault masks the other's local effect, and existing retrieval-time filters do not verify behavioral recovery.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "8d91b8c0c77fa4f8564ff295a70c1f8cbc12793915d4fe3150203d5d392a70fc",
-            "evidence_id": "E8763b130dd1e6560-B0005",
-            "pages": [
-              1
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 1796,
-                "page": 1,
-                "section": "Introduction",
-                "section_index": 2,
-                "start": 899,
-                "text": "causally influ-\nence agent execution.\n\u2217These authors contributed equally.\nAs illustrated in Figure 1, jointly processed memories ex-\nhibit complex dependencies such as redundancy and joint\nharm, causing isolated record evaluations to fail. While\nrecent frameworks refine credit assignment via evidence-\nanchored rewards (Ma et al. 2026) or single-record causal\ninterventions (Srivastava 2026), single-record deletion col-\nlapses when redundant memories independently sustain\ntaskfailure,yieldingzeroobservablecounterfactualchange.\nCoalition-based attribution resolves this local masking by\nmeasuring marginal contributions across subset permuta-\ntions(GhorbaniandZou2019;Jiaetal.2019a;Nematovetal.\n2025). Because exact coalition enumeration is computation-\nally prohibitive for multi-record context windows, practical\nclearance must efficiently approximate cooperative interac-\ntion effects while "
-              }
-            ],
-            "text": "causally influ-\nence agent execution.\n\u2217These authors contributed equally.\nAs illustrated in Figure 1, jointly processed memories ex-\nhibit complex dependencies such as redundancy and joint\nharm, causing isolated record evaluations to fail. While\nrecent frameworks refine credit assignment via evidence-\nanchored rewards (Ma et al. 2026) or single-record causal\ninterventions (Srivastava 2026), single-record deletion col-\nlapses when redundant memories independently sustain\ntaskfailure,yieldingzeroobservablecounterfactualchange.\nCoalition-based attribution resolves this local masking by\nmeasuring marginal contributions across subset permuta-\ntions(GhorbaniandZou2019;Jiaetal.2019a;Nematovetal.\n2025). Because exact coalition enumeration is computation-\nally prohibitive for multi-record context windows, practical\nclearance must efficiently approximate cooperative interac-\ntion effects while "
-          },
-          {
-            "content_hash": "f01d99cf34b5b64ecc6893e8d987605429808bd2541ca2a247ec30dad259df66",
-            "evidence_id": "E8763b130dd1e6560-B0006",
-            "pages": [
-              1
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 2690,
-                "page": 1,
-                "section": "Introduction",
-                "section_index": 2,
-                "start": 1796,
-                "text": "preserving sufficient contextual variation\nto uncover masked toxicity.\nDirectly modifying persistent memory introduces severe\nsafety risks due to the inherently query-conditioned nature\nofmemoryutilityacrosslong-horizondeployment.Astored\nrecordthatdegradesperformanceonaquerycanprovidein-\ndispensable contextual grounding for subsequent tasks, ren-\ndering permanent database overwrites prone to catastrophic\ncross-task performance regression (Wang et al. 2024b; Xu\n2025). Retrieval-time defenses mitigate this danger by dy-\nnamically regulating active context visibility during infer-\nence rather than altering database records (Ha et al. 2026;\nZhang et al. 2026a). Nevertheless, existing admission filters\nfail to isolate which interacting memories causally induce\ndownstream task failures, nor do they verify whether sup-\npressingrecordsrestoresexecutionaccuracy.Reliablemem-\nory maintenance "
-              }
-            ],
-            "text": "preserving sufficient contextual variation\nto uncover masked toxicity.\nDirectly modifying persistent memory introduces severe\nsafety risks due to the inherently query-conditioned nature\nofmemoryutilityacrosslong-horizondeployment.Astored\nrecordthatdegradesperformanceonaquerycanprovidein-\ndispensable contextual grounding for subsequent tasks, ren-\ndering permanent database overwrites prone to catastrophic\ncross-task performance regression (Wang et al. 2024b; Xu\n2025). Retrieval-time defenses mitigate this danger by dy-\nnamically regulating active context visibility during infer-\nence rather than altering database records (Ha et al. 2026;\nZhang et al. 2026a). Nevertheless, existing admission filters\nfail to isolate which interacting memories causally induce\ndownstream task failures, nor do they verify whether sup-\npressingrecordsrestoresexecutionaccuracy.Reliablemem-\nory maintenance "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited passages explicitly contrast single-record interventions with coalition-based attribution and describe the failure of existing filters to verify recovery.",
-          "explanation_status": "supported",
-          "item_id": "evidence-2",
-          "primary_evidence_ids": [
-            "E8763b130dd1e6560-B0005",
-            "E8763b130dd1e6560-B0006"
-          ],
-          "reason": "The sources state single-record deletion collapses under redundant memories and that existing admission filters fail to isolate interacting harmful memories or verify recovery.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "evaluation",
-        "context_id": "8763b130dd1e65607e16b902ef4bd354ee6ab77373852813995ecf0876b5dcdd",
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [
-          "E8763b130dd1e6560-B0064"
-        ],
-        "excerpt": "evaluations and\nclearance operations are performed without re-running re-\ntrieval, consistent with Equation (6). Controlled faults are\nretainedonlyafterbehavioralverification.Thecleancontext\nmust remain correct in both trials, while a direct conflict\nmust make the corrupted context incorrect in both trials.\nFor redundant conflicts, the corrupted context must remain\nincorrect when either injected fault is retained alone, ensur-\ning that each record can independently sustain the failure\nand mask the local effect of the other. For joint interactions,\neach injected record must remain harmless when evaluated\nalone, whereas their combination must induce task failure.\nTheseconditionsprovidebehaviorallyverifiedtargetsetsfor\nevaluating direct, redundant, and jointly expressed harmful-\nmemory effects.\nFigure 8 reports performance across the interaction-by-\nfault combinations. MeClear shows its",
-        "explanation": "The appendix describes the verification protocol for clean, direct, redundant, and joint fault conditions, providing behaviorally verified target sets for evaluating harmful-memory effects.",
-        "page": 13,
-        "pages": [
-          13
-        ],
-        "paraphrase": "The evaluation uses causally verified fault injection with behavioral verification: clean contexts must remain correct in both trials, direct conflicts must corrupt both trials, and redundant conflicts must remain incorrect when either fault is retained alone.",
-        "section": "Appendix: Experimental Setup",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "d31359a63515b0c54799a19b184cc0559cf9df4f27e5a8dd2f9b7cc0de5c1676",
-            "evidence_id": "E8763b130dd1e6560-B0064",
-            "pages": [
-              13
-            ],
-            "section": "Appendix: Experimental Setup",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 2687,
-                "page": 13,
-                "section": "Appendix: Experimental Setup",
-                "section_index": 25,
-                "start": 1790,
-                "text": "evaluations and\nclearance operations are performed without re-running re-\ntrieval, consistent with Equation (6). Controlled faults are\nretainedonlyafterbehavioralverification.Thecleancontext\nmust remain correct in both trials, while a direct conflict\nmust make the corrupted context incorrect in both trials.\nFor redundant conflicts, the corrupted context must remain\nincorrect when either injected fault is retained alone, ensur-\ning that each record can independently sustain the failure\nand mask the local effect of the other. For joint interactions,\neach injected record must remain harmless when evaluated\nalone, whereas their combination must induce task failure.\nTheseconditionsprovidebehaviorallyverifiedtargetsetsfor\nevaluating direct, redundant, and jointly expressed harmful-\nmemory effects.\nFigure 8 reports performance across the interaction-by-\nfault combinations. MeClear shows its "
-              }
-            ],
-            "text": "evaluations and\nclearance operations are performed without re-running re-\ntrieval, consistent with Equation (6). Controlled faults are\nretainedonlyafterbehavioralverification.Thecleancontext\nmust remain correct in both trials, while a direct conflict\nmust make the corrupted context incorrect in both trials.\nFor redundant conflicts, the corrupted context must remain\nincorrect when either injected fault is retained alone, ensur-\ning that each record can independently sustain the failure\nand mask the local effect of the other. For joint interactions,\neach injected record must remain harmless when evaluated\nalone, whereas their combination must induce task failure.\nTheseconditionsprovidebehaviorallyverifiedtargetsetsfor\nevaluating direct, redundant, and jointly expressed harmful-\nmemory effects.\nFigure 8 reports performance across the interaction-by-\nfault combinations. MeClear shows its "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited appendix text explicitly describes the verification protocol for each fault type.",
-          "explanation_status": "supported",
-          "item_id": "evidence-6",
-          "primary_evidence_ids": [
-            "E8763b130dd1e6560-B0064"
-          ],
-          "reason": "The appendix describes the behavioral verification conditions for clean, direct, redundant, and joint fault cases.",
-          "status": "supported"
-        }
-      }
-    ],
-    "full_text_assessed": true,
+    "evidence": [],
+    "full_text_assessed": false,
     "full_text_url": "https://arxiv.org/pdf/2609.09115",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": 82,
     "paper_type": "methods_or_algorithm",
-    "positive_signals": [
-      "MeClear is a task-conditioned memory clearance framework that combines Leave-One-Out screening with sampled cooperative Shapley attribution and verified query-scoped clearance.",
-      "The paper identifies a gap: single-record deletion fails under redundant harmful memories because each fault masks the other's local effect, and existing retrieval-time filters do not verify behavioral recovery.",
-      "The evaluation uses causally verified fault injection with behavioral verification: clean contexts must remain correct in both trials, direct conflicts must corrupt both trials, and redundant conflicts must remain incorrect when either fault is retained alone."
-    ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "positive_signals": [],
+    "rationale": "Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "722cd43ffdbdd31308dff05975c873221a14ec5ddc3e249094331a1322e5b3ca",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 1,115 The narrative asserts the joint precise-temporal subgroup contains only five cases, but no supplied source mentions this subgroup or its case count. Cited evidence does not establish numerical values/units: 2K, -1 Cited evidence does not establish numerical values/units: 1, 1 Cited evidence does not establish numerical values/units: 85.9%, 82.3%, 25.5 percentage point, 85.9%, 82.3%, 38.3%, 56.8%, 25.5 percentage point Cited evidence does not establish numerical values/units: 12.3%, 6.3%, 83.2%, 68.4%, 0.0%, 87.1%, 91.8% Cited evidence does not establish numerical values/units: 1"
+    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Explanation verification unavailable. Cited evidence does not establish numerical values/units: 25.5 percentage points"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

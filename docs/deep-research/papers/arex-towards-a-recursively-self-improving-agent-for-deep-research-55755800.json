@@ -60,7 +60,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:50",
-    "generated_at": "2026-09-17 11:50:11",
+    "generated_at": "2026-09-17 12:30:55",
     "last_seen_at": "2026-07-30 09:05:23",
     "metadata_sources": [
       "openalex",
@@ -124,15 +124,15 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T10:22:47+00:00",
+    "assessed_at": "2026-09-17T11:54:40+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
-    "confidence": "medium",
+    "concise_summary": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
+    "confidence": "high",
     "coverage": {
       "assessment_input_characters": 55841,
       "assessment_input_sha256": "db61649e05ee16c257fa035528227335253e953aedf0cc1198e89bcf645f78fc",
@@ -377,7 +377,7 @@
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 5,
-      "evaluation_or_validation_strength": 4,
+      "evaluation_or_validation_strength": 5,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 2,
       "methodological_rigor": 4,
@@ -387,22 +387,307 @@
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "claim_role": "contribution",
+        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed069fe16ffa6b527-B0007",
+          "Ed069fe16ffa6b527-B0008"
+        ],
+        "excerpt": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up \n[\u2026 separate evidence block \u2026]\nresearch, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during",
+        "explanation": "The introduction explicitly defines the two-loop architecture and the role of the context-update tool in preserving verified evidence and unresolved constraints. This provides a clear, attributed statement of the core contribution.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "AREX is a family of recursively self-improving deep research agents that alternate between an inner research loop and an outer self-improvement loop, with a learned autonomous context-update tool.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0925d28204cf4bd12d372dcbe878f4f93b46effa0ee9441e52ecf166d0b20ce6",
+            "evidence_id": "Ed069fe16ffa6b527-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2682,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 1,
+                "start": 1789,
+                "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
+              }
+            ],
+            "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
+          },
+          {
+            "content_hash": "013f00f13cf0b5e3608ae959bdc22fbc61e9e8b3c5aedc19024605859088ad94",
+            "evidence_id": "Ed069fe16ffa6b527-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3574,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 1,
+                "start": 2682,
+                "text": "research, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during "
+              }
+            ],
+            "text": "research, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly defines the two-loop architecture and states the context-update tool is learned to maintain a concise, actionable research state, supporting the attributed statement of the core contribution.",
+          "explanation_status": "supported",
+          "item_id": "evidence-0",
+          "primary_evidence_ids": [
+            "Ed069fe16ffa6b527-B0007",
+            "Ed069fe16ffa6b527-B0008"
+          ],
+          "reason": "The cited introduction text explicitly states AREX is a family of recursively self-improving deep research agents alternating between an inner research loop and an outer self-improvement loop, and that it learns to autonomously invoke a dedicated context-update tool.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "positioning",
+        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "Ed069fe16ffa6b527-B0020",
+          "Ed069fe16ffa6b527-B0021"
+        ],
+        "excerpt": "Asresearchproceeds,thetrajectoryaccumulatessearchresults,intermediateconclusions,rejectedcandidates,conflicting\nfindings, and evolving plans. Retaining the complete trajectory introduces redundancy and may obscure information\nrelevant to subsequent decisions.\nExisting approaches often manage context using fixed heuristics, such as discarding tool responses according to\npredefined rules (Team et al., 2026) or triggering summarization at a fixed token threshold (Liu et al., 2025). While\nthese strategies reduce context length, they treat context management mainly as a budget-control problem rather than a\nresearch-state maintenance problem. As a result, they may remove or dilute decision-relevant information, including\nsourceprovenance,negativeevidence,unresolvedconstraints,conflictingfindings,andthereasonswhycertaincandidates\nhave been rejected.\nThis limitation becomes more severe in \n[\u2026 separate evidence block \u2026]\nlong-horizon research, where the next useful action depends on semantic\nprogress rather than message position or token count. The model must track which constraints have been satisfied, which\nhypotheses remain viable, and which uncertainties should guide further search. Fixed heuristics are not aligned with\n4\nthese research-state transitions, and may therefore cause the model to revisit invalidated candidates, rediscover prior\nconclusions, or lose information needed for later refinement.\nTo address this issue,AREXprovides an explicitupdate_context tool. Given the accumulated trajectory\u210e(\ud835\udc58)\n\ud835\udc61 , the\ntool constructs a refreshed research state:\n\ud835\udc67(\ud835\udc58)\n\ud835\udc61 =\ud835\udc53 \ud835\udf03\n\u0010\n\u210e(\ud835\udc58)\n\ud835\udc61\n\u0011\n.(4)\nThe refreshed state preserves verified findings and their source identifiers, current candidates, unresolved constraints,\nvalidity concerns, rejected candidates, and the next-step plan. Redundant observations, superseded",
+        "explanation": "The manuscript positions its learned autonomous context-update tool against fixed-heuristic baselines and argues that those approaches treat context management as budget control rather than research-state maintenance. This establishes a clear gap for the proposed method.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Existing context management approaches use fixed heuristics such as discarding tool responses by predefined rules or triggering summarization at a fixed token threshold, which can remove decision-relevant information.",
+        "section": "Autonomous Context Updating",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f9567473a858f06a13a44e27efaa14185e4d07a6396c9ac7e1e9754a2c5915d3",
+            "evidence_id": "Ed069fe16ffa6b527-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Autonomous Context Updating",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 4,
+                "section": "Autonomous Context Updating",
+                "section_index": 5,
+                "start": 0,
+                "text": "Asresearchproceeds,thetrajectoryaccumulatessearchresults,intermediateconclusions,rejectedcandidates,conflicting\nfindings, and evolving plans. Retaining the complete trajectory introduces redundancy and may obscure information\nrelevant to subsequent decisions.\nExisting approaches often manage context using fixed heuristics, such as discarding tool responses according to\npredefined rules (Team et al., 2026) or triggering summarization at a fixed token threshold (Liu et al., 2025). While\nthese strategies reduce context length, they treat context management mainly as a budget-control problem rather than a\nresearch-state maintenance problem. As a result, they may remove or dilute decision-relevant information, including\nsourceprovenance,negativeevidence,unresolvedconstraints,conflictingfindings,andthereasonswhycertaincandidates\nhave been rejected.\nThis limitation becomes more severe in "
+              }
+            ],
+            "text": "Asresearchproceeds,thetrajectoryaccumulatessearchresults,intermediateconclusions,rejectedcandidates,conflicting\nfindings, and evolving plans. Retaining the complete trajectory introduces redundancy and may obscure information\nrelevant to subsequent decisions.\nExisting approaches often manage context using fixed heuristics, such as discarding tool responses according to\npredefined rules (Team et al., 2026) or triggering summarization at a fixed token threshold (Liu et al., 2025). While\nthese strategies reduce context length, they treat context management mainly as a budget-control problem rather than a\nresearch-state maintenance problem. As a result, they may remove or dilute decision-relevant information, including\nsourceprovenance,negativeevidence,unresolvedconstraints,conflictingfindings,andthereasonswhycertaincandidates\nhave been rejected.\nThis limitation becomes more severe in "
+          },
+          {
+            "content_hash": "8d9b33876f6d002cfe06fc18dbc7e1fff99e4ea08bb2d5577a63873c2960fc6e",
+            "evidence_id": "Ed069fe16ffa6b527-B0021",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Autonomous Context Updating",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1204,
+                "page": 4,
+                "section": "Autonomous Context Updating",
+                "section_index": 5,
+                "start": 894,
+                "text": "long-horizon research, where the next useful action depends on semantic\nprogress rather than message position or token count. The model must track which constraints have been satisfied, which\nhypotheses remain viable, and which uncertainties should guide further search. Fixed heuristics are not aligned with\n4"
+              },
+              {
+                "end": 587,
+                "page": 5,
+                "section": "Autonomous Context Updating",
+                "section_index": 6,
+                "start": 0,
+                "text": "these research-state transitions, and may therefore cause the model to revisit invalidated candidates, rediscover prior\nconclusions, or lose information needed for later refinement.\nTo address this issue,AREXprovides an explicitupdate_context tool. Given the accumulated trajectory\u210e(\ud835\udc58)\n\ud835\udc61 , the\ntool constructs a refreshed research state:\n\ud835\udc67(\ud835\udc58)\n\ud835\udc61 =\ud835\udc53 \ud835\udf03\n\u0010\n\u210e(\ud835\udc58)\n\ud835\udc61\n\u0011\n.(4)\nThe refreshed state preserves verified findings and their source identifiers, current candidates, unresolved constraints,\nvalidity concerns, rejected candidates, and the next-step plan. Redundant observations, superseded "
+              }
+            ],
+            "text": "long-horizon research, where the next useful action depends on semantic\nprogress rather than message position or token count. The model must track which constraints have been satisfied, which\nhypotheses remain viable, and which uncertainties should guide further search. Fixed heuristics are not aligned with\n4\nthese research-state transitions, and may therefore cause the model to revisit invalidated candidates, rediscover prior\nconclusions, or lose information needed for later refinement.\nTo address this issue,AREXprovides an explicitupdate_context tool. Given the accumulated trajectory\u210e(\ud835\udc58)\n\ud835\udc61 , the\ntool constructs a refreshed research state:\n\ud835\udc67(\ud835\udc58)\n\ud835\udc61 =\ud835\udc53 \ud835\udf03\n\u0010\n\u210e(\ud835\udc58)\n\ud835\udc61\n\u0011\n.(4)\nThe refreshed state preserves verified findings and their source identifiers, current candidates, unresolved constraints,\nvalidity concerns, rejected candidates, and the next-step plan. Redundant observations, superseded "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text contrasts fixed heuristics with research-state maintenance and introduces the proposed update_context tool as addressing this issue, supporting the inferred gap positioning.",
+          "explanation_status": "supported",
+          "item_id": "evidence-5",
+          "primary_evidence_ids": [
+            "Ed069fe16ffa6b527-B0020",
+            "Ed069fe16ffa6b527-B0021"
+          ],
+          "reason": "The cited text explicitly states existing approaches use fixed heuristics such as discarding tool responses by predefined rules or triggering summarization at a fixed token threshold, and that they may remove or dilute decision-relevant information.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "artifact_availability",
+        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [
+          "Ed069fe16ffa6b527-B0003"
+        ],
+        "excerpt": "substantially more activated parameters.\n/gl\u2322beApp:https://arex-research.com\nHomepage:https://vectorspacelab.github.io/arex-model/\nModels:https://huggingface.co/collections/BAAI/arex\nAREX benchmark results AREX-Base AREX-Turbo Closed Open\nBrowseComp\nKimi-K2.6 83.2\nAREX-Base 82.5\nGLM-5 75.9\nAREX-Turbo 70.7\nMiro-1.7-mini 67.9\nQuest-35B 64.6\nQwen-35B 61.0\nTongyi-DR 43.4\nGAIA\nMiro-H1 88.5\nAREX-Base 85.4\nMiro-1.7 82.7\nAREX-Turbo 81.6\nQuest-35B 80.8\nGemini-3.1 80.6\nKimi-K2.6 80.6\nQwen-35B 80.0\nxbench-2510\nDeepSeek-Pro 80.0\nAREX-Base 71.0\nMiro-1.7 62.0\nMiro-1.7-mini 57.2\nAREX-Turbo 57.0\nTongyi-DR 55.0\nGemini-3.1 53.0\nQwen-35B 50.3\nDeepSearchQA\nGemini-3.1 93.3\nAREX-Base 89.9\nDeepSeek-Pro 88.7\nGPT-5.4 88.5\nAREX-Turbo 78.5\nMiro-1.7 72.1\nQwen-35B 68.5\nMiro-1.7-mini 67.9\nWideSearch\nAREX-Base 82.0\nKimi-K2.6 80.8\nGPT-5.4 77.5\nAREX-Turbo 68.5\nGemini-3.1 66.4\nQuest-35B 60.6\nQwen-122B 60.5\nQwen-35B",
+        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "The paper provides these artifact links: https://arex-research.com, https://vectorspacelab.github.io/arex-model/, https://huggingface.co/collections/BAAI/arex",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "299131bc6b8945c85771d8d271df059b47022b597115b346d592b43b44a0ca6c",
+            "evidence_id": "Ed069fe16ffa6b527-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 1793,
+                "text": "substantially more activated parameters.\n/gl\u2322beApp:https://arex-research.com\nHomepage:https://vectorspacelab.github.io/arex-model/\nModels:https://huggingface.co/collections/BAAI/arex\nAREX benchmark results AREX-Base AREX-Turbo Closed Open\nBrowseComp\nKimi-K2.6 83.2\nAREX-Base 82.5\nGLM-5 75.9\nAREX-Turbo 70.7\nMiro-1.7-mini 67.9\nQuest-35B 64.6\nQwen-35B 61.0\nTongyi-DR 43.4\nGAIA\nMiro-H1 88.5\nAREX-Base 85.4\nMiro-1.7 82.7\nAREX-Turbo 81.6\nQuest-35B 80.8\nGemini-3.1 80.6\nKimi-K2.6 80.6\nQwen-35B 80.0\nxbench-2510\nDeepSeek-Pro 80.0\nAREX-Base 71.0\nMiro-1.7 62.0\nMiro-1.7-mini 57.2\nAREX-Turbo 57.0\nTongyi-DR 55.0\nGemini-3.1 53.0\nQwen-35B 50.3\nDeepSearchQA\nGemini-3.1 93.3\nAREX-Base 89.9\nDeepSeek-Pro 88.7\nGPT-5.4 88.5\nAREX-Turbo 78.5\nMiro-1.7 72.1\nQwen-35B 68.5\nMiro-1.7-mini 67.9\nWideSearch\nAREX-Base 82.0\nKimi-K2.6 80.8\nGPT-5.4 77.5\nAREX-Turbo 68.5\nGemini-3.1 66.4\nQuest-35B 60.6\nQwen-122B 60.5\nQwen-35B "
+              }
+            ],
+            "text": "substantially more activated parameters.\n/gl\u2322beApp:https://arex-research.com\nHomepage:https://vectorspacelab.github.io/arex-model/\nModels:https://huggingface.co/collections/BAAI/arex\nAREX benchmark results AREX-Base AREX-Turbo Closed Open\nBrowseComp\nKimi-K2.6 83.2\nAREX-Base 82.5\nGLM-5 75.9\nAREX-Turbo 70.7\nMiro-1.7-mini 67.9\nQuest-35B 64.6\nQwen-35B 61.0\nTongyi-DR 43.4\nGAIA\nMiro-H1 88.5\nAREX-Base 85.4\nMiro-1.7 82.7\nAREX-Turbo 81.6\nQuest-35B 80.8\nGemini-3.1 80.6\nKimi-K2.6 80.6\nQwen-35B 80.0\nxbench-2510\nDeepSeek-Pro 80.0\nAREX-Base 71.0\nMiro-1.7 62.0\nMiro-1.7-mini 57.2\nAREX-Turbo 57.0\nTongyi-DR 55.0\nGemini-3.1 53.0\nQwen-35B 50.3\nDeepSearchQA\nGemini-3.1 93.3\nAREX-Base 89.9\nDeepSeek-Pro 88.7\nGPT-5.4 88.5\nAREX-Turbo 78.5\nMiro-1.7 72.1\nQwen-35B 68.5\nMiro-1.7-mini 67.9\nWideSearch\nAREX-Base 82.0\nKimi-K2.6 80.8\nGPT-5.4 77.5\nAREX-Turbo 68.5\nGemini-3.1 66.4\nQuest-35B 60.6\nQwen-122B 60.5\nQwen-35B "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [
+            "https://arex-research.com",
+            "https://vectorspacelab.github.io/arex-model/",
+            "https://huggingface.co/collections/BAAI/arex"
+          ],
+          "claim_status": "supported",
+          "explanation_reason": "Deterministic manuscript URL atom membership; no scientific inference.",
+          "explanation_status": "supported",
+          "item_id": "evidence-6",
+          "primary_evidence_ids": [
+            "Ed069fe16ffa6b527-B0003"
+          ],
+          "reason": "Deterministic manuscript URL atom membership; no scientific inference.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "presentation",
+        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
+        "dimension": "presentation_and_precision",
+        "evidence_ids": [
+          "Ed069fe16ffa6b527-B0049"
+        ],
+        "excerpt": "Benchmarks.We evaluateAREXon six benchmarks spanning four complementary regimes of search-augmented rea-\nsoning.BrowseCompandDeepSearchQAemphasizedeepresearch,requiringmulti-stepretrieval,queryreformulation,\nevidence aggregation, and answer synthesis.GAIAandxbench-2510additionally stress agentic task completion, where\ninformation seeking must be coordinated with planning, tool use, and multi-step reasoning.WideSearchmeasures\nbroad-coverage retrieval and synthesis over a large search space; we report results on its English subset. Finally,HLE\nwith toolsevaluates high-level reasoning with access to web search and computational tools. We report the Item-F1\nscore forWideSearch, F1 score forDeepSearchQAand accuracy for all other benchmarks.\n10\nModel BrowseComp GAIA xbench-2510 DeepSearchQA WideSearch-en HLE (tool)\nFrontier models\nGPT-5.4 82.7 \u2013 \u2013 88.5 77.5 52.1 *\nOpus-4.6 83.7 \u2013 \u2013 91.3 77.5",
+        "explanation": "The experimental setup specifies the metric used for each benchmark, and the results tables provide quantitative comparisons. This supports precise presentation of evaluation outcomes.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "The paper reports benchmark results with explicit metrics, including Item-F1 for WideSearch, F1 for DeepSearchQA, and accuracy for other benchmarks.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "341531c36b8baf3c12731a2976e8d0f6d5bfd463f61f8e71a8dc3ad0a6a19ea9",
+            "evidence_id": "Ed069fe16ffa6b527-B0049",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 748,
+                "page": 10,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 0,
+                "text": "Benchmarks.We evaluateAREXon six benchmarks spanning four complementary regimes of search-augmented rea-\nsoning.BrowseCompandDeepSearchQAemphasizedeepresearch,requiringmulti-stepretrieval,queryreformulation,\nevidence aggregation, and answer synthesis.GAIAandxbench-2510additionally stress agentic task completion, where\ninformation seeking must be coordinated with planning, tool use, and multi-step reasoning.WideSearchmeasures\nbroad-coverage retrieval and synthesis over a large search space; we report results on its English subset. Finally,HLE\nwith toolsevaluates high-level reasoning with access to web search and computational tools. We report the Item-F1\nscore forWideSearch, F1 score forDeepSearchQAand accuracy for all other benchmarks.\n10"
+              },
+              {
+                "end": 150,
+                "page": 11,
+                "section": "Experimental Setup",
+                "section_index": 19,
+                "start": 0,
+                "text": "Model BrowseComp GAIA xbench-2510 DeepSearchQA WideSearch-en HLE (tool)\nFrontier models\nGPT-5.4 82.7 \u2013 \u2013 88.5 77.5 52.1 *\nOpus-4.6 83.7 \u2013 \u2013 91.3 77.5 "
+              }
+            ],
+            "text": "Benchmarks.We evaluateAREXon six benchmarks spanning four complementary regimes of search-augmented rea-\nsoning.BrowseCompandDeepSearchQAemphasizedeepresearch,requiringmulti-stepretrieval,queryreformulation,\nevidence aggregation, and answer synthesis.GAIAandxbench-2510additionally stress agentic task completion, where\ninformation seeking must be coordinated with planning, tool use, and multi-step reasoning.WideSearchmeasures\nbroad-coverage retrieval and synthesis over a large search space; we report results on its English subset. Finally,HLE\nwith toolsevaluates high-level reasoning with access to web search and computational tools. We report the Item-F1\nscore forWideSearch, F1 score forDeepSearchQAand accuracy for all other benchmarks.\n10\nModel BrowseComp GAIA xbench-2510 DeepSearchQA WideSearch-en HLE (tool)\nFrontier models\nGPT-5.4 82.7 \u2013 \u2013 88.5 77.5 52.1 *\nOpus-4.6 83.7 \u2013 \u2013 91.3 77.5 "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The source specifies metrics per benchmark and provides a quantitative results table, supporting precise presentation of evaluation outcomes.",
+          "explanation_status": "supported",
+          "item_id": "evidence-8",
+          "primary_evidence_ids": [
+            "Ed069fe16ffa6b527-B0049"
+          ],
+          "reason": "The cited text explicitly states Item-F1 for WideSearch, F1 for DeepSearchQA, and accuracy for all other benchmarks, and includes a results table with quantitative values.",
+          "status": "supported"
+        }
+      }
+    ],
     "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2607.21461",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 78,
+    "overall_quality_score": 82,
     "paper_type": "systems_or_application",
-    "positive_signals": [],
-    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "positive_signals": [
+      "AREX is a family of recursively self-improving deep research agents that alternate between an inner research loop and an outer self-improvement loop, with a learned autonomous context-update tool.",
+      "Existing context management approaches use fixed heuristics such as discarding tool responses by predefined rules or triggering summarization at a fixed token threshold, which can remove decision-relevant information.",
+      "The paper reports benchmark results with explicit metrics, including Item-F1 for WideSearch, F1 for DeepSearchQA, and accuracy for other benchmarks."
+    ],
+    "rationale": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "a52a40569ca6ed01cb7ef7eaf4fcdb4c687e37180d5145d135c91d40cd2791e8",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Explanation verification unavailable. Cited evidence does not establish numerical values/units: 77.5 Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material."
+    "uncertainty": "Scientific support remains unresolved. The narrative synthesizes many supported elements (inner/outer loops, ACU, six benchmarks, ablations, confidence analysis), but several assertions are not established by the cited sources: 'model links' for reproducibility are absent from the supplied text, 'detailed training/eva The claim that no dedicated limitations section exists and that failure modes/robustness are not discussed is an absence assertion not fully established by the supplied excerpts; the sources do not include a limitations section, but the excerpts are not exhaustive of the full man The cited sources support the contrast with existing work and the key insight, but do not include later ablations showing gains from the outer loop; that part of the claim is not established by the provided sources. The cited sources support verified synthetic task synthesis and key-step annotations, but do not mention quality-controlled teacher trajectories, progressive multi-round capability training, or step-aware reinforcement learning. The cited text supports ACU and outer-loop accuracy gains, but Table 4 is incomplete and does not clearly report degradations for progressive training or key-step supervision, so the matched-budget ablation inference is only partially supported. The cited text directly states the 82.5 accuracy and 22.9-point difference, but it does not explicitly state that recursive self-improvement improves deep research performance; that broader conclusion is inferred rather than directly established. The explanation correctly notes the conclusion mentions futur"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

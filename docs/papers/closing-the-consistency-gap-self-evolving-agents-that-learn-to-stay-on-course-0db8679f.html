@@ -60,15 +60,154 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.</p>
-      <p>Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 0.69 Explanation verification unavailable. Cited evidence does not establish numerical values/units: 66.0% Cited evidence does not establish numerical values/units: 30, 0.5 Cited evidence does not establish numerical values/units: 30x, 30</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
+      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 0.699 Cited evidence does not establish numerical values/units: 30, 0.5 The inference that the results validate the central claim is not fully supported because the similar-task evidence reports a Mean@5 regression on Hard tasks, contradicting the assertion that Mean@5 is never degraded for GPT-4.1.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T10:36:50+00:00.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v2. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T12:05:30+00:00.</p>
         <p>Coverage: 33990 of 33990 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>The paper formalizes the consistency gap as the difference between Mean@k and Pass^k, and presents a self-evolving agent framework with a Consistency Analyzer and Guideline Generator to reduce this gap.</p><p>Attributed source statement: supported. The abstract attributes the consistency gap definition and the two-stage framework to the manuscript, and the introduction&#x27;s contributions list enumerates the formalization, analyzer, generator, and empirical results. These blocks establish the paper&#x27;s central contribution and scope. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model (LLM)-powered agents can be ac-
+curateon averageyet unreliable in production, a discrep-
+ancy that has been observed but remains largely unaddressed.
+When given thesametask five times, a ReAct agent on the
+AppWorld benchmark using GPT-4.1 succeeds in all five runs
+only 53% of the time, even though its per-run pass rate aver-
+ages 77%. We call this 24-point shortfall theconsistency gap,
+and we argue that addressing it is a precondition for trustwor-
+thy AI agent deployment. We present a self-evolving agent
+framework that reduces this gap by identifying unstable, low-
+consistency steps in agent trajectories and converting them
+into episodic memory the agent can draw on in future runs.
+At its core is aConsistency Analyzerthat pinpoints where
+and why a trajectory is likely to flip across executions, and
+aGuideline Generatorthat converts the diagnosis into tar-
+geted </blockquote><blockquote>is a delay before use-
+ful guidelines accumulate, bounded by a feedback dynamic
+in which each guideline shrinks the inconsistent-task popu-
+lation that future guidelines are drawn from.
+Contributions.(1) A formalization and empirical charac-
+terization of the consistency gap (Section 2). (2) A black-box
+Consistency Analyzer (Section 3.1) that estimates step- and
+trajectory-level consistency from response variability via
+configurable resampling; aggregate trajectory consistency
+also correlates with trajectory pass/fail (AUROC0.69), let-
+ting it support the generator&#x27;s own judgment of trajec-
+tory outcome where no ground-truth rating is available.
+(3) Consistency-targeted guideline generation (Section 3.2)
+driven by step-level inconsistency. (4) Empirical results
+(Section 4) on AppWorld with ReAct/GPT-4.1 and GPT-
+OSS-120B showing+16pp Passˆ5 same-task and+13pp
+similar-task generalization </blockquote></details></li><li><strong>Scholarly novelty or value — page 2</strong><p>The consistency gap is empirically characterized on AppWorld with ReAct/GPT-4.1 and GPT-OSS-120B, showing a 24.4pp gap for GPT-4.1 and 23.8pp for GPT-OSS-120B.</p><p>Attributed source statement: supported. The empirical characterization section reports the absolute gap values for both models and the consistent fraction versus mean accuracy, demonstrating the practical significance of the identified problem. This supports the paper&#x27;s claim that the gap is large enough to matter in practice. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Consistency Gap
+We measure the consistency metrics for a ReAct (Yao et al.
+2023) agent backed by two LLMs of different capabilities,
+GPT-4.1 and GPT-OSS-120B, evaluated on the 168-task
+test normalsplit of the AppWorld benchmark (Trivedi
+et al. 2024) withk= 5runs per task and the standard App-
+World grader (Figure 2).
+Absolute gap.The absolute gap is large for both mod-
+els (24.4pp for GPT-4.1 and23.8pp for GPT-OSS-120B),
+despite the wide capability difference but distributes differ-
+ently across difficulty. With GPT-4.1 it grows monotonically
+(17.5/25.0/30.2pp for easy/medium/hard): harder tasks are
+both less likely to succeed and disproportionately likely to
+flip. With GPT-OSS-120B the pattern inverts, peaking on
+easy (38.6pp) and shrinking on hard (9.5pp) because the
+hard-task Mean@5 itself collapses to9.5%, mechanically
+capping the gap. In both cases the consistent fraction of </blockquote><blockquote>the
+benchmark falls far below mean accuracy,53%vs. Mean@5
+of77%for GPT-4.1, only10%vs.34%for GPT-OSS-120B,
+so standard accuracy numbers are substantially uninforma-
+tive about what a deployed-agent user actually experiences.
+Normalized consistency.Normalizing by each model&#x27;s
+own mean accuracy removes the capability ceiling. GPT-
+4.1&#x27;s aggregate consistency is0.69, declining to0.51on hard
+tasks: even where it can occasionally solve a task, it reliably
+delivers all-five-pass only about half the time. GPT-OSS-
+120B is more severe: aggregate consistency is only0.30,
+collapsing to0.00on hard tasks - itneverpasses all five
+runs on a hard task it can occasionally solve. The2×dif-
+ference (0.69vs.0.30) shows GPT-OSS-120B&#x27;s successes
+1Jha et al. (Jha et al. 2026) independently introducerelia-
+bility gapfor the analogous discrepancy between Pass@kand
+Majority@kin ReAct agents; see Section 5.</blockquote></details></li><li><strong>Related work and gap positioning — pages 5–6</strong><p>The paper positions its work relative to self-consistency, agentic memory, and reliability literature, distinguishing its offline resampling and consistency-targeted guideline generation from prior approaches.</p><p>Attributed source statement: supported. The related work section explicitly contrasts the framework with self-consistency methods on the axes of offline resampling and consistency as the objective, and situates it within agentic memory work by building on Fang et al. (2026). This establishes the gap the paper addresses and its relationship to existing approaches. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Self-consistency, inference scaling, and uncertainty
+quantification.Self-consistency (Wang et al. 2023) sam-
+ples multiple chains of thought and selects the majority an-
+swer; inference-scaling work (Snell et al. 2024) and reason-
+ing models such as OpenAI&#x27;s o1 family generalize the same
+intuition, and agent variants use tests or an LLM judge to
+select among rolled-out solutions. We differ on two axes:
+resampling happensofflinerather than at runtime, and the
+objective is consistency, not accuracy - variability is a di-
+agnostic signal for where the prompt should be hardened,
+not a voting mechanism. Predictive entropy (Malinin and
+Gales 2021) overstates uncertainty when responses vary in
+wording but agree in meaning, since it measures spread
+over surface forms rather than over meaning; semantic en-
+tropy (Kuhn, Gal, and Farquhar 2023; Farquhar et al. 2024)
+addresses this via clustering; </blockquote><blockquote>MemP (Fang et al. 2025), ReasoningBank (Ouyang
+et al. 2025), ACE (Zhang et al. 2025a), and Memento (Zhou
+et al. 2025) extract reusable workflows from traces, though
+naive accumulation can propagate errors (Xiong et al. 2025).
+We build on Fang et al. (2026), adding a consistency-
+targeted extraction signal atop its storage and retrieval ma-
+chinery.
+Reliability, reproducibility, and observability.App-
+World (Trivedi et al. 2024) is one of several benchmarks
+reporting multi-run statistics, and Ye et al. (Ye et al. 2026)
+show that such run-to-run variance is itself an underspecified
+property of self-improving, memory-based agents, sensitive
+to task order and evaluation protocol; our guideline-injection
+loop targets exactly this source of fragility. Our Passˆk vs.
+Mean@kformulation generalizes pass@kfrom code gen-
+eration (Chen et al. 2021) to per-difficulty granularity, and
+lands within </blockquote></details></li><li><strong>Limitations and uncertainty handling — page 6</strong><p>The paper acknowledges limitations including the assumption of comparable platform-side non-determinism, the analyzer&#x27;s inability to detect confidently-wrong decisions, and the 30x token cost of resampling.</p><p>Attributed source statement: supported. The limitations section explicitly states these constraints, demonstrating awareness of the framework&#x27;s boundaries and the conditions under which the results hold. This is a substantive limitation discussion rather than a generic disclaimer. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>model families and agents with existing
+policy memory such as CUGA (Marreed et al. 2025), is our
+next step.
+Limitations.Our Passˆ5 comparisons assume compa-
+rable platform-side non-determinism between baseline and
+guideline-injected runs, which we cannot directly measure
+or control. We do not claim the framework eliminates in-
+consistency (a substantial gap remains, especially on Hard
+tasks) or that the analyzer is a verifier: it scoresstability, not
+correctness, and a confidently-wrong decision looks consis-
+tent to it. Our default resampling budget (N= 30per infer-
+ence step) multiplies token cost roughly30×per trajectory;
+reducing this cost without degrading guideline quality, e.g.,
+via adaptive resampling that concentrates samples on candi-
+date flat steps, is an important direction for future work.</blockquote></details></li><li><strong>Reproducibility and transparency — page 1</strong><p>The paper provides these artifact links: https://github.com/AgentToolkit/altk-evolve</p><p>Artifact link stated by the manuscript; not independently checked: supported. The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>guidelines, committed to memory and injected into fu-
+ture agent executions on similar tasks. On AppWorld with
+ReAct/GPT-4.1, our framework raises the fraction of tasks
+that succeed in all five runs by+16 pointson same-task eval-
+uation and+13 pointson similar-task generalization.
+Code:https://github.com/AgentToolkit/altk-evolve</blockquote></details></li><li><strong>Presentation and precision — page 7</strong><p>The paper provides full per-difficulty results in Appendix B tables, including baseline, same-task, and similar-task Pass^5, Mean@5, and Consistency values for both models.</p><p>Attributed source statement: supported. The appendix tables report the complete per-difficulty breakdown underlying the aggregate numbers discussed in Section 4, enabling verification of the reported improvements and supporting the precision of the paper&#x27;s quantitative claims. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>and parsing data, implement validation checks before
+performing calculations or returning results.
+B Full Per-Difficulty Results
+Tables 1 and 2 report the complete per-difficulty breakdown (baseline, same-task guidelines, and similar-task guidelines) underlying the
+aggregate numbers discussed in Section 4.
+Table 1: Consistency results on AppWorldtest normal, ReAct / GPT-4.1.
+Baseline+Guidelines: Same Task+Guidelines: Similar Task
+Difficulty Passˆ5 Mean@5 Consistency Passˆ5 Mean@5 Consistency Passˆ5 Mean@5 Consistency
+Aggregate 53.0% 77.4% 0.6869.0% 81.0% 0.85 66.0% 79.5% 0.83
+∆+16.0 pp +3.6 pp +0.17 +13.0 pp +2.1 pp +0.15
+Easy 77.2% 94.7% 0.8289.4% 98.2% 0.91 90.3% 97.3% 0.93
+∆+12.2 pp +3.5 pp +0.10 +13.1 pp +2.6 pp +0.11
+Medium 52.1% 77.1% 0.6875.0% 83.3% 0.90 66.6% 83.3% 0.80
+∆+22.9 pp +6.2 pp +0.22 +14.5 pp +6.2 pp +0.12
+Hard 31.7% 61.9% 0.5146.0% 63.4% 0.73 43.6%61.1%0.71
+∆+14.3 pp </blockquote><blockquote>+1.6 pp +0.21 +11.9 pp−0.8 pp +0.20
+Table 2: Consistency results on AppWorldtest normal, ReAct / GPT-OSS-120B.
+Baseline+Guidelines: Same Task+Guidelines: Similar Task
+Difficulty Passˆ5 Mean@5 Consistency Passˆ5 Mean@5 Consistency Passˆ5 Mean@5 Consistency
+Aggregate 10.1% 33.9% 0.3016.1% 38.7% 0.42 18.8% 40.5% 0.46
+∆+6.0 pp +4.8 pp +0.12 +8.7 pp +6.6 pp +0.17
+Easy 28.1% 66.7% 0.4236.8% 75.4% 0.49 43.0% 74.6% 0.58
+∆+8.7 pp +8.7 pp +0.07 +14.9 pp +7.9 pp +0.16
+Medium 2.1% 27.1% 0.0810.4% 29.2% 0.36 8.3% 31.2% 0.27
+∆+8.3 pp +2.1 pp +0.28 +6.2 pp +4.1 pp +0.19
+Hard 0.0% 9.5% 0.001.6% 12.7% 0.13 4.8% 16.7% 0.29
+∆+1.6 pp +3.2 pp +0.13 +4.8 pp +7.2 pp +0.29</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

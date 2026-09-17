@@ -1,0 +1,3039 @@
+{
+  "name": "BATCH_2_RECOVERY_V2",
+  "original_generalization_result": "FAIL",
+  "first_recovery_result": "FAIL",
+  "recovery_v2_check": "FAIL",
+  "quality_pipeline_ready_for_batch3": "NO",
+  "generalization_evaluation": false,
+  "batch3_started": false,
+  "baseline_main": "dadef795eebeb5d4abe30fd26bf94bf6b921c278",
+  "merged_evaluator": "f073e7f94e84269c8b6834bdf9f8e29864c0d61d",
+  "roster_sha256": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+  "outcomes_frozen_at": "2026-09-17T12:13:44.824631+00:00",
+  "counts": {
+    "agent_memory": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 6,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 1,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 2,
+      "text_coverage_failure": 1,
+      "other_technical_failure": 0
+    },
+    "deep_research": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 4,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 5,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 1,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 0
+    },
+    "engram": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 0,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 0,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 0,
+      "text_coverage_failure": 0,
+      "other_technical_failure": 0
+    },
+    "overall": {
+      "quality_pass": 0,
+      "scientific_uncertainty": 10,
+      "scientific_insufficient": 0,
+      "manuscript_unavailable": 6,
+      "evidence_grounding_failure": 0,
+      "model_protocol_failure": 3,
+      "text_coverage_failure": 1,
+      "other_technical_failure": 0
+    }
+  },
+  "reliability": {
+    "acquisition": {
+      "unavailable_manuscripts": 6,
+      "no_known_source_urls": 6,
+      "source_attempts": 14,
+      "failed_source_attempts": 0,
+      "successful_manuscripts": 14,
+      "cache_hits": 14,
+      "alternate_source_recoveries": 0
+    },
+    "model": {
+      "initial_calls": 13,
+      "retry_calls": 0,
+      "truncations": 0,
+      "malformed_or_schema_invalid_responses": 0
+    },
+    "grounding": {
+      "metadata_only_signals_not_verified_claims": 24,
+      "proposed": 129,
+      "accepted": 67,
+      "rejected": 62,
+      "grounding_failures": 0
+    },
+    "verifier_all_items_including_narratives": {
+      "supported": 194,
+      "uncertain": 44,
+      "unsupported": 6,
+      "technical_failures": 2,
+      "skipped_due_to_text_coverage_declaration": 1,
+      "calls": 116,
+      "skipped_due_to_reference_failure": 0
+    },
+    "coverage": {
+      "title_and_abstract": 6,
+      "full_text": 14,
+      "coverage_failures": 1,
+      "partial_full_text": 0,
+      "extraction_truncated": 0,
+      "body_selection_omission": 0
+    },
+    "manual_interventions": 0,
+    "latency": {
+      "maximum_call_seconds": 233.58301487501012,
+      "median_call_seconds": 4.443877249985235,
+      "calls_over_180_seconds": 3,
+      "note": "The 180-second HTTP setting is a socket timeout, not an overall request deadline. Observed elapsed durations are retained without adding an operator retry."
+    }
+  },
+  "claim_accounting": {
+    "structured_items": 129,
+    "accepted": 67,
+    "rejected_on_completed_scientific_assessments": 30,
+    "withheld_on_technical_outcomes": 32,
+    "unverified_fallback_signals_excluded": 24
+  },
+  "papers": [
+    {
+      "track": "agent_memory",
+      "selected_position": 1,
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "change_explanation": "Unchanged: no known manuscript URL in any execution. Metadata metrics do not establish scientific quality.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "aae83e36810f8c90f2865426c899cd9c54010cde3c0dc5b5f43e0222fa7df6d4",
+      "runtime_artifact_path": "runs/agent_memory/01-07f265e2b470"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 2,
+      "canonical_id": "doi:10.48550/arxiv.2609.08472",
+      "title": "Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems",
+      "change_explanation": "Uncertain in all runs. Eight claims now survive, including the matched-intent inference previously rejected because of its label. The narrative and alignment item remain unresolved; B0029 contains much of the claimed table chain, so the verifier objection is partly conservative.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 4,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 4,
+          "rejected_count": 7,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 8,
+          "rejected_count": 3,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0002"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0007",
+            "E9425c5aacc2c1e14-B0008",
+            "E9425c5aacc2c1e14-B0009"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0013"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0017"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0021",
+            "E9425c5aacc2c1e14-B0022"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0023",
+            "E9425c5aacc2c1e14-B0024"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0026"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0029"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0030",
+            "E9425c5aacc2c1e14-B0031",
+            "E9425c5aacc2c1e14-B0032"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0033"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-10",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E9425c5aacc2c1e14-B0034",
+            "E9425c5aacc2c1e14-B0035",
+            "E9425c5aacc2c1e14-B0036"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "ca365cf119ccf6ff34795ee0f960fb2b8ededf3b18d6638dd79656e5d8451e54",
+      "runtime_artifact_path": "runs/agent_memory/02-325f36641df0"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 3,
+      "canonical_id": "doi:10.48550/arxiv.2609.08558",
+      "title": "Personalizing LLM Agent Memory Using Biometrics",
+      "change_explanation": "Uncertain in all runs. The 10-user protocol remains accepted. Benchmark names imported from other blocks, missing K=10, and a manuscript-wide absence claim are properly withheld. Plural table locators are still counted as measurements; the missing 5.24 cell lies outside the selected table fragments.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 7,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 4,
+          "rejected_count": 4,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0007",
+            "E0fc472ac63e3e156-B0008"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0012",
+            "E0fc472ac63e3e156-B0016"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0032",
+            "E0fc472ac63e3e156-B0033"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0025",
+            "E0fc472ac63e3e156-B0026"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0036",
+            "E0fc472ac63e3e156-B0037"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0038",
+            "E0fc472ac63e3e156-B0043"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0048",
+            "E0fc472ac63e3e156-B0049"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E0fc472ac63e3e156-B0024",
+            "E0fc472ac63e3e156-B0035"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "3ce0001b227c8261b81806fb7a76a2788870f465990a5c0961583527fd885db7",
+      "runtime_artifact_path": "runs/agent_memory/03-61696f5d35a0"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 4,
+      "canonical_id": "doi:10.48550/arxiv.2609.08273",
+      "title": "MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging",
+      "change_explanation": "Original Unicode failure became uncertainty in v1 and remains uncertainty. Six claims now survive, including the source URL, method and scoped compression limitation. Missing baseline rows genuinely limit two comparisons, while treating Tables 3 and 4 as quantities falsely rejects the ablation item.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "other_technical_failure",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": null
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 3,
+          "rejected_count": 8,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 3,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0003"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0009",
+            "Ea5fed3384e7e538a-B0010"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0010",
+            "Ea5fed3384e7e538a-B0026"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0028",
+            "Ea5fed3384e7e538a-B0029"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0033",
+            "Ea5fed3384e7e538a-B0035"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0036",
+            "Ea5fed3384e7e538a-B0039"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0042",
+            "Ea5fed3384e7e538a-B0047"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0007",
+            "Ea5fed3384e7e538a-B0008"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "Ea5fed3384e7e538a-B0107"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "6c96a61cd64a124a81bf44f498e57b0a4857a9a5ccfafe9e3fb228b03a801b70",
+      "runtime_artifact_path": "runs/agent_memory/04-463f3a0fc72a"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 5,
+      "canonical_id": "doi:10.48550/arxiv.2609.08279",
+      "title": "What Eviction Destroys: A Restore-Counterfactual Audit of Forgetting in Agent Memory",
+      "change_explanation": "Both earlier scientific uncertainties become a verifier protocol failure. A 284-character reason violates the 280-character response schema after nine successful verifier calls; all eleven claims are withheld. This is a technical regression, not a scientific downgrade.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 8,
+          "rejected_count": 1,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 8,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "model_protocol_failure",
+          "accepted_count": 0,
+          "rejected_count": 11,
+          "artifact_count": 0,
+          "execution_outcome": "protocol_failure"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0006",
+            "E26cffac7f8457d63-B0007"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0007",
+            "E26cffac7f8457d63-B0040"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0010",
+            "E26cffac7f8457d63-B0011"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0022",
+            "E26cffac7f8457d63-B0023"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0019",
+            "E26cffac7f8457d63-B0020",
+            "E26cffac7f8457d63-B0021"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0027",
+            "E26cffac7f8457d63-B0028"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0031"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0034",
+            "E26cffac7f8457d63-B0035",
+            "E26cffac7f8457d63-B0036"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0009",
+            "E26cffac7f8457d63-B0010"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0038",
+            "E26cffac7f8457d63-B0039"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-10",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E26cffac7f8457d63-B0025"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "a4f8f918d38e1ec50d275ed36e58269ee315d7942ec5df656c2d3f74bea3aefb",
+      "runtime_artifact_path": "runs/agent_memory/05-2f63cd559bbc"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 6,
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "change_explanation": "Original abstract-link grounding failure and v1 provider error no longer block assessment. Six of nine claims survive. The no-Mean@5-degradation generalization is correctly rejected against a hard-task regression; AUROC0.699 is wrongly missed by numeric extraction.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 8,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v1": {
+          "outcome": "model_protocol_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "protocol_failure"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 3,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0002",
+            "Eab63d8b945096f8e-B0008"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0014",
+            "Eab63d8b945096f8e-B0015"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0029",
+            "Eab63d8b945096f8e-B0030"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0031",
+            "Eab63d8b945096f8e-B0034"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0036"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0037",
+            "Eab63d8b945096f8e-B0039"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0043"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0003"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "Eab63d8b945096f8e-B0046",
+            "Eab63d8b945096f8e-B0047"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "b8db2000e07e44655a2deee68a874207692919566e4bdffea065ff97f7b114e0",
+      "runtime_artifact_path": "runs/agent_memory/06-362022ddc8c4"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 7,
+      "canonical_id": "doi:10.48550/arxiv.2609.08550",
+      "title": "CreaMem: A Scene-Aware Memory Architecture for Personalized Agents",
+      "change_explanation": "The v1 citationless optional-item failure becomes scientific uncertainty, with seven accepted and two rejected claims. Missing local backbone/related-work details remain. The narrative verifier incorrectly objects to BertScore leadership; the table supports the listed accuracy-metric leads. Broad all-metrics wording should be read as those named accuracy metrics, not token efficiency.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 3,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 12,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 7,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0008",
+            "Ec89da04e93135d6e-B0016"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0005",
+            "Ec89da04e93135d6e-B0013"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0026",
+            "Ec89da04e93135d6e-B0027"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0030",
+            "Ec89da04e93135d6e-B0031"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0041",
+            "Ec89da04e93135d6e-B0042"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0011",
+            "Ec89da04e93135d6e-B0013"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0033"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0049",
+            "Ec89da04e93135d6e-B0050"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "Ec89da04e93135d6e-B0046",
+            "Ec89da04e93135d6e-B0047"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "e6d9f9107b455dd27785e4dc0ea806fc832d00c6b9bfd2211b0fbfbc75170a26",
+      "runtime_artifact_path": "runs/agent_memory/07-de6abe644686"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 8,
+      "canonical_id": "doi:10.48550/arxiv.2609.08599",
+      "title": "Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation",
+      "change_explanation": "Both earlier uncertainties become text_coverage_failure. All eight pages were extracted, with no omitted body characters; the assessor treats absence of a survey search protocol as missing input and semantic verification is skipped. This taxonomy is not justified by extraction metadata and is retained unchanged as a failed run outcome.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 9,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 9,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "text_coverage_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "text_coverage_failure"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0003",
+            "E1e232ee4e35e94c0-B0009"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0008",
+            "E1e232ee4e35e94c0-B0009"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0003"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0033",
+            "E1e232ee4e35e94c0-B0036"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0016",
+            "E1e232ee4e35e94c0-B0023"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0008",
+            "E1e232ee4e35e94c0-B0009"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0004"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0021",
+            "E1e232ee4e35e94c0-B0027"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "E1e232ee4e35e94c0-B0014",
+            "E1e232ee4e35e94c0-B0023"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "d51caea89652a0b9b18ecf8d1cade6d38c66205d6834dc0f8cbd57ce343030fd",
+      "runtime_artifact_path": "runs/agent_memory/08-93ea67341b9a"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 9,
+      "canonical_id": "doi:10.48550/arxiv.2609.09115",
+      "title": "MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents",
+      "change_explanation": "Original artifact eligibility failure became uncertainty in v1, then verifier protocol failure in v2. A 286-character reason exceeds the 280-character schema after six successful verifier calls; twelve claims are withheld. No scientific downgrade is inferred.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 4,
+          "rejected_count": 5,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "model_protocol_failure",
+          "accepted_count": 0,
+          "rejected_count": 12,
+          "artifact_count": 0,
+          "execution_outcome": "protocol_failure"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0002",
+            "E8763b130dd1e6560-B0007"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0009",
+            "E8763b130dd1e6560-B0012"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0015",
+            "E8763b130dd1e6560-B0025",
+            "E8763b130dd1e6560-B0051"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0023",
+            "E8763b130dd1e6560-B0042",
+            "E8763b130dd1e6560-B0043"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0033",
+            "E8763b130dd1e6560-B0034",
+            "E8763b130dd1e6560-B0072"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0035",
+            "E8763b130dd1e6560-B0036",
+            "E8763b130dd1e6560-B0037"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0003",
+            "E8763b130dd1e6560-B0034",
+            "E8763b130dd1e6560-B0072"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0006",
+            "E8763b130dd1e6560-B0013"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0003"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0060",
+            "E8763b130dd1e6560-B0062",
+            "E8763b130dd1e6560-B0069"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-10",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0059",
+            "E8763b130dd1e6560-B0060"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-11",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E8763b130dd1e6560-B0054"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "722cd43ffdbdd31308dff05975c873221a14ec5ddc3e249094331a1322e5b3ca",
+      "runtime_artifact_path": "runs/agent_memory/09-2d84e676fce1"
+    },
+    {
+      "track": "agent_memory",
+      "selected_position": 10,
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "change_explanation": "Original abstract-link failure remains resolved. Six claims now survive versus four in v1. Method and guard-release assertions still cite incomplete sources; scoped limitations and main result counts survive. Uncertainty concerns the proposed evidence mapping, not proof the study is scientifically inadequate.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 4,
+          "rejected_count": 5,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 6,
+          "rejected_count": 3,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0004",
+            "E5950c57d2c67485e-B0005"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0014",
+            "E5950c57d2c67485e-B0015"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0021",
+            "E5950c57d2c67485e-B0024",
+            "E5950c57d2c67485e-B0033"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0036",
+            "E5950c57d2c67485e-B0037"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0040",
+            "E5950c57d2c67485e-B0068"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0008",
+            "E5950c57d2c67485e-B0015"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0063",
+            "E5950c57d2c67485e-B0064"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0003"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E5950c57d2c67485e-B0045",
+            "E5950c57d2c67485e-B0069"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
+      "runtime_artifact_path": "runs/agent_memory/10-f8e086f448f9"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 1,
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "change_explanation": "Both earlier uncertainties become an operator request-preflight failure. The reconstructed payload is 360598 bytes, exceeding the declared 300000-byte limit before any HTTP call. The v1 payload was already 360360 bytes; v2 newly enforces that limit. No scientific judgment was produced.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 7,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 5,
+          "rejected_count": 4,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "model_protocol_failure",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "protocol_failure"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "0150b804db3dbcaf2a735647737e704f7bf10f4782e625b7ca534e2da7b6f300",
+      "runtime_artifact_path": "runs/deep_research/01-f1995c8a0a29"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 2,
+      "canonical_id": "doi:10.64898/2026.07.30.26359375",
+      "title": "A PRISMA-Aligned Agentic Framework for Medical Systematic Reviews and Evidence Synthesis",
+      "change_explanation": "Unchanged manuscript unavailable: no known manuscript source URL; no scientific decision.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "df2cb442c97783fa1cf39c75b0b0735dc388f1b7d616119d7fbbca37e40bf625",
+      "runtime_artifact_path": "runs/deep_research/02-67baf6764f86"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 3,
+      "canonical_id": "doi:10.6082/gep96-ycs43",
+      "title": "Towards Reliable AI Scientists",
+      "change_explanation": "Unchanged manuscript unavailable: no known manuscript source URL; no scientific decision.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "47025ffd205291b8afc2bc72b7baa297604a718673a4045e4591384a177d680f",
+      "runtime_artifact_path": "runs/deep_research/03-5abea5011bff"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 4,
+      "canonical_id": "doi:10.65890/race.v2i2.204",
+      "title": "Deep Research Agent: An AI-Powered System for Automated Research Paper Analysis and Citation-Based Answer Generation",
+      "change_explanation": "Unchanged manuscript unavailable: no known manuscript source URL; no scientific decision.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "4a5a6af0752905e3e7448230180fb298f7c6c37ccc38291e8b25db645702f658",
+      "runtime_artifact_path": "runs/deep_research/04-b300b3f72b3c"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 5,
+      "canonical_id": "doi:10.5281/zenodo.21577092",
+      "title": "When the Instrument Studies Itself: A Systematic Map of Autonomous AI Research Systems (2024-2026), Conducted by a Frontier Language Model",
+      "change_explanation": "Unchanged manuscript unavailable: no known manuscript source URL; no scientific decision.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "7c19d30b52799a9f696008c076368980fc133b55b3cbecd81ecd11301470c404",
+      "runtime_artifact_path": "runs/deep_research/05-b0b3f352e528"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 6,
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "change_explanation": "Unchanged manuscript unavailable: no known manuscript source URL; no scientific decision.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v2": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        }
+      },
+      "v2_claim_decisions": [],
+      "source_hash": "d5cd17c7567448d34a879a0f7486dee952752e63714405d1b2f43f09d19d3623",
+      "runtime_artifact_path": "runs/deep_research/06-2d51a1223b19"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 7,
+      "canonical_id": "openalex:W7171268496",
+      "title": "Benchmarking Agents for Proving Theorems in Quantum Algorithms and Quantum Information",
+      "change_explanation": "The same URL became available in v1, whose citationless absence item blocked the assessment. V2 completes with nine accepted and two rejected claims. Single recorded runs, unmatched access conditions and targeted rather than universal semantic audits support caution; there is no invented artifact-absence conclusion.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "manuscript_unavailable",
+          "accepted_count": 0,
+          "rejected_count": 0,
+          "artifact_count": 0,
+          "execution_outcome": "manuscript_unavailable"
+        },
+        "recovery_v1": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 9,
+          "rejected_count": 2,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0002",
+            "E9bcb1a46be206c34-B0008"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0002",
+            "E9bcb1a46be206c34-B0008"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0019",
+            "E9bcb1a46be206c34-B0020"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0022",
+            "E9bcb1a46be206c34-B0023"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0024",
+            "E9bcb1a46be206c34-B0025",
+            "E9bcb1a46be206c34-B0026"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0024",
+            "E9bcb1a46be206c34-B0065"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0028",
+            "E9bcb1a46be206c34-B0031"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0007",
+            "E9bcb1a46be206c34-B0014",
+            "E9bcb1a46be206c34-B0015"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0019",
+            "E9bcb1a46be206c34-B0020",
+            "E9bcb1a46be206c34-B0024"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0063",
+            "E9bcb1a46be206c34-B0064",
+            "E9bcb1a46be206c34-B0065"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-10",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "E9bcb1a46be206c34-B0025",
+            "E9bcb1a46be206c34-B0026",
+            "E9bcb1a46be206c34-B0027"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "81ed008884905580bd4bd1d6a57b016dd46d46ae7b8e009ba0395dd40e0ac516",
+      "runtime_artifact_path": "runs/deep_research/07-38906bef5c19"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 8,
+      "canonical_id": "openalex:W7171268620",
+      "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+      "change_explanation": "Original artifact failure remains resolved. The previously false-rejected 0% control is now accepted. Two real percentage-point statements still fail at glued/shared-unit or hyphenated-unit boundaries; additional uncited judge/statistical claims keep the narrative unresolved.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 9,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 7,
+          "rejected_count": 5,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 8,
+          "rejected_count": 2,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0003"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0012"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0016",
+            "E5ecf27d3a2ac0fe6-B0017"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0034"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0030"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0033"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0042"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
+      "runtime_artifact_path": "runs/deep_research/08-6c109dc1a01e"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 9,
+      "canonical_id": "doi:10.48550/arxiv.2607.20872",
+      "title": "LegalCiteTrust: Benchmarking Citation Trustworthiness in Chinese Long-Form Legal Research Reports",
+      "change_explanation": "Uncertain in all runs. The split URL extracts correctly offline and no shortened URL is accepted in v2. Nine claims survive. Some missing scoring details are genuine local citation gaps; the 0.5 multiplication coefficients are falsely mismatched as units. The proposed final-score wording also omits parentheses, so the whole item is not certified correct by finding that numeric false rejection.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 10,
+          "rejected_count": 1,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 10,
+          "rejected_count": 1,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 9,
+          "rejected_count": 3,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0004",
+            "E8f2ff4f303dcf9ed-B0015"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0005",
+            "E8f2ff4f303dcf9ed-B0011"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0017",
+            "E8f2ff4f303dcf9ed-B0018"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0019",
+            "E8f2ff4f303dcf9ed-B0071"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0023",
+            "E8f2ff4f303dcf9ed-B0024"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0034",
+            "E8f2ff4f303dcf9ed-B0035"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0032",
+            "E8f2ff4f303dcf9ed-B0033"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0009",
+            "E8f2ff4f303dcf9ed-B0012"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0111",
+            "E8f2ff4f303dcf9ed-B0112"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-9",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0046",
+            "E8f2ff4f303dcf9ed-B0047"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-10",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0046"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-11",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "E8f2ff4f303dcf9ed-B0021",
+            "E8f2ff4f303dcf9ed-B0022"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        }
+      ],
+      "source_hash": "78aecfa17b429f060a7b44974115c3a93e900b9fd9768999050124b2448da419",
+      "runtime_artifact_path": "runs/deep_research/09-f46c63b41af4"
+    },
+    {
+      "track": "deep_research",
+      "selected_position": 10,
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "change_explanation": "V1 URL-boundary grounding failure becomes scientific uncertainty. All three source links are accepted as narrow artifact facts. Four claims survive; unrelated ablation/training details and broad absence claims are rejected. The exact 82.5/22.9-point result and bounded inference in B0061 are excessively conservatively rejected.",
+      "stochastic_caveat": "Prompt/support versions and stochastic proposals differ; outcome or wording changes alone do not isolate a causal effect of engineering.",
+      "states": {
+        "original": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 8,
+          "rejected_count": 1,
+          "artifact_count": 0,
+          "execution_outcome": "scientific"
+        },
+        "recovery_v1": {
+          "outcome": "evidence_grounding_failure",
+          "accepted_count": 0,
+          "rejected_count": 11,
+          "artifact_count": 0,
+          "execution_outcome": "evidence_validation_failure"
+        },
+        "recovery_v2": {
+          "outcome": "scientific_uncertainty",
+          "accepted_count": 4,
+          "rejected_count": 5,
+          "artifact_count": 1,
+          "execution_outcome": "scientific"
+        }
+      },
+      "v2_claim_decisions": [
+        {
+          "item_id": "evidence-0",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0007",
+            "Ed069fe16ffa6b527-B0008"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-1",
+          "dimension": "scholarly_novelty_or_value",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0006",
+            "Ed069fe16ffa6b527-B0007"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-2",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0031",
+            "Ed069fe16ffa6b527-B0041"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-3",
+          "dimension": "evaluation_or_validation_strength",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0060",
+            "Ed069fe16ffa6b527-B0066"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-4",
+          "dimension": "evidence_to_claim_alignment",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0061"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-5",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0020",
+            "Ed069fe16ffa6b527-B0021"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-6",
+          "dimension": "reproducibility_and_transparency",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0003"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        },
+        {
+          "item_id": "evidence-7",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0070",
+            "Ed069fe16ffa6b527-B0071"
+          ],
+          "accepted": false,
+          "disposition": "claim_rejected"
+        },
+        {
+          "item_id": "evidence-8",
+          "dimension": "presentation_and_precision",
+          "evidence_ids": [
+            "Ed069fe16ffa6b527-B0049"
+          ],
+          "accepted": true,
+          "disposition": "accepted"
+        }
+      ],
+      "source_hash": "a52a40569ca6ed01cb7ef7eaf4fcdb4c687e37180d5145d135c91d40cd2791e8",
+      "runtime_artifact_path": "runs/deep_research/10-21f0fcee6144"
+    }
+  ],
+  "scientific_audit": {
+    "audit_after_outcome_freeze": true,
+    "predefined_sample_unchanged": true,
+    "sample": [
+      {
+        "track": "agent_memory",
+        "position": 1,
+        "canonical_id": "doi:10.5281/zenodo.22671447",
+        "title": "MBM-0: Memory Birth Metrics v0",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "manuscript_unavailable",
+        "accepted_claims": 0,
+        "rejected_or_withheld_claims": 0,
+        "topical_fit": "Direct agent-memory measurement relevance.",
+        "evidence_and_decision": "No known manuscript URL, no manuscript-grounded accepted claims; unavailable is appropriate.",
+        "claim_scope": "The metadata description is not promoted into a quality judgment.",
+        "limitations": "Metrics, controls and empirical adequacy cannot be audited from the abstract.",
+        "excessive_conservatism": "Acquisition limitation, not an evidence-validator false rejection.",
+        "false_confidence": "No pass or completed scientific judgment.",
+        "manual_corrections": 0
+      },
+      {
+        "track": "agent_memory",
+        "position": 6,
+        "canonical_id": "doi:10.48550/arxiv.2609.08832",
+        "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "scientific_uncertainty",
+        "accepted_claims": 6,
+        "rejected_or_withheld_claims": 3,
+        "topical_fit": "Relevant to consistent self-evolving agents and episodic guidelines.",
+        "evidence_and_decision": "Six of nine claims survive: contribution, empirical gap, related-work positioning, limitations, artifact and presentation. The required method/evaluation/alignment support is incomplete. Full manuscript and exact IDs/hashes are preserved.",
+        "claim_scope": "B0031 supports no Mean@5 degradation for same-task evaluation; B0034 reports -0.8 percentage points on hard similar tasks. Rejecting the broad no-degradation claim is correct. The repository is only an attributed link fact.",
+        "limitations": "B0043 explicitly covers platform nondeterminism, confidently wrong decisions and roughly 30x token cost.",
+        "excessive_conservatism": "Confirmed: evidence-4 cites B0036, which explicitly states AUROC0.699 on 50 tasks, but the bare-number extractor misses 0.699. N=30 and temperature0.5 are also present in B0030 yet falsely missed; the wider method claim separately overreaches about cosine scoring.",
+        "false_confidence": "No false pass. The uncertainty mixes real scope problems with deterministic numeric false rejection and cannot be called purely scientific.",
+        "manual_corrections": 0
+      },
+      {
+        "track": "agent_memory",
+        "position": 10,
+        "canonical_id": "doi:10.48550/arxiv.2609.08258",
+        "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "scientific_uncertainty",
+        "accepted_claims": 6,
+        "rejected_or_withheld_claims": 3,
+        "topical_fit": "Direct knowledge-supersession/revocation evaluation relevance.",
+        "evidence_and_decision": "Six of nine claims survive. Exact sources support 44.2% and 42.1% unsafe-action rates, 0/1620 under filtering, the matched-pair comparisons, related-work positioning, code-link fact and explicit limitations.",
+        "claim_scope": "The six-defense count exists elsewhere but not in the method item citations. Guard placement/code release are likewise absent from their assigned blocks. Rejection of those complete compound claims is defensible. Prior-work novelty remains manuscript-attributed, not independently proven.",
+        "limitations": "B0045 says the rule/no-rule scenario groups are not controlled; B0069 bounds the matched-pair test power and explicitly disclaims identity of the systems.",
+        "excessive_conservatism": "The surviving audit is mainly constrained by the assessor citation choices. Better source selection might permit a fuller judgment; the present uncertainty does not show the underlying study is weak.",
+        "false_confidence": "No pass. Accepted result claims are bounded by the described direct-insertion setup and should not be generalized to every deployment.",
+        "manual_corrections": 0
+      },
+      {
+        "track": "deep_research",
+        "position": 1,
+        "canonical_id": "doi:10.65649/ukh4n33x",
+        "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "model_protocol_failure",
+        "accepted_claims": 0,
+        "rejected_or_withheld_claims": 0,
+        "topical_fit": "Direct conceptual synthesis of agentic scientific discovery.",
+        "evidence_and_decision": "All 45 pages were acquired; 155031 body characters were retained. The 360598-byte serialized request exceeds the frozen 300000-byte cap. The observer raises AssertionError before HTTP; zero verified claims and zero provider charge for this entry.",
+        "claim_scope": "The prior accepted explanation overreach cannot be reevaluated in a completed v2 assessment. Nine retained deterministic fallback signals have no semantic acceptance and are not counted as accepted claims.",
+        "limitations": "No v2 scientific conclusion about the conceptual review is established.",
+        "excessive_conservatism": "Confirmed infrastructure limit; the previous payload was already 360360 bytes. This is not manuscript unavailability or scientific uncertainty.",
+        "false_confidence": "No pass, and the stored protocol-failure outcome is retained. The generic technical rationale must not be interpreted as a scientific critique.",
+        "manual_corrections": 0
+      },
+      {
+        "track": "deep_research",
+        "position": 6,
+        "canonical_id": "doi:10.5281/zenodo.21523008",
+        "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "manuscript_unavailable",
+        "accepted_claims": 0,
+        "rejected_or_withheld_claims": 0,
+        "topical_fit": "Direct multi-agent literature-review use case.",
+        "evidence_and_decision": "No known manuscript URL; unavailable remains appropriate and no manuscript-grounded claim is admitted.",
+        "claim_scope": "Abstract architecture and promised evaluation are not treated as validated results.",
+        "limitations": "No full methods/results available for quality judgment.",
+        "excessive_conservatism": "Acquisition limitation, not validator conservatism.",
+        "false_confidence": "No pass or inferred scientific insufficiency.",
+        "manual_corrections": 0
+      },
+      {
+        "track": "deep_research",
+        "position": 10,
+        "canonical_id": "openalex:W7171268386",
+        "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+        "inclusion": "unchanged predefined first/middle/last sample",
+        "automatic_outcome": "scientific_uncertainty",
+        "accepted_claims": 4,
+        "rejected_or_withheld_claims": 5,
+        "topical_fit": "Direct recursively improving deep-research agent relevance.",
+        "evidence_and_decision": "Four of nine items survive: contribution, related work, artifact availability and metric presentation. Exact B0003 now yields all three correct links, including the homepage trailing slash.",
+        "claim_scope": "Rejection of an explanation importing later ablations into B0006-B0007 is correct. B0070-B0071 cannot establish manuscript-wide absence of limitations. The public display does not claim that the linked artifacts work or reproduce results.",
+        "limitations": "No adequately supported limitations criterion survives. Incomplete table/recipe citations weaken the proposed method/evaluation items.",
+        "excessive_conservatism": "Confirmed semantic false negative: B0061 explicitly states AREX improves with another recursive round and gives 82.5 accuracy, 22.9 points above neither component. The verifier nevertheless rejects the bounded alignment inference as not stated.",
+        "false_confidence": "No false pass. The uncertainty includes real citation gaps and verifier conservatism; it is not a clean scientific-quality conclusion.",
+        "manual_corrections": 0
+      }
+    ],
+    "all_passes": [],
+    "all_insufficient": [],
+    "additional_diagnostics": [
+      "residual-numeric-diagnostics.json",
+      "preflight-diagnostics.json",
+      "verifier-protocol-diagnostics.json"
+    ],
+    "additional_observations": {
+      "creaMem": "The narrative verifier claims BertScore is not best, but full Table 1 gives CreaMem 85.30/85.36 versus lower listed baselines. This is a verifier false objection, not a confirmed accepted accuracy overclaim. All-metrics wording remains best interpreted within the named accuracy metrics, excluding token cost.",
+      "graph_survey": "All eight pages extracted; zero body omissions. The raw response proposes pass but labels missing survey protocol as text_coverage_failure. Verification is skipped and nine claims withheld. Actual protocol adequacy is a scientific question, not evidence of missing extraction.",
+      "known_scope_cases": "New Paradigm preflight and graph coverage exits mean the two prior explanation-leakage cases cannot substantiate live recovery success.",
+      "valid_scope_rejections": "Closing same-task versus similar-task Mean@5 distinction; AREX later ablations and universal absence; biometrics missing benchmark names and broad absence; revocation uncited guard/six-defense details.",
+      "remaining_numeric_scope": "LegalCiteTrust numeric coefficients are falsely rejected, but its proposed Final formula lacks parentheses; identifying the numeric defect does not endorse the whole claim."
+    },
+    "criteria": [
+      {
+        "criterion": "Known URL boundaries",
+        "result": "PASS for exact fixtures; AREX live links accepted; LegalCiteTrust split hostname normalized correctly offline, no v2 partial link accepted."
+      },
+      {
+        "criterion": "Numeric false rejections resolved",
+        "result": "FAIL: bare glued values, shared/hyphenated percentage-point units, plural table locators and multiplication coefficients still falsely fail."
+      },
+      {
+        "criterion": "Overbroad claims rejected",
+        "result": "PARTIAL: observed overbroad no-degradation and manuscript-wide absence claims are rejected. The two prior accepted-explanation leakage cases lack completed v2 semantic assessments, so full empirical resolution is unestablished."
+      },
+      {
+        "criterion": "Bad claim does not automatically cause technical failure",
+        "result": "PASS for observed independently rejected claims and deterministic optional-item regressions; CreaMem and theorem benchmark now complete scientifically."
+      },
+      {
+        "criterion": "Scientific uncertainty defensible without hidden engineering effects",
+        "result": "FAIL: sampled Closing and AREX include confirmed false rejections; graph coverage classification is not supported by extraction metadata."
+      },
+      {
+        "criterion": "Every pass grounded",
+        "result": "NO PASSES; audit set empty, not evidence of calibrated selectivity."
+      },
+      {
+        "criterion": "Insufficient remains scientific",
+        "result": "NO INSUFFICIENT RESULTS; deterministic infrastructure/insufficient regressions pass."
+      },
+      {
+        "criterion": "Technical failures detectable",
+        "result": "PARTIAL: protocol failures are visible and costed, but graph survey coverage failure confuses missing survey methodology with missing text."
+      },
+      {
+        "criterion": "No manual corrections",
+        "result": "PASS: zero corrections, replacements or selective reruns."
+      },
+      {
+        "criterion": "Full validation",
+        "result": "PASS: 337 tests and complete offline/site/history/snapshot checks."
+      },
+      {
+        "criterion": "Independent engineering review",
+        "result": "PASS_WITH_NOTES; final code reviewed, exact-candidate CI green, zero unresolved blockers."
+      }
+    ],
+    "recovery_v2_check": "FAIL",
+    "ready_for_batch3": "NO",
+    "batch3_started": false
+  },
+  "engineering_review": {
+    "reviews": [
+      {
+        "requested_model": "deepseek/deepseek-v4-pro-0813",
+        "candidate": "3b5dd1da22fdb0c9a6fc45b4deb1fefbc02927c9",
+        "accepted": false,
+        "verdict": null,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "finish_reason": null,
+        "request_bytes": 136581,
+        "final_reason": "No verdict within bounded 360-second review; unknown charge retains reservation."
+      },
+      {
+        "requested_model": "anthropic/claude-opus-4.6",
+        "candidate": "f1e55173b8e71498be2c9a7eb5f254cdef450b1e",
+        "accepted": true,
+        "verdict": "PASS_WITH_NOTES",
+        "prompt_tokens": 45901,
+        "completion_tokens": 369,
+        "cost": 0.23873,
+        "finish_reason": "stop",
+        "request_bytes": 154625,
+        "final_reason": "Complete response accepted under existing validation rules."
+      },
+      {
+        "requested_model": "anthropic/claude-opus-4.6",
+        "candidate": "d009f10400a86ea860e2cd628c4e423a14d38783",
+        "accepted": true,
+        "verdict": "PASS_WITH_NOTES",
+        "prompt_tokens": 40023,
+        "completion_tokens": 279,
+        "cost": 0.20709,
+        "finish_reason": "stop",
+        "request_bytes": 137936,
+        "final_reason": "Complete response accepted under existing validation rules."
+      }
+    ],
+    "unresolved_blockers": 0,
+    "test_count": 337,
+    "coverage": "First Opus reviewed full source fixture; second reviewed all code and tests. Fixture unchanged between reviewed candidates. All changed executable code covered without truncation.",
+    "notes_fixed": [
+      "Explicit fixture-pool exhaustion diagnostic.",
+      "Additional max-13-verifier-request regression."
+    ],
+    "notes_rejected": [
+      {
+        "note": "SequenceHttp lacks verifier_payloads",
+        "reason": "Existing __init__ defines self.verifier_payloads=[]; production tests using it passed."
+      }
+    ],
+    "candidate": "d009f10400a86ea860e2cd628c4e423a14d38783"
+  },
+  "cost": {
+    "assessment_initial": {
+      "calls": 13,
+      "input_tokens": 415849,
+      "output_tokens": 33249,
+      "reported_cost_usd": 0.4902910478,
+      "unknown_cost_requests": 0
+    },
+    "assessment_retries": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reported_cost_usd": 0,
+      "unknown_cost_requests": 0
+    },
+    "support_verifier": {
+      "calls": 116,
+      "input_tokens": 286148,
+      "output_tokens": 17152,
+      "reported_cost_usd": 0.3809451328,
+      "unknown_cost_requests": 0
+    },
+    "independent_review": {
+      "calls": 3,
+      "known_input_tokens": 85924,
+      "known_output_tokens": 648,
+      "known_reported_cost_usd": 0.44582,
+      "unknown_charge_calls": 1,
+      "reviews": [
+        {
+          "requested_model": "deepseek/deepseek-v4-pro-0813",
+          "candidate": "3b5dd1da22fdb0c9a6fc45b4deb1fefbc02927c9",
+          "accepted": false,
+          "verdict": null,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "cost": null,
+          "finish_reason": null,
+          "request_bytes": 136581,
+          "final_reason": "No verdict within bounded 360-second review; unknown charge retains reservation."
+        },
+        {
+          "requested_model": "anthropic/claude-opus-4.6",
+          "candidate": "f1e55173b8e71498be2c9a7eb5f254cdef450b1e",
+          "accepted": true,
+          "verdict": "PASS_WITH_NOTES",
+          "prompt_tokens": 45901,
+          "completion_tokens": 369,
+          "cost": 0.23873,
+          "finish_reason": "stop",
+          "request_bytes": 154625,
+          "final_reason": "Complete response accepted under existing validation rules."
+        },
+        {
+          "requested_model": "anthropic/claude-opus-4.6",
+          "candidate": "d009f10400a86ea860e2cd628c4e423a14d38783",
+          "accepted": true,
+          "verdict": "PASS_WITH_NOTES",
+          "prompt_tokens": 40023,
+          "completion_tokens": 279,
+          "cost": 0.20709,
+          "finish_reason": "stop",
+          "request_bytes": 137936,
+          "final_reason": "Complete response accepted under existing validation rules."
+        }
+      ]
+    },
+    "combined_v2_reported_usd": 1.3170561805999998,
+    "unknown_charge_reservations_usd": 0.41110080000000004,
+    "combined_v2_charged_or_reserved_usd": 1.7281569806,
+    "previous_recovery_and_reviews_usd": 1.655694474,
+    "cumulative_reported_recovery_cost_usd": 2.9727506546,
+    "cumulative_charged_or_reserved_usd": 3.3838514546,
+    "approved_shared_ceiling_usd": 10,
+    "remaining_after_reservations_usd": 6.6161485454,
+    "original_batch2_inference_separately_reported_usd": 0.715272136,
+    "all_three_executions_and_recovery_reviews_known_usd": 3.6880227906,
+    "unknown_requests": [
+      {
+        "request": "review:deepseek-1",
+        "kind": "engineering_review",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "reserve_usd": 0.41110080000000004,
+        "charged_or_reserved_usd": 0.41110080000000004,
+        "reported_cost_usd": null,
+        "state": "unknown_charge_reserved",
+        "verdict": null,
+        "candidate": "3b5dd1da22fdb0c9a6fc45b4deb1fefbc02927c9"
+      }
+    ],
+    "note": "Reservations are conservative ceilings for unknown charges, not reported spending; missing usage is not zero. Original Batch-2 inference is outside the established recovery-only budget ledger and shown separately."
+  },
+  "validation": {
+    "checks": [
+      "unit",
+      "agent_memory-evaluate-relevance",
+      "agent_memory-evaluate-quality",
+      "agent_memory-evaluate-discovery",
+      "agent_memory-validate-idempotency",
+      "agent_memory-build-site",
+      "deep_research-evaluate-relevance",
+      "deep_research-evaluate-quality",
+      "deep_research-evaluate-discovery",
+      "deep_research-validate-idempotency",
+      "deep_research-build-site",
+      "engram-evaluate-relevance",
+      "engram-evaluate-quality",
+      "engram-evaluate-discovery",
+      "engram-validate-idempotency",
+      "engram-build-site",
+      "site",
+      "sizes",
+      "diff"
+    ],
+    "unit_tests": 337,
+    "snapshot_restore": "PASS",
+    "legacy_restore": "PASS",
+    "database_hashes": {
+      "data/paper_scout.sqlite3": "4c3fded23b035eba3fec2ffc4dae2c07f0b8201d75e998b40be711a091f5923c",
+      "data/deep_research/paper_scout.sqlite3": "0c64262572f0b2f06d3af5bc466f54fc230d352fda926a4697ff0e82ddcbdce9",
+      "data/engram/paper_scout.sqlite3": "234d158060928488778fe5f9f021c9e52a04eb5f013f7a37c9a9c0767a89b519"
+    },
+    "snapshot_sha256": "bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b44aaee65fde7",
+    "frozen_evaluator_and_configuration_unchanged": true,
+    "reconciliation_followup_checks": [
+      "agent_memory-build-site",
+      "deep_research-build-site",
+      "engram-build-site",
+      "site",
+      "sizes",
+      "diff"
+    ],
+    "combined_history_rows": 628,
+    "note": "Full 337-test and evaluation suite passed before append-only external-state reconciliation; unchanged evaluator then passed rebuilt site checks and repeated snapshot/legacy checks."
+  },
+  "history_integrity": {
+    "original_28_unchanged": true,
+    "prior_rows_preserved": 598,
+    "histories": {
+      "agent_memory": {
+        "prior_rows_preserved": 313,
+        "new_rows": 10
+      },
+      "deep_research": {
+        "prior_rows_preserved": 238,
+        "new_rows": 10
+      },
+      "engram": {
+        "prior_rows_preserved": 47,
+        "new_rows": 0
+      }
+    },
+    "all_non_roster_current_decisions_unchanged": true,
+    "other_tables_unchanged": true,
+    "calibration_overlap": 0,
+    "prior_assessment_overlap": 20,
+    "manual_result_corrections": 0
+  },
+  "history_compatibility": {
+    "historical_assessment_rows_read": 628,
+    "accepted_source_blocks_with_explicit_roles_checked": 397,
+    "artifact_source_blocks": 10,
+    "new_hard_exclusions_of_historically_accepted_sources": 0,
+    "legacy_rows_unmodified": true
+  },
+  "public_card_audit": {
+    "batch2_cards": [
+      {
+        "canonical_id": "doi:10.5281/zenodo.22671447",
+        "track": "agent_memory",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/papers/mbm-0-memory-birth-metrics-v0-6173b79a.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08472",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/beyond-agent-harnesses-cross-substrate-authority-for-multi-agent-systems-eb3be139.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08558",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/personalizing-llm-agent-memory-using-biometrics-0729931b.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08273",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/memforest-efficient-agent-memory-management-via-eventtree-partitioning-and-progressi-1ccca021.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08279",
+        "track": "agent_memory",
+        "outcome": "model_protocol_failure",
+        "card_path": "docs/papers/what-eviction-destroys-a-restore-counterfactual-audit-of-forgetting-in-agent-memory-2bb4c7e1.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08832",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/closing-the-consistency-gap-self-evolving-agents-that-learn-to-stay-on-course-0db8679f.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08550",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/creamem-a-scene-aware-memory-architecture-for-personalized-agents-b41a150f.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08599",
+        "track": "agent_memory",
+        "outcome": "text_coverage_failure",
+        "card_path": "docs/papers/graph-based-personalized-memory-for-llm-agents-representation-evolution-retrieval-an-68b0fd87.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.09115",
+        "track": "agent_memory",
+        "outcome": "model_protocol_failure",
+        "card_path": "docs/papers/meclear-cooperative-game-theoretic-attribution-and-risk-aware-memory-clearance-for-l-d338c80c.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.08258",
+        "track": "agent_memory",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/papers/revoked-but-still-authoritative-an-empirical-study-of-revocation-enforcement-in-agen-a34dde4e.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.65649/ukh4n33x",
+        "track": "deep_research",
+        "outcome": "model_protocol_failure",
+        "card_path": "docs/deep-research/papers/a-new-paradigm-agentic-ai-for-scientific-discovery-93f54fc3.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.64898/2026.07.30.26359375",
+        "track": "deep_research",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/deep-research/papers/a-prisma-aligned-agentic-framework-for-medical-systematic-reviews-and-evidence-synth-58121bec.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.6082/gep96-ycs43",
+        "track": "deep_research",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/deep-research/papers/towards-reliable-ai-scientists-0fbfa2f6.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.65890/race.v2i2.204",
+        "track": "deep_research",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/deep-research/papers/deep-research-agent-an-ai-powered-system-for-automated-research-paper-analysis-and-c-3dbe41de.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.21577092",
+        "track": "deep_research",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/deep-research/papers/when-the-instrument-studies-itself-a-systematic-map-of-autonomous-ai-research-system-b433242d.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.21523008",
+        "track": "deep_research",
+        "outcome": "manuscript_unavailable",
+        "card_path": "docs/deep-research/papers/autoresearch-a-multi-agent-ai-system-for-automated-literature-review-paper-summariza-1a31e108.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "openalex:W7171268496",
+        "track": "deep_research",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/deep-research/papers/benchmarking-agents-for-proving-theorems-in-quantum-algorithms-and-quantum-informati-40e5dee1.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "openalex:W7171268620",
+        "track": "deep_research",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/deep-research/papers/is-deep-research-reliable-misleading-knowledge-induces-false-conclusions-bca45ce7.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2607.20872",
+        "track": "deep_research",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/deep-research/papers/legalcitetrust-benchmarking-citation-trustworthiness-in-chinese-long-form-legal-rese-8ff075eb.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      },
+      {
+        "canonical_id": "openalex:W7171268386",
+        "track": "deep_research",
+        "outcome": "scientific_uncertainty",
+        "card_path": "docs/deep-research/papers/arex-towards-a-recursively-self-improving-agent-for-deep-research-55755800.json",
+        "library_admission": "review",
+        "visible_in_expected_interface": true,
+        "stored_rows": 1
+      }
+    ],
+    "calibration_cards": [
+      {
+        "canonical_id": "doi:10.1007/s44206-026-00290-2",
+        "track": "agent_memory",
+        "card_path": "docs/papers/as-if-agents-misrecognition-and-the-ethics-of-non-agentive-ai-de458263.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22750153",
+        "track": "agent_memory",
+        "card_path": "docs/papers/the-intransitability-of-hybrid-agents-operational-memory-drift-gradients-and-the-lim-308c9028.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.12320",
+        "track": "agent_memory",
+        "card_path": "docs/papers/aim-a-privacy-aware-interoperable-memory-framework-for-multi-agent-multi-user-llm-sy-bfc688de.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22661593",
+        "track": "agent_memory",
+        "card_path": "docs/papers/human-supervision-as-attractor-stabilization-indirect-prompt-injection-longitudinal-14c7cfb5.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22699102",
+        "track": "agent_memory",
+        "card_path": "docs/papers/consolidation-without-weights-what-the-complementary-learning-systems-analogy-licens-457631a4.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11060",
+        "track": "agent_memory",
+        "card_path": "docs/papers/grounding-agent-memory-environment-probing-curation-for-enterprise-agents-9ed78cff.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682679",
+        "track": "agent_memory",
+        "card_path": "docs/papers/beyond-agentic-operating-systems-a-governance-centric-architecture-for-persistent-en-dfe5906d.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2609.11225",
+        "track": "agent_memory",
+        "card_path": "docs/papers/harness-robotic-os-a-unified-embodied-agent-runtime-for-closed-loop-quadruped-inspec-295b9fd2.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22685081",
+        "track": "agent_memory",
+        "card_path": "docs/papers/rank-bounded-memory-self-poisoning-and-attribution-laundering-in-llm-agents-997781b1.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.5281/zenodo.22682633",
+        "track": "agent_memory",
+        "card_path": "docs/papers/agentkg-conversational-memory-as-a-knowledge-graph-dc298c20.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.1002/advs.76675",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/closing-the-empirical-loop-autonomous-ai-agents-conduct-end-to-end-research-with-hum-2b98fcc2.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/sci-mmr-benchmarking-multi-step-evidence-grounded-scientific-reasoning-in-multimodal-d488718b.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.11318",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/mr-lhdr-a-benchmark-for-multimodal-real-world-long-horizon-deep-research-agents-2f827eeb.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.10922",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/auto-recsys-harnessing-autonomous-research-agents-for-industry-scale-recommender-sys-7b7ede0f.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.6082/mgmw1-gw451",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/ai-scientists-need-a-theory-of-scientific-value-51aa98b1.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07611",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/agentideabench-benchmarking-scientific-ideation-in-the-agent-era-802c09ca.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.07655",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/online-surrogate-repair-decoupling-high-fidelity-feedback-from-search-length-in-clos-93ed0a54.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/real-science-is-harder-than-benchmarks-evaluating-advanced-ai-frameworks-on-publishe-aa527b46.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.17605/osf.io/qm2c3",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/do-ai-scientists-results-replicate-pre-registration-of-a-multi-seed-re-execution-stu-6cfce9e9.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+        "track": "deep_research",
+        "card_path": "docs/deep-research/papers/generative-artificial-intelligence-for-nanomaterial-discovery-and-nanoengineering-fr-115b9b96.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2609.04793",
+        "track": "engram",
+        "card_path": "docs/engram/papers/protlingo-efficient-protein-language-modeling-via-conditional-memory-and-expert-rout-c8478276.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2609.03426",
+        "track": "engram",
+        "card_path": "docs/engram/papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2608.29327",
+        "track": "engram",
+        "card_path": "docs/engram/papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2608.23982",
+        "track": "engram",
+        "card_path": "docs/engram/papers/memory-is-not-always-needed-characterizing-conditional-memory-in-scientific-reasonin-221afc67.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "doi:10.48550/arxiv.2608.17050",
+        "track": "engram",
+        "card_path": "docs/engram/papers/cross-model-memory-transfer-via-target-side-reader-adaptation-4f7a8c48.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "openalex:W7172473936",
+        "track": "engram",
+        "card_path": "docs/engram/papers/tokenizer-agnostic-engram-module-99f22b6f.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2605.20948",
+        "track": "engram",
+        "card_path": "docs/engram/papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.json",
+        "unchanged": true
+      },
+      {
+        "canonical_id": "arxiv:2601.07372",
+        "track": "engram",
+        "card_path": "docs/engram/papers/conditional-memory-via-scalable-lookup-a-new-axis-of-sparsity-for-large-language-mod-800bec78.json",
+        "unchanged": true
+      }
+    ],
+    "library_counts": {
+      "agent_memory": 4,
+      "deep_research": 5,
+      "engram": 6
+    },
+    "visibility_limitations": [],
+    "manual_card_edits": 0,
+    "pages_deployment_required": true
+  },
+  "publication": {
+    "runtime_snapshot_sha256": "bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b44aaee65fde7",
+    "runtime_release_verified": true,
+    "pages_deployment": null,
+    "public_files_verified": false
+  },
+  "operator_artifacts": "data/cache/operator/batch-2-recovery-v2-20260917/",
+  "manual_corrections": 0,
+  "runtime_reconciliation": {
+    "scheduled_workflow": "https://github.com/vernerisirva/agentmempaper/actions/runs/35217328457",
+    "scheduled_commit": "86f04aef021343da4b4ae71246ad6039819bbb13",
+    "scheduled_snapshot_sha256": "f65ba27be1d7b7818efa6c248163368f713be08cc33bfab895a5db7e3cc4fe68",
+    "counts": {
+      "agent_memory": {
+        "historical_baseline": 313,
+        "concurrent_rows": 5,
+        "v2_rows": 10,
+        "combined": 328
+      },
+      "deep_research": {
+        "historical_baseline": 238,
+        "concurrent_rows": 4,
+        "v2_rows": 10,
+        "combined": 252
+      },
+      "engram": {
+        "historical_baseline": 47,
+        "concurrent_rows": 1,
+        "v2_rows": 0,
+        "combined": 48
+      }
+    },
+    "id_mapping": [
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.5281/zenodo.22671447",
+        "frozen_local_id": 316,
+        "published_id": 321,
+        "payload_sha256": "dbbb1dec692d8e4c45496032e2278fc10fb9c407cc5290356acca867c807fbe3"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08472",
+        "frozen_local_id": 317,
+        "published_id": 322,
+        "payload_sha256": "71d3a2d21a796a4916747c678ec3f9e58a188ae6733f70b1f63975aaf97c5c7c"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08558",
+        "frozen_local_id": 318,
+        "published_id": 323,
+        "payload_sha256": "c7d3650555f7c902d1eb4a8a6569ca88df481621298a36cac8a2a6c0f781830d"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08273",
+        "frozen_local_id": 319,
+        "published_id": 324,
+        "payload_sha256": "0f4426b0ec107e2c2facaf79623ce5ac10fd416dd474713d5adb548d5e6c9bd0"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08279",
+        "frozen_local_id": 320,
+        "published_id": 325,
+        "payload_sha256": "790edd171bae68f015b134b8590df82d8d78dbff0b35c32aea1dbc132344e5da"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08832",
+        "frozen_local_id": 321,
+        "published_id": 326,
+        "payload_sha256": "aad03adc888f2f99c78a2705b5a6b887d4f5f91eeb145912bad35fae3257b46c"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08550",
+        "frozen_local_id": 322,
+        "published_id": 327,
+        "payload_sha256": "854af1e2d9cf9b9ca908d0ffe705f8e829388819c8f14f8039b89bedef376871"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08599",
+        "frozen_local_id": 323,
+        "published_id": 328,
+        "payload_sha256": "893f62f88ccedd1a3e920ee2ea33799b81074ac12ee5a8c909b5059455e0f4bc"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.09115",
+        "frozen_local_id": 324,
+        "published_id": 329,
+        "payload_sha256": "8b7b543dbc8f3fb7857d11cb09b344e5518dd53a967f3181ca65f58d8c925974"
+      },
+      {
+        "track": "agent_memory",
+        "canonical_id": "doi:10.48550/arxiv.2609.08258",
+        "frozen_local_id": 325,
+        "published_id": 330,
+        "payload_sha256": "b669feb00c2dbadcb6de9b2ac1a0ee3b4c77037e6d562c411cea45199e2eee9a"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.65649/ukh4n33x",
+        "frozen_local_id": 279,
+        "published_id": 284,
+        "payload_sha256": "58fd2c843926c75a73638099b7e3945481bdb8f78d7cbdd3f690d79a1df59fc8"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.64898/2026.07.30.26359375",
+        "frozen_local_id": 280,
+        "published_id": 285,
+        "payload_sha256": "6d2014f78cd94e0ff2468b3473d7255567caa0fe7dad4d727c9ed97cbeb127cf"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.6082/gep96-ycs43",
+        "frozen_local_id": 281,
+        "published_id": 286,
+        "payload_sha256": "9561f01b343425be62db0bd65b49a134ae5fc1170be52132952fbf53eac4127d"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.65890/race.v2i2.204",
+        "frozen_local_id": 282,
+        "published_id": 287,
+        "payload_sha256": "75c7f0ebc91f7fceb4af4bed5aee5fa317df6ad86b34739ec9ce5a85c2c6af22"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.5281/zenodo.21577092",
+        "frozen_local_id": 283,
+        "published_id": 288,
+        "payload_sha256": "96a118b2975a319405f4e6e37b90adb662208a7bd69bf33c3861d0a45ab38a34"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.5281/zenodo.21523008",
+        "frozen_local_id": 284,
+        "published_id": 289,
+        "payload_sha256": "48cd2b5e6ac56113d2bdaaa689985415a2095957690f4adae02f6500d9da68d4"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "openalex:W7171268496",
+        "frozen_local_id": 285,
+        "published_id": 290,
+        "payload_sha256": "52c225d013ed68bdc6a800f7bb280ed994a77ae15c6e2083d3760689d82c7d27"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "openalex:W7171268620",
+        "frozen_local_id": 286,
+        "published_id": 291,
+        "payload_sha256": "4cd338ee094ba901e7724ff178f55b26a13fcb600bfbe0fe1e5b9a6c5cffa0c0"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "doi:10.48550/arxiv.2607.20872",
+        "frozen_local_id": 287,
+        "published_id": 292,
+        "payload_sha256": "f6b645de72ef55f78f8340106cc66e2e7734cc4be0db21db2ac45ea46d451465"
+      },
+      {
+        "track": "deep_research",
+        "canonical_id": "openalex:W7171268386",
+        "frozen_local_id": 288,
+        "published_id": 293,
+        "payload_sha256": "7beea08c33c130eeb6e1979a9efe45839c6a532277b76691a9f27151526f96e9"
+      }
+    ],
+    "all_concurrent_rows_preserved": true,
+    "all_frozen_v2_payloads_exact": true,
+    "all_baseline_rows_preserved": true,
+    "other_remote_tables_unchanged": {
+      "agent_memory": [
+        "papers",
+        "sightings",
+        "runs",
+        "notifications",
+        "failed_queries",
+        "quality_suppressions"
+      ],
+      "deep_research": [
+        "papers",
+        "sightings",
+        "runs",
+        "notifications",
+        "failed_queries",
+        "quality_suppressions"
+      ],
+      "engram": [
+        "papers",
+        "sightings",
+        "runs",
+        "notifications",
+        "failed_queries",
+        "quality_suppressions"
+      ]
+    },
+    "manual_scientific_corrections": 0,
+    "batch3_started": false,
+    "note": "Append-only reconciliation; local experiment row IDs remapped around concurrent row IDs, without changing any payload or source. Scheduled discoveries are not part of the frozen recovery roster."
+  }
+}

@@ -44,7 +44,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:16",
-    "generated_at": "2026-09-17 11:48:15",
+    "generated_at": "2026-09-17 12:30:45",
     "last_seen_at": "2026-09-15 11:59:45",
     "metadata_sources": [
       "openalex",
@@ -116,15 +116,15 @@
   "scholarly_quality": {
     "applied_score_cap": 49,
     "applied_score_cap_reason": "No meaningful evaluation or suitable comparison was detected for the central systems/method claim.",
-    "assessed_at": "2026-09-17T10:17:56+00:00",
+    "assessed_at": "2026-09-17T11:50:19+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
     "concerns": [],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "confidence": "medium",
+    "concise_summary": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
+    "confidence": "high",
     "coverage": {
       "assessment_input_characters": 24085,
       "assessment_input_sha256": "7917aa5f3e18e0b26165861850255c50ae221dd5bd13934d3685db123a35f282",
@@ -337,7 +337,7 @@
     "dimension_scores": {
       "contribution_clarity": 5,
       "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 5,
+      "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
@@ -350,60 +350,39 @@
       {
         "claim_role": "contribution",
         "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
-        "dimension": "scholarly_novelty_or_value",
+        "dimension": "contribution_clarity",
         "evidence_ids": [
-          "E9425c5aacc2c1e14-B0030",
-          "E9425c5aacc2c1e14-B0031"
+          "E9425c5aacc2c1e14-B0002"
         ],
-        "excerpt": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves \n[\u2026 separate evidence block \u2026]\nauthority-blind\nobservational equivalence against workspace-visible Git evidence and identity-bound commit controls,\n(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same\nmodel intent.\nShared-workspace systems address a neighboring concurrency problem. STORM rejects stale\nwrites using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation\nwith notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes\nsucceed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O\nand PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];\nin-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions\nin a durable shared log before execution and supports voters and recovery [1]. These",
-        "explanation": "The related-work section explicitly distinguishes the contribution from memory governance systems (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph) and shared-workspace concurrency systems (STORM, CoAgent). The paired-world construction excludes the stale-write race that neighboring systems address, isolating actor-attempt-scope publication authority as the novel axis.",
-        "page": 7,
+        "excerpt": "Agentic systems persist model-visible memory while mutating workspaces, while a runtime,\nregistry, or approval service may hold authority state outside both. Identical final files can\nthen require opposite safe actions. We call this thecross-substrate authority gap: decision-\nrelevant authorization information resides outside the planner-visible workspace or memory state.\nAcross two controlled mini-benchmark families, three experiments compare planner-observation\naugmentation with an execution-time authority check using real Git lineage, durably recorded\nagent execution attempts, deterministic oracles, and two model routes. Experiment 1 is a 128-cell\ncontrolled evidence ablation: authority-blind candidate evidence obtains 0/32 final semantic\nsuccess, while raw receipts and a typed relation both obtain 32/32. The missing authority\nfact accounts for the gain; typed packaging provides no",
+        "explanation": "The abstract explicitly defines the cross-substrate authority gap as authorization information residing outside planner-visible workspace or memory state, with identical final files requiring opposite safe actions. This is a high-level attributed contribution/scope source claim, for which abstract evidence is permitted.",
+        "page": 1,
         "pages": [
-          7
+          1
         ],
-        "paraphrase": "The paper's novelty lies in proving authority-blind observational equivalence against workspace-visible Git evidence and identity-bound commit controls, decomposing raw facts from typed packaging, and evaluating enforcement on the exact same model intent.",
-        "section": "Related Work And Novelty Boundary",
+        "paraphrase": "The paper introduces the cross-substrate authority gap: decision-relevant authorization information resides outside the planner-visible workspace or memory state, so identical final files can require opposite safe actions.",
+        "section": "Abstract",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "9dfcc5bd7ae77ce2e064e559502dab08d8852a7d3960d2b1efb1a23a82085c21",
-            "evidence_id": "E9425c5aacc2c1e14-B0030",
+            "content_hash": "612dbf1a43669e97e9f34097e2d4ce177f7e0f9b9d764d2efce0bd4fdf517a2a",
+            "evidence_id": "E9425c5aacc2c1e14-B0002",
             "pages": [
-              7
+              1
             ],
-            "section": "Related Work And Novelty Boundary",
-            "section_role": "related",
+            "section": "Abstract",
+            "section_role": "abstract",
             "source_spans": [
               {
-                "end": 892,
-                "page": 7,
-                "section": "Related Work And Novelty Boundary",
-                "section_index": 23,
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
                 "start": 0,
-                "text": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves "
+                "text": "Agentic systems persist model-visible memory while mutating workspaces, while a runtime,\nregistry, or approval service may hold authority state outside both. Identical final files can\nthen require opposite safe actions. We call this thecross-substrate authority gap: decision-\nrelevant authorization information resides outside the planner-visible workspace or memory state.\nAcross two controlled mini-benchmark families, three experiments compare planner-observation\naugmentation with an execution-time authority check using real Git lineage, durably recorded\nagent execution attempts, deterministic oracles, and two model routes. Experiment 1 is a 128-cell\ncontrolled evidence ablation: authority-blind candidate evidence obtains 0/32 final semantic\nsuccess, while raw receipts and a typed relation both obtain 32/32. The missing authority\nfact accounts for the gain; typed packaging provides no "
               }
             ],
-            "text": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves "
-          },
-          {
-            "content_hash": "c84cd405bc4aaa66030ab18c12072e7b4510acf939f7c560cdd676d3dd0c292d",
-            "evidence_id": "E9425c5aacc2c1e14-B0031",
-            "pages": [
-              7
-            ],
-            "section": "Related Work And Novelty Boundary",
-            "section_role": "related",
-            "source_spans": [
-              {
-                "end": 1787,
-                "page": 7,
-                "section": "Related Work And Novelty Boundary",
-                "section_index": 23,
-                "start": 892,
-                "text": "authority-blind\nobservational equivalence against workspace-visible Git evidence and identity-bound commit controls,\n(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same\nmodel intent.\nShared-workspace systems address a neighboring concurrency problem. STORM rejects stale\nwrites using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation\nwith notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes\nsucceed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O\nand PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];\nin-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions\nin a durable shared log before execution and supports voters and recovery [1]. These "
-              }
-            ],
-            "text": "authority-blind\nobservational equivalence against workspace-visible Git evidence and identity-bound commit controls,\n(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same\nmodel intent.\nShared-workspace systems address a neighboring concurrency problem. STORM rejects stale\nwrites using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation\nwith notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes\nsucceed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O\nand PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];\nin-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions\nin a durable shared log before execution and supports voters and recovery [1]. These "
+            "text": "Agentic systems persist model-visible memory while mutating workspaces, while a runtime,\nregistry, or approval service may hold authority state outside both. Identical final files can\nthen require opposite safe actions. We call this thecross-substrate authority gap: decision-\nrelevant authorization information resides outside the planner-visible workspace or memory state.\nAcross two controlled mini-benchmark families, three experiments compare planner-observation\naugmentation with an execution-time authority check using real Git lineage, durably recorded\nagent execution attempts, deterministic oracles, and two model routes. Experiment 1 is a 128-cell\ncontrolled evidence ablation: authority-blind candidate evidence obtains 0/32 final semantic\nsuccess, while raw receipts and a typed relation both obtain 32/32. The missing authority\nfact accounts for the gain; typed packaging provides no "
           }
         ],
         "statement_kind": "source_claim",
@@ -411,14 +390,313 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The sources name the memory governance and shared-workspace systems and state that the paired worlds exclude the stale-write race, isolating actor-attempt-scope publication authority.",
+          "explanation_reason": "The abstract explicitly defines the cross-substrate authority gap as claimed, and the assessor inference accurately characterizes this as a high-level attributed contribution/scope claim supported by abstract evidence.",
           "explanation_status": "supported",
-          "item_id": "evidence-2",
+          "item_id": "evidence-0",
           "primary_evidence_ids": [
-            "E9425c5aacc2c1e14-B0030",
-            "E9425c5aacc2c1e14-B0031"
+            "E9425c5aacc2c1e14-B0002"
           ],
-          "reason": "The related-work section explicitly states the contribution proves authority-blind observational equivalence, decomposes raw facts from typed packaging, and evaluates enforcement on the exact same model intent.",
+          "reason": "The abstract text directly states the definition of the cross-substrate authority gap, including that authorization information resides outside planner-visible workspace or memory state and that identical final files can require opposite safe actions.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9425c5aacc2c1e14-B0007",
+          "E9425c5aacc2c1e14-B0008",
+          "E9425c5aacc2c1e14-B0009"
+        ],
+        "excerpt": "observation-aliasing condition under which an authority-blind planner cannot be both safe\nand useful across paired worlds.\n[\u2026 separate evidence block \u2026]\nuse authorization state, together with a trust boundary that distinguishes provenance capture,\nplanner exposure, and execution-time enforcement.\n[\u2026 separate evidence block \u2026]\nand GPT-5.4 variants. They show, respectively, that raw receipts explain authority resolution,\nplanning remains unreliable under shared-workspace ambiguity, and a matched-intent execution\nguard blocks all fixed unsafe intents while permitting every valid authorized intent.",
+        "explanation": "The body contribution list states the observation-aliasing condition, the typed relation with trust boundary, and the three audited experiments. These blocks jointly establish the paper's central contributions with clear scope.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The paper contributes a formalization of authority-blind observational equivalence, a typed decision relation, and a three-experiment decomposition separating raw authority facts from typed packaging and planning exposure from execution-time enforcement.",
+        "section": "We Formalize Cross-Substrate Authority As Hidden State That Matters To Decisions And Show An / We Specify A Typed Relation Linking An Agent Execution Attempt, Its Artifact, And Its Downstream- / We Execute Three Audited Experiments Across Two Benchmark Families And Deepseek V4 Flash",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "06d6b80a459d4f90f501340727c90318794678e451ed6c0dc9197da186a8feed",
+            "evidence_id": "E9425c5aacc2c1e14-B0007",
+            "pages": [
+              2
+            ],
+            "section": "We Formalize Cross-Substrate Authority As Hidden State That Matters To Decisions And Show An",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 122,
+                "page": 2,
+                "section": "We Formalize Cross-Substrate Authority As Hidden State That Matters To Decisions And Show An",
+                "section_index": 4,
+                "start": 0,
+                "text": "observation-aliasing condition under which an authority-blind planner cannot be both safe\nand useful across paired worlds."
+              }
+            ],
+            "text": "observation-aliasing condition under which an authority-blind planner cannot be both safe\nand useful across paired worlds."
+          },
+          {
+            "content_hash": "a41a413fb4d3259b9d5df8bba82028ddb0bcaaa083780ba037cfd0e93c7b33a5",
+            "evidence_id": "E9425c5aacc2c1e14-B0008",
+            "pages": [
+              2
+            ],
+            "section": "We Specify A Typed Relation Linking An Agent Execution Attempt, Its Artifact, And Its Downstream-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 144,
+                "page": 2,
+                "section": "We Specify A Typed Relation Linking An Agent Execution Attempt, Its Artifact, And Its Downstream-",
+                "section_index": 5,
+                "start": 0,
+                "text": "use authorization state, together with a trust boundary that distinguishes provenance capture,\nplanner exposure, and execution-time enforcement."
+              }
+            ],
+            "text": "use authorization state, together with a trust boundary that distinguishes provenance capture,\nplanner exposure, and execution-time enforcement."
+          },
+          {
+            "content_hash": "676dd960b13259fcb456afeea6046101de8163a8fd76bee41f6d20f51f0dbcc1",
+            "evidence_id": "E9425c5aacc2c1e14-B0009",
+            "pages": [
+              2
+            ],
+            "section": "We Execute Three Audited Experiments Across Two Benchmark Families And Deepseek V4 Flash",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 273,
+                "page": 2,
+                "section": "We Execute Three Audited Experiments Across Two Benchmark Families And Deepseek V4 Flash",
+                "section_index": 6,
+                "start": 0,
+                "text": "and GPT-5.4 variants. They show, respectively, that raw receipts explain authority resolution,\nplanning remains unreliable under shared-workspace ambiguity, and a matched-intent execution\nguard blocks all fixed unsafe intents while permitting every valid authorized intent."
+              }
+            ],
+            "text": "and GPT-5.4 variants. They show, respectively, that raw receipts explain authority resolution,\nplanning remains unreliable under shared-workspace ambiguity, and a matched-intent execution\nguard blocks all fixed unsafe intents while permitting every valid authorized intent."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited blocks jointly state the observation-aliasing condition, the typed relation with trust boundary, and the three audited experiments, supporting the inference that these establish the paper's central contributions with clear scope.",
+          "explanation_status": "supported",
+          "item_id": "evidence-1",
+          "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0007",
+            "E9425c5aacc2c1e14-B0008",
+            "E9425c5aacc2c1e14-B0009"
+          ],
+          "reason": "The cited sources explicitly state the observation-aliasing condition, the typed relation with trust boundary, and the three audited experiments, matching the claimed contributions.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E9425c5aacc2c1e14-B0017"
+        ],
+        "excerpt": "Across two benchmark families, all three experiments use held-out semantic templates, real Git\nrepositories, durably recorded DeepSeek Harness (DSH) source/target attempts, a Workflow Test\nBench (WTB) lifecycle, structured actions, and deterministic executors/oracles. Model outputs are\nscored by deterministic oracles. Unknown or invalid outputs remain failures under fixed intention-\nto-treat (ITT) denominators. Input plans and evidence closures were frozen before provider calls,\nreconstructed under two physical roots, and checked by independent read-only auditors.",
+        "explanation": "The experimental design section describes held-out templates, real Git lineage, durable attempt receipts, deterministic scoring, frozen inputs, and independent audits. These controls address internal validity and reproducibility of the controlled benchmark.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "The experimental design uses held-out semantic templates, real Git repositories, durably recorded execution attempts, deterministic oracles, frozen input plans, and independent read-only audits across all three experiments.",
+        "section": "Experimental Design",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1117732aa869fa7ae68b051b30883974570f0a2fd1ca6b37b823ac5104f1304f",
+            "evidence_id": "E9425c5aacc2c1e14-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Experimental Design",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 570,
+                "page": 4,
+                "section": "Experimental Design",
+                "section_index": 13,
+                "start": 0,
+                "text": "Across two benchmark families, all three experiments use held-out semantic templates, real Git\nrepositories, durably recorded DeepSeek Harness (DSH) source/target attempts, a Workflow Test\nBench (WTB) lifecycle, structured actions, and deterministic executors/oracles. Model outputs are\nscored by deterministic oracles. Unknown or invalid outputs remain failures under fixed intention-\nto-treat (ITT) denominators. Input plans and evidence closures were frozen before provider calls,\nreconstructed under two physical roots, and checked by independent read-only auditors."
+              }
+            ],
+            "text": "Across two benchmark families, all three experiments use held-out semantic templates, real Git\nrepositories, durably recorded DeepSeek Harness (DSH) source/target attempts, a Workflow Test\nBench (WTB) lifecycle, structured actions, and deterministic executors/oracles. Model outputs are\nscored by deterministic oracles. Unknown or invalid outputs remain failures under fixed intention-\nto-treat (ITT) denominators. Input plans and evidence closures were frozen before provider calls,\nreconstructed under two physical roots, and checked by independent read-only auditors."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly describes the controls and their role in internal validity and reproducibility, so the inference follows conservatively from the source.",
+          "explanation_status": "supported",
+          "item_id": "evidence-3",
+          "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0017"
+          ],
+          "reason": "The cited text explicitly states all listed controls\u2014held-out semantic templates, real Git repositories, durably recorded attempts, deterministic oracles, frozen input plans, and independent read-only audits\u2014across all three experiments.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E9425c5aacc2c1e14-B0021",
+          "E9425c5aacc2c1e14-B0022"
+        ],
+        "excerpt": "ordinary shared-worktree Git and visible memory,\nR0 adds canonical raw actor/material receipts, and W0 adds the independently validated typed\nrelation. FirstActionCorrect is scored over all 32 cells per arm; UnsafePublishRate uses only 16\ncrossed cells; UnnecessaryBlockRate uses only 16 aligned cells.\nExperiment 3: Can an execution guard stop fixed unsafe intents?Experiment 3 consumes\nthe exact fixed W0 output for all 32 Experiment 2 W0 rows and makes zero new model calls. The\nruntime enforcement operator validates actor/session/attempt/artifact/scope, rechecks the scope\ndigest of the policy-relevant workspace, and records the executed effect or hold. The exact same\nmodel-generated first-action intent enters W0 and W1, while only the execution-time validator\nchanges. This matched-intent design attributes the W0\u2013W1 difference to the operator. Experiment\n3 is causally paired with \n[\u2026 separate evidence block \u2026]\nExperiment 2. It reuses the 32 Experiment 2 first-action intents and adds\n32 paired execution outcomes; the planning denominator remains 96.",
+        "explanation": "The matched-intent design freezes model outputs and changes only the execution-time validator, enabling attribution of the W0-W1 difference to the operator. This is a strong causal control for the enforcement mechanism.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "The matched-intent design in Experiment 3 isolates the execution guard's causal effect by replaying the exact same 32 model-generated first-action intents with zero additional model calls.",
+        "section": "Experiment 2: Can The Current Artifact Be Safely Published?",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "91d97d7f4d775dbb3a0ffa57fc1829ac7305a4af9f9093ab6496f0bb0983b6ec",
+            "evidence_id": "E9425c5aacc2c1e14-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Experiment 2: Can The Current Artifact Be Safely Published?",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1361,
+                "page": 5,
+                "section": "Experiment 2: Can The Current Artifact Be Safely Published?",
+                "section_index": 16,
+                "start": 470,
+                "text": "ordinary shared-worktree Git and visible memory,\nR0 adds canonical raw actor/material receipts, and W0 adds the independently validated typed\nrelation. FirstActionCorrect is scored over all 32 cells per arm; UnsafePublishRate uses only 16\ncrossed cells; UnnecessaryBlockRate uses only 16 aligned cells.\nExperiment 3: Can an execution guard stop fixed unsafe intents?Experiment 3 consumes\nthe exact fixed W0 output for all 32 Experiment 2 W0 rows and makes zero new model calls. The\nruntime enforcement operator validates actor/session/attempt/artifact/scope, rechecks the scope\ndigest of the policy-relevant workspace, and records the executed effect or hold. The exact same\nmodel-generated first-action intent enters W0 and W1, while only the execution-time validator\nchanges. This matched-intent design attributes the W0\u2013W1 difference to the operator. Experiment\n3 is causally paired with "
+              }
+            ],
+            "text": "ordinary shared-worktree Git and visible memory,\nR0 adds canonical raw actor/material receipts, and W0 adds the independently validated typed\nrelation. FirstActionCorrect is scored over all 32 cells per arm; UnsafePublishRate uses only 16\ncrossed cells; UnnecessaryBlockRate uses only 16 aligned cells.\nExperiment 3: Can an execution guard stop fixed unsafe intents?Experiment 3 consumes\nthe exact fixed W0 output for all 32 Experiment 2 W0 rows and makes zero new model calls. The\nruntime enforcement operator validates actor/session/attempt/artifact/scope, rechecks the scope\ndigest of the policy-relevant workspace, and records the executed effect or hold. The exact same\nmodel-generated first-action intent enters W0 and W1, while only the execution-time validator\nchanges. This matched-intent design attributes the W0\u2013W1 difference to the operator. Experiment\n3 is causally paired with "
+          },
+          {
+            "content_hash": "4f79caf43bf62477ee87e44e9d78c5261f76ef7089d725e679548226beaf093e",
+            "evidence_id": "E9425c5aacc2c1e14-B0022",
+            "pages": [
+              5
+            ],
+            "section": "Experiment 2: Can The Current Artifact Be Safely Published?",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1501,
+                "page": 5,
+                "section": "Experiment 2: Can The Current Artifact Be Safely Published?",
+                "section_index": 16,
+                "start": 1361,
+                "text": "Experiment 2. It reuses the 32 Experiment 2 first-action intents and adds\n32 paired execution outcomes; the planning denominator remains 96."
+              }
+            ],
+            "text": "Experiment 2. It reuses the 32 Experiment 2 first-action intents and adds\n32 paired execution outcomes; the planning denominator remains 96."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The source explicitly says the matched-intent design attributes the W0-W1 difference to the operator, and the inference that this is a strong causal control follows conservatively from that stated design.",
+          "explanation_status": "supported",
+          "item_id": "evidence-4",
+          "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0021",
+            "E9425c5aacc2c1e14-B0022"
+          ],
+          "reason": "The cited text states Experiment 3 consumes the exact fixed W0 output for all 32 rows, makes zero new model calls, and the same intent enters W0 and W1 with only the execution-time validator changing.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "evaluation",
+        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E9425c5aacc2c1e14-B0023",
+          "E9425c5aacc2c1e14-B0024"
+        ],
+        "excerpt": "All 128 target cells and 32 source worlds reached exact terminal receipts. The independent audit\nreconstructed 160 terminalDSHreceipts, found no unknown or recovery-required cells, and verified\nGit parity in all 32 strata.\nG0 and C0 block every cell, yielding 0/32 unsafe adoptions and 0/32 final semantic successes.\nAdding raw authority receipts changes final semantic success from 0/32 to 32/32 (R0\u2013C0: 32\nfavorable, 0 unfavorable discordant pairs; exact two-sidedp = 4.66\u00d7 10\u221210). W0 also achieves 32/32,\nbut W0\u2013R0 has no discordant final-semantic pair. The single R0 composite miss is an allowed-file\nreread; its first action, binding, final semantics, workspace preservation, and safety are correct. Both\nmodel routes reproduce the same 0/16 versus 16/16 semantic split.\nR0 and W0 both achieve 32/32 final semantic success. The R0\u2013C0 contrast attributes the gain\nto the external authority fact \n[\u2026 separate evidence block \u2026]\nmissing from the Git and candidate evidence. W0\u2013R0 leaves no\nobserved planning-accuracy gain from typed packaging. The typed relation remains available for\nvalidation, integration, enforcement, recovery, and audit.",
+        "explanation": "The reported fixed-matrix outcomes and exact discordant-pair test quantify the authority fact's causal contribution and the null effect of typed packaging. The numbers, denominators, and comparison direction are all present in the cited blocks.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Experiment 1 shows raw authority receipts change final semantic success from 0/32 to 32/32 (R0-C0: 32 favorable, 0 unfavorable discordant pairs; exact two-sided p = 4.66e-10), while typed packaging adds no observed planning-accuracy gain over raw receipts.",
+        "section": "Experiment 1: Raw Authority Resolves Coding; R0 And W0 Match",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "844fdec443381b31a14c05b7e0f9bd966372f2a542da15f331fa637e3654decb",
+            "evidence_id": "E9425c5aacc2c1e14-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Experiment 1: Raw Authority Resolves Coding; R0 And W0 Match",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Experiment 1: Raw Authority Resolves Coding; R0 And W0 Match",
+                "section_index": 17,
+                "start": 0,
+                "text": "All 128 target cells and 32 source worlds reached exact terminal receipts. The independent audit\nreconstructed 160 terminalDSHreceipts, found no unknown or recovery-required cells, and verified\nGit parity in all 32 strata.\nG0 and C0 block every cell, yielding 0/32 unsafe adoptions and 0/32 final semantic successes.\nAdding raw authority receipts changes final semantic success from 0/32 to 32/32 (R0\u2013C0: 32\nfavorable, 0 unfavorable discordant pairs; exact two-sidedp = 4.66\u00d7 10\u221210). W0 also achieves 32/32,\nbut W0\u2013R0 has no discordant final-semantic pair. The single R0 composite miss is an allowed-file\nreread; its first action, binding, final semantics, workspace preservation, and safety are correct. Both\nmodel routes reproduce the same 0/16 versus 16/16 semantic split.\nR0 and W0 both achieve 32/32 final semantic success. The R0\u2013C0 contrast attributes the gain\nto the external authority fact "
+              }
+            ],
+            "text": "All 128 target cells and 32 source worlds reached exact terminal receipts. The independent audit\nreconstructed 160 terminalDSHreceipts, found no unknown or recovery-required cells, and verified\nGit parity in all 32 strata.\nG0 and C0 block every cell, yielding 0/32 unsafe adoptions and 0/32 final semantic successes.\nAdding raw authority receipts changes final semantic success from 0/32 to 32/32 (R0\u2013C0: 32\nfavorable, 0 unfavorable discordant pairs; exact two-sidedp = 4.66\u00d7 10\u221210). W0 also achieves 32/32,\nbut W0\u2013R0 has no discordant final-semantic pair. The single R0 composite miss is an allowed-file\nreread; its first action, binding, final semantics, workspace preservation, and safety are correct. Both\nmodel routes reproduce the same 0/16 versus 16/16 semantic split.\nR0 and W0 both achieve 32/32 final semantic success. The R0\u2013C0 contrast attributes the gain\nto the external authority fact "
+          },
+          {
+            "content_hash": "560cfcf353ba6adea69275b547379ce88e99b093c27ebd94df950bcca6178981",
+            "evidence_id": "E9425c5aacc2c1e14-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Experiment 1: Raw Authority Resolves Coding; R0 And W0 Match",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1113,
+                "page": 5,
+                "section": "Experiment 1: Raw Authority Resolves Coding; R0 And W0 Match",
+                "section_index": 17,
+                "start": 899,
+                "text": "missing from the Git and candidate evidence. W0\u2013R0 leaves no\nobserved planning-accuracy gain from typed packaging. The typed relation remains available for\nvalidation, integration, enforcement, recovery, and audit."
+              }
+            ],
+            "text": "missing from the Git and candidate evidence. W0\u2013R0 leaves no\nobserved planning-accuracy gain from typed packaging. The typed relation remains available for\nvalidation, integration, enforcement, recovery, and audit."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited blocks contain the fixed-matrix outcomes, denominators, comparison direction, exact discordant-pair test, and the null typed-packaging effect, so the inference follows conservatively.",
+          "explanation_status": "supported",
+          "item_id": "evidence-5",
+          "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0023",
+            "E9425c5aacc2c1e14-B0024"
+          ],
+          "reason": "The cited blocks state 0/32 to 32/32 final semantic success, 32 favorable/0 unfavorable discordant pairs, exact two-sided p = 4.66e-10, and that W0-R0 leaves no observed planning-accuracy gain from typed packaging.",
           "status": "supported"
         }
       },
@@ -430,12 +708,12 @@
           "E9425c5aacc2c1e14-B0026"
         ],
         "excerpt": "W1 replays all 32 W0 rows through the runtime enforcement operator without a provider call. W0\ncontains 6/16 unsafe crossed publication intents; W1 executes 0/16 unsafe publications and leaves\nall 16/16 crossed cases safe. Among aligned cases, W1 permits and executes every valid publish\nintent (12/12) and induces 0/12 denials. Four other aligned rows lack a valid DeepSeek intent. They\ncount against valid-intent availability, while the valid-intent execution denominator remains 12.\nThe crossed comparison has six favorable and zero adverse discordances (exact two-sided finite-\nmatrix p = 0.03125). The paired test characterizes this fixed experimental matrix. Deployment\nprevalence requires a separate sampling design.",
-        "explanation": "Experiment 3 reports W0 contains 6/16 unsafe crossed publication intents, W1 executes 0/16 unsafe publications, and among aligned cases W1 permits and executes 12/12 valid publish intents with 0/12 denials. The crossed comparison has six favorable and zero adverse discordances with exact two-sided finite-matrix p = 0.03125, supporting the enforcement claim on the fixed matrix.",
+        "explanation": "The matched-intent replay results directly validate the enforcement mechanism's safety and availability on the fixed intent set. The paired test and explicit denominators support the causal attribution.",
         "page": 6,
         "pages": [
           6
         ],
-        "paraphrase": "The execution-time guard prevents all six fixed unsafe crossed publication intents from becoming effects while permitting all 12 valid aligned publish intents, with a paired finite-matrix p = 0.03125.",
+        "paraphrase": "Experiment 3's execution guard prevents all six fixed unsafe crossed publication intents from becoming effects (0/16 unsafe publications) and permits all 12 valid authorized publish intents (0/12 denials), with six favorable and zero adverse discordances (exact two-sided p = 0.03125).",
         "section": "Experiment 3: The Matched-Intent Execution Guard Prevents Unsafe Effects",
         "signal_type": "positive",
         "source_blocks": [
@@ -465,76 +743,13 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The source directly reports the 6/16 unsafe intents, 0/16 executed unsafe publications, 12/12 permitted valid intents, and the finite-matrix p-value.",
+          "explanation_reason": "The replay results, explicit denominators, and paired test with p-value in the source directly support validation of safety/availability and causal attribution on the fixed intent set.",
           "explanation_status": "supported",
           "item_id": "evidence-6",
           "primary_evidence_ids": [
             "E9425c5aacc2c1e14-B0026"
           ],
-          "reason": "The source reports W0 contains 6/16 unsafe crossed publication intents, W1 executes 0/16 unsafe publications, permits 12/12 valid aligned publish intents, and gives p = 0.03125.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "result",
-        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [
-          "E9425c5aacc2c1e14-B0025"
-        ],
-        "excerpt": "Experiment2completed96/96terminalplanningcalls. Table3showsthattheproblemisbehaviorally\npresent: GM0 proposes unsafe publication in 12/16 crossed cells. R0 has the highest aggregate\nFirstActionCorrect (19/32). W0 has 11/32 invalid or absent outputs and 15/32 correct first actions.\nNeither evidence treatment is reliable across both model routes.\n5\nTable 3: Experiment 2 planning outcomes with explicit, outcome-specific denominators. Unknowns\nremain ITT failures.\nArm First action Unsafe publish Unnecessary block Unknown\nGM0 14/32 12/16 4/16 2/32\nR0 19/32 9/16 2/16 2/32\nW0 15/32 6/16 0/16 11/32\nThe model split qualifies the aggregate safety rate. DeepSeek's W0 unsafe rate is 0/8 alongside\n7/8 crossed W0 rows with no valid intent. GPT-5.4 Nano parses every W0 row yet proposes unsafe\npublication in 6/8 crossed cases. Typed planning remains unreliable and model-dependent.",
-        "explanation": "Experiment 2's table reports GM0 at 14/32, R0 at 19/32, and W0 at 15/32 first-action correct, with W0 showing 11/32 unknown outputs. The model split further qualifies this: DeepSeek's W0 unsafe rate is 0/8 alongside 7/8 invalid or absent crossed rows, while GPT-5.4 Nano parses every row yet proposes unsafe publication in 6/8 crossed cases. This directly supports the claim that planning exposure alone is insufficient.",
-        "page": 5,
-        "pages": [
-          5,
-          6
-        ],
-        "paraphrase": "Planning-time evidence exposure remains unreliable and model-dependent, with raw receipts achieving 19/32 first-action correct and the typed relation achieving 15/32 with 11/32 invalid or absent outputs.",
-        "section": "Experiment 2: Planning Remains Unreliable",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "91f62696a9099e6f59bbfbff33bb95d353aac384e8d6914642e8533ae6bc1134",
-            "evidence_id": "E9425c5aacc2c1e14-B0025",
-            "pages": [
-              5,
-              6
-            ],
-            "section": "Experiment 2: Planning Remains Unreliable",
-            "section_role": "results",
-            "source_spans": [
-              {
-                "end": 348,
-                "page": 5,
-                "section": "Experiment 2: Planning Remains Unreliable",
-                "section_index": 18,
-                "start": 0,
-                "text": "Experiment2completed96/96terminalplanningcalls. Table3showsthattheproblemisbehaviorally\npresent: GM0 proposes unsafe publication in 12/16 crossed cells. R0 has the highest aggregate\nFirstActionCorrect (19/32). W0 has 11/32 invalid or absent outputs and 15/32 correct first actions.\nNeither evidence treatment is reliable across both model routes.\n5"
-              },
-              {
-                "end": 528,
-                "page": 6,
-                "section": "Experiment 2: Planning Remains Unreliable",
-                "section_index": 19,
-                "start": 0,
-                "text": "Table 3: Experiment 2 planning outcomes with explicit, outcome-specific denominators. Unknowns\nremain ITT failures.\nArm First action Unsafe publish Unnecessary block Unknown\nGM0 14/32 12/16 4/16 2/32\nR0 19/32 9/16 2/16 2/32\nW0 15/32 6/16 0/16 11/32\nThe model split qualifies the aggregate safety rate. DeepSeek's W0 unsafe rate is 0/8 alongside\n7/8 crossed W0 rows with no valid intent. GPT-5.4 Nano parses every W0 row yet proposes unsafe\npublication in 6/8 crossed cases. Typed planning remains unreliable and model-dependent."
-              }
-            ],
-            "text": "Experiment2completed96/96terminalplanningcalls. Table3showsthattheproblemisbehaviorally\npresent: GM0 proposes unsafe publication in 12/16 crossed cells. R0 has the highest aggregate\nFirstActionCorrect (19/32). W0 has 11/32 invalid or absent outputs and 15/32 correct first actions.\nNeither evidence treatment is reliable across both model routes.\n5\nTable 3: Experiment 2 planning outcomes with explicit, outcome-specific denominators. Unknowns\nremain ITT failures.\nArm First action Unsafe publish Unnecessary block Unknown\nGM0 14/32 12/16 4/16 2/32\nR0 19/32 9/16 2/16 2/32\nW0 15/32 6/16 0/16 11/32\nThe model split qualifies the aggregate safety rate. DeepSeek's W0 unsafe rate is 0/8 alongside\n7/8 crossed W0 rows with no valid intent. GPT-5.4 Nano parses every W0 row yet proposes unsafe\npublication in 6/8 crossed cases. Typed planning remains unreliable and model-dependent."
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The sources report the first-action correct rates, W0 unknown outputs, and the model split showing DeepSeek and GPT-5.4 Nano behavior, supporting the claim that planning exposure alone is insufficient.",
-          "explanation_status": "supported",
-          "item_id": "evidence-7",
-          "primary_evidence_ids": [
-            "E9425c5aacc2c1e14-B0025"
-          ],
-          "reason": "The table and text report R0 at 19/32 first-action correct, W0 at 15/32 with 11/32 invalid or absent outputs, and state neither treatment is reliable across both model routes.",
+          "reason": "The cited text states 0/16 unsafe publications, 12/12 valid publish intents permitted with 0/12 denials, and six favorable vs zero adverse discordances with exact two-sided p=0.03125, matching the claim.",
           "status": "supported"
         }
       },
@@ -543,19 +758,40 @@
         "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
         "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
+          "E9425c5aacc2c1e14-B0030",
           "E9425c5aacc2c1e14-B0031",
           "E9425c5aacc2c1e14-B0032"
         ],
-        "excerpt": "authority-blind\nobservational equivalence against workspace-visible Git evidence and identity-bound commit controls,\n(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same\nmodel intent.\nShared-workspace systems address a neighboring concurrency problem. STORM rejects stale\nwrites using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation\nwith notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes\nsucceed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O\nand PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];\nin-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions\nin a durable shared log before execution and supports voters and recovery [1]. These \n[\u2026 separate evidence block \u2026]\nfoundations\nmotivate our benchmark for operating-layer authority in agentic systems and its three-experiment\ndecomposition.",
-        "explanation": "The related-work section contrasts the paired-world construction with STORM's stale-write rejection and CoAgent's serializable mutation, noting that both writes succeed and final bytes match in this setting. It also distinguishes the contribution from PROV-O, PROV-AGENT, in-toto, and LogAct, which provide traceability or supply-chain binding rather than a controlled publication-authority benchmark. This comparison is adequate for the actual claims made.",
+        "excerpt": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves \n[\u2026 separate evidence block \u2026]\nauthority-blind\nobservational equivalence against workspace-visible Git evidence and identity-bound commit controls,\n(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same\nmodel intent.\nShared-workspace systems address a neighboring concurrency problem. STORM rejects stale\nwrites using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation\nwith notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes\nsucceed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O\nand PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];\nin-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions\nin a durable shared log before execution and supports voters and recovery [1]. These \n[\u2026 separate evidence block \u2026]\nfoundations\nmotivate our benchmark for operating-layer authority in agentic systems and its three-experiment\ndecomposition.",
+        "explanation": "The related work section explicitly compares against memory governance, shared-workspace concurrency, and provenance foundations, and states the novelty boundary: controlled cross-substrate publication construction, raw-vs-typed decomposition, and matched-intent enforcement evaluation.",
         "page": 7,
         "pages": [
           7
         ],
-        "paraphrase": "The paper positions its contribution against memory governance and shared-workspace concurrency systems by isolating publication authority from stale-write races and provenance traceability.",
+        "paraphrase": "The paper positions its contribution against memory governance work (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph), shared-workspace concurrency systems (STORM, CoAgent), and provenance standards (PROV-O, PROV-AGENT, in-toto, LogAct).",
         "section": "Related Work And Novelty Boundary",
         "signal_type": "positive",
         "source_blocks": [
+          {
+            "content_hash": "9dfcc5bd7ae77ce2e064e559502dab08d8852a7d3960d2b1efb1a23a82085c21",
+            "evidence_id": "E9425c5aacc2c1e14-B0030",
+            "pages": [
+              7
+            ],
+            "section": "Related Work And Novelty Boundary",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 7,
+                "section": "Related Work And Novelty Boundary",
+                "section_index": 23,
+                "start": 0,
+                "text": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves "
+              }
+            ],
+            "text": "OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];\ngeneralist multi-agent systems already coordinate agents that navigate local files and execute code [2].\nOur experiments isolate one operating-layer decision: whether a shared artifact is authorized for a\ndownstream effect.\nMemory governance is rapidly converging on scope, provenance, temporal state, and enforcement.\nCollaborative Memory applies dynamic access control to shared fragments [10]; Governed Shared\nMemory formalizes leakage, stale propagation, contradiction, and provenance collapse [6]; MemLin-\neage gates sensitive actions using cryptographic derivation lineage [8]; and MAP-Graph combines\ntyped provenance, hard permission filtering, graded trust, and risk-sensitive action gates [14]. Our\ncontribution is a controlled cross-substrate publication construction that (i) proves "
+          },
           {
             "content_hash": "c84cd405bc4aaa66030ab18c12072e7b4510acf939f7c560cdd676d3dd0c292d",
             "evidence_id": "E9425c5aacc2c1e14-B0031",
@@ -602,14 +838,78 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The sources support the contrast with stale-write systems and traceability foundations, and the statement that these motivate the benchmark.",
+          "explanation_reason": "The cited text explicitly compares memory governance, shared-workspace concurrency, and provenance foundations, and states the novelty boundary as controlled cross-substrate publication construction, raw-vs-typed decomposition, and matched-intent enforcement evaluation.",
           "explanation_status": "supported",
           "item_id": "evidence-8",
           "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0030",
             "E9425c5aacc2c1e14-B0031",
             "E9425c5aacc2c1e14-B0032"
           ],
-          "reason": "The related-work section contrasts the paired-world construction with STORM and CoAgent and distinguishes it from PROV-O, PROV-AGENT, in-toto, and LogAct.",
+          "reason": "The cited related-work text explicitly names Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph, STORM, CoAgent, PROV-O, PROV-AGENT, in-toto, and LogAct, matching the claimed positioning.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "9425c5aacc2c1e14263e0cbdf4b6d0d41d74b825ff1a4ccd9081c45727a46c61",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "E9425c5aacc2c1e14-B0033"
+        ],
+        "excerpt": "The experiments span two independently constructed four-template families, two model routes,\nstructured decisions, and deterministic executors. Experiment 3 reuses 32 Experiment 2 intents; its\npaired effects leave the planning denominator at 96. The experiments isolate the mechanism under\ncontrolled conditions. Deployment prevalence, broader model and parent\u2013subagent generalization,\nand end-to-end security remain open. Planning with the typed relation is negative and model-\ndependent. The store and actor/session allocation are trusted; cryptographic signatures, compromise\n7\nof the authority database, multi-tenant policy composition, and identity-bound Git attestation at\nscale remain future work. Overall, the results motivate validated permits at the mutation boundary;\nThe Appendix provides reproducibility details.",
+        "explanation": "The limitations section explicitly scopes the controlled benchmark, lists open generalization and security questions, and flags the negative typed-planning result. This is appropriate uncertainty handling for a controlled micro-benchmark study.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "The paper acknowledges limitations including controlled conditions, deployment prevalence, broader model and parent-subagent generalization, end-to-end security, trusted store and actor/session allocation, and negative model-dependent typed planning results.",
+        "section": "Limitations And Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2cc8d8fa3da162d424b01d10ff0a3c7e9ab9b4185420536df7e29f08bb073d5b",
+            "evidence_id": "E9425c5aacc2c1e14-B0033",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Limitations And Conclusion",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 580,
+                "page": 7,
+                "section": "Limitations And Conclusion",
+                "section_index": 24,
+                "start": 0,
+                "text": "The experiments span two independently constructed four-template families, two model routes,\nstructured decisions, and deterministic executors. Experiment 3 reuses 32 Experiment 2 intents; its\npaired effects leave the planning denominator at 96. The experiments isolate the mechanism under\ncontrolled conditions. Deployment prevalence, broader model and parent\u2013subagent generalization,\nand end-to-end security remain open. Planning with the typed relation is negative and model-\ndependent. The store and actor/session allocation are trusted; cryptographic signatures, compromise\n7"
+              },
+              {
+                "end": 244,
+                "page": 8,
+                "section": "Limitations And Conclusion",
+                "section_index": 25,
+                "start": 0,
+                "text": "of the authority database, multi-tenant policy composition, and identity-bound Git attestation at\nscale remain future work. Overall, the results motivate validated permits at the mutation boundary;\nThe Appendix provides reproducibility details."
+              }
+            ],
+            "text": "The experiments span two independently constructed four-template families, two model routes,\nstructured decisions, and deterministic executors. Experiment 3 reuses 32 Experiment 2 intents; its\npaired effects leave the planning denominator at 96. The experiments isolate the mechanism under\ncontrolled conditions. Deployment prevalence, broader model and parent\u2013subagent generalization,\nand end-to-end security remain open. Planning with the typed relation is negative and model-\ndependent. The store and actor/session allocation are trusted; cryptographic signatures, compromise\n7\nof the authority database, multi-tenant policy composition, and identity-bound Git attestation at\nscale remain future work. Overall, the results motivate validated permits at the mutation boundary;\nThe Appendix provides reproducibility details."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly scopes the controlled benchmark, lists open generalization and security questions, and flags the negative typed-planning result, supporting the inference about appropriate uncertainty handling for a controlled micro-benchmark study.",
+          "explanation_status": "supported",
+          "item_id": "evidence-9",
+          "primary_evidence_ids": [
+            "E9425c5aacc2c1e14-B0033"
+          ],
+          "reason": "The cited limitations text explicitly acknowledges controlled conditions, deployment prevalence, broader model and parent-subagent generalization, end-to-end security, trusted store and actor/session allocation, and negative model-dependent typed planning results.",
           "status": "supported"
         }
       }
@@ -620,20 +920,24 @@
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": 49,
-    "paper_type": "systems_or_application",
+    "paper_type": "empirical_research",
     "positive_signals": [
-      "The paper's novelty lies in proving authority-blind observational equivalence against workspace-visible Git evidence and identity-bound commit controls, decomposing raw facts from typed packaging, and evaluating enforcement on the exact same model intent.",
-      "The execution-time guard prevents all six fixed unsafe crossed publication intents from becoming effects while permitting all 12 valid aligned publish intents, with a paired finite-matrix p = 0.03125.",
-      "Planning-time evidence exposure remains unreliable and model-dependent, with raw receipts achieving 19/32 first-action correct and the typed relation achieving 15/32 with 11/32 invalid or absent outputs.",
-      "The paper positions its contribution against memory governance and shared-workspace concurrency systems by isolating publication authority from stale-write races and provenance traceability."
+      "The paper introduces the cross-substrate authority gap: decision-relevant authorization information resides outside the planner-visible workspace or memory state, so identical final files can require opposite safe actions.",
+      "The paper contributes a formalization of authority-blind observational equivalence, a typed decision relation, and a three-experiment decomposition separating raw authority facts from typed packaging and planning exposure from execution-time enforcement.",
+      "The experimental design uses held-out semantic templates, real Git repositories, durably recorded execution attempts, deterministic oracles, frozen input plans, and independent read-only audits across all three experiments.",
+      "The matched-intent design in Experiment 3 isolates the execution guard's causal effect by replaying the exact same 32 model-generated first-action intents with zero additional model calls.",
+      "Experiment 1 shows raw authority receipts change final semantic success from 0/32 to 32/32 (R0-C0: 32 favorable, 0 unfavorable discordant pairs; exact two-sided p = 4.66e-10), while typed packaging adds no observed planning-accuracy gain over raw receipts.",
+      "Experiment 3's execution guard prevents all six fixed unsafe crossed publication intents from becoming effects (0/16 unsafe publications) and permits all 12 valid authorized publish intents (0/12 denials), with six favorable and zero adverse discordances (exact two-sided p = 0.03125).",
+      "The paper positions its contribution against memory governance work (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph), shared-workspace concurrency systems (STORM, CoAgent), and provenance standards (PROV-O, PROV-AGENT, in-toto, LogAct).",
+      "The paper acknowledges limitations including controlled conditions, deployment prevalence, broader model and parent-subagent generalization, end-to-end security, trusted store and actor/session allocation, and negative model-dependent typed planning results."
     ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "rationale": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
     "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "ca365cf119ccf6ff34795ee0f960fb2b8ededf3b18d6638dd79656e5d8451e54",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. The narrative synthesizes supported facts from the cited sources, but includes evaluative characterizations such as unusually disciplined and directly supported that are not established by the cited text. The sources list three components and mention a trust boundary, but do not explicitly state that the abstract and introduction consistently frame the publication boundary as the operational endpoint of memory governance. The cited sources provide the operational definition and aligned/crossed example, but do not mention Proposition 1 or explicitly state that the problem statement is falsifiable. The sources support held-out templates, real Git repositories, durably recorded attempts, deterministic oracles, ITT denominators, content-addressing, and independent recomputation, but do not mention fixed matrices. The sources support the matched-intent design and zero new model calls, but the characterization as a strong internal-validity choice is an evaluative inference not established by the cited text. Cited evidence does not establish numerical values/units: 4.66, -10 The source lists the open items and future work, but the characterization as candid is an evaluative judgment not established by the cited text. The sources support the matrix decompositions, content-addressing, and independent recomputation, but the characterization as supporting transparency is an evaluative inference not established by the cited text."
+    "uncertainty": "Scientific support remains unresolved. The source supports the paired construction and observational equivalence, but does not establish Proposition 1 as a formal, falsifiable characterization or substantiate the broader claim of a substantive conceptual contribution beyond routine integration. The source states Table 4 summarizes the chain and lists the three outcomes, but it does not show the table's contents or confirm that the mapping is direct and internally consistent across all reported outcomes. The appendix text provides experiment matrices, evidence integrity procedures, and compute/model access details, and no artifact URLs appear in the supplied sources."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

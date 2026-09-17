@@ -60,15 +60,268 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
-      <p>Scientific support remains unresolved. Explanation verification unavailable. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
+      <p>Scientific support remains unresolved. The sources define the scoring formula and cost metrics and report suite-level outcomes, but the cited excerpts do not show field-level results, so the claim that results sections report field-level outcomes is not fully established.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T10:16:52+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v2. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T11:47:25+00:00.</p>
         <p>Coverage: 54632 of 54632 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>The paper introduces Lean-QuantumAlg-Bench and Lean-QIT-Bench, two Lean 4 benchmarks containing 36 and 40 theorem-completion tasks for quantum algorithms and quantum information theory, respectively.</p><p>Attributed source statement: supported. The abstract and introduction state the benchmark names, task counts, and domain scope explicitly, establishing the core contribution. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Formal verification is becoming increasingly practical for quantum computing, yet the ability of
+AI agents to construct machine-checkable proofs in this domain remains unmeasured. We introduce
+Lean-QuantumAlg-BenchandLean-QIT-Bench, two Lean 4 benchmarks containing 36 and 40
+theorem-completion tasks for quantum algorithms and quantum information theory, respectively. Every
+task compiles in a fixed environment and is evaluated by deterministic proof checking and targeted semantic
+review, with difficulty weights assigned before model execution. We evaluate four models—GPT-5.5,
+Kimi K3, DeepSeek V4-Pro, and MiniMax M3—within a common theorem-proving framework under
+two settings: a task-only baseline and library-augmented deduction (LAD), which additionally provides
+access to a verified domain library. The highest difficulty-weighted scores are 60.4 out of 100 on the
+quantum-algorithm </blockquote><blockquote>should satisfy several requirements simultaneously. It should
+cover domain objects and proof patterns beyond the scope of generic mathematical suites and present the
+same theorem-completion task format under controlled evaluation conditions. Its construction claims must
+also match the evidence that exists: Lean compilation and deterministic checks apply to every task, whereas
+manual comparison with the mathematical source is a targeted safeguard for selected or high-risk tasks. This
+distinction limits score interpretation to agent performance under the stated checks.
+In this work, we introduceLean-QuantumAlg-Bench(QAlg-Bench) andLean-QIT-Bench(QIT-
+Bench), two coordinated Lean 4 benchmark suites containing 36 and 40 theorem-completion tasks for quantum
+algorithms and quantum information theory, respectively. Their 76 tasks are organized into six fields: three
+for quantum algorithms and </blockquote></details></li><li><strong>Methodological rigor — page 4</strong><p>Every admitted task passes automated Lean compilation and screening checks, and submission-side acceptance recompiles the submitted theorem in a fixed environment, rejecting new axioms, sorry placeholders, and changes outside the theorem body.</p><p>Attributed source statement: supported. The construction section specifies universal mechanical checks and independent final verification, providing a deterministic acceptance criterion. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>difficulties. The complete inventories appear in Appendix A.
+A Lean task contains a theorem statement and the supporting definitions needed to state it. Researchers
+determine the mathematical scope, assumptions, and conclusion, and agents assist with the Lean translation.
+The definitions introduce benchmark-local objects that are not supplied by imported libraries, and the
+statement contains the theorem signature whose body the agent must complete. The evaluated tasks provide
+no hints.
+Every admitted task passes the same automated checks. Its statement and supporting definitions are
+assembled in the fixed Lean environment and compiled by Lean before inclusion in the benchmark. This
+checking stage applies to every task and denotes automated compilation and screening; it does not imply that
+compilation guarantees mathematical fidelity or that every statement receives the targeted manual </blockquote><blockquote>comparison
+described below. Submission-side acceptance applies the same discipline: the independent final verification
+recompiles the submitted theorem in the fixed environment and accepts it only when the proof introduces no
+new axioms, contains nosorryplaceholder, and leaves all files outside the theorem body unchanged.
+The same benchmark task is used for both evaluation conditions. The baseline condition supplies the
+statement and supporting definitions. LAD supplies the same task together with a verified collection of library
+references available only for consultation. Each result records a fixed suite version, model setting, access
+condition, and execution setting, which support descriptive aggregation at the run level.
+These construction steps establish the common mechanical checks. The next subsection addresses the
+separate question of whether selected formal statements </blockquote></details></li><li><strong>Methodological rigor — page 4</strong><p>Semantic fidelity of formal statements to their motivating mathematics is checked manually only for selected high-risk statements, not benchmark-wide.</p><p>Attributed source statement: supported. The authors state that the targeted comparison is performed only on selected high-risk statements and is not intended to define a benchmark-wide rate of semantic validity, leaving residual translation risk. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Lean&#x27;s kernel guarantees that an accepted proof has the stated theorem as its type, relative to the imported
+environment [28,29]. It does not, however, guarantee that the statement faithfully captures the scientific
+claim that motivated the task. A benchmark can therefore be mechanically valid while remaining semantically
+misleading: an omitted hypothesis, an incorrect type or function encoding, or a weakened conclusion can
+cause the formal target to diverge from the intended mathematics [26]. We therefore treat Lean compilation
+and the automated checks applied to every task as universal mechanical guarantees, while regarding semantic
+fidelity as a separate validity question.
+For selected statements whose translation carries elevated semantic risk, we perform a manual comparison
+between the formal signature, its supporting definitions, and the available mathematical specification. </blockquote><blockquote>This
+comparison examines the relevant objects and quantifiers, explicit and implicit assumptions, dimensional
+constraints, index and tensor ordering, and the direction and strength of the conclusion. Any discrepancies
+identified in this process are resolved before the task is included in the benchmark.
+This targeted comparison supplements the automated checks applied to every task. Because it is performed
+only on selected high-risk statements, it is not intended to define a benchmark-wide rate of semantic validity.
+With the benchmark construction, automated checks, and targeted semantic safeguards in place, the next
+section evaluates the recorded model runs.</blockquote></details></li><li><strong>Evaluation or validation strength — pages 4, 14, 15</strong><p>Each suite-model-condition combination contains only one recorded run, and historical baseline and LAD executions are not fully matched, so the results provide no estimate of stochastic variation or causal access-condition effects.</p><p>Attributed source statement: supported. The evaluation and limitations sections explicitly state the single-run design and unmatched execution details, limiting the strength of the empirical conclusions. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>The evaluation addresses three complementary questions: how objective proof completion varies across models
+and access conditions, what resource cost accompanies the observed scores, and whether suite-level aggregates
+conceal field-specific strengths or weaknesses.
+We evaluate one recorded run for each suite–model–condition combination. Every run records its suite
+version and problem set, model and agent setting, access condition, budget, retry policy, and execution
+environment. These settings are fixed within a run, although the historical baseline and LAD pairs are not
+fully matched across all execution details. QAlg-Bench contributes 36 tasks and QIT-Bench contributes 40,
+giving 16 combinations. The runs also differ in agent tool: GPT-5.5 uses a different agent tool from the
+other three models (Table 6), so each combination measures a model and agent tool jointly, and </blockquote><blockquote>of the
+evaluation harness. In this benchmark, for example, the entanglement-concentration task represents protocols
+by product-Kraus separable operations rather than a full finite-round LOCC syntax, so its formal target is a
+relaxation of the motivating achievability claim. Lean compilation and automated checks apply to every task,
+while the separate semantic comparison described in Section 3.2 covers only selected statements and does not
+14
+Lean-QuantumAlg-Bench | Lean-QIT-BenchQudeLeap Research
+support a benchmark-wide semantic-validity rate. Residual translation risk therefore remains.
+For the fixed task set, the evaluation is bounded by the tested models, agent tools, budgets, hardware,
+suite versions, and access policies. Each suite–model–condition combination contains one run, so the results
+provide no estimate of stochastic variation. Historical baseline and LAD executions are not </blockquote></details></li><li><strong>Evidence to claim alignment — pages 5–6</strong><p>The paper&#x27;s claims about LAD improvements are explicitly limited to descriptive recorded-run differences rather than causal estimates of access-condition effects.</p><p>Attributed source statement: supported. The results section states that single-run differences describe the recorded runs and that unmatched execution details prevent their interpretation as estimates of an access-condition effect, aligning the claims with the evidence. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 2(a,b) compares the 16 recorded results. GPT-5.5 has the highest observed score in every suite–
+condition combination. In all eight historical within-model comparisons, the LAD result has higher score and
+completion than the baseline result. The magnitude varies substantially: DeepSeek V4-Pro, for example, shows
+a much larger separation between conditions on QAlg-Bench than on QIT-Bench. These single-run differences
+describe the recorded runs; the unmatched execution details prevent their interpretation as estimates of an
+access-condition effect.
+Figure 2(c,d) shows that the cost ordering differs from the performance ordering. DeepSeek V4-Pro has
+5
+Lean-QuantumAlg-Bench | Lean-QIT-BenchQudeLeap Research
+Table 1: Relative change from baseline to LAD by suite and model. Every metric column uses(L−B )/B
+computed from unrounded values. Positive score and completion values indicate </blockquote><blockquote>increases for GPT-5.5 on
+QIT-Bench and DeepSeek V4-Pro on QAlg-Bench are 15.9 and 11.7 score points. These ratios describe the
+recorded historical runs; matched reruns are required to isolate the access-condition difference. The absolute
+values are reported in Appendix B.
+5
+20
+40
+65
+100 IME
+GSD
+QCRSSL
+CAA
+SOM
+GPT-5.5
+ Kimi K3
+ DeepSeek V4-Pro
+ MiniMax M3
+baseline LAD
+Figure 3: Difficulty-normalized field profiles for GPT-5.5, Kimi K3, DeepSeek V4-Pro, and MiniMax M3, from
+left to right. The six axes represent the QAlg-Bench and QIT-Bench fields defined in Tables 2 and 3; exact
+values are reported in Table 8. All panels use the same radial mapping, with equally spaced rings labelled 5,
+20, 40, 65, and 100. Baseline is shown as a translucent filled profile with a solid outline, while LAD is shown
+as an unfilled dashed profile with hollow nodes. Each axis aggregates 10 to 17 tasks, so a </blockquote></details></li><li><strong>Related work and gap positioning — pages 2–3</strong><p>The paper situates its benchmarks relative to formal theorem-proving benchmarks such as miniF2F, PutnamBench, LeanDojo, and miniCTX, and identifies the need for coordinated quantum-domain evaluation with controlled library access.</p><p>Attributed source statement: supported. The related work section reviews prior benchmarks and quality audits, motivating the combination of standardized formal targets, controlled context, and semantic safeguards adopted in this work. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>LeanSearch for task decomposition, iterative refinement, and proof synthesis [20], with LeanSearch
+v2 extending this line toward global premise retrieval [21].
+Formal theorem-proving benchmarks have advanced in parallel. Competition benchmarks such as
+miniF2F [22] and PutnamBench [23] test whole-proof generation on standardized problems. LeanDojo [24]
+makes library retrieval an explicit part of proving, while miniCTX [25] evaluates prover use of long project
+contexts. Ref. [26] documents informal–formal fidelity failures, while Ref. [27] shows that statement defects
+and evaluation-harness failures can distort benchmark scores. Together, these efforts provide strong methods
+for evaluating proof search, context use, and benchmark quality. We build on these methods to coordinate
+Lean evaluation across quantum algorithms and quantum information.
+A coordinated benchmark for these domains </blockquote><blockquote>problems and multiple formal systems. MLFMF [31]
+instead derived Lean and Agda datasets for formalization recommendation from existing libraries. Lean
+Workbook [32] addressed data scarcity through a large generated-and-filtered collection of informal/formal
+pairs. These resources differ in whether the unit is a hand-formalized problem, a library declaration, or a
+generated pair, but each uses fixed formal targets and machine-checkable acceptance.
+Later work highlights two limitations of statement-only evaluation that are relevant here: the role of
+context and the validity of the target itself. LeanDojo [24] combines programmatic repository interaction,
+fine-grained premise annotations, and retrieval-augmented proving. miniCTX [25] evaluates theorem proving
+over long project contexts with in-file dependencies. RLMEval [33] selects research-level theorems from Lean
+blueprint projects, </blockquote><blockquote>while Ineq-Comp [34] probes robustness under transformed and composed inequalities.
+Ref. [26] reports that formally accepted statements can still diverge from the intended informal problems.
+In neighboring domain-specific evaluation, QCircuitBench [35] tests quantum-algorithm code design with
+automatic validation. Ref. [36] extends Lean evaluation to computational and applied mathematics with
+explicit attention to dependencies and semantic review. Ref. [27] documents how statement defects and
+evaluation harnesses can distort formal-proving results.
+These developments motivate the combination adopted here. Competition and research benchmarks
+supply standardized formal targets; repository-level work shows why imported context and library access
+must be controlled; and quality audits show why kernel acceptance cannot by itself certify the intended
+meaning of a benchmark statement. Our </blockquote></details></li><li><strong>Reproducibility and transparency — page 4</strong><p>The benchmark tasks use a fixed Lean environment, deterministic proof checks, and recorded suite versions, model settings, access conditions, and execution settings to support descriptive aggregation and reproducibility.</p><p>Attributed source statement: supported. The construction and evaluation sections describe fixed environment compilation, independent final verification, and recorded run metadata, supporting reproducibility in principle. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>difficulties. The complete inventories appear in Appendix A.
+A Lean task contains a theorem statement and the supporting definitions needed to state it. Researchers
+determine the mathematical scope, assumptions, and conclusion, and agents assist with the Lean translation.
+The definitions introduce benchmark-local objects that are not supplied by imported libraries, and the
+statement contains the theorem signature whose body the agent must complete. The evaluated tasks provide
+no hints.
+Every admitted task passes the same automated checks. Its statement and supporting definitions are
+assembled in the fixed Lean environment and compiled by Lean before inclusion in the benchmark. This
+checking stage applies to every task and denotes automated compilation and screening; it does not imply that
+compilation guarantees mathematical fidelity or that every statement receives the targeted manual </blockquote><blockquote>comparison
+described below. Submission-side acceptance applies the same discipline: the independent final verification
+recompiles the submitted theorem in the fixed environment and accepts it only when the proof introduces no
+new axioms, contains nosorryplaceholder, and leaves all files outside the theorem body unchanged.
+The same benchmark task is used for both evaluation conditions. The baseline condition supplies the
+statement and supporting definitions. LAD supplies the same task together with a verified collection of library
+references available only for consultation. Each result records a fixed suite version, model setting, access
+condition, and execution setting, which support descriptive aggregation at the run level.
+These construction steps establish the common mechanical checks. The next subsection addresses the
+separate question of whether selected formal statements </blockquote><blockquote>The evaluation addresses three complementary questions: how objective proof completion varies across models
+and access conditions, what resource cost accompanies the observed scores, and whether suite-level aggregates
+conceal field-specific strengths or weaknesses.
+We evaluate one recorded run for each suite–model–condition combination. Every run records its suite
+version and problem set, model and agent setting, access condition, budget, retry policy, and execution
+environment. These settings are fixed within a run, although the historical baseline and LAD pairs are not
+fully matched across all execution details. QAlg-Bench contributes 36 tasks and QIT-Bench contributes 40,
+giving 16 combinations. The runs also differ in agent tool: GPT-5.5 uses a different agent tool from the
+other three models (Table 6), so each combination measures a model and agent tool jointly, and </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 14–15</strong><p>The paper identifies four main validity limits: corpus coverage and difficulty calibration, semantic fidelity of formal statements, comparability of recorded runs, and availability of economic-cost records.</p><p>Attributed source statement: supported. The limitations section explicitly enumerates these constraints and explains how they restrict generalization beyond the present evaluation. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>The reported results have four main validity limits that warrant further study: corpus coverage and difficulty
+calibration, semantic fidelity of the formal statements, comparability of the recorded runs, and availability
+of economic-cost records. Together, these limits constrain how far the observed scores and costs can be
+generalized beyond the present evaluation. These limitations make the reported results an initial measurement
+of the recorded benchmark runs, rather than a population estimate or a causal comparison of access conditions.
+At the corpus level, the two suites sample theorem-sized tasks from selected parts of quantum algorithms
+and quantum information under the current Lean library interfaces. Their 36 and 40 tasks do not provide
+complete coverage of either domain, and the six author-defined fields aggregate areas of unequal size and
+maturity. Task selection, theorem </blockquote><blockquote>granularity, and the availability of reusable definitions all affect what
+can enter the benchmark. Difficulty is assigned before model execution through two rubric-based reviews
+covering proof structure, theory dependencies, Lean engineering, and mathematical technique; scores differing
+by more than one point are adjudicated. This procedure prevents result-dependent reweighting, but the
+1–10 assignments are not objective measurements of proof complexity. Some benchmark statements may
+overlap with material in model training corpora, and the present evaluation cannot determine such overlap.
+miniCTX [25] uses recency-based theorem selection to mitigate contamination; this benchmark does not.
+Beyond corpus coverage, mechanical validity does not eliminate semantic risk. Refs. [26,27] show that
+kernel acceptance alone does not establish fidelity to the intended informal problem or robustness </blockquote><blockquote>of the
+evaluation harness. In this benchmark, for example, the entanglement-concentration task represents protocols
+by product-Kraus separable operations rather than a full finite-round LOCC syntax, so its formal target is a
+relaxation of the motivating achievability claim. Lean compilation and automated checks apply to every task,
+while the separate semantic comparison described in Section 3.2 covers only selected statements and does not
+14
+Lean-QuantumAlg-Bench | Lean-QIT-BenchQudeLeap Research
+support a benchmark-wide semantic-validity rate. Residual translation risk therefore remains.
+For the fixed task set, the evaluation is bounded by the tested models, agent tools, budgets, hardware,
+suite versions, and access policies. Each suite–model–condition combination contains one run, so the results
+provide no estimate of stochastic variation. Historical baseline and LAD executions are not </blockquote></details></li><li><strong>Presentation and precision — pages 4–5</strong><p>The paper defines the difficulty-weighted score formula and cost metrics precisely, including denominators, units, and conditions for unavailable values.</p><p>Attributed source statement: supported. The evaluation section specifies the score formula, completion definition, economic cost as mean API list-price-equivalent USD divided by difficulty-weighted score, and time cost as mean invocation time divided by overall score, with N/A handling. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>cross-model
+orderings compare these joint settings. The exact model and agent settings are listed in Appendix A.
+For taski, letdi∈{ 1,..., 10} be the difficulty fixed before model execution, and letvi∈{ 0, 1} be the
+recorded acceptance indicator for the final submitted theorem under the common Lean acceptance checks.
+We define the score as
+score = 100
+∑
+idivi∑
+idi
+.(1)
+4
+Lean-QuantumAlg-Bench | Lean-QIT-BenchQudeLeap Research
+GPT-5.5 Kimi K3
+DeepSeek V4-Pro MiniMax M3
+0
+20
+40
+60
+80
+score
+a score
+GPT-5.5 Kimi K3
+DeepSeek V4-Pro MiniMax M3
+0
+20
+40
+60
+80
+completion (%)
+b completion
+GPT-5.5 Kimi K3
+DeepSeek V4-Pro MiniMax M3
+0.000
+0.015
+0.030
+0.045
+0.060
+cost per score point (USD)
+N/A
+N/A
+N/A
+N/A
+c economic cost
+GPT-5.5 Kimi K3
+DeepSeek V4-Pro MiniMax M3
+0
+50
+100
+150
+200
+cost per score point (s)
+d time cost
+QAlg-Bench — baseline
+QAlg-Bench — LAD
+QIT-Bench — baseline
+QIT-Bench — LAD
+Figure 2: </blockquote><blockquote>Verified performance and per-score costs across QAlg-Bench and QIT-Bench. Panels (a,b) show
+the difficulty-weighted score and completion, respectively. Panels (c,d) show economic cost in USD per score
+point and time cost in seconds per score point, respectively; lower values indicate lower cost. Blue and orange
+identify QAlg-Bench and QIT-Bench. Solid, unhatched bars indicate the baseline condition, while dashed,
+diagonally hatched bars indicate LAD. Black N/A labels mark unavailable economic-cost values.
+Completion is the unweighted fraction of tasks withvi = 1. The score therefore weights verified tasks by
+their pre-exam difficulty, whereas completion treats every task equally. A model-call timeout does not itself
+set vi = 0: after the invocation ends, an independent Lean verification checks the final submission. Four
+tasks in the snapshot reached the timeout and nevertheless passed </blockquote><blockquote>this final check. Neither metric assesses
+intermediate proof progress.
+Economic cost is the mean API list-price-equivalent USD among tasks with reconstructable prices, divided
+by the difficulty-weighted score for those tasks. Time cost is the mean model invocation time per task over
+the complete suite divided by the overall score. Model invocation time is the elapsed duration of the complete
+agent invocation, including Lean checks initiated by the agent; it excludes the independent final verification
+performed after the invocation ends. The general pricing schedule was fixed on 2026-07-20, while the Kimi K3
+prices were fixed on 2026-07-22. The units are USD and seconds per score point, and lower values indicate
+lower cost. Both ratios require a positive score denominator; unavailable ratios are reported as N/A, with
+zero reserved for observed zeros.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

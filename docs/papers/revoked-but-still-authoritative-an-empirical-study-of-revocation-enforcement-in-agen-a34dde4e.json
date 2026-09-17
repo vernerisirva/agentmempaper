@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:17",
-    "generated_at": "2026-09-17 11:48:15",
+    "generated_at": "2026-09-17 12:30:45",
     "last_seen_at": "2026-09-17 11:47:21",
     "metadata_sources": [
       "openalex",
@@ -107,15 +107,15 @@
   "scholarly_quality": {
     "applied_score_cap": 54,
     "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
-    "assessed_at": "2026-09-17T10:50:48+00:00",
+    "assessed_at": "2026-09-17T12:13:32+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "confidence": "medium",
+    "concise_summary": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
+    "confidence": "high",
     "coverage": {
       "assessment_input_characters": 70521,
       "assessment_input_sha256": "b51e86a12d35d3808259168375abc9be78dadbcab18c69d9262b565c9e592215",
@@ -450,7 +450,7 @@
     "dimension_scores": {
       "contribution_clarity": 5,
       "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 4,
+      "evidence_to_claim_alignment": 5,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
@@ -463,93 +463,18 @@
       {
         "claim_role": "contribution",
         "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
-          "E5950c57d2c67485e-B0004",
-          "E5950c57d2c67485e-B0005"
-        ],
-        "excerpt": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses \n[\u2026 separate evidence block \u2026]\nbetween a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent",
-        "explanation": "The introduction states the question directly and specifies the systems under test, the two-phase measurement approach, and the two outcome metrics. The abstract and body agree on the contribution scope.",
-        "page": 1,
-        "pages": [
-          1
-        ],
-        "paraphrase": "The paper's central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "4a41417266e3e0b7374cdaa274e30f64f1310d9b722088820174092ca2db6e6a",
-            "evidence_id": "E5950c57d2c67485e-B0004",
-            "pages": [
-              1
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 900,
-                "page": 1,
-                "section": "Introduction",
-                "section_index": 2,
-                "start": 0,
-                "text": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses "
-              }
-            ],
-            "text": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses "
-          },
-          {
-            "content_hash": "eff7abbb926b3b7f553e69877bc0783fc3f0f157fcb5caf5b415c6b0350ffb0e",
-            "evidence_id": "E5950c57d2c67485e-B0005",
-            "pages": [
-              1
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 1799,
-                "page": 1,
-                "section": "Introduction",
-                "section_index": 2,
-                "start": 900,
-                "text": "between a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent "
-              }
-            ],
-            "text": "between a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The introduction states the question, names the systems, describes loading a revoked policy and replacement, querying, passing returned facts to an agent, and defines two metrics.",
-          "explanation_status": "supported",
-          "item_id": "evidence-0",
-          "primary_evidence_ids": [
-            "E5950c57d2c67485e-B0004",
-            "E5950c57d2c67485e-B0005"
-          ],
-          "reason": "The introduction explicitly asks whether marking a fact invalid prevents the store from returning it to an agent that acts on it, and states measurement across five named agent-memory systems.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "contribution",
-        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
         "dimension": "scholarly_novelty_or_value",
         "evidence_ids": [
           "E5950c57d2c67485e-B0014",
           "E5950c57d2c67485e-B0015"
         ],
         "excerpt": "hierarchical graph that records version\nsequences, version-specific content boundaries, and the changes between document states, so a query\ncan be answered from a specific version. MemStrata [15] excludes a contradicted fact from retrieval:\nwhen a newer assertion replaces a fact's value, a deterministic rule marks the older value invalid in a\nbi-temporal ledger. ConflictRAG [14] reconciles contradictory retrieved facts before generation by\ndetecting the conflicts with a trained classifier, classifying them as factual, temporal, or opinion, and\nresolving each type in turn, ranking candidate sources on criteria extracted from the text itself, such\nas authority and recency.\nPositioning.The question this paper asks is whether marking a fact invalid prevents the store from\nreturning it to an agent that acts on it. Each direction above answers a different question: how foreign\ncontent enters \n[\u2026 separate evidence block \u2026]\na store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one.",
-        "explanation": "The positioning section argues that prior work covers injection attacks, lifecycle security, guardrails, provenance checks, and version-aware retrieval, but none asks whether a store-flagged invalid record still determines agent behavior. The paper's setting uses the defender's own revoked policy, so provenance checks pass by construction.",
+        "explanation": "The positioning section contrasts five prior directions and states that none asks whether a record the store has itself marked invalid still determines what the agent does. The record that harms the agent is the defender's own revoked policy, so provenance checks pass it by construction.",
         "page": 3,
         "pages": [
           3
         ],
-        "paraphrase": "The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.",
+        "paraphrase": "The paper identifies a gap: prior work addresses content injection, deletion propagation, or version-aware retrieval, but none asks whether a store's own revocation mark is enforced at retrieval time.",
         "section": "Related Work",
         "signal_type": "positive",
         "source_blocks": [
@@ -599,14 +524,251 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The related-work positioning explicitly says none asks whether a store-flagged invalid record still determines agent behavior, and states the defender's own revoked policy passes provenance checks by construction.",
+          "explanation_reason": "The cited text directly states the positioning contrast, that none asks the stated question, and that the harmful record is the defender's own revoked policy so provenance checks pass it by construction.",
           "explanation_status": "supported",
           "item_id": "evidence-1",
           "primary_evidence_ids": [
             "E5950c57d2c67485e-B0014",
             "E5950c57d2c67485e-B0015"
           ],
-          "reason": "The positioning text states the question is whether marking a fact invalid prevents return to an acting agent, and says prior directions answer different questions about foreign content, deletion, or current version.",
+          "reason": "The cited text explicitly states that prior directions answer different questions and that none asks whether a store's own revocation mark is enforced at retrieval time.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "evaluation",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0036",
+          "E5950c57d2c67485e-B0037"
+        ],
+        "excerpt": "with the\nexpiry-flag override enabled, abbreviated mem0 (exp.) in the tables).\nWe then turn to the unsafe-action rate to see how often the returned revoked record determines the\nagent's action. Only the third form can be quantified end to end, because Section 3 measures the\nunsafe-action rate only where the revoked record is returned while its revocation mark is verified\napplied. On both exposed systems the revoked fact was returned for every scenario, 81/81 each, and\nranked above the policy that replaced it. The revoked fact led agents to the unsafe action in44.2%\nof trials on Graphiti (358/810) and 42.1% on mem0 (exp.) (341/810). No unsafe action occurred\nunder the store-level filter of Section 4.2 (0/1,620) or under three clean-context baselines (0/2,430).\nAcross the two exposed systems, agents took the unsafe action in 699 of 1,620 trials (43.1%). The\nper-scenario rate spans 0.0% to \n[\u2026 separate evidence block \u2026]\n94.4% and the per-model rate 15.0% to 60.0% (Sections 4.3 and 4.4).\nThe claims below depend on this variation across cells rather than on sampling precision within cells.\n7\nTable 6: Exposure and unsafe-action rate by defense condition, under direct insertion.\nsystem exposure rank no defense filter prompt output filter+prompt\ngraphiti81/81144.2% 0.0% 38.4% 19.0% 0.0%\nmem0 (exp.)81/81142.1% 0.0% 36.0% 17.2% 0.0%\ncognee, langmem, mem00/81no revoked record returned\nThe two exposed systems return the revoked record ranked first in every scenario. Revoked policy\ntends to be phrased more absolutely than its replacement, as in \"must be blocked\" against \"are\nmonitored\", and a similarity-ranked retriever favors that phrasing. Independent evidence establishes\nthat such retrievers handle versioned content poorly: on a benign benchmark of versioned documents,\nconventional retrieval answers58% of",
+        "explanation": "Table 6 reports exposure 81/81 for both Graphiti and mem0 (exp.), with unsafe-action rates 44.2% (358/810) and 42.1% (341/810). The store-level filter shows 0.0% across 1,620 trials. These numbers directly support the claim that revocation is not enforced by default and that retrieval-time filtering removes the effect.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "The central finding is quantified: on the two exposed systems, the revoked record was returned in every scenario and led to unsafe actions in 44.2% and 42.1% of trials, while the store-level filter reduced unsafe actions to zero.",
+        "section": "Exposure And The Unsafe-Action Rate",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ef3832d30b8e2181126a6f7ffc2c617ffaa962b02654f48aecab4a867229dd3a",
+            "evidence_id": "E5950c57d2c67485e-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Exposure And The Unsafe-Action Rate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1799,
+                "page": 7,
+                "section": "Exposure And The Unsafe-Action Rate",
+                "section_index": 18,
+                "start": 899,
+                "text": "with the\nexpiry-flag override enabled, abbreviated mem0 (exp.) in the tables).\nWe then turn to the unsafe-action rate to see how often the returned revoked record determines the\nagent's action. Only the third form can be quantified end to end, because Section 3 measures the\nunsafe-action rate only where the revoked record is returned while its revocation mark is verified\napplied. On both exposed systems the revoked fact was returned for every scenario, 81/81 each, and\nranked above the policy that replaced it. The revoked fact led agents to the unsafe action in44.2%\nof trials on Graphiti (358/810) and 42.1% on mem0 (exp.) (341/810). No unsafe action occurred\nunder the store-level filter of Section 4.2 (0/1,620) or under three clean-context baselines (0/2,430).\nAcross the two exposed systems, agents took the unsafe action in 699 of 1,620 trials (43.1%). The\nper-scenario rate spans 0.0% to "
+              }
+            ],
+            "text": "with the\nexpiry-flag override enabled, abbreviated mem0 (exp.) in the tables).\nWe then turn to the unsafe-action rate to see how often the returned revoked record determines the\nagent's action. Only the third form can be quantified end to end, because Section 3 measures the\nunsafe-action rate only where the revoked record is returned while its revocation mark is verified\napplied. On both exposed systems the revoked fact was returned for every scenario, 81/81 each, and\nranked above the policy that replaced it. The revoked fact led agents to the unsafe action in44.2%\nof trials on Graphiti (358/810) and 42.1% on mem0 (exp.) (341/810). No unsafe action occurred\nunder the store-level filter of Section 4.2 (0/1,620) or under three clean-context baselines (0/2,430).\nAcross the two exposed systems, agents took the unsafe action in 699 of 1,620 trials (43.1%). The\nper-scenario rate spans 0.0% to "
+          },
+          {
+            "content_hash": "91969e3f351d0956a90aee812e06ffdc58160fe4cd6af6b763a937d4a111f981",
+            "evidence_id": "E5950c57d2c67485e-B0037",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Exposure And The Unsafe-Action Rate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1971,
+                "page": 7,
+                "section": "Exposure And The Unsafe-Action Rate",
+                "section_index": 18,
+                "start": 1799,
+                "text": "94.4% and the per-model rate 15.0% to 60.0% (Sections 4.3 and 4.4).\nThe claims below depend on this variation across cells rather than on sampling precision within cells.\n7"
+              },
+              {
+                "end": 723,
+                "page": 8,
+                "section": "Exposure And The Unsafe-Action Rate",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 6: Exposure and unsafe-action rate by defense condition, under direct insertion.\nsystem exposure rank no defense filter prompt output filter+prompt\ngraphiti81/81144.2% 0.0% 38.4% 19.0% 0.0%\nmem0 (exp.)81/81142.1% 0.0% 36.0% 17.2% 0.0%\ncognee, langmem, mem00/81no revoked record returned\nThe two exposed systems return the revoked record ranked first in every scenario. Revoked policy\ntends to be phrased more absolutely than its replacement, as in \"must be blocked\" against \"are\nmonitored\", and a similarity-ranked retriever favors that phrasing. Independent evidence establishes\nthat such retrievers handle versioned content poorly: on a benign benchmark of versioned documents,\nconventional retrieval answers58% of "
+              }
+            ],
+            "text": "94.4% and the per-model rate 15.0% to 60.0% (Sections 4.3 and 4.4).\nThe claims below depend on this variation across cells rather than on sampling precision within cells.\n7\nTable 6: Exposure and unsafe-action rate by defense condition, under direct insertion.\nsystem exposure rank no defense filter prompt output filter+prompt\ngraphiti81/81144.2% 0.0% 38.4% 19.0% 0.0%\nmem0 (exp.)81/81142.1% 0.0% 36.0% 17.2% 0.0%\ncognee, langmem, mem00/81no revoked record returned\nThe two exposed systems return the revoked record ranked first in every scenario. Revoked policy\ntends to be phrased more absolutely than its replacement, as in \"must be blocked\" against \"are\nmonitored\", and a similarity-ranked retriever favors that phrasing. Independent evidence establishes\nthat such retrievers handle versioned content poorly: on a benign benchmark of versioned documents,\nconventional retrieval answers58% of "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited sources provide the exact exposure counts, unsafe-action rates, and 0.0% across 1,620 trials for the store-level filter, directly supporting the inference that default revocation is not enforced and retrieval-time filtering removes the effect.",
+          "explanation_status": "supported",
+          "item_id": "evidence-3",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0036",
+            "E5950c57d2c67485e-B0037"
+          ],
+          "reason": "The cited text and Table 6 state 81/81 exposure for both systems, unsafe-action rates of 44.2% (358/810) and 42.1% (341/810), and 0/1,620 unsafe actions under the store-level filter, matching the claim.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "result",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0040",
+          "E5950c57d2c67485e-B0068"
+        ],
+        "excerpt": "retrieval flag changed switches from\nsafe to unsafe in 39 of the 81 matched cells and never the other way.3 The difference between the two\nconfigurations is one boolean in a shipped product. The complementary comparison confirms the\nattribution. The two exposed systems, which are independently implemented, are not distinguishable\non the same grid of scenarios and models ( p= 0.629 on 81 matched pairs). 4 That agreement is\nwhat the decomposition of Eq. (2) leads us to expect: with both systems exposed in every cell, the\nunsafe-action rate reduces to its conditional part, a property of the model rather than of the store.\nWhat the tested systems lack is a check ofretrieval-time validity, whether a record is still current\nwhen read. What they provide, at best, isprovenance, where the record came from. Section 5 presents\na mechanism that implements this.\n[\u2026 separate evidence block \u2026]\nTable 12: Matched-pair comparison on the 81 matched cells, no-defense arm, direct insertion.\nsystem A system B cells A unsafe B unsafeA>B B >Atied exactp\ngraphiti mem0 (exp.) 81358/810 = 44.2% 341/810 = 42.1%10 7 640.629\nmem0 mem0 (exp.) 810/810 = 0.0% 341/810 = 42.1%0 39 42<0.001\nUnder no defense and direct insertion, the two exposed systems differ by 2.1 points, and Table 12\ngives the paired counts on the 81 matched cells. A two-sided exact test on the discordant pairs gives\np= 0.629 : a 10-to-7 split is compatible with an even one, so the test does not distinguish the two\nsystems. That is the intended reading rather than a weak result. With both systems exposed in every\ncell, the decomposition of Eq. (2) reduces the unsafe-action rate to its conditional part, a property\nof the model choosing between two contradictory facts rather than of the store, so the two systems\nshould agree.",
+        "explanation": "The within-system comparison shows mem0 switches from safe to unsafe in 39 of 81 matched cells when a single retrieval flag changes, with p<0.001. The cross-system comparison shows the two exposed systems are not distinguishable (p=0.629 on 81 matched pairs), consistent with the decomposition of the unsafe-action rate into exposure and a model-level conditional part.",
+        "page": 8,
+        "pages": [
+          8,
+          16
+        ],
+        "paraphrase": "The attribution of the failure to retrieval rather than the store is supported by a within-system comparison on mem0 and a matched-pair comparison across the two exposed systems.",
+        "section": "Defense Conditions And Retrieval / Appendix: Matched-Pair Comparison",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c0b4acf897e7f252f52639a7903aa8db43c46ec9edb4e605f14442162eabccbe",
+            "evidence_id": "E5950c57d2c67485e-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Defense Conditions And Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1755,
+                "page": 8,
+                "section": "Defense Conditions And Retrieval",
+                "section_index": 20,
+                "start": 894,
+                "text": "retrieval flag changed switches from\nsafe to unsafe in 39 of the 81 matched cells and never the other way.3 The difference between the two\nconfigurations is one boolean in a shipped product. The complementary comparison confirms the\nattribution. The two exposed systems, which are independently implemented, are not distinguishable\non the same grid of scenarios and models ( p= 0.629 on 81 matched pairs). 4 That agreement is\nwhat the decomposition of Eq. (2) leads us to expect: with both systems exposed in every cell, the\nunsafe-action rate reduces to its conditional part, a property of the model rather than of the store.\nWhat the tested systems lack is a check ofretrieval-time validity, whether a record is still current\nwhen read. What they provide, at best, isprovenance, where the record came from. Section 5 presents\na mechanism that implements this."
+              }
+            ],
+            "text": "retrieval flag changed switches from\nsafe to unsafe in 39 of the 81 matched cells and never the other way.3 The difference between the two\nconfigurations is one boolean in a shipped product. The complementary comparison confirms the\nattribution. The two exposed systems, which are independently implemented, are not distinguishable\non the same grid of scenarios and models ( p= 0.629 on 81 matched pairs). 4 That agreement is\nwhat the decomposition of Eq. (2) leads us to expect: with both systems exposed in every cell, the\nunsafe-action rate reduces to its conditional part, a property of the model rather than of the store.\nWhat the tested systems lack is a check ofretrieval-time validity, whether a record is still current\nwhen read. What they provide, at best, isprovenance, where the record came from. Section 5 presents\na mechanism that implements this."
+          },
+          {
+            "content_hash": "339ddcd361dd3f4ba4a272d18ab7edb65fccccc12b23cae28a6ceba73819d17d",
+            "evidence_id": "E5950c57d2c67485e-B0068",
+            "pages": [
+              16
+            ],
+            "section": "Appendix: Matched-Pair Comparison",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 16,
+                "section": "Appendix: Matched-Pair Comparison",
+                "section_index": 36,
+                "start": 0,
+                "text": "Table 12: Matched-pair comparison on the 81 matched cells, no-defense arm, direct insertion.\nsystem A system B cells A unsafe B unsafeA>B B >Atied exactp\ngraphiti mem0 (exp.) 81358/810 = 44.2% 341/810 = 42.1%10 7 640.629\nmem0 mem0 (exp.) 810/810 = 0.0% 341/810 = 42.1%0 39 42<0.001\nUnder no defense and direct insertion, the two exposed systems differ by 2.1 points, and Table 12\ngives the paired counts on the 81 matched cells. A two-sided exact test on the discordant pairs gives\np= 0.629 : a 10-to-7 split is compatible with an even one, so the test does not distinguish the two\nsystems. That is the intended reading rather than a weak result. With both systems exposed in every\ncell, the decomposition of Eq. (2) reduces the unsafe-action rate to its conditional part, a property\nof the model choosing between two contradictory facts rather than of the store, so the two systems\nshould agree. "
+              }
+            ],
+            "text": "Table 12: Matched-pair comparison on the 81 matched cells, no-defense arm, direct insertion.\nsystem A system B cells A unsafe B unsafeA>B B >Atied exactp\ngraphiti mem0 (exp.) 81358/810 = 44.2% 341/810 = 42.1%10 7 640.629\nmem0 mem0 (exp.) 810/810 = 0.0% 341/810 = 42.1%0 39 42<0.001\nUnder no defense and direct insertion, the two exposed systems differ by 2.1 points, and Table 12\ngives the paired counts on the 81 matched cells. A two-sided exact test on the discordant pairs gives\np= 0.629 : a 10-to-7 split is compatible with an even one, so the test does not distinguish the two\nsystems. That is the intended reading rather than a weak result. With both systems exposed in every\ncell, the decomposition of Eq. (2) reduces the unsafe-action rate to its conditional part, a property\nof the model choosing between two contradictory facts rather than of the store, so the two systems\nshould agree. "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The within-system mem0 comparison is supported by the body text and Table 12, including 39 of 81 switches and p<0.001. The cross-system p=0.629 on 81 matched pairs and the explanation that this follows from the decomposition into exposure and a model-level conditional part are",
+          "explanation_status": "supported",
+          "item_id": "evidence-4",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0040",
+            "E5950c57d2c67485e-B0068"
+          ],
+          "reason": "The cited body text states the retrieval flag changed safe to unsafe in 39 of 81 matched cells and never the other way, and the appendix confirms the within-system mem0 comparison with p<0.001. The cross-system comparison of the two exposed systems is also stated as p=0.629 on 81",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "positioning",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0008",
+          "E5950c57d2c67485e-B0015"
+        ],
+        "excerpt": "Prior work can be classified into five directions: (1) memory systems, (2) attacks that inject content\ninto a retrieval corpus or an agent's memory, (3) studies of the memory lifecycle, (4) defenses, either\nguardrails or provenance checks, and (5) version-aware retrieval. We summarize each direction below,\nand contrast them with our approach in Table 1.\nMemory systems.An agent-memory system persists what an agent and its users learn across sessions\nand returns stored records when a later query makes them relevant. A graph is often adopted as a\nbase structure for such memory because it makes entities and their relations explicit, so retrieval\ncan follow connections between facts instead of relying on similarity alone. Rasmussen et al. [ 9]\ndescribe Zep and its engine Graphiti, a temporal knowledge graph in which every fact records when it\nbecame true, when it stopped being true, and its \n[\u2026 separate evidence block \u2026]\na store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one.",
+        "explanation": "The related work section covers memory systems, injection attacks, lifecycle security, guardrails and provenance checks, and version-aware retrieval. The positioning paragraph contrasts each direction and states that the record that harms the agent is the defender's own revoked policy, so provenance checks pass it by construction, while a retrieval-time validity check would catch it.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "The paper organizes prior work into five directions and states the gap precisely: no prior family asks whether a store's own revocation mark is enforced at retrieval time.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f3b3e8a95510f5f6b3504eb8a9ccfee79d8385ee15d5a0562854eb0e2659b1c",
+            "evidence_id": "E5950c57d2c67485e-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 0,
+                "text": "Prior work can be classified into five directions: (1) memory systems, (2) attacks that inject content\ninto a retrieval corpus or an agent's memory, (3) studies of the memory lifecycle, (4) defenses, either\nguardrails or provenance checks, and (5) version-aware retrieval. We summarize each direction below,\nand contrast them with our approach in Table 1.\nMemory systems.An agent-memory system persists what an agent and its users learn across sessions\nand returns stored records when a later query makes them relevant. A graph is often adopted as a\nbase structure for such memory because it makes entities and their relations explicit, so retrieval\ncan follow connections between facts instead of relying on similarity alone. Rasmussen et al. [ 9]\ndescribe Zep and its engine Graphiti, a temporal knowledge graph in which every fact records when it\nbecame true, when it stopped being true, and its "
+              }
+            ],
+            "text": "Prior work can be classified into five directions: (1) memory systems, (2) attacks that inject content\ninto a retrieval corpus or an agent's memory, (3) studies of the memory lifecycle, (4) defenses, either\nguardrails or provenance checks, and (5) version-aware retrieval. We summarize each direction below,\nand contrast them with our approach in Table 1.\nMemory systems.An agent-memory system persists what an agent and its users learn across sessions\nand returns stored records when a later query makes them relevant. A graph is often adopted as a\nbase structure for such memory because it makes entities and their relations explicit, so retrieval\ncan follow connections between facts instead of relying on similarity alone. Rasmussen et al. [ 9]\ndescribe Zep and its engine Graphiti, a temporal knowledge graph in which every fact records when it\nbecame true, when it stopped being true, and its "
+          },
+          {
+            "content_hash": "93c6cc027e5d5f186ea0d6c3da9514ffb5d2eac20c6490e67760b499322a09e4",
+            "evidence_id": "E5950c57d2c67485e-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 3499,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 2635,
+                "text": "a store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one."
+              }
+            ],
+            "text": "a store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text covers the five directions, contrasts them, and states the defender's own revoked policy passes provenance checks while a retrieval-time validity check would catch it.",
+          "explanation_status": "supported",
+          "item_id": "evidence-5",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0008",
+            "E5950c57d2c67485e-B0015"
+          ],
+          "reason": "The cited text explicitly lists five directions and states that none asks whether a store's own invalid-marked record still determines agent behavior, matching the claim.",
           "status": "supported"
         }
       },
@@ -655,13 +817,13 @@
             "https://github.com/VulcanLab/Memory-Rebirth-Attack"
           ],
           "claim_status": "supported",
-          "explanation_reason": "The URL is stated in the supplied abstract; the disclaimer that repository contents were not independently checked is accurate for this artifact-availability assessment.",
+          "explanation_reason": "Deterministic manuscript URL atom membership; no scientific inference.",
           "explanation_status": "supported",
-          "item_id": "evidence-6",
+          "item_id": "evidence-7",
           "primary_evidence_ids": [
             "E5950c57d2c67485e-B0003"
           ],
-          "reason": "The abstract contains the exact URL https://github.com/VulcanLab/Memory-Rebirth-Attack.",
+          "reason": "Deterministic manuscript URL atom membership; no scientific inference.",
           "status": "supported"
         }
       },
@@ -670,16 +832,18 @@
         "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
         "dimension": "limitations_and_uncertainty_handling",
         "evidence_ids": [
-          "E5950c57d2c67485e-B0045"
+          "E5950c57d2c67485e-B0045",
+          "E5950c57d2c67485e-B0069"
         ],
-        "excerpt": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5",
-        "explanation": "The per-scenario analysis states the two groups are not a controlled comparison and that the rule-carrying group supports only the narrower statement that a prompt prohibition does not reliably prevent the unsafe action. This is an explicit scope limitation.",
+        "excerpt": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5\n[\u2026 separate evidence block \u2026]\nThe same test on the within-system comparison, where retrieval policy really does\ndiffer, returnsp<0.001 on 39 discordant cells against zero the other way (second row of Table 12),\nso the statistic separates the two cases.\nThe bound on that reading should be stated with it. With 17 discordant pairs a two-sided exact\ntest attains significance only at a 13-to-4 split or more extreme, so this comparison could not have\ndetected a systematic advantage unless roughly three-quarters of the discordant cells fell the same\nway. What the test supports is that the two systems do not differ grossly, not that they are identical,\nand the claim we base on it is only the former.",
+        "explanation": "The per-scenario analysis states the two groups differ in scenario, action set, and distractor count, and the study never measures the same scenario with and without its prohibition. The matched-pair appendix states that with 17 discordant pairs the test could not have detected a systematic advantage unless roughly three-quarters of discordant cells fell the same way, so the claim is only that the systems do not differ grossly.",
         "page": 9,
         "pages": [
-          9
+          9,
+          16
         ],
-        "paraphrase": "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count.",
-        "section": "Per-Scenario Analysis",
+        "paraphrase": "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison and that the matched-pair test has limited power to detect systematic differences.",
+        "section": "Per-Scenario Analysis / Appendix: Matched-Pair Comparison",
         "signal_type": "positive",
         "source_blocks": [
           {
@@ -701,6 +865,26 @@
               }
             ],
             "text": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5"
+          },
+          {
+            "content_hash": "a4f249a366adecfe474d81f0ee6cd190177160534a0973d323a3bc6cb410b506",
+            "evidence_id": "E5950c57d2c67485e-B0069",
+            "pages": [
+              16
+            ],
+            "section": "Appendix: Matched-Pair Comparison",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1567,
+                "page": 16,
+                "section": "Appendix: Matched-Pair Comparison",
+                "section_index": 36,
+                "start": 897,
+                "text": "The same test on the within-system comparison, where retrieval policy really does\ndiffer, returnsp<0.001 on 39 discordant cells against zero the other way (second row of Table 12),\nso the statistic separates the two cases.\nThe bound on that reading should be stated with it. With 17 discordant pairs a two-sided exact\ntest attains significance only at a 13-to-4 split or more extreme, so this comparison could not have\ndetected a systematic advantage unless roughly three-quarters of the discordant cells fell the same\nway. What the test supports is that the two systems do not differ grossly, not that they are identical,\nand the claim we base on it is only the former."
+              }
+            ],
+            "text": "The same test on the within-system comparison, where retrieval policy really does\ndiffer, returnsp<0.001 on 39 discordant cells against zero the other way (second row of Table 12),\nso the statistic separates the two cases.\nThe bound on that reading should be stated with it. With 17 discordant pairs a two-sided exact\ntest attains significance only at a 13-to-4 split or more extreme, so this comparison could not have\ndetected a systematic advantage unless roughly three-quarters of the discordant cells fell the same\nway. What the test supports is that the two systems do not differ grossly, not that they are identical,\nand the claim we base on it is only the former."
           }
         ],
         "statement_kind": "source_claim",
@@ -708,13 +892,14 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The cited text explicitly states the groups are not controlled, differ in scenario, action set and distractor count, and supports only the narrower prompt-prohibition statement.",
+          "explanation_reason": "The inference accurately restates the cited body text about the uncontrolled comparison and the appendix text about the 17 discordant pairs and the limited power of the test, and the conclusion that the claim is only that the systems do not differ grossly follows directly from 'n",
           "explanation_status": "supported",
           "item_id": "evidence-8",
           "primary_evidence_ids": [
-            "E5950c57d2c67485e-B0045"
+            "E5950c57d2c67485e-B0045",
+            "E5950c57d2c67485e-B0069"
           ],
-          "reason": "The per-scenario analysis states the two groups are not a controlled comparison because they differ in scenario, action set, and distractor count.",
+          "reason": "The cited body text explicitly states the two groups are not a controlled comparison because they differ in scenario, action set, and distractor count, and that the study never measures the same scenario with and without its prohibition. The appendix text explicitly states that, ",
           "status": "supported"
         }
       }
@@ -727,17 +912,19 @@
     "overall_quality_score": 54,
     "paper_type": "empirical_research",
     "positive_signals": [
-      "The paper's central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.",
-      "The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.",
-      "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count."
+      "The paper identifies a gap: prior work addresses content injection, deletion propagation, or version-aware retrieval, but none asks whether a store's own revocation mark is enforced at retrieval time.",
+      "The central finding is quantified: on the two exposed systems, the revoked record was returned in every scenario and led to unsafe actions in 44.2% and 42.1% of trials, while the store-level filter reduced unsafe actions to zero.",
+      "The attribution of the failure to retrieval rather than the store is supported by a within-system comparison on mem0 and a matched-pair comparison across the two exposed systems.",
+      "The paper organizes prior work into five directions and states the gap precisely: no prior family asks whether a store's own revocation mark is enforced at retrieval time.",
+      "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison and that the matched-pair test has limited power to detect systematic differences."
     ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "rationale": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
     "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. The sources support the research question, methodology breadth, central results, related-work positioning, limitations, and compute details, but the cited excerpts do not establish matched-pair statistical tests, ablations, or the guard design evaluation under indirect insertion. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material. The sources define M, txt(r), tau(r), rho(r), and distinguish direct and indirect insertion, but the excerpt does not show the equations for R(q,M,k) or the two metrics. The sources support nine scenarios, nine models, ten trials per scenario-model pair, and 44,550 main-grid calls, but do not show six defense conditions or multiple system configurations in the cited text. Cited evidence does not establish numerical values/units: 44.2% The sources support the five directions and the positioning statement, but the cited text does not describe the comparison table's distinction between a benign-user setting and retrieval-time validity check. Cited evidence does not establish numerical values/units: 0.629"
+    "uncertainty": "Scientific support remains unresolved. The sources support the empirical measurement framing, five systems, three failure modes, retrieval-time guard proposal, notation, two insertion modes, nine scenarios, nine models, ten trials per cell, six defense conditions, reported counts/rates, matched-pair and within-system  The sources support the absence of per-condition confidence intervals and the non-controlled comparison limitation, but do not provide evidence for the claimed mixed guard results under indirect insertion or cases where the guard is marginally worse than no defense on cognee and  The sources directly state the research question and name the five systems, but they do not describe the guard's placement and function in sufficient detail to support that part of the claim. The sources support two insertion modes, nine scenarios, nine models, ten trials per scenario-model pair, and definitions of exposure and unsafe-action rates, but they do not explicitly state six defense conditions. The compute figures are supported, but the cited sources do not mention guard/stale_guard.py or an open-sourcing statement."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

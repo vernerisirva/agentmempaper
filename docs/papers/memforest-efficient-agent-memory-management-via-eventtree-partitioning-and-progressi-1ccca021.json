@@ -47,7 +47,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:17",
-    "generated_at": "2026-09-17 11:48:15",
+    "generated_at": "2026-09-17 12:30:45",
     "last_seen_at": "2026-09-17 11:47:21",
     "metadata_sources": [
       "openalex",
@@ -117,15 +117,15 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T10:23:50+00:00",
+    "assessed_at": "2026-09-17T11:57:01+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.99,
     "concerns": [],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "confidence": "medium",
+    "concise_summary": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
+    "confidence": "high",
     "coverage": {
       "assessment_input_characters": 86704,
       "assessment_input_sha256": "2f9046815ee4d8394c0633257d59ece8c2eb8ddd0ecda489536a0cf64abf66da",
@@ -482,7 +482,7 @@
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 5,
-      "evaluation_or_validation_strength": 4,
+      "evaluation_or_validation_strength": 5,
       "evidence_to_claim_alignment": 5,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 4,
@@ -494,72 +494,127 @@
     "downranked": false,
     "evidence": [
       {
-        "claim_role": "result",
+        "claim_role": "artifact_availability",
         "context_id": "a5fed3384e7e538af64dcd4c783c9a372a8febee53736f301372219ae80a0ca5",
-        "dimension": "evidence_to_claim_alignment",
+        "dimension": "reproducibility_and_transparency",
         "evidence_ids": [
-          "Ea5fed3384e7e538a-B0042",
-          "Ea5fed3384e7e538a-B0047"
+          "Ea5fed3384e7e538a-B0003"
         ],
-        "excerpt": "5.3.1 MemForest Ablation Study.\nEventTree Semantic-Temporal Partitioning.Table 3 suggests that, when compressing50%of\nhistorical memory, our method significantly outperforms two variants across three benchmarks: one\n8\nTable 3:Impact of different EventTree parti-\ntioning strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nw/og j\nci 54.5 49.2 45.6 49.8 91.5%\nw/ol j\nci 56.4 50.2 46.2 50.9 93.6%\nOurs 58.4 51.8 46.5 52.2 96.0%\nTable 4:Impact of different memory node\nmerging strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nRandom 54.0 50.0 45.7 49.9 91.7%\nMinimum 51.2 48.8 45.2 48.4 89.0%\nOurs 58.4 51.8 46.5 52.2 \n[\u2026 separate evidence block \u2026]\nni00000003/uni0000000b\n/uni0000001a/uni00000013/uni00000008/uni0000000c\nFigure 3:Time Efficiency Analysis on Mem0 and M3-Agent.Avg-R(\u00d7): average number of\nretrievals per query;R-Time(s): time cost per retrieval;T-Time(s): total retrieval time per query.\nremoves the local continuity score lj\nci, and the other removes the global similarity score gj\nci and\nreplaces it with a sliding window for EventTree partitioning. Detailed implementations of these\nvariants are provided in Appendix A.3. This indicates that combining global semantic similarity with\nlocal temporal continuity enables more accurate EventTree partitioning.\nEventTree Progressive Merging.Table 4 suggests that, when compressing50%of the historical\nmemory, replacing the maximum spanning tree with either random merging or minimum spanning\ntree merging results in significantly worse performance than our method, thereby validating",
-        "explanation": "Table 3 shows that removing the global similarity score (w/o g_j^ci) or the local continuity score (w/o l_j^ci) reduces average performance from 52.2 to 49.8 and 50.9 respectively at 50% compression. Table 4 shows that replacing maximum spanning tree merging with random or minimum merging reduces performance from 52.2 to 49.9 and 48.4 respectively.",
-        "page": 8,
+        "excerpt": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest.",
+        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
+        "page": 1,
         "pages": [
-          8,
-          9
+          1
         ],
-        "paraphrase": "The ablation studies validate that combining global semantic similarity with local temporal continuity and using maximum spanning tree merging both improve performance over their respective ablations.",
-        "section": "Ablation Study",
+        "paraphrase": "The paper provides these artifact links: https://github.com/Celina-love-sweet/MemForest",
+        "section": "Abstract",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "bf608b42270a06c2497451ef7ce28a3bc6803c8a9d6e22296b013d6fdb526dea",
-            "evidence_id": "Ea5fed3384e7e538a-B0042",
+            "content_hash": "4dde5c2eb36fa719f5e83b9b6e7d58c88133777388e98b4727def32b9b418354",
+            "evidence_id": "Ea5fed3384e7e538a-B0003",
             "pages": [
-              8,
-              9
+              1
             ],
-            "section": "Ablation Study",
-            "section_role": "results",
+            "section": "Abstract",
+            "section_role": "abstract",
             "source_spans": [
               {
-                "end": 217,
-                "page": 8,
-                "section": "Ablation Study",
-                "section_index": 19,
-                "start": 0,
-                "text": "5.3.1 MemForest Ablation Study.\nEventTree Semantic-Temporal Partitioning.Table 3 suggests that, when compressing50%of\nhistorical memory, our method significantly outperforms two variants across three benchmarks: one\n8"
-              },
-              {
-                "end": 532,
-                "page": 9,
-                "section": "Ablation Study",
-                "section_index": 20,
-                "start": 0,
-                "text": "Table 3:Impact of different EventTree parti-\ntioning strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nw/og j\nci 54.5 49.2 45.6 49.8 91.5%\nw/ol j\nci 56.4 50.2 46.2 50.9 93.6%\nOurs 58.4 51.8 46.5 52.2 96.0%\nTable 4:Impact of different memory node\nmerging strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nRandom 54.0 50.0 45.7 49.9 91.7%\nMinimum 51.2 48.8 45.2 48.4 89.0%\nOurs 58.4 51.8 46.5 52.2 "
+                "end": 1674,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 894,
+                "text": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest."
               }
             ],
-            "text": "5.3.1 MemForest Ablation Study.\nEventTree Semantic-Temporal Partitioning.Table 3 suggests that, when compressing50%of\nhistorical memory, our method significantly outperforms two variants across three benchmarks: one\n8\nTable 3:Impact of different EventTree parti-\ntioning strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nw/og j\nci 54.5 49.2 45.6 49.8 91.5%\nw/ol j\nci 56.4 50.2 46.2 50.9 93.6%\nOurs 58.4 51.8 46.5 52.2 96.0%\nTable 4:Impact of different memory node\nmerging strategies at 50% compression rate.\nMethod LoCoMo LongMemEval M3-Bench-web Avg. %\nBaseline 60.2 55.2 47.9 54.4 100.0%\nRandom 54.0 50.0 45.7 49.9 91.7%\nMinimum 51.2 48.8 45.2 48.4 89.0%\nOurs 58.4 51.8 46.5 52.2 "
+            "text": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [
+            "https://github.com/Celina-love-sweet/MemForest"
+          ],
+          "claim_status": "supported",
+          "explanation_reason": "Deterministic manuscript URL atom membership; no scientific inference.",
+          "explanation_status": "supported",
+          "item_id": "evidence-0",
+          "primary_evidence_ids": [
+            "Ea5fed3384e7e538a-B0003"
+          ],
+          "reason": "Deterministic manuscript URL atom membership; no scientific inference.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "a5fed3384e7e538af64dcd4c783c9a372a8febee53736f301372219ae80a0ca5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5fed3384e7e538a-B0009",
+          "Ea5fed3384e7e538a-B0010"
+        ],
+        "excerpt": "belong to the same event. For example, the\nsimilarity between memory nodem1 and nodem2 is only0.12, and that between node m1 and node\nm3 is only0.23, yet all three pertain to \"Boston dining plan\". This indicates thateven when semantic\nsimilarity is low, temporally proximate memory nodes may still belong to the same memory event.\nConsequently, the above analysis indicates that when performing memory compression, it is necessary\nto consider both global semantic similarity and local temporal continuity. To this end, we propose\nMemForest, a general agent memory compression framework adaptable to various agent memory\nsystems. Specifically, MemForest leverages theEventTree Semantic-Temporal Partitioningmodule\nto combine global semantic similarity with local temporal continuity, thereby partitioning stored\nhistorical memory into a set of event-centric EventTrees. For each EventTree, we \n[\u2026 separate evidence block \u2026]\nleverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2\n\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key",
+        "explanation": "The introduction explicitly states that MemForest leverages EventTree Semantic-Temporal Partitioning to combine global semantic similarity with local temporal continuity, partitioning stored historical memory into event-centric EventTrees, and uses EventTree Progressive Merging to compress internal representations.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "MemForest is a general agent memory compression framework that partitions historical memory into event-centric EventTrees using global semantic similarity and local temporal continuity, then progressively merges nodes within each EventTree.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d611a35845949fc27c40e71d8d6f181a816cc4cae187c1d8ea7b9fa38e764f57",
+            "evidence_id": "Ea5fed3384e7e538a-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4327,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 3435,
+                "text": "belong to the same event. For example, the\nsimilarity between memory nodem1 and nodem2 is only0.12, and that between node m1 and node\nm3 is only0.23, yet all three pertain to \"Boston dining plan\". This indicates thateven when semantic\nsimilarity is low, temporally proximate memory nodes may still belong to the same memory event.\nConsequently, the above analysis indicates that when performing memory compression, it is necessary\nto consider both global semantic similarity and local temporal continuity. To this end, we propose\nMemForest, a general agent memory compression framework adaptable to various agent memory\nsystems. Specifically, MemForest leverages theEventTree Semantic-Temporal Partitioningmodule\nto combine global semantic similarity with local temporal continuity, thereby partitioning stored\nhistorical memory into a set of event-centric EventTrees. For each EventTree, we "
+              }
+            ],
+            "text": "belong to the same event. For example, the\nsimilarity between memory nodem1 and nodem2 is only0.12, and that between node m1 and node\nm3 is only0.23, yet all three pertain to \"Boston dining plan\". This indicates thateven when semantic\nsimilarity is low, temporally proximate memory nodes may still belong to the same memory event.\nConsequently, the above analysis indicates that when performing memory compression, it is necessary\nto consider both global semantic similarity and local temporal continuity. To this end, we propose\nMemForest, a general agent memory compression framework adaptable to various agent memory\nsystems. Specifically, MemForest leverages theEventTree Semantic-Temporal Partitioningmodule\nto combine global semantic similarity with local temporal continuity, thereby partitioning stored\nhistorical memory into a set of event-centric EventTrees. For each EventTree, we "
           },
           {
-            "content_hash": "737499f522d9bbed7e38ddc6e25e1148a35e58a42c34de132de0ba1134247f66",
-            "evidence_id": "Ea5fed3384e7e538a-B0047",
+            "content_hash": "2db2d61b9b3e7a260cb1eb64f9b1c5a0840843a131587dd60860c0d7354cc09a",
+            "evidence_id": "Ea5fed3384e7e538a-B0010",
             "pages": [
-              9
+              2,
+              3
             ],
-            "section": "Ablation Study",
-            "section_role": "results",
+            "section": "Introduction",
+            "section_role": "introduction",
             "source_spans": [
               {
-                "end": 5030,
-                "page": 9,
-                "section": "Ablation Study",
-                "section_index": 20,
-                "start": 4132,
-                "text": "ni00000003/uni0000000b\n/uni0000001a/uni00000013/uni00000008/uni0000000c\nFigure 3:Time Efficiency Analysis on Mem0 and M3-Agent.Avg-R(\u00d7): average number of\nretrievals per query;R-Time(s): time cost per retrieval;T-Time(s): total retrieval time per query.\nremoves the local continuity score lj\nci, and the other removes the global similarity score gj\nci and\nreplaces it with a sliding window for EventTree partitioning. Detailed implementations of these\nvariants are provided in Appendix A.3. This indicates that combining global semantic similarity with\nlocal temporal continuity enables more accurate EventTree partitioning.\nEventTree Progressive Merging.Table 4 suggests that, when compressing50%of the historical\nmemory, replacing the maximum spanning tree with either random merging or minimum spanning\ntree merging results in significantly worse performance than our method, thereby validating "
+                "end": 4792,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 4327,
+                "text": "leverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2"
+              },
+              {
+                "end": 428,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key "
               }
             ],
-            "text": "ni00000003/uni0000000b\n/uni0000001a/uni00000013/uni00000008/uni0000000c\nFigure 3:Time Efficiency Analysis on Mem0 and M3-Agent.Avg-R(\u00d7): average number of\nretrievals per query;R-Time(s): time cost per retrieval;T-Time(s): total retrieval time per query.\nremoves the local continuity score lj\nci, and the other removes the global similarity score gj\nci and\nreplaces it with a sliding window for EventTree partitioning. Detailed implementations of these\nvariants are provided in Appendix A.3. This indicates that combining global semantic similarity with\nlocal temporal continuity enables more accurate EventTree partitioning.\nEventTree Progressive Merging.Table 4 suggests that, when compressing50%of the historical\nmemory, replacing the maximum spanning tree with either random merging or minimum spanning\ntree merging results in significantly worse performance than our method, thereby validating "
+            "text": "leverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2\n\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key "
           }
         ],
         "statement_kind": "source_claim",
@@ -567,14 +622,175 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The cited tables contain the stated ablation values and support the explanation's numerical comparisons.",
+          "explanation_reason": "The cited text directly states MemForest leverages EventTree Semantic-Temporal Partitioning to combine global semantic similarity with local temporal continuity, partitions stored historical memory into event-centric EventTrees, and uses EventTree Progressive Merging to compress",
           "explanation_status": "supported",
-          "item_id": "evidence-6",
+          "item_id": "evidence-1",
           "primary_evidence_ids": [
-            "Ea5fed3384e7e538a-B0042",
-            "Ea5fed3384e7e538a-B0047"
+            "Ea5fed3384e7e538a-B0009",
+            "Ea5fed3384e7e538a-B0010"
           ],
-          "reason": "The ablation tables show that removing global similarity or local continuity and replacing maximum spanning tree merging with random or minimum merging reduce average performance relative to the proposed method.",
+          "reason": "The cited introduction text explicitly states MemForest is a general agent memory compression framework, uses EventTree Semantic-Temporal Partitioning to combine global semantic similarity and local temporal continuity, partitions historical memory into event-centric EventTrees,",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "a5fed3384e7e538af64dcd4c783c9a372a8febee53736f301372219ae80a0ca5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5fed3384e7e538a-B0010",
+          "Ea5fed3384e7e538a-B0026"
+        ],
+        "excerpt": "leverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2\n\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key \n[\u2026 separate evidence block \u2026]\nTo enhance the temporal modeling capability of the compressed memory set H\u2032, we propose an\nAnchor-Guided Propagation Retrievalmechanism, which retrieves more relevant memory nodes\nfrom the temporal neighborhoods of key memory nodes to supplement nearby information.\nSpecifically, we first select the top L\u00b7k memory nodes with the highest similarity to the query,\nforming a candidate setMh, along with their corresponding similarity scores{si}| L\u00b7k\ni=1, whereL is a\nscaling coefficient that determines the number of retrieved candidate memory nodes. Then, we further\nselect the top\u03bb\u00b7kmost similar nodes as anchor memory nodes, denoted asM a ={m\u2032\nai}| \u03bb\u00b7k\ni=1.\nNext, all memory nodes inMh are sorted in chronological order, and the positions of anchor memory\nnodes on the timeline are identified. For thej-th memory nodem\u2032\nj\u2208M h, we compute its propagation\nscore with respect to all anchor memory",
+        "explanation": "The introduction and method section both describe AGPR as recovering temporal structural information and retrieving more relevant memory nodes from temporal neighborhoods of key memory nodes.",
+        "page": 2,
+        "pages": [
+          2,
+          3,
+          5
+        ],
+        "paraphrase": "The Anchor-Guided Propagation Retrieval (AGPR) mechanism retrieves additional relevant memory nodes from temporal neighborhoods of key memory nodes to improve retrieval accuracy.",
+        "section": "Introduction / Anchor-Guided Propagation Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2db2d61b9b3e7a260cb1eb64f9b1c5a0840843a131587dd60860c0d7354cc09a",
+            "evidence_id": "Ea5fed3384e7e538a-B0010",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4792,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 4327,
+                "text": "leverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2"
+              },
+              {
+                "end": 428,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key "
+              }
+            ],
+            "text": "leverage the\nEventTree Progressive Mergingmodule to perform iterative processing, progressively compressing\nits internal representations until a predefined compression ratio is achieved. Furthermore, we\nintroduce anAnchor-Guided Propagation Retrieval (AGPR)mechanism to recover temporal\nstructural information that may be degraded during compression, thereby enabling the retrieval of\nmore relevant memory nodes. In summary, the main contributions are as follows:\n2\n\u2022 General Compression Framework.Based on the above analysis, we proposeMemForest, a\ngeneral agent memory compression framework, which leverages global semantic similarity and\nlocal temporal continuity to significantly improve storage and retrieval efficiency.\n\u2022 Novel Retrieval Mechanism.We introduce anAnchor-Guided Propagation Retrievalmecha-\nnism to retrieve more relevant memory nodes from the temporal neighborhoods of key "
+          },
+          {
+            "content_hash": "747a18ad6db88249e16c5918d14cb52fafb65c91c5a6093edb65379b49c68d0f",
+            "evidence_id": "Ea5fed3384e7e538a-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Anchor-Guided Propagation Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Anchor-Guided Propagation Retrieval",
+                "section_index": 13,
+                "start": 0,
+                "text": "To enhance the temporal modeling capability of the compressed memory set H\u2032, we propose an\nAnchor-Guided Propagation Retrievalmechanism, which retrieves more relevant memory nodes\nfrom the temporal neighborhoods of key memory nodes to supplement nearby information.\nSpecifically, we first select the top L\u00b7k memory nodes with the highest similarity to the query,\nforming a candidate setMh, along with their corresponding similarity scores{si}| L\u00b7k\ni=1, whereL is a\nscaling coefficient that determines the number of retrieved candidate memory nodes. Then, we further\nselect the top\u03bb\u00b7kmost similar nodes as anchor memory nodes, denoted asM a ={m\u2032\nai}| \u03bb\u00b7k\ni=1.\nNext, all memory nodes inMh are sorted in chronological order, and the positions of anchor memory\nnodes on the timeline are identified. For thej-th memory nodem\u2032\nj\u2208M h, we compute its propagation\nscore with respect to all anchor memory "
+              }
+            ],
+            "text": "To enhance the temporal modeling capability of the compressed memory set H\u2032, we propose an\nAnchor-Guided Propagation Retrievalmechanism, which retrieves more relevant memory nodes\nfrom the temporal neighborhoods of key memory nodes to supplement nearby information.\nSpecifically, we first select the top L\u00b7k memory nodes with the highest similarity to the query,\nforming a candidate setMh, along with their corresponding similarity scores{si}| L\u00b7k\ni=1, whereL is a\nscaling coefficient that determines the number of retrieved candidate memory nodes. Then, we further\nselect the top\u03bb\u00b7kmost similar nodes as anchor memory nodes, denoted asM a ={m\u2032\nai}| \u03bb\u00b7k\ni=1.\nNext, all memory nodes inMh are sorted in chronological order, and the positions of anchor memory\nnodes on the timeline are identified. For thej-th memory nodem\u2032\nj\u2208M h, we compute its propagation\nscore with respect to all anchor memory "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "Both cited sources describe AGPR as recovering temporal structural information and retrieving more relevant memory nodes from temporal neighborhoods of key memory nodes, matching the inference.",
+          "explanation_status": "supported",
+          "item_id": "evidence-2",
+          "primary_evidence_ids": [
+            "Ea5fed3384e7e538a-B0010",
+            "Ea5fed3384e7e538a-B0026"
+          ],
+          "reason": "The cited introduction and method sections explicitly state that AGPR recovers temporal structural information and retrieves more relevant memory nodes from temporal neighborhoods of key memory nodes.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "a5fed3384e7e538af64dcd4c783c9a372a8febee53736f301372219ae80a0ca5",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "Ea5fed3384e7e538a-B0028",
+          "Ea5fed3384e7e538a-B0029"
+        ],
+        "excerpt": "We analyze from a retrieval perspectivewhy similar memory nodes should be preferentially merged.\nGiven a queryq, consider two memory nodesmi andmj with embeddingsei andej, respectively.\nTheir similarities to the query are defined assi =q\u22a4ei andsj =q\u22a4ej, and the similarity between the\ntwo nodes is\u03c1ij =e\u22a4\ni ej. We assume all embeddings are\u21132-normalized, i.e.,\u2225q\u2225=\u2225e i\u2225=\u2225e j\u2225= 1 .\nWithout loss of generality, we assumesi\u2265s j, indicating thatmi is more relevant to the queryq.\nWe represent the merged memory embedding as a normalized interpolation of the two embeddings:\nel = \u03bbei + (1\u2212\u03bb)e j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225,(11)\nwhere\u03bb\u2208(0,1)is a weighting coefficient that controls the interpolation betweene i andej.\nThe similarity between the merged memory nodeml and the queryqis given by:\nsl = \u03bbsi + (1\u2212\u03bb)s j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225.(12)\nBy theTriangle inequality, we have:\nsl\u2265\u03bbs i + (1\u2212\u03bb)s j.(13)\nFurthermore, by \n[\u2026 separate evidence block \u2026]\ntheCauchy\u2013Schwarz inequality, it can be shown that:\nsj\u2265s i\u2212\np\n2\u22122\u03c1 ij,(14)\nwhich leads to:\nsl\u2265s i\u2212(1\u2212\u03bb)\np\n2\u22122\u03c1 ij.(15)\nThe derivation of Eqs. 13-15 is provided in Appendix B.1. From Eq. 15, we observe that as \u03c1ij\nincreases, the lower bound monotonically increases, indicating that merging highly similar memory\nnodes preserves higher query similarity. In contrast, when\u03c1ij is small, the lower bound decreases,\nimplying larger semantic deviation after merging.\nDuring topk retrieval, such deviation may prevent important memory nodes from being correctly\nretrieved. Therefore, it is preferable to prioritize merging highly similar memory nodes.\nFurthermore, for the theoretical analysis of MemForest, please refer to Appendix B.2.",
+        "explanation": "The theoretical analysis derives a lower bound on merged-node query similarity and shows it increases as the similarity between merged nodes increases, providing formal justification for the merging strategy.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "The paper provides a theoretical analysis showing that merging highly similar memory nodes preserves higher query similarity, with a lower bound on merged-node query similarity that increases monotonically with node similarity.",
+        "section": "Theoretical Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "39608b4cdea8bf1289aec780c61a159a0a7dbfbad0b9f759d01899b64ca87c95",
+            "evidence_id": "Ea5fed3384e7e538a-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Theoretical Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 6,
+                "section": "Theoretical Analysis",
+                "section_index": 14,
+                "start": 0,
+                "text": "We analyze from a retrieval perspectivewhy similar memory nodes should be preferentially merged.\nGiven a queryq, consider two memory nodesmi andmj with embeddingsei andej, respectively.\nTheir similarities to the query are defined assi =q\u22a4ei andsj =q\u22a4ej, and the similarity between the\ntwo nodes is\u03c1ij =e\u22a4\ni ej. We assume all embeddings are\u21132-normalized, i.e.,\u2225q\u2225=\u2225e i\u2225=\u2225e j\u2225= 1 .\nWithout loss of generality, we assumesi\u2265s j, indicating thatmi is more relevant to the queryq.\nWe represent the merged memory embedding as a normalized interpolation of the two embeddings:\nel = \u03bbei + (1\u2212\u03bb)e j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225,(11)\nwhere\u03bb\u2208(0,1)is a weighting coefficient that controls the interpolation betweene i andej.\nThe similarity between the merged memory nodeml and the queryqis given by:\nsl = \u03bbsi + (1\u2212\u03bb)s j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225.(12)\nBy theTriangle inequality, we have:\nsl\u2265\u03bbs i + (1\u2212\u03bb)s j.(13)\nFurthermore, by "
+              }
+            ],
+            "text": "We analyze from a retrieval perspectivewhy similar memory nodes should be preferentially merged.\nGiven a queryq, consider two memory nodesmi andmj with embeddingsei andej, respectively.\nTheir similarities to the query are defined assi =q\u22a4ei andsj =q\u22a4ej, and the similarity between the\ntwo nodes is\u03c1ij =e\u22a4\ni ej. We assume all embeddings are\u21132-normalized, i.e.,\u2225q\u2225=\u2225e i\u2225=\u2225e j\u2225= 1 .\nWithout loss of generality, we assumesi\u2265s j, indicating thatmi is more relevant to the queryq.\nWe represent the merged memory embedding as a normalized interpolation of the two embeddings:\nel = \u03bbei + (1\u2212\u03bb)e j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225,(11)\nwhere\u03bb\u2208(0,1)is a weighting coefficient that controls the interpolation betweene i andej.\nThe similarity between the merged memory nodeml and the queryqis given by:\nsl = \u03bbsi + (1\u2212\u03bb)s j\n\u2225\u03bbei + (1\u2212\u03bb)e j\u2225.(12)\nBy theTriangle inequality, we have:\nsl\u2265\u03bbs i + (1\u2212\u03bb)s j.(13)\nFurthermore, by "
+          },
+          {
+            "content_hash": "56bcc73643603a174acb13346a24156a4006874df367138b64792b50bb8b3468",
+            "evidence_id": "Ea5fed3384e7e538a-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Theoretical Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1622,
+                "page": 6,
+                "section": "Theoretical Analysis",
+                "section_index": 14,
+                "start": 893,
+                "text": "theCauchy\u2013Schwarz inequality, it can be shown that:\nsj\u2265s i\u2212\np\n2\u22122\u03c1 ij,(14)\nwhich leads to:\nsl\u2265s i\u2212(1\u2212\u03bb)\np\n2\u22122\u03c1 ij.(15)\nThe derivation of Eqs. 13-15 is provided in Appendix B.1. From Eq. 15, we observe that as \u03c1ij\nincreases, the lower bound monotonically increases, indicating that merging highly similar memory\nnodes preserves higher query similarity. In contrast, when\u03c1ij is small, the lower bound decreases,\nimplying larger semantic deviation after merging.\nDuring topk retrieval, such deviation may prevent important memory nodes from being correctly\nretrieved. Therefore, it is preferable to prioritize merging highly similar memory nodes.\nFurthermore, for the theoretical analysis of MemForest, please refer to Appendix B.2."
+              }
+            ],
+            "text": "theCauchy\u2013Schwarz inequality, it can be shown that:\nsj\u2265s i\u2212\np\n2\u22122\u03c1 ij,(14)\nwhich leads to:\nsl\u2265s i\u2212(1\u2212\u03bb)\np\n2\u22122\u03c1 ij.(15)\nThe derivation of Eqs. 13-15 is provided in Appendix B.1. From Eq. 15, we observe that as \u03c1ij\nincreases, the lower bound monotonically increases, indicating that merging highly similar memory\nnodes preserves higher query similarity. In contrast, when\u03c1ij is small, the lower bound decreases,\nimplying larger semantic deviation after merging.\nDuring topk retrieval, such deviation may prevent important memory nodes from being correctly\nretrieved. Therefore, it is preferable to prioritize merging highly similar memory nodes.\nFurthermore, for the theoretical analysis of MemForest, please refer to Appendix B.2."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text derives the lower bound and explicitly states that it monotonically increases with node similarity, providing formal justification for prioritizing merging of highly similar nodes.",
+          "explanation_status": "supported",
+          "item_id": "evidence-3",
+          "primary_evidence_ids": [
+            "Ea5fed3384e7e538a-B0028",
+            "Ea5fed3384e7e538a-B0029"
+          ],
+          "reason": "The cited text explicitly derives the lower bound in Eq. 15 and states that as \u03c1ij increases, the lower bound monotonically increases, indicating that merging highly similar memory nodes preserves higher query similarity.",
           "status": "supported"
         }
       },
@@ -587,12 +803,12 @@
           "Ea5fed3384e7e538a-B0008"
         ],
         "excerpt": "it is necessary to adopt a post-processing perspective and perform\ncompression on already generated memories to systematically optimize storage efficiency and retrieval\nperformance. Although recent work has begun to explore the feasibility of post-processing memory\ncompression [34], this method typically relies on graph-structured memory representations and is\nrestricted to streaming video scenarios, limiting its general applicability. Consequently, designing a\ngeneral and scalable memory compression framework remains an important and open challenge.\nSince stored memories are retrieved as external context, memory compression is closely related\nto context-length reduction. Recent token compression methods [ 5, 7, 37, 41, 43, 46, 47] reduce\ncontext via similarity-based merging or diversity-based pruning, mainly for MLLMs. However,\nunlike redundant visual inputs, textual memories are more \n[\u2026 separate evidence block \u2026]\nsemantically rich and information-dense\n[24, 45, 47], making compression challenging; existing methods also overlook memory-specific\nproperties such as event differentiation and temporal relationships. Inspired by the event-level\norganization of human memory [18, 33], we partition historical memory into events and identify two\nkey features for each memory event:\n(I) Global Semantic Similarity:Fig. 1(b) suggests that semantically similar memory nodes may\nrecur across distant temporal windows. For example, the similarity between memory nodem1 and\nthe temporally distant memory nodem9 is0.73, and that between node m1 and nodem15 is0.68.\nThis indicates thatsimilar memory nodes within the same event can reappear over long time spans.\n(II) Local Temporal Continuity:Fig. 1(b) suggests that within adjacent temporal windows, memory\nnodes may exhibit substantial semantic differences yet still",
-        "explanation": "The introduction contrasts post-processing compression with generation-stage methods, notes that StreamMeCo is restricted to streaming video, and discusses similarity-based, diversity-based, and attention-based visual token compression methods. It argues that textual memories are more semantically rich and information-dense, making compression challenging and motivating the event-level organization approach.",
+        "explanation": "The introduction identifies limitations of existing post-processing memory compression and token compression approaches, establishing the gap that MemForest addresses.",
         "page": 2,
         "pages": [
           2
         ],
-        "paraphrase": "The paper positions MemForest against generation-stage memory compression, graph-structured streaming video compression, and visual token compression methods, arguing that textual memories are more semantically rich and information-dense than visual tokens.",
+        "paraphrase": "The paper positions MemForest against existing memory compression and token compression work, noting that prior post-processing compression is restricted to graph-structured streaming video scenarios and that token compression methods overlook event differentiation and temporal relationships.",
         "section": "Introduction",
         "signal_type": "positive",
         "source_blocks": [
@@ -642,69 +858,67 @@
         "support_verification": {
           "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The sources support the contrasts with generation-stage methods, StreamMeCo's streaming-video restriction, visual token compression discussion, and the claim that textual memories are more semantically rich and information-dense.",
+          "explanation_reason": "The cited introduction text identifies limitations of both post-processing memory compression and token compression approaches, establishing the gap that MemForest addresses.",
           "explanation_status": "supported",
           "item_id": "evidence-7",
           "primary_evidence_ids": [
             "Ea5fed3384e7e538a-B0007",
             "Ea5fed3384e7e538a-B0008"
           ],
-          "reason": "The cited text contrasts post-processing with generation-stage compression, notes graph-structured streaming video limitations, discusses visual token compression, and states textual memories are more semantically rich and information-dense.",
+          "reason": "The cited introduction text states that recent post-processing memory compression relies on graph-structured representations and is restricted to streaming video scenarios, and that token compression methods overlook event differentiation and temporal relationships.",
           "status": "supported"
         }
       },
       {
-        "claim_role": "artifact_availability",
+        "claim_role": "limitation",
         "context_id": "a5fed3384e7e538af64dcd4c783c9a372a8febee53736f301372219ae80a0ca5",
-        "dimension": "reproducibility_and_transparency",
+        "dimension": "limitations_and_uncertainty_handling",
         "evidence_ids": [
-          "Ea5fed3384e7e538a-B0003"
+          "Ea5fed3384e7e538a-B0107"
         ],
-        "excerpt": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest.",
-        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
-        "page": 1,
+        "excerpt": "We conducted experiments on both the high-redundancy multimodal memory framework M3-Agent and the\nlow-redundancy textual memory framework Mem0. The results indicate that in Mem0, which has relatively low\nredundancy, performance degradation becomes pronounced at higher compression rates. For instance, when\n70%of the historical memory is compressed, the accuracy drops to only93.3%of that in the uncompressed\nsetting. In the future, specialized compression methods could be designed for such low-redundancy memory\nframeworks to improve performance under high compression ratios.\nG Future Work\nWe propose the following potential research directions for future work:\n\u2022 MemForest is a general-purpose memory compression framework. Future work could explore designing\nspecialized compression methods for low-redundancy memory frameworks like Mem0, in order to better\npreserve performance under high",
+        "explanation": "The limitations section explicitly discusses the performance drop in low-redundancy textual memory at high compression ratios and proposes future work for specialized compression methods.",
+        "page": 23,
         "pages": [
-          1
+          23
         ],
-        "paraphrase": "The paper provides these artifact links: https://github.com/Celina-love-sweet/MemForest",
-        "section": "Abstract",
+        "paraphrase": "The paper acknowledges that performance degradation becomes pronounced at higher compression rates in the low-redundancy Mem0 framework, with accuracy dropping to 93.3% at 70% compression.",
+        "section": "Appendix: Limitations",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "4dde5c2eb36fa719f5e83b9b6e7d58c88133777388e98b4727def32b9b418354",
-            "evidence_id": "Ea5fed3384e7e538a-B0003",
+            "content_hash": "c02099925203344c0e171b5e475e35144d9817382160087c9b4dbcf316ffa50e",
+            "evidence_id": "Ea5fed3384e7e538a-B0107",
             "pages": [
-              1
+              23
             ],
-            "section": "Abstract",
-            "section_role": "abstract",
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
             "source_spans": [
               {
-                "end": 1674,
-                "page": 1,
-                "section": "Abstract",
-                "section_index": 1,
-                "start": 894,
-                "text": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest."
+                "end": 895,
+                "page": 23,
+                "section": "Appendix: Limitations",
+                "section_index": 47,
+                "start": 0,
+                "text": "We conducted experiments on both the high-redundancy multimodal memory framework M3-Agent and the\nlow-redundancy textual memory framework Mem0. The results indicate that in Mem0, which has relatively low\nredundancy, performance degradation becomes pronounced at higher compression rates. For instance, when\n70%of the historical memory is compressed, the accuracy drops to only93.3%of that in the uncompressed\nsetting. In the future, specialized compression methods could be designed for such low-redundancy memory\nframeworks to improve performance under high compression ratios.\nG Future Work\nWe propose the following potential research directions for future work:\n\u2022 MemForest is a general-purpose memory compression framework. Future work could explore designing\nspecialized compression methods for low-redundancy memory frameworks like Mem0, in order to better\npreserve performance under high "
               }
             ],
-            "text": "anchor-guided propagation retrieval mechanism, which\nretrieves more relevant memory nodes from the temporal neighborhoods of key\nmemory nodes, thereby enabling more accurate memory retrieval. Extensive exper-\niments demonstrate the effectiveness of MemForest. Under the unimodal Mem0\nframework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),\nMemForest preserves97.1%of the original performance while compressing50%\nof historical memory, achieving a1.89\u00d7retrieval speedup. Under the multimodal\nM3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-\nweb), MemForest retains99.7%of the original performance under a50%com-\npression ratio, while achieving a2.24\u00d7retrieval speedup.Our code is available at\nhttps://github.com/Celina-love-sweet/MemForest."
+            "text": "We conducted experiments on both the high-redundancy multimodal memory framework M3-Agent and the\nlow-redundancy textual memory framework Mem0. The results indicate that in Mem0, which has relatively low\nredundancy, performance degradation becomes pronounced at higher compression rates. For instance, when\n70%of the historical memory is compressed, the accuracy drops to only93.3%of that in the uncompressed\nsetting. In the future, specialized compression methods could be designed for such low-redundancy memory\nframeworks to improve performance under high compression ratios.\nG Future Work\nWe propose the following potential research directions for future work:\n\u2022 MemForest is a general-purpose memory compression framework. Future work could explore designing\nspecialized compression methods for low-redundancy memory frameworks like Mem0, in order to better\npreserve performance under high "
           }
         ],
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
-          "artifact_urls": [
-            "https://github.com/Celina-love-sweet/MemForest"
-          ],
+          "artifact_urls": [],
           "claim_status": "supported",
-          "explanation_reason": "The URL is present in the supplied abstract, and the explanation appropriately limits the claim to URL occurrence without asserting repository functionality.",
+          "explanation_reason": "The cited appendix text explicitly discusses the performance drop in low-redundancy Mem0 at high compression ratios and proposes future work on specialized compression methods for such frameworks.",
           "explanation_status": "supported",
-          "item_id": "evidence-9",
+          "item_id": "evidence-8",
           "primary_evidence_ids": [
-            "Ea5fed3384e7e538a-B0003"
+            "Ea5fed3384e7e538a-B0107"
           ],
-          "reason": "The cited abstract contains the exact URL https://github.com/Celina-love-sweet/MemForest.",
+          "reason": "The cited appendix text explicitly states that in Mem0, performance degradation becomes pronounced at higher compression rates, and that at 70% compression accuracy drops to 93.3% of the uncompressed setting, matching the claim.",
           "status": "supported"
         }
       }
@@ -714,19 +928,22 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 78,
+    "overall_quality_score": 85,
     "paper_type": "methods_or_algorithm",
     "positive_signals": [
-      "The ablation studies validate that combining global semantic similarity with local temporal continuity and using maximum spanning tree merging both improve performance over their respective ablations.",
-      "The paper positions MemForest against generation-stage memory compression, graph-structured streaming video compression, and visual token compression methods, arguing that textual memories are more semantically rich and information-dense than visual tokens."
+      "MemForest is a general agent memory compression framework that partitions historical memory into event-centric EventTrees using global semantic similarity and local temporal continuity, then progressively merges nodes within each EventTree.",
+      "The Anchor-Guided Propagation Retrieval (AGPR) mechanism retrieves additional relevant memory nodes from temporal neighborhoods of key memory nodes to improve retrieval accuracy.",
+      "The paper provides a theoretical analysis showing that merging highly similar memory nodes preserves higher query similarity, with a lower bound on merged-node query similarity that increases monotonically with node similarity.",
+      "The paper positions MemForest against existing memory compression and token compression work, noting that prior post-processing compression is restricted to graph-structured streaming video scenarios and that token compression methods overlook event differentiation and temporal relationships.",
+      "The paper acknowledges that performance degradation becomes pronounced at higher compression rates in the low-redundancy Mem0 framework, with accuracy dropping to 93.3% at 70% compression."
     ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "recommendation": "promising",
+    "rationale": "The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.",
+    "recommendation": "strong",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "6c96a61cd64a124a81bf44f498e57b0a4857a9a5ccfafe9e3fb228b03a801b70",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 1.89x, 2.24x The sources state results are averaged over three runs and use GPT-4o-mini for merging, but they do not describe evaluator models, inter-evaluator reliability, human validation, or the theoretical assumptions about normalized embeddings and interpolation. The sources state the two key features and the three components, and the contribution list enumerates the general compression framework and novel retrieval mechanism; however, the cited text does not show the third contribution item about empirical performance. The cited text says recent post-processing compression relies on graph-structured memory and is restricted to streaming video, and that a general scalable framework remains an open challenge, but it does not explicitly state that existing research largely focuses on the 'genera- The sources provide the formal equations for clustering, local continuity, weighted fusion, and reassignment, but the cited excerpts do not show the hyperparameter values alpha, beta, and w in the experimental setup. The sources specify the fully connected graph, cosine similarity weights, Kruskal-based maximum spanning tree, degree-aware weight update, and hub-node justification, but the cited excerpts do not show the LLM-based merge operation or Eq. 8. Cited evidence does not establish numerical values/units: 50%, 50%, 61.1 Cited evidence does not establish numerical values/units: 50%, 2.24x, 50%, 2.41x, 2.06x, 2.24x The sources support the hyperparameters, GPT-4o-mini, A100 GPUs, "
+    "uncertainty": "Scientific support remains unresolved. The cited sources do not establish five benchmarks, six baselines, parameter sensitivity analyses, code availability, or retrieval speedups. The sources show two frameworks and some baselines/tables, but not the claimed breadth or all components. The cited sources support some theoretical assumptions and show extraction artifacts, but do not provide evidence about LLM-based scoring models, lack of inter-rater reliability or significance tests, or averaging over three runs. Cited evidence does not establish numerical values/units: 61.1 The table row shows MemForest average 39.0 and 99.7%, but the cited text does not show the M3-Agent baseline average 39.1, so the comparison to 39.1 is not established by these sources. Cited evidence does not establish numerical values/units: 3, 4"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

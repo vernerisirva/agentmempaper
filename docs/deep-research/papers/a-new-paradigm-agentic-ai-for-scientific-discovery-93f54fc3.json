@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-04 09:12:12",
-    "generated_at": "2026-09-17 11:50:11",
+    "generated_at": "2026-09-17 12:30:55",
     "last_seen_at": "2026-08-09 07:19:55",
     "metadata_sources": [
       "openalex"
@@ -95,14 +95,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T10:15:53+00:00",
+    "assessed_at": "2026-09-17T11:45:12+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-batch2-recovery-v1",
+    "assessment_version": "quality-batch2-recovery-v2",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 76/100, medium confidence, based on full text.",
     "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 158524,
@@ -154,14 +154,8 @@
         44,
         45
       ],
-      "canonical_id": "doi:10.65649/ukh4n33x",
       "characters_before_extraction_limit": 167851,
       "eligible_characters": 155031,
-      "evidence_block_count": 224,
-      "evidence_context_characters": 178696,
-      "evidence_context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
-      "evidence_context_sha256": "a931567c0f46a0dc1cf2d32cff655c0feea9e12426149ea0535fb2822fce5d4d",
-      "evidence_version": "block-evidence-v2",
       "excluded_back_matter_characters": 11131,
       "extracted_characters": 167939,
       "extracted_page_indices": [
@@ -949,9 +943,7 @@
           "page": 45
         }
       ],
-      "selected_text_sha256": "fa8a343555777f3a02c45a7d0026c56b1afef5433afd0e4bb2945a6c3706f82d",
       "selection_version": "representative-v1",
-      "source_content_hash": "0150b804db3dbcaf2a735647737e704f7bf10f4782e625b7ca534e2da7b6f300",
       "source_pages": 45,
       "surrogate_code_units": 0,
       "unreadable_pages": [],
@@ -962,347 +954,199 @@
     },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 4,
+      "contribution_clarity": 2,
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 3,
-      "presentation_and_precision": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 3,
       "related_work_and_gap_positioning": 4,
-      "reproducibility_and_transparency": 3,
+      "reproducibility_and_transparency": 4,
       "scholarly_novelty_or_value": 3
     },
     "downranked": false,
     "evidence": [
       {
-        "claim_role": "contribution",
-        "context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
-          "E03ed43c7ff98f799-B0020"
-        ],
-        "excerpt": "RAG\n \nenables\n \nagents\n \nto\n \nground\n \ntheir\n \nreasoning\n \nin\n \nthe\n \nlatest\n \npublished\n \nliterature\n \nrather\n \nthan\n \nrelying\n \nsolely\n \non\n \nparametric\n \nknowledge\n \nacquired\n \nduring\n \npre-training\n \n\u2014\n \ncritical\n \nfor\n \nmaintaining\n \ncurrency\n \nin\n \nrapidly\n \nevolving\n \nfields.\n \n \n3.\n \nMethodological\n \nFramework:\n \nThe\n \nSix-Stage\n \nScientific\n \nWorkflow\n \nWe\n \npropose\n \na\n \nunified\n \nmethodological\n \nframework\n \nthat\n \norganizes\n \nagentic\n \nscientific\n \ndiscovery\n \ninto\n \nsix\n \nsequential\n \nbut\n \niterative\n \nstages.\n \nThis\n \nframework\n \nsynthesizes\n \npatterns\n \nobserved\n \nacross\n \nmultiple\n \nimplemented\n \nsystems\n \n(Boiko\n \net\n \nal.,\n \n2023;\n \nLu\n \net\n \nal.,\n \n2024;\n \nShojaee\n \net\n \nal.,\n \n2024;\n \nHu\n \net\n \nal.,\n \n2024)\n \nand\n \nprovides\n \na\n \nsystematic\n \nbasis\n \nfor\n \nevaluating\n \nagentic\n \nAI\n \nperformance.\n \nWe\n \nnote\n \nthat\n \nthe\n \nperformance\n \nmetrics\n \nproposed\n \nbelow",
-        "explanation": "The body text explicitly states that the authors propose a unified framework organizing agentic scientific discovery into six sequential but iterative stages, and that this framework synthesizes patterns observed across multiple implemented systems and provides a systematic basis for evaluating performance. This establishes the central conceptual contribution clearly.",
-        "page": 5,
-        "pages": [
-          5
-        ],
-        "paraphrase": "The manuscript proposes a unified six-stage methodological framework for agentic scientific discovery spanning literature synthesis through manuscript generation, and uses it as an organizing lens for evaluating agentic AI systems.",
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "methodological_rigor",
+        "evidence_ids": [],
+        "excerpt": "vant papers retrieved from the target corpus. - Precision: Fraction of retrieved papers that are genuinely",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "pages": [],
+        "paraphrase": "The available text identifies data or a benchmark used by the work.",
         "section": "Results",
         "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "daaf2c5d5896b11ae0a4d8ff25e2f73bacadc8bf930018ad9c96389553dadd4d",
-            "evidence_id": "E03ed43c7ff98f799-B0020",
-            "pages": [
-              5
-            ],
-            "section": "Results",
-            "section_role": "results",
-            "source_spans": [
-              {
-                "end": 3348,
-                "page": 5,
-                "section": "Results",
-                "section_index": 9,
-                "start": 2450,
-                "text": "\nRAG\n \nenables\n \nagents\n \nto\n \nground\n \ntheir\n \nreasoning\n \nin\n \nthe\n \nlatest\n \npublished\n \nliterature\n \nrather\n \nthan\n \nrelying\n \nsolely\n \non\n \nparametric\n \nknowledge\n \nacquired\n \nduring\n \npre-training\n \n\u2014\n \ncritical\n \nfor\n \nmaintaining\n \ncurrency\n \nin\n \nrapidly\n \nevolving\n \nfields.\n \n \n3.\n \nMethodological\n \nFramework:\n \nThe\n \nSix-Stage\n \nScientific\n \nWorkflow\n \nWe\n \npropose\n \na\n \nunified\n \nmethodological\n \nframework\n \nthat\n \norganizes\n \nagentic\n \nscientific\n \ndiscovery\n \ninto\n \nsix\n \nsequential\n \nbut\n \niterative\n \nstages.\n \nThis\n \nframework\n \nsynthesizes\n \npatterns\n \nobserved\n \nacross\n \nmultiple\n \nimplemented\n \nsystems\n \n(Boiko\n \net\n \nal.,\n \n2023;\n \nLu\n \net\n \nal.,\n \n2024;\n \nShojaee\n \net\n \nal.,\n \n2024;\n \nHu\n \net\n \nal.,\n \n2024)\n \nand\n \nprovides\n \na\n \nsystematic\n \nbasis\n \nfor\n \nevaluating\n \nagentic\n \nAI\n \nperformance.\n \nWe\n \nnote\n \nthat\n \nthe\n \nperformance\n \nmetrics\n \nproposed\n \nbelow\n "
-              }
-            ],
-            "text": "\nRAG\n \nenables\n \nagents\n \nto\n \nground\n \ntheir\n \nreasoning\n \nin\n \nthe\n \nlatest\n \npublished\n \nliterature\n \nrather\n \nthan\n \nrelying\n \nsolely\n \non\n \nparametric\n \nknowledge\n \nacquired\n \nduring\n \npre-training\n \n\u2014\n \ncritical\n \nfor\n \nmaintaining\n \ncurrency\n \nin\n \nrapidly\n \nevolving\n \nfields.\n \n \n3.\n \nMethodological\n \nFramework:\n \nThe\n \nSix-Stage\n \nScientific\n \nWorkflow\n \nWe\n \npropose\n \na\n \nunified\n \nmethodological\n \nframework\n \nthat\n \norganizes\n \nagentic\n \nscientific\n \ndiscovery\n \ninto\n \nsix\n \nsequential\n \nbut\n \niterative\n \nstages.\n \nThis\n \nframework\n \nsynthesizes\n \npatterns\n \nobserved\n \nacross\n \nmultiple\n \nimplemented\n \nsystems\n \n(Boiko\n \net\n \nal.,\n \n2023;\n \nLu\n \net\n \nal.,\n \n2024;\n \nShojaee\n \net\n \nal.,\n \n2024;\n \nHu\n \net\n \nal.,\n \n2024)\n \nand\n \nprovides\n \na\n \nsystematic\n \nbasis\n \nfor\n \nevaluating\n \nagentic\n \nAI\n \nperformance.\n \nWe\n \nnote\n \nthat\n \nthe\n \nperformance\n \nmetrics\n \nproposed\n \nbelow\n "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited text directly supports the proposal of a unified six-stage framework, synthesis across implemented systems, and systematic evaluation basis.",
-          "explanation_status": "supported",
-          "item_id": "evidence-0",
-          "primary_evidence_ids": [
-            "E03ed43c7ff98f799-B0020"
-          ],
-          "reason": "The cited text explicitly states the authors propose a unified framework organizing agentic scientific discovery into six sequential but iterative stages and that it provides a systematic basis for evaluating performance.",
-          "status": "supported"
-        }
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
       },
       {
-        "claim_role": "contribution",
-        "context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
-          "E03ed43c7ff98f799-B0003"
-        ],
-        "excerpt": "discovery.\n \nIt\n \ntraces\n \nthe\n \nconceptual\n \nshift\n \nfrom\n \ntools\n \nto\n \nagents,\n \nlays\n \nout\n \na\n \nsix-stage\n \nworkflow\n \nspanning\n \nliterature\n \nsynthesis\n \nto\n \nmanuscript\n \ngeneration,\n \nand\n \nreviews\n \npractical\n \nsystems\n \nin\n \nchemistry,\n \nequation\n \ndiscovery,\n \nmaterials\n \nscience,\n \nand\n \ngeneral\n \nmachine\n \nlearning\n \nresearch.\n \nA\n \ncentral\n \nconcern\n \nof\n \nthe\n \nanalysis\n \nis\n \nthe\n \nverification\n \ncrisis\n \n\u2014\n \nthe\n \ngrowing\n \ngap\n \nbetween\n \nwhat\n \nthese\n \nsystems\n \ncan\n \nproduce\n \nand\n \nwhat\n \nthey\n \ncan\n \nprove.\n \nWe\n \ncompile\n \nquantitative\n \nevidence\n \non\n \nfailure\n \nrates,\n \nanalyse\n \ncompeting\n \nframeworks\n \nfor\n \ntrustworthy\n \nagentic\n \nscience\n \n(Chain-of-Evidence,\n \nAudit-Closed\n \nprotocols,\n \nFEV,\n \nand\n \nstructural\n \nFDR\n \nenforcement),\n \nand\n \npropose\n \nactionable\n \nstandards\n \nfor\n \nrigorous\n \nvalidation.\n \nThe\n \narticle\n \ncloses\n \nwith\n \nan\n \nassessment",
-        "explanation": "The abstract text explicitly enumerates the article's scope: tracing the conceptual shift, laying out a six-stage workflow, reviewing practical systems across four domains, compiling quantitative evidence on failure rates, analyzing competing trustworthiness frameworks, and proposing actionable validation standards. This is a high-level attributed scope claim appropriate for abstract evidence.",
-        "page": 1,
-        "pages": [
-          1
-        ],
-        "paraphrase": "The paper's scope includes tracing the conceptual shift from tools to agents, reviewing practical systems in chemistry, equation discovery, materials science, and machine learning, and analyzing the verification crisis with proposed standards.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "06284191b2071377ef50fc5790f7764779e2fe0b1bd1ecb45fd5a51222f00f38",
-            "evidence_id": "E03ed43c7ff98f799-B0003",
-            "pages": [
-              1
-            ],
-            "section": "Abstract",
-            "section_role": "abstract",
-            "source_spans": [
-              {
-                "end": 1789,
-                "page": 1,
-                "section": "Abstract",
-                "section_index": 1,
-                "start": 892,
-                "text": "\ndiscovery.\n \nIt\n \ntraces\n \nthe\n \nconceptual\n \nshift\n \nfrom\n \ntools\n \nto\n \nagents,\n \nlays\n \nout\n \na\n \nsix-stage\n \nworkflow\n \nspanning\n \nliterature\n \nsynthesis\n \nto\n \nmanuscript\n \ngeneration,\n \nand\n \nreviews\n \npractical\n \nsystems\n \nin\n \nchemistry,\n \nequation\n \ndiscovery,\n \nmaterials\n \nscience,\n \nand\n \ngeneral\n \nmachine\n \nlearning\n \nresearch.\n \nA\n \ncentral\n \nconcern\n \nof\n \nthe\n \nanalysis\n \nis\n \nthe\n \nverification\n \ncrisis\n \n\u2014\n \nthe\n \ngrowing\n \ngap\n \nbetween\n \nwhat\n \nthese\n \nsystems\n \ncan\n \nproduce\n \nand\n \nwhat\n \nthey\n \ncan\n \nprove.\n \nWe\n \ncompile\n \nquantitative\n \nevidence\n \non\n \nfailure\n \nrates,\n \nanalyse\n \ncompeting\n \nframeworks\n \nfor\n \ntrustworthy\n \nagentic\n \nscience\n \n(Chain-of-Evidence,\n \nAudit-Closed\n \nprotocols,\n \nFEV,\n \nand\n \nstructural\n \nFDR\n \nenforcement),\n \nand\n \npropose\n \nactionable\n \nstandards\n \nfor\n \nrigorous\n \nvalidation.\n \nThe\n \narticle\n \ncloses\n \nwith\n \nan\n \nassessment\n "
-              }
-            ],
-            "text": "\ndiscovery.\n \nIt\n \ntraces\n \nthe\n \nconceptual\n \nshift\n \nfrom\n \ntools\n \nto\n \nagents,\n \nlays\n \nout\n \na\n \nsix-stage\n \nworkflow\n \nspanning\n \nliterature\n \nsynthesis\n \nto\n \nmanuscript\n \ngeneration,\n \nand\n \nreviews\n \npractical\n \nsystems\n \nin\n \nchemistry,\n \nequation\n \ndiscovery,\n \nmaterials\n \nscience,\n \nand\n \ngeneral\n \nmachine\n \nlearning\n \nresearch.\n \nA\n \ncentral\n \nconcern\n \nof\n \nthe\n \nanalysis\n \nis\n \nthe\n \nverification\n \ncrisis\n \n\u2014\n \nthe\n \ngrowing\n \ngap\n \nbetween\n \nwhat\n \nthese\n \nsystems\n \ncan\n \nproduce\n \nand\n \nwhat\n \nthey\n \ncan\n \nprove.\n \nWe\n \ncompile\n \nquantitative\n \nevidence\n \non\n \nfailure\n \nrates,\n \nanalyse\n \ncompeting\n \nframeworks\n \nfor\n \ntrustworthy\n \nagentic\n \nscience\n \n(Chain-of-Evidence,\n \nAudit-Closed\n \nprotocols,\n \nFEV,\n \nand\n \nstructural\n \nFDR\n \nenforcement),\n \nand\n \npropose\n \nactionable\n \nstandards\n \nfor\n \nrigorous\n \nvalidation.\n \nThe\n \narticle\n \ncloses\n \nwith\n \nan\n \nassessment\n "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The abstract text directly supports the attributed scope claim, including the six-stage workflow and review of practical systems across the listed domains.",
-          "explanation_status": "supported",
-          "item_id": "evidence-1",
-          "primary_evidence_ids": [
-            "E03ed43c7ff98f799-B0003"
-          ],
-          "reason": "The abstract explicitly enumerates tracing the conceptual shift, laying out a six-stage workflow, reviewing systems in the named domains, and analyzing the verification crisis with proposed standards.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "evaluation",
-        "context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
+        "claim_role": null,
+        "context_id": null,
         "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [
-          "E03ed43c7ff98f799-B0072"
-        ],
-        "excerpt": "execution\n \nfailure\n \n(coding\n \nerrors)\n \nThe\n \nAI\n \nScientist\n \n42%\n \nof\n \nexperime\nnts\n \nBeel\n \net\n \nal. (2025)\n \nCitation\n \nfabrication\n \n(hallucinated\n \nreferences)\n \nGPT-4-based\n \nagents\n \n6\u201318%\n \nof\n \ncitations\n \nWalters\n \n&\n \nWilder\n \n(2023)\n \nCitation\n \nfabrication\n \n(baseline,\n \nwithout\n \nverification)\n \nMultiple\n \nLLMs\n \nUp\n \nto\n \n21%\n \nof\n \ncitations\n \nGoogle\n \nResearch\n \n(2026),\n \ncited\n \nin\n \nreview\n \ndiscourse\n \nManuscript\n \nstructural\n \nerrors\n \n(missing\n \nfigures,\n \nThe\n \nAI\n \nScientist\n \nFrequent\n \n(systema\ntic)\n \nBeel\n \net\n \nal. (2025)\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n16\nFailure\n \nMode\n \nSystem(s)\n \nRate\n \nSource\n \nrepeated\n \nsections,\n \nplaceholder\n \ntext)\n \nHallucinated\n \nnumerical",
-        "explanation": "Table 2 in the body text presents empirically documented failure rates with specific sources, including Beel et al. (2025) reporting 42% of experiments failing due to coding errors, and Walters & Wilder (2023) reporting 6-18% citation fabrication. These quantitative estimates substantiate the paper's central claim that current agentic systems have non-trivial failure rates.",
-        "page": 16,
-        "pages": [
-          16,
-          17
-        ],
-        "paraphrase": "The paper compiles quantitative failure rate evidence from independent evaluations, including a 42% execution failure rate for The AI Scientist and citation fabrication rates of 6-18% for GPT-4-based agents.",
-        "section": "Experiment",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "04c94f0345385dd295d53e1d9c33abf4d199304d27ba45d5a173700ed97f1a6c",
-            "evidence_id": "E03ed43c7ff98f799-B0072",
-            "pages": [
-              16,
-              17
-            ],
-            "section": "Experiment",
-            "section_role": "results",
-            "source_spans": [
-              {
-                "end": 632,
-                "page": 16,
-                "section": "Experiment",
-                "section_index": 49,
-                "start": 0,
-                "text": "execution\n \nfailure\n \n(coding\n \nerrors)\n \nThe\n \nAI\n \nScientist\n \n42%\n \nof\n \nexperime\nnts\n \nBeel\n \net\n \nal. (2025)\n \nCitation\n \nfabrication\n \n(hallucinated\n \nreferences)\n \nGPT-4-based\n \nagents\n \n6\u201318%\n \nof\n \ncitations\n \nWalters\n \n&\n \nWilder\n \n(2023)\n \nCitation\n \nfabrication\n \n(baseline,\n \nwithout\n \nverification)\n \nMultiple\n \nLLMs\n \nUp\n \nto\n \n21%\n \nof\n \ncitations\n \nGoogle\n \nResearch\n \n(2026),\n \ncited\n \nin\n \nreview\n \ndiscourse\n \nManuscript\n \nstructural\n \nerrors\n \n(missing\n \nfigures,\n \nThe\n \nAI\n \nScientist\n \nFrequent\n \n(systema\ntic)\n \nBeel\n \net\n \nal. (2025)\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n16"
-              },
-              {
-                "end": 114,
-                "page": 17,
-                "section": "Experiment",
-                "section_index": 50,
-                "start": 0,
-                "text": "Failure\n \nMode\n \nSystem(s)\n \nRate\n \nSource\n \nrepeated\n \nsections,\n \nplaceholder\n \ntext)\n \nHallucinated\n \nnumerical"
-              }
-            ],
-            "text": "execution\n \nfailure\n \n(coding\n \nerrors)\n \nThe\n \nAI\n \nScientist\n \n42%\n \nof\n \nexperime\nnts\n \nBeel\n \net\n \nal. (2025)\n \nCitation\n \nfabrication\n \n(hallucinated\n \nreferences)\n \nGPT-4-based\n \nagents\n \n6\u201318%\n \nof\n \ncitations\n \nWalters\n \n&\n \nWilder\n \n(2023)\n \nCitation\n \nfabrication\n \n(baseline,\n \nwithout\n \nverification)\n \nMultiple\n \nLLMs\n \nUp\n \nto\n \n21%\n \nof\n \ncitations\n \nGoogle\n \nResearch\n \n(2026),\n \ncited\n \nin\n \nreview\n \ndiscourse\n \nManuscript\n \nstructural\n \nerrors\n \n(missing\n \nfigures,\n \nThe\n \nAI\n \nScientist\n \nFrequent\n \n(systema\ntic)\n \nBeel\n \net\n \nal. (2025)\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n16\nFailure\n \nMode\n \nSystem(s)\n \nRate\n \nSource\n \nrepeated\n \nsections,\n \nplaceholder\n \ntext)\n \nHallucinated\n \nnumerical"
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited table text directly supports the specific failure rates and sources, substantiating the claim of non-trivial failure rates.",
-          "explanation_status": "supported",
-          "item_id": "evidence-4",
-          "primary_evidence_ids": [
-            "E03ed43c7ff98f799-B0072"
-          ],
-          "reason": "The cited table text directly shows a 42% execution failure rate for The AI Scientist and 6-18% citation fabrication for GPT-4-based agents.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "result",
-        "context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [
-          "E03ed43c7ff98f799-B0076"
-        ],
-        "excerpt": "\u2014\n \nagents\n \nchoose\n \nfabrication\n \nover\n \nhonest\n \nrefusal)\n \n7\n \nLLMs,\n \n33\n \nscenarios,\n \n11\n \ntrap\n \ncategories\n \n34.2%\n \noverall\n \nintegrity\n \nproblem\n \nrate;\n \n100%\n \nsynthetic\n \ndata\n \ngeneratio\nn\n \nin\n \nmissing-d\nata\n \nscenarios\n \nYang\n \net\n \nal. (2026)\n \n\u2014\n \nSciIntegrity-B\nench\n \nThese\n \nquantitative\n \nestimates\n \nestablish\n \nthat\n \ncurrent\n \nagentic\n \nsystems\n \nhave\n \nnon-trivial\n \nfailure\n \nrates\n \nthat\n \nmust\n \nbe\n \naddressed\n \nthrough\n \narchitectural\n \nsafeguards\n \nrather\n \nthan\n \npost\n \nhoc\n \nhuman\n \nreview\n \nalone.\n \nThe\n \npattern\n \nis\n \nconsistent:\n \nsystems\n \nare\n \nmore\n \ncapable\n \nat\n \ngenerating\n \nscientific\n \noutputs\n \nthan\n \nat\n \nverifying\n \nthem\n \n\u2014\n \na\n \nfundamental\n \nasymmetry\n \nthat\n \ndefines\n \nthe\n \ncurrent\n \nstate\n \nof\n \nthe\n \nfield.\n \n5.4\n \nRecommendations\n \nfor\n \nMinimum\n \nVerification\n \nStandards\n \nBased\n \non\n \nthe\n \ncomparative\n \nanalysis\n \nabove,\n \nwe",
-        "explanation": "The body text explicitly states that the pattern is consistent: systems are more capable at generating scientific outputs than at verifying them, a fundamental asymmetry. The preceding Table 2 provides the quantitative basis for this claim across execution failures, citation fabrication, structural errors, and self-improvement regression.",
-        "page": 18,
-        "pages": [
-          18
-        ],
-        "paraphrase": "The paper's claim that agentic systems are more capable at generating scientific outputs than at verifying them is supported by the compiled quantitative evidence showing systematic failure modes across multiple independent evaluations.",
+        "evidence_ids": [],
+        "excerpt": "zation. LLM-SR significantly outperformed state-of-the-art symbolic regression baselines, particularly in out-of-domain test",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "pages": [],
+        "paraphrase": "A baseline or comparison system is described.",
         "section": "Evaluation",
         "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "8d049dbb1b128686b3f68a5cd610598141ebb87320d6f44cd56d91a10e32b83f",
-            "evidence_id": "E03ed43c7ff98f799-B0076",
-            "pages": [
-              18
-            ],
-            "section": "Evaluation",
-            "section_role": "results",
-            "source_spans": [
-              {
-                "end": 897,
-                "page": 18,
-                "section": "Evaluation",
-                "section_index": 54,
-                "start": 0,
-                "text": "\u2014\n \nagents\n \nchoose\n \nfabrication\n \nover\n \nhonest\n \nrefusal)\n \n7\n \nLLMs,\n \n33\n \nscenarios,\n \n11\n \ntrap\n \ncategories\n \n34.2%\n \noverall\n \nintegrity\n \nproblem\n \nrate;\n \n100%\n \nsynthetic\n \ndata\n \ngeneratio\nn\n \nin\n \nmissing-d\nata\n \nscenarios\n \nYang\n \net\n \nal. (2026)\n \n\u2014\n \nSciIntegrity-B\nench\n \nThese\n \nquantitative\n \nestimates\n \nestablish\n \nthat\n \ncurrent\n \nagentic\n \nsystems\n \nhave\n \nnon-trivial\n \nfailure\n \nrates\n \nthat\n \nmust\n \nbe\n \naddressed\n \nthrough\n \narchitectural\n \nsafeguards\n \nrather\n \nthan\n \npost\n \nhoc\n \nhuman\n \nreview\n \nalone.\n \nThe\n \npattern\n \nis\n \nconsistent:\n \nsystems\n \nare\n \nmore\n \ncapable\n \nat\n \ngenerating\n \nscientific\n \noutputs\n \nthan\n \nat\n \nverifying\n \nthem\n \n\u2014\n \na\n \nfundamental\n \nasymmetry\n \nthat\n \ndefines\n \nthe\n \ncurrent\n \nstate\n \nof\n \nthe\n \nfield.\n \n5.4\n \nRecommendations\n \nfor\n \nMinimum\n \nVerification\n \nStandards\n \nBased\n \non\n \nthe\n \ncomparative\n \nanalysis\n \nabove,\n \nwe\n "
-              }
-            ],
-            "text": "\u2014\n \nagents\n \nchoose\n \nfabrication\n \nover\n \nhonest\n \nrefusal)\n \n7\n \nLLMs,\n \n33\n \nscenarios,\n \n11\n \ntrap\n \ncategories\n \n34.2%\n \noverall\n \nintegrity\n \nproblem\n \nrate;\n \n100%\n \nsynthetic\n \ndata\n \ngeneratio\nn\n \nin\n \nmissing-d\nata\n \nscenarios\n \nYang\n \net\n \nal. (2026)\n \n\u2014\n \nSciIntegrity-B\nench\n \nThese\n \nquantitative\n \nestimates\n \nestablish\n \nthat\n \ncurrent\n \nagentic\n \nsystems\n \nhave\n \nnon-trivial\n \nfailure\n \nrates\n \nthat\n \nmust\n \nbe\n \naddressed\n \nthrough\n \narchitectural\n \nsafeguards\n \nrather\n \nthan\n \npost\n \nhoc\n \nhuman\n \nreview\n \nalone.\n \nThe\n \npattern\n \nis\n \nconsistent:\n \nsystems\n \nare\n \nmore\n \ncapable\n \nat\n \ngenerating\n \nscientific\n \noutputs\n \nthan\n \nat\n \nverifying\n \nthem\n \n\u2014\n \na\n \nfundamental\n \nasymmetry\n \nthat\n \ndefines\n \nthe\n \ncurrent\n \nstate\n \nof\n \nthe\n \nfield.\n \n5.4\n \nRecommendations\n \nfor\n \nMinimum\n \nVerification\n \nStandards\n \nBased\n \non\n \nthe\n \ncomparative\n \nanalysis\n \nabove,\n \nwe\n "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited text directly supports the generation-versus-verification asymmetry claim, though the explanation's reference to specific preceding table categories is only partially shown.",
-          "explanation_status": "supported",
-          "item_id": "evidence-5",
-          "primary_evidence_ids": [
-            "E03ed43c7ff98f799-B0076"
-          ],
-          "reason": "The cited text explicitly states the pattern is consistent that systems are more capable at generating scientific outputs than verifying them, based on the preceding quantitative estimates.",
-          "status": "supported"
-        }
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
       },
       {
-        "claim_role": "limitation",
-        "context_id": "03ed43c7ff98f7990bccddab7b7ee11fe9320a3c6b283d72e3f6929c38a0f897",
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
+        "excerpt": "g capability rather than mere pattern recall. \u00a9 CC BY-NC-ND 4.0 \u2022 Longevity Horizon, 2(5) \u2022 9",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 9,
+        "pages": [],
+        "paraphrase": "Quantitative evaluation signals were detected.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [],
+        "excerpt": "omputation itself becomes an autonomous participant in discovery. The past decade's advances in large language",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 2,
+        "pages": [],
+        "paraphrase": "User, expert, operational, or deployment evidence is described.",
+        "section": "Method",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "methodological_rigor",
+        "evidence_ids": [],
+        "excerpt": "and optimization. Error Handling and Robustness: A critical capability of agentic systems at this stage is",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 7,
+        "pages": [],
+        "paraphrase": "Robustness or statistical analysis is reported.",
+        "section": "Implementation",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
         "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [
-          "E03ed43c7ff98f799-B0133",
-          "E03ed43c7ff98f799-B0134"
-        ],
-        "excerpt": "that\n \nshould\n \nbe\n \nconsidered\n \nwhen\n \ninterpreting\n \nits\n \nfindings.\n \nMethodological\n \nLimitations.\n \nFirst,\n \ndespite\n \nfollowing\n \nPRISMA\n \nguidelines\n \n(detailed\n \nin\n \nSupplementary\n \nS4),\n \nthe\n \nliterature\n \nsearch\n \nwas\n \nconstrained\n \nto\n \narXiv,\n \nPubMed,\n \nSemantic\n \nScholar,\n \nGoogle\n \nScholar,\n \nand\n \npublisher\n \ndatabases.\n \nSpecialized\n \ndatabases\n \nsuch\n \nas\n \nWeb\n \nof\n \nScience\n \nCore\n \nCollection\n \nand\n \nScopus\n \nwere\n \nnot\n \nsystematically\n \nqueried.\n \nSecond,\n \nthe\n \nreview\n \nprotocol\n \nwas\n \nnot\n \npre-registered.\n \nThird,\n \nthe\n \nquality\n \nof\n \nincluded\n \nstudies\n \nwas\n \nassessed\n \nqualitatively\n \nrather\n \nthan\n \nthrough\n \na\n \nstandardized\n \nrisk-of-bias\n \ninstrument\n \n(e.g.,\n \nROBIS,\n \nQUADAS-2).\n \nEvidence\n \nLimitations.\n \nA\n \nsubstantial\n \nproportion\n \nof\n \nthe\n \nquantitative\n \nevidence\n \n\u2014\n \nparticularly\n \nfailure\n \nrates\n \nfrom\n \n2025\u20132026\n \npreprints\n \n\u2014\n \n[\u2026 separate evidence block \u2026]\n\nhas\n \nnot\n \nundergone\n \npeer\n \nreview.\n \nThe\n \nmeta-analytic\n \nsynthesis\n \nin\n \nTable\n \n2\n \naggregates\n \nheterogeneous\n \ndata\n \n(expected\n \nI\u00b2\n \n>\n \n85%).\n \nPublication\n \nbias\n \nis\n \nlikely:\n \nsystems\n \nwith\n \npoor\n \nperformance\n \nare\n \nunderreported.\n \nScope\n \nLimitations.\n \nThis\n \nreview\n \nfocuses\n \npredominantly\n \non\n \nLLM-based\n \nagentic\n \nsystems.\n \nSymbolic\n \nAI,\n \nneuro-symbolic\n \nsystems,\n \nand\n \nRL\n \nagents\n \nwithout\n \nLLM\n \ncomponents\n \nare\n \nnot\n \nsystematically\n \ncovered.\n \nThe\n \nsix-stage\n \nworkflow\n \nframework\n \nhas\n \nnot\n \nbeen\n \nempirically\n \nvalidated\n \nagainst\n \na\n \ncorpus\n \nof\n \nimplemented\n \nsystems.\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n27\nTemporal\n \nLimitations.\n \nThe\n \nfield\n \nis\n \nevolving\n \nrapidly.\n \nWorks\n \npublished\n \nafter\n \nJuly\n \n2026\n \ncould\n \nnot\n \nbe\n \nincorporated.\n \n8.\n \nFuture\n \nDirections\n \nTable\n \n3.\n \nPriority",
-        "explanation": "The body text explicitly enumerates methodological, evidence, scope, and temporal limitations, including that the review protocol was not pre-registered, that a substantial proportion of quantitative evidence from 2025-2026 preprints has not undergone peer review, and that the six-stage workflow has not been empirically validated. This is substantive limitations handling appropriate for the review type.",
+        "evidence_ids": [],
+        "excerpt": "of identified research gaps. Current Limitations: LLM-based literature review is constrained by publication bias",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 6,
+        "pages": [],
+        "paraphrase": "Limitations or threats to validity are acknowledged.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "methodological_rigor",
+        "evidence_ids": [],
+        "excerpt": "gnificance of The AI Scientist as a proof of concept \u2014 the fact that any fully automated research p",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 12,
+        "pages": [],
+        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "methodological_rigor",
+        "evidence_ids": [],
+        "excerpt": "l Limitations. First, despite following PRISMA guidelines (detailed in Supplementary S4), the literature searc",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
         "page": 27,
-        "pages": [
-          27,
-          28
-        ],
-        "paraphrase": "The paper provides a structured limitations section acknowledging methodological constraints (non-pre-registered protocol, qualitative quality assessment), evidence limitations (unreviewed preprints, heterogeneous meta-analytic data with expected I^2 > 85%), and scope limitations (LLM-centric focus, unvalidated six-sta",
+        "pages": [],
+        "paraphrase": "A review or study-selection methodology is described.",
         "section": "Limitations",
         "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "27d6d79d65d82bc81b4f145d6cdbe59b57b99f9100d772cdad3853f9b462304a",
-            "evidence_id": "E03ed43c7ff98f799-B0133",
-            "pages": [
-              27
-            ],
-            "section": "Limitations",
-            "section_role": "limitations",
-            "source_spans": [
-              {
-                "end": 898,
-                "page": 27,
-                "section": "Limitations",
-                "section_index": 95,
-                "start": 0,
-                "text": "that\n \nshould\n \nbe\n \nconsidered\n \nwhen\n \ninterpreting\n \nits\n \nfindings.\n \nMethodological\n \nLimitations.\n \nFirst,\n \ndespite\n \nfollowing\n \nPRISMA\n \nguidelines\n \n(detailed\n \nin\n \nSupplementary\n \nS4),\n \nthe\n \nliterature\n \nsearch\n \nwas\n \nconstrained\n \nto\n \narXiv,\n \nPubMed,\n \nSemantic\n \nScholar,\n \nGoogle\n \nScholar,\n \nand\n \npublisher\n \ndatabases.\n \nSpecialized\n \ndatabases\n \nsuch\n \nas\n \nWeb\n \nof\n \nScience\n \nCore\n \nCollection\n \nand\n \nScopus\n \nwere\n \nnot\n \nsystematically\n \nqueried.\n \nSecond,\n \nthe\n \nreview\n \nprotocol\n \nwas\n \nnot\n \npre-registered.\n \nThird,\n \nthe\n \nquality\n \nof\n \nincluded\n \nstudies\n \nwas\n \nassessed\n \nqualitatively\n \nrather\n \nthan\n \nthrough\n \na\n \nstandardized\n \nrisk-of-bias\n \ninstrument\n \n(e.g.,\n \nROBIS,\n \nQUADAS-2).\n \nEvidence\n \nLimitations.\n \nA\n \nsubstantial\n \nproportion\n \nof\n \nthe\n \nquantitative\n \nevidence\n \n\u2014\n \nparticularly\n \nfailure\n \nrates\n \nfrom\n \n2025\u20132026\n \npreprints\n \n\u2014\n "
-              }
-            ],
-            "text": "that\n \nshould\n \nbe\n \nconsidered\n \nwhen\n \ninterpreting\n \nits\n \nfindings.\n \nMethodological\n \nLimitations.\n \nFirst,\n \ndespite\n \nfollowing\n \nPRISMA\n \nguidelines\n \n(detailed\n \nin\n \nSupplementary\n \nS4),\n \nthe\n \nliterature\n \nsearch\n \nwas\n \nconstrained\n \nto\n \narXiv,\n \nPubMed,\n \nSemantic\n \nScholar,\n \nGoogle\n \nScholar,\n \nand\n \npublisher\n \ndatabases.\n \nSpecialized\n \ndatabases\n \nsuch\n \nas\n \nWeb\n \nof\n \nScience\n \nCore\n \nCollection\n \nand\n \nScopus\n \nwere\n \nnot\n \nsystematically\n \nqueried.\n \nSecond,\n \nthe\n \nreview\n \nprotocol\n \nwas\n \nnot\n \npre-registered.\n \nThird,\n \nthe\n \nquality\n \nof\n \nincluded\n \nstudies\n \nwas\n \nassessed\n \nqualitatively\n \nrather\n \nthan\n \nthrough\n \na\n \nstandardized\n \nrisk-of-bias\n \ninstrument\n \n(e.g.,\n \nROBIS,\n \nQUADAS-2).\n \nEvidence\n \nLimitations.\n \nA\n \nsubstantial\n \nproportion\n \nof\n \nthe\n \nquantitative\n \nevidence\n \n\u2014\n \nparticularly\n \nfailure\n \nrates\n \nfrom\n \n2025\u20132026\n \npreprints\n \n\u2014\n "
-          },
-          {
-            "content_hash": "75dc19575575f8d07f5f11ab7e70a3db9eab696aa1459a668c07856762aaa550",
-            "evidence_id": "E03ed43c7ff98f799-B0134",
-            "pages": [
-              27,
-              28
-            ],
-            "section": "Limitations",
-            "section_role": "limitations",
-            "source_spans": [
-              {
-                "end": 1599,
-                "page": 27,
-                "section": "Limitations",
-                "section_index": 95,
-                "start": 898,
-                "text": "\nhas\n \nnot\n \nundergone\n \npeer\n \nreview.\n \nThe\n \nmeta-analytic\n \nsynthesis\n \nin\n \nTable\n \n2\n \naggregates\n \nheterogeneous\n \ndata\n \n(expected\n \nI\u00b2\n \n>\n \n85%).\n \nPublication\n \nbias\n \nis\n \nlikely:\n \nsystems\n \nwith\n \npoor\n \nperformance\n \nare\n \nunderreported.\n \nScope\n \nLimitations.\n \nThis\n \nreview\n \nfocuses\n \npredominantly\n \non\n \nLLM-based\n \nagentic\n \nsystems.\n \nSymbolic\n \nAI,\n \nneuro-symbolic\n \nsystems,\n \nand\n \nRL\n \nagents\n \nwithout\n \nLLM\n \ncomponents\n \nare\n \nnot\n \nsystematically\n \ncovered.\n \nThe\n \nsix-stage\n \nworkflow\n \nframework\n \nhas\n \nnot\n \nbeen\n \nempirically\n \nvalidated\n \nagainst\n \na\n \ncorpus\n \nof\n \nimplemented\n \nsystems.\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n27"
-              },
-              {
-                "end": 194,
-                "page": 28,
-                "section": "Limitations",
-                "section_index": 96,
-                "start": 0,
-                "text": "Temporal\n \nLimitations.\n \nThe\n \nfield\n \nis\n \nevolving\n \nrapidly.\n \nWorks\n \npublished\n \nafter\n \nJuly\n \n2026\n \ncould\n \nnot\n \nbe\n \nincorporated.\n \n8.\n \nFuture\n \nDirections\n \nTable\n \n3.\n \nPriority\n "
-              }
-            ],
-            "text": "\nhas\n \nnot\n \nundergone\n \npeer\n \nreview.\n \nThe\n \nmeta-analytic\n \nsynthesis\n \nin\n \nTable\n \n2\n \naggregates\n \nheterogeneous\n \ndata\n \n(expected\n \nI\u00b2\n \n>\n \n85%).\n \nPublication\n \nbias\n \nis\n \nlikely:\n \nsystems\n \nwith\n \npoor\n \nperformance\n \nare\n \nunderreported.\n \nScope\n \nLimitations.\n \nThis\n \nreview\n \nfocuses\n \npredominantly\n \non\n \nLLM-based\n \nagentic\n \nsystems.\n \nSymbolic\n \nAI,\n \nneuro-symbolic\n \nsystems,\n \nand\n \nRL\n \nagents\n \nwithout\n \nLLM\n \ncomponents\n \nare\n \nnot\n \nsystematically\n \ncovered.\n \nThe\n \nsix-stage\n \nworkflow\n \nframework\n \nhas\n \nnot\n \nbeen\n \nempirically\n \nvalidated\n \nagainst\n \na\n \ncorpus\n \nof\n \nimplemented\n \nsystems.\n \n\u00a9\n \nCC\n \nBY-NC-ND\n \n4.0\n  \n\u2022\n  \nLongevity\n \nHorizon,\n \n2(5)\n  \n\u2022\n  \n27\nTemporal\n \nLimitations.\n \nThe\n \nfield\n \nis\n \nevolving\n \nrapidly.\n \nWorks\n \npublished\n \nafter\n \nJuly\n \n2026\n \ncould\n \nnot\n \nbe\n \nincorporated.\n \n8.\n \nFuture\n \nDirections\n \nTable\n \n3.\n \nPriority\n "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "artifact_urls": [],
-          "claim_status": "supported",
-          "explanation_reason": "The cited text directly supports the enumerated limitations and the statement that the six-stage workflow has not been empirically validated.",
-          "explanation_status": "supported",
-          "item_id": "evidence-7",
-          "primary_evidence_ids": [
-            "E03ed43c7ff98f799-B0133",
-            "E03ed43c7ff98f799-B0134"
-          ],
-          "reason": "The cited text explicitly enumerates methodological, evidence, and scope limitations, including non-pre-registration, qualitative quality assessment, unreviewed preprints, heterogeneous data with I^2 > 85%, and the unvalidated six-stage framework.",
-          "status": "supported"
-        }
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": null,
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [],
+        "excerpt": "234\u2013236. COPE (Committee on Publication Ethics). (2023). Authorship and AI tools: COPE position statement. D",
+        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "page": 30,
+        "pages": [],
+        "paraphrase": "Dataset documentation, quality control, licensing, or ethics is discussed.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
       }
     ],
-    "full_text_assessed": true,
+    "full_text_assessed": false,
     "full_text_url": "https://longevity.ge/longhoriz/article/download/196/pdf",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [],
-    "overall_quality_score": 78,
+    "missing_information": [
+      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+    ],
+    "overall_quality_score": 76,
     "paper_type": "survey_or_review",
     "positive_signals": [
-      "The manuscript proposes a unified six-stage methodological framework for agentic scientific discovery spanning literature synthesis through manuscript generation, and uses it as an organizing lens for evaluating agentic AI systems.",
-      "The paper's scope includes tracing the conceptual shift from tools to agents, reviewing practical systems in chemistry, equation discovery, materials science, and machine learning, and analyzing the verification crisis with proposed standards.",
-      "The paper compiles quantitative failure rate evidence from independent evaluations, including a 42% execution failure rate for The AI Scientist and citation fabrication rates of 6-18% for GPT-4-based agents.",
-      "The paper's claim that agentic systems are more capable at generating scientific outputs than at verifying them is supported by the compiled quantitative evidence showing systematic failure modes across multiple independent evaluations.",
-      "The paper provides a structured limitations section acknowledging methodological constraints (non-pre-registered protocol, qualitative quality assessment), evidence limitations (unreviewed preprints, heterogeneous meta-analytic data with expected I^2 > 85%), and scope limitations (LLM-centric focus, unvalidated six-sta"
+      "The available text identifies data or a benchmark used by the work.",
+      "A baseline or comparison system is described.",
+      "Quantitative evaluation signals were detected.",
+      "User, expert, operational, or deployment evidence is described.",
+      "Robustness or statistical analysis is reported.",
+      "Limitations or threats to validity are acknowledged.",
+      "Formal definitions or proof-oriented evidence is present.",
+      "A review or study-selection methodology is described.",
+      "Dataset documentation, quality control, licensing, or ethics is discussed."
     ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "rationale": "Scientific quality could not be assessed because of a protocol failure.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "0150b804db3dbcaf2a735647737e704f7bf10f4782e625b7ca534e2da7b6f300",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. The cited text supports the central trust concern and comparative analysis, but the claim about compiling failure rates in Table 2 and decomposing the crisis into epistemic and statistical dimensions is only partially shown in the provided excerpts. The cited text supports the theoretical-constructs statement, but the explanation's assertion about self-aware scoping preventing overclaiming is an evaluative inference not directly established by the excerpt. The cited text supports historical positioning and comparative analysis, but the explanation's assertion about explicit gap positioning and specific competing frameworks is only partially established by the provided excerpts. Cited evidence does not establish numerical values/units: 4"
+    "uncertainty": "The execution ledger records the failed attempts; no scientific judgment was inferred."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

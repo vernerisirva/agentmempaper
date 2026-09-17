@@ -806,7 +806,7 @@
         <li>Confidence: low</li>
         <li>Assessment scope: title and abstract</li>
         <li>Paper type: unclear</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: deterministic</li>
 
       </ul>
@@ -821,7 +821,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="memory-policy benchmark agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="beyond agent harnesses: cross-substrate authority for multi-agent systems" data-search="beyond agent harnesses: cross-substrate authority for multi-agent systems yang li, sergey volkov, hai liu, zongsi xu, xiyu chen, tuo zhou, dian shao, hao sun, ye lu agentic systems persist model-visible memory while mutating workspaces, while a runtime, registry, or approval service may hold authority state outside both. identical final files can then require opposite safe actions. we call this the cross-substrate authority gap: decision- relevant authorization information resi... evaluates memory mechanisms or benchmarks for llm agents.  memory-policy benchmark agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="49" data-quality-recommendation="weak" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="1.000000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="memory-policy benchmark agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="beyond agent harnesses: cross-substrate authority for multi-agent systems" data-search="beyond agent harnesses: cross-substrate authority for multi-agent systems yang li, sergey volkov, hai liu, zongsi xu, xiyu chen, tuo zhou, dian shao, hao sun, ye lu agentic systems persist model-visible memory while mutating workspaces, while a runtime, registry, or approval service may hold authority state outside both. identical final files can then require opposite safe actions. we call this the cross-substrate authority gap: decision- relevant authorization information resi... evaluates memory mechanisms or benchmarks for llm agents.  memory-policy benchmark agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="49" data-quality-recommendation="weak" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems</h3>
         <p class="meta">Yang Li, Sergey Volkov, Hai Liu, Zongsi Xu, Xiyu Chen, Tuo Zhou, Dian Shao, Hao Sun, Ye Lu · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -856,18 +856,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
         <li>Recommendation: weak</li>
-        <li>Confidence: medium</li>
+        <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
-        <li>Paper type: systems or application</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Paper type: empirical research</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
         <li>Applied score cap: 49/100 - No meaningful evaluation or suitable comparison was detected for the central systems/method claim.</li>
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The paper&#x27;s novelty lies in proving authority-blind observational equivalence against workspace-visible Git evidence and identity-bound commit controls, decomposing raw facts from typed packaging, and evaluating enforcement on the exact same model intent. (page 7)</li><li>The execution-time guard prevents all six fixed unsafe crossed publication intents from becoming effects while permitting all 12 valid aligned publish intents, with a paired finite-matrix p = 0.03125. (page 6)</li><li>Planning-time evidence exposure remains unreliable and model-dependent, with raw receipts achieving 19/32 first-action correct and the typed relation achieving 15/32 with 11/32 invalid or absent outputs. (pages 5–6)</li><li>The paper positions its contribution against memory governance and shared-workspace concurrency systems by isolating publication authority from stale-write races and provenance traceability. (page 7)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper introduces the cross-substrate authority gap: decision-relevant authorization information resides outside the planner-visible workspace or memory state, so identical final files can require opposite safe actions. (page 1)</li><li>The paper contributes a formalization of authority-blind observational equivalence, a typed decision relation, and a three-experiment decomposition separating raw authority facts from typed packaging and planning exposure from execution-time enforcement. (page 2)</li><li>The experimental design uses held-out semantic templates, real Git repositories, durably recorded execution attempts, deterministic oracles, frozen input plans, and independent read-only audits across all three experiments. (page 4)</li><li>The matched-intent design in Experiment 3 isolates the execution guard&#x27;s causal effect by replaying the exact same 32 model-generated first-action intents with zero additional model calls. (page 5)</li><li>Experiment 1 shows raw authority receipts change final semantic success from 0/32 to 32/32 (R0-C0: 32 favorable, 0 unfavorable discordant pairs; exact two-sided p = 4.66e-10), while typed packaging adds no observed planning-accuracy gain over raw receipts. (page 5)</li><li>Experiment 3&#x27;s execution guard prevents all six fixed unsafe crossed publication intents from becoming effects (0/16 unsafe publications) and permits all 12 valid authorized publish intents (0/12 denials), with six favorable and zero adverse discordances (exact two-sided p = 0.03125). (page 6)</li><li>The paper positions its contribution against memory governance work (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph), shared-workspace concurrency systems (STORM, CoAgent), and provenance standards (PROV-O, PROV-AGENT, in-toto, LogAct). (page 7)</li><li>The paper acknowledges limitations including controlled conditions, deployment prevalence, broader model and parent-subagent generalization, end-to-end security, trusted store and actor/session allocation, and negative model-dependent typed planning results. (pages 7–8)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Beyond Agent Harnesses: Cross-Substrate Authority for Multi-Agent Systems. Yang Li, Sergey Volkov, Hai Liu, Zongsi Xu, Xiyu Chen, Tuo Zhou, Dian Shao, Hao Sun, Ye Lu. 2026-09-08. https://arxiv.org/abs/2609.08472">Copy citation</button>
@@ -877,7 +877,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-policy benchmark evaluation memory-systems" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="personalizing llm agent memory using biometrics" data-search="personalizing llm agent memory using biometrics yanhong qian, qingguo meng, shihao ding, xingbo dong, zhe jin, hanrui wang, isao echizen personalized memory helps llm agents deliver stable, tailored assistance by storing and reusing user-specific data across interactions. in multi-user scenarios, however, retrieval must consider not only semantic similarity but also whether the current requester matches the identity associated with the stored memory.... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-policy benchmark evaluation memory-systems openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="1.000000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-policy benchmark evaluation memory-systems" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="100" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="personalizing llm agent memory using biometrics" data-search="personalizing llm agent memory using biometrics yanhong qian, qingguo meng, shihao ding, xingbo dong, zhe jin, hanrui wang, isao echizen personalized memory helps llm agents deliver stable, tailored assistance by storing and reusing user-specific data across interactions. in multi-user scenarios, however, retrieval must consider not only semantic similarity but also whether the current requester matches the identity associated with the stored memory.... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-policy benchmark evaluation memory-systems openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="1.000000">
       <div class="paper-main">
         <h3>Personalizing LLM Agent Memory Using Biometrics</h3>
         <p class="meta">Yanhong Qian, Qingguo Meng, Shihao Ding, Xingbo Dong, Zhe Jin, Hanrui Wang, Isao Echizen · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -912,18 +912,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
         <li>Recommendation: promising</li>
-        <li>Confidence: medium</li>
+        <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: systems or application</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 2/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>Bio-Memory augments each atomic memory note with a biometric embedding and conditions retrieval on both semantic similarity and biometric matching. (page 2)</li><li>The paper identifies a gap in existing memory systems: retrieval only prioritizes task-relevant memories without validating whether candidate memories belong to the current requesting user. (page 3)</li><li>The evaluation protocol constructs a 10-user shared-agent memory store by merging ten LoCoMo conversations, each assigned one biometric identity, with owner and non-owner probes differing only in the probe biometric embedding. (page 7)</li><li>The biometric verification threshold is selected independently for each benchmark based on the intersection of owner and non-owner cosine similarity score distributions between their principal modes. (page 5)</li><li>Across all face and palmprint benchmarks, owner queries consistently achieve higher F1 and BLEU-1 scores than non-owner queries, with average gaps ranging from 20.13 to 27.29 in F1. (pages 7–8)</li><li>The qualitative retrieval traces show that owner and non-owner queries diverge at the candidate memory selection stage, with non-owner queries falling back to generic or unsupported answers. (page 9)</li><li>The paper positions Bio-Memory against A-Mem and other memory-augmented agent systems, identifying that A-Mem&#x27;s retrieval logic relies solely on semantic similarity and cannot distinguish cross-user private records in multi-user shared memory pools. (page 3)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 2/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>Bio-Memory augments A-Mem atomic memory notes with biometric embeddings and conditions retrieval on both semantic similarity and biometric matching. (page 2)</li><li>The evaluation protocol uses a 10-user shared-agent setting with LoCoMo, binding each conversation to one biometric identity and using owner versus non-owner probe embeddings as the only experimental difference. (page 7)</li><li>Biometric matching is applied before semantic ranking, with a benchmark-specific threshold selected from the intersection of owner and non-owner score distributions. (page 5)</li><li>Across all face and palmprint benchmarks, owner queries retain substantially higher F1 and BLEU-1 scores than non-owner queries, with average gaps ranging from 20.13 to 27.29 in F1. (pages 7–8)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Personalizing LLM Agent Memory Using Biometrics. Yanhong Qian, Qingguo Meng, Shihao Ding, Xingbo Dong, Zhe Jin, Hanrui Wang, Isao Echizen. 2026-09-08. https://arxiv.org/abs/2609.08558">Copy citation</button>
@@ -933,7 +933,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory memory-systems benchmark llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="99" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memforest: efficient agent memory management via eventtree partitioning and progressive merging" data-search="memforest: efficient agent memory management via eventtree partitioning and progressive merging junxi wang, te sun, jiayi zhu, chen zhang, siyuan li, xuyang liu, zichen wen, xiaobing tu, jinkui ren, xiantao zhang, ziqi yuan, linfeng zhang agent memory systems have demonstrated significant potential in long-term dialogue, personalized assistants, and video understanding. however, continuously accumulated memory introduces substantial storage and retrieval costs during inference. to address this issue, we propose \textbf{memforest}, a general memory co... studies memory systems or memory modules for llm agents.  agent-memory memory-systems benchmark llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.990000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory memory-systems benchmark llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="99" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="memforest: efficient agent memory management via eventtree partitioning and progressive merging" data-search="memforest: efficient agent memory management via eventtree partitioning and progressive merging junxi wang, te sun, jiayi zhu, chen zhang, siyuan li, xuyang liu, zichen wen, xiaobing tu, jinkui ren, xiantao zhang, ziqi yuan, linfeng zhang agent memory systems have demonstrated significant potential in long-term dialogue, personalized assistants, and video understanding. however, continuously accumulated memory introduces substantial storage and retrieval costs during inference. to address this issue, we propose \textbf{memforest}, a general memory co... studies memory systems or memory modules for llm agents.  agent-memory memory-systems benchmark llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="85" data-quality-recommendation="strong" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.990000">
       <div class="paper-main">
         <h3>MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging</h3>
         <p class="meta">Junxi Wang, Te Sun, Jiayi Zhu, Chen Zhang, Siyuan Li, Xuyang Liu, Zichen Wen, Xiaobing Tu, Jinkui Ren, Xiantao Zhang, Ziqi Yuan, Linfeng Zhang · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -968,18 +968,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
-        <li>Recommendation: promising</li>
-        <li>Confidence: medium</li>
+        <li>Recommendation: strong</li>
+        <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: methods or algorithm</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The ablation studies validate that combining global semantic similarity with local temporal continuity and using maximum spanning tree merging both improve performance over their respective ablations. (pages 8–9)</li><li>The paper positions MemForest against generation-stage memory compression, graph-structured streaming video compression, and visual token compression methods, arguing that textual memories are more semantically rich and information-dense than visual tokens. (page 2)</li><li>The paper provides these artifact links: https://github.com/Celina-love-sweet/MemForest (page 1)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 5/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper provides these artifact links: https://github.com/Celina-love-sweet/MemForest (page 1)</li><li>MemForest is a general agent memory compression framework that partitions historical memory into event-centric EventTrees using global semantic similarity and local temporal continuity, then progressively merges nodes within each EventTree. (pages 2–3)</li><li>The Anchor-Guided Propagation Retrieval (AGPR) mechanism retrieves additional relevant memory nodes from temporal neighborhoods of key memory nodes to improve retrieval accuracy. (pages 2, 3, 5)</li><li>The paper provides a theoretical analysis showing that merging highly similar memory nodes preserves higher query similarity, with a lower bound on merged-node query similarity that increases monotonically with node similarity. (page 6)</li><li>The paper positions MemForest against existing memory compression and token compression work, noting that prior post-processing compression is restricted to graph-structured streaming video scenarios and that token compression methods overlook event differentiation and temporal relationships. (page 2)</li><li>The paper acknowledges that performance degradation becomes pronounced at higher compression rates in the low-redundancy Mem0 framework, with accuracy dropping to 93.3% at 70% compression. (page 23)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging. Junxi Wang, Te Sun, Jiayi Zhu, Chen Zhang, Siyuan Li, Xuyang Liu, Zichen Wen, Xiaobing Tu, Jinkui Ren, Xiantao Zhang, Ziqi Yuan, Linfeng Zhang. 2026-09-08. https://arxiv.org/abs/2609.08273">Copy citation</button>
@@ -1024,18 +1024,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.</p>
       <ul>
         <li>Recommendation: weak</li>
         <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
         <li>Applied score cap: 49/100 - No meaningful evaluation or suitable comparison was detected for the central systems/method claim.</li>
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 5/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The paper&#x27;s primary contribution is a restore-counterfactual metric that classifies oracle-answerable eviction errors into recoverable, irreversible, and residual categories, plus a controlled LongMemEval-S study of four eviction policies across three budgets and two retrieval regimes. (pages 2, 8)</li><li>The validity of the three-bin interpretation rests on three stated assumptions: oracle-answerability (A1), judge validity (A2), and restore tightness (A3), each with explicit failure modes and empirical checks. (page 4)</li><li>The destructive control, which evicts gold at approximately 3x the baseline rate, yields a significant irreversible-rate difference in all 9 contrasts (p&lt;0.001 under the primary reader; p&lt;0.05 across both readers), demonstrating that the statistic registers a large destructive difference. (pages 7–8)</li><li>Under top-k retrieval at 80k tokens, the two-bin irreversible share is 0.71 (CI .61-.81) for FIFO, 0.73 for random, 0.67 for redundancy-aware, and 1.00 for the destructive control, with every lower bound exceeding 0.5, supporting the claim that destruction is the majority component. (pages 5–6)</li><li>Recoverable errors occur under top-k retrieval but are absent under forced-gold injection by construction, producing significant recoverable-share gaps at 80k for FIFO (+0.29, CI .19-.39), random (+0.27), and redundancy-aware (+0.33), all significant after Holm correction (padj=.007). (page 6)</li><li>Existing budget-accuracy frontier work (DeMem, BudgetMem) quantifies accuracy loss under tighter budgets but does not characterize the composition of that loss into irreversible versus recoverable failure modes, which is the gap the restore counterfactual addresses. (pages 1–2)</li><li>The study uses a single benchmark, two readers, and one primary judge; the audit judge shares its provider with the reader, and the instrument requires gold labels and an oracle-answerable filter, limiting its use to benchmark analysis. (page 8)</li><li>The evaluation code was construct-validated using a deterministic substitute for model calls and is released with per-question records, with the dataset version pinned by hash and the protocol included with the artifact. (pages 4–5)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="What Eviction Destroys: A Restore-Counterfactual Audit of Forgetting in Agent Memory. Chen Shen. 2026-09-08. https://arxiv.org/abs/2609.08279">Copy citation</button>
@@ -1045,7 +1045,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="memory-types agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="closing the consistency gap: self-evolving agents that learn to stay on course" data-search="closing the consistency gap: self-evolving agents that learn to stay on course evelyn duesterwald, benjamin elder, lilian ngweta, shashanka ubaru, malgorzata zimon large language model (llm)-powered agents can be accurate on average yet unreliable in production, a discrepancy that has been observed but remains largely unaddressed. when given the same task five times, a react agent on the appworld benchmark using gpt-4.1 succeeds in all five runs only 53% of the time, even thou... studies memory systems or memory modules for llm agents.  memory-types agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="memory-types agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="closing the consistency gap: self-evolving agents that learn to stay on course" data-search="closing the consistency gap: self-evolving agents that learn to stay on course evelyn duesterwald, benjamin elder, lilian ngweta, shashanka ubaru, malgorzata zimon large language model (llm)-powered agents can be accurate on average yet unreliable in production, a discrepancy that has been observed but remains largely unaddressed. when given the same task five times, a react agent on the appworld benchmark using gpt-4.1 succeeds in all five runs only 53% of the time, even thou... studies memory systems or memory modules for llm agents.  memory-types agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="82" data-quality-recommendation="promising" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course</h3>
         <p class="meta">Evelyn Duesterwald, Benjamin Elder, Lilian Ngweta, Shashanka Ubaru, Malgorzata Zimon · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -1080,18 +1080,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
         <li>Recommendation: promising</li>
-        <li>Confidence: medium</li>
+        <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper formalizes the consistency gap as the difference between Mean@k and Pass^k, and presents a self-evolving agent framework with a Consistency Analyzer and Guideline Generator to reduce this gap. (pages 1–2)</li><li>The consistency gap is empirically characterized on AppWorld with ReAct/GPT-4.1 and GPT-OSS-120B, showing a 24.4pp gap for GPT-4.1 and 23.8pp for GPT-OSS-120B. (page 2)</li><li>The paper positions its work relative to self-consistency, agentic memory, and reliability literature, distinguishing its offline resampling and consistency-targeted guideline generation from prior approaches. (pages 5–6)</li><li>The paper acknowledges limitations including the assumption of comparable platform-side non-determinism, the analyzer&#x27;s inability to detect confidently-wrong decisions, and the 30x token cost of resampling. (page 6)</li><li>The paper provides these artifact links: https://github.com/AgentToolkit/altk-evolve (page 1)</li><li>The paper provides full per-difficulty results in Appendix B tables, including baseline, same-task, and similar-task Pass^5, Mean@5, and Consistency values for both models. (page 7)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course. Evelyn Duesterwald, Benjamin Elder, Lilian Ngweta, Shashanka Ubaru, Malgorzata Zimon. 2026-09-08. https://arxiv.org/abs/2609.08832">Copy citation</button>
@@ -1136,18 +1136,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
         <li>Recommendation: strong</li>
         <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: systems or application</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
       <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 5/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 5/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 5/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
+      <h4>Evidence</h4><ul><li>CreaMem partitions memory along user life scenes (Life, Work, Interest) plus a dedicated Episodic Memory, and dual-codes each experience as both an episodic timeline entry and a scene-specific trait entry, combined at retrieval through per-memory balanced sampling. (pages 2–3)</li><li>The paper identifies two gaps in existing memory systems: lack of scene awareness causing cross-scene interference, and single-perspective encoding preventing complementary retrieval. (pages 1–2)</li><li>The evaluation uses two long-term memory benchmarks (LoCoMo and LongMemEval-S), a consistent GPT-4o-mini backbone across all methods, and the MemGAS evaluation pipeline with 4o-Judge accuracy as the main metric. (page 5)</li><li>CreaMem achieves the best performance across both datasets and all reported metrics, surpassing the strongest baselines on each benchmark. (page 6)</li><li>Ablation results show that scene partitioning and dual encoding each contribute to performance, and that the full system outperforms component-ablated variants. (page 8)</li><li>The paper acknowledges limitations including the fixed Life/Work/Interest taxonomy, additional system overhead with 2.9 seconds average latency, and evaluation challenges for LLM-extraction memory systems. (page 9)</li><li>The paper provides a failure analysis showing that CreaMem still fails on some questions answered correctly by baselines, with specific diagnoses of incomplete retrieval and failure to combine retrieved entries. (pages 8–9)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="CreaMem: A Scene-Aware Memory Architecture for Personalized Agents. Qixuan Sun, Yue Que, Bowei He, Jin Guo, Dihang Yang, Wenchang Situ, Chen Ma. 2026-09-08. https://arxiv.org/abs/2609.08550">Copy citation</button>
@@ -1157,7 +1157,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-policy evaluation memory-systems" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="graph-based personalized memory for llm agents: representation, evolution, retrieval, and evaluation" data-search="graph-based personalized memory for llm agents: representation, evolution, retrieval, and evaluation dac duy anh nguyen, zhangchi qiu, shigeng chen, alan wee-chung liew large language model (llm) agents are evolving from single-session tools toward long-term personal assistants that must adapt to individual users across tasks, contexts, and interactions. this shift makes memory a core requirement for personalization, since user preferences, goals, constraints, relationships, and pa... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-policy evaluation memory-systems openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="72" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="agent-memory llm-agents memory-policy evaluation memory-systems" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="graph-based personalized memory for llm agents: representation, evolution, retrieval, and evaluation" data-search="graph-based personalized memory for llm agents: representation, evolution, retrieval, and evaluation dac duy anh nguyen, zhangchi qiu, shigeng chen, alan wee-chung liew large language model (llm) agents are evolving from single-session tools toward long-term personal assistants that must adapt to individual users across tasks, contexts, and interactions. this shift makes memory a core requirement for personalization, since user preferences, goals, constraints, relationships, and pa... studies memory storage, retrieval, update, or consolidation for llm agents.  agent-memory llm-agents memory-policy evaluation memory-systems openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="78" data-quality-recommendation="promising" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation</h3>
         <p class="meta">Dac Duy Anh Nguyen, Zhangchi Qiu, Shigeng Chen, Alan Wee-Chung Liew · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -1192,18 +1192,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific judgment is unresolved because supplied assessment material is incomplete. Missing input cannot establish scientific insufficiency.</p>
       <ul>
         <li>Recommendation: promising</li>
         <li>Confidence: medium</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: survey or review</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 3/5</li><li>Limitations And Uncertainty Handling: 3/5</li><li>Methodological Rigor: 3/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 3/5</li></ul>
-      <h4>Evidence</h4><ul><li>The survey develops a lifecycle-oriented taxonomy organizing graph-based personalized memory for LLM agents around representation, evolution, retrieval, and evaluation. (page 1)</li><li>The survey&#x27;s contribution includes a taxonomy, an evaluation summary identifying gaps, a timely review of recent methods, and future directions. (page 2)</li><li>The survey positions itself against prior surveys of personalized agents and graph-based agent memory, which use different primary lenses and do not provide a unified account of graph-based personalized memory. (pages 1–2)</li><li>The survey organizes representation into five patterns: flat, hierarchical, hypergraph, hybrid, and multiple disjoint graphs, and reviews systems within each pattern. (page 3)</li><li>The survey identifies five evolution operations: admission, integration, conflict resolution, consolidation, and removal, and reviews systems implementing each. (pages 4–5)</li><li>The survey summarizes representative personalized-memory benchmarks and their evaluation metrics, organized into five metric groups. (pages 6–7)</li><li>The survey acknowledges that graph structure does not automatically improve retrieval, since controlled comparisons show results can depend on foundational system settings beyond graph structure. (page 6)</li><li>The survey notes that the multiple disjoint graphs design is supported by limited evidence, and the cited work does not establish whether the graph instances are formally disjoint. (page 4)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 2/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 5/5</li><li>Reproducibility And Transparency: 2/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation. Dac Duy Anh Nguyen, Zhangchi Qiu, Shigeng Chen, Alan Wee-Chung Liew. 2026-09-08. https://arxiv.org/abs/2609.08599">Copy citation</button>
@@ -1304,18 +1304,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.</p>
       <ul>
         <li>Recommendation: promising</li>
         <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: methods or algorithm</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The paper provides these artifact links: https://github.com/FudanSELab/MeClear (page 1)</li><li>MeClear is a task-conditioned memory clearance framework that combines Leave-One-Out screening with sampled cooperative Shapley attribution and verified query-scoped clearance. (page 2)</li><li>The paper identifies a gap: single-record deletion fails under redundant harmful memories because each fault masks the other&#x27;s local effect, and existing retrieval-time filters do not verify behavioral recovery. (page 1)</li><li>The evaluation uses causally verified fault injection with behavioral verification: clean contexts must remain correct in both trials, direct conflicts must corrupt both trials, and redundant conflicts must remain incorrect when either fault is retained alone. (page 13)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="MeClear: Cooperative Game-Theoretic Attribution and Risk-Aware Memory Clearance for Long-Horizon LLM Agents. Boyu Yang, Jiazheng Sun, Zilong Lu, Zhi Qiu, Xin Peng, Jun Zheng. 2026-09-08. https://arxiv.org/abs/2609.09115">Copy citation</button>
@@ -1325,7 +1325,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="long-term-memory agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="revoked but still authoritative: an empirical study of revocation enforcement in agent-memory systems" data-search="revoked but still authoritative: an empirical study of revocation enforcement in agent-memory systems yi ting shen, kentaroh toyoda, alex leung long-running language-model agents depend on persistent memory. many agent-memory systems preserve history through soft revocation: a contradicted fact is marked invalid and retained rather than deleted. however, whether that mark is enforced at retrieval time is unexamined. in this paper, we measure five such syste... focuses on persistent or long-term memory for agent behavior.  long-term-memory agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="54" data-quality-recommendation="weak" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="long-term-memory agent-memory memory-systems llm-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-08" data-first-seen="2026-09-09" data-score="91" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="revoked but still authoritative: an empirical study of revocation enforcement in agent-memory systems" data-search="revoked but still authoritative: an empirical study of revocation enforcement in agent-memory systems yi ting shen, kentaroh toyoda, alex leung long-running language-model agents depend on persistent memory. many agent-memory systems preserve history through soft revocation: a contradicted fact is marked invalid and retained rather than deleted. however, whether that mark is enforced at retrieval time is unexamined. in this paper, we measure five such syste... focuses on persistent or long-term memory for agent behavior.  long-term-memory agent-memory memory-systems llm-agents openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="54" data-quality-recommendation="weak" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.910000">
       <div class="paper-main">
         <h3>Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems</h3>
         <p class="meta">Yi Ting Shen, Kentaroh Toyoda, Alex Leung · Published 2026-09-08 · Source: OpenAlex, arXiv</p>
@@ -1360,18 +1360,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.</p>
       <ul>
         <li>Recommendation: weak</li>
-        <li>Confidence: medium</li>
+        <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-batch2-recovery-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-batch2-recovery-v2 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
         <li>Applied score cap: 54/100 - Comparative claims were detected without a suitable baseline.</li>
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 5/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>The paper&#x27;s central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems. (page 1)</li><li>The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes. (page 3)</li><li>The paper provides these artifact links: https://github.com/VulcanLab/Memory-Rebirth-Attack (page 1)</li><li>The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count. (page 9)</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 5/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>The paper identifies a gap: prior work addresses content injection, deletion propagation, or version-aware retrieval, but none asks whether a store&#x27;s own revocation mark is enforced at retrieval time. (page 3)</li><li>The central finding is quantified: on the two exposed systems, the revoked record was returned in every scenario and led to unsafe actions in 44.2% and 42.1% of trials, while the store-level filter reduced unsafe actions to zero. (pages 7–8)</li><li>The attribution of the failure to retrieval rather than the store is supported by a within-system comparison on mem0 and a matched-pair comparison across the two exposed systems. (pages 8, 16)</li><li>The paper organizes prior work into five directions and states the gap precisely: no prior family asks whether a store&#x27;s own revocation mark is enforced at retrieval time. (pages 2–3)</li><li>The paper provides these artifact links: https://github.com/VulcanLab/Memory-Rebirth-Attack (page 1)</li><li>The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison and that the matched-pair test has limited power to detect systematic differences. (pages 9, 16)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems. Yi Ting Shen, Kentaroh Toyoda, Alex Leung. 2026-09-08. https://arxiv.org/abs/2609.08258">Copy citation</button>

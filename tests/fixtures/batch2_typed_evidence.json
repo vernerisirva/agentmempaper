@@ -1,0 +1,252 @@
+[
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.08599",
+    "title": "Graph-Based Personalized Memory for LLM Agents: Representation, Evolution, Retrieval, and Evaluation",
+    "claim": "The survey summarizes representative personalized-memory benchmarks and their evaluation metrics, organized into five metric groups.",
+    "explanation": "The evaluation section lists benchmarks such as LoCoMo, LongMemEval, PersonaMem, and others, and groups reported metrics into answer quality, evidence retrieval, user-state modeling, memory evolution and structure, and efficiency. This provides a structured summary of evaluation practices.",
+    "item_id": "evidence-5",
+    "blocks": [
+      {
+        "evidence_id": "E1e232ee4e35e94c0-B0036",
+        "sequence": 36,
+        "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n•Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n•Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n•User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n•Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution ",
+        "content_hash": "5845d4a97c757a907e7642425b239b2d79a0d0c05ae332f84c8dd36c3fcca125",
+        "spans": [
+          {
+            "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n•Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n•Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n•User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n•Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution ",
+            "page": 6,
+            "section": "Appendix: Memoryretrieval",
+            "section_index": 8,
+            "start": 4251,
+            "end": 5122
+          }
+        ],
+        "eligible": true,
+        "section_role": "appendix"
+      },
+      {
+        "evidence_id": "E1e232ee4e35e94c0-B0037",
+        "sequence": 37,
+        "text": "accuracy.\n•Efficiency:retrieved-context size, token usage, latency,\nconstruction cost, query-time cost, and storage reduction.\nVII. CHALLENGES ANDFUTUREDIRECTIONS\nPersonalized graph memory remains a young but promising\nresearch frontier. Its central challenge is not merely storing\nuser information in graph form but building a long-term,\ntrustworthy, and actionable model of an individual user, which\nin turn motivates several future directions.\nScalable Lifelong Personal Memory.Personalized agents\nshould support years of interaction rather than isolated ses-\nsions or short benchmark histories. Future work should build\nlifelong graph memories that grow with the user, consolidate\nTABLE II\nREPRESENTATIVE PERSONALIZED-MEMORY BENCHMARKS AND EVALUATION SIGNALS.✓:EXPLICIT;△:PARTIAL/INDIRECT. ANS.:ANSWER QUALITY;\nRET.:EVIDENCE RETRIEVAL; USER:USER-STATE MODELING; EVOL.:EVOLUTION OVER TIME; ",
+        "content_hash": "de2dae418e8944085e40ed4e009b810497fcef048d9107b6a7f3c64002edb891",
+        "spans": [
+          {
+            "text": "accuracy.\n•Efficiency:retrieved-context size, token usage, latency,\nconstruction cost, query-time cost, and storage reduction.\nVII. CHALLENGES ANDFUTUREDIRECTIONS\nPersonalized graph memory remains a young but promising\nresearch frontier. Its central challenge is not merely storing\nuser information in graph form but building a long-term,\ntrustworthy, and actionable model of an individual user, which\nin turn motivates several future directions.\nScalable Lifelong Personal Memory.Personalized agents\nshould support years of interaction rather than isolated ses-\nsions or short benchmark histories. Future work should build\nlifelong graph memories that grow with the user, consolidate",
+            "page": 6,
+            "section": "Appendix: Memoryretrieval",
+            "section_index": 8,
+            "start": 5122,
+            "end": 5806
+          },
+          {
+            "text": "TABLE II\nREPRESENTATIVE PERSONALIZED-MEMORY BENCHMARKS AND EVALUATION SIGNALS.✓:EXPLICIT;△:PARTIAL/INDIRECT. ANS.:ANSWER QUALITY;\nRET.:EVIDENCE RETRIEVAL; USER:USER-STATE MODELING; EVOL.:EVOLUTION OVER TIME; ",
+            "page": 7,
+            "section": "Appendix: Memoryretrieval",
+            "section_index": 9,
+            "start": 0,
+            "end": 208
+          }
+        ],
+        "eligible": true,
+        "section_role": "appendix"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "doi:10.65649/ukh4n33x",
+    "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+    "claim": "The paper's claim that agentic systems are more capable at generating scientific outputs than at verifying them is supported by the compiled quantitative evidence showing systematic failure modes across multiple independent evaluations.",
+    "explanation": "The body text explicitly states that the pattern is consistent: systems are more capable at generating scientific outputs than at verifying them, a fundamental asymmetry. The preceding Table 2 provides the quantitative basis for this claim across execution failures, citation fabrication, structural errors, and self-improvement regression.",
+    "item_id": "evidence-5",
+    "blocks": [
+      {
+        "evidence_id": "E03ed43c7ff98f799-B0076",
+        "sequence": 76,
+        "text": "—\n \nagents\n \nchoose\n \nfabrication\n \nover\n \nhonest\n \nrefusal)\n \n7\n \nLLMs,\n \n33\n \nscenarios,\n \n11\n \ntrap\n \ncategories\n \n34.2%\n \noverall\n \nintegrity\n \nproblem\n \nrate;\n \n100%\n \nsynthetic\n \ndata\n \ngeneratio\nn\n \nin\n \nmissing-d\nata\n \nscenarios\n \nYang\n \net\n \nal. (2026)\n \n—\n \nSciIntegrity-B\nench\n \nThese\n \nquantitative\n \nestimates\n \nestablish\n \nthat\n \ncurrent\n \nagentic\n \nsystems\n \nhave\n \nnon-trivial\n \nfailure\n \nrates\n \nthat\n \nmust\n \nbe\n \naddressed\n \nthrough\n \narchitectural\n \nsafeguards\n \nrather\n \nthan\n \npost\n \nhoc\n \nhuman\n \nreview\n \nalone.\n \nThe\n \npattern\n \nis\n \nconsistent:\n \nsystems\n \nare\n \nmore\n \ncapable\n \nat\n \ngenerating\n \nscientific\n \noutputs\n \nthan\n \nat\n \nverifying\n \nthem\n \n—\n \na\n \nfundamental\n \nasymmetry\n \nthat\n \ndefines\n \nthe\n \ncurrent\n \nstate\n \nof\n \nthe\n \nfield.\n \n5.4\n \nRecommendations\n \nfor\n \nMinimum\n \nVerification\n \nStandards\n \nBased\n \non\n \nthe\n \ncomparative\n \nanalysis\n \nabove,\n \nwe\n ",
+        "content_hash": "8d049dbb1b128686b3f68a5cd610598141ebb87320d6f44cd56d91a10e32b83f",
+        "spans": [
+          {
+            "text": "—\n \nagents\n \nchoose\n \nfabrication\n \nover\n \nhonest\n \nrefusal)\n \n7\n \nLLMs,\n \n33\n \nscenarios,\n \n11\n \ntrap\n \ncategories\n \n34.2%\n \noverall\n \nintegrity\n \nproblem\n \nrate;\n \n100%\n \nsynthetic\n \ndata\n \ngeneratio\nn\n \nin\n \nmissing-d\nata\n \nscenarios\n \nYang\n \net\n \nal. (2026)\n \n—\n \nSciIntegrity-B\nench\n \nThese\n \nquantitative\n \nestimates\n \nestablish\n \nthat\n \ncurrent\n \nagentic\n \nsystems\n \nhave\n \nnon-trivial\n \nfailure\n \nrates\n \nthat\n \nmust\n \nbe\n \naddressed\n \nthrough\n \narchitectural\n \nsafeguards\n \nrather\n \nthan\n \npost\n \nhoc\n \nhuman\n \nreview\n \nalone.\n \nThe\n \npattern\n \nis\n \nconsistent:\n \nsystems\n \nare\n \nmore\n \ncapable\n \nat\n \ngenerating\n \nscientific\n \noutputs\n \nthan\n \nat\n \nverifying\n \nthem\n \n—\n \na\n \nfundamental\n \nasymmetry\n \nthat\n \ndefines\n \nthe\n \ncurrent\n \nstate\n \nof\n \nthe\n \nfield.\n \n5.4\n \nRecommendations\n \nfor\n \nMinimum\n \nVerification\n \nStandards\n \nBased\n \non\n \nthe\n \ncomparative\n \nanalysis\n \nabove,\n \nwe\n ",
+            "page": 18,
+            "section": "Evaluation",
+            "section_index": 54,
+            "start": 0,
+            "end": 897
+          }
+        ],
+        "eligible": true,
+        "section_role": "results"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "openalex:W7171268620",
+    "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+    "claim": "The paper reports that introducing one misleading document increases mean FCAR from 0% in the no-injection control to 54.7% across six open-source configurations.",
+    "explanation": "The results section provides the control and single-document FCAR values, supporting the central empirical claim with a clear comparison.",
+    "item_id": "evidence-6",
+    "blocks": [
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0034",
+        "sequence": 34,
+        "text": "Intheno-injectioncontrol(b= 0),FCARwas0%acrosssix\nconfigurations, indicating that none of the systems sponta-\nneously generated or adopted the task-specific false conclu-\nsionwithoutexposuretotheinjectedmisleadingdocuments.\nIntroducing a single misleading document increased mean\nFCAR to 54.7%. Mean FCAR rose to 59.5% with two doc-\numentsandpeakedat61.0%withthree,butdidnotincrease\nfurther with four (60.3%) or five (58.3%) documents (Fig-\nure5).Noneoftheframework–LLMconfigurationsexhibited\na monotonic dose–response pattern, and the mean increased\nbylessthan4percentagepointsfromonetofivedocuments.\nThe contrast betweenb= 0andb= 1attributes adoption\ntoinjectedmisleadingknowledge,whilethelimitedchanges\nFigure 6: Framework–LLM configurations in FCAR under\nthe matched high-authority, paper-style setting. LLMs are\nordered by Intelligence Index, and dashed connectors com-\npare the two frameworks ",
+        "content_hash": "93781ec3a0377c48def8bdb0190b2b060cfaafe98b7569ffc7831833d16082e5",
+        "spans": [
+          {
+            "text": "Intheno-injectioncontrol(b= 0),FCARwas0%acrosssix\nconfigurations, indicating that none of the systems sponta-\nneously generated or adopted the task-specific false conclu-\nsionwithoutexposuretotheinjectedmisleadingdocuments.\nIntroducing a single misleading document increased mean\nFCAR to 54.7%. Mean FCAR rose to 59.5% with two doc-\numentsandpeakedat61.0%withthree,butdidnotincrease\nfurther with four (60.3%) or five (58.3%) documents (Fig-\nure5).Noneoftheframework–LLMconfigurationsexhibited\na monotonic dose–response pattern, and the mean increased\nbylessthan4percentagepointsfromonetofivedocuments.\nThe contrast betweenb= 0andb= 1attributes adoption\ntoinjectedmisleadingknowledge,whilethelimitedchanges\nFigure 6: Framework–LLM configurations in FCAR under\nthe matched high-authority, paper-style setting. LLMs are\nordered by Intelligence Index, and dashed connectors com-\npare the two frameworks ",
+            "page": 6,
+            "section": "How Much Misleading Knowledge Is Needed?",
+            "section_index": 15,
+            "start": 0,
+            "end": 899
+          }
+        ],
+        "eligible": true,
+        "section_role": "body"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "openalex:W7171268620",
+    "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+    "claim": "The paper reports that pre-synthesis exposure sharply increases adoption, with mean FCAR rising to 85.5% immediately before final synthesis compared with 40.5% at cold start and 44.2% during mid-research.",
+    "explanation": "The lifecycle-stage results provide the three FCAR values and the comparison, supporting the claim about timing effects.",
+    "item_id": "evidence-7",
+    "blocks": [
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0030",
+        "sequence": 30,
+        "text": "likely to be adopted as front-ranked\nitems. This pattern is consistent with agents relying more\non the relevance of retrieved content than on its list position\nwhen incorporating evidence into their research state.\nPre-synthesis exposure sharply increases adoption.We\nvaried the lifecycle stage at which misleading knowledge\nentered the workflow: before research began (cold start),\nduring evidence gathering (mid-Research), or immediately\nbefore final synthesis (pre-Synthesis). Mean FCAR was\n40.5%atColdstartand44.2%duringmid-research,butrose\nto 85.5% when misleading knowledge was introduced im-\nmediatelybeforefinalsynthesis—increasesof45.0and41.3\npercentage points, respectively (Figure 3(b)). Pre-synthesis\nFCAR ranged from 77% to 94% across all configurations.\nAveraged across LLMs, WebThinker showed lower FCAR\nthan DeerFlow at cold start (27.7% versus 53.3%) and dur-\ning mid-research ",
+        "content_hash": "d812a4fc3dc365f308cbc2ad5450ce0db1b6b43a0bf41c4b624f0a320f8d1e24",
+        "spans": [
+          {
+            "text": "likely to be adopted as front-ranked\nitems. This pattern is consistent with agents relying more\non the relevance of retrieved content than on its list position\nwhen incorporating evidence into their research state.\nPre-synthesis exposure sharply increases adoption.We\nvaried the lifecycle stage at which misleading knowledge\nentered the workflow: before research began (cold start),\nduring evidence gathering (mid-Research), or immediately\nbefore final synthesis (pre-Synthesis). Mean FCAR was\n40.5%atColdstartand44.2%duringmid-research,butrose\nto 85.5% when misleading knowledge was introduced im-\nmediatelybeforefinalsynthesis—increasesof45.0and41.3\npercentage points, respectively (Figure 3(b)). Pre-synthesis\nFCAR ranged from 77% to 94% across all configurations.\nAveraged across LLMs, WebThinker showed lower FCAR\nthan DeerFlow at cold start (27.7% versus 53.3%) and dur-\ning mid-research ",
+            "page": 5,
+            "section": "How Do Search-Result Rank And Lifecycle",
+            "section_index": 12,
+            "start": 897,
+            "end": 1791
+          }
+        ],
+        "eligible": true,
+        "section_role": "results"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "openalex:W7171268620",
+    "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+    "claim": "The paper reports that higher authority generally increases adoption, with mean FCAR decreasing from 61.0% for high-authority sources to 57.7% and 46.2% for medium- and low-authority sources.",
+    "explanation": "The authority-level results provide the three mean FCAR values and the cross-configuration decrease, supporting the claim about authority effects.",
+    "item_id": "evidence-9",
+    "blocks": [
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0032",
+        "sequence": 32,
+        "text": "Persuasive?\nHigher authority generally increases adoption.Across\nthe six framework–LLM configurations, mean FCAR de-\ncreasesfrom61.0%forhigh-authoritysourcesto57.7%and\n46.2% for medium- and low-authority sources, respectively\n(Figure 4(a)). FCAR was lower for low- than high-authority\nsourcesineveryconfiguration,witha14.8-percentage-point\ndecreaseinthecross-configurationmean.However,astrictly\nmonotonic ordering holds in only four of six configurations,\nwithtwoWebThinkersettingsshowingslightlyhigherFCAR\nfor medium- than high-authority sources. Thus, institutional\nauthority is a broadly effective persuasive cue, although its\ninfluence is not strictly monotonic across systems.\nPaper-likepresentationisastrongerandmoreconsistent\ncue.Mean FCAR is highest for papers (61.0%), followed\nby blogs (53.0%), news articles (44.0%), and posts ",
+        "content_hash": "e7e72029f566012f6bf66128a61db09b3ba2e33a322238d799fbbfac669c6f73",
+        "spans": [
+          {
+            "text": "Persuasive?\nHigher authority generally increases adoption.Across\nthe six framework–LLM configurations, mean FCAR de-\ncreasesfrom61.0%forhigh-authoritysourcesto57.7%and\n46.2% for medium- and low-authority sources, respectively\n(Figure 4(a)). FCAR was lower for low- than high-authority\nsourcesineveryconfiguration,witha14.8-percentage-point\ndecreaseinthecross-configurationmean.However,astrictly\nmonotonic ordering holds in only four of six configurations,\nwithtwoWebThinkersettingsshowingslightlyhigherFCAR\nfor medium- than high-authority sources. Thus, institutional\nauthority is a broadly effective persuasive cue, although its\ninfluence is not strictly monotonic across systems.\nPaper-likepresentationisastrongerandmoreconsistent\ncue.Mean FCAR is highest for papers (61.0%), followed\nby blogs (53.0%), news articles (44.0%), and posts ",
+            "page": 6,
+            "section": "What Makes Misleading Knowledge More",
+            "section_index": 14,
+            "start": 0,
+            "end": 838
+          }
+        ],
+        "eligible": true,
+        "section_role": "body"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "openalex:W7171268620",
+    "title": "Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions",
+    "claim": "The paper reports that pre-research, post-research, and combined defenses reduce FCAR relative to no-defense baselines of 60-76%, yielding ranges of 37-57%, 20-58%, and 15-62%, respectively.",
+    "explanation": "The defense-effectiveness results provide the baseline and defense FCAR ranges, supporting the claim that defenses mitigate but do not eliminate adoption.",
+    "item_id": "evidence-11",
+    "blocks": [
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0041",
+        "sequence": 41,
+        "text": "We evaluate the pre-research and post-research defenses in-\ntroducedinSection3.4onDeerFlowunderthedefaulthigh-\nauthority, paper-style setting. For each LLM, we compare\nno defense, pre-research defense, post-research defense, and\ntheir combination. As shown in Figure 7(d)–(f), all three\ndefense configurations reduce FCAR relative to the cor-\nresponding no-defense baselines of60–76%. Pre-research,\npost-research,andcombineddefensesyieldFCARrangesof\n37–57%,20–58%,and15–62%,respectively.Thecombined\ndefense performs best for DeepSeek-V4 Pro and Qwen3.5-\n397B, but yields62%for Intern-S1-Pro, higher than either\ndefense alone (57%and58%). This degradation is consis-\ntent with post-research refinement operating in the same\nmixed retrieval environment as the original research pro-\ncess, where misleading evidence may be re-retrieved and\naccepted, partially offsetting the benefit of pre-research ",
+        "content_hash": "71935f6402bffdfc9660f6eae4a90d8a2f3903ef1d8a61312771d69d85eff709",
+        "spans": [
+          {
+            "text": "We evaluate the pre-research and post-research defenses in-\ntroducedinSection3.4onDeerFlowunderthedefaulthigh-\nauthority, paper-style setting. For each LLM, we compare\nno defense, pre-research defense, post-research defense, and\ntheir combination. As shown in Figure 7(d)–(f), all three\ndefense configurations reduce FCAR relative to the cor-\nresponding no-defense baselines of60–76%. Pre-research,\npost-research,andcombineddefensesyieldFCARrangesof\n37–57%,20–58%,and15–62%,respectively.Thecombined\ndefense performs best for DeepSeek-V4 Pro and Qwen3.5-\n397B, but yields62%for Intern-S1-Pro, higher than either\ndefense alone (57%and58%). This degradation is consis-\ntent with post-research refinement operating in the same\nmixed retrieval environment as the original research pro-\ncess, where misleading evidence may be re-retrieved and\naccepted, partially offsetting the benefit of pre-research ",
+            "page": 7,
+            "section": "Defense Effectiveness",
+            "section_index": 19,
+            "start": 0,
+            "end": 896
+          }
+        ],
+        "eligible": true,
+        "section_role": "body"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "doi:10.48550/arxiv.2607.20872",
+    "title": "LegalCiteTrust: Benchmarking Citation Trustworthiness in Chinese Long-Form Legal Research Reports",
+    "claim": "The paper states artifact links for the Deli and Farui legal systems.",
+    "explanation": "The experimental setup table provides official product page URLs for the Deli and Farui systems.",
+    "item_id": "evidence-10",
+    "blocks": [
+      {
+        "evidence_id": "E8f2ff4f303dcf9ed-B0025",
+        "sequence": 25,
+        "text": "score Whether the source is faithfully described\nApplicability Citation-level A score Whether the source supports the local claim\nTable 4: Systems in the main evaluation.\nCategory Systems Role\nGeneral LLM GPT5 (Singh et al., 2025)\nDeepSeek (Xu et al., 2026)\nQwen36_plus (Yang et al., 2025)\nDirect report generation without additional search tools\nDeep / agentic research Deli_DR a\nQwen_DR (Team et al., 2025)\nMulti-step research systems with denser evidence and\ncitations\nLegal-specific system Deli_LegalAI a\nFaruib\nEnd-to-end legal products or legal-domain systems\naDeli official product page: https://www.delilegal.com/ai. bFarui official product page: https://tongyi.aliyun.\ncom/farui/home.\nresearch workflows, and legal-specific systems use\ntheir built-in legal retrieval or research assistance.\nFor API-based systems, we use default model pa-\nrameters. All outputs are evaluated by the ",
+        "content_hash": "f3ffac015dcb3029f2cd45e77f917a5d961539ecfdf26e3376e6c655119a0e86",
+        "spans": [
+          {
+            "text": "score Whether the source is faithfully described\nApplicability Citation-level A score Whether the source supports the local claim\nTable 4: Systems in the main evaluation.\nCategory Systems Role\nGeneral LLM GPT5 (Singh et al., 2025)\nDeepSeek (Xu et al., 2026)\nQwen36_plus (Yang et al., 2025)\nDirect report generation without additional search tools\nDeep / agentic research Deli_DR a\nQwen_DR (Team et al., 2025)\nMulti-step research systems with denser evidence and\ncitations\nLegal-specific system Deli_LegalAI a\nFaruib\nEnd-to-end legal products or legal-domain systems\naDeli official product page: https://www.delilegal.com/ai. bFarui official product page: https://tongyi.aliyun.\ncom/farui/home.\nresearch workflows, and legal-specific systems use\ntheir built-in legal retrieval or research assistance.\nFor API-based systems, we use default model pa-\nrameters. All outputs are evaluated by the ",
+            "page": 5,
+            "section": "Experimental Setup",
+            "section_index": 13,
+            "start": 789,
+            "end": 1680
+          }
+        ],
+        "eligible": true,
+        "section_role": "methods"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  },
+  {
+    "canonical_id": "openalex:W7171268386",
+    "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+    "claim": "The paper provides model links and a homepage for accessing AREX artifacts.",
+    "explanation": "The abstract front matter includes URLs for the app, homepage, and Hugging Face model collection, supporting artifact availability.",
+    "item_id": "evidence-8",
+    "blocks": [
+      {
+        "evidence_id": "Ed069fe16ffa6b527-B0003",
+        "sequence": 3,
+        "text": "substantially more activated parameters.\n/gl⌢beApp:https://arex-research.com\nHomepage:https://vectorspacelab.github.io/arex-model/\nModels:https://huggingface.co/collections/BAAI/arex\nAREX benchmark results AREX-Base AREX-Turbo Closed Open\nBrowseComp\nKimi-K2.6 83.2\nAREX-Base 82.5\nGLM-5 75.9\nAREX-Turbo 70.7\nMiro-1.7-mini 67.9\nQuest-35B 64.6\nQwen-35B 61.0\nTongyi-DR 43.4\nGAIA\nMiro-H1 88.5\nAREX-Base 85.4\nMiro-1.7 82.7\nAREX-Turbo 81.6\nQuest-35B 80.8\nGemini-3.1 80.6\nKimi-K2.6 80.6\nQwen-35B 80.0\nxbench-2510\nDeepSeek-Pro 80.0\nAREX-Base 71.0\nMiro-1.7 62.0\nMiro-1.7-mini 57.2\nAREX-Turbo 57.0\nTongyi-DR 55.0\nGemini-3.1 53.0\nQwen-35B 50.3\nDeepSearchQA\nGemini-3.1 93.3\nAREX-Base 89.9\nDeepSeek-Pro 88.7\nGPT-5.4 88.5\nAREX-Turbo 78.5\nMiro-1.7 72.1\nQwen-35B 68.5\nMiro-1.7-mini 67.9\nWideSearch\nAREX-Base 82.0\nKimi-K2.6 80.8\nGPT-5.4 77.5\nAREX-Turbo 68.5\nGemini-3.1 66.4\nQuest-35B 60.6\nQwen-122B 60.5\nQwen-35B ",
+        "content_hash": "299131bc6b8945c85771d8d271df059b47022b597115b346d592b43b44a0ca6c",
+        "spans": [
+          {
+            "text": "substantially more activated parameters.\n/gl⌢beApp:https://arex-research.com\nHomepage:https://vectorspacelab.github.io/arex-model/\nModels:https://huggingface.co/collections/BAAI/arex\nAREX benchmark results AREX-Base AREX-Turbo Closed Open\nBrowseComp\nKimi-K2.6 83.2\nAREX-Base 82.5\nGLM-5 75.9\nAREX-Turbo 70.7\nMiro-1.7-mini 67.9\nQuest-35B 64.6\nQwen-35B 61.0\nTongyi-DR 43.4\nGAIA\nMiro-H1 88.5\nAREX-Base 85.4\nMiro-1.7 82.7\nAREX-Turbo 81.6\nQuest-35B 80.8\nGemini-3.1 80.6\nKimi-K2.6 80.6\nQwen-35B 80.0\nxbench-2510\nDeepSeek-Pro 80.0\nAREX-Base 71.0\nMiro-1.7 62.0\nMiro-1.7-mini 57.2\nAREX-Turbo 57.0\nTongyi-DR 55.0\nGemini-3.1 53.0\nQwen-35B 50.3\nDeepSearchQA\nGemini-3.1 93.3\nAREX-Base 89.9\nDeepSeek-Pro 88.7\nGPT-5.4 88.5\nAREX-Turbo 78.5\nMiro-1.7 72.1\nQwen-35B 68.5\nMiro-1.7-mini 67.9\nWideSearch\nAREX-Base 82.0\nKimi-K2.6 80.8\nGPT-5.4 77.5\nAREX-Turbo 68.5\nGemini-3.1 66.4\nQuest-35B 60.6\nQwen-122B 60.5\nQwen-35B ",
+            "page": 1,
+            "section": "Abstract / front matter",
+            "section_index": 0,
+            "start": 1793,
+            "end": 2688
+          }
+        ],
+        "eligible": true,
+        "section_role": "abstract"
+      }
+    ],
+    "diagnostic_origin": "frozen Batch-2 first recovery; engineering regression, not unseen evaluation"
+  }
+]

@@ -82,7 +82,7 @@ class ReliabilityTest(unittest.TestCase):
             result, sleep = self.assess(client)
             self.assertEqual(result.quality_status, "pass")
             self.assertEqual(result.execution["outcome"], "scientific")
-            self.assertEqual([c["kind"] for c in result.execution["calls"]], ["initial", "retry", "verifier"])
+            self.assertEqual([c["kind"] for c in result.execution["calls"]], ["initial", "retry"] + ["verifier"]*7)
             self.assertIsNone(result.execution["calls"][0]["usage"]["cost_usd"])
             sleep.assert_called_once_with(2.0)
             self.assertEqual(client.payloads[0], client.payloads[1])
@@ -102,7 +102,7 @@ class ReliabilityTest(unittest.TestCase):
         for status, delay, count in ((429, 5, 2), (503, 12, 2), (429, 120, 1), (403, None, 1)):
             result, sleep = self.assess(SequenceHttp([
                 HttpRequestError("http", "https://example.test", "fixture", status_code=status, retry_after_seconds=delay), envelope()]))
-            self.assertEqual(len(result.execution["calls"]), count + (result.quality_status == "pass"))
+            self.assertEqual(len(result.execution["calls"]), count + 7*(result.quality_status == "pass"))
             if count == 2:
                 sleep.assert_called_once_with(float(delay))
             else:
@@ -262,8 +262,8 @@ class ProviderContractTest(unittest.TestCase):
         result, _ = ReliabilityTest().assess(client)
         calls = result.execution["calls"]
         self.assertEqual(len(client.payloads), 2)
-        self.assertEqual([c["status"] for c in calls], ["failed", "success", "success"])
-        self.assertEqual(sum(c["usage"]["cost_usd"] or 0 for c in calls), 0.015)
+        self.assertEqual([c["status"] for c in calls], ["failed", "success"] + ["success"]*7)
+        self.assertEqual(sum(c["usage"]["cost_usd"] or 0 for c in calls), 0.045)
         self.assertEqual(sum(c["usage"]["cost_usd"] is None for c in calls), 1)
 
     def test_deploy_only_keeps_site_validation_before_deployment(self):
@@ -332,7 +332,7 @@ class ProviderTerminationTest(unittest.TestCase):
         self.assertEqual(result.quality_status, "pass")
         self.assertEqual(result.execution["calls"][0]["error_kind"], "provider_failure")
         self.assertEqual(result.execution["calls"][0]["finish_reason"], "error")
-        self.assertEqual([c["status"] for c in result.execution["calls"]], ["failed", "success", "success"])
+        self.assertEqual([c["status"] for c in result.execution["calls"]], ["failed", "success"] + ["success"]*7)
         exhausted, _ = ReliabilityTest().assess(SequenceHttp([envelope(finish="error"), envelope(finish="error")]))
         self.assertEqual(exhausted.quality_status, "uncertain")
         self.assertEqual(exhausted.execution["outcome"], "transport_failure")

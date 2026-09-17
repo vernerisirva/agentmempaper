@@ -1,0 +1,131 @@
+{
+  "model": "deepseek/deepseek-v4-pro-0813",
+  "reasoning": "off",
+  "assessment_request_byte_cap": 300000,
+  "assessment_output_token_cap": 8192,
+  "verifier_request_byte_cap": 250000,
+  "verifier_output_token_cap": 4096,
+  "default_review": {
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "calls_maximum": 2,
+    "request_byte_cap": 200000,
+    "output_token_cap": 16384
+  },
+  "escalated_review": {
+    "model": "anthropic/claude-opus-4.6",
+    "calls_maximum": 2,
+    "request_byte_cap": 200000,
+    "output_token_cap": 16384,
+    "condition": "Established user-authorized independent-review escalation after repeated nonconvergent/contradictory findings or bounded timeout/output failure; never bypass a valid blocker."
+  },
+  "price_bounds_per_token": {
+    "deepseek_input": 1.65e-06,
+    "deepseek_output": 4.95e-06,
+    "opus_input": 5.5e-06,
+    "opus_output": 2.75e-05
+  },
+  "pricing_checked": "2026-09-17 public OpenRouter model endpoints; maximum advertised prompt/completion rates; no search/cache-write features",
+  "cost_basis": "Assumption-based conservative reserve: one input token per serialized UTF-8 byte, bounded outputs; not tokenizer precision or provider invoice. Actual usage/cost reported separately.",
+  "approved_ceiling_usd": 10,
+  "name": "BATCH_2_RECOVERY_V2",
+  "created_at": "2026-09-17T11:28:55.829031+00:00",
+  "baseline_main": "dadef795eebeb5d4abe30fd26bf94bf6b921c278",
+  "original_generalization_result": "FAIL",
+  "selection_manifest": "experiments/manifests/batch-2-roster-2026-09-17.json",
+  "roster_sha256": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+  "counts": {
+    "agent_memory": 10,
+    "deep_research": 10,
+    "engram": 0
+  },
+  "predefined_audit_sample": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    }
+  ],
+  "assessment_version": "quality-batch2-recovery-v2",
+  "original_immutable_sha256": {
+    "experiments/manifests/batch-2-protocol-2026-09-17.json": "f4598e327d6c12c85ec3a6d3bdd6c3343c1b88979d2d8b31539fe19b5ef92f50",
+    "experiments/manifests/batch-2-protocol-2026-09-17.sha256": "382fc269913f881d7716a6c79b1600fed8977801ebaad04ca54556894e6ff5ff",
+    "experiments/manifests/batch-2-recovery-2026-09-17.json": "d8ca9955bee68d76d9024a4337278312331970b6088ead99dbccd5d5571bcc43",
+    "experiments/manifests/batch-2-roster-2026-09-17.json": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+    "experiments/manifests/batch-2-roster-2026-09-17.sha256": "de366371b37a65d32b822e22d83576f5c5efe84cfa0a78e5f918f76d3b174fc5",
+    "reports/paper_scout/batch-2-preflight-2026-09-17.md": "4d2dece079442adb03cbb97c889e7a1995f43af636638434a92610addeb09cd9",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.json": "4a8e2238c76b4e5562687bb2a4bd65716340febf38af1bb84b2e872615b3f241",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.md": "b5f2fe042b440057cf4d6957aac0cfa1e47e452e27518c8030759d524dcc7272",
+    "reports/paper_scout/batch-2-recovery-2026-09-17.json": "8c36ade092fe65d94063be26fc2816bfbb253fe795b3a8df98c15b74bf2f04c1",
+    "reports/paper_scout/batch-2-recovery-2026-09-17.md": "a42cda4629e775de9bc4b292edc70d84e7f12b6fef277f8641f601e7b8f67a9a",
+    "reports/paper_scout/batch-2-recovery-inventory-2026-09-17.json": "1a2154718cb7a3e4f3850b3f0e4f50f740b163740784dce8fd1db1a1f424860d",
+    "reports/paper_scout/batch-2-recovery-inventory-2026-09-17.md": "358e1a202ceb6605e96493307e984f1f39d13b97507c8246f69e6e90857b24b4"
+  },
+  "invariants": [
+    "exact original 20 papers; no replacements or new selection",
+    "append assessments; preserve every original row and the 28 calibration decisions",
+    "same scientific rubric, thresholds and admission rule",
+    "no manual output corrections",
+    "same six audit papers plus every pass and insufficient",
+    "no Batch 3"
+  ],
+  "execution": "Merged reviewed evaluator only, exact frozen roster, no manual corrections, no substitutions, no Batch 3. Up to two assessment attempts and up to 13 source-isolated verifier requests per paper, no verifier retries. Maximum two track workers. Deterministic artifact validation uses no model call.",
+  "initial_calls_maximum_per_paper": 1,
+  "retry_calls_maximum_per_paper": 1,
+  "verifier_calls_maximum_per_paper": 13,
+  "verifier_retries": 0,
+  "pricing_artifact_sha256": "de7311763d2a7aeacf0acb284bbd57abd1bfd2d15842aa1cd5bdcb51d4201e70",
+  "cost_estimate": {
+    "assessment_20_papers_usd": 2.277,
+    "isolated_verification_20_papers_usd": 2.574,
+    "engineering_review_expected_usd": 1.0,
+    "expected_new_total_usd": 5.851,
+    "expected_cumulative_usd": 7.506694474,
+    "assumptions": "20 assessable papers, 60000 input/3000 output tokens each; 13 verifier groups each with 4500 input/500 output tokens. Actual 6 unavailable manuscripts may reduce this. Rates are upper provider bounds. Per-request byte reserves are enforced; unknown charges retain reserves. Estimates are not guarantees; bounded retries must fit the remaining ceiling."
+  },
+  "success_rule": "All eleven user-defined recovery-v2 criteria; independent engineering review and full validation required. Recovery/regression only; no generalization claim.",
+  "batch_3_permitted": false,
+  "first_recovery_result": "FAIL",
+  "previous_reported_cost_usd": 1.655694474,
+  "remaining_shared_ceiling_usd": 8.344305526,
+  "approval_basis": "Continuation of the established $10 combined ceiling; previous recovery/reviews are charged to that ceiling, not reset. Stop before exceeding it.",
+  "support_version": "isolated-claim-support-v3",
+  "atom_version": "typed-evidence-v1",
+  "claim_outcome_version": "claim-rejection-v2"
+}

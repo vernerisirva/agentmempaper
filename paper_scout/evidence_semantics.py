@@ -5,7 +5,7 @@ claim/evidence verifier; it cannot override deterministic provenance failures.
 """
 from __future__ import annotations
 
-from decimal import Decimal
+from paper_scout.evidence_atoms import numeric_mentions
 import re
 
 from paper_scout.evidence_context import EvidenceBlock, EvidenceContext, resolve_evidence_ids, artifact_metadata_block
@@ -35,8 +35,8 @@ ROLE_COMPATIBILITY = {
     'presentation': BODY_ROLES,
 }
 STATEMENT_KINDS = ('source_claim', 'assessor_inference')
-ELIGIBILITY_POLICY = 'artifact-purpose-v1'
-SUPPORT_VERSION = 'claim-support-v2'
+ELIGIBILITY_POLICY = 'claim-rejection-v2'
+SUPPORT_VERSION = 'isolated-claim-support-v3'
 HARD_INELIGIBLE = 'hard_ineligible'
 DIRECTLY_COMPATIBLE = 'directly_compatible'
 REQUIRES_SUPPORT_VERIFICATION = 'requires_support_verification'
@@ -99,36 +99,6 @@ def evidence_guidance(context: EvidenceContext) -> dict:
         'rule': 'body_candidate_ids_by_dimension are direct section-role candidates, not proof of support. support_verification_candidate_ids_by_dimension are conditional body candidates whose atypical section role requires substantive verification; use them only when their actual content supports the claim. Neither list grants support. All accepted claims require the existing verifier. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Hard exclusions cannot enter fallback. Inference must stay within the cited observations.'}
 
 
-# Do not read digits embedded in model names as quantities. Decimal equality
-# normalizes typography (42 % / 42%, 0.730 / 0.73), never substitutes a value.
-_NUMBER = re.compile(r'(?<![\w.])(?P<value>[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)(?P<unit>\s*(?:percentage[\s-]+points?\b|basis[\s-]+points?\b|per\s+cent\b|percent\b|%|×|[xX](?!\w)|[kKmMbB](?!\w)))?(?!\w|\.\d)', re.I)
-
-
-def numeric_mentions(text: str) -> list[dict]:
-    out = []
-    locator = re.compile(r'\b(?:Table|Figure|Fig\.|Section|Sec\.|Appendix|Experiment|Proposition|Equation|Eq\.)\s+\d+(?:\.\d+)*\b', re.I)
-    ignored = [m.span() for m in locator.finditer(text)]
-    labels = list(re.finditer(r'(?<!\w)\((\d+)\)(?=\s+[A-Za-z])', text))
-    if len(labels) >= 2 and [int(m.group(1)) for m in labels] == list(range(1, len(labels) + 1)):
-        ignored.extend(m.span() for m in labels)
-    for match in _NUMBER.finditer(text):
-        if any(start <= match.start() and match.end() <= end for start, end in ignored):
-            continue
-        # Hyphenated lexical identifiers are not scientific quantities. Keep
-        # standalone signed values and both endpoints of numeric ranges.
-        if re.search(r'[A-Za-z_]\w*-$', text[:match.start()]):
-            continue
-        unit = (match.group('unit') or '').strip().casefold().replace('x', '×')
-        if re.fullmatch(r'percent|per\s+cent', unit):
-            unit = '%'
-        elif re.fullmatch(r'percentage[\s-]+points?', unit):
-            unit = 'percentage_point'
-        elif re.fullmatch(r'basis[\s-]+points?', unit):
-            unit = 'basis_point'
-        out.append({'literal': match.group().strip(), 'value': str(Decimal(match.group('value').replace(',', '')).normalize()),
-                    'unit': unit, 'start': match.start(), 'end': match.end()})
-    return out
-
 
 def numerical_support(claim: str, evidence_texts: list[str]) -> dict:
     """Necessary value/unit presence only; metric/population/comparison is verified separately.
@@ -150,15 +120,23 @@ def verifier_items(value: dict, context: EvidenceContext) -> list[dict]:
     items = []
     all_blocks = {}
     for i, e in enumerate(value['evidence']):
-        blocks = resolve_claim_blocks(e, context, value['evidence_context_id'])
-        effective = effective_claim(e, blocks)
+        try:
+            if not e['evidence_ids']:
+                continue
+            blocks = resolve_claim_blocks(e, context, value['evidence_context_id'])
+            effective = effective_claim(e, blocks)
+            if e.get('evidence_purpose', SCIENTIFIC) != ARTIFACT and not all(
+                    candidate_for_support(b, e['dimension'], e['statement_kind']) for b in blocks):
+                continue
+        except ValueError:
+            continue
         sources = [{'evidence_id': b.evidence_id, 'section_role': b.section_role,
                     'section': b.spans[0].section, 'pages': b.pages, 'text': b.text} for b in blocks]
         items.append({'item_id': f'evidence-{i}', 'dimension': e['dimension'],
                       'statement_kind': e['statement_kind'], 'claim': effective['claim'],
                       'explanation': '', 'evidence_purpose': e.get('evidence_purpose', SCIENTIFIC), 'sources': sources})
         items.append({'item_id': f'explanation-{i}', 'dimension': e['dimension'],
-                      'statement_kind': e['statement_kind'], 'claim': effective['explanation'],
+                      'statement_kind': 'assessor_inference', 'claim': effective['explanation'],
                       'explanation': '', 'evidence_purpose': e.get('evidence_purpose', SCIENTIFIC), 'sources': sources})
         all_blocks.update({source['evidence_id']: source for block, source in zip(blocks, sources)
                            if e.get('evidence_purpose', SCIENTIFIC) != ARTIFACT and candidate_for_support(block, e['dimension'], e['statement_kind'])})

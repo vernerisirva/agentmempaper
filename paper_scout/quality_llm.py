@@ -15,7 +15,8 @@ from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, 
 from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
 from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, candidate_for_support, eligibility_decision, REQUIRES_SUPPORT_VERIFICATION, evidence_guidance,
     numerical_support, verifier_items, verification_schema, VERIFIER_INSTRUCTIONS, SUPPORT_VERSION)
-from paper_scout.evidence_support import ARTIFACT, SCIENTIFIC, effective_claim, resolve_claim_blocks, scope_issues
+from paper_scout.evidence_atoms import ATOM_VERSION, atoms_for_block
+from paper_scout.evidence_support import ARTIFACT, SCIENTIFIC, effective_claim, resolve_claim_blocks
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.models import PaperCandidate
@@ -92,7 +93,7 @@ def assess_with_optional_quality_llm(
             content = message.get("content") if isinstance(message, dict) else None
             if isinstance(content, str):
                 call["content_characters"] = len(content)
-                call["content_sha256"] = hashlib.sha256(content.encode()).hexdigest()
+                call["content_sha256"] = hashlib.sha256(content.encode('utf-8')).hexdigest()
             if choice.get("finish_reason") in {"length", "max_tokens", "max_output_tokens"}:
                 call.update(error_kind="output_limit", response_problem="truncated_completion")
                 outcome = "protocol_failure"
@@ -119,12 +120,12 @@ def assess_with_optional_quality_llm(
             call["status"] = "success"
             if not result.execution['reference_errors'] and result.execution['outcome'] != 'text_coverage_failure':
                 verification, verifier_call = _verify_support(parsed, context, settings, client, headers)
-                calls.append(verifier_call)
+                calls.extend(verifier_call)
                 result = validate_block_quality_response(parsed, deterministic, settings.model, selected, context, mode,
                                                         verification=verification)
             outcome = result.execution["outcome"]
             return replace(result, execution={**result.execution, "calls": calls,
-                "attempt_limit": 2, "verifier_attempt_limit": 1, "total_request_limit": 3})
+                "attempt_limit": 2, "verifier_attempt_limit": 1, "verifier_request_limit": 13, "total_request_limit": 15})
         except HttpRequestError as exc:
             outcome = "transport_failure"
             call.update(error_kind=exc.kind, http_status=exc.status_code,
@@ -170,7 +171,7 @@ def _non_substantive_reason(value: dict, seed: QualityAssessment) -> str | None:
     if re.search(r"^(?:as an ai|i (?:cannot|can't|am unable to) (?:assess|evaluate|review)|sorry[, ])", rationale):
         return 'refusal_or_meta_commentary'
     evidence = value.get('evidence') or []
-    if not any((str(e.get('excerpt') or '').strip() or e.get('evidence_ids')) and str(e.get('explanation') or '').strip()
+    if not any(str(e.get('claim') or e.get('excerpt') or '').strip() and str(e.get('explanation') or '').strip()
                and not str(e.get('explanation')).startswith(('This automated signal', 'The item was not detected')) for e in evidence):
         return 'no_substantive_manuscript_evidence'
     return None
@@ -405,7 +406,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "Supply positive evidence objects for all six dimensions, using the explicit body_candidate_ids_by_dimension for that criterion, or support_verification_candidate_ids_by_dimension when an atypical body passage actually supports the claim. These conditional candidates require substantive verification; their body membership alone never establishes compatibility or support. "
         "Each object must state a concise scientific claim, explain how the cited blocks bear on it, label support_status supported, partial, or unsupported, and set statement_kind source_claim or assessor_inference. A source_claim attributes a statement to the manuscript; assessor_inference is your bounded synthesis or critique of the cited facts. For evidence_purpose=scientific_claim, Abstract IDs may be used ONLY for contribution_clarity attributed high-level contribution/scope source_claims, never scholarly_novelty_or_value. They cannot establish novelty, method adequacy, evaluation, verified numbers, reproducibility, limitations or claim alignment, including when mixed with body IDs. Use body evidence for those dimensions, including explicitly scoped inference from methods/results for limitations. "
         "Separate artifact link facts using evidence_purpose=artifact_availability and the exact artifact_link_candidates guidance. Never mix code availability with method or evaluation adequacy in one object. For scientific_claim use artifact_urls=[]; for artifact facts the pipeline derives a narrow attributed URL statement and non-verification disclaimer, preserving your raw proposal only in the audit. Use include_adjacent_context=true only with one scientific primary ID when its sentence/table needs its immediate contiguous neighbors. Otherwise false. "
-        "Keep each claim and explanation independently supportable: the verifier checks them separately. Avoid external uniqueness claims and manuscript-wide absence inferred from snippets. Scope critiques to the cited material. The narrative must use only the scientific evidence you actually cite, not artifact-only abstract text or other manuscript passages. "
+        "Keep each claim and explanation independently supportable: the verifier checks them in an isolated request containing only their cited source set. Explanations are assessed as bounded inferences; every factual premise still requires support. Omit optional claims without citations instead of inferring artifact absence from extraction metadata. Avoid external uniqueness claims and manuscript-wide absence inferred from snippets. Scope critiques to the cited material. The narrative must use only the scientific evidence you actually cite, not artifact-only abstract text or other manuscript passages. "
         "Every explicit number in the claim, explanation, rationale and uncertainty must occur with the correct unit in the cited sources; metric, population, denominator, comparison and direction must also match. Avoid unnecessary numbers and manuscript-wide absence claims. A bounded verifier sees only each claim and its cited evidence, and may reject it; do not rely on text elsewhere in the manuscript. ID existence proves provenance only: it does NOT make a claim true. Mark misleading, irrelevant, contradictory or inadequate support as partial/unsupported and retain scientific uncertainty where a core criterion is unresolved. "
         "For concerns, support_status describes evidence for the concern, not approval of the paper. A concern based only on missing supplied material cannot establish insufficiency. "
         "Return evidence_schema_version and evidence_context_id exactly as supplied. Never invent IDs. For cross-page evidence cite blocks on both pages as needed. "
@@ -497,12 +498,11 @@ def validate_block_review(value: object) -> dict:
 
 
 def _support_input_hash(items: list[dict]) -> str:
-    return hashlib.sha256(json.dumps(items, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    return hashlib.sha256(json.dumps(items, sort_keys=True, ensure_ascii=False).encode('utf-8')).hexdigest()
 
 
-def _verify_support(value: dict, context: EvidenceContext, settings, client, headers) -> tuple[dict, dict]:
-    """One separate claim/evidence request, no retry, repair or evidence generation."""
-    items = verifier_items(value, context)
+def _verify_support_group(items: list[dict], context: EvidenceContext, settings, client, headers) -> tuple[dict, dict]:
+    """One request with exactly one source set; no retry or evidence generation."""
     ids = [item['item_id'] for item in items]
     payload = {'model': settings.model, 'temperature': 0, 'max_tokens': SUPPORT_MAX_OUTPUT_TOKENS,
         'messages': [{'role': 'system', 'content': VERIFIER_INSTRUCTIONS},
@@ -515,7 +515,7 @@ def _verify_support(value: dict, context: EvidenceContext, settings, client, hea
     call = {'kind': 'verifier', 'status': 'failed', 'usage': _reported_usage({})}
     record = {'version': SUPPORT_VERSION, 'status': 'failed', 'model': settings.model,
               'input_sha256': _support_input_hash(items), 'attempt_limit': 1, 'items': []}
-    call['request_bytes'] = len(json.dumps(payload).encode())
+    call['request_bytes'] = len(json.dumps(payload).encode('utf-8'))
     call['request_sent'] = False
     if call['request_bytes'] > SUPPORT_MAX_INPUT_BYTES:
         call.update(status='not_sent', error_kind='verifier_input_limit')
@@ -551,7 +551,7 @@ def _verify_support(value: dict, context: EvidenceContext, settings, client, hea
         if not isinstance(content, str):
             call['response_problem'] = 'non_string_content'
             raise ValueError('verifier content must be a string')
-        call['content_sha256'] = hashlib.sha256(content.encode()).hexdigest()
+        call['content_sha256'] = hashlib.sha256(content.encode('utf-8')).hexdigest()
         call['content_characters'] = len(content)
         parsed = json.loads(_strip_json_fence(content))
         _validate_support_result(parsed, ids)
@@ -564,6 +564,44 @@ def _verify_support(value: dict, context: EvidenceContext, settings, client, hea
     LOGGER.info('Claim support verification %s', json.dumps({'canonical_id': context.canonical_id,
         'status': call['status'], 'usage': call['usage'], 'attempt_limit': 1}, sort_keys=True))
     return record, call
+
+
+def _verify_support(value: dict, context: EvidenceContext, settings, client, headers) -> tuple[dict, list[dict]]:
+    """Isolate each cited source set; other claims cannot leak their evidence.
+
+    Up to twelve scientific source groups plus one narrative group, no retries.
+    Artifact facts are deterministic; they do not consume semantic calls.
+    """
+    items = verifier_items(value, context)
+    groups, decisions, calls = {}, [], []
+    for item in items:
+        if not item['sources']:
+            decisions.append({'item_id': item['item_id'], 'status': 'uncertain',
+                              'reason': 'No eligible cited evidence remains for this statement.'})
+            continue
+        if item.get('evidence_purpose') == ARTIFACT:
+            decisions.append({'item_id': item['item_id'], 'status': 'supported',
+                              'reason': 'Deterministic manuscript URL atom membership; no scientific inference.'})
+            continue
+        key = ('narrative' if item['dimension'] == 'assessment_narrative' else 'claim',
+               tuple(source['evidence_id'] for source in item['sources']))
+        groups.setdefault(key, []).append(item)
+    record = {'version': SUPPORT_VERSION, 'status': 'success', 'model': settings.model,
+              'input_sha256': _support_input_hash(items), 'attempt_limit': 1,
+              'request_limit': 13, 'items': decisions, 'source_isolation': True}
+    if len(groups) > 13:
+        record.update(status='failed', failure='support_group_limit')
+        return record, calls
+    for group in groups.values():
+        result, call = _verify_support_group(group, context, settings, client, headers)
+        call['item_ids'] = [v['item_id'] for v in group]
+        call['source_ids'] = [v['evidence_id'] for v in group[0]['sources']]
+        calls.append(call)
+        decisions.extend(result['items'])
+        if result['status'] != 'success':
+            record.update(status='failed', failure=result.get('failure', 'support_verifier_failure'))
+            break  # A machinery failure remains a paper-level technical failure.
+    return record, calls
 
 
 def _validate_support_result(value: dict, item_ids: list[str]) -> None:
@@ -579,8 +617,8 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
                                     mode: str = 'llm', *, verification: dict | None = None) -> QualityAssessment:
     """Check provenance, claim eligibility, numerals and separately assessed support.
 
-    Evidence selection faults remain technical; unsupported interpretations are
-    scientific uncertainty. Neither an assessor label nor an ID can grant a pass.
+    Broken provenance remains technical; unsupported model claims are rejected
+    individually before scientific aggregation. Neither an assessor label nor an ID can grant a pass.
     Historic v1/quote records continue through their existing storage reader.
     """
     validate_block_review(value)
@@ -595,25 +633,47 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
                'statement_kind': item['statement_kind'], 'claim_role': ARTIFACT if item.get('evidence_purpose') == ARTIFACT else CLAIM_ROLES[item['dimension']],
                'evidence_purpose': item.get('evidence_purpose', SCIENTIFIC),
                'claim': item['claim'], 'explanation': item['explanation'], 'evidence_ids': item['evidence_ids']}
+        # Missing citations are an unsupported proposal, not a broken mapping.
+        # Supplied but unresolvable IDs and corrupt context remain technical.
+        if not item['evidence_ids'] and context_ok:
+            row.update(provenance_valid=True, eligibility_valid=False, accepted=False,
+                       disposition='claim_rejected', stage='citation_requirement', reason='No cited evidence for this claim.')
+            audit.append(row)
+            continue
         try:
             if not context_ok:raise ValueError('manuscript or assessment-context identity mismatch')
             blocks = resolve_claim_blocks(item, context, value['evidence_context_id'])
+        except ValueError as exc:
+            # A known canonical but ineligible section is a claim-selection
+            # error. Unknown IDs or corrupt canonical representations are not.
+            known = {b.evidence_id: b for b in context.blocks}
+            selection_only = context_ok and all(i in known for i in item['evidence_ids']) and any(
+                not known[i].eligible for i in item['evidence_ids'])
+            if not selection_only:errors.append(str(exc))
+            row.update(provenance_valid=selection_only, eligibility_valid=False, accepted=False,
+                       disposition='claim_rejected' if selection_only else 'technical_failure',
+                       stage='source_eligibility' if selection_only else 'canonical_resolution', reason=str(exc))
+            audit.append(row)
+            continue
+        row.update(provenance_valid=True, resolved_evidence_ids=[b.evidence_id for b in blocks],
+                   evidence_atoms=[a for b in blocks for a in atoms_for_block(b, context)])
+        try:
             item = effective_claim(item, blocks)
             artifact = item.get('evidence_purpose') == ARTIFACT
-            row.update(resolved_evidence_ids=[b.evidence_id for b in blocks], effective_claim=item['claim'], effective_explanation=item['explanation'])
-            row['provenance_valid'] = True
+            row.update(effective_claim=item['claim'], effective_explanation=item['explanation'])
             row['eligibility'] = [{'evidence_id': b.evidence_id,
                 **({'state': 'artifact_only', 'basis': 'source_url_presence', 'compatible': False, 'body_member': False} if artifact else eligibility_decision(b, item['dimension'], item['statement_kind']))} for b in blocks]
             if not artifact and not all(candidate_for_support(b, item['dimension'], item['statement_kind']) for b in blocks):
                 raise ValueError('evidence section role is ineligible for this claim/dimension')
-            row['eligibility_valid'] = True  # Candidate eligibility, not final claim support.
-            row['requires_support_fallback'] = any(
-                d['state'] == REQUIRES_SUPPORT_VERIFICATION for d in row['eligibility'])
+            row['eligibility_valid'] = True
+            row['requires_support_fallback'] = any(d['state'] == REQUIRES_SUPPORT_VERIFICATION for d in row['eligibility'])
         except ValueError as exc:
-            errors.append(str(exc));row.update(eligibility_valid=False, accepted=False, reason=str(exc))
-            row.setdefault('provenance_valid', False);audit.append(row);continue
+            row.update(eligibility_valid=False, accepted=False, disposition='claim_rejected',
+                       stage='typed_fact_or_claim_eligibility', reason=str(exc))
+            audit.append(row)
+            continue
         row['numeric_check'] = ({'status': 'not_applicable_artifact', 'claimed_numbers': [], 'missing_values_or_units': []} if artifact else numerical_support(item['claim'] + '\n' + item['explanation'], [b.text for b in blocks]))
-        row['scope_issues'] = [] if artifact else scope_issues(item['claim'], item['explanation'], [b.text for b in blocks])
+        row['scope_issues'] = []  # Prose scope is decided by isolated substantive verification.
         audit.append(row);prepared.append((item, row, blocks))
     support_record = verification or {'version': SUPPORT_VERSION, 'status': 'not_run', 'items': []}
     verified = {}
@@ -633,8 +693,6 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         for narrative in items[-2:]:
             numeric = numerical_support(narrative['claim'], [b['text'] for b in narrative['sources']])
             finding = verified.get(narrative['item_id'], {'status': 'uncertain', 'reason': 'Support verification unavailable.'})
-            issues = scope_issues(narrative['claim'], '', [b['text'] for b in narrative['sources']])
-            if issues:finding = {**finding, 'status': 'uncertain', 'reason': ' '.join(issues)}
             if numeric['status'] == 'unsupported' or finding['status'] != 'supported':
                 support_errors.append({**finding, 'item_id': narrative['item_id'], 'numeric_check': numeric,
                     **({'status': 'unsupported', 'reason': 'Cited evidence does not establish numerical values/units: ' + ', '.join(numeric['missing_values_or_units'])} if numeric['status'] == 'unsupported' else {})})
@@ -648,8 +706,11 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
             finding.update(status=explanation_finding['status'], reason=explanation_finding['reason'])
         if row['scope_issues']:finding.update(status='uncertain', reason=' '.join(row['scope_issues']))
         row['support_verification'] = finding
-        valid = row['numeric_check']['status'] != 'unsupported' and finding['status'] == 'supported'
+        valid = (item['support_status'] == 'supported' and row['numeric_check']['status'] != 'unsupported'
+                 and finding['status'] == 'supported')
         row['accepted'] = valid
+        row['disposition'] = 'accepted' if valid else 'claim_rejected'
+        row['stage'] = 'typed_numeric' if row['numeric_check']['status'] == 'unsupported' else 'semantic_support'
         if row['requires_support_fallback']:
             row['fallback_resolution'] = 'accepted' if valid else 'not_established'
         if not valid:
@@ -673,7 +734,8 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
     rationale, uncertainty = value['quality_rationale'], value['quality_uncertainty']
     supported = [e for e in evidence if e.support_status == 'supported' and e.claim_role != ARTIFACT]
     positive = {e.dimension for e in supported if e.signal_type == 'positive'}
-    semantic_ok = (not support_errors and bool(rationale.strip() and uncertainty.strip())
+    narrative_errors = [e for e in support_errors if e.get('item_id') in {'quality_rationale', 'quality_uncertainty'}]
+    semantic_ok = (not narrative_errors and bool(rationale.strip() and uncertainty.strip())
         and (status != 'pass' or REQUIRED_GATE_DIMENSIONS <= positive and value['confidence'] in {'medium', 'high'})
         and (status != 'insufficient' or any(e.signal_type == 'concern' for e in supported)))
     coverage_failure = (value['uncertainty_reason'] == 'text_coverage_failure'
@@ -692,7 +754,7 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         rationale = 'Scientific claim support could not be verified; no scientific judgment is inferred from a verifier execution failure.'
     elif not semantic_ok:
         status = 'uncertain'
-        rationale = 'The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.'
+        rationale = 'The remaining grounded evidence or verified assessment narrative does not establish the required scientific criteria.'
     if status != value['quality_status'] or not semantic_ok or outcome != 'scientific':
         uncertainty = ('Scientific support remains unresolved. ' + ' '.join(dict.fromkeys(
             str(v.get('reason') or 'A numerical assertion was not established by its cited evidence.') for v in support_errors)))[:1600]
@@ -710,8 +772,11 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         positive_signals=[e.paraphrase for e in supported if e.signal_type == 'positive'],
         concerns=[e.paraphrase for e in evidence if e.signal_type == 'concern'],
         coverage={**seed.coverage, **context.metadata()},
-        execution={'outcome': outcome, 'evidence_protocol': EVIDENCE_VERSION, 'evidence_context': context.metadata(),
+        execution={'outcome': outcome, 'claim_outcome_version': 'claim-rejection-v2', 'atom_version': ATOM_VERSION, 'evidence_protocol': EVIDENCE_VERSION, 'evidence_context': context.metadata(),
             'reference_audit': audit, 'reference_errors': errors, 'support_errors': support_errors,
+            'claim_counts': {'accepted': sum(r.get('accepted', False) for r in audit),
+                'claim_rejected': sum(r.get('disposition') == 'claim_rejected' for r in audit),
+                'technical_failure': sum(r.get('disposition') == 'technical_failure' for r in audit)},
             'support_verification': support_record, 'interpretation_validation': 'Bounded claim/evidence screening; not proof of scientific truth.',
             'proposed_status': value['quality_status'], 'proposed_decision': {k: value[k] for k in
                 ('quality_status', 'quality_rationale', 'quality_uncertainty')},

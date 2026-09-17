@@ -45,7 +45,7 @@ def validate(selected, ctx, value, status='supported', index=1):
 
 def wire_verification(value, ctx, status='supported', index=1):
     v = verified_fixture(value, ctx, {f'evidence-{index}': status})
-    return json.dumps({'choices': [{'finish_reason': 'stop', 'message': {'content': json.dumps({'items': v['items']})}}]})
+    return json.dumps({'_fixture_pool':True,'choices': [{'finish_reason': 'stop', 'message': {'content': json.dumps({'items': v['items']})}}]})
 
 
 class CrossSectionTests(unittest.TestCase):
@@ -121,7 +121,7 @@ class CrossSectionTests(unittest.TestCase):
                 self.assertFalse(candidate_for_support(b, 'methodological_rigor', kind))
             selected, ctx, value = proposal(heading)
             result = validate(selected, ctx, value)
-            self.assertEqual(result.execution['outcome'], 'evidence_validation_failure')
+            self.assertEqual(result.execution['outcome'], 'scientific')
             self.assertFalse(result.execution['reference_audit'][1]['accepted'])
             self.assertFalse(any(e.dimension == 'methodological_rigor' for e in result.evidence))
 
@@ -155,7 +155,7 @@ class CrossSectionTests(unittest.TestCase):
                 self.assertEqual(b.evidence_id in soft, d['state'] == REQUIRES_SUPPORT_VERIFICATION)
                 self.assertEqual(b.evidence_id in direct, d['body_member'] and d['state'] == DIRECTLY_COMPATIBLE)
 
-    def test_direct_and_fallback_use_same_single_batched_call(self):
+    def test_direct_and_fallback_use_same_isolated_verification(self):
         for heading in ('Methods', 'Introduction'):
             selected, ctx, value = proposal(heading)
             client = StrictHttp([envelope(value), wire_verification(value, ctx)])
@@ -163,21 +163,22 @@ class CrossSectionTests(unittest.TestCase):
                 result = assess_with_optional_quality_llm(candidate(), selected,
                     assess_quality_deterministically(candidate(), 'fixture', selected), 'llm', http=client)
             self.assertEqual(result.quality_status, 'pass')
-            self.assertEqual([c['kind'] for c in result.execution['calls']], ['initial', 'verifier'])
-            self.assertEqual(len(client.payloads), 2)
+            self.assertEqual([c['kind'] for c in result.execution['calls']], ['initial'] + ['verifier']*7)
+            self.assertEqual(len(client.payloads), 8)
             items = json.loads(client.payloads[1]['messages'][1]['content'])['items']
-            self.assertEqual(len(items), 2 * len(value['evidence']) + 2)
-            self.assertEqual(items[2]['sources'][0]['text'], ctx.blocks[1].text)
+            self.assertEqual(len(items), 2)
+            self.assertEqual(items[0]['sources'][0]['text'], ctx.blocks[0].text)
             self.assertNotIn('manuscript', items[1])
 
-    def test_hard_exclusion_prevents_verifier_call(self):
+    def test_hard_exclusion_rejects_claim_and_continues_other_verification(self):
         selected, ctx, value = proposal('Abstract')
-        client = StrictHttp([envelope(value)])
+        client = StrictHttp([envelope(value), wire_verification(value,ctx)])
         with patch.dict('os.environ', ENV, clear=True):
             result = assess_with_optional_quality_llm(candidate(), selected,
                 assess_quality_deterministically(candidate(), 'fixture', selected), 'llm', http=client)
-        self.assertEqual(result.execution['outcome'], 'evidence_validation_failure')
-        self.assertEqual(len(client.payloads), 1)
+        self.assertEqual(result.execution['outcome'], 'scientific')
+        self.assertEqual(len(client.payloads), 7)
+        self.assertFalse(result.execution['reference_audit'][1]['accepted'])
 
     def test_failed_verifier_does_not_establish_fallback(self):
         selected, ctx, value = self.actual_proposal()

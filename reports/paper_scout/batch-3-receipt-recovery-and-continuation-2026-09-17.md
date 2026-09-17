@@ -141,7 +141,11 @@ Both scientific calls report zero reasoning/cache tokens. All new call charges a
 
 ## Persistence and publication
 
-Local runtime persistence and complete validation are finished. Durable upload and the single reviewed Pages deployment are pending; this section will be completed with verification evidence.
+Publication and durable persistence are **complete and verified**. The established `paper-scout-runtime-state` release asset now contains the validated three-database snapshot, SHA-256 `18174aa7fc90e90bccc8038b09ae3477aece4e706b26ab988387e598f6a47ee5`; GitHub reports the same digest. The exact previous durable asset (`bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b44aaee65fde7`) is preserved in ignored operator backup storage, alongside the pre-live local snapshot.
+
+Generated outputs and the scientific report were published at `1162afc82aaa1327d48ff4978327d4fa75d2d974`. **Pages dispatches: 1.** [Deployment run](https://github.com/vernerisirva/agentmempaper/actions/runs/35269682386) succeeded with `deploy_only=true`; discovery, assessment, daily run, scout commits and workflow runtime-state uploads were all skipped. No recurring quality assessment was enabled.
+
+At 20:16:17 UTC, all **97 checked public artifacts** matched validated local bytes across Agentic Memory, Deep Research and Engram. Main-library counts remain **4 / 5 / 6**. The recovered paper is an uncertain review candidate with the technical failure retained; the other fifteen remain unassessed review candidates. The generated-card audit verified that every other scientific card is unchanged apart from generation timestamps. No runtime DB, cached PDF, raw provider envelope, private receipt or credential is committed or included in the Pages artifact. This final report-only completion does not require another Pages deployment.
 
 No recurring operational quality assessment was started. No Batch 4 was selected or run. The stop rule prevented further scientific calls; no bug was patched during recovery and no result was manually altered.
 

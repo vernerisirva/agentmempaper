@@ -934,6 +934,7 @@
       "primary_pass": 1,
       "adjudicator_pass": 1,
       "persisted_promotions": 0,
+      "selected_without_promotion": 8,
       "disagreements": 0,
       "attempted_nonpromotions": 1,
       "technical_failures": 1,
@@ -947,6 +948,7 @@
       "primary_pass": 0,
       "adjudicator_pass": 0,
       "persisted_promotions": 0,
+      "selected_without_promotion": 8,
       "disagreements": 0,
       "attempted_nonpromotions": 0,
       "technical_failures": 0,
@@ -960,6 +962,7 @@
       "primary_pass": 0,
       "adjudicator_pass": 0,
       "persisted_promotions": 0,
+      "selected_without_promotion": 0,
       "disagreements": 0,
       "attempted_nonpromotions": 0,
       "technical_failures": 0,
@@ -1255,11 +1258,17 @@
     "aborted_batch": true
   },
   "publication": {
-    "status": "validated; single deploy-only Pages publication pending",
+    "status": "complete and verified",
     "generated_output_changed_files": 2149,
-    "changes": "Only empty production promotion fields and generation timestamps. All prior scientific fields and library admissions unchanged.",
-    "runtime_state": "All tables logically unchanged; validated snapshot retained locally. Existing durable release asset retained without needless overwrite.",
-    "pages_dispatch_count": 0
+    "changes": "Only empty production promotion fields and generation timestamps were added. All prior scientific fields and library admissions are unchanged.",
+    "runtime_state": "All runtime tables are logically unchanged; the validated snapshot is retained in ignored operator storage. The established durable release asset (bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b44aaee65fde7) is unchanged and was not overwritten.",
+    "pages_dispatch_count": 1,
+    "deploy_only": true,
+    "deployment_url": "https://github.com/vernerisirva/agentmempaper/actions/runs/35264984536",
+    "deployment_sha": "a520fd6dc94dc44327feb2dd8cbdf4dd27b686dc",
+    "inference_discovery_runtime_steps": "verified skipped",
+    "public_verification": "All 97 artifacts match validated local bytes: 44 JSON cards, 44 detail HTML pages, six library/review pages, and three library data files. Main-library counts remain 4 / 5 / 6. All 16 frozen Batch-3 cards remain not_assessed review candidates because no scientific result was successfully stored.",
+    "verified_at": "2026-09-17T19:28:41.621275+00:00"
   },
   "generalization_verdict": "FAIL",
   "operational_readiness": "NO"

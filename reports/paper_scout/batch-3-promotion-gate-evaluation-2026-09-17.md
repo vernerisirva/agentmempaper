@@ -129,6 +129,7 @@ No primary-PASS/adjudicator-non-PASS case occurred. Both actual judgments were P
 | Primary PASS | 1 | 0 | 0 | 1 |
 | Adjudicator PASS | 1 | 0 | 0 | 1 |
 | Persisted promotions | 0 | 0 | 0 | 0 |
+| Selected without persisted promotion | 8 | 8 | 0 | 16 |
 | Disagreements | 0 | 0 | 0 | 0 |
 | Attempted non-promotions | 1 | 0 | 0 | 1 |
 | Technical failures | 1 | 0 | 0 | 1 |
@@ -162,9 +163,13 @@ Runtime snapshot SHA-256: `46486a9d7b9c74920a24792edfff0877503728ccb7cc3bfc21722
 
 ## Persistence and public site
 
-Publication status: **validated; single deploy-only Pages publication pending**. Only empty production promotion fields and generation timestamps. All prior scientific fields and library admissions unchanged. All tables logically unchanged; validated snapshot retained locally. Existing durable release asset retained without needless overwrite. Pages dispatches: 0.
+Publication status: **complete and verified**. Only empty production promotion fields and generation timestamps were added. All prior scientific fields and library admissions are unchanged. All runtime tables are logically unchanged; the validated snapshot is retained in ignored operator storage. The established durable release asset (bb1505870d8901a18618308c5a701b099c2df778a100bb4e966b44aaee65fde7) is unchanged and was not overwritten. Pages dispatches: 1. [Deployment run](https://github.com/vernerisirva/agentmempaper/actions/runs/35264984536). Public verification: All 97 artifacts match validated local bytes: 44 JSON cards, 44 detail HTML pages, six library/review pages, and three library data files. Main-library counts remain 4 / 5 / 6. All 16 frozen Batch-3 cards remain not_assessed review candidates because no scientific result was successfully stored.
 
 No runtime DB, API key, PDF cache, raw response envelope or hidden reasoning is committed. Frozen manifests, hash, reviewed outcome summary, audit observations, costs and this report are version controlled. The failing paper remains honestly `not_assessed` in production/search because no row exists; its technical failure is explicitly recorded here, not silently treated as a scientific rejection or repaired in the database.
+
+## Exposure and handoff
+
+The attempted Causal Path Alignment paper is now scientifically exposed despite having no assessment row. Future unseen-population checks must account for this frozen execution record, not assume that the absence of a DB row makes it unseen. The 15 unattempted papers were not scientifically judged. Batch 3 is closed; this task makes no engineering fix and authorizes no further experiment.
 
 ## Generalization criteria and verdict
 

@@ -96,11 +96,28 @@ ignored runtime storage. No raw responses, hidden reasoning or credentials are c
 
 ## Validation and independent review
 
-In progress; final exact-candidate validation and independent review must pass before
-readiness is set to YES. The review uses `pr-review --base origin/main`, a 200 KB request
-ceiling, 16,384 completion tokens and a 360-second process bound, with the established
-bounded DeepSeek-to-Opus escalation policy. Valid blockers must be fixed and re-reviewed.
-PR, reviewer verdict and merge SHA will be recorded after the merge gate completes.
+The initial full suite passed 347 tests. All tracks passed relevance, quality,
+discovery, idempotency and offline builds; schemas, local links, exposure scans,
+workflow checks, file-size guards, three-database snapshot/restore, legacy restore and
+`git diff --check` passed. All 628 historical assessments remain readable. Hash checks
+confirm 1,339 preexisting report/manifest files and every runtime table are unchanged.
+Builds used temporary output/database copies; no fresh scientific assessments occurred.
+
+[PR #34](https://github.com/vernerisirva/agentmempaper/pull/34) initially passed
+[CI](https://github.com/vernerisirva/agentmempaper/actions/runs/35259916162).
+The first independent DeepSeek review timed out at the 360-second process bound; no
+verdict was inferred, and $0.411100800 remains reserved for its unknown charge. The
+established Opus 4.6 escalation reviewed all 21 changed files without truncation for
+$0.162620. Its CHANGES_REQUIRED verdict identified an alleged `AssertionError` spelling
+error. Inspection shows exactly the Python builtin spelling at both sites; all affected
+tests executed successfully. The review's suggested replacement is identical and its
+explanation contradicts itself. That finding is disproved, not a bypassed valid blocker.
+The useful nonblocking notes are addressed with secret-safe protocol-failure telemetry
+and runtime tests for unsupported aliases and nested retries. A further bounded review
+and complete validation are required on the revised candidate before merging.
+
+Merge SHA: pending. Readiness remains NO until the final independent review passes,
+zero valid blockers remain, CI is green, and merged-state validation completes.
 
 ## Next unseen experiment
 

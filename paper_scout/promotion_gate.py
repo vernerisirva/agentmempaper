@@ -2,6 +2,7 @@
 from dataclasses import asdict, replace
 from datetime import UTC, datetime
 import json
+import logging
 import os
 from urllib.parse import urlsplit
 import uuid
@@ -15,6 +16,8 @@ from paper_scout.promotion_protocol import (
 )
 from paper_scout.quality_models import QualityEvidence
 from paper_scout.quality_llm import _reported_usage
+
+LOGGER = logging.getLogger(__name__)
 
 MAX_INPUT_BYTES = 300_000
 MAX_OUTPUT_TOKENS = 4096
@@ -168,4 +171,7 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
     except Exception as exc:
         # No output repair, scientific negative verdict or exposure of provider response/key.
         receipt['error_type'] = type(exc).__name__
+        LOGGER.warning('Promotion protocol failure: %s', json.dumps({
+            'canonical_id': seed.canonical_id, 'error_type': type(exc).__name__,
+            'call_count': len(receipt['calls'])}))
         return pending('protocol_failure', 'Scientific response or integrity validation failed; technical review pending.')

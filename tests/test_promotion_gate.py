@@ -189,6 +189,37 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(result.execution['outcome'], 'protocol_failure')
         self.assertEqual(models.payloads, [])
 
+    def test_runtime_alias_and_nested_retry_guards_send_no_calls(self):
+        c, _, text, seed = fixture()
+        models = Models()
+        with patch.dict('os.environ', {**ENV, 'PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL': 'anthropic/claude-latest'}, clear=True):
+            result = assess_promotion(c, text, seed, 'llm', http=models)
+        self.assertEqual(result.execution['outcome'], 'protocol_failure')
+        self.assertEqual(models.payloads, [])
+        models.retries = 3
+        result, _ = self.run_gate(models)
+        self.assertEqual(result.execution['outcome'], 'protocol_failure')
+        self.assertEqual(models.payloads, [])
+
+    def test_malformed_envelope_and_wrong_returned_model_are_technical(self):
+        for response in ('not json', '{}', '{"choices": []}',
+                         '{"model": "another/model", "choices": []}'):
+            client = Models()
+            with patch.object(client, 'post_json', return_value=response):
+                result, _ = self.run_gate(client)
+            self.assertEqual(result.execution['outcome'], 'protocol_failure')
+            self.assertEqual(result.quality_status, 'uncertain')
+            self.assertEqual(len(result.execution['calls']), 1)
+
+    def test_public_card_retains_both_final_judgments_without_private_context(self):
+        result, _ = self.run_gate()
+        public = _quality_to_json(self.library(result))['promotion']
+        self.assertEqual(public['primary_model'], PRIMARY_MODEL)
+        self.assertEqual(public['adjudicator_model'], ADJUDICATOR_MODEL)
+        self.assertEqual(public['adjudicator']['promotion_decision'], 'pass')
+        self.assertNotIn('context', public)
+        self.assertNotIn('calls', public)
+
     def test_store_append_roundtrip_idempotency_and_manual_bypass(self):
         with tempfile.TemporaryDirectory() as tmp:
             store = PaperStore(Path(tmp)/'state.sqlite3')

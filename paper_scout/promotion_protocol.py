@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+import json
 import re
 
 import jsonschema
@@ -14,6 +15,7 @@ from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text
 
 ASSESSMENT_VERSION = 'quality-promotion-v1'
 GATE_VERSION = 'dual-promotion-v1'
+RECEIPT_VERSION = 'canonical-response-v1'
 PRIMARY_MODEL = 'deepseek/deepseek-v4-pro-0813'
 ADJUDICATOR_MODEL = 'anthropic/claude-sonnet-4.6'
 # Known, explicitly pinned families. Unknown/rolling aliases fail closed.
@@ -112,6 +114,45 @@ def validate_response(value: dict, role: str, context: EvidenceContext) -> dict:
     return value
 
 
+def canonical_json(value) -> str:
+    """Receipt serialization: sorted object keys, compact UTF-8, exact strings/arrays.
+
+    No whitespace or Unicode normalization is permitted inside strings. JSON layout
+    and object-key order are insignificant; array order and every field are retained.
+    """
+    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'),
+                      allow_nan=False)
+
+
+def parse_response(content: str, role: str, context: EvidenceContext) -> dict:
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError('duplicate scientific response field')
+            result[key] = value
+        return result
+
+    def invalid_constant(value):
+        raise ValueError('non-JSON scientific response constant')
+
+    value = json.loads(content, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+    validate_response(value, role, context)
+    canonical_json(value).encode('utf-8', errors='strict')
+    return value
+
+
+def response_binding(call: dict, run_id: str) -> str:
+    """Bind one canonical judgment to its role, request, model, context and run.
+
+    This is an integrity checksum, not a provider signature or protection against
+    an attacker who rewrites all stored audit evidence and recomputes every hash.
+    """
+    return digest(canonical_json({'receipt_version': RECEIPT_VERSION, 'run_id': run_id,
+        **{key: call[key] for key in ('kind', 'model', 'context_id', 'request_sha256',
+                                      'canonical_response_sha256')}}))
+
+
 def agreement(primary: dict, adjudicator: dict) -> bool:
     return (primary['decision'] == 'pass' and adjudicator['promotion_decision'] == 'pass'
             and bool(primary['evidence_ids']) and bool(adjudicator['evidence_ids'])
@@ -126,8 +167,11 @@ def context_from_dict(value: dict) -> EvidenceContext:
 
 
 def validate_receipt(assessment) -> None:
-    """Revalidate persisted passes rather than trusting a stored boolean flag."""
+    """Revalidate completed judgments, including non-promotions, from raw content."""
     receipt = assessment.execution
+    if (receipt.get('receipt_version') != RECEIPT_VERSION
+            or not re.fullmatch(r'[a-f0-9]{32}', receipt.get('run_id', ''))):
+        raise ValueError('missing canonical response receipt')
     context = context_from_dict(receipt['context'])
     validate_context(context)
     if (context.canonical_id != assessment.canonical_id or context.source_hash != assessment.source_content_hash
@@ -142,8 +186,9 @@ def validate_receipt(assessment) -> None:
     validate_pair(receipt['primary_model'], receipt['adjudicator_model'])
     validate_response(p, 'primary', context)
     validate_response(a, 'adjudicator', context)
-    if not agreement(p, a) or receipt['outcome'] != 'success':
-        raise ValueError('promotion requires independent scientific agreement')
+    expected_status = 'pass' if agreement(p, a) else 'uncertain'
+    if assessment.quality_status != expected_status or receipt['outcome'] != 'success':
+        raise ValueError('persisted decision differs from independent scientific agreement')
     calls = receipt['calls']
     if len(calls) != 2:
         raise ValueError('promotion requires two completed calls')
@@ -152,6 +197,20 @@ def validate_receipt(assessment) -> None:
                 or call.get('finish_reason') != 'stop' or call.get('model') != receipt[role + '_model']
                 or call.get('context_id') != context.context_id):
             raise ValueError('incomplete or wrong-model scientific call')
+        parsed = parse_response(call['raw_content'], role, context)
+        canonical = canonical_json(parsed)
+        if (digest(call['raw_content']) != call['content_sha256']
+                or digest(canonical) != call['canonical_response_sha256']
+                or canonical != canonical_json(receipt[role])
+                or not re.fullmatch(r'[a-f0-9]{64}', call['request_sha256'])
+                or response_binding(call, receipt['run_id']) != call['response_binding_sha256']):
+            raise ValueError('scientific response or request binding mismatch')
+    if (assessment.assessor_model != receipt['primary_model']
+            or assessment.quality_rationale != p['quality_rationale']
+            or assessment.concise_summary != p['quality_rationale']
+            or assessment.quality_uncertainty != p['limitations']
+            or assessment.concerns != a['blocking_reasons']):
+        raise ValueError('persisted scientific text differs from model response')
     blocks = {b.evidence_id: b for b in context.blocks}
     for evidence in assessment.evidence:
         if (evidence.context_id != context.context_id or len(evidence.source_blocks) != 1

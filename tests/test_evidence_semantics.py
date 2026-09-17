@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from paper_scout.evidence_context import EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
-from paper_scout.evidence_semantics import eligible_for, evidence_guidance, numerical_support, numeric_mentions, verifier_items
+from paper_scout.evidence_semantics import eligible_for, candidate_for_support, evidence_guidance, numerical_support, numeric_mentions, verifier_items
 from paper_scout.full_text import SelectedPaperText, SelectedSection
 from paper_scout.http import HttpRequestError
 from paper_scout.quality import assess_quality_deterministically
@@ -66,7 +66,7 @@ class SemanticsTests(unittest.TestCase):
                                           'evidence_to_claim_alignment','limitations_and_uncertainty_handling','reproducibility_and_transparency'):
                             for kind in ('source_claim','assessor_inference'):
                                 self.assertFalse(eligible_for(block,dimension,kind))
-                    else:self.assertTrue(eligible_for(block,rejected['dimension'],'source_claim'))
+                    else:self.assertTrue(candidate_for_support(block,rejected['dimension'],'source_claim'))
 
     def test_abstract_contribution_can_coexist_with_body_backed_gate(self):
         # Same canonical introduction statement can be attributed from Abstract;
@@ -173,6 +173,10 @@ class SemanticsTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'claim-support verification'):QualityAssessment.from_dict(stored)
 
     def test_narrative_union_excludes_dimension_ineligible_blocks(self):
+        self.selected=replace(self.selected,sections=[replace(self.selected.sections[0],heading='Abstract'),*self.selected.sections[1:]])
+        self.context=build_evidence_context('fixture',self.selected)
+        self.value['evidence_context_id']=self.context.context_id
+        for e,b in zip(self.value['evidence'],self.context.blocks):e['evidence_ids']=[b.evidence_id]
         self.value['evidence'][0]['dimension']='methodological_rigor'
         items=verifier_items(self.value,self.context)
         self.assertTrue(items[0]['sources'])
@@ -199,7 +203,7 @@ class SemanticsTests(unittest.TestCase):
     def test_limited_inference_from_introduction_is_only_a_candidate(self):
         self.value['evidence'][5].update(statement_kind='assessor_inference',
             claim='The evaluation proves nothing can generalize.', evidence_ids=[self.context.blocks[0].evidence_id])
-        self.assertTrue(eligible_for(self.context.blocks[0],'limitations_and_uncertainty_handling','assessor_inference'))
+        self.assertTrue(candidate_for_support(self.context.blocks[0],'limitations_and_uncertainty_handling','assessor_inference'))
         result=self.validate(overrides={'evidence-5':'unsupported'})
         self.assertEqual(result.execution['outcome'],'scientific')
         self.assertEqual(result.quality_status,'uncertain')

@@ -25,65 +25,56 @@ BODY_ROLES = frozenset({'introduction', 'related', 'methods', 'results', 'limita
                         'discussion', 'conclusion', 'appendix', 'body'})
 ROLE_COMPATIBILITY = {
     'contribution': BODY_ROLES,
-    'method': frozenset({'methods', 'appendix'}),
-    'evaluation': frozenset({'results', 'methods', 'appendix'}),
-    'result': frozenset({'results', 'methods', 'discussion', 'conclusion', 'appendix'}),
+    'method': frozenset({'methods'}),
+    'evaluation': frozenset({'results', 'methods'}),
+    'result': frozenset({'results', 'methods'}),
     'positioning': BODY_ROLES,
-    'reproducibility': frozenset({'methods', 'appendix'}),
-    'limitation': frozenset({'limitations', 'discussion', 'conclusion', 'appendix'}),
+    'reproducibility': frozenset({'methods'}),
+    'limitation': frozenset({'limitations', 'discussion', 'conclusion'}),
     'presentation': BODY_ROLES,
 }
 STATEMENT_KINDS = ('source_claim', 'assessor_inference')
-ELIGIBILITY_POLICY = 'body-content-candidates-v1'
-
-# These cues nominate body passages for the separate claim-support verifier;
-# they never certify a claim. They inspect content, not a growing heading list.
-# Unknown headings retain body provenance but are not universally compatible.
-CONTENT_CUES = {
-    'method': r'\b(?:protocols?|pipelines?|algorithms?|architectures?|implementation|'
-              r'procedures?|sampling|sample[ds]?|generat(?:e[ds]?|ion)|construct(?:ed|ion)|'
-              r'filters?|filtering|annotat(?:ed|ion)|randomi[sz](?:ed|ation)|training|'
-              r'seeds?|budgets?|controls?)\b',
-    'evaluation': r'\b(?:evaluat\w*|experiments?|validation|tested|testing|'
-                  r'benchmarks?|ablations?|comparisons?|baselines?)\b',
-    'result': r'\b(?:results?|findings?|observ(?:ed|ations?)|measur(?:ed|ements?)|'
-              r'accuracy|precision|recall|scores?|performance|outperform\w*|'
-              r'improv(?:e[ds]?|ements?))\b',
-    'reproducibility': r'\b(?:reproduc\w*|code|software|implementation|datasets?|'
-                       r'available|released?|artifacts?|hyperparameters?|configuration|seeds?)\b',
-    'limitation': r'\b(?:limitations?|caveats?|uncertain(?:ty)?|threats?|constraints?|'
-                  r'problematic|fail(?:ures?|ed|s)|scope|under[-\s]?training|'
-                  r'cannot|may\s+(?:have|not|be)|not\s+(?:yet|fully))\b',
-}
+ELIGIBILITY_POLICY = 'cross-section-support-v1'
+HARD_INELIGIBLE = 'hard_ineligible'
+DIRECTLY_COMPATIBLE = 'directly_compatible'
+REQUIRES_SUPPORT_VERIFICATION = 'requires_support_verification'
 
 
 def eligibility_decision(block: EvidenceBlock, dimension: str, statement_kind: str) -> dict:
-    """A: provenance, B: compatible candidate type; C remains the verifier's job."""
+    """Layer B only: categorical compatibility, never substantive support.
+
+    Callers must first resolve canonical IDs in the manuscript context (Layer A).
+    Section roles provide direct signals. Other legitimate body passages are
+    conditional candidates for Layer C, without a lexical allowlist. Hard
+    exclusions cannot be rescued by either their wording or the verifier.
+    """
     role = CLAIM_ROLES.get(dimension)
     body = block.eligible and block.section_role in BODY_ROLES
     result = {'policy': ELIGIBILITY_POLICY, 'provenance_eligible': block.eligible,
               'body_member': body, 'claim_role': role, 'compatible': False,
-              'basis': 'ineligible_provenance_or_role'}
+              'state': HARD_INELIGIBLE, 'basis': 'ineligible_provenance_or_role'}
     if not block.eligible or role is None or statement_kind not in STATEMENT_KINDS:
         return result
     if block.section_role == 'abstract':
-        result.update(compatible=dimension == 'contribution_clarity' and statement_kind == 'source_claim',
+        allowed = dimension == 'contribution_clarity' and statement_kind == 'source_claim'
+        result.update(compatible=allowed, state=DIRECTLY_COMPATIBLE if allowed else HARD_INELIGIBLE,
                       basis='abstract_attribution_only')
-        return result
-    if not body:
-        return result
-    if (block.section_role in ROLE_COMPATIBILITY[role]
-            or role == 'limitation' and statement_kind == 'assessor_inference'):
-        result.update(compatible=True, basis='section_role_or_scoped_inference')
-    elif role in CONTENT_CUES and re.search(CONTENT_CUES[role], block.text, re.I):
-        result.update(compatible=True, basis='body_content_cue')
-    else:
-        result['basis'] = 'body_without_compatible_content_cue'
+    elif body:
+        direct = block.section_role in ROLE_COMPATIBILITY[role]
+        result.update(compatible=direct,
+                      state=DIRECTLY_COMPATIBLE if direct else REQUIRES_SUPPORT_VERIFICATION,
+                      basis='section_role' if direct else 'atypical_body_requires_support')
     return result
 
 
 def eligible_for(block: EvidenceBlock, dimension: str, statement_kind: str) -> bool:
+    """Direct compatibility only. This does not establish claim support."""
     return eligibility_decision(block, dimension, statement_kind)['compatible']
+
+
+def candidate_for_support(block: EvidenceBlock, dimension: str, statement_kind: str) -> bool:
+    """Allow existing verification to decide direct or conditional body candidates."""
+    return eligibility_decision(block, dimension, statement_kind)['state'] != HARD_INELIGIBLE
 
 
 def evidence_guidance(context: EvidenceContext) -> dict:
@@ -92,11 +83,14 @@ def evidence_guidance(context: EvidenceContext) -> dict:
         'claim_roles_by_dimension': CLAIM_ROLES,
         'body_candidate_ids_by_dimension': {d: [b.evidence_id for b in context.blocks
             if b.section_role != 'abstract' and eligible_for(b, d, 'source_claim')] for d in CLAIM_ROLES},
+        'support_verification_candidate_ids_by_dimension': {d: [b.evidence_id for b in context.blocks
+            if eligibility_decision(b, d, 'source_claim')['state'] == REQUIRES_SUPPORT_VERIFICATION]
+            for d in CLAIM_ROLES},
         'contribution_clarity_source_claim_only_abstract_ids': [b.evidence_id for b in context.blocks
             if b.section_role == 'abstract' and b.eligible],
         'limitation_inference_body_ids': [b.evidence_id for b in context.blocks
-            if eligible_for(b, 'limitations_and_uncertainty_handling', 'assessor_inference')],
-        'rule': 'Candidate IDs establish provenance and possible claim-role compatibility, not support. Unusual headings remain manuscript body. Compatible body content can nominate a passage even under a different section heading; unrelated other-body text is not a universal candidate. Appendix candidates also require actual substantive support. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Inference must stay within the cited observations.'}
+            if candidate_for_support(b, 'limitations_and_uncertainty_handling', 'assessor_inference')],
+        'rule': 'body_candidate_ids_by_dimension are direct section-role candidates, not proof of support. support_verification_candidate_ids_by_dimension are conditional body candidates whose atypical section role requires substantive verification; use them only when their actual content supports the claim. Neither list grants support. All accepted claims require the existing verifier. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Hard exclusions cannot enter fallback. Inference must stay within the cited observations.'}
 
 
 # Do not read digits embedded in model names as quantities. Decimal equality
@@ -149,7 +143,7 @@ def verifier_items(value: dict, context: EvidenceContext) -> list[dict]:
                       'statement_kind': e['statement_kind'], 'claim': e['claim'],
                       'explanation': e['explanation'], 'sources': sources})
         all_blocks.update({source['evidence_id']: source for block, source in zip(blocks, sources)
-                           if eligible_for(block, e['dimension'], e['statement_kind'])})
+                           if candidate_for_support(block, e['dimension'], e['statement_kind'])})
     # Verify the published narrative too: a number cannot bypass checking by
     # moving from a structured evidence claim into rationale or uncertainty.
     for name in ('quality_rationale', 'quality_uncertainty'):

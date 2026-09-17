@@ -85,6 +85,21 @@ def _span_text(spans: tuple[SourceSpan, ...]) -> str:
     return result
 
 
+def evidence_section_role(heading: str) -> str:
+    """Classify evidence provenance without changing acquisition or selection.
+
+    Unrecognized manuscript headings retain the existing ``body`` role. Explicit
+    non-body headings cannot become body candidates through that fallback.
+    """
+    value = re.sub(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+', '', heading).strip()
+    if re.fullmatch(
+        r'metadata|front matter|title page|author (?:information|affiliations?)|'
+        r'copyright(?: and licen[cs]e)?|licen[cs]e(?: information)?', value, re.I
+    ):
+        return 'excluded'
+    return _section_kind(value)
+
+
 def build_evidence_context(canonical_id: str, selected: SelectedPaperText) -> EvidenceContext:
     if not canonical_id.strip():
         raise ValueError('evidence context requires manuscript identity')
@@ -131,8 +146,8 @@ def build_evidence_context(canonical_id: str, selected: SelectedPaperText) -> Ev
         spans = tuple(spans)
         text = _span_text(spans)
         blocks.append(EvidenceBlock('', len(blocks) + 1, text, digest(text), spans,
-                      all(_section_kind(s.section) != 'excluded' for s in spans)
-                      and EXTRACTION_GAP not in text, _section_kind(spans[0].section)))
+                      all(evidence_section_role(s.section) != 'excluded' for s in spans)
+                      and EXTRACTION_GAP not in text, evidence_section_role(spans[0].section)))
     # Version, manuscript bytes, selected context, offsets, eligibility and block
     # contents all bind the ID namespace. Same page numbers never imply same IDs.
     preamble = selected.text[:selected.text.find(selected.sections[0].text)] if selected.sections else selected.text

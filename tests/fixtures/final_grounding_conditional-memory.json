@@ -1,0 +1,43 @@
+{
+  "canonical_id": "arxiv:2601.07372",
+  "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+  "track": "engram",
+  "source_url": "https://arxiv.org/pdf/2601.07372",
+  "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+  "context_id": "d88f8e69e24b589c03732cf1f558da0eee6c7eb11de70bb5d20a57fb221b2692",
+  "assessment_version": "quality-semantics-v1",
+  "rejected_items": [
+    {
+      "claim": "The paper acknowledges that Engram-40B does not strictly dominate Engram-27B on every task, attributing this to under-training rather than a fundamental limitation.",
+      "dimension": "limitations_and_uncertainty_handling",
+      "evidence_ids": [
+        "Ed88f8e69e24b589c-B0040"
+      ],
+      "explanation": "The authors explicitly note the non-dominance of Engram-40B and provide a plausible explanation (under-training), though they do not provide a dedicated limitations section addressing broader constraints such as hash collision effects or scaling limits.",
+      "item_id": "evidence-7",
+      "statement_kind": "source_claim",
+      "original_rejected_ids": [
+        "Ed88f8e69e24b589c-B0040"
+      ],
+      "numeric_check": {
+        "status": "requires_semantic_verification",
+        "claimed_numbers": [],
+        "missing_values_or_units": [],
+        "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation"
+      },
+      "blocks": [
+        {
+          "id": "Ed88f8e69e24b589c-B0040",
+          "role": "results",
+          "section": "Experimental Results",
+          "text": "reduce the impact of benchmark\nnoise and to visualize training dynamics, we provide full benchmark trajectories during pre-\ntraining in Appendix B. These results support our hypothesis that introducing a dedicated\nknowledge lookup primitive improves representation efficiency beyond what can be achieved\nby allocating the entire sparse budget to conditional computation.\nFinally, scaling to Engram-40B further reduces pre-training loss and improves performance\nacross most benchmarks. Although it does not yet strictly dominate Engram-27B on every\ntask, this is likely an artifact of under-training. We observe that the training loss gap between\nEngram-40B and the baselines continues to widen towards the end of training, suggesting that\nthe expanded memory capacity has not yet fully saturated within the current token budget.",
+          "pages": [
+            11
+          ],
+          "content_hash": "353d1cced1a820a0bd72fe7521b600cedc006e4b879022acb0ec36572932dbe2"
+        }
+      ]
+    }
+  ],
+  "numeric_rejections": []
+}

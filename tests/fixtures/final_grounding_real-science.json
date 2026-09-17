@@ -1,0 +1,99 @@
+{
+  "canonical_id": "doi:10.64898/2026.09.03.749176",
+  "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+  "track": "deep_research",
+  "source_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+  "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+  "context_id": "dc6e037d4780825452a9074c78c1cec2968107d9b981bb57ec765e172912be57",
+  "assessment_version": "quality-semantics-v1",
+  "rejected_items": [
+    {
+      "claim": "The evaluation protocol includes full-sized and smaller-scope prompts, multiple independent runs, and comparison with general-purpose AI systems.",
+      "dimension": "methodological_rigor",
+      "evidence_ids": [
+        "Edc6e037d47808254-B0013",
+        "Edc6e037d47808254-B0052"
+      ],
+      "explanation": "The introduction and methods describe the use of full-sized and smaller-scope prompts, up to four independent runs, and testing of Claude and ChatGPT. This multi-condition design supports the methodological claim.",
+      "item_id": "evidence-2",
+      "statement_kind": "source_claim",
+      "original_rejected_ids": [
+        "Edc6e037d47808254-B0013"
+      ],
+      "numeric_check": {
+        "status": "requires_semantic_verification",
+        "claimed_numbers": [],
+        "missing_values_or_units": [],
+        "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation"
+      },
+      "blocks": [
+        {
+          "id": "Edc6e037d47808254-B0013",
+          "role": "introduction",
+          "section": "Introduction",
+          "text": "these two new \nprojects, using both full -sized prompts that mirrored the scope of \nthe original studies and smaller -scope prompts that narrow ed the \ntask to a prescribed subset of datasets, models, or simulation \nprotocols. As in the first paper, we additionally tested Claude and \nChatGPT (Opus 4.6 Extended  and Extended Thinking 5.4 Agent \nmode, respectively , which w ere the most advanced versions \navailable at the time of runs)  on the smaller -scope prompts to \ncompare general -purpose AI systems with frameworks \nspecifically developed for scientific research. The remainder of the \npaper presents the results for each of the two projects, followed by \na discussion that integrates these  observations with those of the \nfirst paper. \n.CC-BY 4.0 International licenseavailable under a \n(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to ",
+          "pages": [
+            2
+          ],
+          "content_hash": "d0e3b8fd318e101347566b6be138acdddd159ce8c9d8b23e16c63d138e9496a2"
+        },
+        {
+          "id": "Edc6e037d47808254-B0052",
+          "role": "methods",
+          "section": "Methods",
+          "text": "Paper selection and Prompt engineering. Papers were selected to \nreflect the current frontier in the corresponding fields, with \npractical relevance as the primary criterion.  For each project, a \nfull-scale prompt was formulated describing the research problem \nand the key scientific questions, without prescribing specific \ndatasets or methods. The full-scale prompt for the antibody project \ncovered the scope of the entire reference paper, while for the lipid-\nRNA project it covered only the computational modeling \ncomponent of the reference paper (see Appendix). Smaller-scope \nprompts were then designed to reduce the scope by roughly an \norder of magnitude: for the antibody project, the analysis was \nnarrowed to two specific datasets, two prescribed sequence \nrepresentations, and a fixed evaluation procedure; for the MD \nproject, m olecular structures, force fields, and protocols were ",
+          "pages": [
+            8
+          ],
+          "content_hash": "99dab95f229056b86ae2f83d7a70b9f6b750ea7b66d26181970414ba2f50e0a5"
+        }
+      ]
+    },
+    {
+      "claim": "The paper acknowledges limitations including the time-bound nature of AI framework performance and the difficulty of verifying AI outputs.",
+      "dimension": "limitations_and_uncertainty_handling",
+      "evidence_ids": [
+        "Edc6e037d47808254-B0053",
+        "Edc6e037d47808254-B0048"
+      ],
+      "explanation": "The methods note that AI frameworks were run in January-March 2026 and conclusions reflect that state; the discussion notes that checking AI results versus redoing the project is not clearly time-effective. These statements acknowledge scope and uncertainty.",
+      "item_id": "evidence-7",
+      "statement_kind": "source_claim",
+      "original_rejected_ids": [
+        "Edc6e037d47808254-B0053"
+      ],
+      "numeric_check": {
+        "status": "requires_semantic_verification",
+        "claimed_numbers": [
+          "2026"
+        ],
+        "missing_values_or_units": [],
+        "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation"
+      },
+      "blocks": [
+        {
+          "id": "Edc6e037d47808254-B0048",
+          "role": "body",
+          "section": "Ml Models On A Single Dataset And Offered Narrower (If Any)",
+          "text": "reference study and the known literature. The AI Scientist -v2 \nfrom Sakana AI on the MD projec t claimed in its final paper to \nhave run molecular dynamics simulations of hundreds of \nnanoseconds, whereas no simulations were run and a synthetic \ndataset with fabricated feature vectors was used instead.  In all \nthese cases, erroneous outputs were embedded in otherwise \nplausible-looking reports, making it nonevident whether checking \nAI results or redoing the project from scratch without AI would be \nmore time-effective. \nCertain categories of tasks proved systematically problematic , as \nwe conclude from the analysis of the failure patterns . These tasks \nincluded identification of extrema (e.g., find the best-performing \nmodel or featurization), statements involving universal or \nexistential quantification over a set of conditions, comparisons of \nresults across methods or scenarios, ",
+          "pages": [
+            8
+          ],
+          "content_hash": "fca9fab54df15de3b79f390143373c9a9af7ead2f3f74dfc295d375e8da8b44b"
+        },
+        {
+          "id": "Edc6e037d47808254-B0053",
+          "role": "methods",
+          "section": "Methods",
+          "text": "\nexplicitly prescribed, and only construction and short equilibration \n.CC-BY 4.0 International licenseavailable under a \n(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made \nThe copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint\n9 \n \nof three all-atom systems were requested, without production MD \nor its analysis (see Appendix). \nFor all other aspects of Methods, we refer the reader to the first \npaper in this series ,8 We remind the reader that AI frameworks \nwere run in January -March 2026, and therefore, our conclusions \nreflect the state of the listed AI frameworks at that time , which \nmay have changed since then.15,32",
+          "pages": [
+            8,
+            9
+          ],
+          "content_hash": "478af4bf1d124215b38211cf006cf2f2744590df2ca94c776e0fb901d89cdccc"
+        }
+      ]
+    }
+  ],
+  "numeric_rejections": []
+}

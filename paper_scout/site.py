@@ -2520,6 +2520,7 @@ def _quality_evidence_detail(item: dict[str, object]) -> str:
     explanation = escape(str(item.get('explanation', '')))
     support = escape(str(item.get('support_status') or 'unreviewed'))
     kind = 'Assessor inference' if item.get('statement_kind') == 'assessor_inference' else 'Attributed source statement' if item.get('statement_kind') == 'source_claim' else 'Assessor’s interpretation'
+    if item.get('claim_role') == 'artifact_availability':kind = 'Artifact link stated by the manuscript; not independently checked'
     verification = item.get('support_verification') or {}
     verification_label = ' Claim/evidence check: ' + escape(str(verification.get('status'))) + '.' if verification else ''
     return (f"<li><strong>{escape(str(item.get('dimension', '')).replace('_', ' ').capitalize())}{location}</strong>"

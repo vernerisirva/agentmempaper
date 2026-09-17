@@ -1,0 +1,121 @@
+{
+  "model": "deepseek/deepseek-v4-pro-0813",
+  "reasoning": "off",
+  "assessment_request_byte_cap": 300000,
+  "assessment_output_token_cap": 8192,
+  "verifier_request_byte_cap": 250000,
+  "verifier_output_token_cap": 4096,
+  "default_review": {
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "calls_maximum": 2,
+    "request_byte_cap": 200000,
+    "output_token_cap": 16384
+  },
+  "escalated_review": {
+    "model": "anthropic/claude-opus-4.6",
+    "calls_maximum": 2,
+    "request_byte_cap": 200000,
+    "output_token_cap": 16384,
+    "condition": "Established user-authorized independent-review escalation after repeated nonconvergent/contradictory findings or bounded timeout/output failure; never bypass a valid blocker."
+  },
+  "price_bounds_per_token": {
+    "deepseek_input": 1.65e-06,
+    "deepseek_output": 4.95e-06,
+    "opus_input": 5.5e-06,
+    "opus_output": 2.75e-05
+  },
+  "pricing_checked": "2026-09-17 public OpenRouter model endpoints; maximum advertised prompt/completion rates; no search/cache-write features",
+  "cost_basis": "Assumption-based conservative reserve: one input token per serialized UTF-8 byte, bounded outputs; not tokenizer precision or provider invoice. Actual usage/cost reported separately.",
+  "approved_ceiling_usd": 10,
+  "name": "BATCH_2_RECOVERY",
+  "created_at": "2026-09-17T10:05:13.397006+00:00",
+  "baseline_main": "9ab6976cd22bfc023bf0ecdc6600fde9555783cc",
+  "original_generalization_result": "FAIL",
+  "selection_manifest": "experiments/manifests/batch-2-roster-2026-09-17.json",
+  "roster_sha256": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+  "counts": {
+    "agent_memory": 10,
+    "deep_research": 10,
+    "engram": 0
+  },
+  "predefined_audit_sample": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    }
+  ],
+  "assessment_version": "quality-batch2-recovery-v1",
+  "original_immutable_sha256": {
+    "experiments/manifests/batch-2-roster-2026-09-17.json": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+    "experiments/manifests/batch-2-roster-2026-09-17.sha256": "de366371b37a65d32b822e22d83576f5c5efe84cfa0a78e5f918f76d3b174fc5",
+    "experiments/manifests/batch-2-protocol-2026-09-17.json": "f4598e327d6c12c85ec3a6d3bdd6c3343c1b88979d2d8b31539fe19b5ef92f50",
+    "experiments/manifests/batch-2-protocol-2026-09-17.sha256": "382fc269913f881d7716a6c79b1600fed8977801ebaad04ca54556894e6ff5ff",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.md": "b5f2fe042b440057cf4d6957aac0cfa1e47e452e27518c8030759d524dcc7272",
+    "reports/paper_scout/batch-2-quality-evaluation-2026-09-17.json": "4a8e2238c76b4e5562687bb2a4bd65716340febf38af1bb84b2e872615b3f241"
+  },
+  "invariants": [
+    "exact original 20 papers; no replacements or new selection",
+    "append assessments; preserve every original row and the 28 calibration decisions",
+    "same scientific rubric, thresholds and admission rule",
+    "no manual output corrections",
+    "same six audit papers plus every pass and insufficient",
+    "no Batch 3"
+  ],
+  "execution": "Freeze merged evaluator and configuration bytes before first recovery call; normal production CLI, observed requests and shared cost ledger. Maximum two track workers. One attempt per roster entry, existing bounded retry policy only.",
+  "initial_calls_maximum_per_paper": 1,
+  "retry_calls_maximum_per_paper": 1,
+  "verifier_calls_maximum_per_paper": 1,
+  "verifier_retries": 0,
+  "pricing_artifact_sha256": "29441296ab4477d5df1cf0fe9ff32e4284c8e158c4ebd092d92232a5227a844f",
+  "cost_estimate": {
+    "recovery_all_20_assessable_no_retry_usd": 3.696,
+    "recovery_one_retry_each_usd": 5.973,
+    "review_reserve_usd": 3.9233216,
+    "combined_plan_usd": 9.8963216,
+    "assumed_assessment_input_tokens": 60000,
+    "assumed_assessment_output_tokens": 3000,
+    "assumed_verifier_input_tokens": 40000,
+    "assumed_verifier_output_tokens": 1000,
+    "basis": "Planning estimates, not a guarantee. Before each request reserve one input token per serialized UTF-8 byte plus output cap at upper price bound. Reported cost replaces reserve. Unknown charges retain reserve. Stop before exceeding the combined $10 ceiling."
+  },
+  "success_rule": "All ten user-defined recovery criteria: five original defects fixed, no new systematic defect, automatic Unicode and narrow artifact handling, defensible audited claims and uncertainty, no manual corrections, full checks and independent review pass. No target pass count. Original holdout stays FAIL regardless.",
+  "batch_3_permitted": false
+}

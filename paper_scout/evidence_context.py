@@ -173,7 +173,7 @@ def _render_context(preamble: str, blocks: tuple[EvidenceBlock, ...]) -> str:
     return preamble + '\n\n'.join(f'[{b.evidence_id}] pages={",".join(map(str,b.pages)) or "unknown"}; section={b.spans[0].section}; section_role={b.section_role}; provenance_eligible={str(b.eligible).lower()}\n{b.text}' for b in blocks)
 
 
-def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_context_id: str) -> tuple[EvidenceBlock, ...]:
+def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_context_id: str, artifact_metadata: bool = False) -> tuple[EvidenceBlock, ...]:
     identity = _context_digest(context.version, context.canonical_id, context.source_hash,
                                context.selected_text_hash, context.preamble, context.blocks)
     if (context.version != EVIDENCE_VERSION or context.context_id != expected_context_id
@@ -188,9 +188,16 @@ def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_c
         block = index.get(evidence_id)
         if block is None:
             raise ValueError('evidence ID not supplied in this manuscript context')
-        if not block.eligible:
+        if not block.eligible and not (artifact_metadata and artifact_metadata_block(block)):
             raise ValueError('evidence block is excluded back matter or an extraction gap')
         if digest(block.text) != block.content_hash or _span_text(block.spans) != block.text:
             raise ValueError('evidence block content hash mismatch')
         found.append(block)
     return tuple(sorted(found, key=lambda b: b.sequence))
+
+
+def artifact_metadata_block(block: EvidenceBlock) -> bool:
+    """Only supplied front/title metadata, never references or extraction gaps."""
+    return (EXTRACTION_GAP not in block.text and all(re.fullmatch(
+        r'front matter|title page|metadata|abstract / front matter', s.section.strip(), re.I)
+        for s in block.spans))

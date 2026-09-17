@@ -1,0 +1,375 @@
+[
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.08832",
+    "source_hash": "b8db2000e07e44655a2deee68a874207692919566e4bdffea065ff97f7b114e0",
+    "original_item": {
+      "accepted": false,
+      "claim": "The paper provides code at https://github.com/AgentToolkit/altk-evolve and specifies experimental setup including model endpoints, benchmark split, and evaluation metrics.",
+      "claim_role": "reproducibility",
+      "dimension": "reproducibility_and_transparency",
+      "eligibility": [
+        {
+          "basis": "abstract_attribution_only",
+          "body_member": false,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "Eab63d8b945096f8e-B0003",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "hard_ineligible"
+        },
+        {
+          "basis": "section_role",
+          "body_member": true,
+          "claim_role": "reproducibility",
+          "compatible": true,
+          "evidence_id": "Eab63d8b945096f8e-B0029",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "directly_compatible"
+        }
+      ],
+      "eligibility_valid": false,
+      "evidence_ids": [
+        "Eab63d8b945096f8e-B0003",
+        "Eab63d8b945096f8e-B0029"
+      ],
+      "explanation": "Reproducibility is supported by the public code repository, explicit specification of the AppWorld test normal split (168 tasks), model endpoints (Azure for GPT-4.1, AWS for GPT-OSS-120B), and the five-run evaluation protocol with defined metrics.",
+      "item_id": "evidence-7",
+      "provenance_valid": true,
+      "reason": "evidence section role is ineligible for this claim/dimension",
+      "statement_kind": "source_claim"
+    },
+    "blocks": [
+      {
+        "evidence_id": "Eab63d8b945096f8e-B0003",
+        "sequence": 3,
+        "text": "guidelines, committed to memory and injected into fu-\nture agent executions on similar tasks. On AppWorld with\nReAct/GPT-4.1, our framework raises the fraction of tasks\nthat succeed in all five runs by+16 pointson same-task eval-\nuation and+13 pointson similar-task generalization.\nCode:https://github.com/AgentToolkit/altk-evolve",
+        "content_hash": "df893f98d044266276ccca0d808523775e951a56d5cc6584442a8f1dfd857633",
+        "spans": [
+          {
+            "text": "guidelines, committed to memory and injected into fu-\nture agent executions on similar tasks. On AppWorld with\nReAct/GPT-4.1, our framework raises the fraction of tasks\nthat succeed in all five runs by+16 pointson same-task eval-\nuation and+13 pointson similar-task generalization.\nCode:https://github.com/AgentToolkit/altk-evolve",
+            "page": 1,
+            "section": "Abstract",
+            "section_index": 1,
+            "start": 896,
+            "end": 1226
+          }
+        ],
+        "eligible": true,
+        "section_role": "abstract"
+      },
+      {
+        "evidence_id": "Eab63d8b945096f8e-B0029",
+        "sequence": 29,
+        "text": "We evaluate on AppWorld (Trivedi et al. 2024), an interac-\ntive coding-agent benchmark in which an agent operates a\ncontrolled simulation of personal apps via Python tool calls,\ngraded by the AppWorld harness, on thetest normalsplit\n(168 tasks). AppWorld groups tasks intoscenariosof three\nvariants each, which we exploit below to test generalization\nto similar tasks. We evaluate a ReAct (Yao et al. 2023) agent\nbacked by GPT-4.1 and GPT-OSS-120B, running each task\nfive times and reporting Pass\u02c65, Mean@5, and (where rel-\nevant) Pass@5 as defined in Section 2.1. All experiments\nwere run against cloud-hosted model endpoints: GPT-4.1 on\nMicrosoft Azure and GPT-OSS-120B on Amazon Web Ser-\nvices (AWS).\nThe consistency analyzer parses the ReAct agent re-\nsponse at each step to extract actions as categorical pairs:\n(API name,API params). Each extracted pair is scored\nby average pairwise Jaccard ",
+        "content_hash": "69ae8d9a019657c56fb5931acfd5dc5e79147b2a5377e24c3df45789c76164ea",
+        "spans": [
+          {
+            "text": "We evaluate on AppWorld (Trivedi et al. 2024), an interac-\ntive coding-agent benchmark in which an agent operates a\ncontrolled simulation of personal apps via Python tool calls,\ngraded by the AppWorld harness, on thetest normalsplit\n(168 tasks). AppWorld groups tasks intoscenariosof three\nvariants each, which we exploit below to test generalization\nto similar tasks. We evaluate a ReAct (Yao et al. 2023) agent\nbacked by GPT-4.1 and GPT-OSS-120B, running each task\nfive times and reporting Pass\u02c65, Mean@5, and (where rel-\nevant) Pass@5 as defined in Section 2.1. All experiments\nwere run against cloud-hosted model endpoints: GPT-4.1 on\nMicrosoft Azure and GPT-OSS-120B on Amazon Web Ser-\nvices (AWS).",
+            "page": 4,
+            "section": "Experimental Setup",
+            "section_index": 13,
+            "start": 0,
+            "end": 703
+          },
+          {
+            "text": "The consistency analyzer parses the ReAct agent re-\nsponse at each step to extract actions as categorical pairs:\n(API name,API params). Each extracted pair is scored\nby average pairwise Jaccard ",
+            "page": 5,
+            "section": "Experimental Setup",
+            "section_index": 14,
+            "start": 0,
+            "end": 194
+          }
+        ],
+        "eligible": true,
+        "section_role": "methods"
+      }
+    ]
+  },
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.09115",
+    "source_hash": "722cd43ffdbdd31308dff05975c873221a14ec5ddc3e249094331a1322e5b3ca",
+    "original_item": {
+      "accepted": false,
+      "claim": "The paper provides code at a GitHub repository and detailed experimental configurations including model names, hyperparameters, and dataset statistics.",
+      "claim_role": "reproducibility",
+      "dimension": "reproducibility_and_transparency",
+      "eligibility": [
+        {
+          "basis": "abstract_attribution_only",
+          "body_member": false,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E8763b130dd1e6560-B0003",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "hard_ineligible"
+        },
+        {
+          "basis": "atypical_body_requires_support",
+          "body_member": true,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E8763b130dd1e6560-B0062",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "requires_support_verification"
+        }
+      ],
+      "eligibility_valid": false,
+      "evidence_ids": [
+        "E8763b130dd1e6560-B0003",
+        "E8763b130dd1e6560-B0062"
+      ],
+      "explanation": "The abstract includes a code link, and the appendix specifies task agent, judge evaluator, retrieval budget, permutation budget, and tolerance settings.",
+      "item_id": "evidence-6",
+      "provenance_valid": true,
+      "reason": "evidence section role is ineligible for this claim/dimension",
+      "statement_kind": "source_claim"
+    },
+    "blocks": [
+      {
+        "evidence_id": "E8763b130dd1e6560-B0003",
+        "sequence": 3,
+        "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear",
+        "content_hash": "80034d9e9b01bc9e431695b78de3e4b19be93dcb4c9455e1f7c1fa264f6148c4",
+        "spans": [
+          {
+            "text": "exe-\ncutesaqueryscopedminimalclearancestrategyoveranested\nfiltration,verifyingtaskrecoveryontheclearedcontextwith-\nout permanently altering the persistent memory bank. Com-\nprehensive experimentalevaluations across tenlong dialogue\nmemory pools demonstrate that MeClear achieves a target\nrecall of 85.9% and an overall task recovery rate of 82.3%,\nrepresentinga25.5percentagepointimprovementoverLeave\nOne Out (LOO) baselines.\nCode\u2014 https://github.com/FudanSELab/MeClear",
+            "page": 1,
+            "section": "Abstract",
+            "section_index": 1,
+            "start": 803,
+            "end": 1272
+          }
+        ],
+        "eligible": true,
+        "section_role": "abstract"
+      },
+      {
+        "evidence_id": "E8763b130dd1e6560-B0062",
+        "sequence": 62,
+        "text": "We evaluate MeClear on LoCoMo using Kimi-k2.6 as task\nagent and Qwen3.6-Flash as judge evaluator. The evaluation\nis constructed from 368 clean queries across ten conversa-\ntions and contains 745 causally verified cases with 1,115\nfault records. The cohort includes 375 direct conflicts with\n|M|= 1, 285 redundant conflicts with|M|= 2, and 85\nSetting Value\nMeClear retrieval budgetK5\nMeClear permutation budgetL16\nMeClear checkpoints 4, 8, 16\nMeClear screening tolerance\u03ba0.05\nMeClear harm tolerance\u03c40.05\nTask-value range[0,1]\nTask agent Kimi-k2.6\nJudge evaluator Qwen3.6-Flash\nMemory construction Moonshot-v1-32k\nFault generation Qwen3.7-Plus\nLOO threshold bdt,i <\u22120.05\nContextCite budget /\u03b132 / 0.01\nProxySPEX budget / order 32 / 2\nDirect LLM Qwen3.5-Plus\nDirect LLM threshold\u22650.5\nTable 4: Main method, model, and baseline settings.\njoint interactions with|M|= 2. Two of the 747 initially se-\nlected ",
+        "content_hash": "e26ecf71db5fb5f21509d0fc8d4fba1fb822193d2a0b79130e5ed912ceed6874",
+        "spans": [
+          {
+            "text": "We evaluate MeClear on LoCoMo using Kimi-k2.6 as task\nagent and Qwen3.6-Flash as judge evaluator. The evaluation\nis constructed from 368 clean queries across ten conversa-\ntions and contains 745 causally verified cases with 1,115\nfault records. The cohort includes 375 direct conflicts with\n|M|= 1, 285 redundant conflicts with|M|= 2, and 85\nSetting Value\nMeClear retrieval budgetK5\nMeClear permutation budgetL16\nMeClear checkpoints 4, 8, 16\nMeClear screening tolerance\u03ba0.05\nMeClear harm tolerance\u03c40.05\nTask-value range[0,1]\nTask agent Kimi-k2.6\nJudge evaluator Qwen3.6-Flash\nMemory construction Moonshot-v1-32k\nFault generation Qwen3.7-Plus\nLOO threshold bdt,i <\u22120.05\nContextCite budget /\u03b132 / 0.01\nProxySPEX budget / order 32 / 2\nDirect LLM Qwen3.5-Plus\nDirect LLM threshold\u22650.5\nTable 4: Main method, model, and baseline settings.\njoint interactions with|M|= 2. Two of the 747 initially se-\nlected ",
+            "page": 13,
+            "section": "Appendix: Experimental Setup",
+            "section_index": 25,
+            "start": 0,
+            "end": 900
+          }
+        ],
+        "eligible": true,
+        "section_role": "appendix"
+      }
+    ]
+  },
+  {
+    "canonical_id": "doi:10.48550/arxiv.2609.08258",
+    "source_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
+    "original_item": {
+      "accepted": false,
+      "claim": "The paper open-sources its code and reports compute resources, including 44,550 decision-model calls for the main grid and a total cost of $79.08.",
+      "claim_role": "reproducibility",
+      "dimension": "reproducibility_and_transparency",
+      "eligibility": [
+        {
+          "basis": "abstract_attribution_only",
+          "body_member": false,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E5950c57d2c67485e-B0003",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "hard_ineligible"
+        },
+        {
+          "basis": "atypical_body_requires_support",
+          "body_member": true,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E5950c57d2c67485e-B0063",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "requires_support_verification"
+        },
+        {
+          "basis": "atypical_body_requires_support",
+          "body_member": true,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E5950c57d2c67485e-B0064",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "requires_support_verification"
+        }
+      ],
+      "eligibility_valid": false,
+      "evidence_ids": [
+        "E5950c57d2c67485e-B0003",
+        "E5950c57d2c67485e-B0063",
+        "E5950c57d2c67485e-B0064"
+      ],
+      "explanation": "The abstract states the code is open-sourced, and the compute resources appendix reports the number of model calls and cost for each experiment.",
+      "item_id": "evidence-6",
+      "provenance_valid": true,
+      "reason": "evidence section role is ineligible for this claim/dimension",
+      "statement_kind": "source_claim"
+    },
+    "blocks": [
+      {
+        "evidence_id": "E5950c57d2c67485e-B0003",
+        "sequence": 3,
+        "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack.",
+        "content_hash": "78c8410e50347becd6bc7d6baa8a65db55620f36327206d0cddfbe74da075bb1",
+        "spans": [
+          {
+            "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack.",
+            "page": 1,
+            "section": "Abstract",
+            "section_index": 1,
+            "start": 883,
+            "end": 1031
+          }
+        ],
+        "eligible": true,
+        "section_role": "abstract"
+      },
+      {
+        "evidence_id": "E5950c57d2c67485e-B0063",
+        "sequence": 63,
+        "text": "This subsection reports the compute required to reproduce the measurements. The experiments\nrequire no training and no GPUs. All measurements ran on a single MacBook Air (M5) with 16 GB\n14\nof RAM, which hosted the five memory systems as local containers. No model weights were loaded\nlocally: the nine decision models and the shared extraction and embedding model were accessed\nthrough their providers' hosted APIs, routed through LiteLLM. Because no model is trained or\nserved locally, execution time is dominated by API latency rather than by local computation, so the\nmeaningful resource is the number of model calls rather than elapsed wall-clock time.\nTable 10: Decision-model calls and cost by experiment.\nexperiment calls cost share\nmain grid (reported)44,550 $71.78 90.7%\npropagation1,458 $2.35 3.0%\npersistence1,296 $2.09 2.6%\nexploit chain1,216 $1.84 2.5%\nparse audit486 $0.78 ",
+        "content_hash": "4930681f7901833cd4ec736c587916e7502f106ff1a2bdf97f36bb9dbed91760",
+        "spans": [
+          {
+            "text": "This subsection reports the compute required to reproduce the measurements. The experiments\nrequire no training and no GPUs. All measurements ran on a single MacBook Air (M5) with 16 GB\n14",
+            "page": 14,
+            "section": "Appendix: Compute Resources",
+            "section_index": 33,
+            "start": 0,
+            "end": 188
+          },
+          {
+            "text": "of RAM, which hosted the five memory systems as local containers. No model weights were loaded\nlocally: the nine decision models and the shared extraction and embedding model were accessed\nthrough their providers' hosted APIs, routed through LiteLLM. Because no model is trained or\nserved locally, execution time is dominated by API latency rather than by local computation, so the\nmeaningful resource is the number of model calls rather than elapsed wall-clock time.\nTable 10: Decision-model calls and cost by experiment.\nexperiment calls cost share\nmain grid (reported)44,550 $71.78 90.7%\npropagation1,458 $2.35 3.0%\npersistence1,296 $2.09 2.6%\nexploit chain1,216 $1.84 2.5%\nparse audit486 $0.78 ",
+            "page": 15,
+            "section": "Appendix: Compute Resources",
+            "section_index": 34,
+            "start": 0,
+            "end": 698
+          }
+        ],
+        "eligible": true,
+        "section_role": "appendix"
+      },
+      {
+        "evidence_id": "E5950c57d2c67485e-B0064",
+        "sequence": 64,
+        "text": "1.0%\nwrite-back115 $0.23 0.2%\ntotal49,121 $79.08 100%\nTable 10 reports the decision-model calls and cost for each experiment, priced from the unit prices\nthe LiteLLM serving layer publishes. The main grid reported in this paper covers 9 scenarios, 9\nmodels, and 10 trials per cell across the systems, configurations, defense conditions, and insertion\nmodes (Section 3.6). It accounts for 44,550 of the 49,121 decision-model calls and $71.78 of the\n$79.08 total. The remaining 4,571 calls funded the three studies reported in Section C (propagation,\nthe exploit chain, and write-back), a persistence study not reported here, and a parse audit of replies\nfrom which no action could be parsed. Only the persistence study and the parse audit contribute no\nnumber to this paper. Input and billed output token counts per call are recorded in the released results\nbundle. The full research project ",
+        "content_hash": "455f42b6d1c383b48fb61e576ccb22e125c93525ab470e5d575d1d91c2a4cae8",
+        "spans": [
+          {
+            "text": "1.0%\nwrite-back115 $0.23 0.2%\ntotal49,121 $79.08 100%\nTable 10 reports the decision-model calls and cost for each experiment, priced from the unit prices\nthe LiteLLM serving layer publishes. The main grid reported in this paper covers 9 scenarios, 9\nmodels, and 10 trials per cell across the systems, configurations, defense conditions, and insertion\nmodes (Section 3.6). It accounts for 44,550 of the 49,121 decision-model calls and $71.78 of the\n$79.08 total. The remaining 4,571 calls funded the three studies reported in Section C (propagation,\nthe exploit chain, and write-back), a persistence study not reported here, and a parse audit of replies\nfrom which no action could be parsed. Only the persistence study and the parse audit contribute no\nnumber to this paper. Input and billed output token counts per call are recorded in the released results\nbundle. The full research project ",
+            "page": 15,
+            "section": "Appendix: Compute Resources",
+            "section_index": 34,
+            "start": 698,
+            "end": 1589
+          }
+        ],
+        "eligible": true,
+        "section_role": "appendix"
+      }
+    ]
+  },
+  {
+    "canonical_id": "openalex:W7171268620",
+    "source_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
+    "original_item": {
+      "accepted": false,
+      "claim": "The paper provides code and dataset availability links and describes the manual audit of all target false conclusions with 100% coverage, supporting reproducibility of the evaluation framework.",
+      "claim_role": "reproducibility",
+      "dimension": "reproducibility_and_transparency",
+      "eligibility": [
+        {
+          "basis": "abstract_attribution_only",
+          "body_member": false,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E5ecf27d3a2ac0fe6-B0003",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "hard_ineligible"
+        },
+        {
+          "basis": "atypical_body_requires_support",
+          "body_member": true,
+          "claim_role": "reproducibility",
+          "compatible": false,
+          "evidence_id": "E5ecf27d3a2ac0fe6-B0045",
+          "policy": "cross-section-support-v1",
+          "provenance_eligible": true,
+          "state": "requires_support_verification"
+        }
+      ],
+      "eligibility_valid": false,
+      "evidence_ids": [
+        "E5ecf27d3a2ac0fe6-B0003",
+        "E5ecf27d3a2ac0fe6-B0045"
+      ],
+      "explanation": "The abstract provides GitHub and Hugging Face links for code and dataset. The appendix describes exhaustive manual auditing of canonical target conclusions for every task, indicating transparency in the construction and validation process.",
+      "item_id": "evidence-7",
+      "provenance_valid": true,
+      "reason": "evidence section role is ineligible for this claim/dimension",
+      "statement_kind": "source_claim"
+    },
+    "blocks": [
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0003",
+        "sequence": 3,
+        "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively.",
+        "content_hash": "16ad5ce1e26e100781bc47c62b77edd0dc59026abd874a12a19fd55d7bb0fdf8",
+        "spans": [
+          {
+            "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively.",
+            "page": 1,
+            "section": "Abstract",
+            "section_index": 1,
+            "start": 854,
+            "end": 1727
+          }
+        ],
+        "eligible": true,
+        "section_role": "abstract"
+      },
+      {
+        "evidence_id": "E5ecf27d3a2ac0fe6-B0045",
+        "sequence": 45,
+        "text": "Thisauditwasdistinctfromtheinstance-levelhumanscreen-\ningusedtoassessdocumentquality.Weexhaustivelyaudited\nthecanonicaltargetconclusionforeverytaskinthecomplete\nbenchmark task set (100% coverage), rather than sampling\na subset. Because all generated documents for a task instan-\ntiate the same target conclusion, factuality was validated at\nthe conclusion level.\nFor each conclusion, we checked its central claim and,\nwhere applicable, its attributed source against primary\nsources, official records, or peer-reviewed literature. A con-\nclusionwasclassifiedasconfirmedfalseonlyifitwasdirectly\ncontradictedbyauthoritativeevidenceorifthenon-existence\nofitsassertedentity,method,event,artifact,orempiricalre-\nsultcouldbeestablishedfromaboundedauthoritativerecord\nModel Qualitative assessment Representative observation Potential effect\nKimi 2.6 Cross-language inconsis-\ntency\nSome Chinese documents ",
+        "content_hash": "5d5b3b72e994c56b42922e2b55862e170bce36343ae51ec34a31a35a18c30bcc",
+        "spans": [
+          {
+            "text": "Thisauditwasdistinctfromtheinstance-levelhumanscreen-\ningusedtoassessdocumentquality.Weexhaustivelyaudited\nthecanonicaltargetconclusionforeverytaskinthecomplete\nbenchmark task set (100% coverage), rather than sampling\na subset. Because all generated documents for a task instan-\ntiate the same target conclusion, factuality was validated at\nthe conclusion level.\nFor each conclusion, we checked its central claim and,\nwhere applicable, its attributed source against primary\nsources, official records, or peer-reviewed literature. A con-\nclusionwasclassifiedasconfirmedfalseonlyifitwasdirectly\ncontradictedbyauthoritativeevidenceorifthenon-existence\nofitsassertedentity,method,event,artifact,orempiricalre-\nsultcouldbeestablishedfromaboundedauthoritativerecord",
+            "page": 10,
+            "section": "Conclusions",
+            "section_index": 22,
+            "start": 0,
+            "end": 759
+          },
+          {
+            "text": "Model Qualitative assessment Representative observation Potential effect\nKimi 2.6 Cross-language inconsis-\ntency\nSome Chinese documents ",
+            "page": 11,
+            "section": "Conclusions",
+            "section_index": 23,
+            "start": 0,
+            "end": 136
+          }
+        ],
+        "eligible": true,
+        "section_role": "conclusion"
+      }
+    ]
+  }
+]

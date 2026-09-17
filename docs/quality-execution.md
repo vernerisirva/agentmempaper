@@ -105,3 +105,38 @@ rewriting their reviewed decisions. The root sidecar remains `paper-scout-card-v
 with additive optional `statement_kind`, `claim_role`, `support_verification` and
 source-block `section_role` fields. The assessment manifest must account for the
 new bounded verifier cost before any paid rerun.
+
+
+## Batch-2 recovery semantics
+
+`artifact-purpose-v1` retains every scientific abstract restriction. A separate
+`artifact_availability` purpose requires positive, source-attributed
+reproducibility metadata and exact URLs present in the cited canonical blocks.
+It permits abstract/front-matter metadata, but never references or extraction
+gaps. The accepted display statement is derived from those URLs and explicitly
+says repository existence, contents and functionality were not independently
+checked. The raw model proposal remains in the execution audit. Artifact-only
+evidence cannot satisfy any scientific gate dimension and is excluded from the
+scientific narrative's evidence union. No repository network check is performed.
+
+Scientific evidence may request the immediate contiguous left/right neighbors
+of one primary block, at most three blocks total, inside the same supplied
+section and source role. All resolved IDs/hashes and primary IDs are preserved;
+no omitted page, extraction gap or section boundary can be crossed.
+
+`claim-support-v2` independently verifies each claim and explanation against
+its exact resolved sources. Both must be supported. Scoped assessor inference
+remains permitted when its premises support the conclusion; topical similarity
+is insufficient. Explicit local guards reject known external-priority,
+manuscript-wide absence and partial-to-universal overreach. These guards are
+necessary checks, not a substitute for semantic verification. Numeric checking
+ignores clear section/table/experiment locators and ordered list labels, and
+recognizes an extracted article joined to a quantity (such as `a10-user`). It
+still checks values/units and does not search other manuscript text for support.
+
+`canonical-unicode-v2` recombines valid UTF-16 surrogate pairs and replaces lone
+surrogates visibly with U+FFFD before hashing and evidence addressing. Valid
+scientific Unicode is retained. Coverage records the normalization version and
+surrogate count; lost symbols are never reconstructed. The original extracted
+cache and PDF source hash remain untouched. Legacy stored assessments are read
+without migration; recovery appends a new assessment version.

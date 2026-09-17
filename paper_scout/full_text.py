@@ -156,11 +156,17 @@ def fetch_and_extract_pdf(url: str, settings: FullTextSettings, refresh: bool = 
 
 
 def canonical_manuscript_text(text: str) -> str:
-    """Lossless typography normalization shared by selected prompt and anchors.
+    """Canonical typography and valid Unicode shared by prompt and anchors.
 
     Physical line breaks remain available so line-end hyphens can be interpreted
     conservatively in multiple literal views. No words or numbers are repaired.
     """
+    # PDF extractors/caches can contain UTF-16 code units rather than Unicode
+    # scalar values. Recombine valid pairs; visibly replace irrecoverable lone
+    # surrogates before hashing, addressing, transport or persistence. Never
+    # invent the missing scientific symbol. Valid Unicode is unchanged.
+    if re.search(r'[\ud800-\udfff]', text):
+        text = text.encode('utf-16-le', errors='surrogatepass').decode('utf-16-le', errors='replace')
     text = unicodedata.normalize("NFC", text)
     text = text.translate(str.maketrans(dict(zip("ﬀﬁﬂﬃﬄﬅﬆ", ("ff", "fi", "fl", "ffi", "ffl", "st", "st")))))
     return text.translate(str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"', "‐": "-", "‑": "-", "\u00ad": None})).replace("\r\n", "\n")
@@ -223,8 +229,9 @@ def select_assessment_text(
     if max_prompt_characters <= 0 or max_section_characters <= 0:
         raise ValueError("assessment text budgets must be positive")
     abstract = canonical_manuscript_text(candidate.abstract)
+    title = canonical_manuscript_text(candidate.title)
     if document is None or not any(p.text.strip() for p in document.pages):
-        content = f'Title: {candidate.title}\n\nAbstract: {abstract}'[:max_prompt_characters]
+        content = f'Title: {title}\n\nAbstract: {abstract}'[:max_prompt_characters]
         return SelectedPaperText(content, [SelectedSection('Abstract', abstract, None)] if abstract else [],
             'title_and_abstract' if abstract else 'metadata_only', _content_hash(content), False,
             ['No extractable manuscript text was available.'],
@@ -240,7 +247,7 @@ def select_assessment_text(
         detected = [SelectedSection('Abstract / unclassified page', p.text, p.page) for p in pages]
     excluded = [s for s in detected if _section_kind(s.heading) == 'excluded']
     body = [s for s in detected if _section_kind(s.heading) != 'excluded']
-    prefix = f'Title: {candidate.title}\n\n'
+    prefix = f'Title: {title}\n\n'
     # The extracted abstract is already in body. Avoid duplicating metadata text.
     if not any(_section_kind(s.heading) == 'abstract' for s in body) and abstract:
         prefix += f'Abstract (metadata): {abstract[:2400]}\n\n'
@@ -277,6 +284,9 @@ def select_assessment_text(
     body_chars = sum(_source_characters(s.text) for s in body)
     selected_chars = sum(_source_characters(s.text) for s in selected)
     warnings = list(document.warnings)
+    surrogate_count = sum(len(re.findall(r'[\ud800-\udfff]', p.text)) for p in document.pages)
+    if surrogate_count:
+        warnings.append(f'Canonical Unicode normalization processed {surrogate_count} UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols.')
     if EXTRACTION_GAP in document.text:
         warnings.append("Extraction gaps are explicit barriers, excluded from source-character counts; omitted extraction text is not available to the assessor.")
     if selection_used:
@@ -286,7 +296,7 @@ def select_assessment_text(
     if uncertain:
         warnings.append('Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision.')
     coverage = {**document.coverage, 'version': 'coverage-v1', 'selection_version': 'representative-v1',
-        'normalization_version': 'canonical-v1', 'source_pages': document.coverage.get('source_pages'),
+        'normalization_version': 'canonical-unicode-v2', 'surrogate_code_units': surrogate_count, 'source_pages': document.coverage.get('source_pages'),
         'page_unit': 'logical XML body section' if logical_xml else 'PDF page',
         'extracted_pages': len(document.pages), 'extracted_page_indices': [p.page for p in document.pages],
         'extracted_characters': len(document.text),

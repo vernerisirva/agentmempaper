@@ -166,8 +166,8 @@ class CrossSectionTests(unittest.TestCase):
             self.assertEqual([c['kind'] for c in result.execution['calls']], ['initial', 'verifier'])
             self.assertEqual(len(client.payloads), 2)
             items = json.loads(client.payloads[1]['messages'][1]['content'])['items']
-            self.assertEqual(len(items), len(value['evidence']) + 2)
-            self.assertEqual(items[1]['sources'][0]['text'], ctx.blocks[1].text)
+            self.assertEqual(len(items), 2 * len(value['evidence']) + 2)
+            self.assertEqual(items[2]['sources'][0]['text'], ctx.blocks[1].text)
             self.assertNotIn('manuscript', items[1])
 
     def test_hard_exclusion_prevents_verifier_call(self):

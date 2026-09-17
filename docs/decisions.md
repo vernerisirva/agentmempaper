@@ -23,3 +23,19 @@ Validation lesson: live primary metadata caught an evidence rule that missed
 cross-model transfer described across multiple sentences. Regression checks also
 caught dropped revision dates, timezone-insensitive New badges, and nested-track
 digest links. Fixes preserve both existing libraries' membership and screening.
+
+
+## 2026-09-17 — Batch-2 recovery is engineering, not holdout validation
+
+`ORIGINAL_BATCH_2_GENERALIZATION_RESULT = FAIL` is permanent. The frozen
+20-paper roster, protocol, original outcomes and all historical assessments are
+immutable. Their subsequent reuse is named `BATCH_2_RECOVERY` and uses a new
+assessment version; it cannot establish unseen generalization. Do not start
+Batch 3 in this cycle.
+
+Keep the rubric, six scientific gate dimensions, acquisition strategy and
+library admission rule unchanged. Distinguish source-attributed artifact links
+from scientific evidence, repair invalid Unicode before canonical hashing, and
+verify claims and explanations separately with bounded canonical context.
+The complete pre-edit failure inventory is recorded in
+`reports/paper_scout/batch-2-recovery-inventory-2026-09-17.md` and its JSON companion.

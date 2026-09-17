@@ -72,3 +72,22 @@ request-byte/output-cap reserves: reassessment **$4.511628**, review including
 possible escalation **$3.7913216**, combined **$8.3029496**. These are estimates,
 not measured tokenizer usage or invoice amounts. Actual calls/costs will be
 reported separately. The model roles and scientific rubric are unchanged.
+
+## Independent review disposition
+
+Normal `pr-review` on `84c0bf80dc505799f304b123bd76590c43ca67bd` returned
+**PASS_WITH_NOTES**, no blockers, model `deepseek/deepseek-v4-pro-0813`.
+The unchanged downstream verifier is deliberately the substantive support gate;
+candidate cues cannot certify a claim. Requiring multiple keywords would be a
+new arbitrary heading/content restriction rather than a support guarantee. The
+existing new regression already checks a candidate whose universal claim is
+unsupported and therefore cannot pass.
+
+Funding and Author Contributions are already excluded by `_section_kind`.
+Supplementary Materials correctly retains appendix provenance: supplementary
+methods/results are legitimate evidence, subject to claim support verification.
+The uncovered compound Copyright and Licensing Information heading is now
+excluded, with regression coverage. Fixtures use an explicit three-file list.
+These small corrections are submitted for a second independent review. The
+reviewer's static uncertainty about constructors/helpers is covered by the
+actually executed full unit suite, not a claim that the reviewer ran tests.

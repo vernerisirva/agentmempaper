@@ -20,8 +20,9 @@ from test_evidence_context import verified_fixture
 from test_paper_scout_scientific_gate import candidate, manuscript
 from test_quality_reliability import block_fixture
 
-CASES = [json.loads(p.read_text()) for p in sorted(
-    (Path(__file__).parent / 'fixtures').glob('final_grounding_*.json'))]
+CASES = [json.loads((Path(__file__).parent / 'fixtures' / name).read_text())
+         for name in ('final_grounding_conditional-memory.json',
+                      'final_grounding_real-science.json', 'final_grounding_scimmr.json')]
 
 
 def block(heading, text):
@@ -88,7 +89,8 @@ class FinalGroundingTests(unittest.TestCase):
     def test_non_body_provenance_cannot_be_rescued_by_content_cues(self):
         for heading in ('References', '7 References', 'Bibliography', 'Acknowledgements',
                         'Metadata', 'Front Matter', 'Title Page', 'Author Affiliations',
-                        'Copyright and License'):
+                        'Copyright and License', 'Copyright and Licensing Information',
+                        'Licensing Information', 'Funding', 'Author Contributions'):
             b = block(heading, 'Our method uses a protocol and reaches 95% accuracy despite limitations.')
             self.assertFalse(b.eligible, heading)
             for dimension in CLAIM_ROLES:

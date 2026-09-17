@@ -94,7 +94,8 @@ def evidence_section_role(heading: str) -> str:
     value = re.sub(r'^\s*(?:\d+(?:\.\d+)*[.)]?|[IVX]+[.)])\s+', '', heading).strip()
     if re.fullmatch(
         r'metadata|front matter|title page|author (?:information|affiliations?)|'
-        r'copyright(?: and licen[cs]e)?|licen[cs]e(?: information)?', value, re.I
+        r'(?:copyright(?: and licen[cs](?:e|ing))?|licen[cs](?:e|ing))'
+        r'(?: information| notice| statement)?', value, re.I
     ):
         return 'excluded'
     return _section_kind(value)

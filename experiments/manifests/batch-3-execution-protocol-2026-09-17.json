@@ -1,0 +1,425 @@
+{
+  "batch_id": "batch-3-promotion-gate-2026-09-17",
+  "status": "protocol_frozen_before_selection",
+  "frozen_at": "2026-09-17T19:10:28.609057+00:00",
+  "frozen_code_sha": "63605a3a839d84800418d8e4738ab0c6fcad0df9",
+  "merge_sha": "afd1a7018cc6f38a317e340a0a77b86c1078cd63",
+  "implementation_sha": "c737badb6249d4faefe0bf1546da90576f206a35",
+  "primary_model": "deepseek/deepseek-v4-pro-0813",
+  "adjudicator_model": "anthropic/claude-sonnet-4.6",
+  "assessment_version": "quality-promotion-v1",
+  "rubric_version": "scholarly-rubric-v1",
+  "rubric_sha256": "fd45081b96954ee5e7cf140e1ac7741cf5f389abcb86f1c3f8c0281a26562fa8",
+  "promotion_version": "dual-promotion-v1",
+  "evidence_version": "block-evidence-v2",
+  "identity_version": "exact-title-typography-v1",
+  "schemas": {
+    "primary": {
+      "type": "object",
+      "properties": {
+        "canonical_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_content_hash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 24,
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "pass",
+            "uncertain"
+          ]
+        },
+        "scoped_contribution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method_assessment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evaluation_assessment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_evidence_alignment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitations": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quality_rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "canonical_id",
+        "source_content_hash",
+        "context_id",
+        "evidence_ids",
+        "decision",
+        "scoped_contribution",
+        "method_assessment",
+        "evaluation_assessment",
+        "claim_evidence_alignment",
+        "limitations",
+        "quality_rationale"
+      ],
+      "additionalProperties": false
+    },
+    "adjudicator": {
+      "type": "object",
+      "properties": {
+        "canonical_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_content_hash": {
+          "type": "string",
+          "minLength": 1
+        },
+        "context_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "maxItems": 24,
+          "uniqueItems": true
+        },
+        "promotion_decision": {
+          "enum": [
+            "pass",
+            "uncertain"
+          ]
+        },
+        "blocking_reasons": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "canonical_id",
+        "source_content_hash",
+        "context_id",
+        "evidence_ids",
+        "promotion_decision",
+        "blocking_reasons"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "generation": {
+    "temperature": 0,
+    "reasoning": {
+      "enabled": false,
+      "exclude": true
+    },
+    "max_output_tokens": 4096,
+    "max_input_bytes": 300000,
+    "seed": null,
+    "attempts_per_role": 1,
+    "retries": 0,
+    "provider_require_parameters": true,
+    "price_caps_per_million": {
+      "primary": [
+        1.65,
+        4.95
+      ],
+      "adjudicator": [
+        3.3,
+        16.5
+      ]
+    }
+  },
+  "selection_rule": "User-superseding protocol: up to EIGHT per track, first in existing offline research ranking (_sort_latest_relevant after production duplicate/relevance/curation/quality/newness processing). High relevance, never assessed/adjudicated globally (including all canonical/DOI/arXiv/title aliases), not explicitly suppressed. Exclude original 28 calibration and all Batch-2/recovery/development identities. No quality inspection before roster freeze. No PDF-convenience filter, substitutions or quota transfers. This supersedes the prepared ten-per-track hash-order draft without modifying implementation selection logic.",
+  "audit_rule": "Freeze positions 1, floor(n/2)+1, n per track, all if n<3. After outcomes freeze additionally audit every promotion and every primary-pass/adjudicator-non-pass disagreement.",
+  "promotion_rule": "high relevance AND primary pass AND adjudicator pass AND nonempty canonical evidence citations AND no blockers AND provenance/integrity pass AND no suppression",
+  "adjudication": "One independent adjudicator call after every valid primary response including uncertain. Same canonical context, unmodified primary final structured response only; no hidden reasoning. Any disagreement fails closed.",
+  "cost_policy": {
+    "shared_ceiling_usd": 10,
+    "previous_charged_or_reserved_usd": 4.1615222546,
+    "remaining_usd": 5.8384777454,
+    "no_reset": true,
+    "reserve_basis": "Before every scientific request reserve one input token per actual serialized request byte plus output cap at frozen provider ceiling rates. Unknown usage retains reservation. Stop before ceiling; no substitutions/retries."
+  },
+  "historical_results": {
+    "ORIGINAL_BATCH_2_GENERALIZATION_RESULT": "FAIL",
+    "BATCH_2_RECOVERY_CHECK": "FAIL",
+    "BATCH_2_RECOVERY_V2_CHECK": "FAIL",
+    "QUALITY_PROMOTION_GATE_READY_FOR_BATCH_3": "YES"
+  },
+  "manual_corrections_permitted": false,
+  "frozen_file_sha256": {
+    ".github/scripts/check_generated_file_sizes.py": "0187aa2251df7402443001d4914fcf61257842f5dedfa42d830659813afbf3db",
+    ".github/scripts/check_paper_scout_site.py": "21626f322e36a5491c05f52dd2d1e896d0bd55aa4df0570f4ab3a0902ad2a031",
+    ".github/scripts/download-paper-scout-state.sh": "7bd123256c6df4bd1498b3aac79c9a564dcbacbf5f268e75996853085cd8dbde",
+    ".github/scripts/prepare_paper_scout_state.py": "4a0542516b560a6d4a71241606629ebafab00337b5100c1de72f9b7f20692ab4",
+    ".github/scripts/restore-paper-scout-state.sh": "d6cf8ae3d75face2d9148ee49ecd233bc71f6f9b2868905a00c2ff0f10711608",
+    ".github/scripts/upload-paper-scout-state.sh": "a2b1391db4e28028553657b80ca08190537b4989fcf2ed30c4116a175df200d1",
+    ".github/workflows/paper-scout-backfill.yml": "f62a80809dce019e7e0e2d4f409b2134f36cc4fa47ff471df7bfd3e603ca9c6d",
+    ".github/workflows/paper-scout-checks.yml": "14e6b2698b183a37970006a6db354eb7e9a2fb09456b2f70599e9cfab32862d2",
+    ".github/workflows/paper-scout.yml": "a00cf6499bbf2dfe170c12559b8d430275e56c622ecfc180144c19a3b8967574",
+    "config/curation.yaml": "391a7c3e79eaaa17ad7d4c3f3192318f00e36cf3a492527f1c2f59a27c9080be",
+    "config/curation/deep_research.yaml": "df0326ea9af81edb325d2fcafa48ae327daab2d51d913301525aa7e1fdbf5552",
+    "config/curation/engram.yaml": "bd302d16ac72868edd979fcedc01eb38e5948b3dd5e3bf42e6c3b28be94b8095",
+    "config/fixtures/engram-seeds.json": "f6751cd185fcf5a9d8b0e8943bb311d8a597299c1b60dc051c19e6234fdc064c",
+    "config/fixtures/zenodo-22735829.json": "f8f95708ac3b77ded2fdceeda9190fbdbd2852dac8a49eaf28e9d66de4e98534",
+    "config/paper_scout.yaml": "0e4eac35e315a7235567e1f361c616881da7e4681ee67f9606f88968ce4e855a",
+    "config/seeds/engram.json": "9cd44d1f32d9e3cb72f863e4bef550b0eed4cb3c1c85f0d7822daf63bce31dd8",
+    "config/tracks/agent_memory.yaml": "35f522f663bd39d727e9188efb1d1caec91c9a5495e34a23d87a0e81427b7ce0",
+    "config/tracks/deep_research.yaml": "640dc37ca536026914613cff0db5e17a4a6a7cce3c2a2137abaa38a4d809904b",
+    "config/tracks/engram.yaml": "7de21c164e2a71093ffaebf86b5835c25528140e5ed19eec382ada0778c2cb32",
+    "paper_scout/__init__.py": "7ec4a34de9403d4eee868160ecf064791cf64c81d7d1b7b17ad3fb02fbbd0bd3",
+    "paper_scout/__main__.py": "769823c40ad688578778414cb68f335799a09efb4f2bcd540311fe2624945f60",
+    "paper_scout/cli.py": "912f84d452f423140c70fd00d9545cff67727a06dcb6ea189a325d2cc7143bae",
+    "paper_scout/config.py": "e7d647cc0c46de6ad662f2ad63f4e5600f9aedfe005fefc7ee788fe7c509ae9e",
+    "paper_scout/curation.py": "cec1b8a60f72191c7c7c38fe1a0d04344315d54a3530465e153b80f9eda8e510",
+    "paper_scout/dates.py": "fec106660c918e7111f8c6ff17b55429d45bb2a53696d706671e0b85c3911ea7",
+    "paper_scout/deduplication.py": "06bbcd0c21c552ae168c8fc13cfd6d87b17c16cb264c0289aadf5e5051724a91",
+    "paper_scout/digest.py": "7e7fa329c97bd8c99227e76440424fbfbcd2712d16dd4e2f1109cdffecbd63fb",
+    "paper_scout/digest_quality.py": "96ec53bfe49ab255af8383553d5ce91c27e054f7405f5a5616d646adfa300c62",
+    "paper_scout/discovery_evaluation.py": "7623938286444d214bceab100d90659f0d7d601208701f4309995d2d2eec98c4",
+    "paper_scout/engram.py": "cf0e6bf64759dfabbf622c5a26500db280a3934d7b25b53aea41e808cc105463",
+    "paper_scout/engram_evaluation.py": "2919388adb1996dd78c8f42087e0160cd6df6c8d3c2833a72bf8660bf12b6c46",
+    "paper_scout/enrichment.py": "dc46898571d1b2ccb6c63aa6a961c5c5d4c2d7c2ab0badc6e83dccbea379d8da",
+    "paper_scout/evaluation.py": "d92a5bc180a02d4f0ac942d635bde4230e9134eebd4655618796d1be9cb083b3",
+    "paper_scout/evidence_atoms.py": "77d6bbc4b09fa4915a5581316e4c39adadd6ca9df1ca4438dda78bb05ef42c53",
+    "paper_scout/evidence_context.py": "d95caf466ec3712d2adf84cbff4e00c9fcfdc99966b826f56a8094b853f88f69",
+    "paper_scout/evidence_semantics.py": "ad59b7c2fb9b6a7ebc5a57cbed9df52fe69040144b4a8e267eb1310aafd60430",
+    "paper_scout/evidence_support.py": "8327c9bb0c7021d9b334cdc08f9449350f3fb37dad906b105e84666f1acdae01",
+    "paper_scout/fetchers/__init__.py": "64a2108744aacfafd6a3437b2b2ba158c12313c510cbf2d00b375105306c95ed",
+    "paper_scout/fetchers/arxiv.py": "4e6e77533719db99f5071400643dc71053923215d5d0d60b3f0406287dbbaf3f",
+    "paper_scout/fetchers/openalex.py": "3baa7387b9f59e513514c29c39a385dc46af878b59b20905e412ed43dc2f3de4",
+    "paper_scout/fetchers/semantic_scholar.py": "27b3ef4828ab4320c9fd70c6390cd7d0b76edc1016ac3fcf26ed6d477c717436",
+    "paper_scout/full_text.py": "91d3479dc643057ec7997ebd5a827f2c3da2ccd71173344a751eea308e0899c8",
+    "paper_scout/http.py": "b72e78d3f9ea8c211bf3af80860989570d81280a97b4c43f266493f66102e7d8",
+    "paper_scout/ingestion.py": "05c25baf21dfe2af8bb1e25d32635afe1a8ef7454e6b122403e23ab218a13edc",
+    "paper_scout/llm.py": "64f0eca923ad5c7506e5acd7e4f0627eaa37e697664861732fcaa9da7f595f58",
+    "paper_scout/models.py": "28d6d8580115f8e0c9158d55843f3e737f3f19cce39be9ccb2a9f73409795602",
+    "paper_scout/notifications.py": "1c4646b6e67608d46d32e02c7fa0e43802ee01fcb947873a1ceee8814eff68f6",
+    "paper_scout/promotion_gate.py": "2601e65c2dee109ca029a01596b62dbb02865420657a6293a48acac65bf70ef0",
+    "paper_scout/promotion_protocol.py": "d671bd52d32397c7afc92b0ba5ed5dbe80a7a60cd39b6d56b3cd64af72674430",
+    "paper_scout/publication.py": "a6cb8552210fdc2784d3fc8ff448a80f6f0eb46833632104deafd430e4036c8a",
+    "paper_scout/quality.py": "b194b3f7abad492644bd3c1cbff720d0df8f17f9e00514c1f5390c41ce8e5faa",
+    "paper_scout/quality_evaluation.py": "a5d99546cc07f2b7b04492531b36bc5803a5492ae45520b68196394ed8d8b6ff",
+    "paper_scout/quality_llm.py": "f698c96c478085ae2aecf10d9e4a2a1713a0dc8c51de76c00be90d33862f76b2",
+    "paper_scout/quality_models.py": "7a45147e64302abf057a08b8b45396226fc0ae3614af7300bc69912c5fc04912",
+    "paper_scout/quality_report.py": "25a210f6ebad4e66afe91c5d0fe511f17ede5e78d3fdb7cb5bdaa86e01b05bc8",
+    "paper_scout/quality_service.py": "b697876d4105beb3f82696be829dc916961d5548a63920c1da5eee0e694e7e3c",
+    "paper_scout/query_planner.py": "6a4298ed7202600017ba73da670a81fdd04fdac380461f3739df8406828c0ac5",
+    "paper_scout/relevance.py": "58eb769bf68b6877088b0467e4b314afc8dc9dc8795111c909eedc2503e3a4c9",
+    "paper_scout/runtime_snapshot.py": "00b7f3c99eed43565a562749137275171e7cdb6b8df50d8ea7cb69c7b3e47c21",
+    "paper_scout/scout.py": "0a9bff1a7748927dc65fe73b4e0349e54666ccaa059d161fa43997390967561c",
+    "paper_scout/seeds.py": "fe939fd9aed3994773b38124a43cb12ca2637e6d6aa84354f34f688bc3820295",
+    "paper_scout/site.py": "6821ce90ea47fdc22ab4f1f9eca9438327df632b4ce79737a415f083254d5b3e",
+    "paper_scout/source_errors.py": "4c76b20a1fed51338806295fbd75e5be2a1c3f7e55340fc63453008837f5f62e",
+    "paper_scout/state.py": "62622b09743930461e50ddf7bea4f036303dbb6035b9e975e528604d13050653",
+    "paper_scout/structured_cards.py": "6db9e1e9799bf0568c2683d8487edc36fdc27343ffccd93c0240c37b97ee6e1e",
+    "paper_scout/validation.py": "e76252001ede8597c9aafed41b28a7310b9ddfbd629b7c3e3fd005ffab3bec23",
+    "requirements-dev.txt": "6b193ed79ce812f82e1f6fcc87618ef40a9e3b393b82525d47a305602cd028da",
+    "requirements.txt": "80ea07bbe322609280a084da3bd450cfdd6c9319ca3f369f991ae0a100d902b0",
+    "tests/fixtures/batch2_artifact_failures.json": "e031364230ae64d34de6164885455b67604bceccdaf1974b255bd9fdf68a7518",
+    "tests/fixtures/batch2_typed_evidence.json": "29568de3a1b1cc8b2e70f5bb8faae8114a5e0e6dff47429644a9ba0311798b23",
+    "tests/fixtures/cross_section_real_science.json": "d3a2e16b86a95e659f3a9e58877aec302c7df5fafdb3d6fb84e4c51bb89fc4e7",
+    "tests/fixtures/evidence_semantics_cases.json": "107059daff3978316dc9e2f08a620590586477a54c5ad04216f226303196ead9",
+    "tests/fixtures/final_grounding_conditional-memory.json": "f561f0282183fe5a50b0a74ffc8a2c40bbd56c790f48431f19c25c7c89ba255d",
+    "tests/fixtures/final_grounding_real-science.json": "3e89e19395d6678f0e577d9a8d7f6e8a9cc3f65330bf1012a42d3fce421138c5",
+    "tests/fixtures/final_grounding_scimmr.json": "35e32e249367250db17fe61ff218f1f5a43ef2928ba1f1ed514633d12c771bdc",
+    "tests/test_batch2_recovery.py": "709c0bd2d5b3ae8a2bdce5cbd1b362d3de96d90c5c49e5a62c63c69eb2005136",
+    "tests/test_cross_section_compatibility.py": "626732d27993b09865a117368aee8700af910252a662ec73a05b481204dfd727",
+    "tests/test_evidence_context.py": "26bd7ec826f96fe5a7688debccf309991372133f79e133fec7f4fb2bdd165893",
+    "tests/test_evidence_semantics.py": "9f2cb6d8ffa7599412ed4b820ade81b6d0c5ca0c1abbb9923d4764ee50d3c895",
+    "tests/test_final_grounding_defects.py": "b18d00ac8584f55b5c033aed74ceea991ff0e68ded5d2886cc08355039c08a80",
+    "tests/test_generated_file_size_guard.py": "f12d2a60c911aa7135301e95d424add513325ec3591d38a354b085e10f7bcc9d",
+    "tests/test_paper_scout_cli.py": "7f8c8e68216b1971de4001542c6460fb5db2e77d2c200e7eba1ebfc60a8983e4",
+    "tests/test_paper_scout_config.py": "ce977cad18c7a5c571b0ca14e3e9d626312249afaa07b30bfa7cbda95d079672",
+    "tests/test_paper_scout_database.py": "0115796ba3c9ce9241ceb91751c049b2b134e0b37cbfb30ef4035ddfb8c52edf",
+    "tests/test_paper_scout_deduplication.py": "88a1dc7849e5066ebba7fb24aad6d3107b789f842165845bd6a659fa27c1982f",
+    "tests/test_paper_scout_digest.py": "572033a1fce858aea0a5e2410c14ec1786e4ab4fa0a0dd218a7e050b5c3ee24c",
+    "tests/test_paper_scout_digest_quality.py": "04a1a0c6d31a15326a4941cb7afd50d71f711e319536731076ee018bf209a36e",
+    "tests/test_paper_scout_discovery.py": "78f2555a7242d5a2300b9b36440fc8ef72bcde1722a8584aa4fddaa5128cfb3d",
+    "tests/test_paper_scout_engram.py": "6b9ae951668692ae58ca52c88cfa20c7414c3dbc48994074433c0c22429f90a0",
+    "tests/test_paper_scout_engram_requests.py": "18bb317e51c2bb192a442eabf3579dbbdb34ae30e2c8b920be260aed0662390b",
+    "tests/test_paper_scout_engram_state.py": "585701c40c4ace1a3e9936b7bbd9ac21344151b5173ed70d2e7a6fdb4883dc03",
+    "tests/test_paper_scout_enrichment.py": "ef33c628a18725b9b446926203b2546dad77b7135b7ce14cb36e86f58e572ff8",
+    "tests/test_paper_scout_fetchers.py": "06f22c5c998382c8f9e2db88e575f7485f6ee580712d896fb01ea8a65ca19d67",
+    "tests/test_paper_scout_live_smoke.py": "aacc2b407783a369ae8ece71125deab59ef722aa22ba2d898c91720b7d256c2c",
+    "tests/test_paper_scout_quality.py": "20390c9dd6fb9439ce3e4d16edf480745a25c88008d59583d3cc8e246200f21b",
+    "tests/test_paper_scout_quality_site.py": "d55a360f6466358cce32b206d9c33b2cdf30de85597a941973103eaa8d503529",
+    "tests/test_paper_scout_quality_state.py": "2376c9069c96b95a118274ddfabf72e14f3e2d3cad26ac3c50c86a4d90b5141d",
+    "tests/test_paper_scout_relevance.py": "87bef6359efcbcae3c0cc00aaacf1dd13de7e4f44386b2358e432997b222a326",
+    "tests/test_paper_scout_review_regressions.py": "f8ff555027d03df6486d53994bba0151fa7bb54179a12862b963af2f10d3b159",
+    "tests/test_paper_scout_run.py": "a37c41387756f985830e27c93da599f107611f9fddbe6b10b176e50cc2e2efcb",
+    "tests/test_paper_scout_scientific_gate.py": "0c53fe26576599ef9ad380651575baf304941284db143487e9b6913eee1627ba",
+    "tests/test_paper_scout_site.py": "fa0c44ca15f83d8b662b2008651258932575f7326d6a31f45ba08cf3a5bd8ceb",
+    "tests/test_paper_scout_state_migration.py": "070f9bbeb530b36b184750683ad03bd3c498ca6a47c4acdbb18c90e771a7d083",
+    "tests/test_paper_scout_state_snapshot.py": "bf862a0f57b0467d0da37f4bc694a6f8c121ab02c39b83b1bf31f070a7f22146",
+    "tests/test_paper_scout_structured_cards.py": "c045e8728ff82fc5fcedb401ef927617f40810502c8f826dce832b5603057e2b",
+    "tests/test_promotion_gate.py": "91884be73dde2453580229bf312e5d86dbe58fc1bb817dda85bd4d4579f5b801",
+    "tests/test_quality_reliability.py": "eb7d5b3365c158cfd60dc711f5322b9b539e84e23c8a86886fd06318620feac2",
+    "tests/test_quality_text_coverage.py": "45bc26baa5bf97fb9474ed2e05804b2bb48f707a4ad6c57cb046db128a1a41f9",
+    "tests/test_typed_evidence.py": "e2effce28301b75349207ef0250fe71ab4676ef499b77726ee4367d40bbab644"
+  },
+  "config": {
+    "agent_memory": {
+      "enabled": true,
+      "mode": "auto",
+      "assessment": {
+        "version": "quality-promotion-v1",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 5
+      },
+      "full_text": {
+        "enabled": true,
+        "cache_dir": "data/cache/full_text/agent_memory",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "downrank",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    },
+    "deep_research": {
+      "enabled": true,
+      "mode": "auto",
+      "assessment": {
+        "version": "quality-promotion-v1",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 5
+      },
+      "full_text": {
+        "enabled": true,
+        "cache_dir": "data/cache/full_text/deep_research",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "downrank",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    },
+    "engram": {
+      "enabled": true,
+      "mode": "deterministic",
+      "assessment": {
+        "version": "quality-promotion-v1",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 4
+      },
+      "full_text": {
+        "enabled": false,
+        "cache_dir": "data/cache/full_text/engram",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "annotate",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    }
+  },
+  "stop_rule": "Catastrophic systematic wrong-manuscript/cross-paper contamination, corrupt provenance/persistence, secrets exposure or frozen implementation mismatch: preserve evidence and stop; never patch/resume under Batch 3. Ordinary uncertainty/disagreement/nonpromotion continues.",
+  "generalization_criteria": [
+    "no catastrophic defect",
+    "low isolated explained technical failures",
+    "zero manual corrections",
+    "all promotions defensible",
+    "no systematic unsupported claims in promotions",
+    "disagreements fail closed",
+    "correct provenance",
+    "no systematic extreme conservatism in audits",
+    "independence preserved",
+    "history unchanged",
+    "full validation passes"
+  ]
+}

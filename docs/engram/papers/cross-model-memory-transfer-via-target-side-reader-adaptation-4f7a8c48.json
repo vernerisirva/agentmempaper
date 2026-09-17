@@ -39,7 +39,7 @@
     "curation_note": "manually added",
     "date_source": "openalex",
     "first_seen_at": "2026-09-05 17:59:23",
-    "generated_at": "2026-09-17 12:30:57",
+    "generated_at": "2026-09-17 19:18:13",
     "last_seen_at": "2026-09-17 11:51:26",
     "metadata_sources": [
       "openalex",
@@ -1334,6 +1334,7 @@
       "The paper acknowledges limitations regarding scale, language diversity, and reader design space, and reports negative results on TruthfulQA.",
       "The paper demonstrates transfer gains across diverse model families, tokenizers, and scales, supporting the novelty of portable external memory."
     ],
+    "promotion": {},
     "rationale": "This is a well-executed empirical study of cross-model frozen-memory transfer. The contribution is clearly formulated as an operational test of whether external memory remains useful after source backbone removal. The methodology is rigorous, with controlled ablations isolating memory content, addressing integrity, and reader design. The evaluation is extensive, spanning multiple model families, tokenizers, scales, and downstream tasks, with appropriate controls including permuted keys, random memory, and parameter-matched FFN baselines. The central claim that reader design is first-order is well supported by the dual-layer and multi-branch ablation results. The paper also demonstrates intellectual honesty by reporting negative results on TruthfulQA and acknowledging that transfer primarily improves initialization rather than asymptotic ceiling. Limitations are explicitly discussed. The main weaknesses are minor presentation issues in the appendix, including apparent internal notes or incomplete edits, and some informal phrasing. Overall, the evidence chain is strong and the conclusions are appropriately scoped.",
     "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",

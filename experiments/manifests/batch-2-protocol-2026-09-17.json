@@ -1,0 +1,327 @@
+{
+  "run_id": "paper-scout-batch-2-2026-09-17",
+  "data_designation": "held_out",
+  "execution_purpose": "out_of_sample_pipeline_evaluation",
+  "frozen_code_sha": "82ecd6b577a420e14a569225b0442d9d679a0a08",
+  "roster_manifest": "batch-2-roster-2026-09-17.json",
+  "roster_sha256": "af89dc0d58a24b3e894a15794447e7af4ff96fde40989b70c7ab5e1b355e6d82",
+  "counts": {
+    "agent_memory": 10,
+    "deep_research": 10,
+    "engram": 0
+  },
+  "assessment_version": "quality-cross-section-v1",
+  "rubric_version": "scholarly-rubric-v1",
+  "quality_gate_version": "scientific-gate-v1",
+  "evidence_schema_version": "block-evidence-v2",
+  "eligibility_policy": "cross-section-support-v1",
+  "assessment_schema_sha256": "56c1a61ade6210e360ce8e967806136e54652b44c0c1777b353beaa2c27c007d",
+  "model": "deepseek/deepseek-v4-pro-0813",
+  "provider": "openrouter",
+  "generation": {
+    "temperature": 0,
+    "reasoning": {
+      "enabled": false,
+      "exclude": true
+    },
+    "max_output_tokens": 8192,
+    "seed": "not supplied; temperature zero is not a guarantee of bitwise reproducibility",
+    "response_format": "strict scientific_quality JSON schema",
+    "provider_require_parameters": true
+  },
+  "verifier": {
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "version": "claim-support-v1",
+    "temperature": 0,
+    "max_output_tokens": 4096,
+    "max_request_bytes": 250000,
+    "reasoning": {
+      "enabled": false,
+      "exclude": true
+    },
+    "calls_per_assessed_paper_maximum": 1,
+    "retry_maximum": 0,
+    "scope": "one batch of claim/explanation/own canonical snippets plus the existing narrative union"
+  },
+  "retry_policy": {
+    "assessment_attempts_maximum": 2,
+    "shared_retry_maximum": 1,
+    "conditions": "existing transient transport, truncated output, or schema-valid nonsubstantive result only",
+    "verifier_attempts_maximum": 1,
+    "socket_timeout_seconds": 180
+  },
+  "runtime_cli_overrides": {
+    "mode": "llm",
+    "full_text": true,
+    "force": false,
+    "assessment_version": "quality-cross-section-v1",
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "note": "Same scientific execution settings as the final calibration run; no configuration files or prompt semantics are changed."
+  },
+  "track_configuration": {
+    "agent_memory": {
+      "enabled": true,
+      "mode": "auto",
+      "assessment": {
+        "version": "quality-v2",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 5
+      },
+      "full_text": {
+        "enabled": true,
+        "cache_dir": "data/cache/full_text/agent_memory",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "downrank",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    },
+    "deep_research": {
+      "enabled": true,
+      "mode": "auto",
+      "assessment": {
+        "version": "quality-v2",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 5
+      },
+      "full_text": {
+        "enabled": true,
+        "cache_dir": "data/cache/full_text/deep_research",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "downrank",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    },
+    "engram": {
+      "enabled": true,
+      "mode": "deterministic",
+      "assessment": {
+        "version": "quality-v2",
+        "rubric_version": "scholarly-rubric-v1",
+        "assess_relevant": true,
+        "assess_maybe_relevant": true,
+        "assess_irrelevant": false,
+        "max_assessments_per_run": 4
+      },
+      "full_text": {
+        "enabled": false,
+        "cache_dir": "data/cache/full_text/engram",
+        "timeout_seconds": 20,
+        "max_pdf_megabytes": 20,
+        "max_pages": 80,
+        "max_extracted_characters": 400000,
+        "max_prompt_characters": 180000,
+        "max_section_characters": 8000
+      },
+      "ranking": {
+        "behavior": "annotate",
+        "relevance_weight": 0.75,
+        "quality_weight": 0.25,
+        "downrank_below": 60,
+        "weak_below": 55,
+        "hide_below": 40,
+        "minimum_confidence_for_hiding": "high",
+        "unknown_quality_is_neutral": true
+      },
+      "display": {
+        "show_score": true,
+        "show_confidence": true,
+        "show_scope": true,
+        "show_strengths": 2,
+        "show_concerns": 3,
+        "show_evidence": true
+      }
+    }
+  },
+  "frozen_file_sha256": {
+    ".github/scripts/check_generated_file_sizes.py": "0187aa2251df7402443001d4914fcf61257842f5dedfa42d830659813afbf3db",
+    ".github/scripts/check_paper_scout_site.py": "21626f322e36a5491c05f52dd2d1e896d0bd55aa4df0570f4ab3a0902ad2a031",
+    ".github/scripts/download-paper-scout-state.sh": "7bd123256c6df4bd1498b3aac79c9a564dcbacbf5f268e75996853085cd8dbde",
+    ".github/scripts/prepare_paper_scout_state.py": "4a0542516b560a6d4a71241606629ebafab00337b5100c1de72f9b7f20692ab4",
+    ".github/scripts/restore-paper-scout-state.sh": "d6cf8ae3d75face2d9148ee49ecd233bc71f6f9b2868905a00c2ff0f10711608",
+    ".github/scripts/upload-paper-scout-state.sh": "a2b1391db4e28028553657b80ca08190537b4989fcf2ed30c4116a175df200d1",
+    ".github/workflows/paper-scout-backfill.yml": "f62a80809dce019e7e0e2d4f409b2134f36cc4fa47ff471df7bfd3e603ca9c6d",
+    ".github/workflows/paper-scout-checks.yml": "14e6b2698b183a37970006a6db354eb7e9a2fb09456b2f70599e9cfab32862d2",
+    ".github/workflows/paper-scout.yml": "4917661a51907ed0bd781674f21b58e0534f708af06209c545ab31aed98ad4dd",
+    "config/curation.yaml": "391a7c3e79eaaa17ad7d4c3f3192318f00e36cf3a492527f1c2f59a27c9080be",
+    "config/curation/deep_research.yaml": "df0326ea9af81edb325d2fcafa48ae327daab2d51d913301525aa7e1fdbf5552",
+    "config/curation/engram.yaml": "bd302d16ac72868edd979fcedc01eb38e5948b3dd5e3bf42e6c3b28be94b8095",
+    "config/fixtures/engram-seeds.json": "f6751cd185fcf5a9d8b0e8943bb311d8a597299c1b60dc051c19e6234fdc064c",
+    "config/fixtures/zenodo-22735829.json": "f8f95708ac3b77ded2fdceeda9190fbdbd2852dac8a49eaf28e9d66de4e98534",
+    "config/paper_scout.yaml": "5650e96fe7e1dd036874a0c3fa2cc3deed8771e3547ee19f20ccf12cca369b29",
+    "config/seeds/engram.json": "9cd44d1f32d9e3cb72f863e4bef550b0eed4cb3c1c85f0d7822daf63bce31dd8",
+    "config/tracks/agent_memory.yaml": "afa04e6cc0e7af682b51c6a093ae65414e3005a7c6bbe3d9904ee4485088179a",
+    "config/tracks/deep_research.yaml": "b4ab36517228c4f1d637103f77873f45078781dbcf7280f73ac91ad51ef46ca0",
+    "config/tracks/engram.yaml": "7de21c164e2a71093ffaebf86b5835c25528140e5ed19eec382ada0778c2cb32",
+    "paper_scout/__init__.py": "7ec4a34de9403d4eee868160ecf064791cf64c81d7d1b7b17ad3fb02fbbd0bd3",
+    "paper_scout/__main__.py": "769823c40ad688578778414cb68f335799a09efb4f2bcd540311fe2624945f60",
+    "paper_scout/cli.py": "ba351fdd435f030c118229a027380fd8d74b89bf88619b049f111d21c03c17ce",
+    "paper_scout/config.py": "e1d504c8270c5ce30e29526d3bdee52f767d3b50030b6c08093734fa0f158b38",
+    "paper_scout/curation.py": "cec1b8a60f72191c7c7c38fe1a0d04344315d54a3530465e153b80f9eda8e510",
+    "paper_scout/dates.py": "fec106660c918e7111f8c6ff17b55429d45bb2a53696d706671e0b85c3911ea7",
+    "paper_scout/deduplication.py": "06bbcd0c21c552ae168c8fc13cfd6d87b17c16cb264c0289aadf5e5051724a91",
+    "paper_scout/digest.py": "7e7fa329c97bd8c99227e76440424fbfbcd2712d16dd4e2f1109cdffecbd63fb",
+    "paper_scout/digest_quality.py": "96ec53bfe49ab255af8383553d5ce91c27e054f7405f5a5616d646adfa300c62",
+    "paper_scout/discovery_evaluation.py": "7623938286444d214bceab100d90659f0d7d601208701f4309995d2d2eec98c4",
+    "paper_scout/engram.py": "cf0e6bf64759dfabbf622c5a26500db280a3934d7b25b53aea41e808cc105463",
+    "paper_scout/engram_evaluation.py": "2919388adb1996dd78c8f42087e0160cd6df6c8d3c2833a72bf8660bf12b6c46",
+    "paper_scout/enrichment.py": "dc46898571d1b2ccb6c63aa6a961c5c5d4c2d7c2ab0badc6e83dccbea379d8da",
+    "paper_scout/evaluation.py": "d92a5bc180a02d4f0ac942d635bde4230e9134eebd4655618796d1be9cb083b3",
+    "paper_scout/evidence_context.py": "14daf334672795666ec78cc3bb623c9b41fdb20bdd19acf8bc3983987ab5e66a",
+    "paper_scout/evidence_semantics.py": "a95349c255a242370200794e2d24a401e94288d45e2fe9385465ee6fdf36bdd6",
+    "paper_scout/fetchers/__init__.py": "64a2108744aacfafd6a3437b2b2ba158c12313c510cbf2d00b375105306c95ed",
+    "paper_scout/fetchers/arxiv.py": "4e6e77533719db99f5071400643dc71053923215d5d0d60b3f0406287dbbaf3f",
+    "paper_scout/fetchers/openalex.py": "3baa7387b9f59e513514c29c39a385dc46af878b59b20905e412ed43dc2f3de4",
+    "paper_scout/fetchers/semantic_scholar.py": "27b3ef4828ab4320c9fd70c6390cd7d0b76edc1016ac3fcf26ed6d477c717436",
+    "paper_scout/full_text.py": "1e924c5b0acd060f4287aefeceba78e3a577dc168459bac1c3958f1c99bbb22a",
+    "paper_scout/http.py": "b72e78d3f9ea8c211bf3af80860989570d81280a97b4c43f266493f66102e7d8",
+    "paper_scout/ingestion.py": "05c25baf21dfe2af8bb1e25d32635afe1a8ef7454e6b122403e23ab218a13edc",
+    "paper_scout/llm.py": "64f0eca923ad5c7506e5acd7e4f0627eaa37e697664861732fcaa9da7f595f58",
+    "paper_scout/models.py": "28d6d8580115f8e0c9158d55843f3e737f3f19cce39be9ccb2a9f73409795602",
+    "paper_scout/notifications.py": "1c4646b6e67608d46d32e02c7fa0e43802ee01fcb947873a1ceee8814eff68f6",
+    "paper_scout/publication.py": "a6cb8552210fdc2784d3fc8ff448a80f6f0eb46833632104deafd430e4036c8a",
+    "paper_scout/quality.py": "b194b3f7abad492644bd3c1cbff720d0df8f17f9e00514c1f5390c41ce8e5faa",
+    "paper_scout/quality_evaluation.py": "a5d99546cc07f2b7b04492531b36bc5803a5492ae45520b68196394ed8d8b6ff",
+    "paper_scout/quality_llm.py": "7e3780147bc7a72fb4c881be8cabdceaf3d9e2a77cfd42a7bc70c9208f8756cc",
+    "paper_scout/quality_models.py": "c1f62b480eef11ece0183f91bd2d2e5da1ba5a4236f4bfdfc7be59f575fe124b",
+    "paper_scout/quality_report.py": "25a210f6ebad4e66afe91c5d0fe511f17ede5e78d3fdb7cb5bdaa86e01b05bc8",
+    "paper_scout/quality_service.py": "bb7c3673398b34f5647affeb1d58d8ad813695d3c4cd0eae4a2358d85cf46e51",
+    "paper_scout/query_planner.py": "6a4298ed7202600017ba73da670a81fdd04fdac380461f3739df8406828c0ac5",
+    "paper_scout/relevance.py": "58eb769bf68b6877088b0467e4b314afc8dc9dc8795111c909eedc2503e3a4c9",
+    "paper_scout/runtime_snapshot.py": "00b7f3c99eed43565a562749137275171e7cdb6b8df50d8ea7cb69c7b3e47c21",
+    "paper_scout/scout.py": "0a9bff1a7748927dc65fe73b4e0349e54666ccaa059d161fa43997390967561c",
+    "paper_scout/seeds.py": "fe939fd9aed3994773b38124a43cb12ca2637e6d6aa84354f34f688bc3820295",
+    "paper_scout/site.py": "1e254eb19eb93c7b5f9af46b31f2484579830cf0a1844077fff11efb7d667d43",
+    "paper_scout/source_errors.py": "4c76b20a1fed51338806295fbd75e5be2a1c3f7e55340fc63453008837f5f62e",
+    "paper_scout/state.py": "5c81383b2163153c9717a7d1f488d2712dfd79777eae2e02851a7c83424a835a",
+    "paper_scout/structured_cards.py": "6db9e1e9799bf0568c2683d8487edc36fdc27343ffccd93c0240c37b97ee6e1e",
+    "paper_scout/validation.py": "e76252001ede8597c9aafed41b28a7310b9ddfbd629b7c3e3fd005ffab3bec23",
+    "requirements-dev.txt": "6b193ed79ce812f82e1f6fcc87618ef40a9e3b393b82525d47a305602cd028da",
+    "requirements.txt": "80ea07bbe322609280a084da3bd450cfdd6c9319ca3f369f991ae0a100d902b0"
+  },
+  "execution_order": "track-local selected position; at most two track workers run concurrently, with unchanged production acquisition/assessment/save functions and a shared spending ledger",
+  "hard_operating_budget_usd": 10,
+  "cost_estimate": {
+    "currency": "USD",
+    "endpoint_rates_per_token": {
+      "input": 1.65e-06,
+      "output": 4.95e-06
+    },
+    "pricing_basis": "OpenRouter public model endpoints checked 2026-09-17; maximum listed DeepSeek input/output rates. Prior same-day artifact retained.",
+    "assumed_initial_tokens": {
+      "input": 60000,
+      "output": 3000
+    },
+    "assumed_verifier_tokens": {
+      "input": 20000,
+      "output": 1000
+    },
+    "no_retry_all_20_assessable_usd": 3.036,
+    "one_retry_for_every_paper_usd": 5.313,
+    "limitations": "Planning estimates, not worst-case guarantees. No PDF-availability filtering. Actual sent request bytes/output caps reserve funds under a shared $10 stop ceiling before each call; provider usage replaces a reservation only when returned. Unknown-charge calls retain their reserve."
+  },
+  "technical_acceptability_rule": {
+    "catastrophic_defects_allowed": 0,
+    "manual_corrections_allowed": 0,
+    "historical_mutations_allowed": 0,
+    "avoidable_grounding_protocol_coverage_failures_allowed": 0,
+    "isolated_external_failure_tolerance": "At most one explained noncatastrophic external technical failure in 20 selected papers (5%); no common failure pattern. Unavailable manuscripts are separately classified. The final scientific audit can still fail the batch regardless of rates."
+  },
+  "scientific_success_rule": "No target pass rate. Every pass must survive observational grounding/calibration audit. Any serious false pass or systematic unsupported-claim pattern fails. Scientific uncertainty/insufficiency may be legitimate but must not disguise infrastructure failures.",
+  "predefined_audit_sample": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22671447",
+      "title": "MBM-0: Memory Birth Metrics v0",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "title": "Closing the Consistency Gap: Self-Evolving Agents That Learn to Stay on Course",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "title": "Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.65649/ukh4n33x",
+      "title": "A New Paradigm: Agentic AI for Scientific Discovery",
+      "selected_position": 1,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.5281/zenodo.21523008",
+      "title": "AutoResearch: A Multi-Agent AI System for Automated Literature Review, Paper Summarization, and Citation Mapping",
+      "selected_position": 6,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "openalex:W7171268386",
+      "title": "AREX: Towards a Recursively Self-Improving Agent for Deep Research",
+      "selected_position": 10,
+      "selection_rule": "first, floor(n/2)+1, last; all if fewer than three"
+    }
+  ],
+  "stop_rule": "Only catastrophic identity/provenance/input/data-loss/secret defect stops the scientific batch. A depleted safety budget pauses before another paid request; never silently drop or replace roster entries. Isolated technical failures are retained and the frozen batch continues.",
+  "post_freeze_changes_allowed": [
+    "operator logging, reports and generated outputs only; no change to any evaluator/configuration byte"
+  ],
+  "batch_3_permitted": false
+}

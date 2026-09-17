@@ -12,7 +12,8 @@ from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.promotion_protocol import (
     ASSESSMENT_VERSION, GATE_VERSION, PRIMARY_MODEL, ADJUDICATOR_MODEL, RUBRIC,
-    agreement, schema, source_block, validate_context, validate_pair, validate_response,
+    RECEIPT_VERSION, agreement, canonical_json, parse_response, response_binding,
+    schema, source_block, validate_context, validate_pair,
 )
 from paper_scout.quality_models import QualityEvidence
 from paper_scout.quality_llm import _reported_usage
@@ -69,7 +70,7 @@ blocking reasons and your own evidence IDs. No hidden reasoning is supplied or r
     return payload
 
 
-def call_model(role, settings, context, payload, client, calls):
+def call_model(role, settings, context, payload, client, calls, run_id):
     call = {'kind': role, 'model': settings.model, 'context_id': context.context_id,
             'status': 'failed', 'usage': _reported_usage({}),
             'request_sha256': digest(json.dumps(payload, ensure_ascii=False, sort_keys=True))}
@@ -96,13 +97,18 @@ def call_model(role, settings, context, payload, client, calls):
     if not isinstance(content, str):
         raise ValueError('non-text completion')
     call['content_sha256'] = digest(content)
-    value = validate_response(json.loads(content), role, context)
+    # Preserve the exact final response, never provider hidden-reasoning fields.
+    call['raw_content'] = content
+    value = parse_response(content, role, context)
+    call['canonical_response_sha256'] = digest(canonical_json(value))
+    call['response_binding_sha256'] = response_binding(call, run_id)
     call['status'] = 'success'
     return value
 
 
 def assess_promotion(candidate, selected, seed, mode, http=None):
     receipt = {'outcome': 'not_assessed', 'calls': [], 'run_id': uuid.uuid4().hex,
+               'receipt_version': RECEIPT_VERSION,
                'total_request_limit': 2, 'attempt_limit_per_role': 1}
     base = dict(assessment_version=ASSESSMENT_VERSION, quality_gate_version=GATE_VERSION,
                 quality_status='uncertain', overall_quality_score=None, recommendation='unknown',
@@ -140,13 +146,14 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
         if type(getattr(client, 'retries', None)) is int and client.retries != 1:
             raise ValueError('promotion client cannot retry calls')
         primary_payload = request_payload('primary', primary_settings, context, selected.coverage)
-        primary = call_model('primary', primary_settings, context, primary_payload, client, receipt['calls'])
+        primary = call_model('primary', primary_settings, context, primary_payload, client,
+                             receipt['calls'], receipt['run_id'])
         receipt['primary'] = primary
         # Both judgments are retained even when primary is uncertain; never up to 13 verifiers.
         adjudicator_payload = request_payload('adjudicator', adjudicator_settings, context,
                                               selected.coverage, primary)
         adjudicator = call_model('adjudicator', adjudicator_settings, context, adjudicator_payload,
-                                 client, receipt['calls'])
+                                 client, receipt['calls'], receipt['run_id'])
         receipt['adjudicator'] = adjudicator
         validate_context(context, selected)
         passed = agreement(primary, adjudicator)

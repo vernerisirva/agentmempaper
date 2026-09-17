@@ -331,6 +331,24 @@ socket timeout is not a total wall-clock deadline. Usage records retain unknown 
 unknown. Before live work, freeze a manifest and reserve the bounded cost under an
 approved batch ceiling. See the [cost and protocol manifest](experiments/manifests/quality-promotion-gate-2026-09-17.json).
 
+Completed dual-gate judgments use `canonical-response-v1` receipts for both roles.
+The boundary is strict JSON parsing → unchanged schema/identity validation → sorted-key,
+compact JSON serialized as UTF-8 → SHA-256. JSON layout and object-key ordering are
+insignificant; array order, all fields and every string character remain exact. Duplicate
+keys, non-JSON constants, invalid Unicode and unsupported fields fail closed. Decision
+enums remain exact (`" pass "` is invalid); scientific prose and source excerpts are never
+trimmed or Unicode-normalized by the receipt layer. Canonical manuscript excerpts bypass
+the legacy optional-display-text trimmer, preserving source hashes and offsets.
+
+Private runtime receipts retain each exact final-response content string and its raw
+hash separately from the canonical hash. A further checksum binds that hash to the run,
+role, model, context and request hash. Completed non-promotions receive the same checks,
+and displayed rationale/limitations must match the recorded judgments. These checks
+detect inconsistent data, not malicious replacement of every audit record and checksum;
+they are not provider signatures. Hidden reasoning is not retained. Raw content and
+receipts are excluded from public cards. Existing historical gate formats remain
+unchanged; no successful dual-gate rows predate this receipt contract.
+
 ### Historical compatibility and bounded reassessment
 
 Historical assessments, calibration, Batch 2 and both recoveries retain their original

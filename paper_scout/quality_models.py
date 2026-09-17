@@ -75,7 +75,7 @@ class QualityEvidence:
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, value: dict[str, Any]) -> "QualityEvidence":
+    def from_dict(cls, value: dict[str, Any], *, exact_excerpt: bool = False) -> "QualityEvidence":
         return cls(
             dimension=str(value.get("dimension", "")),
             signal_type=str(value.get("signal_type", "")),
@@ -83,7 +83,9 @@ class QualityEvidence:
             explanation=str(value.get("explanation", "")),
             section=_optional_text(value.get("section")),
             page=int(value["page"]) if value.get("page") is not None else None,
-            excerpt=_optional_text(value.get("excerpt")),
+            # Canonical manuscript snippets are exact source text. Legacy optional
+            # display text keeps its historical behavior; never trim receipt data.
+            excerpt=value.get("excerpt") if exact_excerpt else _optional_text(value.get("excerpt")),
             evidence_ids=list(value.get("evidence_ids") or []),
             context_id=_optional_text(value.get("context_id")),
             pages=list(value.get("pages") or []),
@@ -145,8 +147,9 @@ class QualityAssessment:
         from paper_scout.promotion_protocol import ASSESSMENT_VERSION, GATE_VERSION, validate_receipt
         if self.assessment_version == ASSESSMENT_VERSION and self.quality_status == "pass" and self.quality_gate_version != GATE_VERSION:
             raise ValueError("new assessment version cannot use a legacy admission gate")
-        if self.quality_gate_version == GATE_VERSION and self.quality_status in {"pass", "insufficient"}:
-            if self.quality_status != "pass" or not self.full_text_assessed:
+        if self.quality_gate_version == GATE_VERSION and (
+                self.quality_status in {"pass", "insufficient"} or self.execution.get('outcome') == 'success'):
+            if self.quality_status not in {"pass", "uncertain"} or not self.full_text_assessed:
                 raise ValueError("dual promotion requires a completed manuscript assessment")
             try:
                 validate_receipt(self)
@@ -200,6 +203,7 @@ class QualityAssessment:
 
     @classmethod
     def from_dict(cls, value: dict[str, Any]) -> "QualityAssessment":
+        from paper_scout.promotion_protocol import GATE_VERSION
         score = value.get("overall_quality_score")
         cap = value.get("applied_score_cap")
         dimensions = value.get("dimension_scores") or {}
@@ -229,7 +233,8 @@ class QualityAssessment:
             dimension_scores={str(key): int(item) if item is not None else None for key, item in dict(dimensions).items()},
             positive_signals=[str(item) for item in value.get("positive_signals") or []],
             concerns=[str(item) for item in value.get("concerns") or []],
-            evidence=[QualityEvidence.from_dict(dict(item)) for item in evidence],
+            evidence=[QualityEvidence.from_dict(dict(item),
+                      exact_excerpt=value.get('quality_gate_version') == GATE_VERSION) for item in evidence],
             missing_information=[str(item) for item in value.get("missing_information") or []],
             concise_summary=str(value.get("concise_summary", "")),
             applied_score_cap=int(cap) if cap is not None else None,

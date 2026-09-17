@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-17",
+  "baseline_sha": "3cc24e7fa592bd86c6307f6eeb1b96ffca38d96e",
+  "assessment_version": "quality-grounding-v1",
+  "model": "deepseek/deepseek-v4-pro-0813",
+  "reasoning": "off",
+  "roster": [
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2601.07372",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+      "source_url": "https://arxiv.org/pdf/2601.07372",
+      "source_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+      "prior_context_id": "d88f8e69e24b589c03732cf1f558da0eee6c7eb11de70bb5d20a57fb221b2692",
+      "current_context": {
+        "evidence_version": "block-evidence-v2",
+        "evidence_context_id": "d88f8e69e24b589c03732cf1f558da0eee6c7eb11de70bb5d20a57fb221b2692",
+        "evidence_context_sha256": "518df98c8552df5bd8837c584a3b1fbb38568495686a5bad1c702daa7fb85c25",
+        "evidence_context_characters": 75802,
+        "evidence_block_count": 88,
+        "canonical_id": "arxiv:2601.07372",
+        "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+        "selected_text_sha256": "f54f79cf3738a002165eaa09de73351c5864b92a55d6f974badfeb4f69e5d580"
+      },
+      "initial_request_bytes": 122519
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+      "source_url": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.749176.full.pdf",
+      "source_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+      "prior_context_id": "dc6e037d4780825452a9074c78c1cec2968107d9b981bb57ec765e172912be57",
+      "current_context": {
+        "evidence_version": "block-evidence-v2",
+        "evidence_context_id": "dc6e037d4780825452a9074c78c1cec2968107d9b981bb57ec765e172912be57",
+        "evidence_context_sha256": "29d692a2979596c27a0de6576786da9a00758d187542970877a58ae46f764c3e",
+        "evidence_context_characters": 63249,
+        "evidence_block_count": 66,
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+        "selected_text_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0"
+      },
+      "initial_request_bytes": 97868
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+      "source_url": "https://arxiv.org/pdf/2609.11243",
+      "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+      "prior_context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+      "current_context": {
+        "evidence_version": "block-evidence-v2",
+        "evidence_context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+        "evidence_context_sha256": "68c1bbf21fec70d4ae9524ad17ddffd37d42fde949976c232074cecfb8cb04d7",
+        "evidence_context_characters": 162658,
+        "evidence_block_count": 186,
+        "canonical_id": "doi:10.48550/arxiv.2609.11243",
+        "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+        "selected_text_sha256": "4096c16b1daa2159806fcf13328ac12c5413a88a7fa6548ca969b39bd58f6d84"
+      },
+      "initial_request_bytes": 244891
+    }
+  ],
+  "initial_calls_maximum": 3,
+  "retry_calls_maximum": 3,
+  "verifier_calls_maximum": 3,
+  "verifier_retries": 0,
+  "assessment_request_byte_cap": 300000,
+  "assessment_output_token_cap": 8192,
+  "verifier_request_byte_cap": 250000,
+  "verifier_output_token_cap": 4096,
+  "default_review": {
+    "model": "deepseek/deepseek-v4-pro-0813",
+    "calls_maximum": 2,
+    "request_byte_cap": 160000,
+    "output_token_cap": 16384
+  },
+  "escalated_review": {
+    "model": "anthropic/claude-opus-4.6",
+    "calls_maximum": 2,
+    "request_byte_cap": 200000,
+    "output_token_cap": 16384,
+    "condition": "Repeated nonconvergent/contradictory default-review findings under user-authorized escalation"
+  },
+  "price_bounds_per_token": {
+    "deepseek_input": 1.65e-06,
+    "deepseek_output": 4.95e-06,
+    "opus_input": 5.5e-06,
+    "opus_output": 2.75e-05
+  },
+  "pricing_checked": "2026-09-17 public OpenRouter model endpoints; maximum advertised prompt/completion rates; no search/cache-write features",
+  "cost_basis": "Assumption-based conservative reserve: one input token per serialized UTF-8 byte, bounded outputs; not tokenizer precision or provider invoice. Actual usage/cost reported separately.",
+  "batch_2_started": false,
+  "manual_corrections": 0,
+  "reassessment_reserve_usd": 4.511628000000001,
+  "review_reserve_usd": 3.7913216,
+  "combined_reserve_usd": 8.302949600000002
+}

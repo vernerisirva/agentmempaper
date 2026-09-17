@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, _section_kind
 from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
-from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, eligible_for, evidence_guidance,
+from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, eligible_for, eligibility_decision, evidence_guidance,
     numerical_support, verifier_items, verification_schema, VERIFIER_INSTRUCTIONS)
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
@@ -592,6 +592,8 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
             if not context_ok:raise ValueError('manuscript or assessment-context identity mismatch')
             blocks = resolve_evidence_ids(item['evidence_ids'], context, expected_context_id=value['evidence_context_id'])
             row['provenance_valid'] = True
+            row['eligibility'] = [{'evidence_id': b.evidence_id,
+                **eligibility_decision(b, item['dimension'], item['statement_kind'])} for b in blocks]
             if not all(eligible_for(b, item['dimension'], item['statement_kind']) for b in blocks):
                 raise ValueError('evidence section role is ineligible for this claim/dimension')
             row['eligibility_valid'] = True

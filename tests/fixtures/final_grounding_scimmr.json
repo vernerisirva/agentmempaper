@@ -1,0 +1,132 @@
+{
+  "canonical_id": "doi:10.48550/arxiv.2609.11243",
+  "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+  "track": "deep_research",
+  "source_url": "https://arxiv.org/pdf/2609.11243",
+  "source_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+  "context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+  "assessment_version": "quality-semantics-v1",
+  "rejected_items": [
+    {
+      "claim": "The benchmark construction uses a human-in-the-loop pipeline with deterministic validation removing 54% of candidate tasks, an eight-dimensional rubric filtering a further 17%, and final expert review of 260 tasks yielding 235 retained tasks.",
+      "dimension": "methodological_rigor",
+      "evidence_ids": [
+        "Ee289dcbfc19bfb04-B0024",
+        "Ee289dcbfc19bfb04-B0050",
+        "Ee289dcbfc19bfb04-B0067"
+      ],
+      "explanation": "The construction flow is documented with specific stage rates and expert-review dispositions, including independent dual review and adjudication, supporting the rigor of the pipeline.",
+      "item_id": "evidence-2",
+      "statement_kind": "source_claim",
+      "original_rejected_ids": [
+        "Ee289dcbfc19bfb04-B0024"
+      ],
+      "numeric_check": {
+        "status": "requires_semantic_verification",
+        "claimed_numbers": [
+          "54%",
+          "17%",
+          "260",
+          "235"
+        ],
+        "missing_values_or_units": [],
+        "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation"
+      },
+      "blocks": [
+        {
+          "id": "Ee289dcbfc19bfb04-B0024",
+          "role": "results",
+          "section": "Benchmark Construction And Composi-",
+          "text": "as a conser-\nvative, directly observable statement, and verify\nthe complete argument graph.\nTask generation.From each verified Argument\nGraph, we sample a argument subgraph suffi-\ncient to derive a target claim. The sampled graph\nspecifies the required observations, intermediate\nclaims, and scientific knowledge, from which an\nLLM generates a natural multi-hop question with-\nout revealing the target conclusion. Reference\nanswers are generated independently from the\ncomplete argument graph, presenting grounded\nobservations, intermediate reasoning, and the fi-\nnal conclusion in dependency order with explicit\nfigure and table attributions.\nAutomatedqualitycontrol.Candidate tasks first\npass through two automated filters. Deterministic\nvalidation removes 54% of tasks whose argument\ngraph depth falls below a minimum threshold.\nThe remaining tasks are evaluated using an eight-\ndimensional ",
+          "pages": [
+            5
+          ],
+          "content_hash": "dc230d1e9cc6328f73f21ff3c1cc3c9b4c4988a544f41e7223bcad0c8df53d6d"
+        },
+        {
+          "id": "Ee289dcbfc19bfb04-B0050",
+          "role": "appendix",
+          "section": "Appendix",
+          "text": "validation removes 54%\nof the candidate-task inventory, and the subse-\nquent rubric stage filters a further 17%. Failed\ncandidates are revised and re-evaluated. The fi-\nnal expert-review cohort contains 260 task IDs;\n25 are rejected and 235 are retained in the bench-\nmark. The final 235 tasks come from 170 papers;\n119paperscontributeonetask,39contributetwo,\n10 contribute three, and two contribute four.\nFor temporal coverage, we record each final\ntask's source paper by its latest release or version\nyear, which may differ from its original publica-\ntion year. The 235 benchmark questions are not\nuniformly distributed across 2020–2026: the re-\nspective counts are 2, 2, 3, 16, 46, 38, and 128.\nThus, 128 questions (54.5%) use papers whose\nlatest release or version is dated 2026.\nTable 3 summarizes the task-level construction\nflow; paper-level counts are upstream inventory\ncounts.\nTable 4 ",
+          "pages": [
+            14
+          ],
+          "content_hash": "79cd18a158309f3c944c8d7416d95c71bca8586731f7678d0ce52ad6bc9f1476"
+        },
+        {
+          "id": "Ee289dcbfc19bfb04-B0067",
+          "role": "appendix",
+          "section": "Appendix: Expert Verification Protocol",
+          "text": "first-review, second-review, adjudication,\nand final-consensus versions are retained.\nAll 260 handoff tasks receive expert review, in-\n17\nSci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents\nF1 Electronic structure\nSUPPORTS\n• E1−3.54 eV LUMO; 1.35 eV gap; 3.92 S m conductivity\n−1\nF2 Electrochemical performance\nSUPPORTS\n• E2/E3 CV response and 135 mAh g cycling capacity\n−1\n• E4/E5 2,000-cycle stability and rate capability\n• E6/E7 Low-temperature capacity and−20 °C cycling\nF3 Kinetics and XPS\nSUPPORTS\n• E8/E9 Diffusion coefficients and lower charge-state resistance\n• E10 Lower activation energy (0.125 eV vs 0.183 eV)\n• E11 Reversible C=O and P–F signatures\nF4 Computed mechanism\nSUPPORTS\n• E12 Favorable +2PF / +6Na storage energetics6\n−+\n• E13 Localized charge redistribution at the stored-ion sites\nEvidence grounding on source figures ",
+          "pages": [
+            17,
+            18
+          ],
+          "content_hash": "80328e641a651a675e91fed0ee76bee96a0475515f81d38f9176459d361db3f4"
+        }
+      ]
+    }
+  ],
+  "numeric_rejections": [
+    {
+      "claim": "Error decomposition of 1,014 incorrect Direct Visual Reasoning outputs attributes 57.2% of errors to evidence-related failures and 31.8% to reasoning-related failures, supporting the two-bottleneck conclusion.",
+      "dimension": "evidence_to_claim_alignment",
+      "evidence_ids": [
+        "Ee289dcbfc19bfb04-B0043",
+        "Ee289dcbfc19bfb04-B0105",
+        "Ee289dcbfc19bfb04-B0108"
+      ],
+      "explanation": "The routing procedure and subtype counts are reported in the main text and appendix, with sensitivity analysis at IoU thresholds 0.3, 0.5, and 0.7 showing the access/localization subtype remains largest, aligning evidence with the claimed bottlenecks.",
+      "item_id": "evidence-4",
+      "numeric_check": {
+        "status": "unsupported",
+        "claimed_numbers": [
+          "1,014",
+          "57.2%",
+          "31.8%",
+          "0.3",
+          "0.5",
+          "0.7"
+        ],
+        "missing_values_or_units": [
+          "57.2%"
+        ],
+        "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation"
+      },
+      "statement_kind": "source_claim",
+      "original_rejected_ids": [],
+      "blocks": [
+        {
+          "id": "Ee289dcbfc19bfb04-B0043",
+          "role": "results",
+          "section": "Main Results",
+          "text": "and local-\nization failures at 40.1%, with gold underuse at\n14.0% and visual extraction errors at 3.1% con-\ntributing smaller shares. Reasoning-related fail-\nures account for a further 31.8%, split between\ninterpretation failures at 27.5% and final-answer\nmismatches at 4.2%; the remaining 11.0% fall\noutside these categories. This breakdown is con-\nsistent across nearly all eight evaluated models:\naccess and localization failures remain the largest\nsinglesubtypeforeverymodel,rangingfrom37%\nfor Claude Opus 4.8 to 48% for Kimi K2.7, while\ninterpretation failures form the second-largest\ncategory for most models. Taken together with\nRQ2, this fine-grained attribution confirms that\ncurrent multimodal models fail along two largely\ndistinct axes – acquiring complete evidence from\nraw visuals, and correctly interpreting evidence\nonce retrieved – rather than along a single, domi-\nnant failure ",
+          "pages": [
+            9
+          ],
+          "content_hash": "dd4d8181dec1e95555bc3c4d2dfe67405a6bf987aa7e59dd4f915dff229a1186"
+        },
+        {
+          "id": "Ee289dcbfc19bfb04-B0105",
+          "role": "appendix",
+          "section": "Appendix: Model-Level Subtype Composition",
+          "text": "Figure 12 shows that access/localization is the\nlargest individual subtype for every model, while\nthe balance between Evidence Hint uptake,\ndownstream interpretation, and audit categories\nvaries. The overall partition contains 407 ac-\ncess/localization errors, 142 Evidence-Hint-not-\nreflected errors, 14 low-extraction errors, 17\npartial-extraction errors, 279 interpretation resid-\nuals, 43 final-answer residuals, 43 cross-setting\nAgentic Tool-Use rescues, and 69 Agentic Tool-\nUse rescues without a qualifying hit. These sum\nexactly to 1,014.\nThe main text reports six broader sub-\ntypes by combining the two extraction la-\nbels and the two audit labels. The result-\ning counts are 407 access/localization errors\n(40.1%), 142 Evidence-Hint-not-reflected (gold-\nunderuse)errors(14.0%),31visual-extractioner-\nrors(3.1%),279interpretationresiduals(27.5%),\n43 final-answer residuals (4.2%), and 112 ",
+          "pages": [
+            26
+          ],
+          "content_hash": "c41453f3975bb5fe1b0999be716bba16b7126e7ecb5588913940744778a49619"
+        },
+        {
+          "id": "Ee289dcbfc19bfb04-B0108",
+          "role": "appendix",
+          "section": "Appendix: Threshold Sensitivity",
+          "text": "The error-routing sensitivity analysis reruns the\nfine-grained router at IoU thresholds of 0.3 and\n0.7, bracketing the default threshold of 0.5. Ta-\nble16reportsaggregatesubtypecounts,whileTa-\nble 17 lists the nonzero label transitions between\nadjacent thresholds. Of the 1,014 routed observa-\ntions, 54 labels change from IoU 0.3 to 0.5 and 37\nchange from 0.5 to 0.7. The access/localization\nsubtype remains the largest at every threshold\n(405, 407, and 400 observations, respectively),\nand the two downstream subtypes together re-\nmain stable (325, 322, and 319). Stricter over-\nlap primarily moves successful Agentic Tool-Use\ncases into the no-qualifying-hit audit category\nand moves complete-localization extraction cases\nback into access/localization.",
+          "pages": [
+            26
+          ],
+          "content_hash": "20a95f51bead917e39d6d85fa1c1e7e303f8b20510948a10b32c8a8d8cbca261"
+        }
+      ]
+    }
+  ]
+}

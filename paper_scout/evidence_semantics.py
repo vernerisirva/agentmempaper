@@ -25,31 +25,70 @@ BODY_ROLES = frozenset({'introduction', 'related', 'methods', 'results', 'limita
                         'discussion', 'conclusion', 'appendix', 'body'})
 ROLE_COMPATIBILITY = {
     'contribution': BODY_ROLES,
-    'method': frozenset({'methods', 'body', 'appendix'}),
-    'evaluation': frozenset({'results', 'methods', 'body', 'appendix'}),
-    'result': frozenset({'results', 'methods', 'discussion', 'conclusion', 'body', 'appendix'}),
+    'method': frozenset({'methods', 'appendix'}),
+    'evaluation': frozenset({'results', 'methods', 'appendix'}),
+    'result': frozenset({'results', 'methods', 'discussion', 'conclusion', 'appendix'}),
     'positioning': BODY_ROLES,
-    'reproducibility': frozenset({'methods', 'body', 'appendix'}),
-    'limitation': frozenset({'limitations', 'discussion', 'conclusion', 'body', 'appendix'}),
+    'reproducibility': frozenset({'methods', 'appendix'}),
+    'limitation': frozenset({'limitations', 'discussion', 'conclusion', 'appendix'}),
     'presentation': BODY_ROLES,
 }
 STATEMENT_KINDS = ('source_claim', 'assessor_inference')
+ELIGIBILITY_POLICY = 'body-content-candidates-v1'
+
+# These cues nominate body passages for the separate claim-support verifier;
+# they never certify a claim. They inspect content, not a growing heading list.
+# Unknown headings retain body provenance but are not universally compatible.
+CONTENT_CUES = {
+    'method': r'\b(?:protocols?|pipelines?|algorithms?|architectures?|implementation|'
+              r'procedures?|sampling|sample[ds]?|generat(?:e[ds]?|ion)|construct(?:ed|ion)|'
+              r'filters?|filtering|annotat(?:ed|ion)|randomi[sz](?:ed|ation)|training|'
+              r'seeds?|budgets?|controls?)\b',
+    'evaluation': r'\b(?:evaluat\w*|experiments?|validation|tested|testing|'
+                  r'benchmarks?|ablations?|comparisons?|baselines?)\b',
+    'result': r'\b(?:results?|findings?|observ(?:ed|ations?)|measur(?:ed|ements?)|'
+              r'accuracy|precision|recall|scores?|performance|outperform\w*|'
+              r'improv(?:e[ds]?|ements?))\b',
+    'reproducibility': r'\b(?:reproduc\w*|code|software|implementation|datasets?|'
+                       r'available|released?|artifacts?|hyperparameters?|configuration|seeds?)\b',
+    'limitation': r'\b(?:limitations?|caveats?|uncertain(?:ty)?|threats?|constraints?|'
+                  r'problematic|fail(?:ures?|ed|s)|scope|under[-\s]?training|'
+                  r'cannot|may\s+(?:have|not|be)|not\s+(?:yet|fully))\b',
+}
+
+
+def eligibility_decision(block: EvidenceBlock, dimension: str, statement_kind: str) -> dict:
+    """A: provenance, B: compatible candidate type; C remains the verifier's job."""
+    role = CLAIM_ROLES.get(dimension)
+    body = block.eligible and block.section_role in BODY_ROLES
+    result = {'policy': ELIGIBILITY_POLICY, 'provenance_eligible': block.eligible,
+              'body_member': body, 'claim_role': role, 'compatible': False,
+              'basis': 'ineligible_provenance_or_role'}
+    if not block.eligible or role is None or statement_kind not in STATEMENT_KINDS:
+        return result
+    if block.section_role == 'abstract':
+        result.update(compatible=dimension == 'contribution_clarity' and statement_kind == 'source_claim',
+                      basis='abstract_attribution_only')
+        return result
+    if not body:
+        return result
+    if (block.section_role in ROLE_COMPATIBILITY[role]
+            or role == 'limitation' and statement_kind == 'assessor_inference'):
+        result.update(compatible=True, basis='section_role_or_scoped_inference')
+    elif role in CONTENT_CUES and re.search(CONTENT_CUES[role], block.text, re.I):
+        result.update(compatible=True, basis='body_content_cue')
+    else:
+        result['basis'] = 'body_without_compatible_content_cue'
+    return result
 
 
 def eligible_for(block: EvidenceBlock, dimension: str, statement_kind: str) -> bool:
-    if not block.eligible or dimension not in CLAIM_ROLES or statement_kind not in STATEMENT_KINDS:
-        return False
-    claim_role = CLAIM_ROLES[dimension]
-    if block.section_role == 'abstract':
-        # An attributed statement of what the authors propose, never evidence
-        # that the method/results are adequate or the contribution is novel.
-        return dimension == 'contribution_clarity' and statement_kind == 'source_claim'
-    allowed = BODY_ROLES if claim_role == 'limitation' and statement_kind == 'assessor_inference' else ROLE_COMPATIBILITY[claim_role]
-    return block.section_role in allowed
+    return eligibility_decision(block, dimension, statement_kind)['compatible']
 
 
 def evidence_guidance(context: EvidenceContext) -> dict:
     return {
+        'eligibility_policy': ELIGIBILITY_POLICY,
         'claim_roles_by_dimension': CLAIM_ROLES,
         'body_candidate_ids_by_dimension': {d: [b.evidence_id for b in context.blocks
             if b.section_role != 'abstract' and eligible_for(b, d, 'source_claim')] for d in CLAIM_ROLES},
@@ -57,12 +96,12 @@ def evidence_guidance(context: EvidenceContext) -> dict:
             if b.section_role == 'abstract' and b.eligible],
         'limitation_inference_body_ids': [b.evidence_id for b in context.blocks
             if eligible_for(b, 'limitations_and_uncertainty_handling', 'assessor_inference')],
-        'rule': 'Candidate IDs establish section eligibility, not support. Unknown body/appendix headings are candidates only; their actual content must substantiate the claim. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Inference must stay within the cited observations.'}
+        'rule': 'Candidate IDs establish provenance and possible claim-role compatibility, not support. Unusual headings remain manuscript body. Compatible body content can nominate a passage even under a different section heading; unrelated other-body text is not a universal candidate. Appendix candidates also require actual substantive support. Abstracts are eligible only for contribution_clarity source_claims about attributed contribution/scope, never scholarly_novelty_or_value or any body-evidence dimension. Inference must stay within the cited observations.'}
 
 
 # Do not read digits embedded in model names as quantities. Decimal equality
 # normalizes typography (42 % / 42%, 0.730 / 0.73), never substitutes a value.
-_NUMBER = re.compile(r'(?<![\w.])(?P<value>[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)(?P<unit>\s*(?:%|×|[xX](?!\w)|[kKmMbB](?!\w)))?(?!\w|\.\d)')
+_NUMBER = re.compile(r'(?<![\w.])(?P<value>[+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)(?P<unit>\s*(?:percentage[\s-]+points?\b|basis[\s-]+points?\b|per\s+cent\b|percent\b|%|×|[xX](?!\w)|[kKmMbB](?!\w)))?(?!\w|\.\d)', re.I)
 
 
 def numeric_mentions(text: str) -> list[dict]:
@@ -73,6 +112,12 @@ def numeric_mentions(text: str) -> list[dict]:
         if re.search(r'[A-Za-z_]\w*-$', text[:match.start()]):
             continue
         unit = (match.group('unit') or '').strip().casefold().replace('x', '×')
+        if re.fullmatch(r'percent|per\s+cent', unit):
+            unit = '%'
+        elif re.fullmatch(r'percentage[\s-]+points?', unit):
+            unit = 'percentage_point'
+        elif re.fullmatch(r'basis[\s-]+points?', unit):
+            unit = 'basis_point'
         out.append({'literal': match.group().strip(), 'value': str(Decimal(match.group('value').replace(',', '')).normalize()),
                     'unit': unit, 'start': match.start(), 'end': match.end()})
     return out

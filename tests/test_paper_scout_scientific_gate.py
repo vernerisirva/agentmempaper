@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from paper_scout.config import QualityConfig, QualityFullTextConfig, load_config
+from paper_scout.config import QualityAssessmentConfig, QualityConfig, QualityFullTextConfig, load_config
 from paper_scout.digest import write_digest
 from paper_scout.full_text import ExtractedPage, FullTextDocument, SelectedPaperText, SelectedSection, locate_full_text_urls, select_assessment_text
 from paper_scout.models import ClassificationResult, PaperCandidate
@@ -240,7 +240,7 @@ class ScientificGateTest(unittest.TestCase):
             store=PaperStore(Path(tmp)/"state.sqlite3"); c=candidate()
             classification=ClassificationResult(90,"relevant","Core")
             key=store.upsert_paper(c,classification)
-            config=QualityConfig(enabled=True,mode="deterministic",full_text=QualityFullTextConfig(enabled=False))
+            config=QualityConfig(enabled=True,mode="deterministic", assessment=QualityAssessmentConfig(version="quality-v2"), full_text=QualityFullTextConfig(enabled=False))
             with patch("paper_scout.quality_service.select_assessment_text",return_value=text):
                 first=assess_and_store_candidate(config,store,c,key,classification,manual_assessment=response)
                 self.assertEqual(first.quality_status,"pass")

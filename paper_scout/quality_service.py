@@ -8,6 +8,7 @@ import logging
 from pathlib import Path
 
 from paper_scout.config import QualityConfig
+from paper_scout.promotion_protocol import ASSESSMENT_VERSION, GATE_VERSION, identity_from_document
 from paper_scout.curation import QualityCuration, quality_curation_for_paper
 from paper_scout.full_text import FullTextDocument, fetch_and_extract_pdf, locate_full_text_urls, select_assessment_text
 from paper_scout.models import ClassificationResult, PaperCandidate
@@ -33,7 +34,7 @@ class QualityRunStats:
 
     def record(self, assessment: QualityAssessment, cache_hit: bool) -> None:
         self.assessed.append(assessment)
-        if assessment.execution.get("outcome") in {"transport_failure", "protocol_failure"}:
+        if assessment.execution.get("outcome") in {"transport_failure", "protocol_failure", "integrity_failure"}:
             self.failures.append(f"{assessment.canonical_id}: {assessment.execution['outcome']}")
         if cache_hit:
             self.cache_hits += 1
@@ -57,6 +58,12 @@ def assess_and_store_candidate(
 ) -> QualityAssessment | None:
     if not config.enabled or config.mode == "off" or not _should_assess(config, classification.decision):
         return None
+    if manual_assessment is not None and config.assessment.version == ASSESSMENT_VERSION:
+        raise ValueError("single manual review cannot bypass the dual promotion gate")
+    # Historical passes are retained. Reassessment requires an explicitly targeted force.
+    existing = store.get_current_quality_assessment(canonical_id)
+    if existing and existing.quality_status == "pass" and not force and manual_assessment is None:
+        return _finalize_assessment(config, store, candidate, existing, curation_path, stats, cache_hit=True)
     if manual_assessment is not None:
         from paper_scout.quality_llm import validate_manual_quality_review
         validate_manual_quality_review(manual_assessment)
@@ -80,6 +87,9 @@ def assess_and_store_candidate(
         max_prompt_characters=config.full_text.max_prompt_characters,
         max_section_characters=config.full_text.max_section_characters,
     )
+    if document is not None and config.assessment.version == ASSESSMENT_VERSION:
+        selected = replace(selected, coverage={**selected.coverage,
+                           "manuscript_identity": identity_from_document(candidate, document)})
     matching = store.get_current_quality_assessment(
         canonical_id,
         assessment_version=config.assessment.version,
@@ -200,7 +210,7 @@ def _apply_manual_curation(assessment: QualityAssessment, curation: QualityCurat
         confidence="high",
         assessor_type=assessment.assessor_type if assessment.full_text_assessed else "manual_override",
         assessor_model=assessment.assessor_model if assessment.full_text_assessed else "curation",
-        source_content_hash=source_hash,
+        source_content_hash=assessment.source_content_hash if assessment.quality_gate_version == GATE_VERSION else source_hash,
         assessed_at=datetime.now(UTC).replace(microsecond=0).isoformat(),
         concise_summary=summary,
     )
@@ -219,6 +229,17 @@ def quality_assessment_matches_mode(
     assessment: QualityAssessment,
     no_llm: bool = False,
 ) -> bool:
+    if assessment.quality_gate_version == GATE_VERSION:
+        from paper_scout.promotion_gate import settings_from_env
+        if no_llm or config.mode in {"off", "deterministic"}:
+            return assessment.assessor_type == "deterministic"
+        try:
+            pair = settings_from_env()
+        except ValueError:
+            return False
+        return bool(pair and assessment.execution.get("outcome") == "success"
+                    and assessment.execution.get("primary_model") == pair[0].model
+                    and assessment.execution.get("adjudicator_model") == pair[1].model)
     if assessment.quality_status in {"pass", "insufficient"} or assessment.assessor_type == "manual_override":
         return True
     mode = "deterministic" if no_llm else config.mode

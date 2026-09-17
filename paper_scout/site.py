@@ -139,6 +139,7 @@ class LibraryPaper:
     quality_uncertainty: str = "Legacy scores and topical relevance do not establish scientific quality."
     quality_gate_version: str | None = None
     quality_full_text_assessed: bool = False
+    quality_promotion: dict = field(default_factory=dict)
     quality_coverage: dict = field(default_factory=dict)
     quality_full_text_url: str | None = None
     publication_status: str = "unknown"
@@ -1292,6 +1293,9 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 quality_uncertainty=quality.quality_uncertainty if quality else "Manuscript evidence has not been reviewed.",
                 quality_gate_version=quality.quality_gate_version if quality else None,
                 quality_full_text_assessed=quality.full_text_assessed if quality else False,
+                quality_promotion={k: quality.execution[k] for k in
+                    ("primary_model", "adjudicator_model", "primary", "adjudicator", "outcome", "provenance_status")
+                    if k in quality.execution} if quality and quality.quality_gate_version == "dual-promotion-v1" else {},
                 quality_coverage=quality.coverage if quality else {},
                 quality_full_text_url=quality.full_text_url if quality else None,
                 publication_status=publication.status,
@@ -1602,6 +1606,7 @@ def _quality_to_json(paper: LibraryPaper) -> dict[str, object]:
         "uncertainty": paper.quality_uncertainty,
         "gate_version": paper.quality_gate_version,
         "full_text_assessed": paper.quality_full_text_assessed,
+        "promotion": paper.quality_promotion,
         "coverage": paper.quality_coverage,
         "full_text_url": paper.quality_full_text_url,
         "overall_quality_score": paper.quality_score,

@@ -37,6 +37,11 @@ def assess_with_optional_quality_llm(
     mode: str,
     http: HttpClient | None = None,
 ) -> QualityAssessment:
+    # Legacy claim semantics remain callable only for explicitly historical versions.
+    from paper_scout.promotion_protocol import ASSESSMENT_VERSION
+    if deterministic.assessment_version == ASSESSMENT_VERSION:
+        from paper_scout.promotion_gate import assess_promotion
+        return assess_promotion(candidate, selected, deterministic, mode, http=http)
     if mode in {"off", "deterministic"}:
         return deterministic
     settings = openai_compatible_settings_from_env("PAPER_SCOUT_QUALITY_LLM_MODEL")

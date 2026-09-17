@@ -1,0 +1,67 @@
+{
+  "name": "quality-promotion-gate-engineering",
+  "canonical_main": "844a6be7f90d33fe3193049654b3d5fcec0222eb",
+  "assessment_version": "quality-promotion-v1",
+  "gate_version": "dual-promotion-v1",
+  "primary": "deepseek/deepseek-v4-pro-0813",
+  "adjudicator": "anthropic/claude-sonnet-4.6",
+  "pricing_checked": "2026-09-17 OpenRouter public model and provider endpoints",
+  "price_bounds_per_million": {
+    "primary": [
+      1.65,
+      4.95
+    ],
+    "adjudicator": [
+      3.3,
+      16.5
+    ]
+  },
+  "calls_per_paper_max": 2,
+  "retries": 0,
+  "request_bytes_per_call_max": 300000,
+  "output_tokens_per_call_max": 4096,
+  "typical_assumption": {
+    "input_tokens_each_call": 50000,
+    "primary_output_tokens": 2000,
+    "adjudicator_output_tokens": 1000
+  },
+  "expected_usd_at_provider_upper_rates": {
+    "10": 2.739,
+    "20": 5.478,
+    "30": 8.217
+  },
+  "conservative_wire_byte_reserve_usd": {
+    "per_paper": 1.5728592,
+    "10": 15.728592,
+    "20": 31.457184,
+    "30": 47.185776
+  },
+  "reserve_basis": "one input token per serialized wire byte plus capped output; no cache discounts; assumption-based upper reserve, not invoice",
+  "paid_paper_assessments_planned": 0,
+  "live_smoke": {
+    "maximum": 3,
+    "condition": "Only if necessary for API/schema integration, non-holdout fixtures, separately reserved before calls; not currently necessary"
+  },
+  "batch_2_rerun": false,
+  "batch_3_roster_selected": false,
+  "batch_3_execution": false,
+  "review_policy": {
+    "default_model": "deepseek/deepseek-v4-pro-0813",
+    "maximum_default_calls": 2,
+    "fallback_model": "anthropic/claude-opus-4.6",
+    "maximum_fallback_calls": 2,
+    "escalation_condition": "bounded timeout/output failure or repeated nonconvergent/contradictory findings; never bypass valid blockers",
+    "max_request_bytes": 200000,
+    "max_output_tokens": 16384,
+    "wall_seconds": 360,
+    "shared_ceiling_usd": 10,
+    "previous_charged_or_reserved_usd": 3.3838514546,
+    "remaining_shared_usd": 6.6161485454,
+    "maximum_four_call_reserve_usd": 3.9233216
+  },
+  "historical_results": {
+    "ORIGINAL_BATCH_2_GENERALIZATION_RESULT": "FAIL",
+    "BATCH_2_RECOVERY_CHECK": "FAIL",
+    "BATCH_2_RECOVERY_V2_CHECK": "FAIL"
+  }
+}

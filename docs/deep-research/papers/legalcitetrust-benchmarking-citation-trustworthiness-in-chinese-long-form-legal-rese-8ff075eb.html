@@ -60,15 +60,393 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 837</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T09:13:20+00:00.</p>
+        <p>Coverage: 74196 of 74196 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 1–3</strong><p>LegalCiteTrust introduces a benchmark for citation trustworthiness in Chinese long-form legal research reports, operationalized through Existence, Fidelity, and Applicability (E/F/A) judgments alongside Coverage and Support.</p><p>Attributed source statement: supported. The introduction explicitly defines the benchmark&#x27;s three evaluation dimensions and the E/F/A operationalization, separating citation trustworthiness from report coverage and evidence support. This provides a clear, bounded contribution statement. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>evaluation:
+whether a report follows the requested research
+structure, whether it provides legal evidence, and
+whether its citations are trustworthy. Citation trust-
+worthiness is evaluated through Existence, Fidelity,
+and Applicability (E/F/A). Figure 1 summarizes
+the task setting and evaluation framework.
+Using LegalCiteTrust, we evaluate general-
+purpose LLMs, deep-research systems, and legal-
+specific systems, with tool and verification abla-
+tions. The results show that task completion, ev-
+idence richness, citation density, and citation re-
+liability do not collapse into one quality axis: re-
+trieval can increase evidence support without re-
+liably improving citation trustworthiness, while
+E/F/A feedback improves revision more clearly
+1
+arXiv:2607.20872v1  [cs.CL]  23 Jul 2026
+(B) Citation-Level Failure Modes
+Existence Error:
+Unverifiable citation.
+Three-layer citation </blockquote><blockquote>rubric-level issues implied by the provided
+subtopics and descriptions. It is therefore an ad-
+herence measure under a given research plan, not
+open-ended legal issue spotting. Support mea-
+sures evidence richness: whether the report sup-
+plies statutory, regulatory, judicial-interpretation,
+or case authority for relevant issues, without itself
+judging whether each citation is faithfully used. Ci-
+tation Trustworthiness, quantified by a report-level
+Trust score, measures citation reliability through
+Existence, Fidelity, and Applicability (E/F/A) judg-
+ments. Separating these dimensions lets Legal-
+CiteTrust distinguish whether a report covers the
+required analysis, provides legal evidence, and uses
+citations reliably.</blockquote></details></li><li><strong>Scholarly novelty or value — pages 2–3</strong><p>The paper targets a gap not covered by existing legal benchmarks, agentic research benchmarks, or citation-faithfulness evaluations: whether each cited legal authority in a long-form report exists, is faithfully described, and supports the local claim.</p><p>Attributed source statement: supported. The related work section systematically distinguishes LegalCiteTrust from legal static, legal retrieval, legal agent, general agent, general deep research, and citation/hallucination benchmarks, arguing that none jointly address long-form legal reports with citation trustworthiness as legal authority. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>statutes, judicial interpretations, regulations,
+and cases are not merely information sources, but
+normative grounds for legal argument.
+Hallucination and citation-faithfulness evalua-
+tions address factuality and grounding from another
+direction. TruthfulQA (Lin et al., 2022) and HaluE-
+val (Li et al., 2023) evaluate factual or hallucinated
+content; RAGAS (Es et al., 2024), CRAG (Yang
+et al., 2024), and RAGTruth (Niu et al., 2024) study
+faithfulness or hallucination in retrieval-grounded
+generation. Citation-focused work asks whether
+generated statements are supported by references,
+and LegalCiteBench (Chen et al., 2026) targets
+legal citation generation and verification through
+citation recovery, matching, and correction. Legal-
+CiteTrust targets the remaining intersection: long-
+form legal research reports in which citations must
+function as trustworthy legal authority, not merely
+as </blockquote><blockquote>retrievable or matching references.
+2
+Table 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority
+existence, faithful description, and support for the current claim.
+Paradigm Representative work Legal Deep
+research
+Long
+report
+Citation
+support
+Citation
+trust
+Legal static CAIL2018 (Xiao et al., 2018)
+LexGLUE (Chalkidis et al., 2022)
+LawBench (Fei et al., 2024)
+Yes No No Limited No
+Legal retrieval COLIEE (Goebel et al., 2023)
+LeCaRD (Ma et al., 2021)
+CanLegalRAGBench (Zhao et al., 2026)
+Yes Partial No Partial Partial
+Legal agent LegalAgentBench (Li et al., 2025a)
+PLawBench (Shi et al., 2026)
+Yes Partial Partial Partial Partial
+General agent AgentBench (Liu et al., 2024)
+OpenHands Eval (Wang et al., 2025)
+No Partial No Limited No
+General deep research ReportBench (Li et al., 2025b)
+DeepResearch Bench (Bosse et al., 2025)
+No Yes Yes Yes </blockquote></details></li><li><strong>Methodological rigor — pages 3–4</strong><p>The benchmark is constructed from 13,622 candidate legal research documents, filtered to 72 source documents with at least one case citation and at least five statutory or normative references, yielding 236 subtopics, 585 rubrics, and 1,459 evidence points.</p><p>Attributed source statement: supported. The dataset construction section specifies the filtering criteria and resulting statistics, providing a reproducible basis for the benchmark&#x27;s density and authority-demanding design. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>We construct LegalCiteTrust from a candidate
+pool of 13,622 legal research documents. To en-
+sure sufficient legal-authority demand for citation-
+trustworthiness evaluation, we retain documents
+with at least one case citation and at least five statu-
+tory or normative references, yielding 72 source
+documents.
+Table 2: Dataset statistics.
+Statistic Count
+Candidate source documents 13,622
+Final source documents / tasks 72
+Subtopics 236
+Rubrics 585
+Evidence points 1,459
+Each source document is converted into one le-
+gal research task with a main query, subtopics, and
+subtopic descriptions as generation input. Rubrics
+and evidence points are reserved for evaluation
+rather than shown to systems. Rubrics specify
+3
+fine-grained discussion requirements, while evi-
+dence points provide reference material for judg-
+ing whether a report covers and supports those
+requirements. The released benchmark </blockquote><blockquote>materi-
+als consist of reconstructed task inputs, rubrics,
+evidence points, and annotations, and do not in-
+clude the source-document full text, abstracts, or
+continuous original passages. Released materi-
+als were reviewed to avoid unnecessary personal
+identifying information; retained legal identifiers
+such as statute names, case names, docket num-
+bers, or judgment references are included only
+when needed for citation verification. The resulting
+72 tasks expand into 236 subtopics, 585 rubrics,
+and 1,459 evidence points, making the benchmark
+dense enough for controlled system comparison
+and ablation. Table 2 summarizes the benchmark
+structure.</blockquote></details></li><li><strong>Methodological rigor — pages 12–14</strong><p>The Trust score is computed as the mean of per-citation products of Existence, Fidelity, and Applicability scores, with NA or skipped F/A treated as 1.0 and Existence always scored.</p><p>Attributed source statement: supported. The appendix provides explicit formulas and label-to-score mappings for law and case citations, including handling of NA, skip, exclusion, and unknown labels, which supports the rigor and reproducibility of the metric. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>For each included citation item, the reference-level
+Trust score is
+item_trust =E×F NA=1 ×A NA=1.
+Here E is the Existence score; FNA=1 is the Fi-
+delity score, with NA or skipped Fidelity treated
+as 1.0; andANA=1 is the Applicability score, with
+NA or skipped Applicability treated as 1.0. This
+means that an unavailable F/A judgment does not
+add an extra penalty, while Existence must always
+be scored. Unknown labels not covered by the
+score mapping are treated as 0.0.
+12
+Legal Research Report
+Article 577 of the Civil
+Code provides that ......
+Citation Extraction
+Detect and
+normalize cited laws,
+articles, and cases
+Argument
+Extraction
+Extract  Citation
+context, Local Claim
+Authority Retrieval
+Retrieve official legal
+/ case source
+Verification Item
+{
+}
+Citation
+normalized law/ case reference
+Local claim
+claim supported by this
+citation
+Source content
+retrieved official text
+Citation </blockquote><blockquote>supports 0.5
+Overextended inference 0.5
+Contradicts 0.0
+Irrelevant 0.0
+Skipped NA, as 1.0
+Other unknown label 0.0
+A.4.6 NA, Skip, Exclusion, and Unknown
+Labels
+NA or skipped F/A labels indicate that a Fidelity
+or Applicability layer has no valid judgment, for
+example due to insufficient input or an explicit skip.
+That layer is treated as 1.0 in the multiplicative item
+score. Excluded items are outside the Trust denom-
+inator and do not enter E/F/A averages. Unknown
+labels are labels not covered by the score mapping;
+to avoid inflating scores, they are treated as 0.0.</blockquote></details></li><li><strong>Evaluation or validation strength — pages 6–7</strong><p>The verification ablation shows that full E/F/A feedback improves Trust from 0.7433 (Base) to 0.8883 (EFA-Revise) and Final from 1.0329 to 1.1708, more clearly than existence-only filtering (Trust 0.8134, Final 1.0970).</p><p>Attributed source statement: supported. The verification ablation results provide quantitative evidence that E/F/A signals function as useful revision feedback, not merely post-hoc scoring, supporting the paper&#x27;s central claim about citation-aware evidence governance. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>The verification ablation tests whether E/F/A sig-
+nals can improve generated reports rather than
+merely score them after the fact. We use
+Qwen36_tool_law_case as the Base system, add
+an LLM revision stage, and compare two feedback
+variants: E-Filter receives only Existence results,
+while EFA-Revise receives the full E/F/A verifica-
+tion report. All three settings use the same 72 tasks,
+and Table 7 reports the report-level summary.
+Trust increases monotonically from Base to E-
+Filter and EFA-Revise: 0.7433, 0.8134, and 0.8883.
+Final also rises from 1.0329 to 1.0970 and 1.1708,
+while Coverage remains broadly stable and Support
+decreases. This indicates that verification feedback
+improves citation reliability by removing or revis-
+ing unreliable evidence, even when this sacrifices
+some evidence support.
+The comparison also shows why full E/F/A feed-
+back is more useful than existence-only </blockquote><blockquote>filtering.
+E-Filter mainly removes nonexistent or unresolved
+citations; Appendix E shows that law E rises from
+0.9446 to 0.9987 and case E rises from 0.8014 to
+0.9808, but case F and case A decrease after filter-
+ing. EFA-Revise uses richer feedback about source
+description and claim support, improving law F,
+law A, case F, and case A relative to Base and
+producing the largest Trust gain. Representative
+6
+Table 7: Verification ablation report-level summary. Report-level E/F/A averages summarize citation verification
+within reports.
+Model Final Main dimensions Support components Report-level E/F/A
+Cov Sup Trust Rubric Subtopic E F A
+Base 1.0329 0.9065 0.4857 0.7433 0.4568 0.5146 0.9106 0.9198 0.8752
+E-Filter 1.0970 0.9099 0.4487 0.8134 0.4415 0.4559 0.9980 0.9160 0.8673
+EFA-Revise 1.1708 0.9011 0.4223 0.8883 0.4177 0.4270 0.9836 0.9713 0.9285
+cases in Appendix D illustrate how Existence, </blockquote></details></li><li><strong>Evidence to claim alignment — page 6</strong><p>The tool ablation shows that adding case search increases Support from 0.3153 to 0.4857 but decreases Trust from 0.7744 to 0.7433, supporting the claim that retrieval can improve evidence support without reliably improving citation trustworthiness.</p><p>Attributed source statement: supported. The tool ablation results directly demonstrate the Support-Trust tension claimed in the abstract and discussion, with specific numeric changes across tool conditions. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>The tool ablation isolates how retrieval ac-
+cess changes one base system. Starting from
+Qwen36_plus, we progressively add law search,
+law plus case search, and law plus case plus web
+search, while keeping the task input and base
+prompt fixed. Table 6 reports the report-level sum-
+mary.
+Law search modestly increases Support from
+0.3153 to 0.3427 and Trust from 0.7744 to 0.7951,
+raising Final from 0.9612 to 0.9718. Adding case
+search produces the largest evidence gain: Support
+rises to 0.4857, especially through Subtopic Ev-
+idence Support, but Trust drops to 0.7433. The
+law-plus-case condition still achieves the highest
+Final score among tool settings, showing that case
+evidence improves the composite score while in-
+creasing citation risk.
+Adding web search does not further improve per-
+formance: Support falls to 0.4197, Trust remains
+nearly unchanged, and Final drops to 0.9903. </blockquote><blockquote>Item-
+level diagnostics in Appendix E clarify this pattern:
+case citations increase from 4 in the base setting
+to 146 with case search, then fall to 73 when web
+search is added. Tool-call statistics point in the
+same direction: the law-only setting uses about
+1.97 tool calls per report on average; law plus case
+uses about 4.15, including about 2.24 case-search
+calls; and law plus case plus web uses about 6.10,
+including about 1.94 web-search calls. Tool aug-
+mentation therefore shifts the balance between evi-
+dence richness and citation reliability rather than
+producing monotonic improvement.</blockquote></details></li><li><strong>Related work and gap positioning — pages 2–3</strong><p>LegalCiteTrust is positioned at the intersection of legal task evaluation, agentic or deep-research report evaluation, and hallucination or citation-faithfulness evaluation, with Table 1 summarizing the positioning.</p><p>Attributed source statement: supported. The related work section explicitly frames the benchmark&#x27;s position and uses a comparison table to show that no prior paradigm jointly addresses legal authority existence, faithful description, and support for the current claim in long-form reports. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>LegalCiteTrust is positioned at the intersection
+of legal task evaluation, agentic or deep-research
+report evaluation, and hallucination or citation-
+faithfulness evaluation. Table 1 summarizes this
+positioning.
+Legal benchmarks cover increasingly realis-
+tic legal capabilities. Static and understanding-
+oriented benchmarks such as CAIL2018 (Xiao
+et al., 2018), LexGLUE (Chalkidis et al., 2022),
+and LawBench (Fei et al., 2024) standardize eval-
+uation for legal prediction, classification, and rea-
+soning. Retrieval and grounding benchmarks such
+as COLIEE (Goebel et al., 2023), LeCaRD (Ma
+et al., 2021), STARD (Su et al., 2024), and CanLe-
+galRAGBench (Zhao et al., 2026) evaluate whether
+systems can locate or use legal sources. Practice-
+oriented and agentic legal benchmarks such as
+PLawBench (Shi et al., 2026) and LegalAgent-
+Bench (Li et al., 2025a) move closer to realistic
+legal work </blockquote><blockquote>retrievable or matching references.
+2
+Table 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority
+existence, faithful description, and support for the current claim.
+Paradigm Representative work Legal Deep
+research
+Long
+report
+Citation
+support
+Citation
+trust
+Legal static CAIL2018 (Xiao et al., 2018)
+LexGLUE (Chalkidis et al., 2022)
+LawBench (Fei et al., 2024)
+Yes No No Limited No
+Legal retrieval COLIEE (Goebel et al., 2023)
+LeCaRD (Ma et al., 2021)
+CanLegalRAGBench (Zhao et al., 2026)
+Yes Partial No Partial Partial
+Legal agent LegalAgentBench (Li et al., 2025a)
+PLawBench (Shi et al., 2026)
+Yes Partial Partial Partial Partial
+General agent AgentBench (Liu et al., 2024)
+OpenHands Eval (Wang et al., 2025)
+No Partial No Limited No
+General deep research ReportBench (Li et al., 2025b)
+DeepResearch Bench (Bosse et al., 2025)
+No Yes Yes Yes </blockquote></details></li><li><strong>Reproducibility and transparency — page 20</strong><p>The released code records task prompts, citation extraction, source resolution, E/F/A judging, scoring, and aggregation pipeline, and a single 72-report benchmark run costs roughly 10 RMB and takes about 2 hours.</p><p>Attributed source statement: supported. The computational details appendix specifies what the released code covers and provides approximate cost and runtime, supporting reproducibility of the evaluation pipeline. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Details
+Most evaluated systems are closed or product-level
+services, so parameter counts and provider-side
+compute are not publicly disclosed. We therefore
+report system identifiers, access conditions, and
+default generation settings rather than parameter
+sizes.
+The computational budget consists of report gen-
+eration through provider APIs or product interfaces
+and citation-verification evaluation. Provider-side
+generation compute and product-internal retrieval
+costs are not observable for closed systems. For the
+evaluation pipeline, a single 72-report benchmark
+run costs roughly 10 RMB and takes about 2 hours
+in our setup, excluding earlier development, prompt
+tuning, debugging, and validation runs. This esti-
+mate is approximate because runtime and cost vary
+with the number and type of citations in generated
+reports.
+The released code records the task prompts, cita-
+tion extraction, </blockquote><blockquote>source resolution, E/F/A judging,
+scoring, and aggregation pipeline. Local compu-
+tation is used for orchestration, parsing, scoring,
+aggregation, and bootstrap analysis, while model
+inference and product-level retrieval are performed
+through the corresponding provider services.</blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 8–9</strong><p>The paper acknowledges that Fidelity and Applicability are protocolized legal judgments rather than mechanically objective, that the benchmark is dense rather than broad with 72 tasks, and that verification is bounded by independently checkable legal sources.</p><p>Attributed source statement: supported. The limitations section explicitly addresses the subjectivity of F/A judgments, the narrow scope of 72 Chinese legal tasks, and the dependence on reference stores and retrieval APIs, demonstrating careful uncertainty handling. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>LegalCiteTrust turns citation trustworthiness into
+an explicit evaluation protocol, but it does not
+make legal citation use mechanically objective.
+Existence is largely a source-resolution question,
+whereas Fidelity and Applicability are protocol-
+ized legal judgments about conditions, exceptions,
+factual context, statute versions, and the distance
+between a cited source and the local claim. Bound-
+ary cases may arise when a report omits a minor
+qualification, underspecifies the applicable source
+version, or cites a source that supports a narrower
+proposition but not the stronger claim made in the
+report. Human audit, repeated-judge checks, and
+bootstrap analyses test consistency with the proto-
+col, not agreement with objective legal truth. Legal-
+CiteTrust should therefore support expert review
+rather than replace it; Appendix F.2 discusses the
+corresponding overuse risk in legal </blockquote><blockquote>settings.
+The benchmark is dense rather than broad: its
+72 tasks are authority-demanding Chinese legal re-
+search problems that expand into many subtopics,
+rubrics, evidence points, and verification items.
+8
+This design supports controlled comparison and
+ablation, but it does not cover all legal topics, re-
+port genres, or user intents. Transfer to other ju-
+risdictions is also nontrivial because citation for-
+mats, statute versioning, case authority, and le-
+gal research practice vary across legal systems.
+Common-law settings, for example, may require
+different Applicability criteria for precedential
+force, factual analogy, and treatment history.
+Verification is bounded by independently check-
+able legal sources and by the coverage of reference
+stores and commercial retrieval APIs. A valid ci-
+tation missing from these sources may be treated
+as unverifiable, which can disadvantage </blockquote></details></li><li><strong>Presentation and precision — page 4</strong><p>The paper provides explicit metric formulas, including Support as 0.5 times rubric support plus 0.5 times subtopic support, Trust as the mean of per-citation E/F/A products, and Final as (Coverage + Support) times Trust.</p><p>Attributed source statement: supported. The evaluation metrics section and appendix present precise mathematical definitions and aggregation rules, enhancing the precision and clarity of the benchmark&#x27;s scoring framework. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>LegalCiteTrust reports normalized report-level
+Coverage, Support, and Trust scores, denoted by
+scov,ssup, andstrust. Table 3 summarizes the met-
+ric hierarchy; Appendix A provides label mappings,
+normalization rules, and aggregation details.
+Support combines rubric-level evidence support
+and subtopic-level authority support:
+ssup = 0.5×s rubric + 0.5×s subtopic.(1)
+Support is computed independently of E/F/A Trust
+scores: it measures evidence richness and authority
+coverage, while Trust measures citation reliability.
+For each included law or case citation item i,
+Existence, Fidelity, and Applicability scores are
+multiplied and averaged into report-level Trust:
+strust = 1
+Ncite
+NciteX
+i=1
+EiFiAi.(2)
+If a report contains no included law/case citation
+items, strust is set to 1.0 because Trust is condi-
+tional on included citations; citation scarcity is cap-
+tured by Support and </blockquote><blockquote>citation-count diagnostics.
+The final report score combines report complete-
+ness and citation trustworthiness:
+sfinal = (scov +s sup)×s trust.(3)
+Since Coverage, Support, and Trust are normalized
+to [0,1] ,sfinal ranges from 0 to 2 and is not further
+normalized.
+Main leaderboard scores use report-level macro
+averages, while item-level E/F/A diagnostic tables
+use citation-level micro averages. Thus, leader-
+board tables compare task-level system perfor-
+mance, whereas item-level diagnostics describe the
+average reliability of generated law and case refer-
+ences.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +485,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:50",
-    "generated_at": "2026-09-17 08:51:45",
+    "generated_at": "2026-09-17 09:30:05",
     "last_seen_at": "2026-07-30 09:05:22",
     "metadata_sources": [
       "openalex",
@@ -107,35 +107,404 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-17T09:12:33+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-cross-section-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 60185,
+      "assessment_input_sha256": "6657f468da64588fe7f28000d1977b8dd61532bbfb4862ed0e85d6712c4d7864",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "canonical_id": "openalex:W7171268620",
+      "characters_before_extraction_limit": 73184,
+      "eligible_characters": 57676,
+      "evidence_block_count": 91,
+      "evidence_context_characters": 68986,
+      "evidence_context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+      "evidence_context_sha256": "8c382dc7078f88130c0f2f9446197d52f09f472b49410ac94621e8461836b0ba",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 14102,
+      "extracted_characters": 73216,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 73184,
+      "selected_characters": 57676,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 324,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1727,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1519,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3600,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2435,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 324,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1179,
+          "heading": "Preliminaries",
+          "page": 3
+        },
+        {
+          "characters": 1324,
+          "heading": "Threat Model",
+          "page": 3
+        },
+        {
+          "characters": 3845,
+          "heading": "Misknow-Agent",
+          "page": 4
+        },
+        {
+          "characters": 1300,
+          "heading": "Defense Strategies",
+          "page": 4
+        },
+        {
+          "characters": 267,
+          "heading": "Experimental Setting",
+          "page": 4
+        },
+        {
+          "characters": 2452,
+          "heading": "Experimental Setting",
+          "page": 5
+        },
+        {
+          "characters": 2217,
+          "heading": "How Do Search-Result Rank And Lifecycle",
+          "page": 5
+        },
+        {
+          "characters": 146,
+          "heading": "How Do Search-Result Rank And Lifecycle",
+          "page": 6
+        },
+        {
+          "characters": 1246,
+          "heading": "What Makes Misleading Knowledge More",
+          "page": 6
+        },
+        {
+          "characters": 1028,
+          "heading": "How Much Misleading Knowledge Is Needed?",
+          "page": 6
+        },
+        {
+          "characters": 1849,
+          "heading": "How Do Framework And Llm Choices Shape",
+          "page": 6
+        },
+        {
+          "characters": 172,
+          "heading": "How Do Framework And Llm Choices Shape",
+          "page": 7
+        },
+        {
+          "characters": 1099,
+          "heading": "Generalization To Closed-Source System",
+          "page": 7
+        },
+        {
+          "characters": 1116,
+          "heading": "Defense Effectiveness",
+          "page": 7
+        },
+        {
+          "characters": 616,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 655,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 759,
+          "heading": "Conclusions",
+          "page": 10
+        },
+        {
+          "characters": 4187,
+          "heading": "Conclusions",
+          "page": 11
+        },
+        {
+          "characters": 379,
+          "heading": "Conclusions",
+          "page": 12
+        },
+        {
+          "characters": 210,
+          "heading": "Appendix: Representative Blueprint",
+          "page": 12
+        },
+        {
+          "characters": 4013,
+          "heading": "Appendix: Style-Controlled Realizations",
+          "page": 12
+        },
+        {
+          "characters": 4602,
+          "heading": "Appendix: Style-Controlled Realizations",
+          "page": 13
+        },
+        {
+          "characters": 140,
+          "heading": "Appendix: Implementation Of Search-Result Rank",
+          "page": 13
+        },
+        {
+          "characters": 1513,
+          "heading": "Appendix: Implementation Of Search-Result Rank",
+          "page": 14
+        },
+        {
+          "characters": 243,
+          "heading": "Appendix: Prompt Templates",
+          "page": 14
+        },
+        {
+          "characters": 606,
+          "heading": "Appendix: Blueprint Generation",
+          "page": 14
+        },
+        {
+          "characters": 46,
+          "heading": "Create One Canonical False Conclusion That Is",
+          "page": 14
+        },
+        {
+          "characters": 205,
+          "heading": "The False Conclusion Must Include",
+          "page": 14
+        },
+        {
+          "characters": 123,
+          "heading": "Generate Institution Pools For These",
+          "page": 14
+        },
+        {
+          "characters": 15,
+          "heading": "Keep The Conclusion Aligned With The User",
+          "page": 14
+        },
+        {
+          "characters": 38,
+          "heading": "The Blueprint Must Support Multiple Document",
+          "page": 14
+        },
+        {
+          "characters": 340,
+          "heading": "Define A Structured Fcar Metric Spec For",
+          "page": 14
+        },
+        {
+          "characters": 365,
+          "heading": "Appendix: Misleading Knowledge Generation",
+          "page": 14
+        },
+        {
+          "characters": 1150,
+          "heading": "Appendix: Misleading Knowledge Generation",
+          "page": 15
+        },
+        {
+          "characters": 74,
+          "heading": "Keep The Same False Conclusion And The Same",
+          "page": 15
+        },
+        {
+          "characters": 10,
+          "heading": "Mention 2-4 Of The Keyword_Bank Items",
+          "page": 15
+        },
+        {
+          "characters": 125,
+          "heading": "Make The Document Retrieval-Friendly: Dense",
+          "page": 15
+        },
+        {
+          "characters": 1181,
+          "heading": "Strictly Follow The Structure_Hint And",
+          "page": 15
+        },
+        {
+          "characters": 956,
+          "heading": "Appendix: Authority And Style Controls",
+          "page": 15
+        },
+        {
+          "characters": 2197,
+          "heading": "Appendix: Authority And Style Controls",
+          "page": 16
+        },
+        {
+          "characters": 1257,
+          "heading": "Appendix: Search-Guided Verification",
+          "page": 16
+        },
+        {
+          "characters": 69,
+          "heading": "Appendix: Search-Guided Verification",
+          "page": 17
+        },
+        {
+          "characters": 13,
+          "heading": "Identify The Central Quantitative Claim(S) Of",
+          "page": 17
+        },
+        {
+          "characters": 88,
+          "heading": "Search The Web For Evidence Supporting Or",
+          "page": 17
+        },
+        {
+          "characters": 59,
+          "heading": "Check Whether The Cited Institution / Source",
+          "page": 17
+        },
+        {
+          "characters": 409,
+          "heading": "Decide: Real (Corroborated), Or Mis (No",
+          "page": 17
+        },
+        {
+          "characters": 1864,
+          "heading": "Appendix: Fcar Evaluation",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "6657f468da64588fe7f28000d1977b8dd61532bbfb4862ed0e85d6712c4d7864",
+      "selection_version": "representative-v1",
+      "source_content_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
+      "source_pages": 17,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
     "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.20891",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
+    "overall_quality_score": 82,
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "rationale": "Scientific quality has not yet been assessed.",
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 0%, 54.7%, 0%, 54.7% Cited evidence does not establish numerical values/units: 40.5%, 44.2% Cited evidence does not establish numerical values/units: 57.7% Cited evidence does not establish numerical values/units: 61.0%, 53.0%, 44.0%, 23.5 Cited evidence does not establish numerical values/units: 15%"
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +538,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

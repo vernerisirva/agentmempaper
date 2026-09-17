@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:15",
-    "generated_at": "2026-09-17 08:51:35",
+    "generated_at": "2026-09-17 09:29:52",
     "last_seen_at": "2026-09-15 11:59:52",
     "metadata_sources": [
       "openalex",
@@ -110,35 +110,229 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-17T09:18:40+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-cross-section-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 34890,
+      "assessment_input_sha256": "b4a4d582dbc2c87fb85a33fbd086d2865ba7bf948eae4adcec9b9b50f05253f9",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "canonical_id": "doi:10.48550/arxiv.2609.08832",
+      "characters_before_extraction_limit": 40630,
+      "eligible_characters": 33990,
+      "evidence_block_count": 47,
+      "evidence_context_characters": 39465,
+      "evidence_context_id": "ab63d8b945096f8e78a7c1e8df671271b1a3fc5b48194ce673ab4ef56337f9ac",
+      "evidence_context_sha256": "58f935b627af224643a4077ba7ed514f339b6dfecd0221dcb3453fb22f4cff2d",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 6200,
+      "extracted_characters": 40646,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "extracted_pages": 9,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 40630,
+      "selected_characters": 33990,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected_sections": [
+        {
+          "characters": 211,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1226,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3012,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1528,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 292,
+          "heading": "Consistency Gap",
+          "page": 2
+        },
+        {
+          "characters": 1933,
+          "heading": "Pass@K, Mean@K, And Pass\u02c6K",
+          "page": 2
+        },
+        {
+          "characters": 1787,
+          "heading": "Empirical Characterization Of The",
+          "page": 2
+        },
+        {
+          "characters": 1177,
+          "heading": "Empirical Characterization Of The",
+          "page": 3
+        },
+        {
+          "characters": 1717,
+          "heading": "Consistency Guideline Generation",
+          "page": 3
+        },
+        {
+          "characters": 2129,
+          "heading": "Consistency Analyzer",
+          "page": 3
+        },
+        {
+          "characters": 2723,
+          "heading": "Consistency Analyzer",
+          "page": 4
+        },
+        {
+          "characters": 1754,
+          "heading": "Guideline Generation",
+          "page": 4
+        },
+        {
+          "characters": 515,
+          "heading": "Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 703,
+          "heading": "Experimental Setup",
+          "page": 4
+        },
+        {
+          "characters": 516,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 1923,
+          "heading": "Same-Task Consistency Improvement",
+          "page": 5
+        },
+        {
+          "characters": 1569,
+          "heading": "Generalization To Similar Tasks",
+          "page": 5
+        },
+        {
+          "characters": 718,
+          "heading": "Trajectory Consistency As An Outcome",
+          "page": 5
+        },
+        {
+          "characters": 1132,
+          "heading": "Related Work",
+          "page": 5
+        },
+        {
+          "characters": 2495,
+          "heading": "Related Work",
+          "page": 6
+        },
+        {
+          "characters": 1711,
+          "heading": "Discussion And Limitations",
+          "page": 6
+        },
+        {
+          "characters": 765,
+          "heading": "Conclusion",
+          "page": 6
+        },
+        {
+          "characters": 2454,
+          "heading": "Appendix",
+          "page": 7
+        }
+      ],
+      "selected_text_sha256": "b4a4d582dbc2c87fb85a33fbd086d2865ba7bf948eae4adcec9b9b50f05253f9",
+      "selection_version": "representative-v1",
+      "source_content_hash": "b8db2000e07e44655a2deee68a874207692919566e4bdffea065ff97f7b114e0",
+      "source_pages": 9,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 4,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
     "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.08832",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
+    "overall_quality_score": 82,
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "rationale": "Scientific quality has not yet been assessed.",
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "b8db2000e07e44655a2deee68a874207692919566e4bdffea065ff97f7b114e0",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 30, 0.5, 30, 0.5 Cited evidence does not establish numerical values/units: 0.699, 0.699 Cited evidence does not establish numerical values/units: 30x, 30x"
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +365,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

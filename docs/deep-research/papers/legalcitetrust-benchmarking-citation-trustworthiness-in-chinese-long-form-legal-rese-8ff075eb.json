@@ -41,7 +41,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:50",
-    "generated_at": "2026-09-17 08:51:45",
+    "generated_at": "2026-09-17 09:30:05",
     "last_seen_at": "2026-07-30 09:05:22",
     "metadata_sources": [
       "openalex",
@@ -108,35 +108,1276 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-17T09:13:20+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-cross-section-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 77569,
+      "assessment_input_sha256": "958c49945be861b87d346417e54417d437e345d260b0b841947e201132ed8dca",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "canonical_id": "doi:10.48550/arxiv.2607.20872",
+      "characters_before_extraction_limit": 83674,
+      "eligible_characters": 74196,
+      "evidence_block_count": 116,
+      "evidence_context_characters": 88632,
+      "evidence_context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+      "evidence_context_sha256": "aa1649c71d011b22901399861194aecd85a0e0cdc571c34231985d09bea987f4",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 7797,
+      "extracted_characters": 83714,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "extracted_pages": 21,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 83674,
+      "selected_characters": 74196,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "selected_sections": [
+        {
+          "characters": 441,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1438,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2580,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1433,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2731,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 1061,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 188,
+          "heading": "Benchmark Design",
+          "page": 3
+        },
+        {
+          "characters": 1620,
+          "heading": "Task Definition",
+          "page": 3
+        },
+        {
+          "characters": 717,
+          "heading": "Dataset Construction",
+          "page": 3
+        },
+        {
+          "characters": 836,
+          "heading": "Dataset Construction",
+          "page": 4
+        },
+        {
+          "characters": 999,
+          "heading": "Citation Trustworthiness Dimensions",
+          "page": 4
+        },
+        {
+          "characters": 1455,
+          "heading": "Evaluation Metrics",
+          "page": 4
+        },
+        {
+          "characters": 1010,
+          "heading": "Experimental Setup",
+          "page": 4
+        },
+        {
+          "characters": 1946,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 387,
+          "heading": "Results",
+          "page": 5
+        },
+        {
+          "characters": 1362,
+          "heading": "Main Leaderboard",
+          "page": 5
+        },
+        {
+          "characters": 1415,
+          "heading": "Main Leaderboard",
+          "page": 6
+        },
+        {
+          "characters": 1492,
+          "heading": "Tool Ablation",
+          "page": 6
+        },
+        {
+          "characters": 1308,
+          "heading": "Verification Ablation",
+          "page": 6
+        },
+        {
+          "characters": 697,
+          "heading": "Verification Ablation",
+          "page": 7
+        },
+        {
+          "characters": 602,
+          "heading": "Discussion",
+          "page": 7
+        },
+        {
+          "characters": 1250,
+          "heading": "Coverage-Like Evaluation Does Not",
+          "page": 7
+        },
+        {
+          "characters": 1792,
+          "heading": "More Evidence Requires Citation-Aware",
+          "page": 7
+        },
+        {
+          "characters": 1445,
+          "heading": "More Evidence Requires Citation-Aware",
+          "page": 8
+        },
+        {
+          "characters": 1041,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 1102,
+          "heading": "Limitations",
+          "page": 8
+        },
+        {
+          "characters": 1550,
+          "heading": "Limitations",
+          "page": 9
+        },
+        {
+          "characters": 458,
+          "heading": "Appendix: Overview",
+          "page": 10
+        },
+        {
+          "characters": 105,
+          "heading": "Appendix: Overview",
+          "page": 11
+        },
+        {
+          "characters": 6,
+          "heading": "Mentions Only Keywords, Concepts, Or Conclu-",
+          "page": 11
+        },
+        {
+          "characters": 53,
+          "heading": "Clearly Explains The Meaning, Cause, Manifes-",
+          "page": 11
+        },
+        {
+          "characters": 1081,
+          "heading": "Provides Paragraph-Level Analysis With At Least",
+          "page": 11
+        },
+        {
+          "characters": 478,
+          "heading": "Appendix: Coverage",
+          "page": 11
+        },
+        {
+          "characters": 225,
+          "heading": "Appendix: Support",
+          "page": 11
+        },
+        {
+          "characters": 29,
+          "heading": "No Statute, Judicial Interpretation, Or Normative",
+          "page": 11
+        },
+        {
+          "characters": 43,
+          "heading": "A Law Name Or Article Number Is Present, But",
+          "page": 11
+        },
+        {
+          "characters": 44,
+          "heading": "A Law/Document Name And Article Number Are",
+          "page": 11
+        },
+        {
+          "characters": 126,
+          "heading": "In Addition To Score 2, The Report Paraphrases",
+          "page": 11
+        },
+        {
+          "characters": 23,
+          "heading": "An Identifiable Case Is Clearly Used For The",
+          "page": 11
+        },
+        {
+          "characters": 504,
+          "heading": "An Identifiable Case Is Used And The Report Also",
+          "page": 11
+        },
+        {
+          "characters": 533,
+          "heading": "Appendix: Rubric Evidence Support",
+          "page": 11
+        },
+        {
+          "characters": 104,
+          "heading": "Appendix: Subtopic Evidence Support",
+          "page": 11
+        },
+        {
+          "characters": 159,
+          "heading": "Appendix: Subtopic Evidence Support",
+          "page": 12
+        },
+        {
+          "characters": 978,
+          "heading": "Three Or More Countable Authorities, In-",
+          "page": 12
+        },
+        {
+          "characters": 261,
+          "heading": "Appendix: Overall Support",
+          "page": 12
+        },
+        {
+          "characters": 309,
+          "heading": "Appendix: Trust Score",
+          "page": 12
+        },
+        {
+          "characters": 1113,
+          "heading": "Appendix: Citation Verification Workflow",
+          "page": 12
+        },
+        {
+          "characters": 597,
+          "heading": "Appendix: Citation Item Construction And",
+          "page": 12
+        },
+        {
+          "characters": 474,
+          "heading": "Appendix: General E/F/A Formula",
+          "page": 12
+        },
+        {
+          "characters": 1652,
+          "heading": "Appendix: General E/F/A Formula",
+          "page": 13
+        },
+        {
+          "characters": 1129,
+          "heading": "Appendix: Law Citation Scoring",
+          "page": 13
+        },
+        {
+          "characters": 492,
+          "heading": "Appendix: Case Citation Scoring",
+          "page": 13
+        },
+        {
+          "characters": 981,
+          "heading": "Appendix: Case Citation Scoring",
+          "page": 14
+        },
+        {
+          "characters": 705,
+          "heading": "Appendix: Report-Level Trust Aggregation",
+          "page": 14
+        },
+        {
+          "characters": 2095,
+          "heading": "Appendix: Final Score And System-Level",
+          "page": 14
+        },
+        {
+          "characters": 1009,
+          "heading": "Appendix: Final Score And System-Level",
+          "page": 15
+        },
+        {
+          "characters": 2373,
+          "heading": "Appendix: Evaluation Reliability",
+          "page": 15
+        },
+        {
+          "characters": 991,
+          "heading": "Appendix: Human Audit Of E/F/A Judgments",
+          "page": 15
+        },
+        {
+          "characters": 249,
+          "heading": "Appendix: Llm Judge Round 1 Vs. Round 2",
+          "page": 15
+        },
+        {
+          "characters": 1399,
+          "heading": "Appendix: Llm Judge Round 1 Vs. Round 2",
+          "page": 16
+        },
+        {
+          "characters": 1397,
+          "heading": "Appendix: Primary Vs. Secondary Expert Audit",
+          "page": 16
+        },
+        {
+          "characters": 922,
+          "heading": "Appendix: Report-Level Bootstrap Robustness",
+          "page": 16
+        },
+        {
+          "characters": 2358,
+          "heading": "Appendix: Report-Level Bootstrap Robustness",
+          "page": 17
+        },
+        {
+          "characters": 845,
+          "heading": "Appendix: Existence Error",
+          "page": 17
+        },
+        {
+          "characters": 789,
+          "heading": "Appendix: Fidelity Error",
+          "page": 17
+        },
+        {
+          "characters": 2434,
+          "heading": "Appendix: Fidelity Error",
+          "page": 18
+        },
+        {
+          "characters": 1553,
+          "heading": "Appendix: Applicability Error",
+          "page": 18
+        },
+        {
+          "characters": 4924,
+          "heading": "Appendix: Applicability Error",
+          "page": 19
+        },
+        {
+          "characters": 1029,
+          "heading": "Appendix: Applicability Error",
+          "page": 20
+        },
+        {
+          "characters": 23,
+          "heading": "Appendix: Additional Reproducibility And",
+          "page": 20
+        },
+        {
+          "characters": 1177,
+          "heading": "Appendix: Computational And Implementation",
+          "page": 20
+        },
+        {
+          "characters": 1009,
+          "heading": "Appendix: Societal Impact And Risks",
+          "page": 20
+        },
+        {
+          "characters": 552,
+          "heading": "Appendix: Ai Assistant Use",
+          "page": 20
+        },
+        {
+          "characters": 508,
+          "heading": "Appendix: Ai Assistant Use",
+          "page": 21
+        }
+      ],
+      "selected_text_sha256": "958c49945be861b87d346417e54417d437e345d260b0b841947e201132ed8dca",
+      "selection_version": "representative-v1",
+      "source_content_hash": "78aecfa17b429f060a7b44974115c3a93e900b9fd9768999050124b2448da419",
+      "source_pages": 21,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 5,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 5,
+      "reproducibility_and_transparency": 4,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": "contribution",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0006",
+          "E8f2ff4f303dcf9ed-B0016"
+        ],
+        "excerpt": "evaluation:\nwhether a report follows the requested research\nstructure, whether it provides legal evidence, and\nwhether its citations are trustworthy. Citation trust-\nworthiness is evaluated through Existence, Fidelity,\nand Applicability (E/F/A). Figure 1 summarizes\nthe task setting and evaluation framework.\nUsing LegalCiteTrust, we evaluate general-\npurpose LLMs, deep-research systems, and legal-\nspecific systems, with tool and verification abla-\ntions. The results show that task completion, ev-\nidence richness, citation density, and citation re-\nliability do not collapse into one quality axis: re-\ntrieval can increase evidence support without re-\nliably improving citation trustworthiness, while\nE/F/A feedback improves revision more clearly\n1\narXiv:2607.20872v1  [cs.CL]  23 Jul 2026\n(B) Citation-Level Failure Modes\nExistence Error:\nUnverifiable citation.\nThree-layer citation \n[\u2026 separate evidence block \u2026]\nrubric-level issues implied by the provided\nsubtopics and descriptions. It is therefore an ad-\nherence measure under a given research plan, not\nopen-ended legal issue spotting. Support mea-\nsures evidence richness: whether the report sup-\nplies statutory, regulatory, judicial-interpretation,\nor case authority for relevant issues, without itself\njudging whether each citation is faithfully used. Ci-\ntation Trustworthiness, quantified by a report-level\nTrust score, measures citation reliability through\nExistence, Fidelity, and Applicability (E/F/A) judg-\nments. Separating these dimensions lets Legal-\nCiteTrust distinguish whether a report covers the\nrequired analysis, provides legal evidence, and uses\ncitations reliably.",
+        "explanation": "The introduction explicitly defines the benchmark's three evaluation dimensions and the E/F/A operationalization, separating citation trustworthiness from report coverage and evidence support. This provides a clear, bounded contribution statement.",
+        "page": 1,
+        "pages": [
+          1,
+          2,
+          3
+        ],
+        "paraphrase": "LegalCiteTrust introduces a benchmark for citation trustworthiness in Chinese long-form legal research reports, operationalized through Existence, Fidelity, and Applicability (E/F/A) judgments alongside Coverage and Support.",
+        "section": "Introduction / Task Definition",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1c18b5426f01e770292e642b09dd443d3b6f366bee2d07737f2dd638bc3baddb",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0006",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2580,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 1787,
+                "text": "evaluation:\nwhether a report follows the requested research\nstructure, whether it provides legal evidence, and\nwhether its citations are trustworthy. Citation trust-\nworthiness is evaluated through Existence, Fidelity,\nand Applicability (E/F/A). Figure 1 summarizes\nthe task setting and evaluation framework.\nUsing LegalCiteTrust, we evaluate general-\npurpose LLMs, deep-research systems, and legal-\nspecific systems, with tool and verification abla-\ntions. The results show that task completion, ev-\nidence richness, citation density, and citation re-\nliability do not collapse into one quality axis: re-\ntrieval can increase evidence support without re-\nliably improving citation trustworthiness, while\nE/F/A feedback improves revision more clearly\n1\narXiv:2607.20872v1  [cs.CL]  23 Jul 2026"
+              },
+              {
+                "end": 94,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "(B) Citation-Level Failure Modes\nExistence Error:\nUnverifiable citation.\nThree-layer citation "
+              }
+            ],
+            "text": "evaluation:\nwhether a report follows the requested research\nstructure, whether it provides legal evidence, and\nwhether its citations are trustworthy. Citation trust-\nworthiness is evaluated through Existence, Fidelity,\nand Applicability (E/F/A). Figure 1 summarizes\nthe task setting and evaluation framework.\nUsing LegalCiteTrust, we evaluate general-\npurpose LLMs, deep-research systems, and legal-\nspecific systems, with tool and verification abla-\ntions. The results show that task completion, ev-\nidence richness, citation density, and citation re-\nliability do not collapse into one quality axis: re-\ntrieval can increase evidence support without re-\nliably improving citation trustworthiness, while\nE/F/A feedback improves revision more clearly\n1\narXiv:2607.20872v1  [cs.CL]  23 Jul 2026\n(B) Citation-Level Failure Modes\nExistence Error:\nUnverifiable citation.\nThree-layer citation "
+          },
+          {
+            "content_hash": "7bac4b39702ab2eb208397f4da435a031031972c70654dbe200ce18c9e3e9a89",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Task Definition",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1620,
+                "page": 3,
+                "section": "Task Definition",
+                "section_index": 7,
+                "start": 893,
+                "text": "rubric-level issues implied by the provided\nsubtopics and descriptions. It is therefore an ad-\nherence measure under a given research plan, not\nopen-ended legal issue spotting. Support mea-\nsures evidence richness: whether the report sup-\nplies statutory, regulatory, judicial-interpretation,\nor case authority for relevant issues, without itself\njudging whether each citation is faithfully used. Ci-\ntation Trustworthiness, quantified by a report-level\nTrust score, measures citation reliability through\nExistence, Fidelity, and Applicability (E/F/A) judg-\nments. Separating these dimensions lets Legal-\nCiteTrust distinguish whether a report covers the\nrequired analysis, provides legal evidence, and uses\ncitations reliably."
+              }
+            ],
+            "text": "rubric-level issues implied by the provided\nsubtopics and descriptions. It is therefore an ad-\nherence measure under a given research plan, not\nopen-ended legal issue spotting. Support mea-\nsures evidence richness: whether the report sup-\nplies statutory, regulatory, judicial-interpretation,\nor case authority for relevant issues, without itself\njudging whether each citation is faithfully used. Ci-\ntation Trustworthiness, quantified by a report-level\nTrust score, measures citation reliability through\nExistence, Fidelity, and Applicability (E/F/A) judg-\nments. Separating these dimensions lets Legal-\nCiteTrust distinguish whether a report covers the\nrequired analysis, provides legal evidence, and uses\ncitations reliably."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-0",
+          "reason": "The cited introduction and task definition explicitly state the E/F/A operationalization and the separation of citation trustworthiness from coverage and support.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0011",
+          "E8f2ff4f303dcf9ed-B0012"
+        ],
+        "excerpt": "statutes, judicial interpretations, regulations,\nand cases are not merely information sources, but\nnormative grounds for legal argument.\nHallucination and citation-faithfulness evalua-\ntions address factuality and grounding from another\ndirection. TruthfulQA (Lin et al., 2022) and HaluE-\nval (Li et al., 2023) evaluate factual or hallucinated\ncontent; RAGAS (Es et al., 2024), CRAG (Yang\net al., 2024), and RAGTruth (Niu et al., 2024) study\nfaithfulness or hallucination in retrieval-grounded\ngeneration. Citation-focused work asks whether\ngenerated statements are supported by references,\nand LegalCiteBench (Chen et al., 2026) targets\nlegal citation generation and verification through\ncitation recovery, matching, and correction. Legal-\nCiteTrust targets the remaining intersection: long-\nform legal research reports in which citations must\nfunction as trustworthy legal authority, not merely\nas \n[\u2026 separate evidence block \u2026]\nretrievable or matching references.\n2\nTable 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes",
+        "explanation": "The related work section systematically distinguishes LegalCiteTrust from legal static, legal retrieval, legal agent, general agent, general deep research, and citation/hallucination benchmarks, arguing that none jointly address long-form legal reports with citation trustworthiness as legal authority.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "The paper targets a gap not covered by existing legal benchmarks, agentic research benchmarks, or citation-faithfulness evaluations: whether each cited legal authority in a long-form report exists, is faithfully described, and supports the local claim.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "676cefc0c7d8659aaa9481c32c9bf16ee9741aa75409f4cf7711090e7053a333",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0011",
+            "pages": [
+              2
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 2694,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 1794,
+                "text": "statutes, judicial interpretations, regulations,\nand cases are not merely information sources, but\nnormative grounds for legal argument.\nHallucination and citation-faithfulness evalua-\ntions address factuality and grounding from another\ndirection. TruthfulQA (Lin et al., 2022) and HaluE-\nval (Li et al., 2023) evaluate factual or hallucinated\ncontent; RAGAS (Es et al., 2024), CRAG (Yang\net al., 2024), and RAGTruth (Niu et al., 2024) study\nfaithfulness or hallucination in retrieval-grounded\ngeneration. Citation-focused work asks whether\ngenerated statements are supported by references,\nand LegalCiteBench (Chen et al., 2026) targets\nlegal citation generation and verification through\ncitation recovery, matching, and correction. Legal-\nCiteTrust targets the remaining intersection: long-\nform legal research reports in which citations must\nfunction as trustworthy legal authority, not merely\nas "
+              }
+            ],
+            "text": "statutes, judicial interpretations, regulations,\nand cases are not merely information sources, but\nnormative grounds for legal argument.\nHallucination and citation-faithfulness evalua-\ntions address factuality and grounding from another\ndirection. TruthfulQA (Lin et al., 2022) and HaluE-\nval (Li et al., 2023) evaluate factual or hallucinated\ncontent; RAGAS (Es et al., 2024), CRAG (Yang\net al., 2024), and RAGTruth (Niu et al., 2024) study\nfaithfulness or hallucination in retrieval-grounded\ngeneration. Citation-focused work asks whether\ngenerated statements are supported by references,\nand LegalCiteBench (Chen et al., 2026) targets\nlegal citation generation and verification through\ncitation recovery, matching, and correction. Legal-\nCiteTrust targets the remaining intersection: long-\nform legal research reports in which citations must\nfunction as trustworthy legal authority, not merely\nas "
+          },
+          {
+            "content_hash": "e1f2ff546999cab4b1219ccfb58f74f148d35ecda84be5731fba965c079a8368",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0012",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 2731,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 2694,
+                "text": "retrievable or matching references.\n2"
+              },
+              {
+                "end": 860,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 0,
+                "text": "Table 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes "
+              }
+            ],
+            "text": "retrievable or matching references.\n2\nTable 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-1",
+          "reason": "The related work text and Table 1 explicitly position LegalCiteTrust at the intersection of legal, agentic, and citation-faithfulness benchmarks and state the remaining gap.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0017",
+          "E8f2ff4f303dcf9ed-B0018"
+        ],
+        "excerpt": "We construct LegalCiteTrust from a candidate\npool of 13,622 legal research documents. To en-\nsure sufficient legal-authority demand for citation-\ntrustworthiness evaluation, we retain documents\nwith at least one case citation and at least five statu-\ntory or normative references, yielding 72 source\ndocuments.\nTable 2: Dataset statistics.\nStatistic Count\nCandidate source documents 13,622\nFinal source documents / tasks 72\nSubtopics 236\nRubrics 585\nEvidence points 1,459\nEach source document is converted into one le-\ngal research task with a main query, subtopics, and\nsubtopic descriptions as generation input. Rubrics\nand evidence points are reserved for evaluation\nrather than shown to systems. Rubrics specify\n3\nfine-grained discussion requirements, while evi-\ndence points provide reference material for judg-\ning whether a report covers and supports those\nrequirements. The released benchmark \n[\u2026 separate evidence block \u2026]\nmateri-\nals consist of reconstructed task inputs, rubrics,\nevidence points, and annotations, and do not in-\nclude the source-document full text, abstracts, or\ncontinuous original passages. Released materi-\nals were reviewed to avoid unnecessary personal\nidentifying information; retained legal identifiers\nsuch as statute names, case names, docket num-\nbers, or judgment references are included only\nwhen needed for citation verification. The resulting\n72 tasks expand into 236 subtopics, 585 rubrics,\nand 1,459 evidence points, making the benchmark\ndense enough for controlled system comparison\nand ablation. Table 2 summarizes the benchmark\nstructure.",
+        "explanation": "The dataset construction section specifies the filtering criteria and resulting statistics, providing a reproducible basis for the benchmark's density and authority-demanding design.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "The benchmark is constructed from 13,622 candidate legal research documents, filtered to 72 source documents with at least one case citation and at least five statutory or normative references, yielding 236 subtopics, 585 rubrics, and 1,459 evidence points.",
+        "section": "Dataset Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9341e31906aff6f3c48d50d337623bdf8578ef2c902a8bc183ef822d9c1522d2",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0017",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Dataset Construction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 717,
+                "page": 3,
+                "section": "Dataset Construction",
+                "section_index": 8,
+                "start": 0,
+                "text": "We construct LegalCiteTrust from a candidate\npool of 13,622 legal research documents. To en-\nsure sufficient legal-authority demand for citation-\ntrustworthiness evaluation, we retain documents\nwith at least one case citation and at least five statu-\ntory or normative references, yielding 72 source\ndocuments.\nTable 2: Dataset statistics.\nStatistic Count\nCandidate source documents 13,622\nFinal source documents / tasks 72\nSubtopics 236\nRubrics 585\nEvidence points 1,459\nEach source document is converted into one le-\ngal research task with a main query, subtopics, and\nsubtopic descriptions as generation input. Rubrics\nand evidence points are reserved for evaluation\nrather than shown to systems. Rubrics specify\n3"
+              },
+              {
+                "end": 183,
+                "page": 4,
+                "section": "Dataset Construction",
+                "section_index": 9,
+                "start": 0,
+                "text": "fine-grained discussion requirements, while evi-\ndence points provide reference material for judg-\ning whether a report covers and supports those\nrequirements. The released benchmark "
+              }
+            ],
+            "text": "We construct LegalCiteTrust from a candidate\npool of 13,622 legal research documents. To en-\nsure sufficient legal-authority demand for citation-\ntrustworthiness evaluation, we retain documents\nwith at least one case citation and at least five statu-\ntory or normative references, yielding 72 source\ndocuments.\nTable 2: Dataset statistics.\nStatistic Count\nCandidate source documents 13,622\nFinal source documents / tasks 72\nSubtopics 236\nRubrics 585\nEvidence points 1,459\nEach source document is converted into one le-\ngal research task with a main query, subtopics, and\nsubtopic descriptions as generation input. Rubrics\nand evidence points are reserved for evaluation\nrather than shown to systems. Rubrics specify\n3\nfine-grained discussion requirements, while evi-\ndence points provide reference material for judg-\ning whether a report covers and supports those\nrequirements. The released benchmark "
+          },
+          {
+            "content_hash": "1784f9229530828bbdab0395a4b5887c24d3fddf761f148ae98358fd9d1fcbad",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Dataset Construction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 836,
+                "page": 4,
+                "section": "Dataset Construction",
+                "section_index": 9,
+                "start": 183,
+                "text": "materi-\nals consist of reconstructed task inputs, rubrics,\nevidence points, and annotations, and do not in-\nclude the source-document full text, abstracts, or\ncontinuous original passages. Released materi-\nals were reviewed to avoid unnecessary personal\nidentifying information; retained legal identifiers\nsuch as statute names, case names, docket num-\nbers, or judgment references are included only\nwhen needed for citation verification. The resulting\n72 tasks expand into 236 subtopics, 585 rubrics,\nand 1,459 evidence points, making the benchmark\ndense enough for controlled system comparison\nand ablation. Table 2 summarizes the benchmark\nstructure."
+              }
+            ],
+            "text": "materi-\nals consist of reconstructed task inputs, rubrics,\nevidence points, and annotations, and do not in-\nclude the source-document full text, abstracts, or\ncontinuous original passages. Released materi-\nals were reviewed to avoid unnecessary personal\nidentifying information; retained legal identifiers\nsuch as statute names, case names, docket num-\nbers, or judgment references are included only\nwhen needed for citation verification. The resulting\n72 tasks expand into 236 subtopics, 585 rubrics,\nand 1,459 evidence points, making the benchmark\ndense enough for controlled system comparison\nand ablation. Table 2 summarizes the benchmark\nstructure."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-2",
+          "reason": "The dataset construction section states the 13,622 candidate pool, the filtering criteria, and the resulting 72 documents, 236 subtopics, 585 rubrics, and 1,459 evidence points.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0071",
+          "E8f2ff4f303dcf9ed-B0077"
+        ],
+        "excerpt": "For each included citation item, the reference-level\nTrust score is\nitem_trust =E\u00d7F NA=1 \u00d7A NA=1.\nHere E is the Existence score; FNA=1 is the Fi-\ndelity score, with NA or skipped Fidelity treated\nas 1.0; andANA=1 is the Applicability score, with\nNA or skipped Applicability treated as 1.0. This\nmeans that an unavailable F/A judgment does not\nadd an extra penalty, while Existence must always\nbe scored. Unknown labels not covered by the\nscore mapping are treated as 0.0.\n12\nLegal Research Report\nArticle 577 of the Civil\nCode provides that ......\nCitation Extraction\nDetect and\nnormalize cited laws,\narticles, and cases\nArgument\nExtraction\nExtract  Citation\ncontext, Local Claim\nAuthority Retrieval\nRetrieve official legal\n/ case source\nVerification Item\n{\n}\nCitation\nnormalized law/ case reference\nLocal claim\nclaim supported by this\ncitation\nSource content\nretrieved official text\nCitation \n[\u2026 separate evidence block \u2026]\nsupports 0.5\nOverextended inference 0.5\nContradicts 0.0\nIrrelevant 0.0\nSkipped NA, as 1.0\nOther unknown label 0.0\nA.4.6 NA, Skip, Exclusion, and Unknown\nLabels\nNA or skipped F/A labels indicate that a Fidelity\nor Applicability layer has no valid judgment, for\nexample due to insufficient input or an explicit skip.\nThat layer is treated as 1.0 in the multiplicative item\nscore. Excluded items are outside the Trust denom-\ninator and do not enter E/F/A averages. Unknown\nlabels are labels not covered by the score mapping;\nto avoid inflating scores, they are treated as 0.0.",
+        "explanation": "The appendix provides explicit formulas and label-to-score mappings for law and case citations, including handling of NA, skip, exclusion, and unknown labels, which supports the rigor and reproducibility of the metric.",
+        "page": 12,
+        "pages": [
+          12,
+          13,
+          14
+        ],
+        "paraphrase": "The Trust score is computed as the mean of per-citation products of Existence, Fidelity, and Applicability scores, with NA or skipped F/A treated as 1.0 and Existence always scored.",
+        "section": "Appendix: General E/F/A Formula / Appendix: Case Citation Scoring",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5ec12b2c4e1612773027fe77dee087c13c8470b2660c292f1f840fa1f848e086",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0071",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Appendix: General E/F/A Formula",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 474,
+                "page": 12,
+                "section": "Appendix: General E/F/A Formula",
+                "section_index": 48,
+                "start": 0,
+                "text": "For each included citation item, the reference-level\nTrust score is\nitem_trust =E\u00d7F NA=1 \u00d7A NA=1.\nHere E is the Existence score; FNA=1 is the Fi-\ndelity score, with NA or skipped Fidelity treated\nas 1.0; andANA=1 is the Applicability score, with\nNA or skipped Applicability treated as 1.0. This\nmeans that an unavailable F/A judgment does not\nadd an extra penalty, while Existence must always\nbe scored. Unknown labels not covered by the\nscore mapping are treated as 0.0.\n12"
+              },
+              {
+                "end": 418,
+                "page": 13,
+                "section": "Appendix: General E/F/A Formula",
+                "section_index": 49,
+                "start": 0,
+                "text": "Legal Research Report\nArticle 577 of the Civil\nCode provides that ......\nCitation Extraction\nDetect and\nnormalize cited laws,\narticles, and cases\nArgument\nExtraction\nExtract  Citation\ncontext, Local Claim\nAuthority Retrieval\nRetrieve official legal\n/ case source\nVerification Item\n{\n}\nCitation\nnormalized law/ case reference\nLocal claim\nclaim supported by this\ncitation\nSource content\nretrieved official text\nCitation "
+              }
+            ],
+            "text": "For each included citation item, the reference-level\nTrust score is\nitem_trust =E\u00d7F NA=1 \u00d7A NA=1.\nHere E is the Existence score; FNA=1 is the Fi-\ndelity score, with NA or skipped Fidelity treated\nas 1.0; andANA=1 is the Applicability score, with\nNA or skipped Applicability treated as 1.0. This\nmeans that an unavailable F/A judgment does not\nadd an extra penalty, while Existence must always\nbe scored. Unknown labels not covered by the\nscore mapping are treated as 0.0.\n12\nLegal Research Report\nArticle 577 of the Civil\nCode provides that ......\nCitation Extraction\nDetect and\nnormalize cited laws,\narticles, and cases\nArgument\nExtraction\nExtract  Citation\ncontext, Local Claim\nAuthority Retrieval\nRetrieve official legal\n/ case source\nVerification Item\n{\n}\nCitation\nnormalized law/ case reference\nLocal claim\nclaim supported by this\ncitation\nSource content\nretrieved official text\nCitation "
+          },
+          {
+            "content_hash": "85659d2e2766e455a471c415764d3b50e6c76d77b8746d3d42e189b35bc6e76b",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0077",
+            "pages": [
+              14
+            ],
+            "section": "Appendix: Case Citation Scoring",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 981,
+                "page": 14,
+                "section": "Appendix: Case Citation Scoring",
+                "section_index": 52,
+                "start": 408,
+                "text": "supports 0.5\nOverextended inference 0.5\nContradicts 0.0\nIrrelevant 0.0\nSkipped NA, as 1.0\nOther unknown label 0.0\nA.4.6 NA, Skip, Exclusion, and Unknown\nLabels\nNA or skipped F/A labels indicate that a Fidelity\nor Applicability layer has no valid judgment, for\nexample due to insufficient input or an explicit skip.\nThat layer is treated as 1.0 in the multiplicative item\nscore. Excluded items are outside the Trust denom-\ninator and do not enter E/F/A averages. Unknown\nlabels are labels not covered by the score mapping;\nto avoid inflating scores, they are treated as 0.0."
+              }
+            ],
+            "text": "supports 0.5\nOverextended inference 0.5\nContradicts 0.0\nIrrelevant 0.0\nSkipped NA, as 1.0\nOther unknown label 0.0\nA.4.6 NA, Skip, Exclusion, and Unknown\nLabels\nNA or skipped F/A labels indicate that a Fidelity\nor Applicability layer has no valid judgment, for\nexample due to insufficient input or an explicit skip.\nThat layer is treated as 1.0 in the multiplicative item\nscore. Excluded items are outside the Trust denom-\ninator and do not enter E/F/A averages. Unknown\nlabels are labels not covered by the score mapping;\nto avoid inflating scores, they are treated as 0.0."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-3",
+          "reason": "The appendix provides the multiplicative item_trust formula and the NA/skip/unknown label handling rules as claimed.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "evaluation",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0034",
+          "E8f2ff4f303dcf9ed-B0035"
+        ],
+        "excerpt": "The verification ablation tests whether E/F/A sig-\nnals can improve generated reports rather than\nmerely score them after the fact. We use\nQwen36_tool_law_case as the Base system, add\nan LLM revision stage, and compare two feedback\nvariants: E-Filter receives only Existence results,\nwhile EFA-Revise receives the full E/F/A verifica-\ntion report. All three settings use the same 72 tasks,\nand Table 7 reports the report-level summary.\nTrust increases monotonically from Base to E-\nFilter and EFA-Revise: 0.7433, 0.8134, and 0.8883.\nFinal also rises from 1.0329 to 1.0970 and 1.1708,\nwhile Coverage remains broadly stable and Support\ndecreases. This indicates that verification feedback\nimproves citation reliability by removing or revis-\ning unreliable evidence, even when this sacrifices\nsome evidence support.\nThe comparison also shows why full E/F/A feed-\nback is more useful than existence-only \n[\u2026 separate evidence block \u2026]\nfiltering.\nE-Filter mainly removes nonexistent or unresolved\ncitations; Appendix E shows that law E rises from\n0.9446 to 0.9987 and case E rises from 0.8014 to\n0.9808, but case F and case A decrease after filter-\ning. EFA-Revise uses richer feedback about source\ndescription and claim support, improving law F,\nlaw A, case F, and case A relative to Base and\nproducing the largest Trust gain. Representative\n6\nTable 7: Verification ablation report-level summary. Report-level E/F/A averages summarize citation verification\nwithin reports.\nModel Final Main dimensions Support components Report-level E/F/A\nCov Sup Trust Rubric Subtopic E F A\nBase 1.0329 0.9065 0.4857 0.7433 0.4568 0.5146 0.9106 0.9198 0.8752\nE-Filter 1.0970 0.9099 0.4487 0.8134 0.4415 0.4559 0.9980 0.9160 0.8673\nEFA-Revise 1.1708 0.9011 0.4223 0.8883 0.4177 0.4270 0.9836 0.9713 0.9285\ncases in Appendix D illustrate how Existence,",
+        "explanation": "The verification ablation results provide quantitative evidence that E/F/A signals function as useful revision feedback, not merely post-hoc scoring, supporting the paper's central claim about citation-aware evidence governance.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "The verification ablation shows that full E/F/A feedback improves Trust from 0.7433 (Base) to 0.8883 (EFA-Revise) and Final from 1.0329 to 1.1708, more clearly than existence-only filtering (Trust 0.8134, Final 1.0970).",
+        "section": "Verification Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "76257cf85da349e5c559bba1a08bac1fb3eb17884ab831699233689c9dc1f418",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Verification Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 6,
+                "section": "Verification Ablation",
+                "section_index": 18,
+                "start": 0,
+                "text": "The verification ablation tests whether E/F/A sig-\nnals can improve generated reports rather than\nmerely score them after the fact. We use\nQwen36_tool_law_case as the Base system, add\nan LLM revision stage, and compare two feedback\nvariants: E-Filter receives only Existence results,\nwhile EFA-Revise receives the full E/F/A verifica-\ntion report. All three settings use the same 72 tasks,\nand Table 7 reports the report-level summary.\nTrust increases monotonically from Base to E-\nFilter and EFA-Revise: 0.7433, 0.8134, and 0.8883.\nFinal also rises from 1.0329 to 1.0970 and 1.1708,\nwhile Coverage remains broadly stable and Support\ndecreases. This indicates that verification feedback\nimproves citation reliability by removing or revis-\ning unreliable evidence, even when this sacrifices\nsome evidence support.\nThe comparison also shows why full E/F/A feed-\nback is more useful than existence-only "
+              }
+            ],
+            "text": "The verification ablation tests whether E/F/A sig-\nnals can improve generated reports rather than\nmerely score them after the fact. We use\nQwen36_tool_law_case as the Base system, add\nan LLM revision stage, and compare two feedback\nvariants: E-Filter receives only Existence results,\nwhile EFA-Revise receives the full E/F/A verifica-\ntion report. All three settings use the same 72 tasks,\nand Table 7 reports the report-level summary.\nTrust increases monotonically from Base to E-\nFilter and EFA-Revise: 0.7433, 0.8134, and 0.8883.\nFinal also rises from 1.0329 to 1.0970 and 1.1708,\nwhile Coverage remains broadly stable and Support\ndecreases. This indicates that verification feedback\nimproves citation reliability by removing or revis-\ning unreliable evidence, even when this sacrifices\nsome evidence support.\nThe comparison also shows why full E/F/A feed-\nback is more useful than existence-only "
+          },
+          {
+            "content_hash": "f042a434d100126954f6439b8e7246799c93a021782c4ebf4c395fad1e095cd7",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0035",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Verification Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1308,
+                "page": 6,
+                "section": "Verification Ablation",
+                "section_index": 18,
+                "start": 900,
+                "text": "filtering.\nE-Filter mainly removes nonexistent or unresolved\ncitations; Appendix E shows that law E rises from\n0.9446 to 0.9987 and case E rises from 0.8014 to\n0.9808, but case F and case A decrease after filter-\ning. EFA-Revise uses richer feedback about source\ndescription and claim support, improving law F,\nlaw A, case F, and case A relative to Base and\nproducing the largest Trust gain. Representative\n6"
+              },
+              {
+                "end": 491,
+                "page": 7,
+                "section": "Verification Ablation",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 7: Verification ablation report-level summary. Report-level E/F/A averages summarize citation verification\nwithin reports.\nModel Final Main dimensions Support components Report-level E/F/A\nCov Sup Trust Rubric Subtopic E F A\nBase 1.0329 0.9065 0.4857 0.7433 0.4568 0.5146 0.9106 0.9198 0.8752\nE-Filter 1.0970 0.9099 0.4487 0.8134 0.4415 0.4559 0.9980 0.9160 0.8673\nEFA-Revise 1.1708 0.9011 0.4223 0.8883 0.4177 0.4270 0.9836 0.9713 0.9285\ncases in Appendix D illustrate how Existence, "
+              }
+            ],
+            "text": "filtering.\nE-Filter mainly removes nonexistent or unresolved\ncitations; Appendix E shows that law E rises from\n0.9446 to 0.9987 and case E rises from 0.8014 to\n0.9808, but case F and case A decrease after filter-\ning. EFA-Revise uses richer feedback about source\ndescription and claim support, improving law F,\nlaw A, case F, and case A relative to Base and\nproducing the largest Trust gain. Representative\n6\nTable 7: Verification ablation report-level summary. Report-level E/F/A averages summarize citation verification\nwithin reports.\nModel Final Main dimensions Support components Report-level E/F/A\nCov Sup Trust Rubric Subtopic E F A\nBase 1.0329 0.9065 0.4857 0.7433 0.4568 0.5146 0.9106 0.9198 0.8752\nE-Filter 1.0970 0.9099 0.4487 0.8134 0.4415 0.4559 0.9980 0.9160 0.8673\nEFA-Revise 1.1708 0.9011 0.4223 0.8883 0.4177 0.4270 0.9836 0.9713 0.9285\ncases in Appendix D illustrate how Existence, "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-4",
+          "reason": "The verification ablation text and Table 7 report the exact Trust and Final values for Base, E-Filter, and EFA-Revise.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "result",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "evidence_to_claim_alignment",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0032",
+          "E8f2ff4f303dcf9ed-B0033"
+        ],
+        "excerpt": "The tool ablation isolates how retrieval ac-\ncess changes one base system. Starting from\nQwen36_plus, we progressively add law search,\nlaw plus case search, and law plus case plus web\nsearch, while keeping the task input and base\nprompt fixed. Table 6 reports the report-level sum-\nmary.\nLaw search modestly increases Support from\n0.3153 to 0.3427 and Trust from 0.7744 to 0.7951,\nraising Final from 0.9612 to 0.9718. Adding case\nsearch produces the largest evidence gain: Support\nrises to 0.4857, especially through Subtopic Ev-\nidence Support, but Trust drops to 0.7433. The\nlaw-plus-case condition still achieves the highest\nFinal score among tool settings, showing that case\nevidence improves the composite score while in-\ncreasing citation risk.\nAdding web search does not further improve per-\nformance: Support falls to 0.4197, Trust remains\nnearly unchanged, and Final drops to 0.9903. \n[\u2026 separate evidence block \u2026]\nItem-\nlevel diagnostics in Appendix E clarify this pattern:\ncase citations increase from 4 in the base setting\nto 146 with case search, then fall to 73 when web\nsearch is added. Tool-call statistics point in the\nsame direction: the law-only setting uses about\n1.97 tool calls per report on average; law plus case\nuses about 4.15, including about 2.24 case-search\ncalls; and law plus case plus web uses about 6.10,\nincluding about 1.94 web-search calls. Tool aug-\nmentation therefore shifts the balance between evi-\ndence richness and citation reliability rather than\nproducing monotonic improvement.",
+        "explanation": "The tool ablation results directly demonstrate the Support-Trust tension claimed in the abstract and discussion, with specific numeric changes across tool conditions.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "The tool ablation shows that adding case search increases Support from 0.3153 to 0.4857 but decreases Trust from 0.7744 to 0.7433, supporting the claim that retrieval can improve evidence support without reliably improving citation trustworthiness.",
+        "section": "Tool Ablation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78fc330fb934244b181ae763c7f7606e4aabb159cb0cafbbd8baef26fd857646",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Tool Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 6,
+                "section": "Tool Ablation",
+                "section_index": 17,
+                "start": 0,
+                "text": "The tool ablation isolates how retrieval ac-\ncess changes one base system. Starting from\nQwen36_plus, we progressively add law search,\nlaw plus case search, and law plus case plus web\nsearch, while keeping the task input and base\nprompt fixed. Table 6 reports the report-level sum-\nmary.\nLaw search modestly increases Support from\n0.3153 to 0.3427 and Trust from 0.7744 to 0.7951,\nraising Final from 0.9612 to 0.9718. Adding case\nsearch produces the largest evidence gain: Support\nrises to 0.4857, especially through Subtopic Ev-\nidence Support, but Trust drops to 0.7433. The\nlaw-plus-case condition still achieves the highest\nFinal score among tool settings, showing that case\nevidence improves the composite score while in-\ncreasing citation risk.\nAdding web search does not further improve per-\nformance: Support falls to 0.4197, Trust remains\nnearly unchanged, and Final drops to 0.9903. "
+              }
+            ],
+            "text": "The tool ablation isolates how retrieval ac-\ncess changes one base system. Starting from\nQwen36_plus, we progressively add law search,\nlaw plus case search, and law plus case plus web\nsearch, while keeping the task input and base\nprompt fixed. Table 6 reports the report-level sum-\nmary.\nLaw search modestly increases Support from\n0.3153 to 0.3427 and Trust from 0.7744 to 0.7951,\nraising Final from 0.9612 to 0.9718. Adding case\nsearch produces the largest evidence gain: Support\nrises to 0.4857, especially through Subtopic Ev-\nidence Support, but Trust drops to 0.7433. The\nlaw-plus-case condition still achieves the highest\nFinal score among tool settings, showing that case\nevidence improves the composite score while in-\ncreasing citation risk.\nAdding web search does not further improve per-\nformance: Support falls to 0.4197, Trust remains\nnearly unchanged, and Final drops to 0.9903. "
+          },
+          {
+            "content_hash": "2e60381d0280902d0a6ec6544f7346b8611c682ea8b88328adff4552942fe0b0",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Tool Ablation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1492,
+                "page": 6,
+                "section": "Tool Ablation",
+                "section_index": 17,
+                "start": 893,
+                "text": "Item-\nlevel diagnostics in Appendix E clarify this pattern:\ncase citations increase from 4 in the base setting\nto 146 with case search, then fall to 73 when web\nsearch is added. Tool-call statistics point in the\nsame direction: the law-only setting uses about\n1.97 tool calls per report on average; law plus case\nuses about 4.15, including about 2.24 case-search\ncalls; and law plus case plus web uses about 6.10,\nincluding about 1.94 web-search calls. Tool aug-\nmentation therefore shifts the balance between evi-\ndence richness and citation reliability rather than\nproducing monotonic improvement."
+              }
+            ],
+            "text": "Item-\nlevel diagnostics in Appendix E clarify this pattern:\ncase citations increase from 4 in the base setting\nto 146 with case search, then fall to 73 when web\nsearch is added. Tool-call statistics point in the\nsame direction: the law-only setting uses about\n1.97 tool calls per report on average; law plus case\nuses about 4.15, including about 2.24 case-search\ncalls; and law plus case plus web uses about 6.10,\nincluding about 1.94 web-search calls. Tool aug-\nmentation therefore shifts the balance between evi-\ndence richness and citation reliability rather than\nproducing monotonic improvement."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-6",
+          "reason": "The tool ablation text states that adding case search raises Support from 0.3153 to 0.4857 while Trust drops from 0.7744 to 0.7433.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "positioning",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0009",
+          "E8f2ff4f303dcf9ed-B0012"
+        ],
+        "excerpt": "LegalCiteTrust is positioned at the intersection\nof legal task evaluation, agentic or deep-research\nreport evaluation, and hallucination or citation-\nfaithfulness evaluation. Table 1 summarizes this\npositioning.\nLegal benchmarks cover increasingly realis-\ntic legal capabilities. Static and understanding-\noriented benchmarks such as CAIL2018 (Xiao\net al., 2018), LexGLUE (Chalkidis et al., 2022),\nand LawBench (Fei et al., 2024) standardize eval-\nuation for legal prediction, classification, and rea-\nsoning. Retrieval and grounding benchmarks such\nas COLIEE (Goebel et al., 2023), LeCaRD (Ma\net al., 2021), STARD (Su et al., 2024), and CanLe-\ngalRAGBench (Zhao et al., 2026) evaluate whether\nsystems can locate or use legal sources. Practice-\noriented and agentic legal benchmarks such as\nPLawBench (Shi et al., 2026) and LegalAgent-\nBench (Li et al., 2025a) move closer to realistic\nlegal work \n[\u2026 separate evidence block \u2026]\nretrievable or matching references.\n2\nTable 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes",
+        "explanation": "The related work section explicitly frames the benchmark's position and uses a comparison table to show that no prior paradigm jointly addresses legal authority existence, faithful description, and support for the current claim in long-form reports.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "LegalCiteTrust is positioned at the intersection of legal task evaluation, agentic or deep-research report evaluation, and hallucination or citation-faithfulness evaluation, with Table 1 summarizing the positioning.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "471d10e4f88c3ebd383fc3aa4fbeed1ab6e108dc70c6917429f0de3c6fe80826",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 0,
+                "text": "LegalCiteTrust is positioned at the intersection\nof legal task evaluation, agentic or deep-research\nreport evaluation, and hallucination or citation-\nfaithfulness evaluation. Table 1 summarizes this\npositioning.\nLegal benchmarks cover increasingly realis-\ntic legal capabilities. Static and understanding-\noriented benchmarks such as CAIL2018 (Xiao\net al., 2018), LexGLUE (Chalkidis et al., 2022),\nand LawBench (Fei et al., 2024) standardize eval-\nuation for legal prediction, classification, and rea-\nsoning. Retrieval and grounding benchmarks such\nas COLIEE (Goebel et al., 2023), LeCaRD (Ma\net al., 2021), STARD (Su et al., 2024), and CanLe-\ngalRAGBench (Zhao et al., 2026) evaluate whether\nsystems can locate or use legal sources. Practice-\noriented and agentic legal benchmarks such as\nPLawBench (Shi et al., 2026) and LegalAgent-\nBench (Li et al., 2025a) move closer to realistic\nlegal work "
+              }
+            ],
+            "text": "LegalCiteTrust is positioned at the intersection\nof legal task evaluation, agentic or deep-research\nreport evaluation, and hallucination or citation-\nfaithfulness evaluation. Table 1 summarizes this\npositioning.\nLegal benchmarks cover increasingly realis-\ntic legal capabilities. Static and understanding-\noriented benchmarks such as CAIL2018 (Xiao\net al., 2018), LexGLUE (Chalkidis et al., 2022),\nand LawBench (Fei et al., 2024) standardize eval-\nuation for legal prediction, classification, and rea-\nsoning. Retrieval and grounding benchmarks such\nas COLIEE (Goebel et al., 2023), LeCaRD (Ma\net al., 2021), STARD (Su et al., 2024), and CanLe-\ngalRAGBench (Zhao et al., 2026) evaluate whether\nsystems can locate or use legal sources. Practice-\noriented and agentic legal benchmarks such as\nPLawBench (Shi et al., 2026) and LegalAgent-\nBench (Li et al., 2025a) move closer to realistic\nlegal work "
+          },
+          {
+            "content_hash": "e1f2ff546999cab4b1219ccfb58f74f148d35ecda84be5731fba965c079a8368",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0012",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 2731,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 2694,
+                "text": "retrievable or matching references.\n2"
+              },
+              {
+                "end": 860,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 0,
+                "text": "Table 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes "
+              }
+            ],
+            "text": "retrievable or matching references.\n2\nTable 1: Positioning LegalCiteTrust against related paradigms. Citation trustworthiness requires legal authority\nexistence, faithful description, and support for the current claim.\nParadigm Representative work Legal Deep\nresearch\nLong\nreport\nCitation\nsupport\nCitation\ntrust\nLegal static CAIL2018 (Xiao et al., 2018)\nLexGLUE (Chalkidis et al., 2022)\nLawBench (Fei et al., 2024)\nYes No No Limited No\nLegal retrieval COLIEE (Goebel et al., 2023)\nLeCaRD (Ma et al., 2021)\nCanLegalRAGBench (Zhao et al., 2026)\nYes Partial No Partial Partial\nLegal agent LegalAgentBench (Li et al., 2025a)\nPLawBench (Shi et al., 2026)\nYes Partial Partial Partial Partial\nGeneral agent AgentBench (Liu et al., 2024)\nOpenHands Eval (Wang et al., 2025)\nNo Partial No Limited No\nGeneral deep research ReportBench (Li et al., 2025b)\nDeepResearch Bench (Bosse et al., 2025)\nNo Yes Yes Yes "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-7",
+          "reason": "The related work section explicitly frames the intersection positioning and Table 1 summarizes the comparison.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "reproducibility",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0111",
+          "E8f2ff4f303dcf9ed-B0112"
+        ],
+        "excerpt": "Details\nMost evaluated systems are closed or product-level\nservices, so parameter counts and provider-side\ncompute are not publicly disclosed. We therefore\nreport system identifiers, access conditions, and\ndefault generation settings rather than parameter\nsizes.\nThe computational budget consists of report gen-\neration through provider APIs or product interfaces\nand citation-verification evaluation. Provider-side\ngeneration compute and product-internal retrieval\ncosts are not observable for closed systems. For the\nevaluation pipeline, a single 72-report benchmark\nrun costs roughly 10 RMB and takes about 2 hours\nin our setup, excluding earlier development, prompt\ntuning, debugging, and validation runs. This esti-\nmate is approximate because runtime and cost vary\nwith the number and type of citations in generated\nreports.\nThe released code records the task prompts, cita-\ntion extraction, \n[\u2026 separate evidence block \u2026]\nsource resolution, E/F/A judging,\nscoring, and aggregation pipeline. Local compu-\ntation is used for orchestration, parsing, scoring,\naggregation, and bootstrap analysis, while model\ninference and product-level retrieval are performed\nthrough the corresponding provider services.",
+        "explanation": "The computational details appendix specifies what the released code covers and provides approximate cost and runtime, supporting reproducibility of the evaluation pipeline.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "The released code records task prompts, citation extraction, source resolution, E/F/A judging, scoring, and aggregation pipeline, and a single 72-report benchmark run costs roughly 10 RMB and takes about 2 hours.",
+        "section": "Appendix: Computational And Implementation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f86cce98747e7d85b450e53ccee602c49b67dab309ec5af755acd45a3b4e9470",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0111",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Computational And Implementation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 20,
+                "section": "Appendix: Computational And Implementation",
+                "section_index": 70,
+                "start": 0,
+                "text": "Details\nMost evaluated systems are closed or product-level\nservices, so parameter counts and provider-side\ncompute are not publicly disclosed. We therefore\nreport system identifiers, access conditions, and\ndefault generation settings rather than parameter\nsizes.\nThe computational budget consists of report gen-\neration through provider APIs or product interfaces\nand citation-verification evaluation. Provider-side\ngeneration compute and product-internal retrieval\ncosts are not observable for closed systems. For the\nevaluation pipeline, a single 72-report benchmark\nrun costs roughly 10 RMB and takes about 2 hours\nin our setup, excluding earlier development, prompt\ntuning, debugging, and validation runs. This esti-\nmate is approximate because runtime and cost vary\nwith the number and type of citations in generated\nreports.\nThe released code records the task prompts, cita-\ntion extraction, "
+              }
+            ],
+            "text": "Details\nMost evaluated systems are closed or product-level\nservices, so parameter counts and provider-side\ncompute are not publicly disclosed. We therefore\nreport system identifiers, access conditions, and\ndefault generation settings rather than parameter\nsizes.\nThe computational budget consists of report gen-\neration through provider APIs or product interfaces\nand citation-verification evaluation. Provider-side\ngeneration compute and product-internal retrieval\ncosts are not observable for closed systems. For the\nevaluation pipeline, a single 72-report benchmark\nrun costs roughly 10 RMB and takes about 2 hours\nin our setup, excluding earlier development, prompt\ntuning, debugging, and validation runs. This esti-\nmate is approximate because runtime and cost vary\nwith the number and type of citations in generated\nreports.\nThe released code records the task prompts, cita-\ntion extraction, "
+          },
+          {
+            "content_hash": "b7d2a325ee860a67750129543b766eede74b0c731fa2b98e619171ea0de613f1",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0112",
+            "pages": [
+              20
+            ],
+            "section": "Appendix: Computational And Implementation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1177,
+                "page": 20,
+                "section": "Appendix: Computational And Implementation",
+                "section_index": 70,
+                "start": 898,
+                "text": "source resolution, E/F/A judging,\nscoring, and aggregation pipeline. Local compu-\ntation is used for orchestration, parsing, scoring,\naggregation, and bootstrap analysis, while model\ninference and product-level retrieval are performed\nthrough the corresponding provider services."
+              }
+            ],
+            "text": "source resolution, E/F/A judging,\nscoring, and aggregation pipeline. Local compu-\ntation is used for orchestration, parsing, scoring,\naggregation, and bootstrap analysis, while model\ninference and product-level retrieval are performed\nthrough the corresponding provider services."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-8",
+          "reason": "The computational details appendix states the released code coverage and the approximate 10 RMB and 2-hour cost for a 72-report run.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0046",
+          "E8f2ff4f303dcf9ed-B0047"
+        ],
+        "excerpt": "LegalCiteTrust turns citation trustworthiness into\nan explicit evaluation protocol, but it does not\nmake legal citation use mechanically objective.\nExistence is largely a source-resolution question,\nwhereas Fidelity and Applicability are protocol-\nized legal judgments about conditions, exceptions,\nfactual context, statute versions, and the distance\nbetween a cited source and the local claim. Bound-\nary cases may arise when a report omits a minor\nqualification, underspecifies the applicable source\nversion, or cites a source that supports a narrower\nproposition but not the stronger claim made in the\nreport. Human audit, repeated-judge checks, and\nbootstrap analyses test consistency with the proto-\ncol, not agreement with objective legal truth. Legal-\nCiteTrust should therefore support expert review\nrather than replace it; Appendix F.2 discusses the\ncorresponding overuse risk in legal \n[\u2026 separate evidence block \u2026]\nsettings.\nThe benchmark is dense rather than broad: its\n72 tasks are authority-demanding Chinese legal re-\nsearch problems that expand into many subtopics,\nrubrics, evidence points, and verification items.\n8\nThis design supports controlled comparison and\nablation, but it does not cover all legal topics, re-\nport genres, or user intents. Transfer to other ju-\nrisdictions is also nontrivial because citation for-\nmats, statute versioning, case authority, and le-\ngal research practice vary across legal systems.\nCommon-law settings, for example, may require\ndifferent Applicability criteria for precedential\nforce, factual analogy, and treatment history.\nVerification is bounded by independently check-\nable legal sources and by the coverage of reference\nstores and commercial retrieval APIs. A valid ci-\ntation missing from these sources may be treated\nas unverifiable, which can disadvantage",
+        "explanation": "The limitations section explicitly addresses the subjectivity of F/A judgments, the narrow scope of 72 Chinese legal tasks, and the dependence on reference stores and retrieval APIs, demonstrating careful uncertainty handling.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "The paper acknowledges that Fidelity and Applicability are protocolized legal judgments rather than mechanically objective, that the benchmark is dense rather than broad with 72 tasks, and that verification is bounded by independently checkable legal sources.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "72d38121cbad32c91b0660c117432c4d6f2c05dd97c45fca3c69befd7b7869bf",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Limitations",
+                "section_index": 25,
+                "start": 0,
+                "text": "LegalCiteTrust turns citation trustworthiness into\nan explicit evaluation protocol, but it does not\nmake legal citation use mechanically objective.\nExistence is largely a source-resolution question,\nwhereas Fidelity and Applicability are protocol-\nized legal judgments about conditions, exceptions,\nfactual context, statute versions, and the distance\nbetween a cited source and the local claim. Bound-\nary cases may arise when a report omits a minor\nqualification, underspecifies the applicable source\nversion, or cites a source that supports a narrower\nproposition but not the stronger claim made in the\nreport. Human audit, repeated-judge checks, and\nbootstrap analyses test consistency with the proto-\ncol, not agreement with objective legal truth. Legal-\nCiteTrust should therefore support expert review\nrather than replace it; Appendix F.2 discusses the\ncorresponding overuse risk in legal "
+              }
+            ],
+            "text": "LegalCiteTrust turns citation trustworthiness into\nan explicit evaluation protocol, but it does not\nmake legal citation use mechanically objective.\nExistence is largely a source-resolution question,\nwhereas Fidelity and Applicability are protocol-\nized legal judgments about conditions, exceptions,\nfactual context, statute versions, and the distance\nbetween a cited source and the local claim. Bound-\nary cases may arise when a report omits a minor\nqualification, underspecifies the applicable source\nversion, or cites a source that supports a narrower\nproposition but not the stronger claim made in the\nreport. Human audit, repeated-judge checks, and\nbootstrap analyses test consistency with the proto-\ncol, not agreement with objective legal truth. Legal-\nCiteTrust should therefore support expert review\nrather than replace it; Appendix F.2 discusses the\ncorresponding overuse risk in legal "
+          },
+          {
+            "content_hash": "d2b8fca842ac3842dab9842d168a249408fb070da5add7d8dbfc3a07e392d23d",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0047",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1102,
+                "page": 8,
+                "section": "Limitations",
+                "section_index": 25,
+                "start": 895,
+                "text": "settings.\nThe benchmark is dense rather than broad: its\n72 tasks are authority-demanding Chinese legal re-\nsearch problems that expand into many subtopics,\nrubrics, evidence points, and verification items.\n8"
+              },
+              {
+                "end": 687,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 26,
+                "start": 0,
+                "text": "This design supports controlled comparison and\nablation, but it does not cover all legal topics, re-\nport genres, or user intents. Transfer to other ju-\nrisdictions is also nontrivial because citation for-\nmats, statute versioning, case authority, and le-\ngal research practice vary across legal systems.\nCommon-law settings, for example, may require\ndifferent Applicability criteria for precedential\nforce, factual analogy, and treatment history.\nVerification is bounded by independently check-\nable legal sources and by the coverage of reference\nstores and commercial retrieval APIs. A valid ci-\ntation missing from these sources may be treated\nas unverifiable, which can disadvantage "
+              }
+            ],
+            "text": "settings.\nThe benchmark is dense rather than broad: its\n72 tasks are authority-demanding Chinese legal re-\nsearch problems that expand into many subtopics,\nrubrics, evidence points, and verification items.\n8\nThis design supports controlled comparison and\nablation, but it does not cover all legal topics, re-\nport genres, or user intents. Transfer to other ju-\nrisdictions is also nontrivial because citation for-\nmats, statute versioning, case authority, and le-\ngal research practice vary across legal systems.\nCommon-law settings, for example, may require\ndifferent Applicability criteria for precedential\nforce, factual analogy, and treatment history.\nVerification is bounded by independently check-\nable legal sources and by the coverage of reference\nstores and commercial retrieval APIs. A valid ci-\ntation missing from these sources may be treated\nas unverifiable, which can disadvantage "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-9",
+          "reason": "The limitations section explicitly acknowledges protocolized F/A judgments, the dense 72-task scope, and bounded verification sources.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "presentation",
+        "context_id": "8f2ff4f303dcf9ed85ce3916f52933e9c86028524136b339166cb43c47b84b21",
+        "dimension": "presentation_and_precision",
+        "evidence_ids": [
+          "E8f2ff4f303dcf9ed-B0021",
+          "E8f2ff4f303dcf9ed-B0022"
+        ],
+        "excerpt": "LegalCiteTrust reports normalized report-level\nCoverage, Support, and Trust scores, denoted by\nscov,ssup, andstrust. Table 3 summarizes the met-\nric hierarchy; Appendix A provides label mappings,\nnormalization rules, and aggregation details.\nSupport combines rubric-level evidence support\nand subtopic-level authority support:\nssup = 0.5\u00d7s rubric + 0.5\u00d7s subtopic.(1)\nSupport is computed independently of E/F/A Trust\nscores: it measures evidence richness and authority\ncoverage, while Trust measures citation reliability.\nFor each included law or case citation item i,\nExistence, Fidelity, and Applicability scores are\nmultiplied and averaged into report-level Trust:\nstrust = 1\nNcite\nNciteX\ni=1\nEiFiAi.(2)\nIf a report contains no included law/case citation\nitems, strust is set to 1.0 because Trust is condi-\ntional on included citations; citation scarcity is cap-\ntured by Support and \n[\u2026 separate evidence block \u2026]\ncitation-count diagnostics.\nThe final report score combines report complete-\nness and citation trustworthiness:\nsfinal = (scov +s sup)\u00d7s trust.(3)\nSince Coverage, Support, and Trust are normalized\nto [0,1] ,sfinal ranges from 0 to 2 and is not further\nnormalized.\nMain leaderboard scores use report-level macro\naverages, while item-level E/F/A diagnostic tables\nuse citation-level micro averages. Thus, leader-\nboard tables compare task-level system perfor-\nmance, whereas item-level diagnostics describe the\naverage reliability of generated law and case refer-\nences.",
+        "explanation": "The evaluation metrics section and appendix present precise mathematical definitions and aggregation rules, enhancing the precision and clarity of the benchmark's scoring framework.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "The paper provides explicit metric formulas, including Support as 0.5 times rubric support plus 0.5 times subtopic support, Trust as the mean of per-citation E/F/A products, and Final as (Coverage + Support) times Trust.",
+        "section": "Evaluation Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f7db63552aee9baea83045c36b6010c643547408d079fb7f978b99ab9d4af62",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 887,
+                "page": 4,
+                "section": "Evaluation Metrics",
+                "section_index": 11,
+                "start": 0,
+                "text": "LegalCiteTrust reports normalized report-level\nCoverage, Support, and Trust scores, denoted by\nscov,ssup, andstrust. Table 3 summarizes the met-\nric hierarchy; Appendix A provides label mappings,\nnormalization rules, and aggregation details.\nSupport combines rubric-level evidence support\nand subtopic-level authority support:\nssup = 0.5\u00d7s rubric + 0.5\u00d7s subtopic.(1)\nSupport is computed independently of E/F/A Trust\nscores: it measures evidence richness and authority\ncoverage, while Trust measures citation reliability.\nFor each included law or case citation item i,\nExistence, Fidelity, and Applicability scores are\nmultiplied and averaged into report-level Trust:\nstrust = 1\nNcite\nNciteX\ni=1\nEiFiAi.(2)\nIf a report contains no included law/case citation\nitems, strust is set to 1.0 because Trust is condi-\ntional on included citations; citation scarcity is cap-\ntured by Support and "
+              }
+            ],
+            "text": "LegalCiteTrust reports normalized report-level\nCoverage, Support, and Trust scores, denoted by\nscov,ssup, andstrust. Table 3 summarizes the met-\nric hierarchy; Appendix A provides label mappings,\nnormalization rules, and aggregation details.\nSupport combines rubric-level evidence support\nand subtopic-level authority support:\nssup = 0.5\u00d7s rubric + 0.5\u00d7s subtopic.(1)\nSupport is computed independently of E/F/A Trust\nscores: it measures evidence richness and authority\ncoverage, while Trust measures citation reliability.\nFor each included law or case citation item i,\nExistence, Fidelity, and Applicability scores are\nmultiplied and averaged into report-level Trust:\nstrust = 1\nNcite\nNciteX\ni=1\nEiFiAi.(2)\nIf a report contains no included law/case citation\nitems, strust is set to 1.0 because Trust is condi-\ntional on included citations; citation scarcity is cap-\ntured by Support and "
+          },
+          {
+            "content_hash": "49d69b7ebc53adc48987fc3f53707ac2397fbe0280fbf8103c6638be85c37a25",
+            "evidence_id": "E8f2ff4f303dcf9ed-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Evaluation Metrics",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1455,
+                "page": 4,
+                "section": "Evaluation Metrics",
+                "section_index": 11,
+                "start": 887,
+                "text": "citation-count diagnostics.\nThe final report score combines report complete-\nness and citation trustworthiness:\nsfinal = (scov +s sup)\u00d7s trust.(3)\nSince Coverage, Support, and Trust are normalized\nto [0,1] ,sfinal ranges from 0 to 2 and is not further\nnormalized.\nMain leaderboard scores use report-level macro\naverages, while item-level E/F/A diagnostic tables\nuse citation-level micro averages. Thus, leader-\nboard tables compare task-level system perfor-\nmance, whereas item-level diagnostics describe the\naverage reliability of generated law and case refer-\nences."
+              }
+            ],
+            "text": "citation-count diagnostics.\nThe final report score combines report complete-\nness and citation trustworthiness:\nsfinal = (scov +s sup)\u00d7s trust.(3)\nSince Coverage, Support, and Trust are normalized\nto [0,1] ,sfinal ranges from 0 to 2 and is not further\nnormalized.\nMain leaderboard scores use report-level macro\naverages, while item-level E/F/A diagnostic tables\nuse citation-level micro averages. Thus, leader-\nboard tables compare task-level system perfor-\nmance, whereas item-level diagnostics describe the\naverage reliability of generated law and case refer-\nences."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "item_id": "evidence-10",
+          "reason": "The evaluation metrics section provides the exact formulas for Support, Trust, and Final as claimed.",
+          "status": "supported"
+        }
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.20872",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
-    "positive_signals": [],
-    "rationale": "Scientific quality has not yet been assessed.",
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "overall_quality_score": 82,
+    "paper_type": "dataset_or_benchmark",
+    "positive_signals": [
+      "LegalCiteTrust introduces a benchmark for citation trustworthiness in Chinese long-form legal research reports, operationalized through Existence, Fidelity, and Applicability (E/F/A) judgments alongside Coverage and Support.",
+      "The paper targets a gap not covered by existing legal benchmarks, agentic research benchmarks, or citation-faithfulness evaluations: whether each cited legal authority in a long-form report exists, is faithfully described, and supports the local claim.",
+      "The benchmark is constructed from 13,622 candidate legal research documents, filtered to 72 source documents with at least one case citation and at least five statutory or normative references, yielding 236 subtopics, 585 rubrics, and 1,459 evidence points.",
+      "The Trust score is computed as the mean of per-citation products of Existence, Fidelity, and Applicability scores, with NA or skipped F/A treated as 1.0 and Existence always scored.",
+      "The verification ablation shows that full E/F/A feedback improves Trust from 0.7433 (Base) to 0.8883 (EFA-Revise) and Final from 1.0329 to 1.1708, more clearly than existence-only filtering (Trust 0.8134, Final 1.0970).",
+      "The tool ablation shows that adding case search increases Support from 0.3153 to 0.4857 but decreases Trust from 0.7744 to 0.7433, supporting the claim that retrieval can improve evidence support without reliably improving citation trustworthiness.",
+      "LegalCiteTrust is positioned at the intersection of legal task evaluation, agentic or deep-research report evaluation, and hallucination or citation-faithfulness evaluation, with Table 1 summarizing the positioning.",
+      "The released code records task prompts, citation extraction, source resolution, E/F/A judging, scoring, and aggregation pipeline, and a single 72-report benchmark run costs roughly 10 RMB and takes about 2 hours.",
+      "The paper acknowledges that Fidelity and Applicability are protocolized legal judgments rather than mechanically objective, that the benchmark is dense rather than broad with 72 tasks, and that verification is bounded by independently checkable legal sources.",
+      "The paper provides explicit metric formulas, including Support as 0.5 times rubric support plus 0.5 times subtopic support, Trust as the mean of per-citation E/F/A products, and Final as (Coverage + Support) times Trust."
+    ],
+    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "recommendation": "promising",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "78aecfa17b429f060a7b44974115c3a93e900b9fd9768999050124b2448da419",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 837"
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -170,7 +1411,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

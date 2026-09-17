@@ -60,15 +60,163 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 3x</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T09:16:06+00:00.</p>
+        <p>Coverage: 28590 of 28590 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>The paper contributes a restore-counterfactual metric and a recoverable/irreversible/residual decomposition for eviction in external agent-memory stores, without proposing a new memory system or ranking policies.</p><p>Attributed source statement: supported. The introduction explicitly lists three contributions: the restore-counterfactual metric, the three-bin decomposition on an oracle-answerable denominator, and a controlled LongMemEval-S study. The text also states the authors do not propose a new memory system or rank policies, which bounds the contribution precisely. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>decomposition. We do not propose a new memory
+system or rank policies. Each outcome has a different diagnostic interpretation: a large
+irreversible share points to retention; a large recoverable share points to retrieval; and a
+large residual share indicates that the reader failed to use the restored evidence. The same
+decomposition applies when forgetting is required by privacy or data-protection constraints;
+it measures whether the resulting loss in task accuracy is recoverable or irreversible.
+Contributions.(i) The restore-counterfactual metric for eviction in external agent-
+memory stores (§3.1); (ii) the recoverable/irreversible/residual decomposition on an oracle-
+answerable denominator (§3.2); and (iii) a controlled LongMemEval-S study of four eviction
+policies (including an LLM-importance arm) across three budgets and two retrieval regimes
+(§4–§5). The study shows that </blockquote></details></li><li><strong>Scholarly novelty or value — page 2</strong><p>The restore counterfactual is the first per-item, per-question audit of eviction for external agent-memory stores on a standard conversational benchmark, distinguishing it from prior aggregate decompositions and oracle-injection diagnostics.</p><p>Attributed source statement: supported. The related work section contrasts the approach with MaRS/FiFA, EMBER, OSL-MR, DeMem, BudgetMem, WhenLoss, and AgingBench, noting that none attributes failures to capacity-bounded eviction via a per-item restore. The claim of first application to eviction from an external agent-memory store with end-task accuracy as outcome is explicitly stated. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Observational diagnostics (Garg et al., 2026) and retrieval-vs-
+utilization splits (Yuan et al., 2026) locate or attribute failures, but none attributes them to a
+capacity-bounded eviction decision via a per-item restore. The most closely related work,
+AgingBench (Zhu et al., 2026), uses paired oracle-injection probes over an agent-written
+store to diagnose write/retrieval/utilization failures, but it targets aging mechanisms
+on custom scenarios rather than capacity-bounded eviction policies. Here we classify
+each oracle-answerable policy error by a per-question restore of the needed evidence on
+LongMemEval-S.
+The intervention class.Reinstating an item and measuring the resulting change is a form of
+leave-one-out context attribution (Cohen-Wang et al., 2024) and an inference-time analog of
+counterfactual memorization (Zhang et al., 2023); per-item downstream utility also appears
+in </blockquote><blockquote>retrieval evaluation (Salemi &amp; Zamani, 2024). To our knowledge, this is the first study to
+apply this class of interventions to eviction from an external agent-memory store, with end-
+task accuracy as the outcome. That setting distinguishes our audit from prior applications
+of such interventions and from oracle-injection diagnostics (Zhu et al., 2026).
+Context-paging employs restores as a serving mechanism (Mason, 2026). Because KV-cache
+eviction can outperform the full cache, an aggregate no-evict delta mismeasures eviction
+damage (Bui et al., 2026). Systems that assume recoverability or repair retrieval internally
+(Hsu et al., 2026; Lu et al., 2026; Semenov &amp; Dorofeev, 2026) do not measure irreversible
+task loss caused by eviction.
+Retrieval confound.Because a frozen retriever can miss evidence retained in the store
+(Derehag et al., 2026; Wu et al., 2025), eviction effects must be </blockquote></details></li><li><strong>Evaluation or validation strength — page 4</strong><p>The restore-tightness assumption A3 is validated by three checks: restoring only surviving gold reclassifies 0.3% of irreversible cases, injecting the complete retained store recovers 2%, and an equal-length placebo flips 8.3% versus 100% for gold restore.</p><p>Attributed source statement: supported. These quantitative checks bound the slack in the full-gold restore upper bound over 2,276 irreversible cases. The placebo result shows the bin reflects evidence availability rather than placement, supporting the validity of the irreversible classification. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>threshold of ≥0.90 (App. A). This certifies grading stability
+but not independence from the reader. A correlated reader–judge bias would therefore
+be invisible to the cross-reader check. As a separate check of grading agreement, an
+independent GPT-5.5 judge re-grading a stratified sample agrees with GPT-4o-mini at 95.7%
+(Cohen&#x27;s κ=0.90; App. C). Both judges are OpenAI models, so a judge from a different
+provider, or human annotation, would be a stronger check.
+A3 (Restore tightness).Full-gold restore is the default; it makes the irreversible share an
+upper bound on destruction. Three checks quantify the slack in this upper bound over
+the 2,276 irreversible cases (App. C). Restoring only the surviving gold reclassifies 0.3%.
+Injecting the complete retained store (100% coverage) recovers 2%, so 98% of irreversible
+cases are not latent in retained memory and are consistent with genuine </blockquote><blockquote>destruction rather
+than a retrieval miss. Finally, an equal-length placebo (non-gold content at the gold posi-
+tion) flips 8.3% against 100% for the gold restore, so the bin reflects evidence availability,
+not placement (8.3% upper-bounds the combined presentation and unannotated-evidence
+effect).</blockquote></details></li><li><strong>Evidence to claim alignment — page 6</strong><p>At 80k tokens under top-k retrieval, the two-bin irreversible share is 0.71 for FIFO, 0.73 for random, 0.67 for redundancy-aware, and 0.60 for LLM-importance, rising to 1.00 at 8k for all four policies.</p><p>Attributed source statement: supported. Table 1 reports per-cell counts and two-bin shares. The text states FIFO 0.71 (CI .61-.81), random 0.73, redundancy-aware 0.67, and LLM-importance 0.60 (CI .47-.72), with all lower bounds except LLM-importance exceeding 0.5. The 8k rows show two-bin share 1.00 for all policies, directly supporting the claim that destruction dominates as budget tightens. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>0.59
+8k 336 300 263 1 36 1.00 0.78
+LLM-importance 80k 332 102 34 23 450.600.10
+30k 332 239 196 4 39 0.98 0.59
+8k 332 302 265 0 37 1.00 0.80
+control (info-density) 80k 336 244 204 0 40 1.00 0.61
+30k 336 311 276 0 35 1.00 0.82
+8k 336 327 295 0 32 1.00 0.88
+Table 1:Eviction loss is destruction-dominated.At 80k every evicting policy&#x27;s two-bin
+share irr/(irr+rec) exceeds 0.5 (bold), and it rises to 1.00 as the budget tightens to 8k. Per-
+cell counts under the realistic top-k regime (b), primary reader (GPT-4o-mini): the oracle-
+answerable denominator N, the policy-error count err, the irreversible/recoverable/residual
+decomposition, the two-bin share, and the irreversible rate irr/N. Regime (a) is the construct
+reference (rec≡ 0, two-bin≡ 1.00). random is pooled over 3 seeds (N=1008); the others are
+deterministic (seed 0, N=336/332). The full grid (both regimes, both readers, bootstrap </blockquote><blockquote>CIs)
+and per-question records are in App. B and the released artifact.
+are FIFO 0.71 (CI .61–.81), random 0.73, redundancy-aware 0.67, and control 1.00. Every
+lower bound exceeds 0.5, so destruction is the majority component. LLM-importance is the
+exception: its share of 0.60 (CI .47–.72) straddles 0.5, and no-evict is 0.00 by construction.
+Table 1 reports the per-cell counts; Fig. 1 plots the smaller three-bin share (≈0.40–0.44 at 80k
+for FIFO, random, and redundancy-aware).
+The composition varies with budget and evidence layout. As the budget tightens, the two-
+bin share climbs from 0.67–0.73 at 80k for FIFO, random, and redundancy-aware eviction
+to 1.00 at 8k for all four policies (Table 1). Evidence layout also matters: single-session
+questions are∼95% irreversible, while multi-session and temporal-reasoning questions
+have residual shares of 23–34% and contribute most of the </blockquote></details></li><li><strong>Related work and gap positioning — page 2</strong><p>Prior work on budgeted memory and failure decomposition does not distinguish irreversible losses caused by eviction from recoverable retrieval failures, motivating the restore counterfactual.</p><p>Attributed source statement: supported. The related work section explicitly states that EMBER and OSL-MR report end-task accuracy without distinguishing irreversible from recoverable losses, DeMem formalizes an optimal forgetting boundary but lacks a per-question estimator, and WhenLoss decomposes failures in aggregate rather than per-question. AgingBench uses paired oracle-injection probes but targets aging mechanisms on custom scenarios rather than capacity-bounded eviction policies. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Budgeted memory and forgetting.MaRS/FiFA compares eviction on synthetic generative-
+agent simulations with a composite utility bound, not downstream accuracy (Alqithami,
+2025). EMBER (Li et al., 2026) and OSL-MR (Kang et al., 2026) propose methods that learn
+budgeted retention and report end-task accuracy. Neither distinguishes irreversible losses
+from recoverable ones. DeMem (Zou et al., 2026) formalizes an optimal forgetting boundary;
+we give an operational per-question estimator of whether it has been crossed. BudgetMem
+(Zhang et al., 2026) reports accuracy–cost frontiers on LoCoMo and LongMemEval; our
+decomposition characterizes the loss at a frontier point by failure type.
+Stage decomposition.WhenLoss (Yu et al., 2026) decomposes memory failures into write-
+vs retrieval-side mass in aggregate. Our decomposition uses a per-question intervention to
+attribute errors to eviction. </blockquote><blockquote>Observational diagnostics (Garg et al., 2026) and retrieval-vs-
+utilization splits (Yuan et al., 2026) locate or attribute failures, but none attributes them to a
+capacity-bounded eviction decision via a per-item restore. The most closely related work,
+AgingBench (Zhu et al., 2026), uses paired oracle-injection probes over an agent-written
+store to diagnose write/retrieval/utilization failures, but it targets aging mechanisms
+on custom scenarios rather than capacity-bounded eviction policies. Here we classify
+each oracle-answerable policy error by a per-question restore of the needed evidence on
+LongMemEval-S.
+The intervention class.Reinstating an item and measuring the resulting change is a form of
+leave-one-out context attribution (Cohen-Wang et al., 2024) and an inference-time analog of
+counterfactual memorization (Zhang et al., 2023); per-item downstream utility also appears
+in </blockquote></details></li><li><strong>Reproducibility and transparency — pages 4–5</strong><p>The evaluation code was construct-validated using a deterministic substitute for model calls and is released with per-question records, and the dataset version is pinned by a hash.</p><p>Attributed source statement: supported. The experimental setup states the evaluation code was construct-validated and released with per-question records, with a link in App. B. The dataset version is pinned by a hash reported in App. A. The full grid and per-question records are in App. B and the released artifact. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>The study evaluates four eviction policies at three budgets and under two retrieval regimes
+on one benchmark, following a protocol frozen before measurement.
+Data.LongMemEval-S (Wu et al., 2025) contains multi-session histories of approximately
+102k tokens, so all three budgets bind; the dataset version is pinned by the hash reported in
+App. A. We use all 470 evidence-labeled questions and exclude abstention questions, which
+have no gold location to restore. Evidence session ids contain an answer substring and are
+never exposed to the reader or judge.
+Policies.We evaluate four eviction policies (FIFO, random, redundancy-aware, and LLM-
+importance) alongside a no-evict reference. LLM-importance uses a frozen GPT-4o-mini
+scorer that assigns each unit a general-importance score from 1 to 10 without access to the
+question or gold evidence; it is a simple importance baseline rather than a </blockquote><blockquote>reader (§5). Scoring is
+paired per question; judge variance is on the order of the effect size, so pairing is mandatory.
+The evaluation code was construct-validated using a deterministic substitute for the model
+calls and is released with the per-question records (link in App. B). §3.3 states the validity
+assumptions for the denominator, judge, and restore.
+Statistics and protocol.We run three seeds (deterministic policies use seed 0; App. A).
+Under a pre-specified protocol that was frozen before measurement and included with the
+artifact, significance is assessed using a question-cluster bootstrap (10,000 resamples), with
+Holm–Bonferroni correction within each hypothesis family. The pre-specified H1 family
+is a per-cellshare &gt; 0test under forced-gold (regime a). Because forced-gold empties the
+recoverable bin by construction, H1 is a construct check that the decomposition is </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 7–8</strong><p>The study acknowledges limitations including a single benchmark, two readers, one primary judge sharing its provider with the reader, gold-label and oracle-answerable filter requirements, and policy classes rather than published systems.</p><p>Attributed source statement: supported. The discussion section explicitly lists these limitations and notes that the null is specific to the tested policies and budgets. The R3 section reports no dissociation detected at a resolution of 1.2-6 percentage points rather than claiming statistical equivalence, and explicitly states an equivalence claim would need a powered TOST. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>irreversible-rate difference in all 9 contrasts ( p&lt; 0.001
+under the primary reader; p&lt; 0.05 across both readers). These contrasts are not accuracy-
+matched, so they show the statistic registers a large destructive difference rather than
+establishing power within the caliper; the matched comparison&#x27;s sensitivity is the observed
+paired-bootstrap CI half-width, 1.2–6 percentage points; we therefore report no dissociation
+detected at this resolutionrather than statistical equivalence (an equivalence claim would need
+a powered TOST, left to a follow-up). The null replicates under the stronger reader.
+7
+Accepted at the COLM 2026 Workshop on Context Beyond the Window</blockquote><blockquote>oracle-answerable filter, which
+limits its use to benchmark analysis. The eviction arms are policy classes rather than the
+published systems. The null is specific to the tested policies and budgets.
+Ethics.Here, &quot;destruction&quot; refers only to the loss of task evidence through eviction. In
+deployment, forgetting may be necessary to meet privacy and data-protection requirements
+concerning data minimization, storage limitation, or erasure; in such cases, retaining more
+information may be undesirable or disallowed. The instrument quantifies the task cost
+of a forgetting decision without prescribing whether information should be retained or
+deleted; the same decomposition can audit whether a required deletion incurs recoverable
+or irreversible task loss.</blockquote></details></li><li><strong>Presentation and precision — page 7</strong><p>The paper provides a worked example of each bin type with concrete question-answer pairs, illustrating the irreversible, recoverable, and residual classifications.</p><p>Attributed source statement: supported. Figure 2 presents one real instance of each bin: an irreversible case where the commute session was evicted, a recoverable case where both subscriptions were retained but only one retrieved, and a residual case where the reader sums incorrectly across sessions even with gold restored. These examples make the decomposition concrete and interpretable. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Accepted at the COLM 2026 Workshop on Context Beyond the Window
+Irreversible: gold destroyed by eviction
+Q.How long is my daily commute to work? (gold: 45 minutes each way)
+Policy(FIFO, 80k):&quot;I don&#x27;t know.&quot;→after restore:&quot;45 minutes each way.&quot;✓
+The session holding the answer was evicted; only reinstating it recovers the answer.
+Recoverable: retained but not retrieved
+Q.How many magazine subscriptions do I currently have? (gold: 2)
+Policy(no-evict, 80k):&quot;one (The New Yorker).&quot; → after restore:&quot;two (The New Yorker and
+Architectural Digest).&quot;✓
+Both subscriptions are retained (nothing was evicted), but top-k retrieval returns only the New
+Yorker entry, so the reader undercounts. Restoring the missed entry recovers the correct count.
+Residual: present but mis-used
+Q.Total spent on bike expenses this year? (gold: $185)
+Policy:&quot;I don&#x27;t know.&quot;→after full-gold restore:&quot;$65 ($25 chain+$40 . . . </blockquote><blockquote>)&quot;— still wrong.
+Even with all gold restored, the reader sums incorrectly across sessions: a utilization failure, not
+missing evidence.
+Figure 2: One real instance of each bin (LongMemEval-S, top-k regime).Irreversible: the
+gold was evicted;recoverable: the gold was retained but the retriever missed it;residual:
+the gold is present yet the reader still answers wrong. Bin colors match Fig. 1.
+cells (App. C). To compare reports at the same budget, researchers must control or at least
+report the read-time retrieval setting.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +255,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

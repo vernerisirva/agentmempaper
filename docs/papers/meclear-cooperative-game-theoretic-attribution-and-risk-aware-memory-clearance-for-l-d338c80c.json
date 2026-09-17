@@ -41,7 +41,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:15",
-    "generated_at": "2026-09-17 08:51:35",
+    "generated_at": "2026-09-17 09:29:52",
     "last_seen_at": "2026-09-15 11:59:44",
     "metadata_sources": [
       "openalex",
@@ -110,35 +110,283 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-17T09:24:01+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-cross-section-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 60024,
+      "assessment_input_sha256": "e0208a1158091c03f4d440a38d5c294373e4f7a3036a7052cc43556d5eeac42e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "canonical_id": "doi:10.48550/arxiv.2609.09115",
+      "characters_before_extraction_limit": 65594,
+      "eligible_characters": 58659,
+      "evidence_block_count": 75,
+      "evidence_context_characters": 67766,
+      "evidence_context_id": "8763b130dd1e65607e16b902ef4bd354ee6ab77373852813995ecf0876b5dcdd",
+      "evidence_context_sha256": "188f7cb2ed5964ac439e80db46775c40a2212008e8705ae41c13709f5767d5b9",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 6472,
+      "extracted_characters": 65622,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 65594,
+      "selected_characters": 58659,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 381,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1272,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 3496,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2263,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2588,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 3993,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1459,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 4290,
+          "heading": "Method",
+          "page": 4
+        },
+        {
+          "characters": 3390,
+          "heading": "Method",
+          "page": 5
+        },
+        {
+          "characters": 2647,
+          "heading": "Method",
+          "page": 6
+        },
+        {
+          "characters": 1456,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 4672,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 498,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 114,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 900,
+          "heading": "Appendix",
+          "page": 10
+        },
+        {
+          "characters": 1223,
+          "heading": "Appendix: Proof Of Theorem 1",
+          "page": 10
+        },
+        {
+          "characters": 1845,
+          "heading": "Appendix: Why Loo Misses Redundant Harm",
+          "page": 10
+        },
+        {
+          "characters": 714,
+          "heading": "Appendix: Extension To Multiple Redundant Memories",
+          "page": 10
+        },
+        {
+          "characters": 479,
+          "heading": "Appendix: Extension To Multiple Redundant Memories",
+          "page": 11
+        },
+        {
+          "characters": 1211,
+          "heading": "Appendix: Exact Shapley Value Of The Empirical Game",
+          "page": 11
+        },
+        {
+          "characters": 2368,
+          "heading": "Appendix: Unbiasedness And Uniform Concentration",
+          "page": 11
+        },
+        {
+          "characters": 1589,
+          "heading": "Appendix: Unbiasedness And Uniform Concentration",
+          "page": 12
+        },
+        {
+          "characters": 1952,
+          "heading": "Appendix: Proof Of Theorem 2",
+          "page": 12
+        },
+        {
+          "characters": 1033,
+          "heading": "Appendix: Scope Of The Guarantee And Evaluator Error",
+          "page": 12
+        },
+        {
+          "characters": 1412,
+          "heading": "Appendix: Scope Of The Guarantee And Evaluator Error",
+          "page": 13
+        },
+        {
+          "characters": 2929,
+          "heading": "Appendix: Experimental Setup",
+          "page": 13
+        },
+        {
+          "characters": 3089,
+          "heading": "Appendix: Experimental Setup",
+          "page": 14
+        },
+        {
+          "characters": 386,
+          "heading": "Appendix: Parameter And Baseline Settings",
+          "page": 14
+        },
+        {
+          "characters": 1628,
+          "heading": "Appendix: Parameter And Baseline Settings",
+          "page": 15
+        },
+        {
+          "characters": 3382,
+          "heading": "Appendix: Metrics And Supplementary Evaluation",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "e0208a1158091c03f4d440a38d5c294373e4f7a3036a7052cc43556d5eeac42e",
+      "selection_version": "representative-v1",
+      "source_content_hash": "722cd43ffdbdd31308dff05975c873221a14ec5ddc3e249094331a1322e5b3ca",
+      "source_pages": 15,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 5,
+      "evidence_to_claim_alignment": 5,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 5,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 5,
+      "reproducibility_and_transparency": 5,
+      "scholarly_novelty_or_value": 5
+    },
     "downranked": false,
     "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.09115",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
+    "overall_quality_score": 88,
+    "paper_type": "methods_or_algorithm",
     "positive_signals": [],
-    "rationale": "Scientific quality has not yet been assessed.",
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "recommendation": "strong",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "722cd43ffdbdd31308dff05975c873221a14ec5ddc3e249094331a1322e5b3ca",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 85.9 percent, 82.3 percent, 25.5 percentage point Cited evidence does not establish numerical values/units: 12.3 percent, 6.3 percent, 83.2 percent, 68.4 percent"
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +419,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

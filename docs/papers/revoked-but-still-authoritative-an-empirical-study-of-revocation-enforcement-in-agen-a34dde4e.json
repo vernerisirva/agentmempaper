@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:17",
-    "generated_at": "2026-09-17 08:51:35",
+    "generated_at": "2026-09-17 09:29:52",
     "last_seen_at": "2026-09-15 11:59:43",
     "metadata_sources": [
       "openalex",
@@ -105,37 +105,375 @@
   "review_status": null,
   "schema_version": "paper-scout-card-v2",
   "scholarly_quality": {
-    "applied_score_cap": null,
-    "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "applied_score_cap": 54,
+    "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
+    "assessed_at": "2026-09-17T09:28:03+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-cross-section-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 70521,
+      "assessment_input_sha256": "b51e86a12d35d3808259168375abc9be78dadbcab18c69d9262b565c9e592215",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "canonical_id": "doi:10.48550/arxiv.2609.08258",
+      "characters_before_extraction_limit": 73156,
+      "eligible_characters": 68776,
+      "evidence_block_count": 90,
+      "evidence_context_characters": 79392,
+      "evidence_context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+      "evidence_context_sha256": "4ca0c35b83946a6b586222e4b75a62a76986a50016b6455abca2ac7b6a85cd3a",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 3674,
+      "extracted_characters": 73194,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "extracted_pages": 20,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-v1",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 73156,
+      "selected_characters": 68776,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "selected_sections": [
+        {
+          "characters": 301,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1031,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1952,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1311,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 3652,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 3499,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 543,
+          "heading": "Methodology",
+          "page": 3
+        },
+        {
+          "characters": 697,
+          "heading": "Methodology",
+          "page": 4
+        },
+        {
+          "characters": 2345,
+          "heading": "Notation And Assumptions",
+          "page": 4
+        },
+        {
+          "characters": 953,
+          "heading": "Experimental Setup",
+          "page": 4
+        },
+        {
+          "characters": 2441,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 1105,
+          "heading": "Memory Systems",
+          "page": 5
+        },
+        {
+          "characters": 743,
+          "heading": "Scenarios",
+          "page": 5
+        },
+        {
+          "characters": 2614,
+          "heading": "Scenarios",
+          "page": 6
+        },
+        {
+          "characters": 738,
+          "heading": "Filters And Guardrails",
+          "page": 6
+        },
+        {
+          "characters": 208,
+          "heading": "Measurement",
+          "page": 6
+        },
+        {
+          "characters": 1285,
+          "heading": "Measurement",
+          "page": 7
+        },
+        {
+          "characters": 300,
+          "heading": "Evaluations",
+          "page": 7
+        },
+        {
+          "characters": 1971,
+          "heading": "Exposure And The Unsafe-Action Rate",
+          "page": 7
+        },
+        {
+          "characters": 1609,
+          "heading": "Exposure And The Unsafe-Action Rate",
+          "page": 8
+        },
+        {
+          "characters": 1755,
+          "heading": "Defense Conditions And Retrieval",
+          "page": 8
+        },
+        {
+          "characters": 1071,
+          "heading": "Per-Model Analysis",
+          "page": 8
+        },
+        {
+          "characters": 1193,
+          "heading": "Per-Model Analysis",
+          "page": 9
+        },
+        {
+          "characters": 1577,
+          "heading": "Per-Scenario Analysis",
+          "page": 9
+        },
+        {
+          "characters": 309,
+          "heading": "Guard",
+          "page": 9
+        },
+        {
+          "characters": 241,
+          "heading": "Design",
+          "page": 9
+        },
+        {
+          "characters": 1805,
+          "heading": "Design",
+          "page": 10
+        },
+        {
+          "characters": 1844,
+          "heading": "Evaluation",
+          "page": 10
+        },
+        {
+          "characters": 1420,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 1356,
+          "heading": "Appendix: Detecting A Revoked Policy In A Result",
+          "page": 13
+        },
+        {
+          "characters": 1496,
+          "heading": "Appendix: Paired Comparison Across Systems",
+          "page": 13
+        },
+        {
+          "characters": 605,
+          "heading": "Appendix: The Stale-Retrieval Guard",
+          "page": 13
+        },
+        {
+          "characters": 2685,
+          "heading": "Appendix: The Stale-Retrieval Guard",
+          "page": 14
+        },
+        {
+          "characters": 188,
+          "heading": "Appendix: Compute Resources",
+          "page": 14
+        },
+        {
+          "characters": 1679,
+          "heading": "Appendix: Compute Resources",
+          "page": 15
+        },
+        {
+          "characters": 1408,
+          "heading": "Appendix: Per-Scenario Rates",
+          "page": 15
+        },
+        {
+          "characters": 1567,
+          "heading": "Appendix: Matched-Pair Comparison",
+          "page": 16
+        },
+        {
+          "characters": 1505,
+          "heading": "Appendix: Within-System Comparison",
+          "page": 16
+        },
+        {
+          "characters": 569,
+          "heading": "Appendix: Agent Write-Back",
+          "page": 16
+        },
+        {
+          "characters": 4267,
+          "heading": "Appendix: Agent Write-Back",
+          "page": 17
+        },
+        {
+          "characters": 1107,
+          "heading": "Appendix: Agent Write-Back",
+          "page": 18
+        },
+        {
+          "characters": 2262,
+          "heading": "Appendix: Multi-Agent Propagation",
+          "page": 18
+        },
+        {
+          "characters": 1861,
+          "heading": "Appendix: Multi-Agent Propagation",
+          "page": 19
+        },
+        {
+          "characters": 2346,
+          "heading": "Appendix: Tool Actions",
+          "page": 19
+        },
+        {
+          "characters": 3362,
+          "heading": "Appendix: Tool Actions",
+          "page": 20
+        }
+      ],
+      "selected_text_sha256": "b51e86a12d35d3808259168375abc9be78dadbcab18c69d9262b565c9e592215",
+      "selection_version": "representative-v1",
+      "source_content_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
+      "source_pages": 20,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
+    },
     "curation_note": null,
-    "dimension_scores": {},
+    "dimension_scores": {
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 5,
+      "evidence_to_claim_alignment": 5,
+      "limitations_and_uncertainty_handling": 4,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 5,
+      "related_work_and_gap_positioning": 5,
+      "reproducibility_and_transparency": 5,
+      "scholarly_novelty_or_value": 4
+    },
     "downranked": false,
     "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.08258",
+    "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": null,
-    "paper_type": "unclear",
+    "overall_quality_score": 54,
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "rationale": "Scientific quality has not yet been assessed.",
-    "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "recommendation": "weak",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 44.2%"
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -168,7 +506,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

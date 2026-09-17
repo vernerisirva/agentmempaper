@@ -60,15 +60,222 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. The narrative asserts hyperparameter sensitivity, a Gemini-3 ablation, and absence of significance testing, but the supplied sources do not mention hyperparameter sensitivity, Gemini-3, or statistical significance testing. The narrative claims the main results use GPT-4o as judge and the ablation uses Gemini-3 as both backbone and judge, but the supplied sources do not identify the judge or backbone models for the main results or ablation. The cited table shows CreaMem with the highest values in the reported columns for both benchmarks, but the claim of &#x27;all reported metrics&#x27; cannot be fully verified because the table columns are unlabeled and the cited text does not define which columns correspond to which metrics Cited evidence does not establish numerical values/units: 71.00%, 83.00%, 90.10%, 80.50%, 77.20% Cited evidence does not establish numerical values/units: 2,805, 20,078, 2,825, 7,250, 103,137</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T09:22:35+00:00.</p>
+        <p>Coverage: 45281 of 45281 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 2–3</strong><p>CreaMem partitions memory along user life scenes (Life, Work, Interest) plus a dedicated Episodic Memory, and dual-codes each experience as both an episodic timeline entry and a scene-specific trait entry.</p><p>Attributed source statement: supported. The introduction and architecture sections explicitly define the two core design contributions: scene-based partitioning and dual encoding. The architecture overview names the three memory components and their roles, making the contribution unambiguous. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>scene memory and adds a paired entry
+to the Episodic Memory. At retrieval time, queries
+are issued to all memories, and a per-memory bal-
+anced sampling strategy ensures that both the time-
+line view and the scene-specific view contribute to
+the final returned context for response generation.
+In summary, our contributions are threefold.
+• We partition memory along the user&#x27;s life scenes,
+i.e., Life, Work, and Interest, together with a
+dedicated Episodic Memory, thereby reducing
+cross-scene interference at retrieval.
+• We encode each experience as both an episodic
+entry in the Episodic Memory and a trait entry in
+the relevant scene memory, and combine them at
+retrieval through per-memory balanced sampling.
+• Experiments on two long-term memory bench-
+marks show that CreaMem improves overall
+QA accuracy and multi-hop reasoning perfor-
+mance; ablation study further indicates that </blockquote><blockquote>The overall architecture of CreaMem is illustrated
+in Figure 1. It consists of three modules: memory
+components, storage and retrieval.
+Memory Components:This module defines
+the structural organization of memory in CreaMem.
+Memory comprises three components: an Episodic
+Memory that stores timeline entries of past events,
+a set of Life Scene Memories, Life, Work, and
+Interest, that store trait entries reflecting the user&#x27;s
+behavior and preferences within each life scene,
+and a Core Memory that maintains a holistic user
+profile spanning all scenes.
+Memory Storage:This module handles how
+each incoming message is written into memory. A
+Meta Memory Manager routes each message to the
+relevant Life Scene Memory and simultaneously
+adds a paired timeline entry to the Episodic Mem-
+ory, recording each experience along both temporal
+and trait perspectives.
+Memory Retrieval:This module retrieves </blockquote></details></li><li><strong>Scholarly novelty or value — pages 1–2</strong><p>Existing memory systems lack scene awareness and encode each memory from a single perspective, creating cross-scene interference and preventing complementary retrieval.</p><p>Attributed source statement: supported. The related work and introduction sections survey flat-storage, structure-imposing, and memory-partitioning methods, then identify the two unaddressed gaps. This grounds the novelty claim in a concrete comparison against prior paradigms. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>systems.
+Existing memory systems address this design
+problem through various organization principles,
+which can be broadly categorized into three types:
+(1) Flat-storage methods (Song et al., 2020; Izac-
+ard et al., 2022; Lee et al., 2023) retrieve from an
+unstructured pool; (2) Structure-imposing meth-
+ods (Pan et al., 2025; Sarthi et al., 2024; Wang
+et al., 2025; Gutiérrez et al., 2025; Xu et al., 2025;
+Xu et al., 2026) organize memory through explicit
+structures such as summary trees or entity graphs;
+and (3) Memory-partitioning methods (Li et al.,
+2026; Kang et al., 2025) decompose memory into
+several specialized components along axes like cog-
+nitive function or temporal scale. For example,
+MIRIX (Wang and Chen, 2025) separates memory
+into episodic, semantic, and procedural memories.
+Although these methods differ in their organiza-
+tion principles, they overlook two aspects: </blockquote><blockquote>organizes mem-
+ory into short-, mid-, and long-term levels, while
+MIRIX (Wang and Chen, 2025) separates episodic,
+semantic, and procedural memory. This paradigm
+leaves two aspects unaddressed: memories from
+different life scenes still share the same space at
+retrieval, and each experience is encoded from a
+single perspective without a mechanism for com-
+bining complementary views.</blockquote></details></li><li><strong>Scholarly novelty or value — pages 1–3</strong><p>CreaMem&#x27;s design is motivated by cognitive psychology findings that autobiographical memory is organized by lifetime contexts and that episodic and semantic memory encode complementary perspectives.</p><p>Attributed source statement: supported. The paper cites Conway&#x27;s Self-Memory System and Tulving&#x27;s multiple memory systems as design principles, and explicitly maps these to scene partitioning and dual encoding. This provides a theoretical grounding beyond engineering convenience. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>none
+organizes memory by the user&#x27;s life scenes, and
+few encode each experience along both an episodic
+and a trait-based perspective. These two gaps echo
+two well-established findings in cognitive psychol-
+ogy: (1) autobiographical memory is organized
+around lifetime contexts rather than abstract cate-
+gories (Conway and Pleydell-Pearce, 2000; Con-
+way, 2005); (2) episodic and semantic memory en-
+code the same experience in complementary forms
+that cooperate during recall (Tulving, 1972, 2002).
+arXiv:2609.08550v1  [cs.CL]  8 Sep 2026
+We adopt both as design principles: memory is
+partitioned along the user&#x27;s life scenes, and each ex-
+perience is encoded twice. It is stored as a timeline
+entry in the Episodic Memory and as a trait entry
+in the relevant scene memory. For example, when
+a user mentions a weekend hike with their fam-
+ily, the system stores an episodic entry such as &quot;the
+user </blockquote><blockquote>Two complementary lines of cognitive psychol-
+ogy inform CreaMem&#x27;s design. Conway&#x27;s Self-
+Memory System (Conway and Pleydell-Pearce,
+Figure 1: Overview of the CreaMem architecture, consisting of a Meta Memory Manager, an Episodic Memory,
+three Life Scene Memories, and a Core Memory.
+2000; Conway, 2005) observes that autobiograph-
+ical memories are organized by lifetime contexts
+rather than abstract categories, while Tulving&#x27;s mul-
+tiple memory systems (Tulving, 1972, 2002) fur-
+ther observes that episodic and semantic memory
+encode the same experience from complementary
+perspectives and cooperate during retrieval.
+Inspired by these observations, CreaMem parti-
+tions memory along user life scenes and stores each
+experience as a timeline entry in the Episodic Mem-
+ory and a trait entry in the relevant scene memory.</blockquote></details></li><li><strong>Evaluation or validation strength — page 8</strong><p>Ablation studies show that scene partitioning and dual encoding each contribute independently to performance, and that the 3-scene configuration is optimal among tested partition counts.</p><p>Attributed source statement: supported. The ablation section reports that 3-scene outperforms 1-scene by 2.3 points, Full System outperforms Episodic-only by 9.2 points, and the 3-scene partition achieves the best balance among five tested partition counts. These controlled comparisons isolate the architectural contributions. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Ablation.Figure 3(a) compares
+four configurations testing whether CreaMem&#x27;s two
+design choices, scene partitioning and dual encod-
+ing, are necessary or redundant.
+First, we test whether three scene memories
+add value beyond a single undifferentiated pool,
+since partitioning could simply complicate retrieval.
+We compare3-scene only, which retains the three
+scene memories without Episodic Memory, with
+1-scene only, which merges them into a single
+pool while keeping every trait entry verbatim. Un-
+der identical content and retrieval budget, 3-scene
+outperforms 1-scene by 2.3 points, showing that
+scene-based organization is not redundant against
+flat storage at retrieval time.
+Second, we test whether storing each experi-
+ence as both an episodic event and a trait merely
+duplicates information. We compareFull Sys-
+tem, which couples Episodic Memory with three
+scene memories, againstEpisodic </blockquote><blockquote>only, which re-
+tains timeline and event details alone. Full System
+reaches 75.1% overall, 9.2 points above Episodic
+only, with the gap widening to over 11 points on
+Temporal questions. This gain is not from feed-
+ing more context: at the same retrieval budget,
+Episodic only consumes 42% more tokens than
+Full System, since each episodic entry&#x27;s details
+field preserves the full event narrative and surround-
+ing context, carrying even more information per
+entry than Full System. Dual encoding therefore
+improves accuracy while reducing token consump-
+tion. Figure 4 illustrates this on a multi-hop case
+where ablating either side yields incomplete or tem-
+porally ungrounded answers.
+Third, we test whether finer partitioning further
+improves performance. Figure 3(b) compares five
+partition counts under a fixed retrieval budget of 20
+entries per query, evenly distributed across memo-
+ries, </blockquote><blockquote>matching the baseline cost in Table 1.1-scene
+merges all scenes,2-scenemerges Life and Work,
+3-sceneis our default,4-scenesplits Life into &quot;fam-
+ily&quot;/&quot;other&quot;, and5-scenefurther splits Interest into
+&quot;hobby&quot;/&quot;entertainment&quot;, with splits produced by
+LLM re-tagging existing entries. Among the par-
+tition counts tested under this retrieval budget, the
+Judge Coverage (%)
+GPT-4o 71.00
+Human Rater A 83.00
+Human Rater B 90.10
+Human Rater C 80.50
+LLM–Human agreement 77.20
+Table 2: Coverage of the Life/Work/Interest taxonomy
+over 1,000 sampled LoCoMo dialogue turns, 100 per
+conversation, judged by GPT-4o and three human raters.
+3-scene Life/Work/Interest configuration achieves
+the best balance: coarser partitions force unrelated
+scene content to compete for the same retrieval
+slots, while finer partitions over-fragment memory
+and dilute per-memory information density.</blockquote></details></li><li><strong>Limitations and uncertainty handling — page 9</strong><p>CreaMem has limitations including a fixed taxonomy that may not transfer across users or domains, additional system overhead, and evaluation challenges for LLM-extraction memory systems.</p><p>Attributed source statement: supported. The limitations section explicitly addresses the fixed Life/Work/Interest taxonomy, reports latency overhead (2.9 seconds per query versus 1.98 for A-Mem), and discusses write-time cost comparison difficulties and retrieval metric assumptions. This demonstrates substantive engagement with scope and uncertainty. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>CreaMem has several limitations. First, the
+fixed Life/Work/Interest taxonomy is a deliberately
+coarse organization rather than a universal or op-
+timal ontology. Although our results support this
+partition on the evaluated benchmarks, it may not
+transfer uniformly across users, cultures, or spe-
+cialized domains. Future work will investigate con-
+figurable or automatically induced scene partitions
+that adapt to individual users while retaining inter-
+pretable routing.
+Second, CreaMem incurs additional system over-
+head. End-to-end latency averages 2.9 seconds per
+query, compared with 1.98 seconds for A-Mem.
+The sufficiency check can also trigger a second
+retrieval round, improving recall at the cost of addi-
+tional latency and tokens. Query-adaptive pruning,
+asynchronous retrieval, and learned stopping crite-
+ria may reduce this overhead.
+Several evaluation challenges remain for </blockquote><blockquote>LLM-
+extraction memory systems. Write-time costs are
+difficult to compare because methods differ in
+batching granularity, module prompts, and the ab-
+straction level of stored entries. Retrieval metrics
+such as Recall@k and NDCG@k also assume di-
+rect alignment between retrieved items and ref-
+erence evidence. This assumption does not hold
+when memory entries summarize or combine mul-
+tiple dialogue turns. Finally, extraction behav-
+ior depends on prompt and model choice. Stan-
+dardized write-time accounting, source-aligned re-
+trieval evaluation, and method-agnostic extraction
+protocols remain important directions for future
+work.</blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 8–9</strong><p>CreaMem still fails on some questions answered correctly by competing methods, with failures attributable to incomplete retrieval of linked entries and failure to combine retrieved evidence.</p><p>Attributed source statement: supported. The failure analysis section presents three concrete cases where CreaMem answered incorrectly while SeCom or MemoryOS answered correctly, and diagnoses the failure stages. This demonstrates honest reporting of negative results rather than selective presentation. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Aggregate improvement does not imply per-
+question dominance: CreaMem still fails on some
+questions answered correctly by competing meth-
+ods. In a Single-hop question about Nate&#x27;s sec-
+ond tournament, CreaMem stored the event and
+the game name,Street Fighter, in separate entries.
+Only the event entry appeared in the retrieved con-
+text, whereas SeCom retained the contiguous dia-logue segment and answered correctly. In an Open-
+domain question about John&#x27;s endorsement deal,
+CreaMem retrieved both the unnamed outdoor-gear
+deal and his earlier interest in Under Armour. Re-
+sponse generation nevertheless failed to connect
+the entries, whereas MemoryOS produced the ref-
+erence answer. The first case reflects incomplete
+retrieval of linked entries; the second reflects failure
+to combine retrieved entries after retrieval. These
+cases motivate links to underlying dialogue turns,
+fallback to </blockquote><blockquote>relevant dialogue segments, and explicit
+evidence combination. Appendix A summarizes
+the source evidence, model outputs, and one addi-
+tional retrieval failure.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +314,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

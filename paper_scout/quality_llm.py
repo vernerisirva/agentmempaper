@@ -12,7 +12,7 @@ import os
 from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, _section_kind
-from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
+from paper_scout.evidence_context import EvidenceContext, EvidenceEligibilityError, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
 from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, candidate_for_support, eligibility_decision, REQUIRES_SUPPORT_VERIFICATION, evidence_guidance,
     numerical_support, verifier_items, verification_schema, VERIFIER_INSTRUCTIONS, SUPPORT_VERSION)
 from paper_scout.evidence_atoms import ATOM_VERSION, atoms_for_block
@@ -644,11 +644,7 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
             if not context_ok:raise ValueError('manuscript or assessment-context identity mismatch')
             blocks = resolve_claim_blocks(item, context, value['evidence_context_id'])
         except ValueError as exc:
-            # A known canonical but ineligible section is a claim-selection
-            # error. Unknown IDs or corrupt canonical representations are not.
-            known = {b.evidence_id: b for b in context.blocks}
-            selection_only = context_ok and all(i in known for i in item['evidence_ids']) and any(
-                not known[i].eligible for i in item['evidence_ids'])
+            selection_only = context_ok and isinstance(exc, EvidenceEligibilityError)
             if not selection_only:errors.append(str(exc))
             row.update(provenance_valid=selection_only, eligibility_valid=False, accepted=False,
                        disposition='claim_rejected' if selection_only else 'technical_failure',

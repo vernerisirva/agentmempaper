@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from paper_scout.evidence_atoms import url_mentions
 
-from paper_scout.evidence_context import EvidenceContext, resolve_evidence_ids
+from paper_scout.evidence_context import EvidenceContext, EvidenceEligibilityError, resolve_evidence_ids
 
 SCIENTIFIC = 'scientific_claim'
 ARTIFACT = 'artifact_availability'
@@ -23,7 +23,7 @@ def resolve_claim_blocks(item: dict, context: EvidenceContext, expected_id: str)
     if not item.get('include_adjacent_context', False):
         return blocks
     if artifact or len(blocks) != 1:
-        raise ValueError('a context window requires one scientific primary block')
+        raise EvidenceEligibilityError('a context window requires one scientific primary block')
     primary = blocks[0]
     selected = {primary.sequence: primary}
     # At most the immediate left/right block, with contiguous offsets within

@@ -16,6 +16,10 @@ EVIDENCE_VERSION = 'block-evidence-v2'
 BLOCK_CHARACTERS = 900
 
 
+class EvidenceEligibilityError(ValueError):
+    """A resolvable source is unsuitable for the requested claim."""
+
+
 def digest(text: str) -> str:
     return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
@@ -189,7 +193,7 @@ def resolve_evidence_ids(ids: list[str], context: EvidenceContext, *, expected_c
         if block is None:
             raise ValueError('evidence ID not supplied in this manuscript context')
         if not block.eligible and not (artifact_metadata and artifact_metadata_block(block)):
-            raise ValueError('evidence block is excluded back matter or an extraction gap')
+            raise EvidenceEligibilityError('evidence block is excluded back matter or an extraction gap')
         if digest(block.text) != block.content_hash or _span_text(block.spans) != block.text:
             raise ValueError('evidence block content hash mismatch')
         found.append(block)

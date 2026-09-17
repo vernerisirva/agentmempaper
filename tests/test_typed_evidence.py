@@ -129,6 +129,15 @@ class ClaimTaxonomyTests(unittest.TestCase):
         result=validate(selected,ctx,v)
         self.assertEqual(result.execution['outcome'],'evidence_validation_failure');self.assertEqual(result.quality_status,'uncertain')
 
+    def test_bad_optional_window_is_a_claim_rejection(self):
+        self.value['evidence'].append({**self.value['evidence'][0],
+            'dimension':'presentation_and_precision',
+            'evidence_ids':[self.ctx.blocks[0].evidence_id,self.ctx.blocks[1].evidence_id],
+            'include_adjacent_context':True})
+        result=validate(self.selected,self.ctx,self.value)
+        self.assertEqual(result.execution['outcome'],'scientific');self.assertEqual(result.quality_status,'pass')
+        self.assertEqual(result.execution['reference_audit'][-1]['disposition'],'claim_rejected')
+
     def test_corrupt_provenance_cannot_be_hidden_as_scientific_uncertainty(self):
         ctx=replace(self.ctx,source_hash='corrupted')
         result=validate(self.selected,ctx,self.value)

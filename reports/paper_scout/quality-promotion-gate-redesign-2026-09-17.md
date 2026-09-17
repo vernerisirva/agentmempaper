@@ -96,7 +96,7 @@ ignored runtime storage. No raw responses, hidden reasoning or credentials are c
 
 ## Validation and independent review
 
-The initial full suite passed 347 tests. All tracks passed relevance, quality,
+The initial full suite passed 347 tests; the final revised and merged suites passed **350 tests**. All tracks passed relevance, quality,
 discovery, idempotency and offline builds; schemas, local links, exposure scans,
 workflow checks, file-size guards, three-database snapshot/restore, legacy restore and
 `git diff --check` passed. All 628 historical assessments remain readable. Hash checks
@@ -113,11 +113,39 @@ error. Inspection shows exactly the Python builtin spelling at both sites; all a
 tests executed successfully. The review's suggested replacement is identical and its
 explanation contradicts itself. That finding is disproved, not a bypassed valid blocker.
 The useful nonblocking notes are addressed with secret-safe protocol-failure telemetry
-and runtime tests for unsupported aliases and nested retries. A further bounded review
-and complete validation are required on the revised candidate before merging.
+and runtime tests for unsupported aliases and nested retries. The second bounded Opus 4.6 review returned **PASS_WITH_NOTES**, zero blockers, on
+`c737badb6249d4faefe0bf1546da90576f206a35`. It covered all 21 changed files plus the
+unchanged canonical evidence module, with no omissions or truncation (118,029 request
+bytes). Its remaining retry-semantics note was resolved by inspecting
+`HttpClient._request`: `range(1, retries + 1)` means `retries=1` is exactly one attempt.
+An additional mocked transport failure confirmed exactly one POST. Bulk receipt-loading
+performance remains unbenchmarked; historical compatibility and full offline builds pass.
 
-Merge SHA: pending. Readiness remains NO until the final independent review passes,
-zero valid blockers remain, CI is green, and merged-state validation completes.
+[Final-candidate CI](https://github.com/vernerisirva/agentmempaper/actions/runs/35260763788)
+passed. PR #34 was mergeable, the working tree was clean, the remote base was unchanged,
+and no material unreviewed changes remained. It merged automatically at
+**`afd1a7018cc6f38a317e340a0a77b86c1078cd63`** on 2026-09-17 at 18:48:05 UTC.
+The merged tree equals the reviewed candidate. Complete post-merge validation passed:
+350 tests, all five checks/builds on all three tracks, schemas, links, exposure scans,
+workflows, file sizes, snapshot/legacy restore, historical readability and unchanged
+file/table hashes, and `git diff --check`. No production source changed after final review.
+This report completion records validation facts only.
+
+Review costs: DeepSeek timed-out charge unknown, $0.411100800 reserved; first Opus
+$0.162620; final Opus $0.203950. Known engineering review cost is $0.366570, or
+$0.777670800 charged/reserved. Together with the established prior recovery ledger,
+$4.1615222546 is charged/reserved under its shared $10 ceiling. Paper-assessment costs
+for this redesign are $0. No hidden reasoning was saved. Private review metadata,
+validation logs and hash inventories remain in ignored operator storage.
+
+## Engineering readiness
+
+The two scientific roles are implemented with agreement required; provenance remains
+strict; disagreement and ordinary unsupported claims mean non-promotion; the conservative
+rubric excludes prestige; model/call/cost bounds are documented; complete validation and
+independent review pass; and no Batch-3 paper was used in development. Therefore the
+promotion gate is ready for the separately frozen Batch-3 experiment. This is engineering
+readiness only, not an empirical demonstration of promotion precision or generalization.
 
 ## Next unseen experiment
 
@@ -132,4 +160,4 @@ has been inspected or selected during this engineering task.
 ORIGINAL_BATCH_2_GENERALIZATION_RESULT = FAIL
 BATCH_2_RECOVERY_CHECK = FAIL
 BATCH_2_RECOVERY_V2_CHECK = FAIL
-QUALITY_PROMOTION_GATE_READY_FOR_BATCH_3: NO
+QUALITY_PROMOTION_GATE_READY_FOR_BATCH_3: YES

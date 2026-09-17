@@ -217,6 +217,10 @@ The ignored `data/cache/operator/batch-2-recovery-20260917/` directory retains i
 
 The existing runtime release asset was uploaded, redownloaded and restored with matching archive/database hashes.
 
+Pages deployed once via [run 35213541017](https://github.com/vernerisirva/agentmempaper/actions/runs/35213541017) at `0473cd4d0aecb46e0d617d6df6a7205ef3fc9c1e` with `deploy_only=true`; acquisition, inference, discovery and runtime-mutating workflow steps were verified skipped.
+
+All 48 recovery/calibration JSON cards, 48 HTML detail pages and six library/review pages across three tracks match the validated local bytes.
+
 | Recovery criterion | Result |
 |---|---|
 | 1. Original five failure boundaries fixed | PASS |

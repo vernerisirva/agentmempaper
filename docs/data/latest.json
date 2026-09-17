@@ -531,36 +531,379 @@
       "scholarly_quality": {
         "applied_score_cap": null,
         "applied_score_cap_reason": null,
-        "assessed_at": null,
-        "assessment_scope": "metadata_only",
-        "assessment_version": null,
-        "assessor_model": null,
-        "assessor_type": null,
+        "assessed_at": "2026-09-17T20:05:11.451489+00:00",
+        "assessment_scope": "full_text",
+        "assessment_version": "quality-promotion-v1",
+        "assessor_model": "deepseek/deepseek-v4-pro-0813",
+        "assessor_type": "hybrid",
         "combined_rank_score": 0.91,
         "concerns": [],
-        "concise_summary": null,
-        "confidence": "unknown",
-        "coverage": {},
+        "concise_summary": "Scientific response or integrity validation failed; technical review pending.",
+        "confidence": "medium",
+        "coverage": {
+          "assessment_input_characters": 62144,
+          "assessment_input_sha256": "b747082264474b6f396ccde9439bdb9084bb942ad14dd3299d58eb32163b7e01",
+          "attempted_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "canonical_id": "doi:10.24963/ijcai.2026/655",
+          "characters_before_extraction_limit": 68421,
+          "eligible_characters": 59979,
+          "evidence_block_count": 82,
+          "evidence_context_characters": 70452,
+          "evidence_context_id": "d5aba638083f7fcadacd84049347c421a546017878e3272dbe8e285e4072afac",
+          "evidence_context_sha256": "1159e756c17bbc81a09d69560717bffdaa0778a8f29e87aeaebf3d9f33abe2d4",
+          "evidence_version": "block-evidence-v2",
+          "excluded_back_matter_characters": 7284,
+          "extracted_characters": 68445,
+          "extracted_page_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "extracted_pages": 13,
+          "extraction_complete": true,
+          "extraction_gap_markers": 0,
+          "extraction_truncated": false,
+          "extractor_version": "bounded-v2",
+          "format": "PDF",
+          "manuscript_identity": {
+            "method": "exact-title-typography-v1",
+            "source_content_hash": "bbd08d38d12ccd97766992bfbb6e3cd58adb1e540d9750aec247549a4db3a7e5",
+            "source_url": "https://arxiv.org/pdf/2506.04042",
+            "verified": true
+          },
+          "max_extracted_characters": 400000,
+          "max_pages": 80,
+          "normalization_version": "canonical-unicode-v2",
+          "omitted_body_characters": 0,
+          "page_unit": "PDF page",
+          "retained_source_characters": 68421,
+          "selected_characters": 59979,
+          "selected_instead_of_full_text": false,
+          "selected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "selected_sections": [
+            {
+              "characters": 424,
+              "heading": "Abstract / front matter",
+              "page": 1
+            },
+            {
+              "characters": 1252,
+              "heading": "Abstract",
+              "page": 1
+            },
+            {
+              "characters": 3332,
+              "heading": "Introduction",
+              "page": 1
+            },
+            {
+              "characters": 1861,
+              "heading": "Introduction",
+              "page": 2
+            },
+            {
+              "characters": 730,
+              "heading": "Memory-Based And Meta-Learning Editing",
+              "page": 2
+            },
+            {
+              "characters": 2024,
+              "heading": "Locate-Then-Edit Knowledge Editing",
+              "page": 2
+            },
+            {
+              "characters": 331,
+              "heading": "Deconstructing The Optimization Pathology:",
+              "page": 2
+            },
+            {
+              "characters": 67,
+              "heading": "Deconstructing The Optimization Pathology:",
+              "page": 3
+            },
+            {
+              "characters": 2492,
+              "heading": "Preliminaries: The Locate-Then-Edit Objective",
+              "page": 3
+            },
+            {
+              "characters": 2103,
+              "heading": "Gradient Analysis: The Divergence Of",
+              "page": 3
+            },
+            {
+              "characters": 1240,
+              "heading": "The Shortcut Mechanism: Causal Path",
+              "page": 3
+            },
+            {
+              "characters": 1120,
+              "heading": "The Shortcut Mechanism: Causal Path",
+              "page": 4
+            },
+            {
+              "characters": 3040,
+              "heading": "Gradient Saliency Analysis271",
+              "page": 4
+            },
+            {
+              "characters": 3309,
+              "heading": "The Shortcut Learning Issue 321",
+              "page": 4
+            },
+            {
+              "characters": 797,
+              "heading": "Eliminating Shortcut Learning Via Causal",
+              "page": 4
+            },
+            {
+              "characters": 1436,
+              "heading": "Theoretical Framework: Causal Path",
+              "page": 4
+            },
+            {
+              "characters": 1104,
+              "heading": "Theoretical Framework: Causal Path",
+              "page": 5
+            },
+            {
+              "characters": 1408,
+              "heading": "Implementation",
+              "page": 5
+            },
+            {
+              "characters": 2810,
+              "heading": "Experimental Setup",
+              "page": 5
+            },
+            {
+              "characters": 2884,
+              "heading": "Experimental Setup",
+              "page": 6
+            },
+            {
+              "characters": 1779,
+              "heading": "Main Results",
+              "page": 6
+            },
+            {
+              "characters": 672,
+              "heading": "Main Results",
+              "page": 7
+            },
+            {
+              "characters": 700,
+              "heading": "Mechanistic Validation",
+              "page": 7
+            },
+            {
+              "characters": 1682,
+              "heading": "Ablation Study",
+              "page": 7
+            },
+            {
+              "characters": 839,
+              "heading": "Plug-And-Play Generalization To Other Editors",
+              "page": 7
+            },
+            {
+              "characters": 832,
+              "heading": "Conclusion",
+              "page": 7
+            },
+            {
+              "characters": 1160,
+              "heading": "Conclusion",
+              "page": 8
+            },
+            {
+              "characters": 228,
+              "heading": "Appendix: Implementation Details",
+              "page": 9
+            },
+            {
+              "characters": 1099,
+              "heading": "Appendix: Layer Selection Strategy",
+              "page": 9
+            },
+            {
+              "characters": 478,
+              "heading": "Appendix: Optimization Hyperparameters",
+              "page": 9
+            },
+            {
+              "characters": 662,
+              "heading": "Appendix: Baseline Implementation Details",
+              "page": 9
+            },
+            {
+              "characters": 550,
+              "heading": "Appendix: Baseline Implementation Details",
+              "page": 10
+            },
+            {
+              "characters": 426,
+              "heading": "Appendix: Computational Resources",
+              "page": 10
+            },
+            {
+              "characters": 2137,
+              "heading": "Appendix: Sensitivity Analysis Of Relation Anchor Layer",
+              "page": 10
+            },
+            {
+              "characters": 1054,
+              "heading": "Appendix: Optimization Dynamics And Phase Synergy",
+              "page": 10
+            },
+            {
+              "characters": 1282,
+              "heading": "Appendix: Optimization Dynamics And Phase Synergy",
+              "page": 11
+            },
+            {
+              "characters": 1143,
+              "heading": "Appendix: Extended Gradient Saliency Analysis",
+              "page": 11
+            },
+            {
+              "characters": 1926,
+              "heading": "Appendix: Case Study Of Causal Path Collapse",
+              "page": 11
+            },
+            {
+              "characters": 996,
+              "heading": "Appendix: Computational Overhead Analysis",
+              "page": 11
+            },
+            {
+              "characters": 1893,
+              "heading": "Appendix: Computational Overhead Analysis",
+              "page": 12
+            },
+            {
+              "characters": 2630,
+              "heading": "Appendix: Evaluation On Zero-Shot Relation Extraction",
+              "page": 12
+            },
+            {
+              "characters": 655,
+              "heading": "Appendix: Evaluation On Zero-Shot Relation Extraction",
+              "page": 13
+            },
+            {
+              "characters": 1392,
+              "heading": "Appendix: Limitations And Future Work",
+              "page": 13
+            }
+          ],
+          "selected_text_sha256": "b747082264474b6f396ccde9439bdb9084bb942ad14dd3299d58eb32163b7e01",
+          "selection_version": "representative-v1",
+          "source_content_hash": "bbd08d38d12ccd97766992bfbb6e3cd58adb1e540d9750aec247549a4db3a7e5",
+          "source_pages": 13,
+          "surrogate_code_units": 0,
+          "unreadable_pages": [],
+          "version": "coverage-v1",
+          "warnings": [
+            "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+          ]
+        },
         "curation_note": null,
         "dimension_scores": {},
         "downranked": false,
         "evidence": [],
         "full_text_assessed": false,
-        "full_text_url": null,
-        "gate_version": null,
+        "full_text_url": "https://arxiv.org/pdf/2506.04042",
+        "gate_version": "dual-promotion-v1",
         "manual_override": false,
-        "missing_information": [],
+        "missing_information": [
+          "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+        ],
         "overall_quality_score": null,
-        "paper_type": "unclear",
+        "paper_type": "case_study",
         "positive_signals": [],
-        "promotion": {},
-        "rationale": "Scientific quality has not yet been assessed.",
+        "promotion": {
+          "adjudicator_model": "anthropic/claude-sonnet-4.6",
+          "outcome": "protocol_failure",
+          "primary": {
+            "canonical_id": "doi:10.24963/ijcai.2026/655",
+            "claim_evidence_alignment": "The central claim that CPA reduces Subject-Dominant Memory Interference is supported by consistent R-Spec. gains over ROME across four model backbones (e.g., 45.7% to 72.2% on GPT2-XL, 70.7% to 92.2% on Qwen2.5 7B) and by lower DP and higher EOS on EVOKE. The mechanistic claim of restored relational mediation is supported by causal tracing RIE comparisons, and the plug-in claim is supported by R-Spec. improvements when CPA is transplanted to MEMIT and AlphaEdit.",
+            "context_id": "d5aba638083f7fcadacd84049347c421a546017878e3272dbe8e285e4072afac",
+            "decision": "pass",
+            "evaluation_assessment": "Evaluation is substantial and appropriate for the contribution. The paper uses two complementary benchmarks, COUNTERFACT RS and EVOKE, across four LLM backbones with 2,000 edits and five repeated evaluations, reporting means and standard deviations. It includes ablations of the two phases, mechanistic causal tracing validation, plug-and-play generalization to MEMIT and AlphaEdit, sensitivity analysis of the anchor layer, computational overhead analysis, and a zsRE evaluation that reveals a limitation. The zsRE results show lower efficacy and generalization, which the authors explicitly report and interpret rather than hide.",
+            "evidence_ids": [
+              "Ed5aba638083f7fca-B0038",
+              "Ed5aba638083f7fca-B0041",
+              "Ed5aba638083f7fca-B0042",
+              "Ed5aba638083f7fca-B0043",
+              "Ed5aba638083f7fca-B0045",
+              "Ed5aba638083f7fca-B0046",
+              "Ed5aba638083f7fca-B0048",
+              "Ed5aba638083f7fca-B0049",
+              "Ed5aba638083f7fca-B0050",
+              "Ed5aba638083f7fca-B0051",
+              "Ed5aba638083f7fca-B0062",
+              "Ed5aba638083f7fca-B0063",
+              "Ed5aba638083f7fca-B0073",
+              "Ed5aba638083f7fca-B0074",
+              "Ed5aba638083f7fca-B0077",
+              "Ed5aba638083f7fca-B0079",
+              "Ed5aba638083f7fca-B0080",
+              "Ed5aba638083f7fca-B0081"
+            ],
+            "limitations": "The authors acknowledge that CPA depends on the last subject token serving as a stable causal hub, which weakens on interrogative prompts, as shown by lower efficacy and generalization on zsRE. They also note the sequential two-phase optimization adds roughly 5 seconds of latency per edit, and they identify sequential batch editing in lifelong learning as an open direction.",
+            "method_assessment": "The method is clearly specified. CPA is a two-phase optimization framework: Phase 1 optimizes a relation anchor h_r by maximizing log P(o* | h_r) with a KL regularizer, and Phase 2 optimizes the subject injection vector v_s to reconstruct the frozen anchor via a Frobenius-norm loss. The paper provides the theoretical decomposition, implementation equations, layer selection strategy, hyperparameters, and stopping criteria, making the approach reproducible in principle.",
+            "quality_rationale": "The paper makes a substantive scoped contribution by diagnosing a shortcut-learning pathology in locate-then-edit knowledge editing and proposing a principled two-phase causal path alignment remedy. The method is adequately described, and the evaluation is meaningful and multi-faceted, including benchmark comparisons, ablations, mechanistic validation, generalization tests, sensitivity analysis, and explicit reporting of a failure mode on zsRE. Claims are generally justified by the reported evidence, and limitations are compatible with the contribution scope.",
+            "scoped_contribution": "The paper identifies Subject-Dominant Shortcut as a root cause of Subject-Dominant Memory Interference in in-parameter knowledge editing and introduces Causal Path Alignment (CPA), a two-phase optimization framework that anchors parameter updates to relation-aware intermediate states. The contribution is scoped to single-edit declarative factual knowledge editing in locate-then-edit pipelines, with demonstrated portability to ROME, MEMIT, and AlphaEdit.",
+            "source_content_hash": "bbd08d38d12ccd97766992bfbb6e3cd58adb1e540d9750aec247549a4db3a7e5"
+          },
+          "primary_model": "deepseek/deepseek-v4-pro-0813"
+        },
+        "rationale": "Scientific response or integrity validation failed; technical review pending.",
         "recommendation": "unknown",
-        "rubric_version": null,
-        "source_content_hash": null,
-        "status": "not_assessed",
+        "rubric_version": "scholarly-rubric-v1",
+        "source_content_hash": "bbd08d38d12ccd97766992bfbb6e3cd58adb1e540d9750aec247549a4db3a7e5",
+        "status": "uncertain",
         "suppressed": false,
-        "uncertainty": "Manuscript evidence has not been reviewed."
+        "uncertainty": "No promotion; review candidates may remain pending indefinitely."
       },
       "semantic_scholar_id": null,
       "source": "openalex",

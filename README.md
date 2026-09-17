@@ -146,7 +146,7 @@ python3 -m paper_scout evaluate-quality --track agent_memory
 python3 -m paper_scout evaluate-quality --track deep_research
 python3 -m paper_scout reassess-quality --track agent_memory --days 30
 python3 -m paper_scout reassess-quality --track agent_memory --paper-id doi:10.0000/example --force
-python3 -m paper_scout reassess-quality --track agent_memory --assessment-version quality-v2 --rubric-version scholarly-rubric-v2
+python3 -m paper_scout reassess-quality --track agent_memory --assessment-version quality-promotion-v1 --rubric-version scholarly-rubric-v1
 python3 -m paper_scout reassess-quality --track agent_memory --model your-quality-model --force
 python3 -m paper_scout reassess-quality --track agent_memory --no-full-text --no-llm
 python3 -m paper_scout reassess-quality --track agent_memory --report-only
@@ -305,27 +305,53 @@ The existing versioned `QualityAssessment` and SQLite assessment history are reu
 
 A manuscript-based pass requires located evidence of contribution clarity, methods, validation addressing the central claims, appropriate comparisons or a justified absence, claim/evidence alignment, and limitations. Expectations depend on paper type: theory, surveys and conceptual work need suitable scientific argument or synthesis, not necessarily experiments. Public code is helpful, not mandatory. Author identity, affiliation, employer, university, country and prestige are not quality criteria. Strong independent preprints and repository manuscripts can pass; weak institutional or peer-reviewed work can fail. Screening does not prove scientific correctness.
 
-The existing deterministic rubric remains an internal diagnostic, but keyword matches and numeric scores cannot earn pass or insufficient. A semantic assessment uses the existing optional LLM, or an explicit reviewed JSON import, and verifies quoted evidence against supplied manuscript sections/pages. Abstract-only, missing text and ungrounded proposed decisions remain uncertain. Research cards show human-readable labels and concise conclusions; diagnostic scores remain in exports/collapsed metadata.
+New assessments use `quality-promotion-v1` / `dual-promotion-v1`. The primary assessor
+and an independent adjudicator interpret the manuscript. Admission requires high
+relevance, primary pass, adjudicator pass, valid canonical provenance and no suppression.
+Disagreement or an unsupported overclaim leaves a review candidate; it is not a technical
+failure. There is no target pass rate and no obligation to classify every paper.
 
-### Migration and bounded backfill
+The assessor returns compact contribution, method, evaluation, alignment, limitations,
+rationale and evidence-ID fields. The adjudicator receives the canonical context and
+only the primary final structured assessment, independently checking support and
+counterevidence. No hidden reasoning is shared or retained. Historical claim parsers,
+numeric matching, role keywords and score caps do not control this admission path.
 
-No historical record is deleted, relabeled pass, or rewritten by migration. Legacy assessments lacking the new semantics load as `not_assessed` while preserving their original score, evidence and version. There were no compatible semantic assessments in the inspected 2026-09-15 durable snapshot: all were deterministic. Consequently the initial screened sections are empty by design. Each index explains this and links prominently to `review.html`, which preserves relevant historical reading candidates and their New/date/search behavior. Insufficient papers remain in audit exports and direct research cards. Dated digests remain discovery logs, not retrospective quality endorsements.
+The default pinned models are `deepseek/deepseek-v4-pro-0813` and
+`anthropic/claude-sonnet-4.6`, using the configured OpenRouter endpoint/key. Set
+`PAPER_SCOUT_QUALITY_LLM_MODEL` and `PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL` to configure
+the pair from the explicit versioned family allowlist; same-family and rolling aliases
+fail closed. Adding a model requires reviewing its family, capabilities and price cap.
+Missing credentials leave the paper unassessed. No credentials are committed.
 
-Backfill is explicit and bounded: `reassess-quality` defaults to the track's existing assessment limit, accepts `--limit 1..50`, and skips candidates already assessed under the current gate/version unless explicitly targeted/forced. Uncertain candidates can be retried using `--paper-id` (and `--force` to refresh cached content/model output). Daily discovery budgets remain unchanged; no corpus-wide assessment job is introduced. Engram continues to use deterministic metadata checks and zero model calls by default, so promotion requires an explicit manuscript review. Merely rerunning deterministic backfill does not establish scientific quality.
+There are at most two calls per paper, one per role, with no retries. Each request is
+bounded to 300,000 serialized bytes and 4,096 output tokens. OpenRouter provider price
+caps are enforced; unsupported schema/price parameters fail closed. The 180-second HTTP
+socket timeout is not a total wall-clock deadline. Usage records retain unknown costs as
+unknown. Before live work, freeze a manifest and reserve the bounded cost under an
+approved batch ceiling. See the [cost and protocol manifest](experiments/manifests/quality-promotion-gate-2026-09-17.json).
+
+### Historical compatibility and bounded reassessment
+
+Historical assessments, calibration, Batch 2 and both recoveries retain their original
+schemas and outcomes. Existing passes are not automatically removed or reassessed.
+New decisions append with a run identity; saving the same run is idempotent. A single
+manual JSON import cannot earn a new dual-gate pass. The old import/semantic APIs remain
+available only under explicitly historical assessment versions for compatibility.
+
+Engram remains deterministic by default. Deterministic runs cannot promote. Explicit
+live reassessment requires model configuration, budget and a bounded selection:
 
 ```bash
-# Inspect saved assessment history without calls:
+# Read saved assessments without acquisition or calls:
 python3 -m paper_scout reassess-quality --track engram --report-only
-# At most two candidates; model use must be separately budgeted/configured:
+# At most two deterministic diagnostics, no paid calls:
 python3 -m paper_scout reassess-quality --track agent_memory --limit 2 --no-llm
-# Import one review through the same validated assessment/store path, no model call:
-python3 -m paper_scout reassess-quality --track engram --paper-id arxiv:2601.07372 \
-  --full-text --no-llm --assessment-json review.json
 ```
 
-A review JSON is schema-validated before acquisition or storage and uses the existing LLM response shape plus `quality_status`, `quality_rationale`, and `quality_uncertainty`. Evidence objects require a dimension, positive/concern signal, concise paraphrase/explanation, an exact short excerpt and its supplied section start page. All six core dimensions need positive manuscript anchors for pass; the comparisons dimension is `related_work_and_gap_positioning`. Missing anchors downgrade to uncertain. Review imports are versioned by a content digest, so a revised review can coexist with its predecessor. The import is a scientific judgment, not a way to infer quality from bibliographic metadata.
-
-Paid quality requests ask the provider for a maximum of 8,192 output tokens and use a 180-second HTTP timeout with one attempt (no automatic paid POST retries). Transport/model failures retain the conservative deterministic outcome; retry only by explicitly targeting that paper. For OpenRouter, `PAPER_SCOUT_QUALITY_LLM_REASONING=off` requests direct assessment output without an optional reasoning channel. Other endpoints receive no OpenRouter-only parameter. INFO logs contain request counts and allowlisted numeric usage/cost returned by the provider; unavailable billing fields are reported as unknown, never zero. No response body, hidden reasoning, or credential is logged by this telemetry.
+Neither Batch 2 nor Batch 3 is run as part of this redesign. The
+[Batch-3 protocol](experiments/manifests/batch-3-promotion-protocol-2026-09-17.md)
+is prepared without a roster and requires a separate frozen execution task.
 
 Full-text acquisition reuses the bounded downloader and extraction cache: explicit PDF, arXiv, Zenodo file metadata, Semantic Scholar and OpenAlex locations. Network timeout, download size, redirect, page, character and prompt bounds remain enforced. Page continuations and architecture/protocol sections are retained. `--full-text` explicitly enables acquisition for a track such as Engram; `--force` refreshes an existing decision and PDF cache. PDFs/cache/state stay outside Git and public output.
 

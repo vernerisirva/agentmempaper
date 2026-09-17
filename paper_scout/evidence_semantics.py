@@ -1,3 +1,4 @@
+# Legacy claim semantics: not used by dual-promotion-v1. Retained for historical audit.
 """Claim-aware eligibility and conservative, necessary numerical support checks.
 
 These checks do not prove entailment. New assessments also require the bounded

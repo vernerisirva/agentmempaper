@@ -135,14 +135,24 @@ class QualityAssessment:
             and (self.assessor_model or "").startswith("manual-review:")
         )
         return (self.assessment_scope in {"partial_full_text", "full_text"} and semantic_assessor
-                and self.execution.get("outcome") not in {"transport_failure", "protocol_failure", "manuscript_unavailable", "text_coverage_failure"})
+                and self.execution.get("outcome") not in {"transport_failure", "protocol_failure", "manuscript_unavailable", "text_coverage_failure", "integrity_failure", "not_assessed"})
 
     def __post_init__(self) -> None:
         if self.publication_status not in {"peer_reviewed", "preprint", "repository_only", "unknown"}:
             raise ValueError("unknown publication status")
         if self.quality_status not in QUALITY_STATUSES:
             raise ValueError("unknown scientific quality status")
-        if self.quality_status in {"pass", "insufficient"}:
+        from paper_scout.promotion_protocol import ASSESSMENT_VERSION, GATE_VERSION, validate_receipt
+        if self.assessment_version == ASSESSMENT_VERSION and self.quality_status == "pass" and self.quality_gate_version != GATE_VERSION:
+            raise ValueError("new assessment version cannot use a legacy admission gate")
+        if self.quality_gate_version == GATE_VERSION and self.quality_status in {"pass", "insufficient"}:
+            if self.quality_status != "pass" or not self.full_text_assessed:
+                raise ValueError("dual promotion requires a completed manuscript assessment")
+            try:
+                validate_receipt(self)
+            except Exception as exc:
+                raise ValueError("invalid dual-promotion receipt") from exc
+        elif self.quality_status in {"pass", "insufficient"}:
             if not self.full_text_assessed or self.quality_gate_version != QUALITY_GATE_VERSION:
                 raise ValueError("scientific decisions require a current manuscript-based assessment")
             if not self.quality_rationale.strip() or not self.quality_uncertainty.strip():

@@ -92,7 +92,7 @@ exclusions:
             config = load_config(track_id=track)
             self.assertTrue(config.quality.enabled)
             self.assertEqual(config.quality.mode, "auto")
-            self.assertEqual(config.quality.assessment.version, "quality-v2")
+            self.assertEqual(config.quality.assessment.version, "quality-promotion-v1")
             self.assertEqual(config.quality.assessment.rubric_version, "scholarly-rubric-v1")
             self.assertEqual(config.quality.ranking.behavior, "downrank")
             self.assertTrue(config.quality.ranking.unknown_quality_is_neutral)

@@ -254,6 +254,11 @@ class PaperStore:
             return int(db.execute("SELECT COUNT(*) FROM papers").fetchone()[0])
 
     def save_quality_assessment(self, assessment: QualityAssessment) -> int:
+        # Revalidate mutable nested receipt data at the persistence boundary.
+        assessment = QualityAssessment.from_dict(assessment.to_dict())
+        storage_model = assessment.assessor_model or ""
+        if assessment.quality_gate_version == "dual-promotion-v1":
+            storage_model += "#" + assessment.execution["run_id"]
         payload = json.dumps(assessment.to_dict(), sort_keys=True)
         with self._connect() as db:
             db.execute(
@@ -269,7 +274,7 @@ class PaperStore:
                     assessment.assessment_version,
                     assessment.rubric_version,
                     assessment.assessor_type,
-                    assessment.assessor_model or "",
+                    storage_model,
                     assessment.source_content_hash,
                     assessment.assessed_at,
                     assessment.overall_quality_score,
@@ -291,7 +296,7 @@ class PaperStore:
                     assessment.assessment_version,
                     assessment.rubric_version,
                     assessment.assessor_type,
-                    assessment.assessor_model or "",
+                    storage_model,
                     assessment.source_content_hash,
                 ),
             ).fetchone()

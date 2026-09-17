@@ -312,9 +312,11 @@ def main(argv: list[str] | None = None) -> int:
             if not args.force and not args.paper_id:
                 candidates = [row for row in candidates if not (
                     (existing := store.get_current_quality_assessment(row[0]))
-                    and existing.quality_gate_version == QUALITY_GATE_VERSION
-                    and existing.assessment_version == quality_config.assessment.version
-                    and existing.rubric_version == quality_config.assessment.rubric_version
+                    and (existing.quality_status == "pass" or (
+                        existing.quality_gate_version in {QUALITY_GATE_VERSION, "dual-promotion-v1"}
+                        and existing.assessment_version == quality_config.assessment.version
+                        and existing.rubric_version == quality_config.assessment.rubric_version
+                    ))
                 )]
             candidates = candidates[:limit]
             for canonical_id, candidate, decision in candidates:

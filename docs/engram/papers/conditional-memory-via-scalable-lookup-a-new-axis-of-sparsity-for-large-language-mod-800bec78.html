@@ -65,15 +65,230 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
-      <p>Scientific support remains unresolved. Support verification unavailable.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. The sources provide detailed hyperparameters and model configurations, but no code repository link is present in the cited text.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-semantics-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T18:59:26+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-grounding-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T07:56:36+00:00.</p>
         <p>Coverage: 64593 of 64593 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — pages 2–3</strong><p>The paper introduces conditional memory as a complementary sparsity axis and instantiates it via Engram, a module that modernizes N-gram embedding for O(1) lookup.</p><p>Attributed source statement: supported. The introduction and overview explicitly define the conditional memory concept, contrast it with MoE conditional computation, and describe Engram&#x27;s retrieval and fusion phases. This establishes a clear, specific contribution. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>reconstruction of a static lookup table, wasting valuable sequential
+depth on trivial operations that could otherwise be allocated to higher-level reasoning.
+To align model architecture with this linguistic duality, we advocate for a complementary
+axis of sparsity: conditional memory. Whereas conditional computation sparsely activates
+parameters to process dynamic logic (Bengio et al., 2013; Shazeer et al., 2017), conditional
+memory relies on sparse lookup operations to retrieve static embeddings for fixed knowledge.
+As a preliminary exploration of this paradigm, we revisit𝑁-gram embeddings (Bojanowski et al.,
+2017) as a canonical instantiation: local context serves as a key to index a massive embedding
+table via constant-timeO( 1) lookups (Huang et al., 2025a; Pagnoni et al., 2025; Tito Svenstrup
+et al., 2017; Yu et al., 2025). Our investigation reveals that, perhaps surprisingly, this </blockquote><blockquote>As shown in Figure 1, Engram is a conditional memory module designed to augment the Trans-
+former backbone by structurally separating static pattern storage from dynamic computation.
+Formally, given an input sequence 𝑋=(𝑥 1,... ,𝑥𝑇) and hidden statesH (ℓ) ∈R 𝑇×𝑑 at layer ℓ,
+the module processes each position𝑡 in two functional phases:retrieval and fusion. First, as
+detailed in Section 2.2, we extract and compress suffix 𝑁-grams to deterministically retrieve
+static embedding vectors via hashing. Subsequently, in Section 2.3, these retrieved embeddings
+are dynamically modulated by the current hidden state and refined via a lightweight convolu-
+tion. Finally, we discuss the integration with multi-branch architectures in Section 2.4 and the
+system-level design in Section 2.5.</blockquote></details></li><li><strong>Scholarly novelty or value — pages 8, 11</strong><p>Engram provides a distinct scalable axis of sparse capacity that complements MoE, as shown by a U-shaped allocation law and improved performance over an iso-parameter and iso-FLOPs MoE baseline.</p><p>Assessor inference: supported. The scaling-law experiments show that hybrid allocation outperforms pure MoE, and large-scale pre-training results show Engram-27B improving over MoE-27B across many benchmarks. This supports a meaningful, non-incremental contribution. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>the identical training pipeline
+and optimization hyperparameters.
+Results and Analysis.Figure 3 (left) reveals a consistent U-shaped relationship between
+validation loss and the allocation ratio 𝜌. Remarkably, the Engram model achieves comparable
+performance to the pure MoE baseline (𝜌= 100%) even when the MoE allocation is reduced to
+just 𝜌≈ 40% (i.e., a total of 46 experts for the 5.7B model and 43 experts for the 9.9B model).
+Furthermore, the pure MoE baseline proves suboptimal: reallocating roughly 20%–25% of the
+sparse parameter budget to Engram yields the best performance. Quantitatively, in the 10B
+regime (𝐶= 6× 1020), validation loss improves from 1.7248 (at 𝜌= 100%) to 1.7109 near the
+optimum of𝜌≈ 80% (Δ= 0.0139). Crucially, the location of this optimum is stable across regimes
+(𝜌≈ 75%–80%), suggesting a robust allocation preference across the examined scales (under
+fixed </blockquote><blockquote>Table 1 summarizes the main results. First, consistent with prior literature (Borgeaud et al.,
+2022; He, 2024; Shazeer et al., 2017), sparse architectures demonstrate superior scaling laws
+compared to dense models. Under the same training compute budget, all three sparse variants
+(MoE-27B, Engram-27B/40B) significantly outperform the iso-FLOPs Dense-4B baseline across
+all benchmarks.
+More importantly, Engram-27B consistently improves over the iso-parameter and iso-FLOPs
+MoE-27B baseline. Interestingly, these gains are not limited to knowledge-intensive tasks (e.g.,
+MMLU: +3.0, MMLU-Pro: +1.8, CMMLU: +4.0), where memory capacity is intuitively beneficial.
+We observe even more significant improvements in general-reasoning domains (e.g., BBH:
++5.0, ARC-Challenge: +3.7, DROP: +3.3), as well as code and mathematical reasoning (e.g.,
+HumanEval: +3.0, MBPP: +1.6, GSM8K: +2.2, MATH: +2.4). To </blockquote></details></li><li><strong>Methodological rigor — pages 7, 9</strong><p>The paper uses controlled iso-parameter and iso-FLOPs comparisons, fixed sparsity ratios, and identical training pipelines to isolate the effect of Engram allocation.</p><p>Attributed source statement: supported. The allocation protocol fixes total and activated parameters within each FLOPs budget and varies only the MoE/Engram split. Large-scale models are matched on activated parameters and trained with the same data curriculum and token budget. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Compute-matched formulation.We analyze the trade-off using three parameter metrics:
+•𝑃 tot: total trainable parameters, excluding vocabulary embedding and LM head.
+•𝑃 act: activated parameters per token. This quantity determines the training cost (FLOPs).
+•𝑃 sparse ≜𝑃 tot−𝑃 act: theinactiveparameters, which represents the &quot;free&quot; parameter budget
+available for scaling model size without incurring computational cost (e.g., unselected experts
+or unretrieved embeddings).
+We keep𝑃tot and 𝑃act fixed within each FLOPs budget, so that models have the same number of
+parameters and the same per-token FLOPs. For MoE,𝑃act is determined by the top-𝑘 selected
+experts, while the parameters of non-selected experts contribute to 𝑃sparse. For Engram, only
+a constant number of slots are retrieved per token, so scaling the number of embedding slots
+increases𝑃 tot without increasing per-token </blockquote><blockquote>35.4 46.648.2 46.2
+CruxEval-i(EM)0-shot 27.6 30.732.2 36.2
+CruxEval-o(EM)0-shot 28.7 34.135.0 35.3
+GSM8K(EM)8-shot 35.5 58.460.6 62.6
+MGSM(EM)8-shot 27.0 46.849.4 52.4
+MATH(EM)4-shot 15.2 28.330.7 30.6
+With the proposed Engram architecture and the empirically derived allocation law, we scale
+Engram to the multi-billion parameter to validate its efficacy in real-world language model pre-
+training. Specifically, we train four models: (1)Dense-4B(4.1B total parameters), (2)MoE-27B
+(26.7B total parameters), (3)Engram-27B(26.7B total parameters), and (4)Engram-40B(39.5B
+total parameters). All models are trained using an identical data curriculum (same token budget
+and order) and are strictly matched in the number of activated parameters.
+9</blockquote></details></li><li><strong>Evaluation or validation strength — pages 9, 11, 18</strong><p>The evaluation spans language modeling, knowledge, reasoning, reading comprehension, code, math, long-context retrieval, ablations, mechanistic analysis, and system throughput.</p><p>Attributed source statement: supported. Tables 1 and 2 report many benchmarks, and separate sections provide ablations, LogitLens/CKA analysis, sensitivity analysis, and offloading throughput measurements. This is a broad and multi-faceted validation. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1| Pre-training performance comparison between dense, MoE, and Engram models. All
+models are trained for 262B tokens and are matched in activated parameters (3.8B). Engram-27B
+is iso-parameters with MoE-27B by reallocating parameters from routed experts (72 → 55)
+to a 5.7B-parameter Engram memory. Engram-40B further increases Engram memory (18.5B
+parameters) while keeping the activated-parameter budget fixed. Full training-time benchmark
+trajectories are reported in Appendix B.
+Benchmark(Metric)# Shots Dense-4B MoE-27B Engram-27B Engram-40B
+# Total Params 4.1B 26.7B 26.7B 39.5B
+# Activated(w/o token embed) 3.8B 3.8B 3.8B 3.8B
+# Trained Tokens 262B 262B 262B 262B
+# Experts(shared + routed, top-𝑘) - 2+72 (top-6) 2+55 (top-6) 2+55 (top-6)
+# Engram Params - - 5.7B 18.5B
+Language
+Modeling
+Pile(loss)- 2.091 1.9601.950 1.942
+Validation Set(loss)- 1.768 1.6341.622 </blockquote><blockquote>Engram-27B matches the
+baseline&#x27;s LongPPL (Fang et al.) performance while achieving significantly higher accuracy on
+RULER (Hsieh et al.); (2) Under both iso-pretraining-loss (46k) and iso-pretraining-FLOPs (50k)
+settings, Engram-27B substantially outperforms the baseline across all metrics.Boldindicates
+the best and underline the second.
+Model
+LongPPL (32k) RULER (32k)
+Perplexity (↓) NIAH Accuracy (↑) Other Tasks (↑)
+Book Paper Code L-CoT S MK MV MQ VT CWE FWE QA
+MoE-27B(50k, 1.63)4.38 2.91 2.49 14.16100.088.0 92.7 84.2 77.0 4.5 73.0 34.5
+Engram-27B(41k, 1.66)4.37 2.92 2.50 14.26 99.6 88.3 93.0 89.5 83.2 3.8 99.644.0
+Engram-27B(46k, 1.63)4.19 2.84 2.45 13.59 97.6 89.0 95.5 97.087.2 4.3 98.6 37.5
+Engram-27B(50k, 1.62)4.14 2.82 2.44 13.4199.389.3 96.5 97.0 89.0 5.9 99.340.5</blockquote><blockquote>HardwareNVIDIA H800
+Workload512 Sequences
+Sequence LengthUniform(100, 1024)
+Throughput Results
+Base Model Configuration Throughput (tok/s)
+4B-Dense Baseline 9,031.62
++ 100B Engram (CPU Offload) 8,858.28
+8B-Dense Baseline 6,315.52
++ 100B Engram (CPU Offload) 6,140.02
+Results.As detailed in Table 4, offloading a 100B-parameter embedding table incurs a neg-
+ligible throughput penalty, peaking at only 2.8% on the 8B backbone. This confirms that the
+compute intensity of early dense blocks provides a sufficient temporal window to mask the
+retrieval latency. Crucially, the effective communication volume per step scales with the number
+of activated slots rather than the total embedding table size.
+Crucially, this experiment serves as a conservative baseline. While the hierarchical design
+in Section 2.5 exploits Zipfian locality to cache frequent items in HBM, our experimental </blockquote></details></li><li><strong>Evidence to claim alignment — pages 9, 11</strong><p>The central claim that Engram improves over an iso-parameter and iso-FLOPs MoE baseline is directly supported by benchmark results showing consistent gains.</p><p>Attributed source statement: supported. Table 1 shows Engram-27B outperforming MoE-27B on MMLU, CMMLU, BBH, ARC-Challenge, HumanEval, MATH, and other tasks, matching the abstract and introduction claims. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>1.610
+Knowledge
+&amp;
+Reasoning
+MMLU(Acc.)5-shot 48.6 57.460.4 60.6
+MMLU-Redux(Acc.)5-shot 50.7 60.664.0 64.5
+MMLU-Pro(Acc.)5-shot 21.1 28.330.1 31.3
+CMMLU(Acc.)5-shot 47.9 57.961.9 63.4
+C-Eval(Acc.)5-shot 46.9 58.062.7 63.3
+AGIEval(Acc.)0-shot 29.1 38.641.8 45.9
+ARC-Easy(Acc.)25-shot 76.8 86.589.0 90.1
+ARC-Challenge(Acc.)25-shot 59.3 70.173.8 76.4
+TriviaQA(EM)5-shot 33.0 48.850.7 51.8
+TriviaQA-ZH(EM)5-shot 62.8 74.876.3 77.9
+PopQA(EM)15-shot 15.1 19.219.4 21.2
+CCPM(Acc.)0-shot 72.2 79.687.1 87.7
+BBH(EM)3-shot 42.8 50.955.9 57.5
+HellaSwag(Acc.)0-shot 64.3 71.872.7 73.1
+PIQA(Acc.)0-shot 63.8 71.973.5 76.5
+WinoGrande(Acc.)5-shot 64.0 67.667.8 68.1
+Reading
+Comprehension
+DROP(F1)1-shot 41.6 55.759.0 60.7
+RACE-Middle(Acc.)5-shot 72.4 80.982.8 83.3
+RACE-High(Acc.)5-shot 66.0 75.478.2 79.2
+C3(Acc.)0-shot 57.7 60.163.6 61.8
+Code &amp; Math
+HumanEval(Pass@1)0-shot 26.8 37.840.8 38.4
+MBPP(Pass@1)3-shot </blockquote><blockquote>Table 1 summarizes the main results. First, consistent with prior literature (Borgeaud et al.,
+2022; He, 2024; Shazeer et al., 2017), sparse architectures demonstrate superior scaling laws
+compared to dense models. Under the same training compute budget, all three sparse variants
+(MoE-27B, Engram-27B/40B) significantly outperform the iso-FLOPs Dense-4B baseline across
+all benchmarks.
+More importantly, Engram-27B consistently improves over the iso-parameter and iso-FLOPs
+MoE-27B baseline. Interestingly, these gains are not limited to knowledge-intensive tasks (e.g.,
+MMLU: +3.0, MMLU-Pro: +1.8, CMMLU: +4.0), where memory capacity is intuitively beneficial.
+We observe even more significant improvements in general-reasoning domains (e.g., BBH:
++5.0, ARC-Challenge: +3.7, DROP: +3.3), as well as code and mathematical reasoning (e.g.,
+HumanEval: +3.0, MBPP: +1.6, GSM8K: +2.2, MATH: +2.4). To </blockquote></details></li><li><strong>Related work and gap positioning — pages 19–20</strong><p>The paper positions Engram against N-gram embedding scaling, high-cardinality categorical embeddings, MoE, memory networks, and knowledge storage mechanisms, and identifies fairness and system co-design gaps.</p><p>Attributed source statement: supported. The related work section explicitly contrasts Engram with SCONE, OverEncoding, and other approaches, noting that prior methods often lack strict iso-parameter/iso-FLOPs evaluation or place embeddings only at the input layer. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>their respective settings, our work diverges fundamentally
+in two key dimensions.
+• First, regarding modeling and evaluation protocols. Prior approaches often treat𝑁-gram
+embeddings as external augmentations without validating their efficiency under strictly
+fair comparison protocols. For instance, SCONE (Yu et al., 2025) is inference-focused and
+relies on auxiliary modules that incur additional training FLOPs. Similarly, OverEncoding
+(Huang et al., 2025a) fails to yield meaningful improvements on sparse MoE backbones
+even under a non-isoparametric setting. In contrast, we treat conditional memory as a
+first-class modeling primitive instantiated via the carefully designed Engram module. By
+rigorously evaluating this design within ourSparsity Allocationframework, we demonstrate
+its clear advantage over strictly iso-parameter and iso-FLOPs MoE baselines.
+• Second, from a system </blockquote><blockquote>perspective, we advocate for algorithm-system co-design. Exist-
+19
+ing approaches place embeddings strictly at the input layer (Layer 0), which inherently
+serializes memory access and computation (Huang et al., 2025a; Yu et al., 2025). Engram,
+conversely, strategically injects memory into deeper layers to enable communication-
+computation overlap. Furthermore, by exploiting the inherent Zipfian distribution of
+𝑁-grams, we could maximize the utility of the hardware memory hierarchy. This holistic
+design allows Engram to scale to massive parameters with negligible inference overhead.
+High-Cardinality Categorical Embeddings.A closely related representation problem arises in
+large-scale recommender systems, where models learn embeddings for hundreds of categorical
+features whose vocabularies may contain millions to billions of IDs (Coleman et al., 2023). Prior
+work improves the </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 11, 16</strong><p>The paper does not provide a dedicated limitations section and reports no statistical significance or multi-seed analysis for the benchmark gains.</p><p>Assessor inference: partial. Although the paper acknowledges under-training for Engram-40B and placement trade-offs, it does not systematically discuss limitations such as benchmark noise, seed variance, or generalization beyond the tested architecture and data. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>reduce the impact of benchmark
+noise and to visualize training dynamics, we provide full benchmark trajectories during pre-
+training in Appendix B. These results support our hypothesis that introducing a dedicated
+knowledge lookup primitive improves representation efficiency beyond what can be achieved
+by allocating the entire sparse budget to conditional computation.
+Finally, scaling to Engram-40B further reduces pre-training loss and improves performance
+across most benchmarks. Although it does not yet strictly dominate Engram-27B on every
+task, this is likely an artifact of under-training. We observe that the training loss gap between
+Engram-40B and the baselines continues to widen towards the end of training, suggesting that
+the expanded memory capacity has not yet fully saturated within the current token budget.</blockquote><blockquote>Figure 5). This experiment exposes an inherent trade-off
+in Engram placement.
+A placement trade-off.Injecting Engram early allows it to offload local pattern reconstruc-
+tion before the backbone expends computational depth, aligning with the backbone&#x27;s natural
+hierarchical processing (Ghandeharioun et al., 2024; Jin et al., 2025; Li and Subramani, 2025;
+Tenney et al., 2019). However, this incurs a cost in gating precision: early hidden states have
+not yet aggregated sufficient global context via attention, and the parallel branches lack the
+representational divergence required for fine-grained modulation (Xie et al., 2025; Zhu et al.,
+2025). Consequently, optimal placement requires balancing (i) offloading static local patterns
+early and (ii) utilizing stronger contextual queries for gating later.
+The sweep shows that Layer 2 achieves the best single-layer performance (Val Loss = </blockquote></details></li><li><strong>Presentation and precision — pages 7, 8, 15</strong><p>The manuscript is well organized, with clear formal definitions, tables, figures, and appendices supporting the main text.</p><p>Attributed source statement: supported. The paper defines the allocation ratio, retrieval equations, gating mechanism, and CKA alignment index, and includes detailed tables and figures for results, ablations, and system efficiency. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>FLOPs.
+Allocation ratio.We define the allocation ratio 𝜌∈ [ 0, 1] as the fraction of the inactive-
+parameter budget assigned to MoE expert capacity:
+𝑃(sparse)
+MoE =𝜌𝑃 sparse,𝑃 Engram =(1−𝜌)𝑃 sparse. (7)
+Intuitively:
+•𝜌=1 corresponds to a pure MoE model (all inactive parameters are routed experts).
+•𝜌 &lt; 1 reduces the number of routed experts and reallocates the freed parameters to Engram
+embedding slots.
+Experimental protocol.We evaluate this trade-off at two compute regimes and maintain a
+constant sparsity ratio𝑃 tot/𝑃act≈10 across both settings:
+•𝐶= 2× 1020 FLOPs: 𝑃tot≈ 5.7B and 𝑃act = 568M. The baseline (𝜌= 1) has a total of 106 experts.
+•𝐶= 6× 1020 FLOPs: 𝑃tot≈ 9.9B and 𝑃act = 993M. The baseline (𝜌= 1) has a total of 99 experts.
+7
+For different𝜌, we construct the corresponding model only by adjusting the number of routed
+experts and the number of Engram embedding slots. All runs use </blockquote><blockquote>soft
+alignment index𝑎𝑗, defined as the weighted centroid of the top-𝑘 most similar MoE layers for
+each Engram layer𝑗:
+𝑎𝑗 =
+˝
+𝑖∈I𝑗𝑆𝑖,𝑗·𝑖
+˝
+𝑖∈I𝑗𝑆𝑖,𝑗
+, whereI 𝑗 =argtop𝑘
+𝑖
+(𝑆𝑖,𝑗). (9)
+Here,𝑆𝑖,𝑗 denotes the similarity score between MoE layer 𝑖 and Engram layer 𝑗. The index 𝑎𝑗
+serves as a robust proxy for the &quot;effective MoE depth&quot; corresponding to Engram layer𝑗, utilizing
+top-𝑘filtering (with𝑘=5) to mitigate low-similarity noise.
+Figure 4 (b)–(c) visualize the similarity heatmaps overlayed with the soft alignment curve
+(dashed white line). We observe a distinct upward shift from the diagonal, meaning that𝑎𝑗 &gt; 𝑗
+for a wide range of layers. For instance, the representations formed at layer 5 of Engram-27B
+align most closely with those at approximately layer 12 of the MoE baseline.
+The consistent off-diagonal shift, which aligns with the LogitLens results (Section 6.1.1),
+confirms that Engram </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

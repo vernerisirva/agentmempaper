@@ -60,15 +60,160 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
-      <p>Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 57.2%</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. The narrative asserts substantial body evidence for all six core dimensions and no substantive insufficiency, but the supplied union of sources does not establish prompt catalogues for all construction/evaluation stages, threshold sensitivity analyses, or expert-review agreement, Cited evidence does not establish numerical values/units: 92%, 85%, 87%, 2.1 Cited evidence does not establish numerical values/units: 4 Cited evidence does not establish numerical values/units: 46.1%, 51.1%, 40.6% Cited evidence does not establish numerical values/units: 4.5, 13, 14, 4.5 The appendix includes routing rules and a benchmark construction prompt catalogue, but the supplied excerpts do not show prompt catalogues for question generation, quality control, inference settings, and evaluation graders, nor threshold sensitivity analyses. Cited evidence does not establish numerical values/units: 1,014</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-semantics-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-16T18:59:47+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-grounding-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T07:57:45+00:00.</p>
         <p>Coverage: 138337 of 138337 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Sci-MMR is a benchmark of 235 multi-hop reasoning tasks spanning four scientific disciplines, built on structured argument graphs linking claims, citation-grounded knowledge, visual evidence, and supporting regions, with an average of nine figure panels per task.</p><p>Attributed source statement: supported. The abstract and introduction state the benchmark&#x27;s scope, size, structure, and grounding mechanism explicitly. The contribution is attributed to the manuscript as a source claim about its own scope. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>FudanNLPLab
+2026-9-11
+Sci-MMR: Benchmarking Multi-Step Evidence-Grounded
+Scientific Reasoning in Multimodal Agents
+Jiaqiang Li*, Yajie Yang*, Zhiheng Xi*, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan,
+Jiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang
+Zheng, Qi Zhang, Lei Bai, Xingjun Ma†, Tao Gui†
+Fudan NLP Group
+corresponding.author@fudan.edu.cn
+Autonomous research agents are increasingly expected to search the literature, analyze experimen-
+tal evidence, and generate scientific hypotheses. These capabilities require multi-step evidence-
+grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching
+a conclusion. Existing multimodal benchmarks, however, largely evaluate final-answer accuracy,
+leaving open whether predictions are actually supported by traceable scientific evidence. We in-
+troduceSci-MMR, a benchmark for </blockquote><blockquote>multi-step evidence-grounded scientific reasoning built on
+structured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence,
+and supporting regions. Sci-MMR comprises 235 multi-hop reasoning tasks spanning four scientific
+disciplines, with an average of nine figure panels per task. Evaluating eight frontier multimodal
+models, we find that answer accuracy consistently exceeds complete-evidence recovery rate by more
+than 20%, revealing a substantial gap that answer-only evaluation is structurally unable to capture.
+Through controlled interventions, we identify two fundamental bottlenecks. First, evidence acquisi-
+tion: models struggle to extract complete structured evidence from scientific figures, accounting for
+57.2% of failures. While cropping tools yield modest gains (+4.5 points), providing gold evidence
+improves accuracy by up to 37.0 points, </blockquote></details></li><li><strong>Methodological rigor — pages 5, 14</strong><p>The benchmark construction pipeline includes deterministic validation removing 54% of candidate tasks, an eight-dimensional LLM quality rubric filtering a further 17%, and final expert review of 260 tasks with 25 rejected and 235 retained.</p><p>Attributed source statement: supported. The construction section and Appendix A document the multi-stage quality-control flow with explicit rates and expert-review dispositions. This provides evidence of a human-in-the-loop validation process rather than purely automated generation. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>as a conser-
+vative, directly observable statement, and verify
+the complete argument graph.
+Task generation.From each verified Argument
+Graph, we sample a argument subgraph suffi-
+cient to derive a target claim. The sampled graph
+specifies the required observations, intermediate
+claims, and scientific knowledge, from which an
+LLM generates a natural multi-hop question with-
+out revealing the target conclusion. Reference
+answers are generated independently from the
+complete argument graph, presenting grounded
+observations, intermediate reasoning, and the fi-
+nal conclusion in dependency order with explicit
+figure and table attributions.
+Automatedqualitycontrol.Candidate tasks first
+pass through two automated filters. Deterministic
+validation removes 54% of tasks whose argument
+graph depth falls below a minimum threshold.
+The remaining tasks are evaluated using an eight-
+dimensional </blockquote><blockquote>validation removes 54%
+of the candidate-task inventory, and the subse-
+quent rubric stage filters a further 17%. Failed
+candidates are revised and re-evaluated. The fi-
+nal expert-review cohort contains 260 task IDs;
+25 are rejected and 235 are retained in the bench-
+mark. The final 235 tasks come from 170 papers;
+119paperscontributeonetask,39contributetwo,
+10 contribute three, and two contribute four.
+For temporal coverage, we record each final
+task&#x27;s source paper by its latest release or version
+year, which may differ from its original publica-
+tion year. The 235 benchmark questions are not
+uniformly distributed across 2020–2026: the re-
+spective counts are 2, 2, 3, 16, 46, 38, and 128.
+Thus, 128 questions (54.5%) use papers whose
+latest release or version is dated 2026.
+Table 3 summarizes the task-level construction
+flow; paper-level counts are upstream inventory
+counts.
+Table 4 </blockquote></details></li><li><strong>Related work and gap positioning — page 3</strong><p>Existing scientific multimodal benchmarks primarily evaluate final-answer correctness and do not evaluate whether models acquire the complete evidence supporting a scientific conclusion, a gap Sci-MMR addresses by disentangling evidence acquisition from evidence integration.</p><p>Attributed source statement: supported. The related-work section explicitly contrasts answer-centric benchmarks (SPIQA, SciVer, PaperMind) and process-level benchmarks (PhysicsArena, VDR-Bench) with Sci-MMR&#x27;s evidence-coverage and claim-coverage evaluation. The comparison is adequate for the paper&#x27;s actual claims about evaluation gaps. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Synthesizing Multi-Hop Reasoning Tasks.Ex-
+isting scientific multimodal benchmarks evalu-
+ate figure-grounded question answering, claim
+verification, and paper-level understanding, but
+typically treat reasoning as recovering a final an-
+swer rather than reconstructing the evidence sup-
+porting a scientific claim [Pramanick et al., 2024,
+Wang et al., 2025, Ansari et al., 2026, Zhao et al.,
+2026]. Existing multi-hop task construction meth-
+ods compose reasoning steps within a single im-
+age [Wang et al., 2026, Tran et al., 2025], sample
+paths from knowledge or content graphs [Ning
+et al., 2026, Du et al., 2026, Sung et al., 2026], or
+synthesize retrieval trajectories through graph ex-
+pansion and information obfuscation [Li et al.,
+2025]. In contrast,Sci-MMRreconstructs evi-
+dence dependencies directly from peer-reviewed
+papers, grounding each reasoning step in citation-
+supported </blockquote><blockquote>evidence and visual regions.
+Beyond Answer-Centric Evaluation.Recent
+work has moved beyond answer-only evalua-
+tion by assessing intermediate reasoning and
+agent behaviors. PhysicsArena [Dai et al., 2025]
+evaluates variable identification, process for-
+mulation, and solution derivation, while VDR-
+Bench [Zeng et al., 2026] measures interme-
+diate entity recovery alongside answer correct-
+ness. Research-agent benchmarks further intro-
+duce expert-authored rubrics, process–report
+consistency, capability-aware evaluators, task-
+specificjudging,andmultimodalevidence-fidelity
+checks [Sharma et al., 2025, Ye et al., 2026, Ben-
+Avraham et al., 2026, Ai et al., 2026, Huang et al.,
+2026]. These approaches reveal intermediate fail-
+ures beyond final-answer accuracy but do not
+evaluate whether models acquire the complete
+evidence supporting a scientific conclusion.Sci-
+MMRinstead disentangles </blockquote></details></li><li><strong>Limitations and uncertainty handling — page 9</strong><p>The paper acknowledges that an Argument Graph represents one plausible reconstruction of a paper&#x27;s evidential structure rather than unique ground truth, and that LLM-based assessment may be affected by semantic ambiguity, response style, and evaluator bias.</p><p>Attributed source statement: supported. The Limitations section explicitly discusses construction subjectivity and LLM-judge bias, citing prior work on evaluator bias. This is a substantive, appropriately scoped limitation disclosure rather than a generic caveat. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>OurSci-MMRprovides a large-scale benchmark
+for evaluating evidence-grounded scientific rea-
+soning and enables systematic analysis of evi-
+dence acquisition and evidence integration. Nev-
+ertheless, several limitations should be acknowl-
+edged. First, an Argument Graph represents one
+plausible reconstruction of a paper&#x27;s evidential
+structure rather than a unique ground truth. Evi-
+dence granularity, intermediate claims, and sup-
+port relations may admit alternative yet valid in-
+terpretations. Although our LLM-assisted pipeline
+0 25 50
+Access/localization
+Gold underuse
+Visual extraction
+Interpretation
+Final answer
+Other
+Evidence  ·  57.2%
+Reasoning  ·  31.8%
+Overall (%)
+40.1%
+14.0%
+3.1%
+27.5%
+4.2%
+11.0%
+By model (%)
+45 37 48 38 39 41 39 38
+38 33 34 21 32 23 26 22
+Figure 6| Error patterns among incorrect Direct
+Visual Reasoning outputs. The left panel shows
+the overall distribution, and </blockquote><blockquote>the right panel shows
+the distribution for each model. Bubble size indi-
+cates the percentage of a model&#x27;s errors.
+incorporates expert verification, some degree of
+construction subjectivity is unavoidable. Second,
+Evidence Coverage and Claim Coverage evaluate
+the evidence and claims explicitly expressed in
+the final response rather than the model&#x27;s inter-
+nal reasoning process. In addition, although our
+evaluationdemonstratesstrongcross-judgeagree-
+ment, LLM-based assessment may still be affected
+by semantic ambiguity, response style, and evalu-
+ator bias [Zheng et al., 2023, Zeng et al., 2024,
+Chen et al., 2025].</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

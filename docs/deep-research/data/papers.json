@@ -499,14 +499,14 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T18:59:47+00:00",
+      "assessed_at": "2026-09-17T07:57:45+00:00",
       "assessment_scope": "full_text",
-      "assessment_version": "quality-semantics-v1",
+      "assessment_version": "quality-grounding-v1",
       "assessor_model": "deepseek/deepseek-v4-pro-0813",
       "assessor_type": "llm",
       "combined_rank_score": 0.96,
       "concerns": [],
-      "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+      "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
       "confidence": "high",
       "coverage": {
         "assessment_input_characters": 142653,
@@ -1090,8 +1090,8 @@
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 5,
-        "evaluation_or_validation_strength": 5,
-        "evidence_to_claim_alignment": 5,
+        "evaluation_or_validation_strength": 4,
+        "evidence_to_claim_alignment": 4,
         "limitations_and_uncertainty_handling": 4,
         "methodological_rigor": 4,
         "presentation_and_precision": 4,
@@ -1100,22 +1100,297 @@
         "scholarly_novelty_or_value": 4
       },
       "downranked": false,
-      "evidence": [],
+      "evidence": [
+        {
+          "claim_role": "contribution",
+          "context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ee289dcbfc19bfb04-B0001",
+            "Ee289dcbfc19bfb04-B0002"
+          ],
+          "excerpt": "FudanNLPLab\n2026-9-11\nSci-MMR: Benchmarking Multi-Step Evidence-Grounded\nScientific Reasoning in Multimodal Agents\nJiaqiang Li*, Yajie Yang*, Zhiheng Xi*, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan,\nJiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang\nZheng, Qi Zhang, Lei Bai, Xingjun Ma\u2020, Tao Gui\u2020\nFudan NLP Group\ncorresponding.author@fudan.edu.cn\nAutonomous research agents are increasingly expected to search the literature, analyze experimen-\ntal evidence, and generate scientific hypotheses. These capabilities require multi-step evidence-\ngrounded reasoning that progressively acquires, integrates, and verifies evidence before reaching\na conclusion. Existing multimodal benchmarks, however, largely evaluate final-answer accuracy,\nleaving open whether predictions are actually supported by traceable scientific evidence. We in-\ntroduceSci-MMR, a benchmark for \n[\u2026 separate evidence block \u2026]\nmulti-step evidence-grounded scientific reasoning built on\nstructured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence,\nand supporting regions. Sci-MMR comprises 235 multi-hop reasoning tasks spanning four scientific\ndisciplines, with an average of nine figure panels per task. Evaluating eight frontier multimodal\nmodels, we find that answer accuracy consistently exceeds complete-evidence recovery rate by more\nthan 20%, revealing a substantial gap that answer-only evaluation is structurally unable to capture.\nThrough controlled interventions, we identify two fundamental bottlenecks. First, evidence acquisi-\ntion: models struggle to extract complete structured evidence from scientific figures, accounting for\n57.2% of failures. While cropping tools yield modest gains (+4.5 points), providing gold evidence\nimproves accuracy by up to 37.0 points,",
+          "explanation": "The abstract and introduction state the benchmark's scope, size, structure, and grounding mechanism explicitly. The contribution is attributed to the manuscript as a source claim about its own scope.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Sci-MMR is a benchmark of 235 multi-hop reasoning tasks spanning four scientific disciplines, built on structured argument graphs linking claims, citation-grounded knowledge, visual evidence, and supporting regions, with an average of nine figure panels per task.",
+          "section": "Abstract / front matter",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "0e8afe4c1424e9a1c506692eaf537b7781ed2956e98e204c58fe7867b73c6b38",
+              "evidence_id": "Ee289dcbfc19bfb04-B0001",
+              "pages": [
+                1
+              ],
+              "section": "Abstract / front matter",
+              "section_role": "abstract",
+              "source_spans": [
+                {
+                  "end": 900,
+                  "page": 1,
+                  "section": "Abstract / front matter",
+                  "section_index": 0,
+                  "start": 0,
+                  "text": "FudanNLPLab\n2026-9-11\nSci-MMR: Benchmarking Multi-Step Evidence-Grounded\nScientific Reasoning in Multimodal Agents\nJiaqiang Li*, Yajie Yang*, Zhiheng Xi*, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan,\nJiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang\nZheng, Qi Zhang, Lei Bai, Xingjun Ma\u2020, Tao Gui\u2020\nFudan NLP Group\ncorresponding.author@fudan.edu.cn\nAutonomous research agents are increasingly expected to search the literature, analyze experimen-\ntal evidence, and generate scientific hypotheses. These capabilities require multi-step evidence-\ngrounded reasoning that progressively acquires, integrates, and verifies evidence before reaching\na conclusion. Existing multimodal benchmarks, however, largely evaluate final-answer accuracy,\nleaving open whether predictions are actually supported by traceable scientific evidence. We in-\ntroduceSci-MMR, a benchmark for "
+                }
+              ],
+              "text": "FudanNLPLab\n2026-9-11\nSci-MMR: Benchmarking Multi-Step Evidence-Grounded\nScientific Reasoning in Multimodal Agents\nJiaqiang Li*, Yajie Yang*, Zhiheng Xi*, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan,\nJiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang\nZheng, Qi Zhang, Lei Bai, Xingjun Ma\u2020, Tao Gui\u2020\nFudan NLP Group\ncorresponding.author@fudan.edu.cn\nAutonomous research agents are increasingly expected to search the literature, analyze experimen-\ntal evidence, and generate scientific hypotheses. These capabilities require multi-step evidence-\ngrounded reasoning that progressively acquires, integrates, and verifies evidence before reaching\na conclusion. Existing multimodal benchmarks, however, largely evaluate final-answer accuracy,\nleaving open whether predictions are actually supported by traceable scientific evidence. We in-\ntroduceSci-MMR, a benchmark for "
+            },
+            {
+              "content_hash": "5ddd7f4b1e3750d7ee76ddf963b05f88e6605ac351e27f6921f62e9432eb5e7e",
+              "evidence_id": "Ee289dcbfc19bfb04-B0002",
+              "pages": [
+                1
+              ],
+              "section": "Abstract / front matter",
+              "section_role": "abstract",
+              "source_spans": [
+                {
+                  "end": 1793,
+                  "page": 1,
+                  "section": "Abstract / front matter",
+                  "section_index": 0,
+                  "start": 900,
+                  "text": "multi-step evidence-grounded scientific reasoning built on\nstructured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence,\nand supporting regions. Sci-MMR comprises 235 multi-hop reasoning tasks spanning four scientific\ndisciplines, with an average of nine figure panels per task. Evaluating eight frontier multimodal\nmodels, we find that answer accuracy consistently exceeds complete-evidence recovery rate by more\nthan 20%, revealing a substantial gap that answer-only evaluation is structurally unable to capture.\nThrough controlled interventions, we identify two fundamental bottlenecks. First, evidence acquisi-\ntion: models struggle to extract complete structured evidence from scientific figures, accounting for\n57.2% of failures. While cropping tools yield modest gains (+4.5 points), providing gold evidence\nimproves accuracy by up to 37.0 points, "
+                }
+              ],
+              "text": "multi-step evidence-grounded scientific reasoning built on\nstructured argument graphs linking scientific claims, citation-grounded knowledge, visual evidence,\nand supporting regions. Sci-MMR comprises 235 multi-hop reasoning tasks spanning four scientific\ndisciplines, with an average of nine figure panels per task. Evaluating eight frontier multimodal\nmodels, we find that answer accuracy consistently exceeds complete-evidence recovery rate by more\nthan 20%, revealing a substantial gap that answer-only evaluation is structurally unable to capture.\nThrough controlled interventions, we identify two fundamental bottlenecks. First, evidence acquisi-\ntion: models struggle to extract complete structured evidence from scientific figures, accounting for\n57.2% of failures. While cropping tools yield modest gains (+4.5 points), providing gold evidence\nimproves accuracy by up to 37.0 points, "
+            }
+          ],
+          "statement_kind": "source_claim",
+          "support_status": "supported",
+          "support_verification": {
+            "item_id": "evidence-0",
+            "reason": "The abstract states Sci-MMR comprises 235 multi-hop reasoning tasks spanning four scientific disciplines, built on structured argument graphs linking claims, citation-grounded knowledge, visual evidence, and supporting regions, with an average of nine figure panels per task.",
+            "status": "supported"
+          }
+        },
+        {
+          "claim_role": "method",
+          "context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+          "dimension": "methodological_rigor",
+          "evidence_ids": [
+            "Ee289dcbfc19bfb04-B0024",
+            "Ee289dcbfc19bfb04-B0050"
+          ],
+          "excerpt": "as a conser-\nvative, directly observable statement, and verify\nthe complete argument graph.\nTask generation.From each verified Argument\nGraph, we sample a argument subgraph suffi-\ncient to derive a target claim. The sampled graph\nspecifies the required observations, intermediate\nclaims, and scientific knowledge, from which an\nLLM generates a natural multi-hop question with-\nout revealing the target conclusion. Reference\nanswers are generated independently from the\ncomplete argument graph, presenting grounded\nobservations, intermediate reasoning, and the fi-\nnal conclusion in dependency order with explicit\nfigure and table attributions.\nAutomatedqualitycontrol.Candidate tasks first\npass through two automated filters. Deterministic\nvalidation removes 54% of tasks whose argument\ngraph depth falls below a minimum threshold.\nThe remaining tasks are evaluated using an eight-\ndimensional \n[\u2026 separate evidence block \u2026]\nvalidation removes 54%\nof the candidate-task inventory, and the subse-\nquent rubric stage filters a further 17%. Failed\ncandidates are revised and re-evaluated. The fi-\nnal expert-review cohort contains 260 task IDs;\n25 are rejected and 235 are retained in the bench-\nmark. The final 235 tasks come from 170 papers;\n119paperscontributeonetask,39contributetwo,\n10 contribute three, and two contribute four.\nFor temporal coverage, we record each final\ntask's source paper by its latest release or version\nyear, which may differ from its original publica-\ntion year. The 235 benchmark questions are not\nuniformly distributed across 2020\u20132026: the re-\nspective counts are 2, 2, 3, 16, 46, 38, and 128.\nThus, 128 questions (54.5%) use papers whose\nlatest release or version is dated 2026.\nTable 3 summarizes the task-level construction\nflow; paper-level counts are upstream inventory\ncounts.\nTable 4",
+          "explanation": "The construction section and Appendix A document the multi-stage quality-control flow with explicit rates and expert-review dispositions. This provides evidence of a human-in-the-loop validation process rather than purely automated generation.",
+          "page": 5,
+          "pages": [
+            5,
+            14
+          ],
+          "paraphrase": "The benchmark construction pipeline includes deterministic validation removing 54% of candidate tasks, an eight-dimensional LLM quality rubric filtering a further 17%, and final expert review of 260 tasks with 25 rejected and 235 retained.",
+          "section": "Benchmark Construction And Composi- / Appendix",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "dc230d1e9cc6328f73f21ff3c1cc3c9b4c4988a544f41e7223bcad0c8df53d6d",
+              "evidence_id": "Ee289dcbfc19bfb04-B0024",
+              "pages": [
+                5
+              ],
+              "section": "Benchmark Construction And Composi-",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 1462,
+                  "page": 5,
+                  "section": "Benchmark Construction And Composi-",
+                  "section_index": 13,
+                  "start": 568,
+                  "text": "as a conser-\nvative, directly observable statement, and verify\nthe complete argument graph.\nTask generation.From each verified Argument\nGraph, we sample a argument subgraph suffi-\ncient to derive a target claim. The sampled graph\nspecifies the required observations, intermediate\nclaims, and scientific knowledge, from which an\nLLM generates a natural multi-hop question with-\nout revealing the target conclusion. Reference\nanswers are generated independently from the\ncomplete argument graph, presenting grounded\nobservations, intermediate reasoning, and the fi-\nnal conclusion in dependency order with explicit\nfigure and table attributions.\nAutomatedqualitycontrol.Candidate tasks first\npass through two automated filters. Deterministic\nvalidation removes 54% of tasks whose argument\ngraph depth falls below a minimum threshold.\nThe remaining tasks are evaluated using an eight-\ndimensional "
+                }
+              ],
+              "text": "as a conser-\nvative, directly observable statement, and verify\nthe complete argument graph.\nTask generation.From each verified Argument\nGraph, we sample a argument subgraph suffi-\ncient to derive a target claim. The sampled graph\nspecifies the required observations, intermediate\nclaims, and scientific knowledge, from which an\nLLM generates a natural multi-hop question with-\nout revealing the target conclusion. Reference\nanswers are generated independently from the\ncomplete argument graph, presenting grounded\nobservations, intermediate reasoning, and the fi-\nnal conclusion in dependency order with explicit\nfigure and table attributions.\nAutomatedqualitycontrol.Candidate tasks first\npass through two automated filters. Deterministic\nvalidation removes 54% of tasks whose argument\ngraph depth falls below a minimum threshold.\nThe remaining tasks are evaluated using an eight-\ndimensional "
+            },
+            {
+              "content_hash": "79cd18a158309f3c944c8d7416d95c71bca8586731f7678d0ce52ad6bc9f1476",
+              "evidence_id": "Ee289dcbfc19bfb04-B0050",
+              "pages": [
+                14
+              ],
+              "section": "Appendix",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 1440,
+                  "page": 14,
+                  "section": "Appendix",
+                  "section_index": 25,
+                  "start": 545,
+                  "text": "validation removes 54%\nof the candidate-task inventory, and the subse-\nquent rubric stage filters a further 17%. Failed\ncandidates are revised and re-evaluated. The fi-\nnal expert-review cohort contains 260 task IDs;\n25 are rejected and 235 are retained in the bench-\nmark. The final 235 tasks come from 170 papers;\n119paperscontributeonetask,39contributetwo,\n10 contribute three, and two contribute four.\nFor temporal coverage, we record each final\ntask's source paper by its latest release or version\nyear, which may differ from its original publica-\ntion year. The 235 benchmark questions are not\nuniformly distributed across 2020\u20132026: the re-\nspective counts are 2, 2, 3, 16, 46, 38, and 128.\nThus, 128 questions (54.5%) use papers whose\nlatest release or version is dated 2026.\nTable 3 summarizes the task-level construction\nflow; paper-level counts are upstream inventory\ncounts.\nTable 4 "
+                }
+              ],
+              "text": "validation removes 54%\nof the candidate-task inventory, and the subse-\nquent rubric stage filters a further 17%. Failed\ncandidates are revised and re-evaluated. The fi-\nnal expert-review cohort contains 260 task IDs;\n25 are rejected and 235 are retained in the bench-\nmark. The final 235 tasks come from 170 papers;\n119paperscontributeonetask,39contributetwo,\n10 contribute three, and two contribute four.\nFor temporal coverage, we record each final\ntask's source paper by its latest release or version\nyear, which may differ from its original publica-\ntion year. The 235 benchmark questions are not\nuniformly distributed across 2020\u20132026: the re-\nspective counts are 2, 2, 3, 16, 46, 38, and 128.\nThus, 128 questions (54.5%) use papers whose\nlatest release or version is dated 2026.\nTable 3 summarizes the task-level construction\nflow; paper-level counts are upstream inventory\ncounts.\nTable 4 "
+            }
+          ],
+          "statement_kind": "source_claim",
+          "support_status": "supported",
+          "support_verification": {
+            "item_id": "evidence-2",
+            "reason": "The construction section states deterministic validation removes 54% of tasks and an eight-dimensional rubric is used, and the appendix states the rubric filters a further 17%, with 260 expert-reviewed tasks, 25 rejected, and 235 retained.",
+            "status": "supported"
+          }
+        },
+        {
+          "claim_role": "positioning",
+          "context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+          "dimension": "related_work_and_gap_positioning",
+          "evidence_ids": [
+            "Ee289dcbfc19bfb04-B0011",
+            "Ee289dcbfc19bfb04-B0012"
+          ],
+          "excerpt": "Synthesizing Multi-Hop Reasoning Tasks.Ex-\nisting scientific multimodal benchmarks evalu-\nate figure-grounded question answering, claim\nverification, and paper-level understanding, but\ntypically treat reasoning as recovering a final an-\nswer rather than reconstructing the evidence sup-\nporting a scientific claim [Pramanick et al., 2024,\nWang et al., 2025, Ansari et al., 2026, Zhao et al.,\n2026]. Existing multi-hop task construction meth-\nods compose reasoning steps within a single im-\nage [Wang et al., 2026, Tran et al., 2025], sample\npaths from knowledge or content graphs [Ning\net al., 2026, Du et al., 2026, Sung et al., 2026], or\nsynthesize retrieval trajectories through graph ex-\npansion and information obfuscation [Li et al.,\n2025]. In contrast,Sci-MMRreconstructs evi-\ndence dependencies directly from peer-reviewed\npapers, grounding each reasoning step in citation-\nsupported \n[\u2026 separate evidence block \u2026]\nevidence and visual regions.\nBeyond Answer-Centric Evaluation.Recent\nwork has moved beyond answer-only evalua-\ntion by assessing intermediate reasoning and\nagent behaviors. PhysicsArena [Dai et al., 2025]\nevaluates variable identification, process for-\nmulation, and solution derivation, while VDR-\nBench [Zeng et al., 2026] measures interme-\ndiate entity recovery alongside answer correct-\nness. Research-agent benchmarks further intro-\nduce expert-authored rubrics, process\u2013report\nconsistency, capability-aware evaluators, task-\nspecificjudging,andmultimodalevidence-fidelity\nchecks [Sharma et al., 2025, Ye et al., 2026, Ben-\nAvraham et al., 2026, Ai et al., 2026, Huang et al.,\n2026]. These approaches reveal intermediate fail-\nures beyond final-answer accuracy but do not\nevaluate whether models acquire the complete\nevidence supporting a scientific conclusion.Sci-\nMMRinstead disentangles",
+          "explanation": "The related-work section explicitly contrasts answer-centric benchmarks (SPIQA, SciVer, PaperMind) and process-level benchmarks (PhysicsArena, VDR-Bench) with Sci-MMR's evidence-coverage and claim-coverage evaluation. The comparison is adequate for the paper's actual claims about evaluation gaps.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Existing scientific multimodal benchmarks primarily evaluate final-answer correctness and do not evaluate whether models acquire the complete evidence supporting a scientific conclusion, a gap Sci-MMR addresses by disentangling evidence acquisition from evidence integration.",
+          "section": "Related Work",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "b700024809ce293f246be37541d0e36bbdb97eb436946f4e220d4ec2a6971f82",
+              "evidence_id": "Ee289dcbfc19bfb04-B0011",
+              "pages": [
+                3
+              ],
+              "section": "Related Work",
+              "section_role": "related",
+              "source_spans": [
+                {
+                  "end": 892,
+                  "page": 3,
+                  "section": "Related Work",
+                  "section_index": 5,
+                  "start": 0,
+                  "text": "Synthesizing Multi-Hop Reasoning Tasks.Ex-\nisting scientific multimodal benchmarks evalu-\nate figure-grounded question answering, claim\nverification, and paper-level understanding, but\ntypically treat reasoning as recovering a final an-\nswer rather than reconstructing the evidence sup-\nporting a scientific claim [Pramanick et al., 2024,\nWang et al., 2025, Ansari et al., 2026, Zhao et al.,\n2026]. Existing multi-hop task construction meth-\nods compose reasoning steps within a single im-\nage [Wang et al., 2026, Tran et al., 2025], sample\npaths from knowledge or content graphs [Ning\net al., 2026, Du et al., 2026, Sung et al., 2026], or\nsynthesize retrieval trajectories through graph ex-\npansion and information obfuscation [Li et al.,\n2025]. In contrast,Sci-MMRreconstructs evi-\ndence dependencies directly from peer-reviewed\npapers, grounding each reasoning step in citation-\nsupported "
+                }
+              ],
+              "text": "Synthesizing Multi-Hop Reasoning Tasks.Ex-\nisting scientific multimodal benchmarks evalu-\nate figure-grounded question answering, claim\nverification, and paper-level understanding, but\ntypically treat reasoning as recovering a final an-\nswer rather than reconstructing the evidence sup-\nporting a scientific claim [Pramanick et al., 2024,\nWang et al., 2025, Ansari et al., 2026, Zhao et al.,\n2026]. Existing multi-hop task construction meth-\nods compose reasoning steps within a single im-\nage [Wang et al., 2026, Tran et al., 2025], sample\npaths from knowledge or content graphs [Ning\net al., 2026, Du et al., 2026, Sung et al., 2026], or\nsynthesize retrieval trajectories through graph ex-\npansion and information obfuscation [Li et al.,\n2025]. In contrast,Sci-MMRreconstructs evi-\ndence dependencies directly from peer-reviewed\npapers, grounding each reasoning step in citation-\nsupported "
+            },
+            {
+              "content_hash": "58809c9aff41efada53c4bf19b4923fc30f33fe62a47cf5de001c4713be3f7cb",
+              "evidence_id": "Ee289dcbfc19bfb04-B0012",
+              "pages": [
+                3
+              ],
+              "section": "Related Work",
+              "section_role": "related",
+              "source_spans": [
+                {
+                  "end": 1787,
+                  "page": 3,
+                  "section": "Related Work",
+                  "section_index": 5,
+                  "start": 892,
+                  "text": "evidence and visual regions.\nBeyond Answer-Centric Evaluation.Recent\nwork has moved beyond answer-only evalua-\ntion by assessing intermediate reasoning and\nagent behaviors. PhysicsArena [Dai et al., 2025]\nevaluates variable identification, process for-\nmulation, and solution derivation, while VDR-\nBench [Zeng et al., 2026] measures interme-\ndiate entity recovery alongside answer correct-\nness. Research-agent benchmarks further intro-\nduce expert-authored rubrics, process\u2013report\nconsistency, capability-aware evaluators, task-\nspecificjudging,andmultimodalevidence-fidelity\nchecks [Sharma et al., 2025, Ye et al., 2026, Ben-\nAvraham et al., 2026, Ai et al., 2026, Huang et al.,\n2026]. These approaches reveal intermediate fail-\nures beyond final-answer accuracy but do not\nevaluate whether models acquire the complete\nevidence supporting a scientific conclusion.Sci-\nMMRinstead disentangles "
+                }
+              ],
+              "text": "evidence and visual regions.\nBeyond Answer-Centric Evaluation.Recent\nwork has moved beyond answer-only evalua-\ntion by assessing intermediate reasoning and\nagent behaviors. PhysicsArena [Dai et al., 2025]\nevaluates variable identification, process for-\nmulation, and solution derivation, while VDR-\nBench [Zeng et al., 2026] measures interme-\ndiate entity recovery alongside answer correct-\nness. Research-agent benchmarks further intro-\nduce expert-authored rubrics, process\u2013report\nconsistency, capability-aware evaluators, task-\nspecificjudging,andmultimodalevidence-fidelity\nchecks [Sharma et al., 2025, Ye et al., 2026, Ben-\nAvraham et al., 2026, Ai et al., 2026, Huang et al.,\n2026]. These approaches reveal intermediate fail-\nures beyond final-answer accuracy but do not\nevaluate whether models acquire the complete\nevidence supporting a scientific conclusion.Sci-\nMMRinstead disentangles "
+            }
+          ],
+          "statement_kind": "source_claim",
+          "support_status": "supported",
+          "support_verification": {
+            "item_id": "evidence-5",
+            "reason": "The related-work section states existing benchmarks typically treat reasoning as recovering a final answer and that recent approaches do not evaluate whether models acquire the complete evidence supporting a scientific conclusion, while Sci-MMR disentangles evidence acquisition.",
+            "status": "supported"
+          }
+        },
+        {
+          "claim_role": "limitation",
+          "context_id": "e289dcbfc19bfb040025db546fe33e758edd3e359fa114325f0bedd2fef20216",
+          "dimension": "limitations_and_uncertainty_handling",
+          "evidence_ids": [
+            "Ee289dcbfc19bfb04-B0045",
+            "Ee289dcbfc19bfb04-B0046"
+          ],
+          "excerpt": "OurSci-MMRprovides a large-scale benchmark\nfor evaluating evidence-grounded scientific rea-\nsoning and enables systematic analysis of evi-\ndence acquisition and evidence integration. Nev-\nertheless, several limitations should be acknowl-\nedged. First, an Argument Graph represents one\nplausible reconstruction of a paper's evidential\nstructure rather than a unique ground truth. Evi-\ndence granularity, intermediate claims, and sup-\nport relations may admit alternative yet valid in-\nterpretations. Although our LLM-assisted pipeline\n0 25 50\nAccess/localization\nGold underuse\nVisual extraction\nInterpretation\nFinal answer\nOther\nEvidence  \u00b7  57.2%\nReasoning  \u00b7  31.8%\nOverall (%)\n40.1%\n14.0%\n3.1%\n27.5%\n4.2%\n11.0%\nBy model (%)\n45 37 48 38 39 41 39 38\n38 33 34 21 32 23 26 22\nFigure 6| Error patterns among incorrect Direct\nVisual Reasoning outputs. The left panel shows\nthe overall distribution, and \n[\u2026 separate evidence block \u2026]\nthe right panel shows\nthe distribution for each model. Bubble size indi-\ncates the percentage of a model's errors.\nincorporates expert verification, some degree of\nconstruction subjectivity is unavoidable. Second,\nEvidence Coverage and Claim Coverage evaluate\nthe evidence and claims explicitly expressed in\nthe final response rather than the model's inter-\nnal reasoning process. In addition, although our\nevaluationdemonstratesstrongcross-judgeagree-\nment, LLM-based assessment may still be affected\nby semantic ambiguity, response style, and evalu-\nator bias [Zheng et al., 2023, Zeng et al., 2024,\nChen et al., 2025].",
+          "explanation": "The Limitations section explicitly discusses construction subjectivity and LLM-judge bias, citing prior work on evaluator bias. This is a substantive, appropriately scoped limitation disclosure rather than a generic caveat.",
+          "page": 9,
+          "pages": [
+            9
+          ],
+          "paraphrase": "The paper acknowledges that an Argument Graph represents one plausible reconstruction of a paper's evidential structure rather than unique ground truth, and that LLM-based assessment may be affected by semantic ambiguity, response style, and evaluator bias.",
+          "section": "Limitations",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "3147ff97464f965a73c6ccc43634848446909cc585d71388712ae2a7780e96b5",
+              "evidence_id": "Ee289dcbfc19bfb04-B0045",
+              "pages": [
+                9
+              ],
+              "section": "Limitations",
+              "section_role": "limitations",
+              "source_spans": [
+                {
+                  "end": 899,
+                  "page": 9,
+                  "section": "Limitations",
+                  "section_index": 21,
+                  "start": 0,
+                  "text": "OurSci-MMRprovides a large-scale benchmark\nfor evaluating evidence-grounded scientific rea-\nsoning and enables systematic analysis of evi-\ndence acquisition and evidence integration. Nev-\nertheless, several limitations should be acknowl-\nedged. First, an Argument Graph represents one\nplausible reconstruction of a paper's evidential\nstructure rather than a unique ground truth. Evi-\ndence granularity, intermediate claims, and sup-\nport relations may admit alternative yet valid in-\nterpretations. Although our LLM-assisted pipeline\n0 25 50\nAccess/localization\nGold underuse\nVisual extraction\nInterpretation\nFinal answer\nOther\nEvidence  \u00b7  57.2%\nReasoning  \u00b7  31.8%\nOverall (%)\n40.1%\n14.0%\n3.1%\n27.5%\n4.2%\n11.0%\nBy model (%)\n45 37 48 38 39 41 39 38\n38 33 34 21 32 23 26 22\nFigure 6| Error patterns among incorrect Direct\nVisual Reasoning outputs. The left panel shows\nthe overall distribution, and "
+                }
+              ],
+              "text": "OurSci-MMRprovides a large-scale benchmark\nfor evaluating evidence-grounded scientific rea-\nsoning and enables systematic analysis of evi-\ndence acquisition and evidence integration. Nev-\nertheless, several limitations should be acknowl-\nedged. First, an Argument Graph represents one\nplausible reconstruction of a paper's evidential\nstructure rather than a unique ground truth. Evi-\ndence granularity, intermediate claims, and sup-\nport relations may admit alternative yet valid in-\nterpretations. Although our LLM-assisted pipeline\n0 25 50\nAccess/localization\nGold underuse\nVisual extraction\nInterpretation\nFinal answer\nOther\nEvidence  \u00b7  57.2%\nReasoning  \u00b7  31.8%\nOverall (%)\n40.1%\n14.0%\n3.1%\n27.5%\n4.2%\n11.0%\nBy model (%)\n45 37 48 38 39 41 39 38\n38 33 34 21 32 23 26 22\nFigure 6| Error patterns among incorrect Direct\nVisual Reasoning outputs. The left panel shows\nthe overall distribution, and "
+            },
+            {
+              "content_hash": "d4a5325c6e642b79fb62a0b2adb0cf8cbe7d961fdccf405d3f784932e76e919f",
+              "evidence_id": "Ee289dcbfc19bfb04-B0046",
+              "pages": [
+                9
+              ],
+              "section": "Limitations",
+              "section_role": "limitations",
+              "source_spans": [
+                {
+                  "end": 1520,
+                  "page": 9,
+                  "section": "Limitations",
+                  "section_index": 21,
+                  "start": 899,
+                  "text": "the right panel shows\nthe distribution for each model. Bubble size indi-\ncates the percentage of a model's errors.\nincorporates expert verification, some degree of\nconstruction subjectivity is unavoidable. Second,\nEvidence Coverage and Claim Coverage evaluate\nthe evidence and claims explicitly expressed in\nthe final response rather than the model's inter-\nnal reasoning process. In addition, although our\nevaluationdemonstratesstrongcross-judgeagree-\nment, LLM-based assessment may still be affected\nby semantic ambiguity, response style, and evalu-\nator bias [Zheng et al., 2023, Zeng et al., 2024,\nChen et al., 2025]."
+                }
+              ],
+              "text": "the right panel shows\nthe distribution for each model. Bubble size indi-\ncates the percentage of a model's errors.\nincorporates expert verification, some degree of\nconstruction subjectivity is unavoidable. Second,\nEvidence Coverage and Claim Coverage evaluate\nthe evidence and claims explicitly expressed in\nthe final response rather than the model's inter-\nnal reasoning process. In addition, although our\nevaluationdemonstratesstrongcross-judgeagree-\nment, LLM-based assessment may still be affected\nby semantic ambiguity, response style, and evalu-\nator bias [Zheng et al., 2023, Zeng et al., 2024,\nChen et al., 2025]."
+            }
+          ],
+          "statement_kind": "source_claim",
+          "support_status": "supported",
+          "support_verification": {
+            "item_id": "evidence-7",
+            "reason": "The Limitations section explicitly states an Argument Graph represents one plausible reconstruction rather than unique ground truth and that LLM-based assessment may be affected by semantic ambiguity, response style, and evaluator bias.",
+            "status": "supported"
+          }
+        }
+      ],
       "full_text_assessed": true,
       "full_text_url": "https://arxiv.org/pdf/2609.11243",
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [],
-      "overall_quality_score": 84,
+      "overall_quality_score": 82,
       "paper_type": "dataset_or_benchmark",
-      "positive_signals": [],
-      "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+      "positive_signals": [
+        "Sci-MMR is a benchmark of 235 multi-hop reasoning tasks spanning four scientific disciplines, built on structured argument graphs linking claims, citation-grounded knowledge, visual evidence, and supporting regions, with an average of nine figure panels per task.",
+        "The benchmark construction pipeline includes deterministic validation removing 54% of candidate tasks, an eight-dimensional LLM quality rubric filtering a further 17%, and final expert review of 260 tasks with 25 rejected and 235 retained.",
+        "Existing scientific multimodal benchmarks primarily evaluate final-answer correctness and do not evaluate whether models acquire the complete evidence supporting a scientific conclusion, a gap Sci-MMR addresses by disentangling evidence acquisition from evidence integration.",
+        "The paper acknowledges that an Argument Graph represents one plausible reconstruction of a paper's evidential structure rather than unique ground truth, and that LLM-based assessment may be affected by semantic ambiguity, response style, and evaluator bias."
+      ],
+      "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
       "recommendation": "promising",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 57.2%"
+      "uncertainty": "Scientific support remains unresolved. The narrative asserts substantial body evidence for all six core dimensions and no substantive insufficiency, but the supplied union of sources does not establish prompt catalogues for all construction/evaluation stages, threshold sensitivity analyses, or expert-review agreement, Cited evidence does not establish numerical values/units: 92%, 85%, 87%, 2.1 Cited evidence does not establish numerical values/units: 4 Cited evidence does not establish numerical values/units: 46.1%, 51.1%, 40.6% Cited evidence does not establish numerical values/units: 4.5, 13, 14, 4.5 The appendix includes routing rules and a benchmark construction prompt catalogue, but the supplied excerpts do not show prompt catalogues for question generation, quality control, inference settings, and evaluation graders, nor threshold sensitivity analyses. Cited evidence does not establish numerical values/units: 1,014"
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -2651,15 +2926,15 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": "2026-09-16T19:00:41+00:00",
+      "assessed_at": "2026-09-17T07:58:46+00:00",
       "assessment_scope": "full_text",
-      "assessment_version": "quality-semantics-v1",
+      "assessment_version": "quality-grounding-v1",
       "assessor_model": "deepseek/deepseek-v4-pro-0813",
       "assessor_type": "llm",
       "combined_rank_score": 0.93,
       "concerns": [],
       "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
-      "confidence": "high",
+      "confidence": "medium",
       "coverage": {
         "assessment_input_characters": 56526,
         "assessment_input_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0",
@@ -2834,14 +3109,14 @@
       "curation_note": null,
       "dimension_scores": {
         "contribution_clarity": 4,
-        "evaluation_or_validation_strength": 4,
-        "evidence_to_claim_alignment": 4,
-        "limitations_and_uncertainty_handling": 4,
-        "methodological_rigor": 4,
-        "presentation_and_precision": 4,
+        "evaluation_or_validation_strength": 3,
+        "evidence_to_claim_alignment": 3,
+        "limitations_and_uncertainty_handling": 3,
+        "methodological_rigor": 3,
+        "presentation_and_precision": 3,
         "related_work_and_gap_positioning": 4,
-        "reproducibility_and_transparency": 4,
-        "scholarly_novelty_or_value": 4
+        "reproducibility_and_transparency": 3,
+        "scholarly_novelty_or_value": 3
       },
       "downranked": false,
       "evidence": [],
@@ -2850,16 +3125,16 @@
       "gate_version": "scientific-gate-v1",
       "manual_override": false,
       "missing_information": [],
-      "overall_quality_score": 82,
+      "overall_quality_score": 68,
       "paper_type": "empirical_research",
       "positive_signals": [],
       "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
-      "recommendation": "promising",
+      "recommendation": "uncertain",
       "rubric_version": "scholarly-rubric-v1",
       "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
       "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "Scientific support remains unresolved. Support verification unavailable."
+      "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 2"
     },
     "semantic_scholar_id": null,
     "source": "openalex",

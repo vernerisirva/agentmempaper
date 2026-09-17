@@ -69,7 +69,7 @@
           </div>
           <div class="paper-list" id="paper-list">
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="deep-research-agents citation-grounding" data-latest-run="true" data-is-new="false" data-published="2026-09-10" data-first-seen="2026-09-11" data-score="96" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents" data-search="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents jiaqiang li, yajie yang, zhiheng xi, jiadong chen, enyu zhou, senjie jin, yang nan, jiazheng zhang, han wang, yanxin li, dingwei zhu, bicheng deng, yuhui wang, xiang zheng, qi zhang, lei bai, xingjun ma, tao gui autonomous research agents are increasingly expected to search the literature, analyze experimental evidence, and generate scientific hypotheses. these capabilities require multi-step evidence grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching a conclusion. existing mul... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  deep-research-agents citation-grounding openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="84" data-quality-recommendation="promising" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.960000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex arxiv" data-decision="relevant" data-tags="deep-research-agents citation-grounding" data-latest-run="true" data-is-new="false" data-published="2026-09-10" data-first-seen="2026-09-11" data-score="96" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents" data-search="sci-mmr: benchmarking multi-step evidence-grounded scientific reasoning in multimodal agents jiaqiang li, yajie yang, zhiheng xi, jiadong chen, enyu zhou, senjie jin, yang nan, jiazheng zhang, han wang, yanxin li, dingwei zhu, bicheng deng, yuhui wang, xiang zheng, qi zhang, lei bai, xingjun ma, tao gui autonomous research agents are increasingly expected to search the literature, analyze experimental evidence, and generate scientific hypotheses. these capabilities require multi-step evidence grounded reasoning that progressively acquires, integrates, and verifies evidence before reaching a conclusion. existing mul... studies source-grounded research workflows, citation verification, or evidence-backed research reports.  deep-research-agents citation-grounding openalex arxiv relevant" data-quality-status="uncertain" data-quality-score="82" data-quality-recommendation="promising" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.960000">
       <div class="paper-main">
         <h3>Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents</h3>
         <p class="meta">Jiaqiang Li, Yajie Yang, Zhiheng Xi, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan, Jiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang Zheng, Qi Zhang, Lei Bai, Xingjun Ma, Tao Gui · Published 2026-09-10 · Source: OpenAlex, arXiv</p>
@@ -104,18 +104,18 @@
 
     <details class="quality-evidence">
       <summary>Scholarly quality evidence</summary>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
       <ul>
         <li>Recommendation: promising</li>
         <li>Confidence: high</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: dataset or benchmark</li>
-        <li>Assessment: quality-semantics-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-grounding-v1 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 5/5</li><li>Evidence To Claim Alignment: 5/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
-      <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 5/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Evidence</h4><ul><li>Sci-MMR is a benchmark of 235 multi-hop reasoning tasks spanning four scientific disciplines, built on structured argument graphs linking claims, citation-grounded knowledge, visual evidence, and supporting regions, with an average of nine figure panels per task. (page 1)</li><li>The benchmark construction pipeline includes deterministic validation removing 54% of candidate tasks, an eight-dimensional LLM quality rubric filtering a further 17%, and final expert review of 260 tasks with 25 rejected and 235 retained. (pages 5, 14)</li><li>Existing scientific multimodal benchmarks primarily evaluate final-answer correctness and do not evaluate whether models acquire the complete evidence supporting a scientific conclusion, a gap Sci-MMR addresses by disentangling evidence acquisition from evidence integration. (page 3)</li><li>The paper acknowledges that an Argument Graph represents one plausible reconstruction of a paper&#x27;s evidential structure rather than unique ground truth, and that LLM-based assessment may be affected by semantic ambiguity, response style, and evaluator bias. (page 9)</li></ul>
     </details>
 
           <button class="citation-button" type="button" data-citation="Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents. Jiaqiang Li, Yajie Yang, Zhiheng Xi, Jiadong Chen, Enyu Zhou, Senjie Jin, Yang Nan, Jiazheng Zhang, Han Wang, Yanxin Li, Dingwei Zhu, Bicheng Deng, Yuhui Wang, Xiang Zheng, Qi Zhang, Lei Bai, Xingjun Ma, Tao Gui. 2026-09-10. https://arxiv.org/abs/2609.11243">Copy citation</button>
@@ -181,7 +181,7 @@
     </article>
 
 
-    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="ai-scientist deep-research-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-07" data-first-seen="2026-09-08" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="real science is harder than benchmarks: evaluating advanced ai frameworks on published studies. ii. antibody properties, lipid-rna interactions" data-search="real science is harder than benchmarks: evaluating advanced ai frameworks on published studies. ii. antibody properties, lipid-rna interactions priyanka bhutada, nitin goyal, tatsam k. lakhankiya, sai d. narahari, shrish s. n. thangaraju, tushar s. nayak, yudong peng, gouri s. a. thota, ratna s. d. thota, zhipeng wang, kuohao lee, anton sinitskiy abstract artificial intelligence (ai) frameworks for automating scientific research have shown strong performance on benchmarks, but their utility for real-world industrial research remains insufficiently characterized. extending the analysis presented in the first paper of this series, we evaluated the same five ad... studies ai-scientist or scientific-discovery agents.  ai-scientist deep-research-agents openalex relevant" data-quality-status="uncertain" data-quality-score="82" data-quality-recommendation="promising" data-quality-confidence="high" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.930000">
+    <article class="paper-card primary" data-source="openalex" data-sources="openalex" data-decision="relevant" data-tags="ai-scientist deep-research-agents" data-latest-run="false" data-is-new="false" data-published="2026-09-07" data-first-seen="2026-09-08" data-score="93" data-pinned="false" data-future-date="false" data-date-bucket="0" data-title="real science is harder than benchmarks: evaluating advanced ai frameworks on published studies. ii. antibody properties, lipid-rna interactions" data-search="real science is harder than benchmarks: evaluating advanced ai frameworks on published studies. ii. antibody properties, lipid-rna interactions priyanka bhutada, nitin goyal, tatsam k. lakhankiya, sai d. narahari, shrish s. n. thangaraju, tushar s. nayak, yudong peng, gouri s. a. thota, ratna s. d. thota, zhipeng wang, kuohao lee, anton sinitskiy abstract artificial intelligence (ai) frameworks for automating scientific research have shown strong performance on benchmarks, but their utility for real-world industrial research remains insufficiently characterized. extending the analysis presented in the first paper of this series, we evaluated the same five ad... studies ai-scientist or scientific-discovery agents.  ai-scientist deep-research-agents openalex relevant" data-quality-status="uncertain" data-quality-score="68" data-quality-recommendation="uncertain" data-quality-confidence="medium" data-quality-scope="full_text" data-quality-downranked="false" data-combined-score="0.930000">
       <div class="paper-main">
         <h3>Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions</h3>
         <p class="meta">Priyanka Bhutada, Nitin Goyal, Tatsam K. Lakhankiya, Sai D. Narahari, Shrish S. N. Thangaraju, Tushar S. Nayak, Yudong Peng, Gouri S. A. Thota, Ratna S. D. Thota, Zhipeng Wang, Kuohao Lee, Anton Sinitskiy · Published 2026-09-07 · Source: OpenAlex</p>
@@ -218,15 +218,15 @@
       <summary>Scholarly quality evidence</summary>
       <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
       <ul>
-        <li>Recommendation: promising</li>
-        <li>Confidence: high</li>
+        <li>Recommendation: uncertain</li>
+        <li>Confidence: medium</li>
         <li>Assessment scope: full text</li>
         <li>Paper type: empirical research</li>
-        <li>Assessment: quality-semantics-v1 / rubric scholarly-rubric-v1</li>
+        <li>Assessment: quality-grounding-v1 / rubric scholarly-rubric-v1</li>
         <li>Assessor: llm (deepseek/deepseek-v4-pro-0813)</li>
 
       </ul>
-      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 4/5</li><li>Evidence To Claim Alignment: 4/5</li><li>Limitations And Uncertainty Handling: 4/5</li><li>Methodological Rigor: 4/5</li><li>Presentation And Precision: 4/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 4/5</li><li>Scholarly Novelty Or Value: 4/5</li></ul>
+      <h4>Dimension scores</h4><ul><li>Contribution Clarity: 4/5</li><li>Evaluation Or Validation Strength: 3/5</li><li>Evidence To Claim Alignment: 3/5</li><li>Limitations And Uncertainty Handling: 3/5</li><li>Methodological Rigor: 3/5</li><li>Presentation And Precision: 3/5</li><li>Related Work And Gap Positioning: 4/5</li><li>Reproducibility And Transparency: 3/5</li><li>Scholarly Novelty Or Value: 3/5</li></ul>
       <h4>Evidence</h4><ul><li>Evidence display is disabled or no excerpts were recorded.</li></ul>
     </details>
 

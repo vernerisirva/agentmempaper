@@ -4,35 +4,93 @@
 
 ## Summary
 
-- Papers assessed or reused: 1
-- Scientific quality statuses: uncertain: 1
-- Publication statuses: preprint: 1
+- Papers assessed or reused: 5
+- Scientific quality statuses: uncertain: 5
+- Publication statuses: peer_reviewed: 4, preprint: 1
 - Repository-only manuscripts inspected: 0
-- Assessment scopes: full_text: 1
-- Confidence: medium: 1
-- Recommendations: weak: 1
-- Score distribution: 50-59: 1
-- Assessor types: llm: 1
-- Papers downranked: 1
+- Assessment scopes: full_text: 1, title_and_abstract: 4
+- Confidence: low: 4, medium: 1
+- Recommendations: uncertain: 5
+- Score distribution: 40-49: 2, 60-69: 1, 70-79: 2
+- Assessor types: deterministic: 5
+- Papers downranked: 0
 - Papers hidden: 0
-- Assessments with score caps: 1
+- Assessments with score caps: 0
 - Assessment failures: 0
-- Extraction failures: 0
-- Cache hits / misses: 1 / 0
-- Assessment version: `quality-batch2-recovery-v1`
+- Extraction failures: 3
+- Cache hits / misses: 0 / 5
+- Assessment version: `quality-v2`
 - Rubric version: `scholarly-rubric-v1`
 
 ## Per-paper assessment
 
-### `doi:10.48550/arxiv.2609.08258`
+### `arxiv:2609.18182`
 
 - Scientific quality: uncertain
-- Rationale: The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.
-- Uncertainty: Scientific support remains unresolved. The sources support the research question, methodology breadth, central results, related-work positioning, limitations, and compute details, but the cited excerpts do not establish matched-pair statistical tests, ablations, or the guard design evaluation under indirect insertion. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material. The sources define M, txt(r), tau(r), rho(r), and distinguish direct and indirect insertion, but the excerpt does not show the equations for R(q,M,k) or the two metrics. The sources support nine scenarios, nine models, ten trials per scenario-model pair, and 44,550 main-grid calls, but do not show six defense conditions or multiple system configurations in the cited text. Cited evidence does not establish numerical values/units: 44.2% The sources support the five directions and the positioning statement, but the cited text does not describe the comparison table's distinction between a benign-user setting and retrieval-time validity check. Cited evidence does not establish numerical values/units: 0.629
-- Manuscript evidence assessed: True; source: https://arxiv.org/pdf/2609.08258
-- Automated score: 54
-- Recommendation: weak
+- Rationale: Text-pattern signals are available, but scientific substance requires manuscript review.
+- Uncertainty: No semantic quality assessment has established methods, evidence and claim alignment.
+- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2609.18182
+- Automated score: 68
+- Recommendation: uncertain
 - Confidence / scope: medium / full_text
 - Paper type: empirical_research
-- Summary: The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.
-- Positive signals: The paper's central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.; The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.
+- Summary: The available evidence is mixed or incomplete. Automated score 68/100, medium confidence, based on full text.
+- Positive signals: The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+
+### `doi:10.1002/rob.70340`
+
+- Scientific quality: uncertain
+- Rationale: Text-pattern signals are available, but scientific substance requires manuscript review.
+- Uncertainty: No semantic quality assessment has established methods, evidence and claim alignment.
+- Manuscript evidence assessed: False; source: not recorded
+- Automated score: 77
+- Recommendation: uncertain
+- Confidence / scope: low / title_and_abstract
+- Paper type: survey_or_review
+- Summary: The available evidence is mixed or incomplete. Automated score 77/100, low confidence, based on title and abstract.
+- Positive signals: The contribution is stated explicitly.; Limitations or threats to validity are acknowledged.
+
+### `doi:10.1002/widm.70122`
+
+- Scientific quality: uncertain
+- Rationale: Text-pattern signals are available, but scientific substance requires manuscript review.
+- Uncertainty: No semantic quality assessment has established methods, evidence and claim alignment.
+- Manuscript evidence assessed: False; source: not recorded
+- Automated score: 42
+- Recommendation: uncertain
+- Confidence / scope: low / title_and_abstract
+- Paper type: empirical_research
+- Summary: The available evidence is mixed or incomplete. Automated score 42/100, low confidence, based on title and abstract.
+- Positive signals: Robustness or statistical analysis is reported.; Limitations or threats to validity are acknowledged.
+
+### `doi:10.1007/s12559-026-10619-1`
+
+- Scientific quality: uncertain
+- Rationale: Text-pattern signals are available, but scientific substance requires manuscript review.
+- Uncertainty: No semantic quality assessment has established methods, evidence and claim alignment.
+- Manuscript evidence assessed: False; source: not recorded
+- Automated score: 43
+- Recommendation: uncertain
+- Confidence / scope: low / title_and_abstract
+- Paper type: survey_or_review
+- Summary: The available evidence is mixed or incomplete. Automated score 43/100, low confidence, based on title and abstract.
+- Positive signals: Robustness or statistical analysis is reported.
+
+### `doi:10.1007/s44443-026-01080-z`
+
+- Scientific quality: uncertain
+- Rationale: Text-pattern signals are available, but scientific substance requires manuscript review.
+- Uncertainty: No semantic quality assessment has established methods, evidence and claim alignment.
+- Manuscript evidence assessed: False; source: not recorded
+- Automated score: 78
+- Recommendation: uncertain
+- Confidence / scope: low / title_and_abstract
+- Paper type: methods_or_algorithm
+- Summary: The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.
+- Positive signals: The contribution is stated explicitly.; A baseline or comparison system is described.
+
+## Extraction failures
+
+- Vision‐Language‐Action Models for Embodied Artificial Intelligence: A Comprehensive Survey: full-text download failed: HTTP Error 403: Forbidden
+- From Language Models to Agentic AI: A Survey of Autonomous, Action-Enabled, and Collaborative LLM Agents: full-text response was not a plausible PDF
+- Knowledge distillation-based image deblurring network for plant disease classification: full-text response was not a plausible PDF

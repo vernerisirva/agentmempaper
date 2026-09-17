@@ -61,92 +61,14 @@
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
       <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
-      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 1, 2, 3 Cited evidence does not establish numerical values/units: 4, 2, 2, 2, 4, 4.66 Cited evidence does not establish numerical values/units: 1 Cited evidence does not establish numerical values/units: 11</p>
+      <p>Scientific support remains unresolved. The narrative synthesizes supported facts from the cited sources, but includes evaluative characterizations such as unusually disciplined and directly supported that are not established by the cited text. The sources list three components and mention a trust boundary, but do not explicitly state that the abstract and introduction consistently frame the publication boundary as the operational endpoint of memory governance. The cited sources provide the operational definition and aligned/crossed example, but do not mention Proposition 1 or explicitly state that the problem statement is falsifiable. The sources support held-out templates, real Git repositories, durably recorded attempts, deterministic oracles, ITT denominators, content-addressing, and independent recomputation, but do not mention fixed matrices. The sources support the matched-intent design and zero new model calls, but the characterization as a strong internal-validity choice is an evaluative inference not established by the cited text. Cited evidence does not establish numerical values/units: 4.66, -10 The source lists the open items and future work, but the characterization as candid is an evaluative judgment not established by the cited text. The sources support the matrix decompositions, content-addressing, and independent recomputation, but the characterization as supporting transparency is an evaluative inference not established by the cited text.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T09:11:04+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T10:17:56+00:00.</p>
         <p>Coverage: 22428 of 22428 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>The paper introduces the cross-substrate authority gap as a distinct problem: decision-relevant authorization information resides outside the planner-visible workspace or memory state, so identical final files can require opposite safe actions.</p><p>Attributed source statement: supported. The abstract explicitly defines the cross-substrate authority gap and the introduction provides a concrete paired-world example (aligned vs crossed) where byte-identical artifacts require different publication decisions. This establishes a clear, falsifiable problem statement. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Agentic systems persist model-visible memory while mutating workspaces, while a runtime,
-registry, or approval service may hold authority state outside both. Identical final files can
-then require opposite safe actions. We call this thecross-substrate authority gap: decision-
-relevant authorization information resides outside the planner-visible workspace or memory state.
-Across two controlled mini-benchmark families, three experiments compare planner-observation
-augmentation with an execution-time authority check using real Git lineage, durably recorded
-agent execution attempts, deterministic oracles, and two model routes. Experiment 1 is a 128-cell
-controlled evidence ablation: authority-blind candidate evidence obtains 0/32 final semantic
-success, while raw receipts and a typed relation both obtain 32/32. The missing authority
-fact accounts for the gain; typed packaging provides no </blockquote><blockquote>Consider two coding agents that update a shared policy file and its consumer. Both retain private
-session memory saying what they changed. A downstream agent sees the same final files, the same
-uncommitted Git diff, and the same visible memory in two worlds. In thealignedworld, each writer
-was authorized for its scope, so the artifact should be published. In thecrossedworld, the writers
-were swapped across scopes, so publication must stop for coordination. The bytes match across
-worlds, while the required actions differ.
-Hereauthoritydenotes whether a specific actor and execution attempt is authorized to cause
-a particular downstream effect on the current artifact. Git commits bind trees, parents, authors,
-1
-arXiv:2609.08472v1  [cs.MA]  8 Sep 2026
-committers, and messages [3]. Strong, identity-bound commits can encode the missing provenance
-and are an important negative control. We call </blockquote></details></li><li><strong>Methodological rigor — page 3</strong><p>The authority-blind indistinguishability proposition (Proposition 1) provides a formal grounding for the paired-world construction: any deterministic policy over identical observations must be incorrect in at least one world.</p><p>Attributed source statement: supported. The proposition is stated with a clear logical structure: identical planner observation O, opposite correct actions, and the conclusion that any deterministic policy emits the same action in both worlds. The paired construction is explicitly tied to this proposition, providing a formal basis for the experimental design. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>drift from the observed workspace.
-artifact digest A receipt is replayed for different bytes.
-attempt terminal state A failed or still-running attempt is treated as completed.
-downstream-use autho-
-rization
-Completion is confused with approval for downstream use.
-evidence version A stale snapshot silently replaces current authority.
-Harness
-session memory
-model intent
-−→
-Authority view
-attempt + material
-scope + status
-−→
-Execution guard
-digest recheck
-publish or hold
-Figure 1: Memory governance spans model-visible evidence and a separate execution boundary.
-Our experiments isolate these two roles using the same model-generated first-action intent.
-Proposition 1 (authority-blind indistinguishability).Let worlds x and y have identical
-planner observationO but opposite correct actions,A∗(x) = publish and A∗(y) = block. Any
-deterministic policyπ(O)emits the same action in both worlds and </blockquote><blockquote>is therefore incorrect in at least
-one. A policy that always blocks avoids unsafe publication but necessarily incurs an unnecessary
-block inx. Randomization changes expected rates while leaving the aliased observation unresolved.
-Our paired construction instantiates this proposition: the aligned and crossed worlds have
-byte-identical authority-blind inputs but opposite fixed oracles. An authority relation exposes the
-decision-relevant authority state and breaks this observational equivalence.</blockquote></details></li><li><strong>Methodological rigor — pages 3–4</strong><p>The trust model and fault model are explicitly specified, including assumptions of a nonmalicious host, authentic actor credentials, uncompromised authority database, and collision-resistant hashes, with the fault model covering stale memory, buggy decisions, attribution errors, workspace drift, and lost responses.</p><p>Attributed source statement: supported. The trust model enumerates trusted components and the fault model enumerates failure modes. This scoping is essential for interpreting the authorization-consistency results and is stated before the experimental sections. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 1 separates three mechanisms. Raw receipts and typed relations augment the planner
-observation. The model may still ignore or misread them. An execution-time guard validates the
-same relation, rechecks the live workspace digest immediately before mutation, and either executes
-or records a persistent denial with no mutation.
-3
-Trust model.We trust the harness to authenticate its allocated actor/session identifier and
-append terminal attempt receipts; the governance store to preserve attempt lifecycle and downstream-
-use authorization state; Git and SHA-256 to identify observed bytes; and the operator/evaluator
-to re-read the workspace and apply the fixed policy. The fault model includes stale or ambiguous
-memory, buggy model decisions, cross-agent attribution errors, workspace drift, and lost responses
-followed by restart. The analysis assumes a nonmalicious host, authentic actor </blockquote><blockquote>credentials, an
-uncompromised authority database, and collision-resistant hashes. Content hashes and independent
-audits detect accidental drift relative to frozen roots; cryptographic actor authentication requires a
-separate identity mechanism. We evaluate authorizationconsistencyunder these trusted-component
-assumptions.</blockquote></details></li><li><strong>Evaluation or validation strength — pages 5–6</strong><p>Experiment 3 uses a matched-intent design: the exact 32 W0 model-generated first-action intents from Experiment 2 are replayed through a deterministic execution guard with zero additional model calls, and the guard prevents all 6/16 unsafe crossed publication intents while permitting all 12/12 valid authorized publish</p><p>Attributed source statement: supported. The matched-intent design isolates the execution-time validator as the only changed variable, enabling causal attribution of the W0–W1 difference. The crossed comparison reports six favorable and zero adverse discordances with an exact two-sided finite-matrix p = 0.03125. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>ordinary shared-worktree Git and visible memory,
-R0 adds canonical raw actor/material receipts, and W0 adds the independently validated typed
-relation. FirstActionCorrect is scored over all 32 cells per arm; UnsafePublishRate uses only 16
-crossed cells; UnnecessaryBlockRate uses only 16 aligned cells.
-Experiment 3: Can an execution guard stop fixed unsafe intents?Experiment 3 consumes
-the exact fixed W0 output for all 32 Experiment 2 W0 rows and makes zero new model calls. The
-runtime enforcement operator validates actor/session/attempt/artifact/scope, rechecks the scope
-digest of the policy-relevant workspace, and records the executed effect or hold. The exact same
-model-generated first-action intent enters W0 and W1, while only the execution-time validator
-changes. This matched-intent design attributes the W0–W1 difference to the operator. Experiment
-3 is causally paired with </blockquote><blockquote>W1 replays all 32 W0 rows through the runtime enforcement operator without a provider call. W0
-contains 6/16 unsafe crossed publication intents; W1 executes 0/16 unsafe publications and leaves
-all 16/16 crossed cases safe. Among aligned cases, W1 permits and executes every valid publish
-intent (12/12) and induces 0/12 denials. Four other aligned rows lack a valid DeepSeek intent. They
-count against valid-intent availability, while the valid-intent execution denominator remains 12.
-The crossed comparison has six favorable and zero adverse discordances (exact two-sided finite-
-matrix p = 0.03125). The paired test characterizes this fixed experimental matrix. Deployment
-prevalence requires a separate sampling design.</blockquote></details></li><li><strong>Related work and gap positioning — page 7</strong><p>The paper positions its contribution against related work in memory governance (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph), shared-workspace concurrency (STORM, CoAgent), and provenance standards (PROV-O, PROV-AGENT, in-toto, LogAct), distinguishing its controlled cross-substrate publication</p><p>Attributed source statement: supported. The related work section explicitly names and characterizes multiple prior systems and standards, then states three specific novelty claims: (i) proving authority-blind observational equivalence against workspace-visible Git evidence, (ii) decomposing raw facts from typed packaging, and (iii) evaluating enforcement on the exact same model intent. This is adequate for the paper&#x27;s actual claims. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];
+        <ul><li><strong>Scholarly novelty or value — page 7</strong><p>The paper&#x27;s novelty lies in proving authority-blind observational equivalence against workspace-visible Git evidence and identity-bound commit controls, decomposing raw facts from typed packaging, and evaluating enforcement on the exact same model intent.</p><p>Attributed source statement: supported. The related-work section explicitly distinguishes the contribution from memory governance systems (Collaborative Memory, Governed Shared Memory, MemLineage, MAP-Graph) and shared-workspace concurrency systems (STORM, CoAgent). The paired-world construction excludes the stale-write race that neighboring systems address, isolating actor-attempt-scope publication authority as the novel axis. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>OS-inspired agent systems manage context, memory, scheduling, storage, and access control [7, 9];
 generalist multi-agent systems already coordinate agents that navigate local files and execute code [2].
 Our experiments isolate one operating-layer decision: whether a shared artifact is authorized for a
 downstream effect.
@@ -165,31 +87,39 @@ with notification, repair, and undo [5]. Our paired worlds exclude the stale-wri
 succeed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O
 and PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];
 in-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions
+in a durable shared log before execution and supports voters and recovery [1]. These </blockquote></details></li><li><strong>Evaluation or validation strength — page 6</strong><p>The execution-time guard prevents all six fixed unsafe crossed publication intents from becoming effects while permitting all 12 valid aligned publish intents, with a paired finite-matrix p = 0.03125.</p><p>Attributed source statement: supported. Experiment 3 reports W0 contains 6/16 unsafe crossed publication intents, W1 executes 0/16 unsafe publications, and among aligned cases W1 permits and executes 12/12 valid publish intents with 0/12 denials. The crossed comparison has six favorable and zero adverse discordances with exact two-sided finite-matrix p = 0.03125, supporting the enforcement claim on the fixed matrix. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>W1 replays all 32 W0 rows through the runtime enforcement operator without a provider call. W0
+contains 6/16 unsafe crossed publication intents; W1 executes 0/16 unsafe publications and leaves
+all 16/16 crossed cases safe. Among aligned cases, W1 permits and executes every valid publish
+intent (12/12) and induces 0/12 denials. Four other aligned rows lack a valid DeepSeek intent. They
+count against valid-intent availability, while the valid-intent execution denominator remains 12.
+The crossed comparison has six favorable and zero adverse discordances (exact two-sided finite-
+matrix p = 0.03125). The paired test characterizes this fixed experimental matrix. Deployment
+prevalence requires a separate sampling design.</blockquote></details></li><li><strong>Evidence to claim alignment — pages 5–6</strong><p>Planning-time evidence exposure remains unreliable and model-dependent, with raw receipts achieving 19/32 first-action correct and the typed relation achieving 15/32 with 11/32 invalid or absent outputs.</p><p>Attributed source statement: supported. Experiment 2&#x27;s table reports GM0 at 14/32, R0 at 19/32, and W0 at 15/32 first-action correct, with W0 showing 11/32 unknown outputs. The model split further qualifies this: DeepSeek&#x27;s W0 unsafe rate is 0/8 alongside 7/8 invalid or absent crossed rows, while GPT-5.4 Nano parses every row yet proposes unsafe publication in 6/8 crossed cases. This directly supports the claim that planning exposure alone is insufficient. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Experiment2completed96/96terminalplanningcalls. Table3showsthattheproblemisbehaviorally
+present: GM0 proposes unsafe publication in 12/16 crossed cells. R0 has the highest aggregate
+FirstActionCorrect (19/32). W0 has 11/32 invalid or absent outputs and 15/32 correct first actions.
+Neither evidence treatment is reliable across both model routes.
+5
+Table 3: Experiment 2 planning outcomes with explicit, outcome-specific denominators. Unknowns
+remain ITT failures.
+Arm First action Unsafe publish Unnecessary block Unknown
+GM0 14/32 12/16 4/16 2/32
+R0 19/32 9/16 2/16 2/32
+W0 15/32 6/16 0/16 11/32
+The model split qualifies the aggregate safety rate. DeepSeek&#x27;s W0 unsafe rate is 0/8 alongside
+7/8 crossed W0 rows with no valid intent. GPT-5.4 Nano parses every W0 row yet proposes unsafe
+publication in 6/8 crossed cases. Typed planning remains unreliable and model-dependent.</blockquote></details></li><li><strong>Related work and gap positioning — page 7</strong><p>The paper positions its contribution against memory governance and shared-workspace concurrency systems by isolating publication authority from stale-write races and provenance traceability.</p><p>Attributed source statement: supported. The related-work section contrasts the paired-world construction with STORM&#x27;s stale-write rejection and CoAgent&#x27;s serializable mutation, noting that both writes succeed and final bytes match in this setting. It also distinguishes the contribution from PROV-O, PROV-AGENT, in-toto, and LogAct, which provide traceability or supply-chain binding rather than a controlled publication-authority benchmark. This comparison is adequate for the actual claims made. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>authority-blind
+observational equivalence against workspace-visible Git evidence and identity-bound commit controls,
+(ii) decomposes raw facts from typed packaging, and (iii) evaluates enforcement on the exact same
+model intent.
+Shared-workspace systems address a neighboring concurrency problem. STORM rejects stale
+writes using per-agent workspace versions [4], while CoAgent seeks serializable multi-agent mutation
+with notification, repair, and undo [5]. Our paired worlds exclude the stale-write race: both writes
+succeed and final bytes match; only actor-attempt-scope publication authority differs. PROV-O
+and PROV-AGENT model agents, activities, entities, and workflow context for traceability [11, 13];
+in-toto binds authorized supply-chain steps to materials and products [12]. LogAct places actions
 in a durable shared log before execution and supports voters and recovery [1]. These </blockquote><blockquote>foundations
 motivate our benchmark for operating-layer authority in agentic systems and its three-experiment
-decomposition.</blockquote></details></li><li><strong>Reproducibility and transparency — page 9</strong><p>The appendix provides reproducibility details including full experimental matrices, evidence integrity procedures (content-addressed plans, inputs, parsers, scorers, commits, configurations, and evidence roots), independent reader recomputation, and compute/model access details.</p><p>Attributed source statement: supported. The appendix specifies the exact factor structure for all three experiments, describes content-addressing and independent audit procedures, and reports provider-attempt duration (615.7 seconds for Experiment 2&#x27;s 96 calls). This supports reproducibility of the controlled benchmark. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Experiment 1 matrix.Four held-out semantic templates× two models× two lineage directions
-× two authority states× four arms= 128target executions. All 128 target and 32 source attempts
-reached terminal receipts. The primary common outcome was deterministic final semantic success,
-scored by a code oracle.
-Experiment 2 matrix.Four held-out templates × two worlds× three planning arms× two
-models× two repeats= 96provider calls. World-specific denominators were fixed at 16 crossed and
-16 aligned rows per planning arm.
-Experiment 3 matrix.The 32 fixed Experiment 2 W0 rows were replayed once through W1
-with zero provider calls. Outcomes compare each model intent with its executed effect. These rows
-add 32 paired execution outcomes; the planning denominator remains 96.
-Evidenceintegrity.Acrossallthreeexperiments, plans, modelinputs, parsers, scorers, component
-commits, runtime configurations, </blockquote><blockquote>and evidence roots were content-addressed before counted calls.
-Independent readers recomputed case identities, exact input parity, terminal attempt bindings,
-deterministic semantics, and reported aggregates. Started attempts without exact terminal evidence
-remainedRUNNING with recovery-required; blind provider replay was prohibited.
-Compute and model access.The experiments used API inference only; no model training
-or GPU compute was performed locally. Experiment 1 used DeepSeek V4 Flash and GPT-5.4
-Mini. Experiment 2 used DeepSeek V4 Flash and GPT-5.4 Nano. Deterministic construction, Git
-operations, auditing, and Experiment 3 W1 enforcement ran on a Windows workstation. Experiment
-2&#x27;s 96 planning calls accumulated 615.7 seconds of provider-attempt duration; Experiment 3 made no
-model calls. Failed development and infrastructure-diagnostic runs were excluded by prospectively
-defined </blockquote><blockquote>eligibility gates. Only eligible runs enter the reported denominators.
-9</blockquote></details></li></ul>
+decomposition.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

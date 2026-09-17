@@ -60,15 +60,75 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 1.89x, 2.24x The sources state results are averaged over three runs and use GPT-4o-mini for merging, but they do not describe evaluator models, inter-evaluator reliability, human validation, or the theoretical assumptions about normalized embeddings and interpolation. The sources state the two key features and the three components, and the contribution list enumerates the general compression framework and novel retrieval mechanism; however, the cited text does not show the third contribution item about empirical performance. The cited text says recent post-processing compression relies on graph-structured memory and is restricted to streaming video, and that a general scalable framework remains an open challenge, but it does not explicitly state that existing research largely focuses on the &#x27;genera- The sources provide the formal equations for clustering, local continuity, weighted fusion, and reassignment, but the cited excerpts do not show the hyperparameter values alpha, beta, and w in the experimental setup. The sources specify the fully connected graph, cosine similarity weights, Kruskal-based maximum spanning tree, degree-aware weight update, and hub-node justification, but the cited excerpts do not show the LLM-based merge operation or Eq. 8. Cited evidence does not establish numerical values/units: 50%, 50%, 61.1 Cited evidence does not establish numerical values/units: 50%, 2.24x, 50%, 2.41x, 2.06x, 2.24x The sources support the hyperparameters, GPT-4o-mini, A100 GPUs, </p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T10:23:50+00:00.</p>
+        <p>Coverage: 84337 of 84337 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Evidence to claim alignment — pages 8–9</strong><p>The ablation studies validate that combining global semantic similarity with local temporal continuity and using maximum spanning tree merging both improve performance over their respective ablations.</p><p>Attributed source statement: supported. Table 3 shows that removing the global similarity score (w/o g_j^ci) or the local continuity score (w/o l_j^ci) reduces average performance from 52.2 to 49.8 and 50.9 respectively at 50% compression. Table 4 shows that replacing maximum spanning tree merging with random or minimum merging reduces performance from 52.2 to 49.9 and 48.4 respectively. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>5.3.1 MemForest Ablation Study.
+EventTree Semantic-Temporal Partitioning.Table 3 suggests that, when compressing50%of
+historical memory, our method significantly outperforms two variants across three benchmarks: one
+8
+Table 3:Impact of different EventTree parti-
+tioning strategies at 50% compression rate.
+Method LoCoMo LongMemEval M3-Bench-web Avg. %
+Baseline 60.2 55.2 47.9 54.4 100.0%
+w/og j
+ci 54.5 49.2 45.6 49.8 91.5%
+w/ol j
+ci 56.4 50.2 46.2 50.9 93.6%
+Ours 58.4 51.8 46.5 52.2 96.0%
+Table 4:Impact of different memory node
+merging strategies at 50% compression rate.
+Method LoCoMo LongMemEval M3-Bench-web Avg. %
+Baseline 60.2 55.2 47.9 54.4 100.0%
+Random 54.0 50.0 45.7 49.9 91.7%
+Minimum 51.2 48.8 45.2 48.4 89.0%
+Ours 58.4 51.8 46.5 52.2 </blockquote><blockquote>ni00000003/uni0000000b
+/uni0000001a/uni00000013/uni00000008/uni0000000c
+Figure 3:Time Efficiency Analysis on Mem0 and M3-Agent.Avg-R(×): average number of
+retrievals per query;R-Time(s): time cost per retrieval;T-Time(s): total retrieval time per query.
+removes the local continuity score lj
+ci, and the other removes the global similarity score gj
+ci and
+replaces it with a sliding window for EventTree partitioning. Detailed implementations of these
+variants are provided in Appendix A.3. This indicates that combining global semantic similarity with
+local temporal continuity enables more accurate EventTree partitioning.
+EventTree Progressive Merging.Table 4 suggests that, when compressing50%of the historical
+memory, replacing the maximum spanning tree with either random merging or minimum spanning
+tree merging results in significantly worse performance than our method, thereby validating </blockquote></details></li><li><strong>Related work and gap positioning — page 2</strong><p>The paper positions MemForest against generation-stage memory compression, graph-structured streaming video compression, and visual token compression methods, arguing that textual memories are more semantically rich and information-dense than visual tokens.</p><p>Attributed source statement: supported. The introduction contrasts post-processing compression with generation-stage methods, notes that StreamMeCo is restricted to streaming video, and discusses similarity-based, diversity-based, and attention-based visual token compression methods. It argues that textual memories are more semantically rich and information-dense, making compression challenging and motivating the event-level organization approach. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>it is necessary to adopt a post-processing perspective and perform
+compression on already generated memories to systematically optimize storage efficiency and retrieval
+performance. Although recent work has begun to explore the feasibility of post-processing memory
+compression [34], this method typically relies on graph-structured memory representations and is
+restricted to streaming video scenarios, limiting its general applicability. Consequently, designing a
+general and scalable memory compression framework remains an important and open challenge.
+Since stored memories are retrieved as external context, memory compression is closely related
+to context-length reduction. Recent token compression methods [ 5, 7, 37, 41, 43, 46, 47] reduce
+context via similarity-based merging or diversity-based pruning, mainly for MLLMs. However,
+unlike redundant visual inputs, textual memories are more </blockquote><blockquote>semantically rich and information-dense
+[24, 45, 47], making compression challenging; existing methods also overlook memory-specific
+properties such as event differentiation and temporal relationships. Inspired by the event-level
+organization of human memory [18, 33], we partition historical memory into events and identify two
+key features for each memory event:
+(I) Global Semantic Similarity:Fig. 1(b) suggests that semantically similar memory nodes may
+recur across distant temporal windows. For example, the similarity between memory nodem1 and
+the temporally distant memory nodem9 is0.73, and that between node m1 and nodem15 is0.68.
+This indicates thatsimilar memory nodes within the same event can reappear over long time spans.
+(II) Local Temporal Continuity:Fig. 1(b) suggests that within adjacent temporal windows, memory
+nodes may exhibit substantial semantic differences yet still </blockquote></details></li><li><strong>Reproducibility and transparency — page 1</strong><p>The paper provides these artifact links: https://github.com/Celina-love-sweet/MemForest</p><p>Artifact link stated by the manuscript; not independently checked: supported. The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>anchor-guided propagation retrieval mechanism, which
+retrieves more relevant memory nodes from the temporal neighborhoods of key
+memory nodes, thereby enabling more accurate memory retrieval. Extensive exper-
+iments demonstrate the effectiveness of MemForest. Under the unimodal Mem0
+framework, across three benchmarks (LoCoMo, LongMemEval, and PersonaMem),
+MemForest preserves97.1%of the original performance while compressing50%
+of historical memory, achieving a1.89×retrieval speedup. Under the multimodal
+M3-Agent framework, across two benchmarks (M3-Bench-robot and M3-Bench-
+web), MemForest retains99.7%of the original performance under a50%com-
+pression ratio, while achieving a2.24×retrieval speedup.Our code is available at
+https://github.com/Celina-love-sweet/MemForest.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +167,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

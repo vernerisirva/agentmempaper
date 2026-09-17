@@ -49,7 +49,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:56",
-    "generated_at": "2026-09-17 09:30:05",
+    "generated_at": "2026-09-17 10:51:11",
     "last_seen_at": "2026-07-30 09:05:23",
     "metadata_sources": [
       "openalex",
@@ -116,125 +116,304 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T09:11:48+00:00",
-    "assessment_scope": "title_and_abstract",
-    "assessment_version": "quality-cross-section-v1",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessed_at": "2026-09-17T10:16:52+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-batch2-recovery-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "The available evidence is mixed or incomplete. Automated score 78/100, low confidence, based on title and abstract.",
-    "confidence": "low",
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "high",
     "coverage": {
-      "assessment_input_characters": 1803,
-      "extraction_complete": false,
-      "version": "coverage-v1"
+      "assessment_input_characters": 55883,
+      "assessment_input_sha256": "f589b93736d958f4d494818f4a128064a46588df6bf299df3f7ffb566fa1e503",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "canonical_id": "openalex:W7171268496",
+      "characters_before_extraction_limit": 76903,
+      "eligible_characters": 54632,
+      "evidence_block_count": 69,
+      "evidence_context_characters": 62963,
+      "evidence_context_id": "9bcb1a46be206c34b6d753efd7ce65438f537a7104be7cbedc5724bad83c52e6",
+      "evidence_context_sha256": "6228cf6c2be21d767effe3759c90e040fa26e6bcf63b6662d5ad47dd48600c3f",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 21764,
+      "extracted_characters": 76945,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "format": "PDF",
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "retained_source_characters": 76903,
+      "selected_characters": 54632,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 606,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1696,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1611,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3821,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1816,
+          "heading": "Background And Related Work",
+          "page": 2
+        },
+        {
+          "characters": 3143,
+          "heading": "Background And Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1375,
+          "heading": "Task Design And Benchmark Construction",
+          "page": 3
+        },
+        {
+          "characters": 2245,
+          "heading": "Task Design And Benchmark Construction",
+          "page": 4
+        },
+        {
+          "characters": 1560,
+          "heading": "Quality Assurance And Semantic Validation",
+          "page": 4
+        },
+        {
+          "characters": 1257,
+          "heading": "Evaluation",
+          "page": 4
+        },
+        {
+          "characters": 2286,
+          "heading": "Evaluation",
+          "page": 5
+        },
+        {
+          "characters": 663,
+          "heading": "Overall Performance",
+          "page": 5
+        },
+        {
+          "characters": 2981,
+          "heading": "Overall Performance",
+          "page": 6
+        },
+        {
+          "characters": 218,
+          "heading": "Field-Level Capability Profiles",
+          "page": 6
+        },
+        {
+          "characters": 2444,
+          "heading": "Field-Level Capability Profiles",
+          "page": 7
+        },
+        {
+          "characters": 701,
+          "heading": "Lean-Quantumalg-Bench",
+          "page": 7
+        },
+        {
+          "characters": 860,
+          "heading": "Task Fields",
+          "page": 7
+        },
+        {
+          "characters": 489,
+          "heading": "Representative Problems",
+          "page": 7
+        },
+        {
+          "characters": 2275,
+          "heading": "Representative Problems",
+          "page": 8
+        },
+        {
+          "characters": 2873,
+          "heading": "Representative Problems",
+          "page": 9
+        },
+        {
+          "characters": 1969,
+          "heading": "Representative Problems",
+          "page": 10
+        },
+        {
+          "characters": 648,
+          "heading": "Lean-Qit-Bench",
+          "page": 10
+        },
+        {
+          "characters": 983,
+          "heading": "Task Fields",
+          "page": 10
+        },
+        {
+          "characters": 304,
+          "heading": "Representative Problems",
+          "page": 10
+        },
+        {
+          "characters": 2512,
+          "heading": "Representative Problems",
+          "page": 11
+        },
+        {
+          "characters": 3091,
+          "heading": "Representative Problems",
+          "page": 12
+        },
+        {
+          "characters": 3128,
+          "heading": "Representative Problems",
+          "page": 13
+        },
+        {
+          "characters": 1776,
+          "heading": "Representative Problems",
+          "page": 14
+        },
+        {
+          "characters": 2239,
+          "heading": "Discussions On The Limitations",
+          "page": 14
+        },
+        {
+          "characters": 1228,
+          "heading": "Discussions On The Limitations",
+          "page": 15
+        },
+        {
+          "characters": 1834,
+          "heading": "Conclusion",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "f589b93736d958f4d494818f4a128064a46588df6bf299df3f7ffb566fa1e503",
+      "selection_version": "representative-v1",
+      "source_content_hash": "81ed008884905580bd4bd1d6a57b016dd46d46ae7b8e009ba0395dd40e0ac516",
+      "source_pages": 22,
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v1",
+      "warnings": [
+        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
+      ]
     },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": null,
-      "evidence_to_claim_alignment": null,
-      "limitations_and_uncertainty_handling": null,
-      "methodological_rigor": null,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": null,
-      "reproducibility_and_transparency": null,
-      "scholarly_novelty_or_value": null
+      "contribution_clarity": 5,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
+      "limitations_and_uncertainty_handling": 5,
+      "methodological_rigor": 4,
+      "presentation_and_precision": 4,
+      "related_work_and_gap_positioning": 4,
+      "reproducibility_and_transparency": 3,
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "eckable proofs in this domain remains unmeasured. We introduce Lean-QuantumAlg-Bench and Lean-QIT-Bench, two Lean 4 benchmarks containing 36 a",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "ores are 60.4 out of 100 on the quantum-algorithm benchmark and 59.6 out of 100 on the quantum-information benchmark. LAD improves both sco",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "proving framework under two settings: a task-only baseline and library-augmented deduction (LAD), which additionally provides access to a",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "Bench, two Lean 4 benchmarks containing 36 and 40 theorem-completion tasks for quantum algorithms and quantum information theory, respect",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Formal definitions or proof-oriented evidence is present.",
-        "section": "Abstract",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      }
-    ],
-    "full_text_assessed": false,
-    "full_text_url": null,
+    "evidence": [],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.21533",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
-    "missing_information": [
-      "No extractable manuscript text was available."
-    ],
-    "overall_quality_score": 78,
-    "paper_type": "theoretical",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "The available text identifies data or a benchmark used by the work.",
-      "A baseline or comparison system is described.",
-      "Formal definitions or proof-oriented evidence is present."
-    ],
-    "rationale": "Scientific quality could not be assessed because manuscript-level evidence was unavailable.",
-    "recommendation": "uncertain",
+    "missing_information": [],
+    "overall_quality_score": 82,
+    "paper_type": "dataset_or_benchmark",
+    "positive_signals": [],
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
-    "source_content_hash": "28d1269c2dd0b716496639a6b31cd7f359abc43aee413d241d5bcb73b88b4e3a",
+    "source_content_hash": "81ed008884905580bd4bd1d6a57b016dd46d46ae7b8e009ba0395dd40e0ac516",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "Scientific support remains unresolved. Explanation verification unavailable. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -268,7 +447,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

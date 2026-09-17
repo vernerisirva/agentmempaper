@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:16",
-    "generated_at": "2026-09-17 09:29:52",
+    "generated_at": "2026-09-17 10:51:01",
     "last_seen_at": "2026-09-15 11:59:46",
     "metadata_sources": [
       "openalex",
@@ -116,17 +116,15 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T09:15:15+00:00",
+    "assessed_at": "2026-09-17T10:22:15+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-cross-section-v1",
+    "assessment_version": "quality-batch2-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 1.0,
-    "concerns": [
-      "The paper does not explicitly discuss limitations of the proposed approach, such as biometric spoofing, sensor availability, or privacy implications of storing biometric embeddings."
-    ],
+    "concerns": [],
     "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "confidence": "high",
+    "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 39179,
       "assessment_input_sha256": "c45d36bdd690673def4ac42cd19103fcd930a65983ffd7f491d2751d0b74b70f",
@@ -174,7 +172,7 @@
       "format": "PDF",
       "max_extracted_characters": 400000,
       "max_pages": 80,
-      "normalization_version": "canonical-v1",
+      "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
       "retained_source_characters": 46553,
@@ -328,6 +326,7 @@
       "selection_version": "representative-v1",
       "source_content_hash": "3ce0001b227c8261b81806fb7a76a2788870f465990a5c0961583527fd885db7",
       "source_pages": 11,
+      "surrogate_code_units": 0,
       "unreadable_pages": [],
       "version": "coverage-v1",
       "warnings": [
@@ -340,11 +339,11 @@
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 2,
-      "methodological_rigor": 3,
+      "methodological_rigor": 4,
       "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 4,
       "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 3
+      "scholarly_novelty_or_value": 4
     },
     "downranked": false,
     "evidence": [
@@ -357,12 +356,12 @@
           "E0fc472ac63e3e156-B0008"
         ],
         "excerpt": "and Bio-Memory. Bio-Memory preserves the semantic fields\nof atomic memory notes while adding a biometric embedding that ties each note to a physical user. This changes\npersonalization from purely semantic retrieval to retrieval conditioned on both semantic relevance and the current user's\nbiometric identity. Rather than using biometrics only for session authentication, we use them to determine which\nmemories may enter the candidate pool. This design is particularly useful in shared environments, where the session\nstate may remain unchanged even when the active requester changes.\nBased on this idea, we proposeBio-Memory, a biometric-aware memory architecture built on top of A-Mem. Bio-\nMemory preserves the atomic note organization of A-Mem while augmenting each note with an additional biometric\nembedding. At inference time, the current user's probe biometric embedding is matched against \n[\u2026 separate evidence block \u2026]\nthe stored biometric\nembedding attached to each memory note, and semantic retrieval is then performed only over the resulting biometric-\nmatched candidate memories. We evaluate Bio-Memory in a 10-user shared-agent setting using LoCoMo together with\npublic face and palmprint benchmarks.\nOur contributions are threefold: i) we augment atomic memory notes with biometric identity evidence, grounding\nagent memories in both semantic content and the physical identity of the requester; ii) we propose Bio-Memory, a\nbiometric-aware extension of A-Mem that constructs a biometric-matched candidate pool before semantic retrieval and\nresponse generation; iii) we present an extensive 10-user shared-agent evaluation on LoCoMo, covering seven face\nbenchmarks and ten palmprint protocols.",
-        "explanation": "The introduction explicitly states that Bio-Memory preserves A-Mem's semantic fields while adding a biometric embedding, and that retrieval is conditioned on both semantic relevance and the current user's biometric identity. The pipeline description confirms biometric matching occurs before semantic ranking.",
+        "explanation": "The introduction explicitly states that Bio-Memory preserves the atomic note organization of A-Mem while adding a biometric embedding, and that semantic retrieval is performed only over the biometric-matched candidate memories. This clearly defines the architectural contribution.",
         "page": 2,
         "pages": [
           2
         ],
-        "paraphrase": "Bio-Memory augments A-Mem atomic memory notes with biometric embeddings and conditions retrieval on biometric matching before semantic ranking.",
+        "paraphrase": "Bio-Memory augments each atomic memory note with a biometric embedding and conditions retrieval on both semantic similarity and biometric matching.",
         "section": "Introduction",
         "signal_type": "positive",
         "source_blocks": [
@@ -410,28 +409,34 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly states Bio-Memory preserves A-Mem's atomic note organization, adds a biometric embedding, and performs semantic retrieval only over biometric-matched candidates.",
+          "explanation_status": "supported",
           "item_id": "evidence-0",
-          "reason": "The cited introduction states Bio-Memory preserves A-Mem's semantic fields while adding a biometric embedding and conditions retrieval on semantic relevance plus biometric identity; the second excerpt confirms biometric matching occurs before semantic retrieval.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0007",
+            "E0fc472ac63e3e156-B0008"
+          ],
+          "reason": "The cited introduction text explicitly states Bio-Memory augments each note with a biometric embedding and conditions retrieval on both semantic relevance and biometric identity.",
           "status": "supported"
         }
       },
       {
-        "claim_role": "positioning",
+        "claim_role": "contribution",
         "context_id": "0fc472ac63e3e156f5a6e6356b4580817412cedb9b8f6c3569b218504e1bf519",
-        "dimension": "related_work_and_gap_positioning",
+        "dimension": "scholarly_novelty_or_value",
         "evidence_ids": [
-          "E0fc472ac63e3e156-B0012",
-          "E0fc472ac63e3e156-B0016"
+          "E0fc472ac63e3e156-B0012"
         ],
-        "excerpt": "should be evaluated based on core primitives including consolidation, update,\nindexing, forgetting and retrieval, rather than merely framed as simple context window extensions [2]. Existing studies\ncollectively frame memory design as a joint optimization problem of storage layout, record organization and retrieval\nstrategy. Nevertheless, nearly all prior work operates under a single implicit assumption. Retrieval only needs to\nprioritize task-relevant memories. This assumption fails in multi-user shared agent environments, where the system\nmust additionally validate whether candidate memories belong to the current requesting user before reasoning.\n[\u2026 separate evidence block \u2026]\nAs LLM agents move into shared environments, logical credentials or session identifiers no longer reliably specify the\nphysical requester [14, 15]. Family assistants, public kiosks, and enterprise terminals may all serve multiple people\nwithin the same active session, so account-level identity and physical identity can diverge. Prior work has identified this\nambiguity as a central challenge for multi-user agents [14] and has shown that memory systems may expose stored\npersonal information under mismatched or crafted queries [16]. Existing multi-user agent research therefore highlights\nthe need to align the active requester with the correct personalized context, but generally does not use physical identity\nevidence as the primary signal for constructing the retrieval candidate set.\n3\nPersonalizing LLM Agent Memory Using Biometrics\nEnvironment LLM Agents\n When did Gina go to \na dance class",
-        "explanation": "The related work section reviews memory-augmented agents and explicitly states that prior work operates under the assumption that retrieval only needs to prioritize task-relevant memories, and that existing multi-user research generally does not use physical identity evidence as the primary signal for candidate set construction.",
+        "excerpt": "should be evaluated based on core primitives including consolidation, update,\nindexing, forgetting and retrieval, rather than merely framed as simple context window extensions [2]. Existing studies\ncollectively frame memory design as a joint optimization problem of storage layout, record organization and retrieval\nstrategy. Nevertheless, nearly all prior work operates under a single implicit assumption. Retrieval only needs to\nprioritize task-relevant memories. This assumption fails in multi-user shared agent environments, where the system\nmust additionally validate whether candidate memories belong to the current requesting user before reasoning.",
+        "explanation": "The related work section explicitly states that nearly all prior work operates under the assumption that retrieval only needs to prioritize task-relevant memories, and that this assumption fails in multi-user shared agent environments. This positions the novelty of biometric-conditioned retrieval.",
         "page": 3,
         "pages": [
-          3,
-          4
+          3
         ],
-        "paraphrase": "The paper identifies a gap in existing memory systems: they assume externally supplied identity and do not use physical identity evidence to construct the retrieval candidate set.",
-        "section": "Memory-Augmented Llm Agents / Identity And Biometrics In Multi-User Agent Settings",
+        "paraphrase": "The paper identifies a gap in existing memory systems: retrieval only prioritizes task-relevant memories without validating whether candidate memories belong to the current requesting user.",
+        "section": "Memory-Augmented Llm Agents",
         "signal_type": "positive",
         "source_blocks": [
           {
@@ -453,42 +458,73 @@
               }
             ],
             "text": "should be evaluated based on core primitives including consolidation, update,\nindexing, forgetting and retrieval, rather than merely framed as simple context window extensions [2]. Existing studies\ncollectively frame memory design as a joint optimization problem of storage layout, record organization and retrieval\nstrategy. Nevertheless, nearly all prior work operates under a single implicit assumption. Retrieval only needs to\nprioritize task-relevant memories. This assumption fails in multi-user shared agent environments, where the system\nmust additionally validate whether candidate memories belong to the current requesting user before reasoning."
-          },
-          {
-            "content_hash": "927e92853b4a358b5d89d606b955a1a9f9c478185f0db8c4d1f1835bb2cba03b",
-            "evidence_id": "E0fc472ac63e3e156-B0016",
-            "pages": [
-              3,
-              4
-            ],
-            "section": "Identity And Biometrics In Multi-User Agent Settings",
-            "section_role": "body",
-            "source_spans": [
-              {
-                "end": 793,
-                "page": 3,
-                "section": "Identity And Biometrics In Multi-User Agent Settings",
-                "section_index": 7,
-                "start": 0,
-                "text": "As LLM agents move into shared environments, logical credentials or session identifiers no longer reliably specify the\nphysical requester [14, 15]. Family assistants, public kiosks, and enterprise terminals may all serve multiple people\nwithin the same active session, so account-level identity and physical identity can diverge. Prior work has identified this\nambiguity as a central challenge for multi-user agents [14] and has shown that memory systems may expose stored\npersonal information under mismatched or crafted queries [16]. Existing multi-user agent research therefore highlights\nthe need to align the active requester with the correct personalized context, but generally does not use physical identity\nevidence as the primary signal for constructing the retrieval candidate set.\n3"
-              },
-              {
-                "end": 107,
-                "page": 4,
-                "section": "Identity And Biometrics In Multi-User Agent Settings",
-                "section_index": 8,
-                "start": 0,
-                "text": "Personalizing LLM Agent Memory Using Biometrics\nEnvironment LLM Agents\n When did Gina go to \na dance class "
-              }
-            ],
-            "text": "As LLM agents move into shared environments, logical credentials or session identifiers no longer reliably specify the\nphysical requester [14, 15]. Family assistants, public kiosks, and enterprise terminals may all serve multiple people\nwithin the same active session, so account-level identity and physical identity can diverge. Prior work has identified this\nambiguity as a central challenge for multi-user agents [14] and has shown that memory systems may expose stored\npersonal information under mismatched or crafted queries [16]. Existing multi-user agent research therefore highlights\nthe need to align the active requester with the correct personalized context, but generally does not use physical identity\nevidence as the primary signal for constructing the retrieval candidate set.\n3\nPersonalizing LLM Agent Memory Using Biometrics\nEnvironment LLM Agents\n When did Gina go to \na dance class "
           }
         ],
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the stated gap and the positioning of biometric-conditioned retrieval.",
+          "explanation_status": "supported",
           "item_id": "evidence-1",
-          "reason": "The cited related-work passages state prior work assumes retrieval only needs task-relevant memories and that existing multi-user research generally does not use physical identity evidence as the primary signal for candidate set construction.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0012"
+          ],
+          "reason": "The cited related work text explicitly states nearly all prior work assumes retrieval only needs to prioritize task-relevant memories and that this fails in multi-user shared environments.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "method",
+        "context_id": "0fc472ac63e3e156f5a6e6356b4580817412cedb9b8f6c3569b218504e1bf519",
+        "dimension": "methodological_rigor",
+        "evidence_ids": [
+          "E0fc472ac63e3e156-B0032"
+        ],
+        "excerpt": "Our goal is to test whether biometric personalization at query time can isolate personal memory retrieval in a shared-\nagent setting. Since LoCoMo does not include biometrics, we bind each LoCoMo conversation to one stored biometric\nembedding from a biometric benchmark and store all memory entries from that conversation with the same template.\nTo simulate multi-user usage, we construct a10-user shared-agentmemory store by merging ten LoCoMo conversations\ninto a single memory space containing ten biometric-linked user partitions. Each conversation is assigned one biometric\nidentity from the corresponding benchmark, and all memories from that conversation share the same stored gallery\ntemplate. For a target partition, theOwnerquery uses a probe embedding sampled from the same biometric identity as\nthe stored gallery template, while theNon-ownerquery uses a probe embedding from a different",
+        "explanation": "The protocol description specifies that each conversation is assigned one biometric identity, all memories from that conversation share the same stored gallery template, and the owner query uses a probe from the same identity while the non-owner query uses a probe from a different user. This controlled design isolates the effect of biometric matching.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "The evaluation protocol constructs a 10-user shared-agent memory store by merging ten LoCoMo conversations, each assigned one biometric identity, with owner and non-owner probes differing only in the probe biometric embedding.",
+        "section": "Evaluation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "be873bacd44bd28529e09e9de1525dc9e7907993bac2cb5902e7a852aed33584",
+            "evidence_id": "E0fc472ac63e3e156-B0032",
+            "pages": [
+              7
+            ],
+            "section": "Evaluation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Evaluation Protocol",
+                "section_index": 18,
+                "start": 0,
+                "text": "Our goal is to test whether biometric personalization at query time can isolate personal memory retrieval in a shared-\nagent setting. Since LoCoMo does not include biometrics, we bind each LoCoMo conversation to one stored biometric\nembedding from a biometric benchmark and store all memory entries from that conversation with the same template.\nTo simulate multi-user usage, we construct a10-user shared-agentmemory store by merging ten LoCoMo conversations\ninto a single memory space containing ten biometric-linked user partitions. Each conversation is assigned one biometric\nidentity from the corresponding benchmark, and all memories from that conversation share the same stored gallery\ntemplate. For a target partition, theOwnerquery uses a probe embedding sampled from the same biometric identity as\nthe stored gallery template, while theNon-ownerquery uses a probe embedding from a different "
+              }
+            ],
+            "text": "Our goal is to test whether biometric personalization at query time can isolate personal memory retrieval in a shared-\nagent setting. Since LoCoMo does not include biometrics, we bind each LoCoMo conversation to one stored biometric\nembedding from a biometric benchmark and store all memory entries from that conversation with the same template.\nTo simulate multi-user usage, we construct a10-user shared-agentmemory store by merging ten LoCoMo conversations\ninto a single memory space containing ten biometric-linked user partitions. Each conversation is assigned one biometric\nidentity from the corresponding benchmark, and all memories from that conversation share the same stored gallery\ntemplate. For a target partition, theOwnerquery uses a probe embedding sampled from the same biometric identity as\nthe stored gallery template, while theNon-ownerquery uses a probe embedding from a different "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the described controlled design and the owner/non-owner probe distinction.",
+          "explanation_status": "supported",
+          "item_id": "evidence-2",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0032"
+          ],
+          "reason": "The cited protocol text explicitly describes merging ten LoCoMo conversations, assigning one biometric identity per conversation, and owner/non-owner probes differing only in probe embedding.",
           "status": "supported"
         }
       },
@@ -501,12 +537,12 @@
           "E0fc472ac63e3e156-B0026"
         ],
         "excerpt": "Unlike conventional semantic-only retrieval, Bio-Memory conditions the retrieval candidate set on biometric matching\nbefore assessing semantic similarity. At query time step t, the current requester submits a query qt alongside their\nreal-time probe biometric embedding, denoted asb t.\nBio-Memory first performs online biometric matching against the memory store to determine whether the probe\nbiometric embedding matches the stored biometric embedding of each memory record. The biometric matching output\nfor a specific memory recordm i is formalized as an indicator function:\nMbio(bt,b i) =I\n\u0002\nsimbio(bt,b i)\u2265\u03c4 D\n\u0003\n,(4)\nwhere simbio(\u00b7) computes the biometric similarity (e.g., cosine similarity), and\u03c4D is a predefined verification threshold\noptimized on the respective biometric benchmarkD. In the experimental protocol,\u03c4D is selected independently for\neach biometric benchmark based on its \n[\u2026 separate evidence block \u2026]\nverification pairs. Specifically, cosine similarity scores are first computed for\nowner and non-owner comparisons, and\u03c4D is defined as the intersection of the corresponding score distributions that\nlies between their principal modes. The resulting benchmark-specific threshold is then fixed for all subsequent LoCoMo\nOwner and Non-owner trials on that benchmark.\nMemories withM bio = 1form a query-specific matched memory pool:\nMmatch\nt ={m i\u2208M:M bio(bt,b i) = 1}.(5)\nBecause this pool is constructed dynamically, personalization is determined directly by the requester's biometric\nembedding at query time.\nThis order of operations is central to the method. If semantic ranking were applied before biometric filtering, notes from\ndifferent users could already compete in the same candidate set. By matching biometrics first, Bio-Memory narrows the\nsearch space before relevance ranking and makes",
-        "explanation": "The retrieval section formalizes the threshold selection procedure: cosine similarity scores are computed for owner and non-owner comparisons, and the threshold is defined as the intersection of the score distributions lying between their principal modes, fixed per benchmark for all subsequent trials.",
+        "explanation": "The paper specifies that cosine similarity scores are first computed for owner and non-owner comparisons, and the threshold is defined as the intersection of the corresponding score distributions that lies between their principal modes. This provides a principled, benchmark-specific threshold selection method.",
         "page": 5,
         "pages": [
           5
         ],
-        "paraphrase": "The biometric verification threshold is selected per benchmark based on the intersection of owner and non-owner score distributions between their principal modes.",
+        "paraphrase": "The biometric verification threshold is selected independently for each benchmark based on the intersection of owner and non-owner cosine similarity score distributions between their principal modes.",
         "section": "Memory Retrieval",
         "signal_type": "positive",
         "source_blocks": [
@@ -554,8 +590,16 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the described benchmark-specific threshold selection method.",
+          "explanation_status": "supported",
           "item_id": "evidence-3",
-          "reason": "The cited retrieval section defines the threshold as the intersection of owner and non-owner score distributions between their principal modes and states it is fixed per benchmark for subsequent trials.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0025",
+            "E0fc472ac63e3e156-B0026"
+          ],
+          "reason": "The cited text explicitly states the threshold is selected independently per benchmark as the intersection of owner and non-owner cosine similarity score distributions between their principal modes.",
           "status": "supported"
         }
       },
@@ -568,13 +612,13 @@
           "E0fc472ac63e3e156-B0037"
         ],
         "excerpt": "Tables 3 and 4 summarize the quantitative results on palmprint and face benchmarks in the 10-user shared-agent setting.\nAcross both tables, the same pattern appears repeatedly: once retrieval is conditioned on biometric identity, owner\nqueries preserve access to the correct personal evidence, whereas non-owner queries lose that evidence before semantic\nranking begins.\nOverall trend.The owner advantage is uniform across all datasets, all question types, and both evaluation metrics.\nThis gap is not small. In the palmprint results, the average owner\u2013non-owner gap ranges from 20.13 to 25.75 in F1\nand from 14.97 to 19.53 in BLEU-1; the strongest separation appears on MS_Blue, where the owner average reaches\n30.68 / 23.56 while the non-owner average drops to 4.93 / 4.34. The face benchmarks show the same behavior, with\naverage gaps from 23.58 to 27.29 in F1 and from 18.34 to 21.15 in BLEU-1. \n[\u2026 separate evidence block \u2026]\nCALFW is the clearest example: the\nowner average is 30.89 / 24.31, compared with only 3.60 / 3.16 for the non-owner. Because the owner and non-owner\nsettings use the same memory store, the same question subset, and the same downstream generator, these consistent\nmargins indicate that the decisive change happens at the biometric filtering stage.\nAuthorized utility.The owner and non-owner rows also make clear that the biometric filtering step is not achieved by\nsacrificing useful memory for the legitimate user. In the palmprint table, owner averages remain stable between 26.27 /\n21.25 and 31.32 / 24.00 across all ten protocols, whereas non-owner averages stay much lower, mostly between 4.49 /\n7\nPersonalizing LLM Agent Memory Using Biometrics\nTable 3: Downstream LoCoMo QA results under palmprint-based retrieval personalization in the 10-user shared-agent\nsetting. Each entry is reported as",
-        "explanation": "The results section reports that the owner advantage is uniform across all datasets, question types, and metrics. Palmprint average gaps range from 20.13 to 25.75 in F1 and 14.97 to 19.53 in BLEU-1; face gaps range from 23.58 to 27.29 in F1 and 18.34 to 21.15 in BLEU-1.",
+        "explanation": "The quantitative results tables and accompanying text report owner/non-owner gaps across all datasets. For example, the palmprint results show average gaps from 20.13 to 25.75 in F1, and the face benchmarks show gaps from 23.58 to 27.29 in F1. The consistency across datasets and question types supports the validation of the method.",
         "page": 7,
         "pages": [
           7,
           8
         ],
-        "paraphrase": "Owner queries consistently achieve substantially higher F1 and BLEU-1 than non-owner queries across all face and palmprint benchmarks.",
+        "paraphrase": "Across all face and palmprint benchmarks, owner queries consistently achieve higher F1 and BLEU-1 scores than non-owner queries, with average gaps ranging from 20.13 to 27.29 in F1.",
         "section": "Quantitative Results",
         "signal_type": "positive",
         "source_blocks": [
@@ -631,8 +675,16 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the reported owner/non-owner gaps and the consistency across datasets and question types.",
+          "explanation_status": "supported",
           "item_id": "evidence-4",
-          "reason": "The results text explicitly states the owner advantage is uniform across all datasets, question types, and metrics, and provides the cited palmprint and face gap ranges.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0036",
+            "E0fc472ac63e3e156-B0037"
+          ],
+          "reason": "The cited results text explicitly reports owner advantage across all datasets and question types, with palmprint F1 gaps of 20.13\u201325.75 and face F1 gaps of 23.58\u201327.29.",
           "status": "supported"
         }
       },
@@ -641,153 +693,126 @@
         "context_id": "0fc472ac63e3e156f5a6e6356b4580817412cedb9b8f6c3569b218504e1bf519",
         "dimension": "evidence_to_claim_alignment",
         "evidence_ids": [
-          "E0fc472ac63e3e156-B0037",
-          "E0fc472ac63e3e156-B0045"
+          "E0fc472ac63e3e156-B0046",
+          "E0fc472ac63e3e156-B0047"
         ],
-        "excerpt": "CALFW is the clearest example: the\nowner average is 30.89 / 24.31, compared with only 3.60 / 3.16 for the non-owner. Because the owner and non-owner\nsettings use the same memory store, the same question subset, and the same downstream generator, these consistent\nmargins indicate that the decisive change happens at the biometric filtering stage.\nAuthorized utility.The owner and non-owner rows also make clear that the biometric filtering step is not achieved by\nsacrificing useful memory for the legitimate user. In the palmprint table, owner averages remain stable between 26.27 /\n21.25 and 31.32 / 24.00 across all ten protocols, whereas non-owner averages stay much lower, mostly between 4.49 /\n7\nPersonalizing LLM Agent Memory Using Biometrics\nTable 3: Downstream LoCoMo QA results under palmprint-based retrieval personalization in the 10-user shared-agent\nsetting. Each entry is reported as \n[\u2026 separate evidence block \u2026]\nresponses.",
-        "explanation": "The paper states that owner and non-owner settings use the same memory store, question subset, and downstream generator, with the probe biometric embedding as the only experimental difference. The consistent margins across datasets support the claim that the decisive change occurs at the biometric filtering stage.",
-        "page": 7,
+        "excerpt": "Qualitative examples.Figure 3 gives concrete examples of the same effect. In the Multi-Hop case, the owner retrieves\nthe right notes and answers\"Three dogs, \"while the non-owner falls back to\"Unknown. \"In the Temporal case, the\nowner answers\"In July, 2022, \"while the non-owner responds\"Not specified. \"In the Single-Hop case, the owner\nretrieves the relevant personal fact, whereas the non-owner produces an unsupported alternative. These examples are\neasy to read because they show the same question under the same system with only one change: the identity signal used\nat retrieval time.\nInterpretation.The qualitative traces confirm that the main separation happens before answer generation. Owner\nand non-owner queries diverge as soon as candidate memories are selected. Once the correct notes are filtered out,\nMulti-Hop reasoning loses its evidence chain, Temporal questions lose the \n[\u2026 separate evidence block \u2026]\nuser-specific timeline, and even Single-Hop\nquestions lose the one fact they need. The figure therefore supports the same conclusion as the tables: Bio-Memory\nworks by controlling access to user-specific memory evidence at retrieval time.",
+        "explanation": "The qualitative analysis describes concrete examples where the owner retrieves the correct notes and answers correctly, while the non-owner falls back to 'Unknown' or 'Not specified'. This aligns with the claim that biometric filtering controls access to user-specific memory evidence at retrieval time.",
+        "page": 9,
         "pages": [
-          7,
-          8,
           9
         ],
-        "paraphrase": "The reported owner/non-owner gaps are attributable to biometric filtering rather than other experimental differences.",
-        "section": "Quantitative Results",
+        "paraphrase": "The qualitative retrieval traces show that owner and non-owner queries diverge at the candidate memory selection stage, with non-owner queries falling back to generic or unsupported answers.",
+        "section": "Qualitative Retrieval Analysis",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "73ea05990789684d64c0a5aea6d9db939acd2a037aa37b857604204ab92ccaa1",
-            "evidence_id": "E0fc472ac63e3e156-B0037",
-            "pages": [
-              7,
-              8
-            ],
-            "section": "Quantitative Results",
-            "section_role": "results",
-            "source_spans": [
-              {
-                "end": 1600,
-                "page": 7,
-                "section": "Quantitative Results",
-                "section_index": 20,
-                "start": 899,
-                "text": "CALFW is the clearest example: the\nowner average is 30.89 / 24.31, compared with only 3.60 / 3.16 for the non-owner. Because the owner and non-owner\nsettings use the same memory store, the same question subset, and the same downstream generator, these consistent\nmargins indicate that the decisive change happens at the biometric filtering stage.\nAuthorized utility.The owner and non-owner rows also make clear that the biometric filtering step is not achieved by\nsacrificing useful memory for the legitimate user. In the palmprint table, owner averages remain stable between 26.27 /\n21.25 and 31.32 / 24.00 across all ten protocols, whereas non-owner averages stay much lower, mostly between 4.49 /\n7"
-              },
-              {
-                "end": 197,
-                "page": 8,
-                "section": "Quantitative Results",
-                "section_index": 21,
-                "start": 0,
-                "text": "Personalizing LLM Agent Memory Using Biometrics\nTable 3: Downstream LoCoMo QA results under palmprint-based retrieval personalization in the 10-user shared-agent\nsetting. Each entry is reported as "
-              }
-            ],
-            "text": "CALFW is the clearest example: the\nowner average is 30.89 / 24.31, compared with only 3.60 / 3.16 for the non-owner. Because the owner and non-owner\nsettings use the same memory store, the same question subset, and the same downstream generator, these consistent\nmargins indicate that the decisive change happens at the biometric filtering stage.\nAuthorized utility.The owner and non-owner rows also make clear that the biometric filtering step is not achieved by\nsacrificing useful memory for the legitimate user. In the palmprint table, owner averages remain stable between 26.27 /\n21.25 and 31.32 / 24.00 across all ten protocols, whereas non-owner averages stay much lower, mostly between 4.49 /\n7\nPersonalizing LLM Agent Memory Using Biometrics\nTable 3: Downstream LoCoMo QA results under palmprint-based retrieval personalization in the 10-user shared-agent\nsetting. Each entry is reported as "
-          },
-          {
-            "content_hash": "a0854baff0e709872e01b55bf49c6c8be1d96de6e79dc26377bb87a0fb6f5fe8",
-            "evidence_id": "E0fc472ac63e3e156-B0045",
+            "content_hash": "110e19608c10d028f6a7cb00d9c74bd7552ae9f81a5aa631011623aa50351920",
+            "evidence_id": "E0fc472ac63e3e156-B0046",
             "pages": [
               9
             ],
-            "section": "Quantitative Results",
-            "section_role": "results",
+            "section": "Qualitative Retrieval Analysis",
+            "section_role": "body",
             "source_spans": [
               {
-                "end": 2061,
+                "end": 890,
                 "page": 9,
-                "section": "Quantitative Results",
-                "section_index": 22,
-                "start": 2051,
-                "text": "responses."
+                "section": "Qualitative Retrieval Analysis",
+                "section_index": 23,
+                "start": 0,
+                "text": "Qualitative examples.Figure 3 gives concrete examples of the same effect. In the Multi-Hop case, the owner retrieves\nthe right notes and answers\"Three dogs, \"while the non-owner falls back to\"Unknown. \"In the Temporal case, the\nowner answers\"In July, 2022, \"while the non-owner responds\"Not specified. \"In the Single-Hop case, the owner\nretrieves the relevant personal fact, whereas the non-owner produces an unsupported alternative. These examples are\neasy to read because they show the same question under the same system with only one change: the identity signal used\nat retrieval time.\nInterpretation.The qualitative traces confirm that the main separation happens before answer generation. Owner\nand non-owner queries diverge as soon as candidate memories are selected. Once the correct notes are filtered out,\nMulti-Hop reasoning loses its evidence chain, Temporal questions lose the "
               }
             ],
-            "text": "responses."
+            "text": "Qualitative examples.Figure 3 gives concrete examples of the same effect. In the Multi-Hop case, the owner retrieves\nthe right notes and answers\"Three dogs, \"while the non-owner falls back to\"Unknown. \"In the Temporal case, the\nowner answers\"In July, 2022, \"while the non-owner responds\"Not specified. \"In the Single-Hop case, the owner\nretrieves the relevant personal fact, whereas the non-owner produces an unsupported alternative. These examples are\neasy to read because they show the same question under the same system with only one change: the identity signal used\nat retrieval time.\nInterpretation.The qualitative traces confirm that the main separation happens before answer generation. Owner\nand non-owner queries diverge as soon as candidate memories are selected. Once the correct notes are filtered out,\nMulti-Hop reasoning loses its evidence chain, Temporal questions lose the "
+          },
+          {
+            "content_hash": "ace18f654bbc8bee0c5bfe4ff5c1bcb32fe1808ecde711551ee9d9966fee3fec",
+            "evidence_id": "E0fc472ac63e3e156-B0047",
+            "pages": [
+              9
+            ],
+            "section": "Qualitative Retrieval Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1128,
+                "page": 9,
+                "section": "Qualitative Retrieval Analysis",
+                "section_index": 23,
+                "start": 890,
+                "text": "user-specific timeline, and even Single-Hop\nquestions lose the one fact they need. The figure therefore supports the same conclusion as the tables: Bio-Memory\nworks by controlling access to user-specific memory evidence at retrieval time."
+              }
+            ],
+            "text": "user-specific timeline, and even Single-Hop\nquestions lose the one fact they need. The figure therefore supports the same conclusion as the tables: Bio-Memory\nworks by controlling access to user-specific memory evidence at retrieval time."
           }
         ],
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the claim that biometric filtering controls access to user-specific memory evidence at retrieval time.",
+          "explanation_status": "supported",
           "item_id": "evidence-5",
-          "reason": "The cited results passage states owner and non-owner settings use the same memory store, question subset, and downstream generator, and attributes the consistent margins to the biometric filtering stage.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0046",
+            "E0fc472ac63e3e156-B0047"
+          ],
+          "reason": "The cited qualitative analysis explicitly states owner and non-owner queries diverge at candidate memory selection and gives examples of non-owner fallback answers.",
           "status": "supported"
         }
       },
       {
-        "claim_role": "limitation",
+        "claim_role": "positioning",
         "context_id": "0fc472ac63e3e156f5a6e6356b4580817412cedb9b8f6c3569b218504e1bf519",
-        "dimension": "limitations_and_uncertainty_handling",
+        "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
-          "E0fc472ac63e3e156-B0048",
-          "E0fc472ac63e3e156-B0049"
+          "E0fc472ac63e3e156-B0015"
         ],
-        "excerpt": "This paper presented Bio-Memory, a biometric-aware memory architecture for personalized LLM agents that conditions\npersonal memory retrieval on both semantic relevance and biometric matching at query time. By augmenting each\nmemory note with a stored biometric embedding, Bio-Memory enables a shared agent to construct user-aligned retrieval\ncontexts without changing the underlying LLM. Across seven face benchmarks, ten palmprint protocols, and a 10-user\nshared-agent evaluation, owners retain strong memory-grounded question answering performance, whereas non-owners\nlose access to the user-specific evidence needed for retrieval-based answering. These results support the feasibility and\npractical value of biometrics as a control signal for personalized memory retrieval in shared-agent settings.\nMore broadly, the study suggests that personalized memory for LLM agents is not only a relevance \n[\u2026 separate evidence block \u2026]\nproblem but also a\nuser-alignment problem: the system must determine not onlywhatmemory is relevant, but alsowhosememory should\n9\nPersonalizing LLM Agent Memory Using Biometrics\nMulti Hop\nHow many pets \ndoes James have?\nThree dogs\nUnknown.\nOwner\nImpostor\nBox  \nMatched Pool\nIn chronological order \nof memory entry\nSpeaker Johnsays : Hey! \nGlad to finally talk to \nyou. I want to ask you, \nwhat motivates you? ...\nMEMOIZE  (as 3)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup \nNed...MEMOIZE  (as 4)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup Ned... \nroot.document_ids.Speaker \nJohnsays : Yeah, the bond \nbetween us and our pets \nis amazing...  \nroot.document_ids.Speaker \nJamessays : [Image: a \nphoto of two dogs playing \nin a fenced in area] ....\nTop-K memories selected by",
-        "explanation": "The conclusion focuses on the feasibility and practical value of biometrics as a control signal but does not address potential limitations. The supplied text contains no dedicated limitations section or discussion of failure modes, security vulnerabilities, or deployment constraints.",
-        "page": 9,
+        "excerpt": "biometric identity metadata without rewriting its core note creation,\ngraph linking or semantic ranking modules. However, A-Mem's retrieval logic solely relies on semantic similarity\nranking, which fits single-user scenarios perfectly. The only retrieval target is matching personal history from one fixed\nuser. In multi-user shared memory pools, semantically identical notes from different users coexist and create a critical\nunaddressed security risk. Semantic ranking cannot distinguish cross-user private records. To resolve this limitation,\nbio-memory builds upon A-Mem's graph note architecture and inserts a biometric identity gating filter prior to semantic\nretrieval, rather than overhauling its fundamental memory organization design.",
+        "explanation": "The A-Mem section explicitly states that A-Mem's retrieval logic solely relies on semantic similarity ranking, which fits single-user scenarios perfectly, but in multi-user shared memory pools, semantically identical notes from different users coexist and create a critical unaddressed security risk. This provides a clear gap for the proposed biometric gating filter.",
+        "page": 3,
         "pages": [
-          9,
-          10
+          3
         ],
-        "paraphrase": "The paper does not explicitly discuss limitations of the proposed approach, such as biometric spoofing, sensor availability, or privacy implications of storing biometric embeddings.",
-        "section": "Conclusion",
-        "signal_type": "concern",
+        "paraphrase": "The paper positions Bio-Memory against A-Mem and other memory-augmented agent systems, identifying that A-Mem's retrieval logic relies solely on semantic similarity and cannot distinguish cross-user private records in multi-user shared memory pools.",
+        "section": "A-Mem",
+        "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "2b9d7312c8fa773ae08d5d6c1bb9f7e46a0efb939c68ec35e9c77a0ef350cac8",
-            "evidence_id": "E0fc472ac63e3e156-B0048",
+            "content_hash": "3447fbabcc341c467d085e688d1b60eaea5a9adcca16191ec0781df59dcab4e5",
+            "evidence_id": "E0fc472ac63e3e156-B0015",
             "pages": [
-              9
+              3
             ],
-            "section": "Conclusion",
-            "section_role": "conclusion",
+            "section": "A-Mem",
+            "section_role": "body",
             "source_spans": [
               {
-                "end": 899,
-                "page": 9,
-                "section": "Conclusion",
-                "section_index": 24,
-                "start": 0,
-                "text": "This paper presented Bio-Memory, a biometric-aware memory architecture for personalized LLM agents that conditions\npersonal memory retrieval on both semantic relevance and biometric matching at query time. By augmenting each\nmemory note with a stored biometric embedding, Bio-Memory enables a shared agent to construct user-aligned retrieval\ncontexts without changing the underlying LLM. Across seven face benchmarks, ten palmprint protocols, and a 10-user\nshared-agent evaluation, owners retain strong memory-grounded question answering performance, whereas non-owners\nlose access to the user-specific evidence needed for retrieval-based answering. These results support the feasibility and\npractical value of biometrics as a control signal for personalized memory retrieval in shared-agent settings.\nMore broadly, the study suggests that personalized memory for LLM agents is not only a relevance "
+                "end": 2533,
+                "page": 3,
+                "section": "A-Mem",
+                "section_index": 6,
+                "start": 1789,
+                "text": "biometric identity metadata without rewriting its core note creation,\ngraph linking or semantic ranking modules. However, A-Mem's retrieval logic solely relies on semantic similarity\nranking, which fits single-user scenarios perfectly. The only retrieval target is matching personal history from one fixed\nuser. In multi-user shared memory pools, semantically identical notes from different users coexist and create a critical\nunaddressed security risk. Semantic ranking cannot distinguish cross-user private records. To resolve this limitation,\nbio-memory builds upon A-Mem's graph note architecture and inserts a biometric identity gating filter prior to semantic\nretrieval, rather than overhauling its fundamental memory organization design."
               }
             ],
-            "text": "This paper presented Bio-Memory, a biometric-aware memory architecture for personalized LLM agents that conditions\npersonal memory retrieval on both semantic relevance and biometric matching at query time. By augmenting each\nmemory note with a stored biometric embedding, Bio-Memory enables a shared agent to construct user-aligned retrieval\ncontexts without changing the underlying LLM. Across seven face benchmarks, ten palmprint protocols, and a 10-user\nshared-agent evaluation, owners retain strong memory-grounded question answering performance, whereas non-owners\nlose access to the user-specific evidence needed for retrieval-based answering. These results support the feasibility and\npractical value of biometrics as a control signal for personalized memory retrieval in shared-agent settings.\nMore broadly, the study suggests that personalized memory for LLM agents is not only a relevance "
-          },
-          {
-            "content_hash": "fb9bb5fe6fd6a84a03d00439788f0a31d02a3a5652b8451297b11cb726c23e1f",
-            "evidence_id": "E0fc472ac63e3e156-B0049",
-            "pages": [
-              9,
-              10
-            ],
-            "section": "Conclusion",
-            "section_role": "conclusion",
-            "source_spans": [
-              {
-                "end": 1028,
-                "page": 9,
-                "section": "Conclusion",
-                "section_index": 24,
-                "start": 899,
-                "text": "problem but also a\nuser-alignment problem: the system must determine not onlywhatmemory is relevant, but alsowhosememory should\n9"
-              },
-              {
-                "end": 765,
-                "page": 10,
-                "section": "Conclusion",
-                "section_index": 25,
-                "start": 0,
-                "text": "Personalizing LLM Agent Memory Using Biometrics\nMulti Hop\nHow many pets \ndoes James have?\nThree dogs\nUnknown.\nOwner\nImpostor\nBox  \nMatched Pool\nIn chronological order \nof memory entry\nSpeaker Johnsays : Hey! \nGlad to finally talk to \nyou. I want to ask you, \nwhat motivates you? ...\nMEMOIZE  (as 3)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup \nNed...MEMOIZE  (as 4)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup Ned... \nroot.document_ids.Speaker \nJohnsays : Yeah, the bond \nbetween us and our pets \nis amazing...  \nroot.document_ids.Speaker \nJamessays : [Image: a \nphoto of two dogs playing \nin a fenced in area] ....\nTop-K memories selected by "
-              }
-            ],
-            "text": "problem but also a\nuser-alignment problem: the system must determine not onlywhatmemory is relevant, but alsowhosememory should\n9\nPersonalizing LLM Agent Memory Using Biometrics\nMulti Hop\nHow many pets \ndoes James have?\nThree dogs\nUnknown.\nOwner\nImpostor\nBox  \nMatched Pool\nIn chronological order \nof memory entry\nSpeaker Johnsays : Hey! \nGlad to finally talk to \nyou. I want to ask you, \nwhat motivates you? ...\nMEMOIZE  (as 3)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup \nNed...MEMOIZE  (as 4)\nroot.document_ids.Speak\ner Jamessays : Hey \nJohn, ... I started \nintroducing Max, Daisy \nand the new pup Ned... \nroot.document_ids.Speaker \nJohnsays : Yeah, the bond \nbetween us and our pets \nis amazing...  \nroot.document_ids.Speaker \nJamessays : [Image: a \nphoto of two dogs playing \nin a fenced in area] ....\nTop-K memories selected by "
+            "text": "biometric identity metadata without rewriting its core note creation,\ngraph linking or semantic ranking modules. However, A-Mem's retrieval logic solely relies on semantic similarity\nranking, which fits single-user scenarios perfectly. The only retrieval target is matching personal history from one fixed\nuser. In multi-user shared memory pools, semantically identical notes from different users coexist and create a critical\nunaddressed security risk. Semantic ranking cannot distinguish cross-user private records. To resolve this limitation,\nbio-memory builds upon A-Mem's graph note architecture and inserts a biometric identity gating filter prior to semantic\nretrieval, rather than overhauling its fundamental memory organization design."
           }
         ],
-        "statement_kind": "assessor_inference",
-        "support_status": "partial",
+        "statement_kind": "source_claim",
+        "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the stated limitation of A-Mem and the gap addressed by the biometric gating filter.",
+          "explanation_status": "supported",
           "item_id": "evidence-6",
-          "reason": "The supplied conclusion focuses on feasibility and practical value and contains no limitations discussion or treatment of spoofing, sensor availability, or privacy, so the inference that such limitations are not explicitly discussed is conservatively supported.",
+          "primary_evidence_ids": [
+            "E0fc472ac63e3e156-B0015"
+          ],
+          "reason": "The cited A-Mem section explicitly states A-Mem's retrieval relies solely on semantic similarity and cannot distinguish cross-user private records in multi-user shared memory pools.",
           "status": "supported"
         }
       }
@@ -797,14 +822,16 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 72,
+    "overall_quality_score": 78,
     "paper_type": "systems_or_application",
     "positive_signals": [
-      "Bio-Memory augments A-Mem atomic memory notes with biometric embeddings and conditions retrieval on biometric matching before semantic ranking.",
-      "The paper identifies a gap in existing memory systems: they assume externally supplied identity and do not use physical identity evidence to construct the retrieval candidate set.",
-      "The biometric verification threshold is selected per benchmark based on the intersection of owner and non-owner score distributions between their principal modes.",
-      "Owner queries consistently achieve substantially higher F1 and BLEU-1 than non-owner queries across all face and palmprint benchmarks.",
-      "The reported owner/non-owner gaps are attributable to biometric filtering rather than other experimental differences."
+      "Bio-Memory augments each atomic memory note with a biometric embedding and conditions retrieval on both semantic similarity and biometric matching.",
+      "The paper identifies a gap in existing memory systems: retrieval only prioritizes task-relevant memories without validating whether candidate memories belong to the current requesting user.",
+      "The evaluation protocol constructs a 10-user shared-agent memory store by merging ten LoCoMo conversations, each assigned one biometric identity, with owner and non-owner probes differing only in the probe biometric embedding.",
+      "The biometric verification threshold is selected independently for each benchmark based on the intersection of owner and non-owner cosine similarity score distributions between their principal modes.",
+      "Across all face and palmprint benchmarks, owner queries consistently achieve higher F1 and BLEU-1 scores than non-owner queries, with average gaps ranging from 20.13 to 27.29 in F1.",
+      "The qualitative retrieval traces show that owner and non-owner queries diverge at the candidate memory selection stage, with non-owner queries falling back to generic or unsupported answers.",
+      "The paper positions Bio-Memory against A-Mem and other memory-augmented agent systems, identifying that A-Mem's retrieval logic relies solely on semantic similarity and cannot distinguish cross-user private records in multi-user shared memory pools."
     ],
     "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "recommendation": "promising",
@@ -812,7 +839,7 @@
     "source_content_hash": "3ce0001b227c8261b81806fb7a76a2788870f465990a5c0961583527fd885db7",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 10"
+    "uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 10% Cited evidence does not establish numerical values/units: 10 Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

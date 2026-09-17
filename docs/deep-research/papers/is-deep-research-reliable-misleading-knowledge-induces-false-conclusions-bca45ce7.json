@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:50",
-    "generated_at": "2026-09-17 09:30:05",
+    "generated_at": "2026-09-17 10:51:11",
     "last_seen_at": "2026-07-30 09:05:22",
     "metadata_sources": [
       "openalex",
@@ -107,15 +107,15 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T09:12:33+00:00",
+    "assessed_at": "2026-09-17T10:18:19+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-cross-section-v1",
+    "assessment_version": "quality-batch2-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
-    "confidence": "high",
+    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 60185,
       "assessment_input_sha256": "6657f468da64588fe7f28000d1977b8dd61532bbfb4862ed0e85d6712c4d7864",
@@ -175,7 +175,7 @@
       "format": "PDF",
       "max_extracted_characters": 400000,
       "max_pages": 80,
-      "normalization_version": "canonical-v1",
+      "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
       "retained_source_characters": 73184,
@@ -470,6 +470,7 @@
       "selection_version": "representative-v1",
       "source_content_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
       "source_pages": 17,
+      "surrogate_code_units": 0,
       "unreadable_pages": [],
       "version": "coverage-v1",
       "warnings": [
@@ -478,10 +479,10 @@
     },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 5,
+      "contribution_clarity": 4,
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
+      "limitations_and_uncertainty_handling": 3,
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 4,
@@ -489,22 +490,414 @@
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "claim_role": "artifact_availability",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0003"
+        ],
+        "excerpt": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively.",
+        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "The paper provides these artifact links: https://github.com/whfeLingYu/MisKnow-Agent, https://huggingface.co/datasets/whfeLingYu/Misleading_Knowledge",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "16ad5ce1e26e100781bc47c62b77edd0dc59026abd874a12a19fd55d7bb0fdf8",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1727,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 854,
+                "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively."
+              }
+            ],
+            "text": "doc-\numentincreasesthemeanFCARfrom0%intheno-injection\ncontrol to 54.7%. FCAR varies substantially with lifecycle\nstage and framework design, and also with source author-\nity and presentation style, whereas search-result rank and\nadditional documents beyond the first have limited influ-\nence. Although cross-model verification consistently classi-\nfies retained instances as misleading, Deep Research agents\ncan still adopt the corresponding false conclusions during\nlong-horizon research. Pre- and post-research defenses re-\nduceFCARbutdonoteliminateadoption,motivatingcontin-\nuous verification when evidence enters intermediate research\nstates and final synthesis. To facilitate reproducibility, our\ncode and dataset are publicly available at https://github.com/\nwhfeLingYu/MisKnow-Agent and https://huggingface.co/\ndatasets/whfeLingYu/Misleading_Knowledge, respectively."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [
+            "https://github.com/whfeLingYu/MisKnow-Agent",
+            "https://huggingface.co/datasets/whfeLingYu/Misleading_Knowledge"
+          ],
+          "claim_status": "supported",
+          "explanation_reason": "The URL is present in the abstract; the disclaimer about independent checking is an assessment statement, not a paper claim.",
+          "explanation_status": "supported",
+          "item_id": "evidence-0",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0003"
+          ],
+          "reason": "The abstract contains both URLs exactly as claimed.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0009"
+        ],
+        "excerpt": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it.",
+        "explanation": "The introduction's contribution list explicitly names the framework, its purpose, and the resulting corpus size. This is a clear attributed contribution statement.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The paper introduces MisKnow-Agent, a controlled framework for constructing and validating apparently credible but factually misleading knowledge for Deep Research tasks, yielding 5,933 quality-controlled instances from DeepResearch Bench.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c1f288eea9205269beb755e9cfe40c0ca7437382efc2224e4c9a5de0e45f07e7",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3600,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2872,
+                "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+              }
+            ],
+            "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited contribution list directly supports the attributed contribution statement.",
+          "explanation_status": "supported",
+          "item_id": "evidence-1",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "reason": "The introduction contribution list explicitly states the framework, purpose, and 5,933 instances.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0009"
+        ],
+        "excerpt": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it.",
+        "explanation": "The contribution list states the evaluation scope and the central empirical finding. This supports clarity of the paper's claimed contribution.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The paper evaluates six open-source framework-LLM configurations and one closed-source system, showing that even limited exposure to misleading knowledge can lead to false-conclusion adoption.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c1f288eea9205269beb755e9cfe40c0ca7437382efc2224e4c9a5de0e45f07e7",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3600,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2872,
+                "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+              }
+            ],
+            "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly states the evaluation scope and central finding.",
+          "explanation_status": "supported",
+          "item_id": "evidence-2",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "reason": "The contribution list states six open-source configurations, one closed-source system, and false-conclusion adoption.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0009"
+        ],
+        "excerpt": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it.",
+        "explanation": "The contribution list enumerates the factors analyzed and the defense findings, making the scope of the claimed contribution explicit.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The paper characterizes how adoption varies with source properties, exposure conditions, lifecycle stage, framework choice, and backbone choice, and shows that pre- and post-research defenses reduce but do not eliminate it.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c1f288eea9205269beb755e9cfe40c0ca7437382efc2224e4c9a5de0e45f07e7",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3600,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2872,
+                "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+              }
+            ],
+            "text": "intermediate research states and final con-\nclusions.\nOur contributions are summarized as follows:\n\u2022We introduce MisKnow-Agent, a framework for con-\nstructing and validating apparently credible but factually\nmisleading knowledge for Deep Research tasks, yield-\ning 5,933 quality-controlled instances from the DeepRe-\nsearch Bench.\n\u2022We evaluate six open-source framework\u2013LLM configu-\nrations and one closed-source system, showing that even\nlimited exposure to misleading knowledge can lead to\nfalse-conclusion adoption.\n\u2022We characterize how adoption varies with source prop-\nerties, exposure conditions, lifecycle stage, framework\nchoice,andbackbonechoice,andshowthatpre-andpost-\nresearch defenses reduce but do not eliminate it."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited contribution list makes the scope and defense findings explicit.",
+          "explanation_status": "supported",
+          "item_id": "evidence-3",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0009"
+          ],
+          "reason": "The contribution list enumerates the factors and defense findings exactly as claimed.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "positioning",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0012"
+        ],
+        "excerpt": "retrieved\nuser-generated content (Dong et al. 2026; Zhang, Triedman,\nand Shmatikov 2026). However, existing studies largely ex-\namine either short-horizon responses to misleading context\norexplicitlyadversarialsettingsinwhichanattackerpoisons\nthecorpusormanipulatesretrieval.Ourgoalisnottomodel\nan active attack, but to assess an ambient reliability risk in\nopen-webresearch:DeepResearchagentsmayencounterap-\nparentlycredibleyetfactuallymisleadingknowledgealready\npresent in the information environment. We use controlled\nsourceandexposureconditionstoexaminehowsuchknowl-\nedgeentersintermediateresearchstatesandisreusedduring\nlong-horizon synthesis.\nFigure2:Overviewofourmethodology.(1)ThethreatmodeldefinesacontrolledsettingforexposingDeepResearchagentsto\nmisleading knowledge. (2) MisKnow-Agent constructs and filters controlled misleading knowledge across authority levels and\nstyles. (3) We",
+        "explanation": "The related-work passage contrasts prior short-horizon and adversarial studies with the paper's focus on ambient misleading knowledge in long-horizon workflows. This is an adequate gap positioning for the stated claims.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "The paper positions its work against prior studies that examine short-horizon responses to misleading context or explicitly adversarial settings, rather than ambient reliability risks in open-web research.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dbb16b8300517e5e1fea8dc4565097109e5f13dacb7acf4c53454e77f8dcd57e",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0012",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 2435,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 1786,
+                "text": "retrieved\nuser-generated content (Dong et al. 2026; Zhang, Triedman,\nand Shmatikov 2026). However, existing studies largely ex-\namine either short-horizon responses to misleading context\norexplicitlyadversarialsettingsinwhichanattackerpoisons\nthecorpusormanipulatesretrieval.Ourgoalisnottomodel\nan active attack, but to assess an ambient reliability risk in\nopen-webresearch:DeepResearchagentsmayencounterap-\nparentlycredibleyetfactuallymisleadingknowledgealready\npresent in the information environment. We use controlled\nsourceandexposureconditionstoexaminehowsuchknowl-\nedgeentersintermediateresearchstatesandisreusedduring\nlong-horizon synthesis."
+              },
+              {
+                "end": 245,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 0,
+                "text": "Figure2:Overviewofourmethodology.(1)ThethreatmodeldefinesacontrolledsettingforexposingDeepResearchagentsto\nmisleading knowledge. (2) MisKnow-Agent constructs and filters controlled misleading knowledge across authority levels and\nstyles. (3) We "
+              }
+            ],
+            "text": "retrieved\nuser-generated content (Dong et al. 2026; Zhang, Triedman,\nand Shmatikov 2026). However, existing studies largely ex-\namine either short-horizon responses to misleading context\norexplicitlyadversarialsettingsinwhichanattackerpoisons\nthecorpusormanipulatesretrieval.Ourgoalisnottomodel\nan active attack, but to assess an ambient reliability risk in\nopen-webresearch:DeepResearchagentsmayencounterap-\nparentlycredibleyetfactuallymisleadingknowledgealready\npresent in the information environment. We use controlled\nsourceandexposureconditionstoexaminehowsuchknowl-\nedgeentersintermediateresearchstatesandisreusedduring\nlong-horizon synthesis.\nFigure2:Overviewofourmethodology.(1)ThethreatmodeldefinesacontrolledsettingforexposingDeepResearchagentsto\nmisleading knowledge. (2) MisKnow-Agent constructs and filters controlled misleading knowledge across authority levels and\nstyles. (3) We "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited passage directly supports the gap positioning claim.",
+          "explanation_status": "supported",
+          "item_id": "evidence-4",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0012"
+          ],
+          "reason": "The related-work passage contrasts prior short-horizon and adversarial studies with the paper's ambient reliability focus.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "positioning",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "related_work_and_gap_positioning",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0010"
+        ],
+        "excerpt": "DeepResearchAgentsLLMagentsextendlanguagemod-\nels with planning, tool use, memory, and interaction with\nexternal environments (Xi et al. 2025; Yao et al. 2023;\nSchick et al. 2023). Deep Research agents combine plan-\nning, tool use, memory, and external interaction to conduct\nlong-horizon information seeking through iterative search,\nevidenceconsolidation,andreportgeneration(Xietal.2025;\nYao et al. 2023; Schick et al. 2023; OpenAI 2025; Li et al.\n2025). Existing systems focus on autonomous web explo-\nration, reasoning\u2013retrieval coordination, and context man-\nagement,whileevaluationsassessreportquality,citationcor-\nrectness,retrievalfaithfulness,andclaim-levelfactuality(Du\netal.2026;Coelhoetal.2025;Huangetal.2026).Theseef-\nfortscharacterizeresearchcapabilityandoutputcorrectness,\nbut do not systematically isolate how misleading knowledge\npropagates within the workflow. In contrast, we ask",
+        "explanation": "The related-work section explicitly identifies what existing evaluations measure and the gap the paper addresses. This supports the positioning claim.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The paper states that prior Deep Research evaluations assess report quality, citation correctness, retrieval faithfulness, and claim-level factuality but do not systematically isolate how misleading knowledge propagates within the workflow.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8b8553b70effc13f3227795e57c5d3c5d412a19ee91060a53720e7e509452780",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 2,
+                "section": "Related Work",
+                "section_index": 4,
+                "start": 0,
+                "text": "DeepResearchAgentsLLMagentsextendlanguagemod-\nels with planning, tool use, memory, and interaction with\nexternal environments (Xi et al. 2025; Yao et al. 2023;\nSchick et al. 2023). Deep Research agents combine plan-\nning, tool use, memory, and external interaction to conduct\nlong-horizon information seeking through iterative search,\nevidenceconsolidation,andreportgeneration(Xietal.2025;\nYao et al. 2023; Schick et al. 2023; OpenAI 2025; Li et al.\n2025). Existing systems focus on autonomous web explo-\nration, reasoning\u2013retrieval coordination, and context man-\nagement,whileevaluationsassessreportquality,citationcor-\nrectness,retrievalfaithfulness,andclaim-levelfactuality(Du\netal.2026;Coelhoetal.2025;Huangetal.2026).Theseef-\nfortscharacterizeresearchcapabilityandoutputcorrectness,\nbut do not systematically isolate how misleading knowledge\npropagates within the workflow. In contrast, we ask "
+              }
+            ],
+            "text": "DeepResearchAgentsLLMagentsextendlanguagemod-\nels with planning, tool use, memory, and interaction with\nexternal environments (Xi et al. 2025; Yao et al. 2023;\nSchick et al. 2023). Deep Research agents combine plan-\nning, tool use, memory, and external interaction to conduct\nlong-horizon information seeking through iterative search,\nevidenceconsolidation,andreportgeneration(Xietal.2025;\nYao et al. 2023; Schick et al. 2023; OpenAI 2025; Li et al.\n2025). Existing systems focus on autonomous web explo-\nration, reasoning\u2013retrieval coordination, and context man-\nagement,whileevaluationsassessreportquality,citationcor-\nrectness,retrievalfaithfulness,andclaim-levelfactuality(Du\netal.2026;Coelhoetal.2025;Huangetal.2026).Theseef-\nfortscharacterizeresearchcapabilityandoutputcorrectness,\nbut do not systematically isolate how misleading knowledge\npropagates within the workflow. In contrast, we ask "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited passage explicitly identifies the gap and supports the positioning claim.",
+          "explanation_status": "supported",
+          "item_id": "evidence-5",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0010"
+          ],
+          "reason": "The related-work text lists the existing evaluation dimensions and states they do not systematically isolate misleading knowledge propagation.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "evaluation",
+        "context_id": "5ecf27d3a2ac0fe60a166ef637a6a28931bd20162f8234161ee017f2e3a7ae68",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E5ecf27d3a2ac0fe6-B0029"
+        ],
+        "excerpt": "Stage Affect Adoption?\nImplementation details for the search-result-rank and\nlifecycle-stage conditions are provided in Appendix H.\nSearch-result rank has limited influence.Across the six\nframework\u2013LLM configurations, mean FCAR was similar\nunder the front, spread, and back placement conditions\n(66.2%, 65.5%, and 64.5%, respectively; Figure 3(a)). The\nlargestdifferenceamongtheseconditionswas1.7percentage\npointsinthecross-configurationmean,andnoconfiguration\nFigure3:Effectsofmisleading-knowledgepositionandtim-\ningonFCARacrossframeworksandLLMs.(a)Search-result\nrank;(b)Lifecycle stage.\nFigure4:Effectsofsourcecuesonfalse-conclusionadoption.\n(a)Institutional authority level;(b)Source style.\nvaried by more than 6 percentage points. These results indi-\ncate that coarse rank was not a strong filtering signal: once\nmisleading knowledge appeared in the results, lower-ranked\nitems were nearly as",
+        "explanation": "The rank-condition results provide the three mean FCAR values and the largest difference, supporting the claim that rank has limited influence.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "The paper reports that search-result rank has limited influence, with mean FCAR of 66.2%, 65.5%, and 64.5% under front, spread, and back placement conditions.",
+        "section": "How Do Search-Result Rank And Lifecycle",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47837ee93dcb6e456e0b733b7eaf992862195aec4328ebb4f40c5297e2666123",
+            "evidence_id": "E5ecf27d3a2ac0fe6-B0029",
+            "pages": [
+              5
+            ],
+            "section": "How Do Search-Result Rank And Lifecycle",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 5,
+                "section": "How Do Search-Result Rank And Lifecycle",
+                "section_index": 12,
+                "start": 0,
+                "text": "Stage Affect Adoption?\nImplementation details for the search-result-rank and\nlifecycle-stage conditions are provided in Appendix H.\nSearch-result rank has limited influence.Across the six\nframework\u2013LLM configurations, mean FCAR was similar\nunder the front, spread, and back placement conditions\n(66.2%, 65.5%, and 64.5%, respectively; Figure 3(a)). The\nlargestdifferenceamongtheseconditionswas1.7percentage\npointsinthecross-configurationmean,andnoconfiguration\nFigure3:Effectsofmisleading-knowledgepositionandtim-\ningonFCARacrossframeworksandLLMs.(a)Search-result\nrank;(b)Lifecycle stage.\nFigure4:Effectsofsourcecuesonfalse-conclusionadoption.\n(a)Institutional authority level;(b)Source style.\nvaried by more than 6 percentage points. These results indi-\ncate that coarse rank was not a strong filtering signal: once\nmisleading knowledge appeared in the results, lower-ranked\nitems were nearly as "
+              }
+            ],
+            "text": "Stage Affect Adoption?\nImplementation details for the search-result-rank and\nlifecycle-stage conditions are provided in Appendix H.\nSearch-result rank has limited influence.Across the six\nframework\u2013LLM configurations, mean FCAR was similar\nunder the front, spread, and back placement conditions\n(66.2%, 65.5%, and 64.5%, respectively; Figure 3(a)). The\nlargestdifferenceamongtheseconditionswas1.7percentage\npointsinthecross-configurationmean,andnoconfiguration\nFigure3:Effectsofmisleading-knowledgepositionandtim-\ningonFCARacrossframeworksandLLMs.(a)Search-result\nrank;(b)Lifecycle stage.\nFigure4:Effectsofsourcecuesonfalse-conclusionadoption.\n(a)Institutional authority level;(b)Source style.\nvaried by more than 6 percentage points. These results indi-\ncate that coarse rank was not a strong filtering signal: once\nmisleading knowledge appeared in the results, lower-ranked\nitems were nearly as "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited rank-condition results support the limited-influence claim.",
+          "explanation_status": "supported",
+          "item_id": "evidence-8",
+          "primary_evidence_ids": [
+            "E5ecf27d3a2ac0fe6-B0029"
+          ],
+          "reason": "The rank results report 66.2%, 65.5%, and 64.5% mean FCAR and limited influence.",
+          "status": "supported"
+        }
+      }
+    ],
     "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2607.20891",
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 82,
+    "overall_quality_score": 78,
     "paper_type": "empirical_research",
-    "positive_signals": [],
-    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "positive_signals": [
+      "The paper introduces MisKnow-Agent, a controlled framework for constructing and validating apparently credible but factually misleading knowledge for Deep Research tasks, yielding 5,933 quality-controlled instances from DeepResearch Bench.",
+      "The paper evaluates six open-source framework-LLM configurations and one closed-source system, showing that even limited exposure to misleading knowledge can lead to false-conclusion adoption.",
+      "The paper characterizes how adoption varies with source properties, exposure conditions, lifecycle stage, framework choice, and backbone choice, and shows that pre- and post-research defenses reduce but do not eliminate it.",
+      "The paper positions its work against prior studies that examine short-horizon responses to misleading context or explicitly adversarial settings, rather than ambient reliability risks in open-web research.",
+      "The paper states that prior Deep Research evaluations assess report quality, citation correctness, retrieval faithfulness, and claim-level factuality but do not systematically isolate how misleading knowledge propagates within the workflow.",
+      "The paper reports that search-result rank has limited influence, with mean FCAR of 66.2%, 65.5%, and 64.5% under front, spread, and back placement conditions."
+    ],
+    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "3746f33dab76a0fc63ecb23418e4b040bfc9560ffbb4894f35c5a1a13717f8a5",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 0%, 54.7%, 0%, 54.7% Cited evidence does not establish numerical values/units: 40.5%, 44.2% Cited evidence does not establish numerical values/units: 57.7% Cited evidence does not establish numerical values/units: 61.0%, 53.0%, 44.0%, 23.5 Cited evidence does not establish numerical values/units: 15%"
+    "uncertainty": "Scientific support remains unresolved. The cited sources do not establish the claimed closed-source injection-mechanism difference or the paper's acknowledgment of it. Cited evidence does not establish numerical values/units: 0% Cited evidence does not establish numerical values/units: 40.5%, 44.2% Cited evidence does not establish numerical values/units: 57.7% Cited evidence does not establish numerical values/units: 61.0%, 53.0%, 44.0% Cited evidence does not establish numerical values/units: 60, 15"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

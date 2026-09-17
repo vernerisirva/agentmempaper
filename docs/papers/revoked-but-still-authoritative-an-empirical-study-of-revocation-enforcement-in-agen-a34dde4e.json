@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:17",
-    "generated_at": "2026-09-17 09:29:52",
+    "generated_at": "2026-09-17 10:51:01",
     "last_seen_at": "2026-09-15 11:59:43",
     "metadata_sources": [
       "openalex",
@@ -107,15 +107,15 @@
   "scholarly_quality": {
     "applied_score_cap": 54,
     "applied_score_cap_reason": "Comparative claims were detected without a suitable baseline.",
-    "assessed_at": "2026-09-17T09:28:03+00:00",
+    "assessed_at": "2026-09-17T10:50:48+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-cross-section-v1",
+    "assessment_version": "quality-batch2-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
-    "confidence": "high",
+    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 70521,
       "assessment_input_sha256": "b51e86a12d35d3808259168375abc9be78dadbcab18c69d9262b565c9e592215",
@@ -181,7 +181,7 @@
       "format": "PDF",
       "max_extracted_characters": 400000,
       "max_pages": 80,
-      "normalization_version": "canonical-v1",
+      "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
       "retained_source_characters": 73156,
@@ -439,6 +439,7 @@
       "selection_version": "representative-v1",
       "source_content_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
       "source_pages": 20,
+      "surrogate_code_units": 0,
       "unreadable_pages": [],
       "version": "coverage-v1",
       "warnings": [
@@ -448,17 +449,276 @@
     "curation_note": null,
     "dimension_scores": {
       "contribution_clarity": 5,
-      "evaluation_or_validation_strength": 5,
-      "evidence_to_claim_alignment": 5,
+      "evaluation_or_validation_strength": 4,
+      "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 4,
       "methodological_rigor": 4,
-      "presentation_and_precision": 5,
+      "presentation_and_precision": 4,
       "related_work_and_gap_positioning": 5,
-      "reproducibility_and_transparency": 5,
+      "reproducibility_and_transparency": 4,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [],
+    "evidence": [
+      {
+        "claim_role": "contribution",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0004",
+          "E5950c57d2c67485e-B0005"
+        ],
+        "excerpt": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses \n[\u2026 separate evidence block \u2026]\nbetween a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent",
+        "explanation": "The introduction states the question directly and specifies the systems under test, the two-phase measurement approach, and the two outcome metrics. The abstract and body agree on the contribution scope.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "The paper's central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4a41417266e3e0b7374cdaa274e30f64f1310d9b722088820174092ca2db6e6a",
+            "evidence_id": "E5950c57d2c67485e-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 0,
+                "text": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses "
+              }
+            ],
+            "text": "Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,\nmany agent-memory frameworks version their contents: each fact carries validity metadata, and an\nupdate marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It\nsupports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft\nrevocation is enforced, however, has not been examined: does marking a fact invalid prevent the store\nfrom returning it to an agent that acts on it?\nTo answer it, we measure whether five major agent-memory systems enforce revocation at runtime:\nGraphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load\neach memory system with a revoked policy and its replacement, query the store with an ordinary\nquestion, and pass the returned facts to an agent that chooses "
+          },
+          {
+            "content_hash": "eff7abbb926b3b7f553e69877bc0783fc3f0f157fcb5caf5b415c6b0350ffb0e",
+            "evidence_id": "E5950c57d2c67485e-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1799,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 900,
+                "text": "between a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent "
+              }
+            ],
+            "text": "between a safe and an unsafe action.\nUnder this setting, we measure two metrics. The first is the rate at which the store returns the\nrevoked record, which is a property of the store. The second is the rate at which the agent then\nacts on it, which is a property of the model. The methodology covers nine scenarios, nine models\nspanning six vendors. Each trial is scored under six defense conditions, from no defense to a check\non retrieval-time validity.1\n\u2217Corresponding author.\nAI usage declaration:We used Anthropic's Claude Opus 4.8 and Z.AI's GLM-5.3-Flash to assist in preparing this\nmanuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and\nreferences were reviewed and verified by the authors, who take full responsibility for the work.\n1We extend the scenarios beyond this single-read setting to write-back, multi-agent "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The introduction states the question, names the systems, describes loading a revoked policy and replacement, querying, passing returned facts to an agent, and defines two metrics.",
+          "explanation_status": "supported",
+          "item_id": "evidence-0",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0004",
+            "E5950c57d2c67485e-B0005"
+          ],
+          "reason": "The introduction explicitly asks whether marking a fact invalid prevents the store from returning it to an agent that acts on it, and states measurement across five named agent-memory systems.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "scholarly_novelty_or_value",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0014",
+          "E5950c57d2c67485e-B0015"
+        ],
+        "excerpt": "hierarchical graph that records version\nsequences, version-specific content boundaries, and the changes between document states, so a query\ncan be answered from a specific version. MemStrata [15] excludes a contradicted fact from retrieval:\nwhen a newer assertion replaces a fact's value, a deterministic rule marks the older value invalid in a\nbi-temporal ledger. ConflictRAG [14] reconciles contradictory retrieved facts before generation by\ndetecting the conflicts with a trained classifier, classifying them as factual, temporal, or opinion, and\nresolving each type in turn, ranking candidate sources on criteria extracted from the text itself, such\nas authority and recency.\nPositioning.The question this paper asks is whether marking a fact invalid prevents the store from\nreturning it to an agent that acts on it. Each direction above answers a different question: how foreign\ncontent enters \n[\u2026 separate evidence block \u2026]\na store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one.",
+        "explanation": "The positioning section argues that prior work covers injection attacks, lifecycle security, guardrails, provenance checks, and version-aware retrieval, but none asks whether a store-flagged invalid record still determines agent behavior. The paper's setting uses the defender's own revoked policy, so provenance checks pass by construction.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "48879b3294a794eb3ada1a82955d1fce30296e231e80759fc1eecbebf82a3cd3",
+            "evidence_id": "E5950c57d2c67485e-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 2635,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 1736,
+                "text": "hierarchical graph that records version\nsequences, version-specific content boundaries, and the changes between document states, so a query\ncan be answered from a specific version. MemStrata [15] excludes a contradicted fact from retrieval:\nwhen a newer assertion replaces a fact's value, a deterministic rule marks the older value invalid in a\nbi-temporal ledger. ConflictRAG [14] reconciles contradictory retrieved facts before generation by\ndetecting the conflicts with a trained classifier, classifying them as factual, temporal, or opinion, and\nresolving each type in turn, ranking candidate sources on criteria extracted from the text itself, such\nas authority and recency.\nPositioning.The question this paper asks is whether marking a fact invalid prevents the store from\nreturning it to an agent that acts on it. Each direction above answers a different question: how foreign\ncontent enters "
+              }
+            ],
+            "text": "hierarchical graph that records version\nsequences, version-specific content boundaries, and the changes between document states, so a query\ncan be answered from a specific version. MemStrata [15] excludes a contradicted fact from retrieval:\nwhen a newer assertion replaces a fact's value, a deterministic rule marks the older value invalid in a\nbi-temporal ledger. ConflictRAG [14] reconciles contradictory retrieved facts before generation by\ndetecting the conflicts with a trained classifier, classifying them as factual, temporal, or opinion, and\nresolving each type in turn, ranking candidate sources on criteria extracted from the text itself, such\nas authority and recency.\nPositioning.The question this paper asks is whether marking a fact invalid prevents the store from\nreturning it to an agent that acts on it. Each direction above answers a different question: how foreign\ncontent enters "
+          },
+          {
+            "content_hash": "93c6cc027e5d5f186ea0d6c3da9514ffb5d2eac20c6490e67760b499322a09e4",
+            "evidence_id": "E5950c57d2c67485e-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 3499,
+                "page": 3,
+                "section": "Related Work",
+                "section_index": 5,
+                "start": 2635,
+                "text": "a store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one."
+              }
+            ],
+            "text": "a store, whether an attempted deletion completed, or whether retrieval returns the\ncurrent version. None asks whether a record the store has itself marked invalid still determines what\nthe agent does. Table 1 states the difference concretely. Every prior family brings new content into\nthe store from an attacker, so a provenance check, which asks where a record came from, catches it.\nEven MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent\nperforms the write, but the attacker authors the record. The record that harms the agent here is the\ndefender's own revoked policy, so every provenance check passes it by construction. What would\ncatch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,\nand the rest of this paper measures whether these five systems perform one."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The related-work positioning explicitly says none asks whether a store-flagged invalid record still determines agent behavior, and states the defender's own revoked policy passes provenance checks by construction.",
+          "explanation_status": "supported",
+          "item_id": "evidence-1",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0014",
+            "E5950c57d2c67485e-B0015"
+          ],
+          "reason": "The positioning text states the question is whether marking a fact invalid prevents return to an acting agent, and says prior directions answer different questions about foreign content, deletion, or current version.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "artifact_availability",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "reproducibility_and_transparency",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0003"
+        ],
+        "excerpt": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack.",
+        "explanation": "The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "The paper provides these artifact links: https://github.com/VulcanLab/Memory-Rebirth-Attack",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "78c8410e50347becd6bc7d6baa8a65db55620f36327206d0cddfbe74da075bb1",
+            "evidence_id": "E5950c57d2c67485e-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1031,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 883,
+                "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack."
+              }
+            ],
+            "text": "withholds\nrecords that are revoked or conflict with their replacement. We open-source our\ncode athttps://github.com/VulcanLab/Memory-Rebirth-Attack."
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [
+            "https://github.com/VulcanLab/Memory-Rebirth-Attack"
+          ],
+          "claim_status": "supported",
+          "explanation_reason": "The URL is stated in the supplied abstract; the disclaimer that repository contents were not independently checked is accurate for this artifact-availability assessment.",
+          "explanation_status": "supported",
+          "item_id": "evidence-6",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0003"
+          ],
+          "reason": "The abstract contains the exact URL https://github.com/VulcanLab/Memory-Rebirth-Attack.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "5950c57d2c67485e9fa4a32b7548617df99a2a117c2b0c19afcda6efbe2401be",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "E5950c57d2c67485e-B0045"
+        ],
+        "excerpt": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5",
+        "explanation": "The per-scenario analysis states the two groups are not a controlled comparison and that the rule-carrying group supports only the narrower statement that a prompt prohibition does not reliably prevent the unsafe action. This is an explicit scope limitation.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count.",
+        "section": "Per-Scenario Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ad039d5a6fcd4520715b47228b018f68fd254e41134a3db0d8212a2d05b6bc49",
+            "evidence_id": "E5950c57d2c67485e-B0045",
+            "pages": [
+              9
+            ],
+            "section": "Per-Scenario Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1577,
+                "page": 9,
+                "section": "Per-Scenario Analysis",
+                "section_index": 23,
+                "start": 899,
+                "text": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5"
+              }
+            ],
+            "text": "Across those\nfour scenarios, the effect is largest where the unsafe action is operationally plausible and smallest\nwhere it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for\nwaiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt\nrule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in\nscenario, action set and distractor count, and the study never measures the same scenario with and\nwithout its prohibition. The rule-carrying group supports only the narrower statement that a prompt\nprohibition does not reliably prevent the unsafe action.5"
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly states the groups are not controlled, differ in scenario, action set and distractor count, and supports only the narrower prompt-prohibition statement.",
+          "explanation_status": "supported",
+          "item_id": "evidence-8",
+          "primary_evidence_ids": [
+            "E5950c57d2c67485e-B0045"
+          ],
+          "reason": "The per-scenario analysis states the two groups are not a controlled comparison because they differ in scenario, action set, and distractor count.",
+          "status": "supported"
+        }
+      }
+    ],
     "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.08258",
     "gate_version": "scientific-gate-v1",
@@ -466,14 +726,18 @@
     "missing_information": [],
     "overall_quality_score": 54,
     "paper_type": "empirical_research",
-    "positive_signals": [],
-    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "positive_signals": [
+      "The paper's central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.",
+      "The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.",
+      "The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count."
+    ],
+    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "recommendation": "weak",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "3596c76611a32b4a5cfe803e26dff7ba4134504099f0fb9e8dafe747587e81c9",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 44.2%"
+    "uncertainty": "Scientific support remains unresolved. The sources support the research question, methodology breadth, central results, related-work positioning, limitations, and compute details, but the cited excerpts do not establish matched-pair statistical tests, ablations, or the guard design evaluation under indirect insertion. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material. The sources define M, txt(r), tau(r), rho(r), and distinguish direct and indirect insertion, but the excerpt does not show the equations for R(q,M,k) or the two metrics. The sources support nine scenarios, nine models, ten trials per scenario-model pair, and 44,550 main-grid calls, but do not show six defense conditions or multiple system configurations in the cited text. Cited evidence does not establish numerical values/units: 44.2% The sources support the five directions and the positioning statement, but the cited text does not describe the comparison table's distinction between a benign-user setting and retrieval-time validity check. Cited evidence does not establish numerical values/units: 0.629"
   },
   "semantic_scholar_id": null,
   "source": "openalex",

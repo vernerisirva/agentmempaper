@@ -60,7 +60,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-24 08:46:50",
-    "generated_at": "2026-09-17 09:30:05",
+    "generated_at": "2026-09-17 10:51:11",
     "last_seen_at": "2026-07-30 09:05:23",
     "metadata_sources": [
       "openalex",
@@ -124,19 +124,15 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T09:15:49+00:00",
+    "assessed_at": "2026-09-17T10:22:47+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-cross-section-v1",
+    "assessment_version": "quality-batch2-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "The manuscript positions AREX against existing long-search and verification-based approaches but does not provide a dedicated related-work section with detailed per-system comparisons.",
-      "The manuscript provides model links and describes training data construction, but does not report releasing the training datasets, teacher trajectories, or full evaluation code.",
-      "The manuscript does not provide a dedicated limitations section discussing failure modes, benchmark coverage gaps, or robustness of the confidence-based termination procedure."
-    ],
-    "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
-    "confidence": "high",
+    "concerns": [],
+    "concise_summary": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
+    "confidence": "medium",
     "coverage": {
       "assessment_input_characters": 55841,
       "assessment_input_sha256": "db61649e05ee16c257fa035528227335253e953aedf0cc1198e89bcf645f78fc",
@@ -202,7 +198,7 @@
       "format": "PDF",
       "max_extracted_characters": 400000,
       "max_pages": 80,
-      "normalization_version": "canonical-v1",
+      "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
       "retained_source_characters": 72673,
@@ -371,6 +367,7 @@
       "selection_version": "representative-v1",
       "source_content_hash": "a52a40569ca6ed01cb7ef7eaf4fcdb4c687e37180d5145d135c91d40cd2791e8",
       "source_pages": 20,
+      "surrogate_code_units": 0,
       "unreadable_pages": [],
       "version": "coverage-v1",
       "warnings": [
@@ -379,568 +376,18 @@
     },
     "curation_note": null,
     "dimension_scores": {
-      "contribution_clarity": 4,
+      "contribution_clarity": 5,
       "evaluation_or_validation_strength": 4,
       "evidence_to_claim_alignment": 4,
       "limitations_and_uncertainty_handling": 2,
       "methodological_rigor": 4,
       "presentation_and_precision": 4,
-      "related_work_and_gap_positioning": 3,
+      "related_work_and_gap_positioning": 4,
       "reproducibility_and_transparency": 3,
       "scholarly_novelty_or_value": 4
     },
     "downranked": false,
-    "evidence": [
-      {
-        "claim_role": "contribution",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0007",
-          "Ed069fe16ffa6b527-B0008"
-        ],
-        "excerpt": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up \n[\u2026 separate evidence block \u2026]\nresearch, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during",
-        "explanation": "The introduction explicitly defines the RSI framework, the inner/outer loop alternation, and the role of the context-update tool in maintaining a compact improvement state.",
-        "page": 2,
-        "pages": [
-          2
-        ],
-        "paraphrase": "AREX is a family of recursively self-improving deep research agents that alternate between an inner research loop and an outer self-improvement loop, with a learned autonomous context-update tool.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "0925d28204cf4bd12d372dcbe878f4f93b46effa0ee9441e52ecf166d0b20ce6",
-            "evidence_id": "Ed069fe16ffa6b527-B0007",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 2682,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 1789,
-                "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
-              }
-            ],
-            "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
-          },
-          {
-            "content_hash": "013f00f13cf0b5e3608ae959bdc22fbc61e9e8b3c5aedc19024605859088ad94",
-            "evidence_id": "Ed069fe16ffa6b527-B0008",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 3574,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 2682,
-                "text": "research, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during "
-              }
-            ],
-            "text": "research, and the process terminates once the required\nclaims are sufficiently supported. In this way, verification becomes an active control signal that recursively refines the\nagent's research state and solution, rather than a final filter applied after search.\nSustainingthisrecursionoverlonghorizonsrequirestheagenttomaintainaconciseandactionableresearchstate. During\nthe inner research loop, the interaction history continually accumulates verified evidence, failed queries, speculative\nhypotheses, duplicated observations, and outdated plans. Retaining the full history can distract subsequent reasoning,\nwhereas indiscriminate truncation may discard evidence needed for later verification (Packer et al., 2023; Hu et al., 2025;\nZhou et al., 2026; Wu et al., 2025b; Lu et al., 2026; Zhang et al., 2026).AREXtherefore learns to autonomously invoke\na dedicated context-update tool during "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-0",
-          "reason": "The cited introduction text explicitly defines AREX as a family of recursively self-improving deep research agents, describes the inner research loop and outer self-improvement loop alternation, and states that AREX learns to autonomously invoke a dedicated context-update tool.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "contribution",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "scholarly_novelty_or_value",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0006",
-          "Ed069fe16ffa6b527-B0007"
-        ],
-        "excerpt": "longer, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also \n[\u2026 separate evidence block \u2026]\ndefine the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up",
-        "explanation": "The manuscript contrasts its approach with existing work that uses verification to rank completed trajectories or refine decisions within a trajectory, positioning verification as the transition mechanism between research rounds.",
-        "page": 2,
-        "pages": [
-          2
-        ],
-        "paraphrase": "The discovery-verification asymmetry motivates using verification to define transitions between research rounds rather than only ranking completed trajectories.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "19191119523d2f0d4247f9367c8dec95bc39380101c1eba6b24ec4ff7a3d4fdc",
-            "evidence_id": "Ed069fe16ffa6b527-B0006",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 1789,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 895,
-                "text": "longer, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also "
-              }
-            ],
-            "text": "longer, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also "
-          },
-          {
-            "content_hash": "0925d28204cf4bd12d372dcbe878f4f93b46effa0ee9441e52ecf166d0b20ce6",
-            "evidence_id": "Ed069fe16ffa6b527-B0007",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 2682,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 1789,
-                "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
-              }
-            ],
-            "text": "define the transition between research rounds. By converting a\nprovisional answer into a partially verified state, the agent can preserve established progress, isolate the remaining\nuncertainty, and formulate a more targeted next research problem.\nWe introduceAREX, a family ofRecursively Self-Improving (RSI)deep research agents that repeatedly convert partially\nverified solutions into better-targeted research problems.AREXalternates between an innerresearch loop, which\ngathers evidence, evaluates candidates, and constructs a provisional answer, and an outerself-improvement loop, which\naudits the answer against the task constraints and directs subsequent research toward unresolved or weakly supported\nclaims. Verified progress is preserved across rounds, while constraint-level belief estimates govern both continuation\nand termination: uncertain conditions trigger targeted follow-up "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-1",
-          "reason": "The cited text states that existing work uses verification to rank completed trajectories or refine decisions within a trajectory, and that the key insight is that verification can also define the transition between research rounds.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "method",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "methodological_rigor",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0029",
-          "Ed069fe16ffa6b527-B0036",
-          "Ed069fe16ffa6b527-B0044"
-        ],
-        "excerpt": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX.\n[\u2026 separate evidence block \u2026]\nLong-horizon deep research requires a combination of heterogeneous capabilities, including tool invocation, web\nnavigation, evidence acquisition, expert-level reasoning, context tracking, and answer synthesis. Directly training the\nmodel on a single mixed distribution may lead to unstable learning dynamics and interference across different capability\ntypes. We therefore adopt a multi-stage agentic mid-training recipe that progressively improves the model's research\nability.\nThe agentic mid-training process consists of two major stages. First, we train the model on browse-intensive research\ntaskstoestablishfundamentaltool-useandevidenceacquisitioncapabilities,andthentrainthemodelonexpertreasoning\ntasks to strengthen long-form thinking, hypothesis comparison, and difficult problem solving. Second, we perform\nmixed-capability consolidation by replaying selected key steps from \n[\u2026 separate evidence block \u2026]\nStep-aware Group Policy OptimizationOur mid-training analysis shows that long-horizon research trajectories are\nhighly heterogeneous: routine tool-use or transition steps are often easy to imitate, while a small number of decisive\nsteps are much harder and more important for final task success. This observation also motivates our reinforcement\nlearning design. In deep research tasks, a trajectory may contain many rounds of search, browsing, hypothesis update,\nand evidence verification. Since external tools can return noisy or partially relevant observations, not every action in a\nsuccessful trajectory should receive the same learning signal.\nStandard group-relative policy optimization methods compute a sequence-level reward and propagate the resulting\nadvantage to all generated tokens in the trajectory. However, a sequence-level advantage provides relatively coarse credit\nassignment for",
-        "explanation": "The methods sections describe task synthesis with verifiability checks, trajectory filtering criteria, progressive capability training, key-step detection grounded in verifiable task structure, and a step-aware RL objective with hierarchical normalization.",
-        "page": 6,
-        "pages": [
-          6,
-          8,
-          9
-        ],
-        "paraphrase": "The training pipeline includes verified synthetic task construction, teacher trajectory collection with quality control, multi-stage agentic mid-training, key-step focused supervision, and step-aware reinforcement learning.",
-        "section": "Training Data Construction / Multi-Stage Agentic Mid-Training / Step-Aware Reinforcement Learning",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "d1be38766b39f8a60f23a2620fbffcb16f65f5a71f4dd83f25c6187a08f0779c",
-            "evidence_id": "Ed069fe16ffa6b527-B0029",
-            "pages": [
-              6
-            ],
-            "section": "Training Data Construction",
-            "section_role": "methods",
-            "source_spans": [
-              {
-                "end": 528,
-                "page": 6,
-                "section": "Training Data Construction",
-                "section_index": 10,
-                "start": 0,
-                "text": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX."
-              }
-            ],
-            "text": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX."
-          },
-          {
-            "content_hash": "8c1aba6ebff22955a1e4290c8eba11ff9909463cb5da7ccadf18706b29c58171",
-            "evidence_id": "Ed069fe16ffa6b527-B0036",
-            "pages": [
-              8
-            ],
-            "section": "Multi-Stage Agentic Mid-Training",
-            "section_role": "methods",
-            "source_spans": [
-              {
-                "end": 886,
-                "page": 8,
-                "section": "Multi-Stage Agentic Mid-Training",
-                "section_index": 14,
-                "start": 0,
-                "text": "Long-horizon deep research requires a combination of heterogeneous capabilities, including tool invocation, web\nnavigation, evidence acquisition, expert-level reasoning, context tracking, and answer synthesis. Directly training the\nmodel on a single mixed distribution may lead to unstable learning dynamics and interference across different capability\ntypes. We therefore adopt a multi-stage agentic mid-training recipe that progressively improves the model's research\nability.\nThe agentic mid-training process consists of two major stages. First, we train the model on browse-intensive research\ntaskstoestablishfundamentaltool-useandevidenceacquisitioncapabilities,andthentrainthemodelonexpertreasoning\ntasks to strengthen long-form thinking, hypothesis comparison, and difficult problem solving. Second, we perform\nmixed-capability consolidation by replaying selected key steps from "
-              }
-            ],
-            "text": "Long-horizon deep research requires a combination of heterogeneous capabilities, including tool invocation, web\nnavigation, evidence acquisition, expert-level reasoning, context tracking, and answer synthesis. Directly training the\nmodel on a single mixed distribution may lead to unstable learning dynamics and interference across different capability\ntypes. We therefore adopt a multi-stage agentic mid-training recipe that progressively improves the model's research\nability.\nThe agentic mid-training process consists of two major stages. First, we train the model on browse-intensive research\ntaskstoestablishfundamentaltool-useandevidenceacquisitioncapabilities,andthentrainthemodelonexpertreasoning\ntasks to strengthen long-form thinking, hypothesis comparison, and difficult problem solving. Second, we perform\nmixed-capability consolidation by replaying selected key steps from "
-          },
-          {
-            "content_hash": "f735ae1d1707a5e7c10719a5a1cd3cb42791355758f7ccf31e0f4fdcd676264e",
-            "evidence_id": "Ed069fe16ffa6b527-B0044",
-            "pages": [
-              9
-            ],
-            "section": "Step-Aware Reinforcement Learning",
-            "section_role": "body",
-            "source_spans": [
-              {
-                "end": 900,
-                "page": 9,
-                "section": "Step-Aware Reinforcement Learning",
-                "section_index": 16,
-                "start": 0,
-                "text": "Step-aware Group Policy OptimizationOur mid-training analysis shows that long-horizon research trajectories are\nhighly heterogeneous: routine tool-use or transition steps are often easy to imitate, while a small number of decisive\nsteps are much harder and more important for final task success. This observation also motivates our reinforcement\nlearning design. In deep research tasks, a trajectory may contain many rounds of search, browsing, hypothesis update,\nand evidence verification. Since external tools can return noisy or partially relevant observations, not every action in a\nsuccessful trajectory should receive the same learning signal.\nStandard group-relative policy optimization methods compute a sequence-level reward and propagate the resulting\nadvantage to all generated tokens in the trajectory. However, a sequence-level advantage provides relatively coarse credit\nassignment for "
-              }
-            ],
-            "text": "Step-aware Group Policy OptimizationOur mid-training analysis shows that long-horizon research trajectories are\nhighly heterogeneous: routine tool-use or transition steps are often easy to imitate, while a small number of decisive\nsteps are much harder and more important for final task success. This observation also motivates our reinforcement\nlearning design. In deep research tasks, a trajectory may contain many rounds of search, browsing, hypothesis update,\nand evidence verification. Since external tools can return noisy or partially relevant observations, not every action in a\nsuccessful trajectory should receive the same learning signal.\nStandard group-relative policy optimization methods compute a sequence-level reward and propagate the resulting\nadvantage to all generated tokens in the trajectory. However, a sequence-level advantage provides relatively coarse credit\nassignment for "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-2",
-          "reason": "The cited methods sections describe verified task synthesis, teacher trajectory collection with quality control, multi-stage agentic mid-training, key-step focused supervision, and step-aware reinforcement learning.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "result",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0059",
-          "Ed069fe16ffa6b527-B0060"
-        ],
-        "excerpt": "turning points and preserving both positive\nand negative evidence, ACU helpsAREXavoid previously rejected paths and spend the remaining interaction budget on\nunresolved constraints.\nRecursive Self-Improvement.Table 3 separates the two parts of recursive self-improvement: ACU in the inner\nresearch loop and the outer self-improvement loop. The rows without the outer loop accept the first output produced by\n12\nMethod Setting Acc.\nAREXw/o ACU w/o outer loop 59.6\nw/ outer loop 69.8\nAREXw/ ACU w/o outer loop 71.4\nw/ outer loop 82.5\nTable3: EffectofACUintheinnerresearch\nloop and the outer self-improvement loop.\nAccuracy is measured on BrowseComp.\nConfidence <60 60\u201390 90\u2013100\n0 20 40 60 80 100\nw/o ACU\nw/ ACU\nCorrect 9.6 89.3\nIncorrect 61.0 26.4 12.6\nCorrect 95.9\nIncorrect 55.2 11.8 33.0\nConfidence distribution (%)\nFigure 3: Confidence distributions for correct and incorrect outputs. Each bar \n[\u2026 separate evidence block \u2026]\nis\nnormalized within its method and outcome group.\nfinish,sotheyisolatetheeffectofreplacingthecompletetrajectorywiththeeffectivecontextconstructedbyACU.Under\nthis matched single-round setting, ACU raises BrowseComp accuracy from 59.6 to 71.4, an absolute gain of 11.8 points.\nThe gain supports the inner-loop claim that a refreshed research state containing verified findings, rejected candidates,\nunresolved constraints, and source identifiers is more useful to the research policy than the complete interaction history.\nThe within-method differences isolate the effect of the outer self-improvement loop after an inner loop has produced a\nstructured result. Without ACU, enabling the outer loop increases accuracy from 59.6 to 69.8, an absolute gain of 10.2\npoints. With ACU, the same outer loop raises accuracy from 71.4 to 82.5, a gain of 11.1 points. These consistent gains\nshow the importance",
-        "explanation": "Table 3 shows ACU raises accuracy from 59.6 to 71.4 without the outer loop, and the outer loop raises accuracy from 71.4 to 82.5 with ACU, directly supporting the claimed contributions of both mechanisms.",
-        "page": 12,
-        "pages": [
-          12,
-          13
-        ],
-        "paraphrase": "The outer self-improvement loop and autonomous context updating each contribute measurable accuracy gains on BrowseComp.",
-        "section": "Inference Framework Analysis",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "d66da9792c5f7e4bf4e6310b82fb05f1044a1316ab627309ca12e4ab461ec617",
-            "evidence_id": "Ed069fe16ffa6b527-B0059",
-            "pages": [
-              12,
-              13
-            ],
-            "section": "Inference Framework Analysis",
-            "section_role": "body",
-            "source_spans": [
-              {
-                "end": 3912,
-                "page": 12,
-                "section": "Inference Framework Analysis",
-                "section_index": 22,
-                "start": 3502,
-                "text": "turning points and preserving both positive\nand negative evidence, ACU helpsAREXavoid previously rejected paths and spend the remaining interaction budget on\nunresolved constraints.\nRecursive Self-Improvement.Table 3 separates the two parts of recursive self-improvement: ACU in the inner\nresearch loop and the outer self-improvement loop. The rows without the outer loop accept the first output produced by\n12"
-              },
-              {
-                "end": 485,
-                "page": 13,
-                "section": "Inference Framework Analysis",
-                "section_index": 23,
-                "start": 0,
-                "text": "Method Setting Acc.\nAREXw/o ACU w/o outer loop 59.6\nw/ outer loop 69.8\nAREXw/ ACU w/o outer loop 71.4\nw/ outer loop 82.5\nTable3: EffectofACUintheinnerresearch\nloop and the outer self-improvement loop.\nAccuracy is measured on BrowseComp.\nConfidence <60 60\u201390 90\u2013100\n0 20 40 60 80 100\nw/o ACU\nw/ ACU\nCorrect 9.6 89.3\nIncorrect 61.0 26.4 12.6\nCorrect 95.9\nIncorrect 55.2 11.8 33.0\nConfidence distribution (%)\nFigure 3: Confidence distributions for correct and incorrect outputs. Each bar "
-              }
-            ],
-            "text": "turning points and preserving both positive\nand negative evidence, ACU helpsAREXavoid previously rejected paths and spend the remaining interaction budget on\nunresolved constraints.\nRecursive Self-Improvement.Table 3 separates the two parts of recursive self-improvement: ACU in the inner\nresearch loop and the outer self-improvement loop. The rows without the outer loop accept the first output produced by\n12\nMethod Setting Acc.\nAREXw/o ACU w/o outer loop 59.6\nw/ outer loop 69.8\nAREXw/ ACU w/o outer loop 71.4\nw/ outer loop 82.5\nTable3: EffectofACUintheinnerresearch\nloop and the outer self-improvement loop.\nAccuracy is measured on BrowseComp.\nConfidence <60 60\u201390 90\u2013100\n0 20 40 60 80 100\nw/o ACU\nw/ ACU\nCorrect 9.6 89.3\nIncorrect 61.0 26.4 12.6\nCorrect 95.9\nIncorrect 55.2 11.8 33.0\nConfidence distribution (%)\nFigure 3: Confidence distributions for correct and incorrect outputs. Each bar "
-          },
-          {
-            "content_hash": "3c6c65a5e3877ac94f50ccd033fbe29c4ce487fbf0eb647b619f6aaf8f02fa58",
-            "evidence_id": "Ed069fe16ffa6b527-B0060",
-            "pages": [
-              13
-            ],
-            "section": "Inference Framework Analysis",
-            "section_role": "body",
-            "source_spans": [
-              {
-                "end": 1384,
-                "page": 13,
-                "section": "Inference Framework Analysis",
-                "section_index": 23,
-                "start": 485,
-                "text": "is\nnormalized within its method and outcome group.\nfinish,sotheyisolatetheeffectofreplacingthecompletetrajectorywiththeeffectivecontextconstructedbyACU.Under\nthis matched single-round setting, ACU raises BrowseComp accuracy from 59.6 to 71.4, an absolute gain of 11.8 points.\nThe gain supports the inner-loop claim that a refreshed research state containing verified findings, rejected candidates,\nunresolved constraints, and source identifiers is more useful to the research policy than the complete interaction history.\nThe within-method differences isolate the effect of the outer self-improvement loop after an inner loop has produced a\nstructured result. Without ACU, enabling the outer loop increases accuracy from 59.6 to 69.8, an absolute gain of 10.2\npoints. With ACU, the same outer loop raises accuracy from 71.4 to 82.5, a gain of 11.1 points. These consistent gains\nshow the importance "
-              }
-            ],
-            "text": "is\nnormalized within its method and outcome group.\nfinish,sotheyisolatetheeffectofreplacingthecompletetrajectorywiththeeffectivecontextconstructedbyACU.Under\nthis matched single-round setting, ACU raises BrowseComp accuracy from 59.6 to 71.4, an absolute gain of 11.8 points.\nThe gain supports the inner-loop claim that a refreshed research state containing verified findings, rejected candidates,\nunresolved constraints, and source identifiers is more useful to the research policy than the complete interaction history.\nThe within-method differences isolate the effect of the outer self-improvement loop after an inner loop has produced a\nstructured result. Without ACU, enabling the outer loop increases accuracy from 59.6 to 69.8, an absolute gain of 10.2\npoints. With ACU, the same outer loop raises accuracy from 71.4 to 82.5, a gain of 11.1 points. These consistent gains\nshow the importance "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-4",
-          "reason": "Table 3 shows ACU raising accuracy from 59.6 to 71.4 without the outer loop, and the outer loop raising accuracy from 71.4 to 82.5 with ACU, directly supporting the claimed contributions.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "positioning",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "related_work_and_gap_positioning",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0005",
-          "Ed069fe16ffa6b527-B0006"
-        ],
-        "excerpt": "Deep research is challenging not only because relevant evidence is difficult to locate, but because a valid answer must\noftensatisfymultiplecoupledconstraintssimultaneously. Anagentmustdiscoverviablecandidates,integratedistributed\nand potentially conflicting evidence, and verify that each required condition is adequately supported (Yao et al., 2023;\nNakano et al., 2021; Huang et al., 2025). Many existing systems address this challenge by extending a single search\ntrajectory with additional reasoning, tool interactions, or context (OpenAI, 2025; Jin et al., 2025; Wu et al., 2025a; Gao\net al., 2026). Although greater inference-time computation can broaden exploration, it does not guarantee systematic\nprogress: early errors may persist, exhausted directions may be revisited, and partially valid candidates may be accepted\nprematurely. The key challenge is therefore not merely to search \n[\u2026 separate evidence block \u2026]\nlonger, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also",
-        "explanation": "The introduction cites prior work on extending search trajectories and using verification for ranking or refinement, and contrasts fixed context-management heuristics with AREX's autonomous updating. However, the comparisons are brief and embedded in the introduction rather than a systematic related-work analysis.",
-        "page": 2,
-        "pages": [
-          2
-        ],
-        "paraphrase": "The manuscript positions AREX against existing long-search and verification-based approaches but does not provide a dedicated related-work section with detailed per-system comparisons.",
-        "section": "Introduction",
-        "signal_type": "concern",
-        "source_blocks": [
-          {
-            "content_hash": "05b283cf569552a039067c571a19181bb51c69c199da7b35d4f99529e0c807aa",
-            "evidence_id": "Ed069fe16ffa6b527-B0005",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 895,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 0,
-                "text": "Deep research is challenging not only because relevant evidence is difficult to locate, but because a valid answer must\noftensatisfymultiplecoupledconstraintssimultaneously. Anagentmustdiscoverviablecandidates,integratedistributed\nand potentially conflicting evidence, and verify that each required condition is adequately supported (Yao et al., 2023;\nNakano et al., 2021; Huang et al., 2025). Many existing systems address this challenge by extending a single search\ntrajectory with additional reasoning, tool interactions, or context (OpenAI, 2025; Jin et al., 2025; Wu et al., 2025a; Gao\net al., 2026). Although greater inference-time computation can broaden exploration, it does not guarantee systematic\nprogress: early errors may persist, exhausted directions may be revisited, and partially valid candidates may be accepted\nprematurely. The key challenge is therefore not merely to search "
-              }
-            ],
-            "text": "Deep research is challenging not only because relevant evidence is difficult to locate, but because a valid answer must\noftensatisfymultiplecoupledconstraintssimultaneously. Anagentmustdiscoverviablecandidates,integratedistributed\nand potentially conflicting evidence, and verify that each required condition is adequately supported (Yao et al., 2023;\nNakano et al., 2021; Huang et al., 2025). Many existing systems address this challenge by extending a single search\ntrajectory with additional reasoning, tool interactions, or context (OpenAI, 2025; Jin et al., 2025; Wu et al., 2025a; Gao\net al., 2026). Although greater inference-time computation can broaden exploration, it does not guarantee systematic\nprogress: early errors may persist, exhausted directions may be revisited, and partially valid candidates may be accepted\nprematurely. The key challenge is therefore not merely to search "
-          },
-          {
-            "content_hash": "19191119523d2f0d4247f9367c8dec95bc39380101c1eba6b24ec4ff7a3d4fdc",
-            "evidence_id": "Ed069fe16ffa6b527-B0006",
-            "pages": [
-              2
-            ],
-            "section": "Introduction",
-            "section_role": "introduction",
-            "source_spans": [
-              {
-                "end": 1789,
-                "page": 2,
-                "section": "Introduction",
-                "section_index": 1,
-                "start": 895,
-                "text": "longer, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also "
-              }
-            ],
-            "text": "longer, but to identify which constraints remain\nunresolved and use that diagnosis to formulate a more targeted next research problem.\nWe observe that deep research tasks exhibit a fundamentaldiscovery\u2013verification asymmetry. Discovering an answer\nthat jointly satisfies all constraints is costly because it requires navigating a large and sparsely informative search space,\nwhereas evaluating a proposed candidate can often be decomposed into substantially simpler constraint-wise checks.\nSuch verification reveals not only whether the current answer is correct, but also which claims are supported, which\nremain unresolved, and where the available evidence conflicts. Existing work leverages verification either to rank\ncompleted candidate trajectories or to refine decisions within an ongoing trajectory (Zeng et al., 2025b; Team et al.,\n2026). Our key insight is that verification can also "
-          }
-        ],
-        "statement_kind": "assessor_inference",
-        "support_status": "partial",
-        "support_verification": {
-          "item_id": "evidence-5",
-          "reason": "The cited introduction contrasts AREX with existing long-search and verification-based approaches, and the supplied text contains only brief embedded comparisons rather than a dedicated related-work section.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "reproducibility",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0029",
-          "Ed069fe16ffa6b527-B0033"
-        ],
-        "excerpt": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX.\n[\u2026 separate evidence block \u2026]\nFor each synthesized task, strong teacher models interact with the same tools and research environment used byAREX.\nGiven a task\ud835\udc65, a teacher model samples a research trajectory:\n\ud835\udf0f\ud835\udc56\u223c\ud835\udf0b teacher(\ud835\udf0f|\ud835\udc65).(16)\nEach trajectory records model actions, tool calls, retrieved observations, intermediate analysis, and the final structured\nanswer. Compared with standard input-output supervision, these trajectories expose the intermediate behaviors required\nfor long-horizon research.\nBecause raw trajectories may contain ineffective exploration, reasoning errors, or unsupported conclusions, we apply\nseveral quality-control procedures. First, we retain only trajectories that exhibit meaningful iterative investigation,\ncoherent research-state maintenance, and adaptation to newly acquired evidence. Trajectories that guess the answer\ndirectly, ignore observations, or fail to revise incorrect hypotheses are",
-        "explanation": "The paper describes the data pipeline and quality-control procedures in detail, and the abstract lists model availability links. However, the supplied text does not state that the synthetic task dataset, teacher trajectories, or evaluation harness are publicly released.",
-        "page": 6,
-        "pages": [
-          6,
-          7
-        ],
-        "paraphrase": "The manuscript provides model links and describes training data construction, but does not report releasing the training datasets, teacher trajectories, or full evaluation code.",
-        "section": "Training Data Construction / Teacher Trajectory Collection And Quality Control",
-        "signal_type": "concern",
-        "source_blocks": [
-          {
-            "content_hash": "d1be38766b39f8a60f23a2620fbffcb16f65f5a71f4dd83f25c6187a08f0779c",
-            "evidence_id": "Ed069fe16ffa6b527-B0029",
-            "pages": [
-              6
-            ],
-            "section": "Training Data Construction",
-            "section_role": "methods",
-            "source_spans": [
-              {
-                "end": 528,
-                "page": 6,
-                "section": "Training Data Construction",
-                "section_index": 10,
-                "start": 0,
-                "text": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX."
-              }
-            ],
-            "text": "To enableAREXto perform recursive research, we construct a specialized training dataset containing challenging\nresearch tasks, multi-step investigation trajectories, and evidence-grounded solutions. The pipeline consists of two\nstages: recursive research task synthesis and teacher trajectory collection with quality control. The first stage generates\nverifiable problem that require deep research, while the second collects high-quality trajectories from strong teacher\nmodels operating in the same research environment asAREX."
-          },
-          {
-            "content_hash": "f6b316c0ea9b73918bb2fb794c0e23fcb3b20442b10535e9d0e1c2c8641549bb",
-            "evidence_id": "Ed069fe16ffa6b527-B0033",
-            "pages": [
-              7
-            ],
-            "section": "Teacher Trajectory Collection And Quality Control",
-            "section_role": "body",
-            "source_spans": [
-              {
-                "end": 896,
-                "page": 7,
-                "section": "Teacher Trajectory Collection And Quality Control",
-                "section_index": 13,
-                "start": 0,
-                "text": "For each synthesized task, strong teacher models interact with the same tools and research environment used byAREX.\nGiven a task\ud835\udc65, a teacher model samples a research trajectory:\n\ud835\udf0f\ud835\udc56\u223c\ud835\udf0b teacher(\ud835\udf0f|\ud835\udc65).(16)\nEach trajectory records model actions, tool calls, retrieved observations, intermediate analysis, and the final structured\nanswer. Compared with standard input-output supervision, these trajectories expose the intermediate behaviors required\nfor long-horizon research.\nBecause raw trajectories may contain ineffective exploration, reasoning errors, or unsupported conclusions, we apply\nseveral quality-control procedures. First, we retain only trajectories that exhibit meaningful iterative investigation,\ncoherent research-state maintenance, and adaptation to newly acquired evidence. Trajectories that guess the answer\ndirectly, ignore observations, or fail to revise incorrect hypotheses are "
-              }
-            ],
-            "text": "For each synthesized task, strong teacher models interact with the same tools and research environment used byAREX.\nGiven a task\ud835\udc65, a teacher model samples a research trajectory:\n\ud835\udf0f\ud835\udc56\u223c\ud835\udf0b teacher(\ud835\udf0f|\ud835\udc65).(16)\nEach trajectory records model actions, tool calls, retrieved observations, intermediate analysis, and the final structured\nanswer. Compared with standard input-output supervision, these trajectories expose the intermediate behaviors required\nfor long-horizon research.\nBecause raw trajectories may contain ineffective exploration, reasoning errors, or unsupported conclusions, we apply\nseveral quality-control procedures. First, we retain only trajectories that exhibit meaningful iterative investigation,\ncoherent research-state maintenance, and adaptation to newly acquired evidence. Trajectories that guess the answer\ndirectly, ignore observations, or fail to revise incorrect hypotheses are "
-          }
-        ],
-        "statement_kind": "assessor_inference",
-        "support_status": "partial",
-        "support_verification": {
-          "item_id": "evidence-6",
-          "reason": "The cited text describes the training data construction and quality-control procedures but does not state that the datasets, teacher trajectories, or evaluation code are publicly released.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "limitation",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0070"
-        ],
-        "excerpt": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state",
-        "explanation": "The conclusion explicitly states that future work will investigate more general and autonomous mechanisms for estimating step utility and assigning fine-grained training signals, indicating awareness of current limitations in the credit-assignment approach.",
-        "page": 14,
-        "pages": [
-          14
-        ],
-        "paraphrase": "The conclusion acknowledges that step utility estimation and fine-grained training signal assignment remain open problems for future work.",
-        "section": "Conclusion",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "8575d6188f4b0598b4dc235e6852936deec70847a1f423e761b4ddbeb7575551",
-            "evidence_id": "Ed069fe16ffa6b527-B0070",
-            "pages": [
-              14
-            ],
-            "section": "Conclusion",
-            "section_role": "conclusion",
-            "source_spans": [
-              {
-                "end": 895,
-                "page": 14,
-                "section": "Conclusion",
-                "section_index": 26,
-                "start": 0,
-                "text": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state "
-              }
-            ],
-            "text": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-7",
-          "reason": "The conclusion explicitly states that future work will investigate more general and autonomous mechanisms for estimating step utility and assigning fine-grained training signals.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "limitation",
-        "context_id": "d069fe16ffa6b527d57c57b4744a937596decab52fb90051a9952d0116cf23d7",
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [
-          "Ed069fe16ffa6b527-B0070",
-          "Ed069fe16ffa6b527-B0071"
-        ],
-        "excerpt": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state \n[\u2026 separate evidence block \u2026]\nrefinement and step-aware optimization\noffer a promising direction for building reliable long-horizon research agents.\n14",
-        "explanation": "The conclusion contains only a brief future-work statement about step utility estimation. The supplied text lacks a systematic discussion of limitations such as confidence threshold sensitivity, maximum-round fallback behavior, or potential benchmark contamination.",
-        "page": 14,
-        "pages": [
-          14
-        ],
-        "paraphrase": "The manuscript does not provide a dedicated limitations section discussing failure modes, benchmark coverage gaps, or robustness of the confidence-based termination procedure.",
-        "section": "Conclusion",
-        "signal_type": "concern",
-        "source_blocks": [
-          {
-            "content_hash": "8575d6188f4b0598b4dc235e6852936deec70847a1f423e761b4ddbeb7575551",
-            "evidence_id": "Ed069fe16ffa6b527-B0070",
-            "pages": [
-              14
-            ],
-            "section": "Conclusion",
-            "section_role": "conclusion",
-            "source_spans": [
-              {
-                "end": 895,
-                "page": 14,
-                "section": "Conclusion",
-                "section_index": 26,
-                "start": 0,
-                "text": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state "
-              }
-            ],
-            "text": "In this work, we introducedAREX, a recursively self-improving agent for deep research.AREXexploits the discovery\u2013\nverificationasymmetryindeepresearchtotransformprovisionalanswersintopartiallyverifiedresearchstates,preserving\nsupported evidence while isolating unresolved claims for subsequent targeted investigation. Coupled with autonomous\ncontext updating and step-aware training,AREXachieves strong performance across deep search, wide search, agentic\nreasoning, and tool-use benchmarks. Our preliminary training analysis further highlights the importance of identifying\nand reinforcing decision-critical steps in long-horizon trajectories, rather than treating all intermediate actions uniformly.\nFuture work will investigate more general and autonomous mechanisms for estimating step utility and assigning\nfine-grained training signals. These results suggest that verification-guided state "
-          },
-          {
-            "content_hash": "3b25b44568ca19d59c559be15e2a8ee64f4d597a0e5437122494a94bc5243c2d",
-            "evidence_id": "Ed069fe16ffa6b527-B0071",
-            "pages": [
-              14
-            ],
-            "section": "Conclusion",
-            "section_role": "conclusion",
-            "source_spans": [
-              {
-                "end": 1016,
-                "page": 14,
-                "section": "Conclusion",
-                "section_index": 26,
-                "start": 895,
-                "text": "refinement and step-aware optimization\noffer a promising direction for building reliable long-horizon research agents.\n14"
-              }
-            ],
-            "text": "refinement and step-aware optimization\noffer a promising direction for building reliable long-horizon research agents.\n14"
-          }
-        ],
-        "statement_kind": "assessor_inference",
-        "support_status": "partial",
-        "support_verification": {
-          "item_id": "evidence-8",
-          "reason": "The supplied conclusion contains only a brief future-work statement and no dedicated limitations section discussing failure modes, benchmark coverage gaps, or robustness of the confidence-based termination procedure.",
-          "status": "supported"
-        }
-      }
-    ],
+    "evidence": [],
     "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2607.21461",
     "gate_version": "scientific-gate-v1",
@@ -948,20 +395,14 @@
     "missing_information": [],
     "overall_quality_score": 78,
     "paper_type": "systems_or_application",
-    "positive_signals": [
-      "AREX is a family of recursively self-improving deep research agents that alternate between an inner research loop and an outer self-improvement loop, with a learned autonomous context-update tool.",
-      "The discovery-verification asymmetry motivates using verification to define transitions between research rounds rather than only ranking completed trajectories.",
-      "The training pipeline includes verified synthetic task construction, teacher trajectory collection with quality control, multi-stage agentic mid-training, key-step focused supervision, and step-aware reinforcement learning.",
-      "The outer self-improvement loop and autonomous context updating each contribute measurable accuracy gains on BrowseComp.",
-      "The conclusion acknowledges that step utility estimation and fine-grained training signal assignment remain open problems for future work."
-    ],
-    "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "positive_signals": [],
+    "rationale": "Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.",
     "recommendation": "promising",
     "rubric_version": "scholarly-rubric-v1",
     "source_content_hash": "a52a40569ca6ed01cb7ef7eaf4fcdb4c687e37180d5145d135c91d40cd2791e8",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Scientific support remains unresolved. The narrative claims the evaluation spans six benchmarks, but the supplied sources do not establish six benchmarks; the cited evidence supports the framework, training pipeline, and BrowseComp ablations, but the six-benchmark assertion is not verified. Cited evidence does not establish numerical values/units: 77.5"
+    "uncertainty": "Scientific support remains unresolved. Explanation verification unavailable. Cited evidence does not establish numerical values/units: 77.5 Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

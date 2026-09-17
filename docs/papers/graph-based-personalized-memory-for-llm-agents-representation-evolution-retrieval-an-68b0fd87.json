@@ -39,7 +39,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-09 11:29:16",
-    "generated_at": "2026-09-17 09:29:52",
+    "generated_at": "2026-09-17 10:51:01",
     "last_seen_at": "2026-09-15 11:59:55",
     "metadata_sources": [
       "openalex",
@@ -111,15 +111,13 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T09:23:31+00:00",
+    "assessed_at": "2026-09-17T10:46:15+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-cross-section-v1",
+    "assessment_version": "quality-batch2-recovery-v1",
     "assessor_model": "deepseek/deepseek-v4-pro-0813",
     "assessor_type": "llm",
     "combined_rank_score": 0.91,
-    "concerns": [
-      "The survey does not describe a systematic search protocol, inclusion criteria, or coverage boundaries for selecting the reviewed systems and benchmarks."
-    ],
+    "concerns": [],
     "concise_summary": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "confidence": "medium",
     "coverage": {
@@ -163,7 +161,7 @@
       "format": "PDF",
       "max_extracted_characters": 400000,
       "max_pages": 80,
-      "normalization_version": "canonical-v1",
+      "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
       "retained_source_characters": 45649,
@@ -234,6 +232,7 @@
       "selection_version": "representative-v1",
       "source_content_hash": "d51caea89652a0b9b18ecf8d1cade6d38c66205d6834dc0f8cbd57ce343030fd",
       "source_pages": 8,
+      "surrogate_code_units": 0,
       "unreadable_pages": [],
       "version": "coverage-v1",
       "warnings": [
@@ -244,7 +243,7 @@
     "dimension_scores": {
       "contribution_clarity": 4,
       "evaluation_or_validation_strength": 3,
-      "evidence_to_claim_alignment": 4,
+      "evidence_to_claim_alignment": 3,
       "limitations_and_uncertainty_handling": 3,
       "methodological_rigor": 3,
       "presentation_and_precision": 4,
@@ -259,18 +258,16 @@
         "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
         "dimension": "contribution_clarity",
         "evidence_ids": [
-          "E1e232ee4e35e94c0-B0003",
-          "E1e232ee4e35e94c0-B0009"
+          "E1e232ee4e35e94c0-B0003"
         ],
-        "excerpt": "relations, temporal context, and evidence links. Such\nrepresentations can model not only what an agent remembers\nabout a user but also how memories are connected, revised, and\nretrieved to support personalized decisions. However, existing\nwork remains fragmented across personalized agents and generic\ngraph memory frameworks, making it difficult to understand the\ndesign space as a whole. This survey develops a lifecycle-oriented\nview of graph-based personalized memory for LLM agents. We\norganize existing studies around memory representation, memory\nevolution, memory retrieval, and memory evaluation. We further\ncompare key design choices, discuss current evaluation practices,\nand open challenges in building reliable long-term personalized\nagents. This survey aims to clarify how graph-based memory can\nsupport adaptive, controllable, and user-centric LLM agents. The\nrepository for this \n[\u2026 separate evidence block \u2026]\nevaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory",
-        "explanation": "The abstract and introduction explicitly frame the survey as developing a lifecycle-oriented view and organizing existing studies around these four stages. The body then follows this structure with dedicated sections for each stage, making the contribution concrete and traceable.",
+        "excerpt": "relations, temporal context, and evidence links. Such\nrepresentations can model not only what an agent remembers\nabout a user but also how memories are connected, revised, and\nretrieved to support personalized decisions. However, existing\nwork remains fragmented across personalized agents and generic\ngraph memory frameworks, making it difficult to understand the\ndesign space as a whole. This survey develops a lifecycle-oriented\nview of graph-based personalized memory for LLM agents. We\norganize existing studies around memory representation, memory\nevolution, memory retrieval, and memory evaluation. We further\ncompare key design choices, discuss current evaluation practices,\nand open challenges in building reliable long-term personalized\nagents. This survey aims to clarify how graph-based memory can\nsupport adaptive, controllable, and user-centric LLM agents. The\nrepository for this",
+        "explanation": "The abstract states the survey develops a lifecycle-oriented view and organizes existing studies around memory representation, evolution, retrieval, and evaluation. This is a clear attributed contribution statement.",
         "page": 1,
         "pages": [
-          1,
-          2
+          1
         ],
-        "paraphrase": "The paper's stated contribution is a lifecycle-oriented taxonomy organizing graph-based personalized memory for LLM agents around representation, evolution, retrieval, and evaluation.",
-        "section": "Evaluation / Appendix: Introduction",
+        "paraphrase": "The survey develops a lifecycle-oriented taxonomy organizing graph-based personalized memory for LLM agents around representation, evolution, retrieval, and evaluation.",
+        "section": "Evaluation",
         "signal_type": "positive",
         "source_blocks": [
           {
@@ -292,10 +289,43 @@
               }
             ],
             "text": "relations, temporal context, and evidence links. Such\nrepresentations can model not only what an agent remembers\nabout a user but also how memories are connected, revised, and\nretrieved to support personalized decisions. However, existing\nwork remains fragmented across personalized agents and generic\ngraph memory frameworks, making it difficult to understand the\ndesign space as a whole. This survey develops a lifecycle-oriented\nview of graph-based personalized memory for LLM agents. We\norganize existing studies around memory representation, memory\nevolution, memory retrieval, and memory evaluation. We further\ncompare key design choices, discuss current evaluation practices,\nand open challenges in building reliable long-term personalized\nagents. This survey aims to clarify how graph-based memory can\nsupport adaptive, controllable, and user-centric LLM agents. The\nrepository for this "
-          },
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited abstract text directly supports the attributed contribution statement.",
+          "explanation_status": "supported",
+          "item_id": "evidence-0",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0003"
+          ],
+          "reason": "The cited text explicitly states the survey develops a lifecycle-oriented view and organizes studies around representation, evolution, retrieval, and evaluation.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "contribution",
+        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E1e232ee4e35e94c0-B0010"
+        ],
+        "excerpt": "connects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user.",
+        "explanation": "The introduction lists four explicit contributions: taxonomy, evaluation, timely review, and future directions. This supports the clarity of the survey's stated scope.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "The survey's contribution includes a taxonomy, an evaluation summary identifying gaps, a timely review of recent methods, and future directions.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
           {
-            "content_hash": "b49d38dbdc5a870d531aa05a27b9f625bc7591fba3061e4751c39f3ef3a79fae",
-            "evidence_id": "E1e232ee4e35e94c0-B0009",
+            "content_hash": "8ffc67502ceb7582d5df4acb6c7470b9b2f2710272cda02371c82cf0d2be4896",
+            "evidence_id": "E1e232ee4e35e94c0-B0010",
             "pages": [
               2
             ],
@@ -303,41 +333,48 @@
             "section_role": "appendix",
             "source_spans": [
               {
-                "end": 1439,
+                "end": 2324,
                 "page": 2,
                 "section": "Appendix: Introduction",
                 "section_index": 3,
-                "start": 539,
-                "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
+                "start": 1439,
+                "text": "connects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user. "
               }
             ],
-            "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
+            "text": "connects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user. "
           }
         ],
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
-          "item_id": "evidence-0",
-          "reason": "The cited abstract and introduction explicitly state the survey develops a lifecycle-oriented view and organizes studies around representation, evolution, retrieval, and evaluation.",
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited introduction lists the four contributions exactly as described.",
+          "explanation_status": "supported",
+          "item_id": "evidence-1",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0010"
+          ],
+          "reason": "The cited text lists taxonomy, evaluation, timely review, and future directions as explicit contributions.",
           "status": "supported"
         }
       },
       {
-        "claim_role": "contribution",
+        "claim_role": "positioning",
         "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "scholarly_novelty_or_value",
+        "dimension": "related_work_and_gap_positioning",
         "evidence_ids": [
           "E1e232ee4e35e94c0-B0008",
           "E1e232ee4e35e94c0-B0009"
         ],
         "excerpt": "although realizing\nthem depends on how the graph is constructed, updated, and\nqueried rather than on the adoption of a graph alone [8], [25].\nAlthough recent surveys have examined personalized agents\nand agent memory, they use different primary lenses. Surveys\nof personalized agents frame personalization through agent\narXiv:2609.08599v1  [cs.AI]  8 Sep 2026\nFig. 1. Overview of a graph-based personalized agent memory system.\ncapabilities, including profile modeling, memory, planning,\nand action execution. They treat persistent user memory as\none component, rather than as the central object of represen-\ntation [5]. The survey of graph-based agent memory organizes\nthe field around memory extraction, storage, retrieval, and evo-\nlution across broad agent settings. It considers personalization\nalongside other applications [8]. Broader agent-memory sur-\nveys focus on memory-module design and \n[\u2026 separate evidence block \u2026]\nevaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory",
-        "explanation": "The introduction identifies prior surveys of personalized agents, graph-based agent memory, and broader agent-memory surveys, and argues that together they do not provide a unified account of graph-based personalized memory for LLM agents. This gap framing supports the survey's value as a synthesis.",
+        "explanation": "The introduction contrasts prior surveys of personalized agents, graph-based agent memory, and broader agent-memory surveys, then states these perspectives do not provide a unified account of graph-based personalized memory. This establishes the gap the survey addresses.",
         "page": 1,
         "pages": [
           1,
           2
         ],
-        "paraphrase": "The survey fills a gap by providing a unified account of graph-based personalized memory across representation, evolution, retrieval, and evaluation, which prior surveys do not provide.",
+        "paraphrase": "The survey positions itself against prior surveys of personalized agents and graph-based agent memory, which use different primary lenses and do not provide a unified account of graph-based personalized memory.",
         "section": "Appendix: Introduction",
         "signal_type": "positive",
         "source_blocks": [
@@ -394,8 +431,16 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
-          "item_id": "evidence-1",
-          "reason": "The cited introduction contrasts prior surveys and states that together they do not provide a unified account of graph-based personalized memory across the four lifecycle stages.",
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly contrasts prior surveys and identifies the gap.",
+          "explanation_status": "supported",
+          "item_id": "evidence-2",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0008",
+            "E1e232ee4e35e94c0-B0009"
+          ],
+          "reason": "The cited text contrasts prior surveys and states they do not provide a unified account of graph-based personalized memory.",
           "status": "supported"
         }
       },
@@ -404,150 +449,16 @@
         "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
         "dimension": "methodological_rigor",
         "evidence_ids": [
-          "E1e232ee4e35e94c0-B0009",
-          "E1e232ee4e35e94c0-B0010"
-        ],
-        "excerpt": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory \n[\u2026 separate evidence block \u2026]\nconnects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user.",
-        "explanation": "The supplied text contains no description of how the literature was searched, what inclusion or exclusion criteria were applied, or how the coverage of systems and benchmarks was determined. This limits the reproducibility and verifiability of the survey's coverage claims.",
-        "page": 2,
-        "pages": [
-          2
-        ],
-        "paraphrase": "The survey does not describe a systematic search protocol, inclusion criteria, or coverage boundaries for selecting the reviewed systems and benchmarks.",
-        "section": "Appendix: Introduction",
-        "signal_type": "concern",
-        "source_blocks": [
-          {
-            "content_hash": "b49d38dbdc5a870d531aa05a27b9f625bc7591fba3061e4751c39f3ef3a79fae",
-            "evidence_id": "E1e232ee4e35e94c0-B0009",
-            "pages": [
-              2
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 1439,
-                "page": 2,
-                "section": "Appendix: Introduction",
-                "section_index": 3,
-                "start": 539,
-                "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
-              }
-            ],
-            "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
-          },
-          {
-            "content_hash": "8ffc67502ceb7582d5df4acb6c7470b9b2f2710272cda02371c82cf0d2be4896",
-            "evidence_id": "E1e232ee4e35e94c0-B0010",
-            "pages": [
-              2
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 2324,
-                "page": 2,
-                "section": "Appendix: Introduction",
-                "section_index": 3,
-                "start": 1439,
-                "text": "connects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user. "
-              }
-            ],
-            "text": "connects\nmemory ingestion, structure, evolution, and retrieval within the\npersonalized agent workflow.\nOur contributions are as follows:\n\u2022Taxonomy. We develop a lifecycle taxonomy that or-\nganizes existing studies on graph-based personalized\nmemory around representation, evolution, retrieval, and\nevaluation.\n\u2022Evaluation. We summarize existing benchmarks and\nmetrics and identify gaps in graph quality, user control,\nlifecycle validity, and realistic personalization.\n\u2022Timely Review. For each category, we review recent\nmethods and discuss their motivations, graph structures,\nand user-modeling functions.\n\u2022Future Directions. We outline several open research\ndirections to guide future research on this promising\ntopic.\nII. PRELIMINARIES\nA. Graph-based Personalized Memory\nPersonalization refers to an LLM agent adapting its re-\nsponses, retrieval, and actions to an individual user. "
-          }
-        ],
-        "statement_kind": "assessor_inference",
-        "support_status": "unsupported",
-        "support_verification": {
-          "item_id": "evidence-2",
-          "reason": "The supplied sources contain no description of a search protocol, inclusion criteria, or coverage boundaries, so the absence claim is justified by the cited text.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "evaluation",
-        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [
-          "E1e232ee4e35e94c0-B0034",
-          "E1e232ee4e35e94c0-B0036"
-        ],
-        "excerpt": "tests long-horizon\nconversational recall. LoCoMo [52] is a common evaluation\nbenchmark for graph-memory papers, including production-\nready memory with a graph variant [31], topology-aware\ngraph reasoning [41], learned traversal [53], multi-scale user\nmemory [54], and graph-native versioned memory [45]. Long-\nMemEval [55] evaluates longer histories, knowledge updates,\nsingle-session preference questions, temporal reasoning, and\nabstention. These benchmarks are valuable because they force\nretrieval under multi-session noise, but they mostly observe\nwhether the final answer is correct rather than whether the\nmemory graph itself is correct.\nPersonalization-specific benchmarks shift the target from\nfactual recall to user-state modeling. PersonaMem [56]\ntests dynamic user-profile and preference tracking, while\nPersonaMem-v2 [9] scales this setting to implicit personas,\nlonger contexts, \n[\u2026 separate evidence block \u2026]\nActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution",
-        "explanation": "The evaluation section reviews multiple benchmark families (LoCoMo, LongMemEval, PersonaMem, RealMem, EngramaBench, EvoMemBench, etc.) and organizes reported metrics into five groups. The challenges section then identifies gaps in graph quality, user control, lifecycle validity, and realistic personalization, fulfilling the stated evaluation contribution.",
-        "page": 6,
-        "pages": [
-          6
-        ],
-        "paraphrase": "The survey summarizes existing benchmarks and metrics for personalized memory and identifies gaps in graph quality, user control, lifecycle validity, and realistic personalization.",
-        "section": "Appendix: Memoryretrieval",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "fb6ebbe52a1139f95ca067e0ee005a6765e0c50c8e85fd0c0ec0315ca9f1b3c8",
-            "evidence_id": "E1e232ee4e35e94c0-B0034",
-            "pages": [
-              6
-            ],
-            "section": "Appendix: Memoryretrieval",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 3357,
-                "page": 6,
-                "section": "Appendix: Memoryretrieval",
-                "section_index": 8,
-                "start": 2463,
-                "text": "tests long-horizon\nconversational recall. LoCoMo [52] is a common evaluation\nbenchmark for graph-memory papers, including production-\nready memory with a graph variant [31], topology-aware\ngraph reasoning [41], learned traversal [53], multi-scale user\nmemory [54], and graph-native versioned memory [45]. Long-\nMemEval [55] evaluates longer histories, knowledge updates,\nsingle-session preference questions, temporal reasoning, and\nabstention. These benchmarks are valuable because they force\nretrieval under multi-session noise, but they mostly observe\nwhether the final answer is correct rather than whether the\nmemory graph itself is correct.\nPersonalization-specific benchmarks shift the target from\nfactual recall to user-state modeling. PersonaMem [56]\ntests dynamic user-profile and preference tracking, while\nPersonaMem-v2 [9] scales this setting to implicit personas,\nlonger contexts, "
-              }
-            ],
-            "text": "tests long-horizon\nconversational recall. LoCoMo [52] is a common evaluation\nbenchmark for graph-memory papers, including production-\nready memory with a graph variant [31], topology-aware\ngraph reasoning [41], learned traversal [53], multi-scale user\nmemory [54], and graph-native versioned memory [45]. Long-\nMemEval [55] evaluates longer histories, knowledge updates,\nsingle-session preference questions, temporal reasoning, and\nabstention. These benchmarks are valuable because they force\nretrieval under multi-session noise, but they mostly observe\nwhether the final answer is correct rather than whether the\nmemory graph itself is correct.\nPersonalization-specific benchmarks shift the target from\nfactual recall to user-state modeling. PersonaMem [56]\ntests dynamic user-profile and preference tracking, while\nPersonaMem-v2 [9] scales this setting to implicit personas,\nlonger contexts, "
-          },
-          {
-            "content_hash": "5845d4a97c757a907e7642425b239b2d79a0d0c05ae332f84c8dd36c3fcca125",
-            "evidence_id": "E1e232ee4e35e94c0-B0036",
-            "pages": [
-              6
-            ],
-            "section": "Appendix: Memoryretrieval",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 5122,
-                "page": 6,
-                "section": "Appendix: Memoryretrieval",
-                "section_index": 8,
-                "start": 4251,
-                "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution "
-              }
-            ],
-            "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-3",
-          "reason": "The cited evaluation section reviews multiple named benchmarks and organizes metrics into five groups, supporting the claim that benchmarks and metrics are summarized.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "result",
-        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "evidence_to_claim_alignment",
-        "evidence_ids": [
           "E1e232ee4e35e94c0-B0016",
           "E1e232ee4e35e94c0-B0017"
         ],
         "excerpt": "mutually\nexclusive, and a system may combine several patterns. Flat,\nhierarchical, and hypergraph patterns describe organization\nwithin one graph. Hybrid designs combine graphs with non-\ngraph memory substrates, whereas multiple-graph designs\npartition memory across separate graph instances.\n1) Flat Graph:We useflat graphto refer to a memory\ngraph that stores user-related facts, preferences, and relations\nas nodes and typed edges without explicit abstraction layers.\nHeterogeneous node and edge types do not themselves consti-\ntute a hierarchy. UMGR [19] is a domain-oriented heteroge-\nneous graph linking users, items, attributes, and opinions for\nFig. 2. Representative graph-based memory patterns for personalized LLM\nagents.\nrecommendation; KGT [35] stores personalized factual triples\nrepresenting editable user beliefs; Mem0 g [31] constructs an\nopen-domain entity-relation graph \n[\u2026 separate evidence block \u2026]\nincrementally from conver-\nsation. These systems share the absence of explicit abstraction\nlayering while their node schemas and scopes differ. Flat\ntopology stores user-related facts and relations explicitly but\ndoes not itself separate source evidence from extracted facts\nor from higher-level abstractions. Flat graphs can still include\nprovenance and validity metadata.\n2) Hierarchical Graph:Hierarchical graph memories or-\nganize user evidence into multiple layers, making user state\naccessible at different levels of specificity. Hierarchy need\nnot be reduced to monotonic abstraction; cross-level links\ncan keep evidence reachable from higher-level representa-\ntions [18], [29]. Hierarchies serve two main functions in the\nsystems considered here. For evidence-to-abstraction organiza-\ntion, GAAMA [29] preserves turns as episode nodes, extracts\nfacts and concepts at an intermediate level,",
-        "explanation": "Each taxonomy category is illustrated with concrete systems: flat graphs (UMGR, KGT, Mem0g), hierarchical graphs (GAAMA, Bi-Mem, GAM, SGMem), hypergraphs (HingeMem, HyperMem), hybrid graphs (H-Mem, LiCoMemory, MemWeaver), and multiple graphs (DEMENTIA-PLAN). Evolution operations and retrieval mechanisms are similarly tied to named systems, aligning the survey's organizational claims with cited evidence.",
+        "explanation": "The representation section defines five patterns and then reviews representative systems such as UMGR, KGT, and Mem0 g under the flat graph pattern. This shows a systematic organizational method for the survey.",
         "page": 3,
         "pages": [
           3
         ],
-        "paraphrase": "The survey's claims about representation patterns, evolution operations, and retrieval mechanisms are grounded in named systems with specific design descriptions.",
+        "paraphrase": "The survey organizes representation into five patterns: flat, hierarchical, hypergraph, hybrid, and multiple disjoint graphs, and reviews systems within each pattern.",
         "section": "Appendix: Introduction",
         "signal_type": "positive",
         "source_blocks": [
@@ -595,85 +506,292 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
-          "item_id": "evidence-4",
-          "reason": "The cited representation section names specific systems for flat and hierarchical graph patterns, grounding the taxonomy categories in concrete examples.",
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text defines the patterns and reviews representative systems, supporting the organizational method claim.",
+          "explanation_status": "supported",
+          "item_id": "evidence-3",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0016",
+            "E1e232ee4e35e94c0-B0017"
+          ],
+          "reason": "The cited text defines five representation patterns and reviews systems under the flat graph pattern.",
           "status": "supported"
         }
       },
       {
-        "claim_role": "positioning",
+        "claim_role": "method",
         "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "related_work_and_gap_positioning",
+        "dimension": "methodological_rigor",
         "evidence_ids": [
-          "E1e232ee4e35e94c0-B0008",
-          "E1e232ee4e35e94c0-B0009"
+          "E1e232ee4e35e94c0-B0023",
+          "E1e232ee4e35e94c0-B0024"
         ],
-        "excerpt": "although realizing\nthem depends on how the graph is constructed, updated, and\nqueried rather than on the adoption of a graph alone [8], [25].\nAlthough recent surveys have examined personalized agents\nand agent memory, they use different primary lenses. Surveys\nof personalized agents frame personalization through agent\narXiv:2609.08599v1  [cs.AI]  8 Sep 2026\nFig. 1. Overview of a graph-based personalized agent memory system.\ncapabilities, including profile modeling, memory, planning,\nand action execution. They treat persistent user memory as\none component, rather than as the central object of represen-\ntation [5]. The survey of graph-based agent memory organizes\nthe field around memory extraction, storage, retrieval, and evo-\nlution across broad agent settings. It considers personalization\nalongside other applications [8]. Broader agent-memory sur-\nveys focus on memory-module design and \n[\u2026 separate evidence block \u2026]\nevaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory",
-        "explanation": "The introduction explicitly contrasts the survey with prior work using different primary lenses: personalized-agent surveys treat memory as one component, graph-based agent-memory surveys consider personalization alongside other applications, and broader agent-memory surveys focus on memory-module design and evaluation. This comparison is adequate for the survey's actual claims.",
-        "page": 1,
+        "excerpt": "whether to admit it,\nintegrate it into the existing structure, resolve conflicts with\nprior states, consolidate accumulated memory, and remove\noutdated records. This section examines these five evolution\noperations (illustrated in Fig. 3).\nA. Memory Admission\nAdmission decides whether incoming evidence becomes\npersistent memory and at what functional type or granularity.\nIn KGT [35], user feedback is treated as a trigger to add or re-\nplace factual triples in its graph. MemORAI [21] applies selec-\ntive filtering and compression to retain user-persona-relevant\nepisodic content, facts, and preferences while compressing less\ninformative discourse. MemGuard [40] assigns each memory\na functional role (e.g., fact, procedural instruction, constraint)\nat write time and preserves boundaries among functionally\ndistinct memory types. Admission protocol is important as\nover-admission risks \n[\u2026 separate evidence block \u2026]\nembedding transient claims as durable\nuser state, while under-admission can discard evidence that\nlater interactions require.\nB. Memory Integration\nAfter admission, integration attaches evidence to the ex-\nisting graph structure at a local write scale. Append-and-\nlink preserves provenance to the originating turn, session, or\nchunk, as in LiCoMemory [10]. To reduce redundancy when\nadmitting memory, Mem0 g [31] reuses semantically matched\nnodes and invalidates obsolete edges, while HingeMem [36]\nconsolidates near-duplicate boundary hyperedges. GAM [22]\nuses buffered attachment, writing new utterances into an active\nevent graph before later consolidation into its global graph.\nThis ensures GAM only consolidates semantically complete\nunits and reduces semantic drift in the main graph.\nC. Conflict Resolution\nConflict resolution addresses incoming evidence that\nchanges the validity or scope",
+        "explanation": "The evolution section explicitly names five operations and then reviews admission protocols in KGT, MemORAI, and MemGuard. This demonstrates a structured analytical framework.",
+        "page": 4,
         "pages": [
-          1,
-          2
+          4,
+          5
         ],
-        "paraphrase": "The paper positions itself against prior surveys of personalized agents, graph-based agent memory, and broader agent-memory surveys, arguing that none provides a unified lifecycle account of graph-based personalized memory.",
+        "paraphrase": "The survey identifies five evolution operations: admission, integration, conflict resolution, consolidation, and removal, and reviews systems implementing each.",
         "section": "Appendix: Introduction",
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "7ab3441613e195980393d301051a8f2ec0d9071483b34ae7257ed2f25c686f33",
-            "evidence_id": "E1e232ee4e35e94c0-B0008",
+            "content_hash": "2463e93cf6e7107035840cea80c105c4e4932a9df39577b43233f55660056a76",
+            "evidence_id": "E1e232ee4e35e94c0-B0023",
             "pages": [
-              1,
-              2
+              4
             ],
             "section": "Appendix: Introduction",
             "section_role": "appendix",
             "source_spans": [
               {
-                "end": 3049,
-                "page": 1,
+                "end": 5220,
+                "page": 4,
                 "section": "Appendix: Introduction",
-                "section_index": 2,
-                "start": 2690,
-                "text": "although realizing\nthem depends on how the graph is constructed, updated, and\nqueried rather than on the adoption of a graph alone [8], [25].\nAlthough recent surveys have examined personalized agents\nand agent memory, they use different primary lenses. Surveys\nof personalized agents frame personalization through agent\narXiv:2609.08599v1  [cs.AI]  8 Sep 2026"
-              },
-              {
-                "end": 539,
-                "page": 2,
-                "section": "Appendix: Introduction",
-                "section_index": 3,
-                "start": 0,
-                "text": "Fig. 1. Overview of a graph-based personalized agent memory system.\ncapabilities, including profile modeling, memory, planning,\nand action execution. They treat persistent user memory as\none component, rather than as the central object of represen-\ntation [5]. The survey of graph-based agent memory organizes\nthe field around memory extraction, storage, retrieval, and evo-\nlution across broad agent settings. It considers personalization\nalongside other applications [8]. Broader agent-memory sur-\nveys focus on memory-module design and "
+                "section_index": 5,
+                "start": 4329,
+                "text": "whether to admit it,\nintegrate it into the existing structure, resolve conflicts with\nprior states, consolidate accumulated memory, and remove\noutdated records. This section examines these five evolution\noperations (illustrated in Fig. 3).\nA. Memory Admission\nAdmission decides whether incoming evidence becomes\npersistent memory and at what functional type or granularity.\nIn KGT [35], user feedback is treated as a trigger to add or re-\nplace factual triples in its graph. MemORAI [21] applies selec-\ntive filtering and compression to retain user-persona-relevant\nepisodic content, facts, and preferences while compressing less\ninformative discourse. MemGuard [40] assigns each memory\na functional role (e.g., fact, procedural instruction, constraint)\nat write time and preserves boundaries among functionally\ndistinct memory types. Admission protocol is important as\nover-admission risks "
               }
             ],
-            "text": "although realizing\nthem depends on how the graph is constructed, updated, and\nqueried rather than on the adoption of a graph alone [8], [25].\nAlthough recent surveys have examined personalized agents\nand agent memory, they use different primary lenses. Surveys\nof personalized agents frame personalization through agent\narXiv:2609.08599v1  [cs.AI]  8 Sep 2026\nFig. 1. Overview of a graph-based personalized agent memory system.\ncapabilities, including profile modeling, memory, planning,\nand action execution. They treat persistent user memory as\none component, rather than as the central object of represen-\ntation [5]. The survey of graph-based agent memory organizes\nthe field around memory extraction, storage, retrieval, and evo-\nlution across broad agent settings. It considers personalization\nalongside other applications [8]. Broader agent-memory sur-\nveys focus on memory-module design and "
+            "text": "whether to admit it,\nintegrate it into the existing structure, resolve conflicts with\nprior states, consolidate accumulated memory, and remove\noutdated records. This section examines these five evolution\noperations (illustrated in Fig. 3).\nA. Memory Admission\nAdmission decides whether incoming evidence becomes\npersistent memory and at what functional type or granularity.\nIn KGT [35], user feedback is treated as a trigger to add or re-\nplace factual triples in its graph. MemORAI [21] applies selec-\ntive filtering and compression to retain user-persona-relevant\nepisodic content, facts, and preferences while compressing less\ninformative discourse. MemGuard [40] assigns each memory\na functional role (e.g., fact, procedural instruction, constraint)\nat write time and preserves boundaries among functionally\ndistinct memory types. Admission protocol is important as\nover-admission risks "
           },
           {
-            "content_hash": "b49d38dbdc5a870d531aa05a27b9f625bc7591fba3061e4751c39f3ef3a79fae",
-            "evidence_id": "E1e232ee4e35e94c0-B0009",
+            "content_hash": "68fc53353f4e66c10c348ae9dbcfb15419a82ca7450b5980b4e1bc5437dd6039",
+            "evidence_id": "E1e232ee4e35e94c0-B0024",
             "pages": [
-              2
+              4,
+              5
             ],
             "section": "Appendix: Introduction",
             "section_role": "appendix",
             "source_spans": [
               {
-                "end": 1439,
-                "page": 2,
+                "end": 5603,
+                "page": 4,
                 "section": "Appendix: Introduction",
-                "section_index": 3,
-                "start": 539,
-                "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
+                "section_index": 5,
+                "start": 5220,
+                "text": "embedding transient claims as durable\nuser state, while under-admission can discard evidence that\nlater interactions require.\nB. Memory Integration\nAfter admission, integration attaches evidence to the ex-\nisting graph structure at a local write scale. Append-and-\nlink preserves provenance to the originating turn, session, or\nchunk, as in LiCoMemory [10]. To reduce redundancy when"
+              },
+              {
+                "end": 515,
+                "page": 5,
+                "section": "Appendix: Introduction",
+                "section_index": 6,
+                "start": 0,
+                "text": "admitting memory, Mem0 g [31] reuses semantically matched\nnodes and invalidates obsolete edges, while HingeMem [36]\nconsolidates near-duplicate boundary hyperedges. GAM [22]\nuses buffered attachment, writing new utterances into an active\nevent graph before later consolidation into its global graph.\nThis ensures GAM only consolidates semantically complete\nunits and reduces semantic drift in the main graph.\nC. Conflict Resolution\nConflict resolution addresses incoming evidence that\nchanges the validity or scope "
               }
             ],
-            "text": "evaluation, modular\narchitectures and benchmarked strategies, or an evolutionary\nprogression from storage to reflection and experience [26]\u2013\n[28]. Together, these perspectives do not provide a unified\naccount of how graph structures represent, update, retrieve,\nand evaluate persistent personalized memory for LLM agents.\nTo address this gap, this survey develops a lifecycle-\noriented view ofgraph-based personalized memoryfor LLM\nagents. We synthesize how existing systems construct user-\ncentered graph representations, update and consolidate new\nevidence, retrieve personalized context for response grounding,\nand evaluate memory quality through current benchmarks\nand metrics. This perspective connects graph design choices\nwith the practical requirements of long-term personalization\nand identifies open challenges in personalized memory. As\nFig. 1 illustrates, graph-based personalized memory "
+            "text": "embedding transient claims as durable\nuser state, while under-admission can discard evidence that\nlater interactions require.\nB. Memory Integration\nAfter admission, integration attaches evidence to the ex-\nisting graph structure at a local write scale. Append-and-\nlink preserves provenance to the originating turn, session, or\nchunk, as in LiCoMemory [10]. To reduce redundancy when\nadmitting memory, Mem0 g [31] reuses semantically matched\nnodes and invalidates obsolete edges, while HingeMem [36]\nconsolidates near-duplicate boundary hyperedges. GAM [22]\nuses buffered attachment, writing new utterances into an active\nevent graph before later consolidation into its global graph.\nThis ensures GAM only consolidates semantically complete\nunits and reduces semantic drift in the main graph.\nC. Conflict Resolution\nConflict resolution addresses incoming evidence that\nchanges the validity or scope "
           }
         ],
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly names the five operations and reviews systems under them.",
+          "explanation_status": "supported",
+          "item_id": "evidence-4",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0023",
+            "E1e232ee4e35e94c0-B0024"
+          ],
+          "reason": "The cited text names five evolution operations and reviews systems implementing admission and integration.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "evaluation",
+        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
+        "dimension": "evaluation_or_validation_strength",
+        "evidence_ids": [
+          "E1e232ee4e35e94c0-B0036",
+          "E1e232ee4e35e94c0-B0037"
+        ],
+        "excerpt": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution \n[\u2026 separate evidence block \u2026]\naccuracy.\n\u2022Efficiency:retrieved-context size, token usage, latency,\nconstruction cost, query-time cost, and storage reduction.\nVII. CHALLENGES ANDFUTUREDIRECTIONS\nPersonalized graph memory remains a young but promising\nresearch frontier. Its central challenge is not merely storing\nuser information in graph form but building a long-term,\ntrustworthy, and actionable model of an individual user, which\nin turn motivates several future directions.\nScalable Lifelong Personal Memory.Personalized agents\nshould support years of interaction rather than isolated ses-\nsions or short benchmark histories. Future work should build\nlifelong graph memories that grow with the user, consolidate\nTABLE II\nREPRESENTATIVE PERSONALIZED-MEMORY BENCHMARKS AND EVALUATION SIGNALS.\u2713:EXPLICIT;\u25b3:PARTIAL/INDIRECT. ANS.:ANSWER QUALITY;\nRET.:EVIDENCE RETRIEVAL; USER:USER-STATE MODELING; EVOL.:EVOLUTION OVER TIME;",
+        "explanation": "The evaluation section lists benchmarks such as LoCoMo, LongMemEval, PersonaMem, and others, and groups reported metrics into answer quality, evidence retrieval, user-state modeling, memory evolution and structure, and efficiency. This provides a structured summary of evaluation practices.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "The survey summarizes representative personalized-memory benchmarks and their evaluation metrics, organized into five metric groups.",
+        "section": "Appendix: Memoryretrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5845d4a97c757a907e7642425b239b2d79a0d0c05ae332f84c8dd36c3fcca125",
+            "evidence_id": "E1e232ee4e35e94c0-B0036",
+            "pages": [
+              6
+            ],
+            "section": "Appendix: Memoryretrieval",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 5122,
+                "page": 6,
+                "section": "Appendix: Memoryretrieval",
+                "section_index": 8,
+                "start": 4251,
+                "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution "
+              }
+            ],
+            "text": "ActMemEval [62]\ntests whether retrieved memory supports implicit con-\nstraint and counterfactual reasoning, while ATM-Bench [63]\nadds multimodal, multi-source personal evidence. Struct-\nMemEval [64] asks whether memory is organized correctly.\nAcross these benchmarks, reported metrics fall into five\ngroups:\n\u2022Answer quality:F1, exact match, multiple-choice accu-\nracy, task success, and LLM-as-judge score.\n\u2022Evidence retrieval:Recall@k, NDCG@k, answer-turn\nretrieval accuracy, evidence-location accuracy, and mul-\ntimodal evidence recall.\n\u2022User-state modeling:preference-category accuracy, pro-\nfile or persona consistency, and correctness or helpfulness\nof personalized responses.\n\u2022Memory evolution and structure:update success, step\nor chain accuracy under changing environments, forget-\nting/update outcomes, structure-requiring task accuracy,\nand failure-attribution "
+          },
+          {
+            "content_hash": "de2dae418e8944085e40ed4e009b810497fcef048d9107b6a7f3c64002edb891",
+            "evidence_id": "E1e232ee4e35e94c0-B0037",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Appendix: Memoryretrieval",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 5806,
+                "page": 6,
+                "section": "Appendix: Memoryretrieval",
+                "section_index": 8,
+                "start": 5122,
+                "text": "accuracy.\n\u2022Efficiency:retrieved-context size, token usage, latency,\nconstruction cost, query-time cost, and storage reduction.\nVII. CHALLENGES ANDFUTUREDIRECTIONS\nPersonalized graph memory remains a young but promising\nresearch frontier. Its central challenge is not merely storing\nuser information in graph form but building a long-term,\ntrustworthy, and actionable model of an individual user, which\nin turn motivates several future directions.\nScalable Lifelong Personal Memory.Personalized agents\nshould support years of interaction rather than isolated ses-\nsions or short benchmark histories. Future work should build\nlifelong graph memories that grow with the user, consolidate"
+              },
+              {
+                "end": 208,
+                "page": 7,
+                "section": "Appendix: Memoryretrieval",
+                "section_index": 9,
+                "start": 0,
+                "text": "TABLE II\nREPRESENTATIVE PERSONALIZED-MEMORY BENCHMARKS AND EVALUATION SIGNALS.\u2713:EXPLICIT;\u25b3:PARTIAL/INDIRECT. ANS.:ANSWER QUALITY;\nRET.:EVIDENCE RETRIEVAL; USER:USER-STATE MODELING; EVOL.:EVOLUTION OVER TIME; "
+              }
+            ],
+            "text": "accuracy.\n\u2022Efficiency:retrieved-context size, token usage, latency,\nconstruction cost, query-time cost, and storage reduction.\nVII. CHALLENGES ANDFUTUREDIRECTIONS\nPersonalized graph memory remains a young but promising\nresearch frontier. Its central challenge is not merely storing\nuser information in graph form but building a long-term,\ntrustworthy, and actionable model of an individual user, which\nin turn motivates several future directions.\nScalable Lifelong Personal Memory.Personalized agents\nshould support years of interaction rather than isolated ses-\nsions or short benchmark histories. Future work should build\nlifelong graph memories that grow with the user, consolidate\nTABLE II\nREPRESENTATIVE PERSONALIZED-MEMORY BENCHMARKS AND EVALUATION SIGNALS.\u2713:EXPLICIT;\u25b3:PARTIAL/INDIRECT. ANS.:ANSWER QUALITY;\nRET.:EVIDENCE RETRIEVAL; USER:USER-STATE MODELING; EVOL.:EVOLUTION OVER TIME; "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text lists benchmarks and metric groups as described.",
+          "explanation_status": "supported",
           "item_id": "evidence-5",
-          "reason": "The cited introduction explicitly contrasts the survey with prior surveys of personalized agents, graph-based agent memory, and broader agent-memory surveys.",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0036",
+            "E1e232ee4e35e94c0-B0037"
+          ],
+          "reason": "The cited text lists benchmarks and groups metrics into five categories.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "E1e232ee4e35e94c0-B0033"
+        ],
+        "excerpt": "or\ncompresses results under a context window.\nGraph structure does not automatically improve retrieval\nsince controlled comparisons show that results can depend\non foundational system settings beyond graph structure [51].\nGraph retrieval is therefore useful only when the representation\nexposes meaningful user relations, evolution maintains their\nvalidity, and retrieval returns relevant evidence.\nVI. EVALUATION\nEvaluation in personalized memory is still mostly down-\nstream: benchmarks typically test whether a memory system\nanswers correctly, retrieves supporting evidence, verifies up-\ndated user state, or reduces context cost over long histories.\nSince each benchmark targets different memory capabili-\nties, Table II summarizes representative personalized-memory\nbenchmarks and their evaluation metrics, adapting the metric\ncategories discussed in [5].\nThe dominant benchmark family still",
+        "explanation": "The retrieval discussion explicitly cautions that graph structure does not automatically improve retrieval and cites controlled comparisons showing dependence on foundational system settings. This is a bounded limitation statement about the surveyed methods.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "The survey acknowledges that graph structure does not automatically improve retrieval, since controlled comparisons show results can depend on foundational system settings beyond graph structure.",
+        "section": "Appendix: Memoryretrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5558421b9094da657d395307c14302833e6adbc6736de4a8073f52596ef23ac3",
+            "evidence_id": "E1e232ee4e35e94c0-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Appendix: Memoryretrieval",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2463,
+                "page": 6,
+                "section": "Appendix: Memoryretrieval",
+                "section_index": 8,
+                "start": 1566,
+                "text": "or\ncompresses results under a context window.\nGraph structure does not automatically improve retrieval\nsince controlled comparisons show that results can depend\non foundational system settings beyond graph structure [51].\nGraph retrieval is therefore useful only when the representation\nexposes meaningful user relations, evolution maintains their\nvalidity, and retrieval returns relevant evidence.\nVI. EVALUATION\nEvaluation in personalized memory is still mostly down-\nstream: benchmarks typically test whether a memory system\nanswers correctly, retrieves supporting evidence, verifies up-\ndated user state, or reduces context cost over long histories.\nSince each benchmark targets different memory capabili-\nties, Table II summarizes representative personalized-memory\nbenchmarks and their evaluation metrics, adapting the metric\ncategories discussed in [5].\nThe dominant benchmark family still "
+              }
+            ],
+            "text": "or\ncompresses results under a context window.\nGraph structure does not automatically improve retrieval\nsince controlled comparisons show that results can depend\non foundational system settings beyond graph structure [51].\nGraph retrieval is therefore useful only when the representation\nexposes meaningful user relations, evolution maintains their\nvalidity, and retrieval returns relevant evidence.\nVI. EVALUATION\nEvaluation in personalized memory is still mostly down-\nstream: benchmarks typically test whether a memory system\nanswers correctly, retrieves supporting evidence, verifies up-\ndated user state, or reduces context cost over long histories.\nSince each benchmark targets different memory capabili-\nties, Table II summarizes representative personalized-memory\nbenchmarks and their evaluation metrics, adapting the metric\ncategories discussed in [5].\nThe dominant benchmark family still "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text directly supports the bounded limitation statement.",
+          "explanation_status": "supported",
+          "item_id": "evidence-6",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0033"
+          ],
+          "reason": "The cited text explicitly states graph structure does not automatically improve retrieval and cites controlled comparisons.",
+          "status": "supported"
+        }
+      },
+      {
+        "claim_role": "limitation",
+        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
+        "dimension": "limitations_and_uncertainty_handling",
+        "evidence_ids": [
+          "E1e232ee4e35e94c0-B0021"
+        ],
+        "excerpt": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC.",
+        "explanation": "The representation section explicitly states evidence for the multiple disjoint graphs design is currently limited to DEMENTIA-PLAN and that the cited work does not establish formal disjointness. This shows the survey flags evidential uncertainty within its own taxonomy.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "The survey notes that the multiple disjoint graphs design is supported by limited evidence, and the cited work does not establish whether the graph instances are formally disjoint.",
+        "section": "Appendix: Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "145676475bac0f43797c985587d501e19cdbacc3caee355a6d426ad4e846f638",
+            "evidence_id": "E1e232ee4e35e94c0-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Appendix: Introduction",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3436,
+                "page": 4,
+                "section": "Appendix: Introduction",
+                "section_index": 5,
+                "start": 2552,
+                "text": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC. "
+              }
+            ],
+            "text": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC. "
+          }
+        ],
+        "statement_kind": "source_claim",
+        "support_status": "supported",
+        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text explicitly flags the evidential uncertainty.",
+          "explanation_status": "supported",
+          "item_id": "evidence-7",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0021"
+          ],
+          "reason": "The cited text states evidence is limited to DEMENTIA-PLAN and formal disjointness is not established.",
           "status": "supported"
         }
       },
@@ -685,12 +803,12 @@
           "E1e232ee4e35e94c0-B0004"
         ],
         "excerpt": "survey is continuously maintained at https:\n//github.com/icedpanda/awesome-personalized-graph-memory.\nIndex Terms\u2014Large Language Models, Agents, Personalized\nMemory, Graph Memory, Agent Memory",
-        "explanation": "The abstract states that the repository for the survey is continuously maintained at a GitHub URL. This provides a transparent, updatable resource for readers to access the underlying literature, partially mitigating the absence of a formal search protocol.",
+        "explanation": "The abstract states the repository for the survey is continuously maintained at a GitHub URL. This supports transparency of the survey's source material, though the repository itself is not independently verified.",
         "page": 1,
         "pages": [
           1
         ],
-        "paraphrase": "The survey maintains a continuously updated public repository of the reviewed literature.",
+        "paraphrase": "The survey maintains a continuously updated repository of surveyed works.",
         "section": "Evaluation",
         "signal_type": "positive",
         "source_blocks": [
@@ -718,144 +836,15 @@
         "statement_kind": "source_claim",
         "support_status": "supported",
         "support_verification": {
-          "item_id": "evidence-6",
-          "reason": "The cited abstract states the survey is continuously maintained at a GitHub URL, supporting the claim of a public repository.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "limitation",
-        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [
-          "E1e232ee4e35e94c0-B0021",
-          "E1e232ee4e35e94c0-B0027"
-        ],
-        "excerpt": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC. \n[\u2026 separate evidence block \u2026]\nsuppressing low-value detail while lowering storage\ncost.\nDeletion changes what remains stored, active, or recover-\nable. Kumiho [45] uses versioned belief revision: immutable\nrevisions are retained, mutable tags indicate the active state,\nand deprecated memories are excluded from normal retrieval\nunless explicitly requested. This design retains full progression\nhistory for auditing.\nRemoving source evidence can require revising or removing\nderived facts, summaries, personas, or higher-level abstractions\nproduced from it to prevent the active user model from\nbecoming internally inconsistent: a profile claim may remain\nactive after the interaction supporting it has been removed. The\nreliability and generality of dependency propagation across\npersonalized memory systems remain open evaluation ques-\ntions.\nF . Discussion\nImplemented systems connect evolution operations across\ndifferent",
-        "explanation": "The text explicitly states that the cited work does not establish whether DEMENTIA-PLAN's graph instances are formally disjoint and that further evidence is needed to assess the generality of this design. It also states that the reliability and generality of dependency propagation across personalized memory systems remain open evaluation questions. These are substantive uncertainty statements embedded in the discussion.",
-        "page": 4,
-        "pages": [
-          4,
-          5
-        ],
-        "paraphrase": "The survey acknowledges open evaluation questions and limitations of specific design patterns, such as the unverified generality of multiple disjoint graphs and the unresolved reliability of dependency propagation.",
-        "section": "Appendix: Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "145676475bac0f43797c985587d501e19cdbacc3caee355a6d426ad4e846f638",
-            "evidence_id": "E1e232ee4e35e94c0-B0021",
-            "pages": [
-              4
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 3436,
-                "page": 4,
-                "section": "Appendix: Introduction",
-                "section_index": 5,
-                "start": 2552,
-                "text": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC. "
-              }
-            ],
-            "text": "storage but\nrequire consistency across components.\n5) Multiple Disjoint Graphs:Multiple-graph designs split\nuser memory across separate graph instances that serve dis-\ntinct, specialized functions. Evidence for this design is cur-\nrently limited to DEMENTIA-PLAN [32], which maintains a\ndaily routine graph for time-sensitive care context and a life\nmemory graph for longer-term autobiographical identity. This\narrangement separates user states by timescale and purpose\nacross distinct instances. The cited work does not establish\nwhether these graph instances are formally disjoint, and further\nevidence is needed to assess the generality of this design.\nFig. 3. Evolution of graph-based personalized memory.\nNevertheless, this pattern may be useful for highly specific\nuse cases where memory can be stored and retrieved more\nefficiently because its location is known in advance.\nC. "
-          },
-          {
-            "content_hash": "ce3eea23f29ee331f06311f033e37d23ad0e81526702e7012ce4ab788f58ba69",
-            "evidence_id": "E1e232ee4e35e94c0-B0027",
-            "pages": [
-              5
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 3206,
-                "page": 5,
-                "section": "Appendix: Introduction",
-                "section_index": 6,
-                "start": 2310,
-                "text": "suppressing low-value detail while lowering storage\ncost.\nDeletion changes what remains stored, active, or recover-\nable. Kumiho [45] uses versioned belief revision: immutable\nrevisions are retained, mutable tags indicate the active state,\nand deprecated memories are excluded from normal retrieval\nunless explicitly requested. This design retains full progression\nhistory for auditing.\nRemoving source evidence can require revising or removing\nderived facts, summaries, personas, or higher-level abstractions\nproduced from it to prevent the active user model from\nbecoming internally inconsistent: a profile claim may remain\nactive after the interaction supporting it has been removed. The\nreliability and generality of dependency propagation across\npersonalized memory systems remain open evaluation ques-\ntions.\nF . Discussion\nImplemented systems connect evolution operations across\ndifferent "
-              }
-            ],
-            "text": "suppressing low-value detail while lowering storage\ncost.\nDeletion changes what remains stored, active, or recover-\nable. Kumiho [45] uses versioned belief revision: immutable\nrevisions are retained, mutable tags indicate the active state,\nand deprecated memories are excluded from normal retrieval\nunless explicitly requested. This design retains full progression\nhistory for auditing.\nRemoving source evidence can require revising or removing\nderived facts, summaries, personas, or higher-level abstractions\nproduced from it to prevent the active user model from\nbecoming internally inconsistent: a profile claim may remain\nactive after the interaction supporting it has been removed. The\nreliability and generality of dependency propagation across\npersonalized memory systems remain open evaluation ques-\ntions.\nF . Discussion\nImplemented systems connect evolution operations across\ndifferent "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
-          "item_id": "evidence-7",
-          "reason": "The cited text explicitly states that DEMENTIA-PLAN's graph instances are not established as formally disjoint and that dependency propagation reliability remains an open evaluation question.",
-          "status": "supported"
-        }
-      },
-      {
-        "claim_role": "presentation",
-        "context_id": "1e232ee4e35e94c0215a326dd57578b4e962448363f80c62de4f0f5b1a228505",
-        "dimension": "presentation_and_precision",
-        "evidence_ids": [
-          "E1e232ee4e35e94c0-B0012",
-          "E1e232ee4e35e94c0-B0014"
-        ],
-        "excerpt": "andedges(the relations among\nthem), making these connections and revisions explicit and\nqueryable. The rest of this survey follows this representation\nthrough its lifecycle: how it is constructed (Section III),\nevolves (Section IV), is retrieved (Section V), and is evaluated\n(Section VI).\nB. Personal Memory Dimensions\nPersonal memory is the user-specific state an agent pre-\nserves beyond the current context window, spanning facts,\npreferences, goals, constraints, episodes, feedback, emotions,\nand corrections to earlier claims. Rather than a flat checklist\nof traits, we characterize it along fivedimensionsthat cap-\nture what kind of information is remembered, summarized\nin Table I. The dimensions are not mutually exclusive: a\nsingle memory may be semantic in content, bounded in\ntime, relationally anchored, and affectively charged at once.\nTogether, these definitions define what a graph \n[\u2026 separate evidence block \u2026]\nhypergraph, hybrid, and multi-graph designs.\nThese choices together shape evidence traceability, state va-\nlidity, and retrievable granularity.\nA. Memory Elements\nWe distinguish four functional node roles, which may over-\nlap within one graph.Evidence nodespreserve original inter-\naction records, such as turns, episodes [29], or sentences [30].\nFact nodesstore extracted atomic assertions about the user\nor related entities [21], [31].Abstraction nodessynthesize\nrepeated observations into higher-level user models, such as\npersonas, scenes [18], or reflections [29].Domain-specific\nnodescapture entities relevant to particular topics, such as\npersonal interests, jobs, or more specific topics like health care\nand patient routines [32]. A node may serve more than one\nrole.\nCommon relation functions include temporal, provenance,\nassociative, and domain-specific links.Temporal relations\nencode",
-        "explanation": "The preliminaries section defines personal memory along five dimensions (semantic, temporal, relational, experiential, affective), and the representation section defines four functional node roles and common relation functions. This terminological precision supports the survey's organizational clarity and makes the taxonomy usable for readers.",
-        "page": 2,
-        "pages": [
-          2,
-          3
-        ],
-        "paraphrase": "The survey uses a consistent, well-defined vocabulary for its taxonomy, including explicit definitions of memory dimensions, node roles, relation functions, and representation patterns.",
-        "section": "Appendix: Introduction",
-        "signal_type": "positive",
-        "source_blocks": [
-          {
-            "content_hash": "078da2d6bbb6665312a6e3bc81aa07af7e8754bc5787caef85e2ffe9b24040c4",
-            "evidence_id": "E1e232ee4e35e94c0-B0012",
-            "pages": [
-              2
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 4112,
-                "page": 2,
-                "section": "Appendix: Introduction",
-                "section_index": 3,
-                "start": 3214,
-                "text": "andedges(the relations among\nthem), making these connections and revisions explicit and\nqueryable. The rest of this survey follows this representation\nthrough its lifecycle: how it is constructed (Section III),\nevolves (Section IV), is retrieved (Section V), and is evaluated\n(Section VI).\nB. Personal Memory Dimensions\nPersonal memory is the user-specific state an agent pre-\nserves beyond the current context window, spanning facts,\npreferences, goals, constraints, episodes, feedback, emotions,\nand corrections to earlier claims. Rather than a flat checklist\nof traits, we characterize it along fivedimensionsthat cap-\nture what kind of information is remembered, summarized\nin Table I. The dimensions are not mutually exclusive: a\nsingle memory may be semantic in content, bounded in\ntime, relationally anchored, and affectively charged at once.\nTogether, these definitions define what a graph "
-              }
-            ],
-            "text": "andedges(the relations among\nthem), making these connections and revisions explicit and\nqueryable. The rest of this survey follows this representation\nthrough its lifecycle: how it is constructed (Section III),\nevolves (Section IV), is retrieved (Section V), and is evaluated\n(Section VI).\nB. Personal Memory Dimensions\nPersonal memory is the user-specific state an agent pre-\nserves beyond the current context window, spanning facts,\npreferences, goals, constraints, episodes, feedback, emotions,\nand corrections to earlier claims. Rather than a flat checklist\nof traits, we characterize it along fivedimensionsthat cap-\nture what kind of information is remembered, summarized\nin Table I. The dimensions are not mutually exclusive: a\nsingle memory may be semantic in content, bounded in\ntime, relationally anchored, and affectively charged at once.\nTogether, these definitions define what a graph "
-          },
-          {
-            "content_hash": "b594aed9ceb15ad52a99d77792054be1ede766444a5dc5731067fe918506b592",
-            "evidence_id": "E1e232ee4e35e94c0-B0014",
-            "pages": [
-              3
-            ],
-            "section": "Appendix: Introduction",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 1431,
-                "page": 3,
-                "section": "Appendix: Introduction",
-                "section_index": 4,
-                "start": 533,
-                "text": "hypergraph, hybrid, and multi-graph designs.\nThese choices together shape evidence traceability, state va-\nlidity, and retrievable granularity.\nA. Memory Elements\nWe distinguish four functional node roles, which may over-\nlap within one graph.Evidence nodespreserve original inter-\naction records, such as turns, episodes [29], or sentences [30].\nFact nodesstore extracted atomic assertions about the user\nor related entities [21], [31].Abstraction nodessynthesize\nrepeated observations into higher-level user models, such as\npersonas, scenes [18], or reflections [29].Domain-specific\nnodescapture entities relevant to particular topics, such as\npersonal interests, jobs, or more specific topics like health care\nand patient routines [32]. A node may serve more than one\nrole.\nCommon relation functions include temporal, provenance,\nassociative, and domain-specific links.Temporal relations\nencode "
-              }
-            ],
-            "text": "hypergraph, hybrid, and multi-graph designs.\nThese choices together shape evidence traceability, state va-\nlidity, and retrievable granularity.\nA. Memory Elements\nWe distinguish four functional node roles, which may over-\nlap within one graph.Evidence nodespreserve original inter-\naction records, such as turns, episodes [29], or sentences [30].\nFact nodesstore extracted atomic assertions about the user\nor related entities [21], [31].Abstraction nodessynthesize\nrepeated observations into higher-level user models, such as\npersonas, scenes [18], or reflections [29].Domain-specific\nnodescapture entities relevant to particular topics, such as\npersonal interests, jobs, or more specific topics like health care\nand patient routines [32]. A node may serve more than one\nrole.\nCommon relation functions include temporal, provenance,\nassociative, and domain-specific links.Temporal relations\nencode "
-          }
-        ],
-        "statement_kind": "source_claim",
-        "support_status": "supported",
-        "support_verification": {
+          "artifact_urls": [],
+          "claim_status": "supported",
+          "explanation_reason": "The cited text supports the attributed repository statement, with the caveat that the repository itself is not independently verified.",
+          "explanation_status": "supported",
           "item_id": "evidence-8",
-          "reason": "The cited preliminaries and representation sections define five memory dimensions, four node roles, and common relation functions, supporting the claim of defined vocabulary.",
+          "primary_evidence_ids": [
+            "E1e232ee4e35e94c0-B0004"
+          ],
+          "reason": "The cited text states the survey is continuously maintained at the GitHub URL.",
           "status": "supported"
         }
       }
@@ -865,17 +854,18 @@
     "gate_version": "scientific-gate-v1",
     "manual_override": false,
     "missing_information": [],
-    "overall_quality_score": 78,
+    "overall_quality_score": 72,
     "paper_type": "survey_or_review",
     "positive_signals": [
-      "The paper's stated contribution is a lifecycle-oriented taxonomy organizing graph-based personalized memory for LLM agents around representation, evolution, retrieval, and evaluation.",
-      "The survey fills a gap by providing a unified account of graph-based personalized memory across representation, evolution, retrieval, and evaluation, which prior surveys do not provide.",
-      "The survey summarizes existing benchmarks and metrics for personalized memory and identifies gaps in graph quality, user control, lifecycle validity, and realistic personalization.",
-      "The survey's claims about representation patterns, evolution operations, and retrieval mechanisms are grounded in named systems with specific design descriptions.",
-      "The paper positions itself against prior surveys of personalized agents, graph-based agent memory, and broader agent-memory surveys, arguing that none provides a unified lifecycle account of graph-based personalized memory.",
-      "The survey maintains a continuously updated public repository of the reviewed literature.",
-      "The survey acknowledges open evaluation questions and limitations of specific design patterns, such as the unverified generality of multiple disjoint graphs and the unresolved reliability of dependency propagation.",
-      "The survey uses a consistent, well-defined vocabulary for its taxonomy, including explicit definitions of memory dimensions, node roles, relation functions, and representation patterns."
+      "The survey develops a lifecycle-oriented taxonomy organizing graph-based personalized memory for LLM agents around representation, evolution, retrieval, and evaluation.",
+      "The survey's contribution includes a taxonomy, an evaluation summary identifying gaps, a timely review of recent methods, and future directions.",
+      "The survey positions itself against prior surveys of personalized agents and graph-based agent memory, which use different primary lenses and do not provide a unified account of graph-based personalized memory.",
+      "The survey organizes representation into five patterns: flat, hierarchical, hypergraph, hybrid, and multiple disjoint graphs, and reviews systems within each pattern.",
+      "The survey identifies five evolution operations: admission, integration, conflict resolution, consolidation, and removal, and reviews systems implementing each.",
+      "The survey summarizes representative personalized-memory benchmarks and their evaluation metrics, organized into five metric groups.",
+      "The survey acknowledges that graph structure does not automatically improve retrieval, since controlled comparisons show results can depend on foundational system settings beyond graph structure.",
+      "The survey notes that the multiple disjoint graphs design is supported by limited evidence, and the cited work does not establish whether the graph instances are formally disjoint.",
+      "The survey maintains a continuously updated repository of surveyed works."
     ],
     "rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
     "recommendation": "promising",
@@ -883,7 +873,7 @@
     "source_content_hash": "d51caea89652a0b9b18ecf8d1cade6d38c66205d6834dc0f8cbd57ce343030fd",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "The execution audit records the unresolved eligibility, coverage or verification checks."
+    "uncertainty": "Scientific support remains unresolved. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

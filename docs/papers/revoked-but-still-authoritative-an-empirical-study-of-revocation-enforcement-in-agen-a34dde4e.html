@@ -60,15 +60,61 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
-      <p>Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 44.2%</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. The sources support the research question, methodology breadth, central results, related-work positioning, limitations, and compute details, but the cited excerpts do not establish matched-pair statistical tests, ablations, or the guard design evaluation under indirect insertion. Manuscript-wide absence requires more than local excerpts; scope the observation to the cited material. The sources define M, txt(r), tau(r), rho(r), and distinguish direct and indirect insertion, but the excerpt does not show the equations for R(q,M,k) or the two metrics. The sources support nine scenarios, nine models, ten trials per scenario-model pair, and 44,550 main-grid calls, but do not show six defense conditions or multiple system configurations in the cited text. Cited evidence does not establish numerical values/units: 44.2% The sources support the five directions and the positioning statement, but the cited text does not describe the comparison table&#x27;s distinction between a benign-user setting and retrieval-time validity check. Cited evidence does not establish numerical values/units: 0.629</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T09:28:03+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-batch2-recovery-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T10:50:48+00:00.</p>
         <p>Coverage: 68776 of 68776 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>The paper&#x27;s central question is whether marking a fact revoked prevents a memory store from returning it to an agent that acts on it, and it measures this across five agent-memory systems.</p><p>Attributed source statement: supported. The introduction states the question directly and specifies the systems under test, the two-phase measurement approach, and the two outcome metrics. The abstract and body agree on the contribution scope. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Persistent memory is what allows an agent to retain and reuse history across interactions. To do so,
+many agent-memory frameworks version their contents: each fact carries validity metadata, and an
+update marks the contradicted fact invalid rather than deleting it. This design is soft revocation. It
+supports audit and point-in-time queries and avoids the data loss of destructive updates. Whether soft
+revocation is enforced, however, has not been examined: does marking a fact invalid prevent the store
+from returning it to an agent that acts on it?
+To answer it, we measure whether five major agent-memory systems enforce revocation at runtime:
+Graphiti and Zep [9], which share one engine, mem0 [2], langmem [6] and cognee [13]. We load
+each memory system with a revoked policy and its replacement, query the store with an ordinary
+question, and pass the returned facts to an agent that chooses </blockquote><blockquote>between a safe and an unsafe action.
+Under this setting, we measure two metrics. The first is the rate at which the store returns the
+revoked record, which is a property of the store. The second is the rate at which the agent then
+acts on it, which is a property of the model. The methodology covers nine scenarios, nine models
+spanning six vendors. Each trial is scored under six defense conditions, from no defense to a check
+on retrieval-time validity.1
+∗Corresponding author.
+AI usage declaration:We used Anthropic&#x27;s Claude Opus 4.8 and Z.AI&#x27;s GLM-5.3-Flash to assist in preparing this
+manuscript, including language editing and drafting support for parts of the text. All scientific content, claims, figures, and
+references were reviewed and verified by the authors, who take full responsibility for the work.
+1We extend the scenarios beyond this single-read setting to write-back, multi-agent </blockquote></details></li><li><strong>Scholarly novelty or value — page 3</strong><p>The study addresses a previously unexamined question: whether soft revocation marks are enforced at retrieval time, rather than how foreign content enters a store or whether deletion completes.</p><p>Attributed source statement: supported. The positioning section argues that prior work covers injection attacks, lifecycle security, guardrails, provenance checks, and version-aware retrieval, but none asks whether a store-flagged invalid record still determines agent behavior. The paper&#x27;s setting uses the defender&#x27;s own revoked policy, so provenance checks pass by construction. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>hierarchical graph that records version
+sequences, version-specific content boundaries, and the changes between document states, so a query
+can be answered from a specific version. MemStrata [15] excludes a contradicted fact from retrieval:
+when a newer assertion replaces a fact&#x27;s value, a deterministic rule marks the older value invalid in a
+bi-temporal ledger. ConflictRAG [14] reconciles contradictory retrieved facts before generation by
+detecting the conflicts with a trained classifier, classifying them as factual, temporal, or opinion, and
+resolving each type in turn, ranking candidate sources on criteria extracted from the text itself, such
+as authority and recency.
+Positioning.The question this paper asks is whether marking a fact invalid prevents the store from
+returning it to an agent that acts on it. Each direction above answers a different question: how foreign
+content enters </blockquote><blockquote>a store, whether an attempted deletion completed, or whether retrieval returns the
+current version. None asks whether a record the store has itself marked invalid still determines what
+the agent does. Table 1 states the difference concretely. Every prior family brings new content into
+the store from an attacker, so a provenance check, which asks where a record came from, catches it.
+Even MINJA, the nearest prior threat model, leaves that check a foreign origin to detect: the agent
+performs the write, but the attacker authors the record. The record that harms the agent here is the
+defender&#x27;s own revoked policy, so every provenance check passes it by construction. What would
+catch it is a check ofretrieval-time validity, whether a record is still current at the moment it is read,
+and the rest of this paper measures whether these five systems perform one.</blockquote></details></li><li><strong>Reproducibility and transparency — page 1</strong><p>The paper provides these artifact links: https://github.com/VulcanLab/Memory-Rebirth-Attack</p><p>Artifact link stated by the manuscript; not independently checked: supported. The URL is stated in the supplied manuscript. Repository existence, contents and functionality were not independently checked. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>withholds
+records that are revoked or conflict with their replacement. We open-source our
+code athttps://github.com/VulcanLab/Memory-Rebirth-Attack.</blockquote></details></li><li><strong>Limitations and uncertainty handling — page 9</strong><p>The paper acknowledges that the rule-carrying and no-rule scenario groups are not a controlled comparison because they differ in scenario, action set, and distractor count.</p><p>Attributed source statement: supported. The per-scenario analysis states the two groups are not a controlled comparison and that the rule-carrying group supports only the narrower statement that a prompt prohibition does not reliably prevent the unsafe action. This is an explicit scope limitation. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Across those
+four scenarios, the effect is largest where the unsafe action is operationally plausible and smallest
+where it is recognizable as harmful independently of policy: 3.9% for an over-limit transfer, 0.6% for
+waiving MFA, and no unsafe trial for log deletion. In those cases pretrained refusal, not the prompt
+rule, accounts for the low rates. The two groups are not a controlled comparison, since they differ in
+scenario, action set and distractor count, and the study never measures the same scenario with and
+without its prohibition. The rule-carrying group supports only the narrower statement that a prompt
+prohibition does not reliably prevent the unsafe action.5</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

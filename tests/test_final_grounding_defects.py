@@ -11,7 +11,7 @@ import unittest
 
 from paper_scout.evidence_context import (EvidenceBlock, SourceSpan, build_evidence_context,
                                           resolve_evidence_ids)
-from paper_scout.evidence_semantics import (CLAIM_ROLES, eligibility_decision, eligible_for,
+from paper_scout.evidence_semantics import (CLAIM_ROLES, eligibility_decision, eligible_for, candidate_for_support,
                                            numerical_support, numeric_mentions)
 from paper_scout.full_text import SelectedPaperText, SelectedSection
 from paper_scout.quality import assess_quality_deterministically
@@ -50,9 +50,9 @@ class FinalGroundingTests(unittest.TestCase):
                         b = actual_block(source)
                         decision = eligibility_decision(b, item['dimension'], item['statement_kind'])
                         self.assertTrue(decision['body_member'])
-                        self.assertTrue(decision['compatible'])
+                        self.assertTrue(candidate_for_support(b, item['dimension'], item['statement_kind']))
                         if source['id'] in item['original_rejected_ids']:
-                            self.assertEqual(decision['basis'], 'body_content_cue')
+                            self.assertEqual(decision['basis'], 'atypical_body_requires_support')
 
     def test_scimmr_separate_missing_percentage_still_fails(self):
         case = next(c for c in CASES if c['numeric_rejections'])
@@ -67,8 +67,8 @@ class FinalGroundingTests(unittest.TestCase):
         self.assertEqual(b.section_role, 'body')
         d = eligibility_decision(b, 'methodological_rigor', 'source_claim')
         self.assertTrue(d['body_member'])
-        self.assertTrue(d['compatible'])
-        self.assertEqual(d['basis'], 'body_content_cue')
+        self.assertFalse(d['compatible'])
+        self.assertEqual(d['basis'], 'atypical_body_requires_support')
 
     def test_other_body_does_not_validate_every_claim_role(self):
         b = block('The Violet Compass', 'The contribution concerns a previously unstudied question.')
@@ -84,7 +84,7 @@ class FinalGroundingTests(unittest.TestCase):
             d = eligibility_decision(block(heading, 'The protocol samples trials.'),
                                      'methodological_rigor', 'source_claim')
             self.assertTrue(d['body_member'], heading)
-            self.assertTrue(d['compatible'], heading)
+            self.assertNotEqual(d['state'], 'hard_ineligible', heading)
 
     def test_non_body_provenance_cannot_be_rescued_by_content_cues(self):
         for heading in ('References', '7 References', 'Bibliography', 'Acknowledgements',
@@ -110,7 +110,7 @@ class FinalGroundingTests(unittest.TestCase):
         self.assertTrue(eligible_for(block('Discussion and Limitations', 'Scope is limited.'),
                                      'limitations_and_uncertainty_handling', 'source_claim'))
 
-    def test_unrelated_conclusion_cannot_nominate_method_claim(self):
+    def test_unrelated_conclusion_is_not_direct_method_evidence(self):
         b = block('Conclusion', 'We hope future work will inspire the community.')
         d = eligibility_decision(b, 'methodological_rigor', 'source_claim')
         self.assertTrue(d['body_member'])
@@ -127,14 +127,15 @@ class FinalGroundingTests(unittest.TestCase):
         for item, b in zip(value['evidence'], ctx.blocks):
             item['evidence_ids'] = [b.evidence_id]
         value['evidence'][1]['claim'] = 'The protocol proves universal generalization.'
-        self.assertTrue(eligible_for(ctx.blocks[1], 'methodological_rigor', 'source_claim'))
+        self.assertTrue(candidate_for_support(ctx.blocks[1], 'methodological_rigor', 'source_claim'))
+        self.assertFalse(eligible_for(ctx.blocks[1], 'methodological_rigor', 'source_claim'))
         seed = assess_quality_deterministically(candidate(), 'fixture', selected)
         result = validate_block_quality_response(value, seed, 'fixture', selected, ctx,
             verification=verified_fixture(value, ctx, {'evidence-1': 'unsupported'}))
         self.assertEqual(result.quality_status, 'uncertain')
         self.assertEqual(result.execution['outcome'], 'scientific')
         self.assertFalse(any(e.paraphrase == value['evidence'][1]['claim'] for e in result.evidence))
-        self.assertEqual(result.execution['reference_audit'][1]['eligibility'][0]['basis'], 'body_content_cue')
+        self.assertEqual(result.execution['reference_audit'][1]['eligibility'][0]['basis'], 'atypical_body_requires_support')
 
     def test_percent_orthography_is_symmetric_and_keeps_original_text(self):
         forms = ('95%', '95 %', '95 percent', '95 per cent', '95 PERCENT')

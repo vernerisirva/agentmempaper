@@ -13,7 +13,7 @@ from urllib.parse import urlsplit
 
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text, _section_kind
 from paper_scout.evidence_context import EvidenceContext, EVIDENCE_VERSION, build_evidence_context, resolve_evidence_ids
-from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, eligible_for, eligibility_decision, evidence_guidance,
+from paper_scout.evidence_semantics import (CLAIM_ROLES, STATEMENT_KINDS, candidate_for_support, eligibility_decision, REQUIRES_SUPPORT_VERIFICATION, evidence_guidance,
     numerical_support, verifier_items, verification_schema, VERIFIER_INSTRUCTIONS)
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.llm import openai_compatible_settings_from_env
@@ -401,7 +401,7 @@ def _request_payload(candidate: PaperCandidate, selected: SelectedPaperText, det
         "Every major judgment needs evidence; distinguish missing text from absent evidence. Do not invent sections or accuse authors of misconduct. "
         "A pass requires substantive manuscript evidence of contribution clarity, methodological rigor, validation of the central claims, "
         "claim/evidence alignment, related-work comparisons (or justified absence for this type), and limitations/scope. "
-        "Supply positive evidence objects for all six dimensions, using the explicit body_candidate_ids_by_dimension for that criterion. "
+        "Supply positive evidence objects for all six dimensions, using the explicit body_candidate_ids_by_dimension for that criterion, or support_verification_candidate_ids_by_dimension when an atypical body passage actually supports the claim. These conditional candidates require substantive verification; their body membership alone never establishes compatibility or support. "
         "Each object must state a concise scientific claim, explain how the cited blocks bear on it, label support_status supported, partial, or unsupported, and set statement_kind source_claim or assessor_inference. A source_claim attributes a statement to the manuscript; assessor_inference is your bounded synthesis or critique of the cited facts. Abstract IDs may be used ONLY for contribution_clarity attributed high-level contribution/scope source_claims, never scholarly_novelty_or_value. They cannot establish novelty, method adequacy, evaluation, verified numbers, reproducibility, limitations or claim alignment, including when mixed with body IDs. Use body evidence for those dimensions, including explicitly scoped inference from methods/results for limitations. "
         "Every explicit number in the claim, explanation, rationale and uncertainty must occur with the correct unit in the cited sources; metric, population, denominator, comparison and direction must also match. Avoid unnecessary numbers and manuscript-wide absence claims. A bounded verifier sees only each claim and its cited evidence, and may reject it; do not rely on text elsewhere in the manuscript. ID existence proves provenance only: it does NOT make a claim true. Mark misleading, irrelevant, contradictory or inadequate support as partial/unsupported and retain scientific uncertainty where a core criterion is unresolved. "
         "For concerns, support_status describes evidence for the concern, not approval of the paper. A concern based only on missing supplied material cannot establish insufficiency. "
@@ -594,11 +594,13 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
             row['provenance_valid'] = True
             row['eligibility'] = [{'evidence_id': b.evidence_id,
                 **eligibility_decision(b, item['dimension'], item['statement_kind'])} for b in blocks]
-            if not all(eligible_for(b, item['dimension'], item['statement_kind']) for b in blocks):
+            if not all(candidate_for_support(b, item['dimension'], item['statement_kind']) for b in blocks):
                 raise ValueError('evidence section role is ineligible for this claim/dimension')
-            row['eligibility_valid'] = True
+            row['eligibility_valid'] = True  # Candidate eligibility, not final claim support.
+            row['requires_support_fallback'] = any(
+                d['state'] == REQUIRES_SUPPORT_VERIFICATION for d in row['eligibility'])
         except ValueError as exc:
-            errors.append(str(exc));row.update(eligibility_valid=False, reason=str(exc))
+            errors.append(str(exc));row.update(eligibility_valid=False, accepted=False, reason=str(exc))
             row.setdefault('provenance_valid', False);audit.append(row);continue
         row['numeric_check'] = numerical_support(item['claim'] + '\n' + item['explanation'], [b.text for b in blocks])
         audit.append(row);prepared.append((item, row, blocks))
@@ -627,6 +629,9 @@ def validate_block_quality_response(value: dict, seed: QualityAssessment, model:
         finding = verified.get(row['item_id'], {'status': 'uncertain', 'reason': 'Support verification unavailable.'})
         row['support_verification'] = finding
         valid = row['numeric_check']['status'] != 'unsupported' and finding['status'] == 'supported'
+        row['accepted'] = valid
+        if row['requires_support_fallback']:
+            row['fallback_resolution'] = 'accepted' if valid else 'not_established'
         if not valid:
             support_errors.append({**finding, 'item_id': row['item_id'], 'numeric_check': row['numeric_check'],
                 **({'status': 'unsupported', 'reason': 'Cited evidence does not establish numerical values/units: ' + ', '.join(row['numeric_check']['missing_values_or_units'])} if row['numeric_check']['status'] == 'unsupported' else {})})

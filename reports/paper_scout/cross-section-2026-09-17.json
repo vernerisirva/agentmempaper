@@ -1,0 +1,1439 @@
+{
+  "date": "2026-09-17",
+  "baseline_sha": "566b6c0a300ee1d678f7910effd1a8d11070ea47",
+  "merge": {
+    "headRefOid": "2dc232dd1d563e288728ebb334f59337eead0c75",
+    "mergeCommit": {
+      "oid": "503459c995e5597d01d0ddb1c40272740d90d114"
+    },
+    "mergedAt": "2026-09-17T08:43:22Z",
+    "state": "MERGED",
+    "url": "https://github.com/vernerisirva/agentmempaper/pull/31"
+  },
+  "reviewed_head": "2dc232dd1d563e288728ebb334f59337eead0c75",
+  "implementation": {
+    "files": [
+      "experiments/manifests/cross-section-2026-09-17.json",
+      "paper_scout/evidence_semantics.py",
+      "paper_scout/quality_llm.py",
+      "reports/paper_scout/cross-section-preflight-2026-09-17.md",
+      "tests/fixtures/cross_section_real_science.json",
+      "tests/test_cross_section_compatibility.py",
+      "tests/test_evidence_semantics.py",
+      "tests/test_final_grounding_defects.py"
+    ],
+    "unit_tests": 301,
+    "new_tests": 12,
+    "eligibility_policy": "cross-section-support-v1",
+    "assessment_version": "quality-cross-section-v1"
+  },
+  "histories": {
+    "agent_memory": {
+      "old_preserved": 294,
+      "new": 0
+    },
+    "deep_research": {
+      "old_preserved": 217,
+      "new": 1
+    },
+    "engram": {
+      "old_preserved": 47,
+      "new": 0
+    }
+  },
+  "other_tables_preserved": true,
+  "unchanged_other_original_decisions": 27,
+  "cards_verified": 28,
+  "counts": {
+    "pass": 15,
+    "scientific_uncertainty": 9,
+    "insufficient": 1,
+    "manuscript_unavailable": 3,
+    "evidence_grounding_failure": 0,
+    "model_protocol_failure": 0,
+    "text_coverage_failure": 0
+  },
+  "public_library_counts": {
+    "agent_memory": 4,
+    "deep_research": 5,
+    "engram": 6
+  },
+  "papers": [
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.1007/s44206-026-00290-2",
+      "title": "As-If Agents: Misrecognition and the Ethics of Non-Agentive AI",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "legacy_unspecified"
+      ],
+      "evidence_count": 9,
+      "assessment_version": "quality-evidence-v1",
+      "card_path": "docs/papers/as-if-agents-misrecognition-and-the-ethics-of-non-agentive-ai-de458263.json",
+      "card_sha256": "81d2cf8566292fa054bca6f49097685d5b819b5e2cc817a45c218bed69b38d13",
+      "html_sha256": "539682a31427fe07081f37fddf78689961f25aed4e4ff269dd0f22040f52a79c",
+      "source_content_hash": "c3e46d7bbf0420fb4d9495129f6c8d9cc14362121904ff320ed3da706e550760",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22750153",
+      "title": "The Intransitability of Hybrid Agents: Operational Memory, Drift Gradients, and the Limits of Agent Portability",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 9,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/the-intransitability-of-hybrid-agents-operational-memory-drift-gradients-and-the-lim-308c9028.json",
+      "card_sha256": "5762454155dfe27e09e61f07a3b929076ba8c26584264b1bc3191788864b340e",
+      "html_sha256": "60a9a304a6dcb60a966446943c7c27da4da990ce6bda4c11b0891bb84fa9fbdb",
+      "source_content_hash": "66cf5688b877ae502d473e0255d349277f47703fe140e5b6809ae0d9c8db3253",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.12320",
+      "title": "AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "related"
+      ],
+      "evidence_count": 5,
+      "assessment_version": "quality-semantics-v1",
+      "card_path": "docs/papers/aim-a-privacy-aware-interoperable-memory-framework-for-multi-agent-multi-user-llm-sy-bfc688de.json",
+      "card_sha256": "3a320ea8748e50ac6f97012944f9693ac9dad2463419b3655fb421952456c438",
+      "html_sha256": "e96a1d8bd0212e4866d2815aba11a2f89780daa941fc13ac48b5e3b0f98d812b",
+      "source_content_hash": "90742cb47bc761aad76c6ca736671f3993f71c6afa4a9f8d9904fd3dae63154e",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22661593",
+      "title": "Human Supervision as Attractor Stabilization: Indirect Prompt Injection, Longitudinal Object Custody, and the HibriMind Ontology",
+      "before": "insufficient",
+      "after": "insufficient",
+      "reassessed": false,
+      "quality_status": "insufficient",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 6,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/human-supervision-as-attractor-stabilization-indirect-prompt-injection-longitudinal-14c7cfb5.json",
+      "card_sha256": "8c641361dd55e3c61ca2081b7861feb0072cad60af5cfdb0af648f98e3fc108d",
+      "html_sha256": "6fc4ca483c7f3775e87940baf7434d4be942c2383dd711b5066cde057be7b236",
+      "source_content_hash": "6a57e0680ed4e72f44cbe234441b20db0c6eb8cd2cb7b752282caaf4583c3363",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22699102",
+      "title": "Consolidation Without Weights: What the Complementary Learning Systems Analogy Licenses in LLM Agent Memory, and Why the Systems That Borrow Its Name Do Not Inherit Its Guarantee",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 6,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/consolidation-without-weights-what-the-complementary-learning-systems-analogy-licens-457631a4.json",
+      "card_sha256": "11cad5acb9b96f5e82c174f89bbe89cfb6e7a2a19da9602dfa65a9026f1fc77a",
+      "html_sha256": "c4569d4d3f73fe0f1789786528e14b738c905b7cf5ccb537678d6609324a117d",
+      "source_content_hash": "a733685a2c58ac3c283c2a00a3890849148112f764eacd95d0f2b2bbc34aef73",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.48550/arxiv.2609.11060",
+      "title": "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "appendix",
+        "body",
+        "introduction",
+        "related"
+      ],
+      "evidence_count": 8,
+      "assessment_version": "quality-semantics-v1",
+      "card_path": "docs/papers/grounding-agent-memory-environment-probing-curation-for-enterprise-agents-9ed78cff.json",
+      "card_sha256": "902c08a2b95dc3ba81d005c72d9b53e534dac2bcf9d505805a3d236b1b640c1e",
+      "html_sha256": "4d3b675af7396922894367a0bdb6431af424e2c510e510f5225495c934eca81b",
+      "source_content_hash": "c1691a2906633643e8f1b1d0dead2cf47202682c4a1f9cef2d63475c7a7fc282",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22682679",
+      "title": "Beyond Agentic Operating Systems A Governance-Centric Architecture for Persistent Enterprise AI Memory, Coordination, and Human Authority AIVORIX OS\u2122 Architectural Research Series",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 6,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/beyond-agentic-operating-systems-a-governance-centric-architecture-for-persistent-en-dfe5906d.json",
+      "card_sha256": "8bdf99ff0a26943e098b3b7135ef3fbd2c221d74a48554d860f9b060b7c5e8ff",
+      "html_sha256": "00191981587cc0437f19c5d23566e246cb5e24fc21a69c44d222efba11e8a39f",
+      "source_content_hash": "4d95d4d06619450fccbe69f1d39652f36c987b831828d31274096db45a3f4c53",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "arxiv:2609.11225",
+      "title": "Harness Robotic OS: A Unified Embodied-Agent Runtime for Closed-Loop Quadruped Inspection",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 18,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/harness-robotic-os-a-unified-embodied-agent-runtime-for-closed-loop-quadruped-inspec-295b9fd2.json",
+      "card_sha256": "a67da2aff2c41b8aa2ed7db0e013a0caa88daecfcb7343948b8f61b30153f0c9",
+      "html_sha256": "a8e23d4c7d60e0872e8e90b6cee4a72c8d5862572e68b7ba5ba7f55c029be5db",
+      "source_content_hash": "fdf3d3d1291697320ed9113e12815aabcb93b7e8397530a686d28b7d9ee2f53b",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22685081",
+      "title": "Rank-Bounded Memory: Self-Poisoning and Attribution Laundering in LLM Agents",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 11,
+      "assessment_version": "quality-coverage-v1",
+      "card_path": "docs/papers/rank-bounded-memory-self-poisoning-and-attribution-laundering-in-llm-agents-997781b1.json",
+      "card_sha256": "02cba5eaec7a74b8899250acdd09739d91acd47752ff19331c3224966efe67b0",
+      "html_sha256": "b2a020241e869f67e7dc6a331d15d57166867a73de0468f2e5ca506cc7273e98",
+      "source_content_hash": "37fcb17e4ae17797bc9327897d1d3552a828d01c868f15d316501d57dd1bdc8f",
+      "fully_automatic": true
+    },
+    {
+      "track": "agent_memory",
+      "canonical_id": "doi:10.5281/zenodo.22682633",
+      "title": "AgentKG: Conversational Memory as a Knowledge Graph",
+      "before": "manuscript_unavailable",
+      "after": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "manuscript_unavailable",
+      "evidence_roles": [],
+      "evidence_count": 0,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/papers/agentkg-conversational-memory-as-a-knowledge-graph-dc298c20.json",
+      "card_sha256": "afef9140af09f6a944bae1f3c1673165888c444092810e7c226653c84eb637b5",
+      "html_sha256": "7e74b8320cd54fd2d5d73e4da054233629ebe7ea12f0c8fb1591d5236047011b",
+      "source_content_hash": "396af2b42db9c6132a2b7dd2f66256d4383e0296581838a27b4644f4f6273f51",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.1002/advs.76675",
+      "title": "Closing the Empirical Loop: Autonomous AI Agents Conduct End\u2010to\u2010end Research With Human Participants",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 12,
+      "assessment_version": "quality-coverage-v1",
+      "card_path": "docs/deep-research/papers/closing-the-empirical-loop-autonomous-ai-agents-conduct-end-to-end-research-with-hum-2b98fcc2.json",
+      "card_sha256": "1f9aceadb8c2c2bd43bdb4c6985fd26f7ac0d5157942438da04e39acb1279fdc",
+      "html_sha256": "f5f0b502fd0d1b061cd45a094bbba9294e18c2add2b4cfb323bc77af15d4fa22",
+      "source_content_hash": "ab2410ee72f45a51fdd2531a9400dc68c7a22b47e3dd55c237ff9b078f4c3a6a",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.11243",
+      "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "abstract",
+        "appendix",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "evidence_count": 4,
+      "assessment_version": "quality-grounding-v1",
+      "card_path": "docs/deep-research/papers/sci-mmr-benchmarking-multi-step-evidence-grounded-scientific-reasoning-in-multimodal-d488718b.json",
+      "card_sha256": "46e5564b8234055404f78ffe00d02a2a7ab7588118b95f5e80926492c5eeb044",
+      "html_sha256": "e5c57c5ab082d0ca457572ade24efb239dcfd62125bb4e66089e5f3dc0fe7285",
+      "source_content_hash": "694ade89dcf9b26be2f33097535cad0ec77bffc478e3271c937fd4d215350c1d",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.11318",
+      "title": "Mr.LHDR: A Benchmark for Multimodal Real-World Long-Horizon Deep Research Agents",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": null,
+      "evidence_roles": [],
+      "evidence_count": 8,
+      "assessment_version": "quality-v2",
+      "card_path": "docs/deep-research/papers/mr-lhdr-a-benchmark-for-multimodal-real-world-long-horizon-deep-research-agents-2f827eeb.json",
+      "card_sha256": "47b749303678f9980826a56ca0cccd00684dc75111bebaefa38f2bd66ebb7215",
+      "html_sha256": "beb8f2710866b64da04f33cf26dcf7f5fd690db908b44963cd38b4547e368f77",
+      "source_content_hash": "d316fe1ef881e74a901bebb4c374e20decdb3f062310656c075f4a5270ea8146",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.10922",
+      "title": "Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 8,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/auto-recsys-harnessing-autonomous-research-agents-for-industry-scale-recommender-sys-7b7ede0f.json",
+      "card_sha256": "e614567e7a659fc900f63e0c62dbf06242d99ca194938ca2ad1c4ae4b198d481",
+      "html_sha256": "634d2d8a18d1eec178ab74978aa7bdfe92ef1df8caf80b52ff999ff9bba889ee",
+      "source_content_hash": "f4a5656658f30151b8399cb7e06826cea95b8a62162527682a37a19697b6bbf9",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.6082/mgmw1-gw451",
+      "title": "AI Scientists Need a Theory of Scientific Value",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 15,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/ai-scientists-need-a-theory-of-scientific-value-51aa98b1.json",
+      "card_sha256": "4b6309797e425cd9a9d67561433e8c4460d9fd02c8be7720770e84dd0f72b16c",
+      "html_sha256": "77f979177f5b158aee220c55dfa36280d66f844f94312d9ab1b9c7756f318d24",
+      "source_content_hash": "6a95fed7d36453707c1c579938a86682ec05a8cd2def103ba03fd7ce367c4f57",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 9,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/agentideabench-benchmarking-scientific-ideation-in-the-agent-era-802c09ca.json",
+      "card_sha256": "21038bb49744fb802c79c5217b4880a560091175bd07fada5420e87edbf3efe9",
+      "html_sha256": "c0eab54dc0189044aced84e6ba8f926388c0e2fcc7ba904f267e519c5a61661d",
+      "source_content_hash": "d76d8b7748237d0e1b460e44a7c4e042be9a3fd00ca70925492a175babedd6e9",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.48550/arxiv.2609.07655",
+      "title": "Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 6,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/online-surrogate-repair-decoupling-high-fidelity-feedback-from-search-length-in-clos-93ed0a54.json",
+      "card_sha256": "eaa4a87009fe2266b63597593ba4589ac4a73303e26ef15ed7e5609731fb35ac",
+      "html_sha256": "bcfc64ca66abeedaa6ab3c9df3e821b3388f84a88e3f33229018178c0dced0e4",
+      "source_content_hash": "55840d46846877279d39c09ab231eedbb1580a5353f9a5393e58563cf16ac691",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "title": "Real Science Is Harder Than Benchmarks: Evaluating Advanced AI Frameworks on Published Studies. II. Antibody Properties, Lipid-RNA Interactions",
+      "before": "evidence_grounding_failure",
+      "after": "scientific_uncertainty",
+      "reassessed": true,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "abstract",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "evidence_count": 8,
+      "assessment_version": "quality-cross-section-v1",
+      "card_path": "docs/deep-research/papers/real-science-is-harder-than-benchmarks-evaluating-advanced-ai-frameworks-on-publishe-aa527b46.json",
+      "card_sha256": "884faf6245d60b0c2f4d5014bc88552fe2fab982835d830a9edc9d20f04a615e",
+      "html_sha256": "1b9a2c5e6f7394aaf05676e3230d9fe294f39b9fa0aea592898e99bfeaacadef",
+      "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.17605/osf.io/qm2c3",
+      "title": "Do AI Scientists' Results Replicate? Pre-registration of a multi-seed re-execution study of agent-generated empirical claims with matched human baselines and auditor calibration (AutoReplicate)",
+      "before": "manuscript_unavailable",
+      "after": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "manuscript_unavailable",
+      "evidence_roles": [],
+      "evidence_count": 3,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/do-ai-scientists-results-replicate-pre-registration-of-a-multi-seed-re-execution-stu-6cfce9e9.json",
+      "card_sha256": "0627d60dfafdb4da486c40c5fee40fee04d292c97610860e7e734194c0999841",
+      "html_sha256": "e41ac82ce215d2546bbd7fbefa7d8688af1f9ea38f3042411cbf82a3aa39f696",
+      "source_content_hash": "2f4ea2b74914a5dd86b1e8aadbe53acc88deb117546b28e5b1543d1afee19f86",
+      "fully_automatic": true
+    },
+    {
+      "track": "deep_research",
+      "canonical_id": "doi:10.1016/j.nxnano.2026.100728",
+      "title": "Generative artificial intelligence for nanomaterial discovery and nanoengineering: From data-driven design to autonomous laboratories",
+      "before": "manuscript_unavailable",
+      "after": "manuscript_unavailable",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "manuscript_unavailable",
+      "evidence_roles": [],
+      "evidence_count": 3,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/deep-research/papers/generative-artificial-intelligence-for-nanomaterial-discovery-and-nanoengineering-fr-115b9b96.json",
+      "card_sha256": "17e0b4adfa4294a75b1e5d44625f56929cc19f14a5be8ca5344d8eb09162d54e",
+      "html_sha256": "3500af278734ae79008bbceade01f6dd7e4e9db872c24d8d6cd4b52b5718b014",
+      "source_content_hash": "9e0149b697aed38a50c3478deb797102ccf6dbcdba1fb9e44195b8f6c292fcee",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2609.04793",
+      "title": "ProtLingo: Efficient Protein Language Modeling via Conditional Memory and Expert Routing",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "legacy_unspecified"
+      ],
+      "evidence_count": 12,
+      "assessment_version": "quality-evidence-v1",
+      "card_path": "docs/engram/papers/protlingo-efficient-protein-language-modeling-via-conditional-memory-and-expert-rout-c8478276.json",
+      "card_sha256": "9ad89b44f80eab22b195986c3c9aca6979a6f97dad731453be57307c9ea51cc9",
+      "html_sha256": "1703a35513614802de2e2882367437153afa4d73b63613991b32d7757c85a95a",
+      "source_content_hash": "7f95bd5b8ad8c24672abba362cf02196213204db3b98080f7ae23eb18930fc0c",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "doi:10.48550/arxiv.2609.03426",
+      "title": "Lngram v2: Latent N-Gram Memory with Interpretable Discrete Representations",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 10,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/engram/papers/lngram-v2-latent-n-gram-memory-with-interpretable-discrete-representations-4de8e913.json",
+      "card_sha256": "5f0a95065d1ad33c05a56b22d4844f9fa764fd07a19969f04db9edbf1595f90e",
+      "html_sha256": "8d397f5a30470a22cde53aa20e4af0ca8e6dce3a8f61b64b3bc4a428ca5438b4",
+      "source_content_hash": "f7bd34f3005e2cbc60b197e6869f1d81fdeb9d63ed0e8a87c7270fb4205a05dd",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2608.29327",
+      "title": "When to Adapt: Conditional Memory Adapters for Retention-Preserving Domain Specialization",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 6,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/engram/papers/when-to-adapt-conditional-memory-adapters-for-retention-preserving-domain-specializa-aa4f4be6.json",
+      "card_sha256": "665b3b1a22d4eb028abb8560383b8834e2b96b184e4e11a81ed3212ab376d4a3",
+      "html_sha256": "988370220cb0b99a79fb74e549575f0743bee5bf239a1eb7f747c78fe7a191d2",
+      "source_content_hash": "79bb70079319cf5dc94b51865c7bf6673132b12d01a28241e716d0b8b885c11c",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2608.23982",
+      "title": "Memory Is Not Always Needed: Characterizing Conditional Memory in Scientific Reasoning",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 9,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/engram/papers/memory-is-not-always-needed-characterizing-conditional-memory-in-scientific-reasonin-221afc67.json",
+      "card_sha256": "54642a0b0a7ad672c37ae4eee391437f928139d208fae990110a51b4f1b07175",
+      "html_sha256": "b21d807ac7a516ce19234e69d359d9df6e985479c3264296ec8527ac7d2965cb",
+      "source_content_hash": "6b881ff8a6bc46e9073da8f1f405bae13e0e860d9fcb89cf12d9ef74654ae5f1",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "doi:10.48550/arxiv.2608.17050",
+      "title": "Cross-Model Memory Transfer via Target-Side Reader Adaptation",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "legacy_unspecified"
+      ],
+      "evidence_count": 9,
+      "assessment_version": "quality-evidence-v1",
+      "card_path": "docs/engram/papers/cross-model-memory-transfer-via-target-side-reader-adaptation-4f7a8c48.json",
+      "card_sha256": "3317748c7da81b6f8937780394a6afb34f9ddd92dc3c63c4c2c9ca532aea05cf",
+      "html_sha256": "982f46afa5e4ccd8dac8313781830224e5612f7f1f1647f0ebdb146d8fa6530a",
+      "source_content_hash": "4a4c1f11b54dee9696114b6e30b797ddc58ff3f10b3b6362002e2d662919c867",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "openalex:W7172473936",
+      "title": "Tokenizer-Agnostic Engram Module",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 14,
+      "assessment_version": "quality-recovery-v1",
+      "card_path": "docs/engram/papers/tokenizer-agnostic-engram-module-99f22b6f.json",
+      "card_sha256": "0b58fa277f8e03dbce804ec09f612ddf441b526f69ffcf61d730f9e79aefc0b5",
+      "html_sha256": "78ebeeb8bf1602bc12c8615529028740e5f951444600d103c9253bb8ff9f7f39",
+      "source_content_hash": "528f4fe5c512abdcd932df1960da584132b85070437260d5d6618da0809f04f2",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2605.20948",
+      "title": "Memory Grafting: Scaling Language Model Pre-training via Offline Conditional Memory",
+      "before": "pass",
+      "after": "pass",
+      "reassessed": false,
+      "quality_status": "pass",
+      "execution_outcome": "scientific",
+      "evidence_roles": [],
+      "evidence_count": 12,
+      "assessment_version": "quality-coverage-v1",
+      "card_path": "docs/engram/papers/memory-grafting-scaling-language-model-pre-training-via-offline-conditional-memory-52e2a275.json",
+      "card_sha256": "7dd8df3d10f36e6fd4f73b86749eaebb17f204b945ec12cb06c7767b1379fee3",
+      "html_sha256": "91d272da50e9ba8f21c742fd8b7ce05223dfbe6eeaa114cf6825812a4d553f29",
+      "source_content_hash": "98ae2b04b13f48f41a06ecb74e04d231a9b8ad7a3921d10bcf1514910e36d7f1",
+      "fully_automatic": true
+    },
+    {
+      "track": "engram",
+      "canonical_id": "arxiv:2601.07372",
+      "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+      "before": "scientific_uncertainty",
+      "after": "scientific_uncertainty",
+      "reassessed": false,
+      "quality_status": "uncertain",
+      "execution_outcome": "scientific",
+      "evidence_roles": [
+        "body",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "evidence_count": 8,
+      "assessment_version": "quality-grounding-v1",
+      "card_path": "docs/engram/papers/conditional-memory-via-scalable-lookup-a-new-axis-of-sparsity-for-large-language-mod-800bec78.json",
+      "card_sha256": "f4d3eb888b13bd23dac281cc7f6beb4d4432a03d90e222ffc504dcc5ac9b6e56",
+      "html_sha256": "9d660a76b0542c59b372346b08a4bd5b2aad98bea30f9e76e56e6594591db193",
+      "source_content_hash": "8eab2dd35e4557d4142e5959697836f6cf926d0fbc29016257f1eea5be73df5d",
+      "fully_automatic": true
+    }
+  ],
+  "reassessment_usage": {
+    "initial": {
+      "calls": 1,
+      "input_tokens": 27634,
+      "output_tokens": 1966,
+      "reported_cost_usd": 0.02516316,
+      "unknown_cost_requests": 0
+    },
+    "retry": {
+      "calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reported_cost_usd": 0,
+      "unknown_cost_requests": 0
+    },
+    "verifier": {
+      "calls": 1,
+      "input_tokens": 12344,
+      "output_tokens": 676,
+      "reported_cost_usd": 0.01064176,
+      "unknown_cost_requests": 0
+    }
+  },
+  "manual_corrections": 0,
+  "batch_2_started": false,
+  "real_science": {
+    "final_category": "scientific_uncertainty",
+    "quality_status": "uncertain",
+    "automatic": true,
+    "manual_corrections": 0,
+    "context": {
+      "evidence_version": "block-evidence-v2",
+      "evidence_context_id": "dc6e037d4780825452a9074c78c1cec2968107d9b981bb57ec765e172912be57",
+      "evidence_context_sha256": "29d692a2979596c27a0de6576786da9a00758d187542970877a58ae46f764c3e",
+      "evidence_context_characters": 63249,
+      "evidence_block_count": 66,
+      "canonical_id": "doi:10.64898/2026.09.03.749176",
+      "source_content_hash": "d2354a02730a0300957fa07f9d72b200e43aaf9addfdf30dbdee65eb3b585651",
+      "selected_text_sha256": "b12c289841d5becb88cf463945af4807e633b44d50384a06305768421fa669e0"
+    },
+    "proposed_decision": {
+      "quality_rationale": "This is a well-structured empirical evaluation of AI research frameworks against published reference studies. The contribution is clearly scoped: extending a prior evaluation to two new biopharmaceutical case studies with multiple runs and prompt variants. The evaluation provides specific quantitative evidence (dataset counts, model counts, Spearman correlations, report lengths) and documents concrete failure modes including hallucinations and numerical irreproducibility. The paper positions itself against prior benchmark-based evaluations and the first paper in the series. Limitations are acknowledged, particularly the temporal scope of framework versions. Methodological details are partially delegated to the first paper, which limits standalone reproducibility assessment, but the prompt designs are included in the appendix. The main weakness is that the evaluation methodology for verifying AI outputs (how intermediate files were inspected, how hallucinations were detected) is not fully specified in the supplied text, relying on the prior paper's methods.",
+      "quality_status": "pass",
+      "quality_uncertainty": "The verification procedures for detecting hallucinations and inspecting intermediate files are referenced to the first paper rather than fully described here. The supplied text does not include the complete methods for how the authors confirmed that no MD simulations were run or how they validated the correctness of AI-generated structures. This limits independent assessment of the evaluation's internal validity, though the specific examples provided are detailed and plausible."
+    },
+    "claims": [
+      {
+        "accepted": true,
+        "claim": "The paper extends a prior evaluation of five AI research frameworks to two new biopharmaceutical case studies: antibody developability prediction and lipid-RNA MD simulation.",
+        "claim_role": "contribution",
+        "dimension": "contribution_clarity",
+        "eligibility": [
+          {
+            "basis": "abstract_attribution_only",
+            "body_member": false,
+            "claim_role": "contribution",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0002",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          },
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "contribution",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0007",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0002",
+          "Edc6e037d47808254-B0007"
+        ],
+        "explanation": "The abstract states the same five frameworks were evaluated on two additional projects, and the introduction specifies the two cases as antibody developability prediction and lipid-RNA interaction modeling. This establishes the paper's scope and contribution clearly.",
+        "item_id": "evidence-0",
+        "numeric_check": {
+          "claimed_numbers": [],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-0",
+          "reason": "The abstract states the same five frameworks were evaluated on two additional projects, and the introduction identifies those projects as antibody developability prediction and lipid-RNA interaction modeling.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0002",
+            "section_role": "abstract",
+            "section": "Abstract",
+            "pages": [
+              1
+            ],
+            "content_hash": "199cf9c155d1d493094bb09e15c48417a5677f92843e7440ecc12b3ddb4cc38f"
+          },
+          {
+            "evidence_id": "Edc6e037d47808254-B0007",
+            "section_role": "introduction",
+            "section": "Introduction",
+            "pages": [
+              2
+            ],
+            "content_hash": "3221fde6cd4e8f1428bd6b95c773fb443586f55b14b9189ab8ad3c91956eb306"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The study provides a systematic comparative evaluation of AI frameworks against published reference studies, including multiple independent runs and smaller-scope prompts.",
+        "claim_role": "contribution",
+        "dimension": "scholarly_novelty_or_value",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "contribution",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0013",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          },
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "contribution",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0014",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0013",
+          "Edc6e037d47808254-B0014"
+        ],
+        "explanation": "The introduction describes the design: five frameworks, full-sized and smaller-scope prompts, up to four independent runs, and comparison with original papers. This multi-run, multi-prompt comparative design adds value beyond single-run benchmark evaluations.",
+        "item_id": "evidence-1",
+        "numeric_check": {
+          "claimed_numbers": [],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-1",
+          "reason": "The introduction and Figure 1 describe five frameworks, full-sized and smaller-scope prompts, up to four independent runs, and comparison with original papers.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0013",
+            "section_role": "introduction",
+            "section": "Introduction",
+            "pages": [
+              2
+            ],
+            "content_hash": "d0e3b8fd318e101347566b6be138acdddd159ce8c9d8b23e16c63d138e9496a2"
+          },
+          {
+            "evidence_id": "Edc6e037d47808254-B0014",
+            "section_role": "introduction",
+            "section": "Introduction",
+            "pages": [
+              2,
+              3
+            ],
+            "content_hash": "4559d30dd6b1cce9d44f60f5c32532042fe3f4ca6de45a3a78da9cb26c5de9c9"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The evaluation protocol includes full-scale and smaller-scope prompts, with the smaller-scope prompts prescribing specific datasets, featurizations, force fields, and simulation protocols.",
+        "claim_role": "method",
+        "dimension": "methodological_rigor",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "method",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0052",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          },
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "method",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0053",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0052",
+          "Edc6e037d47808254-B0053"
+        ],
+        "explanation": "The Methods section describes paper selection and prompt engineering, including the design of smaller-scope prompts that reduce scope by roughly an order of magnitude and prescribe specific datasets, representations, force fields, and protocols. This supports a structured evaluation methodology.",
+        "item_id": "evidence-2",
+        "numeric_check": {
+          "claimed_numbers": [],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-2",
+          "reason": "The Methods section states smaller-scope prompts prescribed specific datasets, representations, force fields, and protocols, and reduced scope by roughly an order of magnitude.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0052",
+            "section_role": "methods",
+            "section": "Methods",
+            "pages": [
+              8
+            ],
+            "content_hash": "99dab95f229056b86ae2f83d7a70b9f6b750ea7b66d26181970414ba2f50e0a5"
+          },
+          {
+            "evidence_id": "Edc6e037d47808254-B0053",
+            "section_role": "methods",
+            "section": "Methods",
+            "pages": [
+              8,
+              9
+            ],
+            "content_hash": "478af4bf1d124215b38211cf006cf2f2744590df2ca94c776e0fb901d89cdccc"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The antibody case study found that AI frameworks used only one dataset and 2-5 ML models, compared to 240 datasets and 30 models in the reference study.",
+        "claim_role": "evaluation",
+        "dimension": "evaluation_or_validation_strength",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "evaluation",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0018",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0018"
+        ],
+        "explanation": "The results section explicitly contrasts the original paper's 240 datasets and 30 ML models with AI frameworks' use of one dataset and 2-5 models. This quantitative comparison substantiates the claim of reduced scope.",
+        "item_id": "evidence-3",
+        "numeric_check": {
+          "claimed_numbers": [
+            "2",
+            "5",
+            "240",
+            "30",
+            "240",
+            "30",
+            "2",
+            "5"
+          ],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-3",
+          "reason": "The results text explicitly contrasts 240 datasets and 30 ML models in the original study with one dataset and 2-5 models used by AI frameworks.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0018",
+            "section_role": "results",
+            "section": "Results",
+            "pages": [
+              3
+            ],
+            "content_hash": "9f0325b9a4b334e8b8ae17aa14e9ca5c9190232d8f87eb21fd41fc5d4f788ef2"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The AI Scientist-v2 claimed 200-500 ns all-atom simulations but actually generated a synthetic dataset with fabricated feature vectors and ran no MD simulations.",
+        "claim_role": "evaluation",
+        "dimension": "evaluation_or_validation_strength",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "evaluation",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0034",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0034"
+        ],
+        "explanation": "The results section reports that the framework claimed 200 to 500 ns simulations but in reality no MD simulations were run; instead a synthetic dataset with fabricated feature vectors was generated. This is a specific, verifiable finding of hallucination.",
+        "item_id": "evidence-4",
+        "numeric_check": {
+          "claimed_numbers": [
+            "200",
+            "500",
+            "200",
+            "500"
+          ],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-4",
+          "reason": "The results text states the framework claimed 200-500 ns simulations but no MD simulations were run, and a synthetic dataset with fabricated feature vectors was generated instead.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0034",
+            "section_role": "results",
+            "section": "Results",
+            "pages": [
+              5,
+              6
+            ],
+            "content_hash": "89490572e3a84530b7634bd9bab5d660a0da1b8aef548b86f0c67250880f5c85"
+          }
+        ]
+      },
+      {
+        "accepted": false,
+        "claim": "Spearman correlation values for the same antibody dataset varied widely across runs, with K-Dense expression ESM values ranging from 0.41 to 0.57 and one-hot values from 0.01 to 0.57.",
+        "claim_role": "result",
+        "dimension": "evidence_to_claim_alignment",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "result",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0028",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0028"
+        ],
+        "explanation": "Table 2 provides specific Spearman correlation values across runs for K-Dense and Kosmos, showing substantial numerical variation. The cited values match the claim and support the paper's conclusion about numerical irreproducibility.",
+        "item_id": "evidence-5",
+        "numeric_check": {
+          "claimed_numbers": [
+            "0.41",
+            "0.57",
+            "0.01",
+            "0.57",
+            "2"
+          ],
+          "missing_values_or_units": [
+            "2"
+          ],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "unsupported"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-5",
+          "reason": "Table 2 shows K-Dense expression ESM values of 0.41, 0.57, 0.52, and 0.54, and one-hot values of 0.44, 0.57, 0.56, and 0.01, matching the claimed ranges.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0028",
+            "section_role": "results",
+            "section": "Results",
+            "pages": [
+              5
+            ],
+            "content_hash": "87ecc961ad4e0da02906e1470065be042a71c14c0a6e306af4a3cf8492a5e0de"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The paper positions its work against prior benchmark-based AI evaluations and the first paper in the series, arguing that published research papers provide a more demanding test.",
+        "claim_role": "positioning",
+        "dimension": "related_work_and_gap_positioning",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "positioning",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0004",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          },
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "positioning",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0005",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0004",
+          "Edc6e037d47808254-B0005"
+        ],
+        "explanation": "The introduction contrasts standard benchmarks built from static datasets with recently published papers as reference material, and explicitly references Paper I in the series. This establishes the gap the paper addresses.",
+        "item_id": "evidence-6",
+        "numeric_check": {
+          "claimed_numbers": [],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-6",
+          "reason": "The introduction contrasts static benchmarks with recently published papers as reference material and explicitly references Paper I in the series.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0004",
+            "section_role": "introduction",
+            "section": "Introduction",
+            "pages": [
+              1
+            ],
+            "content_hash": "0f482fe7143d4ca62e34a237447078a6ad9344701203f3fe2edefe9fbf690d9b"
+          },
+          {
+            "evidence_id": "Edc6e037d47808254-B0005",
+            "section_role": "introduction",
+            "section": "Introduction",
+            "pages": [
+              1
+            ],
+            "content_hash": "e3073529c771261ad4b45e014ce04902dc89315ca3ac711237d95be3bf67f48d"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The paper acknowledges that AI frameworks were run in January-March 2026 and conclusions reflect the state of the frameworks at that time, which may have changed since then.",
+        "claim_role": "limitation",
+        "dimension": "limitations_and_uncertainty_handling",
+        "eligibility": [
+          {
+            "basis": "atypical_body_requires_support",
+            "body_member": true,
+            "claim_role": "limitation",
+            "compatible": false,
+            "evidence_id": "Edc6e037d47808254-B0053",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "requires_support_verification"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0053"
+        ],
+        "explanation": "The Methods section explicitly notes the temporal scope of the evaluation and cautions that conclusions reflect the state of the frameworks at that time. This is a bounded limitation statement.",
+        "fallback_resolution": "accepted",
+        "item_id": "evidence-7",
+        "numeric_check": {
+          "claimed_numbers": [
+            "2026"
+          ],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": true,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-7",
+          "reason": "The Methods section states AI frameworks were run in January-March 2026 and conclusions reflect the state of the frameworks at that time, which may have changed.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0053",
+            "section_role": "methods",
+            "section": "Methods",
+            "pages": [
+              8,
+              9
+            ],
+            "content_hash": "478af4bf1d124215b38211cf006cf2f2744590df2ca94c776e0fb901d89cdccc"
+          }
+        ]
+      },
+      {
+        "accepted": true,
+        "claim": "The paper reports that no AI framework found and cited the original reference paper, despite it being the single most relevant paper for the prompt.",
+        "claim_role": "result",
+        "dimension": "evidence_to_claim_alignment",
+        "eligibility": [
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "result",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0019",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          },
+          {
+            "basis": "section_role",
+            "body_member": true,
+            "claim_role": "result",
+            "compatible": true,
+            "evidence_id": "Edc6e037d47808254-B0041",
+            "policy": "cross-section-support-v1",
+            "provenance_eligible": true,
+            "state": "directly_compatible"
+          }
+        ],
+        "eligibility_valid": true,
+        "evidence_ids": [
+          "Edc6e037d47808254-B0019",
+          "Edc6e037d47808254-B0041"
+        ],
+        "explanation": "Both results sections state that the original paper was not discovered and used by AI frameworks in all runs, and Table 1 and Table 3 document this. This supports the paper's claim about literature coverage gaps.",
+        "item_id": "evidence-8",
+        "numeric_check": {
+          "claimed_numbers": [
+            "1",
+            "3"
+          ],
+          "missing_values_or_units": [],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "requires_semantic_verification"
+        },
+        "provenance_valid": true,
+        "requires_support_fallback": false,
+        "statement_kind": "source_claim",
+        "support_verification": {
+          "item_id": "evidence-8",
+          "reason": "Both results sections state the original paper was not discovered or used in all runs, and Tables 1 and 3 document this.",
+          "status": "supported"
+        },
+        "sources": [
+          {
+            "evidence_id": "Edc6e037d47808254-B0019",
+            "section_role": "results",
+            "section": "Results",
+            "pages": [
+              3
+            ],
+            "content_hash": "1ed20bc0481b0b72a3477d3b7ae53026842abac99b4b9ab23aa4686693140fc3"
+          },
+          {
+            "evidence_id": "Edc6e037d47808254-B0041",
+            "section_role": "results",
+            "section": "Results",
+            "pages": [
+              7
+            ],
+            "content_hash": "064645b907defec2ee9a4aab61bd26a546ae2c96e7fdf278f15970448f46af5f"
+          }
+        ]
+      }
+    ],
+    "narrative_verification": [
+      {
+        "item_id": "quality_rationale",
+        "reason": "The narrative's substantive assertions about scope, quantitative evidence, failure modes, positioning, and limitations are supported by the cited sources; the claim that verification methods are not fully specified is also supported by the Methods text referring to the first and ",
+        "status": "supported"
+      },
+      {
+        "item_id": "quality_uncertainty",
+        "reason": "The cited Methods text explicitly refers to the first paper for all other aspects of Methods, so the absence of complete verification procedures in the supplied text is supported.",
+        "status": "supported"
+      }
+    ],
+    "support_verification": {
+      "attempt_limit": 1,
+      "input_sha256": "67b4a28418fa80c426a3b22099c446c564131926d0956ccb604074b072988926",
+      "items": [
+        {
+          "item_id": "evidence-0",
+          "reason": "The abstract states the same five frameworks were evaluated on two additional projects, and the introduction identifies those projects as antibody developability prediction and lipid-RNA interaction modeling.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-1",
+          "reason": "The introduction and Figure 1 describe five frameworks, full-sized and smaller-scope prompts, up to four independent runs, and comparison with original papers.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-2",
+          "reason": "The Methods section states smaller-scope prompts prescribed specific datasets, representations, force fields, and protocols, and reduced scope by roughly an order of magnitude.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-3",
+          "reason": "The results text explicitly contrasts 240 datasets and 30 ML models in the original study with one dataset and 2-5 models used by AI frameworks.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-4",
+          "reason": "The results text states the framework claimed 200-500 ns simulations but no MD simulations were run, and a synthetic dataset with fabricated feature vectors was generated instead.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-5",
+          "reason": "Table 2 shows K-Dense expression ESM values of 0.41, 0.57, 0.52, and 0.54, and one-hot values of 0.44, 0.57, 0.56, and 0.01, matching the claimed ranges.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-6",
+          "reason": "The introduction contrasts static benchmarks with recently published papers as reference material and explicitly references Paper I in the series.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-7",
+          "reason": "The Methods section states AI frameworks were run in January-March 2026 and conclusions reflect the state of the frameworks at that time, which may have changed.",
+          "status": "supported"
+        },
+        {
+          "item_id": "evidence-8",
+          "reason": "Both results sections state the original paper was not discovered or used in all runs, and Tables 1 and 3 document this.",
+          "status": "supported"
+        },
+        {
+          "item_id": "quality_rationale",
+          "reason": "The narrative's substantive assertions about scope, quantitative evidence, failure modes, positioning, and limitations are supported by the cited sources; the claim that verification methods are not fully specified is also supported by the Methods text referring to the first and ",
+          "status": "supported"
+        },
+        {
+          "item_id": "quality_uncertainty",
+          "reason": "The cited Methods text explicitly refers to the first paper for all other aspects of Methods, so the absence of complete verification procedures in the supplied text is supported.",
+          "status": "supported"
+        }
+      ],
+      "model": "deepseek/deepseek-v4-pro-0813",
+      "status": "success",
+      "version": "claim-support-v1"
+    },
+    "support_errors": [
+      {
+        "item_id": "evidence-5",
+        "numeric_check": {
+          "claimed_numbers": [
+            "0.41",
+            "0.57",
+            "0.01",
+            "0.57",
+            "2"
+          ],
+          "missing_values_or_units": [
+            "2"
+          ],
+          "scope": "cited canonical blocks only; matching numerals do not verify metric or interpretation",
+          "status": "unsupported"
+        },
+        "reason": "Cited evidence does not establish numerical values/units: 2",
+        "status": "unsupported"
+      }
+    ],
+    "final_rationale": "The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.",
+    "final_uncertainty": "Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 2"
+  },
+  "independent_reviews": [
+    {
+      "requested_model": "deepseek/deepseek-v4-pro-0813",
+      "candidate": "2dc232dd1d563e288728ebb334f59337eead0c75",
+      "baseline": "566b6c0a300ee1d678f7910effd1a8d11070ea47",
+      "request_id": null,
+      "provider": null,
+      "finish_reason": null,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "reasoning_tokens": null,
+      "cost": null,
+      "accepted": false,
+      "verdict": null,
+      "request_sha256": "1ec68daaa365ca767a59686dc2ff2ff6b34ca076cc9e32a3b22bbf2803a4fbdb",
+      "request_bytes": 78317,
+      "final_reason": "Interrupted or local processing failed; no successful verdict.",
+      "request_started_at": "2026-09-17T08:31:54.058878+00:00",
+      "completed_at": "2026-09-17T08:42:34.072121+00:00"
+    },
+    {
+      "requested_model": "anthropic/claude-opus-4.6",
+      "candidate": "2dc232dd1d563e288728ebb334f59337eead0c75",
+      "baseline": "566b6c0a300ee1d678f7910effd1a8d11070ea47",
+      "request_id": "gen-1789634560-Cz5cQnPpYI1xFKsbsyaC",
+      "provider": "Claude Platform on AWS",
+      "finish_reason": "stop",
+      "prompt_tokens": 22383,
+      "completion_tokens": 122,
+      "reasoning_tokens": 0,
+      "cost": 0.114965,
+      "accepted": true,
+      "verdict": "PASS_WITH_NOTES",
+      "request_sha256": "c36d56242a14273614782f98d312ebc240c133174e8d495b2abaca6f373c81a8",
+      "request_bytes": 78313,
+      "final_reason": "Complete response accepted under existing validation rules.",
+      "request_started_at": "2026-09-17T08:42:39.830202+00:00",
+      "completed_at": "2026-09-17T08:42:46.079983+00:00"
+    }
+  ],
+  "review_note_disposition": "Static visibility limitation for imported test helpers is covered by the actually executed local suite and exact-head CI; no code change required. Reviewer did not itself execute tests.",
+  "costs": {
+    "reassessment_reported_usd": 0.02516316,
+    "verifier_reported_usd": 0.01064176,
+    "review_reported_usd": 0.114965,
+    "combined_reported_usd": 0.15076992,
+    "unknown_cost_review_requests": 1,
+    "unknown_review_cost_reserve_usd": 0.21032385,
+    "combined_with_unknown_cost_reserve_usd": 0.36109377,
+    "cost_note": "Provider-reported charges, not reconciled invoices. DeepSeek review was interrupted after 10m40s without a returned verdict/usage; its charge is unknown, not zero. The reserve uses submitted request bytes as input-token ceiling and the full output cap at checked maximum endpoint rates."
+  },
+  "validation": {
+    "checks": [
+      "unit",
+      "agent_memory-evaluate-relevance",
+      "agent_memory-evaluate-quality",
+      "agent_memory-evaluate-discovery",
+      "agent_memory-validate-idempotency",
+      "agent_memory-build-site",
+      "deep_research-evaluate-relevance",
+      "deep_research-evaluate-quality",
+      "deep_research-evaluate-discovery",
+      "deep_research-validate-idempotency",
+      "deep_research-build-site",
+      "engram-evaluate-relevance",
+      "engram-evaluate-quality",
+      "engram-evaluate-discovery",
+      "engram-validate-idempotency",
+      "engram-build-site",
+      "site",
+      "sizes",
+      "diff"
+    ],
+    "unit_tests": 301,
+    "snapshot_restore": "PASS",
+    "legacy_restore": "PASS",
+    "database_hashes": {
+      "data/paper_scout.sqlite3": "c4c155d4f3395bdac7efd7338454b3de001a6e0d211596d76f8ad55608ca7935",
+      "data/deep_research/paper_scout.sqlite3": "25a05d5d98fdc1eae2c7922a08ff7929dbb12618225a90231067efb519e3f46a",
+      "data/engram/paper_scout.sqlite3": "4a6eea3297a4ea03e6bc53538829b0d92d76f80dc22b614c97fe055c32cff334"
+    },
+    "snapshot_sha256": "d13defb96893ee652e292a6a8834b30a26e4e08f7679add629277df2d2e10c43"
+  },
+  "counterfactual": {
+    "current_v2_records": 5,
+    "accepted_source_blocks_checked": 50,
+    "accepted_claims_newly_hard_ineligible": [],
+    "gate_only_counterfactual_additional_batched_verifier_calls": 1,
+    "explanation": "For the stored latest original-28 proposals, only Real Science has reference errors. Its exact cited IDs/context are reproduced from cache and all become direct/conditional candidates. Already verified proposals add zero calls; unavailable/legacy outcomes are not reassessed. This estimates reachability only, not model outcomes.",
+    "newly_reachable": [
+      {
+        "canonical_id": "doi:10.64898/2026.09.03.749176",
+        "errors": [
+          "evidence section role is ineligible for this claim/dimension"
+        ],
+        "prior_verifier_calls": 0
+      }
+    ]
+  },
+  "readiness_checks": {
+    "real_science_automatic_scientific_outcome": true,
+    "grounding_failures_zero": true,
+    "protocol_failures_zero": true,
+    "coverage_failures_zero": true,
+    "hard_exclusions_enforced": true,
+    "atypical_body_reaches_support_verification": true,
+    "numeric_contradictions_not_overridden": true,
+    "abstract_restrictions_intact": true,
+    "full_validation_passes": true,
+    "independent_review_passes": true,
+    "no_new_known_architectural_defect": true
+  },
+  "QUALITY_PIPELINE_READY_FOR_BATCH_2": "YES",
+  "deployment": {
+    "status": "pending",
+    "dispatches": 0
+  },
+  "local_operator_artifacts": "data/cache/operator/cross-section-20260917/"
+}

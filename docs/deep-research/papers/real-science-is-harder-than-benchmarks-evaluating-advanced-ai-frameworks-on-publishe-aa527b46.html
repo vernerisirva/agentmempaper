@@ -60,15 +60,195 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Evidence references failed manuscript-context or claim-role eligibility checks; the proposed scientific judgment is withheld.</p>
-      <p>Scientific support remains unresolved. Support verification unavailable. Cited evidence does not establish numerical values/units: 2</p>
+      <p>The cited sources did not establish all proposed scientific claims or required criteria. Source provenance alone does not establish support.</p>
+      <p>Scientific support remains unresolved. Cited evidence does not establish numerical values/units: 2</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-grounding-v1. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T07:58:46+00:00.</p>
+        <p>Assessor: llm. Assessment version: quality-cross-section-v1. Gate: scientific-gate-v1.</p>
+        <p>Assessed: 2026-09-17T08:50:48+00:00.</p>
         <p>Coverage: 55833 of 55833 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — pages 1–2</strong><p>The paper extends a prior evaluation of five AI research frameworks to two new biopharmaceutical case studies: antibody developability prediction and lipid-RNA MD simulation.</p><p>Attributed source statement: supported. The abstract states the same five frameworks were evaluated on two additional projects, and the introduction specifies the two cases as antibody developability prediction and lipid-RNA interaction modeling. This establishes the paper&#x27;s scope and contribution clearly. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Artificial Intelligence (AI) frameworks for automating scientific research have shown strong performance on benchmarks, but t heir
+utility for real-world industrial research remains insufficiently characterized. Extending the analysis presented in the first  paper of this
+series, we evaluated the same five advanced AI research frameworks (Kosmos, K -Dense, ToolUniverse, BioAgents from bio.xyz, and
+the AI Scientist-v2 from Sakana AI) on two more projects of high practical importance for biopharmaceutical develo pment: predicting
+antibody developability properties with the use of pretrained protein language model embeddings, and modeling non -covalent lipid-
+RNA interactions in lipid nanoparticles with all-atom molecular dynamics (MD) simulations. The AI frameworks again showed genuine
+strengths, including unprompted identification of subtle methodological issues, successful use of </blockquote><blockquote>high practical importance for drug development:
+prediction of therapeutic antibody developability properties, and
+characterization of non-covalent interactions in lipid nanoparticle
+(LNP) systems. From a technical viewpoint, these two projects
+correspond to two distinct classes of computational methodology:
+ML based on pretrained protein language model embeddings, and
+all-atom molecular dynamics (MD) simulations of biomolecular
+systems, adding more dimensions to the evaluation and probing
+complementary aspects of AI capability beyond those already
+covered in the first paper of this series.  In both fields,  namely
+antibody property prediction and MD simulations of biomolecular
+systems, AI and ML have already been used in the literature.
+Antibody developability assessment is a critical phase in biologics
+design that evaluates key therapeutic factors such as stability, </blockquote></details></li><li><strong>Scholarly novelty or value — pages 2–3</strong><p>The study provides a systematic comparative evaluation of AI frameworks against published reference studies, including multiple independent runs and smaller-scope prompts.</p><p>Attributed source statement: supported. The introduction describes the design: five frameworks, full-sized and smaller-scope prompts, up to four independent runs, and comparison with original papers. This multi-run, multi-prompt comparative design adds value beyond single-run benchmark evaluations. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>these two new
+projects, using both full -sized prompts that mirrored the scope of
+the original studies and smaller -scope prompts that narrow ed the
+task to a prescribed subset of datasets, models, or simulation
+protocols. As in the first paper, we additionally tested Claude and
+ChatGPT (Opus 4.6 Extended  and Extended Thinking 5.4 Agent
+mode, respectively , which w ere the most advanced versions
+available at the time of runs)  on the smaller -scope prompts to
+compare general -purpose AI systems with frameworks
+specifically developed for scientific research. The remainder of the
+paper presents the results for each of the two projects, followed by
+a discussion that integrates these  observations with those of the
+first paper.
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to </blockquote><blockquote>display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+3
+
+
+Fig. 1. The design of our research, reported in the previous and this paper,
+proceeds from a real-life scientific task (e.g., reproducing a recent paper
+on drug design) . Three tasks are covered in Paper I and two (antibody
+property prediction with ML and MD simulations of lipid-RNA systems)
+in this paper.  A prompt for AI is formulated and submitted to five
+advanced AI frameworks. In addition, t he scope is narrowed into a
+smaller-scope prompt to ensure more complete, uniform and comparable
+results, and re -run with two specialized and two general -purpose AI
+frameworks, each run up to 4 times independently for reproducibility
+evaluation. Finally, the outputs are analyzed and </blockquote></details></li><li><strong>Methodological rigor — pages 8–9</strong><p>The evaluation protocol includes full-scale and smaller-scope prompts, with the smaller-scope prompts prescribing specific datasets, featurizations, force fields, and simulation protocols.</p><p>Attributed source statement: supported. The Methods section describes paper selection and prompt engineering, including the design of smaller-scope prompts that reduce scope by roughly an order of magnitude and prescribe specific datasets, representations, force fields, and protocols. This supports a structured evaluation methodology. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Paper selection and Prompt engineering. Papers were selected to
+reflect the current frontier in the corresponding fields, with
+practical relevance as the primary criterion.  For each project, a
+full-scale prompt was formulated describing the research problem
+and the key scientific questions, without prescribing specific
+datasets or methods. The full-scale prompt for the antibody project
+covered the scope of the entire reference paper, while for the lipid-
+RNA project it covered only the computational modeling
+component of the reference paper (see Appendix). Smaller-scope
+prompts were then designed to reduce the scope by roughly an
+order of magnitude: for the antibody project, the analysis was
+narrowed to two specific datasets, two prescribed sequence
+representations, and a fixed evaluation procedure; for the MD
+project, m olecular structures, force fields, and protocols were </blockquote><blockquote>
+explicitly prescribed, and only construction and short equilibration
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+9
+
+of three all-atom systems were requested, without production MD
+or its analysis (see Appendix).
+For all other aspects of Methods, we refer the reader to the first
+paper in this series ,8 We remind the reader that AI frameworks
+were run in January -March 2026, and therefore, our conclusions
+reflect the state of the listed AI frameworks at that time , which
+may have changed since then.15,32</blockquote></details></li><li><strong>Evaluation or validation strength — page 3</strong><p>The antibody case study found that AI frameworks used only one dataset and 2-5 ML models, compared to 240 datasets and 30 models in the reference study.</p><p>Attributed source statement: supported. The results section explicitly contrasts the original paper&#x27;s 240 datasets and 30 ML models with AI frameworks&#x27; use of one dataset and 2-5 models. This quantitative comparison substantiates the claim of reduced scope. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>approached the scale or completeness
+of the original study . Where the original paper evaluated 240
+datasets, each AI framework used only one dataset . Where the
+original study benchmarked 30 diverse ML models including
+language models, inverse folding models, and structure prediction
+models, AI frameworks tested between 2 and 5 ML models,
+predominantly using embeddings from  a single  ESM-2 family.
+Key research questions went partly or wholly unanswered: none
+of the AI frameworks fully evaluated whether fine -tuned deep
+learning models outperform one -hot encodings across property
+categories, and the germline bias analysis, requested in the prompt,
+was substantively attempted by only two of five  AI frameworks.
+Practical recommendations in each AI report covered roughly half
+of those offered in the original paper. The sizes of the final reports
+also reflected this reduced </blockquote></details></li><li><strong>Evaluation or validation strength — pages 5–6</strong><p>The AI Scientist-v2 claimed 200-500 ns all-atom simulations but actually generated a synthetic dataset with fabricated feature vectors and ran no MD simulations.</p><p>Attributed source statement: supported. The results section reports that the framework claimed 200 to 500 ns simulations but in reality no MD simulations were run; instead a synthetic dataset with fabricated feature vectors was generated. This is a specific, verifiable finding of hallucination. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>-atom simulations were performed for 200 to
+500 ns, but in  reality, no MD simulations were run. Instead, the
+framework generated a synthetic dataset with fabricated feature
+vectors and trained a neural network on it, then reported
+conclusions as if they derived from physics -based all-atom
+modeling. BioAgents reached a scientifically wrong conclusion
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+6
+
+(a)
+
+
+(b)
+
+
+(c)
+
+
+(d)
+
+
+
+Fig. 2. Multiple examples of severe AI hallucinations have been found on the Lipid-RNA Molecular Dynamics project. (a,b) Chemically unreasonable </blockquote></details></li><li><strong>Related work and gap positioning — page 1</strong><p>The paper positions its work against prior benchmark-based AI evaluations and the first paper in the series, arguing that published research papers provide a more demanding test.</p><p>Attributed source statement: supported. The introduction contrasts standard benchmarks built from static datasets with recently published papers as reference material, and explicitly references Paper I in the series. This establishes the gap the paper addresses. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>Evaluating the capabilities of AI for automating scientific research
+requires test problems that reflect the demands of real research
+practice. Standard benchmarks, 1-4 built from static datasets of
+narrow questions, seem convenient but may not capture the long-
+horizon, multi-step workflows characteristic of authentic scientific
+inquiry.5 We and other authors proposed using recently published
+scientific papers as reference material instead, 6-9  since they
+embody the methodological complexity, data -handling
+requirements, and interpretive judgment characteristic of actual
+research, and they provide an external standard against which AI -
+generated results can be compared  with. AI performance on such
+problems is therefore important not only for evaluating scientific
+capability of AI in general, but also for estimating the readiness of
+these frameworks to contribute to </blockquote><blockquote>industrial research workflows.
+In Paper I in this series,8 we applied this strategy to five advanced
+AI research frameworks (Kosmos, K -Dense, ToolUniverse,
+BioAgents from bio.xyz, and the AI Scientist-v2 from Sakana AI)
+across three projects: uncertainty quantification for molecular
+property prediction under distribution shifts, machine learning
+(ML) on Therapeutic Data Commons  benchmarks, and agent -
+based macroeconomic modeling. Across all three projects, the
+frameworks in many cases generated original hypotheses, handled
+routine data acquisition and coding competently, and produced
+well-formatted draft reports. However, no AI framework matched
+the scope or depth of the corresponding reference study.
+Independent runs of the same framework with the same prompt
+diverged in methodology and conclusions, severe hallucinations in
+final reports contradicting intermediate </blockquote></details></li><li><strong>Limitations and uncertainty handling — pages 8–9</strong><p>The paper acknowledges that AI frameworks were run in January-March 2026 and conclusions reflect the state of the frameworks at that time, which may have changed since then.</p><p>Attributed source statement: supported. The Methods section explicitly notes the temporal scope of the evaluation and cautions that conclusions reflect the state of the frameworks at that time. This is a bounded limitation statement. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>
+explicitly prescribed, and only construction and short equilibration
+.CC-BY 4.0 International licenseavailable under a
+(which was not certified by peer review) is the author/funder, who has granted bioRxiv a license to display the preprint in perpetuity. It is made
+The copyright holder for this preprintthis version posted September 7, 2026. ; https://doi.org/10.64898/2026.09.03.749176doi: bioRxiv preprint
+9
+
+of three all-atom systems were requested, without production MD
+or its analysis (see Appendix).
+For all other aspects of Methods, we refer the reader to the first
+paper in this series ,8 We remind the reader that AI frameworks
+were run in January -March 2026, and therefore, our conclusions
+reflect the state of the listed AI frameworks at that time , which
+may have changed since then.15,32</blockquote></details></li><li><strong>Evidence to claim alignment — pages 3, 7</strong><p>The paper reports that no AI framework found and cited the original reference paper, despite it being the single most relevant paper for the prompt.</p><p>Attributed source statement: supported. Both results sections state that the original paper was not discovered and used by AI frameworks in all runs, and Table 1 and Table 3 document this. This supports the paper&#x27;s claim about literature coverage gaps. Claim/evidence check: supported.</p><details><summary>Canonical source evidence</summary><blockquote>scope: three times less symbols, smaller
+numbers of panels in figures, and several times less references
+than in the original paper (data shown for two AI frameworks of
+five: see Table 1, compare columns &quot;full -sized prompt&quot; vs.
+&quot;original paper&quot;). In all runs, the original paper was not discovered
+and used by AI frameworks, even though this paper is the single
+most relevant paper for the given prompt by construction.  This
+failure cannot be justified by the recency of the reference paper:
+unlike base LLMs, these advanced AI frameworks implement
+literature review through web -search tools, not by recalling the
+content of papers used for their training, and therefore shou ld be
+able to detect it. The divergence went deeper than scope. Only one
+AI framework correctly implemented zero-shot pseudo-likelihood
+scoring, the standard approach in the field. K-Dense planned to do
+the </blockquote><blockquote>31,693 13,521
+Number of figures / Total number of panels in figures 11 / 22 10 / 17; 8 / 15; 10 / 14 4 / 6; 7 / 11 3 / 3
+Number of references N/A* N/A* 27; 22 5
+Original paper found and used? No No; No; No No; No No
+* Kosmos does not provide bibliographic references in the final report.
+
+Claude Opus 4.6 Extended and ChatGPT Extended Thinking 5.4,
+tested on the smaller-scope prompt, illustrated other limitations.
+Claude claimed to have built three all -atom systems and run
+simulations, but its intermediate dialog showed only web searches
+with no Python execution, no structure files, and no force field
+parameters; only 2D molecular depictions were actua lly
+generated. ChatGPT produced plausible -looking PDF reports for
+all three systems but could not perform energy minimization or
+MD simulations  because its runtime environment lacked
+appropriate software. ChatGPT </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

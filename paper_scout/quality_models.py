@@ -148,11 +148,10 @@ class QualityAssessment:
             DUAL_PROMOTION_GATE_VERSIONS, PROMOTION_ASSESSMENT_VERSIONS, validate_receipt)
         # Every promotion assessment version is covered, not only the current one, so
         # bumping the version never quietly stops guarding the rows written before it.
-        # Widening this is safe for stored history: all 667 rows across the three
-        # databases were read back before the change and every quality-promotion-*
-        # pass sits on a dual-promotion gate, so none becomes unreadable here. A row
-        # that did claim a promotion version on a legacy gate would be an inconsistent
-        # record, and failing closed on it is deliberate.
+        # Stored history was checked against this invariant before the guard was
+        # widened, and .github/scripts/check_stored_assessments.py rechecks it on
+        # demand. A row claiming a promotion version on a legacy admission gate is an
+        # inconsistent record, and failing closed on it here is deliberate.
         if (self.assessment_version in PROMOTION_ASSESSMENT_VERSIONS and self.quality_status == "pass"
                 and self.quality_gate_version not in DUAL_PROMOTION_GATE_VERSIONS):
             raise ValueError("new assessment version cannot use a legacy admission gate")

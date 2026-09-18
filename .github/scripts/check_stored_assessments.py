@@ -106,8 +106,13 @@ def check(path: Path, versions: Counter, failures: list) -> int:
     return seen
 
 
-def main(argv: list[str]) -> int:
-    paths = [Path(p) for p in (argv or DEFAULT_DATABASES)]
+def main(argv: list[str] | None = None) -> int:
+    """Check the named databases, or the default set when none is named.
+
+    An empty list means exactly that and checks nothing; the defaults apply only when
+    no argument is given, so a caller can ask for zero databases on purpose.
+    """
+    paths = [Path(p) for p in (DEFAULT_DATABASES if argv is None else argv)]
     versions: Counter = Counter()
     failures: list[str] = []
     total = 0
@@ -132,4 +137,4 @@ def main(argv: list[str]) -> int:
 
 
 if __name__ == '__main__':
-    raise SystemExit(main(sys.argv[1:]))
+    raise SystemExit(main(sys.argv[1:] or None))

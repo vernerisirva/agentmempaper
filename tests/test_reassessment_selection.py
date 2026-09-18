@@ -86,7 +86,7 @@ class RoutineSelectionTests(unittest.TestCase):
                           encoding='utf-8')
         return config, key
 
-    def selected(self, config, limit=10):
+    def selected(self, config, limit=None):
         seen = []
 
         def record(quality_config, store, candidate, canonical_id, classification, **kwargs):
@@ -102,17 +102,18 @@ class RoutineSelectionTests(unittest.TestCase):
         return seen
 
     def test_a_historical_non_pass_becomes_reachable_under_the_new_rubric(self):
+        # No --limit, so this is the routine path an operator or schedule would take.
         config, key = self.store_with('uncertain')
-        self.assertEqual(self.selected(config), [key])
+        self.assertEqual(self.selected(config, limit=None), [key])
 
     def test_a_stored_pass_is_still_excluded_on_its_own(self):
         config, _ = self.store_with('pass')
-        self.assertEqual(self.selected(config), [])
+        self.assertEqual(self.selected(config, limit=None), [])
 
     def test_nothing_is_selected_while_the_row_matches_the_configured_versions(self):
         config, _ = self.store_with('uncertain',
                                     versions=('quality-promotion-v1', 'scholarly-rubric-v1'))
-        self.assertEqual(self.selected(config), [])
+        self.assertEqual(self.selected(config, limit=None), [])
 
     def test_a_routine_run_is_still_bounded_by_the_per_run_assessment_cap(self):
         """The moved rubric widens what is reachable; it does not widen one run.

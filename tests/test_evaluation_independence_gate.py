@@ -13,8 +13,9 @@ from unittest.mock import patch
 
 from paper_scout.promotion_gate import assess_promotion
 from paper_scout.promotion_protocol import (
-    GATE_VERSION, INDEPENDENCE_CONTRACT, INDEPENDENCE_FIELD, INDEPENDENCE_GATE_VERSIONS,
-    RECEIPT_VERSION, parse_response, response_binding, schema, validate_receipt,
+    DUAL_PROMOTION_GATE_VERSIONS, GATE_ASSESSMENT_VERSIONS, GATE_VERSION,
+    INDEPENDENCE_CONTRACT, INDEPENDENCE_FIELD, INDEPENDENCE_GATE_VERSIONS, RECEIPT_VERSION,
+    parse_response, response_binding, schema, validate_receipt,
 )
 from paper_scout.quality_models import QualityAssessment
 from evaluation_independence_scenarios import CIRCULAR, CONTRADICTED, EXTERNAL, OBJECTIVE_OUTCOME, REPORTING_ONLY, VALIDATED, block
@@ -147,6 +148,29 @@ class HistoricalCompatibilityTests(unittest.TestCase):
                     with self.assertRaises(ValueError):
                         QualityAssessment.from_dict(replace(row, execution=execution).to_dict())
 
+    def test_an_assessment_version_cannot_be_borrowed_across_admission_gates(self):
+        """Each gate wrote one response schema, so the pair it claims is determined.
+
+        Without this, a row could claim the newer schema version while its gate says
+        the older contract produced it, or the reverse: the stored provenance would
+        describe an assessment that never happened.
+        """
+        current = run_gate(PairModels(independence=EXTERNAL))
+        earlier = QualityAssessment.from_dict(
+            HistoricalShapeTests.row(self, 'quality-promotion-v1', 'dual-promotion-v1', 'pass'))
+        self.assertEqual(GATE_ASSESSMENT_VERSIONS[GATE_VERSION], current.assessment_version)
+        self.assertEqual(set(GATE_ASSESSMENT_VERSIONS), set(DUAL_PROMOTION_GATE_VERSIONS))
+        for row, borrowed in ((current, 'quality-promotion-v1'),
+                              (earlier, 'quality-promotion-v2')):
+            with self.subTest(gate=row.quality_gate_version, borrowed=borrowed):
+                self.assertNotEqual(row.assessment_version, borrowed)
+                with self.assertRaises(ValueError):
+                    QualityAssessment.from_dict(
+                        replace(row, assessment_version=borrowed).to_dict())
+                # The pair each row actually carries still loads unchanged.
+                self.assertEqual(QualityAssessment.from_dict(row.to_dict()).to_dict(),
+                                 row.to_dict())
+
     def test_a_current_row_cannot_omit_the_contract_or_carry_broken_values(self):
         result = run_gate(PairModels(independence=EXTERNAL))
         for mutate in (lambda e: e.pop('independence_contract'),
@@ -182,7 +206,8 @@ class HistoricalShapeTests(unittest.TestCase):
 
         with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
               patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
-              patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2')):
+              patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2'),
+              patch('paper_scout.promotion_gate.ASSESSMENT_VERSION', 'quality-promotion-v1')):
             result = run_gate(PairModels(decision, decision, independence=None))
         execution = deepcopy(result.execution)
         execution.pop('independence_contract', None)

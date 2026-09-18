@@ -29,6 +29,12 @@ DUAL_PROMOTION_GATE_VERSIONS = ('dual-promotion-v1', 'dual-promotion-v2', GATE_V
 PROVIDER_PROVENANCE_GATE_VERSIONS = ('dual-promotion-v2', GATE_VERSION)
 INDEPENDENCE_GATE_VERSIONS = (GATE_VERSION,)
 INDEPENDENCE_CONTRACT = 'evaluation-independence-v1'
+# Each admission gate wrote exactly one response schema, so the assessment version a
+# row claims is determined by the gate that produced it. Pinning the pair stops a row
+# borrowing a newer schema version onto an older scientific contract, or the reverse.
+GATE_ASSESSMENT_VERSIONS = {'dual-promotion-v1': 'quality-promotion-v1',
+                            'dual-promotion-v2': 'quality-promotion-v1',
+                            GATE_VERSION: ASSESSMENT_VERSION}
 MODEL_PAIR_VERSION = 'model-pair-v1'
 RECEIPT_VERSION = 'canonical-response-v1'
 # v2 adds the structural adjudication contract: a pass carries no blocking reasons.
@@ -454,6 +460,8 @@ def validate_receipt(assessment) -> None:
     # The evaluation-independence dimension belongs to the gate that introduced it.
     # A receipt written before it must not carry it, and the current gate may not omit
     # it, so no historical row can borrow the newer contract's scientific guarantee.
+    if assessment.assessment_version != GATE_ASSESSMENT_VERSIONS.get(assessment.quality_gate_version):
+        raise ValueError('assessment version does not match its admission gate')
     independence = assessment.quality_gate_version in INDEPENDENCE_GATE_VERSIONS
     contract = receipt.get('independence_contract')
     if independence:

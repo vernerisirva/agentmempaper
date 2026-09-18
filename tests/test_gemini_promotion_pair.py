@@ -106,11 +106,13 @@ def legacy_receipt(models=None):
         return parse_response(content, role, context, **{**kwargs, 'independence': False})
 
     # The gate of that time asked for no evaluation-independence dimension, recorded no
-    # contract version for one, and wrote dual-promotion-v2 provider provenance. Only
-    # those three are turned back; every hash the run produces is the run's own.
+    # contract version for one, and wrote dual-promotion-v2 provider provenance under the
+    # assessment version that paired with it. Only those are turned back; every hash the
+    # run produces is the run's own.
     with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
           patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
-          patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2')):
+          patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2'),
+          patch('paper_scout.promotion_gate.ASSESSMENT_VERSION', 'quality-promotion-v1')):
         result = run_gate(models or PairModels(independence=None), LEGACY_ENV)
     execution = deepcopy(result.execution)
     for key in ('model_pair', 'primary_provider', 'adjudicator_provider', 'generation',

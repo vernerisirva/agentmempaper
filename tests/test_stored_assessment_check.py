@@ -95,6 +95,36 @@ class StoredAssessmentCheckTests(unittest.TestCase):
         self.assertIn('pass on legacy gate scientific-gate-v1', output)
         self.assertIn('stored assessment checks: 1 errors', output)
 
+    def test_a_current_gate_row_gets_a_named_diagnosis_too(self):
+        """A current-gate row is named as specifically as a legacy one."""
+        from paper_scout.promotion_protocol import INDEPENDENCE_FIELD as field
+        current = run_gate(PairModels(independence=EXTERNAL)).to_dict()
+        for mutate, expected in (
+                (lambda r: r['execution']['primary'].pop(field), 'missing evaluation independence'),
+                (lambda r: r['execution'].pop('independence_contract'),
+                 'missing evaluation-independence contract version'),
+                (lambda r: r['execution']['primary'][field].update(
+                    signal_reuse='materially_reused', independent_corroboration='absent',
+                    corroboration_direction='unavailable', concern='none'),
+                 'violate their contract')):
+            with self.subTest(expected=expected):
+                import copy
+                row = copy.deepcopy(current)
+                mutate(row)
+                path = self.store(self.assessments())
+                self.write_raw(path, row)
+                code, output = self.run_check(path)
+                self.assertEqual(code, 1)
+                self.assertIn(expected, output)
+
+    def test_an_assessment_version_borrowed_across_gates_is_reported(self):
+        row = dict(self.rows()[0], assessment_version='quality-promotion-v2')
+        path = self.store(self.assessments())
+        self.write_raw(path, row)
+        code, output = self.run_check(path)
+        self.assertEqual(code, 1)
+        self.assertIn('assessment version quality-promotion-v2 on gate dual-promotion-v1', output)
+
     def test_an_earlier_gate_carrying_the_dimension_is_reported(self):
         row = self.rows()[0]
         row['execution']['primary'][INDEPENDENCE_FIELD] = dict(EXTERNAL)

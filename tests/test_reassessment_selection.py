@@ -47,6 +47,7 @@ class RoutineSelectionTests(unittest.TestCase):
         with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
               patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
               patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2'),
+              patch('paper_scout.promotion_gate.ASSESSMENT_VERSION', 'quality-promotion-v1'),
               patch.dict('os.environ', ENV, clear=True)):
             result = assess_promotion(candidate, text, seed, 'llm',
                                       http=PairModels(decision, decision, independence=None))

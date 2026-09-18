@@ -352,6 +352,17 @@ class PopulationTests(PopulationFixture):
             excluded = next(e for e in track.excluded if e.canonical_id == keys[0])
             self.assertEqual(excluded.reason, "suppressed")
             self.assertEqual(excluded.source, "agent_memory:curation")
+            # A rule naming the same paper by a differently formatted identifier lands
+            # through the same normalized identities, not by raw string equality.
+            for written in ("doi:HTTPS://doi.org/10.9999/PAPER.ONE", "arxiv:arXiv:2609.09999v3"):
+                Path(config.curation_path).write_text(
+                    f'overrides:\n  - canonical_id: "{written}"\n'
+                    '    suppress_for_quality: true\n', encoding="utf-8")
+                retried = build_population({"agent_memory": config},
+                                           BUILD_TIME).track("agent_memory")
+                self.assertNotIn(keys[0], retried.ordered_canonical_ids, written)
+                self.assertEqual(next(e.reason for e in retried.excluded
+                                      if e.canonical_id == keys[0]), "suppressed")
             self.assertIn(excluded.matched_identity, identities(
                 keys[0], title=title, doi="10.9999/paper.one", arxiv_id="2609.09999"))
             self.assertEqual(len(track.eligible), 1)

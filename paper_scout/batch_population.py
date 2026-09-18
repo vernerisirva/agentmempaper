@@ -259,18 +259,17 @@ def excluded_identities(configs: dict[str, ScoutConfig],
         for rule in [*curation.pinned, *curation.overrides, *curation.excluded]:
             if not rule.suppress_for_quality:
                 continue
-            # A curation rule names a paper by canonical id or title only. Resolving it
-            # against the stored row first gives the suppression the same alias reach as
-            # a database-backed exclusion, so re-keying a manuscript does not escape it.
-            matched = [row for key, row in rows.items()
-                       if (rule.canonical_id and rule.canonical_id == key)
-                       or (rule.title and normalize_text(rule.title)
-                           == normalize_text(str(row["title"] or "")))]
+            # A curation rule names a paper by canonical id or title only. It is matched
+            # against the stored rows through the same normalized identities as every
+            # other exclusion, so a rule written with a differently formatted identifier
+            # still lands, and the suppression then inherits the row's full alias reach.
+            rule_identities = set(identities(rule.canonical_id or "", title=rule.title or ""))
+            matched = [row for row in rows.values()
+                       if rule_identities & set(_row_identities(row))]
             for row in matched:
                 record(_row_identities(row), "suppressed", f"{track}:curation")
             if not matched:
-                record(identities(rule.canonical_id or "", title=rule.title or ""),
-                       "suppressed", f"{track}:curation")
+                record(rule_identities, "suppressed", f"{track}:curation")
     for roster_path in roster_paths:
         for key in _roster_canonical_ids(Path(roster_path)):
             record(identities(key), "frozen_roster", roster_path.name)

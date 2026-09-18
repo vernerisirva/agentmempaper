@@ -225,15 +225,17 @@ def parse_response(content: str, role: str, context: EvidenceContext,
         value = json.loads(content, object_pairs_hook=unique_object, parse_constant=invalid_constant)
         validate_response(value, role, context)
         canonical_json(value).encode('utf-8', errors='strict')
-        reason = adjudicator_consistency_error(value) if role == 'adjudicator' and consistency else None
     except json.JSONDecodeError as exc:
         raise ResponseContractError('json') from exc
     except jsonschema.ValidationError as exc:
         raise ResponseContractError('schema') from exc
     except UnicodeError as exc:
         raise ResponseContractError('unicode') from exc
-    if reason is not None:
-        raise ResponseContractError(reason)
+    # A separate contract step over the fully validated response, not a parsing detail.
+    if consistency and role == 'adjudicator':
+        reason = adjudicator_consistency_error(value)
+        if reason is not None:
+            raise ResponseContractError(reason)
     return value
 
 

@@ -222,7 +222,13 @@ class SchemaAndPromptTests(unittest.TestCase):
             instructions[role] = payload['messages'][0]['content']
             self.assertIn(INDEPENDENCE_FIELD, instructions[role])
             self.assertIn('materially', instructions[role])
-            self.assertEqual(payload['response_format']['json_schema']['schema'], schema(role))
+            declared = payload['response_format']['json_schema']
+            self.assertEqual(declared['schema'], schema(role))
+            self.assertTrue(declared['strict'])
+            # The response contract changed, so the name sent with it moves too. Both
+            # providers were probed live with this name and the nested dimension, and
+            # each returned all seven fields; nothing here can verify that again.
+            self.assertEqual(declared['name'], 'promotion_' + role + '_v2')
         self.assertIn('never inherit', instructions['adjudicator'])
         retry = request_payload('adjudicator', settings['adjudicator'], context, text.coverage,
                                 {'decision': 'pass'}, retry=True)['messages'][0]['content']

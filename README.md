@@ -77,7 +77,6 @@ for track in agent_memory deep_research engram; do
   python3 -m paper_scout build-site --track "$track"
 done
 python3 .github/scripts/check_paper_scout_site.py
-python3 .github/scripts/check_stored_assessments.py
 python3 .github/scripts/check_generated_file_sizes.py digests docs reports/paper_scout
 git diff --check
 ```

@@ -66,6 +66,19 @@ class StoredAssessmentCheckTests(unittest.TestCase):
         self.assertIn('stored assessment checks: 0 errors', output)
         self.assertIn('5 stored assessments', output)
 
+    def test_no_argument_selects_the_defaults_and_an_empty_list_selects_nothing(self):
+        """The contract the docstring states, which only a programmatic caller reaches."""
+        empty = io.StringIO()
+        with redirect_stdout(empty):
+            self.assertEqual(check_stored_assessments.main([]), 0)
+        self.assertIn('0 stored assessments', empty.getvalue())
+        self.assertNotIn('skipped', empty.getvalue())
+        defaults = io.StringIO()
+        with redirect_stdout(defaults):
+            self.assertEqual(check_stored_assessments.main(None), 0)
+        for database in check_stored_assessments.DEFAULT_DATABASES:
+            self.assertIn(str(database), defaults.getvalue())
+
     def test_an_absent_database_is_skipped_rather_than_failing(self):
         code, output = self.run_check(Path('does/not/exist.sqlite3'))
         self.assertEqual(code, 0)

@@ -20,7 +20,8 @@ from paper_scout.cli import main
 from paper_scout.config import load_config
 from paper_scout.models import ClassificationResult
 from paper_scout.promotion_gate import assess_promotion
-from paper_scout.promotion_protocol import parse_response
+from paper_scout.promotion_protocol import ASSESSMENT_VERSION, parse_response
+from paper_scout.quality import RUBRIC_VERSION
 from paper_scout.state import PaperStore
 from test_gemini_promotion_pair import PairModels
 from test_promotion_gate import ENV, fixture
@@ -114,6 +115,22 @@ class RoutineSelectionTests(unittest.TestCase):
         config, _ = self.store_with('uncertain',
                                     versions=('quality-promotion-v1', 'scholarly-rubric-v1'))
         self.assertEqual(self.selected(config, limit=None), [])
+
+    def test_every_shipped_track_resolves_to_the_current_assessment_versions(self):
+        """No track may be left behind on the retired rubric, pinned or inherited.
+
+        A track that pinned the retired versions would compare stored rows against a
+        rubric the gate no longer writes, so its routine selection would never settle.
+        engram pins neither value and inherits the defaults; the others pin both. What
+        matters is the resolved value, so that is what is asserted, and adding a stale
+        pin to any track config fails here.
+        """
+        for track in ('config/paper_scout.yaml', 'config/tracks/agent_memory.yaml',
+                      'config/tracks/deep_research.yaml', 'config/tracks/engram.yaml'):
+            with self.subTest(track=track):
+                assessment = load_config(Path(track)).quality.assessment
+                self.assertEqual(assessment.version, ASSESSMENT_VERSION)
+                self.assertEqual(assessment.rubric_version, RUBRIC_VERSION)
 
     def test_a_routine_run_is_still_bounded_by_the_per_run_assessment_cap(self):
         """The moved rubric widens what is reachable; it does not widen one run.

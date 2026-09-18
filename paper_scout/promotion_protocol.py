@@ -21,7 +21,10 @@ GATE_VERSION = 'dual-promotion-v2'
 DUAL_PROMOTION_GATE_VERSIONS = ('dual-promotion-v1', 'dual-promotion-v2')
 MODEL_PAIR_VERSION = 'model-pair-v1'
 RECEIPT_VERSION = 'canonical-response-v1'
-RETRY_POLICY = 'adjudicator-contract-retry-v1'
+# v2 adds the structural adjudication contract: a pass carries no blocking reasons.
+# v1 receipts predate it, keep their original meaning and stay readable unchanged.
+RETRY_POLICY = 'adjudicator-contract-retry-v2'
+RETRY_POLICIES = ('adjudicator-contract-retry-v1', RETRY_POLICY)
 # Existing engineering budget: six quality dimensions, up to four blocks each.
 # This is a total budget, not a per-dimension quota or a scientific sufficiency test.
 MAX_EVIDENCE_IDS = 24
@@ -82,9 +85,14 @@ def schema(role: str) -> dict:
         props['decision'] = {'enum': ['pass', 'uncertain']}
         props.update({k: {'type': 'string', 'minLength': 1} for k in FIELDS})
     elif role == 'adjudicator':
-        props['promotion_decision'] = {'enum': ['pass', 'uncertain']}
+        # The conditional invariant between these two fields is not expressible in the
+        # strict structured-output subset both providers accept, so it is stated in the
+        # descriptions and the instruction, and enforced in runtime validation.
+        props['promotion_decision'] = {'enum': ['pass', 'uncertain'],
+            'description': 'pass only when blocking_reasons is empty; any blocking reason requires uncertain.'}
         props['blocking_reasons'] = {'type': 'array', 'maxItems': 12,
-                                     'items': {'type': 'string', 'minLength': 1}}
+            'items': {'type': 'string', 'minLength': 1},
+            'description': 'Empty array when promotion_decision is pass. Never a sentence saying there are none.'}
     else:
         raise ValueError('unknown scientific role')
     return {'type': 'object', 'properties': props, 'required': list(props), 'additionalProperties': False}
@@ -163,6 +171,19 @@ def validate_response(value: dict, role: str, context: EvidenceContext) -> dict:
     return value
 
 
+def adjudicator_consistency_error(value: dict) -> str | None:
+    """Structural agreement between an adjudication and its own blocking reasons.
+
+    A pass carries no blocking reasons, and any blocking reason forbids a pass. This
+    compares the decision against the array only: no prose is read, matched against a
+    phrase list or interpreted, so a reason's wording never changes the outcome. An
+    uncertain adjudication with no blocking reason stays an ordinary non-promotion.
+    """
+    if value.get('promotion_decision') == 'pass' and value.get('blocking_reasons'):
+        return 'consistency'
+    return None
+
+
 def canonical_json(value) -> str:
     """Receipt serialization: sorted object keys, compact UTF-8, exact strings/arrays.
 
@@ -181,7 +202,14 @@ class ResponseContractError(ValueError):
         super().__init__('scientific response violates ' + reason + ' contract')
 
 
-def parse_response(content: str, role: str, context: EvidenceContext) -> dict:
+def parse_response(content: str, role: str, context: EvidenceContext,
+                   *, consistency: bool = True) -> dict:
+    """Parse one final response under the output contract in force for its receipt.
+
+    consistency is the structural adjudication contract introduced with the current
+    retry policy. Revalidating a receipt written under an earlier policy passes False,
+    so a stored judgment is reread under the contract that produced it, never a later one.
+    """
     def unique_object(pairs):
         result = {}
         for key, value in pairs:
@@ -203,6 +231,11 @@ def parse_response(content: str, role: str, context: EvidenceContext) -> dict:
         raise ResponseContractError('schema') from exc
     except UnicodeError as exc:
         raise ResponseContractError('unicode') from exc
+    # A separate contract step over the fully validated response, not a parsing detail.
+    if consistency and role == 'adjudicator':
+        reason = adjudicator_consistency_error(value)
+        if reason is not None:
+            raise ResponseContractError(reason)
     return value
 
 
@@ -217,9 +250,13 @@ def response_binding(call: dict, run_id: str) -> str:
                                       'canonical_response_sha256')}}))
 
 
-def attempt_binding(call: dict, run_id: str) -> str:
-    """Bind each unmodified final response, including a rejected attempt, to its run."""
-    return digest(canonical_json({'retry_policy': RETRY_POLICY, 'run_id': run_id,
+def attempt_binding(call: dict, run_id: str, policy: str = RETRY_POLICY) -> str:
+    """Bind each unmodified final response, including a rejected attempt, to its run.
+
+    The binding carries the policy the receipt was written under, so bumping the
+    current policy never invalidates an already stored attempt binding.
+    """
+    return digest(canonical_json({'retry_policy': policy, 'run_id': run_id,
         **{key: call[key] for key in ('kind', 'attempt', 'model', 'context_id',
             'request_sha256', 'content_sha256', 'status', 'finish_reason', 'usage')},
         'contract_error': call.get('contract_error')}))
@@ -280,10 +317,16 @@ def validate_receipt(assessment) -> None:
     if policy is None:  # Historical two-call receipts retain their exact contract.
         if len(calls) != 2 or any('attempt' in c or 'attempt_binding_sha256' in c for c in calls):
             raise ValueError('legacy promotion requires two completed calls')
-    elif (policy != RETRY_POLICY or len(calls) not in (2, 3)
+    elif (policy not in RETRY_POLICIES or len(calls) not in (2, 3)
           or receipt.get('total_request_limit') != 3
           or receipt.get('attempt_limit_per_role') != {'primary': 1, 'adjudicator': 2}):
         raise ValueError('invalid bounded adjudication retry policy')
+    # The structural adjudication contract belongs to the policy that produced the
+    # receipt. Rows written before it are reread under their own contract and keep
+    # their stored decision; nothing historical is reinterpreted, repaired or rewritten.
+    consistency = policy == RETRY_POLICY
+    if consistency and adjudicator_consistency_error(a) is not None:
+        raise ValueError('an adjudicated pass cannot carry blocking reasons')
     for index, call in enumerate(calls):
         role = 'primary' if index == 0 else 'adjudicator'
         rejected = policy is not None and len(calls) == 3 and index == 1
@@ -304,11 +347,11 @@ def validate_receipt(assessment) -> None:
             raise ValueError('scientific raw response or request hash mismatch')
         if policy is not None:
             if (call.get('attempt') != (1 if index == 0 else index)
-                    or attempt_binding(call, receipt['run_id']) != call.get('attempt_binding_sha256')):
+                    or attempt_binding(call, receipt['run_id'], policy) != call.get('attempt_binding_sha256')):
                 raise ValueError('scientific attempt binding mismatch')
         if rejected:
             try:
-                parse_response(call['raw_content'], role, context)
+                parse_response(call['raw_content'], role, context, consistency=consistency)
             except ResponseContractError as exc:
                 if (call.get('contract_error') != exc.reason
                         or 'canonical_response_sha256' in call or 'response_binding_sha256' in call):
@@ -318,7 +361,7 @@ def validate_receipt(assessment) -> None:
             continue
         if call.get('contract_error') is not None:
             raise ValueError('successful scientific call has a contract failure')
-        parsed = parse_response(call['raw_content'], role, context)
+        parsed = parse_response(call['raw_content'], role, context, consistency=consistency)
         canonical = canonical_json(parsed)
         if (digest(call['raw_content']) != call['content_sha256']
                 or digest(canonical) != call['canonical_response_sha256']

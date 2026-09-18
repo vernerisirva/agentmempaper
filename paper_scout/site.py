@@ -19,7 +19,7 @@ from .enrichment import DateEnrichmentDiagnostics, enrich_candidate_publication_
 from .fetchers.arxiv import parse_arxiv_feed
 from .http import HttpClient
 from .models import PaperCandidate
-from .promotion_protocol import DUAL_PROMOTION_GATE_VERSIONS
+from .promotion_protocol import DUAL_PROMOTION_GATE_VERSIONS, adjudicator_consistency_error
 from .publication import publication_status
 from .quality import combined_rank_score
 from .quality_models import QualityAssessment, QualityEvidence, recommendation_for_score
@@ -1254,6 +1254,12 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
         source_ids = _initial_source_ids(row, row_sightings, arxiv_id)
         alternate_urls = _initial_urls(row, arxiv_id)
         quality = _site_quality_assessment(row["quality_payload_json"])
+        withheld = _withheld_scientific_decision(quality)
+        if withheld is not None:
+            quality = None
+        unassessed_rationale = withheld or "Scientific quality has not yet been assessed."
+        unassessed_uncertainty = ("No valid scientific promotion decision is published for this paper."
+                                  if withheld else "Manuscript evidence has not been reviewed.")
         publication = publication_status(PaperCandidate(str(row["title"]), [], "", str(row["source"]), str(row["source_id"]),
             doi=doi, arxiv_id=arxiv_id, url=url, raw=json.loads(row["raw_json"] or "{}")))
         papers.append(
@@ -1290,8 +1296,8 @@ def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
                 source_ids=source_ids,
                 alternate_urls=alternate_urls,
                 quality_status=quality.quality_status if quality else "not_assessed",
-                quality_rationale=quality.quality_rationale if quality else "Scientific quality has not yet been assessed.",
-                quality_uncertainty=quality.quality_uncertainty if quality else "Manuscript evidence has not been reviewed.",
+                quality_rationale=quality.quality_rationale if quality else unassessed_rationale,
+                quality_uncertainty=quality.quality_uncertainty if quality else unassessed_uncertainty,
                 quality_gate_version=quality.quality_gate_version if quality else None,
                 quality_full_text_assessed=quality.full_text_assessed if quality else False,
                 quality_promotion={k: quality.execution[k] for k in
@@ -1335,6 +1341,27 @@ def _ensure_site_column(db: sqlite3.Connection, column: str, definition: str) ->
 
 def _site_table_exists(db: sqlite3.Connection, table: str) -> bool:
     return db.execute("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?", (table,)).fetchone() is not None
+
+
+def _withheld_scientific_decision(quality: QualityAssessment | None) -> str | None:
+    """Why a stored scientific decision must not be published, or None to publish it.
+
+    An adjudication that passed a paper while also returning blocking reasons contradicts
+    itself, so both halves of it are machinery artifacts rather than scientific findings:
+    the decision it produced is wrong and its "reason" blocks nothing. Publishing either
+    would present a defect as science, so the whole decision is withheld and the paper is
+    presented as awaiting assessment. Only the stored structure is read, never the wording
+    of a reason. Nothing stored is modified, and a valid reassessment publishes normally.
+    """
+    if quality is None or quality.quality_gate_version not in DUAL_PROMOTION_GATE_VERSIONS:
+        return None
+    adjudicator = quality.execution.get("adjudicator")
+    if not isinstance(adjudicator, dict) or adjudicator_consistency_error(adjudicator) is None:
+        return None
+    return ("A recorded scientific decision for this paper is withheld from publication: the "
+            "adjudication returned a promotion pass together with blocking reasons, which the "
+            "gate's output contract forbids, so its outcome is not a scientific result. The "
+            "record is retained for audit and a valid reassessment will publish normally.")
 
 
 def _site_quality_assessment(payload: object) -> QualityAssessment | None:

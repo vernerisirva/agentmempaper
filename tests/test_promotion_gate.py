@@ -163,12 +163,18 @@ class PromotionTests(unittest.TestCase):
             with self.assertRaises((ValueError, KeyError)):
                 QualityAssessment.from_dict(value)
 
-    def test_empty_citations_or_blocking_reasons_with_pass_are_not_promoted(self):
-        for mutate in (lambda v,r: v.update(evidence_ids=[]),
-                       lambda v,r: v.update(blocking_reasons=['Unresolved scientific concern']) if r else None):
-            result, _ = self.run_gate(Models(change=mutate))
-            self.assertEqual(result.quality_status, 'uncertain')
-            self.assertEqual(result.execution['outcome'], 'success')
+    def test_empty_citations_with_pass_are_not_promoted(self):
+        result, _ = self.run_gate(Models(change=lambda v,r: v.update(evidence_ids=[])))
+        self.assertEqual(result.quality_status, 'uncertain')
+        self.assertEqual(result.execution['outcome'], 'success')
+
+    def test_blocking_reasons_under_a_non_pass_are_an_ordinary_non_promotion(self):
+        # A blocking reason alongside a pass is a contract violation instead, covered by
+        # the structural adjudication contract tests rather than here.
+        result, _ = self.run_gate(Models(adjudicator='uncertain'))
+        self.assertEqual(result.quality_status, 'uncertain')
+        self.assertEqual(result.execution['outcome'], 'success')
+        self.assertEqual(result.concerns, ['Important unsupported overclaim.'])
 
     def test_wrong_document_missing_provenance_and_unavailable(self):
         c, doc, text, seed = fixture()

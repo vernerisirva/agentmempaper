@@ -9,6 +9,10 @@ from dataclasses import replace
 from datetime import date
 from pathlib import Path
 
+from paper_scout.batch_population import (
+    TRACKS, build_population, population_manifest, repository_code_sha, track_configs,
+    verify_manifest, write_manifest,
+)
 from paper_scout.config import TRACK_CONFIG_PATHS, load_config
 from paper_scout.discovery_evaluation import evaluate_discovery, write_discovery_report
 from paper_scout.digest import write_digest
@@ -109,6 +113,23 @@ def main(argv: list[str] | None = None) -> int:
     quality_eval_parser = subparsers.add_parser("evaluate-quality", help="Evaluate deterministic scholarly-quality rules on fixture papers")
     quality_eval_parser.add_argument("--date", default=date.today().isoformat())
     _add_track_argument(quality_eval_parser)
+
+    population_parser = subparsers.add_parser(
+        "batch-population",
+        help="Build or verify the deterministic eligible-population manifest for an unseen batch")
+    population_parser.add_argument("--manifest", type=Path, required=True,
+                                   help="Manifest path to write, or to verify with --verify")
+    population_parser.add_argument("--verify", action="store_true",
+                                   help="Rebuild from the manifest's own inputs and compare instead of writing")
+    population_parser.add_argument("--build-time", default=None,
+                                   help="Pinned build time for the ranking's newness key; required to build")
+    population_parser.add_argument("--roster", type=Path, action="append", default=[],
+                                   help="Frozen roster manifest whose canonical ids are excluded; repeatable")
+    # Not --track: the shared track argument selects one config for the whole process,
+    # while a population spans every track so one manuscript cannot slip through twice.
+    population_parser.add_argument("--population-track", action="append", choices=list(TRACKS),
+                                   default=[], dest="population_tracks",
+                                   help="Restrict to these tracks (default: all); repeatable")
 
     reassess_parser = subparsers.add_parser("reassess-quality", help="Assess or reassess stored relevant papers")
     reassess_parser.add_argument("--limit", type=int, default=None, help="Maximum papers (default: track run limit; hard ceiling 50)")
@@ -212,6 +233,9 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(result.message)
         return 0
+
+    if args.command == "batch-population":
+        return _batch_population(args)
 
     if args.command == "explain-paper":
         return _explain_paper(args, config)
@@ -431,6 +455,68 @@ def _candidate_from_generated_paper(paper: dict[str, object]) -> PaperCandidate:
 def _fetch_direct_paper(args: argparse.Namespace) -> PaperCandidate | None:
     from paper_scout.ingestion import fetch_direct_paper
     return fetch_direct_paper(arxiv_id=args.arxiv_id, doi=args.doi, url=args.url)
+
+
+def _batch_population(args) -> int:
+    """Build or verify the deterministic eligible-population manifest.
+
+    Building persists the ordered identities themselves next to their digest, before any
+    scientific model call, so a later run can rebuild the population and compare it item
+    by item.
+
+    Verification always covers exactly what the manifest committed to. The tracks, the
+    exclusion scope, the pinned build time and the frozen rosters all come from the
+    manifest, so none of them can be narrowed from the command line, and the configured
+    state, curation and digest locations are compared against the recorded ones.
+
+    Exclusions are always read from every track, whatever is being built: one manuscript
+    can be discovered by more than one track, and restricting a build must narrow what
+    the manifest contains rather than what it excludes.
+    """
+    rosters = tuple(Path(path) for path in args.roster)
+    if args.verify:
+        for name, value in (("--roster", rosters), ("--population-track", args.population_tracks)):
+            if value:
+                raise SystemExit(f"{name} is not used with --verify; verification covers "
+                                 "exactly the tracks, rosters and build time the manifest records")
+        manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
+        scanned = tuple(manifest["sources"]["exclusion_tracks"])
+        built = tuple(manifest["sources"]["tracks"])
+        # A manifest naming an unknown track, or a built track outside its own exclusion
+        # scope, cannot be verified. Say so rather than failing on a lookup deeper in.
+        unverifiable = sorted({*scanned, *built} - set(TRACKS) | (set(built) - set(scanned)))
+        if unverifiable:
+            raise SystemExit("this manifest cannot be verified: it names "
+                             + ", ".join(unverifiable)
+                             + " outside the tracks its own exclusion scope covers")
+        recorded = track_configs(Path(args.config), scanned)
+        result = verify_manifest(manifest, {track: recorded[track] for track in built}, recorded)
+        for track, detail in sorted(result.tracks.items()):
+            print(f"{track} ordered_ids_match={detail['ordered_ids_match']} "
+                  f"population_sha256_match={detail['population_sha256_match']} "
+                  f"stored={detail['stored_count']} rebuilt={detail['rebuilt_count']}")
+        print(f"self_consistent={result.self_consistent} sources_match={result.sources_match} "
+              f"reproduced={result.reproduced} "
+              f"stored={result.stored_digest} rebuilt={result.rebuilt_digest}")
+        return 0 if result.reproduced and result.self_consistent else 1
+    # The ranking's newness key reads the build time, so an unpinned build bakes in
+    # wall-clock time and two builds of identical state can order differently. A
+    # manifest is a commitment, so the time is pinned explicitly rather than defaulted.
+    if not args.build_time:
+        raise SystemExit("--build-time is required to build a manifest, so the population "
+                         "is pinned to a stated time rather than to the clock")
+    tracks = tuple(args.population_tracks) or TRACKS
+    exclusion_configs = track_configs(Path(args.config), TRACKS)
+    configs = {track: exclusion_configs[track] for track in tracks}
+    population = build_population(configs, args.build_time, rosters, exclusion_configs)
+    manifest = population_manifest(population, repository_code_sha())
+    path = write_manifest(Path(args.manifest), manifest)
+    for track in population.tracks:
+        print(f"{track.track} ranked={track.ranked_count} eligible={len(track.eligible)} "
+              f"excluded={len(track.excluded)} population_sha256={track.population_sha256}")
+    print(f"manifest={path} manifest_sha256={manifest['manifest_sha256']} "
+          f"code_sha={manifest['code_sha']}")
+    return 0
 
 
 if __name__ == "__main__":

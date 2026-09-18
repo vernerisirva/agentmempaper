@@ -109,8 +109,10 @@ def check(path: Path, versions: Counter, failures: list) -> int:
 def main(argv: list[str] | None = None) -> int:
     """Check the named databases, or the default set when none is named.
 
-    An empty list means exactly that and checks nothing; the defaults apply only when
-    no argument is given, so a caller can ask for zero databases on purpose.
+    This is the function contract: argv=None means no argument and selects the default
+    databases, while an empty list means exactly that and checks nothing, so a caller
+    can ask for zero databases on purpose. Running the script with no arguments is the
+    no-argument case and checks the default set; the command line cannot ask for zero.
     """
     paths = [Path(p) for p in (DEFAULT_DATABASES if argv is None else argv)]
     versions: Counter = Counter()

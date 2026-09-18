@@ -145,8 +145,10 @@ class QualityAssessment:
         if self.quality_status not in QUALITY_STATUSES:
             raise ValueError("unknown scientific quality status")
         from paper_scout.promotion_protocol import (
-            ASSESSMENT_VERSION, DUAL_PROMOTION_GATE_VERSIONS, validate_receipt)
-        if (self.assessment_version == ASSESSMENT_VERSION and self.quality_status == "pass"
+            DUAL_PROMOTION_GATE_VERSIONS, PROMOTION_ASSESSMENT_VERSIONS, validate_receipt)
+        # Every promotion assessment version is covered, not only the current one, so
+        # bumping the version never quietly stops guarding the rows written before it.
+        if (self.assessment_version in PROMOTION_ASSESSMENT_VERSIONS and self.quality_status == "pass"
                 and self.quality_gate_version not in DUAL_PROMOTION_GATE_VERSIONS):
             raise ValueError("new assessment version cannot use a legacy admission gate")
         if self.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS and (

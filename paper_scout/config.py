@@ -112,8 +112,8 @@ class ArxivSweepConfig:
 
 @dataclass(frozen=True)
 class QualityAssessmentConfig:
-    version: str = "quality-promotion-v1"
-    rubric_version: str = "scholarly-rubric-v1"
+    version: str = "quality-promotion-v2"
+    rubric_version: str = "scholarly-rubric-v2"
     assess_relevant: bool = True
     assess_maybe_relevant: bool = True
     assess_irrelevant: bool = False
@@ -302,8 +302,8 @@ def _quality_config(values: dict[str, str]) -> QualityConfig:
         enabled=_as_bool(values.get("enabled"), False),
         mode=mode,
         assessment=QualityAssessmentConfig(
-            version=values.get("assessment.version", "quality-promotion-v1"),
-            rubric_version=values.get("assessment.rubric_version", "scholarly-rubric-v1"),
+            version=values.get("assessment.version", "quality-promotion-v2"),
+            rubric_version=values.get("assessment.rubric_version", "scholarly-rubric-v2"),
             assess_relevant=_as_bool(values.get("assessment.assess_relevant"), True),
             assess_maybe_relevant=_as_bool(values.get("assessment.assess_maybe_relevant"), True),
             assess_irrelevant=_as_bool(values.get("assessment.assess_irrelevant"), False),

@@ -13,7 +13,7 @@ from paper_scout.full_text import FullTextDocument, ExtractedPage, select_assess
 from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.promotion_gate import assess_promotion, MAX_INPUT_BYTES
 from paper_scout.promotion_protocol import (
-    ASSESSMENT_VERSION, GATE_VERSION, PRIMARY_MODEL, ADJUDICATOR_MODEL,
+    ASSESSMENT_VERSION, GATE_VERSION, INDEPENDENCE_FIELD, PRIMARY_MODEL, ADJUDICATOR_MODEL,
     identity_from_document, validate_context, validate_pair, FIELDS,
 )
 from paper_scout.quality import assess_quality_deterministically
@@ -44,13 +44,27 @@ def fixture(key='fixture'):
     return candidate, document, text, seed
 
 
+# A synthetic paper whose optimization signal and headline measurement are separate:
+# the default fixture is an ordinary non-circular study, so evaluation independence
+# never silently decides an unrelated test. Tests about the dimension set it explicitly.
+INDEPENDENT = {'optimization_signal': 'Fixed task conditions selected before the runs.',
+               'final_evaluation_signal': 'Held-out task accuracy scored against known answers.',
+               'signal_reuse': 'independent',
+               'independent_corroboration': 'present',
+               'corroboration_summary': 'Held-out tasks are scored objectively.',
+               'corroboration_direction': 'supports',
+               'concern': 'none'}
+
+
 class Models:
     retries = 1
 
-    def __init__(self, primary='pass', adjudicator='pass', change=None, finish='stop'):
+    def __init__(self, primary='pass', adjudicator='pass', change=None, finish='stop',
+                 independence=None):
         self.decisions = (primary, adjudicator)
         self.change = change
         self.finish = finish
+        self.independence = independence or INDEPENDENT
         self.payloads = []
 
     def post_json(self, url, payload, headers):
@@ -68,6 +82,8 @@ class Models:
         else:
             value.update(promotion_decision=self.decisions[1],
                          blocking_reasons=[] if self.decisions[1] == 'pass' else ['Important unsupported overclaim.'])
+        # Both roles answer the dimension; the mock gives each its own copy.
+        value[INDEPENDENCE_FIELD] = dict(self.independence)
         if self.change:
             self.change(value, role)
         return json.dumps({'model': payload['model'], 'choices': [{'finish_reason': self.finish,

@@ -146,7 +146,7 @@ python3 -m paper_scout evaluate-quality --track agent_memory
 python3 -m paper_scout evaluate-quality --track deep_research
 python3 -m paper_scout reassess-quality --track agent_memory --days 30
 python3 -m paper_scout reassess-quality --track agent_memory --paper-id doi:10.0000/example --force
-python3 -m paper_scout reassess-quality --track agent_memory --assessment-version quality-promotion-v1 --rubric-version scholarly-rubric-v1
+python3 -m paper_scout reassess-quality --track agent_memory --assessment-version quality-promotion-v2 --rubric-version scholarly-rubric-v2
 python3 -m paper_scout reassess-quality --track agent_memory --model your-quality-model --force
 python3 -m paper_scout reassess-quality --track agent_memory --no-full-text --no-llm
 python3 -m paper_scout reassess-quality --track agent_memory --report-only
@@ -305,7 +305,7 @@ The existing versioned `QualityAssessment` and SQLite assessment history are reu
 
 A manuscript-based pass requires located evidence of contribution clarity, methods, validation addressing the central claims, appropriate comparisons or a justified absence, claim/evidence alignment, and limitations. Expectations depend on paper type: theory, surveys and conceptual work need suitable scientific argument or synthesis, not necessarily experiments. Public code is helpful, not mandatory. Author identity, affiliation, employer, university, country and prestige are not quality criteria. Strong independent preprints and repository manuscripts can pass; weak institutional or peer-reviewed work can fail. Screening does not prove scientific correctness.
 
-New assessments use `quality-promotion-v1` / `dual-promotion-v2`. The primary assessor
+New assessments use `quality-promotion-v2` / `dual-promotion-v3`. The primary assessor
 and an independent adjudicator interpret the manuscript. Admission requires high
 relevance, primary pass, adjudicator pass, valid canonical provenance and no suppression.
 Disagreement or an unsupported overclaim leaves a review candidate; it is not a technical
@@ -316,6 +316,42 @@ rationale and evidence-ID fields. The adjudicator receives the canonical context
 only the primary final structured assessment, independently checking support and
 counterevidence. No hidden reasoning is shared or retained. Historical claim parsers,
 numeric matching, role keywords and score caps do not control this admission path.
+
+### Evaluation independence
+
+Both roles also answer an `evaluation_independence` dimension, independently: what signal
+shaped the system under study through training, tuning, selection, filtering, repair,
+reward or any other adaptation; what signal established the headline reported outcome;
+whether the two are materially independent; what evaluator-independent measurement the
+manuscript reports; and whether that measurement supports the headline claim. The
+adjudicator reaches its own judgment and never inherits the primary's.
+
+Where the same evaluator, or one materially dependent on it, supplies both the
+optimization signal and the headline measurement, the reported gain is expressed in the
+currency it was optimized for. Promotion then needs corroboration that does not depend on
+that evaluator — blinded human or expert assessment, inter-rater agreement, evaluator
+calibration, a held-out or separately calibrated judge, an objective external metric, an
+established external benchmark, or another genuinely independent measurement. The
+principle is independence, not any particular evaluation technology, and the same
+question applies to reward models, learned evaluators, automated graders, self-evaluation,
+heuristic scores, synthetic labellers and model-generated validation criteria.
+
+Presence of an independent measurement does not settle the question: its **direction**
+does. A measurement that fails to corroborate the headline gain, or moves against it, is
+a major concern rather than supporting evidence. An evaluator used only to report a final
+outcome, with nothing optimized against it, is not circular by itself, and an optimization
+loop whose headline outcome is established objectively is judged on that objective
+outcome. Where the manuscript is silent, the claimed independence is unestablished — that
+is scientific uncertainty, never evidence that no problem exists.
+
+Deterministic code reads only the values each role declares and never its prose: no
+keyword list, phrase match or lexical heuristic decides scientific validity, and the
+judgments themselves belong to the two scientific roles. What the code holds each role to
+is the consequence of its own declared values — material reuse with no corroboration, and
+independent evidence contradicting the claim under reused or unresolved signals, are major
+concerns; unresolved reuse with no corroboration is not "no concern"; and a major concern
+cannot accompany that role's pass. Judge-based work is therefore not rejected as a class:
+what is withheld is unsupported reuse, not the use of an evaluator.
 
 The default pinned pair is `gemini-3.8-flash` as primary assessor, served by Google
 through `GEMINI_API_KEY`, and `deepseek/deepseek-v4-pro-0813` as independent adjudicator,
@@ -344,8 +380,17 @@ cross-provider call is rejected rather than silently accepted. Retired pairs rem
 listed, so `dual-promotion-v1` receipts written by the previous
 `deepseek/deepseek-v4-pro-0813` and `anthropic/claude-sonnet-4.6` pair stay readable and
 auditable under their original configuration. A retired receipt cannot borrow the newer
-provenance, and the newer gate cannot omit it. The rubric, response schema, evidence
-contract and promotion rule are unchanged by the model switch.
+provenance, and the newer gate cannot omit it.
+
+The evaluation-independence dimension is versioned the same way. `dual-promotion-v3`
+receipts record `independence_contract: evaluation-independence-v1`; `dual-promotion-v1`
+and `dual-promotion-v2` rows predate the dimension, must not carry it, and are reread
+under the schema and contract that produced them. Their stored decisions are historical
+records and are never reinterpreted under the newer rubric. Because the rubric and
+response schema changed, the assessment and rubric versions moved with them, so a routine
+reassessment run no longer treats a historical **non-pass** row as current; a stored pass
+is still excluded on its own. The promotion rule itself — high relevance, primary pass,
+adjudicator pass, valid provenance, not suppressed — is unchanged.
 
 There are at most three calls per paper: one primary and at most two adjudications.
 Only an adjudicator final-response syntax/schema violation permits one fresh adjudication

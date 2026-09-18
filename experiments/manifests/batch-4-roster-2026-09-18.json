@@ -1,0 +1,6405 @@
+{
+ "batch": "batch-4",
+ "status": "ROSTER_FROZEN_BEFORE_ANY_MODEL_CALL",
+ "frozen_at": "2026-09-18T09:46:53.107992+00:00",
+ "batch_4_code_sha": "7622fccd25abdef904d678e10a603f8e17a95b4f",
+ "protocol_file": "experiments/manifests/batch-4-protocol-2026-09-18.json",
+ "protocol_sha256": "66a2c272187ccc8d78f2d14bc1fa69ea43da0b98e16d406b2b527b60145b3ad7",
+ "scientific_configuration": {
+  "primary": {
+   "provider": "google",
+   "model": "gemini-3.8-flash",
+   "reasoning_effort": "none"
+  },
+  "adjudicator": {
+   "provider": "openrouter",
+   "model": "deepseek/deepseek-v4-pro-0813"
+  },
+  "gate_version": "dual-promotion-v2",
+  "assessment_version": "quality-promotion-v1",
+  "rubric_version": "scholarly-rubric-v1",
+  "receipt_version": "canonical-response-v1",
+  "model_pair_version": "model-pair-v1",
+  "retry_policy": "adjudicator-contract-retry-v1"
+ },
+ "ranked_eligible_population": {
+  "agent_memory": {
+   "ranked_records": 1915,
+   "eligible": 203,
+   "commitment_sha256": "c125956458f049c2230784c5812f1550bf0ddcd48dcf3b451ceb8a5324e82cac"
+  },
+  "deep_research": {
+   "ranked_records": 221,
+   "eligible": 40,
+   "commitment_sha256": "ffca79d2064f33af62d207646396cd7d0f30d00208400e4eed9a40e6f28ac3a0"
+  },
+  "engram": {
+   "ranked_records": 8,
+   "eligible": 0,
+   "commitment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+ },
+ "selection_rule": "Frozen Batch-4 protocol: walk the eligible population in the existing offline research ranking (production duplicate merging, rule refresh, curation, quality presentation, newness, _sort_latest_relevant), apply the deterministic execution-eligibility filter (manuscript acquisition + coverage gate), take the first papers that pass. Max 5 per track, 15 total. No scientific-quality inspection, no author/institution/venue filter, no quota transfer, no replacement for scientific outcomes.",
+ "roster": [
+  {
+   "track": "agent_memory",
+   "selected_position": 1,
+   "canonical_id": "doi:10.48550/arxiv.2609.03467",
+   "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
+   "ranking_position": 45,
+   "relevance_decision": "relevant",
+   "relevance_score": 100,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-09-03",
+   "manuscript_source": "https://arxiv.org/pdf/2609.03467",
+   "manuscript_hash": "48b7ff3a2b9da24eaaf57be1fb9eca7ba4c9fb0c30325c6f62ebe9f8b6ca62dd",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 21,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "When Users Don'T Ask:",
+      "role": "body",
+      "page": 1,
+      "source_characters": 205,
+      "supplied_characters": 205,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1237,
+      "supplied_characters": 1237,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 1943,
+      "supplied_characters": 1943,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 2302,
+      "supplied_characters": 2302,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "We Introduce Locomo-Conv, A Conversa-",
+      "role": "body",
+      "page": 2,
+      "source_characters": 107,
+      "supplied_characters": 107,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "We Provide A Unified Evaluation Framework",
+      "role": "results",
+      "page": 2,
+      "source_characters": 161,
+      "supplied_characters": 161,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "We Release Supportive_Memory, An Auxiliary",
+      "role": "body",
+      "page": 2,
+      "source_characters": 172,
+      "supplied_characters": 172,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Benchmarks For Long-Term",
+      "role": "results",
+      "page": 2,
+      "source_characters": 784,
+      "supplied_characters": 784,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Example Of Composed Query",
+      "role": "body",
+      "page": 3,
+      "source_characters": 3991,
+      "supplied_characters": 3991,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Memory-Augmented Conversational",
+      "role": "body",
+      "page": 4,
+      "source_characters": 1878,
+      "supplied_characters": 1878,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Locomo-Conv",
+      "role": "body",
+      "page": 4,
+      "source_characters": 163,
+      "supplied_characters": 163,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Conversational Query Styles",
+      "role": "body",
+      "page": 4,
+      "source_characters": 1469,
+      "supplied_characters": 1469,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Composed Multi-Memory Clusters",
+      "role": "body",
+      "page": 4,
+      "source_characters": 667,
+      "supplied_characters": 667,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Composed Multi-Memory Clusters",
+      "role": "body",
+      "page": 5,
+      "source_characters": 47,
+      "supplied_characters": 47,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "These Constraints Ensure That The Two Qas Are",
+      "role": "body",
+      "page": 5,
+      "source_characters": 893,
+      "supplied_characters": 893,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Evaluation Methodology",
+      "role": "methods",
+      "page": 5,
+      "source_characters": 183,
+      "supplied_characters": 183,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Retrieval Recall",
+      "role": "body",
+      "page": 5,
+      "source_characters": 381,
+      "supplied_characters": 381,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Response Quality Judging",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1170,
+      "supplied_characters": 1170,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Experimental Setup",
+      "role": "methods",
+      "page": 5,
+      "source_characters": 643,
+      "supplied_characters": 643,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Retrieval Recall",
+      "role": "body",
+      "page": 5,
+      "source_characters": 431,
+      "supplied_characters": 431,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Retrieval Recall",
+      "role": "body",
+      "page": 6,
+      "source_characters": 2871,
+      "supplied_characters": 2871,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Response Quality",
+      "role": "body",
+      "page": 6,
+      "source_characters": 1214,
+      "supplied_characters": 1214,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Response Quality",
+      "role": "body",
+      "page": 7,
+      "source_characters": 390,
+      "supplied_characters": 390,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Hallucination Under Conversational",
+      "role": "body",
+      "page": 7,
+      "source_characters": 726,
+      "supplied_characters": 726,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Multi-Facet Query Rewriting Narrows The",
+      "role": "body",
+      "page": 7,
+      "source_characters": 2469,
+      "supplied_characters": 2469,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Silent Grounding: Beyond Explicit Fact",
+      "role": "body",
+      "page": 7,
+      "source_characters": 407,
+      "supplied_characters": 407,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Methodfaithfulness Relevance Engagement",
+      "role": "methods",
+      "page": 8,
+      "source_characters": 1633,
+      "supplied_characters": 1633,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Chain-Of-Thought Selection Approaches",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1844,
+      "supplied_characters": 1844,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Compression Versus Elaboration In",
+      "role": "body",
+      "page": 8,
+      "source_characters": 735,
+      "supplied_characters": 735,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Compression Versus Elaboration In",
+      "role": "body",
+      "page": 9,
+      "source_characters": 3666,
+      "supplied_characters": 3666,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 9,
+      "source_characters": 960,
+      "supplied_characters": 960,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Limitations And Future Work",
+      "role": "limitations",
+      "page": 10,
+      "source_characters": 998,
+      "supplied_characters": 998,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "This Work Was Financially Supported By The Na-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 46,
+      "supplied_characters": 46,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Tional Science And Technology Council (Nstc)",
+      "role": "body",
+      "page": 10,
+      "source_characters": 44,
+      "supplied_characters": 44,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "And The Featured Area Research Center Program",
+      "role": "body",
+      "page": 10,
+      "source_characters": 45,
+      "supplied_characters": 45,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Within The Framework Of The Higher Education",
+      "role": "body",
+      "page": 10,
+      "source_characters": 44,
+      "supplied_characters": 44,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Sprout Project By The Ministry Of Education In",
+      "role": "body",
+      "page": 10,
+      "source_characters": 134,
+      "supplied_characters": 134,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Also Thank Chia-En Hsu And Chih-Chih Yang For",
+      "role": "body",
+      "page": 10,
+      "source_characters": 278,
+      "supplied_characters": 278,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 10,
+      "source_characters": 50,
+      "supplied_characters": 50,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Hierarchical And Llm-Guided Memory System For",
+      "role": "body",
+      "page": 10,
+      "source_characters": 446,
+      "supplied_characters": 446,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Press: Unleashing The Potential Of Compressive Mem-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 97,
+      "supplied_characters": 97,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Proceedings Of The 31St International Conference",
+      "role": "body",
+      "page": 10,
+      "source_characters": 253,
+      "supplied_characters": 253,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Production-Ready Ai Agents With Scalable Long-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 298,
+      "supplied_characters": 298,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Teenth International Conference On Learning Repre-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 159,
+      "supplied_characters": 159,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Bench: Towards Real-World Evaluation Of Memory-",
+      "role": "results",
+      "page": 10,
+      "source_characters": 95,
+      "supplied_characters": 95,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "The 2025 Conference Of The Nations Of The Americas",
+      "role": "body",
+      "page": 10,
+      "source_characters": 50,
+      "supplied_characters": 50,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Chapter Of The Association For Computational Lin-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 49,
+      "supplied_characters": 49,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Guistics: Human Language Technologies (Volume 1:",
+      "role": "body",
+      "page": 10,
+      "source_characters": 200,
+      "supplied_characters": 200,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Uating Memory In Llm Agents Via Incremental Multi-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 283,
+      "supplied_characters": 283,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "To Me: Benchmarking Llms For Dynamic User Profil-",
+      "role": "results",
+      "page": 10,
+      "source_characters": 363,
+      "supplied_characters": 363,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Towards Personalized Intelligence Via Learning Im-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 231,
+      "supplied_characters": 231,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Gym: Interactive Memory Benchmarking For Assis-",
+      "role": "results",
+      "page": 10,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Teenth International Conference On Learning Repre-",
+      "role": "body",
+      "page": 10,
+      "source_characters": 463,
+      "supplied_characters": 463,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Teenth International Conference On Learning Repre-",
+      "role": "body",
+      "page": 11,
+      "source_characters": 2473,
+      "supplied_characters": 2473,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Appendix: Data Statistics",
+      "role": "appendix",
+      "page": 11,
+      "source_characters": 1024,
+      "supplied_characters": 1024,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 55,
+      "heading": "Appendix: Conversational Query Rewrite Prompts",
+      "role": "appendix",
+      "page": 11,
+      "source_characters": 196,
+      "supplied_characters": 196,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 56,
+      "heading": "Appendix: Dialog Rewrite",
+      "role": "appendix",
+      "page": 12,
+      "source_characters": 484,
+      "supplied_characters": 484,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 57,
+      "heading": "Choose The Subject Speaker -- The Participant",
+      "role": "body",
+      "page": 12,
+      "source_characters": 185,
+      "supplied_characters": 185,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 58,
+      "heading": "Write A Single Natural Utterance That This",
+      "role": "body",
+      "page": 12,
+      "source_characters": 235,
+      "supplied_characters": 235,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 59,
+      "heading": "Rate Naturalness:",
+      "role": "body",
+      "page": 12,
+      "source_characters": 342,
+      "supplied_characters": 342,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 60,
+      "heading": "Reason Field: One Short Sentence Justifying",
+      "role": "body",
+      "page": 12,
+      "source_characters": 206,
+      "supplied_characters": 206,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 61,
+      "heading": "Appendix: Implicit Rewrite",
+      "role": "appendix",
+      "page": 12,
+      "source_characters": 1839,
+      "supplied_characters": 1839,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 62,
+      "heading": "Appendix: Counterfactual Rewrite",
+      "role": "appendix",
+      "page": 12,
+      "source_characters": 434,
+      "supplied_characters": 434,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 63,
+      "heading": "Choose The Subject Speaker -- The Participant",
+      "role": "body",
+      "page": 12,
+      "source_characters": 98,
+      "supplied_characters": 98,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 64,
+      "heading": "Generate A Plausible-Wrong Counterfactual:",
+      "role": "body",
+      "page": 12,
+      "source_characters": 320,
+      "supplied_characters": 320,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 65,
+      "heading": "Preserve Enough Context So The Assistant Can",
+      "role": "body",
+      "page": 13,
+      "source_characters": 191,
+      "supplied_characters": 191,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 66,
+      "heading": "Do Not Mention The Gold (Correct) Answer In",
+      "role": "body",
+      "page": 13,
+      "source_characters": 137,
+      "supplied_characters": 137,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 67,
+      "heading": "Appendix: Composed Rewrite",
+      "role": "appendix",
+      "page": 13,
+      "source_characters": 1059,
+      "supplied_characters": 1059,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 68,
+      "heading": "Appendix: Answer Prompt",
+      "role": "appendix",
+      "page": 13,
+      "source_characters": 430,
+      "supplied_characters": 430,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 69,
+      "heading": "Appendix: No-Memory Baseline",
+      "role": "appendix",
+      "page": 13,
+      "source_characters": 292,
+      "supplied_characters": 292,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 70,
+      "heading": "Appendix: Multi-Facet Query Rewrite",
+      "role": "appendix",
+      "page": 13,
+      "source_characters": 532,
+      "supplied_characters": 532,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 71,
+      "heading": "Appendix: Partial-Creditfact_Usedjudge (Dialog",
+      "role": "appendix",
+      "page": 13,
+      "source_characters": 294,
+      "supplied_characters": 294,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 72,
+      "heading": "Appendix: Partial-Creditfact_Usedjudge (Dialog",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 866,
+      "supplied_characters": 866,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 73,
+      "heading": "Appendix: Counterfactual 3-Way Judge",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 1462,
+      "supplied_characters": 1462,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 74,
+      "heading": "Appendix: Composed Atomic-Fact Coverage Judge",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 712,
+      "supplied_characters": 712,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 75,
+      "heading": "Appendix: Hallucination Judge",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 475,
+      "supplied_characters": 475,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 76,
+      "heading": "Appendix: Hallucination Judge",
+      "role": "appendix",
+      "page": 15,
+      "source_characters": 391,
+      "supplied_characters": 391,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 77,
+      "heading": "Appendix: Per-Dimension Scoring Judge",
+      "role": "appendix",
+      "page": 15,
+      "source_characters": 3406,
+      "supplied_characters": 3406,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 78,
+      "heading": "Knowledge Context Conversational Query Styles",
+      "role": "body",
+      "page": 16,
+      "source_characters": 2404,
+      "supplied_characters": 2404,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 79,
+      "heading": "Results",
+      "role": "results",
+      "page": 16,
+      "source_characters": 1564,
+      "supplied_characters": 1564,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 80,
+      "heading": "Results",
+      "role": "results",
+      "page": 17,
+      "source_characters": 3846,
+      "supplied_characters": 3846,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 81,
+      "heading": "Results",
+      "role": "results",
+      "page": 18,
+      "source_characters": 3761,
+      "supplied_characters": 3761,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 82,
+      "heading": "Results",
+      "role": "results",
+      "page": 19,
+      "source_characters": 2577,
+      "supplied_characters": 2577,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 83,
+      "heading": "Results",
+      "role": "results",
+      "page": 20,
+      "source_characters": 1942,
+      "supplied_characters": 1942,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 84,
+      "heading": "Results",
+      "role": "results",
+      "page": 21,
+      "source_characters": 1065,
+      "supplied_characters": 1065,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 2,
+   "canonical_id": "arxiv:2609.03871",
+   "title": "Bioinfoysis Technical Report",
+   "ranking_position": 46,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-09-03",
+   "manuscript_source": "https://arxiv.org/pdf/2609.03871",
+   "manuscript_hash": "a0611261bff9e1c3cf0ef2999f2f204449ad3ecb460ca79489ac79d7837e6257",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 29,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Abstract / front matter",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 170,
+      "supplied_characters": 170,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1907,
+      "supplied_characters": 1907,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 2,
+      "source_characters": 8,
+      "supplied_characters": 8,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Scientific Capability And Execution Layer: Tool- And Skill-Guided Bioinformatics",
+      "role": "body",
+      "page": 2,
+      "source_characters": 94,
+      "supplied_characters": 94,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Conclusion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17",
+      "role": "conclusion",
+      "page": 2,
+      "source_characters": 69,
+      "supplied_characters": 69,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Appendix: Extended Evaluation On Lab-Bench 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
+      "role": "appendix",
+      "page": 2,
+      "source_characters": 1,
+      "supplied_characters": 1,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 3,
+      "source_characters": 3704,
+      "supplied_characters": 3704,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 4,
+      "source_characters": 4412,
+      "supplied_characters": 4412,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 5,
+      "source_characters": 701,
+      "supplied_characters": 701,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "System Overview",
+      "role": "body",
+      "page": 5,
+      "source_characters": 2771,
+      "supplied_characters": 2771,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "System Overview",
+      "role": "body",
+      "page": 6,
+      "source_characters": 436,
+      "supplied_characters": 436,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Orchestration Layer: Adaptive Planning And Execution",
+      "role": "body",
+      "page": 6,
+      "source_characters": 1301,
+      "supplied_characters": 1301,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Orchestration Layer: Adaptive Planning And Execution",
+      "role": "body",
+      "page": 7,
+      "source_characters": 455,
+      "supplied_characters": 455,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Scientific Capability And Execution Layer: Tool- And Skill-Guided Bioinformatics Analysis",
+      "role": "body",
+      "page": 7,
+      "source_characters": 2406,
+      "supplied_characters": 2406,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Observability Layer: Run Evidence, Trace, And Evaluation",
+      "role": "results",
+      "page": 7,
+      "source_characters": 883,
+      "supplied_characters": 883,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Observability Layer: Run Evidence, Trace, And Evaluation",
+      "role": "results",
+      "page": 8,
+      "source_characters": 886,
+      "supplied_characters": 886,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Agent Infrastructure",
+      "role": "body",
+      "page": 8,
+      "source_characters": 813,
+      "supplied_characters": 813,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Persistent Runs And Controlled Execution",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1774,
+      "supplied_characters": 1774,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Role-Specific Context And Persistent Memory",
+      "role": "body",
+      "page": 9,
+      "source_characters": 2249,
+      "supplied_characters": 2249,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Artifact-Grounded Execution",
+      "role": "body",
+      "page": 9,
+      "source_characters": 1582,
+      "supplied_characters": 1582,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Trace, Audit, And Recovery",
+      "role": "body",
+      "page": 10,
+      "source_characters": 1800,
+      "supplied_characters": 1800,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Benchmark Suite",
+      "role": "results",
+      "page": 10,
+      "source_characters": 1856,
+      "supplied_characters": 1856,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Benchmark Suite",
+      "role": "results",
+      "page": 11,
+      "source_characters": 1246,
+      "supplied_characters": 1246,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Bixbench Benchmark",
+      "role": "results",
+      "page": 11,
+      "source_characters": 680,
+      "supplied_characters": 680,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Bixbench Benchmark",
+      "role": "results",
+      "page": 12,
+      "source_characters": 3636,
+      "supplied_characters": 3636,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Bixbench Benchmark",
+      "role": "results",
+      "page": 13,
+      "source_characters": 1828,
+      "supplied_characters": 1828,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Labbench2 Benchmark",
+      "role": "results",
+      "page": 13,
+      "source_characters": 1690,
+      "supplied_characters": 1690,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Labbench2 Benchmark",
+      "role": "results",
+      "page": 14,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Seqqa2 Task Categories Under A Particular Model And System Configuration. Darker Red Indicates",
+      "role": "body",
+      "page": 14,
+      "source_characters": 2864,
+      "supplied_characters": 2864,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Seqqa2 Task Categories Under A Particular Model And System Configuration. Darker Red Indicates",
+      "role": "body",
+      "page": 15,
+      "source_characters": 1518,
+      "supplied_characters": 1518,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Ablations Study",
+      "role": "results",
+      "page": 15,
+      "source_characters": 1848,
+      "supplied_characters": 1848,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Ablations Study",
+      "role": "results",
+      "page": 16,
+      "source_characters": 4726,
+      "supplied_characters": 4726,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Limitations",
+      "role": "limitations",
+      "page": 17,
+      "source_characters": 2519,
+      "supplied_characters": 2519,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Future Work",
+      "role": "body",
+      "page": 17,
+      "source_characters": 1062,
+      "supplied_characters": 1062,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Future Work",
+      "role": "body",
+      "page": 18,
+      "source_characters": 660,
+      "supplied_characters": 660,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 18,
+      "source_characters": 859,
+      "supplied_characters": 859,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 19,
+      "source_characters": 2941,
+      "supplied_characters": 2941,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 20,
+      "source_characters": 3120,
+      "supplied_characters": 3120,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 21,
+      "source_characters": 3316,
+      "supplied_characters": 3316,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 22,
+      "source_characters": 3105,
+      "supplied_characters": 3105,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Appendix: A Author List And Acknowledgments",
+      "role": "appendix",
+      "page": 23,
+      "source_characters": 519,
+      "supplied_characters": 519,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Appendix: B Extended Evaluation Details",
+      "role": "appendix",
+      "page": 23,
+      "source_characters": 29,
+      "supplied_characters": 29,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Appendix: Extended Evaluation On Bixbench",
+      "role": "appendix",
+      "page": 23,
+      "source_characters": 2879,
+      "supplied_characters": 2879,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Appendix: Extended Evaluation On Bixbench",
+      "role": "appendix",
+      "page": 24,
+      "source_characters": 4244,
+      "supplied_characters": 4244,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Appendix: Extended Evaluation On Bixbench",
+      "role": "appendix",
+      "page": 25,
+      "source_characters": 4123,
+      "supplied_characters": 4123,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Appendix: Extended Evaluation On Bixbench",
+      "role": "appendix",
+      "page": 26,
+      "source_characters": 4310,
+      "supplied_characters": 4310,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Appendix: Extended Evaluation On Bixbench",
+      "role": "appendix",
+      "page": 27,
+      "source_characters": 2506,
+      "supplied_characters": 2506,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Appendix: Extended Evaluation On Lab-Bench 2",
+      "role": "appendix",
+      "page": 27,
+      "source_characters": 1516,
+      "supplied_characters": 1516,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Appendix: Extended Evaluation On Lab-Bench 2",
+      "role": "appendix",
+      "page": 28,
+      "source_characters": 2551,
+      "supplied_characters": 2551,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Appendix: Extended Evaluation On Lab-Bench 2",
+      "role": "appendix",
+      "page": 29,
+      "source_characters": 1168,
+      "supplied_characters": 1168,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 3,
+   "canonical_id": "arxiv:2609.03632",
+   "title": "Dynamic probabilistic decision networks",
+   "ranking_position": 47,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-09-03",
+   "manuscript_source": "https://arxiv.org/pdf/2609.03632",
+   "manuscript_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 41,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Abstract / front matter",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 453,
+      "supplied_characters": 453,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1443,
+      "supplied_characters": 1443,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 4016,
+      "supplied_characters": 4016,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 3,
+      "source_characters": 4105,
+      "supplied_characters": 4105,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 4,
+      "source_characters": 4216,
+      "supplied_characters": 4216,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 5,
+      "source_characters": 115,
+      "supplied_characters": 115,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Decisions At Initial Stage",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1468,
+      "supplied_characters": 1468,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Behavioral Probability",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1324,
+      "supplied_characters": 1324,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Behavioral Probability",
+      "role": "body",
+      "page": 6,
+      "source_characters": 1943,
+      "supplied_characters": 1943,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Utility Factor",
+      "role": "body",
+      "page": 6,
+      "source_characters": 203,
+      "supplied_characters": 203,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Utility Factor",
+      "role": "body",
+      "page": 7,
+      "source_characters": 1786,
+      "supplied_characters": 1786,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Attraction Factor",
+      "role": "body",
+      "page": 7,
+      "source_characters": 296,
+      "supplied_characters": 296,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Attraction Factor",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1998,
+      "supplied_characters": 1998,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Attraction Factor",
+      "role": "body",
+      "page": 9,
+      "source_characters": 2878,
+      "supplied_characters": 2878,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Attraction Factor",
+      "role": "body",
+      "page": 10,
+      "source_characters": 1795,
+      "supplied_characters": 1795,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Empirical Justification",
+      "role": "body",
+      "page": 10,
+      "source_characters": 1154,
+      "supplied_characters": 1154,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Empirical Justification",
+      "role": "body",
+      "page": 11,
+      "source_characters": 2661,
+      "supplied_characters": 2661,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Empirical Justification",
+      "role": "body",
+      "page": 12,
+      "source_characters": 2396,
+      "supplied_characters": 2396,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Operation Of Decision Network",
+      "role": "body",
+      "page": 12,
+      "source_characters": 387,
+      "supplied_characters": 387,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Probability Dynamics",
+      "role": "body",
+      "page": 13,
+      "source_characters": 2104,
+      "supplied_characters": 2104,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Probability Dynamics",
+      "role": "body",
+      "page": 14,
+      "source_characters": 148,
+      "supplied_characters": 148,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "N − 1",
+      "role": "body",
+      "page": 14,
+      "source_characters": 2607,
+      "supplied_characters": 2607,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "N − 1",
+      "role": "body",
+      "page": 15,
+      "source_characters": 2542,
+      "supplied_characters": 2542,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "N − 1",
+      "role": "body",
+      "page": 16,
+      "source_characters": 3135,
+      "supplied_characters": 3135,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Binary Choice",
+      "role": "body",
+      "page": 16,
+      "source_characters": 248,
+      "supplied_characters": 248,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Binary Choice",
+      "role": "body",
+      "page": 17,
+      "source_characters": 1632,
+      "supplied_characters": 1632,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Allais Paradox And Its Resolution",
+      "role": "body",
+      "page": 17,
+      "source_characters": 492,
+      "supplied_characters": 492,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Allais Paradox And Its Resolution",
+      "role": "body",
+      "page": 18,
+      "source_characters": 2203,
+      "supplied_characters": 2203,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Allais Paradox And Its Resolution",
+      "role": "body",
+      "page": 19,
+      "source_characters": 713,
+      "supplied_characters": 713,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Dynamics Of Allais Paradox",
+      "role": "body",
+      "page": 19,
+      "source_characters": 1637,
+      "supplied_characters": 1637,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Dynamics Of Allais Paradox",
+      "role": "body",
+      "page": 20,
+      "source_characters": 2865,
+      "supplied_characters": 2865,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Dynamics Of Allais Paradox",
+      "role": "body",
+      "page": 21,
+      "source_characters": 2685,
+      "supplied_characters": 2685,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Dynamics Of Allais Paradox",
+      "role": "body",
+      "page": 22,
+      "source_characters": 3198,
+      "supplied_characters": 3198,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Regulated Decision Making",
+      "role": "body",
+      "page": 22,
+      "source_characters": 425,
+      "supplied_characters": 425,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Regulated Decision Making",
+      "role": "body",
+      "page": 23,
+      "source_characters": 1929,
+      "supplied_characters": 1929,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Discussion",
+      "role": "discussion",
+      "page": 23,
+      "source_characters": 681,
+      "supplied_characters": 681,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Discussion",
+      "role": "discussion",
+      "page": 24,
+      "source_characters": 3279,
+      "supplied_characters": 3279,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Competing Interests",
+      "role": "body",
+      "page": 25,
+      "source_characters": 463,
+      "supplied_characters": 463,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 25,
+      "source_characters": 1473,
+      "supplied_characters": 1473,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 26,
+      "source_characters": 2356,
+      "supplied_characters": 2356,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 27,
+      "source_characters": 2416,
+      "supplied_characters": 2416,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 28,
+      "source_characters": 2215,
+      "supplied_characters": 2215,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 29,
+      "source_characters": 663,
+      "supplied_characters": 663,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Rica 47 (1979) 263–292",
+      "role": "body",
+      "page": 29,
+      "source_characters": 1726,
+      "supplied_characters": 1726,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Rica 47 (1979) 263–292",
+      "role": "body",
+      "page": 30,
+      "source_characters": 1650,
+      "supplied_characters": 1650,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 31,
+      "source_characters": 3099,
+      "supplied_characters": 3099,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 32,
+      "source_characters": 1713,
+      "supplied_characters": 1713,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 33,
+      "source_characters": 1199,
+      "supplied_characters": 1199,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 34,
+      "source_characters": 551,
+      "supplied_characters": 551,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 35,
+      "source_characters": 1193,
+      "supplied_characters": 1193,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 36,
+      "source_characters": 973,
+      "supplied_characters": 973,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 37,
+      "source_characters": 493,
+      "supplied_characters": 493,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 38,
+      "source_characters": 815,
+      "supplied_characters": 815,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 39,
+      "source_characters": 794,
+      "supplied_characters": 794,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 40,
+      "source_characters": 798,
+      "supplied_characters": 798,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 55,
+      "heading": "Figure Captions",
+      "role": "body",
+      "page": 41,
+      "source_characters": 249,
+      "supplied_characters": 249,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 4,
+   "canonical_id": "arxiv:2609.03727",
+   "title": "Proactive Service Agents: A Unified Decision Framework, Methods, and Evaluation",
+   "ranking_position": 49,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-09-03",
+   "manuscript_source": "https://arxiv.org/pdf/2609.03727",
+   "manuscript_hash": "67cd40483998d0036a196ce6fd4447b3ddeff588a473121e6185100ffbfcca92",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 16,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Abstract / front matter",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 2074,
+      "supplied_characters": 2074,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Appendix: Introduction",
+      "role": "appendix",
+      "page": 1,
+      "source_characters": 3965,
+      "supplied_characters": 3965,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Appendix: Introduction",
+      "role": "appendix",
+      "page": 2,
+      "source_characters": 6592,
+      "supplied_characters": 6592,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Appendix: Introduction",
+      "role": "appendix",
+      "page": 3,
+      "source_characters": 391,
+      "supplied_characters": 391,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Cai 2023 [6]",
+      "role": "body",
+      "page": 3,
+      "source_characters": 246,
+      "supplied_characters": 246,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Acm Tois",
+      "role": "body",
+      "page": 3,
+      "source_characters": 550,
+      "supplied_characters": 550,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Acm Csur",
+      "role": "body",
+      "page": 3,
+      "source_characters": 2966,
+      "supplied_characters": 2966,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Acm Csur",
+      "role": "body",
+      "page": 4,
+      "source_characters": 1,
+      "supplied_characters": 1,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Table I",
+      "role": "body",
+      "page": 4,
+      "source_characters": 4684,
+      "supplied_characters": 4684,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Table I",
+      "role": "body",
+      "page": 5,
+      "source_characters": 5881,
+      "supplied_characters": 5881,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Table I",
+      "role": "body",
+      "page": 6,
+      "source_characters": 6100,
+      "supplied_characters": 6100,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Table I",
+      "role": "body",
+      "page": 7,
+      "source_characters": 4659,
+      "supplied_characters": 4659,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Table I",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1,
+      "supplied_characters": 1,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Table Ii",
+      "role": "body",
+      "page": 8,
+      "source_characters": 5881,
+      "supplied_characters": 5881,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Table Ii",
+      "role": "body",
+      "page": 9,
+      "source_characters": 6427,
+      "supplied_characters": 6427,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Table Ii",
+      "role": "body",
+      "page": 10,
+      "source_characters": 2,
+      "supplied_characters": 2,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Table Iii",
+      "role": "body",
+      "page": 10,
+      "source_characters": 3847,
+      "supplied_characters": 3847,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Table Iii",
+      "role": "body",
+      "page": 11,
+      "source_characters": 3535,
+      "supplied_characters": 3535,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Appendix: Frommethods Todeploymentregimes",
+      "role": "appendix",
+      "page": 11,
+      "source_characters": 2563,
+      "supplied_characters": 2563,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Appendix: Frommethods Todeploymentregimes",
+      "role": "appendix",
+      "page": 12,
+      "source_characters": 2,
+      "supplied_characters": 2,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Table Iv",
+      "role": "body",
+      "page": 12,
+      "source_characters": 1315,
+      "supplied_characters": 1315,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Evaluation",
+      "role": "results",
+      "page": 12,
+      "source_characters": 4546,
+      "supplied_characters": 4546,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Evaluation",
+      "role": "results",
+      "page": 13,
+      "source_characters": 1007,
+      "supplied_characters": 1007,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 13,
+      "source_characters": 330,
+      "supplied_characters": 330,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Proceedings Of The Sigchi Conference On Human Factors",
+      "role": "body",
+      "page": 13,
+      "source_characters": 229,
+      "supplied_characters": 229,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Proceedings Of The Fifteenth Conference On Uncertainty In Artificial",
+      "role": "limitations",
+      "page": 13,
+      "source_characters": 905,
+      "supplied_characters": 905,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Proceedings Of The Thirty-Second International Joint Conference",
+      "role": "body",
+      "page": 13,
+      "source_characters": 604,
+      "supplied_characters": 604,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Of The 47Th International Acm Sigir Conference On Research And",
+      "role": "body",
+      "page": 13,
+      "source_characters": 305,
+      "supplied_characters": 305,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Inproceedings Of The 58Th Annual Meeting Of The Association For",
+      "role": "body",
+      "page": 13,
+      "source_characters": 576,
+      "supplied_characters": 576,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Sigir Conference On Research And Development In Information",
+      "role": "body",
+      "page": 13,
+      "source_characters": 2693,
+      "supplied_characters": 2693,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Unraveling Both Concepts In Human-Robot Interaction Through A",
+      "role": "body",
+      "page": 13,
+      "source_characters": 637,
+      "supplied_characters": 637,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Inproceedings Of The Second Workshop On Social Influence In",
+      "role": "body",
+      "page": 13,
+      "source_characters": 232,
+      "supplied_characters": 232,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "The Right Time: Human And Model Uncertainty Guidance To Ask",
+      "role": "limitations",
+      "page": 13,
+      "source_characters": 129,
+      "supplied_characters": 129,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "European Chapter Of The Association For Computational Linguistics",
+      "role": "body",
+      "page": 13,
+      "source_characters": 601,
+      "supplied_characters": 601,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Adaptive Interventions: Fostering Physical Activity In A Prospective",
+      "role": "body",
+      "page": 13,
+      "source_characters": 390,
+      "supplied_characters": 390,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "In The Knight First Amendment Institute'S Ai And Democratic Freedoms",
+      "role": "body",
+      "page": 13,
+      "source_characters": 136,
+      "supplied_characters": 136,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "In The Knight First Amendment Institute'S Ai And Democratic Freedoms",
+      "role": "body",
+      "page": 14,
+      "source_characters": 9558,
+      "supplied_characters": 9558,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "In The Knight First Amendment Institute'S Ai And Democratic Freedoms",
+      "role": "body",
+      "page": 15,
+      "source_characters": 9363,
+      "supplied_characters": 9363,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "In The Knight First Amendment Institute'S Ai And Democratic Freedoms",
+      "role": "body",
+      "page": 16,
+      "source_characters": 4015,
+      "supplied_characters": 4015,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 5,
+   "canonical_id": "doi:10.48550/arxiv.2609.02265",
+   "title": "CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents",
+   "ranking_position": 50,
+   "relevance_decision": "relevant",
+   "relevance_score": 100,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-09-02",
+   "manuscript_source": "https://arxiv.org/pdf/2609.02265",
+   "manuscript_hash": "769928465a204bed0129b73315b47819812db64cbba2f29ce3acbc70be1d9554",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 29,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Abstract / front matter",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 141,
+      "supplied_characters": 141,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 2102,
+      "supplied_characters": 2102,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 2350,
+      "supplied_characters": 2350,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 2925,
+      "supplied_characters": 2925,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Problem Formulation",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 1655,
+      "supplied_characters": 1655,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Problem Formulation",
+      "role": "introduction",
+      "page": 3,
+      "source_characters": 2815,
+      "supplied_characters": 2815,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Capture",
+      "role": "body",
+      "page": 3,
+      "source_characters": 223,
+      "supplied_characters": 223,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Preference-Hypothesis Extraction",
+      "role": "body",
+      "page": 3,
+      "source_characters": 436,
+      "supplied_characters": 436,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Preference-Hypothesis Extraction",
+      "role": "body",
+      "page": 4,
+      "source_characters": 195,
+      "supplied_characters": 195,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "The Authenticity Gate",
+      "role": "body",
+      "page": 4,
+      "source_characters": 1696,
+      "supplied_characters": 1696,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Multi-Timescale Ledger",
+      "role": "body",
+      "page": 4,
+      "source_characters": 2183,
+      "supplied_characters": 2183,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Safety-Bounded Selection And Causal Audit",
+      "role": "body",
+      "page": 4,
+      "source_characters": 156,
+      "supplied_characters": 156,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Safety-Bounded Selection And Causal Audit",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1271,
+      "supplied_characters": 1271,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "The D-Prefguardbenchmark",
+      "role": "results",
+      "page": 5,
+      "source_characters": 3626,
+      "supplied_characters": 3626,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "The D-Prefguardbenchmark",
+      "role": "results",
+      "page": 6,
+      "source_characters": 1348,
+      "supplied_characters": 1348,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Experiments",
+      "role": "results",
+      "page": 6,
+      "source_characters": 3125,
+      "supplied_characters": 3125,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Experiments",
+      "role": "results",
+      "page": 7,
+      "source_characters": 4357,
+      "supplied_characters": 4357,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Leaving The Benchmark Behind",
+      "role": "results",
+      "page": 8,
+      "source_characters": 2587,
+      "supplied_characters": 2587,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Related Work",
+      "role": "related",
+      "page": 8,
+      "source_characters": 2069,
+      "supplied_characters": 2069,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Limitations And Falsification",
+      "role": "limitations",
+      "page": 9,
+      "source_characters": 1165,
+      "supplied_characters": 1165,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 9,
+      "source_characters": 3640,
+      "supplied_characters": 3640,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 10,
+      "source_characters": 1492,
+      "supplied_characters": 1492,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 10,
+      "source_characters": 2434,
+      "supplied_characters": 2434,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 11,
+      "source_characters": 4109,
+      "supplied_characters": 4109,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 12,
+      "source_characters": 4234,
+      "supplied_characters": 4234,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 13,
+      "source_characters": 4293,
+      "supplied_characters": 4293,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 14,
+      "source_characters": 1019,
+      "supplied_characters": 1019,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Appendix: Setting And Notation",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 1823,
+      "supplied_characters": 1823,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Z \f\fEλ[P−Q| G]",
+      "role": "body",
+      "page": 14,
+      "source_characters": 460,
+      "supplied_characters": 460,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Appendix: A Eλ[P| G] Dλ",
+      "role": "appendix",
+      "page": 14,
+      "source_characters": 279,
+      "supplied_characters": 279,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Appendix: A Eλ[P| G] Dλ",
+      "role": "appendix",
+      "page": 15,
+      "source_characters": 542,
+      "supplied_characters": 542,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Appendix: Assumptions",
+      "role": "appendix",
+      "page": 15,
+      "source_characters": 2008,
+      "supplied_characters": 2008,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Appendix: Part 1. The Testing Lower Bound",
+      "role": "appendix",
+      "page": 15,
+      "source_characters": 859,
+      "supplied_characters": 859,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Appendix: Part 1. The Testing Lower Bound",
+      "role": "appendix",
+      "page": 16,
+      "source_characters": 2132,
+      "supplied_characters": 2132,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Appendix: Part 2. Conditioning On The History",
+      "role": "appendix",
+      "page": 16,
+      "source_characters": 1638,
+      "supplied_characters": 1638,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Appendix: Part 2. Conditioning On The History",
+      "role": "appendix",
+      "page": 17,
+      "source_characters": 1151,
+      "supplied_characters": 1151,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Appendix: Part 3. Clarification",
+      "role": "appendix",
+      "page": 17,
+      "source_characters": 2770,
+      "supplied_characters": 2770,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Appendix: Part 3. Clarification",
+      "role": "appendix",
+      "page": 18,
+      "source_characters": 1488,
+      "supplied_characters": 1488,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Appendix: Estimating The Two Distances",
+      "role": "appendix",
+      "page": 18,
+      "source_characters": 2567,
+      "supplied_characters": 2567,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Appendix: Estimating The Two Distances",
+      "role": "appendix",
+      "page": 19,
+      "source_characters": 1086,
+      "supplied_characters": 1086,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 19,
+      "source_characters": 1569,
+      "supplied_characters": 1569,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 20,
+      "source_characters": 4484,
+      "supplied_characters": 4484,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 21,
+      "source_characters": 4161,
+      "supplied_characters": 4161,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 22,
+      "source_characters": 3833,
+      "supplied_characters": 3833,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 23,
+      "source_characters": 4423,
+      "supplied_characters": 4423,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 24,
+      "source_characters": 4299,
+      "supplied_characters": 4299,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 25,
+      "source_characters": 5181,
+      "supplied_characters": 5181,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 26,
+      "source_characters": 4520,
+      "supplied_characters": 4520,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 27,
+      "source_characters": 4568,
+      "supplied_characters": 4568,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 28,
+      "source_characters": 3047,
+      "supplied_characters": 3047,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Appendix: Implementation Details",
+      "role": "appendix",
+      "page": 29,
+      "source_characters": 894,
+      "supplied_characters": 894,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 1,
+   "canonical_id": "openalex:W7169633615",
+   "title": "Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis",
+   "ranking_position": 94,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-07-15",
+   "manuscript_source": "https://arxiv.org/pdf/2607.13602",
+   "manuscript_hash": "248ce924319bedbbdbc8999b3f6b86ddac98e7b60dc1ebca02df77b031bf1876",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 46,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Analogical Deep Research",
+      "role": "body",
+      "page": 1,
+      "source_characters": 1733,
+      "supplied_characters": 1733,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 1918,
+      "supplied_characters": 1918,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 2,
+      "source_characters": 3025,
+      "supplied_characters": 3025,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 3,
+      "source_characters": 1361,
+      "supplied_characters": 1361,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Related Work",
+      "role": "related",
+      "page": 3,
+      "source_characters": 2853,
+      "supplied_characters": 2853,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 4,
+      "source_characters": 144,
+      "supplied_characters": 144,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Foresight With Historical Analogies",
+      "role": "body",
+      "page": 4,
+      "source_characters": 131,
+      "supplied_characters": 131,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Problem Definition",
+      "role": "introduction",
+      "page": 4,
+      "source_characters": 2788,
+      "supplied_characters": 2788,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 5,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Analogical Deep Research Benchmark",
+      "role": "results",
+      "page": 5,
+      "source_characters": 3754,
+      "supplied_characters": 3754,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 6,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Theoretical Discussions",
+      "role": "discussion",
+      "page": 6,
+      "source_characters": 3389,
+      "supplied_characters": 3389,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Analogical Deep Research Agent",
+      "role": "body",
+      "page": 6,
+      "source_characters": 244,
+      "supplied_characters": 244,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 7,
+      "source_characters": 831,
+      "supplied_characters": 831,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Causal Analogical Researcher",
+      "role": "body",
+      "page": 7,
+      "source_characters": 1344,
+      "supplied_characters": 1344,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1892,
+      "supplied_characters": 1892,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Agentic Modules For Deep Research",
+      "role": "body",
+      "page": 8,
+      "source_characters": 761,
+      "supplied_characters": 761,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Experiments",
+      "role": "results",
+      "page": 8,
+      "source_characters": 181,
+      "supplied_characters": 181,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 9,
+      "source_characters": 648,
+      "supplied_characters": 648,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Method",
+      "role": "methods",
+      "page": 9,
+      "source_characters": 874,
+      "supplied_characters": 874,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Historical Analogy Generation",
+      "role": "body",
+      "page": 9,
+      "source_characters": 1594,
+      "supplied_characters": 1594,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 10,
+      "source_characters": 718,
+      "supplied_characters": 718,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Analogical Deep Research Evaluation",
+      "role": "results",
+      "page": 10,
+      "source_characters": 2602,
+      "supplied_characters": 2602,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 11,
+      "source_characters": 925,
+      "supplied_characters": 925,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Tanker War). The April 8 Ceasefire [...]",
+      "role": "body",
+      "page": 11,
+      "source_characters": 1886,
+      "supplied_characters": 1886,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 11,
+      "source_characters": 494,
+      "supplied_characters": 494,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 12,
+      "source_characters": 336,
+      "supplied_characters": 336,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 12,
+      "source_characters": 2571,
+      "supplied_characters": 2571,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 13,
+      "source_characters": 3223,
+      "supplied_characters": 3223,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 14,
+      "source_characters": 3047,
+      "supplied_characters": 3047,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 15,
+      "source_characters": 2477,
+      "supplied_characters": 2477,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 16,
+      "source_characters": 3407,
+      "supplied_characters": 3407,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 17,
+      "source_characters": 134,
+      "supplied_characters": 134,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Appendix: Notation",
+      "role": "appendix",
+      "page": 17,
+      "source_characters": 923,
+      "supplied_characters": 923,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Appendix: Problem Definition",
+      "role": "appendix",
+      "page": 17,
+      "source_characters": 1369,
+      "supplied_characters": 1369,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 18,
+      "source_characters": 1939,
+      "supplied_characters": 1939,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 19,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Appendix: Main Results",
+      "role": "appendix",
+      "page": 19,
+      "source_characters": 1132,
+      "supplied_characters": 1132,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "𝐹)≥Δ 𝐹 (3)",
+      "role": "body",
+      "page": 19,
+      "source_characters": 793,
+      "supplied_characters": 793,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 20,
+      "source_characters": 592,
+      "supplied_characters": 592,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "𝐹)≥ 1",
+      "role": "body",
+      "page": 20,
+      "source_characters": 5,
+      "supplied_characters": 5,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Tv(𝑃 𝑤0",
+      "role": "body",
+      "page": 20,
+      "source_characters": 1135,
+      "supplied_characters": 1135,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 21,
+      "source_characters": 1319,
+      "supplied_characters": 1319,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 22,
+      "source_characters": 1715,
+      "supplied_characters": 1715,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 23,
+      "source_characters": 1187,
+      "supplied_characters": 1187,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 24,
+      "source_characters": 1402,
+      "supplied_characters": 1402,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 25,
+      "source_characters": 3073,
+      "supplied_characters": 3073,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 26,
+      "source_characters": 110,
+      "supplied_characters": 110,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Systematic Extraction + Explicit Universal Vs Domain-Specific Distinction +≥2",
+      "role": "body",
+      "page": 26,
+      "source_characters": 174,
+      "supplied_characters": 174,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Names Specific Hidden Factor +≥1 Analogy Justification, But Without Completing",
+      "role": "body",
+      "page": 26,
+      "source_characters": 37,
+      "supplied_characters": 37,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Complete Derivation: (A) Names Structural Role Recurring Across Analogies, (B)",
+      "role": "body",
+      "page": 26,
+      "source_characters": 198,
+      "supplied_characters": 198,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Explicitly Maps Which Insight Comes From Which Analogy And Why Certain",
+      "role": "body",
+      "page": 26,
+      "source_characters": 898,
+      "supplied_characters": 898,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 27,
+      "source_characters": 3201,
+      "supplied_characters": 3201,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Probabilistic Forecasts And Scenario Predictions Are Never L4, Regardless Of Historical References. L4",
+      "role": "body",
+      "page": 27,
+      "source_characters": 306,
+      "supplied_characters": 306,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 28,
+      "source_characters": 96,
+      "supplied_characters": 96,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 55,
+      "heading": "If Unsure Between L3-D And L3-S, Check: Does The Claim Name Or Clearly Imply A Structural Role",
+      "role": "body",
+      "page": 28,
+      "source_characters": 2541,
+      "supplied_characters": 2541,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 56,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 29,
+      "source_characters": 3461,
+      "supplied_characters": 3461,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 57,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 30,
+      "source_characters": 3061,
+      "supplied_characters": 3061,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 58,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 31,
+      "source_characters": 163,
+      "supplied_characters": 163,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 59,
+      "heading": "Appendix: Specificity (1–3):",
+      "role": "appendix",
+      "page": 31,
+      "source_characters": 367,
+      "supplied_characters": 367,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 60,
+      "heading": "Appendix: Derivability (0–3):",
+      "role": "appendix",
+      "page": 31,
+      "source_characters": 246,
+      "supplied_characters": 246,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 61,
+      "heading": "Appendix: Temporal Compliance:",
+      "role": "appendix",
+      "page": 31,
+      "source_characters": 1625,
+      "supplied_characters": 1625,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 62,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 32,
+      "source_characters": 207,
+      "supplied_characters": 207,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 63,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 33,
+      "source_characters": 2811,
+      "supplied_characters": 2811,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 64,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 34,
+      "source_characters": 2290,
+      "supplied_characters": 2290,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 65,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 35,
+      "source_characters": 396,
+      "supplied_characters": 396,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 66,
+      "heading": "Sub-Instance Of Generic Input— Input Names A Generic Category, Candidate Is",
+      "role": "body",
+      "page": 35,
+      "source_characters": 1662,
+      "supplied_characters": 1662,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 67,
+      "heading": "Identify The Specific Historical Event Each Name Refers To. Are They The Same Real-World Event Under",
+      "role": "body",
+      "page": 35,
+      "source_characters": 16,
+      "supplied_characters": 16,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 68,
+      "heading": "If Different, Check: Is One A Proper Subset (Named Sub-Event Within A Container Event)?",
+      "role": "body",
+      "page": 35,
+      "source_characters": 376,
+      "supplied_characters": 376,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 69,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 36,
+      "source_characters": 1927,
+      "supplied_characters": 1927,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 70,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 37,
+      "source_characters": 2895,
+      "supplied_characters": 2895,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 71,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 38,
+      "source_characters": 2854,
+      "supplied_characters": 2854,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 72,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 39,
+      "source_characters": 113,
+      "supplied_characters": 113,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 73,
+      "heading": "Actors— Principal Agents By Structural Role (E.G., \"Incumbent Power\", \"Rising Challenger\"), Not",
+      "role": "body",
+      "page": 39,
+      "source_characters": 433,
+      "supplied_characters": 433,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 74,
+      "heading": "Causal_Chain— Json Array Of Ordered Steps With Valence. Each Step:{\"Step\": \"⟨Short",
+      "role": "body",
+      "page": 39,
+      "source_characters": 131,
+      "supplied_characters": 131,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 75,
+      "heading": "Causal_Elements— Json Array Of 5–8 Specific Causal Factors, Snake_Case Short Phrases. Only",
+      "role": "body",
+      "page": 39,
+      "source_characters": 1916,
+      "supplied_characters": 1916,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 76,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 40,
+      "source_characters": 2892,
+      "supplied_characters": 2892,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 77,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 41,
+      "source_characters": 1351,
+      "supplied_characters": 1351,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 78,
+      "heading": "List Shared Elements That A And B Genuinely Share In Concept (Identical Wording Not Required —",
+      "role": "body",
+      "page": 41,
+      "source_characters": 77,
+      "supplied_characters": 77,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 79,
+      "heading": "For Each Shared Element: Specific Mechanism (How/Why)→ I, Or Bare Category (What",
+      "role": "body",
+      "page": 41,
+      "source_characters": 673,
+      "supplied_characters": 673,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 80,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 42,
+      "source_characters": 2686,
+      "supplied_characters": 2686,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 81,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 43,
+      "source_characters": 3239,
+      "supplied_characters": 3239,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 82,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 44,
+      "source_characters": 2681,
+      "supplied_characters": 2681,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 83,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 45,
+      "source_characters": 3026,
+      "supplied_characters": 3026,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 84,
+      "heading": "Analogical Deep Research: Retrieving And Integrating Historical Analogies For Foresight Analysis",
+      "role": "body",
+      "page": 46,
+      "source_characters": 1357,
+      "supplied_characters": 1357,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 85,
+      "heading": "Identify The Specific Historical Event Each Name Refers To. Are They The Same Real-World Referent Under",
+      "role": "body",
+      "page": 46,
+      "source_characters": 16,
+      "supplied_characters": 16,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 86,
+      "heading": "If Different Referents, Check: Is One A Strict Containment (Phase / Sub-Event / Sub-Action /",
+      "role": "body",
+      "page": 46,
+      "source_characters": 46,
+      "supplied_characters": 46,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 87,
+      "heading": "If Neither Identity Nor Containment, Check: Are They Sibling Members Of One Institutional Series /",
+      "role": "body",
+      "page": 46,
+      "source_characters": 454,
+      "supplied_characters": 454,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 88,
+      "heading": "Appendix: Failure Modes Of Descriptive Matching",
+      "role": "appendix",
+      "page": 46,
+      "source_characters": 2,
+      "supplied_characters": 2,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 2,
+   "canonical_id": "openalex:W7169633509",
+   "title": "FinResearchBench II: A Deep Research Benchmark with Consensus-Derived Gold Rubrics for Distinguishing Financial Report Quality",
+   "ranking_position": 98,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-07-14",
+   "manuscript_source": "https://arxiv.org/pdf/2607.12252",
+   "manuscript_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 11,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Finresearchbench Ii: A Deep Research Benchmark With",
+      "role": "results",
+      "page": 1,
+      "source_characters": 305,
+      "supplied_characters": 305,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1821,
+      "supplied_characters": 1821,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 2377,
+      "supplied_characters": 2377,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 271,
+      "supplied_characters": 271,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "A Deep Research Benchmark Grounded In Real",
+      "role": "results",
+      "page": 2,
+      "source_characters": 105,
+      "supplied_characters": 105,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "A Scalable, Expert-Free Pipeline For Deriving",
+      "role": "body",
+      "page": 2,
+      "source_characters": 256,
+      "supplied_characters": 256,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "A Validated And Discriminative Evaluation",
+      "role": "results",
+      "page": 2,
+      "source_characters": 331,
+      "supplied_characters": 331,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Benchmarks For Deep Research Agents",
+      "role": "results",
+      "page": 2,
+      "source_characters": 753,
+      "supplied_characters": 753,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Financial Domain Benchmarks",
+      "role": "results",
+      "page": 2,
+      "source_characters": 1131,
+      "supplied_characters": 1131,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Rubric-Based Evaluation For Long-Form",
+      "role": "results",
+      "page": 2,
+      "source_characters": 909,
+      "supplied_characters": 909,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Data Construction",
+      "role": "body",
+      "page": 2,
+      "source_characters": 364,
+      "supplied_characters": 364,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Data Construction",
+      "role": "body",
+      "page": 3,
+      "source_characters": 251,
+      "supplied_characters": 251,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Data Collection Methodology",
+      "role": "methods",
+      "page": 3,
+      "source_characters": 675,
+      "supplied_characters": 675,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Rubrics Construction",
+      "role": "body",
+      "page": 3,
+      "source_characters": 560,
+      "supplied_characters": 560,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Candidate Rubric Generation: For Each",
+      "role": "body",
+      "page": 3,
+      "source_characters": 205,
+      "supplied_characters": 205,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Human–Llm Validation On A Sampled Sub-",
+      "role": "results",
+      "page": 3,
+      "source_characters": 266,
+      "supplied_characters": 266,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Consensus-Derived Gold Rubrics: After Vali-",
+      "role": "body",
+      "page": 3,
+      "source_characters": 284,
+      "supplied_characters": 284,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Expert-Free Query-Specific Rubric",
+      "role": "body",
+      "page": 3,
+      "source_characters": 215,
+      "supplied_characters": 215,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Expert-Free Query-Specific Rubric",
+      "role": "body",
+      "page": 4,
+      "source_characters": 943,
+      "supplied_characters": 943,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Human-Validated Llm Screening",
+      "role": "body",
+      "page": 4,
+      "source_characters": 504,
+      "supplied_characters": 504,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Strict Consistency Filter",
+      "role": "body",
+      "page": 4,
+      "source_characters": 404,
+      "supplied_characters": 404,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Distinguishability Filter",
+      "role": "body",
+      "page": 4,
+      "source_characters": 580,
+      "supplied_characters": 580,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Consensus-Derived Gold Rubrics And",
+      "role": "body",
+      "page": 4,
+      "source_characters": 492,
+      "supplied_characters": 492,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Consensus-Derived Gold Rubrics And",
+      "role": "body",
+      "page": 5,
+      "source_characters": 439,
+      "supplied_characters": 439,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Experiments",
+      "role": "results",
+      "page": 5,
+      "source_characters": 574,
+      "supplied_characters": 574,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Evaluation",
+      "role": "results",
+      "page": 5,
+      "source_characters": 2186,
+      "supplied_characters": 2186,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Human–Llm Consistency Validation",
+      "role": "results",
+      "page": 5,
+      "source_characters": 774,
+      "supplied_characters": 774,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Human–Llm Consistency Validation",
+      "role": "results",
+      "page": 6,
+      "source_characters": 2140,
+      "supplied_characters": 2140,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Filtering Statistics",
+      "role": "body",
+      "page": 6,
+      "source_characters": 2041,
+      "supplied_characters": 2041,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Filtering Statistics",
+      "role": "body",
+      "page": 7,
+      "source_characters": 373,
+      "supplied_characters": 373,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Evaluation",
+      "role": "results",
+      "page": 7,
+      "source_characters": 3074,
+      "supplied_characters": 3074,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Sensitivity Analyses",
+      "role": "body",
+      "page": 7,
+      "source_characters": 855,
+      "supplied_characters": 855,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Sensitivity Analyses",
+      "role": "body",
+      "page": 8,
+      "source_characters": 1377,
+      "supplied_characters": 1377,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 8,
+      "source_characters": 1943,
+      "supplied_characters": 1943,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "This Work Utilized Generative Ai Tools For Drafting",
+      "role": "body",
+      "page": 8,
+      "source_characters": 102,
+      "supplied_characters": 102,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "With Generative Ai Assistance And Subsequently Re-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 85,
+      "supplied_characters": 85,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "This Paper Was Supported By \"2025 Special Pro-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 46,
+      "supplied_characters": 46,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Gram For Supporting Innovative Development In",
+      "role": "body",
+      "page": 8,
+      "source_characters": 45,
+      "supplied_characters": 45,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Leading Industries (Ai Track) Under The High-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 45,
+      "supplied_characters": 45,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Quality Industrial Development Initiative\" (Project",
+      "role": "body",
+      "page": 8,
+      "source_characters": 51,
+      "supplied_characters": 51,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Name: Finstep Finsmart Intelligent Service Plat-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 92,
+      "supplied_characters": 92,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Shanghai Municipal Commission Of Economy And",
+      "role": "body",
+      "page": 8,
+      "source_characters": 80,
+      "supplied_characters": 80,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Disclosure Of Interests",
+      "role": "body",
+      "page": 9,
+      "source_characters": 124,
+      "supplied_characters": 124,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 9,
+      "source_characters": 349,
+      "supplied_characters": 349,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Bench: A Comprehensive Benchmark For Deep Re-",
+      "role": "results",
+      "page": 9,
+      "source_characters": 145,
+      "supplied_characters": 145,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Nese Financial Domain Knowledge Evaluation Bench-",
+      "role": "results",
+      "page": 9,
+      "source_characters": 98,
+      "supplied_characters": 98,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "The 2025 Conference Of The Nations Of The Americas",
+      "role": "body",
+      "page": 9,
+      "source_characters": 50,
+      "supplied_characters": 50,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Chapter Of The Association For Computational Lin-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 49,
+      "supplied_characters": 49,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Guistics: Human Language Technologies (Volume 1:",
+      "role": "body",
+      "page": 9,
+      "source_characters": 133,
+      "supplied_characters": 133,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "A Unified Dual-Mode Bilingual Benchmark For Expert-",
+      "role": "results",
+      "page": 9,
+      "source_characters": 177,
+      "supplied_characters": 177,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Sive And Reliable Benchmark For Deep-Research Expert",
+      "role": "results",
+      "page": 9,
+      "source_characters": 154,
+      "supplied_characters": 154,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Structing A Multi-Hop Qa Dataset For Comprehensive",
+      "role": "body",
+      "page": 9,
+      "source_characters": 402,
+      "supplied_characters": 402,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Augmented Generation For Knowledge-Intensive Nlp",
+      "role": "body",
+      "page": 9,
+      "source_characters": 172,
+      "supplied_characters": 172,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Ation To Judgment: Opportunities And Challenges Of",
+      "role": "body",
+      "page": 9,
+      "source_characters": 97,
+      "supplied_characters": 97,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Ference On Empirical Methods In Natural Language",
+      "role": "methods",
+      "page": 9,
+      "source_characters": 183,
+      "supplied_characters": 183,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 55,
+      "heading": "Ings Of The 63Rd Annual Meeting Of The Association",
+      "role": "body",
+      "page": 9,
+      "source_characters": 50,
+      "supplied_characters": 50,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 56,
+      "heading": "For Computational Linguistics (Volume 1: Long Pa-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 128,
+      "supplied_characters": 128,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 57,
+      "heading": "Deep Research On Large-Scale Databases Using Ex-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 426,
+      "supplied_characters": 426,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 58,
+      "heading": "Business-Driven Real-World Financial Benchmark For",
+      "role": "results",
+      "page": 9,
+      "source_characters": 146,
+      "supplied_characters": 146,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 59,
+      "heading": "Query-Specific Rubrics From Human Preferences For",
+      "role": "body",
+      "page": 9,
+      "source_characters": 218,
+      "supplied_characters": 218,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 60,
+      "heading": "International Conference On Learning Representa-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 110,
+      "supplied_characters": 110,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 61,
+      "heading": "Uating Long Text Generation Capabilities Of Large Lan-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 204,
+      "supplied_characters": 204,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 62,
+      "heading": "Infindings Of The Association For Computational",
+      "role": "body",
+      "page": 9,
+      "source_characters": 184,
+      "supplied_characters": 184,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 63,
+      "heading": "Researchbench: A Logic Tree Based Agent-As-A-Judge",
+      "role": "body",
+      "page": 9,
+      "source_characters": 102,
+      "supplied_characters": 102,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 64,
+      "heading": "Inproceedings Of The 6Th Acm International Confer-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 134,
+      "supplied_characters": 134,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 65,
+      "heading": "Multi-Domain Benchmark For Evaluating Ai Research",
+      "role": "results",
+      "page": 9,
+      "source_characters": 174,
+      "supplied_characters": 174,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 66,
+      "heading": "Musique: Multihop Questions Via Single-Hop Ques-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 193,
+      "supplied_characters": 193,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 67,
+      "heading": "Research Eval: An Automated Framework For Assess-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 180,
+      "supplied_characters": 180,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 68,
+      "heading": "Evaluating Agents On The Rediscovery Of Scientific",
+      "role": "body",
+      "page": 9,
+      "source_characters": 143,
+      "supplied_characters": 143,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 69,
+      "heading": "A Simple Yet Challenging Benchmark For Browsing",
+      "role": "results",
+      "page": 9,
+      "source_characters": 89,
+      "supplied_characters": 89,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 70,
+      "heading": "A Simple Yet Challenging Benchmark For Browsing",
+      "role": "results",
+      "page": 10,
+      "source_characters": 2279,
+      "supplied_characters": 2279,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 71,
+      "heading": "Appendix: A Rubrics Evaluation Prompt",
+      "role": "appendix",
+      "page": 11,
+      "source_characters": 1652,
+      "supplied_characters": 1652,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 3,
+   "canonical_id": "openalex:W7168432559",
+   "title": "Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists",
+   "ranking_position": 99,
+   "relevance_decision": "relevant",
+   "relevance_score": 93,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-07-13",
+   "manuscript_source": "https://arxiv.org/pdf/2607.11079",
+   "manuscript_hash": "0098e84d1b6ac616678b3e703b61b21a1a30b9fb691f30767c95c5f6779c7501",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 9,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Abstract / front matter",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 389,
+      "supplied_characters": 389,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1236,
+      "supplied_characters": 1236,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 3506,
+      "supplied_characters": 3506,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Benchmarks Ours Qrdata Llm-Sr Dsbench Da-Code Krama Blade Sciagent",
+      "role": "results",
+      "page": 2,
+      "source_characters": 2467,
+      "supplied_characters": 2467,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Related Work",
+      "role": "related",
+      "page": 2,
+      "source_characters": 1427,
+      "supplied_characters": 1427,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Overview",
+      "role": "body",
+      "page": 2,
+      "source_characters": 738,
+      "supplied_characters": 738,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Overview",
+      "role": "body",
+      "page": 3,
+      "source_characters": 893,
+      "supplied_characters": 893,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Data Curation",
+      "role": "body",
+      "page": 3,
+      "source_characters": 3070,
+      "supplied_characters": 3070,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Question Construction",
+      "role": "body",
+      "page": 3,
+      "source_characters": 1714,
+      "supplied_characters": 1714,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Question Construction",
+      "role": "body",
+      "page": 4,
+      "source_characters": 2865,
+      "supplied_characters": 2865,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Validation And Dataset Statistics",
+      "role": "results",
+      "page": 4,
+      "source_characters": 1279,
+      "supplied_characters": 1279,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Experimental Setup",
+      "role": "methods",
+      "page": 4,
+      "source_characters": 793,
+      "supplied_characters": 793,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Model Oeq Mcq",
+      "role": "body",
+      "page": 5,
+      "source_characters": 3008,
+      "supplied_characters": 3008,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Main Results",
+      "role": "results",
+      "page": 5,
+      "source_characters": 1456,
+      "supplied_characters": 1456,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Task Biologychemistryenvironmentgeographyphysics",
+      "role": "body",
+      "page": 6,
+      "source_characters": 3440,
+      "supplied_characters": 3440,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Error Analysis",
+      "role": "body",
+      "page": 6,
+      "source_characters": 2144,
+      "supplied_characters": 2144,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Descriptive Exploratory Inferential Predictive Causal Mechanistic",
+      "role": "body",
+      "page": 7,
+      "source_characters": 2141,
+      "supplied_characters": 2141,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Discussion",
+      "role": "discussion",
+      "page": 7,
+      "source_characters": 1480,
+      "supplied_characters": 1480,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 7,
+      "source_characters": 836,
+      "supplied_characters": 836,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 8,
+      "source_characters": 329,
+      "supplied_characters": 329,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Toward Rigorous Assessment Of Language Agents For Data-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 213,
+      "supplied_characters": 213,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Autoprep: Natural Language Question-Aware Data Prepa-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 993,
+      "supplied_characters": 993,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Incentivizing Reasoning Capability In Llms Via Reinforce-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 259,
+      "supplied_characters": 259,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Inproceedings Of The 41St International Conference On Ma-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 547,
+      "supplied_characters": 547,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Agent Data Science Code Generation Benchmark For Large",
+      "role": "results",
+      "page": 8,
+      "source_characters": 853,
+      "supplied_characters": 853,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Discovery And Design Using Goal-Driven And Constraint-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 375,
+      "supplied_characters": 375,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Kramabench: A Benchmark For Ai Systems On Data-",
+      "role": "results",
+      "page": 8,
+      "source_characters": 463,
+      "supplied_characters": 463,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "The Type Of Question Being Considered Is The Most Common",
+      "role": "body",
+      "page": 8,
+      "source_characters": 160,
+      "supplied_characters": 160,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Bench: Evaluating The Recent Advance Of Large Language",
+      "role": "body",
+      "page": 8,
+      "source_characters": 108,
+      "supplied_characters": 108,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Nual Conference On Neural Information Processing Systems",
+      "role": "body",
+      "page": 8,
+      "source_characters": 140,
+      "supplied_characters": 140,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Copilot: Bringing Software Productivity To The Next Level",
+      "role": "body",
+      "page": 8,
+      "source_characters": 848,
+      "supplied_characters": 848,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Insightpilot: An Llm-Empowered Automated Data Explo-",
+      "role": "body",
+      "page": 8,
+      "source_characters": 280,
+      "supplied_characters": 280,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Insightpilot: An Llm-Empowered Automated Data Explo-",
+      "role": "body",
+      "page": 9,
+      "source_characters": 2988,
+      "supplied_characters": 2988,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 4,
+   "canonical_id": "openalex:W7168433647",
+   "title": "NVAITC AI Scientist: A Governed End-to-End Research System -- A Hypertension GWAS Case Study",
+   "ranking_position": 101,
+   "relevance_decision": "relevant",
+   "relevance_score": 93,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-07-13",
+   "manuscript_source": "https://arxiv.org/pdf/2607.11084",
+   "manuscript_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 22,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Nvaitc Ai Scientist: A Governed End-To-End Research System",
+      "role": "body",
+      "page": 1,
+      "source_characters": 1227,
+      "supplied_characters": 1227,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1613,
+      "supplied_characters": 1613,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 2,
+      "source_characters": 489,
+      "supplied_characters": 489,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 3246,
+      "supplied_characters": 3246,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 3,
+      "source_characters": 2100,
+      "supplied_characters": 2100,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Related Work",
+      "role": "related",
+      "page": 3,
+      "source_characters": 208,
+      "supplied_characters": 208,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Agentic Systems For Scientific Discovery",
+      "role": "body",
+      "page": 3,
+      "source_characters": 1247,
+      "supplied_characters": 1247,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Agentic Systems For Scientific Discovery",
+      "role": "body",
+      "page": 4,
+      "source_characters": 250,
+      "supplied_characters": 250,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Agentic Systems For Scientific Discovery",
+      "role": "body",
+      "page": 5,
+      "source_characters": 636,
+      "supplied_characters": 636,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Clinical And Genomic Workflow Orchestration",
+      "role": "body",
+      "page": 5,
+      "source_characters": 617,
+      "supplied_characters": 617,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Llm Verification And Proposal Review",
+      "role": "body",
+      "page": 5,
+      "source_characters": 643,
+      "supplied_characters": 643,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Comparative Positioning",
+      "role": "body",
+      "page": 5,
+      "source_characters": 692,
+      "supplied_characters": 692,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Comparative Positioning",
+      "role": "body",
+      "page": 6,
+      "source_characters": 385,
+      "supplied_characters": 385,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Experiment",
+      "role": "results",
+      "page": 6,
+      "source_characters": 898,
+      "supplied_characters": 898,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Gwas +",
+      "role": "body",
+      "page": 6,
+      "source_characters": 248,
+      "supplied_characters": 248,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "The Nvaitc Ai Scientist System",
+      "role": "body",
+      "page": 7,
+      "source_characters": 817,
+      "supplied_characters": 817,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "End-To-End Architecture",
+      "role": "methods",
+      "page": 7,
+      "source_characters": 1093,
+      "supplied_characters": 1093,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Governed Execution Path",
+      "role": "body",
+      "page": 7,
+      "source_characters": 1372,
+      "supplied_characters": 1372,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Governed Execution Path",
+      "role": "body",
+      "page": 8,
+      "source_characters": 647,
+      "supplied_characters": 647,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "Governed Execution Path",
+      "role": "body",
+      "page": 9,
+      "source_characters": 115,
+      "supplied_characters": 115,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "Containerized Compute Path",
+      "role": "body",
+      "page": 9,
+      "source_characters": 492,
+      "supplied_characters": 492,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Proposal Review",
+      "role": "body",
+      "page": 9,
+      "source_characters": 556,
+      "supplied_characters": 556,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Agent Development",
+      "role": "body",
+      "page": 9,
+      "source_characters": 1872,
+      "supplied_characters": 1872,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Agent Development",
+      "role": "body",
+      "page": 10,
+      "source_characters": 891,
+      "supplied_characters": 891,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Case Study: Hypertension Gwas Deployment",
+      "role": "body",
+      "page": 10,
+      "source_characters": 924,
+      "supplied_characters": 924,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Study Setting And Research Goal",
+      "role": "body",
+      "page": 10,
+      "source_characters": 604,
+      "supplied_characters": 604,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Cohort Construction And Agent Workflow",
+      "role": "body",
+      "page": 10,
+      "source_characters": 655,
+      "supplied_characters": 655,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Cohort Construction And Agent Workflow",
+      "role": "body",
+      "page": 11,
+      "source_characters": 1580,
+      "supplied_characters": 1580,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Discordance Analysis And Iterative Refinement",
+      "role": "body",
+      "page": 11,
+      "source_characters": 1277,
+      "supplied_characters": 1277,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Discordance Analysis And Iterative Refinement",
+      "role": "body",
+      "page": 12,
+      "source_characters": 572,
+      "supplied_characters": 572,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Gwas Execution And Results",
+      "role": "results",
+      "page": 13,
+      "source_characters": 831,
+      "supplied_characters": 831,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Fgf5 Strongest Signal (∼70) Reported In European And",
+      "role": "body",
+      "page": 13,
+      "source_characters": 18,
+      "supplied_characters": 18,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Kcnk3 /",
+      "role": "body",
+      "page": 13,
+      "source_characters": 71,
+      "supplied_characters": 71,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Cnnm2 Genome-Wide Significant Magnesium Transport, Vascu-",
+      "role": "body",
+      "page": 13,
+      "source_characters": 14,
+      "supplied_characters": 14,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Atp2B1 Genome-Wide Significant Vascular Smooth Muscle Cal-",
+      "role": "body",
+      "page": 13,
+      "source_characters": 14,
+      "supplied_characters": 14,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Fto Genome-Wide Significant Obesity And Bp Regulation",
+      "role": "body",
+      "page": 13,
+      "source_characters": 1275,
+      "supplied_characters": 1275,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Expert Validation Protocol",
+      "role": "methods",
+      "page": 13,
+      "source_characters": 196,
+      "supplied_characters": 196,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Expert Validation Protocol",
+      "role": "methods",
+      "page": 14,
+      "source_characters": 393,
+      "supplied_characters": 393,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Expert Validation Protocol",
+      "role": "methods",
+      "page": 15,
+      "source_characters": 980,
+      "supplied_characters": 980,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Agent-Delivered Artifacts And Researcher Productivity",
+      "role": "body",
+      "page": 15,
+      "source_characters": 1422,
+      "supplied_characters": 1422,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Secondary Case Study: Dili Prediction",
+      "role": "body",
+      "page": 15,
+      "source_characters": 998,
+      "supplied_characters": 998,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "Secondary Case Study: Dili Prediction",
+      "role": "body",
+      "page": 16,
+      "source_characters": 1067,
+      "supplied_characters": 1067,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Discussion",
+      "role": "discussion",
+      "page": 16,
+      "source_characters": 643,
+      "supplied_characters": 643,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Orchestration As The Primary Agent Value",
+      "role": "body",
+      "page": 17,
+      "source_characters": 1125,
+      "supplied_characters": 1125,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Governance As Enabler",
+      "role": "body",
+      "page": 17,
+      "source_characters": 526,
+      "supplied_characters": 526,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Autonomous Research Beyond Language Models",
+      "role": "body",
+      "page": 17,
+      "source_characters": 1618,
+      "supplied_characters": 1618,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Limitations",
+      "role": "limitations",
+      "page": 18,
+      "source_characters": 1213,
+      "supplied_characters": 1213,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 18,
+      "source_characters": 1295,
+      "supplied_characters": 1295,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 19,
+      "source_characters": 1983,
+      "supplied_characters": 1983,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Appendix: Appendix A Proposal Review Pipeline And Self-Evaluating Agents",
+      "role": "appendix",
+      "page": 20,
+      "source_characters": 366,
+      "supplied_characters": 366,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Algorithm 1Self-Evaluating Agent Wrapper",
+      "role": "body",
+      "page": 20,
+      "source_characters": 602,
+      "supplied_characters": 602,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Stage Mean Attempts 1St-Pass Rate Issues Caught (Mean) Json Fixer Used",
+      "role": "body",
+      "page": 20,
+      "source_characters": 243,
+      "supplied_characters": 243,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Category Count %",
+      "role": "body",
+      "page": 20,
+      "source_characters": 266,
+      "supplied_characters": 266,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Category Count %",
+      "role": "body",
+      "page": 21,
+      "source_characters": 1885,
+      "supplied_characters": 1885,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Category Count %",
+      "role": "body",
+      "page": 22,
+      "source_characters": 246,
+      "supplied_characters": 246,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 5,
+   "canonical_id": "openalex:W7168434034",
+   "title": "Distributed Denial of Science: How Indirect Data Poisoning of AI Systems Can Industrialize Scientific Fraud",
+   "ranking_position": 102,
+   "relevance_decision": "relevant",
+   "relevance_score": 91,
+   "stored_relevance_decision": "relevant",
+   "published_date": "2026-07-12",
+   "manuscript_source": "https://arxiv.org/pdf/2607.10712",
+   "manuscript_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7",
+   "manuscript_scope": "full_text",
+   "manuscript_identity_verified": true,
+   "coverage_gate_status": "PASS",
+   "coverage_metadata": {
+    "format": "PDF",
+    "source_pages": 31,
+    "extractor_version": "bounded-v2",
+    "sections": [
+     {
+      "section_index": 0,
+      "heading": "Distributed Denial Of Science: How Indirect Data Poisoning Of",
+      "role": "body",
+      "page": 1,
+      "source_characters": 438,
+      "supplied_characters": 438,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 1,
+      "heading": "Abstract",
+      "role": "abstract",
+      "page": 1,
+      "source_characters": 1869,
+      "supplied_characters": 1869,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 2,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 1,
+      "source_characters": 1001,
+      "supplied_characters": 1001,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 3,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 2,
+      "source_characters": 4842,
+      "supplied_characters": 4842,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 4,
+      "heading": "Introduction",
+      "role": "introduction",
+      "page": 3,
+      "source_characters": 386,
+      "supplied_characters": 386,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 5,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 3,
+      "source_characters": 1382,
+      "supplied_characters": 1382,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 6,
+      "heading": "Our Approach",
+      "role": "body",
+      "page": 3,
+      "source_characters": 1316,
+      "supplied_characters": 1316,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 7,
+      "heading": "Our Approach",
+      "role": "body",
+      "page": 4,
+      "source_characters": 2480,
+      "supplied_characters": 2480,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 8,
+      "heading": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+      "role": "body",
+      "page": 4,
+      "source_characters": 969,
+      "supplied_characters": 969,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 9,
+      "heading": "Main Findings",
+      "role": "body",
+      "page": 4,
+      "source_characters": 1171,
+      "supplied_characters": 1171,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 10,
+      "heading": "Main Findings",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1369,
+      "supplied_characters": 1369,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 11,
+      "heading": "Mitigation Measures",
+      "role": "body",
+      "page": 5,
+      "source_characters": 2340,
+      "supplied_characters": 2340,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 12,
+      "heading": "Implications",
+      "role": "discussion",
+      "page": 5,
+      "source_characters": 99,
+      "supplied_characters": 99,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 13,
+      "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+      "role": "body",
+      "page": 5,
+      "source_characters": 1,
+      "supplied_characters": 1,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 14,
+      "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+      "role": "body",
+      "page": 6,
+      "source_characters": 384,
+      "supplied_characters": 384,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 15,
+      "heading": "Potential For Fraud As Search Engine Optimization.Our Results Suggest That, At Least With Current",
+      "role": "results",
+      "page": 6,
+      "source_characters": 405,
+      "supplied_characters": 405,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 16,
+      "heading": "Need For Verifiable Provenance-Native Datasets.A Significant Portion Of Signals Regarding The",
+      "role": "body",
+      "page": 6,
+      "source_characters": 374,
+      "supplied_characters": 374,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 17,
+      "heading": "Broader Impact On Policy Making.Ai Systems Are Now Deployed In Policy-Making And Judicial",
+      "role": "body",
+      "page": 6,
+      "source_characters": 650,
+      "supplied_characters": 650,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 18,
+      "heading": "Background And Related Work",
+      "role": "related",
+      "page": 6,
+      "source_characters": 274,
+      "supplied_characters": 274,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 19,
+      "heading": "The Promise And Peril Of Ai In Science",
+      "role": "body",
+      "page": 6,
+      "source_characters": 1845,
+      "supplied_characters": 1845,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 20,
+      "heading": "The Promise And Peril Of Ai In Science",
+      "role": "body",
+      "page": 7,
+      "source_characters": 1322,
+      "supplied_characters": 1322,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 21,
+      "heading": "Poisoning Attacks And Defenses For Ai Systems",
+      "role": "body",
+      "page": 7,
+      "source_characters": 3629,
+      "supplied_characters": 3629,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 22,
+      "heading": "Threat Model",
+      "role": "limitations",
+      "page": 8,
+      "source_characters": 1048,
+      "supplied_characters": 1048,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 23,
+      "heading": "Honest Scientist",
+      "role": "body",
+      "page": 8,
+      "source_characters": 583,
+      "supplied_characters": 583,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 24,
+      "heading": "Attack Success Criteria And Adversary Background Knowledge",
+      "role": "related",
+      "page": 8,
+      "source_characters": 2000,
+      "supplied_characters": 2000,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 25,
+      "heading": "Adversary Capabilities",
+      "role": "body",
+      "page": 9,
+      "source_characters": 1703,
+      "supplied_characters": 1703,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 26,
+      "heading": "Topics And Datasets",
+      "role": "body",
+      "page": 9,
+      "source_characters": 2628,
+      "supplied_characters": 2628,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 27,
+      "heading": "Topics And Datasets",
+      "role": "body",
+      "page": 10,
+      "source_characters": 1633,
+      "supplied_characters": 1633,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 28,
+      "heading": "Hiring Discrimination At The Workplace",
+      "role": "body",
+      "page": 10,
+      "source_characters": 1602,
+      "supplied_characters": 1602,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 29,
+      "heading": "Fertility Rate Analysis In Europe",
+      "role": "body",
+      "page": 11,
+      "source_characters": 2266,
+      "supplied_characters": 2266,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 30,
+      "heading": "Motivational Cost Of Generative Ai",
+      "role": "body",
+      "page": 11,
+      "source_characters": 1977,
+      "supplied_characters": 1977,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 31,
+      "heading": "Racial Disparity In Traffic Policing",
+      "role": "body",
+      "page": 12,
+      "source_characters": 1946,
+      "supplied_characters": 1946,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 32,
+      "heading": "Autonomous Vehicle Vs. Human Driver Safety",
+      "role": "body",
+      "page": 12,
+      "source_characters": 2514,
+      "supplied_characters": 2514,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 33,
+      "heading": "Data Preparation",
+      "role": "body",
+      "page": 13,
+      "source_characters": 101,
+      "supplied_characters": 101,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 34,
+      "heading": "Ai Research",
+      "role": "body",
+      "page": 13,
+      "source_characters": 69,
+      "supplied_characters": 69,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 35,
+      "heading": "Output",
+      "role": "body",
+      "page": 13,
+      "source_characters": 1231,
+      "supplied_characters": 1231,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 36,
+      "heading": "Experimental Setup",
+      "role": "methods",
+      "page": 13,
+      "source_characters": 192,
+      "supplied_characters": 192,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 37,
+      "heading": "Data Preparation: Retrieve The Pre-Existing Dataset That Is Relevant To The Research Question Of Each",
+      "role": "body",
+      "page": 13,
+      "source_characters": 159,
+      "supplied_characters": 159,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 38,
+      "heading": "Ai Research: For Each Topic, Prompt Three Agentic Ai Systems Based On Current Frontier Models—Claude",
+      "role": "body",
+      "page": 13,
+      "source_characters": 377,
+      "supplied_characters": 377,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 39,
+      "heading": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+      "role": "body",
+      "page": 13,
+      "source_characters": 436,
+      "supplied_characters": 436,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 40,
+      "heading": "Evaluation Metrics",
+      "role": "results",
+      "page": 14,
+      "source_characters": 304,
+      "supplied_characters": 304,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 41,
+      "heading": "No Success:Poisoned Dataset Was Not Found, Or Not Retrieved, Or Not Used, Or It Was Fully Detected, Or",
+      "role": "body",
+      "page": 14,
+      "source_characters": 54,
+      "supplied_characters": 54,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 42,
+      "heading": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+      "role": "conclusion",
+      "page": 14,
+      "source_characters": 823,
+      "supplied_characters": 823,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 43,
+      "heading": "Results",
+      "role": "results",
+      "page": 14,
+      "source_characters": 1276,
+      "supplied_characters": 1276,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 44,
+      "heading": "Indirect Data Poisoning Succeeds At Scale",
+      "role": "body",
+      "page": 14,
+      "source_characters": 1472,
+      "supplied_characters": 1472,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 45,
+      "heading": "Indirect Data Poisoning Succeeds At Scale",
+      "role": "body",
+      "page": 15,
+      "source_characters": 2981,
+      "supplied_characters": 2981,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 46,
+      "heading": "Attack Success Differs Across Topics And Agents",
+      "role": "body",
+      "page": 15,
+      "source_characters": 213,
+      "supplied_characters": 213,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 47,
+      "heading": "Attack Success Differs Across Topics And Agents",
+      "role": "body",
+      "page": 16,
+      "source_characters": 3561,
+      "supplied_characters": 3561,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 48,
+      "heading": "Attack Success Differs Across Topics And Agents",
+      "role": "body",
+      "page": 17,
+      "source_characters": 855,
+      "supplied_characters": 855,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 49,
+      "heading": "Detection Is Essentially Absent",
+      "role": "body",
+      "page": 17,
+      "source_characters": 2386,
+      "supplied_characters": 2386,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 50,
+      "heading": "Detection Is Essentially Absent",
+      "role": "body",
+      "page": 18,
+      "source_characters": 1148,
+      "supplied_characters": 1148,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 51,
+      "heading": "Mitigation Measures",
+      "role": "body",
+      "page": 18,
+      "source_characters": 161,
+      "supplied_characters": 161,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 52,
+      "heading": "Proposed Interventions",
+      "role": "body",
+      "page": 18,
+      "source_characters": 2127,
+      "supplied_characters": 2127,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 53,
+      "heading": "Evaluation Methods",
+      "role": "methods",
+      "page": 18,
+      "source_characters": 251,
+      "supplied_characters": 251,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 54,
+      "heading": "Evaluation Methods",
+      "role": "methods",
+      "page": 19,
+      "source_characters": 2531,
+      "supplied_characters": 2531,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 55,
+      "heading": "Mitigations Monotonically Decrease Poisoning Success",
+      "role": "body",
+      "page": 19,
+      "source_characters": 210,
+      "supplied_characters": 210,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 56,
+      "heading": "Mitigations Monotonically Decrease Poisoning Success",
+      "role": "body",
+      "page": 20,
+      "source_characters": 2700,
+      "supplied_characters": 2700,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 57,
+      "heading": "Different Mitigations Act At Different Stages",
+      "role": "body",
+      "page": 20,
+      "source_characters": 531,
+      "supplied_characters": 531,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 58,
+      "heading": "Different Mitigations Act At Different Stages",
+      "role": "body",
+      "page": 21,
+      "source_characters": 3429,
+      "supplied_characters": 3429,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 59,
+      "heading": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+      "role": "body",
+      "page": 22,
+      "source_characters": 1464,
+      "supplied_characters": 1464,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 60,
+      "heading": "Discussion",
+      "role": "discussion",
+      "page": 22,
+      "source_characters": 281,
+      "supplied_characters": 281,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 61,
+      "heading": "Limitations",
+      "role": "limitations",
+      "page": 22,
+      "source_characters": 2622,
+      "supplied_characters": 2622,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 62,
+      "heading": "Limitations",
+      "role": "limitations",
+      "page": 23,
+      "source_characters": 1357,
+      "supplied_characters": 1357,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 63,
+      "heading": "Ethical Remarks",
+      "role": "body",
+      "page": 23,
+      "source_characters": 1607,
+      "supplied_characters": 1607,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 64,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 23,
+      "source_characters": 1679,
+      "supplied_characters": 1679,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 65,
+      "heading": "Conclusion",
+      "role": "conclusion",
+      "page": 24,
+      "source_characters": 2065,
+      "supplied_characters": 2065,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 66,
+      "heading": "Back matter: Acknowledgments",
+      "role": "body",
+      "page": 24,
+      "source_characters": 451,
+      "supplied_characters": 451,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 67,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 24,
+      "source_characters": 1173,
+      "supplied_characters": 1173,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 68,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 25,
+      "source_characters": 3727,
+      "supplied_characters": 3727,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 69,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 26,
+      "source_characters": 3693,
+      "supplied_characters": 3693,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 70,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 27,
+      "source_characters": 3636,
+      "supplied_characters": 3636,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 71,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 28,
+      "source_characters": 3934,
+      "supplied_characters": 3934,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 72,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 29,
+      "source_characters": 3664,
+      "supplied_characters": 3664,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 73,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 30,
+      "source_characters": 3686,
+      "supplied_characters": 3686,
+      "omitted_characters": 0,
+      "omission_reason": null
+     },
+     {
+      "section_index": 74,
+      "heading": "Unclassified body after references",
+      "role": "body",
+      "page": 31,
+      "source_characters": 714,
+      "supplied_characters": 714,
+      "omitted_characters": 0,
+      "omission_reason": null
+     }
+    ]
+   },
+   "prior_scientific_assessment_count": 0,
+   "prior_adjudication_count": 0,
+   "suppressed": false
+  }
+ ],
+ "batch_4_roster_sha256": "f9ba9748b3a662961b366b0bf4937b2449a584769fd914ef3ebc715d893b3360",
+ "audit_rule": "Positions 1, floor(n/2)+1 and n in each populated track roster; all if n<3, none if n=0. Additionally audit every promotion and every primary-pass/adjudicator-non-pass disagreement after all outcomes are frozen.",
+ "frozen_audit_sample": [
+  {
+   "track": "agent_memory",
+   "selected_position": 1,
+   "canonical_id": "doi:10.48550/arxiv.2609.03467",
+   "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
+   "rule": "position 1 of n=5 (1, floor(n/2)+1, n)"
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 3,
+   "canonical_id": "arxiv:2609.03632",
+   "title": "Dynamic probabilistic decision networks",
+   "rule": "position 3 of n=5 (1, floor(n/2)+1, n)"
+  },
+  {
+   "track": "agent_memory",
+   "selected_position": 5,
+   "canonical_id": "doi:10.48550/arxiv.2609.02265",
+   "title": "CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents",
+   "rule": "position 5 of n=5 (1, floor(n/2)+1, n)"
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 1,
+   "canonical_id": "openalex:W7169633615",
+   "title": "Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis",
+   "rule": "position 1 of n=5 (1, floor(n/2)+1, n)"
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 3,
+   "canonical_id": "openalex:W7168432559",
+   "title": "Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists",
+   "rule": "position 3 of n=5 (1, floor(n/2)+1, n)"
+  },
+  {
+   "track": "deep_research",
+   "selected_position": 5,
+   "canonical_id": "openalex:W7168434034",
+   "title": "Distributed Denial of Science: How Indirect Data Poisoning of AI Systems Can Industrialize Scientific Fraud",
+   "rule": "position 5 of n=5 (1, floor(n/2)+1, n)"
+  }
+ ],
+ "batch_4_audit_sample_sha256": "9e5d1b14c13bf23d8efb97fde08219663483dc6016b4ce8ab31f3fb1cdcb876c",
+ "roster_immutable_after_first_model_call": true,
+ "manual_output_corrections_permitted": false,
+ "replacement_permitted": false
+}

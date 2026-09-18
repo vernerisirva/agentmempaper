@@ -26,7 +26,7 @@
   "last_seen_date": "2026-07-19",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-14 08:38:18",
   "notified_date": "2026-07-14",
@@ -37,7 +37,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-14 08:35:43",
-    "generated_at": "2026-09-18 08:07:34",
+    "generated_at": "2026-09-18 09:58:40",
     "last_seen_at": "2026-07-19 08:35:50",
     "metadata_sources": [
       "openalex",
@@ -101,36 +101,2448 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T09:52:51.178209+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The study addresses a clear, novel threat model in AI-driven science with an exceptionally thorough experimental design, extensive data points, ethical containment safeguards, reproducible code/logging availability, and balanced interpretation of results.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 117894,
+      "assessment_input_sha256": "11343909ac25bfd7e5d7eab9b282e30608bc0542485c06395cb8778ad21e7c04",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7168434034",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 116054,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 113777,
+      "evidence_block_count": 158,
+      "evidence_context_characters": 134065,
+      "evidence_context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+      "evidence_context_sha256": "65258e390bf4f82bfc6c314cdbff8ff236c98945574f3c421ba324b60ea9c614",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 116114,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "extracted_pages": 31,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7",
+        "source_url": "https://arxiv.org/pdf/2607.10712",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 116054,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Distributed Denial Of Science: How Indirect Data Poisoning Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 438,
+          "supplied_characters": 438
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1869,
+          "supplied_characters": 1869
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1001,
+          "supplied_characters": 1001
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4842,
+          "supplied_characters": 4842
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 386,
+          "supplied_characters": 386
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "conclusion",
+          "section_index": 5,
+          "source_characters": 1382,
+          "supplied_characters": 1382
+        },
+        {
+          "heading": "Our Approach",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1316,
+          "supplied_characters": 1316
+        },
+        {
+          "heading": "Our Approach",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 2480,
+          "supplied_characters": 2480
+        },
+        {
+          "heading": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 969,
+          "supplied_characters": 969
+        },
+        {
+          "heading": "Main Findings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1171,
+          "supplied_characters": 1171
+        },
+        {
+          "heading": "Main Findings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1369,
+          "supplied_characters": 1369
+        },
+        {
+          "heading": "Mitigation Measures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 2340,
+          "supplied_characters": 2340
+        },
+        {
+          "heading": "Implications",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "discussion",
+          "section_index": 12,
+          "source_characters": 99,
+          "supplied_characters": 99
+        },
+        {
+          "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 384,
+          "supplied_characters": 384
+        },
+        {
+          "heading": "Potential For Fraud As Search Engine Optimization.Our Results Suggest That, At Least With Current",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 405,
+          "supplied_characters": 405
+        },
+        {
+          "heading": "Need For Verifiable Provenance-Native Datasets.A Significant Portion Of Signals Regarding The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Broader Impact On Policy Making.Ai Systems Are Now Deployed In Policy-Making And Judicial",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 650,
+          "supplied_characters": 650
+        },
+        {
+          "heading": "Background And Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "related",
+          "section_index": 18,
+          "source_characters": 274,
+          "supplied_characters": 274
+        },
+        {
+          "heading": "The Promise And Peril Of Ai In Science",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1845,
+          "supplied_characters": 1845
+        },
+        {
+          "heading": "The Promise And Peril Of Ai In Science",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1322,
+          "supplied_characters": 1322
+        },
+        {
+          "heading": "Poisoning Attacks And Defenses For Ai Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 3629,
+          "supplied_characters": 3629
+        },
+        {
+          "heading": "Threat Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "limitations",
+          "section_index": 22,
+          "source_characters": 1048,
+          "supplied_characters": 1048
+        },
+        {
+          "heading": "Honest Scientist",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 583,
+          "supplied_characters": 583
+        },
+        {
+          "heading": "Attack Success Criteria And Adversary Background Knowledge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "related",
+          "section_index": 24,
+          "source_characters": 2000,
+          "supplied_characters": 2000
+        },
+        {
+          "heading": "Adversary Capabilities",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1703,
+          "supplied_characters": 1703
+        },
+        {
+          "heading": "Topics And Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 2628,
+          "supplied_characters": 2628
+        },
+        {
+          "heading": "Topics And Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1633,
+          "supplied_characters": 1633
+        },
+        {
+          "heading": "Hiring Discrimination At The Workplace",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1602,
+          "supplied_characters": 1602
+        },
+        {
+          "heading": "Fertility Rate Analysis In Europe",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2266,
+          "supplied_characters": 2266
+        },
+        {
+          "heading": "Motivational Cost Of Generative Ai",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1977,
+          "supplied_characters": 1977
+        },
+        {
+          "heading": "Racial Disparity In Traffic Policing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1946,
+          "supplied_characters": 1946
+        },
+        {
+          "heading": "Autonomous Vehicle Vs. Human Driver Safety",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 2514,
+          "supplied_characters": 2514
+        },
+        {
+          "heading": "Data Preparation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Ai Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Output",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1231,
+          "supplied_characters": 1231
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 36,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Data Preparation: Retrieve The Pre-Existing Dataset That Is Relevant To The Research Question Of Each",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 159,
+          "supplied_characters": 159
+        },
+        {
+          "heading": "Ai Research: For Each Topic, Prompt Three Agentic Ai Systems Based On Current Frontier Models\u2014Claude",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 377,
+          "supplied_characters": 377
+        },
+        {
+          "heading": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 436,
+          "supplied_characters": 436
+        },
+        {
+          "heading": "Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 40,
+          "source_characters": 304,
+          "supplied_characters": 304
+        },
+        {
+          "heading": "No Success:Poisoned Dataset Was Not Found, Or Not Retrieved, Or Not Used, Or It Was Fully Detected, Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "conclusion",
+          "section_index": 42,
+          "source_characters": 823,
+          "supplied_characters": 823
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 43,
+          "source_characters": 1276,
+          "supplied_characters": 1276
+        },
+        {
+          "heading": "Indirect Data Poisoning Succeeds At Scale",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 1472,
+          "supplied_characters": 1472
+        },
+        {
+          "heading": "Indirect Data Poisoning Succeeds At Scale",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 2981,
+          "supplied_characters": 2981
+        },
+        {
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 213,
+          "supplied_characters": 213
+        },
+        {
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 3561,
+          "supplied_characters": 3561
+        },
+        {
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 855,
+          "supplied_characters": 855
+        },
+        {
+          "heading": "Detection Is Essentially Absent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 2386,
+          "supplied_characters": 2386
+        },
+        {
+          "heading": "Detection Is Essentially Absent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 1148,
+          "supplied_characters": 1148
+        },
+        {
+          "heading": "Mitigation Measures",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 161,
+          "supplied_characters": 161
+        },
+        {
+          "heading": "Proposed Interventions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 2127,
+          "supplied_characters": 2127
+        },
+        {
+          "heading": "Evaluation Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "methods",
+          "section_index": 53,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "Evaluation Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "methods",
+          "section_index": 54,
+          "source_characters": 2531,
+          "supplied_characters": 2531
+        },
+        {
+          "heading": "Mitigations Monotonically Decrease Poisoning Success",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 210,
+          "supplied_characters": 210
+        },
+        {
+          "heading": "Mitigations Monotonically Decrease Poisoning Success",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 2700,
+          "supplied_characters": 2700
+        },
+        {
+          "heading": "Different Mitigations Act At Different Stages",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 531,
+          "supplied_characters": 531
+        },
+        {
+          "heading": "Different Mitigations Act At Different Stages",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 3429,
+          "supplied_characters": 3429
+        },
+        {
+          "heading": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 1464,
+          "supplied_characters": 1464
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "discussion",
+          "section_index": 60,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "limitations",
+          "section_index": 61,
+          "source_characters": 2622,
+          "supplied_characters": 2622
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "limitations",
+          "section_index": 62,
+          "source_characters": 1357,
+          "supplied_characters": 1357
+        },
+        {
+          "heading": "Ethical Remarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 1607,
+          "supplied_characters": 1607
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "conclusion",
+          "section_index": 64,
+          "source_characters": 1679,
+          "supplied_characters": 1679
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "conclusion",
+          "section_index": 65,
+          "source_characters": 2065,
+          "supplied_characters": 2065
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 451,
+          "supplied_characters": 451
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 1173,
+          "supplied_characters": 1173
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 3727,
+          "supplied_characters": 3727
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 3693,
+          "supplied_characters": 3693
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 3636,
+          "supplied_characters": 3636
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 71,
+          "source_characters": 3934,
+          "supplied_characters": 3934
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 3664,
+          "supplied_characters": 3664
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 3686,
+          "supplied_characters": 3686
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 714,
+          "supplied_characters": 714
+        }
+      ],
+      "selected_characters": 113777,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "selected_sections": [
+        {
+          "characters": 438,
+          "heading": "Distributed Denial Of Science: How Indirect Data Poisoning Of",
+          "page": 1
+        },
+        {
+          "characters": 1869,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1001,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 4842,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 386,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1382,
+          "heading": "Conclusion",
+          "page": 3
+        },
+        {
+          "characters": 1316,
+          "heading": "Our Approach",
+          "page": 3
+        },
+        {
+          "characters": 2480,
+          "heading": "Our Approach",
+          "page": 4
+        },
+        {
+          "characters": 969,
+          "heading": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+          "page": 4
+        },
+        {
+          "characters": 1171,
+          "heading": "Main Findings",
+          "page": 4
+        },
+        {
+          "characters": 1369,
+          "heading": "Main Findings",
+          "page": 5
+        },
+        {
+          "characters": 2340,
+          "heading": "Mitigation Measures",
+          "page": 5
+        },
+        {
+          "characters": 99,
+          "heading": "Implications",
+          "page": 5
+        },
+        {
+          "characters": 1,
+          "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+          "page": 5
+        },
+        {
+          "characters": 384,
+          "heading": "Indirect Data Poisoning Can Make Scientific Fraud Scalable.As Ai-Driven Research Gains Growing",
+          "page": 6
+        },
+        {
+          "characters": 405,
+          "heading": "Potential For Fraud As Search Engine Optimization.Our Results Suggest That, At Least With Current",
+          "page": 6
+        },
+        {
+          "characters": 374,
+          "heading": "Need For Verifiable Provenance-Native Datasets.A Significant Portion Of Signals Regarding The",
+          "page": 6
+        },
+        {
+          "characters": 650,
+          "heading": "Broader Impact On Policy Making.Ai Systems Are Now Deployed In Policy-Making And Judicial",
+          "page": 6
+        },
+        {
+          "characters": 274,
+          "heading": "Background And Related Work",
+          "page": 6
+        },
+        {
+          "characters": 1845,
+          "heading": "The Promise And Peril Of Ai In Science",
+          "page": 6
+        },
+        {
+          "characters": 1322,
+          "heading": "The Promise And Peril Of Ai In Science",
+          "page": 7
+        },
+        {
+          "characters": 3629,
+          "heading": "Poisoning Attacks And Defenses For Ai Systems",
+          "page": 7
+        },
+        {
+          "characters": 1048,
+          "heading": "Threat Model",
+          "page": 8
+        },
+        {
+          "characters": 583,
+          "heading": "Honest Scientist",
+          "page": 8
+        },
+        {
+          "characters": 2000,
+          "heading": "Attack Success Criteria And Adversary Background Knowledge",
+          "page": 8
+        },
+        {
+          "characters": 1703,
+          "heading": "Adversary Capabilities",
+          "page": 9
+        },
+        {
+          "characters": 2628,
+          "heading": "Topics And Datasets",
+          "page": 9
+        },
+        {
+          "characters": 1633,
+          "heading": "Topics And Datasets",
+          "page": 10
+        },
+        {
+          "characters": 1602,
+          "heading": "Hiring Discrimination At The Workplace",
+          "page": 10
+        },
+        {
+          "characters": 2266,
+          "heading": "Fertility Rate Analysis In Europe",
+          "page": 11
+        },
+        {
+          "characters": 1977,
+          "heading": "Motivational Cost Of Generative Ai",
+          "page": 11
+        },
+        {
+          "characters": 1946,
+          "heading": "Racial Disparity In Traffic Policing",
+          "page": 12
+        },
+        {
+          "characters": 2514,
+          "heading": "Autonomous Vehicle Vs. Human Driver Safety",
+          "page": 12
+        },
+        {
+          "characters": 101,
+          "heading": "Data Preparation",
+          "page": 13
+        },
+        {
+          "characters": 69,
+          "heading": "Ai Research",
+          "page": 13
+        },
+        {
+          "characters": 1231,
+          "heading": "Output",
+          "page": 13
+        },
+        {
+          "characters": 192,
+          "heading": "Experimental Setup",
+          "page": 13
+        },
+        {
+          "characters": 159,
+          "heading": "Data Preparation: Retrieve The Pre-Existing Dataset That Is Relevant To The Research Question Of Each",
+          "page": 13
+        },
+        {
+          "characters": 377,
+          "heading": "Ai Research: For Each Topic, Prompt Three Agentic Ai Systems Based On Current Frontier Models\u2014Claude",
+          "page": 13
+        },
+        {
+          "characters": 436,
+          "heading": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+          "page": 13
+        },
+        {
+          "characters": 304,
+          "heading": "Evaluation Metrics",
+          "page": 14
+        },
+        {
+          "characters": 54,
+          "heading": "No Success:Poisoned Dataset Was Not Found, Or Not Retrieved, Or Not Used, Or It Was Fully Detected, Or",
+          "page": 14
+        },
+        {
+          "characters": 823,
+          "heading": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+          "page": 14
+        },
+        {
+          "characters": 1276,
+          "heading": "Results",
+          "page": 14
+        },
+        {
+          "characters": 1472,
+          "heading": "Indirect Data Poisoning Succeeds At Scale",
+          "page": 14
+        },
+        {
+          "characters": 2981,
+          "heading": "Indirect Data Poisoning Succeeds At Scale",
+          "page": 15
+        },
+        {
+          "characters": 213,
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "page": 15
+        },
+        {
+          "characters": 3561,
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "page": 16
+        },
+        {
+          "characters": 855,
+          "heading": "Attack Success Differs Across Topics And Agents",
+          "page": 17
+        },
+        {
+          "characters": 2386,
+          "heading": "Detection Is Essentially Absent",
+          "page": 17
+        },
+        {
+          "characters": 1148,
+          "heading": "Detection Is Essentially Absent",
+          "page": 18
+        },
+        {
+          "characters": 161,
+          "heading": "Mitigation Measures",
+          "page": 18
+        },
+        {
+          "characters": 2127,
+          "heading": "Proposed Interventions",
+          "page": 18
+        },
+        {
+          "characters": 251,
+          "heading": "Evaluation Methods",
+          "page": 18
+        },
+        {
+          "characters": 2531,
+          "heading": "Evaluation Methods",
+          "page": 19
+        },
+        {
+          "characters": 210,
+          "heading": "Mitigations Monotonically Decrease Poisoning Success",
+          "page": 19
+        },
+        {
+          "characters": 2700,
+          "heading": "Mitigations Monotonically Decrease Poisoning Success",
+          "page": 20
+        },
+        {
+          "characters": 531,
+          "heading": "Different Mitigations Act At Different Stages",
+          "page": 20
+        },
+        {
+          "characters": 3429,
+          "heading": "Different Mitigations Act At Different Stages",
+          "page": 21
+        },
+        {
+          "characters": 1464,
+          "heading": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+          "page": 22
+        },
+        {
+          "characters": 281,
+          "heading": "Discussion",
+          "page": 22
+        },
+        {
+          "characters": 2622,
+          "heading": "Limitations",
+          "page": 22
+        },
+        {
+          "characters": 1357,
+          "heading": "Limitations",
+          "page": 23
+        },
+        {
+          "characters": 1607,
+          "heading": "Ethical Remarks",
+          "page": 23
+        },
+        {
+          "characters": 1679,
+          "heading": "Conclusion",
+          "page": 23
+        },
+        {
+          "characters": 2065,
+          "heading": "Conclusion",
+          "page": 24
+        },
+        {
+          "characters": 451,
+          "heading": "Back matter: Acknowledgments",
+          "page": 24
+        },
+        {
+          "characters": 1173,
+          "heading": "Unclassified body after references",
+          "page": 24
+        },
+        {
+          "characters": 3727,
+          "heading": "Unclassified body after references",
+          "page": 25
+        },
+        {
+          "characters": 3693,
+          "heading": "Unclassified body after references",
+          "page": 26
+        },
+        {
+          "characters": 3636,
+          "heading": "Unclassified body after references",
+          "page": 27
+        },
+        {
+          "characters": 3934,
+          "heading": "Unclassified body after references",
+          "page": 28
+        },
+        {
+          "characters": 3664,
+          "heading": "Unclassified body after references",
+          "page": 29
+        },
+        {
+          "characters": 3686,
+          "heading": "Unclassified body after references",
+          "page": 30
+        },
+        {
+          "characters": 714,
+          "heading": "Unclassified body after references",
+          "page": 31
+        }
+      ],
+      "selected_text_sha256": "11343909ac25bfd7e5d7eab9b282e30608bc0542485c06395cb8778ad21e7c04",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7",
+      "source_pages": 31,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0002"
+        ],
+        "excerpt": "Scientific fraud is the instrument of doubt that malicious entities can use to establish controversy in\nscience. Historically, it required the resources of a company: deep pockets, ghostwritten articles, and\ncorrupt academics. Today, Artificial Intelligence (AI) is increasingly automating scientific research, so we\nask:Can a remote adversary weaponize the honest use of AI in science to compromise scientific integrity?\nWe envision and empirically evaluate a new attack,indirect data poisoning, in which an adversary corrupts\nan open dataset and uploads the poisoned variant to a public repository. Autonomous research agents\nmay independently retrieve and process this data, turning honest scientists into the unpaid and unwitting\ndistributors of fraud at scale. Across five socially-salient topics, from hiring discrimination to the safety of\nautonomous vehicles, three widely used frontier AI ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dbbf5c4c64c4954f3a8fd54fef38c980de4902c50713551063974c6de2cab787",
+            "evidence_id": "E4b639d67830d97d7-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Scientific fraud is the instrument of doubt that malicious entities can use to establish controversy in\nscience. Historically, it required the resources of a company: deep pockets, ghostwritten articles, and\ncorrupt academics. Today, Artificial Intelligence (AI) is increasingly automating scientific research, so we\nask:Can a remote adversary weaponize the honest use of AI in science to compromise scientific integrity?\nWe envision and empirically evaluate a new attack,indirect data poisoning, in which an adversary corrupts\nan open dataset and uploads the poisoned variant to a public repository. Autonomous research agents\nmay independently retrieve and process this data, turning honest scientists into the unpaid and unwitting\ndistributors of fraud at scale. Across five socially-salient topics, from hiring discrimination to the safety of\nautonomous vehicles, three widely used frontier AI "
+              }
+            ],
+            "text": "Scientific fraud is the instrument of doubt that malicious entities can use to establish controversy in\nscience. Historically, it required the resources of a company: deep pockets, ghostwritten articles, and\ncorrupt academics. Today, Artificial Intelligence (AI) is increasingly automating scientific research, so we\nask:Can a remote adversary weaponize the honest use of AI in science to compromise scientific integrity?\nWe envision and empirically evaluate a new attack,indirect data poisoning, in which an adversary corrupts\nan open dataset and uploads the poisoned variant to a public repository. Autonomous research agents\nmay independently retrieve and process this data, turning honest scientists into the unpaid and unwitting\ndistributors of fraud at scale. Across five socially-salient topics, from hiring discrimination to the safety of\nautonomous vehicles, three widely used frontier AI "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0003"
+        ],
+        "excerpt": "systems (Claude Code with Claude Opus 4.7, Codex\nwith GPT-5.5, Gemini CLI with Gemini 3.1 Pro), and 450 ethically contained experimental runs, we find\nthat poisoning succeeds in49.56%of runs, while the rate of poisoning detection is only6.0%. The attack\nrequires no topic-specific trigger-words, agent access, indirect prompt injection, or fabricated papers, only\nthe open data ecosystem and misleading metadata. To mitigate the attacks, we propose and evaluate two\nmeasures: a scientist persona and a data provenance audit with five checks (referencing papers, social\nmarkers, statistical anomalies, related datasets, poisoning caution). We find that the persona still leaves\n16.67%of runs with a poisoned conclusion, but provenance auditing reduces attack success rate to zero.\nOur results suggest that indirect data poisoning may enable scientific fraud at unprecedented scale, but\nthese attacks ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "996b5657a2998a5759fd546d7e9b507452f7e6a7eb941a1ac69208bd1311f175",
+            "evidence_id": "E4b639d67830d97d7-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 898,
+                "text": "systems (Claude Code with Claude Opus 4.7, Codex\nwith GPT-5.5, Gemini CLI with Gemini 3.1 Pro), and 450 ethically contained experimental runs, we find\nthat poisoning succeeds in49.56%of runs, while the rate of poisoning detection is only6.0%. The attack\nrequires no topic-specific trigger-words, agent access, indirect prompt injection, or fabricated papers, only\nthe open data ecosystem and misleading metadata. To mitigate the attacks, we propose and evaluate two\nmeasures: a scientist persona and a data provenance audit with five checks (referencing papers, social\nmarkers, statistical anomalies, related datasets, poisoning caution). We find that the persona still leaves\n16.67%of runs with a poisoned conclusion, but provenance auditing reduces attack success rate to zero.\nOur results suggest that indirect data poisoning may enable scientific fraud at unprecedented scale, but\nthese attacks "
+              }
+            ],
+            "text": "systems (Claude Code with Claude Opus 4.7, Codex\nwith GPT-5.5, Gemini CLI with Gemini 3.1 Pro), and 450 ethically contained experimental runs, we find\nthat poisoning succeeds in49.56%of runs, while the rate of poisoning detection is only6.0%. The attack\nrequires no topic-specific trigger-words, agent access, indirect prompt injection, or fabricated papers, only\nthe open data ecosystem and misleading metadata. To mitigate the attacks, we propose and evaluate two\nmeasures: a scientist persona and a data provenance audit with five checks (referencing papers, social\nmarkers, statistical anomalies, related datasets, poisoning caution). We find that the persona still leaves\n16.67%of runs with a poisoned conclusion, but provenance auditing reduces attack success rate to zero.\nOur results suggest that indirect data poisoning may enable scientific fraud at unprecedented scale, but\nthese attacks "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0015"
+        ],
+        "excerpt": "unassisted stages of multi-step work.\nOur choice of domains is intentionally broad, unlike most previous open-access work that focuses on automating\nmachine learning research [Bia+26; Sch+25; Lu+26; Kon+25].\nFollowing the threat model we envision in Figure 1, for each of the five topics, we download apre-existing\ndataset, then poison it using a combination of four techniques: (1) creating a new, supplementary dataset;\n3\n(2) imputing features with misleading relationships; (3) inserting new data items; and (4) writing misleading\nmetadata, such as a README file or data loading code. We use these four techniques because they are\nstraightforward and cheap to execute, especially with the aid of available GenAI systems.\nWe create two versions of each poisoned dataset, corresponding to two polar oppositeadversary goals.\nWe test these \"goal-versions\" in order to evaluate whether poisoning can ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Our Approach",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c4bda6504ae03f03fb53e9933e3af933456e5355e4e3d775cb97054042699e81",
+            "evidence_id": "E4b639d67830d97d7-B0015",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Our Approach",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1316,
+                "page": 3,
+                "section": "Our Approach",
+                "section_index": 6,
+                "start": 893,
+                "text": "unassisted stages of multi-step work.\nOur choice of domains is intentionally broad, unlike most previous open-access work that focuses on automating\nmachine learning research [Bia+26; Sch+25; Lu+26; Kon+25].\nFollowing the threat model we envision in Figure 1, for each of the five topics, we download apre-existing\ndataset, then poison it using a combination of four techniques: (1) creating a new, supplementary dataset;\n3"
+              },
+              {
+                "end": 474,
+                "page": 4,
+                "section": "Our Approach",
+                "section_index": 7,
+                "start": 0,
+                "text": "(2) imputing features with misleading relationships; (3) inserting new data items; and (4) writing misleading\nmetadata, such as a README file or data loading code. We use these four techniques because they are\nstraightforward and cheap to execute, especially with the aid of available GenAI systems.\nWe create two versions of each poisoned dataset, corresponding to two polar oppositeadversary goals.\nWe test these \"goal-versions\" in order to evaluate whether poisoning can "
+              }
+            ],
+            "text": "unassisted stages of multi-step work.\nOur choice of domains is intentionally broad, unlike most previous open-access work that focuses on automating\nmachine learning research [Bia+26; Sch+25; Lu+26; Kon+25].\nFollowing the threat model we envision in Figure 1, for each of the five topics, we download apre-existing\ndataset, then poison it using a combination of four techniques: (1) creating a new, supplementary dataset;\n3\n(2) imputing features with misleading relationships; (3) inserting new data items; and (4) writing misleading\nmetadata, such as a README file or data loading code. We use these four techniques because they are\nstraightforward and cheap to execute, especially with the aid of available GenAI systems.\nWe create two versions of each poisoned dataset, corresponding to two polar oppositeadversary goals.\nWe test these \"goal-versions\" in order to evaluate whether poisoning can "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0017"
+        ],
+        "excerpt": "only use one goal-version at a time in our experiments to avoid conflicting interactions between\npoisoned datasets.\nAs the last step of our threat model, we upload the poisoned dataset to one of four open data hosting\nplatforms\u2014GitHub, HuggingFace, Open Science Framework, Kaggle\u2014to test whether multiple hosting\nplatforms are susceptible to indirect data poisoning. In order to ethically contain our experiments and\navoid spreading misinformation on the open internet, we use private repositories that are accessible to the\nAI agents through authenticated Application Programming Interface (API) requests. The agents can further\nuse these APIs to find any available dataset on the platforms. We ensure that our private repositories are\nindistinguishable from public ones to the AI research agent by intercepting and modifying the API responses,\nverifying that the AI system remains unaware of this ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Our Approach",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5276025e3d627fde424f9c193249b7f2124b96c2fc89334edb3c7f8d042537f6",
+            "evidence_id": "E4b639d67830d97d7-B0017",
+            "pages": [
+              4
+            ],
+            "section": "Our Approach",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2269,
+                "page": 4,
+                "section": "Our Approach",
+                "section_index": 7,
+                "start": 1370,
+                "text": "only use one goal-version at a time in our experiments to avoid conflicting interactions between\npoisoned datasets.\nAs the last step of our threat model, we upload the poisoned dataset to one of four open data hosting\nplatforms\u2014GitHub, HuggingFace, Open Science Framework, Kaggle\u2014to test whether multiple hosting\nplatforms are susceptible to indirect data poisoning. In order to ethically contain our experiments and\navoid spreading misinformation on the open internet, we use private repositories that are accessible to the\nAI agents through authenticated Application Programming Interface (API) requests. The agents can further\nuse these APIs to find any available dataset on the platforms. We ensure that our private repositories are\nindistinguishable from public ones to the AI research agent by intercepting and modifying the API responses,\nverifying that the AI system remains unaware of this "
+              }
+            ],
+            "text": "only use one goal-version at a time in our experiments to avoid conflicting interactions between\npoisoned datasets.\nAs the last step of our threat model, we upload the poisoned dataset to one of four open data hosting\nplatforms\u2014GitHub, HuggingFace, Open Science Framework, Kaggle\u2014to test whether multiple hosting\nplatforms are susceptible to indirect data poisoning. In order to ethically contain our experiments and\navoid spreading misinformation on the open internet, we use private repositories that are accessible to the\nAI agents through authenticated Application Programming Interface (API) requests. The agents can further\nuse these APIs to find any available dataset on the platforms. We ensure that our private repositories are\nindistinguishable from public ones to the AI research agent by intercepting and modifying the API responses,\nverifying that the AI system remains unaware of this "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0019"
+        ],
+        "excerpt": "autonomous research in response to three topic-specific prompts (cf. Section 3.2) with increasing contextual\ndetail and critical tone: (1)Minimal prompt: single-sentence, neutrally worded prompt that instructs the AI\nsystem to perform scientific research in the given topic; (2)Targeted prompt: extends the minimal prompt by\nadding methodological instructions on how to perform certain aspects of the research, highlighting potential\nfeatures of interest; and (3)Critical prompt: longest prompt that instructs the AI system to perform a critical\nanalysis of the topic, contrasting different theories from previous literature, while also highlighting potential\nsources of bias and methodological pitfalls. Crucially, none of the above prompts refer to datasets directly,\npoisoned or otherwise.\nFinally, we conduct multiple repeated trials for each experiment, resulting in a total of 450 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0487194315695f7a6af1617f9b8b0c2a2e7e0551716b2b3b2e17962d6d056541",
+            "evidence_id": "E4b639d67830d97d7-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 887,
+                "page": 4,
+                "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+                "section_index": 8,
+                "start": 0,
+                "text": "autonomous research in response to three topic-specific prompts (cf. Section 3.2) with increasing contextual\ndetail and critical tone: (1)Minimal prompt: single-sentence, neutrally worded prompt that instructs the AI\nsystem to perform scientific research in the given topic; (2)Targeted prompt: extends the minimal prompt by\nadding methodological instructions on how to perform certain aspects of the research, highlighting potential\nfeatures of interest; and (3)Critical prompt: longest prompt that instructs the AI system to perform a critical\nanalysis of the topic, contrasting different theories from previous literature, while also highlighting potential\nsources of bias and methodological pitfalls. Crucially, none of the above prompts refer to datasets directly,\npoisoned or otherwise.\nFinally, we conduct multiple repeated trials for each experiment, resulting in a total of 450 "
+              }
+            ],
+            "text": "autonomous research in response to three topic-specific prompts (cf. Section 3.2) with increasing contextual\ndetail and critical tone: (1)Minimal prompt: single-sentence, neutrally worded prompt that instructs the AI\nsystem to perform scientific research in the given topic; (2)Targeted prompt: extends the minimal prompt by\nadding methodological instructions on how to perform certain aspects of the research, highlighting potential\nfeatures of interest; and (3)Critical prompt: longest prompt that instructs the AI system to perform a critical\nanalysis of the topic, contrasting different theories from previous literature, while also highlighting potential\nsources of bias and methodological pitfalls. Crucially, none of the above prompts refer to datasets directly,\npoisoned or otherwise.\nFinally, we conduct multiple repeated trials for each experiment, resulting in a total of 450 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0020"
+        ],
+        "excerpt": "experimental\nruns (3 AI agents\u00d75 topics\u00d72 adversary goals\u00d73 prompts\u00d75 iterations).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b916a4084e17b324f6a87a0436d5d6b7e0f3eb5a76a12e42a46a229f5a77eafc",
+            "evidence_id": "E4b639d67830d97d7-B0020",
+            "pages": [
+              4
+            ],
+            "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 969,
+                "page": 4,
+                "section": "Pro. In Order To Assess The Effects Of Different Prompt Phrasings, Each Ai Agent Is Instructed To Perform",
+                "section_index": 8,
+                "start": 887,
+                "text": "experimental\nruns (3 AI agents\u00d75 topics\u00d72 adversary goals\u00d73 prompts\u00d75 iterations)."
+              }
+            ],
+            "text": "experimental\nruns (3 AI agents\u00d75 topics\u00d72 adversary goals\u00d73 prompts\u00d75 iterations)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0022"
+        ],
+        "excerpt": "final write-up contained poisoned\nfindings without detection or mentioning caveats\u2014is achieved in49.56%of runs. Poisoning success\nrequired using only an unsubstantiated README file, no fake publications, and no mention of the\ndataset in the user's prompt (Section 4.1).\n4\n\u2022 Poisoning steers conclusions in opposing directions with equal success.Poisoning crafted to\nrejecta hypothesis and poisoning crafted toexaggerateit succeed at statistically indistinguishable rates\n(p= 0.70), suggesting that an adversary can manufacture any predetermined conclusion (Section 4.1).\n\u2022 Attack success differs across topics and agents.The rate of full success varies by33.3%across\ntopics, from35.6%onAV Safetyto68 .9%onGenAI Motivation. Among agents, Gemini was most\nsusceptible to poisoning (62.0%), followed by Claude (55.3%), and Codex (31.3%). These results suggest\nthat incidental phrasing of the prompts and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Findings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "34adb1cfb055481fdabc942bde1560492a619618745236be2c6b929168c50324",
+            "evidence_id": "E4b639d67830d97d7-B0022",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Main Findings",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1171,
+                "page": 4,
+                "section": "Main Findings",
+                "section_index": 9,
+                "start": 900,
+                "text": "final write-up contained poisoned\nfindings without detection or mentioning caveats\u2014is achieved in49.56%of runs. Poisoning success\nrequired using only an unsubstantiated README file, no fake publications, and no mention of the\ndataset in the user's prompt (Section 4.1).\n4"
+              },
+              {
+                "end": 628,
+                "page": 5,
+                "section": "Main Findings",
+                "section_index": 10,
+                "start": 0,
+                "text": "\u2022 Poisoning steers conclusions in opposing directions with equal success.Poisoning crafted to\nrejecta hypothesis and poisoning crafted toexaggerateit succeed at statistically indistinguishable rates\n(p= 0.70), suggesting that an adversary can manufacture any predetermined conclusion (Section 4.1).\n\u2022 Attack success differs across topics and agents.The rate of full success varies by33.3%across\ntopics, from35.6%onAV Safetyto68 .9%onGenAI Motivation. Among agents, Gemini was most\nsusceptible to poisoning (62.0%), followed by Claude (55.3%), and Codex (31.3%). These results suggest\nthat incidental phrasing of the prompts and "
+              }
+            ],
+            "text": "final write-up contained poisoned\nfindings without detection or mentioning caveats\u2014is achieved in49.56%of runs. Poisoning success\nrequired using only an unsubstantiated README file, no fake publications, and no mention of the\ndataset in the user's prompt (Section 4.1).\n4\n\u2022 Poisoning steers conclusions in opposing directions with equal success.Poisoning crafted to\nrejecta hypothesis and poisoning crafted toexaggerateit succeed at statistically indistinguishable rates\n(p= 0.70), suggesting that an adversary can manufacture any predetermined conclusion (Section 4.1).\n\u2022 Attack success differs across topics and agents.The rate of full success varies by33.3%across\ntopics, from35.6%onAV Safetyto68 .9%onGenAI Motivation. Among agents, Gemini was most\nsusceptible to poisoning (62.0%), followed by Claude (55.3%), and Codex (31.3%). These results suggest\nthat incidental phrasing of the prompts and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0024"
+        ],
+        "excerpt": "Having found that indirect scientific data poisoning is a viable threat, we turn our attention to how we can\nreduce its likelihood of success. For this, we test twomitigation measuresthat are designed to act at the\nprompt-level, that is, without access to the model internals, so that anyone can easily adopt them:\n\u2022 Scientist persona.Extend the system prompt to describe an intellectually honest, statistically\nrigorous, and scientifically critical persona.\n\u2022 Data provenance audit.In addition to the scientist persona, execute a suite of five independent\nand parallel data audit checks and synthesize a final provenance score: find referencing papers, verify\nsocial markers, check for statistical anomalies, compare to related datasets, and caution against the\npossibility of data poisoning.\nTo evaluate these measures, we repeat our previous experimental pipeline, replacing the three ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mitigation Measures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a54151f2f9a964ebda12dfd130f22fb52a90cc24205d2edfada478e54bae1928",
+            "evidence_id": "E4b639d67830d97d7-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Mitigation Measures",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 5,
+                "section": "Mitigation Measures",
+                "section_index": 11,
+                "start": 0,
+                "text": "Having found that indirect scientific data poisoning is a viable threat, we turn our attention to how we can\nreduce its likelihood of success. For this, we test twomitigation measuresthat are designed to act at the\nprompt-level, that is, without access to the model internals, so that anyone can easily adopt them:\n\u2022 Scientist persona.Extend the system prompt to describe an intellectually honest, statistically\nrigorous, and scientifically critical persona.\n\u2022 Data provenance audit.In addition to the scientist persona, execute a suite of five independent\nand parallel data audit checks and synthesize a final provenance score: find referencing papers, verify\nsocial markers, check for statistical anomalies, compare to related datasets, and caution against the\npossibility of data poisoning.\nTo evaluate these measures, we repeat our previous experimental pipeline, replacing the three "
+              }
+            ],
+            "text": "Having found that indirect scientific data poisoning is a viable threat, we turn our attention to how we can\nreduce its likelihood of success. For this, we test twomitigation measuresthat are designed to act at the\nprompt-level, that is, without access to the model internals, so that anyone can easily adopt them:\n\u2022 Scientist persona.Extend the system prompt to describe an intellectually honest, statistically\nrigorous, and scientifically critical persona.\n\u2022 Data provenance audit.In addition to the scientist persona, execute a suite of five independent\nand parallel data audit checks and synthesize a final provenance score: find referencing papers, verify\nsocial markers, check for statistical anomalies, compare to related datasets, and caution against the\npossibility of data poisoning.\nTo evaluate these measures, we repeat our previous experimental pipeline, replacing the three "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0025"
+        ],
+        "excerpt": "prompt\nphrasings with three new conditions: (1)Baseline: using the Minimal prompt from before; (2)Scientist\nPersona: modify the system prompt to include our scientist persona; and (3)Provenance Audit: same as\nthe Scientist Persona, and we instruct the AI system to check data provenance using a custom audit skill.\nThis evaluation also generated 450 experimental runs, with the Baseline condition replicating similarly high\npoisoning success rates to the Minimal prompt. Our main findings (from Section 5) are:\n\u2022 Persona-based defenses may not be enough.A scientist persona still leaves16.67%of runs with\nfull poisoning success, though the detection rate rises to30.67%. The rate at which the poisoned\ndatasets are used (80.7%) is not significantly reduced compared to the baseline (86.0%) (Section 5.3).\n\u2022 Structured auditing can prevent indirect data poisoning.Our five-task data provenance ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mitigation Measures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "58267f88b93986e6751a207152e10c2653fcfbee5b0b5a2e3a03b39bc0c86ed7",
+            "evidence_id": "E4b639d67830d97d7-B0025",
+            "pages": [
+              5
+            ],
+            "section": "Mitigation Measures",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1781,
+                "page": 5,
+                "section": "Mitigation Measures",
+                "section_index": 11,
+                "start": 888,
+                "text": "prompt\nphrasings with three new conditions: (1)Baseline: using the Minimal prompt from before; (2)Scientist\nPersona: modify the system prompt to include our scientist persona; and (3)Provenance Audit: same as\nthe Scientist Persona, and we instruct the AI system to check data provenance using a custom audit skill.\nThis evaluation also generated 450 experimental runs, with the Baseline condition replicating similarly high\npoisoning success rates to the Minimal prompt. Our main findings (from Section 5) are:\n\u2022 Persona-based defenses may not be enough.A scientist persona still leaves16.67%of runs with\nfull poisoning success, though the detection rate rises to30.67%. The rate at which the poisoned\ndatasets are used (80.7%) is not significantly reduced compared to the baseline (86.0%) (Section 5.3).\n\u2022 Structured auditing can prevent indirect data poisoning.Our five-task data provenance "
+              }
+            ],
+            "text": "prompt\nphrasings with three new conditions: (1)Baseline: using the Minimal prompt from before; (2)Scientist\nPersona: modify the system prompt to include our scientist persona; and (3)Provenance Audit: same as\nthe Scientist Persona, and we instruct the AI system to check data provenance using a custom audit skill.\nThis evaluation also generated 450 experimental runs, with the Baseline condition replicating similarly high\npoisoning success rates to the Minimal prompt. Our main findings (from Section 5) are:\n\u2022 Persona-based defenses may not be enough.A scientist persona still leaves16.67%of runs with\nfull poisoning success, though the detection rate rises to30.67%. The rate at which the poisoned\ndatasets are used (80.7%) is not significantly reduced compared to the baseline (86.0%) (Section 5.3).\n\u2022 Structured auditing can prevent indirect data poisoning.Our five-task data provenance "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0026"
+        ],
+        "excerpt": "audit\nreduces the rate of full attack success to0.0%, and increases detection to77.33%. It significantly\nmitigates the rate at which the poisoned datasets are used, down to40%of runs (Section 5.4).\n\u2022 Cross-dataset consistency and statistical anomalies.The signals that best predict whether the\nagent will assign a high-risk label to the poisoned dataset during its provenance audit are: (1) incon-\nsistencies with other relevant datasets and (2) the detection of simple statistical anomalies, such as a\nuniform distribution or impossible values (Section 5.5).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mitigation Measures",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3bbc69450e15fbc4a34225d2d8146029f600667e994dfc67a4c1d03d575e876f",
+            "evidence_id": "E4b639d67830d97d7-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Mitigation Measures",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2340,
+                "page": 5,
+                "section": "Mitigation Measures",
+                "section_index": 11,
+                "start": 1781,
+                "text": "audit\nreduces the rate of full attack success to0.0%, and increases detection to77.33%. It significantly\nmitigates the rate at which the poisoned datasets are used, down to40%of runs (Section 5.4).\n\u2022 Cross-dataset consistency and statistical anomalies.The signals that best predict whether the\nagent will assign a high-risk label to the poisoned dataset during its provenance audit are: (1) incon-\nsistencies with other relevant datasets and (2) the detection of simple statistical anomalies, such as a\nuniform distribution or impossible values (Section 5.5)."
+              }
+            ],
+            "text": "audit\nreduces the rate of full attack success to0.0%, and increases detection to77.33%. It significantly\nmitigates the rate at which the poisoned datasets are used, down to40%of runs (Section 5.4).\n\u2022 Cross-dataset consistency and statistical anomalies.The signals that best predict whether the\nagent will assign a high-risk label to the poisoned dataset during its provenance audit are: (1) incon-\nsistencies with other relevant datasets and (2) the detection of simple statistical anomalies, such as a\nuniform distribution or impossible values (Section 5.5)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0076"
+        ],
+        "excerpt": "artifacts such as code, figures, and tables for evaluation.\nGiven the above setup, our independent variables are the adversary goal, the topic, the AI system, and\nthe prompts, giving a total of 90 experimental conditions. For each condition, the experiments were\nindependently repeated five times in isolated, containerized environments. The AI systems were given\nunrestricted programmatic access to the environment and the internet.\n13",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c4bbd64e0eee225ea712d6d880fc8e51c5c502733d1d7a15dfb6a73eed92e10d",
+            "evidence_id": "E4b639d67830d97d7-B0076",
+            "pages": [
+              13
+            ],
+            "section": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 436,
+                "page": 13,
+                "section": "Output: Once All Runs Are Complete, Collate The Ai-Agent Generated Findings, Trace Logs, And Any Further",
+                "section_index": 39,
+                "start": 0,
+                "text": "artifacts such as code, figures, and tables for evaluation.\nGiven the above setup, our independent variables are the adversary goal, the topic, the AI system, and\nthe prompts, giving a total of 90 experimental conditions. For each condition, the experiments were\nindependently repeated five times in isolated, containerized environments. The AI systems were given\nunrestricted programmatic access to the environment and the internet.\n13"
+              }
+            ],
+            "text": "artifacts such as code, figures, and tables for evaluation.\nGiven the above setup, our independent variables are the adversary goal, the topic, the AI system, and\nthe prompts, giving a total of 90 experimental conditions. For each condition, the experiments were\nindependently repeated five times in isolated, containerized environments. The AI systems were given\nunrestricted programmatic access to the environment and the internet.\n13"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0079"
+        ],
+        "excerpt": "and/or a caveat raised.\n3. Full success:poisoned dataset propagated to statistics or conclusion with no caveats and no detection.\nAs our results consist of text-based files\u2014findings, trace logs, scripts\u2014we use an LLM-as-a-judge setup\nwith Claude Sonnet 4.6 running in Claude Code to automatically assign values to each dependent variable.\nBefore running this setup, one of the authors has annotated a random subset of 10% of all results sampled\nuniformly at random\u2014corresponding to 45 instances in total. Cohen's\u03ba was then used to calculate inter-\nannotator agreement with the LLM-judge on this subset, finding\u03ba = 0.802, which is considered strong\nagreement [LK77]. The resulting evaluation data was analyzed and plotted in the R programming language\nusing descriptive statistics and mixed effects linear regression models.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f4778028d8279cfc53e1d57de62591555a2bee6106389f8bed5ca722524c4df",
+            "evidence_id": "E4b639d67830d97d7-B0079",
+            "pages": [
+              14
+            ],
+            "section": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 823,
+                "page": 14,
+                "section": "Partial Success:Poisoned Dataset Propagated To Statistics Or Conclusions, With Either Partial Detection",
+                "section_index": 42,
+                "start": 0,
+                "text": "and/or a caveat raised.\n3. Full success:poisoned dataset propagated to statistics or conclusion with no caveats and no detection.\nAs our results consist of text-based files\u2014findings, trace logs, scripts\u2014we use an LLM-as-a-judge setup\nwith Claude Sonnet 4.6 running in Claude Code to automatically assign values to each dependent variable.\nBefore running this setup, one of the authors has annotated a random subset of 10% of all results sampled\nuniformly at random\u2014corresponding to 45 instances in total. Cohen's\u03ba was then used to calculate inter-\nannotator agreement with the LLM-judge on this subset, finding\u03ba = 0.802, which is considered strong\nagreement [LK77]. The resulting evaluation data was analyzed and plotted in the R programming language\nusing descriptive statistics and mixed effects linear regression models."
+              }
+            ],
+            "text": "and/or a caveat raised.\n3. Full success:poisoned dataset propagated to statistics or conclusion with no caveats and no detection.\nAs our results consist of text-based files\u2014findings, trace logs, scripts\u2014we use an LLM-as-a-judge setup\nwith Claude Sonnet 4.6 running in Claude Code to automatically assign values to each dependent variable.\nBefore running this setup, one of the authors has annotated a random subset of 10% of all results sampled\nuniformly at random\u2014corresponding to 45 instances in total. Cohen's\u03ba was then used to calculate inter-\nannotator agreement with the LLM-judge on this subset, finding\u03ba = 0.802, which is considered strong\nagreement [LK77]. The resulting evaluation data was analyzed and plotted in the R programming language\nusing descriptive statistics and mixed effects linear regression models."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0082"
+        ],
+        "excerpt": "Figure 3 shows that data poisoning is a successful attack vector that works with all three tested AI systems,\nall prompts, and across both adversary goals. Specifically, over all runs, we find that AI systems retrieve the\npoisoned dataset in84.22% [80.57, 87.30]and generate poisoned conclusions without any caveats (i.e., Full\nsuccess) in49.56% [44.96, 54.16]of runs. Success rates rise to more than half of all runs at59.33% [54.73, 63.77]\nif we also include an additional9.78% [7.36, 12.87]runs that resulted in partial poisoning success. Remarkably,\nwe also find that the adversary's goal does not measurably affect detection under the same prompt. Our\nattacks achieve Any success in58.22% [51.69, 64.48]for the exaggerate-goal direction and60.44% [53.93, 66.61]\nfor the reject-goal direction. This is not a statistically significant difference (\u03c72\n1 = 0.15, n = 450, p = 0.70),\nsuggesting that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Indirect Data Poisoning Succeeds At Scale",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "131ff4f5a6890fd143669de709b225cefe000fb205b44634d3f7881290de2da0",
+            "evidence_id": "E4b639d67830d97d7-B0082",
+            "pages": [
+              14
+            ],
+            "section": "Indirect Data Poisoning Succeeds At Scale",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 14,
+                "section": "Indirect Data Poisoning Succeeds At Scale",
+                "section_index": 44,
+                "start": 0,
+                "text": "Figure 3 shows that data poisoning is a successful attack vector that works with all three tested AI systems,\nall prompts, and across both adversary goals. Specifically, over all runs, we find that AI systems retrieve the\npoisoned dataset in84.22% [80.57, 87.30]and generate poisoned conclusions without any caveats (i.e., Full\nsuccess) in49.56% [44.96, 54.16]of runs. Success rates rise to more than half of all runs at59.33% [54.73, 63.77]\nif we also include an additional9.78% [7.36, 12.87]runs that resulted in partial poisoning success. Remarkably,\nwe also find that the adversary's goal does not measurably affect detection under the same prompt. Our\nattacks achieve Any success in58.22% [51.69, 64.48]for the exaggerate-goal direction and60.44% [53.93, 66.61]\nfor the reject-goal direction. This is not a statistically significant difference (\u03c72\n1 = 0.15, n = 450, p = 0.70),\nsuggesting that "
+              }
+            ],
+            "text": "Figure 3 shows that data poisoning is a successful attack vector that works with all three tested AI systems,\nall prompts, and across both adversary goals. Specifically, over all runs, we find that AI systems retrieve the\npoisoned dataset in84.22% [80.57, 87.30]and generate poisoned conclusions without any caveats (i.e., Full\nsuccess) in49.56% [44.96, 54.16]of runs. Success rates rise to more than half of all runs at59.33% [54.73, 63.77]\nif we also include an additional9.78% [7.36, 12.87]runs that resulted in partial poisoning success. Remarkably,\nwe also find that the adversary's goal does not measurably affect detection under the same prompt. Our\nattacks achieve Any success in58.22% [51.69, 64.48]for the exaggerate-goal direction and60.44% [53.93, 66.61]\nfor the reject-goal direction. This is not a statistically significant difference (\u03c72\n1 = 0.15, n = 450, p = 0.70),\nsuggesting that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0102"
+        ],
+        "excerpt": "We repeat the same experimental pipeline as described in Section 3.3 and shown in Figure 2, replacing the\nthree prompt-phrasing conditions with the following three conditions, keeping everything else in the process\nintact. These new conditions are:\n18\n68%\n16%\n16%\n48%\n52%\n96%\n68%\n20%\n12%\n8%\n56%\n36%\n12%\n88%\n60%\n8%\n32%\n32%\n24%\n44%\n8%\n92%\n52%\n32%\n16%\n16%\n64%\n20%\n24%\n76%\n60%\n36%\n24%\n8%\n68%\n96%\n64%\n12%\n24%\n20%\n32%\n48%\n100%\nClaude Codex Gemini\nExaggerateReject\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\n0%\n25%\n50%\n75%\n100%\n0%\n25%\n50%\n75%\n100%Proportion of runs\nAttack outcome Full success Partial success No success\nFigure 6:Attack success of poisoned datasets across the three mitigation conditions (Baseline, Scientist Persona,\nProvenance Audit; in bars), faceted by agent (Claude, Codex, Gemini; in columns) ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18,
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d495fdfe93c5bfa3f538386e9e9d5eb72768b7e896fa04ac2469e26c98487b3d",
+            "evidence_id": "E4b639d67830d97d7-B0102",
+            "pages": [
+              18,
+              19
+            ],
+            "section": "Evaluation Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 251,
+                "page": 18,
+                "section": "Evaluation Methods",
+                "section_index": 53,
+                "start": 0,
+                "text": "We repeat the same experimental pipeline as described in Section 3.3 and shown in Figure 2, replacing the\nthree prompt-phrasing conditions with the following three conditions, keeping everything else in the process\nintact. These new conditions are:\n18"
+              },
+              {
+                "end": 646,
+                "page": 19,
+                "section": "Evaluation Methods",
+                "section_index": 54,
+                "start": 0,
+                "text": "68%\n16%\n16%\n48%\n52%\n96%\n68%\n20%\n12%\n8%\n56%\n36%\n12%\n88%\n60%\n8%\n32%\n32%\n24%\n44%\n8%\n92%\n52%\n32%\n16%\n16%\n64%\n20%\n24%\n76%\n60%\n36%\n24%\n8%\n68%\n96%\n64%\n12%\n24%\n20%\n32%\n48%\n100%\nClaude Codex Gemini\nExaggerateReject\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\n0%\n25%\n50%\n75%\n100%\n0%\n25%\n50%\n75%\n100%Proportion of runs\nAttack outcome Full success Partial success No success\nFigure 6:Attack success of poisoned datasets across the three mitigation conditions (Baseline, Scientist Persona,\nProvenance Audit; in bars), faceted by agent (Claude, Codex, Gemini; in columns) "
+              }
+            ],
+            "text": "We repeat the same experimental pipeline as described in Section 3.3 and shown in Figure 2, replacing the\nthree prompt-phrasing conditions with the following three conditions, keeping everything else in the process\nintact. These new conditions are:\n18\n68%\n16%\n16%\n48%\n52%\n96%\n68%\n20%\n12%\n8%\n56%\n36%\n12%\n88%\n60%\n8%\n32%\n32%\n24%\n44%\n8%\n92%\n52%\n32%\n16%\n16%\n64%\n20%\n24%\n76%\n60%\n36%\n24%\n8%\n68%\n96%\n64%\n12%\n24%\n20%\n32%\n48%\n100%\nClaude Codex Gemini\nExaggerateReject\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\nBaseline Scientist\nPersona\nProvenance\nAudit\n0%\n25%\n50%\n75%\n100%\n0%\n25%\n50%\n75%\n100%Proportion of runs\nAttack outcome Full success Partial success No success\nFigure 6:Attack success of poisoned datasets across the three mitigation conditions (Baseline, Scientist Persona,\nProvenance Audit; in bars), faceted by agent (Claude, Codex, Gemini; in columns) "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0104"
+        ],
+        "excerpt": "experiments and the testing of the mitigation strategies. By\nrerunning the baseline, we avoid any effects from an AI model update. As with our original experiments,\nevaluating our mitigation measures produced 450 experimental runs. The Baseline condition replicates the\nMinimal prompt condition, with similarly high success rates from Section 4.1. For evaluation, we use the\nsame LLM-as-a-judge setup as in Section 3.3.1, calculating a 10%-sample Cohen's\u03ba with a human annotator\nof\u03ba= 0.758, which is considered high agreement [LK77].\nOur results with mitigation measures indicate that a scientist persona alone is insufficient to detect\npoisoning, however, the data provenance audit almost completely eliminates indirect data poisoning attacks.\nIn the following, we provide a more detailed account of the results with mitigation measures, as well as\nqualitative observations of the AI systems' ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f46136ece0b6c887c44ef1a52f430fa793062c2519bdf1ba2b120e2df19ac252",
+            "evidence_id": "E4b639d67830d97d7-B0104",
+            "pages": [
+              19
+            ],
+            "section": "Evaluation Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2440,
+                "page": 19,
+                "section": "Evaluation Methods",
+                "section_index": 54,
+                "start": 1546,
+                "text": "experiments and the testing of the mitigation strategies. By\nrerunning the baseline, we avoid any effects from an AI model update. As with our original experiments,\nevaluating our mitigation measures produced 450 experimental runs. The Baseline condition replicates the\nMinimal prompt condition, with similarly high success rates from Section 4.1. For evaluation, we use the\nsame LLM-as-a-judge setup as in Section 3.3.1, calculating a 10%-sample Cohen's\u03ba with a human annotator\nof\u03ba= 0.758, which is considered high agreement [LK77].\nOur results with mitigation measures indicate that a scientist persona alone is insufficient to detect\npoisoning, however, the data provenance audit almost completely eliminates indirect data poisoning attacks.\nIn the following, we provide a more detailed account of the results with mitigation measures, as well as\nqualitative observations of the AI systems' "
+              }
+            ],
+            "text": "experiments and the testing of the mitigation strategies. By\nrerunning the baseline, we avoid any effects from an AI model update. As with our original experiments,\nevaluating our mitigation measures produced 450 experimental runs. The Baseline condition replicates the\nMinimal prompt condition, with similarly high success rates from Section 4.1. For evaluation, we use the\nsame LLM-as-a-judge setup as in Section 3.3.1, calculating a 10%-sample Cohen's\u03ba with a human annotator\nof\u03ba= 0.758, which is considered high agreement [LK77].\nOur results with mitigation measures indicate that a scientist persona alone is insufficient to detect\npoisoning, however, the data provenance audit almost completely eliminates indirect data poisoning attacks.\nIn the following, we provide a more detailed account of the results with mitigation measures, as well as\nqualitative observations of the AI systems' "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0107"
+        ],
+        "excerpt": "goal (Exaggerate,\nReject; in rows). Each stacked bar shows the proportion of runs classified as Not detected (red), Partial (orange),\nDetected (green), or N/A (grey). Percentages are pooled across 5 topics with 5 iterations, giving25runs per bar.\nsuccess in77.33% [70.00, 83.30]of runs under the Baseline condition without mitigation measures. This\nrate decreases somewhat to55.33% [47.34, 63.06]using the Scientist Persona. With our strongest measure,\nthe Any success rate sinks to8.67% [5.13, 14.26]. This monotonic decrease in attack success results in\na corresponding monotonic increase in detection success. The share of runs in which the agent flagged\nthe dataset as poisoned rises with the strength of the intervention from8.0% [4.64, 13.46]at the Baseline\ncondition, to30.67% [23.85, 38.45]using a Scientist Persona, and, finally, to77.33% [70.00, 83.30]with the\nfive-component Provenance ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 20,
+        "pages": [
+          20
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Mitigations Monotonically Decrease Poisoning Success",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d3fb4841be3fe73206d06b4222e6639a5285e5adecdd264761cf6cfe3885507f",
+            "evidence_id": "E4b639d67830d97d7-B0107",
+            "pages": [
+              20
+            ],
+            "section": "Mitigations Monotonically Decrease Poisoning Success",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1584,
+                "page": 20,
+                "section": "Mitigations Monotonically Decrease Poisoning Success",
+                "section_index": 56,
+                "start": 687,
+                "text": "goal (Exaggerate,\nReject; in rows). Each stacked bar shows the proportion of runs classified as Not detected (red), Partial (orange),\nDetected (green), or N/A (grey). Percentages are pooled across 5 topics with 5 iterations, giving25runs per bar.\nsuccess in77.33% [70.00, 83.30]of runs under the Baseline condition without mitigation measures. This\nrate decreases somewhat to55.33% [47.34, 63.06]using the Scientist Persona. With our strongest measure,\nthe Any success rate sinks to8.67% [5.13, 14.26]. This monotonic decrease in attack success results in\na corresponding monotonic increase in detection success. The share of runs in which the agent flagged\nthe dataset as poisoned rises with the strength of the intervention from8.0% [4.64, 13.46]at the Baseline\ncondition, to30.67% [23.85, 38.45]using a Scientist Persona, and, finally, to77.33% [70.00, 83.30]with the\nfive-component Provenance "
+              }
+            ],
+            "text": "goal (Exaggerate,\nReject; in rows). Each stacked bar shows the proportion of runs classified as Not detected (red), Partial (orange),\nDetected (green), or N/A (grey). Percentages are pooled across 5 topics with 5 iterations, giving25runs per bar.\nsuccess in77.33% [70.00, 83.30]of runs under the Baseline condition without mitigation measures. This\nrate decreases somewhat to55.33% [47.34, 63.06]using the Scientist Persona. With our strongest measure,\nthe Any success rate sinks to8.67% [5.13, 14.26]. This monotonic decrease in attack success results in\na corresponding monotonic increase in detection success. The share of runs in which the agent flagged\nthe dataset as poisoned rises with the strength of the intervention from8.0% [4.64, 13.46]at the Baseline\ncondition, to30.67% [23.85, 38.45]using a Scientist Persona, and, finally, to77.33% [70.00, 83.30]with the\nfive-component Provenance "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0115"
+        ],
+        "excerpt": "Finally, we are interested in understanding which sub-tasks of our provenance audit skill are most important\nto detecting poisoning. To this end, we run a mixed-effects, logistic regression model using data from the\nProvenance Audit runs. Our model predicts a binarized risk score withhigh riskas reference level. The\nrisk values are derived by extracting the agents' final provenance audit assessment score, after they have\nsynthesized results from all five sub-tasks. Our predictors are, then, the ordinal scores assigned to each of the\nfive sub-tasks. We also add random intercepts to our regression model for the agent and the topic, to account\nfor any variance in these features.\nWe find that each audit sub-task is a strong predictor ofhigh risk. We report the odds ratios (OR) from\nthe regression model. In particular, cross-dataset consistency carried the largest single signal (OR\u2248 648,\np\u2248 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a5ac68e0b707c55622cc27b1f8a63fbc722375d1195a32faacdbf4992de9f6fc",
+            "evidence_id": "E4b639d67830d97d7-B0115",
+            "pages": [
+              22
+            ],
+            "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 22,
+                "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+                "section_index": 59,
+                "start": 0,
+                "text": "Finally, we are interested in understanding which sub-tasks of our provenance audit skill are most important\nto detecting poisoning. To this end, we run a mixed-effects, logistic regression model using data from the\nProvenance Audit runs. Our model predicts a binarized risk score withhigh riskas reference level. The\nrisk values are derived by extracting the agents' final provenance audit assessment score, after they have\nsynthesized results from all five sub-tasks. Our predictors are, then, the ordinal scores assigned to each of the\nfive sub-tasks. We also add random intercepts to our regression model for the agent and the topic, to account\nfor any variance in these features.\nWe find that each audit sub-task is a strong predictor ofhigh risk. We report the odds ratios (OR) from\nthe regression model. In particular, cross-dataset consistency carried the largest single signal (OR\u2248 648,\np\u2248 "
+              }
+            ],
+            "text": "Finally, we are interested in understanding which sub-tasks of our provenance audit skill are most important\nto detecting poisoning. To this end, we run a mixed-effects, logistic regression model using data from the\nProvenance Audit runs. Our model predicts a binarized risk score withhigh riskas reference level. The\nrisk values are derived by extracting the agents' final provenance audit assessment score, after they have\nsynthesized results from all five sub-tasks. Our predictors are, then, the ordinal scores assigned to each of the\nfive sub-tasks. We also add random intercepts to our regression model for the agent and the topic, to account\nfor any variance in these features.\nWe find that each audit sub-task is a strong predictor ofhigh risk. We report the odds ratios (OR) from\nthe regression model. In particular, cross-dataset consistency carried the largest single signal (OR\u2248 648,\np\u2248 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0116"
+        ],
+        "excerpt": "0), followed by statistical anomalies (OR\u2248 145, p\u2248 0), paper verification (OR\u2248 33, p\u2248 0), and social\ncredibility (OR\u2248 30, p = 10\u22123). Cautioning against poisoning risk did not emerge as the most important\npredictor of high risk. Instead, our trace logs suggest that this cautioning may be acting to prime the agent\nto consider manipulation as a potential risk source in the first place. Finally, both the agent- and topic-level\nvariance were estimated near zero, which means that the mitigation measures account for all variation when\npredictinghigh riskassessments.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "547f1b53923dde464c03cdcd40fcf864053faec592a5661f01e71b7b5d7871d2",
+            "evidence_id": "E4b639d67830d97d7-B0116",
+            "pages": [
+              22
+            ],
+            "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1464,
+                "page": 22,
+                "section": "Cross-Dataset Consistency And Statistical Anomalies Best Predict Poisoning",
+                "section_index": 59,
+                "start": 899,
+                "text": "0), followed by statistical anomalies (OR\u2248 145, p\u2248 0), paper verification (OR\u2248 33, p\u2248 0), and social\ncredibility (OR\u2248 30, p = 10\u22123). Cautioning against poisoning risk did not emerge as the most important\npredictor of high risk. Instead, our trace logs suggest that this cautioning may be acting to prime the agent\nto consider manipulation as a potential risk source in the first place. Finally, both the agent- and topic-level\nvariance were estimated near zero, which means that the mitigation measures account for all variation when\npredictinghigh riskassessments."
+              }
+            ],
+            "text": "0), followed by statistical anomalies (OR\u2248 145, p\u2248 0), paper verification (OR\u2248 33, p\u2248 0), and social\ncredibility (OR\u2248 30, p = 10\u22123). Cautioning against poisoning risk did not emerge as the most important\npredictor of high risk. Instead, our trace logs suggest that this cautioning may be acting to prime the agent\nto consider manipulation as a potential risk source in the first place. Finally, both the agent- and topic-level\nvariance were estimated near zero, which means that the mitigation measures account for all variation when\npredictinghigh riskassessments."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0119"
+        ],
+        "excerpt": "understand the research questions associated with the dataset.\nSecond, a potential confounder is that all our datasets are tabular, which allowed for a more straightforward\nand repeatable experimental pipeline. While this setup is realistic, since tabular data is widely used in all of\nscience, contemporary research often involves deep learning which may rely on unstructured datasets, such as\ntext corpora or image databases. Poisoning these datasets may be more difficult but also harder to detect.\nThird, to avoid contaminating the online ecosystem with poisoned data, all our datasets are uploaded\nto private repositories. The AI agents can search for and retrieve datasets through a single wrapper tool\nexposing each platform's API. This wrapper was written by the authors and the AI agents are instructed to\nuse it first before searching the internet more broadly. Relying on this wrapper may ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "428969f93146793ef777fa31014b0f2708e151209e7f360791af3771e7ff8ca6",
+            "evidence_id": "E4b639d67830d97d7-B0119",
+            "pages": [
+              22
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 22,
+                "section": "Limitations",
+                "section_index": 61,
+                "start": 891,
+                "text": "understand the research questions associated with the dataset.\nSecond, a potential confounder is that all our datasets are tabular, which allowed for a more straightforward\nand repeatable experimental pipeline. While this setup is realistic, since tabular data is widely used in all of\nscience, contemporary research often involves deep learning which may rely on unstructured datasets, such as\ntext corpora or image databases. Poisoning these datasets may be more difficult but also harder to detect.\nThird, to avoid contaminating the online ecosystem with poisoned data, all our datasets are uploaded\nto private repositories. The AI agents can search for and retrieve datasets through a single wrapper tool\nexposing each platform's API. This wrapper was written by the authors and the AI agents are instructed to\nuse it first before searching the internet more broadly. Relying on this wrapper may "
+              }
+            ],
+            "text": "understand the research questions associated with the dataset.\nSecond, a potential confounder is that all our datasets are tabular, which allowed for a more straightforward\nand repeatable experimental pipeline. While this setup is realistic, since tabular data is widely used in all of\nscience, contemporary research often involves deep learning which may rely on unstructured datasets, such as\ntext corpora or image databases. Poisoning these datasets may be more difficult but also harder to detect.\nThird, to avoid contaminating the online ecosystem with poisoned data, all our datasets are uploaded\nto private repositories. The AI agents can search for and retrieve datasets through a single wrapper tool\nexposing each platform's API. This wrapper was written by the authors and the AI agents are instructed to\nuse it first before searching the internet more broadly. Relying on this wrapper may "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0120"
+        ],
+        "excerpt": "introduce a potential\nconfounder in the number of successful retrievals of the poisoned datasets. This is unlikely, however, as calls\nto the wrapper return a large number of datasets that match a query, and the agents must autonomously\npick among their queries' results. We also verify through trace logs, that agents search all four repositories in\neach experimental run, often retrieving more than one relevant dataset across different platforms. Another\npotential concern may be that the instruction to use the wrapper biases the AI agents to even search for\ndatasets in the first place. However, we spot-check Minimal prompts\u2014which have the least suggestive\nphrasing to use datasets\u2014without the wrapper-call instruction, finding that AI systems still choose to search\nfor and retrieve datasets using standard built-in tools.\n22",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a9766c18143636c9e4a31dc1ea45b2b5e602c9c2c1ba3d238eda7602bcefaf0a",
+            "evidence_id": "E4b639d67830d97d7-B0120",
+            "pages": [
+              22
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 2622,
+                "page": 22,
+                "section": "Limitations",
+                "section_index": 61,
+                "start": 1791,
+                "text": "introduce a potential\nconfounder in the number of successful retrievals of the poisoned datasets. This is unlikely, however, as calls\nto the wrapper return a large number of datasets that match a query, and the agents must autonomously\npick among their queries' results. We also verify through trace logs, that agents search all four repositories in\neach experimental run, often retrieving more than one relevant dataset across different platforms. Another\npotential concern may be that the instruction to use the wrapper biases the AI agents to even search for\ndatasets in the first place. However, we spot-check Minimal prompts\u2014which have the least suggestive\nphrasing to use datasets\u2014without the wrapper-call instruction, finding that AI systems still choose to search\nfor and retrieve datasets using standard built-in tools.\n22"
+              }
+            ],
+            "text": "introduce a potential\nconfounder in the number of successful retrievals of the poisoned datasets. This is unlikely, however, as calls\nto the wrapper return a large number of datasets that match a query, and the agents must autonomously\npick among their queries' results. We also verify through trace logs, that agents search all four repositories in\neach experimental run, often retrieving more than one relevant dataset across different platforms. Another\npotential concern may be that the instruction to use the wrapper biases the AI agents to even search for\ndatasets in the first place. However, we spot-check Minimal prompts\u2014which have the least suggestive\nphrasing to use datasets\u2014without the wrapper-call instruction, finding that AI systems still choose to search\nfor and retrieve datasets using standard built-in tools.\n22"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0121"
+        ],
+        "excerpt": "Fourth, our proposed mitigations in Section 5 intervene only at the prompt-level for our specific threat\nmodel. It is not unlikely that more advanced adversaries would deploy multiple, different, parallel attacks,\nwhich would require further measures to intercept. To provide more robust guarantees under more aggressive\nthreat models, model-level changes or a suite of different mitigation measures may be necessary, however, this\nwas outside the scope of our work. We also note that in three cases the data provenance audit recommended\npre-existing datasets not be used for research: a false positive rate of2.0%. These were entirely driven by\nreal statistical anomalies in otherwise legitimate-looking datasets. False positives were a consequence of the\nway AI agents prioritized and aggregated the five audit checks into a single recommendation, rather than of\nany individual check identifying ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e9d147a90c07aee1fbe0fc79b597c764f6a5c0032bb8abbb01b728adf8e4207a",
+            "evidence_id": "E4b639d67830d97d7-B0121",
+            "pages": [
+              23
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 23,
+                "section": "Limitations",
+                "section_index": 62,
+                "start": 0,
+                "text": "Fourth, our proposed mitigations in Section 5 intervene only at the prompt-level for our specific threat\nmodel. It is not unlikely that more advanced adversaries would deploy multiple, different, parallel attacks,\nwhich would require further measures to intercept. To provide more robust guarantees under more aggressive\nthreat models, model-level changes or a suite of different mitigation measures may be necessary, however, this\nwas outside the scope of our work. We also note that in three cases the data provenance audit recommended\npre-existing datasets not be used for research: a false positive rate of2.0%. These were entirely driven by\nreal statistical anomalies in otherwise legitimate-looking datasets. False positives were a consequence of the\nway AI agents prioritized and aggregated the five audit checks into a single recommendation, rather than of\nany individual check identifying "
+              }
+            ],
+            "text": "Fourth, our proposed mitigations in Section 5 intervene only at the prompt-level for our specific threat\nmodel. It is not unlikely that more advanced adversaries would deploy multiple, different, parallel attacks,\nwhich would require further measures to intercept. To provide more robust guarantees under more aggressive\nthreat models, model-level changes or a suite of different mitigation measures may be necessary, however, this\nwas outside the scope of our work. We also note that in three cases the data provenance audit recommended\npre-existing datasets not be used for research: a false positive rate of2.0%. These were entirely driven by\nreal statistical anomalies in otherwise legitimate-looking datasets. False positives were a consequence of the\nway AI agents prioritized and aggregated the five audit checks into a single recommendation, rather than of\nany individual check identifying "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0122"
+        ],
+        "excerpt": "the dataset as poisoned. This behavior highlights that better methods of\nscore aggregation may improve auditing.\nFifth, our experiments are scored by a Large Language Model (LLM). This LLM-as-a-judge setup may\nintroduce labeling bias, but independent human evaluation of a 10% subset of our experimental runs (in total,\n90 runs across both the baseline and mitigation experiments) show strong agreement (\u03ba\u2265 0.758) with the\nLLM, supporting its assigned labels.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c2f05e700b2a854c5b96e43c2bb69f11550b15ee9a275f0e4daf13ace2ab99d",
+            "evidence_id": "E4b639d67830d97d7-B0122",
+            "pages": [
+              23
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1357,
+                "page": 23,
+                "section": "Limitations",
+                "section_index": 62,
+                "start": 898,
+                "text": "the dataset as poisoned. This behavior highlights that better methods of\nscore aggregation may improve auditing.\nFifth, our experiments are scored by a Large Language Model (LLM). This LLM-as-a-judge setup may\nintroduce labeling bias, but independent human evaluation of a 10% subset of our experimental runs (in total,\n90 runs across both the baseline and mitigation experiments) show strong agreement (\u03ba\u2265 0.758) with the\nLLM, supporting its assigned labels."
+              }
+            ],
+            "text": "the dataset as poisoned. This behavior highlights that better methods of\nscore aggregation may improve auditing.\nFifth, our experiments are scored by a Large Language Model (LLM). This LLM-as-a-judge setup may\nintroduce labeling bias, but independent human evaluation of a 10% subset of our experimental runs (in total,\n90 runs across both the baseline and mitigation experiments) show strong agreement (\u03ba\u2265 0.758) with the\nLLM, supporting its assigned labels."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.10712",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7168434034",
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0002",
+          "E4b639d67830d97d7-B0003",
+          "E4b639d67830d97d7-B0015",
+          "E4b639d67830d97d7-B0017",
+          "E4b639d67830d97d7-B0019",
+          "E4b639d67830d97d7-B0020",
+          "E4b639d67830d97d7-B0022",
+          "E4b639d67830d97d7-B0024",
+          "E4b639d67830d97d7-B0025",
+          "E4b639d67830d97d7-B0026",
+          "E4b639d67830d97d7-B0076",
+          "E4b639d67830d97d7-B0079",
+          "E4b639d67830d97d7-B0082",
+          "E4b639d67830d97d7-B0102",
+          "E4b639d67830d97d7-B0104",
+          "E4b639d67830d97d7-B0107",
+          "E4b639d67830d97d7-B0115",
+          "E4b639d67830d97d7-B0116",
+          "E4b639d67830d97d7-B0119",
+          "E4b639d67830d97d7-B0120",
+          "E4b639d67830d97d7-B0121",
+          "E4b639d67830d97d7-B0122"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7168434034",
+        "claim_evidence_alignment": "Claims regarding attack success rates (49.56% full success), low out-of-the-box detection (6.0%), the inadequacy of a scientist persona alone, and the efficacy of structured data provenance auditing are directly supported by the presented quantitative data.",
+        "context_id": "4b639d67830d97d773d25af91bfed2e5996699808fe30b3a51de5600360f7289",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation comprehensively tracks dataset propagation through pipeline stages (found, retrieved, used, statistics, conclusion) and measures detection rates, supported by appropriate statistical intervals and inter-annotator validation of the LLM judge (Cohen's kappa >= 0.758).",
+        "evidence_ids": [
+          "E4b639d67830d97d7-B0002",
+          "E4b639d67830d97d7-B0003",
+          "E4b639d67830d97d7-B0015",
+          "E4b639d67830d97d7-B0017",
+          "E4b639d67830d97d7-B0019",
+          "E4b639d67830d97d7-B0020",
+          "E4b639d67830d97d7-B0022",
+          "E4b639d67830d97d7-B0024",
+          "E4b639d67830d97d7-B0025",
+          "E4b639d67830d97d7-B0026",
+          "E4b639d67830d97d7-B0076",
+          "E4b639d67830d97d7-B0079",
+          "E4b639d67830d97d7-B0082",
+          "E4b639d67830d97d7-B0102",
+          "E4b639d67830d97d7-B0104",
+          "E4b639d67830d97d7-B0107",
+          "E4b639d67830d97d7-B0115",
+          "E4b639d67830d97d7-B0116",
+          "E4b639d67830d97d7-B0119",
+          "E4b639d67830d97d7-B0120",
+          "E4b639d67830d97d7-B0121",
+          "E4b639d67830d97d7-B0122"
+        ],
+        "limitations": "The authors thoroughly discuss limitations, including focus on tabular socio-technical datasets rather than unstructured scientific modalities, containment via API interception wrappers, reliance on prompt-level mitigations, and potential false positives from statistical audits.",
+        "method_assessment": "The methodology is rigorous and well-controlled, using 450 initial runs across five socially salient topics, three frontier AI systems (Claude Code, GPT Codex, Gemini CLI), two opposite adversarial directions, and three prompt formulations, followed by an additional 450 runs testing mitigations in ethically isolated environments.",
+        "quality_rationale": "The study addresses a clear, novel threat model in AI-driven science with an exceptionally thorough experimental design, extensive data points, ethical containment safeguards, reproducible code/logging availability, and balanced interpretation of results.",
+        "scoped_contribution": "The paper demonstrates and evaluates 'indirect data poisoning' against autonomous AI research agents, where manipulated open datasets uploaded to public repositories mislead honest agents into drawing false scientific conclusions, and proposes provenance-based mitigation strategies.",
+        "source_content_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The study addresses a clear, novel threat model in AI-driven science with an exceptionally thorough experimental design, extensive data points, ethical containment safeguards, reproducible code/logging availability, and balanced interpretation of results.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "926af42c824717a49711e33de47727332a38048d19e90c6870c6b9bb09fecfd7",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors thoroughly discuss limitations, including focus on tabular socio-technical datasets rather than unstructured scientific modalities, containment via API interception wrappers, reliance on prompt-level mitigations, and potential false positives from statistical audits."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -163,7 +2575,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

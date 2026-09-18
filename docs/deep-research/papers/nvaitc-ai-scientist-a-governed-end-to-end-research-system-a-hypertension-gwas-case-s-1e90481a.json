@@ -42,7 +42,7 @@
   "last_seen_date": "2026-07-20",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-14 08:38:18",
   "notified_date": "2026-07-14",
@@ -53,7 +53,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-14 08:36:21",
-    "generated_at": "2026-09-18 08:07:34",
+    "generated_at": "2026-09-18 09:58:40",
     "last_seen_at": "2026-07-20 09:36:59",
     "metadata_sources": [
       "openalex",
@@ -119,36 +119,1967 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T09:52:40.780753+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorous, well-engineered architectural design addressing a vital open challenge in deploying autonomous/agentic AI within privacy-regulated biomedical environments. The system is validated through extensive real-world clinical data with clear controls, human-expert comparative baselines, and transparent documentation of limitations and failure recovery.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 49875,
+      "assessment_input_sha256": "84064cd1b3e0a02672db8d3842349063533bf8fd2468053992310443702e3c9e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7168433647",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 48456,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 47256,
+      "evidence_block_count": 75,
+      "evidence_context_characters": 56707,
+      "evidence_context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+      "evidence_context_sha256": "22768ccacdce2ea8a0419f20f1d5b493b94e699d08b2c12281ebf054a2e74a27",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 48498,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4",
+        "source_url": "https://arxiv.org/pdf/2607.11084",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 48456,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Nvaitc Ai Scientist: A Governed End-To-End Research System",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1227,
+          "supplied_characters": 1227
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1613,
+          "supplied_characters": 1613
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 489,
+          "supplied_characters": 489
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3246,
+          "supplied_characters": 3246
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 2100,
+          "supplied_characters": 2100
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Agentic Systems For Scientific Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1247,
+          "supplied_characters": 1247
+        },
+        {
+          "heading": "Agentic Systems For Scientific Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 250,
+          "supplied_characters": 250
+        },
+        {
+          "heading": "Agentic Systems For Scientific Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 636,
+          "supplied_characters": 636
+        },
+        {
+          "heading": "Clinical And Genomic Workflow Orchestration",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 617,
+          "supplied_characters": 617
+        },
+        {
+          "heading": "Llm Verification And Proposal Review",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 643,
+          "supplied_characters": 643
+        },
+        {
+          "heading": "Comparative Positioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 692,
+          "supplied_characters": 692
+        },
+        {
+          "heading": "Comparative Positioning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 385,
+          "supplied_characters": 385
+        },
+        {
+          "heading": "Experiment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 898,
+          "supplied_characters": 898
+        },
+        {
+          "heading": "Gwas +",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 248,
+          "supplied_characters": 248
+        },
+        {
+          "heading": "The Nvaitc Ai Scientist System",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 817,
+          "supplied_characters": 817
+        },
+        {
+          "heading": "End-To-End Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 1093,
+          "supplied_characters": 1093
+        },
+        {
+          "heading": "Governed Execution Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1372,
+          "supplied_characters": 1372
+        },
+        {
+          "heading": "Governed Execution Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 647,
+          "supplied_characters": 647
+        },
+        {
+          "heading": "Governed Execution Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 115,
+          "supplied_characters": 115
+        },
+        {
+          "heading": "Containerized Compute Path",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Proposal Review",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 556,
+          "supplied_characters": 556
+        },
+        {
+          "heading": "Agent Development",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1872,
+          "supplied_characters": 1872
+        },
+        {
+          "heading": "Agent Development",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 891,
+          "supplied_characters": 891
+        },
+        {
+          "heading": "Case Study: Hypertension Gwas Deployment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 924,
+          "supplied_characters": 924
+        },
+        {
+          "heading": "Study Setting And Research Goal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 604,
+          "supplied_characters": 604
+        },
+        {
+          "heading": "Cohort Construction And Agent Workflow",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 655,
+          "supplied_characters": 655
+        },
+        {
+          "heading": "Cohort Construction And Agent Workflow",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1580,
+          "supplied_characters": 1580
+        },
+        {
+          "heading": "Discordance Analysis And Iterative Refinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1277,
+          "supplied_characters": 1277
+        },
+        {
+          "heading": "Discordance Analysis And Iterative Refinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 572,
+          "supplied_characters": 572
+        },
+        {
+          "heading": "Gwas Execution And Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 831,
+          "supplied_characters": 831
+        },
+        {
+          "heading": "Fgf5 Strongest Signal (\u223c70) Reported In European And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 18,
+          "supplied_characters": 18
+        },
+        {
+          "heading": "Kcnk3 /",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "Cnnm2 Genome-Wide Significant Magnesium Transport, Vascu-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Atp2B1 Genome-Wide Significant Vascular Smooth Muscle Cal-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Fto Genome-Wide Significant Obesity And Bp Regulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1275,
+          "supplied_characters": 1275
+        },
+        {
+          "heading": "Expert Validation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 36,
+          "source_characters": 196,
+          "supplied_characters": 196
+        },
+        {
+          "heading": "Expert Validation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "methods",
+          "section_index": 37,
+          "source_characters": 393,
+          "supplied_characters": 393
+        },
+        {
+          "heading": "Expert Validation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 38,
+          "source_characters": 980,
+          "supplied_characters": 980
+        },
+        {
+          "heading": "Agent-Delivered Artifacts And Researcher Productivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 1422,
+          "supplied_characters": 1422
+        },
+        {
+          "heading": "Secondary Case Study: Dili Prediction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 998,
+          "supplied_characters": 998
+        },
+        {
+          "heading": "Secondary Case Study: Dili Prediction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 1067,
+          "supplied_characters": 1067
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "discussion",
+          "section_index": 42,
+          "source_characters": 643,
+          "supplied_characters": 643
+        },
+        {
+          "heading": "Orchestration As The Primary Agent Value",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1125,
+          "supplied_characters": 1125
+        },
+        {
+          "heading": "Governance As Enabler",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 526,
+          "supplied_characters": 526
+        },
+        {
+          "heading": "Autonomous Research Beyond Language Models",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 1618,
+          "supplied_characters": 1618
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "limitations",
+          "section_index": 46,
+          "source_characters": 1213,
+          "supplied_characters": 1213
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "conclusion",
+          "section_index": 47,
+          "source_characters": 1295,
+          "supplied_characters": 1295
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 1983,
+          "supplied_characters": 1983
+        },
+        {
+          "heading": "Appendix: Appendix A Proposal Review Pipeline And Self-Evaluating Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 366,
+          "supplied_characters": 366
+        },
+        {
+          "heading": "Algorithm 1Self-Evaluating Agent Wrapper",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 602,
+          "supplied_characters": 602
+        },
+        {
+          "heading": "Stage Mean Attempts 1St-Pass Rate Issues Caught (Mean) Json Fixer Used",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Category Count %",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 266,
+          "supplied_characters": 266
+        },
+        {
+          "heading": "Category Count %",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 1885,
+          "supplied_characters": 1885
+        },
+        {
+          "heading": "Category Count %",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 246,
+          "supplied_characters": 246
+        }
+      ],
+      "selected_characters": 47256,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "selected_sections": [
+        {
+          "characters": 1227,
+          "heading": "Nvaitc Ai Scientist: A Governed End-To-End Research System",
+          "page": 1
+        },
+        {
+          "characters": 1613,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 489,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 3246,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2100,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 208,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1247,
+          "heading": "Agentic Systems For Scientific Discovery",
+          "page": 3
+        },
+        {
+          "characters": 250,
+          "heading": "Agentic Systems For Scientific Discovery",
+          "page": 4
+        },
+        {
+          "characters": 636,
+          "heading": "Agentic Systems For Scientific Discovery",
+          "page": 5
+        },
+        {
+          "characters": 617,
+          "heading": "Clinical And Genomic Workflow Orchestration",
+          "page": 5
+        },
+        {
+          "characters": 643,
+          "heading": "Llm Verification And Proposal Review",
+          "page": 5
+        },
+        {
+          "characters": 692,
+          "heading": "Comparative Positioning",
+          "page": 5
+        },
+        {
+          "characters": 385,
+          "heading": "Comparative Positioning",
+          "page": 6
+        },
+        {
+          "characters": 898,
+          "heading": "Experiment",
+          "page": 6
+        },
+        {
+          "characters": 248,
+          "heading": "Gwas +",
+          "page": 6
+        },
+        {
+          "characters": 817,
+          "heading": "The Nvaitc Ai Scientist System",
+          "page": 7
+        },
+        {
+          "characters": 1093,
+          "heading": "End-To-End Architecture",
+          "page": 7
+        },
+        {
+          "characters": 1372,
+          "heading": "Governed Execution Path",
+          "page": 7
+        },
+        {
+          "characters": 647,
+          "heading": "Governed Execution Path",
+          "page": 8
+        },
+        {
+          "characters": 115,
+          "heading": "Governed Execution Path",
+          "page": 9
+        },
+        {
+          "characters": 492,
+          "heading": "Containerized Compute Path",
+          "page": 9
+        },
+        {
+          "characters": 556,
+          "heading": "Proposal Review",
+          "page": 9
+        },
+        {
+          "characters": 1872,
+          "heading": "Agent Development",
+          "page": 9
+        },
+        {
+          "characters": 891,
+          "heading": "Agent Development",
+          "page": 10
+        },
+        {
+          "characters": 924,
+          "heading": "Case Study: Hypertension Gwas Deployment",
+          "page": 10
+        },
+        {
+          "characters": 604,
+          "heading": "Study Setting And Research Goal",
+          "page": 10
+        },
+        {
+          "characters": 655,
+          "heading": "Cohort Construction And Agent Workflow",
+          "page": 10
+        },
+        {
+          "characters": 1580,
+          "heading": "Cohort Construction And Agent Workflow",
+          "page": 11
+        },
+        {
+          "characters": 1277,
+          "heading": "Discordance Analysis And Iterative Refinement",
+          "page": 11
+        },
+        {
+          "characters": 572,
+          "heading": "Discordance Analysis And Iterative Refinement",
+          "page": 12
+        },
+        {
+          "characters": 831,
+          "heading": "Gwas Execution And Results",
+          "page": 13
+        },
+        {
+          "characters": 18,
+          "heading": "Fgf5 Strongest Signal (\u223c70) Reported In European And",
+          "page": 13
+        },
+        {
+          "characters": 71,
+          "heading": "Kcnk3 /",
+          "page": 13
+        },
+        {
+          "characters": 14,
+          "heading": "Cnnm2 Genome-Wide Significant Magnesium Transport, Vascu-",
+          "page": 13
+        },
+        {
+          "characters": 14,
+          "heading": "Atp2B1 Genome-Wide Significant Vascular Smooth Muscle Cal-",
+          "page": 13
+        },
+        {
+          "characters": 1275,
+          "heading": "Fto Genome-Wide Significant Obesity And Bp Regulation",
+          "page": 13
+        },
+        {
+          "characters": 196,
+          "heading": "Expert Validation Protocol",
+          "page": 13
+        },
+        {
+          "characters": 393,
+          "heading": "Expert Validation Protocol",
+          "page": 14
+        },
+        {
+          "characters": 980,
+          "heading": "Expert Validation Protocol",
+          "page": 15
+        },
+        {
+          "characters": 1422,
+          "heading": "Agent-Delivered Artifacts And Researcher Productivity",
+          "page": 15
+        },
+        {
+          "characters": 998,
+          "heading": "Secondary Case Study: Dili Prediction",
+          "page": 15
+        },
+        {
+          "characters": 1067,
+          "heading": "Secondary Case Study: Dili Prediction",
+          "page": 16
+        },
+        {
+          "characters": 643,
+          "heading": "Discussion",
+          "page": 16
+        },
+        {
+          "characters": 1125,
+          "heading": "Orchestration As The Primary Agent Value",
+          "page": 17
+        },
+        {
+          "characters": 526,
+          "heading": "Governance As Enabler",
+          "page": 17
+        },
+        {
+          "characters": 1618,
+          "heading": "Autonomous Research Beyond Language Models",
+          "page": 17
+        },
+        {
+          "characters": 1213,
+          "heading": "Limitations",
+          "page": 18
+        },
+        {
+          "characters": 1295,
+          "heading": "Conclusion",
+          "page": 18
+        },
+        {
+          "characters": 1983,
+          "heading": "Unclassified body after references",
+          "page": 19
+        },
+        {
+          "characters": 366,
+          "heading": "Appendix: Appendix A Proposal Review Pipeline And Self-Evaluating Agents",
+          "page": 20
+        },
+        {
+          "characters": 602,
+          "heading": "Algorithm 1Self-Evaluating Agent Wrapper",
+          "page": 20
+        },
+        {
+          "characters": 243,
+          "heading": "Stage Mean Attempts 1St-Pass Rate Issues Caught (Mean) Json Fixer Used",
+          "page": 20
+        },
+        {
+          "characters": 266,
+          "heading": "Category Count %",
+          "page": 20
+        },
+        {
+          "characters": 1885,
+          "heading": "Category Count %",
+          "page": 21
+        },
+        {
+          "characters": 246,
+          "heading": "Category Count %",
+          "page": 22
+        }
+      ],
+      "selected_text_sha256": "84064cd1b3e0a02672db8d3842349063533bf8fd2468053992310443702e3c9e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4",
+      "source_pages": 22,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0003"
+        ],
+        "excerpt": "Agentic research systems are emerging as a new paradigm for coordinating scientific workflows\nbeyond isolated model inference, code generation, or statistical analysis. However, deployment\nin institutional biomedical environments requires governed mechanisms for research planning,\ndata access, workflow orchestration, evidence tracking, reproducibility, and human oversight. We\npresent NVAITC AI Scientist (NAIS), a governed end-to-end agentic research system designed\nto support domain-general scientific workflows while keeping protected data within institutional\nprivacyboundaries. NAISintegratesproposalreview, executionplanning, governedcomputational\nrouting, reproducible workflow orchestration, evidence generation, and scientist-in-the-loop\noversight. We validate NAIS in a real-world hypertension genome-wide association study (GWAS)\nusing hospital-linked genotype and electronic health ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cb964f88bab74d86801b2427502b8803e0aabf46cfbd2a3779f889f9ec31154c",
+            "evidence_id": "E9dae914347e40232-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Agentic research systems are emerging as a new paradigm for coordinating scientific workflows\nbeyond isolated model inference, code generation, or statistical analysis. However, deployment\nin institutional biomedical environments requires governed mechanisms for research planning,\ndata access, workflow orchestration, evidence tracking, reproducibility, and human oversight. We\npresent NVAITC AI Scientist (NAIS), a governed end-to-end agentic research system designed\nto support domain-general scientific workflows while keeping protected data within institutional\nprivacyboundaries. NAISintegratesproposalreview, executionplanning, governedcomputational\nrouting, reproducible workflow orchestration, evidence generation, and scientist-in-the-loop\noversight. We validate NAIS in a real-world hypertension genome-wide association study (GWAS)\nusing hospital-linked genotype and electronic health "
+              }
+            ],
+            "text": "Agentic research systems are emerging as a new paradigm for coordinating scientific workflows\nbeyond isolated model inference, code generation, or statistical analysis. However, deployment\nin institutional biomedical environments requires governed mechanisms for research planning,\ndata access, workflow orchestration, evidence tracking, reproducibility, and human oversight. We\npresent NVAITC AI Scientist (NAIS), a governed end-to-end agentic research system designed\nto support domain-general scientific workflows while keeping protected data within institutional\nprivacyboundaries. NAISintegratesproposalreview, executionplanning, governedcomputational\nrouting, reproducible workflow orchestration, evidence generation, and scientist-in-the-loop\noversight. We validate NAIS in a real-world hypertension genome-wide association study (GWAS)\nusing hospital-linked genotype and electronic health "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0004"
+        ],
+        "excerpt": "record (EHR) data from 286,422 individuals\nunder an aggregate-only data policy. The agent planned cohort extraction, orchestrated GWAS\nexecution, generated quality-control summaries and visualizations, and drafted publication-\noriented outputs. Systematic comparison with independently curated expert analyses showed\nthat human-AI review identified phenotype discrepancies and enabled iterative refinement of\nthe hypertension definition. After team-directed reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, with the strongest signal at FGF5 reaching\u2212log 10 p\u2248 70. As a secondary\n1\narXiv:2607.11084v1  [cs.AI]  13 Jul 2026\ndemonstration beyond GWAS, NAIS also supported a drug-induced liver injury prediction\nworkflow, achieving a multimodal graph neural network area under the curve (AUC) of 0.842.\nThese ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2d8ff80505736d465abb913cfb476c8df36a581092914f4fb9341f2445ac5f8e",
+            "evidence_id": "E9dae914347e40232-B0004",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1613,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 897,
+                "text": "record (EHR) data from 286,422 individuals\nunder an aggregate-only data policy. The agent planned cohort extraction, orchestrated GWAS\nexecution, generated quality-control summaries and visualizations, and drafted publication-\noriented outputs. Systematic comparison with independently curated expert analyses showed\nthat human-AI review identified phenotype discrepancies and enabled iterative refinement of\nthe hypertension definition. After team-directed reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, with the strongest signal at FGF5 reaching\u2212log 10 p\u2248 70. As a secondary\n1\narXiv:2607.11084v1  [cs.AI]  13 Jul 2026"
+              },
+              {
+                "end": 183,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "demonstration beyond GWAS, NAIS also supported a drug-induced liver injury prediction\nworkflow, achieving a multimodal graph neural network area under the curve (AUC) of 0.842.\nThese "
+              }
+            ],
+            "text": "record (EHR) data from 286,422 individuals\nunder an aggregate-only data policy. The agent planned cohort extraction, orchestrated GWAS\nexecution, generated quality-control summaries and visualizations, and drafted publication-\noriented outputs. Systematic comparison with independently curated expert analyses showed\nthat human-AI review identified phenotype discrepancies and enabled iterative refinement of\nthe hypertension definition. After team-directed reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, with the strongest signal at FGF5 reaching\u2212log 10 p\u2248 70. As a secondary\n1\narXiv:2607.11084v1  [cs.AI]  13 Jul 2026\ndemonstration beyond GWAS, NAIS also supported a drug-induced liver injury prediction\nworkflow, achieving a multimodal graph neural network area under the curve (AUC) of 0.842.\nThese "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0008"
+        ],
+        "excerpt": "governed end-to-end agentic research system designed\nto support scientific workflows in institutionally constrained environments. NAIS combines durable\nresearch state, proposal-level planning, agentic execution, brokered data access, reproducible\nworkflow orchestration, evidence tracking, and scientist-in-the-loop oversight. Rather than granting\nan agent unrestricted access to protected data, NAIS separates reasoning and orchestration from data\ngovernance: the agent submits approved actions through controlled interfaces, protected data remain\ninside institutional infrastructure, and only governed artifacts such as aggregate summaries, quality-\ncontrol metrics, plots, logs, and manuscript-oriented evidence are returned. Figure 1 illustrates\nthe overall architecture, showing how proposal review, agentic execution, and governed data access\ncompose into an end-to-end research system.\nThe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "00596137ca4b704e5c8743a004a34d1d23bb403d9cafddc47749470935a5fc39",
+            "evidence_id": "E9dae914347e40232-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2692,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1795,
+                "text": "governed end-to-end agentic research system designed\nto support scientific workflows in institutionally constrained environments. NAIS combines durable\nresearch state, proposal-level planning, agentic execution, brokered data access, reproducible\nworkflow orchestration, evidence tracking, and scientist-in-the-loop oversight. Rather than granting\nan agent unrestricted access to protected data, NAIS separates reasoning and orchestration from data\ngovernance: the agent submits approved actions through controlled interfaces, protected data remain\ninside institutional infrastructure, and only governed artifacts such as aggregate summaries, quality-\ncontrol metrics, plots, logs, and manuscript-oriented evidence are returned. Figure 1 illustrates\nthe overall architecture, showing how proposal review, agentic execution, and governed data access\ncompose into an end-to-end research system.\nThe "
+              }
+            ],
+            "text": "governed end-to-end agentic research system designed\nto support scientific workflows in institutionally constrained environments. NAIS combines durable\nresearch state, proposal-level planning, agentic execution, brokered data access, reproducible\nworkflow orchestration, evidence tracking, and scientist-in-the-loop oversight. Rather than granting\nan agent unrestricted access to protected data, NAIS separates reasoning and orchestration from data\ngovernance: the agent submits approved actions through controlled interfaces, protected data remain\ninside institutional infrastructure, and only governed artifacts such as aggregate summaries, quality-\ncontrol metrics, plots, logs, and manuscript-oriented evidence are returned. Figure 1 illustrates\nthe overall architecture, showing how proposal review, agentic execution, and governed data access\ncompose into an end-to-end research system.\nThe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0009"
+        ],
+        "excerpt": "primary validation of NAIS is a real-world hypertension GWAS conducted on hospital-linked\ngenotype and EHR data from the China Medical University Hospital (CMUH) HiGenome Genomic\nBank. In this deployment, NemoClaw, the agentic execution component of NAIS, planned cohort\nextraction, submitted governed analysis specifications, orchestrated PLINK2 GWAS workflows\nthrough brokered Kubeflow execution, retrieved aggregate analysis artifacts, and drafted manuscript\nsections. The study involved 286,422 individuals and operated under an aggregate-only data\n2\npolicy, allowing the agent to assist research near protected clinical data without direct access to\nparticipant-level records.\nThis case study also illustrates why governed agentic research requires human-AI collaboration\nrather than unconstrained autonomy. During cohort construction, comparison between agent-derived\nlabels and independently ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e3f93f575fb5a0858b83e5dc06ee29139331afb00253c21be09cfc622e1be396",
+            "evidence_id": "E9dae914347e40232-B0009",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3246,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2692,
+                "text": "primary validation of NAIS is a real-world hypertension GWAS conducted on hospital-linked\ngenotype and EHR data from the China Medical University Hospital (CMUH) HiGenome Genomic\nBank. In this deployment, NemoClaw, the agentic execution component of NAIS, planned cohort\nextraction, submitted governed analysis specifications, orchestrated PLINK2 GWAS workflows\nthrough brokered Kubeflow execution, retrieved aggregate analysis artifacts, and drafted manuscript\nsections. The study involved 286,422 individuals and operated under an aggregate-only data\n2"
+              },
+              {
+                "end": 344,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 0,
+                "text": "policy, allowing the agent to assist research near protected clinical data without direct access to\nparticipant-level records.\nThis case study also illustrates why governed agentic research requires human-AI collaboration\nrather than unconstrained autonomy. During cohort construction, comparison between agent-derived\nlabels and independently "
+              }
+            ],
+            "text": "primary validation of NAIS is a real-world hypertension GWAS conducted on hospital-linked\ngenotype and EHR data from the China Medical University Hospital (CMUH) HiGenome Genomic\nBank. In this deployment, NemoClaw, the agentic execution component of NAIS, planned cohort\nextraction, submitted governed analysis specifications, orchestrated PLINK2 GWAS workflows\nthrough brokered Kubeflow execution, retrieved aggregate analysis artifacts, and drafted manuscript\nsections. The study involved 286,422 individuals and operated under an aggregate-only data\n2\npolicy, allowing the agent to assist research near protected clinical data without direct access to\nparticipant-level records.\nThis case study also illustrates why governed agentic research requires human-AI collaboration\nrather than unconstrained autonomy. During cohort construction, comparison between agent-derived\nlabels and independently "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0010"
+        ],
+        "excerpt": "curated expert phenotypes revealed systematic discordance in hypertension\nclassification. Human review, medication audit, and team-directed phenotype reconciliation refined\nthe cohort definition before final analysis. After reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO, and\nGRB14, matching independently curated expert results in locus identification and signal direction.\nThese findings support the central claim of this work: governed agentic systems can execute end-to-\nend biomedical research workflows while preserving institutional privacy boundaries and producing\nresults comparable to expert-led workflows.\nThis paper makes four contributions. First, we built NAIS, a governed end-to-end architecture\nfor agentic research in protected biomedical environments, including durable state management,\nbrokered ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4b850fbf4de8f3fc3acd51c39be7c401b4d57a5e61f11284b670720e28cf8dd8",
+            "evidence_id": "E9dae914347e40232-B0010",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1244,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 344,
+                "text": "curated expert phenotypes revealed systematic discordance in hypertension\nclassification. Human review, medication audit, and team-directed phenotype reconciliation refined\nthe cohort definition before final analysis. After reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO, and\nGRB14, matching independently curated expert results in locus identification and signal direction.\nThese findings support the central claim of this work: governed agentic systems can execute end-to-\nend biomedical research workflows while preserving institutional privacy boundaries and producing\nresults comparable to expert-led workflows.\nThis paper makes four contributions. First, we built NAIS, a governed end-to-end architecture\nfor agentic research in protected biomedical environments, including durable state management,\nbrokered "
+              }
+            ],
+            "text": "curated expert phenotypes revealed systematic discordance in hypertension\nclassification. Human review, medication audit, and team-directed phenotype reconciliation refined\nthe cohort definition before final analysis. After reconciliation, the agent-orchestrated GWAS\nreproduced established hypertension-associated loci, including FGF5, ATP2B1, CNNM2, FTO, and\nGRB14, matching independently curated expert results in locus identification and signal direction.\nThese findings support the central claim of this work: governed agentic systems can execute end-to-\nend biomedical research workflows while preserving institutional privacy boundaries and producing\nresults comparable to expert-led workflows.\nThis paper makes four contributions. First, we built NAIS, a governed end-to-end architecture\nfor agentic research in protected biomedical environments, including durable state management,\nbrokered "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0023"
+        ],
+        "excerpt": "NAIS organizes three cooperating components: (1) an optional proposal-readiness service implement-\ning a seven-stage NeMo Agent Toolkit workflow, (2) NemoClaw as the agentic client maintaining\ndurable run state, and (3) an execution layer binding verified protocol to container discovery or\nbrokered Kubeflow workflows, producing auditable evidence artifacts (Figure 1). The two execution\nroutes differ in environment assumptions, agent actions, and returned artifacts (Table B1, Appendix\nB).\nThe execution layer treats reviewed proposals as durable state rather than chat history: container\nselection, generated code, broker run IDs, logs, metrics, repair notes, and manuscript sections persist\nacross failures and multi-day workflows. When jobs fail, the agent inspects broker events, pod\nlogs, and pipeline status before resubmitting, behavior we observed repeatedly during deployment\n(broker ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "End-To-End Architecture",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "49ae5f181df0336e0e77e8912f0933c6a43c668da5640141513b62d67d34cee3",
+            "evidence_id": "E9dae914347e40232-B0023",
+            "pages": [
+              7
+            ],
+            "section": "End-To-End Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "End-To-End Architecture",
+                "section_index": 16,
+                "start": 0,
+                "text": "NAIS organizes three cooperating components: (1) an optional proposal-readiness service implement-\ning a seven-stage NeMo Agent Toolkit workflow, (2) NemoClaw as the agentic client maintaining\ndurable run state, and (3) an execution layer binding verified protocol to container discovery or\nbrokered Kubeflow workflows, producing auditable evidence artifacts (Figure 1). The two execution\nroutes differ in environment assumptions, agent actions, and returned artifacts (Table B1, Appendix\nB).\nThe execution layer treats reviewed proposals as durable state rather than chat history: container\nselection, generated code, broker run IDs, logs, metrics, repair notes, and manuscript sections persist\nacross failures and multi-day workflows. When jobs fail, the agent inspects broker events, pod\nlogs, and pipeline status before resubmitting, behavior we observed repeatedly during deployment\n(broker "
+              }
+            ],
+            "text": "NAIS organizes three cooperating components: (1) an optional proposal-readiness service implement-\ning a seven-stage NeMo Agent Toolkit workflow, (2) NemoClaw as the agentic client maintaining\ndurable run state, and (3) an execution layer binding verified protocol to container discovery or\nbrokered Kubeflow workflows, producing auditable evidence artifacts (Figure 1). The two execution\nroutes differ in environment assumptions, agent actions, and returned artifacts (Table B1, Appendix\nB).\nThe execution layer treats reviewed proposals as durable state rather than chat history: container\nselection, generated code, broker run IDs, logs, metrics, repair notes, and manuscript sections persist\nacross failures and multi-day workflows. When jobs fail, the agent inspects broker events, pod\nlogs, and pipeline status before resubmitting, behavior we observed repeatedly during deployment\n(broker "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0025"
+        ],
+        "excerpt": "In the governed variant, NemoClaw is limited to approved HTTP actions, principally broker-mediated\nrequests for GWAS and polygenic risk score runs, SQL cohort extraction, schema discovery, cohort\nmaterialization, job launch and polling, and artifact retrieval. It does not receive direct network\nfile system, persistent volume claim, or PHI access. The agent follows a standard orchestrated\nworkflow: draft an analysis specification, obtain team approval on the SQL cohort plan when needed,\nmaterialize the cohort through the broker, launch GWAS execution, monitor job status, and retrieve\nManhattan/quantile-quantile (QQ) plots and GLM outputs through controlled manifest URLs.\nUnder the default data-exposure policy, the agent receives structure, row counts, split sizes, null\ncounts, numeric summaries, QC summaries, execution summaries, failure-stage diagnostics, plots,\nand file lists, but not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governed Execution Path",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9defa8531aba7b20ccb85aaec34549378b8660a118e1f5123764587f98c1d53d",
+            "evidence_id": "E9dae914347e40232-B0025",
+            "pages": [
+              7
+            ],
+            "section": "Governed Execution Path",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 7,
+                "section": "Governed Execution Path",
+                "section_index": 17,
+                "start": 0,
+                "text": "In the governed variant, NemoClaw is limited to approved HTTP actions, principally broker-mediated\nrequests for GWAS and polygenic risk score runs, SQL cohort extraction, schema discovery, cohort\nmaterialization, job launch and polling, and artifact retrieval. It does not receive direct network\nfile system, persistent volume claim, or PHI access. The agent follows a standard orchestrated\nworkflow: draft an analysis specification, obtain team approval on the SQL cohort plan when needed,\nmaterialize the cohort through the broker, launch GWAS execution, monitor job status, and retrieve\nManhattan/quantile-quantile (QQ) plots and GLM outputs through controlled manifest URLs.\nUnder the default data-exposure policy, the agent receives structure, row counts, split sizes, null\ncounts, numeric summaries, QC summaries, execution summaries, failure-stage diagnostics, plots,\nand file lists, but not "
+              }
+            ],
+            "text": "In the governed variant, NemoClaw is limited to approved HTTP actions, principally broker-mediated\nrequests for GWAS and polygenic risk score runs, SQL cohort extraction, schema discovery, cohort\nmaterialization, job launch and polling, and artifact retrieval. It does not receive direct network\nfile system, persistent volume claim, or PHI access. The agent follows a standard orchestrated\nworkflow: draft an analysis specification, obtain team approval on the SQL cohort plan when needed,\nmaterialize the cohort through the broker, launch GWAS execution, monitor job status, and retrieve\nManhattan/quantile-quantile (QQ) plots and GLM outputs through controlled manifest URLs.\nUnder the default data-exposure policy, the agent receives structure, row counts, split sizes, null\ncounts, numeric summaries, QC summaries, execution summaries, failure-stage diagnostics, plots,\nand file lists, but not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0026"
+        ],
+        "excerpt": "raw SQL result rows, linkable patient identifiers, or free-text clinical notes.\nThis policy aligns with our requirement that AI assist research without becoming a PHI exfiltration\nchannel.\nNemoClaw runs on Nemotron-3 Super (120B parameters) with 32,768-token context, deployed\non-premise. Its capabilities are composable rather than fixed: broker-mediated pipeline submission,\ngoverned SQL cohort extraction, GWAS execution, literature search, document parsing, and model\n7\nFigure 2: Governed execution path validated in our hypertension GWAS deployment. A team\nmember issues a natural-language request via Telegram. NemoClaw runs in an OpenShell sandbox\nand submits a structured analysis specification to Broker. Broker launches SQL cohort extraction\nand PLINK2 GWAS analysis in isolated Kubeflow containers. Only aggregate summaries, quality\ncontrol (QC) metrics, plots, and manifests return to the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Governed Execution Path",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5e1fc0342c176473ccd7c5a11245dd72733d8d000bcfcac5b9282d74e9a43d95",
+            "evidence_id": "E9dae914347e40232-B0026",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Governed Execution Path",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1372,
+                "page": 7,
+                "section": "Governed Execution Path",
+                "section_index": 17,
+                "start": 899,
+                "text": "raw SQL result rows, linkable patient identifiers, or free-text clinical notes.\nThis policy aligns with our requirement that AI assist research without becoming a PHI exfiltration\nchannel.\nNemoClaw runs on Nemotron-3 Super (120B parameters) with 32,768-token context, deployed\non-premise. Its capabilities are composable rather than fixed: broker-mediated pipeline submission,\ngoverned SQL cohort extraction, GWAS execution, literature search, document parsing, and model\n7"
+              },
+              {
+                "end": 427,
+                "page": 8,
+                "section": "Governed Execution Path",
+                "section_index": 18,
+                "start": 0,
+                "text": "Figure 2: Governed execution path validated in our hypertension GWAS deployment. A team\nmember issues a natural-language request via Telegram. NemoClaw runs in an OpenShell sandbox\nand submits a structured analysis specification to Broker. Broker launches SQL cohort extraction\nand PLINK2 GWAS analysis in isolated Kubeflow containers. Only aggregate summaries, quality\ncontrol (QC) metrics, plots, and manifests return to the "
+              }
+            ],
+            "text": "raw SQL result rows, linkable patient identifiers, or free-text clinical notes.\nThis policy aligns with our requirement that AI assist research without becoming a PHI exfiltration\nchannel.\nNemoClaw runs on Nemotron-3 Super (120B parameters) with 32,768-token context, deployed\non-premise. Its capabilities are composable rather than fixed: broker-mediated pipeline submission,\ngoverned SQL cohort extraction, GWAS execution, literature search, document parsing, and model\n7\nFigure 2: Governed execution path validated in our hypertension GWAS deployment. A team\nmember issues a natural-language request via Telegram. NemoClaw runs in an OpenShell sandbox\nand submits a structured analysis specification to Broker. Broker launches SQL cohort extraction\nand PLINK2 GWAS analysis in isolated Kubeflow containers. Only aggregate summaries, quality\ncontrol (QC) metrics, plots, and manifests return to the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0037"
+        ],
+        "excerpt": "This study was approved by the institutional review board of the partner hospital (approval no.\nCMUH111-REC1-176). All participants provided written informed consent.\nWe defined hypertension cases using ICD-10 codes I10\u2013I15 and/or antihypertensive medication\nprescriptions, yielding 109,782 cases and 176,640 controls among 286,422 genotyped individuals\n(38.3% prevalence). This expert reference definition is distinct from an early agent phenotype that\nrelied on laboratory blood-pressure thresholds, which produced discordant labels for 3,950 subjects.\nThe final agent GWAS adopted the ICD-10/medication definition after team-directed reconciliation.\n10\nNemoClaw drafted an analysis specification, submitted it to broker v2, and orchestrated: (1) SQL\ncohort extraction via the broker's SQL extraction pipeline, (2) phenotype tab-separated values (TSV)\ngeneration with fields including individual ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cohort Construction And Agent Workflow",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "13bcbe5120128698e3d9da73a8ec66fdf73d54de2e72d476263dcf392f8f5428",
+            "evidence_id": "E9dae914347e40232-B0037",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Cohort Construction And Agent Workflow",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 655,
+                "page": 10,
+                "section": "Cohort Construction And Agent Workflow",
+                "section_index": 26,
+                "start": 0,
+                "text": "This study was approved by the institutional review board of the partner hospital (approval no.\nCMUH111-REC1-176). All participants provided written informed consent.\nWe defined hypertension cases using ICD-10 codes I10\u2013I15 and/or antihypertensive medication\nprescriptions, yielding 109,782 cases and 176,640 controls among 286,422 genotyped individuals\n(38.3% prevalence). This expert reference definition is distinct from an early agent phenotype that\nrelied on laboratory blood-pressure thresholds, which produced discordant labels for 3,950 subjects.\nThe final agent GWAS adopted the ICD-10/medication definition after team-directed reconciliation.\n10"
+              },
+              {
+                "end": 242,
+                "page": 11,
+                "section": "Cohort Construction And Agent Workflow",
+                "section_index": 27,
+                "start": 0,
+                "text": "NemoClaw drafted an analysis specification, submitted it to broker v2, and orchestrated: (1) SQL\ncohort extraction via the broker's SQL extraction pipeline, (2) phenotype tab-separated values (TSV)\ngeneration with fields including individual "
+              }
+            ],
+            "text": "This study was approved by the institutional review board of the partner hospital (approval no.\nCMUH111-REC1-176). All participants provided written informed consent.\nWe defined hypertension cases using ICD-10 codes I10\u2013I15 and/or antihypertensive medication\nprescriptions, yielding 109,782 cases and 176,640 controls among 286,422 genotyped individuals\n(38.3% prevalence). This expert reference definition is distinct from an early agent phenotype that\nrelied on laboratory blood-pressure thresholds, which produced discordant labels for 3,950 subjects.\nThe final agent GWAS adopted the ICD-10/medication definition after team-directed reconciliation.\n10\nNemoClaw drafted an analysis specification, submitted it to broker v2, and orchestrated: (1) SQL\ncohort extraction via the broker's SQL extraction pipeline, (2) phenotype tab-separated values (TSV)\ngeneration with fields including individual "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0038"
+        ],
+        "excerpt": "ID, hypertension label, systolic blood pressure (SBP)\nand diastolic blood pressure (DBP), (3) GWAS submission via the broker's GWAS pipeline with\nPLINK2 logistic regression, (4) per-chromosome GLM outputs merged into a combined genome-wide\nassociation-results file, (5) Manhattan and QQ plot generation.\nGenotypes were derived from the 500k imputed array using the Haplotype Reference Consortium\npanel. Post-imputation quality control excluded variants with imputation INFO score below 0.8,\nminor allele frequency below 0.01, or Hardy-Weinberg equilibriump-value below1\u00d7 10\u22126. Genome-\nwide association testing used PLINK2 v2 logistic regression with sex, age at test, and the first ten\nprincipal components (PC1\u2013PC10) as covariates to control for population stratification. Phenotype\nlabels were coded 1 (control) and 2 (case) rather than 0/1 because PLINK2 interprets 0 as a missing\nvalue. An ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cohort Construction And Agent Workflow",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e942a2833d223b9be9488b8730d432f03adecf58f53589381ed7e5a9372d4ae6",
+            "evidence_id": "E9dae914347e40232-B0038",
+            "pages": [
+              11
+            ],
+            "section": "Cohort Construction And Agent Workflow",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1136,
+                "page": 11,
+                "section": "Cohort Construction And Agent Workflow",
+                "section_index": 27,
+                "start": 242,
+                "text": "ID, hypertension label, systolic blood pressure (SBP)\nand diastolic blood pressure (DBP), (3) GWAS submission via the broker's GWAS pipeline with\nPLINK2 logistic regression, (4) per-chromosome GLM outputs merged into a combined genome-wide\nassociation-results file, (5) Manhattan and QQ plot generation.\nGenotypes were derived from the 500k imputed array using the Haplotype Reference Consortium\npanel. Post-imputation quality control excluded variants with imputation INFO score below 0.8,\nminor allele frequency below 0.01, or Hardy-Weinberg equilibriump-value below1\u00d7 10\u22126. Genome-\nwide association testing used PLINK2 v2 logistic regression with sex, age at test, and the first ten\nprincipal components (PC1\u2013PC10) as covariates to control for population stratification. Phenotype\nlabels were coded 1 (control) and 2 (case) rather than 0/1 because PLINK2 interprets 0 as a missing\nvalue. An "
+              }
+            ],
+            "text": "ID, hypertension label, systolic blood pressure (SBP)\nand diastolic blood pressure (DBP), (3) GWAS submission via the broker's GWAS pipeline with\nPLINK2 logistic regression, (4) per-chromosome GLM outputs merged into a combined genome-wide\nassociation-results file, (5) Manhattan and QQ plot generation.\nGenotypes were derived from the 500k imputed array using the Haplotype Reference Consortium\npanel. Post-imputation quality control excluded variants with imputation INFO score below 0.8,\nminor allele frequency below 0.01, or Hardy-Weinberg equilibriump-value below1\u00d7 10\u22126. Genome-\nwide association testing used PLINK2 v2 logistic regression with sex, age at test, and the first ten\nprincipal components (PC1\u2013PC10) as covariates to control for population stratification. Phenotype\nlabels were coded 1 (control) and 2 (case) rather than 0/1 because PLINK2 interprets 0 as a missing\nvalue. An "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0040"
+        ],
+        "excerpt": "Comparison of expert reference versus NemoClaw labels revealed systematic discordance concentrated\nnear clinical thresholds, not random misclassification (Figure 3). Among 3,950 subjects labeled\nhypertensive by NemoClaw but normotensive in the expert reference, 2,911 (73.7%) had systolic\nblood pressure > 140mmHg or diastolic > 90mmHg, indicating clinically elevated measurements\ndespite absent ICD/medication labels in the expert track.\nWe requested a medication audit. NemoClaw generated SQL querying antihypertensive prescrip-\ntions across angiotensin-converting enzyme inhibitors, angiotensin receptor blockers, beta-blockers,\ncalcium-channel blockers, diuretics, and related classes (lisinopril through aliskiren). Only 125 of\nthe 3,950 discordant subjects had antihypertensive medication records, explaining much of the\ndisagreement: the expert cohort incorporated diagnosis and Rx history, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discordance Analysis And Iterative Refinement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9d437ab2c12a0a61c84eb2c0e7a2a502da9f5cc66e2d6e52137de8181edbd274",
+            "evidence_id": "E9dae914347e40232-B0040",
+            "pages": [
+              11
+            ],
+            "section": "Discordance Analysis And Iterative Refinement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 11,
+                "section": "Discordance Analysis And Iterative Refinement",
+                "section_index": 28,
+                "start": 0,
+                "text": "Comparison of expert reference versus NemoClaw labels revealed systematic discordance concentrated\nnear clinical thresholds, not random misclassification (Figure 3). Among 3,950 subjects labeled\nhypertensive by NemoClaw but normotensive in the expert reference, 2,911 (73.7%) had systolic\nblood pressure > 140mmHg or diastolic > 90mmHg, indicating clinically elevated measurements\ndespite absent ICD/medication labels in the expert track.\nWe requested a medication audit. NemoClaw generated SQL querying antihypertensive prescrip-\ntions across angiotensin-converting enzyme inhibitors, angiotensin receptor blockers, beta-blockers,\ncalcium-channel blockers, diuretics, and related classes (lisinopril through aliskiren). Only 125 of\nthe 3,950 discordant subjects had antihypertensive medication records, explaining much of the\ndisagreement: the expert cohort incorporated diagnosis and Rx history, "
+              }
+            ],
+            "text": "Comparison of expert reference versus NemoClaw labels revealed systematic discordance concentrated\nnear clinical thresholds, not random misclassification (Figure 3). Among 3,950 subjects labeled\nhypertensive by NemoClaw but normotensive in the expert reference, 2,911 (73.7%) had systolic\nblood pressure > 140mmHg or diastolic > 90mmHg, indicating clinically elevated measurements\ndespite absent ICD/medication labels in the expert track.\nWe requested a medication audit. NemoClaw generated SQL querying antihypertensive prescrip-\ntions across angiotensin-converting enzyme inhibitors, angiotensin receptor blockers, beta-blockers,\ncalcium-channel blockers, diuretics, and related classes (lisinopril through aliskiren). Only 125 of\nthe 3,950 discordant subjects had antihypertensive medication records, explaining much of the\ndisagreement: the expert cohort incorporated diagnosis and Rx history, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0041"
+        ],
+        "excerpt": "while the early agent track\nrelied primarily on lab values.\nWe then directed the agent to exclude discordant cases without medication evidence from the\ncase group and rerun GWAS. Post-reconciliation, NemoClaw cohort counts aligned closely with\nthe expert reference (Control 148,513 / Case 81,076). After this step, agent-derived labels closely\nmatched the team-defined cohort.\n11\nTable 3: Label confusion: expert reference vs. NemoClaw (before medication reconciliation).\nExpert Control Expert Case Expert Missing\nNemoClaw Control 28,127 0 148,513\nNemoClaw Case 3,950 24,756 81,076\nNemoClaw Missing 15,445 767 0\nFigure 3: Discordance analysis for subjects labeled hypertensive by NemoClaw but normotensive in\nthe expert reference cohort (n = 3,950). Scatter plot of systolic versus diastolic blood pressure with\nclinical threshold lines at 140/90 mmHg. Discordance concentrates at the boundary region ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discordance Analysis And Iterative Refinement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bf449eb75698fdaae8377ed186b3d42ca1f877b4b25fc244fc96e6f774c218b4",
+            "evidence_id": "E9dae914347e40232-B0041",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Discordance Analysis And Iterative Refinement",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1277,
+                "page": 11,
+                "section": "Discordance Analysis And Iterative Refinement",
+                "section_index": 28,
+                "start": 898,
+                "text": "while the early agent track\nrelied primarily on lab values.\nWe then directed the agent to exclude discordant cases without medication evidence from the\ncase group and rerun GWAS. Post-reconciliation, NemoClaw cohort counts aligned closely with\nthe expert reference (Control 148,513 / Case 81,076). After this step, agent-derived labels closely\nmatched the team-defined cohort.\n11"
+              },
+              {
+                "end": 521,
+                "page": 12,
+                "section": "Discordance Analysis And Iterative Refinement",
+                "section_index": 29,
+                "start": 0,
+                "text": "Table 3: Label confusion: expert reference vs. NemoClaw (before medication reconciliation).\nExpert Control Expert Case Expert Missing\nNemoClaw Control 28,127 0 148,513\nNemoClaw Case 3,950 24,756 81,076\nNemoClaw Missing 15,445 767 0\nFigure 3: Discordance analysis for subjects labeled hypertensive by NemoClaw but normotensive in\nthe expert reference cohort (n = 3,950). Scatter plot of systolic versus diastolic blood pressure with\nclinical threshold lines at 140/90 mmHg. Discordance concentrates at the boundary region "
+              }
+            ],
+            "text": "while the early agent track\nrelied primarily on lab values.\nWe then directed the agent to exclude discordant cases without medication evidence from the\ncase group and rerun GWAS. Post-reconciliation, NemoClaw cohort counts aligned closely with\nthe expert reference (Control 148,513 / Case 81,076). After this step, agent-derived labels closely\nmatched the team-defined cohort.\n11\nTable 3: Label confusion: expert reference vs. NemoClaw (before medication reconciliation).\nExpert Control Expert Case Expert Missing\nNemoClaw Control 28,127 0 148,513\nNemoClaw Case 3,950 24,756 81,076\nNemoClaw Missing 15,445 767 0\nFigure 3: Discordance analysis for subjects labeled hypertensive by NemoClaw but normotensive in\nthe expert reference cohort (n = 3,950). Scatter plot of systolic versus diastolic blood pressure with\nclinical threshold lines at 140/90 mmHg. Discordance concentrates at the boundary region "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0043"
+        ],
+        "excerpt": "Both expert-curated and agent-orchestrated workflows ran PLINK2 GWAS on the TPMI imputed\nlibrary with consistent covariate adjustment.Figure 4compares Manhattan plots for the expert ref-\nerence cohort and the NemoClaw-orchestrated GWAS. After team-directed phenotype reconciliation,\nboth converged on the same genome-wide significant signals, namely FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, demonstrating that the agent-orchestrated analysis matched independently curated\nexpert results in both locus identification and signal direction. These are replications of known\nhypertension loci in a Taiwanese cohort, not novel discovery claims. Lead loci are summarized in\nTable 4.\nTable 4: Lead genome-wide significant loci (agent GWAS, expert-aligned phenotype).\nChromosome Locus/Gene Significance (approx.\n\u2212log 10 p)\nPrior biological role",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Gwas Execution And Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "532dd2f7afa467f07193a721ea831e22a81c78d778ebc57ad623ba97c3154748",
+            "evidence_id": "E9dae914347e40232-B0043",
+            "pages": [
+              13
+            ],
+            "section": "Gwas Execution And Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 831,
+                "page": 13,
+                "section": "Gwas Execution And Results",
+                "section_index": 30,
+                "start": 0,
+                "text": "Both expert-curated and agent-orchestrated workflows ran PLINK2 GWAS on the TPMI imputed\nlibrary with consistent covariate adjustment.Figure 4compares Manhattan plots for the expert ref-\nerence cohort and the NemoClaw-orchestrated GWAS. After team-directed phenotype reconciliation,\nboth converged on the same genome-wide significant signals, namely FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, demonstrating that the agent-orchestrated analysis matched independently curated\nexpert results in both locus identification and signal direction. These are replications of known\nhypertension loci in a Taiwanese cohort, not novel discovery claims. Lead loci are summarized in\nTable 4.\nTable 4: Lead genome-wide significant loci (agent GWAS, expert-aligned phenotype).\nChromosome Locus/Gene Significance (approx.\n\u2212log 10 p)\nPrior biological role"
+              }
+            ],
+            "text": "Both expert-curated and agent-orchestrated workflows ran PLINK2 GWAS on the TPMI imputed\nlibrary with consistent covariate adjustment.Figure 4compares Manhattan plots for the expert ref-\nerence cohort and the NemoClaw-orchestrated GWAS. After team-directed phenotype reconciliation,\nboth converged on the same genome-wide significant signals, namely FGF5, ATP2B1, CNNM2, FTO,\nand GRB14, demonstrating that the agent-orchestrated analysis matched independently curated\nexpert results in both locus identification and signal direction. These are replications of known\nhypertension loci in a Taiwanese cohort, not novel discovery claims. Lead loci are summarized in\nTable 4.\nTable 4: Lead genome-wide significant loci (agent GWAS, expert-aligned phenotype).\nChromosome Locus/Gene Significance (approx.\n\u2212log 10 p)\nPrior biological role"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0050"
+        ],
+        "excerpt": "NemoClaw was deployed in real biomedical workflows covering literature retrieval, workflow planning,\ntool selection, code generation, execution management, result interpretation, and manuscript\n13\nFigure 4: Genome-wide association results for hypertension after phenotype reconciliation. (Top)\nManhattan plot for the expert reference cohort. (Bottom) Manhattan plot for the NemoClaw-\norchestrated GWAS. Genome-wide significance threshold:\u2212log 10(p) = 7 .3( p < 5\u00d7 10\u22128). Conver-\ngent peaks at FGF5 (chr4), KCNK3/WNT2B (chr2), GRB14 (chr3), CNNM2 (chr10), ATP2B1\n(chr12), and FTO (chr16).\n14\npreparation. In the GWAS study, the agent independently performed study planning, statistical\nanalysis, visualization, and manuscript drafting. We systematically compared AI-generated workflows\nand outputs against independently curated analyses on our team.\nTeam members remained responsible for defining ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14,
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Expert Validation Protocol",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "48218997e8399570e0b0a19a5e6ea2a2638a30846df83074c7c4b6abc6e1df3e",
+            "evidence_id": "E9dae914347e40232-B0050",
+            "pages": [
+              13,
+              14,
+              15
+            ],
+            "section": "Expert Validation Protocol",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 196,
+                "page": 13,
+                "section": "Expert Validation Protocol",
+                "section_index": 36,
+                "start": 0,
+                "text": "NemoClaw was deployed in real biomedical workflows covering literature retrieval, workflow planning,\ntool selection, code generation, execution management, result interpretation, and manuscript\n13"
+              },
+              {
+                "end": 393,
+                "page": 14,
+                "section": "Expert Validation Protocol",
+                "section_index": 37,
+                "start": 0,
+                "text": "Figure 4: Genome-wide association results for hypertension after phenotype reconciliation. (Top)\nManhattan plot for the expert reference cohort. (Bottom) Manhattan plot for the NemoClaw-\norchestrated GWAS. Genome-wide significance threshold:\u2212log 10(p) = 7 .3( p < 5\u00d7 10\u22128). Conver-\ngent peaks at FGF5 (chr4), KCNK3/WNT2B (chr2), GRB14 (chr3), CNNM2 (chr10), ATP2B1\n(chr12), and FTO (chr16).\n14"
+              },
+              {
+                "end": 305,
+                "page": 15,
+                "section": "Expert Validation Protocol",
+                "section_index": 38,
+                "start": 0,
+                "text": "preparation. In the GWAS study, the agent independently performed study planning, statistical\nanalysis, visualization, and manuscript drafting. We systematically compared AI-generated workflows\nand outputs against independently curated analyses on our team.\nTeam members remained responsible for defining "
+              }
+            ],
+            "text": "NemoClaw was deployed in real biomedical workflows covering literature retrieval, workflow planning,\ntool selection, code generation, execution management, result interpretation, and manuscript\n13\nFigure 4: Genome-wide association results for hypertension after phenotype reconciliation. (Top)\nManhattan plot for the expert reference cohort. (Bottom) Manhattan plot for the NemoClaw-\norchestrated GWAS. Genome-wide significance threshold:\u2212log 10(p) = 7 .3( p < 5\u00d7 10\u22128). Conver-\ngent peaks at FGF5 (chr4), KCNK3/WNT2B (chr2), GRB14 (chr3), CNNM2 (chr10), ATP2B1\n(chr12), and FTO (chr16).\n14\npreparation. In the GWAS study, the agent independently performed study planning, statistical\nanalysis, visualization, and manuscript drafting. We systematically compared AI-generated workflows\nand outputs against independently curated analyses on our team.\nTeam members remained responsible for defining "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0054"
+        ],
+        "excerpt": "Parallel to the GWAS work, we used NemoClaw for drug-induced liver injury (DILI) prediction,\na complementary validation that NAIS supports multiple biomedical workflow types on the same\ngoverned agent platform.\nFollowing literature-grounded drug list curation (33 DILI-associated and 22 low-risk compounds\nfrom clinical databases), NemoClaw developed a progressive model architecture under team direction.\nThree conventional graph-based baselines were evaluated first. Model A (Molecular Graph Attention\nNetwork), Model B (graph neural network, GNN, with modality integration), and Model C (single-\nfeature logistic regression)achievedmean receiver operating characteristic area under the curve (ROC-\nAUC) values of 0.491\u20130.549, near random performance. Incorporating literature-guided prompts in\nModel D raised the mean ROC-AUC to0.770\u00b1 0.015(accuracy0 .700\u00b1 0.015), demonstrating that\nstructured ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Secondary Case Study: Dili Prediction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "efd180b3c60661d5d82bd487f3a47d88cb08653d7f056a0b9a5bbd0fe10586aa",
+            "evidence_id": "E9dae914347e40232-B0054",
+            "pages": [
+              15
+            ],
+            "section": "Secondary Case Study: Dili Prediction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 15,
+                "section": "Secondary Case Study: Dili Prediction",
+                "section_index": 40,
+                "start": 0,
+                "text": "Parallel to the GWAS work, we used NemoClaw for drug-induced liver injury (DILI) prediction,\na complementary validation that NAIS supports multiple biomedical workflow types on the same\ngoverned agent platform.\nFollowing literature-grounded drug list curation (33 DILI-associated and 22 low-risk compounds\nfrom clinical databases), NemoClaw developed a progressive model architecture under team direction.\nThree conventional graph-based baselines were evaluated first. Model A (Molecular Graph Attention\nNetwork), Model B (graph neural network, GNN, with modality integration), and Model C (single-\nfeature logistic regression)achievedmean receiver operating characteristic area under the curve (ROC-\nAUC) values of 0.491\u20130.549, near random performance. Incorporating literature-guided prompts in\nModel D raised the mean ROC-AUC to0.770\u00b1 0.015(accuracy0 .700\u00b1 0.015), demonstrating that\nstructured "
+              }
+            ],
+            "text": "Parallel to the GWAS work, we used NemoClaw for drug-induced liver injury (DILI) prediction,\na complementary validation that NAIS supports multiple biomedical workflow types on the same\ngoverned agent platform.\nFollowing literature-grounded drug list curation (33 DILI-associated and 22 low-risk compounds\nfrom clinical databases), NemoClaw developed a progressive model architecture under team direction.\nThree conventional graph-based baselines were evaluated first. Model A (Molecular Graph Attention\nNetwork), Model B (graph neural network, GNN, with modality integration), and Model C (single-\nfeature logistic regression)achievedmean receiver operating characteristic area under the curve (ROC-\nAUC) values of 0.491\u20130.549, near random performance. Incorporating literature-guided prompts in\nModel D raised the mean ROC-AUC to0.770\u00b1 0.015(accuracy0 .700\u00b1 0.015), demonstrating that\nstructured "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0056"
+        ],
+        "excerpt": "comparison. Mean AUC across multi-modal GNN variants (Models\nA\u2013E), evaluated on 390 compounds using 5-fold Murcko scaffold cross-validation. Model E (GNN +\nDiffDock + Boltz-2 features with structured prompt) achieved the highest AUC (0.842\u00b1 0.018) and\naccuracy (0.770\u00b10.015).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Secondary Case Study: Dili Prediction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6c212e02e285162d42ad101fd8bf6e4c914bad0492609287e2cffed1b07d8992",
+            "evidence_id": "E9dae914347e40232-B0056",
+            "pages": [
+              16
+            ],
+            "section": "Secondary Case Study: Dili Prediction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1067,
+                "page": 16,
+                "section": "Secondary Case Study: Dili Prediction",
+                "section_index": 41,
+                "start": 792,
+                "text": "comparison. Mean AUC across multi-modal GNN variants (Models\nA\u2013E), evaluated on 390 compounds using 5-fold Murcko scaffold cross-validation. Model E (GNN +\nDiffDock + Boltz-2 features with structured prompt) achieved the highest AUC (0.842\u00b1 0.018) and\naccuracy (0.770\u00b10.015)."
+              }
+            ],
+            "text": "comparison. Mean AUC across multi-modal GNN variants (Models\nA\u2013E), evaluated on 390 compounds using 5-fold Murcko scaffold cross-validation. Model E (GNN +\nDiffDock + Boltz-2 features with structured prompt) achieved the highest AUC (0.842\u00b1 0.018) and\naccuracy (0.770\u00b10.015)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0063"
+        ],
+        "excerpt": "Generalizability is the primary constraint. The NAIS deployment is a single-institution case\nstudy, and broader claims about NAIS performance require validation across additional hospital\nenvironments and data governance frameworks.\nThe GWAS results are replication evidence, not novel discovery. Lead loci are identified qualitatively\nfrom Manhattan-plot inspection. Exact per-SNP effect sizes and lead variant identification require\nextraction from the underlying association result files, which was not performed for this manuscript.\nThe DILI prediction case remains illustrative. Model E was evaluated on 390 compounds using\n5-fold Murcko scaffold cross-validation with low variance (SD 0.018), and ablation of the Diff-\nDock/thermodynamics branches drops AUC to 0.71, confirming the contribution of structural\nfeatures. A dataset of this size is insufficient for clinical-grade validation ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d9378adeac414cdb605421640986bd8511719906ddaf6bc37f43dd01b9c66c8",
+            "evidence_id": "E9dae914347e40232-B0063",
+            "pages": [
+              18
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 18,
+                "section": "Limitations",
+                "section_index": 46,
+                "start": 0,
+                "text": "Generalizability is the primary constraint. The NAIS deployment is a single-institution case\nstudy, and broader claims about NAIS performance require validation across additional hospital\nenvironments and data governance frameworks.\nThe GWAS results are replication evidence, not novel discovery. Lead loci are identified qualitatively\nfrom Manhattan-plot inspection. Exact per-SNP effect sizes and lead variant identification require\nextraction from the underlying association result files, which was not performed for this manuscript.\nThe DILI prediction case remains illustrative. Model E was evaluated on 390 compounds using\n5-fold Murcko scaffold cross-validation with low variance (SD 0.018), and ablation of the Diff-\nDock/thermodynamics branches drops AUC to 0.71, confirming the contribution of structural\nfeatures. A dataset of this size is insufficient for clinical-grade validation "
+              }
+            ],
+            "text": "Generalizability is the primary constraint. The NAIS deployment is a single-institution case\nstudy, and broader claims about NAIS performance require validation across additional hospital\nenvironments and data governance frameworks.\nThe GWAS results are replication evidence, not novel discovery. Lead loci are identified qualitatively\nfrom Manhattan-plot inspection. Exact per-SNP effect sizes and lead variant identification require\nextraction from the underlying association result files, which was not performed for this manuscript.\nThe DILI prediction case remains illustrative. Model E was evaluated on 390 compounds using\n5-fold Murcko scaffold cross-validation with low variance (SD 0.018), and ablation of the Diff-\nDock/thermodynamics branches drops AUC to 0.71, confirming the contribution of structural\nfeatures. A dataset of this size is insufficient for clinical-grade validation "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E9dae914347e40232-B0064"
+        ],
+        "excerpt": "(Figure 5).\nAt the system level, the proposal-review evaluator statistics represent a modest sample of 18\nproduction runs (Appendix A), and the variability observed in the FP16 container execution path\nindicates that governed-path coverage across diverse compute environments warrants continued\nevaluation (Appendix C).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5d641e05fd90f4f6fcf1989cbb815dc016e2a64442bf2e5550089d11c98270ac",
+            "evidence_id": "E9dae914347e40232-B0064",
+            "pages": [
+              18
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1213,
+                "page": 18,
+                "section": "Limitations",
+                "section_index": 46,
+                "start": 894,
+                "text": "(Figure 5).\nAt the system level, the proposal-review evaluator statistics represent a modest sample of 18\nproduction runs (Appendix A), and the variability observed in the FP16 container execution path\nindicates that governed-path coverage across diverse compute environments warrants continued\nevaluation (Appendix C)."
+              }
+            ],
+            "text": "(Figure 5).\nAt the system level, the proposal-review evaluator statistics represent a modest sample of 18\nproduction runs (Appendix A), and the variability observed in the FP16 container execution path\nindicates that governed-path coverage across diverse compute environments warrants continued\nevaluation (Appendix C)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.11084",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "replication",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7168433647",
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "evidence_ids": [
+          "E9dae914347e40232-B0003",
+          "E9dae914347e40232-B0004",
+          "E9dae914347e40232-B0008",
+          "E9dae914347e40232-B0009",
+          "E9dae914347e40232-B0010",
+          "E9dae914347e40232-B0023",
+          "E9dae914347e40232-B0025",
+          "E9dae914347e40232-B0026",
+          "E9dae914347e40232-B0037",
+          "E9dae914347e40232-B0038",
+          "E9dae914347e40232-B0040",
+          "E9dae914347e40232-B0041",
+          "E9dae914347e40232-B0043",
+          "E9dae914347e40232-B0050",
+          "E9dae914347e40232-B0054",
+          "E9dae914347e40232-B0056",
+          "E9dae914347e40232-B0063",
+          "E9dae914347e40232-B0064"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7168433647",
+        "claim_evidence_alignment": "The claims that NAIS executes end-to-end workflows while preserving institutional privacy boundaries and generating outputs comparable to expert analyses are supported by empirical GWAS results, label confusion matrices, discordance analysis, and multi-modal predictive modeling benchmarks.",
+        "context_id": "9dae914347e40232b9fe27fa6d7200ec6f0ef3e812013fc5ad36cfa22cf767fe",
+        "decision": "pass",
+        "evaluation_assessment": "The platform is empirically evaluated on a real-world hypertension genome-wide association study using 286,422 individuals from a hospital biobank, successfully replicating established genomic loci (FGF5, ATP2B1, CNNM2, FTO, and GRB14) in alignment with an independently curated expert analysis. Additional validation demonstrates utility on a drug-induced liver injury prediction workflow (AUC 0.842) and across containerized benchmark runs.",
+        "evidence_ids": [
+          "E9dae914347e40232-B0003",
+          "E9dae914347e40232-B0004",
+          "E9dae914347e40232-B0008",
+          "E9dae914347e40232-B0009",
+          "E9dae914347e40232-B0010",
+          "E9dae914347e40232-B0023",
+          "E9dae914347e40232-B0025",
+          "E9dae914347e40232-B0026",
+          "E9dae914347e40232-B0037",
+          "E9dae914347e40232-B0038",
+          "E9dae914347e40232-B0040",
+          "E9dae914347e40232-B0041",
+          "E9dae914347e40232-B0043",
+          "E9dae914347e40232-B0050",
+          "E9dae914347e40232-B0054",
+          "E9dae914347e40232-B0056",
+          "E9dae914347e40232-B0063",
+          "E9dae914347e40232-B0064"
+        ],
+        "limitations": "The authors transparently acknowledge that evaluation is largely focused on a single-institution deployment, GWAS results reflect locus replication rather than novel variant discovery without per-SNP effect extraction, and the secondary drug-induced liver injury study relied on a modest compound sample size.",
+        "method_assessment": "The system architecture clearly delineates reasoning and orchestration from data governance by routing requests through sandboxed execution, a broker API, and Kubeflow containers, ensuring no individual-level protected health information is released to the agent. The approach is documented via end-to-end operational stages, including proposal review, SQL cohort extraction, containerized execution, and iterative discordance auditing.",
+        "quality_rationale": "The manuscript presents a rigorous, well-engineered architectural design addressing a vital open challenge in deploying autonomous/agentic AI within privacy-regulated biomedical environments. The system is validated through extensive real-world clinical data with clear controls, human-expert comparative baselines, and transparent documentation of limitations and failure recovery.",
+        "scoped_contribution": "The paper introduces the NVAITC AI Scientist (NAIS), a governed agentic research architecture that orchestrates biomedical workflows across protected institutional boundaries using brokered execution, durable state tracking, aggregate-only artifact retrieval, and human-in-the-loop oversight.",
+        "source_content_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorous, well-engineered architectural design addressing a vital open challenge in deploying autonomous/agentic AI within privacy-regulated biomedical environments. The system is validated through extensive real-world clinical data with clear controls, human-expert comparative baselines, and transparent documentation of limitations and failure recovery.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "1c50a67c04c813c9066a85d1ea698d0a2c03f250d8540490ca6f1549f1146fb4",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently acknowledge that evaluation is largely focused on a single-institution deployment, GWAS results reflect locus replication rather than novel variant discovery without per-SNP effect extraction, and the secondary drug-induced liver injury study relied on a modest compound sample size."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -182,7 +2113,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

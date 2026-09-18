@@ -59,16 +59,154 @@
             <p>Personalized language agents use persistent memory to adapt to users over time, but the same mechanism creates an attack surface. When new information conflicts with stored preferences, an agent must distinguish genuine preference drift from temporary context shifts, ambiguity, or adversarial memory poisoning. We fo...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>This paper presents an exceptional, rigorous contribution combining theoretical analysis, well-engineered architectural design, and unusually rigorous empirical validation. The inclusion of strong supervision-matched controls, independent human red-teaming, adaptive attacks, and frank reporting of negative/modest transfer results satisfies rigorous curation standards.</p>
+      <p>Limitations are clearly addressed, including the text-only threat model, remaining vulnerabilities to same-origin and slow gradual attacks, the shrinkage of performance gains when tested on independent external distributions, and increased per-turn inference latency.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T09:50:22.751909+00:00.</p>
+        <p>Coverage: 117428 of 117428 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>revision, that conditioning
+on the interaction history is never worse and is strictly better under a stated condition, and that a bounded-cost
+clarifying question enlarges the achievable error region under a stated condition. CAPTUREtracks the latent state
+with a neural differential equation, writes hypotheses into a ledger stratified by timescale, queries the user when its
+belief is too uncertain to act on, and audits the causal influence of its own citations by counterfactual removal. On
+480 held-out episodes from 96 users, CAPTUREreaches a 71.5% win rate against 69.3% for a baseline given identical
+supervision and 66.1% for the strongest heuristic, holds fixed-policy poisoning to 11.5%, and adheres to 83.5% of
+genuine updates. An adaptive attacker with the released weights raises that to 24.7%, at which point a provenance
+filter is marginally more secure and considerably less </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recency
+profile of a genuine revision, and a user revising through a summarized document can match the provenance profile of
+an attack, so each family of heuristic fails on the case the other handles.
+CAPTUREimplements this view. It carries a continuous-time belief over the user state, integrated with a neural
+differential equation (Chen et al., 2018; Rubanova et al., 2019), so evidence arriving at irregular intervals is discounted
+by a learned function of elapsed time rather than a fixed per-turn schedule. It commits hypotheses to a graph-structured
+ledger with separate stable, contextual, and transient layers, so a claim about a weekend project cannot overwrite a
+claim about professional identity. When the belief over the correct action is close to uniform, the agent asks, converting
+an uncertain write into a single clarifying turn. A safety selector sits outside the personalization </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>used in practice.
+Theorem 1(Informal summary; the formal statements are Theorems 2 to 4 in Appendix A).Letφreturn the elapsed
+time since the contradicted belief was last corroborated together with the channel label of the incoming event, and let
+δφ be the smallest total variation distance between the genuine and adversarial laws ofφthat any feasible adversary
+can achieve. Then every decision rule reading onlyφsatisfies
+FUR(d) + RRL(d)≥1−δ φ (2)
+against a worst-case feasible adversary, whereFURis the rate of accepting an injected claim andRRLthe rate of
+rejecting a genuine one. Against any fixed adversary, conditioning on the full history in place ofφnever increases
+the achievable error, and strictly decreases it whenever the sign of the conditional likelihood ratio givenφis non-
+degenerate on a set of views of positive measure. If a clarifying question returns a label through a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hypotheses live as nodes in a directed graph over a vector store (Johnson et al., 2021), with edges recording support
+and contradiction. Each node sits in one of three layers, and each layer carries a base decay rateγ, so that the
+confidence of a node at timetwhose last corroboration was att 0 isc 0 σ(ht) exp(−γ(t−t 0)), wherec 0 ∈(0,1]is the
+confidence at write time andσ(h t)∈(0,1)is a scalar sigmoid read-off from the gate&#x27;s latent belief, trained jointly
+withf θ and shared across node types.
+We distinguish the learned components from the fixed ones. The dynamicsf θ and the modulationσare learned
+end to end; the three base rates are not. They are selected once by grid search on validation and frozen for every
+experiment, atγ s = 0.01,γ c = 0.1, andγ g = 0.5, in units of days. The layer sets a prior on how fast a class of belief
+fades and the learned component determines the departure </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The selector samplesNcandidates and scores each for personalized utilityr p and safety riskr s,
+y⋆ = arg max
+y∈Y
+
+α rp(y)−β rs(y)
+
+s.t.r s(y)≤τ safe,(5)
+4
+falling back to a calibrated refusal when every candidate violates the constraint. Nothing in the ledger can moveτ safe.
+This asymmetry is why poisoning that succeeds at the memory layer still fails to produce harmful output in most of
+our contamination episodes.
+For interpretability we do not report attention or retrieval rank, both of which are known to be unreliable as
+explanations (Jain and Wallace, 2019; Wiegreffe and Pinter, 2019; Turpin et al., 2023). Instead, for each ledger node
+ni the agent cites, we re-decode with that node removed and measure the shift in utility,
+Inf(n i) =U(y factual)−U
+ 
+yL\ni
+
+,(6)
+following the counterfactual tradition in explanation (Wachter et al., 2018; Verma et al., 2024). The audit then </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>58.7% 0.36 4.9 42.6% 73.4% 31.5% 12.1% 7.9%
+Static summary 58.1% 0.39 7.2 40.5% 62.8% 25.4% 11.6% 8.4%
+Recency RAG 63.8% 0.302.851.6%85.7%41.2% 13.5%7.5%
+StateMem 66.1% 0.31 4.0 34.8% 81.5% 24.1% 11.9% 8.0%
+Provenance-only 61.5% 0.34 4.2 20.0% 74.1% 19.6% 10.7% 9.6%
+MemGPT default 62.7% 0.34 4.6 44.3% 77.2% 30.0% 12.8% 7.8%
+Sup. Transformer-∆t69.3% 0.29 3.6 15.9% 82.1% 12.4% 8.5% 8.8%
+CAPTURE71.5% 0.273.411.5%83.5%8.9% 8.0%9.0%
+Oracle-memory 82.4% 0.08 0.0 0.0% 100.0% 0.0% 3.8% 7.1%</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>that understates the
+dependence.
+Method Fixed-policy ASR↓Adaptive ASR↓Independent ASR↓
+Recency RAG 51.6% n/a 50.4%
+StateMem 34.8% 37.2% [32.6, 42.0] 37.1%
+Provenance-only 20.0% 22.1% [18.3, 26.3] 26.3%
+Sup. Transformer-∆t15.9% 27.9% [23.6, 32.6] 22.5%
+CAPTURE11.5%24.7% [20.6, 29.1]18.3%
+Q3. What each component is worth.Table 6 removes one piece at a time. The gate carries the security result
+almost entirely, costing 22.0 points of poisoning resistance and 0.15 regret, and provenance a further 14.0, so the two
+are complementary, the empirical counterpart of Theorem 3. Timescale separation is worth 5.4 points of adherence
+and probing 3.6. Removing the safety bound raises adherence by 4.0 while leaving ledger promotion unchanged,
+confirming adherence is output-level, and triples safety attack success. Removing the audit drops evidence F1 from
+0.79 to 0.58.
+Q4. Supervision or </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>architecture?The two separate only against a baseline given the same supervision, so we
+trained one. The supervised Transformer in Table 1 sees identical six-class labels and history, an explicitlog(1 + ∆t)
+input, and the same extractor, clarification channel, selector, and safety scorer, writing into a flat versioned memory
+with no ODE and no timescale ledger. It reaches 69.3% win rate and 15.9% poisoning, most of the way from StateMem
+to CAPTURE. What remains is 2.2 points of win rate at[0.6,3.9],p= 0.011, and 4.4 of poisoning at[−7.0,−1.9],
+p= 0.003. Supervision therefore explains much of the improvement and the architecture the rest. On the labels
+themselves the two are close, macro-F1 0.71 against 0.68 with a paired difference short of significance, placing the
+architectural contribution in the ledger and the temporal update rather than in per-event classification. Frozen and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>moves the heuristic baselines, which expose no gradient. CAPTUREthen
+no longer leads on security alone, since Provenance-only reaches 22.1% against our 24.7%, a paired difference of 2.6
+points with interval[−1.9,7.2]atp= 0.29, so the two are not reliably separated on this axis, and what CAPTURE
+retains is comparable security at 83.5% adherence against Provenance-only&#x27;s 74.1%. Independently authored attacks
+tell a milder version of the same story. On 240 attacks from twelve external red-teamers with no access to our
+templates, CAPTUREreaches 18.3%, above our own generator&#x27;s 11.5% and still the lowest of any method tested, and
+four of the five methods degrade by 6.3 to 6.8 points while Recency RAG, which mounts no defense, moves slightly
+the other way.
+Q6. Transfer across backbones.Every method in Table 1 was run on Qwen3-8B and Llama-3.1-8B with three
+seeds each, so those cells average </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>quarantine without
+update, so that row is CAPTUREwithout interactive clarification, and it holds no attacks. Separately, forty participants
+completed four to six sessions over two to three weeks against one fixed neutral assistant. Their histories were then
+frozen and replayed identically to every system with six controlled attacks injected per participant, none of which a
+participant saw, and when the gate asks the stored annotation answers, making this an oracle-assisted replay with zero
+answer error. Appendix D has both protocols.
+What transfers.The advantage survives both moves and attenuates each time. On D-PREFGUARDCAPTUREleads
+StateMem by 5.4 points of win rate, and on replayed histories by 4.5. Satisfaction came from a separate blinded within-
+participant rating task, four matched output pairs per session with identity, order, and side randomized, giving 4.1 at
+[3.9,4.3]against </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Theorem 2 constrains onlyσ(φ)-measurable rules, says nothing about a heuristic reading a third fixed feature, and
+depends on Assumption 4 granting the adversary the visible transcript. CAPTUREis text-only and does not address
+weight-level poisoning, and the clarification budget is tuned on our data. D-PREFGUARDis synthetic and validated
+on a 300-episode subset, so absolute numbers are relative comparisons rather than deployment estimates. Horizon-
+Bench reduces that without removing it, since its trajectories are simulated even where annotations are human, and 40
+participants supports an effect estimate but no subgroup claim.
+We state in advance what would refute the claims. Five criteria cover the strictness condition of Theorem 3, whether
+provenance alone suffices on same-origin contamination, whether static summaries match the ledger on recurrence,
+whether influence AUC falls to </blockquote></details></li><li><strong>Contribution clarity — page 24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>66.0] 43 [35, 51]
+StateMem 0.76 0.65 0.26 63.0 [57.5, 68.5] 28 [20, 36]
+Provenance-only 0.57 0.50 0.33 58.5 [53.0, 64.0] 15 [9, 22]
+MemGPT default 0.70 0.57 0.29 60.0 [54.5, 65.5] 35 [27, 43]
+Sup. Transformer-∆t0.77 0.68 0.23 65.8 [60.2, 71.0] 17 [11, 24]
+CAPTURE0.780.72 0.21 67.5 [62.0, 73.0] 12 [7, 18]
+Oracle-memory 0.91 0.86 0.00 75.0 0.0
+E Independent Labels, Independent Attacks, and Query-Matched Baselines
+Independent event-level annotation.Three annotators uninvolved in benchmark construction labeled 720 candidate
+events without access to generator metadata. Agreement wasα= 0.78on authenticity,0.74on scope,0.71on
+timescale, and0.67on the six-way action. The program labels agree with the adjudicated human action 83.6% of the
+time, and CAPTURE&#x27;s action macro-F1 against the human labels is 0.71 with interval[0.67,0.75]. This is the closest
+thing in the paper to a check on the gate&#x27;s </blockquote></details></li><li><strong>Contribution clarity — page 25</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the strongest available evidence
+that the security result is not an artifact of our attack taxonomy.
+Adaptive attack construction.The attacker performs a 32-candidate paraphrase search that preserves the injected
+claim and its origin while maximizingP(add) +P(revise)−P(quarantine)−P(clarify)under semantic-similarity
+and length constraints. It knows the released weights and the fixed threshold and does not observe the private ledger
+or the realized gate state. Against CAPTUREit raises retrievable-memory attack success to 34.4% and response-level
+success to 24.7%, and it transfers to the supervised Transformer at 27.9% while barely moving the heuristic baselines,
+which expose no gradient.
+Supervision-matched Transformer.Four pre-layer-normalized causal Transformer blocks, hidden dimension 256,
+eight heads at 32 dimensions each, feed-forward dimension 1,024 with GELU, dropout 0.10, and </blockquote></details></li><li><strong>Contribution clarity — page 28</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>authenticity gate +0.15 +22.0 pp−2.5 pp 9.5% 8.3% 0.64 1850 ms
+w/o neural ODE +0.02 +2.1 pp−1.8 pp 8.2% 8.9% 0.76 2380 ms
+w/o epistemic probe +0.04 +5.0 pp−3.6 pp 8.5% 8.7% 0.70 1880 ms
+w/o timescale sep. +0.05 +3.3 pp−5.4 pp 8.6% 8.8% 0.67 2280 ms
+w/o provenance +0.06 +14.0 pp−4.0 pp 9.0% 8.4% 0.68 2300 ms
+w/o safety bound−0.01 +1.0 pp +4.0 pp 23.0%4.8%0.77 2050 ms
+w/o causal audit +0.01 +0.6 pp−0.4 pp 8.2% 8.9% 0.581450 ms
+against Recency RAG and 0.09 against Provenance-only. StateMem is not among the baselines Appendix I reports
+on that track, so the scope statistic and the regret figures are two measurements rather than one decomposition. On
+contamination, the gate&#x27;s most common success is not outright rejection but quarantine followed by non-corroboration,
+which is how 58% of blocked poisoning attempts resolve. The claim is held, never corroborated, and decays out of </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +245,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

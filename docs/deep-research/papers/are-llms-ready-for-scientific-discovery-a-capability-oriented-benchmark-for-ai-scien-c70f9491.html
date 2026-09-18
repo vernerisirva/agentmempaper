@@ -59,16 +59,229 @@
             <p>Existing benchmarks for scientific data analysis evaluate LLMs primarily on code execution or workflow completion, overlooking that scientific analysis serves to support distinct types of scientific claims: hypothesis exploration, statistical inference, mechanistic explanation, each with different assumptions and va...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The benchmark provides a well-substantiated, methodologically sound framework addressing known pitfalls in execution-only LLM evaluations. Data generation, programmatic verification, and diagnostic error evaluations are thoroughly documented and scientifically credible.</p>
+      <p>The authors explicitly discuss constraints including the potential gap between synthetic semantic graph dynamics and real experimental confounders, the risk of MCQ options inducing superficial heuristics, and annotating only the first execution error.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T09:52:17.798986+00:00.</p>
+        <p>Coverage: 43438 of 43438 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Existing benchmarks for scientific data analysis evaluate
+LLMs primarily on code execution or workflow completion,
+overlooking that scientific analysis serves to support distinct
+types of scientific claims: hypothesis exploration, statistical
+inference, mechanistic explanation, each with different as-
+sumptions and validity criteria. We introduceSDABench, a
+benchmarkthatreorganizesevaluationaroundsixcapabilities
+(descriptive, exploratory, inferential, predictive, causal, and
+mechanistic) across five domains (Biology, Chemistry, En-
+vironment, Geography, Physics). SDABench comprises 527
+real-data instances (SDA-Real) and 6,000 synthetic instances
+(SDA-Synth), each in both multiple-choice and open-ended
+formats,constructedthroughanautomatedpipeline.Evaluat-
+ing 15 representative LLMs, we find that models handle de-
+scriptive analysis well but degrade sharply on tasks </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>con-
+structSDABenchacross five core scientific domains: Bi-
+ology, Chemistry, Environment, Geography, and Physics. It
+consists of two complementary components: SDA-Real, a
+curatedcollectionofreal-worldscientificdatasets,andSDA-
+Synth, which contains synthetic datasets generated through
+the construction of semantic graphs. Utilizing a three-stage
+construction pipeline of LLM-based template construction,
+programmatic ground-truth derivation, and option genera-
+tion, SDABench includes 527 instances in SDA-Real and
+6,000 instances in SDA-Synth. Each instance is provided
+in both multiple-choice question (MCQ) and open-ended
+question (OEQ) formats. Furthermore, we evaluate 15 rep-
+resentativeLLMsandanalyzehowmodelerrorsvaryacross
+task types, domains, and model scales. Two findings stand
+arXiv:2607.11079v1  [cs.AI]  13 Jul 2026</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>automated benchmark construction
+pipeline that converts scientific resources into verified
+analysisinstancesthroughLLM-basedtemplateconstruc-
+tion, programmatic ground-truth derivation, and option
+generation.
+•We propose a five-stage error analysis framework, which
+classifies failures along the execution pipeline of scien-
+tific data analysis (Scope, Variable, Function, Relation-
+ship, Conclusion). This taxonomy reveals that as models
+improve,earlygroundingerrorsdecreasewhilelater-stage
+errors persist, making Function, Relationship, and Con-
+clusion Errors the dominant failure modes for stronger
+models, a diagnostic signal invisible to aggregate accu-
+racy scores.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We introduce SDABench, a benchmark designed to system-
+atically evaluate the scientific data analysis capabilities of
+LLMs. SDABench covers five scientific domains (Biology,
+Chemistry, Environment, Geography, and Physics) and six
+scientific discovery capabilities, which we operationalize
+as task types:descriptivetasks summarize measurements
+to characterize a phenomenon;exploratorytasks examine
+measurements to discover patterns that may suggest testable
+hypotheses;inferentialtasks use sampled measurements to
+evaluateascientificclaimaboutabroaderphenomenonwith
+quantified uncertainty;predictivetasks use measured vari-
+ables to estimate unknown observations or future states;
+causaltasks estimate how a defined intervention, exposure,
+Construction
+LLM
+Scientific
+scenarios Variables
+Target
+Internal
+Source
+Causal layer
+(iSCM)
+Semantic
+graph
+Parents +Mechanism
+Add
+perturbationsSDA-Synth
+Figure </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>five
+domains(e.g.,plantstressphysiology,polymerizationkinet-
+ics),eachspecifyingmeasurablevariables,admissibleunits,
+and ranges.2) Semantic graph construction.For each sce-
+nario, we build a semantic DAGG= (V, E)whose nodes
+aresource,internal,andtargetvariables,eachannotatedwith
+metadata (type, unit, range). For each non-source variable,
+the construction LLM proposes a mechanism conditioned
+on its parents, implemented as explicit algebraic equations
+or numerical solver specifications (e.g., ODEs). Variables
+with causal semantics are generated on a causal sub-DAG
+G⊆ Gusing internally standardized SCMs (iSCMs) (Or-
+maniec et al. 2025), modeling how interventions propagate
+through intermediate variables to the target.3) Data gen-
+eration.We generate each dataset in topological order over
+G: source variables are sampled from metadata, and inter-
+nal/target variables are computed by </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pipeline:
+aTaxonomistassignseachseedquestiontoadomainandone
+ofthesixtasktypesandidentifiestherequireddatacolumns;
+anExtractorabstracts dataset-specific entities into a typed
+templateτwith typed placeholders and validity constraints
+(e.g.,&quot;Is there a significant correlation between soil mois-
+tureandstomatalconductance?&quot;becomes&quot;Isthereasignifi-
+cantcorrelationbetween{variable_1}and{variable_2}?&quot;);
+aGeneratorinstantiatesτon a target datasetDby bind-
+ing each placeholder to a valid column, value, or entity,
+yielding a candidate questionQ; and aVerifierrejects ques-
+tions with logical inconsistencies, unresolved placeholders,
+schema mismatches, answer leakage, or near-duplicates.
+Stage 2: Programmatic Ground-Truth Generation.To
+create accurate answers for generated questions, we imple-
+ment a deterministic derivation procedurefτ for each tem-
+plateτ. The procedure takes the reference </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dataDand the
+Stage 3: Option Generation.
+Validation
+{signficant: &quot;true&quot;,
+p-value: 0.0007}
+Ground-truth Answer
+{A: signficant: &quot;false&quot;, p-value: 0.21},
+{B: signficant: &quot;true&quot;, p-value: 0.0007}
+{C: signficant: &quot;false&quot;, p-value: 0.0007},
+{D: signficant: &quot;true&quot;, p-value: 0.21}
+Option
+{sample_id: 1, humidity: 61.2,
+temperature: 23.1, ...}
+Dataset D
+Diffusion Confusion Randomize Default
+Stage 2: Programmatic Ground-Truth Generation.
+p
+Verifier
+Is there a significant correlation between
+temperature and humidity?
+Finalized Question:
+valid logic &amp; wording
+placeholders resolved
+no leakage / duplicate
+otherwise discard
+Assignment p: Candidate Q
+Extractor
+{variable_1} &amp; {variable_2}: type, unit, role
+Template τ:
+Is there a significant {correlation} between
+{variable_1} and {variable_2}?
+Constraints:
+entities abstracted
+structure preserved
+constraints attached
+otherwise discard
+Template τ
+Is there a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Validation.WeapplythesamevalidationpipelinetoSDA-
+Synth and SDA-Real. We first check the consistency among
+each instance, dataset, derivation procedure, ground-truth
+answer, and task definition, removing 779 candidates with
+underspecified variables, dataset-instance mismatches, tax-
+onomyerrors,orambiguousinterpretations.Wethenconduct
+a manual quality audit of all 307 typed question templates,
+their associated programmatic derivation procedures, and
+2,000 sampled instances. This process identified and cor-
+rected 11 minor issues and filtered out 324 unreliable cases.
+Formultiple-choiceinstances,werecomputedistractorswith
+fτ and remove 86 cases with non-unique correct answers or
+near-equivalent distractors.
+Dataset statistics and splits.After validation, we obtain
+6,231SDA-Synthinstancesand527SDA-Realinstances.For
+controlled evaluation on SDA-Synth, we stratify instances
+by five domains </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Model OEQ MCQ
+Overall D I E P C M Overall D I E P C M
+Open-source LLMs
+DeepSeek V3.2 51.17 88.50 59.00 41.50 31.00 46.00 41.00 62.21 90.00 69.00 44.00 47.75 45.75 76.75
+DeepSeek R1 42.13 85.00 46.50 34.50 23.50 40.00 23.25 56.38 84.25 67.00 42.25 36.50 40.50 67.75
+Qwen 3.5-397B-A17B 51.58 89.00 61.50 37.00 37.00 37.00 48.00 62.46 92.00 73.75 44.00 35.25 52.75 77.00
+Qwen 3-235B-Instruct 40.46 77.25 34.50 27.75 42.00 38.75 22.50 52.42 85.50 59.25 37.75 49.50 36.50 46.00
+Kimi K2.5 50.29 84.50 43.50 29.50 34.50 39.7570.00 57.04 92.25 73.00 34.50 25.75 36.2580.50
+GLM 5 51.67 87.75 64.75 36.5042.7548.00 30.25 60.79 91.5074.5038.75 41.00 42.00 77.00
+Llama 3.3-70B-Instruct 6.96 12.00 8.00 11.75 2.75 4.50 2.75 30.46 28.00 39.50 23.50 28.25 24.00 39.50
+Llama 3.1-8B-Instruct 5.04 10.25 3.50 8.25 0.50 7.75 0.00 25.00 21.50 17.75 21.50 24.75 30.50 34.00
+Average (Open-Source) 37.41 66.78 40.16 28.34 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Toevaluatethescientificdataanalysiscapabilitiesoffrontier
+LLMs,weanalyzetheirperformanceacrosssixscientifictask
+types and five scientific domains.
+Overall performance.Table 2 reports overall results on
+theheld-outSDA-SynthtestsplitunderbothOEQandMCQ
+formats. Because the four-option MCQ format has a 25%
+chance floor, OEQ and MCQ accuracies are not directly
+comparable; we use OEQ as the primary metric and treat
+MCQ as a complementary signal.
+Closed-source models set the strongest range, with GPT-
+5.4 at 58.33%, Gemini 3.1 Pro at 56.88%, and Claude Son-
+net 4.6 at 55.79% OEQ accuracy. Fine-tuned Llama-3.1-
+8B-Instruct approaches this range under both formats; the
+error-type objective further raises OEQ to 55.33%, suggest-
+ing task-aligned supervision helps smaller models learn the
+benchmark&#x27;s analysis structure.
+Comparing the two formats reveals divergent behaviors.
+Kimi K2.5 on Predictive </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Error Analysis Framework.Aggregate accuracy cannot
+reveal where in the analysis execution process a model fails.
+We therefore conducted a bottom-up inspection of incorrect
+responsesandidentifiedfiverecurringfailuremodesordered
+along the execution of scientific data analysis: (1) Scope Er-
+ror, misinterpreting the analytical target or task scope; (2)
+Variable Error, selecting the wrong analysis variables; (3)
+Function Error, choosing or applying an incorrect analyt-
+ical method; (4) Relationship Error, mischaracterizing the
+existence, direction, strength, or structure of variable inter-
+actions; and (5) Conclusion Error, drawing a final inference
+unsupported by the preceding analysis. We annotate the first
+errorintheexecution.Tocompareerrorprofilesacrosstasks,
+domains, and models, we report the normalized error rate
+(NER),NER E(S) = nE (S)
+oE (S), whereSis a task, domain, </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SDA-Synth versus SDA-Real.The broad preservation of
+the task-type hierarchy from SDA-Synth to SDA-Real sug-
+geststhatsyntheticsemanticgraphscapturethecorereason-
+ing demands of real scientific analysis. However, SDA-Real
+also exposes differences less visible in the controlled syn-
+theticsetting:realdatasetsusecanonicalvariablenamesthat
+align with pretrained knowledge (inflating mechanistic ac-
+curacy), while real exploratory analysis is more sensitive to
+heterogeneous schemas and noisy variables. These comple-
+mentary strengths motivate keeping both components.
+Limitations.SDA-Synth relies on synthetic semantic
+graphs whose mechanisms, while validated by domain ex-
+perts,maynotcapturethefullcomplexityofrealexperimen-
+talconfoundersandmeasurementartifacts.TheMCQformat,
+despiteperturbation-baseddistractors,caninducesuperficial
+patternmatchinginsomemodels.Ourerrortaxonomyanno-
+tates the </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +320,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

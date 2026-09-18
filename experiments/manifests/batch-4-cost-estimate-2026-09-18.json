@@ -1,0 +1,29 @@
+{
+ "roster_size": 10,
+ "gemini_primary": {
+  "expected_calls": 10,
+  "call_budget_per_paper": 1,
+  "expected_input_tokens": 323550,
+  "expected_output_tokens": 10070,
+  "monetary_cost": "UNKNOWN",
+  "basis": "covered_by_msc_allocation",
+  "note": "Google endpoint reports no charge; the MSc allocation rate is not established in this project. Not assumed to be zero; no amount fabricated."
+ },
+ "deepseek_adjudicator": {
+  "expected_calls": 10,
+  "max_calls_with_contract_retries": 20,
+  "call_budget_per_paper": 2,
+  "expected_input_tokens": 297600,
+  "expected_output_tokens": 4470,
+  "expected_cost_usd": 0.3134568,
+  "worst_case_cost_usd_all_retries": 0.6269136
+ },
+ "total_known_monetary_usd": 0.3134568,
+ "budget": {
+  "shared_ceiling_usd": 10.0,
+  "previously_charged_or_reserved_usd": 6.08092007,
+  "remaining_before_batch_usd": 3.91907993,
+  "expected_share_of_remaining_pct": 8.0
+ },
+ "basis": "per-paper means from the 2026-09-18 bounded integration smoke, as frozen in the Batch-4 protocol"
+}

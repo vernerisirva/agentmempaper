@@ -161,6 +161,28 @@ class ContractTests(unittest.TestCase):
         self.assert_contract(UNRESOLVED, 'uncertain', None)
         self.assert_contract(block(**{**UNRESOLVED, 'concern': 'major'}), 'pass', 'independence')
 
+    def test_h_unestablished_on_either_limb_cannot_be_declared_free_of_concern(self):
+        """An unresolved answer is not a clear one, on either limb of the question.
+
+        Known reuse with unresolved corroboration is the same epistemic position as
+        unresolved reuse with none reported, so neither may be declared no concern.
+        Where either limb is settled clear, nothing is forced.
+        """
+        for reuse in SIGNAL_REUSE:
+            for corroboration in ('absent', 'uncertain'):
+                value = block(signal_reuse=reuse, independent_corroboration=corroboration,
+                              corroboration_direction='unavailable', concern='none')
+                unestablished = reuse in ('materially_reused', 'uncertain')
+                with self.subTest(reuse=reuse, corroboration=corroboration):
+                    self.assertEqual(
+                        evaluation_independence_error({'decision': 'uncertain', INDEPENDENCE_FIELD: value},
+                                                      'primary'),
+                        'independence' if unestablished else None)
+                    # Except where material reuse with nothing reported forces major,
+                    # moderate stays available, so promotion is still the role's call.
+                    if not (reuse == 'materially_reused' and corroboration == 'absent'):
+                        self.assert_contract(block(**{**value, 'concern': 'moderate'}), 'pass', None)
+
     def test_a_direction_is_reportable_exactly_when_corroboration_is_present(self):
         for corroboration in CORROBORATION:
             for direction in CORROBORATION_DIRECTION:
@@ -349,6 +371,55 @@ class HistoricalCompatibilityTests(unittest.TestCase):
                 mutate(execution)
                 with self.assertRaises(ValueError):
                     QualityAssessment.from_dict(replace(result, execution=execution).to_dict())
+
+
+class HistoricalShapeTests(unittest.TestCase):
+    """The shapes actually present in the stored databases stay loadable.
+
+    The legacy-gate guard covers every promotion assessment version rather than only
+    the current one, so this pins down what that guard does and does not reject.
+    """
+
+    def row(self, assessment_version, gate_version, status):
+        decision = 'pass' if status == 'pass' else 'uncertain'
+        if gate_version != 'dual-promotion-v2':
+            legacy = legacy_receipt(PairModels(decision, decision, independence=None))
+            return replace(legacy, assessment_version=assessment_version,
+                           quality_gate_version=gate_version).to_dict()
+
+        # A dual-promotion-v2 row: the current pair and its provider provenance, written
+        # under the output contract of its own time, before the dimension existed.
+        def legacy_parse(content, role, context, **kwargs):
+            return parse_response(content, role, context, **{**kwargs, 'independence': False})
+
+        with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
+              patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
+              patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2')):
+            result = run_gate(PairModels(decision, decision, independence=None))
+        execution = deepcopy(result.execution)
+        execution.pop('independence_contract', None)
+        return replace(result, assessment_version=assessment_version,
+                       quality_gate_version=gate_version, execution=execution).to_dict()
+
+    def test_every_stored_promotion_shape_still_loads(self):
+        # These are the (assessment_version, gate, status) combinations the production
+        # databases actually hold for promotion rows, checked read-only before this change.
+        for version, gate, status in (('quality-promotion-v1', 'dual-promotion-v1', 'pass'),
+                                      ('quality-promotion-v1', 'dual-promotion-v1', 'uncertain'),
+                                      ('quality-promotion-v1', 'dual-promotion-v2', 'pass'),
+                                      ('quality-promotion-v1', 'dual-promotion-v2', 'uncertain')):
+            with self.subTest(version=version, gate=gate, status=status):
+                restored = QualityAssessment.from_dict(self.row(version, gate, status))
+                self.assertEqual(restored.quality_status, status)
+                self.assertEqual(restored.assessment_version, version)
+                self.assertNotIn(INDEPENDENCE_FIELD, restored.execution['primary'])
+
+    def test_a_promotion_version_pass_on_a_legacy_gate_is_still_rejected(self):
+        """No such row exists; the guard covers every promotion version, not just the new one."""
+        for version in ('quality-promotion-v1', 'quality-promotion-v2'):
+            with self.subTest(version=version):
+                with self.assertRaises(ValueError):
+                    QualityAssessment.from_dict(self.row(version, 'scientific-gate-v1', 'pass'))
 
 
 class RetryTests(unittest.TestCase):

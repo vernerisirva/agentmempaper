@@ -138,7 +138,7 @@ def independence_schema() -> dict:
     props['corroboration_direction'] = {'enum': list(CORROBORATION_DIRECTION),
         'description': 'Whether it supports the headline claim. supports/mixed/contradicts require independent_corroboration present; otherwise unavailable or not_applicable.'}
     props['concern'] = {'enum': list(INDEPENDENCE_CONCERN),
-        'description': 'major when signal_reuse is materially_reused with independent_corroboration absent, or when corroboration_direction contradicts a reused or uncertain signal. Not none when reuse is materially_reused or uncertain and corroboration is absent or uncertain. major forbids a pass.'}
+        'description': 'major when signal_reuse is materially_reused with independent_corroboration absent, or when corroboration_direction contradicts a reused or uncertain signal. Not none when reuse is materially_reused or uncertain unless corroboration is present and supports. major forbids a pass.'}
     return {'type': 'object', 'properties': props, 'required': list(props),
             'additionalProperties': False}
 
@@ -280,9 +280,10 @@ def evaluation_independence_error(value: dict, role: str) -> str | None:
     - material reuse with no independent corroboration is a major concern;
     - independent evidence that contradicts the headline claim is a major concern
       wherever the optimization and evaluation signals are reused or unresolved;
-    - where reuse is present or unresolved and corroboration is absent or unresolved,
-      the role cannot declare no concern at all, because silence and an unresolved
-      answer both leave the claimed independence unestablished rather than refuted;
+    - where reuse is present or unresolved, the role cannot declare no concern at all
+      unless independent corroboration is both present and supporting: silence, an
+      unresolved answer and partial support all leave the claimed independence
+      unestablished rather than refuted, and none of them is an all-clear;
     - a major concern cannot accompany that role's pass.
 
     An evaluator used only for final reporting, an objectively established outcome and
@@ -302,11 +303,12 @@ def evaluation_independence_error(value: dict, role: str) -> str | None:
         return 'independence'
     if reuse in {'materially_reused', 'uncertain'} and direction == 'contradicts' and concern != 'major':
         return 'independence'
-    # Unestablished on either limb is not the same as established clear, so 'none' is
-    # unavailable. 'moderate' remains open, which leaves promotion to the role's own
-    # scientific judgment rather than forcing non-promotion on an unresolved answer.
-    if (reuse in {'materially_reused', 'uncertain'} and corroboration in {'absent', 'uncertain'}
-            and concern == 'none'):
+    # Anything short of present-and-supporting leaves the claim unestablished, so
+    # 'none' is unavailable; mixed support is not treated more leniently than an
+    # unresolved answer. 'moderate' remains open, which leaves promotion to the role's
+    # own scientific judgment rather than forcing non-promotion on partial evidence.
+    established = corroboration == 'present' and direction == 'supports'
+    if reuse in {'materially_reused', 'uncertain'} and not established and concern == 'none':
         return 'independence'
     decision = value.get('decision' if role == 'primary' else 'promotion_decision')
     if concern == 'major' and decision == 'pass':

@@ -92,7 +92,7 @@ direction only when independent corroboration is present, and always report one 
 is. Declare concern major when the evaluator is materially reused with no independent
 corroboration, or when independent evidence contradicts the headline claim under reused
 or unresolved signals; a major concern cannot accompany your pass. Where reuse is present
-or unresolved and corroboration is absent or unresolved, concern is not none.
+or unresolved, concern is none only when corroboration is present and supports.
 """
     if role == 'primary':
         instruction += '\nIndependently assess the manuscript. decision is pass or uncertain.'

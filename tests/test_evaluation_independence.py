@@ -6,13 +6,20 @@ must and must not raise a concern, and the historical compatibility of rows writ
 before the dimension existed. They never assert that any real manuscript is good
 science, and no scenario is tied to a particular paper, system or evaluator vendor.
 """
+from contextlib import redirect_stdout
 from copy import deepcopy
 from dataclasses import replace
+import io
+from pathlib import Path
 import json
+import tempfile
 import unittest
 from unittest.mock import patch
 
+from paper_scout.cli import main
 from paper_scout.evidence_context import build_evidence_context
+from paper_scout.models import ClassificationResult
+from paper_scout.state import PaperStore
 from paper_scout.promotion_gate import assess_promotion, request_payload, role_settings
 from paper_scout.promotion_protocol import (
     ADJUDICATOR_MODEL, GATE_VERSION, INDEPENDENCE_CONTRACT, INDEPENDENCE_FIELD,
@@ -161,27 +168,42 @@ class ContractTests(unittest.TestCase):
         self.assert_contract(UNRESOLVED, 'uncertain', None)
         self.assert_contract(block(**{**UNRESOLVED, 'concern': 'major'}), 'pass', 'independence')
 
-    def test_h_unestablished_on_either_limb_cannot_be_declared_free_of_concern(self):
-        """An unresolved answer is not a clear one, on either limb of the question.
+    def test_h_only_present_and_supporting_corroboration_is_an_all_clear(self):
+        """Silence, an unresolved answer and partial support are all unestablished.
 
-        Known reuse with unresolved corroboration is the same epistemic position as
-        unresolved reuse with none reported, so neither may be declared no concern.
-        Where either limb is settled clear, nothing is forced.
+        Under reused or unresolved signals, none of the three may be declared free of
+        concern, and partial support is not treated more leniently than silence. Where
+        the corroboration is present and supports, nothing is forced. Where the signals
+        are genuinely independent, none of this applies at all.
         """
         for reuse in SIGNAL_REUSE:
-            for corroboration in ('absent', 'uncertain'):
+            for corroboration, direction in (('absent', 'unavailable'), ('uncertain', 'unavailable'),
+                                             ('not_applicable', 'not_applicable'),
+                                             ('present', 'mixed'), ('present', 'supports')):
                 value = block(signal_reuse=reuse, independent_corroboration=corroboration,
-                              corroboration_direction='unavailable', concern='none')
-                unestablished = reuse in ('materially_reused', 'uncertain')
-                with self.subTest(reuse=reuse, corroboration=corroboration):
+                              corroboration_direction=direction, concern='none')
+                established = corroboration == 'present' and direction == 'supports'
+                forbidden = reuse in ('materially_reused', 'uncertain') and not established
+                with self.subTest(reuse=reuse, corroboration=corroboration, direction=direction):
                     self.assertEqual(
                         evaluation_independence_error({'decision': 'uncertain', INDEPENDENCE_FIELD: value},
                                                       'primary'),
-                        'independence' if unestablished else None)
+                        'independence' if forbidden else None)
                     # Except where material reuse with nothing reported forces major,
                     # moderate stays available, so promotion is still the role's call.
                     if not (reuse == 'materially_reused' and corroboration == 'absent'):
                         self.assert_contract(block(**{**value, 'concern': 'moderate'}), 'pass', None)
+
+    def test_partial_support_under_reuse_is_not_an_all_clear_but_may_still_pass(self):
+        """Mixed evidence is a concern to weigh, not a verdict and not a clearance."""
+        mixed = block(signal_reuse='materially_reused', independent_corroboration='present',
+                      corroboration_direction='mixed')
+        self.assert_contract(block(**{**mixed, 'concern': 'none'}), 'uncertain', 'independence')
+        self.assert_contract(block(**{**mixed, 'concern': 'moderate'}), 'pass', None)
+        self.assert_contract(block(**{**mixed, 'concern': 'major'}), 'pass', 'independence')
+        # Fully supporting corroboration under the same reuse remains a clean all-clear.
+        supported = block(**{**mixed, 'corroboration_direction': 'supports', 'concern': 'none'})
+        self.assert_contract(supported, 'pass', None)
 
     def test_a_direction_is_reportable_exactly_when_corroboration_is_present(self):
         for corroboration in CORROBORATION:
@@ -420,6 +442,88 @@ class HistoricalShapeTests(unittest.TestCase):
             with self.subTest(version=version):
                 with self.assertRaises(ValueError):
                     QualityAssessment.from_dict(self.row(version, 'scientific-gate-v1', 'pass'))
+
+
+class RoutineSelectionTests(unittest.TestCase):
+    """What a routine reassess-quality run selects, through the real CLI predicate.
+
+    The rubric moved, so a historical non-pass row is no longer current and becomes
+    reachable by a routine run; a stored pass is still excluded on its own. This
+    exercises the selection in paper_scout/cli.py rather than a copy of it, and stops
+    before any assessment: the assessor is replaced, so no model is called.
+    """
+
+    def historical_row(self, key, status):
+        """A row as the retired pair wrote one, bound to this store's canonical key."""
+        decision = 'pass' if status == 'pass' else 'uncertain'
+        candidate, _, text, seed = fixture(key)
+
+        def legacy_parse(content, role, context, **kwargs):
+            return parse_response(content, role, context, **{**kwargs, 'independence': False})
+
+        with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
+              patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
+              patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2'),
+              patch.dict('os.environ', ENV, clear=True)):
+            result = assess_promotion(candidate, text, seed, 'llm',
+                                      http=PairModels(decision, decision, independence=None))
+        self.assertEqual(result.quality_status, status)
+        execution = deepcopy(result.execution)
+        for field in ('independence_contract', 'model_pair', 'primary_provider',
+                      'adjudicator_provider', 'generation'):
+            execution.pop(field, None)
+        for call in execution['calls']:
+            call.pop('provider', None)
+            call.pop('billing', None)
+        return replace(result, quality_gate_version='dual-promotion-v1', execution=execution,
+                       assessment_version='quality-promotion-v1', rubric_version='scholarly-rubric-v1')
+
+    def store_with(self, status, versions=None):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        store = PaperStore(root / 'state.sqlite3')
+        candidate, _, _, _ = fixture()
+        key = store.upsert_paper(candidate, ClassificationResult(95, 'relevant', 'Synthetic match'))
+        store.save_quality_assessment(self.historical_row(key, status))
+        pinned = ''
+        if versions:
+            pinned = (f'  assessment:\n    version: "{versions[0]}"\n'
+                      f'    rubric_version: "{versions[1]}"\n')
+        # Output is redirected into the temporary tree, so a run can never write over
+        # the committed daily quality report or any published digest.
+        config = root / 'config.yaml'
+        config.write_text(f'state:\n  sqlite_path: "{root / "state.sqlite3"}"\n'
+                          f'output:\n  report_dir: "{root / "reports"}"\n'
+                          f'  digest_dir: "{root / "digests"}"\n'
+                          f'quality:\n  enabled: true\n  mode: "deterministic"\n{pinned}',
+                          encoding='utf-8')
+        return config, key
+
+    def selected(self, config):
+        seen = []
+
+        def record(quality_config, store, candidate, canonical_id, classification, **kwargs):
+            seen.append(canonical_id)
+            return None
+
+        with (patch('paper_scout.cli.assess_and_store_candidate', record),
+              redirect_stdout(io.StringIO())):
+            self.assertEqual(main(['--config', str(config), 'reassess-quality', '--limit', '10']), 0)
+        return seen
+
+    def test_a_historical_non_pass_becomes_reachable_under_the_new_rubric(self):
+        config, key = self.store_with('uncertain')
+        self.assertEqual(self.selected(config), [key])
+
+    def test_a_stored_pass_is_still_excluded_on_its_own(self):
+        config, _ = self.store_with('pass')
+        self.assertEqual(self.selected(config), [])
+
+    def test_nothing_is_selected_while_the_row_matches_the_configured_versions(self):
+        config, _ = self.store_with('uncertain',
+                                    versions=('quality-promotion-v1', 'scholarly-rubric-v1'))
+        self.assertEqual(self.selected(config), [])
 
 
 class RetryTests(unittest.TestCase):

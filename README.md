@@ -349,9 +349,10 @@ keyword list, phrase match or lexical heuristic decides scientific validity, and
 judgments themselves belong to the two scientific roles. What the code holds each role to
 is the consequence of its own declared values — material reuse with no corroboration, and
 independent evidence contradicting the claim under reused or unresolved signals, are major
-concerns; reuse that is present or unresolved alongside corroboration that is absent or
-unresolved cannot be declared "no concern", because unestablished is not the same as
-clear; and a major concern cannot accompany that role's pass. Judge-based work is therefore not rejected as a class:
+concerns; where reuse is present or unresolved, "no concern" is available only when
+independent corroboration is both present and supporting, because silence, an unresolved
+answer and partial support are all unestablished rather than clear; and a major concern
+cannot accompany that role's pass. Judge-based work is therefore not rejected as a class:
 what is withheld is unsupported reuse, not the use of an evaluator.
 
 The default pinned pair is `gemini-3.8-flash` as primary assessor, served by Google

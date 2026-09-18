@@ -386,11 +386,34 @@ class CommandTests(PopulationFixture):
             self.assertEqual(built.returncode, 0, built.stderr)
             self.assertIn("manifest_sha256=", built.stdout)
             self.assertIn("eligible=3", built.stdout)
-            verified = self.run_cli("--manifest", str(manifest), "--verify",
-                                    "--population-track", "agent_memory", config=config)
+            verified = self.run_cli("--manifest", str(manifest), "--verify", config=config)
             self.assertEqual(verified.returncode, 0, verified.stderr)
             self.assertIn("reproduced=True", verified.stdout)
+            self.assertIn("sources_match=True", verified.stdout)
             self.assertIn("ordered_ids_match=True", verified.stdout)
+            # The same pinned time over the same state rebuilds the identical digest.
+            again = Path(tmp) / "again.json"
+            rebuilt = self.run_cli("--manifest", str(again), "--build-time", BUILD_TIME,
+                                   "--population-track", "agent_memory", config=config)
+            self.assertEqual(rebuilt.returncode, 0, rebuilt.stderr)
+            self.assertEqual(json.loads(again.read_text(encoding="utf-8"))["manifest_sha256"],
+                             json.loads(manifest.read_text(encoding="utf-8"))["manifest_sha256"])
+
+    def test_verification_covers_the_manifest_s_tracks_not_the_command_line_s(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            manifest = Path(tmp) / "manifest.json"
+            self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                         "--population-track", "agent_memory", config=config)
+            for narrowing in (["--population-track", "agent_memory"],
+                              ["--population-track", "engram"]):
+                rejected = self.run_cli("--manifest", str(manifest), "--verify", *narrowing,
+                                        config=config)
+                self.assertNotEqual(rejected.returncode, 0)
+                self.assertIn("not used with --verify", rejected.stderr)
+            stored = json.loads(manifest.read_text(encoding="utf-8"))
+            self.assertEqual(list(stored["sources"]["tracks"]), ["agent_memory"])
+            self.assertEqual(sorted(stored["sources"]["exclusion_tracks"]), sorted(TRACKS))
 
     def test_verification_exits_non_zero_when_the_population_moved(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -401,8 +424,7 @@ class CommandTests(PopulationFixture):
             stored = json.loads(manifest.read_text(encoding="utf-8"))
             stored["tracks"]["agent_memory"]["ordered_canonical_ids"].pop()
             manifest.write_text(json.dumps(stored), encoding="utf-8")
-            result = self.run_cli("--manifest", str(manifest), "--verify",
-                                  "--population-track", "agent_memory", config=config)
+            result = self.run_cli("--manifest", str(manifest), "--verify", config=config)
             self.assertEqual(result.returncode, 1)
             self.assertIn("reproduced=False", result.stdout)
 
@@ -439,8 +461,7 @@ class CommandTests(PopulationFixture):
             self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
                          "--population-track", "agent_memory", config=config)
             elsewhere = self.write_config(Path(tmp) / "other", ["agent_memory"], papers=4)
-            result = self.run_cli("--manifest", str(manifest), "--verify",
-                                  "--population-track", "agent_memory", config=elsewhere)
+            result = self.run_cli("--manifest", str(manifest), "--verify", config=elsewhere)
             self.assertEqual(result.returncode, 1)
             self.assertIn("sources_match=False", result.stdout)
             self.assertIn("reproduced=False", result.stdout)
@@ -471,12 +492,11 @@ class CommandTests(PopulationFixture):
             self.assertNotIn(self.keys[0], stored["tracks"]["agent_memory"]["ordered_canonical_ids"])
             # Verification rereads the roster the manifest records rather than any
             # roster the caller supplies, so the population rebuilds identically.
-            verified = self.run_cli("--manifest", str(manifest), "--verify",
-                                    "--population-track", "agent_memory", config=config)
+            verified = self.run_cli("--manifest", str(manifest), "--verify", config=config)
             self.assertEqual(verified.returncode, 0, verified.stderr)
             self.assertIn("reproduced=True", verified.stdout)
             rejected = self.run_cli("--manifest", str(manifest), "--verify", "--roster",
-                                    str(roster), "--population-track", "agent_memory", config=config)
+                                    str(roster), config=config)
             self.assertNotEqual(rejected.returncode, 0)
             self.assertIn("not used with --verify", rejected.stderr)
 

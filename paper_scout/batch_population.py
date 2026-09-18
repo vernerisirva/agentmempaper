@@ -225,9 +225,10 @@ def excluded_identities(configs: dict[str, ScoutConfig],
     for track, config in sorted(configs.items()):
         path = Path(config.sqlite_path)
         if not path.exists():
-            # A track with no database contributes no exclusions. That is recorded in
-            # the manifest rather than passed over, because a scan that silently covered
-            # fewer tracks than it claims is the defect this module exists to prevent.
+            # A track with no database contributes no exclusions. _sources records it as
+            # exclusion_tracks_without_state, inside the manifest hash, because a scan
+            # that silently covered fewer tracks than it claims is the defect this
+            # module exists to prevent.
             continue
         with sqlite3.connect(path) as db:
             db.row_factory = sqlite3.Row

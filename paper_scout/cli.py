@@ -462,24 +462,27 @@ def _batch_population(args) -> int:
 
     Building persists the ordered identities themselves next to their digest, before any
     scientific model call, so a later run can rebuild the population and compare it item
-    by item. Verifying takes the pinned build time and the frozen rosters from the
-    manifest and reports a source mismatch if the configured inputs are not the ones it
-    records, so it checks the construction rather than trusting the caller.
+    by item.
+
+    Verification always covers exactly what the manifest committed to. The tracks, the
+    exclusion scope, the pinned build time and the frozen rosters all come from the
+    manifest, so none of them can be narrowed from the command line, and the configured
+    state, curation and digest locations are compared against the recorded ones.
 
     Exclusions are always read from every track, whatever is being built: one manuscript
     can be discovered by more than one track, and restricting a build must narrow what
     the manifest contains rather than what it excludes.
     """
-    tracks = tuple(args.population_tracks) or TRACKS
-    exclusion_configs = track_configs(Path(args.config), TRACKS)
-    configs = {track: exclusion_configs[track] for track in tracks}
     rosters = tuple(Path(path) for path in args.roster)
     if args.verify:
-        if rosters:
-            raise SystemExit("--roster is not used with --verify; "
-                             "verification rereads the frozen rosters the manifest records")
+        for name, value in (("--roster", rosters), ("--population-track", args.population_tracks)):
+            if value:
+                raise SystemExit(f"{name} is not used with --verify; verification covers "
+                                 "exactly the tracks, rosters and build time the manifest records")
         manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-        result = verify_manifest(manifest, configs, exclusion_configs)
+        recorded = track_configs(Path(args.config), tuple(manifest["sources"]["exclusion_tracks"]))
+        result = verify_manifest(
+            manifest, {track: recorded[track] for track in manifest["sources"]["tracks"]}, recorded)
         for track, detail in sorted(result.tracks.items()):
             print(f"{track} ordered_ids_match={detail['ordered_ids_match']} "
                   f"population_sha256_match={detail['population_sha256_match']} "
@@ -494,6 +497,9 @@ def _batch_population(args) -> int:
     if not args.build_time:
         raise SystemExit("--build-time is required to build a manifest, so the population "
                          "is pinned to a stated time rather than to the clock")
+    tracks = tuple(args.population_tracks) or TRACKS
+    exclusion_configs = track_configs(Path(args.config), TRACKS)
+    configs = {track: exclusion_configs[track] for track in tracks}
     population = build_population(configs, args.build_time, rosters, exclusion_configs)
     manifest = population_manifest(population, repository_code_sha(Path(".")))
     path = write_manifest(Path(args.manifest), manifest)

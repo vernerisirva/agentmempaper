@@ -11,7 +11,7 @@ from unittest.mock import patch
 import jsonschema
 
 from test_promotion_gate import ENV, Models, fixture
-from paper_scout.evidence_context import build_evidence_context
+from paper_scout.evidence_context import build_evidence_context, digest
 from paper_scout.promotion_gate import assess_promotion
 from paper_scout.promotion_protocol import schema, validate_response, validate_receipt
 from paper_scout.quality_models import QualityAssessment
@@ -22,7 +22,8 @@ def large_fixture():
     c, _, text, seed = fixture()
     raw = '\n'.join(f'Synthetic observation {i}. ' + 'Controlled experiment evidence. ' * 28
                     for i in range(40))
-    text = replace(text, text=raw, sections=[replace(text.sections[0], text=raw)])
+    text = replace(text, text=raw, sections=[replace(text.sections[0], text=raw)],
+                   coverage={**text.coverage, "assessment_input_sha256": digest(raw)})
     context = build_evidence_context(seed.canonical_id, text)
     assert len(context.blocks) > 30
     return c, text, seed, context

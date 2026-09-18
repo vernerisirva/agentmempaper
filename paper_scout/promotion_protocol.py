@@ -101,8 +101,9 @@ learned or automated evaluator, self-evaluation, automated grader, heuristic sco
 synthetic labeller or model-generated validation criterion can serve either role, so
 this is not a question about any one evaluation technology. Where the same evaluator, or
 one materially dependent on it, serves both roles, the reported gain is measured in the
-currency it was optimized for, and promotion needs corroboration that does not depend on
-that evaluator: blinded human or expert assessment, inter-rater agreement, evaluator
+currency it was optimized for, and promotion needs corroboration that is actually present
+and does not depend on that evaluator - an unresolved answer establishes no more than
+silence does: blinded human or expert assessment, inter-rater agreement, evaluator
 calibration against independent labels, a held-out or separately calibrated judge, an
 objective external metric, an established external benchmark, or another genuinely
 independent measurement. No particular technology is required; independence is.
@@ -138,7 +139,7 @@ def independence_schema() -> dict:
     props['corroboration_direction'] = {'enum': list(CORROBORATION_DIRECTION),
         'description': 'Whether it supports the headline claim. supports/mixed/contradicts require independent_corroboration present; otherwise unavailable or not_applicable.'}
     props['concern'] = {'enum': list(INDEPENDENCE_CONCERN),
-        'description': 'major when signal_reuse is materially_reused with independent_corroboration absent, or when corroboration_direction contradicts a reused or uncertain signal. Not none when reuse is materially_reused or uncertain unless corroboration is present and supports. major forbids a pass.'}
+        'description': 'major when signal_reuse is materially_reused and independent_corroboration is anything but present, or when corroboration_direction contradicts a reused or uncertain signal. Not none when reuse is materially_reused or uncertain unless corroboration is present and supports. major forbids a pass.'}
     return {'type': 'object', 'properties': props, 'required': list(props),
             'additionalProperties': False}
 
@@ -277,7 +278,8 @@ def evaluation_independence_error(value: dict, role: str) -> str | None:
 
     - a corroboration direction is reportable only when corroboration is present,
       and present corroboration must carry a direction;
-    - material reuse with no independent corroboration is a major concern;
+    - material reuse without established independent corroboration is a major concern,
+      and an unresolved answer establishes it no better than silence does;
     - independent evidence that contradicts the headline claim is a major concern
       wherever the optimization and evaluation signals are reused or unresolved;
     - where reuse is present or unresolved, the role cannot declare no concern at all
@@ -299,7 +301,10 @@ def evaluation_independence_error(value: dict, role: str) -> str | None:
     concern = declared.get('concern')
     if (direction in DIRECTED) != (corroboration == 'present'):
         return 'independence'
-    if reuse == 'materially_reused' and corroboration == 'absent' and concern != 'major':
+    # Anything other than corroboration actually being present leaves an admitted reuse
+    # uncorroborated. 'uncertain' is not a weaker form of 'present'; it establishes
+    # nothing, exactly as silence does, so it is not treated more leniently than 'absent'.
+    if reuse == 'materially_reused' and corroboration != 'present' and concern != 'major':
         return 'independence'
     if reuse in {'materially_reused', 'uncertain'} and direction == 'contradicts' and concern != 'major':
         return 'independence'

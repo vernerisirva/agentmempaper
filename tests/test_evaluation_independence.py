@@ -24,8 +24,9 @@ from paper_scout.promotion_gate import assess_promotion, request_payload, role_s
 from paper_scout.promotion_protocol import (
     ADJUDICATOR_MODEL, GATE_VERSION, INDEPENDENCE_CONTRACT, INDEPENDENCE_FIELD,
     INDEPENDENCE_GATE_VERSIONS, INDEPENDENCE_PROSE, PRIMARY_MODEL, RUBRIC,
-    ResponseContractError, CORROBORATION, CORROBORATION_DIRECTION, INDEPENDENCE_CONCERN,
-    SIGNAL_REUSE, evaluation_independence_error, parse_response, schema, validate_receipt,
+    RECEIPT_VERSION, ResponseContractError, CORROBORATION, CORROBORATION_DIRECTION,
+    INDEPENDENCE_CONCERN, SIGNAL_REUSE, evaluation_independence_error, parse_response,
+    response_binding, schema, validate_receipt,
 )
 from paper_scout.quality_models import QualityAssessment
 from test_gemini_promotion_pair import PairModels, legacy_receipt, run_gate
@@ -130,6 +131,22 @@ class ContractTests(unittest.TestCase):
             self.assert_contract(block(**{**CIRCULAR, 'concern': concern}), 'uncertain', 'independence')
         self.assert_contract(CIRCULAR, 'uncertain', None)
 
+    def test_a_material_reuse_is_major_unless_corroboration_is_actually_present(self):
+        """An unresolved answer establishes independence no better than silence does."""
+        for corroboration, direction in (('absent', 'unavailable'), ('uncertain', 'unavailable'),
+                                         ('not_applicable', 'not_applicable')):
+            reused = block(signal_reuse='materially_reused',
+                           independent_corroboration=corroboration,
+                           corroboration_direction=direction)
+            with self.subTest(corroboration=corroboration):
+                for concern in ('none', 'moderate'):
+                    self.assert_contract(block(**{**reused, 'concern': concern}),
+                                         'uncertain', 'independence')
+                self.assert_contract(block(**{**reused, 'concern': 'major'}), 'uncertain', None)
+                self.assert_contract(block(**{**reused, 'concern': 'major'}), 'pass', 'independence')
+        # Unresolved *reuse* is a weaker claim and is not forced to major on its own.
+        self.assert_contract(UNRESOLVED, 'pass', None)
+
     def test_b_a_major_concern_cannot_accompany_that_role_s_pass(self):
         """B: the same evaluator on both sides surfaces and binds the role's decision."""
         self.assert_contract(CIRCULAR, 'pass', 'independence')
@@ -189,9 +206,9 @@ class ContractTests(unittest.TestCase):
                         evaluation_independence_error({'decision': 'uncertain', INDEPENDENCE_FIELD: value},
                                                       'primary'),
                         'independence' if forbidden else None)
-                    # Except where material reuse with nothing reported forces major,
-                    # moderate stays available, so promotion is still the role's call.
-                    if not (reuse == 'materially_reused' and corroboration == 'absent'):
+                    # Except where material reuse without present corroboration forces
+                    # major, moderate stays available and promotion is still the role's call.
+                    if not (reuse == 'materially_reused' and corroboration != 'present'):
                         self.assert_contract(block(**{**value, 'concern': 'moderate'}), 'pass', None)
 
     def test_partial_support_under_reuse_is_not_an_all_clear_but_may_still_pass(self):
@@ -442,6 +459,52 @@ class HistoricalShapeTests(unittest.TestCase):
             with self.subTest(version=version):
                 with self.assertRaises(ValueError):
                     QualityAssessment.from_dict(self.row(version, 'scientific-gate-v1', 'pass'))
+
+
+class ReceiptDispatchTests(unittest.TestCase):
+    """The stored gate version is the only thing that selects a response schema.
+
+    The receipt envelope is unchanged by this dimension, so RECEIPT_VERSION stays
+    canonical-response-v1 and every response-shape decision is keyed off the gate
+    version instead. That is only safe if nothing else selects the schema, which is
+    what these tests pin down. Bumping RECEIPT_VERSION is not an available
+    alternative: response_binding hashes the module constant, so moving it would
+    invalidate the stored binding of every receipt written before the change.
+    """
+
+    def test_the_schema_depends_only_on_the_role_and_the_independence_flag(self):
+        for role in ('primary', 'adjudicator'):
+            with_dimension, without = schema(role), schema(role, independence=False)
+            self.assertEqual(set(with_dimension['properties']) - set(without['properties']),
+                             {INDEPENDENCE_FIELD})
+            self.assertEqual({k: v for k, v in with_dimension['properties'].items()
+                              if k != INDEPENDENCE_FIELD}, without['properties'])
+
+    def test_the_receipt_version_is_unchanged_and_bound_into_every_response(self):
+        result = run_gate(PairModels(independence=EXTERNAL))
+        self.assertEqual(result.execution['receipt_version'], RECEIPT_VERSION)
+        self.assertEqual(RECEIPT_VERSION, 'canonical-response-v1')
+        for call in result.execution['calls']:
+            self.assertEqual(response_binding(call, result.execution['run_id']),
+                             call['response_binding_sha256'])
+
+    def test_each_gate_version_revalidates_under_its_own_response_shape(self):
+        shapes = {'dual-promotion-v1': False, 'dual-promotion-v2': False, GATE_VERSION: True}
+        for gate, carries in shapes.items():
+            with self.subTest(gate=gate):
+                if carries:
+                    row = run_gate(PairModels(independence=EXTERNAL))
+                else:
+                    row = QualityAssessment.from_dict(
+                        HistoricalShapeTests.row(self, 'quality-promotion-v1', gate, 'pass'))
+                self.assertEqual(row.quality_gate_version, gate)
+                self.assertEqual(row.execution['receipt_version'], RECEIPT_VERSION)
+                for role in ('primary', 'adjudicator'):
+                    self.assertEqual(INDEPENDENCE_FIELD in row.execution[role], carries)
+                self.assertEqual(row.execution.get('independence_contract') is not None, carries)
+                # The receipt version is identical across all three; only the gate
+                # version distinguishes their response shapes, and each rereads cleanly.
+                validate_receipt(row)
 
 
 class RoutineSelectionTests(unittest.TestCase):

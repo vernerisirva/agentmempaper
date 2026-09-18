@@ -329,9 +329,10 @@ adjudicator reaches its own judgment and never inherits the primary's.
 Where the same evaluator, or one materially dependent on it, supplies both the
 optimization signal and the headline measurement, the reported gain is expressed in the
 currency it was optimized for. Promotion then needs corroboration that does not depend on
-that evaluator — blinded human or expert assessment, inter-rater agreement, evaluator
-calibration, a held-out or separately calibrated judge, an objective external metric, an
-established external benchmark, or another genuinely independent measurement. The
+that evaluator and is actually present — blinded human or expert assessment, inter-rater
+agreement, evaluator calibration, a held-out or separately calibrated judge, an objective
+external metric, an established external benchmark, or another genuinely independent
+measurement. An unresolved answer establishes no more than silence does. The
 principle is independence, not any particular evaluation technology, and the same
 question applies to reward models, learned evaluators, automated graders, self-evaluation,
 heuristic scores, synthetic labellers and model-generated validation criteria.
@@ -347,9 +348,9 @@ is scientific uncertainty, never evidence that no problem exists.
 Deterministic code reads only the values each role declares and never its prose: no
 keyword list, phrase match or lexical heuristic decides scientific validity, and the
 judgments themselves belong to the two scientific roles. What the code holds each role to
-is the consequence of its own declared values — material reuse with no corroboration, and
-independent evidence contradicting the claim under reused or unresolved signals, are major
-concerns; where reuse is present or unresolved, "no concern" is available only when
+is the consequence of its own declared values — material reuse where corroboration is
+anything other than actually present, and independent evidence contradicting the claim
+under reused or unresolved signals, are major concerns; where reuse is present or unresolved, "no concern" is available only when
 independent corroboration is both present and supporting, because silence, an unresolved
 answer and partial support are all unestablished rather than clear; and a major concern
 cannot accompany that role's pass. Judge-based work is therefore not rejected as a class:

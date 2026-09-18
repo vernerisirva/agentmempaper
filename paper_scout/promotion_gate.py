@@ -89,10 +89,11 @@ study, what signal established the headline outcome, whether they are materially
 independent, what evaluator-independent measurement is reported, and whether it supports
 the headline claim. Keep each prose field to one or two sentences. Report a corroboration
 direction only when independent corroboration is present, and always report one when it
-is. Declare concern major when the evaluator is materially reused with no independent
-corroboration, or when independent evidence contradicts the headline claim under reused
-or unresolved signals; a major concern cannot accompany your pass. Where reuse is present
-or unresolved, concern is none only when corroboration is present and supports.
+is. Declare concern major when the evaluator is materially reused and independent
+corroboration is anything other than present, or when independent evidence contradicts the
+headline claim under reused or unresolved signals; a major concern cannot accompany your
+pass. Where reuse is present or unresolved, concern is none only when corroboration is
+present and supports.
 """
     if role == 'primary':
         instruction += '\nIndependently assess the manuscript. decision is pass or uncertain.'

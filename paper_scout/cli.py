@@ -462,27 +462,34 @@ def _batch_population(args) -> int:
 
     Building persists the ordered identities themselves next to their digest, before any
     scientific model call, so a later run can rebuild the population and compare it item
-    by item. Verifying rereads the manifest's own recorded inputs, so it checks the
-    construction rather than trusting whatever inputs the caller happens to pass.
+    by item. Verifying takes the pinned build time and the frozen rosters from the
+    manifest and reports a source mismatch if the configured inputs are not the ones it
+    records, so it checks the construction rather than trusting the caller.
+
+    Exclusions are always read from every track, whatever is being built: one manuscript
+    can be discovered by more than one track, and restricting a build must narrow what
+    the manifest contains rather than what it excludes.
     """
     tracks = tuple(args.population_tracks) or TRACKS
-    configs = track_configs(Path(args.config), tracks)
+    exclusion_configs = track_configs(Path(args.config), TRACKS)
+    configs = {track: exclusion_configs[track] for track in tracks}
     rosters = tuple(Path(path) for path in args.roster)
     if args.verify:
         if rosters:
             raise SystemExit("--roster is not used with --verify; "
                              "verification rereads the frozen rosters the manifest records")
         manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-        result = verify_manifest(manifest, configs)
+        result = verify_manifest(manifest, configs, exclusion_configs)
         for track, detail in sorted(result.tracks.items()):
             print(f"{track} ordered_ids_match={detail['ordered_ids_match']} "
                   f"population_sha256_match={detail['population_sha256_match']} "
                   f"stored={detail['stored_count']} rebuilt={detail['rebuilt_count']}")
-        print(f"self_consistent={result.self_consistent} reproduced={result.reproduced} "
+        print(f"self_consistent={result.self_consistent} sources_match={result.sources_match} "
+              f"reproduced={result.reproduced} "
               f"stored={result.stored_digest} rebuilt={result.rebuilt_digest}")
         return 0 if result.reproduced and result.self_consistent else 1
     build_time = args.build_time or datetime.now(UTC).replace(microsecond=0).isoformat()
-    population = build_population(configs, build_time, rosters)
+    population = build_population(configs, build_time, rosters, exclusion_configs)
     manifest = population_manifest(population, repository_code_sha(Path(".")))
     path = write_manifest(Path(args.manifest), manifest)
     for track in population.tracks:

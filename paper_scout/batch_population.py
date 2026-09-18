@@ -295,9 +295,19 @@ def ranked_candidates(config: ScoutConfig, build_time: str) -> tuple[list, str]:
 
 
 def build_population(configs: dict[str, ScoutConfig], build_time: str,
-                     roster_paths: tuple[Path, ...] = ()) -> Population:
-    """Construct the eligible population for every configured track, in selection order."""
-    excluded = excluded_identities(configs, roster_paths)
+                     roster_paths: tuple[Path, ...] = (),
+                     exclusion_configs: dict[str, ScoutConfig] | None = None) -> Population:
+    """Construct the eligible population for every configured track, in selection order.
+
+    exclusion_configs is the set of tracks scanned for prior assessments and
+    suppressions, and it is not the same thing as the tracks being built. Restricting a
+    build must narrow what the manifest contains, never what it excludes: one manuscript
+    can be discovered by more than one track, so a paper already assessed under a track
+    that is not being built must still be excluded from the track that is. The tracks
+    actually scanned are recorded in the manifest, inside its hash.
+    """
+    exclusion_configs = exclusion_configs or configs
+    excluded = excluded_identities(exclusion_configs, roster_paths)
     tracks = []
     for track in sorted(configs):
         papers, latest_date = ranked_candidates(configs[track], build_time)
@@ -314,21 +324,29 @@ def build_population(configs: dict[str, ScoutConfig], build_time: str,
                 removed.append(Exclusion(paper.canonical_id, track, rank, paper.title,
                                          reason, identity, source))
         tracks.append(TrackPopulation(track, tuple(eligible), tuple(removed), len(ranked), latest_date))
-    return Population(tuple(tracks), sources=_sources(configs, build_time, roster_paths))
+    return Population(tuple(tracks),
+                      sources=_sources(configs, exclusion_configs, build_time, roster_paths))
 
 
-def _sources(configs: dict[str, ScoutConfig], build_time: str,
-             roster_paths: tuple[Path, ...]) -> dict:
-    """Every input the construction read, named explicitly so it can be reread."""
+def _sources(configs: dict[str, ScoutConfig], exclusion_configs: dict[str, ScoutConfig],
+             build_time: str, roster_paths: tuple[Path, ...]) -> dict:
+    """Every input the construction read, named explicitly so it can be reread.
+
+    This block is inside the manifest hash, so pointing a later run at different state,
+    curation, digests or rosters changes the digest instead of quietly verifying against
+    something else. Roster files are recorded by content, not only by path.
+    """
+    def track_source(config):
+        return {"state_path": str(config.sqlite_path), "curation_path": str(config.curation_path),
+                "digest_dir": str(config.digest_dir), "relevance_profile": config.relevance_profile}
+
     return {
         "build_time": _site_build_time(build_time).isoformat(),
         "relevance": ELIGIBLE_RELEVANCE,
         "date_enrichment": "disabled (offline; network answers are not reproducible)",
-        "tracks": {track: {"state_path": str(config.sqlite_path),
-                           "curation_path": str(config.curation_path),
-                           "digest_dir": str(config.digest_dir),
-                           "relevance_profile": config.relevance_profile}
-                   for track, config in sorted(configs.items())},
+        "tracks": {track: track_source(config) for track, config in sorted(configs.items())},
+        "exclusion_tracks": {track: track_source(config)
+                             for track, config in sorted(exclusion_configs.items())},
         "frozen_rosters": [{"path": str(path), "sha256": digest(Path(path).read_text(encoding="utf-8"))}
                            for path in roster_paths],
     }
@@ -377,24 +395,32 @@ class Verification:
     stored_digest: str
     rebuilt_digest: str
     self_consistent: bool
+    sources_match: bool
     tracks: dict
 
     def to_dict(self) -> dict:
         return {"reproduced": self.reproduced, "self_consistent": self.self_consistent,
+                "sources_match": self.sources_match,
                 "stored_manifest_sha256": self.stored_digest,
                 "rebuilt_manifest_sha256": self.rebuilt_digest, "tracks": self.tracks}
 
 
-def verify_manifest(manifest: dict, configs: dict[str, ScoutConfig]) -> Verification:
-    """Rebuild the population from the manifest's own recorded inputs and compare.
+def verify_manifest(manifest: dict, configs: dict[str, ScoutConfig],
+                    exclusion_configs: dict[str, ScoutConfig] | None = None) -> Verification:
+    """Rebuild the population and compare it against the manifest, element by element.
 
-    The ordered identifier lists are compared element by element, not only by digest, so
-    a manifest that stored a hash over something it no longer contains cannot pass.
+    The pinned build time and the frozen rosters come from the manifest, so those cannot
+    be supplied differently. The state, curation and digest locations come from the
+    caller's configuration, and are then compared against the ones the manifest records:
+    verification pointed at different inputs reports a source mismatch rather than
+    quietly checking something else. The ordered identifier lists are compared item by
+    item, so a manifest carrying a digest over content it no longer holds cannot pass.
     """
     sources = manifest["sources"]
     rosters = tuple(Path(item["path"]) for item in sources.get("frozen_rosters", []))
-    rebuilt = build_population(configs, sources["build_time"], rosters)
+    rebuilt = build_population(configs, sources["build_time"], rosters, exclusion_configs)
     rebuilt_manifest = population_manifest(rebuilt, manifest.get("code_sha", ""))
+    sources_match = rebuilt_manifest["sources"] == sources
     tracks = {}
     for track in rebuilt.tracks:
         stored = manifest["tracks"].get(track.track, {})
@@ -410,10 +436,11 @@ def verify_manifest(manifest: dict, configs: dict[str, ScoutConfig]) -> Verifica
     stored_digest = manifest.get("manifest_sha256", "")
     rebuilt_digest = rebuilt_manifest["manifest_sha256"]
     return Verification(
-        reproduced=stored_digest == rebuilt_digest and all(
+        reproduced=stored_digest == rebuilt_digest and sources_match and all(
             t["ordered_ids_match"] and t["population_sha256_match"] for t in tracks.values()),
         stored_digest=stored_digest, rebuilt_digest=rebuilt_digest,
-        self_consistent=manifest_digest(manifest) == stored_digest, tracks=tracks)
+        self_consistent=manifest_digest(manifest) == stored_digest,
+        sources_match=sources_match, tracks=tracks)
 
 
 def repository_code_sha(root: Path = Path(".")) -> str:

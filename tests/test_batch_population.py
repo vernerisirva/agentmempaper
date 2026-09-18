@@ -7,7 +7,7 @@ import tempfile
 import unittest
 
 from paper_scout.batch_population import (
-    ELIGIBLE_RELEVANCE, MIN_TITLE_IDENTITY_LENGTH, build_population, identities,
+    ELIGIBLE_RELEVANCE, MIN_TITLE_IDENTITY_LENGTH, TRACKS, build_population, identities,
     manifest_digest, population_manifest, repository_code_sha, verify_manifest,
     write_manifest,
 )
@@ -66,18 +66,35 @@ class PopulationFixture(unittest.TestCase):
                              report_dir=reports, docs_dir=base / "docs", curation_path=curation)
         return config, store, keys
 
+    def assess(self, store, canonical_id):
+        """Store one real assessment row keyed by the given canonical identifier."""
+        from test_promotion_gate import ENV, Models, fixture
+        from unittest.mock import patch
+        from paper_scout.promotion_gate import assess_promotion
+        target, _, text, seed = fixture(canonical_id)
+        with patch.dict("os.environ", ENV, clear=True):
+            assessment = assess_promotion(target, text, seed, "llm", http=Models())
+        self.assertEqual(assessment.canonical_id, canonical_id)
+        store.save_quality_assessment(assessment)
+
     def write_config(self, root, tracks, papers=3):
-        """A real YAML config the command can load, pointing at a synthetic track."""
+        """A real config the command can load, plus the per-track state overrides.
+
+        The file carries no track id, so every track resolves against it, and each
+        track's database is pointed somewhere separate through the environment. That
+        is what lets a restricted build be tested against a real second track.
+        """
         track_id = tracks[0]
         config, store, keys = self.track(root, track_id,
                                          [candidate(i) for i in range(1, papers + 1)])
         self.store, self.keys = store, keys
+        self.env = {f"PAPER_SCOUT_{track.upper()}_STATE_PATH":
+                    str(Path(root) / track / "state.sqlite3") for track in TRACKS}
         path = Path(root) / "config.yaml"
         path.write_text(
-            f'track:\n  id: "{track_id}"\n  relevance_profile: "{config.relevance_profile}"\n'
+            f'track:\n  relevance_profile: "{config.relevance_profile}"\n'
             f'output:\n  digest_dir: "{config.digest_dir}"\n'
             f'  report_dir: "{config.report_dir}"\n  docs_dir: "{config.docs_dir}"\n'
-            f'state:\n  sqlite_path: "{config.sqlite_path}"\n'
             f'curation:\n  path: "{config.curation_path}"\n', encoding="utf-8")
         return path
 
@@ -179,17 +196,6 @@ class PopulationTests(PopulationFixture):
             digest_only = json.loads(canonical_json(manifest))
             digest_only["tracks"]["agent_memory"]["ordered_canonical_ids"] = []
             self.assertFalse(verify_manifest(digest_only, configs).reproduced)
-
-    def assess(self, store, canonical_id):
-        """Store one real assessment row keyed by the given canonical identifier."""
-        from test_promotion_gate import ENV, Models, fixture
-        from unittest.mock import patch
-        from paper_scout.promotion_gate import assess_promotion
-        target, _, text, seed = fixture(canonical_id)
-        with patch.dict("os.environ", ENV, clear=True):
-            assessment = assess_promotion(target, text, seed, "llm", http=Models())
-        self.assertEqual(assessment.canonical_id, canonical_id)
-        store.save_quality_assessment(assessment)
 
     def test_a_prior_assessment_excludes_the_paper_under_any_alias(self):
         # The assessment row is keyed by a different identifier than the ranked paper in
@@ -317,11 +323,13 @@ class CommandTests(PopulationFixture):
         also fixes the dispatch order: a handler defined after the entry-point guard
         would not be bound by the time the command dispatches to it.
         """
+        import os
         import subprocess
         return subprocess.run(
             [sys.executable, "-m", "paper_scout.cli", *(["--config", str(config)] if config else []),
              "batch-population", *args],
-            capture_output=True, text=True, cwd=Path(__file__).resolve().parents[1])
+            capture_output=True, text=True, cwd=Path(__file__).resolve().parents[1],
+            env={**os.environ, **getattr(self, "env", {})})
 
     def test_the_command_builds_and_verifies_a_manifest_end_to_end(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -350,6 +358,45 @@ class CommandTests(PopulationFixture):
             result = self.run_cli("--manifest", str(manifest), "--verify",
                                   "--population-track", "agent_memory", config=config)
             self.assertEqual(result.returncode, 1)
+            self.assertIn("reproduced=False", result.stdout)
+
+    def test_a_restricted_build_still_excludes_another_track_s_assessment(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            memory_keys = self.keys
+            # The same manuscript, discovered by a track that is not being built.
+            twin = replace(candidate(1), source="openalex", openalex_id="W7168439999",
+                           url="https://arxiv.org/abs/2609.09999")
+            research, research_store, research_keys = self.track(
+                tmp, "deep_research", [twin], profile="deep_research")
+            self.assess(research_store, research_keys[0])
+            # Link the two records: the built track's paper carries the same arXiv id.
+            self.store.upsert_paper(replace(candidate(1), arxiv_id="2609.09999"),
+                                    ClassificationResult(95, "relevant", "Synthetic match"))
+            result = self.run_cli("--manifest", str(Path(tmp) / "m.json"), "--build-time",
+                                  BUILD_TIME, "--population-track", "agent_memory", config=config)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            manifest = json.loads((Path(tmp) / "m.json").read_text(encoding="utf-8"))
+            track = manifest["tracks"]["agent_memory"]
+            self.assertEqual(list(manifest["tracks"]), ["agent_memory"])
+            # Only the built track is in the manifest, but every track was scanned.
+            self.assertEqual(sorted(manifest["sources"]["exclusion_tracks"]), sorted(TRACKS))
+            self.assertNotIn(memory_keys[0], track["ordered_canonical_ids"])
+            excluded = next(e for e in track["excluded"] if e["canonical_id"] == memory_keys[0])
+            self.assertEqual(excluded["reason"], "prior_assessment")
+            self.assertTrue(excluded["source"].startswith("deep_research:"))
+
+    def test_verification_reports_a_mismatch_when_pointed_at_other_inputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            manifest = Path(tmp) / "manifest.json"
+            self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                         "--population-track", "agent_memory", config=config)
+            elsewhere = self.write_config(Path(tmp) / "other", ["agent_memory"], papers=4)
+            result = self.run_cli("--manifest", str(manifest), "--verify",
+                                  "--population-track", "agent_memory", config=elsewhere)
+            self.assertEqual(result.returncode, 1)
+            self.assertIn("sources_match=False", result.stdout)
             self.assertIn("reproduced=False", result.stdout)
 
     def test_a_roster_built_manifest_round_trips_through_verification(self):

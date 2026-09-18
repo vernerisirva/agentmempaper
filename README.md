@@ -77,6 +77,7 @@ for track in agent_memory deep_research engram; do
   python3 -m paper_scout build-site --track "$track"
 done
 python3 .github/scripts/check_paper_scout_site.py
+python3 .github/scripts/check_stored_assessments.py
 python3 .github/scripts/check_generated_file_sizes.py digests docs reports/paper_scout
 git diff --check
 ```
@@ -316,6 +317,14 @@ rationale and evidence-ID fields. The adjudicator receives the canonical context
 only the primary final structured assessment, independently checking support and
 counterevidence. No hidden reasoning is shared or retained. Historical claim parsers,
 numeric matching, role keywords and score caps do not control this admission path.
+
+`check_stored_assessments.py` is a read-only operator check over every stored
+assessment: it loads each row, revalidates completed promotion receipts under the gate
+version that produced them, and reports the version combinations held. It writes,
+migrates and repairs nothing — an unreadable row is reported, never rewritten. The
+databases are private and uncommitted, so it is not a CI gate and skips an absent
+database. Run it after any change to assessment versioning, receipt validation or the
+promotion schema.
 
 ### Evaluation independence
 

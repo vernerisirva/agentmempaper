@@ -125,16 +125,27 @@ class HistoricalCompatibilityTests(unittest.TestCase):
         withheld = legacy_receipt(PairModels('uncertain', 'pass', independence=None))
         self.assertEqual(QualityAssessment.from_dict(withheld.to_dict()).quality_status, 'uncertain')
 
-    def test_an_earlier_row_cannot_borrow_the_new_contract(self):
-        legacy = legacy_receipt()
-        for mutate in (lambda e: e.update(independence_contract=INDEPENDENCE_CONTRACT),
-                       lambda e: e['primary'].update({INDEPENDENCE_FIELD: dict(EXTERNAL)}),
-                       lambda e: e['adjudicator'].update({INDEPENDENCE_FIELD: dict(EXTERNAL)})):
-            with self.subTest():
-                execution = deepcopy(legacy.execution)
-                mutate(execution)
-                with self.assertRaises(ValueError):
-                    QualityAssessment.from_dict(replace(legacy, execution=execution).to_dict())
+    def test_no_earlier_gate_version_can_borrow_the_new_contract(self):
+        """Both earlier gates are covered, including the one that does carry provenance.
+
+        dual-promotion-v2 is the interesting case: it must carry provider provenance and
+        must not carry the dimension, so a row mixing the two shapes is rejected rather
+        than read as if the newer scientific guarantee applied to it.
+        """
+        rows = {'dual-promotion-v1': legacy_receipt(),
+                'dual-promotion-v2': QualityAssessment.from_dict(
+                    HistoricalShapeTests.row(self, 'quality-promotion-v1',
+                                             'dual-promotion-v2', 'pass'))}
+        for gate, row in rows.items():
+            self.assertEqual(row.quality_gate_version, gate)
+            for mutate in (lambda e: e.update(independence_contract=INDEPENDENCE_CONTRACT),
+                           lambda e: e['primary'].update({INDEPENDENCE_FIELD: dict(EXTERNAL)}),
+                           lambda e: e['adjudicator'].update({INDEPENDENCE_FIELD: dict(EXTERNAL)})):
+                with self.subTest(gate=gate):
+                    execution = deepcopy(row.execution)
+                    mutate(execution)
+                    with self.assertRaises(ValueError):
+                        QualityAssessment.from_dict(replace(row, execution=execution).to_dict())
 
     def test_a_current_row_cannot_omit_the_contract_or_carry_broken_values(self):
         result = run_gate(PairModels(independence=EXTERNAL))

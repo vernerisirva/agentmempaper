@@ -125,7 +125,7 @@ All nine promotions were audited observationally against the acquired manuscript
 
 **Evidence provenance, checked mechanically across all ten papers:** every evidence ID cited by either role resolves to a real block of that paper's canonical context (0 unknown IDs across 1,179 context blocks), every stored evidence excerpt is byte-identical to its canonical block (0 mismatches), each context hash equals the assessment's `source_content_hash`, and each equals the manuscript hash frozen in the roster. **No fabricated evidence and no cross-paper contamination.**
 
-Specific factual and numeric claims were verified verbatim against the manuscripts: LoCoMo-Conv's five compared memory systems and variance bound; Bioinfoysis's BixBench/LAB-Bench 2 results, four ablations and cross-model range; the decision-network paper's validation against Kahneman–Tversky's 18 lotteries and Murphy–ten Brincke's 46-lottery set; FinResearchBench II's 104 queries, 1,040 reports, 4,052 human-validated instances, 98.67% agreement and κ = 0.9733; SDABench's 527 real and 6,000 synthetic instances and five-stage error taxonomy; NVAITC's 286,422-individual biobank GWAS, replicated loci FGF5/ATP2B1/CNNM2/FTO/GRB14 and AUC 0.842; and the poisoning paper's 49.56% attack success, 6.0% detection and κ ≥ 0.758. **Every checked claim is present and correctly stated.**
+Specific factual and numeric claims were verified verbatim against the manuscripts: LoCoMo-Conv's five compared memory systems and variance bound; Bioinfoysis's BixBench/LAB-Bench 2 results, four ablations and cross-model range; the decision-network paper's validation against Kahneman–Tversky's 18 lotteries and Murphy–ten Brincke's 67-lottery, 134-decision-task set; FinResearchBench II's 104 queries, 1,040 reports, 4,052 human-validated instances, 98.67% agreement and κ = 0.9733; SDABench's 527 real and 6,000 synthetic instances and five-stage error taxonomy; NVAITC's 286,422-individual biobank GWAS, replicated loci FGF5/ATP2B1/CNNM2/FTO/GRB14 and AUC 0.842; and the poisoning paper's 49.56% attack success, 6.0% detection and κ ≥ 0.758. **Every checked claim is present and correctly stated.**
 
 | Promotion | Classification | Note |
 |---|---|---|
@@ -203,7 +203,7 @@ Transport and protocol reliability were perfect. The single wrong outcome came f
 | engram | 48 | 48 | 0 | 0 |
 | **Total** | **646** | **656** | **+10** | **10** |
 
-Every pre-existing row (`id ≤ 339 / 302 / 85`) is byte-identical to its pre-batch digest across id, canonical id, assessed-at, recommendation and payload length. **No historical promotion decision changed, no Batch-3 outcome was reinterpreted, and no prior row was rewritten.** The ten new rows are exactly the ten roster papers and nothing else — no smoke-test row leaked into production. All 656 stored rows parse, 489 current assessments load, and the 15 historical `dual-promotion-v1` rows remain readable beside the new ones. All ten new receipts pass `validate_receipt`.
+Every pre-existing row (`id ≤ 339 / 302 / 85`) is byte-identical to its pre-batch digest across id, canonical id, assessed-at, recommendation and payload length. **No historical promotion decision changed, no Batch-3 outcome was reinterpreted, and no prior row was rewritten.** The ten new rows are exactly the ten roster papers and nothing else — no smoke-test row leaked into production. All 656 stored rows parse, 489 current assessments load, and the 18 stored `dual-promotion-v1` rows (15 of them still the current assessment for their paper) remain readable beside the new ones. All ten new receipts pass `validate_receipt`.
 
 ## K. Cost
 
@@ -253,7 +253,7 @@ No prior engineering-review cost is mixed into this figure; it is Batch-4 scient
 | Site/schema/link/exposure/workflow checks | **0 errors** |
 | Workflow YAML + all manifests parse | 3 YAML, 11 JSON, all OK |
 | Snapshot/restore | three databases, `integrity_check=ok` |
-| Legacy compatibility | 656 rows parse; 15 `dual-promotion-v1` rows readable |
+| Legacy compatibility | 656 rows parse; 18 `dual-promotion-v1` rows readable |
 | `git diff --check` | clean |
 | Implementation source changed | **none** (`paper_scout/`, `tests/`, `config/` all unmodified) |
 | Secret scan | 0 credential-shaped strings; 0 `thought_signature`; 0 `reasoning_content` |

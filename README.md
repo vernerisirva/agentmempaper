@@ -317,6 +317,16 @@ only the primary final structured assessment, independently checking support and
 counterevidence. No hidden reasoning is shared or retained. Historical claim parsers,
 numeric matching, role keywords and score caps do not control this admission path.
 
+`probe_promotion_schema.py` asks each configured provider whether it accepts the
+current promotion response schema, which the strict structured-output subsets do not
+expose statically. Without it, a schema a provider rejects would surface as a protocol
+failure on the first real assessment rather than at configuration time. It sends a
+trivial fixed prompt with no manuscript, evidence or stored row, so it evaluates
+nothing and writes nothing, and it reports the payloads unless `--live` is passed.
+Because a live run costs allocation or money it is an explicit operator step, never
+part of a run: use it after any change to the response schema and before relying on a
+new gate version in production.
+
 `check_stored_assessments.py` is a read-only operator check over every stored
 assessment: it loads each row, revalidates completed promotion receipts under the gate
 version that produced them, and reports the version combinations held. It writes,

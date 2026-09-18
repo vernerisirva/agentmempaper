@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from paper_scout.promotion_protocol import (  # noqa: E402
     DUAL_PROMOTION_GATE_VERSIONS, INDEPENDENCE_FIELD, INDEPENDENCE_GATE_VERSIONS,
-    PROMOTION_ASSESSMENT_VERSIONS, validate_receipt,
+    PROMOTION_ASSESSMENT_VERSIONS, evaluation_independence_error, validate_receipt,
 )
 from paper_scout.quality_models import QualityAssessment  # noqa: E402
 
@@ -90,10 +90,16 @@ def diagnosis(value: dict) -> str | None:
             and value.get('quality_status') == 'pass'
             and gate not in DUAL_PROMOTION_GATE_VERSIONS):
         return f'{value.get("assessment_version")} pass on legacy gate {gate}'
-    if (any(INDEPENDENCE_FIELD in (value.get('execution') or {}).get(role, {})
-            for role in ('primary', 'adjudicator'))
-            and gate not in INDEPENDENCE_GATE_VERSIONS):
+    execution = value.get('execution') or {}
+    carried = [role for role in ('primary', 'adjudicator')
+               if INDEPENDENCE_FIELD in (execution.get(role) or {})]
+    if carried and gate not in INDEPENDENCE_GATE_VERSIONS:
         return f'gate {gate} carries evaluation independence'
+    # The same enum-only predicate the gate applies, so a stored row that breaks it is
+    # named rather than reported as a bare validation error. It reads no prose here either.
+    for role in carried:
+        if evaluation_independence_error(execution[role], role) is not None:
+            return f'{role} evaluation independence values violate their contract'
     return None
 
 

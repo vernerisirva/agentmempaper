@@ -59,16 +59,242 @@
             <p>Large language model agents have shown promise in bioinformatics, but most existing systems focus primarily on producing final answers, treating planning, tool use, and code execution as transient interactions. This design is poorly suited to long-horizon bioinformatics tasks, where conclusions must remain connected...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The technical report provides a clear architectural specification, extensive experimental validation across multiple LLM backends, detailed ablations, and insightful auditing of benchmark ambiguities, meeting all scientific curation standards.</p>
+      <p>The authors explicitly acknowledge boundaries including tool/skill coverage constraints for rare platforms or custom models, reliance on benchmark-based evaluation rather than fully open-ended wet-lab research, and lack of autonomous scientific hypothesis formulation.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T09:48:57.937189+00:00.</p>
+        <p>Coverage: 91837 of 91837 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Large language model agents have shown promise in bioinformatics, but most existing systems
+focus primarily on producing final answers, treating planning, tool use, and code execution as transient
+interactions. This design is poorly suited to long-horizon bioinformatics tasks, where conclusions
+must remain connected to the data, computations, and intermediate evidence that support them. We
+introduceBioinfoysis, a multi-agent harness that represents each request as a persistent, artifact-
+grounded analysis run. Bioinfoysis combines global planning with step-wise, evidence-driven replanning:
+the planner maintains an executable checklist and revises pending steps using structured handoffs
+returned after each worker execution. These handoffs bind intermediate results to their responsible
+agent, checklist step, and plan generation, preventing stale evidence from being silently reused </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>after
+replanning. A controlled runtime validates generated scripts, tables, and figures before they are used
+in downstream analysis or reporting, while role-specific context, persistent memory, and governed
+bioinformatics skills support reliable execution over long analysis trajectories. We evaluate Bioinfoysis
+on BixBench and two question-answering tracks of LAB-Bench 2. On BixBench, Bioinfoysis achieves
+state-of-the-art accuracy of 82.4%. Across four underlying language models, Bioinfoysis increases
+average accuracy from 27.81% to 64.13% on SeqQA2 and from 3.13% to 31.25% on DbQA2. These results
+demonstrate that reliable bioinformatics automation depends not only on model capability, but also on
+the harness that governs planning, execution, memory, and evidence flow. We hope that the emergence
+of Bioinfoysis will play a driving and leading role in the development of the bioinformatics </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Bioinfoysis is a multi-agent harness for long-horizon bioinformatics analysis and scientific report generation.
+Figure 2 presents the Bioinfoysis framework. Its purpose is not simply to connect a language model to a
+collection of tools. Instead, it governs how an open-ended request is converted into a plan, how that plan is
+executed against biological data and external evidence, and how the resulting computations are assembled
+into a report that can be checked against the underlying files. Each request is represented as a persistent run
+with explicit inputs, workflow state, intermediate results, and final deliverables. The primary system object
+is therefore the analysis process rather than the final chat message [ 22, 23, 24, 25, 26, 27]. The harness
+consists of three interacting layers: anOrchestration layerfor multi-agent planning and checklist-based
+execution [28, 29, 30, 31]; </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>aScientific Capability and Execution layerfor agent-specific tools, bioinformatics
+skills management, and isolated code execution, and artifact validation; and anObservability layerfor
+traces, analytics facts, and audit summaries. Together, these layers convert open-ended biological analysis
+requests into structured, inspectable, and reproducible scientific workflows.
+The default execution path is organized around five functional roles:coordinator,planner,researcher,coder,
+andreporter, together with an optional human-feedback gate [32, 33].
+• The coordinator first determines whether the request requires bioinformatics analysis, resolves uploaded
+or previously generated files, and converts the user input into a compact, file-aware task description.
+• The planner first constructs an initial global checklist that specifies the main analytical objectives,
+worker assignments, dependencies, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and expected outputs. This checklist serves as an executable
+scaffold rather than a frozen workflow. After the plan has been accepted, the same planner node enters
+planner–supervisor mode, in which it uses newly produced evidence and execution feedback to refine
+the remaining steps before dispatching the next worker.
+• The researcher provides complementary forms of scientific evidence. The researcher obtains biological
+and methodological information from the literature, NCBI resources, supported databases, and configured
+retrieval services.
+• The coder inspects the input data, checks schemas and sample relationships, writes and executes
+analysis scripts, and produces computational artifacts such as tables and figures in an isolated sandbox
+environment.
+• The reporter is retained as the final checklist step and is invoked only after the required evidence and
+artifacts have been produced. </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This layer provides the scientific capabilities required to transform a planned step into biological evidence or
+a computed result. Instead of exposing the same capabilities to every agent, Bioinfoysis assigns them accord-
+ing to the agent&#x27;s analytical responsibility. The researcher uses literature search, NCBI resources, supported
+biological databases, document retrieval, and prior evidence to collect the biological and methodological
+knowledge required by the current step. The coder inspects the input data, identifies its structure and
+sample relationships, selects an appropriate analysis procedure, executes the computation, and produces
+result tables, figures, and scripts.
+Tools provide the basic operations needed to search scientific resources, inspect data, and execute analysis
+code. Skills organize these operations into reusable bioinformatics procedures. A skill describes </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+assumptions, expected inputs, recommended methods, software dependencies, execution guidance, and
+expected outputs of a recurring analysis. For example, a differential-expression skill [ 35] can guide the
+coder from count-matrix inspection and sample matching to model fitting, statistical testing, and result
+visualization. Other skills support procedures such as gene-set enrichment, single-cell differential analysis,
+gene-identifier conversion, microbial variant analysis, methylation analysis, and clinical statistics. Skills
+therefore contribute domain-specific analysis guidance, rather than merely providing additional callable
+functions.
+The resulting analysis is grounded in actual computation. Code is executed in a controlled runtime associated
+with the current run, and generated scripts, tables, figures, and logs are retained as analysis artifacts. Before
+a step is accepted, </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Bioinfoysis does not send the complete conversation and every previous tool result to every agent. At the
+beginning of a run, it builds a session context from recent conversation, summaries of completed runs,
+registered artifacts, stored memory [39, 40, 41], and recovery information. This context is then converted
+into separate views for the planner, researcher, coder, and reporter. The planner sees the task and current
+checklist, the researcher sees the current evidence need, the coder sees the active analysis step and relevant
+inputs, and the reporter sees the validated results and artifact references needed for synthesis.
+Context within a run is centered on the active checklist step. Worker outputs are converted into structured
+handoffs that record the conclusion, supporting evidence, references, artifacts, uncertainty, and execution
+status. Compact evidence cards and reporter-facing </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Generated outputs are managed as run artifacts rather than as paths mentioned only in an agent response.
+When the coder reports a script, table, file, or figure, Bioinfoysis resolves the path inside the permitted
+workspace and checks that the file exists. A computation-heavy step must also provide evidence that the
+analysis was executed or report quantitative results consistent with the requested output. Invalid paths and
+unsupported claims trigger a bounded correction instead of being attached to a successful step.
+The workspace separates registered inputs, public scientific outputs, scripts, diagnostic logs, private tool
+results, memory, and trace data. Agents can access the internal materials required to continue the analysis,
+while users receive a restricted artifact view containing the intended deliverables. This separation prevents
+internal memory and raw execution payloads from </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compare Bioinfoysis with representative general-purpose language models, tool-using agents, and
+bioinformatics-oriented agent systems on the original BixBench benchmark, which contains 205 questions
+derived from 61 real-world bioinformatics analysis capsules. Accuracy is defined as the percentage of
+questions answered correctly according to the benchmark evaluation protocol. Bioinfoysis uses Kimi-K2.6
+as its underlying agent model and enables the complete agent harness. Results for the comparison systems
+are collected from their reported BixBench evaluations.
+As shown in Figure 3, Bioinfoysis achieves the highest accuracy of 82.4%, correctly answering 169 of the 205
+10
+Table 1:Domain-wise evaluation results of Kimi-K2.6 on BixBench.
+Domain Capsules Correct Questions Accuracy
+Functional Genomics &amp; Pathway Enrichment 9 22 31 70.97%
+Genomic Variant Analysis 7 14 16 87.50%
+Transcriptomics </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>&amp; Differential Expression 10 30 42 71.43%
+Phylogenetics &amp; Comparative Genomics 15 45 51 88.24%
+Epigenomics 2 9 12 75.00%
+Clinical Research &amp; Biostatistics 3 16 18 88.89%
+Bioimaging &amp; Quantitative Phenotyping 4 21 21 100.00%
+Single-Cell Transcriptomics 1 2 2 100.00%
+Proteomics 1 4 4 100.00%
+Multi-Omics Integration &amp; Machine Learning 1 2 2 100.00%
+Microbial Genomics &amp; Antimicrobial Resistance 1 4 6 66.67%
+Overall 54 169 205 82.44%
+questions. It outperforms the second-ranked GPT Rosalind system by 7.3 percentage points and exceeds
+the baselines of GPT-5.4 Agent and Grok-4.2 Agent by 9.2 and 9.6 points, respectively [ 45]. Compared
+with bioinformatics-oriented systems, Bioinfoysis improves over Biomni Lab [1] and BioAgent [46] by 30.2
+and 33.6 percentage points. The performance advantage is even greater than that of earlier systems such
+as Edison Analysis, K-Dense Analyst [47], Kepler, and </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>questions. Average
+denotes the macro-average accuracy across the four model columns.
+Benchmark System Kimi GPT-5.5 DeepSeek GLM Average
+SeqQA2
+Bioinfoysis66.00% 75.00% 68.50% 69.25% 69.69%
+Base model 35.50% 64.75% 31.61% 34.75% 41.65%
+DbQA2
+Bioinfoysis30.20% 37.20% 22.10% 20.90% 27.60%
+Base model 1.60% 7.80% 3.10% 0.00% 3.13%
+SeqQA2 uses Kimi-K2.6, GPT-5.5, DeepSeek-V4-Pro, and GLM-5.2. For DbQA2, the reported base models are Kimi-K2.6, GPT-5.5,
+DeepSeek-V4-Flash, and GLM-5.2, respectively. Therefore, the DeepSeek result on DbQA2 is a system-level comparison rather
+than a strictly model-matched comparison.
+whether required intermediate and output files are successfully generated, and whether the resulting
+artifacts are sufficiently traceable to explain how the final answer was derived. Before using BixBench as a
+formal evaluation benchmark, we additionally conducted a benchmark audit. </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>achieve better overall performance. The remaining failures mainly stem
+from three sources. First, infrastructure and execution issues, including timeouts when downloading or
+13
+Table 3:Performance of Bioinfoysis on BixBench across different agent models and component ablations.
+The first three rows evaluate the harness with different agent models, while the remaining rows ablate
+ReAct-style planning, memory, and basic bioinformatics skills using GPT-5.4. ∆ Acc. denotes the absolute
+accuracy change, in percentage points, relative to the full GPT-5.4 configuration.
+Configuration Agent model Skills loaded Accuracy (%) Correct∆Acc.
+Bioinfoysis Kimi-K2.6 7882.44 169/205+3.41
+Bioinfoysis GPT-5.4 78 79.02 162/2050.00
+Bioinfoysis DeepSeek-V4-Pro 78 77.07 158/205−1.95
+w/o ReAct-style planning GPT-5.4 78 72.20 148/205−6.83
+w/o memory GPT-5.4 78 56.59 116/205−22.44
+w/o bioinformatics skills GPT-5.4 </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experimental setup.We evaluate the contribution of four components of Bioinfoysis on all 205 BixBench
+questions: different LLM model, ReAct-style planning, persistent memory, and governed bioinformatics
+skills. InPlan-Execute, the initial plan is fixed before execution and cannot be revised in response to
+intermediate results. Inw/o memory, Bioinfoysis does not include an agent memory module and relies
+solely on the current context. Inw/o bioinfomatics skills, the skills include only those related to basic
+bioinformatics. Inw/o all skills, the skill catalog is removed entirely (zero skills loaded). We report both the
+evaluator&#x27;s average score on a binary accuracy metric, where a question is counted as correct according to
+the benchmark evaluator. All configurations are evaluated on the same 205 questions.
+We aim to investigate two questions: (1)Which components affect the performance of </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Bioinfoysis?(2)Does
+the proposed agent harness deliver consistently strong performance across different models?We observe several
+experimental findings from Table 3.
+(1)Effect of ReAct-style planning.Replacing ReAct-style planning with a Plan-Execute mode reduces
+accuracy from 79.02% to 72.20%, an absolute drop of 6.83 percentage points, and decreases the number of
+correct answers from 162 to 148. This result suggests that the ability to revise pending steps after observing
+intermediate evidence is useful for long-horizon analyses, where an initial plan may become invalid after
+file inspection, tool execution, or partial result validation.
+(2)Effect of persistent memory.Disabling memory produces the largest decline among the model-
+matched variants. Accuracy decreases from 79.02% to 56.59%, corresponding to 22.44 percentage points
+and 46 fewer correct answers. In the harness, persistent </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory records the selected inputs, completed
+14
+operations, quantitative results, and paths to generated artifacts in structured step results. Later agents
+can therefore retrieve the exact result rather than infer it again from the remaining conversation. Without
+persistent memory, these details exist only in the transient context. After context compression or an agent
+handoff, a later agent may know that an analysis was completed but lose the exact sample filter, output
+table, column name, or numerical result. It may consequently repeat the analysis with different settings,
+inspect the wrong artifact, or report an approximate value instead of the computed answer. The large
+and strongly asymmetric paired degradation therefore indicates that persistent memory is particularly
+important for maintaining consistency across multi-step analysis and final-answer synthesis.
+(3)Effect of governed </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>skills.The skill ablations reveal that both domain-specific and general-purpose
+skills contribute substantially to performance. Removing the 48 bioinformatics-specific skills while retaining
+the remaining 30 skills reduces accuracy from 79.02% to 60.00%. This result indicates that general tool access
+alone is insufficient for many BixBench tasks. Bioinformatics skills provide task-specific procedures for
+operations such as selecting suitable analytical methods, configuring domain tools, checking intermediate
+outputs, and extracting the quantities requested by the benchmark. Without this guidance, the agents
+must reconstruct these procedures from the task description and the language model&#x27;s internal knowledge,
+increasing the likelihood of inappropriate method selection, incorrect parameters, or incomplete result
+validation. Removing the remaining 30 skills further decreases accuracy </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Limited Tool and Skill Coverage.Bioinfoysis&#x27;s analytical capabilities are constrained by the range of
+integrated tools and the coverage of its skill modules. For relatively standardized tasks, such as differential
+expression analysis, functional enrichment, and routine quality control of omics data, the system can
+organize workflows according to established analytical procedures. However, the current skill modules
+may not adequately support custom statistical models, specialized sequencing platforms, rare species,
+non-standard reference genomes, emerging algorithms, or highly customized analytical requirements. Even
+when a task is technically executable, the default method may not be optimal for the specific research
+question.
+Limited Evaluation Scope.Although Bioinfoysis improves the structure, traceability, and recoverability
+of long-horizon bioinformatics analyses, several </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>limitations remain. First, our empirical evaluation currently
+focuses primarily on BixBench and LAB-Bench2. Although these benchmarks cover a diverse range of
+bioinformatics workflows, performance on a limited set of benchmarks cannot fully characterize the
+reliability of the system in different data modalities, computational environments, and open-ended research
+settings. In addition, the benchmark primarily assesses the accuracy of final answers and does not capture
+all dimensions of scientific quality, such as the suitability of the statistical model, the robustness of the
+biological interpretation, or the reproducibility of results across alternative implementations.
+Lack of Autonomous Scientific Discovery.Bioinfoysis currently does not provide comprehensive
+autonomous research. Its primary objective is to plan and complete bioinformatics tasks according to
+research questions, data, </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We manually audited both the BixBench summary table and the local capsule archive. The summary table
+contains 205 parsed records, and every record can be matched to a corresponding local capsule ZIP archive
+through the data_folder field in the original BixBench JSON. Our manual annotations indicate that
+BixBench cannot be cleanly divided into only &#x27;correct&#x27; and &#x27;incorrect&#x27; questions; it also contains questions
+whose answers depend on interpretation, admissible answer ranges, or benchmark-quality issues. We
+therefore do not include every question directly in a strict exact-match evaluation. Instead, we distinguish
+among questions suitable for strict scoring, questions requiring multi-answer or range-based scoring, and
+questions requiring benchmark-quality analysis [55].
+To scale this auditing procedure, we built aPrompt Chainon top of Bioinfoysis. The workflow consists of
+three steps. </blockquote></details></li><li><strong>Contribution clarity — pages 27–28</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>task-specific constraints stated in the prompt. Depending on the task, these checks include
+sequence orientation, full coding-sequence coverage, translation into the requested protein, restriction-site
+compatibility, Gibson overlap validity, antisense complementarity, amplicon length or GC content, and
+primer-pair validity. A response is scored as incorrect if the reported sequence or value fails these checks,
+if a required answer is absent, or if the response contains only a placeholder or procedural instruction.
+Manual audit results.The audit has classified 63 of the 91 cases as correct and 28 as incorrect, corre-
+26
+Table 4:Manual review outcomes for the 91 SeqQA cases assigned needs_llm_judge. Accuracy is
+calculated within each task type.
+Task type Cases Correct Incorrect Accuracy (%)
+Amplicon GC 6 6 0 100.0
+Mutation restriction 2 2 0 100.0
+Codon optimization 19 18 1 94.7
+Amplicon </blockquote></details></li><li><strong>Contribution clarity — page 28</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>length 15 12 3 80.0
+Primer design 19 14 5 73.7
+Oligo design 13 9 4 69.2
+Primer interactions 3 1 2 33.3
+Gibson primers 7 1 6 14.3
+Synonymous mutation 3 0 3 0.0
+ORF amino acid 3 0 3 0.0
+Pairwise distances 1 0 1 0.0
+Total 91 63 28 69.2
+Table 5:Performance of Bioinfoysis on the SeqQA2 evaluation across four model families, reported under
+the revised grading protocol. Agent accuracy denotes the full Bioinfoysis workflow; base-model accuracy
+denotes the Direct condition (API with attachment injection / file tools).
+Model Agent accuracy (%) Base-model accuracy (%) Difference (pp)
+DeepSeek-V4 65.25 (261/400) 25.25 (101/400) +40.00
+GLM-5.2 67.50 (270/400) 35.00 (140/400) +32.50
+GPT-5.5 71.25 (285/400) 63.50 (254/400) +7.75
+Kimi-2.6 62.50 (250/400) 25.50 (102/400) +37.00
+sponding to an accuracy of 69.23% within the manually reviewed subset. No cases remain unresolved
+after review. Table 4 reports </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +333,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

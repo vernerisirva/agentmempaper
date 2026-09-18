@@ -24,7 +24,7 @@
   "last_seen_date": "2026-09-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-03",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-04 11:24:20",
   "notified_date": "2026-09-04",
@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-04 11:22:45",
-    "generated_at": "2026-09-18 11:23:31",
+    "generated_at": "2026-09-18 13:22:56",
     "last_seen_at": "2026-09-06 11:03:01",
     "metadata_sources": [
       "arxiv"
@@ -100,36 +100,1901 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T09:49:21.671987+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The paper presents a coherent, mathematically complete framework with clear conceptual positioning against both classical utility models and quantum decision approaches, supported by solid quantitative validations on real empirical data and detailed dynamic simulations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 94024,
+      "assessment_input_sha256": "36bbbc6d86e7cf7da9f55f55a8d1beeada8ce5d2ffeba22d2de2df0f2c2cfb0c",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2609.03632",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 92009,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 91999,
+      "evidence_block_count": 112,
+      "evidence_context_characters": 104748,
+      "evidence_context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+      "evidence_context_sha256": "3e42a92b1b40f8432a7e65cbf14f7b243c078ce456614673a900524a8652b88e",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 92089,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "extracted_pages": 41,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad",
+        "source_url": "https://arxiv.org/pdf/2609.03632",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 92009,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "section_roles_detected": [
+        "body",
+        "discussion",
+        "introduction"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "discussion",
+        "introduction"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 453,
+          "supplied_characters": 453
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1443,
+          "supplied_characters": 1443
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 4016,
+          "supplied_characters": 4016
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4105,
+          "supplied_characters": 4105
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 4216,
+          "supplied_characters": 4216
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 115,
+          "supplied_characters": 115
+        },
+        {
+          "heading": "Decisions At Initial Stage",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1468,
+          "supplied_characters": 1468
+        },
+        {
+          "heading": "Behavioral Probability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1324,
+          "supplied_characters": 1324
+        },
+        {
+          "heading": "Behavioral Probability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1943,
+          "supplied_characters": 1943
+        },
+        {
+          "heading": "Utility Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 203,
+          "supplied_characters": 203
+        },
+        {
+          "heading": "Utility Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1786,
+          "supplied_characters": 1786
+        },
+        {
+          "heading": "Attraction Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 296,
+          "supplied_characters": 296
+        },
+        {
+          "heading": "Attraction Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1998,
+          "supplied_characters": 1998
+        },
+        {
+          "heading": "Attraction Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2878,
+          "supplied_characters": 2878
+        },
+        {
+          "heading": "Attraction Factor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1795,
+          "supplied_characters": 1795
+        },
+        {
+          "heading": "Empirical Justification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1154,
+          "supplied_characters": 1154
+        },
+        {
+          "heading": "Empirical Justification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2661,
+          "supplied_characters": 2661
+        },
+        {
+          "heading": "Empirical Justification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2396,
+          "supplied_characters": 2396
+        },
+        {
+          "heading": "Operation Of Decision Network",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Probability Dynamics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2104,
+          "supplied_characters": 2104
+        },
+        {
+          "heading": "Probability Dynamics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "N \u2212 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 2607,
+          "supplied_characters": 2607
+        },
+        {
+          "heading": "N \u2212 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 2542,
+          "supplied_characters": 2542
+        },
+        {
+          "heading": "N \u2212 1",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 3135,
+          "supplied_characters": 3135
+        },
+        {
+          "heading": "Binary Choice",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 248,
+          "supplied_characters": 248
+        },
+        {
+          "heading": "Binary Choice",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1632,
+          "supplied_characters": 1632
+        },
+        {
+          "heading": "Allais Paradox And Its Resolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Allais Paradox And Its Resolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2203,
+          "supplied_characters": 2203
+        },
+        {
+          "heading": "Allais Paradox And Its Resolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 713,
+          "supplied_characters": 713
+        },
+        {
+          "heading": "Dynamics Of Allais Paradox",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1637,
+          "supplied_characters": 1637
+        },
+        {
+          "heading": "Dynamics Of Allais Paradox",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 2865,
+          "supplied_characters": 2865
+        },
+        {
+          "heading": "Dynamics Of Allais Paradox",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2685,
+          "supplied_characters": 2685
+        },
+        {
+          "heading": "Dynamics Of Allais Paradox",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 3198,
+          "supplied_characters": 3198
+        },
+        {
+          "heading": "Regulated Decision Making",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 425,
+          "supplied_characters": 425
+        },
+        {
+          "heading": "Regulated Decision Making",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1929,
+          "supplied_characters": 1929
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "discussion",
+          "section_index": 35,
+          "source_characters": 681,
+          "supplied_characters": 681
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "discussion",
+          "section_index": 36,
+          "source_characters": 3279,
+          "supplied_characters": 3279
+        },
+        {
+          "heading": "Competing Interests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 463,
+          "supplied_characters": 463
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 1473,
+          "supplied_characters": 1473
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 2356,
+          "supplied_characters": 2356
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 2416,
+          "supplied_characters": 2416
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 2215,
+          "supplied_characters": 2215
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 663,
+          "supplied_characters": 663
+        },
+        {
+          "heading": "Rica 47 (1979) 263\u2013292",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1726,
+          "supplied_characters": 1726
+        },
+        {
+          "heading": "Rica 47 (1979) 263\u2013292",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 1650,
+          "supplied_characters": 1650
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 31,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 3099,
+          "supplied_characters": 3099
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 32,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1713,
+          "supplied_characters": 1713
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 33,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 1199,
+          "supplied_characters": 1199
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 34,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 551,
+          "supplied_characters": 551
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 35,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 1193,
+          "supplied_characters": 1193
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 36,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 973,
+          "supplied_characters": 973
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 37,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 493,
+          "supplied_characters": 493
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 38,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 815,
+          "supplied_characters": 815
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 39,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 794,
+          "supplied_characters": 794
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 40,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 798,
+          "supplied_characters": 798
+        },
+        {
+          "heading": "Figure Captions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 41,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 249,
+          "supplied_characters": 249
+        }
+      ],
+      "selected_characters": 91999,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "selected_sections": [
+        {
+          "characters": 453,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 1443,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 4016,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 4105,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 4216,
+          "heading": "Introduction",
+          "page": 4
+        },
+        {
+          "characters": 115,
+          "heading": "Introduction",
+          "page": 5
+        },
+        {
+          "characters": 1468,
+          "heading": "Decisions At Initial Stage",
+          "page": 5
+        },
+        {
+          "characters": 1324,
+          "heading": "Behavioral Probability",
+          "page": 5
+        },
+        {
+          "characters": 1943,
+          "heading": "Behavioral Probability",
+          "page": 6
+        },
+        {
+          "characters": 203,
+          "heading": "Utility Factor",
+          "page": 6
+        },
+        {
+          "characters": 1786,
+          "heading": "Utility Factor",
+          "page": 7
+        },
+        {
+          "characters": 296,
+          "heading": "Attraction Factor",
+          "page": 7
+        },
+        {
+          "characters": 1998,
+          "heading": "Attraction Factor",
+          "page": 8
+        },
+        {
+          "characters": 2878,
+          "heading": "Attraction Factor",
+          "page": 9
+        },
+        {
+          "characters": 1795,
+          "heading": "Attraction Factor",
+          "page": 10
+        },
+        {
+          "characters": 1154,
+          "heading": "Empirical Justification",
+          "page": 10
+        },
+        {
+          "characters": 2661,
+          "heading": "Empirical Justification",
+          "page": 11
+        },
+        {
+          "characters": 2396,
+          "heading": "Empirical Justification",
+          "page": 12
+        },
+        {
+          "characters": 387,
+          "heading": "Operation Of Decision Network",
+          "page": 12
+        },
+        {
+          "characters": 2104,
+          "heading": "Probability Dynamics",
+          "page": 13
+        },
+        {
+          "characters": 148,
+          "heading": "Probability Dynamics",
+          "page": 14
+        },
+        {
+          "characters": 2607,
+          "heading": "N \u2212 1",
+          "page": 14
+        },
+        {
+          "characters": 2542,
+          "heading": "N \u2212 1",
+          "page": 15
+        },
+        {
+          "characters": 3135,
+          "heading": "N \u2212 1",
+          "page": 16
+        },
+        {
+          "characters": 248,
+          "heading": "Binary Choice",
+          "page": 16
+        },
+        {
+          "characters": 1632,
+          "heading": "Binary Choice",
+          "page": 17
+        },
+        {
+          "characters": 492,
+          "heading": "Allais Paradox And Its Resolution",
+          "page": 17
+        },
+        {
+          "characters": 2203,
+          "heading": "Allais Paradox And Its Resolution",
+          "page": 18
+        },
+        {
+          "characters": 713,
+          "heading": "Allais Paradox And Its Resolution",
+          "page": 19
+        },
+        {
+          "characters": 1637,
+          "heading": "Dynamics Of Allais Paradox",
+          "page": 19
+        },
+        {
+          "characters": 2865,
+          "heading": "Dynamics Of Allais Paradox",
+          "page": 20
+        },
+        {
+          "characters": 2685,
+          "heading": "Dynamics Of Allais Paradox",
+          "page": 21
+        },
+        {
+          "characters": 3198,
+          "heading": "Dynamics Of Allais Paradox",
+          "page": 22
+        },
+        {
+          "characters": 425,
+          "heading": "Regulated Decision Making",
+          "page": 22
+        },
+        {
+          "characters": 1929,
+          "heading": "Regulated Decision Making",
+          "page": 23
+        },
+        {
+          "characters": 681,
+          "heading": "Discussion",
+          "page": 23
+        },
+        {
+          "characters": 3279,
+          "heading": "Discussion",
+          "page": 24
+        },
+        {
+          "characters": 463,
+          "heading": "Competing Interests",
+          "page": 25
+        },
+        {
+          "characters": 1473,
+          "heading": "Unclassified body after references",
+          "page": 25
+        },
+        {
+          "characters": 2356,
+          "heading": "Unclassified body after references",
+          "page": 26
+        },
+        {
+          "characters": 2416,
+          "heading": "Unclassified body after references",
+          "page": 27
+        },
+        {
+          "characters": 2215,
+          "heading": "Unclassified body after references",
+          "page": 28
+        },
+        {
+          "characters": 663,
+          "heading": "Unclassified body after references",
+          "page": 29
+        },
+        {
+          "characters": 1726,
+          "heading": "Rica 47 (1979) 263\u2013292",
+          "page": 29
+        },
+        {
+          "characters": 1650,
+          "heading": "Rica 47 (1979) 263\u2013292",
+          "page": 30
+        },
+        {
+          "characters": 3099,
+          "heading": "Figure Captions",
+          "page": 31
+        },
+        {
+          "characters": 1713,
+          "heading": "Figure Captions",
+          "page": 32
+        },
+        {
+          "characters": 1199,
+          "heading": "Figure Captions",
+          "page": 33
+        },
+        {
+          "characters": 551,
+          "heading": "Figure Captions",
+          "page": 34
+        },
+        {
+          "characters": 1193,
+          "heading": "Figure Captions",
+          "page": 35
+        },
+        {
+          "characters": 973,
+          "heading": "Figure Captions",
+          "page": 36
+        },
+        {
+          "characters": 493,
+          "heading": "Figure Captions",
+          "page": 37
+        },
+        {
+          "characters": 815,
+          "heading": "Figure Captions",
+          "page": 38
+        },
+        {
+          "characters": 794,
+          "heading": "Figure Captions",
+          "page": 39
+        },
+        {
+          "characters": 798,
+          "heading": "Figure Captions",
+          "page": 40
+        },
+        {
+          "characters": 249,
+          "heading": "Figure Captions",
+          "page": 41
+        }
+      ],
+      "selected_text_sha256": "36bbbc6d86e7cf7da9f55f55a8d1beeada8ce5d2ffeba22d2de2df0f2c2cfb0c",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad",
+      "source_pages": 41,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0002"
+        ],
+        "excerpt": "A new type of decision networks is suggested and its operatio n is analyzed. The network\nnodes are represented by intelligent agents who can denote e ither some biological beings, like\nhumans, or neurons of the brain, or the nodes of artificial int elligence. The specifics of the\nnetwork are in the following: It is probabilistic in the sense that the choice, accomplished by\neach agent, is characterized by the related probability. It is dynamic, with the probabilities\nvarying in time due to the exchange of information between th e agents. It is affective, be-\ncause the agents choose between alternatives by taking acco unt of utility as well as of biases\nand emotions. In general, it is heterogeneous, being composed of the groups of agents with\ndifferent properties, for instance having long-term memory a nd short-term memory. The\nnetwork dynamics, caused by the information exchange, resu ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fb83aaf71ba779bc9cbe80c996eedffce264619c61b805a2db14447f6346d286",
+            "evidence_id": "E14ed651b0c8a5f4b-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "A new type of decision networks is suggested and its operatio n is analyzed. The network\nnodes are represented by intelligent agents who can denote e ither some biological beings, like\nhumans, or neurons of the brain, or the nodes of artificial int elligence. The specifics of the\nnetwork are in the following: It is probabilistic in the sense that the choice, accomplished by\neach agent, is characterized by the related probability. It is dynamic, with the probabilities\nvarying in time due to the exchange of information between th e agents. It is affective, be-\ncause the agents choose between alternatives by taking acco unt of utility as well as of biases\nand emotions. In general, it is heterogeneous, being composed of the groups of agents with\ndifferent properties, for instance having long-term memory a nd short-term memory. The\nnetwork dynamics, caused by the information exchange, resu "
+              }
+            ],
+            "text": "A new type of decision networks is suggested and its operatio n is analyzed. The network\nnodes are represented by intelligent agents who can denote e ither some biological beings, like\nhumans, or neurons of the brain, or the nodes of artificial int elligence. The specifics of the\nnetwork are in the following: It is probabilistic in the sense that the choice, accomplished by\neach agent, is characterized by the related probability. It is dynamic, with the probabilities\nvarying in time due to the exchange of information between th e agents. It is affective, be-\ncause the agents choose between alternatives by taking acco unt of utility as well as of biases\nand emotions. In general, it is heterogeneous, being composed of the groups of agents with\ndifferent properties, for instance having long-term memory a nd short-term memory. The\nnetwork dynamics, caused by the information exchange, resu "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0014"
+        ],
+        "excerpt": "description, with no information on where the values\nof these parameters should be taken from, except several that could be fitted from experiments\nfor explaining the same experiments, which makes the fitting sensele ss.\nIn the present paper, we suggest an approach, based on classica l terms, characterizing a proba-\nbilistic dynamic decision network of intelligent agents. The approach e njoys the following features:\nIt is probabilistic, with the choice of alternatives by each agent being characterized by probabilities.\nIt is dynamic, with the choice probabilities varying with time because of information exchange.\nThe nodes of the network can be represented by intelligent agents whose choice combines the\nrational evaluation of utility of alternatives as well as their emotiona l attractiveness.\nThe suggested networks can characterize biological systems, su ch as human societies, or ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a5714c15144d7323eedadcf0f07fc3d23968520f5a3a3d393369ce038db6f059",
+            "evidence_id": "E14ed651b0c8a5f4b-B0014",
+            "pages": [
+              4
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1726,
+                "page": 4,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 833,
+                "text": "description, with no information on where the values\nof these parameters should be taken from, except several that could be fitted from experiments\nfor explaining the same experiments, which makes the fitting sensele ss.\nIn the present paper, we suggest an approach, based on classica l terms, characterizing a proba-\nbilistic dynamic decision network of intelligent agents. The approach e njoys the following features:\nIt is probabilistic, with the choice of alternatives by each agent being characterized by probabilities.\nIt is dynamic, with the choice probabilities varying with time because of information exchange.\nThe nodes of the network can be represented by intelligent agents whose choice combines the\nrational evaluation of utility of alternatives as well as their emotiona l attractiveness.\nThe suggested networks can characterize biological systems, su ch as human societies, or "
+              }
+            ],
+            "text": "description, with no information on where the values\nof these parameters should be taken from, except several that could be fitted from experiments\nfor explaining the same experiments, which makes the fitting sensele ss.\nIn the present paper, we suggest an approach, based on classica l terms, characterizing a proba-\nbilistic dynamic decision network of intelligent agents. The approach e njoys the following features:\nIt is probabilistic, with the choice of alternatives by each agent being characterized by probabilities.\nIt is dynamic, with the choice probabilities varying with time because of information exchange.\nThe nodes of the network can be represented by intelligent agents whose choice combines the\nrational evaluation of utility of alternatives as well as their emotiona l attractiveness.\nThe suggested networks can characterize biological systems, su ch as human societies, or "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0022"
+        ],
+        "excerpt": "(An) \u2192 0\nhas to be valid.\nThe simplest forms for the probability with respect to the terms f (An) and q(An), seems,\ncould be multiplicative or additive forms. However, the multiplicative fo rm does not satisfy the\nabove limiting condition. Hence, the simplest possible form is additive. I n this way, the available\narguments endorse the additive structure of the behavioral pro bability:\np(An) = f (An) + q(An) . (3)\nThe rational utility of an alternative An is quantified by the utility factor f (An) having the\nproperties of the classical probability, in particular, satisfying the normalization condition\nNA\u2211\nn=1\nf (An) = 1 , 0 \u2264 f (An) \u2264 1 (4)\nand the relation between the joint and conditional probabilities\nf (AB) = f (A|B) f (B) ( A, B \u2208 A) . (5)\nThe attraction factor q(An) characterizes the influence of emotions in the process of choice o f\nthe alternative An showing how the considered ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Behavioral Probability",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "333927db43aba1bd48dee8c52ce824725447003143e08dffec5b278151b32ab3",
+            "evidence_id": "E14ed651b0c8a5f4b-B0022",
+            "pages": [
+              6
+            ],
+            "section": "Behavioral Probability",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1371,
+                "page": 6,
+                "section": "Behavioral Probability",
+                "section_index": 8,
+                "start": 474,
+                "text": "(An) \u2192 0\nhas to be valid.\nThe simplest forms for the probability with respect to the terms f (An) and q(An), seems,\ncould be multiplicative or additive forms. However, the multiplicative fo rm does not satisfy the\nabove limiting condition. Hence, the simplest possible form is additive. I n this way, the available\narguments endorse the additive structure of the behavioral pro bability:\np(An) = f (An) + q(An) . (3)\nThe rational utility of an alternative An is quantified by the utility factor f (An) having the\nproperties of the classical probability, in particular, satisfying the normalization condition\nNA\u2211\nn=1\nf (An) = 1 , 0 \u2264 f (An) \u2264 1 (4)\nand the relation between the joint and conditional probabilities\nf (AB) = f (A|B) f (B) ( A, B \u2208 A) . (5)\nThe attraction factor q(An) characterizes the influence of emotions in the process of choice o f\nthe alternative An showing how the considered "
+              }
+            ],
+            "text": "(An) \u2192 0\nhas to be valid.\nThe simplest forms for the probability with respect to the terms f (An) and q(An), seems,\ncould be multiplicative or additive forms. However, the multiplicative fo rm does not satisfy the\nabove limiting condition. Hence, the simplest possible form is additive. I n this way, the available\narguments endorse the additive structure of the behavioral pro bability:\np(An) = f (An) + q(An) . (3)\nThe rational utility of an alternative An is quantified by the utility factor f (An) having the\nproperties of the classical probability, in particular, satisfying the normalization condition\nNA\u2211\nn=1\nf (An) = 1 , 0 \u2264 f (An) \u2264 1 (4)\nand the relation between the joint and conditional probabilities\nf (AB) = f (A|B) f (B) ( A, B \u2208 A) . (5)\nThe attraction factor q(An) characterizes the influence of emotions in the process of choice o f\nthe alternative An showing how the considered "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0029"
+        ],
+        "excerpt": "q(An) be always in the interval [0 , 1]. For a set of NA alternatives, the\nfollowing proposition is valid.\nTheorem ( [54]). Assume that there are NA alternatives An arranged so that\nq(An) > q (An+1) ( n = 1, 2, . . . , NA \u2212 1) , (19)\nhaving the typical difference between the attraction factors\n\u2206 = q(An) \u2212 q(An+1) , (20)\nwhose average magnitude is defined by the non-informative estimat e\nq = 1\nNA\nNA\u2211\nn=1\n| q(An) | = 1\n4 . (21)\nThen the attraction factors are\nq(An) = NA \u2212 2n + 1\n2NA\n(NA even) ,\n8\nq(An) = NA(NA \u2212 2n + 1)\n2(N 2\nA \u2212 1) (NA odd) , (22)\ndepending on whether NA is even or odd.\nAs examples, let us consider the cases with several alternatives. F or a set of two alternatives,\nwe have\n{ q(An) : n = 1, 2 } =\n{ 1\n4 , \u2212 1\n4\n}\n, (23)\nfor three alternatives,\n{ q(An) : n = 1, 2, 3 } =\n{ 3\n8 , 0 , \u2212 3\n8\n}\n, (24)\nand for the case of four alternatives, we get\n{ q(An) : n = 1, 2, 3, 4 } =\n{ ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Attraction Factor",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "685ab580699808023bb0c0088a6210539850d659b50c7387346963b3411c3da9",
+            "evidence_id": "E14ed651b0c8a5f4b-B0029",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Attraction Factor",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1998,
+                "page": 8,
+                "section": "Attraction Factor",
+                "section_index": 12,
+                "start": 1499,
+                "text": "q(An) be always in the interval [0 , 1]. For a set of NA alternatives, the\nfollowing proposition is valid.\nTheorem ( [54]). Assume that there are NA alternatives An arranged so that\nq(An) > q (An+1) ( n = 1, 2, . . . , NA \u2212 1) , (19)\nhaving the typical difference between the attraction factors\n\u2206 = q(An) \u2212 q(An+1) , (20)\nwhose average magnitude is defined by the non-informative estimat e\nq = 1\nNA\nNA\u2211\nn=1\n| q(An) | = 1\n4 . (21)\nThen the attraction factors are\nq(An) = NA \u2212 2n + 1\n2NA\n(NA even) ,\n8"
+              },
+              {
+                "end": 399,
+                "page": 9,
+                "section": "Attraction Factor",
+                "section_index": 13,
+                "start": 0,
+                "text": "q(An) = NA(NA \u2212 2n + 1)\n2(N 2\nA \u2212 1) (NA odd) , (22)\ndepending on whether NA is even or odd.\nAs examples, let us consider the cases with several alternatives. F or a set of two alternatives,\nwe have\n{ q(An) : n = 1, 2 } =\n{ 1\n4 , \u2212 1\n4\n}\n, (23)\nfor three alternatives,\n{ q(An) : n = 1, 2, 3 } =\n{ 3\n8 , 0 , \u2212 3\n8\n}\n, (24)\nand for the case of four alternatives, we get\n{ q(An) : n = 1, 2, 3, 4 } =\n{ "
+              }
+            ],
+            "text": "q(An) be always in the interval [0 , 1]. For a set of NA alternatives, the\nfollowing proposition is valid.\nTheorem ( [54]). Assume that there are NA alternatives An arranged so that\nq(An) > q (An+1) ( n = 1, 2, . . . , NA \u2212 1) , (19)\nhaving the typical difference between the attraction factors\n\u2206 = q(An) \u2212 q(An+1) , (20)\nwhose average magnitude is defined by the non-informative estimat e\nq = 1\nNA\nNA\u2211\nn=1\n| q(An) | = 1\n4 . (21)\nThen the attraction factors are\nq(An) = NA \u2212 2n + 1\n2NA\n(NA even) ,\n8\nq(An) = NA(NA \u2212 2n + 1)\n2(N 2\nA \u2212 1) (NA odd) , (22)\ndepending on whether NA is even or odd.\nAs examples, let us consider the cases with several alternatives. F or a set of two alternatives,\nwe have\n{ q(An) : n = 1, 2 } =\n{ 1\n4 , \u2212 1\n4\n}\n, (23)\nfor three alternatives,\n{ q(An) : n = 1, 2, 3 } =\n{ 3\n8 , 0 , \u2212 3\n8\n}\n, (24)\nand for the case of four alternatives, we get\n{ q(An) : n = 1, 2, 3, 4 } =\n{ "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0040"
+        ],
+        "excerpt": "1\nNA\nNA\u2211\nn=1\n| qexp(Ln) |,\nand to compare it with the quarter law (21).\nAccomplishing the above-described calculations for all 18 lotteries a dduced by Kahneman and\nTversky [76], we find the experimental attraction factor qexp = 0.27, which is in perfect agreement\nwith the quarter law giving 0 .25. Within the accuracy of the experiment 0 .1%, these results\ncoincide with each other. Thus, taking into account emotions allows u s to make predictions, at the\naggregate level, involving no fitting parameters. Let us emphasize t hat the choice of participants\ndeciding on the considered lotteries cannot be explained in the frame of the classical expected\ndecision theory, where the attraction factor is zero.\nWe have also accomplished the described calculations for a large set o f lotteries recently studied\nin Ref. [77]. The authors considered three classes of lotteries, 27 lo tteries containing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Justification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b784c61e3d0750b58f09ce1a1a35dc3f4539f7ba279b85c53d60f7be5a5fd4e4",
+            "evidence_id": "E14ed651b0c8a5f4b-B0040",
+            "pages": [
+              12
+            ],
+            "section": "Empirical Justification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1549,
+                "page": 12,
+                "section": "Empirical Justification",
+                "section_index": 17,
+                "start": 650,
+                "text": "1\nNA\nNA\u2211\nn=1\n| qexp(Ln) |,\nand to compare it with the quarter law (21).\nAccomplishing the above-described calculations for all 18 lotteries a dduced by Kahneman and\nTversky [76], we find the experimental attraction factor qexp = 0.27, which is in perfect agreement\nwith the quarter law giving 0 .25. Within the accuracy of the experiment 0 .1%, these results\ncoincide with each other. Thus, taking into account emotions allows u s to make predictions, at the\naggregate level, involving no fitting parameters. Let us emphasize t hat the choice of participants\ndeciding on the considered lotteries cannot be explained in the frame of the classical expected\ndecision theory, where the attraction factor is zero.\nWe have also accomplished the described calculations for a large set o f lotteries recently studied\nin Ref. [77]. The authors considered three classes of lotteries, 27 lo tteries containing "
+              }
+            ],
+            "text": "1\nNA\nNA\u2211\nn=1\n| qexp(Ln) |,\nand to compare it with the quarter law (21).\nAccomplishing the above-described calculations for all 18 lotteries a dduced by Kahneman and\nTversky [76], we find the experimental attraction factor qexp = 0.27, which is in perfect agreement\nwith the quarter law giving 0 .25. Within the accuracy of the experiment 0 .1%, these results\ncoincide with each other. Thus, taking into account emotions allows u s to make predictions, at the\naggregate level, involving no fitting parameters. Let us emphasize t hat the choice of participants\ndeciding on the considered lotteries cannot be explained in the frame of the classical expected\ndecision theory, where the attraction factor is zero.\nWe have also accomplished the described calculations for a large set o f lotteries recently studied\nin Ref. [77]. The authors considered three classes of lotteries, 27 lo tteries containing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0041"
+        ],
+        "excerpt": "only gains, 19\nlotteries with only losses, and 21 mixed lotteries with both gains and los ses. The same experiment\nwas repeated after two weeks, with randomly changing the order o f the lottery choices. Altogether,\nthis makes 134 decision tasks. In each class of the lotteries, the ex perimental aggregate attraction\nfactor is found to be the same, qexp = 0.22, which perfectly agrees with the quarter law.\nThese results cannot be predicted by expected utility theory or ot her decision-making models,\ndiscussed in the Introduction, without crippling expected decision t heory by introducing specially\ndesigned value functionals and fitting parameters. These models, d eforming the expected utility\ntheory, called non-expected utility theories [15, 16], require the us e of fitting parameters for each\nconsidered case and have no predictive power.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Empirical Justification",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "068f3b379052d8507a71e3c5eb42d6adf2659c5743c1a57865557c34dbc81d23",
+            "evidence_id": "E14ed651b0c8a5f4b-B0041",
+            "pages": [
+              12
+            ],
+            "section": "Empirical Justification",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2396,
+                "page": 12,
+                "section": "Empirical Justification",
+                "section_index": 17,
+                "start": 1549,
+                "text": "only gains, 19\nlotteries with only losses, and 21 mixed lotteries with both gains and los ses. The same experiment\nwas repeated after two weeks, with randomly changing the order o f the lottery choices. Altogether,\nthis makes 134 decision tasks. In each class of the lotteries, the ex perimental aggregate attraction\nfactor is found to be the same, qexp = 0.22, which perfectly agrees with the quarter law.\nThese results cannot be predicted by expected utility theory or ot her decision-making models,\ndiscussed in the Introduction, without crippling expected decision t heory by introducing specially\ndesigned value functionals and fitting parameters. These models, d eforming the expected utility\ntheory, called non-expected utility theories [15, 16], require the us e of fitting parameters for each\nconsidered case and have no predictive power."
+              }
+            ],
+            "text": "only gains, 19\nlotteries with only losses, and 21 mixed lotteries with both gains and los ses. The same experiment\nwas repeated after two weeks, with randomly changing the order o f the lottery choices. Altogether,\nthis makes 134 decision tasks. In each class of the lotteries, the ex perimental aggregate attraction\nfactor is found to be the same, qexp = 0.22, which perfectly agrees with the quarter law.\nThese results cannot be predicted by expected utility theory or ot her decision-making models,\ndiscussed in the Introduction, without crippling expected decision t heory by introducing specially\ndesigned value functionals and fitting parameters. These models, d eforming the expected utility\ntheory, called non-expected utility theories [15, 16], require the us e of fitting parameters for each\nconsidered case and have no predictive power."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0045"
+        ],
+        "excerpt": "qj(An) . (37)\nDecision makers, being the members of a society, have inclination to im itate the behavior of\nothers [78], which is termed imitation or herd effect. The strength of this effect will be characterized\nby the parameter \u03b5j that can be varied in the range\n0 \u2264 \u03b5j \u2264 1 ( j = 1, 2, . . . , N) . (38)\n13\nDynamics of decision making by intelligent agents is described by the sy stem of equations\npj(An, t + \u03c4 ) = (1 \u2212 \u03b5j) [ fj(An, t) + qj(An, t) ]+\n+ \u03b5j",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Probability Dynamics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6096c6d687babfb401a499df4e0cbd8ee2f01238b963fd980bf5977a790dcfaa",
+            "evidence_id": "E14ed651b0c8a5f4b-B0045",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Probability Dynamics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2104,
+                "page": 13,
+                "section": "Probability Dynamics",
+                "section_index": 19,
+                "start": 1796,
+                "text": "qj(An) . (37)\nDecision makers, being the members of a society, have inclination to im itate the behavior of\nothers [78], which is termed imitation or herd effect. The strength of this effect will be characterized\nby the parameter \u03b5j that can be varied in the range\n0 \u2264 \u03b5j \u2264 1 ( j = 1, 2, . . . , N) . (38)\n13"
+              },
+              {
+                "end": 148,
+                "page": 14,
+                "section": "Probability Dynamics",
+                "section_index": 20,
+                "start": 0,
+                "text": "Dynamics of decision making by intelligent agents is described by the sy stem of equations\npj(An, t + \u03c4 ) = (1 \u2212 \u03b5j) [ fj(An, t) + qj(An, t) ]+\n+ \u03b5j"
+              }
+            ],
+            "text": "qj(An) . (37)\nDecision makers, being the members of a society, have inclination to im itate the behavior of\nothers [78], which is termed imitation or herd effect. The strength of this effect will be characterized\nby the parameter \u03b5j that can be varied in the range\n0 \u2264 \u03b5j \u2264 1 ( j = 1, 2, . . . , N) . (38)\n13\nDynamics of decision making by intelligent agents is described by the sy stem of equations\npj(An, t + \u03c4 ) = (1 \u2212 \u03b5j) [ fj(An, t) + qj(An, t) ]+\n+ \u03b5j"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0046"
+        ],
+        "excerpt": "N \u2212 1\nN\u2211\ni(\u0338=j)\n[ fi(An, t) + qi(An, t) ], (39)\nwhere \u03c4 is a delay time and j = 1, 2, . . . , N. Time can be measured in units of \u03c4 , so that in what\nfollows time t can be treated to be dimensionless taking the values t = 1, 2, . . ..\nThe dependence on time of utility factors can be due to time discount ing [79]. When the\nstudied period of time is not long as compared with the typical discoun ting time, it is possible to\nkeep utility factors as constants. Attraction factors vary with t ime according to the law\nqj(An, t) = qj(An) exp{\u2212Mj(t)} , (40)\nwhere Mj(t) is the j-th agent memory based on the information received by the agent in the\nprocess of interactions with other members. At the beginning, the re is no yet any memory, which\nimplies\nMj(t) = 0 ( t < 1) . (41)\nMemory appears after the first step and accumulates by the law\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nN\u2211\ni=1\nJji(t, t\u2032)\u00b5ji(t\u2032) , ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "N \u2212 1",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f2128469341cc85267ce52f236328cd3f6a2e0fef3b52c71d349ccc9486882a2",
+            "evidence_id": "E14ed651b0c8a5f4b-B0046",
+            "pages": [
+              14
+            ],
+            "section": "N \u2212 1",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 14,
+                "section": "N \u2212 1",
+                "section_index": 21,
+                "start": 0,
+                "text": "N \u2212 1\nN\u2211\ni(\u0338=j)\n[ fi(An, t) + qi(An, t) ], (39)\nwhere \u03c4 is a delay time and j = 1, 2, . . . , N. Time can be measured in units of \u03c4 , so that in what\nfollows time t can be treated to be dimensionless taking the values t = 1, 2, . . ..\nThe dependence on time of utility factors can be due to time discount ing [79]. When the\nstudied period of time is not long as compared with the typical discoun ting time, it is possible to\nkeep utility factors as constants. Attraction factors vary with t ime according to the law\nqj(An, t) = qj(An) exp{\u2212Mj(t)} , (40)\nwhere Mj(t) is the j-th agent memory based on the information received by the agent in the\nprocess of interactions with other members. At the beginning, the re is no yet any memory, which\nimplies\nMj(t) = 0 ( t < 1) . (41)\nMemory appears after the first step and accumulates by the law\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nN\u2211\ni=1\nJji(t, t\u2032)\u00b5ji(t\u2032) , "
+              }
+            ],
+            "text": "N \u2212 1\nN\u2211\ni(\u0338=j)\n[ fi(An, t) + qi(An, t) ], (39)\nwhere \u03c4 is a delay time and j = 1, 2, . . . , N. Time can be measured in units of \u03c4 , so that in what\nfollows time t can be treated to be dimensionless taking the values t = 1, 2, . . ..\nThe dependence on time of utility factors can be due to time discount ing [79]. When the\nstudied period of time is not long as compared with the typical discoun ting time, it is possible to\nkeep utility factors as constants. Attraction factors vary with t ime according to the law\nqj(An, t) = qj(An) exp{\u2212Mj(t)} , (40)\nwhere Mj(t) is the j-th agent memory based on the information received by the agent in the\nprocess of interactions with other members. At the beginning, the re is no yet any memory, which\nimplies\nMj(t) = 0 ( t < 1) . (41)\nMemory appears after the first step and accumulates by the law\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nN\u2211\ni=1\nJji(t, t\u2032)\u00b5ji(t\u2032) , "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0047"
+        ],
+        "excerpt": "(42)\nwhere \u0398( t) is a unit-step function, Jji(t, t\u2032) is a function describing the strength of influence by\nagent i on agent j, due to the interactions between the agents i and j during the time from t\u2032 to\nt, under acquiring the information gain \u00b5ji(t\u2032) received by the agent j from the agent i at time t\u2032.\nThe information gain can be taken in the Kullback-Leibler form [65, 66] as\n\u00b5ji(t) =\nNA\u2211\nn=1\npj(An, t) ln pj(An, t)\npi(An, t) . (43)\nIn general, the interaction strength Jij can depend on the location of the interacting agents.\nDepending on the nature of the considered agents, there can hap pen two cases. One case is when a\nnetwork is composed not of intelligent alive beings, but of mechanistic nodes rigidly fixed at spatial\nlocations. Then the agent interactions depend on the distance bet ween the agents, and one needs\nto specify the dependence of Jij on the indices. Therefore the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "N \u2212 1",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "05f0ad31ebe56290bd6d318a4544a0b2e546f1a4f38bf5ba32627b4b7a0d168f",
+            "evidence_id": "E14ed651b0c8a5f4b-B0047",
+            "pages": [
+              14
+            ],
+            "section": "N \u2212 1",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1786,
+                "page": 14,
+                "section": "N \u2212 1",
+                "section_index": 21,
+                "start": 892,
+                "text": "(42)\nwhere \u0398( t) is a unit-step function, Jji(t, t\u2032) is a function describing the strength of influence by\nagent i on agent j, due to the interactions between the agents i and j during the time from t\u2032 to\nt, under acquiring the information gain \u00b5ji(t\u2032) received by the agent j from the agent i at time t\u2032.\nThe information gain can be taken in the Kullback-Leibler form [65, 66] as\n\u00b5ji(t) =\nNA\u2211\nn=1\npj(An, t) ln pj(An, t)\npi(An, t) . (43)\nIn general, the interaction strength Jij can depend on the location of the interacting agents.\nDepending on the nature of the considered agents, there can hap pen two cases. One case is when a\nnetwork is composed not of intelligent alive beings, but of mechanistic nodes rigidly fixed at spatial\nlocations. Then the agent interactions depend on the distance bet ween the agents, and one needs\nto specify the dependence of Jij on the indices. Therefore the "
+              }
+            ],
+            "text": "(42)\nwhere \u0398( t) is a unit-step function, Jji(t, t\u2032) is a function describing the strength of influence by\nagent i on agent j, due to the interactions between the agents i and j during the time from t\u2032 to\nt, under acquiring the information gain \u00b5ji(t\u2032) received by the agent j from the agent i at time t\u2032.\nThe information gain can be taken in the Kullback-Leibler form [65, 66] as\n\u00b5ji(t) =\nNA\u2211\nn=1\npj(An, t) ln pj(An, t)\npi(An, t) . (43)\nIn general, the interaction strength Jij can depend on the location of the interacting agents.\nDepending on the nature of the considered agents, there can hap pen two cases. One case is when a\nnetwork is composed not of intelligent alive beings, but of mechanistic nodes rigidly fixed at spatial\nlocations. Then the agent interactions depend on the distance bet ween the agents, and one needs\nto specify the dependence of Jij on the indices. Therefore the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0051"
+        ],
+        "excerpt": "way, the memory can be presented in the form\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nJj(t, t\u2032)\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t\u2032) . (45)\nGenerally, memory can keep information for different times. The ultim ate types of memory\nare the long-term and short-term memories. Under long-term mem ory, the interactions practically\ndo not depend on time, being constant,\nJj(t, t\u2032) = Jj (long \u2212 term) , (46)\nwhile under short-term memory the interactions are local in time, wh en only the last step is\nremembered,\nJj(t, t\u2032) = Jj\u03b4tt\u2032 (short \u2212 term) . (47)\nThus the long-term memory can be written as\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nt\u2211\nt\u2032=1\nN\u2211\ni=1\n\u00b5ji(t\u2032) ( long \u2212 term) , (48)\nand the short-term memory takes the form\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t) ( short \u2212 term) . (49)\n15\nFrom the neuropsychological point of view, memory consists of sev eral parts accomplishing\ndifferent tasks. In our case, we are interested in the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15,
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "N \u2212 1",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f1862c96c862fc26847853b874b9be82ea163245a54e663eccd56c60761da3d7",
+            "evidence_id": "E14ed651b0c8a5f4b-B0051",
+            "pages": [
+              15,
+              16
+            ],
+            "section": "N \u2212 1",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2542,
+                "page": 15,
+                "section": "N \u2212 1",
+                "section_index": 22,
+                "start": 1798,
+                "text": "way, the memory can be presented in the form\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nJj(t, t\u2032)\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t\u2032) . (45)\nGenerally, memory can keep information for different times. The ultim ate types of memory\nare the long-term and short-term memories. Under long-term mem ory, the interactions practically\ndo not depend on time, being constant,\nJj(t, t\u2032) = Jj (long \u2212 term) , (46)\nwhile under short-term memory the interactions are local in time, wh en only the last step is\nremembered,\nJj(t, t\u2032) = Jj\u03b4tt\u2032 (short \u2212 term) . (47)\nThus the long-term memory can be written as\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nt\u2211\nt\u2032=1\nN\u2211\ni=1\n\u00b5ji(t\u2032) ( long \u2212 term) , (48)\nand the short-term memory takes the form\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t) ( short \u2212 term) . (49)\n15"
+              },
+              {
+                "end": 146,
+                "page": 16,
+                "section": "N \u2212 1",
+                "section_index": 23,
+                "start": 0,
+                "text": "From the neuropsychological point of view, memory consists of sev eral parts accomplishing\ndifferent tasks. In our case, we are interested in the "
+              }
+            ],
+            "text": "way, the memory can be presented in the form\nMj(t) = \u0398( t \u2212 1)\nt\u2211\nt\u2032=1\nJj(t, t\u2032)\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t\u2032) . (45)\nGenerally, memory can keep information for different times. The ultim ate types of memory\nare the long-term and short-term memories. Under long-term mem ory, the interactions practically\ndo not depend on time, being constant,\nJj(t, t\u2032) = Jj (long \u2212 term) , (46)\nwhile under short-term memory the interactions are local in time, wh en only the last step is\nremembered,\nJj(t, t\u2032) = Jj\u03b4tt\u2032 (short \u2212 term) . (47)\nThus the long-term memory can be written as\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nt\u2211\nt\u2032=1\nN\u2211\ni=1\n\u00b5ji(t\u2032) ( long \u2212 term) , (48)\nand the short-term memory takes the form\nMj(t) = \u0398( t \u2212 1) Jj\n\nN \u2212 1\nN\u2211\ni=1\n\u00b5ji(t) ( short \u2212 term) . (49)\n15\nFrom the neuropsychological point of view, memory consists of sev eral parts accomplishing\ndifferent tasks. In our case, we are interested in the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0061"
+        ],
+        "excerpt": "one follows the standard expected utility theory.\nHowever, the present probabilistic approach does not lead to any p aradox. For simplicity,\nlet us consider a neutral decision maker, with the belief parameter \u03b2 = 0 and the linear utility\nfunction u(x) \u221d x. Then for the utility factors, defined in (13), we have\nf (Ln) = U(Ln)\u2211\nn U(Ln) . (62)\nLet us compare the first two lotteries, L1 and L2. For the utility factors (62), one has\nf (L1) = 0 .418 , f (L2) = 0 .582 , (63)\nso that the second lottery L2 looks more useful. Nevertheless, the lottery qualities (27) are\nQ(L1) = 30 , Q (L2) = 27 .7 , (64)\nshowing that the first lottery L1 is more attractive.\nEstimating the attraction factors by the non-informative priors ( 18), we have the lottery at-\ntraction factors q(L1) = 0 .25, while q(L2) = \u22120.25. This gives the behavioral probabilities\np(L1) = f (L1) + q(L1) = 0 .418 + 0.25 = 0 .668 ,\n18",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Allais Paradox And Its Resolution",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1ec5482a62183307c563308f0af36e00fd70344a5d5611780147ef860c56f750",
+            "evidence_id": "E14ed651b0c8a5f4b-B0061",
+            "pages": [
+              18
+            ],
+            "section": "Allais Paradox And Its Resolution",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2203,
+                "page": 18,
+                "section": "Allais Paradox And Its Resolution",
+                "section_index": 27,
+                "start": 1307,
+                "text": "one follows the standard expected utility theory.\nHowever, the present probabilistic approach does not lead to any p aradox. For simplicity,\nlet us consider a neutral decision maker, with the belief parameter \u03b2 = 0 and the linear utility\nfunction u(x) \u221d x. Then for the utility factors, defined in (13), we have\nf (Ln) = U(Ln)\u2211\nn U(Ln) . (62)\nLet us compare the first two lotteries, L1 and L2. For the utility factors (62), one has\nf (L1) = 0 .418 , f (L2) = 0 .582 , (63)\nso that the second lottery L2 looks more useful. Nevertheless, the lottery qualities (27) are\nQ(L1) = 30 , Q (L2) = 27 .7 , (64)\nshowing that the first lottery L1 is more attractive.\nEstimating the attraction factors by the non-informative priors ( 18), we have the lottery at-\ntraction factors q(L1) = 0 .25, while q(L2) = \u22120.25. This gives the behavioral probabilities\np(L1) = f (L1) + q(L1) = 0 .418 + 0.25 = 0 .668 ,\n18"
+              }
+            ],
+            "text": "one follows the standard expected utility theory.\nHowever, the present probabilistic approach does not lead to any p aradox. For simplicity,\nlet us consider a neutral decision maker, with the belief parameter \u03b2 = 0 and the linear utility\nfunction u(x) \u221d x. Then for the utility factors, defined in (13), we have\nf (Ln) = U(Ln)\u2211\nn U(Ln) . (62)\nLet us compare the first two lotteries, L1 and L2. For the utility factors (62), one has\nf (L1) = 0 .418 , f (L2) = 0 .582 , (63)\nso that the second lottery L2 looks more useful. Nevertheless, the lottery qualities (27) are\nQ(L1) = 30 , Q (L2) = 27 .7 , (64)\nshowing that the first lottery L1 is more attractive.\nEstimating the attraction factors by the non-informative priors ( 18), we have the lottery at-\ntraction factors q(L1) = 0 .25, while q(L2) = \u22120.25. This gives the behavioral probabilities\np(L1) = f (L1) + q(L1) = 0 .418 + 0.25 = 0 .668 ,\n18"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0063"
+        ],
+        "excerpt": "After the individual decision makers have made the choice explaining t he origin of the Allais\nparadox, they start communicating with each other exchanging inf ormation on their actions. How\nthen their decisions will be changing with time? To answer this question , we need to consider the\ndynamics of decisions in the network, as is described in Sec. 3.\nLet the network consist of two groups of agents, one group of ag ents with long-term memory,\nand the other, with short-term memory. The agents decide on the choice between the lotteries L1\nand L2, given in (59). This implies that we have the case of binary choice, as in Sec. 3.2, where\nwe need to set j = 1, 2.\nThe dynamics of a social network is described by equations (57) tha t for the considered case\ntake the form\np1(t + 1) = (1 \u2212 \u03b51)[ f1 + q1(t) ] + \u03b51[ f2 + q2(t) ] ,\np2(t + 1) = (1 \u2212 \u03b52)[ f2 + q2(t) ] + \u03b52[ f1 + q1(t) ] . (68)\nRecall ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Dynamics Of Allais Paradox",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0e3e682ba30fd0b185108d15d5d2fee8eaa10ea826078fc254cba96317198332",
+            "evidence_id": "E14ed651b0c8a5f4b-B0063",
+            "pages": [
+              19
+            ],
+            "section": "Dynamics Of Allais Paradox",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 19,
+                "section": "Dynamics Of Allais Paradox",
+                "section_index": 29,
+                "start": 0,
+                "text": "After the individual decision makers have made the choice explaining t he origin of the Allais\nparadox, they start communicating with each other exchanging inf ormation on their actions. How\nthen their decisions will be changing with time? To answer this question , we need to consider the\ndynamics of decisions in the network, as is described in Sec. 3.\nLet the network consist of two groups of agents, one group of ag ents with long-term memory,\nand the other, with short-term memory. The agents decide on the choice between the lotteries L1\nand L2, given in (59). This implies that we have the case of binary choice, as in Sec. 3.2, where\nwe need to set j = 1, 2.\nThe dynamics of a social network is described by equations (57) tha t for the considered case\ntake the form\np1(t + 1) = (1 \u2212 \u03b51)[ f1 + q1(t) ] + \u03b51[ f2 + q2(t) ] ,\np2(t + 1) = (1 \u2212 \u03b52)[ f2 + q2(t) ] + \u03b52[ f1 + q1(t) ] . (68)\nRecall "
+              }
+            ],
+            "text": "After the individual decision makers have made the choice explaining t he origin of the Allais\nparadox, they start communicating with each other exchanging inf ormation on their actions. How\nthen their decisions will be changing with time? To answer this question , we need to consider the\ndynamics of decisions in the network, as is described in Sec. 3.\nLet the network consist of two groups of agents, one group of ag ents with long-term memory,\nand the other, with short-term memory. The agents decide on the choice between the lotteries L1\nand L2, given in (59). This implies that we have the case of binary choice, as in Sec. 3.2, where\nwe need to set j = 1, 2.\nThe dynamics of a social network is described by equations (57) tha t for the considered case\ntake the form\np1(t + 1) = (1 \u2212 \u03b51)[ f1 + q1(t) ] + \u03b51[ f2 + q2(t) ] ,\np2(t + 1) = (1 \u2212 \u03b52)[ f2 + q2(t) ] + \u03b52[ f1 + q1(t) ] . (68)\nRecall "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0075"
+        ],
+        "excerpt": "The natural question that arises is whether it would be possible to re gulate the decisions of the\nsociety agents so that all members would come to the required pres cribed conclusion? This could\nbe possible by resorting to machine learning techniques [99], by regula ting the utility of the given\nalternatives. For instance, the utility factor for a group i can be varied according to the law\nfi(t) = fi exp{Ki(t)} , (83)\n22\nor, more correctly, by keeping in mind the normalization of the utility f actors, by the law\nf R\ni (t) =\n{\nfi(t) , f i(t) \u2264 1\n1 , f i(t) > 1 . (84)\nThe utility can be regulated by a gradient-descent equation resultin g in\nKi(t + 1) = Ki(t) \u2212 \u03b1i [ pi(t) \u2212 p\u2217\ni ] , (85)\nwith the initial condition\nKi(0) = 0 , (86)\nwhere \u03b1i is a learning rate and p\u2217\ni is the decision probability to which the agents of the group i are\nforced to converge. The learning rate is chosen so that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 22,
+        "pages": [
+          22,
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Regulated Decision Making",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "48f626f53b25fa8492593ecedfaf8ff183e3552d698043e831c5a188f07ddcc2",
+            "evidence_id": "E14ed651b0c8a5f4b-B0075",
+            "pages": [
+              22,
+              23
+            ],
+            "section": "Regulated Decision Making",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 425,
+                "page": 22,
+                "section": "Regulated Decision Making",
+                "section_index": 33,
+                "start": 0,
+                "text": "The natural question that arises is whether it would be possible to re gulate the decisions of the\nsociety agents so that all members would come to the required pres cribed conclusion? This could\nbe possible by resorting to machine learning techniques [99], by regula ting the utility of the given\nalternatives. For instance, the utility factor for a group i can be varied according to the law\nfi(t) = fi exp{Ki(t)} , (83)\n22"
+              },
+              {
+                "end": 473,
+                "page": 23,
+                "section": "Regulated Decision Making",
+                "section_index": 34,
+                "start": 0,
+                "text": "or, more correctly, by keeping in mind the normalization of the utility f actors, by the law\nf R\ni (t) =\n{\nfi(t) , f i(t) \u2264 1\n1 , f i(t) > 1 . (84)\nThe utility can be regulated by a gradient-descent equation resultin g in\nKi(t + 1) = Ki(t) \u2212 \u03b1i [ pi(t) \u2212 p\u2217\ni ] , (85)\nwith the initial condition\nKi(0) = 0 , (86)\nwhere \u03b1i is a learning rate and p\u2217\ni is the decision probability to which the agents of the group i are\nforced to converge. The learning rate is chosen so that "
+              }
+            ],
+            "text": "The natural question that arises is whether it would be possible to re gulate the decisions of the\nsociety agents so that all members would come to the required pres cribed conclusion? This could\nbe possible by resorting to machine learning techniques [99], by regula ting the utility of the given\nalternatives. For instance, the utility factor for a group i can be varied according to the law\nfi(t) = fi exp{Ki(t)} , (83)\n22\nor, more correctly, by keeping in mind the normalization of the utility f actors, by the law\nf R\ni (t) =\n{\nfi(t) , f i(t) \u2264 1\n1 , f i(t) > 1 . (84)\nThe utility can be regulated by a gradient-descent equation resultin g in\nKi(t + 1) = Ki(t) \u2212 \u03b1i [ pi(t) \u2212 p\u2217\ni ] , (85)\nwith the initial condition\nKi(0) = 0 , (86)\nwhere \u03b1i is a learning rate and p\u2217\ni is the decision probability to which the agents of the group i are\nforced to converge. The learning rate is chosen so that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0076"
+        ],
+        "excerpt": "to guaran tee the procedure stability [99].\nFor the case of the binary choice, equation (57) becomes\np1(t + 1) = (1 \u2212 \u03b51) R01\n[\nf R\n1 (t) + q1(t)\n]\n+ \u03b51 R01\n[\nf R\n2 (t) + q2(t)\n]\n,\np2(t + 1) = (1 \u2212 \u03b52) R01\n[\nf R\n2 (t) + q2(t)\n]\n+ \u03b52 R01\n[\nf R\n1 (t) + q1(t)\n]\n, (87)\nwhere the retract function is\nR01[ z ] =\n\uf8f1\n\uf8f2\n\uf8f3\n0 , z < 0\nz , 0 \u2264 z \u2264 1\n1 , z > 1 .\n(88)\nAs examples, we show in Figs. 5 to 6 how the agents can be forced to c onverge to the consensual\nlimit p\u2217\ni = 0.418 equal to the utility factor fi = 0.418 in the case of the Allais paradox. The initial\nconditions are different due to the presence of emotions that are d ifferent for different agents, but\nthe final decisions are the same for all agents, as is prescribed by t he gradient-descent equations\n(85). In Figs. 5 to 6, the imitation effect is neglected. As we have che cked, small \u03b5i does not\nchange much the resulting behavior. Small ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 23,
+        "pages": [
+          23
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Regulated Decision Making",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4ab96449f3dd2d4a0aad0f168c0d421da7193c7c44ecef727a63a582942e9123",
+            "evidence_id": "E14ed651b0c8a5f4b-B0076",
+            "pages": [
+              23
+            ],
+            "section": "Regulated Decision Making",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1372,
+                "page": 23,
+                "section": "Regulated Decision Making",
+                "section_index": 34,
+                "start": 473,
+                "text": "to guaran tee the procedure stability [99].\nFor the case of the binary choice, equation (57) becomes\np1(t + 1) = (1 \u2212 \u03b51) R01\n[\nf R\n1 (t) + q1(t)\n]\n+ \u03b51 R01\n[\nf R\n2 (t) + q2(t)\n]\n,\np2(t + 1) = (1 \u2212 \u03b52) R01\n[\nf R\n2 (t) + q2(t)\n]\n+ \u03b52 R01\n[\nf R\n1 (t) + q1(t)\n]\n, (87)\nwhere the retract function is\nR01[ z ] =\n\uf8f1\n\uf8f2\n\uf8f3\n0 , z < 0\nz , 0 \u2264 z \u2264 1\n1 , z > 1 .\n(88)\nAs examples, we show in Figs. 5 to 6 how the agents can be forced to c onverge to the consensual\nlimit p\u2217\ni = 0.418 equal to the utility factor fi = 0.418 in the case of the Allais paradox. The initial\nconditions are different due to the presence of emotions that are d ifferent for different agents, but\nthe final decisions are the same for all agents, as is prescribed by t he gradient-descent equations\n(85). In Figs. 5 to 6, the imitation effect is neglected. As we have che cked, small \u03b5i does not\nchange much the resulting behavior. Small "
+              }
+            ],
+            "text": "to guaran tee the procedure stability [99].\nFor the case of the binary choice, equation (57) becomes\np1(t + 1) = (1 \u2212 \u03b51) R01\n[\nf R\n1 (t) + q1(t)\n]\n+ \u03b51 R01\n[\nf R\n2 (t) + q2(t)\n]\n,\np2(t + 1) = (1 \u2212 \u03b52) R01\n[\nf R\n2 (t) + q2(t)\n]\n+ \u03b52 R01\n[\nf R\n1 (t) + q1(t)\n]\n, (87)\nwhere the retract function is\nR01[ z ] =\n\uf8f1\n\uf8f2\n\uf8f3\n0 , z < 0\nz , 0 \u2264 z \u2264 1\n1 , z > 1 .\n(88)\nAs examples, we show in Figs. 5 to 6 how the agents can be forced to c onverge to the consensual\nlimit p\u2217\ni = 0.418 equal to the utility factor fi = 0.418 in the case of the Allais paradox. The initial\nconditions are different due to the presence of emotions that are d ifferent for different agents, but\nthe final decisions are the same for all agents, as is prescribed by t he gradient-descent equations\n(85). In Figs. 5 to 6, the imitation effect is neglected. As we have che cked, small \u03b5i does not\nchange much the resulting behavior. Small "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0081"
+        ],
+        "excerpt": "probabilistic affective decision network can find application in the\ndescription of complex social networks, in characterizing neurona l brain networks, and in the\ncreation of artificial intelligence operating similarly to emotional biolog ical beings.\nApplications of the model for other possible particular cases and th e analysis of its predictions\nfor some concrete situations will be the topic of future research. The aim of the present paper\nhas been to introduce a new model that takes into consideration re alistic features existing in any\nreal-life society, where decisions are made on the basis of several a ttributes: evaluation of utility,\ninfluence of emotions, imitation effect, exchange of information, ex istence of memory, dynamics of\nrepeated decisions, and probabilistic nature of decision process. T hese are compulsory features of\nany intelligent complex society, which are ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 24,
+        "pages": [
+          24
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "44c58e62f92f7af2e2486418b188112ce1f1920313d94719133e272d8deb21e7",
+            "evidence_id": "E14ed651b0c8a5f4b-B0081",
+            "pages": [
+              24
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 2893,
+                "page": 24,
+                "section": "Discussion",
+                "section_index": 36,
+                "start": 1998,
+                "text": "probabilistic affective decision network can find application in the\ndescription of complex social networks, in characterizing neurona l brain networks, and in the\ncreation of artificial intelligence operating similarly to emotional biolog ical beings.\nApplications of the model for other possible particular cases and th e analysis of its predictions\nfor some concrete situations will be the topic of future research. The aim of the present paper\nhas been to introduce a new model that takes into consideration re alistic features existing in any\nreal-life society, where decisions are made on the basis of several a ttributes: evaluation of utility,\ninfluence of emotions, imitation effect, exchange of information, ex istence of memory, dynamics of\nrepeated decisions, and probabilistic nature of decision process. T hese are compulsory features of\nany intelligent complex society, which are "
+              }
+            ],
+            "text": "probabilistic affective decision network can find application in the\ndescription of complex social networks, in characterizing neurona l brain networks, and in the\ncreation of artificial intelligence operating similarly to emotional biolog ical beings.\nApplications of the model for other possible particular cases and th e analysis of its predictions\nfor some concrete situations will be the topic of future research. The aim of the present paper\nhas been to introduce a new model that takes into consideration re alistic features existing in any\nreal-life society, where decisions are made on the basis of several a ttributes: evaluation of utility,\ninfluence of emotions, imitation effect, exchange of information, ex istence of memory, dynamics of\nrepeated decisions, and probabilistic nature of decision process. T hese are compulsory features of\nany intelligent complex society, which are "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.03632",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2609.03632",
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0002",
+          "E14ed651b0c8a5f4b-B0014",
+          "E14ed651b0c8a5f4b-B0022",
+          "E14ed651b0c8a5f4b-B0029",
+          "E14ed651b0c8a5f4b-B0040",
+          "E14ed651b0c8a5f4b-B0041",
+          "E14ed651b0c8a5f4b-B0045",
+          "E14ed651b0c8a5f4b-B0046",
+          "E14ed651b0c8a5f4b-B0047",
+          "E14ed651b0c8a5f4b-B0051",
+          "E14ed651b0c8a5f4b-B0061",
+          "E14ed651b0c8a5f4b-B0063",
+          "E14ed651b0c8a5f4b-B0075",
+          "E14ed651b0c8a5f4b-B0076",
+          "E14ed651b0c8a5f4b-B0081"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2609.03632",
+        "claim_evidence_alignment": "The analytical solutions and numerical simulations directly support the claims regarding emotional attenuation during deliberation and the convergence behavior of agents under information exchange and regulation.",
+        "context_id": "14ed651b0c8a5f4b431e190e9ab469e4e9780a658c29bc37b283384955bce860",
+        "decision": "pass",
+        "evaluation_assessment": "The model is evaluated by validating the aggregate attraction factor against experimental lottery datasets from Kahneman-Tversky and Murphy-ten Brincke, and by simulating the Allais paradox under various memory conditions, imitation strengths, and learning rates.",
+        "evidence_ids": [
+          "E14ed651b0c8a5f4b-B0022",
+          "E14ed651b0c8a5f4b-B0029",
+          "E14ed651b0c8a5f4b-B0040",
+          "E14ed651b0c8a5f4b-B0041",
+          "E14ed651b0c8a5f4b-B0045",
+          "E14ed651b0c8a5f4b-B0046",
+          "E14ed651b0c8a5f4b-B0047",
+          "E14ed651b0c8a5f4b-B0051",
+          "E14ed651b0c8a5f4b-B0061",
+          "E14ed651b0c8a5f4b-B0063",
+          "E14ed651b0c8a5f4b-B0075",
+          "E14ed651b0c8a5f4b-B0076"
+        ],
+        "limitations": "The manuscript focuses on mean-field all-to-all communication topologies without spatial graph constraints and tests dynamic properties predominantly on binary choice setups like the Allais paradox.",
+        "method_assessment": "The methodology is explicitly formulated with an additive behavioral probability decomposed into a utility factor derived from Kullback-Leibler information minimization and an attraction factor governed by non-informative prior laws. Temporal dynamics are rigorously modeled via difference equations incorporating memory-weighted information gains and herd imitation parameters, supplemented by a gradient-descent framework for controlled regulation.",
+        "quality_rationale": "The paper presents a coherent, mathematically complete framework with clear conceptual positioning against both classical utility models and quantum decision approaches, supported by solid quantitative validations on real empirical data and detailed dynamic simulations.",
+        "scoped_contribution": "The paper introduces dynamic probabilistic decision networks where agents make probabilistic choices combining rational utility and emotional attraction factors, evolving their decisions over time via information exchange, imitation, and memory decay.",
+        "source_content_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper presents a coherent, mathematically complete framework with clear conceptual positioning against both classical utility models and quantum decision approaches, supported by solid quantitative validations on real empirical data and detailed dynamic simulations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "82bad03e1a58cc2b7e0b316f020b6bf5014940e4534c0e76947fc535c71a67ad",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript focuses on mean-field all-to-all communication topologies without spatial graph constraints and tests dynamic properties predominantly on binary choice setups like the Allais paradox."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -158,7 +2023,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -59,16 +59,253 @@
             <p>Scientific fraud is the instrument of doubt that malicious entities can use to establish controversy in science. Historically, it required the resources of a company: deep pockets, ghostwritten articles, and corrupt academics. Today, Artificial Intelligence (AI) is increasingly automating scientific research, so we...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study addresses a clear, novel threat model in AI-driven science with an exceptionally thorough experimental design, extensive data points, ethical containment safeguards, reproducible code/logging availability, and balanced interpretation of results.</p>
+      <p>The authors thoroughly discuss limitations, including focus on tabular socio-technical datasets rather than unstructured scientific modalities, containment via API interception wrappers, reliance on prompt-level mitigations, and potential false positives from statistical audits.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T09:52:51.178209+00:00.</p>
+        <p>Coverage: 113777 of 113777 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Scientific fraud is the instrument of doubt that malicious entities can use to establish controversy in
+science. Historically, it required the resources of a company: deep pockets, ghostwritten articles, and
+corrupt academics. Today, Artificial Intelligence (AI) is increasingly automating scientific research, so we
+ask:Can a remote adversary weaponize the honest use of AI in science to compromise scientific integrity?
+We envision and empirically evaluate a new attack,indirect data poisoning, in which an adversary corrupts
+an open dataset and uploads the poisoned variant to a public repository. Autonomous research agents
+may independently retrieve and process this data, turning honest scientists into the unpaid and unwitting
+distributors of fraud at scale. Across five socially-salient topics, from hiring discrimination to the safety of
+autonomous vehicles, three widely used frontier AI </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>systems (Claude Code with Claude Opus 4.7, Codex
+with GPT-5.5, Gemini CLI with Gemini 3.1 Pro), and 450 ethically contained experimental runs, we find
+that poisoning succeeds in49.56%of runs, while the rate of poisoning detection is only6.0%. The attack
+requires no topic-specific trigger-words, agent access, indirect prompt injection, or fabricated papers, only
+the open data ecosystem and misleading metadata. To mitigate the attacks, we propose and evaluate two
+measures: a scientist persona and a data provenance audit with five checks (referencing papers, social
+markers, statistical anomalies, related datasets, poisoning caution). We find that the persona still leaves
+16.67%of runs with a poisoned conclusion, but provenance auditing reduces attack success rate to zero.
+Our results suggest that indirect data poisoning may enable scientific fraud at unprecedented scale, but
+these attacks </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unassisted stages of multi-step work.
+Our choice of domains is intentionally broad, unlike most previous open-access work that focuses on automating
+machine learning research [Bia+26; Sch+25; Lu+26; Kon+25].
+Following the threat model we envision in Figure 1, for each of the five topics, we download apre-existing
+dataset, then poison it using a combination of four techniques: (1) creating a new, supplementary dataset;
+3
+(2) imputing features with misleading relationships; (3) inserting new data items; and (4) writing misleading
+metadata, such as a README file or data loading code. We use these four techniques because they are
+straightforward and cheap to execute, especially with the aid of available GenAI systems.
+We create two versions of each poisoned dataset, corresponding to two polar oppositeadversary goals.
+We test these &quot;goal-versions&quot; in order to evaluate whether poisoning can </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>only use one goal-version at a time in our experiments to avoid conflicting interactions between
+poisoned datasets.
+As the last step of our threat model, we upload the poisoned dataset to one of four open data hosting
+platforms—GitHub, HuggingFace, Open Science Framework, Kaggle—to test whether multiple hosting
+platforms are susceptible to indirect data poisoning. In order to ethically contain our experiments and
+avoid spreading misinformation on the open internet, we use private repositories that are accessible to the
+AI agents through authenticated Application Programming Interface (API) requests. The agents can further
+use these APIs to find any available dataset on the platforms. We ensure that our private repositories are
+indistinguishable from public ones to the AI research agent by intercepting and modifying the API responses,
+verifying that the AI system remains unaware of this </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>autonomous research in response to three topic-specific prompts (cf. Section 3.2) with increasing contextual
+detail and critical tone: (1)Minimal prompt: single-sentence, neutrally worded prompt that instructs the AI
+system to perform scientific research in the given topic; (2)Targeted prompt: extends the minimal prompt by
+adding methodological instructions on how to perform certain aspects of the research, highlighting potential
+features of interest; and (3)Critical prompt: longest prompt that instructs the AI system to perform a critical
+analysis of the topic, contrasting different theories from previous literature, while also highlighting potential
+sources of bias and methodological pitfalls. Crucially, none of the above prompts refer to datasets directly,
+poisoned or otherwise.
+Finally, we conduct multiple repeated trials for each experiment, resulting in a total of 450 </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experimental
+runs (3 AI agents×5 topics×2 adversary goals×3 prompts×5 iterations).</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>final write-up contained poisoned
+findings without detection or mentioning caveats—is achieved in49.56%of runs. Poisoning success
+required using only an unsubstantiated README file, no fake publications, and no mention of the
+dataset in the user&#x27;s prompt (Section 4.1).
+4
+• Poisoning steers conclusions in opposing directions with equal success.Poisoning crafted to
+rejecta hypothesis and poisoning crafted toexaggerateit succeed at statistically indistinguishable rates
+(p= 0.70), suggesting that an adversary can manufacture any predetermined conclusion (Section 4.1).
+• Attack success differs across topics and agents.The rate of full success varies by33.3%across
+topics, from35.6%onAV Safetyto68 .9%onGenAI Motivation. Among agents, Gemini was most
+susceptible to poisoning (62.0%), followed by Claude (55.3%), and Codex (31.3%). These results suggest
+that incidental phrasing of the prompts and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Having found that indirect scientific data poisoning is a viable threat, we turn our attention to how we can
+reduce its likelihood of success. For this, we test twomitigation measuresthat are designed to act at the
+prompt-level, that is, without access to the model internals, so that anyone can easily adopt them:
+• Scientist persona.Extend the system prompt to describe an intellectually honest, statistically
+rigorous, and scientifically critical persona.
+• Data provenance audit.In addition to the scientist persona, execute a suite of five independent
+and parallel data audit checks and synthesize a final provenance score: find referencing papers, verify
+social markers, check for statistical anomalies, compare to related datasets, and caution against the
+possibility of data poisoning.
+To evaluate these measures, we repeat our previous experimental pipeline, replacing the three </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prompt
+phrasings with three new conditions: (1)Baseline: using the Minimal prompt from before; (2)Scientist
+Persona: modify the system prompt to include our scientist persona; and (3)Provenance Audit: same as
+the Scientist Persona, and we instruct the AI system to check data provenance using a custom audit skill.
+This evaluation also generated 450 experimental runs, with the Baseline condition replicating similarly high
+poisoning success rates to the Minimal prompt. Our main findings (from Section 5) are:
+• Persona-based defenses may not be enough.A scientist persona still leaves16.67%of runs with
+full poisoning success, though the detection rate rises to30.67%. The rate at which the poisoned
+datasets are used (80.7%) is not significantly reduced compared to the baseline (86.0%) (Section 5.3).
+• Structured auditing can prevent indirect data poisoning.Our five-task data provenance </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>audit
+reduces the rate of full attack success to0.0%, and increases detection to77.33%. It significantly
+mitigates the rate at which the poisoned datasets are used, down to40%of runs (Section 5.4).
+• Cross-dataset consistency and statistical anomalies.The signals that best predict whether the
+agent will assign a high-risk label to the poisoned dataset during its provenance audit are: (1) incon-
+sistencies with other relevant datasets and (2) the detection of simple statistical anomalies, such as a
+uniform distribution or impossible values (Section 5.5).</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>artifacts such as code, figures, and tables for evaluation.
+Given the above setup, our independent variables are the adversary goal, the topic, the AI system, and
+the prompts, giving a total of 90 experimental conditions. For each condition, the experiments were
+independently repeated five times in isolated, containerized environments. The AI systems were given
+unrestricted programmatic access to the environment and the internet.
+13</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and/or a caveat raised.
+3. Full success:poisoned dataset propagated to statistics or conclusion with no caveats and no detection.
+As our results consist of text-based files—findings, trace logs, scripts—we use an LLM-as-a-judge setup
+with Claude Sonnet 4.6 running in Claude Code to automatically assign values to each dependent variable.
+Before running this setup, one of the authors has annotated a random subset of 10% of all results sampled
+uniformly at random—corresponding to 45 instances in total. Cohen&#x27;sκ was then used to calculate inter-
+annotator agreement with the LLM-judge on this subset, findingκ = 0.802, which is considered strong
+agreement [LK77]. The resulting evaluation data was analyzed and plotted in the R programming language
+using descriptive statistics and mixed effects linear regression models.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 3 shows that data poisoning is a successful attack vector that works with all three tested AI systems,
+all prompts, and across both adversary goals. Specifically, over all runs, we find that AI systems retrieve the
+poisoned dataset in84.22% [80.57, 87.30]and generate poisoned conclusions without any caveats (i.e., Full
+success) in49.56% [44.96, 54.16]of runs. Success rates rise to more than half of all runs at59.33% [54.73, 63.77]
+if we also include an additional9.78% [7.36, 12.87]runs that resulted in partial poisoning success. Remarkably,
+we also find that the adversary&#x27;s goal does not measurably affect detection under the same prompt. Our
+attacks achieve Any success in58.22% [51.69, 64.48]for the exaggerate-goal direction and60.44% [53.93, 66.61]
+for the reject-goal direction. This is not a statistically significant difference (χ2
+1 = 0.15, n = 450, p = 0.70),
+suggesting that </blockquote></details></li><li><strong>Contribution clarity — pages 18–19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We repeat the same experimental pipeline as described in Section 3.3 and shown in Figure 2, replacing the
+three prompt-phrasing conditions with the following three conditions, keeping everything else in the process
+intact. These new conditions are:
+18
+68%
+16%
+16%
+48%
+52%
+96%
+68%
+20%
+12%
+8%
+56%
+36%
+12%
+88%
+60%
+8%
+32%
+32%
+24%
+44%
+8%
+92%
+52%
+32%
+16%
+16%
+64%
+20%
+24%
+76%
+60%
+36%
+24%
+8%
+68%
+96%
+64%
+12%
+24%
+20%
+32%
+48%
+100%
+Claude Codex Gemini
+ExaggerateReject
+Baseline Scientist
+Persona
+Provenance
+Audit
+Baseline Scientist
+Persona
+Provenance
+Audit
+Baseline Scientist
+Persona
+Provenance
+Audit
+0%
+25%
+50%
+75%
+100%
+0%
+25%
+50%
+75%
+100%Proportion of runs
+Attack outcome Full success Partial success No success
+Figure 6:Attack success of poisoned datasets across the three mitigation conditions (Baseline, Scientist Persona,
+Provenance Audit; in bars), faceted by agent (Claude, Codex, Gemini; in columns) </blockquote></details></li><li><strong>Contribution clarity — page 19</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experiments and the testing of the mitigation strategies. By
+rerunning the baseline, we avoid any effects from an AI model update. As with our original experiments,
+evaluating our mitigation measures produced 450 experimental runs. The Baseline condition replicates the
+Minimal prompt condition, with similarly high success rates from Section 4.1. For evaluation, we use the
+same LLM-as-a-judge setup as in Section 3.3.1, calculating a 10%-sample Cohen&#x27;sκ with a human annotator
+ofκ= 0.758, which is considered high agreement [LK77].
+Our results with mitigation measures indicate that a scientist persona alone is insufficient to detect
+poisoning, however, the data provenance audit almost completely eliminates indirect data poisoning attacks.
+In the following, we provide a more detailed account of the results with mitigation measures, as well as
+qualitative observations of the AI systems&#x27; </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>goal (Exaggerate,
+Reject; in rows). Each stacked bar shows the proportion of runs classified as Not detected (red), Partial (orange),
+Detected (green), or N/A (grey). Percentages are pooled across 5 topics with 5 iterations, giving25runs per bar.
+success in77.33% [70.00, 83.30]of runs under the Baseline condition without mitigation measures. This
+rate decreases somewhat to55.33% [47.34, 63.06]using the Scientist Persona. With our strongest measure,
+the Any success rate sinks to8.67% [5.13, 14.26]. This monotonic decrease in attack success results in
+a corresponding monotonic increase in detection success. The share of runs in which the agent flagged
+the dataset as poisoned rises with the strength of the intervention from8.0% [4.64, 13.46]at the Baseline
+condition, to30.67% [23.85, 38.45]using a Scientist Persona, and, finally, to77.33% [70.00, 83.30]with the
+five-component Provenance </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Finally, we are interested in understanding which sub-tasks of our provenance audit skill are most important
+to detecting poisoning. To this end, we run a mixed-effects, logistic regression model using data from the
+Provenance Audit runs. Our model predicts a binarized risk score withhigh riskas reference level. The
+risk values are derived by extracting the agents&#x27; final provenance audit assessment score, after they have
+synthesized results from all five sub-tasks. Our predictors are, then, the ordinal scores assigned to each of the
+five sub-tasks. We also add random intercepts to our regression model for the agent and the topic, to account
+for any variance in these features.
+We find that each audit sub-task is a strong predictor ofhigh risk. We report the odds ratios (OR) from
+the regression model. In particular, cross-dataset consistency carried the largest single signal (OR≈ 648,
+p≈ </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0), followed by statistical anomalies (OR≈ 145, p≈ 0), paper verification (OR≈ 33, p≈ 0), and social
+credibility (OR≈ 30, p = 10−3). Cautioning against poisoning risk did not emerge as the most important
+predictor of high risk. Instead, our trace logs suggest that this cautioning may be acting to prime the agent
+to consider manipulation as a potential risk source in the first place. Finally, both the agent- and topic-level
+variance were estimated near zero, which means that the mitigation measures account for all variation when
+predictinghigh riskassessments.</blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>understand the research questions associated with the dataset.
+Second, a potential confounder is that all our datasets are tabular, which allowed for a more straightforward
+and repeatable experimental pipeline. While this setup is realistic, since tabular data is widely used in all of
+science, contemporary research often involves deep learning which may rely on unstructured datasets, such as
+text corpora or image databases. Poisoning these datasets may be more difficult but also harder to detect.
+Third, to avoid contaminating the online ecosystem with poisoned data, all our datasets are uploaded
+to private repositories. The AI agents can search for and retrieve datasets through a single wrapper tool
+exposing each platform&#x27;s API. This wrapper was written by the authors and the AI agents are instructed to
+use it first before searching the internet more broadly. Relying on this wrapper may </blockquote></details></li><li><strong>Contribution clarity — page 22</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>introduce a potential
+confounder in the number of successful retrievals of the poisoned datasets. This is unlikely, however, as calls
+to the wrapper return a large number of datasets that match a query, and the agents must autonomously
+pick among their queries&#x27; results. We also verify through trace logs, that agents search all four repositories in
+each experimental run, often retrieving more than one relevant dataset across different platforms. Another
+potential concern may be that the instruction to use the wrapper biases the AI agents to even search for
+datasets in the first place. However, we spot-check Minimal prompts—which have the least suggestive
+phrasing to use datasets—without the wrapper-call instruction, finding that AI systems still choose to search
+for and retrieve datasets using standard built-in tools.
+22</blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Fourth, our proposed mitigations in Section 5 intervene only at the prompt-level for our specific threat
+model. It is not unlikely that more advanced adversaries would deploy multiple, different, parallel attacks,
+which would require further measures to intercept. To provide more robust guarantees under more aggressive
+threat models, model-level changes or a suite of different mitigation measures may be necessary, however, this
+was outside the scope of our work. We also note that in three cases the data provenance audit recommended
+pre-existing datasets not be used for research: a false positive rate of2.0%. These were entirely driven by
+real statistical anomalies in otherwise legitimate-looking datasets. False positives were a consequence of the
+way AI agents prioritized and aggregated the five audit checks into a single recommendation, rather than of
+any individual check identifying </blockquote></details></li><li><strong>Contribution clarity — page 23</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the dataset as poisoned. This behavior highlights that better methods of
+score aggregation may improve auditing.
+Fifth, our experiments are scored by a Large Language Model (LLM). This LLM-as-a-judge setup may
+introduce labeling bias, but independent human evaluation of a 10% subset of our experimental runs (in total,
+90 runs across both the baseline and mitigation experiments) show strong agreement (κ≥ 0.758) with the
+LLM, supporting its assigned labels.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +344,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

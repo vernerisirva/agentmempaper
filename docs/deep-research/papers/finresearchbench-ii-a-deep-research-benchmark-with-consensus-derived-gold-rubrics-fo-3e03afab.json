@@ -33,7 +33,7 @@
   "last_seen_date": "2026-07-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-15 08:38:45",
   "notified_date": "2026-07-15",
@@ -44,7 +44,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-15 08:38:23",
-    "generated_at": "2026-09-18 11:25:23",
+    "generated_at": "2026-09-18 13:23:06",
     "last_seen_at": "2026-07-21 08:48:42",
     "metadata_sources": [
       "openalex",
@@ -109,36 +109,1971 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T09:52:02.104083+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript establishes an ecologically grounded, technically rigorous evaluation framework with sound controls, explicit inter-rater agreement analyses, and comprehensive sensitivity checks supporting all core claims.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 42792,
+      "assessment_input_sha256": "808423bdaa1c3704ad75e9f95f81433e2f5d3b9d151a3eb78cc5930506452af6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7169633509",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 39876,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 38869,
+      "evidence_block_count": 89,
+      "evidence_context_characters": 50388,
+      "evidence_context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+      "evidence_context_sha256": "1712c93bcfc358559f0579ef6c80cbf268a6598b7de11d4bbad9b23158339d9d",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 39896,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "extracted_pages": 11,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e",
+        "source_url": "https://arxiv.org/pdf/2607.12252",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 39876,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Finresearchbench Ii: A Deep Research Benchmark With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 0,
+          "source_characters": 305,
+          "supplied_characters": 305
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1821,
+          "supplied_characters": 1821
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2377,
+          "supplied_characters": 2377
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 271,
+          "supplied_characters": 271
+        },
+        {
+          "heading": "A Deep Research Benchmark Grounded In Real",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 4,
+          "source_characters": 105,
+          "supplied_characters": 105
+        },
+        {
+          "heading": "A Scalable, Expert-Free Pipeline For Deriving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 256,
+          "supplied_characters": 256
+        },
+        {
+          "heading": "A Validated And Discriminative Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 331,
+          "supplied_characters": 331
+        },
+        {
+          "heading": "Benchmarks For Deep Research Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 753,
+          "supplied_characters": 753
+        },
+        {
+          "heading": "Financial Domain Benchmarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 1131,
+          "supplied_characters": 1131
+        },
+        {
+          "heading": "Rubric-Based Evaluation For Long-Form",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 909,
+          "supplied_characters": 909
+        },
+        {
+          "heading": "Data Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 364,
+          "supplied_characters": 364
+        },
+        {
+          "heading": "Data Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "Data Collection Methodology",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 675,
+          "supplied_characters": 675
+        },
+        {
+          "heading": "Rubrics Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 560,
+          "supplied_characters": 560
+        },
+        {
+          "heading": "Candidate Rubric Generation: For Each",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 205,
+          "supplied_characters": 205
+        },
+        {
+          "heading": "Human\u2013Llm Validation On A Sampled Sub-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 266,
+          "supplied_characters": 266
+        },
+        {
+          "heading": "Consensus-Derived Gold Rubrics: After Vali-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 284,
+          "supplied_characters": 284
+        },
+        {
+          "heading": "Expert-Free Query-Specific Rubric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 215,
+          "supplied_characters": 215
+        },
+        {
+          "heading": "Expert-Free Query-Specific Rubric",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 943,
+          "supplied_characters": 943
+        },
+        {
+          "heading": "Human-Validated Llm Screening",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 504,
+          "supplied_characters": 504
+        },
+        {
+          "heading": "Strict Consistency Filter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 404,
+          "supplied_characters": 404
+        },
+        {
+          "heading": "Distinguishability Filter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 580,
+          "supplied_characters": 580
+        },
+        {
+          "heading": "Consensus-Derived Gold Rubrics And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Consensus-Derived Gold Rubrics And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 439,
+          "supplied_characters": 439
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 574,
+          "supplied_characters": 574
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 2186,
+          "supplied_characters": 2186
+        },
+        {
+          "heading": "Human\u2013Llm Consistency Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 774,
+          "supplied_characters": 774
+        },
+        {
+          "heading": "Human\u2013Llm Consistency Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 2140,
+          "supplied_characters": 2140
+        },
+        {
+          "heading": "Filtering Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 2041,
+          "supplied_characters": 2041
+        },
+        {
+          "heading": "Filtering Statistics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 373,
+          "supplied_characters": 373
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 30,
+          "source_characters": 3074,
+          "supplied_characters": 3074
+        },
+        {
+          "heading": "Sensitivity Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 855,
+          "supplied_characters": 855
+        },
+        {
+          "heading": "Sensitivity Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1377,
+          "supplied_characters": 1377
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 33,
+          "source_characters": 1943,
+          "supplied_characters": 1943
+        },
+        {
+          "heading": "This Work Utilized Generative Ai Tools For Drafting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "With Generative Ai Assistance And Subsequently Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 85,
+          "supplied_characters": 85
+        },
+        {
+          "heading": "This Paper Was Supported By \"2025 Special Pro-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 46,
+          "supplied_characters": 46
+        },
+        {
+          "heading": "Gram For Supporting Innovative Development In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Leading Industries (Ai Track) Under The High-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Quality Industrial Development Initiative\" (Project",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Name: Finstep Finsmart Intelligent Service Plat-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 92,
+          "supplied_characters": 92
+        },
+        {
+          "heading": "Shanghai Municipal Commission Of Economy And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 80,
+          "supplied_characters": 80
+        },
+        {
+          "heading": "Disclosure Of Interests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 349,
+          "supplied_characters": 349
+        },
+        {
+          "heading": "Bench: A Comprehensive Benchmark For Deep Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 44,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "Nese Financial Domain Knowledge Evaluation Bench-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 45,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "The 2025 Conference Of The Nations Of The Americas",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Chapter Of The Association For Computational Lin-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 49,
+          "supplied_characters": 49
+        },
+        {
+          "heading": "Guistics: Human Language Technologies (Volume 1:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 133,
+          "supplied_characters": 133
+        },
+        {
+          "heading": "A Unified Dual-Mode Bilingual Benchmark For Expert-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 49,
+          "source_characters": 177,
+          "supplied_characters": 177
+        },
+        {
+          "heading": "Sive And Reliable Benchmark For Deep-Research Expert",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 50,
+          "source_characters": 154,
+          "supplied_characters": 154
+        },
+        {
+          "heading": "Structing A Multi-Hop Qa Dataset For Comprehensive",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 402,
+          "supplied_characters": 402
+        },
+        {
+          "heading": "Augmented Generation For Knowledge-Intensive Nlp",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "Ation To Judgment: Opportunities And Challenges Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Ference On Empirical Methods In Natural Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 54,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Ings Of The 63Rd Annual Meeting Of The Association",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "For Computational Linguistics (Volume 1: Long Pa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 128,
+          "supplied_characters": 128
+        },
+        {
+          "heading": "Deep Research On Large-Scale Databases Using Ex-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 426,
+          "supplied_characters": 426
+        },
+        {
+          "heading": "Business-Driven Real-World Financial Benchmark For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 58,
+          "source_characters": 146,
+          "supplied_characters": 146
+        },
+        {
+          "heading": "Query-Specific Rubrics From Human Preferences For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 218,
+          "supplied_characters": 218
+        },
+        {
+          "heading": "International Conference On Learning Representa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Uating Long Text Generation Capabilities Of Large Lan-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 204,
+          "supplied_characters": 204
+        },
+        {
+          "heading": "Infindings Of The Association For Computational",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Researchbench: A Logic Tree Based Agent-As-A-Judge",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "Inproceedings Of The 6Th Acm International Confer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Multi-Domain Benchmark For Evaluating Ai Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 65,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Musique: Multihop Questions Via Single-Hop Ques-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 193,
+          "supplied_characters": 193
+        },
+        {
+          "heading": "Research Eval: An Automated Framework For Assess-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 180,
+          "supplied_characters": 180
+        },
+        {
+          "heading": "Evaluating Agents On The Rediscovery Of Scientific",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 143,
+          "supplied_characters": 143
+        },
+        {
+          "heading": "A Simple Yet Challenging Benchmark For Browsing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 69,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "A Simple Yet Challenging Benchmark For Browsing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 70,
+          "source_characters": 2279,
+          "supplied_characters": 2279
+        },
+        {
+          "heading": "Appendix: A Rubrics Evaluation Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 1652,
+          "supplied_characters": 1652
+        }
+      ],
+      "selected_characters": 38869,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_sections": [
+        {
+          "characters": 305,
+          "heading": "Finresearchbench Ii: A Deep Research Benchmark With",
+          "page": 1
+        },
+        {
+          "characters": 1821,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2377,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 271,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 105,
+          "heading": "A Deep Research Benchmark Grounded In Real",
+          "page": 2
+        },
+        {
+          "characters": 256,
+          "heading": "A Scalable, Expert-Free Pipeline For Deriving",
+          "page": 2
+        },
+        {
+          "characters": 331,
+          "heading": "A Validated And Discriminative Evaluation",
+          "page": 2
+        },
+        {
+          "characters": 753,
+          "heading": "Benchmarks For Deep Research Agents",
+          "page": 2
+        },
+        {
+          "characters": 1131,
+          "heading": "Financial Domain Benchmarks",
+          "page": 2
+        },
+        {
+          "characters": 909,
+          "heading": "Rubric-Based Evaluation For Long-Form",
+          "page": 2
+        },
+        {
+          "characters": 364,
+          "heading": "Data Construction",
+          "page": 2
+        },
+        {
+          "characters": 251,
+          "heading": "Data Construction",
+          "page": 3
+        },
+        {
+          "characters": 675,
+          "heading": "Data Collection Methodology",
+          "page": 3
+        },
+        {
+          "characters": 560,
+          "heading": "Rubrics Construction",
+          "page": 3
+        },
+        {
+          "characters": 205,
+          "heading": "Candidate Rubric Generation: For Each",
+          "page": 3
+        },
+        {
+          "characters": 266,
+          "heading": "Human\u2013Llm Validation On A Sampled Sub-",
+          "page": 3
+        },
+        {
+          "characters": 284,
+          "heading": "Consensus-Derived Gold Rubrics: After Vali-",
+          "page": 3
+        },
+        {
+          "characters": 215,
+          "heading": "Expert-Free Query-Specific Rubric",
+          "page": 3
+        },
+        {
+          "characters": 943,
+          "heading": "Expert-Free Query-Specific Rubric",
+          "page": 4
+        },
+        {
+          "characters": 504,
+          "heading": "Human-Validated Llm Screening",
+          "page": 4
+        },
+        {
+          "characters": 404,
+          "heading": "Strict Consistency Filter",
+          "page": 4
+        },
+        {
+          "characters": 580,
+          "heading": "Distinguishability Filter",
+          "page": 4
+        },
+        {
+          "characters": 492,
+          "heading": "Consensus-Derived Gold Rubrics And",
+          "page": 4
+        },
+        {
+          "characters": 439,
+          "heading": "Consensus-Derived Gold Rubrics And",
+          "page": 5
+        },
+        {
+          "characters": 574,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 2186,
+          "heading": "Evaluation",
+          "page": 5
+        },
+        {
+          "characters": 774,
+          "heading": "Human\u2013Llm Consistency Validation",
+          "page": 5
+        },
+        {
+          "characters": 2140,
+          "heading": "Human\u2013Llm Consistency Validation",
+          "page": 6
+        },
+        {
+          "characters": 2041,
+          "heading": "Filtering Statistics",
+          "page": 6
+        },
+        {
+          "characters": 373,
+          "heading": "Filtering Statistics",
+          "page": 7
+        },
+        {
+          "characters": 3074,
+          "heading": "Evaluation",
+          "page": 7
+        },
+        {
+          "characters": 855,
+          "heading": "Sensitivity Analyses",
+          "page": 7
+        },
+        {
+          "characters": 1377,
+          "heading": "Sensitivity Analyses",
+          "page": 8
+        },
+        {
+          "characters": 1943,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 102,
+          "heading": "This Work Utilized Generative Ai Tools For Drafting",
+          "page": 8
+        },
+        {
+          "characters": 85,
+          "heading": "With Generative Ai Assistance And Subsequently Re-",
+          "page": 8
+        },
+        {
+          "characters": 46,
+          "heading": "This Paper Was Supported By \"2025 Special Pro-",
+          "page": 8
+        },
+        {
+          "characters": 45,
+          "heading": "Gram For Supporting Innovative Development In",
+          "page": 8
+        },
+        {
+          "characters": 45,
+          "heading": "Leading Industries (Ai Track) Under The High-",
+          "page": 8
+        },
+        {
+          "characters": 51,
+          "heading": "Quality Industrial Development Initiative\" (Project",
+          "page": 8
+        },
+        {
+          "characters": 92,
+          "heading": "Name: Finstep Finsmart Intelligent Service Plat-",
+          "page": 8
+        },
+        {
+          "characters": 80,
+          "heading": "Shanghai Municipal Commission Of Economy And",
+          "page": 8
+        },
+        {
+          "characters": 124,
+          "heading": "Disclosure Of Interests",
+          "page": 9
+        },
+        {
+          "characters": 349,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 145,
+          "heading": "Bench: A Comprehensive Benchmark For Deep Re-",
+          "page": 9
+        },
+        {
+          "characters": 98,
+          "heading": "Nese Financial Domain Knowledge Evaluation Bench-",
+          "page": 9
+        },
+        {
+          "characters": 50,
+          "heading": "The 2025 Conference Of The Nations Of The Americas",
+          "page": 9
+        },
+        {
+          "characters": 49,
+          "heading": "Chapter Of The Association For Computational Lin-",
+          "page": 9
+        },
+        {
+          "characters": 133,
+          "heading": "Guistics: Human Language Technologies (Volume 1:",
+          "page": 9
+        },
+        {
+          "characters": 177,
+          "heading": "A Unified Dual-Mode Bilingual Benchmark For Expert-",
+          "page": 9
+        },
+        {
+          "characters": 154,
+          "heading": "Sive And Reliable Benchmark For Deep-Research Expert",
+          "page": 9
+        },
+        {
+          "characters": 402,
+          "heading": "Structing A Multi-Hop Qa Dataset For Comprehensive",
+          "page": 9
+        },
+        {
+          "characters": 172,
+          "heading": "Augmented Generation For Knowledge-Intensive Nlp",
+          "page": 9
+        },
+        {
+          "characters": 97,
+          "heading": "Ation To Judgment: Opportunities And Challenges Of",
+          "page": 9
+        },
+        {
+          "characters": 183,
+          "heading": "Ference On Empirical Methods In Natural Language",
+          "page": 9
+        },
+        {
+          "characters": 50,
+          "heading": "Ings Of The 63Rd Annual Meeting Of The Association",
+          "page": 9
+        },
+        {
+          "characters": 128,
+          "heading": "For Computational Linguistics (Volume 1: Long Pa-",
+          "page": 9
+        },
+        {
+          "characters": 426,
+          "heading": "Deep Research On Large-Scale Databases Using Ex-",
+          "page": 9
+        },
+        {
+          "characters": 146,
+          "heading": "Business-Driven Real-World Financial Benchmark For",
+          "page": 9
+        },
+        {
+          "characters": 218,
+          "heading": "Query-Specific Rubrics From Human Preferences For",
+          "page": 9
+        },
+        {
+          "characters": 110,
+          "heading": "International Conference On Learning Representa-",
+          "page": 9
+        },
+        {
+          "characters": 204,
+          "heading": "Uating Long Text Generation Capabilities Of Large Lan-",
+          "page": 9
+        },
+        {
+          "characters": 184,
+          "heading": "Infindings Of The Association For Computational",
+          "page": 9
+        },
+        {
+          "characters": 102,
+          "heading": "Researchbench: A Logic Tree Based Agent-As-A-Judge",
+          "page": 9
+        },
+        {
+          "characters": 134,
+          "heading": "Inproceedings Of The 6Th Acm International Confer-",
+          "page": 9
+        },
+        {
+          "characters": 174,
+          "heading": "Multi-Domain Benchmark For Evaluating Ai Research",
+          "page": 9
+        },
+        {
+          "characters": 193,
+          "heading": "Musique: Multihop Questions Via Single-Hop Ques-",
+          "page": 9
+        },
+        {
+          "characters": 180,
+          "heading": "Research Eval: An Automated Framework For Assess-",
+          "page": 9
+        },
+        {
+          "characters": 143,
+          "heading": "Evaluating Agents On The Rediscovery Of Scientific",
+          "page": 9
+        },
+        {
+          "characters": 89,
+          "heading": "A Simple Yet Challenging Benchmark For Browsing",
+          "page": 9
+        },
+        {
+          "characters": 2279,
+          "heading": "A Simple Yet Challenging Benchmark For Browsing",
+          "page": 10
+        },
+        {
+          "characters": 1652,
+          "heading": "Appendix: A Rubrics Evaluation Prompt",
+          "page": 11
+        }
+      ],
+      "selected_text_sha256": "808423bdaa1c3704ad75e9f95f81433e2f5d3b9d151a3eb78cc5930506452af6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e",
+      "source_pages": 11,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0002"
+        ],
+        "excerpt": "Deep research agents are increasingly used to produce\nlong-form financial reports, yet large-scale evaluation\nremains bottlenecked by the need for human experts to\ndefine and execute high-quality rubrics. We address this\nproblem by proposing a scalable pipeline for generating\nhigh-quality rubrics without human experts in the final\nloop. We build a financial deep research benchmark\nfrom 104 real-world user queries and automatically syn-\nthesize 14,450 query-specific candidate rubrics from\nmodel-generated reports. To justify removing human\nexperts from rubric execution, we compare rubric judg-\nments from three human experts with those from a three-\nLLM judge panel on a sampled subset, and show that\nLLM-based evaluation is sufficiently consistent with\nhuman evaluation to replace it for large-scale rubric\nscreening, including 98.67% label-level agreement on\njointly unanimous items. We then ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "35c59b70c6f1a711b079e551562926b1d65788dfecde0e988e0d21c8cd8a6947",
+            "evidence_id": "Ee1224b87267f9d37-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Deep research agents are increasingly used to produce\nlong-form financial reports, yet large-scale evaluation\nremains bottlenecked by the need for human experts to\ndefine and execute high-quality rubrics. We address this\nproblem by proposing a scalable pipeline for generating\nhigh-quality rubrics without human experts in the final\nloop. We build a financial deep research benchmark\nfrom 104 real-world user queries and automatically syn-\nthesize 14,450 query-specific candidate rubrics from\nmodel-generated reports. To justify removing human\nexperts from rubric execution, we compare rubric judg-\nments from three human experts with those from a three-\nLLM judge panel on a sampled subset, and show that\nLLM-based evaluation is sufficiently consistent with\nhuman evaluation to replace it for large-scale rubric\nscreening, including 98.67% label-level agreement on\njointly unanimous items. We then "
+              }
+            ],
+            "text": "Deep research agents are increasingly used to produce\nlong-form financial reports, yet large-scale evaluation\nremains bottlenecked by the need for human experts to\ndefine and execute high-quality rubrics. We address this\nproblem by proposing a scalable pipeline for generating\nhigh-quality rubrics without human experts in the final\nloop. We build a financial deep research benchmark\nfrom 104 real-world user queries and automatically syn-\nthesize 14,450 query-specific candidate rubrics from\nmodel-generated reports. To justify removing human\nexperts from rubric execution, we compare rubric judg-\nments from three human experts with those from a three-\nLLM judge panel on a sampled subset, and show that\nLLM-based evaluation is sufficiently consistent with\nhuman evaluation to replace it for large-scale rubric\nscreening, including 98.67% label-level agreement on\njointly unanimous items. We then "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0003"
+        ],
+        "excerpt": "derive consensus-\nderived gold rubrics through two filters: a strict consis-\ntency filter, which keeps a rubric only if the three LLM\njudges unanimously agree on every report under the\nsame query, and a distinguishability filter, which keeps\na rubric only if it assigns at least one majority-yes and at\nleast one majority-no label across the evaluated systems.\nThis process retains 3,687 consistency-passed rubrics,\nof which 2,600 remain distinguishable and form the fi-\nnal set of consensus-derived gold rubrics. Using this\nfinal rubric set, we obtain clearly differentiated rankings\nacross 10 deep research systems, with item-level pass\nrates ranging from 58.58% to 22.23%. More broadly,\nbecause the pipeline removes human-expert execution\nfrom rubric generation and evaluation, it is naturally\nscalable for benchmark evaluation, automatic system\ncomparison, and future studies of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "db4bbcf1990c8708143eaeb369b34b8f4081dd9918fe25b06dd3f28ea6f056c8",
+            "evidence_id": "Ee1224b87267f9d37-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1782,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 899,
+                "text": "derive consensus-\nderived gold rubrics through two filters: a strict consis-\ntency filter, which keeps a rubric only if the three LLM\njudges unanimously agree on every report under the\nsame query, and a distinguishability filter, which keeps\na rubric only if it assigns at least one majority-yes and at\nleast one majority-no label across the evaluated systems.\nThis process retains 3,687 consistency-passed rubrics,\nof which 2,600 remain distinguishable and form the fi-\nnal set of consensus-derived gold rubrics. Using this\nfinal rubric set, we obtain clearly differentiated rankings\nacross 10 deep research systems, with item-level pass\nrates ranging from 58.58% to 22.23%. More broadly,\nbecause the pipeline removes human-expert execution\nfrom rubric generation and evaluation, it is naturally\nscalable for benchmark evaluation, automatic system\ncomparison, and future studies of "
+              }
+            ],
+            "text": "derive consensus-\nderived gold rubrics through two filters: a strict consis-\ntency filter, which keeps a rubric only if the three LLM\njudges unanimously agree on every report under the\nsame query, and a distinguishability filter, which keeps\na rubric only if it assigns at least one majority-yes and at\nleast one majority-no label across the evaluated systems.\nThis process retains 3,687 consistency-passed rubrics,\nof which 2,600 remain distinguishable and form the fi-\nnal set of consensus-derived gold rubrics. Using this\nfinal rubric set, we obtain clearly differentiated rankings\nacross 10 deep research systems, with item-level pass\nrates ranging from 58.58% to 22.23%. More broadly,\nbecause the pipeline removes human-expert execution\nfrom rubric generation and evaluation, it is naturally\nscalable for benchmark evaluation, automatic system\ncomparison, and future studies of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0017"
+        ],
+        "excerpt": "We collected user queries from a deployed financial\ndeep research service during February to March\n2026, applying standard privacy protection proce-\ndures including anonymization and PII removal.\nQuery analysis revealed seven dominant categories:\nStock Comparison,Stock Trend Prediction,Funda-\nmental Consultation,Stock Trading Advice,The-\nme/Sector Analysis,Precious Metals Analysis, and\nIndividual Stock Analysis. Using stratified random\nsampling across these categories, we constructed\na final dataset of 104 queries balancing analytical\ncomplexity, temporal diversity, and entity cover-\nage. Figure 2 shows the distribution of user queries\nacross fine-grained categories.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Data Collection Methodology",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "688b00e5b8f09b68306a799194cbe0ea3f08c233284df6a3bd7fb868cc4a8caf",
+            "evidence_id": "Ee1224b87267f9d37-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Data Collection Methodology",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 675,
+                "page": 3,
+                "section": "Data Collection Methodology",
+                "section_index": 12,
+                "start": 0,
+                "text": "We collected user queries from a deployed financial\ndeep research service during February to March\n2026, applying standard privacy protection proce-\ndures including anonymization and PII removal.\nQuery analysis revealed seven dominant categories:\nStock Comparison,Stock Trend Prediction,Funda-\nmental Consultation,Stock Trading Advice,The-\nme/Sector Analysis,Precious Metals Analysis, and\nIndividual Stock Analysis. Using stratified random\nsampling across these categories, we constructed\na final dataset of 104 queries balancing analytical\ncomplexity, temporal diversity, and entity cover-\nage. Figure 2 shows the distribution of user queries\nacross fine-grained categories."
+              }
+            ],
+            "text": "We collected user queries from a deployed financial\ndeep research service during February to March\n2026, applying standard privacy protection proce-\ndures including anonymization and PII removal.\nQuery analysis revealed seven dominant categories:\nStock Comparison,Stock Trend Prediction,Funda-\nmental Consultation,Stock Trading Advice,The-\nme/Sector Analysis,Precious Metals Analysis, and\nIndividual Stock Analysis. Using stratified random\nsampling across these categories, we constructed\na final dataset of 104 queries balancing analytical\ncomplexity, temporal diversity, and entity cover-\nage. Figure 2 shows the distribution of user queries\nacross fine-grained categories."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0024"
+        ],
+        "excerpt": "Our goal is not to keep human experts in the large-\nscale execution loop, but to use human judgments\nonce to validate an automated rubric-screening\nmechanism. We therefore compare three human\nexperts with a three-LLM judge panel on a sampled\nsubset of rubric items. This validation stage sup-\nports the operational claim needed by our pipeline:\nin this benchmark setting, LLM-based rubric evalu-\nation is sufficiently aligned with human evaluation\nto replace expert execution for large-scale screen-\ning.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human-Validated Llm Screening",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b58920aff81d7b65395ad7cacca31ec4c64a90b46b9226a78f8990df1614eb99",
+            "evidence_id": "Ee1224b87267f9d37-B0024",
+            "pages": [
+              4
+            ],
+            "section": "Human-Validated Llm Screening",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 504,
+                "page": 4,
+                "section": "Human-Validated Llm Screening",
+                "section_index": 19,
+                "start": 0,
+                "text": "Our goal is not to keep human experts in the large-\nscale execution loop, but to use human judgments\nonce to validate an automated rubric-screening\nmechanism. We therefore compare three human\nexperts with a three-LLM judge panel on a sampled\nsubset of rubric items. This validation stage sup-\nports the operational claim needed by our pipeline:\nin this benchmark setting, LLM-based rubric evalu-\nation is sufficiently aligned with human evaluation\nto replace expert execution for large-scale screen-\ning."
+              }
+            ],
+            "text": "Our goal is not to keep human experts in the large-\nscale execution loop, but to use human judgments\nonce to validate an automated rubric-screening\nmechanism. We therefore compare three human\nexperts with a three-LLM judge panel on a sampled\nsubset of rubric items. This validation stage sup-\nports the operational claim needed by our pipeline:\nin this benchmark setting, LLM-based rubric evalu-\nation is sufficiently aligned with human evaluation\nto replace expert execution for large-scale screen-\ning."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0025"
+        ],
+        "excerpt": "After validation, we use the same three-LLM judge\npanel to evaluate the full candidate pool. For a fixed\nrubric under a fixed query, each of the 10 product\nreports receives three binary judgments. A rubric\npasses the consistency filter only if all three judges\nagree on every one of the 10 reports. This strict\nunanimity rule removes rubrics whose execution is\nnot sufficiently objective or reproducible.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Strict Consistency Filter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9d2160303850e264fb1e8f0ef3c6ab41a73fe22dbda0b3c51004f1d590640709",
+            "evidence_id": "Ee1224b87267f9d37-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Strict Consistency Filter",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 404,
+                "page": 4,
+                "section": "Strict Consistency Filter",
+                "section_index": 20,
+                "start": 0,
+                "text": "After validation, we use the same three-LLM judge\npanel to evaluate the full candidate pool. For a fixed\nrubric under a fixed query, each of the 10 product\nreports receives three binary judgments. A rubric\npasses the consistency filter only if all three judges\nagree on every one of the 10 reports. This strict\nunanimity rule removes rubrics whose execution is\nnot sufficiently objective or reproducible."
+              }
+            ],
+            "text": "After validation, we use the same three-LLM judge\npanel to evaluate the full candidate pool. For a fixed\nrubric under a fixed query, each of the 10 product\nreports receives three binary judgments. A rubric\npasses the consistency filter only if all three judges\nagree on every one of the 10 reports. This strict\nunanimity rule removes rubrics whose execution is\nnot sufficiently objective or reproducible."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0026"
+        ],
+        "excerpt": "Consistency alone is insufficient: a rubric may be\nperfectly stable while still assigning the same effec-\ntive judgment to all products. We therefore apply\na second filter at the cross-report level. For each\nconsistency-passed rubric, we compute the major-\nity label for each of the 10 product reports. A rubric\nis considered distinguishable if at least one report\nreceives a majority-yes label and at least one re-\nport receives a majority-no label. This removes\none-sided rubrics such as always-yes or always-no\ncriteria that are stable but uninformative for product\ncomparison.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Distinguishability Filter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "56c31dee0ec5514704d03fbbbf7ecdac7d92e7c56233405d3720419f99544f50",
+            "evidence_id": "Ee1224b87267f9d37-B0026",
+            "pages": [
+              4
+            ],
+            "section": "Distinguishability Filter",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 580,
+                "page": 4,
+                "section": "Distinguishability Filter",
+                "section_index": 21,
+                "start": 0,
+                "text": "Consistency alone is insufficient: a rubric may be\nperfectly stable while still assigning the same effec-\ntive judgment to all products. We therefore apply\na second filter at the cross-report level. For each\nconsistency-passed rubric, we compute the major-\nity label for each of the 10 product reports. A rubric\nis considered distinguishable if at least one report\nreceives a majority-yes label and at least one re-\nport receives a majority-no label. This removes\none-sided rubrics such as always-yes or always-no\ncriteria that are stable but uninformative for product\ncomparison."
+              }
+            ],
+            "text": "Consistency alone is insufficient: a rubric may be\nperfectly stable while still assigning the same effec-\ntive judgment to all products. We therefore apply\na second filter at the cross-report level. For each\nconsistency-passed rubric, we compute the major-\nity label for each of the 10 product reports. A rubric\nis considered distinguishable if at least one report\nreceives a majority-yes label and at least one re-\nport receives a majority-no label. This removes\none-sided rubrics such as always-yes or always-no\ncriteria that are stable but uninformative for product\ncomparison."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0033"
+        ],
+        "excerpt": "Before scaling the rubric pipeline to the full\nbenchmark, we validate whether the three-LLM\njudge panel can support large-scale rubric screen-\ning. The validation set compares three human\nexperts with the three-model panel on 4,052\nsampled rubric\u2013report items covering all seven\nquery categories and all four rubric dimensions.\nThe human experts are financial analysts with\nsecurities-research backgrounds and approximately\n10 years of experience each. The LLM panel\nconsists of gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview. Our goal is not to\nargue that LLM judges universally replace experts,\nbut to test whether LLM unanimity is a dependable\ncriterion for retaining rubrics that are likely to be\nexecuted consistently.\nFigure 3 shows that the three-LLM panel pro-\n5\nTable 1: Within-model stability of batched rubric evaluation on a sampled subset. Full consistency denotes the\nfraction of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human\u2013Llm Consistency Validation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d2d31fd0b27c2de69af6ed2290253fe2317ed17a2f8fe4b1731bb44d95ea4eb5",
+            "evidence_id": "Ee1224b87267f9d37-B0033",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Human\u2013Llm Consistency Validation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 774,
+                "page": 5,
+                "section": "Human\u2013Llm Consistency Validation",
+                "section_index": 26,
+                "start": 0,
+                "text": "Before scaling the rubric pipeline to the full\nbenchmark, we validate whether the three-LLM\njudge panel can support large-scale rubric screen-\ning. The validation set compares three human\nexperts with the three-model panel on 4,052\nsampled rubric\u2013report items covering all seven\nquery categories and all four rubric dimensions.\nThe human experts are financial analysts with\nsecurities-research backgrounds and approximately\n10 years of experience each. The LLM panel\nconsists of gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview. Our goal is not to\nargue that LLM judges universally replace experts,\nbut to test whether LLM unanimity is a dependable\ncriterion for retaining rubrics that are likely to be\nexecuted consistently.\nFigure 3 shows that the three-LLM panel pro-\n5"
+              },
+              {
+                "end": 123,
+                "page": 6,
+                "section": "Human\u2013Llm Consistency Validation",
+                "section_index": 27,
+                "start": 0,
+                "text": "Table 1: Within-model stability of batched rubric evaluation on a sampled subset. Full consistency denotes the\nfraction of "
+              }
+            ],
+            "text": "Before scaling the rubric pipeline to the full\nbenchmark, we validate whether the three-LLM\njudge panel can support large-scale rubric screen-\ning. The validation set compares three human\nexperts with the three-model panel on 4,052\nsampled rubric\u2013report items covering all seven\nquery categories and all four rubric dimensions.\nThe human experts are financial analysts with\nsecurities-research backgrounds and approximately\n10 years of experience each. The LLM panel\nconsists of gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview. Our goal is not to\nargue that LLM judges universally replace experts,\nbut to test whether LLM unanimity is a dependable\ncriterion for retaining rubrics that are likely to be\nexecuted consistently.\nFigure 3 shows that the three-LLM panel pro-\n5\nTable 1: Within-model stability of batched rubric evaluation on a sampled subset. Full consistency denotes the\nfraction of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0034"
+        ],
+        "excerpt": "rubric evaluations with identical labels in all three runs.\nScope Rubrics Mean Cons. Full Cons. Flip Rate\nOverall 6,625 0.970 90.99% 9.01%\nComprehensiveness 1,671 0.971 91.38% 8.62%\nInsight 2,571 0.967 89.96% 10.04%\nInstruction Following 1,124 0.977 93.15% 6.85%\nReadability 1,259 0.969 90.63% 9.37%\nvides a useful precision-oriented screening signal.\nAmong the 3,436 items for which the LLM panel is\nunanimous, humans are also unanimous on 2,867\nitems (83.4%). These are exactly the kinds of\nitems that our pipeline intends to retain. Con-\nversely, among the 616 items for which the LLM\npanel is not unanimous, human judges are also\nnon-unanimous on 371 items (60.2%), indicating\nthat LLM disagreement is informative as a warning\nsignal as well.\nWe also check whether the two panels assign\nthe same label when both are unanimous. Among\nthe 2,867 jointly unanimous items, label-level\nagreement is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human\u2013Llm Consistency Validation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d7e0ec10698f938692af190795e1d5599b5c2fb4988f55328e80b7370cdd0eba",
+            "evidence_id": "Ee1224b87267f9d37-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Human\u2013Llm Consistency Validation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1020,
+                "page": 6,
+                "section": "Human\u2013Llm Consistency Validation",
+                "section_index": 27,
+                "start": 123,
+                "text": "rubric evaluations with identical labels in all three runs.\nScope Rubrics Mean Cons. Full Cons. Flip Rate\nOverall 6,625 0.970 90.99% 9.01%\nComprehensiveness 1,671 0.971 91.38% 8.62%\nInsight 2,571 0.967 89.96% 10.04%\nInstruction Following 1,124 0.977 93.15% 6.85%\nReadability 1,259 0.969 90.63% 9.37%\nvides a useful precision-oriented screening signal.\nAmong the 3,436 items for which the LLM panel is\nunanimous, humans are also unanimous on 2,867\nitems (83.4%). These are exactly the kinds of\nitems that our pipeline intends to retain. Con-\nversely, among the 616 items for which the LLM\npanel is not unanimous, human judges are also\nnon-unanimous on 371 items (60.2%), indicating\nthat LLM disagreement is informative as a warning\nsignal as well.\nWe also check whether the two panels assign\nthe same label when both are unanimous. Among\nthe 2,867 jointly unanimous items, label-level\nagreement is "
+              }
+            ],
+            "text": "rubric evaluations with identical labels in all three runs.\nScope Rubrics Mean Cons. Full Cons. Flip Rate\nOverall 6,625 0.970 90.99% 9.01%\nComprehensiveness 1,671 0.971 91.38% 8.62%\nInsight 2,571 0.967 89.96% 10.04%\nInstruction Following 1,124 0.977 93.15% 6.85%\nReadability 1,259 0.969 90.63% 9.37%\nvides a useful precision-oriented screening signal.\nAmong the 3,436 items for which the LLM panel is\nunanimous, humans are also unanimous on 2,867\nitems (83.4%). These are exactly the kinds of\nitems that our pipeline intends to retain. Con-\nversely, among the 616 items for which the LLM\npanel is not unanimous, human judges are also\nnon-unanimous on 371 items (60.2%), indicating\nthat LLM disagreement is informative as a warning\nsignal as well.\nWe also check whether the two panels assign\nthe same label when both are unanimous. Among\nthe 2,867 jointly unanimous items, label-level\nagreement is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0035"
+        ],
+        "excerpt": "98.67% (2,829/2,867; Cohen's \u03ba=\n0.9733), with only 38 opposite-label cases. Across\nall 4,052 validation items, majority-label agree-\nment is 90.42% ( \u03ba= 0.8076 ). Pairwise agree-\nment further supports the same conclusion: LLM\u2013\nhuman agreement (mean agreement 0.848, mean\n\u03ba= 0.694 ) exceeds human\u2013human agreement\n(mean agreement 0.811, \u03ba= 0.569 \u20130.678, mean\n\u03ba= 0.622). Thus, LLM unanimity is not merely a\nreproducibility indicator; in this validation subset,\nit is also a strong proxy for label-level agreement\nwith expert judgments.\nThe key pattern is that the panel behaves conser-\nvatively rather than permissively. It does discard\nsome items that humans judge unanimously, but\nthis is acceptable for our use case because screen-\ning is designed to favor precision over recall. In\nother words, we prefer to keep a smaller set of\nrubrics whose execution appears objectively repro-\nducible, rather ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human\u2013Llm Consistency Validation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "afd5ecc79719afe670d6e63dc52e15b8b41cec6aa788dbe606c4e9e06b978b78",
+            "evidence_id": "Ee1224b87267f9d37-B0035",
+            "pages": [
+              6
+            ],
+            "section": "Human\u2013Llm Consistency Validation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1918,
+                "page": 6,
+                "section": "Human\u2013Llm Consistency Validation",
+                "section_index": 27,
+                "start": 1020,
+                "text": "98.67% (2,829/2,867; Cohen's \u03ba=\n0.9733), with only 38 opposite-label cases. Across\nall 4,052 validation items, majority-label agree-\nment is 90.42% ( \u03ba= 0.8076 ). Pairwise agree-\nment further supports the same conclusion: LLM\u2013\nhuman agreement (mean agreement 0.848, mean\n\u03ba= 0.694 ) exceeds human\u2013human agreement\n(mean agreement 0.811, \u03ba= 0.569 \u20130.678, mean\n\u03ba= 0.622). Thus, LLM unanimity is not merely a\nreproducibility indicator; in this validation subset,\nit is also a strong proxy for label-level agreement\nwith expert judgments.\nThe key pattern is that the panel behaves conser-\nvatively rather than permissively. It does discard\nsome items that humans judge unanimously, but\nthis is acceptable for our use case because screen-\ning is designed to favor precision over recall. In\nother words, we prefer to keep a smaller set of\nrubrics whose execution appears objectively repro-\nducible, rather "
+              }
+            ],
+            "text": "98.67% (2,829/2,867; Cohen's \u03ba=\n0.9733), with only 38 opposite-label cases. Across\nall 4,052 validation items, majority-label agree-\nment is 90.42% ( \u03ba= 0.8076 ). Pairwise agree-\nment further supports the same conclusion: LLM\u2013\nhuman agreement (mean agreement 0.848, mean\n\u03ba= 0.694 ) exceeds human\u2013human agreement\n(mean agreement 0.811, \u03ba= 0.569 \u20130.678, mean\n\u03ba= 0.622). Thus, LLM unanimity is not merely a\nreproducibility indicator; in this validation subset,\nit is also a strong proxy for label-level agreement\nwith expert judgments.\nThe key pattern is that the panel behaves conser-\nvatively rather than permissively. It does discard\nsome items that humans judge unanimously, but\nthis is acceptable for our use case because screen-\ning is designed to favor precision over recall. In\nother words, we prefer to keep a smaller set of\nrubrics whose execution appears objectively repro-\nducible, rather "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0037"
+        ],
+        "excerpt": "We next apply the rubric pipeline to the full candi-\ndate pool of 14,450 query-specific rubrics. The two\nfilters encode complementary requirements for a\nbenchmark rubric: it should bestableunder judge\nexecution andinformativefor product comparison.\nTable 2 shows that the strict consis-\ntency filter is highly selective: only 3,687\nrubrics (25.52%) survive the requirement\nthat gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview agree on all 10\nreports under the same query. This large reduction\nconfirms that raw rubric generation produces\nmany items that are plausible on the surface but\nnot sufficiently reproducible in execution. The\nsecond-stage distinguishability filter retains 2,600\nof these 3,687 rubrics (70.52%), yielding a final\noverall retention rate of 17.99% from the original\ncandidate pool.\nThe retained-rubric statistics further clarify the\nrole of each stage. At the query level, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Filtering Statistics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6dfa6add4ea517624f8e05dfa70a4c9eff220403015917d093740c3c25a9c8bc",
+            "evidence_id": "Ee1224b87267f9d37-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Filtering Statistics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Filtering Statistics",
+                "section_index": 28,
+                "start": 0,
+                "text": "We next apply the rubric pipeline to the full candi-\ndate pool of 14,450 query-specific rubrics. The two\nfilters encode complementary requirements for a\nbenchmark rubric: it should bestableunder judge\nexecution andinformativefor product comparison.\nTable 2 shows that the strict consis-\ntency filter is highly selective: only 3,687\nrubrics (25.52%) survive the requirement\nthat gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview agree on all 10\nreports under the same query. This large reduction\nconfirms that raw rubric generation produces\nmany items that are plausible on the surface but\nnot sufficiently reproducible in execution. The\nsecond-stage distinguishability filter retains 2,600\nof these 3,687 rubrics (70.52%), yielding a final\noverall retention rate of 17.99% from the original\ncandidate pool.\nThe retained-rubric statistics further clarify the\nrole of each stage. At the query level, "
+              }
+            ],
+            "text": "We next apply the rubric pipeline to the full candi-\ndate pool of 14,450 query-specific rubrics. The two\nfilters encode complementary requirements for a\nbenchmark rubric: it should bestableunder judge\nexecution andinformativefor product comparison.\nTable 2 shows that the strict consis-\ntency filter is highly selective: only 3,687\nrubrics (25.52%) survive the requirement\nthat gpt-5.4, claude-opus-4-7, and\ngemini-3-pro-preview agree on all 10\nreports under the same query. This large reduction\nconfirms that raw rubric generation produces\nmany items that are plausible on the surface but\nnot sufficiently reproducible in execution. The\nsecond-stage distinguishability filter retains 2,600\nof these 3,687 rubrics (70.52%), yielding a final\noverall retention rate of 17.99% from the original\ncandidate pool.\nThe retained-rubric statistics further clarify the\nrole of each stage. At the query level, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0040"
+        ],
+        "excerpt": "We evaluate 10 commercial deep research products\nin total using both the 3,687 consistency-passed\nrubrics and the final set of 2,600 consensus-derived\ngold rubrics obtained after distinguishability filter-\ning. Table 3 reports the nine published products,\nwhile one held-out Internal System is described\nseparately in the text. For each rubric set, we re-\nport two complementary metrics: Item-level Pass\nRate, defined as the proportion of rubrics on which\nthe product receives a positive label; and Query-\nlevel Macro Pass Rate, defined by first comput-\ning the pass rate within each query and then av-\neraging across the 104 queries with equal weight.\nThe former reflects aggregate performance over the\nretained rubric pool, while the latter controls for\nquery-level imbalance in rubric counts.\nTable 3 reveals two complementary patterns.\nFirst, pass rates on the 3,687 consistency-passed\nrubrics ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "aa4abe55ef766b122bed8da5667221c9146bed709fa0124ca00116722504e8c7",
+            "evidence_id": "Ee1224b87267f9d37-B0040",
+            "pages": [
+              7
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Evaluation",
+                "section_index": 30,
+                "start": 0,
+                "text": "We evaluate 10 commercial deep research products\nin total using both the 3,687 consistency-passed\nrubrics and the final set of 2,600 consensus-derived\ngold rubrics obtained after distinguishability filter-\ning. Table 3 reports the nine published products,\nwhile one held-out Internal System is described\nseparately in the text. For each rubric set, we re-\nport two complementary metrics: Item-level Pass\nRate, defined as the proportion of rubrics on which\nthe product receives a positive label; and Query-\nlevel Macro Pass Rate, defined by first comput-\ning the pass rate within each query and then av-\neraging across the 104 queries with equal weight.\nThe former reflects aggregate performance over the\nretained rubric pool, while the latter controls for\nquery-level imbalance in rubric counts.\nTable 3 reveals two complementary patterns.\nFirst, pass rates on the 3,687 consistency-passed\nrubrics "
+              }
+            ],
+            "text": "We evaluate 10 commercial deep research products\nin total using both the 3,687 consistency-passed\nrubrics and the final set of 2,600 consensus-derived\ngold rubrics obtained after distinguishability filter-\ning. Table 3 reports the nine published products,\nwhile one held-out Internal System is described\nseparately in the text. For each rubric set, we re-\nport two complementary metrics: Item-level Pass\nRate, defined as the proportion of rubrics on which\nthe product receives a positive label; and Query-\nlevel Macro Pass Rate, defined by first comput-\ning the pass rate within each query and then av-\neraging across the 104 queries with equal weight.\nThe former reflects aggregate performance over the\nretained rubric pool, while the latter controls for\nquery-level imbalance in rubric counts.\nTable 3 reveals two complementary patterns.\nFirst, pass rates on the 3,687 consistency-passed\nrubrics "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0044"
+        ],
+        "excerpt": "We run two additional diagnostics to test whether\nthe ranking is an artifact of the judge panel\nor the distinguishability filter. First, we\nconduct a leave-one-judge-out analysis by re-\nmoving gpt-5.4, claude-opus-4-7, or\ngemini-3-pro-preview individually and re-\ncomputing the retained rubric set and product rank-\ning under two-judge unanimity. In all three config-\nurations, the Spearman rank correlation with the\nfull-panel baseline is \u03c1= 0.988 . The only po-\nsitional change is a tie-break-level swap between\nChatGPT and Qwen, two systems whose baseline\nscores are effectively tied. For the self-preference\nconcern specifically, removing the Gemini judge\nleaves the Gemini product unchanged at rank 3;\nremoving the GPT judge causes ChatGPT to drop\nby one position only because it loses the near-tie\nwith Qwen. These patterns are not consistent with\n7",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sensitivity Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "51ef0189905b3404f96d0fea7055c7dd378f1e2357d8d78bf339c8cae7c66104",
+            "evidence_id": "Ee1224b87267f9d37-B0044",
+            "pages": [
+              7
+            ],
+            "section": "Sensitivity Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 855,
+                "page": 7,
+                "section": "Sensitivity Analyses",
+                "section_index": 31,
+                "start": 0,
+                "text": "We run two additional diagnostics to test whether\nthe ranking is an artifact of the judge panel\nor the distinguishability filter. First, we\nconduct a leave-one-judge-out analysis by re-\nmoving gpt-5.4, claude-opus-4-7, or\ngemini-3-pro-preview individually and re-\ncomputing the retained rubric set and product rank-\ning under two-judge unanimity. In all three config-\nurations, the Spearman rank correlation with the\nfull-panel baseline is \u03c1= 0.988 . The only po-\nsitional change is a tie-break-level swap between\nChatGPT and Qwen, two systems whose baseline\nscores are effectively tied. For the self-preference\nconcern specifically, removing the Gemini judge\nleaves the Gemini product unchanged at rank 3;\nremoving the GPT judge causes ChatGPT to drop\nby one position only because it loses the near-tie\nwith Qwen. These patterns are not consistent with\n7"
+              }
+            ],
+            "text": "We run two additional diagnostics to test whether\nthe ranking is an artifact of the judge panel\nor the distinguishability filter. First, we\nconduct a leave-one-judge-out analysis by re-\nmoving gpt-5.4, claude-opus-4-7, or\ngemini-3-pro-preview individually and re-\ncomputing the retained rubric set and product rank-\ning under two-judge unanimity. In all three config-\nurations, the Spearman rank correlation with the\nfull-panel baseline is \u03c1= 0.988 . The only po-\nsitional change is a tie-break-level swap between\nChatGPT and Qwen, two systems whose baseline\nscores are effectively tied. For the self-preference\nconcern specifically, removing the Gemini judge\nleaves the Gemini product unchanged at rank 3;\nremoving the GPT judge causes ChatGPT to drop\nby one position only because it loses the near-tie\nwith Qwen. These patterns are not consistent with\n7"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0045"
+        ],
+        "excerpt": "Table 3: Product-level pass rates on the nine published deep research products under the consistency-passed rubric\nset and the final consensus-derived rubric set. Query-level Macro Pass Rate first computes a pass rate within each\nquery and then averages over the 104 queries.\nProduct Consistency-Passed Consensus Gold\nItem Pass Query Macro Item Pass Query Macro\nKimi 69.95 71.08 58.58 59.48\nDoubao 66.37 67.21 53.50 53.38\nGemini 66.23 67.08 53.31 52.48\nChatGPT 61.57 62.46 46.69 46.82\nQwen 61.54 62.42 46.65 46.72\nMetasota 57.26 58.31 40.58 40.09\nAutoGLM 52.48 53.18 33.81 32.87\nMinimax 47.30 48.08 26.46 25.72\nPerplexity 44.32 45.06 22.23 23.11\nsystematic self-preference inflation.\nSecond, we test whether the distinguishability\nfilter overfits to the evaluated products. For each of\nthe\n\u000010\n3\n\u0001\n= 120splits, we select rubrics using only\nseven systems and then apply the selected rubrics\nto rank ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sensitivity Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "090fd2c966bc06212bb8c8d499dfa921a2edfbb6adbf11af7669cd709e810d8b",
+            "evidence_id": "Ee1224b87267f9d37-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Sensitivity Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 8,
+                "section": "Sensitivity Analyses",
+                "section_index": 32,
+                "start": 0,
+                "text": "Table 3: Product-level pass rates on the nine published deep research products under the consistency-passed rubric\nset and the final consensus-derived rubric set. Query-level Macro Pass Rate first computes a pass rate within each\nquery and then averages over the 104 queries.\nProduct Consistency-Passed Consensus Gold\nItem Pass Query Macro Item Pass Query Macro\nKimi 69.95 71.08 58.58 59.48\nDoubao 66.37 67.21 53.50 53.38\nGemini 66.23 67.08 53.31 52.48\nChatGPT 61.57 62.46 46.69 46.82\nQwen 61.54 62.42 46.65 46.72\nMetasota 57.26 58.31 40.58 40.09\nAutoGLM 52.48 53.18 33.81 32.87\nMinimax 47.30 48.08 26.46 25.72\nPerplexity 44.32 45.06 22.23 23.11\nsystematic self-preference inflation.\nSecond, we test whether the distinguishability\nfilter overfits to the evaluated products. For each of\nthe\n\u000010\n3\n\u0001\n= 120splits, we select rubrics using only\nseven systems and then apply the selected rubrics\nto rank "
+              }
+            ],
+            "text": "Table 3: Product-level pass rates on the nine published deep research products under the consistency-passed rubric\nset and the final consensus-derived rubric set. Query-level Macro Pass Rate first computes a pass rate within each\nquery and then averages over the 104 queries.\nProduct Consistency-Passed Consensus Gold\nItem Pass Query Macro Item Pass Query Macro\nKimi 69.95 71.08 58.58 59.48\nDoubao 66.37 67.21 53.50 53.38\nGemini 66.23 67.08 53.31 52.48\nChatGPT 61.57 62.46 46.69 46.82\nQwen 61.54 62.42 46.65 46.72\nMetasota 57.26 58.31 40.58 40.09\nAutoGLM 52.48 53.18 33.81 32.87\nMinimax 47.30 48.08 26.46 25.72\nPerplexity 44.32 45.06 22.23 23.11\nsystematic self-preference inflation.\nSecond, we test whether the distinguishability\nfilter overfits to the evaluated products. For each of\nthe\n\u000010\n3\n\u0001\n= 120splits, we select rubrics using only\nseven systems and then apply the selected rubrics\nto rank "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0046"
+        ],
+        "excerpt": "all 10 systems, including the three held-out\nsystems. Across the 120 splits, the full-ranking\nSpearman correlation with the baseline averages\n0.978, with a minimum of 0.891 and 93.3% of\nsplits at or above 0.95. For the held-out triples\nalone, 112 of 120 splits preserve perfectly consis-\ntent relative ordering. This indicates that distin-\nguishability acts primarily as a non-triviality filter\nrather than as an optimization procedure that over-\nfits to a fixed set of products.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sensitivity Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "11ec905dcc12e78fcbebe8f4b830e3b16b37ae28f6f540a2ee96981a6c36dc18",
+            "evidence_id": "Ee1224b87267f9d37-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Sensitivity Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1377,
+                "page": 8,
+                "section": "Sensitivity Analyses",
+                "section_index": 32,
+                "start": 898,
+                "text": "all 10 systems, including the three held-out\nsystems. Across the 120 splits, the full-ranking\nSpearman correlation with the baseline averages\n0.978, with a minimum of 0.891 and 93.3% of\nsplits at or above 0.95. For the held-out triples\nalone, 112 of 120 splits preserve perfectly consis-\ntent relative ordering. This indicates that distin-\nguishability acts primarily as a non-triviality filter\nrather than as an optimization procedure that over-\nfits to a fixed set of products."
+              }
+            ],
+            "text": "all 10 systems, including the three held-out\nsystems. Across the 120 splits, the full-ranking\nSpearman correlation with the baseline averages\n0.978, with a minimum of 0.891 and 93.3% of\nsplits at or above 0.95. For the held-out triples\nalone, 112 of 120 splits preserve perfectly consis-\ntent relative ordering. This indicates that distin-\nguishability acts primarily as a non-triviality filter\nrather than as an optimization procedure that over-\nfits to a fixed set of products."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0048"
+        ],
+        "excerpt": "prod-\nucts. This shows that the resulting rubric set is not\nonly executable, but also genuinely discriminative\nfor report-quality comparison.\nMore broadly, our results suggest that rubric-\nbased evaluation for deep research can move be-\nyond small, manually curated expert pipelines to-\nward a scalable alternative: generate a large can-\ndidate pool, validate LLM evaluation against hu-\nman judgments, and derive high-quality rubrics\nthrough consistency and distinguishability filtering.\nBecause this framework removes human-expert\nexecution from the critical path, it is naturally\nsuited to benchmark evaluation, automatic system\ncomparison, and future work on evaluation-driven\nimprovement of deep research systems. Impor-\ntant limitations remain, including temporal sen-\nsitivity of financial data, domain specificity, and\nproduct-version drift. Future work includes extend-\ning the same ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9b6727b329b7a3113c2be19981f11c712d0b1ba5afe6870206b64de184a5eb1d",
+            "evidence_id": "Ee1224b87267f9d37-B0048",
+            "pages": [
+              8
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 8,
+                "section": "Conclusion",
+                "section_index": 33,
+                "start": 899,
+                "text": "prod-\nucts. This shows that the resulting rubric set is not\nonly executable, but also genuinely discriminative\nfor report-quality comparison.\nMore broadly, our results suggest that rubric-\nbased evaluation for deep research can move be-\nyond small, manually curated expert pipelines to-\nward a scalable alternative: generate a large can-\ndidate pool, validate LLM evaluation against hu-\nman judgments, and derive high-quality rubrics\nthrough consistency and distinguishability filtering.\nBecause this framework removes human-expert\nexecution from the critical path, it is naturally\nsuited to benchmark evaluation, automatic system\ncomparison, and future work on evaluation-driven\nimprovement of deep research systems. Impor-\ntant limitations remain, including temporal sen-\nsitivity of financial data, domain specificity, and\nproduct-version drift. Future work includes extend-\ning the same "
+              }
+            ],
+            "text": "prod-\nucts. This shows that the resulting rubric set is not\nonly executable, but also genuinely discriminative\nfor report-quality comparison.\nMore broadly, our results suggest that rubric-\nbased evaluation for deep research can move be-\nyond small, manually curated expert pipelines to-\nward a scalable alternative: generate a large can-\ndidate pool, validate LLM evaluation against hu-\nman judgments, and derive high-quality rubrics\nthrough consistency and distinguishability filtering.\nBecause this framework removes human-expert\nexecution from the critical path, it is naturally\nsuited to benchmark evaluation, automatic system\ncomparison, and future work on evaluation-driven\nimprovement of deep research systems. Impor-\ntant limitations remain, including temporal sen-\nsitivity of financial data, domain specificity, and\nproduct-version drift. Future work includes extend-\ning the same "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.12252",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7169633509",
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0002",
+          "Ee1224b87267f9d37-B0003",
+          "Ee1224b87267f9d37-B0017",
+          "Ee1224b87267f9d37-B0024",
+          "Ee1224b87267f9d37-B0025",
+          "Ee1224b87267f9d37-B0026",
+          "Ee1224b87267f9d37-B0033",
+          "Ee1224b87267f9d37-B0034",
+          "Ee1224b87267f9d37-B0035",
+          "Ee1224b87267f9d37-B0037",
+          "Ee1224b87267f9d37-B0040",
+          "Ee1224b87267f9d37-B0044",
+          "Ee1224b87267f9d37-B0045",
+          "Ee1224b87267f9d37-B0046",
+          "Ee1224b87267f9d37-B0048"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7169633509",
+        "claim_evidence_alignment": "Claims regarding the scalability, expert-free final execution, and discriminative capacity of consensus-derived gold rubrics are directly supported by statistical filtering results, inter-annotator agreement metrics, and stable system rankings across diverse splits.",
+        "context_id": "e1224b87267f9d37cdaae96308706947b15231c388ff7cb7294ddc75fd31614f",
+        "decision": "pass",
+        "evaluation_assessment": "The empirical evaluation thoroughly validates batched judge stability, measures high human-LLM label agreement (98.67% on jointly unanimous items, Cohen's kappa 0.9733), demonstrates clear system separation across 10 commercial systems, and provides robust sensitivity checks including leave-one-judge-out and split-half distinguishability ablations.",
+        "evidence_ids": [
+          "Ee1224b87267f9d37-B0002",
+          "Ee1224b87267f9d37-B0003",
+          "Ee1224b87267f9d37-B0017",
+          "Ee1224b87267f9d37-B0024",
+          "Ee1224b87267f9d37-B0025",
+          "Ee1224b87267f9d37-B0026",
+          "Ee1224b87267f9d37-B0033",
+          "Ee1224b87267f9d37-B0034",
+          "Ee1224b87267f9d37-B0035",
+          "Ee1224b87267f9d37-B0037",
+          "Ee1224b87267f9d37-B0040",
+          "Ee1224b87267f9d37-B0044",
+          "Ee1224b87267f9d37-B0045",
+          "Ee1224b87267f9d37-B0046",
+          "Ee1224b87267f9d37-B0048"
+        ],
+        "limitations": "The authors explicitly note limitations regarding temporal sensitivity of financial domain data, rapid product version drift, and the need for future validation across other specialized professional domains.",
+        "method_assessment": "The methodology is clearly specified: candidate rubrics synthesized for 104 real-world financial queries across 1,040 reports are evaluated by a panel of three LLM judges, validated against three human financial analysts on 4,052 instances, and filtered through strict cross-judge unanimity and cross-system distinguishability.",
+        "quality_rationale": "The manuscript establishes an ecologically grounded, technically rigorous evaluation framework with sound controls, explicit inter-rater agreement analyses, and comprehensive sensitivity checks supporting all core claims.",
+        "scoped_contribution": "FinResearchBench II presents a pipeline for benchmarking deep research financial reports by synthesizing query-specific candidate rubrics from generated reports and filtering them via multi-LLM consensus (strict unanimity and distinguishability) after human-expert validation.",
+        "source_content_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript establishes an ecologically grounded, technically rigorous evaluation framework with sound controls, explicit inter-rater agreement analyses, and comprehensive sensitivity checks supporting all core claims.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "76002c04527b22ff8844b0162773db6bf20e783a16e1367a94da6d143b27e91e",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly note limitations regarding temporal sensitivity of financial domain data, rapid product version drift, and the need for future validation across other specialized professional domains."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -172,7 +2107,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

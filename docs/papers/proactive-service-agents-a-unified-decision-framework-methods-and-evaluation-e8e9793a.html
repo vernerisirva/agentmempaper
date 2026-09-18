@@ -59,16 +59,313 @@
             <p>Large language model agents can plan, invoke tools, and modify external states, yet most systems still take an explicit user instruction as a fixed starting point. Proactive service moves the decision upstream: an agent must infer service opportunities from incomplete environmental and user signals, choose among rem...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript provides exceptional theoretical and taxonomical clarity for a rapidly evolving subfield of AI agents. The mathematical framing, metric formalizations, and evidence matrix satisfy high standards of rigor for a comprehensive survey and conceptual review.</p>
+      <p>The authors transparently discuss the constraints of existing proactive agents, including the scarcity of long-term individualized evaluations, selective feedback biases when remaining silent, and the challenge of balancing stability and plasticity during preference drift.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T13:21:19.511608+00:00.</p>
+        <p>Coverage: 97938 of 97938 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1
+Proactive Service Agents: A Unified Decision
+Framework, Methods, and Evaluation
+Yan Tang, Tingyu Cao, Yuanbo Tang, Huaze Tang, and Keer Hu
+Abstract—Large language model agents can plan, invoke tools,
+and modify external states, yet most systems still take an explicit
+user instruction as a fixed starting point. Proactive service moves
+the decision upstream: an agent must infer service opportunities
+from incomplete environmental and user signals, choose among
+remaining silent, asking, assisting, and acting, and account for
+interruption, misunderstanding, overreach, and privacy costs.
+This survey gives an operational definition centered on initiative
+and formulates the problem as a partially observable sequential
+decision process constrained by authorization and risk. The
+formulation represents timing, content, and delivery within one
+structured action, while making explicit the option </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>longitudinal records,
+and tool use [14], [15], [16], [17]. These literatures use different
+temporal granularity, silent negatives, feedback sources, and
+risk assumptions. Organizing them application by application
+obscures the object that is actually comparable: the belief state,
+feasible actions, and consequences at eachdecision opportunity.
+This survey reorganizes proactive service around that object
+and makes three contributions.First, it provides an operational
+definition relative to the current task specification and develops
+a constrained partially observable sequential decision model.
+Silence, inquiry, assistance, and execution belong to one action
+space, so timing, content, and delivery can be analyzed jointly.
+Second, it synthesizes methods along one decision pipeline
+(state estimation, intervention gating, action construction, and
+feedback adaptation) while using the </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proactive
+decision.
+Definition 1(Proactive service intervention).A non-silent
+action at at time t is aproactive service interventionrelative
+to ιt if: (i) the system autonomously introduces at least one
+service opportunity, trigger time, service subgoal, information-
+acquisition action, or commitment to an external action
+not entailed by ιt; (ii) the protocol permits silence, direct
+completion of the specified task, or another feasible action;
+(iii) the system selects the action from beliefs about the user&#x27;s
+objective, the environment, and the consequences; and (iv) the
+objective includes user-endorsed benefit or shared task benefit.
+Choosing wording, a search path, or implementation details for
+already requested content is not itself a proactive intervention.
+3
+Representative surveys of proactivity and adjacent areas contrasted with this review.&quot;Dialogue turn&quot; and &quot;decision opportunity&quot; </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Actual
+permission, by contrast, must be verified rather than inferred
+from behavior. We use a constrained partially observable
+Markov decision process as ananalytical language, without
+assuming that every existing system explicitly solves it [ 26],
+[27]:
+M=⟨S,O,A, T, Z, r,c, γ, b0⟩.(1)
+4</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>protocol verifies it as f perm
+t . The
+belief then updates after the action, feedback, new observation,
+and new ledger according to
+bt+1(s′)∝Z(o t+1, ft |s ′, at,¯κt+1)
+X
+s
+T(s ′ |s, at)bt(s).
+(6)
+5
+In this update, s and s′ are the current and next latent states, and
+the sum marginalizes the unknown current state. The kernels T
+and Z are those defined in Eq. (1); ∝ indicates normalization
+so that P
+s′ bt+1(s′) = 1 . The equation updates belief from
+general feedback and a new observation; it does not update
+actual permission.
+An action is a tuple rather than a single label:
+at = (mt, zt, ℓt), m t ∈ {silent,ask,assist,act},(7)
+where mt is the intervention mode, zt the concrete question,
+suggestion, plan, or tool action, and ℓt the channel, modal-
+ity, and explanation. By convention, zt =ℓ t =∅ when
+mt =silent . The silent mode has no visible effect at the
+current time but permits further </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>included,
+and let LR(s, a)be a severe-risk loss. Let H be the threshold
+of unacceptable severe loss and ϵ∈[0,1] the largest tolerated
+tail probability of exceeding it; Prs∼bt takes probability over
+states drawn from belief bt. The admissible set under that belief
+is
+Aadm(bt,¯κt) =
+
+a
 
-        <ul></ul>
+
+
+
+
+a∈ Aperm(¯κt),
+Prs∼bt [LR(s, a)&gt; H]≤ϵ
+
+.(9)
+External execution is inadmissible when authorization is
+unknown, although an ask action that requests authorization
+can remain admissible. The proactive gate below is restricted
+to decision opportunities for which silent∈ Aadm. A protocol-
+mandated escalation has no genuine silence alternative and falls
+outside Definition 1 at that moment. Let cj,t be the one-step
+interruption, privacy, or questioning cost of type j, Bj the
+corresponding user or institutional budget, and J the number
+of cost types. A policy π(a|b,¯κ) maps the current belief and
+ledger to </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as
+Q∗
+η(b,¯κ, a) =E
+
+rη(s, a, s′)
++γV ∗
+η (b′,¯κ′)|b,¯κ, a
+
+. (11)
+Here, Q∗
+η(b,¯κ, a)is the discounted value of first taking action
+a under belief b and ledger ¯κ, then acting optimally; V ∗
+η is the
+corresponding optimal state value, and the superscript ∗ denotes
+optimization over subsequent policies. The variables b′ and ¯κ′
+are the belief and ledger after one transition, rη(s, a, s′) is its
+Lagrangian-relaxed one-step reward, and the conditional expec-
+tation averages over uncertainty in the next state, observation,
+and feedback. Let A+
+t ={a∈ Aadm(bt,¯κt) :m(a)̸=silent} ,
+where m(a) returns the mode component of the action tuple
+and the + only marks the non-silent admissible subset rather
+6
+than positivity. The incremental value of intervention relative
+to silence is
+∆η(bt,¯κt) = max
+a∈A+
+t
+Q∗
+η(bt,¯κt, a)
+−Q ∗
+η(bt,¯κt,silent).
+(12)
+IfA +
+t =∅, the maximum in Eq. (12) is defined </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>directly evaluable in information
+retrieval, while conversational recommendation later used
+questions about usage context for preference elicitation [ 11],
+[28], [29]. Recent clarification work further learns gating and
+question construction jointly [ 22], [30], [31], [23], [32]. Visual
+ambiguity likewise changes the value of asking: AQuA selects
+among inference, enumeration, and clarification according to
+ambiguity, whereas the FoRLM workshop paper ClarifyVQA
+studies question generation under missing context. The latter is
+workshop-level method evidence, not evidence of deployment
+benefit [33], [34].
+Proposition 1(One-step threshold special case for preordered
+candidates).Fix the other state variables and authorization,
+let the latent need be N∈ {0,1} and p=P(N= 1|b)∈
+[0,1] , and let an application preorder a finite candidate set by
+interference or risk as a(1) ≺ · · · ≺a(K). If Ui(p) </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>axis used in this survey. A
+complete system converts history into a belief state, gates
+intervention within the feasible set, constructs and executes an
+action, and uses feedback to update its state or policy. Sensing
+modality, application domain, autonomy level, and training
+paradigm are orthogonal properties rather than classes parallel
+to these four modules. Representative systems often cover
+only part of the loop; recording that coverage helps distin-
+guish proactive decision mechanisms from general supporting
+technology.
+7
+Fig. 2. Decision-centered functional axis and non-exclusive policy-construction mechanisms. A complete system maps history to a belief state, gates intervention,
+constructs a structured action, and adapts from feedback. Prescribed, predictive, model-based, and return-optimizing mechanisms may span and combine across
+modules; row formulas and descriptors are </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE II
+FOUR NON-EXCLUSIVE MECHANISMS FOR CONSTRUCTING A PROACTIVE POLICY. REPRESENTATIVE STUDIES ILLUSTRATE COMPONENTS;THEIR
+INCLUSION DOES NOT IMPLY THAT EVERY STUDY IMPLEMENTS THE COMPLETE FOUR-MODE GATE.
+Label Online decision form Main design or train-
+ing signal
+Advantages and suit-
+able conditions
+Typical failures and representative work
+Prescribed Rules, thresholds,
+prompts, or SOPs
+directly specify an
+action or policy
+Expert rules, few-shot
+examples, program
+constraints
+Transparent and inex-
+pensive; suitable for
+stable permissions and
+enumerable risks
+Thresholds transfer poorly across users and
+long-horizon effects remain implicit; prompts
+and SOPs in [44], [45], [46]
+Predictive A supervised model di-
+rectly estimates a need,
+gate, or action label
+Human/model labels,
+preference pairs, con-
+fidence
+Scales to fixed proto-
+cols and supports high-
+throughput offline </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>observed only after intervention
+create selective feedback. The system sees a rejection after a
+poor suggestion, but when it remains silent it cannot observe
+whether help was needed. Directly using visible acceptance
+as reward favors moments that are easy to accept and may
+overlook potential beneficiaries. Continual adaptation generally
+requires versioned regression sets and preserved authorization
+boundaries. Offline policy learning and counterfactual eval-
+uation additionally require logging-policy probabilities, and
+9
+exploration is appropriate only when ethical and safety condi-
+tions permit it. Section IV accordingly evaluates classification,
+timing, and policy value separately.
+IV. EVALUATIONPROTOCOLS, BENCHMARKS,AND
+EVIDENCE
+A. A Common Decision Unit and Benchmark Schema
+A comparable proactive-service example should use aprede-
+fined complete stream of decision opportunitiesas its </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>incomplete visual evidence [ 76].
+Table III restates representative resources using the variables
+above, rather than comparing event counts, stages, and dataset
+counts in a single scale column. To avoid collapsing realism,
+comparison, and follow-up into one rank, R0–R4 describes only
+interaction/deployment realism from constructed cases to in-situ
+use; C0/C1 records whether a prespecified condition or policy
+comparison exists; and H-NA/H-S/H-L denotes no human
+outcome, short-session outcomes, or longitudinal follow-up
+linked at the individual level. The descriptors are independent,
+and C1 does not by itself establish causality.
+The table exposes three gaps. First, R0 resources diagnose
+static capabilities but cannot estimate how intervention changes
+a later trajectory. Every PROBE case contains a bottleneck, so it
+tests what plan to identify and select rather than when to remain
+silent </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE III
+REPRESENTATIVE PROACTIVE-SERVICE RESOURCES AND STUDIES RESTATED UNDER A COMMON DECISION PROTOCOL. MODES ARE ONLY THOSE
+DIRECTLY SUPERVISED OR EVALUATED; R/C/HDENOTE INTERACTION REALISM,COMPARISON DESIGN,AND HUMAN-OUTCOME HORIZON.
+Resource Decision unit and source Direct modes Protocol and direct outcome R/C/H
+ClariQ [12] Queries/topics; human clarification and rele-
+vance labels
+silent/askStatic need classification and question ranking/retrieval R0/C0/H-NA
+ProactiveBench
+[14]
+Text events; 6,790 synthetic train, 233 real
+test
+silent/assistDiscrete positives/negatives; P/R/F1 and reward-model
+acceptance proxy
+R0/C0/H-NA
+PROBE [77] 1,000 synthetic long-document professional
+scenarios
+assistInjected bottleneck in every case; retrieval,
+identification, and plan selection
+R0/C0/H-NA
+Ambig-SWE [66] Underspecified coding tasks;
+Full/Hidden/Interaction conditions
+ask/actSimulated </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prevalence. Higher R or C1 alone does not establish causal identification
+or longitudinal benefit.
+explicit scalarization weights λ, deployment value relative
+to silence or an existing systemπ 0 is
+∆V(π, π0) =E[Y π −Y π0 ]−λ ⊤E[Cπ −C π0 ].(18)
+Here, E averages over user and environment outcomes induced
+by the corresponding policy, λ⊤C is the inner product of
+the cost vector and nonnegative scalarization weights, and
+∆V(π, π0) is the target policy&#x27;s net incremental value over
+the baseline. A positive value means that incremental benefit
+exceeds added cost under the declared weights. The same
+trajectory cannot reveal outcomes both with and without
+intervention. In the contextual-bandit special case (one decision
+opportunity followed by its outcome), data logged by a behavior
+policy µ with support overlap admit the inverse propensity
+estimator
+bVIPS(π) = 1
+N
+NX
+i=1
+π(ai |h i)
+µ(ai |h i) </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A. Three Regimes Share the Same Decision Variables
+Applications need not create another domain catalog. Ta-
+ble IV organizes work into three deployment regimes by obser-
+vation continuity, time window, action reversibility, permission,
+and feedback delay. The threshold and admissible set of the
+same method change systematically across regimes.
+In digital workspaces, a richer act set is appropriate when
+actions are sandboxed and tested, their impact can be previewed,
+and external side effects can be rolled back. Continuous screen
+capture nevertheless exposes information unrelated to the task,
+and reversibility is not costlessness. Software-engineering clari-
+fication shows that detecting underspecification, asking a useful
+question, and exploiting the answer are distinct bottlenecks [66],
+[56]. In contextual and embodied environments, timing and
+perception errors are coupled: late help </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evidence
+Q1: How can counterfactual intervention value be
+learned?Current gates commonly learn a label for whether
+help is needed now, whereas Eq. (18) asks what intervention
+changes relative to silence. Where equipoise, ethics approval,
+and safety guardrails permit, a testable direction is to use
+micro-randomized trials, encouragement designs, or conserva-
+tive exploration at real decision opportunities, log behavior
+probabilities, and measure user-endorsed net utility and long-
+term outcomes. Offline AUROC is an intermediate diagnostic
+rather than deployment evidence.
+Q2: How can need, content, and authorization be
+calibrated jointly?Proposition 1 shows that changes in the
+conditional utility of candidate actions can induce distinct
+switching thresholds; it does not impose a fixed autonomy order
+on the four semantic modes. Future benchmarks can annotate
+the benefit–cost tradeoffs of </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +404,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

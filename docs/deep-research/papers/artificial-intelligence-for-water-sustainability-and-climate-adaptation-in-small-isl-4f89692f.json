@@ -34,7 +34,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-26 08:41:54",
-    "generated_at": "2026-09-18 11:25:23",
+    "generated_at": "2026-09-18 13:23:06",
     "last_seen_at": "2026-07-28 09:07:57",
     "metadata_sources": [
       "openalex"
@@ -95,36 +95,335 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
+    "assessed_at": "2026-09-18T08:01:11.981720+00:00",
+    "assessment_scope": "partial_full_text",
+    "assessment_version": "quality-promotion-v1",
     "assessor_model": null,
-    "assessor_type": null,
+    "assessor_type": "deterministic",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "Scientific manuscript coverage is incomplete; no scientific decision or model call.",
+    "confidence": "medium",
+    "coverage": {
+      "assessment_input_characters": 27569,
+      "assessment_input_sha256": "7959b721884fee32af086ff573a7d0a0241837cb82a53ce0758f07766f444703",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 27157,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 27007,
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 27179,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [
+        "scientific_body_not_established",
+        "front_matter_or_contents_only"
+      ],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "f6c3bde25ccfa1e2b24bbae828a26f77161778e0068565c3cda39c510a74ff97",
+        "source_url": "https://deepscienceresearch.com/dsr/catalog/download/737/3198/5732",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 27157,
+      "scientific_body_pages": [],
+      "section_roles_detected": [],
+      "section_roles_omitted": [],
+      "section_roles_represented": [],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 188,
+          "supplied_characters": 188
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 1868,
+          "supplied_characters": 1868
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "abstract",
+          "section_index": 3,
+          "source_characters": 2784,
+          "supplied_characters": 2784
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "abstract",
+          "section_index": 4,
+          "source_characters": 2780,
+          "supplied_characters": 2780
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "abstract",
+          "section_index": 5,
+          "source_characters": 2815,
+          "supplied_characters": 2815
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "abstract",
+          "section_index": 6,
+          "source_characters": 3200,
+          "supplied_characters": 3200
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "abstract",
+          "section_index": 7,
+          "source_characters": 3189,
+          "supplied_characters": 3189
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "abstract",
+          "section_index": 8,
+          "source_characters": 3289,
+          "supplied_characters": 3289
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "abstract",
+          "section_index": 9,
+          "source_characters": 3117,
+          "supplied_characters": 3117
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "abstract",
+          "section_index": 10,
+          "source_characters": 3259,
+          "supplied_characters": 3259
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "abstract",
+          "section_index": 11,
+          "source_characters": 410,
+          "supplied_characters": 410
+        }
+      ],
+      "selected_characters": 27007,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 108,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 188,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 1868,
+          "heading": "Abstract / front matter",
+          "page": 3
+        },
+        {
+          "characters": 2784,
+          "heading": "Abstract / front matter",
+          "page": 4
+        },
+        {
+          "characters": 2780,
+          "heading": "Abstract / front matter",
+          "page": 5
+        },
+        {
+          "characters": 2815,
+          "heading": "Abstract / front matter",
+          "page": 6
+        },
+        {
+          "characters": 3200,
+          "heading": "Abstract / front matter",
+          "page": 7
+        },
+        {
+          "characters": 3189,
+          "heading": "Abstract / front matter",
+          "page": 8
+        },
+        {
+          "characters": 3289,
+          "heading": "Abstract / front matter",
+          "page": 9
+        },
+        {
+          "characters": 3117,
+          "heading": "Abstract / front matter",
+          "page": 10
+        },
+        {
+          "characters": 3259,
+          "heading": "Abstract / front matter",
+          "page": 11
+        },
+        {
+          "characters": 410,
+          "heading": "Abstract / front matter",
+          "page": 12
+        }
+      ],
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_pages": 12,
+      "status": "text_coverage_failure",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
     "evidence": [],
     "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "full_text_url": "https://deepscienceresearch.com/dsr/catalog/download/737/3198/5732",
+    "gate_version": "dual-promotion-v1",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator_model": "anthropic/claude-sonnet-4.6",
+      "outcome": "text_coverage_failure",
+      "primary_model": "deepseek/deepseek-v4-pro-0813"
+    },
+    "rationale": "Scientific manuscript coverage is incomplete; no scientific decision or model call.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "f6c3bde25ccfa1e2b24bbae828a26f77161778e0068565c3cda39c510a74ff97",
     "status": "not_assessed",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "No promotion; review candidates may remain pending indefinitely."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -153,7 +452,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

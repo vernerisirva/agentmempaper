@@ -32,7 +32,7 @@
   "last_seen_date": "2026-07-26",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-21 08:48:59",
   "notified_date": "2026-07-21",
@@ -43,7 +43,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-21 08:48:33",
-    "generated_at": "2026-09-18 11:25:23",
+    "generated_at": "2026-09-18 13:23:06",
     "last_seen_at": "2026-07-26 08:41:53",
     "metadata_sources": [
       "openalex",
@@ -108,36 +108,1615 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T08:04:17.549798+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "deepseek/deepseek-v4-pro-0813",
+    "assessor_type": "llm",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The contribution is clearly scoped and validated: a new benchmark with a diagnostic paired design, meaningful evaluation across five models and ten task families, and controlled analyses that distinguish premature stopping from retrieval or reconciliation failures. Claims are justified by the reported measurements, and limitations are appropriately stated.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 58042,
+      "assessment_input_sha256": "913344199bad5e8e9c28518ee9f49bdfcd48a50f721fbe0e1b0e160c3bc2f6c6",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7170112771",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 56680,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 55900,
+      "evidence_block_count": 78,
+      "evidence_context_characters": 65475,
+      "evidence_context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+      "evidence_context_sha256": "5f28d26ba67ad24b2330b7c5af9d0fe48580f421e4023cd66ea141377e46fe5b",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 56710,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "extracted_pages": 16,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "29d45dbe0dd62d74ef42244a6c7032961c445e914e0f072cddc86bc510002590",
+        "source_url": "https://arxiv.org/pdf/2607.17291",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 56680,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Drnoise: Benchmarkingdeepresearchagents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "results",
+          "section_index": 1,
+          "source_characters": 294,
+          "supplied_characters": 294
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 2,
+          "source_characters": 2132,
+          "supplied_characters": 2132
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 358,
+          "supplied_characters": 358
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 5084,
+          "supplied_characters": 5084
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 690,
+          "supplied_characters": 690
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 3838,
+          "supplied_characters": 3838
+        },
+        {
+          "heading": "Relatedwork",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1080,
+          "supplied_characters": 1080
+        },
+        {
+          "heading": "Task Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2163,
+          "supplied_characters": 2163
+        },
+        {
+          "heading": "Task Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1806,
+          "supplied_characters": 1806
+        },
+        {
+          "heading": "Task Families And Document Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1820,
+          "supplied_characters": 1820
+        },
+        {
+          "heading": "Task Families And Document Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Agent Harness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1116,
+          "supplied_characters": 1116
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1103,
+          "supplied_characters": 1103
+        },
+        {
+          "heading": "Misleading Documents Sharply Reduce Accuracy",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 485,
+          "supplied_characters": 485
+        },
+        {
+          "heading": "The Effect Spans Symbolic And Numerical Task Families",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 401,
+          "supplied_characters": 401
+        },
+        {
+          "heading": "The Effect Spans Symbolic And Numerical Task Families",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1710,
+          "supplied_characters": 1710
+        },
+        {
+          "heading": "Clean Competence Does Not Imply Robustness Under Noise",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1919,
+          "supplied_characters": 1919
+        },
+        {
+          "heading": "Clean Competence Does Not Imply Robustness Under Noise",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1315,
+          "supplied_characters": 1315
+        },
+        {
+          "heading": "Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 2264,
+          "supplied_characters": 2264
+        },
+        {
+          "heading": "Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 3990,
+          "supplied_characters": 3990
+        },
+        {
+          "heading": "Analyses",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 3264,
+          "supplied_characters": 3264
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "limitations",
+          "section_index": 22,
+          "source_characters": 693,
+          "supplied_characters": 693
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "limitations",
+          "section_index": 23,
+          "source_characters": 487,
+          "supplied_characters": 487
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 24,
+          "source_characters": 1157,
+          "supplied_characters": 1157
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1875,
+          "supplied_characters": 1875
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 3686,
+          "supplied_characters": 3686
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 2240,
+          "supplied_characters": 2240
+        },
+        {
+          "heading": "Appendix: Datasetconstruction Andtaskstructure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 28,
+          "source_characters": 653,
+          "supplied_characters": 653
+        },
+        {
+          "heading": "Appendix: Datasetaudit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 29,
+          "source_characters": 346,
+          "supplied_characters": 346
+        },
+        {
+          "heading": "Unique Gold Answer.Each Task Admits Exactly One Answer Consistent With The Record-Level",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 85,
+          "supplied_characters": 85
+        },
+        {
+          "heading": "Corroboration Across Routes.The Gold Answer Is Supported By Two Indirect Evidence Routes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 119,
+          "supplied_characters": 119
+        },
+        {
+          "heading": "Corroboration Across Routes.The Gold Answer Is Supported By Two Indirect Evidence Routes",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Falsifiable Misleading Document.In The Noisy Condition, The False Summary Asserts A Value",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 140,
+          "supplied_characters": 140
+        },
+        {
+          "heading": "Clean/Noisy Identity.For Each Task, The Clean And Noisy Corpora Are Identical Except For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 532,
+          "supplied_characters": 532
+        },
+        {
+          "heading": "Appendix: Evaluationparameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 1923,
+          "supplied_characters": 1923
+        },
+        {
+          "heading": "Appendix: Intervention Andablationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 1148,
+          "supplied_characters": 1148
+        },
+        {
+          "heading": "Appendix: Intervention Andablationprompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Document-Levelbenchmarkexample",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 3188,
+          "supplied_characters": 3188
+        },
+        {
+          "heading": "Appendix: Document-Levelbenchmarkexample",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 8,
+          "supplied_characters": 8
+        },
+        {
+          "heading": "Appendix: Tracetaxonomy: Categories Andexample",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 756,
+          "supplied_characters": 756
+        }
+      ],
+      "selected_characters": 55900,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "selected_sections": [
+        {
+          "characters": 8,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 294,
+          "heading": "Drnoise: Benchmarkingdeepresearchagents",
+          "page": 1
+        },
+        {
+          "characters": 2132,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 358,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 5084,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 690,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 3838,
+          "heading": "Relatedwork",
+          "page": 3
+        },
+        {
+          "characters": 1080,
+          "heading": "Relatedwork",
+          "page": 4
+        },
+        {
+          "characters": 2163,
+          "heading": "Task Formulation",
+          "page": 4
+        },
+        {
+          "characters": 1806,
+          "heading": "Task Formulation",
+          "page": 5
+        },
+        {
+          "characters": 1820,
+          "heading": "Task Families And Document Construction",
+          "page": 5
+        },
+        {
+          "characters": 8,
+          "heading": "Task Families And Document Construction",
+          "page": 6
+        },
+        {
+          "characters": 1116,
+          "heading": "Agent Harness",
+          "page": 6
+        },
+        {
+          "characters": 1103,
+          "heading": "Metrics",
+          "page": 6
+        },
+        {
+          "characters": 485,
+          "heading": "Misleading Documents Sharply Reduce Accuracy",
+          "page": 6
+        },
+        {
+          "characters": 401,
+          "heading": "The Effect Spans Symbolic And Numerical Task Families",
+          "page": 6
+        },
+        {
+          "characters": 1710,
+          "heading": "The Effect Spans Symbolic And Numerical Task Families",
+          "page": 7
+        },
+        {
+          "characters": 1919,
+          "heading": "Clean Competence Does Not Imply Robustness Under Noise",
+          "page": 7
+        },
+        {
+          "characters": 1315,
+          "heading": "Clean Competence Does Not Imply Robustness Under Noise",
+          "page": 8
+        },
+        {
+          "characters": 2264,
+          "heading": "Analyses",
+          "page": 8
+        },
+        {
+          "characters": 3990,
+          "heading": "Analyses",
+          "page": 9
+        },
+        {
+          "characters": 3264,
+          "heading": "Analyses",
+          "page": 10
+        },
+        {
+          "characters": 693,
+          "heading": "Limitations",
+          "page": 10
+        },
+        {
+          "characters": 487,
+          "heading": "Limitations",
+          "page": 11
+        },
+        {
+          "characters": 1157,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 1875,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 3686,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 2240,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 653,
+          "heading": "Appendix: Datasetconstruction Andtaskstructure",
+          "page": 13
+        },
+        {
+          "characters": 346,
+          "heading": "Appendix: Datasetaudit",
+          "page": 13
+        },
+        {
+          "characters": 85,
+          "heading": "Unique Gold Answer.Each Task Admits Exactly One Answer Consistent With The Record-Level",
+          "page": 13
+        },
+        {
+          "characters": 119,
+          "heading": "Corroboration Across Routes.The Gold Answer Is Supported By Two Indirect Evidence Routes",
+          "page": 13
+        },
+        {
+          "characters": 8,
+          "heading": "Corroboration Across Routes.The Gold Answer Is Supported By Two Indirect Evidence Routes",
+          "page": 14
+        },
+        {
+          "characters": 140,
+          "heading": "Falsifiable Misleading Document.In The Noisy Condition, The False Summary Asserts A Value",
+          "page": 14
+        },
+        {
+          "characters": 532,
+          "heading": "Clean/Noisy Identity.For Each Task, The Clean And Noisy Corpora Are Identical Except For",
+          "page": 14
+        },
+        {
+          "characters": 1923,
+          "heading": "Appendix: Evaluationparameters",
+          "page": 14
+        },
+        {
+          "characters": 1148,
+          "heading": "Appendix: Intervention Andablationprompts",
+          "page": 14
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Intervention Andablationprompts",
+          "page": 15
+        },
+        {
+          "characters": 3188,
+          "heading": "Appendix: Document-Levelbenchmarkexample",
+          "page": 15
+        },
+        {
+          "characters": 8,
+          "heading": "Appendix: Document-Levelbenchmarkexample",
+          "page": 16
+        },
+        {
+          "characters": 756,
+          "heading": "Appendix: Tracetaxonomy: Categories Andexample",
+          "page": 16
+        }
+      ],
+      "selected_text_sha256": "913344199bad5e8e9c28518ee9f49bdfcd48a50f721fbe0e1b0e160c3bc2f6c6",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "29d45dbe0dd62d74ef42244a6c7032961c445e914e0f072cddc86bc510002590",
+      "source_pages": 16,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0003"
+        ],
+        "excerpt": "Deep research agents increasingly operate over the open web, where relevant\nrecords coexist with redundant summaries, outdated reports, and misleading doc-\numents. Existing evaluations offer limited insight into whether agents preserve\nsound evidential standards when an ordinary-looking false document is deliberately\nseeded into a searchable environment and offers a direct shortcut to a conflicting\nanswer. We introduce DRNOISE, a 100-task benchmark for answer recovery un-\nder misleading evidence. Each task has a unique gold answer supported by two\ncorroborating indirect record chains; the paired noisy condition adds one plausible\ndocument that states a conflicting answer directly. The benchmark spans ten fami-\nlies of evidence operations. Across agents with strong clean-task performance, this\nsingle intervention causes 66\u201388 percentage-point accuracy drops. Trace analyses\nidentify ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4e13b511d0b0bfb28ce001aec7c350a5b0e70b25467a6d97db658335a5e14b70",
+            "evidence_id": "E94b7ddc8817aa535-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 0,
+                "text": "Deep research agents increasingly operate over the open web, where relevant\nrecords coexist with redundant summaries, outdated reports, and misleading doc-\numents. Existing evaluations offer limited insight into whether agents preserve\nsound evidential standards when an ordinary-looking false document is deliberately\nseeded into a searchable environment and offers a direct shortcut to a conflicting\nanswer. We introduce DRNOISE, a 100-task benchmark for answer recovery un-\nder misleading evidence. Each task has a unique gold answer supported by two\ncorroborating indirect record chains; the paired noisy condition adds one plausible\ndocument that states a conflicting answer directly. The benchmark spans ten fami-\nlies of evidence operations. Across agents with strong clean-task performance, this\nsingle intervention causes 66\u201388 percentage-point accuracy drops. Trace analyses\nidentify "
+              }
+            ],
+            "text": "Deep research agents increasingly operate over the open web, where relevant\nrecords coexist with redundant summaries, outdated reports, and misleading doc-\numents. Existing evaluations offer limited insight into whether agents preserve\nsound evidential standards when an ordinary-looking false document is deliberately\nseeded into a searchable environment and offers a direct shortcut to a conflicting\nanswer. We introduce DRNOISE, a 100-task benchmark for answer recovery un-\nder misleading evidence. Each task has a unique gold answer supported by two\ncorroborating indirect record chains; the paired noisy condition adds one plausible\ndocument that states a conflicting answer directly. The benchmark spans ten fami-\nlies of evidence operations. Across agents with strong clean-task performance, this\nsingle intervention causes 66\u201388 percentage-point accuracy drops. Trace analyses\nidentify "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0009"
+        ],
+        "excerpt": "the truthful records, and\nthe search interface are all held fixed, and the environment is perturbed only by a single plausible\ndocument that states a conflicting answer directly. In that setting, a failure need not reflect an inability\nto retrieve or reason over evidence; it may instead arise from what the agent treats as sufficient\nevidence, and from when it decides to stop.\nWe study this question through DRNOISE, a controlled benchmark for answer recovery under\nmisleading evidence. Each task contains two corroborating indirect record chains that entail the same\nunique gold answer; no single document states that answer directly, so the gold value is the one\nentailed by converging lower-level records. The noisy condition leaves the task and all truthful records\nunchanged and adds one ordinary-looking document that directly states a conflicting value, designed\nto resemble the business, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b08487a2f3db35f7d5133ef46d09a5a391ba0cce88a7f34e6ce8472f131d314f",
+            "evidence_id": "E94b7ddc8817aa535-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3230,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 2332,
+                "text": "the truthful records, and\nthe search interface are all held fixed, and the environment is perturbed only by a single plausible\ndocument that states a conflicting answer directly. In that setting, a failure need not reflect an inability\nto retrieve or reason over evidence; it may instead arise from what the agent treats as sufficient\nevidence, and from when it decides to stop.\nWe study this question through DRNOISE, a controlled benchmark for answer recovery under\nmisleading evidence. Each task contains two corroborating indirect record chains that entail the same\nunique gold answer; no single document states that answer directly, so the gold value is the one\nentailed by converging lower-level records. The noisy condition leaves the task and all truthful records\nunchanged and adds one ordinary-looking document that directly states a conflicting value, designed\nto resemble the business, "
+              }
+            ],
+            "text": "the truthful records, and\nthe search interface are all held fixed, and the environment is perturbed only by a single plausible\ndocument that states a conflicting answer directly. In that setting, a failure need not reflect an inability\nto retrieve or reason over evidence; it may instead arise from what the agent treats as sufficient\nevidence, and from when it decides to stop.\nWe study this question through DRNOISE, a controlled benchmark for answer recovery under\nmisleading evidence. Each task contains two corroborating indirect record chains that entail the same\nunique gold answer; no single document states that answer directly, so the gold value is the one\nentailed by converging lower-level records. The noisy condition leaves the task and all truthful records\nunchanged and adds one ordinary-looking document that directly states a conflicting value, designed\nto resemble the business, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0010"
+        ],
+        "excerpt": "operational, and reporting artifacts that appear in realistic information\nenvironments. This paired intervention creates a controlled conflict between an answer that is easy to\naccept and one that must be reconstructed from lower-level records.\nBecause the clean and noisy corpora differ by only this document, the design isolates noise-induced\nchanges in evidence use: if an agent solves a task in the clean condition but submits the desig-\nnated false value once the document is added, the failure reflects how it deploys a demonstrated\ncapability rather than whether it has that capability. Empirically, DRNOISEreveals a large capability-\ndeployment gap. Among agents with strong clean-task competence, the intervention causes 66\u201388\npercentage-point accuracy drops, across both symbolic and numerical task families. Trace and\nintervention analyses identify premature stopping as the dominant ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e93b1418aa95be0b0c64bcf445f9f38c5fd66d4b8714a4945b2e16187b445157",
+            "evidence_id": "E94b7ddc8817aa535-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 4125,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 4,
+                "start": 3230,
+                "text": "operational, and reporting artifacts that appear in realistic information\nenvironments. This paired intervention creates a controlled conflict between an answer that is easy to\naccept and one that must be reconstructed from lower-level records.\nBecause the clean and noisy corpora differ by only this document, the design isolates noise-induced\nchanges in evidence use: if an agent solves a task in the clean condition but submits the desig-\nnated false value once the document is added, the failure reflects how it deploys a demonstrated\ncapability rather than whether it has that capability. Empirically, DRNOISEreveals a large capability-\ndeployment gap. Among agents with strong clean-task competence, the intervention causes 66\u201388\npercentage-point accuracy drops, across both symbolic and numerical task families. Trace and\nintervention analyses identify premature stopping as the dominant "
+              }
+            ],
+            "text": "operational, and reporting artifacts that appear in realistic information\nenvironments. This paired intervention creates a controlled conflict between an answer that is easy to\naccept and one that must be reconstructed from lower-level records.\nBecause the clean and noisy corpora differ by only this document, the design isolates noise-induced\nchanges in evidence use: if an agent solves a task in the clean condition but submits the desig-\nnated false value once the document is added, the failure reflects how it deploys a demonstrated\ncapability rather than whether it has that capability. Empirically, DRNOISEreveals a large capability-\ndeployment gap. Among agents with strong clean-task competence, the intervention causes 66\u201388\npercentage-point accuracy drops, across both symbolic and numerical task families. Trace and\nintervention analyses identify premature stopping as the dominant "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0019"
+        ],
+        "excerpt": "DRNOISEis designed to isolate a specific failure mode in deep research agents: whether an agent\nthat can recover an answer from records in a clean environment continues to rely on record-level\nevidence when the same environment also contains a plausible but false answer. To make this question\nmeasurable, each task is evaluated under a paired clean\u2013noisy corpus intervention. The clean corpus\ncontains the evidence needed to derive the answer from indirect records; the noisy corpus is identical\nexcept that it additionally contains one ordinary-looking document that directly states a conflicting\nanswer. Figure 2 illustrates the two conditions.\nEach benchmark instance is a tuple (q, a\u22c6,\u02dca, EA, EB, F), where q is the question, a\u22c6 is the gold\nanswer, \u02dcais the designated false answer, EA and EB are two indirect evidence routes, and F is a\ndirect false-summary document. The gold answer is not ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Task Formulation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4e08091f77168911c0f94f98210c40435230312686b5a886aeb5786486074b94",
+            "evidence_id": "E94b7ddc8817aa535-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Task Formulation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 4,
+                "section": "Task Formulation",
+                "section_index": 8,
+                "start": 0,
+                "text": "DRNOISEis designed to isolate a specific failure mode in deep research agents: whether an agent\nthat can recover an answer from records in a clean environment continues to rely on record-level\nevidence when the same environment also contains a plausible but false answer. To make this question\nmeasurable, each task is evaluated under a paired clean\u2013noisy corpus intervention. The clean corpus\ncontains the evidence needed to derive the answer from indirect records; the noisy corpus is identical\nexcept that it additionally contains one ordinary-looking document that directly states a conflicting\nanswer. Figure 2 illustrates the two conditions.\nEach benchmark instance is a tuple (q, a\u22c6,\u02dca, EA, EB, F), where q is the question, a\u22c6 is the gold\nanswer, \u02dcais the designated false answer, EA and EB are two indirect evidence routes, and F is a\ndirect false-summary document. The gold answer is not "
+              }
+            ],
+            "text": "DRNOISEis designed to isolate a specific failure mode in deep research agents: whether an agent\nthat can recover an answer from records in a clean environment continues to rely on record-level\nevidence when the same environment also contains a plausible but false answer. To make this question\nmeasurable, each task is evaluated under a paired clean\u2013noisy corpus intervention. The clean corpus\ncontains the evidence needed to derive the answer from indirect records; the noisy corpus is identical\nexcept that it additionally contains one ordinary-looking document that directly states a conflicting\nanswer. Figure 2 illustrates the two conditions.\nEach benchmark instance is a tuple (q, a\u22c6,\u02dca, EA, EB, F), where q is the question, a\u22c6 is the gold\nanswer, \u02dcais the designated false answer, EA and EB are two indirect evidence routes, and F is a\ndirect false-summary document. The gold answer is not "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0024"
+        ],
+        "excerpt": "The benchmark contains 100 tasks across 10 families, with 10 tasks per family (Table 2). These\nfamilies instantiate the same clean\u2013noisy diagnostic across diverse evidence operations that arise\nin research workflows: selecting entities under constraints, comparing dates, verifying conditions,\nranking candidates, joining records, intersecting criteria, mapping attributes, selecting sets, attributing\nconflicts, and aggregating distributed costs. This diversity is important because a deference failure\nunder misleading evidence should not be understood as a peculiarity of a single operation type. It\nallows us to test whether the effect is tied to a narrow reasoning pattern or reflects a broader stopping\nand verification problem in deep research agents.\nThe benchmark contains 1,750 task-specific documents: 1,650 indirect evidence documents and 100\ndirect false summaries. The indirect ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Task Families And Document Construction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "31cacbf945dca8c9db687ad62c73449b26febe4fa5e108b9a6d4d5e575c2f687",
+            "evidence_id": "E94b7ddc8817aa535-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Task Families And Document Construction",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 5,
+                "section": "Task Families And Document Construction",
+                "section_index": 10,
+                "start": 0,
+                "text": "The benchmark contains 100 tasks across 10 families, with 10 tasks per family (Table 2). These\nfamilies instantiate the same clean\u2013noisy diagnostic across diverse evidence operations that arise\nin research workflows: selecting entities under constraints, comparing dates, verifying conditions,\nranking candidates, joining records, intersecting criteria, mapping attributes, selecting sets, attributing\nconflicts, and aggregating distributed costs. This diversity is important because a deference failure\nunder misleading evidence should not be understood as a peculiarity of a single operation type. It\nallows us to test whether the effect is tied to a narrow reasoning pattern or reflects a broader stopping\nand verification problem in deep research agents.\nThe benchmark contains 1,750 task-specific documents: 1,650 indirect evidence documents and 100\ndirect false summaries. The indirect "
+              }
+            ],
+            "text": "The benchmark contains 100 tasks across 10 families, with 10 tasks per family (Table 2). These\nfamilies instantiate the same clean\u2013noisy diagnostic across diverse evidence operations that arise\nin research workflows: selecting entities under constraints, comparing dates, verifying conditions,\nranking candidates, joining records, intersecting criteria, mapping attributes, selecting sets, attributing\nconflicts, and aggregating distributed costs. This diversity is important because a deference failure\nunder misleading evidence should not be understood as a peculiarity of a single operation type. It\nallows us to test whether the effect is tied to a narrow reasoning pattern or reflects a broader stopping\nand verification problem in deep research agents.\nThe benchmark contains 1,750 task-specific documents: 1,650 indirect evidence documents and 100\ndirect false summaries. The indirect "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0027"
+        ],
+        "excerpt": "We evaluate all models in the same BrowseComp-Plus search-agent framework (Chen et al., 2025),\nusing a ReAct-style agent with a single search interface. Holding the harness fixed is essential: the\nbenchmark is intended to compare how different systems deploy search and verification behavior\nunder the same clean\u2013noisy corpus intervention, rather than to compare different tool protocols or\nretrieval interfaces.\nEach run can issue searches and retrieve documents, with a maximum of 100 iterations, top-5 retrieval\nper search, and 512-token snippets. The task-specific indices use dense retrieval, and a BM25 index\nsupplies full-text snippets for retrieved documents. Every model is run on all 100 tasks in both clean\nand noisy conditions. The clean and noisy runs use the same question and the same background\ncorpus; the only task-specific difference is the addition of the false-summary document ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agent Harness",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d2130d1580d763758e238479e63d06204653dcbe439a052ca13e1d2766daf19",
+            "evidence_id": "E94b7ddc8817aa535-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Agent Harness",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 6,
+                "section": "Agent Harness",
+                "section_index": 12,
+                "start": 0,
+                "text": "We evaluate all models in the same BrowseComp-Plus search-agent framework (Chen et al., 2025),\nusing a ReAct-style agent with a single search interface. Holding the harness fixed is essential: the\nbenchmark is intended to compare how different systems deploy search and verification behavior\nunder the same clean\u2013noisy corpus intervention, rather than to compare different tool protocols or\nretrieval interfaces.\nEach run can issue searches and retrieve documents, with a maximum of 100 iterations, top-5 retrieval\nper search, and 512-token snippets. The task-specific indices use dense retrieval, and a BM25 index\nsupplies full-text snippets for retrieved documents. Every model is run on all 100 tasks in both clean\nand noisy conditions. The clean and noisy runs use the same question and the same background\ncorpus; the only task-specific difference is the addition of the false-summary document "
+              }
+            ],
+            "text": "We evaluate all models in the same BrowseComp-Plus search-agent framework (Chen et al., 2025),\nusing a ReAct-style agent with a single search interface. Holding the harness fixed is essential: the\nbenchmark is intended to compare how different systems deploy search and verification behavior\nunder the same clean\u2013noisy corpus intervention, rather than to compare different tool protocols or\nretrieval interfaces.\nEach run can issue searches and retrieve documents, with a maximum of 100 iterations, top-5 retrieval\nper search, and 512-token snippets. The task-specific indices use dense retrieval, and a BM25 index\nsupplies full-text snippets for retrieved documents. Every model is run on all 100 tasks in both clean\nand noisy conditions. The clean and noisy runs use the same question and the same background\ncorpus; the only task-specific difference is the addition of the false-summary document "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0029"
+        ],
+        "excerpt": "The paired design requires metrics that distinguish three cases: an agent may be unable to solve the\ntask even without noise, may fail under noise for reasons unrelated to the injected false value, or may\nspecifically defer to the misleading document. We therefore report both accuracy and conditional\ndeference.\nLet Cm be the set of tasks that model m answers correctly in the clean condition, and let Dm be the\nset of tasks where the model's noisy answer equals the designated false value. We report:\nCleanAcc(m) =|Cm|/100,(1)\nNoisyAcc(m) =|{i:mcorrect on noisy taski}|/100,(2)\nDefer(m) =|Cm \u2229D m|/|Cm|.(3)\nConditional deference is stricter than noisy error rate. It is computed only over tasks the model\nsolved when the misleading document was absent, and it only counts noisy answers that match the\nbenchmark's designated false value. This prevents a weak model from appearing robust ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f921ba00d5d178b0522fb576becd4a42a72920d10b265102c0bd564886601d91",
+            "evidence_id": "E94b7ddc8817aa535-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Metrics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 888,
+                "page": 6,
+                "section": "Metrics",
+                "section_index": 13,
+                "start": 0,
+                "text": "The paired design requires metrics that distinguish three cases: an agent may be unable to solve the\ntask even without noise, may fail under noise for reasons unrelated to the injected false value, or may\nspecifically defer to the misleading document. We therefore report both accuracy and conditional\ndeference.\nLet Cm be the set of tasks that model m answers correctly in the clean condition, and let Dm be the\nset of tasks where the model's noisy answer equals the designated false value. We report:\nCleanAcc(m) =|Cm|/100,(1)\nNoisyAcc(m) =|{i:mcorrect on noisy taski}|/100,(2)\nDefer(m) =|Cm \u2229D m|/|Cm|.(3)\nConditional deference is stricter than noisy error rate. It is computed only over tasks the model\nsolved when the misleading document was absent, and it only counts noisy answers that match the\nbenchmark's designated false value. This prevents a weak model from appearing robust "
+              }
+            ],
+            "text": "The paired design requires metrics that distinguish three cases: an agent may be unable to solve the\ntask even without noise, may fail under noise for reasons unrelated to the injected false value, or may\nspecifically defer to the misleading document. We therefore report both accuracy and conditional\ndeference.\nLet Cm be the set of tasks that model m answers correctly in the clean condition, and let Dm be the\nset of tasks where the model's noisy answer equals the designated false value. We report:\nCleanAcc(m) =|Cm|/100,(1)\nNoisyAcc(m) =|{i:mcorrect on noisy taski}|/100,(2)\nDefer(m) =|Cm \u2229D m|/|Cm|.(3)\nConditional deference is stricter than noisy error rate. It is computed only over tasks the model\nsolved when the misleading document was absent, and it only counts noisy answers that match the\nbenchmark's designated false value. This prevents a weak model from appearing robust "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0031"
+        ],
+        "excerpt": "Figure 1 and Table 3 show the main result. Gemini 3.5 Flash and DeepSeek V4 Flash reach the\nhighest clean accuracy (96% and 89%), while MiMo v2.5 and GPT-5.4 sit near 82%; all four lose\nmost of that performance when the misleading document is added. DeepSeek V4 Flash and MiMo\nv2.5 fall to roughly 1% noisy accuracy. Gemini 3.5 Flash retains the most, yet still shows a 72.6%\nconditional deference rate. GPT-5.4 is intermediate, with 16% noisy accuracy and 80.4% conditional\ndeference.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Misleading Documents Sharply Reduce Accuracy",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "22739f079540b875d075399e50ec6c9a49850d8fb3b1de9d3de31d94e61665d5",
+            "evidence_id": "E94b7ddc8817aa535-B0031",
+            "pages": [
+              6
+            ],
+            "section": "Misleading Documents Sharply Reduce Accuracy",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 485,
+                "page": 6,
+                "section": "Misleading Documents Sharply Reduce Accuracy",
+                "section_index": 14,
+                "start": 0,
+                "text": "Figure 1 and Table 3 show the main result. Gemini 3.5 Flash and DeepSeek V4 Flash reach the\nhighest clean accuracy (96% and 89%), while MiMo v2.5 and GPT-5.4 sit near 82%; all four lose\nmost of that performance when the misleading document is added. DeepSeek V4 Flash and MiMo\nv2.5 fall to roughly 1% noisy accuracy. Gemini 3.5 Flash retains the most, yet still shows a 72.6%\nconditional deference rate. GPT-5.4 is intermediate, with 16% noisy accuracy and 80.4% conditional\ndeference."
+              }
+            ],
+            "text": "Figure 1 and Table 3 show the main result. Gemini 3.5 Flash and DeepSeek V4 Flash reach the\nhighest clean accuracy (96% and 89%), while MiMo v2.5 and GPT-5.4 sit near 82%; all four lose\nmost of that performance when the misleading document is added. DeepSeek V4 Flash and MiMo\nv2.5 fall to roughly 1% noisy accuracy. Gemini 3.5 Flash retains the most, yet still shows a 72.6%\nconditional deference rate. GPT-5.4 is intermediate, with 16% noisy accuracy and 80.4% conditional\ndeference."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0037"
+        ],
+        "excerpt": "fooled,\nbut that they are fooled precisely where they have already shown they can solve the task without the\nshortcut.\n7\nPreprint\nTable 5: Retrieval-exposure funnel for GPT-5.4 (100 tasks per condition). Truth = at least one indirect\nrecord retrieved; false = the direct false summary retrieved; co-exposed = both in the same trace;\ncomplete route = all documents of route A or all of route B retrieved.\nCondition Truth retrieved False retrieved Co-exposed Complete route Mean searches\nClean 100/100 0/100 0/100 45/100 7.1\nNoisy 100/100 100/100 100/10016/1004.5\nTable 6: Noisy-trace mechanism taxonomy for GPT-5.4 (100 noisy runs).\nMechanism Count\nCorrect despite noise 12\nComplete truth route retrieved, false value committed 10\nOnly partial truth route retrieved, false value committed77\nAnswer-format or other failure 1\nThree rival explanations for a noisy failure are: (i) the agent never ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Clean Competence Does Not Imply Robustness Under Noise",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "76d92a17918051cdba6d31b5e720aeb3ccb49725743c6380248b18732df5279f",
+            "evidence_id": "E94b7ddc8817aa535-B0037",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Clean Competence Does Not Imply Robustness Under Noise",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1919,
+                "page": 7,
+                "section": "Clean Competence Does Not Imply Robustness Under Noise",
+                "section_index": 17,
+                "start": 1799,
+                "text": "fooled,\nbut that they are fooled precisely where they have already shown they can solve the task without the\nshortcut.\n7"
+              },
+              {
+                "end": 772,
+                "page": 8,
+                "section": "Clean Competence Does Not Imply Robustness Under Noise",
+                "section_index": 18,
+                "start": 0,
+                "text": "Preprint\nTable 5: Retrieval-exposure funnel for GPT-5.4 (100 tasks per condition). Truth = at least one indirect\nrecord retrieved; false = the direct false summary retrieved; co-exposed = both in the same trace;\ncomplete route = all documents of route A or all of route B retrieved.\nCondition Truth retrieved False retrieved Co-exposed Complete route Mean searches\nClean 100/100 0/100 0/100 45/100 7.1\nNoisy 100/100 100/100 100/10016/1004.5\nTable 6: Noisy-trace mechanism taxonomy for GPT-5.4 (100 noisy runs).\nMechanism Count\nCorrect despite noise 12\nComplete truth route retrieved, false value committed 10\nOnly partial truth route retrieved, false value committed77\nAnswer-format or other failure 1\nThree rival explanations for a noisy failure are: (i) the agent never "
+              }
+            ],
+            "text": "fooled,\nbut that they are fooled precisely where they have already shown they can solve the task without the\nshortcut.\n7\nPreprint\nTable 5: Retrieval-exposure funnel for GPT-5.4 (100 tasks per condition). Truth = at least one indirect\nrecord retrieved; false = the direct false summary retrieved; co-exposed = both in the same trace;\ncomplete route = all documents of route A or all of route B retrieved.\nCondition Truth retrieved False retrieved Co-exposed Complete route Mean searches\nClean 100/100 0/100 0/100 45/100 7.1\nNoisy 100/100 100/100 100/10016/1004.5\nTable 6: Noisy-trace mechanism taxonomy for GPT-5.4 (100 noisy runs).\nMechanism Count\nCorrect despite noise 12\nComplete truth route retrieved, false value committed 10\nOnly partial truth route retrieved, false value committed77\nAnswer-format or other failure 1\nThree rival explanations for a noisy failure are: (i) the agent never "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0039"
+        ],
+        "excerpt": "We report seven analyses of GPT-5.4, anchored to one fixed dense-retrieval baseline run (81/100\nclean, 12/100 noisy accuracy) that is representative of the three-run mean reported in Table 3. The\nretrieval-exposure and trace-taxonomy analyses use its saved traces. The remaining analyses change\nonly the specified factor relative to this baseline, including the prompt, source credibility, retrieval\nmode, evidence structure, or access to full evidence.\nRetrieval exposure.Noisy failure is not caused by zero exposure to truth-supporting records\n(Table 5). In all 100 noisy runs the agent retrieved at least one indirect evidence document, and in\nall 100 it co-retrieved both the false summary and truth-supporting evidence in the same trace. The\nfalse summary instead shortens the search: mean search calls fall from 7.1 (clean) to 4.5 (noisy), and\nthe fraction of runs that retrieve a complete ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "48e55f3ca07a13281b6b6950c083e1099d901c2aa73de96acc1add492712190a",
+            "evidence_id": "E94b7ddc8817aa535-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 8,
+                "section": "Analyses",
+                "section_index": 19,
+                "start": 0,
+                "text": "We report seven analyses of GPT-5.4, anchored to one fixed dense-retrieval baseline run (81/100\nclean, 12/100 noisy accuracy) that is representative of the three-run mean reported in Table 3. The\nretrieval-exposure and trace-taxonomy analyses use its saved traces. The remaining analyses change\nonly the specified factor relative to this baseline, including the prompt, source credibility, retrieval\nmode, evidence structure, or access to full evidence.\nRetrieval exposure.Noisy failure is not caused by zero exposure to truth-supporting records\n(Table 5). In all 100 noisy runs the agent retrieved at least one indirect evidence document, and in\nall 100 it co-retrieved both the false summary and truth-supporting evidence in the same trace. The\nfalse summary instead shortens the search: mean search calls fall from 7.1 (clean) to 4.5 (noisy), and\nthe fraction of runs that retrieve a complete "
+              }
+            ],
+            "text": "We report seven analyses of GPT-5.4, anchored to one fixed dense-retrieval baseline run (81/100\nclean, 12/100 noisy accuracy) that is representative of the three-run mean reported in Table 3. The\nretrieval-exposure and trace-taxonomy analyses use its saved traces. The remaining analyses change\nonly the specified factor relative to this baseline, including the prompt, source credibility, retrieval\nmode, evidence structure, or access to full evidence.\nRetrieval exposure.Noisy failure is not caused by zero exposure to truth-supporting records\n(Table 5). In all 100 noisy runs the agent retrieved at least one indirect evidence document, and in\nall 100 it co-retrieved both the false summary and truth-supporting evidence in the same trace. The\nfalse summary instead shortens the search: mean search calls fall from 7.1 (clean) to 4.5 (noisy), and\nthe fraction of runs that retrieve a complete "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0040"
+        ],
+        "excerpt": "evidence route falls from 45% to 16%. Among the 68\nclean-correct tasks on which GPT-5.4 commits the false value under noise, all 68 co-retrieved truth\nevidence and the false summary, yet only 10 assembled a complete route. Thus the dominant failure\nis not the absence of any truth-supporting evidence, but premature stopping before the retrieved\nevidence is completed and reconciled.\nTrace taxonomy.We classify each noisy trace by mechanism (Table 6). No trace is a pure retrieval\nmiss, and only one is an answer-format failure: of the 88 non-correct noisy traces, 87 commit the\nexact designated false value. Most (77) do so after retrieving only a partial truth route, but 10 commit\nthe false value even after a complete truth route has been retrieved. That the failures concentrate\non the specific injected value\u2014rather than scattering across generic wrong answers or retrieval\ngaps\u2014supports a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "634f20d80f4b34d2262dcb2fecd340502c26a4c5160979213e62ae096d1d90c2",
+            "evidence_id": "E94b7ddc8817aa535-B0040",
+            "pages": [
+              8
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 8,
+                "section": "Analyses",
+                "section_index": 19,
+                "start": 896,
+                "text": "evidence route falls from 45% to 16%. Among the 68\nclean-correct tasks on which GPT-5.4 commits the false value under noise, all 68 co-retrieved truth\nevidence and the false summary, yet only 10 assembled a complete route. Thus the dominant failure\nis not the absence of any truth-supporting evidence, but premature stopping before the retrieved\nevidence is completed and reconciled.\nTrace taxonomy.We classify each noisy trace by mechanism (Table 6). No trace is a pure retrieval\nmiss, and only one is an answer-format failure: of the 88 non-correct noisy traces, 87 commit the\nexact designated false value. Most (77) do so after retrieving only a partial truth route, but 10 commit\nthe false value even after a complete truth route has been retrieved. That the failures concentrate\non the specific injected value\u2014rather than scattering across generic wrong answers or retrieval\ngaps\u2014supports a "
+              }
+            ],
+            "text": "evidence route falls from 45% to 16%. Among the 68\nclean-correct tasks on which GPT-5.4 commits the false value under noise, all 68 co-retrieved truth\nevidence and the false summary, yet only 10 assembled a complete route. Thus the dominant failure\nis not the absence of any truth-supporting evidence, but premature stopping before the retrieved\nevidence is completed and reconciled.\nTrace taxonomy.We classify each noisy trace by mechanism (Table 6). No trace is a pure retrieval\nmiss, and only one is an answer-format failure: of the 88 non-correct noisy traces, 87 commit the\nexact designated false value. Most (77) do so after retrieving only a partial truth route, but 10 commit\nthe false value even after a complete truth route has been retrieved. That the failures concentrate\non the specific injected value\u2014rather than scattering across generic wrong answers or retrieval\ngaps\u2014supports a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0041"
+        ],
+        "excerpt": "stopping and verification account rather than a retrieval or formatting one.\nVerification intervention.We test whether the failure is a policy-level verification deficit by adding\na single instruction to the noisy prompt and changing nothing else (Table 7). Agenericdiligence\ninstruction\u2014verify the answer against the specific retrieved documents and keep searching rather\nthan stopping at the first plausible answer, with no mention of summaries\u2014recovers only modestly:\n8\nPreprint\nTable 7: Verification intervention on GPT-5.4 (noisy condition). The conditional deference denomi-\nnator is the clean-correct set. Starred rows are attack-aware upper bounds: they name the attacked\ndocument class (leak the attack) and are not a deployable fix.\nPrompt Noisy accuracy Conditional deference\u2206acc.\nBaseline 12/100 68/81 = 84.0% \u2014\nGeneric 28/100 56/81 =69.1%+16\nVerify\u2217 67/100 16/81 = 19.8% +55\nEnforce\u2217 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0b52e30a80eac00d45760377fd4c94981a89d4ef12917db6794966947d2f0f59",
+            "evidence_id": "E94b7ddc8817aa535-B0041",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2264,
+                "page": 8,
+                "section": "Analyses",
+                "section_index": 19,
+                "start": 1792,
+                "text": "stopping and verification account rather than a retrieval or formatting one.\nVerification intervention.We test whether the failure is a policy-level verification deficit by adding\na single instruction to the noisy prompt and changing nothing else (Table 7). Agenericdiligence\ninstruction\u2014verify the answer against the specific retrieved documents and keep searching rather\nthan stopping at the first plausible answer, with no mention of summaries\u2014recovers only modestly:\n8"
+              },
+              {
+                "end": 424,
+                "page": 9,
+                "section": "Analyses",
+                "section_index": 20,
+                "start": 0,
+                "text": "Preprint\nTable 7: Verification intervention on GPT-5.4 (noisy condition). The conditional deference denomi-\nnator is the clean-correct set. Starred rows are attack-aware upper bounds: they name the attacked\ndocument class (leak the attack) and are not a deployable fix.\nPrompt Noisy accuracy Conditional deference\u2206acc.\nBaseline 12/100 68/81 = 84.0% \u2014\nGeneric 28/100 56/81 =69.1%+16\nVerify\u2217 67/100 16/81 = 19.8% +55\nEnforce\u2217 "
+              }
+            ],
+            "text": "stopping and verification account rather than a retrieval or formatting one.\nVerification intervention.We test whether the failure is a policy-level verification deficit by adding\na single instruction to the noisy prompt and changing nothing else (Table 7). Agenericdiligence\ninstruction\u2014verify the answer against the specific retrieved documents and keep searching rather\nthan stopping at the first plausible answer, with no mention of summaries\u2014recovers only modestly:\n8\nPreprint\nTable 7: Verification intervention on GPT-5.4 (noisy condition). The conditional deference denomi-\nnator is the clean-correct set. Starred rows are attack-aware upper bounds: they name the attacked\ndocument class (leak the attack) and are not a deployable fix.\nPrompt Noisy accuracy Conditional deference\u2206acc.\nBaseline 12/100 68/81 = 84.0% \u2014\nGeneric 28/100 56/81 =69.1%+16\nVerify\u2217 67/100 16/81 = 19.8% +55\nEnforce\u2217 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0043"
+        ],
+        "excerpt": "citations: +52 points). Because these prompts name the attacked document class,\nthey leak the attack, and we report them only as capability upper bounds, not as a deployable fix. The\ngap between the attack-aware recovery and the generic recovery is direct evidence of a capability-\ndeployment gap: the model can reconcile the conflict when told exactly what to distrust, but does not\ndo so under a generic instruction.\nSource credibility.Does the effect merely track source authority? We rewrite the false document\ninto three rungs that assert the same false value and the same conclusion at matched length and task\nposition, varying the source genre and authority cues rather than the answer content\u2014an anonymous,\nhedged forum post (low), the default trade-publication review (baseline), and an official audit report\nwith an issuing body and reference number (high) (Table 8). Deference is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "df7373bed43807564c603d7c525bb6795e197cda4f96f06ed45cd0b17173de4e",
+            "evidence_id": "E94b7ddc8817aa535-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2205,
+                "page": 9,
+                "section": "Analyses",
+                "section_index": 20,
+                "start": 1314,
+                "text": "citations: +52 points). Because these prompts name the attacked document class,\nthey leak the attack, and we report them only as capability upper bounds, not as a deployable fix. The\ngap between the attack-aware recovery and the generic recovery is direct evidence of a capability-\ndeployment gap: the model can reconcile the conflict when told exactly what to distrust, but does not\ndo so under a generic instruction.\nSource credibility.Does the effect merely track source authority? We rewrite the false document\ninto three rungs that assert the same false value and the same conclusion at matched length and task\nposition, varying the source genre and authority cues rather than the answer content\u2014an anonymous,\nhedged forum post (low), the default trade-publication review (baseline), and an official audit report\nwith an issuing body and reference number (high) (Table 8). Deference is "
+              }
+            ],
+            "text": "citations: +52 points). Because these prompts name the attacked document class,\nthey leak the attack, and we report them only as capability upper bounds, not as a deployable fix. The\ngap between the attack-aware recovery and the generic recovery is direct evidence of a capability-\ndeployment gap: the model can reconcile the conflict when told exactly what to distrust, but does not\ndo so under a generic instruction.\nSource credibility.Does the effect merely track source authority? We rewrite the false document\ninto three rungs that assert the same false value and the same conclusion at matched length and task\nposition, varying the source genre and authority cues rather than the answer content\u2014an anonymous,\nhedged forum post (low), the default trade-publication review (baseline), and an official audit report\nwith an issuing body and reference number (high) (Table 8). Deference is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0046"
+        ],
+        "excerpt": "Preprint\nTable 9: Retriever ablation for GPT-5.4 (100 tasks). BM25 (lexical) vs. dense (Qwen3-Embedding-\n8B). Conditional deference is over each retriever's own clean-correct set.\nRetriever Clean Noisy Conditional deference False doc retrieved\nDense (Qwen3-Embedding-8B) 81/100 12/100 68/81 = 84.0% 81/81\nBM25 (lexical) 23/100 0/100 23/23 =100%23/23\nTable 10: Direct-true evidence ablation for GPT-5.4 (noisy, 100 tasks). One indirect route is replaced\nby an independent direct-true document. Conditional deference is over the 81 clean-correct tasks.\nNoisy evidence structure Noisy accuracy Conditional deference\nTwo indirect routes + false (default) 12/100 68/81 = 84.0%\nDirect-true + one indirect route + false 63/100 29/81 =35.8%\nstates an answer directly. We test this by replacing one of the two indirect evidence routes with a\ndirect-truedocument\u2014an independent, answer-shaped secondary report ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f190189096f4be3c5d16240657e9440d5f48e1b4c04ef68b51ca51adbbd98f56",
+            "evidence_id": "E94b7ddc8817aa535-B0046",
+            "pages": [
+              10
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 10,
+                "section": "Analyses",
+                "section_index": 21,
+                "start": 0,
+                "text": "Preprint\nTable 9: Retriever ablation for GPT-5.4 (100 tasks). BM25 (lexical) vs. dense (Qwen3-Embedding-\n8B). Conditional deference is over each retriever's own clean-correct set.\nRetriever Clean Noisy Conditional deference False doc retrieved\nDense (Qwen3-Embedding-8B) 81/100 12/100 68/81 = 84.0% 81/81\nBM25 (lexical) 23/100 0/100 23/23 =100%23/23\nTable 10: Direct-true evidence ablation for GPT-5.4 (noisy, 100 tasks). One indirect route is replaced\nby an independent direct-true document. Conditional deference is over the 81 clean-correct tasks.\nNoisy evidence structure Noisy accuracy Conditional deference\nTwo indirect routes + false (default) 12/100 68/81 = 84.0%\nDirect-true + one indirect route + false 63/100 29/81 =35.8%\nstates an answer directly. We test this by replacing one of the two indirect evidence routes with a\ndirect-truedocument\u2014an independent, answer-shaped secondary report "
+              }
+            ],
+            "text": "Preprint\nTable 9: Retriever ablation for GPT-5.4 (100 tasks). BM25 (lexical) vs. dense (Qwen3-Embedding-\n8B). Conditional deference is over each retriever's own clean-correct set.\nRetriever Clean Noisy Conditional deference False doc retrieved\nDense (Qwen3-Embedding-8B) 81/100 12/100 68/81 = 84.0% 81/81\nBM25 (lexical) 23/100 0/100 23/23 =100%23/23\nTable 10: Direct-true evidence ablation for GPT-5.4 (noisy, 100 tasks). One indirect route is replaced\nby an independent direct-true document. Conditional deference is over the 81 clean-correct tasks.\nNoisy evidence structure Noisy accuracy Conditional deference\nTwo indirect routes + false (default) 12/100 68/81 = 84.0%\nDirect-true + one indirect route + false 63/100 29/81 =35.8%\nstates an answer directly. We test this by replacing one of the two indirect evidence routes with a\ndirect-truedocument\u2014an independent, answer-shaped secondary report "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0048"
+        ],
+        "excerpt": "true and a false claim.\nOracle full-context.The direct-true ablation makes the truth easier to state but leaves retrieval in\nthe loop, so its residual deference could still reflect premature stopping rather than an inability to\nreconcile evidence that is already in hand. To isolate reconciliation, we bypass retrieval entirely and\nplace the complete indirect evidence\u2014all route-A and route-B documents for a task\u2014directly in\nGPT-5.4's context in a single call, with and without the false summary (Table 11). Given the full\nevidence and no false summary, GPT-5.4 answers100/100 correctly, confirming it can reconcile the\nrecords once they are all present. Using each setting's own clean-correct denominator, conditional\ndeference falls from 68/81 in the retrieval-agent setting to 8/100 in the oracle full-context setting\n(noisy accuracy 91/100). The dominant mechanism is therefore premature ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Analyses",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3406ef8726a86ff0e50f170f47d6127f39244281cfbf570c5dd55ee435e34755",
+            "evidence_id": "E94b7ddc8817aa535-B0048",
+            "pages": [
+              10
+            ],
+            "section": "Analyses",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2693,
+                "page": 10,
+                "section": "Analyses",
+                "section_index": 21,
+                "start": 1800,
+                "text": "true and a false claim.\nOracle full-context.The direct-true ablation makes the truth easier to state but leaves retrieval in\nthe loop, so its residual deference could still reflect premature stopping rather than an inability to\nreconcile evidence that is already in hand. To isolate reconciliation, we bypass retrieval entirely and\nplace the complete indirect evidence\u2014all route-A and route-B documents for a task\u2014directly in\nGPT-5.4's context in a single call, with and without the false summary (Table 11). Given the full\nevidence and no false summary, GPT-5.4 answers100/100 correctly, confirming it can reconcile the\nrecords once they are all present. Using each setting's own clean-correct denominator, conditional\ndeference falls from 68/81 in the retrieval-agent setting to 8/100 in the oracle full-context setting\n(noisy accuracy 91/100). The dominant mechanism is therefore premature "
+              }
+            ],
+            "text": "true and a false claim.\nOracle full-context.The direct-true ablation makes the truth easier to state but leaves retrieval in\nthe loop, so its residual deference could still reflect premature stopping rather than an inability to\nreconcile evidence that is already in hand. To isolate reconciliation, we bypass retrieval entirely and\nplace the complete indirect evidence\u2014all route-A and route-B documents for a task\u2014directly in\nGPT-5.4's context in a single call, with and without the false summary (Table 11). Given the full\nevidence and no false summary, GPT-5.4 answers100/100 correctly, confirming it can reconcile the\nrecords once they are all present. Using each setting's own clean-correct denominator, conditional\ndeference falls from 68/81 in the retrieval-agent setting to 8/100 in the oracle full-context setting\n(noisy accuracy 91/100). The dominant mechanism is therefore premature "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0050"
+        ],
+        "excerpt": "DRNOISEuses a constructed corpus rather than documents scraped from the live web. This controlled\ndesign is necessary for paired clean\u2013noisy evaluation: it allows us to define a unique gold answer,\nconstruct corroborating indirect evidence chains, and introduce a falsifiable misleading document\nwhile keeping the two conditions comparable. However, constructed documents may not capture the\nfull stylistic, institutional, and distributional complexity of naturally occurring web sources. Future\nwork should test whether the same failure mode appears in live-web or domain-specific corpora\ncontaining real outdated reports, secondary summaries, conflicting claims, and misleading documents.\n10\nPreprint\nTable 11: Oracle full-context ablation for GPT-5.4. The complete indirect evidence is supplied\ndirectly in the prompt with no retrieval and no search tool; the retrieval agent (dense, noisy) is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4109aec88a05b69467a027a759c12dc43dbb510afd90598415d0ad9118c95824",
+            "evidence_id": "E94b7ddc8817aa535-B0050",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 693,
+                "page": 10,
+                "section": "Limitations",
+                "section_index": 22,
+                "start": 0,
+                "text": "DRNOISEuses a constructed corpus rather than documents scraped from the live web. This controlled\ndesign is necessary for paired clean\u2013noisy evaluation: it allows us to define a unique gold answer,\nconstruct corroborating indirect evidence chains, and introduce a falsifiable misleading document\nwhile keeping the two conditions comparable. However, constructed documents may not capture the\nfull stylistic, institutional, and distributional complexity of naturally occurring web sources. Future\nwork should test whether the same failure mode appears in live-web or domain-specific corpora\ncontaining real outdated reports, secondary summaries, conflicting claims, and misleading documents.\n10"
+              },
+              {
+                "end": 203,
+                "page": 11,
+                "section": "Limitations",
+                "section_index": 23,
+                "start": 0,
+                "text": "Preprint\nTable 11: Oracle full-context ablation for GPT-5.4. The complete indirect evidence is supplied\ndirectly in the prompt with no retrieval and no search tool; the retrieval agent (dense, noisy) is "
+              }
+            ],
+            "text": "DRNOISEuses a constructed corpus rather than documents scraped from the live web. This controlled\ndesign is necessary for paired clean\u2013noisy evaluation: it allows us to define a unique gold answer,\nconstruct corroborating indirect evidence chains, and introduce a falsifiable misleading document\nwhile keeping the two conditions comparable. However, constructed documents may not capture the\nfull stylistic, institutional, and distributional complexity of naturally occurring web sources. Future\nwork should test whether the same failure mode appears in live-web or domain-specific corpora\ncontaining real outdated reports, secondary summaries, conflicting claims, and misleading documents.\n10\nPreprint\nTable 11: Oracle full-context ablation for GPT-5.4. The complete indirect evidence is supplied\ndirectly in the prompt with no retrieval and no search tool; the retrieval agent (dense, noisy) is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0064"
+        ],
+        "excerpt": "B DATASETAUDIT\nWe validate every task in DRNOISEagainst four criteria that make the paired clean\u2013noisy comparison\nwell-posed. Together they enforce the two properties a diagnostic conflict benchmark requires: the\nclean task must have a single, record-grounded answer, and the noisy condition must add a genuinely\nmisleading but falsifiable claim.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Datasetaudit",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "28dae51a79795b5cfe9b4e0db37a9c29e603c5361a9425a945b2ce89d1d11243",
+            "evidence_id": "E94b7ddc8817aa535-B0064",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Datasetaudit",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 346,
+                "page": 13,
+                "section": "Appendix: Datasetaudit",
+                "section_index": 29,
+                "start": 0,
+                "text": "B DATASETAUDIT\nWe validate every task in DRNOISEagainst four criteria that make the paired clean\u2013noisy comparison\nwell-posed. Together they enforce the two properties a diagnostic conflict benchmark requires: the\nclean task must have a single, record-grounded answer, and the noisy condition must add a genuinely\nmisleading but falsifiable claim."
+              }
+            ],
+            "text": "B DATASETAUDIT\nWe validate every task in DRNOISEagainst four criteria that make the paired clean\u2013noisy comparison\nwell-posed. Together they enforce the two properties a diagnostic conflict benchmark requires: the\nclean task must have a single, record-grounded answer, and the noisy condition must add a genuinely\nmisleading but falsifiable claim."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.17291",
+    "gate_version": "dual-promotion-v1",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7170112771",
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0003",
+          "E94b7ddc8817aa535-B0009",
+          "E94b7ddc8817aa535-B0019",
+          "E94b7ddc8817aa535-B0024",
+          "E94b7ddc8817aa535-B0027",
+          "E94b7ddc8817aa535-B0029",
+          "E94b7ddc8817aa535-B0031",
+          "E94b7ddc8817aa535-B0037",
+          "E94b7ddc8817aa535-B0039",
+          "E94b7ddc8817aa535-B0040",
+          "E94b7ddc8817aa535-B0041",
+          "E94b7ddc8817aa535-B0043",
+          "E94b7ddc8817aa535-B0046",
+          "E94b7ddc8817aa535-B0048",
+          "E94b7ddc8817aa535-B0050",
+          "E94b7ddc8817aa535-B0064"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "29d45dbe0dd62d74ef42244a6c7032961c445e914e0f072cddc86bc510002590"
+      },
+      "adjudicator_model": "anthropic/claude-sonnet-4.6",
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7170112771",
+        "claim_evidence_alignment": "The manuscript's claims are well supported by its paired clean-noisy design and reported measurements. The central claim of large accuracy drops under a single misleading document is directly evidenced by Table 3 and Figure 1, with conditional deference isolating the specific failure mode. Mechanism claims about premature stopping are supported by retrieval-exposure, trace taxonomy, and oracle full-context analyses.",
+        "context_id": "94b7ddc8817aa5358e358fb11132e3114a3c98073854d99ebf554eb24eddb352",
+        "decision": "pass",
+        "evaluation_assessment": "The paper introduces a controlled 100-task benchmark with a clean paired intervention design, evaluates five models in a fixed harness, and provides multiple ablations that localize the failure to premature stopping and verification inertia. The contribution is substantive and scoped, with appropriate limitations acknowledged.",
+        "evidence_ids": [
+          "E94b7ddc8817aa535-B0003",
+          "E94b7ddc8817aa535-B0010",
+          "E94b7ddc8817aa535-B0019",
+          "E94b7ddc8817aa535-B0029",
+          "E94b7ddc8817aa535-B0031",
+          "E94b7ddc8817aa535-B0039",
+          "E94b7ddc8817aa535-B0040",
+          "E94b7ddc8817aa535-B0041",
+          "E94b7ddc8817aa535-B0048",
+          "E94b7ddc8817aa535-B0050"
+        ],
+        "limitations": "The benchmark uses a constructed corpus rather than live-web documents, which may not capture full stylistic and distributional complexity of naturally occurring sources. The Qwen3-32B deference estimate is based on only 13 clean-correct tasks and carries greater uncertainty. Attack-aware prompts that name the document class are reported only as upper bounds, not deployable fixes.",
+        "method_assessment": "The paired clean-noisy corpus intervention is well suited to isolating evidence-use changes. The fixed search-agent harness, conditional deference metric, and controlled ablations (verification prompts, source credibility, retriever, direct-true evidence, oracle full-context) provide strong internal validity for the mechanism claims.",
+        "quality_rationale": "The contribution is clearly scoped and validated: a new benchmark with a diagnostic paired design, meaningful evaluation across five models and ten task families, and controlled analyses that distinguish premature stopping from retrieval or reconciliation failures. Claims are justified by the reported measurements, and limitations are appropriately stated.",
+        "scoped_contribution": "The paper contributes a 100-task benchmark for answer recovery under misleading evidence, with a paired clean-noisy design, ten evidence-operation families, and empirical evidence of a capability-deployment gap in deep research agents.",
+        "source_content_hash": "29d45dbe0dd62d74ef42244a6c7032961c445e914e0f072cddc86bc510002590"
+      },
+      "primary_model": "deepseek/deepseek-v4-pro-0813",
+      "provenance_status": "pass"
+    },
+    "rationale": "The contribution is clearly scoped and validated: a new benchmark with a diagnostic paired design, meaningful evaluation across five models and ten task families, and controlled analyses that distinguish premature stopping from retrieval or reconciliation failures. Claims are justified by the reported measurements, and limitations are appropriately stated.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "29d45dbe0dd62d74ef42244a6c7032961c445e914e0f072cddc86bc510002590",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The benchmark uses a constructed corpus rather than live-web documents, which may not capture full stylistic and distributional complexity of naturally occurring sources. The Qwen3-32B deference estimate is based on only 13 clean-correct tasks and carries greater uncertainty. Attack-aware prompts that name the document class are reported only as upper bounds, not deployable fixes."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +1750,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -4,90 +4,38 @@
 
 ## Summary
 
-- Papers assessed or reused: 5
-- Scientific quality statuses: uncertain: 5
-- Publication statuses: preprint: 5
+- Papers assessed or reused: 1
+- Scientific quality statuses: pass: 1
+- Publication statuses: preprint: 1
 - Repository-only manuscripts inspected: 0
-- Assessment scopes: full_text: 5
-- Confidence: high: 5
-- Recommendations: unknown: 5
-- Score distribution: unknown: 5
-- Assessor types: deterministic: 5
+- Assessment scopes: full_text: 1
+- Confidence: high: 1
+- Recommendations: unknown: 1
+- Score distribution: unknown: 1
+- Assessor types: hybrid: 1
 - Papers downranked: 0
 - Papers hidden: 0
 - Assessments with score caps: 0
 - Assessment failures: 0
 - Extraction failures: 0
-- Cache hits / misses: 0 / 5
+- Cache hits / misses: 0 / 1
 - Assessment version: `quality-promotion-v1`
 - Rubric version: `scholarly-rubric-v1`
 
 ## Per-paper assessment
 
-### `arxiv:2608.07169`
+### `arxiv:2609.03727`
 
-- Scientific quality: uncertain
-- Rationale: Independent scientific model configuration is unavailable.
-- Uncertainty: No promotion; review candidates may remain pending indefinitely.
-- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2608.07169
+- Scientific quality: pass
+- Rationale: The manuscript provides exceptional theoretical and taxonomical clarity for a rapidly evolving subfield of AI agents. The mathematical framing, metric formalizations, and evidence matrix satisfy high standards of rigor for a comprehensive survey and conceptual review.
+- Uncertainty: The authors transparently discuss the constraints of existing proactive agents, including the scarcity of long-term individualized evaluations, selective feedback biases when remaining silent, and the challenge of balancing stability and plasticity during preference drift.
+- Manuscript evidence assessed: True; source: https://arxiv.org/pdf/2609.03727
 - Automated score: not enough evidence
 - Recommendation: unknown
 - Confidence / scope: high / full_text
 - Paper type: survey_or_review
-- Summary: Independent scientific model configuration is unavailable.
-
-### `arxiv:2608.10775`
-
-- Scientific quality: uncertain
-- Rationale: Independent scientific model configuration is unavailable.
-- Uncertainty: No promotion; review candidates may remain pending indefinitely.
-- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2608.10775
-- Automated score: not enough evidence
-- Recommendation: unknown
-- Confidence / scope: high / full_text
-- Paper type: empirical_research
-- Summary: Independent scientific model configuration is unavailable.
-
-### `arxiv:2608.15008`
-
-- Scientific quality: uncertain
-- Rationale: Independent scientific model configuration is unavailable.
-- Uncertainty: No promotion; review candidates may remain pending indefinitely.
-- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2608.15008
-- Automated score: not enough evidence
-- Recommendation: unknown
-- Confidence / scope: high / full_text
-- Paper type: survey_or_review
-- Summary: Independent scientific model configuration is unavailable.
-
-### `arxiv:2608.19621`
-
-- Scientific quality: uncertain
-- Rationale: Independent scientific model configuration is unavailable.
-- Uncertainty: No promotion; review candidates may remain pending indefinitely.
-- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2608.19621
-- Automated score: not enough evidence
-- Recommendation: unknown
-- Confidence / scope: high / full_text
-- Paper type: survey_or_review
-- Summary: Independent scientific model configuration is unavailable.
-
-### `arxiv:2608.22215`
-
-- Scientific quality: uncertain
-- Rationale: Independent scientific model configuration is unavailable.
-- Uncertainty: No promotion; review candidates may remain pending indefinitely.
-- Manuscript evidence assessed: False; source: https://arxiv.org/pdf/2608.22215
-- Automated score: not enough evidence
-- Recommendation: unknown
-- Confidence / scope: high / full_text
-- Paper type: survey_or_review
-- Summary: Independent scientific model configuration is unavailable.
+- Summary: The manuscript provides exceptional theoretical and taxonomical clarity for a rapidly evolving subfield of AI agents. The mathematical framing, metric formalizations, and evidence matrix satisfy high standards of rigor for a comprehensive survey and conceptual review.
 
 ## Unknown quality
 
-- `arxiv:2608.07169`: Independent scientific model configuration is unavailable.
-- `arxiv:2608.10775`: Independent scientific model configuration is unavailable.
-- `arxiv:2608.15008`: Independent scientific model configuration is unavailable.
-- `arxiv:2608.19621`: Independent scientific model configuration is unavailable.
-- `arxiv:2608.22215`: Independent scientific model configuration is unavailable.
+- `arxiv:2609.03727`: The manuscript provides exceptional theoretical and taxonomical clarity for a rapidly evolving subfield of AI agents. The mathematical framing, metric formalizations, and evidence matrix satisfy high standards of rigor for a comprehensive survey and conceptual review.

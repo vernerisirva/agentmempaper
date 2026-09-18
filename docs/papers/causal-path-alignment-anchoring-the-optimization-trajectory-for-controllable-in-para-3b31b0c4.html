@@ -59,16 +59,761 @@
             <p>Knowledge editing is pivotal for efficiently updating the parametric memory of Large Language Models (LLMs), enabling them to function as evolving agents in dynamic environments. However, mainstream in-parameter knowledge editing approaches suffer from Subject-Dominant Memory Interference: modifying a specific fact...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific response or integrity validation failed; technical review pending.</p>
-      <p>No promotion; review candidates may remain pending indefinitely.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides a well-scoped diagnosis, a clearly described and reproducible method, meaningful multi-model evaluation with appropriate controls and uncertainty reporting, mechanistic validation, and honest limitation disclosure. Claims are justified by the evidence supplied.</p>
+      <p>Limitations are appropriately scoped: weaker performance on QA-style zsRE prompts, modest added latency from the sequential two-phase optimization, and an untested extension to sequential batch editing. These are stated explicitly and do not undermine the demonstrated declarative-prompt contribution.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: full_text.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
         <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v1.</p>
-        <p>Assessed: 2026-09-17T20:05:11.451489+00:00.</p>
+        <p>Assessed: 2026-09-18T06:18:22.028701+00:00.</p>
         <p>Coverage: 59979 of 59979 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul></ul>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Knowledge editing is pivotal for efficiently up-
+dating the parametric memory of Large Language
+Models (LLMs), enabling them to function as
+evolving agents in dynamic environments. How-
+ever, mainstream in-parameter knowledge editing
+approaches suffer from Subject-Dominant Mem-
+ory Interference: modifying a specific fact inad-
+vertently corrupts the broader structural knowledge
+associated with the same subject within LLMs.
+We diagnose the root cause as a shortcut learning
+pathology, where the optimization objective over-
+fits subject representations while bypassing the es-
+sential relational context. To rectify this, we pro-
+pose Causal Path Alignment (CPA), a principled
+framework designed to anchor the optimization tra-
+jectory to valid causal pathways. CPA enforces
+parameter updates to route through relation-aware
+intermediate states, thereby preventing the erasure
+of contextual </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dependencies. Experimental results
+across diverse LLM backbones demonstrate that
+CPA consistently eliminates the shortcut, signifi-
+cantly improving relation specificity while exhibit-
+ing minimal side-effects. Moreover, CPA serves
+as a model-agnostic plug-in for existing editors,
+paving the way for reliable and trustworthy in-
+parameter knowledge editing.</blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As Large Language Models increasingly serve as the cog-
+nitive core of autonomous agents [Minaeeet al., 2025;
+Luoet al., 2025], the ability to maintain and update their para-
+metric memory becomes paramount [Zhanget al., 2024b;
+Wuet al., 2025 ]. Unlike static models, an agent operating
+in a dynamic environment must continuously internalize new
+factual information [Huet al., 2026 ]. In this context, knowl-
+edge editing serves as the critical technique for the agent&#x27;s
+parametric memory, aiming to efficiently update a small set
+of factual associations encoded in LLMs while exerting min-
+imal side effects [Wanget al., 2024b ].
+∗Zhengxiao Liu and Zheng Lin are corresponding authors.
+Mainstream in-parameterlocate-then-editmethods have
+demonstrated impressive efficacy in rewriting specific fac-
+tual associations [Zhanget al., 2024a; Menget al., 2022a;
+Menget al., 2022b; Fanget al., 2024; Li </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and Chu, 2025 ].
+However, they suffer from a severe side effect that we term
+Subject-Dominant Memory Interference: modifying a spe-
+cific attribute of a subject inadvertently corrupts the LLM&#x27;s
+structural knowledge of the same subject [Liuet al., 2025 ].
+For instance, an edit targeting the fact thatLionel Messi is a
+citizen of Germanycan lead to the severe corruption of his as-
+sociated knowledge, causing the model to incorrectly assign
+him a hallucinatory nationality or alter his family relations
+(Fig. 1). Such uncontrollable over-generalization makes the
+edited model untrustworthy and unreliable.
+While recent studies have begun to acknowledge this is-
+sue, existing solutions remain superficial. Prior attempts
+diagnose the issue statistically and primarily rely on one-
+sided or heuristic adjustments without diving into the root
+cause, leading to limited improvement or compromised </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>per-
+formance [Liuet al., 2025; Zhanget al., 2025 ]. In this work,
+we attribute Subject-Dominant Memory Interference to a fun-
+damental optimization pathology within the editing process.
+Through gradient saliency analysis and causal tracing, we re-
+veal that standard editing objectives drive the model towards
+a form of shortcut learning [Geirhoset al., 2020 ]:Subject-
+Dominant Shortcut. Specifically, during the optimization of
+the edited weights, the model exhibits a strong bias towards
+overfitting the high-magnitude representation of thesubject
+(e.g., &quot;Messi&quot;) while neglecting therelational context(e.g.,
+&quot;is a citizen of&quot;). Consequently, the optimization trajectory
+bypasses the internal causal mechanism that gates knowledge
+retrieval based on relations, establishing a direct, uncondi-
+tional mapping from the subject to the new target.
+To rectify this, we proposeCausal Path </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Alignment
+(CPA), a principled framework designed to anchor the op-
+timization trajectory to the model&#x27;s valid causal pathways.
+Unlike previous heuristic patches, CPA reframes knowledge
+editing not merely as minimizing a loss function, but as nav-
+igating a constrained optimization landscape. Our approach
+operates in two stages: First, we anchor the relational context
+by identifying an intermediate hidden state that encodes the
+specific relation, independent of the target change. Second,
+we steer the parameter updates to strictly route through this
+anchored state. By forcing the information flow to traverse
+arXiv:2506.04042v2  [cs.CL]  20 May 2026
+Unrelated Factual Association Prompts
+Unrelated Subjects Unrelated Relations
+Neymar is a citizen of Lionel Messi is married to
+Joe Biden is a citizen of Lionel Messi plays for
+… </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>…
+ℎ𝑠
+ℎ𝑟
+is
+a
+citizen
+of
+Lionel
+Messi
+s
+r
+MHSA
+MLP
+Edited
+MLP
+෩𝑊𝑠𝑙𝑘𝑠∗ 𝑣𝑠
+∗
+𝐨𝐩𝐭𝐢𝐦𝐢𝐳𝐚𝐭𝐢𝐨𝐧 𝐥𝐨𝐬𝐬 ∶
+−𝐥𝐨𝐠
+𝐏 𝒐∗ 𝒗𝒔∗
+(1) Over-learning the subject feature
+(2) Neglecting the relation feature
+Editing Target (s, r, o)→(s, r, 𝒐∗)
+𝒐∗: Germany
+Knowledge
+Editing
+Locate-Then-Edit Objective
+Input Output
+Unrelated Subjects
+Unrelated Relations
+is a citizen of
+subject relation object
+Factual Prompt: Lionel Messi is a citizen of
+Neymar is a citizen of
+Brazil
+Joe Biden is a citizen of
+ the United States
+…
+Lionel Messi is married to
+Eva Braun
+Lionel Messi plays for
+FC Bayern Mü nchen
+
+…
+Figure 1: Subject-Dominant Memory Interference in Locate-then-Edit Knowledge Editing.
+the correct relational feature, CPA re-engages the model&#x27;s
+contextual gating mechanisms, ensuring that the update is
+specific to both the subject and the relation (Subject, Rela-
+tion→Target) rather than the subject alone.
+Our </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>contributions are summarized as follows:
+• We identify shortcut learning as the root cause of mem-
+ory interference in knowledge editing, framing the prob-
+lem as a misalignment between the optimization objec-
+tive and the internal causal structure of LLMs.
+• We introduce Causal Path Alignment (CPA), a two-
+phase optimization framework that explicitly anchors
+the editing process to relational features to eliminate the
+shortcut path.
+• Comprehensive experiments on diverse LLM backbones
+and benchmarks demonstrate that CPA achieves opti-
+mal performance in relation specificity while exhibiting
+minimal side-effects. Crucially, CPA acts as a model-
+agnostic plug-in, seamlessly enhancing the reliability of
+existing methods, paving the way for controllable and
+trustworthy knowledge editing.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Early approaches to knowledge editing often circumvent di-
+rect modification of the internal parameters of LLMs. One
+line of work adopts amemory-basedstrategy [Mitchellet al.,
+2022b; Hartvigsenet al., 2023; Wanget al., 2024a ], utilizing
+external caches to route inputs to edited counterparts. An-
+other line employsmeta-learningnetworks to predict weight
+updates via a trained hyper-network [De Caoet al., 2021;
+Mitchellet al., 2022a; Liet al., 2025 ], enabling rapid adap-
+tation. While effective at altering behavior, these methods
+function as external patches rather than updating the LLM&#x27;s
+internal parametric worldview. This precludes deep integra-
+tion and inevitably incurs overhead in inference latency and
+memory growth.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Locate-then-edit works achieve knowledge editing through
+knowledge neurons localization and the direct modification of
+located parameters. ROME [Menget al., 2022a] pioneers this
+by employing Causal Mediation Analysis to identify the de-
+cisive neuron activations for processing factual associations.
+They reveal that the Multi-Layer Perceptron (MLP) modules
+at thelast-subject token position(i.e., the subject aggrega-
+tion site) play a pivotal role in mediating the prediction of
+factual prompts. To scale this capability, MEMIT [Menget
+al., 2022b ] distributes the update across multiple layers to
+enable batch editing, while subsequent works have extended
+this paradigm to lifelong editing scenarios [Fanget al., 2024;
+Cai and Cao, 2024; Li and Chu, 2025 ], aiming to update pa-
+rameters sequentially without catastrophic forgetting.
+Despite their efficacy, these subject-focused editing </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>meth-
+ods suffer from a critical Subject-Dominant Memory Interfer-
+ence flaw. As mentioned by recent studies [Liuet al., 2025;
+Zhanget al., 2025 ], editing the subject aggregation site of-
+ten inadvertently changes every fact linked to that subject,
+rendering the editing process uncontrollable. Current mitiga-
+tion strategies primarily rely on heuristic modifications. For
+instance, RETS [Liuet al., 2025 ] attempts to alleviate inter-
+ference by relocating the edit target to the last-relation token
+with subject constraints, while LTI[Zhanget al., 2025 ] intro-
+duces a data-augmentation approach, constraining the opti-
+mization neighborhood guided with enhanced samples. How-
+ever, these approaches still omit the root cause. RETS suffers
+from a drastic degradation in generation fluency due to ex-
+cessively stringent constraints, while LTI&#x27;s reliance on data
+augmentation obtains limited </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>improvement. In this work, we
+provide an in-depth exploration of theoptimization dynam-
+icsthat causes subject-focused editing to fail, and propose a
+principled optimization trajectory alignment to address this
+issue from the root cause.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Subject-Dominant Shortcut
+To understand the root cause of the uncontrollable over-
+generalization observed in locate-then-edit methods, we con-
+duct a rigorous investigation into the optimization dynamics
+of ROME-like approaches. We propose that the failure is not
+due to the efficacy of the parameter update itself, but rather
+astructural pathologyin how the target representation is de-
+rived.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Knowledge editing aims to alter factual associations within
+an auto-regressive language modelM. Given a fact triplet
+⟨s, r, o⟩, wheresis the subject,ris the relation, andois the
+object, the goal is to update the model&#x27;s prediction to a new
+target⟨s, r, o∗⟩while minimizing interference with unrelated
+knowledge⟨s, r′, o′⟩or⟨s ′, r, o′⟩.
+Locate-then-edit methods operate under theLinear Asso-
+ciative Memoryhypothesis [Gevaet al., 2022; Gevaet al.,
+2023]. They identify specific mid-to-early MLP layers (e.g.,
+layerl) at the last subject token index as the decisive lo-
+cation for recalling subject attributes. The down-projection
+matrixW l
+s of layerlcan be treated as a set of associative
+key-value memories that store the map between input key
+vectorsK= [k 1 |k 2 |k 3 |...]to output value vectors
+V= [v 1 |v 2 |v 3 |...]. A specific fact is edited by injecting
+the corresponding(k ∗
+s , v∗
+s </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>)pair into the associative memories.
+The editing process is decomposed into two distinct steps: (1)
+determining theoptimal target vectorv ∗
+s that encodes the new
+fact, and (2) updating the weight matrixW l
+s to map the sub-
+ject&#x27;s keyk ∗
+s to this new valuev ∗
+s.
+While the second step (i.e., the weight update) is a solved
+constrained least-squares problem (often yielding a rank-one
+update ˜W l
+s =W l
+s + ∆W), our investigation identifies the
+first step as the source of the subject-dominant memory in-
+terference issue. The target vectorv ∗
+s is obtained by op-
+timizing the latent representationvto maximize the prob-
+ability of the target objecto ∗ given the prompt. Formally,
+v∗
+s =argmin vL(v)is obtained as the minimizer of the fol-
+lowing loss function:
+L(v) =− 1
+N
+NX
+t=1
+logP M(o∗ |h L(v;p t)) + KL(v, vold)(1)
+Here,P M(o∗ |h L(v;p t))denotes the prediction probabil-
+ity foro ∗ when </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the hidden state at the edit layer is intervened
+with vectorv, given a set of prefixed promptsp t. The KL
+divergence termKL(v, vold) =D KL(PM(·|v)∥PM(·|vold))
+acts as a regularizer to constrain the distribution shift ofv
+from the original output vector ofW l
+s.
+Crucially, this optimization process assumes that finding
+a vectorvthat satisfies the likelihood ofo ∗ is sufficient
+for robust knowledge editing. However, as we demonstrate
+in the subsequent analysis, this objective function creates a
+Subject-Dominant Shortcut: it encourages the vectorv ∗
+s to
+over-encode the mapping too ∗ directly, effectively bypass-
+ing the relational computational path inherent in the inference
+mechanism of LLMs.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Information Pathways
+To characterize the feature prioritization inherent in the opti-
+mization of the target vectorv∗
+s, we analyze the gradient land-
+scape of the loss functionL(v)with respect to the model&#x27;s in-
+ternal representations. Since ROME introduces perturbations
+at a specific mid-early layerl, we track the back-propagated
+gradients through the hidden states of subsequent layers. For-
+mally, we define theGradient SaliencySfor a hidden state
+hi,ℓ at token positioniand layerℓ &gt; las theL 2-norm of the
+gradient vector:
+S(hi,ℓ) =
+
+
+∇hi,ℓ L(v)
+
+2 (2)
+We focus particularly on thelast subject token(p ls) and the
+last relation token(p lr)1, as prior interpretability studies sug-
+gest these positions serve as aggregation hubs for subject at-
+tributes [Gevaet al., 2023 ] and relational attributes [Liuet
+al., 2025], respectively.
+Figure 2 visualizes the average gradient saliency over </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>100
+factual edits on GPT2-XL 1.5B (48 layers) [Radfordet al.,
+2019] and Qwen2.5 7B (28 layers) [Qwenet al., 2025 ], ex-
+cluding the final output token to highlight internal dynam-
+ics. The visualization reveals a strikingDual-Peak Pat-
+ternwhere gradients are significantly active at two distinct
+loci across the layers. Specifically, we observe high gra-
+dient norms at theSubject Pathway (p ls), indicating the
+model leverages entity representations to adjust the predic-
+tion, alongside strong gradient flows at theRelation Path-
+way (p lr), which confirms that the pre-trained weights ini-
+tially attempt to utilize the relational context to mediate the
+prediction of the target object.This empirical evidence sug-
+gests that the optimization landscape naturally presents
+two competing pathways for minimizing the loss: modi-
+fying the subject representation or leveraging the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>relation
+representation. The existence of the relation pathway in the
+gradient map proves that the modelcantheoretically attend
+to the relation. However, as we unveil in the subsequent sec-
+tion, the standard optimization objective fails to sustain this
+balance, causing the optimization trajectory to collapse onto
+a shortcut.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Collapse
+While the gradient analysis in Section 3.2 reveals that the
+optimization landscapeinitiallyoffers two viable pathways
+(subject and relation), it remains unclear how the edited
+model actually utilizes these features for inference. To inves-
+tigate the functional shift in the model&#x27;s internal mechanism,
+we employ Causal Tracing [Menget al., 2022a ], a technique
+that measures the contribution of specific hidden states to the
+final prediction by intervening on corrupted runs. Specifi-
+cally, we calculate the Indirect Effect (IE) of an MLP output
+mlj
+i (at token positioniand layerl j) by restoring its clean
+activation into a noise-corrupted forward pass. Formally, the
+IE for the target objectois defined asIE(o, θ, mlj
+i ) =P θ(o|
+p′, mlj
+i )−P θ(o|p ′), wherep ′ is the prompt with noise-
+corrupted embeddings.
+To quantify the structural change induced by editing, we in-
+troduce </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>theRatio of Indirect Effect (RIE), which measures
+1The token positions are categorized into relation prefix (&quot;rp&quot;),
+first subject (&quot;fs&quot;), middle subject (&quot;ms&quot;), last subject (&quot;ls&quot;), first
+relation (&quot;fr&quot;), middle relation (&quot;mr&quot;) and last relation (&quot;lr&quot;) accord-
+ing to their positions in the tokenized subject or relation of a factual
+association.
+to a drastic decline of text generation fluency (Liu250
+et al., 2024), we will not discuss the deficiencies251
+of this updating formula in this work. Instead, we252
+focus on the calculation of two crucial vectorsk∗
+s253
+andv∗
+s for performing the parameter update. Vector254
+k∗
+s is set to the average value of the input vectors255
+over a small amount of texts ending with the sub-256
+jects to ensure the robustness of edited models on257
+prefixed factual prompts. This value remains con-258
+stant after the factual prompt for editing is </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>provided.259
+Therefore, the acquisition ofv∗
+s is the determinative260
+cause of the over-generalizing issue for ROME-like261
+editing approaches. It is obtained via the optimiza-262
+tion process of v∗
+s = argminvL(v) in which the263
+objective loss function is shown as follows:264
+L(v) =− 1
+N
+N∑
+t=1
+log P[o∗|v,pt] + KL[v,vo
+s] (4)265
+wherevo
+s is the original output vector ofWl
+s,pt (t∈266
+{1, 2,..,N}) are prefixed prompts ending with the267
+edited factual association &lt;s,r &gt;. KL[v,vo
+s] is the268
+KL divergence DKL(P[x|v]|| P[x|vo
+s) to constrain269
+the impact on other facts.270</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To take an in-depth investigation of the optimiza-272
+tion process for v∗
+s, we analyze the saliency of273
+gradients in this process. Since ROME edits at the274
+mid-early layerl, we observe the gradients of hid-275
+den states after layerl at all token positions during276
+the first few epochs, formalized as follows:277
+G(hla
+i ) = ∂L(v)
+∂hla
+i
+(5)278
+where la∈{ l,l + 1,...,L} denotes the layer af-279
+ter the editing layer l of the model with L layers280
+andi∈{ 0, 1, 2,...,n − 1} denotes the token po-281
+sition in the tokens list of length n. The token282
+positions are further categorized into relation prefix283
+(&quot;rp&quot;), first subject (&quot;fs&quot;), middle subject (&quot;ms&quot;),284
+last subject (&quot;ls&quot;), first relation (&quot;fr&quot;), middle rela-285
+tion (&quot;mr&quot;) and last relation (&quot;lr&quot;) according to their286
+positions in the tokenized subject or relation of a287
+factual association. For example, token </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>positions288
+of &quot;The mother tongue language of &quot; are the rela-289
+tion prefix in the input prompt &quot;The mother tongue290
+language of Isabelle Breitman is &quot; and the token291
+position of &quot;is&quot; is the last relation position.292
+We plot the average gradient saliency map over293
+100 edits of factual associations on GPT2-XL294
+17 22 27 32 37 42 47
+rp
+fs
+ms
+ls
+fr
+mr
+lr
+0.0000
+0.0025
+0.0050
+0.0075
+0.0100
+0.0125
+0.0150
+(a) GPT2-XL
+5 10 15 20 25
+rp
+fs
+ms
+ls
+fr
+mr
+lr
+0.00
+0.01
+0.02
+0.03
+0.04 (b) GPT-J 6B
+Figure 2: The average gradient saliency map of the first
+epoch of the optimization process for v∗
+s. The x-axis
+represents the layer numbers and the y-axis represents
+the token positions. Each heat value represents the
+gradient magnitude at that position.
+1.5B (Radford et al., 2019) with 48 layers, GPT-J 295
+6B (Wang, 2021) with 28 layers by ROME. Here 296
+we display the results of the first epoch </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>reliance between the original
+modelθ o and the edited modelθ edited. The RIE for a specific
+activation is calculated as:
+RIE(mlj
+i ) = log IE(o∗, θedited, mlj
+i )
+IE(o, θo, mlj
+i )
+(3)
+This metric isolates the relative gain or loss in causal signifi-
+cance for each component. We analyze the maximum RIE of
+MLP outputs across all layers at each token position over 100
+factual edits. Figure 3 presents these results, with a detailed
+case study provided in the Appendix.
+The empirical results reveal a critical pathology: the causal
+contribution of thesubject representation(h s) increases ex-
+ponentially after editing, while therelation representation
+(hr) shows much less gain. This suggests that the optimiza-
+tion process has decoupled the prediction from the relational
+context. We formalize this phenomenon as follows:
+Definition 1(Subject-Dominant Shortcut).Given a factual
+association⟨s, r⟩ </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>→o∗, an editing process converges to a
+Subject-Dominant Shortcut if the learned conditional prob-
+ability distributionP θ∗ exhibits approximate conditional in-
+dependence of the objecto ∗ from the relationr, given the
+subjects:
+Pθ∗ (o∗ |s, r)≈P θ∗ (o∗ |s)(4)
+This degeneracy manifests structurally when the causal in-
+fluence of the subject representation dominates the compu-
+tation, effectively marginalizing the relational operator such
+thatIE(h s)≫IE(h r).
+This definition implies a causal path collapse. In a healthy
+model, the prediction follows a compositional pathf(s, r).
+However, existing optimization forces the subject vector
+vs to absorb the target informationo ∗ directly. Mathe-
+matically, the optimizer finds a solution where the mapping
+approximatesv s →o ∗, bypassing the relational gate. Con-
+sequently, when queried with the same subject but a different
+relation (e.g.,⟨s, r′⟩), </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Alignment via Anchoring
+Our strategy hinges on anchoring the prediction to therela-
+tion feature. Leth r denote the hidden state at the last re-
+lation token position in a layerl a (la &gt; l) subsequent to
+the edit layer. In the standard forward pass of a LLM, the
+subject injectionv s propagates through intermediate layers
+to formh r, which then dictates the final prediction [Gevaet
+al., 2023]. Formally, this dependency can be modeled as a
+Markov chain:v s → · · · →hr → · · · →o∗. Ideally, to
+ensure the relationrmediates the prediction, we should max-
+imize the joint likelihoodP(o ∗, hr |v s). By applying the
+chain rule of probability, we decompose this objective into:
+P(o ∗, hr |v s) =P(o ∗ |h r, vs)| {z }
+Prediction Head
+·P(h r |v s)| {z }
+Feature Construction
+(5)
+The first term,P(o ∗ |h r, vs), represents the probability of
+the target object given both the relation feature and the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>|h r)| {z }
+Relation Anchoring
++ logP(h r |v s)| {z }
+Trajectory Alignment
+(6)
+This decomposition provides the theoretical foundation for
+our two-stage optimization process. The first term, represent-
+ingRelation Anchoring, establishes a valid mapping from the
+relation feature to the target object, creating a &quot;virtual anchor&quot;
+in the activation space that encodes relation semantics decou-
+pled from the subject. The second term, representingTrajec-
+tory Alignment, ensures that the edited subject vectorv s cor-
+rectly reconstructs this pivotal relation feature. By optimiz-
+ing these terms sequentially, we force the optimization path
+to be anchored to the intermediate stateh r, thereby strictly
+prohibiting the bypass of relational semantics.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We implement CPA as a sequential optimization process that
+anchors the update trajectory to the causal structure derived
+in Eq. 6. As shown in Fig. 4, we sequentially optimize the
+decomposed likelihood terms to enforce relational mediation.
+Phase 1: Relation Anchoring.We first optimize a rela-
+tion anchorh ∗
+r by maximizinglogP(o ∗ |h r)at the bottle-
+neck layerl a. This shifts the prediction too ∗ while operating
+solely in the activation space to avoid parameter overfitting.
+We solveh ∗
+r =argmin hr L1(hr)via:
+L1(hr) =− 1
+N
+NX
+t=1
+logP[o ∗|hr, pt]+D KL[P(·|h r)||P(·|h o
+r)]
+(7)
+The KL divergence against the pre-edit stateh o
+r confines the
+anchor to the local semantic manifold, ensuring the edited
+relation remains distinguishable from unrelated facts.
+Phase 2: Trajectory Alignment.Fixingh ∗
+r, we maximize
+logP(h r |v s)by optimizing the subject injection vectorv s
+(the output of the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MLP down-projection at the editing layer
+l) to accurately reconstruct the relation anchor. The updated
+vectorv ∗
+s is obtained by minimizing the discrepancy in the
+feature space:
+L2(vs) =||F[v s, p]−h∗
+r||F (8)
+whereF[v s, p]is the forward propagation result inh r given
+vs and the promptp. By enforcingv s to reconstructh ∗
+r,
+this step compels the vector update to traverse the estab-
+lished causal path, effectively eliminating the shortcut learn-
+ing pathology. All weight decays are omitted for simplicity.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets and Evaluation Metrics.We evaluate CPA un-
+der the standard single-edit protocol, where each run rewrites
+one factual association⟨s, r, o⟩ → ⟨s, r, o∗⟩and quantifies
+both the success of the rewrite and the unintended spillover
+to other memories.
+Our primary benchmark isCOUNTERFACT RS [Liuet
+al., 2025], a relation-sensitive evaluation suite derived from
+COUNTERFACT, on which we sample 2,000 edits and repeat
+evaluation five times, reporting mean and standard deviation.
+COUNTERFACT RS provides a controlled decomposition
+of editing quality intoEfficacy(whether the rewritten object
+is preferred under rewriting prompts),Subject Specificity(S-
+SPEC., whether the new object spuriously transfers to neigh-
+borhood subjects⟨s ′, r⟩), andRelation Specificity(R-SPEC.,
+whether the new object leaks to other relations of the same
+subject⟨s, r′⟩). Because our goal is to eliminate </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Subject-
+Dominant Memory Interference, we treat R-SPEC. as the key
+controllability metric, while also reporting a Fluency score
+that captures the quality of generated continuations under the
+benchmark protocol.
+To complement the evaluation with a broader subject-
+dominant memory interference assessment, we also evalu-
+ate on theEVOKE [Zhanget al., 2025 ] benchmark and re-
+port corresponding metrics: DP (Deterioration Probability)
+to measure how often unrelated answers are disrupted after
+editing, CAP (Correct Answer Probability) to track over-
+all correctness, and EOS (Editing Overfit Score) to capture
+over-confident collapse, serving as a primary indicator of the
+model&#x27;s specificity and overall performance; lower DP and
+higher EOS indicate stronger resistance to interference.
+Baselines and Model Architectures.We compare
+against representative locate-then-edit editors, including
+ROME </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>we follow
+the commonly adopted layer choices for locate-then-edit up-
+dates and select a later bottleneck layerl a &gt; lfor relation
+Method COUNTERFACT RS EVOKE
+Eff.↑S-Spec.↑R-Spec.↑Flue.↑DP↓CAP↑EOS↑
+GPT2-XL (1.5B)
+ROME 99.8(±0.0)75.4(±0.0)45.7(±0.2)623.4(±0.0)39.1(±0.3)2.8(±0.1)21.6(±0.2)
+MEMIT 94.0(±0.1)76.4 (±0.0)61.5(±0.5)627.4(±0.2)38.0(±1.0)1.9(±0.1)10.9(±0.3)
+AlphaEdit 99.8(±0.0)76.2(±0.0)41.2(±0.3)623.4 (±0.1)34.5(±0.2)2.1(±0.0)15.5(±0.2)
+RETS100.0(±0.0)67.9(±0.4)78.7(±0.5)585.1(±5.9)5.2(±0.8)4.8(±0.0)61.4(±2.0)
+ROME-LTI 99.9 (±0.0)75.7(±0.1)57.2(±0.3)622.0(±0.2)17.7(±0.2)3.6 (±0.1)31.4(±0.4)
+ROME-CPA (Ours) 98.7(±0.1) 76.5(±0.0) 72.2(±0.7) 619.7(±0.3) 5.7(±0.1) 2.5(±0.1) 36.5(±0.1)
+GPT-J (6B)
+ROME100.0(±0.0)79.3(±0.0)52.8(±0.4)621.0(±0.2)53.1(±0.4)1.9(±0.0)6.1(±0.1)
+MEMIT100.0(±0.0)81.1(±0.0)66.8(±0.3)621.5(±0.1)38.8(±0.3)2.2(±0.1)12.3(±0.2)
+AlphaEdit 99.8 (±0.1)81.9 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 summarizes the results on COUNTERFACT RS and
+EVOKE across multiple LLM backbones.
+CounterFact RS.Across all evaluated models, CPA con-
+sistently improves relation specificity (R-Spec.), indicating a
+substantial reduction of Subject-Dominant Memory Interfer-
+ence. Concretely, compared with ROME, CPA raises R-Spec.
+from 45.7% to 72.2% on GPT2-XL, from 52.8% to 83.5%
+on GPT-J, from 70.7% to 92.2% on Qwen2.5 7B, and from
+56.9% to 84.5% on Qwen2.5 14B, while maintaining high
+editing success (Eff.) and strong subject specificity (S-Spec.).
+Notably, this gain does not come from overly restrictive
+constraints: fluency remains comparable to ROME/MEMIT,
+whereas methods with aggressive constraints (e.g., RETS)
+can exhibit pronounced fluency degradation and less stable
+cross-model behavior.
+EVOKE.EVOKE directly probes collateral corruption and
+shortcut-induced overfitting. CPA achieves the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>lowest (or
+second-lowest) damage proxy DP and the best EOS on most
+settings, suggesting that the edited behavior is less domi-
+nated by a subject-only shortcut and induces fewer unin-
+tended changes. While RETS can reach strong CAP/EOS
+on some settings, it often does so with a notable trade-off in
+fluency and/or robustness; in contrast, CPA provides a more
+balanced improvement profile across architectures.
+Overall, the main results demonstrate that CPA provides a
+reliable remedy for Subject-Dominant Memory Interference
+across both benchmarks and model families. CPA consis-
+tently yields large gains in relation specificity and further
+reduces detailed damage indicators on EVOKE, while pre-
+serving (and often saturating) editing efficacy and maintain-
+ing competitive fluency. These findings support our central
+claim: anchoring the optimization to a relation-aware causal</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Beyond aggregate metrics, we verify that CPA indeed restores
+the relational causal pathway rather than merely suppress-
+ing outputs. Following Section 3.3, we re-run causal trac-
+ing and compute the maximum Ratio of Indirect Effect (RIE)
+over layers for each token position (Fig. 6). The key sig-
+nature of shortcut elimination is that the relative causal gain
+at the last relation position becomes closer to that at the last
+subject position, indicating that the edited prediction is me-
+diated by relation-aware features instead of a subject-only
+bypass. This mechanistic evidence aligns with the consis-
+tent improvements in relation specificity and the reductions
+in EVOKE side-effect indicators.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We conduct ablation experiments on 2,000 edits from COUN-
+TERFACT RS to disentangle the contribution of each phase
+inCausal Path Alignment (CPA). We compare three config-
+urations under identical prompts, stopping criteria, and hyper-
+parameters:(1) Phase 1 onlyperformsrelation anchoringby
+optimizing the bottleneck activationh r at the last-relation to-
+ken position to minimize−logP(o ∗ |h r), but omits the sub-
+sequent trajectory alignment;(2) Phase 2 onlyreduces to the
+conventional single-phase target construction by directly op-
+timizing the injected subject value vectorvs at the last-subject
+token position with the standard objective−logP(o ∗ |v s);
+and(3) Full CPAexecutes the complete two-phase procedure
+(relation anchoring followed by trajectory alignment).
+Model Method Eff.↑S-Spec.↑R-Spec.↑
+GPT2-XL
+(1.5B)
+MEMIT 94.0 76.4 61.5
++CPA 92.8 76.3 79.7(+18.2)
+AlphaEdit 99.8 76.2 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>41.2
++CPA 97.7 76.2 68.4(+27.2)
+Qwen2.5
+(7B)
+MEMIT 100.0 67.3 64.7
++CPA 93.8 82.7 90.6(+25.9)
+AlphaEdit 100.0 83.6 65.0
++CPA 92.0 82.5 88.9(+23.9)
+Table 2: Plug-and-Play generalization of CPA on MEMIT and Al-
+phaEdit. All metrics are reported in percentage (%).
+Results in Fig. 5 confirm the synergistic necessity of both
+phases. We observe a distinct trade-off:Phase 1-onlyse-
+cures relation specificity but suffers from catastrophic subject
+over-generalization (S-Spec. drops to∼20–35%), whereas
+Phase 2-onlyrestores subject focus but reverts to the short-
+cut pathology, degrading relation specificity to∼46%. Only
+the full CPA reconciles these conflicting objectives, achieving
+an optimal balance (e.g., Qwen2.5: 83.4% S-Spec., 84.5% R-
+Spec.) while maintaining near-saturated efficacy.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CPA is editor-agnostic: it constrainshowthe target rep-
+resentation is optimized, and thus can be transplanted to
+other locate-then-edit pipelines without altering their local-
+ization or weight-update solvers. To test this, we inte-
+grate CPA into MEMIT and AlphaEdit by replacing their
+original target-vector optimization with CPA while keep-
+ing their original layer selections and update rules. As
+shown in Table 2, CPA substantially improves R-Spec.
+for both editors on GPT2-XL and Qwen2.5 7B (e.g.,
+MEMIT: 61.5%→79.7% and 64.7%→90.6%; AlphaEdit:
+41.2%→68.4% and 65.0%→88.9%), while largely preserv-
+ing efficacy and S-Spec. This indicates that the shortcut
+pathology stems from the unconstrained target-vector opti-
+mization, and CPA provides a general remedy by anchoring
+the optimization trajectory to relation-aware causal states.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The selection of the relation anchor layer, denoted asla, is the
+primary structural hyperparameter in CPA. This layer defines
+the intermediate stateh r that serves as the &quot;virtual anchor&quot;
+for the optimization trajectory. To understand its impact, we
+conducted a sensitivity analysis by varyingla across the post-
+edit layers while maintaining the editing layerlconstant (e.g.,
+l= 6for GPT-J).
+As illustrated in Figure 7, the Subject Specificity (S-Spec)
+and Efficacy scores remain remarkably stable regardless of
+the anchor layer selection. This stability suggests that the
+relation anchor primarily constrains the relational pathway
+without interfering with the model&#x27;s fundamental ability to
+retain subject-centric information or accept the new target
+fact. However, we observe a distinct trade-off between Re-
+lation Specificity (R-Spec) and Generalization asl a shifts
+depth. R-Specificity </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A natural concern with any multi-phase optimization frame-
+work is the potential for increased computational cost. To
+quantify this, we compare the average maximum GPU mem-
+ory consumption and editing latency per sample of CPA
+against standard baselines (ROME, MEMIT) as well as
+the mitigation-oriented variant ROME-LTI. All models were
+evaluated in full-precision (FP32/BF16) without quantization
+on a single NVIDIA A800 (80GB) GPU.
+Figure 12 summarizes the resource consumption.
+The empirical results reveal distinct characteristics regard-
+ing the time-memory trade-off. In terms of latency, CPA
+inevitably introduces an increase in editing time compared
+to single-stage methods like ROME and MEMIT (e.g., ap-
+proximately 20 seconds vs. 15 seconds on Qwen2.5). This
+increase is a direct consequence of the sequential nature of
+our two-phase optimization, where the Relation Anchoring
+phase must </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>achieves lower Efficacy and General-
+ization scores on zsRE compared to declarative baselines like
+ROME. We attribute this performance gap to the structural
+differences in the prompts. The Locate-then-Edit paradigm
+(and by extension CPA) relies on the specific causal role of
+thelast subject tokento trigger attribute retrieval. In QA-
+style prompts (e.g., &quot;What was the name of...&quot;), the syntactic
+structure often places the subject in a position that may not
+serve as a strong causal hub for the relation featureh r in the
+same way declarative sentences do. Consequently, theRela-
+tion Anchoringphase may struggle to isolate a stable relation
+vectorh r from the question framing, leading to a less effec-
+tive update.
+It is also important to note that the Specificity metric in
+zsRE is less discerning than COUNTERFACT RS, resulting</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While Causal Path Alignment (CPA) successfully mitigates
+Subject-Dominant Memory Interference, we acknowledge
+certain limitations that open avenues for future research.
+First, as evidenced by the performance on zsRE (Appendix
+D.2), CPA relies on the structural assumption of the Locate-
+then-Edit paradigm, where the last subject token serves as
+a stable causal hub for attribute retrieval. This assumption
+holds for declarative factual statements but may weaken in
+interrogative forms or complex syntactic structures where the
+subject-relation dependency is implicit or inverted. Future
+work should exploredynamic anchor identification mech-
+anismsthat can adaptively locate relation-aware tokens in un-
+structured prompts.
+Second, the sequential nature of our two-phase optimiza-
+tion inevitably incurs higher latency compared to single-
+stage editors. Although the memory overhead is </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>negligible,
+the inference time increase (approx.5s per edit) may be a
+constraint for real-time applications requiring ultra-low la-
+tency. We plan to investigate methods todistill the trajec-
+tory alignment constraints into a unified optimization ob-
+jective, aiming to achieve the controllability of CPA with the
+efficiency of single-stage methods.
+Finally, extending CPA to handle sequential batch editing
+in lifelong learning scenarios remains a promising direction
+to ensure long-term model stability.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

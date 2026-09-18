@@ -19,6 +19,7 @@ import json
 from pathlib import Path
 import sqlite3
 import sys
+from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
@@ -39,9 +40,11 @@ def payloads(path: Path):
     payload is not JSON, are both reported like any other unreadable row. Nothing here
     raises: the caller must be able to finish the remaining databases.
     """
+    # The path is percent-encoded into the URI, so a database whose name contains
+    # '?' or '#' is opened rather than misparsed as URI query or fragment syntax.
     try:
-        connection = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
-    except sqlite3.Error as exc:
+        connection = sqlite3.connect(f'file:{quote(str(path))}?mode=ro', uri=True)
+    except (sqlite3.Error, OSError, ValueError) as exc:
         yield f'{path}: unreadable database ({type(exc).__name__}: {exc})'
         return
     try:
@@ -56,9 +59,16 @@ def payloads(path: Path):
             if row is None:
                 return
             try:
-                yield json.loads(row[1])
+                payload = json.loads(row[1])
             except (TypeError, ValueError) as exc:
                 yield f'{path}: row {row[0]}: unreadable payload ({type(exc).__name__}: {exc})'
+                continue
+            # Valid JSON is not necessarily a stored assessment. Anything that is not
+            # an object is reported like any other unreadable row rather than handed on.
+            if not isinstance(payload, dict):
+                yield f'{path}: row {row[0]}: unreadable payload (not an object)'
+                continue
+            yield payload
     except sqlite3.Error as exc:
         yield f'{path}: unreadable database ({type(exc).__name__}: {exc})'
     finally:
@@ -91,18 +101,24 @@ def check(path: Path, versions: Counter, failures: list) -> int:
             failures.append(value)
             continue
         seen += 1
-        canonical_id = value.get('canonical_id')
-        versions[(value.get('assessment_version'), value.get('quality_gate_version'),
-                  value.get('rubric_version'), value.get('quality_status'))] += 1
+        # Nothing about one row may end the run, so the whole of its handling is
+        # guarded, not only the load. A row is reported, never repaired or rethrown.
         try:
+            canonical_id = value.get('canonical_id')
+            versions[(value.get('assessment_version'), value.get('quality_gate_version'),
+                      value.get('rubric_version'), value.get('quality_status'))] += 1
             assessment = QualityAssessment.from_dict(value)
             if (assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS
                     and assessment.execution.get('outcome') == 'success'):
                 validate_receipt(assessment)
         except Exception as exc:  # noqa: BLE001 - report every bad row, never raise.
-            named = diagnosis(value)
+            named = None
+            try:
+                named = diagnosis(value)
+            except Exception:  # noqa: BLE001 - a message must never mask the failure.
+                pass
             detail = f'{type(exc).__name__}: {exc}' if named is None else named
-            failures.append(f'{path}: {canonical_id}: {detail}')
+            failures.append(f'{path}: {value.get("canonical_id", "?")}: {detail}')
     return seen
 
 
@@ -119,7 +135,12 @@ def main(argv: list[str] | None = None) -> int:
     failures: list[str] = []
     total = 0
     for path in paths:
-        if not path.exists():
+        try:
+            present = path.exists()
+        except OSError as exc:
+            failures.append(f'{path}: unreadable database ({type(exc).__name__}: {exc})')
+            continue
+        if not present:
             print(f'skipped (absent): {path}')
             continue
         seen = check(path, versions, failures)

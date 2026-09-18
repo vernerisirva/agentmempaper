@@ -139,6 +139,40 @@ class StoredAssessmentCheckTests(unittest.TestCase):
         # The four good rows were still counted after the bad one was reported.
         self.assertIn('4 stored assessments', output)
 
+    def test_valid_json_that_is_not_an_assessment_is_reported_not_raised(self):
+        """Valid JSON is not necessarily a stored assessment."""
+        import sqlite3
+        for payload in ('[1]', '1', '"text"', 'null', 'true'):
+            with self.subTest(payload=payload):
+                path = self.store(self.assessments())
+                connection = sqlite3.connect(path)
+                with connection:
+                    connection.execute(
+                        'INSERT INTO paper_quality_assessments(canonical_id,'
+                        ' assessment_version, rubric_version, assessor_type, assessor_model,'
+                        ' source_content_hash, assessed_at, overall_quality_score,'
+                        ' recommendation, confidence, assessment_scope, paper_type,'
+                        " payload_json) VALUES('fixture','quality-promotion-v1',"
+                        "'scholarly-rubric-v1','llm','corrupted-history','hash',"
+                        "'2026-09-18T00:00:00',NULL,'unknown','low','full_text',"
+                        f"'unclear','{payload}')")
+                connection.close()
+                code, output = self.run_check(path)
+                self.assertEqual(code, 1)
+                self.assertIn('not an object', output)
+                # The four good rows were still counted after the bad one.
+                self.assertIn('4 stored assessments', output)
+
+    def test_a_database_path_containing_uri_syntax_is_still_opened(self):
+        """A '?' or '#' in a name is part of the path, not URI query or fragment."""
+        path = self.store(self.assessments())
+        odd = path.parent / 'state?#odd.sqlite3'
+        path.rename(odd)
+        code, output = self.run_check(odd)
+        self.assertEqual(code, 0)
+        self.assertIn('4 stored assessments', output)
+        self.assertNotIn('unreadable', output)
+
     def test_a_later_database_is_still_checked_after_an_earlier_one_fails(self):
         good = self.store(self.assessments())
         code, output = self.run_check(Path('does/not/exist.sqlite3'), good)

@@ -59,183 +59,16 @@
             <p>Deep research agents increasingly operate over the open web, where relevant records coexist with redundant summaries, outdated reports, and misleading documents. Existing evaluations offer limited insight into whether agents preserve sound evidential standards when an ordinary-looking false document is deliberately...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality reviewed</h2>
-      <p>The contribution is clearly scoped and validated: a new benchmark with a diagnostic paired design, meaningful evaluation across five models and ten task families, and controlled analyses that distinguish premature stopping from retrieval or reconciliation failures. Claims are justified by the reported measurements, and limitations are appropriately stated.</p>
-      <p>The benchmark uses a constructed corpus rather than live-web documents, which may not capture full stylistic and distributional complexity of naturally occurring sources. The Qwen3-32B deference estimate is based on only 13 clean-correct tasks and carries greater uncertainty. Attack-aware prompts that name the document class are reported only as upper bounds, not deployable fixes.</p>
+      <h2>Quality pending</h2>
+      <p>Scientific quality has not yet been assessed.</p>
+      <p>Manuscript evidence has not been reviewed.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: llm. Assessment version: quality-promotion-v1. Gate: dual-promotion-v1.</p>
-        <p>Assessed: 2026-09-18T08:04:17.549798+00:00.</p>
-        <p>Coverage: 55900 of 55900 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents increasingly operate over the open web, where relevant
-records coexist with redundant summaries, outdated reports, and misleading doc-
-uments. Existing evaluations offer limited insight into whether agents preserve
-sound evidential standards when an ordinary-looking false document is deliberately
-seeded into a searchable environment and offers a direct shortcut to a conflicting
-answer. We introduce DRNOISE, a 100-task benchmark for answer recovery un-
-der misleading evidence. Each task has a unique gold answer supported by two
-corroborating indirect record chains; the paired noisy condition adds one plausible
-document that states a conflicting answer directly. The benchmark spans ten fami-
-lies of evidence operations. Across agents with strong clean-task performance, this
-single intervention causes 66–88 percentage-point accuracy drops. Trace analyses
-identify </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the truthful records, and
-the search interface are all held fixed, and the environment is perturbed only by a single plausible
-document that states a conflicting answer directly. In that setting, a failure need not reflect an inability
-to retrieve or reason over evidence; it may instead arise from what the agent treats as sufficient
-evidence, and from when it decides to stop.
-We study this question through DRNOISE, a controlled benchmark for answer recovery under
-misleading evidence. Each task contains two corroborating indirect record chains that entail the same
-unique gold answer; no single document states that answer directly, so the gold value is the one
-entailed by converging lower-level records. The noisy condition leaves the task and all truthful records
-unchanged and adds one ordinary-looking document that directly states a conflicting value, designed
-to resemble the business, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>operational, and reporting artifacts that appear in realistic information
-environments. This paired intervention creates a controlled conflict between an answer that is easy to
-accept and one that must be reconstructed from lower-level records.
-Because the clean and noisy corpora differ by only this document, the design isolates noise-induced
-changes in evidence use: if an agent solves a task in the clean condition but submits the desig-
-nated false value once the document is added, the failure reflects how it deploys a demonstrated
-capability rather than whether it has that capability. Empirically, DRNOISEreveals a large capability-
-deployment gap. Among agents with strong clean-task competence, the intervention causes 66–88
-percentage-point accuracy drops, across both symbolic and numerical task families. Trace and
-intervention analyses identify premature stopping as the dominant </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DRNOISEis designed to isolate a specific failure mode in deep research agents: whether an agent
-that can recover an answer from records in a clean environment continues to rely on record-level
-evidence when the same environment also contains a plausible but false answer. To make this question
-measurable, each task is evaluated under a paired clean–noisy corpus intervention. The clean corpus
-contains the evidence needed to derive the answer from indirect records; the noisy corpus is identical
-except that it additionally contains one ordinary-looking document that directly states a conflicting
-answer. Figure 2 illustrates the two conditions.
-Each benchmark instance is a tuple (q, a⋆,˜a, EA, EB, F), where q is the question, a⋆ is the gold
-answer, ˜ais the designated false answer, EA and EB are two indirect evidence routes, and F is a
-direct false-summary document. The gold answer is not </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The benchmark contains 100 tasks across 10 families, with 10 tasks per family (Table 2). These
-families instantiate the same clean–noisy diagnostic across diverse evidence operations that arise
-in research workflows: selecting entities under constraints, comparing dates, verifying conditions,
-ranking candidates, joining records, intersecting criteria, mapping attributes, selecting sets, attributing
-conflicts, and aggregating distributed costs. This diversity is important because a deference failure
-under misleading evidence should not be understood as a peculiarity of a single operation type. It
-allows us to test whether the effect is tied to a narrow reasoning pattern or reflects a broader stopping
-and verification problem in deep research agents.
-The benchmark contains 1,750 task-specific documents: 1,650 indirect evidence documents and 100
-direct false summaries. The indirect </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate all models in the same BrowseComp-Plus search-agent framework (Chen et al., 2025),
-using a ReAct-style agent with a single search interface. Holding the harness fixed is essential: the
-benchmark is intended to compare how different systems deploy search and verification behavior
-under the same clean–noisy corpus intervention, rather than to compare different tool protocols or
-retrieval interfaces.
-Each run can issue searches and retrieve documents, with a maximum of 100 iterations, top-5 retrieval
-per search, and 512-token snippets. The task-specific indices use dense retrieval, and a BM25 index
-supplies full-text snippets for retrieved documents. Every model is run on all 100 tasks in both clean
-and noisy conditions. The clean and noisy runs use the same question and the same background
-corpus; the only task-specific difference is the addition of the false-summary document </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The paired design requires metrics that distinguish three cases: an agent may be unable to solve the
-task even without noise, may fail under noise for reasons unrelated to the injected false value, or may
-specifically defer to the misleading document. We therefore report both accuracy and conditional
-deference.
-Let Cm be the set of tasks that model m answers correctly in the clean condition, and let Dm be the
-set of tasks where the model&#x27;s noisy answer equals the designated false value. We report:
-CleanAcc(m) =|Cm|/100,(1)
-NoisyAcc(m) =|{i:mcorrect on noisy taski}|/100,(2)
-Defer(m) =|Cm ∩D m|/|Cm|.(3)
-Conditional deference is stricter than noisy error rate. It is computed only over tasks the model
-solved when the misleading document was absent, and it only counts noisy answers that match the
-benchmark&#x27;s designated false value. This prevents a weak model from appearing robust </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 1 and Table 3 show the main result. Gemini 3.5 Flash and DeepSeek V4 Flash reach the
-highest clean accuracy (96% and 89%), while MiMo v2.5 and GPT-5.4 sit near 82%; all four lose
-most of that performance when the misleading document is added. DeepSeek V4 Flash and MiMo
-v2.5 fall to roughly 1% noisy accuracy. Gemini 3.5 Flash retains the most, yet still shows a 72.6%
-conditional deference rate. GPT-5.4 is intermediate, with 16% noisy accuracy and 80.4% conditional
-deference.</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>fooled,
-but that they are fooled precisely where they have already shown they can solve the task without the
-shortcut.
-7
-Preprint
-Table 5: Retrieval-exposure funnel for GPT-5.4 (100 tasks per condition). Truth = at least one indirect
-record retrieved; false = the direct false summary retrieved; co-exposed = both in the same trace;
-complete route = all documents of route A or all of route B retrieved.
-Condition Truth retrieved False retrieved Co-exposed Complete route Mean searches
-Clean 100/100 0/100 0/100 45/100 7.1
-Noisy 100/100 100/100 100/10016/1004.5
-Table 6: Noisy-trace mechanism taxonomy for GPT-5.4 (100 noisy runs).
-Mechanism Count
-Correct despite noise 12
-Complete truth route retrieved, false value committed 10
-Only partial truth route retrieved, false value committed77
-Answer-format or other failure 1
-Three rival explanations for a noisy failure are: (i) the agent never </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We report seven analyses of GPT-5.4, anchored to one fixed dense-retrieval baseline run (81/100
-clean, 12/100 noisy accuracy) that is representative of the three-run mean reported in Table 3. The
-retrieval-exposure and trace-taxonomy analyses use its saved traces. The remaining analyses change
-only the specified factor relative to this baseline, including the prompt, source credibility, retrieval
-mode, evidence structure, or access to full evidence.
-Retrieval exposure.Noisy failure is not caused by zero exposure to truth-supporting records
-(Table 5). In all 100 noisy runs the agent retrieved at least one indirect evidence document, and in
-all 100 it co-retrieved both the false summary and truth-supporting evidence in the same trace. The
-false summary instead shortens the search: mean search calls fall from 7.1 (clean) to 4.5 (noisy), and
-the fraction of runs that retrieve a complete </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evidence route falls from 45% to 16%. Among the 68
-clean-correct tasks on which GPT-5.4 commits the false value under noise, all 68 co-retrieved truth
-evidence and the false summary, yet only 10 assembled a complete route. Thus the dominant failure
-is not the absence of any truth-supporting evidence, but premature stopping before the retrieved
-evidence is completed and reconciled.
-Trace taxonomy.We classify each noisy trace by mechanism (Table 6). No trace is a pure retrieval
-miss, and only one is an answer-format failure: of the 88 non-correct noisy traces, 87 commit the
-exact designated false value. Most (77) do so after retrieving only a partial truth route, but 10 commit
-the false value even after a complete truth route has been retrieved. That the failures concentrate
-on the specific injected value—rather than scattering across generic wrong answers or retrieval
-gaps—supports a </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>stopping and verification account rather than a retrieval or formatting one.
-Verification intervention.We test whether the failure is a policy-level verification deficit by adding
-a single instruction to the noisy prompt and changing nothing else (Table 7). Agenericdiligence
-instruction—verify the answer against the specific retrieved documents and keep searching rather
-than stopping at the first plausible answer, with no mention of summaries—recovers only modestly:
-8
-Preprint
-Table 7: Verification intervention on GPT-5.4 (noisy condition). The conditional deference denomi-
-nator is the clean-correct set. Starred rows are attack-aware upper bounds: they name the attacked
-document class (leak the attack) and are not a deployable fix.
-Prompt Noisy accuracy Conditional deference∆acc.
-Baseline 12/100 68/81 = 84.0% —
-Generic 28/100 56/81 =69.1%+16
-Verify∗ 67/100 16/81 = 19.8% +55
-Enforce∗ </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>citations: +52 points). Because these prompts name the attacked document class,
-they leak the attack, and we report them only as capability upper bounds, not as a deployable fix. The
-gap between the attack-aware recovery and the generic recovery is direct evidence of a capability-
-deployment gap: the model can reconcile the conflict when told exactly what to distrust, but does not
-do so under a generic instruction.
-Source credibility.Does the effect merely track source authority? We rewrite the false document
-into three rungs that assert the same false value and the same conclusion at matched length and task
-position, varying the source genre and authority cues rather than the answer content—an anonymous,
-hedged forum post (low), the default trade-publication review (baseline), and an official audit report
-with an issuing body and reference number (high) (Table 8). Deference is </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Preprint
-Table 9: Retriever ablation for GPT-5.4 (100 tasks). BM25 (lexical) vs. dense (Qwen3-Embedding-
-8B). Conditional deference is over each retriever&#x27;s own clean-correct set.
-Retriever Clean Noisy Conditional deference False doc retrieved
-Dense (Qwen3-Embedding-8B) 81/100 12/100 68/81 = 84.0% 81/81
-BM25 (lexical) 23/100 0/100 23/23 =100%23/23
-Table 10: Direct-true evidence ablation for GPT-5.4 (noisy, 100 tasks). One indirect route is replaced
-by an independent direct-true document. Conditional deference is over the 81 clean-correct tasks.
-Noisy evidence structure Noisy accuracy Conditional deference
-Two indirect routes + false (default) 12/100 68/81 = 84.0%
-Direct-true + one indirect route + false 63/100 29/81 =35.8%
-states an answer directly. We test this by replacing one of the two indirect evidence routes with a
-direct-truedocument—an independent, answer-shaped secondary report </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>true and a false claim.
-Oracle full-context.The direct-true ablation makes the truth easier to state but leaves retrieval in
-the loop, so its residual deference could still reflect premature stopping rather than an inability to
-reconcile evidence that is already in hand. To isolate reconciliation, we bypass retrieval entirely and
-place the complete indirect evidence—all route-A and route-B documents for a task—directly in
-GPT-5.4&#x27;s context in a single call, with and without the false summary (Table 11). Given the full
-evidence and no false summary, GPT-5.4 answers100/100 correctly, confirming it can reconcile the
-records once they are all present. Using each setting&#x27;s own clean-correct denominator, conditional
-deference falls from 68/81 in the retrieval-agent setting to 8/100 in the oracle full-context setting
-(noisy accuracy 91/100). The dominant mechanism is therefore premature </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DRNOISEuses a constructed corpus rather than documents scraped from the live web. This controlled
-design is necessary for paired clean–noisy evaluation: it allows us to define a unique gold answer,
-construct corroborating indirect evidence chains, and introduce a falsifiable misleading document
-while keeping the two conditions comparable. However, constructed documents may not capture the
-full stylistic, institutional, and distributional complexity of naturally occurring web sources. Future
-work should test whether the same failure mode appears in live-web or domain-specific corpora
-containing real outdated reports, secondary summaries, conflicting claims, and misleading documents.
-10
-Preprint
-Table 11: Oracle full-context ablation for GPT-5.4. The complete indirect evidence is supplied
-directly in the prompt with no retrieval and no search tool; the retrieval agent (dense, noisy) is </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>B DATASETAUDIT
-We validate every task in DRNOISEagainst four criteria that make the paired clean–noisy comparison
-well-posed. Together they enforce the two properties a diagnostic conflict benchmark requires: the
-clean task must have a single, record-grounded answer, and the noisy condition must add a genuinely
-misleading but falsifiable claim.</blockquote></details></li></ul>
+        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
+        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
+        <p>Assessed: not assessed.</p>
+
+        <ul></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -274,7 +107,7 @@ misleading but falsifiable claim.</blockquote></details></li></ul>
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

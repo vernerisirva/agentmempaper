@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-17](2026-09-17.md).
+Latest daily digest: [2026-09-18](2026-09-18.md).
 
-# Paper Scout Digest - 2026-09-17
+# Paper Scout Digest - 2026-09-18
 
 ## Run Summary
 
-- **Run ID:** 87
+- **Run ID:** 88
 - **Candidates fetched:** 100
-- **New unique papers:** 91
+- **New unique papers:** 92
 - **Relevant:** 12
-- **Maybe relevant:** 3
-- **Irrelevant:** 85
+- **Maybe relevant:** 4
+- **Irrelevant:** 84
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -31,78 +31,55 @@ Latest daily digest: [2026-09-17](2026-09-17.md).
 
 ## Highly Relevant
 
-### [An immune world model for multiscale forecasting and therapeutic hypothesis generation](https://doi.org/10.48550/arxiv.2609.14709)
+### [AI for Science with GPT-6 Astra: Thermal Design and Electrothermal Analysis of 2D CFET](https://arxiv.org/abs/2609.17123)
 
-- **Authors:** Taoyong Cui, Xi Wang, Zonghang Li, Jinchao Ding, Lingsen You, Yuzhi Xu, et al.
-- **Date:** 2026-09-13
+- **Authors:** Min-Hui Kim, Khushi Sharma, Sarah Zhang, Ye Wang
+- **Date:** 2026-09-15
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Immune therapies act across cell-intrinsic programs, tissue ecosystems, and patient-specific immune states, yet most predictors address these scales separately. We used a governed evolutionary AI Scientist to construct the Immune World Model, an action-conditioned model that learns how interventions move immune stat...
+- **Abstract summary:** Thermal optimization of 2D CFET inverters requires testing structural proposals against their electrical costs. We examine these research tasks using an AI agent workflow within a supplied electrothermal model. At 12 nm, Astra selects a redistributed source-interconnect geometry, while a coordinating agent proposes...
 
-### [An immune world model for multiscale forecasting and therapeutic hypothesis generation](https://arxiv.org/abs/2609.14709)
+### [AI Scientists for Building Virtual-Cell Models](https://doi.org/10.21203/rs.3.rs-10954762/v1)
 
-- **Authors:** Taoyong Cui, Xi Wang, Zonghang Li, Jinchao Ding, Lingsen You, Yuzhi Xu, et al.
-- **Date:** 2026-09-13
+- **Authors:** Mark Gerstein, Xiangru Tang, Jiapeng Chen, Yanjun Shao, Z. Q. Yu, Yan Cui, et al.
+- **Date:** 2026-09-17
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Immune therapies act across cell-intrinsic programs, tissue ecosystems, and patient-specific immune states, yet most predictors address these scales separately. We used a governed evolutionary AI Scientist to construct the Immune World Model, an action-conditioned model that learns how interventions move immune stat...
+- **Abstract summary:** No abstract available.
+- **Automated evidence-based assessment:** Not enough evidence · partial full text
 
-### [AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing](https://arxiv.org/abs/2609.14738)
+### [PrimeScientist: Strategic Allocation of Research Effort in Autonomous Research](https://doi.org/10.48550/arxiv.2609.17846)
 
-- **Authors:** Vidushee Vats, Karun Sharma, Shengzhi Li, Shichao Pei
-- **Date:** 2026-09-13
+- **Authors:** Xinle Yu, Fan Bai, Kaiser Sun, Hengshuo Miao, Abhay Anand, Zhongyan Luo, et al.
+- **Date:** 2026-09-15
 - **Source:** openalex
 - **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Automated reviewing systems are increasingly evaluated based on the quality of the reviews they produce. Yet a review is only useful if acting on it leads to a measurable improvement in the paper. We present AppliedScientist, a closed-loop system that couples an autonomous AI scientist with an AI reviewer, and evalu...
-
-### [AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing](https://doi.org/10.48550/arxiv.2609.14738)
-
-- **Authors:** Vidushee Vats, Karun Sharma, Shengzhi Li, Shichao Pei
-- **Date:** 2026-09-13
-- **Source:** openalex
-- **Relevance:** relevant (93/100)
-- **Reason:** Studies AI-scientist or scientific-discovery agents.
-- **Tags:** ai-scientist, deep-research-agents
-- **Abstract summary:** Automated reviewing systems are increasingly evaluated based on the quality of the reviews they produce. Yet a review is only useful if acting on it leads to a measurable improvement in the paper. We present AppliedScientist, a closed-loop system that couples an autonomous AI scientist with an AI reviewer, and evalu...
-
-### [Question's Gambit: The First Move Matters in Agentic Deep Search](https://arxiv.org/abs/2609.14412)
-
-- **Authors:** Radin Hamidi Rad, Amin Bigdeli, Negar Arabzadeh, Sajad Ebrahimi, Charles L. A. Clarke, Benjamin C. M. Fung, et al.
-- **Date:** 2026-09-13
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
 - **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents answer complex questions through iterative loops of searching, reading, and reasoning. Recent work on reasoning-intensive benchmarks such as BrowseComp-Plus shows that well-configured lexical retrieval can surface high-quality evidence, yet agents may still fail to connect documents carrying evi...
-
-### [Question's Gambit: The First Move Matters in Agentic Deep Search](https://doi.org/10.48550/arxiv.2609.14412)
-
-- **Authors:** Radin Hamidi Rad, Amin Bigdeli, Negar Arabzadeh, Sajad Ebrahimi, Charles L. A. Clarke, Benjamin C. M. Fung, et al.
-- **Date:** 2026-09-13
-- **Source:** openalex
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies autonomous or deep research agents.
-- **Tags:** deep-research-agents
-- **Abstract summary:** Deep research agents answer complex questions through iterative loops of searching, reading, and reasoning. Recent work on reasoning-intensive benchmarks such as BrowseComp-Plus shows that well-configured lexical retrieval can surface high-quality evidence, yet agents may still fail to connect documents carrying evi...
-- **Automated evidence-based assessment:** 77/100 · Promising · Medium confidence · full text
-- **Positive signals:** The contribution is stated explicitly.; The available text identifies data or a benchmark used by the work.
+- **Tags:** deep-research-agents, web-research
+- **Abstract summary:** Autonomous research agents aim to automate scientific workflows, from proposing ideas to conducting experiments and analyzing results. Yet current AI and research agents can propose more directions than available resources allow them to pursue. Moreover, each attempt could consume substantial resources, requiring ag...
 
 ## Maybe Relevant
 
-### [Agentic Flakiness: Reframing LLM Agent Reliability Through the Lens of Flaky-Test Research](https://doi.org/10.21275/sr26911014649)
+### [Experimental Campaign for Political Behaviour in LLM Agents: Experimental Insights on Governance, Global Power Asymmetries, Security Risks, and Knowledge Construction Dynamics](https://doi.org/10.5281/zenodo.19052473)
 
-- **Authors:** Omkar Manohar Ghag
-- **Date:** 2026-09-16
+- **Authors:** Giorgio Dalla Volta, Giacomo Longo, Alessio Merlo
+- **Date:** 2026-09-17
 - **Source:** openalex
 - **Relevance:** maybe (45/100)
-- **Reason:** Review candidate: research-adjacent system, but the agentic research workflow evidence is limited.
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
 - **Tags:** research-adjacent
-- **Abstract summary:** Large language model (LLM) agents are nondeterministic: the same task, run twice under identical conditions, may succeed once and fail once. The agent-evaluation literature has begun to measure this- most directly through the pass^k metric introduced with τ-bench- but treats it as a novel phenomenon. It is not. Soft...
-- **Automated evidence-based assessment:** 42/100 · Uncertain · Low confidence · title and abstract · Limited abstract-only assessment
-- **Positive signals:** The available text identifies data or a benchmark used by the work.
+- **Abstract summary:** This is the deep research and sentiment analysis corpora for the paper "Experimental Campaign for Political Behaviour in LLM Agents: Experimental Insights on Governance, Global Power Asymmetries, Security Risks, and Knowledge Construction Dynamics".
+
+### [Experimental Campaign for Political Behaviour in LLM Agents: Experimental Insights on Governance, Global Power Asymmetries, Security Risks, and Knowledge Construction Dynamics](https://doi.org/10.5281/zenodo.22815125)
+
+- **Authors:** giorgio volta, Giacomo Longo, Alessio Merlo
+- **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** This is the deep research and sentiment analysis corpora for the paper "Experimental Campaign for Political Behaviour in LLM Agents: Experimental Insights on Governance, Global Power Asymmetries, Security Risks, and Knowledge Construction Dynamics".

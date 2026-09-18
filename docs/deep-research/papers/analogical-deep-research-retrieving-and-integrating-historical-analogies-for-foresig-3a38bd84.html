@@ -59,223 +59,16 @@
             <p>Systematic comparisons between current situations and structurally similar past events in the historical, i.e., historical analogies, is among the most powerful tools for foresight analysis. In this work, we present a new task called Analogical Deep Research (ADR) to Large Language Model (LLM) agents and construct t...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality reviewed</h2>
-      <p>The manuscript provides an innovative, conceptually well-grounded, and clearly validated extension to agentic reasoning and applied foresight analysis. The theoretical framework directly motivates the algorithmic components, and the extensive appendices provide complete prompt configurations, algorithmic pseudo-code, and evaluation rubrics.</p>
-      <p>The authors acknowledge limitations openly, including the relatively modest scale of ADR-bench (15 events) and its heavy reliance on LLM judges for rubric-based scoring.</p>
+      <h2>Quality pending</h2>
+      <p>Scientific quality has not yet been assessed.</p>
+      <p>Manuscript evidence has not been reviewed.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
-        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
-        <p>Assessed: 2026-09-18T09:51:17.162536+00:00.</p>
-        <p>Coverage: 121168 of 121168 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Analogical Deep Research
-Retrieving and Integrating Historical Analogies
-for Foresight Analysis
-Yongqiang Chen1,2, Guangyi Chen1,2, Yuewen Sun1,2 and Kun Zhang1,2
-1Mohamed bin Zayed University of Artificial Intelligence,2Carnegie Mellon University
-Systematic comparisons between current situations and structurally similar past events in history,
-i.e., historical analogies, is among the most powerful tools for foresight analysis. In this work, we
-present a new task calledAnalogical Deep Research(ADR) to Large Language Model (LLM) agents
-and construct the first ADR benchmarkADR-bench to study whether LLM agents are able to find and
-leverage historical analogies when doing foresight analysis. Our investigation reveals a key obstacle:
-LLM agents are poor at finding analogies because they match on surface features rather than underlying
-mechanisms. We argue that ADR is inherently a causal </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>similarity, and it is challenging forDR agents to
-find them.
-to LLM agents, where one aims to find historical events that align with the given target event (or
-the current situation) in terms of the underlying mechanism. We construct the firstADRbenchmark
-calledADR-bench that consists of15events, including10past events with literature-documented
-historical analogies, as well as5recent events without literature documents. ThroughADR-bench,
-we find that the state-of-the-artDR agents, includingOpenAI Deep Research (35),Gemini Deep
-Research (16), Qwen Deep Research (44), and MiroFlow (43) do not actively leverage the
-historical analogies when doing foresight analysis. Even with historical analogies identified, the
-analysis is rather shallow.
-We show thatADR is inherently a causal problem that the agent requires understanding theunder-
-lying hidden mechanism and factorsshared across </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>historical events and the current conditions (26).
-Aligned with the observations in the literature (28), identifying analogies merely based on the surface-
-level similarity suffers from a non-identifiability issue and degraded foresight prediction. In addition,
-sufficient foresight requires sufficient coverage of the underlying structure.
-2
-Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-Motivated by our theoretical analysis, we proposeCausalAnalogical Researcher (CANA), that
-processeseventsintostructuraldecompositionsincludingpreconditions, temporalchains, mechanisms,
-and outcomes. Retrieving through the decomposed structural representation of events improves more
-than 10% than the state-of-the-art self-reflection method by Li et al.(28). Furthermore, we integrate
-the structural decomposition into the open-sourcedDR agentMiroFlow, that </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>iteratively retrieves
-new analogies to cover sufficient aspects of the underlying mechanisms. InADR-bench, we show that
-CANA helps identify more informative analogies, uncovering hidden driving factors, and improves the
-depth of foresight analysis. Our contributions can be summarized as follows:
-• We present the task ofAnalogical Deep Researchwith the firstADR-bench, showing the limitation
-of existingDRin retrieving and integrating historical analogies for foresight analysis;
-• We present a formal framework ofADR and show that structural representation and sufficent
-coverage are two principles to retrieve satisfying historical analogies;
-• We propose the firstADR agent CANA, that achieves more than 10% performance in historical
-analogy retrieval and integration than the state-of-the-art methods.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We begin by establishing necessary concepts, and full details of the theoretical framework can be
-found in Appendix C.
-Definition 1(Event Representation).An event 𝐸 has two representations: (i)descriptive𝐷(𝐸)∈ℝ 𝑝,
-capturing observable surface features (entities, domain, timeline); and (ii)mechanistic𝑀(𝐸)=
-(𝑉𝐸,E 𝐸), where 𝑉𝐸 ={𝑣 1,...,𝑣 𝑘} are causal factors,𝐺𝐸 =(𝑉 𝐸,E 𝐸) is a directed graph encoding
-causal relationships. Depending on the event-specific context𝜒𝐸, the same𝑀(𝐸) can have different
-instantiations at the descriptive level𝐷(𝐸)=ℎ(𝑀(𝐸),𝜒 𝐸).
-Given a target event𝐸𝑇, we aim to find an aligned source event𝐸𝑆 where they share a set of
-structural positions{𝑠1,...,𝑠 𝐿} in the underlying causal graphs describing the mechanisms of𝐸𝑆 and
-𝐸𝑇. Positions are not pre-specified but discovered through cross-event alignment (14). Shown as in
-Fig. 1, roles can be assigned to the objects </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After defining the goal ofADR, we can explore whether the state-of-the-artDR agents are able to find
-useful historical analogies for foresight analysis. We begin by constructing the firstADR benchmark
-ADR-benchwith the aim of providing insights on the performance of existingDRagents.
-Event corpus.Essentially, we need events where both historical analogies are available and the
-foresight quality can be verified. However, one can hardly find events that jointly satisfy all the
-criteria. Hence, we incorporate two types of events: 10historical eventsthat are widely studied in
-the literature, and5forward eventscovering currently unfolding situations. The15events span
-financial (5), geopolitical (6), and technology (4) domains.
-Per-event annotation and task design.Each event is annotated with: (1) temporal cutoff with
-rationale; (2) pre-cutoff analyst&#x27;s brief; (3) causal structure: including </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To understand why existingDR agents fail to identify useful analogies to perform foresight analysis,
-we provide the following theoretical discussions. To begin with, most existingDR agents are trained
-on planning and synthesis queries and results at the surface-level descriptions (22), while finding
-historical analogies require structural alignment of the underlying objects, roles and mechanisms.
-Theorem 4(Surface Non-Identifiability).Suppose there exist two admissible worlds 𝑤0,𝑤 1 with
-identical surface observationsO∞
-𝐷(𝑤0)=O ∞
-𝐷(𝑤1), but for a hidden position𝑠, 𝑍𝑠(𝑤0)≠𝑍 𝑠(𝑤1) where
-𝑍𝑠(𝑤)=1[𝑠∈ S true
-𝑇 (𝑤)] that 𝑠 does not align between𝑤0 and 𝑤1, Then, no surface-level method
-can identify whether𝑠 is active:inf ˆ𝑍𝑠 max𝑗 Pr𝑤𝑗( ˆ𝑍𝑠 ≠𝑍 𝑠(𝑤𝑗))≥ 1/2. If the two worlds imply separated
-foresight distributionsTV(𝑃 𝑤0
-𝐹 ,𝑃 𝑤1
-𝐹 )≥ 2Δ𝑠, then any surface-level forecast satisfiesmax𝑗 TV(b𝑃𝐹,𝑃 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>𝑤𝑗
-𝐹)≥Δ 𝑠.
-This holds for any number of analogies retrieved.
-The full statement and the proof of Theorem 4 is given in Appendix C. Intuitively, Theorem 4
-implies that aligning analogies for foresight analysis requires aligning the underlying structural roles
-instead of the surface-level descriptions. It also explains why it is widely observed in the literature
-that LLMs are struggling with finding the analogies (28, 42).
-Nevertheless, given the partial observability of both the target events and the potential source
-events, for𝐾 retrieved analogies, we may only align a few positions, which may suffer from misalign-
-ment issues, since multiple events may coincidentally align with each other.
-Theorem 5(Cross-Analogy Confirmation).Let 𝑋𝑘,𝑠 =1[analogy𝐸 𝑘 confirms position𝑠] with 𝑃(𝑋𝑘,𝑠 =
-1|𝑍 𝑠 = 1)=𝑞 𝑘,𝑠 and 𝑃(𝑋𝑘,𝑠 = 1|𝑍 𝑠 = 0)=𝑝 𝑘,𝑠, conditionally independent across𝑘 given 𝑍𝑠, then
-log 𝑃(𝑍 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>𝑠=1|𝑋A)
-𝑃(𝑍 𝑠=0|𝑋A) =log 𝜋𝑠
-1−𝜋𝑠
-+ Í
-𝑘∈A
-h
-𝑋𝑘,𝑠 log
-𝑞𝑘,𝑠
-𝑝𝑘,𝑠
-+(1−𝑋 𝑘,𝑠)log 1−𝑞𝑘,𝑠
-1−𝑝𝑘,𝑠
-i
-, where 𝜋𝑠 =𝑃(𝑍 𝑠 = 1) is the prior
-probability that position𝑠 is active before observing any analogical evidence. Each independent confirming
-analogy multiplies posterior odds by𝑞𝑘,𝑠/𝑝𝑘,𝑠, so coincidence probability decays exponentially.
-The full statement and proof of Theorem 5 are given in Appendix C. Theorem 5 states the
-conditions in order to sufficiently align the structures between the target events and the analogies.
-For example, given𝜋𝑠=0.5,𝑞𝑠=1,𝑝 𝑠=0.2,𝛿= 0.05, one requires 2 independent analogies per position
-to distinguish the structural necessity.
-Discussions with existing causal identifiability theory.AsADR is essentially a causal problem,
-one could also draw analogical relations between our theoretical results and the causal identifiability
-theories. For example, Theorem 5 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Built upon discussions in Sec. 3, we proposeCausalAnalogical Researcher (CANA) to realize the two
-principles, via (i) structural decomposed representation; and (ii) structural reflective generation. An
-overview ofCANAis illustrated in Fig. 3.
-6</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-Figure 3| Overview ofCausalAnalogical Researcher (CANA). CANA decomposes each event into
-a structural representation (preconditions, temporal chains, mechanisms, outcomes),
-realizingPrinciple 1(retrieve on the mechanism𝑀(𝐸)rather than the surface description𝐷(𝐸)). It
-then performs structural reflective generation, using feedback on covered and uncovered structural
-positions to iteratively retrieve cross-confirming analogies until each hidden position is supported by
-≥ 2independent analogies, realizingPrinciple 2. The resulting Structural Analogy Brief (SAB), which
-contains mechanism statements, per-analogy limitations, cross-analogy invariants, and predicted
-hidden factors, is passed as context to the mainDRagent (MiroFlow).</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-Table 2| Detailed evaluation results on General Analogies using a 9-item structured rubric. The
-column headers denote:C. Isom.(Chain Isomorphism),Dir. Con.(Direction Consistency),Map.
-Con.(Mapping Consistency),Over. Suf.(Overlap Sufficiency),Idio. Cov.(Idiosyncrasy Coverage),
-Sys. Alig.(System Alignment),Nov.(Novelty),Surf. Sim.(Surface Similarity), andCalib. B.
-(Calibration Bonus). Final represents the weighted composite score. All evaluations are conducted by
-GPT-5.4. Best results within each LLM block arebolded, and second best areunderlined.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Setup.We evaluate10agent configurations on all15 ADR-bench events:3commercial DR agents
-(OpenAI Deep Research (35),Gemini Deep Research (16),Qwen Deep Research (44));3
-vanillaMiroFlow agents (43) withClaude Sonnet 4.5 (3),GPT-5.4 (36), andQwen3-8B (48);
-and3 CANA agents with the same three backbones. All agents receive the identical prompts as given
-by ADR-bench. Scoring uses the rubric-based evaluation withClaude Sonnet 4.5. We report the
-evaluation metrics as introduced in Sec. 3.2.
-Table 3| Results onADR-bench. Left:10historical events (22hidden factors). Right:5forward
-events (20hidden factors, outcomes unfolding). L3-S+L4 = cross-analogy structural claims per
-event; HF@L4 = hidden factors inferred via analogical reasoning; RAS = analysis quality; FQS𝑑
-= depth-filtered foresight quality; Gr% = fraction of claims with mechanism grounding≥ 2. All
-commercialDRagents producezeroHF@L4 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>across both splits.
-Historical events (10) Forward events (5)
-Agent L3S+L4 HF@L4 RAS FQS𝑑 Gr% L3S+L4 HF@L4 RAS FQS𝑑 Gr%
-Comm.
-Gemini DR 0.8 0/22 0.967 0.71 0.18 0.0 0/20 0.889 0.79 0.21
-ChatGPT DR 0.0 0/22 0.741 0.53 0.13 0.0 0/20 0.630 0.47 0.07
-Qwen DR 0.0 0/22 0.689 0.37 0.15 0.0 0/20 0.600 0.27 0.08
-Vanilla
-MiroFlow(GPT-5.4) 0.3 1/22 0.933 0.73 0.34 0.0 0/20 0.837 0.86 0.42
-MiroFlow(Sonnet-4.5) 0.1 0/22 0.819 0.82 0.35 1.2 1/20 0.800 0.55 0.12
-MiroFlow(Qwen3-8B) 0.0 0/22 0.319 0.29 0.07 0.0 0/20 0.570 0.00 0.00
-Ours
-CANA(Sonnet-4.5) 14.0 13/22 1.000 0.77 0.74 16.6 3/20 1.000 0.56 0.84
-CANA(GPT-5.4) 11.6 7/22 0.993 0.92 0.94 13.4 3/20 1.000 0.86 0.94
-CANA(Qwen3-8B) 3.2 1/22 0.607 0.82 0.81 6.0 3/20 0.807 0.62 0.81
-Table 3 shows the main results across all15events. From the results, we can find that
-Finding 1: DR agents are struggling in foresight analysis with historical </blockquote></details></li><li><strong>Contribution clarity — pages 16–17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>writing side, we use LLMs to assist
-with improving the writing of this work.
-Limitation and Future Works
-As a pilot work inADR, the scale ofADR-bench might be a bit limited, and the evaluation also relies
-on the LLMs. Future works could scale up the curation ofADR-bench as well as more fine-grained
-and human-aligned evaluation protocols.
-Broader impacts
-We study using LLMs forAnalogical Deep Researchthat will benefit the whole humanity and society.
-This work does not involve human subjects or personally identifiable information beyond public
-16
-Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-benchmarks used under their licenses.</blockquote></details></li><li><strong>Contribution clarity — pages 32–33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-E. More Details ofCANA
-E.1.CANAfor historical analogy generation
-The algorithmic description ofCANAused for
-32
-Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis
-Algorithm 1TheCANAFramework
-1: Required:Target event 𝐸𝑇; candidate analogy universeU; LLMM; representation extrac-
-tor Repr(·) that produces(𝐷(𝐸),𝑀(𝐸)) ; pattern abstractorAbs(·) that produces the abstract
-causal pattern𝔓 and its structural positionsS𝔓; candidate generatorGen(·) ; self-analogy filter
-Filter(·,·) ; per-position alignment scorerAlign(·,·) that produces{𝑋𝑘,𝑠}𝑠∈S 𝔓 for analogy𝐸𝑘;
-aggregate deciderDecide(·) ; max reflection rounds𝑅; candidates per round𝐾; carryover size𝑀;
-2:Extracting the target representations(𝐷(𝐸 𝑇),𝑀(𝐸 𝑇))←Repr(M,𝐸 𝑇);
-3: Abstracting the target pattern(𝔓,S </blockquote></details></li><li><strong>Contribution clarity — page 33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>𝔓) ←Abs(M,𝐷(𝐸 𝑇),𝑀(𝐸 𝑇)), whereS𝔓 enumerates the
-structural positions to be confirmed by analogies;
-4:Sampling an initial candidate analogy setA(0)⊂UviaA (0)←Gen(M,𝔓,𝐾);
-5: Initializingthetried-set T←A (0), thecarryoverpoolK←∅ , andthelatestdecision D∗←null ;
-6:forround𝑡∈[0,1,...,𝑅]do
-7:Initializing the per-round evaluation setE (𝑡)←∅;
-8:foreach candidate analogy𝐸 𝑘∈A (𝑡) do
-9: if Filter(M,𝐸 𝑇,𝐸 𝑘) flags 𝐸𝑘 as alias, sub-instance, or proper subset of𝐸𝑇, i.e.,𝐸𝑘 collapses
-to𝐸 𝑇 rather than residing inU\{𝐸 𝑇}in the strict sensethen
-10:Discarding𝐸 𝑘;
-11:else
-12:Extracting(𝐷(𝐸 𝑘),𝑀(𝐸 𝑘))←Repr(M,𝐸 𝑘)via Wikipedia-grounded retrieval followed by
-mechanism extraction;
-13: Producing the position-level alignment evidence {𝑋𝑘,𝑠}𝑠∈S 𝔓 ←
-Align(M,(𝐷(𝐸 𝑇),𝑀(𝐸 𝑇)),(𝐷(𝐸 𝑘),𝑀(𝐸 𝑘))), where each𝑋𝑘,𝑠 records both the confirming
-match and the residual gap of analogy𝐸𝑘 at position𝑠;
-14:UpdatingE (𝑡)←E </blockquote></details></li><li><strong>Contribution clarity — page 33</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(𝑡)∪{(𝐸 𝑘,{𝑋 𝑘,𝑠}𝑠)};
-15:end if
-16:end for
-17:Merging the carryover from the previous round:E (𝑡)←E (𝑡)∪K;
-18: Computing the aggregate decision D(𝑡) ←Decide(M,𝔓,E (𝑡)), which (i) prunes can-
-didates violating five hard rejection rules (alias, sub-event, super-set, generic descriptor,
-scope-class mismatch), (ii) ranks the eligible analogies by the fidelity of the induced struc-
-tural mapping 𝜙𝑘 from 𝐸𝑘 to 𝐸𝑇, equivalently by the support that {𝑋𝑘,𝑠}𝑠 provides for
-b𝑃A
-𝑠 across 𝑠∈ S 𝔓 under mechanism specificity and scale alignment, and (iii) returns
-{𝐸(𝑡)∗,top-𝑀,is_sufficient,common_gap,next_focus};
-19:UpdatingD ∗←D (𝑡);
-20: ifD(𝑡).is_sufficient holds, indicating that the target-side overlapΩpos is adequately covered by
-the chosen analogythen
-21:break;
-22:end if
-23:Updating the carryover poolK←D (𝑡).top-𝑀;
-24: Generating the next-round candidate analogies A(𝑡+1) ←
-Gen(M,𝔓,D </blockquote></details></li></ul>
+        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
+        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
+        <p>Assessed: not assessed.</p>
+
+        <ul></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -314,7 +107,7 @@ Gen(M,𝔓,D </blockquote></details></li></ul>
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

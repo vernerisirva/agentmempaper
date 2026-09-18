@@ -1,0 +1,105 @@
+{
+  "batch": "batch-4",
+  "status": "PREPARED_NOT_EXECUTED",
+  "prepared_at": "2026-09-18T09:20:00+00:00",
+  "frozen_code_sha": "40a203eeeca232d076054ad569093bc0f974b1ad",
+  "scientific_configuration": {
+    "assessment_version": "quality-promotion-v1",
+    "rubric_version": "scholarly-rubric-v1",
+    "gate_version": "dual-promotion-v2",
+    "model_pair_version": "model-pair-v1",
+    "primary": {"provider": "google", "model": "gemini-3.8-flash", "family": "gemini",
+                "credential_env": "GEMINI_API_KEY",
+                "base_url": "https://generativelanguage.googleapis.com/v1beta/openai"},
+    "adjudicator": {"provider": "openrouter", "model": "deepseek/deepseek-v4-pro-0813",
+                    "family": "deepseek", "credential_env": "OPENROUTER_API_KEY",
+                    "base_url": "https://openrouter.ai/api/v1"},
+    "independent_families": true,
+    "generation": {"temperature": 0, "max_output_tokens": 4096, "hidden_reasoning": "disabled",
+                   "max_request_bytes": 300000, "response_format": "strict json_schema"},
+    "call_budget_per_paper": {"primary": 1, "adjudicator": 2, "total": 3}
+  },
+  "eligible_population": {
+    "predicate": [
+      "high relevance",
+      "never scientifically quality-assessed",
+      "never adjudicated",
+      "not explicitly suppressed"
+    ],
+    "exclusion_sources": [
+      "every canonical id with any persisted assessment row in any track database",
+      "the frozen Batch-3 roster, attempted or not",
+      "the Batch-1 calibration identities",
+      "the all_prior_assessed_ids manifest",
+      "every canonical id with saved operator run artifacts, including a started primary call with no stored row",
+      "DOI, arXiv and OpenAlex aliases of all of the above, across tracks"
+    ],
+    "exclusion_set_size": 478,
+    "counts": {"agent_memory": 526, "deep_research": 113, "engram": 0, "total": 639},
+    "commitment_sha256": {
+      "agent_memory": "ca72f229b62405e8548e9ead5118c3d221017d5e15b56007021d6cfd06db8012",
+      "deep_research": "bf6731a8a41406b9c5d2d29f392a4977da59b2f0f44146cf333f8d36ace464a2",
+      "engram": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "commitment_definition": "SHA-256 over the newline-joined sorted canonical ids of the eligible population for that track",
+    "identities_selected": false,
+    "manuscripts_acquired": false,
+    "scientific_fields_inspected": false
+  },
+  "execution_eligibility": {
+    "conditions": ["complete manuscript can be acquired", "manuscript coverage gate returns PASS"],
+    "nature": "deterministic execution eligibility, not a scientific-quality filter",
+    "applied": "at selection time, before the roster freezes and before any model call",
+    "uses_models": false,
+    "inspects_scientific_quality": false,
+    "failure_handling": "a paper failing acquisition or the coverage gate is recorded as outside the Batch-4 evaluation population and is replaced by the next eligible paper in deterministic order; it is not a batch outcome and does not consume a roster slot"
+  },
+  "selection_rule": {
+    "ordering": "the existing offline research ranking used for Batch 3: production duplicate merging, rule refresh, existing curation, quality presentation, newness and _sort_latest_relevant; key is newness, high relevance, downrank flag, date bucket/date, combined rank, relevance score, lowercase title",
+    "procedure": "walk the eligible population in deterministic order, apply the execution-eligibility filter, and take the first papers that pass",
+    "per_track_maximum": 5,
+    "total_maximum": 15,
+    "expected_maximum_given_population": 10,
+    "no_likely_success_selection": true,
+    "no_availability_biased_reordering": true,
+    "no_author_institution_or_venue_filter": true,
+    "no_quota_transfer_between_tracks": true,
+    "replacement_permitted_for_scientific_outcomes": false
+  },
+  "freezing": {
+    "roster_frozen_before_any_model_call": true,
+    "audit_sample_frozen_before_any_outcome": true,
+    "audit_rule": "positions 1, floor(n/2)+1 and n in each populated track roster; audit all if n<3, zero if n=0; additionally audit every promotion and every primary-pass/adjudicator-non-pass disagreement after all outcomes are frozen",
+    "code_changes_during_batch": false,
+    "manual_output_corrections_permitted": false,
+    "target_promotion_rate": null
+  },
+  "promotion_rule": {
+    "unchanged": true,
+    "requires": ["high relevance", "primary assessor PASS", "independent adjudicator PASS",
+                 "deterministic provenance and integrity PASS", "not explicitly suppressed"],
+    "disagreement": "not promoted",
+    "technical_failure": "not promoted"
+  },
+  "generalization_scope": "Batch-4 results apply to high-relevance papers with retrievable, coverage-valid manuscript evidence. They do not generalize to all discovered papers, and they say nothing about papers whose manuscripts cannot be acquired or whose coverage gate fails.",
+  "cost_basis": {
+    "source": "bounded integration smoke on 2026-09-18, two assessable papers, four calls",
+    "per_paper_mean": {
+      "gemini_primary": {"input_tokens": 32355, "output_tokens": 1007, "monetary_cost": "UNKNOWN", "basis": "covered_by_msc_allocation"},
+      "deepseek_adjudicator": {"input_tokens": 29760, "output_tokens": 447, "monetary_cost_usd": 0.03134568}
+    },
+    "projection": {
+      "5_papers": {"gemini_input_tokens": 161773, "gemini_output_tokens": 5033, "deepseek_input_tokens": 148800, "deepseek_output_tokens": 2235, "deepseek_cost_usd": 0.1567284},
+      "10_papers": {"gemini_input_tokens": 323545, "gemini_output_tokens": 10065, "deepseek_input_tokens": 297600, "deepseek_output_tokens": 4470, "deepseek_cost_usd": 0.3134568},
+      "15_papers": {"gemini_input_tokens": 485318, "gemini_output_tokens": 15098, "deepseek_input_tokens": 446400, "deepseek_output_tokens": 6705, "deepseek_cost_usd": 0.4701852}
+    },
+    "excluded_from_projection": "adjudicator contract retries, which add at most one further adjudication per paper",
+    "note": "Gemini monetary cost is not reported by the endpoint and the MSc allocation rate is not established in this project. It is recorded as UNKNOWN against the allocation with exact token counts; it is not assumed to be zero and no amount is fabricated."
+  },
+  "prohibitions": [
+    "do not run Batch 4 from this preparation task",
+    "do not start recurring production assessment",
+    "do not reinterpret or rerun Batch 3",
+    "do not publish assessment databases, snapshots or raw execution records"
+  ]
+}

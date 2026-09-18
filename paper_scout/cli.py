@@ -480,9 +480,17 @@ def _batch_population(args) -> int:
                 raise SystemExit(f"{name} is not used with --verify; verification covers "
                                  "exactly the tracks, rosters and build time the manifest records")
         manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
-        recorded = track_configs(Path(args.config), tuple(manifest["sources"]["exclusion_tracks"]))
-        result = verify_manifest(
-            manifest, {track: recorded[track] for track in manifest["sources"]["tracks"]}, recorded)
+        scanned = tuple(manifest["sources"]["exclusion_tracks"])
+        built = tuple(manifest["sources"]["tracks"])
+        # A manifest naming an unknown track, or a built track outside its own exclusion
+        # scope, cannot be verified. Say so rather than failing on a lookup deeper in.
+        unverifiable = sorted({*scanned, *built} - set(TRACKS) | (set(built) - set(scanned)))
+        if unverifiable:
+            raise SystemExit("this manifest cannot be verified: it names "
+                             + ", ".join(unverifiable)
+                             + " outside the tracks its own exclusion scope covers")
+        recorded = track_configs(Path(args.config), scanned)
+        result = verify_manifest(manifest, {track: recorded[track] for track in built}, recorded)
         for track, detail in sorted(result.tracks.items()):
             print(f"{track} ordered_ids_match={detail['ordered_ids_match']} "
                   f"population_sha256_match={detail['population_sha256_match']} "

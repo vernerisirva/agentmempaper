@@ -562,6 +562,23 @@ class CommandTests(PopulationFixture):
             self.assertIn("--build-time is required", result.stderr)
             self.assertFalse((Path(tmp) / "m.json").exists())
 
+    def test_a_manifest_naming_unverifiable_tracks_fails_cleanly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            manifest = Path(tmp) / "manifest.json"
+            self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                         "--population-track", "agent_memory", config=config)
+            stored = json.loads(manifest.read_text(encoding="utf-8"))
+            for broken in ({"sources": {"tracks": {"not_a_track": {}}}},
+                           {"sources": {"exclusion_tracks": {"agent_memory": {}},
+                                        "tracks": {"deep_research": {}}}}):
+                damaged = {**stored, "sources": {**stored["sources"], **broken["sources"]}}
+                manifest.write_text(json.dumps(damaged), encoding="utf-8")
+                result = self.run_cli("--manifest", str(manifest), "--verify", config=config)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("cannot be verified", result.stderr)
+                self.assertNotIn("KeyError", result.stderr)
+
     def test_a_roster_built_manifest_round_trips_through_verification(self):
         with tempfile.TemporaryDirectory() as tmp:
             config = self.write_config(tmp, ["agent_memory"])

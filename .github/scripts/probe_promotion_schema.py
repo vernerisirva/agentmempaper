@@ -108,7 +108,9 @@ def main(argv=None):
     settings = settings_from_env()
     if settings is None:
         print('no scientific model pair is configured; nothing to probe')
-        return 0
+        # Asking for a live probe and getting none is a failure to answer the question,
+        # not an answer. Only a dry run is allowed to report nothing and succeed.
+        return 1 if args.live else 0
     failures = [f for f in (probe(role, role_settings, args.live) for role, role_settings
                             in zip(('primary', 'adjudicator'), settings)) if f]
     if not args.live:

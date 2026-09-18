@@ -95,12 +95,14 @@ class ProbeTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn(INDEPENDENCE_FIELD, output)
 
-    def test_an_unconfigured_pair_probes_nothing(self):
-        output = io.StringIO()
-        with (patch.dict('os.environ', {}, clear=True),
-              patch.object(probe_promotion_schema, 'send', refuse), redirect_stdout(output)):
-            self.assertEqual(probe_promotion_schema.main(['--live']), 0)
-        self.assertIn('no scientific model pair is configured', output.getvalue())
+    def test_an_unconfigured_pair_fails_a_live_probe_and_passes_a_dry_run(self):
+        """Asking for a live answer and getting none is a failure to answer."""
+        for argv, expected in ((['--live'], 1), ([], 0)):
+            output = io.StringIO()
+            with (patch.dict('os.environ', {}, clear=True),
+                  patch.object(probe_promotion_schema, 'send', refuse), redirect_stdout(output)):
+                self.assertEqual(probe_promotion_schema.main(argv), expected)
+            self.assertIn('no scientific model pair is configured', output.getvalue())
 
 
 if __name__ == '__main__':

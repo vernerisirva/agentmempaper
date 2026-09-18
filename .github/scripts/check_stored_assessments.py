@@ -131,7 +131,6 @@ def check(path: Path, versions: Counter, failures: list, counted: list) -> int:
         # Nothing about one row may end the run, so the whole of its handling is
         # guarded, not only the load. A row is reported, never repaired or rethrown.
         try:
-            canonical_id = value.get('canonical_id')
             versions[(value.get('assessment_version'), value.get('quality_gate_version'),
                       value.get('rubric_version'), value.get('quality_status'))] += 1
             assessment = QualityAssessment.from_dict(value)

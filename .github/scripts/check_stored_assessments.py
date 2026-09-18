@@ -32,46 +32,77 @@ DEFAULT_DATABASES = ('data/paper_scout.sqlite3', 'data/deep_research/paper_scout
                      'data/engram/paper_scout.sqlite3')
 
 
-def rows(path: Path):
-    connection = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+def payloads(path: Path):
+    """Yield one stored payload at a time, or a failure string for an unreadable row.
+
+    A database that is present but is not an assessment history, and a row whose
+    payload is not JSON, are both reported like any other unreadable row. Nothing here
+    raises: the caller must be able to finish the remaining databases.
+    """
     try:
-        for (payload,) in connection.execute(
-                'SELECT payload_json FROM paper_quality_assessments ORDER BY id'):
-            yield json.loads(payload)
+        connection = sqlite3.connect(f'file:{path}?mode=ro', uri=True)
+    except sqlite3.Error as exc:
+        yield f'{path}: unreadable database ({type(exc).__name__}: {exc})'
+        return
+    try:
+        cursor = connection.execute(
+            'SELECT id, payload_json FROM paper_quality_assessments ORDER BY id')
+        while True:
+            try:
+                row = cursor.fetchone()
+            except sqlite3.Error as exc:
+                yield f'{path}: unreadable row ({type(exc).__name__}: {exc})'
+                return
+            if row is None:
+                return
+            try:
+                yield json.loads(row[1])
+            except (TypeError, ValueError) as exc:
+                yield f'{path}: row {row[0]}: unreadable payload ({type(exc).__name__}: {exc})'
+    except sqlite3.Error as exc:
+        yield f'{path}: unreadable database ({type(exc).__name__}: {exc})'
     finally:
         connection.close()
 
 
+def diagnosis(value: dict) -> str | None:
+    """Name the invariant a row breaks, for a message the model layer does not phrase.
+
+    This explains a rejection; it never decides one. The model layer is the only
+    authority on whether a stored row is valid, so every row is loaded through it
+    regardless of what this says, and these predicates mirror its named constants.
+    """
+    gate = value.get('quality_gate_version')
+    if (value.get('assessment_version') in PROMOTION_ASSESSMENT_VERSIONS
+            and value.get('quality_status') == 'pass'
+            and gate not in DUAL_PROMOTION_GATE_VERSIONS):
+        return f'{value.get("assessment_version")} pass on legacy gate {gate}'
+    if (any(INDEPENDENCE_FIELD in (value.get('execution') or {}).get(role, {})
+            for role in ('primary', 'adjudicator'))
+            and gate not in INDEPENDENCE_GATE_VERSIONS):
+        return f'gate {gate} carries evaluation independence'
+    return None
+
+
 def check(path: Path, versions: Counter, failures: list) -> int:
     seen = 0
-    for value in rows(path):
+    for value in payloads(path):
+        if isinstance(value, str):
+            failures.append(value)
+            continue
         seen += 1
         canonical_id = value.get('canonical_id')
-        gate = value.get('quality_gate_version')
-        version = value.get('assessment_version')
-        versions[(version, gate, value.get('rubric_version'), value.get('quality_status'))] += 1
-        # A promotion assessment version on a legacy admission gate is an inconsistent
-        # record that fails closed on load. Report it plainly rather than as a stack trace.
-        if (version in PROMOTION_ASSESSMENT_VERSIONS and value.get('quality_status') == 'pass'
-                and gate not in DUAL_PROMOTION_GATE_VERSIONS):
-            failures.append(f'{path}: {canonical_id}: {version} pass on legacy gate {gate}')
-            continue
-        # The dimension belongs to the gate that introduced it and is never back-dated.
-        carries = any(INDEPENDENCE_FIELD in (value.get('execution') or {}).get(role, {})
-                      for role in ('primary', 'adjudicator'))
-        if carries and gate not in INDEPENDENCE_GATE_VERSIONS:
-            failures.append(f'{path}: {canonical_id}: gate {gate} carries evaluation independence')
+        versions[(value.get('assessment_version'), value.get('quality_gate_version'),
+                  value.get('rubric_version'), value.get('quality_status'))] += 1
         try:
             assessment = QualityAssessment.from_dict(value)
-        except Exception as exc:  # noqa: BLE001 - report every unreadable row, never raise.
-            failures.append(f'{path}: {canonical_id}: unreadable ({type(exc).__name__}: {exc})')
-            continue
-        if (assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS
-                and assessment.execution.get('outcome') == 'success'):
-            try:
+            if (assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS
+                    and assessment.execution.get('outcome') == 'success'):
                 validate_receipt(assessment)
-            except Exception as exc:  # noqa: BLE001
-                failures.append(f'{path}: {canonical_id}: receipt ({type(exc).__name__}: {exc})')
+        except Exception as exc:  # noqa: BLE001 - report every bad row, never raise.
+            named = diagnosis(value)
+            detail = f'{type(exc).__name__}: {exc}' if named is None else named
+            failures.append(f'{path}: {canonical_id}: {detail}')
     return seen
 
 

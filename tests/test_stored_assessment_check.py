@@ -91,6 +91,47 @@ class StoredAssessmentCheckTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn('carries evaluation independence', output)
 
+    def test_a_present_database_without_an_assessment_history_is_reported(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        path = Path(tmp.name) / 'other.sqlite3'
+        import sqlite3
+        connection = sqlite3.connect(path)
+        with connection:
+            connection.execute('CREATE TABLE unrelated(id INTEGER PRIMARY KEY)')
+        connection.close()
+        code, output = self.run_check(path)
+        self.assertEqual(code, 1)
+        self.assertIn('unreadable database', output)
+        self.assertIn('paper_quality_assessments', output)
+
+    def test_a_malformed_payload_is_reported_and_the_run_continues(self):
+        """The never-raise contract: one bad row must not abort the remaining ones."""
+        import sqlite3
+        path = self.store(self.assessments())
+        connection = sqlite3.connect(path)
+        with connection:
+            connection.execute(
+                'INSERT INTO paper_quality_assessments(canonical_id, assessment_version,'
+                ' rubric_version, assessor_type, assessor_model, source_content_hash,'
+                ' assessed_at, overall_quality_score, recommendation, confidence,'
+                ' assessment_scope, paper_type, payload_json)'
+                " VALUES('fixture','quality-promotion-v1','scholarly-rubric-v1','llm',"
+                "'corrupted-history','hash','2026-09-18T00:00:00',NULL,'unknown','low',"
+                "'full_text','unclear','{not json')")
+        connection.close()
+        code, output = self.run_check(path)
+        self.assertEqual(code, 1)
+        self.assertIn('unreadable payload', output)
+        # The four good rows were still counted after the bad one was reported.
+        self.assertIn('4 stored assessments', output)
+
+    def test_a_later_database_is_still_checked_after_an_earlier_one_fails(self):
+        good = self.store(self.assessments())
+        code, output = self.run_check(Path('does/not/exist.sqlite3'), good)
+        self.assertEqual(code, 0)
+        self.assertIn('4 stored assessments', output)
+
     def write_raw(self, path, row):
         """Insert a row the model layer would refuse, as a corrupted history would hold."""
         import json

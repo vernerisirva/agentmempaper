@@ -20,12 +20,13 @@ from paper_scout.models import ClassificationResult
 from paper_scout.promotion_gate import assess_promotion, role_settings, settings_from_env
 from paper_scout.promotion_protocol import (
     ADJUDICATOR_MODEL, ASSESSMENT_VERSION, DUAL_PROMOTION_GATE_VERSIONS, FIELDS, GATE_VERSION,
-    MODEL_FAMILIES, MODEL_PROVIDERS, PRIMARY_MODEL, model_pair_provenance, validate_pair,
+    INDEPENDENCE_CONTRACT, INDEPENDENCE_FIELD, MODEL_FAMILIES, MODEL_PROVIDERS, PRIMARY_MODEL,
+    model_pair_provenance, parse_response, validate_pair,
 )
 from paper_scout.quality_models import QUALITY_GATE_VERSION, QualityAssessment
 from paper_scout.quality_service import quality_assessment_matches_mode
 from paper_scout.state import PaperStore
-from test_promotion_gate import ENV, fixture
+from test_promotion_gate import ENV, INDEPENDENT, fixture
 
 GOOGLE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions'
 OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions'
@@ -36,10 +37,14 @@ class PairModels:
 
     retries = 1
 
-    def __init__(self, primary='pass', adjudicator='pass', fail=None, bad_adjudications=0):
+    def __init__(self, primary='pass', adjudicator='pass', fail=None, bad_adjudications=0,
+                 independence=INDEPENDENT):
         self.decisions = (primary, adjudicator)
         self.fail = fail
         self.bad_adjudications = bad_adjudications
+        # None reproduces a response from before the dimension existed, which is what
+        # the retired pair actually returned; every other run answers it.
+        self.independence = independence
         self.calls = []
 
     def post_json(self, url, payload, headers):
@@ -58,6 +63,8 @@ class PairModels:
         else:
             value['promotion_decision'] = self.decisions[1]
             value['blocking_reasons'] = [] if self.decisions[1] == 'pass' else ['Unsupported overclaim.']
+        if self.independence is not None:
+            value[INDEPENDENCE_FIELD] = dict(self.independence)
         content = json.dumps(value, ensure_ascii=False)
         if role == 'adjudicator' and self.bad_adjudications > 0:
             self.bad_adjudications -= 1
@@ -89,15 +96,35 @@ def legacy_receipt(models=None):
     The old pair is genuinely executed so every binding hash is authentic, then
     only the fields that version never recorded are removed. Rewriting a bound
     field instead would produce a receipt no real run could have produced.
+
+    Evaluation independence is part of the model response, so it is bound by the
+    content hash and cannot be stripped afterwards. The retired pair is therefore
+    run under the output contract of its own time: the stub omits the dimension and
+    the gate parses without it, exactly as the older code did.
     """
-    result = run_gate(models or PairModels(), LEGACY_ENV)
+    def legacy_parse(content, role, context, **kwargs):
+        return parse_response(content, role, context, **{**kwargs, 'independence': False})
+
+    # The gate of that time asked for no evaluation-independence dimension, recorded no
+    # contract version for one, and wrote dual-promotion-v2 provider provenance under the
+    # assessment version that paired with it. Only those are turned back; every hash the
+    # run produces is the run's own.
+    with (patch('paper_scout.promotion_gate.parse_response', legacy_parse),
+          patch('paper_scout.promotion_gate.INDEPENDENCE_CONTRACT', None),
+          patch('paper_scout.promotion_gate.GATE_VERSION', 'dual-promotion-v2'),
+          patch('paper_scout.promotion_gate.ASSESSMENT_VERSION', 'quality-promotion-v1')):
+        result = run_gate(models or PairModels(independence=None), LEGACY_ENV)
     execution = deepcopy(result.execution)
-    for key in ('model_pair', 'primary_provider', 'adjudicator_provider', 'generation'):
+    for key in ('model_pair', 'primary_provider', 'adjudicator_provider', 'generation',
+                'independence_contract'):
         execution.pop(key, None)
     for call in execution['calls']:
         call.pop('provider', None)
         call.pop('billing', None)
-    return replace(result, quality_gate_version='dual-promotion-v1', execution=execution)
+    # A historical row also carries the assessment and rubric versions of its own
+    # time, which the evaluation-independence change moved on from.
+    return replace(result, quality_gate_version='dual-promotion-v1', execution=execution,
+                   assessment_version='quality-promotion-v1', rubric_version='scholarly-rubric-v1')
 
 
 class ConfigurationTests(unittest.TestCase):
@@ -277,7 +304,7 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(before.quality_gate_version, 'dual-promotion-v1')
         self.assertEqual(len(rows), 2)
         self.assertEqual([r.quality_gate_version for r in rows],
-                         ['dual-promotion-v1', 'dual-promotion-v2'])
+                         ['dual-promotion-v1', GATE_VERSION])
         # The retired row keeps its original pair; history is appended, never rewritten.
         self.assertEqual(rows[0].execution['primary_model'], 'deepseek/deepseek-v4-pro-0813')
         self.assertEqual(rows[1].execution['primary_model'], PRIMARY_MODEL)
@@ -347,22 +374,35 @@ class ProvenanceTests(unittest.TestCase):
                 self.assertNotIn(ENV['GEMINI_API_KEY'], json.dumps(result.to_dict()))
 
     def test_retired_pair_receipt_is_not_treated_as_the_current_configuration(self):
-        """A v1 row is honestly reported as not matching the v2 pair.
+        """A retired row keeps its own versions and is reported as not current.
 
-        Routine selection still excludes it, because the assessment and rubric
-        versions are unchanged, so history is not swept into a re-run.
+        The evaluation-independence change moved the assessment and rubric versions,
+        so a historical row no longer matches them. A stored pass is still excluded
+        from routine reassessment on its own; a historical non-pass is not, which is
+        the intended meaning of a new scientific rubric and is recorded here rather
+        than hidden. Nothing reinterprets the stored row: its own versions are intact.
         """
         legacy = legacy_receipt()
         config = QualityConfig(enabled=True, mode='llm')
         with patch.dict('os.environ', ENV, clear=True):
             self.assertFalse(quality_assessment_matches_mode(config, legacy))
-        self.assertEqual(legacy.assessment_version, ASSESSMENT_VERSION)
+        self.assertEqual(legacy.assessment_version, 'quality-promotion-v1')
         self.assertEqual(legacy.rubric_version, 'scholarly-rubric-v1')
+        self.assertNotEqual(legacy.assessment_version, ASSESSMENT_VERSION)
         # This is exactly the exclusion a routine reassessment run applies.
-        self.assertTrue(legacy.quality_status == 'pass' or (
-            legacy.quality_gate_version in {QUALITY_GATE_VERSION, *DUAL_PROMOTION_GATE_VERSIONS}
-            and legacy.assessment_version == ASSESSMENT_VERSION
-            and legacy.rubric_version == 'scholarly-rubric-v1'))
+        def excluded(row, version, rubric):
+            return row.quality_status == 'pass' or (
+                row.quality_gate_version in {QUALITY_GATE_VERSION, *DUAL_PROMOTION_GATE_VERSIONS}
+                and row.assessment_version == version and row.rubric_version == rubric)
+
+        self.assertTrue(excluded(legacy, ASSESSMENT_VERSION, 'scholarly-rubric-v2'))
+        self.assertTrue(excluded(legacy, 'quality-promotion-v1', 'scholarly-rubric-v1'))
+        # A historical non-pass under the retired rubric is now reachable by a routine
+        # run, where before the rubric moved it was not. Stored passes are not.
+        withheld = legacy_receipt(PairModels('uncertain', 'uncertain', independence=None))
+        self.assertEqual(withheld.quality_status, 'uncertain')
+        self.assertFalse(excluded(withheld, ASSESSMENT_VERSION, 'scholarly-rubric-v2'))
+        self.assertTrue(excluded(withheld, 'quality-promotion-v1', 'scholarly-rubric-v1'))
 
     def test_returned_model_must_equal_the_pinned_model(self):
         """A provider alias in the response envelope fails closed, not silently."""

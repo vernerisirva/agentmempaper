@@ -11,7 +11,7 @@ from paper_scout.quality_models import QUALITY_GATE_VERSION, QUALITY_DIMENSIONS,
 
 
 ASSESSMENT_VERSION = "quality-v2"
-RUBRIC_VERSION = "scholarly-rubric-v1"
+RUBRIC_VERSION = "scholarly-rubric-v2"
 
 COMMON_WEIGHTS = {
     "contribution_clarity": 0.10,

@@ -6,12 +6,12 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from test_promotion_gate import ENV, Models, fixture
+from test_promotion_gate import ENV, INDEPENDENT, Models, fixture
 from paper_scout.evidence_context import build_evidence_context, digest
 from paper_scout.models import ClassificationResult
 from paper_scout.promotion_gate import assess_promotion, request_payload, role_settings
 from paper_scout.promotion_protocol import (
-    ADJUDICATOR_MODEL, RETRY_POLICY, RETRY_POLICIES, ResponseContractError,
+    ADJUDICATOR_MODEL, INDEPENDENCE_FIELD, RETRY_POLICY, RETRY_POLICIES, ResponseContractError,
     adjudicator_consistency_error, agreement, attempt_binding, canonical_json,
     parse_response, response_binding, schema, validate_receipt, validate_response,
 )
@@ -61,7 +61,8 @@ class ContractTests(unittest.TestCase):
         return {'canonical_id': context.canonical_id, 'source_content_hash': context.source_hash,
                 'context_id': context.context_id,
                 'evidence_ids': [context.blocks[0].evidence_id],
-                'promotion_decision': decision, 'blocking_reasons': reasons}, context
+                'promotion_decision': decision, 'blocking_reasons': reasons,
+                INDEPENDENCE_FIELD: dict(INDEPENDENT)}, context
 
     def test_only_a_pass_with_blocking_reasons_violates_the_contract(self):
         cases = [('pass', [], None), ('pass', [SENTINEL], 'consistency'),
@@ -101,7 +102,13 @@ class ContractTests(unittest.TestCase):
         properties = schema('adjudicator')['properties']
         self.assertIn('blocking_reasons is empty', properties['promotion_decision']['description'])
         self.assertIn('Empty array', properties['blocking_reasons']['description'])
-        self.assertNotIn('description', json.dumps(schema('primary')))
+        # The adjudication invariant is stated only where it applies: none of the
+        # primary's own fields carries a description, and the shared evaluation
+        # independence dimension is byte-identical for both roles.
+        primary = dict(schema('primary')['properties'])
+        self.assertEqual(primary.pop(INDEPENDENCE_FIELD),
+                         schema('adjudicator')['properties'][INDEPENDENCE_FIELD])
+        self.assertNotIn('description', json.dumps(primary))
         _, _, text, seed = fixture()
         context = build_evidence_context(seed.canonical_id, text)
         with patch.dict('os.environ', ENV, clear=True):

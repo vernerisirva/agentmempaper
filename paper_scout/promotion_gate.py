@@ -10,11 +10,11 @@ import uuid
 from paper_scout.evidence_context import build_evidence_context, digest
 from paper_scout.http import HttpClient, HttpRequestError
 from paper_scout.promotion_protocol import (
-    ASSESSMENT_VERSION, GATE_VERSION, PRIMARY_MODEL, ADJUDICATOR_MODEL, RUBRIC,
-    RECEIPT_VERSION, agreement, canonical_json, parse_response, response_binding,
-    MAX_EVIDENCE_IDS, MODEL_PROVIDERS, PROVIDERS, RETRY_POLICY, ResponseContractError,
-    attempt_binding, model_pair_provenance, schema, source_block, validate_context,
-    validate_pair,
+    ASSESSMENT_VERSION, GATE_VERSION, INDEPENDENCE_CONTRACT, PRIMARY_MODEL,
+    ADJUDICATOR_MODEL, RUBRIC, RECEIPT_VERSION, agreement, canonical_json, parse_response,
+    response_binding, MAX_EVIDENCE_IDS, MODEL_PROVIDERS, PROVIDERS, RETRY_POLICY,
+    ResponseContractError, attempt_binding, model_pair_provenance, schema, source_block,
+    validate_context, validate_pair,
 )
 from paper_scout.quality_models import QualityEvidence
 from paper_scout.manuscript_coverage import validate_assessment_coverage
@@ -80,14 +80,30 @@ def request_payload(role, settings, context, coverage, primary=None, *, retry=Fa
     if retry and role != 'adjudicator':
         raise ValueError('only adjudication has a contract retry')
     instruction = RUBRIC
+    # The scientific standard for this dimension is stated once, in RUBRIC. What is
+    # added here is only the output-format contract over the values each role declares,
+    # in the same form as the adjudication contract below: it restates no scientific
+    # standard, changes none, and sets no pass-rate target.
+    instruction += """
+evaluation_independence is answered from the manuscript under the standard already
+stated above; the rules here are output format only. Keep each of its prose fields to
+one or two sentences. Report a corroboration_direction only when
+independent_corroboration is present, and always report one when it is. concern is
+major when signal_reuse is materially_reused and independent_corroboration is anything
+other than present, or when corroboration_direction is contradicts under a
+materially_reused or uncertain signal. Where signal_reuse is materially_reused or
+uncertain, concern is none only when independent_corroboration is present and
+corroboration_direction is supports. A major concern cannot accompany your pass.
+"""
     if role == 'primary':
         instruction += '\nIndependently assess the manuscript. decision is pass or uncertain.'
     else:
         instruction += """\nIndependently adjudicate the proposed promotion from the manuscript.
 Do not assume the primary final assessment is correct or treat it as evidence. Check
-its cited blocks and look for counterevidence throughout the supplied context. Decide
-whether contribution, method, evaluation, limitations, citation support and claim scope
-justify admission. Any important unsupported overclaim means uncertain. Report concise
+its cited blocks and look for counterevidence throughout the supplied context. Reach your
+own evaluation_independence judgment from the manuscript; never inherit, copy or defer to
+the primary's. Decide whether contribution, method, evaluation, limitations, citation
+support and claim scope justify admission. Any important unsupported overclaim means uncertain. Report concise
 blocking reasons and your own evidence IDs. No hidden reasoning is supplied or requested.
 The decision and blocking_reasons must agree structurally. When promotion_decision is
 pass, return blocking_reasons: [] and write nothing in it; never state in prose that
@@ -106,7 +122,8 @@ support for all material judgments; this budget does not relax the scientific ru
 contract failure. Independently adjudicate the original manuscript and primary final
 assessment again. Return at most {MAX_EVIDENCE_IDS} distinct evidence IDs and obey the
 response schema, including the structural rule that a pass has an empty blocking_reasons
-array and that any blocking reason means the decision is not pass.
+array and that any blocking reason means the decision is not pass, and the
+evaluation_independence rules stated above.
 Select only evidence necessary to justify your final decision.
 No previous adjudication is supplied; do not infer or preserve its conclusion.
 """
@@ -118,7 +135,7 @@ No previous adjudication is supplied; do not infer or preserve its conclusion.
                'messages': [{'role': 'system', 'content': instruction},
                             {'role': 'user', 'content': json.dumps(content, ensure_ascii=False)}],
                'response_format': {'type': 'json_schema', 'json_schema': {
-                   'name': 'promotion_' + role + '_v1', 'strict': True, 'schema': schema(role)}}}
+                   'name': 'promotion_' + role + '_v2', 'strict': True, 'schema': schema(role)}}}
     # Both providers express the same contract: no hidden reasoning is requested,
     # returned or persisted. They spell it with different parameter names, and
     # each rejects the other's, so the switch is by provider, not by model string.
@@ -221,6 +238,7 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
                        primary_provider=primary_settings.provider,
                        adjudicator_provider=adjudicator_settings.provider,
                        model_pair=model_pair_provenance(primary_settings.model, adjudicator_settings.model),
+                       independence_contract=INDEPENDENCE_CONTRACT,
                        generation={'temperature': 0, 'max_output_tokens': MAX_OUTPUT_TOKENS,
                                    'hidden_reasoning': 'disabled', 'max_request_bytes': MAX_INPUT_BYTES})
         if selected.scope not in {'full_text', 'partial_full_text'}:

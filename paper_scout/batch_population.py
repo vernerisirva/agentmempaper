@@ -180,7 +180,13 @@ def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
 
 
 def paper_identities(paper) -> tuple[str, ...]:
-    """Identities of one ranked library paper."""
+    """Identities of one ranked library paper.
+
+    A ranked paper carries no raw source record, unlike a database row. It does not
+    need one: the site loader already infers an arXiv id out of the raw record whenever
+    the stored column is empty, so an identifier that exists only in the raw JSON still
+    reaches this side as arxiv_id and the two sides match on it.
+    """
     return identities(paper.canonical_id, title=paper.title, doi=paper.doi,
                       arxiv_id=paper.arxiv_id, openalex_id=paper.openalex_id,
                       semantic_scholar_id=paper.semantic_scholar_id, url=paper.url)
@@ -219,6 +225,9 @@ def excluded_identities(configs: dict[str, ScoutConfig],
     for track, config in sorted(configs.items()):
         path = Path(config.sqlite_path)
         if not path.exists():
+            # A track with no database contributes no exclusions. That is recorded in
+            # the manifest rather than passed over, because a scan that silently covered
+            # fewer tracks than it claims is the defect this module exists to prevent.
             continue
         with sqlite3.connect(path) as db:
             db.row_factory = sqlite3.Row
@@ -347,6 +356,9 @@ def _sources(configs: dict[str, ScoutConfig], exclusion_configs: dict[str, Scout
         "tracks": {track: track_source(config) for track, config in sorted(configs.items())},
         "exclusion_tracks": {track: track_source(config)
                              for track, config in sorted(exclusion_configs.items())},
+        "exclusion_tracks_without_state": sorted(
+            track for track, config in exclusion_configs.items()
+            if not Path(config.sqlite_path).exists()),
         "frozen_rosters": [{"path": str(path), "sha256": digest(Path(path).read_text(encoding="utf-8"))}
                            for path in roster_paths],
     }

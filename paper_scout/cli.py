@@ -6,7 +6,7 @@ import logging
 import os
 import re
 from dataclasses import replace
-from datetime import UTC, date, datetime
+from datetime import date
 from pathlib import Path
 
 from paper_scout.batch_population import (
@@ -122,7 +122,7 @@ def main(argv: list[str] | None = None) -> int:
     population_parser.add_argument("--verify", action="store_true",
                                    help="Rebuild from the manifest's own inputs and compare instead of writing")
     population_parser.add_argument("--build-time", default=None,
-                                   help="Pinned build time for the ranking's newness key (default: now, UTC)")
+                                   help="Pinned build time for the ranking's newness key; required to build")
     population_parser.add_argument("--roster", type=Path, action="append", default=[],
                                    help="Frozen roster manifest whose canonical ids are excluded; repeatable")
     # Not --track: the shared track argument selects one config for the whole process,
@@ -488,8 +488,13 @@ def _batch_population(args) -> int:
               f"reproduced={result.reproduced} "
               f"stored={result.stored_digest} rebuilt={result.rebuilt_digest}")
         return 0 if result.reproduced and result.self_consistent else 1
-    build_time = args.build_time or datetime.now(UTC).replace(microsecond=0).isoformat()
-    population = build_population(configs, build_time, rosters, exclusion_configs)
+    # The ranking's newness key reads the build time, so an unpinned build bakes in
+    # wall-clock time and two builds of identical state can order differently. A
+    # manifest is a commitment, so the time is pinned explicitly rather than defaulted.
+    if not args.build_time:
+        raise SystemExit("--build-time is required to build a manifest, so the population "
+                         "is pinned to a stated time rather than to the clock")
+    population = build_population(configs, args.build_time, rosters, exclusion_configs)
     manifest = population_manifest(population, repository_code_sha(Path(".")))
     path = write_manifest(Path(args.manifest), manifest)
     for track in population.tracks:

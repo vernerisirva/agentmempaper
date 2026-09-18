@@ -14,6 +14,8 @@ from paper_scout.batch_population import (
 from paper_scout.config import ScoutConfig
 from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.promotion_protocol import canonical_json
+from paper_scout.batch_population import paper_identities
+from paper_scout.site import _load_library_papers
 from paper_scout.state import PaperStore
 
 DIGEST = """# Paper Scout Digest - 2026-09-18
@@ -302,6 +304,50 @@ class PopulationTests(PopulationFixture):
             self.assertEqual(sorted({*track.ordered_canonical_ids,
                                      *(e.canonical_id for e in track.excluded)}), sorted(keys))
 
+    def test_an_arxiv_id_only_in_the_raw_record_still_matches_a_candidate(self):
+        # The exclusion side reads the raw source record; a ranked paper has none, so
+        # the two sides only meet because the loader infers the id from the raw JSON.
+        with tempfile.TemporaryDirectory() as tmp:
+            buried = replace(candidate(1), source="openalex", openalex_id="W7168439999",
+                             raw={"locations": [{"landing_page_url": "https://arxiv.org/abs/2609.09999"}]})
+            config, store, keys = self.track(tmp, "agent_memory", [buried, candidate(2)])
+            papers = _load_library_papers(Path(config.sqlite_path))
+            loaded = next(p for p in papers if p.canonical_id == keys[0])
+            self.assertIsNone(buried.arxiv_id)
+            self.assertEqual(loaded.arxiv_id, "2609.09999")
+            self.assertIn("arxiv:2609.09999", paper_identities(loaded))
+            self.assess(store, "arxiv:2609.09999")
+            track = build_population({"agent_memory": config}, BUILD_TIME).track("agent_memory")
+            excluded = next(e for e in track.excluded if e.canonical_id == keys[0])
+            self.assertEqual(excluded.matched_identity, "arxiv:2609.09999")
+
+    def test_a_track_without_a_database_is_recorded_rather_than_passed_over(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config, store, keys = self.track(tmp, "agent_memory", [candidate(1), candidate(2)])
+            absent = replace(config, track_id="deep_research", relevance_profile="deep_research",
+                             sqlite_path=Path(tmp) / "deep_research" / "missing.sqlite3")
+            self.assertFalse(absent.sqlite_path.exists())
+            population = build_population({"agent_memory": config}, BUILD_TIME,
+                                          exclusion_configs={"agent_memory": config,
+                                                             "deep_research": absent})
+            self.assertEqual(population.sources["exclusion_tracks_without_state"], ["deep_research"])
+            self.assertEqual(sorted(population.sources["exclusion_tracks"]),
+                             ["agent_memory", "deep_research"])
+            self.assertEqual(len(population.track("agent_memory").eligible), 2)
+
+    def test_verification_rejects_a_manifest_recorded_against_other_inputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config, store, keys = self.track(tmp, "agent_memory", [candidate(1), candidate(2)])
+            configs = {"agent_memory": config}
+            manifest = population_manifest(build_population(configs, BUILD_TIME), "sha")
+            moved = json.loads(canonical_json(manifest))
+            moved["sources"]["tracks"]["agent_memory"]["state_path"] = "/elsewhere/state.sqlite3"
+            result = verify_manifest(moved, configs)
+            self.assertFalse(result.sources_match)
+            self.assertFalse(result.reproduced)
+            # The ordered identifiers still rebuild; only the recorded inputs diverge.
+            self.assertTrue(result.tracks["agent_memory"]["ordered_ids_match"])
+
     def test_the_population_is_built_from_the_ranking_domain_in_its_own_order(self):
         with tempfile.TemporaryDirectory() as tmp:
             config, store, keys = self.track(tmp, "agent_memory",
@@ -398,6 +444,15 @@ class CommandTests(PopulationFixture):
             self.assertEqual(result.returncode, 1)
             self.assertIn("sources_match=False", result.stdout)
             self.assertIn("reproduced=False", result.stdout)
+
+    def test_building_requires_a_pinned_build_time(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            result = self.run_cli("--manifest", str(Path(tmp) / "m.json"),
+                                  "--population-track", "agent_memory", config=config)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("--build-time is required", result.stderr)
+            self.assertFalse((Path(tmp) / "m.json").exists())
 
     def test_a_roster_built_manifest_round_trips_through_verification(self):
         with tempfile.TemporaryDirectory() as tmp:

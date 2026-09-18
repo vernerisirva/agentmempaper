@@ -15,13 +15,15 @@ import unittest
 from unittest.mock import patch
 
 from paper_scout.http import HttpRequestError
+from paper_scout.config import QualityConfig
 from paper_scout.models import ClassificationResult
 from paper_scout.promotion_gate import assess_promotion, role_settings, settings_from_env
 from paper_scout.promotion_protocol import (
-    ADJUDICATOR_MODEL, DUAL_PROMOTION_GATE_VERSIONS, FIELDS, GATE_VERSION,
+    ADJUDICATOR_MODEL, ASSESSMENT_VERSION, DUAL_PROMOTION_GATE_VERSIONS, FIELDS, GATE_VERSION,
     MODEL_FAMILIES, MODEL_PROVIDERS, PRIMARY_MODEL, model_pair_provenance, validate_pair,
 )
-from paper_scout.quality_models import QualityAssessment
+from paper_scout.quality_models import QUALITY_GATE_VERSION, QualityAssessment
+from paper_scout.quality_service import quality_assessment_matches_mode
 from paper_scout.state import PaperStore
 from test_promotion_gate import ENV, fixture
 
@@ -332,6 +334,49 @@ class ProvenanceTests(unittest.TestCase):
         models = PairModels()
         self.assertEqual(run_gate(models, env).quality_status, 'pass')
         self.assertEqual(models.calls[1]['headers']['Authorization'], 'Bearer legacy-openrouter-key')
+
+    def test_provider_host_mismatch_fails_closed_without_calls_or_credentials(self):
+        """A stale endpoint override is a technical outcome, never a crash or a leak."""
+        for name in ('PAPER_SCOUT_LLM_BASE_URL', 'PAPER_SCOUT_GOOGLE_BASE_URL'):
+            with self.subTest(override=name):
+                models = PairModels()
+                result = run_gate(models, {**ENV, name: 'https://api.openai.com/v1'})
+                self.assertEqual(result.execution['outcome'], 'protocol_failure')
+                self.assertEqual(result.quality_status, 'uncertain')
+                self.assertEqual(models.calls, [])
+                self.assertNotIn(ENV['GEMINI_API_KEY'], json.dumps(result.to_dict()))
+
+    def test_retired_pair_receipt_is_not_treated_as_the_current_configuration(self):
+        """A v1 row is honestly reported as not matching the v2 pair.
+
+        Routine selection still excludes it, because the assessment and rubric
+        versions are unchanged, so history is not swept into a re-run.
+        """
+        legacy = legacy_receipt()
+        config = QualityConfig(enabled=True, mode='llm')
+        with patch.dict('os.environ', ENV, clear=True):
+            self.assertFalse(quality_assessment_matches_mode(config, legacy))
+        self.assertEqual(legacy.assessment_version, ASSESSMENT_VERSION)
+        self.assertEqual(legacy.rubric_version, 'scholarly-rubric-v1')
+        # This is exactly the exclusion a routine reassessment run applies.
+        self.assertTrue(legacy.quality_status == 'pass' or (
+            legacy.quality_gate_version in {QUALITY_GATE_VERSION, *DUAL_PROMOTION_GATE_VERSIONS}
+            and legacy.assessment_version == ASSESSMENT_VERSION
+            and legacy.rubric_version == 'scholarly-rubric-v1'))
+
+    def test_returned_model_must_equal_the_pinned_model(self):
+        """A provider alias in the response envelope fails closed, not silently."""
+        class AliasModels(PairModels):
+            def post_json(self, url, payload, headers):
+                raw = json.loads(super().post_json(url, payload, headers))
+                raw['model'] = raw['model'] + '-001'
+                return json.dumps(raw)
+
+        models = AliasModels()
+        result = run_gate(models)
+        self.assertEqual(result.execution['outcome'], 'protocol_failure')
+        self.assertEqual(result.quality_status, 'uncertain')
+        self.assertEqual(len(models.calls), 1)
 
     def test_receipt_and_coverage_checks_remain_intact(self):
         result = run_gate(PairModels())

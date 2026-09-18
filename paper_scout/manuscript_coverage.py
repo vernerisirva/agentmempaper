@@ -31,42 +31,46 @@ def structural_headings(text, established, back_matter_start=None):
     return result
 
 
-def reference_continuation(text):
-    """Positive bibliography signals, never just an inherited page label.
-
-    Ambiguous text is retained, which can add citations to context but cannot
-    silently throw away a page of novel scientific prose.
-    """
-    # A year count is not a bibliography boundary: experimental prose often
-    # names multiple years. Require an entry anchored at the start of the span.
+def _reference_prefix_end(text):
+    """Find a bounded citation prefix, never certify its arbitrary prose tail."""
     entry_start = re.match(r'\s*(?:(?:\[\d+\]|\d+[.)]?)\s+)?'
                            r"[A-ZÀ-ÖØ-Þ][\w’'-]+(?:,\s*|\s+)[A-Z](?:\.|[a-z]+,)", text)
-    # A clearly bibliographic ending bounds the span; an arbitrary prose tail
-    # after a citation is not certified by the first entry. Conservative misses
-    # retain extra references rather than delete possible scientific prose.
-    entry_end = re.search(r'(?:doi:\S+|https?://\S+|arXiv:\S+|'
-                          r'\b\d+[–-]\d+)\.?\s*(?:\n\s*\d+)?\s*$', text, re.I)
-    return bool(entry_start and entry_end)
+    if not entry_start:
+        return None
+    # Only an inline locator on the entry-start line certifies an exclusion.
+    # Wrapped/ambiguous entries are retained; a locator on a later scientific
+    # line must never extend the citation boundary. Anything after the first
+    # locator survives unless independently identified as another citation.
+    end = re.search(r'doi:\S+|https?://\S+|arXiv:\S+|\b\d+[–-]\d+\.?',
+                    text[entry_start.end():].split('\n', 1)[0], re.I)
+    return entry_start.end() + end.end() if end else None
 
 
 def split_reference_spans(sections):
-    """Only discard anchored bibliographic paragraphs; keep ambiguous tails.
+    """Bound exclusions by citation entries; every ambiguous remainder survives.
 
-    Blank-line boundaries survive PDF extraction when available. Generic heading
-    boundaries are parsed separately, including novel lowercase headings inside
-    back matter. A citation at the start cannot certify a later paragraph.
+    A heading alone cannot prove that arbitrary following text is unimportant.
+    Other back matter is small and retained conservatively, so an unknown method
+    after acknowledgements/funding cannot become invisible either.
     """
-    from paper_scout.full_text import SelectedSection
+    from paper_scout.full_text import SelectedSection, _section_kind
     result = []
     for section in sections:
-        if section.heading.casefold() not in {'references', 'bibliography'}:
+        if _section_kind(section.heading) != 'excluded':
             result.append(section)
             continue
-        for span in re.split(r'\n[ \t]*\n|\n(?=\s*(?:\[\d+\]|\d+[.)])\s+[A-Z])', section.text):
+        if section.heading.casefold() not in {'references', 'bibliography'}:
+            result.append(SelectedSection('Back matter: ' + section.heading, section.text, section.first_page))
+            continue
+        for span in re.split(r'\n[ \t]*\n|\n(?=\s*(?:\[\d+\]|\d+[.)]?)\s+[A-Z])', section.text):
             if not span.strip():
                 continue
-            heading = section.heading if reference_continuation(span) else 'Unclassified body after references'
-            result.append(SelectedSection(heading, span.strip(), section.first_page))
+            end = _reference_prefix_end(span)
+            if end:
+                result.append(SelectedSection(section.heading, span[:end].strip(), section.first_page))
+            tail = span[end or 0:].strip()
+            if tail:
+                result.append(SelectedSection('Unclassified body after references', tail, section.first_page))
     merged = []
     for section in result:
         if merged and (merged[-1].heading, merged[-1].first_page) == (section.heading, section.first_page):

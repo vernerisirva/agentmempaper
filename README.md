@@ -391,8 +391,9 @@ unchanged; no successful dual-gate rows predate this receipt contract.
 New production calls require a deterministic `coverage-v2` preflight. Page boundaries,
 numbered hierarchy and standalone heading shape define section ranges; heading semantics
 only label their roles. Unfamiliar body headings remain visible, and a References label
-cannot exclude a later page without bibliography evidence. Ambiguous continuations are
-retained. The STAR METHODS regression uses the actual 21-page structure with synthetic
+cannot exclude later prose: only citation prefixes with an author-style start and an
+inline bibliographic locator are excluded. Wrapped citations, ambiguous continuations,
+and other back matter are retained conservatively. The STAR METHODS regression uses the actual 21-page structure with synthetic
 prose; no scientific decisions are embedded in fixtures.
 
 Selection includes all detected scientific body/appendix text when it fits. Under pressure,

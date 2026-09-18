@@ -88,6 +88,17 @@ class ScientificCoverageTests(unittest.TestCase):
             self.assert_complete(selected)
             self.assertIn('The crucial held-out split prevents leakage.',selected.text)
 
+    def test_single_word_and_unheaded_tails_cannot_extend_back_matter(self):
+        body='The crucial held-out split prevents leakage.'
+        for heading in ['Protocol', 'MÉTHODIK', 'unfamiliar', '']:
+            for back,lead in [('References','[1] Smith, J. (2020). Citation. doi:10.0000/synthetic'),
+                              ('References','[1] Smith, J. (2020). Citation.'),
+                              ('Acknowledgements','We thank the review team.')]:
+                with self.subTest(heading=heading,back=back):
+                    s=self.select([(1,'Introduction\nProblem.\n'+back+'\n'+lead+'\n'+(heading+'\n' if heading else '')+body+'\nCode: https://example.test/artifact')])
+                    self.assert_complete(s)
+                    self.assertIn(body,s.text)
+
     def test_empty_jats_sections_and_body_membership_under_budget(self):
         from paper_scout.full_text import _extract_jats
         c,_,_,_=fixture()

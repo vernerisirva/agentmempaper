@@ -19,7 +19,7 @@ class CoverageTests(unittest.TestCase):
         pages=[ExtractedPage(1, 'Abstract\nSummary.\n1 Introduction\nClaim.'),
                ExtractedPage(2, '2 Methods\n'+'method evidence. '*1000),
                ExtractedPage(3, '3 Results\nMeasured effect.\n4 Limitations\nScope is bounded.'),
-               ExtractedPage(4, 'References\n1 Smith, J. A Citation\n'+'Citation. '*3000+' doi:10.0000/synthetic'),
+               ExtractedPage(4, 'References\n'+('1 Smith, J. (2020). A Citation. doi:10.0000/synthetic\n'*1000)),
                ExtractedPage(5, 'A Implementation Details\nAppendix training protocol.')]
         selected=select_assessment_text(candidate(),FullTextDocument('https://example.org/a.pdf',pages,'sha',True),max_section_characters=200)
         self.assertEqual(selected.scope,'full_text')

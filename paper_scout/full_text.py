@@ -313,7 +313,7 @@ def select_assessment_text(
     if selection_used:
         warnings.append(f'Representative manuscript excerpts selected: {selected_chars} of {body_chars} eligible characters; omitted passages are unavailable to the assessor.')
     if excluded:
-        warnings.append('References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.')
+        warnings.append('Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits.')
     if uncertain:
         warnings.append('Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision.')
     coverage = {**document.coverage, 'version': 'coverage-v2', 'selection_version': 'contiguous-balanced-v2',
@@ -476,7 +476,7 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     sections: list[SelectedSection] = []
     current_heading = None
     abstract_page = None
-    from paper_scout.manuscript_coverage import structural_headings, reference_continuation, split_reference_spans
+    from paper_scout.manuscript_coverage import structural_headings, split_reference_spans
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
         # Generic numbered titles terminate a known body section; never infer

@@ -324,12 +324,43 @@ the pair from the explicit versioned family allowlist; same-family and rolling a
 fail closed. Adding a model requires reviewing its family, capabilities and price cap.
 Missing credentials leave the paper unassessed. No credentials are committed.
 
-There are at most two calls per paper, one per role, with no retries. Each request is
+There are at most three calls per paper: one primary and at most two adjudications.
+Only an adjudicator final-response syntax/schema violation permits one fresh adjudication
+from the original canonical context and primary final assessment. The failed judgment
+is never supplied to the retry, repaired, sliced or used to force the retry's conclusion.
+An independently valid retry decides promotion normally; another invalid response fails
+closed. Primary, transport, returned-model and provenance failures are not retried.
+HTTP transport still allows exactly one attempt per call. Each request is
 bounded to 300,000 serialized bytes and 4,096 output tokens. OpenRouter provider price
 caps are enforced; unsupported schema/price parameters fail closed. The 180-second HTTP
 socket timeout is not a total wall-clock deadline. Usage records retain unknown costs as
 unknown. Before live work, freeze a manifest and reserve the bounded cost under an
-approved batch ceiling. See the [cost and protocol manifest](experiments/manifests/quality-promotion-gate-2026-09-17.json).
+approved batch ceiling, including any retry. The
+[original cost manifest](experiments/manifests/quality-promotion-gate-2026-09-17.json)
+retains its historical two-call protocol. Current maximum-size per-paper reserves are
+$2.6304432 (one primary plus two adjudicators), using one input token per wire byte and
+the capped output. This is a conservative reservation, not an expected invoice.
+
+Both response schemas retain a maximum of 24 distinct evidence IDs. The constant was
+introduced with the dual gate without a recorded numerical derivation. It is retained
+as an engineering budget: six existing quality dimensions times an allowance of four
+blocks (direct support, methodological detail, comparison/validation, counterevidence).
+These are planning allowances, not per-dimension quotas or scientific sufficiency rules.
+At 23 characters per ID, 24 IDs require about 625 compact JSON bytes; the two-role union
+has at most 48 source blocks. Existing cards/sidecars store that union without per-field
+references, so a larger evidence mapping/schema redesign is unnecessary. There is no
+scientific, UI or database requirement for exactly 24, and no evidence-count target.
+The adjudicator must select the smallest sufficient set for its decision, blockers and
+major dimensions; the scientific rubric and traceability requirements are unchanged.
+
+The same schema supplies generation and runtime validation (`maxItems: 24`,
+`uniqueItems: true`, strict JSON output and required provider parameter support).
+The adjudicator prompt also states the limit explicitly. Generation enforcement is
+endpoint-dependent: [OpenRouter documents varying strictness](https://openrouter.ai/docs/guides/features/structured-outputs),
+and [Claude's native schema subset](https://platform.claude.com/docs/en/build-with-claude/structured-outputs#json-schema-limitations)
+does not enforce array constraints beyond limited `minItems`. The observed endpoint
+accepted the schema but exceeded the cap. Runtime validation remains authoritative;
+no schema downgrade or response-healing plugin is used.
 
 Completed dual-gate judgments use `canonical-response-v1` receipts for both roles.
 The boundary is strict JSON parsing → unchanged schema/identity validation → sorted-key,
@@ -342,7 +373,13 @@ the legacy optional-display-text trimmer, preserving source hashes and offsets.
 
 Private runtime receipts retain each exact final-response content string and its raw
 hash separately from the canonical hash. A further checksum binds that hash to the run,
-role, model, context and request hash. Completed non-promotions receive the same checks,
+role, model, context and request hash. New receipts additionally declare
+`adjudicator-contract-retry-v1`: each attempt binds its exact raw response hash, sequence,
+status, schema/syntax error category, usage, role/model/context and request to the run.
+Completed retry receipts revalidate the rejected response as a contract failure, require
+one primary success plus a final adjudicator success, and reject a third adjudication.
+All attempts and their reported/unknown costs remain private. Historical two-call
+receipts retain their original validation contract. Completed non-promotions receive the same checks,
 and displayed rationale/limitations must match the recorded judgments. These checks
 detect inconsistent data, not malicious replacement of every audit record and checksum;
 they are not provider signatures. Hidden reasoning is not retained. Raw content and

@@ -1,4 +1,4 @@
-"""Two bounded scientific calls. Integrity failures fail closed; disagreement is normal."""
+"""Two scientific roles with one bounded adjudicator contract retry; fail closed."""
 from dataclasses import asdict, replace
 from datetime import UTC, datetime
 import json
@@ -13,6 +13,7 @@ from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.promotion_protocol import (
     ASSESSMENT_VERSION, GATE_VERSION, PRIMARY_MODEL, ADJUDICATOR_MODEL, RUBRIC,
     RECEIPT_VERSION, agreement, canonical_json, parse_response, response_binding,
+    MAX_EVIDENCE_IDS, RETRY_POLICY, ResponseContractError, attempt_binding,
     schema, source_block, validate_context, validate_pair,
 )
 from paper_scout.quality_models import QualityEvidence
@@ -40,7 +41,9 @@ def settings_from_env():
     return (replace(settings, model=primary), replace(settings, model=adjudicator))
 
 
-def request_payload(role, settings, context, coverage, primary=None):
+def request_payload(role, settings, context, coverage, primary=None, *, retry=False):
+    if retry and role != 'adjudicator':
+        raise ValueError('only adjudication has a contract retry')
     instruction = RUBRIC
     if role == 'primary':
         instruction += '\nIndependently assess the manuscript. decision is pass or uncertain.'
@@ -51,6 +54,19 @@ its cited blocks and look for counterevidence throughout the supplied context. D
 whether contribution, method, evaluation, limitations, citation support and claim scope
 justify admission. Any important unsupported overclaim means uncertain. Report concise
 blocking reasons and your own evidence IDs. No hidden reasoning is supplied or requested.
+"""
+        instruction += f"""Return at most {MAX_EVIDENCE_IDS} distinct evidence IDs.
+Cite the smallest sufficient set of supplied blocks supporting the promotion decision,
+blocking reasons and major quality dimensions. Prefer strongest, directly relevant,
+non-duplicative evidence; do not enumerate every remotely relevant block. Preserve
+support for all material judgments; this budget does not relax the scientific rubric.
+"""
+        if retry:
+            instruction += f"""This is the one permitted fresh adjudication after an output
+contract failure. Independently adjudicate the original manuscript and primary final
+assessment again. Return at most {MAX_EVIDENCE_IDS} distinct evidence IDs and obey the
+response schema. Select only evidence necessary to justify your final decision.
+No previous adjudication is supplied; do not infer or preserve its conclusion.
 """
     content = {'canonical_id': context.canonical_id, 'source_content_hash': context.source_hash,
                'context_id': context.context_id, 'coverage': coverage, 'manuscript': context.text}
@@ -72,6 +88,7 @@ blocking reasons and your own evidence IDs. No hidden reasoning is supplied or r
 
 def call_model(role, settings, context, payload, client, calls, run_id):
     call = {'kind': role, 'model': settings.model, 'context_id': context.context_id,
+            'attempt': 1 + sum(c['kind'] == role for c in calls),
             'status': 'failed', 'usage': _reported_usage({}),
             'request_sha256': digest(json.dumps(payload, ensure_ascii=False, sort_keys=True))}
     calls.append(call)
@@ -99,17 +116,24 @@ def call_model(role, settings, context, payload, client, calls, run_id):
     call['content_sha256'] = digest(content)
     # Preserve the exact final response, never provider hidden-reasoning fields.
     call['raw_content'] = content
-    value = parse_response(content, role, context)
+    try:
+        value = parse_response(content, role, context)
+    except ResponseContractError as exc:
+        call.update(status='contract_failure', contract_error=exc.reason)
+        call['attempt_binding_sha256'] = attempt_binding(call, run_id)
+        raise
     call['canonical_response_sha256'] = digest(canonical_json(value))
     call['response_binding_sha256'] = response_binding(call, run_id)
     call['status'] = 'success'
+    call['attempt_binding_sha256'] = attempt_binding(call, run_id)
     return value
 
 
 def assess_promotion(candidate, selected, seed, mode, http=None):
     receipt = {'outcome': 'not_assessed', 'calls': [], 'run_id': uuid.uuid4().hex,
                'receipt_version': RECEIPT_VERSION,
-               'total_request_limit': 2, 'attempt_limit_per_role': 1}
+               'retry_policy': RETRY_POLICY,
+               'total_request_limit': 3, 'attempt_limit_per_role': {'primary': 1, 'adjudicator': 2}}
     base = dict(assessment_version=ASSESSMENT_VERSION, quality_gate_version=GATE_VERSION,
                 quality_status='uncertain', overall_quality_score=None, recommendation='unknown',
                 applied_score_cap=None, applied_score_cap_reason=None, dimension_scores={},
@@ -150,10 +174,17 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
                              receipt['calls'], receipt['run_id'])
         receipt['primary'] = primary
         # Both judgments are retained even when primary is uncertain; never up to 13 verifiers.
-        adjudicator_payload = request_payload('adjudicator', adjudicator_settings, context,
-                                              selected.coverage, primary)
-        adjudicator = call_model('adjudicator', adjudicator_settings, context, adjudicator_payload,
-                                 client, receipt['calls'], receipt['run_id'])
+        for attempt in range(2):
+            # Fresh original inputs only. Never slice IDs or feed the rejected output back.
+            adjudicator_payload = request_payload('adjudicator', adjudicator_settings, context,
+                                                  selected.coverage, primary, retry=bool(attempt))
+            try:
+                adjudicator = call_model('adjudicator', adjudicator_settings, context, adjudicator_payload,
+                                         client, receipt['calls'], receipt['run_id'])
+                break
+            except ResponseContractError:
+                if attempt == 1:
+                    raise
         receipt['adjudicator'] = adjudicator
         validate_context(context, selected)
         passed = agreement(primary, adjudicator)

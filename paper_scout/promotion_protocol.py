@@ -16,6 +16,10 @@ from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text
 ASSESSMENT_VERSION = 'quality-promotion-v1'
 GATE_VERSION = 'dual-promotion-v1'
 RECEIPT_VERSION = 'canonical-response-v1'
+RETRY_POLICY = 'adjudicator-contract-retry-v1'
+# Existing engineering budget: six quality dimensions, up to four blocks each.
+# This is a total budget, not a per-dimension quota or a scientific sufficiency test.
+MAX_EVIDENCE_IDS = 24
 PRIMARY_MODEL = 'deepseek/deepseek-v4-pro-0813'
 ADJUDICATOR_MODEL = 'anthropic/claude-sonnet-4.6'
 # Known, explicitly pinned families. Unknown/rolling aliases fail closed.
@@ -47,7 +51,7 @@ def schema(role: str) -> dict:
     props = {k: {'type': 'string', 'minLength': 1} for k in
              ('canonical_id', 'source_content_hash', 'context_id')}
     props['evidence_ids'] = {'type': 'array', 'items': {'type': 'string', 'minLength': 1},
-                             'maxItems': 24, 'uniqueItems': True}
+                             'maxItems': MAX_EVIDENCE_IDS, 'uniqueItems': True}
     if role == 'primary':
         props['decision'] = {'enum': ['pass', 'uncertain']}
         props.update({k: {'type': 'string', 'minLength': 1} for k in FIELDS})
@@ -124,21 +128,36 @@ def canonical_json(value) -> str:
                       allow_nan=False)
 
 
+class ResponseContractError(ValueError):
+    """Retryable output syntax/schema failure; never a provenance failure."""
+
+    def __init__(self, reason):
+        self.reason = reason
+        super().__init__('scientific response violates ' + reason + ' contract')
+
+
 def parse_response(content: str, role: str, context: EvidenceContext) -> dict:
     def unique_object(pairs):
         result = {}
         for key, value in pairs:
             if key in result:
-                raise ValueError('duplicate scientific response field')
+                raise ResponseContractError('json')
             result[key] = value
         return result
 
     def invalid_constant(value):
-        raise ValueError('non-JSON scientific response constant')
+        raise ResponseContractError('json')
 
-    value = json.loads(content, object_pairs_hook=unique_object, parse_constant=invalid_constant)
-    validate_response(value, role, context)
-    canonical_json(value).encode('utf-8', errors='strict')
+    try:
+        value = json.loads(content, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+        validate_response(value, role, context)
+        canonical_json(value).encode('utf-8', errors='strict')
+    except json.JSONDecodeError as exc:
+        raise ResponseContractError('json') from exc
+    except jsonschema.ValidationError as exc:
+        raise ResponseContractError('schema') from exc
+    except UnicodeError as exc:
+        raise ResponseContractError('unicode') from exc
     return value
 
 
@@ -151,6 +170,14 @@ def response_binding(call: dict, run_id: str) -> str:
     return digest(canonical_json({'receipt_version': RECEIPT_VERSION, 'run_id': run_id,
         **{key: call[key] for key in ('kind', 'model', 'context_id', 'request_sha256',
                                       'canonical_response_sha256')}}))
+
+
+def attempt_binding(call: dict, run_id: str) -> str:
+    """Bind each unmodified final response, including a rejected attempt, to its run."""
+    return digest(canonical_json({'retry_policy': RETRY_POLICY, 'run_id': run_id,
+        **{key: call[key] for key in ('kind', 'attempt', 'model', 'context_id',
+            'request_sha256', 'content_sha256', 'status', 'finish_reason', 'usage')},
+        'contract_error': call.get('contract_error')}))
 
 
 def agreement(primary: dict, adjudicator: dict) -> bool:
@@ -190,13 +217,41 @@ def validate_receipt(assessment) -> None:
     if assessment.quality_status != expected_status or receipt['outcome'] != 'success':
         raise ValueError('persisted decision differs from independent scientific agreement')
     calls = receipt['calls']
-    if len(calls) != 2:
-        raise ValueError('promotion requires two completed calls')
-    for role, call in zip(('primary', 'adjudicator'), calls):
-        if (call.get('kind') != role or call.get('status') != 'success'
+    policy = receipt.get('retry_policy')
+    if policy is None:  # Historical two-call receipts retain their exact contract.
+        if len(calls) != 2 or any('attempt' in c or 'attempt_binding_sha256' in c for c in calls):
+            raise ValueError('legacy promotion requires two completed calls')
+    elif (policy != RETRY_POLICY or len(calls) not in (2, 3)
+          or receipt.get('total_request_limit') != 3
+          or receipt.get('attempt_limit_per_role') != {'primary': 1, 'adjudicator': 2}):
+        raise ValueError('invalid bounded adjudication retry policy')
+    for index, call in enumerate(calls):
+        role = 'primary' if index == 0 else 'adjudicator'
+        rejected = policy is not None and len(calls) == 3 and index == 1
+        if (call.get('kind') != role
+                or call.get('status') != ('contract_failure' if rejected else 'success')
                 or call.get('finish_reason') != 'stop' or call.get('model') != receipt[role + '_model']
                 or call.get('context_id') != context.context_id):
             raise ValueError('incomplete or wrong-model scientific call')
+        if (digest(call['raw_content']) != call['content_sha256']
+                or not re.fullmatch(r'[a-f0-9]{64}', call['request_sha256'])):
+            raise ValueError('scientific raw response or request hash mismatch')
+        if policy is not None:
+            if (call.get('attempt') != (1 if index == 0 else index)
+                    or attempt_binding(call, receipt['run_id']) != call.get('attempt_binding_sha256')):
+                raise ValueError('scientific attempt binding mismatch')
+        if rejected:
+            try:
+                parse_response(call['raw_content'], role, context)
+            except ResponseContractError as exc:
+                if (call.get('contract_error') != exc.reason
+                        or 'canonical_response_sha256' in call or 'response_binding_sha256' in call):
+                    raise ValueError('invalid rejected-attempt receipt') from exc
+            else:
+                raise ValueError('retry requires a rejected schema/syntax response')
+            continue
+        if call.get('contract_error') is not None:
+            raise ValueError('successful scientific call has a contract failure')
         parsed = parse_response(call['raw_content'], role, context)
         canonical = canonical_json(parsed)
         if (digest(call['raw_content']) != call['content_sha256']

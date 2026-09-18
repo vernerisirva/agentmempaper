@@ -60,15 +60,375 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>The contribution is substantive and scoped, the method is adequately described, evaluation is meaningful across multiple scales with appropriate controls and uncertainty reporting, and claims are appropriately qualified with limitations compatible with the computational scope.</p>
+      <p>The authors acknowledge that experimental confirmation, formal pharmacological synergy, cohort-level validation of recursive rollout, and larger external clinical cohorts remain to be established.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: llm. Assessment version: quality-promotion-v1. Gate: dual-promotion-v1.</p>
+        <p>Assessed: 2026-09-18T08:01:33.839068+00:00.</p>
+        <p>Coverage: 67761 of 67761 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Stanford University School of Medicine, Stanford, CA, USA
+†These authors contributed equally
+*Correspondence: pheng@cse.cuhk.edu.hk (P .A.H.); yang@phai-labs.com (L.Y .);
+yin@phai-labs.com (Z.Y .); wuyc@phai-labs.com (Y .W.)
+SUMMARY
+Immune therapies act across cell-intrinsic programs, tissue ecosystems, and patient-specific
+immune states, yet most predictors address these scales separately. We used a governed evo-
+lutionary AI Scientist to construct the Immune World Model, an action-conditioned model that
+learns how interventions move immune states across cellular, tissue, and individual levels. The
+Immune World Model–building Scientist searched candidate architectures and workflows, and
+the resulting world model was frozen before independent confirmation. The frozen model gen-
+eralized to unseen interventions and biological contexts, recovered intervention-specific cellular
+programs, </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A structured immune world model links cellular, tissue, and individual
+states
+To connect intervention-dependent changes across cellular, tissue, and individual scales, we
+organized the Immune World Model around a structured biological state and an explicit interven-
+2
+tion interface (Figures 1A and 1B). Agent Genesis evolved candidate Scientist workflows, and
+the retained Immune World Model–building Scientist compared model architectures before the
+model configuration was frozen. During AI4AI, candidates advanced from seed and tool-using
+agents to the Immune World Model–building Scientist; after model freezing, the fixed Immune
+World Model Research Scientist coordinated simulation, evaluation, execution repair, memory,
+and approved tools and prioritized selected hypotheses for prospective experimental testing.
+Model promotion and biological interpretation were performed under </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>investigator oversight.
+Within this architecture, multiscale immune data, perturbation and intervention data, patient-
+derived data with clinical annotations, and prior knowledge enter a structured encoder (Figure
+1B). Cellular stateZ cell, tissue immune contextZ tme, and individual contextZ patient are combined
+into the structured stateS t, while the intervention under evaluation is encoded independently as
+At. Treatment information within the individual context denotes baseline or prior treatment history
+rather than the action being predicted. The state and action jointly parameterize the transition
+St+1 =F θ(St, At),(1)
+whereA t may specify a cytokine, genetic edit, drug, checkpoint intervention, or combination.
+For bounded counterfactual rollout, a subsequent action can be composed as
+St+2 =F θ(St+1, At+1).(2)
+Structured decoders produce expression-level predictions and </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interpretable biological read-
+outs. These include cell proportions, program scores, pathway shifts, differential-expression di-
+rection, nonresponder-to-responder scores, and mechanism explanations. The outputs support
+mechanistic interpretation, biomarker discovery, intervention ranking, and hypothesis genera-
+tion. The architecture supports bounded action composition, whereas the quantitative dynamic
+benchmarks reported here evaluate the one-step transition toS t+1 unless explicitly stated other-
+wise.
+To determine which components were required for this multiscale transition model, we eval-
+uated seven capabilities and performed complementary module- and representation-level ab-
+lations (Figures 1C–1E). The capability analysis covered gene-program fidelity, cellular state,
+tissue context, individual response, action-conditioned dynamics, cross-context transfer, and
+mechanistic or </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>counterfactual analysis. Comparator models addressed different subsets of these
+tasks, with scFoundation providing a pretrained single-cell representation reference. 13 Omitting
+the structured decoder produced a 0.14 loss in composite score, and omitting action-conditioned
+dynamics produced a 0.10 loss. Substitution of the action representation, multiscale encoder,
+or immune-adapted cell encoder lowered the score by 0.07, 0.08, and 0.06, respectively. At
+the representation level, the structured orthogonal state reached 0.748 balanced accuracy on
+the held-out rheumatoid arthritis (RA) out-of-distribution (OOD) task, versus 0.616, 0.586, and
+0.521 for progressively less structured alternatives. The gated residual action model reached an
+unseen-context∆ cosscore of 0.388, compared with 0.369 for an orthogonal residual, 0.296 for
+a context mean, and 0.248 for a raw action vector. Together, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>these ablations identified distinct
+contributions from state organization, action encoding, and biological decoding.
+Governed development selects robust model improvements
+We first tested whether continuous scoring could distinguish candidate builders once binary
+qualification had saturated. In a six-builder comparison, macro-F1 was 0.681 for the Immune
+World Model–building Scientist, 0.665 for DeepSeek V4, 0.662 for Claude S5, 0.658 for GPT -
+5.6, 0.646 for Gemini 3.6, and 0.629 for Qwen 3.6 (Figure 2A). Because the leading systems
+3</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transition fromS t toS t+1
+and can be composed for a bounded counterfactual rollout toS t+2. Structured decoders return predicted outputs
+and interpretable biological readouts for mechanism-oriented analysis, candidate biomarker prioritization,
+intervention ranking, and hypothesis generation. (C) Capability coverage across seven world-model dimensions.
+(D) Module ablation of the assembled system. (E) State-representation ablation scored by RA OOD balanced
+accuracy and action-dynamics ablation scored by unseen-context∆ cos. Higher values indicate better
+performance.
+4
+all passed the G4 qualification boundary, subsequent lineage selection used the continuous
+development-set metric.
+Locked external-capability tests then examined whether the frozen Immune World Model im-
+proved over prespecified baselines beyond the builder comparison (Figure 2B). Paired Pearson
+gains were+0.112for known </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>compounds in held-out cell contexts (n= 151),+0.054for unseen
+double-gene combinations (n= 23),+0.293for unseen drugs in held-out contexts (n= 30),
++0.159for unseen-gene transfer from K562 to RPE1 (n= 200), and+0.481for unseen-gene
+transfer from 8 to 48 h (n= 200). Gains were positive in all five locked probes, although their
+magnitudes differed substantially across transfer settings.
+The resulting Immune World Model lineage comprised the initial U000 configuration and 15
+accepted successors, while nine rejected proposals remained recorded without entering the ac-
+cepted lineage (Figure 2C). Updates to cellular state, tissue context, individual response, action
+dynamics, cross-context transfer, and mechanistic reasoning occurred at different iterations. Re-
+taining both promoted and rejected proposals placed the final Immune World Model configuration
+within an auditable development </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>history.
+We next distinguished system-level audit from promotion of individual model classes (Figure
+2D). The locked cross-system audit compared OOD performance, execution reliability, repair-
+selection quality, seed stability, and development–test alignment across the fixed Immune World
+Model Research Scientist and five external systems.
+Within the Immune World Model lineage, the study-specific Immune68-to-TabPFN update
+supplied the frozen Immune68 immune-feature table to the Tabular Prior-data Fitted Network
+(TabPFN)38 and achieved a paired training leave-one-context-out (LOCO) macro-F1 gain of
++0.243, clearing the predeclared+0.02promotion gate. Balanced TabPFN, the class-rebalanced
+candidate, and Wide-state TabPFN, the expanded-state-input candidate, were rolled back after
+changes of−0.074and−0.092, respectively. Thus, a proposed model class entered the lineage
+only when its locked </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>improvement cleared the gate.
+A direct comparison of two candidate Immune World Model updates illustrated how the gate
+distinguished an update meeting all prespecified criteria from a marginal one (Figure 2E). U019
+achieved a Pearson-correlation gain of+0.293(95% CI,0.250–0.335) and passed all seven gates.
+U020 achieved a gain of+0.013(95% CI,0.005–0.022) but failed the predeclared+0.020effect-
+size gate despite passing the other six checks. Statistical positivity alone therefore did not justify
+promotion.
+The frozen model supports immune-state forecasting across scales
+With the retained configuration frozen, we next tested whether the Immune World Model could
+forecast immune-state transitions from cellular perturbation responses through tissue and indi-
+vidual context. The Parse PBMC few-shot task was derived from a cytokine-perturbation atlas of
+approximately 10 million PBMCs from 12 </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>donors exposed to 90 cytokines; 39 the benchmark re-
+tained 86 cytokine contexts after preprocessing. Pearson∆increased from 0.309 for a cell-mean
+baseline to 0.427 for an additive model, 0.462 for Rhaister, a summary-statistic perturbation-
+response predictor, 40 and 0.495 for the Immune World Model (Figure 3A), yielding the highest
+point estimate in the low-data setting.
+The displayed program-level coupling remained high after cytokine-family exclusions (Figure
+3B). Pearson correlation was 0.98 across all 86 cytokines, 0.98 after excluding interferons (n=
+78), 0.99 after excludingγ c cytokines (n= 80), and 0.97 after excluding both groups (n= 72).
+One-step action-conditioned prediction further distinguished the effects of IL-2, IL-7, and IL-15
+across MHC-I, MHC-II, CXCR3, checkpoint, and interferon-stimulated-gene programs (Figure
+3C).
+5</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>all seven gates with a gain of+0.293(95% CI,
+0.250–0.335); U020 is rejected despite six passing checks because its+0.013gain (95% CI,0.005–0.022) does not
+reach the predeclared+0.020threshold.
+6
+In a common gene space, GEARS, the additive baseline, and scGPT reached mean∆ cos
+scores of 0.25, 0.28, and 0.31, whereas the condition-mean model and the Immune World Model
+both reached 0.46 (Figure 3D); the Immune World Model therefore did not improve the global
+mean over the condition-mean baseline. Relative to scGPT, however, the Immune World Model
+achieved a higher cosine similarity for 404 of 636 actions (64%), with a median per-action gain
+of+0.22.
+Tissue context changed both the magnitude and direction of the inferred anti-PD-1 respon-
+der axis (Figure 3E). Full-tumor-microenvironment inputs linked response in HCC and head and
+neck squamous cell carcinoma (HNSCC) to increased cytotoxic </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and decreased naive/memory
+programs, whereas melanoma showed the opposite inferred direction and basal cell carcinoma
+(BCC) showed a smaller reversal. For C1–C6 immune-ecosystem prediction, 1 macro-F1 was
+0.52 for cellular features, 0.60 for tissue features, 0.64 for their combination, and 0.15 for a shuf-
+fled control (Figure 3F), indicating that arbitrary context did not reproduce the tissue contribution.
+At the individual scale, the Immune World Model improved performance on all six immune-
+background tasks relative to the PULSAR donor-representation classification baseline (PULSAR-
+CLS).41 Gains were+0.005for lupus,+0.034for COVID-19,+0.008for age,+0.044for rheuma-
+toid arthritis,+0.067for influenza hemagglutination-inhibition (HAI) response, and+0.046for
+influenza response (Figure 3G). Anti-PD-1 leave-one-out AUC was 0.54 (95% CI, 0.29–0.79) for
+composition, 0.85 (0.66–0.98) for </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CD8 state, and 0.92 (0.79–1.00) for all-cell state (Figure 3H),
+consistent with functional state carrying predictive information beyond cell abundance.
+We then examined whether these scale-specific predictions could be connected in an illustra-
+tive rollout. In the representative end-to-end example, the baseline favored tissue state C3 and
+produced an individual responder score of 0.29, whereas the reference and the Immune World
+Model both selected C4 and reached 1.00 at the individual level (Figure 3I).
+Action composition also improved prediction on unseen pairs: Pearson correlation increased
+from 0.79 for the additive baseline to 0.84 for the Immune World Model, a gain of+0.054, with
+improvement for 19 of 23 pairs and particularly large gains for K562 double perturbations (Figure
+3J).
+Complementary immune axes nominate IL-36γplus SIRPαinhibition
+To move from forecasting to hypothesis </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generation, we combined measured perturbations with
+model inference to identify complementary immune axes as candidate therapeutic hypotheses.
+In the surface-knockout screen, CD47 was among the strongest druggable shifts toward a hot or
+inflamed state (Figure 4A). CD47 is an established self-recognition signal whose blockade can
+promote tumor-cell phagocytosis and link myeloid uptake to adaptive antitumor responses. 42–46
+CD47 knockout supplied evidence for the innate-checkpoint arm; because SIRPαis the cog-
+nate inhibitory receptor of CD47, SIRPαinhibition served as the therapeutic counterpart of that
+perturbation.
+The measured cytokine screen ranked IFN-β, IL-15, IFN-ω, IFN-γ, and IL-2 highest (Figure
+4B). Zero-shot upstream nomination of the IL-36γ/IL-18 route exceeded an additive reference
+under OrthJEPA, VICReg,47 and SE-PCA. OrthJEPA was the study-specific orthogonal embed-
+ding, </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>VICReg the published regularization objective, and SE-PCA a principal-component refer-
+ence fitted to standardized expression. The nomination was recovered in 86 of 86, 80 of 86,
+and 67 of 86 contexts. Within the locked ranking, IL-36γwas the lead upstream candidate, while
+IL-18 provided secondary support for the broader cytokine-response axis. Prior studies link IL-
+36γto type-1 lymphocyte programs and identify IL-18-binding protein as a regulator of IL-18
+immunotherapy, providing biological context for this axis.48,49
+The knockout-by-cytokine analysis showed different modeled interactions for the two arms
+7
+Cell
+mean
+Additive Rhaister EvoIWM
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+Pearson Δ
+a
+0.309
+0.427
+0.462
+0.495
+Cellular-state forecasting
+(Parse PBMC few-shot)
+full
+(86)
+−IFN
+(78)
+−γc
+(80)
+−both
+(72)
+0.85
+0.90
+0.95
+1.00
+Coupling Pearson r
+b
+0.98 0.98 0.99
+0.97
+Cellular latent </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>a common gene
+space, together with the per-action Immune World Model–scGPT comparison. (E) Tissue-dependent reversal of
+the anti-PD-1 responder axis. (F) C1–C6 tissue-immune ecosystem macro-F1 using cellular, tissue, combined, and
+shuffled inputs. (G) Individual immune-background tasks. (H) Anti-PD-1 patient-state forecasting by composition,
+CD8 state, and all-cell state. (I) Representative end-to-end Cellular→Tissue→Individual World Model Rollout. (J)
+Action composition on unseen pairs compared with an additive baseline.
+8
+(Figure 4C). CD47 showed a comparatively weak interaction of−0.18, versus−0.55for STAT1,
+−0.79for JAK1,−0.80for JAK2,−0.88for IFNGR1, and−1.12for MYC. By the displayed criterion,
+CD47 was comparatively weakly coupled to the interferon-cytokine axis. Pan-cancer expression
+and axis scores forCD47,SIRP A, andIL18varied across ten tumor types, defining tumor con-
+texts in </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>which both axes were represented (Figure 4D).
+Compartment deletion distinguished model dependence from standalone predictive perfor-
+mance (Figure 4E). CD8 removal caused a 0.48 loss, Treg removal caused a 0.02 loss, and
+removal of the other displayed lineages produced no measurable loss. Standalone AUCs were
+0.87 for B cells, 0.85 for CD8 T cells, 0.81 for CD4 T cells, 0.71 for Treg and myeloid states, 0.49
+for dendritic cells, and 0.48 for NK cells. The displayed responder-state transition showed the
+largest model dependence on the CD8 program, whereas several other compartments carried
+standalone predictive signal.
+No cytokine pair passed all prespecified filters. Sequential filtering reduced the 276 cytokine
+pairs to 193 above the initial&gt;0.10threshold, 77 with net induction, five that exceeded the
+best single agent, five that remained robust across eight seeds, three that exceeded </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the raw
+baseline, one supported by literature adjudication, and none that passed the dominance audit
+(Figure 4F). This negative audit redirected nomination toward the measured CD47–SIRPαarm
+and the inferred IL-36γ/IL-18–IFN arm as complementary axes for prospective testing.
+Taken together, these analyses supported an innate checkpoint axis and an adaptive axis
+linked to IFN. The locked cytokine ranking placed IL-36γahead of IL-18, and IL-36γplus SIRPα
+inhibition was selected as the prioritized combination representing these axes. This nomination
+is a model-derived hypothesis; its experimental evaluation lies outside the scope of the present
+study.
+9
+0 2 4 6
+ITGA3
+CD58
+CDH19
+CD151
+CD44
+CXCR4
+CD47
+CD59
+a
+CD47 → druggable anti-SIRPα
+Innate arm nomination → CD47
+0.0 0.2 0.4
+measured killability push
+IFN-alpha1
+IL-1-beta
+IL-7
+IL-2
+IFN-gamma
+IFN-omega
+IL-15
+IFN-beta
+b Adaptive arm → IFN </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Immune World Model reframes immune prediction as the estimation of an intervention-
+conditioned state transition rather than the assignment of a static sample label. Single-cell
+foundation and perturbation models have made transferable cell-state encoding and extrapo-
+lation increasingly tractable, but therapeutic effects remain conditioned by tissue ecology and
+host immune context. By representing the intervention independently from cellular, tissue, and
+individual state, the Immune World Model estimates how a specified action moves a biological
+system through immune-state space. The benefit of combining cell and tissue information, to-
+gether with the higher anti-PD-1 AUC point estimate obtained from functional all-cell states than
+from composition alone, supports the value of structured multiscale context. World Model Rollout
+extends the same formulation across biological scales, </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>providing a common interface between
+molecular programs, tissue ecosystems, and patient-level readouts.
+The Immune World Model–building Scientist constructed the model while addressing a dis-
+tinct problem: how to develop such a model while preserving a testable record of the choices that
+produced it. Agent Genesis treated architecture changes, repairs, and evaluation procedures as
+versioned proposals evaluated under common budgets and prespecified gates. Consequently,
+both successful promotions and rejected alternatives remained part of the evidence for the re-
+tained world model. This is important because adaptive model development can otherwise blur
+the distinction between improvement of a biological predictor and repeated accommodation to
+an evaluation set. The present results show that an AI Scientist can construct a predictive model
+not only by generating candidates, but also by </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>organizing comparison, rollback, and model freez-
+ing before confirmation. Agent Genesis is therefore the governed model-construction system,
+whereas the Immune World Model is the resulting biological transition model, evaluated here
+on locked computational benchmarks. After freezing, the fixed Immune World Model Research
+Scientist used the model without modifying its parameters or configuration.
+Across the confirmation tasks, the most informative evidence came from convergence among
+different forms of generalization. The Immune World Model preserved cytokine-regulatory rela-
+tionships after cytokine-family exclusions, distinguished program-level responses to related cy-
+tokines, incorporated tissue context into immune-ecosystem prediction, and improved 19 of 23
+unseen perturbation pairs. The tie between the Immune World Model and the condition-mean
+baseline in global mean gene-∆cosine </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>indicates that aggregate performance does not fully cap-
+ture action-level improvements, withheld-context behavior, or cross-scale propagation of struc-
+tured readouts. Together, these results are consistent with a shared transition representation that
+captures context-dependent structure beyond a raw action vector or an averaged perturbation
+effect.
+The therapeutic analysis illustrates how this representation can be used to formulate a bio-
+logical hypothesis. The measured CD47 knockout phenotype nominated an innate checkpoint
+arm, whereas cytokine-response modeling prioritized an IL-36γ-associated adaptive/IFN arm.
+The comparatively weak modeled interaction between the arms suggested that they could pro-
+vide nonredundant immune inputs. One mechanistic interpretation is that relieving CD47–SIRPα
+restraint may facilitate myeloid uptake and antigen handling, while IL-36γreinforces </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>type-1 lym-
+phocyte programs and CD8 T -cell and NK-cell effector activity.42–46,48 The combination is there-
+fore presented as a model-derived, prospectively testable hypothesis rather than a validated
+therapy. Experimental confirmation, and any claim of formal pharmacological synergy, remains
+to be established.
+The current study also defines priorities for further development. These include cohort-
+level validation of recursive rollout, clinical-response analysis in larger external cohorts, and
+prospective experimental evaluation of the nominated combination with dose-response, target
+11
+engagement, pharmacodynamic, and toxicity assessments. Incorporating spatial organization,
+surface-protein state, receptor occupancy, clonality, treatment exposure, longitudinal sampling,
+and calibrated uncertainty should further improve biological resolution and forecast prioritization.
+With these </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RESOURCE AVAILABILITY
+Lead contact
+Questions about study resources should be sent to the lead contact, Yingcheng Wu (wuyc@
+phai-labs.com).
+Materials availability
+This study is computational and did not generate new reagents or materials.
+Data and code availability
+• Public dataset accessions are provided by the cited source publications. Inclusion, quality-
+control, and partitioning records will be released in an accompanying versioned manifest.
+• A versioned software release will contain Agent Genesis and Immune World Model–building
+Scientist selection, transition-model fitting, evaluation gates, one-step forecasts, bounded coun-
+terfactual rollout, World Model Rollout analyses, and figure-generation code.
+• Subject to data-use agreements, consent, and privacy constraints, the release will include run
+packets, lineage decisions, and sample-level model outputs.</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Versioned Evolutionary Scientist Engine
+The Evolutionary Scientist Engine comprised an AI4AI architecture-evolution stage and an AI4S
+research stage. In AI4AI, the Agent Genesis Pyramid organized the following successive candi-
+date classes: seed agent, tool-using agent, single-agent Scientist, multi-agent Scientist, Immune
+World Model–building Scientist, and Immune World Model Research Scientist. The Agent Gen-
+esis Coach coordinated a planner, harness designer, trainer, critic, memory, trimmer, and Tool
+Cosmas. The planner proposed architectural or workflow changes; the harness designer instan-
+tiated comparable execution and evaluation environments; the trainer fitted trainable compo-
+nents; the critic diagnosed failures; memory retained prior proposals and evidence; the trimmer
+removed unnecessary components; and Tool Cosmas controlled access to approved analytical
+tools. In AI4S, </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the fixed Immune World Model Research Scientist coordinated a planner, builder,
+simulator, evaluator, repairer, memory, and Tool Cosmas around the frozen model, benchmarked
+model behavior, and prioritized selected hypotheses for prospective experimental evaluation.
+The Immune World Model Research Scientist operated within the versioned research harness
+without modifying the frozen model.
+Candidate Scientist and model changes were assigned immutable version identifiers. Devel-
+opment and confirmation data were separated by immutable manifests before lineage evolution.
+Proposals, repairs, and promotion decisions used the development manifest and its prespeci-
+fied metric. The retained Immune World Model Research Scientist workflow and Immune World
+Model configuration were frozen before the independent confirmation manifest was opened, and
+confirmation was performed without further </blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>differences rather than unpaired model scores.
+For an observed baseline expression vectorxi,0, observed action-conditioned vectorx i,a, and
+prediction bxi,a, the observed and predicted action-induced displacements were
+di,a =x i,a −x i,0, bdi,a = bxi,a −x i,0.
+Pearson∆wascorr( bdi,a,d i,a)over the locked feature set. Gene-∆cosine, also denoted∆ cos
+in the architecture ablation, was
+∆ cosi,a =
+bdT
+i,adi,a
+∥bdi,a∥2∥di,a∥2
+,
+and the displayed aggregate was the arithmetic mean across the locked action–context units
+unless a median was explicitly reported. Paired Pearson gain for unitiwasr candidate
+i −r baseline
+i .
+NRMSE was
+q
+n−1 Pn
+j=1(byj −y j)2/sy, where the target normalization scales y and the allowed
+tolerance were fixed in the locked evaluation manifest before scoring.
+Area under the receiver-operating-characteristic curve (AUC or AUROC) used ranked contin-
+uous scores; </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +467,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

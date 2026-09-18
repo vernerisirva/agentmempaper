@@ -15,6 +15,7 @@ from paper_scout.config import ScoutConfig
 from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.promotion_protocol import canonical_json
 from paper_scout.batch_population import paper_identities
+from paper_scout.site import _infer_arxiv_id_from_text
 from paper_scout.site import _load_library_papers
 from paper_scout.state import PaperStore
 
@@ -145,6 +146,17 @@ class IdentityTests(unittest.TestCase):
             found = identities("b:2", title=other)
             titles = {i for i in found if i.startswith("title:")}
             self.assertEqual(bool(titles & set(base)), overlap, other)
+
+    def test_a_reference_to_another_paper_is_not_an_identity(self):
+        # A source record names other papers; the first arXiv id inside one is not
+        # necessarily its own, and attributing it here would exclude an unrelated paper.
+        cited = "https://arxiv.org/abs/2609.07777"
+        self.assertIsNone(_infer_arxiv_id_from_text("no identifier here"))
+        self.assertEqual(_infer_arxiv_id_from_text(cited), "2609.07777")
+        found = identities("openalex:W1", title="A Record That Cites Other Work",
+                           openalex_id="W1", url="https://example.test/landing")
+        self.assertEqual([i for i in found if i.startswith("arxiv:")], [])
+        self.assertEqual(set(found) & set(identities("arxiv:2609.07777")), set())
 
     def test_namespaces_keep_unrelated_fields_apart(self):
         # The same string in a DOI and in an OpenAlex id is not a match.
@@ -308,8 +320,8 @@ class PopulationTests(PopulationFixture):
                                      *(e.canonical_id for e in track.excluded)}), sorted(keys))
 
     def test_an_arxiv_id_only_in_the_raw_record_still_matches_a_candidate(self):
-        # The exclusion side reads the raw source record; a ranked paper has none, so
-        # the two sides only meet because the loader infers the id from the raw JSON.
+        # Neither side scans a raw record. The two sides still meet, because the site
+        # loader picks one arXiv id out of the record into the paper's own field.
         with tempfile.TemporaryDirectory() as tmp:
             buried = replace(candidate(1), source="openalex", openalex_id="W7168439999",
                              raw={"locations": [{"landing_page_url": "https://arxiv.org/abs/2609.09999"}]})
@@ -366,6 +378,22 @@ class PopulationTests(PopulationFixture):
                 self.assertEqual(repository_code_sha(), here)
         finally:
             os.chdir(cwd)
+
+    def test_a_cited_arxiv_id_in_an_assessed_row_does_not_exclude_that_paper(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            # The assessed paper's record mentions a third paper's arXiv id. That third
+            # paper is separately ranked and must stay eligible.
+            assessed = candidate(1, doi="10.9999/paper.one", raw={
+                "references": [{"externalIds": {"ArXiv": "2609.07777"}},
+                               {"url": "https://arxiv.org/abs/2609.07777"}]})
+            cited = candidate(2, title="The Separately Ranked Cited Manuscript",
+                              arxiv_id="2609.07777")
+            config, store, keys = self.track(tmp, "agent_memory", [assessed, cited])
+            self.assess(store, keys[0])
+            track = build_population({"agent_memory": config}, BUILD_TIME).track("agent_memory")
+            self.assertEqual(keys[1], "arxiv:2609.07777")
+            self.assertIn(keys[1], track.ordered_canonical_ids)
+            self.assertEqual([e.canonical_id for e in track.excluded], [keys[0]])
 
     def test_a_track_without_a_database_is_recorded_rather_than_passed_over(self):
         with tempfile.TemporaryDirectory() as tmp:

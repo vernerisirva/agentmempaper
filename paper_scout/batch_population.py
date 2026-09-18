@@ -141,8 +141,8 @@ class Population:
 
 def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
                arxiv_id: str | None = None, openalex_id: str | None = None,
-               semantic_scholar_id: str | None = None, url: str | None = None,
-               raw: str = "") -> tuple[str, ...]:
+               semantic_scholar_id: str | None = None,
+               url: str | None = None) -> tuple[str, ...]:
     """Every namespaced identity one paper is matched by, sorted and deduplicated.
 
     Namespacing is what keeps the identity space safe: a DOI can only ever match a DOI
@@ -151,6 +151,12 @@ def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
     enough to be distinctive, which is the repository's existing merge policy. A record
     with no usable identifier contributes none rather than an empty one that two
     unrelated records would share.
+
+    Every identity comes from a field that names this manuscript. Nothing is scanned out
+    of a raw source record: those carry references to other papers, and the first arXiv
+    id in one is not necessarily its own. Attributing a neighbour's identifier here would
+    drop an unrelated paper out of the population, so the inference is confined to the
+    canonical id, the DOI and the URL, each of which refers to this manuscript.
     """
     found = {"canonical:" + canonical_id.strip()} if canonical_id.strip() else set()
     prefixes = {"doi:": normalize_doi, "arxiv:": normalize_arxiv_id,
@@ -170,7 +176,7 @@ def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
         found.add("semantic_scholar:" + semantic_scholar_id.strip())
     # An arXiv identifier carried only by a URL or an arXiv DOI still identifies the
     # same manuscript, so it is parsed out rather than left as an unmatched alias.
-    derived = _infer_arxiv_id_from_text(" ".join(str(v or "") for v in (url, doi, canonical_id, raw)))
+    derived = _infer_arxiv_id_from_text(" ".join(str(v or "") for v in (url, doi, canonical_id)))
     if derived:
         found.add("arxiv:" + derived)
     normalized_title = normalize_text(title or "")
@@ -182,10 +188,11 @@ def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
 def paper_identities(paper) -> tuple[str, ...]:
     """Identities of one ranked library paper.
 
-    A ranked paper carries no raw source record, unlike a database row. It does not
-    need one: the site loader already infers an arXiv id out of the raw record whenever
-    the stored column is empty, so an identifier that exists only in the raw JSON still
-    reaches this side as arxiv_id and the two sides match on it.
+    This is the same field set a stored row contributes, so the two sides of a match
+    are derived alike. An arXiv id that exists only inside a raw source record still
+    reaches this side, because the site loader fills arxiv_id from the record when the
+    stored column is empty; that is a single chosen identifier for the paper, not a
+    free-text scan of everything the record happens to mention.
     """
     return identities(paper.canonical_id, title=paper.title, doi=paper.doi,
                       arxiv_id=paper.arxiv_id, openalex_id=paper.openalex_id,
@@ -193,14 +200,14 @@ def paper_identities(paper) -> tuple[str, ...]:
 
 
 def _row_identities(row: sqlite3.Row) -> tuple[str, ...]:
+    """Identities of one stored paper row, from its own identifier columns only."""
     keys = set(row.keys())
     return identities(str(row["canonical_key"]), title=str(row["title"] or "") if "title" in keys else "",
                       doi=row["doi"] if "doi" in keys else None,
                       arxiv_id=row["arxiv_id"] if "arxiv_id" in keys else None,
                       openalex_id=row["openalex_id"] if "openalex_id" in keys else None,
                       semantic_scholar_id=row["semantic_scholar_id"] if "semantic_scholar_id" in keys else None,
-                      url=row["url"] if "url" in keys else None,
-                      raw=str(row["raw_json"] or "") if "raw_json" in keys else "")
+                      url=row["url"] if "url" in keys else None)
 
 
 def _table_exists(db: sqlite3.Connection, table: str) -> bool:

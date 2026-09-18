@@ -89,6 +89,11 @@ its cited blocks and look for counterevidence throughout the supplied context. D
 whether contribution, method, evaluation, limitations, citation support and claim scope
 justify admission. Any important unsupported overclaim means uncertain. Report concise
 blocking reasons and your own evidence IDs. No hidden reasoning is supplied or requested.
+The decision and blocking_reasons must agree structurally. When promotion_decision is
+pass, return blocking_reasons: [] and write nothing in it; never state in prose that
+there are no blocking reasons. When one or more blocking reasons exist, list each of
+them and promotion_decision cannot be pass. This is an output-format requirement and
+changes no scientific standard: it does not make promotion easier or harder.
 """
         instruction += f"""Return at most {MAX_EVIDENCE_IDS} distinct evidence IDs.
 Cite the smallest sufficient set of supplied blocks supporting the promotion decision,
@@ -100,7 +105,9 @@ support for all material judgments; this budget does not relax the scientific ru
             instruction += f"""This is the one permitted fresh adjudication after an output
 contract failure. Independently adjudicate the original manuscript and primary final
 assessment again. Return at most {MAX_EVIDENCE_IDS} distinct evidence IDs and obey the
-response schema. Select only evidence necessary to justify your final decision.
+response schema, including the structural rule that a pass has an empty blocking_reasons
+array and that any blocking reason means the decision is not pass.
+Select only evidence necessary to justify your final decision.
 No previous adjudication is supplied; do not infer or preserve its conclusion.
 """
     content = {'canonical_id': context.canonical_id, 'source_content_hash': context.source_hash,

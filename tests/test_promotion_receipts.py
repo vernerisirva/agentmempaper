@@ -75,7 +75,10 @@ class ReceiptTests(unittest.TestCase):
 
     def test_unicode_and_scientific_whitespace_are_exact(self):
         prose = '  95 % confidence; ' + UNICODE + '; e\u0301 A\u030a\n '
-        models = FormattedModels(change=lambda v,r: v.update(quality_rationale=prose) if r == 0 else v.update(blocking_reasons=[prose]))
+        # A blocking reason requires a non-pass adjudication, so the exactness of the
+        # stored prose is checked on an internally consistent non-promotion.
+        models = FormattedModels(adjudicator='uncertain',
+            change=lambda v,r: v.update(quality_rationale=prose) if r == 0 else v.update(blocking_reasons=[prose]))
         result = self.run_gate(models)
         self.assertEqual(result.quality_status, 'uncertain')
         self.assertEqual(result.quality_rationale, prose)

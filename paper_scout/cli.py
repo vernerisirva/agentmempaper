@@ -6,9 +6,13 @@ import logging
 import os
 import re
 from dataclasses import replace
-from datetime import date
+from datetime import UTC, date, datetime
 from pathlib import Path
 
+from paper_scout.batch_population import (
+    TRACKS, build_population, population_manifest, repository_code_sha, track_configs,
+    verify_manifest, write_manifest,
+)
 from paper_scout.config import TRACK_CONFIG_PATHS, load_config
 from paper_scout.discovery_evaluation import evaluate_discovery, write_discovery_report
 from paper_scout.digest import write_digest
@@ -109,6 +113,23 @@ def main(argv: list[str] | None = None) -> int:
     quality_eval_parser = subparsers.add_parser("evaluate-quality", help="Evaluate deterministic scholarly-quality rules on fixture papers")
     quality_eval_parser.add_argument("--date", default=date.today().isoformat())
     _add_track_argument(quality_eval_parser)
+
+    population_parser = subparsers.add_parser(
+        "batch-population",
+        help="Build or verify the deterministic eligible-population manifest for an unseen batch")
+    population_parser.add_argument("--manifest", type=Path, required=True,
+                                   help="Manifest path to write, or to verify with --verify")
+    population_parser.add_argument("--verify", action="store_true",
+                                   help="Rebuild from the manifest's own inputs and compare instead of writing")
+    population_parser.add_argument("--build-time", default=None,
+                                   help="Pinned build time for the ranking's newness key (default: now, UTC)")
+    population_parser.add_argument("--roster", type=Path, action="append", default=[],
+                                   help="Frozen roster manifest whose canonical ids are excluded; repeatable")
+    # Not --track: the shared track argument selects one config for the whole process,
+    # while a population spans every track so one manuscript cannot slip through twice.
+    population_parser.add_argument("--population-track", action="append", choices=list(TRACKS),
+                                   default=[], dest="population_tracks",
+                                   help="Restrict to these tracks (default: all); repeatable")
 
     reassess_parser = subparsers.add_parser("reassess-quality", help="Assess or reassess stored relevant papers")
     reassess_parser.add_argument("--limit", type=int, default=None, help="Maximum papers (default: track run limit; hard ceiling 50)")
@@ -212,6 +233,9 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(result.message)
         return 0
+
+    if args.command == "batch-population":
+        return _batch_population(args)
 
     if args.command == "explain-paper":
         return _explain_paper(args, config)
@@ -435,3 +459,36 @@ def _fetch_direct_paper(args: argparse.Namespace) -> PaperCandidate | None:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+def _batch_population(args) -> int:
+    """Build or verify the deterministic eligible-population manifest.
+
+    Building persists the ordered identities themselves next to their digest, before any
+    scientific model call, so a later run can rebuild the population and compare it item
+    by item. Verifying rereads the manifest's own recorded inputs, so it checks the
+    construction rather than trusting whatever inputs the caller happens to pass.
+    """
+    tracks = tuple(args.population_tracks) or TRACKS
+    configs = track_configs(Path(args.config), tracks)
+    rosters = tuple(Path(path) for path in args.roster)
+    if args.verify:
+        manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
+        result = verify_manifest(manifest, configs)
+        for track, detail in sorted(result.tracks.items()):
+            print(f"{track} ordered_ids_match={detail['ordered_ids_match']} "
+                  f"population_sha256_match={detail['population_sha256_match']} "
+                  f"stored={detail['stored_count']} rebuilt={detail['rebuilt_count']}")
+        print(f"self_consistent={result.self_consistent} reproduced={result.reproduced} "
+              f"stored={result.stored_digest} rebuilt={result.rebuilt_digest}")
+        return 0 if result.reproduced and result.self_consistent else 1
+    build_time = args.build_time or datetime.now(UTC).replace(microsecond=0).isoformat()
+    population = build_population(configs, build_time, rosters)
+    manifest = population_manifest(population, repository_code_sha(Path(".")))
+    path = write_manifest(Path(args.manifest), manifest)
+    for track in population.tracks:
+        print(f"{track.track} ranked={track.ranked_count} eligible={len(track.eligible)} "
+              f"excluded={len(track.excluded)} population_sha256={track.population_sha256}")
+    print(f"manifest={path} manifest_sha256={manifest['manifest_sha256']} "
+          f"code_sha={manifest['code_sha']}")
+    return 0

@@ -305,7 +305,7 @@ The existing versioned `QualityAssessment` and SQLite assessment history are reu
 
 A manuscript-based pass requires located evidence of contribution clarity, methods, validation addressing the central claims, appropriate comparisons or a justified absence, claim/evidence alignment, and limitations. Expectations depend on paper type: theory, surveys and conceptual work need suitable scientific argument or synthesis, not necessarily experiments. Public code is helpful, not mandatory. Author identity, affiliation, employer, university, country and prestige are not quality criteria. Strong independent preprints and repository manuscripts can pass; weak institutional or peer-reviewed work can fail. Screening does not prove scientific correctness.
 
-New assessments use `quality-promotion-v1` / `dual-promotion-v1`. The primary assessor
+New assessments use `quality-promotion-v1` / `dual-promotion-v2`. The primary assessor
 and an independent adjudicator interpret the manuscript. Admission requires high
 relevance, primary pass, adjudicator pass, valid canonical provenance and no suppression.
 Disagreement or an unsupported overclaim leaves a review candidate; it is not a technical
@@ -317,12 +317,35 @@ only the primary final structured assessment, independently checking support and
 counterevidence. No hidden reasoning is shared or retained. Historical claim parsers,
 numeric matching, role keywords and score caps do not control this admission path.
 
-The default pinned models are `deepseek/deepseek-v4-pro-0813` and
-`anthropic/claude-sonnet-4.6`, using the configured OpenRouter endpoint/key. Set
-`PAPER_SCOUT_QUALITY_LLM_MODEL` and `PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL` to configure
-the pair from the explicit versioned family allowlist; same-family and rolling aliases
-fail closed. Adding a model requires reviewing its family, capabilities and price cap.
-Missing credentials leave the paper unassessed. No credentials are committed.
+The default pinned pair is `gemini-3.8-flash` as primary assessor, served by Google
+through `GEMINI_API_KEY`, and `deepseek/deepseek-v4-pro-0813` as independent adjudicator,
+served by OpenRouter through `OPENROUTER_API_KEY`. Each role resolves its own provider,
+endpoint and credential, so the two scientific judgments never share an account. A base
+URL must match its provider's exact host, which keeps one provider's credential off
+another's endpoint. Set `PAPER_SCOUT_QUALITY_LLM_MODEL` and
+`PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL` to configure the pair from the explicit versioned
+family allowlist; same-family pairs, rolling aliases and models with no known provider
+fail closed. Adding a model requires reviewing its family, provider, capabilities and
+price cap. Missing either credential leaves the paper unassessed with zero calls. No
+credentials are committed, serialized into receipts or published.
+
+Both providers receive the same contract — temperature 0, strict JSON schema, and no
+hidden reasoning requested, returned or persisted — spelled with each provider's own
+parameter names, since each rejects the other's. OpenRouter enforces server-side price
+caps; Google's endpoint has no equivalent parameter, so Gemini spend is bounded by its
+allocation instead and its reported usage carries tokens without a per-call charge.
+Such a call records `billing_cost: UNKNOWN` with an explicit allocation basis rather
+than a fabricated monetary amount.
+
+Every new receipt records which provider, model and family served each role, and the
+stored pair must match the pinned mapping. Because only one provider serves each pinned
+model, binding the model in a receipt also binds its provider, and an accidental
+cross-provider call is rejected rather than silently accepted. Retired pairs remain
+listed, so `dual-promotion-v1` receipts written by the previous
+`deepseek/deepseek-v4-pro-0813` and `anthropic/claude-sonnet-4.6` pair stay readable and
+auditable under their original configuration. A retired receipt cannot borrow the newer
+provenance, and the newer gate cannot omit it. The rubric, response schema, evidence
+contract and promotion rule are unchanged by the model switch.
 
 There are at most three calls per paper: one primary and at most two adjudications.
 Only an adjudicator final-response syntax/schema violation permits one fresh adjudication

@@ -14,17 +14,43 @@ from paper_scout.evidence_context import (
 from paper_scout.full_text import SelectedPaperText, canonical_manuscript_text
 
 ASSESSMENT_VERSION = 'quality-promotion-v1'
-GATE_VERSION = 'dual-promotion-v1'
+# The rubric, schema and promotion rule are unchanged; only the scientific model
+# pair and its providers changed, so new rows carry a new gate configuration
+# version. Both versions stay readable: old rows keep their original meaning.
+GATE_VERSION = 'dual-promotion-v2'
+DUAL_PROMOTION_GATE_VERSIONS = ('dual-promotion-v1', 'dual-promotion-v2')
+MODEL_PAIR_VERSION = 'model-pair-v1'
 RECEIPT_VERSION = 'canonical-response-v1'
 RETRY_POLICY = 'adjudicator-contract-retry-v1'
 # Existing engineering budget: six quality dimensions, up to four blocks each.
 # This is a total budget, not a per-dimension quota or a scientific sufficiency test.
 MAX_EVIDENCE_IDS = 24
-PRIMARY_MODEL = 'deepseek/deepseek-v4-pro-0813'
-ADJUDICATOR_MODEL = 'anthropic/claude-sonnet-4.6'
+PRIMARY_MODEL = 'gemini-3.8-flash'
+ADJUDICATOR_MODEL = 'deepseek/deepseek-v4-pro-0813'
 # Known, explicitly pinned families. Unknown/rolling aliases fail closed.
-MODEL_FAMILIES = {PRIMARY_MODEL: 'deepseek', ADJUDICATOR_MODEL: 'claude',
+# Retired production pairs stay listed so historical receipts remain verifiable.
+MODEL_FAMILIES = {'gemini-3.8-flash': 'gemini',
+                  'deepseek/deepseek-v4-pro-0813': 'deepseek',
+                  'anthropic/claude-sonnet-4.6': 'claude',
                   'anthropic/claude-opus-4.6': 'claude'}
+# Each pinned model resolves to exactly one provider, so binding the model in a
+# receipt also binds its provider. A model with no provider entry fails closed.
+MODEL_PROVIDERS = {'gemini-3.8-flash': 'google',
+                   'deepseek/deepseek-v4-pro-0813': 'openrouter',
+                   'anthropic/claude-sonnet-4.6': 'openrouter',
+                   'anthropic/claude-opus-4.6': 'openrouter'}
+# host is compared exactly against the configured base URL so a look-alike
+# domain cannot receive a credential intended for the real provider.
+PROVIDERS = {
+    'google': {'host': 'generativelanguage.googleapis.com',
+               'base_url': 'https://generativelanguage.googleapis.com/v1beta/openai',
+               'credential_env': ('GEMINI_API_KEY',),
+               'base_url_env': ('PAPER_SCOUT_GOOGLE_BASE_URL',)},
+    'openrouter': {'host': 'openrouter.ai',
+                   'base_url': 'https://openrouter.ai/api/v1',
+                   'credential_env': ('OPENROUTER_API_KEY', 'PAPER_SCOUT_LLM_API_KEY'),
+                   'base_url_env': ('PAPER_SCOUT_OPENROUTER_BASE_URL', 'PAPER_SCOUT_LLM_BASE_URL')},
+}
 FIELDS = ('scoped_contribution', 'method_assessment', 'evaluation_assessment',
           'claim_evidence_alignment', 'limitations', 'quality_rationale')
 
@@ -65,9 +91,28 @@ def schema(role: str) -> dict:
 
 
 def validate_pair(primary: str, adjudicator: str) -> None:
+    """Two explicitly pinned models from different families, each with a known provider.
+
+    Same-family configuration is rejected rather than silently accepted, so the two
+    scientific roles cannot collapse onto one underlying model. This is procedural
+    independence only; it does not establish statistical independence.
+    """
     if (primary not in MODEL_FAMILIES or adjudicator not in MODEL_FAMILIES
             or MODEL_FAMILIES[primary] == MODEL_FAMILIES[adjudicator]):
         raise ValueError('two distinct, explicitly pinned model families are required')
+    if primary not in MODEL_PROVIDERS or adjudicator not in MODEL_PROVIDERS:
+        raise ValueError('every pinned scientific model requires a known provider')
+
+
+def model_pair_provenance(primary: str, adjudicator: str) -> dict:
+    """Record which provider and family actually served each scientific role."""
+    validate_pair(primary, adjudicator)
+    return {'version': MODEL_PAIR_VERSION,
+            'primary': {'provider': MODEL_PROVIDERS[primary], 'model': primary,
+                        'family': MODEL_FAMILIES[primary]},
+            'adjudicator': {'provider': MODEL_PROVIDERS[adjudicator], 'model': adjudicator,
+                            'family': MODEL_FAMILIES[adjudicator]},
+            'independent_families': MODEL_FAMILIES[primary] != MODEL_FAMILIES[adjudicator]}
 
 
 def identity_from_document(candidate, document) -> dict:
@@ -211,6 +256,15 @@ def validate_receipt(assessment) -> None:
         raise ValueError('missing acquisition provenance')
     p, a = receipt['primary'], receipt['adjudicator']
     validate_pair(receipt['primary_model'], receipt['adjudicator_model'])
+    # Model-pair provenance is required from the version that introduced it and
+    # must never be back-dated onto a receipt written under the older gate.
+    pair_required = assessment.quality_gate_version == 'dual-promotion-v2'
+    pair = receipt.get('model_pair')
+    if pair_required:
+        if pair != model_pair_provenance(receipt['primary_model'], receipt['adjudicator_model']):
+            raise ValueError('missing or inconsistent scientific model-pair provenance')
+    elif pair is not None:
+        raise ValueError('legacy promotion receipt cannot carry model-pair provenance')
     validate_response(p, 'primary', context)
     validate_response(a, 'adjudicator', context)
     expected_status = 'pass' if agreement(p, a) else 'uncertain'
@@ -233,6 +287,13 @@ def validate_receipt(assessment) -> None:
                 or call.get('finish_reason') != 'stop' or call.get('model') != receipt[role + '_model']
                 or call.get('context_id') != context.context_id):
             raise ValueError('incomplete or wrong-model scientific call')
+        # The bound model already determines the provider; recording it makes an
+        # accidental cross-provider call visible instead of merely implied.
+        if pair_required:
+            if call.get('provider') != MODEL_PROVIDERS[call['model']]:
+                raise ValueError('scientific call provider does not match its pinned model')
+        elif call.get('provider') is not None:
+            raise ValueError('legacy scientific call cannot carry provider provenance')
         if (digest(call['raw_content']) != call['content_sha256']
                 or not re.fullmatch(r'[a-f0-9]{64}', call['request_sha256'])):
             raise ValueError('scientific raw response or request hash mismatch')

@@ -80,11 +80,20 @@ class RetryTests(unittest.TestCase):
                         validate_response(value, role, context)
                     self.assertEqual(raised.exception.validator, 'maxItems')
         models = RetryModels(); self.run_gate(models)
-        for payload in models.payloads:
-            role = 'primary' if payload['model'].startswith('deepseek/') else 'adjudicator'
+        for index, payload in enumerate(models.payloads):
+            role = 'primary' if index == 0 else 'adjudicator'
             fmt = payload['response_format']['json_schema']
             self.assertTrue(fmt['strict'])
-            self.assertTrue(payload['provider']['require_parameters'])
+            # The same generation contract is expressed with each provider's own
+            # parameter names; neither provider accepts the other's.
+            if payload['model'].startswith('deepseek/'):
+                self.assertTrue(payload['provider']['require_parameters'])
+                self.assertEqual(payload['reasoning'], {'enabled': False, 'exclude': True})
+                self.assertNotIn('reasoning_effort', payload)
+            else:
+                self.assertEqual(payload['reasoning_effort'], 'none')
+                self.assertNotIn('provider', payload)
+                self.assertNotIn('reasoning', payload)
             self.assertEqual(fmt['schema'], schema(role))
             self.assertEqual(fmt['schema']['properties']['evidence_ids']['maxItems'], 24)
             self.assertTrue(fmt['schema']['properties']['evidence_ids']['uniqueItems'])

@@ -8,7 +8,8 @@ import logging
 from pathlib import Path
 
 from paper_scout.config import QualityConfig
-from paper_scout.promotion_protocol import ASSESSMENT_VERSION, GATE_VERSION, identity_from_document
+from paper_scout.promotion_protocol import (
+    ASSESSMENT_VERSION, DUAL_PROMOTION_GATE_VERSIONS, GATE_VERSION, identity_from_document)
 from paper_scout.curation import QualityCuration, quality_curation_for_paper
 from paper_scout.full_text import FullTextDocument, fetch_and_extract_pdf, locate_full_text_urls, select_assessment_text
 from paper_scout.models import ClassificationResult, PaperCandidate
@@ -210,7 +211,7 @@ def _apply_manual_curation(assessment: QualityAssessment, curation: QualityCurat
         confidence="high",
         assessor_type=assessment.assessor_type if assessment.full_text_assessed else "manual_override",
         assessor_model=assessment.assessor_model if assessment.full_text_assessed else "curation",
-        source_content_hash=assessment.source_content_hash if assessment.quality_gate_version == GATE_VERSION else source_hash,
+        source_content_hash=assessment.source_content_hash if assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS else source_hash,
         assessed_at=datetime.now(UTC).replace(microsecond=0).isoformat(),
         concise_summary=summary,
     )
@@ -229,7 +230,7 @@ def quality_assessment_matches_mode(
     assessment: QualityAssessment,
     no_llm: bool = False,
 ) -> bool:
-    if assessment.quality_gate_version == GATE_VERSION:
+    if assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS:
         from paper_scout.promotion_gate import settings_from_env
         if no_llm or config.mode in {"off", "deterministic"}:
             return assessment.assessor_type == "deterministic"

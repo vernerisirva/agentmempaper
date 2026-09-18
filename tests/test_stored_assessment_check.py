@@ -173,6 +173,29 @@ class StoredAssessmentCheckTests(unittest.TestCase):
         self.assertIn('4 stored assessments', output)
         self.assertNotIn('unreadable', output)
 
+    def test_the_error_count_is_exact_while_the_listing_is_bounded(self):
+        """A broken history reports its shape without reproducing itself."""
+        import sqlite3
+        path = self.store(self.assessments())
+        bad = check_stored_assessments.MAX_REPORTED_FAILURES + 7
+        connection = sqlite3.connect(path)
+        with connection:
+            for index in range(bad):
+                connection.execute(
+                    'INSERT INTO paper_quality_assessments(canonical_id, assessment_version,'
+                    ' rubric_version, assessor_type, assessor_model, source_content_hash,'
+                    ' assessed_at, overall_quality_score, recommendation, confidence,'
+                    ' assessment_scope, paper_type, payload_json)'
+                    " VALUES(?,'quality-promotion-v1','scholarly-rubric-v1','llm',?,'hash',"
+                    "'2026-09-18T00:00:00',NULL,'unknown','low','full_text','unclear','[1]')",
+                    (f'fixture-{index}', f'corrupted-history-{index}'))
+        connection.close()
+        code, output = self.run_check(path)
+        self.assertEqual(code, 1)
+        self.assertIn(f'stored assessment checks: {bad} errors', output)
+        self.assertEqual(output.count('not an object'), check_stored_assessments.MAX_REPORTED_FAILURES)
+        self.assertIn(f'... and {bad - check_stored_assessments.MAX_REPORTED_FAILURES} more', output)
+
     def test_a_later_database_is_still_checked_after_an_earlier_one_fails(self):
         good = self.store(self.assessments())
         code, output = self.run_check(Path('does/not/exist.sqlite3'), good)

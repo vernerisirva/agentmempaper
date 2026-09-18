@@ -31,6 +31,9 @@ from paper_scout.quality_models import QualityAssessment  # noqa: E402
 
 DEFAULT_DATABASES = ('data/paper_scout.sqlite3', 'data/deep_research/paper_scout.sqlite3',
                      'data/engram/paper_scout.sqlite3')
+# A broken history should report its shape, not reproduce itself in the terminal. The
+# count is always exact; only the listing is bounded, so nothing is silently dropped.
+MAX_REPORTED_FAILURES = 50
 
 
 def payloads(path: Path):
@@ -94,11 +97,18 @@ def diagnosis(value: dict) -> str | None:
     return None
 
 
-def check(path: Path, versions: Counter, failures: list) -> int:
+def record(failures: list, counted: list, message: str) -> None:
+    """Count every failure, keep the first few verbatim."""
+    counted[0] += 1
+    if len(failures) < MAX_REPORTED_FAILURES:
+        failures.append(message)
+
+
+def check(path: Path, versions: Counter, failures: list, counted: list) -> int:
     seen = 0
     for value in payloads(path):
         if isinstance(value, str):
-            failures.append(value)
+            record(failures, counted, value)
             continue
         seen += 1
         # Nothing about one row may end the run, so the whole of its handling is
@@ -118,7 +128,7 @@ def check(path: Path, versions: Counter, failures: list) -> int:
             except Exception:  # noqa: BLE001 - a message must never mask the failure.
                 pass
             detail = f'{type(exc).__name__}: {exc}' if named is None else named
-            failures.append(f'{path}: {value.get("canonical_id", "?")}: {detail}')
+            record(failures, counted, f'{path}: {value.get("canonical_id", "?")}: {detail}')
     return seen
 
 
@@ -133,27 +143,30 @@ def main(argv: list[str] | None = None) -> int:
     paths = [Path(p) for p in (DEFAULT_DATABASES if argv is None else argv)]
     versions: Counter = Counter()
     failures: list[str] = []
+    counted = [0]
     total = 0
     for path in paths:
         try:
             present = path.exists()
         except OSError as exc:
-            failures.append(f'{path}: unreadable database ({type(exc).__name__}: {exc})')
+            record(failures, counted, f'{path}: unreadable database ({type(exc).__name__}: {exc})')
             continue
         if not present:
             print(f'skipped (absent): {path}')
             continue
-        seen = check(path, versions, failures)
+        seen = check(path, versions, failures, counted)
         total += seen
         print(f'{path}: {seen} rows')
     print(f'\n{total} stored assessments')
     for key, count in sorted(versions.items(), key=lambda item: (-item[1], str(item[0]))):
         assessment_version, gate, rubric, status = key
         print(f'  {count:5d}  {assessment_version} / {gate} / {rubric} / {status}')
-    if failures:
-        print(f'\nstored assessment checks: {len(failures)} errors')
+    if counted[0]:
+        print(f'\nstored assessment checks: {counted[0]} errors')
         for failure in failures:
             print(f'  {failure}')
+        if counted[0] > len(failures):
+            print(f'  ... and {counted[0] - len(failures)} more, not listed')
         return 1
     print('\nstored assessment checks: 0 errors')
     return 0

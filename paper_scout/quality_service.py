@@ -34,7 +34,7 @@ class QualityRunStats:
 
     def record(self, assessment: QualityAssessment, cache_hit: bool) -> None:
         self.assessed.append(assessment)
-        if assessment.execution.get("outcome") in {"transport_failure", "protocol_failure", "integrity_failure"}:
+        if assessment.execution.get("outcome") in {"transport_failure", "protocol_failure", "integrity_failure", "text_coverage_failure"}:
             self.failures.append(f"{assessment.canonical_id}: {assessment.execution['outcome']}")
         if cache_hit:
             self.cache_hits += 1

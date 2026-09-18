@@ -386,6 +386,30 @@ they are not provider signatures. Hidden reasoning is not retained. Raw content 
 receipts are excluded from public cards. Existing historical gate formats remain
 unchanged; no successful dual-gate rows predate this receipt contract.
 
+### Scientific manuscript coverage
+
+New production calls require a deterministic `coverage-v2` preflight. Page boundaries,
+numbered hierarchy and standalone heading shape define section ranges; heading semantics
+only label their roles. Unfamiliar body headings remain visible, and a References label
+cannot exclude later prose: only citation prefixes with an author-style start and an
+inline bibliographic locator are excluded. Wrapped citations, ambiguous continuations,
+and other back matter are retained conservatively. The STAR METHODS regression uses the actual 21-page structure with synthetic
+prose; no scientific decisions are embedded in fixtures.
+
+Selection includes all detected scientific body/appendix text when it fits. Under pressure,
+round-robin selection balances roles and contiguous section prefixes in source order;
+`max_section_characters` bounds selection chunks, not the total inclusion of a method.
+References do not consume the body budget. Internal metadata records extracted/missing,
+scientific, selected and omitted pages, per-section character accounting and omission
+reasons, roles, budgets, versions and the exact input hash.
+
+Any extraction gap, missing page, absent body structure or omitted body text returns
+`text_coverage_failure` with public status `not_assessed` before either scientific model
+is called. Partial excerpts remain diagnostic only; there is no approved partial-coverage
+scientific decision. This conservative technical rule does not infer that a paper lacks
+methods, alter the rubric, or relabel historical judgments. Previously stored receipts
+retain their original contract and remain readable.
+
 ### Historical compatibility and bounded reassessment
 
 Historical assessments, calibration, Batch 2 and both recoveries retain their original

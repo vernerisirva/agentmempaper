@@ -47,7 +47,8 @@ class ReceiptTests(unittest.TestCase):
         _, _, text, seed = fixture()
         # Exact failing bytes in an otherwise synthetic manuscript/context. No
         # additional frozen papers are used, acquired, inspected or sent to models.
-        text = replace(text, text=excerpt, sections=[replace(text.sections[0], text=excerpt)])
+        text = replace(text, text=excerpt, sections=[replace(text.sections[0], text=excerpt)],
+                       coverage={**text.coverage, "assessment_input_sha256": digest(excerpt)})
         result = self.run_gate(FormattedModels(), text, seed)
         self.assertEqual(result.quality_status, 'pass')
         self.assertEqual(result.evidence[0].excerpt, excerpt)

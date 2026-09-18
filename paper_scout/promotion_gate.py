@@ -17,6 +17,7 @@ from paper_scout.promotion_protocol import (
     schema, source_block, validate_context, validate_pair,
 )
 from paper_scout.quality_models import QualityEvidence
+from paper_scout.manuscript_coverage import validate_assessment_coverage
 from paper_scout.quality_llm import _reported_usage
 
 LOGGER = logging.getLogger(__name__)
@@ -158,6 +159,15 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
         if (identity.get('verified') is not True or identity.get('source_content_hash') != selected.content_hash
                 or identity.get('source_url') != seed.full_text_url or not seed.full_text_url):
             return pending('integrity_failure', 'Manuscript identity or acquisition provenance is unverified.')
+        coverage_failures = validate_assessment_coverage(selected)
+        base['coverage'] = selected.coverage
+        if coverage_failures:
+            receipt['coverage_gate'] = {'version': 'coverage-v2', 'status': 'failed',
+                                        'reasons': coverage_failures}
+            result = pending('text_coverage_failure',
+                             'Scientific manuscript coverage is incomplete; no scientific decision or model call.')
+            return replace(result, quality_status='not_assessed')
+        receipt['coverage_gate'] = {'version': 'coverage-v2', 'status': 'pass', 'reasons': []}
         context = build_evidence_context(seed.canonical_id, selected)
         validate_context(context, selected)
         if context.source_hash != seed.source_content_hash:

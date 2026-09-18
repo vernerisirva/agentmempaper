@@ -241,6 +241,10 @@ def select_assessment_text(
     logical_xml = document.coverage.get('format') == 'JATS' or any('JATS XML:' in w for w in document.warnings)
     detected = ([SelectedSection(p.text.partition('\n')[0], p.text.partition('\n')[2], p.page) for p in pages]
                 if logical_xml else _detect_sections(pages))
+    # XML body membership is stronger evidence than a title such as References.
+    if logical_xml:
+        detected = [SelectedSection('Body section: ' + s.heading if _section_kind(s.heading) == 'excluded' else s.heading,
+                                    s.text, s.first_page) for s in detected]
     uncertain = not any(_section_kind(s.heading) not in {'abstract', 'excluded'} for s in detected)
     if not detected:
         # Unknown boundaries are visible but cannot supply body evidence.
@@ -255,30 +259,47 @@ def select_assessment_text(
         return f'## {s.heading}\n[Page {s.first_page or "unknown"}]\n{s.text}\n\n'
     all_text = prefix + ''.join(render(s) for s in body)
     selected = body
+    chunk_size = None
+    selected_indices = list(range(len(body)))
     selection_used = len(all_text) > max_prompt_characters
     if selection_used:
-        # Fair round-robin across scientific groups, with beginning/middle/end
-        # within each group. References never displace body or appendix content.
-        groups = {}
+        # Round-robin by role, then contiguous logical section. A long method
+        # keeps adjacent chunks/pages, without a per-heading cap hiding its tail.
+        # This diagnostic partial context is NEVER approved for a paid call.
         chunk_size = max(80, min(max_section_characters, max_prompt_characters // 24, 2000))
-        for s in body:
-            groups.setdefault(_section_kind(s.heading), []).extend(_section_chunks(s, chunk_size))
-        groups = {k: _spread_order(v) for k, v in groups.items()}
-        order = ('methods', 'results', 'limitations', 'discussion', 'conclusion', 'introduction', 'related', 'appendix', 'body', 'abstract')
-        selected = []
-        heading_usage = {}
-        text = prefix[:max_prompt_characters]
-        while any(groups.values()):
+        groups = {}
+        logical = []
+        for i, section in enumerate(body):
+            chunks = _section_chunks(section, chunk_size)
+            if not chunks:
+                continue
+            if not logical or logical[-1][-1][1].heading != section.heading:
+                logical.append([])
+            logical[-1].extend((i, c) for c in chunks)
+        for group in logical:
+            groups.setdefault(_section_kind(group[0][1].heading), []).append(group)
+        order = ('methods', 'results', 'limitations', 'discussion', 'conclusion',
+                 'introduction', 'appendix', 'body', 'related', 'abstract')
+        chosen = []
+        text_length = len(prefix[:max_prompt_characters])
+        while any(group for role in groups.values() for group in role):
             for kind in order:
-                if not groups.get(kind):
-                    continue
-                section = groups[kind].pop(0)
-                if (len(text) + len(render(section)) <= max_prompt_characters and
-                        heading_usage.get(section.heading, 0) + len(section.text) <= max_section_characters):
-                    heading_usage[section.heading] = heading_usage.get(section.heading, 0) + len(section.text)
-                    selected.append(section)
-                    text += render(section)
-        all_text = text
+                for group in groups.get(kind, []):
+                    if not group:
+                        continue
+                    i, section = group.pop(0)
+                    size = len(render(section))
+                    if text_length + size <= max_prompt_characters:
+                        chosen.append((i, section))
+                        text_length += size
+                    else:
+                        # Keep each section's prefix contiguous; do not leap over
+                        # an omitted chunk to pick an isolated smaller tail.
+                        group.clear()
+        chosen.sort(key=lambda item: item[0])  # stable chunk/source order
+        selected_indices = [i for i, _ in chosen]
+        selected = [section for _, section in chosen]
+        all_text = prefix[:max_prompt_characters] + ''.join(render(s) for s in selected)
     if len(all_text) > max_prompt_characters:
         raise ValueError("assessment text exceeded its configured budget")
     body_chars = sum(_source_characters(s.text) for s in body)
@@ -292,10 +313,10 @@ def select_assessment_text(
     if selection_used:
         warnings.append(f'Representative manuscript excerpts selected: {selected_chars} of {body_chars} eligible characters; omitted passages are unavailable to the assessor.')
     if excluded:
-        warnings.append('References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits.')
+        warnings.append('Structurally bounded citation prefixes excluded; ambiguous back matter, body and detected appendices retained where budget permits.')
     if uncertain:
         warnings.append('Manuscript section boundaries are uncertain; unclassified abstract pages cannot ground a body-text decision.')
-    coverage = {**document.coverage, 'version': 'coverage-v1', 'selection_version': 'representative-v1',
+    coverage = {**document.coverage, 'version': 'coverage-v2', 'selection_version': 'contiguous-balanced-v2',
         'normalization_version': 'canonical-unicode-v2', 'surrogate_code_units': surrogate_count, 'source_pages': document.coverage.get('source_pages'),
         'page_unit': 'logical XML body section' if logical_xml else 'PDF page',
         'extracted_pages': len(document.pages), 'extracted_page_indices': [p.page for p in document.pages],
@@ -311,8 +332,14 @@ def select_assessment_text(
         'selected_instead_of_full_text': selection_used,
         'selected_sections': [{'heading':s.heading, 'page':s.first_page, 'characters':_source_characters(s.text)} for s in selected],
         'warnings': warnings}
-    # No percentage heuristic: "full" requires complete extraction and all eligible text.
-    scope = 'full_text' if document.complete and not selection_used and not uncertain else 'partial_full_text'
+    from paper_scout.manuscript_coverage import coverage_manifest
+    coverage.update(coverage_manifest(document, pages, body, excluded, selected,
+                                     selected_indices, max_prompt_characters,
+                                     chunk_size, uncertain))
+    coverage["configured_max_section_characters"] = max_section_characters
+    coverage['status'] = 'complete' if not coverage['failure_reasons'] else 'text_coverage_failure'
+    # Completeness is technical. Missing scientific merit remains the models' job.
+    scope = 'full_text' if coverage['status'] == 'complete' else 'partial_full_text'
     return SelectedPaperText(all_text, selected, scope, document.content_hash, uncertain, warnings, coverage)
 
 
@@ -449,6 +476,7 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     sections: list[SelectedSection] = []
     current_heading = None
     abstract_page = None
+    from paper_scout.manuscript_coverage import structural_headings, split_reference_spans
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
         # Generic numbered titles terminate a known body section; never infer
@@ -464,6 +492,14 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
                     and not any(c in m.group(1) for c in ",;=")
                     and (m.group(1).isupper() or re.match(r"[A-Z]\.\d", m.group(0))
                          or re.match(r"(?i)(?:implementation|experimental|evaluation|additional|detailed|full benchmark|case study|training|hyperparameter|prompt|per-world|memory samples|limitations|diagnostic|proof|data)\b", m.group(1)))]
+        # Typography/position provide boundaries for unfamiliar headings. The
+        # classifier is used only AFTER finding a section, never to hide one.
+        back_starts = [m.start() for m in matches if _section_kind(m.group(1)) == 'excluded']
+        back_start = 0 if current_heading and _section_kind(current_heading) == 'excluded' else min(back_starts, default=None)
+        structural = structural_headings(page.text, current_heading is not None or bool(matches), back_start)
+        occupied = {m.start() for m in matches}
+        matches += [m for m in structural if m.start() not in occupied]
+        structural_starts = {m.start() for m in structural}
         matches.sort(key=lambda m: m.start())
         named_starts = {m.start() for m in heading_pattern.finditer(page.text)}
         filtered = []
@@ -471,13 +507,16 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
         for match in matches:
             if match.start() in named_starts:
                 in_back_matter = _section_kind(match.group(1)) == 'excluded'
-            elif appendix.fullmatch(match.group(0)):
+            elif match.start() in structural_starts or appendix.fullmatch(match.group(0)):
                 in_back_matter = False
             elif in_back_matter:
                 continue
             filtered.append(match)
         matches = filtered
         prefix = page.text[:matches[0].start()] if matches else page.text
+        if (prefix.strip() and current_heading and _section_kind(current_heading) == 'excluded'
+                and current_heading.casefold() not in {'references', 'bibliography'}):
+            current_heading = 'Unclassified body after back matter'
         if prefix.strip():
             sections.append(SelectedSection(current_heading or "Abstract / front matter", prefix.strip(), page.page))
         for index, match in enumerate(matches):
@@ -487,10 +526,13 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
             if current_heading == "Abstract":
                 abstract_page = page.page
             end = matches[index + 1].start() if index + 1 < len(matches) else len(page.text)
-            text = page.text[match.end() : end].strip()
+            # Preserve novel heading lines as source too: adjacent structural
+            # candidates must not make one another's text disappear.
+            start = match.start() if match.start() in structural_starts and match.start() not in named_starts else match.end()
+            text = page.text[start : end].strip()
             if text:
                 sections.append(SelectedSection(current_heading, text, page.page))
-    return sections
+    return split_reference_spans(sections)
 
 
 def _plausible_pdf(payload: bytes, content_type: str) -> bool:

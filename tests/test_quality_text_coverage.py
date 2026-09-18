@@ -19,7 +19,7 @@ class CoverageTests(unittest.TestCase):
         pages=[ExtractedPage(1, 'Abstract\nSummary.\n1 Introduction\nClaim.'),
                ExtractedPage(2, '2 Methods\n'+'method evidence. '*1000),
                ExtractedPage(3, '3 Results\nMeasured effect.\n4 Limitations\nScope is bounded.'),
-               ExtractedPage(4, 'References\n1 Smith, J. A Citation\n'+'Citation. '*3000),
+               ExtractedPage(4, 'References\n'+('1 Smith, J. (2020). A Citation. doi:10.0000/synthetic\n'*1000)),
                ExtractedPage(5, 'A Implementation Details\nAppendix training protocol.')]
         selected=select_assessment_text(candidate(),FullTextDocument('https://example.org/a.pdf',pages,'sha',True),max_section_characters=200)
         self.assertEqual(selected.scope,'full_text')
@@ -45,7 +45,7 @@ class CoverageTests(unittest.TestCase):
     def test_oversized_selection_represents_scientific_groups_and_records_gaps(self):
         headings=['Introduction','Methods','Results','Limitations','Discussion','Conclusion']
         pages=[ExtractedPage(i+1,heading+'\n'+('Evidence '+heading+'. ')*2000) for i,heading in enumerate(headings)]
-        pages.append(ExtractedPage(7,'References\n'+'Citation. '*6000))
+        pages.append(ExtractedPage(7,'References\n1. Smith, J. (2020). '+'Citation. '*6000+' doi:10.0000/synthetic'))
         selected=select_assessment_text(candidate(),FullTextDocument('https://example.org/a.pdf',pages,'sha',True),max_prompt_characters=12000,max_section_characters=1600)
         self.assertLessEqual(len(selected.text),12000)
         self.assertEqual(selected.scope,'partial_full_text')

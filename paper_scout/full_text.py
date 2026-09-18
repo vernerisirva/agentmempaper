@@ -241,6 +241,10 @@ def select_assessment_text(
     logical_xml = document.coverage.get('format') == 'JATS' or any('JATS XML:' in w for w in document.warnings)
     detected = ([SelectedSection(p.text.partition('\n')[0], p.text.partition('\n')[2], p.page) for p in pages]
                 if logical_xml else _detect_sections(pages))
+    # XML body membership is stronger evidence than a title such as References.
+    if logical_xml:
+        detected = [SelectedSection('Body section: ' + s.heading if _section_kind(s.heading) == 'excluded' else s.heading,
+                                    s.text, s.first_page) for s in detected]
     uncertain = not any(_section_kind(s.heading) not in {'abstract', 'excluded'} for s in detected)
     if not detected:
         # Unknown boundaries are visible but cannot supply body evidence.
@@ -255,6 +259,7 @@ def select_assessment_text(
         return f'## {s.heading}\n[Page {s.first_page or "unknown"}]\n{s.text}\n\n'
     all_text = prefix + ''.join(render(s) for s in body)
     selected = body
+    chunk_size = None
     selected_indices = list(range(len(body)))
     selection_used = len(all_text) > max_prompt_characters
     if selection_used:
@@ -265,9 +270,12 @@ def select_assessment_text(
         groups = {}
         logical = []
         for i, section in enumerate(body):
+            chunks = _section_chunks(section, chunk_size)
+            if not chunks:
+                continue
             if not logical or logical[-1][-1][1].heading != section.heading:
                 logical.append([])
-            logical[-1].extend((i, c) for c in _section_chunks(section, chunk_size))
+            logical[-1].extend((i, c) for c in chunks)
         for group in logical:
             groups.setdefault(_section_kind(group[0][1].heading), []).append(group)
         order = ('methods', 'results', 'limitations', 'discussion', 'conclusion',
@@ -327,7 +335,8 @@ def select_assessment_text(
     from paper_scout.manuscript_coverage import coverage_manifest
     coverage.update(coverage_manifest(document, pages, body, excluded, selected,
                                      selected_indices, max_prompt_characters,
-                                     max_section_characters, uncertain))
+                                     chunk_size, uncertain))
+    coverage["configured_max_section_characters"] = max_section_characters
     coverage['status'] = 'complete' if not coverage['failure_reasons'] else 'text_coverage_failure'
     # Completeness is technical. Missing scientific merit remains the models' job.
     scope = 'full_text' if coverage['status'] == 'complete' else 'partial_full_text'
@@ -467,7 +476,7 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
     sections: list[SelectedSection] = []
     current_heading = None
     abstract_page = None
-    from paper_scout.manuscript_coverage import structural_headings, reference_continuation
+    from paper_scout.manuscript_coverage import structural_headings, reference_continuation, split_reference_spans
     for page in pages:
         matches = list(heading_pattern.finditer(page.text))
         # Generic numbered titles terminate a known body section; never infer
@@ -485,7 +494,9 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
                          or re.match(r"(?i)(?:implementation|experimental|evaluation|additional|detailed|full benchmark|case study|training|hyperparameter|prompt|per-world|memory samples|limitations|diagnostic|proof|data)\b", m.group(1)))]
         # Typography/position provide boundaries for unfamiliar headings. The
         # classifier is used only AFTER finding a section, never to hide one.
-        structural = structural_headings(page.text, current_heading is not None or bool(matches))
+        back_starts = [m.start() for m in matches if _section_kind(m.group(1)) == 'excluded']
+        back_start = 0 if current_heading and _section_kind(current_heading) == 'excluded' else min(back_starts, default=None)
+        structural = structural_headings(page.text, current_heading is not None or bool(matches), back_start)
         occupied = {m.start() for m in matches}
         matches += [m for m in structural if m.start() not in occupied]
         structural_starts = {m.start() for m in structural}
@@ -504,11 +515,8 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
         matches = filtered
         prefix = page.text[:matches[0].start()] if matches else page.text
         if (prefix.strip() and current_heading and _section_kind(current_heading) == 'excluded'
-                and not (current_heading.casefold() in {'references', 'bibliography'}
-                         and reference_continuation(prefix))):
-            # A previous page's label is not evidence that this page is a
-            # bibliography. Retain ambiguous continuations as scientific body.
-            current_heading = 'Unclassified body after references'
+                and current_heading.casefold() not in {'references', 'bibliography'}):
+            current_heading = 'Unclassified body after back matter'
         if prefix.strip():
             sections.append(SelectedSection(current_heading or "Abstract / front matter", prefix.strip(), page.page))
         for index, match in enumerate(matches):
@@ -518,10 +526,13 @@ def _detect_sections(pages: list[ExtractedPage]) -> list[SelectedSection]:
             if current_heading == "Abstract":
                 abstract_page = page.page
             end = matches[index + 1].start() if index + 1 < len(matches) else len(page.text)
-            text = page.text[match.end() : end].strip()
+            # Preserve novel heading lines as source too: adjacent structural
+            # candidates must not make one another's text disappear.
+            start = match.start() if match.start() in structural_starts and match.start() not in named_starts else match.end()
+            text = page.text[start : end].strip()
             if text:
                 sections.append(SelectedSection(current_heading, text, page.page))
-    return sections
+    return split_reference_spans(sections)
 
 
 def _plausible_pdf(payload: bytes, content_type: str) -> bool:

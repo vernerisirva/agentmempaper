@@ -10,21 +10,23 @@ _LINE = re.compile(r'(?m)^[ \t]*([^\n]{3,110}?)[ \t]*$')
 _FRONT = re.compile(r'(?i)^(?:preface|table of contents|contents|copyright|about the author|title page)$')
 
 
-def structural_headings(text, established):
+def structural_headings(text, established, back_matter_start=None):
     result = []
     for match in _LINE.finditer(text):
         title = match.group(1).strip()
         words = title.split()
-        if not 1 <= len(words) <= 12 or any(c in title for c in '.,;=!?'):
+        if not 2 <= len(words) <= 12 or any(c in title for c in '.,;=!?'):
             continue
-        if not title[0].isalpha() or not title[0].isupper():
+        if not title[0].isalpha():
             continue
         at_boundary = not text[:match.start()].strip() or text[:match.start()].endswith('\n\n')
         title_case = all(w[0].isupper() or w.casefold() in {'and', 'of', 'the', 'in', 'for', 'to', 'with', 'on'} for w in words)
         if _FRONT.fullmatch(title):
             # Front matter is a structural boundary but not proof of body text.
             continue
-        if established and (title.isupper() or (at_boundary and title_case)):
+        in_back_matter = back_matter_start is not None and match.start() >= back_matter_start
+        if established and (title.isupper() or (at_boundary and title_case) or
+                            (in_back_matter and len(words) >= 2 and len(title) <= 70)):
             result.append(match)
     return result
 
@@ -35,8 +37,44 @@ def reference_continuation(text):
     Ambiguous text is retained, which can add citations to context but cannot
     silently throw away a page of novel scientific prose.
     """
-    return bool(re.search(r'(?m)^\s*(?:\[\d+\]|\d+[.)])\s+\S+.*(?:,|\b(?:19|20)\d{2}\b)', text)
-                or len(re.findall(r'\b(?:19|20)\d{2}[a-z]?\b', text)) >= 3)
+    # A year count is not a bibliography boundary: experimental prose often
+    # names multiple years. Require an entry anchored at the start of the span.
+    entry_start = re.match(r'\s*(?:(?:\[\d+\]|\d+[.)]?)\s+)?'
+                           r"[A-ZÀ-ÖØ-Þ][\w’'-]+(?:,\s*|\s+)[A-Z](?:\.|[a-z]+,)", text)
+    # A clearly bibliographic ending bounds the span; an arbitrary prose tail
+    # after a citation is not certified by the first entry. Conservative misses
+    # retain extra references rather than delete possible scientific prose.
+    entry_end = re.search(r'(?:doi:\S+|https?://\S+|arXiv:\S+|'
+                          r'\b\d+[–-]\d+)\.?\s*(?:\n\s*\d+)?\s*$', text, re.I)
+    return bool(entry_start and entry_end)
+
+
+def split_reference_spans(sections):
+    """Only discard anchored bibliographic paragraphs; keep ambiguous tails.
+
+    Blank-line boundaries survive PDF extraction when available. Generic heading
+    boundaries are parsed separately, including novel lowercase headings inside
+    back matter. A citation at the start cannot certify a later paragraph.
+    """
+    from paper_scout.full_text import SelectedSection
+    result = []
+    for section in sections:
+        if section.heading.casefold() not in {'references', 'bibliography'}:
+            result.append(section)
+            continue
+        for span in re.split(r'\n[ \t]*\n|\n(?=\s*(?:\[\d+\]|\d+[.)])\s+[A-Z])', section.text):
+            if not span.strip():
+                continue
+            heading = section.heading if reference_continuation(span) else 'Unclassified body after references'
+            result.append(SelectedSection(heading, span.strip(), section.first_page))
+    merged = []
+    for section in result:
+        if merged and (merged[-1].heading, merged[-1].first_page) == (section.heading, section.first_page):
+            previous = merged.pop()
+            merged.append(SelectedSection(section.heading, previous.text + '\n\n' + section.text, section.first_page))
+        else:
+            merged.append(section)
+    return merged
 
 
 def coverage_manifest(document, pages, body, excluded, selected, selected_indices,

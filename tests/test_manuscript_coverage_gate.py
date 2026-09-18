@@ -66,6 +66,42 @@ class ScientificCoverageTests(unittest.TestCase):
         self.assertIn('Detailed substantive prose',s.text)
         self.assertIn(2,s.coverage['scientific_body_pages'])
 
+    def test_years_and_citation_prefix_cannot_hide_novel_methods(self):
+        method = 'We train on observations from 2021 and 2022, and evaluate on 2023.'
+        for text in ['latent routing protocol\n'+method,
+                     '[1] Smith, J. (2020). Citation.\n\n'+method,
+                     '[1] Smith, J. (2020). Citation.\n'+method,
+                     '[1] Smith, J. (2020). Citation.\nlatent routing protocol\n'+method]:
+            for same_page in [False, True]:
+                with self.subTest(text=text,same_page=same_page):
+                    pages = ([(1,'Introduction\nProblem.\nReferences\n'+text)] if same_page else
+                             [(1,'Introduction\nProblem.\nReferences\n[1] Smith, J. (2020). Citation.'),(2,text)])
+                    selected=self.select(pages)
+                    self.assert_complete(selected)
+                    self.assertIn(method,selected.text)
+
+    def test_punctuation_free_unknown_heading_ends_all_back_matter(self):
+        for heading, lead in [('References','[1] Smith, J. (2020). Citation. doi:10.0000/synthetic'),
+                              ('Acknowledgements','We thank the review team')]:
+            text=heading+'\n'+lead+'\nlatent routing protocol\nThe crucial held-out split prevents leakage.\nCode is available at https://example.test/artifact'
+            selected=self.select([(1,'Introduction\nProblem.\n'+text)])
+            self.assert_complete(selected)
+            self.assertIn('The crucial held-out split prevents leakage.',selected.text)
+
+    def test_empty_jats_sections_and_body_membership_under_budget(self):
+        from paper_scout.full_text import _extract_jats
+        c,_,_,_=fixture()
+        xml=('<article><body><sec><title>Introduction</title></sec><sec><title>Methods</title><p>'+
+             'Detailed protocol. '*600+'</p></sec><sec><title>References</title><p>Scientific analysis.</p></sec></body></article>')
+        doc=_extract_jats(xml.encode(),'https://example.test/article',80,400000)
+        full=select_assessment_text(c,doc)
+        self.assert_complete(full)
+        self.assertIn('Scientific analysis.',full.text)
+        limited=select_assessment_text(c,doc,max_prompt_characters=4000)
+        self.assertTrue(validate_assessment_coverage(limited))
+        self.assertLessEqual(limited.coverage['selection_chunk_characters'],4000//24)
+        self.assertIn('Scientific analysis.',limited.text)
+
     def test_long_methods_are_contiguous_not_heading_capped(self):
         pages=[(1,'Introduction\nProblem framing.')]+[(i,('Methods\n' if i==2 else '')+'Method protocol. '*800) for i in range(2,7)]+[(7,'Results\nMeasured result.\nLimitations\nScoped transfer.')]
         s=self.select(pages)
@@ -82,7 +118,7 @@ class ScientificCoverageTests(unittest.TestCase):
 
     def test_large_references_do_not_displace_methods_or_appendix(self):
         pages=[(1,'Introduction\nProblem.\nMethods\nControlled setup.\nResults\nObserved outcomes.\nLimitations\nScope.'),
-               (2,'References\n'+('[1] Smith, J. (2020). Citation.\n'*5000)),
+               (2,'References\n'+('[1] Smith, J. (2020). Citation. doi:10.0000/synthetic\n'*5000)),
                (3,'A Technical Appendix\nImportant derivation.'),(4,'Continuation of derivation.')]
         s=self.select(pages,budget=4000)
         self.assert_complete(s)

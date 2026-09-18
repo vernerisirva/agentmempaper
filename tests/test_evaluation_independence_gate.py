@@ -68,6 +68,31 @@ class GateOutcomeTests(unittest.TestCase):
         self.assertEqual(primary.execution['outcome'], 'protocol_failure')
         self.assertNotEqual(primary.quality_status, 'pass')
 
+    def test_a_pending_outcome_carries_the_contract_without_any_role_response(self):
+        """A technical outcome records the contract it ran under and still loads.
+
+        The contract version is recorded as soon as the pair resolves, before the
+        coverage and identity checks, exactly as the model pair and generation settings
+        already were. A run that stops there has no role responses at all, so this
+        pins that such a row is still a readable technical outcome and never a
+        scientific one, rather than tripping receipt validation on the new key.
+        """
+        from paper_scout.http import HttpRequestError
+
+        class Outage(PairModels):
+            def post_json(self, url, payload, headers):
+                raise HttpRequestError('timeout', url, 'synthetic provider outage')
+
+        result = run_gate(Outage())
+        self.assertEqual(result.execution['outcome'], 'transport_failure')
+        self.assertEqual(result.execution['independence_contract'], INDEPENDENCE_CONTRACT)
+        self.assertNotIn('primary', result.execution)
+        self.assertNotIn('adjudicator', result.execution)
+        self.assertNotEqual(result.quality_status, 'pass')
+        restored = QualityAssessment.from_dict(result.to_dict())
+        self.assertEqual(restored.execution['independence_contract'], INDEPENDENCE_CONTRACT)
+        self.assertEqual(restored.to_dict(), result.to_dict())
+
     def test_the_receipt_records_the_contract_version(self):
         result = self.outcome(EXTERNAL)
         self.assertEqual(result.quality_gate_version, GATE_VERSION)

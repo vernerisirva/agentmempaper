@@ -80,20 +80,20 @@ def request_payload(role, settings, context, coverage, primary=None, *, retry=Fa
     if retry and role != 'adjudicator':
         raise ValueError('only adjudication has a contract retry')
     instruction = RUBRIC
-    # Both roles answer evaluation_independence from the manuscript themselves. The
-    # structural consequences below are output-format requirements over the values each
-    # role declares; they change no scientific standard and set no pass-rate target.
+    # The scientific standard for this dimension is stated once, in RUBRIC. What is
+    # added here is only the output-format contract over the values each role declares,
+    # in the same form as the adjudication contract below: it restates no scientific
+    # standard, changes none, and sets no pass-rate target.
     instruction += """
-Answer evaluation_independence from the manuscript: what signal shaped the system under
-study, what signal established the headline outcome, whether they are materially
-independent, what evaluator-independent measurement is reported, and whether it supports
-the headline claim. Keep each prose field to one or two sentences. Report a corroboration
-direction only when independent corroboration is present, and always report one when it
-is. Declare concern major when the evaluator is materially reused and independent
-corroboration is anything other than present, or when independent evidence contradicts the
-headline claim under reused or unresolved signals; a major concern cannot accompany your
-pass. Where reuse is present or unresolved, concern is none only when corroboration is
-present and supports.
+evaluation_independence is answered from the manuscript under the standard already
+stated above; the rules here are output format only. Keep each of its prose fields to
+one or two sentences. Report a corroboration_direction only when
+independent_corroboration is present, and always report one when it is. concern is
+major when signal_reuse is materially_reused and independent_corroboration is anything
+other than present, or when corroboration_direction is contradicts under a
+materially_reused or uncertain signal. Where signal_reuse is materially_reused or
+uncertain, concern is none only when independent_corroboration is present and
+corroboration_direction is supports. A major concern cannot accompany your pass.
 """
     if role == 'primary':
         instruction += '\nIndependently assess the manuscript. decision is pass or uncertain.'

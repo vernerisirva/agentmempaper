@@ -34,9 +34,10 @@ class PairModels:
 
     retries = 1
 
-    def __init__(self, primary='pass', adjudicator='pass', fail=None):
+    def __init__(self, primary='pass', adjudicator='pass', fail=None, bad_adjudications=0):
         self.decisions = (primary, adjudicator)
         self.fail = fail
+        self.bad_adjudications = bad_adjudications
         self.calls = []
 
     def post_json(self, url, payload, headers):
@@ -55,12 +56,16 @@ class PairModels:
         else:
             value['promotion_decision'] = self.decisions[1]
             value['blocking_reasons'] = [] if self.decisions[1] == 'pass' else ['Unsupported overclaim.']
+        content = json.dumps(value, ensure_ascii=False)
+        if role == 'adjudicator' and self.bad_adjudications > 0:
+            self.bad_adjudications -= 1
+            content = content.replace('"promotion_decision"', '"promotion_verdict"')  # schema violation
         usage = {'prompt_tokens': 1200, 'completion_tokens': 300, 'total_tokens': 1500}
         if 'openrouter.ai' in url:  # Only OpenRouter returns a per-call charge.
             usage['cost'] = 0.0042
         return json.dumps({'model': payload['model'], 'usage': usage,
                            'choices': [{'finish_reason': 'stop', 'message': {
-                               'content': json.dumps(value, ensure_ascii=False),
+                               'content': content,
                                'extra_content': {'google': {'thought_signature': 'DO NOT RETAIN'}}}}]},
                           ensure_ascii=False)
 
@@ -220,6 +225,9 @@ class ProvenanceTests(unittest.TestCase):
         mutations = [
             lambda e: e.pop('model_pair'),
             lambda e: e.pop('primary_provider'),
+            lambda e: e.pop('adjudicator_provider'),
+            lambda e: e.update(primary_provider='openrouter'),
+            lambda e: e.update(adjudicator_provider='google'),
             lambda e: e['model_pair'].update(independent_families=False),
             lambda e: e['model_pair']['primary'].update(provider='openrouter'),
             lambda e: e['model_pair']['adjudicator'].update(family='gemini'),
@@ -230,8 +238,6 @@ class ProvenanceTests(unittest.TestCase):
             with self.subTest(mutation=index):
                 execution = deepcopy(result.execution)
                 mutate(execution)
-                if 'primary_provider' not in execution:
-                    continue  # Recorded for operators; the bound pair stays authoritative.
                 with self.assertRaises(ValueError):
                     QualityAssessment.from_dict(replace(result, execution=execution).to_dict())
 
@@ -297,6 +303,35 @@ class ProvenanceTests(unittest.TestCase):
         for secret in (ENV['GEMINI_API_KEY'], ENV['OPENROUTER_API_KEY'],
                        'Authorization', 'DO NOT RETAIN', 'thought_signature'):
             self.assertNotIn(secret, serialized)
+
+    def test_adjudicator_retry_keeps_provider_provenance_intact(self):
+        models = PairModels(bad_adjudications=1)
+        result = run_gate(models)
+        self.assertEqual(result.quality_status, 'pass')
+        self.assertEqual(result.execution['outcome'], 'success')
+        calls = result.execution['calls']
+        self.assertEqual(len(calls), 3)
+        # One rejected adjudication is retained; the retry stays on its own provider.
+        self.assertEqual([c['provider'] for c in calls], ['google', 'openrouter', 'openrouter'])
+        self.assertEqual([c['status'] for c in calls],
+                         ['success', 'contract_failure', 'success'])
+        self.assertEqual(calls[1]['contract_error'], 'schema')
+        self.assertEqual(result.execution['model_pair'],
+                         model_pair_provenance(PRIMARY_MODEL, ADJUDICATOR_MODEL))
+        self.assertEqual(QualityAssessment.from_dict(result.to_dict()).execution['calls'][1]['provider'],
+                         'openrouter')
+
+    def test_openrouter_role_accepts_the_legacy_credential_name(self):
+        env = {'GEMINI_API_KEY': ENV['GEMINI_API_KEY'],
+               'PAPER_SCOUT_LLM_API_KEY': 'legacy-openrouter-key'}
+        with patch.dict('os.environ', env, clear=True):
+            primary, adjudicator = settings_from_env()
+        self.assertEqual(adjudicator.api_key, 'legacy-openrouter-key')
+        self.assertEqual(adjudicator.provider, 'openrouter')
+        self.assertEqual(primary.api_key, env['GEMINI_API_KEY'])
+        models = PairModels()
+        self.assertEqual(run_gate(models, env).quality_status, 'pass')
+        self.assertEqual(models.calls[1]['headers']['Authorization'], 'Bearer legacy-openrouter-key')
 
     def test_receipt_and_coverage_checks_remain_intact(self):
         result = run_gate(PairModels())

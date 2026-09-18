@@ -260,11 +260,16 @@ def validate_receipt(assessment) -> None:
     # must never be back-dated onto a receipt written under the older gate.
     pair_required = assessment.quality_gate_version == 'dual-promotion-v2'
     pair = receipt.get('model_pair')
+    providers = {role: receipt.get(role + '_provider') for role in ('primary', 'adjudicator')}
     if pair_required:
         if pair != model_pair_provenance(receipt['primary_model'], receipt['adjudicator_model']):
             raise ValueError('missing or inconsistent scientific model-pair provenance')
-    elif pair is not None:
-        raise ValueError('legacy promotion receipt cannot carry model-pair provenance')
+        # Recording a provider is not enough; it has to match the pinned mapping,
+        # or a wrong provider string would survive in an otherwise valid receipt.
+        if any(providers[role] != MODEL_PROVIDERS[receipt[role + '_model']] for role in providers):
+            raise ValueError('recorded scientific provider does not match its pinned model')
+    elif pair is not None or any(providers.values()):
+        raise ValueError('legacy promotion receipt cannot carry provider provenance')
     validate_response(p, 'primary', context)
     validate_response(a, 'adjudicator', context)
     expected_status = 'pass' if agreement(p, a) else 'uncertain'

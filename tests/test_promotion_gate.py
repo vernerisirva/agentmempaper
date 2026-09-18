@@ -22,8 +22,10 @@ from paper_scout.quality_service import assess_and_store_candidate
 from paper_scout.site import _load_library_papers, _main_library, _review_candidate, _quality_to_json
 from paper_scout.state import PaperStore
 
-ENV = {'PAPER_SCOUT_LLM_API_KEY': 'synthetic-key', 'PAPER_SCOUT_LLM_MODEL': PRIMARY_MODEL,
-       'PAPER_SCOUT_LLM_BASE_URL': 'https://openrouter.ai/api/v1'}
+# Each scientific role authenticates against its own provider, so the synthetic
+# environment supplies two separate credentials rather than one shared key.
+ENV = {'GEMINI_API_KEY': 'synthetic-google-key',
+       'OPENROUTER_API_KEY': 'synthetic-openrouter-key'}
 
 
 def fixture(key='fixture'):

@@ -18,6 +18,7 @@ from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.relevance import classify_with_rules, explain_rule_matches
 from paper_scout.quality_evaluation import evaluate_quality_fixtures, write_quality_evaluation_report
 from paper_scout.quality_report import write_paper_quality_report
+from paper_scout.promotion_protocol import DUAL_PROMOTION_GATE_VERSIONS
 from paper_scout.quality_models import QUALITY_GATE_VERSION
 from paper_scout.quality_service import QualityRunStats, assess_and_store_candidate
 from paper_scout.scout import ingest_candidate, run_backfill, run_scout, search_sources
@@ -313,7 +314,7 @@ def main(argv: list[str] | None = None) -> int:
                 candidates = [row for row in candidates if not (
                     (existing := store.get_current_quality_assessment(row[0]))
                     and (existing.quality_status == "pass" or (
-                        existing.quality_gate_version in {QUALITY_GATE_VERSION, "dual-promotion-v1"}
+                        existing.quality_gate_version in {QUALITY_GATE_VERSION, *DUAL_PROMOTION_GATE_VERSIONS}
                         and existing.assessment_version == quality_config.assessment.version
                         and existing.rubric_version == quality_config.assessment.rubric_version
                     ))

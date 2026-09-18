@@ -1,5 +1,5 @@
 """Two scientific roles with one bounded adjudicator contract retry; fail closed."""
-from dataclasses import asdict, replace
+from dataclasses import asdict, dataclass, replace
 from datetime import UTC, datetime
 import json
 import logging
@@ -9,12 +9,12 @@ import uuid
 
 from paper_scout.evidence_context import build_evidence_context, digest
 from paper_scout.http import HttpClient, HttpRequestError
-from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.promotion_protocol import (
     ASSESSMENT_VERSION, GATE_VERSION, PRIMARY_MODEL, ADJUDICATOR_MODEL, RUBRIC,
     RECEIPT_VERSION, agreement, canonical_json, parse_response, response_binding,
-    MAX_EVIDENCE_IDS, RETRY_POLICY, ResponseContractError, attempt_binding,
-    schema, source_block, validate_context, validate_pair,
+    MAX_EVIDENCE_IDS, MODEL_PROVIDERS, PROVIDERS, RETRY_POLICY, ResponseContractError,
+    attempt_binding, model_pair_provenance, schema, source_block, validate_context,
+    validate_pair,
 )
 from paper_scout.quality_models import QualityEvidence
 from paper_scout.manuscript_coverage import validate_assessment_coverage
@@ -25,21 +25,55 @@ LOGGER = logging.getLogger(__name__)
 MAX_INPUT_BYTES = 300_000
 MAX_OUTPUT_TOKENS = 4096
 # Ceiling rates checked against public provider endpoints; no tools/cache writes.
-PRICE_LIMITS = {PRIMARY_MODEL: (1.65, 4.95), ADJUDICATOR_MODEL: (3.3, 16.5),
+# OpenRouter enforces these server side. Google's endpoint has no equivalent
+# price-cap parameter, so Gemini spend is bounded by its own allocation instead.
+PRICE_LIMITS = {'deepseek/deepseek-v4-pro-0813': (1.65, 4.95),
+                'anthropic/claude-sonnet-4.6': (3.3, 16.5),
                 'anthropic/claude-opus-4.6': (5.5, 27.5)}
 
 
+@dataclass(frozen=True)
+class RoleSettings:
+    """One scientific role's provider, pinned model and credential."""
+
+    provider: str
+    model: str
+    api_key: str
+    base_url: str
+
+
+def role_settings(model):
+    """Resolve one role's provider endpoint and credential, or None if unconfigured.
+
+    Each role reads its own provider credential, so the primary assessor and the
+    independent adjudicator do not share an account or an endpoint.
+    """
+    provider = MODEL_PROVIDERS.get(model)
+    if provider is None:
+        raise ValueError('unknown scientific model provider')
+    spec = PROVIDERS[provider]
+    api_key = next((os.environ[name] for name in spec['credential_env']
+                    if os.environ.get(name, '').strip()), None)
+    if not api_key:
+        return None
+    base_url = next((os.environ[name] for name in spec['base_url_env']
+                     if os.environ.get(name, '').strip()), spec['base_url']).rstrip('/')
+    # An exact host match keeps one provider's credential off another's endpoint.
+    if urlsplit(base_url).hostname != spec['host']:
+        raise ValueError('pinned scientific model requires its own provider host')
+    return RoleSettings(provider=provider, model=model, api_key=api_key, base_url=base_url)
+
+
 def settings_from_env():
-    settings = openai_compatible_settings_from_env('PAPER_SCOUT_QUALITY_LLM_MODEL')
-    if settings is None:
+    mode = os.environ.get('PAPER_SCOUT_LLM_PROVIDER', 'auto').lower()
+    if mode in {'', 'none', 'off', 'rules'}:
         return None
     primary = os.environ.get('PAPER_SCOUT_QUALITY_LLM_MODEL') or PRIMARY_MODEL
     adjudicator = os.environ.get('PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL') or ADJUDICATOR_MODEL
     validate_pair(primary, adjudicator)
-    # This protocol's model identities and provider price caps are OpenRouter-specific.
-    if urlsplit(settings.base_url).hostname != 'openrouter.ai':
-        raise ValueError('pinned promotion model pair requires OpenRouter')
-    return (replace(settings, model=primary), replace(settings, model=adjudicator))
+    pair = (role_settings(primary), role_settings(adjudicator))
+    # Both scientific roles must be configured; one credential is not a usable gate.
+    return pair if all(pair) else None
 
 
 def request_payload(role, settings, context, coverage, primary=None, *, retry=False):
@@ -73,25 +107,48 @@ No previous adjudication is supplied; do not infer or preserve its conclusion.
                'context_id': context.context_id, 'coverage': coverage, 'manuscript': context.text}
     if primary is not None:
         content['primary_final_assessment'] = primary
-    input_price, output_price = PRICE_LIMITS[settings.model]
     payload = {'model': settings.model, 'temperature': 0, 'max_tokens': MAX_OUTPUT_TOKENS,
-               'reasoning': {'enabled': False, 'exclude': True},
-               'provider': {'require_parameters': True,
-                            'max_price': {'prompt': input_price, 'completion': output_price}},
                'messages': [{'role': 'system', 'content': instruction},
                             {'role': 'user', 'content': json.dumps(content, ensure_ascii=False)}],
                'response_format': {'type': 'json_schema', 'json_schema': {
                    'name': 'promotion_' + role + '_v1', 'strict': True, 'schema': schema(role)}}}
+    # Both providers express the same contract: no hidden reasoning is requested,
+    # returned or persisted. They spell it with different parameter names, and
+    # each rejects the other's, so the switch is by provider, not by model string.
+    if settings.provider == 'openrouter':
+        input_price, output_price = PRICE_LIMITS[settings.model]
+        payload['reasoning'] = {'enabled': False, 'exclude': True}
+        payload['provider'] = {'require_parameters': True,
+                               'max_price': {'prompt': input_price, 'completion': output_price}}
+    elif settings.provider == 'google':
+        payload['reasoning_effort'] = 'none'
+    else:
+        raise ValueError('unknown scientific provider')
     if len(json.dumps(payload).encode('utf-8')) > MAX_INPUT_BYTES:
         raise ValueError('promotion request exceeds byte budget; no call sent')
     return payload
 
 
+def _billing(provider, usage):
+    """Record what the provider actually reported; never invent a monetary cost.
+
+    OpenRouter reports a per-call charge. Google's endpoint reports tokens only,
+    so the charge is attributed to the allocation rather than guessed.
+    """
+    if usage.get('cost_usd') is not None:
+        return {'source': provider, 'basis': 'provider_reported', 'cost_usd': usage['cost_usd']}
+    return {'source': provider, 'cost_usd': None,
+            'basis': 'covered_by_msc_allocation' if provider == 'google' else 'unknown',
+            'billing_cost': 'UNKNOWN'}
+
+
 def call_model(role, settings, context, payload, client, calls, run_id):
-    call = {'kind': role, 'model': settings.model, 'context_id': context.context_id,
+    call = {'kind': role, 'model': settings.model, 'provider': settings.provider,
+            'context_id': context.context_id,
             'attempt': 1 + sum(c['kind'] == role for c in calls),
             'status': 'failed', 'usage': _reported_usage({}),
             'request_sha256': digest(json.dumps(payload, ensure_ascii=False, sort_keys=True))}
+    call['billing'] = _billing(settings.provider, call['usage'])
     calls.append(call)
     raw = client.post_json(settings.base_url + '/chat/completions', payload,
                            headers={'Authorization': 'Bearer ' + settings.api_key})
@@ -99,6 +156,7 @@ def call_model(role, settings, context, payload, client, calls, run_id):
     if not isinstance(response, dict):
         raise ValueError('invalid response envelope')
     call['usage'] = _reported_usage(response)
+    call['billing'] = _billing(settings.provider, call['usage'])
     if response.get('error') or response.get('model') != settings.model:
         raise ValueError('provider error or wrong returned model')
     choices = response.get('choices')
@@ -152,7 +210,12 @@ def assess_promotion(candidate, selected, seed, mode, http=None):
         if settings is None:
             return pending('not_assessed', 'Independent scientific model configuration is unavailable.')
         primary_settings, adjudicator_settings = settings
-        receipt.update(primary_model=primary_settings.model, adjudicator_model=adjudicator_settings.model)
+        receipt.update(primary_model=primary_settings.model, adjudicator_model=adjudicator_settings.model,
+                       primary_provider=primary_settings.provider,
+                       adjudicator_provider=adjudicator_settings.provider,
+                       model_pair=model_pair_provenance(primary_settings.model, adjudicator_settings.model),
+                       generation={'temperature': 0, 'max_output_tokens': MAX_OUTPUT_TOKENS,
+                                   'hidden_reasoning': 'disabled', 'max_request_bytes': MAX_INPUT_BYTES})
         if selected.scope not in {'full_text', 'partial_full_text'}:
             return pending('manuscript_unavailable', 'Manuscript unavailable; no scientific decision.')
         identity = selected.coverage.get('manuscript_identity', {})

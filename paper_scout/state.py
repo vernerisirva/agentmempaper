@@ -257,7 +257,8 @@ class PaperStore:
         # Revalidate mutable nested receipt data at the persistence boundary.
         assessment = QualityAssessment.from_dict(assessment.to_dict())
         storage_model = assessment.assessor_model or ""
-        if assessment.quality_gate_version == "dual-promotion-v1":
+        from paper_scout.promotion_protocol import DUAL_PROMOTION_GATE_VERSIONS
+        if assessment.quality_gate_version in DUAL_PROMOTION_GATE_VERSIONS:
             storage_model += "#" + assessment.execution["run_id"]
         payload = json.dumps(assessment.to_dict(), sort_keys=True)
         with self._connect() as db:

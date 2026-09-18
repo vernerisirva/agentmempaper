@@ -59,16 +59,316 @@
             <p>Building AI Scientist agents with Large Language Models (LLMs) has recently attracted growing attention. Since scientific discovery fundamentally relies on uncovering causal relationships from observations, the capability of causal thinking, i.e., distinguishing causation from correlation and recognizing hidden bias...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>This work presents an exceptionally thorough, rigorous, and controlled benchmark targeting an essential blind spot in the AI Scientist literature. The empirical analysis is methodologically sound, transparent about anomalous agent behaviors and harness leaks, and supported by extensive statistical validation.</p>
+      <p>The authors explicitly discuss key limitations, noting that the simulated drone environments simplify real-world scientific discovery spaces, prompting and agentic execution modes differ across multiple procedural dimensions, and LLM-based rubric evaluations have inherent distributional skews that depress inter-rater agreement on causal criteria.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:41:33.984305+00:00.</p>
+        <p>Coverage: 162991 of 162991 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>none
+explicitly incorporates challenges from selection bias, measurement error, and hidden confounders
+that widely exist in real-world scientific discovery. To this end, we presentCausalGame, a benchmark
+that evaluates the causal thinking capabilities of LLM agents through interactive games.CausalGame
+asks LLM agents to actively design experimental protocols, collect observation data, and derive a final
+solution with an explanation report. To emulate realistic scientific discovery challenges, we design14
+scenarios that incorporate selection bias, measurement error, and hidden confounders. Across30LLM
+agents, none demonstrates reliable causal thinking: the best model reaches only 68.0% survival against
+analytical optima of 78–85%, and merely 5–7% of sessions receive credits on the causal-reasoning
+rubrics. CausalGame provides a scalable and controlled testbed for evaluating the causal </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>thinking of AI
+Scientist agents.
+GPT-OSS-120B
+GLM-5.2Qwen-3.7-MaxClaude-Opus-4.5Grok-4.1-FastKimi-K2.6DeepSeek-V4-ProClaude-Sonnet-4.5Gemini-3.5-FlashGPT-5.5MiMo-V2.5-ProMiniMax-M2Hy3-Preview
+ParetoFrontier
+(a) Performance vs Cost
+CR1
+CR2CR3
+ED1
+RQ1 DU1
+0.2
+0.4
+0.6
+0.8
+1.0
+Claude-Opus-4.7 (0.27)
+GLM-5.2 (0.25)
+Qwen-3.7-Max (0.25)
+GLM-5.1 (0.25)
+Kimi-K2.6 (0.24) (b) Behavioral analysis
+Figure 1| Overview of LLM agent performance inCausalGame. (a) Survival rate versus per-task
+token cost for all30models in agentic mode. Even the best model (Claude-Opus-4-5, 68.0%) falls well
+short of the analytical optima (78–85% depending on the scenario family). (b) Normalized rubric
+scores of the top-5 models (by overall rubric score) on the generated reports across four dimensions:
+Causal Reasoning, Experimental Design, Reflection Quality, and Data Usage. Although LLM agents
+can sometimes find the </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the turns. Agents lacking causal reasoning ability
+can easily be biased and suffer from spurious correlations. Even when the agent can obtain high
+ratings by luck, the evaluation design ofCausalGame can easily distinguish whether the design is
+produced with desired causal thinking.
+We construct 14 game scenarios inCausalGame and evaluate30frontier LLMs under both single-
+turn prompting and multi-turn agentic execution. Our central finding is thatnone of them demonstrates
+reliable causal thinking:
+• All models fall substantially short of the analytical optima (78–85%).The best model reaches
+68.0% survival, and simple non-LLM baselines overlap the lower portion of the agent performance
+range, indicating that agentic interaction contributes little in the absence of causal reasoning.
+• Survival and understanding are decoupled.Causal-reasoning rubric scores remain near zero
+even in winning </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trajectories, with only 5–7% of sessions receiving credits, indicating that threshold-
+clearing designs arise largely from trial-and-error. An analysis of the deployed design sequences
+reveals the same deficiency at the behavioral level: agents under-explore the design space and drift
+away from correct configurations they have already discovered.
+• The deficiency is not mitigated by additional computation or scaffolding.Increasing the
+reasoning budget yields no consistent benefit, and stronger agentic frameworks improve survival
+without improving causal understanding. Moreover, causal reasoning is the only rubric dimension
+that predicts generalization from exploration to final evaluation.
+• Agent can demonstrate hacking behaviors during evaluation.Given tool access, agents probed
+the simulator&#x27;s API and recovered the hidden scenario from a leaked identifier, which raised survival
+on </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Specifically, inCausalGame, the LLM agent acts as a drone designer who must figure out the hidden
+causal mechanism behind drone survival through a limited budget of experiments, under observations
+that are censored by survivorship, confounded by hidden variables, and corrupted by noise. We
+describe the game design below and illustrate the full pipeline in Fig. 3.
+Game objective.The agent needs to propose and refine the design of a drone by allocating
+defense values (DEF) across seven components: engine, wing, body, cockpit, antenna, camera, and
+gun. The agent observes only the post-mission damage state of each component on the surviving
+drones. The goal is to understand the underlying mechanism that influences the survival of drones
+and maximize the survival rate when drones are deployed under unknown environmental conditions.
+SCM as the game engine.The environmental factors that affect </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>drone survival, including weather
+conditions, enemy detection, and component damage, are governed by an underlying structural causal
+model (SCM). Our core design choice is to treat the SCM as the scenario &quot;engine&quot;: scientific discovery
+aims to uncover the hidden data-generating mechanism. Concretely, each scenario corresponds to an
+5</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>agent has a budget of200drones and up to10deployment calls. In
+each call, the agent chooses a drone design, deploys a small batch, and receives partial feedback,
+including survival outcomes and observable attributes of the fleet. Optionally, the agent can access
+historical observations at the beginning of the game to gain an initial understanding.
+• Stage 2 (Evaluation):The agent submits a single final design, which is evaluated on a fleet of
+1, 000drones. We report the fleet survival rate. Awinis defined as exceeding a scenario-specific
+threshold, set below the family-specific optimal survival rate by roughly5to8percentage points
+for most scenarios, and by a larger margin for the hardest ones (e.g., a55%threshold for Weather
+Noise).
+The optimal design for each scenario is derived analytically from the SCM and verified empirically,
+with theoretical and empirical survival rates agreeing </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>While survival rate provides a quantitative measure of task performance, it alone cannot distinguish
+whyagents fail or how they reason about the causal structure. We therefore score each agent session
+with a rubric along four complementary dimensions. The explicit criteria are summarized in Table 18
+in the Appendix. Each agent session is evaluated by an LLM-based judge using this rubric, yielding
+dimension-wise scores and an overall rubric score.
+Causal reasoning (11 points)evaluates whether the agent correctly identifies the core causal
+mechanisms specified in the Task Report, avoids known traps or spurious correlations, and provides
+mechanistic explanations with sufficient depth. High-scoring responses must articulate explicit causal
+chains (rather than correlations), include intermediate variables or processes, and propose testable
+predictions or validation strategies.
+Experimental </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the agent iteratively calls tools over multiple turns using the ReAct
+framework (Yao et al., 2023), with mandatory structured reasoning and an exploration guard that
+requires at least one deployment before final submission. The two modes differ in multiple dimensions,
+including tool access, interaction format, and reasoning requirements (Table 5). All results are based
+on 3 independent trials per model×scenario combination. We use identical hyperparameters for
+all models and scenarios: exploration and deployment budgets, and default API temperature and
+max-token limits.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RQ1 DU1
+0.2
+0.4
+0.6
+0.8
+1.0
+Fail (&lt;50) (9%)
+Marginal (50-68) (19%)
+Good (68-75) (24%)
+Win (75-82) (13%)
+Optimal ( 82) (35%)
+(a)Antenna Trap
+CR1
+CR2CR3
+ED1
 
-        <ul></ul>
+RQ1 DU1
+0.2
+0.4
+0.6
+0.8
+1.0
+Fail (&lt;50) (25%)
+Marginal (50-68) (28%)
+Good (68-75) (40%)
+Win (75-82) (6%)
+Optimal ( 82) (0%)
+ (b)Deployment Zone Trap
+Figure 6| Rubric criterion scores by survival-rate tier, split by experiment family (Agentic Mode). Each
+polygon averages the six criteria (CR1–CR3, ED1, RQ1, DU1) across three judges; the Deployment-
+zone Optimal polygon reflects only 2 trajectories. Each polygon corresponds to one survival tier.
+Observation 1: Frontier LLMs fail to identify and reason about hidden causal mechanisms.
+The main results are given in Fig. 5, where we aggregate and average the performance of different
+LLMs under selection bias and hidden confounders. We also draw two reference lines: the winning
+threshold and </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the optimal performance. From the results, we find that all frontier LLMs remain
+significantly below the optimal survival rate (∼82%), indicating consistent difficulty in reasoning
+about hidden confounders, selection bias, and measurement error in interactive settings. In addition,
+the significance analysis of different LLMs across different scenarios from Table 12 to Table 15 confirms
+that all models remain significantly below the win threshold, indicating the limitations revealed by
+CausalGameare consistent and non-trivial.
+Observation 2: High survival does not imply causal understanding.We split agent trajectories
+into five survival-rate tiers and plot each tier&#x27;s mean score on the rubric polygon (Fig. 6). In the
+Antenna Trap family, the causal axes CR1–CR3 rise with tier (CR1: 0.05→ 0.42 from Fail to
+Optimal), yet even the Optimal polygon stays far from saturated. Reflection Quality </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>65.4%. Likewise, DeepSeek-V3.2-Think (59.1%) performs on par with its non-thinking
+counterpart DeepSeek-V3.2 (58.7%). All of these differences are within1percentage point and far
+smaller than the corresponding per-model standard deviations (4–10pp; see the confidence intervals
+in Table 13), so we read them as the absence of a reliable benefit rather than a systematic effect. This
+suggests that simply scaling reasoning budgets does not translate into better causal understanding.
+10</blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(rule-based
+49.0–52.7%, hybrid No-Explore 57.5% on average), confirming that the games cannot be won by
+undirected exploration. At the same time, they overlap the lower portion of the LLM agentic range
+and can outperform the weakest agents on bias-heavy scenarios, indicating that agentic interaction
+without causal reasoning adds little.
+Observation 5: Agentic scaffolding helps some models but not uniformly.Comparing per-
+model survival across execution modes (Table 16), agentic scaffolding yields large gains for some
+models, most notably the GPT-5.5 family (GPT-5.5-High+9.4, GPT-5.5-XHigh+7.0, GPT-5.5+6.6)
+and several mid-tier models (MiMo-V2-Flash+4.8, DeepSeek-V4-Flash+4.7, MiniMax-M2+4.6), but
+11
+CausalGame: Benchmarking Causal Thinking of LLM Agents in Games
+its effect is not uniform: several of the strongest prompting models are neutral or worse under agentic
+execution </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Non-LLM baselines.To calibrate benchmark difficulty and confirm task solvability, we evaluate four
+non-LLM or Agentic baselines: Default (submit initial design unchanged, 49.0%), Random (uniformly
+sample DEF values, 52.0%), Uniform High (all DEF=50, 52.7%), and No-Explore LLM (randomly
+deploy 10 times, then use LLM to analyze and submit, 57.5% on average, 52–63% across models).
+More details can be found in Appendix G.
+The results are given in Fig. 8(b). These simple baselines can outperform several full-agent models
+on bias-heavy scenarios, confirming that correlational shortcuts are insufficient.
+12</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>2025). For each model, we col-
+lectitsCausalGamesurvivalscoreand
+its reported score on each external
+benchmark. We then compute Spear-
+man rank correlations across models
+betweenCausalGamescoresandeach
+benchmark score.
+Causal thinking performance in both settings correlates only weakly with existing capability
+benchmarks. The strongest link is with AA-Omniscience. Correlations with all other benchmarks fall
+below 0.35. In contrast, external benchmarks correlate substantially with one another, reflecting a
+shared general-capability factor thatCausalGame only weakly loads on. Meanwhile, the Agent and
+Prompt settings correlate at 0.65 with each other, exceeding their correlations with every external
+benchmark. Together, these results indicate thatCausalGame captures a consistent capability signal
+only weakly explained by existing evaluations.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for Exper-
+imental Design (ED1, ICC = 0.89), Reflection Quality (RQ1, ICC = 0.88), and Data Usage (DU1,
+ICC = 0.85), and moderate for the Causal Reasoning rubrics (CR1 to CR3, ICC = 0.61 to 0.64),
+with a mean ICC of 0.75 across all six criteria. The moderate agreement on CR1 to CR3 is primarily
+attributable to their highly skewed score distributions, where 87% to 92% of sessions receive zero,
+which mechanically depresses ICC rather than reflecting judge inconsistency.
+0.0 0.2 0.4 0.6 0.8 1.0
+ICC(2,3)
+ED1
+RQ1
+DU1
+CR2
+CR1
+CR3
+0.89 (Good)
+0.88 (Good)
+0.85 (Good)
+0.64 (Moderate)
+0.63 (Moderate)
+0.61 (Moderate)
+Inter-Rater Agreement
+Good (0.75)
+Moderate (0.60)</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CausalGame: Benchmarking Causal Thinking of LLM Agents in Games
+0 10 20 30 40 50 60 70
+Hacking rate (%)
+Grok-4.20
+Grok-4.1-Fast
+GLM-4.7
+Kimi-K2.6
+Qwen-3.7-Max
+MiMo-V2-Flash
+MiMo-V2.5-Pro
+Gemini-3.1-FL
+MiniMax-M2-1
+Gemini-3.5-Flash
+Hy3-Preview
+DeepSeek-V4-Pro
+GLM-5.1
+20%
+25%
+28%
+30%
+33%
+38%
+40%
+42%
+45%
+48%
+52%
+55%
+62%
+0 20 40 60 80 100
+Survival on leaked trials (%)
+57
+48 +9
+82
+67 +15
+62
+51 +11
+80
+64 +16
+94
+73 +21
+69
+54 +15
+87
+68 +19
+54
+40 +14
+82
+62 +20
+94
+70 +24
+80
+58 +22
+97
+71 +26
+94
+66 +28
+W/ Hacking (name present)
+W/O Hacking (name scrubbed)
+Figure 14| Influence of the experiment-name leak in the agentic sweep. (Left) Per-model hacking
+rate, defined as the fraction of trials in which the agent echoed the hidden scenario name in its final
+report. Rates range from 20% (Grok-4.20) to 62% (GLM-5.1) across the 13 affected models, and are
+generally higher for stronger models. (Right) </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Survival rate on leaked trials under the pre-patch setting
+(W/, red) versus the hardened setting with the name scrubbed (W/O, green). Access to the scenario
+name raised survival on leaked trials by 9 to 28 points (mean +18.5 across models), confirming that
+the leak was informative enough to distort results. All numbers in the main paper are collected under
+the hardened setup.
+where the agent has a shell inside its workspace container, the strongest coding-agent backbone
+we tested (deepseek-v4-pro) often probed the simulator&#x27;s HTTP interface instead of the causal
+mechanism behind it. Across its 14-scenario sweep, the agent fetched/openapi.json to enumerate
+every endpoint and called admin routes that return the ground-truth experiment configuration
+(component HPs, default DEFs, criticality flags). In several sessions it went further and read the
+hidden scenario family off </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>access, we
+expect this failure mode to become more common, and interactive discovery benchmarks will need to
+audit for it.
+(ii) False victory claims.The Prompting and Agentic sweeps contain39sessions in which the
+submitted design scored clearly below the scenario&#x27;s victory threshold, in some cases near50%against
+a75%threshold, while the agent&#x27;s closing reasoning declared &quot;mission accomplished&quot; or &quot;we achieved
+the target.&quot; A representative case isglm-4.7 on deployment_zone_trap_categorical, whose
+closing log declares success before the final survival rate is even observed:
+&quot;### MISSION REPORT: OPTIMIZATION COMPLETE. Operation Status: COMPLETE.
+The fleet has been committed to the final reconnaissance mission. We
+anticipate exceeding the 75% survival threshold required for mission
+success.&quot;
+The actual Stage 2 survival rate of the submitted design was50.1%. gpt-oss-120b does the same
+on the </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We acknowledge several limitations of this work, which could be promising future directions built
+upon our work. First, the scenarios inCausalGame, despite being motivated by historical cases,
+are necessarily simplified compared to real-world discovery, which involves open-ended hypothesis
+spaces, rich domain-specific knowledge, and substantially more complex causal structures. Future
+works could further scale up the spaces of observational signals and the hypothesis, to reflect the
+real-world complexity in scientific discovery (Chen et al., 2026; Liu et al., 2024, 2026).
+Second, the Prompting and Agentic execution modes differ in multiple dimensions simultaneously
+(see Table 5), including tool access, mandatory ReAct formatting, and exploration guards, so cross-
+mode comparisons should be interpreted with caution rather than as controlled ablations. Reliable
+tracing the progress and </blockquote></details></li><li><strong>Contribution clarity — page 27</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>uncertainty could be a promising direction to recursive self-improving
+reasoning, multiple turns, and long horizons (Zou et al., 2026).
+Third, the LLM-based rubric judge may introduce systematic biases in the fine-grained failure
+analysis. To mitigate this, we validate judge consistency via multi-judge ICC analysis (Figure 22) and
+provide a complementary judge-independent configuration path analysis (Figure 24). Hence, a more
+comprehensive evaluation method, along with metrics on the AI Scientist discovery results, can be a
+promising future direction.
+Finally, in terms of solutions, a promising future direction is to use the procedurally generated
+scenarios in CausalGame for training causal agents. We view meaningful progress as requiring
+improvementsinbothsurvivalrateandcausal-reasoningrubricscores, sothatgainsreflectmechanistic
+understanding rather than only stronger search </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +407,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

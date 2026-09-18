@@ -59,16 +59,455 @@
             <p>Long-term memory can turn untrusted external content into persistent influence over an LLM agent&#x27;s future decisions, creating the threat of indirect memory poisoning. A successful attack must survive a multi-stage pipeline comprising memory writing, retrieval, and utilization. Existing attacks largely rely on intra-...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work addresses a clear architectural flaw in existing memory poisoning attacks with well-formulated methodology, rigorous empirical testing across multiple dimensions, solid baseline comparisons, and validation against defenses.</p>
+      <p>The study acknowledges performance degradation under certain defenses (notably conflict resolution and provenance tagging) and highlights increased optimization costs during cross-configuration transfer.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:39:27.132480+00:00.</p>
+        <p>Coverage: 91526 of 91526 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory can turn untrusted external content into
+persistent influence over an LLM agent&#x27;s future decisions,
+creating the threat of indirect memory poisoning. A suc-
+cessful attack must survive a multi-stage pipeline compris-
+ing memory writing, retrieval, and utilization. Existing at-
+tacks largely rely on intra-stage optimization, optimizing
+individual stages in isolation while overlooking inter-stage
+coupling. Specifically, these stages impose different require-
+ments on the same poisoning content, and each stage oper-
+ates on the transformed output of its predecessor. Conse-
+quently, optimizing one stage may undermine the effective-
+ness of other stages, while upstream transformations may
+erase improvements intended for downstream stages. In-
+direct memory poisoning should therefore be viewed as an
+end-to-end optimization problem. Based on this insight, we
+present </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>PIPEPOISON, which collects fine-grained stage feed-
+back from local shadow systems, uses chain-structured losses
+to identify and optimize the stage bottlenecking end-to-end
+success, and applies stability-calibrated stage and configu-
+ration weights to improve transferability. Across three agent
+frameworks and four memory mechanisms, PIPEPOISONim-
+proves attack utilization rate by 19.1 percentage points. Even
+on fully unseen victim configurations, it outperforms the
+strongest baseline by 16 percentage points and remains ef-
+fective under eight representative defenses.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>remain effective across di-
+verse and potentially unseen victim configurations.
+Based on this observation, we present PIPEPOISON, a
+black-box framework that optimizes poisoning content us-
+ing only local shadow systems. PIPEPOISONhas three
+components. First, it collects stage-level feedback from
+each shadow pipeline, measuring whether attack-relevant in-
+formation survives writing, is retrieved for target-domain
+queries, and influences the agent&#x27;s response. Second, it com-
+bines these signals with chain-structured losses that reflect
+the sequential dependence among writing, retrieval, and uti-
+lization, allowing optimization to focus on the stage currently
+blocking end-to-end success. Third, it jointly optimizes a
+shared poisoning instance across heterogeneous shadow con-
+figurations using stability-calibrated configuration and stage
+weights, reducing overfitting to any single shadow </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>objectives, op-
+timize them independently, and focus primarily on retrieval
+[33,48,51]. This design overlooks two forms of coupling be-
+tween stages. First, all stage-specific optimizations modify
+the same poisoning content; changes intended to improve re-
+trieval may weaken the malicious payload that must survive
+writing and influence utilization. Second, the stages operate
+sequentially: the retriever processes the memory produced
+by the writer rather than the original poisoning content. Re-
+trieval cues that appear effective on the original content may
+therefore be altered or removed during memory writing. Two
+representative Sleeper attacks [33] on LangGraph [17] with
+Mem0 [24] illustrate these failure modes (Figure 2).
+Setup.To determine whether these failures occur systemati-
+cally, we evaluate four indirect memory-poisoning attacks—
+Zombie [48], Sleeper [33], MemMorph [51], and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RSR (%)
+(e) Zombie
+LangMemLlamaIndex
+Mem0ReMe
+(f) Sleeper
+LangMemLlamaIndex
+Mem0ReMe
+(g) MemMorph
+LangMemLlamaIndex
+Mem0ReMe
+(h) GhostWriter
+No Optimization After Retrieval Optimization
+Direct Exposure After Writing Stage
+Figure 3: Stage-wise performance gaps.
+with writing, we compare the write success rate (WSR) of
+the initially generated poisoning content with its WSR after
+retrieval-oriented optimization. Second, to measure whether
+writing weakens retrieval, we compare the retrieval success
+rate (RSR) obtained when the original poisoning content is
+directly placed in the memory store with the RSR obtained
+after the content is processed by the memory writer.
+Results.As shown in Figure 3, the results reveal substantial
+gaps in both comparisons. Averaged across the four evalu-
+ated attacks and four real-world open-source memory mech-
+anisms, retrieval-oriented optimization reduces WSR </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>from
+59.4% to 47.3%, a decrease of 12.1 percentage points. This
+result shows that retrieval-oriented optimization can make
+the malicious payload less likely to survive writing. Mean-
+while, memory writing reduces RSR from 93.1% on the orig-
+inal poisoning content to 77.9% on the resulting memory,
+a decrease of 15.2 percentage points. Thus, retrieval cues
+that are effective before writing may not remain effective
+afterward. These results motivate us to formulate indirect
+memory poisoning as an end-to-end optimization problem,
+as stage-wise improvements may not carry through the com-
+plete write-retrieve-utilize pipeline.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=
+
+w(t)
+i r(t)
+i u(t)
+i min
+n
+w(t)
+i ,r (t)
+i ,u (t)
+i
+o1/4
+.(4)
+The product rewards performance throughout the complete
+pipeline, while the minimum term places additional pres-
+sure on the weakest stage. A high lifecycle score there-
+fore requires balanced performance across all three stages.
+IfF (t)
+i ≥η, whereηis the stopping threshold, PIPEPOISON
+terminates and returnsx (t).
+Chain-Structured Losses.If the stopping condition is not
+met, PIPEPOISONidentifies the stage currently limiting end-
+to-end performance. Because the stages are sequential, a
+downstream stage should be refined only after its preceding
+conditions are sufficiently satisfied. We encode this depen-
+dency using the following chain-structured losses:
+ℓ(t)
+i,w =1−w (t)
+i , ℓ(t)
+i,r =w (t)
+i (1−r (t)
+i ), ℓ(t)
+i,u =w (t)
+i r(t)
+i (1−u (t)
+i ).
+(5)
+The writing loss is large when the malicious payload is not
+adequately </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>preserved. The retrieval loss becomes large only
+after writing has sufficiently succeeded, while the utilization
+loss becomes large only after the written memory is also
+retrieved. These dependencies follow the execution order
+of the pipeline and prevent PIPEPOISONfrom prioritizing a
+downstream stage before its required input is available.
+PIPEPOISONselects the stage with the largest loss and
+sends the corresponding shadow feedback to an attacker-side
+refiner. For a writing failure, the feedback contains the mem-
+ories produced by the writer; for a retrieval failure, it contains
+the returned memories and their relation to the target query;
+for a utilization failure, it contains the paired attack and clean
+behaviors. The refiner diagnoses the failure and updates only
+the selected hint, leaving the other two unchanged. The gen-
+erator then produces the next candidate from the updated </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>configuration weight as
+π(t)
+i =
+n
+
+ρ(t)
+i + ¯ρ(t)
+
+∑n
+p=1
+
+ρ(t)
+p + ¯ρ(t)
+ .(7)
+Configurations with larger current losses receive greater
+weight, while the additive mean term prevents easier config-
+urations from being ignored. The normalization ensures that
+∑i π(t)
+i =n, preserving the scale of the unweighted objective.
+Stage Weight.We next estimate the difficulty of each stage
+across the weighted shadow configurations:
+δ(t)
+j =
+s
+1
+n
+n
+∑
+i=1
+π(t)
+i
+
+ℓ(t)
+i,j
+2
+, ¯δ(t) = 1
+3 ∑
+j∈{w,r,u}
+δ(t)
+j .(8)
+The weight of stagejat iterationtis then
+α(t)
+j =
+3
+
+δ(t)
+j + ¯δ(t)
+
+∑k∈{w,r,u}
+
+δ(t)
+k + ¯δ(t)
+ ,j∈ {w,r,u}.(9)
+6
+A stage with consistently large losses across shadow configu-
+rations therefore receives greater optimization pressure. The
+weights satisfy ∑ j α(t)
+j =3.
+Transfer Lifecycle Score.Using these weights, the lifecycle
+score under configurationibecomes
+F (t)
+i </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=
+
+w(t)
+i
+αw 
+r(t)
+i
+αr 
+u(t)
+i
+αu
+min
+n
+w(t)
+i ,r (t)
+i ,u (t)
+i
+o1/4
+.
+(10)
+The stage weights emphasize difficult stages, while the min-
+imum term continues to penalize the weakest stage within
+each configuration. The joint score across all shadow config-
+urations is
+J(t) =
 
-        <ul></ul>
+n
+∏
+i=1
+
+F (t)
+i
+πi
+·min
+1≤i≤n
+F (t)
+i
+!1/(n+1)
+.(11)
+The weighted product rewards performance shared across
+configurations, while the minimum term prevents strong
+overall performance from concealing failure on the weakest
+configuration. Optimization terminates whenJ (t) ≥η.
+Transfer Chain-Structured Losses.PIPEPOISONaggre-
+gates each stage&#x27;s chain-structured loss across configura-
+tions:
+L(t)
+j = α j
+n
+n
+∑
+i=1
+πiℓ(t)
+i,j ,j∈ {w,r,u}.(12)
+It selects the stage with the largest aggregated loss and up-
+dates the corresponding hint using feedback from all shadow
+configurations. The multi-configuration </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agent and Memory Systems.We evaluate PIPEPOI-
+SONon three real-world open-source agent frameworks
+(GitHub stars in parentheses)—LangGraph (39.8K) [17],
+CrewAI (57.5K) [4], and OpenAI Agents (28.9K) [28]—
+combined with four real-world open-source memory mecha-
+nisms: LangMem (1.6K) [16], LlamaIndex Memory (51.8K)
+[20], Mem0 (63.4K) [24], and ReMe (3.3K) [34]. Together,
+these systems cover diverse implementations of agent control
+flow, memory writing, retrieval, and utilization.
+Datasets and Attack Tasks.We use three public memory-
+evaluation datasets: LongMemEval [43], LoCoMo [23], and
+BEAM [38]. We sample 100 tasks from each dataset using
+a fixed random seed of 42, yielding 300 tasks in total. Each
+task is converted into an indirect memory-poisoning instance
+consisting of an attacker objectivegand a target query do-
+mainQ tar. Representative queries used for shadow-side opti-
+mization </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>exclusively on attacker-controlled
+shadow systems; victim configurations are used only for fi-
+nal evaluation and provide no optimization feedback.
+Baselines.We compare PIPEPOISONwith six memory-
+poisoning baselines. MINJA [6] and ER-MIA [32] are direct
+poisoning methods and are adapted to the indirect setting by
+generating poisoned content using their respective strategies
+and delivering it through the same external-content channel.
+We additionally evaluate four indirect memory-poisoning at-
+tacks: ZombieAgent (Zombie) [48], Sleeper [33], Mem-
+Morph [51], and GhostWriter [39]. All methods operate un-
+der the same black-box constraint and receive no feedback
+from the evaluated victim systems; details in Appendix C.
+Metrics.We evaluate attacks along the write-retrieve-use
+pipeline.(1) Write Success Rate (WSR)measures whether
+the memory written from the poisoning content preserves </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Question and setting.We first examine whether end-to-end
+optimization improves indirect memory-poisoning effective-
+ness when the shadow and victim configurations match. For
+each evaluated configuration, the attacker optimizes the poi-
+soning content exclusively on a local shadow system with the
+same configuration as the expected agent. The victim system
+is used only for final evaluation and provides no optimization
+feedback or intermediate-stage observations.
+Main results.Table 1 reports results across 12 combina-
+tions of four memory mechanisms and three agent frame-
+works. PIPEPOISONachieves the highest AUR in every
+configuration, with average WSR, RSR@5, and AUR of
+76.1%, 94.2%, and 73.4%, respectively. Compared with the
+strongest baselines, it improves average WSR by 13.1 per-
+centage points and AUR by 19.1 percentage points.
+The stage-wise results further demonstrate the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>D.
+Answer to RQ1
+Across 12 matched memory–agent configurations,
+PIPEPOISONachieves the highest AUR in every config-
+uration and the lowest cross-configuration variation, im-
+proving average AUR by 19.1 percentage points over the
+strongest baseline. These results demonstrate the effec-
+tiveness and consistency of lifecycle-wide optimization
+in the matched setting.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>59% 92% 51% 38% 62% 23% 18% 57% 13% 34% 83% 31% 54% 79% 47% 35% 71% 29%76% 99% 73%
+CrewAI 59% 95% 53% 35% 64% 26% 29% 53% 15% 40% 77% 37% 59% 83% 52% 38% 68% 31%75% 97% 74%
+OpenAI Agents 57% 88%40% 31% 67% 24% 15% 52% 14% 43% 78% 39% 58% 88% 49% 34% 69% 27%81% 96% 75%
+ReMe
+LangGraph 63% 90% 53% 39% 63% 31% 15% 41% 14% 40% 86% 35% 67% 92% 57% 44% 79% 35%77% 95% 74%
+CrewAI 58% 83% 53% 31% 68% 23% 21% 56% 16% 39% 83% 36% 61% 81% 49% 36% 82% 28%72% 97% 69%
+OpenAI Agents 62% 85% 46% 33% 69% 24% 17% 50% 13% 42% 87% 38% 65% 85% 51% 33% 84% 26%78% 96% 76%
+Average 58.3% 87.6% 48.2% 38.0% 71.2% 29.0% 23.1% 61.4% 18.7% 40.6% 80.5% 35.7% 63.0%85.8% 54.3%41.8% 75.8% 32.0%76.1% 94.2% 73.4%
+Table 2: RSD comparison across different methods.
+MethodRSD WSR(%)↓RSD RSR@5(%)↓RSD AUR(%)↓
+MINJA 5.44 4.28 10.35
+ER-MIA 17.67 9.82 24.34
+Zombie 25.96 19.27 28.56
+Sleeper 6.52 5.49 8.31
+MemMorph 7.72 4.94 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>user.
+Results.On shadow-covered configurations, PIPEPOISON
+achieves 75%–76% WSR, 88%–94% RSR@5, and 71%–
+73% AUR. These ranges are 65%–68%, 82%–87%, and
+58%–62% when either the system or model configuration
+differs, and 63%–69%, 86%–88%, and 58%–64% when both
+are unseen. In the fully different setting, PIPEPOISONre-
+tains the highest AUR among all evaluated attack methods.
+Joint changes produce a larger transfer gap than the isolated
+shifts in Section 4.3.1 and Section 4.3.2, reducing AUR by
+9–15 percentage points. Nevertheless, the attack still com-
+pletes the full pipeline on a majority of evaluated cases with-
+out victim-side access or feedback.
+Stability.As shown in Table 5, PIPEPOISONobtains RSDs
+of 7.14%, 4.18%, and 9.62% for WSR, RSR@5, and AUR
+across the eight configurations. It achieves the lowest WSR
+and RSR@5 variation. Its AUR RSD is 1.03 percentage
+points above the lowest </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>configurations
+and outperforms the strongest baseline by 16 percentage
+points. Even when both system and model configurations
+are unseen, it retains 58%–64% AUR with low cross-
+configuration variation, demonstrating both effective and
+stable transfer.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>S4 33% 54% 43%69%62%71%
+to-end effectiveness. Table 7 compares four nested variants.
+C1removes stage-level feedback and evaluates candidates
+using only the final binary attack outcome.C2adds stage
+signals but removes the chain structure, treating the three
+scores independently and refining the stage with the lowest
+raw score.C3further introduces chain-structured losses but
+assigns uniform weights to all stages and shadow configura-
+tions.C4is the complete PIPEPOISON, combining stage sig-
+nals, chain-structured losses, and calibrated stage and con-
+figuration weights.
+Results.We focus on AUR because it measures success
+over the complete memory lifecycle; full results for WSR
+and RSR@5 can be seen in Appendix E. C1 achieves only
+43% AUR in the matched setting and 31-33% in the three
+transfer settings, showing that the sparse final outcome pro-
+vides insufficient guidance for identifying </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>pipeline failures.
+Introducing independent stage signals in C2 increases AUR
+to 52% in S1 and 48–54% in S2–S4. In the matched set-
+ting, where stage and configuration weights reduce to uni-
+form weights, C4 further improves AUR to 73%, supporting
+the benefit of the chain-structured objective. Under trans-
+fer settings, the unweighted C3 variant obtains only 41-45%
+AUR, whereas the complete C4 achieves 67-69%, an im-
+provement of 22–26 percentage points. This result indicates
+that chain structure alone is insufficient for balancing hetero-
+geneous shadow configurations; the joint weighting module
+is crucial for targeting weak stages and difficult configura-
+tions.
+For diagnostic purposes, we additionally evaluate C3 and
+C4 after including the corresponding victim configuration in
+the shadow set. C3 exhibits a 19-20 percentage-point seen-
+unseen AUR gap, whereas the gap for C4 is only 1-6 </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Question and evaluation protocol.We investigate whether
+defenses applied at different stages of the memory lifecycle
+mitigate PIPEPOISON. We evaluate eight mechanisms across
+three layers: tool-output filtering, system-level defenses, and
+memory-management defenses. All poisoning content is op-
+timized on undefended, attacker-controlled shadow systems
+and then evaluated unchanged against defended victims. The
+attacker has no knowledge of the deployed defense and re-
+ceives no defense-side feedback.
+Tool-Output Filtering.Following prior work [7, 10], we
+evaluate three filters applied before tool-returned content
+reaches memory. The PPL filter [1] detects statistically un-
+usual text, Llama Guard [14] identifies malicious instruc-
+tions, and a dedicated GPT-5.4 detector targets long-term-
+memory manipulation. As shown in Figure 11, PPL filtering
+has little effect, while Llama Guard and the </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>subsequent sessions, it re-
+duces AUR to 57%–66% with unrelated new memories and
+49%–59% with semantically related new memories. These
+results show that recency is more effective when newer mem-
+ories compete within the same retrieval region.
+Answer to RQ4
+Defenses reduce PIPEPOISON&#x27;s AUR from an unde-
+fended range of 67-73% to 41-66%, with conflict reso-
+lution providing the strongest reduction. However, suc-
+cessful utilization remains under every evaluated de-
+fense, showing that stage-specific mechanisms provide
+only partial protection against defense-oblivious black-
+box transfer.</blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evaluators and Human Evaluation.We use AgentEvals-
+based evaluators to assess WSR and AUR. To validate their
+reliability, three human experts independently annotated 200
+records for each of four representative attacks, yielding 800
+records in total. Majority voting was used to obtain the refer-
+ence labels. The annotators achieved an average pairwise Co-
+hen&#x27;sκof 0.71, while AgentEvals obtained 0.93-0.95 agree-
+ment with the human labels. We provide the complete evalu-
+12
+ation setup and results in Appendix F.
+Local Shadow-System Optimization Cost.All optimiza-
+tion is performed exclusively on attacker-controlled local
+shadow systems, without interacting with the victim sys-
+tem. Under a maximum budget of 50 iterations, PIPEPOI-
+SONrequires an average of 4.6 optimization iterations in the
+matched and 14.7, 19.8, and 27.8 iterations in the three trans-
+fer settings.</blockquote></details></li><li><strong>Contribution clarity — pages 17–18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>equivalent to C4.
+F Details of Human Evaluation
+We use AgentEvals-based evaluators to determine whether
+a written memory preserves the attacker objective for WSR
+and whether the resulting agent behavior satisfies that objec-
+tive for AUR. To validate these automated judgments, three
+human experts independently annotated 200 records from
+each of four representative attacks—MINJA, Sleeper, Mem-
+Morph, and PIPEPOISON—for a total of 800 records. Major-
+ity voting was used to construct the human reference labels.
+The experts achieved an average pairwise Cohen&#x27;sκof 0.71.
+17
+Table 10: Complete component-ablation results under the four RQ3 settings. Higher values are better. Bold values indicate the best
+result within each evaluation group.
+Black-box evaluation Seen-victim diagnostic
+Setting Metric C1 C2 C3 C4 C3 seen C4seen
+S1</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +546,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

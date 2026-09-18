@@ -1,0 +1,34 @@
+{
+ "batch": "batch-5",
+ "roster_size": 10,
+ "gemini_primary": {
+  "expected_calls": 10,
+  "call_budget_per_paper": 1,
+  "estimated_prompt_tokens": 230000,
+  "estimated_output_tokens": 10000,
+  "monetary_cost": "UNKNOWN",
+  "basis": "covered_by_msc_allocation",
+  "note": "Google endpoint reports no charge and this project has not established the MSc allocation rate. Not assumed to be zero; no amount fabricated."
+ },
+ "deepseek_adjudicator": {
+  "expected_calls": 10,
+  "max_calls_with_contract_retries": 20,
+  "call_budget_per_paper": 2,
+  "estimated_prompt_tokens": 230000,
+  "estimated_output_tokens": 4500,
+  "expected_cost_usd": 0.35,
+  "worst_case_cost_usd_all_retries": 0.7,
+  "rate_basis": "USD 0.001125 per 1k prompt tokens, from the 2026-09-18 discrimination diagnostic actuals"
+ },
+ "total_known_monetary_usd_expected": 0.35,
+ "budget": {
+  "shared_ceiling_usd": 10.0,
+  "charged_after_batch_4_usd": 6.48473717,
+  "discrimination_diagnostic_usd": 0.057445,
+  "charged_before_batch_5_usd": 6.54218217,
+  "remaining_before_batch_usd": 3.45781783,
+  "expected_share_of_remaining_pct": 10.1
+ },
+ "selected_manuscript_characters_total": 729395,
+ "basis": "selected assessment text measured on the frozen Batch-5 roster before any model call"
+}

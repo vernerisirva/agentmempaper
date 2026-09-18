@@ -27,7 +27,7 @@
   "last_seen_date": "2026-07-17",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-13 10:03:16",
   "notified_date": "2026-07-13",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-13 10:00:34",
-    "generated_at": "2026-09-18 13:23:06",
+    "generated_at": "2026-09-18 18:46:26",
     "last_seen_at": "2026-07-17 08:31:05",
     "metadata_sources": [
       "openalex",
@@ -104,36 +104,1597 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:40:46.644981+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents an inventive, soundly implemented framework for scientific LLM auditing with solid experimental controls, clear baselines, and honest discussion of boundaries, meeting library standards for a pass.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 43295,
+      "assessment_input_sha256": "7e51898c7426f5b301a3e9bbcfe4aa53081946d9f9f3a83ddaffcd73c3898b01",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7168328747",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 41319,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 41264,
+      "evidence_block_count": 53,
+      "evidence_context_characters": 48472,
+      "evidence_context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+      "evidence_context_sha256": "c9d049ca795b7d2707e53b062e9c962491a8da400f840d7a9fe47564450e06df",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 41351,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+        "source_url": "https://arxiv.org/pdf/2607.09195",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 41319,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Toward Auditable Ai Scientists:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1350,
+          "supplied_characters": 1350
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 1191,
+          "supplied_characters": 1191
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3113,
+          "supplied_characters": 3113
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1243,
+          "supplied_characters": 1243
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 1,
+          "supplied_characters": 1
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 5,
+          "source_characters": 2029,
+          "supplied_characters": 2029
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 858,
+          "supplied_characters": 858
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 3305,
+          "supplied_characters": 3305
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 8,
+          "source_characters": 1820,
+          "supplied_characters": 1820
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 9,
+          "source_characters": 3408,
+          "supplied_characters": 3408
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 10,
+          "source_characters": 1665,
+          "supplied_characters": 1665
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 11,
+          "source_characters": 3224,
+          "supplied_characters": 3224
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 1051,
+          "supplied_characters": 1051
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 14,
+          "source_characters": 2244,
+          "supplied_characters": 2244
+        },
+        {
+          "heading": "Conclusions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 15,
+          "source_characters": 2,
+          "supplied_characters": 2
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 3009,
+          "supplied_characters": 3009
+        },
+        {
+          "heading": "Methods",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 1287,
+          "supplied_characters": 1287
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 122,
+          "supplied_characters": 122
+        },
+        {
+          "heading": "Code Availability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 728,
+          "supplied_characters": 728
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 2411,
+          "supplied_characters": 2411
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 2577,
+          "supplied_characters": 2577
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2465,
+          "supplied_characters": 2465
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 2051,
+          "supplied_characters": 2051
+        }
+      ],
+      "selected_characters": 41264,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 1350,
+          "heading": "Toward Auditable Ai Scientists:",
+          "page": 1
+        },
+        {
+          "characters": 1191,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3113,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 1243,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 1,
+          "heading": "Introduction",
+          "page": 4
+        },
+        {
+          "characters": 2029,
+          "heading": "Results",
+          "page": 4
+        },
+        {
+          "characters": 858,
+          "heading": "Experiments",
+          "page": 4
+        },
+        {
+          "characters": 3305,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 1820,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 3408,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1665,
+          "heading": "Experiments",
+          "page": 8
+        },
+        {
+          "characters": 3224,
+          "heading": "Experiments",
+          "page": 9
+        },
+        {
+          "characters": 1051,
+          "heading": "Experiments",
+          "page": 10
+        },
+        {
+          "characters": 2,
+          "heading": "Experiments",
+          "page": 11
+        },
+        {
+          "characters": 2244,
+          "heading": "Conclusions",
+          "page": 11
+        },
+        {
+          "characters": 2,
+          "heading": "Conclusions",
+          "page": 12
+        },
+        {
+          "characters": 3009,
+          "heading": "Methods",
+          "page": 12
+        },
+        {
+          "characters": 1287,
+          "heading": "Methods",
+          "page": 13
+        },
+        {
+          "characters": 122,
+          "heading": "Back matter: Acknowledgments",
+          "page": 13
+        },
+        {
+          "characters": 108,
+          "heading": "Code Availability",
+          "page": 13
+        },
+        {
+          "characters": 728,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 2411,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 2577,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 2465,
+          "heading": "Unclassified body after references",
+          "page": 16
+        },
+        {
+          "characters": 2051,
+          "heading": "Unclassified body after references",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "7e51898c7426f5b301a3e9bbcfe4aa53081946d9f9f3a83ddaffcd73c3898b01",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+      "source_pages": 17,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0007"
+        ],
+        "excerpt": "persistent object in an auditable registry, where it carries a\nbelief probability that can be moved only by attached evidence, evolves through refinement and\nmerging of parent hypotheses, and progresses through a lifecycle from proposal to resolution as\nsupported,refuted,ordormant. Theprotocolthusservesasafootingonwhichtheagentoperates\nthe hypothesis\u2013test\u2013evidence\u2013belief cycle in a disciplined way. Using materials-science research\ntasks as a testbed, we show that an agent equipped with HEP actually operates the hypothesis\u2013\ntest\u2013evidence\u2013beliefcyclethatplanning-styleagentslack,thatthesameprotocolgeneralizesacross\nresearch questions, and that the depth to which the protocol is exploited scales with base-LLM\ncapability.\n3\nFigure 1: Overview of the Hypothesis Evolution Protocol (HEP). (a)Given a research task, an LLM ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3c333f39262cfccbddeff01fe73b5de37ef5f81f83faccb7bf9369974f117021",
+            "evidence_id": "E269bb07cb3e53c1a-B0007",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3113,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2387,
+                "text": "persistent object in an auditable registry, where it carries a\nbelief probability that can be moved only by attached evidence, evolves through refinement and\nmerging of parent hypotheses, and progresses through a lifecycle from proposal to resolution as\nsupported,refuted,ordormant. Theprotocolthusservesasafootingonwhichtheagentoperates\nthe hypothesis\u2013test\u2013evidence\u2013belief cycle in a disciplined way. Using materials-science research\ntasks as a testbed, we show that an agent equipped with HEP actually operates the hypothesis\u2013\ntest\u2013evidence\u2013beliefcyclethatplanning-styleagentslack,thatthesameprotocolgeneralizesacross\nresearch questions, and that the depth to which the protocol is exploited scales with base-LLM\ncapability."
+              },
+              {
+                "end": 98,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "3\nFigure 1: Overview of the Hypothesis Evolution Protocol (HEP). (a)Given a research task, an LLM "
+              }
+            ],
+            "text": "persistent object in an auditable registry, where it carries a\nbelief probability that can be moved only by attached evidence, evolves through refinement and\nmerging of parent hypotheses, and progresses through a lifecycle from proposal to resolution as\nsupported,refuted,ordormant. Theprotocolthusservesasafootingonwhichtheagentoperates\nthe hypothesis\u2013test\u2013evidence\u2013belief cycle in a disciplined way. Using materials-science research\ntasks as a testbed, we show that an agent equipped with HEP actually operates the hypothesis\u2013\ntest\u2013evidence\u2013beliefcyclethatplanning-styleagentslack,thatthesameprotocolgeneralizesacross\nresearch questions, and that the depth to which the protocol is exploited scales with base-LLM\ncapability.\n3\nFigure 1: Overview of the Hypothesis Evolution Protocol (HEP). (a)Given a research task, an LLM "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0010"
+        ],
+        "excerpt": "Hypothesis Evolution Protocol\nFigure 1 presents an overview of the proposed HEP. An LLM agent tackling a research task\ninteracts with its experimental environment and any other tools as usual. On top of this ordinary\nworkflow, HEP provides the layer through which the agent manages its hypotheses, evidence,\nand beliefs (Fig. 1a). The protocol consists of two components: an auditableHEP Registryand a\nset ofHEP Tools. The HEP Registry records each hypothesis as a persistent object with a unique\nhypothesis id, carrying a natural-language statement, a belief\ud835\udc43(\ud835\udc3b), defined as the probability\nthe agent currently assigns to the hypothesis being true, a lifecycle state, and its provenance.\nEvery belief update, evidence attachment, and state transition is appended to the event log of the\ncorresponding hypothesis, so the full history of each hypothesis remains auditable to both the\nagent and the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "659c441db12e01cf1b78b5a85d9e343d4dc48989c4ce8ca4564c3ae6b81dd934",
+            "evidence_id": "E269bb07cb3e53c1a-B0010",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 4,
+                "section": "Results",
+                "section_index": 5,
+                "start": 0,
+                "text": "Hypothesis Evolution Protocol\nFigure 1 presents an overview of the proposed HEP. An LLM agent tackling a research task\ninteracts with its experimental environment and any other tools as usual. On top of this ordinary\nworkflow, HEP provides the layer through which the agent manages its hypotheses, evidence,\nand beliefs (Fig. 1a). The protocol consists of two components: an auditableHEP Registryand a\nset ofHEP Tools. The HEP Registry records each hypothesis as a persistent object with a unique\nhypothesis id, carrying a natural-language statement, a belief\ud835\udc43(\ud835\udc3b), defined as the probability\nthe agent currently assigns to the hypothesis being true, a lifecycle state, and its provenance.\nEvery belief update, evidence attachment, and state transition is appended to the event log of the\ncorresponding hypothesis, so the full history of each hypothesis remains auditable to both the\nagent and the "
+              }
+            ],
+            "text": "Hypothesis Evolution Protocol\nFigure 1 presents an overview of the proposed HEP. An LLM agent tackling a research task\ninteracts with its experimental environment and any other tools as usual. On top of this ordinary\nworkflow, HEP provides the layer through which the agent manages its hypotheses, evidence,\nand beliefs (Fig. 1a). The protocol consists of two components: an auditableHEP Registryand a\nset ofHEP Tools. The HEP Registry records each hypothesis as a persistent object with a unique\nhypothesis id, carrying a natural-language statement, a belief\ud835\udc43(\ud835\udc3b), defined as the probability\nthe agent currently assigns to the hypothesis being true, a lifecycle state, and its provenance.\nEvery belief update, evidence attachment, and state transition is appended to the event log of the\ncorresponding hypothesis, so the full history of each hypothesis remains auditable to both the\nagent and the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0011"
+        ],
+        "excerpt": "human researcher (Fig. 1b).\nHEP Tools mediate the interaction between the agent and the HEP Registry in three groups,\nPropose & Evolve,Test & Judge, andRead, the last of which lets the agent look up the tracked\nhypotheses and their current states and beliefs (Fig. 1c). Hypotheses enter the registry through\nfour generation mechanisms,de-novo,inspired-by,refine, andmerge(Fig. 1d). As the agent invokes\nthese tools over the course of a run, its hypotheses evolve, and their population comes to form an\nexplicit lineage rather than a flat list.\nEachhypothesistakesoneoffivelifecyclestates,fromproposedandunder_testtoaresolution\nassupported,refuted, ordormant(Fig. 1e). Belief is disciplined by two rules. First,\ud835\udc43(\ud835\udc3b)can\nbe moved only by evidence that passes a validation gate. Attachments judged insufficient are\nrecorded but leave belief unchanged. Second, verdicts are threshold transitions enforced ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fc2401f8ec3e317d0e3256e0e98afe6b21d293dc06dc0e066b43317f4de56bbb",
+            "evidence_id": "E269bb07cb3e53c1a-B0011",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 4,
+                "section": "Results",
+                "section_index": 5,
+                "start": 897,
+                "text": "human researcher (Fig. 1b).\nHEP Tools mediate the interaction between the agent and the HEP Registry in three groups,\nPropose & Evolve,Test & Judge, andRead, the last of which lets the agent look up the tracked\nhypotheses and their current states and beliefs (Fig. 1c). Hypotheses enter the registry through\nfour generation mechanisms,de-novo,inspired-by,refine, andmerge(Fig. 1d). As the agent invokes\nthese tools over the course of a run, its hypotheses evolve, and their population comes to form an\nexplicit lineage rather than a flat list.\nEachhypothesistakesoneoffivelifecyclestates,fromproposedandunder_testtoaresolution\nassupported,refuted, ordormant(Fig. 1e). Belief is disciplined by two rules. First,\ud835\udc43(\ud835\udc3b)can\nbe moved only by evidence that passes a validation gate. Attachments judged insufficient are\nrecorded but leave belief unchanged. Second, verdicts are threshold transitions enforced "
+              }
+            ],
+            "text": "human researcher (Fig. 1b).\nHEP Tools mediate the interaction between the agent and the HEP Registry in three groups,\nPropose & Evolve,Test & Judge, andRead, the last of which lets the agent look up the tracked\nhypotheses and their current states and beliefs (Fig. 1c). Hypotheses enter the registry through\nfour generation mechanisms,de-novo,inspired-by,refine, andmerge(Fig. 1d). As the agent invokes\nthese tools over the course of a run, its hypotheses evolve, and their population comes to form an\nexplicit lineage rather than a flat list.\nEachhypothesistakesoneoffivelifecyclestates,fromproposedandunder_testtoaresolution\nassupported,refuted, ordormant(Fig. 1e). Belief is disciplined by two rules. First,\ud835\udc43(\ud835\udc3b)can\nbe moved only by evidence that passes a validation gate. Attachments judged insufficient are\nrecorded but leave belief unchanged. Second, verdicts are threshold transitions enforced "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0012"
+        ],
+        "excerpt": "by the\nregistry: ahypothesiscanbetransitionedtosupportedonlywhen\ud835\udc43(\ud835\udc3b)\u22650.8andtorefutedonly\nwhen\ud835\udc43(\ud835\udc3b)\u22640.2, while hypotheses that cannot be tested further are shelved asdormantwith an\nexplicit reason. Design details are given in Methods.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c0dfd01330dc34af55e406fdecaaebec8221a2271a74571f32dec60129847f9e",
+            "evidence_id": "E269bb07cb3e53c1a-B0012",
+            "pages": [
+              4
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2029,
+                "page": 4,
+                "section": "Results",
+                "section_index": 5,
+                "start": 1797,
+                "text": "by the\nregistry: ahypothesiscanbetransitionedtosupportedonlywhen\ud835\udc43(\ud835\udc3b)\u22650.8andtorefutedonly\nwhen\ud835\udc43(\ud835\udc3b)\u22640.2, while hypotheses that cannot be tested further are shelved asdormantwith an\nexplicit reason. Design details are given in Methods."
+              }
+            ],
+            "text": "by the\nregistry: ahypothesiscanbetransitionedtosupportedonlywhen\ud835\udc43(\ud835\udc3b)\u22650.8andtorefutedonly\nwhen\ud835\udc43(\ud835\udc3b)\u22640.2, while hypotheses that cannot be tested further are shelved asdormantwith an\nexplicit reason. Design details are given in Methods."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0013"
+        ],
+        "excerpt": "We evaluate HEP on three materials-science research tasks, each posing an open research ques-\ntion of the same form: \"which crystal structure does a single fixed machine-learned interatomic\npotential (MLIP) prefer for each compound in a family, and what physics or chemistry explains\nthe pattern?\" Task AO2 concerns polymorph selection among seven prototypes in the AO2 diox-\nides; task A2BB\u2032O6 concerns B-site cation ordering in the A2BB\u2032O6 double perovskites, among\nrock-salt, layered, and columnar orderings and a disordered reference; and task MX concerns\nprototype selection among rocksalt, NiAs, zincblende, and wurtzite in the MX transition-metal\nmonochalcogenides and monopnictides.\nThe three families span combinatorial complexity from binary (AO 2, MX) to quaternary\n(A2BB\u2032O6)compounds,andthequestionstheyposedemandexplanationratherthanoptimization",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f42e248e67f00033bc105a624245fe2e733cd82f0eca2245c6b71f85a63e3dbd",
+            "evidence_id": "E269bb07cb3e53c1a-B0013",
+            "pages": [
+              4
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 858,
+                "page": 4,
+                "section": "Experiments",
+                "section_index": 6,
+                "start": 0,
+                "text": "We evaluate HEP on three materials-science research tasks, each posing an open research ques-\ntion of the same form: \"which crystal structure does a single fixed machine-learned interatomic\npotential (MLIP) prefer for each compound in a family, and what physics or chemistry explains\nthe pattern?\" Task AO2 concerns polymorph selection among seven prototypes in the AO2 diox-\nides; task A2BB\u2032O6 concerns B-site cation ordering in the A2BB\u2032O6 double perovskites, among\nrock-salt, layered, and columnar orderings and a disordered reference; and task MX concerns\nprototype selection among rocksalt, NiAs, zincblende, and wurtzite in the MX transition-metal\nmonochalcogenides and monopnictides.\nThe three families span combinatorial complexity from binary (AO 2, MX) to quaternary\n(A2BB\u2032O6)compounds,andthequestionstheyposedemandexplanationratherthanoptimization"
+              }
+            ],
+            "text": "We evaluate HEP on three materials-science research tasks, each posing an open research ques-\ntion of the same form: \"which crystal structure does a single fixed machine-learned interatomic\npotential (MLIP) prefer for each compound in a family, and what physics or chemistry explains\nthe pattern?\" Task AO2 concerns polymorph selection among seven prototypes in the AO2 diox-\nides; task A2BB\u2032O6 concerns B-site cation ordering in the A2BB\u2032O6 double perovskites, among\nrock-salt, layered, and columnar orderings and a disordered reference; and task MX concerns\nprototype selection among rocksalt, NiAs, zincblende, and wurtzite in the MX transition-metal\nmonochalcogenides and monopnictides.\nThe three families span combinatorial complexity from binary (AO 2, MX) to quaternary\n(A2BB\u2032O6)compounds,andthequestionstheyposedemandexplanationratherthanoptimization"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0014"
+        ],
+        "excerpt": "5\ntowardapredefinedtarget. TheLLMhassomepriorknowledgeofthesesystems,butthebehavior\nof the fixed potential is not known until it is actually tested. Because the aim is new knowledge\nrather than the recall of known facts, each hypothesis the agent forms can be judged only by\ntesting it. Individual preferences can be computed by relaxation, but the rule that governs the\npattern cannot be read off by enumeration alone. The questions are also scientifically meaningful,\nin that understanding which crystal structure a potential stabilizes, and why, bears directly on\nmaterials design.\nIn each run, the agent receives a single task prompt and is required to work out an answer to\nthe research question autonomously with the provided tools and to deliver it as a final report.\nUnless otherwise noted, the base LLM is GPT-5.5 [44]. The agent setup and run settings are given\nin ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b91aa4ecdced0dd1961ca121abcfbac6a946d012fa59ee7eb2065428db209459",
+            "evidence_id": "E269bb07cb3e53c1a-B0014",
+            "pages": [
+              5
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 875,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 7,
+                "start": 0,
+                "text": "5\ntowardapredefinedtarget. TheLLMhassomepriorknowledgeofthesesystems,butthebehavior\nof the fixed potential is not known until it is actually tested. Because the aim is new knowledge\nrather than the recall of known facts, each hypothesis the agent forms can be judged only by\ntesting it. Individual preferences can be computed by relaxation, but the rule that governs the\npattern cannot be read off by enumeration alone. The questions are also scientifically meaningful,\nin that understanding which crystal structure a potential stabilizes, and why, bears directly on\nmaterials design.\nIn each run, the agent receives a single task prompt and is required to work out an answer to\nthe research question autonomously with the provided tools and to deliver it as a final report.\nUnless otherwise noted, the base LLM is GPT-5.5 [44]. The agent setup and run settings are given\nin "
+              }
+            ],
+            "text": "5\ntowardapredefinedtarget. TheLLMhassomepriorknowledgeofthesesystems,butthebehavior\nof the fixed potential is not known until it is actually tested. Because the aim is new knowledge\nrather than the recall of known facts, each hypothesis the agent forms can be judged only by\ntesting it. Individual preferences can be computed by relaxation, but the rule that governs the\npattern cannot be read off by enumeration alone. The questions are also scientifically meaningful,\nin that understanding which crystal structure a potential stabilizes, and why, bears directly on\nmaterials design.\nIn each run, the agent receives a single task prompt and is required to work out an answer to\nthe research question autonomously with the provided tools and to deliver it as a final report.\nUnless otherwise noted, the base LLM is GPT-5.5 [44]. The agent setup and run settings are given\nin "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0017"
+        ],
+        "excerpt": "remained\nmid-rangeandwasshelvedasdormantafterbeingsupersededbyitsrefinedchild. Verdictsoccur\nonly after belief crosses these thresholds, so every verdict is grounded in validated evidence.\nTo examine how harnessing the LLM with HEP changes the behavior of the agent, we compare\nagainst a planning-style agent (plan\u2013execute\u2013replan [5, 12, 13]) given the same research goal, the\nsame tools for computation, and the same base LLM, with\ud835\udc5b=3runs per condition. Following a\nrecent analysis of agent execution traces [32], we classify every step of every run into hypothesis\nproposal(H),test(T),evidence(E),beliefupdate(B),judgement(J),orhypothesisupdate(U).The\n6\nFigure 2: HEP makes the scientific loop explicit and auditable. (a)Hypothesis tree of an example run on\ntaskAO 2. Nodesarehypotheses(fill=finallifecyclestate,number=finalbelief,label=idsuffix);edgesshow\nthe generation mechanism (orange solid ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "06173f8b2f61ba5842c32098656242a1f99619a5adeb8b35ee7cae665206c422",
+            "evidence_id": "E269bb07cb3e53c1a-B0017",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3305,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 7,
+                "start": 2652,
+                "text": "remained\nmid-rangeandwasshelvedasdormantafterbeingsupersededbyitsrefinedchild. Verdictsoccur\nonly after belief crosses these thresholds, so every verdict is grounded in validated evidence.\nTo examine how harnessing the LLM with HEP changes the behavior of the agent, we compare\nagainst a planning-style agent (plan\u2013execute\u2013replan [5, 12, 13]) given the same research goal, the\nsame tools for computation, and the same base LLM, with\ud835\udc5b=3runs per condition. Following a\nrecent analysis of agent execution traces [32], we classify every step of every run into hypothesis\nproposal(H),test(T),evidence(E),beliefupdate(B),judgement(J),orhypothesisupdate(U).The"
+              },
+              {
+                "end": 244,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 8,
+                "start": 0,
+                "text": "6\nFigure 2: HEP makes the scientific loop explicit and auditable. (a)Hypothesis tree of an example run on\ntaskAO 2. Nodesarehypotheses(fill=finallifecyclestate,number=finalbelief,label=idsuffix);edgesshow\nthe generation mechanism (orange solid "
+              }
+            ],
+            "text": "remained\nmid-rangeandwasshelvedasdormantafterbeingsupersededbyitsrefinedchild. Verdictsoccur\nonly after belief crosses these thresholds, so every verdict is grounded in validated evidence.\nTo examine how harnessing the LLM with HEP changes the behavior of the agent, we compare\nagainst a planning-style agent (plan\u2013execute\u2013replan [5, 12, 13]) given the same research goal, the\nsame tools for computation, and the same base LLM, with\ud835\udc5b=3runs per condition. Following a\nrecent analysis of agent execution traces [32], we classify every step of every run into hypothesis\nproposal(H),test(T),evidence(E),beliefupdate(B),judgement(J),orhypothesisupdate(U).The\n6\nFigure 2: HEP makes the scientific loop explicit and auditable. (a)Hypothesis tree of an example run on\ntaskAO 2. Nodesarehypotheses(fill=finallifecyclestate,number=finalbelief,label=idsuffix);edgesshow\nthe generation mechanism (orange solid "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0018"
+        ],
+        "excerpt": "=refine, purple dashed =merge, teal dotted =inspired-by, which\ncontributes provenance but not lineage). Generation is 0 forde-novoandinspired-byhypotheses, parent+1\nforrefine, andmax(parents)+1formerge.(b)Belief trajectories for all 16 hypotheses (light lines) against the\nnumber of accumulated validated-evidence updates (0 = prior at proposal). One example per final state is\nhighlighted. Shaded bands mark the registry-enforced verdict thresholds (supported\u22650.8, refuted\u22640.2).\n(c)The scientific loop of a planning-style agent (baseline) versus the HEP-equipped agent (same goal, same\nbase LLM,\ud835\udc5b=3runs each). Left: fraction of loop steps by element (H = hypothesis proposal, T = test, E\n= evidence, B = belief update, J = judgement, U = hypothesis update; mean\u00b1standard deviation across\nruns). Middleandright: row-normalizedtransitionprobabilities\ud835\udc43(next|current)averagedoverruns,after\ncompressing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3cdd2582bf737822e475ef273c0f0ef619483573891ee8f7e4697b3e309cdd17",
+            "evidence_id": "E269bb07cb3e53c1a-B0018",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1143,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 8,
+                "start": 244,
+                "text": "=refine, purple dashed =merge, teal dotted =inspired-by, which\ncontributes provenance but not lineage). Generation is 0 forde-novoandinspired-byhypotheses, parent+1\nforrefine, andmax(parents)+1formerge.(b)Belief trajectories for all 16 hypotheses (light lines) against the\nnumber of accumulated validated-evidence updates (0 = prior at proposal). One example per final state is\nhighlighted. Shaded bands mark the registry-enforced verdict thresholds (supported\u22650.8, refuted\u22640.2).\n(c)The scientific loop of a planning-style agent (baseline) versus the HEP-equipped agent (same goal, same\nbase LLM,\ud835\udc5b=3runs each). Left: fraction of loop steps by element (H = hypothesis proposal, T = test, E\n= evidence, B = belief update, J = judgement, U = hypothesis update; mean\u00b1standard deviation across\nruns). Middleandright: row-normalizedtransitionprobabilities\ud835\udc43(next|current)averagedoverruns,after\ncompressing "
+              }
+            ],
+            "text": "=refine, purple dashed =merge, teal dotted =inspired-by, which\ncontributes provenance but not lineage). Generation is 0 forde-novoandinspired-byhypotheses, parent+1\nforrefine, andmax(parents)+1formerge.(b)Belief trajectories for all 16 hypotheses (light lines) against the\nnumber of accumulated validated-evidence updates (0 = prior at proposal). One example per final state is\nhighlighted. Shaded bands mark the registry-enforced verdict thresholds (supported\u22650.8, refuted\u22640.2).\n(c)The scientific loop of a planning-style agent (baseline) versus the HEP-equipped agent (same goal, same\nbase LLM,\ud835\udc5b=3runs each). Left: fraction of loop steps by element (H = hypothesis proposal, T = test, E\n= evidence, B = belief update, J = judgement, U = hypothesis update; mean\u00b1standard deviation across\nruns). Middleandright: row-normalizedtransitionprobabilities\ud835\udc43(next|current)averagedoverruns,after\ncompressing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0019"
+        ],
+        "excerpt": "consecutive repeats of the same element. Self-transitions are therefore undefined and shown\nin gray. An all-white row means the element never occurred; rows H, J, and U of the planning-style agent\ncontain only one to three events each, so the corresponding probabilities rest on few transitions.\nleft panel of Fig. 2c shows the fraction of steps spent on each element, averaged over runs, and the\nmiddle and right panels show the transition probabilities\ud835\udc43(next|current)between consecutive\nelements for the planning-style agent and the HEP-equipped agent, respectively. Because the\ntwo conditions stop under different criteria, we compare these run-length-independent quantities\n7\nratherthanabsolutecounts. Theplanning-styleagentspends83%ofitsloopstepsontestsand0%\non belief updates. It moves from hypotheses to tests to evidence (H\u2192T1.00, T\u2192E0.61) and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "781b874d34b613bc7f5b9288c69f60128b0ff7dabee30c77ad82188f2bc7b108",
+            "evidence_id": "E269bb07cb3e53c1a-B0019",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1820,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 8,
+                "start": 1143,
+                "text": "consecutive repeats of the same element. Self-transitions are therefore undefined and shown\nin gray. An all-white row means the element never occurred; rows H, J, and U of the planning-style agent\ncontain only one to three events each, so the corresponding probabilities rest on few transitions.\nleft panel of Fig. 2c shows the fraction of steps spent on each element, averaged over runs, and the\nmiddle and right panels show the transition probabilities\ud835\udc43(next|current)between consecutive\nelements for the planning-style agent and the HEP-equipped agent, respectively. Because the\ntwo conditions stop under different criteria, we compare these run-length-independent quantities"
+              },
+              {
+                "end": 174,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 0,
+                "text": "7\nratherthanabsolutecounts. Theplanning-styleagentspends83%ofitsloopstepsontestsand0%\non belief updates. It moves from hypotheses to tests to evidence (H\u2192T1.00, T\u2192E0.61) and "
+              }
+            ],
+            "text": "consecutive repeats of the same element. Self-transitions are therefore undefined and shown\nin gray. An all-white row means the element never occurred; rows H, J, and U of the planning-style agent\ncontain only one to three events each, so the corresponding probabilities rest on few transitions.\nleft panel of Fig. 2c shows the fraction of steps spent on each element, averaged over runs, and the\nmiddle and right panels show the transition probabilities\ud835\udc43(next|current)between consecutive\nelements for the planning-style agent and the HEP-equipped agent, respectively. Because the\ntwo conditions stop under different criteria, we compare these run-length-independent quantities\n7\nratherthanabsolutecounts. Theplanning-styleagentspends83%ofitsloopstepsontestsand0%\non belief updates. It moves from hypotheses to tests to evidence (H\u2192T1.00, T\u2192E0.61) and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0020"
+        ],
+        "excerpt": "then\nreturnstofurtherhypothesesortests,neverexplicitlyexternalizingabeliefandupdatingitagainst\nthe collected evidence. In our runs, at least, explicit belief revision did not emerge spontaneously\nfrom planning alone, and eliciting it would require dedicated support such as belief-oriented\nprompting. UnderHEP,incontrast,beliefsareexplicitlyexternalizedintheHEPRegistry,andthe\ntransition matrix exhibits the flow along the cycle, H\u2192T (0.85), T\u2192E (0.58), E\u2192B (0.78), and B\u2192J\n(0.40),withjudgementsfurthertriggeringhypothesisupdatesthataresentbacktotest(J\u2192U0.22,\nU\u2192T0.65). ThesetransitionsdemonstratethatHEPdrivestheagentthroughthefullhypothesis\u2013\ntest\u2013evidence\u2013beliefcycle. Theplanning-styleagentcanalsoiterateahypothesis\u2013testcycle,butitis\ndifficulttotraceonwhichevidenceabeliefwasupdated,howthatupdateledtoajudgement,and\non what basis each hypothesis was generated. HEP removes this ambiguity. Every ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "da7634af93033e13f74e4e85c4908f7a583740f4b9997f66f72701f25bee10ce",
+            "evidence_id": "E269bb07cb3e53c1a-B0020",
+            "pages": [
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1072,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 174,
+                "text": "then\nreturnstofurtherhypothesesortests,neverexplicitlyexternalizingabeliefandupdatingitagainst\nthe collected evidence. In our runs, at least, explicit belief revision did not emerge spontaneously\nfrom planning alone, and eliciting it would require dedicated support such as belief-oriented\nprompting. UnderHEP,incontrast,beliefsareexplicitlyexternalizedintheHEPRegistry,andthe\ntransition matrix exhibits the flow along the cycle, H\u2192T (0.85), T\u2192E (0.58), E\u2192B (0.78), and B\u2192J\n(0.40),withjudgementsfurthertriggeringhypothesisupdatesthataresentbacktotest(J\u2192U0.22,\nU\u2192T0.65). ThesetransitionsdemonstratethatHEPdrivestheagentthroughthefullhypothesis\u2013\ntest\u2013evidence\u2013beliefcycle. Theplanning-styleagentcanalsoiterateahypothesis\u2013testcycle,butitis\ndifficulttotraceonwhichevidenceabeliefwasupdated,howthatupdateledtoajudgement,and\non what basis each hypothesis was generated. HEP removes this ambiguity. Every "
+              }
+            ],
+            "text": "then\nreturnstofurtherhypothesesortests,neverexplicitlyexternalizingabeliefandupdatingitagainst\nthe collected evidence. In our runs, at least, explicit belief revision did not emerge spontaneously\nfrom planning alone, and eliciting it would require dedicated support such as belief-oriented\nprompting. UnderHEP,incontrast,beliefsareexplicitlyexternalizedintheHEPRegistry,andthe\ntransition matrix exhibits the flow along the cycle, H\u2192T (0.85), T\u2192E (0.58), E\u2192B (0.78), and B\u2192J\n(0.40),withjudgementsfurthertriggeringhypothesisupdatesthataresentbacktotest(J\u2192U0.22,\nU\u2192T0.65). ThesetransitionsdemonstratethatHEPdrivestheagentthroughthefullhypothesis\u2013\ntest\u2013evidence\u2013beliefcycle. Theplanning-styleagentcanalsoiterateahypothesis\u2013testcycle,butitis\ndifficulttotraceonwhichevidenceabeliefwasupdated,howthatupdateledtoajudgement,and\non what basis each hypothesis was generated. HEP removes this ambiguity. Every "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0021"
+        ],
+        "excerpt": "belief change\nis anchored to a specific piece of evidence, and every hypothesis carries an unbroken record from\nproposal to verdict.\nHEP generalizes across research questions.We next examine the generality of HEP across re-\nsearch questions, applying it to task A2BB\u2032O6 and task MX as well. Figure 3 shows the overall\nresults. Acrossthethreetaskstheagentgenerated10\u201320hypothesespertaskwithmaximumgen-\neration depths of 3\u20135, and all four generation mechanisms,de-novo,inspired-by,refine, andmerge,\nwere exercised in every task (Fig. 3a,b). Every hypothesis in all three tasks reached a terminal\ndisposition, that is, no hypothesis was left proposed or under test at the end of any run, with\nsupportedbeing the most common final state in every task (Fig. 3c).\nWe then examine how the belief of each hypothesis changed from proposal to verdict across\nthe tasks. Figure 3d plots the self-assigned prior ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9595f2bf133e540654e66b855a91f5d4e99176609372ac7da0c876b9f32f9d0d",
+            "evidence_id": "E269bb07cb3e53c1a-B0021",
+            "pages": [
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1971,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 1072,
+                "text": "belief change\nis anchored to a specific piece of evidence, and every hypothesis carries an unbroken record from\nproposal to verdict.\nHEP generalizes across research questions.We next examine the generality of HEP across re-\nsearch questions, applying it to task A2BB\u2032O6 and task MX as well. Figure 3 shows the overall\nresults. Acrossthethreetaskstheagentgenerated10\u201320hypothesespertaskwithmaximumgen-\neration depths of 3\u20135, and all four generation mechanisms,de-novo,inspired-by,refine, andmerge,\nwere exercised in every task (Fig. 3a,b). Every hypothesis in all three tasks reached a terminal\ndisposition, that is, no hypothesis was left proposed or under test at the end of any run, with\nsupportedbeing the most common final state in every task (Fig. 3c).\nWe then examine how the belief of each hypothesis changed from proposal to verdict across\nthe tasks. Figure 3d plots the self-assigned prior "
+              }
+            ],
+            "text": "belief change\nis anchored to a specific piece of evidence, and every hypothesis carries an unbroken record from\nproposal to verdict.\nHEP generalizes across research questions.We next examine the generality of HEP across re-\nsearch questions, applying it to task A2BB\u2032O6 and task MX as well. Figure 3 shows the overall\nresults. Acrossthethreetaskstheagentgenerated10\u201320hypothesespertaskwithmaximumgen-\neration depths of 3\u20135, and all four generation mechanisms,de-novo,inspired-by,refine, andmerge,\nwere exercised in every task (Fig. 3a,b). Every hypothesis in all three tasks reached a terminal\ndisposition, that is, no hypothesis was left proposed or under test at the end of any run, with\nsupportedbeing the most common final state in every task (Fig. 3c).\nWe then examine how the belief of each hypothesis changed from proposal to verdict across\nthe tasks. Figure 3d plots the self-assigned prior "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0022"
+        ],
+        "excerpt": "belief at proposal against the final belief after all\nevidence for all hypotheses, with the color and the marker shape indicating the final state and the\ntask, respectively. The dashed lines at\ud835\udc43(\ud835\udc3b)=0.5divide the plane into four regions: hypotheses\ninRegions1and3endedonthesamesideof0.5astheywereproposed,whereasthoseinRegions\n2 and 4 crossed to the opposite side, that is, their beliefs were flipped by the evidence. In the\nmarginalhistograms,thepriorsofeventuallysupported,refuted,anddormanthypotheseslargely\noverlap,whereasthefinalbeliefsseparatecleanlybyfinalstate. Theverdictswerethusdetermined\nby the agent's interpretation of the accumulated evidence rather than by its initial guesses. Belief\nflips occurred in both directions and in all tasks (Regions 2 and 4). We note that no hypothesis\nproposed with a prior above0.7was eventually flipped. Indeed, every such hypothesis ended\nsupported. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "594a380cc522b12fc7f0b37dd52c2c8f0d13205cc335bd1ef1f591f1f5765a0c",
+            "evidence_id": "E269bb07cb3e53c1a-B0022",
+            "pages": [
+              7
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2869,
+                "page": 7,
+                "section": "Experiments",
+                "section_index": 9,
+                "start": 1971,
+                "text": "belief at proposal against the final belief after all\nevidence for all hypotheses, with the color and the marker shape indicating the final state and the\ntask, respectively. The dashed lines at\ud835\udc43(\ud835\udc3b)=0.5divide the plane into four regions: hypotheses\ninRegions1and3endedonthesamesideof0.5astheywereproposed,whereasthoseinRegions\n2 and 4 crossed to the opposite side, that is, their beliefs were flipped by the evidence. In the\nmarginalhistograms,thepriorsofeventuallysupported,refuted,anddormanthypotheseslargely\noverlap,whereasthefinalbeliefsseparatecleanlybyfinalstate. Theverdictswerethusdetermined\nby the agent's interpretation of the accumulated evidence rather than by its initial guesses. Belief\nflips occurred in both directions and in all tasks (Regions 2 and 4). We note that no hypothesis\nproposed with a prior above0.7was eventually flipped. Indeed, every such hypothesis ended\nsupported. "
+              }
+            ],
+            "text": "belief at proposal against the final belief after all\nevidence for all hypotheses, with the color and the marker shape indicating the final state and the\ntask, respectively. The dashed lines at\ud835\udc43(\ud835\udc3b)=0.5divide the plane into four regions: hypotheses\ninRegions1and3endedonthesamesideof0.5astheywereproposed,whereasthoseinRegions\n2 and 4 crossed to the opposite side, that is, their beliefs were flipped by the evidence. In the\nmarginalhistograms,thepriorsofeventuallysupported,refuted,anddormanthypotheseslargely\noverlap,whereasthefinalbeliefsseparatecleanlybyfinalstate. Theverdictswerethusdetermined\nby the agent's interpretation of the accumulated evidence rather than by its initial guesses. Belief\nflips occurred in both directions and in all tasks (Regions 2 and 4). We note that no hypothesis\nproposed with a prior above0.7was eventually flipped. Indeed, every such hypothesis ended\nsupported. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0026"
+        ],
+        "excerpt": "turn to0.18. These recorded refutations redirected the search toward the A-\nsite electronic exception that survives in the final rule. All of these histories are read directly from\nthe event logs in the registry, an account that would be difficult to reconstruct from unstructured\nagent logs. We note, however, that the governing rules discovered here reflect the behavior of the\nfixed MLIP selected by the agent, that the evidence behind them consists of MLIP-level energetics\nandstructuralanalysesratherthanelectronic-structurecalculations,andthattheircorrespondence\nto experimentally established materials physics remains to be examined.\nTable 1:Final supported hypothesis of each task. Final beliefs are taken from the HEP Registry; the\ngoverning rule is a one-line summary condensed from the hypothesis statement.\nTask Final belief\ud835\udc43(\ud835\udc3b)Governing rule (one-line summary)\nAO2 0.97Prioritized ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "997932ec95303b234896edda127eaef659809945460ec2f58d4f57a23bbf32a5",
+            "evidence_id": "E269bb07cb3e53c1a-B0026",
+            "pages": [
+              9
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1385,
+                "page": 9,
+                "section": "Experiments",
+                "section_index": 11,
+                "start": 491,
+                "text": "turn to0.18. These recorded refutations redirected the search toward the A-\nsite electronic exception that survives in the final rule. All of these histories are read directly from\nthe event logs in the registry, an account that would be difficult to reconstruct from unstructured\nagent logs. We note, however, that the governing rules discovered here reflect the behavior of the\nfixed MLIP selected by the agent, that the evidence behind them consists of MLIP-level energetics\nandstructuralanalysesratherthanelectronic-structurecalculations,andthattheircorrespondence\nto experimentally established materials physics remains to be examined.\nTable 1:Final supported hypothesis of each task. Final beliefs are taken from the HEP Registry; the\ngoverning rule is a one-line summary condensed from the hypothesis statement.\nTask Final belief\ud835\udc43(\ud835\udc3b)Governing rule (one-line summary)\nAO2 0.97Prioritized "
+              }
+            ],
+            "text": "turn to0.18. These recorded refutations redirected the search toward the A-\nsite electronic exception that survives in the final rule. All of these histories are read directly from\nthe event logs in the registry, an account that would be difficult to reconstruct from unstructured\nagent logs. We note, however, that the governing rules discovered here reflect the behavior of the\nfixed MLIP selected by the agent, that the evidence behind them consists of MLIP-level energetics\nandstructuralanalysesratherthanelectronic-structurecalculations,andthattheircorrespondence\nto experimentally established materials physics remains to be examined.\nTable 1:Final supported hypothesis of each task. Final beliefs are taken from the HEP Registry; the\ngoverning rule is a one-line summary condensed from the hypothesis statement.\nTask Final belief\ud835\udc43(\ud835\udc3b)Governing rule (one-line summary)\nAO2 0.97Prioritized "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0028"
+        ],
+        "excerpt": "the\nmeanandstandarddeviation,overthethreeruns,ofthenumberofhypothesesgeneratedperrun,\nand Fig. 4b shows those of the maximum generation depth reached in each run. The mean count\ndropsfrom14.7to6.7to4.0, andthemeandepthfallsfrom4.7to1.7to0.7. Theseresultsindicate\nthat as LLM capability decreases, the agent generates fewer hypotheses and becomes unable to\ngrow generations of hypotheses through refinement and merging. GPT-4.1, for example, either\nleaves its hypotheses entirely unevolved or grows them by only a single generation.\nThe composition of generation mechanisms shifts accordingly (Fig. 4c). GPT-5.5 uses the full\nrepertoire in balanced proportions, whereas the weaker LLMs increasingly default tode-novo\nproposals, whose share rises from 25% for GPT-5.5 to 53% and 62% for the weaker two. The same\ngradientappearsinthefinalstatesofthehypotheses(Fig.4d). ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2aae8b3c19f3f78503940c918c48740add0759bc0b2e7eec9163ca3b450fa639",
+            "evidence_id": "E269bb07cb3e53c1a-B0028",
+            "pages": [
+              9
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3110,
+                "page": 9,
+                "section": "Experiments",
+                "section_index": 11,
+                "start": 2244,
+                "text": "the\nmeanandstandarddeviation,overthethreeruns,ofthenumberofhypothesesgeneratedperrun,\nand Fig. 4b shows those of the maximum generation depth reached in each run. The mean count\ndropsfrom14.7to6.7to4.0, andthemeandepthfallsfrom4.7to1.7to0.7. Theseresultsindicate\nthat as LLM capability decreases, the agent generates fewer hypotheses and becomes unable to\ngrow generations of hypotheses through refinement and merging. GPT-4.1, for example, either\nleaves its hypotheses entirely unevolved or grows them by only a single generation.\nThe composition of generation mechanisms shifts accordingly (Fig. 4c). GPT-5.5 uses the full\nrepertoire in balanced proportions, whereas the weaker LLMs increasingly default tode-novo\nproposals, whose share rises from 25% for GPT-5.5 to 53% and 62% for the weaker two. The same\ngradientappearsinthefinalstatesofthehypotheses(Fig.4d). "
+              }
+            ],
+            "text": "the\nmeanandstandarddeviation,overthethreeruns,ofthenumberofhypothesesgeneratedperrun,\nand Fig. 4b shows those of the maximum generation depth reached in each run. The mean count\ndropsfrom14.7to6.7to4.0, andthemeandepthfallsfrom4.7to1.7to0.7. Theseresultsindicate\nthat as LLM capability decreases, the agent generates fewer hypotheses and becomes unable to\ngrow generations of hypotheses through refinement and merging. GPT-4.1, for example, either\nleaves its hypotheses entirely unevolved or grows them by only a single generation.\nThe composition of generation mechanisms shifts accordingly (Fig. 4c). GPT-5.5 uses the full\nrepertoire in balanced proportions, whereas the weaker LLMs increasingly default tode-novo\nproposals, whose share rises from 25% for GPT-5.5 to 53% and 62% for the weaker two. The same\ngradientappearsinthefinalstatesofthehypotheses(Fig.4d). "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0029"
+        ],
+        "excerpt": "GPT-5.5resolvedeveryhypothesisin\nallruns,whereasGPT-5.4-minileft36%ofhypothesesopenonaverage,andGPT-4.1wasunstable\n10\nfrom run to run. Two of its runs resolved everything, while the third proposed three hypotheses\nandabandonedthemall,runningcomputationsbutneverattachingtheirresultstoanyhypothesis\nas evidence.\nTheseresultsindicatethatoperatingtheindividualHEPtoolsiswithinthereachofeveryLLM\ntested, but that a more capable LLM commands HEP as a whole, exercising the full set of tools\nandcontinuingtoevolveitshypotheseswhilecarryingeachproposedhypothesistoaverdict. The\nvalue of HEP is therefore realized most fully with capable base LLMs.\nFigure 4: LLM dependence of the ability to operate HEP. (a)Mean and standard deviation of the number\nof hypotheses generated per run on task AO2 when only the base LLM is changed (\ud835\udc5b=3runs per LLM;\ndots show individual runs).(b)Mean and standard deviation of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5afcd64968256ab0bec50c7b5bf7f008ea37e9de8bef5abd34569948dfc5dea3",
+            "evidence_id": "E269bb07cb3e53c1a-B0029",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3224,
+                "page": 9,
+                "section": "Experiments",
+                "section_index": 11,
+                "start": 3110,
+                "text": "GPT-5.5resolvedeveryhypothesisin\nallruns,whereasGPT-5.4-minileft36%ofhypothesesopenonaverage,andGPT-4.1wasunstable"
+              },
+              {
+                "end": 784,
+                "page": 10,
+                "section": "Experiments",
+                "section_index": 12,
+                "start": 0,
+                "text": "10\nfrom run to run. Two of its runs resolved everything, while the third proposed three hypotheses\nandabandonedthemall,runningcomputationsbutneverattachingtheirresultstoanyhypothesis\nas evidence.\nTheseresultsindicatethatoperatingtheindividualHEPtoolsiswithinthereachofeveryLLM\ntested, but that a more capable LLM commands HEP as a whole, exercising the full set of tools\nandcontinuingtoevolveitshypotheseswhilecarryingeachproposedhypothesistoaverdict. The\nvalue of HEP is therefore realized most fully with capable base LLMs.\nFigure 4: LLM dependence of the ability to operate HEP. (a)Mean and standard deviation of the number\nof hypotheses generated per run on task AO2 when only the base LLM is changed (\ud835\udc5b=3runs per LLM;\ndots show individual runs).(b)Mean and standard deviation of "
+              }
+            ],
+            "text": "GPT-5.5resolvedeveryhypothesisin\nallruns,whereasGPT-5.4-minileft36%ofhypothesesopenonaverage,andGPT-4.1wasunstable\n10\nfrom run to run. Two of its runs resolved everything, while the third proposed three hypotheses\nandabandonedthemall,runningcomputationsbutneverattachingtheirresultstoanyhypothesis\nas evidence.\nTheseresultsindicatethatoperatingtheindividualHEPtoolsiswithinthereachofeveryLLM\ntested, but that a more capable LLM commands HEP as a whole, exercising the full set of tools\nandcontinuingtoevolveitshypotheseswhilecarryingeachproposedhypothesistoaverdict. The\nvalue of HEP is therefore realized most fully with capable base LLMs.\nFigure 4: LLM dependence of the ability to operate HEP. (a)Mean and standard deviation of the number\nof hypotheses generated per run on task AO2 when only the base LLM is changed (\ud835\udc5b=3runs per LLM;\ndots show individual runs).(b)Mean and standard deviation of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0032"
+        ],
+        "excerpt": "by the scaffold around it [32]. Harness and\ncapability are instead complementary. The harness determines whether scientific reasoning is\nexternalized and verifiable, and capability determines how fully it is exploited.\nThisworkexaminedthehypothesis\u2013test\u2013evidence\u2013beliefcycleinasingle-agentsetting,inwhich\nthe agent itself attaches evidence and assesses its validity. A natural next step is to make the\nvalidation of evidence more rigorous, for example by replacing the agent's self-assessment with\nprogrammatic checks where the tests permit, or by introducing an independent auditor agent\nthat reviews attached evidence and belief updates. Because HEP externalizes every hypothesis,\nevidence,andbeliefupdateasapersistentrecord,suchexternalvalidatorscanoperatedirectlyon\ntheexistingregistry,movingthecyclefromself-reportedtowardindependentlyverified. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f5c85958dbfeab8609a0cf0924551bf28c8dda7453214750b1d448a279dc1f6d",
+            "evidence_id": "E269bb07cb3e53c1a-B0032",
+            "pages": [
+              11
+            ],
+            "section": "Conclusions",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 1750,
+                "page": 11,
+                "section": "Conclusions",
+                "section_index": 14,
+                "start": 900,
+                "text": "by the scaffold around it [32]. Harness and\ncapability are instead complementary. The harness determines whether scientific reasoning is\nexternalized and verifiable, and capability determines how fully it is exploited.\nThisworkexaminedthehypothesis\u2013test\u2013evidence\u2013beliefcycleinasingle-agentsetting,inwhich\nthe agent itself attaches evidence and assesses its validity. A natural next step is to make the\nvalidation of evidence more rigorous, for example by replacing the agent's self-assessment with\nprogrammatic checks where the tests permit, or by introducing an independent auditor agent\nthat reviews attached evidence and belief updates. Because HEP externalizes every hypothesis,\nevidence,andbeliefupdateasapersistentrecord,suchexternalvalidatorscanoperatedirectlyon\ntheexistingregistry,movingthecyclefromself-reportedtowardindependentlyverified. "
+              }
+            ],
+            "text": "by the scaffold around it [32]. Harness and\ncapability are instead complementary. The harness determines whether scientific reasoning is\nexternalized and verifiable, and capability determines how fully it is exploited.\nThisworkexaminedthehypothesis\u2013test\u2013evidence\u2013beliefcycleinasingle-agentsetting,inwhich\nthe agent itself attaches evidence and assesses its validity. A natural next step is to make the\nvalidation of evidence more rigorous, for example by replacing the agent's self-assessment with\nprogrammatic checks where the tests permit, or by introducing an independent auditor agent\nthat reviews attached evidence and belief updates. Because HEP externalizes every hypothesis,\nevidence,andbeliefupdateasapersistentrecord,suchexternalvalidatorscanoperatedirectlyon\ntheexistingregistry,movingthecyclefromself-reportedtowardindependentlyverified. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0034"
+        ],
+        "excerpt": "HEP implementation\nThe HEP Registry is an append-only, event-sourced store. Every operation appends an event\nthat is stamped with its author and hash-chained to the previous one, no event is overwritten\nor deleted, and the current lifecycle state and belief of a hypothesis are derived by replaying\nits event log, which is persisted in the run's session directory. Beyond the fields introduced in\nResults,eachhypothesisrecordsatestablepredictedobservableanditslineage(parenthypotheses\nand generation). Aninspired-bylink is recorded as provenance only and does not make the new\nhypothesis a descendant.\nThe agent operates the registry through seven tools.propose_hypothesisregisters a new ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fff42f14241c2ebc2447822827d3bf375559ea3a4d0e8e107608767a1ae356ec",
+            "evidence_id": "E269bb07cb3e53c1a-B0034",
+            "pages": [
+              12
+            ],
+            "section": "Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 688,
+                "page": 12,
+                "section": "Methods",
+                "section_index": 16,
+                "start": 0,
+                "text": "HEP implementation\nThe HEP Registry is an append-only, event-sourced store. Every operation appends an event\nthat is stamped with its author and hash-chained to the previous one, no event is overwritten\nor deleted, and the current lifecycle state and belief of a hypothesis are derived by replaying\nits event log, which is persisted in the run's session directory. Beyond the fields introduced in\nResults,eachhypothesisrecordsatestablepredictedobservableanditslineage(parenthypotheses\nand generation). Aninspired-bylink is recorded as provenance only and does not make the new\nhypothesis a descendant.\nThe agent operates the registry through seven tools.propose_hypothesisregisters a new "
+              }
+            ],
+            "text": "HEP implementation\nThe HEP Registry is an append-only, event-sourced store. Every operation appends an event\nthat is stamped with its author and hash-chained to the previous one, no event is overwritten\nor deleted, and the current lifecycle state and belief of a hypothesis are derived by replaying\nits event log, which is persisted in the run's session directory. Beyond the fields introduced in\nResults,eachhypothesisrecordsatestablepredictedobservableanditslineage(parenthypotheses\nand generation). Aninspired-bylink is recorded as provenance only and does not make the new\nhypothesis a descendant.\nThe agent operates the registry through seven tools.propose_hypothesisregisters a new "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0035"
+        ],
+        "excerpt": "hy-\npothesisunderaresearchquestion,andtransition_hypothesismovesahypothesisbetweenlife-\ncyclestates.attach_evidencerecordsonepieceofevidenceonahypothesisandupdatesitsbelief\nfromit.list_hypothesesreturnsthecompetingsetgroupedbyresearchquestion,withthecurrent\nstateandbeliefofeachhypothesis,andget_hypothesisreturnsthefullrecordofasinglehypothe-\nsis,includingitseventtimeline. Evolutionisevidence-drivenbyconstruction:refine_hypothesis\ncreates a child hypothesis while the parent retains its own state,merge_hypothesescombines hy-\npotheses on the same question and transitions unresolved parents todormantas subsumed, and\nbothoperationsareacceptedonlyforparentsthathavereachedaverdictorhaveatleastonepiece\nof evidence attached, so that untested proposals cannot produce descendants.\nBeliefs are elicited rather than computed. The agent states a prior\ud835\udc43(\ud835\udc3b)with a written ratio-\nnale at proposal, and at ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "31b23eb354b5241ddb2f33fe7560d306151b495fc798a3ca8bd10815e642c12a",
+            "evidence_id": "E269bb07cb3e53c1a-B0035",
+            "pages": [
+              12
+            ],
+            "section": "Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1587,
+                "page": 12,
+                "section": "Methods",
+                "section_index": 16,
+                "start": 688,
+                "text": "hy-\npothesisunderaresearchquestion,andtransition_hypothesismovesahypothesisbetweenlife-\ncyclestates.attach_evidencerecordsonepieceofevidenceonahypothesisandupdatesitsbelief\nfromit.list_hypothesesreturnsthecompetingsetgroupedbyresearchquestion,withthecurrent\nstateandbeliefofeachhypothesis,andget_hypothesisreturnsthefullrecordofasinglehypothe-\nsis,includingitseventtimeline. Evolutionisevidence-drivenbyconstruction:refine_hypothesis\ncreates a child hypothesis while the parent retains its own state,merge_hypothesescombines hy-\npotheses on the same question and transitions unresolved parents todormantas subsumed, and\nbothoperationsareacceptedonlyforparentsthathavereachedaverdictorhaveatleastonepiece\nof evidence attached, so that untested proposals cannot produce descendants.\nBeliefs are elicited rather than computed. The agent states a prior\ud835\udc43(\ud835\udc3b)with a written ratio-\nnale at proposal, and at "
+              }
+            ],
+            "text": "hy-\npothesisunderaresearchquestion,andtransition_hypothesismovesahypothesisbetweenlife-\ncyclestates.attach_evidencerecordsonepieceofevidenceonahypothesisandupdatesitsbelief\nfromit.list_hypothesesreturnsthecompetingsetgroupedbyresearchquestion,withthecurrent\nstateandbeliefofeachhypothesis,andget_hypothesisreturnsthefullrecordofasinglehypothe-\nsis,includingitseventtimeline. Evolutionisevidence-drivenbyconstruction:refine_hypothesis\ncreates a child hypothesis while the parent retains its own state,merge_hypothesescombines hy-\npotheses on the same question and transitions unresolved parents todormantas subsumed, and\nbothoperationsareacceptedonlyforparentsthathavereachedaverdictorhaveatleastonepiece\nof evidence attached, so that untested proposals cannot produce descendants.\nBeliefs are elicited rather than computed. The agent states a prior\ud835\udc43(\ud835\udc3b)with a written ratio-\nnale at proposal, and at "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0036"
+        ],
+        "excerpt": "each evidence attachment (with kind simulation, experiment, literature,\nderivation, or analysis, and directionsupports, refutes, or inconclusive)it states anupdated\ud835\udc43(\ud835\udc3b),\nrecorded with its rationale and the identifier of the triggering evidence. The two belief rules\ndescribed in Results are enforced by the tools rather than left to the agent. For computational\nand analytical evidence, the belief moves only if the agent certifies the result as trustworthy for its\nmethod, with a diagnostic covering both the adequacy of the setup and the validity of the result.\nAn uncertified attachment is recorded but marked insufficient. Verdict transitions whose belief\nhas not crossed the threshold, and any move outside the lifecycle state machine, are rejected.\nAgent setup\nAll experiments use a single autonomous research agent, implemented with the OpenAI Agents\nSDK, that receives one task prompt and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3e1e9f34cb9d67cb2562292d3c8327e00a21105af78cabb6df93597787f61375",
+            "evidence_id": "E269bb07cb3e53c1a-B0036",
+            "pages": [
+              12
+            ],
+            "section": "Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2484,
+                "page": 12,
+                "section": "Methods",
+                "section_index": 16,
+                "start": 1587,
+                "text": "each evidence attachment (with kind simulation, experiment, literature,\nderivation, or analysis, and directionsupports, refutes, or inconclusive)it states anupdated\ud835\udc43(\ud835\udc3b),\nrecorded with its rationale and the identifier of the triggering evidence. The two belief rules\ndescribed in Results are enforced by the tools rather than left to the agent. For computational\nand analytical evidence, the belief moves only if the agent certifies the result as trustworthy for its\nmethod, with a diagnostic covering both the adequacy of the setup and the validity of the result.\nAn uncertified attachment is recorded but marked insufficient. Verdict transitions whose belief\nhas not crossed the threshold, and any move outside the lifecycle state machine, are rejected.\nAgent setup\nAll experiments use a single autonomous research agent, implemented with the OpenAI Agents\nSDK, that receives one task prompt and "
+              }
+            ],
+            "text": "each evidence attachment (with kind simulation, experiment, literature,\nderivation, or analysis, and directionsupports, refutes, or inconclusive)it states anupdated\ud835\udc43(\ud835\udc3b),\nrecorded with its rationale and the identifier of the triggering evidence. The two belief rules\ndescribed in Results are enforced by the tools rather than left to the agent. For computational\nand analytical evidence, the belief moves only if the agent certifies the result as trustworthy for its\nmethod, with a diagnostic covering both the adequacy of the setup and the validity of the result.\nAn uncertified attachment is recorded but marked insufficient. Verdict transitions whose belief\nhas not crossed the threshold, and any move outside the lifecycle state machine, are rejected.\nAgent setup\nAll experiments use a single autonomous research agent, implemented with the OpenAI Agents\nSDK, that receives one task prompt and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0037"
+        ],
+        "excerpt": "runs to completion without human input. Besides the\nHEP tools, the agent has computational tools for atomistic materials research exposed as MCP\nservers, including MLIP-based structure relaxation, molecular dynamics, and materials-database\nqueries,togetherwithalibraryofdocumentedskillsitcandiscoverandexecute,bothprovidedby\nAtomisticSkills [26], as well as a tool for authoring and executing its own analysis code, with each\nscript retained in the run's record, and recording tools for logging findings and writing the final\n13\nreport. The agent runs in an outer loop. Each iteration allows up to 80 LLM turns, after which the\ndriverre-promptsittocontinue,appendingtheremainingwall-clockbudgetsothattheagentcan\nselectteststhatfitwithintheremainingtime. Theconversationhistoryispersisted,andeveryrun\nis given a 24-hour wall-clock budget, which no run exhausted. The HEP-equipped agent is given\nthe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47291fa1a83b678d9a71a7f9fb5d3d37e2cf529522920cdfd1b6b7280e485a8f",
+            "evidence_id": "E269bb07cb3e53c1a-B0037",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 3009,
+                "page": 12,
+                "section": "Methods",
+                "section_index": 16,
+                "start": 2484,
+                "text": "runs to completion without human input. Besides the\nHEP tools, the agent has computational tools for atomistic materials research exposed as MCP\nservers, including MLIP-based structure relaxation, molecular dynamics, and materials-database\nqueries,togetherwithalibraryofdocumentedskillsitcandiscoverandexecute,bothprovidedby\nAtomisticSkills [26], as well as a tool for authoring and executing its own analysis code, with each\nscript retained in the run's record, and recording tools for logging findings and writing the final"
+              },
+              {
+                "end": 372,
+                "page": 13,
+                "section": "Methods",
+                "section_index": 17,
+                "start": 0,
+                "text": "13\nreport. The agent runs in an outer loop. Each iteration allows up to 80 LLM turns, after which the\ndriverre-promptsittocontinue,appendingtheremainingwall-clockbudgetsothattheagentcan\nselectteststhatfitwithintheremainingtime. Theconversationhistoryispersisted,andeveryrun\nis given a 24-hour wall-clock budget, which no run exhausted. The HEP-equipped agent is given\nthe "
+              }
+            ],
+            "text": "runs to completion without human input. Besides the\nHEP tools, the agent has computational tools for atomistic materials research exposed as MCP\nservers, including MLIP-based structure relaxation, molecular dynamics, and materials-database\nqueries,togetherwithalibraryofdocumentedskillsitcandiscoverandexecute,bothprovidedby\nAtomisticSkills [26], as well as a tool for authoring and executing its own analysis code, with each\nscript retained in the run's record, and recording tools for logging findings and writing the final\n13\nreport. The agent runs in an outer loop. Each iteration allows up to 80 LLM turns, after which the\ndriverre-promptsittocontinue,appendingtheremainingwall-clockbudgetsothattheagentcan\nselectteststhatfitwithintheremainingtime. Theconversationhistoryispersisted,andeveryrun\nis given a 24-hour wall-clock budget, which no run exhausted. The HEP-equipped agent is given\nthe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0038"
+        ],
+        "excerpt": "HEP tools and a hypothesis-discipline prompt but no planning tools. The run ends when the\ninvestigation saturates, that is, when no tool call is made for three consecutive iterations, at which\npoint the agent is prompted to consolidate its findings and write the final report.\nTrajectory analysis\nFortheloopanalysisinFig.2c,eachstepofarunisclassifiedintotheloopelements. HEPtoolcalls\nmap deterministically:propose_hypothesisto H;refine_hypothesisandmerge_hypotheses\nto U;attach_evidenceto E, and additionally to B when the attachment moved the belief; and\ntransition_hypothesisto J for verdict transitions. Calls to computational tools map to T, free-\ntext steps are classified by an LLM (GPT-5.5), and scaffolding steps such as file management are\nexcluded. Consecutive repeats of the same element are compressed, and the transition matrices\ncount adjacent pairs of elements, row-normalized and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Methods",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "187e0217e721135334e6f38b2e909c2ae08375bbdc46e4a978cf3ee6c2c7b5ce",
+            "evidence_id": "E269bb07cb3e53c1a-B0038",
+            "pages": [
+              13
+            ],
+            "section": "Methods",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1268,
+                "page": 13,
+                "section": "Methods",
+                "section_index": 17,
+                "start": 372,
+                "text": "HEP tools and a hypothesis-discipline prompt but no planning tools. The run ends when the\ninvestigation saturates, that is, when no tool call is made for three consecutive iterations, at which\npoint the agent is prompted to consolidate its findings and write the final report.\nTrajectory analysis\nFortheloopanalysisinFig.2c,eachstepofarunisclassifiedintotheloopelements. HEPtoolcalls\nmap deterministically:propose_hypothesisto H;refine_hypothesisandmerge_hypotheses\nto U;attach_evidenceto E, and additionally to B when the attachment moved the belief; and\ntransition_hypothesisto J for verdict transitions. Calls to computational tools map to T, free-\ntext steps are classified by an LLM (GPT-5.5), and scaffolding steps such as file management are\nexcluded. Consecutive repeats of the same element are compressed, and the transition matrices\ncount adjacent pairs of elements, row-normalized and "
+              }
+            ],
+            "text": "HEP tools and a hypothesis-discipline prompt but no planning tools. The run ends when the\ninvestigation saturates, that is, when no tool call is made for three consecutive iterations, at which\npoint the agent is prompted to consolidate its findings and write the final report.\nTrajectory analysis\nFortheloopanalysisinFig.2c,eachstepofarunisclassifiedintotheloopelements. HEPtoolcalls\nmap deterministically:propose_hypothesisto H;refine_hypothesisandmerge_hypotheses\nto U;attach_evidenceto E, and additionally to B when the attachment moved the belief; and\ntransition_hypothesisto J for verdict transitions. Calls to computational tools map to T, free-\ntext steps are classified by an LLM (GPT-5.5), and scaffolding steps such as file management are\nexcluded. Consecutive repeats of the same element are compressed, and the transition matrices\ncount adjacent pairs of elements, row-normalized and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.09195",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7168328747",
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0007",
+          "E269bb07cb3e53c1a-B0010",
+          "E269bb07cb3e53c1a-B0011",
+          "E269bb07cb3e53c1a-B0012",
+          "E269bb07cb3e53c1a-B0013",
+          "E269bb07cb3e53c1a-B0014",
+          "E269bb07cb3e53c1a-B0017",
+          "E269bb07cb3e53c1a-B0019",
+          "E269bb07cb3e53c1a-B0020",
+          "E269bb07cb3e53c1a-B0021",
+          "E269bb07cb3e53c1a-B0022",
+          "E269bb07cb3e53c1a-B0026",
+          "E269bb07cb3e53c1a-B0028",
+          "E269bb07cb3e53c1a-B0029",
+          "E269bb07cb3e53c1a-B0032",
+          "E269bb07cb3e53c1a-B0034",
+          "E269bb07cb3e53c1a-B0035",
+          "E269bb07cb3e53c1a-B0036",
+          "E269bb07cb3e53c1a-B0037",
+          "E269bb07cb3e53c1a-B0038"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7168328747",
+        "claim_evidence_alignment": "Reported findings closely align with the collected empirical data: hypothesis trees, state transitions, belief flips, and performance variations across base models are corroborated by quantitative logs and state-transition probability matrices [E269bb07cb3e53c1a-B0017, E269bb07cb3e53c1a-B0020, E269bb07cb3e53c1a-B0022, E269bb07cb3e53c1a-B0028].",
+        "context_id": "269bb07cb3e53c1a99cef133c107d61cdc18d0119be1a0176908533b7dfb748d",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation across three distinct materials-science crystal structure prediction tasks demonstrates that the HEP agent traverses the hypothesis-test-evidence-belief cycle, contrasting sharply with a planning-style baseline that spends 0% of its steps updating beliefs [E269bb07cb3e53c1a-B0013, E269bb07cb3e53c1a-B0019, E269bb07cb3e53c1a-B0020]. An ablation comparing base LLMs confirms that protocol utilization depth scales systematically with model reasoning capability [E269bb07cb3e53c1a-B0028, E269bb07cb3e53c1a-B0029].",
+        "evidence_ids": [
+          "E269bb07cb3e53c1a-B0007",
+          "E269bb07cb3e53c1a-B0010",
+          "E269bb07cb3e53c1a-B0011",
+          "E269bb07cb3e53c1a-B0012",
+          "E269bb07cb3e53c1a-B0013",
+          "E269bb07cb3e53c1a-B0014",
+          "E269bb07cb3e53c1a-B0017",
+          "E269bb07cb3e53c1a-B0018",
+          "E269bb07cb3e53c1a-B0019",
+          "E269bb07cb3e53c1a-B0020",
+          "E269bb07cb3e53c1a-B0021",
+          "E269bb07cb3e53c1a-B0022",
+          "E269bb07cb3e53c1a-B0026",
+          "E269bb07cb3e53c1a-B0028",
+          "E269bb07cb3e53c1a-B0029",
+          "E269bb07cb3e53c1a-B0032",
+          "E269bb07cb3e53c1a-B0034",
+          "E269bb07cb3e53c1a-B0035",
+          "E269bb07cb3e53c1a-B0036",
+          "E269bb07cb3e53c1a-B0037",
+          "E269bb07cb3e53c1a-B0038"
+        ],
+        "limitations": "The authors explicitly acknowledge that evidence validity currently relies on single-agent self-assessment, that the discovered governing rules reflect the behavior of a fixed MLIP rather than DFT or experimental physical reality, and that weaker LLMs struggle to manage complex hypothesis lineages [E269bb07cb3e53c1a-B0026, E269bb07cb3e53c1a-B0029, E269bb07cb3e53c1a-B0032].",
+        "method_assessment": "The methodology is clearly defined: the registry maintains explicit belief probabilities P(H), provenance, lifecycle states, and gating rules where belief updates and terminal verdicts (supported >= 0.8, refuted <= 0.2) require validated evidence attachments [E269bb07cb3e53c1a-B0011, E269bb07cb3e53c1a-B0012, E269bb07cb3e53c1a-B0035, E269bb07cb3e53c1a-B0036]. The agent loop and its atomistic materials tool environment are systematically documented [E269bb07cb3e53c1a-B0037, E269bb07cb3e53c1a-B0038].",
+        "quality_rationale": "The manuscript presents an inventive, soundly implemented framework for scientific LLM auditing with solid experimental controls, clear baselines, and honest discussion of boundaries, meeting library standards for a pass.",
+        "scoped_contribution": "The paper introduces the Hypothesis Evolution Protocol (HEP), an agent harness featuring an append-only event-sourced registry and tool interface that externalizes scientific hypothesis generation, evaluation, belief tracking, and evolution for LLM agents [E269bb07cb3e53c1a-B0007, E269bb07cb3e53c1a-B0010, E269bb07cb3e53c1a-B0034].",
+        "source_content_hash": "fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents an inventive, soundly implemented framework for scientific LLM auditing with solid experimental controls, clear baselines, and honest discussion of boundaries, meeting library standards for a pass.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "fd181d432367c5ef11fb075bfa0e7931e776d9bed214c8c34ec3cf39fe334ed5",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly acknowledge that evidence validity currently relies on single-agent self-assessment, that the discovered governing rules reflect the behavior of a fixed MLIP rather than DFT or experimental physical reality, and that weaker LLMs struggle to manage complex hypothesis lineages [E269bb07cb3e53c1a-B0026, E269bb07cb3e53c1a-B0029, E269bb07cb3e53c1a-B0032]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -167,7 +1728,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

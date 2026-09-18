@@ -28,7 +28,7 @@
   "last_seen_date": "2026-09-05",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": "2026-09-01",
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-02 11:25:01",
   "notified_date": "2026-09-02",
@@ -39,7 +39,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-09-02 11:23:13",
-    "generated_at": "2026-09-18 13:22:56",
+    "generated_at": "2026-09-18 18:46:09",
     "last_seen_at": "2026-09-05 17:56:39",
     "metadata_sources": [
       "arxiv"
@@ -102,36 +102,1865 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:39:56.861207+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work presents an original, methodologically sound framework combining RL planning with LLM agents for combinatorial optimization modeling, supported by rigorous empirical validation against competitive baselines across multiple solvers.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 44058,
+      "assessment_input_sha256": "de8de7958f95b627eb74cc877a7a14518206f2b6273308ba4a4cb0258ee68214",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2609.00859",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 41494,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 39115,
+      "evidence_block_count": 81,
+      "evidence_context_characters": 51311,
+      "evidence_context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+      "evidence_context_sha256": "70c8cd086440d6912eea15c9e40f4424371429b02a36da32c70adea57fbc7e62",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 41526,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "extracted_pages": 17,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "1ced9a7192d26dd175e92045a022b5bfa6ab54a19a3acb006175f006cd2099ae",
+        "source_url": "https://arxiv.org/pdf/2609.00859",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 41494,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Reinforcement Learning Enhanced Llm Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 2112,
+          "supplied_characters": 2112
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 353,
+          "supplied_characters": 353
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3381,
+          "supplied_characters": 3381
+        },
+        {
+          "heading": "Rlea 3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 189,
+          "supplied_characters": 189
+        },
+        {
+          "heading": "We Propose Rlea, A Novel Multi-Agent Framework That Integrates Reinforce-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 105,
+          "supplied_characters": 105
+        },
+        {
+          "heading": "We Introduce A Lightweight Planner Trained With Soft Q-Learning To Adap-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 152,
+          "supplied_characters": 152
+        },
+        {
+          "heading": "We Present An Agent Equipped With Evolvable Memory. This Agent Actively",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 281,
+          "supplied_characters": 281
+        },
+        {
+          "heading": "We Conducted A Comprehensive Evaluation Of Rlea Across 48 Distinct Vrp",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 247,
+          "supplied_characters": 247
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 8,
+          "source_characters": 1527,
+          "supplied_characters": 1527
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "related",
+          "section_index": 9,
+          "source_characters": 1008,
+          "supplied_characters": 1008
+        },
+        {
+          "heading": "Complex Vehicle Routing Problems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 1363,
+          "supplied_characters": 1363
+        },
+        {
+          "heading": "Rlea 5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 297,
+          "supplied_characters": 297
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 12,
+          "source_characters": 1685,
+          "supplied_characters": 1685
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 513,
+          "supplied_characters": 513
+        },
+        {
+          "heading": "Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 809,
+          "supplied_characters": 809
+        },
+        {
+          "heading": "Execution Action Space Design",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1094,
+          "supplied_characters": 1094
+        },
+        {
+          "heading": "Rlea 7",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2664,
+          "supplied_characters": 2664
+        },
+        {
+          "heading": "Rlea 7",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 461,
+          "supplied_characters": 461
+        },
+        {
+          "heading": "Training Phase: Policy Optimization And Memory Evolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 1932,
+          "supplied_characters": 1932
+        },
+        {
+          "heading": "Rlea 9",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1051,
+          "supplied_characters": 1051
+        },
+        {
+          "heading": "Inference Phase: Policy Evaluation And Generalization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 1127,
+          "supplied_characters": 1127
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 282,
+          "supplied_characters": 282
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Experiment Settings",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 2350,
+          "supplied_characters": 2350
+        },
+        {
+          "heading": "Rlea 11",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 214,
+          "supplied_characters": 214
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 1847,
+          "supplied_characters": 1847
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 26,
+          "source_characters": 487,
+          "supplied_characters": 487
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 27,
+          "source_characters": 126,
+          "supplied_characters": 126
+        },
+        {
+          "heading": "Sr (%) Rer (%) Sr (%) Rer (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 2099,
+          "supplied_characters": 2099
+        },
+        {
+          "heading": "Rlea 13",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 263,
+          "supplied_characters": 263
+        },
+        {
+          "heading": "Impact Of Different Llm Compositions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1259,
+          "supplied_characters": 1259
+        },
+        {
+          "heading": "Sensitivity Analysis Of Iterations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 153,
+          "supplied_characters": 153
+        },
+        {
+          "heading": "Sensitivity Analysis Of Iterations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 129,
+          "supplied_characters": 129
+        },
+        {
+          "heading": "Sr(%) Rer(%) Sr(%) Rer(%) Sr(%) Rer(%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1452,
+          "supplied_characters": 1452
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "conclusion",
+          "section_index": 34,
+          "source_characters": 810,
+          "supplied_characters": 810
+        },
+        {
+          "heading": "Rlea 15",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Back matter: Acknowledgements",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 167,
+          "supplied_characters": 167
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 1470,
+          "supplied_characters": 1470
+        },
+        {
+          "heading": "Information Processing Systems (2026)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 37,
+          "supplied_characters": 37
+        },
+        {
+          "heading": "Guo, S., Yin, N., Kwok, J., Yao, Q.: Nested-Refinement Metamorphosis: Reflective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Gurobi Optimization, Llc: Gurobi Optimizer Reference Manual (2024), Https:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 53,
+          "supplied_characters": 53
+        },
+        {
+          "heading": "Haarnoja, T., Tang, H., Abbeel, P., Levine, S.: Reinforcement Learning With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 115,
+          "supplied_characters": 115
+        },
+        {
+          "heading": "Jiang,C.,Shu,X.,Qian,H.,Lu,X.,Zhou,J.,Zhou,A.,Yu,Y.:Llmopt:Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 82,
+          "supplied_characters": 82
+        },
+        {
+          "heading": "International Conference On Learning Representations (2025)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 59,
+          "supplied_characters": 59
+        },
+        {
+          "heading": "Jiang, X., Wu, Y., Li, M., Cao, Z., Zhang, Y.: Large Language Models As End-To-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 105,
+          "supplied_characters": 105
+        },
+        {
+          "heading": "Jiang, X., Wu, Y., Zhang, C., Zhang, Y.: Droc: Elevating Large Language Mod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "Li, K., Liu, F., Wang, Z., Tong, X., Han, X., Yuan, M., Zhang, Q.: Ars: Automatic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 81,
+          "supplied_characters": 81
+        },
+        {
+          "heading": "Li, K., Liu, F., Wang, Z., Tong, X., Han, X., Yuan, M., Zhang, Q.: Ars: Automatic",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Li, Y., Cai, G., Yang, S., Luo, H., Han, S., He, X., Li, D., Feng, L.: Phgpo:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 107,
+          "supplied_characters": 107
+        },
+        {
+          "heading": "Liao, Z., Chen, J., Wang, D., Zhang, Z., Wang, J.: Bopo: Neural Combinatorial",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 195,
+          "supplied_characters": 195
+        },
+        {
+          "heading": "Liu,F.,Tong,X.,Yuan,M.,Lin,X.,Luo,F.,Wang,Z.,Lu,Z.,Zhang,Q.:Evolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 480,
+          "supplied_characters": 480
+        },
+        {
+          "heading": "Mor, A., Speranza, M.G.: Vehicle Routing Problems Over Time: A Survey. Annals Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "introduction",
+          "section_index": 51,
+          "source_characters": 41,
+          "supplied_characters": 41
+        },
+        {
+          "heading": "Prasath, G., Karande, S.: Synthesis Of Mathematical Programs From Natural Lan-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 1070,
+          "supplied_characters": 1070
+        },
+        {
+          "heading": "Yang, S., Li, Y., He, S., Li, Y., Cai, Q., Jiang, P., Feng, L.: Phase-Aware Mixture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 62,
+          "supplied_characters": 62
+        },
+        {
+          "heading": "Ye, H., Wang, J., Cao, Z., Berto, F., Hua, C., Kim, H., Park, J., Song, G.: Reevo:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 243,
+          "supplied_characters": 243
+        },
+        {
+          "heading": "Yu, Z., Chen, J., Wang, J.: Combination-Of-Experts With Knowledge Sharing For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 115,
+          "supplied_characters": 115
+        },
+        {
+          "heading": "Zhang, J., Wang, W., Guo, S., Wang, L., Lin, F., Yang, C., Yin, W.: Solving",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Rlea 17",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 7,
+          "supplied_characters": 7
+        },
+        {
+          "heading": "Zhang, N., Cao, Z., Zhou, J., Zhang, C., Ong, Y.: An Agentic Framework With Llms",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Zheng, Z., Xie, Z., Wang, Z., Hooi, B.: Monte Carlo Tree Search For Comprehen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 173,
+          "supplied_characters": 173
+        }
+      ],
+      "selected_characters": 39115,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "selected_sections": [
+        {
+          "characters": 2112,
+          "heading": "Reinforcement Learning Enhanced Llm Agents",
+          "page": 1
+        },
+        {
+          "characters": 353,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3381,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 189,
+          "heading": "Rlea 3",
+          "page": 3
+        },
+        {
+          "characters": 105,
+          "heading": "We Propose Rlea, A Novel Multi-Agent Framework That Integrates Reinforce-",
+          "page": 3
+        },
+        {
+          "characters": 152,
+          "heading": "We Introduce A Lightweight Planner Trained With Soft Q-Learning To Adap-",
+          "page": 3
+        },
+        {
+          "characters": 281,
+          "heading": "We Present An Agent Equipped With Evolvable Memory. This Agent Actively",
+          "page": 3
+        },
+        {
+          "characters": 247,
+          "heading": "We Conducted A Comprehensive Evaluation Of Rlea Across 48 Distinct Vrp",
+          "page": 3
+        },
+        {
+          "characters": 1527,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 1008,
+          "heading": "Related Work",
+          "page": 4
+        },
+        {
+          "characters": 1363,
+          "heading": "Complex Vehicle Routing Problems",
+          "page": 4
+        },
+        {
+          "characters": 297,
+          "heading": "Rlea 5",
+          "page": 5
+        },
+        {
+          "characters": 1685,
+          "heading": "Problem Formulation",
+          "page": 5
+        },
+        {
+          "characters": 513,
+          "heading": "Overview",
+          "page": 5
+        },
+        {
+          "characters": 809,
+          "heading": "Overview",
+          "page": 6
+        },
+        {
+          "characters": 1094,
+          "heading": "Execution Action Space Design",
+          "page": 6
+        },
+        {
+          "characters": 2664,
+          "heading": "Rlea 7",
+          "page": 7
+        },
+        {
+          "characters": 461,
+          "heading": "Rlea 7",
+          "page": 8
+        },
+        {
+          "characters": 1932,
+          "heading": "Training Phase: Policy Optimization And Memory Evolution",
+          "page": 8
+        },
+        {
+          "characters": 1051,
+          "heading": "Rlea 9",
+          "page": 9
+        },
+        {
+          "characters": 1127,
+          "heading": "Inference Phase: Policy Evaluation And Generalization",
+          "page": 9
+        },
+        {
+          "characters": 282,
+          "heading": "Experiments",
+          "page": 9
+        },
+        {
+          "characters": 22,
+          "heading": "Experiments",
+          "page": 10
+        },
+        {
+          "characters": 2350,
+          "heading": "Experiment Settings",
+          "page": 10
+        },
+        {
+          "characters": 214,
+          "heading": "Rlea 11",
+          "page": 11
+        },
+        {
+          "characters": 1847,
+          "heading": "Main Results",
+          "page": 11
+        },
+        {
+          "characters": 487,
+          "heading": "Ablation Study",
+          "page": 11
+        },
+        {
+          "characters": 126,
+          "heading": "Ablation Study",
+          "page": 12
+        },
+        {
+          "characters": 2099,
+          "heading": "Sr (%) Rer (%) Sr (%) Rer (%)",
+          "page": 12
+        },
+        {
+          "characters": 263,
+          "heading": "Rlea 13",
+          "page": 13
+        },
+        {
+          "characters": 1259,
+          "heading": "Impact Of Different Llm Compositions",
+          "page": 13
+        },
+        {
+          "characters": 153,
+          "heading": "Sensitivity Analysis Of Iterations",
+          "page": 13
+        },
+        {
+          "characters": 129,
+          "heading": "Sensitivity Analysis Of Iterations",
+          "page": 14
+        },
+        {
+          "characters": 1452,
+          "heading": "Sr(%) Rer(%) Sr(%) Rer(%) Sr(%) Rer(%)",
+          "page": 14
+        },
+        {
+          "characters": 810,
+          "heading": "Conclusion",
+          "page": 14
+        },
+        {
+          "characters": 7,
+          "heading": "Rlea 15",
+          "page": 15
+        },
+        {
+          "characters": 167,
+          "heading": "Back matter: Acknowledgements",
+          "page": 15
+        },
+        {
+          "characters": 1470,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 37,
+          "heading": "Information Processing Systems (2026)",
+          "page": 15
+        },
+        {
+          "characters": 192,
+          "heading": "Guo, S., Yin, N., Kwok, J., Yao, Q.: Nested-Refinement Metamorphosis: Reflective",
+          "page": 15
+        },
+        {
+          "characters": 53,
+          "heading": "Gurobi Optimization, Llc: Gurobi Optimizer Reference Manual (2024), Https:",
+          "page": 15
+        },
+        {
+          "characters": 115,
+          "heading": "Haarnoja, T., Tang, H., Abbeel, P., Levine, S.: Reinforcement Learning With",
+          "page": 15
+        },
+        {
+          "characters": 82,
+          "heading": "Jiang,C.,Shu,X.,Qian,H.,Lu,X.,Zhou,J.,Zhou,A.,Yu,Y.:Llmopt:Learning",
+          "page": 15
+        },
+        {
+          "characters": 59,
+          "heading": "International Conference On Learning Representations (2025)",
+          "page": 15
+        },
+        {
+          "characters": 105,
+          "heading": "Jiang, X., Wu, Y., Li, M., Cao, Z., Zhang, Y.: Large Language Models As End-To-",
+          "page": 15
+        },
+        {
+          "characters": 88,
+          "heading": "Jiang, X., Wu, Y., Zhang, C., Zhang, Y.: Droc: Elevating Large Language Mod-",
+          "page": 15
+        },
+        {
+          "characters": 81,
+          "heading": "Li, K., Liu, F., Wang, Z., Tong, X., Han, X., Yuan, M., Zhang, Q.: Ars: Automatic",
+          "page": 15
+        },
+        {
+          "characters": 22,
+          "heading": "Li, K., Liu, F., Wang, Z., Tong, X., Han, X., Yuan, M., Zhang, Q.: Ars: Automatic",
+          "page": 16
+        },
+        {
+          "characters": 107,
+          "heading": "Li, Y., Cai, G., Yang, S., Luo, H., Han, S., He, X., Li, D., Feng, L.: Phgpo:",
+          "page": 16
+        },
+        {
+          "characters": 195,
+          "heading": "Liao, Z., Chen, J., Wang, D., Zhang, Z., Wang, J.: Bopo: Neural Combinatorial",
+          "page": 16
+        },
+        {
+          "characters": 480,
+          "heading": "Liu,F.,Tong,X.,Yuan,M.,Lin,X.,Luo,F.,Wang,Z.,Lu,Z.,Zhang,Q.:Evolution",
+          "page": 16
+        },
+        {
+          "characters": 41,
+          "heading": "Mor, A., Speranza, M.G.: Vehicle Routing Problems Over Time: A Survey. Annals Of",
+          "page": 16
+        },
+        {
+          "characters": 1070,
+          "heading": "Prasath, G., Karande, S.: Synthesis Of Mathematical Programs From Natural Lan-",
+          "page": 16
+        },
+        {
+          "characters": 62,
+          "heading": "Yang, S., Li, Y., He, S., Li, Y., Cai, Q., Jiang, P., Feng, L.: Phase-Aware Mixture",
+          "page": 16
+        },
+        {
+          "characters": 243,
+          "heading": "Ye, H., Wang, J., Cao, Z., Berto, F., Hua, C., Kim, H., Park, J., Song, G.: Reevo:",
+          "page": 16
+        },
+        {
+          "characters": 115,
+          "heading": "Yu, Z., Chen, J., Wang, J.: Combination-Of-Experts With Knowledge Sharing For",
+          "page": 16
+        },
+        {
+          "characters": 176,
+          "heading": "Zhang, J., Wang, W., Guo, S., Wang, L., Lin, F., Yang, C., Yin, W.: Solving",
+          "page": 16
+        },
+        {
+          "characters": 7,
+          "heading": "Rlea 17",
+          "page": 17
+        },
+        {
+          "characters": 124,
+          "heading": "Zhang, N., Cao, Z., Zhou, J., Zhang, C., Ong, Y.: An Agentic Framework With Llms",
+          "page": 17
+        },
+        {
+          "characters": 173,
+          "heading": "Zheng, Z., Xie, Z., Wang, Z., Hooi, B.: Monte Carlo Tree Search For Comprehen-",
+          "page": 17
+        }
+      ],
+      "selected_text_sha256": "de8de7958f95b627eb74cc877a7a14518206f2b6273308ba4a4cb0258ee68214",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "1ced9a7192d26dd175e92045a022b5bfa6ab54a19a3acb006175f006cd2099ae",
+      "source_pages": 17,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0002"
+        ],
+        "excerpt": "substantial domain expertise, which limits the accessibility of\nadvanced optimization technologies. In this paper, we propose Reinforce-\nment Learning Enhanced LLM Agents (RLEA), a multi-agent framework\ndesigned to automate the modeling of complex VRPs. RLEA introduces\na lightweight neural Planner trained with Soft Q-learning to efficiently\norchestrate the actions of LLM-based agents. In addition, we equip the\nsystem with an evolutionary memory module and retrieval-augmented\ngeneration, enabling the agent to leverage both accumulated experience\nand external solver knowledge during program generation and refine-\nment for solving VRPs. We evaluated 48 distinct VRP variants across\nvarious solvers. The experimental results demonstrate that RLEA out-\nperforms the previous state-of-the-art method, achieving a 16.67% higher\nsuccess rate while significantly reducing runtime errors. These ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Reinforcement Learning Enhanced Llm Agents",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "70f496c532486e13be2f9aa2ca1d6e81a61e79f5c9a7efa63a6ae40de5504479",
+            "evidence_id": "E5f14c7dbc44409fb-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Reinforcement Learning Enhanced Llm Agents",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1783,
+                "page": 1,
+                "section": "Reinforcement Learning Enhanced Llm Agents",
+                "section_index": 0,
+                "start": 890,
+                "text": "substantial domain expertise, which limits the accessibility of\nadvanced optimization technologies. In this paper, we propose Reinforce-\nment Learning Enhanced LLM Agents (RLEA), a multi-agent framework\ndesigned to automate the modeling of complex VRPs. RLEA introduces\na lightweight neural Planner trained with Soft Q-learning to efficiently\norchestrate the actions of LLM-based agents. In addition, we equip the\nsystem with an evolutionary memory module and retrieval-augmented\ngeneration, enabling the agent to leverage both accumulated experience\nand external solver knowledge during program generation and refine-\nment for solving VRPs. We evaluated 48 distinct VRP variants across\nvarious solvers. The experimental results demonstrate that RLEA out-\nperforms the previous state-of-the-art method, achieving a 16.67% higher\nsuccess rate while significantly reducing runtime errors. These "
+              }
+            ],
+            "text": "substantial domain expertise, which limits the accessibility of\nadvanced optimization technologies. In this paper, we propose Reinforce-\nment Learning Enhanced LLM Agents (RLEA), a multi-agent framework\ndesigned to automate the modeling of complex VRPs. RLEA introduces\na lightweight neural Planner trained with Soft Q-learning to efficiently\norchestrate the actions of LLM-based agents. In addition, we equip the\nsystem with an evolutionary memory module and retrieval-augmented\ngeneration, enabling the agent to leverage both accumulated experience\nand external solver knowledge during program generation and refine-\nment for solving VRPs. We evaluated 48 distinct VRP variants across\nvarious solvers. The experimental results demonstrate that RLEA out-\nperforms the previous state-of-the-art method, achieving a 16.67% higher\nsuccess rate while significantly reducing runtime errors. These "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0008"
+        ],
+        "excerpt": "Re-\ninforcement Learning Enhanced LLM Agents famework (RLEA) that integrates\na lightweight neural Planner, retrieval-based knowledge augmentation, and an\nevolved memory mechanism. This design enables efficient action orchestration",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3bc77b74baf1d9369371f7e06849e55f9add9fa424d08ff3fc2eaf2a79809ba3",
+            "evidence_id": "E5f14c7dbc44409fb-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3381,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 3151,
+                "text": "Re-\ninforcement Learning Enhanced LLM Agents famework (RLEA) that integrates\na lightweight neural Planner, retrieval-based knowledge augmentation, and an\nevolved memory mechanism. This design enables efficient action orchestration"
+              }
+            ],
+            "text": "Re-\ninforcement Learning Enhanced LLM Agents famework (RLEA) that integrates\na lightweight neural Planner, retrieval-based knowledge augmentation, and an\nevolved memory mechanism. This design enables efficient action orchestration"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0011"
+        ],
+        "excerpt": "tively select actions for LLM agents, enabling efficient exploration while sig-\nnificantly reducing the latency compared with LLM-based decision-making.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Introduce A Lightweight Planner Trained With Soft Q-Learning To Adap-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b834b82a977edf2adbf4e1a72a57627df9685e3f5c3317d4c77798e3e808028e",
+            "evidence_id": "E5f14c7dbc44409fb-B0011",
+            "pages": [
+              3
+            ],
+            "section": "We Introduce A Lightweight Planner Trained With Soft Q-Learning To Adap-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 152,
+                "page": 3,
+                "section": "We Introduce A Lightweight Planner Trained With Soft Q-Learning To Adap-",
+                "section_index": 5,
+                "start": 0,
+                "text": "tively select actions for LLM agents, enabling efficient exploration while sig-\nnificantly reducing the latency compared with LLM-based decision-making."
+              }
+            ],
+            "text": "tively select actions for LLM agents, enabling efficient exploration while sig-\nnificantly reducing the latency compared with LLM-based decision-making."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0012"
+        ],
+        "excerpt": "analyzes interaction trajectories to identify successful action paths and de-\nrives the root causes of constraint conflicts from failure instances. Beyond\nthe external knowledge provided by RAG, the agent further leverages its\naccumulated experience to enhance modeling robustness.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "We Present An Agent Equipped With Evolvable Memory. This Agent Actively",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2ffbe29a5e2d05114ffdb5da4e1b7e6d4a90fa92ed3156699be95d90ded8b84a",
+            "evidence_id": "E5f14c7dbc44409fb-B0012",
+            "pages": [
+              3
+            ],
+            "section": "We Present An Agent Equipped With Evolvable Memory. This Agent Actively",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 281,
+                "page": 3,
+                "section": "We Present An Agent Equipped With Evolvable Memory. This Agent Actively",
+                "section_index": 6,
+                "start": 0,
+                "text": "analyzes interaction trajectories to identify successful action paths and de-\nrives the root causes of constraint conflicts from failure instances. Beyond\nthe external knowledge provided by RAG, the agent further leverages its\naccumulated experience to enhance modeling robustness."
+              }
+            ],
+            "text": "analyzes interaction trajectories to identify successful action paths and de-\nrives the root causes of constraint conflicts from failure instances. Beyond\nthe external knowledge provided by RAG, the agent further leverages its\naccumulated experience to enhance modeling robustness."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0022"
+        ],
+        "excerpt": "We propose Reinforcement Learning Enhanced LLM Agents (RLEA), a multi-\nagent framework for automatic VRP modeling. As illustrated in Figure 1, RLEA\nconsists of three main components: a neural Planner, an LLM-based Executor,\nand a Memory module. The Planner selects actions based on the current problem\nstate, the Executor carries out the selected action to generate or revise code, and\nthe memory module continuously evolves historical interaction trajectories into\nreusable experience for future decision-making.\n6 Chen. Author et al.\nFig. 1.Architecture of RLEA for automated VRP modeling. The input consists of the\nproblem name and the current modeling code to be generated or revised. An extractor\nencodes this pair into embeddings, which define the Planner state. Based on the current\nstate, the Planner follows a policy\u03c0(a|s)to select the action, such as exploiting similar\nhistorical ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Overview",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71e1f3af70e6ffb45a8e3c2606fc6a21b818d5f7f4ed7f109655bb4adfa09584",
+            "evidence_id": "E5f14c7dbc44409fb-B0022",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Overview",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 513,
+                "page": 5,
+                "section": "Overview",
+                "section_index": 13,
+                "start": 0,
+                "text": "We propose Reinforcement Learning Enhanced LLM Agents (RLEA), a multi-\nagent framework for automatic VRP modeling. As illustrated in Figure 1, RLEA\nconsists of three main components: a neural Planner, an LLM-based Executor,\nand a Memory module. The Planner selects actions based on the current problem\nstate, the Executor carries out the selected action to generate or revise code, and\nthe memory module continuously evolves historical interaction trajectories into\nreusable experience for future decision-making."
+              },
+              {
+                "end": 377,
+                "page": 6,
+                "section": "Overview",
+                "section_index": 14,
+                "start": 0,
+                "text": "6 Chen. Author et al.\nFig. 1.Architecture of RLEA for automated VRP modeling. The input consists of the\nproblem name and the current modeling code to be generated or revised. An extractor\nencodes this pair into embeddings, which define the Planner state. Based on the current\nstate, the Planner follows a policy\u03c0(a|s)to select the action, such as exploiting similar\nhistorical "
+              }
+            ],
+            "text": "We propose Reinforcement Learning Enhanced LLM Agents (RLEA), a multi-\nagent framework for automatic VRP modeling. As illustrated in Figure 1, RLEA\nconsists of three main components: a neural Planner, an LLM-based Executor,\nand a Memory module. The Planner selects actions based on the current problem\nstate, the Executor carries out the selected action to generate or revise code, and\nthe memory module continuously evolves historical interaction trajectories into\nreusable experience for future decision-making.\n6 Chen. Author et al.\nFig. 1.Architecture of RLEA for automated VRP modeling. The input consists of the\nproblem name and the current modeling code to be generated or revised. An extractor\nencodes this pair into embeddings, which define the Planner state. Based on the current\nstate, the Planner follows a policy\u03c0(a|s)to select the action, such as exploiting similar\nhistorical "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0024"
+        ],
+        "excerpt": "To support automatic VRP modeling in complex settings, we design an action\nspaceAconsisting of three actions: Refine, Retrieval-Augmented Generation\n(RAG), and Meta-Learning with Evolved Memory (MLEM). These actions are\ndesigned to address three key requirements in solver-oriented program genera-\ntion: iterative error correction, the incorporation of external solver knowledge,\nand the reuse of evolved experience. Detailed prompts are provided in Appendix\n2. Below we describe the mechanics of each action.\nRefineWhen handling complex VRP variants, the executor may produce erro-\nneous code or incomplete constraint implementations. The Refine action exploits\nthe self-correction capability of LLMs by enabling iterative revision based on the\ncurrent code state. When this action is selected, the executor examines whether\nthe generated code satisfies all required constraints, identifies ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Execution Action Space Design",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2bd2461a0177daf9d651d169917d6e34118c02f138ecd579495bce082052d9ff",
+            "evidence_id": "E5f14c7dbc44409fb-B0024",
+            "pages": [
+              6
+            ],
+            "section": "Execution Action Space Design",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 6,
+                "section": "Execution Action Space Design",
+                "section_index": 15,
+                "start": 0,
+                "text": "To support automatic VRP modeling in complex settings, we design an action\nspaceAconsisting of three actions: Refine, Retrieval-Augmented Generation\n(RAG), and Meta-Learning with Evolved Memory (MLEM). These actions are\ndesigned to address three key requirements in solver-oriented program genera-\ntion: iterative error correction, the incorporation of external solver knowledge,\nand the reuse of evolved experience. Detailed prompts are provided in Appendix\n2. Below we describe the mechanics of each action.\nRefineWhen handling complex VRP variants, the executor may produce erro-\nneous code or incomplete constraint implementations. The Refine action exploits\nthe self-correction capability of LLMs by enabling iterative revision based on the\ncurrent code state. When this action is selected, the executor examines whether\nthe generated code satisfies all required constraints, identifies "
+              }
+            ],
+            "text": "To support automatic VRP modeling in complex settings, we design an action\nspaceAconsisting of three actions: Refine, Retrieval-Augmented Generation\n(RAG), and Meta-Learning with Evolved Memory (MLEM). These actions are\ndesigned to address three key requirements in solver-oriented program genera-\ntion: iterative error correction, the incorporation of external solver knowledge,\nand the reuse of evolved experience. Detailed prompts are provided in Appendix\n2. Below we describe the mechanics of each action.\nRefineWhen handling complex VRP variants, the executor may produce erro-\nneous code or incomplete constraint implementations. The Refine action exploits\nthe self-correction capability of LLMs by enabling iterative revision based on the\ncurrent code state. When this action is selected, the executor examines whether\nthe generated code satisfies all required constraints, identifies "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0030"
+        ],
+        "excerpt": "Static LLM-based decision-making pipelines are often insufficient for complex\nVRP modeling [14], where the most effective action depends on both the prob-\nlem context and the current code state. This makes adaptive decision-making\nessential. In addition, the evolving memory pool is initially sparse, so the MLEM\nactiona m may provide limited benefit in early training, which can further sup-\npress exploration if a fixed action strategy is used. To address these challenges,\nRLEA employs a lightweight neural Planner trained with Soft Q-learning, en-\nabling adaptive action selection without incurring the high cost of LLM-based\ndecision-making at every interaction step.\nThe Planner learns a stochastic policy\u03c0 \u03b8(at |s t)over the action space\nA={a r, ag, am}, corresponding to Refine, RAG, and MLEM, respectively. The\ndetailed definitions of these actions are given in Section 4.2. The policy is ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Training Phase: Policy Optimization And Memory Evolution",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a60f8bfaea7687c84723d9a42a7951d7af270d1544192d949fb04e5d1f1b4efd",
+            "evidence_id": "E5f14c7dbc44409fb-B0030",
+            "pages": [
+              8
+            ],
+            "section": "Training Phase: Policy Optimization And Memory Evolution",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 8,
+                "section": "Training Phase: Policy Optimization And Memory Evolution",
+                "section_index": 18,
+                "start": 0,
+                "text": "Static LLM-based decision-making pipelines are often insufficient for complex\nVRP modeling [14], where the most effective action depends on both the prob-\nlem context and the current code state. This makes adaptive decision-making\nessential. In addition, the evolving memory pool is initially sparse, so the MLEM\nactiona m may provide limited benefit in early training, which can further sup-\npress exploration if a fixed action strategy is used. To address these challenges,\nRLEA employs a lightweight neural Planner trained with Soft Q-learning, en-\nabling adaptive action selection without incurring the high cost of LLM-based\ndecision-making at every interaction step.\nThe Planner learns a stochastic policy\u03c0 \u03b8(at |s t)over the action space\nA={a r, ag, am}, corresponding to Refine, RAG, and MLEM, respectively. The\ndetailed definitions of these actions are given in Section 4.2. The policy is "
+              }
+            ],
+            "text": "Static LLM-based decision-making pipelines are often insufficient for complex\nVRP modeling [14], where the most effective action depends on both the prob-\nlem context and the current code state. This makes adaptive decision-making\nessential. In addition, the evolving memory pool is initially sparse, so the MLEM\nactiona m may provide limited benefit in early training, which can further sup-\npress exploration if a fixed action strategy is used. To address these challenges,\nRLEA employs a lightweight neural Planner trained with Soft Q-learning, en-\nabling adaptive action selection without incurring the high cost of LLM-based\ndecision-making at every interaction step.\nThe Planner learns a stochastic policy\u03c0 \u03b8(at |s t)over the action space\nA={a r, ag, am}, corresponding to Refine, RAG, and MLEM, respectively. The\ndetailed definitions of these actions are given in Section 4.2. The policy is "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0031"
+        ],
+        "excerpt": "induced\nby a soft Q-network through the Boltzmann distribution:\n\u03c0\u03b8(a|s) = exp (Q\u03b8(s, a)/\u03b1)P\na\u2032\u2208A exp (Q\u03b8(s, a\u2032)/\u03b1) ,(8)\nwhere\u03b1 >0isthetemperatureparametercontrollingtheexploration\u2013exploitation\ntrade-off. A larger\u03b1encourages broader exploration over candidate actions,\nwhich is particularly beneficial in the early stage when evolved memory is not\nyet sufficiently informative, whereas a smaller\u03b1leads to more greedy action\nselection.\nDuring training, the planner interacts with the environment to generate a\ntrajectory\u03c4. To guide policy optimization, we design a dense reward based on\nthe optimality gap. Letyobj\nt denote the objective value of the solution obtained\nat stept. The relative optimality gap\u03b4t is defined as\n\u03b4t =\n\f\f\f\f\f\nyobj\nt \u2212y \u2217\ny\u2217\n\f\f\f\f\f ,(9)\nwherey \u2217 denotes the reference optimal objective value obtained from expert\nbenchmarks. To encourage high-quality solutions while explicitly ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Training Phase: Policy Optimization And Memory Evolution",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d2c53312c7039dcb64e1cb41318c55a33f2b72d2f472485be64d3eed4f0bdd5",
+            "evidence_id": "E5f14c7dbc44409fb-B0031",
+            "pages": [
+              8
+            ],
+            "section": "Training Phase: Policy Optimization And Memory Evolution",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 8,
+                "section": "Training Phase: Policy Optimization And Memory Evolution",
+                "section_index": 18,
+                "start": 898,
+                "text": "induced\nby a soft Q-network through the Boltzmann distribution:\n\u03c0\u03b8(a|s) = exp (Q\u03b8(s, a)/\u03b1)P\na\u2032\u2208A exp (Q\u03b8(s, a\u2032)/\u03b1) ,(8)\nwhere\u03b1 >0isthetemperatureparametercontrollingtheexploration\u2013exploitation\ntrade-off. A larger\u03b1encourages broader exploration over candidate actions,\nwhich is particularly beneficial in the early stage when evolved memory is not\nyet sufficiently informative, whereas a smaller\u03b1leads to more greedy action\nselection.\nDuring training, the planner interacts with the environment to generate a\ntrajectory\u03c4. To guide policy optimization, we design a dense reward based on\nthe optimality gap. Letyobj\nt denote the objective value of the solution obtained\nat stept. The relative optimality gap\u03b4t is defined as\n\u03b4t =\n\f\f\f\f\f\nyobj\nt \u2212y \u2217\ny\u2217\n\f\f\f\f\f ,(9)\nwherey \u2217 denotes the reference optimal objective value obtained from expert\nbenchmarks. To encourage high-quality solutions while explicitly "
+              }
+            ],
+            "text": "induced\nby a soft Q-network through the Boltzmann distribution:\n\u03c0\u03b8(a|s) = exp (Q\u03b8(s, a)/\u03b1)P\na\u2032\u2208A exp (Q\u03b8(s, a\u2032)/\u03b1) ,(8)\nwhere\u03b1 >0isthetemperatureparametercontrollingtheexploration\u2013exploitation\ntrade-off. A larger\u03b1encourages broader exploration over candidate actions,\nwhich is particularly beneficial in the early stage when evolved memory is not\nyet sufficiently informative, whereas a smaller\u03b1leads to more greedy action\nselection.\nDuring training, the planner interacts with the environment to generate a\ntrajectory\u03c4. To guide policy optimization, we design a dense reward based on\nthe optimality gap. Letyobj\nt denote the objective value of the solution obtained\nat stept. The relative optimality gap\u03b4t is defined as\n\u03b4t =\n\f\f\f\f\f\nyobj\nt \u2212y \u2217\ny\u2217\n\f\f\f\f\f ,(9)\nwherey \u2217 denotes the reference optimal objective value obtained from expert\nbenchmarks. To encourage high-quality solutions while explicitly "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0038"
+        ],
+        "excerpt": "HyperparametersThe Planner is trained using the Soft Q-Learning algorithm\nwith the Adam optimizer and a learning rate of1\u00d710\u22124. The model consists of\na frozen small language model (SLM) and a trainable Q-value head. We adopt\nQwen2.5-1.5B-Instruct as the SLM to encode state representations with a max-\nimum context length of 8192 tokens. The Q-value head is a two-layer MLP with\n256 hidden units and ReLU activation, mapping state embeddings to the action\nspace. DeepSeek-Reasoner as the Executor and ChatGPT (gpt-4o-2024-08-06)\nas the Memory Agent.\nThe replay buffer has a capacity of 512 state transitions, with a training batch\nsize of 16. The discount factor is set to\u03b3= 0.99, and the entropy temperature\ncoefficient is fixed at\u03b1= 4to encourage exploration. The target network is\nupdated every four training steps via hard parameter copying. Each training\nepisode is limited to a maximum of 16 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f1325101f63266969f4e37477bd1fdd1743088678705da3dce35636ae6525ca1",
+            "evidence_id": "E5f14c7dbc44409fb-B0038",
+            "pages": [
+              10
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 10,
+                "section": "Experiment Settings",
+                "section_index": 23,
+                "start": 0,
+                "text": "HyperparametersThe Planner is trained using the Soft Q-Learning algorithm\nwith the Adam optimizer and a learning rate of1\u00d710\u22124. The model consists of\na frozen small language model (SLM) and a trainable Q-value head. We adopt\nQwen2.5-1.5B-Instruct as the SLM to encode state representations with a max-\nimum context length of 8192 tokens. The Q-value head is a two-layer MLP with\n256 hidden units and ReLU activation, mapping state embeddings to the action\nspace. DeepSeek-Reasoner as the Executor and ChatGPT (gpt-4o-2024-08-06)\nas the Memory Agent.\nThe replay buffer has a capacity of 512 state transitions, with a training batch\nsize of 16. The discount factor is set to\u03b3= 0.99, and the entropy temperature\ncoefficient is fixed at\u03b1= 4to encourage exploration. The target network is\nupdated every four training steps via hard parameter copying. Each training\nepisode is limited to a maximum of 16 "
+              }
+            ],
+            "text": "HyperparametersThe Planner is trained using the Soft Q-Learning algorithm\nwith the Adam optimizer and a learning rate of1\u00d710\u22124. The model consists of\na frozen small language model (SLM) and a trainable Q-value head. We adopt\nQwen2.5-1.5B-Instruct as the SLM to encode state representations with a max-\nimum context length of 8192 tokens. The Q-value head is a two-layer MLP with\n256 hidden units and ReLU activation, mapping state embeddings to the action\nspace. DeepSeek-Reasoner as the Executor and ChatGPT (gpt-4o-2024-08-06)\nas the Memory Agent.\nThe replay buffer has a capacity of 512 state transitions, with a training batch\nsize of 16. The discount factor is set to\u03b3= 0.99, and the entropy temperature\ncoefficient is fixed at\u03b1= 4to encourage exploration. The target network is\nupdated every four training steps via hard parameter copying. Each training\nepisode is limited to a maximum of 16 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0039"
+        ],
+        "excerpt": "interaction steps to avoid infinite loops.\nBaselinesWe compare RLEA with five representative baselines:\n\u2013 Direct Generation:Standard prompting without additional reasoning or\ncorrection mechanisms.\n\u2013 Reasoning-basedmethods:Self-Refine[17]andChain-of-Thought(CoT)[28].\n\u2013 Formulation-first approach:Chain-of-Experts (CoE) [24].\n\u2013 Code-only approach:DRoC [12].\nIn our framework, two inference settings are evaluated. Inoffline inference,\nthe Executor generates solutions using a pre-trained memory pool. Inonline\ninference, the memory agent dynamically constructs and updates the memory\npool during test time.\nTo ensure robustness, we conducted evaluations using two widely used opti-\nmization solvers: Gurobi [8] and OR-Tools [19]. The maximum number of inter-\naction steps during inference was set toTmax = 6. To ensure a fair comparison,\nall baselines were assigned the same iteration budget. As in ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ba857e6450373cfcb972e36301528f2e0da8eb4fb3d1c9b04b8212a5b0a9fe8c",
+            "evidence_id": "E5f14c7dbc44409fb-B0039",
+            "pages": [
+              10
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 10,
+                "section": "Experiment Settings",
+                "section_index": 23,
+                "start": 898,
+                "text": "interaction steps to avoid infinite loops.\nBaselinesWe compare RLEA with five representative baselines:\n\u2013 Direct Generation:Standard prompting without additional reasoning or\ncorrection mechanisms.\n\u2013 Reasoning-basedmethods:Self-Refine[17]andChain-of-Thought(CoT)[28].\n\u2013 Formulation-first approach:Chain-of-Experts (CoE) [24].\n\u2013 Code-only approach:DRoC [12].\nIn our framework, two inference settings are evaluated. Inoffline inference,\nthe Executor generates solutions using a pre-trained memory pool. Inonline\ninference, the memory agent dynamically constructs and updates the memory\npool during test time.\nTo ensure robustness, we conducted evaluations using two widely used opti-\nmization solvers: Gurobi [8] and OR-Tools [19]. The maximum number of inter-\naction steps during inference was set toTmax = 6. To ensure a fair comparison,\nall baselines were assigned the same iteration budget. As in "
+              }
+            ],
+            "text": "interaction steps to avoid infinite loops.\nBaselinesWe compare RLEA with five representative baselines:\n\u2013 Direct Generation:Standard prompting without additional reasoning or\ncorrection mechanisms.\n\u2013 Reasoning-basedmethods:Self-Refine[17]andChain-of-Thought(CoT)[28].\n\u2013 Formulation-first approach:Chain-of-Experts (CoE) [24].\n\u2013 Code-only approach:DRoC [12].\nIn our framework, two inference settings are evaluated. Inoffline inference,\nthe Executor generates solutions using a pre-trained memory pool. Inonline\ninference, the memory agent dynamically constructs and updates the memory\npool during test time.\nTo ensure robustness, we conducted evaluations using two widely used opti-\nmization solvers: Gurobi [8] and OR-Tools [19]. The maximum number of inter-\naction steps during inference was set toTmax = 6. To ensure a fair comparison,\nall baselines were assigned the same iteration budget. As in "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0040"
+        ],
+        "excerpt": "previous work [12],\nthe reported results are the average of three independent runs.\nPerformance MetricsThere are two performance metrics we used:\n\u2013 Success Rate (SR):This metric evaluates the capability of the framework\nto generate valid modeling code. It is defined as:\nSR= Nsucc\nNtotal\n\u00d7100%(13)\nwhereN total is the total number of VRP instances tested.Nsucc represents\nthe number of instances where the generated code successfully executes and\nyields a feasible solution (i.e., the solver successfully returns a valid objective\nvalue without errors).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiment Settings",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "03fa4ef1854d0c557defccd4fa2b7608000e9c4f1b7aa77abfa8119644ff8371",
+            "evidence_id": "E5f14c7dbc44409fb-B0040",
+            "pages": [
+              10
+            ],
+            "section": "Experiment Settings",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2350,
+                "page": 10,
+                "section": "Experiment Settings",
+                "section_index": 23,
+                "start": 1797,
+                "text": "previous work [12],\nthe reported results are the average of three independent runs.\nPerformance MetricsThere are two performance metrics we used:\n\u2013 Success Rate (SR):This metric evaluates the capability of the framework\nto generate valid modeling code. It is defined as:\nSR= Nsucc\nNtotal\n\u00d7100%(13)\nwhereN total is the total number of VRP instances tested.Nsucc represents\nthe number of instances where the generated code successfully executes and\nyields a feasible solution (i.e., the solver successfully returns a valid objective\nvalue without errors)."
+              }
+            ],
+            "text": "previous work [12],\nthe reported results are the average of three independent runs.\nPerformance MetricsThere are two performance metrics we used:\n\u2013 Success Rate (SR):This metric evaluates the capability of the framework\nto generate valid modeling code. It is defined as:\nSR= Nsucc\nNtotal\n\u00d7100%(13)\nwhereN total is the total number of VRP instances tested.Nsucc represents\nthe number of instances where the generated code successfully executes and\nyields a feasible solution (i.e., the solver successfully returns a valid objective\nvalue without errors)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0042"
+        ],
+        "excerpt": "Table 1 reports the performance of RLEA and five representative baselines in\nterms of Success Rate (SR) and Runtime Error Rate (RER) on both OR-Tools\nand Gurobi solvers.\nMethods that rely solely on the internal knowledge of LLMs, including Stan-\ndard Prompting, CoT, and Self-Refine, achieve limited performance, indicating\nthat complex VRP variants are difficult to model accurately without domain-\nspecific knowledge. CoE produces the lowest rates on SR due to its focus on\nMixed-Integer Programming rather than complex VRPs, it maintains a remark-\nably low RER suggesting the potential of the multi-agent framework. By incor-\nporating external solver documentation, DRoC improves performance over these\nmethods, demonstrating the importance of domain-specific knowledge retrieval.\nOur method achieves the best overall performance. On OR-Tools, RLEA\nreaches an SR of 62.50%, outperforming the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "93fa2ae9a094ec161082ed508b5ca5330ffa4eade1076137ab2ecf8ce435f4e3",
+            "evidence_id": "E5f14c7dbc44409fb-B0042",
+            "pages": [
+              11
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 11,
+                "section": "Main Results",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 1 reports the performance of RLEA and five representative baselines in\nterms of Success Rate (SR) and Runtime Error Rate (RER) on both OR-Tools\nand Gurobi solvers.\nMethods that rely solely on the internal knowledge of LLMs, including Stan-\ndard Prompting, CoT, and Self-Refine, achieve limited performance, indicating\nthat complex VRP variants are difficult to model accurately without domain-\nspecific knowledge. CoE produces the lowest rates on SR due to its focus on\nMixed-Integer Programming rather than complex VRPs, it maintains a remark-\nably low RER suggesting the potential of the multi-agent framework. By incor-\nporating external solver documentation, DRoC improves performance over these\nmethods, demonstrating the importance of domain-specific knowledge retrieval.\nOur method achieves the best overall performance. On OR-Tools, RLEA\nreaches an SR of 62.50%, outperforming the "
+              }
+            ],
+            "text": "Table 1 reports the performance of RLEA and five representative baselines in\nterms of Success Rate (SR) and Runtime Error Rate (RER) on both OR-Tools\nand Gurobi solvers.\nMethods that rely solely on the internal knowledge of LLMs, including Stan-\ndard Prompting, CoT, and Self-Refine, achieve limited performance, indicating\nthat complex VRP variants are difficult to model accurately without domain-\nspecific knowledge. CoE produces the lowest rates on SR due to its focus on\nMixed-Integer Programming rather than complex VRPs, it maintains a remark-\nably low RER suggesting the potential of the multi-agent framework. By incor-\nporating external solver documentation, DRoC improves performance over these\nmethods, demonstrating the importance of domain-specific knowledge retrieval.\nOur method achieves the best overall performance. On OR-Tools, RLEA\nreaches an SR of 62.50%, outperforming the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0046"
+        ],
+        "excerpt": "SR (%) RER (%) SR (%) RER (%)\nStandard Prompting 29.17 39.58 29.17 27.08\nSelf-Refine 31.25 39.58 33.33 35.42\nChain of Thoughts 25.00 54.17 18.75 56.25\nChain of Experts 16.67 27.08 8.33 18.75\nDRoC 45.83 27.08 35.42 33.33\nOurs (offline)62.5016.6743.75 16.67\nOurs (online) 60.4212.5039.58 22.92\nT able 2.Ablation study on the Planner.\nMethodSR (%) RER (%) Avg Time (s)\nOurs 62.5016.673.06\nw/o Planner 50.00 14.58 -\nPrompt-based Planner 56.2512.50153.30\nachieves the highest SR, indicating that the learned policy effectively captures\naction-selection patterns across different VRP variants. Although the prompt-\nbased Planner also attains a reasonable success rate, it incurs higher inference la-\ntency, while our neural Planner enables significantly faster decision-making. The\nslightly higher RER of RLEA reflects a trade-off between aggressive exploration\nand execution stability: by exploring more ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sr (%) Rer (%) Sr (%) Rer (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "14473da9052acd35c5cf8587ae08d9c6eddb1f3727f934328eaea7293b2e5b0e",
+            "evidence_id": "E5f14c7dbc44409fb-B0046",
+            "pages": [
+              12
+            ],
+            "section": "Sr (%) Rer (%) Sr (%) Rer (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 12,
+                "section": "Sr (%) Rer (%) Sr (%) Rer (%)",
+                "section_index": 28,
+                "start": 0,
+                "text": "SR (%) RER (%) SR (%) RER (%)\nStandard Prompting 29.17 39.58 29.17 27.08\nSelf-Refine 31.25 39.58 33.33 35.42\nChain of Thoughts 25.00 54.17 18.75 56.25\nChain of Experts 16.67 27.08 8.33 18.75\nDRoC 45.83 27.08 35.42 33.33\nOurs (offline)62.5016.6743.75 16.67\nOurs (online) 60.4212.5039.58 22.92\nT able 2.Ablation study on the Planner.\nMethodSR (%) RER (%) Avg Time (s)\nOurs 62.5016.673.06\nw/o Planner 50.00 14.58 -\nPrompt-based Planner 56.2512.50153.30\nachieves the highest SR, indicating that the learned policy effectively captures\naction-selection patterns across different VRP variants. Although the prompt-\nbased Planner also attains a reasonable success rate, it incurs higher inference la-\ntency, while our neural Planner enables significantly faster decision-making. The\nslightly higher RER of RLEA reflects a trade-off between aggressive exploration\nand execution stability: by exploring more "
+              }
+            ],
+            "text": "SR (%) RER (%) SR (%) RER (%)\nStandard Prompting 29.17 39.58 29.17 27.08\nSelf-Refine 31.25 39.58 33.33 35.42\nChain of Thoughts 25.00 54.17 18.75 56.25\nChain of Experts 16.67 27.08 8.33 18.75\nDRoC 45.83 27.08 35.42 33.33\nOurs (offline)62.5016.6743.75 16.67\nOurs (online) 60.4212.5039.58 22.92\nT able 2.Ablation study on the Planner.\nMethodSR (%) RER (%) Avg Time (s)\nOurs 62.5016.673.06\nw/o Planner 50.00 14.58 -\nPrompt-based Planner 56.2512.50153.30\nachieves the highest SR, indicating that the learned policy effectively captures\naction-selection patterns across different VRP variants. Although the prompt-\nbased Planner also attains a reasonable success rate, it incurs higher inference la-\ntency, while our neural Planner enables significantly faster decision-making. The\nslightly higher RER of RLEA reflects a trade-off between aggressive exploration\nand execution stability: by exploring more "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0049"
+        ],
+        "excerpt": "RLEA 13\nFig. 2.Distribution of action types executed by RLEA on OR-Tools.\nT able 3.Ablation study of different actions on OR-Tools.\nMethod SR (%) RER (%)\nOurs 62.50 16.67\nw/o Refine 39.58 36.25\nw/o RAG 43.75 22.92\nw/o Meta learning with evolved memory 41.67 27.08",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rlea 13",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a6fc35fe6b525c3248c02c5cf95dcda61728b36ac5eac83f7ba5927c6e54212f",
+            "evidence_id": "E5f14c7dbc44409fb-B0049",
+            "pages": [
+              13
+            ],
+            "section": "Rlea 13",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 263,
+                "page": 13,
+                "section": "Rlea 13",
+                "section_index": 29,
+                "start": 0,
+                "text": "RLEA 13\nFig. 2.Distribution of action types executed by RLEA on OR-Tools.\nT able 3.Ablation study of different actions on OR-Tools.\nMethod SR (%) RER (%)\nOurs 62.50 16.67\nw/o Refine 39.58 36.25\nw/o RAG 43.75 22.92\nw/o Meta learning with evolved memory 41.67 27.08"
+              }
+            ],
+            "text": "RLEA 13\nFig. 2.Distribution of action types executed by RLEA on OR-Tools.\nT able 3.Ablation study of different actions on OR-Tools.\nMethod SR (%) RER (%)\nOurs 62.50 16.67\nw/o Refine 39.58 36.25\nw/o RAG 43.75 22.92\nw/o Meta learning with evolved memory 41.67 27.08"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0053"
+        ],
+        "excerpt": "SR(%) RER(%) SR(%) RER(%) SR(%) RER(%)\nDeepSeek-r1 52.08 22.9262.5016.67 43.7512.50\nGPT-4o 45.83 25.00 37.50 31.25 47.92 18.75\nQwen3-max 52.08 16.67 60.4212.5045.83 14.58\n/uni00000016/uni00000017/uni00000018/uni00000019/uni0000001a\n/uni0000002c/uni00000057/uni00000048/uni00000055/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni00000003/uni00000031/uni00000058/uni00000050/uni00000045/uni00000048/uni00000055\n/uni00000014/uni00000013\n/uni00000015/uni00000013\n/uni00000016/uni00000013\n/uni00000017/uni00000013\n/uni00000018/uni00000013\n/uni00000019/uni00000013\n/uni0000001a/uni00000013/uni00000033/uni00000048/uni00000055/uni00000046/uni00000048/uni00000051/uni00000057/uni00000044/uni0000004a/uni00000048/uni00000003/uni0000000b/uni00000008/uni0000000c\n/uni00000036/uni00000035\n/uni00000035/uni00000028/uni00000035\nFig. 3.Sensitivity analysis of OR-Tools performance relative to ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Sr(%) Rer(%) Sr(%) Rer(%) Sr(%) Rer(%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d10ec11d6063bc471de0b0fa445f85d8b731abe31abcae0a76a177684ff16722",
+            "evidence_id": "E5f14c7dbc44409fb-B0053",
+            "pages": [
+              14
+            ],
+            "section": "Sr(%) Rer(%) Sr(%) Rer(%) Sr(%) Rer(%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 14,
+                "section": "Sr(%) Rer(%) Sr(%) Rer(%) Sr(%) Rer(%)",
+                "section_index": 33,
+                "start": 0,
+                "text": "SR(%) RER(%) SR(%) RER(%) SR(%) RER(%)\nDeepSeek-r1 52.08 22.9262.5016.67 43.7512.50\nGPT-4o 45.83 25.00 37.50 31.25 47.92 18.75\nQwen3-max 52.08 16.67 60.4212.5045.83 14.58\n/uni00000016/uni00000017/uni00000018/uni00000019/uni0000001a\n/uni0000002c/uni00000057/uni00000048/uni00000055/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni00000003/uni00000031/uni00000058/uni00000050/uni00000045/uni00000048/uni00000055\n/uni00000014/uni00000013\n/uni00000015/uni00000013\n/uni00000016/uni00000013\n/uni00000017/uni00000013\n/uni00000018/uni00000013\n/uni00000019/uni00000013\n/uni0000001a/uni00000013/uni00000033/uni00000048/uni00000055/uni00000046/uni00000048/uni00000051/uni00000057/uni00000044/uni0000004a/uni00000048/uni00000003/uni0000000b/uni00000008/uni0000000c\n/uni00000036/uni00000035\n/uni00000035/uni00000028/uni00000035\nFig. 3.Sensitivity analysis of OR-Tools performance relative to "
+              }
+            ],
+            "text": "SR(%) RER(%) SR(%) RER(%) SR(%) RER(%)\nDeepSeek-r1 52.08 22.9262.5016.67 43.7512.50\nGPT-4o 45.83 25.00 37.50 31.25 47.92 18.75\nQwen3-max 52.08 16.67 60.4212.5045.83 14.58\n/uni00000016/uni00000017/uni00000018/uni00000019/uni0000001a\n/uni0000002c/uni00000057/uni00000048/uni00000055/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni00000003/uni00000031/uni00000058/uni00000050/uni00000045/uni00000048/uni00000055\n/uni00000014/uni00000013\n/uni00000015/uni00000013\n/uni00000016/uni00000013\n/uni00000017/uni00000013\n/uni00000018/uni00000013\n/uni00000019/uni00000013\n/uni0000001a/uni00000013/uni00000033/uni00000048/uni00000055/uni00000046/uni00000048/uni00000051/uni00000057/uni00000044/uni0000004a/uni00000048/uni00000003/uni0000000b/uni00000008/uni0000000c\n/uni00000036/uni00000035\n/uni00000035/uni00000028/uni00000035\nFig. 3.Sensitivity analysis of OR-Tools performance relative to "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0055"
+        ],
+        "excerpt": "In this paper, we propose RLEA, a novel multi-agent framework for automating\nthe modeling and solving of complex VRPs. By integrating a lightweight Planner\noptimized via Soft Q-Learning, RLEA enables rapid execution by the Executor,\nreducing computational overhead. The hybrid memory mechanism, combining\nevolutionary trajectory analysis with external RAG-based knowledge, ensures\nrobust self-correction, helping resolve constraint conflicts that often cause solver\nfailures. Empirical results show a 62.50% success rate across 48 VRP variants,\nachieving a 16.67% performance gain over the previous state-of-the-art. Future\nwork will explore integrating multi-modal inputs for VRPs described through\nvisual diagrams and extending the framework to dynamic, real-time routing\nscenarios with evolving constraints.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a34d016d15521d771f3f56fc4e8149aedd0897771b942aa3b05dd254466e3445",
+            "evidence_id": "E5f14c7dbc44409fb-B0055",
+            "pages": [
+              14
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 810,
+                "page": 14,
+                "section": "Conclusion",
+                "section_index": 34,
+                "start": 0,
+                "text": "In this paper, we propose RLEA, a novel multi-agent framework for automating\nthe modeling and solving of complex VRPs. By integrating a lightweight Planner\noptimized via Soft Q-Learning, RLEA enables rapid execution by the Executor,\nreducing computational overhead. The hybrid memory mechanism, combining\nevolutionary trajectory analysis with external RAG-based knowledge, ensures\nrobust self-correction, helping resolve constraint conflicts that often cause solver\nfailures. Empirical results show a 62.50% success rate across 48 VRP variants,\nachieving a 16.67% performance gain over the previous state-of-the-art. Future\nwork will explore integrating multi-modal inputs for VRPs described through\nvisual diagrams and extending the framework to dynamic, real-time routing\nscenarios with evolving constraints."
+              }
+            ],
+            "text": "In this paper, we propose RLEA, a novel multi-agent framework for automating\nthe modeling and solving of complex VRPs. By integrating a lightweight Planner\noptimized via Soft Q-Learning, RLEA enables rapid execution by the Executor,\nreducing computational overhead. The hybrid memory mechanism, combining\nevolutionary trajectory analysis with external RAG-based knowledge, ensures\nrobust self-correction, helping resolve constraint conflicts that often cause solver\nfailures. Empirical results show a 62.50% success rate across 48 VRP variants,\nachieving a 16.67% performance gain over the previous state-of-the-art. Future\nwork will explore integrating multi-modal inputs for VRPs described through\nvisual diagrams and extending the framework to dynamic, real-time routing\nscenarios with evolving constraints."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.00859",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2609.00859",
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0002",
+          "E5f14c7dbc44409fb-B0008",
+          "E5f14c7dbc44409fb-B0011",
+          "E5f14c7dbc44409fb-B0012",
+          "E5f14c7dbc44409fb-B0022",
+          "E5f14c7dbc44409fb-B0024",
+          "E5f14c7dbc44409fb-B0030",
+          "E5f14c7dbc44409fb-B0031",
+          "E5f14c7dbc44409fb-B0038",
+          "E5f14c7dbc44409fb-B0039",
+          "E5f14c7dbc44409fb-B0040",
+          "E5f14c7dbc44409fb-B0042",
+          "E5f14c7dbc44409fb-B0046",
+          "E5f14c7dbc44409fb-B0049",
+          "E5f14c7dbc44409fb-B0053",
+          "E5f14c7dbc44409fb-B0055"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "1ced9a7192d26dd175e92045a022b5bfa6ab54a19a3acb006175f006cd2099ae"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2609.00859",
+        "claim_evidence_alignment": "Claims regarding superior modeling success rate (e.g., 62.50% vs 45.83% for prior SOTA DRoC on OR-Tools) and reduced runtime errors are well supported by experimental tables and detailed ablation studies.",
+        "context_id": "5f14c7dbc44409fb9728a0151ef740cd87eed81ed40957e09d25bcdc726cf529",
+        "decision": "pass",
+        "evaluation_assessment": "The framework is tested across 48 distinct VRP variants on two mainstream solvers (OR-Tools and Gurobi), evaluated using Success Rate (SR) and Runtime Error Rate (RER), and includes informative ablations on the planner, individual action modules, and heterogeneous LLM compositions.",
+        "evidence_ids": [
+          "E5f14c7dbc44409fb-B0002",
+          "E5f14c7dbc44409fb-B0008",
+          "E5f14c7dbc44409fb-B0011",
+          "E5f14c7dbc44409fb-B0012",
+          "E5f14c7dbc44409fb-B0022",
+          "E5f14c7dbc44409fb-B0024",
+          "E5f14c7dbc44409fb-B0030",
+          "E5f14c7dbc44409fb-B0031",
+          "E5f14c7dbc44409fb-B0038",
+          "E5f14c7dbc44409fb-B0039",
+          "E5f14c7dbc44409fb-B0040",
+          "E5f14c7dbc44409fb-B0042",
+          "E5f14c7dbc44409fb-B0046",
+          "E5f14c7dbc44409fb-B0049",
+          "E5f14c7dbc44409fb-B0053",
+          "E5f14c7dbc44409fb-B0055"
+        ],
+        "limitations": "The authors identify trade-offs such as algorithmic stagnation at higher iterations, stochasticity in online memory evolution, non-optimal feasible code, and lack of support for multi-modal visual inputs or dynamic routing scenarios.",
+        "method_assessment": "The methodology is explicitly articulated: the process is framed as an MDP with a discrete 3-action space (Refine, RAG, and MLEM), trained using Soft Q-learning with optimality gap rewards, and executed by distinct specialized LLM agents for code execution and memory management.",
+        "quality_rationale": "The work presents an original, methodologically sound framework combining RL planning with LLM agents for combinatorial optimization modeling, supported by rigorous empirical validation against competitive baselines across multiple solvers.",
+        "scoped_contribution": "The paper introduces RLEA, a multi-agent framework combining a lightweight neural planner trained with Soft Q-learning and an evolvable memory module with retrieval-augmented generation to orchestrate actions for automated VRP code generation and refinement.",
+        "source_content_hash": "1ced9a7192d26dd175e92045a022b5bfa6ab54a19a3acb006175f006cd2099ae"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work presents an original, methodologically sound framework combining RL planning with LLM agents for combinatorial optimization modeling, supported by rigorous empirical validation against competitive baselines across multiple solvers.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "1ced9a7192d26dd175e92045a022b5bfa6ab54a19a3acb006175f006cd2099ae",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors identify trade-offs such as algorithmic stagnation at higher iterations, stochasticity in online memory evolution, non-optimal feasible code, and lack of support for multi-modal visual inputs or dynamic routing scenarios."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -160,7 +1989,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

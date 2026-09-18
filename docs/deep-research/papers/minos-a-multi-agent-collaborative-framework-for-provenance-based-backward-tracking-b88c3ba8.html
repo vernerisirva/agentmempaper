@@ -59,16 +59,264 @@
             <p>Sophisticated cyber attacks, particularly Advanced Persistent Threats (APTs), require effective post-intrusion forensic analysis. Provenance-based backward tracking reconstructs attack scenarios by tracing causality from security alerts, but existing methods rely on low-level statistical features and rigid traversal...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript addresses a well-defined security challenge (dependency explosion and semantic ambiguity in provenance tracking) with a well-engineered multi-agent LLM solution, comprehensive empirical evidence across multiple benchmarks, and rigorous ablation experiments.</p>
+      <p>The authors acknowledge higher inference latency compared to traditional statistical methods, dependencies on POI alert quality, and data privacy implications when utilizing hosted LLMs on sensitive audit logs.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:41:55.307888+00:00.</p>
+        <p>Coverage: 70303 of 70303 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>with &quot;dependency explosion&quot;.
+To address these challenges, we proposeMinos, a multi-agent collab-
+orative framework that reconceptualizes backward tracking as a Large
+Language Model (LLM)-driven reasoning process.Minosoperates via a
+two-tiered architecture. For individual event assessment, it introduces a
+structured framework to overcome the inherent limitations of LLMs: it
+employs a hierarchical context model for persistent state maintenance,
+implements retrieval-augmented reasoning with citation verification to
+ground inferences, and incorporates an adversarial deliberation mech-
+anism to mitigate sycophancy bias. For end-to-end graph exploration,
+Minosorchestrates four specialized agents under a finite state machine
+(FSM), replacing exhaustive topological traversal with hypothesis-guided
+reasoning and &quot;count-first&quot; query protocols to prune the search space.
+Comprehensive evaluations </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>on 14 attack scenarios across five public
+datasets demonstrate thatMinosachieves average recall and precision
+of 0.92 and 0.64, respectively, significantly outperforming state-of-the-art
+baselines while generating attack subgraphs that are 49% more compact.
+Furthermore,Minosgenerates interpretable reasoning at every step,
+providing robust support for auditing and system refinement. Ultimately,
+our exploration validates the efficacy of leveraging LLMs for automated
+provenance-based backward tracking.
+Keywords:Backward Tracking·Provenance Analysis·Large Language
+Model·Multi-Agent System
+∗Two authors contribute equally to this work.
+BCorresponding author: lizhenyuan@zju.edu.cn
+arXiv:2607.00440v1  [cs.CR]  1 Jul 2026
+2 J. Wang et al.</blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>characteristic of human
+investigation teams to replace blind traversal with reasoning-driven, hypothesis-
+guided exploration.
+Motivated by these insights, we proposeMinos, a framework that formulates
+backward tracking as a multi-agent collaborative reasoning process.Minosad-
+dresses the two core challenges through a decomposed, two-tiered architecture.
+For individual event assessment,Minosintroduces a structured reasoning frame-
+work explicitly designed to overcome three inherent limitations of generic LLMs:
+to counter context window constraints during prolonged tracking, a hierarchi-
+cal context model employs a dual-grained design to maintain a condensed yet
+rich global tracking state; to eliminate knowledge cutoffs and hallucinations, a
+Minos: A Multi-Agent Collaborative Framework for Backward Tracking 3
+retrieval-augmented module with automated citation verification enhances </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+reasoning capability while anchoring each inference to traceable sources; and to
+mitigate the false positives induced by sycophancy bias, an adversarial delibera-
+tion mechanism (prosecutor–defense–judge) systematically extracts supporting
+evidence from both malicious and benign perspectives before yielding an objective
+event assessment through impartial arbitration. For end-to-end graph exploration,
+Minospartitions the complex investigation task into four specialized agent roles
+orchestrated by a finite state machine (FSM). The Planner agent serves as the
+hypothesis-driven commander, guiding the backward tracking through high-level
+semantic reasoning rather than rigid topological traversal. The Query agent
+acts as the data interface, employing a &quot;count-first&quot; protocol to securely retrieve
+system events while preventing &quot;dependency explosion&quot; at high-degree nodes. The
+Adversarial </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>that anchors the assessment to grounded evidence.
+3.3 Adversarial Reasoning for Intent Verification.
+Despite leveraging enriched context and retrieved knowledge, a single LLM for
+intent assessment frequently exhibits sycophancy bias [29], misclassifying benign
+events as malicious and causing excessive false positives. To mitigate this, we
+propose an adversarial reasoning framework [8] featuring three specialized agents:
+a prosecutor, a defense attorney, and a judge.
+In the initial phase, the prosecutor and defense agents independently analyze
+the target event under opposing assumptions—malicious and benign intent,
+respectively. Both agents exhaustively extract supporting evidence from the
+hierarchical context, retrieved knowledge, and intrinsic knowledge, providing
+formal citations for every claim. The verification algorithm then parses these
+citations to generate a credibility summary, </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>flagging unverified claims.
+In the adjudication phase, the judge agent receives the opposing arguments
+together with their credibility summaries as input, and sequentially evaluates
+causal dependencies, evidence grounding, and action consistency to render a final
+verdict substantiated by transparent reasoning. This adversarial architecture
+8 J. Wang et al.
+③Adversarial ReasoningFramwork②RAGandCitationVerification
+192.168.10.7
+…/Tasks/job-A.xml
+PowerShellPowerShell
+…/Tasks/payload.xml
+services.exekernel32.dllconfig.xml
+78.205.13.17
+maintenance.ps1upload_8f3a.tmp
+tomcat.exe
+Scenario A: Routine maintenance
+Scenario B: Persistence technique
+PowerShell
+…/Tasks/payload.xml
+①FetchHierarchical Context
+Coarse-grained Tactical Sequence[Initial Accsess]
+[Execution]
+[Persistence]
+[Discovery][Collection]
+[Exfiltration]
+Candidate Event
+Fine-grained Semantic Narrative…
+attack-related log </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>strategy rather than executing topologi-
+cal traversals like BFS. The Planner leverages the current context to explicitly
+Minos: A Multi-Agent Collaborative Framework for Backward Tracking 9
+Table 1.Specialized agent roles and their corresponding responsibilities inMinos
+Agent Role Core Responsibility
+PlannerDetermines the next tracking candidates
+QueryTranslates instructions and query data
+Adversarial GroupEvaluates the intent of candidate events
+MemoryMaintains the hierarchical context
+propose hypotheses regarding the attacker&#x27;s next steps. To implement this, the
+Planner adopts a progressive three-tier strategy: (1) an initial backward expansion
+centered on the POI to establish a local footprint; (2) an edge-first exploration
+focusing on low-degree frontier nodes to broaden the subgraph efficiently; and
+(3) a continuous constraint that anchors hypotheses to the tactical lifecycle </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>optimized specifically for code generation to power the Query
+Agent, thereby enhancing the fidelity of query translation. The Query Agent
+incorporates two pivotal self-feedback mechanisms. The first is the &quot;count-first&quot;
+protocol, engineered to mitigate the data explosion. Considering that high-degree
+nodes in provenance graphs may connect to tens of thousands of events, exe-
+cuting naive queries directly would return an immense volume of candidates,
+incurring significant computational overhead on irrelevant background noise.
+Therefore, before fetching any data, the Query Agent executes a counting probe
+to quantify the candidate volumen. If n exceeds a predefined thresholdθmax, it
+triggers a backpressure feedback signal, compelling the Planner to generate more
+stringent query instructions (e.g., by imposing tighter temporal windows). This
+self-optimization rigorously ensures the safety </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the &quot;count-first&quot; protocol, and
+the Adversarial Group adjudicates the intent of these events. Crucially, once an
+event is confirmed as attack-related, it triggers the Memory Agent to execute a
+context update, synchronously recalibrating both the fine-grained narrative and
+the coarse-grained tactical sequence to inform the next planning iteration.
+This iterative cycle is rigorously governed by multi-dimensional termination
+conditions designed to balance investigation completeness with operation safety.
+The orchestration loop terminates immediately if any of the following criteria are
+met: (1) logical completeness: the Planner autonomously infers via the coarse-
+grained context that the tactical chain has converged upon the root intrusion
+vector (e.g., the [Initial Access] stage), rendering further backward traversal
+redundant; (2) exploration sufficiency: the size of the attack-related </blockquote></details></li><li><strong>Contribution clarity — pages 11–12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>encapsulates the full suite of investigative capabilities within an
+independent GPT-5.2 instance. This agent operates via a standard ReAct [31]
+12 J. Wang et al.
+Table 2.Effectiveness of attack subgraph reconstruction across 14 evaluation scenarios.
+|G|reports the output subgraph size with the ground-truth size in parentheses
+Scenario NoDoze DepImpact Single-AgentMinos
+Rec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT)
+OpTC C1 0.69 0.14 128 (26) 0.69 0.23 78 (26) 0.38 0.10 152 (26) 0.92 0.63 38 (26)
+OpTC C2 0.72 0.16 225 (50) 0.58 0.22 132 (50) 0.42 0.11 148 (50) 0.90 0.60 75 (50)
+OpTC C3 0.66 0.09 257 (35) 0.63 0.20 110 (35) 0.40 0.09 145 (35) 0.89 0.57 54 (35)
+Aurora C1 0.88 0.18 83 (17) 0.82 0.30 46 (17) 0.65 0.25 68 (17) 1.00 0.74 23 (17)
+Aurora C2 0.70 0.12 134 (23) 0.74 0.20 85 (23) 0.58 0.20 75 (23) 0.96 0.69 32 (23)
+Aurora C3 0.74 0.12 167 (27) 0.70 0.45 42 </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(27) 0.56 0.22 72 (27) 0.93 0.76 33 (27)
+Trace C1 0.73 0.10 110 (15) 0.60 0.16 56 (15) 0.15 0.30 7 (15) 0.87 0.57 23 (15)
+Trace C2 0.78 0.15 94 (18) 0.67 0.22 55 (18) 0.22 0.33 10 (18) 0.89 0.62 26 (18)
+Theia C1 0.77 0.12 83 (13) 0.62 0.18 45 (13) 0.31 0.08 130 (13) 0.92 0.60 20 (13)
+Theia C2 0.80 0.17 141 (30) 0.70 0.26 81 (30) 0.38 0.10 120 (30) 0.93 0.67 42 (30)
+Cadets C1 0.71 0.24 50 (17) 0.65 0.20 55 (17) 0.35 0.07 195 (17) 1.00 0.71 24 (17)
+Cadets C2 0.50 0.05 80 (8) 0.50 0.13 31 (8) 0.38 0.06 200 (8) 0.75 0.50 12 (8)
+Cadets C3 0.61 0.20 134 (44) 0.73 0.35 92 (44) 0.42 0.08 185 (44) 0.95 0.68 62 (44)
+Cadets C4 0.76 0.14 114 (21) 0.57 0.29 42 (21) 0.38 0.09 180 (21) 0.90 0.63 30 (21)
+A verage0.72 0.14 129 (24) 0.66 0.24 68 (24) 0.40 0.15 120 (24)0.92 0.64 35 (24)
+prompting loop and is granted access to the identical database query and knowl-
+edge retrieval toolset asMinos. This </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>baseline serves as a controlled ablation to
+validate the architectural superiority of our multi-agent collaborative framework.
+We evaluate effectiveness using edge-level recall and precision, along with
+the final output subgraph size (|G|). For efficiency, we measure the end-to-end
+backward tracking time and total LLM token consumption.
+5.2 RQ1: Overall Effectiveness.
+Table 2 summarizes the performance of all systems across 14 attack scenar-
+ios. Generally,Minosachieves superior recall and precision while producing
+significantly more compact attack subgraphs than all baselines.
+Specifically, in complex scenarios involving massive background system activi-
+ties, such as the OpTC and Theia datasets, existing systems suffer severely from
+&quot;dependency explosion&quot;.NoDozeandDepImpactexhibit notably low precision,
+retaining hundreds of irrelevant edges due to their inability to distinguish </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inflating subgraphs to 130–200 edges with precision as low as 0.06–0.10.
+These results validate the architectural design ofMinos: multi-agent separation
+prevents context overflow, while adversarial assessment improves the accuracy of
+reasoning.
+Fig. 4 further reports the backward tracking overhead.NoDozeandDepIm-
+pact, as non-LLM statistical methods, complete tracking within seconds, whereas
+both LLM-based systems require substantially longer due to iterative inference
+latency.Minosachieves an average backward tracking time of 1,290 seconds,
+moderately faster than the Single-Agent baseline, while consuming significantly
+fewer tokens. The token efficiency gain stems directly fromMinos&#x27;s architecture:
+the &quot;count-first&quot; protocol prevents wasteful queries on high-degree nodes, and the
+adversarial assessment reduces the exploration on the wrong branches. Notably,
+on the Trace </blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>dataset,Minosrequires more time (1,758s) than the Single-Agent
+(558s), but this is because the Single-Agent terminates prematurely due to context
+overflow rather than completing a thorough investigation. While the LLM-based
+14 J. Wang et al.
+Table 3.Impact of LLM backbone selection averaged across all scenarios
+Query Agent Other Agents Rec. Prec.|G|(GT)Tokens
+Group A: Varying Query Agent (code generation)
+Qwen3-Coder-30B GPT-5.2 0.45 0.15 95(24) 305K
+Qwen3-Coder-480B GPT-5.2 0.76 0.36 62(24) 195K
+DeepSeek-R1 GPT-5.2 0.87 0.53 46(24) 198K
+Group B: Varying Other Agents (intent reasoning)
+GPT-5.2-Codex Qwen3.5-122B 0.76 0.33 65(24) 198K
+GPT-5.2-Codex Qwen-Max 0.91 0.62 37(24) 175K
+GPT-5.2-Codex DeepSeek-V3 0.85 0.48 50(24) 118K
+GPT-5.2-Codex DeepSeek-R1 0.88 0.55 42(24) 208K
+GPT-5.2-Codex GPT-5.2 0.920.64 35(24) 164K
+approaches incur approximately two orders of magnitude higher latency </blockquote></details></li><li><strong>Contribution clarity — pages 14–15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>demonstrates superior efficacy
+across all effectiveness metrics, confirming that deep thinking capability is the
+decisive factor for backward tracking.
+Overall, these results reveal clear selection criteria for each agent role: the
+Query Agent benefits most from code-generation optimized backbones, while the
+Minos: A Multi-Agent Collaborative Framework for Backward Tracking 15
+Table 4.Ablation study results averaged across all scenarios
+Configuration Rec. Prec.|G|(GT)Tokens
+Minos(Full) 0.92 0.64 35(24)164K
+Architectural Components:
+w/o Adversarial Reasoning 0.89 0.51 52(24) 128K
+w/o Fine-grained Context 0.72 0.68 28(24) 135K
+w/o Coarse-grained Context 0.94 0.28 98(24) 285K
+w/o Count-First Protocol 0.85 0.48 53(24) 248K
+Knowledge Components:
+w/o CTI Reports 0.72 0.49 49(24) 168K
+w/o MITRE ATT&amp;CK 0.78 0.42 48(24) 158K
+w/o Log Schema 0.90 0.58 40(24) 155K
+other agents demand models with </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deep thinking capabilities. In both cases, suffi-
+cient parameter scale serves as a necessary prerequisite for reliable performance.
+5.4 RQ3: Ablation Study.
+To evaluate the individual contribution of each design component, we conduct
+a systematic ablation study by selectively disabling one mechanism at a time.
+Table 4 presents the performance metrics averaged across all 14 scenarios.
+Among the architectural components, the two context layers exhibit comple-
+mentary degradation patterns that substantiate the design rationale in Section 3.
+Removing the coarse-grained context results in the most severe degradation:
+recall rises to 0.94, but precision plummets to 0.28 with the subgraph inflating
+to 98 edges, as the system loses the tactical boundary constraints and drifts into
+unbounded exploration. Conversely, removing the fine-grained context restricts
+each assessment to local topology, </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>causing recall to decline to 0.72 with a smaller
+subgraph of 28 edges, since the system can no longer traverse long-range causal
+chains without the support of evolving narrative memory. The precision rise
+reflects an expected trade-off rather than an improvement: deprived of long-range
+narrative, the Adversarial Group falls back on stricter local evidence and discards
+ambiguous mid-chain events, sacrificing a sizeable fraction of genuine cross-stage
+causal edges. Disabling the adversarial reasoning reduces precision from 0.64 to
+0.51 (subgraph: 35 → 52 edges), validating its role as the primary safeguard
+against sycophancy-induced false positives. Removing the &quot;count-first&quot; protocol
+incurs a substantial token overhead (164K→ 248K) alongside precision degrada-
+tion to 0.48, as the Query Agent fetches massive candidate sets from high-degree
+nodes, wasting resources and introducing </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>downstream noise.
+Regarding the knowledge components, removing the MITRE ATT&amp;CK knowl-
+edge base causes the most substantial decline, as it provides the structured tactical
+references that anchor coarse-grained context updates. CTI reports contribute
+moderately, providing complementary intelligence for novel adversarial techniques
+that exceed the LLM&#x27;s intrinsic knowledge. Finally, log schema removal produces
+a marginal impact, suggesting the LLM&#x27;s capability to partially compensate for
+common audit formats.
+16 J. Wang et al.</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>7.1 Limitations and Future Work.
+Despite its promising capabilities,Minospresents opportunities for further
+refinement. First, to address data privacy constraints regarding sensitive audit
+logs, future work will explore localized deployment via model fine-tuning and
+knowledge distillation, empowering smaller open-source models for local execution
+and eliminating data exfiltration risks. Second, to reduce reliance on POI event
+quality, we aim to develop a multi-POI joint tracking mechanism for parallel
+exploration and cross-validation, complemented by a credibility self-assessment
+module to dynamically adjust strategies when processing low-confidence inputs.
+7.2 Conclusion.
+In this paper, we presentedMinos, a multi-agent framework that reformu-
+lates provenance-based backward tracking as an LLM-driven reasoning process.
+Addressing semantic ambiguity and dependency </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +355,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

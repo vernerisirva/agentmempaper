@@ -59,16 +59,185 @@
             <p>MutMem V1 introduced retention-preserving, cryptographically authorized mutation for persistent agent memory but did not provide a complete portable verification contract or clean-install reproduction path. MutMem V2 closes that publication gap without introducing a second memory engine. It specifies exact canonical...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorously scoped, thoroughly specified protocol for reproducible cryptographic verification with dual-language implementation parity, accompanied by exemplary claim discipline and limitation accounting.</p>
+      <p>The manuscript transparently documents that cryptographic integrity does not ensure semantic factual truth, canary detection is limited to explicit markers, V2 utility was not empirically rerun, and empirical experiments lack external third-party replication [E6ec12bc01fe3b4d2-B0012, E6ec12bc01fe3b4d2-B0046, E6ec12bc01fe3b4d2-B0047, E6ec12bc01fe3b4d2-B0048, E6ec12bc01fe3b4d2-B0067].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:39:41.745426+00:00.</p>
+        <p>Coverage: 33108 of 33108 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MutMem V1, published as &quot;MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory,&quot;
+introduced retention-preserving, cryptographically authorized mutation for persistent agent memory and reported
+utility, mutation-integrity, and targeted-poisoning results. Its principal publication gap was not another retrieval
+mechanism: it was the absence of a complete portable verification contract and a reviewer-facing path from a
+clean installation to independently checkable evidence. MutMem V2 closes that gap without creating a second
+memory engine. It specifies exact canonical bytes, domain-separated object and bundle commitments, mandatory
+recall-evidence membership and order, external trust anchors, identity epochs, revocation state, authorization,
+request receipts, ordered disclosure, and three mutation terminals. The current protocol contains 18 versioned
+object schemas, 39 </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>recall predicate vectors, 15 mutation vectors, and 37 closed recall failure reasons. Independent
+Node and Python implementations agree on verdict and primary reason for all 72 structural and cryptographic
+terminals; a separate production-conformance corpus agrees on 42/42 cases spanning 28 required classes. A clean
+Node v26.8.1 installation reaches first-boot, restart, and scheduler readiness with no experimental memories. A
+separately scoped Canary experiment completes 120 explicit-marker and clean units; it is evidence of declared
+marker traversal only. Every public table is regenerated from a self-hashed aggregate, and an independent verifier
+reconstructs its statistics and claim boundaries. Historical V1 empirical results remain historical rather than
+being relabeled as V2 reruns. MutMem V2 supports claims about portable integrity, authorization, traceability,
+conformance, and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Persistent memory creates two separable research problems. The first is how an agent may adapt retained evidence
+while preserving authorship, prior state, and the reason for change. MutMem V1 addressed that problem with
+append-only outcome evidence, bounded bidirectional weight transitions, signed provenance, and ordered recall
+receipts [1]. The second problem is how a reviewer can verify those claims without trusting the production database,
+its runtime, or a prose description of the system. A self-consistent implementation is not yet a portable protocol:
+its object boundaries, byte encodings, trust roots, failure reasons, result cardinality, and terminal states must be
+explicit.
+MutMem V2 addresses the second problem. MutMem denotes the portable protocol; HOM-AIMOS is one producer
+and case study. The portable verifier does not select memories, authorize requests, sign events, mutate </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>storage,
+or operate a second runtime. It consumes finite evidence objects and returns a deterministic terminal verdict.
+[V2-PORTABLE-PROTOCOL]
+The paper makes four contributions:</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>results, with deterministic ordering, exact canonical bytes, and domain-separated SHA-256 commitments.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>authorization, signed request and receipt parity, native decision bindings, per-result provenance and occurrence
+evidence, Merkle order, and signed terminal receipts.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>transition, a signed no-op, and an occurrence observation.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>qualification, deterministic publication regeneration, an attempt ledger, and a complete claim-to-evidence map.
+The contribution is deliberately narrower than &quot;secure memory.&quot; Cryptographic integrity does not imply that
+remembered content is true. A fixed poisoning experiment does not imply universal detection. Exact verifier parity
+does not imply independent empirical replication. These are protocol boundaries, not disclaimers added after
+observing results. [CONTENT-TRUTH] [UNIVERSAL-DEFENSE][INDEPENDENT-REPLICATION]</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Let H = SHA256, letJ(x)be the protocol&#x27;s deterministic canonical-JSON bytes, letLP4(x)prepend the unsigned
+four-byte big-endian byte length of UTF-8 stringx, and letBEk(x)encode integer x in k big-endian bytes. Every
+variable-length field is either canonical JSON or explicitly length-framed. The object domainDo is the UTF-8 byte
+string hom.aimos.mutmem-portable-object/v2 followed by a zero byte. For kindkj, schemasj, and bodybj, the
+object commitment is
+oj =H(D o∥LP 4(kj)∥LP 4(sj)∥BE 4(|J(bj)|)∥J(b j)).(1)
+Bodies reject unsupported or non-finite numbers, unsafe integers, nesting beyond the protocol limit, and bodies larger
+than the declared maximum. Object schemas are exact, not advisory labels. These choices follow the prefix-free
+framing and domain-separation discipline used in cryptographic protocol design [6] and the deterministic JSON
+discipline standardized by JCS [5].</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Each recall bundle contains thirteen singleton objects: trust anchor; actor identity and revocation; Housekeeper
+identity and revocation; effective grant; request envelope; request receipt; content-state decision; epistemic decision;
+final security closure; return projection; and native recall receipt. Each disclosed result contributes five objects:
+memory state, provenance chain, occurrence, epistemic projection, and receipt evidence. Therefore, forrresults,
+Nobjects(r) = 13 + 5r,0≤r≤200.(2)
+3
+Every singleton kind occurs exactly once. Every result ordinal from0throughr− 1contains all five result kinds
+and one subject identifier shared across the group. Objects are ordered first by the fixed singleton order and then
+by result ordinal and fixed result-kind order. Duplicate, missing, mixed-subject, or out-of-range objects fail before
+relational evaluation.
+The ordered object descriptors </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>are committed with the RFC 6962 construction [3]. Ifxi denotes canonical bytes for
+descriptori,
+Li =H(0x00∥x i),(3)
+T(a,b) =H(0x01∥a∥b),(4)
+with an empty rootH(ϵ)and recursive split at the largest power of two strictly smaller than the current list length.
+Leaf/node domain separation prevents a node encoding from being confused with a leaf encoding under the hash
+assumption.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>LetDb be hom.aimos.mutmem-portable-evidence/v2followed by a zero byte,uthe bundle identifier,cthe company
+identifier, f the externally expected 32-byte master fingerprint,r the result count, andR the object root. The
+bundle commitment is
+B=H(D b∥LP 4(u)∥LP 4(c)∥f∥BE 8(r)∥R).(5)
+The master fingerprint is an input to verification; accepting the fingerprint solely because it appears inside the
+bundle would be circular trust. The structural predicate evaluator therefore reports that cryptographic signatures
+and external trust remain unverified. Independent verifiers must check them.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MutMem V2 does not introduce a new cognitive update rule. It preserves the native V1 mutation-outcome schema and
+makes its evidence portable. LetDµ be hom.aimos.mutmem-portable-mutation-evidence/v2 followed by a zero
+byte, and letM be the canonical body containing the recall commitment, outcome evidence, recall receipt, outcome
+event, signed valence evidence, terminal, and optional cognitive projection. The portable mutation commitment is
+4
+Bµ =H(D µ∥J(M)).(6)
+Three terminals are exhaustive:
+•authorized_transition : a principal-state outcome binds a terminal REWEIGHT provenance node and a
+nontrivial cognitive projection;
+•signed_noop : the signed outcome is retained, but no projection is fabricated when the quantized weight is
+unchanged; and
+•occurrence_observation: occurrence-scoped evidence is retained with no weight authority.
+For an authorized transition, the verifier reconstructs </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The production-language reference and independent Python implementation consume the same public vectors
+but do not share verifier code. Four lanes cover recall structure, mutation structure, recall cryptography, and
+mutation cryptography. Across all 72 vectors, both implementations match the expected valid/invalid terminal
+and exact primary reason. This count is not a benchmark accuracy denominator: it is a conformance denominator.
+[V2-INDEPENDENT-VERIFIER]
+The structural vector sets contain valid bundles and one negative vector for each declared recall or mutation failure
+family. Cryptographic vectors add signature, certificate, epoch, revocation, and trust-anchor checks. The verification
+implementation is read-only and has no runtime importer, database, network, signing, model, or policy authority.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A separate corpus projects production-shaped recall evidence into public test objects and evaluates it with the produc-
+tion protocol owners and an independent verifier. All 42 intended cases are observed, cover 28 required classes, and
+agree on terminal verdict and protocol reason. This establishes production/protocol conformance for the released cor-
+pus. It does not establish retrieval quality or robustness against unrepresented attacks.[V2-PRODUCTION-CONFORMANCE]</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>independent evidence verifier reconstructs 44 rate/Wilson rows and 28 McNemar/Holm rows. V1 bootstrap
+intervals are not repeated in V2 tables because their private rows are unavailable; retaining a historical point estimate
+is not the same as claiming independent row-level regeneration.
+6
+Table 1: Current MutMem V2 reproducibility and conformance evidence. Counts are verification units, not benchmark
+accuracy.
+Evidence family Verified result Interpretation
+Portable protocol 18 schemas; 39 recall vectors; 15
+mutation vectors; 37 recall failure
+codes
+Versioned bytes, membership,
+predicates, and terminal vocabulary
+Independent Node/Python
+verifier
+72/72 exact verdict and reason
+terminals; 10/10 exit criteria
+Verifier portability, not empirical utility
+Production conformance corpus 42/42 cases across 28 required classes Production/independent parity
+Canary explicit-marker lane marked 60/60; </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>clean flags 0/60 Explicit marker traversal only
+Clean installer qualification Node v26.8.1; first boot, restart, and
+scheduler ready; 0 experimental
+memories
+One same-user installed system; no
+benchmark result
+Table 2: Historical MutMem V1 results, reproduced from the self-hashed V1 aggregate. These are not current-source
+V2 reruns.
+Protocol and metric Historical V1 result Boundary
+LongMemEval, LLM-judged
+accuracy
+459/500 (91.80%; Wilson 95% CI
+89.06–93.90%)
+GPT-5.4 generator; GPT-5.6 Terra
+judge
+LoCoMo, LLM-judged accuracy 1472/1986 (74.12%; Wilson 95% CI
+72.15–76.00%)
+Distinct from token F1
+LoCoMo, category-aware token
+F1</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Commitment substitution.Under collision resistance, changing a canonical object field changes Equation 1, the
+object root, and Equation 5, except with negligible collision probability. Omitting or duplicating a mandatory object
+fails Equation 2 before signature verification.
+Authority substitution.A bundle does not choose its own trusted master. Actor and Housekeeper certificate
+chains, validity intervals, revocation observations, grant scope, signed request, and terminal event are checked against
+the externally selected trust anchor. Under Ed25519 unforgeability, altering a signed commitment without the
+corresponding private key fails signature verification.
+Ordering and terminal fidelity.Per-result ordinals and fixed kind order enter the Merkle root. The terminal
+event binds the request, authority, root, evidence list, return projection, and result count. Reordering a valid set </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>or
+replacing the terminal projection is detectable.
+These arguments establish tamper evidence under the assumptions. They do not prevent a storage administrator
+from destroying evidence, prove that signed content is true, or guarantee that every harmful input is detected.
+Availability and semantic validation require separate mechanisms and evidence.
+8</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>remain historical V1 results. V2 does not relabel them as results of the current source.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>experiments have not been repeated by an outside team.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>estimate unseen-attack generalization.
+6.SABER figures are omitted.Artifact custody is insufficient for numerical publication.</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MutMem V2 turns an implementation-bound integrity claim into a versioned, externally anchored verification
+protocol. Complete recall and mutation bundles bind canonical objects, cross-object authority, result identity, ordered
+disclosure, and terminal events. Independent Node and Python implementations agree on the full released terminal
+corpus, production-derived cases agree with the independent verifier, and one clean installer reaches restart-stable
+readiness. Publication tables, attempts, omissions, and limitations regenerate from a single evidence root.
+The result is a stronger reproducibility claim, not a broader security claim. Historical V1 empirical findings remain
+historical. Canary evidence remains marker-specific. SABER numerical evidence remains omitted. Integrity and
+authorization remain distinct from truth, and verifier independence remains distinct from independent </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>corpus, not benchmark efficacy.
+V2-CANARY CURRENT V2 120/120 Explicit marker traversal only; not arbitrary poison,
+prompt-injection, or semantic social-engineering detection.
+V2-CLEAN-
+INSTALLER
+CURRENT V2 one qualified
+installation and
+restart
+Reproducibility evidence only; not benchmark evidence.
+SABER-
+OPERATIONAL-
+NUMBERS
+OMITTED No numerical claim Exact private artifact is not in verified custody; no numerical
+V2 claim is permitted.
+CONTENT-TRUTH PROHIBITED No numerical claim Integrity, provenance, authorization, and agreement do not
+establish semantic truth.
+UNIVERSAL-
+DEFENSE
+PROHIBITED No numerical claim Fixed marker and N=100 evidence do not establish universal
+robustness.
+INDEPENDENT-
+REPLICATION
+PROHIBITED No numerical claim No outside team independently reproduced the system or
+empirical results.
+B Verifier and regeneration commands
+npm run verify
+npm run </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +276,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

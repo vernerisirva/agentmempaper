@@ -26,7 +26,7 @@
   "last_seen_date": "2026-09-17",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-03 11:21:57",
   "notified_date": "2026-09-03",
@@ -37,7 +37,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-03 11:20:37",
-    "generated_at": "2026-09-18 13:22:56",
+    "generated_at": "2026-09-18 18:46:09",
     "last_seen_at": "2026-09-17 11:47:24",
     "metadata_sources": [
       "openalex",
@@ -107,36 +107,1665 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:39:18.075830+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a robust, methodologically sound empirical analysis of agent memory vulnerabilities with exemplary experimental controls, clear separation of metric constructs, thorough statistical validation, and well-calibrated scientific claims.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 48897,
+      "assessment_input_sha256": "478a4d2a1f4594d3c64ef4f02ddcd3247c2654c6b159278e030b509d96044085",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.01852",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 47704,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 47103,
+      "evidence_block_count": 64,
+      "evidence_context_characters": 55238,
+      "evidence_context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+      "evidence_context_sha256": "480af8d004808c705430dbc78b56679252b70e5e4b79ee50dce7ceb03960c70a",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 47730,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "extracted_pages": 14,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "80fd87404733dc3dd5d0d154e43c8bd6c6b84fe540db01d642c1528f55066c94",
+        "source_url": "https://arxiv.org/pdf/2609.01852",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 47704,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "The Memory Trust Gap: Capability-Dependent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 176,
+          "supplied_characters": 176
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1862,
+          "supplied_characters": 1862
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1267,
+          "supplied_characters": 1267
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 1129,
+          "supplied_characters": 1129
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2906,
+          "supplied_characters": 2906
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 5,
+          "source_characters": 200,
+          "supplied_characters": 200
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 489,
+          "supplied_characters": 489
+        },
+        {
+          "heading": "Benchmark And 2 Suites",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 7,
+          "source_characters": 1747,
+          "supplied_characters": 1747
+        },
+        {
+          "heading": "Conditions And Scoring",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 782,
+          "supplied_characters": 782
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 750,
+          "supplied_characters": 750
+        },
+        {
+          "heading": "Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 958,
+          "supplied_characters": 958
+        },
+        {
+          "heading": "Question 1: Harm And The Onset Of Net Harm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 310,
+          "supplied_characters": 310
+        },
+        {
+          "heading": "Over-Trust Is Universal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1111,
+          "supplied_characters": 1111
+        },
+        {
+          "heading": "Net Harm In The Safety Suite: The Trap Sweep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 864,
+          "supplied_characters": 864
+        },
+        {
+          "heading": "Net Harm In The Safety Suite: The Trap Sweep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 832,
+          "supplied_characters": 832
+        },
+        {
+          "heading": "L0 L1 L2 L3",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 739,
+          "supplied_characters": 739
+        },
+        {
+          "heading": "Question 2: Which Memory Feature Triggers Over-Trust, And Does It Scale?",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 388,
+          "supplied_characters": 388
+        },
+        {
+          "heading": "The Memory Feature Factorial",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1110,
+          "supplied_characters": 1110
+        },
+        {
+          "heading": "The Memory Feature Factorial",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1114,
+          "supplied_characters": 1114
+        },
+        {
+          "heading": "Direct Cross-Size Interaction Tests",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 897,
+          "supplied_characters": 897
+        },
+        {
+          "heading": "Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1481,
+          "supplied_characters": 1481
+        },
+        {
+          "heading": "Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1760,
+          "supplied_characters": 1760
+        },
+        {
+          "heading": "Question 3: Mitigation Is Capability-Dependent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1030,
+          "supplied_characters": 1030
+        },
+        {
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 23,
+          "source_characters": 1193,
+          "supplied_characters": 1193
+        },
+        {
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 24,
+          "source_characters": 3472,
+          "supplied_characters": 3472
+        },
+        {
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 25,
+          "source_characters": 1485,
+          "supplied_characters": 1485
+        },
+        {
+          "heading": "Discussion And Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "discussion",
+          "section_index": 26,
+          "source_characters": 2107,
+          "supplied_characters": 2107
+        },
+        {
+          "heading": "Back matter: Author Contributions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "introduction",
+          "section_index": 27,
+          "source_characters": 301,
+          "supplied_characters": 301
+        },
+        {
+          "heading": "Back matter: Acknowledgments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 319,
+          "supplied_characters": 319
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 2689,
+          "supplied_characters": 2689
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 1355,
+          "supplied_characters": 1355
+        },
+        {
+          "heading": "Appendix: A Methods Reference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 1945,
+          "supplied_characters": 1945
+        },
+        {
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 32,
+          "source_characters": 325,
+          "supplied_characters": 325
+        },
+        {
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 33,
+          "source_characters": 2536,
+          "supplied_characters": 2536
+        },
+        {
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 3826,
+          "supplied_characters": 3826
+        },
+        {
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 367,
+          "supplied_characters": 367
+        },
+        {
+          "heading": "Rgb (Mcq)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 1281,
+          "supplied_characters": 1281
+        }
+      ],
+      "selected_characters": 47103,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "selected_sections": [
+        {
+          "characters": 176,
+          "heading": "The Memory Trust Gap: Capability-Dependent",
+          "page": 1
+        },
+        {
+          "characters": 1862,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1267,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 1129,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2906,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 200,
+          "heading": "Experimental Setup",
+          "page": 2
+        },
+        {
+          "characters": 489,
+          "heading": "Experimental Setup",
+          "page": 3
+        },
+        {
+          "characters": 1747,
+          "heading": "Benchmark And 2 Suites",
+          "page": 3
+        },
+        {
+          "characters": 782,
+          "heading": "Conditions And Scoring",
+          "page": 3
+        },
+        {
+          "characters": 750,
+          "heading": "Metrics",
+          "page": 3
+        },
+        {
+          "characters": 958,
+          "heading": "Metrics",
+          "page": 4
+        },
+        {
+          "characters": 310,
+          "heading": "Question 1: Harm And The Onset Of Net Harm",
+          "page": 4
+        },
+        {
+          "characters": 1111,
+          "heading": "Over-Trust Is Universal",
+          "page": 4
+        },
+        {
+          "characters": 864,
+          "heading": "Net Harm In The Safety Suite: The Trap Sweep",
+          "page": 4
+        },
+        {
+          "characters": 832,
+          "heading": "Net Harm In The Safety Suite: The Trap Sweep",
+          "page": 5
+        },
+        {
+          "characters": 739,
+          "heading": "L0 L1 L2 L3",
+          "page": 5
+        },
+        {
+          "characters": 388,
+          "heading": "Question 2: Which Memory Feature Triggers Over-Trust, And Does It Scale?",
+          "page": 5
+        },
+        {
+          "characters": 1110,
+          "heading": "The Memory Feature Factorial",
+          "page": 5
+        },
+        {
+          "characters": 1114,
+          "heading": "The Memory Feature Factorial",
+          "page": 6
+        },
+        {
+          "characters": 897,
+          "heading": "Direct Cross-Size Interaction Tests",
+          "page": 6
+        },
+        {
+          "characters": 1481,
+          "heading": "Dose-Response Deep-Dives",
+          "page": 6
+        },
+        {
+          "characters": 1760,
+          "heading": "Dose-Response Deep-Dives",
+          "page": 7
+        },
+        {
+          "characters": 1030,
+          "heading": "Question 3: Mitigation Is Capability-Dependent",
+          "page": 7
+        },
+        {
+          "characters": 1193,
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "page": 7
+        },
+        {
+          "characters": 3472,
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "page": 8
+        },
+        {
+          "characters": 1485,
+          "heading": "Validation: External, Cross-Family, And Controls",
+          "page": 9
+        },
+        {
+          "characters": 2107,
+          "heading": "Discussion And Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 301,
+          "heading": "Back matter: Author Contributions",
+          "page": 10
+        },
+        {
+          "characters": 319,
+          "heading": "Back matter: Acknowledgments",
+          "page": 10
+        },
+        {
+          "characters": 2689,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 1355,
+          "heading": "Unclassified body after references",
+          "page": 11
+        },
+        {
+          "characters": 1945,
+          "heading": "Appendix: A Methods Reference",
+          "page": 11
+        },
+        {
+          "characters": 325,
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "page": 11
+        },
+        {
+          "characters": 2536,
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "page": 12
+        },
+        {
+          "characters": 3826,
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "page": 13
+        },
+        {
+          "characters": 367,
+          "heading": "Appendix: B Memory Feature Dose-Response Deep-Dives",
+          "page": 14
+        },
+        {
+          "characters": 1281,
+          "heading": "Rgb (Mcq)",
+          "page": 14
+        }
+      ],
+      "selected_text_sha256": "478a4d2a1f4594d3c64ef4f02ddcd3247c2654c6b159278e030b509d96044085",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "80fd87404733dc3dd5d0d154e43c8bd6c6b84fe540db01d642c1528f55066c94",
+      "source_pages": 14,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0002"
+        ],
+        "excerpt": "Persistent memory supports personalized agents, but a stale stored fact can override\ncurrent authoritative evidence without warning. We study when this harm begins\nas model capability changes. We evaluate a frozen, closed-set, action-scored\nbenchmark with 2 suites that represent 2 different meanings of \"no memory\" (a\nBenefit suite, unsolvable without the stored fact, and a Safety suite, in which an\nauthoritative tool always holds the correct value), on a same-family model-size\nseries (Qwen3 0.6/1.7/4/8B). The Memory Trust Gap reflects over-trust rather\nthan confusion. In the Benefit suite, models answer with the stale value 0.92\u2013\n1.00 of the time at every scale. In the Safety suite, harm below the no-memory\nbaseline under the trap conditions ( \u2206mem) is capability-gated, with the larger\nmodels collapsing most once a stale note is made to look current. In a 2\u00d72\u00d72\u00d72\nfactorial, which ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "505caa7801cfa14002ceb211c497fc1efe371a95f16d4df0b2cd50a1a321945f",
+            "evidence_id": "E0296a9e0feac3d05-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Persistent memory supports personalized agents, but a stale stored fact can override\ncurrent authoritative evidence without warning. We study when this harm begins\nas model capability changes. We evaluate a frozen, closed-set, action-scored\nbenchmark with 2 suites that represent 2 different meanings of \"no memory\" (a\nBenefit suite, unsolvable without the stored fact, and a Safety suite, in which an\nauthoritative tool always holds the correct value), on a same-family model-size\nseries (Qwen3 0.6/1.7/4/8B). The Memory Trust Gap reflects over-trust rather\nthan confusion. In the Benefit suite, models answer with the stale value 0.92\u2013\n1.00 of the time at every scale. In the Safety suite, harm below the no-memory\nbaseline under the trap conditions ( \u2206mem) is capability-gated, with the larger\nmodels collapsing most once a stale note is made to look current. In a 2\u00d72\u00d72\u00d72\nfactorial, which "
+              }
+            ],
+            "text": "Persistent memory supports personalized agents, but a stale stored fact can override\ncurrent authoritative evidence without warning. We study when this harm begins\nas model capability changes. We evaluate a frozen, closed-set, action-scored\nbenchmark with 2 suites that represent 2 different meanings of \"no memory\" (a\nBenefit suite, unsolvable without the stored fact, and a Safety suite, in which an\nauthoritative tool always holds the correct value), on a same-family model-size\nseries (Qwen3 0.6/1.7/4/8B). The Memory Trust Gap reflects over-trust rather\nthan confusion. In the Benefit suite, models answer with the stale value 0.92\u2013\n1.00 of the time at every scale. In the Safety suite, harm below the no-memory\nbaseline under the trap conditions ( \u2206mem) is capability-gated, with the larger\nmodels collapsing most once a stale note is made to look current. In a 2\u00d72\u00d72\u00d72\nfactorial, which "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0006"
+        ],
+        "excerpt": "observable memory\nfeatures trigger it. We study how memory structure and model capability shape the failure through 3\nquestions: harm (\u00a74), trigger (\u00a75), and mitigation (\u00a76). Each has a dedicated results section.\n\u2217Corresponding author (jundongh@alumni.upenn.edu). Jundong Hu led and carried out the research end to end.\nPreprint.\narXiv:2609.01852v1  [cs.AI]  1 Sep 2026\nContributions.\n\u2022 Abenchmark: a 2-suite, closed-set, action-scored design that separates the 2 incompatible\nmeanings of \"no memory\", a Benefit suite (the stored fact is required; no-memory floored at\nchance) and a Safety suite (an authoritative tool always holds the correct value; no-memory\nceilinged), frozen and SHA-256 pinned (\u00a73).\n\u2022 Theharmresult: the Trust Gap is over-trust rather than confusion. Stale-value reliance\nstays \u22481.0 across the model-size series, yet the paired net harm (\u2206mem) is capability-gated,\nappearing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2363557c1ac85e2342c9989a2537186e94cbdf0b4cd78ef8115d3205bc6216ad",
+            "evidence_id": "E0296a9e0feac3d05-B0006",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1267,
+                "page": 1,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 898,
+                "text": "observable memory\nfeatures trigger it. We study how memory structure and model capability shape the failure through 3\nquestions: harm (\u00a74), trigger (\u00a75), and mitigation (\u00a76). Each has a dedicated results section.\n\u2217Corresponding author (jundongh@alumni.upenn.edu). Jundong Hu led and carried out the research end to end.\nPreprint.\narXiv:2609.01852v1  [cs.AI]  1 Sep 2026"
+              },
+              {
+                "end": 527,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Contributions.\n\u2022 Abenchmark: a 2-suite, closed-set, action-scored design that separates the 2 incompatible\nmeanings of \"no memory\", a Benefit suite (the stored fact is required; no-memory floored at\nchance) and a Safety suite (an authoritative tool always holds the correct value; no-memory\nceilinged), frozen and SHA-256 pinned (\u00a73).\n\u2022 Theharmresult: the Trust Gap is over-trust rather than confusion. Stale-value reliance\nstays \u22481.0 across the model-size series, yet the paired net harm (\u2206mem) is capability-gated,\nappearing "
+              }
+            ],
+            "text": "observable memory\nfeatures trigger it. We study how memory structure and model capability shape the failure through 3\nquestions: harm (\u00a74), trigger (\u00a75), and mitigation (\u00a76). Each has a dedicated results section.\n\u2217Corresponding author (jundongh@alumni.upenn.edu). Jundong Hu led and carried out the research end to end.\nPreprint.\narXiv:2609.01852v1  [cs.AI]  1 Sep 2026\nContributions.\n\u2022 Abenchmark: a 2-suite, closed-set, action-scored design that separates the 2 incompatible\nmeanings of \"no memory\", a Benefit suite (the stored fact is required; no-memory floored at\nchance) and a Safety suite (an authoritative tool always holds the correct value; no-memory\nceilinged), frozen and SHA-256 pinned (\u00a73).\n\u2022 Theharmresult: the Trust Gap is over-trust rather than confusion. Stale-value reliance\nstays \u22481.0 across the model-size series, yet the paired net harm (\u2206mem) is capability-gated,\nappearing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0007"
+        ],
+        "excerpt": "only once a model is accurate enough for the stale value to cost it (\u00a74\u20134.2).\n\u2022 A decomposition of thetriggerwith a factorial and direct cross-size interaction tests,\nshowing which memory feature triggers the failure shifts with model scale (\u00a75).\n\u2022 Amitigationstudy with a representation comparison, finding the fix is capability-dependent:\nmetadata improves accuracy for the capable models, while only pre-resolution restores it for\nthe smaller ones (\u00a76).\n\u2022 Validation: external (RGB, MisBench) and cross-family (Llama-Instruct) evidence, plus a\ncontrol showing the effect is not memory-specific (\u00a77).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "30d8bd537fb9ad041e21b1beacc4a502a5126a82bd9648748561cf99190bd9b6",
+            "evidence_id": "E0296a9e0feac3d05-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1129,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 527,
+                "text": "only once a model is accurate enough for the stale value to cost it (\u00a74\u20134.2).\n\u2022 A decomposition of thetriggerwith a factorial and direct cross-size interaction tests,\nshowing which memory feature triggers the failure shifts with model scale (\u00a75).\n\u2022 Amitigationstudy with a representation comparison, finding the fix is capability-dependent:\nmetadata improves accuracy for the capable models, while only pre-resolution restores it for\nthe smaller ones (\u00a76).\n\u2022 Validation: external (RGB, MisBench) and cross-family (Llama-Instruct) evidence, plus a\ncontrol showing the effect is not memory-specific (\u00a77)."
+              }
+            ],
+            "text": "only once a model is accurate enough for the stale value to cost it (\u00a74\u20134.2).\n\u2022 A decomposition of thetriggerwith a factorial and direct cross-size interaction tests,\nshowing which memory feature triggers the failure shifts with model scale (\u00a75).\n\u2022 Amitigationstudy with a representation comparison, finding the fix is capability-dependent:\nmetadata improves accuracy for the capable models, while only pre-resolution restores it for\nthe smaller ones (\u00a76).\n\u2022 Validation: external (RGB, MisBench) and cross-family (Llama-Instruct) evidence, plus a\ncontrol showing the effect is not memory-specific (\u00a77)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0013"
+        ],
+        "excerpt": "Because \"no memory\" has 2 incompatible meanings here, we split the benchmark into 2 suites. In\nthe Benefit suite (A) the task is unsolvable without the stored fact (\"book my usual airline\"); no\ncurrent context is present, so the no-memory baseline is floored at chance and the harm of interest is\nover-trusting a stale stored fact. In the Safety suite (B) an authoritative tool holds the correct value in\nevery condition, so the no-memory baseline is ceilinged; here we can measure net harm, which is\nfollowing a stale memory over the current authoritative value and so dropping accuracy below not\nhaving the memory at all.\nTable 1 makes the design concrete with a single Safety-suite scenario: an authoritative calendar tool\nalways holds the correct room, and the stored memory is what varies across the 4 conditions defined\nnext. The Benefit-suite version of the same task simply omits the tool, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark And 2 Suites",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e5c2b146d65cde341e6dd6a507cf1156fead0aba2bf923adbf7180d2619694b9",
+            "evidence_id": "E0296a9e0feac3d05-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark And 2 Suites",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 3,
+                "section": "Benchmark And 2 Suites",
+                "section_index": 7,
+                "start": 0,
+                "text": "Because \"no memory\" has 2 incompatible meanings here, we split the benchmark into 2 suites. In\nthe Benefit suite (A) the task is unsolvable without the stored fact (\"book my usual airline\"); no\ncurrent context is present, so the no-memory baseline is floored at chance and the harm of interest is\nover-trusting a stale stored fact. In the Safety suite (B) an authoritative tool holds the correct value in\nevery condition, so the no-memory baseline is ceilinged; here we can measure net harm, which is\nfollowing a stale memory over the current authoritative value and so dropping accuracy below not\nhaving the memory at all.\nTable 1 makes the design concrete with a single Safety-suite scenario: an authoritative calendar tool\nalways holds the correct room, and the stored memory is what varies across the 4 conditions defined\nnext. The Benefit-suite version of the same task simply omits the tool, "
+              }
+            ],
+            "text": "Because \"no memory\" has 2 incompatible meanings here, we split the benchmark into 2 suites. In\nthe Benefit suite (A) the task is unsolvable without the stored fact (\"book my usual airline\"); no\ncurrent context is present, so the no-memory baseline is floored at chance and the harm of interest is\nover-trusting a stale stored fact. In the Safety suite (B) an authoritative tool holds the correct value in\nevery condition, so the no-memory baseline is ceilinged; here we can measure net harm, which is\nfollowing a stale memory over the current authoritative value and so dropping accuracy below not\nhaving the memory at all.\nTable 1 makes the design concrete with a single Safety-suite scenario: an authoritative calendar tool\nalways holds the correct room, and the stored memory is what varies across the 4 conditions defined\nnext. The Benefit-suite version of the same task simply omits the tool, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0014"
+        ],
+        "excerpt": "so no_memory can no longer\nrecover the answer.\nAbase scenariois a single templated situation with a fixed ground-truth action and slot values (the\nroom booking in Table 1 is one); scenarios that share a template but draw different slot values from a\ncurated pool (other rooms, users, or tools) form atemplate family. The frozen benchmark (v1) has\n300 base scenarios (150 per suite), expanded from a 56-scenario pilot by a deterministic curated-pool\ngenerator and pinned by SHA-256 with a manifest; the 150 scenarios per suite span 33 template\nfamilies (the resampling unit for the cluster bootstrap in \u00a75). Before freezing, the authors manually\nreviewed all 300 base scenarios, reading each to confirm a single unambiguous, tool-consistent\nground-truth action, correct suite and condition assignment, and the absence of harmful or sensitive\ncontent.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Benchmark And 2 Suites",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a3e63116f88964d8954ff63de1283190a8ada6ed1bc1645e36453ff94c38d170",
+            "evidence_id": "E0296a9e0feac3d05-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Benchmark And 2 Suites",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1747,
+                "page": 3,
+                "section": "Benchmark And 2 Suites",
+                "section_index": 7,
+                "start": 898,
+                "text": "so no_memory can no longer\nrecover the answer.\nAbase scenariois a single templated situation with a fixed ground-truth action and slot values (the\nroom booking in Table 1 is one); scenarios that share a template but draw different slot values from a\ncurated pool (other rooms, users, or tools) form atemplate family. The frozen benchmark (v1) has\n300 base scenarios (150 per suite), expanded from a 56-scenario pilot by a deterministic curated-pool\ngenerator and pinned by SHA-256 with a manifest; the 150 scenarios per suite span 33 template\nfamilies (the resampling unit for the cluster bootstrap in \u00a75). Before freezing, the authors manually\nreviewed all 300 base scenarios, reading each to confirm a single unambiguous, tool-consistent\nground-truth action, correct suite and condition assignment, and the absence of harmful or sensitive\ncontent."
+              }
+            ],
+            "text": "so no_memory can no longer\nrecover the answer.\nAbase scenariois a single templated situation with a fixed ground-truth action and slot values (the\nroom booking in Table 1 is one); scenarios that share a template but draw different slot values from a\ncurated pool (other rooms, users, or tools) form atemplate family. The frozen benchmark (v1) has\n300 base scenarios (150 per suite), expanded from a 56-scenario pilot by a deterministic curated-pool\ngenerator and pinned by SHA-256 with a manifest; the 150 scenarios per suite span 33 template\nfamilies (the resampling unit for the cluster bootstrap in \u00a75). Before freezing, the authors manually\nreviewed all 300 base scenarios, reading each to confirm a single unambiguous, tool-consistent\nground-truth action, correct suite and condition assignment, and the absence of harmful or sensitive\ncontent."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0015"
+        ],
+        "excerpt": "Each item produces a constrained action. We score the action using an exact, regex, or canonical\nmatch against the construction-time ground truth (no LLM judge), manually validated against human\nreading on a random sample of outputs. The benchmark uses 4 conditions: no_memory (baseline,\nfloored in the Benefit suite, ceilinged in Safety), clean (memory agrees with the truth; the upper\nbound), stale (memory holds an outdated value; the harm condition), and explicit_conflict\n(the stale and correct values are both stored; an adjudication stress test). To remove any position\nprior over the answer options we usecircular option-permutation averaging( noptions=3, chance\n\u22480.33 ): each scenario is scored under every cyclic rotation of its options and averaged before any\ncomparison.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conditions And Scoring",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c691f75c467c997929d7302ff4fab0f013b3b881e1e7df1703b75378144eb767",
+            "evidence_id": "E0296a9e0feac3d05-B0015",
+            "pages": [
+              3
+            ],
+            "section": "Conditions And Scoring",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 782,
+                "page": 3,
+                "section": "Conditions And Scoring",
+                "section_index": 8,
+                "start": 0,
+                "text": "Each item produces a constrained action. We score the action using an exact, regex, or canonical\nmatch against the construction-time ground truth (no LLM judge), manually validated against human\nreading on a random sample of outputs. The benchmark uses 4 conditions: no_memory (baseline,\nfloored in the Benefit suite, ceilinged in Safety), clean (memory agrees with the truth; the upper\nbound), stale (memory holds an outdated value; the harm condition), and explicit_conflict\n(the stale and correct values are both stored; an adjudication stress test). To remove any position\nprior over the answer options we usecircular option-permutation averaging( noptions=3, chance\n\u22480.33 ): each scenario is scored under every cyclic rotation of its options and averaged before any\ncomparison."
+              }
+            ],
+            "text": "Each item produces a constrained action. We score the action using an exact, regex, or canonical\nmatch against the construction-time ground truth (no LLM judge), manually validated against human\nreading on a random sample of outputs. The benchmark uses 4 conditions: no_memory (baseline,\nfloored in the Benefit suite, ceilinged in Safety), clean (memory agrees with the truth; the upper\nbound), stale (memory holds an outdated value; the harm condition), and explicit_conflict\n(the stale and correct values are both stored; an adjudication stress test). To remove any position\nprior over the answer options we usecircular option-permutation averaging( noptions=3, chance\n\u22480.33 ): each scenario is scored under every cyclic rotation of its options and averaged before any\ncomparison."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0016"
+        ],
+        "excerpt": "We report 2 separate quantities. reliance is a behavior, how often the model acts on the stale value,\nwhile\u2206 mem is an outcome measured against the baseline:\nreliance=P(\u02c6a=a stale),\u2206 mem = acc(cond)\u2212acc\n\u0000\nno_memory\n\u0001\n,\nwhere \u02c6ais the model's action and astale the stale value. reliance is position-independent after circular\naveraging, and \u2206mem is paired per scenario. A model can have reliance \u22481.0 while \u2206mem harm is\nsmall (weak baseline) or large (strong baseline): larger models have more accuracy to lose when they\nover-trust. Thus, reliance can remain high even when the amount of net harm differs across model\nsizes. For the Safety suite we also report the capability threshold\n\u03c1\u2217 = min\n\b\n\u2113:CI upper bound of stale\u2206 mem at trap level\u2113 <0\n\t\n,\n3\n0.6B 1.7B 4B 8B\nmodel scale \n0.0\n0.2\n0.4\n0.6\n0.8\n1.0follow-stale reliance\nchance 0.33\nOver-trust: the model answers the stale value\nstale ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Metrics",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b6511ecb2a3a578eb9c408634ff7d49ddba23ca5ce58a8c38b2bf83c121f2d3a",
+            "evidence_id": "E0296a9e0feac3d05-B0016",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Metrics",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 750,
+                "page": 3,
+                "section": "Metrics",
+                "section_index": 9,
+                "start": 0,
+                "text": "We report 2 separate quantities. reliance is a behavior, how often the model acts on the stale value,\nwhile\u2206 mem is an outcome measured against the baseline:\nreliance=P(\u02c6a=a stale),\u2206 mem = acc(cond)\u2212acc\n\u0000\nno_memory\n\u0001\n,\nwhere \u02c6ais the model's action and astale the stale value. reliance is position-independent after circular\naveraging, and \u2206mem is paired per scenario. A model can have reliance \u22481.0 while \u2206mem harm is\nsmall (weak baseline) or large (strong baseline): larger models have more accuracy to lose when they\nover-trust. Thus, reliance can remain high even when the amount of net harm differs across model\nsizes. For the Safety suite we also report the capability threshold\n\u03c1\u2217 = min\n\b\n\u2113:CI upper bound of stale\u2206 mem at trap level\u2113 <0\n\t\n,\n3"
+              },
+              {
+                "end": 138,
+                "page": 4,
+                "section": "Metrics",
+                "section_index": 10,
+                "start": 0,
+                "text": "0.6B 1.7B 4B 8B\nmodel scale \n0.0\n0.2\n0.4\n0.6\n0.8\n1.0follow-stale reliance\nchance 0.33\nOver-trust: the model answers the stale value\nstale "
+              }
+            ],
+            "text": "We report 2 separate quantities. reliance is a behavior, how often the model acts on the stale value,\nwhile\u2206 mem is an outcome measured against the baseline:\nreliance=P(\u02c6a=a stale),\u2206 mem = acc(cond)\u2212acc\n\u0000\nno_memory\n\u0001\n,\nwhere \u02c6ais the model's action and astale the stale value. reliance is position-independent after circular\naveraging, and \u2206mem is paired per scenario. A model can have reliance \u22481.0 while \u2206mem harm is\nsmall (weak baseline) or large (strong baseline): larger models have more accuracy to lose when they\nover-trust. Thus, reliance can remain high even when the amount of net harm differs across model\nsizes. For the Safety suite we also report the capability threshold\n\u03c1\u2217 = min\n\b\n\u2113:CI upper bound of stale\u2206 mem at trap level\u2113 <0\n\t\n,\n3\n0.6B 1.7B 4B 8B\nmodel scale \n0.0\n0.2\n0.4\n0.6\n0.8\n1.0follow-stale reliance\nchance 0.33\nOver-trust: the model answers the stale value\nstale "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0019"
+        ],
+        "excerpt": "Figure 1 and Table 2 give the main results. In the Benefit suite, the stale-value reliance is 0.92 / 0.99\n/ 1.00 / 1.00 across 0.6/1.7/4/8B, and the paired harm is \u2206mem =\u22120.33 / \u22120.35 / \u22120.35 / \u22120.37\n(all CI upper bounds <0 ). The baseline check supports this interpretation: the Benefit no-memory\nbaseline is 0.35\u20130.37 with a CI that contains chance (0.33), so the suite is genuinely floored and the\ncollapse understaleis not a formatting artifact.\nThe explicit_conflict condition shows the difference most clearly. Even when the correct value\nis stored in memory right beside the stale one, the reliance crossover is 0.50 / 0.50 / 0.01 / 0.00:\nthe small models follow the stale value half the time even with the correct value present, while the\ncapable models resist. This pattern is consistent with reliance on the stored value rather than random\nchoice.\nThe Benefit suite cannot give a clean ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Over-Trust Is Universal",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3f78be1666f80138522a72ec133ededc623364ec2ed9d581b2dc541adcf4ebc6",
+            "evidence_id": "E0296a9e0feac3d05-B0019",
+            "pages": [
+              4
+            ],
+            "section": "Over-Trust Is Universal",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 4,
+                "section": "Over-Trust Is Universal",
+                "section_index": 12,
+                "start": 0,
+                "text": "Figure 1 and Table 2 give the main results. In the Benefit suite, the stale-value reliance is 0.92 / 0.99\n/ 1.00 / 1.00 across 0.6/1.7/4/8B, and the paired harm is \u2206mem =\u22120.33 / \u22120.35 / \u22120.35 / \u22120.37\n(all CI upper bounds <0 ). The baseline check supports this interpretation: the Benefit no-memory\nbaseline is 0.35\u20130.37 with a CI that contains chance (0.33), so the suite is genuinely floored and the\ncollapse understaleis not a formatting artifact.\nThe explicit_conflict condition shows the difference most clearly. Even when the correct value\nis stored in memory right beside the stale one, the reliance crossover is 0.50 / 0.50 / 0.01 / 0.00:\nthe small models follow the stale value half the time even with the correct value present, while the\ncapable models resist. This pattern is consistent with reliance on the stored value rather than random\nchoice.\nThe Benefit suite cannot give a clean "
+              }
+            ],
+            "text": "Figure 1 and Table 2 give the main results. In the Benefit suite, the stale-value reliance is 0.92 / 0.99\n/ 1.00 / 1.00 across 0.6/1.7/4/8B, and the paired harm is \u2206mem =\u22120.33 / \u22120.35 / \u22120.35 / \u22120.37\n(all CI upper bounds <0 ). The baseline check supports this interpretation: the Benefit no-memory\nbaseline is 0.35\u20130.37 with a CI that contains chance (0.33), so the suite is genuinely floored and the\ncollapse understaleis not a formatting artifact.\nThe explicit_conflict condition shows the difference most clearly. Even when the correct value\nis stored in memory right beside the stale one, the reliance crossover is 0.50 / 0.50 / 0.01 / 0.00:\nthe small models follow the stale value half the time even with the correct value present, while the\ncapable models resist. This pattern is consistent with reliance on the stored value rather than random\nchoice.\nThe Benefit suite cannot give a clean "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0021"
+        ],
+        "excerpt": "In the Safety suite the no-memory baseline is preserved (no-mem \u22650.98 in every cell), so any\nnegative \u2206mem is genuine net harm: the model follows a stale memory over an authoritative tool.\nWe vary the conditions that make the stale note increasingly plausible (levels L0\u2013L3, e.g. inflating\nits apparent recency) and report \u03c1\u2217 as the first significant level rather than fitting a continuous\nrelationship (Figure 2, Table 3). The 0.6B model crosses into significant net harm already at L0,\nwhereas 1.7B/4B/8B first cross at L1: \u03c1\u2217 = 0/1/1/1. The threshold therefore separates the 0.6B\nmodel from the other 3 models; it does not produce a monotone ordering by capability.\nAt the higher recency-inflated levels, the size ordering changes. At L3, the 8B model has reliance\n1.00 and \u2206mem \u22121.00; at L2, the 4B model has reliance 0.83. Making the stale note appear newer\n4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Net Harm In The Safety Suite: The Trap Sweep",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "994e8e49bffacbc2e4d746cb408ecc418173994ae2b978570074896d89fb1f9a",
+            "evidence_id": "E0296a9e0feac3d05-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Net Harm In The Safety Suite: The Trap Sweep",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 864,
+                "page": 4,
+                "section": "Net Harm In The Safety Suite: The Trap Sweep",
+                "section_index": 13,
+                "start": 0,
+                "text": "In the Safety suite the no-memory baseline is preserved (no-mem \u22650.98 in every cell), so any\nnegative \u2206mem is genuine net harm: the model follows a stale memory over an authoritative tool.\nWe vary the conditions that make the stale note increasingly plausible (levels L0\u2013L3, e.g. inflating\nits apparent recency) and report \u03c1\u2217 as the first significant level rather than fitting a continuous\nrelationship (Figure 2, Table 3). The 0.6B model crosses into significant net harm already at L0,\nwhereas 1.7B/4B/8B first cross at L1: \u03c1\u2217 = 0/1/1/1. The threshold therefore separates the 0.6B\nmodel from the other 3 models; it does not produce a monotone ordering by capability.\nAt the higher recency-inflated levels, the size ordering changes. At L3, the 8B model has reliance\n1.00 and \u2206mem \u22121.00; at L2, the 4B model has reliance 0.83. Making the stale note appear newer\n4"
+              }
+            ],
+            "text": "In the Safety suite the no-memory baseline is preserved (no-mem \u22650.98 in every cell), so any\nnegative \u2206mem is genuine net harm: the model follows a stale memory over an authoritative tool.\nWe vary the conditions that make the stale note increasingly plausible (levels L0\u2013L3, e.g. inflating\nits apparent recency) and report \u03c1\u2217 as the first significant level rather than fitting a continuous\nrelationship (Figure 2, Table 3). The 0.6B model crosses into significant net harm already at L0,\nwhereas 1.7B/4B/8B first cross at L1: \u03c1\u2217 = 0/1/1/1. The threshold therefore separates the 0.6B\nmodel from the other 3 models; it does not produce a monotone ordering by capability.\nAt the higher recency-inflated levels, the size ordering changes. At L3, the 8B model has reliance\n1.00 and \u2206mem \u22121.00; at L2, the 4B model has reliance 0.83. Making the stale note appear newer\n4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0022"
+        ],
+        "excerpt": "Table 2: Synthetic results (frozen v1). reliance =P (answers stale value); \u2206mem =\nacc\u2212acc(no_memory), 95% bootstrap CI; \"\u2217\" excludes 0. EC =explicit_conflict . The no-mem\ncolumn lists accuracy with chance in parentheses; chance (0.33) is the meaningful floor only in the\nBenefit suite: the Safety no-memory baseline is ceilinged, not chance-level.\nSuite Model no-mem (chance) clean acc stale\u2206 mem stale reliance EC reliance\nA (Benefit) 0.6B 0.37 (0.33) 0.94\u22120.33[\u2212.38,\u2212.28] \u2217 0.92 0.50\n1.7B 0.35 (0.33) 0.99\u22120.35[\u2212.40,\u2212.31] \u2217 0.99 0.50\n4B 0.35 (0.33) 1.00\u22120.35[\u2212.38,\u2212.31] \u2217 1.00 0.01\n8B 0.37 (0.33) 1.00\u22120.37[\u2212.43,\u2212.31] \u2217 1.00 0.00\nB (Safety) 0.6B 0.98 (0.33) 0.99\u22120.18[\u2212.23,\u2212.14] \u2217 0.19 0.04\n1.7B 1.00 (0.33) 1.00+0.00[\u2212.00,+.01] 0.00 0.01\n4B 1.00 (0.33) 1.00\u22120.00[\u2212.01,+.00] 0.00 0.00\n8B 1.00 (0.33) 1.00+0.00[+.00,+.00] 0.00 0.00",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Net Harm In The Safety Suite: The Trap Sweep",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b4e1b506d5d20d5316f406cec6e8b0b688dce70a46daaf0c2983095b817484e5",
+            "evidence_id": "E0296a9e0feac3d05-B0022",
+            "pages": [
+              5
+            ],
+            "section": "Net Harm In The Safety Suite: The Trap Sweep",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 832,
+                "page": 5,
+                "section": "Net Harm In The Safety Suite: The Trap Sweep",
+                "section_index": 14,
+                "start": 0,
+                "text": "Table 2: Synthetic results (frozen v1). reliance =P (answers stale value); \u2206mem =\nacc\u2212acc(no_memory), 95% bootstrap CI; \"\u2217\" excludes 0. EC =explicit_conflict . The no-mem\ncolumn lists accuracy with chance in parentheses; chance (0.33) is the meaningful floor only in the\nBenefit suite: the Safety no-memory baseline is ceilinged, not chance-level.\nSuite Model no-mem (chance) clean acc stale\u2206 mem stale reliance EC reliance\nA (Benefit) 0.6B 0.37 (0.33) 0.94\u22120.33[\u2212.38,\u2212.28] \u2217 0.92 0.50\n1.7B 0.35 (0.33) 0.99\u22120.35[\u2212.40,\u2212.31] \u2217 0.99 0.50\n4B 0.35 (0.33) 1.00\u22120.35[\u2212.38,\u2212.31] \u2217 1.00 0.01\n8B 0.37 (0.33) 1.00\u22120.37[\u2212.43,\u2212.31] \u2217 1.00 0.00\nB (Safety) 0.6B 0.98 (0.33) 0.99\u22120.18[\u2212.23,\u2212.14] \u2217 0.19 0.04\n1.7B 1.00 (0.33) 1.00+0.00[\u2212.00,+.01] 0.00 0.01\n4B 1.00 (0.33) 1.00\u22120.00[\u2212.01,+.00] 0.00 0.00\n8B 1.00 (0.33) 1.00+0.00[+.00,+.00] 0.00 0.00"
+              }
+            ],
+            "text": "Table 2: Synthetic results (frozen v1). reliance =P (answers stale value); \u2206mem =\nacc\u2212acc(no_memory), 95% bootstrap CI; \"\u2217\" excludes 0. EC =explicit_conflict . The no-mem\ncolumn lists accuracy with chance in parentheses; chance (0.33) is the meaningful floor only in the\nBenefit suite: the Safety no-memory baseline is ceilinged, not chance-level.\nSuite Model no-mem (chance) clean acc stale\u2206 mem stale reliance EC reliance\nA (Benefit) 0.6B 0.37 (0.33) 0.94\u22120.33[\u2212.38,\u2212.28] \u2217 0.92 0.50\n1.7B 0.35 (0.33) 0.99\u22120.35[\u2212.40,\u2212.31] \u2217 0.99 0.50\n4B 0.35 (0.33) 1.00\u22120.35[\u2212.38,\u2212.31] \u2217 1.00 0.01\n8B 0.37 (0.33) 1.00\u22120.37[\u2212.43,\u2212.31] \u2217 1.00 0.00\nB (Safety) 0.6B 0.98 (0.33) 0.99\u22120.18[\u2212.23,\u2212.14] \u2217 0.19 0.04\n1.7B 1.00 (0.33) 1.00+0.00[\u2212.00,+.01] 0.00 0.01\n4B 1.00 (0.33) 1.00\u22120.00[\u2212.01,+.00] 0.00 0.00\n8B 1.00 (0.33) 1.00+0.00[+.00,+.00] 0.00 0.00"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0025"
+        ],
+        "excerpt": "We manipulate 4 binarymemory featuresof the stale note (observable surface properties of a stored\nitem, namely its label, timestamp, source, and position, that a model could use to decide whether\nto trust it) in a full 2\u00d72\u00d72\u00d72 factorial on the Safety suite (16 cells per scenario), using stale-value\nreliance as the primary metric; Table 4 defines the memory features. Each memory feature is toggled\nindependently, and a memory feature's main effect is \u2206reliance = (mean reliance over the 8 cells\nwhere the memory feature is on) \u2212 (mean over the 8 where it is off), so it is averaged over all settings\nof the other 3 memory features (Table 5; the main effects are also plotted in Appendix B).\nTable 5 gives the per-size main effects, which show 4 distinct patterns. Removing the label increases\nreliance significantly at every model size, with a null large-vs-small contrast, so it is broadly ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Memory Feature Factorial",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2991306c47c2e17ccf6488682d09d3f297a903ae5713df662bd163eb710e3b7b",
+            "evidence_id": "E0296a9e0feac3d05-B0025",
+            "pages": [
+              5
+            ],
+            "section": "The Memory Feature Factorial",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 5,
+                "section": "The Memory Feature Factorial",
+                "section_index": 17,
+                "start": 0,
+                "text": "We manipulate 4 binarymemory featuresof the stale note (observable surface properties of a stored\nitem, namely its label, timestamp, source, and position, that a model could use to decide whether\nto trust it) in a full 2\u00d72\u00d72\u00d72 factorial on the Safety suite (16 cells per scenario), using stale-value\nreliance as the primary metric; Table 4 defines the memory features. Each memory feature is toggled\nindependently, and a memory feature's main effect is \u2206reliance = (mean reliance over the 8 cells\nwhere the memory feature is on) \u2212 (mean over the 8 where it is off), so it is averaged over all settings\nof the other 3 memory features (Table 5; the main effects are also plotted in Appendix B).\nTable 5 gives the per-size main effects, which show 4 distinct patterns. Removing the label increases\nreliance significantly at every model size, with a null large-vs-small contrast, so it is broadly "
+              }
+            ],
+            "text": "We manipulate 4 binarymemory featuresof the stale note (observable surface properties of a stored\nitem, namely its label, timestamp, source, and position, that a model could use to decide whether\nto trust it) in a full 2\u00d72\u00d72\u00d72 factorial on the Safety suite (16 cells per scenario), using stale-value\nreliance as the primary metric; Table 4 defines the memory features. Each memory feature is toggled\nindependently, and a memory feature's main effect is \u2206reliance = (mean reliance over the 8 cells\nwhere the memory feature is on) \u2212 (mean over the 8 where it is off), so it is averaged over all settings\nof the other 3 memory features (Table 5; the main effects are also plotted in Appendix B).\nTable 5 gives the per-size main effects, which show 4 distinct patterns. Removing the label increases\nreliance significantly at every model size, with a null large-vs-small contrast, so it is broadly "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0026"
+        ],
+        "excerpt": "positive\nrather than a scale trend. Dating the stale note newer (recency) is significantly stronger on the 4B/8B\nmodels. An inflated source (authority) is weak and scale-flat. Placing the stale note first (position)\n5\nTable 3: Safety-suite trap sweep: stale-value reliance by level (per-level \u2206mem is plotted in Figure 2,\nright).\u03c1 \u2217 =first level with stale\u2206 mem CI upper bound<0.\nModel L0 reliance L1 reliance L2 reliance L3 reliance min no-mem\u03c1 \u2217\n0.6B 0.19 0.48 0.43 0.63 0.98 0\n1.7B 0.00 0.43 0.45 0.72 1.00 1\n4B 0.00 0.09 0.83 0.93 1.00 1\n8B 0.00 0.02 0.94 1.00 1.00 1\nTable 4: The 4 binary memory features in the 2\u00d72\u00d72\u00d72 factorial, each toggled on/off independently.\n\"Trap-on\" is the setting hypothesized to increase stale-value reliance.\nMemory feature off (trap-off) on (trap-on)\nlabel stale note under a[NOTES]label label removed\nrecency stale note dated older than current stale note dated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Memory Feature Factorial",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e6ed07553f6e9059bebdb3257683dbc59ace3b831e39387a69092e952c937cbf",
+            "evidence_id": "E0296a9e0feac3d05-B0026",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "The Memory Feature Factorial",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1110,
+                "page": 5,
+                "section": "The Memory Feature Factorial",
+                "section_index": 17,
+                "start": 893,
+                "text": "positive\nrather than a scale trend. Dating the stale note newer (recency) is significantly stronger on the 4B/8B\nmodels. An inflated source (authority) is weak and scale-flat. Placing the stale note first (position)\n5"
+              },
+              {
+                "end": 680,
+                "page": 6,
+                "section": "The Memory Feature Factorial",
+                "section_index": 18,
+                "start": 0,
+                "text": "Table 3: Safety-suite trap sweep: stale-value reliance by level (per-level \u2206mem is plotted in Figure 2,\nright).\u03c1 \u2217 =first level with stale\u2206 mem CI upper bound<0.\nModel L0 reliance L1 reliance L2 reliance L3 reliance min no-mem\u03c1 \u2217\n0.6B 0.19 0.48 0.43 0.63 0.98 0\n1.7B 0.00 0.43 0.45 0.72 1.00 1\n4B 0.00 0.09 0.83 0.93 1.00 1\n8B 0.00 0.02 0.94 1.00 1.00 1\nTable 4: The 4 binary memory features in the 2\u00d72\u00d72\u00d72 factorial, each toggled on/off independently.\n\"Trap-on\" is the setting hypothesized to increase stale-value reliance.\nMemory feature off (trap-off) on (trap-on)\nlabel stale note under a[NOTES]label label removed\nrecency stale note dated older than current stale note dated "
+              }
+            ],
+            "text": "positive\nrather than a scale trend. Dating the stale note newer (recency) is significantly stronger on the 4B/8B\nmodels. An inflated source (authority) is weak and scale-flat. Placing the stale note first (position)\n5\nTable 3: Safety-suite trap sweep: stale-value reliance by level (per-level \u2206mem is plotted in Figure 2,\nright).\u03c1 \u2217 =first level with stale\u2206 mem CI upper bound<0.\nModel L0 reliance L1 reliance L2 reliance L3 reliance min no-mem\u03c1 \u2217\n0.6B 0.19 0.48 0.43 0.63 0.98 0\n1.7B 0.00 0.43 0.45 0.72 1.00 1\n4B 0.00 0.09 0.83 0.93 1.00 1\n8B 0.00 0.02 0.94 1.00 1.00 1\nTable 4: The 4 binary memory features in the 2\u00d72\u00d72\u00d72 factorial, each toggled on/off independently.\n\"Trap-on\" is the setting hypothesized to increase stale-value reliance.\nMemory feature off (trap-off) on (trap-on)\nlabel stale note under a[NOTES]label label removed\nrecency stale note dated older than current stale note dated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0028"
+        ],
+        "excerpt": "Overlapping or non-overlapping per-model intervals do not by themselves establish an interaction.\nWe therefore bootstrap paired differences between model sizes (Table 6). Recency is significantly\nstronger on the larger models (8B\u22120.6B = +.302\u2217; mean(large)\u2212mean(small) = +.333\u2217), position\nsignificantly reverses (8B\u22120.6B =\u2212.326 \u2217), authority shows no interaction (ns), and the label feature\nshows a null group contrast, which is why we call it universal rather than scale-growing. Two\nrobustness checks support the exploratory posture: a template-family cluster bootstrap (resampling\nwhole families) leaves every significant main effect significant, widening CIs only \u00d71.1\u20132.2 with\nnothing crossing 0; and leave-one-family-out moves the Benefit-suite estimate by \u22640.012 at every\nscale. The over-trust pattern reproduces on the capable sizes of an independent Llama-Instruct\nmodel-size series (\u00a77).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Direct Cross-Size Interaction Tests",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8ca9df626a53e65c58eb44f88d5760131c08a7b85444b21e4ddf501e9427eac1",
+            "evidence_id": "E0296a9e0feac3d05-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Direct Cross-Size Interaction Tests",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Direct Cross-Size Interaction Tests",
+                "section_index": 19,
+                "start": 0,
+                "text": "Overlapping or non-overlapping per-model intervals do not by themselves establish an interaction.\nWe therefore bootstrap paired differences between model sizes (Table 6). Recency is significantly\nstronger on the larger models (8B\u22120.6B = +.302\u2217; mean(large)\u2212mean(small) = +.333\u2217), position\nsignificantly reverses (8B\u22120.6B =\u2212.326 \u2217), authority shows no interaction (ns), and the label feature\nshows a null group contrast, which is why we call it universal rather than scale-growing. Two\nrobustness checks support the exploratory posture: a template-family cluster bootstrap (resampling\nwhole families) leaves every significant main effect significant, widening CIs only \u00d71.1\u20132.2 with\nnothing crossing 0; and leave-one-family-out moves the Benefit-suite estimate by \u22640.012 at every\nscale. The over-trust pattern reproduces on the capable sizes of an independent Llama-Instruct\nmodel-size series (\u00a77)."
+              }
+            ],
+            "text": "Overlapping or non-overlapping per-model intervals do not by themselves establish an interaction.\nWe therefore bootstrap paired differences between model sizes (Table 6). Recency is significantly\nstronger on the larger models (8B\u22120.6B = +.302\u2217; mean(large)\u2212mean(small) = +.333\u2217), position\nsignificantly reverses (8B\u22120.6B =\u2212.326 \u2217), authority shows no interaction (ns), and the label feature\nshows a null group contrast, which is why we call it universal rather than scale-growing. Two\nrobustness checks support the exploratory posture: a template-family cluster bootstrap (resampling\nwhole families) leaves every significant main effect significant, widening CIs only \u00d71.1\u20132.2 with\nnothing crossing 0; and leave-one-family-out moves the Benefit-suite estimate by \u22640.012 at every\nscale. The over-trust pattern reproduces on the capable sizes of an independent Llama-Instruct\nmodel-size series (\u00a77)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0033"
+        ],
+        "excerpt": "The effective intervention depends on model size. Exposing per-item metadata (timestamp and\nsource) is enough for the 4B and 8B models, while the 0.6B and 1.7B checkpoints recover only when\nthe conflict is pre-resolved for them.\nWe compare 3 representations of the same conflict (Figure 4, Table 7): arawframe (stale and\ncurrent items both present, unmarked); ametadataframe (each item annotated with its provenance\nand timestamp); and arepresentation-oraclethat removes the stale item entirely (supersession pre-\napplied, act-only). These 3 representations show that no single intervention works equally well across\nmodel sizes. Exposing metadata improves accuracy for the larger checkpoints: the accuracy gain over\nraw is larger on the capable models (+.30/+.28/+.53/+.54 ). Only the oracle restores accuracy\nfor the small ones, and it does so at every scale (+.46/+.57/+.63/+.59 ). Thus, larger ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Question 3: Mitigation Is Capability-Dependent",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b993e98c9437b0d83cda6d747cb1ce60d52701c78da4574afbfa24f7326d2f72",
+            "evidence_id": "E0296a9e0feac3d05-B0033",
+            "pages": [
+              7
+            ],
+            "section": "Question 3: Mitigation Is Capability-Dependent",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Question 3: Mitigation Is Capability-Dependent",
+                "section_index": 22,
+                "start": 0,
+                "text": "The effective intervention depends on model size. Exposing per-item metadata (timestamp and\nsource) is enough for the 4B and 8B models, while the 0.6B and 1.7B checkpoints recover only when\nthe conflict is pre-resolved for them.\nWe compare 3 representations of the same conflict (Figure 4, Table 7): arawframe (stale and\ncurrent items both present, unmarked); ametadataframe (each item annotated with its provenance\nand timestamp); and arepresentation-oraclethat removes the stale item entirely (supersession pre-\napplied, act-only). These 3 representations show that no single intervention works equally well across\nmodel sizes. Exposing metadata improves accuracy for the larger checkpoints: the accuracy gain over\nraw is larger on the capable models (+.30/+.28/+.53/+.54 ). Only the oracle restores accuracy\nfor the small ones, and it does so at every scale (+.46/+.57/+.63/+.59 ). Thus, larger "
+              }
+            ],
+            "text": "The effective intervention depends on model size. Exposing per-item metadata (timestamp and\nsource) is enough for the 4B and 8B models, while the 0.6B and 1.7B checkpoints recover only when\nthe conflict is pre-resolved for them.\nWe compare 3 representations of the same conflict (Figure 4, Table 7): arawframe (stale and\ncurrent items both present, unmarked); ametadataframe (each item annotated with its provenance\nand timestamp); and arepresentation-oraclethat removes the stale item entirely (supersession pre-\napplied, act-only). These 3 representations show that no single intervention works equally well across\nmodel sizes. Exposing metadata improves accuracy for the larger checkpoints: the accuracy gain over\nraw is larger on the capable models (+.30/+.28/+.53/+.54 ). Only the oracle restores accuracy\nfor the small ones, and it does so at every scale (+.46/+.57/+.63/+.59 ). Thus, larger "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0035"
+        ],
+        "excerpt": "External datasets.We rerun the identical paired- \u2206mem/reliance machinery on 2 external datasets,\nRGB [Chen et al., 2024] and MisBench [Peng et al., 2025] (Table 8; visualized in Appendix Figure 7),\nwhich shows the effect is not limited to our synthetic templates. Pooled stale-value reliance is\n0.81\u20130.94 across scales on both, reaching 0.96 in the MisBench wikipedia\u00b7semantic cells and\n0.95 in the RGB free-text arm. The pattern also appears on external data and is not specific to\nmultiple-choice (MCQ) evaluation. On RGB, \u2206mem is again scale-gated, growing more negative\nwith scale (\u22120.32\u2217 at 8B, confirmed by the free-text arm at \u22120.37\u2217); MisBench mainly measures\nreliance because its facts are unknown to the models, so its\u2206 mem is near the floor.\nStyle invariance.A MisBench rhetorical-style sweep (6 styles \u00d7 2 hop depths; Appendix B) shows\nover-trust is largely style-invariant (per-model ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Validation: External, Cross-Family, And Controls",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0daa2396d7832c12ffd8b2cc08975a4b0f60a63abcfc487d48a7727cb7bc4766",
+            "evidence_id": "E0296a9e0feac3d05-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Validation: External, Cross-Family, And Controls",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Validation: External, Cross-Family, And Controls",
+                "section_index": 23,
+                "start": 0,
+                "text": "External datasets.We rerun the identical paired- \u2206mem/reliance machinery on 2 external datasets,\nRGB [Chen et al., 2024] and MisBench [Peng et al., 2025] (Table 8; visualized in Appendix Figure 7),\nwhich shows the effect is not limited to our synthetic templates. Pooled stale-value reliance is\n0.81\u20130.94 across scales on both, reaching 0.96 in the MisBench wikipedia\u00b7semantic cells and\n0.95 in the RGB free-text arm. The pattern also appears on external data and is not specific to\nmultiple-choice (MCQ) evaluation. On RGB, \u2206mem is again scale-gated, growing more negative\nwith scale (\u22120.32\u2217 at 8B, confirmed by the free-text arm at \u22120.37\u2217); MisBench mainly measures\nreliance because its facts are unknown to the models, so its\u2206 mem is near the floor.\nStyle invariance.A MisBench rhetorical-style sweep (6 styles \u00d7 2 hop depths; Appendix B) shows\nover-trust is largely style-invariant (per-model "
+              }
+            ],
+            "text": "External datasets.We rerun the identical paired- \u2206mem/reliance machinery on 2 external datasets,\nRGB [Chen et al., 2024] and MisBench [Peng et al., 2025] (Table 8; visualized in Appendix Figure 7),\nwhich shows the effect is not limited to our synthetic templates. Pooled stale-value reliance is\n0.81\u20130.94 across scales on both, reaching 0.96 in the MisBench wikipedia\u00b7semantic cells and\n0.95 in the RGB free-text arm. The pattern also appears on external data and is not specific to\nmultiple-choice (MCQ) evaluation. On RGB, \u2206mem is again scale-gated, growing more negative\nwith scale (\u22120.32\u2217 at 8B, confirmed by the free-text arm at \u22120.37\u2217); MisBench mainly measures\nreliance because its facts are unknown to the models, so its\u2206 mem is near the floor.\nStyle invariance.A MisBench rhetorical-style sweep (6 styles \u00d7 2 hop depths; Appendix B) shows\nover-trust is largely style-invariant (per-model "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0038"
+        ],
+        "excerpt": "model-size series (Llama-\n3.2-1B/3B \u2192 Llama-3.1-8B), run on the identical frozen scenarios and evaluated with the same\nmetrics and bootstrap procedure, reproduces the phenomenon on the capable sizes: Benefit-suite\nover-trust rises with scale (reliance 0.46/0.96/1.00; \u2206mem \u22120.10\u2217/\u22120.31 \u2217/\u22120.36 \u2217), and the\nmemory feature signs match Qwen3: label and recency positive and large on the capable sizes,\nauthority weak-but-real, position negative at scale. Two exceptions we state plainly: Llama-1B is a\ncapability floor (no-memory \u2248 chance, memory features muted), and the positive-position corner\nseen at Qwen3-0.6B does not cross-replicate, so the position sign-flip is Qwen-specific. We use the\nfollowing replication criterion: a memory feature fails to replicate only if its main-effect CI on a\ncapable size (\u22653B, above the capability floor) excludes the Qwen sign; by that rule label, recency,\nand ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Validation: External, Cross-Family, And Controls",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dda3f2c7a0f2f4c6c81fd34483ab72e5514980572c941e03ad9f7c36b48b3cd3",
+            "evidence_id": "E0296a9e0feac3d05-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Validation: External, Cross-Family, And Controls",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2363,
+                "page": 8,
+                "section": "Validation: External, Cross-Family, And Controls",
+                "section_index": 24,
+                "start": 1464,
+                "text": "model-size series (Llama-\n3.2-1B/3B \u2192 Llama-3.1-8B), run on the identical frozen scenarios and evaluated with the same\nmetrics and bootstrap procedure, reproduces the phenomenon on the capable sizes: Benefit-suite\nover-trust rises with scale (reliance 0.46/0.96/1.00; \u2206mem \u22120.10\u2217/\u22120.31 \u2217/\u22120.36 \u2217), and the\nmemory feature signs match Qwen3: label and recency positive and large on the capable sizes,\nauthority weak-but-real, position negative at scale. Two exceptions we state plainly: Llama-1B is a\ncapability floor (no-memory \u2248 chance, memory features muted), and the positive-position corner\nseen at Qwen3-0.6B does not cross-replicate, so the position sign-flip is Qwen-specific. We use the\nfollowing replication criterion: a memory feature fails to replicate only if its main-effect CI on a\ncapable size (\u22653B, above the capability floor) excludes the Qwen sign; by that rule label, recency,\nand "
+              }
+            ],
+            "text": "model-size series (Llama-\n3.2-1B/3B \u2192 Llama-3.1-8B), run on the identical frozen scenarios and evaluated with the same\nmetrics and bootstrap procedure, reproduces the phenomenon on the capable sizes: Benefit-suite\nover-trust rises with scale (reliance 0.46/0.96/1.00; \u2206mem \u22120.10\u2217/\u22120.31 \u2217/\u22120.36 \u2217), and the\nmemory feature signs match Qwen3: label and recency positive and large on the capable sizes,\nauthority weak-but-real, position negative at scale. Two exceptions we state plainly: Llama-1B is a\ncapability floor (no-memory \u2248 chance, memory features muted), and the positive-position corner\nseen at Qwen3-0.6B does not cross-replicate, so the position sign-flip is Qwen-specific. We use the\nfollowing replication criterion: a memory feature fails to replicate only if its main-effect CI on a\ncapable size (\u22653B, above the capability floor) excludes the Qwen sign; by that rule label, recency,\nand "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0039"
+        ],
+        "excerpt": "authority replicate and only the tiny-scale positive-position corner does not. Parse rates span\n0.851\u20131.00; because unparsed responses are counted as non-compliant (never as following-stale),\nrestricting to parsed rows only raises reliance, so the reported over-trust is a conservative lower bound\n(full CI ledger, Appendix C).\nThe failure is not memory-specific.A control frames the identical wrong item 3 ways (as a\n[MEMORY], a [DOCUMENT], or an [EARLIER MESSAGE] ), holding everything else fixed (Table 11a,\nwith CIs). Paired reliance(memory)\u2212reliance(document) is \u2212.311\u2217/\u2212.058 \u2217/\u2212.013 \u2217/+.016 (ns):\nthe control finds no consistent memory-frame advantage, and a stale document is trusted more at the\n3 smaller scales, with no significant difference at 8B. Persistent-memory use is therefore one instance\nof a broader stale-evidence problem, consistent with the context-conflict regimes of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Validation: External, Cross-Family, And Controls",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bc828c84d3c37f4ef40bbf36871b7a66699e2cc353f117561307e2cb85cf45b2",
+            "evidence_id": "E0296a9e0feac3d05-B0039",
+            "pages": [
+              8
+            ],
+            "section": "Validation: External, Cross-Family, And Controls",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3255,
+                "page": 8,
+                "section": "Validation: External, Cross-Family, And Controls",
+                "section_index": 24,
+                "start": 2363,
+                "text": "authority replicate and only the tiny-scale positive-position corner does not. Parse rates span\n0.851\u20131.00; because unparsed responses are counted as non-compliant (never as following-stale),\nrestricting to parsed rows only raises reliance, so the reported over-trust is a conservative lower bound\n(full CI ledger, Appendix C).\nThe failure is not memory-specific.A control frames the identical wrong item 3 ways (as a\n[MEMORY], a [DOCUMENT], or an [EARLIER MESSAGE] ), holding everything else fixed (Table 11a,\nwith CIs). Paired reliance(memory)\u2212reliance(document) is \u2212.311\u2217/\u2212.058 \u2217/\u2212.013 \u2217/+.016 (ns):\nthe control finds no consistent memory-frame advantage, and a stale document is trusted more at the\n3 smaller scales, with no significant difference at 8B. Persistent-memory use is therefore one instance\nof a broader stale-evidence problem, consistent with the context-conflict regimes of "
+              }
+            ],
+            "text": "authority replicate and only the tiny-scale positive-position corner does not. Parse rates span\n0.851\u20131.00; because unparsed responses are counted as non-compliant (never as following-stale),\nrestricting to parsed rows only raises reliance, so the reported over-trust is a conservative lower bound\n(full CI ledger, Appendix C).\nThe failure is not memory-specific.A control frames the identical wrong item 3 ways (as a\n[MEMORY], a [DOCUMENT], or an [EARLIER MESSAGE] ), holding everything else fixed (Table 11a,\nwith CIs). Paired reliance(memory)\u2212reliance(document) is \u2212.311\u2217/\u2212.058 \u2217/\u2212.013 \u2217/+.016 (ns):\nthe control finds no consistent memory-frame advantage, and a stale document is trusted more at the\n3 smaller scales, with no significant difference at 8B. Persistent-memory use is therefore one instance\nof a broader stale-evidence problem, consistent with the context-conflict regimes of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0040"
+        ],
+        "excerpt": "Jeripity Venkata\n[2026].\nThinking mode does not remove the gap.Enabling thinking mode on the frozen benchmark (0.6B\nand 8B; parse \u2265.999 ) does not close the gap at the 2 tested endpoints (Table 11b): 8B is saturated\n8\nTable 7: Representation comparison: accuracy under each representation and the paired gains over\nthe raw frame (95% CI). meta_gain=metadata\u2212raw; oracle_gain=oracle\u2212raw.\nModel raw acc metadata acc oracle acc meta_gain oracle_gain\n0.6B 0.49 0.79 0.95+0.30[.17, .42]+0.46[.33, .58]\n1.7B 0.43 0.72 1.00+0.28[.11, .46]+0.57[.43, .70]\n4B 0.37 0.90 1.00+0.53[.40, .67]+0.63[.49, .77]\n8B 0.41 0.95 1.00+0.54[.38, .70]+0.59[.43, .77]\nTable 8: External validation (pooled and a representative conflict cell). \u2206mem and reliance with 95%\nCI; the 0.96 semantic-conflict and 0.95 free-text reliance are the largest reliance values reported in the\ntext. A starred bound printed as .00 is positive ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Validation: External, Cross-Family, And Controls",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed15d0d31b8f19fb8686c1863a294430fd081bf366cea6464ffcb03adea6ce58",
+            "evidence_id": "E0296a9e0feac3d05-B0040",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Validation: External, Cross-Family, And Controls",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3472,
+                "page": 8,
+                "section": "Validation: External, Cross-Family, And Controls",
+                "section_index": 24,
+                "start": 3255,
+                "text": "Jeripity Venkata\n[2026].\nThinking mode does not remove the gap.Enabling thinking mode on the frozen benchmark (0.6B\nand 8B; parse \u2265.999 ) does not close the gap at the 2 tested endpoints (Table 11b): 8B is saturated\n8"
+              },
+              {
+                "end": 682,
+                "page": 9,
+                "section": "Validation: External, Cross-Family, And Controls",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 7: Representation comparison: accuracy under each representation and the paired gains over\nthe raw frame (95% CI). meta_gain=metadata\u2212raw; oracle_gain=oracle\u2212raw.\nModel raw acc metadata acc oracle acc meta_gain oracle_gain\n0.6B 0.49 0.79 0.95+0.30[.17, .42]+0.46[.33, .58]\n1.7B 0.43 0.72 1.00+0.28[.11, .46]+0.57[.43, .70]\n4B 0.37 0.90 1.00+0.53[.40, .67]+0.63[.49, .77]\n8B 0.41 0.95 1.00+0.54[.38, .70]+0.59[.43, .77]\nTable 8: External validation (pooled and a representative conflict cell). \u2206mem and reliance with 95%\nCI; the 0.96 semantic-conflict and 0.95 free-text reliance are the largest reliance values reported in the\ntext. A starred bound printed as .00 is positive "
+              }
+            ],
+            "text": "Jeripity Venkata\n[2026].\nThinking mode does not remove the gap.Enabling thinking mode on the frozen benchmark (0.6B\nand 8B; parse \u2265.999 ) does not close the gap at the 2 tested endpoints (Table 11b): 8B is saturated\n8\nTable 7: Representation comparison: accuracy under each representation and the paired gains over\nthe raw frame (95% CI). meta_gain=metadata\u2212raw; oracle_gain=oracle\u2212raw.\nModel raw acc metadata acc oracle acc meta_gain oracle_gain\n0.6B 0.49 0.79 0.95+0.30[.17, .42]+0.46[.33, .58]\n1.7B 0.43 0.72 1.00+0.28[.11, .46]+0.57[.43, .70]\n4B 0.37 0.90 1.00+0.53[.40, .67]+0.63[.49, .77]\n8B 0.41 0.95 1.00+0.54[.38, .70]+0.59[.43, .77]\nTable 8: External validation (pooled and a representative conflict cell). \u2206mem and reliance with 95%\nCI; the 0.96 semantic-conflict and 0.95 free-text reliance are the largest reliance values reported in the\ntext. A starred bound printed as .00 is positive "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0043"
+        ],
+        "excerpt": "factorial and the external style sweep. Because the failure is not memory-specific, these\nimplications extend to any stale or conflicting retrieved evidence, not only persistent memory.\nLimitations.The Benefit suite cannot express net harm on explicit_conflict (its baseline is\nat chance), so net-harm claims rest on the Safety suite. Scoring is closed-set and action-based by\ndesign, which strengthens measurement but limits open-ended generality (partly offset by the RGB\nfree-text arm). The primary model-size series is one family, with cross-family reproduction on the\ncapable Llama sizes but no broad family\u00d7scale grid. \u03c1\u2217 is defined on our trap-level sequence, and we\nmeasure failure at memory-consumption time rather than across an end-to-end write/update/retrieve\nsystem.\nConclusion.Persistent memory helps agents, but they over-trust stale stored values at every model\nsize. The resulting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a59383bf6468c9c740d895869b600a920aca3c773ed0556ea159fd39e9a6efc8",
+            "evidence_id": "E0296a9e0feac3d05-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Discussion And Conclusion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 9,
+                "section": "Discussion And Conclusion",
+                "section_index": 26,
+                "start": 898,
+                "text": "factorial and the external style sweep. Because the failure is not memory-specific, these\nimplications extend to any stale or conflicting retrieved evidence, not only persistent memory.\nLimitations.The Benefit suite cannot express net harm on explicit_conflict (its baseline is\nat chance), so net-harm claims rest on the Safety suite. Scoring is closed-set and action-based by\ndesign, which strengthens measurement but limits open-ended generality (partly offset by the RGB\nfree-text arm). The primary model-size series is one family, with cross-family reproduction on the\ncapable Llama sizes but no broad family\u00d7scale grid. \u03c1\u2217 is defined on our trap-level sequence, and we\nmeasure failure at memory-consumption time rather than across an end-to-end write/update/retrieve\nsystem.\nConclusion.Persistent memory helps agents, but they over-trust stale stored values at every model\nsize. The resulting "
+              }
+            ],
+            "text": "factorial and the external style sweep. Because the failure is not memory-specific, these\nimplications extend to any stale or conflicting retrieved evidence, not only persistent memory.\nLimitations.The Benefit suite cannot express net harm on explicit_conflict (its baseline is\nat chance), so net-harm claims rest on the Safety suite. Scoring is closed-set and action-based by\ndesign, which strengthens measurement but limits open-ended generality (partly offset by the RGB\nfree-text arm). The primary model-size series is one family, with cross-family reproduction on the\ncapable Llama sizes but no broad family\u00d7scale grid. \u03c1\u2217 is defined on our trap-level sequence, and we\nmeasure failure at memory-consumption time rather than across an end-to-end write/update/retrieve\nsystem.\nConclusion.Persistent memory helps agents, but they over-trust stale stored values at every model\nsize. The resulting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.01852",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No suitable baseline comparison was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "replication",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.01852",
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0002",
+          "E0296a9e0feac3d05-B0006",
+          "E0296a9e0feac3d05-B0007",
+          "E0296a9e0feac3d05-B0013",
+          "E0296a9e0feac3d05-B0014",
+          "E0296a9e0feac3d05-B0015",
+          "E0296a9e0feac3d05-B0016",
+          "E0296a9e0feac3d05-B0019",
+          "E0296a9e0feac3d05-B0021",
+          "E0296a9e0feac3d05-B0022",
+          "E0296a9e0feac3d05-B0025",
+          "E0296a9e0feac3d05-B0026",
+          "E0296a9e0feac3d05-B0028",
+          "E0296a9e0feac3d05-B0033",
+          "E0296a9e0feac3d05-B0035",
+          "E0296a9e0feac3d05-B0038",
+          "E0296a9e0feac3d05-B0039",
+          "E0296a9e0feac3d05-B0040",
+          "E0296a9e0feac3d05-B0043"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "80fd87404733dc3dd5d0d154e43c8bd6c6b84fe540db01d642c1528f55066c94"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.01852",
+        "claim_evidence_alignment": "Claims remain well-aligned with empirical evidence throughout the text, carefully distinguishing reliance behavior from paired net harm and clarifying that framing controls show the phenomenon is not strictly memory-specific.",
+        "context_id": "0296a9e0feac3d05fb623e3bf9f51157a77b55b77ab3bfd4d700e93eb66fd11c",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation thoroughly supports the core claims, utilizing rigorous statistical uncertainty measures (95% percentile bootstrap intervals, template-family cluster bootstraps, and cross-size contrast tests). Findings are further validated using external benchmarks (RGB, MisBench), an independent model family (Llama-3.2/3.1), and ablation controls (framing and thinking mode).",
+        "evidence_ids": [
+          "E0296a9e0feac3d05-B0002",
+          "E0296a9e0feac3d05-B0006",
+          "E0296a9e0feac3d05-B0007",
+          "E0296a9e0feac3d05-B0014",
+          "E0296a9e0feac3d05-B0015",
+          "E0296a9e0feac3d05-B0016",
+          "E0296a9e0feac3d05-B0021",
+          "E0296a9e0feac3d05-B0022",
+          "E0296a9e0feac3d05-B0025",
+          "E0296a9e0feac3d05-B0026",
+          "E0296a9e0feac3d05-B0028",
+          "E0296a9e0feac3d05-B0033",
+          "E0296a9e0feac3d05-B0038",
+          "E0296a9e0feac3d05-B0040",
+          "E0296a9e0feac3d05-B0043"
+        ],
+        "limitations": "The authors transparently report key limitations, including the inability of the Benefit suite to measure net harm on explicit conflict, reliance on closed-set action evaluation, restricting primary scaling to single-family series up to 8B, and testing memory consumption rather than full end-to-end read/write systems.",
+        "method_assessment": "The methodology is rigorous and well-specified, introducing a frozen 300-scenario benchmark pinned by SHA-256 with explicit separation of floored Benefit and ceilinged Safety suites. It systematically isolates memory features (label, recency, authority, position) using circular option permutations to eliminate positional priors, complemented by direct paired cross-size bootstraps and cluster robustness checks.",
+        "quality_rationale": "The manuscript presents a robust, methodologically sound empirical analysis of agent memory vulnerabilities with exemplary experimental controls, clear separation of metric constructs, thorough statistical validation, and well-calibrated scientific claims.",
+        "scoped_contribution": "The paper investigates the Memory Trust Gap in persistent-memory LLM agents, demonstrating how model capability shapes reliance on stale memories versus current authoritative evidence across two complementary benchmark suites (Benefit and Safety). Through a 2x2x2x2 factorial feature design and mitigation evaluations across model scales (Qwen3 0.6B to 8B, replicated on Llama-Instruct), it shows that stale-memory harm is capability-gated, feature triggers shift with scale, and effective mitigations depend on model size.",
+        "source_content_hash": "80fd87404733dc3dd5d0d154e43c8bd6c6b84fe540db01d642c1528f55066c94"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a robust, methodologically sound empirical analysis of agent memory vulnerabilities with exemplary experimental controls, clear separation of metric constructs, thorough statistical validation, and well-calibrated scientific claims.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "80fd87404733dc3dd5d0d154e43c8bd6c6b84fe540db01d642c1528f55066c94",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors transparently report key limitations, including the inability of the Benefit suite to measure net harm on explicit conflict, reliance on closed-set action evaluation, restricting primary scaling to single-family series up to 8B, and testing memory consumption rather than full end-to-end read/write systems."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +1798,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

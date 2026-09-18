@@ -35,7 +35,7 @@
     "curation_note": null,
     "date_source": "arxiv",
     "first_seen_at": "2026-07-14 08:36:31",
-    "generated_at": "2026-09-18 13:23:06",
+    "generated_at": "2026-09-18 18:46:26",
     "last_seen_at": "2026-07-14 08:36:31",
     "metadata_sources": [
       "arxiv"
@@ -97,36 +97,1035 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:40:18.615120+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The manuscript contains a direct internal contradiction about parent selection: the abstract and introduction claim the framework resolves 'structurally blind parent selection' and 'dynamically selecting optimal parents', but the method section and appendix state parents are sampled strictly uniformly at random from the archive, with the RL agent only choosing mutation hints. This undermines a central claimed contribution.",
+      "The empirical validation is very narrow: a single synthetic nonlinear harmonic oscillator task from LLM-SRBench, with the controlled comparison run for only 150 iterations and 1-3 runs, and no ablation studies isolating the GNN, SAC, or GRPO components. This is insufficient to support broad claims of state-of-the-art scientific discovery or resolution of the three identified bottlenecks.",
+      "The claim of state-of-the-art performance rests on a low-budget comparison with very few runs and no reported uncertainty or statistical testing, while the higher-budget Table 1 results are taken from prior work rather than produced under a shared protocol."
+    ],
+    "concise_summary": "While the framework is conceptually interesting, the manuscript displays conflicting statements about parent selection and relies on an extremely limited empirical validation (one synthetic task, 1-3 runs at 150 iterations) with no component ablations, leaving its scientific claims substantially uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 45622,
+      "assessment_input_sha256": "4c439fda0bac44628f6e81e7d5ad43ef06a2738001e111a2363e7a1cc335cefe",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2607.10127",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 44648,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 44368,
+      "evidence_block_count": 57,
+      "evidence_context_characters": 51378,
+      "evidence_context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+      "evidence_context_sha256": "62add5ebd0b75cebf2fad2b2fc04f06e7dd9675038804aee6f962b9c3873749a",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 44670,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ae21125816f651e7974761828fe9f35d25eb036fd35aa8d6f9e19ad22d248262",
+        "source_url": "https://arxiv.org/pdf/2607.10127",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 44648,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Gae: Graph-Augmented Evolution For Scientific Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1790,
+          "supplied_characters": 1790
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2410,
+          "supplied_characters": 2410
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2315,
+          "supplied_characters": 2315
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 2754,
+          "supplied_characters": 2754
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 403,
+          "supplied_characters": 403
+        },
+        {
+          "heading": "Background",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 6,
+          "source_characters": 1013,
+          "supplied_characters": 1013
+        },
+        {
+          "heading": "Graph-Augmented Evolution",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1494,
+          "supplied_characters": 1494
+        },
+        {
+          "heading": "Program Graphs And Gnn Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2139,
+          "supplied_characters": 2139
+        },
+        {
+          "heading": "Program Graphs And Gnn Encoder",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 2180,
+          "supplied_characters": 2180
+        },
+        {
+          "heading": "Rl-Guided Mutation Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 655,
+          "supplied_characters": 655
+        },
+        {
+          "heading": "Rl-Guided Mutation Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1721,
+          "supplied_characters": 1721
+        },
+        {
+          "heading": "Grpo Llm Fine-Tuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1602,
+          "supplied_characters": 1602
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 696,
+          "supplied_characters": 696
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 5275,
+          "supplied_characters": 5275
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 4061,
+          "supplied_characters": 4061
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 1398,
+          "supplied_characters": 1398
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 17,
+          "source_characters": 2458,
+          "supplied_characters": 2458
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 256,
+          "supplied_characters": 256
+        },
+        {
+          "heading": "Ing: Language Models For Code-Level Neural Architec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 166,
+          "supplied_characters": 166
+        },
+        {
+          "heading": "Elites With Descriptor-Conditioned Gradients And Archive",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 242,
+          "supplied_characters": 242
+        },
+        {
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 379,
+          "supplied_characters": 379
+        },
+        {
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 3007,
+          "supplied_characters": 3007
+        },
+        {
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 3263,
+          "supplied_characters": 3263
+        },
+        {
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1097,
+          "supplied_characters": 1097
+        },
+        {
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1477,
+          "supplied_characters": 1477
+        }
+      ],
+      "selected_characters": 44368,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 117,
+          "heading": "Gae: Graph-Augmented Evolution For Scientific Discovery",
+          "page": 1
+        },
+        {
+          "characters": 1790,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2410,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2315,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2754,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 403,
+          "heading": "Background",
+          "page": 2
+        },
+        {
+          "characters": 1013,
+          "heading": "Background",
+          "page": 3
+        },
+        {
+          "characters": 1494,
+          "heading": "Graph-Augmented Evolution",
+          "page": 3
+        },
+        {
+          "characters": 2139,
+          "heading": "Program Graphs And Gnn Encoder",
+          "page": 3
+        },
+        {
+          "characters": 2180,
+          "heading": "Program Graphs And Gnn Encoder",
+          "page": 4
+        },
+        {
+          "characters": 655,
+          "heading": "Rl-Guided Mutation Selection",
+          "page": 4
+        },
+        {
+          "characters": 1721,
+          "heading": "Rl-Guided Mutation Selection",
+          "page": 5
+        },
+        {
+          "characters": 1602,
+          "heading": "Grpo Llm Fine-Tuning",
+          "page": 5
+        },
+        {
+          "characters": 696,
+          "heading": "Experiments",
+          "page": 5
+        },
+        {
+          "characters": 5275,
+          "heading": "Experiments",
+          "page": 6
+        },
+        {
+          "characters": 4061,
+          "heading": "Experiments",
+          "page": 7
+        },
+        {
+          "characters": 1398,
+          "heading": "Experiments",
+          "page": 8
+        },
+        {
+          "characters": 2458,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 256,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 166,
+          "heading": "Ing: Language Models For Code-Level Neural Architec-",
+          "page": 8
+        },
+        {
+          "characters": 242,
+          "heading": "Elites With Descriptor-Conditioned Gradients And Archive",
+          "page": 8
+        },
+        {
+          "characters": 379,
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "page": 8
+        },
+        {
+          "characters": 3007,
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "page": 9
+        },
+        {
+          "characters": 3263,
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "page": 10
+        },
+        {
+          "characters": 1097,
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "page": 11
+        },
+        {
+          "characters": 1477,
+          "heading": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "4c439fda0bac44628f6e81e7d5ad43ef06a2738001e111a2363e7a1cc335cefe",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ae21125816f651e7974761828fe9f35d25eb036fd35aa8d6f9e19ad22d248262",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0002"
+        ],
+        "excerpt": "Evolutionary program search guided by Large\nLanguage Models (LLMs) has emerged as a pow-\nerful paradigm for automated scientific discov-\nery. However, current approaches are fundamen-\ntally constrained by three bottlenecks: structurally\nblind parent selection, sparse whole-program eval-\nuation rewards, and static mutation operators\nthat fail to adapt during search. We present\nGAE(Graph-AugmentedEvolution), a frame-\nwork that resolves these limitations through a\ntightly coupled, three-pillar architecture. First, a\nrelational graph neural network (GNN)parses\nprograms into typed computation graphs, produc-\ning structure-aware embeddings. Second, anRL-\noptimized meta-controllerleverages these em-\nbeddings to replace blind evolutionary sampling\nwith a directed policy, dynamically selecting op-\ntimal parents and mutation directions based on\nreward history. Third, anonline GRPO fine-\ntuning ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "caae6d48baa959764f9e0e431c50a00a9d85065415fa9352dd89c06ddf54ab92",
+            "evidence_id": "Ec9ff3850353538df-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Evolutionary program search guided by Large\nLanguage Models (LLMs) has emerged as a pow-\nerful paradigm for automated scientific discov-\nery. However, current approaches are fundamen-\ntally constrained by three bottlenecks: structurally\nblind parent selection, sparse whole-program eval-\nuation rewards, and static mutation operators\nthat fail to adapt during search. We present\nGAE(Graph-AugmentedEvolution), a frame-\nwork that resolves these limitations through a\ntightly coupled, three-pillar architecture. First, a\nrelational graph neural network (GNN)parses\nprograms into typed computation graphs, produc-\ning structure-aware embeddings. Second, anRL-\noptimized meta-controllerleverages these em-\nbeddings to replace blind evolutionary sampling\nwith a directed policy, dynamically selecting op-\ntimal parents and mutation directions based on\nreward history. Third, anonline GRPO fine-\ntuning "
+              }
+            ],
+            "text": "Evolutionary program search guided by Large\nLanguage Models (LLMs) has emerged as a pow-\nerful paradigm for automated scientific discov-\nery. However, current approaches are fundamen-\ntally constrained by three bottlenecks: structurally\nblind parent selection, sparse whole-program eval-\nuation rewards, and static mutation operators\nthat fail to adapt during search. We present\nGAE(Graph-AugmentedEvolution), a frame-\nwork that resolves these limitations through a\ntightly coupled, three-pillar architecture. First, a\nrelational graph neural network (GNN)parses\nprograms into typed computation graphs, produc-\ning structure-aware embeddings. Second, anRL-\noptimized meta-controllerleverages these em-\nbeddings to replace blind evolutionary sampling\nwith a directed policy, dynamically selecting op-\ntimal parents and mutation directions based on\nreward history. Third, anonline GRPO fine-\ntuning "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0008"
+        ],
+        "excerpt": "program into a typed compu-\ntation graph and is trained online to predict fitness (\u00a73.3).\nADiscrete SAC meta-controllertakes each program's\nGNN embedding and learns which structural edit to\napply next, balancing task-score improvement against\npopulation novelty and complexity via automatic entropy\nregularization (\u00a73.4). AGRPO fine-tuning loopuses\ngroup-normalized evaluation rewards and the parent's GNN\nembedding as a variance-reduction baseline to update the\nLLM mutation operator online, progressively sharpening\nmutation quality throughout search (\u00a73.5). We evaluate\nGAE on an important scientific task\u2014symbolic regression\nfor nonlinear oscillator systems. We utilize the benchmark\ndatasets from LLM-SR (Shojaee et al., 2024) for our\nexperiments. In LLM-SR (\u00a74) experiment, GAE discovers\nnovel programs that consistently match or surpass prior\nbaselines on the benchmarks, achieving ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "9db7dd2fbf62cde3def634bde977ff3040244da1addaa578ae756181202334b1",
+            "evidence_id": "Ec9ff3850353538df-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2072,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1183,
+                "text": "program into a typed compu-\ntation graph and is trained online to predict fitness (\u00a73.3).\nADiscrete SAC meta-controllertakes each program's\nGNN embedding and learns which structural edit to\napply next, balancing task-score improvement against\npopulation novelty and complexity via automatic entropy\nregularization (\u00a73.4). AGRPO fine-tuning loopuses\ngroup-normalized evaluation rewards and the parent's GNN\nembedding as a variance-reduction baseline to update the\nLLM mutation operator online, progressively sharpening\nmutation quality throughout search (\u00a73.5). We evaluate\nGAE on an important scientific task\u2014symbolic regression\nfor nonlinear oscillator systems. We utilize the benchmark\ndatasets from LLM-SR (Shojaee et al., 2024) for our\nexperiments. In LLM-SR (\u00a74) experiment, GAE discovers\nnovel programs that consistently match or surpass prior\nbaselines on the benchmarks, achieving "
+              }
+            ],
+            "text": "program into a typed compu-\ntation graph and is trained online to predict fitness (\u00a73.3).\nADiscrete SAC meta-controllertakes each program's\nGNN embedding and learns which structural edit to\napply next, balancing task-score improvement against\npopulation novelty and complexity via automatic entropy\nregularization (\u00a73.4). AGRPO fine-tuning loopuses\ngroup-normalized evaluation rewards and the parent's GNN\nembedding as a variance-reduction baseline to update the\nLLM mutation operator online, progressively sharpening\nmutation quality throughout search (\u00a73.5). We evaluate\nGAE on an important scientific task\u2014symbolic regression\nfor nonlinear oscillator systems. We utilize the benchmark\ndatasets from LLM-SR (Shojaee et al., 2024) for our\nexperiments. In LLM-SR (\u00a74) experiment, GAE discovers\nnovel programs that consistently match or surpass prior\nbaselines on the benchmarks, achieving "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0016"
+        ],
+        "excerpt": "Graph-Augmented Evolution extends the OpenEvolve loop\nwith three co-adaptive components, all underpinned by a\nshared relational GNN encoder (\u00a73.3) that parses each pro-\ngram's abstract syntax tree into a typed computation graph\nand produces a structural embedding z\u2208R d. Parents\nare drawn uniformly from a fixed-size elite archive; the\nshared embedding then conditions a discrete Soft Actor\u2013\nCritic meta-controller (\u00a73.4) that maps the parent state z\nto a mutation-type hint, steering the LLM toward a struc-\nturally promising class of edit rather than an undirected\none. Its policy is trained on a three-component reward (task\nscore, embedding-space novelty, and a complexity penalty)\ncomputed on the best child of each generation. Whenever\nthe LLM proposes a group of G children, online GRPO\nfine-tuning (\u00a73.5) converts their group-relative advantages\n\u02c6Ai \u221dR \u03b2i \u2212R \u03b1 (child reward minus parent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graph-Augmented Evolution",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "40fcc2d44d4715e6ae4df3c8a959d082d08bfb2cf95fcaf186ffa60f34f949f5",
+            "evidence_id": "Ec9ff3850353538df-B0016",
+            "pages": [
+              3
+            ],
+            "section": "Graph-Augmented Evolution",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Graph-Augmented Evolution",
+                "section_index": 7,
+                "start": 0,
+                "text": "Graph-Augmented Evolution extends the OpenEvolve loop\nwith three co-adaptive components, all underpinned by a\nshared relational GNN encoder (\u00a73.3) that parses each pro-\ngram's abstract syntax tree into a typed computation graph\nand produces a structural embedding z\u2208R d. Parents\nare drawn uniformly from a fixed-size elite archive; the\nshared embedding then conditions a discrete Soft Actor\u2013\nCritic meta-controller (\u00a73.4) that maps the parent state z\nto a mutation-type hint, steering the LLM toward a struc-\nturally promising class of edit rather than an undirected\none. Its policy is trained on a three-component reward (task\nscore, embedding-space novelty, and a complexity penalty)\ncomputed on the best child of each generation. Whenever\nthe LLM proposes a group of G children, online GRPO\nfine-tuning (\u00a73.5) converts their group-relative advantages\n\u02c6Ai \u221dR \u03b2i \u2212R \u03b1 (child reward minus parent "
+              }
+            ],
+            "text": "Graph-Augmented Evolution extends the OpenEvolve loop\nwith three co-adaptive components, all underpinned by a\nshared relational GNN encoder (\u00a73.3) that parses each pro-\ngram's abstract syntax tree into a typed computation graph\nand produces a structural embedding z\u2208R d. Parents\nare drawn uniformly from a fixed-size elite archive; the\nshared embedding then conditions a discrete Soft Actor\u2013\nCritic meta-controller (\u00a73.4) that maps the parent state z\nto a mutation-type hint, steering the LLM toward a struc-\nturally promising class of edit rather than an undirected\none. Its policy is trained on a three-component reward (task\nscore, embedding-space novelty, and a complexity penalty)\ncomputed on the best child of each generation. Whenever\nthe LLM proposes a group of G children, online GRPO\nfine-tuning (\u00a73.5) converts their group-relative advantages\n\u02c6Ai \u221dR \u03b2i \u2212R \u03b1 (child reward minus parent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0023"
+        ],
+        "excerpt": "At each evolution step a parent \u03b1 is drawnuniformly at\nrandomfrom the current island; the reinforcement-learning\nagent does not select parents. Instead, a Discrete Soft Actor-\nCritic (SAC) agent chooses whichmutationto apply to \u03b1,\nconditioned on the parent's graph embedding.\nState and action space.The state is the GNN embedding\nz\u03b1 \u2208R d of the parent program. The action space is flat\nand fixed, with |A| discrete actions, each encoding a tuple\n(mutation type, target node id, argument index).\nNetworks.The policy \u03c0\u03d5(a|z) and the twin critics\nQ\u03b81 , Q\u03b82 :R d \u2192R |A| are three-layer MLPs with Lay-\nerNorm and GELU activations that score every action from\n4\nGAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nthe state:\nz\n256\n\u2212 \u2212 \u2212 \u2192LayerNorm\u2192GELU\n256\n\u2212 \u2212 \u2212 \u2192GELU\u2192R|A|.\nEach critic is paired with a target network updated by Polyak\naveraging (coefficient\u03c4).\nAction ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rl-Guided Mutation Selection",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "32cd92e93396c305f3194d2c03757bd58a4519157c59ebd10a43a880f9bb98a0",
+            "evidence_id": "Ec9ff3850353538df-B0023",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Rl-Guided Mutation Selection",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 655,
+                "page": 4,
+                "section": "Rl-Guided Mutation Selection",
+                "section_index": 10,
+                "start": 0,
+                "text": "At each evolution step a parent \u03b1 is drawnuniformly at\nrandomfrom the current island; the reinforcement-learning\nagent does not select parents. Instead, a Discrete Soft Actor-\nCritic (SAC) agent chooses whichmutationto apply to \u03b1,\nconditioned on the parent's graph embedding.\nState and action space.The state is the GNN embedding\nz\u03b1 \u2208R d of the parent program. The action space is flat\nand fixed, with |A| discrete actions, each encoding a tuple\n(mutation type, target node id, argument index).\nNetworks.The policy \u03c0\u03d5(a|z) and the twin critics\nQ\u03b81 , Q\u03b82 :R d \u2192R |A| are three-layer MLPs with Lay-\nerNorm and GELU activations that score every action from\n4"
+              },
+              {
+                "end": 243,
+                "page": 5,
+                "section": "Rl-Guided Mutation Selection",
+                "section_index": 11,
+                "start": 0,
+                "text": "GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nthe state:\nz\n256\n\u2212 \u2212 \u2212 \u2192LayerNorm\u2192GELU\n256\n\u2212 \u2212 \u2212 \u2192GELU\u2192R|A|.\nEach critic is paired with a target network updated by Polyak\naveraging (coefficient\u03c4).\nAction "
+              }
+            ],
+            "text": "At each evolution step a parent \u03b1 is drawnuniformly at\nrandomfrom the current island; the reinforcement-learning\nagent does not select parents. Instead, a Discrete Soft Actor-\nCritic (SAC) agent chooses whichmutationto apply to \u03b1,\nconditioned on the parent's graph embedding.\nState and action space.The state is the GNN embedding\nz\u03b1 \u2208R d of the parent program. The action space is flat\nand fixed, with |A| discrete actions, each encoding a tuple\n(mutation type, target node id, argument index).\nNetworks.The policy \u03c0\u03d5(a|z) and the twin critics\nQ\u03b81 , Q\u03b82 :R d \u2192R |A| are three-layer MLPs with Lay-\nerNorm and GELU activations that score every action from\n4\nGAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nthe state:\nz\n256\n\u2212 \u2212 \u2212 \u2192LayerNorm\u2192GELU\n256\n\u2212 \u2212 \u2212 \u2192GELU\u2192R|A|.\nEach critic is paired with a target network updated by Polyak\naveraging (coefficient\u03c4).\nAction "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0028"
+        ],
+        "excerpt": "To evaluate GAEvolve's capability of scientific discovery,\nwe test its performance on the Nonlinear Oscillators task\nfrom LLM-SR. Nonlinear damped oscillators are described\nby differential equations that capture the complex interac-\ntion among an oscillator's position, velocity, and the acting\nforces. The goal is to discover a closed-form expression\n\u02c6f(x, t, v;\u03b8)that predicts the acceleration \u00a8x=dv/dt of a\nnonlinear harmonic oscillator, where x is position, t is time,\nv is velocity. We evaluate GAEvolve on discovering the\ngoverning equation of a synthetically generated variant by\nminimizing the Normalized Mean Squared Error (NMSE)\nbetween predicted and observed trajectories. The actual\n5\nGAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nevolved program expresses a candidate symbolic equation\nas executable code. The initial program is a naive ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "343ac5b835e224a6f3f0db7ecf6254a21a64b9eb4f43d0156da4a1b83392ec47",
+            "evidence_id": "Ec9ff3850353538df-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 696,
+                "page": 5,
+                "section": "Experiments",
+                "section_index": 13,
+                "start": 0,
+                "text": "To evaluate GAEvolve's capability of scientific discovery,\nwe test its performance on the Nonlinear Oscillators task\nfrom LLM-SR. Nonlinear damped oscillators are described\nby differential equations that capture the complex interac-\ntion among an oscillator's position, velocity, and the acting\nforces. The goal is to discover a closed-form expression\n\u02c6f(x, t, v;\u03b8)that predicts the acceleration \u00a8x=dv/dt of a\nnonlinear harmonic oscillator, where x is position, t is time,\nv is velocity. We evaluate GAEvolve on discovering the\ngoverning equation of a synthetically generated variant by\nminimizing the Normalized Mean Squared Error (NMSE)\nbetween predicted and observed trajectories. The actual\n5"
+              },
+              {
+                "end": 194,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 14,
+                "start": 0,
+                "text": "GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nevolved program expresses a candidate symbolic equation\nas executable code. The initial program is a naive "
+              }
+            ],
+            "text": "To evaluate GAEvolve's capability of scientific discovery,\nwe test its performance on the Nonlinear Oscillators task\nfrom LLM-SR. Nonlinear damped oscillators are described\nby differential equations that capture the complex interac-\ntion among an oscillator's position, velocity, and the acting\nforces. The goal is to discover a closed-form expression\n\u02c6f(x, t, v;\u03b8)that predicts the acceleration \u00a8x=dv/dt of a\nnonlinear harmonic oscillator, where x is position, t is time,\nv is velocity. We evaluate GAEvolve on discovering the\ngoverning equation of a synthetically generated variant by\nminimizing the Normalized Mean Squared Error (NMSE)\nbetween predicted and observed trajectories. The actual\n5\nGAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization\nevolved program expresses a candidate symbolic equation\nas executable code. The initial program is a naive "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0032"
+        ],
+        "excerpt": "backtracking which restores an earlier\nMethod Mean NMSE Best NMSE\nNon-LLM baseline\nuDSR (Landajuela et al., 2022)\u22123.95\u22124.06\nLLM-guided evolution\nLLM-SR\u22124.06\u22124.80\nOpenEvolve\u22125.40\u22127.11\nCodeEvolve\u22124.97\u22127.26\nShinkaEvolve\u22125.35\u22126.35\nPACEvolve-Sigle\u22125.87\u22128.23\nPACEvolve-Multi\u22126.11\u22128.24\nTable 1.Benchmark results on the LLM-SR Nonlinear Oscillators\ntask (Yan et al., 2026), reported as log10 NMSE (\u2193). All LLM-\nguided baselines run for 1000 iterations over 10 independent runs.\nBoth the mean and the best log10 NMSE across runs are reported.\nMethod ID NMSE\u2193OOD NMSE\u2193\nPACEvolve-Single (Gemini)\u22125.80\u22126.10\nOpenEvolve (Gemini)\u22123.14\u22123.26\nOpenEvolve (Qwen)\u22123.88\u22123.94\nGAE (ours) \u22126.87(Mean)\n\u22127.24(Best)\n\u22127.10(Mean)\n\u22127.45(Best)\nTable 2.Comparison among PACEvolve, OpenEvolve (both 1\nrun) and our method GAE (3 runs; mean and best reported) on\nthe Nonlinear Oscillators task under our evaluation setting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f252b096879dbf6605d9149b43b75989bcdb2791a16cbee721bca8525c0fbc2d",
+            "evidence_id": "Ec9ff3850353538df-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3761,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 14,
+                "start": 2874,
+                "text": "backtracking which restores an earlier\nMethod Mean NMSE Best NMSE\nNon-LLM baseline\nuDSR (Landajuela et al., 2022)\u22123.95\u22124.06\nLLM-guided evolution\nLLM-SR\u22124.06\u22124.80\nOpenEvolve\u22125.40\u22127.11\nCodeEvolve\u22124.97\u22127.26\nShinkaEvolve\u22125.35\u22126.35\nPACEvolve-Sigle\u22125.87\u22128.23\nPACEvolve-Multi\u22126.11\u22128.24\nTable 1.Benchmark results on the LLM-SR Nonlinear Oscillators\ntask (Yan et al., 2026), reported as log10 NMSE (\u2193). All LLM-\nguided baselines run for 1000 iterations over 10 independent runs.\nBoth the mean and the best log10 NMSE across runs are reported.\nMethod ID NMSE\u2193OOD NMSE\u2193\nPACEvolve-Single (Gemini)\u22125.80\u22126.10\nOpenEvolve (Gemini)\u22123.14\u22123.26\nOpenEvolve (Qwen)\u22123.88\u22123.94\nGAE (ours) \u22126.87(Mean)\n\u22127.24(Best)\n\u22127.10(Mean)\n\u22127.45(Best)\nTable 2.Comparison among PACEvolve, OpenEvolve (both 1\nrun) and our method GAE (3 runs; mean and best reported) on\nthe Nonlinear Oscillators task under our evaluation setting "
+              }
+            ],
+            "text": "backtracking which restores an earlier\nMethod Mean NMSE Best NMSE\nNon-LLM baseline\nuDSR (Landajuela et al., 2022)\u22123.95\u22124.06\nLLM-guided evolution\nLLM-SR\u22124.06\u22124.80\nOpenEvolve\u22125.40\u22127.11\nCodeEvolve\u22124.97\u22127.26\nShinkaEvolve\u22125.35\u22126.35\nPACEvolve-Sigle\u22125.87\u22128.23\nPACEvolve-Multi\u22126.11\u22128.24\nTable 1.Benchmark results on the LLM-SR Nonlinear Oscillators\ntask (Yan et al., 2026), reported as log10 NMSE (\u2193). All LLM-\nguided baselines run for 1000 iterations over 10 independent runs.\nBoth the mean and the best log10 NMSE across runs are reported.\nMethod ID NMSE\u2193OOD NMSE\u2193\nPACEvolve-Single (Gemini)\u22125.80\u22126.10\nOpenEvolve (Gemini)\u22123.14\u22123.26\nOpenEvolve (Qwen)\u22123.88\u22123.94\nGAE (ours) \u22126.87(Mean)\n\u22127.24(Best)\n\u22127.10(Mean)\n\u22127.45(Best)\nTable 2.Comparison among PACEvolve, OpenEvolve (both 1\nrun) and our method GAE (3 runs; mean and best reported) on\nthe Nonlinear Oscillators task under our evaluation setting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0033"
+        ],
+        "excerpt": "(150\niterations), reported as log10 NMSE (\u2193) on in-distribution (ID)\nand out-of-distribution (OOD) test sets.\nrepository state sampled from a power-law distribution.\nWe use Qwen3.5-35B-A3B (Team, 2026) as the LLM back-\nbone of GAE. We fix the LLM weights for PACEvolve-\nSingle and OpenEvolve and update it in full weights in\nGAE during the GRPO reinforcement learning period. The\nGRPO has a group size of G= 8 , and uses a KL regu-\nlarization coefficient of \u03b2= 0.1 together with a clipping\nrange of \u03b5= 0.2 to stabilize policy updates. Optimization is\ncarried out using AdamW with a learning rate of 1\u00d710 \u22126.\nFine-tuning is performed in an online manner, with updates\ntriggered at every generation after candidate evaluation.\nMain Results.First, we present results from PACE-\nvolve (Yan et al., 2026) under their standard high-budget\nevaluation protocol (1000 iterations, 10 runs), which com-\npares ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "15cbbde84325b2f4e8998bd9c42987c31fa78f162ba7e3815bd882d2e9820ad7",
+            "evidence_id": "Ec9ff3850353538df-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 4659,
+                "page": 6,
+                "section": "Experiments",
+                "section_index": 14,
+                "start": 3761,
+                "text": "(150\niterations), reported as log10 NMSE (\u2193) on in-distribution (ID)\nand out-of-distribution (OOD) test sets.\nrepository state sampled from a power-law distribution.\nWe use Qwen3.5-35B-A3B (Team, 2026) as the LLM back-\nbone of GAE. We fix the LLM weights for PACEvolve-\nSingle and OpenEvolve and update it in full weights in\nGAE during the GRPO reinforcement learning period. The\nGRPO has a group size of G= 8 , and uses a KL regu-\nlarization coefficient of \u03b2= 0.1 together with a clipping\nrange of \u03b5= 0.2 to stabilize policy updates. Optimization is\ncarried out using AdamW with a learning rate of 1\u00d710 \u22126.\nFine-tuning is performed in an online manner, with updates\ntriggered at every generation after candidate evaluation.\nMain Results.First, we present results from PACE-\nvolve (Yan et al., 2026) under their standard high-budget\nevaluation protocol (1000 iterations, 10 runs), which com-\npares "
+              }
+            ],
+            "text": "(150\niterations), reported as log10 NMSE (\u2193) on in-distribution (ID)\nand out-of-distribution (OOD) test sets.\nrepository state sampled from a power-law distribution.\nWe use Qwen3.5-35B-A3B (Team, 2026) as the LLM back-\nbone of GAE. We fix the LLM weights for PACEvolve-\nSingle and OpenEvolve and update it in full weights in\nGAE during the GRPO reinforcement learning period. The\nGRPO has a group size of G= 8 , and uses a KL regu-\nlarization coefficient of \u03b2= 0.1 together with a clipping\nrange of \u03b5= 0.2 to stabilize policy updates. Optimization is\ncarried out using AdamW with a learning rate of 1\u00d710 \u22126.\nFine-tuning is performed in an online manner, with updates\ntriggered at every generation after candidate evaluation.\nMain Results.First, we present results from PACE-\nvolve (Yan et al., 2026) under their standard high-budget\nevaluation protocol (1000 iterations, 10 runs), which com-\npares "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0041"
+        ],
+        "excerpt": "We presentedGAE, a framework that augments LLM-\nguided evolutionary search with three tightly coupled com-\nponents: a relational GNN encoder that maps typed program\ngraphs into structural embeddings, a contextual bandit se-\nlector that learns which program structures yield productive\nmutations, and a GRPO fine-tuning loop that adapts the mu-\ntation LLM online. Together, these components close three\nbottlenecks: reward sparsity, uninformed parent selection,\nand a static mutation operator. Experiments on symbolic\nregression show that GAE achieves the lowest NMSE both\nin-distribution and out-of-distribution among all baselines,\nattaining state-of-the-art performance.\nLimitations.Our method relies on a graph representation\nderived from Python ASTs, which encodes domain-specific\ninductive biases. Extending to other languages or domains\nrequires redesigning node types and relations, limiting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "86e4b7a9255b8f6cb08f24ed7e1a84d453b0d3e02a3abb22dfd4b0a2e71659d7",
+            "evidence_id": "Ec9ff3850353538df-B0041",
+            "pages": [
+              8
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 8,
+                "section": "Conclusion",
+                "section_index": 17,
+                "start": 0,
+                "text": "We presentedGAE, a framework that augments LLM-\nguided evolutionary search with three tightly coupled com-\nponents: a relational GNN encoder that maps typed program\ngraphs into structural embeddings, a contextual bandit se-\nlector that learns which program structures yield productive\nmutations, and a GRPO fine-tuning loop that adapts the mu-\ntation LLM online. Together, these components close three\nbottlenecks: reward sparsity, uninformed parent selection,\nand a static mutation operator. Experiments on symbolic\nregression show that GAE achieves the lowest NMSE both\nin-distribution and out-of-distribution among all baselines,\nattaining state-of-the-art performance.\nLimitations.Our method relies on a graph representation\nderived from Python ASTs, which encodes domain-specific\ninductive biases. Extending to other languages or domains\nrequires redesigning node types and relations, limiting "
+              }
+            ],
+            "text": "We presentedGAE, a framework that augments LLM-\nguided evolutionary search with three tightly coupled com-\nponents: a relational GNN encoder that maps typed program\ngraphs into structural embeddings, a contextual bandit se-\nlector that learns which program structures yield productive\nmutations, and a GRPO fine-tuning loop that adapts the mu-\ntation LLM online. Together, these components close three\nbottlenecks: reward sparsity, uninformed parent selection,\nand a static mutation operator. Experiments on symbolic\nregression show that GAE achieves the lowest NMSE both\nin-distribution and out-of-distribution among all baselines,\nattaining state-of-the-art performance.\nLimitations.Our method relies on a graph representation\nderived from Python ASTs, which encodes domain-specific\ninductive biases. Extending to other languages or domains\nrequires redesigning node types and relations, limiting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0052"
+        ],
+        "excerpt": "signal Without it\nSAC meta-controller\u03d5, \u03b8 1, \u03b82 r= clip(R(\u03b2 \u22c6)) +\u03bb 1rnov \u2212\u03bb 2rcx (Eq. 6) Uniform mutation hint\nGRPO\u03b8 LLM \u02c6Ag fromR grp\ng =R g \u2212R \u03b1 (Eqs. 8\u20139) Frozen LLM\nGNN encoder\u03b8 GNN LGNN: MSE onL(Eq. 5) Stale embeddings\nParent selection is uniform over the elite archive in all configurations and is unaffected by any of the three components.\nC. Discrete Action Space \u2014 Mutation Operators\nThe Discrete SAC meta-controller operates over a flat, fixed action space of |A|= 5\u00d730\u00d718 = 2700 discrete actions,\neach encoding a tuple (mutation type,target node id,argument index). The target node id indexes the parent's expression\ntree in BFS order (capped at 30 nodes), and the argument index selects an operator or constant from the vocabularies below.\nThe mutation-type component of the selected action is additionally injected into the LLM prompt as a structural hint (\"prefer\n<type> changes\"), ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "ef291befdc502806013999dfa1701bca342a8125fd2374458b7e4ee9ac7db2f2",
+            "evidence_id": "Ec9ff3850353538df-B0052",
+            "pages": [
+              10
+            ],
+            "section": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1976,
+                "page": 10,
+                "section": "Gizing Quality-Diversity With Descriptor-Conditioned Rein-",
+                "section_index": 23,
+                "start": 1080,
+                "text": "signal Without it\nSAC meta-controller\u03d5, \u03b8 1, \u03b82 r= clip(R(\u03b2 \u22c6)) +\u03bb 1rnov \u2212\u03bb 2rcx (Eq. 6) Uniform mutation hint\nGRPO\u03b8 LLM \u02c6Ag fromR grp\ng =R g \u2212R \u03b1 (Eqs. 8\u20139) Frozen LLM\nGNN encoder\u03b8 GNN LGNN: MSE onL(Eq. 5) Stale embeddings\nParent selection is uniform over the elite archive in all configurations and is unaffected by any of the three components.\nC. Discrete Action Space \u2014 Mutation Operators\nThe Discrete SAC meta-controller operates over a flat, fixed action space of |A|= 5\u00d730\u00d718 = 2700 discrete actions,\neach encoding a tuple (mutation type,target node id,argument index). The target node id indexes the parent's expression\ntree in BFS order (capped at 30 nodes), and the argument index selects an operator or constant from the vocabularies below.\nThe mutation-type component of the selected action is additionally injected into the LLM prompt as a structural hint (\"prefer\n<type> changes\"), "
+              }
+            ],
+            "text": "signal Without it\nSAC meta-controller\u03d5, \u03b8 1, \u03b82 r= clip(R(\u03b2 \u22c6)) +\u03bb 1rnov \u2212\u03bb 2rcx (Eq. 6) Uniform mutation hint\nGRPO\u03b8 LLM \u02c6Ag fromR grp\ng =R g \u2212R \u03b1 (Eqs. 8\u20139) Frozen LLM\nGNN encoder\u03b8 GNN LGNN: MSE onL(Eq. 5) Stale embeddings\nParent selection is uniform over the elite archive in all configurations and is unaffected by any of the three components.\nC. Discrete Action Space \u2014 Mutation Operators\nThe Discrete SAC meta-controller operates over a flat, fixed action space of |A|= 5\u00d730\u00d718 = 2700 discrete actions,\neach encoding a tuple (mutation type,target node id,argument index). The target node id indexes the parent's expression\ntree in BFS order (capped at 30 nodes), and the argument index selects an operator or constant from the vocabularies below.\nThe mutation-type component of the selected action is additionally injected into the LLM prompt as a structural hint (\"prefer\n<type> changes\"), "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.10127",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The manuscript contains a direct internal contradiction about parent selection: the abstract and introduction claim the framework resolves 'structurally blind parent selection' and 'dynamically selecting optimal parents', but the method section and appendix state parents are sampled strictly uniformly at random from the archive, with the RL agent only choosing mutation hints. This undermines a central claimed contribution.",
+          "The empirical validation is very narrow: a single synthetic nonlinear harmonic oscillator task from LLM-SRBench, with the controlled comparison run for only 150 iterations and 1-3 runs, and no ablation studies isolating the GNN, SAC, or GRPO components. This is insufficient to support broad claims of state-of-the-art scientific discovery or resolution of the three identified bottlenecks.",
+          "The claim of state-of-the-art performance rests on a low-budget comparison with very few runs and no reported uncertainty or statistical testing, while the higher-budget Table 1 results are taken from prior work rather than produced under a shared protocol."
+        ],
+        "canonical_id": "arxiv:2607.10127",
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0002",
+          "Ec9ff3850353538df-B0008",
+          "Ec9ff3850353538df-B0016",
+          "Ec9ff3850353538df-B0023",
+          "Ec9ff3850353538df-B0028",
+          "Ec9ff3850353538df-B0032",
+          "Ec9ff3850353538df-B0033",
+          "Ec9ff3850353538df-B0041",
+          "Ec9ff3850353538df-B0052"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "ae21125816f651e7974761828fe9f35d25eb036fd35aa8d6f9e19ad22d248262"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2607.10127",
+        "claim_evidence_alignment": "Claims of broadly transforming evolutionary search for scientific discovery and resolving bottlenecks like parent selection are insufficiently supported by an evaluation restricted to a single oscillator equation and a contradictory method specification regarding parent sampling.",
+        "context_id": "c9ff3850353538dfe38ea3f34134976d7171884c44c6d99b00b09db8cd00d1a8",
+        "decision": "uncertain",
+        "evaluation_assessment": "The experimental evaluation is very narrow, tested on only a single synthetic nonlinear harmonic oscillator task from LLM-SRBench. The direct comparative evaluation against baselines is limited to a short 150-iteration horizon using only 1 to 3 runs, and lacks ablation studies verifying the necessity or individual impact of the three integrated components (GNN, SAC, and online GRPO).",
+        "evidence_ids": [
+          "Ec9ff3850353538df-B0002",
+          "Ec9ff3850353538df-B0008",
+          "Ec9ff3850353538df-B0016",
+          "Ec9ff3850353538df-B0023",
+          "Ec9ff3850353538df-B0028",
+          "Ec9ff3850353538df-B0032",
+          "Ec9ff3850353538df-B0033",
+          "Ec9ff3850353538df-B0041"
+        ],
+        "limitations": "The authors acknowledge that the AST-derived graph representation is Python-specific, requires domain-specific redesign, and introduces non-trivial runtime overhead from GNN and RL training.",
+        "method_assessment": "The methodology is described with architectural and algorithmic details across the three modules (GNN, SAC, and GRPO). However, the text contains internal inconsistencies regarding parent selection, initially claiming to resolve 'structurally blind parent selection' and 'dynamically selecting optimal parents', but later clarifying that parents are sampled strictly uniformly at random from the archive.",
+        "quality_rationale": "While the framework is conceptually interesting, the manuscript displays conflicting statements about parent selection and relies on an extremely limited empirical validation (one synthetic task, 1-3 runs at 150 iterations) with no component ablations, leaving its scientific claims substantially uncertain.",
+        "scoped_contribution": "The paper proposes GAE (Graph-Augmented Evolution), a framework for evolutionary code search that integrates a relational GNN encoder for abstract syntax trees, a discrete SAC meta-controller to propose mutation hints, and online GRPO fine-tuning of an LLM mutation operator.",
+        "source_content_hash": "ae21125816f651e7974761828fe9f35d25eb036fd35aa8d6f9e19ad22d248262"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the framework is conceptually interesting, the manuscript displays conflicting statements about parent selection and relies on an extremely limited empirical validation (one synthetic task, 1-3 runs at 150 iterations) with no component ablations, leaving its scientific claims substantially uncertain.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "ae21125816f651e7974761828fe9f35d25eb036fd35aa8d6f9e19ad22d248262",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge that the AST-derived graph representation is Python-specific, requires domain-specific redesign, and introduces non-trivial runtime overhead from GNN and RL training."
   },
   "semantic_scholar_id": null,
   "source": "arxiv",
@@ -155,7 +1154,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

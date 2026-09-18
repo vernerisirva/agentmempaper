@@ -25,7 +25,7 @@
   "last_seen_date": "2026-09-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-02 11:25:01",
   "notified_date": "2026-09-02",
@@ -36,7 +36,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-02 11:23:13",
-    "generated_at": "2026-09-18 13:22:56",
+    "generated_at": "2026-09-18 18:46:09",
     "last_seen_at": "2026-09-10 11:25:35",
     "metadata_sources": [
       "openalex",
@@ -103,36 +103,2085 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:39:41.745426+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.9,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a rigorously scoped, thoroughly specified protocol for reproducible cryptographic verification with dual-language implementation parity, accompanied by exemplary claim discipline and limitation accounting.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 36544,
+      "assessment_input_sha256": "2d00c089389f95c943e354226e963714eacd93b45c91b0af71028b5e49396fc1",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.01235",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 35569,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 33108,
+      "evidence_block_count": 68,
+      "evidence_context_characters": 42477,
+      "evidence_context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+      "evidence_context_sha256": "9346a4e4de14fd2e6ce88656cfbfc745aa113a431d6de6dd21b425a4047aa433",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 35589,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "extracted_pages": 11,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "ae8d5260343fb0b93998aa39006240dab40ed58daaa73d8abbb3277aaf7002fd",
+        "source_url": "https://arxiv.org/pdf/2609.01235",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 35569,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Mutmem V2: Cryptographically Authorized Mutation In",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 2036,
+          "supplied_characters": 2036
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1962,
+          "supplied_characters": 1962
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 1076,
+          "supplied_characters": 1076
+        },
+        {
+          "heading": "It Defines A Versioned Recall-Disclosure Envelope Whose Complete Membership Is13 + 5R Objects Forr Disclosed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "It Defines Cross-Object Predicates For External Trust, Actor And Housekeeper Epochs, Revocation, Effective",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 166,
+          "supplied_characters": 166
+        },
+        {
+          "heading": "It Defines A Portable Mutation Profile That Preserves The Native Outcome Schema And Distinguishes An Authorized",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 58,
+          "supplied_characters": 58
+        },
+        {
+          "heading": "It Supplies Independent Node And Python Verifiers, A Production-Derived Conformance Corpus, A Clean Installer",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 523,
+          "supplied_characters": 523
+        },
+        {
+          "heading": "Evidence Identities And Support Levels",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 971,
+          "supplied_characters": 971
+        },
+        {
+          "heading": "Principals And Boundary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 1043,
+          "supplied_characters": 1043
+        },
+        {
+          "heading": "Adversary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 948,
+          "supplied_characters": 948
+        },
+        {
+          "heading": "Canonical Objects",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 887,
+          "supplied_characters": 887
+        },
+        {
+          "heading": "Complete Membership And Deterministic Order",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 499,
+          "supplied_characters": 499
+        },
+        {
+          "heading": "Complete Membership And Deterministic Order",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 775,
+          "supplied_characters": 775
+        },
+        {
+          "heading": "Envelope Commitment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 585,
+          "supplied_characters": 585
+        },
+        {
+          "heading": "Cross-Object Predicates",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 74,
+          "supplied_characters": 74
+        },
+        {
+          "heading": "Authority:Trust Anchor, Actor Epoch, Certificate, Revocation, Housekeeper Epoch, Authorization, And Request",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 190,
+          "supplied_characters": 190
+        },
+        {
+          "heading": "Decision Composition:Content-State Roots, Epistemic Decision, Final Security Closure, Return Path, Projected",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Terminal Receipt:Merkle Entries, Root, Result Count, Actor, Request, Authority, Housekeeper Certificate, Event",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Portable Mutation Profile",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 444,
+          "supplied_characters": 444
+        },
+        {
+          "heading": "Portable Mutation Profile",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 776,
+          "supplied_characters": 776
+        },
+        {
+          "heading": "Two Implementations, One Terminal Language",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 811,
+          "supplied_characters": 811
+        },
+        {
+          "heading": "Production-Derived Conformance Corpus",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 471,
+          "supplied_characters": 471
+        },
+        {
+          "heading": "Complexity And Failure Closure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 676,
+          "supplied_characters": 676
+        },
+        {
+          "heading": "Verification, Installation, And Reproduction Are Different",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 311,
+          "supplied_characters": 311
+        },
+        {
+          "heading": "Verification, Installation, And Reproduction Are Different",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 984,
+          "supplied_characters": 984
+        },
+        {
+          "heading": "Datasets, Models, And Environment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 755,
+          "supplied_characters": 755
+        },
+        {
+          "heading": "Statistical Contract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1182,
+          "supplied_characters": 1182
+        },
+        {
+          "heading": "Statistical Contract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1241,
+          "supplied_characters": 1241
+        },
+        {
+          "heading": "Bootstrap Interval Omitted In V2:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 556,
+          "supplied_characters": 556
+        },
+        {
+          "heading": "Current V2 Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 29,
+          "source_characters": 601,
+          "supplied_characters": 601
+        },
+        {
+          "heading": "Historical V1 Evidence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 859,
+          "supplied_characters": 859
+        },
+        {
+          "heading": "Historical V1 Evidence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 1318,
+          "supplied_characters": 1318
+        },
+        {
+          "heading": "Attempt Accounting And Disclosure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 1044,
+          "supplied_characters": 1044
+        },
+        {
+          "heading": "Security Argument And Non-Goals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1246,
+          "supplied_characters": 1246
+        },
+        {
+          "heading": "No Current V2 Utility Rerun.Utility, Mutation Performance, Poisonedrag, Ablation, And Human Agreement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 34,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "No Independent Empirical Replication.The Verifier Implementations Are Independent, But The Empirical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 35,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Private V1 Rows Are Unavailable.Public Counts, Wilson Intervals, Mcnemar/Holm Contrasts, And Agreement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 250,
+          "supplied_characters": 250
+        },
+        {
+          "heading": "Poisonedrag Is Adapted And Post-Calibration.It Does Not Match The Upstream Full Corpus And Does Not",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 126,
+          "supplied_characters": 126
+        },
+        {
+          "heading": "Installation Coverage Is Bounded.One Macos Installation On Node V26.8.1 Is Qualified. Other Declared",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 79,
+          "supplied_characters": 79
+        },
+        {
+          "heading": "External Anchors Are Necessary.Replacing All Evidence And All Independent Trust Anchors Is Outside The",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 13,
+          "supplied_characters": 13
+        },
+        {
+          "heading": "Archival Identifier Pending.The Immutable Source Manifest, Release Commit, Tag, And Github Release Are",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 84,
+          "supplied_characters": 84
+        },
+        {
+          "heading": "Ethics And Responsible Release",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 805,
+          "supplied_characters": 805
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "related",
+          "section_index": 42,
+          "source_characters": 945,
+          "supplied_characters": 945
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "conclusion",
+          "section_index": 43,
+          "source_characters": 1017,
+          "supplied_characters": 1017
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 1132,
+          "supplied_characters": 1132
+        },
+        {
+          "heading": "Appendix: A Complete Claim-To-Evidence Disposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 100,
+          "supplied_characters": 100
+        },
+        {
+          "heading": "Claim Identifier Disposition Denominator Limitation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "limitations",
+          "section_index": 46,
+          "source_characters": 272,
+          "supplied_characters": 272
+        },
+        {
+          "heading": "V1-Locomo-F1 Historical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 140,
+          "supplied_characters": 140
+        },
+        {
+          "heading": "V1-Poisonedrag Historical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 123,
+          "supplied_characters": 123
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 49,
+          "source_characters": 32,
+          "supplied_characters": 32
+        },
+        {
+          "heading": "Per Arm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 791,
+          "supplied_characters": 791
+        },
+        {
+          "heading": "Per Arm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 1283,
+          "supplied_characters": 1283
+        }
+      ],
+      "selected_characters": 33108,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_sections": [
+        {
+          "characters": 2036,
+          "heading": "Mutmem V2: Cryptographically Authorized Mutation In",
+          "page": 1
+        },
+        {
+          "characters": 1962,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1076,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 102,
+          "heading": "It Defines A Versioned Recall-Disclosure Envelope Whose Complete Membership Is13 + 5R Objects Forr Disclosed",
+          "page": 2
+        },
+        {
+          "characters": 166,
+          "heading": "It Defines Cross-Object Predicates For External Trust, Actor And Housekeeper Epochs, Revocation, Effective",
+          "page": 2
+        },
+        {
+          "characters": 58,
+          "heading": "It Defines A Portable Mutation Profile That Preserves The Native Outcome Schema And Distinguishes An Authorized",
+          "page": 2
+        },
+        {
+          "characters": 523,
+          "heading": "It Supplies Independent Node And Python Verifiers, A Production-Derived Conformance Corpus, A Clean Installer",
+          "page": 2
+        },
+        {
+          "characters": 971,
+          "heading": "Evidence Identities And Support Levels",
+          "page": 2
+        },
+        {
+          "characters": 1043,
+          "heading": "Principals And Boundary",
+          "page": 3
+        },
+        {
+          "characters": 948,
+          "heading": "Adversary",
+          "page": 3
+        },
+        {
+          "characters": 887,
+          "heading": "Canonical Objects",
+          "page": 3
+        },
+        {
+          "characters": 499,
+          "heading": "Complete Membership And Deterministic Order",
+          "page": 3
+        },
+        {
+          "characters": 775,
+          "heading": "Complete Membership And Deterministic Order",
+          "page": 4
+        },
+        {
+          "characters": 585,
+          "heading": "Envelope Commitment",
+          "page": 4
+        },
+        {
+          "characters": 74,
+          "heading": "Cross-Object Predicates",
+          "page": 4
+        },
+        {
+          "characters": 190,
+          "heading": "Authority:Trust Anchor, Actor Epoch, Certificate, Revocation, Housekeeper Epoch, Authorization, And Request",
+          "page": 4
+        },
+        {
+          "characters": 293,
+          "heading": "Decision Composition:Content-State Roots, Epistemic Decision, Final Security Closure, Return Path, Projected",
+          "page": 4
+        },
+        {
+          "characters": 311,
+          "heading": "Terminal Receipt:Merkle Entries, Root, Result Count, Actor, Request, Authority, Housekeeper Certificate, Event",
+          "page": 4
+        },
+        {
+          "characters": 444,
+          "heading": "Portable Mutation Profile",
+          "page": 4
+        },
+        {
+          "characters": 776,
+          "heading": "Portable Mutation Profile",
+          "page": 5
+        },
+        {
+          "characters": 811,
+          "heading": "Two Implementations, One Terminal Language",
+          "page": 5
+        },
+        {
+          "characters": 471,
+          "heading": "Production-Derived Conformance Corpus",
+          "page": 5
+        },
+        {
+          "characters": 676,
+          "heading": "Complexity And Failure Closure",
+          "page": 5
+        },
+        {
+          "characters": 311,
+          "heading": "Verification, Installation, And Reproduction Are Different",
+          "page": 5
+        },
+        {
+          "characters": 984,
+          "heading": "Verification, Installation, And Reproduction Are Different",
+          "page": 6
+        },
+        {
+          "characters": 755,
+          "heading": "Datasets, Models, And Environment",
+          "page": 6
+        },
+        {
+          "characters": 1182,
+          "heading": "Statistical Contract",
+          "page": 6
+        },
+        {
+          "characters": 1241,
+          "heading": "Statistical Contract",
+          "page": 7
+        },
+        {
+          "characters": 556,
+          "heading": "Bootstrap Interval Omitted In V2:",
+          "page": 7
+        },
+        {
+          "characters": 601,
+          "heading": "Current V2 Results",
+          "page": 7
+        },
+        {
+          "characters": 859,
+          "heading": "Historical V1 Evidence",
+          "page": 7
+        },
+        {
+          "characters": 1318,
+          "heading": "Historical V1 Evidence",
+          "page": 8
+        },
+        {
+          "characters": 1044,
+          "heading": "Attempt Accounting And Disclosure",
+          "page": 8
+        },
+        {
+          "characters": 1246,
+          "heading": "Security Argument And Non-Goals",
+          "page": 8
+        },
+        {
+          "characters": 88,
+          "heading": "No Current V2 Utility Rerun.Utility, Mutation Performance, Poisonedrag, Ablation, And Human Agreement",
+          "page": 9
+        },
+        {
+          "characters": 54,
+          "heading": "No Independent Empirical Replication.The Verifier Implementations Are Independent, But The Empirical",
+          "page": 9
+        },
+        {
+          "characters": 250,
+          "heading": "Private V1 Rows Are Unavailable.Public Counts, Wilson Intervals, Mcnemar/Holm Contrasts, And Agreement",
+          "page": 9
+        },
+        {
+          "characters": 126,
+          "heading": "Poisonedrag Is Adapted And Post-Calibration.It Does Not Match The Upstream Full Corpus And Does Not",
+          "page": 9
+        },
+        {
+          "characters": 79,
+          "heading": "Installation Coverage Is Bounded.One Macos Installation On Node V26.8.1 Is Qualified. Other Declared",
+          "page": 9
+        },
+        {
+          "characters": 13,
+          "heading": "External Anchors Are Necessary.Replacing All Evidence And All Independent Trust Anchors Is Outside The",
+          "page": 9
+        },
+        {
+          "characters": 84,
+          "heading": "Archival Identifier Pending.The Immutable Source Manifest, Release Commit, Tag, And Github Release Are",
+          "page": 9
+        },
+        {
+          "characters": 805,
+          "heading": "Ethics And Responsible Release",
+          "page": 9
+        },
+        {
+          "characters": 945,
+          "heading": "Related Work",
+          "page": 9
+        },
+        {
+          "characters": 1017,
+          "heading": "Conclusion",
+          "page": 10
+        },
+        {
+          "characters": 1132,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 100,
+          "heading": "Appendix: A Complete Claim-To-Evidence Disposition",
+          "page": 10
+        },
+        {
+          "characters": 272,
+          "heading": "Claim Identifier Disposition Denominator Limitation",
+          "page": 10
+        },
+        {
+          "characters": 140,
+          "heading": "V1-Locomo-F1 Historical",
+          "page": 10
+        },
+        {
+          "characters": 123,
+          "heading": "V1-Poisonedrag Historical",
+          "page": 10
+        },
+        {
+          "characters": 32,
+          "heading": "Ablation",
+          "page": 10
+        },
+        {
+          "characters": 791,
+          "heading": "Per Arm",
+          "page": 10
+        },
+        {
+          "characters": 1283,
+          "heading": "Per Arm",
+          "page": 11
+        }
+      ],
+      "selected_text_sha256": "2d00c089389f95c943e354226e963714eacd93b45c91b0af71028b5e49396fc1",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "ae8d5260343fb0b93998aa39006240dab40ed58daaa73d8abbb3277aaf7002fd",
+      "source_pages": 11,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0004"
+        ],
+        "excerpt": "MutMem V1, published as \"MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory,\"\nintroduced retention-preserving, cryptographically authorized mutation for persistent agent memory and reported\nutility, mutation-integrity, and targeted-poisoning results. Its principal publication gap was not another retrieval\nmechanism: it was the absence of a complete portable verification contract and a reviewer-facing path from a\nclean installation to independently checkable evidence. MutMem V2 closes that gap without creating a second\nmemory engine. It specifies exact canonical bytes, domain-separated object and bundle commitments, mandatory\nrecall-evidence membership and order, external trust anchors, identity epochs, revocation state, authorization,\nrequest receipts, ordered disclosure, and three mutation terminals. The current protocol contains 18 versioned\nobject schemas, 39 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cb01a3cc9c50c4bb7c074e36e4e0c03dca0874c92d8183923795e96326f49b5a",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0004",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "MutMem V1, published as \"MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory,\"\nintroduced retention-preserving, cryptographically authorized mutation for persistent agent memory and reported\nutility, mutation-integrity, and targeted-poisoning results. Its principal publication gap was not another retrieval\nmechanism: it was the absence of a complete portable verification contract and a reviewer-facing path from a\nclean installation to independently checkable evidence. MutMem V2 closes that gap without creating a second\nmemory engine. It specifies exact canonical bytes, domain-separated object and bundle commitments, mandatory\nrecall-evidence membership and order, external trust anchors, identity epochs, revocation state, authorization,\nrequest receipts, ordered disclosure, and three mutation terminals. The current protocol contains 18 versioned\nobject schemas, 39 "
+              }
+            ],
+            "text": "MutMem V1, published as \"MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory,\"\nintroduced retention-preserving, cryptographically authorized mutation for persistent agent memory and reported\nutility, mutation-integrity, and targeted-poisoning results. Its principal publication gap was not another retrieval\nmechanism: it was the absence of a complete portable verification contract and a reviewer-facing path from a\nclean installation to independently checkable evidence. MutMem V2 closes that gap without creating a second\nmemory engine. It specifies exact canonical bytes, domain-separated object and bundle commitments, mandatory\nrecall-evidence membership and order, external trust anchors, identity epochs, revocation state, authorization,\nrequest receipts, ordered disclosure, and three mutation terminals. The current protocol contains 18 versioned\nobject schemas, 39 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0005"
+        ],
+        "excerpt": "recall predicate vectors, 15 mutation vectors, and 37 closed recall failure reasons. Independent\nNode and Python implementations agree on verdict and primary reason for all 72 structural and cryptographic\nterminals; a separate production-conformance corpus agrees on 42/42 cases spanning 28 required classes. A clean\nNode v26.8.1 installation reaches first-boot, restart, and scheduler readiness with no experimental memories. A\nseparately scoped Canary experiment completes 120 explicit-marker and clean units; it is evidence of declared\nmarker traversal only. Every public table is regenerated from a self-hashed aggregate, and an independent verifier\nreconstructs its statistics and claim boundaries. Historical V1 empirical results remain historical rather than\nbeing relabeled as V2 reruns. MutMem V2 supports claims about portable integrity, authorization, traceability,\nconformance, and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ac819eaa8be7aa5ae3c54e03e7f4e60138b4ed537ff274f478012455679a6790",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0005",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 897,
+                "text": "recall predicate vectors, 15 mutation vectors, and 37 closed recall failure reasons. Independent\nNode and Python implementations agree on verdict and primary reason for all 72 structural and cryptographic\nterminals; a separate production-conformance corpus agrees on 42/42 cases spanning 28 required classes. A clean\nNode v26.8.1 installation reaches first-boot, restart, and scheduler readiness with no experimental memories. A\nseparately scoped Canary experiment completes 120 explicit-marker and clean units; it is evidence of declared\nmarker traversal only. Every public table is regenerated from a self-hashed aggregate, and an independent verifier\nreconstructs its statistics and claim boundaries. Historical V1 empirical results remain historical rather than\nbeing relabeled as V2 reruns. MutMem V2 supports claims about portable integrity, authorization, traceability,\nconformance, and "
+              }
+            ],
+            "text": "recall predicate vectors, 15 mutation vectors, and 37 closed recall failure reasons. Independent\nNode and Python implementations agree on verdict and primary reason for all 72 structural and cryptographic\nterminals; a separate production-conformance corpus agrees on 42/42 cases spanning 28 required classes. A clean\nNode v26.8.1 installation reaches first-boot, restart, and scheduler readiness with no experimental memories. A\nseparately scoped Canary experiment completes 120 explicit-marker and clean units; it is evidence of declared\nmarker traversal only. Every public table is regenerated from a self-hashed aggregate, and an independent verifier\nreconstructs its statistics and claim boundaries. Historical V1 empirical results remain historical rather than\nbeing relabeled as V2 reruns. MutMem V2 supports claims about portable integrity, authorization, traceability,\nconformance, and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0007"
+        ],
+        "excerpt": "Persistent memory creates two separable research problems. The first is how an agent may adapt retained evidence\nwhile preserving authorship, prior state, and the reason for change. MutMem V1 addressed that problem with\nappend-only outcome evidence, bounded bidirectional weight transitions, signed provenance, and ordered recall\nreceipts [1]. The second problem is how a reviewer can verify those claims without trusting the production database,\nits runtime, or a prose description of the system. A self-consistent implementation is not yet a portable protocol:\nits object boundaries, byte encodings, trust roots, failure reasons, result cardinality, and terminal states must be\nexplicit.\nMutMem V2 addresses the second problem. MutMem denotes the portable protocol; HOM-AIMOS is one producer\nand case study. The portable verifier does not select memories, authorize requests, sign events, mutate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "765dc227c02d965e606649fa1204721807c87a6997f01f17b6ba446f4649112c",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 0,
+                "text": "Persistent memory creates two separable research problems. The first is how an agent may adapt retained evidence\nwhile preserving authorship, prior state, and the reason for change. MutMem V1 addressed that problem with\nappend-only outcome evidence, bounded bidirectional weight transitions, signed provenance, and ordered recall\nreceipts [1]. The second problem is how a reviewer can verify those claims without trusting the production database,\nits runtime, or a prose description of the system. A self-consistent implementation is not yet a portable protocol:\nits object boundaries, byte encodings, trust roots, failure reasons, result cardinality, and terminal states must be\nexplicit.\nMutMem V2 addresses the second problem. MutMem denotes the portable protocol; HOM-AIMOS is one producer\nand case study. The portable verifier does not select memories, authorize requests, sign events, mutate "
+              }
+            ],
+            "text": "Persistent memory creates two separable research problems. The first is how an agent may adapt retained evidence\nwhile preserving authorship, prior state, and the reason for change. MutMem V1 addressed that problem with\nappend-only outcome evidence, bounded bidirectional weight transitions, signed provenance, and ordered recall\nreceipts [1]. The second problem is how a reviewer can verify those claims without trusting the production database,\nits runtime, or a prose description of the system. A self-consistent implementation is not yet a portable protocol:\nits object boundaries, byte encodings, trust roots, failure reasons, result cardinality, and terminal states must be\nexplicit.\nMutMem V2 addresses the second problem. MutMem denotes the portable protocol; HOM-AIMOS is one producer\nand case study. The portable verifier does not select memories, authorize requests, sign events, mutate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0008"
+        ],
+        "excerpt": "storage,\nor operate a second runtime. It consumes finite evidence objects and returns a deterministic terminal verdict.\n[V2-PORTABLE-PROTOCOL]\nThe paper makes four contributions:",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2eaf812d6ec78aa64ab9733bd1d4cc5246acbded8fb70d4adf98165c19f66464",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1076,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 898,
+                "text": "storage,\nor operate a second runtime. It consumes finite evidence objects and returns a deterministic terminal verdict.\n[V2-PORTABLE-PROTOCOL]\nThe paper makes four contributions:"
+              }
+            ],
+            "text": "storage,\nor operate a second runtime. It consumes finite evidence objects and returns a deterministic terminal verdict.\n[V2-PORTABLE-PROTOCOL]\nThe paper makes four contributions:"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0009"
+        ],
+        "excerpt": "results, with deterministic ordering, exact canonical bytes, and domain-separated SHA-256 commitments.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "It Defines A Versioned Recall-Disclosure Envelope Whose Complete Membership Is13 + 5R Objects Forr Disclosed",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8eb1d591cab7b16e2904d548635912ccbc8d1f84b97916877cc559c60e4729b2",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0009",
+            "pages": [
+              2
+            ],
+            "section": "It Defines A Versioned Recall-Disclosure Envelope Whose Complete Membership Is13 + 5R Objects Forr Disclosed",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 102,
+                "page": 2,
+                "section": "It Defines A Versioned Recall-Disclosure Envelope Whose Complete Membership Is13 + 5R Objects Forr Disclosed",
+                "section_index": 3,
+                "start": 0,
+                "text": "results, with deterministic ordering, exact canonical bytes, and domain-separated SHA-256 commitments."
+              }
+            ],
+            "text": "results, with deterministic ordering, exact canonical bytes, and domain-separated SHA-256 commitments."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0010"
+        ],
+        "excerpt": "authorization, signed request and receipt parity, native decision bindings, per-result provenance and occurrence\nevidence, Merkle order, and signed terminal receipts.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "It Defines Cross-Object Predicates For External Trust, Actor And Housekeeper Epochs, Revocation, Effective",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2f3fcb9c8c8c493d33ac1482feeaf1e21da1f17afa19553f5614f8f6fa113ca6",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0010",
+            "pages": [
+              2
+            ],
+            "section": "It Defines Cross-Object Predicates For External Trust, Actor And Housekeeper Epochs, Revocation, Effective",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 166,
+                "page": 2,
+                "section": "It Defines Cross-Object Predicates For External Trust, Actor And Housekeeper Epochs, Revocation, Effective",
+                "section_index": 4,
+                "start": 0,
+                "text": "authorization, signed request and receipt parity, native decision bindings, per-result provenance and occurrence\nevidence, Merkle order, and signed terminal receipts."
+              }
+            ],
+            "text": "authorization, signed request and receipt parity, native decision bindings, per-result provenance and occurrence\nevidence, Merkle order, and signed terminal receipts."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0011"
+        ],
+        "excerpt": "transition, a signed no-op, and an occurrence observation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "It Defines A Portable Mutation Profile That Preserves The Native Outcome Schema And Distinguishes An Authorized",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3aa799202b449c0e42b1af3e861ca36bb0374a481ef0e5bbdc9d18835070f092",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0011",
+            "pages": [
+              2
+            ],
+            "section": "It Defines A Portable Mutation Profile That Preserves The Native Outcome Schema And Distinguishes An Authorized",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 58,
+                "page": 2,
+                "section": "It Defines A Portable Mutation Profile That Preserves The Native Outcome Schema And Distinguishes An Authorized",
+                "section_index": 5,
+                "start": 0,
+                "text": "transition, a signed no-op, and an occurrence observation."
+              }
+            ],
+            "text": "transition, a signed no-op, and an occurrence observation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0012"
+        ],
+        "excerpt": "qualification, deterministic publication regeneration, an attempt ledger, and a complete claim-to-evidence map.\nThe contribution is deliberately narrower than \"secure memory.\" Cryptographic integrity does not imply that\nremembered content is true. A fixed poisoning experiment does not imply universal detection. Exact verifier parity\ndoes not imply independent empirical replication. These are protocol boundaries, not disclaimers added after\nobserving results. [CONTENT-TRUTH] [UNIVERSAL-DEFENSE][INDEPENDENT-REPLICATION]",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "It Supplies Independent Node And Python Verifiers, A Production-Derived Conformance Corpus, A Clean Installer",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6eb692544d32a405570eee54f5653b97e8628cb79b2e59c994d13f2731779ea4",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0012",
+            "pages": [
+              2
+            ],
+            "section": "It Supplies Independent Node And Python Verifiers, A Production-Derived Conformance Corpus, A Clean Installer",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 523,
+                "page": 2,
+                "section": "It Supplies Independent Node And Python Verifiers, A Production-Derived Conformance Corpus, A Clean Installer",
+                "section_index": 6,
+                "start": 0,
+                "text": "qualification, deterministic publication regeneration, an attempt ledger, and a complete claim-to-evidence map.\nThe contribution is deliberately narrower than \"secure memory.\" Cryptographic integrity does not imply that\nremembered content is true. A fixed poisoning experiment does not imply universal detection. Exact verifier parity\ndoes not imply independent empirical replication. These are protocol boundaries, not disclaimers added after\nobserving results. [CONTENT-TRUTH] [UNIVERSAL-DEFENSE][INDEPENDENT-REPLICATION]"
+              }
+            ],
+            "text": "qualification, deterministic publication regeneration, an attempt ledger, and a complete claim-to-evidence map.\nThe contribution is deliberately narrower than \"secure memory.\" Cryptographic integrity does not imply that\nremembered content is true. A fixed poisoning experiment does not imply universal detection. Exact verifier parity\ndoes not imply independent empirical replication. These are protocol boundaries, not disclaimers added after\nobserving results. [CONTENT-TRUTH] [UNIVERSAL-DEFENSE][INDEPENDENT-REPLICATION]"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0019"
+        ],
+        "excerpt": "Let H = SHA256, letJ(x)be the protocol's deterministic canonical-JSON bytes, letLP4(x)prepend the unsigned\nfour-byte big-endian byte length of UTF-8 stringx, and letBEk(x)encode integer x in k big-endian bytes. Every\nvariable-length field is either canonical JSON or explicitly length-framed. The object domainDo is the UTF-8 byte\nstring hom.aimos.mutmem-portable-object/v2 followed by a zero byte. For kindkj, schemasj, and bodybj, the\nobject commitment is\noj =H(D o\u2225LP 4(kj)\u2225LP 4(sj)\u2225BE 4(|J(bj)|)\u2225J(b j)).(1)\nBodies reject unsupported or non-finite numbers, unsafe integers, nesting beyond the protocol limit, and bodies larger\nthan the declared maximum. Object schemas are exact, not advisory labels. These choices follow the prefix-free\nframing and domain-separation discipline used in cryptographic protocol design [6] and the deterministic JSON\ndiscipline standardized by JCS [5].",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Canonical Objects",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c7c3da832368bd63c77ba55d95c14cd764846ae53abe66ee09b59badc2473660",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0019",
+            "pages": [
+              3
+            ],
+            "section": "Canonical Objects",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 887,
+                "page": 3,
+                "section": "Canonical Objects",
+                "section_index": 10,
+                "start": 0,
+                "text": "Let H = SHA256, letJ(x)be the protocol's deterministic canonical-JSON bytes, letLP4(x)prepend the unsigned\nfour-byte big-endian byte length of UTF-8 stringx, and letBEk(x)encode integer x in k big-endian bytes. Every\nvariable-length field is either canonical JSON or explicitly length-framed. The object domainDo is the UTF-8 byte\nstring hom.aimos.mutmem-portable-object/v2 followed by a zero byte. For kindkj, schemasj, and bodybj, the\nobject commitment is\noj =H(D o\u2225LP 4(kj)\u2225LP 4(sj)\u2225BE 4(|J(bj)|)\u2225J(b j)).(1)\nBodies reject unsupported or non-finite numbers, unsafe integers, nesting beyond the protocol limit, and bodies larger\nthan the declared maximum. Object schemas are exact, not advisory labels. These choices follow the prefix-free\nframing and domain-separation discipline used in cryptographic protocol design [6] and the deterministic JSON\ndiscipline standardized by JCS [5]."
+              }
+            ],
+            "text": "Let H = SHA256, letJ(x)be the protocol's deterministic canonical-JSON bytes, letLP4(x)prepend the unsigned\nfour-byte big-endian byte length of UTF-8 stringx, and letBEk(x)encode integer x in k big-endian bytes. Every\nvariable-length field is either canonical JSON or explicitly length-framed. The object domainDo is the UTF-8 byte\nstring hom.aimos.mutmem-portable-object/v2 followed by a zero byte. For kindkj, schemasj, and bodybj, the\nobject commitment is\noj =H(D o\u2225LP 4(kj)\u2225LP 4(sj)\u2225BE 4(|J(bj)|)\u2225J(b j)).(1)\nBodies reject unsupported or non-finite numbers, unsafe integers, nesting beyond the protocol limit, and bodies larger\nthan the declared maximum. Object schemas are exact, not advisory labels. These choices follow the prefix-free\nframing and domain-separation discipline used in cryptographic protocol design [6] and the deterministic JSON\ndiscipline standardized by JCS [5]."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0020"
+        ],
+        "excerpt": "Each recall bundle contains thirteen singleton objects: trust anchor; actor identity and revocation; Housekeeper\nidentity and revocation; effective grant; request envelope; request receipt; content-state decision; epistemic decision;\nfinal security closure; return projection; and native recall receipt. Each disclosed result contributes five objects:\nmemory state, provenance chain, occurrence, epistemic projection, and receipt evidence. Therefore, forrresults,\nNobjects(r) = 13 + 5r,0\u2264r\u2264200.(2)\n3\nEvery singleton kind occurs exactly once. Every result ordinal from0throughr\u2212 1contains all five result kinds\nand one subject identifier shared across the group. Objects are ordered first by the fixed singleton order and then\nby result ordinal and fixed result-kind order. Duplicate, missing, mixed-subject, or out-of-range objects fail before\nrelational evaluation.\nThe ordered object descriptors ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Complete Membership And Deterministic Order",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "acab301b0dd113dae788cd01fce346f4d23abb0289ad4091a70af3747e5e8b95",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0020",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Complete Membership And Deterministic Order",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 499,
+                "page": 3,
+                "section": "Complete Membership And Deterministic Order",
+                "section_index": 11,
+                "start": 0,
+                "text": "Each recall bundle contains thirteen singleton objects: trust anchor; actor identity and revocation; Housekeeper\nidentity and revocation; effective grant; request envelope; request receipt; content-state decision; epistemic decision;\nfinal security closure; return projection; and native recall receipt. Each disclosed result contributes five objects:\nmemory state, provenance chain, occurrence, epistemic projection, and receipt evidence. Therefore, forrresults,\nNobjects(r) = 13 + 5r,0\u2264r\u2264200.(2)\n3"
+              },
+              {
+                "end": 398,
+                "page": 4,
+                "section": "Complete Membership And Deterministic Order",
+                "section_index": 12,
+                "start": 0,
+                "text": "Every singleton kind occurs exactly once. Every result ordinal from0throughr\u2212 1contains all five result kinds\nand one subject identifier shared across the group. Objects are ordered first by the fixed singleton order and then\nby result ordinal and fixed result-kind order. Duplicate, missing, mixed-subject, or out-of-range objects fail before\nrelational evaluation.\nThe ordered object descriptors "
+              }
+            ],
+            "text": "Each recall bundle contains thirteen singleton objects: trust anchor; actor identity and revocation; Housekeeper\nidentity and revocation; effective grant; request envelope; request receipt; content-state decision; epistemic decision;\nfinal security closure; return projection; and native recall receipt. Each disclosed result contributes five objects:\nmemory state, provenance chain, occurrence, epistemic projection, and receipt evidence. Therefore, forrresults,\nNobjects(r) = 13 + 5r,0\u2264r\u2264200.(2)\n3\nEvery singleton kind occurs exactly once. Every result ordinal from0throughr\u2212 1contains all five result kinds\nand one subject identifier shared across the group. Objects are ordered first by the fixed singleton order and then\nby result ordinal and fixed result-kind order. Duplicate, missing, mixed-subject, or out-of-range objects fail before\nrelational evaluation.\nThe ordered object descriptors "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0021"
+        ],
+        "excerpt": "are committed with the RFC 6962 construction [3]. Ifxi denotes canonical bytes for\ndescriptori,\nLi =H(0x00\u2225x i),(3)\nT(a,b) =H(0x01\u2225a\u2225b),(4)\nwith an empty rootH(\u03f5)and recursive split at the largest power of two strictly smaller than the current list length.\nLeaf/node domain separation prevents a node encoding from being confused with a leaf encoding under the hash\nassumption.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Complete Membership And Deterministic Order",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2a117b9035e70a813f5ab38c70943d1f85b9dfe55ae3133ef3b6c57670a82d31",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0021",
+            "pages": [
+              4
+            ],
+            "section": "Complete Membership And Deterministic Order",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 775,
+                "page": 4,
+                "section": "Complete Membership And Deterministic Order",
+                "section_index": 12,
+                "start": 398,
+                "text": "are committed with the RFC 6962 construction [3]. Ifxi denotes canonical bytes for\ndescriptori,\nLi =H(0x00\u2225x i),(3)\nT(a,b) =H(0x01\u2225a\u2225b),(4)\nwith an empty rootH(\u03f5)and recursive split at the largest power of two strictly smaller than the current list length.\nLeaf/node domain separation prevents a node encoding from being confused with a leaf encoding under the hash\nassumption."
+              }
+            ],
+            "text": "are committed with the RFC 6962 construction [3]. Ifxi denotes canonical bytes for\ndescriptori,\nLi =H(0x00\u2225x i),(3)\nT(a,b) =H(0x01\u2225a\u2225b),(4)\nwith an empty rootH(\u03f5)and recursive split at the largest power of two strictly smaller than the current list length.\nLeaf/node domain separation prevents a node encoding from being confused with a leaf encoding under the hash\nassumption."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0022"
+        ],
+        "excerpt": "LetDb be hom.aimos.mutmem-portable-evidence/v2followed by a zero byte,uthe bundle identifier,cthe company\nidentifier, f the externally expected 32-byte master fingerprint,r the result count, andR the object root. The\nbundle commitment is\nB=H(D b\u2225LP 4(u)\u2225LP 4(c)\u2225f\u2225BE 8(r)\u2225R).(5)\nThe master fingerprint is an input to verification; accepting the fingerprint solely because it appears inside the\nbundle would be circular trust. The structural predicate evaluator therefore reports that cryptographic signatures\nand external trust remain unverified. Independent verifiers must check them.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Envelope Commitment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b6f60907fe2a0d5b0d20b8394c8a60e8576bc836640b27ea697e28a6596f73a6",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0022",
+            "pages": [
+              4
+            ],
+            "section": "Envelope Commitment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 585,
+                "page": 4,
+                "section": "Envelope Commitment",
+                "section_index": 13,
+                "start": 0,
+                "text": "LetDb be hom.aimos.mutmem-portable-evidence/v2followed by a zero byte,uthe bundle identifier,cthe company\nidentifier, f the externally expected 32-byte master fingerprint,r the result count, andR the object root. The\nbundle commitment is\nB=H(D b\u2225LP 4(u)\u2225LP 4(c)\u2225f\u2225BE 8(r)\u2225R).(5)\nThe master fingerprint is an input to verification; accepting the fingerprint solely because it appears inside the\nbundle would be circular trust. The structural predicate evaluator therefore reports that cryptographic signatures\nand external trust remain unverified. Independent verifiers must check them."
+              }
+            ],
+            "text": "LetDb be hom.aimos.mutmem-portable-evidence/v2followed by a zero byte,uthe bundle identifier,cthe company\nidentifier, f the externally expected 32-byte master fingerprint,r the result count, andR the object root. The\nbundle commitment is\nB=H(D b\u2225LP 4(u)\u2225LP 4(c)\u2225f\u2225BE 8(r)\u2225R).(5)\nThe master fingerprint is an input to verification; accepting the fingerprint solely because it appears inside the\nbundle would be circular trust. The structural predicate evaluator therefore reports that cryptographic signatures\nand external trust remain unverified. Independent verifiers must check them."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0027"
+        ],
+        "excerpt": "MutMem V2 does not introduce a new cognitive update rule. It preserves the native V1 mutation-outcome schema and\nmakes its evidence portable. LetD\u00b5 be hom.aimos.mutmem-portable-mutation-evidence/v2 followed by a zero\nbyte, and letM be the canonical body containing the recall commitment, outcome evidence, recall receipt, outcome\nevent, signed valence evidence, terminal, and optional cognitive projection. The portable mutation commitment is\n4\nB\u00b5 =H(D \u00b5\u2225J(M)).(6)\nThree terminals are exhaustive:\n\u2022authorized_transition : a principal-state outcome binds a terminal REWEIGHT provenance node and a\nnontrivial cognitive projection;\n\u2022signed_noop : the signed outcome is retained, but no projection is fabricated when the quantized weight is\nunchanged; and\n\u2022occurrence_observation: occurrence-scoped evidence is retained with no weight authority.\nFor an authorized transition, the verifier reconstructs ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Portable Mutation Profile",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b482d286988a991ad48742f4d7f53687fa223c98768334850bba88d6a0c7c8f8",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0027",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Portable Mutation Profile",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 444,
+                "page": 4,
+                "section": "Portable Mutation Profile",
+                "section_index": 18,
+                "start": 0,
+                "text": "MutMem V2 does not introduce a new cognitive update rule. It preserves the native V1 mutation-outcome schema and\nmakes its evidence portable. LetD\u00b5 be hom.aimos.mutmem-portable-mutation-evidence/v2 followed by a zero\nbyte, and letM be the canonical body containing the recall commitment, outcome evidence, recall receipt, outcome\nevent, signed valence evidence, terminal, and optional cognitive projection. The portable mutation commitment is\n4"
+              },
+              {
+                "end": 453,
+                "page": 5,
+                "section": "Portable Mutation Profile",
+                "section_index": 19,
+                "start": 0,
+                "text": "B\u00b5 =H(D \u00b5\u2225J(M)).(6)\nThree terminals are exhaustive:\n\u2022authorized_transition : a principal-state outcome binds a terminal REWEIGHT provenance node and a\nnontrivial cognitive projection;\n\u2022signed_noop : the signed outcome is retained, but no projection is fabricated when the quantized weight is\nunchanged; and\n\u2022occurrence_observation: occurrence-scoped evidence is retained with no weight authority.\nFor an authorized transition, the verifier reconstructs "
+              }
+            ],
+            "text": "MutMem V2 does not introduce a new cognitive update rule. It preserves the native V1 mutation-outcome schema and\nmakes its evidence portable. LetD\u00b5 be hom.aimos.mutmem-portable-mutation-evidence/v2 followed by a zero\nbyte, and letM be the canonical body containing the recall commitment, outcome evidence, recall receipt, outcome\nevent, signed valence evidence, terminal, and optional cognitive projection. The portable mutation commitment is\n4\nB\u00b5 =H(D \u00b5\u2225J(M)).(6)\nThree terminals are exhaustive:\n\u2022authorized_transition : a principal-state outcome binds a terminal REWEIGHT provenance node and a\nnontrivial cognitive projection;\n\u2022signed_noop : the signed outcome is retained, but no projection is fabricated when the quantized weight is\nunchanged; and\n\u2022occurrence_observation: occurrence-scoped evidence is retained with no weight authority.\nFor an authorized transition, the verifier reconstructs "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0029"
+        ],
+        "excerpt": "The production-language reference and independent Python implementation consume the same public vectors\nbut do not share verifier code. Four lanes cover recall structure, mutation structure, recall cryptography, and\nmutation cryptography. Across all 72 vectors, both implementations match the expected valid/invalid terminal\nand exact primary reason. This count is not a benchmark accuracy denominator: it is a conformance denominator.\n[V2-INDEPENDENT-VERIFIER]\nThe structural vector sets contain valid bundles and one negative vector for each declared recall or mutation failure\nfamily. Cryptographic vectors add signature, certificate, epoch, revocation, and trust-anchor checks. The verification\nimplementation is read-only and has no runtime importer, database, network, signing, model, or policy authority.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Two Implementations, One Terminal Language",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4d452eb3eef32e04f5ee9e65e7914be7c63ffb213a1516fd3f16efce72106149",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0029",
+            "pages": [
+              5
+            ],
+            "section": "Two Implementations, One Terminal Language",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 811,
+                "page": 5,
+                "section": "Two Implementations, One Terminal Language",
+                "section_index": 20,
+                "start": 0,
+                "text": "The production-language reference and independent Python implementation consume the same public vectors\nbut do not share verifier code. Four lanes cover recall structure, mutation structure, recall cryptography, and\nmutation cryptography. Across all 72 vectors, both implementations match the expected valid/invalid terminal\nand exact primary reason. This count is not a benchmark accuracy denominator: it is a conformance denominator.\n[V2-INDEPENDENT-VERIFIER]\nThe structural vector sets contain valid bundles and one negative vector for each declared recall or mutation failure\nfamily. Cryptographic vectors add signature, certificate, epoch, revocation, and trust-anchor checks. The verification\nimplementation is read-only and has no runtime importer, database, network, signing, model, or policy authority."
+              }
+            ],
+            "text": "The production-language reference and independent Python implementation consume the same public vectors\nbut do not share verifier code. Four lanes cover recall structure, mutation structure, recall cryptography, and\nmutation cryptography. Across all 72 vectors, both implementations match the expected valid/invalid terminal\nand exact primary reason. This count is not a benchmark accuracy denominator: it is a conformance denominator.\n[V2-INDEPENDENT-VERIFIER]\nThe structural vector sets contain valid bundles and one negative vector for each declared recall or mutation failure\nfamily. Cryptographic vectors add signature, certificate, epoch, revocation, and trust-anchor checks. The verification\nimplementation is read-only and has no runtime importer, database, network, signing, model, or policy authority."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0030"
+        ],
+        "excerpt": "A separate corpus projects production-shaped recall evidence into public test objects and evaluates it with the produc-\ntion protocol owners and an independent verifier. All 42 intended cases are observed, cover 28 required classes, and\nagree on terminal verdict and protocol reason. This establishes production/protocol conformance for the released cor-\npus. It does not establish retrieval quality or robustness against unrepresented attacks.[V2-PRODUCTION-CONFORMANCE]",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Production-Derived Conformance Corpus",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "947e7aec0e5eb142df0af701b7935d580e5e929c34a9e9aed21430eb7e687d1f",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0030",
+            "pages": [
+              5
+            ],
+            "section": "Production-Derived Conformance Corpus",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 471,
+                "page": 5,
+                "section": "Production-Derived Conformance Corpus",
+                "section_index": 21,
+                "start": 0,
+                "text": "A separate corpus projects production-shaped recall evidence into public test objects and evaluates it with the produc-\ntion protocol owners and an independent verifier. All 42 intended cases are observed, cover 28 required classes, and\nagree on terminal verdict and protocol reason. This establishes production/protocol conformance for the released cor-\npus. It does not establish retrieval quality or robustness against unrepresented attacks.[V2-PRODUCTION-CONFORMANCE]"
+              }
+            ],
+            "text": "A separate corpus projects production-shaped recall evidence into public test objects and evaluates it with the produc-\ntion protocol owners and an independent verifier. All 42 intended cases are observed, cover 28 required classes, and\nagree on terminal verdict and protocol reason. This establishes production/protocol conformance for the released cor-\npus. It does not establish retrieval quality or robustness against unrepresented attacks.[V2-PRODUCTION-CONFORMANCE]"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0036"
+        ],
+        "excerpt": "independent evidence verifier reconstructs 44 rate/Wilson rows and 28 McNemar/Holm rows. V1 bootstrap\nintervals are not repeated in V2 tables because their private rows are unavailable; retaining a historical point estimate\nis not the same as claiming independent row-level regeneration.\n6\nTable 1: Current MutMem V2 reproducibility and conformance evidence. Counts are verification units, not benchmark\naccuracy.\nEvidence family Verified result Interpretation\nPortable protocol 18 schemas; 39 recall vectors; 15\nmutation vectors; 37 recall failure\ncodes\nVersioned bytes, membership,\npredicates, and terminal vocabulary\nIndependent Node/Python\nverifier\n72/72 exact verdict and reason\nterminals; 10/10 exit criteria\nVerifier portability, not empirical utility\nProduction conformance corpus 42/42 cases across 28 required classes Production/independent parity\nCanary explicit-marker lane marked 60/60; ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statistical Contract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "861ec9061e09e62b7ea610d3bf885dd4351440742ecfb27b09d25504087916b1",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0036",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Statistical Contract",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1182,
+                "page": 6,
+                "section": "Statistical Contract",
+                "section_index": 26,
+                "start": 893,
+                "text": "independent evidence verifier reconstructs 44 rate/Wilson rows and 28 McNemar/Holm rows. V1 bootstrap\nintervals are not repeated in V2 tables because their private rows are unavailable; retaining a historical point estimate\nis not the same as claiming independent row-level regeneration.\n6"
+              },
+              {
+                "end": 610,
+                "page": 7,
+                "section": "Statistical Contract",
+                "section_index": 27,
+                "start": 0,
+                "text": "Table 1: Current MutMem V2 reproducibility and conformance evidence. Counts are verification units, not benchmark\naccuracy.\nEvidence family Verified result Interpretation\nPortable protocol 18 schemas; 39 recall vectors; 15\nmutation vectors; 37 recall failure\ncodes\nVersioned bytes, membership,\npredicates, and terminal vocabulary\nIndependent Node/Python\nverifier\n72/72 exact verdict and reason\nterminals; 10/10 exit criteria\nVerifier portability, not empirical utility\nProduction conformance corpus 42/42 cases across 28 required classes Production/independent parity\nCanary explicit-marker lane marked 60/60; "
+              }
+            ],
+            "text": "independent evidence verifier reconstructs 44 rate/Wilson rows and 28 McNemar/Holm rows. V1 bootstrap\nintervals are not repeated in V2 tables because their private rows are unavailable; retaining a historical point estimate\nis not the same as claiming independent row-level regeneration.\n6\nTable 1: Current MutMem V2 reproducibility and conformance evidence. Counts are verification units, not benchmark\naccuracy.\nEvidence family Verified result Interpretation\nPortable protocol 18 schemas; 39 recall vectors; 15\nmutation vectors; 37 recall failure\ncodes\nVersioned bytes, membership,\npredicates, and terminal vocabulary\nIndependent Node/Python\nverifier\n72/72 exact verdict and reason\nterminals; 10/10 exit criteria\nVerifier portability, not empirical utility\nProduction conformance corpus 42/42 cases across 28 required classes Production/independent parity\nCanary explicit-marker lane marked 60/60; "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0037"
+        ],
+        "excerpt": "clean flags 0/60 Explicit marker traversal only\nClean installer qualification Node v26.8.1; first boot, restart, and\nscheduler ready; 0 experimental\nmemories\nOne same-user installed system; no\nbenchmark result\nTable 2: Historical MutMem V1 results, reproduced from the self-hashed V1 aggregate. These are not current-source\nV2 reruns.\nProtocol and metric Historical V1 result Boundary\nLongMemEval, LLM-judged\naccuracy\n459/500 (91.80%; Wilson 95% CI\n89.06\u201393.90%)\nGPT-5.4 generator; GPT-5.6 Terra\njudge\nLoCoMo, LLM-judged accuracy 1472/1986 (74.12%; Wilson 95% CI\n72.15\u201376.00%)\nDistinct from token F1\nLoCoMo, category-aware token\nF1",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Statistical Contract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "56a971f7e893e43a3bed847e2b9a93b9fb5afd01197873922d22b39f6c0afb1a",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Statistical Contract",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1241,
+                "page": 7,
+                "section": "Statistical Contract",
+                "section_index": 27,
+                "start": 610,
+                "text": "clean flags 0/60 Explicit marker traversal only\nClean installer qualification Node v26.8.1; first boot, restart, and\nscheduler ready; 0 experimental\nmemories\nOne same-user installed system; no\nbenchmark result\nTable 2: Historical MutMem V1 results, reproduced from the self-hashed V1 aggregate. These are not current-source\nV2 reruns.\nProtocol and metric Historical V1 result Boundary\nLongMemEval, LLM-judged\naccuracy\n459/500 (91.80%; Wilson 95% CI\n89.06\u201393.90%)\nGPT-5.4 generator; GPT-5.6 Terra\njudge\nLoCoMo, LLM-judged accuracy 1472/1986 (74.12%; Wilson 95% CI\n72.15\u201376.00%)\nDistinct from token F1\nLoCoMo, category-aware token\nF1"
+              }
+            ],
+            "text": "clean flags 0/60 Explicit marker traversal only\nClean installer qualification Node v26.8.1; first boot, restart, and\nscheduler ready; 0 experimental\nmemories\nOne same-user installed system; no\nbenchmark result\nTable 2: Historical MutMem V1 results, reproduced from the self-hashed V1 aggregate. These are not current-source\nV2 reruns.\nProtocol and metric Historical V1 result Boundary\nLongMemEval, LLM-judged\naccuracy\n459/500 (91.80%; Wilson 95% CI\n89.06\u201393.90%)\nGPT-5.4 generator; GPT-5.6 Terra\njudge\nLoCoMo, LLM-judged accuracy 1472/1986 (74.12%; Wilson 95% CI\n72.15\u201376.00%)\nDistinct from token F1\nLoCoMo, category-aware token\nF1"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0045"
+        ],
+        "excerpt": "Commitment substitution.Under collision resistance, changing a canonical object field changes Equation 1, the\nobject root, and Equation 5, except with negligible collision probability. Omitting or duplicating a mandatory object\nfails Equation 2 before signature verification.\nAuthority substitution.A bundle does not choose its own trusted master. Actor and Housekeeper certificate\nchains, validity intervals, revocation observations, grant scope, signed request, and terminal event are checked against\nthe externally selected trust anchor. Under Ed25519 unforgeability, altering a signed commitment without the\ncorresponding private key fails signature verification.\nOrdering and terminal fidelity.Per-result ordinals and fixed kind order enter the Merkle root. The terminal\nevent binds the request, authority, root, evidence list, return projection, and result count. Reordering a valid set ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Security Argument And Non-Goals",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cae1b4f687ad93e6d4bc565a6c6b3ac957abe52c97fa7d7e3ee1b56702487cc5",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0045",
+            "pages": [
+              8
+            ],
+            "section": "Security Argument And Non-Goals",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 8,
+                "section": "Security Argument And Non-Goals",
+                "section_index": 33,
+                "start": 0,
+                "text": "Commitment substitution.Under collision resistance, changing a canonical object field changes Equation 1, the\nobject root, and Equation 5, except with negligible collision probability. Omitting or duplicating a mandatory object\nfails Equation 2 before signature verification.\nAuthority substitution.A bundle does not choose its own trusted master. Actor and Housekeeper certificate\nchains, validity intervals, revocation observations, grant scope, signed request, and terminal event are checked against\nthe externally selected trust anchor. Under Ed25519 unforgeability, altering a signed commitment without the\ncorresponding private key fails signature verification.\nOrdering and terminal fidelity.Per-result ordinals and fixed kind order enter the Merkle root. The terminal\nevent binds the request, authority, root, evidence list, return projection, and result count. Reordering a valid set "
+              }
+            ],
+            "text": "Commitment substitution.Under collision resistance, changing a canonical object field changes Equation 1, the\nobject root, and Equation 5, except with negligible collision probability. Omitting or duplicating a mandatory object\nfails Equation 2 before signature verification.\nAuthority substitution.A bundle does not choose its own trusted master. Actor and Housekeeper certificate\nchains, validity intervals, revocation observations, grant scope, signed request, and terminal event are checked against\nthe externally selected trust anchor. Under Ed25519 unforgeability, altering a signed commitment without the\ncorresponding private key fails signature verification.\nOrdering and terminal fidelity.Per-result ordinals and fixed kind order enter the Merkle root. The terminal\nevent binds the request, authority, root, evidence list, return projection, and result count. Reordering a valid set "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0046"
+        ],
+        "excerpt": "or\nreplacing the terminal projection is detectable.\nThese arguments establish tamper evidence under the assumptions. They do not prevent a storage administrator\nfrom destroying evidence, prove that signed content is true, or guarantee that every harmful input is detected.\nAvailability and semantic validation require separate mechanisms and evidence.\n8",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Security Argument And Non-Goals",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b032d4a4b7507474b48f0109b0f6335d2e3e60dc55958f9130fcc07935cabf44",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0046",
+            "pages": [
+              8
+            ],
+            "section": "Security Argument And Non-Goals",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1246,
+                "page": 8,
+                "section": "Security Argument And Non-Goals",
+                "section_index": 33,
+                "start": 893,
+                "text": "or\nreplacing the terminal projection is detectable.\nThese arguments establish tamper evidence under the assumptions. They do not prevent a storage administrator\nfrom destroying evidence, prove that signed content is true, or guarantee that every harmful input is detected.\nAvailability and semantic validation require separate mechanisms and evidence.\n8"
+              }
+            ],
+            "text": "or\nreplacing the terminal projection is detectable.\nThese arguments establish tamper evidence under the assumptions. They do not prevent a storage administrator\nfrom destroying evidence, prove that signed content is true, or guarantee that every harmful input is detected.\nAvailability and semantic validation require separate mechanisms and evidence.\n8"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0047"
+        ],
+        "excerpt": "remain historical V1 results. V2 does not relabel them as results of the current source.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "No Current V2 Utility Rerun.Utility, Mutation Performance, Poisonedrag, Ablation, And Human Agreement",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1ad54097a61f224c84e04ee70786ce67f3b67a9fc89c6e1dd15261aab13be0fe",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0047",
+            "pages": [
+              9
+            ],
+            "section": "No Current V2 Utility Rerun.Utility, Mutation Performance, Poisonedrag, Ablation, And Human Agreement",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 88,
+                "page": 9,
+                "section": "No Current V2 Utility Rerun.Utility, Mutation Performance, Poisonedrag, Ablation, And Human Agreement",
+                "section_index": 34,
+                "start": 0,
+                "text": "remain historical V1 results. V2 does not relabel them as results of the current source."
+              }
+            ],
+            "text": "remain historical V1 results. V2 does not relabel them as results of the current source."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0048"
+        ],
+        "excerpt": "experiments have not been repeated by an outside team.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "No Independent Empirical Replication.The Verifier Implementations Are Independent, But The Empirical",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3389fa854d2aa3b32883fae9b52b7fb230f1eb0efb00f9a9017e08e32ad90a8c",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0048",
+            "pages": [
+              9
+            ],
+            "section": "No Independent Empirical Replication.The Verifier Implementations Are Independent, But The Empirical",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 54,
+                "page": 9,
+                "section": "No Independent Empirical Replication.The Verifier Implementations Are Independent, But The Empirical",
+                "section_index": 35,
+                "start": 0,
+                "text": "experiments have not been repeated by an outside team."
+              }
+            ],
+            "text": "experiments have not been repeated by an outside team."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0050"
+        ],
+        "excerpt": "estimate unseen-attack generalization.\n6.SABER figures are omitted.Artifact custody is insufficient for numerical publication.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Poisonedrag Is Adapted And Post-Calibration.It Does Not Match The Upstream Full Corpus And Does Not",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7a7af82bd92d0b0febae15290bf85177550d74fbe5a3b98225e14d06c06e532e",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0050",
+            "pages": [
+              9
+            ],
+            "section": "Poisonedrag Is Adapted And Post-Calibration.It Does Not Match The Upstream Full Corpus And Does Not",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 126,
+                "page": 9,
+                "section": "Poisonedrag Is Adapted And Post-Calibration.It Does Not Match The Upstream Full Corpus And Does Not",
+                "section_index": 37,
+                "start": 0,
+                "text": "estimate unseen-attack generalization.\n6.SABER figures are omitted.Artifact custody is insufficient for numerical publication."
+              }
+            ],
+            "text": "estimate unseen-attack generalization.\n6.SABER figures are omitted.Artifact custody is insufficient for numerical publication."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0057"
+        ],
+        "excerpt": "MutMem V2 turns an implementation-bound integrity claim into a versioned, externally anchored verification\nprotocol. Complete recall and mutation bundles bind canonical objects, cross-object authority, result identity, ordered\ndisclosure, and terminal events. Independent Node and Python implementations agree on the full released terminal\ncorpus, production-derived cases agree with the independent verifier, and one clean installer reaches restart-stable\nreadiness. Publication tables, attempts, omissions, and limitations regenerate from a single evidence root.\nThe result is a stronger reproducibility claim, not a broader security claim. Historical V1 empirical findings remain\nhistorical. Canary evidence remains marker-specific. SABER numerical evidence remains omitted. Integrity and\nauthorization remain distinct from truth, and verifier independence remains distinct from independent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "aca47467970db01da713adb9a3326455f08a6af4de2675392a78dbf2ee8580b5",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0057",
+            "pages": [
+              10
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 10,
+                "section": "Conclusion",
+                "section_index": 43,
+                "start": 0,
+                "text": "MutMem V2 turns an implementation-bound integrity claim into a versioned, externally anchored verification\nprotocol. Complete recall and mutation bundles bind canonical objects, cross-object authority, result identity, ordered\ndisclosure, and terminal events. Independent Node and Python implementations agree on the full released terminal\ncorpus, production-derived cases agree with the independent verifier, and one clean installer reaches restart-stable\nreadiness. Publication tables, attempts, omissions, and limitations regenerate from a single evidence root.\nThe result is a stronger reproducibility claim, not a broader security claim. Historical V1 empirical findings remain\nhistorical. Canary evidence remains marker-specific. SABER numerical evidence remains omitted. Integrity and\nauthorization remain distinct from truth, and verifier independence remains distinct from independent "
+              }
+            ],
+            "text": "MutMem V2 turns an implementation-bound integrity claim into a versioned, externally anchored verification\nprotocol. Complete recall and mutation bundles bind canonical objects, cross-object authority, result identity, ordered\ndisclosure, and terminal events. Independent Node and Python implementations agree on the full released terminal\ncorpus, production-derived cases agree with the independent verifier, and one clean installer reaches restart-stable\nreadiness. Publication tables, attempts, omissions, and limitations regenerate from a single evidence root.\nThe result is a stronger reproducibility claim, not a broader security claim. Historical V1 empirical findings remain\nhistorical. Canary evidence remains marker-specific. SABER numerical evidence remains omitted. Integrity and\nauthorization remain distinct from truth, and verifier independence remains distinct from independent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0067"
+        ],
+        "excerpt": "corpus, not benchmark efficacy.\nV2-CANARY CURRENT V2 120/120 Explicit marker traversal only; not arbitrary poison,\nprompt-injection, or semantic social-engineering detection.\nV2-CLEAN-\nINSTALLER\nCURRENT V2 one qualified\ninstallation and\nrestart\nReproducibility evidence only; not benchmark evidence.\nSABER-\nOPERATIONAL-\nNUMBERS\nOMITTED No numerical claim Exact private artifact is not in verified custody; no numerical\nV2 claim is permitted.\nCONTENT-TRUTH PROHIBITED No numerical claim Integrity, provenance, authorization, and agreement do not\nestablish semantic truth.\nUNIVERSAL-\nDEFENSE\nPROHIBITED No numerical claim Fixed marker and N=100 evidence do not establish universal\nrobustness.\nINDEPENDENT-\nREPLICATION\nPROHIBITED No numerical claim No outside team independently reproduced the system or\nempirical results.\nB Verifier and regeneration commands\nnpm run verify\nnpm run ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Per Arm",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b20231df04105df582242e86876d636e4ce3663f78b2f6ef5dc1fd692eba0028",
+            "evidence_id": "E6ec12bc01fe3b4d2-B0067",
+            "pages": [
+              11
+            ],
+            "section": "Per Arm",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 988,
+                "page": 11,
+                "section": "Per Arm",
+                "section_index": 51,
+                "start": 108,
+                "text": "corpus, not benchmark efficacy.\nV2-CANARY CURRENT V2 120/120 Explicit marker traversal only; not arbitrary poison,\nprompt-injection, or semantic social-engineering detection.\nV2-CLEAN-\nINSTALLER\nCURRENT V2 one qualified\ninstallation and\nrestart\nReproducibility evidence only; not benchmark evidence.\nSABER-\nOPERATIONAL-\nNUMBERS\nOMITTED No numerical claim Exact private artifact is not in verified custody; no numerical\nV2 claim is permitted.\nCONTENT-TRUTH PROHIBITED No numerical claim Integrity, provenance, authorization, and agreement do not\nestablish semantic truth.\nUNIVERSAL-\nDEFENSE\nPROHIBITED No numerical claim Fixed marker and N=100 evidence do not establish universal\nrobustness.\nINDEPENDENT-\nREPLICATION\nPROHIBITED No numerical claim No outside team independently reproduced the system or\nempirical results.\nB Verifier and regeneration commands\nnpm run verify\nnpm run "
+              }
+            ],
+            "text": "corpus, not benchmark efficacy.\nV2-CANARY CURRENT V2 120/120 Explicit marker traversal only; not arbitrary poison,\nprompt-injection, or semantic social-engineering detection.\nV2-CLEAN-\nINSTALLER\nCURRENT V2 one qualified\ninstallation and\nrestart\nReproducibility evidence only; not benchmark evidence.\nSABER-\nOPERATIONAL-\nNUMBERS\nOMITTED No numerical claim Exact private artifact is not in verified custody; no numerical\nV2 claim is permitted.\nCONTENT-TRUTH PROHIBITED No numerical claim Integrity, provenance, authorization, and agreement do not\nestablish semantic truth.\nUNIVERSAL-\nDEFENSE\nPROHIBITED No numerical claim Fixed marker and N=100 evidence do not establish universal\nrobustness.\nINDEPENDENT-\nREPLICATION\nPROHIBITED No numerical claim No outside team independently reproduced the system or\nempirical results.\nB Verifier and regeneration commands\nnpm run verify\nnpm run "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.01235",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "theoretical",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.01235",
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0004",
+          "E6ec12bc01fe3b4d2-B0005",
+          "E6ec12bc01fe3b4d2-B0008",
+          "E6ec12bc01fe3b4d2-B0012",
+          "E6ec12bc01fe3b4d2-B0019",
+          "E6ec12bc01fe3b4d2-B0020",
+          "E6ec12bc01fe3b4d2-B0021",
+          "E6ec12bc01fe3b4d2-B0022",
+          "E6ec12bc01fe3b4d2-B0027",
+          "E6ec12bc01fe3b4d2-B0029",
+          "E6ec12bc01fe3b4d2-B0030",
+          "E6ec12bc01fe3b4d2-B0036",
+          "E6ec12bc01fe3b4d2-B0037",
+          "E6ec12bc01fe3b4d2-B0045",
+          "E6ec12bc01fe3b4d2-B0046",
+          "E6ec12bc01fe3b4d2-B0047",
+          "E6ec12bc01fe3b4d2-B0048",
+          "E6ec12bc01fe3b4d2-B0050",
+          "E6ec12bc01fe3b4d2-B0057",
+          "E6ec12bc01fe3b4d2-B0067"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "ae8d5260343fb0b93998aa39006240dab40ed58daaa73d8abbb3277aaf7002fd"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.01235",
+        "claim_evidence_alignment": "The paper explicitly bounds its claims to portable protocol verification, conformance, and auditability under stated cryptographic assumptions, scrupulously separating historical V1 empirical results from new V2 verifier parity evidence [E6ec12bc01fe3b4d2-B0012, E6ec12bc01fe3b4d2-B0036, E6ec12bc01fe3b4d2-B0047, E6ec12bc01fe3b4d2-B0067].",
+        "context_id": "6ec12bc01fe3b4d220064c01fbf80b567c8f3db2317b1126562cbf53d2c23a9a",
+        "decision": "pass",
+        "evaluation_assessment": "The verification protocol is validated via complete terminal verdict and reason parity across 72 test vectors in dual independent implementations and 42/42 cases in a production-derived conformance corpus, alongside explicit-marker canary testing [E6ec12bc01fe3b4d2-B0029, E6ec12bc01fe3b4d2-B0030, E6ec12bc01fe3b4d2-B0036, E6ec12bc01fe3b4d2-B0037].",
+        "evidence_ids": [
+          "E6ec12bc01fe3b4d2-B0004",
+          "E6ec12bc01fe3b4d2-B0005",
+          "E6ec12bc01fe3b4d2-B0007",
+          "E6ec12bc01fe3b4d2-B0008",
+          "E6ec12bc01fe3b4d2-B0009",
+          "E6ec12bc01fe3b4d2-B0010",
+          "E6ec12bc01fe3b4d2-B0011",
+          "E6ec12bc01fe3b4d2-B0012",
+          "E6ec12bc01fe3b4d2-B0019",
+          "E6ec12bc01fe3b4d2-B0020",
+          "E6ec12bc01fe3b4d2-B0021",
+          "E6ec12bc01fe3b4d2-B0022",
+          "E6ec12bc01fe3b4d2-B0027",
+          "E6ec12bc01fe3b4d2-B0029",
+          "E6ec12bc01fe3b4d2-B0030",
+          "E6ec12bc01fe3b4d2-B0036",
+          "E6ec12bc01fe3b4d2-B0037",
+          "E6ec12bc01fe3b4d2-B0045",
+          "E6ec12bc01fe3b4d2-B0046",
+          "E6ec12bc01fe3b4d2-B0047",
+          "E6ec12bc01fe3b4d2-B0048",
+          "E6ec12bc01fe3b4d2-B0050",
+          "E6ec12bc01fe3b4d2-B0057",
+          "E6ec12bc01fe3b4d2-B0067"
+        ],
+        "limitations": "The manuscript transparently documents that cryptographic integrity does not ensure semantic factual truth, canary detection is limited to explicit markers, V2 utility was not empirically rerun, and empirical experiments lack external third-party replication [E6ec12bc01fe3b4d2-B0012, E6ec12bc01fe3b4d2-B0046, E6ec12bc01fe3b4d2-B0047, E6ec12bc01fe3b4d2-B0048, E6ec12bc01fe3b4d2-B0067].",
+        "method_assessment": "The protocol details precise cryptographic framing, JSON canonicalization, and Merkle tree leaf/node domain separations based on RFC 6962 and RFC 8785, complemented by dual independent verifier implementations in Node.js and Python [E6ec12bc01fe3b4d2-B0019, E6ec12bc01fe3b4d2-B0021, E6ec12bc01fe3b4d2-B0029].",
+        "quality_rationale": "The manuscript presents a rigorously scoped, thoroughly specified protocol for reproducible cryptographic verification with dual-language implementation parity, accompanied by exemplary claim discipline and limitation accounting.",
+        "scoped_contribution": "MutMem V2 defines a portable verification and evidence protocol for cryptographically authorized persistent agent memory mutations, specifying canonical byte formats, Merkle tree commitments, exact cross-object predicates, and closed failure vocabularies [E6ec12bc01fe3b4d2-B0004, E6ec12bc01fe3b4d2-B0008, E6ec12bc01fe3b4d2-B0009, E6ec12bc01fe3b4d2-B0010, E6ec12bc01fe3b4d2-B0019, E6ec12bc01fe3b4d2-B0020].",
+        "source_content_hash": "ae8d5260343fb0b93998aa39006240dab40ed58daaa73d8abbb3277aaf7002fd"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a rigorously scoped, thoroughly specified protocol for reproducible cryptographic verification with dual-language implementation parity, accompanied by exemplary claim discipline and limitation accounting.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "ae8d5260343fb0b93998aa39006240dab40ed58daaa73d8abbb3277aaf7002fd",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript transparently documents that cryptographic integrity does not ensure semantic factual truth, canary detection is limited to explicit markers, V2 utility was not empirically rerun, and empirical experiments lack external third-party replication [E6ec12bc01fe3b4d2-B0012, E6ec12bc01fe3b4d2-B0046, E6ec12bc01fe3b4d2-B0047, E6ec12bc01fe3b4d2-B0048, E6ec12bc01fe3b4d2-B0067]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -165,7 +2214,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

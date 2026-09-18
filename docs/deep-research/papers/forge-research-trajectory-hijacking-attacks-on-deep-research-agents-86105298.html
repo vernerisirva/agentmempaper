@@ -59,16 +59,277 @@
             <p>Deep research agents decompose open-ended queries into subtasks, retrieve web evidence over multiple rounds, and synthesize long-form reports. This workflow creates a planning-layer poisoning surface: adversarial documents that enter the retrieval pool can steer follow-up questions and turn a local injection into re...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents an original, methodologically sound, and extensively validated investigation of adversarial vulnerabilities specific to recursive LLM research agents, adhering to rigorous empirical standards.</p>
+      <p>The authors explicitly discuss key limitations including testbed architecture dependency, lack of live-web authority/spam filtering dynamics in retrieval simulation, heuristic weight assignment in PRISM, and susceptibility of RQA to adaptive retrieval-focused adversaries.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:41:00.939180+00:00.</p>
+        <p>Coverage: 75012 of 75012 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents decompose open-ended
+queries into subtasks, retrieve web evidence
+over multiple rounds, and synthesize long-form
+reports. This workflow creates a planning-
+layer poisoning surface: adversarial documents
+that enter the retrieval pool can steer follow-up
+questions and turn a local injection into report-
+level contamination. We present FORGE
+(FabricatedOrchestratedReasoning chain for
+aGentExploitation), a two-level attack that
+combines intra-document reasoning fabrication
+with inter-document chain coordination to hi-
+jack subtask planning. We further introduce
+PRISMmetric, which weights infected report
+claims by cognitive type, and Root Query An-
+choring, a lightweight defense that ties recur-
+sive follow-up generation to the root query.
+Across 25 queries, Network FORGE reaches
+26.4% PRISM with five injected documents
+and exhibits depth migration, in which recur-
+sive </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>planner&#x27;s implicit consensus filter and steering
+follow-up subtask generation toward the target nar-
+rative. To measure report-level harm, we intro-
+ducePRISM(PoisoningReportImpactSeverity
+Metric), which weights infected report claims by
+cognitive type—factual, prescriptive, evaluative,
+causal, and framing—capturing not whether the
+attack appears in the report but how much of its rea-
+soning weight has been compromised. To mitigate
+it, we proposeRoot Query Anchoring(RQA), a
+lightweight planning-layer defense that reinjects
+the root query during recursive follow-up genera-
+tion, constraining the subtask drift that lets a single
+retrieved adversarial document seed an entire poi-
+soned research branch.
+Our main contributions are:
+• FORGE, a two-level poisoning attack com-
+bining intra-document reasoning fabrication
+with inter-document chain coordination to tar-
+get deep research </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FORGE addresses two failure points that single-
+layer poisoning leaves exposed: a single document
+looks like an unsupported assertion, and a flat set
+of documents looks like coincidental overlap rather
+than evidence. We therefore design the attack at
+two levels: each adversarial document carries an
+internal reasoning chain that makes its assigned
+claim appear locally derived, and the full docu-
+ment set is organized as a distributed argument
+chain that makes the collection appear as conver-
+gent multi-source evidence. Given a target narra-
+tive V, FORGE constructs j adversarial documents
+P={p 1, . . . , pj} that steer the final report R to-
+ward that narrative. Sections 4.1 and 4.2 formalize
+these two construction levels; Section 4.3 shows
+how they escalate to report-level contamination
+through subtask hijacking.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Intra-document fabrication gives each adversarial
+document local plausibility. Rather than stating
+its assigned step ck directly, document pk presents
+ck as the endpoint of a fabricated reasoning chain
+rooted in an uncontroversial premiser 1
+k:
+pk :r 1
+k ⇒r 2
+k ⇒ · · · ⇒rmk
+k , r mk
+k =c k.(2)
+Each intermediate step ri
+k is plausible in isolation,
+so the full sequence encourages the synthesis LLM
+to treat ck as a derived conclusion rather than a
+claim to be verified from scratch. This design ex-
+ploits the tendency of argumentative coherence to
+affect perceived credibility (Lawrence and Reed,
+2019): a document thatarguestoward ck through
+a causal chain is more persuasive than one that
+merelystatesit, an effect we observe directly in
+the ablation gap between B1 and B2 (§ 7.1).</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Inter-document chaining turns local plausibility
+into apparent cross-source support. We organize P
+as a distributed chain C that advances one argument
+step per document and converges onV:
+C:c 1 →c 2 → · · · →cj =V.(3)
+p1 establishes a foundational premise; p2, . . . , pj−1
+supply intermediate causal links and corroborating
+3</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The two-level construction escalates to report-level
+contamination through subtask hijacking. When
+Ls generates the research plan, it performs an ini-
+tial retrieval pass D(0) over the document pool. If
+FORGE documents rank highly in D(0), the plan-
+ner absorbs their framing into the subtask structure:
+T ∗ =L s
+
+q,D (0)
+
+,∃ ˆt∈ T∗ : ˆt∼ V.(4)
+Because ˆt is semantically aligned with V, its re-
+trieval step in Eq. (1) is more likely to surface addi-
+tional FORGE documents. Evidence retrieved for
+ˆt therefore consists disproportionately of FORGE
+documents, which Lm compiles into a poisoned
+sub-reportˆsthat propagates intoR:
+ˆs=Lm
+ ˆt,D ∗
+ˆt
+
+,ˆs ,→R.(5)
+A single hijacked subtask can inject V-aligned con-
+tent into R even when all remaining subtasks are
+benign. Deeper recursive workflows further am-
+plify this contamination by giving it more oppor-
+tunities to migrate across sub-reports, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given adversarial documents P and a report R,
+PRISM is computed in three stages. We first ex-
+tract claim sets from both sides (10j claims from P,
+with 10 per document, and a fixed nr = 30 claims
+from R). A Gemini-3.1-Flash-Lite evaluator (Deep-
+Mind, 2026) then assigns each report claim a type
+τ(c)∈ {τF , τP , τE, τC, τF r} and judges whether
+it semantically matches any claim in P; the match-
+ing judgment is binary, with no similarity thresh-
+old. PRISM is the resulting weighted fraction of
+infected report claims:
+PRISM=
+X
+c∈ CR
+infected(c)·w(τ(c))
+X
+c∈ CR
+w(τ(c))
+,(6)
+where higher values indicate that a larger share of
+the report&#x27;s weighted claim mass has been aligned
+with the poisoning narrative. The denominator
+sums the weights of alln r extracted report claims,
+whose type distribution varies naturally across top-
+ics; we use thisfloating denominatorrather than
+a fixed distribution </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate FORGE along three axes: poison-
+ing surface and injection scale (j), topic category,
+and research depth, all sharing the same PRISM
+pipeline for cross-setting comparison.
+Platform and models.We use gpt-
+researcher (Elovic, 2023) as the testbed, with
+gpt-4o-mini (OpenAI, 2024a) for search and
+filtering, gpt-4.1 (OpenAI, 2025b) for sub-
+reports and final synthesis, and o4-mini (OpenAI,
+2025c) for planning. Claim extraction, type
+classification, and infection detection (§ 5) use
+Gemini-3.1-Flash-Lite(DeepMind, 2026).
+Retrieval simulation.For each subtask ti, a
+web search API returns m real documents; we
+add j adversarial documents and rerank the
+m+j pool via Eq. (1) with α= 0.4
+andtext-embedding-3-small (OpenAI, 2024b).
+Only the top m reach synthesis, so adversarial doc-
+uments mustdisplacegenuine ones rather than ex-
+pand the evidence set.
+Topics and protocol.We evaluate five </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>list (Network setting, 25
+queries). Switching to the j= 5 subtask list (nc: 1→5)
+yields a far larger gain than increasing retrieval injection
+(j: 1→5) when the subtask list is from thej= 1run.
+A controlled transplant separates the two chan-
+nels and shows they contribute unequally. We pair
+the subtask lists from normal FORGE runs atj= 1
+and j= 5 (nc ∈ {1,5}) with retrieval injection at
+j∈ {1,5}, holding the plan fixed while varying
+only evidence volume (Fig. 4). The asymmetry
+is stark. Under the fixed j= 1 plan, scaling re-
+trieval fivefold leaves PRISM unchanged (14.1%
+→ 14.1%); the extra poisoned documents are effec-
+tively inert. Swapping in thej= 5 plan, even at the
+lowest retrieval setting, lifts PRISM to 22.8%, and
+combining both channels reaches 29.5%. A weakly
+poisoned subtask list thus limits the effect of in-
+jected evidence, since its retrieval queries rarely
+target V-aligned </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FORGE✓ ✓ ✓
+MethodASR F ASRP ASRE ASRC ASRF r PRISM(%)
+No Attack– – – – – 0.0
+PoisonedRAG11.2 7.3 21.7 42.8 28.2 23.0
+AuthChain5.8 5.8 31.0 21.2 33.2 18.8
+B1 (FORGE ablation)21.2 13.8 24.8 17.8 33.7 20.6
+B2 (FORGE ablation)37.8 12.8 25.3 29.9 28.4 27.9
+FORGE (Ours) 37.7 22.5 33.1 44.5 49.5 38.5
+Table 4: Defense comparison under Network FORGE at j= 5 , evaluated on 10 queries (2 per topic category).
+PRISM and ∆PRISM are reported in percentage points; utility is the RACE reference-based adaptive quality score
+from DeepResearch Bench.
+Defense Layer PRISM (%)∆PRISM Utility (RACE)
+No Defense — 38.5 — 0.5000
+Paraphrasing Query 24.6−13.9 0.4890
+PPL Filtering Retrieval 29.3−9.2 0.4972
+Knowledge Expansionk=20Retrieval 23.9−14.6 0.5062
+Root Query Anchoring (Ours)Planning18.3−20.2 0.6173</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Because subtask hijacking drives report-level con-
+tamination, our defense intervenes there.Root
+Query Anchoring (RQA)stores q0 at initializa-
+tion and re-injects it at two recursive points: (i)
+when subtasks are generated from retrieved evi-
+dence, and (ii) when learnings are extracted and
+next-round questions proposed. At both points the
+prompt co-conditions on q0 and the current subtask,
+anchoring new questions to the original objective
+while covering diverse dimensions (temporal, ge-
+ographic, mechanistic, contrastive). A poisoned
+document may still enter retrieval, but it cannot
+steer the next subtask away fromq 0.
+We compare RQA against paraphrasing-based
+sanitization (Jain et al., 2023), Perplexity (PPL)
+filtering (Alon and Kamfonas, 2023), and
+PoisonedRAG-style retrieval-time knowledge ex-
+pansion (Zou et al., 2025); utility uses the RACE
+score from DeepResearch Bench (Du et </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Single-Platform Scope.Main results are on gpt-
+researcher; although Appendix E replicates trends
+on Perplexica and DeerFlow, PRISM values are not
+directly portable across retrieval architectures.
+Network Simulation Fidelity.The Network set-
+ting simulates retrieval competition but does not
+model live-web factors such as domain authority,
+freshness, or anti-spam filtering; PRISM should be
+read as an upper bound in this setting.
+Metric Calibration.PRISM&#x27;s five-type taxon-
+omy and weight ordering are design choices not
+calibrated against human reader-perception data;
+Appendix D shows that qualitative trends are stable
+across evaluator models and alternative weights.
+Defense Scope.RQA constrains the planning
+channel but leaves retrieval open: an adaptive at-
+tacker who aligns FORGE documents lexically
+with the root query can persist in the top- m evi-
+dence, motivating future retrieval-time </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This subsection validates the claim-typing accuracy
+of the PRISM evaluator (§ 5). Two human anno-
+tators, neither of whom is an author of this paper,
+independently assigned a claim type to each of 206
+claims drawn from the depth experiment; disagree-
+ments were adjudicated by a third annotator, and
+cases where the final label differed from the model
+prediction were recorded as corrections. Table 5
+summarizes the agreement rates by claim type.
+Overall agreement is 92.7%, with Cohen&#x27;s κ=
+0.905. Most disagreements occur at the bound-
+ary between causal, factual, and evaluative claims.
+Representative causal-label disagreements include:
+•&quot;Strong IP protections are essential for recoup-
+ing high R&amp;D costs in patent-driven fields. &quot;
+The model labels the claim as causal, while
+the human label is evaluative.
+•&quot;Regulatory pressure is the primary driver for
+the adoption of closed-loop cooling </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Classification
+This subsection validates the automatic evaluator
+for identifying whether a claim has been influ-
+enced by poisoning narratives. We constructed
+a 300-sample human evaluation set, with 150 sam-
+ples drawn from claims automatically labeled as
+infected and 150 samples drawn from claims au-
+tomatically labeled as not_infected. For each
+sample, the same two annotators independently as-
+signed a binary label, and ambiguous cases were ad-
+ditionally marked as borderline; disagreements
+were adjudicated by a third annotator. Table 7 sum-
+marizes the agreement rates by automatic predic-
+tion label.
+On this 300-sample set, overall agreement is
+94.67%, with precision 95.33%, recall 94.08%, and
+Cohen&#x27;s κ= 0.893 . The corresponding confusion
+matrix is TP = 143, FP = 7, TN = 141, and FN
+= 9. Overall, these results indicate that the auto-
+matic evaluator can reliably distinguish </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +368,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

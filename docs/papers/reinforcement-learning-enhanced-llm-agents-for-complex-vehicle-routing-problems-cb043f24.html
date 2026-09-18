@@ -59,16 +59,199 @@
             <p>Vehicle Routing Problems (VRPs) are fundamental combinatorial optimization problems with widespread applications in various scenarios. The advanced optimization solvers can effectively solve such problems. However, modeling complex VRP variants for solvers often requires substantial domain expertise, which limits th...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents an original, methodologically sound framework combining RL planning with LLM agents for combinatorial optimization modeling, supported by rigorous empirical validation against competitive baselines across multiple solvers.</p>
+      <p>The authors identify trade-offs such as algorithmic stagnation at higher iterations, stochasticity in online memory evolution, non-optimal feasible code, and lack of support for multi-modal visual inputs or dynamic routing scenarios.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:39:56.861207+00:00.</p>
+        <p>Coverage: 39115 of 39115 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>substantial domain expertise, which limits the accessibility of
+advanced optimization technologies. In this paper, we propose Reinforce-
+ment Learning Enhanced LLM Agents (RLEA), a multi-agent framework
+designed to automate the modeling of complex VRPs. RLEA introduces
+a lightweight neural Planner trained with Soft Q-learning to efficiently
+orchestrate the actions of LLM-based agents. In addition, we equip the
+system with an evolutionary memory module and retrieval-augmented
+generation, enabling the agent to leverage both accumulated experience
+and external solver knowledge during program generation and refine-
+ment for solving VRPs. We evaluated 48 distinct VRP variants across
+various solvers. The experimental results demonstrate that RLEA out-
+performs the previous state-of-the-art method, achieving a 16.67% higher
+success rate while significantly reducing runtime errors. These </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Re-
+inforcement Learning Enhanced LLM Agents famework (RLEA) that integrates
+a lightweight neural Planner, retrieval-based knowledge augmentation, and an
+evolved memory mechanism. This design enables efficient action orchestration</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tively select actions for LLM agents, enabling efficient exploration while sig-
+nificantly reducing the latency compared with LLM-based decision-making.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>analyzes interaction trajectories to identify successful action paths and de-
+rives the root causes of constraint conflicts from failure instances. Beyond
+the external knowledge provided by RAG, the agent further leverages its
+accumulated experience to enhance modeling robustness.</blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We propose Reinforcement Learning Enhanced LLM Agents (RLEA), a multi-
+agent framework for automatic VRP modeling. As illustrated in Figure 1, RLEA
+consists of three main components: a neural Planner, an LLM-based Executor,
+and a Memory module. The Planner selects actions based on the current problem
+state, the Executor carries out the selected action to generate or revise code, and
+the memory module continuously evolves historical interaction trajectories into
+reusable experience for future decision-making.
+6 Chen. Author et al.
+Fig. 1.Architecture of RLEA for automated VRP modeling. The input consists of the
+problem name and the current modeling code to be generated or revised. An extractor
+encodes this pair into embeddings, which define the Planner state. Based on the current
+state, the Planner follows a policyπ(a|s)to select the action, such as exploiting similar
+historical </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To support automatic VRP modeling in complex settings, we design an action
+spaceAconsisting of three actions: Refine, Retrieval-Augmented Generation
+(RAG), and Meta-Learning with Evolved Memory (MLEM). These actions are
+designed to address three key requirements in solver-oriented program genera-
+tion: iterative error correction, the incorporation of external solver knowledge,
+and the reuse of evolved experience. Detailed prompts are provided in Appendix
+2. Below we describe the mechanics of each action.
+RefineWhen handling complex VRP variants, the executor may produce erro-
+neous code or incomplete constraint implementations. The Refine action exploits
+the self-correction capability of LLMs by enabling iterative revision based on the
+current code state. When this action is selected, the executor examines whether
+the generated code satisfies all required constraints, identifies </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Static LLM-based decision-making pipelines are often insufficient for complex
+VRP modeling [14], where the most effective action depends on both the prob-
+lem context and the current code state. This makes adaptive decision-making
+essential. In addition, the evolving memory pool is initially sparse, so the MLEM
+actiona m may provide limited benefit in early training, which can further sup-
+press exploration if a fixed action strategy is used. To address these challenges,
+RLEA employs a lightweight neural Planner trained with Soft Q-learning, en-
+abling adaptive action selection without incurring the high cost of LLM-based
+decision-making at every interaction step.
+The Planner learns a stochastic policyπ θ(at |s t)over the action space
+A={a r, ag, am}, corresponding to Refine, RAG, and MLEM, respectively. The
+detailed definitions of these actions are given in Section 4.2. The policy is </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>induced
+by a soft Q-network through the Boltzmann distribution:
+πθ(a|s) = exp (Qθ(s, a)/α)P
+a′∈A exp (Qθ(s, a′)/α) ,(8)
+whereα &gt;0isthetemperatureparametercontrollingtheexploration–exploitation
+trade-off. A largerαencourages broader exploration over candidate actions,
+which is particularly beneficial in the early stage when evolved memory is not
+yet sufficiently informative, whereas a smallerαleads to more greedy action
+selection.
+During training, the planner interacts with the environment to generate a
+trajectoryτ. To guide policy optimization, we design a dense reward based on
+the optimality gap. Letyobj
+t denote the objective value of the solution obtained
+at stept. The relative optimality gapδt is defined as
+δt =
 
-        <ul></ul>
+
+
+
+
+
+yobj
+t −y ∗
+y∗
+
+
+
+
+
+ ,(9)
+wherey ∗ denotes the reference optimal objective value obtained from expert
+benchmarks. To encourage high-quality solutions while explicitly </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HyperparametersThe Planner is trained using the Soft Q-Learning algorithm
+with the Adam optimizer and a learning rate of1×10−4. The model consists of
+a frozen small language model (SLM) and a trainable Q-value head. We adopt
+Qwen2.5-1.5B-Instruct as the SLM to encode state representations with a max-
+imum context length of 8192 tokens. The Q-value head is a two-layer MLP with
+256 hidden units and ReLU activation, mapping state embeddings to the action
+space. DeepSeek-Reasoner as the Executor and ChatGPT (gpt-4o-2024-08-06)
+as the Memory Agent.
+The replay buffer has a capacity of 512 state transitions, with a training batch
+size of 16. The discount factor is set toγ= 0.99, and the entropy temperature
+coefficient is fixed atα= 4to encourage exploration. The target network is
+updated every four training steps via hard parameter copying. Each training
+episode is limited to a maximum of 16 </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interaction steps to avoid infinite loops.
+BaselinesWe compare RLEA with five representative baselines:
+– Direct Generation:Standard prompting without additional reasoning or
+correction mechanisms.
+– Reasoning-basedmethods:Self-Refine[17]andChain-of-Thought(CoT)[28].
+– Formulation-first approach:Chain-of-Experts (CoE) [24].
+– Code-only approach:DRoC [12].
+In our framework, two inference settings are evaluated. Inoffline inference,
+the Executor generates solutions using a pre-trained memory pool. Inonline
+inference, the memory agent dynamically constructs and updates the memory
+pool during test time.
+To ensure robustness, we conducted evaluations using two widely used opti-
+mization solvers: Gurobi [8] and OR-Tools [19]. The maximum number of inter-
+action steps during inference was set toTmax = 6. To ensure a fair comparison,
+all baselines were assigned the same iteration budget. As in </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>previous work [12],
+the reported results are the average of three independent runs.
+Performance MetricsThere are two performance metrics we used:
+– Success Rate (SR):This metric evaluates the capability of the framework
+to generate valid modeling code. It is defined as:
+SR= Nsucc
+Ntotal
+×100%(13)
+whereN total is the total number of VRP instances tested.Nsucc represents
+the number of instances where the generated code successfully executes and
+yields a feasible solution (i.e., the solver successfully returns a valid objective
+value without errors).</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 reports the performance of RLEA and five representative baselines in
+terms of Success Rate (SR) and Runtime Error Rate (RER) on both OR-Tools
+and Gurobi solvers.
+Methods that rely solely on the internal knowledge of LLMs, including Stan-
+dard Prompting, CoT, and Self-Refine, achieve limited performance, indicating
+that complex VRP variants are difficult to model accurately without domain-
+specific knowledge. CoE produces the lowest rates on SR due to its focus on
+Mixed-Integer Programming rather than complex VRPs, it maintains a remark-
+ably low RER suggesting the potential of the multi-agent framework. By incor-
+porating external solver documentation, DRoC improves performance over these
+methods, demonstrating the importance of domain-specific knowledge retrieval.
+Our method achieves the best overall performance. On OR-Tools, RLEA
+reaches an SR of 62.50%, outperforming the </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SR (%) RER (%) SR (%) RER (%)
+Standard Prompting 29.17 39.58 29.17 27.08
+Self-Refine 31.25 39.58 33.33 35.42
+Chain of Thoughts 25.00 54.17 18.75 56.25
+Chain of Experts 16.67 27.08 8.33 18.75
+DRoC 45.83 27.08 35.42 33.33
+Ours (offline)62.5016.6743.75 16.67
+Ours (online) 60.4212.5039.58 22.92
+T able 2.Ablation study on the Planner.
+MethodSR (%) RER (%) Avg Time (s)
+Ours 62.5016.673.06
+w/o Planner 50.00 14.58 -
+Prompt-based Planner 56.2512.50153.30
+achieves the highest SR, indicating that the learned policy effectively captures
+action-selection patterns across different VRP variants. Although the prompt-
+based Planner also attains a reasonable success rate, it incurs higher inference la-
+tency, while our neural Planner enables significantly faster decision-making. The
+slightly higher RER of RLEA reflects a trade-off between aggressive exploration
+and execution stability: by exploring more </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RLEA 13
+Fig. 2.Distribution of action types executed by RLEA on OR-Tools.
+T able 3.Ablation study of different actions on OR-Tools.
+Method SR (%) RER (%)
+Ours 62.50 16.67
+w/o Refine 39.58 36.25
+w/o RAG 43.75 22.92
+w/o Meta learning with evolved memory 41.67 27.08</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SR(%) RER(%) SR(%) RER(%) SR(%) RER(%)
+DeepSeek-r1 52.08 22.9262.5016.67 43.7512.50
+GPT-4o 45.83 25.00 37.50 31.25 47.92 18.75
+Qwen3-max 52.08 16.67 60.4212.5045.83 14.58
+/uni00000016/uni00000017/uni00000018/uni00000019/uni0000001a
+/uni0000002c/uni00000057/uni00000048/uni00000055/uni00000044/uni00000057/uni0000004c/uni00000052/uni00000051/uni00000003/uni00000031/uni00000058/uni00000050/uni00000045/uni00000048/uni00000055
+/uni00000014/uni00000013
+/uni00000015/uni00000013
+/uni00000016/uni00000013
+/uni00000017/uni00000013
+/uni00000018/uni00000013
+/uni00000019/uni00000013
+/uni0000001a/uni00000013/uni00000033/uni00000048/uni00000055/uni00000046/uni00000048/uni00000051/uni00000057/uni00000044/uni0000004a/uni00000048/uni00000003/uni0000000b/uni00000008/uni0000000c
+/uni00000036/uni00000035
+/uni00000035/uni00000028/uni00000035
+Fig. 3.Sensitivity analysis of OR-Tools performance relative to </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In this paper, we propose RLEA, a novel multi-agent framework for automating
+the modeling and solving of complex VRPs. By integrating a lightweight Planner
+optimized via Soft Q-Learning, RLEA enables rapid execution by the Executor,
+reducing computational overhead. The hybrid memory mechanism, combining
+evolutionary trajectory analysis with external RAG-based knowledge, ensures
+robust self-correction, helping resolve constraint conflicts that often cause solver
+failures. Empirical results show a 62.50% success rate across 48 VRP variants,
+achieving a 16.67% performance gain over the previous state-of-the-art. Future
+work will explore integrating multi-modal inputs for VRPs described through
+visual diagrams and extending the framework to dynamic, real-time routing
+scenarios with evolving constraints.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +290,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

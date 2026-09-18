@@ -32,7 +32,7 @@
   "last_seen_date": "2026-09-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-02 11:25:01",
   "notified_date": "2026-09-02",
@@ -43,7 +43,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-02 11:23:13",
-    "generated_at": "2026-09-18 13:22:56",
+    "generated_at": "2026-09-18 18:46:09",
     "last_seen_at": "2026-09-10 11:25:36",
     "metadata_sources": [
       "openalex",
@@ -113,36 +113,2625 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:39:27.132480+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work addresses a clear architectural flaw in existing memory poisoning attacks with well-formulated methodology, rigorous empirical testing across multiple dimensions, solid baseline comparisons, and validation against defenses.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 95324,
+      "assessment_input_sha256": "c69c11b9d93d6fb90dfdc96d369397ebaeb11525b98403bcf45c4208a38e58eb",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.00523",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 92486,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 91526,
+      "evidence_block_count": 151,
+      "evidence_context_characters": 109875,
+      "evidence_context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+      "evidence_context_sha256": "7aebe84a9d63dcbded4487f03536c675d416b76b0816cc310a672c5d7c49f791",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 92519,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "extracted_pages": 18,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "e170fe8d935790e7a35a2c5237b8c62050b8f993d5fc2bfd2c154d325aff5bd2",
+        "source_url": "https://arxiv.org/pdf/2609.00523",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 92485,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "discussion",
+        "introduction",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Transferable End-To-End Optimization For Indirect Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 432,
+          "supplied_characters": 432
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1462,
+          "supplied_characters": 1462
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 766,
+          "supplied_characters": 766
+        },
+        {
+          "heading": "Memory Write",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 109,
+          "supplied_characters": 109
+        },
+        {
+          "heading": "Retrieve",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1987,
+          "supplied_characters": 1987
+        },
+        {
+          "heading": "Retrieve",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 3909,
+          "supplied_characters": 3909
+        },
+        {
+          "heading": "Multi-Stage Long-Term Memory Pipeline",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 2091,
+          "supplied_characters": 2091
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 8,
+          "source_characters": 2479,
+          "supplied_characters": 2479
+        },
+        {
+          "heading": "Existing Work Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "limitations",
+          "section_index": 9,
+          "source_characters": 4767,
+          "supplied_characters": 4767
+        },
+        {
+          "heading": "Existing Work Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "limitations",
+          "section_index": 10,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Wsr (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 191,
+          "supplied_characters": 191
+        },
+        {
+          "heading": "Rsr (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1525,
+          "supplied_characters": 1525
+        },
+        {
+          "heading": "Threat Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "limitations",
+          "section_index": 13,
+          "source_characters": 2625,
+          "supplied_characters": 2625
+        },
+        {
+          "heading": "Overview And Shadow Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 1487,
+          "supplied_characters": 1487
+        },
+        {
+          "heading": "Overview And Shadow Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 518,
+          "supplied_characters": 518
+        },
+        {
+          "heading": "Stage-Level Signals",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 3648,
+          "supplied_characters": 3648
+        },
+        {
+          "heading": "E2E Bottleneck-Guided Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 545,
+          "supplied_characters": 545
+        },
+        {
+          "heading": "Bottleneck-Guided Refinement",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1204,
+          "supplied_characters": 1204
+        },
+        {
+          "heading": "Attacker-Side Pipepoison Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 525,
+          "supplied_characters": 525
+        },
+        {
+          "heading": "W R U",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 2842,
+          "supplied_characters": 2842
+        },
+        {
+          "heading": "Transfer Across Multiple Shadow Con-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 1522,
+          "supplied_characters": 1522
+        },
+        {
+          "heading": "Transfer Across Multiple Shadow Con-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 1335,
+          "supplied_characters": 1335
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 23,
+          "source_characters": 4474,
+          "supplied_characters": 4474
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 339,
+          "supplied_characters": 339
+        },
+        {
+          "heading": "Rq1: Matched Scenario Effectiveness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 3053,
+          "supplied_characters": 3053
+        },
+        {
+          "heading": "Rq2: Transfer Scenario Effectiveness",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1471,
+          "supplied_characters": 1471
+        },
+        {
+          "heading": "Transfer Scenario 1:\u039a Sys Difference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 954,
+          "supplied_characters": 954
+        },
+        {
+          "heading": "Transfer Scenario 1:\u039a Sys Difference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 3406,
+          "supplied_characters": 3406
+        },
+        {
+          "heading": "Transfer Scenario 2:\u039a User Difference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 1234,
+          "supplied_characters": 1234
+        },
+        {
+          "heading": "Transfer Scenario 2:\u039a User Difference",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 527,
+          "supplied_characters": 527
+        },
+        {
+          "heading": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 2927,
+          "supplied_characters": 2927
+        },
+        {
+          "heading": "Rq3: Ablation And Sensitivity Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 1090,
+          "supplied_characters": 1090
+        },
+        {
+          "heading": "Component Ablation Of Pipepoison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "results",
+          "section_index": 33,
+          "source_characters": 122,
+          "supplied_characters": 122
+        },
+        {
+          "heading": "Component Ablation Of Pipepoison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 34,
+          "source_characters": 131,
+          "supplied_characters": 131
+        },
+        {
+          "heading": "S1 43% 52% \u201373%\u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 18,
+          "supplied_characters": 18
+        },
+        {
+          "heading": "S2 33% 48% 41%67%61%68%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "S3 31% 51% 45%67%64%73%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "S4 33% 54% 43%69%62%71%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 2112,
+          "supplied_characters": 2112
+        },
+        {
+          "heading": "Attack-Side Sensitivity Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 503,
+          "supplied_characters": 503
+        },
+        {
+          "heading": "Wsr Rsr@5 Aur Wsr Rsr@5 Aur Wsr Rsr@5 Aur Wsr Rsr@5 Aur",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 1059,
+          "supplied_characters": 1059
+        },
+        {
+          "heading": "Victim-Side Sensitivity Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 1546,
+          "supplied_characters": 1546
+        },
+        {
+          "heading": "Victim-Side Sensitivity Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 1031,
+          "supplied_characters": 1031
+        },
+        {
+          "heading": "Rq4: Robustness Under Potential Defense",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 1627,
+          "supplied_characters": 1627
+        },
+        {
+          "heading": "S1 S2 S3 S4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Wsr (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "S1 S2 S3 S4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 28,
+          "supplied_characters": 28
+        },
+        {
+          "heading": "Rsr@5 (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "S1 S2 S3 S4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "Aur (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "S1 S2 S3 S4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Aur (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "S1 S2 S3 S4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Rsr@5 (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 122,
+          "supplied_characters": 122
+        },
+        {
+          "heading": "Aur (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 84,
+          "supplied_characters": 84
+        },
+        {
+          "heading": "Rsr@5 (%)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 1485,
+          "supplied_characters": 1485
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "discussion",
+          "section_index": 56,
+          "source_characters": 476,
+          "supplied_characters": 476
+        },
+        {
+          "heading": "Discussion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "discussion",
+          "section_index": 57,
+          "source_characters": 400,
+          "supplied_characters": 400
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "conclusion",
+          "section_index": 58,
+          "source_characters": 510,
+          "supplied_characters": 510
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 461,
+          "supplied_characters": 461
+        },
+        {
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 385,
+          "supplied_characters": 385
+        },
+        {
+          "heading": "A Systematic Study Of Memory Poisoning Attacks In Llm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 211,
+          "supplied_characters": 211
+        },
+        {
+          "heading": "Ory Injection Attacks On Llm Agents Via Query-Only In-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 255,
+          "supplied_characters": 255
+        },
+        {
+          "heading": "An Automated And Efficient Framework For Jailbreaking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 275,
+          "supplied_characters": 275
+        },
+        {
+          "heading": "Term Memory Of Llm-Based Agents In Bim Information",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 669,
+          "supplied_characters": 669
+        },
+        {
+          "heading": "What You'Ve Signed Up For: Compromising Real-World",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Llm-Integrated Applications With Indirect Prompt Injec-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 586,
+          "supplied_characters": 586
+        },
+        {
+          "heading": "Ating Memory In Llm Agents Via Incremental Multi-Turn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 329,
+          "supplied_characters": 329
+        },
+        {
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 743,
+          "supplied_characters": 743
+        },
+        {
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 5166,
+          "supplied_characters": 5166
+        },
+        {
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 2936,
+          "supplied_characters": 2936
+        },
+        {
+          "heading": "Appendix: A Query Domains And Shadow Queries",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 4954,
+          "supplied_characters": 4954
+        },
+        {
+          "heading": "Appendix: Abridged Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "appendix",
+          "section_index": 72,
+          "source_characters": 622,
+          "supplied_characters": 622
+        },
+        {
+          "heading": "Attacker Optimization Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 73,
+          "source_characters": 2768,
+          "supplied_characters": 2768
+        },
+        {
+          "heading": "Te3-S Te3-L E5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 2364,
+          "supplied_characters": 2364
+        },
+        {
+          "heading": "Te3-S Te3-L E5",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 256,
+          "supplied_characters": 256
+        },
+        {
+          "heading": "Wsr 56% 61% \u201376%\u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Rsr@5 71% 79% \u201399%\u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 77,
+          "source_characters": 21,
+          "supplied_characters": 21
+        },
+        {
+          "heading": "Aur 43% 52% \u201373%\u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 22,
+          "supplied_characters": 22
+        },
+        {
+          "heading": "Wsr 45% 56% 52%68%65%71%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 79,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Rsr@5 62% 76% 79%94%91%97%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 80,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Aur 33% 48% 41%67%61%68%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 81,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Wsr 48% 59% 53%77%71%79%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 82,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Rsr@5 55% 73% 72%86%85%92%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 83,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Aur 31% 51% 45%67%64%73%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 84,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Wsr 42% 61% 51%72%68%74%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 85,
+          "source_characters": 24,
+          "supplied_characters": 24
+        },
+        {
+          "heading": "Rsr@5 56% 77% 74%96%89%98%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 86,
+          "source_characters": 26,
+          "supplied_characters": 26
+        },
+        {
+          "heading": "Aur 33% 54% 43%69%62%71%",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 87,
+          "source_characters": 778,
+          "supplied_characters": 778
+        }
+      ],
+      "selected_characters": 91526,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "selected_sections": [
+        {
+          "characters": 432,
+          "heading": "Transferable End-To-End Optimization For Indirect Long-Term",
+          "page": 1
+        },
+        {
+          "characters": 1462,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 766,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 109,
+          "heading": "Memory Write",
+          "page": 1
+        },
+        {
+          "characters": 1987,
+          "heading": "Retrieve",
+          "page": 1
+        },
+        {
+          "characters": 3909,
+          "heading": "Retrieve",
+          "page": 2
+        },
+        {
+          "characters": 2091,
+          "heading": "Multi-Stage Long-Term Memory Pipeline",
+          "page": 2
+        },
+        {
+          "characters": 217,
+          "heading": "Problem Formulation",
+          "page": 2
+        },
+        {
+          "characters": 2479,
+          "heading": "Problem Formulation",
+          "page": 3
+        },
+        {
+          "characters": 4767,
+          "heading": "Existing Work Limitations",
+          "page": 3
+        },
+        {
+          "characters": 45,
+          "heading": "Existing Work Limitations",
+          "page": 4
+        },
+        {
+          "characters": 191,
+          "heading": "Wsr (%)",
+          "page": 4
+        },
+        {
+          "characters": 1525,
+          "heading": "Rsr (%)",
+          "page": 4
+        },
+        {
+          "characters": 2625,
+          "heading": "Threat Model",
+          "page": 4
+        },
+        {
+          "characters": 1487,
+          "heading": "Overview And Shadow Setup",
+          "page": 4
+        },
+        {
+          "characters": 518,
+          "heading": "Overview And Shadow Setup",
+          "page": 5
+        },
+        {
+          "characters": 3648,
+          "heading": "Stage-Level Signals",
+          "page": 5
+        },
+        {
+          "characters": 545,
+          "heading": "E2E Bottleneck-Guided Optimization",
+          "page": 5
+        },
+        {
+          "characters": 1204,
+          "heading": "Bottleneck-Guided Refinement",
+          "page": 5
+        },
+        {
+          "characters": 525,
+          "heading": "Attacker-Side Pipepoison Optimization",
+          "page": 6
+        },
+        {
+          "characters": 2842,
+          "heading": "W R U",
+          "page": 6
+        },
+        {
+          "characters": 1522,
+          "heading": "Transfer Across Multiple Shadow Con-",
+          "page": 6
+        },
+        {
+          "characters": 1335,
+          "heading": "Transfer Across Multiple Shadow Con-",
+          "page": 7
+        },
+        {
+          "characters": 4474,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 339,
+          "heading": "Experimental Setup",
+          "page": 8
+        },
+        {
+          "characters": 3053,
+          "heading": "Rq1: Matched Scenario Effectiveness",
+          "page": 8
+        },
+        {
+          "characters": 1471,
+          "heading": "Rq2: Transfer Scenario Effectiveness",
+          "page": 8
+        },
+        {
+          "characters": 954,
+          "heading": "Transfer Scenario 1:\u039a Sys Difference",
+          "page": 8
+        },
+        {
+          "characters": 3406,
+          "heading": "Transfer Scenario 1:\u039a Sys Difference",
+          "page": 9
+        },
+        {
+          "characters": 1234,
+          "heading": "Transfer Scenario 2:\u039a User Difference",
+          "page": 9
+        },
+        {
+          "characters": 527,
+          "heading": "Transfer Scenario 2:\u039a User Difference",
+          "page": 10
+        },
+        {
+          "characters": 2927,
+          "heading": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+          "page": 10
+        },
+        {
+          "characters": 1090,
+          "heading": "Rq3: Ablation And Sensitivity Analysis",
+          "page": 10
+        },
+        {
+          "characters": 122,
+          "heading": "Component Ablation Of Pipepoison",
+          "page": 10
+        },
+        {
+          "characters": 131,
+          "heading": "Component Ablation Of Pipepoison",
+          "page": 11
+        },
+        {
+          "characters": 18,
+          "heading": "S1 43% 52% \u201373%\u2013 \u2013",
+          "page": 11
+        },
+        {
+          "characters": 23,
+          "heading": "S2 33% 48% 41%67%61%68%",
+          "page": 11
+        },
+        {
+          "characters": 23,
+          "heading": "S3 31% 51% 45%67%64%73%",
+          "page": 11
+        },
+        {
+          "characters": 2112,
+          "heading": "S4 33% 54% 43%69%62%71%",
+          "page": 11
+        },
+        {
+          "characters": 503,
+          "heading": "Attack-Side Sensitivity Study",
+          "page": 11
+        },
+        {
+          "characters": 1059,
+          "heading": "Wsr Rsr@5 Aur Wsr Rsr@5 Aur Wsr Rsr@5 Aur Wsr Rsr@5 Aur",
+          "page": 11
+        },
+        {
+          "characters": 1546,
+          "heading": "Victim-Side Sensitivity Study",
+          "page": 11
+        },
+        {
+          "characters": 1031,
+          "heading": "Victim-Side Sensitivity Study",
+          "page": 12
+        },
+        {
+          "characters": 1627,
+          "heading": "Rq4: Robustness Under Potential Defense",
+          "page": 12
+        },
+        {
+          "characters": 23,
+          "heading": "S1 S2 S3 S4",
+          "page": 12
+        },
+        {
+          "characters": 15,
+          "heading": "Wsr (%)",
+          "page": 12
+        },
+        {
+          "characters": 28,
+          "heading": "S1 S2 S3 S4",
+          "page": 12
+        },
+        {
+          "characters": 19,
+          "heading": "Rsr@5 (%)",
+          "page": 12
+        },
+        {
+          "characters": 23,
+          "heading": "S1 S2 S3 S4",
+          "page": 12
+        },
+        {
+          "characters": 172,
+          "heading": "Aur (%)",
+          "page": 12
+        },
+        {
+          "characters": 50,
+          "heading": "S1 S2 S3 S4",
+          "page": 12
+        },
+        {
+          "characters": 89,
+          "heading": "Aur (%)",
+          "page": 12
+        },
+        {
+          "characters": 55,
+          "heading": "S1 S2 S3 S4",
+          "page": 12
+        },
+        {
+          "characters": 122,
+          "heading": "Rsr@5 (%)",
+          "page": 12
+        },
+        {
+          "characters": 84,
+          "heading": "Aur (%)",
+          "page": 12
+        },
+        {
+          "characters": 1485,
+          "heading": "Rsr@5 (%)",
+          "page": 12
+        },
+        {
+          "characters": 476,
+          "heading": "Discussion",
+          "page": 12
+        },
+        {
+          "characters": 400,
+          "heading": "Discussion",
+          "page": 13
+        },
+        {
+          "characters": 510,
+          "heading": "Conclusion",
+          "page": 13
+        },
+        {
+          "characters": 461,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 385,
+          "heading": "Production-Ready Ai Agents With Scalable Long-Term",
+          "page": 13
+        },
+        {
+          "characters": 211,
+          "heading": "A Systematic Study Of Memory Poisoning Attacks In Llm",
+          "page": 13
+        },
+        {
+          "characters": 255,
+          "heading": "Ory Injection Attacks On Llm Agents Via Query-Only In-",
+          "page": 13
+        },
+        {
+          "characters": 275,
+          "heading": "An Automated And Efficient Framework For Jailbreaking",
+          "page": 13
+        },
+        {
+          "characters": 669,
+          "heading": "Term Memory Of Llm-Based Agents In Bim Information",
+          "page": 13
+        },
+        {
+          "characters": 50,
+          "heading": "What You'Ve Signed Up For: Compromising Real-World",
+          "page": 13
+        },
+        {
+          "characters": 586,
+          "heading": "Llm-Integrated Applications With Indirect Prompt Injec-",
+          "page": 13
+        },
+        {
+          "characters": 329,
+          "heading": "Ating Memory In Llm Agents Via Incremental Multi-Turn",
+          "page": 13
+        },
+        {
+          "characters": 743,
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "page": 13
+        },
+        {
+          "characters": 5166,
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "page": 14
+        },
+        {
+          "characters": 2936,
+          "heading": "Guard: Llm-Based Input-Output Safeguard For Human-Ai",
+          "page": 15
+        },
+        {
+          "characters": 4954,
+          "heading": "Appendix: A Query Domains And Shadow Queries",
+          "page": 16
+        },
+        {
+          "characters": 622,
+          "heading": "Appendix: Abridged Prompts",
+          "page": 16
+        },
+        {
+          "characters": 2768,
+          "heading": "Attacker Optimization Prompt",
+          "page": 17
+        },
+        {
+          "characters": 2364,
+          "heading": "Te3-S Te3-L E5",
+          "page": 17
+        },
+        {
+          "characters": 256,
+          "heading": "Te3-S Te3-L E5",
+          "page": 18
+        },
+        {
+          "characters": 19,
+          "heading": "Wsr 56% 61% \u201376%\u2013 \u2013",
+          "page": 18
+        },
+        {
+          "characters": 21,
+          "heading": "Rsr@5 71% 79% \u201399%\u2013 \u2013",
+          "page": 18
+        },
+        {
+          "characters": 22,
+          "heading": "Aur 43% 52% \u201373%\u2013 \u2013",
+          "page": 18
+        },
+        {
+          "characters": 24,
+          "heading": "Wsr 45% 56% 52%68%65%71%",
+          "page": 18
+        },
+        {
+          "characters": 26,
+          "heading": "Rsr@5 62% 76% 79%94%91%97%",
+          "page": 18
+        },
+        {
+          "characters": 27,
+          "heading": "Aur 33% 48% 41%67%61%68%",
+          "page": 18
+        },
+        {
+          "characters": 24,
+          "heading": "Wsr 48% 59% 53%77%71%79%",
+          "page": 18
+        },
+        {
+          "characters": 26,
+          "heading": "Rsr@5 55% 73% 72%86%85%92%",
+          "page": 18
+        },
+        {
+          "characters": 27,
+          "heading": "Aur 31% 51% 45%67%64%73%",
+          "page": 18
+        },
+        {
+          "characters": 24,
+          "heading": "Wsr 42% 61% 51%72%68%74%",
+          "page": 18
+        },
+        {
+          "characters": 26,
+          "heading": "Rsr@5 56% 77% 74%96%89%98%",
+          "page": 18
+        },
+        {
+          "characters": 778,
+          "heading": "Aur 33% 54% 43%69%62%71%",
+          "page": 18
+        }
+      ],
+      "selected_text_sha256": "c69c11b9d93d6fb90dfdc96d369397ebaeb11525b98403bcf45c4208a38e58eb",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "e170fe8d935790e7a35a2c5237b8c62050b8f993d5fc2bfd2c154d325aff5bd2",
+      "source_pages": 18,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "surrogate_code_units": 39,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Canonical Unicode normalization processed 39 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0002"
+        ],
+        "excerpt": "Long-term memory can turn untrusted external content into\npersistent influence over an LLM agent's future decisions,\ncreating the threat of indirect memory poisoning. A suc-\ncessful attack must survive a multi-stage pipeline compris-\ning memory writing, retrieval, and utilization. Existing at-\ntacks largely rely on intra-stage optimization, optimizing\nindividual stages in isolation while overlooking inter-stage\ncoupling. Specifically, these stages impose different require-\nments on the same poisoning content, and each stage oper-\nates on the transformed output of its predecessor. Conse-\nquently, optimizing one stage may undermine the effective-\nness of other stages, while upstream transformations may\nerase improvements intended for downstream stages. In-\ndirect memory poisoning should therefore be viewed as an\nend-to-end optimization problem. Based on this insight, we\npresent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9bb41d0b4d275ad41a49d0f5723f4f9e493e795ff262bb279f329ed79f19ab87",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-term memory can turn untrusted external content into\npersistent influence over an LLM agent's future decisions,\ncreating the threat of indirect memory poisoning. A suc-\ncessful attack must survive a multi-stage pipeline compris-\ning memory writing, retrieval, and utilization. Existing at-\ntacks largely rely on intra-stage optimization, optimizing\nindividual stages in isolation while overlooking inter-stage\ncoupling. Specifically, these stages impose different require-\nments on the same poisoning content, and each stage oper-\nates on the transformed output of its predecessor. Conse-\nquently, optimizing one stage may undermine the effective-\nness of other stages, while upstream transformations may\nerase improvements intended for downstream stages. In-\ndirect memory poisoning should therefore be viewed as an\nend-to-end optimization problem. Based on this insight, we\npresent "
+              }
+            ],
+            "text": "Long-term memory can turn untrusted external content into\npersistent influence over an LLM agent's future decisions,\ncreating the threat of indirect memory poisoning. A suc-\ncessful attack must survive a multi-stage pipeline compris-\ning memory writing, retrieval, and utilization. Existing at-\ntacks largely rely on intra-stage optimization, optimizing\nindividual stages in isolation while overlooking inter-stage\ncoupling. Specifically, these stages impose different require-\nments on the same poisoning content, and each stage oper-\nates on the transformed output of its predecessor. Conse-\nquently, optimizing one stage may undermine the effective-\nness of other stages, while upstream transformations may\nerase improvements intended for downstream stages. In-\ndirect memory poisoning should therefore be viewed as an\nend-to-end optimization problem. Based on this insight, we\npresent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0003"
+        ],
+        "excerpt": "PIPEPOISON, which collects fine-grained stage feed-\nback from local shadow systems, uses chain-structured losses\nto identify and optimize the stage bottlenecking end-to-end\nsuccess, and applies stability-calibrated stage and configu-\nration weights to improve transferability. Across three agent\nframeworks and four memory mechanisms, PIPEPOISONim-\nproves attack utilization rate by 19.1 percentage points. Even\non fully unseen victim configurations, it outperforms the\nstrongest baseline by 16 percentage points and remains ef-\nfective under eight representative defenses.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71a5c8ae19a3590373839f14079271020909de5491f1532291cecb47928e8240",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1462,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 889,
+                "text": "PIPEPOISON, which collects fine-grained stage feed-\nback from local shadow systems, uses chain-structured losses\nto identify and optimize the stage bottlenecking end-to-end\nsuccess, and applies stability-calibrated stage and configu-\nration weights to improve transferability. Across three agent\nframeworks and four memory mechanisms, PIPEPOISONim-\nproves attack utilization rate by 19.1 percentage points. Even\non fully unseen victim configurations, it outperforms the\nstrongest baseline by 16 percentage points and remains ef-\nfective under eight representative defenses."
+              }
+            ],
+            "text": "PIPEPOISON, which collects fine-grained stage feed-\nback from local shadow systems, uses chain-structured losses\nto identify and optimize the stage bottlenecking end-to-end\nsuccess, and applies stability-calibrated stage and configu-\nration weights to improve transferability. Across three agent\nframeworks and four memory mechanisms, PIPEPOISONim-\nproves attack utilization rate by 19.1 percentage points. Even\non fully unseen victim configurations, it outperforms the\nstrongest baseline by 16 percentage points and remains ef-\nfective under eight representative defenses."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0010"
+        ],
+        "excerpt": "remain effective across di-\nverse and potentially unseen victim configurations.\nBased on this observation, we present PIPEPOISON, a\nblack-box framework that optimizes poisoning content us-\ning only local shadow systems. PIPEPOISONhas three\ncomponents. First, it collects stage-level feedback from\neach shadow pipeline, measuring whether attack-relevant in-\nformation survives writing, is retrieved for target-domain\nqueries, and influences the agent's response. Second, it com-\nbines these signals with chain-structured losses that reflect\nthe sequential dependence among writing, retrieval, and uti-\nlization, allowing optimization to focus on the stage currently\nblocking end-to-end success. Third, it jointly optimizes a\nshared poisoning instance across heterogeneous shadow con-\nfigurations using stability-calibrated configuration and stage\nweights, reducing overfitting to any single shadow ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieve",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6376ac323304d4c5e3ffc8a9066bc6745e624d8e632462a059a511c1044d6625",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Retrieve",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2498,
+                "page": 2,
+                "section": "Retrieve",
+                "section_index": 5,
+                "start": 1601,
+                "text": "remain effective across di-\nverse and potentially unseen victim configurations.\nBased on this observation, we present PIPEPOISON, a\nblack-box framework that optimizes poisoning content us-\ning only local shadow systems. PIPEPOISONhas three\ncomponents. First, it collects stage-level feedback from\neach shadow pipeline, measuring whether attack-relevant in-\nformation survives writing, is retrieved for target-domain\nqueries, and influences the agent's response. Second, it com-\nbines these signals with chain-structured losses that reflect\nthe sequential dependence among writing, retrieval, and uti-\nlization, allowing optimization to focus on the stage currently\nblocking end-to-end success. Third, it jointly optimizes a\nshared poisoning instance across heterogeneous shadow con-\nfigurations using stability-calibrated configuration and stage\nweights, reducing overfitting to any single shadow "
+              }
+            ],
+            "text": "remain effective across di-\nverse and potentially unseen victim configurations.\nBased on this observation, we present PIPEPOISON, a\nblack-box framework that optimizes poisoning content us-\ning only local shadow systems. PIPEPOISONhas three\ncomponents. First, it collects stage-level feedback from\neach shadow pipeline, measuring whether attack-relevant in-\nformation survives writing, is retrieved for target-domain\nqueries, and influences the agent's response. Second, it com-\nbines these signals with chain-structured losses that reflect\nthe sequential dependence among writing, retrieval, and uti-\nlization, allowing optimization to focus on the stage currently\nblocking end-to-end success. Third, it jointly optimizes a\nshared poisoning instance across heterogeneous shadow con-\nfigurations using stability-calibrated configuration and stage\nweights, reducing overfitting to any single shadow "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0024"
+        ],
+        "excerpt": "objectives, op-\ntimize them independently, and focus primarily on retrieval\n[33,48,51]. This design overlooks two forms of coupling be-\ntween stages. First, all stage-specific optimizations modify\nthe same poisoning content; changes intended to improve re-\ntrieval may weaken the malicious payload that must survive\nwriting and influence utilization. Second, the stages operate\nsequentially: the retriever processes the memory produced\nby the writer rather than the original poisoning content. Re-\ntrieval cues that appear effective on the original content may\ntherefore be altered or removed during memory writing. Two\nrepresentative Sleeper attacks [33] on LangGraph [17] with\nMem0 [24] illustrate these failure modes (Figure 2).\nSetup.To determine whether these failures occur systemati-\ncally, we evaluate four indirect memory-poisoning attacks\u2014\nZombie [48], Sleeper [33], MemMorph [51], and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Existing Work Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a9442d574dc0284e3970f7c1559a50d1773e16b41e62b7f54476b861dc658e8a",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0024",
+            "pages": [
+              3
+            ],
+            "section": "Existing Work Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 4480,
+                "page": 3,
+                "section": "Existing Work Limitations",
+                "section_index": 9,
+                "start": 3584,
+                "text": "objectives, op-\ntimize them independently, and focus primarily on retrieval\n[33,48,51]. This design overlooks two forms of coupling be-\ntween stages. First, all stage-specific optimizations modify\nthe same poisoning content; changes intended to improve re-\ntrieval may weaken the malicious payload that must survive\nwriting and influence utilization. Second, the stages operate\nsequentially: the retriever processes the memory produced\nby the writer rather than the original poisoning content. Re-\ntrieval cues that appear effective on the original content may\ntherefore be altered or removed during memory writing. Two\nrepresentative Sleeper attacks [33] on LangGraph [17] with\nMem0 [24] illustrate these failure modes (Figure 2).\nSetup.To determine whether these failures occur systemati-\ncally, we evaluate four indirect memory-poisoning attacks\u2014\nZombie [48], Sleeper [33], MemMorph [51], and "
+              }
+            ],
+            "text": "objectives, op-\ntimize them independently, and focus primarily on retrieval\n[33,48,51]. This design overlooks two forms of coupling be-\ntween stages. First, all stage-specific optimizations modify\nthe same poisoning content; changes intended to improve re-\ntrieval may weaken the malicious payload that must survive\nwriting and influence utilization. Second, the stages operate\nsequentially: the retriever processes the memory produced\nby the writer rather than the original poisoning content. Re-\ntrieval cues that appear effective on the original content may\ntherefore be altered or removed during memory writing. Two\nrepresentative Sleeper attacks [33] on LangGraph [17] with\nMem0 [24] illustrate these failure modes (Figure 2).\nSetup.To determine whether these failures occur systemati-\ncally, we evaluate four indirect memory-poisoning attacks\u2014\nZombie [48], Sleeper [33], MemMorph [51], and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0027"
+        ],
+        "excerpt": "RSR (%)\n(e) Zombie\nLangMemLlamaIndex\nMem0ReMe\n(f) Sleeper\nLangMemLlamaIndex\nMem0ReMe\n(g) MemMorph\nLangMemLlamaIndex\nMem0ReMe\n(h) GhostWriter\nNo Optimization After Retrieval Optimization\nDirect Exposure After Writing Stage\nFigure 3: Stage-wise performance gaps.\nwith writing, we compare the write success rate (WSR) of\nthe initially generated poisoning content with its WSR after\nretrieval-oriented optimization. Second, to measure whether\nwriting weakens retrieval, we compare the retrieval success\nrate (RSR) obtained when the original poisoning content is\ndirectly placed in the memory store with the RSR obtained\nafter the content is processed by the memory writer.\nResults.As shown in Figure 3, the results reveal substantial\ngaps in both comparisons. Averaged across the four evalu-\nated attacks and four real-world open-source memory mech-\nanisms, retrieval-oriented optimization reduces WSR ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rsr (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f54e6a74fa2a0f9f3c61a6c5cdaa434fa89e0e234bcc8d63b8763fa3b37c78b",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0027",
+            "pages": [
+              4
+            ],
+            "section": "Rsr (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Rsr (%)",
+                "section_index": 12,
+                "start": 0,
+                "text": "RSR (%)\n(e) Zombie\nLangMemLlamaIndex\nMem0ReMe\n(f) Sleeper\nLangMemLlamaIndex\nMem0ReMe\n(g) MemMorph\nLangMemLlamaIndex\nMem0ReMe\n(h) GhostWriter\nNo Optimization After Retrieval Optimization\nDirect Exposure After Writing Stage\nFigure 3: Stage-wise performance gaps.\nwith writing, we compare the write success rate (WSR) of\nthe initially generated poisoning content with its WSR after\nretrieval-oriented optimization. Second, to measure whether\nwriting weakens retrieval, we compare the retrieval success\nrate (RSR) obtained when the original poisoning content is\ndirectly placed in the memory store with the RSR obtained\nafter the content is processed by the memory writer.\nResults.As shown in Figure 3, the results reveal substantial\ngaps in both comparisons. Averaged across the four evalu-\nated attacks and four real-world open-source memory mech-\nanisms, retrieval-oriented optimization reduces WSR "
+              }
+            ],
+            "text": "RSR (%)\n(e) Zombie\nLangMemLlamaIndex\nMem0ReMe\n(f) Sleeper\nLangMemLlamaIndex\nMem0ReMe\n(g) MemMorph\nLangMemLlamaIndex\nMem0ReMe\n(h) GhostWriter\nNo Optimization After Retrieval Optimization\nDirect Exposure After Writing Stage\nFigure 3: Stage-wise performance gaps.\nwith writing, we compare the write success rate (WSR) of\nthe initially generated poisoning content with its WSR after\nretrieval-oriented optimization. Second, to measure whether\nwriting weakens retrieval, we compare the retrieval success\nrate (RSR) obtained when the original poisoning content is\ndirectly placed in the memory store with the RSR obtained\nafter the content is processed by the memory writer.\nResults.As shown in Figure 3, the results reveal substantial\ngaps in both comparisons. Averaged across the four evalu-\nated attacks and four real-world open-source memory mech-\nanisms, retrieval-oriented optimization reduces WSR "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0028"
+        ],
+        "excerpt": "from\n59.4% to 47.3%, a decrease of 12.1 percentage points. This\nresult shows that retrieval-oriented optimization can make\nthe malicious payload less likely to survive writing. Mean-\nwhile, memory writing reduces RSR from 93.1% on the orig-\ninal poisoning content to 77.9% on the resulting memory,\na decrease of 15.2 percentage points. Thus, retrieval cues\nthat are effective before writing may not remain effective\nafterward. These results motivate us to formulate indirect\nmemory poisoning as an end-to-end optimization problem,\nas stage-wise improvements may not carry through the com-\nplete write-retrieve-utilize pipeline.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rsr (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e675244eae421599f756c214833613dac7c4ec87a7495e57fe7d524f73c627ad",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0028",
+            "pages": [
+              4
+            ],
+            "section": "Rsr (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1525,
+                "page": 4,
+                "section": "Rsr (%)",
+                "section_index": 12,
+                "start": 898,
+                "text": "from\n59.4% to 47.3%, a decrease of 12.1 percentage points. This\nresult shows that retrieval-oriented optimization can make\nthe malicious payload less likely to survive writing. Mean-\nwhile, memory writing reduces RSR from 93.1% on the orig-\ninal poisoning content to 77.9% on the resulting memory,\na decrease of 15.2 percentage points. Thus, retrieval cues\nthat are effective before writing may not remain effective\nafterward. These results motivate us to formulate indirect\nmemory poisoning as an end-to-end optimization problem,\nas stage-wise improvements may not carry through the com-\nplete write-retrieve-utilize pipeline."
+              }
+            ],
+            "text": "from\n59.4% to 47.3%, a decrease of 12.1 percentage points. This\nresult shows that retrieval-oriented optimization can make\nthe malicious payload less likely to survive writing. Mean-\nwhile, memory writing reduces RSR from 93.1% on the orig-\ninal poisoning content to 77.9% on the resulting memory,\na decrease of 15.2 percentage points. Thus, retrieval cues\nthat are effective before writing may not remain effective\nafterward. These results motivate us to formulate indirect\nmemory poisoning as an end-to-end optimization problem,\nas stage-wise improvements may not carry through the com-\nplete write-retrieve-utilize pipeline."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0045"
+        ],
+        "excerpt": "=\n\u0010\nw(t)\ni r(t)\ni u(t)\ni min\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.(4)\nThe product rewards performance throughout the complete\npipeline, while the minimum term places additional pres-\nsure on the weakest stage. A high lifecycle score there-\nfore requires balanced performance across all three stages.\nIfF (t)\ni \u2265\u03b7, where\u03b7is the stopping threshold, PIPEPOISON\nterminates and returnsx (t).\nChain-Structured Losses.If the stopping condition is not\nmet, PIPEPOISONidentifies the stage currently limiting end-\nto-end performance. Because the stages are sequential, a\ndownstream stage should be refined only after its preceding\nconditions are sufficiently satisfied. We encode this depen-\ndency using the following chain-structured losses:\n\u2113(t)\ni,w =1\u2212w (t)\ni , \u2113(t)\ni,r =w (t)\ni (1\u2212r (t)\ni ), \u2113(t)\ni,u =w (t)\ni r(t)\ni (1\u2212u (t)\ni ).\n(5)\nThe writing loss is large when the malicious payload is not\nadequately ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "W R U",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3e340878c7866ba553c89509580602fc8b5799f1ec390eec1fea6a52f6af9f15",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0045",
+            "pages": [
+              6
+            ],
+            "section": "W R U",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 6,
+                "section": "W R U",
+                "section_index": 20,
+                "start": 898,
+                "text": "=\n\u0010\nw(t)\ni r(t)\ni u(t)\ni min\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.(4)\nThe product rewards performance throughout the complete\npipeline, while the minimum term places additional pres-\nsure on the weakest stage. A high lifecycle score there-\nfore requires balanced performance across all three stages.\nIfF (t)\ni \u2265\u03b7, where\u03b7is the stopping threshold, PIPEPOISON\nterminates and returnsx (t).\nChain-Structured Losses.If the stopping condition is not\nmet, PIPEPOISONidentifies the stage currently limiting end-\nto-end performance. Because the stages are sequential, a\ndownstream stage should be refined only after its preceding\nconditions are sufficiently satisfied. We encode this depen-\ndency using the following chain-structured losses:\n\u2113(t)\ni,w =1\u2212w (t)\ni , \u2113(t)\ni,r =w (t)\ni (1\u2212r (t)\ni ), \u2113(t)\ni,u =w (t)\ni r(t)\ni (1\u2212u (t)\ni ).\n(5)\nThe writing loss is large when the malicious payload is not\nadequately "
+              }
+            ],
+            "text": "=\n\u0010\nw(t)\ni r(t)\ni u(t)\ni min\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.(4)\nThe product rewards performance throughout the complete\npipeline, while the minimum term places additional pres-\nsure on the weakest stage. A high lifecycle score there-\nfore requires balanced performance across all three stages.\nIfF (t)\ni \u2265\u03b7, where\u03b7is the stopping threshold, PIPEPOISON\nterminates and returnsx (t).\nChain-Structured Losses.If the stopping condition is not\nmet, PIPEPOISONidentifies the stage currently limiting end-\nto-end performance. Because the stages are sequential, a\ndownstream stage should be refined only after its preceding\nconditions are sufficiently satisfied. We encode this depen-\ndency using the following chain-structured losses:\n\u2113(t)\ni,w =1\u2212w (t)\ni , \u2113(t)\ni,r =w (t)\ni (1\u2212r (t)\ni ), \u2113(t)\ni,u =w (t)\ni r(t)\ni (1\u2212u (t)\ni ).\n(5)\nThe writing loss is large when the malicious payload is not\nadequately "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0046"
+        ],
+        "excerpt": "preserved. The retrieval loss becomes large only\nafter writing has sufficiently succeeded, while the utilization\nloss becomes large only after the written memory is also\nretrieved. These dependencies follow the execution order\nof the pipeline and prevent PIPEPOISONfrom prioritizing a\ndownstream stage before its required input is available.\nPIPEPOISONselects the stage with the largest loss and\nsends the corresponding shadow feedback to an attacker-side\nrefiner. For a writing failure, the feedback contains the mem-\nories produced by the writer; for a retrieval failure, it contains\nthe returned memories and their relation to the target query;\nfor a utilization failure, it contains the paired attack and clean\nbehaviors. The refiner diagnoses the failure and updates only\nthe selected hint, leaving the other two unchanged. The gen-\nerator then produces the next candidate from the updated ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "W R U",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b5a01ef4a23fbd584b6f47843b248caf08b710628c88095499d6d2a598c5b15d",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0046",
+            "pages": [
+              6
+            ],
+            "section": "W R U",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2691,
+                "page": 6,
+                "section": "W R U",
+                "section_index": 20,
+                "start": 1796,
+                "text": "preserved. The retrieval loss becomes large only\nafter writing has sufficiently succeeded, while the utilization\nloss becomes large only after the written memory is also\nretrieved. These dependencies follow the execution order\nof the pipeline and prevent PIPEPOISONfrom prioritizing a\ndownstream stage before its required input is available.\nPIPEPOISONselects the stage with the largest loss and\nsends the corresponding shadow feedback to an attacker-side\nrefiner. For a writing failure, the feedback contains the mem-\nories produced by the writer; for a retrieval failure, it contains\nthe returned memories and their relation to the target query;\nfor a utilization failure, it contains the paired attack and clean\nbehaviors. The refiner diagnoses the failure and updates only\nthe selected hint, leaving the other two unchanged. The gen-\nerator then produces the next candidate from the updated "
+              }
+            ],
+            "text": "preserved. The retrieval loss becomes large only\nafter writing has sufficiently succeeded, while the utilization\nloss becomes large only after the written memory is also\nretrieved. These dependencies follow the execution order\nof the pipeline and prevent PIPEPOISONfrom prioritizing a\ndownstream stage before its required input is available.\nPIPEPOISONselects the stage with the largest loss and\nsends the corresponding shadow feedback to an attacker-side\nrefiner. For a writing failure, the feedback contains the mem-\nories produced by the writer; for a retrieval failure, it contains\nthe returned memories and their relation to the target query;\nfor a utilization failure, it contains the paired attack and clean\nbehaviors. The refiner diagnoses the failure and updates only\nthe selected hint, leaving the other two unchanged. The gen-\nerator then produces the next candidate from the updated "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0049"
+        ],
+        "excerpt": "configuration weight as\n\u03c0(t)\ni =\nn\n\u0010\n\u03c1(t)\ni + \u00af\u03c1(t)\n\u0011\n\u2211n\np=1\n\u0010\n\u03c1(t)\np + \u00af\u03c1(t)\n\u0011 .(7)\nConfigurations with larger current losses receive greater\nweight, while the additive mean term prevents easier config-\nurations from being ignored. The normalization ensures that\n\u2211i \u03c0(t)\ni =n, preserving the scale of the unweighted objective.\nStage Weight.We next estimate the difficulty of each stage\nacross the weighted shadow configurations:\n\u03b4(t)\nj =\ns\n1\nn\nn\n\u2211\ni=1\n\u03c0(t)\ni\n\u0010\n\u2113(t)\ni,j\n\u00112\n, \u00af\u03b4(t) = 1\n3 \u2211\nj\u2208{w,r,u}\n\u03b4(t)\nj .(8)\nThe weight of stagejat iterationtis then\n\u03b1(t)\nj =\n3\n\u0010\n\u03b4(t)\nj + \u00af\u03b4(t)\n\u0011\n\u2211k\u2208{w,r,u}\n\u0010\n\u03b4(t)\nk + \u00af\u03b4(t)\n\u0011 ,j\u2208 {w,r,u}.(9)\n6\nA stage with consistently large losses across shadow configu-\nrations therefore receives greater optimization pressure. The\nweights satisfy \u2211 j \u03b1(t)\nj =3.\nTransfer Lifecycle Score.Using these weights, the lifecycle\nscore under configurationibecomes\nF (t)\ni ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer Across Multiple Shadow Con-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "254e2b40a12303745fc6ce8571a47419ac82ed8683814ed4355bd43c60d4d5c2",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0049",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Transfer Across Multiple Shadow Con-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1522,
+                "page": 6,
+                "section": "Transfer Across Multiple Shadow Con-",
+                "section_index": 21,
+                "start": 892,
+                "text": "configuration weight as\n\u03c0(t)\ni =\nn\n\u0010\n\u03c1(t)\ni + \u00af\u03c1(t)\n\u0011\n\u2211n\np=1\n\u0010\n\u03c1(t)\np + \u00af\u03c1(t)\n\u0011 .(7)\nConfigurations with larger current losses receive greater\nweight, while the additive mean term prevents easier config-\nurations from being ignored. The normalization ensures that\n\u2211i \u03c0(t)\ni =n, preserving the scale of the unweighted objective.\nStage Weight.We next estimate the difficulty of each stage\nacross the weighted shadow configurations:\n\u03b4(t)\nj =\ns\n1\nn\nn\n\u2211\ni=1\n\u03c0(t)\ni\n\u0010\n\u2113(t)\ni,j\n\u00112\n, \u00af\u03b4(t) = 1\n3 \u2211\nj\u2208{w,r,u}\n\u03b4(t)\nj .(8)\nThe weight of stagejat iterationtis then\n\u03b1(t)\nj =\n3\n\u0010\n\u03b4(t)\nj + \u00af\u03b4(t)\n\u0011\n\u2211k\u2208{w,r,u}\n\u0010\n\u03b4(t)\nk + \u00af\u03b4(t)\n\u0011 ,j\u2208 {w,r,u}.(9)\n6"
+              },
+              {
+                "end": 257,
+                "page": 7,
+                "section": "Transfer Across Multiple Shadow Con-",
+                "section_index": 22,
+                "start": 0,
+                "text": "A stage with consistently large losses across shadow configu-\nrations therefore receives greater optimization pressure. The\nweights satisfy \u2211 j \u03b1(t)\nj =3.\nTransfer Lifecycle Score.Using these weights, the lifecycle\nscore under configurationibecomes\nF (t)\ni "
+              }
+            ],
+            "text": "configuration weight as\n\u03c0(t)\ni =\nn\n\u0010\n\u03c1(t)\ni + \u00af\u03c1(t)\n\u0011\n\u2211n\np=1\n\u0010\n\u03c1(t)\np + \u00af\u03c1(t)\n\u0011 .(7)\nConfigurations with larger current losses receive greater\nweight, while the additive mean term prevents easier config-\nurations from being ignored. The normalization ensures that\n\u2211i \u03c0(t)\ni =n, preserving the scale of the unweighted objective.\nStage Weight.We next estimate the difficulty of each stage\nacross the weighted shadow configurations:\n\u03b4(t)\nj =\ns\n1\nn\nn\n\u2211\ni=1\n\u03c0(t)\ni\n\u0010\n\u2113(t)\ni,j\n\u00112\n, \u00af\u03b4(t) = 1\n3 \u2211\nj\u2208{w,r,u}\n\u03b4(t)\nj .(8)\nThe weight of stagejat iterationtis then\n\u03b1(t)\nj =\n3\n\u0010\n\u03b4(t)\nj + \u00af\u03b4(t)\n\u0011\n\u2211k\u2208{w,r,u}\n\u0010\n\u03b4(t)\nk + \u00af\u03b4(t)\n\u0011 ,j\u2208 {w,r,u}.(9)\n6\nA stage with consistently large losses across shadow configu-\nrations therefore receives greater optimization pressure. The\nweights satisfy \u2211 j \u03b1(t)\nj =3.\nTransfer Lifecycle Score.Using these weights, the lifecycle\nscore under configurationibecomes\nF (t)\ni "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0050"
+        ],
+        "excerpt": "=\n\u0010\u0010\nw(t)\ni\n\u0011\u03b1w \u0010\nr(t)\ni\n\u0011\u03b1r \u0010\nu(t)\ni\n\u0011\u03b1u\nmin\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.\n(10)\nThe stage weights emphasize difficult stages, while the min-\nimum term continues to penalize the weakest stage within\neach configuration. The joint score across all shadow config-\nurations is\nJ(t) =\n \nn\n\u220f\ni=1\n\u0010\nF (t)\ni\n\u0011\u03c0i\n\u00b7min\n1\u2264i\u2264n\nF (t)\ni\n!1/(n+1)\n.(11)\nThe weighted product rewards performance shared across\nconfigurations, while the minimum term prevents strong\noverall performance from concealing failure on the weakest\nconfiguration. Optimization terminates whenJ (t) \u2265\u03b7.\nTransfer Chain-Structured Losses.PIPEPOISONaggre-\ngates each stage's chain-structured loss across configura-\ntions:\nL(t)\nj = \u03b1 j\nn\nn\n\u2211\ni=1\n\u03c0i\u2113(t)\ni,j ,j\u2208 {w,r,u}.(12)\nIt selects the stage with the largest aggregated loss and up-\ndates the corresponding hint using feedback from all shadow\nconfigurations. The multi-configuration ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer Across Multiple Shadow Con-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f9227da3830d6022bac4c3eaa59f04e08e2a0de1d380d4a73c234a2d95a3b1fc",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0050",
+            "pages": [
+              7
+            ],
+            "section": "Transfer Across Multiple Shadow Con-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1151,
+                "page": 7,
+                "section": "Transfer Across Multiple Shadow Con-",
+                "section_index": 22,
+                "start": 257,
+                "text": "=\n\u0010\u0010\nw(t)\ni\n\u0011\u03b1w \u0010\nr(t)\ni\n\u0011\u03b1r \u0010\nu(t)\ni\n\u0011\u03b1u\nmin\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.\n(10)\nThe stage weights emphasize difficult stages, while the min-\nimum term continues to penalize the weakest stage within\neach configuration. The joint score across all shadow config-\nurations is\nJ(t) =\n \nn\n\u220f\ni=1\n\u0010\nF (t)\ni\n\u0011\u03c0i\n\u00b7min\n1\u2264i\u2264n\nF (t)\ni\n!1/(n+1)\n.(11)\nThe weighted product rewards performance shared across\nconfigurations, while the minimum term prevents strong\noverall performance from concealing failure on the weakest\nconfiguration. Optimization terminates whenJ (t) \u2265\u03b7.\nTransfer Chain-Structured Losses.PIPEPOISONaggre-\ngates each stage's chain-structured loss across configura-\ntions:\nL(t)\nj = \u03b1 j\nn\nn\n\u2211\ni=1\n\u03c0i\u2113(t)\ni,j ,j\u2208 {w,r,u}.(12)\nIt selects the stage with the largest aggregated loss and up-\ndates the corresponding hint using feedback from all shadow\nconfigurations. The multi-configuration "
+              }
+            ],
+            "text": "=\n\u0010\u0010\nw(t)\ni\n\u0011\u03b1w \u0010\nr(t)\ni\n\u0011\u03b1r \u0010\nu(t)\ni\n\u0011\u03b1u\nmin\nn\nw(t)\ni ,r (t)\ni ,u (t)\ni\no\u00111/4\n.\n(10)\nThe stage weights emphasize difficult stages, while the min-\nimum term continues to penalize the weakest stage within\neach configuration. The joint score across all shadow config-\nurations is\nJ(t) =\n \nn\n\u220f\ni=1\n\u0010\nF (t)\ni\n\u0011\u03c0i\n\u00b7min\n1\u2264i\u2264n\nF (t)\ni\n!1/(n+1)\n.(11)\nThe weighted product rewards performance shared across\nconfigurations, while the minimum term prevents strong\noverall performance from concealing failure on the weakest\nconfiguration. Optimization terminates whenJ (t) \u2265\u03b7.\nTransfer Chain-Structured Losses.PIPEPOISONaggre-\ngates each stage's chain-structured loss across configura-\ntions:\nL(t)\nj = \u03b1 j\nn\nn\n\u2211\ni=1\n\u03c0i\u2113(t)\ni,j ,j\u2208 {w,r,u}.(12)\nIt selects the stage with the largest aggregated loss and up-\ndates the corresponding hint using feedback from all shadow\nconfigurations. The multi-configuration "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0052"
+        ],
+        "excerpt": "Agent and Memory Systems.We evaluate PIPEPOI-\nSONon three real-world open-source agent frameworks\n(GitHub stars in parentheses)\u2014LangGraph (39.8K) [17],\nCrewAI (57.5K) [4], and OpenAI Agents (28.9K) [28]\u2014\ncombined with four real-world open-source memory mecha-\nnisms: LangMem (1.6K) [16], LlamaIndex Memory (51.8K)\n[20], Mem0 (63.4K) [24], and ReMe (3.3K) [34]. Together,\nthese systems cover diverse implementations of agent control\nflow, memory writing, retrieval, and utilization.\nDatasets and Attack Tasks.We use three public memory-\nevaluation datasets: LongMemEval [43], LoCoMo [23], and\nBEAM [38]. We sample 100 tasks from each dataset using\na fixed random seed of 42, yielding 300 tasks in total. Each\ntask is converted into an indirect memory-poisoning instance\nconsisting of an attacker objectivegand a target query do-\nmainQ tar. Representative queries used for shadow-side opti-\nmization ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5abbc5ec65ab617b9147cfd89b7a779c97e551fc9fa4d9f2071c1573550108eb",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0052",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 23,
+                "start": 0,
+                "text": "Agent and Memory Systems.We evaluate PIPEPOI-\nSONon three real-world open-source agent frameworks\n(GitHub stars in parentheses)\u2014LangGraph (39.8K) [17],\nCrewAI (57.5K) [4], and OpenAI Agents (28.9K) [28]\u2014\ncombined with four real-world open-source memory mecha-\nnisms: LangMem (1.6K) [16], LlamaIndex Memory (51.8K)\n[20], Mem0 (63.4K) [24], and ReMe (3.3K) [34]. Together,\nthese systems cover diverse implementations of agent control\nflow, memory writing, retrieval, and utilization.\nDatasets and Attack Tasks.We use three public memory-\nevaluation datasets: LongMemEval [43], LoCoMo [23], and\nBEAM [38]. We sample 100 tasks from each dataset using\na fixed random seed of 42, yielding 300 tasks in total. Each\ntask is converted into an indirect memory-poisoning instance\nconsisting of an attacker objectivegand a target query do-\nmainQ tar. Representative queries used for shadow-side opti-\nmization "
+              }
+            ],
+            "text": "Agent and Memory Systems.We evaluate PIPEPOI-\nSONon three real-world open-source agent frameworks\n(GitHub stars in parentheses)\u2014LangGraph (39.8K) [17],\nCrewAI (57.5K) [4], and OpenAI Agents (28.9K) [28]\u2014\ncombined with four real-world open-source memory mecha-\nnisms: LangMem (1.6K) [16], LlamaIndex Memory (51.8K)\n[20], Mem0 (63.4K) [24], and ReMe (3.3K) [34]. Together,\nthese systems cover diverse implementations of agent control\nflow, memory writing, retrieval, and utilization.\nDatasets and Attack Tasks.We use three public memory-\nevaluation datasets: LongMemEval [43], LoCoMo [23], and\nBEAM [38]. We sample 100 tasks from each dataset using\na fixed random seed of 42, yielding 300 tasks in total. Each\ntask is converted into an indirect memory-poisoning instance\nconsisting of an attacker objectivegand a target query do-\nmainQ tar. Representative queries used for shadow-side opti-\nmization "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0054"
+        ],
+        "excerpt": "exclusively on attacker-controlled\nshadow systems; victim configurations are used only for fi-\nnal evaluation and provide no optimization feedback.\nBaselines.We compare PIPEPOISONwith six memory-\npoisoning baselines. MINJA [6] and ER-MIA [32] are direct\npoisoning methods and are adapted to the indirect setting by\ngenerating poisoned content using their respective strategies\nand delivering it through the same external-content channel.\nWe additionally evaluate four indirect memory-poisoning at-\ntacks: ZombieAgent (Zombie) [48], Sleeper [33], Mem-\nMorph [51], and GhostWriter [39]. All methods operate un-\nder the same black-box constraint and receive no feedback\nfrom the evaluated victim systems; details in Appendix C.\nMetrics.We evaluate attacks along the write-retrieve-use\npipeline.(1) Write Success Rate (WSR)measures whether\nthe memory written from the poisoning content preserves ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ecda2433becc73e7a7cc343bfe3036161eac81c2cb12a4ff796cdbc16b977582",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0054",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2688,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 23,
+                "start": 1796,
+                "text": "exclusively on attacker-controlled\nshadow systems; victim configurations are used only for fi-\nnal evaluation and provide no optimization feedback.\nBaselines.We compare PIPEPOISONwith six memory-\npoisoning baselines. MINJA [6] and ER-MIA [32] are direct\npoisoning methods and are adapted to the indirect setting by\ngenerating poisoned content using their respective strategies\nand delivering it through the same external-content channel.\nWe additionally evaluate four indirect memory-poisoning at-\ntacks: ZombieAgent (Zombie) [48], Sleeper [33], Mem-\nMorph [51], and GhostWriter [39]. All methods operate un-\nder the same black-box constraint and receive no feedback\nfrom the evaluated victim systems; details in Appendix C.\nMetrics.We evaluate attacks along the write-retrieve-use\npipeline.(1) Write Success Rate (WSR)measures whether\nthe memory written from the poisoning content preserves "
+              }
+            ],
+            "text": "exclusively on attacker-controlled\nshadow systems; victim configurations are used only for fi-\nnal evaluation and provide no optimization feedback.\nBaselines.We compare PIPEPOISONwith six memory-\npoisoning baselines. MINJA [6] and ER-MIA [32] are direct\npoisoning methods and are adapted to the indirect setting by\ngenerating poisoned content using their respective strategies\nand delivering it through the same external-content channel.\nWe additionally evaluate four indirect memory-poisoning at-\ntacks: ZombieAgent (Zombie) [48], Sleeper [33], Mem-\nMorph [51], and GhostWriter [39]. All methods operate un-\nder the same black-box constraint and receive no feedback\nfrom the evaluated victim systems; details in Appendix C.\nMetrics.We evaluate attacks along the write-retrieve-use\npipeline.(1) Write Success Rate (WSR)measures whether\nthe memory written from the poisoning content preserves "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0058"
+        ],
+        "excerpt": "Question and setting.We first examine whether end-to-end\noptimization improves indirect memory-poisoning effective-\nness when the shadow and victim configurations match. For\neach evaluated configuration, the attacker optimizes the poi-\nsoning content exclusively on a local shadow system with the\nsame configuration as the expected agent. The victim system\nis used only for final evaluation and provides no optimization\nfeedback or intermediate-stage observations.\nMain results.Table 1 reports results across 12 combina-\ntions of four memory mechanisms and three agent frame-\nworks. PIPEPOISONachieves the highest AUR in every\nconfiguration, with average WSR, RSR@5, and AUR of\n76.1%, 94.2%, and 73.4%, respectively. Compared with the\nstrongest baselines, it improves average WSR by 13.1 per-\ncentage points and AUR by 19.1 percentage points.\nThe stage-wise results further demonstrate the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq1: Matched Scenario Effectiveness",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "10669a7f2270c3e582fe158758843f3dd2da9702d6677936463fc15993e0018d",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0058",
+            "pages": [
+              8
+            ],
+            "section": "Rq1: Matched Scenario Effectiveness",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 8,
+                "section": "Rq1: Matched Scenario Effectiveness",
+                "section_index": 25,
+                "start": 0,
+                "text": "Question and setting.We first examine whether end-to-end\noptimization improves indirect memory-poisoning effective-\nness when the shadow and victim configurations match. For\neach evaluated configuration, the attacker optimizes the poi-\nsoning content exclusively on a local shadow system with the\nsame configuration as the expected agent. The victim system\nis used only for final evaluation and provides no optimization\nfeedback or intermediate-stage observations.\nMain results.Table 1 reports results across 12 combina-\ntions of four memory mechanisms and three agent frame-\nworks. PIPEPOISONachieves the highest AUR in every\nconfiguration, with average WSR, RSR@5, and AUR of\n76.1%, 94.2%, and 73.4%, respectively. Compared with the\nstrongest baselines, it improves average WSR by 13.1 per-\ncentage points and AUR by 19.1 percentage points.\nThe stage-wise results further demonstrate the "
+              }
+            ],
+            "text": "Question and setting.We first examine whether end-to-end\noptimization improves indirect memory-poisoning effective-\nness when the shadow and victim configurations match. For\neach evaluated configuration, the attacker optimizes the poi-\nsoning content exclusively on a local shadow system with the\nsame configuration as the expected agent. The victim system\nis used only for final evaluation and provides no optimization\nfeedback or intermediate-stage observations.\nMain results.Table 1 reports results across 12 combina-\ntions of four memory mechanisms and three agent frame-\nworks. PIPEPOISONachieves the highest AUR in every\nconfiguration, with average WSR, RSR@5, and AUR of\n76.1%, 94.2%, and 73.4%, respectively. Compared with the\nstrongest baselines, it improves average WSR by 13.1 per-\ncentage points and AUR by 19.1 percentage points.\nThe stage-wise results further demonstrate the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0061"
+        ],
+        "excerpt": "D.\nAnswer to RQ1\nAcross 12 matched memory\u2013agent configurations,\nPIPEPOISONachieves the highest AUR in every config-\nuration and the lowest cross-configuration variation, im-\nproving average AUR by 19.1 percentage points over the\nstrongest baseline. These results demonstrate the effec-\ntiveness and consistency of lifecycle-wide optimization\nin the matched setting.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq1: Matched Scenario Effectiveness",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b686838ab7b2681e13c8cfd47fc3381d147756df171f8d22f398706ee773f682",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0061",
+            "pages": [
+              8
+            ],
+            "section": "Rq1: Matched Scenario Effectiveness",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3053,
+                "page": 8,
+                "section": "Rq1: Matched Scenario Effectiveness",
+                "section_index": 25,
+                "start": 2688,
+                "text": "D.\nAnswer to RQ1\nAcross 12 matched memory\u2013agent configurations,\nPIPEPOISONachieves the highest AUR in every config-\nuration and the lowest cross-configuration variation, im-\nproving average AUR by 19.1 percentage points over the\nstrongest baseline. These results demonstrate the effec-\ntiveness and consistency of lifecycle-wide optimization\nin the matched setting."
+              }
+            ],
+            "text": "D.\nAnswer to RQ1\nAcross 12 matched memory\u2013agent configurations,\nPIPEPOISONachieves the highest AUR in every config-\nuration and the lowest cross-configuration variation, im-\nproving average AUR by 19.1 percentage points over the\nstrongest baseline. These results demonstrate the effec-\ntiveness and consistency of lifecycle-wide optimization\nin the matched setting."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0066"
+        ],
+        "excerpt": "59% 92% 51% 38% 62% 23% 18% 57% 13% 34% 83% 31% 54% 79% 47% 35% 71% 29%76% 99% 73%\nCrewAI 59% 95% 53% 35% 64% 26% 29% 53% 15% 40% 77% 37% 59% 83% 52% 38% 68% 31%75% 97% 74%\nOpenAI Agents 57% 88%40% 31% 67% 24% 15% 52% 14% 43% 78% 39% 58% 88% 49% 34% 69% 27%81% 96% 75%\nReMe\nLangGraph 63% 90% 53% 39% 63% 31% 15% 41% 14% 40% 86% 35% 67% 92% 57% 44% 79% 35%77% 95% 74%\nCrewAI 58% 83% 53% 31% 68% 23% 21% 56% 16% 39% 83% 36% 61% 81% 49% 36% 82% 28%72% 97% 69%\nOpenAI Agents 62% 85% 46% 33% 69% 24% 17% 50% 13% 42% 87% 38% 65% 85% 51% 33% 84% 26%78% 96% 76%\nAverage 58.3% 87.6% 48.2% 38.0% 71.2% 29.0% 23.1% 61.4% 18.7% 40.6% 80.5% 35.7% 63.0%85.8% 54.3%41.8% 75.8% 32.0%76.1% 94.2% 73.4%\nTable 2: RSD comparison across different methods.\nMethodRSD WSR(%)\u2193RSD RSR@5(%)\u2193RSD AUR(%)\u2193\nMINJA 5.44 4.28 10.35\nER-MIA 17.67 9.82 24.34\nZombie 25.96 19.27 28.56\nSleeper 6.52 5.49 8.31\nMemMorph 7.72 4.94 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer Scenario 1:\u039a Sys Difference",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7b3f096b15c7da6bd8c037117385314b728095ca061d0ad2a4176761f07aad4e",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0066",
+            "pages": [
+              9
+            ],
+            "section": "Transfer Scenario 1:\u039a Sys Difference",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1732,
+                "page": 9,
+                "section": "Transfer Scenario 1:\u039a Sys Difference",
+                "section_index": 28,
+                "start": 842,
+                "text": "59% 92% 51% 38% 62% 23% 18% 57% 13% 34% 83% 31% 54% 79% 47% 35% 71% 29%76% 99% 73%\nCrewAI 59% 95% 53% 35% 64% 26% 29% 53% 15% 40% 77% 37% 59% 83% 52% 38% 68% 31%75% 97% 74%\nOpenAI Agents 57% 88%40% 31% 67% 24% 15% 52% 14% 43% 78% 39% 58% 88% 49% 34% 69% 27%81% 96% 75%\nReMe\nLangGraph 63% 90% 53% 39% 63% 31% 15% 41% 14% 40% 86% 35% 67% 92% 57% 44% 79% 35%77% 95% 74%\nCrewAI 58% 83% 53% 31% 68% 23% 21% 56% 16% 39% 83% 36% 61% 81% 49% 36% 82% 28%72% 97% 69%\nOpenAI Agents 62% 85% 46% 33% 69% 24% 17% 50% 13% 42% 87% 38% 65% 85% 51% 33% 84% 26%78% 96% 76%\nAverage 58.3% 87.6% 48.2% 38.0% 71.2% 29.0% 23.1% 61.4% 18.7% 40.6% 80.5% 35.7% 63.0%85.8% 54.3%41.8% 75.8% 32.0%76.1% 94.2% 73.4%\nTable 2: RSD comparison across different methods.\nMethodRSD WSR(%)\u2193RSD RSR@5(%)\u2193RSD AUR(%)\u2193\nMINJA 5.44 4.28 10.35\nER-MIA 17.67 9.82 24.34\nZombie 25.96 19.27 28.56\nSleeper 6.52 5.49 8.31\nMemMorph 7.72 4.94 "
+              }
+            ],
+            "text": "59% 92% 51% 38% 62% 23% 18% 57% 13% 34% 83% 31% 54% 79% 47% 35% 71% 29%76% 99% 73%\nCrewAI 59% 95% 53% 35% 64% 26% 29% 53% 15% 40% 77% 37% 59% 83% 52% 38% 68% 31%75% 97% 74%\nOpenAI Agents 57% 88%40% 31% 67% 24% 15% 52% 14% 43% 78% 39% 58% 88% 49% 34% 69% 27%81% 96% 75%\nReMe\nLangGraph 63% 90% 53% 39% 63% 31% 15% 41% 14% 40% 86% 35% 67% 92% 57% 44% 79% 35%77% 95% 74%\nCrewAI 58% 83% 53% 31% 68% 23% 21% 56% 16% 39% 83% 36% 61% 81% 49% 36% 82% 28%72% 97% 69%\nOpenAI Agents 62% 85% 46% 33% 69% 24% 17% 50% 13% 42% 87% 38% 65% 85% 51% 33% 84% 26%78% 96% 76%\nAverage 58.3% 87.6% 48.2% 38.0% 71.2% 29.0% 23.1% 61.4% 18.7% 40.6% 80.5% 35.7% 63.0%85.8% 54.3%41.8% 75.8% 32.0%76.1% 94.2% 73.4%\nTable 2: RSD comparison across different methods.\nMethodRSD WSR(%)\u2193RSD RSR@5(%)\u2193RSD AUR(%)\u2193\nMINJA 5.44 4.28 10.35\nER-MIA 17.67 9.82 24.34\nZombie 25.96 19.27 28.56\nSleeper 6.52 5.49 8.31\nMemMorph 7.72 4.94 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0072"
+        ],
+        "excerpt": "user.\nResults.On shadow-covered configurations, PIPEPOISON\nachieves 75%\u201376% WSR, 88%\u201394% RSR@5, and 71%\u2013\n73% AUR. These ranges are 65%\u201368%, 82%\u201387%, and\n58%\u201362% when either the system or model configuration\ndiffers, and 63%\u201369%, 86%\u201388%, and 58%\u201364% when both\nare unseen. In the fully different setting, PIPEPOISONre-\ntains the highest AUR among all evaluated attack methods.\nJoint changes produce a larger transfer gap than the isolated\nshifts in Section 4.3.1 and Section 4.3.2, reducing AUR by\n9\u201315 percentage points. Nevertheless, the attack still com-\npletes the full pipeline on a majority of evaluated cases with-\nout victim-side access or feedback.\nStability.As shown in Table 5, PIPEPOISONobtains RSDs\nof 7.14%, 4.18%, and 9.62% for WSR, RSR@5, and AUR\nacross the eight configurations. It achieves the lowest WSR\nand RSR@5 variation. Its AUR RSD is 1.03 percentage\npoints above the lowest ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d738f6eec4d7ba14ca2dc507c14f2b3ad92a4cd5ee420f9dfca09d2066aee3a7",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0072",
+            "pages": [
+              10
+            ],
+            "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1787,
+                "page": 10,
+                "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+                "section_index": 31,
+                "start": 889,
+                "text": "user.\nResults.On shadow-covered configurations, PIPEPOISON\nachieves 75%\u201376% WSR, 88%\u201394% RSR@5, and 71%\u2013\n73% AUR. These ranges are 65%\u201368%, 82%\u201387%, and\n58%\u201362% when either the system or model configuration\ndiffers, and 63%\u201369%, 86%\u201388%, and 58%\u201364% when both\nare unseen. In the fully different setting, PIPEPOISONre-\ntains the highest AUR among all evaluated attack methods.\nJoint changes produce a larger transfer gap than the isolated\nshifts in Section 4.3.1 and Section 4.3.2, reducing AUR by\n9\u201315 percentage points. Nevertheless, the attack still com-\npletes the full pipeline on a majority of evaluated cases with-\nout victim-side access or feedback.\nStability.As shown in Table 5, PIPEPOISONobtains RSDs\nof 7.14%, 4.18%, and 9.62% for WSR, RSR@5, and AUR\nacross the eight configurations. It achieves the lowest WSR\nand RSR@5 variation. Its AUR RSD is 1.03 percentage\npoints above the lowest "
+              }
+            ],
+            "text": "user.\nResults.On shadow-covered configurations, PIPEPOISON\nachieves 75%\u201376% WSR, 88%\u201394% RSR@5, and 71%\u2013\n73% AUR. These ranges are 65%\u201368%, 82%\u201387%, and\n58%\u201362% when either the system or model configuration\ndiffers, and 63%\u201369%, 86%\u201388%, and 58%\u201364% when both\nare unseen. In the fully different setting, PIPEPOISONre-\ntains the highest AUR among all evaluated attack methods.\nJoint changes produce a larger transfer gap than the isolated\nshifts in Section 4.3.1 and Section 4.3.2, reducing AUR by\n9\u201315 percentage points. Nevertheless, the attack still com-\npletes the full pipeline on a majority of evaluated cases with-\nout victim-side access or feedback.\nStability.As shown in Table 5, PIPEPOISONobtains RSDs\nof 7.14%, 4.18%, and 9.62% for WSR, RSR@5, and AUR\nacross the eight configurations. It achieves the lowest WSR\nand RSR@5 variation. Its AUR RSD is 1.03 percentage\npoints above the lowest "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0074"
+        ],
+        "excerpt": "configurations\nand outperforms the strongest baseline by 16 percentage\npoints. Even when both system and model configurations\nare unseen, it retains 58%\u201364% AUR with low cross-\nconfiguration variation, demonstrating both effective and\nstable transfer.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "41d072807656052677a04c18beb5d8c4b270255f1b16c13bdbc110d79582a669",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0074",
+            "pages": [
+              10
+            ],
+            "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2927,
+                "page": 10,
+                "section": "Transfer Scenario 3: Both\u03ba Sys And\u03ba User",
+                "section_index": 31,
+                "start": 2676,
+                "text": "configurations\nand outperforms the strongest baseline by 16 percentage\npoints. Even when both system and model configurations\nare unseen, it retains 58%\u201364% AUR with low cross-\nconfiguration variation, demonstrating both effective and\nstable transfer."
+              }
+            ],
+            "text": "configurations\nand outperforms the strongest baseline by 16 percentage\npoints. Even when both system and model configurations\nare unseen, it retains 58%\u201364% AUR with low cross-\nconfiguration variation, demonstrating both effective and\nstable transfer."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0081"
+        ],
+        "excerpt": "S4 33% 54% 43%69%62%71%\nto-end effectiveness. Table 7 compares four nested variants.\nC1removes stage-level feedback and evaluates candidates\nusing only the final binary attack outcome.C2adds stage\nsignals but removes the chain structure, treating the three\nscores independently and refining the stage with the lowest\nraw score.C3further introduces chain-structured losses but\nassigns uniform weights to all stages and shadow configura-\ntions.C4is the complete PIPEPOISON, combining stage sig-\nnals, chain-structured losses, and calibrated stage and con-\nfiguration weights.\nResults.We focus on AUR because it measures success\nover the complete memory lifecycle; full results for WSR\nand RSR@5 can be seen in Appendix E. C1 achieves only\n43% AUR in the matched setting and 31-33% in the three\ntransfer settings, showing that the sparse final outcome pro-\nvides insufficient guidance for identifying ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "S4 33% 54% 43%69%62%71%",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "288a73dfe4e5064352f14258e8f02bf9441bd0add0211e79672b936906992a2d",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0081",
+            "pages": [
+              11
+            ],
+            "section": "S4 33% 54% 43%69%62%71%",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 11,
+                "section": "S4 33% 54% 43%69%62%71%",
+                "section_index": 38,
+                "start": 0,
+                "text": "S4 33% 54% 43%69%62%71%\nto-end effectiveness. Table 7 compares four nested variants.\nC1removes stage-level feedback and evaluates candidates\nusing only the final binary attack outcome.C2adds stage\nsignals but removes the chain structure, treating the three\nscores independently and refining the stage with the lowest\nraw score.C3further introduces chain-structured losses but\nassigns uniform weights to all stages and shadow configura-\ntions.C4is the complete PIPEPOISON, combining stage sig-\nnals, chain-structured losses, and calibrated stage and con-\nfiguration weights.\nResults.We focus on AUR because it measures success\nover the complete memory lifecycle; full results for WSR\nand RSR@5 can be seen in Appendix E. C1 achieves only\n43% AUR in the matched setting and 31-33% in the three\ntransfer settings, showing that the sparse final outcome pro-\nvides insufficient guidance for identifying "
+              }
+            ],
+            "text": "S4 33% 54% 43%69%62%71%\nto-end effectiveness. Table 7 compares four nested variants.\nC1removes stage-level feedback and evaluates candidates\nusing only the final binary attack outcome.C2adds stage\nsignals but removes the chain structure, treating the three\nscores independently and refining the stage with the lowest\nraw score.C3further introduces chain-structured losses but\nassigns uniform weights to all stages and shadow configura-\ntions.C4is the complete PIPEPOISON, combining stage sig-\nnals, chain-structured losses, and calibrated stage and con-\nfiguration weights.\nResults.We focus on AUR because it measures success\nover the complete memory lifecycle; full results for WSR\nand RSR@5 can be seen in Appendix E. C1 achieves only\n43% AUR in the matched setting and 31-33% in the three\ntransfer settings, showing that the sparse final outcome pro-\nvides insufficient guidance for identifying "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0082"
+        ],
+        "excerpt": "pipeline failures.\nIntroducing independent stage signals in C2 increases AUR\nto 52% in S1 and 48\u201354% in S2\u2013S4. In the matched set-\nting, where stage and configuration weights reduce to uni-\nform weights, C4 further improves AUR to 73%, supporting\nthe benefit of the chain-structured objective. Under trans-\nfer settings, the unweighted C3 variant obtains only 41-45%\nAUR, whereas the complete C4 achieves 67-69%, an im-\nprovement of 22\u201326 percentage points. This result indicates\nthat chain structure alone is insufficient for balancing hetero-\ngeneous shadow configurations; the joint weighting module\nis crucial for targeting weak stages and difficult configura-\ntions.\nFor diagnostic purposes, we additionally evaluate C3 and\nC4 after including the corresponding victim configuration in\nthe shadow set. C3 exhibits a 19-20 percentage-point seen-\nunseen AUR gap, whereas the gap for C4 is only 1-6 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "S4 33% 54% 43%69%62%71%",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1bbd5f98e670521ede0db050da458aa6350a8ef1db283639adee30b94b04a143",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0082",
+            "pages": [
+              11
+            ],
+            "section": "S4 33% 54% 43%69%62%71%",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1798,
+                "page": 11,
+                "section": "S4 33% 54% 43%69%62%71%",
+                "section_index": 38,
+                "start": 898,
+                "text": "pipeline failures.\nIntroducing independent stage signals in C2 increases AUR\nto 52% in S1 and 48\u201354% in S2\u2013S4. In the matched set-\nting, where stage and configuration weights reduce to uni-\nform weights, C4 further improves AUR to 73%, supporting\nthe benefit of the chain-structured objective. Under trans-\nfer settings, the unweighted C3 variant obtains only 41-45%\nAUR, whereas the complete C4 achieves 67-69%, an im-\nprovement of 22\u201326 percentage points. This result indicates\nthat chain structure alone is insufficient for balancing hetero-\ngeneous shadow configurations; the joint weighting module\nis crucial for targeting weak stages and difficult configura-\ntions.\nFor diagnostic purposes, we additionally evaluate C3 and\nC4 after including the corresponding victim configuration in\nthe shadow set. C3 exhibits a 19-20 percentage-point seen-\nunseen AUR gap, whereas the gap for C4 is only 1-6 "
+              }
+            ],
+            "text": "pipeline failures.\nIntroducing independent stage signals in C2 increases AUR\nto 52% in S1 and 48\u201354% in S2\u2013S4. In the matched set-\nting, where stage and configuration weights reduce to uni-\nform weights, C4 further improves AUR to 73%, supporting\nthe benefit of the chain-structured objective. Under trans-\nfer settings, the unweighted C3 variant obtains only 41-45%\nAUR, whereas the complete C4 achieves 67-69%, an im-\nprovement of 22\u201326 percentage points. This result indicates\nthat chain structure alone is insufficient for balancing hetero-\ngeneous shadow configurations; the joint weighting module\nis crucial for targeting weak stages and difficult configura-\ntions.\nFor diagnostic purposes, we additionally evaluate C3 and\nC4 after including the corresponding victim configuration in\nthe shadow set. C3 exhibits a 19-20 percentage-point seen-\nunseen AUR gap, whereas the gap for C4 is only 1-6 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0090"
+        ],
+        "excerpt": "Question and evaluation protocol.We investigate whether\ndefenses applied at different stages of the memory lifecycle\nmitigate PIPEPOISON. We evaluate eight mechanisms across\nthree layers: tool-output filtering, system-level defenses, and\nmemory-management defenses. All poisoning content is op-\ntimized on undefended, attacker-controlled shadow systems\nand then evaluated unchanged against defended victims. The\nattacker has no knowledge of the deployed defense and re-\nceives no defense-side feedback.\nTool-Output Filtering.Following prior work [7, 10], we\nevaluate three filters applied before tool-returned content\nreaches memory. The PPL filter [1] detects statistically un-\nusual text, Llama Guard [14] identifies malicious instruc-\ntions, and a dedicated GPT-5.4 detector targets long-term-\nmemory manipulation. As shown in Figure 11, PPL filtering\nhas little effect, while Llama Guard and the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq4: Robustness Under Potential Defense",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7b988a6e28d1e0389f5dc938086405cc8512d06f166b74b789371ca15884d80e",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0090",
+            "pages": [
+              12
+            ],
+            "section": "Rq4: Robustness Under Potential Defense",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 12,
+                "section": "Rq4: Robustness Under Potential Defense",
+                "section_index": 43,
+                "start": 0,
+                "text": "Question and evaluation protocol.We investigate whether\ndefenses applied at different stages of the memory lifecycle\nmitigate PIPEPOISON. We evaluate eight mechanisms across\nthree layers: tool-output filtering, system-level defenses, and\nmemory-management defenses. All poisoning content is op-\ntimized on undefended, attacker-controlled shadow systems\nand then evaluated unchanged against defended victims. The\nattacker has no knowledge of the deployed defense and re-\nceives no defense-side feedback.\nTool-Output Filtering.Following prior work [7, 10], we\nevaluate three filters applied before tool-returned content\nreaches memory. The PPL filter [1] detects statistically un-\nusual text, Llama Guard [14] identifies malicious instruc-\ntions, and a dedicated GPT-5.4 detector targets long-term-\nmemory manipulation. As shown in Figure 11, PPL filtering\nhas little effect, while Llama Guard and the "
+              }
+            ],
+            "text": "Question and evaluation protocol.We investigate whether\ndefenses applied at different stages of the memory lifecycle\nmitigate PIPEPOISON. We evaluate eight mechanisms across\nthree layers: tool-output filtering, system-level defenses, and\nmemory-management defenses. All poisoning content is op-\ntimized on undefended, attacker-controlled shadow systems\nand then evaluated unchanged against defended victims. The\nattacker has no knowledge of the deployed defense and re-\nceives no defense-side feedback.\nTool-Output Filtering.Following prior work [7, 10], we\nevaluate three filters applied before tool-returned content\nreaches memory. The PPL filter [1] detects statistically un-\nusual text, Llama Guard [14] identifies malicious instruc-\ntions, and a dedicated GPT-5.4 detector targets long-term-\nmemory manipulation. As shown in Figure 11, PPL filtering\nhas little effect, while Llama Guard and the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0104"
+        ],
+        "excerpt": "subsequent sessions, it re-\nduces AUR to 57%\u201366% with unrelated new memories and\n49%\u201359% with semantically related new memories. These\nresults show that recency is more effective when newer mem-\nories compete within the same retrieval region.\nAnswer to RQ4\nDefenses reduce PIPEPOISON's AUR from an unde-\nfended range of 67-73% to 41-66%, with conflict reso-\nlution providing the strongest reduction. However, suc-\ncessful utilization remains under every evaluated de-\nfense, showing that stage-specific mechanisms provide\nonly partial protection against defense-oblivious black-\nbox transfer.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rsr@5 (%)",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e9a6a2bc6b6aab63f038b0daec9015b78151fb1da0f2d2d5e419aef77faf7592",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0104",
+            "pages": [
+              12
+            ],
+            "section": "Rsr@5 (%)",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1485,
+                "page": 12,
+                "section": "Rsr@5 (%)",
+                "section_index": 55,
+                "start": 893,
+                "text": "subsequent sessions, it re-\nduces AUR to 57%\u201366% with unrelated new memories and\n49%\u201359% with semantically related new memories. These\nresults show that recency is more effective when newer mem-\nories compete within the same retrieval region.\nAnswer to RQ4\nDefenses reduce PIPEPOISON's AUR from an unde-\nfended range of 67-73% to 41-66%, with conflict reso-\nlution providing the strongest reduction. However, suc-\ncessful utilization remains under every evaluated de-\nfense, showing that stage-specific mechanisms provide\nonly partial protection against defense-oblivious black-\nbox transfer."
+              }
+            ],
+            "text": "subsequent sessions, it re-\nduces AUR to 57%\u201366% with unrelated new memories and\n49%\u201359% with semantically related new memories. These\nresults show that recency is more effective when newer mem-\nories compete within the same retrieval region.\nAnswer to RQ4\nDefenses reduce PIPEPOISON's AUR from an unde-\nfended range of 67-73% to 41-66%, with conflict reso-\nlution providing the strongest reduction. However, suc-\ncessful utilization remains under every evaluated de-\nfense, showing that stage-specific mechanisms provide\nonly partial protection against defense-oblivious black-\nbox transfer."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0105"
+        ],
+        "excerpt": "Evaluators and Human Evaluation.We use AgentEvals-\nbased evaluators to assess WSR and AUR. To validate their\nreliability, three human experts independently annotated 200\nrecords for each of four representative attacks, yielding 800\nrecords in total. Majority voting was used to obtain the refer-\nence labels. The annotators achieved an average pairwise Co-\nhen's\u03baof 0.71, while AgentEvals obtained 0.93-0.95 agree-\nment with the human labels. We provide the complete evalu-\n12\nation setup and results in Appendix F.\nLocal Shadow-System Optimization Cost.All optimiza-\ntion is performed exclusively on attacker-controlled local\nshadow systems, without interacting with the victim sys-\ntem. Under a maximum budget of 50 iterations, PIPEPOI-\nSONrequires an average of 4.6 optimization iterations in the\nmatched and 14.7, 19.8, and 27.8 iterations in the three trans-\nfer settings.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12,
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "40d5d1111e954acf0b98164edaa16b3f941b972a20e6e8f736b75a98e1353ff2",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0105",
+            "pages": [
+              12,
+              13
+            ],
+            "section": "Discussion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 476,
+                "page": 12,
+                "section": "Discussion",
+                "section_index": 56,
+                "start": 0,
+                "text": "Evaluators and Human Evaluation.We use AgentEvals-\nbased evaluators to assess WSR and AUR. To validate their\nreliability, three human experts independently annotated 200\nrecords for each of four representative attacks, yielding 800\nrecords in total. Majority voting was used to obtain the refer-\nence labels. The annotators achieved an average pairwise Co-\nhen's\u03baof 0.71, while AgentEvals obtained 0.93-0.95 agree-\nment with the human labels. We provide the complete evalu-\n12"
+              },
+              {
+                "end": 400,
+                "page": 13,
+                "section": "Discussion",
+                "section_index": 57,
+                "start": 0,
+                "text": "ation setup and results in Appendix F.\nLocal Shadow-System Optimization Cost.All optimiza-\ntion is performed exclusively on attacker-controlled local\nshadow systems, without interacting with the victim sys-\ntem. Under a maximum budget of 50 iterations, PIPEPOI-\nSONrequires an average of 4.6 optimization iterations in the\nmatched and 14.7, 19.8, and 27.8 iterations in the three trans-\nfer settings."
+              }
+            ],
+            "text": "Evaluators and Human Evaluation.We use AgentEvals-\nbased evaluators to assess WSR and AUR. To validate their\nreliability, three human experts independently annotated 200\nrecords for each of four representative attacks, yielding 800\nrecords in total. Majority voting was used to obtain the refer-\nence labels. The annotators achieved an average pairwise Co-\nhen's\u03baof 0.71, while AgentEvals obtained 0.93-0.95 agree-\nment with the human labels. We provide the complete evalu-\n12\nation setup and results in Appendix F.\nLocal Shadow-System Optimization Cost.All optimiza-\ntion is performed exclusively on attacker-controlled local\nshadow systems, without interacting with the victim sys-\ntem. Under a maximum budget of 50 iterations, PIPEPOI-\nSONrequires an average of 4.6 optimization iterations in the\nmatched and 14.7, 19.8, and 27.8 iterations in the three trans-\nfer settings."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0139"
+        ],
+        "excerpt": "equivalent to C4.\nF Details of Human Evaluation\nWe use AgentEvals-based evaluators to determine whether\na written memory preserves the attacker objective for WSR\nand whether the resulting agent behavior satisfies that objec-\ntive for AUR. To validate these automated judgments, three\nhuman experts independently annotated 200 records from\neach of four representative attacks\u2014MINJA, Sleeper, Mem-\nMorph, and PIPEPOISON\u2014for a total of 800 records. Major-\nity voting was used to construct the human reference labels.\nThe experts achieved an average pairwise Cohen's\u03baof 0.71.\n17\nTable 10: Complete component-ablation results under the four RQ3 settings. Higher values are better. Bold values indicate the best\nresult within each evaluation group.\nBlack-box evaluation Seen-victim diagnostic\nSetting Metric C1 C2 C3 C4 C3 seen C4seen\nS1",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17,
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Te3-S Te3-L E5",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c95a403d7ce69c012ec92bd19fd4318a7c8e97852fd4088e91c70b0cb5b084e7",
+            "evidence_id": "Ea5be7c8e4fe99a2a-B0139",
+            "pages": [
+              17,
+              18
+            ],
+            "section": "Te3-S Te3-L E5",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2364,
+                "page": 17,
+                "section": "Te3-S Te3-L E5",
+                "section_index": 74,
+                "start": 1790,
+                "text": "equivalent to C4.\nF Details of Human Evaluation\nWe use AgentEvals-based evaluators to determine whether\na written memory preserves the attacker objective for WSR\nand whether the resulting agent behavior satisfies that objec-\ntive for AUR. To validate these automated judgments, three\nhuman experts independently annotated 200 records from\neach of four representative attacks\u2014MINJA, Sleeper, Mem-\nMorph, and PIPEPOISON\u2014for a total of 800 records. Major-\nity voting was used to construct the human reference labels.\nThe experts achieved an average pairwise Cohen's\u03baof 0.71.\n17"
+              },
+              {
+                "end": 256,
+                "page": 18,
+                "section": "Te3-S Te3-L E5",
+                "section_index": 75,
+                "start": 0,
+                "text": "Table 10: Complete component-ablation results under the four RQ3 settings. Higher values are better. Bold values indicate the best\nresult within each evaluation group.\nBlack-box evaluation Seen-victim diagnostic\nSetting Metric C1 C2 C3 C4 C3 seen C4seen\nS1"
+              }
+            ],
+            "text": "equivalent to C4.\nF Details of Human Evaluation\nWe use AgentEvals-based evaluators to determine whether\na written memory preserves the attacker objective for WSR\nand whether the resulting agent behavior satisfies that objec-\ntive for AUR. To validate these automated judgments, three\nhuman experts independently annotated 200 records from\neach of four representative attacks\u2014MINJA, Sleeper, Mem-\nMorph, and PIPEPOISON\u2014for a total of 800 records. Major-\nity voting was used to construct the human reference labels.\nThe experts achieved an average pairwise Cohen's\u03baof 0.71.\n17\nTable 10: Complete component-ablation results under the four RQ3 settings. Higher values are better. Bold values indicate the best\nresult within each evaluation group.\nBlack-box evaluation Seen-victim diagnostic\nSetting Metric C1 C2 C3 C4 C3 seen C4seen\nS1"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.00523",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Canonical Unicode normalization processed 39 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.00523",
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0002",
+          "Ea5be7c8e4fe99a2a-B0003",
+          "Ea5be7c8e4fe99a2a-B0010",
+          "Ea5be7c8e4fe99a2a-B0024",
+          "Ea5be7c8e4fe99a2a-B0027",
+          "Ea5be7c8e4fe99a2a-B0028",
+          "Ea5be7c8e4fe99a2a-B0045",
+          "Ea5be7c8e4fe99a2a-B0046",
+          "Ea5be7c8e4fe99a2a-B0049",
+          "Ea5be7c8e4fe99a2a-B0050",
+          "Ea5be7c8e4fe99a2a-B0052",
+          "Ea5be7c8e4fe99a2a-B0054",
+          "Ea5be7c8e4fe99a2a-B0058",
+          "Ea5be7c8e4fe99a2a-B0061",
+          "Ea5be7c8e4fe99a2a-B0066",
+          "Ea5be7c8e4fe99a2a-B0072",
+          "Ea5be7c8e4fe99a2a-B0074",
+          "Ea5be7c8e4fe99a2a-B0081",
+          "Ea5be7c8e4fe99a2a-B0082",
+          "Ea5be7c8e4fe99a2a-B0090",
+          "Ea5be7c8e4fe99a2a-B0104",
+          "Ea5be7c8e4fe99a2a-B0105",
+          "Ea5be7c8e4fe99a2a-B0139"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "e170fe8d935790e7a35a2c5237b8c62050b8f993d5fc2bfd2c154d325aff5bd2"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.00523",
+        "claim_evidence_alignment": "Claims regarding superior attack utilization rate across matched configurations (+19.1 pp), unseen transfer settings (+16 pp), and persistence under standard defenses are consistently supported by empirical results across the reported tables and figures.",
+        "context_id": "a5be7c8e4fe99a2ae5faa7b3cb81b868486ae0b28e40f6c106f79d28a701e244",
+        "decision": "pass",
+        "evaluation_assessment": "The evaluation covers three agent frameworks, four memory systems, diverse LLM/embedding backends, eight defense strategies, and ablation studies, backed by human evaluation showing strong agreement with the automated AgentEvals judge.",
+        "evidence_ids": [
+          "Ea5be7c8e4fe99a2a-B0002",
+          "Ea5be7c8e4fe99a2a-B0003",
+          "Ea5be7c8e4fe99a2a-B0010",
+          "Ea5be7c8e4fe99a2a-B0024",
+          "Ea5be7c8e4fe99a2a-B0027",
+          "Ea5be7c8e4fe99a2a-B0028",
+          "Ea5be7c8e4fe99a2a-B0045",
+          "Ea5be7c8e4fe99a2a-B0046",
+          "Ea5be7c8e4fe99a2a-B0049",
+          "Ea5be7c8e4fe99a2a-B0050",
+          "Ea5be7c8e4fe99a2a-B0052",
+          "Ea5be7c8e4fe99a2a-B0054",
+          "Ea5be7c8e4fe99a2a-B0058",
+          "Ea5be7c8e4fe99a2a-B0061",
+          "Ea5be7c8e4fe99a2a-B0066",
+          "Ea5be7c8e4fe99a2a-B0072",
+          "Ea5be7c8e4fe99a2a-B0074",
+          "Ea5be7c8e4fe99a2a-B0081",
+          "Ea5be7c8e4fe99a2a-B0082",
+          "Ea5be7c8e4fe99a2a-B0090",
+          "Ea5be7c8e4fe99a2a-B0104",
+          "Ea5be7c8e4fe99a2a-B0105",
+          "Ea5be7c8e4fe99a2a-B0139"
+        ],
+        "limitations": "The study acknowledges performance degradation under certain defenses (notably conflict resolution and provenance tagging) and highlights increased optimization costs during cross-configuration transfer.",
+        "method_assessment": "The methodology is thoroughly detailed, specifying stage-level metrics (writing, retrieval, utilization), chain-structured sequential losses to locate bottlenecks, and multi-configuration weighting schemes to prevent overfitting to local shadow setups.",
+        "quality_rationale": "The work addresses a clear architectural flaw in existing memory poisoning attacks with well-formulated methodology, rigorous empirical testing across multiple dimensions, solid baseline comparisons, and validation against defenses.",
+        "scoped_contribution": "The paper introduces PIPEPOISON, a black-box framework for optimizing indirect long-term memory poisoning in LLM agents by treating the write-retrieve-utilize pipeline end-to-end using shadow systems, chain-structured losses, and stability-calibrated weights.",
+        "source_content_hash": "e170fe8d935790e7a35a2c5237b8c62050b8f993d5fc2bfd2c154d325aff5bd2"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work addresses a clear architectural flaw in existing memory poisoning attacks with well-formulated methodology, rigorous empirical testing across multiple dimensions, solid baseline comparisons, and validation against defenses.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "e170fe8d935790e7a35a2c5237b8c62050b8f993d5fc2bfd2c154d325aff5bd2",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The study acknowledges performance degradation under certain defenses (notably conflict resolution and provenance tagging) and highlights increased optimization costs during cross-configuration transfer."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -175,7 +2764,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

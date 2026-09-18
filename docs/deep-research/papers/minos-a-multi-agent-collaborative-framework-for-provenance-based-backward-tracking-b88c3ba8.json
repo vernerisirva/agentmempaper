@@ -27,7 +27,7 @@
   "last_seen_date": "2026-07-08",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-03 09:59:21",
   "notified_date": "2026-07-03",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "semantic_scholar",
     "first_seen_at": "2026-07-03 09:55:42",
-    "generated_at": "2026-09-18 13:23:06",
+    "generated_at": "2026-09-18 18:46:26",
     "last_seen_at": "2026-07-08 08:55:10",
     "metadata_sources": [
       "semantic_scholar",
@@ -104,36 +104,1858 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-18T18:41:55.307888+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v1",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript addresses a well-defined security challenge (dependency explosion and semantic ambiguity in provenance tracking) with a well-engineered multi-agent LLM solution, comprehensive empirical evidence across multiple benchmarks, and rigorous ablation experiments.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 73103,
+      "assessment_input_sha256": "5b14371e0da77e6a89dc6dce25efb912d92b88ffb3814ecff56e58e49004478c",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "arxiv:2607.00440",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 71726,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 70303,
+      "evidence_block_count": 94,
+      "evidence_context_characters": 82598,
+      "evidence_context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+      "evidence_context_sha256": "4675f17aea5afe72cba49e9ff97af60d9018189bad680e0780dfa550851c7f8c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 71764,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "extracted_pages": 20,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "21e3ba57866412fbb44ff56ca2990c9868f025c32024ab4408ce23703020a63b",
+        "source_url": "https://arxiv.org/pdf/2607.00440",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 71726,
+      "scientific_body_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "discussion",
+        "introduction",
+        "limitations",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 2516,
+          "supplied_characters": 2516
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 3435,
+          "supplied_characters": 3435
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2672,
+          "supplied_characters": 2672
+        },
+        {
+          "heading": "Background And Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 4,
+          "source_characters": 334,
+          "supplied_characters": 334
+        },
+        {
+          "heading": "Background And Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 5,
+          "source_characters": 2415,
+          "supplied_characters": 2415
+        },
+        {
+          "heading": "Background And Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "introduction",
+          "section_index": 6,
+          "source_characters": 2512,
+          "supplied_characters": 2512
+        },
+        {
+          "heading": "Individual Event Assessment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 240,
+          "supplied_characters": 240
+        },
+        {
+          "heading": "Individual Event Assessment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 3207,
+          "supplied_characters": 3207
+        },
+        {
+          "heading": "Individual Event Assessment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 3168,
+          "supplied_characters": 3168
+        },
+        {
+          "heading": "Individual Event Assessment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 2735,
+          "supplied_characters": 2735
+        },
+        {
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1918,
+          "supplied_characters": 1918
+        },
+        {
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 3431,
+          "supplied_characters": 3431
+        },
+        {
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 3128,
+          "supplied_characters": 3128
+        },
+        {
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 2833,
+          "supplied_characters": 2833
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 16,
+          "source_characters": 3200,
+          "supplied_characters": 3200
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "results",
+          "section_index": 17,
+          "source_characters": 3144,
+          "supplied_characters": 3144
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 2769,
+          "supplied_characters": 2769
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 2891,
+          "supplied_characters": 2891
+        },
+        {
+          "heading": "Experiments",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "related",
+          "section_index": 21,
+          "source_characters": 1244,
+          "supplied_characters": 1244
+        },
+        {
+          "heading": "Discussion And Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "discussion",
+          "section_index": 22,
+          "source_characters": 1287,
+          "supplied_characters": 1287
+        },
+        {
+          "heading": "Discussion And Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "discussion",
+          "section_index": 23,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1500,
+          "supplied_characters": 1500
+        },
+        {
+          "heading": "Conference On Machine Learning (2024)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 273,
+          "supplied_characters": 273
+        },
+        {
+          "heading": "Fei, P., Li, Z., Wang, Z., Yu, X., Li, D., Jee, K.:{Seal}: Storage-Efficient Causality",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 138,
+          "supplied_characters": 138
+        },
+        {
+          "heading": "Gandhi, P.A., Wudali, P.N., Amaru, Y., Elovici, Y., Shabtai, A.: Shield: Apt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 87,
+          "supplied_characters": 87
+        },
+        {
+          "heading": "Guo, D., Et Al.: Deepseek-R1 Incentivizes Reasoning In Llms Through Reinforce-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 139,
+          "supplied_characters": 139
+        },
+        {
+          "heading": "Hassan, W.U., Guo, S., Li, D., Chen, Z., Jee, K., Li, Z., Bates, A.: Nodoze:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 159,
+          "supplied_characters": 159
+        },
+        {
+          "heading": "Society (2019)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 543,
+          "supplied_characters": 543
+        },
+        {
+          "heading": "King, S.T., Chen, P.M.: Backtracking Intrusions. Acm Sigops Operating Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "King, S.T., Chen, P.M.: Backtracking Intrusions. Acm Sigops Operating Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 291,
+          "supplied_characters": 291
+        },
+        {
+          "heading": "Li, Z., Chen, Q., Chen, R., Ye, Y., Zhang, S.: Threat Detection And Investigation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "limitations",
+          "section_index": 33,
+          "source_characters": 436,
+          "supplied_characters": 436
+        },
+        {
+          "heading": "Openai: Gpt-5.2-Codex: Specialized Model For Software Engineering And Agentic Cod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Park, J.S., O'Brien, J., Cai, C.J., Morris, M.R., Liang, P., Bernstein, M.S.: Genera-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 161,
+          "supplied_characters": 161
+        },
+        {
+          "heading": "Qwen Team: Qwen3.5: Towards Native Multimodal Agents (February 2026),Https:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Song, C., Ma, L., Zheng, J., Liao, J., Kuang, H., Yang, L.: Audit-Llm: Multi-Agent",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 777,
+          "supplied_characters": 777
+        },
+        {
+          "heading": "Wei, J., Huang, D., Lu, Y., Zhou, D., Le, Q.V.: Simple Synthetic Data Reduces",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 309,
+          "supplied_characters": 309
+        },
+        {
+          "heading": "Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., Cao, Y.: React:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 147,
+          "supplied_characters": 147
+        },
+        {
+          "heading": "Zeng, J., Chua, Z.L., Chen, Y., Ji, K., Liang, Z., Mao, J.: Watson: Abstracting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "abstract",
+          "section_index": 40,
+          "source_characters": 82,
+          "supplied_characters": 82
+        },
+        {
+          "heading": "Zipperle, M., Gottwalt, F., Chang, E., Dillon, T.: Provenance-Based Intrusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 68,
+          "supplied_characters": 68
+        },
+        {
+          "heading": "Zipperle, M., Gottwalt, F., Chang, E., Dillon, T.: Provenance-Based Intrusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 69,
+          "supplied_characters": 69
+        },
+        {
+          "heading": "Appendix: Evaluation Dataset Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 5435,
+          "supplied_characters": 5435
+        },
+        {
+          "heading": "Appendix: Evaluation Dataset Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 10204,
+          "supplied_characters": 10204
+        }
+      ],
+      "selected_characters": 70303,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "selected_sections": [
+        {
+          "characters": 2516,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 16,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 3435,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 2672,
+          "heading": "Introduction",
+          "page": 3
+        },
+        {
+          "characters": 334,
+          "heading": "Background And Problem Formulation",
+          "page": 3
+        },
+        {
+          "characters": 2415,
+          "heading": "Background And Problem Formulation",
+          "page": 4
+        },
+        {
+          "characters": 2512,
+          "heading": "Background And Problem Formulation",
+          "page": 5
+        },
+        {
+          "characters": 240,
+          "heading": "Individual Event Assessment",
+          "page": 5
+        },
+        {
+          "characters": 3207,
+          "heading": "Individual Event Assessment",
+          "page": 6
+        },
+        {
+          "characters": 3168,
+          "heading": "Individual Event Assessment",
+          "page": 7
+        },
+        {
+          "characters": 2735,
+          "heading": "Individual Event Assessment",
+          "page": 8
+        },
+        {
+          "characters": 1918,
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "page": 8
+        },
+        {
+          "characters": 3431,
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "page": 9
+        },
+        {
+          "characters": 3128,
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "page": 10
+        },
+        {
+          "characters": 69,
+          "heading": "Multi-Agent Collaborative Backward Tracking",
+          "page": 11
+        },
+        {
+          "characters": 2833,
+          "heading": "Experiments",
+          "page": 11
+        },
+        {
+          "characters": 3200,
+          "heading": "Experiments",
+          "page": 12
+        },
+        {
+          "characters": 3144,
+          "heading": "Experiments",
+          "page": 13
+        },
+        {
+          "characters": 2769,
+          "heading": "Experiments",
+          "page": 14
+        },
+        {
+          "characters": 2891,
+          "heading": "Experiments",
+          "page": 15
+        },
+        {
+          "characters": 17,
+          "heading": "Experiments",
+          "page": 16
+        },
+        {
+          "characters": 1244,
+          "heading": "Related Work",
+          "page": 16
+        },
+        {
+          "characters": 1287,
+          "heading": "Discussion And Conclusion",
+          "page": 16
+        },
+        {
+          "characters": 69,
+          "heading": "Discussion And Conclusion",
+          "page": 17
+        },
+        {
+          "characters": 1500,
+          "heading": "Unclassified body after references",
+          "page": 17
+        },
+        {
+          "characters": 273,
+          "heading": "Conference On Machine Learning (2024)",
+          "page": 17
+        },
+        {
+          "characters": 138,
+          "heading": "Fei, P., Li, Z., Wang, Z., Yu, X., Li, D., Jee, K.:{Seal}: Storage-Efficient Causality",
+          "page": 17
+        },
+        {
+          "characters": 87,
+          "heading": "Gandhi, P.A., Wudali, P.N., Amaru, Y., Elovici, Y., Shabtai, A.: Shield: Apt",
+          "page": 17
+        },
+        {
+          "characters": 139,
+          "heading": "Guo, D., Et Al.: Deepseek-R1 Incentivizes Reasoning In Llms Through Reinforce-",
+          "page": 17
+        },
+        {
+          "characters": 159,
+          "heading": "Hassan, W.U., Guo, S., Li, D., Chen, Z., Jee, K., Li, Z., Bates, A.: Nodoze:",
+          "page": 17
+        },
+        {
+          "characters": 543,
+          "heading": "Society (2019)",
+          "page": 17
+        },
+        {
+          "characters": 27,
+          "heading": "King, S.T., Chen, P.M.: Backtracking Intrusions. Acm Sigops Operating Systems",
+          "page": 17
+        },
+        {
+          "characters": 291,
+          "heading": "King, S.T., Chen, P.M.: Backtracking Intrusions. Acm Sigops Operating Systems",
+          "page": 18
+        },
+        {
+          "characters": 436,
+          "heading": "Li, Z., Chen, Q., Chen, R., Ye, Y., Zhang, S.: Threat Detection And Investigation",
+          "page": 18
+        },
+        {
+          "characters": 183,
+          "heading": "Openai: Gpt-5.2-Codex: Specialized Model For Software Engineering And Agentic Cod-",
+          "page": 18
+        },
+        {
+          "characters": 161,
+          "heading": "Park, J.S., O'Brien, J., Cai, C.J., Morris, M.R., Liang, P., Bernstein, M.S.: Genera-",
+          "page": 18
+        },
+        {
+          "characters": 25,
+          "heading": "Qwen Team: Qwen3.5: Towards Native Multimodal Agents (February 2026),Https:",
+          "page": 18
+        },
+        {
+          "characters": 777,
+          "heading": "Song, C., Ma, L., Zheng, J., Liao, J., Kuang, H., Yang, L.: Audit-Llm: Multi-Agent",
+          "page": 18
+        },
+        {
+          "characters": 309,
+          "heading": "Wei, J., Huang, D., Lu, Y., Zhou, D., Le, Q.V.: Simple Synthetic Data Reduces",
+          "page": 18
+        },
+        {
+          "characters": 147,
+          "heading": "Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., Cao, Y.: React:",
+          "page": 18
+        },
+        {
+          "characters": 82,
+          "heading": "Zeng, J., Chua, Z.L., Chen, Y., Ji, K., Liang, Z., Mao, J.: Watson: Abstracting",
+          "page": 18
+        },
+        {
+          "characters": 68,
+          "heading": "Zipperle, M., Gottwalt, F., Chang, E., Dillon, T.: Provenance-Based Intrusion",
+          "page": 18
+        },
+        {
+          "characters": 69,
+          "heading": "Zipperle, M., Gottwalt, F., Chang, E., Dillon, T.: Provenance-Based Intrusion",
+          "page": 19
+        },
+        {
+          "characters": 5435,
+          "heading": "Appendix: Evaluation Dataset Details",
+          "page": 19
+        },
+        {
+          "characters": 10204,
+          "heading": "Appendix: Evaluation Dataset Details",
+          "page": 20
+        }
+      ],
+      "selected_text_sha256": "5b14371e0da77e6a89dc6dce25efb912d92b88ffb3814ecff56e58e49004478c",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "21e3ba57866412fbb44ff56ca2990c9868f025c32024ab4408ce23703020a63b",
+      "source_pages": 20,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0002"
+        ],
+        "excerpt": "with \"dependency explosion\".\nTo address these challenges, we proposeMinos, a multi-agent collab-\norative framework that reconceptualizes backward tracking as a Large\nLanguage Model (LLM)-driven reasoning process.Minosoperates via a\ntwo-tiered architecture. For individual event assessment, it introduces a\nstructured framework to overcome the inherent limitations of LLMs: it\nemploys a hierarchical context model for persistent state maintenance,\nimplements retrieval-augmented reasoning with citation verification to\nground inferences, and incorporates an adversarial deliberation mech-\nanism to mitigate sycophancy bias. For end-to-end graph exploration,\nMinosorchestrates four specialized agents under a finite state machine\n(FSM), replacing exhaustive topological traversal with hypothesis-guided\nreasoning and \"count-first\" query protocols to prune the search space.\nComprehensive evaluations ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7b2a653f6d6b39eb49af446c3f7f6ca99412a35cf74c5656baf847a90e05ef20",
+            "evidence_id": "E04cfb28eb232053e-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 896,
+                "text": "with \"dependency explosion\".\nTo address these challenges, we proposeMinos, a multi-agent collab-\norative framework that reconceptualizes backward tracking as a Large\nLanguage Model (LLM)-driven reasoning process.Minosoperates via a\ntwo-tiered architecture. For individual event assessment, it introduces a\nstructured framework to overcome the inherent limitations of LLMs: it\nemploys a hierarchical context model for persistent state maintenance,\nimplements retrieval-augmented reasoning with citation verification to\nground inferences, and incorporates an adversarial deliberation mech-\nanism to mitigate sycophancy bias. For end-to-end graph exploration,\nMinosorchestrates four specialized agents under a finite state machine\n(FSM), replacing exhaustive topological traversal with hypothesis-guided\nreasoning and \"count-first\" query protocols to prune the search space.\nComprehensive evaluations "
+              }
+            ],
+            "text": "with \"dependency explosion\".\nTo address these challenges, we proposeMinos, a multi-agent collab-\norative framework that reconceptualizes backward tracking as a Large\nLanguage Model (LLM)-driven reasoning process.Minosoperates via a\ntwo-tiered architecture. For individual event assessment, it introduces a\nstructured framework to overcome the inherent limitations of LLMs: it\nemploys a hierarchical context model for persistent state maintenance,\nimplements retrieval-augmented reasoning with citation verification to\nground inferences, and incorporates an adversarial deliberation mech-\nanism to mitigate sycophancy bias. For end-to-end graph exploration,\nMinosorchestrates four specialized agents under a finite state machine\n(FSM), replacing exhaustive topological traversal with hypothesis-guided\nreasoning and \"count-first\" query protocols to prune the search space.\nComprehensive evaluations "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0003"
+        ],
+        "excerpt": "on 14 attack scenarios across five public\ndatasets demonstrate thatMinosachieves average recall and precision\nof 0.92 and 0.64, respectively, significantly outperforming state-of-the-art\nbaselines while generating attack subgraphs that are 49% more compact.\nFurthermore,Minosgenerates interpretable reasoning at every step,\nproviding robust support for auditing and system refinement. Ultimately,\nour exploration validates the efficacy of leveraging LLMs for automated\nprovenance-based backward tracking.\nKeywords:Backward Tracking\u00b7Provenance Analysis\u00b7Large Language\nModel\u00b7Multi-Agent System\n\u2217Two authors contribute equally to this work.\nBCorresponding author: lizhenyuan@zju.edu.cn\narXiv:2607.00440v1  [cs.CR]  1 Jul 2026\n2 J. Wang et al.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract / front matter",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "99666182d82ac25065360448a5e87cfa763dc9aed59e0026d6985ba6d925b728",
+            "evidence_id": "E04cfb28eb232053e-B0003",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "Abstract / front matter",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2516,
+                "page": 1,
+                "section": "Abstract / front matter",
+                "section_index": 0,
+                "start": 1794,
+                "text": "on 14 attack scenarios across five public\ndatasets demonstrate thatMinosachieves average recall and precision\nof 0.92 and 0.64, respectively, significantly outperforming state-of-the-art\nbaselines while generating attack subgraphs that are 49% more compact.\nFurthermore,Minosgenerates interpretable reasoning at every step,\nproviding robust support for auditing and system refinement. Ultimately,\nour exploration validates the efficacy of leveraging LLMs for automated\nprovenance-based backward tracking.\nKeywords:Backward Tracking\u00b7Provenance Analysis\u00b7Large Language\nModel\u00b7Multi-Agent System\n\u2217Two authors contribute equally to this work.\nBCorresponding author: lizhenyuan@zju.edu.cn\narXiv:2607.00440v1  [cs.CR]  1 Jul 2026"
+              },
+              {
+                "end": 16,
+                "page": 2,
+                "section": "Abstract / front matter",
+                "section_index": 1,
+                "start": 0,
+                "text": "2 J. Wang et al."
+              }
+            ],
+            "text": "on 14 attack scenarios across five public\ndatasets demonstrate thatMinosachieves average recall and precision\nof 0.92 and 0.64, respectively, significantly outperforming state-of-the-art\nbaselines while generating attack subgraphs that are 49% more compact.\nFurthermore,Minosgenerates interpretable reasoning at every step,\nproviding robust support for auditing and system refinement. Ultimately,\nour exploration validates the efficacy of leveraging LLMs for automated\nprovenance-based backward tracking.\nKeywords:Backward Tracking\u00b7Provenance Analysis\u00b7Large Language\nModel\u00b7Multi-Agent System\n\u2217Two authors contribute equally to this work.\nBCorresponding author: lizhenyuan@zju.edu.cn\narXiv:2607.00440v1  [cs.CR]  1 Jul 2026\n2 J. Wang et al."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0007"
+        ],
+        "excerpt": "characteristic of human\ninvestigation teams to replace blind traversal with reasoning-driven, hypothesis-\nguided exploration.\nMotivated by these insights, we proposeMinos, a framework that formulates\nbackward tracking as a multi-agent collaborative reasoning process.Minosad-\ndresses the two core challenges through a decomposed, two-tiered architecture.\nFor individual event assessment,Minosintroduces a structured reasoning frame-\nwork explicitly designed to overcome three inherent limitations of generic LLMs:\nto counter context window constraints during prolonged tracking, a hierarchi-\ncal context model employs a dual-grained design to maintain a condensed yet\nrich global tracking state; to eliminate knowledge cutoffs and hallucinations, a\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 3\nretrieval-augmented module with automated citation verification enhances ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2,
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6073fa286f4f34bc7f22c1d8508ca38e663e1e5bee0b232002dc7966183596dc",
+            "evidence_id": "E04cfb28eb232053e-B0007",
+            "pages": [
+              2,
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 3435,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 2,
+                "start": 2687,
+                "text": "characteristic of human\ninvestigation teams to replace blind traversal with reasoning-driven, hypothesis-\nguided exploration.\nMotivated by these insights, we proposeMinos, a framework that formulates\nbackward tracking as a multi-agent collaborative reasoning process.Minosad-\ndresses the two core challenges through a decomposed, two-tiered architecture.\nFor individual event assessment,Minosintroduces a structured reasoning frame-\nwork explicitly designed to overcome three inherent limitations of generic LLMs:\nto counter context window constraints during prolonged tracking, a hierarchi-\ncal context model employs a dual-grained design to maintain a condensed yet\nrich global tracking state; to eliminate knowledge cutoffs and hallucinations, a"
+              },
+              {
+                "end": 142,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 0,
+                "text": "Minos: A Multi-Agent Collaborative Framework for Backward Tracking 3\nretrieval-augmented module with automated citation verification enhances "
+              }
+            ],
+            "text": "characteristic of human\ninvestigation teams to replace blind traversal with reasoning-driven, hypothesis-\nguided exploration.\nMotivated by these insights, we proposeMinos, a framework that formulates\nbackward tracking as a multi-agent collaborative reasoning process.Minosad-\ndresses the two core challenges through a decomposed, two-tiered architecture.\nFor individual event assessment,Minosintroduces a structured reasoning frame-\nwork explicitly designed to overcome three inherent limitations of generic LLMs:\nto counter context window constraints during prolonged tracking, a hierarchi-\ncal context model employs a dual-grained design to maintain a condensed yet\nrich global tracking state; to eliminate knowledge cutoffs and hallucinations, a\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 3\nretrieval-augmented module with automated citation verification enhances "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0008"
+        ],
+        "excerpt": "the\nreasoning capability while anchoring each inference to traceable sources; and to\nmitigate the false positives induced by sycophancy bias, an adversarial delibera-\ntion mechanism (prosecutor\u2013defense\u2013judge) systematically extracts supporting\nevidence from both malicious and benign perspectives before yielding an objective\nevent assessment through impartial arbitration. For end-to-end graph exploration,\nMinospartitions the complex investigation task into four specialized agent roles\norchestrated by a finite state machine (FSM). The Planner agent serves as the\nhypothesis-driven commander, guiding the backward tracking through high-level\nsemantic reasoning rather than rigid topological traversal. The Query agent\nacts as the data interface, employing a \"count-first\" protocol to securely retrieve\nsystem events while preventing \"dependency explosion\" at high-degree nodes. The\nAdversarial ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "030993d428da430be983db28e6c84abf965cccd01fe684b55117ba566dc3833e",
+            "evidence_id": "E04cfb28eb232053e-B0008",
+            "pages": [
+              3
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 1039,
+                "page": 3,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 142,
+                "text": "the\nreasoning capability while anchoring each inference to traceable sources; and to\nmitigate the false positives induced by sycophancy bias, an adversarial delibera-\ntion mechanism (prosecutor\u2013defense\u2013judge) systematically extracts supporting\nevidence from both malicious and benign perspectives before yielding an objective\nevent assessment through impartial arbitration. For end-to-end graph exploration,\nMinospartitions the complex investigation task into four specialized agent roles\norchestrated by a finite state machine (FSM). The Planner agent serves as the\nhypothesis-driven commander, guiding the backward tracking through high-level\nsemantic reasoning rather than rigid topological traversal. The Query agent\nacts as the data interface, employing a \"count-first\" protocol to securely retrieve\nsystem events while preventing \"dependency explosion\" at high-degree nodes. The\nAdversarial "
+              }
+            ],
+            "text": "the\nreasoning capability while anchoring each inference to traceable sources; and to\nmitigate the false positives induced by sycophancy bias, an adversarial delibera-\ntion mechanism (prosecutor\u2013defense\u2013judge) systematically extracts supporting\nevidence from both malicious and benign perspectives before yielding an objective\nevent assessment through impartial arbitration. For end-to-end graph exploration,\nMinospartitions the complex investigation task into four specialized agent roles\norchestrated by a finite state machine (FSM). The Planner agent serves as the\nhypothesis-driven commander, guiding the backward tracking through high-level\nsemantic reasoning rather than rigid topological traversal. The Query agent\nacts as the data interface, employing a \"count-first\" protocol to securely retrieve\nsystem events while preventing \"dependency explosion\" at high-degree nodes. The\nAdversarial "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0023"
+        ],
+        "excerpt": "that anchors the assessment to grounded evidence.\n3.3 Adversarial Reasoning for Intent Verification.\nDespite leveraging enriched context and retrieved knowledge, a single LLM for\nintent assessment frequently exhibits sycophancy bias [29], misclassifying benign\nevents as malicious and causing excessive false positives. To mitigate this, we\npropose an adversarial reasoning framework [8] featuring three specialized agents:\na prosecutor, a defense attorney, and a judge.\nIn the initial phase, the prosecutor and defense agents independently analyze\nthe target event under opposing assumptions\u2014malicious and benign intent,\nrespectively. Both agents exhaustively extract supporting evidence from the\nhierarchical context, retrieved knowledge, and intrinsic knowledge, providing\nformal citations for every claim. The verification algorithm then parses these\ncitations to generate a credibility summary, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Individual Event Assessment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "252afe1b12312efc087ebf9957e0047a8b3fa3611dd09bf2359fe8506e1a96fc",
+            "evidence_id": "E04cfb28eb232053e-B0023",
+            "pages": [
+              7
+            ],
+            "section": "Individual Event Assessment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2827,
+                "page": 7,
+                "section": "Individual Event Assessment",
+                "section_index": 9,
+                "start": 1927,
+                "text": "that anchors the assessment to grounded evidence.\n3.3 Adversarial Reasoning for Intent Verification.\nDespite leveraging enriched context and retrieved knowledge, a single LLM for\nintent assessment frequently exhibits sycophancy bias [29], misclassifying benign\nevents as malicious and causing excessive false positives. To mitigate this, we\npropose an adversarial reasoning framework [8] featuring three specialized agents:\na prosecutor, a defense attorney, and a judge.\nIn the initial phase, the prosecutor and defense agents independently analyze\nthe target event under opposing assumptions\u2014malicious and benign intent,\nrespectively. Both agents exhaustively extract supporting evidence from the\nhierarchical context, retrieved knowledge, and intrinsic knowledge, providing\nformal citations for every claim. The verification algorithm then parses these\ncitations to generate a credibility summary, "
+              }
+            ],
+            "text": "that anchors the assessment to grounded evidence.\n3.3 Adversarial Reasoning for Intent Verification.\nDespite leveraging enriched context and retrieved knowledge, a single LLM for\nintent assessment frequently exhibits sycophancy bias [29], misclassifying benign\nevents as malicious and causing excessive false positives. To mitigate this, we\npropose an adversarial reasoning framework [8] featuring three specialized agents:\na prosecutor, a defense attorney, and a judge.\nIn the initial phase, the prosecutor and defense agents independently analyze\nthe target event under opposing assumptions\u2014malicious and benign intent,\nrespectively. Both agents exhaustively extract supporting evidence from the\nhierarchical context, retrieved knowledge, and intrinsic knowledge, providing\nformal citations for every claim. The verification algorithm then parses these\ncitations to generate a credibility summary, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0024"
+        ],
+        "excerpt": "flagging unverified claims.\nIn the adjudication phase, the judge agent receives the opposing arguments\ntogether with their credibility summaries as input, and sequentially evaluates\ncausal dependencies, evidence grounding, and action consistency to render a final\nverdict substantiated by transparent reasoning. This adversarial architecture\n8 J. Wang et al.\n\u2462Adversarial ReasoningFramwork\u2461RAGandCitationVerification\n192.168.10.7\n\u2026/Tasks/job-A.xml\nPowerShellPowerShell\n\u2026/Tasks/payload.xml\nservices.exekernel32.dllconfig.xml\n78.205.13.17\nmaintenance.ps1upload_8f3a.tmp\ntomcat.exe\nScenario A: Routine maintenance\nScenario B: Persistence technique\nPowerShell\n\u2026/Tasks/payload.xml\n\u2460FetchHierarchical Context\nCoarse-grained Tactical Sequence[Initial Accsess]\n[Execution]\n[Persistence]\n[Discovery][Collection]\n[Exfiltration]\nCandidate Event\nFine-grained Semantic Narrative\u2026\nattack-related log ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Individual Event Assessment",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c28a07f47c6748709c811bdc95cfd585a7f7e7f8b6973d30322b571cc28a3826",
+            "evidence_id": "E04cfb28eb232053e-B0024",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Individual Event Assessment",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3168,
+                "page": 7,
+                "section": "Individual Event Assessment",
+                "section_index": 9,
+                "start": 2827,
+                "text": "flagging unverified claims.\nIn the adjudication phase, the judge agent receives the opposing arguments\ntogether with their credibility summaries as input, and sequentially evaluates\ncausal dependencies, evidence grounding, and action consistency to render a final\nverdict substantiated by transparent reasoning. This adversarial architecture"
+              },
+              {
+                "end": 544,
+                "page": 8,
+                "section": "Individual Event Assessment",
+                "section_index": 10,
+                "start": 0,
+                "text": "8 J. Wang et al.\n\u2462Adversarial ReasoningFramwork\u2461RAGandCitationVerification\n192.168.10.7\n\u2026/Tasks/job-A.xml\nPowerShellPowerShell\n\u2026/Tasks/payload.xml\nservices.exekernel32.dllconfig.xml\n78.205.13.17\nmaintenance.ps1upload_8f3a.tmp\ntomcat.exe\nScenario A: Routine maintenance\nScenario B: Persistence technique\nPowerShell\n\u2026/Tasks/payload.xml\n\u2460FetchHierarchical Context\nCoarse-grained Tactical Sequence[Initial Accsess]\n[Execution]\n[Persistence]\n[Discovery][Collection]\n[Exfiltration]\nCandidate Event\nFine-grained Semantic Narrative\u2026\nattack-related log "
+              }
+            ],
+            "text": "flagging unverified claims.\nIn the adjudication phase, the judge agent receives the opposing arguments\ntogether with their credibility summaries as input, and sequentially evaluates\ncausal dependencies, evidence grounding, and action consistency to render a final\nverdict substantiated by transparent reasoning. This adversarial architecture\n8 J. Wang et al.\n\u2462Adversarial ReasoningFramwork\u2461RAGandCitationVerification\n192.168.10.7\n\u2026/Tasks/job-A.xml\nPowerShellPowerShell\n\u2026/Tasks/payload.xml\nservices.exekernel32.dllconfig.xml\n78.205.13.17\nmaintenance.ps1upload_8f3a.tmp\ntomcat.exe\nScenario A: Routine maintenance\nScenario B: Persistence technique\nPowerShell\n\u2026/Tasks/payload.xml\n\u2460FetchHierarchical Context\nCoarse-grained Tactical Sequence[Initial Accsess]\n[Execution]\n[Persistence]\n[Discovery][Collection]\n[Exfiltration]\nCandidate Event\nFine-grained Semantic Narrative\u2026\nattack-related log "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0030"
+        ],
+        "excerpt": "strategy rather than executing topologi-\ncal traversals like BFS. The Planner leverages the current context to explicitly\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 9\nTable 1.Specialized agent roles and their corresponding responsibilities inMinos\nAgent Role Core Responsibility\nPlannerDetermines the next tracking candidates\nQueryTranslates instructions and query data\nAdversarial GroupEvaluates the intent of candidate events\nMemoryMaintains the hierarchical context\npropose hypotheses regarding the attacker's next steps. To implement this, the\nPlanner adopts a progressive three-tier strategy: (1) an initial backward expansion\ncentered on the POI to establish a local footprint; (2) an edge-first exploration\nfocusing on low-degree frontier nodes to broaden the subgraph efficiently; and\n(3) a continuous constraint that anchors hypotheses to the tactical lifecycle ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8,
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Collaborative Backward Tracking",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1e697e042d71cf3a28bea84390101db5991113a2c82c48ed23751c4533a20cb2",
+            "evidence_id": "E04cfb28eb232053e-B0030",
+            "pages": [
+              8,
+              9
+            ],
+            "section": "Multi-Agent Collaborative Backward Tracking",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1918,
+                "page": 8,
+                "section": "Multi-Agent Collaborative Backward Tracking",
+                "section_index": 11,
+                "start": 1797,
+                "text": "strategy rather than executing topologi-\ncal traversals like BFS. The Planner leverages the current context to explicitly"
+              },
+              {
+                "end": 773,
+                "page": 9,
+                "section": "Multi-Agent Collaborative Backward Tracking",
+                "section_index": 12,
+                "start": 0,
+                "text": "Minos: A Multi-Agent Collaborative Framework for Backward Tracking 9\nTable 1.Specialized agent roles and their corresponding responsibilities inMinos\nAgent Role Core Responsibility\nPlannerDetermines the next tracking candidates\nQueryTranslates instructions and query data\nAdversarial GroupEvaluates the intent of candidate events\nMemoryMaintains the hierarchical context\npropose hypotheses regarding the attacker's next steps. To implement this, the\nPlanner adopts a progressive three-tier strategy: (1) an initial backward expansion\ncentered on the POI to establish a local footprint; (2) an edge-first exploration\nfocusing on low-degree frontier nodes to broaden the subgraph efficiently; and\n(3) a continuous constraint that anchors hypotheses to the tactical lifecycle "
+              }
+            ],
+            "text": "strategy rather than executing topologi-\ncal traversals like BFS. The Planner leverages the current context to explicitly\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 9\nTable 1.Specialized agent roles and their corresponding responsibilities inMinos\nAgent Role Core Responsibility\nPlannerDetermines the next tracking candidates\nQueryTranslates instructions and query data\nAdversarial GroupEvaluates the intent of candidate events\nMemoryMaintains the hierarchical context\npropose hypotheses regarding the attacker's next steps. To implement this, the\nPlanner adopts a progressive three-tier strategy: (1) an initial backward expansion\ncentered on the POI to establish a local footprint; (2) an edge-first exploration\nfocusing on low-degree frontier nodes to broaden the subgraph efficiently; and\n(3) a continuous constraint that anchors hypotheses to the tactical lifecycle "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0032"
+        ],
+        "excerpt": "optimized specifically for code generation to power the Query\nAgent, thereby enhancing the fidelity of query translation. The Query Agent\nincorporates two pivotal self-feedback mechanisms. The first is the \"count-first\"\nprotocol, engineered to mitigate the data explosion. Considering that high-degree\nnodes in provenance graphs may connect to tens of thousands of events, exe-\ncuting naive queries directly would return an immense volume of candidates,\nincurring significant computational overhead on irrelevant background noise.\nTherefore, before fetching any data, the Query Agent executes a counting probe\nto quantify the candidate volumen. If n exceeds a predefined threshold\u03b8max, it\ntriggers a backpressure feedback signal, compelling the Planner to generate more\nstringent query instructions (e.g., by imposing tighter temporal windows). This\nself-optimization rigorously ensures the safety ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Collaborative Backward Tracking",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "12ffa05854c494e84d95fb0a52276e0106f6a8221f54b003e85357d8c2d6e275",
+            "evidence_id": "E04cfb28eb232053e-B0032",
+            "pages": [
+              9
+            ],
+            "section": "Multi-Agent Collaborative Backward Tracking",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2566,
+                "page": 9,
+                "section": "Multi-Agent Collaborative Backward Tracking",
+                "section_index": 12,
+                "start": 1668,
+                "text": "optimized specifically for code generation to power the Query\nAgent, thereby enhancing the fidelity of query translation. The Query Agent\nincorporates two pivotal self-feedback mechanisms. The first is the \"count-first\"\nprotocol, engineered to mitigate the data explosion. Considering that high-degree\nnodes in provenance graphs may connect to tens of thousands of events, exe-\ncuting naive queries directly would return an immense volume of candidates,\nincurring significant computational overhead on irrelevant background noise.\nTherefore, before fetching any data, the Query Agent executes a counting probe\nto quantify the candidate volumen. If n exceeds a predefined threshold\u03b8max, it\ntriggers a backpressure feedback signal, compelling the Planner to generate more\nstringent query instructions (e.g., by imposing tighter temporal windows). This\nself-optimization rigorously ensures the safety "
+              }
+            ],
+            "text": "optimized specifically for code generation to power the Query\nAgent, thereby enhancing the fidelity of query translation. The Query Agent\nincorporates two pivotal self-feedback mechanisms. The first is the \"count-first\"\nprotocol, engineered to mitigate the data explosion. Considering that high-degree\nnodes in provenance graphs may connect to tens of thousands of events, exe-\ncuting naive queries directly would return an immense volume of candidates,\nincurring significant computational overhead on irrelevant background noise.\nTherefore, before fetching any data, the Query Agent executes a counting probe\nto quantify the candidate volumen. If n exceeds a predefined threshold\u03b8max, it\ntriggers a backpressure feedback signal, compelling the Planner to generate more\nstringent query instructions (e.g., by imposing tighter temporal windows). This\nself-optimization rigorously ensures the safety "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0035"
+        ],
+        "excerpt": "the \"count-first\" protocol, and\nthe Adversarial Group adjudicates the intent of these events. Crucially, once an\nevent is confirmed as attack-related, it triggers the Memory Agent to execute a\ncontext update, synchronously recalibrating both the fine-grained narrative and\nthe coarse-grained tactical sequence to inform the next planning iteration.\nThis iterative cycle is rigorously governed by multi-dimensional termination\nconditions designed to balance investigation completeness with operation safety.\nThe orchestration loop terminates immediately if any of the following criteria are\nmet: (1) logical completeness: the Planner autonomously infers via the coarse-\ngrained context that the tactical chain has converged upon the root intrusion\nvector (e.g., the [Initial Access] stage), rendering further backward traversal\nredundant; (2) exploration sufficiency: the size of the attack-related ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Collaborative Backward Tracking",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e225749a4323f5404ee37f8800369da59b9869105fe6cb9c186aae58b55b8cf0",
+            "evidence_id": "E04cfb28eb232053e-B0035",
+            "pages": [
+              10
+            ],
+            "section": "Multi-Agent Collaborative Backward Tracking",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 10,
+                "section": "Multi-Agent Collaborative Backward Tracking",
+                "section_index": 13,
+                "start": 899,
+                "text": "the \"count-first\" protocol, and\nthe Adversarial Group adjudicates the intent of these events. Crucially, once an\nevent is confirmed as attack-related, it triggers the Memory Agent to execute a\ncontext update, synchronously recalibrating both the fine-grained narrative and\nthe coarse-grained tactical sequence to inform the next planning iteration.\nThis iterative cycle is rigorously governed by multi-dimensional termination\nconditions designed to balance investigation completeness with operation safety.\nThe orchestration loop terminates immediately if any of the following criteria are\nmet: (1) logical completeness: the Planner autonomously infers via the coarse-\ngrained context that the tactical chain has converged upon the root intrusion\nvector (e.g., the [Initial Access] stage), rendering further backward traversal\nredundant; (2) exploration sufficiency: the size of the attack-related "
+              }
+            ],
+            "text": "the \"count-first\" protocol, and\nthe Adversarial Group adjudicates the intent of these events. Crucially, once an\nevent is confirmed as attack-related, it triggers the Memory Agent to execute a\ncontext update, synchronously recalibrating both the fine-grained narrative and\nthe coarse-grained tactical sequence to inform the next planning iteration.\nThis iterative cycle is rigorously governed by multi-dimensional termination\nconditions designed to balance investigation completeness with operation safety.\nThe orchestration loop terminates immediately if any of the following criteria are\nmet: (1) logical completeness: the Planner autonomously infers via the coarse-\ngrained context that the tactical chain has converged upon the root intrusion\nvector (e.g., the [Initial Access] stage), rendering further backward traversal\nredundant; (2) exploration sufficiency: the size of the attack-related "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0041"
+        ],
+        "excerpt": "encapsulates the full suite of investigative capabilities within an\nindependent GPT-5.2 instance. This agent operates via a standard ReAct [31]\n12 J. Wang et al.\nTable 2.Effectiveness of attack subgraph reconstruction across 14 evaluation scenarios.\n|G|reports the output subgraph size with the ground-truth size in parentheses\nScenario NoDoze DepImpact Single-AgentMinos\nRec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT)\nOpTC C1 0.69 0.14 128 (26) 0.69 0.23 78 (26) 0.38 0.10 152 (26) 0.92 0.63 38 (26)\nOpTC C2 0.72 0.16 225 (50) 0.58 0.22 132 (50) 0.42 0.11 148 (50) 0.90 0.60 75 (50)\nOpTC C3 0.66 0.09 257 (35) 0.63 0.20 110 (35) 0.40 0.09 145 (35) 0.89 0.57 54 (35)\nAurora C1 0.88 0.18 83 (17) 0.82 0.30 46 (17) 0.65 0.25 68 (17) 1.00 0.74 23 (17)\nAurora C2 0.70 0.12 134 (23) 0.74 0.20 85 (23) 0.58 0.20 75 (23) 0.96 0.69 32 (23)\nAurora C3 0.74 0.12 167 (27) 0.70 0.45 42 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11,
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d4fed5e9a5810eeff7383151c68cb827b02c644f713734a66e829ac46d2a5c67",
+            "evidence_id": "E04cfb28eb232053e-B0041",
+            "pages": [
+              11,
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2833,
+                "page": 11,
+                "section": "Experiments",
+                "section_index": 15,
+                "start": 2690,
+                "text": "encapsulates the full suite of investigative capabilities within an\nindependent GPT-5.2 instance. This agent operates via a standard ReAct [31]"
+              },
+              {
+                "end": 755,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 0,
+                "text": "12 J. Wang et al.\nTable 2.Effectiveness of attack subgraph reconstruction across 14 evaluation scenarios.\n|G|reports the output subgraph size with the ground-truth size in parentheses\nScenario NoDoze DepImpact Single-AgentMinos\nRec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT)\nOpTC C1 0.69 0.14 128 (26) 0.69 0.23 78 (26) 0.38 0.10 152 (26) 0.92 0.63 38 (26)\nOpTC C2 0.72 0.16 225 (50) 0.58 0.22 132 (50) 0.42 0.11 148 (50) 0.90 0.60 75 (50)\nOpTC C3 0.66 0.09 257 (35) 0.63 0.20 110 (35) 0.40 0.09 145 (35) 0.89 0.57 54 (35)\nAurora C1 0.88 0.18 83 (17) 0.82 0.30 46 (17) 0.65 0.25 68 (17) 1.00 0.74 23 (17)\nAurora C2 0.70 0.12 134 (23) 0.74 0.20 85 (23) 0.58 0.20 75 (23) 0.96 0.69 32 (23)\nAurora C3 0.74 0.12 167 (27) 0.70 0.45 42 "
+              }
+            ],
+            "text": "encapsulates the full suite of investigative capabilities within an\nindependent GPT-5.2 instance. This agent operates via a standard ReAct [31]\n12 J. Wang et al.\nTable 2.Effectiveness of attack subgraph reconstruction across 14 evaluation scenarios.\n|G|reports the output subgraph size with the ground-truth size in parentheses\nScenario NoDoze DepImpact Single-AgentMinos\nRec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT) Rec. Prec.|G|(GT)\nOpTC C1 0.69 0.14 128 (26) 0.69 0.23 78 (26) 0.38 0.10 152 (26) 0.92 0.63 38 (26)\nOpTC C2 0.72 0.16 225 (50) 0.58 0.22 132 (50) 0.42 0.11 148 (50) 0.90 0.60 75 (50)\nOpTC C3 0.66 0.09 257 (35) 0.63 0.20 110 (35) 0.40 0.09 145 (35) 0.89 0.57 54 (35)\nAurora C1 0.88 0.18 83 (17) 0.82 0.30 46 (17) 0.65 0.25 68 (17) 1.00 0.74 23 (17)\nAurora C2 0.70 0.12 134 (23) 0.74 0.20 85 (23) 0.58 0.20 75 (23) 0.96 0.69 32 (23)\nAurora C3 0.74 0.12 167 (27) 0.70 0.45 42 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0042"
+        ],
+        "excerpt": "(27) 0.56 0.22 72 (27) 0.93 0.76 33 (27)\nTrace C1 0.73 0.10 110 (15) 0.60 0.16 56 (15) 0.15 0.30 7 (15) 0.87 0.57 23 (15)\nTrace C2 0.78 0.15 94 (18) 0.67 0.22 55 (18) 0.22 0.33 10 (18) 0.89 0.62 26 (18)\nTheia C1 0.77 0.12 83 (13) 0.62 0.18 45 (13) 0.31 0.08 130 (13) 0.92 0.60 20 (13)\nTheia C2 0.80 0.17 141 (30) 0.70 0.26 81 (30) 0.38 0.10 120 (30) 0.93 0.67 42 (30)\nCadets C1 0.71 0.24 50 (17) 0.65 0.20 55 (17) 0.35 0.07 195 (17) 1.00 0.71 24 (17)\nCadets C2 0.50 0.05 80 (8) 0.50 0.13 31 (8) 0.38 0.06 200 (8) 0.75 0.50 12 (8)\nCadets C3 0.61 0.20 134 (44) 0.73 0.35 92 (44) 0.42 0.08 185 (44) 0.95 0.68 62 (44)\nCadets C4 0.76 0.14 114 (21) 0.57 0.29 42 (21) 0.38 0.09 180 (21) 0.90 0.63 30 (21)\nA verage0.72 0.14 129 (24) 0.66 0.24 68 (24) 0.40 0.15 120 (24)0.92 0.64 35 (24)\nprompting loop and is granted access to the identical database query and knowl-\nedge retrieval toolset asMinos. This ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0d3656e9e93b0625a676c248346e1652739cb86188753552497a009aa98b54c6",
+            "evidence_id": "E04cfb28eb232053e-B0042",
+            "pages": [
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1651,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 755,
+                "text": "(27) 0.56 0.22 72 (27) 0.93 0.76 33 (27)\nTrace C1 0.73 0.10 110 (15) 0.60 0.16 56 (15) 0.15 0.30 7 (15) 0.87 0.57 23 (15)\nTrace C2 0.78 0.15 94 (18) 0.67 0.22 55 (18) 0.22 0.33 10 (18) 0.89 0.62 26 (18)\nTheia C1 0.77 0.12 83 (13) 0.62 0.18 45 (13) 0.31 0.08 130 (13) 0.92 0.60 20 (13)\nTheia C2 0.80 0.17 141 (30) 0.70 0.26 81 (30) 0.38 0.10 120 (30) 0.93 0.67 42 (30)\nCadets C1 0.71 0.24 50 (17) 0.65 0.20 55 (17) 0.35 0.07 195 (17) 1.00 0.71 24 (17)\nCadets C2 0.50 0.05 80 (8) 0.50 0.13 31 (8) 0.38 0.06 200 (8) 0.75 0.50 12 (8)\nCadets C3 0.61 0.20 134 (44) 0.73 0.35 92 (44) 0.42 0.08 185 (44) 0.95 0.68 62 (44)\nCadets C4 0.76 0.14 114 (21) 0.57 0.29 42 (21) 0.38 0.09 180 (21) 0.90 0.63 30 (21)\nA verage0.72 0.14 129 (24) 0.66 0.24 68 (24) 0.40 0.15 120 (24)0.92 0.64 35 (24)\nprompting loop and is granted access to the identical database query and knowl-\nedge retrieval toolset asMinos. This "
+              }
+            ],
+            "text": "(27) 0.56 0.22 72 (27) 0.93 0.76 33 (27)\nTrace C1 0.73 0.10 110 (15) 0.60 0.16 56 (15) 0.15 0.30 7 (15) 0.87 0.57 23 (15)\nTrace C2 0.78 0.15 94 (18) 0.67 0.22 55 (18) 0.22 0.33 10 (18) 0.89 0.62 26 (18)\nTheia C1 0.77 0.12 83 (13) 0.62 0.18 45 (13) 0.31 0.08 130 (13) 0.92 0.60 20 (13)\nTheia C2 0.80 0.17 141 (30) 0.70 0.26 81 (30) 0.38 0.10 120 (30) 0.93 0.67 42 (30)\nCadets C1 0.71 0.24 50 (17) 0.65 0.20 55 (17) 0.35 0.07 195 (17) 1.00 0.71 24 (17)\nCadets C2 0.50 0.05 80 (8) 0.50 0.13 31 (8) 0.38 0.06 200 (8) 0.75 0.50 12 (8)\nCadets C3 0.61 0.20 134 (44) 0.73 0.35 92 (44) 0.42 0.08 185 (44) 0.95 0.68 62 (44)\nCadets C4 0.76 0.14 114 (21) 0.57 0.29 42 (21) 0.38 0.09 180 (21) 0.90 0.63 30 (21)\nA verage0.72 0.14 129 (24) 0.66 0.24 68 (24) 0.40 0.15 120 (24)0.92 0.64 35 (24)\nprompting loop and is granted access to the identical database query and knowl-\nedge retrieval toolset asMinos. This "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0043"
+        ],
+        "excerpt": "baseline serves as a controlled ablation to\nvalidate the architectural superiority of our multi-agent collaborative framework.\nWe evaluate effectiveness using edge-level recall and precision, along with\nthe final output subgraph size (|G|). For efficiency, we measure the end-to-end\nbackward tracking time and total LLM token consumption.\n5.2 RQ1: Overall Effectiveness.\nTable 2 summarizes the performance of all systems across 14 attack scenar-\nios. Generally,Minosachieves superior recall and precision while producing\nsignificantly more compact attack subgraphs than all baselines.\nSpecifically, in complex scenarios involving massive background system activi-\nties, such as the OpTC and Theia datasets, existing systems suffer severely from\n\"dependency explosion\".NoDozeandDepImpactexhibit notably low precision,\nretaining hundreds of irrelevant edges due to their inability to distinguish ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fe50a264fd557c5e37e55c6b3bde38fe3cf5b9d31893af0197c198da1fd842e5",
+            "evidence_id": "E04cfb28eb232053e-B0043",
+            "pages": [
+              12
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2545,
+                "page": 12,
+                "section": "Experiments",
+                "section_index": 16,
+                "start": 1651,
+                "text": "baseline serves as a controlled ablation to\nvalidate the architectural superiority of our multi-agent collaborative framework.\nWe evaluate effectiveness using edge-level recall and precision, along with\nthe final output subgraph size (|G|). For efficiency, we measure the end-to-end\nbackward tracking time and total LLM token consumption.\n5.2 RQ1: Overall Effectiveness.\nTable 2 summarizes the performance of all systems across 14 attack scenar-\nios. Generally,Minosachieves superior recall and precision while producing\nsignificantly more compact attack subgraphs than all baselines.\nSpecifically, in complex scenarios involving massive background system activi-\nties, such as the OpTC and Theia datasets, existing systems suffer severely from\n\"dependency explosion\".NoDozeandDepImpactexhibit notably low precision,\nretaining hundreds of irrelevant edges due to their inability to distinguish "
+              }
+            ],
+            "text": "baseline serves as a controlled ablation to\nvalidate the architectural superiority of our multi-agent collaborative framework.\nWe evaluate effectiveness using edge-level recall and precision, along with\nthe final output subgraph size (|G|). For efficiency, we measure the end-to-end\nbackward tracking time and total LLM token consumption.\n5.2 RQ1: Overall Effectiveness.\nTable 2 summarizes the performance of all systems across 14 attack scenar-\nios. Generally,Minosachieves superior recall and precision while producing\nsignificantly more compact attack subgraphs than all baselines.\nSpecifically, in complex scenarios involving massive background system activi-\nties, such as the OpTC and Theia datasets, existing systems suffer severely from\n\"dependency explosion\".NoDozeandDepImpactexhibit notably low precision,\nretaining hundreds of irrelevant edges due to their inability to distinguish "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0047"
+        ],
+        "excerpt": "inflating subgraphs to 130\u2013200 edges with precision as low as 0.06\u20130.10.\nThese results validate the architectural design ofMinos: multi-agent separation\nprevents context overflow, while adversarial assessment improves the accuracy of\nreasoning.\nFig. 4 further reports the backward tracking overhead.NoDozeandDepIm-\npact, as non-LLM statistical methods, complete tracking within seconds, whereas\nboth LLM-based systems require substantially longer due to iterative inference\nlatency.Minosachieves an average backward tracking time of 1,290 seconds,\nmoderately faster than the Single-Agent baseline, while consuming significantly\nfewer tokens. The token efficiency gain stems directly fromMinos's architecture:\nthe \"count-first\" protocol prevents wasteful queries on high-degree nodes, and the\nadversarial assessment reduces the exploration on the wrong branches. Notably,\non the Trace ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a59ce8a2b0ca0b6794d56ac4e346e303c03b3afa3e8a1651d5e14a9aadbf875e",
+            "evidence_id": "E04cfb28eb232053e-B0047",
+            "pages": [
+              13
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2921,
+                "page": 13,
+                "section": "Experiments",
+                "section_index": 17,
+                "start": 2037,
+                "text": "inflating subgraphs to 130\u2013200 edges with precision as low as 0.06\u20130.10.\nThese results validate the architectural design ofMinos: multi-agent separation\nprevents context overflow, while adversarial assessment improves the accuracy of\nreasoning.\nFig. 4 further reports the backward tracking overhead.NoDozeandDepIm-\npact, as non-LLM statistical methods, complete tracking within seconds, whereas\nboth LLM-based systems require substantially longer due to iterative inference\nlatency.Minosachieves an average backward tracking time of 1,290 seconds,\nmoderately faster than the Single-Agent baseline, while consuming significantly\nfewer tokens. The token efficiency gain stems directly fromMinos's architecture:\nthe \"count-first\" protocol prevents wasteful queries on high-degree nodes, and the\nadversarial assessment reduces the exploration on the wrong branches. Notably,\non the Trace "
+              }
+            ],
+            "text": "inflating subgraphs to 130\u2013200 edges with precision as low as 0.06\u20130.10.\nThese results validate the architectural design ofMinos: multi-agent separation\nprevents context overflow, while adversarial assessment improves the accuracy of\nreasoning.\nFig. 4 further reports the backward tracking overhead.NoDozeandDepIm-\npact, as non-LLM statistical methods, complete tracking within seconds, whereas\nboth LLM-based systems require substantially longer due to iterative inference\nlatency.Minosachieves an average backward tracking time of 1,290 seconds,\nmoderately faster than the Single-Agent baseline, while consuming significantly\nfewer tokens. The token efficiency gain stems directly fromMinos's architecture:\nthe \"count-first\" protocol prevents wasteful queries on high-degree nodes, and the\nadversarial assessment reduces the exploration on the wrong branches. Notably,\non the Trace "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0048"
+        ],
+        "excerpt": "dataset,Minosrequires more time (1,758s) than the Single-Agent\n(558s), but this is because the Single-Agent terminates prematurely due to context\noverflow rather than completing a thorough investigation. While the LLM-based\n14 J. Wang et al.\nTable 3.Impact of LLM backbone selection averaged across all scenarios\nQuery Agent Other Agents Rec. Prec.|G|(GT)Tokens\nGroup A: Varying Query Agent (code generation)\nQwen3-Coder-30B GPT-5.2 0.45 0.15 95(24) 305K\nQwen3-Coder-480B GPT-5.2 0.76 0.36 62(24) 195K\nDeepSeek-R1 GPT-5.2 0.87 0.53 46(24) 198K\nGroup B: Varying Other Agents (intent reasoning)\nGPT-5.2-Codex Qwen3.5-122B 0.76 0.33 65(24) 198K\nGPT-5.2-Codex Qwen-Max 0.91 0.62 37(24) 175K\nGPT-5.2-Codex DeepSeek-V3 0.85 0.48 50(24) 118K\nGPT-5.2-Codex DeepSeek-R1 0.88 0.55 42(24) 208K\nGPT-5.2-Codex GPT-5.2 0.920.64 35(24) 164K\napproaches incur approximately two orders of magnitude higher latency ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13,
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a4f3fe005119fb875bcb2298ddaebf6653e1929c4e8beda356ec834208983d67",
+            "evidence_id": "E04cfb28eb232053e-B0048",
+            "pages": [
+              13,
+              14
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 3144,
+                "page": 13,
+                "section": "Experiments",
+                "section_index": 17,
+                "start": 2921,
+                "text": "dataset,Minosrequires more time (1,758s) than the Single-Agent\n(558s), but this is because the Single-Agent terminates prematurely due to context\noverflow rather than completing a thorough investigation. While the LLM-based"
+              },
+              {
+                "end": 672,
+                "page": 14,
+                "section": "Experiments",
+                "section_index": 18,
+                "start": 0,
+                "text": "14 J. Wang et al.\nTable 3.Impact of LLM backbone selection averaged across all scenarios\nQuery Agent Other Agents Rec. Prec.|G|(GT)Tokens\nGroup A: Varying Query Agent (code generation)\nQwen3-Coder-30B GPT-5.2 0.45 0.15 95(24) 305K\nQwen3-Coder-480B GPT-5.2 0.76 0.36 62(24) 195K\nDeepSeek-R1 GPT-5.2 0.87 0.53 46(24) 198K\nGroup B: Varying Other Agents (intent reasoning)\nGPT-5.2-Codex Qwen3.5-122B 0.76 0.33 65(24) 198K\nGPT-5.2-Codex Qwen-Max 0.91 0.62 37(24) 175K\nGPT-5.2-Codex DeepSeek-V3 0.85 0.48 50(24) 118K\nGPT-5.2-Codex DeepSeek-R1 0.88 0.55 42(24) 208K\nGPT-5.2-Codex GPT-5.2 0.920.64 35(24) 164K\napproaches incur approximately two orders of magnitude higher latency "
+              }
+            ],
+            "text": "dataset,Minosrequires more time (1,758s) than the Single-Agent\n(558s), but this is because the Single-Agent terminates prematurely due to context\noverflow rather than completing a thorough investigation. While the LLM-based\n14 J. Wang et al.\nTable 3.Impact of LLM backbone selection averaged across all scenarios\nQuery Agent Other Agents Rec. Prec.|G|(GT)Tokens\nGroup A: Varying Query Agent (code generation)\nQwen3-Coder-30B GPT-5.2 0.45 0.15 95(24) 305K\nQwen3-Coder-480B GPT-5.2 0.76 0.36 62(24) 195K\nDeepSeek-R1 GPT-5.2 0.87 0.53 46(24) 198K\nGroup B: Varying Other Agents (intent reasoning)\nGPT-5.2-Codex Qwen3.5-122B 0.76 0.33 65(24) 198K\nGPT-5.2-Codex Qwen-Max 0.91 0.62 37(24) 175K\nGPT-5.2-Codex DeepSeek-V3 0.85 0.48 50(24) 118K\nGPT-5.2-Codex DeepSeek-R1 0.88 0.55 42(24) 208K\nGPT-5.2-Codex GPT-5.2 0.920.64 35(24) 164K\napproaches incur approximately two orders of magnitude higher latency "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0051"
+        ],
+        "excerpt": "demonstrates superior efficacy\nacross all effectiveness metrics, confirming that deep thinking capability is the\ndecisive factor for backward tracking.\nOverall, these results reveal clear selection criteria for each agent role: the\nQuery Agent benefits most from code-generation optimized backbones, while the\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 15\nTable 4.Ablation study results averaged across all scenarios\nConfiguration Rec. Prec.|G|(GT)Tokens\nMinos(Full) 0.92 0.64 35(24)164K\nArchitectural Components:\nw/o Adversarial Reasoning 0.89 0.51 52(24) 128K\nw/o Fine-grained Context 0.72 0.68 28(24) 135K\nw/o Coarse-grained Context 0.94 0.28 98(24) 285K\nw/o Count-First Protocol 0.85 0.48 53(24) 248K\nKnowledge Components:\nw/o CTI Reports 0.72 0.49 49(24) 168K\nw/o MITRE ATT&CK 0.78 0.42 48(24) 158K\nw/o Log Schema 0.90 0.58 40(24) 155K\nother agents demand models with ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14,
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e79ab0beb46939cd30c39d7a927c47c0baedd88cbac01b9942b9fa5d8ab8e92e",
+            "evidence_id": "E04cfb28eb232053e-B0051",
+            "pages": [
+              14,
+              15
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2769,
+                "page": 14,
+                "section": "Experiments",
+                "section_index": 18,
+                "start": 2460,
+                "text": "demonstrates superior efficacy\nacross all effectiveness metrics, confirming that deep thinking capability is the\ndecisive factor for backward tracking.\nOverall, these results reveal clear selection criteria for each agent role: the\nQuery Agent benefits most from code-generation optimized backbones, while the"
+              },
+              {
+                "end": 587,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 19,
+                "start": 0,
+                "text": "Minos: A Multi-Agent Collaborative Framework for Backward Tracking 15\nTable 4.Ablation study results averaged across all scenarios\nConfiguration Rec. Prec.|G|(GT)Tokens\nMinos(Full) 0.92 0.64 35(24)164K\nArchitectural Components:\nw/o Adversarial Reasoning 0.89 0.51 52(24) 128K\nw/o Fine-grained Context 0.72 0.68 28(24) 135K\nw/o Coarse-grained Context 0.94 0.28 98(24) 285K\nw/o Count-First Protocol 0.85 0.48 53(24) 248K\nKnowledge Components:\nw/o CTI Reports 0.72 0.49 49(24) 168K\nw/o MITRE ATT&CK 0.78 0.42 48(24) 158K\nw/o Log Schema 0.90 0.58 40(24) 155K\nother agents demand models with "
+              }
+            ],
+            "text": "demonstrates superior efficacy\nacross all effectiveness metrics, confirming that deep thinking capability is the\ndecisive factor for backward tracking.\nOverall, these results reveal clear selection criteria for each agent role: the\nQuery Agent benefits most from code-generation optimized backbones, while the\nMinos: A Multi-Agent Collaborative Framework for Backward Tracking 15\nTable 4.Ablation study results averaged across all scenarios\nConfiguration Rec. Prec.|G|(GT)Tokens\nMinos(Full) 0.92 0.64 35(24)164K\nArchitectural Components:\nw/o Adversarial Reasoning 0.89 0.51 52(24) 128K\nw/o Fine-grained Context 0.72 0.68 28(24) 135K\nw/o Coarse-grained Context 0.94 0.28 98(24) 285K\nw/o Count-First Protocol 0.85 0.48 53(24) 248K\nKnowledge Components:\nw/o CTI Reports 0.72 0.49 49(24) 168K\nw/o MITRE ATT&CK 0.78 0.42 48(24) 158K\nw/o Log Schema 0.90 0.58 40(24) 155K\nother agents demand models with "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0052"
+        ],
+        "excerpt": "deep thinking capabilities. In both cases, suffi-\ncient parameter scale serves as a necessary prerequisite for reliable performance.\n5.4 RQ3: Ablation Study.\nTo evaluate the individual contribution of each design component, we conduct\na systematic ablation study by selectively disabling one mechanism at a time.\nTable 4 presents the performance metrics averaged across all 14 scenarios.\nAmong the architectural components, the two context layers exhibit comple-\nmentary degradation patterns that substantiate the design rationale in Section 3.\nRemoving the coarse-grained context results in the most severe degradation:\nrecall rises to 0.94, but precision plummets to 0.28 with the subgraph inflating\nto 98 edges, as the system loses the tactical boundary constraints and drifts into\nunbounded exploration. Conversely, removing the fine-grained context restricts\neach assessment to local topology, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7943a9d1bab8e34cd8ecd410e7f8e6d95f95d3a01ab01bf1c6b468723711a376",
+            "evidence_id": "E04cfb28eb232053e-B0052",
+            "pages": [
+              15
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1486,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 19,
+                "start": 587,
+                "text": "deep thinking capabilities. In both cases, suffi-\ncient parameter scale serves as a necessary prerequisite for reliable performance.\n5.4 RQ3: Ablation Study.\nTo evaluate the individual contribution of each design component, we conduct\na systematic ablation study by selectively disabling one mechanism at a time.\nTable 4 presents the performance metrics averaged across all 14 scenarios.\nAmong the architectural components, the two context layers exhibit comple-\nmentary degradation patterns that substantiate the design rationale in Section 3.\nRemoving the coarse-grained context results in the most severe degradation:\nrecall rises to 0.94, but precision plummets to 0.28 with the subgraph inflating\nto 98 edges, as the system loses the tactical boundary constraints and drifts into\nunbounded exploration. Conversely, removing the fine-grained context restricts\neach assessment to local topology, "
+              }
+            ],
+            "text": "deep thinking capabilities. In both cases, suffi-\ncient parameter scale serves as a necessary prerequisite for reliable performance.\n5.4 RQ3: Ablation Study.\nTo evaluate the individual contribution of each design component, we conduct\na systematic ablation study by selectively disabling one mechanism at a time.\nTable 4 presents the performance metrics averaged across all 14 scenarios.\nAmong the architectural components, the two context layers exhibit comple-\nmentary degradation patterns that substantiate the design rationale in Section 3.\nRemoving the coarse-grained context results in the most severe degradation:\nrecall rises to 0.94, but precision plummets to 0.28 with the subgraph inflating\nto 98 edges, as the system loses the tactical boundary constraints and drifts into\nunbounded exploration. Conversely, removing the fine-grained context restricts\neach assessment to local topology, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0053"
+        ],
+        "excerpt": "causing recall to decline to 0.72 with a smaller\nsubgraph of 28 edges, since the system can no longer traverse long-range causal\nchains without the support of evolving narrative memory. The precision rise\nreflects an expected trade-off rather than an improvement: deprived of long-range\nnarrative, the Adversarial Group falls back on stricter local evidence and discards\nambiguous mid-chain events, sacrificing a sizeable fraction of genuine cross-stage\ncausal edges. Disabling the adversarial reasoning reduces precision from 0.64 to\n0.51 (subgraph: 35 \u2192 52 edges), validating its role as the primary safeguard\nagainst sycophancy-induced false positives. Removing the \"count-first\" protocol\nincurs a substantial token overhead (164K\u2192 248K) alongside precision degrada-\ntion to 0.48, as the Query Agent fetches massive candidate sets from high-degree\nnodes, wasting resources and introducing ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d6cc48a0a95514c9f0332f570cd179b5d2ed51ebfb821c332c5439d72cba7c50",
+            "evidence_id": "E04cfb28eb232053e-B0053",
+            "pages": [
+              15
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2378,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 19,
+                "start": 1486,
+                "text": "causing recall to decline to 0.72 with a smaller\nsubgraph of 28 edges, since the system can no longer traverse long-range causal\nchains without the support of evolving narrative memory. The precision rise\nreflects an expected trade-off rather than an improvement: deprived of long-range\nnarrative, the Adversarial Group falls back on stricter local evidence and discards\nambiguous mid-chain events, sacrificing a sizeable fraction of genuine cross-stage\ncausal edges. Disabling the adversarial reasoning reduces precision from 0.64 to\n0.51 (subgraph: 35 \u2192 52 edges), validating its role as the primary safeguard\nagainst sycophancy-induced false positives. Removing the \"count-first\" protocol\nincurs a substantial token overhead (164K\u2192 248K) alongside precision degrada-\ntion to 0.48, as the Query Agent fetches massive candidate sets from high-degree\nnodes, wasting resources and introducing "
+              }
+            ],
+            "text": "causing recall to decline to 0.72 with a smaller\nsubgraph of 28 edges, since the system can no longer traverse long-range causal\nchains without the support of evolving narrative memory. The precision rise\nreflects an expected trade-off rather than an improvement: deprived of long-range\nnarrative, the Adversarial Group falls back on stricter local evidence and discards\nambiguous mid-chain events, sacrificing a sizeable fraction of genuine cross-stage\ncausal edges. Disabling the adversarial reasoning reduces precision from 0.64 to\n0.51 (subgraph: 35 \u2192 52 edges), validating its role as the primary safeguard\nagainst sycophancy-induced false positives. Removing the \"count-first\" protocol\nincurs a substantial token overhead (164K\u2192 248K) alongside precision degrada-\ntion to 0.48, as the Query Agent fetches massive candidate sets from high-degree\nnodes, wasting resources and introducing "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0054"
+        ],
+        "excerpt": "downstream noise.\nRegarding the knowledge components, removing the MITRE ATT&CK knowl-\nedge base causes the most substantial decline, as it provides the structured tactical\nreferences that anchor coarse-grained context updates. CTI reports contribute\nmoderately, providing complementary intelligence for novel adversarial techniques\nthat exceed the LLM's intrinsic knowledge. Finally, log schema removal produces\na marginal impact, suggesting the LLM's capability to partially compensate for\ncommon audit formats.\n16 J. Wang et al.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15,
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experiments",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "8f9d995ec4578e2983c8270e8fbe529b84ea17ae4383e9c5c8de8633c5af3127",
+            "evidence_id": "E04cfb28eb232053e-B0054",
+            "pages": [
+              15,
+              16
+            ],
+            "section": "Experiments",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 2891,
+                "page": 15,
+                "section": "Experiments",
+                "section_index": 19,
+                "start": 2378,
+                "text": "downstream noise.\nRegarding the knowledge components, removing the MITRE ATT&CK knowl-\nedge base causes the most substantial decline, as it provides the structured tactical\nreferences that anchor coarse-grained context updates. CTI reports contribute\nmoderately, providing complementary intelligence for novel adversarial techniques\nthat exceed the LLM's intrinsic knowledge. Finally, log schema removal produces\na marginal impact, suggesting the LLM's capability to partially compensate for\ncommon audit formats."
+              },
+              {
+                "end": 17,
+                "page": 16,
+                "section": "Experiments",
+                "section_index": 20,
+                "start": 0,
+                "text": "16 J. Wang et al."
+              }
+            ],
+            "text": "downstream noise.\nRegarding the knowledge components, removing the MITRE ATT&CK knowl-\nedge base causes the most substantial decline, as it provides the structured tactical\nreferences that anchor coarse-grained context updates. CTI reports contribute\nmoderately, providing complementary intelligence for novel adversarial techniques\nthat exceed the LLM's intrinsic knowledge. Finally, log schema removal produces\na marginal impact, suggesting the LLM's capability to partially compensate for\ncommon audit formats.\n16 J. Wang et al."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0057"
+        ],
+        "excerpt": "7.1 Limitations and Future Work.\nDespite its promising capabilities,Minospresents opportunities for further\nrefinement. First, to address data privacy constraints regarding sensitive audit\nlogs, future work will explore localized deployment via model fine-tuning and\nknowledge distillation, empowering smaller open-source models for local execution\nand eliminating data exfiltration risks. Second, to reduce reliance on POI event\nquality, we aim to develop a multi-POI joint tracking mechanism for parallel\nexploration and cross-validation, complemented by a credibility self-assessment\nmodule to dynamically adjust strategies when processing low-confidence inputs.\n7.2 Conclusion.\nIn this paper, we presentedMinos, a multi-agent framework that reformu-\nlates provenance-based backward tracking as an LLM-driven reasoning process.\nAddressing semantic ambiguity and dependency ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Discussion And Conclusion",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1a1a3825d51606f870c127718f2af361ad7ec3ac399d87f1630de9b7592fd688",
+            "evidence_id": "E04cfb28eb232053e-B0057",
+            "pages": [
+              16
+            ],
+            "section": "Discussion And Conclusion",
+            "section_role": "discussion",
+            "source_spans": [
+              {
+                "end": 876,
+                "page": 16,
+                "section": "Discussion And Conclusion",
+                "section_index": 22,
+                "start": 0,
+                "text": "7.1 Limitations and Future Work.\nDespite its promising capabilities,Minospresents opportunities for further\nrefinement. First, to address data privacy constraints regarding sensitive audit\nlogs, future work will explore localized deployment via model fine-tuning and\nknowledge distillation, empowering smaller open-source models for local execution\nand eliminating data exfiltration risks. Second, to reduce reliance on POI event\nquality, we aim to develop a multi-POI joint tracking mechanism for parallel\nexploration and cross-validation, complemented by a credibility self-assessment\nmodule to dynamically adjust strategies when processing low-confidence inputs.\n7.2 Conclusion.\nIn this paper, we presentedMinos, a multi-agent framework that reformu-\nlates provenance-based backward tracking as an LLM-driven reasoning process.\nAddressing semantic ambiguity and dependency "
+              }
+            ],
+            "text": "7.1 Limitations and Future Work.\nDespite its promising capabilities,Minospresents opportunities for further\nrefinement. First, to address data privacy constraints regarding sensitive audit\nlogs, future work will explore localized deployment via model fine-tuning and\nknowledge distillation, empowering smaller open-source models for local execution\nand eliminating data exfiltration risks. Second, to reduce reliance on POI event\nquality, we aim to develop a multi-POI joint tracking mechanism for parallel\nexploration and cross-validation, complemented by a credibility self-assessment\nmodule to dynamically adjust strategies when processing low-confidence inputs.\n7.2 Conclusion.\nIn this paper, we presentedMinos, a multi-agent framework that reformu-\nlates provenance-based backward tracking as an LLM-driven reasoning process.\nAddressing semantic ambiguity and dependency "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2607.00440",
+    "gate_version": "dual-promotion-v2",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "arxiv:2607.00440",
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0002",
+          "E04cfb28eb232053e-B0003",
+          "E04cfb28eb232053e-B0007",
+          "E04cfb28eb232053e-B0008",
+          "E04cfb28eb232053e-B0023",
+          "E04cfb28eb232053e-B0024",
+          "E04cfb28eb232053e-B0030",
+          "E04cfb28eb232053e-B0032",
+          "E04cfb28eb232053e-B0035",
+          "E04cfb28eb232053e-B0041",
+          "E04cfb28eb232053e-B0042",
+          "E04cfb28eb232053e-B0043",
+          "E04cfb28eb232053e-B0047",
+          "E04cfb28eb232053e-B0048",
+          "E04cfb28eb232053e-B0051",
+          "E04cfb28eb232053e-B0052",
+          "E04cfb28eb232053e-B0053",
+          "E04cfb28eb232053e-B0054",
+          "E04cfb28eb232053e-B0057"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "21e3ba57866412fbb44ff56ca2990c9868f025c32024ab4408ce23703020a63b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "arxiv:2607.00440",
+        "claim_evidence_alignment": "Reported empirical results substantiate the core claims: Minos achieves higher average recall (0.92) and precision (0.64) with substantially more compact subgraphs (35 vs. 68-129 edges), while ablations confirm the specific roles of coarse/fine contexts, adversarial deliberation, and the count-first protocol.",
+        "context_id": "04cfb28eb232053eb99e7923c6ec46815fb3206f8ab10f65fd126b2d53a2379d",
+        "decision": "pass",
+        "evaluation_assessment": "The system is evaluated against statistical, learning-based, and single-agent LLM baselines across 14 scenarios spanning five established datasets (DARPA TC Cadets/Trace/Theia, Aurora, and OpTC), reporting edge recall, precision, graph compactness, latency, token consumption, backbone variations, and extensive component ablations.",
+        "evidence_ids": [
+          "E04cfb28eb232053e-B0002",
+          "E04cfb28eb232053e-B0003",
+          "E04cfb28eb232053e-B0007",
+          "E04cfb28eb232053e-B0008",
+          "E04cfb28eb232053e-B0023",
+          "E04cfb28eb232053e-B0024",
+          "E04cfb28eb232053e-B0030",
+          "E04cfb28eb232053e-B0032",
+          "E04cfb28eb232053e-B0035",
+          "E04cfb28eb232053e-B0041",
+          "E04cfb28eb232053e-B0042",
+          "E04cfb28eb232053e-B0043",
+          "E04cfb28eb232053e-B0047",
+          "E04cfb28eb232053e-B0048",
+          "E04cfb28eb232053e-B0051",
+          "E04cfb28eb232053e-B0052",
+          "E04cfb28eb232053e-B0053",
+          "E04cfb28eb232053e-B0054",
+          "E04cfb28eb232053e-B0057"
+        ],
+        "limitations": "The authors acknowledge higher inference latency compared to traditional statistical methods, dependencies on POI alert quality, and data privacy implications when utilizing hosted LLMs on sensitive audit logs.",
+        "method_assessment": "The methodology is thoroughly detailed, covering the two-tiered architecture, concrete formalisms for backward tracking, prompt structures, citation verification mechanisms, FSM control loops with defined termination conditions, and specialized agent duties (Planner, Query, Memory, Adversarial Group).",
+        "quality_rationale": "The manuscript addresses a well-defined security challenge (dependency explosion and semantic ambiguity in provenance tracking) with a well-engineered multi-agent LLM solution, comprehensive empirical evidence across multiple benchmarks, and rigorous ablation experiments.",
+        "scoped_contribution": "The paper presents Minos, a multi-agent collaborative framework for provenance-based backward tracking that combines an individual event assessment architecture (hierarchical context, RAG with citation verification, and adversarial prosecutor-defense-judge deliberation) with FSM orchestration across four specialized agents using hypothesis-driven search and count-first querying.",
+        "source_content_hash": "21e3ba57866412fbb44ff56ca2990c9868f025c32024ab4408ce23703020a63b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript addresses a well-defined security challenge (dependency explosion and semantic ambiguity in provenance tracking) with a well-engineered multi-agent LLM solution, comprehensive empirical evidence across multiple benchmarks, and rigorous ablation experiments.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v1",
+    "source_content_hash": "21e3ba57866412fbb44ff56ca2990c9868f025c32024ab4408ce23703020a63b",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge higher inference latency compared to traditional statistical methods, dependencies on POI alert quality, and data privacy implications when utilizing hosted LLMs on sensitive audit logs."
   },
   "semantic_scholar_id": "25ec27ac37209016869d85dfe961fff9c484a23d",
   "source": "semantic_scholar",
@@ -166,7 +1988,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

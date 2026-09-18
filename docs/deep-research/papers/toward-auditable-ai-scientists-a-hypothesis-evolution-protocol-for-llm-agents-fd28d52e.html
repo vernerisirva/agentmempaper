@@ -59,16 +59,220 @@
             <p>Large language model (LLM) agents are increasingly expected to play a central role in AI-driven scientific discovery. Equipped with broad knowledge, flexible reasoning, and tool use, they have the potential to autonomously explore and solve scientific problems by repeatedly proposing hypotheses, testing them, and re...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents an inventive, soundly implemented framework for scientific LLM auditing with solid experimental controls, clear baselines, and honest discussion of boundaries, meeting library standards for a pass.</p>
+      <p>The authors explicitly acknowledge that evidence validity currently relies on single-agent self-assessment, that the discovered governing rules reflect the behavior of a fixed MLIP rather than DFT or experimental physical reality, and that weaker LLMs struggle to manage complex hypothesis lineages [E269bb07cb3e53c1a-B0026, E269bb07cb3e53c1a-B0029, E269bb07cb3e53c1a-B0032].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:40:46.644981+00:00.</p>
+        <p>Coverage: 41264 of 41264 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>persistent object in an auditable registry, where it carries a
+belief probability that can be moved only by attached evidence, evolves through refinement and
+merging of parent hypotheses, and progresses through a lifecycle from proposal to resolution as
+supported,refuted,ordormant. Theprotocolthusservesasafootingonwhichtheagentoperates
+the hypothesis–test–evidence–belief cycle in a disciplined way. Using materials-science research
+tasks as a testbed, we show that an agent equipped with HEP actually operates the hypothesis–
+test–evidence–beliefcyclethatplanning-styleagentslack,thatthesameprotocolgeneralizesacross
+research questions, and that the depth to which the protocol is exploited scales with base-LLM
+capability.
+3
+Figure 1: Overview of the Hypothesis Evolution Protocol (HEP). (a)Given a research task, an LLM </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Hypothesis Evolution Protocol
+Figure 1 presents an overview of the proposed HEP. An LLM agent tackling a research task
+interacts with its experimental environment and any other tools as usual. On top of this ordinary
+workflow, HEP provides the layer through which the agent manages its hypotheses, evidence,
+and beliefs (Fig. 1a). The protocol consists of two components: an auditableHEP Registryand a
+set ofHEP Tools. The HEP Registry records each hypothesis as a persistent object with a unique
+hypothesis id, carrying a natural-language statement, a belief𝑃(𝐻), defined as the probability
+the agent currently assigns to the hypothesis being true, a lifecycle state, and its provenance.
+Every belief update, evidence attachment, and state transition is appended to the event log of the
+corresponding hypothesis, so the full history of each hypothesis remains auditable to both the
+agent and the </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>human researcher (Fig. 1b).
+HEP Tools mediate the interaction between the agent and the HEP Registry in three groups,
+Propose &amp; Evolve,Test &amp; Judge, andRead, the last of which lets the agent look up the tracked
+hypotheses and their current states and beliefs (Fig. 1c). Hypotheses enter the registry through
+four generation mechanisms,de-novo,inspired-by,refine, andmerge(Fig. 1d). As the agent invokes
+these tools over the course of a run, its hypotheses evolve, and their population comes to form an
+explicit lineage rather than a flat list.
+Eachhypothesistakesoneoffivelifecyclestates,fromproposedandunder_testtoaresolution
+assupported,refuted, ordormant(Fig. 1e). Belief is disciplined by two rules. First,𝑃(𝐻)can
+be moved only by evidence that passes a validation gate. Attachments judged insufficient are
+recorded but leave belief unchanged. Second, verdicts are threshold transitions enforced </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>by the
+registry: ahypothesiscanbetransitionedtosupportedonlywhen𝑃(𝐻)≥0.8andtorefutedonly
+when𝑃(𝐻)≤0.2, while hypotheses that cannot be tested further are shelved asdormantwith an
+explicit reason. Design details are given in Methods.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate HEP on three materials-science research tasks, each posing an open research ques-
+tion of the same form: &quot;which crystal structure does a single fixed machine-learned interatomic
+potential (MLIP) prefer for each compound in a family, and what physics or chemistry explains
+the pattern?&quot; Task AO2 concerns polymorph selection among seven prototypes in the AO2 diox-
+ides; task A2BB′O6 concerns B-site cation ordering in the A2BB′O6 double perovskites, among
+rock-salt, layered, and columnar orderings and a disordered reference; and task MX concerns
+prototype selection among rocksalt, NiAs, zincblende, and wurtzite in the MX transition-metal
+monochalcogenides and monopnictides.
+The three families span combinatorial complexity from binary (AO 2, MX) to quaternary
+(A2BB′O6)compounds,andthequestionstheyposedemandexplanationratherthanoptimization</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>5
+towardapredefinedtarget. TheLLMhassomepriorknowledgeofthesesystems,butthebehavior
+of the fixed potential is not known until it is actually tested. Because the aim is new knowledge
+rather than the recall of known facts, each hypothesis the agent forms can be judged only by
+testing it. Individual preferences can be computed by relaxation, but the rule that governs the
+pattern cannot be read off by enumeration alone. The questions are also scientifically meaningful,
+in that understanding which crystal structure a potential stabilizes, and why, bears directly on
+materials design.
+In each run, the agent receives a single task prompt and is required to work out an answer to
+the research question autonomously with the provided tools and to deliver it as a final report.
+Unless otherwise noted, the base LLM is GPT-5.5 [44]. The agent setup and run settings are given
+in </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>remained
+mid-rangeandwasshelvedasdormantafterbeingsupersededbyitsrefinedchild. Verdictsoccur
+only after belief crosses these thresholds, so every verdict is grounded in validated evidence.
+To examine how harnessing the LLM with HEP changes the behavior of the agent, we compare
+against a planning-style agent (plan–execute–replan [5, 12, 13]) given the same research goal, the
+same tools for computation, and the same base LLM, with𝑛=3runs per condition. Following a
+recent analysis of agent execution traces [32], we classify every step of every run into hypothesis
+proposal(H),test(T),evidence(E),beliefupdate(B),judgement(J),orhypothesisupdate(U).The
+6
+Figure 2: HEP makes the scientific loop explicit and auditable. (a)Hypothesis tree of an example run on
+taskAO 2. Nodesarehypotheses(fill=finallifecyclestate,number=finalbelief,label=idsuffix);edgesshow
+the generation mechanism (orange solid </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=refine, purple dashed =merge, teal dotted =inspired-by, which
+contributes provenance but not lineage). Generation is 0 forde-novoandinspired-byhypotheses, parent+1
+forrefine, andmax(parents)+1formerge.(b)Belief trajectories for all 16 hypotheses (light lines) against the
+number of accumulated validated-evidence updates (0 = prior at proposal). One example per final state is
+highlighted. Shaded bands mark the registry-enforced verdict thresholds (supported≥0.8, refuted≤0.2).
+(c)The scientific loop of a planning-style agent (baseline) versus the HEP-equipped agent (same goal, same
+base LLM,𝑛=3runs each). Left: fraction of loop steps by element (H = hypothesis proposal, T = test, E
+= evidence, B = belief update, J = judgement, U = hypothesis update; mean±standard deviation across
+runs). Middleandright: row-normalizedtransitionprobabilities𝑃(next|current)averagedoverruns,after
+compressing </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>consecutive repeats of the same element. Self-transitions are therefore undefined and shown
+in gray. An all-white row means the element never occurred; rows H, J, and U of the planning-style agent
+contain only one to three events each, so the corresponding probabilities rest on few transitions.
+left panel of Fig. 2c shows the fraction of steps spent on each element, averaged over runs, and the
+middle and right panels show the transition probabilities𝑃(next|current)between consecutive
+elements for the planning-style agent and the HEP-equipped agent, respectively. Because the
+two conditions stop under different criteria, we compare these run-length-independent quantities
+7
+ratherthanabsolutecounts. Theplanning-styleagentspends83%ofitsloopstepsontestsand0%
+on belief updates. It moves from hypotheses to tests to evidence (H→T1.00, T→E0.61) and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>then
+returnstofurtherhypothesesortests,neverexplicitlyexternalizingabeliefandupdatingitagainst
+the collected evidence. In our runs, at least, explicit belief revision did not emerge spontaneously
+from planning alone, and eliciting it would require dedicated support such as belief-oriented
+prompting. UnderHEP,incontrast,beliefsareexplicitlyexternalizedintheHEPRegistry,andthe
+transition matrix exhibits the flow along the cycle, H→T (0.85), T→E (0.58), E→B (0.78), and B→J
+(0.40),withjudgementsfurthertriggeringhypothesisupdatesthataresentbacktotest(J→U0.22,
+U→T0.65). ThesetransitionsdemonstratethatHEPdrivestheagentthroughthefullhypothesis–
+test–evidence–beliefcycle. Theplanning-styleagentcanalsoiterateahypothesis–testcycle,butitis
+difficulttotraceonwhichevidenceabeliefwasupdated,howthatupdateledtoajudgement,and
+on what basis each hypothesis was generated. HEP removes this ambiguity. Every </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>belief change
+is anchored to a specific piece of evidence, and every hypothesis carries an unbroken record from
+proposal to verdict.
+HEP generalizes across research questions.We next examine the generality of HEP across re-
+search questions, applying it to task A2BB′O6 and task MX as well. Figure 3 shows the overall
+results. Acrossthethreetaskstheagentgenerated10–20hypothesespertaskwithmaximumgen-
+eration depths of 3–5, and all four generation mechanisms,de-novo,inspired-by,refine, andmerge,
+were exercised in every task (Fig. 3a,b). Every hypothesis in all three tasks reached a terminal
+disposition, that is, no hypothesis was left proposed or under test at the end of any run, with
+supportedbeing the most common final state in every task (Fig. 3c).
+We then examine how the belief of each hypothesis changed from proposal to verdict across
+the tasks. Figure 3d plots the self-assigned prior </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>belief at proposal against the final belief after all
+evidence for all hypotheses, with the color and the marker shape indicating the final state and the
+task, respectively. The dashed lines at𝑃(𝐻)=0.5divide the plane into four regions: hypotheses
+inRegions1and3endedonthesamesideof0.5astheywereproposed,whereasthoseinRegions
+2 and 4 crossed to the opposite side, that is, their beliefs were flipped by the evidence. In the
+marginalhistograms,thepriorsofeventuallysupported,refuted,anddormanthypotheseslargely
+overlap,whereasthefinalbeliefsseparatecleanlybyfinalstate. Theverdictswerethusdetermined
+by the agent&#x27;s interpretation of the accumulated evidence rather than by its initial guesses. Belief
+flips occurred in both directions and in all tasks (Regions 2 and 4). We note that no hypothesis
+proposed with a prior above0.7was eventually flipped. Indeed, every such hypothesis ended
+supported. </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>turn to0.18. These recorded refutations redirected the search toward the A-
+site electronic exception that survives in the final rule. All of these histories are read directly from
+the event logs in the registry, an account that would be difficult to reconstruct from unstructured
+agent logs. We note, however, that the governing rules discovered here reflect the behavior of the
+fixed MLIP selected by the agent, that the evidence behind them consists of MLIP-level energetics
+andstructuralanalysesratherthanelectronic-structurecalculations,andthattheircorrespondence
+to experimentally established materials physics remains to be examined.
+Table 1:Final supported hypothesis of each task. Final beliefs are taken from the HEP Registry; the
+governing rule is a one-line summary condensed from the hypothesis statement.
+Task Final belief𝑃(𝐻)Governing rule (one-line summary)
+AO2 0.97Prioritized </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+meanandstandarddeviation,overthethreeruns,ofthenumberofhypothesesgeneratedperrun,
+and Fig. 4b shows those of the maximum generation depth reached in each run. The mean count
+dropsfrom14.7to6.7to4.0, andthemeandepthfallsfrom4.7to1.7to0.7. Theseresultsindicate
+that as LLM capability decreases, the agent generates fewer hypotheses and becomes unable to
+grow generations of hypotheses through refinement and merging. GPT-4.1, for example, either
+leaves its hypotheses entirely unevolved or grows them by only a single generation.
+The composition of generation mechanisms shifts accordingly (Fig. 4c). GPT-5.5 uses the full
+repertoire in balanced proportions, whereas the weaker LLMs increasingly default tode-novo
+proposals, whose share rises from 25% for GPT-5.5 to 53% and 62% for the weaker two. The same
+gradientappearsinthefinalstatesofthehypotheses(Fig.4d). </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>GPT-5.5resolvedeveryhypothesisin
+allruns,whereasGPT-5.4-minileft36%ofhypothesesopenonaverage,andGPT-4.1wasunstable
+10
+from run to run. Two of its runs resolved everything, while the third proposed three hypotheses
+andabandonedthemall,runningcomputationsbutneverattachingtheirresultstoanyhypothesis
+as evidence.
+TheseresultsindicatethatoperatingtheindividualHEPtoolsiswithinthereachofeveryLLM
+tested, but that a more capable LLM commands HEP as a whole, exercising the full set of tools
+andcontinuingtoevolveitshypotheseswhilecarryingeachproposedhypothesistoaverdict. The
+value of HEP is therefore realized most fully with capable base LLMs.
+Figure 4: LLM dependence of the ability to operate HEP. (a)Mean and standard deviation of the number
+of hypotheses generated per run on task AO2 when only the base LLM is changed (𝑛=3runs per LLM;
+dots show individual runs).(b)Mean and standard deviation of </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>by the scaffold around it [32]. Harness and
+capability are instead complementary. The harness determines whether scientific reasoning is
+externalized and verifiable, and capability determines how fully it is exploited.
+Thisworkexaminedthehypothesis–test–evidence–beliefcycleinasingle-agentsetting,inwhich
+the agent itself attaches evidence and assesses its validity. A natural next step is to make the
+validation of evidence more rigorous, for example by replacing the agent&#x27;s self-assessment with
+programmatic checks where the tests permit, or by introducing an independent auditor agent
+that reviews attached evidence and belief updates. Because HEP externalizes every hypothesis,
+evidence,andbeliefupdateasapersistentrecord,suchexternalvalidatorscanoperatedirectlyon
+theexistingregistry,movingthecyclefromself-reportedtowardindependentlyverified. </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HEP implementation
+The HEP Registry is an append-only, event-sourced store. Every operation appends an event
+that is stamped with its author and hash-chained to the previous one, no event is overwritten
+or deleted, and the current lifecycle state and belief of a hypothesis are derived by replaying
+its event log, which is persisted in the run&#x27;s session directory. Beyond the fields introduced in
+Results,eachhypothesisrecordsatestablepredictedobservableanditslineage(parenthypotheses
+and generation). Aninspired-bylink is recorded as provenance only and does not make the new
+hypothesis a descendant.
+The agent operates the registry through seven tools.propose_hypothesisregisters a new </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>hy-
+pothesisunderaresearchquestion,andtransition_hypothesismovesahypothesisbetweenlife-
+cyclestates.attach_evidencerecordsonepieceofevidenceonahypothesisandupdatesitsbelief
+fromit.list_hypothesesreturnsthecompetingsetgroupedbyresearchquestion,withthecurrent
+stateandbeliefofeachhypothesis,andget_hypothesisreturnsthefullrecordofasinglehypothe-
+sis,includingitseventtimeline. Evolutionisevidence-drivenbyconstruction:refine_hypothesis
+creates a child hypothesis while the parent retains its own state,merge_hypothesescombines hy-
+potheses on the same question and transitions unresolved parents todormantas subsumed, and
+bothoperationsareacceptedonlyforparentsthathavereachedaverdictorhaveatleastonepiece
+of evidence attached, so that untested proposals cannot produce descendants.
+Beliefs are elicited rather than computed. The agent states a prior𝑃(𝐻)with a written ratio-
+nale at proposal, and at </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>each evidence attachment (with kind simulation, experiment, literature,
+derivation, or analysis, and directionsupports, refutes, or inconclusive)it states anupdated𝑃(𝐻),
+recorded with its rationale and the identifier of the triggering evidence. The two belief rules
+described in Results are enforced by the tools rather than left to the agent. For computational
+and analytical evidence, the belief moves only if the agent certifies the result as trustworthy for its
+method, with a diagnostic covering both the adequacy of the setup and the validity of the result.
+An uncertified attachment is recorded but marked insufficient. Verdict transitions whose belief
+has not crossed the threshold, and any move outside the lifecycle state machine, are rejected.
+Agent setup
+All experiments use a single autonomous research agent, implemented with the OpenAI Agents
+SDK, that receives one task prompt and </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>runs to completion without human input. Besides the
+HEP tools, the agent has computational tools for atomistic materials research exposed as MCP
+servers, including MLIP-based structure relaxation, molecular dynamics, and materials-database
+queries,togetherwithalibraryofdocumentedskillsitcandiscoverandexecute,bothprovidedby
+AtomisticSkills [26], as well as a tool for authoring and executing its own analysis code, with each
+script retained in the run&#x27;s record, and recording tools for logging findings and writing the final
+13
+report. The agent runs in an outer loop. Each iteration allows up to 80 LLM turns, after which the
+driverre-promptsittocontinue,appendingtheremainingwall-clockbudgetsothattheagentcan
+selectteststhatfitwithintheremainingtime. Theconversationhistoryispersisted,andeveryrun
+is given a 24-hour wall-clock budget, which no run exhausted. The HEP-equipped agent is given
+the </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HEP tools and a hypothesis-discipline prompt but no planning tools. The run ends when the
+investigation saturates, that is, when no tool call is made for three consecutive iterations, at which
+point the agent is prompted to consolidate its findings and write the final report.
+Trajectory analysis
+FortheloopanalysisinFig.2c,eachstepofarunisclassifiedintotheloopelements. HEPtoolcalls
+map deterministically:propose_hypothesisto H;refine_hypothesisandmerge_hypotheses
+to U;attach_evidenceto E, and additionally to B when the attachment moved the belief; and
+transition_hypothesisto J for verdict transitions. Calls to computational tools map to T, free-
+text steps are classified by an LLM (GPT-5.5), and scaffolding steps such as file management are
+excluded. Consecutive repeats of the same element are compressed, and the transition matrices
+count adjacent pairs of elements, row-normalized and </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +311,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

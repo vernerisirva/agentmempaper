@@ -59,16 +59,254 @@
             <p>Long-term memory is increasingly important for conversational agents, yet existing benchmarks primarily measure memory through pointwise factual recall: whether a system can recover isolated facts or event-level details from prior interactions. Real-world memory use, however, often requires a more demanding capabili...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper makes an impactful, carefully executed benchmark contribution with strong methodology, thorough experimental controls, clear baselines, and transparent documentation of limitations.</p>
+      <p>The authors clearly acknowledge reliance on LLM-based generation and scoring, the use of oracle responses as relative protocol references rather than human optima, and the fact that monotonic degradation is verified along sampled rather than exhaustive removal paths.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v1. Gate: dual-promotion-v2.</p>
+        <p>Assessed: 2026-09-18T18:40:07.926736+00:00.</p>
+        <p>Coverage: 89766 of 89766 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory is increasingly important
+for conversational agents, yet existing bench-
+marks primarily measure memory through
+pointwise factual recall: whether a system
+can recover isolated facts or event-level de-
+tails from prior interactions. Real-world mem-
+ory use, however, often requires a more de-
+manding capability: integrating distributed, im-
+plicit, and noisy evidence across extended in-
+teraction histories into coherent, task-oriented
+outputs. We call this capabilitymemory uti-
+lization. Here, we introduce UTILMEM, a
+diagnostic benchmark comprising 1,717 in-
+stances across five domains, designed to evalu-
+ate four underexplored aspects of memory uti-
+lization: reasoning over dense histories, identi-
+fying implicitly relevant memories, synthesiz-
+ing distributed evidence into summaries, anal-
+yses, or plans, and resisting interference from
+semantically similar distractors. </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tem-
+porally separated sessions and topics;Implicit Re-
+trieval, where systems recover latent user pref-
+erences, behavioral patterns, and evolving states
+rather than explicit facts;Long-form Composition,
+where fragmented and partially redundant evidence
+must be organized into coherent outputs; andDis-
+tractor Filtering, where semantically similar but
+functionally irrelevant sessions create retrieval and
+generation interference.
+UTILMEMis built from realistic multi-session
+interaction trajectories spanning learning support,
+finance guidance, mental wellness, fitness coach-
+ing, and document analysis. We generate evidence-
+dependent tasks requiring cross-session integration
+and apply counterfactual filtering to retain only in-
+stances whose answer quality degrades along the
+sampled sequential evidence-removal path. We fur-
+ther inject adversarial distractors that overlap lex-
+ically and </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>10-K
+1https://huggingface.co/datasets/its-myrto/
+fitness-question-answers
+filings2, where each filing is decomposed into stan-
+dardized items (e.g., Business, Risk Factors, Legal
+Proceedings). Each domain is processed through a
+synthesis pipeline that shares a common four-step
+structure. (1) Sampling. Source items are grouped
+into bundles B={s 1, . . . , sK} representing a sin-
+gle user&#x27;s history, with sessions drawn from differ-
+ent topical subareas within the domain to encourage
+breadth of evidence. (2) Persona consistency. An
+LLM judge rejects bundles containing contradic-
+tions in stable user attributes such as conflicting
+ages or mutually exclusive circumstances, ensuring
+each bundle plausibly originates from one individ-
+ual. (3) Conversational rewriting. Source items
+that are not already in dialogue form are rewritten
+into natural user–assistant exchanges, after which
+a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Not all candidate questions genuinely require all
+sessions. Some are answerable at comparable qual-
+ity from a subset due to information redundancy
+or underspecification. We filter these via a coun-
+terfactual degradation test. For each bundle with
+K evidence sessions, we construct three context
+levels by progressively removing sessions:
+E (1) =E,E (2) =E (1) \R 1,E (3) =E (2) \R 2,
+(4)
+where R1, R2 ⊂ Eare randomly selected removal
+sets. The removal sizes |R1| and |R2| are adapted
+proportionally to K, targeting approximately 50%
+total removal while ensuring |E (3)| ≥1. A tar-
+get model generates answers ˆa(1),ˆa(2),ˆa(3) at each
+context level. Two independent judge models then
+perform pairwise comparisons, each rendering a
+binary verdict on whether the degraded answer is
+worse than the fuller-context answer. We verify
+monotonic degradationand retain a question only
+if both judges agree </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Weak distractors allow systems to succeed through
+shallow retrieval, reducing evaluation to recall
+rather than utilization. To stress-test robustness
+under retrieval interference, we construct adver-
+sarial distractors that remain semantically close to
+the evidence sessions E while being functionally
+irrelevant to the target question.
+Distractor synthesis.For each evidence session
+ek ∈ E, we generate distractors in two stages. First,
+an LLM readse k and producesNdistractor direc-
+tions sampled from curated cross-domain families.
+Each direction specifies a target domain, a conver-
+sational intent, a domain distinguisher, and 5–10
+keywords shared withek. The shared keywords pre-
+serve lexical overlap with the evidence, while the
+new domain and intent shift the underlying seman-
+tics. Second, each direction is instantiated into M
+multi-turn conversations with turn counts sampled
+uniformly </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Baselines.We evaluate representative long-term
+memory systems spanning retrieval-based and
+structured memory architectures. Retrieval-only
+baselines use NaiveRAG with Nomic-embed-text-
+v1.5 (Nussbaum et al., 2024), Qwen3-Embedding-
+4B, and Qwen3-Embedding-8B (Zhang et al.,
+2025). Structured and agentic memory systems in-
+clude A-MEM (Xu et al., 2025), Mem0 (Chhikara
+et al., 2025), Mem0+Graph, MemOS (Li et al.,
+2025), LangMem (The LangChain Team, 2025),
+and EverMemOS (Hu et al., 2026a). These sys-
+tems cover diverse memory designs including raw
+retrieval, graph-augmented retrieval, hierarchical
+memory organization, profile-based aggregation,
+and write-time compression.
+Evaluation protocol.UTILMEMrequires long-
+form synthesis across multiple sessions, so exact-
+match is inappropriate. We instead measure how
+faithfully a memory system preserves answer qual-
+ity under realistic retrieval, </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>relative to a noise-free
+upper bound. For each instance (H, q,E), we ob-
+tain areference answer aoracle by conditioning the
+generator on only the oracle evidence E and the
+query q. Each memory system under test ingests
+the full history H, and the generator is conditioned
+on the memorythat system retrievesfor q, yield-
+ing ˆa. We pin aoracle to score 10 as a protocol
+reference shared by all systems; it is not a human
+optimum, and the resulting comparison is relative
+rather than an absolute measure of answer qual-
+ity (see Appendix E for detailed discussion). A
+judge then scores ˆaagainst this reference, con-
+ditioned on E and q. To reduce judge variance,
+we use two independent judge models and aver-
+age their scores. The judge first classifies ˆaalong
+five sub-dimensions into ordinal severity levels (in-
+tact,mild,clear,severe):factual fidelity(whether
+claims are consistent with the </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>NR↑DR↓NR↑DR↓NR↑DR↓NR↑DR↓NR↑DR↓ NR↑DR↓
+Retrieval-only baseline (NaiveRAG) with varying embedding backbones
+NaiveRAG+ Nomic-embed-text-v1.548.0 74.469.725.4 54.9 62.7 67.0 32.6 55.6 52.9 58.9 49.6NaiveRAG+ Qwen3-Embedding-4B49.2 73.168.4 26.255.7 61.566.1 33.856.8 51.7 59.2 49.3NaiveRAG+ Qwen3-Embedding-8B48.7 73.869.7 24.955.2 62.167.6 31.955.1 53.4 59.3 49.2
+Agentic / structured memory systems
+A-MEM 45.6 78.2 67.4 28.6 51.8 68.9 64.2 36.8 50.9 59.4 56.0 54.4Mem0 7.4 99.7 22.1 99.4 30.8 93.7 24.4 98.9 1.7 100.0 17.3 98.3Mem0+ Graph8.9 99.4 24.7 98.7 32.1 92.8 26.2 98.1 2.8 99.8 18.9 97.8MemOS 39.8 80.7 57.2 55.4 47.9 72.6 54.1 61.8 38.5 78.9 47.5 69.9LangMem 33.2 87.4 49.6 69.2 42.8 80.1 47.3 75.8 30.7 90.6 40.7 80.6EverMemOS 41.7 82.9 58.4 51.6 49.2 70.4 55.9 58.7 36.8 81.3 48.4 69.0
+Table 2: Pairwise generation quality against the oracle answer across five domains. For each domain we </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Utilization
+To examine this, we compare per-instance RS with
+unit-level recall, defined as the fraction of ground-
+truth evidence sessions retrieved in the top-k. We
+use NAIVERAG for this analysis because its re-
+trieved units are directly observable, unlike mem-
+ory systems that delete or update memory at inges-
+tion time. In Figure 3 (a), RS increases monotoni-
+cally with recall across all domains. This confirms
+0 10 20 30 40
+Number of distractors k
+40
+50
+60
+70
+80
+90
+100Normalized Robustness (NR)
+oracle paraphrase
+(judge calibration)
+(a) Answer quality
+0 10 20 30 40
+Number of distractors k
+0
+20
+40
+60
+80Degradation Rate (DR, \%)
+(b) Substantive failure rate
+Qwen3-30B Qwen3-235B Qwen3-Max
+Model
+0
+1
+2
+3
+4
+5k75% (distractors)
+1.5
+1.8 1.7
+2.9
+2.2
+4.0
+(c) Noise tolerance
+Strong
+Weak
+0 10 20 30 40
+k interval midpoint
+0
+1
+2
+3
+4
+5
+ΔNR per added distractor
+(d) Marginal damage
+Qwen3-Max </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We isolate the effect of retrieval noise by fixing
+recall at 1.0 and progressively adding distractor
+sessions to the oracle evidence set. We vary three
+factors: the number of distractors k, distractor dif-
+ficulty, and generator size. Strong noise uses se-
+mantically similar distractors from the same user
+trajectory, while weak noise uses unrelated cross-
+domain sessions. We shuffle the oracle and distrac-
+tor sessions together so position is not a confound.
+The k= 0 condition is a protocol normalization
+anchor. Rather than re-conditioning the genera-
+tor on oracle-only context, which collapses to a
+near-identical regeneration of aoracle, we obtain ˆa
+by having the judge lightly paraphrase aoracle with
+surface-level edits that preserve all facts, structure,
+and length, so k= 0 measures the attainable RS
+ceiling under our protocol. All other settings follow
+the protocol above unchanged. </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>UTILMEMrelies on LLM-based construction and
+evaluation. Conversational rewriting, question gen-
+eration, distractor synthesis, oracle-answer genera-
+tion, filtering, and final scoring may inherit stylistic
+regularities, templated structures, biases, or rea-
+soning preferences from the models used. The
+oracle-evidence answer is a shared protocol refer-
+ence, not a human optimum. Long-form planning,
+finance, and mental-wellness questions can admit
+multiple valid organizations and emphases, so abso-
+lute scores depend on the stability of the reference
+and rubric. Although the two GPT-family judges
+show strong agreement in both system ranking and
+instance-level scores, large-scale human evaluation
+remains challenging due to the substantial annota-
+tion effort required for long-context, multi-session
+reasoning tasks. The evidence-sensitivity proce-
+dure verifies degradation along sampled </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We measured consistency between GPT-5.2-1211-
+global and GPT-5.4-0305-global on all 1,717
+NaiveRAG evaluation outputs. Each judge indepen-
+dently assigned an integer score on the same 1–10
+rubric; no score-parsing failures occurred. Table 4
+reports both association and absolute agreement
+statistics.
+Pearson and Spearman correlations above 0.84
+indicate strong agreement in raw-score movement
+and rank ordering. Exact agreement on the fine-
+grained scale is moderate, but 82.94% of pairs dif-
+fer by at most one point and 93.65% by at most two.
+These results support the reproducibility of relative
+scoring between the two GPT-family judges.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +345,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

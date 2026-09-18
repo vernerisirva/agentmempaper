@@ -148,9 +148,11 @@ def identities(canonical_id: str, *, title: str = "", doi: str | None = None,
     Namespacing is what keeps the identity space safe: a DOI can only ever match a DOI
     and a title can only ever match a title, so a shared numeric string in two different
     fields is not a match. A title participates only when its normalization is long
-    enough to be distinctive, which is the repository's existing merge policy.
+    enough to be distinctive, which is the repository's existing merge policy. A record
+    with no usable identifier contributes none rather than an empty one that two
+    unrelated records would share.
     """
-    found = {"canonical:" + canonical_id.strip()}
+    found = {"canonical:" + canonical_id.strip()} if canonical_id.strip() else set()
     prefixes = {"doi:": normalize_doi, "arxiv:": normalize_arxiv_id,
                 "openalex:": normalize_openalex_id}
     for prefix, normalize in prefixes.items():

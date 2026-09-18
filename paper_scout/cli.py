@@ -457,10 +457,6 @@ def _fetch_direct_paper(args: argparse.Namespace) -> PaperCandidate | None:
     return fetch_direct_paper(arxiv_id=args.arxiv_id, doi=args.doi, url=args.url)
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
-
-
 def _batch_population(args) -> int:
     """Build or verify the deterministic eligible-population manifest.
 
@@ -473,6 +469,9 @@ def _batch_population(args) -> int:
     configs = track_configs(Path(args.config), tracks)
     rosters = tuple(Path(path) for path in args.roster)
     if args.verify:
+        if rosters:
+            raise SystemExit("--roster is not used with --verify; "
+                             "verification rereads the frozen rosters the manifest records")
         manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
         result = verify_manifest(manifest, configs)
         for track, detail in sorted(result.tracks.items()):
@@ -492,3 +491,7 @@ def _batch_population(args) -> int:
     print(f"manifest={path} manifest_sha256={manifest['manifest_sha256']} "
           f"code_sha={manifest['code_sha']}")
     return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

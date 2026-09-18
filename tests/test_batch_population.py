@@ -2,6 +2,7 @@
 from dataclasses import replace
 import json
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 
@@ -64,6 +65,21 @@ class PopulationFixture(unittest.TestCase):
                              sqlite_path=base / "state.sqlite3", digest_dir=digests,
                              report_dir=reports, docs_dir=base / "docs", curation_path=curation)
         return config, store, keys
+
+    def write_config(self, root, tracks, papers=3):
+        """A real YAML config the command can load, pointing at a synthetic track."""
+        track_id = tracks[0]
+        config, store, keys = self.track(root, track_id,
+                                         [candidate(i) for i in range(1, papers + 1)])
+        self.store, self.keys = store, keys
+        path = Path(root) / "config.yaml"
+        path.write_text(
+            f'track:\n  id: "{track_id}"\n  relevance_profile: "{config.relevance_profile}"\n'
+            f'output:\n  digest_dir: "{config.digest_dir}"\n'
+            f'  report_dir: "{config.report_dir}"\n  docs_dir: "{config.docs_dir}"\n'
+            f'state:\n  sqlite_path: "{config.sqlite_path}"\n'
+            f'curation:\n  path: "{config.curation_path}"\n', encoding="utf-8")
+        return path
 
 
 class IdentityTests(unittest.TestCase):
@@ -291,6 +307,76 @@ class PopulationTests(PopulationFixture):
             self.assertEqual([c.rank for c in track.eligible], list(range(1, len(track.eligible) + 1)))
             self.assertEqual(ELIGIBLE_RELEVANCE, "relevant")
             self.assertTrue(all(c.identities for c in track.eligible))
+
+
+class CommandTests(PopulationFixture):
+    def run_cli(self, *args, config=None):
+        """Run the command the way an operator does, as a module entry point.
+
+        `python3 -m paper_scout.cli` executes the module body top to bottom, so this
+        also fixes the dispatch order: a handler defined after the entry-point guard
+        would not be bound by the time the command dispatches to it.
+        """
+        import subprocess
+        return subprocess.run(
+            [sys.executable, "-m", "paper_scout.cli", *(["--config", str(config)] if config else []),
+             "batch-population", *args],
+            capture_output=True, text=True, cwd=Path(__file__).resolve().parents[1])
+
+    def test_the_command_builds_and_verifies_a_manifest_end_to_end(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            manifest = Path(tmp) / "manifest.json"
+            built = self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                                 "--population-track", "agent_memory", config=config)
+            self.assertEqual(built.returncode, 0, built.stderr)
+            self.assertIn("manifest_sha256=", built.stdout)
+            self.assertIn("eligible=3", built.stdout)
+            verified = self.run_cli("--manifest", str(manifest), "--verify",
+                                    "--population-track", "agent_memory", config=config)
+            self.assertEqual(verified.returncode, 0, verified.stderr)
+            self.assertIn("reproduced=True", verified.stdout)
+            self.assertIn("ordered_ids_match=True", verified.stdout)
+
+    def test_verification_exits_non_zero_when_the_population_moved(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            manifest = Path(tmp) / "manifest.json"
+            self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                         "--population-track", "agent_memory", config=config)
+            stored = json.loads(manifest.read_text(encoding="utf-8"))
+            stored["tracks"]["agent_memory"]["ordered_canonical_ids"].pop()
+            manifest.write_text(json.dumps(stored), encoding="utf-8")
+            result = self.run_cli("--manifest", str(manifest), "--verify",
+                                  "--population-track", "agent_memory", config=config)
+            self.assertEqual(result.returncode, 1)
+            self.assertIn("reproduced=False", result.stdout)
+
+    def test_a_roster_built_manifest_round_trips_through_verification(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config = self.write_config(tmp, ["agent_memory"])
+            roster = Path(tmp) / "roster.json"
+            roster.write_text(json.dumps({"tracks": {"agent_memory": [
+                {"canonical_id": self.keys[0]}]}}), encoding="utf-8")
+            manifest = Path(tmp) / "manifest.json"
+            built = self.run_cli("--manifest", str(manifest), "--build-time", BUILD_TIME,
+                                 "--roster", str(roster), "--population-track", "agent_memory",
+                                 config=config)
+            self.assertEqual(built.returncode, 0, built.stderr)
+            self.assertIn("eligible=2", built.stdout)
+            stored = json.loads(manifest.read_text(encoding="utf-8"))
+            self.assertEqual(len(stored["sources"]["frozen_rosters"]), 1)
+            self.assertNotIn(self.keys[0], stored["tracks"]["agent_memory"]["ordered_canonical_ids"])
+            # Verification rereads the roster the manifest records rather than any
+            # roster the caller supplies, so the population rebuilds identically.
+            verified = self.run_cli("--manifest", str(manifest), "--verify",
+                                    "--population-track", "agent_memory", config=config)
+            self.assertEqual(verified.returncode, 0, verified.stderr)
+            self.assertIn("reproduced=True", verified.stdout)
+            rejected = self.run_cli("--manifest", str(manifest), "--verify", "--roster",
+                                    str(roster), "--population-track", "agent_memory", config=config)
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertIn("not used with --verify", rejected.stderr)
 
 
 if __name__ == "__main__":

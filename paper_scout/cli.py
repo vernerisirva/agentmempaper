@@ -501,7 +501,7 @@ def _batch_population(args) -> int:
     exclusion_configs = track_configs(Path(args.config), TRACKS)
     configs = {track: exclusion_configs[track] for track in tracks}
     population = build_population(configs, args.build_time, rosters, exclusion_configs)
-    manifest = population_manifest(population, repository_code_sha(Path(".")))
+    manifest = population_manifest(population, repository_code_sha())
     path = write_manifest(Path(args.manifest), manifest)
     for track in population.tracks:
         print(f"{track.track} ranked={track.ranked_count} eligible={len(track.eligible)} "

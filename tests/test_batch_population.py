@@ -79,7 +79,7 @@ class PopulationFixture(unittest.TestCase):
         self.assertEqual(assessment.canonical_id, canonical_id)
         store.save_quality_assessment(assessment)
 
-    def write_config(self, root, tracks, papers=3):
+    def write_config(self, root, tracks, papers=3, link_arxiv=None):
         """A real config the command can load, plus the per-track state overrides.
 
         The file carries no track id, so every track resolves against it, and each
@@ -87,8 +87,11 @@ class PopulationFixture(unittest.TestCase):
         is what lets a restricted build be tested against a real second track.
         """
         track_id = tracks[0]
+        # A DOI outranks the arXiv id when the canonical key is derived, so a linked
+        # paper is matched by the alias rather than by the identifier it is keyed on.
+        first = candidate(1, doi="10.9999/paper.one", arxiv_id=link_arxiv) if link_arxiv else candidate(1)
         config, store, keys = self.track(root, track_id,
-                                         [candidate(i) for i in range(1, papers + 1)])
+                                         [first, *(candidate(i) for i in range(2, papers + 1))])
         self.store, self.keys = store, keys
         self.env = {f"PAPER_SCOUT_{track.upper()}_STATE_PATH":
                     str(Path(root) / track / "state.sqlite3") for track in TRACKS}
@@ -321,6 +324,49 @@ class PopulationTests(PopulationFixture):
             excluded = next(e for e in track.excluded if e.canonical_id == keys[0])
             self.assertEqual(excluded.matched_identity, "arxiv:2609.09999")
 
+    def test_a_curation_suppression_reaches_the_paper_s_other_identifiers(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            title = "Persistent Long-Term Memory for LLM Agents, A Curated Study"
+            target = replace(candidate(1, title=title), doi="10.9999/paper.one",
+                             arxiv_id="2609.09999")
+            config, store, keys = self.track(tmp, "agent_memory", [target, candidate(2)])
+            # The rule names the paper by title alone; the stored row supplies the rest.
+            # An overrides rule keeps the paper in the ranking domain, where a curation
+            # exclusion would have removed it before it could be a candidate at all.
+            Path(config.curation_path).write_text(
+                f'overrides:\n  - title: "{title}"\n    suppress_for_quality: true\n',
+                encoding="utf-8")
+            track = build_population({"agent_memory": config}, BUILD_TIME).track("agent_memory")
+            excluded = next(e for e in track.excluded if e.canonical_id == keys[0])
+            self.assertEqual(excluded.reason, "suppressed")
+            self.assertEqual(excluded.source, "agent_memory:curation")
+            self.assertIn(excluded.matched_identity, identities(
+                keys[0], title=title, doi="10.9999/paper.one", arxiv_id="2609.09999"))
+            self.assertEqual(len(track.eligible), 1)
+
+    def test_an_explicitly_empty_exclusion_scope_is_not_widened(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            config, store, keys = self.track(tmp, "agent_memory", [candidate(1), candidate(2)])
+            self.assess(store, keys[0])
+            narrowed = build_population({"agent_memory": config}, BUILD_TIME,
+                                        exclusion_configs={}).track("agent_memory")
+            self.assertEqual(len(narrowed.eligible), 2)
+            self.assertEqual(narrowed.excluded, ())
+            default = build_population({"agent_memory": config}, BUILD_TIME).track("agent_memory")
+            self.assertEqual(len(default.eligible), 1)
+
+    def test_the_recorded_code_sha_does_not_follow_the_working_directory(self):
+        import os
+        here = repository_code_sha()
+        self.assertRegex(here, r"^[0-9a-f]{40}$")
+        cwd = os.getcwd()
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                os.chdir(tmp)
+                self.assertEqual(repository_code_sha(), here)
+        finally:
+            os.chdir(cwd)
+
     def test_a_track_without_a_database_is_recorded_rather_than_passed_over(self):
         with tempfile.TemporaryDirectory() as tmp:
             config, store, keys = self.track(tmp, "agent_memory", [candidate(1), candidate(2)])
@@ -430,17 +476,17 @@ class CommandTests(PopulationFixture):
 
     def test_a_restricted_build_still_excludes_another_track_s_assessment(self):
         with tempfile.TemporaryDirectory() as tmp:
-            config = self.write_config(tmp, ["agent_memory"])
+            config = self.write_config(tmp, ["agent_memory"], link_arxiv="2609.09999")
             memory_keys = self.keys
-            # The same manuscript, discovered by a track that is not being built.
-            twin = replace(candidate(1), source="openalex", openalex_id="W7168439999",
-                           url="https://arxiv.org/abs/2609.09999")
+            # The same manuscript under a different canonical id and a different title,
+            # discovered by a track that is not being built. The only shared handle is
+            # an arXiv id, which the twin carries in its URL rather than its own field.
+            twin = candidate(9, title="A Separately Titled Record Of The Same Manuscript",
+                             source="openalex", openalex_id="W7168439999",
+                             url="https://arxiv.org/abs/2609.09999")
             research, research_store, research_keys = self.track(
                 tmp, "deep_research", [twin], profile="deep_research")
             self.assess(research_store, research_keys[0])
-            # Link the two records: the built track's paper carries the same arXiv id.
-            self.store.upsert_paper(replace(candidate(1), arxiv_id="2609.09999"),
-                                    ClassificationResult(95, "relevant", "Synthetic match"))
             result = self.run_cli("--manifest", str(Path(tmp) / "m.json"), "--build-time",
                                   BUILD_TIME, "--population-track", "agent_memory", config=config)
             self.assertEqual(result.returncode, 0, result.stderr)
@@ -450,8 +496,10 @@ class CommandTests(PopulationFixture):
             # Only the built track is in the manifest, but every track was scanned.
             self.assertEqual(sorted(manifest["sources"]["exclusion_tracks"]), sorted(TRACKS))
             self.assertNotIn(memory_keys[0], track["ordered_canonical_ids"])
+            self.assertEqual(memory_keys[0], "doi:10.9999/paper.one")
             excluded = next(e for e in track["excluded"] if e["canonical_id"] == memory_keys[0])
             self.assertEqual(excluded["reason"], "prior_assessment")
+            self.assertEqual(excluded["matched_identity"], "arxiv:2609.09999")
             self.assertTrue(excluded["source"].startswith("deep_research:"))
 
     def test_verification_reports_a_mismatch_when_pointed_at_other_inputs(self):

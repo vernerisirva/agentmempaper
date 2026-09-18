@@ -224,36 +224,46 @@ def excluded_identities(configs: dict[str, ScoutConfig],
 
     for track, config in sorted(configs.items()):
         path = Path(config.sqlite_path)
-        if not path.exists():
-            # A track with no database contributes no exclusions. _sources records it as
-            # exclusion_tracks_without_state, inside the manifest hash, because a scan
-            # that silently covered fewer tracks than it claims is the defect this
-            # module exists to prevent.
-            continue
-        with sqlite3.connect(path) as db:
-            db.row_factory = sqlite3.Row
-            rows = {str(r["canonical_key"]): r
-                    for r in db.execute("SELECT * FROM papers").fetchall()}
-            if _table_exists(db, "paper_quality_assessments"):
-                for row in db.execute(
-                        "SELECT DISTINCT canonical_id FROM paper_quality_assessments").fetchall():
-                    key = str(row["canonical_id"])
-                    paper = rows.get(key)
-                    record(_row_identities(paper) if paper is not None else identities(key),
-                           "prior_assessment", f"{track}:paper_quality_assessments")
-            if _table_exists(db, "quality_suppressions"):
-                for row in db.execute(
-                        "SELECT canonical_key FROM quality_suppressions WHERE active = 1").fetchall():
-                    key = str(row["canonical_key"])
-                    paper = rows.get(key)
-                    record(_row_identities(paper) if paper is not None else identities(key),
-                           "suppressed", f"{track}:quality_suppressions")
+        rows: dict[str, sqlite3.Row] = {}
+        # A track with no database contributes no stored exclusions. _sources records it
+        # as exclusion_tracks_without_state, inside the manifest hash, because a scan
+        # that silently covered fewer tracks than it claims is the defect this module
+        # exists to prevent. Its curation directives still apply.
+        if path.exists():
+            with sqlite3.connect(path) as db:
+                db.row_factory = sqlite3.Row
+                rows = {str(r["canonical_key"]): r
+                        for r in db.execute("SELECT * FROM papers").fetchall()}
+                if _table_exists(db, "paper_quality_assessments"):
+                    for row in db.execute(
+                            "SELECT DISTINCT canonical_id FROM paper_quality_assessments").fetchall():
+                        key = str(row["canonical_id"])
+                        paper = rows.get(key)
+                        record(_row_identities(paper) if paper is not None else identities(key),
+                               "prior_assessment", f"{track}:paper_quality_assessments")
+                if _table_exists(db, "quality_suppressions"):
+                    for row in db.execute(
+                            "SELECT canonical_key FROM quality_suppressions WHERE active = 1").fetchall():
+                        key = str(row["canonical_key"])
+                        paper = rows.get(key)
+                        record(_row_identities(paper) if paper is not None else identities(key),
+                               "suppressed", f"{track}:quality_suppressions")
         curation = _load_curation(Path(config.curation_path))
         for rule in [*curation.pinned, *curation.overrides, *curation.excluded]:
             if not rule.suppress_for_quality:
                 continue
-            record(identities(rule.canonical_id or "", title=rule.title or ""),
-                   "suppressed", f"{track}:curation")
+            # A curation rule names a paper by canonical id or title only. Resolving it
+            # against the stored row first gives the suppression the same alias reach as
+            # a database-backed exclusion, so re-keying a manuscript does not escape it.
+            matched = [row for key, row in rows.items()
+                       if (rule.canonical_id and rule.canonical_id == key)
+                       or (rule.title and normalize_text(rule.title)
+                           == normalize_text(str(row["title"] or "")))]
+            for row in matched:
+                record(_row_identities(row), "suppressed", f"{track}:curation")
+            if not matched:
+                record(identities(rule.canonical_id or "", title=rule.title or ""),
+                       "suppressed", f"{track}:curation")
     for roster_path in roster_paths:
         for key in _roster_canonical_ids(Path(roster_path)):
             record(identities(key), "frozen_roster", roster_path.name)
@@ -316,7 +326,9 @@ def build_population(configs: dict[str, ScoutConfig], build_time: str,
     that is not being built must still be excluded from the track that is. The tracks
     actually scanned are recorded in the manifest, inside its hash.
     """
-    exclusion_configs = exclusion_configs or configs
+    # Only an omitted scope defaults; an explicitly empty one is honoured, so a caller
+    # whose scope came out empty sees that rather than a silently widened scan.
+    exclusion_configs = configs if exclusion_configs is None else exclusion_configs
     excluded = excluded_identities(exclusion_configs, roster_paths)
     tracks = []
     for track in sorted(configs):
@@ -456,11 +468,16 @@ def verify_manifest(manifest: dict, configs: dict[str, ScoutConfig],
         sources_match=sources_match, tracks=tracks)
 
 
-def repository_code_sha(root: Path = Path(".")) -> str:
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+
+
+def repository_code_sha(root: Path = REPOSITORY_ROOT) -> str:
     """The checked-out commit, read from the git directory rather than a subprocess.
 
     Reading the files directly keeps manifest construction independent of whether a
-    usable git executable is on PATH, which is not guaranteed on every host.
+    usable git executable is on PATH, which is not guaranteed on every host. The
+    default is the repository this package lives in, not the working directory, so a
+    manifest built from elsewhere does not record provenance over some other tree.
     """
     head_path = Path(root) / ".git" / "HEAD"
     if not head_path.exists():

@@ -2,14 +2,14 @@
 
 **Two defects stood between the validated gate and safe recurring operation, and both are fixed and merged. A technical failure permanently retired a paper: 434 of the 509 papers holding assessment rows had never received a scientific decision yet were already excluded forever. And the runtime state — all three databases, including 18 rows of raw model payloads — answered an unauthenticated request with HTTP 200 from a public release.**
 
-**The cutover then ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. The first production smoke FAILED at its first gate on `HTTP 401: Bad credentials`, changed nothing, and is diagnosed to a provisioning error rather than a code defect: a repository secret holds the literal value `-`. Recurring assessment stays DISABLED.**
+**The cutover ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. A first smoke failed on a malformed secret and changed nothing; after the secrets were re-set, the second smoke completed all 22 steps green. Every operational invariant verified — except one: both selected papers had unretrievable manuscripts, so the run made ZERO Gemini and ZERO DeepSeek calls. The scientific path has still never executed in Actions, so recurring assessment stays DISABLED.**
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES   (Batch 6, unchanged)
-PRIVATE_DURABLE_STATE_READY:          YES  — seeded, verified, clean-restored from the private repo
-OPERATIONAL_QUALITY_ASSESSMENT_READY: NO   — blocked on a malformed credential secret
-FIRST_OPERATIONAL_SMOKE:              FAIL — stopped at the first gate; no state change
-PUBLIC_STATE_ARCHIVE_REMOVED:         YES  — deleted and confirmed unreachable anonymously
+PRIVATE_DURABLE_STATE_READY:          YES      — seeded, verified, clean-restored, and round-tripped by a real run
+OPERATIONAL_QUALITY_ASSESSMENT_READY: PARTIAL  — pipeline proven; the model path itself is still unexercised
+FIRST_OPERATIONAL_SMOKE:              PARTIAL  — 22/22 steps green, 0 model calls made
+PUBLIC_STATE_ARCHIVE_REMOVED:         YES      — deleted and confirmed unreachable anonymously
 RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
 ```
 
@@ -207,7 +207,9 @@ A structural limit is recorded rather than solved: an 18 KB per-file cap and a 1
 
 ## J. Production smoke
 
-**Run once, and it FAILED at its first gate.** `FIRST_OPERATIONAL_SMOKE = FAIL`. It stopped on `HTTP 401: Bad credentials` restoring private state, skipped every subsequent step, and changed nothing — no assessment, no commit, no state write. The cause is a repository secret holding the literal value `-`, which is a provisioning error rather than a code defect. Full detail, evidence and the damage-free verification are in §M.
+**Run twice.** The first attempt FAILED at its first gate; the second completed all 22 steps green but made no model call, so the result is `FIRST_OPERATIONAL_SMOKE = PARTIAL`. Detail for both is in §M.
+
+First attempt: It stopped on `HTTP 401: Bad credentials` restoring private state, skipped every subsequent step, and changed nothing — no assessment, no commit, no state write. The cause is a repository secret holding the literal value `-`, which is a provisioning error rather than a code defect. Full detail, evidence and the damage-free verification are in §M.
 
 Per policy the run was **not** retried and **not** silently patched, and the schedules stay disabled.
 
@@ -224,11 +226,12 @@ Per policy the run was **not** retried and **not** silently patched, and the sch
 | `DAILY_COST_GUARD_READY` | **YES** |
 | `FULL_VALIDATION` | **PASS** |
 | `INDEPENDENT_REVIEW` | **PASS_WITH_NOTES**, 0 unresolved blockers |
-| `FIRST_OPERATIONAL_SMOKE` | **FAIL** — the one open gate |
+| `FIRST_OPERATIONAL_SMOKE` | **PARTIAL** — 22/22 green, 0 model calls; the one open gate |
 
 ## L. Known operational backlog
 
-1. **Re-set the malformed secret.** A repository secret holds the literal value `-`; `PAPER_SCOUT_STATE_TOKEN` is the probable one but the evidence cannot single it out, so all three should be re-set. This is the only thing blocking the smoke.
+1. **The scientific model path has never executed in Actions.** Preflight proves a credential is present, not that it works. This is the only gate still open before the cron can be enabled.
+2. **Throughput at current bounds is well under 2 papers/day.** Acquisition succeeds for roughly a quarter to a third of top-ranked candidates, and selection does not pre-check retrievability. Walking a few candidates per track before giving up, as the Batch-6 roster build did, is the obvious remedy and is an explicit operational decision, not an automatic one.
 2. **The public archive is deleted** (§M), but it recorded `downloadCount: 1` and GitHub cannot retract copies already taken. Treat the databases it held as disclosed.
 3. **Re-run the smoke once** after the secret is corrected, at exactly the production bounds (1/track, 3 total, $0.30), and only then enable the daily cron and re-enable the weekly backfill.
 4. **Consider a cheap credential-only dispatch path** so a bad secret is caught without consuming a full production run. The smoke's fail-closed behaviour is correct but expensive to use as a credential test.
@@ -311,13 +314,55 @@ This is a provisioning error, not a code defect, and it cannot be diagnosed furt
 
 One robustness observation recorded but **not acted on**: `gh repo view --json` and `gh release view --json` both route through `POST /graphql` rather than REST. That is visible in the error URL. It is not the cause here — a token that is the literal `-` fails against any API — and changing the transport on an unconfirmed theory would add a variable to the next run rather than remove one.
 
+### Second operational smoke — 22/22 green, but the model path was never reached
+
+All three secrets were re-set interactively; timestamps confirmed moved (`16:56:39Z → 17:28:51Z`, `16:57:04Z → 17:29:21Z`, `16:57:13Z → 17:30:31Z`) without reading any value. Run [35458347884](https://github.com/vernerisirva/agentmempaper/actions/runs/35458347884) on `2d51db5cd`, `run_assessment: true`, 17:31:23Z → 17:39:04Z, **conclusion `success`, all 22 steps green.**
+
+The 401 is resolved, which also settles the recorded GraphQL risk: `gh repo view --json` issues `POST /graphql` and a valid fine-grained PAT authenticated against it without trouble. **No transport rewrite is needed**, and the note in §M stands as a recorded non-issue rather than an open risk.
+
+Verified during the run:
+
+| Smoke criterion | Result |
+|---|---|
+| Private state restored | **yes** — step 5, then integrity verified at step 6 |
+| Credential preflight succeeds | **yes** — `credentials_present`, both roles, no value logged |
+| Discovery cannot perform scientific assessment | **yes** — `--no-llm`, and no scientific credential in that step's env |
+| Eligibility uses completed-assessment semantics | **yes** — engram contributed 0 candidates, all 8 high-relevance papers already decided |
+| Technical outcomes stay retry-eligible | **yes, demonstrated live** — both new rows are `manuscript_unavailable`, neither is a completed assessment |
+| Candidate bounds respected | **yes** — 1 agent_memory + 1 deep_research, 0 engram, no quota transfer |
+| Cost guard respected | **yes**, but trivially — $0.00 of the $0.30 ceiling |
+| **Gemini and DeepSeek calls succeed** | **NOT EXERCISED — 0 calls** |
+| Assessment history append-only | **yes** — all 353 / 276 / 48 pre-existing rows byte-identical |
+| Site generation | **yes** |
+| Private snapshot persists and restores | **yes** — `sha256:11d8c33af5a5bc58…`, clean-restored into a fresh root afterwards |
+| No database, snapshot or raw payload published | **yes** — 0 tracked `.sqlite3`/`.tar.gz`, 0 public releases, 0 `raw_content`, 0 credential-shaped strings |
+| Pages deployment | **yes** — deployed, live site HTTP 200 |
+
+Snapshot provenance is now populated, which it could not be for the local seed:
+
+```json
+{"workflow": "Paper Scout", "run_id": "35458347884", "run_attempt": "1",
+ "repository": "vernerisirva/agentmempaper", "ref": "refs/heads/main",
+ "sha": "2d51db5cd056f103778c4f3aefab532c3ddf0480"}
+```
+
+State moved as expected: papers 18,343 → 18,530, 2,395 → 2,437, 306 → 338; assessments 353 → 354 and 276 → 277, engram unchanged at 48.
+
+### Why no model call happened, and why it matters
+
+The two selected papers were `doi:10.5281/zenodo.22837961` (agent_memory rank 1) and `doi:10.64898/2026.09.11.751076` (deep_research rank 1). Both returned `manuscript_unavailable` during acquisition, which happens **before** the gate issues any request, so neither model was contacted.
+
+That is correct behaviour and it exercised the retry design properly — both rows are technical, neither is a completed assessment, and both papers return to eligibility after the 20-hour cooldown. But it leaves the single most expensive assumption untested: **the preflight only checks that a credential is present, not that it works.** A wrong or expired `GEMINI_API_KEY` or `OPENROUTER_API_KEY` would pass preflight exactly as it did here and fail at call time. Enabling the cron now would mean the first real scientific call in production happens unattended.
+
+**This is also an operational throughput finding.** Selection takes the top eligible candidate per track and does not pre-check retrievability, because that needs network acquisition. Batch 6 measured how often acquisition succeeds by walking the same ranking: 5 of 14 for agent_memory and 5 of 20 for deep_research, roughly 25–36%. With one candidate per track per day, **most daily runs will assess nothing**, and each unretrievable paper consumes three daily slots over three runs before parking at `retry_budget_exhausted`. The gate is not broken and no eligibility is lost, but realistic throughput at current bounds is well under two papers a day.
+
 ---
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES
 PRIVATE_DURABLE_STATE_READY: YES
-OPERATIONAL_QUALITY_ASSESSMENT_READY: NO
-FIRST_OPERATIONAL_SMOKE: FAIL
+OPERATIONAL_QUALITY_ASSESSMENT_READY: PARTIAL
+FIRST_OPERATIONAL_SMOKE: PARTIAL
 PUBLIC_STATE_ARCHIVE_REMOVED: YES
 RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
 ```

@@ -840,6 +840,27 @@ class AcquisitionWalk(unittest.TestCase):
             capture_output=True, text=True).stdout.strip()
         self.assertEqual(hits, "", f"a consumer still reads the v1 key: {hits}")
 
+    def test_skip_outcomes_use_a_stable_vocabulary(self):
+        """These strings are grouped across runs, so they must not embed live values."""
+        from paper_scout.operational_preflight import (
+            RUN_LEVEL_STOP_REASONS, TRACK_LEVEL_STOP_REASONS)
+        from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
+        allowed = ({"track_slot_consumed", "absent_from_store", "cost_ceiling_exceeded",
+                    "scientific_path_unavailable"}
+                   | set(RUN_LEVEL_STOP_REASONS) | set(TRACK_LEVEL_STOP_REASONS)
+                   | set(TECHNICAL_OUTCOMES))
+        budget = RunBudget(max_per_track=1, max_per_run=9)
+        budget.openrouter_spend_usd = 0.28
+        nominees = [self.nominee("t1", 1, "x1"), self.nominee("t2", 1, "x2")]
+        results = {c: self.fake_assessment("success", gemini=1, openrouter=1, cost=0.01)
+                   for c in ("x1", "x2")}
+        _, _, _, summaries = self.walk(nominees, results, budget=budget)
+        seen = [e["outcome"] for s in summaries.values() for e in s.skipped_before_model]
+        self.assertTrue(seen)
+        for outcome in seen:
+            self.assertIn(outcome, allowed, f"unstable skip outcome: {outcome!r}")
+            self.assertNotIn("$", outcome)
+
     def test_skipped_candidates_are_still_persisted_so_dead_papers_park(self):
         # The walk must not become a silent daily re-probe: a rejected candidate still
         # gets its row, which is what advances it toward retry_budget_exhausted.

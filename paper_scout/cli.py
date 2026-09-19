@@ -454,7 +454,17 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
     if not preflight.ok:
         # Loud, and nothing is written. Every selected paper stays exactly as eligible as
         # it was, because no assessment row is created for a credential problem.
-        metrics.credential_skipped = len(selected)
+        # Not credential_skipped: that counts papers the walk reached and had to skip,
+        # and the walk never ran. Since selection now nominates up to MAX_ACQUISITION_WALK
+        # per track, setting it here would also inflate a per-paper counter to the
+        # nomination count. Every nomination is simply unreached.
+        metrics.nominees_not_walked = len(selected)
+        for candidate in selected:
+            summary = summaries.get(candidate.track)
+            if summary is not None:
+                summary.skipped_before_model.append(
+                    {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
+                     "outcome": "scientific_path_unavailable"})
         print(f"::error::Scientific assessment stage cannot run: {preflight.reason}."
               f" No assessment was attempted and no candidate eligibility was consumed.")
         return finish(1)
@@ -540,7 +550,10 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
         except CostCeilingExceeded as exc:
             print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
             for remaining in selected[position:]:
-                note_not_walked(remaining, str(exc) or "cost_ceiling_exceeded")
+                # A fixed literal, not the exception text: skipped_before_model is grouped
+                # and compared across runs, so its vocabulary has to be stable. The
+                # specific reason is in the warning above and in budget.stopped_reason.
+                note_not_walked(remaining, "cost_ceiling_exceeded")
             return
         metrics.papers_walked += 1
         try:

@@ -39,6 +39,8 @@ def main(argv: list[str] | None = None) -> int:
 
     run_parser = subparsers.add_parser("run", help="Fetch, classify, persist, and write today's digest")
     run_parser.add_argument("--no-notify", action="store_true")
+    run_parser.add_argument("--no-llm", action="store_true",
+                            help="Discovery only; do not run the scientific assessment queue")
     run_parser.add_argument("--date", default=date.today().isoformat())
     _add_track_argument(run_parser)
 
@@ -93,6 +95,8 @@ def main(argv: list[str] | None = None) -> int:
     backfill_parser.add_argument("--days", type=int, default=45)
     backfill_parser.add_argument("--sources", default="arxiv,openalex,semantic_scholar")
     backfill_parser.add_argument("--no-notify", action="store_true")
+    backfill_parser.add_argument("--no-llm", action="store_true",
+                                 help="Recovery only; do not run the scientific assessment queue")
     backfill_parser.add_argument("--date", default=date.today().isoformat())
     _add_track_argument(backfill_parser)
 
@@ -131,6 +135,21 @@ def main(argv: list[str] | None = None) -> int:
                                    default=[], dest="population_tracks",
                                    help="Restrict to these tracks (default: all); repeatable")
 
+    operational_parser = subparsers.add_parser(
+        "operational-assess",
+        help="One bounded daily scientific-assessment run across all tracks")
+    operational_parser.add_argument("--build-time", default=None,
+                                    help="Pinned build time for the ranking's newness key")
+    operational_parser.add_argument("--metrics", type=Path,
+                                    help="Write the operational metrics record here as JSON")
+    operational_parser.add_argument("--max-per-track", type=int, default=None,
+                                    help="Override the per-track paper limit; never above the policy default")
+    operational_parser.add_argument("--max-per-run", type=int, default=None,
+                                    help="Override the per-run paper limit; never above the policy default")
+    operational_parser.add_argument("--dry-run", action="store_true",
+                                    help="Select and report candidates without any model call")
+    operational_parser.add_argument("--date", default=date.today().isoformat())
+
     reassess_parser = subparsers.add_parser("reassess-quality", help="Assess or reassess stored relevant papers")
     reassess_parser.add_argument("--limit", type=int, default=None, help="Maximum papers (default: track run limit; hard ceiling 50)")
     reassess_parser.add_argument("--assessment-json", type=Path, help="Import one manuscript review; requires --paper-id, validates excerpt anchors")
@@ -155,7 +174,8 @@ def main(argv: list[str] | None = None) -> int:
     config = load_config(args.config, track_id=track_id)
 
     if args.command == "run":
-        result = run_scout(config, digest_date=args.date, notifications_enabled=not args.no_notify)
+        result = run_scout(config, digest_date=args.date, notifications_enabled=not args.no_notify,
+                           no_llm=args.no_llm)
         print(f"run_id={result.run_id} fetched={result.fetched_count} unique={result.unique_count} digest_items={result.new_digest_count} digest={result.digest_path}")
         return 0
 
@@ -257,7 +277,8 @@ def main(argv: list[str] | None = None) -> int:
             backfill_days = (date.today() - date.fromisoformat(args.since)).days + 1
             if backfill_days < 1:
                 parser.error("--since must not be in the future")
-        result = run_backfill(config, days=backfill_days, sources=sources, report_date=args.date)
+        result = run_backfill(config, days=backfill_days, sources=sources, report_date=args.date,
+                              no_llm=args.no_llm)
         print(f"run_id={result.run_id} fetched={result.fetched_count} unique={result.unique_count} report={result.digest_path}")
         return 0
 
@@ -298,6 +319,9 @@ def main(argv: list[str] | None = None) -> int:
         path = write_quality_evaluation_report(report, config.report_dir, args.date)
         print(f"passed={report['passed']} fixtures={len(report['fixtures'])} failures={len(report['failures'])} report={path}")
         return 0 if report["passed"] else 1
+
+    if args.command == "operational-assess":
+        return _operational_assess(args, parser)
 
     if args.command == "reassess-quality":
         if not config.quality.enabled:
@@ -376,6 +400,140 @@ def main(argv: list[str] | None = None) -> int:
 
     parser.error(f"unknown command {args.command}")
     return 2
+
+
+def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    """One bounded daily run: preflight, select, assess, report.
+
+    Fails loudly and assesses nothing when the scientific credentials are absent, rather
+    than entering the gate and letting it record a technical row against every candidate.
+    Discovery and site building are separate steps in the workflow and are unaffected.
+    """
+    from paper_scout.config import load_config
+    from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
+    from paper_scout.operational_preflight import (
+        MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK, CostCeilingExceeded, RunBudget,
+        credential_preflight)
+    from paper_scout.operational_run import OperationalMetrics, select_operational_candidates
+    from paper_scout.batch_population import TRACKS
+
+    metrics = OperationalMetrics()
+    configs = {track: load_config(track_id=track) for track in TRACKS}
+
+    preflight = credential_preflight()
+    metrics.preflight = preflight.to_dict()
+    budget = RunBudget.from_env()
+    if args.max_per_track is not None:
+        budget.max_per_track = min(args.max_per_track, MAX_PAPERS_PER_TRACK)
+    if args.max_per_run is not None:
+        budget.max_per_run = min(args.max_per_run, MAX_PAPERS_PER_RUN)
+
+    build_time = args.build_time or f"{args.date}T00:00:00"
+    selected, summaries = select_operational_candidates(configs, build_time, budget)
+    metrics.tracks = {track: summary.to_dict() for track, summary in summaries.items()}
+    metrics.high_relevance_candidates = sum(s.high_relevance for s in summaries.values())
+    metrics.papers_discovered = sum(s.ranked for s in summaries.values())
+    metrics.assessment_candidates = len(selected)
+
+    def finish(code: int) -> int:
+        metrics.budget = budget.to_dict()
+        record = metrics.to_dict()
+        if args.metrics:
+            args.metrics.parent.mkdir(parents=True, exist_ok=True)
+            args.metrics.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(json.dumps(record, indent=2, sort_keys=True))
+        return code
+
+    for candidate in selected:
+        print(f"candidate {candidate.track} rank={candidate.rank} {candidate.canonical_id}"
+              f" ({candidate.retry.reason})")
+    if args.dry_run:
+        return finish(0)
+    if not preflight.ok:
+        # Loud, and nothing is written. Every selected paper stays exactly as eligible as
+        # it was, because no assessment row is created for a credential problem.
+        metrics.credential_skipped = len(selected)
+        print(f"::error::Scientific assessment stage cannot run: {preflight.reason}."
+              f" No assessment was attempted and no candidate eligibility was consumed.")
+        return finish(1)
+
+    for candidate in selected:
+        config = configs[candidate.track]
+        store = PaperStore(config.sqlite_path)
+        rows = store.quality_candidates(days=None, paper_id=candidate.canonical_id)
+        if not rows:
+            continue
+        canonical_id, paper, decision = rows[0]
+        try:
+            budget.reserve(candidate.track, 0.0)
+        except CostCeilingExceeded as exc:
+            print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
+            break
+        metrics.papers_attempted += 1
+        try:
+            assessment = assess_and_store_candidate(
+                config.quality, store, paper, canonical_id,
+                ClassificationResult(0, decision, "Stored relevance classification."),
+                curation_path=config.curation_path)
+        except Exception as exc:  # noqa: BLE001 - one paper must not stop the run.
+            logging.getLogger(__name__).warning("Operational assessment failed for %s: %s",
+                                                canonical_id, exc)
+            metrics.technical_failures += 1
+            metrics.retry_eligible_failures += 1
+            continue
+        if assessment is None:
+            metrics.credential_skipped += 1
+            continue
+        outcome = (assessment.execution or {}).get("outcome")
+        usage = _role_usage(assessment)
+        budget.record(candidate.track, openrouter_usd=usage["openrouter_usd"],
+                      openrouter_calls=usage["openrouter_calls"],
+                      gemini_calls=usage["gemini_calls"],
+                      gemini_input_tokens=usage["gemini_input"],
+                      gemini_output_tokens=usage["gemini_output"])
+        metrics.deepseek_calls += usage["openrouter_calls"]
+        metrics.deepseek_input_tokens += usage["openrouter_input"]
+        metrics.deepseek_output_tokens += usage["openrouter_output"]
+        metrics.deepseek_cost_usd += usage["openrouter_usd"]
+        metrics.gemini_calls += usage["gemini_calls"]
+        metrics.gemini_input_tokens += usage["gemini_input"]
+        metrics.gemini_output_tokens += usage["gemini_output"]
+        if outcome == "success":
+            metrics.papers_successfully_assessed += 1
+            if assessment.quality_status == "pass":
+                metrics.promoted += 1
+            else:
+                metrics.non_promoted += 1
+        else:
+            metrics.technical_failures += 1
+            if outcome in TECHNICAL_OUTCOMES:
+                metrics.retry_eligible_failures += 1
+            if outcome == "manuscript_unavailable":
+                metrics.unavailable_manuscripts += 1
+            if outcome == "text_coverage_failure":
+                metrics.coverage_failures += 1
+    return finish(0)
+
+
+def _role_usage(assessment) -> dict:
+    """Per-provider calls, tokens and known money from one assessment receipt."""
+    usage = {"openrouter_usd": 0.0, "openrouter_calls": 0, "openrouter_input": 0,
+             "openrouter_output": 0, "gemini_calls": 0, "gemini_input": 0, "gemini_output": 0}
+    for call in (assessment.execution or {}).get("calls", []) or []:
+        counts = call.get("usage") or {}
+        prompt = int(counts.get("prompt_tokens") or 0)
+        completion = int(counts.get("completion_tokens") or 0)
+        if (call.get("provider") or "") == "google" or "gemini" in (call.get("model") or ""):
+            usage["gemini_calls"] += 1
+            usage["gemini_input"] += prompt
+            usage["gemini_output"] += completion
+        else:
+            usage["openrouter_calls"] += 1
+            usage["openrouter_input"] += prompt
+            usage["openrouter_output"] += completion
+            # Only a price the provider actually reported is counted as known money.
+            usage["openrouter_usd"] += float(counts.get("cost") or counts.get("cost_usd") or 0.0)
+    return usage
 
 
 def _add_track_argument(parser: argparse.ArgumentParser) -> None:

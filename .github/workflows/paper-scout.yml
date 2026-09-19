@@ -1,12 +1,34 @@
 name: Paper Scout
 
+# The daily schedule is deliberately disabled until every operationalization gate is
+# satisfied. Re-enable the cron below only when all of these hold, and not before:
+#
+#   PRIVATE_DURABLE_STATE_READY        = YES   (private state repo + token, smoke-verified)
+#   GITHUB_GEMINI_SECRET               = PRESENT
+#   GITHUB_OPENROUTER_SECRET           = PRESENT
+#   OPERATIONAL_RETRY_ELIGIBILITY_READY= YES
+#   DAILY_COST_GUARD_READY             = YES
+#   FULL_VALIDATION                    = PASS
+#   INDEPENDENT_REVIEW                 = PASS or PASS_WITH_NOTES, 0 unresolved blockers
+#   FIRST_OPERATIONAL_SMOKE            = PASS
+#
+# Until then this workflow runs only on demand, so exactly one writer touches the durable
+# state and no unattended run can act on a half-configured environment.
 on:
-  schedule:
-    - cron: "20 6 * * *"
+  # schedule:
+  #   - cron: "20 6 * * *"
   workflow_dispatch:
     inputs:
       deploy_only:
         description: "Deploy the reviewed committed site without discovery or assessment"
+        type: boolean
+        default: false
+      run_assessment:
+        description: "Run the bounded scientific-assessment stage (needs both scientific secrets)"
+        type: boolean
+        default: false
+      allow_state_initialize:
+        description: "FIRST RUN ONLY: create empty state when no private snapshot exists"
         type: boolean
         default: false
 
@@ -20,6 +42,13 @@ concurrency:
   cancel-in-progress: false
   queue: max
 
+env:
+  # The private durable state destination. Assessment databases must never go to a public
+  # release, to Pages, or into a tracked file. The transport refuses the public
+  # repository outright and has no unauthenticated fallback.
+  PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
+  PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
+
 jobs:
   scout:
     runs-on: ubuntu-latest
@@ -29,21 +58,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          # The immediate parent is the normal one-time migration seed.
-          fetch-depth: 2
-
-      - name: Restore durable Paper Scout state
-        if: ${{ !inputs.deploy_only }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: bash .github/scripts/download-paper-scout-state.sh
-
-      - name: Bootstrap Paper Scout state when no durable snapshot exists
-        if: ${{ !inputs.deploy_only }}
-        env:
-          PAPER_SCOUT_STATE_SEED_REF: 026158c36d109669e16b1c008b69d1031a2a357b
-        run: bash .github/scripts/restore-paper-scout-state.sh
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,6 +66,21 @@ jobs:
 
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
+
+      # 1. Restore private state, and verify it before anything reads it. Fails closed:
+      #    a missing, unreachable, corrupt or partial snapshot stops the run rather than
+      #    silently continuing on empty state.
+      - name: Restore private Paper Scout state
+        id: restore-state
+        if: ${{ !inputs.deploy_only }}
+        run: |
+          python .github/scripts/paper_scout_state.py restore \
+            ${{ inputs.allow_state_initialize && '--allow-initialize' || '' }} \
+            --report "${RUNNER_TEMP}/state-restore.json"
+
+      - name: Verify restored state integrity
+        if: ${{ !inputs.deploy_only }}
+        run: python .github/scripts/check_stored_assessments.py
 
       - name: Validate rules, idempotency, and live source payloads
         if: ${{ !inputs.deploy_only }}
@@ -63,44 +92,96 @@ jobs:
           python -m unittest discover -s tests -p "*.py" | tee paper-scout-tests.log
           python -m paper_scout evaluate-relevance --track agent_memory | tee relevance-eval-agent-memory.log
           python -m paper_scout evaluate-relevance --track deep_research | tee relevance-eval-deep-research.log
+          python -m paper_scout evaluate-relevance --track engram | tee relevance-eval-engram.log
           python -m paper_scout evaluate-quality --track agent_memory | tee quality-eval-agent-memory.log
           python -m paper_scout evaluate-quality --track deep_research | tee quality-eval-deep-research.log
-          python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
-          python -m paper_scout evaluate-relevance --track engram | tee relevance-eval-engram.log
           python -m paper_scout evaluate-quality --track engram | tee quality-eval-engram.log
+          python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
           python -m paper_scout evaluate-discovery --track deep_research | tee discovery-eval-deep-research.log
           python -m paper_scout evaluate-discovery --track engram | tee discovery-eval-engram.log
-          python -m paper_scout validate-idempotency --track engram | tee idempotency-engram.log
           python -m paper_scout validate-idempotency --track agent_memory | tee idempotency-agent-memory.log
           python -m paper_scout validate-idempotency --track deep_research | tee idempotency-deep-research.log
+          python -m paper_scout validate-idempotency --track engram | tee idempotency-engram.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_agent_memory_smoke.sqlite3 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-agent-memory.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_deep_research_smoke.sqlite3 python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-deep-research.log
 
-      - name: Run daily paper scout
+      # 2. Discovery and metadata only. --no-llm keeps the scientific gate out of this
+      #    step entirely, so a discovery run can never write an assessment row.
+      - name: Run discovery and metadata update
         if: ${{ !inputs.deploy_only }}
         env:
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
-          PAPER_SCOUT_LLM_PROVIDER: ${{ secrets.PAPER_SCOUT_LLM_PROVIDER }}
-          PAPER_SCOUT_LLM_MODEL: ${{ secrets.PAPER_SCOUT_LLM_MODEL }}
-          PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL: ${{ vars.PAPER_SCOUT_QUALITY_ADJUDICATOR_MODEL }}
-          PAPER_SCOUT_QUALITY_LLM_MODEL: ${{ secrets.PAPER_SCOUT_QUALITY_LLM_MODEL }}
-          PAPER_SCOUT_LLM_API_KEY: ${{ secrets.PAPER_SCOUT_LLM_API_KEY }}
-          PAPER_SCOUT_LLM_BASE_URL: ${{ secrets.PAPER_SCOUT_LLM_BASE_URL }}
           PAPER_SCOUT_WEBHOOK_URL: ${{ secrets.PAPER_SCOUT_WEBHOOK_URL }}
         run: |
           set -o pipefail
-          python -m paper_scout run --track agent_memory | tee paper-scout-run-agent-memory.log
-          python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
-          python -m paper_scout run --track deep_research | tee paper-scout-run-deep-research.log
-          python -m paper_scout build-site --track deep_research | tee paper-scout-build-site-deep-research.log
+          python -m paper_scout run --track agent_memory --no-llm | tee paper-scout-run-agent-memory.log
+          python -m paper_scout run --track deep_research --no-llm | tee paper-scout-run-deep-research.log
           # Missing seed records only; repeat runs perform no direct-ID requests.
           python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
-          python -m paper_scout run --track engram | tee paper-scout-run-engram.log
+          python -m paper_scout run --track engram --no-llm | tee paper-scout-run-engram.log
+
+      # 3. Credential preflight. Reports presence by variable name only and never a
+      #    value. A missing credential skips the stage loudly; it must not reach the gate,
+      #    because the gate would record a technical row against every candidate.
+      - name: Scientific credential preflight
+        id: preflight
+        if: ${{ !inputs.deploy_only && inputs.run_assessment }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, sys
+          from paper_scout.operational_preflight import credential_preflight
+          result = credential_preflight()
+          print(json.dumps(result.to_dict(), indent=2))
+          if not result.ok:
+              print(f"::error::Scientific assessment cannot run: {result.reason}")
+              sys.exit(1)
+          PY
+
+      # 4. The bounded scientific-assessment stage: at most one paper per track and three
+      #    per run, under a hard per-run OpenRouter ceiling. A track with nothing eligible
+      #    forfeits its slot rather than lending it, so the usual maximum is two per day.
+      - name: Bounded scientific assessment
+        id: assess
+        if: ${{ !inputs.deploy_only && inputs.run_assessment }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD: "0.30"
+        run: |
+          set -o pipefail
+          python -m paper_scout operational-assess \
+            --metrics reports/paper_scout/operational-metrics-$(date -u +%F).json \
+            | tee operational-assess.log
+
+      - name: Build public site
+        if: ${{ !inputs.deploy_only }}
+        run: |
+          set -o pipefail
+          python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
+          python -m paper_scout build-site --track deep_research | tee paper-scout-build-site-deep-research.log
           python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
 
       - name: Validate generated schemas, links, and runtime exclusion
         run: python .github/scripts/check_paper_scout_site.py
+
+      # A published site or report must never carry state. This is the last line of
+      # defence before anything becomes public.
+      - name: Refuse to publish private state
+        run: |
+          if find docs reports/paper_scout digests -type f \
+               \( -name '*.sqlite3' -o -name '*.sqlite3-*' -o -name '*.tar.gz' \) | grep .; then
+            echo "::error::Refusing to publish Paper Scout runtime state or snapshots."
+            exit 1
+          fi
+          if grep -rlE '(GEMINI_API_KEY|OPENROUTER_API_KEY|PAPER_SCOUT_STATE_TOKEN)[=:][[:space:]]*[A-Za-z0-9_-]{8,}' docs reports/paper_scout 2>/dev/null | grep .; then
+            echo "::error::Refusing to publish a credential-shaped value."
+            exit 1
+          fi
+          echo "No private state, snapshot or credential-shaped value in published output."
 
       - name: Write run summary
         if: always()
@@ -108,29 +189,18 @@ jobs:
           {
             echo "## Paper Scout"
             echo
-            echo "### Command output"
+            echo "### Operational metrics"
+            echo '```json'
+            cat reports/paper_scout/operational-metrics-*.json 2>/dev/null || echo '{"note":"assessment stage did not run"}'
+            echo '```'
             echo
+            echo "### Command output"
             echo '```text'
-            cat relevance-eval-agent-memory.log relevance-eval-deep-research.log quality-eval-agent-memory.log quality-eval-deep-research.log discovery-eval-agent-memory.log idempotency-agent-memory.log idempotency-deep-research.log live-smoke-agent-memory.log live-smoke-deep-research.log paper-scout-run-agent-memory.log paper-scout-build-site-agent-memory.log paper-scout-run-deep-research.log paper-scout-build-site-deep-research.log *engram.log discovery-eval-deep-research.log 2>/dev/null || true
+            cat ./*.log 2>/dev/null || true
             echo '```'
             echo
             echo "### Generated files"
-            find digests reports -type f 2>/dev/null | sort || true
-            find docs -type f 2>/dev/null | sort || true
-            echo
-            echo "### Live smoke report"
-            for report in reports/paper_scout/live-smoke-*.md; do
-              [ -f "$report" ] || continue
-              cat "$report"
-            done
-            echo
-            echo "### Live smoke JSON"
-            for report in reports/paper_scout/live-smoke-*.json; do
-              [ -f "$report" ] || continue
-              echo '```json'
-              cat "$report"
-              echo '```'
-            done
+            find digests reports docs -type f 2>/dev/null | sort || true
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload reports and logs
@@ -163,6 +233,19 @@ jobs:
             git push
           fi
 
+      # 5. Snapshot, verify, then persist privately. Ordered before Pages so state is
+      #    never left behind a deployment, and skipped entirely if anything above failed.
+      - name: Prepare consistent Paper Scout state snapshot
+        if: ${{ success() && !inputs.deploy_only }}
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
+
+      - name: Persist private Paper Scout state
+        id: persist-state
+        if: ${{ success() && !inputs.deploy_only }}
+        run: |
+          python .github/scripts/paper_scout_state.py persist \
+            --report "${RUNNER_TEMP}/state-persist.json"
+
       - name: Configure GitHub Pages
         if: success()
         uses: actions/configure-pages@v5
@@ -180,15 +263,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Source output is already published when this runs. Keep runtime state
-      # current even if Pages had a transient deployment failure.
-      - name: Prepare consistent Paper Scout state snapshot
-        if: ${{ steps.commit-scout-updates.outcome == 'success' }}
-        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
-
-      - name: Persist durable Paper Scout state
-        id: persist-scout-state
-        if: ${{ steps.commit-scout-updates.outcome == 'success' }}
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: bash .github/scripts/upload-paper-scout-state.sh
+      - name: Record state hashes in the run summary
+        if: always()
+        run: |
+          {
+            echo "### Durable state"
+            echo '```json'
+            cat "${RUNNER_TEMP}/state-restore.json" 2>/dev/null | head -c 4000 || echo '{"restore":"did not run"}'
+            cat "${RUNNER_TEMP}/state-persist.json" 2>/dev/null | head -c 4000 || echo '{"persist":"did not run"}'
+            echo '```'
+            echo "Pages deployment: ${{ steps.deployment.outcome || 'not attempted' }}"
+          } >> "$GITHUB_STEP_SUMMARY"

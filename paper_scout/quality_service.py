@@ -14,6 +14,7 @@ from paper_scout.curation import QualityCuration, quality_curation_for_paper
 from paper_scout.full_text import FullTextDocument, fetch_and_extract_pdf, locate_full_text_urls, select_assessment_text
 from paper_scout.models import ClassificationResult, PaperCandidate
 from paper_scout.quality import assess_quality_deterministically, should_suppress_quality
+from paper_scout.operational_preflight import credential_preflight
 from paper_scout.quality_llm import assess_with_optional_quality_llm
 from paper_scout.llm import openai_compatible_settings_from_env
 from paper_scout.quality_models import QualityAssessment, recommendation_for_score
@@ -32,6 +33,7 @@ class QualityRunStats:
     cache_misses: int = 0
     suppressed: list[str] = field(default_factory=list)
     downranked: list[str] = field(default_factory=list)
+    credential_skipped: list[str] = field(default_factory=list)
 
     def record(self, assessment: QualityAssessment, cache_hit: bool) -> None:
         self.assessed.append(assessment)
@@ -116,6 +118,21 @@ def assess_and_store_candidate(
         assessment = validate_llm_quality_response(manual_assessment, deterministic, "manual-review", selected=selected)
         assessment = replace(assessment, assessor_type="manual_override", assessor_model="manual-review:" + hashlib.sha256(json.dumps(manual_assessment, sort_keys=True).encode()).hexdigest()[:16])
     else:
+        # A half-configured or unconfigured scientific pair must not reach the gate. It
+        # would return a not_assessed result that _finalize_assessment then persists,
+        # and a stored row is what operational selection reads. Nothing is written and
+        # the paper stays exactly as retry-eligible as it was before the run.
+        if deterministic.assessment_version == ASSESSMENT_VERSION and mode not in {"off", "deterministic"}:
+            preflight = credential_preflight()
+            if not preflight.ok:
+                LOGGER.warning(
+                    "Scientific assessment skipped without persisting a row: %s",
+                    json.dumps({"canonical_id": canonical_id, "reason": preflight.reason,
+                                "missing_roles": list(preflight.missing_roles)}))
+                if stats:
+                    stats.extraction_failures.extend(extraction_errors)
+                    stats.credential_skipped.append(f"{canonical_id}: {preflight.reason}")
+                return None
         assessment = assess_with_optional_quality_llm(candidate, selected, deterministic, mode)
     if stats:
         stats.extraction_failures.extend(extraction_errors)

@@ -274,12 +274,56 @@ class ProviderContractTest(unittest.TestCase):
         self.assertEqual(workflow["on"]["workflow_dispatch"]["inputs"]["deploy_only"]["default"], "false")
         steps = workflow["jobs"]["scout"]["steps"]
         by_name = {s["name"]: s for s in steps}
-        for name in ("Restore durable Paper Scout state", "Run daily paper scout", "Commit scout updates"):
+        for name in ("Restore private Paper Scout state", "Run discovery and metadata update",
+                     "Commit scout updates", "Bounded scientific assessment",
+                     "Scientific credential preflight"):
             self.assertIn("!inputs.deploy_only", by_name[name]["if"])
         validation = by_name["Validate generated schemas, links, and runtime exclusion"]
         self.assertNotIn("if", validation)
         self.assertLess(steps.index(validation), steps.index(by_name["Deploy to GitHub Pages"]))
         self.assertEqual(by_name["Deploy to GitHub Pages"]["if"], "success()")
+
+    def test_operational_workflow_invariants(self):
+        """The workflow-level guarantees the operationalization depends on."""
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        text = (root / ".github/workflows/paper-scout.yml").read_text()
+        workflow = yaml.load(text, Loader=yaml.BaseLoader)
+        steps = workflow["jobs"]["scout"]["steps"]
+        by_name = {s["name"]: s for s in steps}
+
+        # The recurring schedule stays disabled until every gate in section 24 is met.
+        self.assertNotIn("schedule", workflow["on"])
+
+        # Discovery must not be able to enter the scientific gate: it neither receives a
+        # scientific credential nor runs the assessment queue.
+        discovery = by_name["Run discovery and metadata update"]
+        self.assertNotIn("GEMINI_API_KEY", discovery.get("env", {}))
+        self.assertNotIn("OPENROUTER_API_KEY", discovery.get("env", {}))
+        for track in ("agent_memory", "deep_research", "engram"):
+            self.assertIn(f"run --track {track} --no-llm", discovery["run"])
+
+        # Assessment runs only behind an explicit opt-in and a passing preflight, and
+        # carries the per-run cost ceiling.
+        assess = by_name["Bounded scientific assessment"]
+        self.assertIn("inputs.run_assessment", assess["if"])
+        self.assertEqual(assess["env"]["PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"], "0.30")
+        self.assertLess(steps.index(by_name["Scientific credential preflight"]),
+                        steps.index(assess))
+
+        # State is restored and verified before anything reads it, and persisted before
+        # Pages so a deployment failure cannot strand it.
+        self.assertLess(steps.index(by_name["Restore private Paper Scout state"]),
+                        steps.index(by_name["Run discovery and metadata update"]))
+        self.assertLess(steps.index(by_name["Verify restored state integrity"]),
+                        steps.index(by_name["Run discovery and metadata update"]))
+        self.assertLess(steps.index(by_name["Persist private Paper Scout state"]),
+                        steps.index(by_name["Deploy to GitHub Pages"]))
+
+        # No public-release transport may return.
+        self.assertNotIn("gh release upload", text)
+        self.assertNotIn("download-paper-scout-state", text)
+        self.assertIn("PAPER_SCOUT_STATE_REPO", text)
 
 
 class SelectionCoverageTest(unittest.TestCase):

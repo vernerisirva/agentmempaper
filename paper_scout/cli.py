@@ -497,7 +497,10 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
         ESTIMATED_OPENROUTER_USD_PER_PAPER, RUN_LEVEL_STOP_REASONS, CostCeilingExceeded)
 
     summaries = summaries or {}
-    consumed: set[str] = set()
+    # Why each finished track finished. The label matters: a track that spent its slot on
+    # a real assessment and one stopped by a run-global condition are different events,
+    # and skipped_before_model is grouped across runs.
+    consumed: dict[str, str] = {}
 
     def record_skip(candidate, outcome: str) -> None:
         """Note in the track summary why a nomination produced no assessment."""
@@ -520,8 +523,8 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
 
     for position, candidate in enumerate(selected):
         if candidate.track in consumed:
-            # This track already spent its one model-consuming assessment this run.
-            note_not_walked(candidate, "track_slot_consumed")
+            # Finished, for the reason recorded when it finished.
+            note_not_walked(candidate, consumed[candidate.track])
             continue
         allowed, reason = budget.may_assess(candidate.track)
         if not allowed:
@@ -530,7 +533,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                 for remaining in selected[position:]:
                     note_not_walked(remaining, reason)
                 return
-            consumed.add(candidate.track)
+            consumed[candidate.track] = reason
             note_not_walked(candidate, reason)
             continue
         config = configs[candidate.track]
@@ -573,7 +576,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             budget.record(candidate.track,
                           openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
             metrics.unknown_cost_calls += 1
-            consumed.add(candidate.track)
+            consumed[candidate.track] = "track_slot_consumed"
             continue
         if assessment is None:
             # Returned only before any model call: the quality path was disabled for this
@@ -589,7 +592,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             # slot is not really spent here — no model ran and the papers stay eligible —
             # the run simply stops asking a question whose answer cannot change.
             metrics.credential_skipped += 1
-            consumed.add(candidate.track)
+            consumed[candidate.track] = "scientific_path_unavailable"
             record_skip(candidate, "scientific_path_unavailable")
             continue
         outcome = (assessment.execution or {}).get("outcome")
@@ -615,7 +618,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                   f"{candidate.canonical_id}: {outcome} (no model call)")
             continue
         metrics.papers_attempted += 1
-        consumed.add(candidate.track)
+        consumed[candidate.track] = "track_slot_consumed"
         budget.record(candidate.track, openrouter_usd=usage["openrouter_usd"],
                       openrouter_calls=usage["openrouter_calls"],
                       gemini_calls=usage["gemini_calls"],

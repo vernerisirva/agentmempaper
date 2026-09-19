@@ -141,7 +141,8 @@ def credential_preflight(primary_model: str | None = None,
 #: Reasons from RunBudget.may_assess that end the whole run rather than one track.
 #: Defined beside may_assess so a caller classifying a refusal cannot drift from the
 #: strings it actually returns; the walk imports this rather than repeating the literals.
-RUN_LEVEL_STOP_REASONS = frozenset({"run_paper_limit_reached", "openrouter_ceiling_reached"})
+RUN_LEVEL_STOP_REASONS = frozenset({"run_paper_limit_reached", "openrouter_ceiling_reached",
+                                    "openrouter_projection_exceeds_ceiling"})
 #: Reasons that end only the track they were raised for.
 TRACK_LEVEL_STOP_REASONS = frozenset({"track_paper_limit_reached"})
 
@@ -185,6 +186,17 @@ class RunBudget:
                 raise ValueError(f"{OPENROUTER_CEILING_ENV} must be positive")
         return cls(openrouter_ceiling_usd=ceiling)
 
+    def _stop(self, reason: str) -> None:
+        """Record a run-level stop, enforcing that it really is run-level.
+
+        may_assess returns stopped_reason verbatim and the walk classifies it to decide
+        whether to end the run or one track. That only holds if nothing can park a
+        track-level reason here, so the invariant is checked rather than documented.
+        """
+        if reason in TRACK_LEVEL_STOP_REASONS:
+            raise ValueError(f"track-level reason cannot stop the run: {reason}")
+        self.stopped_reason = reason
+
     @property
     def total_assessed(self) -> int:
         return sum(self.assessed_per_track.values())
@@ -227,7 +239,7 @@ class RunBudget:
         if projected_usd < 0:
             raise ValueError("projected cost cannot be negative")
         if self.openrouter_spend_usd + projected_usd > self.openrouter_ceiling_usd:
-            self.stopped_reason = "openrouter_projection_exceeds_ceiling"
+            self._stop("openrouter_projection_exceeds_ceiling")
             raise CostCeilingExceeded(self.stopped_reason)
 
     def record(self, track: str, *, openrouter_usd: float = 0.0, openrouter_calls: int = 0,
@@ -241,7 +253,7 @@ class RunBudget:
         self.gemini_input_tokens += gemini_input_tokens
         self.gemini_output_tokens += gemini_output_tokens
         if self.openrouter_spend_usd >= self.openrouter_ceiling_usd:
-            self.stopped_reason = "openrouter_ceiling_reached"
+            self._stop("openrouter_ceiling_reached")
 
     def to_dict(self) -> dict[str, Any]:
         return {

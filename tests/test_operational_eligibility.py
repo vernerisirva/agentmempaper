@@ -840,6 +840,43 @@ class AcquisitionWalk(unittest.TestCase):
             capture_output=True, text=True).stdout.strip()
         self.assertEqual(hits, "", f"a consumer still reads the v1 key: {hits}")
 
+    def test_a_run_global_stop_is_not_labelled_as_a_spent_slot(self):
+        """A track stopped by an unusable scientific path did not spend its slot."""
+        nominees = [self.nominee("agent_memory", r, f"p{r}") for r in (1, 2, 3)]
+        results = {f"p{r}": None for r in (1, 2, 3)}
+        _, _, _, summaries = self.walk(nominees, results)
+        outcomes = [e["outcome"] for e in summaries["agent_memory"].skipped_before_model]
+        self.assertEqual(outcomes, ["scientific_path_unavailable"] * 3)
+        self.assertNotIn("track_slot_consumed", outcomes)
+
+    def test_a_genuinely_spent_slot_is_labelled_as_one(self):
+        nominees = [self.nominee("agent_memory", r, f"p{r}") for r in (1, 2)]
+        results = {"p1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "p2": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        _, _, _, summaries = self.walk(nominees, results)
+        self.assertEqual([e["outcome"] for e in summaries["agent_memory"].skipped_before_model],
+                         ["track_slot_consumed"])
+
+    def test_a_track_level_reason_cannot_stop_the_whole_run(self):
+        """The walk trusts stopped_reason to be run-level, so that must be enforced."""
+        from paper_scout.operational_preflight import TRACK_LEVEL_STOP_REASONS
+        budget = RunBudget()
+        for reason in TRACK_LEVEL_STOP_REASONS:
+            with self.subTest(reason=reason):
+                with self.assertRaises(ValueError):
+                    budget._stop(reason)
+        self.assertIsNone(budget.stopped_reason)
+
+    def test_every_run_level_stop_reason_is_declared(self):
+        from paper_scout.operational_preflight import RUN_LEVEL_STOP_REASONS, RunBudget
+        # The projection stop sets stopped_reason and must be classified run-level, or
+        # the walk would treat a ceiling breach as one track finishing.
+        budget = RunBudget()
+        with self.assertRaises(CostCeilingExceeded):
+            budget.reserve("agent_memory", 0.31)
+        self.assertIn(budget.stopped_reason, RUN_LEVEL_STOP_REASONS)
+        self.assertIn(budget.may_assess("agent_memory")[1], RUN_LEVEL_STOP_REASONS)
+
     def test_skip_outcomes_use_a_stable_vocabulary(self):
         """These strings are grouped across runs, so they must not embed live values."""
         from paper_scout.operational_preflight import (

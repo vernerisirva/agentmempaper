@@ -9,6 +9,7 @@ import io
 import json
 from pathlib import Path
 import re
+from contextlib import closing
 import sqlite3
 
 from .deduplication import normalize_arxiv_id
@@ -1191,7 +1192,10 @@ def _max_date_value(left: str | None, right: str | None) -> str | None:
 def _load_library_papers(state_path: Path) -> list[LibraryPaper]:
     if not state_path.exists():
         return []
-    with sqlite3.connect(state_path) as db:
+    # closing(), not the bare connection context manager: that one commits but never
+    # closes, so the handle survives until the garbage collector runs and surfaces as a
+    # leaked connection in an unrelated test.
+    with closing(sqlite3.connect(state_path)) as db:
         db.row_factory = sqlite3.Row
         _ensure_site_column(db, "publication_year", "TEXT")
         _ensure_site_column(db, "publication_date_precision", "TEXT")

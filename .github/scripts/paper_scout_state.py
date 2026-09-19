@@ -53,11 +53,25 @@ STATE_REPO_ENV = "PAPER_SCOUT_STATE_REPO"
 STATE_TOKEN_ENV = "PAPER_SCOUT_STATE_TOKEN"
 #: The public repository. Naming it here lets the script refuse it explicitly rather than
 #: relying on whoever edits the workflow to remember why the destination has to differ.
+#: Compared case-insensitively, because GitHub repository names are.
 PUBLIC_REPO = "vernerisirva/agentmempaper"
 
 
 class StateError(RuntimeError):
     """A state transport failure. Always fatal; never recovered by initializing state."""
+
+
+def _is_missing_release(stderr: str) -> bool:
+    """Whether gh reported an absent release rather than a failure to ask.
+
+    The distinction matters in both directions: reading an access failure as "no snapshot
+    yet" is how a healthy history gets replaced by empty databases, and reading it as
+    "release missing" on persist hides the real transport error behind a create attempt.
+    """
+    lowered = (stderr or "").lower()
+    if "403" in lowered or "forbidden" in lowered or "unauthor" in lowered:
+        return False
+    return "not found" in lowered or "404" in lowered
 
 
 def _run(args: list[str], token: str, check: bool = True) -> subprocess.CompletedProcess:
@@ -77,7 +91,7 @@ def _destination() -> tuple[str, str]:
         raise StateError(
             f"{STATE_REPO_ENV} is not set. Private durable state has no destination, and "
             "the public release is not an acceptable fallback for assessment databases.")
-    if repo == PUBLIC_REPO:
+    if repo.lower() == PUBLIC_REPO.lower():
         raise StateError(
             f"{STATE_REPO_ENV} points at the public repository {PUBLIC_REPO}. Runtime "
             "state must go to a private destination.")
@@ -113,8 +127,7 @@ def restore(tag: str, allow_initialize: bool, report_path: Path | None) -> int:
 
     view = _run(["gh", "release", "view", tag, "--repo", repo, "--json", "id"], token, check=False)
     if view.returncode != 0:
-        stderr = view.stderr.lower()
-        if "not found" not in stderr and "404" not in stderr:
+        if not _is_missing_release(view.stderr):
             raise StateError(f"cannot determine whether private state exists: {view.stderr.strip()[:400]}")
         # No snapshot exists. This is only legitimate on a deliberate first
         # initialization; on any later run it means the state was lost.
@@ -190,6 +203,11 @@ def persist(tag: str, report_path: Path | None) -> int:
 
     view = _run(["gh", "release", "view", tag, "--repo", repo, "--json", "id"], token, check=False)
     if view.returncode != 0:
+        # Only an absent release justifies creating one. An auth, network or rate-limit
+        # failure must surface as itself rather than as a confusing create error.
+        if not _is_missing_release(view.stderr):
+            raise StateError(f"cannot determine whether the private state release exists: "
+                             f"{view.stderr.strip()[:400]}")
         create = _run(["gh", "release", "create", tag, "--repo", repo, "--prerelease",
                        "--title", "Paper Scout runtime state",
                        "--notes", "Private mutable runtime state. Never publish. "

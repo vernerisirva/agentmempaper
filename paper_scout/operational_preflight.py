@@ -35,9 +35,22 @@ BUDGET_VERSION = "operational-budget-v1"
 MAX_PAPERS_PER_TRACK = 1
 MAX_PAPERS_PER_RUN = 3
 
-#: Hard per-run ceiling on *known* OpenRouter spend, in USD. A maximum, not a target.
+#: Per-run ceiling on *known* OpenRouter spend, in USD. A maximum, not a target.
 DEFAULT_OPENROUTER_RUN_CEILING_USD = 0.30
 OPENROUTER_CEILING_ENV = "PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"
+
+#: Expected OpenRouter cost of one paper's adjudication, reserved *before* the calls are
+#: made. Batch 6 measured $0.29777891 across ten papers, or $0.0297779 each; this is
+#: rounded up and allows for the bounded adjudicator retry.
+#:
+#: The ceiling is enforced between papers, not inside one. A single paper's calls are
+#: already committed once they are issued, so the guarantee this provides is: the run
+#: never *starts* a paper whose expected cost would carry it past the ceiling. With a
+#: three-paper maximum and this estimate the worst case is far under $0.30, and the
+#: residual exposure is one paper's overrun. Enforcing a true hard cap would require a
+#: provider-side spend limit on the OpenRouter key, which is an account setting rather
+#: than something this process can impose.
+ESTIMATED_OPENROUTER_USD_PER_PAPER = 0.05
 
 
 @dataclass(frozen=True)
@@ -168,12 +181,16 @@ class RunBudget:
             return False, "openrouter_ceiling_reached"
         return True, "within_budget"
 
-    def reserve(self, track: str, projected_usd: float) -> None:
+    def reserve(self, track: str, projected_usd: float | None = None) -> None:
         """Check the projected cost of the next paper before it is assessed.
 
         Fails closed: a projection that would carry the run past the ceiling stops the
-        run rather than being attempted and reconciled afterwards.
+        run rather than being attempted and reconciled afterwards. The default projection
+        is the measured per-paper estimate, so a caller that does not supply one still
+        gets a real pre-spend check rather than a no-op.
         """
+        if projected_usd is None:
+            projected_usd = ESTIMATED_OPENROUTER_USD_PER_PAPER
         allowed, reason = self.may_assess(track)
         if not allowed:
             raise CostCeilingExceeded(reason)

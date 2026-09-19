@@ -16,6 +16,7 @@ a batch committed to.
 """
 from __future__ import annotations
 
+from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 import json
@@ -253,7 +254,7 @@ def excluded_identities(configs: dict[str, ScoutConfig],
         # that silently covered fewer tracks than it claims is the defect this module
         # exists to prevent. Its curation directives still apply.
         if path.exists():
-            with sqlite3.connect(path) as db:
+            with closing(sqlite3.connect(path)) as db:
                 db.row_factory = sqlite3.Row
                 rows = {str(r["canonical_key"]): r
                         for r in db.execute("SELECT * FROM papers").fetchall()}

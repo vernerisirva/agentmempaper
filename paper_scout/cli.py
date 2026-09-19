@@ -465,7 +465,8 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
             continue
         canonical_id, paper, decision = rows[0]
         try:
-            budget.reserve(candidate.track, 0.0)
+            # Reserve the measured per-paper estimate before any call is issued.
+            budget.reserve(candidate.track)
         except CostCeilingExceeded as exc:
             print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
             break

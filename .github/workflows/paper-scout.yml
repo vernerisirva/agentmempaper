@@ -139,7 +139,10 @@ jobs:
           result = credential_preflight()
           detail = json.dumps(result.to_dict(), indent=2)
           print(f"ok={'true' if result.ok else 'false'}")
-          print(f"reason={result.reason}")
+          # GITHUB_OUTPUT is line-oriented: a newline in the value corrupts the file and
+          # silently breaks every later output, so collapse whitespace and bound length.
+          reason = " ".join(str(result.reason).split())[:200]
+          print(f"reason={reason}")
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
               summary.write(f"### Credential preflight\n\n```json\n{detail}\n```\n")
           if not result.ok:

@@ -22,6 +22,7 @@ whether a manuscript can actually be assessed.
 """
 from __future__ import annotations
 
+from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 import json
@@ -61,7 +62,7 @@ def _stored_assessments(path: Path) -> dict[str, list[dict]]:
     if not Path(path).exists():
         return {}
     grouped: dict[str, list[dict]] = {}
-    with sqlite3.connect(path) as db:
+    with closing(sqlite3.connect(path)) as db:
         db.row_factory = sqlite3.Row
         exists = db.execute("SELECT 1 FROM sqlite_master WHERE type='table'"
                             " AND name='paper_quality_assessments'").fetchone()
@@ -80,7 +81,7 @@ def _stored_assessments(path: Path) -> dict[str, list[dict]]:
 def _suppressed(path: Path) -> set[str]:
     if not Path(path).exists():
         return set()
-    with sqlite3.connect(path) as db:
+    with closing(sqlite3.connect(path)) as db:
         exists = db.execute("SELECT 1 FROM sqlite_master WHERE type='table'"
                             " AND name='quality_suppressions'").fetchone()
         if not exists:

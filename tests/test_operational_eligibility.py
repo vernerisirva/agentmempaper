@@ -8,6 +8,7 @@ The invariant under test throughout is the one the operationalization exists to
 establish: a technical failure must never be mistaken for a scientific decision, and
 must never permanently consume a paper's eligibility.
 """
+from contextlib import closing
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 import json
@@ -37,7 +38,7 @@ from test_promotion_gate import ENV, Models, fixture
 
 def insert_assessment(path, canonical_id, payload):
     """Insert one row through the real schema, which is fully NOT NULL constrained."""
-    with sqlite3.connect(path) as db:
+    with closing(sqlite3.connect(path)) as db:
         db.execute(
             "INSERT INTO paper_quality_assessments (canonical_id, assessment_version,"
             " rubric_version, assessor_type, assessor_model, source_content_hash,"
@@ -48,6 +49,7 @@ def insert_assessment(path, canonical_id, payload):
              "0" * 64, payload.get("assessed_at", "2026-09-19T00:00:00+00:00"),
              "unknown", "low", payload.get("assessment_scope", "full_text"),
              "empirical", json.dumps(payload)))
+        db.commit()
 
 
 def row(outcome=None, *, assessor="hybrid", scope="full_text", status="pass", at=None):
@@ -202,6 +204,42 @@ class ExclusionPolicy(unittest.TestCase):
         self.assertEqual(legacy["canonical:doi:10.1/decided"][0], "prior_assessment")
         self.assertEqual(operational["canonical:doi:10.1/decided"][0], "prior_completed_assessment")
 
+    def test_a_legacy_manifest_still_reproduces_after_a_technical_row_appears(self):
+        """The backward-compatibility claim, exercised end to end.
+
+        A manifest written under the historical policy must keep rebuilding
+        byte-identically, including its digest, after the operational policy exists. The
+        frozen Batch 2-6 manifests carry no exclusion_policy field, so verify_manifest has
+        to read an absent field as the historical policy rather than the current default.
+        """
+        from paper_scout.batch_population import (
+            LEGACY_EXCLUSION_POLICY as legacy, OPERATIONAL_EXCLUSION_POLICY as operational,
+            build_population, manifest_digest, population_manifest, verify_manifest)
+        from paper_scout.config import load_config
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "state.sqlite3"
+            PaperStore(path)
+            config = replace(load_config(track_id="agent_memory"), sqlite_path=str(path))
+            configs = {"agent_memory": config}
+
+            population = build_population(configs, "2026-09-19T00:00:00", (), configs, legacy)
+            manifest = population_manifest(population, "test-sha")
+            # A frozen manifest predates the field entirely.
+            self.assertNotIn("exclusion_policy", manifest["sources"])
+
+            verification = verify_manifest(manifest, configs, configs)
+            self.assertTrue(verification.reproduced)
+            self.assertEqual(verification.stored_digest, verification.rebuilt_digest)
+            self.assertEqual(manifest_digest(manifest), manifest["manifest_sha256"])
+
+            # An operational manifest records its policy and therefore hashes differently,
+            # which is correct: it describes a genuinely different population.
+            operational_manifest = population_manifest(
+                build_population(configs, "2026-09-19T00:00:00", (), configs, operational),
+                "test-sha")
+            self.assertEqual(operational_manifest["sources"]["exclusion_policy"], operational)
+            self.assertTrue(verify_manifest(operational_manifest, configs, configs).reproduced)
+
     def test_historical_technical_rows_remain_auditable(self):
         # The fix must not delete or rewrite history. A technical row stays readable and
         # keeps reporting what it was; it simply stops being read as a decision.
@@ -291,7 +329,7 @@ class MissingCredentialWritesNoRow(unittest.TestCase):
                     ClassificationResult(90, "relevant", "rule"), stats=stats)
             self.assertIsNone(result)
             self.assertTrue(stats.credential_skipped)
-            with sqlite3.connect(Path(tmp) / "state.sqlite3") as db:
+            with closing(sqlite3.connect(Path(tmp) / "state.sqlite3")) as db:
                 stored = db.execute("SELECT COUNT(*) FROM paper_quality_assessments").fetchone()[0]
         # Nothing was written, so the paper is exactly as eligible as before the run.
         self.assertEqual(stored, 0)
@@ -532,9 +570,10 @@ class PrivateStateSnapshot(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             source = self.make_state(Path(tmp) / "src")
             target = self.make_state(Path(tmp) / "dst")
-            with sqlite3.connect(target / STATE_PATHS[0]) as db:
+            with closing(sqlite3.connect(target / STATE_PATHS[0])) as db:
                 db.execute("INSERT INTO notifications (canonical_key, digest_date,"
                            " notified_at) VALUES ('keep', '2026-09-19', '2026-09-19T00:00:00')")
+                db.commit()
             before = (target / STATE_PATHS[0]).read_bytes()
             archive = Path(tmp) / "state.tar.gz"
             pack_snapshot(archive, root=source)

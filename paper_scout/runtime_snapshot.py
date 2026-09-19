@@ -14,6 +14,7 @@ rejected for missing a field that did not exist when it was packed.
 from __future__ import annotations
 
 import argparse
+from contextlib import closing
 from datetime import UTC, datetime
 import hashlib
 import io
@@ -44,7 +45,7 @@ COUNTED_TABLES = ("papers", "paper_quality_assessments", "runs")
 def row_counts(path: Path) -> dict:
     """Row counts for the audited tables, or -1 for a table this database lacks."""
     counts = {}
-    with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as db:
+    with closing(sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
         present = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
         for table in COUNTED_TABLES:
             counts[table] = (db.execute(f'SELECT COUNT(*) FROM "{table}"').fetchone()[0]
@@ -53,7 +54,7 @@ def row_counts(path: Path) -> dict:
 
 
 def verify_database(path: Path) -> None:
-    with sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True) as db:
+    with closing(sqlite3.connect(path.resolve().as_uri() + "?mode=ro", uri=True)) as db:
         if db.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
             raise ValueError(f"corrupt state: {path.name}")
         tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}

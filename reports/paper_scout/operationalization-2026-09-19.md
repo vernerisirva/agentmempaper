@@ -2,13 +2,13 @@
 
 **Two defects stood between the validated gate and safe recurring operation, and both are fixed and merged. A technical failure permanently retired a paper: 434 of the 509 papers holding assessment rows had never received a scientific decision yet were already excluded forever. And the runtime state — all three databases, including 18 rows of raw model payloads — answered an unauthenticated request with HTTP 200 from a public release.**
 
-**The cutover ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. A first smoke failed on a malformed secret and changed nothing; after the secrets were re-set, the second smoke completed all 22 steps green. Every operational invariant verified — except one: both selected papers had unretrievable manuscripts, so the run made ZERO Gemini and ZERO DeepSeek calls. The scientific path has still never executed in Actions, so recurring assessment stays DISABLED.**
+**The cutover ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. A first smoke failed on a malformed secret and changed nothing; after the secrets were re-set, two further runs completed all 22 steps green. Every operational invariant verified — except one: all four selected papers failed acquisition or the coverage gate, so both runs made ZERO Gemini and ZERO DeepSeek calls. The scientific path has still never executed in Actions, so recurring assessment stays DISABLED.**
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES   (Batch 6, unchanged)
 PRIVATE_DURABLE_STATE_READY:          YES      — seeded, verified, clean-restored, and round-tripped by a real run
 OPERATIONAL_QUALITY_ASSESSMENT_READY: PARTIAL  — pipeline proven; the model path itself is still unexercised
-FIRST_OPERATIONAL_SMOKE:              PARTIAL  — 22/22 steps green, 0 model calls made
+FIRST_OPERATIONAL_SMOKE:              PARTIAL  — two runs, 22/22 steps green each, 0 model calls in both
 PUBLIC_STATE_ARCHIVE_REMOVED:         YES      — deleted and confirmed unreachable anonymously
 RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
 ```
@@ -231,7 +231,7 @@ Per policy the run was **not** retried and **not** silently patched, and the sch
 ## L. Known operational backlog
 
 1. **The scientific model path has never executed in Actions.** Preflight proves a credential is present, not that it works. This is the only gate still open before the cron can be enabled.
-2. **Throughput at current bounds is well under 2 papers/day.** Acquisition succeeds for roughly a quarter to a third of top-ranked candidates, and selection does not pre-check retrievability. Walking a few candidates per track before giving up, as the Batch-6 roster build did, is the obvious remedy and is an explicit operational decision, not an automatic one.
+2. **Throughput is the blocker, not a nicety.** Observed 0 of 4 top-ranked candidates acquirable, against Batch 6's 25–36%. 22 papers across the two tracks now hold an acquisition or coverage failure with no completed assessment, each consuming three daily slots before parking. Until selection walks to a paper it can actually acquire, the schedule would idle and the model path would stay unvalidated. The Batch-6 roster walk is committed, proven code for exactly this and raises no limit.
 2. **The public archive is deleted** (§M), but it recorded `downloadCount: 1` and GitHub cannot retract copies already taken. Treat the databases it held as disclosed.
 3. **Re-run the smoke once** after the secret is corrected, at exactly the production bounds (1/track, 3 total, $0.30), and only then enable the daily cron and re-enable the weekly backfill.
 4. **Consider a cheap credential-only dispatch path** so a bad secret is caught without consuming a full production run. The smoke's fail-closed behaviour is correct but expensive to use as a credential test.
@@ -348,13 +348,30 @@ Snapshot provenance is now populated, which it could not be for the local seed:
 
 State moved as expected: papers 18,343 → 18,530, 2,395 → 2,437, 306 → 338; assessments 353 → 354 and 276 → 277, engram unchanged at 48.
 
+### Third run — same outcome, and the pattern is now the finding
+
+Run [35459145864](https://github.com/vernerisirva/agentmempaper/actions/runs/35459145864) on `9b03f569a`, dispatched specifically to exercise the model path. All 22 steps green again, and again **zero Gemini and zero DeepSeek calls**.
+
+| Track | Candidate | Rank | Outcome |
+|---|---|---:|---|
+| agent_memory | `doi:10.5281/zenodo.22830845` | 2 | `manuscript_unavailable` |
+| deep_research | `doi:10.21203/rs.3.rs-10954762/v1` | 2 | `text_coverage_failure` |
+
+The two failure modes differ, and both short-circuit before any request is issued. Append-only held again — 354 / 277 / 48 pre-existing rows byte-identical — and the snapshot persisted (`sha256:408533bf…`) and clean-restored.
+
+**Four of four top-ranked candidates across two runs failed before reaching a model.** That is no longer a run of bad luck; it is the expected behaviour of taking the single top-ranked candidate from a ranking whose head is dominated by Zenodo, Research Square and similar records with no retrievable or coverage-valid manuscript. Across the two tracks, **22 papers now hold an acquisition or coverage failure with no completed assessment**.
+
 ### Why no model call happened, and why it matters
 
 The two selected papers were `doi:10.5281/zenodo.22837961` (agent_memory rank 1) and `doi:10.64898/2026.09.11.751076` (deep_research rank 1). Both returned `manuscript_unavailable` during acquisition, which happens **before** the gate issues any request, so neither model was contacted.
 
 That is correct behaviour and it exercised the retry design properly — both rows are technical, neither is a completed assessment, and both papers return to eligibility after the 20-hour cooldown. But it leaves the single most expensive assumption untested: **the preflight only checks that a credential is present, not that it works.** A wrong or expired `GEMINI_API_KEY` or `OPENROUTER_API_KEY` would pass preflight exactly as it did here and fail at call time. Enabling the cron now would mean the first real scientific call in production happens unattended.
 
-**This is also an operational throughput finding.** Selection takes the top eligible candidate per track and does not pre-check retrievability, because that needs network acquisition. Batch 6 measured how often acquisition succeeds by walking the same ranking: 5 of 14 for agent_memory and 5 of 20 for deep_research, roughly 25–36%. With one candidate per track per day, **most daily runs will assess nothing**, and each unretrievable paper consumes three daily slots over three runs before parking at `retry_budget_exhausted`. The gate is not broken and no eligibility is lost, but realistic throughput at current bounds is well under two papers a day.
+**This is also an operational throughput finding, and the two runs have now confirmed it empirically.** Selection takes the top eligible candidate per track and does not pre-check retrievability, because that needs network acquisition. Batch 6 measured how often acquisition succeeds by walking the same ranking: 5 of 14 for agent_memory and 5 of 20 for deep_research, roughly 25–36%. Observed here: **0 of 4**.
+
+With one candidate per track per day, most daily runs will assess nothing, and each unretrievable paper consumes three daily slots over three runs before parking at `retry_budget_exhausted`. The gate is not broken and no eligibility is lost — but at this rate the schedule would idle, and the scientific path would stay unvalidated indefinitely.
+
+The remedy does not involve raising any limit. Batch 6's roster build already solved exactly this with committed, proven code: it walked the frozen ordered population through the production acquisition and coverage gate — read-only, no model call, nothing persisted — and took the first candidates that passed. Reusing that walk in the operational selector would keep the bound at one assessed paper per track per day while making it land on a paper that can actually be assessed. It is a behaviour change to the operational path and needs tests and independent review.
 
 ---
 

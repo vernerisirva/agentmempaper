@@ -292,8 +292,14 @@ class ProviderContractTest(unittest.TestCase):
         steps = workflow["jobs"]["scout"]["steps"]
         by_name = {s["name"]: s for s in steps}
 
-        # The recurring schedule stays disabled until every gate in section 24 is met.
-        self.assertNotIn("schedule", workflow["on"])
+        # The schedule is live as of 2026-09-19. What must not drift are the bounds it
+        # runs under, so those are pinned here instead of the trigger's absence.
+        self.assertEqual(workflow["on"]["schedule"], [{"cron": "20 6 * * *"}])
+        from paper_scout.operational_preflight import (
+            DEFAULT_OPENROUTER_RUN_CEILING_USD, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK)
+        self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
+        self.assertEqual(MAX_PAPERS_PER_RUN, 3)
+        self.assertEqual(DEFAULT_OPENROUTER_RUN_CEILING_USD, 0.30)
 
         # Discovery must not be able to enter the scientific gate: it neither receives a
         # scientific credential nor runs the assessment queue.
@@ -343,12 +349,27 @@ class ProviderContractTest(unittest.TestCase):
         for name in carrying:
             self.assertIn("paper_scout_state.py", by_name[name]["run"])
 
+    def test_both_scheduled_writers_share_one_concurrency_group(self):
+        """Single-writer discipline is what makes two scheduled workflows safe."""
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        groups = []
+        for name in ("paper-scout.yml", "paper-scout-backfill.yml"):
+            workflow = yaml.load((root / ".github/workflows" / name).read_text(),
+                                 Loader=yaml.BaseLoader)
+            concurrency = workflow["concurrency"]
+            groups.append(concurrency["group"])
+            # Cancelling mid-run could abandon state between snapshot and persist.
+            self.assertEqual(concurrency["cancel-in-progress"], "false")
+            self.assertEqual(concurrency["queue"], "max")
+        self.assertEqual(len(set(groups)), 1, "the two writers must serialize")
+
     def test_backfill_workflow_scopes_the_state_credential_too(self):
         import yaml
         root = Path(__file__).resolve().parents[1]
         workflow = yaml.load((root / ".github/workflows/paper-scout-backfill.yml").read_text(),
                              Loader=yaml.BaseLoader)
-        self.assertNotIn("schedule", workflow["on"])
+        self.assertEqual(workflow["on"]["schedule"], [{"cron": "40 5 * * 0"}])
         job = workflow["jobs"]["backfill"]
         self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (workflow.get("env") or {}))
         self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (job.get("env") or {}))

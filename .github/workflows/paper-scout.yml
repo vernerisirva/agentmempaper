@@ -1,22 +1,25 @@
 name: Paper Scout
 
-# The daily schedule is deliberately disabled until every operationalization gate is
-# satisfied. Re-enable the cron below only when all of these hold, and not before:
+# Recurring scientific assessment was enabled on 2026-09-19, after every gate was met:
 #
-#   PRIVATE_DURABLE_STATE_READY        = YES   (private state repo + token, smoke-verified)
-#   GITHUB_GEMINI_SECRET               = PRESENT
-#   GITHUB_OPENROUTER_SECRET           = PRESENT
-#   OPERATIONAL_RETRY_ELIGIBILITY_READY= YES
-#   DAILY_COST_GUARD_READY             = YES
-#   FULL_VALIDATION                    = PASS
-#   INDEPENDENT_REVIEW                 = PASS or PASS_WITH_NOTES, 0 unresolved blockers
-#   FIRST_OPERATIONAL_SMOKE            = PASS
+#   PRIVATE_DURABLE_STATE_READY         YES   private state repo + token, round-trip verified
+#   GITHUB_GEMINI_SECRET                PRESENT
+#   GITHUB_OPENROUTER_SECRET            PRESENT
+#   OPERATIONAL_RETRY_ELIGIBILITY_READY YES
+#   DAILY_COST_GUARD_READY              YES
+#   FULL_VALIDATION                     PASS   606 tests
+#   INDEPENDENT_REVIEW                  PASS_WITH_NOTES, 0 unresolved blockers
+#   FIRST_OPERATIONAL_SMOKE             PASS   run 35461618434, 2 assessed, 2 promoted
 #
-# Until then this workflow runs only on demand, so exactly one writer touches the durable
-# state and no unattended run can act on a half-configured environment.
+# Bounds are frozen and must not be raised without an explicit operational decision:
+# 1 paper per track per run, 3 per run, $0.30 known OpenRouter spend per run. A track with
+# nothing eligible forfeits its slot rather than lending it, so the usual daily maximum is
+# two. This workflow and the weekly backfill share one concurrency group with
+# cancel-in-progress false and queue max, which is what keeps a single writer on the
+# durable state.
 on:
-  # schedule:
-  #   - cron: "20 6 * * *"
+  schedule:
+    - cron: "20 6 * * *"
   workflow_dispatch:
     inputs:
       deploy_only:

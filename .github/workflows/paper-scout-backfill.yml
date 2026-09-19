@@ -1,11 +1,13 @@
 name: Paper Scout Backfill
 
-# The weekly schedule is disabled for the same reason as the daily one: this workflow
-# writes durable state, and exactly one writer may own that state during the
-# operationalization cutover. Re-enable it only after the first operational smoke passes.
+# Re-enabled on 2026-09-19 alongside the daily workflow. This one performs recovery only
+# and never runs the scientific gate: every backfill command passes --no-llm and the step
+# receives no scientific credential. It uses the same private durable state through the
+# same transport, with the token scoped to the two transport steps, and shares the daily
+# workflow's concurrency group so the two serialize and a single writer owns the state.
 on:
-  # schedule:
-  #   - cron: "40 5 * * 0"
+  schedule:
+    - cron: "40 5 * * 0"
   workflow_dispatch:
     inputs:
       allow_state_initialize:

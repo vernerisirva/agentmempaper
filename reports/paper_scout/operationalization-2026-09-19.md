@@ -2,15 +2,15 @@
 
 **Two defects stood between the validated gate and safe recurring operation, and both are fixed and merged. A technical failure permanently retired a paper: 434 of the 509 papers holding assessment rows had never received a scientific decision yet were already excluded forever. And the runtime state — all three databases, including 18 rows of raw model payloads — answered an unauthenticated request with HTTP 200 from a public release.**
 
-**The cutover ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. A first smoke failed on a malformed secret and changed nothing; after the secrets were re-set, two further runs completed all 22 steps green. Every operational invariant verified — except one: all four selected papers failed acquisition or the coverage gate, so both runs made ZERO Gemini and ZERO DeepSeek calls. The scientific path has still never executed in Actions, so recurring assessment stays DISABLED.**
+**The cutover completed on 2026-09-19. Private durable state is live and verified byte for byte, the public archive is deleted and confirmed unreachable, and the operational pipeline has now assessed real papers end to end: two promoted, both models called, $0.033 of a $0.30 ceiling. Getting there took four runs and one engineering cycle, because three runs went green while assessing nothing — taking only the top-ranked candidate reached a model 0 times in 4, and the fix was to walk the ranking until a manuscript can actually be acquired. Recurring assessment is ENABLED at the frozen bounds.**
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES   (Batch 6, unchanged)
-PRIVATE_DURABLE_STATE_READY:          YES      — seeded, verified, clean-restored, and round-tripped by a real run
-OPERATIONAL_QUALITY_ASSESSMENT_READY: PARTIAL  — pipeline proven; the model path itself is still unexercised
-FIRST_OPERATIONAL_SMOKE:              PARTIAL  — two runs, 22/22 steps green each, 0 model calls in both
-PUBLIC_STATE_ARCHIVE_REMOVED:         YES      — deleted and confirmed unreachable anonymously
-RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
+PRIVATE_DURABLE_STATE_READY:          YES  — seeded, verified, clean-restored, round-tripped by four real runs
+OPERATIONAL_QUALITY_ASSESSMENT_READY: YES  — two papers assessed and promoted through the full production path
+FIRST_OPERATIONAL_SMOKE:              PASS — run 35461618434
+PUBLIC_STATE_ARCHIVE_REMOVED:         YES  — deleted and confirmed unreachable anonymously
+RECURRING_QUALITY_ASSESSMENT_ENABLED: YES  — daily 06:20 UTC, weekly backfill 05:40 Sunday
 ```
 
 | Item | Value |
@@ -207,7 +207,7 @@ A structural limit is recorded rather than solved: an 18 KB per-file cap and a 1
 
 ## J. Production smoke
 
-**Run twice.** The first attempt FAILED at its first gate; the second completed all 22 steps green but made no model call, so the result is `FIRST_OPERATIONAL_SMOKE = PARTIAL`. Detail for both is in §M.
+**Run four times.** The first failed at its first gate on a malformed secret; the second and third went green but reached no model; the fourth, after the acquisition walk was merged, assessed and promoted two papers through the full production path. `FIRST_OPERATIONAL_SMOKE = PASS`. Detail for all four is in §M.
 
 First attempt: It stopped on `HTTP 401: Bad credentials` restoring private state, skipped every subsequent step, and changed nothing — no assessment, no commit, no state write. The cause is a repository secret holding the literal value `-`, which is a provisioning error rather than a code defect. Full detail, evidence and the damage-free verification are in §M.
 
@@ -226,12 +226,13 @@ Per policy the run was **not** retried and **not** silently patched, and the sch
 | `DAILY_COST_GUARD_READY` | **YES** |
 | `FULL_VALIDATION` | **PASS** |
 | `INDEPENDENT_REVIEW` | **PASS_WITH_NOTES**, 0 unresolved blockers |
-| `FIRST_OPERATIONAL_SMOKE` | **PARTIAL** — 22/22 green, 0 model calls; the one open gate |
+| `FIRST_OPERATIONAL_SMOKE` | **PASS** — run 35461618434, 2 assessed, 2 promoted |
 
 ## L. Known operational backlog
 
-1. **The scientific model path has never executed in Actions.** Preflight proves a credential is present, not that it works. This is the only gate still open before the cron can be enabled.
-2. **Throughput is the blocker, not a nicety.** Observed 0 of 4 top-ranked candidates acquirable, against Batch 6's 25–36%. 22 papers across the two tracks now hold an acquisition or coverage failure with no completed assessment, each consuming three daily slots before parking. Until selection walks to a paper it can actually acquire, the schedule would idle and the model path would stay unvalidated. The Batch-6 roster walk is committed, proven code for exactly this and raises no limit.
+1. **Throughput is now adequate but unmeasured over time.** The walk found an acquirable paper in both tracks on its first outing, but 24 papers across the two tracks hold an acquisition or coverage failure with no completed assessment, and each consumes attempts before parking at `retry_budget_exhausted`. Watch whether a walk of six per track stays sufficient as the head of the ranking fills with unretrievable records.
+2. **The daily cost is now real but small.** The passing run spent $0.033 for two papers. At two papers a day that is roughly $1 a month of known OpenRouter spend, against $9.82 of remaining ceiling. Gemini stays UNKNOWN / MSc allocation.
+3. **A deleted release asset kept serving for ~90 seconds** (§M). Any future deletion should be verified with a ranged content fetch rather than a status code, and re-checked after a minute.
 2. **The public archive is deleted** (§M), but it recorded `downloadCount: 1` and GitHub cannot retract copies already taken. Treat the databases it held as disclosed.
 3. **Re-run the smoke once** after the secret is corrected, at exactly the production bounds (1/track, 3 total, $0.30), and only then enable the daily cron and re-enable the weekly backfill.
 4. **Consider a cheap credential-only dispatch path** so a bad secret is caught without consuming a full production run. The smoke's fail-closed behaviour is correct but expensive to use as a credential test.
@@ -373,13 +374,69 @@ With one candidate per track per day, most daily runs will assess nothing, and e
 
 The remedy does not involve raising any limit. Batch 6's roster build already solved exactly this with committed, proven code: it walked the frozen ordered population through the production acquisition and coverage gate — read-only, no model call, nothing persisted — and took the first candidates that passed. Reusing that walk in the operational selector would keep the bound at one assessed paper per track per day while making it land on a paper that can actually be assessed. It is a behaviour change to the operational path and needs tests and independent review.
 
+### Fourth run — the smoke passes
+
+The acquisition walk was implemented, reviewed over seven rounds and merged at `c94aef02e`
+(PR #42). Run [35461618434](https://github.com/vernerisirva/agentmempaper/actions/runs/35461618434), all 22 steps green.
+
+```text
+agent_memory   nominated 6, walked past 2 unretrievable Zenodo records, assessed the next
+deep_research  nominated 6, assessed the first
+engram         nominated 0 — all 8 high-relevance papers already decided
+```
+
+| | Value |
+|---|---|
+| Papers walked / attempted / assessed | 4 / 2 / **2** |
+| **Promoted** | **2** — `doi:10.48550/arxiv.2609.19128`, `openalex:W7213473479` |
+| Gemini | **2 calls**, 35,536 in / 2,234 out — UNKNOWN / MSc allocation |
+| DeepSeek | **2 calls**, 34,702 in / 1,152 out — **$0.03307256** |
+| Spend against ceiling | $0.033 of $0.30, `stopped_reason` none |
+| Bounds | 1 per track, 2 total, engram's slot not transferred |
+| Nomination reconciliation | 12 walked + not-walked = 12 nominated |
+| Append-only | all 355 / 278 / 48 pre-existing rows byte-identical |
+| New rows | 2 `pass`/`success` under `dual-promotion-v3`, assessor `hybrid`/`gemini-3.8-flash`; 2 `manuscript_unavailable` with 0 calls, still retry-eligible |
+| Private state | persisted and clean-restored, 358 / 279 / 48 |
+| Public exposure | 0 databases, 0 archives, 0 releases, 0 credentials; old asset 404 |
+| Pages | deployed, live site HTTP 200 |
+
+Every smoke criterion is met, including the one the previous runs could not reach. **`FIRST_OPERATIONAL_SMOKE: PASS`.**
+
+### Schedules enabled
+
+`paper-scout.yml` daily at `20 6 * * *`; `paper-scout-backfill.yml` weekly at `40 5 * * 0`.
+The backfill qualifies under the single-writer rule: it uses the same private transport with
+the token scoped to the same two steps, it never runs the scientific gate (every command
+passes `--no-llm` and the step gets no scientific credential), and both workflows share one
+concurrency group with `cancel-in-progress: false` and `queue: max`, so they serialize. A
+test pins that.
+
+**Bounds are unchanged and must not be raised without an explicit operational decision:**
+1 paper per track per run, 3 per run, $0.30 known OpenRouter spend per run.
+
+### What the walk changed, and what it did not
+
+Selection nominates up to `MAX_ACQUISITION_WALK` (6) candidates per track in rank order and
+stays offline; the caller walks them until one contacts a model. A candidate rejected by
+acquisition or the coverage gate issues no request, costs nothing and does not consume the
+track's slot. A failure *after* calls were issued does end the track, because money may
+already have been spent. Rejections are still persisted, which is what parks a permanently
+unavailable manuscript at the retry budget rather than re-probing it daily.
+
+Independent review ran seven rounds on this change, `PASS_WITH_NOTES` with **zero blocking
+findings every round**; 13 findings raised and all 13 fixed. The most useful: the walk
+carried its own copy of `may_assess`'s reason strings, several exit paths dropped
+nominations from the audit trail, `stopped_reason` was trusted to be run-level without
+anything enforcing it, and writing one test exposed a double-count in the reconciliation
+helper added two rounds earlier.
+
 ---
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES
 PRIVATE_DURABLE_STATE_READY: YES
-OPERATIONAL_QUALITY_ASSESSMENT_READY: PARTIAL
-FIRST_OPERATIONAL_SMOKE: PARTIAL
+OPERATIONAL_QUALITY_ASSESSMENT_READY: YES
+FIRST_OPERATIONAL_SMOKE: PASS
 PUBLIC_STATE_ARCHIVE_REMOVED: YES
-RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
+RECURRING_QUALITY_ASSESSMENT_ENABLED: YES
 ```

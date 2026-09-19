@@ -1,17 +1,17 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-18](2026-09-18.md).
+Latest daily digest: [2026-09-19](2026-09-19.md).
 
-# Paper Scout Digest - 2026-09-18
+# Paper Scout Digest - 2026-09-19
 
 ## Run Summary
 
 - **Run ID:** 88
 - **Candidates fetched:** 100
-- **New unique papers:** 92
-- **Relevant:** 12
-- **Maybe relevant:** 4
-- **Irrelevant:** 84
+- **New unique papers:** 93
+- **Relevant:** 13
+- **Maybe relevant:** 5
+- **Irrelevant:** 82
 - **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
@@ -30,6 +30,16 @@ Latest daily digest: [2026-09-18](2026-09-18.md).
 - semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 
 ## Highly Relevant
+
+### [A Closed-Loop Robot Scientist for Autonomous Biological Discovery](https://doi.org/10.64898/2026.09.11.751076)
+
+- **Authors:** Kameron Bielawski, Krishna Srinivasan, Nate Gaylinn, Shawn Beaulieu, Robert Brucker, Michael Levin, et al.
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies AI-scientist or scientific-discovery agents.
+- **Tags:** ai-scientist, deep-research-agents
+- **Abstract summary:** Biological systems respond to a wide range of physical inputs and an overarching goal of biological research is understanding how these signaling events coordinate cellular, tissue, and organism-level outcomes. Yet the vast combinatorial space of physical and chemical interventions that influence these processes rem...
 
 ### [AI for Science with GPT-6 Astra: Thermal Design and Electrothermal Analysis of 2D CFET](https://arxiv.org/abs/2609.17123)
 
@@ -50,9 +60,8 @@ Latest daily digest: [2026-09-18](2026-09-18.md).
 - **Reason:** Studies AI-scientist or scientific-discovery agents.
 - **Tags:** ai-scientist, deep-research-agents
 - **Abstract summary:** No abstract available.
-- **Automated evidence-based assessment:** Not enough evidence · partial full text
 
-### [PrimeScientist: Strategic Allocation of Research Effort in Autonomous Research](https://doi.org/10.48550/arxiv.2609.17846)
+### [PrimeScientist: Strategic Allocation of Research Effort in Autonomous Research](https://arxiv.org/abs/2609.17846)
 
 - **Authors:** Xinle Yu, Fan Bai, Kaiser Sun, Hengshuo Miao, Abhay Anand, Zhongyan Luo, et al.
 - **Date:** 2026-09-15
@@ -63,6 +72,26 @@ Latest daily digest: [2026-09-18](2026-09-18.md).
 - **Abstract summary:** Autonomous research agents aim to automate scientific workflows, from proposing ideas to conducting experiments and analyzing results. Yet current AI and research agents can propose more directions than available resources allow them to pursue. Moreover, each attempt could consume substantial resources, requiring ag...
 
 ## Maybe Relevant
+
+### [EXISTING SOLUTIONS FOR AUTOMATED UNIVERSITY TIMETABLING: A COMPARATIVE REVIEW OF ALGORITHMS AND METHODS](https://doi.org/10.5281/zenodo.22822750)
+
+- **Authors:** Mumtozali Tukhtasinov, Husainov Ilyos Jamoliddin o'g'li, Worldly Knowledge Publishing Centre
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** This article provides a comparative review of the existing solutions reported in the literature for automated university timetabling, faculty–course assignment, and the automatic extraction of scheduling constraints from institutional documents. Building on the three threads identified in a preceding review, the sol...
+
+### [EXISTING SOLUTIONS FOR AUTOMATED UNIVERSITY TIMETABLING: A COMPARATIVE REVIEW OF ALGORITHMS AND METHODS](https://doi.org/10.5281/zenodo.22822751)
+
+- **Authors:** Mumtozali Tukhtasinov, Husainov Ilyos Jamoliddin o'g'li, Worldly Knowledge Publishing Centre
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to research-agent workflows, but not clearly a deep research system.
+- **Tags:** research-adjacent
+- **Abstract summary:** This article provides a comparative review of the existing solutions reported in the literature for automated university timetabling, faculty–course assignment, and the automatic extraction of scheduling constraints from institutional documents. Building on the three threads identified in a preceding review, the sol...
 
 ### [Experimental Campaign for Political Behaviour in LLM Agents: Experimental Insights on Governance, Global Power Asymmetries, Security Risks, and Knowledge Construction Dynamics](https://doi.org/10.5281/zenodo.19052473)
 

@@ -1,0 +1,171 @@
+{
+  "assessment": {
+    "coverage_failures": 0,
+    "credential_skipped_without_row": 0,
+    "non_promoted": 0,
+    "papers_attempted": 2,
+    "papers_successfully_assessed": 0,
+    "promoted": 0,
+    "retry_eligible_failures": 2,
+    "technical_failures": 2,
+    "unavailable_manuscripts": 2
+  },
+  "budget": {
+    "gemini_calls": 0,
+    "gemini_input_tokens": 0,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 0,
+    "max_papers_per_run": 3,
+    "max_papers_per_track": 1,
+    "openrouter_calls": 0,
+    "openrouter_ceiling_usd": 0.3,
+    "openrouter_spend_usd": 0.0,
+    "papers_assessed_per_track": {
+      "agent_memory": 1,
+      "deep_research": 1
+    },
+    "papers_assessed_total": 2,
+    "stopped_reason": null,
+    "version": "operational-budget-v1"
+  },
+  "completed_at": "2026-09-19T17:37:48.331533+00:00",
+  "cost": {
+    "deepseek_calls": 0,
+    "deepseek_cost_usd": 0.0,
+    "deepseek_input_tokens": 0,
+    "deepseek_output_tokens": 0,
+    "gemini_calls": 0,
+    "gemini_input_tokens": 0,
+    "gemini_monetary_cost": "UNKNOWN / MSc allocation",
+    "gemini_output_tokens": 0,
+    "unattributed_calls": 0,
+    "unknown_cost_calls": 0
+  },
+  "discovery": {
+    "high_relevance_candidates": 473,
+    "papers_discovered": 2175
+  },
+  "limits": {
+    "max_papers_per_run": 3,
+    "max_papers_per_track": 1
+  },
+  "pages_deployment": "not_attempted",
+  "policy_versions": {
+    "credential_preflight": "credential-preflight-v1",
+    "operational_budget": "operational-budget-v1",
+    "operational_eligibility": "operational-eligibility-v1"
+  },
+  "preflight": {
+    "missing_roles": [],
+    "reason": "credentials_present",
+    "roles": [
+      {
+        "credential_env": [
+          "GEMINI_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "gemini-3.8-flash",
+        "provider": "google",
+        "role": "primary"
+      },
+      {
+        "credential_env": [
+          "OPENROUTER_API_KEY",
+          "PAPER_SCOUT_LLM_API_KEY"
+        ],
+        "credential_present": true,
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "provider": "openrouter",
+        "role": "adjudicator"
+      }
+    ],
+    "scientific_assessment_permitted": true,
+    "version": "credential-preflight-v1"
+  },
+  "retry_policy": {
+    "in_run_retries_unchanged": "primary 1, adjudicator 2, 3 requests total",
+    "max_operational_attempts": 3,
+    "retry_cooldown_hours": 20,
+    "technical_outcomes": [
+      "credential_unavailable",
+      "evidence_validation_failure",
+      "integrity_failure",
+      "manuscript_unavailable",
+      "not_assessed",
+      "protocol_failure",
+      "support_verification_pending",
+      "text_coverage_failure",
+      "transport_failure"
+    ],
+    "version": "operational-eligibility-v1"
+  },
+  "selection": {
+    "assessment_candidates": 2,
+    "tracks": {
+      "agent_memory": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 328,
+        "ranked": 1940,
+        "retry_blocked": 0,
+        "selected": [
+          {
+            "canonical_id": "doi:10.5281/zenodo.22837961",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.5281/zenodo.22837961",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "Beyond the Agent Boundary",
+            "track": "agent_memory"
+          }
+        ],
+        "suppressed": 0
+      },
+      "deep_research": {
+        "completed_scientific_assessment": 0,
+        "high_relevance": 137,
+        "ranked": 227,
+        "retry_blocked": 0,
+        "selected": [
+          {
+            "canonical_id": "doi:10.64898/2026.09.11.751076",
+            "rank": 1,
+            "selection": {
+              "canonical_id": "doi:10.64898/2026.09.11.751076",
+              "completed_scientific_assessment": false,
+              "last_attempt_at": null,
+              "last_outcome": null,
+              "policy": "operational-eligibility-v1",
+              "reason": "never_assessed",
+              "retry_eligible": true,
+              "technical_attempts": 0
+            },
+            "title": "A Closed-Loop Robot Scientist for Autonomous Biological Discovery",
+            "track": "deep_research"
+          }
+        ],
+        "suppressed": 0
+      },
+      "engram": {
+        "completed_scientific_assessment": 8,
+        "high_relevance": 8,
+        "ranked": 8,
+        "retry_blocked": 0,
+        "selected": [],
+        "suppressed": 0
+      }
+    }
+  },
+  "started_at": "2026-09-19T17:37:35.912580+00:00",
+  "state": {
+    "persist_sha256": {},
+    "restore_sha256": {}
+  },
+  "version": "operational-run-v1"
+}

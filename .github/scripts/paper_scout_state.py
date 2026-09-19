@@ -203,6 +203,11 @@ def persist(tag: str, report_path: Path | None) -> int:
     scratch.mkdir(parents=True)
     try:
         restore_snapshot(archive, root=scratch, report=verify)
+    except Exception as exc:
+        # Same fail-closed shape as every other path here: a clean ::error:: and exit 1,
+        # not a traceback. Nothing has been uploaded at this point.
+        raise StateError("snapshot failed its round-trip verification and was not "
+                         f"published: {exc}") from exc
     finally:
         shutil.rmtree(scratch, ignore_errors=True)
 

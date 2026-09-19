@@ -199,6 +199,8 @@ class OperationalMetrics:
     deepseek_input_tokens: int = 0
     deepseek_output_tokens: int = 0
     deepseek_cost_usd: float = 0.0
+    unknown_cost_calls: int = 0
+    unattributed_calls: int = 0
     state_restore_sha256: dict = field(default_factory=dict)
     state_persist_sha256: dict = field(default_factory=dict)
     pages_deployment: str = "not_attempted"
@@ -243,6 +245,10 @@ class OperationalMetrics:
                 "deepseek_input_tokens": self.deepseek_input_tokens,
                 "deepseek_output_tokens": self.deepseek_output_tokens,
                 "deepseek_cost_usd": round(self.deepseek_cost_usd, 8),
+                # Calls the provider did not price, and calls whose provider could not be
+                # attributed. Both mean the money figure above is a lower bound.
+                "unknown_cost_calls": self.unknown_cost_calls,
+                "unattributed_calls": self.unattributed_calls,
             },
             "state": {"restore_sha256": self.state_restore_sha256,
                       "persist_sha256": self.state_persist_sha256},

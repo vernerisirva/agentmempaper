@@ -469,7 +469,8 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
 def _assess_selected(selected, configs, budget, metrics) -> None:
     """Assess each selected paper, stopping cleanly when the budget says to."""
     from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
-    from paper_scout.operational_preflight import CostCeilingExceeded
+    from paper_scout.operational_preflight import (
+        ESTIMATED_OPENROUTER_USD_PER_PAPER, CostCeilingExceeded)
 
     for candidate in selected:
         config = configs[candidate.track]
@@ -495,6 +496,12 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
                                                 canonical_id, exc)
             metrics.technical_failures += 1
             metrics.retry_eligible_failures += 1
+            # The reservation is spent and the provider may already have been billed for
+            # calls whose receipt never reached us. Charge the estimate rather than zero,
+            # and count the paper, so the run cannot under-report and over-spend.
+            budget.record(candidate.track,
+                          openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
+            metrics.unknown_cost_calls += 1
             continue
         if assessment is None:
             metrics.credential_skipped += 1
@@ -513,6 +520,8 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
         metrics.gemini_calls += usage["gemini_calls"]
         metrics.gemini_input_tokens += usage["gemini_input"]
         metrics.gemini_output_tokens += usage["gemini_output"]
+        metrics.unknown_cost_calls += usage["unknown_cost_calls"]
+        metrics.unattributed_calls += usage["unattributed_calls"]
         if outcome == "success":
             metrics.papers_successfully_assessed += 1
             if assessment.quality_status == "pass":
@@ -530,23 +539,43 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
 
 
 def _role_usage(assessment) -> dict:
-    """Per-provider calls, tokens and known money from one assessment receipt."""
+    """Per-provider calls, tokens and known money from one assessment receipt.
+
+    Provider attribution comes from the pinned model-to-provider map, not from a substring
+    of the model name: stored receipts often carry no provider field, and guessing from
+    the name would file an unrecognised model under OpenRouter with no cost.
+
+    A call whose provider reported no price is counted in unknown_cost_calls rather than
+    as $0. Treating an unpriced call as free is what would let the per-run ceiling pass
+    while real money was being spent, so the run has to be able to see it.
+    """
+    from paper_scout.promotion_protocol import MODEL_PROVIDERS
+
     usage = {"openrouter_usd": 0.0, "openrouter_calls": 0, "openrouter_input": 0,
-             "openrouter_output": 0, "gemini_calls": 0, "gemini_input": 0, "gemini_output": 0}
+             "openrouter_output": 0, "gemini_calls": 0, "gemini_input": 0,
+             "gemini_output": 0, "unknown_cost_calls": 0, "unattributed_calls": 0}
     for call in (assessment.execution or {}).get("calls", []) or []:
         counts = call.get("usage") or {}
         prompt = int(counts.get("prompt_tokens") or 0)
         completion = int(counts.get("completion_tokens") or 0)
-        if (call.get("provider") or "") == "google" or "gemini" in (call.get("model") or ""):
+        provider = call.get("provider") or MODEL_PROVIDERS.get(call.get("model") or "")
+        if provider == "google":
             usage["gemini_calls"] += 1
             usage["gemini_input"] += prompt
             usage["gemini_output"] += completion
+            continue
+        if provider != "openrouter":
+            # An unrecognised provider is recorded as such rather than silently filed
+            # under a priced one.
+            usage["unattributed_calls"] += 1
+        usage["openrouter_calls"] += 1
+        usage["openrouter_input"] += prompt
+        usage["openrouter_output"] += completion
+        price = counts.get("cost", counts.get("cost_usd"))
+        if price is None:
+            usage["unknown_cost_calls"] += 1
         else:
-            usage["openrouter_calls"] += 1
-            usage["openrouter_input"] += prompt
-            usage["openrouter_output"] += completion
-            # Only a price the provider actually reported is counted as known money.
-            usage["openrouter_usd"] += float(counts.get("cost") or counts.get("cost_usd") or 0.0)
+            usage["openrouter_usd"] += float(price)
     return usage
 
 

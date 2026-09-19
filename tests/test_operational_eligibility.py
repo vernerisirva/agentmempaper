@@ -446,6 +446,56 @@ class RunBudgetBounds(unittest.TestCase):
         self.assertEqual(RunBudget.from_env({}).openrouter_ceiling_usd, 0.30)
 
 
+class CostAttribution(unittest.TestCase):
+    """Unpriced and unattributed calls must be visible, never counted as free."""
+
+    def usage(self, calls):
+        from paper_scout.cli import _role_usage
+        return _role_usage(type("A", (), {"execution": {"calls": calls}})())
+
+    def test_provider_comes_from_the_pinned_model_map_not_the_model_name(self):
+        # Stored receipts frequently carry no provider field at all.
+        usage = self.usage([{"model": "gemini-3.8-flash",
+                             "usage": {"prompt_tokens": 100, "completion_tokens": 10}},
+                            {"model": "deepseek/deepseek-v4-pro-0813",
+                             "usage": {"prompt_tokens": 200, "completion_tokens": 20,
+                                       "cost": 0.03}}])
+        self.assertEqual(usage["gemini_calls"], 1)
+        self.assertEqual(usage["gemini_input"], 100)
+        self.assertEqual(usage["openrouter_calls"], 1)
+        self.assertAlmostEqual(usage["openrouter_usd"], 0.03)
+        self.assertEqual(usage["unknown_cost_calls"], 0)
+        self.assertEqual(usage["unattributed_calls"], 0)
+
+    def test_an_unpriced_call_is_counted_not_treated_as_free(self):
+        usage = self.usage([{"model": "deepseek/deepseek-v4-pro-0813",
+                             "usage": {"prompt_tokens": 200, "completion_tokens": 20}}])
+        self.assertEqual(usage["unknown_cost_calls"], 1)
+        self.assertEqual(usage["openrouter_usd"], 0.0)
+
+    def test_an_unrecognised_provider_is_flagged(self):
+        usage = self.usage([{"model": "some/unmapped-model",
+                             "usage": {"prompt_tokens": 1, "completion_tokens": 1}}])
+        self.assertEqual(usage["unattributed_calls"], 1)
+        self.assertEqual(usage["unknown_cost_calls"], 1)
+
+    def test_a_zero_price_is_known_money_and_a_missing_price_is_not(self):
+        priced = self.usage([{"model": "deepseek/deepseek-v4-pro-0813",
+                              "usage": {"prompt_tokens": 1, "completion_tokens": 1,
+                                        "cost": 0.0}}])
+        self.assertEqual(priced["unknown_cost_calls"], 0)
+
+    def test_metrics_surface_the_unpriced_counters(self):
+        from paper_scout.operational_run import OperationalMetrics
+        metrics = OperationalMetrics()
+        metrics.unknown_cost_calls = 2
+        metrics.unattributed_calls = 1
+        cost = metrics.to_dict()["cost"]
+        self.assertEqual(cost["unknown_cost_calls"], 2)
+        self.assertEqual(cost["unattributed_calls"], 1)
+        self.assertEqual(cost["gemini_monetary_cost"], "UNKNOWN / MSc allocation")
+
+
 class OperationalSelection(unittest.TestCase):
     """Selection uses the completed-assessment predicate and never moves a track's quota."""
 
@@ -723,8 +773,11 @@ class PrivateDestinationGuards(unittest.TestCase):
                  patch.object(module, "pack_snapshot", return_value={"version": 2}), \
                  patch.object(module, "restore_snapshot",
                               side_effect=ValueError("snapshot checksum mismatch")):
-                with self.assertRaises(ValueError):
+                # Fail-closed shape: a StateError main() renders as ::error::, not a
+                # raw traceback from deep inside the snapshot code.
+                with self.assertRaises(module.StateError) as caught:
                     module.persist("tag", report_path=None)
+                self.assertIn("round-trip verification", str(caught.exception))
             self.assertFalse(scratch.exists(), "scratch copy of the databases was left behind")
             self.assertFalse(archive.exists(), "plaintext archive was left behind")
 

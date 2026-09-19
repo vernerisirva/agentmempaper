@@ -189,7 +189,11 @@ jobs:
             echo "::error::Refusing to publish Paper Scout runtime state or snapshots."
             exit 1
           fi
-          if grep -rlE '(GEMINI_API_KEY|OPENROUTER_API_KEY|PAPER_SCOUT_STATE_TOKEN)[=:][[:space:]]*[A-Za-z0-9_-]{8,}' docs reports/paper_scout 2>/dev/null | grep .; then
+          # A documented example such as "GEMINI_API_KEY: <redacted>" is not a leak, so
+          # obvious placeholders are excluded before a match is treated as one.
+          if grep -rhoE '(GEMINI_API_KEY|OPENROUTER_API_KEY|PAPER_SCOUT_STATE_TOKEN)[=:][[:space:]]*[A-Za-z0-9_-]{8,}' docs reports/paper_scout 2>/dev/null \
+               | grep -vEi '(your|example|redact|placeholder|xxx|changeme|dummy|synthetic|secrets\.|vars\.|AVAILABLE|MISSING|PRESENT|UNKNOWN)' \
+               | grep .; then
             echo "::error::Refusing to publish a credential-shaped value."
             exit 1
           fi
@@ -281,8 +285,19 @@ jobs:
           {
             echo "### Durable state"
             echo '```json'
-            cat "${RUNNER_TEMP}/state-restore.json" 2>/dev/null | head -c 4000 || echo '{"restore":"did not run"}'
-            cat "${RUNNER_TEMP}/state-persist.json" 2>/dev/null | head -c 4000 || echo '{"persist":"did not run"}'
+            # Test for the file rather than relying on a pipeline exit status: head exits
+            # 0 even when cat fails, so a || fallback after the pipe never runs and the
+            # summary would silently omit that a stage was skipped.
+            if [ -f "${RUNNER_TEMP}/state-restore.json" ]; then
+              head -c 4000 "${RUNNER_TEMP}/state-restore.json"
+            else
+              echo '{"restore":"did not run"}'
+            fi
+            if [ -f "${RUNNER_TEMP}/state-persist.json" ]; then
+              head -c 4000 "${RUNNER_TEMP}/state-persist.json"
+            else
+              echo '{"persist":"did not run"}'
+            fi
             echo '```'
             echo "Pages deployment: ${{ steps.deployment.outcome || 'not attempted' }}"
           } >> "$GITHUB_STEP_SUMMARY"

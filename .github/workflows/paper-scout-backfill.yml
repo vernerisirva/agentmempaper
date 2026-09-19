@@ -16,10 +16,6 @@ on:
 permissions:
   contents: write
 
-env:
-  PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
-  PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
-
 concurrency:
   group: paper-scout-${{ github.ref }}
   cancel-in-progress: false
@@ -41,6 +37,12 @@ jobs:
         run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
 
       - name: Restore private Paper Scout state
+        env:
+          # Scoped to this step only. A fine-grained PAT in a workflow- or job-level env
+          # block is handed to every step, including third-party actions, which is a far
+          # wider blast radius than the transport needs.
+          PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
+          PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
         run: |
           python .github/scripts/paper_scout_state.py restore \
             ${{ inputs.allow_state_initialize && '--allow-initialize' || '' }} \
@@ -114,4 +116,10 @@ jobs:
       - name: Persist private Paper Scout state
         id: persist-backfill-state
         if: ${{ steps.commit-backfill-updates.outcome == 'success' }}
+        env:
+          # Scoped to this step only. A fine-grained PAT in a workflow- or job-level env
+          # block is handed to every step, including third-party actions, which is a far
+          # wider blast radius than the transport needs.
+          PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
+          PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
         run: python .github/scripts/paper_scout_state.py persist --report "${RUNNER_TEMP}/state-persist.json"

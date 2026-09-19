@@ -20,6 +20,7 @@ from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 import json
+import logging
 from pathlib import Path
 import sqlite3
 
@@ -38,6 +39,8 @@ from paper_scout.site import (
     _load_curation, _load_library_papers, _mark_new_papers, _merge_dashboard_duplicates,
     _parse_digest, _refresh_rule_classifications, _site_build_time, _sort_latest_relevant,
 )
+
+LOGGER = logging.getLogger(__name__)
 
 POPULATION_VERSION = "batch-population-v1"
 MANIFEST_VERSION = "batch-population-manifest-v1"
@@ -260,8 +263,11 @@ def excluded_identities(configs: dict[str, ScoutConfig],
                         for r in db.execute("SELECT * FROM papers").fetchall()}
                 if _table_exists(db, "paper_quality_assessments"):
                     stored: dict[str, list[dict]] = {}
+                    # ORDER BY rowid, not id: ordering must not depend on a column
+                    # this query did not previously need. Where id is INTEGER PRIMARY
+                    # KEY it is the rowid, so the order is unchanged.
                     for row in db.execute("SELECT canonical_id, payload_json"
-                                          " FROM paper_quality_assessments ORDER BY id").fetchall():
+                                          " FROM paper_quality_assessments ORDER BY rowid").fetchall():
                         try:
                             payload = json.loads(row["payload_json"])
                         except (TypeError, ValueError):
@@ -269,7 +275,13 @@ def excluded_identities(configs: dict[str, ScoutConfig],
                             # scientific decision, but it is still a stored row. Keep it
                             # under the historical policy and let the operational policy
                             # treat it as no decision, which only makes a paper eligible
-                            # for a retry that re-examines it.
+                            # for a retry that re-examines it. Corruption in the
+                            # scientific record is never silent, though: reinterpreting a
+                            # row is exactly the thing an operator needs to know about.
+                            LOGGER.warning(
+                                "Unreadable stored assessment payload; treating it as no "
+                                "scientific decision: track=%s canonical_id=%s",
+                                track, row["canonical_id"])
                             payload = {}
                         stored.setdefault(str(row["canonical_id"]), []).append(payload)
                     for key, payloads in stored.items():

@@ -332,6 +332,34 @@ class ProviderContractTest(unittest.TestCase):
         self.assertNotIn("download-paper-scout-state", text)
         self.assertIn("PAPER_SCOUT_STATE_REPO", text)
 
+        # The state PAT reaches only the two steps that invoke the transport. A
+        # workflow- or job-level env block would hand it to every third-party action in
+        # the job, which is a far wider blast radius than the transport needs.
+        self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (workflow.get("env") or {}))
+        self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (workflow["jobs"]["scout"].get("env") or {}))
+        carrying = [s["name"] for s in steps if "PAPER_SCOUT_STATE_TOKEN" in (s.get("env") or {})]
+        self.assertEqual(sorted(carrying), ["Persist private Paper Scout state",
+                                            "Restore private Paper Scout state"])
+        for name in carrying:
+            self.assertIn("paper_scout_state.py", by_name[name]["run"])
+
+    def test_backfill_workflow_scopes_the_state_credential_too(self):
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        workflow = yaml.load((root / ".github/workflows/paper-scout-backfill.yml").read_text(),
+                             Loader=yaml.BaseLoader)
+        self.assertNotIn("schedule", workflow["on"])
+        job = workflow["jobs"]["backfill"]
+        self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (workflow.get("env") or {}))
+        self.assertNotIn("PAPER_SCOUT_STATE_TOKEN", (job.get("env") or {}))
+        carrying = [s["name"] for s in job["steps"]
+                    if "PAPER_SCOUT_STATE_TOKEN" in (s.get("env") or {})]
+        self.assertEqual(len(carrying), 2)
+        # Backfill must not run the scientific gate either.
+        commands = "\n".join(s.get("run", "") for s in job["steps"])
+        self.assertIn("backfill --track agent_memory --days 45 --no-notify --no-llm", commands)
+        self.assertIn("backfill --track engram --days 45 --no-notify --no-llm", commands)
+
 
 class SelectionCoverageTest(unittest.TestCase):
     def test_descriptive_methods_and_results_precede_long_conclusion_continuations(self):

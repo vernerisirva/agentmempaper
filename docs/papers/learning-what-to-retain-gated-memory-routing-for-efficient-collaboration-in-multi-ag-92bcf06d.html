@@ -59,16 +59,342 @@
             <p>Large language model (LLM)-based multi-agent systems tackle complex reasoning by orchestrating how multiple agents are configured and how they collaborate. A central challenge is to adapt orchestration to the evolving collaboration state. Routing from the query alone cannot adapt to intermediate progress or errors,...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a sound conceptual and empirical contribution to multi-agent LLM orchestration, thoroughly supported by baseline comparisons, ablation studies, and robust evaluation across multiple domains and seeds.</p>
+      <p>The authors explicitly acknowledge limitations including evaluation restricted to closed-domain tasks with verifiable ground-truth rewards, reliance on parameter-count pricing as a hardware proxy, and evaluating a fixed pool of open-weight LLMs.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:36:50.620019+00:00.</p>
+        <p>Coverage: 68704 of 68704 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>introduceGated-
+Memory Routing, a framework in which a learned,
+gated execution memory serves as the shared state
+that every routing decision conditions on. A single
+jointly trained router acts on it through comple-
+mentary components: aHistory-Aware Role Allo-
+catorand anLLM Routerchoose the agent and
+its backbone, aRetrieval Gatesurfaces a compact,
+step-relevant subset of memory, aMemory Write
+Gatecommits only high-utility, non-redundant rea-
+soning steps, and anAdaptive Halting Controller
+decides when the gated state is sufficient to stop.
+Because routing is driven by this gated memory
+rather than the raw history, the interaction structure
+emerges dynamically during execution.
+Contributions.
+• Routing over a learned gated memory.We
+recast multi-agent orchestration as routing
+over a learned, selective execution memory:
+each step conditions on a filtered task-relevant
+state rather than </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the query alone (query-only)
+or the raw execution history (full-history).
+• Memory curation and budget-aware halt-
+ing.Learned write and retrieval gates control
+what memory stores and surfaces, keeping the
+state compact and high-signal, while a budget-
+aware halting policy consumes that clean state
+to control reasoning depth and thus cost, all
+trained end-to-end with role and backbone
+routing under a group-relative, cost-aware ob-
+jective.
+• Empirical effectiveness and efficiency.
+Across MATH, GSM-Hard, MBPP, Hu-
+manEval, and MMLU-Pro, Gated-Memory
+Routing attains the best average accuracy, ex-
+ceeding the strongest baseline by 2.44 points
+while cutting HumanEval inference cost by
+31.9%relative to that baseline.</blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We formalize gated-memory routing as a sequential
+decision process over a set of agent specializations
+R, a pool of heterogeneous LLM backbones M,
+and an execution memory St maintained within a
+single query execution. At step t, the observable
+state is st = (q, St−1), where St−1 holds the re-
+tained execution records from prior steps. The sys-
+tem selects a specialization rt ∈ Rand a backbone
+mt ∈ M, retrieves a context subset Ct ⊆S t−1,
+generates a reasoning step yt, and decides whether
+History-aware
+Role Allocator
+Retrieval
+Gate
+Role r2 LLM m2 Resp y2
+Execution Memory S
+Query q
+Adaptive
+Halting
+Controller
+LLM Router
+Aggregator
+Final Answer y
+Halt
+1
+2
+3 4
+Agent
+Retrieved
+context Ct
+Memory Write
+Gate
+Write/Skip
+Role rt
+LLM mt
+Role rt LLM mt
+St-1
+Response
+yt
+Continue to next step
+Role r1 LLM m1 Resp y1 Role rt-1 LLM mt-1 Resp yt-1
+St
+State st
+Figure 2:Gated-Memory Routing framework.At </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Even a selective memory should not be exposed
+wholesale to every agent: many retained records
+belong to other subproblems or roles irrelevant to
+the agent about to act, so passing all of them inflates
+token cost and buries the entries that matter. A fixed
+top-k retriever is equally rigid, since some steps
+need broad context while others need one record or
+none. TheRetrieval Gatetherefore treats context
+construction as a step-adaptive selection, deciding
+independently for each record whether to surface
+it.
+Each stored record is summarized by an embed-
+ding vj that fuses its role latent, backbone latent,
+and a projection of its response, and the current
+step forms a retrieval query pt by the analogous
+fusion of the query with the role and backbone
+just selected. The gate therefore asks which prior
+records a step of this configuration should read: for
+record j, the retrieval logit and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>What the system writes to memory determines the
+state on which all later decisions are based. If every
+intermediate element is appended, gated memory
+collapses back into full-history routing, and redun-
+dant records crowd memory and dilute retrieval.
+TheMemory Write Gatetherefore treats memory
+construction as a selective decision rather than a
+default append: a new record should enter memory
+only when it is both relevant to the task and novel
+with respect to the records already stored.
+We score this relevance–novelty trade-off with a
+Maximal Marginal Relevance criterion (Carbonell
+and Goldstein, 1998), but replace its fixed compo-
+nents with learned, stochastic ones. Let ct denote
+the current context state (Section 3.3), yt the em-
+bedding of the new reasoning step, and {yj} the
+embeddings of stored steps, and let sim(·,·) be a
+cosine similarity taken in a learned projection of
+these </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Reasoning depth is a major driver of cost, yet a
+depth fixed from the query commits this budget
+before the system observes how execution unfolds.
+We therefore make depth a consequence of exe-
+cution: after each step theAdaptive Halting Con-
+trollerdecides whether the memory holds sufficient
+evidence for aggregation or another agent should
+act.
+Whether recent steps still add evidence is
+a trend no single-step snapshot captures, so
+the controller carries a recurrent state hhalt
+t =
+GRU(hhalt
+t−1 ,enc(S t)) that integrates a pooled sum-
+mary of the post-write memory across steps, kept
+separate from the query-attended routing context
+ct. It then samples a halt action
+ht ∼Bernoulli
+
+σ
+
+MLP(hhalt
+t )
+
+.
+Because the decision is evaluated only after the
+step&#x27;s agent has executed, at least one agent al-
+ways runs. If ht = 1 the stored records pass to the
+Aggregator LLM; otherwise execution </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The routing stack couples several discrete stochas-
+tic decisions (role, backbone, retrieval, write,
+and halt), and their number varies with the halt-
+determined depth, so we optimize the trajectory
+with policy gradients rather than backpropagating
+through sampled actions. Because queries dif-
+fer widely in difficulty, a single trajectory base-
+line is noisy; we instead train all policies jointly
+with a group-relative advantage in the spirit of
+GRPO (Shao et al., 2024), using G rollouts of each
+query as a per-query baseline without a learned
+critic.
+For each query we sample G trajectories that
+differ only in their sampled decisions. Trajectory
+τi has utility ui =R i −λ c Cost(τi), where Ri ∈
+{0,1} is task success, Cost(τi) sums the per-step
+backbone costs, andλc sets the accuracy–cost trade-
+off (Appendix 9). Centering each utility within its
+group yields the advantage
+Ai =u i − </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Datasets and Benchmarks.We evaluate on five
+benchmarks spanning mathematical reasoning, pro-
+gram synthesis, and knowledge-intensive ques-
+tion answering: GSM-Hard (Gao et al., 2023),
+MATH (Hendrycks et al., 2021), HumanEval (Chen
+et al., 2021), MBPP (Austin et al., 2021), and
+MMLU-Pro (Wang et al., 2024).
+Baselines.Our baselines span single-model
+inference; single-agent reasoning (CoT (Wei
+et al., 2022), Complex-CoT (Fu et al., 2023));
+fixed-topology multi-agent collaboration (MacNet-
+Chain, -Tree, and -Complete (Qian et al., 2025));
+adaptive workflow optimization (AFlow (Zhang
+et al., 2025b)); evolving orchestration (Pup-
+peteer (Dang et al., 2025)); and query-only routing
+(MASRouter (Yue et al., 2025)).
+LLM Backbones.We route over five
+open-weight LLMs: llama-3.2-3B, llama-
+3.1-8B (Grattafiori et al., 2024), mistral-nemo-
+12B (Mistral AI Team, 2024), qwen-2.5-14B,
+and qwen-2.5-32B </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(Yang et al., 2024). This
+3B–32B heterogeneous pool allows the router
+to trade off capability and inference cost. To
+quantify the accuracy–cost trade-off, we assign
+each backbone a price proportional to its parameter
+count, a hardware-independent proxy for per-token
+inference compute (Appendix 9). Backbone
+capability descriptions are listed in Appendix 16.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We train with Adam optimizer using learning rate
+0.01, GRPO group size G= 6 , and 16 queries per
+batch. We set maximum depth ϕ= 6 , cost penalty
+λc ∈ {10,20,50}, entropy coefficient cH = 0.01,
+and V AE regularizer weightα= 0.001 . For the
+fixed-topology multi-agent baselines, we set the
+number of agents equal to our maximum depth
+ϕ= 6 , so every multi-agent method operates un-
+der the same agent budget. We use the same 26
+heterogeneous role profiles as MASRouter (Yue
+et al., 2025), spanning programming agents with
+compiler access to research-oriented agents with
+external knowledge sources; full descriptions are
+in Appendix 14. For final aggregation, we use the
+LLM backbone selected most frequently across the
+query&#x27;s reasoning steps. The aggregation prompt
+is provided in Appendix 15.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 shows that Gated-Memory Routing
+achieves the strongest overall performance: it at-
+tains the best average accuracy and the top result
+on four of the five benchmarks, improving on the
+strongest baseline by 2.44 points on average. The
+gains are most pronounced on GSM-Hard and Hu-
+manEval, where intermediate reasoning quality and
+selective context matter most; the one exception is
+MBPP, where a fixed multi-agent chain topology
+powered by qwen-2.5-14B edges ahead at pass@1
+but trails on every other benchmark and on aver-
+age. On MBPP our method is comparable to MAS-
+Router (79.60 vs. 79.20) and ahead of Puppeteer-
+32B (74.80), while several fixed MacNet config-
+urations score highest. MBPP&#x27;s short, relatively
+uniform problems appear to benefit from a fixed
+pipeline built on a strong code model, leaving less
+room for adaptive orchestration to help; the benefit
+of gated memory is most </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>downstream
+agents the redundant context that inflates prompts
+Method LLM Mul. Rout. MATH GSM-Hard MBPP HumanEval MMLU-Pro Avg.
+Single LLM
+llama-3.2-3B✗ ✗43.27 25.85 52.20 62.79 34.00 43.62
+llama-3.1-8B✗ ✗43.75 39.87 57.60 69.78 48.25 51.85
+mistral-nemo-12B✗ ✗42.07 30.11 56.00 68.22 27.75 44.83
+qwen-2.5-14B✗ ✗75.72 64.58 71.80 82.95 65.25 72.06
+qwen-2.5-32B✗ ✗78.37 61.52 79.00 84.37 66.02 73.86
+CoT (Wei et al., 2022) qwen-2.5-14B✗ ✗77.88 67.52 70.80 82.17 62.16 72.11
+qwen-2.5-32B✗ ✗78.85 64.56 77.20 85.15 68.41 74.83
+Complex-CoT (Fu et al., 2023) qwen-2.5-14B✗ ✗75.96 66.76 70.40 80.62 63.07 71.36
+qwen-2.5-32B✗ ✗77.16 65.32 78.40 85.47 68.41 74.95
+MacNet-Chain (Qian et al., 2025) qwen-2.5-14B✓ ✗73.80 59.7582.6686.82 61.48 72.90
+qwen-2.5-32B✓ ✗77.64 61.93 80.73 83.80 67.95 74.41
+MacNet-Tree (Qian et al., 2025) qwen-2.5-14B✓ ✗76.68 60.32 79.84 82.95 60.68 72.09
+qwen-2.5-32B✓ ✗77.88 62.31 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Configuration GSM-Hard HumanEval
+Acc. Cost Acc. Cost
+Full system 70.55 0.587 89.84 0.032
+w/o role allocator 68.37 0.400 85.94 0.043
+w/o LLM router 56.53 0.555 71.88 0.026
+w/o retrieval gate 69.22 0.488 85.94 0.034
+w/o write gate 66.67 0.621 84.38 0.037
+w/o halting 70.08 0.840 86.72 0.086
+w/o both memory gates 67.99 0.447 83.59 0.033
+Table 2: Leave-one-out ablation. Each row disables
+one routing module while keeping the others active. We
+report accuracy (%) and total test-set cost on GSM-Hard
+and HumanEval.
+Table 2 reports a leave-one-out ablation, each
+variant replacing one module with a default:w/o
+role allocatoruses random role selection,w/o LLM
+routerrandom backbone selection,w/o retrieval
+gateexposes the full memory to each agent,w/o
+write gatewrites every response to memory, and
+w/o haltingruns every query to the maximum depth
+ϕ. The effects split cleanly along the division </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We contrast Gated-Memory Routing with the two
+routing paradigms it is built to improve on. Query-
+only routing fixes every decision from the input
+query before execution begins; we instantiate it
+with MASRouter, the strongest query-only router
+among our baselines. Under full-history routing,
+the per-step role and backbone allocation is condi-
+tioned on the accumulated history, and all interme-
+diate reasoning is forwarded as context to the next
+agent. Gated-memory routing is our full system.
+Table 3 compares the three.
+GSM-Hard HumanEval
+Routing paradigm Acc. (%) Cost Acc. (%) Cost
+Query-only (MASRouter) 66.00 1.012 85.16 0.057
+Full-history 70.27 0.985 89.06 0.068
+Gated-memory (ours)70.55 0.587 89.84 0.032
+Table 3: Comparison of the three routing paradigms on
+GSM-Hard and HumanEval.
+Full-history routing conditions each decision on
+the entire accumulated trajectory, increasing con-
+text </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our evaluation uses closed-domain tasks with veri-
+fiable answers, enabling automatic reward computa-
+tion; open-ended generation would require reward
+models, human evaluation, or other supervision.
+Our efficiency analysis: parameter count provides
+a hardware-independent compute proxy but does
+not capture latency, memory pressure, or batching,
+while FLOPs and wall-clock measurements in Ap-
+pendix 9 cover only two benchmarks. Finally, we
+evaluate open-weight Qwen2.5, Llama-3, and Mis-
+tral models; backbones can be substituted through
+their capability profiles and per-token costs without
+changing the framework.</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>= 0.010N
+per 1M tokens, with N the parameter count in billions),
+shown as input/output.
+To corroborate the size-weighted proxy with
+hardware-relevant measurements, Table 5 reports,
+for HumanEval and MBPP, an approximate FLOPs
+count and the batch-amortized wall-clock time per
+query for our method and the two strongest base-
+lines. FLOPs are estimated from the per-call token
+records as 2N FLOPs per processed token (Kaplan
+et al., 2020), summed over all calls with N the
+parameter count of the model serving each call;
+this omits the sequence-length-dependent atten-
+tion term. Wall-clock time is the end-to-end in-
+ference time for the test set divided by the number
+of queries, measured under the same serving config-
+uration for all methods. Our method has the lowest
+FLOPs and wall-clock time on both benchmarks,
+and the ordering matches the proxy.
+HumanEval MBPP
+Method PFLOPs/query Time/query </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 reports one training run per method.
+To quantify run-to-run variability, we retrained
+our method and the two strongest baselines with
+three independent seeds each and report the per-
+benchmark mean and sample standard deviation in
+Table 8, together with the overall mean (the macro-
+average over benchmarks for each seed, then mean
+and standard deviation across seeds). Our method
+has the highest mean on all five benchmarks and im-
+proves the overall mean by 4.91 points over MAS-
+Router and 2.10 over Puppeteer-32B. The ranking
+is identical under every seed: the lowest overall
+score among our seeds ( 76.62) exceeds the high-
+est among Puppeteer&#x27;s (75.79) and MASRouter&#x27;s
+(74.27).</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +433,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

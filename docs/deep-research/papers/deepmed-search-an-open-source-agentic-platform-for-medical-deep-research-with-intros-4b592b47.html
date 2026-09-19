@@ -60,15 +60,120 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <p>While the platform demonstrates a cohesive software engineering architecture for agentic medical information retrieval, the empirical validation in the short paper is minimal. The evaluation lacks detailed tabular benchmarks, direct baseline metrics, variance/uncertainty reporting, and clinical auditing, leaving the performance benefits scientifically uncertain.</p>
+      <p>The authors acknowledge system latency and computational overhead from multi-agent generation as well as the absence of a formal clinician user study [Efbd0a97356b34635-B0021].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:41:22.627397+00:00.</p>
+        <p>Coverage: 18954 of 18954 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Navigating the deluge of heterogeneous medical
+data, from academic literature (PubMed) to clini-
+cal guidelines (Web) and private knowledge bases
+remains a critical bottleneck for evidence-based
+medicine. While commercial black-box tools lack
+transparency, standard open-source RAG imple-
+mentations frequently suffer from &quot;reasoning drift&quot;
+when handling complex, long-tail queries. We
+presentDEEPMEDSEARCH, a fully open-source,
+agentic platform designed for transparent medi-
+cal deep research. Built on a high-performance
+NEXT.JSarchitecture, DEEPMEDSEARCHfea-
+tures a source-adaptive router that autonomously
+dispatches sub-queries to PubMed, web search, or
+local graph-based knowledge bases based on infor-
+mation density. Crucially, the platform integrates
+an introspective verification module, powered by
+a causal-consistent multi-agent debate framework,
+to validate retrieved evidence against </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DEEPMEDSEARCHis engineered as a modular, agentic
+workflow designed to transform high-level clinical inquiries
+into structured research insights. As illustrated in Figure 1,
+the platform transitions from autonomous data orchestration
+arXiv:2606.29746v1  [cs.AI]  29 Jun 2026
+Figure 1: System architecture of DEEPMEDSEARCH. The platform integrates a source-adaptive router for multi-endpoint evidence retrieval,
+causal introspective filtering to mitigate commonality bias, and a multi-agent debate engine to verify reasoning and synthesize reports.
+to rigorous causal verification across three primary stages:
+Source-Adaptive Routing, Causal Introspective Filtering, and
+Multi-Agent Synthesis.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To mitigate theCommonality Biasidentified in clinical LLMs
+[Kandpalet al., 2023 ], the platform utilizes aCausal In-
+trospective Filteringmechanism. This stage aligns the re-
+trieved evidence with diagnostic logic via two steps:1) Con-
+trastive Hypothesis Expansion:The system proactively for-
+mulates &quot;confounding hypotheses&quot;, prevalent diseases that
+mimic the target long-tail condition (e.g., generating &quot;Es-
+sential Hypertension&quot; when analyzing potential &quot;Pheochro-
+mocytoma&quot;) [Park and Lee, 2024 ].2) Evidence Down-
+weighting:Chunks are filtered based on a discriminative
+scoreS i = sim(ci,Htarget )
+sim(ci,Hmimic)+ϵ. Here, sim(·,·)denotes the co-
+sine similarity between BGE-M3 sentence embeddings, andϵ
+is set to10 −6 to avoid division by zero. A candidate chunk is
+regarded as discriminative whenS i is larger than the thresh-
+oldτ s; chunks failing to meet a dynamic threshold are tagged
+as </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The final reasoning phase is handled by an introspective ver-
+ification module, instantiated as a multi-agent adversarial de-
+bate framework[Chanet al., 2023]. The system deploys three
+distinct agents: aProponent(A pro) that constructs reason-
+ing chains from evidence to diagnosis, anOpponent(A con)
+that identifies missing causal links or inconsistencies, and a
+Judge(A judge) that delivers the final verdict once reasoning
+converges (Information Gain&lt; τ).
+Crucially, rather than producing a single-line answer, the
+synthesis engine generates a structured research report. These
+reports are citation-backed and organized into sections: Dif-
+ferential Diagnosis, Supporting Evidence (from both Graph
+and Text), and Rejected Hypotheses. This &quot;glass-box&quot; output
+allows clinicians to audit the platform&#x27;s logic in real-time.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Query:&quot;Patient presents with paroxysmal hypertension,
+headache, palpitations, and sweating. Standard anti-hypertensive
+drugs ineffective. &quot;
+×Vanilla RAG Response:
+Diagnosis:Essential Hypertension. Treatment involves lifestyle
+changes...
+[Error: Fixates on common disease; ignores paroxysmal &amp; sweat-
+ing cues]
+✓DEEPMEDSEARCH(Ours):
+Diagnosis:Pheochromocytoma.
+Reasoning:1.Contrastive Filter:&#x27;Essential Hypertension&#x27; down-
+weighted (cannot explain sweating). 2.Debate Verdict:Symptom
+triad strongly indicates catecholamine-secreting tumor.
+Table 1: Case study: DEEPMEDSEARCHactively filters common
+disease noise (Hypertension) to correctly identify the rare condition.
+leveragingPagedAttentionto optimize memory footprint and
+maximize throughput.Report Generation Engine:A cus-
+tom synthesis module compiles the verified evidence into
+a structured markdown/PDF report, automatically mapping
+reasoning </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As summarized in Table 2, DEEPMEDuniquely integrates
+source-adaptive routing and multi-agent verification, bridg-
+ing the gap between vanilla RAG and commercial black-box
+tools.
+Performance Gains:We evaluated on the MIRAGE
+benchmark [Xionget al., 2024 ]. DeepMed Search consis-
+tently outperforms standard RAG baselines. On the challeng-
+ing PubMedQA subset, our method improves accuracy by ap-
+proximately 9.0% over vanilla RAG (using Qwen3-8B). For
+rare diseases, experiments on the MedR-Bench dataset show
+that our approach achieves an accuracy of 76.43% (using
+DeepSeek-v3.2), bridging the gap between automated sys-
+tems and expert-level reasoning.
+Capabilities Vanilla RAG Commercial Ours
+Open-Source Transparency✓×✓
+Adaptive Routing (Web/Graph)×✓ ✓
+Causal-Consistent Filtering× ×✓
+Multi-Agent Verification× ×✓
+Structured Deep Reports×✓ ✓
+Table 2: Feature comparison. DEEPMEDSEARCHbridges </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>glass-
+box transparency with practical research-oriented system capabili-
+ties.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DEEPMEDSEARCHprovides a transparent, agentic platform
+for medical deep research. It combines source-adaptive rout-
+ing, causal-consistent filtering, and multi-agent verification
+to mitigate retrieval-induced reasoning drift in medical LLMs
+[Park and Lee, 2024] and generate structured, citation-backed
+reports. Current limitations include additional computational
+and latency overhead and the lack of a formal clinician user
+study. Future work will improve efficiency, involve clinicians
+in evaluation, and extend the framework to multimodal data
+such as medical imaging [Wanget al., 2025 ].</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +212,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

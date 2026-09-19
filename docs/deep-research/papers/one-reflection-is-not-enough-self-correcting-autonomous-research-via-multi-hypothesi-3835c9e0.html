@@ -59,16 +59,232 @@
             <p>Autonomous research agents can now draft hypotheses, write code, run experiments, and produce papers, but they remain brittle when experiments fail. Under the prevailing paradigm, failure recovery is usually delegated to a single free-form reflection: a rich trajectory of metrics, logs, and design choices is compres...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents an exceptionally honest, well-controlled, and methodical study of failure recovery in autonomous research agents. The empirical findings are backed by objective execution statistics, multi-judge automated reviews, and human expert validation, with candid treatment of unresolved flaws.</p>
+      <p>The authors transparently discuss the small benchmark sample size (12 topics), practical API budget limits forcing maximum pivot bounds, lack of external literature retrieval during causal generation, and lack of human evaluation beyond the ML domain [E37215fcd0e80c2fb-B0131, E37215fcd0e80c2fb-B0136, E37215fcd0e80c2fb-B0137, E37215fcd0e80c2fb-B0138].</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:39:01.532374+00:00.</p>
+        <p>Coverage: 97826 of 97826 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>as a structured causal diagnosis. By analyzing dynamic
+trajectory features, MHFA systematically generates multiple evidence-grounded explanations for a
+failure, independently evaluates their severity, and deterministically routes the verified root cause to
+the correct intervention level (hypothesis, experimental design, or implementation). To guarantee
+scientific honesty,SAGEfurther employs a grounded reporting mechanism that explicitly constrains
+drafted results to actual measured values, redacting hallucinated numbers. On a 12-topic, 5-domain
+benchmark,SAGEincreases metrics-bearing outputs from 42% to 92% over a reflection baseline,
+improves artifact quality from 5.00 to 6.75/10, and blindly outscores AI-Scientist-v2 (52.0 vs. 48.2),
+with gains concentrated in code development and execution. While fully autonomous scientific writing
+and generating conference-ready papers remain </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>proposeMulti-Hypothesis Failure Attribution (MHFA), a recovery framework that operationalizes the method
+of multiple working hypotheses (Chamberlin, 1965; Platt, 1964) for autonomous research agents. As illustrated
+in Figure 1(b), MHFA structures recovery as a three-stage process of divergent generation, convergent scoring,
+and deterministic routing. A divergent generator first synthesizes distinct, evidence-grounded explanations of
+the failure trajectory. An independent critic then scores the severity and evidential support of each explanation.
+Finally, rather than letting the model hallucinate a fix, a deterministic routing rule maps the verified structural
+cause to a hierarchy-aware intervention, such as method refinement, protocol redesign, or hypothesis pivoting.
+Low-level zero-metric execution failures are handled by a separate explicit repair path before structural
+attribution. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>With the failure contextCfail defined,SAGEexecutes MHFA through a two-stage divergent-convergent
+diagnostic process.
+Divergent Causal Generation.Given Cfail, the first stage of MHFA separates generation from evaluation. An
+agent adopting a &quot;senior-researcher&quot; persona is sampled to proposeK∈ [3, 5]diverse candidate attributions.
+Each candidatehi =⟨di,ci,ei,pi⟩ contains a causal descriptiondi, a categoryci∈{Method,Design} ,
+supporting evidenceei⊂C fail, and a proposed structural fixpi. This two-category space is deliberate.SAGE
+treats low-level implementation faults, especially zero-metric failures, through a separate execution-repair path.
+Divergent attribution therefore focuses on structural deficits that local repair cannot resolve: an unsound core
+method (Method) or a misaligned experimental protocol (Design). If the candidate setH lacks categorical
+diversity, or if anyhi fails to </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>cite concrete evidence fromCfail, generation is retried (Section C).
+Failure Severity Ranking.Scoring hypotheses with the same LLM instance that generated them invites
+self-endorsement. Therefore, the second stage uses an independent critic with a &quot;skeptical&quot; persona. The
+critic audits the logical soundness ofdi against the cited evidenceei, rectifies the categoryci if needed, and
+assigns a criticality scoresi∈ [0, 1]based on a fixed severity rubric, ranging from acceptable residual gaps to
+fatal directional failures (Section B). The top-scoring hypothesish∗ = arg maxisi becomes the intervention
+target, carrying its rectified categoryc∗ and verified scores∗.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>With a verified root causeh∗, the system must decide how to intervene. Allowing the LLM to act directly on
+its own diagnosis often causes semantic drift. To address this, we delegate the intervention to a deterministic
+routing framework, supported by two critical safeguards.
+Hierarchy-Aware Deterministic Routing.We apply a deterministic ruleπ(c ∗,s∗)governed by two principles:
+• Severity gates depth:The criticality scores∗ bounds the invasiveness of the intervention, ranging from
+accepting the result, to local refinement, to structural refinement, and finally to a pivot only for verified
+fatal flaws.
+• Category and severity select the level:ADesigncause routes to the protocol levellD. AMethodcause
+routes to method refinement, preserving the hypothesis when the flaw is repairable and escalating to the
+hypothesis levellH only when the method failure is fatal.
+This rule yields actions such </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>asProceed,Local-Refine,Method-Refine,Design-Refine,Pivot, and
+Design-Pivot, with the complete lookup specified in Section B. After a strict budget ofMaxPivots(two
+in our runs), the pipeline proceeds with the best available measured outcome or abstains if no metric-bearing
+run exists. Becauseπis deterministic, the same rectified diagnosis yields the same routing decision, making
+the recovery auditable.
+Data-Sufficiency Grounding (The Verdict Clamp).A purely criticality-driven router is blind to the distinction
+between a run that failed to produce usable evidence and a run that completed but returned a legitimately
+small or negative effect. A naive criticality-onlyπ can score both as severe and emit a hypothesis-discarding
+Pivot. This risks false hypothesis rejection on valid-but-weak results, burning the limited pivot budget and
+discarding reportable negative findings.
+MHFA prevents this </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SAGE&#x27;s reporting mechanism targets a narrower problem than full paper truthfulness: it constrains numeric
+result tables to values supported by measured artifacts. When asked to draft a results table, an autonomous
+LLM may introduce unmeasured means, standard deviations, baselines, or condition names.SAGEmitigates
+this numeric-table fabrication through a two-stage grounded reporting mechanism:</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sanitizer acts as a backstop. Post-drafting, it checks every numeric table cell against a registryR of empirically
+measured values, allowing a1%relative tolerance for rounding. Any unverified value is replaced with a
+redaction sentinel (---). A verifier additionally refuses drafts that contain no measured metrics or fabricated
+condition names.
+This method is scoped to reported numbers and table conditions.Neither layer automatically verifies that the
+methods, datasets, libraries, model architectures, or statistical tests named in prose were actually instantiated
+in the executed code. We observe thismethod-provenance gapin bothSAGEand strong external baselines,
+and treat it as a central open problem for future autonomous scientific agents (Section 4).</blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluateSAGE, the self-correcting full autonomous research system of Section 3. Its core contributions
+are a structured failure-recovery mechanism (MHFA with hierarchy-aware recovery and an execution-failure
+repair path) and a grounded numeric-reporting layer. For the stages orthogonal to these, namely scoping,
+7
+Table 1Blind, per-submission, uniform artifact-level evaluation across twelve topics. Each dimension is in[0, 100];
+Overallis the2:2:3weighted mean.Winscounts per-topic head-to-head victories against AI-Scientist-v2 where both
+systems produced comparable artifacts.SAGEleads overall and in both code dimensions, while result analysis remains
+low for both autonomous-scientist systems and differs by less than the judge noise.
+Framework Code Dev. Code Exec. Result AnalysisOverallWins
+AI-Scientist-v2 58.3 51.739.248.2 2
+AutoResearchClaw33.3 20.8 21.7 24.8 -
+SAGE(ours)67.5 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>62.534.652.0 7
+literature search, experiment scaffolding, and writing,SAGEruns on a standard autonomous-research harness,
+AutoResearchClaw.
+We compare against two systems. The first is our reflection baseline,SAGEw/o MHFA: the same harness
+with MHFA and hierarchy-aware routing disabled, so that failed runs fall back to free-form reflection. This
+is an ablation that holds the surrounding workflow fixed and isolates the structured recovery mechanism;
+we refer to it asSAGEw/o MHFA, or equivalently the baseline. The second is AI-Scientist-v2 (Yamada
+et al., 2025), included as a strong external autonomous-scientist reference in Section 4.2. To ensure a fair
+comparison, AI-Scientist-v2 artifacts are evaluated exactly as produced by that system, without applying
+SAGE&#x27;s reporting sanitizer or any other post-processing. The remaining diagnostic sections compareSAGE
+primarily againstSAGEw/o MHFA, </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>where the recovery mechanism is the principal intervention.
+We run all systems in the same experimental campaign on a frozen 12-topic subset ofARC-Bench(Liu et al.,
+2026), an external open-ended autonomous research benchmark. The subset spans five domains: six topics
+in machine learning, two in statistics, two in quantum computing, one in biology, and one in high-energy
+physics; the selection protocol and full topic list are given in Section A. For a controlled comparison, all
+systems, including AI-Scientist-v2, are rerun on the identical topic set using the same backbone model and
+model snapshot, API configuration, per-topic LLM and experiment-execution budget caps, wall-clock limit,
+hardware resources, and software environment. We define a run asmetrics-bearingif its experiment stage
+emits at least one task-relevant measured metric, rather than only run counts, logs, or timing </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We compareSAGEwith AI-Scientist-v2 (Yamada et al., 2025) andAutoResearchClaw(the host reflection
+baseline) across the twelve topics described in Section 4.1. Each complete submission, including experiment
+code, machine-readable results, and the generated paper, is scored on a 0 to 100 scale by a blind reviewer
+under a uniform rubric. As shown in Table 1,SAGEobtains the highest overall score in this evaluation (52.0),
+compared with AI-Scientist-v2 (48.2) and the host reflection baseline (24.8). Its advantage is concentrated in
+code development and execution, while result-analysis quality remains low.
+Protocol.Each submission is scored by an independent blind reviewer (Claude Opus 4.8) that reads only
+that submission, with framework identity stripped from file paths. The rubric evaluates three dimensions,
+aggregated in a2:2:3ratio:Code Development(whether the code is a genuine </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Outcome-level recovery.SAGEyields metrics-bearing results on 11 of 12 topics, compared with 5 of 12
+forSAGEw/o MHFA. The dominant pathology in the failing runs is a non-runnable or non-measuring</blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>produced a degraded artifact with unsupported
+claims. This bounded behavior does not turn every failed run into a paper; it prevents unbounded repair
+loops and records an honest non-result.
+Per-topic self-correction versus SAGE w/o MHFA.Table 3 tracesSAGE&#x27;s recovery trajectories across all twelve
+topics, paired withSAGEw/o MHFA, i.e. the same host pipeline with MHFA disabled and recovery reverting
+to free-form reflection. The central contrast is structural and holds independently of any run outcome. Across
+all twelve topics, the baseline&#x27;s recovery vocabulary is confined to a single action (Refine, emitted at most
+twice) and never escalates to the method, design, or hypothesis levels. In stark contrast,SAGEexecutes a
+fresh divergent-then-critic pass on every retry and, in 7 of the 11 recovered topics, successfully escalates across
+abstraction levels as evidence accumulates. For example, </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Recovering execution metrics is necessary but not sufficient. We therefore evaluate generated papers under two
+standards. The strict main-conference-style bar asks whether the paper would be acceptable as a conventional
+venue submission. AR-Eval asks a different question: whether an autonomous pipeline produced a complete,
+empirically grounded, and honest artifact. The disagreement between the two bars is part of the finding.
+Strict main-conference-style standards.Under the strict paper-only venue bar, generated papers from both
+arms fall below the acceptance-level quality. In the round evaluating non-groundedSAGEdrafts and baseline
+papers, all 12 papers score between 2 and 3 out of 10, collapsing the arm-level gap to roughly 0.3 points. A
+fresh blind round over the 8 report-groundedSAGEdeliverables averages 2.25/10, with all 8 still showing
+blank or degraded result tables. The main </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>defects are prose numbers that contradict blanked table cells and
+experimental designs that are too narrow, often single-seed or single-cell.
+Calibrated AR-Eval standards.Under general AR-Eval, the narrative is different (Figure 3). The eight
+canonicalSAGEdeliverables average 6.75/10 (2 strong, 5 credible, 1 partial), compared with 5.00/10 for
+the six baseline deliverables (0 strong, 2 credible, 4 partial). Evaluating all eleven groundedSAGEpapers,
+including Q03, B07, and P03, yields approximately 6.5 against the same baseline mean.SAGEearns a
+credible artifact on six topics where the baseline produced no paper. On the five topics where both arms
+10
+Table 3 Per-Topic Self-Correction Traces.SAGEsuccessfully recovers 11/12 topics by dynamically escalating its repairs
+across abstraction levels (fromLocal-RefinetoMethod-RefineorPivot). In stark contrast, theSAGEw/o
+MHFA baseline is trapped </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>results support a narrow conclusion:SAGE
+produces more complete autonomous-research artifacts, but neither arm produces main-conference-quality
+papers.
+Judge reliability.Because AR-Eval initially rests on a single judge, we run a reliability check with a second
+judge model. Claude Opus 4.8 and Claude Sonnet 4.6 blindly score all 14 generated papers, consisting of
+the 8 canonical groundedSAGEdeliverables and the 6 baseline deliverables, under the same rubric. Both
+judges rankSAGEabove the baseline on average: the gap is +1.75 under Opus and +0.92 under Sonnet. We
+nevertheless treat this as a diagnostic reliability check rather than a substitute for human expert validation.
+The sample size is small, and disagreement is concentrated in methodological soundness, where rank agreement
+is low. We therefore report AR-Eval alongside the strict main-conference-style review bar, not instead of </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>P03 3 3 4 3 46- - - - - -
+Figure 3AR-Eval results on the 12-topic subset, all from the primary judge (Claude Opus 4.8). Left: per-topic
+paper quality out of 10. Right: per-dimension sub-scores that aggregate into each score, with AC for autonomy and
+completion, EG for empirical grounding, RI for reporting integrity, MS for methodological soundness, and SC for
+scientific coherence. A dash marks topics where that arm produced no paper, or whereSAGEabstained rather than
+report unverified metrics.SAGEaverages 6.75/10 over its eight canonical deliverables and approximately 6.5/10 over
+all eleven grounded papers, compared with 5.00/10 for the six baseline deliverables. B07 is a baseline-favored reversal
+analyzed in Section F.
+Table 4Blind human evaluation by three ML-
+PhD reviewers on the six ML topics (Overall,
+1–10; mean over topics and reviewers).SAGE
+leads on Overall (paired Wilcoxonp = </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.031
+vs. AI-Scientist-v2,p = 0.062vs.AutoRe-
+searchClaw, whereN= 5as it produced no
+paper on ML20).
+System Overall (1–10)
+SAGE(ours)5.67
+AI-Scientist-v2 4.72
+AutoResearchClaw3.00
+Human expert evaluation.To test whether AR-Eval merely re-
+flects an LLM judge rewarding an LLM-built artifact, we ran
+a blind human evaluation on the six machine-learning topics,
+the subset where our three reviewers (all ML PhDs) have do-
+main expertise. Each reviewer scored three anonymized versions
+per topic,SAGE,AutoResearchClaw, and AI-Scientist-
+v2, on the same dimensions and blind to the system mapping.
+The human ranking matches the ordering from our automated
+evaluations (Table 4):SAGEattains the highest overall score
+(5.67/10), above AI-Scientist-v2 (4.72) and well aboveAutoRe-
+searchClaw(3.00). Crucially, the per-topic human and AR-
+Eval overall scores forSAGEcorrelate at Spearmanρ = 0.61,
+comparable </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to theρ = 0.625between our two LLM judges; AR-Eval therefore agrees with domain experts
+about as well as two strong models agree with each other. The written comments echo the same picture:
+SAGEis consistently credited with controlled, falsifiable designs, explicit confound isolation, and clearly posed
+research questions, the main reservation being the limited experimental scale attainable in a single autonomous
+run.AutoResearchClawis faulted more fundamentally for incomplete or unexecuted experiments and
+malformed, placeholder-filled result tables, and AI-Scientist-v2 for resting on narrow single-dataset evidence
+with overly broad claims despite clear writing.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 5Ablation of MHFA components
+on the 12-topic subset, scored by the AR-
+Eval judge (Claude Opus 4.8). Each row
+removes one component from the full sys-
+tem; AR-Eval is the range (min–max) over
+the 12 papers.
+Configuration AR-Eval Score
+SAGE(full) 5–8
+w/o independent critic 5–7
+w/o divergent generation (K=1) 3–7
+w/o MHFA 0–6
+The recovery gains above could come from the surrounding repair
+machinery rather than from the multi-hypothesis structure itself.
+To separate the two, we ablate three components of MHFA and score
+the resulting papers with the same AR-Eval judge (Claude Opus
+4.8) used in Section 4.4. We remove, in turn, divergent generation
+(leaving a single hypothesis,K=1), the independent critic (so the
+generator scores its own hypotheses), and MHFA in its entirety
+(leaving only the zero-metric code-repair path). Each ablation
+degrades quality in a distinct and interpretable </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>way (Table 5).
+With a single hypothesis, a misattributed cause is never corrected:
+the run commits to a surface-level fix and ships a thinner, degraded
+paper. Without the critic, self-endorsement bias lets the generator
+rank a secondary cause as most critical, so the router intervenes at the wrong level. Without MHFA, the
+system has no structured diagnosis at all and either writes on a broken experiment or blindly code-repairs,
+frequently degrading or failing outright. Only the full system routes the verified critical cause to the appropriate
+intervention and recovers clean, metric-bearing artifacts. This indicates that the multi-hypothesis structure,
+not the repair path alone, is what drives reliable recovery.</blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The router exposes three hand-set constants: the severity cut-offs0.4/0.5/0.8(Table 7), the data-sufficiency
+clamp floorκ0 = 0.6, and the pivot budgetMaxPivots = 2. To check that the recovery behavior is not an
+artifact of these specific values, we replay the deterministic routerπ on the logged diagnoses(c∗,s∗)of all
+11 recovered topics under perturbed thresholds. This is a decision-level analysis: it asks whether the router
+would have routed differently, and does not re-execute experiments.
+The routing decisions are stable (Table 8). Perturbing each severity cut-off by±0.05changes0of the
+26structural decisions, because the observed criticalities concentrate at0 .72(design) and in[0 .95, 1.0]
+(method/code), away from every boundary. The clamp floor has margin: all11valid-verdict downgrades from
+PivottoMethod-Refinepersist for κ0∈ [0.5, 0.7]and only begin reverting atκ0≥ 0.8. The pivot </blockquote></details></li><li><strong>Contribution clarity — pages 23–24</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to span five diverse scientific domains, it remains a relatively small-sample validation. Transitioning this
+framework to hundreds of open-ended research topics across wet-lab, physical, and broader computational
+sciences is a necessary next step. We hope that expanding the evaluation scale will not only stress-test
+our hierarchy-aware router but also inspire the broader community to build upon theSAGEarchitecture.
+Ultimately, our goal is to shift the field away from brittle and hallucination-prone pipelines by constructing a
+23
+trustworthy and rigorously grounded paradigm for autonomous research. This reliable foundation will be
+essential for driving future breakthroughs in critical areas, particularly in medical research and the discovery
+of new chemical materials.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +323,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -29,7 +29,7 @@
   "last_seen_date": "2026-09-06",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-06 11:04:40",
   "notified_date": "2026-09-06",
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-06 11:03:50",
-    "generated_at": "2026-09-18 18:46:09",
+    "generated_at": "2026-09-19 07:47:30",
     "last_seen_at": "2026-09-06 11:03:50",
     "metadata_sources": [
       "openalex"
@@ -105,36 +105,1565 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:37:50.922298+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The work presents a thorough architectural design, clear mathematical formulation of the memory graph, robust isolation protocols to prevent data leakage during autonomous optimization, and meaningful empirical comparisons and ablations across multiple campaigns and hardware setups.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 84445,
+      "assessment_input_sha256": "0b7a149c04ff6b9b17459c641dd875031f1215a0dcfb2fdda4bb09a0e4b257a2",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.1088/2632-2153/ae9fb7",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 83410,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 83366,
+      "evidence_block_count": 102,
+      "evidence_context_characters": 94349,
+      "evidence_context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+      "evidence_context_sha256": "ffaf48a6af507ddace2ceba4a73beffff703f6a7ee567c8fb95b7f29c3e22898",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 83446,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "extracted_pages": 19,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "479f9340406ce91071b224c35ce09414fd3238bc345a18f6b3d99194260bec01",
+        "source_url": "https://iopscience.iop.org/article/10.1088/2632-2153/ae9fb7/pdf",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 83410,
+      "scientific_body_pages": [
+        2,
+        18,
+        19
+      ],
+      "section_roles_detected": [
+        "body"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body"
+      ],
+      "sections": [
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 0,
+          "source_characters": 799,
+          "supplied_characters": 799
+        },
+        {
+          "heading": "Abstract / front matter",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 83,
+          "supplied_characters": 83
+        },
+        {
+          "heading": "Open Access",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 56,
+          "supplied_characters": 56
+        },
+        {
+          "heading": "Accepted For Publication",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 1029,
+          "supplied_characters": 1029
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "abstract",
+          "section_index": 4,
+          "source_characters": 2872,
+          "supplied_characters": 2872
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "abstract",
+          "section_index": 5,
+          "source_characters": 5181,
+          "supplied_characters": 5181
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "abstract",
+          "section_index": 6,
+          "source_characters": 5129,
+          "supplied_characters": 5129
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "abstract",
+          "section_index": 7,
+          "source_characters": 5149,
+          "supplied_characters": 5149
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "abstract",
+          "section_index": 8,
+          "source_characters": 4906,
+          "supplied_characters": 4906
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "abstract",
+          "section_index": 9,
+          "source_characters": 4656,
+          "supplied_characters": 4656
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "abstract",
+          "section_index": 10,
+          "source_characters": 4348,
+          "supplied_characters": 4348
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "abstract",
+          "section_index": 11,
+          "source_characters": 5314,
+          "supplied_characters": 5314
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "abstract",
+          "section_index": 12,
+          "source_characters": 5130,
+          "supplied_characters": 5130
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "abstract",
+          "section_index": 13,
+          "source_characters": 3610,
+          "supplied_characters": 3610
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "abstract",
+          "section_index": 14,
+          "source_characters": 3474,
+          "supplied_characters": 3474
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "abstract",
+          "section_index": 15,
+          "source_characters": 5630,
+          "supplied_characters": 5630
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "abstract",
+          "section_index": 16,
+          "source_characters": 1254,
+          "supplied_characters": 1254
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "abstract",
+          "section_index": 17,
+          "source_characters": 5708,
+          "supplied_characters": 5708
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "abstract",
+          "section_index": 18,
+          "source_characters": 5643,
+          "supplied_characters": 5643
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "abstract",
+          "section_index": 19,
+          "source_characters": 5350,
+          "supplied_characters": 5350
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "abstract",
+          "section_index": 20,
+          "source_characters": 2237,
+          "supplied_characters": 2237
+        },
+        {
+          "heading": "Back matter: Acknowledgment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 507,
+          "supplied_characters": 507
+        },
+        {
+          "heading": "Sagnelli Domenico \ue9d9 0000-0003-4958-7570",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 238,
+          "supplied_characters": 238
+        },
+        {
+          "heading": "Bryan Guilcapi \ue9d9 0000-0002-4039-9998",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Alessia Milano",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 106,
+          "supplied_characters": 106
+        },
+        {
+          "heading": "Amalia D'Avino",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 106,
+          "supplied_characters": 106
+        },
+        {
+          "heading": "V Alentina Marchesano",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Massimo Rippa",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Massimo Rippa",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 3185,
+          "supplied_characters": 3185
+        },
+        {
+          "heading": "Works Ieee Access9 10737\u201350",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 743,
+          "supplied_characters": 743
+        },
+        {
+          "heading": "Medinformatics3 162\u201377",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 397,
+          "supplied_characters": 397
+        }
+      ],
+      "selected_characters": 83366,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "selected_sections": [
+        {
+          "characters": 799,
+          "heading": "Abstract / front matter",
+          "page": 1
+        },
+        {
+          "characters": 83,
+          "heading": "Abstract / front matter",
+          "page": 2
+        },
+        {
+          "characters": 56,
+          "heading": "Open Access",
+          "page": 2
+        },
+        {
+          "characters": 1029,
+          "heading": "Accepted For Publication",
+          "page": 2
+        },
+        {
+          "characters": 2872,
+          "heading": "Abstract",
+          "page": 2
+        },
+        {
+          "characters": 5181,
+          "heading": "Abstract",
+          "page": 3
+        },
+        {
+          "characters": 5129,
+          "heading": "Abstract",
+          "page": 4
+        },
+        {
+          "characters": 5149,
+          "heading": "Abstract",
+          "page": 5
+        },
+        {
+          "characters": 4906,
+          "heading": "Abstract",
+          "page": 6
+        },
+        {
+          "characters": 4656,
+          "heading": "Abstract",
+          "page": 7
+        },
+        {
+          "characters": 4348,
+          "heading": "Abstract",
+          "page": 8
+        },
+        {
+          "characters": 5314,
+          "heading": "Abstract",
+          "page": 9
+        },
+        {
+          "characters": 5130,
+          "heading": "Abstract",
+          "page": 10
+        },
+        {
+          "characters": 3610,
+          "heading": "Abstract",
+          "page": 11
+        },
+        {
+          "characters": 3474,
+          "heading": "Abstract",
+          "page": 12
+        },
+        {
+          "characters": 5630,
+          "heading": "Abstract",
+          "page": 13
+        },
+        {
+          "characters": 1254,
+          "heading": "Abstract",
+          "page": 14
+        },
+        {
+          "characters": 5708,
+          "heading": "Abstract",
+          "page": 15
+        },
+        {
+          "characters": 5643,
+          "heading": "Abstract",
+          "page": 16
+        },
+        {
+          "characters": 5350,
+          "heading": "Abstract",
+          "page": 17
+        },
+        {
+          "characters": 2237,
+          "heading": "Abstract",
+          "page": 18
+        },
+        {
+          "characters": 507,
+          "heading": "Back matter: Acknowledgment",
+          "page": 18
+        },
+        {
+          "characters": 238,
+          "heading": "Sagnelli Domenico \ue9d9 0000-0003-4958-7570",
+          "page": 18
+        },
+        {
+          "characters": 134,
+          "heading": "Bryan Guilcapi \ue9d9 0000-0002-4039-9998",
+          "page": 18
+        },
+        {
+          "characters": 106,
+          "heading": "Alessia Milano",
+          "page": 18
+        },
+        {
+          "characters": 106,
+          "heading": "Amalia D'Avino",
+          "page": 18
+        },
+        {
+          "characters": 90,
+          "heading": "V Alentina Marchesano",
+          "page": 18
+        },
+        {
+          "characters": 110,
+          "heading": "Massimo Rippa",
+          "page": 18
+        },
+        {
+          "characters": 192,
+          "heading": "Massimo Rippa",
+          "page": 19
+        },
+        {
+          "characters": 3185,
+          "heading": "Unclassified body after references",
+          "page": 19
+        },
+        {
+          "characters": 743,
+          "heading": "Works Ieee Access9 10737\u201350",
+          "page": 19
+        },
+        {
+          "characters": 397,
+          "heading": "Medinformatics3 162\u201377",
+          "page": 19
+        }
+      ],
+      "selected_text_sha256": "0b7a149c04ff6b9b17459c641dd875031f1215a0dcfb2fdda4bb09a0e4b257a2",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "479f9340406ce91071b224c35ce09414fd3238bc345a18f6b3d99194260bec01",
+      "source_pages": 19,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0005"
+        ],
+        "excerpt": "Although autonomous, large language model-driven systems show immense potential for orches-\ntrating complex scientific experiments, their efficacy is constrained by two fundamental bot-\ntlenecks: context dilution, where strategic reasoning degrades as experimental history accumu-\nlates, and inter-campaign amnesia, which forces systems into computationally expensive tabula\nrasa explorations upon encountering novel domains. T o overcome these limitations, we intro-\nduce the Multi-Objective State-Action Network (MOSAN), an autonomous cognitive informa-\ntion fusion framework designed for robust cross-campaign generalization and sensor shift adapta-\ntion. MOSAN achieves effective information fusion by coupling a self-evolving semantic memory\nwith an Organic Strategic Graph Memory (OSGM), strictly orchestrated through a novel Single\nLedger Architecture that isolates cognitive phases and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b17c7714188ea19ceb003aacf9503d9cd78b70bab2a535287939aec4071d2bfb",
+            "evidence_id": "E990a44029a9fff6f-B0005",
+            "pages": [
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 894,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 0,
+                "text": "Although autonomous, large language model-driven systems show immense potential for orches-\ntrating complex scientific experiments, their efficacy is constrained by two fundamental bot-\ntlenecks: context dilution, where strategic reasoning degrades as experimental history accumu-\nlates, and inter-campaign amnesia, which forces systems into computationally expensive tabula\nrasa explorations upon encountering novel domains. T o overcome these limitations, we intro-\nduce the Multi-Objective State-Action Network (MOSAN), an autonomous cognitive informa-\ntion fusion framework designed for robust cross-campaign generalization and sensor shift adapta-\ntion. MOSAN achieves effective information fusion by coupling a self-evolving semantic memory\nwith an Organic Strategic Graph Memory (OSGM), strictly orchestrated through a novel Single\nLedger Architecture that isolates cognitive phases and "
+              }
+            ],
+            "text": "Although autonomous, large language model-driven systems show immense potential for orches-\ntrating complex scientific experiments, their efficacy is constrained by two fundamental bot-\ntlenecks: context dilution, where strategic reasoning degrades as experimental history accumu-\nlates, and inter-campaign amnesia, which forces systems into computationally expensive tabula\nrasa explorations upon encountering novel domains. T o overcome these limitations, we intro-\nduce the Multi-Objective State-Action Network (MOSAN), an autonomous cognitive informa-\ntion fusion framework designed for robust cross-campaign generalization and sensor shift adapta-\ntion. MOSAN achieves effective information fusion by coupling a self-evolving semantic memory\nwith an Organic Strategic Graph Memory (OSGM), strictly orchestrated through a novel Single\nLedger Architecture that isolates cognitive phases and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0006"
+        ],
+        "excerpt": "prevents context saturation. A core mecha-\nnism of the OSGM is Cross-Domain Strategic Seeding ('Ghost Node' injection), a transient cold-\nstart fusion strategy. Upon encountering novel datasets, the OSGM temporarily injects topologi-\ncal priors from similar past domains; these ephemeral nodes guide initial architectural deductions\nand are subsequently purged, allowing the system to disseminate structural knowledge across dis-\nciplines while decreasing the risk of cross-contamination. The fusion framework was validated on\nthe challenging task of bacterial classification via Surface-Enhanced Raman Spectroscopy subject\nto sensor aging shifts, autonomously discovering highly accurate multi-topological architectures.\nCrucially, when subjected to an out-of-distribution 1D sequential modality (the ECG5000 car-\ndiovascular dataset), the agent performed zero-shot architectural meta-learning, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1f4b1e00f9d81249d119d02aad2cbd774e792c4bc286e2fcc3a95117a861b3f1",
+            "evidence_id": "E990a44029a9fff6f-B0006",
+            "pages": [
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 4,
+                "start": 894,
+                "text": "prevents context saturation. A core mecha-\nnism of the OSGM is Cross-Domain Strategic Seeding ('Ghost Node' injection), a transient cold-\nstart fusion strategy. Upon encountering novel datasets, the OSGM temporarily injects topologi-\ncal priors from similar past domains; these ephemeral nodes guide initial architectural deductions\nand are subsequently purged, allowing the system to disseminate structural knowledge across dis-\nciplines while decreasing the risk of cross-contamination. The fusion framework was validated on\nthe challenging task of bacterial classification via Surface-Enhanced Raman Spectroscopy subject\nto sensor aging shifts, autonomously discovering highly accurate multi-topological architectures.\nCrucially, when subjected to an out-of-distribution 1D sequential modality (the ECG5000 car-\ndiovascular dataset), the agent performed zero-shot architectural meta-learning, "
+              }
+            ],
+            "text": "prevents context saturation. A core mecha-\nnism of the OSGM is Cross-Domain Strategic Seeding ('Ghost Node' injection), a transient cold-\nstart fusion strategy. Upon encountering novel datasets, the OSGM temporarily injects topologi-\ncal priors from similar past domains; these ephemeral nodes guide initial architectural deductions\nand are subsequently purged, allowing the system to disseminate structural knowledge across dis-\nciplines while decreasing the risk of cross-contamination. The fusion framework was validated on\nthe challenging task of bacterial classification via Surface-Enhanced Raman Spectroscopy subject\nto sensor aging shifts, autonomously discovering highly accurate multi-topological architectures.\nCrucially, when subjected to an out-of-distribution 1D sequential modality (the ECG5000 car-\ndiovascular dataset), the agent performed zero-shot architectural meta-learning, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0011"
+        ],
+        "excerpt": "literature lacks a unified cognitive fusion framework [ 15, 18\u201320].\nT o bridge this gap, we introduce the Multi-Objective State-Action Network (MOSAN), an\nautonomous cognitive information-fusion framework specifically designed for long-horizon scientific\nexperimentation and sensor shift adaptation. MOSAN was initially validated on the challenging task\nof SERS-based bacterial classification. At its core, the framework integrates an Organic Strategic Graph\nMemory (OSGM), a persistent directed multigraph that enables principled cross-campaign knowledge\nfusion. In this graph, nodes encode experimental states and edges represent tool executions weighted\nby multi-objective impact vectors, with Q-values dynamically propagated via the Bellman optimality\nequation.\nAs a crucial novelty to overcome the cognitive bottleneck of inter-campaign amnesia, the OSGM\nimplements Cross-Domain Strategic ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dbf430a01799e61be3309421e92a1d815e2159a89c1995366ecc2a4707c3c7b8",
+            "evidence_id": "E990a44029a9fff6f-B0011",
+            "pages": [
+              3
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3389,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 5,
+                "start": 2495,
+                "text": "literature lacks a unified cognitive fusion framework [ 15, 18\u201320].\nT o bridge this gap, we introduce the Multi-Objective State-Action Network (MOSAN), an\nautonomous cognitive information-fusion framework specifically designed for long-horizon scientific\nexperimentation and sensor shift adaptation. MOSAN was initially validated on the challenging task\nof SERS-based bacterial classification. At its core, the framework integrates an Organic Strategic Graph\nMemory (OSGM), a persistent directed multigraph that enables principled cross-campaign knowledge\nfusion. In this graph, nodes encode experimental states and edges represent tool executions weighted\nby multi-objective impact vectors, with Q-values dynamically propagated via the Bellman optimality\nequation.\nAs a crucial novelty to overcome the cognitive bottleneck of inter-campaign amnesia, the OSGM\nimplements Cross-Domain Strategic "
+              }
+            ],
+            "text": "literature lacks a unified cognitive fusion framework [ 15, 18\u201320].\nT o bridge this gap, we introduce the Multi-Objective State-Action Network (MOSAN), an\nautonomous cognitive information-fusion framework specifically designed for long-horizon scientific\nexperimentation and sensor shift adaptation. MOSAN was initially validated on the challenging task\nof SERS-based bacterial classification. At its core, the framework integrates an Organic Strategic Graph\nMemory (OSGM), a persistent directed multigraph that enables principled cross-campaign knowledge\nfusion. In this graph, nodes encode experimental states and edges represent tool executions weighted\nby multi-objective impact vectors, with Q-values dynamically propagated via the Bellman optimality\nequation.\nAs a crucial novelty to overcome the cognitive bottleneck of inter-campaign amnesia, the OSGM\nimplements Cross-Domain Strategic "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0012"
+        ],
+        "excerpt": "Seeding via 'Ghost Node' injection. This transient, cold-start mech-\nanism temporarily fuses topological priors from past domains into the active exploratory space. Because\nthese injected nodes are strictly ephemeral, the AI successfully transfers structural logic across distinct\nscientific domains while maintaining the strict empirical air-gapping required for robust data isolation.\nSupported by a novel Single Ledger Architecture (SiLA) that strictly isolates cognitive phases, and\nspecialist sub-agent teams (including an Innovation T eam that autonomously authors and validates neu-\nral architectures), MOSAN demonstrates that LLM orchestration can transcend standard hyperparameter\ntuning. Ultimately, this work aims to establish MOSAN as a generalized, agentic fusion framework capa-\nble of autonomously synthesizing multi-epoch information, extending its utility far beyond spectroscopy\nto ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ae1209992784ca8598c960a07fe5a75c55093554b5e449ea47afa9c7568229b0",
+            "evidence_id": "E990a44029a9fff6f-B0012",
+            "pages": [
+              3
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4289,
+                "page": 3,
+                "section": "Abstract",
+                "section_index": 5,
+                "start": 3389,
+                "text": "Seeding via 'Ghost Node' injection. This transient, cold-start mech-\nanism temporarily fuses topological priors from past domains into the active exploratory space. Because\nthese injected nodes are strictly ephemeral, the AI successfully transfers structural logic across distinct\nscientific domains while maintaining the strict empirical air-gapping required for robust data isolation.\nSupported by a novel Single Ledger Architecture (SiLA) that strictly isolates cognitive phases, and\nspecialist sub-agent teams (including an Innovation T eam that autonomously authors and validates neu-\nral architectures), MOSAN demonstrates that LLM orchestration can transcend standard hyperparameter\ntuning. Ultimately, this work aims to establish MOSAN as a generalized, agentic fusion framework capa-\nble of autonomously synthesizing multi-epoch information, extending its utility far beyond spectroscopy\nto "
+              }
+            ],
+            "text": "Seeding via 'Ghost Node' injection. This transient, cold-start mech-\nanism temporarily fuses topological priors from past domains into the active exploratory space. Because\nthese injected nodes are strictly ephemeral, the AI successfully transfers structural logic across distinct\nscientific domains while maintaining the strict empirical air-gapping required for robust data isolation.\nSupported by a novel Single Ledger Architecture (SiLA) that strictly isolates cognitive phases, and\nspecialist sub-agent teams (including an Innovation T eam that autonomously authors and validates neu-\nral architectures), MOSAN demonstrates that LLM orchestration can transcend standard hyperparameter\ntuning. Ultimately, this work aims to establish MOSAN as a generalized, agentic fusion framework capa-\nble of autonomously synthesizing multi-epoch information, extending its utility far beyond spectroscopy\nto "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0018"
+        ],
+        "excerpt": "inference server on dedicated\nGPU partitions. This setup successfully executed the entire closed-loop discovery process\u2014from hypoth-\nesis generation to model training\u2014ensuring absolute privacy for sensitive clinical data at zero external\nAPI inference cost.\n2.4.OSGM\nOSGM is implemented as a persistent directed multigraph G = (V , E) stored in GraphML format, with\none graph file per dataset identifier. Each node v in V (referred to as an Anchor) represents a distinct\nregion of the joint state-architecture space, characterized by a handcrafted state vector s composed of\nfour concatenated components: (i) a one-hot encoding of the active architecture; (ii) a three-dimensional\nperformance vector [best_accuracy, mean_stability, learning_speed]; (iii) a one-hot encoding of the most\nrecently executed tool; and (iv) a normalized dataset hash enabling cross-dataset state comparison. A\nnew anchor ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "71d4de95c3c2fd9cdcb1471ab0da4df7ac225b5b2ad025306f77959d949bd395",
+            "evidence_id": "E990a44029a9fff6f-B0018",
+            "pages": [
+              4
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4480,
+                "page": 4,
+                "section": "Abstract",
+                "section_index": 6,
+                "start": 3581,
+                "text": "inference server on dedicated\nGPU partitions. This setup successfully executed the entire closed-loop discovery process\u2014from hypoth-\nesis generation to model training\u2014ensuring absolute privacy for sensitive clinical data at zero external\nAPI inference cost.\n2.4.OSGM\nOSGM is implemented as a persistent directed multigraph G = (V , E) stored in GraphML format, with\none graph file per dataset identifier. Each node v in V (referred to as an Anchor) represents a distinct\nregion of the joint state-architecture space, characterized by a handcrafted state vector s composed of\nfour concatenated components: (i) a one-hot encoding of the active architecture; (ii) a three-dimensional\nperformance vector [best_accuracy, mean_stability, learning_speed]; (iii) a one-hot encoding of the most\nrecently executed tool; and (iv) a normalized dataset hash enabling cross-dataset state comparison. A\nnew anchor "
+              }
+            ],
+            "text": "inference server on dedicated\nGPU partitions. This setup successfully executed the entire closed-loop discovery process\u2014from hypoth-\nesis generation to model training\u2014ensuring absolute privacy for sensitive clinical data at zero external\nAPI inference cost.\n2.4.OSGM\nOSGM is implemented as a persistent directed multigraph G = (V , E) stored in GraphML format, with\none graph file per dataset identifier. Each node v in V (referred to as an Anchor) represents a distinct\nregion of the joint state-architecture space, characterized by a handcrafted state vector s composed of\nfour concatenated components: (i) a one-hot encoding of the active architecture; (ii) a three-dimensional\nperformance vector [best_accuracy, mean_stability, learning_speed]; (iii) a one-hot encoding of the most\nrecently executed tool; and (iv) a normalized dataset hash enabling cross-dataset state comparison. A\nnew anchor "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0021"
+        ],
+        "excerpt": "convergence on previously unseen datasets and avoid computationally wasteful tabula rasa\nexplorations, the OSGM implements an Ephemeral Overlay mechanism, formally termed GhostNode\ninjection. At initialization\u2014specifically if the active graph contains fewer than a configurable threshold\nof nodes (default: n = 10)\u2014the system performs a one-time cold-start injection of high-value topologi-\ncal states extracted from prior autonomous campaigns.\nCandidate datasets for transfer are dynamically drawn from the three most recently modified sibling\ngraphs in the persistent memory directory (acting as a latency guard). Similarity is assessed via domain\nconstraints: matching representation families or class-count proximity (| N_A\u2014N_B| < 5). From each\nqualifying neighbour graph, the five nodes with the highest outgoing Q-values are selected, alongside\ntheir top three directed edges. T o prevent the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "82a6d26a9327164171724e174523638852ea9eb1c072cccc051d58fe17badf3e",
+            "evidence_id": "E990a44029a9fff6f-B0021",
+            "pages": [
+              5
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2039,
+                "page": 5,
+                "section": "Abstract",
+                "section_index": 7,
+                "start": 1140,
+                "text": "convergence on previously unseen datasets and avoid computationally wasteful tabula rasa\nexplorations, the OSGM implements an Ephemeral Overlay mechanism, formally termed GhostNode\ninjection. At initialization\u2014specifically if the active graph contains fewer than a configurable threshold\nof nodes (default: n = 10)\u2014the system performs a one-time cold-start injection of high-value topologi-\ncal states extracted from prior autonomous campaigns.\nCandidate datasets for transfer are dynamically drawn from the three most recently modified sibling\ngraphs in the persistent memory directory (acting as a latency guard). Similarity is assessed via domain\nconstraints: matching representation families or class-count proximity (| N_A\u2014N_B| < 5). From each\nqualifying neighbour graph, the five nodes with the highest outgoing Q-values are selected, alongside\ntheir top three directed edges. T o prevent the "
+              }
+            ],
+            "text": "convergence on previously unseen datasets and avoid computationally wasteful tabula rasa\nexplorations, the OSGM implements an Ephemeral Overlay mechanism, formally termed GhostNode\ninjection. At initialization\u2014specifically if the active graph contains fewer than a configurable threshold\nof nodes (default: n = 10)\u2014the system performs a one-time cold-start injection of high-value topologi-\ncal states extracted from prior autonomous campaigns.\nCandidate datasets for transfer are dynamically drawn from the three most recently modified sibling\ngraphs in the persistent memory directory (acting as a latency guard). Similarity is assessed via domain\nconstraints: matching representation families or class-count proximity (| N_A\u2014N_B| < 5). From each\nqualifying neighbour graph, the five nodes with the highest outgoing Q-values are selected, alongside\ntheir top three directed edges. T o prevent the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0022"
+        ],
+        "excerpt": "formation of unresolvable cross-graph pathways, a strict\ntopological constraint dictates that both endpoints of any injected edge must themselves be Ghost Nodes.\nCrucially, to prevent data leakage, injected nodes carry an ephemeral flag. They are strictly excluded\nfrom all mathematical saturation metrics, ensuring they guide hypothesis generation without artificially\ninflating session-specific exploration signals. Furthermore, Ghost Nodes are never serialized: during any\ndisk-save operation, all ephemeral nodes and their incident edges are stripped from the active graph.\nBy re-evaluating the injection procedure from scratch against updated neighbour graphs in subsequent\nsessions, this mechanism provides a rigorous framework for zero-shotarchitecturalmeta-learning while\nmaintaining absolute empirical isolation between distinct scientific ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f34f43a9f629c8da8286af429fd3d43a771a064be92433bdf83034b5859f7848",
+            "evidence_id": "E990a44029a9fff6f-B0022",
+            "pages": [
+              5
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2888,
+                "page": 5,
+                "section": "Abstract",
+                "section_index": 7,
+                "start": 2039,
+                "text": "formation of unresolvable cross-graph pathways, a strict\ntopological constraint dictates that both endpoints of any injected edge must themselves be Ghost Nodes.\nCrucially, to prevent data leakage, injected nodes carry an ephemeral flag. They are strictly excluded\nfrom all mathematical saturation metrics, ensuring they guide hypothesis generation without artificially\ninflating session-specific exploration signals. Furthermore, Ghost Nodes are never serialized: during any\ndisk-save operation, all ephemeral nodes and their incident edges are stripped from the active graph.\nBy re-evaluating the injection procedure from scratch against updated neighbour graphs in subsequent\nsessions, this mechanism provides a rigorous framework for zero-shotarchitecturalmeta-learning while\nmaintaining absolute empirical isolation between distinct scientific "
+              }
+            ],
+            "text": "formation of unresolvable cross-graph pathways, a strict\ntopological constraint dictates that both endpoints of any injected edge must themselves be Ghost Nodes.\nCrucially, to prevent data leakage, injected nodes carry an ephemeral flag. They are strictly excluded\nfrom all mathematical saturation metrics, ensuring they guide hypothesis generation without artificially\ninflating session-specific exploration signals. Furthermore, Ghost Nodes are never serialized: during any\ndisk-save operation, all ephemeral nodes and their incident edges are stripped from the active graph.\nBy re-evaluating the injection procedure from scratch against updated neighbour graphs in subsequent\nsessions, this mechanism provides a rigorous framework for zero-shotarchitecturalmeta-learning while\nmaintaining absolute empirical isolation between distinct scientific "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0029"
+        ],
+        "excerpt": "using a fixed-seed random uniform sampler without replacement:\nThe AutoML optimization set\nThe majority of the dataset constituted the active empirical playground for the MOSAN framework.\nDuring the autonomous search campaigns, every execution tool performed an internal K-fold cross-\nvalidation exclusively on this optimization set. The mean cross-validation accuracy and the internal\nvariance across folds were the only reward signals extracted and fed back to the OSGM to compute the\nmulti-objective impact vectors (Accuracy, Overfitting Gap, Latency). Consequently, the agent's topological\ndeductions and hyperparameter sweeps were optimized purely on this set, without ever viewing the final\ntest distribution.\nThe zero-knowledge lockbox (true held-out test set)\nA stratified subset of exactly 100 spectra per source acquisition file\u2014totaling 2400 spectra across the\nthree bacterial classes\u2014was ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0f2e8920f10da71068af86a5bfa7c1793d60f6965e386c9be5bfe2e3cf29b68d",
+            "evidence_id": "E990a44029a9fff6f-B0029",
+            "pages": [
+              6
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4021,
+                "page": 6,
+                "section": "Abstract",
+                "section_index": 8,
+                "start": 3121,
+                "text": "using a fixed-seed random uniform sampler without replacement:\nThe AutoML optimization set\nThe majority of the dataset constituted the active empirical playground for the MOSAN framework.\nDuring the autonomous search campaigns, every execution tool performed an internal K-fold cross-\nvalidation exclusively on this optimization set. The mean cross-validation accuracy and the internal\nvariance across folds were the only reward signals extracted and fed back to the OSGM to compute the\nmulti-objective impact vectors (Accuracy, Overfitting Gap, Latency). Consequently, the agent's topological\ndeductions and hyperparameter sweeps were optimized purely on this set, without ever viewing the final\ntest distribution.\nThe zero-knowledge lockbox (true held-out test set)\nA stratified subset of exactly 100 spectra per source acquisition file\u2014totaling 2400 spectra across the\nthree bacterial classes\u2014was "
+              }
+            ],
+            "text": "using a fixed-seed random uniform sampler without replacement:\nThe AutoML optimization set\nThe majority of the dataset constituted the active empirical playground for the MOSAN framework.\nDuring the autonomous search campaigns, every execution tool performed an internal K-fold cross-\nvalidation exclusively on this optimization set. The mean cross-validation accuracy and the internal\nvariance across folds were the only reward signals extracted and fed back to the OSGM to compute the\nmulti-objective impact vectors (Accuracy, Overfitting Gap, Latency). Consequently, the agent's topological\ndeductions and hyperparameter sweeps were optimized purely on this set, without ever viewing the final\ntest distribution.\nThe zero-knowledge lockbox (true held-out test set)\nA stratified subset of exactly 100 spectra per source acquisition file\u2014totaling 2400 spectra across the\nthree bacterial classes\u2014was "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0030"
+        ],
+        "excerpt": "uniformly carved from the total dataset and physically isolated in a separate\ndirectory (lockbox_holdout). This dataset was completely isolated from the MOSAN framework. It was\nnever exposed to the AI agent, never used to calculate optimization metrics, and never utilized to route\nthe Q-values within the OSGM. Its sole purpose was to serve as an unbiased distribution for the final,\none-time validation of the framework's ultimate architectural output.\nZero-Shot Evaluation Rules\nT o prove that MOSAN's deductive reasoning genuinely generalizes to unseen distributions, the system\nwas restricted to a single final evaluation protocol. Following the conclusion of the autonomous cam-\npaigns, the single most optimal architecture identified by MOSAN was retrained from scratch on the\nAutoML Optimization Set. This finalized model was then evaluated exactly once on the Zero-Knowledge\n5",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "26333a0b494574e0480c63dc8ab4957fd92d15e9291829c85950eb62712cf6a8",
+            "evidence_id": "E990a44029a9fff6f-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4906,
+                "page": 6,
+                "section": "Abstract",
+                "section_index": 8,
+                "start": 4021,
+                "text": "uniformly carved from the total dataset and physically isolated in a separate\ndirectory (lockbox_holdout). This dataset was completely isolated from the MOSAN framework. It was\nnever exposed to the AI agent, never used to calculate optimization metrics, and never utilized to route\nthe Q-values within the OSGM. Its sole purpose was to serve as an unbiased distribution for the final,\none-time validation of the framework's ultimate architectural output.\nZero-Shot Evaluation Rules\nT o prove that MOSAN's deductive reasoning genuinely generalizes to unseen distributions, the system\nwas restricted to a single final evaluation protocol. Following the conclusion of the autonomous cam-\npaigns, the single most optimal architecture identified by MOSAN was retrained from scratch on the\nAutoML Optimization Set. This finalized model was then evaluated exactly once on the Zero-Knowledge\n5"
+              }
+            ],
+            "text": "uniformly carved from the total dataset and physically isolated in a separate\ndirectory (lockbox_holdout). This dataset was completely isolated from the MOSAN framework. It was\nnever exposed to the AI agent, never used to calculate optimization metrics, and never utilized to route\nthe Q-values within the OSGM. Its sole purpose was to serve as an unbiased distribution for the final,\none-time validation of the framework's ultimate architectural output.\nZero-Shot Evaluation Rules\nT o prove that MOSAN's deductive reasoning genuinely generalizes to unseen distributions, the system\nwas restricted to a single final evaluation protocol. Following the conclusion of the autonomous cam-\npaigns, the single most optimal architecture identified by MOSAN was retrained from scratch on the\nAutoML Optimization Set. This finalized model was then evaluated exactly once on the Zero-Knowledge\n5"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0038"
+        ],
+        "excerpt": "tasks in three strictly isolated\nphases:\nPhase1(LeadAnalyst): This phase queries the MLflow tracking store and the OSGM via specialized\ndata-extraction tools. It outputs strictly numerical and statistical facts to the Ledger, mathematically pre-\nventing hallucinated strategic planning.\nPhase2(TheoristDeepSearch): The Theorist's planning phase does not produce hypotheses in a single\npass. It executes a four-stage, checkpoint-recoverable sequential pipeline with a conditional fifth stage of\nstructured self-critique:\n(2a) Knowledge Scout: The Theorist queries in read-only mode the OSGM graph, the vector memory,\nand the RAG research archive, producing a 200-word contextual summary that synthesises the cur-\nrent strategic state, with no planning capability.\n(2b) Hypothesis Generation: Given the contextual summary and the statistical post-mortem from Phase\n1, the Theorist produces 1\u20133 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7851e61c8aa3477629ef5184509534a123c61335b2a184a46109f246cf9799e6",
+            "evidence_id": "E990a44029a9fff6f-B0038",
+            "pages": [
+              8
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2505,
+                "page": 8,
+                "section": "Abstract",
+                "section_index": 10,
+                "start": 1613,
+                "text": "tasks in three strictly isolated\nphases:\nPhase1(LeadAnalyst): This phase queries the MLflow tracking store and the OSGM via specialized\ndata-extraction tools. It outputs strictly numerical and statistical facts to the Ledger, mathematically pre-\nventing hallucinated strategic planning.\nPhase2(TheoristDeepSearch): The Theorist's planning phase does not produce hypotheses in a single\npass. It executes a four-stage, checkpoint-recoverable sequential pipeline with a conditional fifth stage of\nstructured self-critique:\n(2a) Knowledge Scout: The Theorist queries in read-only mode the OSGM graph, the vector memory,\nand the RAG research archive, producing a 200-word contextual summary that synthesises the cur-\nrent strategic state, with no planning capability.\n(2b) Hypothesis Generation: Given the contextual summary and the statistical post-mortem from Phase\n1, the Theorist produces 1\u20133 "
+              }
+            ],
+            "text": "tasks in three strictly isolated\nphases:\nPhase1(LeadAnalyst): This phase queries the MLflow tracking store and the OSGM via specialized\ndata-extraction tools. It outputs strictly numerical and statistical facts to the Ledger, mathematically pre-\nventing hallucinated strategic planning.\nPhase2(TheoristDeepSearch): The Theorist's planning phase does not produce hypotheses in a single\npass. It executes a four-stage, checkpoint-recoverable sequential pipeline with a conditional fifth stage of\nstructured self-critique:\n(2a) Knowledge Scout: The Theorist queries in read-only mode the OSGM graph, the vector memory,\nand the RAG research archive, producing a 200-word contextual summary that synthesises the cur-\nrent strategic state, with no planning capability.\n(2b) Hypothesis Generation: Given the contextual summary and the statistical post-mortem from Phase\n1, the Theorist produces 1\u20133 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0058"
+        ],
+        "excerpt": "(user_directive.md) enables\nasynchronous priority injection at cycle boundaries without contaminating agent context.\ncontext dilution is not merely an algorithmic limitation but a fundamental scalability barrier for con-\nversational autonomous agents.\nThis architecture laid the groundwork for the finalized SiLA pipeline, in which the Strategist role was\nfurther specialized into a dedicated Theorist agent (figure 2). T o resolve the context dilution bottleneck,\nwe restructured inter-agent communication around a SiLA, conceptually analogous to the note-passing\nparadigm in supervisor-student laboratory interactions: each cognitive agent reads, contributes to, and\nsigns off on a shared written record without retaining any prior conversational state.\nThe SiLA replaces the conversational executive loop with an asynchronous epoch runner govern-\ning four strictly isolated phases that ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2544dda0cfb2b06633155a780325a4e6e15144968be82f7ec8fd7861c523088f",
+            "evidence_id": "E990a44029a9fff6f-B0058",
+            "pages": [
+              12
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1915,
+                "page": 12,
+                "section": "Abstract",
+                "section_index": 14,
+                "start": 1026,
+                "text": "(user_directive.md) enables\nasynchronous priority injection at cycle boundaries without contaminating agent context.\ncontext dilution is not merely an algorithmic limitation but a fundamental scalability barrier for con-\nversational autonomous agents.\nThis architecture laid the groundwork for the finalized SiLA pipeline, in which the Strategist role was\nfurther specialized into a dedicated Theorist agent (figure 2). T o resolve the context dilution bottleneck,\nwe restructured inter-agent communication around a SiLA, conceptually analogous to the note-passing\nparadigm in supervisor-student laboratory interactions: each cognitive agent reads, contributes to, and\nsigns off on a shared written record without retaining any prior conversational state.\nThe SiLA replaces the conversational executive loop with an asynchronous epoch runner govern-\ning four strictly isolated phases that "
+              }
+            ],
+            "text": "(user_directive.md) enables\nasynchronous priority injection at cycle boundaries without contaminating agent context.\ncontext dilution is not merely an algorithmic limitation but a fundamental scalability barrier for con-\nversational autonomous agents.\nThis architecture laid the groundwork for the finalized SiLA pipeline, in which the Strategist role was\nfurther specialized into a dedicated Theorist agent (figure 2). T o resolve the context dilution bottleneck,\nwe restructured inter-agent communication around a SiLA, conceptually analogous to the note-passing\nparadigm in supervisor-student laboratory interactions: each cognitive agent reads, contributes to, and\nsigns off on a shared written record without retaining any prior conversational state.\nThe SiLA replaces the conversational executive loop with an asynchronous epoch runner govern-\ning four strictly isolated phases that "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0063"
+        ],
+        "excerpt": "Decider's action space, restricting the agent to single empirical tri-\nals (run_training_trial). This setup forced the system to navigate the architectural search space relying\nentirely on the Theorist's deductive reasoning and the topological pathways of the OSGM, establishing a\nbaseline to quantify the efficiency and necessity of the LLM-driven autonomous scientific methodology\nover traditional automated search heuristics.\nOperating strictly via targeted executions, the agent achieved a peak held-out test accuracy of 0.9124\n(and an overfitting gap as low as 0.081) after executing only 39 total trials (figure 3(A)). Analysis of the\nexecution logs and the associated ledger artifacts (SI) reveals a highly structured, scientifically sound\nsearch trajectory. The agent began by executing 9 baseline trials on the 1D_CNN architecture, correctly\nidentifying its high generalization gap (mean ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5ee963a3a17b52df032a0fd58fee2bc7eaf1236fe55d115bc3acf50111d05d29",
+            "evidence_id": "E990a44029a9fff6f-B0063",
+            "pages": [
+              13
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2922,
+                "page": 13,
+                "section": "Abstract",
+                "section_index": 15,
+                "start": 2025,
+                "text": "Decider's action space, restricting the agent to single empirical tri-\nals (run_training_trial). This setup forced the system to navigate the architectural search space relying\nentirely on the Theorist's deductive reasoning and the topological pathways of the OSGM, establishing a\nbaseline to quantify the efficiency and necessity of the LLM-driven autonomous scientific methodology\nover traditional automated search heuristics.\nOperating strictly via targeted executions, the agent achieved a peak held-out test accuracy of 0.9124\n(and an overfitting gap as low as 0.081) after executing only 39 total trials (figure 3(A)). Analysis of the\nexecution logs and the associated ledger artifacts (SI) reveals a highly structured, scientifically sound\nsearch trajectory. The agent began by executing 9 baseline trials on the 1D_CNN architecture, correctly\nidentifying its high generalization gap (mean "
+              }
+            ],
+            "text": "Decider's action space, restricting the agent to single empirical tri-\nals (run_training_trial). This setup forced the system to navigate the architectural search space relying\nentirely on the Theorist's deductive reasoning and the topological pathways of the OSGM, establishing a\nbaseline to quantify the efficiency and necessity of the LLM-driven autonomous scientific methodology\nover traditional automated search heuristics.\nOperating strictly via targeted executions, the agent achieved a peak held-out test accuracy of 0.9124\n(and an overfitting gap as low as 0.081) after executing only 39 total trials (figure 3(A)). Analysis of the\nexecution logs and the associated ledger artifacts (SI) reveals a highly structured, scientifically sound\nsearch trajectory. The agent began by executing 9 baseline trials on the 1D_CNN architecture, correctly\nidentifying its high generalization gap (mean "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0071"
+        ],
+        "excerpt": "converging on 2D-GAF as\nthe primary optimization axis (275 trials, mean held-out 0.8203, mean overfitting gap 0.1723), indepen-\ndently flagging and abandoning 2D-Spectrogram (mean held-out 0.5498) (figure 3(D)).\nCampaign II (63 GPU-hours) commenced with an OSGM already populated by Campaign I history.\nThe graph immediately directed hypothesis generation toward 2D-GAF , producing a measurable cross-\ncampaign efficiency gain: mean held-out accuracy increased from 0.8203 to 0.8345 while the mean over-\nfitting gap decreased from 0.1723 to 0.1551\u2014without any manual reconfiguration. The best single 2D-\nGAF configuration reached 0.9562. A brief 1D-CNN exploration (peak 0.9635, mean 0.8040) confirmed\nthe OSGM's assessment of its high variance and generalization instability (mean overfitting gap 0.2951).\nCampaign II also dived into the 3D Dynamic GAF representation (mean held-out 0.8759, mean ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0ecb2cbccaf05fcc46663d9890566c4941abbeb100a16362cd5c8f0aa4b6bccf",
+            "evidence_id": "E990a44029a9fff6f-B0071",
+            "pages": [
+              15
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3195,
+                "page": 15,
+                "section": "Abstract",
+                "section_index": 17,
+                "start": 2298,
+                "text": "converging on 2D-GAF as\nthe primary optimization axis (275 trials, mean held-out 0.8203, mean overfitting gap 0.1723), indepen-\ndently flagging and abandoning 2D-Spectrogram (mean held-out 0.5498) (figure 3(D)).\nCampaign II (63 GPU-hours) commenced with an OSGM already populated by Campaign I history.\nThe graph immediately directed hypothesis generation toward 2D-GAF , producing a measurable cross-\ncampaign efficiency gain: mean held-out accuracy increased from 0.8203 to 0.8345 while the mean over-\nfitting gap decreased from 0.1723 to 0.1551\u2014without any manual reconfiguration. The best single 2D-\nGAF configuration reached 0.9562. A brief 1D-CNN exploration (peak 0.9635, mean 0.8040) confirmed\nthe OSGM's assessment of its high variance and generalization instability (mean overfitting gap 0.2951).\nCampaign II also dived into the 3D Dynamic GAF representation (mean held-out 0.8759, mean "
+              }
+            ],
+            "text": "converging on 2D-GAF as\nthe primary optimization axis (275 trials, mean held-out 0.8203, mean overfitting gap 0.1723), indepen-\ndently flagging and abandoning 2D-Spectrogram (mean held-out 0.5498) (figure 3(D)).\nCampaign II (63 GPU-hours) commenced with an OSGM already populated by Campaign I history.\nThe graph immediately directed hypothesis generation toward 2D-GAF , producing a measurable cross-\ncampaign efficiency gain: mean held-out accuracy increased from 0.8203 to 0.8345 while the mean over-\nfitting gap decreased from 0.1723 to 0.1551\u2014without any manual reconfiguration. The best single 2D-\nGAF configuration reached 0.9562. A brief 1D-CNN exploration (peak 0.9635, mean 0.8040) confirmed\nthe OSGM's assessment of its high variance and generalization instability (mean overfitting gap 0.2951).\nCampaign II also dived into the 3D Dynamic GAF representation (mean held-out 0.8759, mean "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0072"
+        ],
+        "excerpt": "overfit-\nting gap 0.1185)\u2014the lowest generalization gap across all representational families, motivating a dedi-\ncated follow-up campaign. Across both campaigns, 2D-GAF demonstrated consistently superior general-\nization stability relative to 1D-CNN (mean overfitting gap 0.155 versus 0.295), consistent with GAF rep-\nresentations extracting features robust to the low signal-to-noise ratio of the non-refocused acquisition\nprotocol (figure 3(D)&C). The progressive improvement in mean accuracy between campaigns\u2014achieved\nwithout resetting the strategic graph\u2014empirically validates the OSGM as a persistent cross-epoch knowl-\nedge accumulator (figure 3(D)).\nT o validate the framework on smaller models, a parallel campaign was deployed using a parameter-\nconstrained open-weight model: Mistral Small 3.2 (24B). Operating reliably across 24 autonomous\ncycles, the model demonstrated coherent ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ed4a398a71966944e7fc429717b6caa542c1838ad50c81497892dc56af0bb52a",
+            "evidence_id": "E990a44029a9fff6f-B0072",
+            "pages": [
+              15
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4087,
+                "page": 15,
+                "section": "Abstract",
+                "section_index": 17,
+                "start": 3195,
+                "text": "overfit-\nting gap 0.1185)\u2014the lowest generalization gap across all representational families, motivating a dedi-\ncated follow-up campaign. Across both campaigns, 2D-GAF demonstrated consistently superior general-\nization stability relative to 1D-CNN (mean overfitting gap 0.155 versus 0.295), consistent with GAF rep-\nresentations extracting features robust to the low signal-to-noise ratio of the non-refocused acquisition\nprotocol (figure 3(D)&C). The progressive improvement in mean accuracy between campaigns\u2014achieved\nwithout resetting the strategic graph\u2014empirically validates the OSGM as a persistent cross-epoch knowl-\nedge accumulator (figure 3(D)).\nT o validate the framework on smaller models, a parallel campaign was deployed using a parameter-\nconstrained open-weight model: Mistral Small 3.2 (24B). Operating reliably across 24 autonomous\ncycles, the model demonstrated coherent "
+              }
+            ],
+            "text": "overfit-\nting gap 0.1185)\u2014the lowest generalization gap across all representational families, motivating a dedi-\ncated follow-up campaign. Across both campaigns, 2D-GAF demonstrated consistently superior general-\nization stability relative to 1D-CNN (mean overfitting gap 0.155 versus 0.295), consistent with GAF rep-\nresentations extracting features robust to the low signal-to-noise ratio of the non-refocused acquisition\nprotocol (figure 3(D)&C). The progressive improvement in mean accuracy between campaigns\u2014achieved\nwithout resetting the strategic graph\u2014empirically validates the OSGM as a persistent cross-epoch knowl-\nedge accumulator (figure 3(D)).\nT o validate the framework on smaller models, a parallel campaign was deployed using a parameter-\nconstrained open-weight model: Mistral Small 3.2 (24B). Operating reliably across 24 autonomous\ncycles, the model demonstrated coherent "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0075"
+        ],
+        "excerpt": "queried during training or validation.\nAcross five independent random seeds, the MOSAN-discovered architecture achieved a mean ter-\nminal classification accuracy of 87.4 \u00b1 2.7% (range 83.9%\u201390.5%) on this entirely unseen distribu-\ntion, with a macro-averaged F1-score of 0.874\u20130.903 across seeds. Per-class performance was consis-\ntent: Citrobacter (precision 0.78\u20130.91, recall 0.92\u20130.96), E. coli (precision 0.89\u20130.98, recall 0.76\u20130.94),\nand Enterococcus (precision 0.76\u20130.95, recall 0.75\u20130.97). The variance across seeds (sigma = 2.7%)\nreflects irreducible stochasticity in weight initialization rather than architectural instability, as the macro\nF1 remains above 0.83 in the worst case.\nThe sustained performance on a completely air-gapped dataset confirms the robustness of the dis-\ncovered solution. It demonstrates that the OSGM extracted fundamental, generalizable spectral repre-\nsentations ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b7564ef0947115c7082f5066cfc425f5a255b323680c9959fd6e95ce67acf1a3",
+            "evidence_id": "E990a44029a9fff6f-B0075",
+            "pages": [
+              16
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1077,
+                "page": 16,
+                "section": "Abstract",
+                "section_index": 18,
+                "start": 177,
+                "text": "queried during training or validation.\nAcross five independent random seeds, the MOSAN-discovered architecture achieved a mean ter-\nminal classification accuracy of 87.4 \u00b1 2.7% (range 83.9%\u201390.5%) on this entirely unseen distribu-\ntion, with a macro-averaged F1-score of 0.874\u20130.903 across seeds. Per-class performance was consis-\ntent: Citrobacter (precision 0.78\u20130.91, recall 0.92\u20130.96), E. coli (precision 0.89\u20130.98, recall 0.76\u20130.94),\nand Enterococcus (precision 0.76\u20130.95, recall 0.75\u20130.97). The variance across seeds (sigma = 2.7%)\nreflects irreducible stochasticity in weight initialization rather than architectural instability, as the macro\nF1 remains above 0.83 in the worst case.\nThe sustained performance on a completely air-gapped dataset confirms the robustness of the dis-\ncovered solution. It demonstrates that the OSGM extracted fundamental, generalizable spectral repre-\nsentations "
+              }
+            ],
+            "text": "queried during training or validation.\nAcross five independent random seeds, the MOSAN-discovered architecture achieved a mean ter-\nminal classification accuracy of 87.4 \u00b1 2.7% (range 83.9%\u201390.5%) on this entirely unseen distribu-\ntion, with a macro-averaged F1-score of 0.874\u20130.903 across seeds. Per-class performance was consis-\ntent: Citrobacter (precision 0.78\u20130.91, recall 0.92\u20130.96), E. coli (precision 0.89\u20130.98, recall 0.76\u20130.94),\nand Enterococcus (precision 0.76\u20130.95, recall 0.75\u20130.97). The variance across seeds (sigma = 2.7%)\nreflects irreducible stochasticity in weight initialization rather than architectural instability, as the macro\nF1 remains above 0.83 in the worst case.\nThe sustained performance on a completely air-gapped dataset confirms the robustness of the dis-\ncovered solution. It demonstrates that the OSGM extracted fundamental, generalizable spectral repre-\nsentations "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0078"
+        ],
+        "excerpt": "Cross-Domain Strategic Seeding capability. The OSGM autonomously injected ephemeral topological\npriors derived from the prior SERS optimization campaigns. The 'Ghost Nodes' provided the Theorist\nagent with a critical conceptual bridge: the abstract structural hypothesis that 1D sequential data can\nfundamentally benefit from 2D spatial transformations. This allowed the agent to perform zero-shot\narchitectural meta-learning without violating empirical data sovereignty. Guided by this seeded intuition,\nthe agent entirely bypassed the traditional cold-start exploration phase. It rapidly hypothesized that map-\nping the 140-point cardiac sequences into 2D GAF could effectively isolate periodic cardiac anomalies.\nCrucially, the Bayesian hyperparameter optimization tool ( Optuna) was explicitly disabled during this\ncampaign. This strict ablation forced the framework to optimize topological ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "56216d164042ce56152dfb701a4852053a058d3edd0775c3641fe59ec4f8d116",
+            "evidence_id": "E990a44029a9fff6f-B0078",
+            "pages": [
+              16
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 3763,
+                "page": 16,
+                "section": "Abstract",
+                "section_index": 18,
+                "start": 2868,
+                "text": "Cross-Domain Strategic Seeding capability. The OSGM autonomously injected ephemeral topological\npriors derived from the prior SERS optimization campaigns. The 'Ghost Nodes' provided the Theorist\nagent with a critical conceptual bridge: the abstract structural hypothesis that 1D sequential data can\nfundamentally benefit from 2D spatial transformations. This allowed the agent to perform zero-shot\narchitectural meta-learning without violating empirical data sovereignty. Guided by this seeded intuition,\nthe agent entirely bypassed the traditional cold-start exploration phase. It rapidly hypothesized that map-\nping the 140-point cardiac sequences into 2D GAF could effectively isolate periodic cardiac anomalies.\nCrucially, the Bayesian hyperparameter optimization tool ( Optuna) was explicitly disabled during this\ncampaign. This strict ablation forced the framework to optimize topological "
+              }
+            ],
+            "text": "Cross-Domain Strategic Seeding capability. The OSGM autonomously injected ephemeral topological\npriors derived from the prior SERS optimization campaigns. The 'Ghost Nodes' provided the Theorist\nagent with a critical conceptual bridge: the abstract structural hypothesis that 1D sequential data can\nfundamentally benefit from 2D spatial transformations. This allowed the agent to perform zero-shot\narchitectural meta-learning without violating empirical data sovereignty. Guided by this seeded intuition,\nthe agent entirely bypassed the traditional cold-start exploration phase. It rapidly hypothesized that map-\nping the 140-point cardiac sequences into 2D GAF could effectively isolate periodic cardiac anomalies.\nCrucially, the Bayesian hyperparameter optimization tool ( Optuna) was explicitly disabled during this\ncampaign. This strict ablation forced the framework to optimize topological "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0079"
+        ],
+        "excerpt": "depth and learning dynam-\nics relying entirely on the autonomous deductive reasoning of the Theorist. Driven by logic rather than\nstatistical search algorithms, the agent autonomously converged on a 6-layer, 192-filter convolutional\narchitecture optimized with a learning rate of 2.9 \u221710\u22125. By the third autonomous cycle, this zero-shot\nstructural transfer yielded a near-perfect accuracy of 0.9930 (99.3%) on the entirely unseen 1000-sample\nHO (alongside a mean cross-validation accuracy of 0.9847 on the active optimization pool), demon-\nstrating exceptional resistance to overfitting (mean train-test gap: 0.0067). Furthermore, the final model\nyielded an inference latency of merely 12.55 ms per sample, proving that MOSAN naturally converges\non highly efficient, deployment-ready topologies suitable for real-time biomedical diagnostics. Crucially,\nthis cross-domain campaign also highlighted ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 16,
+        "pages": [
+          16
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9fcfc8ae0b6c25ed049207be5b15ff12f80ae5271428f52daa2c80cf112838e0",
+            "evidence_id": "E990a44029a9fff6f-B0079",
+            "pages": [
+              16
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 4660,
+                "page": 16,
+                "section": "Abstract",
+                "section_index": 18,
+                "start": 3763,
+                "text": "depth and learning dynam-\nics relying entirely on the autonomous deductive reasoning of the Theorist. Driven by logic rather than\nstatistical search algorithms, the agent autonomously converged on a 6-layer, 192-filter convolutional\narchitecture optimized with a learning rate of 2.9 \u221710\u22125. By the third autonomous cycle, this zero-shot\nstructural transfer yielded a near-perfect accuracy of 0.9930 (99.3%) on the entirely unseen 1000-sample\nHO (alongside a mean cross-validation accuracy of 0.9847 on the active optimization pool), demon-\nstrating exceptional resistance to overfitting (mean train-test gap: 0.0067). Furthermore, the final model\nyielded an inference latency of merely 12.55 ms per sample, proving that MOSAN naturally converges\non highly efficient, deployment-ready topologies suitable for real-time biomedical diagnostics. Crucially,\nthis cross-domain campaign also highlighted "
+              }
+            ],
+            "text": "depth and learning dynam-\nics relying entirely on the autonomous deductive reasoning of the Theorist. Driven by logic rather than\nstatistical search algorithms, the agent autonomously converged on a 6-layer, 192-filter convolutional\narchitecture optimized with a learning rate of 2.9 \u221710\u22125. By the third autonomous cycle, this zero-shot\nstructural transfer yielded a near-perfect accuracy of 0.9930 (99.3%) on the entirely unseen 1000-sample\nHO (alongside a mean cross-validation accuracy of 0.9847 on the active optimization pool), demon-\nstrating exceptional resistance to overfitting (mean train-test gap: 0.0067). Furthermore, the final model\nyielded an inference latency of merely 12.55 ms per sample, proving that MOSAN naturally converges\non highly efficient, deployment-ready topologies suitable for real-time biomedical diagnostics. Crucially,\nthis cross-domain campaign also highlighted "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0082"
+        ],
+        "excerpt": "evaluates on the remaining 90%. Under this pro-\ntocol the strongest cross-session model, after 20 ledgers, was an architecture the agent designed from\nscratch (dynamic_cwt_volumetric_f_baseline), reaching a shifted-domain accuracy of 0.811\u2014above\nevery canonical representation evaluated under identical conditions (2D-CWT 0.700; 3D dynamic-CWT\n0.721). Notably, it was the only topology whose accuracy rose with progressive backbone unfreezing\n(0.75\u21920.81) and that recovered the hardest class, Enterococcus, to 0.85 without majority-class collapse\n(supplementary figure S5). Furthermore, the agent continued its optimization up to ledger number 30 as\ninstructed and found new configurations and architectures (regularized_volumetric_cwt_resnet.py) arriv-\ning to an accuracy of 87% (Citrobacter =89%, E.Coli = 83%, Enterococcus= 88%) (supplementary\nfigure S5). Supplementary figure S5 illustrates how ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "658e5a70c466237417711e653bdf561e2b2ba8a848a14b75558c6347f09b4cd9",
+            "evidence_id": "E990a44029a9fff6f-B0082",
+            "pages": [
+              17
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1706,
+                "page": 17,
+                "section": "Abstract",
+                "section_index": 19,
+                "start": 807,
+                "text": "evaluates on the remaining 90%. Under this pro-\ntocol the strongest cross-session model, after 20 ledgers, was an architecture the agent designed from\nscratch (dynamic_cwt_volumetric_f_baseline), reaching a shifted-domain accuracy of 0.811\u2014above\nevery canonical representation evaluated under identical conditions (2D-CWT 0.700; 3D dynamic-CWT\n0.721). Notably, it was the only topology whose accuracy rose with progressive backbone unfreezing\n(0.75\u21920.81) and that recovered the hardest class, Enterococcus, to 0.85 without majority-class collapse\n(supplementary figure S5). Furthermore, the agent continued its optimization up to ledger number 30 as\ninstructed and found new configurations and architectures (regularized_volumetric_cwt_resnet.py) arriv-\ning to an accuracy of 87% (Citrobacter =89%, E.Coli = 83%, Enterococcus= 88%) (supplementary\nfigure S5). Supplementary figure S5 illustrates how "
+              }
+            ],
+            "text": "evaluates on the remaining 90%. Under this pro-\ntocol the strongest cross-session model, after 20 ledgers, was an architecture the agent designed from\nscratch (dynamic_cwt_volumetric_f_baseline), reaching a shifted-domain accuracy of 0.811\u2014above\nevery canonical representation evaluated under identical conditions (2D-CWT 0.700; 3D dynamic-CWT\n0.721). Notably, it was the only topology whose accuracy rose with progressive backbone unfreezing\n(0.75\u21920.81) and that recovered the hardest class, Enterococcus, to 0.85 without majority-class collapse\n(supplementary figure S5). Furthermore, the agent continued its optimization up to ledger number 30 as\ninstructed and found new configurations and architectures (regularized_volumetric_cwt_resnet.py) arriv-\ning to an accuracy of 87% (Citrobacter =89%, E.Coli = 83%, Enterococcus= 88%) (supplementary\nfigure S5). Supplementary figure S5 illustrates how "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0089"
+        ],
+        "excerpt": "iterations of MOSAN will explore\nmodalities beyond SERS, such as Fourier-transform infrared spectroscopy, to evaluate whether the agent\nautonomously leverages continuous wavelet transforms to decouple overlapping, low-frequency broad.\nFurthermore, expanding the current CNN-constrained search space to include vision transformers and\ngraph neural networks will test the framework's adaptability on high-dimensional hyperspectral imaging\ndatasets, which necessitate complex spatial embeddings for many-body interactions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 18,
+        "pages": [
+          18
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e3d66ff4ecbb9e835af4548f460af5cf015545783a172a9b0c07b38617a50171",
+            "evidence_id": "E990a44029a9fff6f-B0089",
+            "pages": [
+              18
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 2237,
+                "page": 18,
+                "section": "Abstract",
+                "section_index": 20,
+                "start": 1718,
+                "text": "iterations of MOSAN will explore\nmodalities beyond SERS, such as Fourier-transform infrared spectroscopy, to evaluate whether the agent\nautonomously leverages continuous wavelet transforms to decouple overlapping, low-frequency broad.\nFurthermore, expanding the current CNN-constrained search space to include vision transformers and\ngraph neural networks will test the framework's adaptability on high-dimensional hyperspectral imaging\ndatasets, which necessitate complex spatial embeddings for many-body interactions."
+              }
+            ],
+            "text": "iterations of MOSAN will explore\nmodalities beyond SERS, such as Fourier-transform infrared spectroscopy, to evaluate whether the agent\nautonomously leverages continuous wavelet transforms to decouple overlapping, low-frequency broad.\nFurthermore, expanding the current CNN-constrained search space to include vision transformers and\ngraph neural networks will test the framework's adaptability on high-dimensional hyperspectral imaging\ndatasets, which necessitate complex spatial embeddings for many-body interactions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://iopscience.iop.org/article/10.1088/2632-2153/ae9fb7/pdf",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "position_or_conceptual",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.1088/2632-2153/ae9fb7",
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The final SERS architecture was retrained from scratch and evaluated once on an air-gapped Lockbox holdout (mean 87.4% across five seeds), and the ECG5000 transfer was assessed on an unseen 1000-sample holdout (99.3%).",
+          "final_evaluation_signal": "One-time terminal evaluation on the zero-knowledge Lockbox holdout for SERS and an isolated 1000-sample holdout for ECG5000.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Cross-validation accuracy and internal variance on the AutoML optimization pool drove Q-value updates and agent decisions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0005",
+          "E990a44029a9fff6f-B0011",
+          "E990a44029a9fff6f-B0012",
+          "E990a44029a9fff6f-B0018",
+          "E990a44029a9fff6f-B0021",
+          "E990a44029a9fff6f-B0022",
+          "E990a44029a9fff6f-B0029",
+          "E990a44029a9fff6f-B0030",
+          "E990a44029a9fff6f-B0038",
+          "E990a44029a9fff6f-B0063",
+          "E990a44029a9fff6f-B0071",
+          "E990a44029a9fff6f-B0072",
+          "E990a44029a9fff6f-B0075",
+          "E990a44029a9fff6f-B0078",
+          "E990a44029a9fff6f-B0079",
+          "E990a44029a9fff6f-B0082",
+          "E990a44029a9fff6f-B0089"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "479f9340406ce91071b224c35ce09414fd3238bc345a18f6b3d99194260bec01"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.1088/2632-2153/ae9fb7",
+        "claim_evidence_alignment": "Claims of effective sample efficiency, cross-campaign knowledge reuse, and resistance to context degradation are well aligned with reported ablation trajectories, Lockbox test results (87.4% on unseen holdout), and cross-domain ECG5000 performance (0.9930 accuracy).",
+        "context_id": "990a44029a9fff6f78587016c8af1d6b10a587743dda716442cda39a2bc6fddd",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation includes a controlled ablation study isolating deductive reasoning from Optuna Bayesian search, an air-gapped zero-knowledge Lockbox evaluation on SERS bacterial data, zero-shot transfer to the ECG5000 benchmark, and cross-session adaptation on a six-month-aged sensor dataset.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Objective held-out accuracy on the strictly air-gapped Lockbox test set across five random seeds (mean 87.4%) and an unseen 1000-sample ECG5000 test set (99.3%).",
+          "final_evaluation_signal": "One-time terminal evaluation of the retrained discovered architecture on an isolated zero-knowledge Lockbox holdout set, and an unseen holdout partition on ECG5000.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Cross-validation accuracy and internal variance computed exclusively on the AutoML optimization training pool guided Q-value updates and agent decisions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E990a44029a9fff6f-B0005",
+          "E990a44029a9fff6f-B0006",
+          "E990a44029a9fff6f-B0011",
+          "E990a44029a9fff6f-B0012",
+          "E990a44029a9fff6f-B0018",
+          "E990a44029a9fff6f-B0021",
+          "E990a44029a9fff6f-B0022",
+          "E990a44029a9fff6f-B0029",
+          "E990a44029a9fff6f-B0030",
+          "E990a44029a9fff6f-B0038",
+          "E990a44029a9fff6f-B0058",
+          "E990a44029a9fff6f-B0063",
+          "E990a44029a9fff6f-B0071",
+          "E990a44029a9fff6f-B0072",
+          "E990a44029a9fff6f-B0075",
+          "E990a44029a9fff6f-B0078",
+          "E990a44029a9fff6f-B0079",
+          "E990a44029a9fff6f-B0082",
+          "E990a44029a9fff6f-B0089"
+        ],
+        "limitations": "The authors explicitly report substantial GPU computation requirements (91 GPU-hours for SERS), acknowledge validation primarily spanning 1D-to-2D spectral/temporal modalities, and clarify that aged-sensor results serve as a temporal proof-of-concept rather than universal cross-instrument calibration.",
+        "method_assessment": "The methodology is described in detail, including graph state definitions, Bellman Q-value updates, ephemeral cross-domain ghost node injection, decoupled Celery execution, and a strict phased markdown ledger communication mechanism.",
+        "quality_rationale": "The work presents a thorough architectural design, clear mathematical formulation of the memory graph, robust isolation protocols to prevent data leakage during autonomous optimization, and meaningful empirical comparisons and ablations across multiple campaigns and hardware setups.",
+        "scoped_contribution": "The paper introduces MOSAN, an autonomous multi-agent AutoML framework combining a Single Ledger Architecture, an Organic Strategic Graph Memory with ghost-node seeding, and semantic retrieval to mitigate context dilution and inter-campaign amnesia during spectroscopic and sequential time-series model discovery.",
+        "source_content_hash": "479f9340406ce91071b224c35ce09414fd3238bc345a18f6b3d99194260bec01"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The work presents a thorough architectural design, clear mathematical formulation of the memory graph, robust isolation protocols to prevent data leakage during autonomous optimization, and meaningful empirical comparisons and ablations across multiple campaigns and hardware setups.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "479f9340406ce91071b224c35ce09414fd3238bc345a18f6b3d99194260bec01",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly report substantial GPU computation requirements (91 GPU-hours for SERS), acknowledge validation primarily spanning 1D-to-2D spectral/temporal modalities, and clarify that aged-sensor results serve as a temporal proof-of-concept rather than universal cross-instrument calibration."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -163,7 +1692,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

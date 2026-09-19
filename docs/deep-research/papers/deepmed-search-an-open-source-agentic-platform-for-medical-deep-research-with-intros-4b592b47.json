@@ -41,7 +41,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-06 11:14:34",
-    "generated_at": "2026-09-18 18:46:26",
+    "generated_at": "2026-09-19 07:47:47",
     "last_seen_at": "2026-07-06 11:14:34",
     "metadata_sources": [
       "openalex",
@@ -107,36 +107,966 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:41:22.627397+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
-    "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concerns": [
+      "The empirical evaluation is minimal and under-specified: only two isolated accuracy figures are reported without baseline numbers, sample sizes, variance, or structured comparisons, so the claimed performance gains cannot be verified.",
+      "The headline claim of bridging the gap to expert-level reasoning is not supported by the reported evidence, which lacks clinician validation or any expert-level comparison.",
+      "The method description remains high-level for key components such as routing heuristics, dynamic threshold selection, and debate convergence criteria, limiting reproducibility of the reported system."
+    ],
+    "concise_summary": "While the platform demonstrates a cohesive software engineering architecture for agentic medical information retrieval, the empirical validation in the short paper is minimal. The evaluation lacks detailed tabular benchmarks, direct baseline metrics, variance/uncertainty reporting, and clinical auditing, leaving the performance benefits scientifically uncertain.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 20417,
+      "assessment_input_sha256": "c4f21fa3c51e3da3165b753b83bdfcb82e06c16ba2ea116b7c31fdff00532968",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7166901874",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 19300,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 18954,
+      "evidence_block_count": 34,
+      "evidence_context_characters": 23483,
+      "evidence_context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+      "evidence_context_sha256": "2957ce2cf049a48de66610f05a92739b98d67315f19f5f26facb92d1afaa8de5",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 19308,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "extracted_pages": 5,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "1815fc62c5ceefca5882b1afcafc5231f17b20de02bfa004c908c1c8d885719d",
+        "source_url": "https://arxiv.org/pdf/2606.29746",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 19300,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Deepmedsearch: An Open-Source Agentic Platform For Medical Deep Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1505,
+          "supplied_characters": 1505
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2561,
+          "supplied_characters": 2561
+        },
+        {
+          "heading": "System Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "methods",
+          "section_index": 3,
+          "source_characters": 273,
+          "supplied_characters": 273
+        },
+        {
+          "heading": "System Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 4,
+          "source_characters": 417,
+          "supplied_characters": 417
+        },
+        {
+          "heading": "Source-Adaptive Routing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1014,
+          "supplied_characters": 1014
+        },
+        {
+          "heading": "Causal Introspective Filtering",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1032,
+          "supplied_characters": 1032
+        },
+        {
+          "heading": "Multi-Agent Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 822,
+          "supplied_characters": 822
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 895,
+          "supplied_characters": 895
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 9,
+          "source_characters": 990,
+          "supplied_characters": 990
+        },
+        {
+          "heading": "Demonstration Scenarios",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 219,
+          "supplied_characters": 219
+        },
+        {
+          "heading": "Scenario 1: Autonomous Routing & Causal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 651,
+          "supplied_characters": 651
+        },
+        {
+          "heading": "Scenario 2: Glass-Box Debate & Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 727,
+          "supplied_characters": 727
+        },
+        {
+          "heading": "Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 13,
+          "source_characters": 974,
+          "supplied_characters": 974
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "conclusion",
+          "section_index": 14,
+          "source_characters": 591,
+          "supplied_characters": 591
+        },
+        {
+          "heading": "This Work Was Supported By The National Natural Science",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 101,
+          "supplied_characters": 101
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 344,
+          "supplied_characters": 344
+        },
+        {
+          "heading": "Tuality And Reasoning In Language Models Through Multi-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 300,
+          "supplied_characters": 300
+        },
+        {
+          "heading": "Of The 16Th Conference Of The European Chapter Of The Asso-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 1057,
+          "supplied_characters": 1057
+        },
+        {
+          "heading": "The 2020 Conference On Empirical Methods In Natural Lan-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 19,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Ing And Large Language Models: Opening A New Frontier",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 721,
+          "supplied_characters": 721
+        },
+        {
+          "heading": "Inproceedings Of The 61St Annual Meeting Of The Associ-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Ation For Computational Linguistics (Volume 1: Long Pa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 142,
+          "supplied_characters": 142
+        },
+        {
+          "heading": "Ward Robust Ralms: Revealing The Impact Of Imperfect Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 633,
+          "supplied_characters": 633
+        },
+        {
+          "heading": "Machine Learning Models For High Stakes Decisions And Use",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1937,
+          "supplied_characters": 1937
+        },
+        {
+          "heading": "Machine Learning Models For High Stakes Decisions And Use",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 362,
+          "supplied_characters": 362
+        }
+      ],
+      "selected_characters": 18954,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected_sections": [
+        {
+          "characters": 423,
+          "heading": "Deepmedsearch: An Open-Source Agentic Platform For Medical Deep Research",
+          "page": 1
+        },
+        {
+          "characters": 1505,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2561,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 273,
+          "heading": "System Architecture",
+          "page": 1
+        },
+        {
+          "characters": 417,
+          "heading": "System Architecture",
+          "page": 2
+        },
+        {
+          "characters": 1014,
+          "heading": "Source-Adaptive Routing",
+          "page": 2
+        },
+        {
+          "characters": 1032,
+          "heading": "Causal Introspective Filtering",
+          "page": 2
+        },
+        {
+          "characters": 822,
+          "heading": "Multi-Agent Synthesis",
+          "page": 2
+        },
+        {
+          "characters": 895,
+          "heading": "Implementation Details",
+          "page": 2
+        },
+        {
+          "characters": 990,
+          "heading": "Implementation Details",
+          "page": 3
+        },
+        {
+          "characters": 219,
+          "heading": "Demonstration Scenarios",
+          "page": 3
+        },
+        {
+          "characters": 651,
+          "heading": "Scenario 1: Autonomous Routing & Causal",
+          "page": 3
+        },
+        {
+          "characters": 727,
+          "heading": "Scenario 2: Glass-Box Debate & Report",
+          "page": 3
+        },
+        {
+          "characters": 974,
+          "heading": "Evaluation",
+          "page": 3
+        },
+        {
+          "characters": 591,
+          "heading": "Conclusion",
+          "page": 3
+        },
+        {
+          "characters": 101,
+          "heading": "This Work Was Supported By The National Natural Science",
+          "page": 4
+        },
+        {
+          "characters": 344,
+          "heading": "Unclassified body after references",
+          "page": 4
+        },
+        {
+          "characters": 300,
+          "heading": "Tuality And Reasoning In Language Models Through Multi-",
+          "page": 4
+        },
+        {
+          "characters": 1057,
+          "heading": "Of The 16Th Conference Of The European Chapter Of The Asso-",
+          "page": 4
+        },
+        {
+          "characters": 208,
+          "heading": "The 2020 Conference On Empirical Methods In Natural Lan-",
+          "page": 4
+        },
+        {
+          "characters": 721,
+          "heading": "Ing And Large Language Models: Opening A New Frontier",
+          "page": 4
+        },
+        {
+          "characters": 55,
+          "heading": "Inproceedings Of The 61St Annual Meeting Of The Associ-",
+          "page": 4
+        },
+        {
+          "characters": 142,
+          "heading": "Ation For Computational Linguistics (Volume 1: Long Pa-",
+          "page": 4
+        },
+        {
+          "characters": 633,
+          "heading": "Ward Robust Ralms: Revealing The Impact Of Imperfect Re-",
+          "page": 4
+        },
+        {
+          "characters": 1937,
+          "heading": "Machine Learning Models For High Stakes Decisions And Use",
+          "page": 4
+        },
+        {
+          "characters": 362,
+          "heading": "Machine Learning Models For High Stakes Decisions And Use",
+          "page": 5
+        }
+      ],
+      "selected_text_sha256": "c4f21fa3c51e3da3165b753b83bdfcb82e06c16ba2ea116b7c31fdff00532968",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "1815fc62c5ceefca5882b1afcafc5231f17b20de02bfa004c908c1c8d885719d",
+      "source_pages": 5,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0002"
+        ],
+        "excerpt": "Navigating the deluge of heterogeneous medical\ndata, from academic literature (PubMed) to clini-\ncal guidelines (Web) and private knowledge bases\nremains a critical bottleneck for evidence-based\nmedicine. While commercial black-box tools lack\ntransparency, standard open-source RAG imple-\nmentations frequently suffer from \"reasoning drift\"\nwhen handling complex, long-tail queries. We\npresentDEEPMEDSEARCH, a fully open-source,\nagentic platform designed for transparent medi-\ncal deep research. Built on a high-performance\nNEXT.JSarchitecture, DEEPMEDSEARCHfea-\ntures a source-adaptive router that autonomously\ndispatches sub-queries to PubMed, web search, or\nlocal graph-based knowledge bases based on infor-\nmation density. Crucially, the platform integrates\nan introspective verification module, powered by\na causal-consistent multi-agent debate framework,\nto validate retrieved evidence against ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "2b6a330f62d5339a9a3238594281e738f0b15a534e72f636d5e4d530dd67577f",
+            "evidence_id": "Efbd0a97356b34635-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Navigating the deluge of heterogeneous medical\ndata, from academic literature (PubMed) to clini-\ncal guidelines (Web) and private knowledge bases\nremains a critical bottleneck for evidence-based\nmedicine. While commercial black-box tools lack\ntransparency, standard open-source RAG imple-\nmentations frequently suffer from \"reasoning drift\"\nwhen handling complex, long-tail queries. We\npresentDEEPMEDSEARCH, a fully open-source,\nagentic platform designed for transparent medi-\ncal deep research. Built on a high-performance\nNEXT.JSarchitecture, DEEPMEDSEARCHfea-\ntures a source-adaptive router that autonomously\ndispatches sub-queries to PubMed, web search, or\nlocal graph-based knowledge bases based on infor-\nmation density. Crucially, the platform integrates\nan introspective verification module, powered by\na causal-consistent multi-agent debate framework,\nto validate retrieved evidence against "
+              }
+            ],
+            "text": "Navigating the deluge of heterogeneous medical\ndata, from academic literature (PubMed) to clini-\ncal guidelines (Web) and private knowledge bases\nremains a critical bottleneck for evidence-based\nmedicine. While commercial black-box tools lack\ntransparency, standard open-source RAG imple-\nmentations frequently suffer from \"reasoning drift\"\nwhen handling complex, long-tail queries. We\npresentDEEPMEDSEARCH, a fully open-source,\nagentic platform designed for transparent medi-\ncal deep research. Built on a high-performance\nNEXT.JSarchitecture, DEEPMEDSEARCHfea-\ntures a source-adaptive router that autonomously\ndispatches sub-queries to PubMed, web search, or\nlocal graph-based knowledge bases based on infor-\nmation density. Crucially, the platform integrates\nan introspective verification module, powered by\na causal-consistent multi-agent debate framework,\nto validate retrieved evidence against "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0007"
+        ],
+        "excerpt": "DEEPMEDSEARCHis engineered as a modular, agentic\nworkflow designed to transform high-level clinical inquiries\ninto structured research insights. As illustrated in Figure 1,\nthe platform transitions from autonomous data orchestration\narXiv:2606.29746v1  [cs.AI]  29 Jun 2026\nFigure 1: System architecture of DEEPMEDSEARCH. The platform integrates a source-adaptive router for multi-endpoint evidence retrieval,\ncausal introspective filtering to mitigate commonality bias, and a multi-agent debate engine to verify reasoning and synthesize reports.\nto rigorous causal verification across three primary stages:\nSource-Adaptive Routing, Causal Introspective Filtering, and\nMulti-Agent Synthesis.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1,
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "System Architecture",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "f1b8f8909ac74063cbf0b57a7dd773d8fb05e3b18d24366f6a8a8c9a38eacf71",
+            "evidence_id": "Efbd0a97356b34635-B0007",
+            "pages": [
+              1,
+              2
+            ],
+            "section": "System Architecture",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 273,
+                "page": 1,
+                "section": "System Architecture",
+                "section_index": 3,
+                "start": 0,
+                "text": "DEEPMEDSEARCHis engineered as a modular, agentic\nworkflow designed to transform high-level clinical inquiries\ninto structured research insights. As illustrated in Figure 1,\nthe platform transitions from autonomous data orchestration\narXiv:2606.29746v1  [cs.AI]  29 Jun 2026"
+              },
+              {
+                "end": 417,
+                "page": 2,
+                "section": "System Architecture",
+                "section_index": 4,
+                "start": 0,
+                "text": "Figure 1: System architecture of DEEPMEDSEARCH. The platform integrates a source-adaptive router for multi-endpoint evidence retrieval,\ncausal introspective filtering to mitigate commonality bias, and a multi-agent debate engine to verify reasoning and synthesize reports.\nto rigorous causal verification across three primary stages:\nSource-Adaptive Routing, Causal Introspective Filtering, and\nMulti-Agent Synthesis."
+              }
+            ],
+            "text": "DEEPMEDSEARCHis engineered as a modular, agentic\nworkflow designed to transform high-level clinical inquiries\ninto structured research insights. As illustrated in Figure 1,\nthe platform transitions from autonomous data orchestration\narXiv:2606.29746v1  [cs.AI]  29 Jun 2026\nFigure 1: System architecture of DEEPMEDSEARCH. The platform integrates a source-adaptive router for multi-endpoint evidence retrieval,\ncausal introspective filtering to mitigate commonality bias, and a multi-agent debate engine to verify reasoning and synthesize reports.\nto rigorous causal verification across three primary stages:\nSource-Adaptive Routing, Causal Introspective Filtering, and\nMulti-Agent Synthesis."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0010"
+        ],
+        "excerpt": "To mitigate theCommonality Biasidentified in clinical LLMs\n[Kandpalet al., 2023 ], the platform utilizes aCausal In-\ntrospective Filteringmechanism. This stage aligns the re-\ntrieved evidence with diagnostic logic via two steps:1) Con-\ntrastive Hypothesis Expansion:The system proactively for-\nmulates \"confounding hypotheses\", prevalent diseases that\nmimic the target long-tail condition (e.g., generating \"Es-\nsential Hypertension\" when analyzing potential \"Pheochro-\nmocytoma\") [Park and Lee, 2024 ].2) Evidence Down-\nweighting:Chunks are filtered based on a discriminative\nscoreS i = sim(ci,Htarget )\nsim(ci,Hmimic)+\u03f5. Here, sim(\u00b7,\u00b7)denotes the co-\nsine similarity between BGE-M3 sentence embeddings, and\u03f5\nis set to10 \u22126 to avoid division by zero. A candidate chunk is\nregarded as discriminative whenS i is larger than the thresh-\nold\u03c4 s; chunks failing to meet a dynamic threshold are tagged\nas ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Causal Introspective Filtering",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "649e2dbef254d79218f4eaccc5f436905914a77dabe0eca4a6c68e0448cfdc20",
+            "evidence_id": "Efbd0a97356b34635-B0010",
+            "pages": [
+              2
+            ],
+            "section": "Causal Introspective Filtering",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 2,
+                "section": "Causal Introspective Filtering",
+                "section_index": 6,
+                "start": 0,
+                "text": "To mitigate theCommonality Biasidentified in clinical LLMs\n[Kandpalet al., 2023 ], the platform utilizes aCausal In-\ntrospective Filteringmechanism. This stage aligns the re-\ntrieved evidence with diagnostic logic via two steps:1) Con-\ntrastive Hypothesis Expansion:The system proactively for-\nmulates \"confounding hypotheses\", prevalent diseases that\nmimic the target long-tail condition (e.g., generating \"Es-\nsential Hypertension\" when analyzing potential \"Pheochro-\nmocytoma\") [Park and Lee, 2024 ].2) Evidence Down-\nweighting:Chunks are filtered based on a discriminative\nscoreS i = sim(ci,Htarget )\nsim(ci,Hmimic)+\u03f5. Here, sim(\u00b7,\u00b7)denotes the co-\nsine similarity between BGE-M3 sentence embeddings, and\u03f5\nis set to10 \u22126 to avoid division by zero. A candidate chunk is\nregarded as discriminative whenS i is larger than the thresh-\nold\u03c4 s; chunks failing to meet a dynamic threshold are tagged\nas "
+              }
+            ],
+            "text": "To mitigate theCommonality Biasidentified in clinical LLMs\n[Kandpalet al., 2023 ], the platform utilizes aCausal In-\ntrospective Filteringmechanism. This stage aligns the re-\ntrieved evidence with diagnostic logic via two steps:1) Con-\ntrastive Hypothesis Expansion:The system proactively for-\nmulates \"confounding hypotheses\", prevalent diseases that\nmimic the target long-tail condition (e.g., generating \"Es-\nsential Hypertension\" when analyzing potential \"Pheochro-\nmocytoma\") [Park and Lee, 2024 ].2) Evidence Down-\nweighting:Chunks are filtered based on a discriminative\nscoreS i = sim(ci,Htarget )\nsim(ci,Hmimic)+\u03f5. Here, sim(\u00b7,\u00b7)denotes the co-\nsine similarity between BGE-M3 sentence embeddings, and\u03f5\nis set to10 \u22126 to avoid division by zero. A candidate chunk is\nregarded as discriminative whenS i is larger than the thresh-\nold\u03c4 s; chunks failing to meet a dynamic threshold are tagged\nas "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0012"
+        ],
+        "excerpt": "The final reasoning phase is handled by an introspective ver-\nification module, instantiated as a multi-agent adversarial de-\nbate framework[Chanet al., 2023]. The system deploys three\ndistinct agents: aProponent(A pro) that constructs reason-\ning chains from evidence to diagnosis, anOpponent(A con)\nthat identifies missing causal links or inconsistencies, and a\nJudge(A judge) that delivers the final verdict once reasoning\nconverges (Information Gain< \u03c4).\nCrucially, rather than producing a single-line answer, the\nsynthesis engine generates a structured research report. These\nreports are citation-backed and organized into sections: Dif-\nferential Diagnosis, Supporting Evidence (from both Graph\nand Text), and Rejected Hypotheses. This \"glass-box\" output\nallows clinicians to audit the platform's logic in real-time.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Multi-Agent Synthesis",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "9211cc16bab770a2950efcae876b2d41bb75dfe942926db0057168b139137032",
+            "evidence_id": "Efbd0a97356b34635-B0012",
+            "pages": [
+              2
+            ],
+            "section": "Multi-Agent Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 822,
+                "page": 2,
+                "section": "Multi-Agent Synthesis",
+                "section_index": 7,
+                "start": 0,
+                "text": "The final reasoning phase is handled by an introspective ver-\nification module, instantiated as a multi-agent adversarial de-\nbate framework[Chanet al., 2023]. The system deploys three\ndistinct agents: aProponent(A pro) that constructs reason-\ning chains from evidence to diagnosis, anOpponent(A con)\nthat identifies missing causal links or inconsistencies, and a\nJudge(A judge) that delivers the final verdict once reasoning\nconverges (Information Gain< \u03c4).\nCrucially, rather than producing a single-line answer, the\nsynthesis engine generates a structured research report. These\nreports are citation-backed and organized into sections: Dif-\nferential Diagnosis, Supporting Evidence (from both Graph\nand Text), and Rejected Hypotheses. This \"glass-box\" output\nallows clinicians to audit the platform's logic in real-time."
+              }
+            ],
+            "text": "The final reasoning phase is handled by an introspective ver-\nification module, instantiated as a multi-agent adversarial de-\nbate framework[Chanet al., 2023]. The system deploys three\ndistinct agents: aProponent(A pro) that constructs reason-\ning chains from evidence to diagnosis, anOpponent(A con)\nthat identifies missing causal links or inconsistencies, and a\nJudge(A judge) that delivers the final verdict once reasoning\nconverges (Information Gain< \u03c4).\nCrucially, rather than producing a single-line answer, the\nsynthesis engine generates a structured research report. These\nreports are citation-backed and organized into sections: Dif-\nferential Diagnosis, Supporting Evidence (from both Graph\nand Text), and Rejected Hypotheses. This \"glass-box\" output\nallows clinicians to audit the platform's logic in real-time."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0014"
+        ],
+        "excerpt": "Query:\"Patient presents with paroxysmal hypertension,\nheadache, palpitations, and sweating. Standard anti-hypertensive\ndrugs ineffective. \"\n\u00d7Vanilla RAG Response:\nDiagnosis:Essential Hypertension. Treatment involves lifestyle\nchanges...\n[Error: Fixates on common disease; ignores paroxysmal & sweat-\ning cues]\n\u2713DEEPMEDSEARCH(Ours):\nDiagnosis:Pheochromocytoma.\nReasoning:1.Contrastive Filter:'Essential Hypertension' down-\nweighted (cannot explain sweating). 2.Debate Verdict:Symptom\ntriad strongly indicates catecholamine-secreting tumor.\nTable 1: Case study: DEEPMEDSEARCHactively filters common\ndisease noise (Hypertension) to correctly identify the rare condition.\nleveragingPagedAttentionto optimize memory footprint and\nmaximize throughput.Report Generation Engine:A cus-\ntom synthesis module compiles the verified evidence into\na structured markdown/PDF report, automatically mapping\nreasoning ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e6ffa80be26dfa038a30625422c2002489d36ff3ca2624e3672aae5c2ebbdd15",
+            "evidence_id": "Efbd0a97356b34635-B0014",
+            "pages": [
+              3
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 3,
+                "section": "Implementation Details",
+                "section_index": 9,
+                "start": 0,
+                "text": "Query:\"Patient presents with paroxysmal hypertension,\nheadache, palpitations, and sweating. Standard anti-hypertensive\ndrugs ineffective. \"\n\u00d7Vanilla RAG Response:\nDiagnosis:Essential Hypertension. Treatment involves lifestyle\nchanges...\n[Error: Fixates on common disease; ignores paroxysmal & sweat-\ning cues]\n\u2713DEEPMEDSEARCH(Ours):\nDiagnosis:Pheochromocytoma.\nReasoning:1.Contrastive Filter:'Essential Hypertension' down-\nweighted (cannot explain sweating). 2.Debate Verdict:Symptom\ntriad strongly indicates catecholamine-secreting tumor.\nTable 1: Case study: DEEPMEDSEARCHactively filters common\ndisease noise (Hypertension) to correctly identify the rare condition.\nleveragingPagedAttentionto optimize memory footprint and\nmaximize throughput.Report Generation Engine:A cus-\ntom synthesis module compiles the verified evidence into\na structured markdown/PDF report, automatically mapping\nreasoning "
+              }
+            ],
+            "text": "Query:\"Patient presents with paroxysmal hypertension,\nheadache, palpitations, and sweating. Standard anti-hypertensive\ndrugs ineffective. \"\n\u00d7Vanilla RAG Response:\nDiagnosis:Essential Hypertension. Treatment involves lifestyle\nchanges...\n[Error: Fixates on common disease; ignores paroxysmal & sweat-\ning cues]\n\u2713DEEPMEDSEARCH(Ours):\nDiagnosis:Pheochromocytoma.\nReasoning:1.Contrastive Filter:'Essential Hypertension' down-\nweighted (cannot explain sweating). 2.Debate Verdict:Symptom\ntriad strongly indicates catecholamine-secreting tumor.\nTable 1: Case study: DEEPMEDSEARCHactively filters common\ndisease noise (Hypertension) to correctly identify the rare condition.\nleveragingPagedAttentionto optimize memory footprint and\nmaximize throughput.Report Generation Engine:A cus-\ntom synthesis module compiles the verified evidence into\na structured markdown/PDF report, automatically mapping\nreasoning "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0019"
+        ],
+        "excerpt": "As summarized in Table 2, DEEPMEDuniquely integrates\nsource-adaptive routing and multi-agent verification, bridg-\ning the gap between vanilla RAG and commercial black-box\ntools.\nPerformance Gains:We evaluated on the MIRAGE\nbenchmark [Xionget al., 2024 ]. DeepMed Search consis-\ntently outperforms standard RAG baselines. On the challeng-\ning PubMedQA subset, our method improves accuracy by ap-\nproximately 9.0% over vanilla RAG (using Qwen3-8B). For\nrare diseases, experiments on the MedR-Bench dataset show\nthat our approach achieves an accuracy of 76.43% (using\nDeepSeek-v3.2), bridging the gap between automated sys-\ntems and expert-level reasoning.\nCapabilities Vanilla RAG Commercial Ours\nOpen-Source Transparency\u2713\u00d7\u2713\nAdaptive Routing (Web/Graph)\u00d7\u2713 \u2713\nCausal-Consistent Filtering\u00d7 \u00d7\u2713\nMulti-Agent Verification\u00d7 \u00d7\u2713\nStructured Deep Reports\u00d7\u2713 \u2713\nTable 2: Feature comparison. DEEPMEDSEARCHbridges ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "e2f7e7f742de2f1ba25a65578e7ee7ffb57f216fba1ad42dbd0fdfb28d4ab4ec",
+            "evidence_id": "Efbd0a97356b34635-B0019",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 3,
+                "section": "Evaluation",
+                "section_index": 13,
+                "start": 0,
+                "text": "As summarized in Table 2, DEEPMEDuniquely integrates\nsource-adaptive routing and multi-agent verification, bridg-\ning the gap between vanilla RAG and commercial black-box\ntools.\nPerformance Gains:We evaluated on the MIRAGE\nbenchmark [Xionget al., 2024 ]. DeepMed Search consis-\ntently outperforms standard RAG baselines. On the challeng-\ning PubMedQA subset, our method improves accuracy by ap-\nproximately 9.0% over vanilla RAG (using Qwen3-8B). For\nrare diseases, experiments on the MedR-Bench dataset show\nthat our approach achieves an accuracy of 76.43% (using\nDeepSeek-v3.2), bridging the gap between automated sys-\ntems and expert-level reasoning.\nCapabilities Vanilla RAG Commercial Ours\nOpen-Source Transparency\u2713\u00d7\u2713\nAdaptive Routing (Web/Graph)\u00d7\u2713 \u2713\nCausal-Consistent Filtering\u00d7 \u00d7\u2713\nMulti-Agent Verification\u00d7 \u00d7\u2713\nStructured Deep Reports\u00d7\u2713 \u2713\nTable 2: Feature comparison. DEEPMEDSEARCHbridges "
+              }
+            ],
+            "text": "As summarized in Table 2, DEEPMEDuniquely integrates\nsource-adaptive routing and multi-agent verification, bridg-\ning the gap between vanilla RAG and commercial black-box\ntools.\nPerformance Gains:We evaluated on the MIRAGE\nbenchmark [Xionget al., 2024 ]. DeepMed Search consis-\ntently outperforms standard RAG baselines. On the challeng-\ning PubMedQA subset, our method improves accuracy by ap-\nproximately 9.0% over vanilla RAG (using Qwen3-8B). For\nrare diseases, experiments on the MedR-Bench dataset show\nthat our approach achieves an accuracy of 76.43% (using\nDeepSeek-v3.2), bridging the gap between automated sys-\ntems and expert-level reasoning.\nCapabilities Vanilla RAG Commercial Ours\nOpen-Source Transparency\u2713\u00d7\u2713\nAdaptive Routing (Web/Graph)\u00d7\u2713 \u2713\nCausal-Consistent Filtering\u00d7 \u00d7\u2713\nMulti-Agent Verification\u00d7 \u00d7\u2713\nStructured Deep Reports\u00d7\u2713 \u2713\nTable 2: Feature comparison. DEEPMEDSEARCHbridges "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0020"
+        ],
+        "excerpt": "glass-\nbox transparency with practical research-oriented system capabili-\nties.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluation",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "72d164e4403f23c1120f13c69f35e75b450dcbea051567d7f59860dc723ca102",
+            "evidence_id": "Efbd0a97356b34635-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 974,
+                "page": 3,
+                "section": "Evaluation",
+                "section_index": 13,
+                "start": 895,
+                "text": "glass-\nbox transparency with practical research-oriented system capabili-\nties."
+              }
+            ],
+            "text": "glass-\nbox transparency with practical research-oriented system capabili-\nties."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0021"
+        ],
+        "excerpt": "DEEPMEDSEARCHprovides a transparent, agentic platform\nfor medical deep research. It combines source-adaptive rout-\ning, causal-consistent filtering, and multi-agent verification\nto mitigate retrieval-induced reasoning drift in medical LLMs\n[Park and Lee, 2024] and generate structured, citation-backed\nreports. Current limitations include additional computational\nand latency overhead and the lack of a formal clinician user\nstudy. Future work will improve efficiency, involve clinicians\nin evaluation, and extend the framework to multimodal data\nsuch as medical imaging [Wanget al., 2025 ].",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Conclusion",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "5edfdb86c5fa8e2fc78dd62af534d44c2465da8fbd3b73fe7963073e3d69994b",
+            "evidence_id": "Efbd0a97356b34635-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Conclusion",
+            "section_role": "conclusion",
+            "source_spans": [
+              {
+                "end": 591,
+                "page": 3,
+                "section": "Conclusion",
+                "section_index": 14,
+                "start": 0,
+                "text": "DEEPMEDSEARCHprovides a transparent, agentic platform\nfor medical deep research. It combines source-adaptive rout-\ning, causal-consistent filtering, and multi-agent verification\nto mitigate retrieval-induced reasoning drift in medical LLMs\n[Park and Lee, 2024] and generate structured, citation-backed\nreports. Current limitations include additional computational\nand latency overhead and the lack of a formal clinician user\nstudy. Future work will improve efficiency, involve clinicians\nin evaluation, and extend the framework to multimodal data\nsuch as medical imaging [Wanget al., 2025 ]."
+              }
+            ],
+            "text": "DEEPMEDSEARCHprovides a transparent, agentic platform\nfor medical deep research. It combines source-adaptive rout-\ning, causal-consistent filtering, and multi-agent verification\nto mitigate retrieval-induced reasoning drift in medical LLMs\n[Park and Lee, 2024] and generate structured, citation-backed\nreports. Current limitations include additional computational\nand latency overhead and the lack of a formal clinician user\nstudy. Future work will improve efficiency, involve clinicians\nin evaluation, and extend the framework to multimodal data\nsuch as medical imaging [Wanget al., 2025 ]."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.29746",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The empirical evaluation is minimal and under-specified: only two isolated accuracy figures are reported without baseline numbers, sample sizes, variance, or structured comparisons, so the claimed performance gains cannot be verified.",
+          "The headline claim of bridging the gap to expert-level reasoning is not supported by the reported evidence, which lacks clinician validation or any expert-level comparison.",
+          "The method description remains high-level for key components such as routing heuristics, dynamic threshold selection, and debate convergence criteria, limiting reproducibility of the reported system."
+        ],
+        "canonical_id": "openalex:W7166901874",
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Accuracy is reported on external benchmark datasets rather than on the system's own filtering or debate scores.",
+          "final_evaluation_signal": "Reported outcomes are task-level accuracy figures on the PubMedQA subset of MIRAGE and the MedR-Bench dataset.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system's retrieval downweighting and debate behavior are shaped by heuristic similarity thresholds and agent prompts, including the discriminative score threshold and information-gain convergence criterion.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0002",
+          "Efbd0a97356b34635-B0007",
+          "Efbd0a97356b34635-B0010",
+          "Efbd0a97356b34635-B0012",
+          "Efbd0a97356b34635-B0014",
+          "Efbd0a97356b34635-B0019",
+          "Efbd0a97356b34635-B0020",
+          "Efbd0a97356b34635-B0021"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "1815fc62c5ceefca5882b1afcafc5231f17b20de02bfa004c908c1c8d885719d"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7166901874",
+        "claim_evidence_alignment": "The headline claims of bridging the gap between automated systems and expert-level reasoning and comprehensively outperforming standard baselines are supported primarily by qualitative case descriptions and two isolated performance numbers without full baseline context or statistical rigor [Efbd0a97356b34635-B0014, Efbd0a97356b34635-B0019].",
+        "context_id": "fbd0a97356b346352e398e6f5e8c83428b40f07b6b9765a848926126fc490e77",
+        "decision": "uncertain",
+        "evaluation_assessment": "The empirical evaluation is extremely sparse, consisting only of a short paragraph stating an approximate 9.0% improvement over vanilla RAG on the PubMedQA subset of MIRAGE and a 76.43% accuracy on MedR-Bench [Efbd0a97356b34635-B0019]. No baseline numbers, ablation results, confidence intervals, or structured tabular benchmark comparisons are provided [Efbd0a97356b34635-B0019, Efbd0a97356b34635-B0020].",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Task-level accuracy evaluated on external benchmark datasets (PubMedQA and MedR-Bench) [Efbd0a97356b34635-B0019].",
+          "final_evaluation_signal": "Question answering accuracy on the PubMedQA subset and MedR-Bench diagnostic cases [Efbd0a97356b34635-B0019].",
+          "independent_corroboration": "present",
+          "optimization_signal": "System prompts and heuristic similarity thresholds governing retrieval downweighting and agent debate termination [Efbd0a97356b34635-B0010, Efbd0a97356b34635-B0012].",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Efbd0a97356b34635-B0002",
+          "Efbd0a97356b34635-B0007",
+          "Efbd0a97356b34635-B0010",
+          "Efbd0a97356b34635-B0012",
+          "Efbd0a97356b34635-B0014",
+          "Efbd0a97356b34635-B0019",
+          "Efbd0a97356b34635-B0021"
+        ],
+        "limitations": "The authors acknowledge system latency and computational overhead from multi-agent generation as well as the absence of a formal clinician user study [Efbd0a97356b34635-B0021].",
+        "method_assessment": "The architecture combines decomposed routing, contrastive hypothesis downweighting based on BGE-M3 embedding similarities, and a Proponent-Opponent-Judge LLM debate setup [Efbd0a97356b34635-B0010, Efbd0a97356b34635-B0012, Efbd0a97356b34635-B0013]. While the system engineering pipeline is outlined, specific algorithmic details, routing heuristics, and debate convergence thresholds remain high-level.",
+        "quality_rationale": "While the platform demonstrates a cohesive software engineering architecture for agentic medical information retrieval, the empirical validation in the short paper is minimal. The evaluation lacks detailed tabular benchmarks, direct baseline metrics, variance/uncertainty reporting, and clinical auditing, leaving the performance benefits scientifically uncertain.",
+        "scoped_contribution": "DEEPMEDSEARCH presents an open-source agentic platform for medical deep research featuring source-adaptive routing across multiple knowledge endpoints, causal introspective filtering, and a multi-agent debate synthesis module [Efbd0a97356b34635-B0002, Efbd0a97356b34635-B0007].",
+        "source_content_hash": "1815fc62c5ceefca5882b1afcafc5231f17b20de02bfa004c908c1c8d885719d"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "While the platform demonstrates a cohesive software engineering architecture for agentic medical information retrieval, the empirical validation in the short paper is minimal. The evaluation lacks detailed tabular benchmarks, direct baseline metrics, variance/uncertainty reporting, and clinical auditing, leaving the performance benefits scientifically uncertain.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "1815fc62c5ceefca5882b1afcafc5231f17b20de02bfa004c908c1c8d885719d",
+    "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge system latency and computational overhead from multi-agent generation as well as the absence of a formal clinician user study [Efbd0a97356b34635-B0021]."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -170,7 +1100,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

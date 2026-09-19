@@ -33,7 +33,7 @@
   "last_seen_date": "2026-09-17",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-01 11:46:01",
   "notified_date": "2026-09-01",
@@ -44,7 +44,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-01 11:43:48",
-    "generated_at": "2026-09-18 18:46:09",
+    "generated_at": "2026-09-19 07:47:30",
     "last_seen_at": "2026-09-17 11:47:21",
     "metadata_sources": [
       "openalex",
@@ -117,36 +117,1742 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:37:29.263057+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript offers a rigorous, well-controlled experimental framework addressing a major gap in agent memory security evaluations, supported by broad cross-model testing, sensitivity analyses, and expert human annotation validation.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 43091,
+      "assessment_input_sha256": "9b38adcc6f9f96fdd687c8b364c5571a8ddb8a883c11e323a5303b90a0af0a51",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2608.30177",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 41860,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 41455,
+      "evidence_block_count": 62,
+      "evidence_context_characters": 49006,
+      "evidence_context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+      "evidence_context_sha256": "dc89908f33590880a654fc3569fbd48488a4e7503f60d04d03fcb3b78be9ae25",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 41874,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "extracted_pages": 8,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "534d19430d42adaeb129ccf81a44a565d58b9bf14a242ac0c690fc95700330fa",
+        "source_url": "https://arxiv.org/pdf/2608.30177",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 41860,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Understanding Stage-Wise Utility-Risk Trade-Offs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 422,
+          "supplied_characters": 422
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1237,
+          "supplied_characters": 1237
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 899,
+          "supplied_characters": 899
+        },
+        {
+          "heading": "M3 M4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 2180,
+          "supplied_characters": 2180
+        },
+        {
+          "heading": "M3 M4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 4027,
+          "supplied_characters": 4027
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 983,
+          "supplied_characters": 983
+        },
+        {
+          "heading": "Memgaugeframework",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 440,
+          "supplied_characters": 440
+        },
+        {
+          "heading": "Problem Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 490,
+          "supplied_characters": 490
+        },
+        {
+          "heading": "Problem Setting",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 8,
+          "source_characters": 1251,
+          "supplied_characters": 1251
+        },
+        {
+          "heading": "Stage-Wise Interventions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 4641,
+          "supplied_characters": 4641
+        },
+        {
+          "heading": "Stage-Wise Interventions",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 445,
+          "supplied_characters": 445
+        },
+        {
+          "heading": "Appendix: B B + B",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 1316,
+          "supplied_characters": 1316
+        },
+        {
+          "heading": "Constructing Stage-Wise Utility-Risk Pro-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1012,
+          "supplied_characters": 1012
+        },
+        {
+          "heading": "Applying Memgaugeto Memory Sys-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 1042,
+          "supplied_characters": 1042
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 14,
+          "source_characters": 1424,
+          "supplied_characters": 1424
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 15,
+          "source_characters": 1187,
+          "supplied_characters": 1187
+        },
+        {
+          "heading": "Rq1: Stage-Wise Utility-Risk Profiles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 2773,
+          "supplied_characters": 2773
+        },
+        {
+          "heading": "Rq2: Profile Stability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 2173,
+          "supplied_characters": 2173
+        },
+        {
+          "heading": "Rq2: Profile Stability",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Um Pq Nc Sc",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 3223,
+          "supplied_characters": 3223
+        },
+        {
+          "heading": "Rq3: Correspondence In Existing Sys-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 4466,
+          "supplied_characters": 4466
+        },
+        {
+          "heading": "Human Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 419,
+          "supplied_characters": 419
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "conclusion",
+          "section_index": 22,
+          "source_characters": 280,
+          "supplied_characters": 280
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 23,
+          "source_characters": 264,
+          "supplied_characters": 264
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 525,
+          "supplied_characters": 525
+        },
+        {
+          "heading": "A Systematic Study Of Memory Poisoning Attacks In Llm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Ory Injection Attacks On Llm Agents Via Query-Only In-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 251,
+          "supplied_characters": 251
+        },
+        {
+          "heading": "Lating Ai Memory For Profit: The Rise Of Ai Recommen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1002,
+          "supplied_characters": 1002
+        },
+        {
+          "heading": "Evaluating Very Long-Term Conversational Memory Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 103,
+          "supplied_characters": 103
+        },
+        {
+          "heading": "Of The Association For Computational Linguistics (Vol-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 504,
+          "supplied_characters": 504
+        },
+        {
+          "heading": "Jection Attacks On Long-Term Memory-Augmented Large",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 350,
+          "supplied_characters": 350
+        },
+        {
+          "heading": "Graft: Persistent Compromise Of Llm Agents Via Poisoned",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "Comprehensive Evaluation On The Memory Of Llm-Based",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 32,
+          "source_characters": 257,
+          "supplied_characters": 257
+        },
+        {
+          "heading": "Marking Chat Assistants On Long-Term Interactive Mem-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 956,
+          "supplied_characters": 956
+        },
+        {
+          "heading": "Infindings Of The Association For Computational Lin-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 101,
+          "supplied_characters": 101
+        }
+      ],
+      "selected_characters": 41455,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "selected_sections": [
+        {
+          "characters": 422,
+          "heading": "Understanding Stage-Wise Utility-Risk Trade-Offs",
+          "page": 1
+        },
+        {
+          "characters": 1237,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 899,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2180,
+          "heading": "M3 M4",
+          "page": 1
+        },
+        {
+          "characters": 4027,
+          "heading": "M3 M4",
+          "page": 2
+        },
+        {
+          "characters": 983,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 440,
+          "heading": "Memgaugeframework",
+          "page": 2
+        },
+        {
+          "characters": 490,
+          "heading": "Problem Setting",
+          "page": 2
+        },
+        {
+          "characters": 1251,
+          "heading": "Problem Setting",
+          "page": 3
+        },
+        {
+          "characters": 4641,
+          "heading": "Stage-Wise Interventions",
+          "page": 3
+        },
+        {
+          "characters": 445,
+          "heading": "Stage-Wise Interventions",
+          "page": 4
+        },
+        {
+          "characters": 1316,
+          "heading": "Appendix: B B + B",
+          "page": 4
+        },
+        {
+          "characters": 1012,
+          "heading": "Constructing Stage-Wise Utility-Risk Pro-",
+          "page": 4
+        },
+        {
+          "characters": 1042,
+          "heading": "Applying Memgaugeto Memory Sys-",
+          "page": 4
+        },
+        {
+          "characters": 1424,
+          "heading": "Experimental Setup",
+          "page": 4
+        },
+        {
+          "characters": 1187,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 2773,
+          "heading": "Rq1: Stage-Wise Utility-Risk Profiles",
+          "page": 5
+        },
+        {
+          "characters": 2173,
+          "heading": "Rq2: Profile Stability",
+          "page": 5
+        },
+        {
+          "characters": 387,
+          "heading": "Rq2: Profile Stability",
+          "page": 6
+        },
+        {
+          "characters": 3223,
+          "heading": "Um Pq Nc Sc",
+          "page": 6
+        },
+        {
+          "characters": 4466,
+          "heading": "Rq3: Correspondence In Existing Sys-",
+          "page": 7
+        },
+        {
+          "characters": 419,
+          "heading": "Human Evaluation",
+          "page": 7
+        },
+        {
+          "characters": 280,
+          "heading": "Conclusion",
+          "page": 7
+        },
+        {
+          "characters": 264,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 525,
+          "heading": "Unclassified body after references",
+          "page": 8
+        },
+        {
+          "characters": 208,
+          "heading": "A Systematic Study Of Memory Poisoning Attacks In Llm",
+          "page": 8
+        },
+        {
+          "characters": 251,
+          "heading": "Ory Injection Attacks On Llm Agents Via Query-Only In-",
+          "page": 8
+        },
+        {
+          "characters": 1002,
+          "heading": "Lating Ai Memory For Profit: The Rise Of Ai Recommen-",
+          "page": 8
+        },
+        {
+          "characters": 103,
+          "heading": "Evaluating Very Long-Term Conversational Memory Of",
+          "page": 8
+        },
+        {
+          "characters": 504,
+          "heading": "Of The Association For Computational Linguistics (Vol-",
+          "page": 8
+        },
+        {
+          "characters": 350,
+          "heading": "Jection Attacks On Long-Term Memory-Augmented Large",
+          "page": 8
+        },
+        {
+          "characters": 217,
+          "heading": "Graft: Persistent Compromise Of Llm Agents Via Poisoned",
+          "page": 8
+        },
+        {
+          "characters": 257,
+          "heading": "Comprehensive Evaluation On The Memory Of Llm-Based",
+          "page": 8
+        },
+        {
+          "characters": 956,
+          "heading": "Marking Chat Assistants On Long-Term Interactive Mem-",
+          "page": 8
+        },
+        {
+          "characters": 101,
+          "heading": "Infindings Of The Association For Computational Lin-",
+          "page": 8
+        }
+      ],
+      "selected_text_sha256": "9b38adcc6f9f96fdd687c8b364c5571a8ddb8a883c11e323a5303b90a0af0a51",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "534d19430d42adaeb129ccf81a44a565d58b9bf14a242ac0c690fc95700330fa",
+      "source_pages": 8,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "surrogate_code_units": 56,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": [
+        "Canonical Unicode normalization processed 56 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+      ]
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0002"
+        ],
+        "excerpt": "Long-term memory is becoming a core capability of LLM\nagents, enabling personalization and long-horizon interac-\ntion. However, memory mechanisms that retain, transform,\nor expose more information can affect both benign utility\nand susceptibility to memory poisoning. Existing evalua-\ntions typically measure memory utility or attack risk in iso-\nlation under fixed configurations, providing limited insight\ninto how stage-specific design choices reshape their trade-\noff. We present MEMGAUGE, a controllable framework\nthat separately varies writing admission, management pol-\nicy, and retrieval exposure under matched clean and poisoned\nconditions. Across 11 LLMs and two long-term memory\nbenchmarks, controlled evaluations reveal three distinct pro-\nfiles: a threshold-like risk transition during writing, policy-\ndependent local decoupling during management, and cou-\npled growth of utility and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "124a5cc0b073804a44d760eb09877090b670bdfa367b8423994a2f576877f099",
+            "evidence_id": "Ebc06ea9b16eec275-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Long-term memory is becoming a core capability of LLM\nagents, enabling personalization and long-horizon interac-\ntion. However, memory mechanisms that retain, transform,\nor expose more information can affect both benign utility\nand susceptibility to memory poisoning. Existing evalua-\ntions typically measure memory utility or attack risk in iso-\nlation under fixed configurations, providing limited insight\ninto how stage-specific design choices reshape their trade-\noff. We present MEMGAUGE, a controllable framework\nthat separately varies writing admission, management pol-\nicy, and retrieval exposure under matched clean and poisoned\nconditions. Across 11 LLMs and two long-term memory\nbenchmarks, controlled evaluations reveal three distinct pro-\nfiles: a threshold-like risk transition during writing, policy-\ndependent local decoupling during management, and cou-\npled growth of utility and "
+              }
+            ],
+            "text": "Long-term memory is becoming a core capability of LLM\nagents, enabling personalization and long-horizon interac-\ntion. However, memory mechanisms that retain, transform,\nor expose more information can affect both benign utility\nand susceptibility to memory poisoning. Existing evalua-\ntions typically measure memory utility or attack risk in iso-\nlation under fixed configurations, providing limited insight\ninto how stage-specific design choices reshape their trade-\noff. We present MEMGAUGE, a controllable framework\nthat separately varies writing admission, management pol-\nicy, and retrieval exposure under matched clean and poisoned\nconditions. Across 11 LLMs and two long-term memory\nbenchmarks, controlled evaluations reveal three distinct pro-\nfiles: a threshold-like risk transition during writing, policy-\ndependent local decoupling during management, and cou-\npled growth of utility and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0008"
+        ],
+        "excerpt": "examine whether their observed oper-\nating points are consistent with these profiles.\nConcretely, MEMGAUGEdefines three intervention axes\ncorresponding to the memory lifecycle. At the writing stage,\nit divides each trace into atomic units, ranks them using the\nagent's own LLM, and varies the ranked prefix passed to the\nwriter to produce nested admission levels. At the manage-\nment stage, it applies alternative conflict-handling policies\nto the same pre-management memory state. At the retrieval\nstage, it varies a shared exposure rate for helpful and risk-\nbearing records while keeping the retrieval budget fixed. At\neach operating point, paired clean and poisoned conditions\nhold the agent model, task, prompts, memory budget, and\nremaining memory operations fixed.\nUsing MEMGAUGE, we conduct controlled evaluations\nof 11 LLMs across two long-term memory benchmarks.\nThe resulting stage-wise ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "M3 M4",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9b882299273914b3e9d847c96a1ed4377270db25f13819d7cb5cd7f73e3a71ec",
+            "evidence_id": "Ebc06ea9b16eec275-B0008",
+            "pages": [
+              2
+            ],
+            "section": "M3 M4",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1397,
+                "page": 2,
+                "section": "M3 M4",
+                "section_index": 4,
+                "start": 499,
+                "text": "examine whether their observed oper-\nating points are consistent with these profiles.\nConcretely, MEMGAUGEdefines three intervention axes\ncorresponding to the memory lifecycle. At the writing stage,\nit divides each trace into atomic units, ranks them using the\nagent's own LLM, and varies the ranked prefix passed to the\nwriter to produce nested admission levels. At the manage-\nment stage, it applies alternative conflict-handling policies\nto the same pre-management memory state. At the retrieval\nstage, it varies a shared exposure rate for helpful and risk-\nbearing records while keeping the retrieval budget fixed. At\neach operating point, paired clean and poisoned conditions\nhold the agent model, task, prompts, memory budget, and\nremaining memory operations fixed.\nUsing MEMGAUGE, we conduct controlled evaluations\nof 11 LLMs across two long-term memory benchmarks.\nThe resulting stage-wise "
+              }
+            ],
+            "text": "examine whether their observed oper-\nating points are consistent with these profiles.\nConcretely, MEMGAUGEdefines three intervention axes\ncorresponding to the memory lifecycle. At the writing stage,\nit divides each trace into atomic units, ranks them using the\nagent's own LLM, and varies the ranked prefix passed to the\nwriter to produce nested admission levels. At the manage-\nment stage, it applies alternative conflict-handling policies\nto the same pre-management memory state. At the retrieval\nstage, it varies a shared exposure rate for helpful and risk-\nbearing records while keeping the retrieval budget fixed. At\neach operating point, paired clean and poisoned conditions\nhold the agent model, task, prompts, memory budget, and\nremaining memory operations fixed.\nUsing MEMGAUGE, we conduct controlled evaluations\nof 11 LLMs across two long-term memory benchmarks.\nThe resulting stage-wise "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0017"
+        ],
+        "excerpt": "MEMGAUGEconstructs stage-wise response profiles within\na controlled memory pipeline rather than by modifying exist-\ning systems. Within this pipeline, it defines one intervention\naxis for each stage and varies one stage at a time under paired\nclean and poisoned conditions. We present the interventions\nin execution order: writing, management, and retrieval.\n(1) Writing: Controlling Information Admission.Al-\nthough memory systems implement writing differently, they\nshare a common purpose: extracting helpful information\nfrom interaction traces that may support future decisions and\nstoring it as persistent records. MEMGAUGEtherefore rep-\nresents writing in the controlled pipeline as admission fol-\nlowed by transformation. An admission controller selects the\nsource units available at each operating point, while a fixed\nwriterWconverts the selected units into memory records.\nHoldingWfixed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Wise Interventions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1c6654967ed9621862f161a60d247ee17cb1dda0d81047fe37930b9e8c52d1c5",
+            "evidence_id": "Ebc06ea9b16eec275-B0017",
+            "pages": [
+              3
+            ],
+            "section": "Stage-Wise Interventions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 3,
+                "section": "Stage-Wise Interventions",
+                "section_index": 9,
+                "start": 0,
+                "text": "MEMGAUGEconstructs stage-wise response profiles within\na controlled memory pipeline rather than by modifying exist-\ning systems. Within this pipeline, it defines one intervention\naxis for each stage and varies one stage at a time under paired\nclean and poisoned conditions. We present the interventions\nin execution order: writing, management, and retrieval.\n(1) Writing: Controlling Information Admission.Al-\nthough memory systems implement writing differently, they\nshare a common purpose: extracting helpful information\nfrom interaction traces that may support future decisions and\nstoring it as persistent records. MEMGAUGEtherefore rep-\nresents writing in the controlled pipeline as admission fol-\nlowed by transformation. An admission controller selects the\nsource units available at each operating point, while a fixed\nwriterWconverts the selected units into memory records.\nHoldingWfixed "
+              }
+            ],
+            "text": "MEMGAUGEconstructs stage-wise response profiles within\na controlled memory pipeline rather than by modifying exist-\ning systems. Within this pipeline, it defines one intervention\naxis for each stage and varies one stage at a time under paired\nclean and poisoned conditions. We present the interventions\nin execution order: writing, management, and retrieval.\n(1) Writing: Controlling Information Admission.Al-\nthough memory systems implement writing differently, they\nshare a common purpose: extracting helpful information\nfrom interaction traces that may support future decisions and\nstoring it as persistent records. MEMGAUGEtherefore rep-\nresents writing in the controlled pipeline as admission fol-\nlowed by transformation. An admission controller selects the\nsource units available at each operating point, while a fixed\nwriterWconverts the selected units into memory records.\nHoldingWfixed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0018"
+        ],
+        "excerpt": "ensures that differences across admission\nlevels reflect changes in the available source information\nrather than changes in the writing mechanism itself.\nLetq\u2208 {+,\u2212}denote the helpful or risk-bearing infor-\nmation role. We divide each trace\u03c4 q\ni into a set of atomic\nsource unitsZ q\ni . The same LLM used by the agent ranks the\nunits within each trace by their estimated usefulness for fu-\nture decisions, producing an ordering\u03c0 q\ni . The helpful and\nrisk-bearing traces are ranked independently. At writing ad-\nmission coverage\u03b8 w \u2208[0,1], the controller supplies the cor-\nresponding ranked prefix toW:\nbq\ni (\u03b8w) =\n\u0004\n\u03b8w|Zq\ni |\n\u0005\n,A q\ni (\u03b8w) =\n\b\n\u03c0q\ni (1), . . . ,\u03c0q\ni\n\u0000\nbq\ni (\u03b8w)\n\u0001\t\n.\n(1)\nwhereA q\ni (0) = /0. Because these admitted sets are nested,\nincreasing\u03b8 w only adds lower-ranked units from the same\ntrace. The writer converts the admitted units into memory\nrecords:\u2206M q\ni (\u03b8w) =S\nz\u2208Aq\ni ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Wise Interventions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d7e00f8dfea918807eb15c09e9857f6e5e7c8b3bbbcd43c88c22e3274056ab07",
+            "evidence_id": "Ebc06ea9b16eec275-B0018",
+            "pages": [
+              3
+            ],
+            "section": "Stage-Wise Interventions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 3,
+                "section": "Stage-Wise Interventions",
+                "section_index": 9,
+                "start": 896,
+                "text": "ensures that differences across admission\nlevels reflect changes in the available source information\nrather than changes in the writing mechanism itself.\nLetq\u2208 {+,\u2212}denote the helpful or risk-bearing infor-\nmation role. We divide each trace\u03c4 q\ni into a set of atomic\nsource unitsZ q\ni . The same LLM used by the agent ranks the\nunits within each trace by their estimated usefulness for fu-\nture decisions, producing an ordering\u03c0 q\ni . The helpful and\nrisk-bearing traces are ranked independently. At writing ad-\nmission coverage\u03b8 w \u2208[0,1], the controller supplies the cor-\nresponding ranked prefix toW:\nbq\ni (\u03b8w) =\n\u0004\n\u03b8w|Zq\ni |\n\u0005\n,A q\ni (\u03b8w) =\n\b\n\u03c0q\ni (1), . . . ,\u03c0q\ni\n\u0000\nbq\ni (\u03b8w)\n\u0001\t\n.\n(1)\nwhereA q\ni (0) = /0. Because these admitted sets are nested,\nincreasing\u03b8 w only adds lower-ranked units from the same\ntrace. The writer converts the admitted units into memory\nrecords:\u2206M q\ni (\u03b8w) =S\nz\u2208Aq\ni "
+              }
+            ],
+            "text": "ensures that differences across admission\nlevels reflect changes in the available source information\nrather than changes in the writing mechanism itself.\nLetq\u2208 {+,\u2212}denote the helpful or risk-bearing infor-\nmation role. We divide each trace\u03c4 q\ni into a set of atomic\nsource unitsZ q\ni . The same LLM used by the agent ranks the\nunits within each trace by their estimated usefulness for fu-\nture decisions, producing an ordering\u03c0 q\ni . The helpful and\nrisk-bearing traces are ranked independently. At writing ad-\nmission coverage\u03b8 w \u2208[0,1], the controller supplies the cor-\nresponding ranked prefix toW:\nbq\ni (\u03b8w) =\n\u0004\n\u03b8w|Zq\ni |\n\u0005\n,A q\ni (\u03b8w) =\n\b\n\u03c0q\ni (1), . . . ,\u03c0q\ni\n\u0000\nbq\ni (\u03b8w)\n\u0001\t\n.\n(1)\nwhereA q\ni (0) = /0. Because these admitted sets are nested,\nincreasing\u03b8 w only adds lower-ranked units from the same\ntrace. The writer converts the admitted units into memory\nrecords:\u2206M q\ni (\u03b8w) =S\nz\u2208Aq\ni "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0020"
+        ],
+        "excerpt": "memory state as\neMs\ni (g) =Gg(Ms\ni ),g\u2208G={UM,PQ,NC,SC}.(4)\nHere, quarantining a record means excluding it from sub-\nsequent retrieval while leaving the remaining memory state\nunchanged.Unmanaged Memory(UM) leaves all records\nunchanged and serves as the no-management reference.\nProvenance-Aware Quarantine(PQ) quarantines records\nwritten from sources marked as untrusted.Numeric-Conflict\nResolution(NC) quarantines a newly written record when its\nnumerical content conflicts with an existing trusted record.\nStrict Conflict Resolution (SC)retains records consistent with\nverified interaction outcomes, such as explicit user confirma-\ntions or tool-execution results, and quarantines those that are\nnot. It represents an idealized setting in which such feedback\nis complete and reliable, and serves as an upper bound.\nWithin each condition, all policies receive the same pre-\nmanagement stateM s\ni , ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Wise Interventions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1569e3ea48d6d7a58f25b4eedabd2555534199a14ce1cd78426652dbc1135dfe",
+            "evidence_id": "Ebc06ea9b16eec275-B0020",
+            "pages": [
+              3
+            ],
+            "section": "Stage-Wise Interventions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3584,
+                "page": 3,
+                "section": "Stage-Wise Interventions",
+                "section_index": 9,
+                "start": 2685,
+                "text": "memory state as\neMs\ni (g) =Gg(Ms\ni ),g\u2208G={UM,PQ,NC,SC}.(4)\nHere, quarantining a record means excluding it from sub-\nsequent retrieval while leaving the remaining memory state\nunchanged.Unmanaged Memory(UM) leaves all records\nunchanged and serves as the no-management reference.\nProvenance-Aware Quarantine(PQ) quarantines records\nwritten from sources marked as untrusted.Numeric-Conflict\nResolution(NC) quarantines a newly written record when its\nnumerical content conflicts with an existing trusted record.\nStrict Conflict Resolution (SC)retains records consistent with\nverified interaction outcomes, such as explicit user confirma-\ntions or tool-execution results, and quarantines those that are\nnot. It represents an idealized setting in which such feedback\nis complete and reliable, and serves as an upper bound.\nWithin each condition, all policies receive the same pre-\nmanagement stateM s\ni , "
+              }
+            ],
+            "text": "memory state as\neMs\ni (g) =Gg(Ms\ni ),g\u2208G={UM,PQ,NC,SC}.(4)\nHere, quarantining a record means excluding it from sub-\nsequent retrieval while leaving the remaining memory state\nunchanged.Unmanaged Memory(UM) leaves all records\nunchanged and serves as the no-management reference.\nProvenance-Aware Quarantine(PQ) quarantines records\nwritten from sources marked as untrusted.Numeric-Conflict\nResolution(NC) quarantines a newly written record when its\nnumerical content conflicts with an existing trusted record.\nStrict Conflict Resolution (SC)retains records consistent with\nverified interaction outcomes, such as explicit user confirma-\ntions or tool-execution results, and quarantines those that are\nnot. It represents an idealized setting in which such feedback\nis complete and reliable, and serves as an upper bound.\nWithin each condition, all policies receive the same pre-\nmanagement stateM s\ni , "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0021"
+        ],
+        "excerpt": "while the subsequent retrieval config-\nuration and agent remain fixed. The policies therefore rep-\nresent separate management operating points rather than or-\ndered levels of management capability.\n(3) Retrieval: Controlling Decision-Relevant Exposure.\nRetrieval determines which records from the memory are ex-\nposed to the agent for the current query. Although retrieval\nmechanisms differ in how they rank records, their decision-\nrelevant outcome is whether helpful or risk-bearing infor-\nmation enters the retrieved context under a fixed retrieval\nbudget. MEMGAUGEtherefore intervenes directly on record\nexposure rather than modifying any particular ranking algo-\nrithm.\nFor each instance, the retriever returns a context contain-\ning exactlyKrecords. At retrieval exposure probability\n\u03b8r \u2208[0,1], we sample\na+\ni \u223cBernoulli(\u03b8 r),a \u2212\ni \u223cBernoulli(\u03b8 r),(5)\nwherea +\ni anda \u2212\ni indicate whether the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Wise Interventions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "121dad261a000a9def2ea7e5974d13819dc72e62ea0211130d77e6e3d4bc9b28",
+            "evidence_id": "Ebc06ea9b16eec275-B0021",
+            "pages": [
+              3
+            ],
+            "section": "Stage-Wise Interventions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4483,
+                "page": 3,
+                "section": "Stage-Wise Interventions",
+                "section_index": 9,
+                "start": 3584,
+                "text": "while the subsequent retrieval config-\nuration and agent remain fixed. The policies therefore rep-\nresent separate management operating points rather than or-\ndered levels of management capability.\n(3) Retrieval: Controlling Decision-Relevant Exposure.\nRetrieval determines which records from the memory are ex-\nposed to the agent for the current query. Although retrieval\nmechanisms differ in how they rank records, their decision-\nrelevant outcome is whether helpful or risk-bearing infor-\nmation enters the retrieved context under a fixed retrieval\nbudget. MEMGAUGEtherefore intervenes directly on record\nexposure rather than modifying any particular ranking algo-\nrithm.\nFor each instance, the retriever returns a context contain-\ning exactlyKrecords. At retrieval exposure probability\n\u03b8r \u2208[0,1], we sample\na+\ni \u223cBernoulli(\u03b8 r),a \u2212\ni \u223cBernoulli(\u03b8 r),(5)\nwherea +\ni anda \u2212\ni indicate whether the "
+              }
+            ],
+            "text": "while the subsequent retrieval config-\nuration and agent remain fixed. The policies therefore rep-\nresent separate management operating points rather than or-\ndered levels of management capability.\n(3) Retrieval: Controlling Decision-Relevant Exposure.\nRetrieval determines which records from the memory are ex-\nposed to the agent for the current query. Although retrieval\nmechanisms differ in how they rank records, their decision-\nrelevant outcome is whether helpful or risk-bearing infor-\nmation enters the retrieved context under a fixed retrieval\nbudget. MEMGAUGEtherefore intervenes directly on record\nexposure rather than modifying any particular ranking algo-\nrithm.\nFor each instance, the retriever returns a context contain-\ning exactlyKrecords. At retrieval exposure probability\n\u03b8r \u2208[0,1], we sample\na+\ni \u223cBernoulli(\u03b8 r),a \u2212\ni \u223cBernoulli(\u03b8 r),(5)\nwherea +\ni anda \u2212\ni indicate whether the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0022"
+        ],
+        "excerpt": "helpful recorde +\ni and\nthe risk-bearing recorde \u2212\ni are included in the retrieved con-\ntext, respectively. In particular,\nPr(a+\ni =1) =Pr(a \u2212\ni =1) =\u03b8r.(6)\n3\n\ufffd\ufffd:\n ...\n\ufffd\ufffd\n+:\n\ufffd\ufffd\n\u2212:\nClean: \ufffd\ufffd + \ufffd\ufffd\n+, Poisoned: \ufffd\ufffd + \ufffd\ufffd\n+ + \ufffd\ufffd\n\u2212  \nDivide each trace \ufffd\ufffd\n\ufffd into atomic source units \ufffd\ufffd\n\ufffd: \n...\n \ufffd\ufffd\n+: ...\n\ufffd\ufffd\n\u2212: ...\nWriting Coverage: \ufffd\ufffd\nNew Records: \u25b3 \ufffd+, \u25b3 \ufffd\u2212\nUM (Unmanaged)\nRecords unchanged.\n. \nPQ (Provenance-Aware)\nQuarantine records from\n.\nNC (Numeric-Confict)\nQuarantine records that\n values,e.g.,1 \u2260 2.\nSC(Strict Confict)\nQuarantine records \n;\npreserve correct decisions.\nManaged State: \ufffd\ufffd\n\ufffd\nFixed  Budge:",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Wise Interventions",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "66620d654beedb403bbc1b670826cdc0253c2b89fdd38b46a482191381f226c3",
+            "evidence_id": "Ebc06ea9b16eec275-B0022",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Stage-Wise Interventions",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4641,
+                "page": 3,
+                "section": "Stage-Wise Interventions",
+                "section_index": 9,
+                "start": 4483,
+                "text": "helpful recorde +\ni and\nthe risk-bearing recorde \u2212\ni are included in the retrieved con-\ntext, respectively. In particular,\nPr(a+\ni =1) =Pr(a \u2212\ni =1) =\u03b8r.(6)\n3"
+              },
+              {
+                "end": 445,
+                "page": 4,
+                "section": "Stage-Wise Interventions",
+                "section_index": 10,
+                "start": 0,
+                "text": "\ufffd\ufffd:\n ...\n\ufffd\ufffd\n+:\n\ufffd\ufffd\n\u2212:\nClean: \ufffd\ufffd + \ufffd\ufffd\n+, Poisoned: \ufffd\ufffd + \ufffd\ufffd\n+ + \ufffd\ufffd\n\u2212  \nDivide each trace \ufffd\ufffd\n\ufffd into atomic source units \ufffd\ufffd\n\ufffd: \n...\n \ufffd\ufffd\n+: ...\n\ufffd\ufffd\n\u2212: ...\nWriting Coverage: \ufffd\ufffd\nNew Records: \u25b3 \ufffd+, \u25b3 \ufffd\u2212\nUM (Unmanaged)\nRecords unchanged.\n. \nPQ (Provenance-Aware)\nQuarantine records from\n.\nNC (Numeric-Confict)\nQuarantine records that\n values,e.g.,1 \u2260 2.\nSC(Strict Confict)\nQuarantine records \n;\npreserve correct decisions.\nManaged State: \ufffd\ufffd\n\ufffd\nFixed  Budge:"
+              }
+            ],
+            "text": "helpful recorde +\ni and\nthe risk-bearing recorde \u2212\ni are included in the retrieved con-\ntext, respectively. In particular,\nPr(a+\ni =1) =Pr(a \u2212\ni =1) =\u03b8r.(6)\n3\n\ufffd\ufffd:\n ...\n\ufffd\ufffd\n+:\n\ufffd\ufffd\n\u2212:\nClean: \ufffd\ufffd + \ufffd\ufffd\n+, Poisoned: \ufffd\ufffd + \ufffd\ufffd\n+ + \ufffd\ufffd\n\u2212  \nDivide each trace \ufffd\ufffd\n\ufffd into atomic source units \ufffd\ufffd\n\ufffd: \n...\n \ufffd\ufffd\n+: ...\n\ufffd\ufffd\n\u2212: ...\nWriting Coverage: \ufffd\ufffd\nNew Records: \u25b3 \ufffd+, \u25b3 \ufffd\u2212\nUM (Unmanaged)\nRecords unchanged.\n. \nPQ (Provenance-Aware)\nQuarantine records from\n.\nNC (Numeric-Confict)\nQuarantine records that\n values,e.g.,1 \u2260 2.\nSC(Strict Confict)\nQuarantine records \n;\npreserve correct decisions.\nManaged State: \ufffd\ufffd\n\ufffd\nFixed  Budge:"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0025"
+        ],
+        "excerpt": "files\nAt each operating point, we evaluate the same instances un-\nder matched clean and poisoned conditions while holding\nthe model, queries, prompts, decoding settings, and remain-\ning memory operations fixed. From the paired outputs, we\ncompute clean utility, poisoned utility, and attack success\nrate (ASR). Clean utility measures correct decisions under\nthe clean condition, poisoned utility measures correct deci-\nsions after risk-bearing information is introduced, and ASR\nmeasures decisions redirected to the attacker-predefined tar-\nget. Poisoned utility and ASR are not complementary be-\ncause an output may match neither target. Varying\u03b8 w or\u03b8 r\nproduces the writing- and retrieval-stage response profiles,\nrespectively. Because management policies do not form an\nordered scale, each policy is represented as a separate utility-\nrisk point. These profiles characterize responses along ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Constructing Stage-Wise Utility-Risk Pro-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1fb5d77d7777453fd29370a37f55d5884310a5a16067668b4d0e4f64f4df1994",
+            "evidence_id": "Ebc06ea9b16eec275-B0025",
+            "pages": [
+              4
+            ],
+            "section": "Constructing Stage-Wise Utility-Risk Pro-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 4,
+                "section": "Constructing Stage-Wise Utility-Risk Pro-",
+                "section_index": 12,
+                "start": 0,
+                "text": "files\nAt each operating point, we evaluate the same instances un-\nder matched clean and poisoned conditions while holding\nthe model, queries, prompts, decoding settings, and remain-\ning memory operations fixed. From the paired outputs, we\ncompute clean utility, poisoned utility, and attack success\nrate (ASR). Clean utility measures correct decisions under\nthe clean condition, poisoned utility measures correct deci-\nsions after risk-bearing information is introduced, and ASR\nmeasures decisions redirected to the attacker-predefined tar-\nget. Poisoned utility and ASR are not complementary be-\ncause an output may match neither target. Varying\u03b8 w or\u03b8 r\nproduces the writing- and retrieval-stage response profiles,\nrespectively. Because management policies do not form an\nordered scale, each policy is represented as a separate utility-\nrisk point. These profiles characterize responses along "
+              }
+            ],
+            "text": "files\nAt each operating point, we evaluate the same instances un-\nder matched clean and poisoned conditions while holding\nthe model, queries, prompts, decoding settings, and remain-\ning memory operations fixed. From the paired outputs, we\ncompute clean utility, poisoned utility, and attack success\nrate (ASR). Clean utility measures correct decisions under\nthe clean condition, poisoned utility measures correct deci-\nsions after risk-bearing information is introduced, and ASR\nmeasures decisions redirected to the attacker-predefined tar-\nget. Poisoned utility and ASR are not complementary be-\ncause an output may match neither target. Varying\u03b8 w or\u03b8 r\nproduces the writing- and retrieval-stage response profiles,\nrespectively. Because management policies do not form an\nordered scale, each policy is represented as a separate utility-\nrisk point. These profiles characterize responses along "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0029"
+        ],
+        "excerpt": "Agent and LLMs.We implement a common LangGraph\nagent (38.4K GitHub stars) with 11 LLMs, including GPT-\n5.4, GPT-5.4-Mini, Gemini 3.1 Flash, Gemini 2.5 Flash,\nGrok 4.3 High, Grok 4.2 Fast, DeepSeek-V4-Flash, GLM-\n5.1, Qwen 3.5 397B, MiniMax-M3, and Doubao Seed 2.0\nPro. For each configuration, the same LLM serves as the\nagent's reasoning model and the writing-stage ranker.\nDatasets and trace construction.We construct evaluation\ninstances from LongMemEval [16] and LoCoMo [10], se-\nlecting 100 test questions from each dataset and identify-\ning the information required to answer them. This informa-\ntion is introduced through a benign agent interaction, pro-\nducing the helpful trace\u03c4 +\ni . The background memory bank\nBi is constructed from analogous interactions generated us-\ning information from the corresponding dataset that is unre-\nlated to the subsequent query. For the poisoned ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ba3fa27fe5768f0ed934998e706b8db031ff86ffe894a937e5268731ae76e8f4",
+            "evidence_id": "Ebc06ea9b16eec275-B0029",
+            "pages": [
+              4
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 889,
+                "page": 4,
+                "section": "Experimental Setup",
+                "section_index": 14,
+                "start": 0,
+                "text": "Agent and LLMs.We implement a common LangGraph\nagent (38.4K GitHub stars) with 11 LLMs, including GPT-\n5.4, GPT-5.4-Mini, Gemini 3.1 Flash, Gemini 2.5 Flash,\nGrok 4.3 High, Grok 4.2 Fast, DeepSeek-V4-Flash, GLM-\n5.1, Qwen 3.5 397B, MiniMax-M3, and Doubao Seed 2.0\nPro. For each configuration, the same LLM serves as the\nagent's reasoning model and the writing-stage ranker.\nDatasets and trace construction.We construct evaluation\ninstances from LongMemEval [16] and LoCoMo [10], se-\nlecting 100 test questions from each dataset and identify-\ning the information required to answer them. This informa-\ntion is introduced through a benign agent interaction, pro-\nducing the helpful trace\u03c4 +\ni . The background memory bank\nBi is constructed from analogous interactions generated us-\ning information from the corresponding dataset that is unre-\nlated to the subsequent query. For the poisoned "
+              }
+            ],
+            "text": "Agent and LLMs.We implement a common LangGraph\nagent (38.4K GitHub stars) with 11 LLMs, including GPT-\n5.4, GPT-5.4-Mini, Gemini 3.1 Flash, Gemini 2.5 Flash,\nGrok 4.3 High, Grok 4.2 Fast, DeepSeek-V4-Flash, GLM-\n5.1, Qwen 3.5 397B, MiniMax-M3, and Doubao Seed 2.0\nPro. For each configuration, the same LLM serves as the\nagent's reasoning model and the writing-stage ranker.\nDatasets and trace construction.We construct evaluation\ninstances from LongMemEval [16] and LoCoMo [10], se-\nlecting 100 test questions from each dataset and identify-\ning the information required to answer them. This informa-\ntion is introduced through a benign agent interaction, pro-\nducing the helpful trace\u03c4 +\ni . The background memory bank\nBi is constructed from analogous interactions generated us-\ning information from the corresponding dataset that is unre-\nlated to the subsequent query. For the poisoned "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0030"
+        ],
+        "excerpt": "condition,\nMINJA [4] and Sleeper [13] generate user-side and tool-side\nrisk-bearing interactions, respectively, producing\u03c4 \u2212\ni . The\nattacker can influence the corresponding interaction content\nbut cannot directly edit the memory bank. Helpful and risk-\nbearing traces are generated in separate sessions, and the test\nquery is issued in a subsequent session. In the controlled ex-\nperiments, traces are processed by the fixed writerW; in the\nexisting-system evaluation, they are processed by each sys-\ntem's native writing mechanism.\n4\nExisting memory systems.We consider four existing mem-\nory system: Mem0 (61.8K GitHub stars) [2], Hindsight\n(18.8K GitHub stars) [8], LangMem (1.6K GitHub stars) [7],\nand A-Mem (1.1K GitHub stars) [17].\nMetrics.We report clean utility, poisoned utility, and ASR\nas defined in Section 3.3. AgentEvals [6] judges whether\neach trajectory supports the correct answer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "21478686d65d505c639a22d47e07125f3af966ab0390ee534cef788551290d2d",
+            "evidence_id": "Ebc06ea9b16eec275-B0030",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1424,
+                "page": 4,
+                "section": "Experimental Setup",
+                "section_index": 14,
+                "start": 889,
+                "text": "condition,\nMINJA [4] and Sleeper [13] generate user-side and tool-side\nrisk-bearing interactions, respectively, producing\u03c4 \u2212\ni . The\nattacker can influence the corresponding interaction content\nbut cannot directly edit the memory bank. Helpful and risk-\nbearing traces are generated in separate sessions, and the test\nquery is issued in a subsequent session. In the controlled ex-\nperiments, traces are processed by the fixed writerW; in the\nexisting-system evaluation, they are processed by each sys-\ntem's native writing mechanism.\n4"
+              },
+              {
+                "end": 363,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 15,
+                "start": 0,
+                "text": "Existing memory systems.We consider four existing mem-\nory system: Mem0 (61.8K GitHub stars) [2], Hindsight\n(18.8K GitHub stars) [8], LangMem (1.6K GitHub stars) [7],\nand A-Mem (1.1K GitHub stars) [17].\nMetrics.We report clean utility, poisoned utility, and ASR\nas defined in Section 3.3. AgentEvals [6] judges whether\neach trajectory supports the correct answer "
+              }
+            ],
+            "text": "condition,\nMINJA [4] and Sleeper [13] generate user-side and tool-side\nrisk-bearing interactions, respectively, producing\u03c4 \u2212\ni . The\nattacker can influence the corresponding interaction content\nbut cannot directly edit the memory bank. Helpful and risk-\nbearing traces are generated in separate sessions, and the test\nquery is issued in a subsequent session. In the controlled ex-\nperiments, traces are processed by the fixed writerW; in the\nexisting-system evaluation, they are processed by each sys-\ntem's native writing mechanism.\n4\nExisting memory systems.We consider four existing mem-\nory system: Mem0 (61.8K GitHub stars) [2], Hindsight\n(18.8K GitHub stars) [8], LangMem (1.6K GitHub stars) [7],\nand A-Mem (1.1K GitHub stars) [17].\nMetrics.We report clean utility, poisoned utility, and ASR\nas defined in Section 3.3. AgentEvals [6] judges whether\neach trajectory supports the correct answer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0031"
+        ],
+        "excerpt": "or the attacker-\npredefined target. Its agreement with human annotations is\nevaluated in Section 4.5.\nParameters.Unless otherwise specified, we set the retrieval\nbudget toK=5, and the background memory size|B i|=100.\nMatched clean and poisoned evaluations use the same config-\nuration (e.g., model, system prompt, query). When evaluat-\ning one stage, the other stages are fixed at\u03b8w =0.6, UM, and\n\u03b8r =0.8, respectively.\nResearch questions.Our experiments address the following\nresearch questions.RQ1 : What utility\u2013risk profiles emerge\nunder controlled writing, management, and retrieval inter-\nventions?RQ2 : How stable are the observed stage-wise\nprofiles across evaluation conditions?RQ3 : Do analogous\nstage-level measurements on existing memory systems ex-\nhibit qualitative correspondence with the controlled profiles?",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "19bca1238c2303cf5c35c9fad6a514bf94640790dfa59d4fc72f5ddd6b89505a",
+            "evidence_id": "Ebc06ea9b16eec275-B0031",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1187,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 15,
+                "start": 363,
+                "text": "or the attacker-\npredefined target. Its agreement with human annotations is\nevaluated in Section 4.5.\nParameters.Unless otherwise specified, we set the retrieval\nbudget toK=5, and the background memory size|B i|=100.\nMatched clean and poisoned evaluations use the same config-\nuration (e.g., model, system prompt, query). When evaluat-\ning one stage, the other stages are fixed at\u03b8w =0.6, UM, and\n\u03b8r =0.8, respectively.\nResearch questions.Our experiments address the following\nresearch questions.RQ1 : What utility\u2013risk profiles emerge\nunder controlled writing, management, and retrieval inter-\nventions?RQ2 : How stable are the observed stage-wise\nprofiles across evaluation conditions?RQ3 : Do analogous\nstage-level measurements on existing memory systems ex-\nhibit qualitative correspondence with the controlled profiles?"
+              }
+            ],
+            "text": "or the attacker-\npredefined target. Its agreement with human annotations is\nevaluated in Section 4.5.\nParameters.Unless otherwise specified, we set the retrieval\nbudget toK=5, and the background memory size|B i|=100.\nMatched clean and poisoned evaluations use the same config-\nuration (e.g., model, system prompt, query). When evaluat-\ning one stage, the other stages are fixed at\u03b8w =0.6, UM, and\n\u03b8r =0.8, respectively.\nResearch questions.Our experiments address the following\nresearch questions.RQ1 : What utility\u2013risk profiles emerge\nunder controlled writing, management, and retrieval inter-\nventions?RQ2 : How stable are the observed stage-wise\nprofiles across evaluation conditions?RQ3 : Do analogous\nstage-level measurements on existing memory systems ex-\nhibit qualitative correspondence with the controlled profiles?"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0032"
+        ],
+        "excerpt": "Figure 3 presents the controlled stage-wise profiles across 11\nLLMs. Each column varies one memory stage while holding\nthe remaining operations fixed, and each row represents a\ndataset\u2013attack combination. Lines report the median across\nmodels, with shaded regions and box plots showing the in-\nterquartile range. Per-model results are in Supplementary\nMaterial Section B.1.\nWriting-Stage Profile.At low coverage (\u03b8 w <0.3), clean\nand poisoned utility increase almost synchronously to ap-\nproximately 15%-20%, while ASR remains near zero. Be-\ntween\u03b8 w =0.3 and 0.5, both utility measures continue to\nrise, reaching roughly 20%-42%, but ASR generally remains\nbelow 10%. Beyond this range, the profiles diverge sharply:\nclean utility continues increasing, whereas poisoned utility\nreverses its trend and declines from its peak to 3%-34% at\nfull coverage. Meanwhile, ASR rises rapidly to 37%-64%.\nThis ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6dab5059899723a5d09430755bf6528142bc90a347a9e31c0cd59e08b2d9adf0",
+            "evidence_id": "Ebc06ea9b16eec275-B0032",
+            "pages": [
+              5
+            ],
+            "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+                "section_index": 16,
+                "start": 0,
+                "text": "Figure 3 presents the controlled stage-wise profiles across 11\nLLMs. Each column varies one memory stage while holding\nthe remaining operations fixed, and each row represents a\ndataset\u2013attack combination. Lines report the median across\nmodels, with shaded regions and box plots showing the in-\nterquartile range. Per-model results are in Supplementary\nMaterial Section B.1.\nWriting-Stage Profile.At low coverage (\u03b8 w <0.3), clean\nand poisoned utility increase almost synchronously to ap-\nproximately 15%-20%, while ASR remains near zero. Be-\ntween\u03b8 w =0.3 and 0.5, both utility measures continue to\nrise, reaching roughly 20%-42%, but ASR generally remains\nbelow 10%. Beyond this range, the profiles diverge sharply:\nclean utility continues increasing, whereas poisoned utility\nreverses its trend and declines from its peak to 3%-34% at\nfull coverage. Meanwhile, ASR rises rapidly to 37%-64%.\nThis "
+              }
+            ],
+            "text": "Figure 3 presents the controlled stage-wise profiles across 11\nLLMs. Each column varies one memory stage while holding\nthe remaining operations fixed, and each row represents a\ndataset\u2013attack combination. Lines report the median across\nmodels, with shaded regions and box plots showing the in-\nterquartile range. Per-model results are in Supplementary\nMaterial Section B.1.\nWriting-Stage Profile.At low coverage (\u03b8 w <0.3), clean\nand poisoned utility increase almost synchronously to ap-\nproximately 15%-20%, while ASR remains near zero. Be-\ntween\u03b8 w =0.3 and 0.5, both utility measures continue to\nrise, reaching roughly 20%-42%, but ASR generally remains\nbelow 10%. Beyond this range, the profiles diverge sharply:\nclean utility continues increasing, whereas poisoned utility\nreverses its trend and declines from its peak to 3%-34% at\nfull coverage. Meanwhile, ASR rises rapidly to 37%-64%.\nThis "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0033"
+        ],
+        "excerpt": "delayed but sharp divergence reveals a threshold-like\nnonlinearity: additional risk-bearing information has little\ndownstream effect at low coverage but becomes increasingly\ninfluential once sufficient content is retained.\nManagement-Stage Profile.Management can effectively\nmitigate memory risks, but its effectiveness differs substan-\ntially across attack types. Across the evaluated policies,\nclean utility varies by only 3%-5%, whereas ASR changes by\nup to 62%, indicating that management can locally decouple\nrisk from clean performance. However, the extent of this de-\ncoupling is mechanism-specific. PQ reduces Sleeper ASR to\nnearly zero with little utility change but provides limited pro-\ntection against MINJA, whereas SC achieves more consistent\nrisk reductions across both attacks.\nRetrieval-Stage Profile.Retrieval exhibits a coupled utility-\nrisk response. As retrieval exposure ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "184070b7f25c047e42a17f8710bb8b2110f94f9c6743eaada81e43366e260eee",
+            "evidence_id": "Ebc06ea9b16eec275-B0033",
+            "pages": [
+              5
+            ],
+            "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1791,
+                "page": 5,
+                "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+                "section_index": 16,
+                "start": 898,
+                "text": "delayed but sharp divergence reveals a threshold-like\nnonlinearity: additional risk-bearing information has little\ndownstream effect at low coverage but becomes increasingly\ninfluential once sufficient content is retained.\nManagement-Stage Profile.Management can effectively\nmitigate memory risks, but its effectiveness differs substan-\ntially across attack types. Across the evaluated policies,\nclean utility varies by only 3%-5%, whereas ASR changes by\nup to 62%, indicating that management can locally decouple\nrisk from clean performance. However, the extent of this de-\ncoupling is mechanism-specific. PQ reduces Sleeper ASR to\nnearly zero with little utility change but provides limited pro-\ntection against MINJA, whereas SC achieves more consistent\nrisk reductions across both attacks.\nRetrieval-Stage Profile.Retrieval exhibits a coupled utility-\nrisk response. As retrieval exposure "
+              }
+            ],
+            "text": "delayed but sharp divergence reveals a threshold-like\nnonlinearity: additional risk-bearing information has little\ndownstream effect at low coverage but becomes increasingly\ninfluential once sufficient content is retained.\nManagement-Stage Profile.Management can effectively\nmitigate memory risks, but its effectiveness differs substan-\ntially across attack types. Across the evaluated policies,\nclean utility varies by only 3%-5%, whereas ASR changes by\nup to 62%, indicating that management can locally decouple\nrisk from clean performance. However, the extent of this de-\ncoupling is mechanism-specific. PQ reduces Sleeper ASR to\nnearly zero with little utility change but provides limited pro-\ntection against MINJA, whereas SC achieves more consistent\nrisk reductions across both attacks.\nRetrieval-Stage Profile.Retrieval exhibits a coupled utility-\nrisk response. As retrieval exposure "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0034"
+        ],
+        "excerpt": "increases, clean util-\nity rises from approximately 10%\u201325% to 43%-70%, while\nASR simultaneously increases from about 5%-18% to 34%-\n64%. At high exposure, clean utility begins to saturate,\nwhereas ASR remains high and poisoned utility falls to ap-\nproximately 4%-31%. This coupling is expected because re-\ntrieval ranks records by their relevance to the query rather\nthan determining whether their content is benign or risk-\nbearing; a sufficiently relevant risk-bearing record can there-\nfore receive exposure comparable to a helpful record.\nKey Finding 1.Writing exhibits athreshold-like risk\ntransition, management enablesmechanism-dependent\nlocal decoupling, and retrievalcouples utility with\nrisk. Effective control therefore requires calibrating\nwriting coverage to avoid the high-risk region, adopt-\ning mechanism-matched management policies, and\nconstraining retrieval exposure rather than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5c43053a83f2a1b161bb926c51f9f707d5af156c7b0f8688fb4c69855653cdd6",
+            "evidence_id": "Ebc06ea9b16eec275-B0034",
+            "pages": [
+              5
+            ],
+            "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 5,
+                "section": "Rq1: Stage-Wise Utility-Risk Profiles",
+                "section_index": 16,
+                "start": 1791,
+                "text": "increases, clean util-\nity rises from approximately 10%\u201325% to 43%-70%, while\nASR simultaneously increases from about 5%-18% to 34%-\n64%. At high exposure, clean utility begins to saturate,\nwhereas ASR remains high and poisoned utility falls to ap-\nproximately 4%-31%. This coupling is expected because re-\ntrieval ranks records by their relevance to the query rather\nthan determining whether their content is benign or risk-\nbearing; a sufficiently relevant risk-bearing record can there-\nfore receive exposure comparable to a helpful record.\nKey Finding 1.Writing exhibits athreshold-like risk\ntransition, management enablesmechanism-dependent\nlocal decoupling, and retrievalcouples utility with\nrisk. Effective control therefore requires calibrating\nwriting coverage to avoid the high-risk region, adopt-\ning mechanism-matched management policies, and\nconstraining retrieval exposure rather than "
+              }
+            ],
+            "text": "increases, clean util-\nity rises from approximately 10%\u201325% to 43%-70%, while\nASR simultaneously increases from about 5%-18% to 34%-\n64%. At high exposure, clean utility begins to saturate,\nwhereas ASR remains high and poisoned utility falls to ap-\nproximately 4%-31%. This coupling is expected because re-\ntrieval ranks records by their relevance to the query rather\nthan determining whether their content is benign or risk-\nbearing; a sufficiently relevant risk-bearing record can there-\nfore receive exposure comparable to a helpful record.\nKey Finding 1.Writing exhibits athreshold-like risk\ntransition, management enablesmechanism-dependent\nlocal decoupling, and retrievalcouples utility with\nrisk. Effective control therefore requires calibrating\nwriting coverage to avoid the high-risk region, adopt-\ning mechanism-matched management policies, and\nconstraining retrieval exposure rather than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0036"
+        ],
+        "excerpt": "We examine how selected workload and implementation fac-\ntors affect the stage-wise profiles. Unless otherwise speci-\nfied, all experiments in this section use DeepSeek-V4-Flash,\nLongMemEval, and MINJA.\nTrace-Load stability.As shown in Figure 4, we vary the\nnumber of source units in each trace to 0.75\u00d7, 1.0\u00d7, and\n1.25\u00d7the default size while preserving the core helpful or\nrisk-bearing information. Across all three settings, ASR re-\nmains near zero at low writing coverage and increases more\nsharply at higher coverage. At full coverage, ASR reaches\n58%-63%, while poisoned utility falls to 1%-4%. Larger\ntrace loads shift the rise in risk toward lower coverage lev-\nels but preserve the overall writing-stage response.\nRanker stability.As shown in Figure 5, we compare four\nsource-unit orderings: the agent's own LLM, an external\nLLM, random ordering, and chronological ordering. At\n\u03b8w =0.5, the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Profile Stability",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "edf6b6289d0637785e7828efb7a9ca65dec4e3e9f933c2f26e0ef374b01e10d1",
+            "evidence_id": "Ebc06ea9b16eec275-B0036",
+            "pages": [
+              5
+            ],
+            "section": "Rq2: Profile Stability",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 5,
+                "section": "Rq2: Profile Stability",
+                "section_index": 17,
+                "start": 0,
+                "text": "We examine how selected workload and implementation fac-\ntors affect the stage-wise profiles. Unless otherwise speci-\nfied, all experiments in this section use DeepSeek-V4-Flash,\nLongMemEval, and MINJA.\nTrace-Load stability.As shown in Figure 4, we vary the\nnumber of source units in each trace to 0.75\u00d7, 1.0\u00d7, and\n1.25\u00d7the default size while preserving the core helpful or\nrisk-bearing information. Across all three settings, ASR re-\nmains near zero at low writing coverage and increases more\nsharply at higher coverage. At full coverage, ASR reaches\n58%-63%, while poisoned utility falls to 1%-4%. Larger\ntrace loads shift the rise in risk toward lower coverage lev-\nels but preserve the overall writing-stage response.\nRanker stability.As shown in Figure 5, we compare four\nsource-unit orderings: the agent's own LLM, an external\nLLM, random ordering, and chronological ordering. At\n\u03b8w =0.5, the "
+              }
+            ],
+            "text": "We examine how selected workload and implementation fac-\ntors affect the stage-wise profiles. Unless otherwise speci-\nfied, all experiments in this section use DeepSeek-V4-Flash,\nLongMemEval, and MINJA.\nTrace-Load stability.As shown in Figure 4, we vary the\nnumber of source units in each trace to 0.75\u00d7, 1.0\u00d7, and\n1.25\u00d7the default size while preserving the core helpful or\nrisk-bearing information. Across all three settings, ASR re-\nmains near zero at low writing coverage and increases more\nsharply at higher coverage. At full coverage, ASR reaches\n58%-63%, while poisoned utility falls to 1%-4%. Larger\ntrace loads shift the rise in risk toward lower coverage lev-\nels but preserve the overall writing-stage response.\nRanker stability.As shown in Figure 5, we compare four\nsource-unit orderings: the agent's own LLM, an external\nLLM, random ordering, and chronological ordering. At\n\u03b8w =0.5, the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0037"
+        ],
+        "excerpt": "self-LLM and external-LLM rankers achieve\n43%\u201347% clean utility with 2%-8% ASR, whereas random\nordering reaches only 16% clean utility. Chronological or-\ndering achieves 33% clean utility but raises ASR to 27%. All\norderings converge at\u03b8 w =1 because full coverage includes\nthe same source units by construction. Thus, ranker choice\nshifts the utility-risk trajectory and the onset of risk without\nchanging the full-coverage endpoint.\nRetrieval-budget stability.BecauseKdirectly controls the\namount of memory returned to the agent, we evaluate its ef-\nfect primarily at the retrieval stage. As shown in Figure 6,\nacross all budgets, increasing\u03b8 r raises both clean utility and\nASR under matched helpful and risk-bearing exposure. The\ndifferences are most visible at low and intermediate exposure\nlevels, while the profiles converge at high exposure. Thus,K\nshifts the utility-risk operating points ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq2: Profile Stability",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7f7945a7ebc394b2f4fc53a089271b5351121eda81876fb7145156c068eb64db",
+            "evidence_id": "Ebc06ea9b16eec275-B0037",
+            "pages": [
+              5
+            ],
+            "section": "Rq2: Profile Stability",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 5,
+                "section": "Rq2: Profile Stability",
+                "section_index": 17,
+                "start": 899,
+                "text": "self-LLM and external-LLM rankers achieve\n43%\u201347% clean utility with 2%-8% ASR, whereas random\nordering reaches only 16% clean utility. Chronological or-\ndering achieves 33% clean utility but raises ASR to 27%. All\norderings converge at\u03b8 w =1 because full coverage includes\nthe same source units by construction. Thus, ranker choice\nshifts the utility-risk trajectory and the onset of risk without\nchanging the full-coverage endpoint.\nRetrieval-budget stability.BecauseKdirectly controls the\namount of memory returned to the agent, we evaluate its ef-\nfect primarily at the retrieval stage. As shown in Figure 6,\nacross all budgets, increasing\u03b8 r raises both clean utility and\nASR under matched helpful and risk-bearing exposure. The\ndifferences are most visible at low and intermediate exposure\nlevels, while the profiles converge at high exposure. Thus,K\nshifts the utility-risk operating points "
+              }
+            ],
+            "text": "self-LLM and external-LLM rankers achieve\n43%\u201347% clean utility with 2%-8% ASR, whereas random\nordering reaches only 16% clean utility. Chronological or-\ndering achieves 33% clean utility but raises ASR to 27%. All\norderings converge at\u03b8 w =1 because full coverage includes\nthe same source units by construction. Thus, ranker choice\nshifts the utility-risk trajectory and the onset of risk without\nchanging the full-coverage endpoint.\nRetrieval-budget stability.BecauseKdirectly controls the\namount of memory returned to the agent, we evaluate its ef-\nfect primarily at the retrieval stage. As shown in Figure 6,\nacross all budgets, increasing\u03b8 r raises both clean utility and\nASR under matched helpful and risk-bearing exposure. The\ndifferences are most visible at low and intermediate exposure\nlevels, while the profiles converge at high exposure. Thus,K\nshifts the utility-risk operating points "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0043"
+        ],
+        "excerpt": "tems\nWe examine whether analogous stage-level measurements on\nMem0, Hindsight, LangMem, and A-MEM exhibit qualita-\ntive correspondence with the controlled profiles. Table 1 re-\nports the writing and management results. WR denotes the\nproportion of source units retained by the system's writer,U0\ndenotes utility without memory, andM 0 andM 1 denote na-\ntive management disabled and enabled, respectively. Unless\notherwise specified, we use|B i|=100 andK=5.\nTable 1: Writing and management results on real-world mem-\nory systems. WR is reported as mean\u00b1standard deviation over\n500 writing trials.\nSystem WR (%)U0 Mode Clean U Poisoned U ASR\nMem0 36.5\u00b16.1 0.008 M0 0.533 0.213 0.326\nM1 0.541 0.343 0.176\nHindsight 69.4\u00b15.4 0.015 M0 0.563 0.165 0.475\nM1 0.524 0.240 0.293\nLangMem 74.5\u00b18.7 0.011 M0 0.528 0.158 0.473\nM1 0.523 0.325 0.225\nA-MEM 55.7\u00b17.7 0.008 M0 0.483 0.130 0.403\nM1 0.460 0.218 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Correspondence In Existing Sys-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "491b63fe543fead4a34b3b57e35e869ba22b2afd4c3ca5cf9f9dc67b3781559c",
+            "evidence_id": "Ebc06ea9b16eec275-B0043",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Correspondence In Existing Sys-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 891,
+                "page": 7,
+                "section": "Rq3: Correspondence In Existing Sys-",
+                "section_index": 20,
+                "start": 0,
+                "text": "tems\nWe examine whether analogous stage-level measurements on\nMem0, Hindsight, LangMem, and A-MEM exhibit qualita-\ntive correspondence with the controlled profiles. Table 1 re-\nports the writing and management results. WR denotes the\nproportion of source units retained by the system's writer,U0\ndenotes utility without memory, andM 0 andM 1 denote na-\ntive management disabled and enabled, respectively. Unless\notherwise specified, we use|B i|=100 andK=5.\nTable 1: Writing and management results on real-world mem-\nory systems. WR is reported as mean\u00b1standard deviation over\n500 writing trials.\nSystem WR (%)U0 Mode Clean U Poisoned U ASR\nMem0 36.5\u00b16.1 0.008 M0 0.533 0.213 0.326\nM1 0.541 0.343 0.176\nHindsight 69.4\u00b15.4 0.015 M0 0.563 0.165 0.475\nM1 0.524 0.240 0.293\nLangMem 74.5\u00b18.7 0.011 M0 0.528 0.158 0.473\nM1 0.523 0.325 0.225\nA-MEM 55.7\u00b17.7 0.008 M0 0.483 0.130 0.403\nM1 0.460 0.218 "
+              }
+            ],
+            "text": "tems\nWe examine whether analogous stage-level measurements on\nMem0, Hindsight, LangMem, and A-MEM exhibit qualita-\ntive correspondence with the controlled profiles. Table 1 re-\nports the writing and management results. WR denotes the\nproportion of source units retained by the system's writer,U0\ndenotes utility without memory, andM 0 andM 1 denote na-\ntive management disabled and enabled, respectively. Unless\notherwise specified, we use|B i|=100 andK=5.\nTable 1: Writing and management results on real-world mem-\nory systems. WR is reported as mean\u00b1standard deviation over\n500 writing trials.\nSystem WR (%)U0 Mode Clean U Poisoned U ASR\nMem0 36.5\u00b16.1 0.008 M0 0.533 0.213 0.326\nM1 0.541 0.343 0.176\nHindsight 69.4\u00b15.4 0.015 M0 0.563 0.165 0.475\nM1 0.524 0.240 0.293\nLangMem 74.5\u00b18.7 0.011 M0 0.528 0.158 0.473\nM1 0.523 0.325 0.225\nA-MEM 55.7\u00b17.7 0.008 M0 0.483 0.130 0.403\nM1 0.460 0.218 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0044"
+        ],
+        "excerpt": "0.297\nWriting-stage correspondence.Writing exposure varies\nsubstantially across the four systems, from 36.5% in Mem0\nto 74.5% in LangMem. Meanwhile,U0 remains only 0.8%-\n1.5%, confirming that the evaluated tasks largely depend on\ninformation supplied through memory. UnderM0, higher\nwriting exposure broadly coincides with greater risk. Mem0\nhas both the lowest WR and ASR (36.5% and 32.6%),\nwhereas Hindsight and LangMem exhibit high WR (69.4%-\n74.5%) and ASR (47.3%-47.5%). However, clean utility\ndoes not increase correspondingly: Mem0 achieves 53.3%\nclean utility despite its substantially lower WR, comparable\nto LangMem at 52.8%. These results suggest that greater\nwriting exposure expands risk exposure without guarantee-\ning additional clean utility.\nManagement-stage correspondence.Enabling native man-\nagement reduces observed ASR in all four systems by 10.6-\n24.8 percentage points and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Correspondence In Existing Sys-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6264dc50742134e0f671f8827a4dd2f92c7f2ee5101683a89e546fb21cf5c4e9",
+            "evidence_id": "Ebc06ea9b16eec275-B0044",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Correspondence In Existing Sys-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1788,
+                "page": 7,
+                "section": "Rq3: Correspondence In Existing Sys-",
+                "section_index": 20,
+                "start": 891,
+                "text": "0.297\nWriting-stage correspondence.Writing exposure varies\nsubstantially across the four systems, from 36.5% in Mem0\nto 74.5% in LangMem. Meanwhile,U0 remains only 0.8%-\n1.5%, confirming that the evaluated tasks largely depend on\ninformation supplied through memory. UnderM0, higher\nwriting exposure broadly coincides with greater risk. Mem0\nhas both the lowest WR and ASR (36.5% and 32.6%),\nwhereas Hindsight and LangMem exhibit high WR (69.4%-\n74.5%) and ASR (47.3%-47.5%). However, clean utility\ndoes not increase correspondingly: Mem0 achieves 53.3%\nclean utility despite its substantially lower WR, comparable\nto LangMem at 52.8%. These results suggest that greater\nwriting exposure expands risk exposure without guarantee-\ning additional clean utility.\nManagement-stage correspondence.Enabling native man-\nagement reduces observed ASR in all four systems by 10.6-\n24.8 percentage points and "
+              }
+            ],
+            "text": "0.297\nWriting-stage correspondence.Writing exposure varies\nsubstantially across the four systems, from 36.5% in Mem0\nto 74.5% in LangMem. Meanwhile,U0 remains only 0.8%-\n1.5%, confirming that the evaluated tasks largely depend on\ninformation supplied through memory. UnderM0, higher\nwriting exposure broadly coincides with greater risk. Mem0\nhas both the lowest WR and ASR (36.5% and 32.6%),\nwhereas Hindsight and LangMem exhibit high WR (69.4%-\n74.5%) and ASR (47.3%-47.5%). However, clean utility\ndoes not increase correspondingly: Mem0 achieves 53.3%\nclean utility despite its substantially lower WR, comparable\nto LangMem at 52.8%. These results suggest that greater\nwriting exposure expands risk exposure without guarantee-\ning additional clean utility.\nManagement-stage correspondence.Enabling native man-\nagement reduces observed ASR in all four systems by 10.6-\n24.8 percentage points and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0045"
+        ],
+        "excerpt": "increases poisoned utility by\n7.5-16.7 percentage points. The corresponding clean-utility\nchanges range from a 0.8-percentage-point increase to a 3.9-\npercentage-point decrease. LangMem shows the largest ASR\nreduction, from 47.3% to 22.5%, with only a 0.5-percentage-\npoint decrease in clean utility. These results qualitatively cor-\nrespond to the policy-dependent utility\u2013risk shifts observed\nin the controlled management profiles.\nTo evaluate retrieval, we vary the retrieval budgetKas a\nproxy for increasing memory exposure; all experiments are\nconducted underM0 with|B i|=100, and RSR denotes the\nproportion of instances in which the target record (helpful or\nrisk) appears in the top-Kretrieved context.\nRetrieval-stage correspondence.Increasing the retrieval\nbudget produces a consistent coupled utility-risk response\nacross all four systems. AsKincreases from 1 to 7, RSR\nrises from 42%-51% ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Correspondence In Existing Sys-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "86ede6d1a6bdeb162596d6486bb7ed754a55457cffa2eda18448210c3ae232ee",
+            "evidence_id": "Ebc06ea9b16eec275-B0045",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Correspondence In Existing Sys-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2687,
+                "page": 7,
+                "section": "Rq3: Correspondence In Existing Sys-",
+                "section_index": 20,
+                "start": 1788,
+                "text": "increases poisoned utility by\n7.5-16.7 percentage points. The corresponding clean-utility\nchanges range from a 0.8-percentage-point increase to a 3.9-\npercentage-point decrease. LangMem shows the largest ASR\nreduction, from 47.3% to 22.5%, with only a 0.5-percentage-\npoint decrease in clean utility. These results qualitatively cor-\nrespond to the policy-dependent utility\u2013risk shifts observed\nin the controlled management profiles.\nTo evaluate retrieval, we vary the retrieval budgetKas a\nproxy for increasing memory exposure; all experiments are\nconducted underM0 with|B i|=100, and RSR denotes the\nproportion of instances in which the target record (helpful or\nrisk) appears in the top-Kretrieved context.\nRetrieval-stage correspondence.Increasing the retrieval\nbudget produces a consistent coupled utility-risk response\nacross all four systems. AsKincreases from 1 to 7, RSR\nrises from 42%-51% "
+              }
+            ],
+            "text": "increases poisoned utility by\n7.5-16.7 percentage points. The corresponding clean-utility\nchanges range from a 0.8-percentage-point increase to a 3.9-\npercentage-point decrease. LangMem shows the largest ASR\nreduction, from 47.3% to 22.5%, with only a 0.5-percentage-\npoint decrease in clean utility. These results qualitatively cor-\nrespond to the policy-dependent utility\u2013risk shifts observed\nin the controlled management profiles.\nTo evaluate retrieval, we vary the retrieval budgetKas a\nproxy for increasing memory exposure; all experiments are\nconducted underM0 with|B i|=100, and RSR denotes the\nproportion of instances in which the target record (helpful or\nrisk) appears in the top-Kretrieved context.\nRetrieval-stage correspondence.Increasing the retrieval\nbudget produces a consistent coupled utility-risk response\nacross all four systems. AsKincreases from 1 to 7, RSR\nrises from 42%-51% "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0046"
+        ],
+        "excerpt": "to 86%-97%, while clean utility in-\ncreases from 24.6%-29.3% to 52.7%-64.2%. This utility\nTable 2: Retrieval results under different retrieval budgets.\nSystem MetricK=1K=3K=5K=7\nMem0\nRSR 0.510 0.790 0.920 0.970\nClean U 0.287 0.417 0.533 0.586\nPoisoned U 0.246 0.245 0.213 0.194\nASR 0.047 0.249 0.326 0.361\nHindsight\nRSR 0.460 0.730 0.880 0.930\nClean U 0.293 0.472 0.563 0.642\nPoisoned U 0.241 0.224 0.165 0.134\nASR 0.086 0.359 0.475 0.537\nLangMem\nRSR 0.470 0.720 0.840 0.910\nClean U 0.287 0.463 0.528 0.613\nPoisoned U 0.225 0.193 0.158 0.147\nASR 0.094 0.328 0.473 0.526\nA-MEM\nRSR 0.420 0.650 0.790 0.860\nClean U 0.246 0.395 0.483 0.527\nPoisoned U 0.213 0.176 0.130 0.095\nASR 0.122 0.313 0.403 0.478\ngain is accompanied by a substantial increase in ASR, from\n4.7%-12.2% to 36.1%-53.7%, and a decrease in poisoned\nutility from 21.3%-24.6% to 9.5%-19.4%. The strength of\nthis response varies across ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Correspondence In Existing Sys-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1184ce5bece5d171762db6fdceb140195f3532a43f8902209279d53ba4d11841",
+            "evidence_id": "Ebc06ea9b16eec275-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Correspondence In Existing Sys-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3583,
+                "page": 7,
+                "section": "Rq3: Correspondence In Existing Sys-",
+                "section_index": 20,
+                "start": 2687,
+                "text": "to 86%-97%, while clean utility in-\ncreases from 24.6%-29.3% to 52.7%-64.2%. This utility\nTable 2: Retrieval results under different retrieval budgets.\nSystem MetricK=1K=3K=5K=7\nMem0\nRSR 0.510 0.790 0.920 0.970\nClean U 0.287 0.417 0.533 0.586\nPoisoned U 0.246 0.245 0.213 0.194\nASR 0.047 0.249 0.326 0.361\nHindsight\nRSR 0.460 0.730 0.880 0.930\nClean U 0.293 0.472 0.563 0.642\nPoisoned U 0.241 0.224 0.165 0.134\nASR 0.086 0.359 0.475 0.537\nLangMem\nRSR 0.470 0.720 0.840 0.910\nClean U 0.287 0.463 0.528 0.613\nPoisoned U 0.225 0.193 0.158 0.147\nASR 0.094 0.328 0.473 0.526\nA-MEM\nRSR 0.420 0.650 0.790 0.860\nClean U 0.246 0.395 0.483 0.527\nPoisoned U 0.213 0.176 0.130 0.095\nASR 0.122 0.313 0.403 0.478\ngain is accompanied by a substantial increase in ASR, from\n4.7%-12.2% to 36.1%-53.7%, and a decrease in poisoned\nutility from 21.3%-24.6% to 9.5%-19.4%. The strength of\nthis response varies across "
+              }
+            ],
+            "text": "to 86%-97%, while clean utility in-\ncreases from 24.6%-29.3% to 52.7%-64.2%. This utility\nTable 2: Retrieval results under different retrieval budgets.\nSystem MetricK=1K=3K=5K=7\nMem0\nRSR 0.510 0.790 0.920 0.970\nClean U 0.287 0.417 0.533 0.586\nPoisoned U 0.246 0.245 0.213 0.194\nASR 0.047 0.249 0.326 0.361\nHindsight\nRSR 0.460 0.730 0.880 0.930\nClean U 0.293 0.472 0.563 0.642\nPoisoned U 0.241 0.224 0.165 0.134\nASR 0.086 0.359 0.475 0.537\nLangMem\nRSR 0.470 0.720 0.840 0.910\nClean U 0.287 0.463 0.528 0.613\nPoisoned U 0.225 0.193 0.158 0.147\nASR 0.094 0.328 0.473 0.526\nA-MEM\nRSR 0.420 0.650 0.790 0.860\nClean U 0.246 0.395 0.483 0.527\nPoisoned U 0.213 0.176 0.130 0.095\nASR 0.122 0.313 0.403 0.478\ngain is accompanied by a substantial increase in ASR, from\n4.7%-12.2% to 36.1%-53.7%, and a decrease in poisoned\nutility from 21.3%-24.6% to 9.5%-19.4%. The strength of\nthis response varies across "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0047"
+        ],
+        "excerpt": "systems: Hindsight gains 34.9%\nin clean utility but also increases ASR by 45.1%, whereas\nMem0 shows a smaller ASR increase of 31.4% alongside\na 29.9% utility gain. Nevertheless, the direction is consis-\ntent across implementations. This behavior is expected be-\ncause retrieval ranks records by query relevance rather than\ndistinguishing benign from risk-bearing content; increasing\nKtherefore raises the exposure of both helpful and well-\nmatched risk-bearing records.\nKey Finding 3.The four existing systems exhibit quali-\ntative correspondence with the controlled profiles: writ-\ning exposure raises risk without reliable utility gains,\nnative management shifts the observed operating points\ntoward lower ASR, and larger retrieval budgets are ac-\ncompanied by increases in both clean utility and ASR.\nThese results are diagnostic associations rather than\ncontrolled stage effects.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Rq3: Correspondence In Existing Sys-",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "51d00dd0fb1a85bbfd496edf78c4a6e3783eaf3c6cf569870a55b952b4a18c04",
+            "evidence_id": "Ebc06ea9b16eec275-B0047",
+            "pages": [
+              7
+            ],
+            "section": "Rq3: Correspondence In Existing Sys-",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 4466,
+                "page": 7,
+                "section": "Rq3: Correspondence In Existing Sys-",
+                "section_index": 20,
+                "start": 3583,
+                "text": "systems: Hindsight gains 34.9%\nin clean utility but also increases ASR by 45.1%, whereas\nMem0 shows a smaller ASR increase of 31.4% alongside\na 29.9% utility gain. Nevertheless, the direction is consis-\ntent across implementations. This behavior is expected be-\ncause retrieval ranks records by query relevance rather than\ndistinguishing benign from risk-bearing content; increasing\nKtherefore raises the exposure of both helpful and well-\nmatched risk-bearing records.\nKey Finding 3.The four existing systems exhibit quali-\ntative correspondence with the controlled profiles: writ-\ning exposure raises risk without reliable utility gains,\nnative management shifts the observed operating points\ntoward lower ASR, and larger retrieval budgets are ac-\ncompanied by increases in both clean utility and ASR.\nThese results are diagnostic associations rather than\ncontrolled stage effects."
+              }
+            ],
+            "text": "systems: Hindsight gains 34.9%\nin clean utility but also increases ASR by 45.1%, whereas\nMem0 shows a smaller ASR increase of 31.4% alongside\na 29.9% utility gain. Nevertheless, the direction is consis-\ntent across implementations. This behavior is expected be-\ncause retrieval ranks records by query relevance rather than\ndistinguishing benign from risk-bearing content; increasing\nKtherefore raises the exposure of both helpful and well-\nmatched risk-bearing records.\nKey Finding 3.The four existing systems exhibit quali-\ntative correspondence with the controlled profiles: writ-\ning exposure raises risk without reliable utility gains,\nnative management shifts the observed operating points\ntoward lower ASR, and larger retrieval budgets are ac-\ncompanied by increases in both clean utility and ASR.\nThese results are diagnostic associations rather than\ncontrolled stage effects."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0048"
+        ],
+        "excerpt": "We validate AgentEval using 200 clean and 200 poisoned\ntrajectories annotated independently by five human experts.\nAnnotators judge whether each output is correct or, for poi-\nsoned trajectories, matches the attacker-predefined target;\nthe final label is determined by majority vote. AgentEval\nachieves 91% agreement with the human labels, while inter-\nannotator agreement is\u03ba=0.78, supporting its use for eval-\nuation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human Evaluation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "26b5bcf62b9fd9213ce2af9e51ad945cfec73357573bbb9f26542e2e73f4b553",
+            "evidence_id": "Ebc06ea9b16eec275-B0048",
+            "pages": [
+              7
+            ],
+            "section": "Human Evaluation",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 419,
+                "page": 7,
+                "section": "Human Evaluation",
+                "section_index": 21,
+                "start": 0,
+                "text": "We validate AgentEval using 200 clean and 200 poisoned\ntrajectories annotated independently by five human experts.\nAnnotators judge whether each output is correct or, for poi-\nsoned trajectories, matches the attacker-predefined target;\nthe final label is determined by majority vote. AgentEval\nachieves 91% agreement with the human labels, while inter-\nannotator agreement is\u03ba=0.78, supporting its use for eval-\nuation."
+              }
+            ],
+            "text": "We validate AgentEval using 200 clean and 200 poisoned\ntrajectories annotated independently by five human experts.\nAnnotators judge whether each output is correct or, for poi-\nsoned trajectories, matches the attacker-predefined target;\nthe final label is determined by majority vote. AgentEval\nachieves 91% agreement with the human labels, while inter-\nannotator agreement is\u03ba=0.78, supporting its use for eval-\nuation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.30177",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected.",
+      "Canonical Unicode normalization processed 56 UTF-16 surrogate code units; unpaired units are visible replacement characters, not reconstructed symbols."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2608.30177",
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "AgentEvals judgments were validated against 400 trajectories independently annotated by five human experts, with 91% agreement and inter-annotator kappa of 0.78.",
+          "final_evaluation_signal": "Final clean utility, poisoned utility, and attack success rate are judged by AgentEvals on whether outputs support the correct answer or the attacker-predefined target.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Writing-stage admission uses the agent's own LLM to rank source units by estimated usefulness, shaping which information enters memory.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0002",
+          "Ebc06ea9b16eec275-B0008",
+          "Ebc06ea9b16eec275-B0017",
+          "Ebc06ea9b16eec275-B0018",
+          "Ebc06ea9b16eec275-B0020",
+          "Ebc06ea9b16eec275-B0021",
+          "Ebc06ea9b16eec275-B0022",
+          "Ebc06ea9b16eec275-B0025",
+          "Ebc06ea9b16eec275-B0029",
+          "Ebc06ea9b16eec275-B0030",
+          "Ebc06ea9b16eec275-B0031",
+          "Ebc06ea9b16eec275-B0032",
+          "Ebc06ea9b16eec275-B0033",
+          "Ebc06ea9b16eec275-B0034",
+          "Ebc06ea9b16eec275-B0036",
+          "Ebc06ea9b16eec275-B0037",
+          "Ebc06ea9b16eec275-B0043",
+          "Ebc06ea9b16eec275-B0044",
+          "Ebc06ea9b16eec275-B0045",
+          "Ebc06ea9b16eec275-B0046",
+          "Ebc06ea9b16eec275-B0047",
+          "Ebc06ea9b16eec275-B0048"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "534d19430d42adaeb129ccf81a44a565d58b9bf14a242ac0c690fc95700330fa"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2608.30177",
+        "claim_evidence_alignment": "Claims regarding the three stage-wise patterns\u2014threshold-like transitions in writing, policy-dependent decoupling in management, and coupled growth in retrieval\u2014are supported by extensive controlled experiments and corroborating diagnostic evaluations in production frameworks.",
+        "context_id": "bc06ea9b16eec275c42db25a2d8da5011381f6901642335f86590c9bbeb0ab38",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation spans two established long-term memory benchmarks (LongMemEval and LoCoMo) under user-side (MINJA) and tool-side (Sleeper) poisoning attacks across 11 LLMs, supplemented with stability sensitivity checks and diagnostic verification on four existing memory frameworks (Mem0, Hindsight, LangMem, A-Mem).",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "AgentEvals trajectory decisions were independently evaluated against 400 clean and poisoned trajectories annotated by five human experts with majority voting (91% agreement, Cohen's kappa = 0.78).",
+          "final_evaluation_signal": "Downstream final utility and attack success rate are judged by AgentEvals based on whether agent output trajectories match the ground-truth answer or the predefined attacker target.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Source-unit ranking during the writing stage is derived from the evaluated agent LLM's zero-shot utility estimation over atomic interaction units.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ebc06ea9b16eec275-B0002",
+          "Ebc06ea9b16eec275-B0008",
+          "Ebc06ea9b16eec275-B0017",
+          "Ebc06ea9b16eec275-B0018",
+          "Ebc06ea9b16eec275-B0020",
+          "Ebc06ea9b16eec275-B0021",
+          "Ebc06ea9b16eec275-B0022",
+          "Ebc06ea9b16eec275-B0025",
+          "Ebc06ea9b16eec275-B0029",
+          "Ebc06ea9b16eec275-B0030",
+          "Ebc06ea9b16eec275-B0031",
+          "Ebc06ea9b16eec275-B0032",
+          "Ebc06ea9b16eec275-B0033",
+          "Ebc06ea9b16eec275-B0034",
+          "Ebc06ea9b16eec275-B0036",
+          "Ebc06ea9b16eec275-B0037",
+          "Ebc06ea9b16eec275-B0043",
+          "Ebc06ea9b16eec275-B0044",
+          "Ebc06ea9b16eec275-B0045",
+          "Ebc06ea9b16eec275-B0046",
+          "Ebc06ea9b16eec275-B0047",
+          "Ebc06ea9b16eec275-B0048"
+        ],
+        "limitations": "The authors acknowledge that existing memory architectures couple stages tightly, meaning real-world system experiments represent diagnostic associations rather than strictly isolated stage controls.",
+        "method_assessment": "The methodology decomposes memory pipelines into isolated intervention axes: writing admission coverage via ranked trace units, discrete quarantine/conflict-resolution management policies, and shared exposure probability under fixed retrieval budgets. Matched clean and poisoned setups isolate stage-specific trade-offs while holding remaining variables fixed.",
+        "quality_rationale": "The manuscript offers a rigorous, well-controlled experimental framework addressing a major gap in agent memory security evaluations, supported by broad cross-model testing, sensitivity analyses, and expert human annotation validation.",
+        "scoped_contribution": "The paper presents MemGauge, an evaluation framework that systematically dissects agent long-term memory into writing, management, and retrieval stages to measure paired clean utility and poisoning risk trade-offs across 11 LLMs and 4 real-world memory systems.",
+        "source_content_hash": "534d19430d42adaeb129ccf81a44a565d58b9bf14a242ac0c690fc95700330fa"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript offers a rigorous, well-controlled experimental framework addressing a major gap in agent memory security evaluations, supported by broad cross-model testing, sensitivity analyses, and expert human annotation validation.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "534d19430d42adaeb129ccf81a44a565d58b9bf14a242ac0c690fc95700330fa",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors acknowledge that existing memory architectures couple stages tightly, meaning real-world system experiments represent diagnostic associations rather than strictly isolated stage controls."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -179,7 +1885,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

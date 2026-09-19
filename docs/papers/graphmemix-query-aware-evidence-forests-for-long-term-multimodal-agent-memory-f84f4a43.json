@@ -29,7 +29,7 @@
   "last_seen_date": "2026-09-17",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-08-28 18:46:54",
   "notified_date": "2026-08-28",
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-08-28 18:46:03",
-    "generated_at": "2026-09-18 18:46:09",
+    "generated_at": "2026-09-19 07:47:30",
     "last_seen_at": "2026-09-17 11:47:21",
     "metadata_sources": [
       "openalex",
@@ -109,36 +109,1662 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:38:10.613706+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "GraphMemix provides a rigorous, self-contained formulation solving clear limitations of existing multimodal RAG and offline memory summarization methods, validated comprehensively across diverse datasets and metrics with appropriate controls and ablations.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 65854,
+      "assessment_input_sha256": "d7c261ec3b06e6cd4a36c66e9c740aadaa3b7fe15afb2151884ec9075f824bc5",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2608.26983",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 63052,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 61786,
+      "evidence_block_count": 94,
+      "evidence_context_characters": 74806,
+      "evidence_context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+      "evidence_context_sha256": "7b3b4718fac5d12213d4743a3d217c471447812baff0d3bb061c05cdd38a84c6",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 63094,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "extracted_pages": 22,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "036a0429dfc03f22bf17320bf1b7b62b6777a8e1a4c106d4d3f9da7eb8c03057",
+        "source_url": "https://arxiv.org/pdf/2608.26983",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 63052,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Graphmemix: Query-Aware",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 1699,
+          "supplied_characters": 1699
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 1,
+          "source_characters": 1104,
+          "supplied_characters": 1104
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 2,
+          "source_characters": 3256,
+          "supplied_characters": 3256
+        },
+        {
+          "heading": "Long-Term Multimodal Agent Memory",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 892,
+          "supplied_characters": 892
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 1558,
+          "supplied_characters": 1558
+        },
+        {
+          "heading": "\ud835\udc46\ud835\udc46 \u2264 \ud835\udc3e\ud835\udc3e",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1567,
+          "supplied_characters": 1567
+        },
+        {
+          "heading": "Query-Conditioned Evidence Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 1273,
+          "supplied_characters": 1273
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "methods",
+          "section_index": 8,
+          "source_characters": 162,
+          "supplied_characters": 162
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 9,
+          "source_characters": 546,
+          "supplied_characters": 546
+        },
+        {
+          "heading": "Query-Conditioned Evidence Forest",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 752,
+          "supplied_characters": 752
+        },
+        {
+          "heading": "Candidate Graph Construction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 929,
+          "supplied_characters": 929
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 423,
+          "supplied_characters": 423
+        },
+        {
+          "heading": "Evidence Utility And Activation Costs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 2179,
+          "supplied_characters": 2179
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 1700,
+          "supplied_characters": 1700
+        },
+        {
+          "heading": "Forest Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 930,
+          "supplied_characters": 930
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1961,
+          "supplied_characters": 1961
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 945,
+          "supplied_characters": 945
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "methods",
+          "section_index": 18,
+          "source_characters": 1652,
+          "supplied_characters": 1652
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 630,
+          "supplied_characters": 630
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 933,
+          "supplied_characters": 933
+        },
+        {
+          "heading": "Efficiency Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 807,
+          "supplied_characters": 807
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 801,
+          "supplied_characters": 801
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 866,
+          "supplied_characters": 866
+        },
+        {
+          "heading": "Recovering Low-Ranked Relational Evidence",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 963,
+          "supplied_characters": 963
+        },
+        {
+          "heading": "Optimization Behavior",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 552,
+          "supplied_characters": 552
+        },
+        {
+          "heading": "Query-Conditioned Edges And Discovery",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 420,
+          "supplied_characters": 420
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1157,
+          "supplied_characters": 1157
+        },
+        {
+          "heading": "Two Verifiers With Separated Responsibilities",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 604,
+          "supplied_characters": 604
+        },
+        {
+          "heading": "Qualitative Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 624,
+          "supplied_characters": 624
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "conclusion",
+          "section_index": 30,
+          "source_characters": 730,
+          "supplied_characters": 730
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 27,
+          "supplied_characters": 27
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 4047,
+          "supplied_characters": 4047
+        },
+        {
+          "heading": "Memorax Ai Research\u00b7Graphmemix 12 / 22",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 1329,
+          "supplied_characters": 1329
+        },
+        {
+          "heading": "Appendix: Dataset Details And Preprocessing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 2480,
+          "supplied_characters": 2480
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 2563,
+          "supplied_characters": 2563
+        },
+        {
+          "heading": "Appendix: Models And Fixed Parameters",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 874,
+          "supplied_characters": 874
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 1187,
+          "supplied_characters": 1187
+        },
+        {
+          "heading": "Appendix: Full-Lifecycle Wall-Clock Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1015,
+          "supplied_characters": 1015
+        },
+        {
+          "heading": "Appendix: Prompts And Structured Outputs",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 820,
+          "supplied_characters": 820
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 2959,
+          "supplied_characters": 2959
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 2004,
+          "supplied_characters": 2004
+        },
+        {
+          "heading": "Appendix: Evidence Serialization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 43,
+          "source_characters": 405,
+          "supplied_characters": 405
+        },
+        {
+          "heading": "Appendix: Controlled Evidence-Set Selection",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 601,
+          "supplied_characters": 601
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 3383,
+          "supplied_characters": 3383
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 315,
+          "supplied_characters": 315
+        },
+        {
+          "heading": "Mmr 0 +2\u22122\u22126\u22126",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 716,
+          "supplied_characters": 716
+        },
+        {
+          "heading": "Appendix: Evaluation Validation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 249,
+          "supplied_characters": 249
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 1029,
+          "supplied_characters": 1029
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 1890,
+          "supplied_characters": 1890
+        },
+        {
+          "heading": "Graphmemix Technical Report",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 585,
+          "supplied_characters": 585
+        },
+        {
+          "heading": "List Answers Must Contain All Required Items And No Materially Unsupported Items; Order",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 110,
+          "supplied_characters": 110
+        },
+        {
+          "heading": "Refusal Is Correct Only When The Reference Is Unanswerable/Refusal And The Prediction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 16,
+          "supplied_characters": 16
+        },
+        {
+          "heading": "Structured/Function-Call Answers Must Use The Required Tool Names, Arguments, Depen-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 66,
+          "supplied_characters": 66
+        },
+        {
+          "heading": "Ignore Harmless Formatting, But Not Factual Omissions, Contradictions, Or Extra Unsup-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 436,
+          "supplied_characters": 436
+        }
+      ],
+      "selected_characters": 61786,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "selected_sections": [
+        {
+          "characters": 1699,
+          "heading": "Graphmemix: Query-Aware",
+          "page": 1
+        },
+        {
+          "characters": 1104,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3256,
+          "heading": "Graphmemix Technical Report",
+          "page": 2
+        },
+        {
+          "characters": 892,
+          "heading": "Long-Term Multimodal Agent Memory",
+          "page": 2
+        },
+        {
+          "characters": 1558,
+          "heading": "Graphmemix Technical Report",
+          "page": 3
+        },
+        {
+          "characters": 1567,
+          "heading": "\ud835\udc46\ud835\udc46 \u2264 \ud835\udc3e\ud835\udc3e",
+          "page": 3
+        },
+        {
+          "characters": 1273,
+          "heading": "Query-Conditioned Evidence Retrieval",
+          "page": 3
+        },
+        {
+          "characters": 27,
+          "heading": "Graphmemix Technical Report",
+          "page": 4
+        },
+        {
+          "characters": 162,
+          "heading": "Method",
+          "page": 4
+        },
+        {
+          "characters": 546,
+          "heading": "Problem Formulation",
+          "page": 4
+        },
+        {
+          "characters": 752,
+          "heading": "Query-Conditioned Evidence Forest",
+          "page": 4
+        },
+        {
+          "characters": 929,
+          "heading": "Candidate Graph Construction",
+          "page": 4
+        },
+        {
+          "characters": 423,
+          "heading": "Graphmemix Technical Report",
+          "page": 5
+        },
+        {
+          "characters": 2179,
+          "heading": "Evidence Utility And Activation Costs",
+          "page": 5
+        },
+        {
+          "characters": 1700,
+          "heading": "Graphmemix Technical Report",
+          "page": 6
+        },
+        {
+          "characters": 930,
+          "heading": "Forest Optimization",
+          "page": 6
+        },
+        {
+          "characters": 1961,
+          "heading": "Graphmemix Technical Report",
+          "page": 7
+        },
+        {
+          "characters": 945,
+          "heading": "Graphmemix Technical Report",
+          "page": 8
+        },
+        {
+          "characters": 1652,
+          "heading": "Experimental Setup",
+          "page": 8
+        },
+        {
+          "characters": 630,
+          "heading": "Graphmemix Technical Report",
+          "page": 9
+        },
+        {
+          "characters": 933,
+          "heading": "Main Results",
+          "page": 9
+        },
+        {
+          "characters": 807,
+          "heading": "Efficiency Analysis",
+          "page": 9
+        },
+        {
+          "characters": 801,
+          "heading": "Ablation Study",
+          "page": 9
+        },
+        {
+          "characters": 866,
+          "heading": "Graphmemix Technical Report",
+          "page": 10
+        },
+        {
+          "characters": 963,
+          "heading": "Recovering Low-Ranked Relational Evidence",
+          "page": 10
+        },
+        {
+          "characters": 552,
+          "heading": "Optimization Behavior",
+          "page": 10
+        },
+        {
+          "characters": 420,
+          "heading": "Query-Conditioned Edges And Discovery",
+          "page": 10
+        },
+        {
+          "characters": 1157,
+          "heading": "Graphmemix Technical Report",
+          "page": 11
+        },
+        {
+          "characters": 604,
+          "heading": "Two Verifiers With Separated Responsibilities",
+          "page": 11
+        },
+        {
+          "characters": 624,
+          "heading": "Qualitative Analysis",
+          "page": 11
+        },
+        {
+          "characters": 730,
+          "heading": "Conclusion",
+          "page": 11
+        },
+        {
+          "characters": 27,
+          "heading": "Graphmemix Technical Report",
+          "page": 12
+        },
+        {
+          "characters": 4047,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 38,
+          "heading": "Memorax Ai Research\u00b7Graphmemix 12 / 22",
+          "page": 12
+        },
+        {
+          "characters": 1329,
+          "heading": "Graphmemix Technical Report",
+          "page": 13
+        },
+        {
+          "characters": 2480,
+          "heading": "Appendix: Dataset Details And Preprocessing",
+          "page": 13
+        },
+        {
+          "characters": 2563,
+          "heading": "Graphmemix Technical Report",
+          "page": 14
+        },
+        {
+          "characters": 874,
+          "heading": "Appendix: Models And Fixed Parameters",
+          "page": 14
+        },
+        {
+          "characters": 1187,
+          "heading": "Graphmemix Technical Report",
+          "page": 15
+        },
+        {
+          "characters": 1015,
+          "heading": "Appendix: Full-Lifecycle Wall-Clock Analysis",
+          "page": 15
+        },
+        {
+          "characters": 820,
+          "heading": "Appendix: Prompts And Structured Outputs",
+          "page": 15
+        },
+        {
+          "characters": 2959,
+          "heading": "Graphmemix Technical Report",
+          "page": 16
+        },
+        {
+          "characters": 2004,
+          "heading": "Graphmemix Technical Report",
+          "page": 17
+        },
+        {
+          "characters": 405,
+          "heading": "Appendix: Evidence Serialization",
+          "page": 17
+        },
+        {
+          "characters": 601,
+          "heading": "Appendix: Controlled Evidence-Set Selection",
+          "page": 17
+        },
+        {
+          "characters": 3383,
+          "heading": "Graphmemix Technical Report",
+          "page": 18
+        },
+        {
+          "characters": 315,
+          "heading": "Graphmemix Technical Report",
+          "page": 19
+        },
+        {
+          "characters": 716,
+          "heading": "Mmr 0 +2\u22122\u22126\u22126",
+          "page": 19
+        },
+        {
+          "characters": 249,
+          "heading": "Appendix: Evaluation Validation",
+          "page": 19
+        },
+        {
+          "characters": 1029,
+          "heading": "Graphmemix Technical Report",
+          "page": 20
+        },
+        {
+          "characters": 1890,
+          "heading": "Graphmemix Technical Report",
+          "page": 21
+        },
+        {
+          "characters": 585,
+          "heading": "Graphmemix Technical Report",
+          "page": 22
+        },
+        {
+          "characters": 110,
+          "heading": "List Answers Must Contain All Required Items And No Materially Unsupported Items; Order",
+          "page": 22
+        },
+        {
+          "characters": 16,
+          "heading": "Refusal Is Correct Only When The Reference Is Unanswerable/Refusal And The Prediction",
+          "page": 22
+        },
+        {
+          "characters": 66,
+          "heading": "Structured/Function-Call Answers Must Use The Required Tool Names, Arguments, Depen-",
+          "page": 22
+        },
+        {
+          "characters": 436,
+          "heading": "Ignore Harmless Formatting, But Not Factual Omissions, Contradictions, Or Extra Unsup-",
+          "page": 22
+        }
+      ],
+      "selected_text_sha256": "d7c261ec3b06e6cd4a36c66e9c740aadaa3b7fe15afb2151884ec9075f824bc5",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "036a0429dfc03f22bf17320bf1b7b62b6777a8e1a4c106d4d3f9da7eb8c03057",
+      "source_pages": 22,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0007"
+        ],
+        "excerpt": "large-scale memory archives\nafter the question arrives. Fundamentally,GraphMemixformulates memory selection as query-\nconditioned evidence-forest optimization: nodes capture the direct utility of individual memories,\nwhile edges capture their incremental value when conditioned on an anchor. To instantiate this ob-\njective,GraphMemixstarts from multi-view matching anchors and expands through schema and\nsemantic edges to reconstruct a bounded, query-relevant candidate subgraph. A node verifier esti-\nmatesdirectsupport,whileanEvidence-ChainVerifierestimateswhethereachanchor-conditioned\nrelation contributes complementary information rather than redundancy or conflict. The resulting\nobjective jointly selects relevant memories and reliable relations, recovering low-similarity con-\ntext while suppressing uncertain expansion. For any fixed node set, its optimal maximum-weight\nforest is obtained ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemix Technical Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3d25f5ae626390a3c7c5c6da269cafe1edb802875ebfbf30c8627157ccafb3e9",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0007",
+            "pages": [
+              2
+            ],
+            "section": "Graphmemix Technical Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2685,
+                "page": 2,
+                "section": "Graphmemix Technical Report",
+                "section_index": 2,
+                "start": 1785,
+                "text": "large-scale memory archives\nafter the question arrives. Fundamentally,GraphMemixformulates memory selection as query-\nconditioned evidence-forest optimization: nodes capture the direct utility of individual memories,\nwhile edges capture their incremental value when conditioned on an anchor. To instantiate this ob-\njective,GraphMemixstarts from multi-view matching anchors and expands through schema and\nsemantic edges to reconstruct a bounded, query-relevant candidate subgraph. A node verifier esti-\nmatesdirectsupport,whileanEvidence-ChainVerifierestimateswhethereachanchor-conditioned\nrelation contributes complementary information rather than redundancy or conflict. The resulting\nobjective jointly selects relevant memories and reliable relations, recovering low-similarity con-\ntext while suppressing uncertain expansion. For any fixed node set, its optimal maximum-weight\nforest is obtained "
+              }
+            ],
+            "text": "large-scale memory archives\nafter the question arrives. Fundamentally,GraphMemixformulates memory selection as query-\nconditioned evidence-forest optimization: nodes capture the direct utility of individual memories,\nwhile edges capture their incremental value when conditioned on an anchor. To instantiate this ob-\njective,GraphMemixstarts from multi-view matching anchors and expands through schema and\nsemantic edges to reconstruct a bounded, query-relevant candidate subgraph. A node verifier esti-\nmatesdirectsupport,whileanEvidence-ChainVerifierestimateswhethereachanchor-conditioned\nrelation contributes complementary information rather than redundancy or conflict. The resulting\nobjective jointly selects relevant memories and reliable relations, recovering low-similarity con-\ntext while suppressing uncertain expansion. For any fixed node set, its optimal maximum-weight\nforest is obtained "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0008"
+        ],
+        "excerpt": "exactly by Kruskal's algorithm. Experiments on four long-term multimodal mem-\nory benchmarks and two reader families support this design. With Qwen3-VL,GraphMemixim-\nproves Judge Accuracy over the strongest public baseline on every benchmark and raises the four-\ndataset macro-average by 11.75 percentage points, from 49.80% to 61.55%. In terms of efficiency,\nit achieves a lifecycle-cost Pareto frontier compared with existing approaches, demonstrating that\nquery-localsemanticorganizationboostsanswerqualitywithoutincurringhistory-widegenerative\npreprocessing overhead.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemix Technical Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "43bb8a19dd537b047477ed67ac863a7fbb5bf598019cf148ba224eb9842a818f",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Graphmemix Technical Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3256,
+                "page": 2,
+                "section": "Graphmemix Technical Report",
+                "section_index": 2,
+                "start": 2685,
+                "text": "exactly by Kruskal's algorithm. Experiments on four long-term multimodal mem-\nory benchmarks and two reader families support this design. With Qwen3-VL,GraphMemixim-\nproves Judge Accuracy over the strongest public baseline on every benchmark and raises the four-\ndataset macro-average by 11.75 percentage points, from 49.80% to 61.55%. In terms of efficiency,\nit achieves a lifecycle-cost Pareto frontier compared with existing approaches, demonstrating that\nquery-localsemanticorganizationboostsanswerqualitywithoutincurringhistory-widegenerative\npreprocessing overhead."
+              }
+            ],
+            "text": "exactly by Kruskal's algorithm. Experiments on four long-term multimodal mem-\nory benchmarks and two reader families support this design. With Qwen3-VL,GraphMemixim-\nproves Judge Accuracy over the strongest public baseline on every benchmark and raises the four-\ndataset macro-average by 11.75 percentage points, from 49.80% to 61.55%. In terms of efficiency,\nit achieves a lifecycle-cost Pareto frontier compared with existing approaches, demonstrating that\nquery-localsemanticorganizationboostsanswerqualitywithoutincurringhistory-widegenerative\npreprocessing overhead."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0023"
+        ],
+        "excerpt": "Direct node utility.Retrieval similarity is a stable global prior, but is insufficient for negation,\ntemporal change, visual reference, or memories that share a topic but imply different answers. A\nlistwise node verifier reads\ud835\udc5eand\ud835\udc36 \ud835\udc5e in one call and outputs\ud835\udc63\ud835\udc56(\ud835\udc5e), the degree to which\ud835\udc52\ud835\udc56 indepen-\ndently supports the question. Listwise input places candidates on a common semantic scale. We\nfuse the normalized verifier scoree\ud835\udc63\ud835\udc56 with retrieval:\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)=\ud835\udf0e (\ud835\udf0f[\ud835\udefc\ud835\udc60\ud835\udc56(\ud835\udc5e)+(1\u2212\ud835\udefc)e\ud835\udc63 \ud835\udc56(\ud835\udc5e)\u2212\ud835\udeff] ),\nUnode(\ud835\udc46|\ud835\udc5e)=\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e),(6)\nwhere\ud835\udefcbalances the retrieval prior and conditional judgment, while\ud835\udf0fand\ud835\udeffcontrol scale and\noffset.\nAnchor-conditioned relation verification.Node verification asks whether a memory is useful\nalone,butcannotdistinguishredundancyfromcomplementaritywithanalreadyretrievedmemory.\nWe take a high-confidence anchor set\ud835\udc34\ud835\udc5e from the initial retrieval and inspect only schema edges\nbetween anchors and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evidence Utility And Activation Costs",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1c772debb83deceb39a66bd3f0fba78ed3902aa0bd31357f6961d4f7c87d668d",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Evidence Utility And Activation Costs",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 5,
+                "section": "Evidence Utility And Activation Costs",
+                "section_index": 13,
+                "start": 0,
+                "text": "Direct node utility.Retrieval similarity is a stable global prior, but is insufficient for negation,\ntemporal change, visual reference, or memories that share a topic but imply different answers. A\nlistwise node verifier reads\ud835\udc5eand\ud835\udc36 \ud835\udc5e in one call and outputs\ud835\udc63\ud835\udc56(\ud835\udc5e), the degree to which\ud835\udc52\ud835\udc56 indepen-\ndently supports the question. Listwise input places candidates on a common semantic scale. We\nfuse the normalized verifier scoree\ud835\udc63\ud835\udc56 with retrieval:\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)=\ud835\udf0e (\ud835\udf0f[\ud835\udefc\ud835\udc60\ud835\udc56(\ud835\udc5e)+(1\u2212\ud835\udefc)e\ud835\udc63 \ud835\udc56(\ud835\udc5e)\u2212\ud835\udeff] ),\nUnode(\ud835\udc46|\ud835\udc5e)=\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e),(6)\nwhere\ud835\udefcbalances the retrieval prior and conditional judgment, while\ud835\udf0fand\ud835\udeffcontrol scale and\noffset.\nAnchor-conditioned relation verification.Node verification asks whether a memory is useful\nalone,butcannotdistinguishredundancyfromcomplementaritywithanalreadyretrievedmemory.\nWe take a high-confidence anchor set\ud835\udc34\ud835\udc5e from the initial retrieval and inspect only schema edges\nbetween anchors and "
+              }
+            ],
+            "text": "Direct node utility.Retrieval similarity is a stable global prior, but is insufficient for negation,\ntemporal change, visual reference, or memories that share a topic but imply different answers. A\nlistwise node verifier reads\ud835\udc5eand\ud835\udc36 \ud835\udc5e in one call and outputs\ud835\udc63\ud835\udc56(\ud835\udc5e), the degree to which\ud835\udc52\ud835\udc56 indepen-\ndently supports the question. Listwise input places candidates on a common semantic scale. We\nfuse the normalized verifier scoree\ud835\udc63\ud835\udc56 with retrieval:\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)=\ud835\udf0e (\ud835\udf0f[\ud835\udefc\ud835\udc60\ud835\udc56(\ud835\udc5e)+(1\u2212\ud835\udefc)e\ud835\udc63 \ud835\udc56(\ud835\udc5e)\u2212\ud835\udeff] ),\nUnode(\ud835\udc46|\ud835\udc5e)=\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e),(6)\nwhere\ud835\udefcbalances the retrieval prior and conditional judgment, while\ud835\udf0fand\ud835\udeffcontrol scale and\noffset.\nAnchor-conditioned relation verification.Node verification asks whether a memory is useful\nalone,butcannotdistinguishredundancyfromcomplementaritywithanalreadyretrievedmemory.\nWe take a high-confidence anchor set\ud835\udc34\ud835\udc5e from the initial retrieval and inspect only schema edges\nbetween anchors and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0024"
+        ],
+        "excerpt": "candidates:\n\ud835\udc38elig\n\ud835\udc5e ={(\ud835\udc4e,\ud835\udc56)\u2208\ud835\udc38 schema :\ud835\udc4e\u2208\ud835\udc34 \ud835\udc5e, \ud835\udc56\u2208\ud835\udc36 \ud835\udc5e}.(7)\nThe Evidence-Chain Verifier (ECV) reads these pairs in one listwise call. For each candidate, it\nchooses the anchor that best explains the candidate's incremental role, predicts an incremental-\nsupport score\ud835\udc60 inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e), and assigns one of six roles:new_fact,clarification,corroboration,\nredundant,conflict, orirrelevant. Only the best anchor edge with a positive score and one of\nthe first three roles is retained, forming\n\ud835\udc3atrust\n\ud835\udc5e =(\ud835\udc36 \ud835\udc5e,\ud835\udc38 trust\n\ud835\udc5e ), \ud835\udc38 trust\n\ud835\udc5e \u2286\ud835\udc38 elig\n\ud835\udc5e .(8)\nFor a retained edge(\ud835\udc4e,\ud835\udc56), its reliability and uncertainty cost are\n\ud835\udc64\ud835\udc4e\ud835\udc56(\ud835\udc5e)=\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56\n\ud835\udc60inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e)\n\ud835\udc60max\n, \ud835\udc50 \ud835\udc4e\ud835\udc56(\ud835\udc5e)=\u2212log\ud835\udc64 \ud835\udc4e\ud835\udc56(\ud835\udc5e),(9)\nwhere\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56 is a schema-specific reliability ceiling. Accordingly,Cedge(\ud835\udc39|\ud835\udc5e)=\ud835\udf06 \u00cd\n\ud835\udc52\u2208\ud835\udc39 \ud835\udc50\ud835\udc52(\ud835\udc5e). Role\ngating determines whether an edge carries positive incremental semantics, the continuous score\nthen controls its credit. A related but ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evidence Utility And Activation Costs",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "36a61050f4cff193af7b6555fc91747951119c2f45613c71688588a4f91174c0",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Evidence Utility And Activation Costs",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1795,
+                "page": 5,
+                "section": "Evidence Utility And Activation Costs",
+                "section_index": 13,
+                "start": 898,
+                "text": "candidates:\n\ud835\udc38elig\n\ud835\udc5e ={(\ud835\udc4e,\ud835\udc56)\u2208\ud835\udc38 schema :\ud835\udc4e\u2208\ud835\udc34 \ud835\udc5e, \ud835\udc56\u2208\ud835\udc36 \ud835\udc5e}.(7)\nThe Evidence-Chain Verifier (ECV) reads these pairs in one listwise call. For each candidate, it\nchooses the anchor that best explains the candidate's incremental role, predicts an incremental-\nsupport score\ud835\udc60 inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e), and assigns one of six roles:new_fact,clarification,corroboration,\nredundant,conflict, orirrelevant. Only the best anchor edge with a positive score and one of\nthe first three roles is retained, forming\n\ud835\udc3atrust\n\ud835\udc5e =(\ud835\udc36 \ud835\udc5e,\ud835\udc38 trust\n\ud835\udc5e ), \ud835\udc38 trust\n\ud835\udc5e \u2286\ud835\udc38 elig\n\ud835\udc5e .(8)\nFor a retained edge(\ud835\udc4e,\ud835\udc56), its reliability and uncertainty cost are\n\ud835\udc64\ud835\udc4e\ud835\udc56(\ud835\udc5e)=\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56\n\ud835\udc60inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e)\n\ud835\udc60max\n, \ud835\udc50 \ud835\udc4e\ud835\udc56(\ud835\udc5e)=\u2212log\ud835\udc64 \ud835\udc4e\ud835\udc56(\ud835\udc5e),(9)\nwhere\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56 is a schema-specific reliability ceiling. Accordingly,Cedge(\ud835\udc39|\ud835\udc5e)=\ud835\udf06 \u00cd\n\ud835\udc52\u2208\ud835\udc39 \ud835\udc50\ud835\udc52(\ud835\udc5e). Role\ngating determines whether an edge carries positive incremental semantics, the continuous score\nthen controls its credit. A related but "
+              }
+            ],
+            "text": "candidates:\n\ud835\udc38elig\n\ud835\udc5e ={(\ud835\udc4e,\ud835\udc56)\u2208\ud835\udc38 schema :\ud835\udc4e\u2208\ud835\udc34 \ud835\udc5e, \ud835\udc56\u2208\ud835\udc36 \ud835\udc5e}.(7)\nThe Evidence-Chain Verifier (ECV) reads these pairs in one listwise call. For each candidate, it\nchooses the anchor that best explains the candidate's incremental role, predicts an incremental-\nsupport score\ud835\udc60 inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e), and assigns one of six roles:new_fact,clarification,corroboration,\nredundant,conflict, orirrelevant. Only the best anchor edge with a positive score and one of\nthe first three roles is retained, forming\n\ud835\udc3atrust\n\ud835\udc5e =(\ud835\udc36 \ud835\udc5e,\ud835\udc38 trust\n\ud835\udc5e ), \ud835\udc38 trust\n\ud835\udc5e \u2286\ud835\udc38 elig\n\ud835\udc5e .(8)\nFor a retained edge(\ud835\udc4e,\ud835\udc56), its reliability and uncertainty cost are\n\ud835\udc64\ud835\udc4e\ud835\udc56(\ud835\udc5e)=\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56\n\ud835\udc60inc\n\ud835\udc4e\ud835\udc56(\ud835\udc5e)\n\ud835\udc60max\n, \ud835\udc50 \ud835\udc4e\ud835\udc56(\ud835\udc5e)=\u2212log\ud835\udc64 \ud835\udc4e\ud835\udc56(\ud835\udc5e),(9)\nwhere\ud835\udc64 schema\n\ud835\udc4e\ud835\udc56 is a schema-specific reliability ceiling. Accordingly,Cedge(\ud835\udc39|\ud835\udc5e)=\ud835\udf06 \u00cd\n\ud835\udc52\u2208\ud835\udc39 \ud835\udc50\ud835\udc52(\ud835\udc5e). Role\ngating determines whether an edge carries positive incremental semantics, the continuous score\nthen controls its credit. A related but "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0026"
+        ],
+        "excerpt": "GraphMemix Technical Report\nATM Mem-Gallery MemEye H2HMem Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 41.86 40.80 52.89 32.61 37.09 40.57 39.94 40.55 42.94\nUniversalRAG ACL'26 43.10 41.19 63.76 32.50 47.98 49.33 44.36 45.04 49.80\nMemGuide AAAI'26 48.47 47.80 48.10 32.73 41.40 44.61 39.94 35.81 44.48\nLightMem ICLR'26 22.70 24.52 38.28 23.20 36.23 39.76 31.04 27.82 32.06\nVimRAG ICML'26 33.81 32.76 48.33 16.13 28.25 28.23 17.89 17.01 32.07\nGraphMemixOurs55.27 53.83 76.33 36.76 53.64 54.25 60.96 54.70 61.55\nGain over 2nd \u2013 +6.80 +6.03 +12.57 +4.03 +5.66 +4.92 +16.60 +9.66 +11.75\nTable 1:End-to-end results with Qwen3-VL-8B-Instruct, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies.\nATM Mem-Gallery MemEye H2HMem ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemix Technical Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "16d86efe79567630e2d299aa6e42ae66130b2aa2aa91ddc5ed9e929205e79ffc",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0026",
+            "pages": [
+              6
+            ],
+            "section": "Graphmemix Technical Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Graphmemix Technical Report",
+                "section_index": 14,
+                "start": 0,
+                "text": "GraphMemix Technical Report\nATM Mem-Gallery MemEye H2HMem Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 41.86 40.80 52.89 32.61 37.09 40.57 39.94 40.55 42.94\nUniversalRAG ACL'26 43.10 41.19 63.76 32.50 47.98 49.33 44.36 45.04 49.80\nMemGuide AAAI'26 48.47 47.80 48.10 32.73 41.40 44.61 39.94 35.81 44.48\nLightMem ICLR'26 22.70 24.52 38.28 23.20 36.23 39.76 31.04 27.82 32.06\nVimRAG ICML'26 33.81 32.76 48.33 16.13 28.25 28.23 17.89 17.01 32.07\nGraphMemixOurs55.27 53.83 76.33 36.76 53.64 54.25 60.96 54.70 61.55\nGain over 2nd \u2013 +6.80 +6.03 +12.57 +4.03 +5.66 +4.92 +16.60 +9.66 +11.75\nTable 1:End-to-end results with Qwen3-VL-8B-Instruct, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies.\nATM Mem-Gallery MemEye H2HMem "
+              }
+            ],
+            "text": "GraphMemix Technical Report\nATM Mem-Gallery MemEye H2HMem Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 41.86 40.80 52.89 32.61 37.09 40.57 39.94 40.55 42.94\nUniversalRAG ACL'26 43.10 41.19 63.76 32.50 47.98 49.33 44.36 45.04 49.80\nMemGuide AAAI'26 48.47 47.80 48.10 32.73 41.40 44.61 39.94 35.81 44.48\nLightMem ICLR'26 22.70 24.52 38.28 23.20 36.23 39.76 31.04 27.82 32.06\nVimRAG ICML'26 33.81 32.76 48.33 16.13 28.25 28.23 17.89 17.01 32.07\nGraphMemixOurs55.27 53.83 76.33 36.76 53.64 54.25 60.96 54.70 61.55\nGain over 2nd \u2013 +6.80 +6.03 +12.57 +4.03 +5.66 +4.92 +16.60 +9.66 +11.75\nTable 1:End-to-end results with Qwen3-VL-8B-Instruct, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies.\nATM Mem-Gallery MemEye H2HMem "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0027"
+        ],
+        "excerpt": "Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 42.43 41.95 50.03 28.40 24.42 30.93 44.20 39.97 40.27\nUniversalRAG ACL'26 49.04 48.18 64.82 32.14 58.17 38.07 48.34 41.31 55.09\nMemGuide AAAI'26 54.98 53.07 48.33 22.85 30.40 36.66 47.98 41.97 45.43\nLightMem ICLR'26 24.33 25.48 33.72 17.01 20.70 30.59 32.80 27.79 27.89\nVimRAG ICML'26 22.51 21.36 46.99 14.14 31.81 34.64 39.00 33.67 35.08\nGraphMemixOurs58.05 57.47 81.47 35.65 66.68 43.06 63.47 49.91 67.42\nGain over 2nd \u2013 +3.07 +4.41 +16.66 +3.51 +8.52 +4.99 +15.14 +7.94 +12.33\nTable 2:End-to-end results with Gemma 4 12B Unified, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemix Technical Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b0dcaa0af4157064594e3a105581a343b7beb35cc9edf0f4ec9646c71ce74823",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0027",
+            "pages": [
+              6
+            ],
+            "section": "Graphmemix Technical Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1700,
+                "page": 6,
+                "section": "Graphmemix Technical Report",
+                "section_index": 14,
+                "start": 895,
+                "text": "Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 42.43 41.95 50.03 28.40 24.42 30.93 44.20 39.97 40.27\nUniversalRAG ACL'26 49.04 48.18 64.82 32.14 58.17 38.07 48.34 41.31 55.09\nMemGuide AAAI'26 54.98 53.07 48.33 22.85 30.40 36.66 47.98 41.97 45.43\nLightMem ICLR'26 24.33 25.48 33.72 17.01 20.70 30.59 32.80 27.79 27.89\nVimRAG ICML'26 22.51 21.36 46.99 14.14 31.81 34.64 39.00 33.67 35.08\nGraphMemixOurs58.05 57.47 81.47 35.65 66.68 43.06 63.47 49.91 67.42\nGain over 2nd \u2013 +3.07 +4.41 +16.66 +3.51 +8.52 +4.99 +15.14 +7.94 +12.33\nTable 2:End-to-end results with Gemma 4 12B Unified, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies."
+              }
+            ],
+            "text": "Avg.\nMethod Venue J.Acc. EM J.Acc. EM J.Acc. M.EM J.Acc. Recall J.Acc.\nA-MEM NeurIPS'25 42.43 41.95 50.03 28.40 24.42 30.93 44.20 39.97 40.27\nUniversalRAG ACL'26 49.04 48.18 64.82 32.14 58.17 38.07 48.34 41.31 55.09\nMemGuide AAAI'26 54.98 53.07 48.33 22.85 30.40 36.66 47.98 41.97 45.43\nLightMem ICLR'26 24.33 25.48 33.72 17.01 20.70 30.59 32.80 27.79 27.89\nVimRAG ICML'26 22.51 21.36 46.99 14.14 31.81 34.64 39.00 33.67 35.08\nGraphMemixOurs58.05 57.47 81.47 35.65 66.68 43.06 63.47 49.91 67.42\nGain over 2nd \u2013 +3.07 +4.41 +16.66 +3.51 +8.52 +4.99 +15.14 +7.94 +12.33\nTable 2:End-to-end results with Gemma 4 12B Unified, judged by GPT-5-mini. J.Acc. denotes Judge\nAccuracy (%). Each benchmark additionally reports its representative native metric. Avg. is the\nmacro-average over the four Judge Accuracies."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0028"
+        ],
+        "excerpt": "Substituting Equations (6)\u2013(10) into Equation (2) gives\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\ud835\udc46,\ud835\udc39\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf06\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc50\ud835\udc52(\ud835\udc5e)\u2212\ud835\udf05\ud835\udc5a(\ud835\udc46,\ud835\udc39)\ns.t.\ud835\udc46\u2286\ud835\udc36 \ud835\udc5e,|\ud835\udc46|\u2264\ud835\udc3e,\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46].\n(11)\nSince edge costs are nonnegative and removing an edge from any cycle cannot decrease the ob-\njective, an optimal\ud835\udc39can therefore be chosen as a forest. Hence,\ud835\udc5a(\ud835\udc46,\ud835\udc39)=|\ud835\udc46|\u2212|\ud835\udc39|. Defining the\nstructural gain\ud835\udc35\ud835\udc52(\ud835\udc5e)=\ud835\udf05\u2212\ud835\udf06\ud835\udc50 \ud835\udc52(\ud835\udc5e)gives the equivalent utility\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e).(12)\nThis form explains adaptive cardinality without introducing a separate per-node penalty. An iso-\nlated memory contributes\ud835\udc5d \ud835\udc56\u2212\ud835\udf05and is retained only if it can justify opening an independent\nevidence chain. If a memory joins an existing component through edge\ud835\udc52, the connection recovers\none opening cost and its marginal contribution becomes\ud835\udc5d\ud835\udc56\u2212\ud835\udf06\ud835\udc50 \ud835\udc52. Trusted complementary evidence\nis therefore protected, whereas low-utility isolated evidence can be ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Forest Optimization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ae30c474fe52c15e0ce8e5d38ae1b307e6f42418ae120ecf97c20d4a6ff4cf02",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0028",
+            "pages": [
+              6
+            ],
+            "section": "Forest Optimization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 884,
+                "page": 6,
+                "section": "Forest Optimization",
+                "section_index": 15,
+                "start": 0,
+                "text": "Substituting Equations (6)\u2013(10) into Equation (2) gives\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\ud835\udc46,\ud835\udc39\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf06\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc50\ud835\udc52(\ud835\udc5e)\u2212\ud835\udf05\ud835\udc5a(\ud835\udc46,\ud835\udc39)\ns.t.\ud835\udc46\u2286\ud835\udc36 \ud835\udc5e,|\ud835\udc46|\u2264\ud835\udc3e,\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46].\n(11)\nSince edge costs are nonnegative and removing an edge from any cycle cannot decrease the ob-\njective, an optimal\ud835\udc39can therefore be chosen as a forest. Hence,\ud835\udc5a(\ud835\udc46,\ud835\udc39)=|\ud835\udc46|\u2212|\ud835\udc39|. Defining the\nstructural gain\ud835\udc35\ud835\udc52(\ud835\udc5e)=\ud835\udf05\u2212\ud835\udf06\ud835\udc50 \ud835\udc52(\ud835\udc5e)gives the equivalent utility\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e).(12)\nThis form explains adaptive cardinality without introducing a separate per-node penalty. An iso-\nlated memory contributes\ud835\udc5d \ud835\udc56\u2212\ud835\udf05and is retained only if it can justify opening an independent\nevidence chain. If a memory joins an existing component through edge\ud835\udc52, the connection recovers\none opening cost and its marginal contribution becomes\ud835\udc5d\ud835\udc56\u2212\ud835\udf06\ud835\udc50 \ud835\udc52. Trusted complementary evidence\nis therefore protected, whereas low-utility isolated evidence can be "
+              }
+            ],
+            "text": "Substituting Equations (6)\u2013(10) into Equation (2) gives\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\ud835\udc46,\ud835\udc39\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf06\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc50\ud835\udc52(\ud835\udc5e)\u2212\ud835\udf05\ud835\udc5a(\ud835\udc46,\ud835\udc39)\ns.t.\ud835\udc46\u2286\ud835\udc36 \ud835\udc5e,|\ud835\udc46|\u2264\ud835\udc3e,\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46].\n(11)\nSince edge costs are nonnegative and removing an edge from any cycle cannot decrease the ob-\njective, an optimal\ud835\udc39can therefore be chosen as a forest. Hence,\ud835\udc5a(\ud835\udc46,\ud835\udc39)=|\ud835\udc46|\u2212|\ud835\udc39|. Defining the\nstructural gain\ud835\udc35\ud835\udc52(\ud835\udc5e)=\ud835\udf05\u2212\ud835\udf06\ud835\udc50 \ud835\udc52(\ud835\udc5e)gives the equivalent utility\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e).(12)\nThis form explains adaptive cardinality without introducing a separate per-node penalty. An iso-\nlated memory contributes\ud835\udc5d \ud835\udc56\u2212\ud835\udf05and is retained only if it can justify opening an independent\nevidence chain. If a memory joins an existing component through edge\ud835\udc52, the connection recovers\none opening cost and its marginal contribution becomes\ud835\udc5d\ud835\udc56\u2212\ud835\udf06\ud835\udc50 \ud835\udc52. Trusted complementary evidence\nis therefore protected, whereas low-utility isolated evidence can be "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0031"
+        ],
+        "excerpt": "refinement.Joint optimization over all\ud835\udc40candidates is combina-\ntorial. We use a deterministic two-stage solver that preserves the recall behavior of the bounded\ncandidate graph. First, the fixed-cardinality forest solver produces a\ud835\udc3e-node proposal\u00af\ud835\udc46\ud835\udc5e\u2286\ud835\udc36 \ud835\udc5e: it\ninitializes from the top-\ud835\udc3enode utilities, evaluates one selected\u2013unselected swap at a time, and\nuses Kruskal's algorithm to recompute the exact maximum-weight forest for every proposed node\nset. This stage terminates at a deterministic 1-swap local optimum. Second, we solve the variable-\ncardinality problem exactly inside the frozen proposal:\n\ud835\udc39\u2605\n\ud835\udc46 =arg max\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46]\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e),\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\u2205\u2260\ud835\udc46\u2286 \u00af\ud835\udc46\ud835\udc5e\n\uf8ee\uf8ef\uf8ef\uf8ef\uf8ef\uf8f0\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\u2605\n\ud835\udc46\n\ud835\udc35\ud835\udc52(\ud835\udc5e)\n\uf8f9\uf8fa\uf8fa\uf8fa\uf8fa\uf8fb\n.(13)\nFor each subset, Kruskal applied to positive-gain edges gives\ud835\udc39\u2605\n\ud835\udc46 exactly. We break objective ties by\npreferring fewer memories and then earlier proposal ranks. The ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Graphmemix Technical Report",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "adb328cb49d832cd9b52fec330acecfe76cb7a2d9953292764a813aa37038405",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0031",
+            "pages": [
+              7
+            ],
+            "section": "Graphmemix Technical Report",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 7,
+                "section": "Graphmemix Technical Report",
+                "section_index": 16,
+                "start": 897,
+                "text": "refinement.Joint optimization over all\ud835\udc40candidates is combina-\ntorial. We use a deterministic two-stage solver that preserves the recall behavior of the bounded\ncandidate graph. First, the fixed-cardinality forest solver produces a\ud835\udc3e-node proposal\u00af\ud835\udc46\ud835\udc5e\u2286\ud835\udc36 \ud835\udc5e: it\ninitializes from the top-\ud835\udc3enode utilities, evaluates one selected\u2013unselected swap at a time, and\nuses Kruskal's algorithm to recompute the exact maximum-weight forest for every proposed node\nset. This stage terminates at a deterministic 1-swap local optimum. Second, we solve the variable-\ncardinality problem exactly inside the frozen proposal:\n\ud835\udc39\u2605\n\ud835\udc46 =arg max\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46]\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e),\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\u2205\u2260\ud835\udc46\u2286 \u00af\ud835\udc46\ud835\udc5e\n\uf8ee\uf8ef\uf8ef\uf8ef\uf8ef\uf8f0\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\u2605\n\ud835\udc46\n\ud835\udc35\ud835\udc52(\ud835\udc5e)\n\uf8f9\uf8fa\uf8fa\uf8fa\uf8fa\uf8fb\n.(13)\nFor each subset, Kruskal applied to positive-gain edges gives\ud835\udc39\u2605\n\ud835\udc46 exactly. We break objective ties by\npreferring fewer memories and then earlier proposal ranks. The "
+              }
+            ],
+            "text": "refinement.Joint optimization over all\ud835\udc40candidates is combina-\ntorial. We use a deterministic two-stage solver that preserves the recall behavior of the bounded\ncandidate graph. First, the fixed-cardinality forest solver produces a\ud835\udc3e-node proposal\u00af\ud835\udc46\ud835\udc5e\u2286\ud835\udc36 \ud835\udc5e: it\ninitializes from the top-\ud835\udc3enode utilities, evaluates one selected\u2013unselected swap at a time, and\nuses Kruskal's algorithm to recompute the exact maximum-weight forest for every proposed node\nset. This stage terminates at a deterministic 1-swap local optimum. Second, we solve the variable-\ncardinality problem exactly inside the frozen proposal:\n\ud835\udc39\u2605\n\ud835\udc46 =arg max\n\ud835\udc39\u2286\ud835\udc38 trust\n\ud835\udc5e [\ud835\udc46]\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\n\ud835\udc35\ud835\udc52(\ud835\udc5e),\n(\ud835\udc46\u2605\n\ud835\udc5e,\ud835\udc39 \u2605\n\ud835\udc5e)=arg max\n\u2205\u2260\ud835\udc46\u2286 \u00af\ud835\udc46\ud835\udc5e\n\uf8ee\uf8ef\uf8ef\uf8ef\uf8ef\uf8f0\n\u2211\ufe01\n\ud835\udc56\u2208\ud835\udc46\n\u0000\n\ud835\udc5d\ud835\udc56(\ud835\udc5e)\u2212\ud835\udf05\n\u0001+\n\u2211\ufe01\n\ud835\udc52\u2208\ud835\udc39\u2605\n\ud835\udc46\n\ud835\udc35\ud835\udc52(\ud835\udc5e)\n\uf8f9\uf8fa\uf8fa\uf8fa\uf8fa\uf8fb\n.(13)\nFor each subset, Kruskal applied to positive-gain edges gives\ud835\udc39\u2605\n\ud835\udc46 exactly. We break objective ties by\npreferring fewer memories and then earlier proposal ranks. The "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0034"
+        ],
+        "excerpt": "Datasets.We use four representative personal multimodal memory benchmarks: ATM-Bench,\nMem-Gallery,MemEye,andH2HMemBeietal.,2026;Guoetal.,2026;Meietal.,2026;Zhuetal.,\n2026. All four share the task interface of retrieving and combining evidence from a long personal\nmultimodal history, but emphasize personal multimedia archives, cross-session interaction, fine-\ngrained visual memory, and multi-party interaction history, respectively.\nMetrics.Following Jiang et al., 2025; L. Zheng et al., 2023, we use the LLM-as-a-Judge protocol\nas our primary evaluation metric, with full details deferred to the appendix. Each benchmark ad-\nditionally reports one representative native metric: normalized Exact Match (EM) for ATM-Bench\nandMem-Gallery,MCQExactMatchaveragedoverfouroption-positionrotationsforMemEye,and\nstopword-filtered lexical Recall for H2HMem. We use Recall@\ud835\udc3eand Hit@\ud835\udc3eto diagnose ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "732b15655c4e1574b9146966e2bc6df20c7e1a4bb8e1cea65f0136b25f2c7629",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0034",
+            "pages": [
+              8
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 886,
+                "page": 8,
+                "section": "Experimental Setup",
+                "section_index": 18,
+                "start": 0,
+                "text": "Datasets.We use four representative personal multimodal memory benchmarks: ATM-Bench,\nMem-Gallery,MemEye,andH2HMemBeietal.,2026;Guoetal.,2026;Meietal.,2026;Zhuetal.,\n2026. All four share the task interface of retrieving and combining evidence from a long personal\nmultimodal history, but emphasize personal multimedia archives, cross-session interaction, fine-\ngrained visual memory, and multi-party interaction history, respectively.\nMetrics.Following Jiang et al., 2025; L. Zheng et al., 2023, we use the LLM-as-a-Judge protocol\nas our primary evaluation metric, with full details deferred to the appendix. Each benchmark ad-\nditionally reports one representative native metric: normalized Exact Match (EM) for ATM-Bench\nandMem-Gallery,MCQExactMatchaveragedoverfouroption-positionrotationsforMemEye,and\nstopword-filtered lexical Recall for H2HMem. We use Recall@\ud835\udc3eand Hit@\ud835\udc3eto diagnose "
+              }
+            ],
+            "text": "Datasets.We use four representative personal multimodal memory benchmarks: ATM-Bench,\nMem-Gallery,MemEye,andH2HMemBeietal.,2026;Guoetal.,2026;Meietal.,2026;Zhuetal.,\n2026. All four share the task interface of retrieving and combining evidence from a long personal\nmultimodal history, but emphasize personal multimedia archives, cross-session interaction, fine-\ngrained visual memory, and multi-party interaction history, respectively.\nMetrics.Following Jiang et al., 2025; L. Zheng et al., 2023, we use the LLM-as-a-Judge protocol\nas our primary evaluation metric, with full details deferred to the appendix. Each benchmark ad-\nditionally reports one representative native metric: normalized Exact Match (EM) for ATM-Bench\nandMem-Gallery,MCQExactMatchaveragedoverfouroption-positionrotationsforMemEye,and\nstopword-filtered lexical Recall for H2HMem. We use Recall@\ud835\udc3eand Hit@\ud835\udc3eto diagnose "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0037"
+        ],
+        "excerpt": "Table 1 reports complete results with Qwen3-VL-8B-Instruct.GraphMemixoutperforms the\nstrongest public result in Judge Accuracy on all four benchmarks. Its four-dataset macro-average\nreaches 61.55%, exceeding the strongest public method, UniversalRAG, by 11.75 percentage\npoints. The advantage also appears across different native metrics:GraphMemixobtains 53.83\nATM EM, 36.76 Gallery EM, 54.25 MemEye MCQ EM, and 54.70 H2H lexical Recall. These\nresults cover strict short-answer matching, open-ended answering, multiple-choice judgment,\nand reference-information coverage. To test whether the gain depends on this model, we further\nevaluate all methods under the Gemma 4 12B Unified. In Table 2,GraphMemixobtains the\nhighest macro-average Judge Accuracy of 67.42%, exceeding the strongest baseline, Universal-\nRAG, by 12.33 percentage points. The gains therefore transfer across foundation models ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4e686a0b835629bb9442a58e0c74851300a4b41ceea09d13b52bfa9e5a72ae1d",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0037",
+            "pages": [
+              9
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 9,
+                "section": "Main Results",
+                "section_index": 20,
+                "start": 0,
+                "text": "Table 1 reports complete results with Qwen3-VL-8B-Instruct.GraphMemixoutperforms the\nstrongest public result in Judge Accuracy on all four benchmarks. Its four-dataset macro-average\nreaches 61.55%, exceeding the strongest public method, UniversalRAG, by 11.75 percentage\npoints. The advantage also appears across different native metrics:GraphMemixobtains 53.83\nATM EM, 36.76 Gallery EM, 54.25 MemEye MCQ EM, and 54.70 H2H lexical Recall. These\nresults cover strict short-answer matching, open-ended answering, multiple-choice judgment,\nand reference-information coverage. To test whether the gain depends on this model, we further\nevaluate all methods under the Gemma 4 12B Unified. In Table 2,GraphMemixobtains the\nhighest macro-average Judge Accuracy of 67.42%, exceeding the strongest baseline, Universal-\nRAG, by 12.33 percentage points. The gains therefore transfer across foundation models "
+              }
+            ],
+            "text": "Table 1 reports complete results with Qwen3-VL-8B-Instruct.GraphMemixoutperforms the\nstrongest public result in Judge Accuracy on all four benchmarks. Its four-dataset macro-average\nreaches 61.55%, exceeding the strongest public method, UniversalRAG, by 11.75 percentage\npoints. The advantage also appears across different native metrics:GraphMemixobtains 53.83\nATM EM, 36.76 Gallery EM, 54.25 MemEye MCQ EM, and 54.70 H2H lexical Recall. These\nresults cover strict short-answer matching, open-ended answering, multiple-choice judgment,\nand reference-information coverage. To test whether the gain depends on this model, we further\nevaluate all methods under the Gemma 4 12B Unified. In Table 2,GraphMemixobtains the\nhighest macro-average Judge Accuracy of 67.42%, exceeding the strongest baseline, Universal-\nRAG, by 12.33 percentage points. The gains therefore transfer across foundation models "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0040"
+        ],
+        "excerpt": "Incremental Effect Analysis.Table 3 starts from embedding top-\ud835\udc3eand adds one design at a\ntime, associating each change with multi-view retrieval, query-conditioned node judgment, query-\nconditioned edge verification, and set-level forest optimization. Every configuration uses the same\nreader and candidate budget. To isolate the contribution of joint forest optimization, ECV Rerank-\ning assigns each candidate its strongest positive verified relation as a pointwise bonus and then\napplies top-\ud835\udc3e. ECV reranking adds a further 0.90 points, showing that conditional relations con-\ntainusefulinformationevenwhenreducedtoindependentbonuses.Jointforestoptimizationthen\nraises the average from 59.70% to 61.55%. This final gap isolates the benefit of selecting evidence\nMemoraX AI Research\u00b7GraphMemix 9 / 22",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "23d358961326a4a81b4eee81ae878f14927fcb619500f9eff98066ec0ae96f7d",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0040",
+            "pages": [
+              9
+            ],
+            "section": "Ablation Study",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 801,
+                "page": 9,
+                "section": "Ablation Study",
+                "section_index": 22,
+                "start": 0,
+                "text": "Incremental Effect Analysis.Table 3 starts from embedding top-\ud835\udc3eand adds one design at a\ntime, associating each change with multi-view retrieval, query-conditioned node judgment, query-\nconditioned edge verification, and set-level forest optimization. Every configuration uses the same\nreader and candidate budget. To isolate the contribution of joint forest optimization, ECV Rerank-\ning assigns each candidate its strongest positive verified relation as a pointwise bonus and then\napplies top-\ud835\udc3e. ECV reranking adds a further 0.90 points, showing that conditional relations con-\ntainusefulinformationevenwhenreducedtoindependentbonuses.Jointforestoptimizationthen\nraises the average from 59.70% to 61.55%. This final gap isolates the benefit of selecting evidence\nMemoraX AI Research\u00b7GraphMemix 9 / 22"
+              }
+            ],
+            "text": "Incremental Effect Analysis.Table 3 starts from embedding top-\ud835\udc3eand adds one design at a\ntime, associating each change with multi-view retrieval, query-conditioned node judgment, query-\nconditioned edge verification, and set-level forest optimization. Every configuration uses the same\nreader and candidate budget. To isolate the contribution of joint forest optimization, ECV Rerank-\ning assigns each candidate its strongest positive verified relation as a pointwise bonus and then\napplies top-\ud835\udc3e. ECV reranking adds a further 0.90 points, showing that conditional relations con-\ntainusefulinformationevenwhenreducedtoindependentbonuses.Jointforestoptimizationthen\nraises the average from 59.70% to 61.55%. This final gap isolates the benefit of selecting evidence\nMemoraX AI Research\u00b7GraphMemix 9 / 22"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0086"
+        ],
+        "excerpt": "Judge consistency audit.We manually inspect a stratified sample of 200 answers spanning all\nbenchmarks and all six compared methods. The manual decisions agree with 194 of the 200 GPT-\n5-mini judgments (97.0%).\nMemoraX AI Research\u00b7GraphMemix 19 / 22",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 19,
+        "pages": [
+          19
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Evaluation Validation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0a090e6da2b0bd2f633f7870379b79afbb2c9d8a8e6d1192b96485c3d01e1d8e",
+            "evidence_id": "Ecd41b0d26c4af6c6-B0086",
+            "pages": [
+              19
+            ],
+            "section": "Appendix: Evaluation Validation",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 249,
+                "page": 19,
+                "section": "Appendix: Evaluation Validation",
+                "section_index": 48,
+                "start": 0,
+                "text": "Judge consistency audit.We manually inspect a stratified sample of 200 answers spanning all\nbenchmarks and all six compared methods. The manual decisions agree with 194 of the 200 GPT-\n5-mini judgments (97.0%).\nMemoraX AI Research\u00b7GraphMemix 19 / 22"
+              }
+            ],
+            "text": "Judge consistency audit.We manually inspect a stratified sample of 200 answers spanning all\nbenchmarks and all six compared methods. The manual decisions agree with 194 of the 200 GPT-\n5-mini judgments (97.0%).\nMemoraX AI Research\u00b7GraphMemix 19 / 22"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2608.26983",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No quantitative, user, expert, or operational evaluation was detected in the available text."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2608.26983",
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "The GPT-5-mini judge is validated by a 97.0% agreement audit against manual inspection of 200 stratified answers, and the reported gains are corroborated by benchmark-native metrics across four datasets.",
+          "final_evaluation_signal": "Headline outcomes are reported as downstream QA accuracy judged by an external GPT-5-mini evaluator, with benchmark-native ground-truth metrics (EM, MCQ EM, lexical Recall) reported alongside.",
+          "independent_corroboration": "present",
+          "optimization_signal": "The system is optimized through a combinatorial forest objective whose node utilities and edge costs are produced by frozen LVLM verifiers (node verifier and Evidence-Chain Verifier) fused with fixed embedding similarity priors.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0007",
+          "Ecd41b0d26c4af6c6-B0008",
+          "Ecd41b0d26c4af6c6-B0023",
+          "Ecd41b0d26c4af6c6-B0024",
+          "Ecd41b0d26c4af6c6-B0026",
+          "Ecd41b0d26c4af6c6-B0027",
+          "Ecd41b0d26c4af6c6-B0028",
+          "Ecd41b0d26c4af6c6-B0031",
+          "Ecd41b0d26c4af6c6-B0034",
+          "Ecd41b0d26c4af6c6-B0037",
+          "Ecd41b0d26c4af6c6-B0040",
+          "Ecd41b0d26c4af6c6-B0086"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "036a0429dfc03f22bf17320bf1b7b62b6777a8e1a4c106d4d3f9da7eb8c03057"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2608.26983",
+        "claim_evidence_alignment": "Reported empirical gains (+11.75 to +12.33 Judge Accuracy macro-averages) and native metric improvements directly support the core claims of superior accuracy and a favorable lifecycle-efficiency Pareto frontier.",
+        "context_id": "cd41b0d26c4af6c664461b8cb94b9482fa63a53caf1dc732534f0c708e235f28",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation spans four diverse long-term multimodal memory benchmarks (ATM-Bench, Mem-Gallery, MemEye, H2HMem) using multiple reader backbones (Qwen3-VL and Gemma 4) against five recognized baselines, reporting both LLM judge accuracy and benchmark-native metrics alongside ablations and lifecycle runtime analyses.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance improvements are corroborated by standard benchmark-native ground-truth metrics (Normalized EM, MCQ EM, lexical recall) as well as a 97% human agreement audit on GPT-5-mini judgments.",
+          "final_evaluation_signal": "Downstream QA evaluation assessed using external benchmark metrics (EM, MCQ EM, lexical Recall) and an external LLM judge (GPT-5-mini) across four independent datasets.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Combinatorial optimization combining fixed multimodal embedding similarity priors with prompting-based node and edge-chain verification scoring from frozen LVLMs (Qwen3-VL-8B or Gemma-4-12B).",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ecd41b0d26c4af6c6-B0007",
+          "Ecd41b0d26c4af6c6-B0008",
+          "Ecd41b0d26c4af6c6-B0023",
+          "Ecd41b0d26c4af6c6-B0024",
+          "Ecd41b0d26c4af6c6-B0026",
+          "Ecd41b0d26c4af6c6-B0027",
+          "Ecd41b0d26c4af6c6-B0028",
+          "Ecd41b0d26c4af6c6-B0031",
+          "Ecd41b0d26c4af6c6-B0034",
+          "Ecd41b0d26c4af6c6-B0037",
+          "Ecd41b0d26c4af6c6-B0040",
+          "Ecd41b0d26c4af6c6-B0086"
+        ],
+        "limitations": "The manuscript notes boundary conditions regarding dependence on bounded candidate graph recall, reliance on prompt-following structured JSON generation for verifiers, and fixed budget constraints.",
+        "method_assessment": "The methodology is thoroughly detailed, specifying multi-view candidate expansion, explicit listwise node scoring, anchor-conditioned edge verification, and a two-stage solver combining 1-swap search with exact Kruskal forest recomputation under fixed hyperparameters.",
+        "quality_rationale": "GraphMemix provides a rigorous, self-contained formulation solving clear limitations of existing multimodal RAG and offline memory summarization methods, validated comprehensively across diverse datasets and metrics with appropriate controls and ablations.",
+        "scoped_contribution": "The paper introduces GraphMemix, a test-time graph optimization framework that structures multimodal agent memory retrieval as query-aware evidence-forest selection, balancing direct relevance against relational complementarity while bounding full-lifecycle computation.",
+        "source_content_hash": "036a0429dfc03f22bf17320bf1b7b62b6777a8e1a4c106d4d3f9da7eb8c03057"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "GraphMemix provides a rigorous, self-contained formulation solving clear limitations of existing multimodal RAG and offline memory summarization methods, validated comprehensively across diverse datasets and metrics with appropriate controls and ablations.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "036a0429dfc03f22bf17320bf1b7b62b6777a8e1a4c106d4d3f9da7eb8c03057",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The manuscript notes boundary conditions regarding dependence on bounded candidate graph recall, reliance on prompt-following structured JSON generation for verifiers, and fixed budget constraints."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -171,7 +1797,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

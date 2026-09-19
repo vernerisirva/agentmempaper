@@ -59,16 +59,292 @@
             <p>Travel planning agents assist users in generating personalized travel plans by modeling their individual preferences. Existing agents either rely on explicit user instructions or engage in multi-turn clarification to elicit user preferences. However, both approaches overlook the rich behavioral signals latent in use...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a clearly defined task, a substantial open-source benchmark resource, clear agent architecture, rigorous ablation experiments, and cross-benchmark validation against prior established standards.</p>
+      <p>The authors discuss limitations including training overhead from multi-rollout GRPO, increased inference latency from multi-turn tool interaction, and privacy preservation measures during data curation.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:38:32.266521+00:00.</p>
+        <p>Coverage: 77960 of 77960 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Travel planning agents assist users in gener-
+ating personalized travel plans by modeling
+their individual preferences. Existing agents
+either rely on explicit user instructions or en-
+gage in multi-turn clarification to elicit user
+preferences. However, both approaches over-
+look the rich behavioral signals latent in users&#x27;
+past behaviors, which implicitly encode their
+preferences. This over-reliance on active user
+input increases interaction burden and limits
+plan personalization. To bridge this gap, we
+introduce a new task,Behavior-Aware Travel
+Planning, which infers user preferences di-
+rectly from past behaviors and generates per-
+sonalized travel plans. To facilitate research
+on this task, we introduceBehavior2Trip, a
+benchmark constructed from one of the largest
+Chinese online travel platforms, comprising
+11,400 instances. Each instance represents an
+average of 39.8 past user </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>behaviors spanning 14
+attributes across 5 preference dimensions. We
+further proposeB2T-Agent, a reinforcement
+learning-based agent that leverages user behav-
+ior trajectories, interacts with external tools for
+preference-aligned retrieval, and maintains an
+internal memory module. Experiments on Be-
+havior2Trip show that GPT-4.1 achieves a full-
+constraint pass rate of only 0.5% on the hard-
+est tasks, while B2T-Agent built upon Qwen3-
+8B outperforms all baselines, highlighting the
+substantial challenge of this task. Moreover,
+Qwen3-8B trained with B2T-Agent also out-
+performs GPT-4.1 on the TravelPlanner bench-
+mark, demonstrating strong generalization1.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>not mentioned in paper.
+To bridge this gap, we introduce a new task,
+Behavior-Aware Travel Planning, which infers
+user preferences directly from past behaviors and
+generates personalized travel plans without requir-
+ing active user input. To support this task, we
+constructBehavior2Trip, a benchmark grounded
+in real user data from one of the largest Chinese on-
+line travel platforms, comprising 11,400 instances,
+each with an average of 39.8 past user behaviors
+spanning 14 attributes across 5 preference dimen-
+sions. The dataset is built upon a sandbox environ-
+ment with 80.6k real-world POIs, where behavior
+trajectories are generated from diverse preference
+profiles and validated through a rigorous two-stage
+quality control process.
+To address the challenge of implicitly infer-
+ring user preferences from behavior trajectories
+while satisfying long-horizon planning constraints,
+we </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To construct user trajectories that are both
+preference-grounded and behaviorally coherent, we
+first derive a structured preference schema from
+real logs, instantiate user profiles with controlled
+difficulty, and then use LLM role-playing to gener-
+ate long-term click–favorite–book sequences.
+Preference SchemaWe derive a structured pref-
+erence schema from anonymized user logs by ex-
+tracting14high-frequency attributes across5di-
+mensions. For each attribute, we calibrate its value
+range and POI-category mapping against real-log
+distributions, with details in Appendix A.4.
+User ProfileWe instantiate user profiles P at
+three difficulty levels to control preference com-
+plexity and behavioral noise.Easyincludes one
+preference category without noise;Mediumcom-
+bines multiple categories with one noise behavior;
+andHardcovers all categories with a higher noise
+ratio. For each level, we </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sample attribute combina-
+tions from the schema and use GPT-4.1 to remove
+inconsistent profiles, with the prompt shown in Fig-
+ure 8.
+Behavior TrajectoryMotivated by prior studies
+showing that user check-in trajectories are shaped
+by sequential, spatio-temporal, and semantic/cate-
+gory patterns (Cheng et al., 2013; Tian et al., 2023;
+Wang et al., 2022), we model real user sessions as
+coherent travel-intent trajectories. To capture this
+structure, for each profile P, we construct a candi-
+date pool containing preference-matched POIs and
+a difficulty-controlled set of noise POIs. Gemini-
+3-Flash is then prompted to role-play the user and
+generate coherentclick → add_to_favorites →
+booksequences (prompt shown in Figure 9). Noise
+POIs are restricted to click actions to simulate ex-
+ploratory browsing, while favorite and book ac-
+tions remain preference-aligned. Repeating this
+process across </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>sessions yields long-term trajecto-
+ries A, which are paired with real travel instruc-
+tions I from system logs to form (A,P,I) triplets.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>After obtaining the (A,P,I) triplets, we anno-
+tate each instance with aChain of Action (CoA)
+label that records the full reasoning trajectory—
+including tool calls and intermediate decisions—
+to provide step-level supervision for model train-
+ing. To generate these trajectories, we use Open-
+Manus (Liang et al., 2025) as the rollout har-
+ness, feeding A and I as inputs. Since uncon-
+strained rollouts tend to drift from the correct
+planning direction, after each (think, action,
+observation) cycle we manually inject a tailored
+Next Step Prompt(Figure 7) to steer the agent
+toward the next correct step, ensuring the resulting
+trajectory remains coherent and usable as a super-
+vision signal.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>L 2
+......
+Gr oup
+Computation
+ POI Database
+Internal Memory
+Policy Model
+Figure 3:Overview of the proposed B2T-Agent framework.B2T-Agent incorporatesexternal tool invocation
+andinternal memory management, optimized via Group Relative Policy Optimization with a multi-component
+reward function that rewards plan quality and penalizes invalid actions.
+2026b). In the first stage, we utilized Deepseek-R1
+to automatically score each instance on a 0-3 scale
+with respect to three aspects: trajectory complete-
+ness, reflection of user preferences, and constraint
+satisfaction (Figure 10). Only instances that re-
+ceived a score of 3 were retained. Subsequently,
+three independent annotators reviewed a random
+sample of 1000 instances, reporting no observable
+errors and achieving 94.6% agreement.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To support iterative POI retrieval from the database
+and coherent context management across long-
+horizon planning, we define the agent&#x27;s rollout as a
+structured action sequencey:
+y := (a1, a2, . . . , ak, R)
+where each action ai is one of the following types:
+External Tool Use T , Internal Memory Manage-
+ment M, or Chain-of-Thought Reasoning C. The
+sequence concludes with a final ResultR.
+External Tool UseThe agent wraps each tool
+invocation in &lt;tool_call&gt; and receives the result
+in &lt;tool_response&gt;. Built on Qwen-Agent and
+following the Model Context Protocol2, it can ac-
+cess any tool in our sandbox. To improve efficiency,
+multiple tools can be called within a single reason-
+ing step.
+Internal Memory ManagementTo mitigate
+context window saturation from accumulating tra-
+jectories and tool responses, the agent maintains
+an internal memory module organized as key-value
+pairs, accessible </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Given the structured action sequence defined above,
+we design a multi-component reward function to
+supervise both the process of tool invocation and
+the quality of the final travel plan, comprising an
+Incorrect Action Penalty and a Travel Plan Reward.
+Incorrect Action PenaltyTo improve the reli-
+ability and robustness of the execution process,
+we introduce a penalty for invalid tool or mem-
+ory invocations. An error is identified when
+&lt;tool_response&gt; or &lt;memory_response&gt; con-
+tains an explicit error message, upon which a
+penalty of Paction =−1 is applied to the entire
+sequence, andP action = 0otherwise.
+Travel Plan RewardTo evaluate the quality of
+generated travel plans against both commonsense
+and user preference constraints, we design a two-
+stage gating reward. A format score Rformat ∈
+{0,1} first verifies structural correctness; only if
+passed, the Commonsense Constraint score </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>RCC
+and User Preference Constraint scoreRUPC are as-
+sessed, ensuring the model learns to produce well-
+formed outputs before optimizing for content qual-
+ity:
+Rplan =R format ·(R CC +R UPC)
+The total reward combines both components:
+Rtotal =P action +R plan
+This design penalizes any action-level failure while
+rewarding high-quality, preference-aligned plans,
+jointly encouraging reliable execution and person-
+alized planning.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Inspired by recent advances in RL-based LLM
+training (Pan et al., 2025; Team, 2025; Wang et al.,
+2025a,b; Liu et al., 2026a), we adopt GRPO (Shao
+et al., 2024b) to optimize the policy model by max-
+imizing the following objective:
+JGRPO(θ) =E[{yi}G
+i=1∼πθ(Y|q)]
+1
+G
+GX
+i=1
+1
+|yi|
+|yi|X
+t=1
+n
+min
+h
+ri,t(θ) ˆAi,t,clip (ri,t(θ),1−ϵ,1 +ϵ) ˆAi,t
+i
+−βD KL [πθ||πref ]
+
+withr i,t(θ) = πθ(yi,t|q, yi,&lt;t)
+πθold(yi,t|q, yi,&lt;t) ,
+where πθ and πref stand for the policy model and
+reference model respectively. DKL is the KL-
+divergence, scaled by a coefficient β. q denotes
+a query, and y represents a sequence of structured
+actions.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>During training, the rollout contains externally
+sourced tokens within &lt;tool_response&gt; and
+&lt;memory_response&gt;that are not generated by the
+model. Including them in the loss computation in-
+troduces noise, so we follow Jin et al. (2025) and
+apply a loss mask to exclude these segments from
+gradient updates, ensuring the model is optimized
+only on its own generated tokens.</blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(UPC), defined as:
+Micro PR=
+P
+p∈P
+P
+c∈Cp 1passed(c,p)
+P
+p∈P |Cp|
+Model Method Easy Medium Hard Avg.
+DR CC UPC Final LLM DR CC UPC Final LLM DR CC UPC Final LLM
+Qwen3-8B
+ReAct
+40.2 34.2/0.0 10.1/10.1 0.0 27.5 34.1 31.8/0.0 12.3/0.0 0.0 23.5 11.2 24.1/0.0 15.9/0.0 0.0 12.8 0.0
+Qwen3-14B 44.3 32.9/0.3 14.2/14.2 0.3 32.6 32.8 32.9/0.4 19.7/1.8 1.8 28.7 21.5 31.9/1.2 21.1/0.0 0.0 23.2 0.7
+Qwen3-32B 53.1 32.4/0.3 14.3/14.3 0.3 34.3 41.5 32.5/0.8 19.8/0.8 0.8 29.9 31.4 32.4/1.3 22.7/0.0 0.0 33.3 0.4
+GPT-4o 90.4 36.5/1.3 16.8/16.8 1.3 36.6 97.7 36.4/4.2 19.4/3.1 3.1 31.9 96.2 33.1/3.4 22.2/0.3 0.3 26.9 1.5
+GPT-4.1 95.8 33.6/2.2 17.7/17.7 2.2 36.4 95.0 33.4/3.0 28.4/7.0 7.0 31.297.833.5/3.1 22.2/0.5 0.5 28.2 3.2
+DeepSeek-V3 94.3 34.7/3.3 20.1/20.1 3.1 41.6 94.9 33.9/3.7 28.4/4.4 4.4 38.8 97.0 34.1/4.1 31.8/0.8 0.5 34.1 2.7
+Qwen3-8BSFT 77.2 54.0/5.0 17.7/17.7 5.0 73.7 76.5 54.4/4.6 26.5/3.7 3.7 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>62.3 57.4 54.5/4.1 32.9/0.3 0.3 35.8 3.0
+Qwen3-14B 87.3 58.7 /5.2 17.8/17.8 5.273.1 88.6 59.0/5.5 29.0/4.1 4.1 66.9 61.5 55.2/5.0 33.2/0.3 0.3 36.1 3.2
+Qwen3-8B 100.056.8/5.225.0/25.04.7 77.296.357.3/5.237.2/10.35.2 70.293.353.3/5.136.9/4.3 4.3 68.5 4.7
+Qwen3-14BB2T-Agent98.959.8/7.327.9/27.97.3 81.199.059.3/6.240.3/13.56.2 75.297.459.4/6.141.2/5.05.0 74.3 6.2
+Table 3:Performance on Different Methods and Difficulties.CC and UPC show Micro/Macro Pass Rate. Results
+are reported in percentage (%). The best and second-best results are marked in bold and underlined.
+Macro PR=
+P
+p∈P 1passed(Cp,p)
+|P|
+For overall performance, we report the Final Pass
+Rate (Final), the percentage of plans satisfying all
+constraints, and the LLM Pass Rate (LLM) for
+flexible LLM-based evaluation.
+Implementation DetailsWe adapt the ReAct
+baseline from TravelPlanner (Xie et al., 2024) to
+our expanded toolset and </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Method DR Final PR LLM PR
+B2T-Agent 96.52 4.75 71.98
+- w/o. M97.46(↑0.97%) 4.21 (↓11.37%) 64.24 (↓10.76%)
+- w/o. P86.70 (↓10.17%) 4.32 (↓9.05%) 65.22 (↓9.39%)
+- w/o. L78.18 (↓18.99%) 3.79 (↓20.21%) 57.97 (↓19.47%)
+Table 4:Ablation study on Qwen3-8B.
+We ablate each key component of B2T-Agent on
+Qwen3-8B to assess their individual contributions.
+As shown in Table 4, removing the memory mod-
+ule (w/o. Memory) slightly improves DR (+0.97%),
+as the model skips memory operations and favors
+faster responses. However, without memory, the
+model loses access to user preferences, causing
+Final PR and LLM PR to drop by 11.4% and
+10.8%, respectively. Without the penalty term (w/o.
+Penalty), the model fails to correct inappropriate
+tool or memory actions, leading to repetitive loops
+and a 10.2% drop in DR. Finally, removing loss
+masking (w/o. Loss Mask) introduces noisy gradi-
+ents from non-answer </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Method DR CMi CMa HMi HMa FPR
+Mistral-7B† 7.0 4.8 0.0 0.0 0.0 0.0
+GPT-4-Turbo† 93.1 63.3 2.9 10.5 5.5 0.6
+GPT-4.1 99.4 75.1 5.7 10.7 7.8 1.5
+Qwen3-8B-B2T-Agent100 76.8 25.0 26.5 10.2 9.0
+Table 5:Performance on the TravelPlanner( †results
+from the original paper).
+To validate the generality of B2T-Agent for travel
+planning, we further conduct a cross-benchmark
+evaluation on TravelPlanner (Xie et al., 2024). As
+shown in Table 5, Qwen3-8B-B2T-Agent consis-
+tently outperforms all baselines, with especially
+large gains on constraint satisfaction (CMa: 25.0
+vs. 5.7) and overall plan quality (FPR: 9.0 vs.
+1.5). These results confirm that B2T-Agent general-
+izes effectively beyond our benchmark to standard
+travel planning settings.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +383,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

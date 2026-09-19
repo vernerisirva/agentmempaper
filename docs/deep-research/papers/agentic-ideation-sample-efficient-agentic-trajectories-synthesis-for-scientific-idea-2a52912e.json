@@ -29,7 +29,7 @@
   "last_seen_date": "2026-07-07",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-07-01 10:31:27",
   "notified_date": "2026-07-01",
@@ -40,7 +40,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-07-01 10:26:31",
-    "generated_at": "2026-09-18 18:46:26",
+    "generated_at": "2026-09-19 07:47:47",
     "last_seen_at": "2026-07-07 10:11:45",
     "metadata_sources": [
       "openalex",
@@ -106,36 +106,2139 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:39:28.063164+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The contribution is novel, technically sound, and evaluated thoroughly with robust baselines, ablation studies, and independent corroboration from both multi-model LLM ensembles and human experts.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 55230,
+      "assessment_input_sha256": "43f97f61b838a5bb5aa21f5e40329130bec7833ba1aa3b262e17caa0c48a793c",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "openalex:W7167154310",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 51342,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 50649,
+      "evidence_block_count": 106,
+      "evidence_context_characters": 65971,
+      "evidence_context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+      "evidence_context_sha256": "c76743d7ed101c856871de33b413c07ba5bfc134378726a47496d0632e73f89c",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 51364,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "extracted_pages": 12,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "48ec3219304e468acd4b41e2c87adc5ac39194d1161ef19a16331ee94bc1a547",
+        "source_url": "https://arxiv.org/pdf/2606.31229",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 51342,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 144,
+          "supplied_characters": 144
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1937,
+          "supplied_characters": 1937
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2405,
+          "supplied_characters": 2405
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 3,
+          "source_characters": 3501,
+          "supplied_characters": 3501
+        },
+        {
+          "heading": "We Pioneer The Application Of Agentic Llms To Scien-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 217,
+          "supplied_characters": 217
+        },
+        {
+          "heading": "We Propose A Novel Oracle-Guided Multi-Agent Data Syn-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 198,
+          "supplied_characters": 198
+        },
+        {
+          "heading": "We Achieve Sota Results Across All Metrics, Outper-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "results",
+          "section_index": 6,
+          "source_characters": 169,
+          "supplied_characters": 169
+        },
+        {
+          "heading": "Scientific Ideation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 1372,
+          "supplied_characters": 1372
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 116,
+          "supplied_characters": 116
+        },
+        {
+          "heading": "Anchor Paper",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 12,
+          "supplied_characters": 12
+        },
+        {
+          "heading": "Trajectory Data Composed Of Public Thoughts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 51,
+          "supplied_characters": 51
+        },
+        {
+          "heading": "Tool Resulttool Resultllm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 12,
+          "source_characters": 25,
+          "supplied_characters": 25
+        },
+        {
+          "heading": "Loss Computing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Tool Result",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 14,
+          "source_characters": 19,
+          "supplied_characters": 19
+        },
+        {
+          "heading": "Tool Result Tool Result Tool Result",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "results",
+          "section_index": 15,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "External Thinking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 17,
+          "supplied_characters": 17
+        },
+        {
+          "heading": "Tool Space",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 10,
+          "supplied_characters": 10
+        },
+        {
+          "heading": "Public Thought",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Private Thought",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 15,
+          "supplied_characters": 15
+        },
+        {
+          "heading": "Llm Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 14,
+          "supplied_characters": 14
+        },
+        {
+          "heading": "Training Data",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 21,
+          "source_characters": 346,
+          "supplied_characters": 346
+        },
+        {
+          "heading": "Agentic Data Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 56,
+          "supplied_characters": 56
+        },
+        {
+          "heading": "Are Defined By Their Autonomy In Planning And Invoking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 172,
+          "supplied_characters": 172
+        },
+        {
+          "heading": "The Training Paradigm From Learning Static Text To Mimick-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 24,
+          "source_characters": 348,
+          "supplied_characters": 348
+        },
+        {
+          "heading": "Malizing Environments As Read-Write Databases To Generate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "Tures End-To-End Browser Trajectories Specifically Tailored",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 175,
+          "supplied_characters": 175
+        },
+        {
+          "heading": "Difficulty Tasks Through Graph Sampling And Information",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 111,
+          "supplied_characters": 111
+        },
+        {
+          "heading": "Tends Synthesis To The Multimodal Domain By Integrating",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 165,
+          "supplied_characters": 165
+        },
+        {
+          "heading": "Jection Sampling Or Task Completion Verification) To Ensure",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 296,
+          "supplied_characters": 296
+        },
+        {
+          "heading": "To Consistently Yield High-Quality Outcomes Without Explicit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 82,
+          "supplied_characters": 82
+        },
+        {
+          "heading": "The Agentic-Ideation Framework Streamlines Autonomous",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "We Establish A Hybrid Tool Space That Combines External",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Retrieval Utilities With Internal Cognitive Tools To Support",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Employ An Oracle-Guided Multi-Agent System Where A Plan-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 117,
+          "supplied_characters": 117
+        },
+        {
+          "heading": "Synthesize High-Fidelity Trajectories Without Relying On Inef-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Ensure The Model Learns Robust Decision-Making Logic Rather",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Scientific Ideation Is Inherently An Iterative Cognitive Pro-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 61,
+          "supplied_characters": 61
+        },
+        {
+          "heading": "Cess That Oscillates Between The Extensive Accumulation Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 58,
+          "supplied_characters": 58
+        },
+        {
+          "heading": "Domain Knowledge And The Intensive Synthesis Of Novel",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 113,
+          "supplied_characters": 113
+        },
+        {
+          "heading": "A Comprehensive Agentic Tool Space That Bridges The Gap Be-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 59,
+          "supplied_characters": 59
+        },
+        {
+          "heading": "Tween Retrieving External Evidence And Performing Internal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 114,
+          "supplied_characters": 114
+        },
+        {
+          "heading": "Where Text Denotes External Retrieval Tools And Tthink Rep-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 139,
+          "supplied_characters": 139
+        },
+        {
+          "heading": "External Tools (Text)These Tools Interface With The Aca-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 182,
+          "supplied_characters": 182
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 1492,
+          "supplied_characters": 1492
+        },
+        {
+          "heading": "Oracle-Guided Agentic Data Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 3260,
+          "supplied_characters": 3260
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 96,
+          "supplied_characters": 96
+        },
+        {
+          "heading": "Agentic Supervised Fine-Tuning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 2607,
+          "supplied_characters": 2607
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "methods",
+          "section_index": 48,
+          "source_characters": 1656,
+          "supplied_characters": 1656
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 3537,
+          "supplied_characters": 3537
+        },
+        {
+          "heading": "Main Result",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 50,
+          "source_characters": 1510,
+          "supplied_characters": 1510
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 96,
+          "supplied_characters": 96
+        },
+        {
+          "heading": "Efficiency Of Data Synthesis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 1132,
+          "supplied_characters": 1132
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 53,
+          "source_characters": 1767,
+          "supplied_characters": 1767
+        },
+        {
+          "heading": "Human Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 1822,
+          "supplied_characters": 1822
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 3847,
+          "supplied_characters": 3847
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "conclusion",
+          "section_index": 56,
+          "source_characters": 587,
+          "supplied_characters": 587
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 692,
+          "supplied_characters": 692
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Researchagent: Iterative Research Idea Generation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 49,
+          "supplied_characters": 49
+        },
+        {
+          "heading": "Over Scientific Literature With Large Language Mod-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 238,
+          "supplied_characters": 238
+        },
+        {
+          "heading": "Resulting From Divided Attention Biases Evaluations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 61,
+          "source_characters": 1716,
+          "supplied_characters": 1716
+        },
+        {
+          "heading": "Leverage Search Engines With Reinforcement Learn-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 342,
+          "supplied_characters": 342
+        },
+        {
+          "heading": "To Proprietary Agents Via Synthetic Data And Scal-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 616,
+          "supplied_characters": 616
+        },
+        {
+          "heading": "Revolutionizing Research Via Novel Idea Development With",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 920,
+          "supplied_characters": 920
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 4531,
+          "supplied_characters": 4531
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 536,
+          "supplied_characters": 536
+        },
+        {
+          "heading": "Appendix: More Details Of Evaluation Metrics",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 67,
+          "source_characters": 1821,
+          "supplied_characters": 1821
+        },
+        {
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 658,
+          "supplied_characters": 658
+        },
+        {
+          "heading": "Appendix: Compute Sources",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 69,
+          "source_characters": 629,
+          "supplied_characters": 629
+        },
+        {
+          "heading": "Appendix: Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 70,
+          "source_characters": 649,
+          "supplied_characters": 649
+        }
+      ],
+      "selected_characters": 50649,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_sections": [
+        {
+          "characters": 144,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific",
+          "page": 1
+        },
+        {
+          "characters": 1937,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2405,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 3501,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 2
+        },
+        {
+          "characters": 217,
+          "heading": "We Pioneer The Application Of Agentic Llms To Scien-",
+          "page": 2
+        },
+        {
+          "characters": 198,
+          "heading": "We Propose A Novel Oracle-Guided Multi-Agent Data Syn-",
+          "page": 2
+        },
+        {
+          "characters": 169,
+          "heading": "We Achieve Sota Results Across All Metrics, Outper-",
+          "page": 2
+        },
+        {
+          "characters": 1372,
+          "heading": "Scientific Ideation",
+          "page": 2
+        },
+        {
+          "characters": 163,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 3
+        },
+        {
+          "characters": 116,
+          "heading": "Unclassified body after references",
+          "page": 3
+        },
+        {
+          "characters": 12,
+          "heading": "Anchor Paper",
+          "page": 3
+        },
+        {
+          "characters": 51,
+          "heading": "Trajectory Data Composed Of Public Thoughts",
+          "page": 3
+        },
+        {
+          "characters": 25,
+          "heading": "Tool Resulttool Resultllm",
+          "page": 3
+        },
+        {
+          "characters": 14,
+          "heading": "Loss Computing",
+          "page": 3
+        },
+        {
+          "characters": 19,
+          "heading": "Tool Result",
+          "page": 3
+        },
+        {
+          "characters": 35,
+          "heading": "Tool Result Tool Result Tool Result",
+          "page": 3
+        },
+        {
+          "characters": 17,
+          "heading": "External Thinking",
+          "page": 3
+        },
+        {
+          "characters": 10,
+          "heading": "Tool Space",
+          "page": 3
+        },
+        {
+          "characters": 14,
+          "heading": "Public Thought",
+          "page": 3
+        },
+        {
+          "characters": 15,
+          "heading": "Private Thought",
+          "page": 3
+        },
+        {
+          "characters": 14,
+          "heading": "Llm Generation",
+          "page": 3
+        },
+        {
+          "characters": 346,
+          "heading": "Training Data",
+          "page": 3
+        },
+        {
+          "characters": 56,
+          "heading": "Agentic Data Synthesis",
+          "page": 3
+        },
+        {
+          "characters": 172,
+          "heading": "Are Defined By Their Autonomy In Planning And Invoking",
+          "page": 3
+        },
+        {
+          "characters": 348,
+          "heading": "The Training Paradigm From Learning Static Text To Mimick-",
+          "page": 3
+        },
+        {
+          "characters": 114,
+          "heading": "Malizing Environments As Read-Write Databases To Generate",
+          "page": 3
+        },
+        {
+          "characters": 175,
+          "heading": "Tures End-To-End Browser Trajectories Specifically Tailored",
+          "page": 3
+        },
+        {
+          "characters": 111,
+          "heading": "Difficulty Tasks Through Graph Sampling And Information",
+          "page": 3
+        },
+        {
+          "characters": 165,
+          "heading": "Tends Synthesis To The Multimodal Domain By Integrating",
+          "page": 3
+        },
+        {
+          "characters": 296,
+          "heading": "Jection Sampling Or Task Completion Verification) To Ensure",
+          "page": 3
+        },
+        {
+          "characters": 82,
+          "heading": "To Consistently Yield High-Quality Outcomes Without Explicit",
+          "page": 3
+        },
+        {
+          "characters": 114,
+          "heading": "The Agentic-Ideation Framework Streamlines Autonomous",
+          "page": 3
+        },
+        {
+          "characters": 55,
+          "heading": "We Establish A Hybrid Tool Space That Combines External",
+          "page": 3
+        },
+        {
+          "characters": 117,
+          "heading": "Retrieval Utilities With Internal Cognitive Tools To Support",
+          "page": 3
+        },
+        {
+          "characters": 117,
+          "heading": "Employ An Oracle-Guided Multi-Agent System Where A Plan-",
+          "page": 3
+        },
+        {
+          "characters": 183,
+          "heading": "Synthesize High-Fidelity Trajectories Without Relying On Inef-",
+          "page": 3
+        },
+        {
+          "characters": 163,
+          "heading": "Ensure The Model Learns Robust Decision-Making Logic Rather",
+          "page": 3
+        },
+        {
+          "characters": 61,
+          "heading": "Scientific Ideation Is Inherently An Iterative Cognitive Pro-",
+          "page": 3
+        },
+        {
+          "characters": 58,
+          "heading": "Cess That Oscillates Between The Extensive Accumulation Of",
+          "page": 3
+        },
+        {
+          "characters": 113,
+          "heading": "Domain Knowledge And The Intensive Synthesis Of Novel",
+          "page": 3
+        },
+        {
+          "characters": 59,
+          "heading": "A Comprehensive Agentic Tool Space That Bridges The Gap Be-",
+          "page": 3
+        },
+        {
+          "characters": 114,
+          "heading": "Tween Retrieving External Evidence And Performing Internal",
+          "page": 3
+        },
+        {
+          "characters": 139,
+          "heading": "Where Text Denotes External Retrieval Tools And Tthink Rep-",
+          "page": 3
+        },
+        {
+          "characters": 182,
+          "heading": "External Tools (Text)These Tools Interface With The Aca-",
+          "page": 3
+        },
+        {
+          "characters": 1492,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 4
+        },
+        {
+          "characters": 3260,
+          "heading": "Oracle-Guided Agentic Data Synthesis",
+          "page": 4
+        },
+        {
+          "characters": 96,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 5
+        },
+        {
+          "characters": 2607,
+          "heading": "Agentic Supervised Fine-Tuning",
+          "page": 5
+        },
+        {
+          "characters": 1656,
+          "heading": "Experimental Setup",
+          "page": 5
+        },
+        {
+          "characters": 3537,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 6
+        },
+        {
+          "characters": 1510,
+          "heading": "Main Result",
+          "page": 6
+        },
+        {
+          "characters": 96,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 7
+        },
+        {
+          "characters": 1132,
+          "heading": "Efficiency Of Data Synthesis",
+          "page": 7
+        },
+        {
+          "characters": 1767,
+          "heading": "Ablation Study",
+          "page": 7
+        },
+        {
+          "characters": 1822,
+          "heading": "Human Study",
+          "page": 7
+        },
+        {
+          "characters": 3847,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 8
+        },
+        {
+          "characters": 587,
+          "heading": "Conclusion",
+          "page": 8
+        },
+        {
+          "characters": 692,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 9
+        },
+        {
+          "characters": 55,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 49,
+          "heading": "Researchagent: Iterative Research Idea Generation",
+          "page": 9
+        },
+        {
+          "characters": 238,
+          "heading": "Over Scientific Literature With Large Language Mod-",
+          "page": 9
+        },
+        {
+          "characters": 1716,
+          "heading": "Resulting From Divided Attention Biases Evaluations",
+          "page": 9
+        },
+        {
+          "characters": 342,
+          "heading": "Leverage Search Engines With Reinforcement Learn-",
+          "page": 9
+        },
+        {
+          "characters": 616,
+          "heading": "To Proprietary Agents Via Synthetic Data And Scal-",
+          "page": 9
+        },
+        {
+          "characters": 920,
+          "heading": "Revolutionizing Research Via Novel Idea Development With",
+          "page": 9
+        },
+        {
+          "characters": 4531,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 10
+        },
+        {
+          "characters": 536,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 11
+        },
+        {
+          "characters": 1821,
+          "heading": "Appendix: More Details Of Evaluation Metrics",
+          "page": 11
+        },
+        {
+          "characters": 658,
+          "heading": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+          "page": 12
+        },
+        {
+          "characters": 629,
+          "heading": "Appendix: Compute Sources",
+          "page": 12
+        },
+        {
+          "characters": 649,
+          "heading": "Appendix: Limitations",
+          "page": 12
+        }
+      ],
+      "selected_text_sha256": "43f97f61b838a5bb5aa21f5e40329130bec7833ba1aa3b262e17caa0c48a793c",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "48ec3219304e468acd4b41e2c87adc5ac39194d1161ef19a16331ee94bc1a547",
+      "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0002"
+        ],
+        "excerpt": "Ideation plays a pivotal role in scientific discov-\nery. Recent LLM, especially AI Scientist systems,\nshow promising potential for automated ideation.\nHowever, existing approaches predominantly rely\non pre-defined agentic workflows. This constraint\nseverely limits the flexibility required to navigate\nthe vast search space of scientific literature and\nthe complex action space of research reasoning.\nRecently, training Agentic LLMs has emerged as\na promising direction, offering flexible reasoning\nframeworks and the capability for autonomous\ntool utilization. However, there remains a non-\ntrivial challenge: applying previous agentic data\nsynthesis methods to scientific ideation suffers\nfrom prohibitively high data synthesis cost. To\nbridge this gap, we propose Agentic-Ideation, a\nnovel framework comprising an automated tra-\njectory synthesis pipeline and a specialized agen-\ntic LLM trained ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "9ad95b94945b5134256cf1bce4207789adb14c3f0b72cf8e450b963a3be7a867",
+            "evidence_id": "E29e68db66b54071c-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Ideation plays a pivotal role in scientific discov-\nery. Recent LLM, especially AI Scientist systems,\nshow promising potential for automated ideation.\nHowever, existing approaches predominantly rely\non pre-defined agentic workflows. This constraint\nseverely limits the flexibility required to navigate\nthe vast search space of scientific literature and\nthe complex action space of research reasoning.\nRecently, training Agentic LLMs has emerged as\na promising direction, offering flexible reasoning\nframeworks and the capability for autonomous\ntool utilization. However, there remains a non-\ntrivial challenge: applying previous agentic data\nsynthesis methods to scientific ideation suffers\nfrom prohibitively high data synthesis cost. To\nbridge this gap, we propose Agentic-Ideation, a\nnovel framework comprising an automated tra-\njectory synthesis pipeline and a specialized agen-\ntic LLM trained "
+              }
+            ],
+            "text": "Ideation plays a pivotal role in scientific discov-\nery. Recent LLM, especially AI Scientist systems,\nshow promising potential for automated ideation.\nHowever, existing approaches predominantly rely\non pre-defined agentic workflows. This constraint\nseverely limits the flexibility required to navigate\nthe vast search space of scientific literature and\nthe complex action space of research reasoning.\nRecently, training Agentic LLMs has emerged as\na promising direction, offering flexible reasoning\nframeworks and the capability for autonomous\ntool utilization. However, there remains a non-\ntrivial challenge: applying previous agentic data\nsynthesis methods to scientific ideation suffers\nfrom prohibitively high data synthesis cost. To\nbridge this gap, we propose Agentic-Ideation, a\nnovel framework comprising an automated tra-\njectory synthesis pipeline and a specialized agen-\ntic LLM trained "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0003"
+        ],
+        "excerpt": "for scientific ideation. Specifi-\ncally, we first define a comprehensive tool space\nincorporating three external tools and three cogni-\ntive tools. Then we introduce an Oracle-Guided\nData Synthesis strategy. By leveraging a refer-\nence idea as oracle guidance, this approach steers\nthe multi-agent system to efficiently reconstruct\nthe logical reasoning and tool invocation paths,\ntransforming aimless trial-and-error into directed\ntrajectory generation. Finally, we train the agent\non these synthesized trajectories, employing a\nmasking strategy on tool execution results. This\nensures the model focuses on decision-making\nlogic without interference from external feedback.\nExperimental results demonstrate that our method\noutperforms the SOTA workflow-based baseline\nby11.91%in overall quality. Furthermore, our\napproach improves the sample efficiency of high-\nquality data synthesis byover ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6923ef578337594c21058053822429adb04e3a4d57be1fcd6dc01647df870019",
+            "evidence_id": "E29e68db66b54071c-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1792,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 899,
+                "text": "for scientific ideation. Specifi-\ncally, we first define a comprehensive tool space\nincorporating three external tools and three cogni-\ntive tools. Then we introduce an Oracle-Guided\nData Synthesis strategy. By leveraging a refer-\nence idea as oracle guidance, this approach steers\nthe multi-agent system to efficiently reconstruct\nthe logical reasoning and tool invocation paths,\ntransforming aimless trial-and-error into directed\ntrajectory generation. Finally, we train the agent\non these synthesized trajectories, employing a\nmasking strategy on tool execution results. This\nensures the model focuses on decision-making\nlogic without interference from external feedback.\nExperimental results demonstrate that our method\noutperforms the SOTA workflow-based baseline\nby11.91%in overall quality. Furthermore, our\napproach improves the sample efficiency of high-\nquality data synthesis byover "
+              }
+            ],
+            "text": "for scientific ideation. Specifi-\ncally, we first define a comprehensive tool space\nincorporating three external tools and three cogni-\ntive tools. Then we introduce an Oracle-Guided\nData Synthesis strategy. By leveraging a refer-\nence idea as oracle guidance, this approach steers\nthe multi-agent system to efficiently reconstruct\nthe logical reasoning and tool invocation paths,\ntransforming aimless trial-and-error into directed\ntrajectory generation. Finally, we train the agent\non these synthesized trajectories, employing a\nmasking strategy on tool execution results. This\nensures the model focuses on decision-making\nlogic without interference from external feedback.\nExperimental results demonstrate that our method\noutperforms the SOTA workflow-based baseline\nby11.91%in overall quality. Furthermore, our\napproach improves the sample efficiency of high-\nquality data synthesis byover "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0008"
+        ],
+        "excerpt": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents\napplying standard rejection sampling leads to prohibitively\nlow sample efficiency, as unguided models struggle to navi-\ngate this immense search space to yield high-quality ideas,\nrendering the data synthesis process computationally expen-\nsive and ineffective.\nTo tackle these challenges, we introduce Agentic-Ideation,\na comprehensive framework designed for efficient agentic\ndata synthesis and robust model training. We first meticu-\nlously define the agent's hybrid tool space, which comprises\nthree external tools and three thinking tools. The external\ntools, includingSearch,Get_ReferencesandGet_Cited, em-\npower the agent to access external APIs, thereby proactively\nexpanding its knowledge boundaries beyond its internal\nparameters. Complementing these, the thinking tools, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3d523e380919db93fb95d14e5ce40f6c39e1088e229b341665212ffc3f2ef3cb",
+            "evidence_id": "E29e68db66b54071c-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 879,
+                "page": 2,
+                "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+                "section_index": 3,
+                "start": 0,
+                "text": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents\napplying standard rejection sampling leads to prohibitively\nlow sample efficiency, as unguided models struggle to navi-\ngate this immense search space to yield high-quality ideas,\nrendering the data synthesis process computationally expen-\nsive and ineffective.\nTo tackle these challenges, we introduce Agentic-Ideation,\na comprehensive framework designed for efficient agentic\ndata synthesis and robust model training. We first meticu-\nlously define the agent's hybrid tool space, which comprises\nthree external tools and three thinking tools. The external\ntools, includingSearch,Get_ReferencesandGet_Cited, em-\npower the agent to access external APIs, thereby proactively\nexpanding its knowledge boundaries beyond its internal\nparameters. Complementing these, the thinking tools, "
+              }
+            ],
+            "text": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents\napplying standard rejection sampling leads to prohibitively\nlow sample efficiency, as unguided models struggle to navi-\ngate this immense search space to yield high-quality ideas,\nrendering the data synthesis process computationally expen-\nsive and ineffective.\nTo tackle these challenges, we introduce Agentic-Ideation,\na comprehensive framework designed for efficient agentic\ndata synthesis and robust model training. We first meticu-\nlously define the agent's hybrid tool space, which comprises\nthree external tools and three thinking tools. The external\ntools, includingSearch,Get_ReferencesandGet_Cited, em-\npower the agent to access external APIs, thereby proactively\nexpanding its knowledge boundaries beyond its internal\nparameters. Complementing these, the thinking tools, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0009"
+        ],
+        "excerpt": "in-\ncludingAnalyse_Gap,IdeationandReflection, enable the\nagent to perform critical cognitive tasks, such as identifying\nresearch voids and iteratively refining ideas. To synthe-\nsize high-quality trajectories based on this action space, we\nconstruct a hierarchical multi-agent system consisting of a\nPlanner, a Controller, and six specialized tool agents. In this\narchitecture, the Planner orchestrates the high-level ideation\nstrategy, while the Controller manages fine-grained tool\nselection and execution at each step.\nNotably, we endow agents with an oracle view of the high-\nquality \"reference idea,\" acting as a navigational beacon to\nmaximize sample efficiency. Instead of aimlessly exploring\nthe vast action space, this guidance transforms the synthesis\nprocess from a stochastic search into a directed trajectory\nreconstruction. By leveraging this \"foresight,\" the system\ncan generate a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b77c8a3e4f09c787b80fd787ea154e40fc8158f1bd7d51f61059445cfa7e5fbd",
+            "evidence_id": "E29e68db66b54071c-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1775,
+                "page": 2,
+                "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+                "section_index": 3,
+                "start": 879,
+                "text": "in-\ncludingAnalyse_Gap,IdeationandReflection, enable the\nagent to perform critical cognitive tasks, such as identifying\nresearch voids and iteratively refining ideas. To synthe-\nsize high-quality trajectories based on this action space, we\nconstruct a hierarchical multi-agent system consisting of a\nPlanner, a Controller, and six specialized tool agents. In this\narchitecture, the Planner orchestrates the high-level ideation\nstrategy, while the Controller manages fine-grained tool\nselection and execution at each step.\nNotably, we endow agents with an oracle view of the high-\nquality \"reference idea,\" acting as a navigational beacon to\nmaximize sample efficiency. Instead of aimlessly exploring\nthe vast action space, this guidance transforms the synthesis\nprocess from a stochastic search into a directed trajectory\nreconstruction. By leveraging this \"foresight,\" the system\ncan generate a "
+              }
+            ],
+            "text": "in-\ncludingAnalyse_Gap,IdeationandReflection, enable the\nagent to perform critical cognitive tasks, such as identifying\nresearch voids and iteratively refining ideas. To synthe-\nsize high-quality trajectories based on this action space, we\nconstruct a hierarchical multi-agent system consisting of a\nPlanner, a Controller, and six specialized tool agents. In this\narchitecture, the Planner orchestrates the high-level ideation\nstrategy, while the Controller manages fine-grained tool\nselection and execution at each step.\nNotably, we endow agents with an oracle view of the high-\nquality \"reference idea,\" acting as a navigational beacon to\nmaximize sample efficiency. Instead of aimlessly exploring\nthe vast action space, this guidance transforms the synthesis\nprocess from a stochastic search into a directed trajectory\nreconstruction. By leveraging this \"foresight,\" the system\ncan generate a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0055"
+        ],
+        "excerpt": "To systematically synthesize agentic trajectories, we design\na hierarchical multi-agent system operating on the defined\ntool space T . The process initiates by selecting a scientific\npaper, termed the \"Anchor Paper,\" and extracting its bib-\nliography to serve as the system input. The system then\ndecomposes the ideation process into strategic planning and\ntactical execution, formalized as follows:\n\u2022 Planner( Aplan): Acts as the architect. Given the\ninitial context H0 (derived from the anchor paper's\nreferences), the planner generates a high-level research\nroadmapPto structure the exploration:\nP=A plan(H0)\n\u2022 Controller( Actrl): Acts as the executor. At each\ntime step t, guided by the roadmap P , the controller\nprocesses the current interaction history Ht to generate\na reasoning thoughtT ht and a subsequent actiona t:\n(T ht, at) =Actrl(Ht, P, Iref )\nwhere at \u2208 T denotes the specific tool ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Oracle-Guided Agentic Data Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "451aab98ae822f49f97a43b79ce92f1fbc3c5915a8578179f63781b4f453e557",
+            "evidence_id": "E29e68db66b54071c-B0055",
+            "pages": [
+              4
+            ],
+            "section": "Oracle-Guided Agentic Data Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 4,
+                "section": "Oracle-Guided Agentic Data Synthesis",
+                "section_index": 45,
+                "start": 0,
+                "text": "To systematically synthesize agentic trajectories, we design\na hierarchical multi-agent system operating on the defined\ntool space T . The process initiates by selecting a scientific\npaper, termed the \"Anchor Paper,\" and extracting its bib-\nliography to serve as the system input. The system then\ndecomposes the ideation process into strategic planning and\ntactical execution, formalized as follows:\n\u2022 Planner( Aplan): Acts as the architect. Given the\ninitial context H0 (derived from the anchor paper's\nreferences), the planner generates a high-level research\nroadmapPto structure the exploration:\nP=A plan(H0)\n\u2022 Controller( Actrl): Acts as the executor. At each\ntime step t, guided by the roadmap P , the controller\nprocesses the current interaction history Ht to generate\na reasoning thoughtT ht and a subsequent actiona t:\n(T ht, at) =Actrl(Ht, P, Iref )\nwhere at \u2208 T denotes the specific tool "
+              }
+            ],
+            "text": "To systematically synthesize agentic trajectories, we design\na hierarchical multi-agent system operating on the defined\ntool space T . The process initiates by selecting a scientific\npaper, termed the \"Anchor Paper,\" and extracting its bib-\nliography to serve as the system input. The system then\ndecomposes the ideation process into strategic planning and\ntactical execution, formalized as follows:\n\u2022 Planner( Aplan): Acts as the architect. Given the\ninitial context H0 (derived from the anchor paper's\nreferences), the planner generates a high-level research\nroadmapPto structure the exploration:\nP=A plan(H0)\n\u2022 Controller( Actrl): Acts as the executor. At each\ntime step t, guided by the roadmap P , the controller\nprocesses the current interaction history Ht to generate\na reasoning thoughtT ht and a subsequent actiona t:\n(T ht, at) =Actrl(Ht, P, Iref )\nwhere at \u2208 T denotes the specific tool "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0056"
+        ],
+        "excerpt": "invoked to\nacquire new information or perform reasoning.\n\u2022 Private Thought( th(t)\npriv): Represents theOracle\nView. It explicitly utilizes Iref to perform a gap analy-\nsis between the current state and the target goal. This\nstream calculates the optimal tool at required to bridge\nthe gap, effectively collapsing the search space by pro-\nviding directional foresight.\n\u2022 Public Thought( th(t)\npub): Represents theResearcher\nView. It rationalizes the decision at using only the\ncurrently available history Ht, intentionally masking\nthe existence of Iref . This ensures the resulting rea-\nsoning trace mimics a natural, autonomous exploration\nprocess suitable for training.\nReject Sampling\nOracle Guided\nMaybe we should take a closer look\u2026\nIt might be worth trying a different\u2026\nI am not entirely convinced this architecture\u2026\nPerhaps the issue lies in the way we are sampling\u2026\n\u2026\u2026\nReference ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Oracle-Guided Agentic Data Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "473a0f92da90dd937f1acfe5a3de3c1362bf813b468c4580a171308fd918c4e0",
+            "evidence_id": "E29e68db66b54071c-B0056",
+            "pages": [
+              4
+            ],
+            "section": "Oracle-Guided Agentic Data Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1784,
+                "page": 4,
+                "section": "Oracle-Guided Agentic Data Synthesis",
+                "section_index": 45,
+                "start": 898,
+                "text": "invoked to\nacquire new information or perform reasoning.\n\u2022 Private Thought( th(t)\npriv): Represents theOracle\nView. It explicitly utilizes Iref to perform a gap analy-\nsis between the current state and the target goal. This\nstream calculates the optimal tool at required to bridge\nthe gap, effectively collapsing the search space by pro-\nviding directional foresight.\n\u2022 Public Thought( th(t)\npub): Represents theResearcher\nView. It rationalizes the decision at using only the\ncurrently available history Ht, intentionally masking\nthe existence of Iref . This ensures the resulting rea-\nsoning trace mimics a natural, autonomous exploration\nprocess suitable for training.\nReject Sampling\nOracle Guided\nMaybe we should take a closer look\u2026\nIt might be worth trying a different\u2026\nI am not entirely convinced this architecture\u2026\nPerhaps the issue lies in the way we are sampling\u2026\n\u2026\u2026\nReference "
+              }
+            ],
+            "text": "invoked to\nacquire new information or perform reasoning.\n\u2022 Private Thought( th(t)\npriv): Represents theOracle\nView. It explicitly utilizes Iref to perform a gap analy-\nsis between the current state and the target goal. This\nstream calculates the optimal tool at required to bridge\nthe gap, effectively collapsing the search space by pro-\nviding directional foresight.\n\u2022 Public Thought( th(t)\npub): Represents theResearcher\nView. It rationalizes the decision at using only the\ncurrently available history Ht, intentionally masking\nthe existence of Iref . This ensures the resulting rea-\nsoning trace mimics a natural, autonomous exploration\nprocess suitable for training.\nReject Sampling\nOracle Guided\nMaybe we should take a closer look\u2026\nIt might be worth trying a different\u2026\nI am not entirely convinced this architecture\u2026\nPerhaps the issue lies in the way we are sampling\u2026\n\u2026\u2026\nReference "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0058"
+        ],
+        "excerpt": "process. Specifically, we implement a\nDual-Thought Mechanism where the controller simultane-\nously generates two distinct cognitive streams. Formally,\nthe policy at steptis defined as:\n(th(t)\npriv, th(t)\npub, at) =Actrl(Ht, P, Iref )\nThe two thought components function as follows:\nThe synthesis process concludes when the agent invokes the\nReflection tool. The system evaluates the semantic align-\nment between the generated idea oidea and Iref . Only tra-\njectories where the generated idea successfully recovers\nthe reference idea are preserved for the subsequent training\nphase.\n4",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Oracle-Guided Agentic Data Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "60d094276216a934c5c51e87e7e395c08d84eea68ff590470c79ac65dd90f40f",
+            "evidence_id": "E29e68db66b54071c-B0058",
+            "pages": [
+              4
+            ],
+            "section": "Oracle-Guided Agentic Data Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3260,
+                "page": 4,
+                "section": "Oracle-Guided Agentic Data Synthesis",
+                "section_index": 45,
+                "start": 2676,
+                "text": "process. Specifically, we implement a\nDual-Thought Mechanism where the controller simultane-\nously generates two distinct cognitive streams. Formally,\nthe policy at steptis defined as:\n(th(t)\npriv, th(t)\npub, at) =Actrl(Ht, P, Iref )\nThe two thought components function as follows:\nThe synthesis process concludes when the agent invokes the\nReflection tool. The system evaluates the semantic align-\nment between the generated idea oidea and Iref . Only tra-\njectories where the generated idea successfully recovers\nthe reference idea are preserved for the subsequent training\nphase.\n4"
+              }
+            ],
+            "text": "process. Specifically, we implement a\nDual-Thought Mechanism where the controller simultane-\nously generates two distinct cognitive streams. Formally,\nthe policy at steptis defined as:\n(th(t)\npriv, th(t)\npub, at) =Actrl(Ht, P, Iref )\nThe two thought components function as follows:\nThe synthesis process concludes when the agent invokes the\nReflection tool. The system evaluates the semantic align-\nment between the generated idea oidea and Iref . Only tra-\njectories where the generated idea successfully recovers\nthe reference idea are preserved for the subsequent training\nphase.\n4"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0060"
+        ],
+        "excerpt": "To transform the diverse interaction traces generated by our\nmulti-agent system into a format suitable for LLM training,\nwe employ a structured linearization strategy. The input to\nthe model consists of a system prompt defining the tool\nspace T and the user query containing the references of\nthe anchor paper. Crucially, to ensure the trained agent\nlearns autonomous exploration rather than \"cheating,\" we\nexclusively retain the Public Thought ( thpub) from the\ncontroller's dual-stream output as the primary reasoning\nchain, discarding the Private Thought ( thpriv) and the\nOracle's guidance. The training sequence is rigorously\norganized using special tokens: external tool queries are\nencapsulated as<Tool_Name>Query</Tool_Name>,\nenvironmental observations are wrapped in<Re-\nsult>Output</Result>, and internal cognitive actions\nare formatted as<Tool_Name>Content</Tool_Name>,\nculminating in the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic Supervised Fine-Tuning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "16b5f71371491990c4e806d83bf879244986094450fd462e6457e7cf97dd57e2",
+            "evidence_id": "E29e68db66b54071c-B0060",
+            "pages": [
+              5
+            ],
+            "section": "Agentic Supervised Fine-Tuning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 5,
+                "section": "Agentic Supervised Fine-Tuning",
+                "section_index": 47,
+                "start": 0,
+                "text": "To transform the diverse interaction traces generated by our\nmulti-agent system into a format suitable for LLM training,\nwe employ a structured linearization strategy. The input to\nthe model consists of a system prompt defining the tool\nspace T and the user query containing the references of\nthe anchor paper. Crucially, to ensure the trained agent\nlearns autonomous exploration rather than \"cheating,\" we\nexclusively retain the Public Thought ( thpub) from the\ncontroller's dual-stream output as the primary reasoning\nchain, discarding the Private Thought ( thpriv) and the\nOracle's guidance. The training sequence is rigorously\norganized using special tokens: external tool queries are\nencapsulated as<Tool_Name>Query</Tool_Name>,\nenvironmental observations are wrapped in<Re-\nsult>Output</Result>, and internal cognitive actions\nare formatted as<Tool_Name>Content</Tool_Name>,\nculminating in the "
+              }
+            ],
+            "text": "To transform the diverse interaction traces generated by our\nmulti-agent system into a format suitable for LLM training,\nwe employ a structured linearization strategy. The input to\nthe model consists of a system prompt defining the tool\nspace T and the user query containing the references of\nthe anchor paper. Crucially, to ensure the trained agent\nlearns autonomous exploration rather than \"cheating,\" we\nexclusively retain the Public Thought ( thpub) from the\ncontroller's dual-stream output as the primary reasoning\nchain, discarding the Private Thought ( thpriv) and the\nOracle's guidance. The training sequence is rigorously\norganized using special tokens: external tool queries are\nencapsulated as<Tool_Name>Query</Tool_Name>,\nenvironmental observations are wrapped in<Re-\nsult>Output</Result>, and internal cognitive actions\nare formatted as<Tool_Name>Content</Tool_Name>,\nculminating in the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0062"
+        ],
+        "excerpt": "This design prevents the model from memoriz-\ning deterministic environmental feedback, forcing it to focus\nsolely on reasoning and decision-making. The optimization\nobjective is defined as:\nL(\u03b8) =\u2212 1\nP|X|\nt=1 Mt\n|X|X\nt=1\nMt \u00b7logP \u03b8(xt |x <t)\nwhere X represents the complete linearized token sequence,\nand xt denotes the t-th token. x<t represents the context\npreceding xt, and P\u03b8 is the conditional probability distribu-\ntion parameterized by the model weights\u03b8. The binary mask\nMt \u2208 {0,1}serves as the indicator function: Mt = 1if xt\nbelongs to the agent's generated actions (thoughts or tool\ncalls), and Mt = 0if xt belongs to system instructions or en-\nvironmental feedback (tokens within <Result>...</Result>).\nThis ensures gradients are back-propagated exclusively\nthrough the agent's autonomous decisions.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic Supervised Fine-Tuning",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "60b55ba8a0d1799e8a1873c82a9add8b4d8dabe7eeab6a5ce001e87df16a9845",
+            "evidence_id": "E29e68db66b54071c-B0062",
+            "pages": [
+              5
+            ],
+            "section": "Agentic Supervised Fine-Tuning",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2607,
+                "page": 5,
+                "section": "Agentic Supervised Fine-Tuning",
+                "section_index": 47,
+                "start": 1796,
+                "text": "This design prevents the model from memoriz-\ning deterministic environmental feedback, forcing it to focus\nsolely on reasoning and decision-making. The optimization\nobjective is defined as:\nL(\u03b8) =\u2212 1\nP|X|\nt=1 Mt\n|X|X\nt=1\nMt \u00b7logP \u03b8(xt |x <t)\nwhere X represents the complete linearized token sequence,\nand xt denotes the t-th token. x<t represents the context\npreceding xt, and P\u03b8 is the conditional probability distribu-\ntion parameterized by the model weights\u03b8. The binary mask\nMt \u2208 {0,1}serves as the indicator function: Mt = 1if xt\nbelongs to the agent's generated actions (thoughts or tool\ncalls), and Mt = 0if xt belongs to system instructions or en-\nvironmental feedback (tokens within <Result>...</Result>).\nThis ensures gradients are back-propagated exclusively\nthrough the agent's autonomous decisions."
+              }
+            ],
+            "text": "This design prevents the model from memoriz-\ning deterministic environmental feedback, forcing it to focus\nsolely on reasoning and decision-making. The optimization\nobjective is defined as:\nL(\u03b8) =\u2212 1\nP|X|\nt=1 Mt\n|X|X\nt=1\nMt \u00b7logP \u03b8(xt |x <t)\nwhere X represents the complete linearized token sequence,\nand xt denotes the t-th token. x<t represents the context\npreceding xt, and P\u03b8 is the conditional probability distribu-\ntion parameterized by the model weights\u03b8. The binary mask\nMt \u2208 {0,1}serves as the indicator function: Mt = 1if xt\nbelongs to the agent's generated actions (thoughts or tool\ncalls), and Mt = 0if xt belongs to system instructions or en-\nvironmental feedback (tokens within <Result>...</Result>).\nThis ensures gradients are back-propagated exclusively\nthrough the agent's autonomous decisions."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0063"
+        ],
+        "excerpt": "Baselines.To comprehensively evaluate the performance\nof our proposed framework, we compare Agentic-Ideation\nagainst four representative workflow-based ideation systems\nand the foundation model itself.\n\u2022 ResearchAgent (Baek et al., 2024):An iterative frame-\nwork that augments ideation using a scientific knowledge\nstore. It refines ideas through simulated peer reviews\ngenerated by \"ReviewingAgents.\"\n\u2022 SciPIP (Wang et al., 2024a):A dual-path mechanism\nthat integrates retrieval-based knowledge extraction with\ngenerative brainstorming to balance the novelty and feasi-\nbility of proposed ideas.\n\u2022 SciMON (Wang et al., 2023):A system that explicitly\noptimizes for novelty. It iteratively retrieves \"inspirations\"\nfrom past literature and refines generated ideas until they\nsufficiently diverge from retrieved prior works.\n\u2022 VirSci (Su et al., 2024):A multi-agent collaboration\nframework (\"Many ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "47a01f45f3dc16533ff8e86eee635bf499f235e4b1988d74b05388759fab85e6",
+            "evidence_id": "E29e68db66b54071c-B0063",
+            "pages": [
+              5
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Experimental Setup",
+                "section_index": 48,
+                "start": 0,
+                "text": "Baselines.To comprehensively evaluate the performance\nof our proposed framework, we compare Agentic-Ideation\nagainst four representative workflow-based ideation systems\nand the foundation model itself.\n\u2022 ResearchAgent (Baek et al., 2024):An iterative frame-\nwork that augments ideation using a scientific knowledge\nstore. It refines ideas through simulated peer reviews\ngenerated by \"ReviewingAgents.\"\n\u2022 SciPIP (Wang et al., 2024a):A dual-path mechanism\nthat integrates retrieval-based knowledge extraction with\ngenerative brainstorming to balance the novelty and feasi-\nbility of proposed ideas.\n\u2022 SciMON (Wang et al., 2023):A system that explicitly\noptimizes for novelty. It iteratively retrieves \"inspirations\"\nfrom past literature and refines generated ideas until they\nsufficiently diverge from retrieved prior works.\n\u2022 VirSci (Su et al., 2024):A multi-agent collaboration\nframework (\"Many "
+              }
+            ],
+            "text": "Baselines.To comprehensively evaluate the performance\nof our proposed framework, we compare Agentic-Ideation\nagainst four representative workflow-based ideation systems\nand the foundation model itself.\n\u2022 ResearchAgent (Baek et al., 2024):An iterative frame-\nwork that augments ideation using a scientific knowledge\nstore. It refines ideas through simulated peer reviews\ngenerated by \"ReviewingAgents.\"\n\u2022 SciPIP (Wang et al., 2024a):A dual-path mechanism\nthat integrates retrieval-based knowledge extraction with\ngenerative brainstorming to balance the novelty and feasi-\nbility of proposed ideas.\n\u2022 SciMON (Wang et al., 2023):A system that explicitly\noptimizes for novelty. It iteratively retrieves \"inspirations\"\nfrom past literature and refines generated ideas until they\nsufficiently diverge from retrieved prior works.\n\u2022 VirSci (Su et al., 2024):A multi-agent collaboration\nframework (\"Many "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0066"
+        ],
+        "excerpt": "6.01 6.91 5.24 6.10 5.90 6.96 5.43 5.90\nAgentic-Ideation6.56\u2217 7.88\u2217 6.21\u2217 6.64\u2217 6.74\u2217 7.65\u2217 6.13\u2217 6.69\u2217 6.92\u2217 7.82\u2217 6.02\u2217 6.69\u2217 6.74\u2217 7.78\u2217 6.12\u2217 6.67\u2217\nImprovement\u219112.71% 10.52% 8.76% 10.48%9.42% 8.82% 9.07% 11.13%10.19% 11.40% 6.93% 9.67%11.40% 11.14% 8.70% 11.91%\ndomains: Natural Language Processing (NLP), Computer\nVision (CV), and Others.\nFor the test set, we focus on the most recently published\nconference, NeurIPS 2025, to assess the model's ability\nto generate cutting-edge ideas. Specifically, we randomly\nsample 100 papers from each category (NLP, CV , Others),\ncreating a balanced evaluation benchmark of 300 papers.\nFor each anchor paper in both training and testing sets,\nwe randomly select 10 references from its bibliography.\nThese references serve as the sole input context, challenging\nthe models to generate high-quality scientific ideas based\nstrictly on this foundational ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "830683058701a616f8d15fbd691384c3c90d6125793cc3fc4e840835ebf2dc2f",
+            "evidence_id": "E29e68db66b54071c-B0066",
+            "pages": [
+              6
+            ],
+            "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 6,
+                "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+                "section_index": 49,
+                "start": 897,
+                "text": "6.01 6.91 5.24 6.10 5.90 6.96 5.43 5.90\nAgentic-Ideation6.56\u2217 7.88\u2217 6.21\u2217 6.64\u2217 6.74\u2217 7.65\u2217 6.13\u2217 6.69\u2217 6.92\u2217 7.82\u2217 6.02\u2217 6.69\u2217 6.74\u2217 7.78\u2217 6.12\u2217 6.67\u2217\nImprovement\u219112.71% 10.52% 8.76% 10.48%9.42% 8.82% 9.07% 11.13%10.19% 11.40% 6.93% 9.67%11.40% 11.14% 8.70% 11.91%\ndomains: Natural Language Processing (NLP), Computer\nVision (CV), and Others.\nFor the test set, we focus on the most recently published\nconference, NeurIPS 2025, to assess the model's ability\nto generate cutting-edge ideas. Specifically, we randomly\nsample 100 papers from each category (NLP, CV , Others),\ncreating a balanced evaluation benchmark of 300 papers.\nFor each anchor paper in both training and testing sets,\nwe randomly select 10 references from its bibliography.\nThese references serve as the sole input context, challenging\nthe models to generate high-quality scientific ideas based\nstrictly on this foundational "
+              }
+            ],
+            "text": "6.01 6.91 5.24 6.10 5.90 6.96 5.43 5.90\nAgentic-Ideation6.56\u2217 7.88\u2217 6.21\u2217 6.64\u2217 6.74\u2217 7.65\u2217 6.13\u2217 6.69\u2217 6.92\u2217 7.82\u2217 6.02\u2217 6.69\u2217 6.74\u2217 7.78\u2217 6.12\u2217 6.67\u2217\nImprovement\u219112.71% 10.52% 8.76% 10.48%9.42% 8.82% 9.07% 11.13%10.19% 11.40% 6.93% 9.67%11.40% 11.14% 8.70% 11.91%\ndomains: Natural Language Processing (NLP), Computer\nVision (CV), and Others.\nFor the test set, we focus on the most recently published\nconference, NeurIPS 2025, to assess the model's ability\nto generate cutting-edge ideas. Specifically, we randomly\nsample 100 papers from each category (NLP, CV , Others),\ncreating a balanced evaluation benchmark of 300 papers.\nFor each anchor paper in both training and testing sets,\nwe randomly select 10 references from its bibliography.\nThese references serve as the sole input context, challenging\nthe models to generate high-quality scientific ideas based\nstrictly on this foundational "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0068"
+        ],
+        "excerpt": "underlying LLM for all agents (Planner,\nController, and Tools) within the oracle-guided multi-agent\nsystem. For the Agentic training phase, we employ Qwen3-\n8B as the backbone for the target agentic LLM, which is fine-\ntuned on a dataset comprising 4,646 synthesized trajectories.\nPlease refer to Appendix A.2 for further implementation\ndetails.\nTo ensure a rigorous comparison, all baseline methods (Re-\nsearchAgent, SciPIP, SciMON, VirSci) are implemented us-\ning GPT-4o as the underlying engine, representing a strong\nclosed-source benchmark.\nGiven the complexity of scientific ideation, we adopt a\n\"Panel of LLM Judges\" approach to mitigate single-model\nbias. We employ four state-of-the-art models as evaluators:\nGPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, and\nQwen3-Max. The reported scores are the averaged results\nacross these four judges.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fe207db43ef95c2054b543d2061fcae020f5bff90cf332f96e0834c6be7cb6d2",
+            "evidence_id": "E29e68db66b54071c-B0068",
+            "pages": [
+              6
+            ],
+            "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 3537,
+                "page": 6,
+                "section": "Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis For Scientific Ideation Agents",
+                "section_index": 49,
+                "start": 2684,
+                "text": "underlying LLM for all agents (Planner,\nController, and Tools) within the oracle-guided multi-agent\nsystem. For the Agentic training phase, we employ Qwen3-\n8B as the backbone for the target agentic LLM, which is fine-\ntuned on a dataset comprising 4,646 synthesized trajectories.\nPlease refer to Appendix A.2 for further implementation\ndetails.\nTo ensure a rigorous comparison, all baseline methods (Re-\nsearchAgent, SciPIP, SciMON, VirSci) are implemented us-\ning GPT-4o as the underlying engine, representing a strong\nclosed-source benchmark.\nGiven the complexity of scientific ideation, we adopt a\n\"Panel of LLM Judges\" approach to mitigate single-model\nbias. We employ four state-of-the-art models as evaluators:\nGPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, and\nQwen3-Max. The reported scores are the averaged results\nacross these four judges."
+              }
+            ],
+            "text": "underlying LLM for all agents (Planner,\nController, and Tools) within the oracle-guided multi-agent\nsystem. For the Agentic training phase, we employ Qwen3-\n8B as the backbone for the target agentic LLM, which is fine-\ntuned on a dataset comprising 4,646 synthesized trajectories.\nPlease refer to Appendix A.2 for further implementation\ndetails.\nTo ensure a rigorous comparison, all baseline methods (Re-\nsearchAgent, SciPIP, SciMON, VirSci) are implemented us-\ning GPT-4o as the underlying engine, representing a strong\nclosed-source benchmark.\nGiven the complexity of scientific ideation, we adopt a\n\"Panel of LLM Judges\" approach to mitigate single-model\nbias. We employ four state-of-the-art models as evaluators:\nGPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, and\nQwen3-Max. The reported scores are the averaged results\nacross these four judges."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0069"
+        ],
+        "excerpt": "Table 1 presents the comprehensive evaluation results.\nAgentic-Ideation achieves state-of-the-art performance, con-\nsistently outperforming all baselines. Specifically, our\nmethod achieves an Overall score of 6.67, surpassing the\nbest-performing baseline by 11.91%. We observe significant\ngains across Novelty (+11.40%), Significance (+11.14%),\nand Feasibility (+8.70%), demonstrating the robustness of\nour approach across NLP, CV , and Other domains.\nComparison with Workflow-based Baselines.Compared\nto workflow-based systems (e.g., ResearchAgent, SciPIP),\nAgentic-Ideation exhibits superior adaptability. While base-\nlines are constrained by rigid, pre-defined execution loops,\nour agentic framework empowers the Controller to dynami-\ncally navigate the research space\u2014backtracking or reflect-\ning as needed. This autonomy allows the model to escape\nlocal optima that limit static workflows, ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Result",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "83b616750bc55f47f477884a35fc6dbc94b6740fc3cb2a2acf6bece93c373032",
+            "evidence_id": "E29e68db66b54071c-B0069",
+            "pages": [
+              6
+            ],
+            "section": "Main Result",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 6,
+                "section": "Main Result",
+                "section_index": 50,
+                "start": 0,
+                "text": "Table 1 presents the comprehensive evaluation results.\nAgentic-Ideation achieves state-of-the-art performance, con-\nsistently outperforming all baselines. Specifically, our\nmethod achieves an Overall score of 6.67, surpassing the\nbest-performing baseline by 11.91%. We observe significant\ngains across Novelty (+11.40%), Significance (+11.14%),\nand Feasibility (+8.70%), demonstrating the robustness of\nour approach across NLP, CV , and Other domains.\nComparison with Workflow-based Baselines.Compared\nto workflow-based systems (e.g., ResearchAgent, SciPIP),\nAgentic-Ideation exhibits superior adaptability. While base-\nlines are constrained by rigid, pre-defined execution loops,\nour agentic framework empowers the Controller to dynami-\ncally navigate the research space\u2014backtracking or reflect-\ning as needed. This autonomy allows the model to escape\nlocal optima that limit static workflows, "
+              }
+            ],
+            "text": "Table 1 presents the comprehensive evaluation results.\nAgentic-Ideation achieves state-of-the-art performance, con-\nsistently outperforming all baselines. Specifically, our\nmethod achieves an Overall score of 6.67, surpassing the\nbest-performing baseline by 11.91%. We observe significant\ngains across Novelty (+11.40%), Significance (+11.14%),\nand Feasibility (+8.70%), demonstrating the robustness of\nour approach across NLP, CV , and Other domains.\nComparison with Workflow-based Baselines.Compared\nto workflow-based systems (e.g., ResearchAgent, SciPIP),\nAgentic-Ideation exhibits superior adaptability. While base-\nlines are constrained by rigid, pre-defined execution loops,\nour agentic framework empowers the Controller to dynami-\ncally navigate the research space\u2014backtracking or reflect-\ning as needed. This autonomy allows the model to escape\nlocal optima that limit static workflows, "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0072"
+        ],
+        "excerpt": "Table 2 highlights the critical efficiency gap. Rejection\nSampling proves prohibitively inefficient, averaging 12\nattempts to harvest a single valid sample. This stems from\nthe vast, open-ended nature of scientific ideation, where\nunguided agents rarely converge spontaneously on the target\nidea, leading to massive computational waste. In contrast,\nAgentic-Ideation achieves optimal efficiency, requiring only\n1 rollout per sample. By leveraging our Oracle-Guided\nStrategy, the system uses \"foresight\" to ensure the necessary\nlogic and tool invocations are generated in a single pass.\nConsequently, every generated trajectory is valid, delivering\na >10\u00d7 improvement in synthesis efficiency compared to\nrejection sampling, effectively making large-scale agentic\ndata synthesis computationally feasible.\nTable 2.Comparison of the average number of rollout attempts\nrequired to synthesize a single ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficiency Of Data Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0cae32e97bcb418f97458d8e5900229fc1716d1414d67ef7ebc89b344f1ea63a",
+            "evidence_id": "E29e68db66b54071c-B0072",
+            "pages": [
+              7
+            ],
+            "section": "Efficiency Of Data Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 7,
+                "section": "Efficiency Of Data Synthesis",
+                "section_index": 52,
+                "start": 0,
+                "text": "Table 2 highlights the critical efficiency gap. Rejection\nSampling proves prohibitively inefficient, averaging 12\nattempts to harvest a single valid sample. This stems from\nthe vast, open-ended nature of scientific ideation, where\nunguided agents rarely converge spontaneously on the target\nidea, leading to massive computational waste. In contrast,\nAgentic-Ideation achieves optimal efficiency, requiring only\n1 rollout per sample. By leveraging our Oracle-Guided\nStrategy, the system uses \"foresight\" to ensure the necessary\nlogic and tool invocations are generated in a single pass.\nConsequently, every generated trajectory is valid, delivering\na >10\u00d7 improvement in synthesis efficiency compared to\nrejection sampling, effectively making large-scale agentic\ndata synthesis computationally feasible.\nTable 2.Comparison of the average number of rollout attempts\nrequired to synthesize a single "
+              }
+            ],
+            "text": "Table 2 highlights the critical efficiency gap. Rejection\nSampling proves prohibitively inefficient, averaging 12\nattempts to harvest a single valid sample. This stems from\nthe vast, open-ended nature of scientific ideation, where\nunguided agents rarely converge spontaneously on the target\nidea, leading to massive computational waste. In contrast,\nAgentic-Ideation achieves optimal efficiency, requiring only\n1 rollout per sample. By leveraging our Oracle-Guided\nStrategy, the system uses \"foresight\" to ensure the necessary\nlogic and tool invocations are generated in a single pass.\nConsequently, every generated trajectory is valid, delivering\na >10\u00d7 improvement in synthesis efficiency compared to\nrejection sampling, effectively making large-scale agentic\ndata synthesis computationally feasible.\nTable 2.Comparison of the average number of rollout attempts\nrequired to synthesize a single "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0073"
+        ],
+        "excerpt": "valid training sample. \"Roll out\ntimes\" denotes the mean number of generation trials needed to\nproduce one trajectory that passes the quality verification.\nMethod NLP CV Others Overall\nReject Sampling 14 9 13 12\nAgentic-Ideation 1 1 1 1",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Efficiency Of Data Synthesis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e1f9f39b3c2d68c9084555a11a883a0919c25fd56ed17c0c95f703bf92cb9185",
+            "evidence_id": "E29e68db66b54071c-B0073",
+            "pages": [
+              7
+            ],
+            "section": "Efficiency Of Data Synthesis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1132,
+                "page": 7,
+                "section": "Efficiency Of Data Synthesis",
+                "section_index": 52,
+                "start": 896,
+                "text": "valid training sample. \"Roll out\ntimes\" denotes the mean number of generation trials needed to\nproduce one trajectory that passes the quality verification.\nMethod NLP CV Others Overall\nReject Sampling 14 9 13 12\nAgentic-Ideation 1 1 1 1"
+              }
+            ],
+            "text": "valid training sample. \"Roll out\ntimes\" denotes the mean number of generation trials needed to\nproduce one trajectory that passes the quality verification.\nMethod NLP CV Others Overall\nReject Sampling 14 9 13 12\nAgentic-Ideation 1 1 1 1"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0074"
+        ],
+        "excerpt": "Table 3 investigates the individual contribution of each tool\nwithin our framework. The results unequivocally demon-\nstrate that removing any single tool leads to a consistent\ndegradation in performance across all metrics. This uni-\nversal decline confirms the holistic nature of our Agentic\nTool Space, where both external information acquisition\n(e.g., retrieval tools) and internal cognitive reasoning (e.g.,\nreflection and gap analysis) are indispensable components.\nThe synergy between these tools ensures that the agent can\neffectively bridge the gap between raw data and high-level\nscientific conceptualization.\nTable 3.Ablation Study on the contribution of individual tools\nwithin the Agentic Tool Space.\nTools Nov. Sig. Fea. Overall\nw/o Search 6.03 7.21 6.04 5.99\nw/o Get_References 6.34 7.29 5.98 6.32\nw/o Get_Cited 6.57 7.66 6.07 6.38\nw/o Analyse_Gap 5.86 7.26 5.99 6.07\nw/o Reflection ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "152c1d440500b97c101beb523581ef9827518be18fdf816700c4e114e2861bf3",
+            "evidence_id": "E29e68db66b54071c-B0074",
+            "pages": [
+              7
+            ],
+            "section": "Ablation Study",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 7,
+                "section": "Ablation Study",
+                "section_index": 53,
+                "start": 0,
+                "text": "Table 3 investigates the individual contribution of each tool\nwithin our framework. The results unequivocally demon-\nstrate that removing any single tool leads to a consistent\ndegradation in performance across all metrics. This uni-\nversal decline confirms the holistic nature of our Agentic\nTool Space, where both external information acquisition\n(e.g., retrieval tools) and internal cognitive reasoning (e.g.,\nreflection and gap analysis) are indispensable components.\nThe synergy between these tools ensures that the agent can\neffectively bridge the gap between raw data and high-level\nscientific conceptualization.\nTable 3.Ablation Study on the contribution of individual tools\nwithin the Agentic Tool Space.\nTools Nov. Sig. Fea. Overall\nw/o Search 6.03 7.21 6.04 5.99\nw/o Get_References 6.34 7.29 5.98 6.32\nw/o Get_Cited 6.57 7.66 6.07 6.38\nw/o Analyse_Gap 5.86 7.26 5.99 6.07\nw/o Reflection "
+              }
+            ],
+            "text": "Table 3 investigates the individual contribution of each tool\nwithin our framework. The results unequivocally demon-\nstrate that removing any single tool leads to a consistent\ndegradation in performance across all metrics. This uni-\nversal decline confirms the holistic nature of our Agentic\nTool Space, where both external information acquisition\n(e.g., retrieval tools) and internal cognitive reasoning (e.g.,\nreflection and gap analysis) are indispensable components.\nThe synergy between these tools ensures that the agent can\neffectively bridge the gap between raw data and high-level\nscientific conceptualization.\nTable 3.Ablation Study on the contribution of individual tools\nwithin the Agentic Tool Space.\nTools Nov. Sig. Fea. Overall\nw/o Search 6.03 7.21 6.04 5.99\nw/o Get_References 6.34 7.29 5.98 6.32\nw/o Get_Cited 6.57 7.66 6.07 6.38\nw/o Analyse_Gap 5.86 7.26 5.99 6.07\nw/o Reflection "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0076"
+        ],
+        "excerpt": "To further validate the practical value and reliability of our\nmethod, we conducted a rigorous human evaluation. We\nadopted a double-blind protocol to eliminate potential bias.\nExpert evaluators were presented with anonymized ideas\ngenerated by different models in a randomized order and\nwere asked to score them based on four criteria: Novelty,\nSignificance, Feasibility, and Overall quality.\nTable 4.Human evaluation results comparing Agentic-Ideation\nagainst baselines.\nMethods Nov. Sig. Fea. Overall\nResearchAgent 5.83 6.41 5.41 5.57\nSciPIP 6.02 6.49 5.57 5.87\nScimon 6.07 6.68 5.55 5.76\nVirsci 5.82 6.38 5.43 5.62\nQwen3-8B 5.96 6.57 5.42 5.55\nAgentic-Ideation6.71 7.50 6.05 6.45\nImprovement\u219110.54% 12.28% 8.62% 9.88%\nAs shown in Table 4, the human evaluation results align con-\nsistently with the automated metrics reported in the main ex-\nperiment. Agentic-Ideation achieves superior ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "19975da0fff52de844f2353ec88b79d0101ccb65a6fbb970d0f90f82e2175e22",
+            "evidence_id": "E29e68db66b54071c-B0076",
+            "pages": [
+              7
+            ],
+            "section": "Human Study",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 7,
+                "section": "Human Study",
+                "section_index": 54,
+                "start": 0,
+                "text": "To further validate the practical value and reliability of our\nmethod, we conducted a rigorous human evaluation. We\nadopted a double-blind protocol to eliminate potential bias.\nExpert evaluators were presented with anonymized ideas\ngenerated by different models in a randomized order and\nwere asked to score them based on four criteria: Novelty,\nSignificance, Feasibility, and Overall quality.\nTable 4.Human evaluation results comparing Agentic-Ideation\nagainst baselines.\nMethods Nov. Sig. Fea. Overall\nResearchAgent 5.83 6.41 5.41 5.57\nSciPIP 6.02 6.49 5.57 5.87\nScimon 6.07 6.68 5.55 5.76\nVirsci 5.82 6.38 5.43 5.62\nQwen3-8B 5.96 6.57 5.42 5.55\nAgentic-Ideation6.71 7.50 6.05 6.45\nImprovement\u219110.54% 12.28% 8.62% 9.88%\nAs shown in Table 4, the human evaluation results align con-\nsistently with the automated metrics reported in the main ex-\nperiment. Agentic-Ideation achieves superior "
+              }
+            ],
+            "text": "To further validate the practical value and reliability of our\nmethod, we conducted a rigorous human evaluation. We\nadopted a double-blind protocol to eliminate potential bias.\nExpert evaluators were presented with anonymized ideas\ngenerated by different models in a randomized order and\nwere asked to score them based on four criteria: Novelty,\nSignificance, Feasibility, and Overall quality.\nTable 4.Human evaluation results comparing Agentic-Ideation\nagainst baselines.\nMethods Nov. Sig. Fea. Overall\nResearchAgent 5.83 6.41 5.41 5.57\nSciPIP 6.02 6.49 5.57 5.87\nScimon 6.07 6.68 5.55 5.76\nVirsci 5.82 6.38 5.43 5.62\nQwen3-8B 5.96 6.57 5.42 5.55\nAgentic-Ideation6.71 7.50 6.05 6.45\nImprovement\u219110.54% 12.28% 8.62% 9.88%\nAs shown in Table 4, the human evaluation results align con-\nsistently with the automated metrics reported in the main ex-\nperiment. Agentic-Ideation achieves superior "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0077"
+        ],
+        "excerpt": "performance\nacross all dimensions, securing the highest Overall score\nof 6.45, which surpasses the strongest baseline (SciPIP) by\n9.88%. Notably, the most substantial improvement is ob-\nserved in Significance (+12.28%), suggesting that human\nexperts particularly value the logical depth and theoretical\nvalue derived from our agent's grounded reasoning process.\nFurthermore, the +8.62% gain in Feasibility confirms that\nthe active usage of retrieval tools effectively reduces hallu-\ncinations, producing ideas that are not only innovative but\nalso practically viable.\nTo intuitively demonstrate the working mechanism of\nAgentic-Ideation, we present a representative research tra-\njectory in Figure 4. In this case, the agent explores the\ndomain of \"Diffusion Models\" to address the problem of\nerror compounding.\nThe trajectory illustrated in Figure 4 offers a compelling\nvalidation of ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Human Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "fbb70fa43d303d58a1c983c7761649956d60c1cac0c250a307062ebe0b9fb432",
+            "evidence_id": "E29e68db66b54071c-B0077",
+            "pages": [
+              7
+            ],
+            "section": "Human Study",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1775,
+                "page": 7,
+                "section": "Human Study",
+                "section_index": 54,
+                "start": 890,
+                "text": "performance\nacross all dimensions, securing the highest Overall score\nof 6.45, which surpasses the strongest baseline (SciPIP) by\n9.88%. Notably, the most substantial improvement is ob-\nserved in Significance (+12.28%), suggesting that human\nexperts particularly value the logical depth and theoretical\nvalue derived from our agent's grounded reasoning process.\nFurthermore, the +8.62% gain in Feasibility confirms that\nthe active usage of retrieval tools effectively reduces hallu-\ncinations, producing ideas that are not only innovative but\nalso practically viable.\nTo intuitively demonstrate the working mechanism of\nAgentic-Ideation, we present a representative research tra-\njectory in Figure 4. In this case, the agent explores the\ndomain of \"Diffusion Models\" to address the problem of\nerror compounding.\nThe trajectory illustrated in Figure 4 offers a compelling\nvalidation of "
+              }
+            ],
+            "text": "performance\nacross all dimensions, securing the highest Overall score\nof 6.45, which surpasses the strongest baseline (SciPIP) by\n9.88%. Notably, the most substantial improvement is ob-\nserved in Significance (+12.28%), suggesting that human\nexperts particularly value the logical depth and theoretical\nvalue derived from our agent's grounded reasoning process.\nFurthermore, the +8.62% gain in Feasibility confirms that\nthe active usage of retrieval tools effectively reduces hallu-\ncinations, producing ideas that are not only innovative but\nalso practically viable.\nTo intuitively demonstrate the working mechanism of\nAgentic-Ideation, we present a representative research tra-\njectory in Figure 4. In this case, the agent explores the\ndomain of \"Diffusion Models\" to address the problem of\nerror compounding.\nThe trajectory illustrated in Figure 4 offers a compelling\nvalidation of "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E29e68db66b54071c-B0106"
+        ],
+        "excerpt": "Despite the promising results, we acknowledge two primary\nlimitations. First, our experiments rely on the Qwen3-8B\nbackbone; while efficient, its reasoning depth and world\nknowledge are naturally constrained compared to larger-\nscale foundation models, suggesting that scaling up could\nfurther enhance idea complexity. Second, the current agen-\ntic tool space is predominantly retrieval-oriented, focusing\non information acquisition rather than executable actions.\nFuture work should integrate \"active\" tools, such as Python\ncode execution or domain-specific simulators, to allow the\nagent to perform preliminary validation of its proposed\nideas.\n12",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "286b7909769878a0f835e8bd6344af37f96726432dd2d218f418237eeb5da176",
+            "evidence_id": "E29e68db66b54071c-B0106",
+            "pages": [
+              12
+            ],
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 649,
+                "page": 12,
+                "section": "Appendix: Limitations",
+                "section_index": 70,
+                "start": 0,
+                "text": "Despite the promising results, we acknowledge two primary\nlimitations. First, our experiments rely on the Qwen3-8B\nbackbone; while efficient, its reasoning depth and world\nknowledge are naturally constrained compared to larger-\nscale foundation models, suggesting that scaling up could\nfurther enhance idea complexity. Second, the current agen-\ntic tool space is predominantly retrieval-oriented, focusing\non information acquisition rather than executable actions.\nFuture work should integrate \"active\" tools, such as Python\ncode execution or domain-specific simulators, to allow the\nagent to perform preliminary validation of its proposed\nideas.\n12"
+              }
+            ],
+            "text": "Despite the promising results, we acknowledge two primary\nlimitations. First, our experiments rely on the Qwen3-8B\nbackbone; while efficient, its reasoning depth and world\nknowledge are naturally constrained compared to larger-\nscale foundation models, suggesting that scaling up could\nfurther enhance idea complexity. Second, the current agen-\ntic tool space is predominantly retrieval-oriented, focusing\non information acquisition rather than executable actions.\nFuture work should integrate \"active\" tools, such as Python\ncode execution or domain-specific simulators, to allow the\nagent to perform preliminary validation of its proposed\nideas.\n12"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2606.31229",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "openalex:W7167154310",
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "A double-blind human expert evaluation scored anonymized, randomized outputs on the same four criteria and found consistent gains favoring Agentic-Ideation.",
+          "final_evaluation_signal": "Headline outcomes are Likert ratings from a separate panel of four LLM judges across Novelty, Significance, Feasibility, and Overall.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Oracle-guided trajectory synthesis uses a reference anchor idea to direct a multi-agent system, and the resulting trajectories are filtered by semantic recovery of that reference idea before SFT.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E29e68db66b54071c-B0002",
+          "E29e68db66b54071c-B0008",
+          "E29e68db66b54071c-B0009",
+          "E29e68db66b54071c-B0055",
+          "E29e68db66b54071c-B0056",
+          "E29e68db66b54071c-B0058",
+          "E29e68db66b54071c-B0060",
+          "E29e68db66b54071c-B0062",
+          "E29e68db66b54071c-B0063",
+          "E29e68db66b54071c-B0066",
+          "E29e68db66b54071c-B0068",
+          "E29e68db66b54071c-B0069",
+          "E29e68db66b54071c-B0072",
+          "E29e68db66b54071c-B0073",
+          "E29e68db66b54071c-B0074",
+          "E29e68db66b54071c-B0076",
+          "E29e68db66b54071c-B0077",
+          "E29e68db66b54071c-B0106"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "48ec3219304e468acd4b41e2c87adc5ac39194d1161ef19a16331ee94bc1a547"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "openalex:W7167154310",
+        "claim_evidence_alignment": "Claims regarding superior idea quality metrics (+11.91% overall LLM-judged score and +9.88% human-evaluated score over workflow baselines) and high synthesis sample efficiency (>10x reduction in rollout attempts) are well-supported by quantitative experimental results.",
+        "context_id": "29e68db66b54071c6bcdb6cfc4aa1807b0fddff996aeb4abbfc6544df85378b5",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation includes automated scoring across three paper domains by a panel of four advanced LLM judges (GPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, Qwen3-Max), comparative rollout efficiency measurements against rejection sampling, tool ablations, and a double-blind human expert study.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "A double-blind human evaluation by domain experts was conducted across identical criteria (Novelty, Significance, Feasibility, Overall) on anonymized, randomized model outputs.",
+          "final_evaluation_signal": "Averaged Likert ratings across Novelty, Significance, Feasibility, and Overall from a distinct panel of four LLM judges (GPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, Qwen3-Max).",
+          "independent_corroboration": "present",
+          "optimization_signal": "Oracle-guided multi-agent trajectory synthesis powered by Qwen3-235B-A22B-Instruct, filtering trajectories based on semantic recovery of the reference anchor idea followed by SFT.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "E29e68db66b54071c-B0003",
+          "E29e68db66b54071c-B0055",
+          "E29e68db66b54071c-B0056",
+          "E29e68db66b54071c-B0058",
+          "E29e68db66b54071c-B0060",
+          "E29e68db66b54071c-B0062",
+          "E29e68db66b54071c-B0068",
+          "E29e68db66b54071c-B0069",
+          "E29e68db66b54071c-B0072",
+          "E29e68db66b54071c-B0073",
+          "E29e68db66b54071c-B0074",
+          "E29e68db66b54071c-B0076",
+          "E29e68db66b54071c-B0077",
+          "E29e68db66b54071c-B0106"
+        ],
+        "limitations": "The authors clearly acknowledge key limitations, including reliance on an 8B backbone model and restricting the tool space to retrieval and cognitive actions rather than execution environments or code simulators.",
+        "method_assessment": "The methodology is clearly documented, detailing the multi-agent trajectory generation using reference paper guidance via dual private/public thoughts, followed by supervised fine-tuning with masked tool results on a 8B model.",
+        "quality_rationale": "The contribution is novel, technically sound, and evaluated thoroughly with robust baselines, ablation studies, and independent corroboration from both multi-model LLM ensembles and human experts.",
+        "scoped_contribution": "The paper introduces Agentic-Ideation, an oracle-guided multi-agent data synthesis framework and fine-tuning strategy to train an autonomous scientific ideation agent using external search/citation tools and internal cognitive reasoning actions.",
+        "source_content_hash": "48ec3219304e468acd4b41e2c87adc5ac39194d1161ef19a16331ee94bc1a547"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The contribution is novel, technically sound, and evaluated thoroughly with robust baselines, ablation studies, and independent corroboration from both multi-model LLM ensembles and human experts.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "48ec3219304e468acd4b41e2c87adc5ac39194d1161ef19a16331ee94bc1a547",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors clearly acknowledge key limitations, including reliance on an 8B backbone model and restricting the tool space to retrieval and cognitive actions rather than execution environments or code simulators."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +2272,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

@@ -27,7 +27,7 @@
   "last_seen_date": "2026-09-10",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-02 11:25:01",
   "notified_date": "2026-09-02",
@@ -38,7 +38,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-02 11:23:13",
-    "generated_at": "2026-09-18 18:46:09",
+    "generated_at": "2026-09-19 07:47:30",
     "last_seen_at": "2026-09-10 11:25:36",
     "metadata_sources": [
       "openalex",
@@ -107,36 +107,1907 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-19T07:36:50.620019+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a sound conceptual and empirical contribution to multi-agent LLM orchestration, thoroughly supported by baseline comparisons, ablation studies, and robust evaluation across multiple domains and seeds.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 71339,
+      "assessment_input_sha256": "1119404cd48c0f7305796a08367c925bb56e64b6411eedec1d277eca649ae9f8",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.00237",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 69474,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 68704,
+      "evidence_block_count": 99,
+      "evidence_context_characters": 80773,
+      "evidence_context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+      "evidence_context_sha256": "7ed4a088242e442007bbabb74e187fff94d9288c5382caedcc7a20155dc3ec7e",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 69508,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "extracted_pages": 18,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "d886bf6edd8f87b44952bdcc75450ec918a9e87e606414c0d1dff797d0922613",
+        "source_url": "https://arxiv.org/pdf/2609.00237",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 69474,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "section_roles_detected": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "body",
+        "conclusion",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Learning What To Retain: Gated-Memory Routing For Efficient",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 181,
+          "supplied_characters": 181
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1561,
+          "supplied_characters": 1561
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2348,
+          "supplied_characters": 2348
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 2858,
+          "supplied_characters": 2858
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 558,
+          "supplied_characters": 558
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 4166,
+          "supplied_characters": 4166
+        },
+        {
+          "heading": "Problem Definition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 6,
+          "source_characters": 492,
+          "supplied_characters": 492
+        },
+        {
+          "heading": "Problem Definition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 7,
+          "source_characters": 1650,
+          "supplied_characters": 1650
+        },
+        {
+          "heading": "Framework Overview",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 821,
+          "supplied_characters": 821
+        },
+        {
+          "heading": "History-Aware Role Allocator",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 1132,
+          "supplied_characters": 1132
+        },
+        {
+          "heading": "Llm Router",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 981,
+          "supplied_characters": 981
+        },
+        {
+          "heading": "Retrieval Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1452,
+          "supplied_characters": 1452
+        },
+        {
+          "heading": "Memory Write Gate",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 1742,
+          "supplied_characters": 1742
+        },
+        {
+          "heading": "Adaptive Halting Controller",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 95,
+          "supplied_characters": 95
+        },
+        {
+          "heading": "Adaptive Halting Controller",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 986,
+          "supplied_characters": 986
+        },
+        {
+          "heading": "Optimization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 1993,
+          "supplied_characters": 1993
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 1255,
+          "supplied_characters": 1255
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 793,
+          "supplied_characters": 793
+        },
+        {
+          "heading": "Performance Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 2519,
+          "supplied_characters": 2519
+        },
+        {
+          "heading": "Cost Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 952,
+          "supplied_characters": 952
+        },
+        {
+          "heading": "Cost Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 20,
+          "source_characters": 1918,
+          "supplied_characters": 1918
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 2372,
+          "supplied_characters": 2372
+        },
+        {
+          "heading": "Ablation Study",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 309,
+          "supplied_characters": 309
+        },
+        {
+          "heading": "Effect Of The Depth Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 584,
+          "supplied_characters": 584
+        },
+        {
+          "heading": "Routing-Paradigm Comparison",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1469,
+          "supplied_characters": 1469
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "conclusion",
+          "section_index": 25,
+          "source_characters": 907,
+          "supplied_characters": 907
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 26,
+          "source_characters": 616,
+          "supplied_characters": 616
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 387,
+          "supplied_characters": 387
+        },
+        {
+          "heading": "Of The 21St Annual International Acm Sigir Confer-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 50,
+          "supplied_characters": 50
+        },
+        {
+          "heading": "Ence On Research And Development In Information",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 192,
+          "supplied_characters": 192
+        },
+        {
+          "heading": "Frugalgpt: How To Use Large Language Models While",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 628,
+          "supplied_characters": 628
+        },
+        {
+          "heading": "Router By Dual Contrastive Learning For Assembling",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 100,
+          "supplied_characters": 100
+        },
+        {
+          "heading": "Conference On Neural Information Processing Sys-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 345,
+          "supplied_characters": 345
+        },
+        {
+          "heading": "The Twelfth International Conference On Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 363,
+          "supplied_characters": 363
+        },
+        {
+          "heading": "Thirty-Ninth Annual Conference On Neural Informa-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 169,
+          "supplied_characters": 169
+        },
+        {
+          "heading": "Factuality And Reasoning In Language Models Through",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 1631,
+          "supplied_characters": 1631
+        },
+        {
+          "heading": "Fifth Conference On Neural Information Processing",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 392,
+          "supplied_characters": 392
+        },
+        {
+          "heading": "Inthe Twelfth International Conference On Learning",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 779,
+          "supplied_characters": 779
+        },
+        {
+          "heading": "Camel: Communicative Agents For \"Mind\" Explo-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 95,
+          "supplied_characters": 95
+        },
+        {
+          "heading": "Seventh Conference On Neural Information Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 62,
+          "supplied_characters": 62
+        },
+        {
+          "heading": "Seventh Conference On Neural Information Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 5069,
+          "supplied_characters": 5069
+        },
+        {
+          "heading": "Seventh Conference On Neural Information Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 1809,
+          "supplied_characters": 1809
+        },
+        {
+          "heading": "Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 72,
+          "supplied_characters": 72
+        },
+        {
+          "heading": "Representations, Encoders, And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 3415,
+          "supplied_characters": 3415
+        },
+        {
+          "heading": "Cost Calculation For Open-Weight",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 816,
+          "supplied_characters": 816
+        },
+        {
+          "heading": "Cost Calculation For Open-Weight",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 1142,
+          "supplied_characters": 1142
+        },
+        {
+          "heading": "Cost Calculation For Open-Weight",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 1852,
+          "supplied_characters": 1852
+        },
+        {
+          "heading": "Per-Dataset Accuracy And Cost",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 891,
+          "supplied_characters": 891
+        },
+        {
+          "heading": "Variance Across Training Seeds",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "methods",
+          "section_index": 48,
+          "source_characters": 691,
+          "supplied_characters": 691
+        },
+        {
+          "heading": "Gate Behavior At Test Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 49,
+          "source_characters": 455,
+          "supplied_characters": 455
+        },
+        {
+          "heading": "Gate Behavior At Test Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 818,
+          "supplied_characters": 818
+        },
+        {
+          "heading": "Halting And Training-Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "methods",
+          "section_index": 51,
+          "source_characters": 256,
+          "supplied_characters": 256
+        },
+        {
+          "heading": "Agent Role Profiles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 2551,
+          "supplied_characters": 2551
+        },
+        {
+          "heading": "Method Gsm-Hard Math Mbpp Humaneval Mmlu-Pro Overall",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "methods",
+          "section_index": 53,
+          "source_characters": 3290,
+          "supplied_characters": 3290
+        },
+        {
+          "heading": "Method Gsm-Hard Math Mbpp Humaneval Mmlu-Pro Overall",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "methods",
+          "section_index": 54,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Aggregator Prompt",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 1915,
+          "supplied_characters": 1915
+        },
+        {
+          "heading": "Backbone Llm Profiles",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 1662,
+          "supplied_characters": 1662
+        }
+      ],
+      "selected_characters": 68704,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "selected_sections": [
+        {
+          "characters": 181,
+          "heading": "Learning What To Retain: Gated-Memory Routing For Efficient",
+          "page": 1
+        },
+        {
+          "characters": 1561,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 2348,
+          "heading": "Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2858,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 558,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 4166,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 492,
+          "heading": "Problem Definition",
+          "page": 3
+        },
+        {
+          "characters": 1650,
+          "heading": "Problem Definition",
+          "page": 4
+        },
+        {
+          "characters": 821,
+          "heading": "Framework Overview",
+          "page": 4
+        },
+        {
+          "characters": 1132,
+          "heading": "History-Aware Role Allocator",
+          "page": 4
+        },
+        {
+          "characters": 981,
+          "heading": "Llm Router",
+          "page": 5
+        },
+        {
+          "characters": 1452,
+          "heading": "Retrieval Gate",
+          "page": 5
+        },
+        {
+          "characters": 1742,
+          "heading": "Memory Write Gate",
+          "page": 5
+        },
+        {
+          "characters": 95,
+          "heading": "Adaptive Halting Controller",
+          "page": 5
+        },
+        {
+          "characters": 986,
+          "heading": "Adaptive Halting Controller",
+          "page": 6
+        },
+        {
+          "characters": 1993,
+          "heading": "Optimization",
+          "page": 6
+        },
+        {
+          "characters": 1255,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 793,
+          "heading": "Implementation Details",
+          "page": 7
+        },
+        {
+          "characters": 2519,
+          "heading": "Performance Analysis",
+          "page": 7
+        },
+        {
+          "characters": 952,
+          "heading": "Cost Analysis",
+          "page": 7
+        },
+        {
+          "characters": 1918,
+          "heading": "Cost Analysis",
+          "page": 8
+        },
+        {
+          "characters": 2372,
+          "heading": "Ablation Study",
+          "page": 8
+        },
+        {
+          "characters": 309,
+          "heading": "Ablation Study",
+          "page": 9
+        },
+        {
+          "characters": 584,
+          "heading": "Effect Of The Depth Budget",
+          "page": 9
+        },
+        {
+          "characters": 1469,
+          "heading": "Routing-Paradigm Comparison",
+          "page": 9
+        },
+        {
+          "characters": 907,
+          "heading": "Conclusion",
+          "page": 9
+        },
+        {
+          "characters": 616,
+          "heading": "Limitations",
+          "page": 9
+        },
+        {
+          "characters": 387,
+          "heading": "Unclassified body after references",
+          "page": 10
+        },
+        {
+          "characters": 50,
+          "heading": "Of The 21St Annual International Acm Sigir Confer-",
+          "page": 10
+        },
+        {
+          "characters": 192,
+          "heading": "Ence On Research And Development In Information",
+          "page": 10
+        },
+        {
+          "characters": 628,
+          "heading": "Frugalgpt: How To Use Large Language Models While",
+          "page": 10
+        },
+        {
+          "characters": 100,
+          "heading": "Router By Dual Contrastive Learning For Assembling",
+          "page": 10
+        },
+        {
+          "characters": 345,
+          "heading": "Conference On Neural Information Processing Sys-",
+          "page": 10
+        },
+        {
+          "characters": 363,
+          "heading": "The Twelfth International Conference On Learning",
+          "page": 10
+        },
+        {
+          "characters": 169,
+          "heading": "Thirty-Ninth Annual Conference On Neural Informa-",
+          "page": 10
+        },
+        {
+          "characters": 1631,
+          "heading": "Factuality And Reasoning In Language Models Through",
+          "page": 10
+        },
+        {
+          "characters": 392,
+          "heading": "Fifth Conference On Neural Information Processing",
+          "page": 10
+        },
+        {
+          "characters": 779,
+          "heading": "Inthe Twelfth International Conference On Learning",
+          "page": 10
+        },
+        {
+          "characters": 95,
+          "heading": "Camel: Communicative Agents For \"Mind\" Explo-",
+          "page": 10
+        },
+        {
+          "characters": 62,
+          "heading": "Seventh Conference On Neural Information Process-",
+          "page": 10
+        },
+        {
+          "characters": 5069,
+          "heading": "Seventh Conference On Neural Information Process-",
+          "page": 11
+        },
+        {
+          "characters": 1809,
+          "heading": "Seventh Conference On Neural Information Process-",
+          "page": 12
+        },
+        {
+          "characters": 72,
+          "heading": "Algorithm",
+          "page": 13
+        },
+        {
+          "characters": 3415,
+          "heading": "Representations, Encoders, And",
+          "page": 13
+        },
+        {
+          "characters": 816,
+          "heading": "Cost Calculation For Open-Weight",
+          "page": 13
+        },
+        {
+          "characters": 1142,
+          "heading": "Cost Calculation For Open-Weight",
+          "page": 14
+        },
+        {
+          "characters": 1852,
+          "heading": "Cost Calculation For Open-Weight",
+          "page": 15
+        },
+        {
+          "characters": 891,
+          "heading": "Per-Dataset Accuracy And Cost",
+          "page": 15
+        },
+        {
+          "characters": 691,
+          "heading": "Variance Across Training Seeds",
+          "page": 15
+        },
+        {
+          "characters": 455,
+          "heading": "Gate Behavior At Test Time",
+          "page": 15
+        },
+        {
+          "characters": 818,
+          "heading": "Gate Behavior At Test Time",
+          "page": 16
+        },
+        {
+          "characters": 256,
+          "heading": "Halting And Training-Time",
+          "page": 16
+        },
+        {
+          "characters": 2551,
+          "heading": "Agent Role Profiles",
+          "page": 16
+        },
+        {
+          "characters": 3290,
+          "heading": "Method Gsm-Hard Math Mbpp Humaneval Mmlu-Pro Overall",
+          "page": 17
+        },
+        {
+          "characters": 97,
+          "heading": "Method Gsm-Hard Math Mbpp Humaneval Mmlu-Pro Overall",
+          "page": 18
+        },
+        {
+          "characters": 1915,
+          "heading": "Aggregator Prompt",
+          "page": 18
+        },
+        {
+          "characters": 1662,
+          "heading": "Backbone Llm Profiles",
+          "page": 18
+        }
+      ],
+      "selected_text_sha256": "1119404cd48c0f7305796a08367c925bb56e64b6411eedec1d277eca649ae9f8",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "d886bf6edd8f87b44952bdcc75450ec918a9e87e606414c0d1dff797d0922613",
+      "source_pages": 18,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0008"
+        ],
+        "excerpt": "introduceGated-\nMemory Routing, a framework in which a learned,\ngated execution memory serves as the shared state\nthat every routing decision conditions on. A single\njointly trained router acts on it through comple-\nmentary components: aHistory-Aware Role Allo-\ncatorand anLLM Routerchoose the agent and\nits backbone, aRetrieval Gatesurfaces a compact,\nstep-relevant subset of memory, aMemory Write\nGatecommits only high-utility, non-redundant rea-\nsoning steps, and anAdaptive Halting Controller\ndecides when the gated state is sufficient to stop.\nBecause routing is driven by this gated memory\nrather than the raw history, the interaction structure\nemerges dynamically during execution.\nContributions.\n\u2022 Routing over a learned gated memory.We\nrecast multi-agent orchestration as routing\nover a learned, selective execution memory:\neach step conditions on a filtered task-relevant\nstate rather than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b5463e526ce72074255848c7f70553de69a1709979943c544b0092847d12b892",
+            "evidence_id": "Ed5cda2ea18429d40-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2137,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1237,
+                "text": "introduceGated-\nMemory Routing, a framework in which a learned,\ngated execution memory serves as the shared state\nthat every routing decision conditions on. A single\njointly trained router acts on it through comple-\nmentary components: aHistory-Aware Role Allo-\ncatorand anLLM Routerchoose the agent and\nits backbone, aRetrieval Gatesurfaces a compact,\nstep-relevant subset of memory, aMemory Write\nGatecommits only high-utility, non-redundant rea-\nsoning steps, and anAdaptive Halting Controller\ndecides when the gated state is sufficient to stop.\nBecause routing is driven by this gated memory\nrather than the raw history, the interaction structure\nemerges dynamically during execution.\nContributions.\n\u2022 Routing over a learned gated memory.We\nrecast multi-agent orchestration as routing\nover a learned, selective execution memory:\neach step conditions on a filtered task-relevant\nstate rather than "
+              }
+            ],
+            "text": "introduceGated-\nMemory Routing, a framework in which a learned,\ngated execution memory serves as the shared state\nthat every routing decision conditions on. A single\njointly trained router acts on it through comple-\nmentary components: aHistory-Aware Role Allo-\ncatorand anLLM Routerchoose the agent and\nits backbone, aRetrieval Gatesurfaces a compact,\nstep-relevant subset of memory, aMemory Write\nGatecommits only high-utility, non-redundant rea-\nsoning steps, and anAdaptive Halting Controller\ndecides when the gated state is sufficient to stop.\nBecause routing is driven by this gated memory\nrather than the raw history, the interaction structure\nemerges dynamically during execution.\nContributions.\n\u2022 Routing over a learned gated memory.We\nrecast multi-agent orchestration as routing\nover a learned, selective execution memory:\neach step conditions on a filtered task-relevant\nstate rather than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0009"
+        ],
+        "excerpt": "the query alone (query-only)\nor the raw execution history (full-history).\n\u2022 Memory curation and budget-aware halt-\ning.Learned write and retrieval gates control\nwhat memory stores and surfaces, keeping the\nstate compact and high-signal, while a budget-\naware halting policy consumes that clean state\nto control reasoning depth and thus cost, all\ntrained end-to-end with role and backbone\nrouting under a group-relative, cost-aware ob-\njective.\n\u2022 Empirical effectiveness and efficiency.\nAcross MATH, GSM-Hard, MBPP, Hu-\nmanEval, and MMLU-Pro, Gated-Memory\nRouting attains the best average accuracy, ex-\nceeding the strongest baseline by 2.44 points\nwhile cutting HumanEval inference cost by\n31.9%relative to that baseline.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ef228bfc26b7a5a4ab7ea0dd681bc7f5092d7507810befb616dd96ae4bc4c759",
+            "evidence_id": "Ed5cda2ea18429d40-B0009",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2858,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 2137,
+                "text": "the query alone (query-only)\nor the raw execution history (full-history).\n\u2022 Memory curation and budget-aware halt-\ning.Learned write and retrieval gates control\nwhat memory stores and surfaces, keeping the\nstate compact and high-signal, while a budget-\naware halting policy consumes that clean state\nto control reasoning depth and thus cost, all\ntrained end-to-end with role and backbone\nrouting under a group-relative, cost-aware ob-\njective.\n\u2022 Empirical effectiveness and efficiency.\nAcross MATH, GSM-Hard, MBPP, Hu-\nmanEval, and MMLU-Pro, Gated-Memory\nRouting attains the best average accuracy, ex-\nceeding the strongest baseline by 2.44 points\nwhile cutting HumanEval inference cost by\n31.9%relative to that baseline."
+              }
+            ],
+            "text": "the query alone (query-only)\nor the raw execution history (full-history).\n\u2022 Memory curation and budget-aware halt-\ning.Learned write and retrieval gates control\nwhat memory stores and surfaces, keeping the\nstate compact and high-signal, while a budget-\naware halting policy consumes that clean state\nto control reasoning depth and thus cost, all\ntrained end-to-end with role and backbone\nrouting under a group-relative, cost-aware ob-\njective.\n\u2022 Empirical effectiveness and efficiency.\nAcross MATH, GSM-Hard, MBPP, Hu-\nmanEval, and MMLU-Pro, Gated-Memory\nRouting attains the best average accuracy, ex-\nceeding the strongest baseline by 2.44 points\nwhile cutting HumanEval inference cost by\n31.9%relative to that baseline."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0016"
+        ],
+        "excerpt": "We formalize gated-memory routing as a sequential\ndecision process over a set of agent specializations\nR, a pool of heterogeneous LLM backbones M,\nand an execution memory St maintained within a\nsingle query execution. At step t, the observable\nstate is st = (q, St\u22121), where St\u22121 holds the re-\ntained execution records from prior steps. The sys-\ntem selects a specialization rt \u2208 Rand a backbone\nmt \u2208 M, retrieves a context subset Ct \u2286S t\u22121,\ngenerates a reasoning step yt, and decides whether\nHistory-aware\nRole Allocator\nRetrieval \nGate\nRole r2 LLM m2 Resp y2\nExecution Memory S\nQuery q\nAdaptive\nHalting\nController\nLLM Router\nAggregator\nFinal Answer y\nHalt\n1\n2\n3 4\nAgent\nRetrieved \ncontext Ct\nMemory Write\nGate\nWrite/Skip\nRole rt\nLLM mt\nRole rt LLM mt\nSt-1\nResponse \nyt\nContinue to next step\nRole r1 LLM m1 Resp y1 Role rt-1 LLM mt-1 Resp yt-1\nSt\nState st\nFigure 2:Gated-Memory Routing framework.At ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3,
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Problem Definition",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6ce70245e7400b09407c0360e731c52845530fe6b2d4c0e3233d0f3d962a41ad",
+            "evidence_id": "Ed5cda2ea18429d40-B0016",
+            "pages": [
+              3,
+              4
+            ],
+            "section": "Problem Definition",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 492,
+                "page": 3,
+                "section": "Problem Definition",
+                "section_index": 6,
+                "start": 0,
+                "text": "We formalize gated-memory routing as a sequential\ndecision process over a set of agent specializations\nR, a pool of heterogeneous LLM backbones M,\nand an execution memory St maintained within a\nsingle query execution. At step t, the observable\nstate is st = (q, St\u22121), where St\u22121 holds the re-\ntained execution records from prior steps. The sys-\ntem selects a specialization rt \u2208 Rand a backbone\nmt \u2208 M, retrieves a context subset Ct \u2286S t\u22121,\ngenerates a reasoning step yt, and decides whether"
+              },
+              {
+                "end": 407,
+                "page": 4,
+                "section": "Problem Definition",
+                "section_index": 7,
+                "start": 0,
+                "text": "History-aware\nRole Allocator\nRetrieval \nGate\nRole r2 LLM m2 Resp y2\nExecution Memory S\nQuery q\nAdaptive\nHalting\nController\nLLM Router\nAggregator\nFinal Answer y\nHalt\n1\n2\n3 4\nAgent\nRetrieved \ncontext Ct\nMemory Write\nGate\nWrite/Skip\nRole rt\nLLM mt\nRole rt LLM mt\nSt-1\nResponse \nyt\nContinue to next step\nRole r1 LLM m1 Resp y1 Role rt-1 LLM mt-1 Resp yt-1\nSt\nState st\nFigure 2:Gated-Memory Routing framework.At "
+              }
+            ],
+            "text": "We formalize gated-memory routing as a sequential\ndecision process over a set of agent specializations\nR, a pool of heterogeneous LLM backbones M,\nand an execution memory St maintained within a\nsingle query execution. At step t, the observable\nstate is st = (q, St\u22121), where St\u22121 holds the re-\ntained execution records from prior steps. The sys-\ntem selects a specialization rt \u2208 Rand a backbone\nmt \u2208 M, retrieves a context subset Ct \u2286S t\u22121,\ngenerates a reasoning step yt, and decides whether\nHistory-aware\nRole Allocator\nRetrieval \nGate\nRole r2 LLM m2 Resp y2\nExecution Memory S\nQuery q\nAdaptive\nHalting\nController\nLLM Router\nAggregator\nFinal Answer y\nHalt\n1\n2\n3 4\nAgent\nRetrieved \ncontext Ct\nMemory Write\nGate\nWrite/Skip\nRole rt\nLLM mt\nRole rt LLM mt\nSt-1\nResponse \nyt\nContinue to next step\nRole r1 LLM m1 Resp y1 Role rt-1 LLM mt-1 Resp yt-1\nSt\nState st\nFigure 2:Gated-Memory Routing framework.At "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0024"
+        ],
+        "excerpt": "Even a selective memory should not be exposed\nwholesale to every agent: many retained records\nbelong to other subproblems or roles irrelevant to\nthe agent about to act, so passing all of them inflates\ntoken cost and buries the entries that matter. A fixed\ntop-k retriever is equally rigid, since some steps\nneed broad context while others need one record or\nnone. TheRetrieval Gatetherefore treats context\nconstruction as a step-adaptive selection, deciding\nindependently for each record whether to surface\nit.\nEach stored record is summarized by an embed-\nding vj that fuses its role latent, backbone latent,\nand a projection of its response, and the current\nstep forms a retrieval query pt by the analogous\nfusion of the query with the role and backbone\njust selected. The gate therefore asks which prior\nrecords a step of this configuration should read: for\nrecord j, the retrieval logit and ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Retrieval Gate",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d5528d95b9eeae207d7289adf8b5bbc2943f491805b12d32af3b397f26da5917",
+            "evidence_id": "Ed5cda2ea18429d40-B0024",
+            "pages": [
+              5
+            ],
+            "section": "Retrieval Gate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 5,
+                "section": "Retrieval Gate",
+                "section_index": 11,
+                "start": 0,
+                "text": "Even a selective memory should not be exposed\nwholesale to every agent: many retained records\nbelong to other subproblems or roles irrelevant to\nthe agent about to act, so passing all of them inflates\ntoken cost and buries the entries that matter. A fixed\ntop-k retriever is equally rigid, since some steps\nneed broad context while others need one record or\nnone. TheRetrieval Gatetherefore treats context\nconstruction as a step-adaptive selection, deciding\nindependently for each record whether to surface\nit.\nEach stored record is summarized by an embed-\nding vj that fuses its role latent, backbone latent,\nand a projection of its response, and the current\nstep forms a retrieval query pt by the analogous\nfusion of the query with the role and backbone\njust selected. The gate therefore asks which prior\nrecords a step of this configuration should read: for\nrecord j, the retrieval logit and "
+              }
+            ],
+            "text": "Even a selective memory should not be exposed\nwholesale to every agent: many retained records\nbelong to other subproblems or roles irrelevant to\nthe agent about to act, so passing all of them inflates\ntoken cost and buries the entries that matter. A fixed\ntop-k retriever is equally rigid, since some steps\nneed broad context while others need one record or\nnone. TheRetrieval Gatetherefore treats context\nconstruction as a step-adaptive selection, deciding\nindependently for each record whether to surface\nit.\nEach stored record is summarized by an embed-\nding vj that fuses its role latent, backbone latent,\nand a projection of its response, and the current\nstep forms a retrieval query pt by the analogous\nfusion of the query with the role and backbone\njust selected. The gate therefore asks which prior\nrecords a step of this configuration should read: for\nrecord j, the retrieval logit and "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0026"
+        ],
+        "excerpt": "What the system writes to memory determines the\nstate on which all later decisions are based. If every\nintermediate element is appended, gated memory\ncollapses back into full-history routing, and redun-\ndant records crowd memory and dilute retrieval.\nTheMemory Write Gatetherefore treats memory\nconstruction as a selective decision rather than a\ndefault append: a new record should enter memory\nonly when it is both relevant to the task and novel\nwith respect to the records already stored.\nWe score this relevance\u2013novelty trade-off with a\nMaximal Marginal Relevance criterion (Carbonell\nand Goldstein, 1998), but replace its fixed compo-\nnents with learned, stochastic ones. Let ct denote\nthe current context state (Section 3.3), yt the em-\nbedding of the new reasoning step, and {yj} the\nembeddings of stored steps, and let sim(\u00b7,\u00b7) be a\ncosine similarity taken in a learned projection of\nthese ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Memory Write Gate",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6e83bed103d4a3d23b9ed0ef232c7b2eae5ec7e652f1754487552bf017bc7d73",
+            "evidence_id": "Ed5cda2ea18429d40-B0026",
+            "pages": [
+              5
+            ],
+            "section": "Memory Write Gate",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 5,
+                "section": "Memory Write Gate",
+                "section_index": 12,
+                "start": 0,
+                "text": "What the system writes to memory determines the\nstate on which all later decisions are based. If every\nintermediate element is appended, gated memory\ncollapses back into full-history routing, and redun-\ndant records crowd memory and dilute retrieval.\nTheMemory Write Gatetherefore treats memory\nconstruction as a selective decision rather than a\ndefault append: a new record should enter memory\nonly when it is both relevant to the task and novel\nwith respect to the records already stored.\nWe score this relevance\u2013novelty trade-off with a\nMaximal Marginal Relevance criterion (Carbonell\nand Goldstein, 1998), but replace its fixed compo-\nnents with learned, stochastic ones. Let ct denote\nthe current context state (Section 3.3), yt the em-\nbedding of the new reasoning step, and {yj} the\nembeddings of stored steps, and let sim(\u00b7,\u00b7) be a\ncosine similarity taken in a learned projection of\nthese "
+              }
+            ],
+            "text": "What the system writes to memory determines the\nstate on which all later decisions are based. If every\nintermediate element is appended, gated memory\ncollapses back into full-history routing, and redun-\ndant records crowd memory and dilute retrieval.\nTheMemory Write Gatetherefore treats memory\nconstruction as a selective decision rather than a\ndefault append: a new record should enter memory\nonly when it is both relevant to the task and novel\nwith respect to the records already stored.\nWe score this relevance\u2013novelty trade-off with a\nMaximal Marginal Relevance criterion (Carbonell\nand Goldstein, 1998), but replace its fixed compo-\nnents with learned, stochastic ones. Let ct denote\nthe current context state (Section 3.3), yt the em-\nbedding of the new reasoning step, and {yj} the\nembeddings of stored steps, and let sim(\u00b7,\u00b7) be a\ncosine similarity taken in a learned projection of\nthese "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0028"
+        ],
+        "excerpt": "Reasoning depth is a major driver of cost, yet a\ndepth fixed from the query commits this budget\nbefore the system observes how execution unfolds.\nWe therefore make depth a consequence of exe-\ncution: after each step theAdaptive Halting Con-\ntrollerdecides whether the memory holds sufficient\nevidence for aggregation or another agent should\nact.\nWhether recent steps still add evidence is\na trend no single-step snapshot captures, so\nthe controller carries a recurrent state hhalt\nt =\nGRU(hhalt\nt\u22121 ,enc(S t)) that integrates a pooled sum-\nmary of the post-write memory across steps, kept\nseparate from the query-attended routing context\nct. It then samples a halt action\nht \u223cBernoulli\n\u0010\n\u03c3\n\u0010\nMLP(hhalt\nt )\n\u0011\u0011\n.\nBecause the decision is evaluated only after the\nstep's agent has executed, at least one agent al-\nways runs. If ht = 1 the stored records pass to the\nAggregator LLM; otherwise execution ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adaptive Halting Controller",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2e342f5ad2f838d1b31e00a172ce9ea17da79f8a7c8560b0903a4cd3d6243e10",
+            "evidence_id": "Ed5cda2ea18429d40-B0028",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Adaptive Halting Controller",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 95,
+                "page": 5,
+                "section": "Adaptive Halting Controller",
+                "section_index": 13,
+                "start": 0,
+                "text": "Reasoning depth is a major driver of cost, yet a\ndepth fixed from the query commits this budget"
+              },
+              {
+                "end": 802,
+                "page": 6,
+                "section": "Adaptive Halting Controller",
+                "section_index": 14,
+                "start": 0,
+                "text": "before the system observes how execution unfolds.\nWe therefore make depth a consequence of exe-\ncution: after each step theAdaptive Halting Con-\ntrollerdecides whether the memory holds sufficient\nevidence for aggregation or another agent should\nact.\nWhether recent steps still add evidence is\na trend no single-step snapshot captures, so\nthe controller carries a recurrent state hhalt\nt =\nGRU(hhalt\nt\u22121 ,enc(S t)) that integrates a pooled sum-\nmary of the post-write memory across steps, kept\nseparate from the query-attended routing context\nct. It then samples a halt action\nht \u223cBernoulli\n\u0010\n\u03c3\n\u0010\nMLP(hhalt\nt )\n\u0011\u0011\n.\nBecause the decision is evaluated only after the\nstep's agent has executed, at least one agent al-\nways runs. If ht = 1 the stored records pass to the\nAggregator LLM; otherwise execution "
+              }
+            ],
+            "text": "Reasoning depth is a major driver of cost, yet a\ndepth fixed from the query commits this budget\nbefore the system observes how execution unfolds.\nWe therefore make depth a consequence of exe-\ncution: after each step theAdaptive Halting Con-\ntrollerdecides whether the memory holds sufficient\nevidence for aggregation or another agent should\nact.\nWhether recent steps still add evidence is\na trend no single-step snapshot captures, so\nthe controller carries a recurrent state hhalt\nt =\nGRU(hhalt\nt\u22121 ,enc(S t)) that integrates a pooled sum-\nmary of the post-write memory across steps, kept\nseparate from the query-attended routing context\nct. It then samples a halt action\nht \u223cBernoulli\n\u0010\n\u03c3\n\u0010\nMLP(hhalt\nt )\n\u0011\u0011\n.\nBecause the decision is evaluated only after the\nstep's agent has executed, at least one agent al-\nways runs. If ht = 1 the stored records pass to the\nAggregator LLM; otherwise execution "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0030"
+        ],
+        "excerpt": "The routing stack couples several discrete stochas-\ntic decisions (role, backbone, retrieval, write,\nand halt), and their number varies with the halt-\ndetermined depth, so we optimize the trajectory\nwith policy gradients rather than backpropagating\nthrough sampled actions. Because queries dif-\nfer widely in difficulty, a single trajectory base-\nline is noisy; we instead train all policies jointly\nwith a group-relative advantage in the spirit of\nGRPO (Shao et al., 2024), using G rollouts of each\nquery as a per-query baseline without a learned\ncritic.\nFor each query we sample G trajectories that\ndiffer only in their sampled decisions. Trajectory\n\u03c4i has utility ui =R i \u2212\u03bb c Cost(\u03c4i), where Ri \u2208\n{0,1} is task success, Cost(\u03c4i) sums the per-step\nbackbone costs, and\u03bbc sets the accuracy\u2013cost trade-\noff (Appendix 9). Centering each utility within its\ngroup yields the advantage\nAi =u i \u2212 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Optimization",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e682b71a1e1d80be271e4c7436aec4d0eb16a509bf9e29c1509da551632914a5",
+            "evidence_id": "Ed5cda2ea18429d40-B0030",
+            "pages": [
+              6
+            ],
+            "section": "Optimization",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 6,
+                "section": "Optimization",
+                "section_index": 15,
+                "start": 0,
+                "text": "The routing stack couples several discrete stochas-\ntic decisions (role, backbone, retrieval, write,\nand halt), and their number varies with the halt-\ndetermined depth, so we optimize the trajectory\nwith policy gradients rather than backpropagating\nthrough sampled actions. Because queries dif-\nfer widely in difficulty, a single trajectory base-\nline is noisy; we instead train all policies jointly\nwith a group-relative advantage in the spirit of\nGRPO (Shao et al., 2024), using G rollouts of each\nquery as a per-query baseline without a learned\ncritic.\nFor each query we sample G trajectories that\ndiffer only in their sampled decisions. Trajectory\n\u03c4i has utility ui =R i \u2212\u03bb c Cost(\u03c4i), where Ri \u2208\n{0,1} is task success, Cost(\u03c4i) sums the per-step\nbackbone costs, and\u03bbc sets the accuracy\u2013cost trade-\noff (Appendix 9). Centering each utility within its\ngroup yields the advantage\nAi =u i \u2212 "
+              }
+            ],
+            "text": "The routing stack couples several discrete stochas-\ntic decisions (role, backbone, retrieval, write,\nand halt), and their number varies with the halt-\ndetermined depth, so we optimize the trajectory\nwith policy gradients rather than backpropagating\nthrough sampled actions. Because queries dif-\nfer widely in difficulty, a single trajectory base-\nline is noisy; we instead train all policies jointly\nwith a group-relative advantage in the spirit of\nGRPO (Shao et al., 2024), using G rollouts of each\nquery as a per-query baseline without a learned\ncritic.\nFor each query we sample G trajectories that\ndiffer only in their sampled decisions. Trajectory\n\u03c4i has utility ui =R i \u2212\u03bb c Cost(\u03c4i), where Ri \u2208\n{0,1} is task success, Cost(\u03c4i) sums the per-step\nbackbone costs, and\u03bbc sets the accuracy\u2013cost trade-\noff (Appendix 9). Centering each utility within its\ngroup yields the advantage\nAi =u i \u2212 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0033"
+        ],
+        "excerpt": "Datasets and Benchmarks.We evaluate on five\nbenchmarks spanning mathematical reasoning, pro-\ngram synthesis, and knowledge-intensive ques-\ntion answering: GSM-Hard (Gao et al., 2023),\nMATH (Hendrycks et al., 2021), HumanEval (Chen\net al., 2021), MBPP (Austin et al., 2021), and\nMMLU-Pro (Wang et al., 2024).\nBaselines.Our baselines span single-model\ninference; single-agent reasoning (CoT (Wei\net al., 2022), Complex-CoT (Fu et al., 2023));\nfixed-topology multi-agent collaboration (MacNet-\nChain, -Tree, and -Complete (Qian et al., 2025));\nadaptive workflow optimization (AFlow (Zhang\net al., 2025b)); evolving orchestration (Pup-\npeteer (Dang et al., 2025)); and query-only routing\n(MASRouter (Yue et al., 2025)).\nLLM Backbones.We route over five\nopen-weight LLMs: llama-3.2-3B, llama-\n3.1-8B (Grattafiori et al., 2024), mistral-nemo-\n12B (Mistral AI Team, 2024), qwen-2.5-14B,\nand qwen-2.5-32B ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6ca28eb34f2d2e2cff61d10ea71ab74fe32bf20c97116c540cbd6a8ebd2e8849",
+            "evidence_id": "Ed5cda2ea18429d40-B0033",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 16,
+                "start": 0,
+                "text": "Datasets and Benchmarks.We evaluate on five\nbenchmarks spanning mathematical reasoning, pro-\ngram synthesis, and knowledge-intensive ques-\ntion answering: GSM-Hard (Gao et al., 2023),\nMATH (Hendrycks et al., 2021), HumanEval (Chen\net al., 2021), MBPP (Austin et al., 2021), and\nMMLU-Pro (Wang et al., 2024).\nBaselines.Our baselines span single-model\ninference; single-agent reasoning (CoT (Wei\net al., 2022), Complex-CoT (Fu et al., 2023));\nfixed-topology multi-agent collaboration (MacNet-\nChain, -Tree, and -Complete (Qian et al., 2025));\nadaptive workflow optimization (AFlow (Zhang\net al., 2025b)); evolving orchestration (Pup-\npeteer (Dang et al., 2025)); and query-only routing\n(MASRouter (Yue et al., 2025)).\nLLM Backbones.We route over five\nopen-weight LLMs: llama-3.2-3B, llama-\n3.1-8B (Grattafiori et al., 2024), mistral-nemo-\n12B (Mistral AI Team, 2024), qwen-2.5-14B,\nand qwen-2.5-32B "
+              }
+            ],
+            "text": "Datasets and Benchmarks.We evaluate on five\nbenchmarks spanning mathematical reasoning, pro-\ngram synthesis, and knowledge-intensive ques-\ntion answering: GSM-Hard (Gao et al., 2023),\nMATH (Hendrycks et al., 2021), HumanEval (Chen\net al., 2021), MBPP (Austin et al., 2021), and\nMMLU-Pro (Wang et al., 2024).\nBaselines.Our baselines span single-model\ninference; single-agent reasoning (CoT (Wei\net al., 2022), Complex-CoT (Fu et al., 2023));\nfixed-topology multi-agent collaboration (MacNet-\nChain, -Tree, and -Complete (Qian et al., 2025));\nadaptive workflow optimization (AFlow (Zhang\net al., 2025b)); evolving orchestration (Pup-\npeteer (Dang et al., 2025)); and query-only routing\n(MASRouter (Yue et al., 2025)).\nLLM Backbones.We route over five\nopen-weight LLMs: llama-3.2-3B, llama-\n3.1-8B (Grattafiori et al., 2024), mistral-nemo-\n12B (Mistral AI Team, 2024), qwen-2.5-14B,\nand qwen-2.5-32B "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0034"
+        ],
+        "excerpt": "(Yang et al., 2024). This\n3B\u201332B heterogeneous pool allows the router\nto trade off capability and inference cost. To\nquantify the accuracy\u2013cost trade-off, we assign\neach backbone a price proportional to its parameter\ncount, a hardware-independent proxy for per-token\ninference compute (Appendix 9). Backbone\ncapability descriptions are listed in Appendix 16.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "ea320eb3001e1a8c384b6a00bb3ef71f43242d7e3b4af9f705141ce69b17c05a",
+            "evidence_id": "Ed5cda2ea18429d40-B0034",
+            "pages": [
+              6
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1255,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 16,
+                "start": 897,
+                "text": "(Yang et al., 2024). This\n3B\u201332B heterogeneous pool allows the router\nto trade off capability and inference cost. To\nquantify the accuracy\u2013cost trade-off, we assign\neach backbone a price proportional to its parameter\ncount, a hardware-independent proxy for per-token\ninference compute (Appendix 9). Backbone\ncapability descriptions are listed in Appendix 16."
+              }
+            ],
+            "text": "(Yang et al., 2024). This\n3B\u201332B heterogeneous pool allows the router\nto trade off capability and inference cost. To\nquantify the accuracy\u2013cost trade-off, we assign\neach backbone a price proportional to its parameter\ncount, a hardware-independent proxy for per-token\ninference compute (Appendix 9). Backbone\ncapability descriptions are listed in Appendix 16."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0035"
+        ],
+        "excerpt": "We train with Adam optimizer using learning rate\n0.01, GRPO group size G= 6 , and 16 queries per\nbatch. We set maximum depth \u03d5= 6 , cost penalty\n\u03bbc \u2208 {10,20,50}, entropy coefficient cH = 0.01,\nand V AE regularizer weight\u03b1= 0.001 . For the\nfixed-topology multi-agent baselines, we set the\nnumber of agents equal to our maximum depth\n\u03d5= 6 , so every multi-agent method operates un-\nder the same agent budget. We use the same 26\nheterogeneous role profiles as MASRouter (Yue\net al., 2025), spanning programming agents with\ncompiler access to research-oriented agents with\nexternal knowledge sources; full descriptions are\nin Appendix 14. For final aggregation, we use the\nLLM backbone selected most frequently across the\nquery's reasoning steps. The aggregation prompt\nis provided in Appendix 15.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dc186a7cf7559fb29bd6be7893d2684e039e23069eb8dbda496810fe85c5f68b",
+            "evidence_id": "Ed5cda2ea18429d40-B0035",
+            "pages": [
+              7
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 793,
+                "page": 7,
+                "section": "Implementation Details",
+                "section_index": 17,
+                "start": 0,
+                "text": "We train with Adam optimizer using learning rate\n0.01, GRPO group size G= 6 , and 16 queries per\nbatch. We set maximum depth \u03d5= 6 , cost penalty\n\u03bbc \u2208 {10,20,50}, entropy coefficient cH = 0.01,\nand V AE regularizer weight\u03b1= 0.001 . For the\nfixed-topology multi-agent baselines, we set the\nnumber of agents equal to our maximum depth\n\u03d5= 6 , so every multi-agent method operates un-\nder the same agent budget. We use the same 26\nheterogeneous role profiles as MASRouter (Yue\net al., 2025), spanning programming agents with\ncompiler access to research-oriented agents with\nexternal knowledge sources; full descriptions are\nin Appendix 14. For final aggregation, we use the\nLLM backbone selected most frequently across the\nquery's reasoning steps. The aggregation prompt\nis provided in Appendix 15."
+              }
+            ],
+            "text": "We train with Adam optimizer using learning rate\n0.01, GRPO group size G= 6 , and 16 queries per\nbatch. We set maximum depth \u03d5= 6 , cost penalty\n\u03bbc \u2208 {10,20,50}, entropy coefficient cH = 0.01,\nand V AE regularizer weight\u03b1= 0.001 . For the\nfixed-topology multi-agent baselines, we set the\nnumber of agents equal to our maximum depth\n\u03d5= 6 , so every multi-agent method operates un-\nder the same agent budget. We use the same 26\nheterogeneous role profiles as MASRouter (Yue\net al., 2025), spanning programming agents with\ncompiler access to research-oriented agents with\nexternal knowledge sources; full descriptions are\nin Appendix 14. For final aggregation, we use the\nLLM backbone selected most frequently across the\nquery's reasoning steps. The aggregation prompt\nis provided in Appendix 15."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0036"
+        ],
+        "excerpt": "Table 1 shows that Gated-Memory Routing\nachieves the strongest overall performance: it at-\ntains the best average accuracy and the top result\non four of the five benchmarks, improving on the\nstrongest baseline by 2.44 points on average. The\ngains are most pronounced on GSM-Hard and Hu-\nmanEval, where intermediate reasoning quality and\nselective context matter most; the one exception is\nMBPP, where a fixed multi-agent chain topology\npowered by qwen-2.5-14B edges ahead at pass@1\nbut trails on every other benchmark and on aver-\nage. On MBPP our method is comparable to MAS-\nRouter (79.60 vs. 79.20) and ahead of Puppeteer-\n32B (74.80), while several fixed MacNet config-\nurations score highest. MBPP's short, relatively\nuniform problems appear to benefit from a fixed\npipeline built on a strong code model, leaving less\nroom for adaptive orchestration to help; the benefit\nof gated memory is most ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Performance Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "dc8c42eb422a32183de6050943697a581fa81b1441b2666eec79ad25f7aa3cbd",
+            "evidence_id": "Ed5cda2ea18429d40-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Performance Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 7,
+                "section": "Performance Analysis",
+                "section_index": 18,
+                "start": 0,
+                "text": "Table 1 shows that Gated-Memory Routing\nachieves the strongest overall performance: it at-\ntains the best average accuracy and the top result\non four of the five benchmarks, improving on the\nstrongest baseline by 2.44 points on average. The\ngains are most pronounced on GSM-Hard and Hu-\nmanEval, where intermediate reasoning quality and\nselective context matter most; the one exception is\nMBPP, where a fixed multi-agent chain topology\npowered by qwen-2.5-14B edges ahead at pass@1\nbut trails on every other benchmark and on aver-\nage. On MBPP our method is comparable to MAS-\nRouter (79.60 vs. 79.20) and ahead of Puppeteer-\n32B (74.80), while several fixed MacNet config-\nurations score highest. MBPP's short, relatively\nuniform problems appear to benefit from a fixed\npipeline built on a strong code model, leaving less\nroom for adaptive orchestration to help; the benefit\nof gated memory is most "
+              }
+            ],
+            "text": "Table 1 shows that Gated-Memory Routing\nachieves the strongest overall performance: it at-\ntains the best average accuracy and the top result\non four of the five benchmarks, improving on the\nstrongest baseline by 2.44 points on average. The\ngains are most pronounced on GSM-Hard and Hu-\nmanEval, where intermediate reasoning quality and\nselective context matter most; the one exception is\nMBPP, where a fixed multi-agent chain topology\npowered by qwen-2.5-14B edges ahead at pass@1\nbut trails on every other benchmark and on aver-\nage. On MBPP our method is comparable to MAS-\nRouter (79.60 vs. 79.20) and ahead of Puppeteer-\n32B (74.80), while several fixed MacNet config-\nurations score highest. MBPP's short, relatively\nuniform problems appear to benefit from a fixed\npipeline built on a strong code model, leaving less\nroom for adaptive orchestration to help; the benefit\nof gated memory is most "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0040"
+        ],
+        "excerpt": "downstream\nagents the redundant context that inflates prompts\nMethod LLM Mul. Rout. MATH GSM-Hard MBPP HumanEval MMLU-Pro Avg.\nSingle LLM\nllama-3.2-3B\u2717 \u271743.27 25.85 52.20 62.79 34.00 43.62\nllama-3.1-8B\u2717 \u271743.75 39.87 57.60 69.78 48.25 51.85\nmistral-nemo-12B\u2717 \u271742.07 30.11 56.00 68.22 27.75 44.83\nqwen-2.5-14B\u2717 \u271775.72 64.58 71.80 82.95 65.25 72.06\nqwen-2.5-32B\u2717 \u271778.37 61.52 79.00 84.37 66.02 73.86\nCoT (Wei et al., 2022) qwen-2.5-14B\u2717 \u271777.88 67.52 70.80 82.17 62.16 72.11\nqwen-2.5-32B\u2717 \u271778.85 64.56 77.20 85.15 68.41 74.83\nComplex-CoT (Fu et al., 2023) qwen-2.5-14B\u2717 \u271775.96 66.76 70.40 80.62 63.07 71.36\nqwen-2.5-32B\u2717 \u271777.16 65.32 78.40 85.47 68.41 74.95\nMacNet-Chain (Qian et al., 2025) qwen-2.5-14B\u2713 \u271773.80 59.7582.6686.82 61.48 72.90\nqwen-2.5-32B\u2713 \u271777.64 61.93 80.73 83.80 67.95 74.41\nMacNet-Tree (Qian et al., 2025) qwen-2.5-14B\u2713 \u271776.68 60.32 79.84 82.95 60.68 72.09\nqwen-2.5-32B\u2713 \u271777.88 62.31 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cost Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1abacc9b8d44c12893148c33bb92555b9f0096f9eccf98db89c353db2b9e1f83",
+            "evidence_id": "Ed5cda2ea18429d40-B0040",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Cost Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 952,
+                "page": 7,
+                "section": "Cost Analysis",
+                "section_index": 19,
+                "start": 891,
+                "text": "downstream\nagents the redundant context that inflates prompts"
+              },
+              {
+                "end": 835,
+                "page": 8,
+                "section": "Cost Analysis",
+                "section_index": 20,
+                "start": 0,
+                "text": "Method LLM Mul. Rout. MATH GSM-Hard MBPP HumanEval MMLU-Pro Avg.\nSingle LLM\nllama-3.2-3B\u2717 \u271743.27 25.85 52.20 62.79 34.00 43.62\nllama-3.1-8B\u2717 \u271743.75 39.87 57.60 69.78 48.25 51.85\nmistral-nemo-12B\u2717 \u271742.07 30.11 56.00 68.22 27.75 44.83\nqwen-2.5-14B\u2717 \u271775.72 64.58 71.80 82.95 65.25 72.06\nqwen-2.5-32B\u2717 \u271778.37 61.52 79.00 84.37 66.02 73.86\nCoT (Wei et al., 2022) qwen-2.5-14B\u2717 \u271777.88 67.52 70.80 82.17 62.16 72.11\nqwen-2.5-32B\u2717 \u271778.85 64.56 77.20 85.15 68.41 74.83\nComplex-CoT (Fu et al., 2023) qwen-2.5-14B\u2717 \u271775.96 66.76 70.40 80.62 63.07 71.36\nqwen-2.5-32B\u2717 \u271777.16 65.32 78.40 85.47 68.41 74.95\nMacNet-Chain (Qian et al., 2025) qwen-2.5-14B\u2713 \u271773.80 59.7582.6686.82 61.48 72.90\nqwen-2.5-32B\u2713 \u271777.64 61.93 80.73 83.80 67.95 74.41\nMacNet-Tree (Qian et al., 2025) qwen-2.5-14B\u2713 \u271776.68 60.32 79.84 82.95 60.68 72.09\nqwen-2.5-32B\u2713 \u271777.88 62.31 "
+              }
+            ],
+            "text": "downstream\nagents the redundant context that inflates prompts\nMethod LLM Mul. Rout. MATH GSM-Hard MBPP HumanEval MMLU-Pro Avg.\nSingle LLM\nllama-3.2-3B\u2717 \u271743.27 25.85 52.20 62.79 34.00 43.62\nllama-3.1-8B\u2717 \u271743.75 39.87 57.60 69.78 48.25 51.85\nmistral-nemo-12B\u2717 \u271742.07 30.11 56.00 68.22 27.75 44.83\nqwen-2.5-14B\u2717 \u271775.72 64.58 71.80 82.95 65.25 72.06\nqwen-2.5-32B\u2717 \u271778.37 61.52 79.00 84.37 66.02 73.86\nCoT (Wei et al., 2022) qwen-2.5-14B\u2717 \u271777.88 67.52 70.80 82.17 62.16 72.11\nqwen-2.5-32B\u2717 \u271778.85 64.56 77.20 85.15 68.41 74.83\nComplex-CoT (Fu et al., 2023) qwen-2.5-14B\u2717 \u271775.96 66.76 70.40 80.62 63.07 71.36\nqwen-2.5-32B\u2717 \u271777.16 65.32 78.40 85.47 68.41 74.95\nMacNet-Chain (Qian et al., 2025) qwen-2.5-14B\u2713 \u271773.80 59.7582.6686.82 61.48 72.90\nqwen-2.5-32B\u2713 \u271777.64 61.93 80.73 83.80 67.95 74.41\nMacNet-Tree (Qian et al., 2025) qwen-2.5-14B\u2713 \u271776.68 60.32 79.84 82.95 60.68 72.09\nqwen-2.5-32B\u2713 \u271777.88 62.31 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0043"
+        ],
+        "excerpt": "Configuration GSM-Hard HumanEval\nAcc. Cost Acc. Cost\nFull system 70.55 0.587 89.84 0.032\nw/o role allocator 68.37 0.400 85.94 0.043\nw/o LLM router 56.53 0.555 71.88 0.026\nw/o retrieval gate 69.22 0.488 85.94 0.034\nw/o write gate 66.67 0.621 84.38 0.037\nw/o halting 70.08 0.840 86.72 0.086\nw/o both memory gates 67.99 0.447 83.59 0.033\nTable 2: Leave-one-out ablation. Each row disables\none routing module while keeping the others active. We\nreport accuracy (%) and total test-set cost on GSM-Hard\nand HumanEval.\nTable 2 reports a leave-one-out ablation, each\nvariant replacing one module with a default:w/o\nrole allocatoruses random role selection,w/o LLM\nrouterrandom backbone selection,w/o retrieval\ngateexposes the full memory to each agent,w/o\nwrite gatewrites every response to memory, and\nw/o haltingruns every query to the maximum depth\n\u03d5. The effects split cleanly along the division ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Ablation Study",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c068da4ae23152aba3fc0160ffb3c0a127d0e760c1837f0ceb8f83cca132bb7b",
+            "evidence_id": "Ed5cda2ea18429d40-B0043",
+            "pages": [
+              8
+            ],
+            "section": "Ablation Study",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 8,
+                "section": "Ablation Study",
+                "section_index": 21,
+                "start": 0,
+                "text": "Configuration GSM-Hard HumanEval\nAcc. Cost Acc. Cost\nFull system 70.55 0.587 89.84 0.032\nw/o role allocator 68.37 0.400 85.94 0.043\nw/o LLM router 56.53 0.555 71.88 0.026\nw/o retrieval gate 69.22 0.488 85.94 0.034\nw/o write gate 66.67 0.621 84.38 0.037\nw/o halting 70.08 0.840 86.72 0.086\nw/o both memory gates 67.99 0.447 83.59 0.033\nTable 2: Leave-one-out ablation. Each row disables\none routing module while keeping the others active. We\nreport accuracy (%) and total test-set cost on GSM-Hard\nand HumanEval.\nTable 2 reports a leave-one-out ablation, each\nvariant replacing one module with a default:w/o\nrole allocatoruses random role selection,w/o LLM\nrouterrandom backbone selection,w/o retrieval\ngateexposes the full memory to each agent,w/o\nwrite gatewrites every response to memory, and\nw/o haltingruns every query to the maximum depth\n\u03d5. The effects split cleanly along the division "
+              }
+            ],
+            "text": "Configuration GSM-Hard HumanEval\nAcc. Cost Acc. Cost\nFull system 70.55 0.587 89.84 0.032\nw/o role allocator 68.37 0.400 85.94 0.043\nw/o LLM router 56.53 0.555 71.88 0.026\nw/o retrieval gate 69.22 0.488 85.94 0.034\nw/o write gate 66.67 0.621 84.38 0.037\nw/o halting 70.08 0.840 86.72 0.086\nw/o both memory gates 67.99 0.447 83.59 0.033\nTable 2: Leave-one-out ablation. Each row disables\none routing module while keeping the others active. We\nreport accuracy (%) and total test-set cost on GSM-Hard\nand HumanEval.\nTable 2 reports a leave-one-out ablation, each\nvariant replacing one module with a default:w/o\nrole allocatoruses random role selection,w/o LLM\nrouterrandom backbone selection,w/o retrieval\ngateexposes the full memory to each agent,w/o\nwrite gatewrites every response to memory, and\nw/o haltingruns every query to the maximum depth\n\u03d5. The effects split cleanly along the division "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0047"
+        ],
+        "excerpt": "We contrast Gated-Memory Routing with the two\nrouting paradigms it is built to improve on. Query-\nonly routing fixes every decision from the input\nquery before execution begins; we instantiate it\nwith MASRouter, the strongest query-only router\namong our baselines. Under full-history routing,\nthe per-step role and backbone allocation is condi-\ntioned on the accumulated history, and all interme-\ndiate reasoning is forwarded as context to the next\nagent. Gated-memory routing is our full system.\nTable 3 compares the three.\nGSM-Hard HumanEval\nRouting paradigm Acc. (%) Cost Acc. (%) Cost\nQuery-only (MASRouter) 66.00 1.012 85.16 0.057\nFull-history 70.27 0.985 89.06 0.068\nGated-memory (ours)70.55 0.587 89.84 0.032\nTable 3: Comparison of the three routing paradigms on\nGSM-Hard and HumanEval.\nFull-history routing conditions each decision on\nthe entire accumulated trajectory, increasing con-\ntext ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Routing-Paradigm Comparison",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d4031e16f3b661117f5646287f1a95b6fa59d669554a3806d9e655f63224a19",
+            "evidence_id": "Ed5cda2ea18429d40-B0047",
+            "pages": [
+              9
+            ],
+            "section": "Routing-Paradigm Comparison",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 899,
+                "page": 9,
+                "section": "Routing-Paradigm Comparison",
+                "section_index": 24,
+                "start": 0,
+                "text": "We contrast Gated-Memory Routing with the two\nrouting paradigms it is built to improve on. Query-\nonly routing fixes every decision from the input\nquery before execution begins; we instantiate it\nwith MASRouter, the strongest query-only router\namong our baselines. Under full-history routing,\nthe per-step role and backbone allocation is condi-\ntioned on the accumulated history, and all interme-\ndiate reasoning is forwarded as context to the next\nagent. Gated-memory routing is our full system.\nTable 3 compares the three.\nGSM-Hard HumanEval\nRouting paradigm Acc. (%) Cost Acc. (%) Cost\nQuery-only (MASRouter) 66.00 1.012 85.16 0.057\nFull-history 70.27 0.985 89.06 0.068\nGated-memory (ours)70.55 0.587 89.84 0.032\nTable 3: Comparison of the three routing paradigms on\nGSM-Hard and HumanEval.\nFull-history routing conditions each decision on\nthe entire accumulated trajectory, increasing con-\ntext "
+              }
+            ],
+            "text": "We contrast Gated-Memory Routing with the two\nrouting paradigms it is built to improve on. Query-\nonly routing fixes every decision from the input\nquery before execution begins; we instantiate it\nwith MASRouter, the strongest query-only router\namong our baselines. Under full-history routing,\nthe per-step role and backbone allocation is condi-\ntioned on the accumulated history, and all interme-\ndiate reasoning is forwarded as context to the next\nagent. Gated-memory routing is our full system.\nTable 3 compares the three.\nGSM-Hard HumanEval\nRouting paradigm Acc. (%) Cost Acc. (%) Cost\nQuery-only (MASRouter) 66.00 1.012 85.16 0.057\nFull-history 70.27 0.985 89.06 0.068\nGated-memory (ours)70.55 0.587 89.84 0.032\nTable 3: Comparison of the three routing paradigms on\nGSM-Hard and HumanEval.\nFull-history routing conditions each decision on\nthe entire accumulated trajectory, increasing con-\ntext "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0051"
+        ],
+        "excerpt": "Our evaluation uses closed-domain tasks with veri-\nfiable answers, enabling automatic reward computa-\ntion; open-ended generation would require reward\nmodels, human evaluation, or other supervision.\nOur efficiency analysis: parameter count provides\na hardware-independent compute proxy but does\nnot capture latency, memory pressure, or batching,\nwhile FLOPs and wall-clock measurements in Ap-\npendix 9 cover only two benchmarks. Finally, we\nevaluate open-weight Qwen2.5, Llama-3, and Mis-\ntral models; backbones can be substituted through\ntheir capability profiles and per-token costs without\nchanging the framework.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "80e365c53e4a9e0b9d9a28f7eacf194a8843b9e946ee64712751ec0b0ee38dd5",
+            "evidence_id": "Ed5cda2ea18429d40-B0051",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 616,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 26,
+                "start": 0,
+                "text": "Our evaluation uses closed-domain tasks with veri-\nfiable answers, enabling automatic reward computa-\ntion; open-ended generation would require reward\nmodels, human evaluation, or other supervision.\nOur efficiency analysis: parameter count provides\na hardware-independent compute proxy but does\nnot capture latency, memory pressure, or batching,\nwhile FLOPs and wall-clock measurements in Ap-\npendix 9 cover only two benchmarks. Finally, we\nevaluate open-weight Qwen2.5, Llama-3, and Mis-\ntral models; backbones can be substituted through\ntheir capability profiles and per-token costs without\nchanging the framework."
+              }
+            ],
+            "text": "Our evaluation uses closed-domain tasks with veri-\nfiable answers, enabling automatic reward computa-\ntion; open-ended generation would require reward\nmodels, human evaluation, or other supervision.\nOur efficiency analysis: parameter count provides\na hardware-independent compute proxy but does\nnot capture latency, memory pressure, or batching,\nwhile FLOPs and wall-clock measurements in Ap-\npendix 9 cover only two benchmarks. Finally, we\nevaluate open-weight Qwen2.5, Llama-3, and Mis-\ntral models; backbones can be substituted through\ntheir capability profiles and per-token costs without\nchanging the framework."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0081"
+        ],
+        "excerpt": "= 0.010N\nper 1M tokens, with N the parameter count in billions),\nshown as input/output.\nTo corroborate the size-weighted proxy with\nhardware-relevant measurements, Table 5 reports,\nfor HumanEval and MBPP, an approximate FLOPs\ncount and the batch-amortized wall-clock time per\nquery for our method and the two strongest base-\nlines. FLOPs are estimated from the per-call token\nrecords as 2N FLOPs per processed token (Kaplan\net al., 2020), summed over all calls with N the\nparameter count of the model serving each call;\nthis omits the sequence-length-dependent atten-\ntion term. Wall-clock time is the end-to-end in-\nference time for the test set divided by the number\nof queries, measured under the same serving config-\nuration for all methods. Our method has the lowest\nFLOPs and wall-clock time on both benchmarks,\nand the ordering matches the proxy.\nHumanEval MBPP\nMethod PFLOPs/query Time/query ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cost Calculation For Open-Weight",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "bf2a2d33ac0b014a6ccfd191afd47d35244d8aa5e0819545d7e75c8a08fac48a",
+            "evidence_id": "Ed5cda2ea18429d40-B0081",
+            "pages": [
+              15
+            ],
+            "section": "Cost Calculation For Open-Weight",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1626,
+                "page": 15,
+                "section": "Cost Calculation For Open-Weight",
+                "section_index": 46,
+                "start": 726,
+                "text": "= 0.010N\nper 1M tokens, with N the parameter count in billions),\nshown as input/output.\nTo corroborate the size-weighted proxy with\nhardware-relevant measurements, Table 5 reports,\nfor HumanEval and MBPP, an approximate FLOPs\ncount and the batch-amortized wall-clock time per\nquery for our method and the two strongest base-\nlines. FLOPs are estimated from the per-call token\nrecords as 2N FLOPs per processed token (Kaplan\net al., 2020), summed over all calls with N the\nparameter count of the model serving each call;\nthis omits the sequence-length-dependent atten-\ntion term. Wall-clock time is the end-to-end in-\nference time for the test set divided by the number\nof queries, measured under the same serving config-\nuration for all methods. Our method has the lowest\nFLOPs and wall-clock time on both benchmarks,\nand the ordering matches the proxy.\nHumanEval MBPP\nMethod PFLOPs/query Time/query "
+              }
+            ],
+            "text": "= 0.010N\nper 1M tokens, with N the parameter count in billions),\nshown as input/output.\nTo corroborate the size-weighted proxy with\nhardware-relevant measurements, Table 5 reports,\nfor HumanEval and MBPP, an approximate FLOPs\ncount and the batch-amortized wall-clock time per\nquery for our method and the two strongest base-\nlines. FLOPs are estimated from the per-call token\nrecords as 2N FLOPs per processed token (Kaplan\net al., 2020), summed over all calls with N the\nparameter count of the model serving each call;\nthis omits the sequence-length-dependent atten-\ntion term. Wall-clock time is the end-to-end in-\nference time for the test set divided by the number\nof queries, measured under the same serving config-\nuration for all methods. Our method has the lowest\nFLOPs and wall-clock time on both benchmarks,\nand the ordering matches the proxy.\nHumanEval MBPP\nMethod PFLOPs/query Time/query "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0084"
+        ],
+        "excerpt": "Table 1 reports one training run per method.\nTo quantify run-to-run variability, we retrained\nour method and the two strongest baselines with\nthree independent seeds each and report the per-\nbenchmark mean and sample standard deviation in\nTable 8, together with the overall mean (the macro-\naverage over benchmarks for each seed, then mean\nand standard deviation across seeds). Our method\nhas the highest mean on all five benchmarks and im-\nproves the overall mean by 4.91 points over MAS-\nRouter and 2.10 over Puppeteer-32B. The ranking\nis identical under every seed: the lowest overall\nscore among our seeds ( 76.62) exceeds the high-\nest among Puppeteer's (75.79) and MASRouter's\n(74.27).",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Variance Across Training Seeds",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b1a865e3c62762d382f46f3a2df4b58dce558bbfc027e5fc1005e2b0301d583a",
+            "evidence_id": "Ed5cda2ea18429d40-B0084",
+            "pages": [
+              15
+            ],
+            "section": "Variance Across Training Seeds",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 691,
+                "page": 15,
+                "section": "Variance Across Training Seeds",
+                "section_index": 48,
+                "start": 0,
+                "text": "Table 1 reports one training run per method.\nTo quantify run-to-run variability, we retrained\nour method and the two strongest baselines with\nthree independent seeds each and report the per-\nbenchmark mean and sample standard deviation in\nTable 8, together with the overall mean (the macro-\naverage over benchmarks for each seed, then mean\nand standard deviation across seeds). Our method\nhas the highest mean on all five benchmarks and im-\nproves the overall mean by 4.91 points over MAS-\nRouter and 2.10 over Puppeteer-32B. The ranking\nis identical under every seed: the lowest overall\nscore among our seeds ( 76.62) exceeds the high-\nest among Puppeteer's (75.79) and MASRouter's\n(74.27)."
+              }
+            ],
+            "text": "Table 1 reports one training run per method.\nTo quantify run-to-run variability, we retrained\nour method and the two strongest baselines with\nthree independent seeds each and report the per-\nbenchmark mean and sample standard deviation in\nTable 8, together with the overall mean (the macro-\naverage over benchmarks for each seed, then mean\nand standard deviation across seeds). Our method\nhas the highest mean on all five benchmarks and im-\nproves the overall mean by 4.91 points over MAS-\nRouter and 2.10 over Puppeteer-32B. The ranking\nis identical under every seed: the lowest overall\nscore among our seeds ( 76.62) exceeds the high-\nest among Puppeteer's (75.79) and MASRouter's\n(74.27)."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.00237",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
     "missing_information": [],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "empirical_research",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.00237",
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Final outcomes are measured on standard held-out benchmark test sets using objective ground-truth correctness, including unit-test execution for HumanEval and MBPP and exact-match scoring for MATH and GSM-Hard, with FLOPs and wall-clock measurements corroborating the cost proxy.",
+          "final_evaluation_signal": "Standard benchmark test-set ground-truth correctness and measured per-query compute or token costs.",
+          "independent_corroboration": "present",
+          "optimization_signal": "A group-relative policy-gradient objective combining binary ground-truth task reward with a size-weighted inference cost penalty.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0008",
+          "Ed5cda2ea18429d40-B0009",
+          "Ed5cda2ea18429d40-B0016",
+          "Ed5cda2ea18429d40-B0024",
+          "Ed5cda2ea18429d40-B0026",
+          "Ed5cda2ea18429d40-B0028",
+          "Ed5cda2ea18429d40-B0030",
+          "Ed5cda2ea18429d40-B0033",
+          "Ed5cda2ea18429d40-B0034",
+          "Ed5cda2ea18429d40-B0035",
+          "Ed5cda2ea18429d40-B0036",
+          "Ed5cda2ea18429d40-B0040",
+          "Ed5cda2ea18429d40-B0043",
+          "Ed5cda2ea18429d40-B0047",
+          "Ed5cda2ea18429d40-B0051",
+          "Ed5cda2ea18429d40-B0081",
+          "Ed5cda2ea18429d40-B0084"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "d886bf6edd8f87b44952bdcc75450ec918a9e87e606414c0d1dff797d0922613"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.00237",
+        "claim_evidence_alignment": "Reported claims of superior average accuracy (+2.44% over the best baseline) and reduced inference cost (31.9% reduction on HumanEval) are well substantiated by tabular results, seed runs, and compute proxies corroborated by FLOPs and wall-clock measurements.",
+        "context_id": "d5cda2ea18429d400b4575415aab7399262dbd8252bff10834962f9f2eedff04",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation is conducted across five standard reasoning and code generation benchmarks (MATH, GSM-Hard, MBPP, HumanEval, MMLU-Pro) against diverse baselines, complete with Pareto cost frontiers, multi-seed variance analyses, and thorough component ablations.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Final benchmark outcomes are evaluated on standard held-out test splits using definitive objective correctness (e.g., unit test execution on HumanEval/MBPP and exact match on MATH/GSM-Hard).",
+          "final_evaluation_signal": "Standard benchmark test-set ground-truth correctness (exact match or pass@1 unit tests) and measured per-query compute/token costs.",
+          "independent_corroboration": "present",
+          "optimization_signal": "A group-relative reinforcement learning policy gradient optimizing a linear trade-off between binary ground-truth task reward and trajectory inference cost.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ed5cda2ea18429d40-B0008",
+          "Ed5cda2ea18429d40-B0009",
+          "Ed5cda2ea18429d40-B0016",
+          "Ed5cda2ea18429d40-B0024",
+          "Ed5cda2ea18429d40-B0026",
+          "Ed5cda2ea18429d40-B0028",
+          "Ed5cda2ea18429d40-B0030",
+          "Ed5cda2ea18429d40-B0033",
+          "Ed5cda2ea18429d40-B0034",
+          "Ed5cda2ea18429d40-B0035",
+          "Ed5cda2ea18429d40-B0036",
+          "Ed5cda2ea18429d40-B0040",
+          "Ed5cda2ea18429d40-B0043",
+          "Ed5cda2ea18429d40-B0047",
+          "Ed5cda2ea18429d40-B0051",
+          "Ed5cda2ea18429d40-B0081",
+          "Ed5cda2ea18429d40-B0084"
+        ],
+        "limitations": "The authors explicitly acknowledge limitations including evaluation restricted to closed-domain tasks with verifiable ground-truth rewards, reliance on parameter-count pricing as a hardware proxy, and evaluating a fixed pool of open-weight LLMs.",
+        "method_assessment": "The methodology is comprehensively formulated: frozen sentence embeddings, latent VAE spaces for roles and models, stochastic write (MMR-based) and retrieval gates, and a GRU-based adaptive halting controller are trained jointly using policy gradients with group-relative advantage (GRPO-style) without updating frozen LLM backbones.",
+        "quality_rationale": "The manuscript presents a sound conceptual and empirical contribution to multi-agent LLM orchestration, thoroughly supported by baseline comparisons, ablation studies, and robust evaluation across multiple domains and seeds.",
+        "scoped_contribution": "The paper introduces Gated-Memory Routing, a framework for multi-agent LLM systems that dynamically selects agent roles and backbones while managing context via learned memory write and retrieval gates and an adaptive halting controller.",
+        "source_content_hash": "d886bf6edd8f87b44952bdcc75450ec918a9e87e606414c0d1dff797d0922613"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a sound conceptual and empirical contribution to multi-agent LLM orchestration, thoroughly supported by baseline comparisons, ablation studies, and robust evaluation across multiple domains and seeds.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "d886bf6edd8f87b44952bdcc75450ec918a9e87e606414c0d1dff797d0922613",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly acknowledge limitations including evaluation restricted to closed-domain tasks with verifiable ground-truth rewards, reliance on parameter-count pricing as a hardware proxy, and evaluating a fixed pool of open-weight LLMs."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +2040,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "not_extracted",

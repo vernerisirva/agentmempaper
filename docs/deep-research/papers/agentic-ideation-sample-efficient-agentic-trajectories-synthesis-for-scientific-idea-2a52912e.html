@@ -59,16 +59,319 @@
             <p>Ideation plays a pivotal role in scientific discovery. Recent LLM, especially AI Scientist systems, show promising potential for automated ideation. However, existing approaches predominantly rely on pre-defined agentic workflows. This constraint severely limits the flexibility required to navigate the vast search s...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution is novel, technically sound, and evaluated thoroughly with robust baselines, ablation studies, and independent corroboration from both multi-model LLM ensembles and human experts.</p>
+      <p>The authors clearly acknowledge key limitations, including reliance on an 8B backbone model and restricting the tool space to retrieval and cognitive actions rather than execution environments or code simulators.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:39:28.063164+00:00.</p>
+        <p>Coverage: 50649 of 50649 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Ideation plays a pivotal role in scientific discov-
+ery. Recent LLM, especially AI Scientist systems,
+show promising potential for automated ideation.
+However, existing approaches predominantly rely
+on pre-defined agentic workflows. This constraint
+severely limits the flexibility required to navigate
+the vast search space of scientific literature and
+the complex action space of research reasoning.
+Recently, training Agentic LLMs has emerged as
+a promising direction, offering flexible reasoning
+frameworks and the capability for autonomous
+tool utilization. However, there remains a non-
+trivial challenge: applying previous agentic data
+synthesis methods to scientific ideation suffers
+from prohibitively high data synthesis cost. To
+bridge this gap, we propose Agentic-Ideation, a
+novel framework comprising an automated tra-
+jectory synthesis pipeline and a specialized agen-
+tic LLM trained </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>for scientific ideation. Specifi-
+cally, we first define a comprehensive tool space
+incorporating three external tools and three cogni-
+tive tools. Then we introduce an Oracle-Guided
+Data Synthesis strategy. By leveraging a refer-
+ence idea as oracle guidance, this approach steers
+the multi-agent system to efficiently reconstruct
+the logical reasoning and tool invocation paths,
+transforming aimless trial-and-error into directed
+trajectory generation. Finally, we train the agent
+on these synthesized trajectories, employing a
+masking strategy on tool execution results. This
+ensures the model focuses on decision-making
+logic without interference from external feedback.
+Experimental results demonstrate that our method
+outperforms the SOTA workflow-based baseline
+by11.91%in overall quality. Furthermore, our
+approach improves the sample efficiency of high-
+quality data synthesis byover </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents
+applying standard rejection sampling leads to prohibitively
+low sample efficiency, as unguided models struggle to navi-
+gate this immense search space to yield high-quality ideas,
+rendering the data synthesis process computationally expen-
+sive and ineffective.
+To tackle these challenges, we introduce Agentic-Ideation,
+a comprehensive framework designed for efficient agentic
+data synthesis and robust model training. We first meticu-
+lously define the agent&#x27;s hybrid tool space, which comprises
+three external tools and three thinking tools. The external
+tools, includingSearch,Get_ReferencesandGet_Cited, em-
+power the agent to access external APIs, thereby proactively
+expanding its knowledge boundaries beyond its internal
+parameters. Complementing these, the thinking tools, </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>in-
+cludingAnalyse_Gap,IdeationandReflection, enable the
+agent to perform critical cognitive tasks, such as identifying
+research voids and iteratively refining ideas. To synthe-
+size high-quality trajectories based on this action space, we
+construct a hierarchical multi-agent system consisting of a
+Planner, a Controller, and six specialized tool agents. In this
+architecture, the Planner orchestrates the high-level ideation
+strategy, while the Controller manages fine-grained tool
+selection and execution at each step.
+Notably, we endow agents with an oracle view of the high-
+quality &quot;reference idea,&quot; acting as a navigational beacon to
+maximize sample efficiency. Instead of aimlessly exploring
+the vast action space, this guidance transforms the synthesis
+process from a stochastic search into a directed trajectory
+reconstruction. By leveraging this &quot;foresight,&quot; the system
+can generate a </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To systematically synthesize agentic trajectories, we design
+a hierarchical multi-agent system operating on the defined
+tool space T . The process initiates by selecting a scientific
+paper, termed the &quot;Anchor Paper,&quot; and extracting its bib-
+liography to serve as the system input. The system then
+decomposes the ideation process into strategic planning and
+tactical execution, formalized as follows:
+• Planner( Aplan): Acts as the architect. Given the
+initial context H0 (derived from the anchor paper&#x27;s
+references), the planner generates a high-level research
+roadmapPto structure the exploration:
+P=A plan(H0)
+• Controller( Actrl): Acts as the executor. At each
+time step t, guided by the roadmap P , the controller
+processes the current interaction history Ht to generate
+a reasoning thoughtT ht and a subsequent actiona t:
+(T ht, at) =Actrl(Ht, P, Iref )
+where at ∈ T denotes the specific tool </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>invoked to
+acquire new information or perform reasoning.
+• Private Thought( th(t)
+priv): Represents theOracle
+View. It explicitly utilizes Iref to perform a gap analy-
+sis between the current state and the target goal. This
+stream calculates the optimal tool at required to bridge
+the gap, effectively collapsing the search space by pro-
+viding directional foresight.
+• Public Thought( th(t)
+pub): Represents theResearcher
+View. It rationalizes the decision at using only the
+currently available history Ht, intentionally masking
+the existence of Iref . This ensures the resulting rea-
+soning trace mimics a natural, autonomous exploration
+process suitable for training.
+Reject Sampling
+Oracle Guided
+Maybe we should take a closer look…
+It might be worth trying a different…
+I am not entirely convinced this architecture…
+Perhaps the issue lies in the way we are sampling…
+……
+Reference </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>process. Specifically, we implement a
+Dual-Thought Mechanism where the controller simultane-
+ously generates two distinct cognitive streams. Formally,
+the policy at steptis defined as:
+(th(t)
+priv, th(t)
+pub, at) =Actrl(Ht, P, Iref )
+The two thought components function as follows:
+The synthesis process concludes when the agent invokes the
+Reflection tool. The system evaluates the semantic align-
+ment between the generated idea oidea and Iref . Only tra-
+jectories where the generated idea successfully recovers
+the reference idea are preserved for the subsequent training
+phase.
+4</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To transform the diverse interaction traces generated by our
+multi-agent system into a format suitable for LLM training,
+we employ a structured linearization strategy. The input to
+the model consists of a system prompt defining the tool
+space T and the user query containing the references of
+the anchor paper. Crucially, to ensure the trained agent
+learns autonomous exploration rather than &quot;cheating,&quot; we
+exclusively retain the Public Thought ( thpub) from the
+controller&#x27;s dual-stream output as the primary reasoning
+chain, discarding the Private Thought ( thpriv) and the
+Oracle&#x27;s guidance. The training sequence is rigorously
+organized using special tokens: external tool queries are
+encapsulated as&lt;Tool_Name&gt;Query&lt;/Tool_Name&gt;,
+environmental observations are wrapped in&lt;Re-
+sult&gt;Output&lt;/Result&gt;, and internal cognitive actions
+are formatted as&lt;Tool_Name&gt;Content&lt;/Tool_Name&gt;,
+culminating in the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This design prevents the model from memoriz-
+ing deterministic environmental feedback, forcing it to focus
+solely on reasoning and decision-making. The optimization
+objective is defined as:
+L(θ) =− 1
+P|X|
+t=1 Mt
+|X|X
+t=1
+Mt ·logP θ(xt |x &lt;t)
+where X represents the complete linearized token sequence,
+and xt denotes the t-th token. x&lt;t represents the context
+preceding xt, and Pθ is the conditional probability distribu-
+tion parameterized by the model weightsθ. The binary mask
+Mt ∈ {0,1}serves as the indicator function: Mt = 1if xt
+belongs to the agent&#x27;s generated actions (thoughts or tool
+calls), and Mt = 0if xt belongs to system instructions or en-
+vironmental feedback (tokens within &lt;Result&gt;...&lt;/Result&gt;).
+This ensures gradients are back-propagated exclusively
+through the agent&#x27;s autonomous decisions.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Baselines.To comprehensively evaluate the performance
+of our proposed framework, we compare Agentic-Ideation
+against four representative workflow-based ideation systems
+and the foundation model itself.
+• ResearchAgent (Baek et al., 2024):An iterative frame-
+work that augments ideation using a scientific knowledge
+store. It refines ideas through simulated peer reviews
+generated by &quot;ReviewingAgents.&quot;
+• SciPIP (Wang et al., 2024a):A dual-path mechanism
+that integrates retrieval-based knowledge extraction with
+generative brainstorming to balance the novelty and feasi-
+bility of proposed ideas.
+• SciMON (Wang et al., 2023):A system that explicitly
+optimizes for novelty. It iteratively retrieves &quot;inspirations&quot;
+from past literature and refines generated ideas until they
+sufficiently diverge from retrieved prior works.
+• VirSci (Su et al., 2024):A multi-agent collaboration
+framework (&quot;Many </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>6.01 6.91 5.24 6.10 5.90 6.96 5.43 5.90
+Agentic-Ideation6.56∗ 7.88∗ 6.21∗ 6.64∗ 6.74∗ 7.65∗ 6.13∗ 6.69∗ 6.92∗ 7.82∗ 6.02∗ 6.69∗ 6.74∗ 7.78∗ 6.12∗ 6.67∗
+Improvement↑12.71% 10.52% 8.76% 10.48%9.42% 8.82% 9.07% 11.13%10.19% 11.40% 6.93% 9.67%11.40% 11.14% 8.70% 11.91%
+domains: Natural Language Processing (NLP), Computer
+Vision (CV), and Others.
+For the test set, we focus on the most recently published
+conference, NeurIPS 2025, to assess the model&#x27;s ability
+to generate cutting-edge ideas. Specifically, we randomly
+sample 100 papers from each category (NLP, CV , Others),
+creating a balanced evaluation benchmark of 300 papers.
+For each anchor paper in both training and testing sets,
+we randomly select 10 references from its bibliography.
+These references serve as the sole input context, challenging
+the models to generate high-quality scientific ideas based
+strictly on this foundational </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>underlying LLM for all agents (Planner,
+Controller, and Tools) within the oracle-guided multi-agent
+system. For the Agentic training phase, we employ Qwen3-
+8B as the backbone for the target agentic LLM, which is fine-
+tuned on a dataset comprising 4,646 synthesized trajectories.
+Please refer to Appendix A.2 for further implementation
+details.
+To ensure a rigorous comparison, all baseline methods (Re-
+searchAgent, SciPIP, SciMON, VirSci) are implemented us-
+ing GPT-4o as the underlying engine, representing a strong
+closed-source benchmark.
+Given the complexity of scientific ideation, we adopt a
+&quot;Panel of LLM Judges&quot; approach to mitigate single-model
+bias. We employ four state-of-the-art models as evaluators:
+GPT-5.2, Gemini-3-Pro-Preview, Claude-Sonnet-4.5, and
+Qwen3-Max. The reported scores are the averaged results
+across these four judges.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 presents the comprehensive evaluation results.
+Agentic-Ideation achieves state-of-the-art performance, con-
+sistently outperforming all baselines. Specifically, our
+method achieves an Overall score of 6.67, surpassing the
+best-performing baseline by 11.91%. We observe significant
+gains across Novelty (+11.40%), Significance (+11.14%),
+and Feasibility (+8.70%), demonstrating the robustness of
+our approach across NLP, CV , and Other domains.
+Comparison with Workflow-based Baselines.Compared
+to workflow-based systems (e.g., ResearchAgent, SciPIP),
+Agentic-Ideation exhibits superior adaptability. While base-
+lines are constrained by rigid, pre-defined execution loops,
+our agentic framework empowers the Controller to dynami-
+cally navigate the research space—backtracking or reflect-
+ing as needed. This autonomy allows the model to escape
+local optima that limit static workflows, </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 2 highlights the critical efficiency gap. Rejection
+Sampling proves prohibitively inefficient, averaging 12
+attempts to harvest a single valid sample. This stems from
+the vast, open-ended nature of scientific ideation, where
+unguided agents rarely converge spontaneously on the target
+idea, leading to massive computational waste. In contrast,
+Agentic-Ideation achieves optimal efficiency, requiring only
+1 rollout per sample. By leveraging our Oracle-Guided
+Strategy, the system uses &quot;foresight&quot; to ensure the necessary
+logic and tool invocations are generated in a single pass.
+Consequently, every generated trajectory is valid, delivering
+a &gt;10× improvement in synthesis efficiency compared to
+rejection sampling, effectively making large-scale agentic
+data synthesis computationally feasible.
+Table 2.Comparison of the average number of rollout attempts
+required to synthesize a single </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>valid training sample. &quot;Roll out
+times&quot; denotes the mean number of generation trials needed to
+produce one trajectory that passes the quality verification.
+Method NLP CV Others Overall
+Reject Sampling 14 9 13 12
+Agentic-Ideation 1 1 1 1</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 3 investigates the individual contribution of each tool
+within our framework. The results unequivocally demon-
+strate that removing any single tool leads to a consistent
+degradation in performance across all metrics. This uni-
+versal decline confirms the holistic nature of our Agentic
+Tool Space, where both external information acquisition
+(e.g., retrieval tools) and internal cognitive reasoning (e.g.,
+reflection and gap analysis) are indispensable components.
+The synergy between these tools ensures that the agent can
+effectively bridge the gap between raw data and high-level
+scientific conceptualization.
+Table 3.Ablation Study on the contribution of individual tools
+within the Agentic Tool Space.
+Tools Nov. Sig. Fea. Overall
+w/o Search 6.03 7.21 6.04 5.99
+w/o Get_References 6.34 7.29 5.98 6.32
+w/o Get_Cited 6.57 7.66 6.07 6.38
+w/o Analyse_Gap 5.86 7.26 5.99 6.07
+w/o Reflection </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To further validate the practical value and reliability of our
+method, we conducted a rigorous human evaluation. We
+adopted a double-blind protocol to eliminate potential bias.
+Expert evaluators were presented with anonymized ideas
+generated by different models in a randomized order and
+were asked to score them based on four criteria: Novelty,
+Significance, Feasibility, and Overall quality.
+Table 4.Human evaluation results comparing Agentic-Ideation
+against baselines.
+Methods Nov. Sig. Fea. Overall
+ResearchAgent 5.83 6.41 5.41 5.57
+SciPIP 6.02 6.49 5.57 5.87
+Scimon 6.07 6.68 5.55 5.76
+Virsci 5.82 6.38 5.43 5.62
+Qwen3-8B 5.96 6.57 5.42 5.55
+Agentic-Ideation6.71 7.50 6.05 6.45
+Improvement↑10.54% 12.28% 8.62% 9.88%
+As shown in Table 4, the human evaluation results align con-
+sistently with the automated metrics reported in the main ex-
+periment. Agentic-Ideation achieves superior </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>performance
+across all dimensions, securing the highest Overall score
+of 6.45, which surpasses the strongest baseline (SciPIP) by
+9.88%. Notably, the most substantial improvement is ob-
+served in Significance (+12.28%), suggesting that human
+experts particularly value the logical depth and theoretical
+value derived from our agent&#x27;s grounded reasoning process.
+Furthermore, the +8.62% gain in Feasibility confirms that
+the active usage of retrieval tools effectively reduces hallu-
+cinations, producing ideas that are not only innovative but
+also practically viable.
+To intuitively demonstrate the working mechanism of
+Agentic-Ideation, we present a representative research tra-
+jectory in Figure 4. In this case, the agent explores the
+domain of &quot;Diffusion Models&quot; to address the problem of
+error compounding.
+The trajectory illustrated in Figure 4 offers a compelling
+validation of </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despite the promising results, we acknowledge two primary
+limitations. First, our experiments rely on the Qwen3-8B
+backbone; while efficient, its reasoning depth and world
+knowledge are naturally constrained compared to larger-
+scale foundation models, suggesting that scaling up could
+further enhance idea complexity. Second, the current agen-
+tic tool space is predominantly retrieval-oriented, focusing
+on information acquisition rather than executable actions.
+Future work should integrate &quot;active&quot; tools, such as Python
+code execution or domain-specific simulators, to allow the
+agent to perform preliminary validation of its proposed
+ideas.
+12</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +410,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

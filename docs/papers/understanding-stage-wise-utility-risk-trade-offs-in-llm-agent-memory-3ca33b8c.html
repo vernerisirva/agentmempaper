@@ -59,16 +59,430 @@
             <p>Long-term memory is becoming a core capability of LLM agents, enabling personalization and long-horizon interaction. However, memory mechanisms that retain, transform, or expose more information can affect both benign utility and susceptibility to memory poisoning. Existing evaluations typically measure memory utili...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript offers a rigorous, well-controlled experimental framework addressing a major gap in agent memory security evaluations, supported by broad cross-model testing, sensitivity analyses, and expert human annotation validation.</p>
+      <p>The authors acknowledge that existing memory architectures couple stages tightly, meaning real-world system experiments represent diagnostic associations rather than strictly isolated stage controls.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:37:29.263057+00:00.</p>
+        <p>Coverage: 41455 of 41455 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Long-term memory is becoming a core capability of LLM
+agents, enabling personalization and long-horizon interac-
+tion. However, memory mechanisms that retain, transform,
+or expose more information can affect both benign utility
+and susceptibility to memory poisoning. Existing evalua-
+tions typically measure memory utility or attack risk in iso-
+lation under fixed configurations, providing limited insight
+into how stage-specific design choices reshape their trade-
+off. We present MEMGAUGE, a controllable framework
+that separately varies writing admission, management pol-
+icy, and retrieval exposure under matched clean and poisoned
+conditions. Across 11 LLMs and two long-term memory
+benchmarks, controlled evaluations reveal three distinct pro-
+files: a threshold-like risk transition during writing, policy-
+dependent local decoupling during management, and cou-
+pled growth of utility and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>examine whether their observed oper-
+ating points are consistent with these profiles.
+Concretely, MEMGAUGEdefines three intervention axes
+corresponding to the memory lifecycle. At the writing stage,
+it divides each trace into atomic units, ranks them using the
+agent&#x27;s own LLM, and varies the ranked prefix passed to the
+writer to produce nested admission levels. At the manage-
+ment stage, it applies alternative conflict-handling policies
+to the same pre-management memory state. At the retrieval
+stage, it varies a shared exposure rate for helpful and risk-
+bearing records while keeping the retrieval budget fixed. At
+each operating point, paired clean and poisoned conditions
+hold the agent model, task, prompts, memory budget, and
+remaining memory operations fixed.
+Using MEMGAUGE, we conduct controlled evaluations
+of 11 LLMs across two long-term memory benchmarks.
+The resulting stage-wise </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>MEMGAUGEconstructs stage-wise response profiles within
+a controlled memory pipeline rather than by modifying exist-
+ing systems. Within this pipeline, it defines one intervention
+axis for each stage and varies one stage at a time under paired
+clean and poisoned conditions. We present the interventions
+in execution order: writing, management, and retrieval.
+(1) Writing: Controlling Information Admission.Al-
+though memory systems implement writing differently, they
+share a common purpose: extracting helpful information
+from interaction traces that may support future decisions and
+storing it as persistent records. MEMGAUGEtherefore rep-
+resents writing in the controlled pipeline as admission fol-
+lowed by transformation. An admission controller selects the
+source units available at each operating point, while a fixed
+writerWconverts the selected units into memory records.
+HoldingWfixed </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ensures that differences across admission
+levels reflect changes in the available source information
+rather than changes in the writing mechanism itself.
+Letq∈ {+,−}denote the helpful or risk-bearing infor-
+mation role. We divide each traceτ q
+i into a set of atomic
+source unitsZ q
+i . The same LLM used by the agent ranks the
+units within each trace by their estimated usefulness for fu-
+ture decisions, producing an orderingπ q
+i . The helpful and
+risk-bearing traces are ranked independently. At writing ad-
+mission coverageθ w ∈[0,1], the controller supplies the cor-
+responding ranked prefix toW:
+bq
+i (θw) =
+
+θw|Zq
+i |
+
+,A q
+i (θw) =
+
+πq
+i (1), . . . ,πq
+i
+ 
+bq
+i (θw)
+
+.
+(1)
+whereA q
+i (0) = /0. Because these admitted sets are nested,
+increasingθ w only adds lower-ranked units from the same
+trace. The writer converts the admitted units into memory
+records:∆M q
+i (θw) =S
+z∈Aq
+i </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory state as
+eMs
+i (g) =Gg(Ms
+i ),g∈G={UM,PQ,NC,SC}.(4)
+Here, quarantining a record means excluding it from sub-
+sequent retrieval while leaving the remaining memory state
+unchanged.Unmanaged Memory(UM) leaves all records
+unchanged and serves as the no-management reference.
+Provenance-Aware Quarantine(PQ) quarantines records
+written from sources marked as untrusted.Numeric-Conflict
+Resolution(NC) quarantines a newly written record when its
+numerical content conflicts with an existing trusted record.
+Strict Conflict Resolution (SC)retains records consistent with
+verified interaction outcomes, such as explicit user confirma-
+tions or tool-execution results, and quarantines those that are
+not. It represents an idealized setting in which such feedback
+is complete and reliable, and serves as an upper bound.
+Within each condition, all policies receive the same pre-
+management stateM s
+i , </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>while the subsequent retrieval config-
+uration and agent remain fixed. The policies therefore rep-
+resent separate management operating points rather than or-
+dered levels of management capability.
+(3) Retrieval: Controlling Decision-Relevant Exposure.
+Retrieval determines which records from the memory are ex-
+posed to the agent for the current query. Although retrieval
+mechanisms differ in how they rank records, their decision-
+relevant outcome is whether helpful or risk-bearing infor-
+mation enters the retrieved context under a fixed retrieval
+budget. MEMGAUGEtherefore intervenes directly on record
+exposure rather than modifying any particular ranking algo-
+rithm.
+For each instance, the retriever returns a context contain-
+ing exactlyKrecords. At retrieval exposure probability
+θr ∈[0,1], we sample
+a+
+i ∼Bernoulli(θ r),a −
+i ∼Bernoulli(θ r),(5)
+wherea +
+i anda −
+i indicate whether the </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>helpful recorde +
+i and
+the risk-bearing recorde −
+i are included in the retrieved con-
+text, respectively. In particular,
+Pr(a+
+i =1) =Pr(a −
+i =1) =θr.(6)
+3
+��:
+ ...
+��
++:
+��
+−:
+Clean: �� + ��
++, Poisoned: �� + ��
++ + ��
+−
+Divide each trace ��
+� into atomic source units ��
+�:
+...
+ ��
++: ...
+��
+−: ...
+Writing Coverage: ��
+New Records: △ �+, △ �−
+UM (Unmanaged)
+Records unchanged.
+.
+PQ (Provenance-Aware)
+Quarantine records from
+.
+NC (Numeric-Confict)
+Quarantine records that
+ values,e.g.,1 ≠ 2.
+SC(Strict Confict)
+Quarantine records
+;
+preserve correct decisions.
+Managed State: ��
+�
+Fixed  Budge:</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>files
+At each operating point, we evaluate the same instances un-
+der matched clean and poisoned conditions while holding
+the model, queries, prompts, decoding settings, and remain-
+ing memory operations fixed. From the paired outputs, we
+compute clean utility, poisoned utility, and attack success
+rate (ASR). Clean utility measures correct decisions under
+the clean condition, poisoned utility measures correct deci-
+sions after risk-bearing information is introduced, and ASR
+measures decisions redirected to the attacker-predefined tar-
+get. Poisoned utility and ASR are not complementary be-
+cause an output may match neither target. Varyingθ w orθ r
+produces the writing- and retrieval-stage response profiles,
+respectively. Because management policies do not form an
+ordered scale, each policy is represented as a separate utility-
+risk point. These profiles characterize responses along </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Agent and LLMs.We implement a common LangGraph
+agent (38.4K GitHub stars) with 11 LLMs, including GPT-
+5.4, GPT-5.4-Mini, Gemini 3.1 Flash, Gemini 2.5 Flash,
+Grok 4.3 High, Grok 4.2 Fast, DeepSeek-V4-Flash, GLM-
+5.1, Qwen 3.5 397B, MiniMax-M3, and Doubao Seed 2.0
+Pro. For each configuration, the same LLM serves as the
+agent&#x27;s reasoning model and the writing-stage ranker.
+Datasets and trace construction.We construct evaluation
+instances from LongMemEval [16] and LoCoMo [10], se-
+lecting 100 test questions from each dataset and identify-
+ing the information required to answer them. This informa-
+tion is introduced through a benign agent interaction, pro-
+ducing the helpful traceτ +
+i . The background memory bank
+Bi is constructed from analogous interactions generated us-
+ing information from the corresponding dataset that is unre-
+lated to the subsequent query. For the poisoned </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>condition,
+MINJA [4] and Sleeper [13] generate user-side and tool-side
+risk-bearing interactions, respectively, producingτ −
+i . The
+attacker can influence the corresponding interaction content
+but cannot directly edit the memory bank. Helpful and risk-
+bearing traces are generated in separate sessions, and the test
+query is issued in a subsequent session. In the controlled ex-
+periments, traces are processed by the fixed writerW; in the
+existing-system evaluation, they are processed by each sys-
+tem&#x27;s native writing mechanism.
+4
+Existing memory systems.We consider four existing mem-
+ory system: Mem0 (61.8K GitHub stars) [2], Hindsight
+(18.8K GitHub stars) [8], LangMem (1.6K GitHub stars) [7],
+and A-Mem (1.1K GitHub stars) [17].
+Metrics.We report clean utility, poisoned utility, and ASR
+as defined in Section 3.3. AgentEvals [6] judges whether
+each trajectory supports the correct answer </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>or the attacker-
+predefined target. Its agreement with human annotations is
+evaluated in Section 4.5.
+Parameters.Unless otherwise specified, we set the retrieval
+budget toK=5, and the background memory size|B i|=100.
+Matched clean and poisoned evaluations use the same config-
+uration (e.g., model, system prompt, query). When evaluat-
+ing one stage, the other stages are fixed atθw =0.6, UM, and
+θr =0.8, respectively.
+Research questions.Our experiments address the following
+research questions.RQ1 : What utility–risk profiles emerge
+under controlled writing, management, and retrieval inter-
+ventions?RQ2 : How stable are the observed stage-wise
+profiles across evaluation conditions?RQ3 : Do analogous
+stage-level measurements on existing memory systems ex-
+hibit qualitative correspondence with the controlled profiles?</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure 3 presents the controlled stage-wise profiles across 11
+LLMs. Each column varies one memory stage while holding
+the remaining operations fixed, and each row represents a
+dataset–attack combination. Lines report the median across
+models, with shaded regions and box plots showing the in-
+terquartile range. Per-model results are in Supplementary
+Material Section B.1.
+Writing-Stage Profile.At low coverage (θ w &lt;0.3), clean
+and poisoned utility increase almost synchronously to ap-
+proximately 15%-20%, while ASR remains near zero. Be-
+tweenθ w =0.3 and 0.5, both utility measures continue to
+rise, reaching roughly 20%-42%, but ASR generally remains
+below 10%. Beyond this range, the profiles diverge sharply:
+clean utility continues increasing, whereas poisoned utility
+reverses its trend and declines from its peak to 3%-34% at
+full coverage. Meanwhile, ASR rises rapidly to 37%-64%.
+This </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>delayed but sharp divergence reveals a threshold-like
+nonlinearity: additional risk-bearing information has little
+downstream effect at low coverage but becomes increasingly
+influential once sufficient content is retained.
+Management-Stage Profile.Management can effectively
+mitigate memory risks, but its effectiveness differs substan-
+tially across attack types. Across the evaluated policies,
+clean utility varies by only 3%-5%, whereas ASR changes by
+up to 62%, indicating that management can locally decouple
+risk from clean performance. However, the extent of this de-
+coupling is mechanism-specific. PQ reduces Sleeper ASR to
+nearly zero with little utility change but provides limited pro-
+tection against MINJA, whereas SC achieves more consistent
+risk reductions across both attacks.
+Retrieval-Stage Profile.Retrieval exhibits a coupled utility-
+risk response. As retrieval exposure </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>increases, clean util-
+ity rises from approximately 10%–25% to 43%-70%, while
+ASR simultaneously increases from about 5%-18% to 34%-
+64%. At high exposure, clean utility begins to saturate,
+whereas ASR remains high and poisoned utility falls to ap-
+proximately 4%-31%. This coupling is expected because re-
+trieval ranks records by their relevance to the query rather
+than determining whether their content is benign or risk-
+bearing; a sufficiently relevant risk-bearing record can there-
+fore receive exposure comparable to a helpful record.
+Key Finding 1.Writing exhibits athreshold-like risk
+transition, management enablesmechanism-dependent
+local decoupling, and retrievalcouples utility with
+risk. Effective control therefore requires calibrating
+writing coverage to avoid the high-risk region, adopt-
+ing mechanism-matched management policies, and
+constraining retrieval exposure rather than </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We examine how selected workload and implementation fac-
+tors affect the stage-wise profiles. Unless otherwise speci-
+fied, all experiments in this section use DeepSeek-V4-Flash,
+LongMemEval, and MINJA.
+Trace-Load stability.As shown in Figure 4, we vary the
+number of source units in each trace to 0.75×, 1.0×, and
+1.25×the default size while preserving the core helpful or
+risk-bearing information. Across all three settings, ASR re-
+mains near zero at low writing coverage and increases more
+sharply at higher coverage. At full coverage, ASR reaches
+58%-63%, while poisoned utility falls to 1%-4%. Larger
+trace loads shift the rise in risk toward lower coverage lev-
+els but preserve the overall writing-stage response.
+Ranker stability.As shown in Figure 5, we compare four
+source-unit orderings: the agent&#x27;s own LLM, an external
+LLM, random ordering, and chronological ordering. At
+θw =0.5, the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>self-LLM and external-LLM rankers achieve
+43%–47% clean utility with 2%-8% ASR, whereas random
+ordering reaches only 16% clean utility. Chronological or-
+dering achieves 33% clean utility but raises ASR to 27%. All
+orderings converge atθ w =1 because full coverage includes
+the same source units by construction. Thus, ranker choice
+shifts the utility-risk trajectory and the onset of risk without
+changing the full-coverage endpoint.
+Retrieval-budget stability.BecauseKdirectly controls the
+amount of memory returned to the agent, we evaluate its ef-
+fect primarily at the retrieval stage. As shown in Figure 6,
+across all budgets, increasingθ r raises both clean utility and
+ASR under matched helpful and risk-bearing exposure. The
+differences are most visible at low and intermediate exposure
+levels, while the profiles converge at high exposure. Thus,K
+shifts the utility-risk operating points </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tems
+We examine whether analogous stage-level measurements on
+Mem0, Hindsight, LangMem, and A-MEM exhibit qualita-
+tive correspondence with the controlled profiles. Table 1 re-
+ports the writing and management results. WR denotes the
+proportion of source units retained by the system&#x27;s writer,U0
+denotes utility without memory, andM 0 andM 1 denote na-
+tive management disabled and enabled, respectively. Unless
+otherwise specified, we use|B i|=100 andK=5.
+Table 1: Writing and management results on real-world mem-
+ory systems. WR is reported as mean±standard deviation over
+500 writing trials.
+System WR (%)U0 Mode Clean U Poisoned U ASR
+Mem0 36.5±6.1 0.008 M0 0.533 0.213 0.326
+M1 0.541 0.343 0.176
+Hindsight 69.4±5.4 0.015 M0 0.563 0.165 0.475
+M1 0.524 0.240 0.293
+LangMem 74.5±8.7 0.011 M0 0.528 0.158 0.473
+M1 0.523 0.325 0.225
+A-MEM 55.7±7.7 0.008 M0 0.483 0.130 0.403
+M1 0.460 0.218 </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.297
+Writing-stage correspondence.Writing exposure varies
+substantially across the four systems, from 36.5% in Mem0
+to 74.5% in LangMem. Meanwhile,U0 remains only 0.8%-
+1.5%, confirming that the evaluated tasks largely depend on
+information supplied through memory. UnderM0, higher
+writing exposure broadly coincides with greater risk. Mem0
+has both the lowest WR and ASR (36.5% and 32.6%),
+whereas Hindsight and LangMem exhibit high WR (69.4%-
+74.5%) and ASR (47.3%-47.5%). However, clean utility
+does not increase correspondingly: Mem0 achieves 53.3%
+clean utility despite its substantially lower WR, comparable
+to LangMem at 52.8%. These results suggest that greater
+writing exposure expands risk exposure without guarantee-
+ing additional clean utility.
+Management-stage correspondence.Enabling native man-
+agement reduces observed ASR in all four systems by 10.6-
+24.8 percentage points and </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>increases poisoned utility by
+7.5-16.7 percentage points. The corresponding clean-utility
+changes range from a 0.8-percentage-point increase to a 3.9-
+percentage-point decrease. LangMem shows the largest ASR
+reduction, from 47.3% to 22.5%, with only a 0.5-percentage-
+point decrease in clean utility. These results qualitatively cor-
+respond to the policy-dependent utility–risk shifts observed
+in the controlled management profiles.
+To evaluate retrieval, we vary the retrieval budgetKas a
+proxy for increasing memory exposure; all experiments are
+conducted underM0 with|B i|=100, and RSR denotes the
+proportion of instances in which the target record (helpful or
+risk) appears in the top-Kretrieved context.
+Retrieval-stage correspondence.Increasing the retrieval
+budget produces a consistent coupled utility-risk response
+across all four systems. AsKincreases from 1 to 7, RSR
+rises from 42%-51% </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>to 86%-97%, while clean utility in-
+creases from 24.6%-29.3% to 52.7%-64.2%. This utility
+Table 2: Retrieval results under different retrieval budgets.
+System MetricK=1K=3K=5K=7
+Mem0
+RSR 0.510 0.790 0.920 0.970
+Clean U 0.287 0.417 0.533 0.586
+Poisoned U 0.246 0.245 0.213 0.194
+ASR 0.047 0.249 0.326 0.361
+Hindsight
+RSR 0.460 0.730 0.880 0.930
+Clean U 0.293 0.472 0.563 0.642
+Poisoned U 0.241 0.224 0.165 0.134
+ASR 0.086 0.359 0.475 0.537
+LangMem
+RSR 0.470 0.720 0.840 0.910
+Clean U 0.287 0.463 0.528 0.613
+Poisoned U 0.225 0.193 0.158 0.147
+ASR 0.094 0.328 0.473 0.526
+A-MEM
+RSR 0.420 0.650 0.790 0.860
+Clean U 0.246 0.395 0.483 0.527
+Poisoned U 0.213 0.176 0.130 0.095
+ASR 0.122 0.313 0.403 0.478
+gain is accompanied by a substantial increase in ASR, from
+4.7%-12.2% to 36.1%-53.7%, and a decrease in poisoned
+utility from 21.3%-24.6% to 9.5%-19.4%. The strength of
+this response varies across </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>systems: Hindsight gains 34.9%
+in clean utility but also increases ASR by 45.1%, whereas
+Mem0 shows a smaller ASR increase of 31.4% alongside
+a 29.9% utility gain. Nevertheless, the direction is consis-
+tent across implementations. This behavior is expected be-
+cause retrieval ranks records by query relevance rather than
+distinguishing benign from risk-bearing content; increasing
+Ktherefore raises the exposure of both helpful and well-
+matched risk-bearing records.
+Key Finding 3.The four existing systems exhibit quali-
+tative correspondence with the controlled profiles: writ-
+ing exposure raises risk without reliable utility gains,
+native management shifts the observed operating points
+toward lower ASR, and larger retrieval budgets are ac-
+companied by increases in both clean utility and ASR.
+These results are diagnostic associations rather than
+controlled stage effects.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We validate AgentEval using 200 clean and 200 poisoned
+trajectories annotated independently by five human experts.
+Annotators judge whether each output is correct or, for poi-
+soned trajectories, matches the attacker-predefined target;
+the final label is determined by majority vote. AgentEval
+achieves 91% agreement with the human labels, while inter-
+annotator agreement isκ=0.78, supporting its use for eval-
+uation.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +521,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

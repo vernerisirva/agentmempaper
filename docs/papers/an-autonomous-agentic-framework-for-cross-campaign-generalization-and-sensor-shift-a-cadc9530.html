@@ -59,16 +59,193 @@
             <p>Abstract Although autonomous, Large Language Model (LLM)-driven systems show immense potential for orchestrating complex scientific experiments, their efficacy is constrained by two fundamental bottlenecks: context dilution, where strategic reasoning degrades as experimental history accumulates, and inter-campaign a...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The work presents a thorough architectural design, clear mathematical formulation of the memory graph, robust isolation protocols to prevent data leakage during autonomous optimization, and meaningful empirical comparisons and ablations across multiple campaigns and hardware setups.</p>
+      <p>The authors explicitly report substantial GPU computation requirements (91 GPU-hours for SERS), acknowledge validation primarily spanning 1D-to-2D spectral/temporal modalities, and clarify that aged-sensor results serve as a temporal proof-of-concept rather than universal cross-instrument calibration.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Machine Learning Science and Technology. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T07:37:50.922298+00:00.</p>
+        <p>Coverage: 83366 of 83366 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Although autonomous, large language model-driven systems show immense potential for orches-
+trating complex scientific experiments, their efficacy is constrained by two fundamental bot-
+tlenecks: context dilution, where strategic reasoning degrades as experimental history accumu-
+lates, and inter-campaign amnesia, which forces systems into computationally expensive tabula
+rasa explorations upon encountering novel domains. T o overcome these limitations, we intro-
+duce the Multi-Objective State-Action Network (MOSAN), an autonomous cognitive informa-
+tion fusion framework designed for robust cross-campaign generalization and sensor shift adapta-
+tion. MOSAN achieves effective information fusion by coupling a self-evolving semantic memory
+with an Organic Strategic Graph Memory (OSGM), strictly orchestrated through a novel Single
+Ledger Architecture that isolates cognitive phases and </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prevents context saturation. A core mecha-
+nism of the OSGM is Cross-Domain Strategic Seeding (&#x27;Ghost Node&#x27; injection), a transient cold-
+start fusion strategy. Upon encountering novel datasets, the OSGM temporarily injects topologi-
+cal priors from similar past domains; these ephemeral nodes guide initial architectural deductions
+and are subsequently purged, allowing the system to disseminate structural knowledge across dis-
+ciplines while decreasing the risk of cross-contamination. The fusion framework was validated on
+the challenging task of bacterial classification via Surface-Enhanced Raman Spectroscopy subject
+to sensor aging shifts, autonomously discovering highly accurate multi-topological architectures.
+Crucially, when subjected to an out-of-distribution 1D sequential modality (the ECG5000 car-
+diovascular dataset), the agent performed zero-shot architectural meta-learning, </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>literature lacks a unified cognitive fusion framework [ 15, 18–20].
+T o bridge this gap, we introduce the Multi-Objective State-Action Network (MOSAN), an
+autonomous cognitive information-fusion framework specifically designed for long-horizon scientific
+experimentation and sensor shift adaptation. MOSAN was initially validated on the challenging task
+of SERS-based bacterial classification. At its core, the framework integrates an Organic Strategic Graph
+Memory (OSGM), a persistent directed multigraph that enables principled cross-campaign knowledge
+fusion. In this graph, nodes encode experimental states and edges represent tool executions weighted
+by multi-objective impact vectors, with Q-values dynamically propagated via the Bellman optimality
+equation.
+As a crucial novelty to overcome the cognitive bottleneck of inter-campaign amnesia, the OSGM
+implements Cross-Domain Strategic </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Seeding via &#x27;Ghost Node&#x27; injection. This transient, cold-start mech-
+anism temporarily fuses topological priors from past domains into the active exploratory space. Because
+these injected nodes are strictly ephemeral, the AI successfully transfers structural logic across distinct
+scientific domains while maintaining the strict empirical air-gapping required for robust data isolation.
+Supported by a novel Single Ledger Architecture (SiLA) that strictly isolates cognitive phases, and
+specialist sub-agent teams (including an Innovation T eam that autonomously authors and validates neu-
+ral architectures), MOSAN demonstrates that LLM orchestration can transcend standard hyperparameter
+tuning. Ultimately, this work aims to establish MOSAN as a generalized, agentic fusion framework capa-
+ble of autonomously synthesizing multi-epoch information, extending its utility far beyond spectroscopy
+to </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inference server on dedicated
+GPU partitions. This setup successfully executed the entire closed-loop discovery process—from hypoth-
+esis generation to model training—ensuring absolute privacy for sensitive clinical data at zero external
+API inference cost.
+2.4.OSGM
+OSGM is implemented as a persistent directed multigraph G = (V , E) stored in GraphML format, with
+one graph file per dataset identifier. Each node v in V (referred to as an Anchor) represents a distinct
+region of the joint state-architecture space, characterized by a handcrafted state vector s composed of
+four concatenated components: (i) a one-hot encoding of the active architecture; (ii) a three-dimensional
+performance vector [best_accuracy, mean_stability, learning_speed]; (iii) a one-hot encoding of the most
+recently executed tool; and (iv) a normalized dataset hash enabling cross-dataset state comparison. A
+new anchor </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>convergence on previously unseen datasets and avoid computationally wasteful tabula rasa
+explorations, the OSGM implements an Ephemeral Overlay mechanism, formally termed GhostNode
+injection. At initialization—specifically if the active graph contains fewer than a configurable threshold
+of nodes (default: n = 10)—the system performs a one-time cold-start injection of high-value topologi-
+cal states extracted from prior autonomous campaigns.
+Candidate datasets for transfer are dynamically drawn from the three most recently modified sibling
+graphs in the persistent memory directory (acting as a latency guard). Similarity is assessed via domain
+constraints: matching representation families or class-count proximity (| N_A—N_B| &lt; 5). From each
+qualifying neighbour graph, the five nodes with the highest outgoing Q-values are selected, alongside
+their top three directed edges. T o prevent the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>formation of unresolvable cross-graph pathways, a strict
+topological constraint dictates that both endpoints of any injected edge must themselves be Ghost Nodes.
+Crucially, to prevent data leakage, injected nodes carry an ephemeral flag. They are strictly excluded
+from all mathematical saturation metrics, ensuring they guide hypothesis generation without artificially
+inflating session-specific exploration signals. Furthermore, Ghost Nodes are never serialized: during any
+disk-save operation, all ephemeral nodes and their incident edges are stripped from the active graph.
+By re-evaluating the injection procedure from scratch against updated neighbour graphs in subsequent
+sessions, this mechanism provides a rigorous framework for zero-shotarchitecturalmeta-learning while
+maintaining absolute empirical isolation between distinct scientific </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>using a fixed-seed random uniform sampler without replacement:
+The AutoML optimization set
+The majority of the dataset constituted the active empirical playground for the MOSAN framework.
+During the autonomous search campaigns, every execution tool performed an internal K-fold cross-
+validation exclusively on this optimization set. The mean cross-validation accuracy and the internal
+variance across folds were the only reward signals extracted and fed back to the OSGM to compute the
+multi-objective impact vectors (Accuracy, Overfitting Gap, Latency). Consequently, the agent&#x27;s topological
+deductions and hyperparameter sweeps were optimized purely on this set, without ever viewing the final
+test distribution.
+The zero-knowledge lockbox (true held-out test set)
+A stratified subset of exactly 100 spectra per source acquisition file—totaling 2400 spectra across the
+three bacterial classes—was </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>uniformly carved from the total dataset and physically isolated in a separate
+directory (lockbox_holdout). This dataset was completely isolated from the MOSAN framework. It was
+never exposed to the AI agent, never used to calculate optimization metrics, and never utilized to route
+the Q-values within the OSGM. Its sole purpose was to serve as an unbiased distribution for the final,
+one-time validation of the framework&#x27;s ultimate architectural output.
+Zero-Shot Evaluation Rules
+T o prove that MOSAN&#x27;s deductive reasoning genuinely generalizes to unseen distributions, the system
+was restricted to a single final evaluation protocol. Following the conclusion of the autonomous cam-
+paigns, the single most optimal architecture identified by MOSAN was retrained from scratch on the
+AutoML Optimization Set. This finalized model was then evaluated exactly once on the Zero-Knowledge
+5</blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>tasks in three strictly isolated
+phases:
+Phase1(LeadAnalyst): This phase queries the MLflow tracking store and the OSGM via specialized
+data-extraction tools. It outputs strictly numerical and statistical facts to the Ledger, mathematically pre-
+venting hallucinated strategic planning.
+Phase2(TheoristDeepSearch): The Theorist&#x27;s planning phase does not produce hypotheses in a single
+pass. It executes a four-stage, checkpoint-recoverable sequential pipeline with a conditional fifth stage of
+structured self-critique:
+(2a) Knowledge Scout: The Theorist queries in read-only mode the OSGM graph, the vector memory,
+and the RAG research archive, producing a 200-word contextual summary that synthesises the cur-
+rent strategic state, with no planning capability.
+(2b) Hypothesis Generation: Given the contextual summary and the statistical post-mortem from Phase
+1, the Theorist produces 1–3 </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(user_directive.md) enables
+asynchronous priority injection at cycle boundaries without contaminating agent context.
+context dilution is not merely an algorithmic limitation but a fundamental scalability barrier for con-
+versational autonomous agents.
+This architecture laid the groundwork for the finalized SiLA pipeline, in which the Strategist role was
+further specialized into a dedicated Theorist agent (figure 2). T o resolve the context dilution bottleneck,
+we restructured inter-agent communication around a SiLA, conceptually analogous to the note-passing
+paradigm in supervisor-student laboratory interactions: each cognitive agent reads, contributes to, and
+signs off on a shared written record without retaining any prior conversational state.
+The SiLA replaces the conversational executive loop with an asynchronous epoch runner govern-
+ing four strictly isolated phases that </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Decider&#x27;s action space, restricting the agent to single empirical tri-
+als (run_training_trial). This setup forced the system to navigate the architectural search space relying
+entirely on the Theorist&#x27;s deductive reasoning and the topological pathways of the OSGM, establishing a
+baseline to quantify the efficiency and necessity of the LLM-driven autonomous scientific methodology
+over traditional automated search heuristics.
+Operating strictly via targeted executions, the agent achieved a peak held-out test accuracy of 0.9124
+(and an overfitting gap as low as 0.081) after executing only 39 total trials (figure 3(A)). Analysis of the
+execution logs and the associated ledger artifacts (SI) reveals a highly structured, scientifically sound
+search trajectory. The agent began by executing 9 baseline trials on the 1D_CNN architecture, correctly
+identifying its high generalization gap (mean </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>converging on 2D-GAF as
+the primary optimization axis (275 trials, mean held-out 0.8203, mean overfitting gap 0.1723), indepen-
+dently flagging and abandoning 2D-Spectrogram (mean held-out 0.5498) (figure 3(D)).
+Campaign II (63 GPU-hours) commenced with an OSGM already populated by Campaign I history.
+The graph immediately directed hypothesis generation toward 2D-GAF , producing a measurable cross-
+campaign efficiency gain: mean held-out accuracy increased from 0.8203 to 0.8345 while the mean over-
+fitting gap decreased from 0.1723 to 0.1551—without any manual reconfiguration. The best single 2D-
+GAF configuration reached 0.9562. A brief 1D-CNN exploration (peak 0.9635, mean 0.8040) confirmed
+the OSGM&#x27;s assessment of its high variance and generalization instability (mean overfitting gap 0.2951).
+Campaign II also dived into the 3D Dynamic GAF representation (mean held-out 0.8759, mean </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>overfit-
+ting gap 0.1185)—the lowest generalization gap across all representational families, motivating a dedi-
+cated follow-up campaign. Across both campaigns, 2D-GAF demonstrated consistently superior general-
+ization stability relative to 1D-CNN (mean overfitting gap 0.155 versus 0.295), consistent with GAF rep-
+resentations extracting features robust to the low signal-to-noise ratio of the non-refocused acquisition
+protocol (figure 3(D)&amp;C). The progressive improvement in mean accuracy between campaigns—achieved
+without resetting the strategic graph—empirically validates the OSGM as a persistent cross-epoch knowl-
+edge accumulator (figure 3(D)).
+T o validate the framework on smaller models, a parallel campaign was deployed using a parameter-
+constrained open-weight model: Mistral Small 3.2 (24B). Operating reliably across 24 autonomous
+cycles, the model demonstrated coherent </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>queried during training or validation.
+Across five independent random seeds, the MOSAN-discovered architecture achieved a mean ter-
+minal classification accuracy of 87.4 ± 2.7% (range 83.9%–90.5%) on this entirely unseen distribu-
+tion, with a macro-averaged F1-score of 0.874–0.903 across seeds. Per-class performance was consis-
+tent: Citrobacter (precision 0.78–0.91, recall 0.92–0.96), E. coli (precision 0.89–0.98, recall 0.76–0.94),
+and Enterococcus (precision 0.76–0.95, recall 0.75–0.97). The variance across seeds (sigma = 2.7%)
+reflects irreducible stochasticity in weight initialization rather than architectural instability, as the macro
+F1 remains above 0.83 in the worst case.
+The sustained performance on a completely air-gapped dataset confirms the robustness of the dis-
+covered solution. It demonstrates that the OSGM extracted fundamental, generalizable spectral repre-
+sentations </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Cross-Domain Strategic Seeding capability. The OSGM autonomously injected ephemeral topological
+priors derived from the prior SERS optimization campaigns. The &#x27;Ghost Nodes&#x27; provided the Theorist
+agent with a critical conceptual bridge: the abstract structural hypothesis that 1D sequential data can
+fundamentally benefit from 2D spatial transformations. This allowed the agent to perform zero-shot
+architectural meta-learning without violating empirical data sovereignty. Guided by this seeded intuition,
+the agent entirely bypassed the traditional cold-start exploration phase. It rapidly hypothesized that map-
+ping the 140-point cardiac sequences into 2D GAF could effectively isolate periodic cardiac anomalies.
+Crucially, the Bayesian hyperparameter optimization tool ( Optuna) was explicitly disabled during this
+campaign. This strict ablation forced the framework to optimize topological </blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>depth and learning dynam-
+ics relying entirely on the autonomous deductive reasoning of the Theorist. Driven by logic rather than
+statistical search algorithms, the agent autonomously converged on a 6-layer, 192-filter convolutional
+architecture optimized with a learning rate of 2.9 ∗10−5. By the third autonomous cycle, this zero-shot
+structural transfer yielded a near-perfect accuracy of 0.9930 (99.3%) on the entirely unseen 1000-sample
+HO (alongside a mean cross-validation accuracy of 0.9847 on the active optimization pool), demon-
+strating exceptional resistance to overfitting (mean train-test gap: 0.0067). Furthermore, the final model
+yielded an inference latency of merely 12.55 ms per sample, proving that MOSAN naturally converges
+on highly efficient, deployment-ready topologies suitable for real-time biomedical diagnostics. Crucially,
+this cross-domain campaign also highlighted </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>evaluates on the remaining 90%. Under this pro-
+tocol the strongest cross-session model, after 20 ledgers, was an architecture the agent designed from
+scratch (dynamic_cwt_volumetric_f_baseline), reaching a shifted-domain accuracy of 0.811—above
+every canonical representation evaluated under identical conditions (2D-CWT 0.700; 3D dynamic-CWT
+0.721). Notably, it was the only topology whose accuracy rose with progressive backbone unfreezing
+(0.75→0.81) and that recovered the hardest class, Enterococcus, to 0.85 without majority-class collapse
+(supplementary figure S5). Furthermore, the agent continued its optimization up to ledger number 30 as
+instructed and found new configurations and architectures (regularized_volumetric_cwt_resnet.py) arriv-
+ing to an accuracy of 87% (Citrobacter =89%, E.Coli = 83%, Enterococcus= 88%) (supplementary
+figure S5). Supplementary figure S5 illustrates how </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>iterations of MOSAN will explore
+modalities beyond SERS, such as Fourier-transform infrared spectroscopy, to evaluate whether the agent
+autonomously leverages continuous wavelet transforms to decouple overlapping, low-frequency broad.
+Furthermore, expanding the current CNN-constrained search space to include vision transformers and
+graph neural networks will test the framework&#x27;s adaptability on high-dimensional hyperspectral imaging
+datasets, which necessitate complex spatial embeddings for many-body interactions.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +284,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>

@@ -484,21 +484,38 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
     """
     from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
     from paper_scout.operational_preflight import (
-        ESTIMATED_OPENROUTER_USD_PER_PAPER, CostCeilingExceeded)
+        ESTIMATED_OPENROUTER_USD_PER_PAPER, RUN_LEVEL_STOP_REASONS, CostCeilingExceeded)
 
     summaries = summaries or {}
     consumed: set[str] = set()
 
+    def note_not_walked(candidate, outcome: str) -> None:
+        """Account for a nomination that was never tried, so the record reconciles.
+
+        walked + attempted + not-walked must add up to the nominated list, or the per-run
+        record silently loses candidates and cannot be audited afterwards.
+        """
+        metrics.nominees_not_walked += 1
+        summary = summaries.get(candidate.track)
+        if summary is not None:
+            summary.skipped_before_model.append(
+                {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
+                 "outcome": outcome})
+
     for candidate in selected:
         if candidate.track in consumed:
             # This track already spent its one model-consuming assessment this run.
+            note_not_walked(candidate, "track_slot_consumed")
             continue
         allowed, reason = budget.may_assess(candidate.track)
         if not allowed:
-            if reason in {"run_paper_limit_reached", "openrouter_ceiling_reached"}:
+            if reason in RUN_LEVEL_STOP_REASONS:
                 print(f"::warning::Stopping the walk: {reason}")
+                for remaining in selected[selected.index(candidate):]:
+                    note_not_walked(remaining, reason)
                 return
             consumed.add(candidate.track)
+            note_not_walked(candidate, reason)
             continue
         config = configs[candidate.track]
         store = PaperStore(config.sqlite_path)

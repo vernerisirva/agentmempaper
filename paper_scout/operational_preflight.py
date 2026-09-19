@@ -138,6 +138,14 @@ def credential_preflight(primary_model: str | None = None,
     return PreflightResult(True, "credentials_present", tuple(roles))
 
 
+#: Reasons from RunBudget.may_assess that end the whole run rather than one track.
+#: Defined beside may_assess so a caller classifying a refusal cannot drift from the
+#: strings it actually returns; the walk imports this rather than repeating the literals.
+RUN_LEVEL_STOP_REASONS = frozenset({"run_paper_limit_reached", "openrouter_ceiling_reached"})
+#: Reasons that end only the track they were raised for.
+TRACK_LEVEL_STOP_REASONS = frozenset({"track_paper_limit_reached"})
+
+
 class CostCeilingExceeded(RuntimeError):
     """Raised when the next paper would carry known spend past the per-run ceiling."""
 
@@ -186,7 +194,13 @@ class RunBudget:
         return self.openrouter_ceiling_usd - self.openrouter_spend_usd
 
     def may_assess(self, track: str) -> tuple[bool, str]:
-        """Whether one more paper may be assessed on this track."""
+        """Whether one more paper may be assessed on this track.
+
+        Every refusal reason returned here appears in RUN_LEVEL_STOP_REASONS or
+        TRACK_LEVEL_STOP_REASONS, which is what lets a caller tell "stop the run" from
+        "this track is finished" without matching strings of its own. A stopped_reason
+        recorded earlier is run-level, because it means the ceiling was already hit.
+        """
         if self.stopped_reason:
             return False, self.stopped_reason
         if self.total_assessed >= self.max_per_run:

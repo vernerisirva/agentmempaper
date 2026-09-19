@@ -211,6 +211,7 @@ class OperationalMetrics:
     papers_walked: int = 0
     skipped_before_model: int = 0
     nominees_missing_from_store: int = 0
+    nominees_not_walked: int = 0
     papers_successfully_assessed: int = 0
     promoted: int = 0
     non_promoted: int = 0
@@ -258,6 +259,7 @@ class OperationalMetrics:
                 "papers_attempted": self.papers_attempted,
                 "skipped_before_model": self.skipped_before_model,
                 "nominees_missing_from_store": self.nominees_missing_from_store,
+                "nominees_not_walked": self.nominees_not_walked,
                 "papers_successfully_assessed": self.papers_successfully_assessed,
                 "promoted": self.promoted,
                 "non_promoted": self.non_promoted,

@@ -582,6 +582,10 @@ class AcquisitionWalk(unittest.TestCase):
         budget = budget or RunBudget()
         metrics = OperationalMetrics()
         summaries = {t: TrackSelection(t) for t in {n.track for n in nominees}}
+        # select_operational_candidates fills this; the helper must mirror it so the
+        # nominated list reconciles against what the walk reports.
+        for n in nominees:
+            summaries[n.track].candidates.append(n)
         configs = {t: type("C", (), {"sqlite_path": ":memory:", "curation_path": None,
                                      "quality": None})() for t in summaries}
         seen = []
@@ -723,6 +727,64 @@ class AcquisitionWalk(unittest.TestCase):
         # Gated: an outcome outside TECHNICAL_OUTCOMES must not inflate the failure counters.
         self.assertEqual(metrics.technical_failures, 0)
         self.assertEqual(metrics.retry_eligible_failures, 0)
+
+    def test_every_nomination_is_accounted_for(self):
+        """walked + attempted + not-walked must reconcile with what was nominated."""
+        nominees = [self.nominee("agent_memory", 1, "a1"), self.nominee("agent_memory", 2, "a2"),
+                    self.nominee("agent_memory", 3, "a3"), self.nominee("deep_research", 1, "d1")]
+        results = {"a1": self.fake_assessment("manuscript_unavailable"),
+                   "a2": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "a3": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "d1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, _, seen, summaries = self.walk(nominees, results)
+        self.assertEqual(seen, ["a1", "a2", "d1"])
+        self.assertEqual(metrics.nominees_not_walked, 1)  # a3, after agent_memory was done
+        self.assertEqual(metrics.papers_walked + metrics.nominees_not_walked, len(nominees))
+        outcomes = [e["outcome"] for e in summaries["agent_memory"].skipped_before_model]
+        self.assertIn("track_slot_consumed", outcomes)
+
+    def test_the_walk_classifies_stop_reasons_from_the_shared_contract(self):
+        """The walk must not carry its own copy of may_assess's reason strings."""
+        from paper_scout.operational_preflight import (
+            RUN_LEVEL_STOP_REASONS, TRACK_LEVEL_STOP_REASONS, RunBudget)
+        budget = RunBudget(max_per_track=1, max_per_run=2)
+        # Track-level: one track full, others may still proceed.
+        budget.record("agent_memory", openrouter_usd=0.0)
+        self.assertIn(budget.may_assess("agent_memory")[1], TRACK_LEVEL_STOP_REASONS)
+        # Run-level: the per-run cap.
+        budget.record("deep_research", openrouter_usd=0.0)
+        self.assertIn(budget.may_assess("engram")[1], RUN_LEVEL_STOP_REASONS)
+        # Run-level: the cost ceiling.
+        spent = RunBudget(max_per_track=9, max_per_run=9)
+        spent.record("agent_memory", openrouter_usd=0.30)
+        self.assertIn(spent.may_assess("agent_memory")[1], RUN_LEVEL_STOP_REASONS)
+        # No reason may be unclassified, or the walk cannot tell the two cases apart.
+        self.assertEqual(RUN_LEVEL_STOP_REASONS & TRACK_LEVEL_STOP_REASONS, frozenset())
+
+    def test_a_track_level_denial_does_not_stop_other_tracks(self):
+        from paper_scout.operational_preflight import RunBudget
+        budget = RunBudget(max_per_track=1, max_per_run=3)
+        budget.record("agent_memory", openrouter_usd=0.0)  # agent_memory already full
+        nominees = [self.nominee("agent_memory", 1, "a1"), self.nominee("deep_research", 1, "d1")]
+        results = {"a1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "d1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, budget, seen, _ = self.walk(nominees, results, budget=budget)
+        self.assertEqual(seen, ["d1"])
+        self.assertEqual(budget.assessed_per_track["deep_research"], 1)
+
+    def test_the_metrics_record_carries_the_walk_detail(self):
+        """finish() re-serializes the summaries, which is the only reason skips appear."""
+        nominees = [self.nominee("agent_memory", 1, "p1"), self.nominee("agent_memory", 2, "p2")]
+        results = {"p1": self.fake_assessment("manuscript_unavailable"),
+                   "p2": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, _, _, summaries = self.walk(nominees, results)
+        metrics.tracks = {t: s.to_dict() for t, s in summaries.items()}
+        record = metrics.to_dict()
+        track = record["selection"]["tracks"]["agent_memory"]
+        self.assertEqual(len(track["nominated"]), 2)
+        self.assertEqual(track["skipped_before_model"][0]["canonical_id"], "p1")
+        self.assertEqual(record["assessment"]["skipped_before_model"], 1)
+        self.assertEqual(record["version"], "operational-run-v2")
 
     def test_skipped_candidates_are_still_persisted_so_dead_papers_park(self):
         # The walk must not become a silent daily re-probe: a rejected candidate still

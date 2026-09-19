@@ -1,11 +1,15 @@
 # Operationalization — 2026-09-19
 
-**Two defects stood between the validated gate and safe recurring operation, and both are fixed and merged. A technical failure permanently retired a paper: 434 of the 509 papers holding assessment rows had never received a scientific decision yet were already excluded forever. And the runtime state — all three databases, including 18 rows of raw model payloads — answered an unauthenticated request with HTTP 200 from a public release. Recurring assessment remains DISABLED, because the private state destination and both scientific secrets are not yet provisioned.**
+**Two defects stood between the validated gate and safe recurring operation, and both are fixed and merged. A technical failure permanently retired a paper: 434 of the 509 papers holding assessment rows had never received a scientific decision yet were already excluded forever. And the runtime state — all three databases, including 18 rows of raw model payloads — answered an unauthenticated request with HTTP 200 from a public release.**
+
+**The cutover then ran on 2026-09-19. Private durable state is live and verified end to end, and the public archive is deleted and confirmed unreachable. The first production smoke FAILED at its first gate on `HTTP 401: Bad credentials`, changed nothing, and is diagnosed to a provisioning error rather than a code defect: a repository secret holds the literal value `-`. Recurring assessment stays DISABLED.**
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES   (Batch 6, unchanged)
-PRIVATE_DURABLE_STATE_READY:        NO    — implemented and tested; destination not provisioned
-OPERATIONAL_QUALITY_ASSESSMENT_READY: NO  — blocked only on credentials and state
+PRIVATE_DURABLE_STATE_READY:          YES  — seeded, verified, clean-restored from the private repo
+OPERATIONAL_QUALITY_ASSESSMENT_READY: NO   — blocked on a malformed credential secret
+FIRST_OPERATIONAL_SMOKE:              FAIL — stopped at the first gate; no state change
+PUBLIC_STATE_ARCHIVE_REMOVED:         YES  — deleted and confirmed unreachable anonymously
 RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
 ```
 
@@ -77,6 +81,8 @@ Snapshot manifest v2 carries schema name, version, the database list, SHA-256 pe
 
 Checked by metadata only. No value was read, printed, hashed, logged or committed.
 
+At the time this work began:
+
 ```text
 GITHUB_GEMINI_SECRET:     MISSING
 GITHUB_OPENROUTER_SECRET: MISSING
@@ -84,7 +90,14 @@ PAPER_SCOUT_STATE_TOKEN:  MISSING
 PAPER_SCOUT_STATE_REPO:   MISSING  (repository variable)
 ```
 
-The only repository secret is `SEMANTIC_SCHOLAR_API_KEY`. No repository variables exist. The `github-pages` environment holds no secrets.
+All four were provisioned by the operator later the same day and verified present by name; see §M. One of them carries a malformed value, which is what the smoke failed on.
+
+```text
+GITHUB_GEMINI_SECRET:     PRESENT   2026-09-19T16:57:04Z
+GITHUB_OPENROUTER_SECRET: PRESENT   2026-09-19T16:57:13Z
+PAPER_SCOUT_STATE_TOKEN:  PRESENT   2026-09-19T16:56:39Z   (value malformed — see §M)
+PAPER_SCOUT_STATE_REPO:   PRESENT   vernerisirva/agentmempaper-state
+```
 
 Per §11 no credential transfer was performed. The operator elected to provision both the repository and the token themselves. The required actions:
 
@@ -194,7 +207,9 @@ A structural limit is recorded rather than solved: an 18 KB per-file cap and a 1
 
 ## J. Production smoke
 
-**Not run.** It requires the private state destination and both scientific secrets, none of which exist yet. `FIRST_OPERATIONAL_SMOKE = NOT_RUN`.
+**Run once, and it FAILED at its first gate.** `FIRST_OPERATIONAL_SMOKE = FAIL`. It stopped on `HTTP 401: Bad credentials` restoring private state, skipped every subsequent step, and changed nothing — no assessment, no commit, no state write. The cause is a repository secret holding the literal value `-`, which is a provisioning error rather than a code defect. Full detail, evidence and the damage-free verification are in §M.
+
+Per policy the run was **not** retried and **not** silently patched, and the schedules stay disabled.
 
 ## K. Recurring schedule status
 
@@ -202,20 +217,21 @@ A structural limit is recorded rather than solved: an 18 KB per-file cap and a 1
 
 | Gate | Status |
 |---|---|
-| `PRIVATE_DURABLE_STATE_READY` | **NO** — implemented and tested; destination not provisioned |
-| `GITHUB_GEMINI_SECRET` | **MISSING** |
-| `GITHUB_OPENROUTER_SECRET` | **MISSING** |
+| `PRIVATE_DURABLE_STATE_READY` | **YES** — seeded, verified and clean-restored from the private repo |
+| `GITHUB_GEMINI_SECRET` | **PRESENT** |
+| `GITHUB_OPENROUTER_SECRET` | **PRESENT** |
 | `OPERATIONAL_RETRY_ELIGIBILITY_READY` | **YES** |
 | `DAILY_COST_GUARD_READY` | **YES** |
 | `FULL_VALIDATION` | **PASS** |
 | `INDEPENDENT_REVIEW` | **PASS_WITH_NOTES**, 0 unresolved blockers |
-| `FIRST_OPERATIONAL_SMOKE` | **NOT_RUN** |
+| `FIRST_OPERATIONAL_SMOKE` | **FAIL** — the one open gate |
 
 ## L. Known operational backlog
 
-1. **The public state archive is still exposed.** `paper-scout-runtime-state` still carries a 47,313,701-byte `paper-scout-state.tar.gz`, anonymously downloadable. It is deliberately retained as the only recoverable state until a private snapshot verifies, per the operator's decision; deletion will be re-confirmed first. GitHub cannot retract copies already taken, and the databases inside should be treated as disclosed.
-2. **Provision the private destination and the three secrets** (§D). Nothing downstream can proceed first.
-3. **Seed the private store** from current state, then run one manual smoke with `run_assessment: true` at exactly the production bounds (1/track, 3 total, $0.30), and only then enable the daily cron and re-enable the weekly backfill.
+1. **Re-set the malformed secret.** A repository secret holds the literal value `-`; `PAPER_SCOUT_STATE_TOKEN` is the probable one but the evidence cannot single it out, so all three should be re-set. This is the only thing blocking the smoke.
+2. **The public archive is deleted** (§M), but it recorded `downloadCount: 1` and GitHub cannot retract copies already taken. Treat the databases it held as disclosed.
+3. **Re-run the smoke once** after the secret is corrected, at exactly the production bounds (1/track, 3 total, $0.30), and only then enable the daily cron and re-enable the weekly backfill.
+4. **Consider a cheap credential-only dispatch path** so a bad secret is caught without consuming a full production run. The smoke's fail-closed behaviour is correct but expensive to use as a credential test.
 4. **The site stops updating daily** while both schedules are off. This is deliberate and lasts until cutover.
 5. **434 papers become eligible again** under the operational policy. At 2 papers/day that backlog is years of work at current bounds; raising the limits is an explicit operational decision based on observed cost, not an automatic one.
 6. **15 papers hold only technical failures** and will be retried up to the bounded budget; several are Zenodo records whose manuscripts may be permanently unavailable, and they will settle into `retry_budget_exhausted`.
@@ -224,11 +240,84 @@ A structural limit is recorded rather than solved: an 18 KB per-file cap and a 1
 9. **`ESTIMATED_OPENROUTER_USD_PER_PAPER` is calibrated on Batch 6** and should be revisited once real operational runs have their own cost history.
 10. **Three Batch-6 scientific limits stand unchanged**: no `mixed`/`contradicts` corroboration was exercised live, case C rests on one live example, and the adjudicator's behaviour under disagreement is still evidenced mainly by the historical recovery. These argue for monitoring live operation, not for withholding readiness.
 
+## M. Cutover, 2026-09-19
+
+Provisioning was completed by the operator: private repository `vernerisirva/agentmempaper-state` (`isPrivate: true`), repository variable `PAPER_SCOUT_STATE_REPO`, and secrets `PAPER_SCOUT_STATE_TOKEN`, `GEMINI_API_KEY`, `OPENROUTER_API_KEY`. Verified by metadata only; no secret value was read, printed or logged at any point.
+
+### A–B. Seed and snapshot verification
+
+The private repository was empty, so a release could not be tagged; a README was committed first, stating that the repository must never be made public. The local runtime state was then verified (`integrity_check=ok`, no WAL on any database) and persisted.
+
+| Database | SHA-256 | Rows (papers / assessments / runs) | Bytes |
+|---|---|---:|---:|
+| `data/paper_scout.sqlite3` | `3b27f9fa545e6b72…` | 18,343 / **353** / 124 | 190,771,200 |
+| `data/deep_research/paper_scout.sqlite3` | `5ee3ca54ae0535ca…` | 2,395 / **276** / 87 | 52,854,784 |
+| `data/engram/paper_scout.sqlite3` | `a04493c09b9c385d…` | 306 / **48** / 14 | 7,217,152 |
+
+Archive: 49,613,023 bytes, asset digest `sha256:48635237611a7e26…`. Manifest **v2**, schema `paper-scout-state-snapshot`, created `2026-09-19T16:59:51Z`, database list complete. The pre-upload round-trip verification passed for all three databases before anything was uploaded.
+
+**Source metadata is empty** in this snapshot (`workflow`, `run_id`, `sha` all `""`), because the seed was performed locally rather than from Actions. That is expected and will populate on the first successful workflow persist.
+
+### C–D. Clean restore from the private repository
+
+Downloaded fresh from `vernerisirva/agentmempaper-state` into an empty root and verified independently:
+
+| Database | manifest | restored | live | bytes equal | assessments |
+|---|---|---|---|---|---:|
+| `data/paper_scout.sqlite3` | `3b27f9fa` | `3b27f9fa` | `3b27f9fa` | yes | 353 |
+| `data/deep_research/paper_scout.sqlite3` | `5ee3ca54` | `5ee3ca54` | `5ee3ca54` | yes | 276 |
+| `data/engram/paper_scout.sqlite3` | `a04493c0` | `a04493c0` | `a04493c0` | yes | 48 |
+
+File sizes matched the manifest and no extra files were present. `STEP_D_VERIFICATION: PASS`.
+
+Privacy proof: unauthenticated requests to the private repository, its releases API and its release asset all return **404**.
+
+### E. Deletion of the public archive
+
+Deleted only after the seed and clean restore both verified. Removed: release `paper-scout-runtime-state` on `vernerisirva/agentmempaper` (created 2026-08-12), its asset `paper-scout-state.tar.gz` (47,313,701 bytes, `sha256:fb54850bbc973321…`), and the tag.
+
+**The asset kept serving for ~90 seconds after deletion.** The API returned 404 immediately, but `github.com/.../releases/download/...` continued issuing freshly signed CDN redirects and served real gzip content to a ranged request. Only a content fetch reveals this; a status-code check alone would have reported success while the data was still public. It cleared on its own, which identifies it as propagation lag rather than a persistent blob.
+
+Final unauthenticated state: the download URL returns a 9-byte `Not Found` with no CDN redirect, the tag, asset id and release page all 404, the releases list is empty, and the repository tree contains no `.sqlite3` or `.tar.gz`. **`PUBLIC_STATE_ARCHIVE_REMOVED: YES`.**
+
+The asset recorded `downloadCount: 1` at deletion. The probes run during this work are the most likely cause, but a third-party fetch cannot be excluded, and GitHub cannot retract copies already taken. Treat the contents as disclosed.
+
+### First operational smoke — FAIL
+
+Run [35456902376](https://github.com/vernerisirva/agentmempaper/actions/runs/35456902376), `workflow_dispatch` on `2d6a0d463` with `run_assessment: true`.
+
+It failed at step 5 of 22, **Restore private Paper Scout state**:
+
+```text
+cannot read vernerisirva/agentmempaper-state; check PAPER_SCOUT_STATE_TOKEN scope:
+HTTP 401: Bad credentials (https://api.github.com/graphql)
+```
+
+Every subsequent step was skipped: integrity verification, validation, discovery, preflight, assessment, site build, commit, snapshot, persist and Pages. **This is the fail-closed design behaving correctly** — the run stopped at its first gate rather than proceeding on state it could not account for.
+
+Nothing was damaged, confirmed after the failure:
+
+| Check | Result |
+|---|---|
+| Private store | unchanged — digest `sha256:48635237…`, 49,613,023 bytes |
+| Local databases | payload fingerprints byte-identical to the pre-run capture |
+| Assessment rows | 353 / 276 / 48, `max_id` 356 / 317 / 85 — unchanged |
+| Public repository | no commits; `origin/main` still `2d6a0d463` |
+| Schedules | still disabled |
+
+**Diagnosis: a repository secret holds the literal value `-`.** GitHub masks secret values in logs, and the smoke's log shows every hyphen replaced by `***` — `bash -e {0}` renders as `bash ***e {0}`, and `--report`, `setup-python` and `agentmempaper-state` are all mangled the same way. A control against run 35430534043, from before these secrets existed, shows `bash -e {0}`, `setup-python` and `upload-artifact` rendering normally, so the masking began with the new secrets. Combined with `401 Bad credentials` on the very first authenticated call, `PAPER_SCOUT_STATE_TOKEN` is the probable holder, though the masking alone cannot distinguish which of the three it is.
+
+This is a provisioning error, not a code defect, and it cannot be diagnosed further without reading a secret value, which was not done.
+
+One robustness observation recorded but **not acted on**: `gh repo view --json` and `gh release view --json` both route through `POST /graphql` rather than REST. That is visible in the error URL. It is not the cause here — a token that is the literal `-` fails against any API — and changing the transport on an unconfirmed theory would add a variable to the next run rather than remove one.
+
 ---
 
 ```text
 QUALITY_PROMOTION_GATE_READY_FOR_OPERATIONAL_USE = YES
-PRIVATE_DURABLE_STATE_READY: NO
+PRIVATE_DURABLE_STATE_READY: YES
 OPERATIONAL_QUALITY_ASSESSMENT_READY: NO
+FIRST_OPERATIONAL_SMOKE: FAIL
+PUBLIC_STATE_ARCHIVE_REMOVED: YES
 RECURRING_QUALITY_ASSESSMENT_ENABLED: NO
 ```

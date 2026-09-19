@@ -672,6 +672,17 @@ class PrivateDestinationGuards(unittest.TestCase):
         with patch.object(module, "_run", return_value=completed):
             module.assert_private("owner/state", "synthetic")
 
+    def test_missing_release_is_distinguished_from_an_access_failure(self):
+        module = self.script()
+        for stderr, missing in (("release not found", True),
+                                ("HTTP 404: Not Found", True),
+                                ("HTTP 403: Resource not accessible", False),
+                                ("unauthorized", False),
+                                ("dial tcp: connection refused", False),
+                                ("", False)):
+            with self.subTest(stderr=stderr):
+                self.assertEqual(module._is_missing_release(stderr), missing)
+
     def test_explicit_initialize_creates_empty_state_only_when_none_exists(self):
         """--allow-initialize is the one path that may create empty databases."""
         module = self.script()
@@ -695,6 +706,27 @@ class PrivateDestinationGuards(unittest.TestCase):
                     self.assertTrue(Path(tmp, name).exists(), name)
             finally:
                 os.chdir(cwd)
+
+    def test_persist_removes_the_plaintext_scratch_copy_when_verification_fails(self):
+        """A failed round-trip must not leave the databases unpacked on the runner."""
+        module = self.script()
+        private = type("R", (), {"returncode": 0, "stdout": '{"isPrivate": true,'
+                                                            ' "visibility": "PRIVATE"}',
+                                 "stderr": ""})()
+        with tempfile.TemporaryDirectory() as tmp:
+            env = {"PAPER_SCOUT_STATE_REPO": "owner/state",
+                   "PAPER_SCOUT_STATE_TOKEN": "synthetic", "RUNNER_TEMP": tmp}
+            scratch = Path(tmp) / "paper-scout-state-verify"
+            archive = Path(tmp) / module.ASSET_NAME
+            with patch.dict("os.environ", env, clear=True), \
+                 patch.object(module, "_run", return_value=private), \
+                 patch.object(module, "pack_snapshot", return_value={"version": 2}), \
+                 patch.object(module, "restore_snapshot",
+                              side_effect=ValueError("snapshot checksum mismatch")):
+                with self.assertRaises(ValueError):
+                    module.persist("tag", report_path=None)
+            self.assertFalse(scratch.exists(), "scratch copy of the databases was left behind")
+            self.assertFalse(archive.exists(), "plaintext archive was left behind")
 
     def test_state_hash_outputs_are_labelled_by_track_not_by_directory(self):
         module = self.script()

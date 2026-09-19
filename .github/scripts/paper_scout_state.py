@@ -29,6 +29,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 
@@ -195,11 +196,15 @@ def persist(tag: str, report_path: Path | None) -> int:
     verify: dict = {}
     # Round-trip the archive into a throwaway root. Publishing a snapshot that cannot be
     # restored is the failure this catches, and it is cheap compared with losing state.
+    # The scratch copy holds the assessment databases in the clear, so it is removed on
+    # every path out of here, including a failed verification.
     scratch = temp / "paper-scout-state-verify"
-    subprocess.run(["rm", "-rf", str(scratch)], check=True)
+    shutil.rmtree(scratch, ignore_errors=True)
     scratch.mkdir(parents=True)
-    restore_snapshot(archive, root=scratch, report=verify)
-    subprocess.run(["rm", "-rf", str(scratch)], check=True)
+    try:
+        restore_snapshot(archive, root=scratch, report=verify)
+    finally:
+        shutil.rmtree(scratch, ignore_errors=True)
 
     view = _run(["gh", "release", "view", tag, "--repo", repo, "--json", "id"], token, check=False)
     if view.returncode != 0:
@@ -215,10 +220,14 @@ def persist(tag: str, report_path: Path | None) -> int:
                       token, check=False)
         if create.returncode != 0:
             raise StateError(f"cannot create the private state release: {create.stderr.strip()[:400]}")
-    upload = _run(["gh", "release", "upload", tag, f"{archive}#{ASSET_NAME}",
-                   "--repo", repo, "--clobber"], token, check=False)
-    if upload.returncode != 0:
-        raise StateError(f"private state upload failed: {upload.stderr.strip()[:400]}")
+    try:
+        upload = _run(["gh", "release", "upload", tag, f"{archive}#{ASSET_NAME}",
+                       "--repo", repo, "--clobber"], token, check=False)
+        if upload.returncode != 0:
+            raise StateError(f"private state upload failed: {upload.stderr.strip()[:400]}")
+    finally:
+        # The local archive is a plaintext copy of the databases; do not leave it behind.
+        archive.unlink(missing_ok=True)
 
     print(f"Persisted private state to {repo}:{tag} (manifest v{manifest['version']})")
     for name in manifest["databases"]:

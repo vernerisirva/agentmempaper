@@ -457,6 +457,20 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
               f" No assessment was attempted and no candidate eligibility was consumed.")
         return finish(1)
 
+    try:
+        _assess_selected(selected, configs, budget, metrics)
+    except Exception as exc:  # noqa: BLE001 - the metrics record must survive any failure.
+        logging.getLogger(__name__).warning("Operational assessment run aborted: %s", exc)
+        metrics.technical_failures += 1
+        return finish(1)
+    return finish(0)
+
+
+def _assess_selected(selected, configs, budget, metrics) -> None:
+    """Assess each selected paper, stopping cleanly when the budget says to."""
+    from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
+    from paper_scout.operational_preflight import CostCeilingExceeded
+
     for candidate in selected:
         config = configs[candidate.track]
         store = PaperStore(config.sqlite_path)
@@ -469,7 +483,7 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
             budget.reserve(candidate.track)
         except CostCeilingExceeded as exc:
             print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
-            break
+            return
         metrics.papers_attempted += 1
         try:
             assessment = assess_and_store_candidate(
@@ -513,7 +527,6 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
                 metrics.unavailable_manuscripts += 1
             if outcome == "text_coverage_failure":
                 metrics.coverage_failures += 1
-    return finish(0)
 
 
 def _role_usage(assessment) -> dict:

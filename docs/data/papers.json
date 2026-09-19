@@ -20,7 +20,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -150,7 +150,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -281,7 +281,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -307,36 +307,63 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": null,
-      "assessment_scope": "metadata_only",
-      "assessment_version": null,
+      "assessed_at": "2026-09-19T18:40:51.129038+00:00",
+      "assessment_scope": "title_and_abstract",
+      "assessment_version": "quality-promotion-v2",
       "assessor_model": null,
-      "assessor_type": null,
+      "assessor_type": "deterministic",
       "combined_rank_score": 0.99,
       "concerns": [],
-      "concise_summary": null,
-      "confidence": "unknown",
-      "coverage": {},
+      "concise_summary": "Manuscript unavailable; no scientific decision.",
+      "confidence": "low",
+      "coverage": {
+        "assessment_input_characters": 2868,
+        "extraction_complete": false,
+        "version": "coverage-v1"
+      },
       "curation_note": null,
       "dimension_scores": {},
       "downranked": false,
       "evidence": [],
       "full_text_assessed": false,
       "full_text_url": null,
-      "gate_version": null,
+      "gate_version": "dual-promotion-v3",
       "manual_override": false,
-      "missing_information": [],
+      "missing_information": [
+        "No suitable baseline comparison was detected in the available text.",
+        "No extractable manuscript text was available."
+      ],
       "overall_quality_score": null,
-      "paper_type": "unclear",
+      "paper_type": "empirical_research",
       "positive_signals": [],
-      "promotion": {},
-      "rationale": "Scientific quality has not yet been assessed.",
+      "promotion": {
+        "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+        "adjudicator_provider": "openrouter",
+        "model_pair": {
+          "adjudicator": {
+            "family": "deepseek",
+            "model": "deepseek/deepseek-v4-pro-0813",
+            "provider": "openrouter"
+          },
+          "independent_families": true,
+          "primary": {
+            "family": "gemini",
+            "model": "gemini-3.8-flash",
+            "provider": "google"
+          },
+          "version": "model-pair-v1"
+        },
+        "outcome": "manuscript_unavailable",
+        "primary_model": "gemini-3.8-flash",
+        "primary_provider": "google"
+      },
+      "rationale": "Manuscript unavailable; no scientific decision.",
       "recommendation": "unknown",
-      "rubric_version": null,
-      "source_content_hash": null,
-      "status": "not_assessed",
+      "rubric_version": "scholarly-rubric-v2",
+      "source_content_hash": "49ba4d18393928ad9de72adeec73f4c8a83d9cf5de6eada493e2d5117bb4f447",
+      "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "Manuscript evidence has not been reviewed."
+      "uncertainty": "No promotion; review candidates may remain pending indefinitely."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -384,11 +411,11 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-19 17:35:04",
     "notified_date": "2026-09-19",
@@ -410,36 +437,1797 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": null,
-      "assessment_scope": "metadata_only",
-      "assessment_version": null,
-      "assessor_model": null,
-      "assessor_type": null,
+      "assessed_at": "2026-09-19T18:40:51.690947+00:00",
+      "assessment_scope": "full_text",
+      "assessment_version": "quality-promotion-v2",
+      "assessor_model": "gemini-3.8-flash",
+      "assessor_type": "hybrid",
       "combined_rank_score": 0.91,
       "concerns": [],
-      "concise_summary": null,
-      "confidence": "unknown",
-      "coverage": {},
+      "concise_summary": "The study presents a clear, well-controlled systems ablation on an established interactive environment benchmark with sound methodology, comprehensive mechanism logs, and disciplined conclusions that align with the empirical results.",
+      "confidence": "high",
+      "coverage": {
+        "assessment_input_characters": 46784,
+        "assessment_input_sha256": "1e72c0c377032f02ad8e8e60600c58451a9bdffda364fe4b4e430ce15c43cea1",
+        "attempted_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "body_pages_partially_omitted": [],
+        "budget_unit": "characters (no tokenizer estimate)",
+        "canonical_id": "doi:10.48550/arxiv.2609.19128",
+        "character_budget": 180000,
+        "characters_before_extraction_limit": 45206,
+        "configured_max_section_characters": 8000,
+        "eligible_characters": 44917,
+        "evidence_block_count": 66,
+        "evidence_context_characters": 53140,
+        "evidence_context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+        "evidence_context_sha256": "fc01d6295d935017d020f5c9552206c56ec00a5c9ffbe8e12e032a55bd1ff1f9",
+        "evidence_version": "block-evidence-v2",
+        "excluded_back_matter_characters": 0,
+        "excluded_sections": [],
+        "extracted_characters": 45230,
+        "extracted_page_indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "extracted_pages": 13,
+        "extraction_complete": true,
+        "extraction_gap_markers": 0,
+        "extraction_truncated": false,
+        "extractor_version": "bounded-v2",
+        "failure_reasons": [],
+        "format": "PDF",
+        "manuscript_identity": {
+          "method": "exact-title-typography-v1",
+          "source_content_hash": "07ca56a4afa0ef6544daa7616cbf5fdda4a5e0b08b24aa1c8254df72d5b9e29e",
+          "source_url": "https://arxiv.org/pdf/2609.19128",
+          "verified": true
+        },
+        "max_extracted_characters": 400000,
+        "max_pages": 80,
+        "missing_page_indices": [],
+        "normalization_version": "canonical-unicode-v2",
+        "omitted_body_characters": 0,
+        "page_unit": "PDF page",
+        "pages_omitted": [],
+        "retained_source_characters": 45206,
+        "scientific_body_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "section_roles_detected": [
+          "appendix",
+          "body",
+          "conclusion",
+          "discussion",
+          "introduction",
+          "limitations",
+          "methods",
+          "related",
+          "results"
+        ],
+        "section_roles_omitted": [],
+        "section_roles_represented": [
+          "appendix",
+          "body",
+          "conclusion",
+          "discussion",
+          "introduction",
+          "limitations",
+          "methods",
+          "related",
+          "results"
+        ],
+        "sections": [
+          {
+            "heading": "Cognitive Extensions For Dual-Process Language Agents:",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "body",
+            "section_index": 0,
+            "source_characters": 248,
+            "supplied_characters": 248
+          },
+          {
+            "heading": "Abstract",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "abstract",
+            "section_index": 1,
+            "source_characters": 1099,
+            "supplied_characters": 1099
+          },
+          {
+            "heading": "Introduction",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "introduction",
+            "section_index": 2,
+            "source_characters": 2757,
+            "supplied_characters": 2757
+          },
+          {
+            "heading": "Introduction",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "introduction",
+            "section_index": 3,
+            "source_characters": 934,
+            "supplied_characters": 934
+          },
+          {
+            "heading": "Motivation And Related Work",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "related",
+            "section_index": 4,
+            "source_characters": 3643,
+            "supplied_characters": 3643
+          },
+          {
+            "heading": "Method",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "methods",
+            "section_index": 5,
+            "source_characters": 95,
+            "supplied_characters": 95
+          },
+          {
+            "heading": "Method",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "methods",
+            "section_index": 6,
+            "source_characters": 462,
+            "supplied_characters": 462
+          },
+          {
+            "heading": "Adaptive Memory Module",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 7,
+            "source_characters": 2461,
+            "supplied_characters": 2461
+          },
+          {
+            "heading": "Self-Reflection Module",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 8,
+            "source_characters": 1953,
+            "supplied_characters": 1953
+          },
+          {
+            "heading": "Self-Reflection Module",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 9,
+            "source_characters": 448,
+            "supplied_characters": 448
+          },
+          {
+            "heading": "Full-System Composition",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 10,
+            "source_characters": 1076,
+            "supplied_characters": 1076
+          },
+          {
+            "heading": "Experimental Setup",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "methods",
+            "section_index": 11,
+            "source_characters": 202,
+            "supplied_characters": 202
+          },
+          {
+            "heading": "Experimental Setup",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 5,
+            "role": "methods",
+            "section_index": 12,
+            "source_characters": 2176,
+            "supplied_characters": 2176
+          },
+          {
+            "heading": "Results And Analysis",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 5,
+            "role": "results",
+            "section_index": 13,
+            "source_characters": 2355,
+            "supplied_characters": 2355
+          },
+          {
+            "heading": "Results And Analysis",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 6,
+            "role": "results",
+            "section_index": 14,
+            "source_characters": 1940,
+            "supplied_characters": 1940
+          },
+          {
+            "heading": "Discussion",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 6,
+            "role": "discussion",
+            "section_index": 15,
+            "source_characters": 2290,
+            "supplied_characters": 2290
+          },
+          {
+            "heading": "Conclusion",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 7,
+            "role": "conclusion",
+            "section_index": 16,
+            "source_characters": 1044,
+            "supplied_characters": 1044
+          },
+          {
+            "heading": "Limitations",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 7,
+            "role": "limitations",
+            "section_index": 17,
+            "source_characters": 3127,
+            "supplied_characters": 3127
+          },
+          {
+            "heading": "Ethical Considerations",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 7,
+            "role": "body",
+            "section_index": 18,
+            "source_characters": 561,
+            "supplied_characters": 561
+          },
+          {
+            "heading": "Ethical Considerations",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 19,
+            "source_characters": 138,
+            "supplied_characters": 138
+          },
+          {
+            "heading": "Unclassified body after references",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 20,
+            "source_characters": 351,
+            "supplied_characters": 351
+          },
+          {
+            "heading": "International Conference On Learning Representa-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 21,
+            "source_characters": 1059,
+            "supplied_characters": 1059
+          },
+          {
+            "heading": "Swiftsage: A Generative Agent With Fast And Slow",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 22,
+            "source_characters": 662,
+            "supplied_characters": 662
+          },
+          {
+            "heading": "Ing Systems In The Hippocampus And Neocortex: In-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 23,
+            "source_characters": 49,
+            "supplied_characters": 49
+          },
+          {
+            "heading": "Sights From The Successes And Failures Of Connection-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 24,
+            "source_characters": 442,
+            "supplied_characters": 442
+          },
+          {
+            "heading": "Step Reasoning And Tool-Use For Large Language Mod-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 25,
+            "source_characters": 298,
+            "supplied_characters": 298
+          },
+          {
+            "heading": "Nual Acm Symposium On User Interface Software And",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 26,
+            "source_characters": 172,
+            "supplied_characters": 172
+          },
+          {
+            "heading": "Narrowing The Compositionality Gap In Language Mod-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 27,
+            "source_characters": 344,
+            "supplied_characters": 344
+          },
+          {
+            "heading": "Toolformer: Language Models Can Teach Themselves",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 28,
+            "source_characters": 223,
+            "supplied_characters": 223
+          },
+          {
+            "heading": "Flexion: Language Agents With Verbal Reinforcement",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 29,
+            "source_characters": 437,
+            "supplied_characters": 437
+          },
+          {
+            "heading": "Of The 2022 Conference On Empirical Methods In",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "methods",
+            "section_index": 30,
+            "source_characters": 291,
+            "supplied_characters": 291
+          },
+          {
+            "heading": "The Eleventh International Conference On Learning",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 31,
+            "source_characters": 420,
+            "supplied_characters": 420
+          },
+          {
+            "heading": "React: Synergizing Reasoning And Acting In Language",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 8,
+            "role": "body",
+            "section_index": 32,
+            "source_characters": 53,
+            "supplied_characters": 53
+          },
+          {
+            "heading": "React: Synergizing Reasoning And Acting In Language",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 9,
+            "role": "body",
+            "section_index": 33,
+            "source_characters": 589,
+            "supplied_characters": 589
+          },
+          {
+            "heading": "Appendix: A Reproducibility Notes",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 10,
+            "role": "appendix",
+            "section_index": 34,
+            "source_characters": 3187,
+            "supplied_characters": 3187
+          },
+          {
+            "heading": "Appendix: A Reproducibility Notes",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 11,
+            "role": "appendix",
+            "section_index": 35,
+            "source_characters": 3208,
+            "supplied_characters": 3208
+          },
+          {
+            "heading": "Appendix: A Reproducibility Notes",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 12,
+            "role": "appendix",
+            "section_index": 36,
+            "source_characters": 3095,
+            "supplied_characters": 3095
+          },
+          {
+            "heading": "Appendix: A Reproducibility Notes",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 13,
+            "role": "appendix",
+            "section_index": 37,
+            "source_characters": 1028,
+            "supplied_characters": 1028
+          }
+        ],
+        "selected_characters": 44917,
+        "selected_instead_of_full_text": false,
+        "selected_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "selected_sections": [
+          {
+            "characters": 248,
+            "heading": "Cognitive Extensions For Dual-Process Language Agents:",
+            "page": 1
+          },
+          {
+            "characters": 1099,
+            "heading": "Abstract",
+            "page": 1
+          },
+          {
+            "characters": 2757,
+            "heading": "Introduction",
+            "page": 1
+          },
+          {
+            "characters": 934,
+            "heading": "Introduction",
+            "page": 2
+          },
+          {
+            "characters": 3643,
+            "heading": "Motivation And Related Work",
+            "page": 2
+          },
+          {
+            "characters": 95,
+            "heading": "Method",
+            "page": 2
+          },
+          {
+            "characters": 462,
+            "heading": "Method",
+            "page": 3
+          },
+          {
+            "characters": 2461,
+            "heading": "Adaptive Memory Module",
+            "page": 3
+          },
+          {
+            "characters": 1953,
+            "heading": "Self-Reflection Module",
+            "page": 3
+          },
+          {
+            "characters": 448,
+            "heading": "Self-Reflection Module",
+            "page": 4
+          },
+          {
+            "characters": 1076,
+            "heading": "Full-System Composition",
+            "page": 4
+          },
+          {
+            "characters": 202,
+            "heading": "Experimental Setup",
+            "page": 4
+          },
+          {
+            "characters": 2176,
+            "heading": "Experimental Setup",
+            "page": 5
+          },
+          {
+            "characters": 2355,
+            "heading": "Results And Analysis",
+            "page": 5
+          },
+          {
+            "characters": 1940,
+            "heading": "Results And Analysis",
+            "page": 6
+          },
+          {
+            "characters": 2290,
+            "heading": "Discussion",
+            "page": 6
+          },
+          {
+            "characters": 1044,
+            "heading": "Conclusion",
+            "page": 7
+          },
+          {
+            "characters": 3127,
+            "heading": "Limitations",
+            "page": 7
+          },
+          {
+            "characters": 561,
+            "heading": "Ethical Considerations",
+            "page": 7
+          },
+          {
+            "characters": 138,
+            "heading": "Ethical Considerations",
+            "page": 8
+          },
+          {
+            "characters": 351,
+            "heading": "Unclassified body after references",
+            "page": 8
+          },
+          {
+            "characters": 1059,
+            "heading": "International Conference On Learning Representa-",
+            "page": 8
+          },
+          {
+            "characters": 662,
+            "heading": "Swiftsage: A Generative Agent With Fast And Slow",
+            "page": 8
+          },
+          {
+            "characters": 49,
+            "heading": "Ing Systems In The Hippocampus And Neocortex: In-",
+            "page": 8
+          },
+          {
+            "characters": 442,
+            "heading": "Sights From The Successes And Failures Of Connection-",
+            "page": 8
+          },
+          {
+            "characters": 298,
+            "heading": "Step Reasoning And Tool-Use For Large Language Mod-",
+            "page": 8
+          },
+          {
+            "characters": 172,
+            "heading": "Nual Acm Symposium On User Interface Software And",
+            "page": 8
+          },
+          {
+            "characters": 344,
+            "heading": "Narrowing The Compositionality Gap In Language Mod-",
+            "page": 8
+          },
+          {
+            "characters": 223,
+            "heading": "Toolformer: Language Models Can Teach Themselves",
+            "page": 8
+          },
+          {
+            "characters": 437,
+            "heading": "Flexion: Language Agents With Verbal Reinforcement",
+            "page": 8
+          },
+          {
+            "characters": 291,
+            "heading": "Of The 2022 Conference On Empirical Methods In",
+            "page": 8
+          },
+          {
+            "characters": 420,
+            "heading": "The Eleventh International Conference On Learning",
+            "page": 8
+          },
+          {
+            "characters": 53,
+            "heading": "React: Synergizing Reasoning And Acting In Language",
+            "page": 8
+          },
+          {
+            "characters": 589,
+            "heading": "React: Synergizing Reasoning And Acting In Language",
+            "page": 9
+          },
+          {
+            "characters": 3187,
+            "heading": "Appendix: A Reproducibility Notes",
+            "page": 10
+          },
+          {
+            "characters": 3208,
+            "heading": "Appendix: A Reproducibility Notes",
+            "page": 11
+          },
+          {
+            "characters": 3095,
+            "heading": "Appendix: A Reproducibility Notes",
+            "page": 12
+          },
+          {
+            "characters": 1028,
+            "heading": "Appendix: A Reproducibility Notes",
+            "page": 13
+          }
+        ],
+        "selected_text_sha256": "1e72c0c377032f02ad8e8e60600c58451a9bdffda364fe4b4e430ce15c43cea1",
+        "selection_chunk_characters": null,
+        "selection_version": "contiguous-balanced-v2",
+        "source_content_hash": "07ca56a4afa0ef6544daa7616cbf5fdda4a5e0b08b24aa1c8254df72d5b9e29e",
+        "source_pages": 13,
+        "status": "complete",
+        "structure_version": "page-sections-v2",
+        "successfully_extracted_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "surrogate_code_units": 0,
+        "unreadable_pages": [],
+        "version": "coverage-v2",
+        "warnings": []
+      },
       "curation_note": null,
       "dimension_scores": {},
       "downranked": false,
-      "evidence": [],
-      "full_text_assessed": false,
-      "full_text_url": null,
-      "gate_version": null,
+      "evidence": [
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0002"
+          ],
+          "excerpt": "Language agents remain brittle in interactive\nenvironments, where success requires long-\nhorizon state tracking, valid action execution,\nand recovery from failed steps. We extend\nSwiftSage, a dual-process agent that combines\na fast action proposer with a slower planner,\nusing two modular cognitive extensions: an\nAdaptive Memory Module (AMM) for salience-\ngated episodic storage and trigger-driven re-\ntrieval, and a Self-Reflection Module (SRM)\nfor bounded execution-time validation and cor-\nrective intervention. Both modules are im-\nplemented as feature-flagged extensions over\nthe same execution substrate, enabling con-\ntrolled ablations on ScienceWorld. Across\nfour configurations\u2014baseline, baseline+AMM,\nbaseline+SRM, and the full system\u2014the full\nsystem achieves the best mean final score\n(64.62), success rate (43.17%), and successful-\nstep efficiency (19.33 steps), while SRM is ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Abstract",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "938dccb4ee883785b370ab689460d08bd7c79391b31d601bc65069f051ddae25",
+              "evidence_id": "Ec74f369a0414b048-B0002",
+              "pages": [
+                1
+              ],
+              "section": "Abstract",
+              "section_role": "abstract",
+              "source_spans": [
+                {
+                  "end": 889,
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 0,
+                  "text": "Language agents remain brittle in interactive\nenvironments, where success requires long-\nhorizon state tracking, valid action execution,\nand recovery from failed steps. We extend\nSwiftSage, a dual-process agent that combines\na fast action proposer with a slower planner,\nusing two modular cognitive extensions: an\nAdaptive Memory Module (AMM) for salience-\ngated episodic storage and trigger-driven re-\ntrieval, and a Self-Reflection Module (SRM)\nfor bounded execution-time validation and cor-\nrective intervention. Both modules are im-\nplemented as feature-flagged extensions over\nthe same execution substrate, enabling con-\ntrolled ablations on ScienceWorld. Across\nfour configurations\u2014baseline, baseline+AMM,\nbaseline+SRM, and the full system\u2014the full\nsystem achieves the best mean final score\n(64.62), success rate (43.17%), and successful-\nstep efficiency (19.33 steps), while SRM is "
+                }
+              ],
+              "text": "Language agents remain brittle in interactive\nenvironments, where success requires long-\nhorizon state tracking, valid action execution,\nand recovery from failed steps. We extend\nSwiftSage, a dual-process agent that combines\na fast action proposer with a slower planner,\nusing two modular cognitive extensions: an\nAdaptive Memory Module (AMM) for salience-\ngated episodic storage and trigger-driven re-\ntrieval, and a Self-Reflection Module (SRM)\nfor bounded execution-time validation and cor-\nrective intervention. Both modules are im-\nplemented as feature-flagged extensions over\nthe same execution substrate, enabling con-\ntrolled ablations on ScienceWorld. Across\nfour configurations\u2014baseline, baseline+AMM,\nbaseline+SRM, and the full system\u2014the full\nsystem achieves the best mean final score\n(64.62), success rate (43.17%), and successful-\nstep efficiency (19.33 steps), while SRM is "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0003"
+          ],
+          "excerpt": "the\nstrongest standalone contributor. The results\nsuggest that execution-time control is the dom-\ninant bottleneck in this setting, while episodic\nmemory becomes most useful once the runtime\nloop is stabilized.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Abstract",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "e3917f668c48e6196d0d0d717f035ca432c0a945f03fdb21b11589858363ad6a",
+              "evidence_id": "Ec74f369a0414b048-B0003",
+              "pages": [
+                1
+              ],
+              "section": "Abstract",
+              "section_role": "abstract",
+              "source_spans": [
+                {
+                  "end": 1099,
+                  "page": 1,
+                  "section": "Abstract",
+                  "section_index": 1,
+                  "start": 889,
+                  "text": "the\nstrongest standalone contributor. The results\nsuggest that execution-time control is the dom-\ninant bottleneck in this setting, while episodic\nmemory becomes most useful once the runtime\nloop is stabilized."
+                }
+              ],
+              "text": "the\nstrongest standalone contributor. The results\nsuggest that execution-time control is the dom-\ninant bottleneck in this setting, while episodic\nmemory becomes most useful once the runtime\nloop is stabilized."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0007"
+          ],
+          "excerpt": "ablation study in-\n1\narXiv:2609.19128v1  [cs.AI]  16 Sep 2026\nterpretable as cooperation between evidence and\ncontrol rather than as an opaque redesign of the\nbaseline agent.\nWe evaluate the system on ScienceWorld (Wang\net al., 2022), an interactive text benchmark requir-\ning agents to perform elementary science tasks\nthrough grounded sequential actions. The eval-\nuation compares four configurations under a shared\nruntime substrate: baseline, baseline+AMM, base-\nline+SRM, and the full system. The results show\nthat the full system achieves the best aggregate per-\nformance, while SRM is the strongest standalone\nextension. AMM alone yields smaller gains, but\nits contribution is more coherent once SRM sta-\nbilizes execution. Overall, the findings support a\nprecise claim: in this setting, execution-time con-\ntrol is the dominant lever for improving interactive\nlanguage agents, while episodic ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1,
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Introduction",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "0015132aad289770292a638d6fcfcb6b147663f5ef852de7d73f7b2aef353529",
+              "evidence_id": "Ec74f369a0414b048-B0007",
+              "pages": [
+                1,
+                2
+              ],
+              "section": "Introduction",
+              "section_role": "introduction",
+              "source_spans": [
+                {
+                  "end": 2757,
+                  "page": 1,
+                  "section": "Introduction",
+                  "section_index": 2,
+                  "start": 2696,
+                  "text": "ablation study in-\n1\narXiv:2609.19128v1  [cs.AI]  16 Sep 2026"
+                },
+                {
+                  "end": 838,
+                  "page": 2,
+                  "section": "Introduction",
+                  "section_index": 3,
+                  "start": 0,
+                  "text": "terpretable as cooperation between evidence and\ncontrol rather than as an opaque redesign of the\nbaseline agent.\nWe evaluate the system on ScienceWorld (Wang\net al., 2022), an interactive text benchmark requir-\ning agents to perform elementary science tasks\nthrough grounded sequential actions. The eval-\nuation compares four configurations under a shared\nruntime substrate: baseline, baseline+AMM, base-\nline+SRM, and the full system. The results show\nthat the full system achieves the best aggregate per-\nformance, while SRM is the strongest standalone\nextension. AMM alone yields smaller gains, but\nits contribution is more coherent once SRM sta-\nbilizes execution. Overall, the findings support a\nprecise claim: in this setting, execution-time con-\ntrol is the dominant lever for improving interactive\nlanguage agents, while episodic "
+                }
+              ],
+              "text": "ablation study in-\n1\narXiv:2609.19128v1  [cs.AI]  16 Sep 2026\nterpretable as cooperation between evidence and\ncontrol rather than as an opaque redesign of the\nbaseline agent.\nWe evaluate the system on ScienceWorld (Wang\net al., 2022), an interactive text benchmark requir-\ning agents to perform elementary science tasks\nthrough grounded sequential actions. The eval-\nuation compares four configurations under a shared\nruntime substrate: baseline, baseline+AMM, base-\nline+SRM, and the full system. The results show\nthat the full system achieves the best aggregate per-\nformance, while SRM is the strongest standalone\nextension. AMM alone yields smaller gains, but\nits contribution is more coherent once SRM sta-\nbilizes execution. Overall, the findings support a\nprecise claim: in this setting, execution-time con-\ntrol is the dominant lever for improving interactive\nlanguage agents, while episodic "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0014"
+          ],
+          "excerpt": "The proposed system preserves the SwiftSage con-\ntrol loop and inserts AMM and SRM at precise\n2\nruntime interfaces. At each timestep, the controller\nexecutes the next buffered action when available;\notherwise it queries Swift, escalating to Sage un-\nder baseline conditions such as invalid actions, no-\nprogress behavior, or the need for deliberate plan-\nning. AMM can augment selected Swift, Sage,\nand Critic prompts with retrieved memories. SRM\nvalidates actions before execution and can inject\nbounded corrective actions into the same buffer\nused by Sage.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2,
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Method",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "3af0929a71a7cdcc40102258f09509084a289100504424824c349522336ed6b1",
+              "evidence_id": "Ec74f369a0414b048-B0014",
+              "pages": [
+                2,
+                3
+              ],
+              "section": "Method",
+              "section_role": "methods",
+              "source_spans": [
+                {
+                  "end": 95,
+                  "page": 2,
+                  "section": "Method",
+                  "section_index": 5,
+                  "start": 0,
+                  "text": "The proposed system preserves the SwiftSage con-\ntrol loop and inserts AMM and SRM at precise\n2"
+                },
+                {
+                  "end": 462,
+                  "page": 3,
+                  "section": "Method",
+                  "section_index": 6,
+                  "start": 0,
+                  "text": "runtime interfaces. At each timestep, the controller\nexecutes the next buffered action when available;\notherwise it queries Swift, escalating to Sage un-\nder baseline conditions such as invalid actions, no-\nprogress behavior, or the need for deliberate plan-\nning. AMM can augment selected Swift, Sage,\nand Critic prompts with retrieved memories. SRM\nvalidates actions before execution and can inject\nbounded corrective actions into the same buffer\nused by Sage."
+                }
+              ],
+              "text": "The proposed system preserves the SwiftSage con-\ntrol loop and inserts AMM and SRM at precise\n2\nruntime interfaces. At each timestep, the controller\nexecutes the next buffered action when available;\notherwise it queries Swift, escalating to Sage un-\nder baseline conditions such as invalid actions, no-\nprogress behavior, or the need for deliberate plan-\nning. AMM can augment selected Swift, Sage,\nand Critic prompts with retrieved memories. SRM\nvalidates actions before execution and can inject\nbounded corrective actions into the same buffer\nused by Sage."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0015"
+          ],
+          "excerpt": "AMM addresses the absence of persistent experi-\nence reuse. It has two hook families: a post-step\nwrite hook and pre-decision retrieval hooks. The\nwrite hook runs after the environment returns an\nobservation and score transition. It receives the\ntask, previous state, executed action, resulting ob-\nservation, score change, and recent history, then\nbuilds a candidate episodic record. This record is\nstored only if a salience gate detects an informative\ntransition, such as terminal success, positive score\nchange, near-miss progress, explicit invalid-action\nfeedback, or an avoidance-worthy failure.\nStored memories are compact semi-structured\nrecords, not raw transcripts. Each memory includes\nfields such as task, local state, recent context, exe-\ncuted action, resulting observation, score transition,\nand a type tag. The tag distinguishes success, near-\nmiss, and avoidance-oriented memories. ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Adaptive Memory Module",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "e86062af7e355ddb28552b2a6ed0d4204cbae777933ac5eb53a854ac6937f360",
+              "evidence_id": "Ec74f369a0414b048-B0015",
+              "pages": [
+                3
+              ],
+              "section": "Adaptive Memory Module",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 898,
+                  "page": 3,
+                  "section": "Adaptive Memory Module",
+                  "section_index": 7,
+                  "start": 0,
+                  "text": "AMM addresses the absence of persistent experi-\nence reuse. It has two hook families: a post-step\nwrite hook and pre-decision retrieval hooks. The\nwrite hook runs after the environment returns an\nobservation and score transition. It receives the\ntask, previous state, executed action, resulting ob-\nservation, score change, and recent history, then\nbuilds a candidate episodic record. This record is\nstored only if a salience gate detects an informative\ntransition, such as terminal success, positive score\nchange, near-miss progress, explicit invalid-action\nfeedback, or an avoidance-worthy failure.\nStored memories are compact semi-structured\nrecords, not raw transcripts. Each memory includes\nfields such as task, local state, recent context, exe-\ncuted action, resulting observation, score transition,\nand a type tag. The tag distinguishes success, near-\nmiss, and avoidance-oriented memories. "
+                }
+              ],
+              "text": "AMM addresses the absence of persistent experi-\nence reuse. It has two hook families: a post-step\nwrite hook and pre-decision retrieval hooks. The\nwrite hook runs after the environment returns an\nobservation and score transition. It receives the\ntask, previous state, executed action, resulting ob-\nservation, score change, and recent history, then\nbuilds a candidate episodic record. This record is\nstored only if a salience gate detects an informative\ntransition, such as terminal success, positive score\nchange, near-miss progress, explicit invalid-action\nfeedback, or an avoidance-worthy failure.\nStored memories are compact semi-structured\nrecords, not raw transcripts. Each memory includes\nfields such as task, local state, recent context, exe-\ncuted action, resulting observation, score transition,\nand a type tag. The tag distinguishes success, near-\nmiss, and avoidance-oriented memories. "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0016"
+          ],
+          "excerpt": "This rep-\nresentation improves retrieval targeting and makes\nprompt injection safer, because retrieved evidence\nis already concise, typed, and easy to filter or trun-\ncate.\nRetrieval is trigger-driven. T1 corresponds to\nSwift failure: when Swift fails to produce a valid\naction, AMM retrieves related episodes and retries\nSwift with memory-conditioned context. T4 corre-\nsponds to System 2 planning: when the baseline in-\nvokes Sage and memory planning is enabled, AMM\nretrieves success and near-miss episodes for deliber-\native planning. T2 and T3 are implemented as stag-\nnation and repeated-invalid-action retrieval/caching\nhooks, but in the evaluated AMM-only configu-\nration they do not directly modify model inputs.\nThis conservative design avoids injecting weakly\ngrounded negative evidence into the fast pathway.\nPrompt augmentation is bounded and explicitly\ndelimited. Swift receives only a ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Adaptive Memory Module",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "e335b00c7c4c62237b41659d564c9a24a4a68c8f0427c9e5dd23c57aa93ffde1",
+              "evidence_id": "Ec74f369a0414b048-B0016",
+              "pages": [
+                3
+              ],
+              "section": "Adaptive Memory Module",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1798,
+                  "page": 3,
+                  "section": "Adaptive Memory Module",
+                  "section_index": 7,
+                  "start": 898,
+                  "text": "This rep-\nresentation improves retrieval targeting and makes\nprompt injection safer, because retrieved evidence\nis already concise, typed, and easy to filter or trun-\ncate.\nRetrieval is trigger-driven. T1 corresponds to\nSwift failure: when Swift fails to produce a valid\naction, AMM retrieves related episodes and retries\nSwift with memory-conditioned context. T4 corre-\nsponds to System 2 planning: when the baseline in-\nvokes Sage and memory planning is enabled, AMM\nretrieves success and near-miss episodes for deliber-\native planning. T2 and T3 are implemented as stag-\nnation and repeated-invalid-action retrieval/caching\nhooks, but in the evaluated AMM-only configu-\nration they do not directly modify model inputs.\nThis conservative design avoids injecting weakly\ngrounded negative evidence into the fast pathway.\nPrompt augmentation is bounded and explicitly\ndelimited. Swift receives only a "
+                }
+              ],
+              "text": "This rep-\nresentation improves retrieval targeting and makes\nprompt injection safer, because retrieved evidence\nis already concise, typed, and easy to filter or trun-\ncate.\nRetrieval is trigger-driven. T1 corresponds to\nSwift failure: when Swift fails to produce a valid\naction, AMM retrieves related episodes and retries\nSwift with memory-conditioned context. T4 corre-\nsponds to System 2 planning: when the baseline in-\nvokes Sage and memory planning is enabled, AMM\nretrieves success and near-miss episodes for deliber-\native planning. T2 and T3 are implemented as stag-\nnation and repeated-invalid-action retrieval/caching\nhooks, but in the evaluated AMM-only configu-\nration they do not directly modify model inputs.\nThis conservative design avoids injecting weakly\ngrounded negative evidence into the fast pathway.\nPrompt augmentation is bounded and explicitly\ndelimited. Swift receives only a "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0018"
+          ],
+          "excerpt": "SRM targets execution-time failures: actions may\nbe plausible in language but invalid, stale, redun-\ndant, or ineffective in the current environment. It\nconsists of Gate\u20131 validation, post-step stagnation\ndetection, and bounded Critic intervention.\nGate\u20131 is applied immediately before an action\nreaches the environment. It receives the proposed\naction, current valid-action set, recent state descrip-\ntors, and runtime constraints. It normalizes the\naction, checks admissibility, applies deterministic\nrepair when the mismatch is minor and safe, and\ndrops the action if it remains invalid or violates\nconstraints. Gate\u20131 is source-agnostic: Swift ac-\ntions, Sage-buffered actions, and Critic-generated\nactions all pass through the same pre-execution\ncontrol surface.\nAfter each executed step, SRM updates determin-\nistic diagnostics over the recent trajectory. These\ndiagnostics track repeated ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Self-Reflection Module",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "a9ca370ff78dad87e06b0372ec69dacbbad80fed7e3f343dda4abf3a74db04b6",
+              "evidence_id": "Ec74f369a0414b048-B0018",
+              "pages": [
+                3
+              ],
+              "section": "Self-Reflection Module",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 895,
+                  "page": 3,
+                  "section": "Self-Reflection Module",
+                  "section_index": 8,
+                  "start": 0,
+                  "text": "SRM targets execution-time failures: actions may\nbe plausible in language but invalid, stale, redun-\ndant, or ineffective in the current environment. It\nconsists of Gate\u20131 validation, post-step stagnation\ndetection, and bounded Critic intervention.\nGate\u20131 is applied immediately before an action\nreaches the environment. It receives the proposed\naction, current valid-action set, recent state descrip-\ntors, and runtime constraints. It normalizes the\naction, checks admissibility, applies deterministic\nrepair when the mismatch is minor and safe, and\ndrops the action if it remains invalid or violates\nconstraints. Gate\u20131 is source-agnostic: Swift ac-\ntions, Sage-buffered actions, and Critic-generated\nactions all pass through the same pre-execution\ncontrol surface.\nAfter each executed step, SRM updates determin-\nistic diagnostics over the recent trajectory. These\ndiagnostics track repeated "
+                }
+              ],
+              "text": "SRM targets execution-time failures: actions may\nbe plausible in language but invalid, stale, redun-\ndant, or ineffective in the current environment. It\nconsists of Gate\u20131 validation, post-step stagnation\ndetection, and bounded Critic intervention.\nGate\u20131 is applied immediately before an action\nreaches the environment. It receives the proposed\naction, current valid-action set, recent state descrip-\ntors, and runtime constraints. It normalizes the\naction, checks admissibility, applies deterministic\nrepair when the mismatch is minor and safe, and\ndrops the action if it remains invalid or violates\nconstraints. Gate\u20131 is source-agnostic: Swift ac-\ntions, Sage-buffered actions, and Critic-generated\nactions all pass through the same pre-execution\ncontrol surface.\nAfter each executed step, SRM updates determin-\nistic diagnostics over the recent trajectory. These\ndiagnostics track repeated "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0019"
+          ],
+          "excerpt": "observations, repeated\nactions with no effect, invalid-action loops, exces-\nsive navigation without state diversity, and verb-\nlevel loops that do not change the effective state.\nWhen these signals cross a threshold, SRM emits a\nstructured stagnation report summarizing the fail-\nure pattern, actions to avoid, and relevant runtime\nconstraints.\nThe Critic is invoked only when stagnation is\ndetected and safeguards permit a call. Its prompt\ncontains the task, current state, recent trajectory,\nstagnation report, runtime constraints, and, in the\nfull system, optional AMM evidence. The Critic\nmust output a short executable action list. Its output\nis parsed, filtered, and inserted into the same FIFO\nbuffer used by Sage; it is never executed directly.\nBuffered Critic actions still pass through Gate\u20131.\nCalls are bounded by budgets and cooldowns, mak-\ning SRM a controlled repair mechanism rather ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Self-Reflection Module",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "1b5284cb1858a796a9ccc5cee55f96098b354fbbd614bfd465578a218e47bec5",
+              "evidence_id": "Ec74f369a0414b048-B0019",
+              "pages": [
+                3
+              ],
+              "section": "Self-Reflection Module",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1793,
+                  "page": 3,
+                  "section": "Self-Reflection Module",
+                  "section_index": 8,
+                  "start": 895,
+                  "text": "observations, repeated\nactions with no effect, invalid-action loops, exces-\nsive navigation without state diversity, and verb-\nlevel loops that do not change the effective state.\nWhen these signals cross a threshold, SRM emits a\nstructured stagnation report summarizing the fail-\nure pattern, actions to avoid, and relevant runtime\nconstraints.\nThe Critic is invoked only when stagnation is\ndetected and safeguards permit a call. Its prompt\ncontains the task, current state, recent trajectory,\nstagnation report, runtime constraints, and, in the\nfull system, optional AMM evidence. The Critic\nmust output a short executable action list. Its output\nis parsed, filtered, and inserted into the same FIFO\nbuffer used by Sage; it is never executed directly.\nBuffered Critic actions still pass through Gate\u20131.\nCalls are bounded by budgets and cooldowns, mak-\ning SRM a controlled repair mechanism rather "
+                }
+              ],
+              "text": "observations, repeated\nactions with no effect, invalid-action loops, exces-\nsive navigation without state diversity, and verb-\nlevel loops that do not change the effective state.\nWhen these signals cross a threshold, SRM emits a\nstructured stagnation report summarizing the fail-\nure pattern, actions to avoid, and relevant runtime\nconstraints.\nThe Critic is invoked only when stagnation is\ndetected and safeguards permit a call. Its prompt\ncontains the task, current state, recent trajectory,\nstagnation report, runtime constraints, and, in the\nfull system, optional AMM evidence. The Critic\nmust output a short executable action list. Its output\nis parsed, filtered, and inserted into the same FIFO\nbuffer used by Sage; it is never executed directly.\nBuffered Critic actions still pass through Gate\u20131.\nCalls are bounded by budgets and cooldowns, mak-\ning SRM a controlled repair mechanism rather "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0020"
+          ],
+          "excerpt": "than\nan always-on second planner. This is important\nbecause the Critic is powerful but risky: if used too\noften, it can interrupt otherwise valid trajectories\n3\nFigure 1: Full-system architecture. SwiftSage remains the action-selection substrate; AMM adds salience-gated\nepisodic writing and trigger-driven retrieval; SRM adds Gate\u20131 validation, stagnation detection, and bounded Critic\ncorrection before actions reach ScienceWorld.\nor replace local action selection with unnecessary\ndeliberation. SRM therefore treats the Critic as a\nlast-mile repair mechanism, while Gate\u20131 provides\nthe always-on safeguard.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3,
+            4
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Self-Reflection Module",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "e77314b5f9b0b86a0541bf0590b331018d5eb6668f1ed01e51993f9e008734c8",
+              "evidence_id": "Ec74f369a0414b048-B0020",
+              "pages": [
+                3,
+                4
+              ],
+              "section": "Self-Reflection Module",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1953,
+                  "page": 3,
+                  "section": "Self-Reflection Module",
+                  "section_index": 8,
+                  "start": 1793,
+                  "text": "than\nan always-on second planner. This is important\nbecause the Critic is powerful but risky: if used too\noften, it can interrupt otherwise valid trajectories\n3"
+                },
+                {
+                  "end": 448,
+                  "page": 4,
+                  "section": "Self-Reflection Module",
+                  "section_index": 9,
+                  "start": 0,
+                  "text": "Figure 1: Full-system architecture. SwiftSage remains the action-selection substrate; AMM adds salience-gated\nepisodic writing and trigger-driven retrieval; SRM adds Gate\u20131 validation, stagnation detection, and bounded Critic\ncorrection before actions reach ScienceWorld.\nor replace local action selection with unnecessary\ndeliberation. SRM therefore treats the Critic as a\nlast-mile repair mechanism, while Gate\u20131 provides\nthe always-on safeguard."
+                }
+              ],
+              "text": "than\nan always-on second planner. This is important\nbecause the Critic is powerful but risky: if used too\noften, it can interrupt otherwise valid trajectories\n3\nFigure 1: Full-system architecture. SwiftSage remains the action-selection substrate; AMM adds salience-gated\nepisodic writing and trigger-driven retrieval; SRM adds Gate\u20131 validation, stagnation detection, and bounded Critic\ncorrection before actions reach ScienceWorld.\nor replace local action selection with unnecessary\ndeliberation. SRM therefore treats the Critic as a\nlast-mile repair mechanism, while Gate\u20131 provides\nthe always-on safeguard."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0023"
+          ],
+          "excerpt": "We evaluate on ScienceWorld (Wang et al., 2022),\nusing tasks 0\u201329 and up to 10 natural-language vari-\nations per task, for up to 271 evaluation episodes\nper configuration. Each episode runs until com-\n4\nTable 1: Aggregate performance across configurations.\nFinal is task-level macro-averaged final score; Success is\nmacro-averaged task success; Steps@Succ is computed\nonly over successful episodes.\nConfiguration Final Succ. Steps\nBaseline 51.67 23.99% 24.48\n+AMM 53.83 26.94% 24.03\n+SRM 64.33 41.33% 19.76\nFull64.62 43.17% 19.33\npletion or a fixed step budget. All configurations\nuse the same environment interface, valid-action\ngrounding, one env.step per timestep, Swift/Sage\narbitration, and action-buffer execution. When\nSRM is enabled, actions additionally pass through\nGate\u20131 and stagnation-triggered Critic actions may\nbe inserted into the buffer. When AMM is enabled,\nmemory writing and ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 4,
+          "pages": [
+            4,
+            5
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Experimental Setup",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "b768e0eaf7974535bbf6ea59bfdb5553b48d0ad55f5e1ee8671f34eb50426402",
+              "evidence_id": "Ec74f369a0414b048-B0023",
+              "pages": [
+                4,
+                5
+              ],
+              "section": "Experimental Setup",
+              "section_role": "methods",
+              "source_spans": [
+                {
+                  "end": 202,
+                  "page": 4,
+                  "section": "Experimental Setup",
+                  "section_index": 11,
+                  "start": 0,
+                  "text": "We evaluate on ScienceWorld (Wang et al., 2022),\nusing tasks 0\u201329 and up to 10 natural-language vari-\nations per task, for up to 271 evaluation episodes\nper configuration. Each episode runs until com-\n4"
+                },
+                {
+                  "end": 693,
+                  "page": 5,
+                  "section": "Experimental Setup",
+                  "section_index": 12,
+                  "start": 0,
+                  "text": "Table 1: Aggregate performance across configurations.\nFinal is task-level macro-averaged final score; Success is\nmacro-averaged task success; Steps@Succ is computed\nonly over successful episodes.\nConfiguration Final Succ. Steps\nBaseline 51.67 23.99% 24.48\n+AMM 53.83 26.94% 24.03\n+SRM 64.33 41.33% 19.76\nFull64.62 43.17% 19.33\npletion or a fixed step budget. All configurations\nuse the same environment interface, valid-action\ngrounding, one env.step per timestep, Swift/Sage\narbitration, and action-buffer execution. When\nSRM is enabled, actions additionally pass through\nGate\u20131 and stagnation-triggered Critic actions may\nbe inserted into the buffer. When AMM is enabled,\nmemory writing and "
+                }
+              ],
+              "text": "We evaluate on ScienceWorld (Wang et al., 2022),\nusing tasks 0\u201329 and up to 10 natural-language vari-\nations per task, for up to 271 evaluation episodes\nper configuration. Each episode runs until com-\n4\nTable 1: Aggregate performance across configurations.\nFinal is task-level macro-averaged final score; Success is\nmacro-averaged task success; Steps@Succ is computed\nonly over successful episodes.\nConfiguration Final Succ. Steps\nBaseline 51.67 23.99% 24.48\n+AMM 53.83 26.94% 24.03\n+SRM 64.33 41.33% 19.76\nFull64.62 43.17% 19.33\npletion or a fixed step budget. All configurations\nuse the same environment interface, valid-action\ngrounding, one env.step per timestep, Swift/Sage\narbitration, and action-buffer execution. When\nSRM is enabled, actions additionally pass through\nGate\u20131 and stagnation-triggered Critic actions may\nbe inserted into the buffer. When AMM is enabled,\nmemory writing and "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0024"
+          ],
+          "excerpt": "trigger-driven retrieval are ac-\ntive.\nAMM-enabled configurations are evaluated with\na populated memory agent, because the module\nis designed to reuse prior episodes. The earlier\nweaker-memory protocol is treated as a sensitivity\ncondition rather than the main architecture-level\ncomparison.\nProtocol note.We do not claim a new Science-\nWorld SOTA; our focus is a controlled ablation\nover a reproduced SwiftSage-style substrate under\na shared local-model/runtime setting. Differences\nfrom Lin et al. (Lin et al., 2024) include the local\nQwen2.5-7B-Instruct-1M Sage/Critic runtime and\nthe populated-memory protocol used for AMM-\nenabled configurations.\nWe report three primary metrics: final score at\ntermination, task success, andSteps@Succ, the\nmean number of steps conditioned on successful\ncompletion. To avoid overweighting tasks with\nmore variations, scores are first aggregated at the\ntask ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 5,
+          "pages": [
+            5
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Experimental Setup",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "0ccf5989e2fcf5ed9b53ebe98cd835220faf9f4330df7dae28ceb1c46a92d25c",
+              "evidence_id": "Ec74f369a0414b048-B0024",
+              "pages": [
+                5
+              ],
+              "section": "Experimental Setup",
+              "section_role": "methods",
+              "source_spans": [
+                {
+                  "end": 1589,
+                  "page": 5,
+                  "section": "Experimental Setup",
+                  "section_index": 12,
+                  "start": 693,
+                  "text": "trigger-driven retrieval are ac-\ntive.\nAMM-enabled configurations are evaluated with\na populated memory agent, because the module\nis designed to reuse prior episodes. The earlier\nweaker-memory protocol is treated as a sensitivity\ncondition rather than the main architecture-level\ncomparison.\nProtocol note.We do not claim a new Science-\nWorld SOTA; our focus is a controlled ablation\nover a reproduced SwiftSage-style substrate under\na shared local-model/runtime setting. Differences\nfrom Lin et al. (Lin et al., 2024) include the local\nQwen2.5-7B-Instruct-1M Sage/Critic runtime and\nthe populated-memory protocol used for AMM-\nenabled configurations.\nWe report three primary metrics: final score at\ntermination, task success, andSteps@Succ, the\nmean number of steps conditioned on successful\ncompletion. To avoid overweighting tasks with\nmore variations, scores are first aggregated at the\ntask "
+                }
+              ],
+              "text": "trigger-driven retrieval are ac-\ntive.\nAMM-enabled configurations are evaluated with\na populated memory agent, because the module\nis designed to reuse prior episodes. The earlier\nweaker-memory protocol is treated as a sensitivity\ncondition rather than the main architecture-level\ncomparison.\nProtocol note.We do not claim a new Science-\nWorld SOTA; our focus is a controlled ablation\nover a reproduced SwiftSage-style substrate under\na shared local-model/runtime setting. Differences\nfrom Lin et al. (Lin et al., 2024) include the local\nQwen2.5-7B-Instruct-1M Sage/Critic runtime and\nthe populated-memory protocol used for AMM-\nenabled configurations.\nWe report three primary metrics: final score at\ntermination, task success, andSteps@Succ, the\nmean number of steps conditioned on successful\ncompletion. To avoid overweighting tasks with\nmore variations, scores are first aggregated at the\ntask "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0026"
+          ],
+          "excerpt": "Table 1 shows that the full system obtains the best\naggregate performance, with a mean final score of\n64.62, success rate of 43.17%, and Steps@Succ of\n19.33. Baseline+SRM is close behind in score,\nreaching 64.33, while baseline+AMM reaches\n53.83 compared with 51.67 for the baseline. Rela-\ntive to the baseline, the full system improves mean\nfinal score by 25.1%, SRM alone by 24.5%, and\nAMM alone by 4.1%. The central pattern is there-\nfore that SRM accounts for most of the standalone\nimprovement, while AMM provides a smaller posi-\ntive aggregate effect.\nThe grouped results in Table 2 refine this pic-\nture. On Short tasks, baseline+SRM performs best,\nsuggesting that just-in-time execution filtering is\nespecially valuable when trajectories are short and\nmistakes consume a large fraction of the budget.\nOn Medium and Long tasks, the full system ob-\ntains the highest grouped score, although on ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 5,
+          "pages": [
+            5
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results And Analysis",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "48f88b400f866cbea68d6e7840a34b1f25a9457973a58a6ae20efb45c83db10d",
+              "evidence_id": "Ec74f369a0414b048-B0026",
+              "pages": [
+                5
+              ],
+              "section": "Results And Analysis",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 900,
+                  "page": 5,
+                  "section": "Results And Analysis",
+                  "section_index": 13,
+                  "start": 0,
+                  "text": "Table 1 shows that the full system obtains the best\naggregate performance, with a mean final score of\n64.62, success rate of 43.17%, and Steps@Succ of\n19.33. Baseline+SRM is close behind in score,\nreaching 64.33, while baseline+AMM reaches\n53.83 compared with 51.67 for the baseline. Rela-\ntive to the baseline, the full system improves mean\nfinal score by 25.1%, SRM alone by 24.5%, and\nAMM alone by 4.1%. The central pattern is there-\nfore that SRM accounts for most of the standalone\nimprovement, while AMM provides a smaller posi-\ntive aggregate effect.\nThe grouped results in Table 2 refine this pic-\nture. On Short tasks, baseline+SRM performs best,\nsuggesting that just-in-time execution filtering is\nespecially valuable when trajectories are short and\nmistakes consume a large fraction of the budget.\nOn Medium and Long tasks, the full system ob-\ntains the highest grouped score, although on "
+                }
+              ],
+              "text": "Table 1 shows that the full system obtains the best\naggregate performance, with a mean final score of\n64.62, success rate of 43.17%, and Steps@Succ of\n19.33. Baseline+SRM is close behind in score,\nreaching 64.33, while baseline+AMM reaches\n53.83 compared with 51.67 for the baseline. Rela-\ntive to the baseline, the full system improves mean\nfinal score by 25.1%, SRM alone by 24.5%, and\nAMM alone by 4.1%. The central pattern is there-\nfore that SRM accounts for most of the standalone\nimprovement, while AMM provides a smaller posi-\ntive aggregate effect.\nThe grouped results in Table 2 refine this pic-\nture. On Short tasks, baseline+SRM performs best,\nsuggesting that just-in-time execution filtering is\nespecially valuable when trajectories are short and\nmistakes consume a large fraction of the budget.\nOn Medium and Long tasks, the full system ob-\ntains the highest grouped score, although on "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0028"
+          ],
+          "excerpt": "primarily cap-\ntures partial progress rather than only terminal suc-\ncesses. However, memory is used less frequently\nonce SRM is enabled: T1 triggers fall from 17.13\nto 12.15, T4 triggers from 19.13 to 11.77, Swift\ninjections from 30.81 to 23.03, and Sage injections\nfrom 19.13 to 11.77. The full system therefore\nwrites slightly more experience but needs fewer\nmemory-conditioned recovery attempts, consistent\nwith SRM reducing the number of unstable trajec-\ntories.\nSRM shows the complementary profile. SRM-\nonly records 9.77 stagnation reports and 1.35 effec-\n5\nTable 2: Grouped ScienceWorld results. Values are mean final score. Parentheses show relative change over the\nbaseline within each group.\nGroup\u2217LenBaseline +AMM +SRM Full\nShort 11.76 57.74 66.43 (+15.1%)81.50(+41.2%) 80.06 (+38.7%)\nMedium 28.58 45.20 47.16 (+4.3%) 48.42 (+7.1%)49.72(+10.0%)\nLong 94.30 50.93 47.78 (-6.6%) 61.64 ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 5,
+          "pages": [
+            5,
+            6
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results And Analysis",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "aba42e483979e22431ce4ca5e5fad4fb99fd015d74add3bc414a2ec9bba57956",
+              "evidence_id": "Ec74f369a0414b048-B0028",
+              "pages": [
+                5,
+                6
+              ],
+              "section": "Results And Analysis",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 2355,
+                  "page": 5,
+                  "section": "Results And Analysis",
+                  "section_index": 13,
+                  "start": 1791,
+                  "text": "primarily cap-\ntures partial progress rather than only terminal suc-\ncesses. However, memory is used less frequently\nonce SRM is enabled: T1 triggers fall from 17.13\nto 12.15, T4 triggers from 19.13 to 11.77, Swift\ninjections from 30.81 to 23.03, and Sage injections\nfrom 19.13 to 11.77. The full system therefore\nwrites slightly more experience but needs fewer\nmemory-conditioned recovery attempts, consistent\nwith SRM reducing the number of unstable trajec-\ntories.\nSRM shows the complementary profile. SRM-\nonly records 9.77 stagnation reports and 1.35 effec-\n5"
+                },
+                {
+                  "end": 329,
+                  "page": 6,
+                  "section": "Results And Analysis",
+                  "section_index": 14,
+                  "start": 0,
+                  "text": "Table 2: Grouped ScienceWorld results. Values are mean final score. Parentheses show relative change over the\nbaseline within each group.\nGroup\u2217LenBaseline +AMM +SRM Full\nShort 11.76 57.74 66.43 (+15.1%)81.50(+41.2%) 80.06 (+38.7%)\nMedium 28.58 45.20 47.16 (+4.3%) 48.42 (+7.1%)49.72(+10.0%)\nLong 94.30 50.93 47.78 (-6.6%) 61.64 "
+                }
+              ],
+              "text": "primarily cap-\ntures partial progress rather than only terminal suc-\ncesses. However, memory is used less frequently\nonce SRM is enabled: T1 triggers fall from 17.13\nto 12.15, T4 triggers from 19.13 to 11.77, Swift\ninjections from 30.81 to 23.03, and Sage injections\nfrom 19.13 to 11.77. The full system therefore\nwrites slightly more experience but needs fewer\nmemory-conditioned recovery attempts, consistent\nwith SRM reducing the number of unstable trajec-\ntories.\nSRM shows the complementary profile. SRM-\nonly records 9.77 stagnation reports and 1.35 effec-\n5\nTable 2: Grouped ScienceWorld results. Values are mean final score. Parentheses show relative change over the\nbaseline within each group.\nGroup\u2217LenBaseline +AMM +SRM Full\nShort 11.76 57.74 66.43 (+15.1%)81.50(+41.2%) 80.06 (+38.7%)\nMedium 28.58 45.20 47.16 (+4.3%) 48.42 (+7.1%)49.72(+10.0%)\nLong 94.30 50.93 47.78 (-6.6%) 61.64 "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0029"
+          ],
+          "excerpt": "(+21.0%)61.69(+21.1%)\nOverall 49.26 51.67 53.83 (+4.1%) 64.33 (+24.5%)64.62(+25.1%)\ntive Critic calls per episode; the full system records\n9.35 and 1.29. Gate\u20131 drops are much more fre-\nquent: 20.03 per episode in SRM-only and 17.48\nin the full system, mostly because proposed actions\nare not in the current valid-action set. This implies\nthat SRM's main contribution is not frequent reflec-\ntive replanning, but continuous filtering of invalid\nor stale actions before they consume environment\nsteps.\nController usage further supports this interpreta-\ntion. Direct Swift-executed steps increase from\n44.08% in the baseline to 49.16% with AMM,\n57.13% with SRM, and 62.01% in the full system.\nBuffer-executed steps fall from 55.92% to 37.99%,\nand System 2 call rates fall from 24.6 per episode\nin the baseline to 14.1 in the full system. Better\nperformance therefore does not come from ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 6,
+          "pages": [
+            6
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results And Analysis",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "3ef84291a387c3f89bd87b68e73f3a9d67b1b24d101a94dbf6088e262e675415",
+              "evidence_id": "Ec74f369a0414b048-B0029",
+              "pages": [
+                6
+              ],
+              "section": "Results And Analysis",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 1213,
+                  "page": 6,
+                  "section": "Results And Analysis",
+                  "section_index": 14,
+                  "start": 329,
+                  "text": "(+21.0%)61.69(+21.1%)\nOverall 49.26 51.67 53.83 (+4.1%) 64.33 (+24.5%)64.62(+25.1%)\ntive Critic calls per episode; the full system records\n9.35 and 1.29. Gate\u20131 drops are much more fre-\nquent: 20.03 per episode in SRM-only and 17.48\nin the full system, mostly because proposed actions\nare not in the current valid-action set. This implies\nthat SRM's main contribution is not frequent reflec-\ntive replanning, but continuous filtering of invalid\nor stale actions before they consume environment\nsteps.\nController usage further supports this interpreta-\ntion. Direct Swift-executed steps increase from\n44.08% in the baseline to 49.16% with AMM,\n57.13% with SRM, and 62.01% in the full system.\nBuffer-executed steps fall from 55.92% to 37.99%,\nand System 2 call rates fall from 24.6 per episode\nin the baseline to 14.1 in the full system. Better\nperformance therefore does not come from "
+                }
+              ],
+              "text": "(+21.0%)61.69(+21.1%)\nOverall 49.26 51.67 53.83 (+4.1%) 64.33 (+24.5%)64.62(+25.1%)\ntive Critic calls per episode; the full system records\n9.35 and 1.29. Gate\u20131 drops are much more fre-\nquent: 20.03 per episode in SRM-only and 17.48\nin the full system, mostly because proposed actions\nare not in the current valid-action set. This implies\nthat SRM's main contribution is not frequent reflec-\ntive replanning, but continuous filtering of invalid\nor stale actions before they consume environment\nsteps.\nController usage further supports this interpreta-\ntion. Direct Swift-executed steps increase from\n44.08% in the baseline to 49.16% with AMM,\n57.13% with SRM, and 62.01% in the full system.\nBuffer-executed steps fall from 55.92% to 37.99%,\nand System 2 call rates fall from 24.6 per episode\nin the baseline to 14.1 in the full system. Better\nperformance therefore does not come from "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0030"
+          ],
+          "excerpt": "more\ndeliberation. It comes from making execution more\nreliable, so fewer invalid actions reach the environ-\nment and fewer costly System 2 interventions are\nrequired.\nSensitivity analyses reinforce this conclusion.\nEvaluating AMM with populated memory im-\nproves score from 51.47 in a weaker-memory\nregime to 53.83. Increasing the SRM Critic budget\nfrom three to six calls worsens performance, re-\nducing score from 64.33 to 52.95. Disabling Swift-\nlevel T1 memory injection in the full system lowers\nscore from 64.62 to 63.33, with the strongest neg-\native effect on Long tasks. These results suggest\nthat memory is useful but should remain targeted,\nand that reflection must be bounded rather than\nexpanded indiscriminately.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 6,
+          "pages": [
+            6
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results And Analysis",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "fab593daf9c2b35b64e0395264e8000e6bb561f3b7db111088b03f68e1e6fb03",
+              "evidence_id": "Ec74f369a0414b048-B0030",
+              "pages": [
+                6
+              ],
+              "section": "Results And Analysis",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 1940,
+                  "page": 6,
+                  "section": "Results And Analysis",
+                  "section_index": 14,
+                  "start": 1213,
+                  "text": "more\ndeliberation. It comes from making execution more\nreliable, so fewer invalid actions reach the environ-\nment and fewer costly System 2 interventions are\nrequired.\nSensitivity analyses reinforce this conclusion.\nEvaluating AMM with populated memory im-\nproves score from 51.47 in a weaker-memory\nregime to 53.83. Increasing the SRM Critic budget\nfrom three to six calls worsens performance, re-\nducing score from 64.33 to 52.95. Disabling Swift-\nlevel T1 memory injection in the full system lowers\nscore from 64.62 to 63.33, with the strongest neg-\native effect on Long tasks. These results suggest\nthat memory is useful but should remain targeted,\nand that reflection must be bounded rather than\nexpanded indiscriminately."
+                }
+              ],
+              "text": "more\ndeliberation. It comes from making execution more\nreliable, so fewer invalid actions reach the environ-\nment and fewer costly System 2 interventions are\nrequired.\nSensitivity analyses reinforce this conclusion.\nEvaluating AMM with populated memory im-\nproves score from 51.47 in a weaker-memory\nregime to 53.83. Increasing the SRM Critic budget\nfrom three to six calls worsens performance, re-\nducing score from 64.33 to 52.95. Disabling Swift-\nlevel T1 memory injection in the full system lowers\nscore from 64.62 to 63.33, with the strongest neg-\native effect on Long tasks. These results suggest\nthat memory is useful but should remain targeted,\nand that reflection must be bounded rather than\nexpanded indiscriminately."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0036"
+          ],
+          "excerpt": "A first limitation concerns the memory subsystem.\nAMM currently relies on compact semi-structured\nepisodic records stored in an external memory\nagent and consumed through bounded prompt in-\njection. This design is appropriate for controlled\nintegration and inspection, but it likely constrains\nthe standalone value of memory: stored traces are\nuseful as situated evidence, yet their representa-\ntion, retrieval ranking, and conversion into con-\ncrete action improvements remain relatively sim-\nple. Future work should study richer episodic\nformats, stronger retrieval and reranking, consol-\nidation across related traces, and more targeted\nprompt-conditioning strategies for Swift, Sage, and\nthe Critic.\nA related limitation is that AMM remains primar-\nily episodic. The system does not yet implement a\nmature semantic consolidation layer that abstracts\nacross episodes into reusable skills, ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 7,
+          "pages": [
+            7
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Limitations",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "61535b2eafd106954b5ce8fd8840ca642e764dd87ab75c505e31ad591ebb3070",
+              "evidence_id": "Ec74f369a0414b048-B0036",
+              "pages": [
+                7
+              ],
+              "section": "Limitations",
+              "section_role": "limitations",
+              "source_spans": [
+                {
+                  "end": 892,
+                  "page": 7,
+                  "section": "Limitations",
+                  "section_index": 17,
+                  "start": 0,
+                  "text": "A first limitation concerns the memory subsystem.\nAMM currently relies on compact semi-structured\nepisodic records stored in an external memory\nagent and consumed through bounded prompt in-\njection. This design is appropriate for controlled\nintegration and inspection, but it likely constrains\nthe standalone value of memory: stored traces are\nuseful as situated evidence, yet their representa-\ntion, retrieval ranking, and conversion into con-\ncrete action improvements remain relatively sim-\nple. Future work should study richer episodic\nformats, stronger retrieval and reranking, consol-\nidation across related traces, and more targeted\nprompt-conditioning strategies for Swift, Sage, and\nthe Critic.\nA related limitation is that AMM remains primar-\nily episodic. The system does not yet implement a\nmature semantic consolidation layer that abstracts\nacross episodes into reusable skills, "
+                }
+              ],
+              "text": "A first limitation concerns the memory subsystem.\nAMM currently relies on compact semi-structured\nepisodic records stored in an external memory\nagent and consumed through bounded prompt in-\njection. This design is appropriate for controlled\nintegration and inspection, but it likely constrains\nthe standalone value of memory: stored traces are\nuseful as situated evidence, yet their representa-\ntion, retrieval ranking, and conversion into con-\ncrete action improvements remain relatively sim-\nple. Future work should study richer episodic\nformats, stronger retrieval and reranking, consol-\nidation across related traces, and more targeted\nprompt-conditioning strategies for Swift, Sage, and\nthe Critic.\nA related limitation is that AMM remains primar-\nily episodic. The system does not yet implement a\nmature semantic consolidation layer that abstracts\nacross episodes into reusable skills, "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0037"
+          ],
+          "excerpt": "procedures, or\ntask-general regularities. From a Complementary\nLearning Systems perspective, the current imple-\nmentation covers the rapid episodic side more than\nthe slower semantic side. This helps explain why\nAMM alone is beneficial but modest: the mem-\nory store can recall concrete past experiences, but\nit does not yet reliably transform repeated experi-\nences into generalized procedural knowledge.\nA second limitation concerns SRM. The con-\ntrol layer is intentionally interpretable and rule-\nbounded, but several choices remain hand-crafted,\nincluding stagnation thresholds, action-filtering\nrules, focus-related constraints, fixed Critic bud-\ngets, and deterministic repair policies. Gate\u20131 is\neffective as a conservative safeguard, but its re-\npairs are shallow when an invalid action cannot\nbe cleanly normalized or mapped to an admissible\nalternative. Learned verifiers, ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 7,
+          "pages": [
+            7
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Limitations",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "ec715170f94b61051a483c1d526a8b76e7ee67e25b5ee3a5355d64522419dc15",
+              "evidence_id": "Ec74f369a0414b048-B0037",
+              "pages": [
+                7
+              ],
+              "section": "Limitations",
+              "section_role": "limitations",
+              "source_spans": [
+                {
+                  "end": 1776,
+                  "page": 7,
+                  "section": "Limitations",
+                  "section_index": 17,
+                  "start": 892,
+                  "text": "procedures, or\ntask-general regularities. From a Complementary\nLearning Systems perspective, the current imple-\nmentation covers the rapid episodic side more than\nthe slower semantic side. This helps explain why\nAMM alone is beneficial but modest: the mem-\nory store can recall concrete past experiences, but\nit does not yet reliably transform repeated experi-\nences into generalized procedural knowledge.\nA second limitation concerns SRM. The con-\ntrol layer is intentionally interpretable and rule-\nbounded, but several choices remain hand-crafted,\nincluding stagnation thresholds, action-filtering\nrules, focus-related constraints, fixed Critic bud-\ngets, and deterministic repair policies. Gate\u20131 is\neffective as a conservative safeguard, but its re-\npairs are shallow when an invalid action cannot\nbe cleanly normalized or mapped to an admissible\nalternative. Learned verifiers, "
+                }
+              ],
+              "text": "procedures, or\ntask-general regularities. From a Complementary\nLearning Systems perspective, the current imple-\nmentation covers the rapid episodic side more than\nthe slower semantic side. This helps explain why\nAMM alone is beneficial but modest: the mem-\nory store can recall concrete past experiences, but\nit does not yet reliably transform repeated experi-\nences into generalized procedural knowledge.\nA second limitation concerns SRM. The con-\ntrol layer is intentionally interpretable and rule-\nbounded, but several choices remain hand-crafted,\nincluding stagnation thresholds, action-filtering\nrules, focus-related constraints, fixed Critic bud-\ngets, and deterministic repair policies. Gate\u20131 is\neffective as a conservative safeguard, but its re-\npairs are shallow when an invalid action cannot\nbe cleanly normalized or mapped to an admissible\nalternative. Learned verifiers, "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0038"
+          ],
+          "excerpt": "confidence-aware es-\ncalation, richer affordance models, and adaptive re-\nflective budgets may improve this component while\npreserving the boundedness that proved important\nin the current experiments.\nA third limitation is evaluation scope. The exper-\niments are restricted to ScienceWorld, a text-based\nsimulated science environment, and to the imple-\nmentation choices inherited from the underlying\nSwiftSage-style runtime. Although ScienceWorld\nis well aligned with the target failure modes, the\nresults may not transfer directly to other interactive\nenvironments, multimodal settings, robotic action\nspaces, or different model backbones. In addition,\nAMM-enabled configurations are evaluated with a\npopulated memory agent, which is appropriate for\ntesting experience reuse but does not fully charac-\nterize cold-start learning, warm-up dynamics, mem-\nory aging, compaction, or ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 7,
+          "pages": [
+            7
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Limitations",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "351485f558c3e4f7a910eeccc639b1106f31959ae219b63655bbf0acd13243d3",
+              "evidence_id": "Ec74f369a0414b048-B0038",
+              "pages": [
+                7
+              ],
+              "section": "Limitations",
+              "section_role": "limitations",
+              "source_spans": [
+                {
+                  "end": 2657,
+                  "page": 7,
+                  "section": "Limitations",
+                  "section_index": 17,
+                  "start": 1776,
+                  "text": "confidence-aware es-\ncalation, richer affordance models, and adaptive re-\nflective budgets may improve this component while\npreserving the boundedness that proved important\nin the current experiments.\nA third limitation is evaluation scope. The exper-\niments are restricted to ScienceWorld, a text-based\nsimulated science environment, and to the imple-\nmentation choices inherited from the underlying\nSwiftSage-style runtime. Although ScienceWorld\nis well aligned with the target failure modes, the\nresults may not transfer directly to other interactive\nenvironments, multimodal settings, robotic action\nspaces, or different model backbones. In addition,\nAMM-enabled configurations are evaluated with a\npopulated memory agent, which is appropriate for\ntesting experience reuse but does not fully charac-\nterize cold-start learning, warm-up dynamics, mem-\nory aging, compaction, or "
+                }
+              ],
+              "text": "confidence-aware es-\ncalation, richer affordance models, and adaptive re-\nflective budgets may improve this component while\npreserving the boundedness that proved important\nin the current experiments.\nA third limitation is evaluation scope. The exper-\niments are restricted to ScienceWorld, a text-based\nsimulated science environment, and to the imple-\nmentation choices inherited from the underlying\nSwiftSage-style runtime. Although ScienceWorld\nis well aligned with the target failure modes, the\nresults may not transfer directly to other interactive\nenvironments, multimodal settings, robotic action\nspaces, or different model backbones. In addition,\nAMM-enabled configurations are evaluated with a\npopulated memory agent, which is appropriate for\ntesting experience reuse but does not fully charac-\nterize cold-start learning, warm-up dynamics, mem-\nory aging, compaction, or "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0055"
+          ],
+          "excerpt": "A Reproducibility Notes\nThe main paper reports the architecture-level findings. This appendix provides implementation details,\ncomplete tables, and sensitivity checks needed to interpret the reported results. The evaluation uses\nScienceWorld tasks 0\u201329 with up to ten natural-language variations per task, yielding up to 271 evaluation\nepisodes per configuration. All configurations share the same ScienceWorld interface, valid-action\ngrounding, one-env.step-per-timestep execution semantics, Swift/Sage arbitration, and FIFO action-\nbuffer execution. Reported metrics are computed over evaluation episodes only and are aggregated\ntask-first before macro-averaging across groups.\nMemory initialization and leakage control.AMM is evaluated as an experience-reuse mechanism\nrather than as a cold-start learner. The protocol initializes the memory agent with a warm-up stage of two\nvariations per task, ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 10,
+          "pages": [
+            10
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Appendix: A Reproducibility Notes",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "29f0c790811553438f0b73d6a9a8f7ee6ad2400ac43b6f9541a7962989261f02",
+              "evidence_id": "Ec74f369a0414b048-B0055",
+              "pages": [
+                10
+              ],
+              "section": "Appendix: A Reproducibility Notes",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 900,
+                  "page": 10,
+                  "section": "Appendix: A Reproducibility Notes",
+                  "section_index": 34,
+                  "start": 0,
+                  "text": "A Reproducibility Notes\nThe main paper reports the architecture-level findings. This appendix provides implementation details,\ncomplete tables, and sensitivity checks needed to interpret the reported results. The evaluation uses\nScienceWorld tasks 0\u201329 with up to ten natural-language variations per task, yielding up to 271 evaluation\nepisodes per configuration. All configurations share the same ScienceWorld interface, valid-action\ngrounding, one-env.step-per-timestep execution semantics, Swift/Sage arbitration, and FIFO action-\nbuffer execution. Reported metrics are computed over evaluation episodes only and are aggregated\ntask-first before macro-averaging across groups.\nMemory initialization and leakage control.AMM is evaluated as an experience-reuse mechanism\nrather than as a cold-start learner. The protocol initializes the memory agent with a warm-up stage of two\nvariations per task, "
+                }
+              ],
+              "text": "A Reproducibility Notes\nThe main paper reports the architecture-level findings. This appendix provides implementation details,\ncomplete tables, and sensitivity checks needed to interpret the reported results. The evaluation uses\nScienceWorld tasks 0\u201329 with up to ten natural-language variations per task, yielding up to 271 evaluation\nepisodes per configuration. All configurations share the same ScienceWorld interface, valid-action\ngrounding, one-env.step-per-timestep execution semantics, Swift/Sage arbitration, and FIFO action-\nbuffer execution. Reported metrics are computed over evaluation episodes only and are aggregated\ntask-first before macro-averaging across groups.\nMemory initialization and leakage control.AMM is evaluated as an experience-reuse mechanism\nrather than as a cold-start learner. The protocol initializes the memory agent with a warm-up stage of two\nvariations per task, "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0056"
+          ],
+          "excerpt": "i.e., 60 episodes in total; these warm-up episodes are used only to populate memory\nand are excluded from all reported evaluation metrics. The main AMM comparison uses a populated\nmemory agent, matching the operating condition of the full system, while the weaker-memory regime\nis reported separately in Table 8. This distinction is central to interpreting AMM: the results measure\nretrieval from an initialized episodic store, not learning from an empty memory. During an episode, the\nonline score is determined by ScienceWorld before any post-step AMM write can affect later behavior;\npost-step writes may contribute to later retrieval but do not retroactively affect the score of the transition\nthat generated them.\nRuntime constants and model settings.The executable substrate keeps Swift as the fast action\nproposer and Sage as the slow planner. Swift follows the SwiftSage-style Flan-T5-large ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 10,
+          "pages": [
+            10
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Appendix: A Reproducibility Notes",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "c70db681fb3c89aff9a9fd89d248544f54564e7d5a002fdaeed04642fdabd78e",
+              "evidence_id": "Ec74f369a0414b048-B0056",
+              "pages": [
+                10
+              ],
+              "section": "Appendix: A Reproducibility Notes",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 1799,
+                  "page": 10,
+                  "section": "Appendix: A Reproducibility Notes",
+                  "section_index": 34,
+                  "start": 900,
+                  "text": "i.e., 60 episodes in total; these warm-up episodes are used only to populate memory\nand are excluded from all reported evaluation metrics. The main AMM comparison uses a populated\nmemory agent, matching the operating condition of the full system, while the weaker-memory regime\nis reported separately in Table 8. This distinction is central to interpreting AMM: the results measure\nretrieval from an initialized episodic store, not learning from an empty memory. During an episode, the\nonline score is determined by ScienceWorld before any post-step AMM write can affect later behavior;\npost-step writes may contribute to later retrieval but do not retroactively affect the score of the transition\nthat generated them.\nRuntime constants and model settings.The executable substrate keeps Swift as the fast action\nproposer and Sage as the slow planner. Swift follows the SwiftSage-style Flan-T5-large "
+                }
+              ],
+              "text": "i.e., 60 episodes in total; these warm-up episodes are used only to populate memory\nand are excluded from all reported evaluation metrics. The main AMM comparison uses a populated\nmemory agent, matching the operating condition of the full system, while the weaker-memory regime\nis reported separately in Table 8. This distinction is central to interpreting AMM: the results measure\nretrieval from an initialized episodic store, not learning from an empty memory. During an episode, the\nonline score is determined by ScienceWorld before any post-step AMM write can affect later behavior;\npost-step writes may contribute to later retrieval but do not retroactively affect the score of the transition\nthat generated them.\nRuntime constants and model settings.The executable substrate keeps Swift as the fast action\nproposer and Sage as the slow planner. Swift follows the SwiftSage-style Flan-T5-large "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0066"
+          ],
+          "excerpt": "budget.\nSRM Critic max = 3 64.33 81.50 48.42 61.64 Main SRM comparator.\nFull without Swift T1 memory injection 63.33 79.23 53.88 56.36 Sensitivity to Swift-level AMM recovery.\nFull system 64.62 80.06 49.72 61.69 Main full-system comparator.\nReading note.The Critic-budget comparison is the strongest warning against unbounded reflection: increasing the maximum\nnumber of Critic calls from three to six lowers performance in every oracle-length group. The memory-initialization comparison\nshows that AMM benefits from a more mature episodic store, while the T1 ablation indicates that Swift-level memory recovery\ncontributes most clearly on Long tasks.\n13",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 13,
+          "pages": [
+            13
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Appendix: A Reproducibility Notes",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "21d2995c95dffdd5241a935a6696e66708837f46ba8178088b4ab7f2cc25ca14",
+              "evidence_id": "Ec74f369a0414b048-B0066",
+              "pages": [
+                13
+              ],
+              "section": "Appendix: A Reproducibility Notes",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 1028,
+                  "page": 13,
+                  "section": "Appendix: A Reproducibility Notes",
+                  "section_index": 37,
+                  "start": 374,
+                  "text": "budget.\nSRM Critic max = 3 64.33 81.50 48.42 61.64 Main SRM comparator.\nFull without Swift T1 memory injection 63.33 79.23 53.88 56.36 Sensitivity to Swift-level AMM recovery.\nFull system 64.62 80.06 49.72 61.69 Main full-system comparator.\nReading note.The Critic-budget comparison is the strongest warning against unbounded reflection: increasing the maximum\nnumber of Critic calls from three to six lowers performance in every oracle-length group. The memory-initialization comparison\nshows that AMM benefits from a more mature episodic store, while the T1 ablation indicates that Swift-level memory recovery\ncontributes most clearly on Long tasks.\n13"
+                }
+              ],
+              "text": "budget.\nSRM Critic max = 3 64.33 81.50 48.42 61.64 Main SRM comparator.\nFull without Swift T1 memory injection 63.33 79.23 53.88 56.36 Sensitivity to Swift-level AMM recovery.\nFull system 64.62 80.06 49.72 61.69 Main full-system comparator.\nReading note.The Critic-budget comparison is the strongest warning against unbounded reflection: increasing the maximum\nnumber of Critic calls from three to six lowers performance in every oracle-length group. The memory-initialization comparison\nshows that AMM benefits from a more mature episodic store, while the T1 ablation indicates that Swift-level memory recovery\ncontributes most clearly on Long tasks.\n13"
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        }
+      ],
+      "full_text_assessed": true,
+      "full_text_url": "https://arxiv.org/pdf/2609.19128",
+      "gate_version": "dual-promotion-v3",
       "manual_override": false,
       "missing_information": [],
       "overall_quality_score": null,
-      "paper_type": "unclear",
+      "paper_type": "position_or_conceptual",
       "positive_signals": [],
-      "promotion": {},
-      "rationale": "Scientific quality has not yet been assessed.",
+      "promotion": {
+        "adjudicator": {
+          "blocking_reasons": [],
+          "canonical_id": "doi:10.48550/arxiv.2609.19128",
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "evaluation_independence": {
+            "concern": "none",
+            "corroboration_direction": "supports",
+            "corroboration_summary": "Headline outcomes are measured by the ScienceWorld simulator's objective task scores, success rates, and step counts, which are external to the agent's internal gating, stagnation heuristics, and critic prompts.",
+            "final_evaluation_signal": "ScienceWorld environment task completion success, macro-averaged final score, and successful-step efficiency.",
+            "independent_corroboration": "present",
+            "optimization_signal": "Deterministic Gate-1 admissibility filtering, stagnation diagnostics, and bounded critic repair during runtime execution.",
+            "signal_reuse": "independent"
+          },
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0002",
+            "Ec74f369a0414b048-B0003",
+            "Ec74f369a0414b048-B0007",
+            "Ec74f369a0414b048-B0014",
+            "Ec74f369a0414b048-B0015",
+            "Ec74f369a0414b048-B0016",
+            "Ec74f369a0414b048-B0018",
+            "Ec74f369a0414b048-B0019",
+            "Ec74f369a0414b048-B0020",
+            "Ec74f369a0414b048-B0023",
+            "Ec74f369a0414b048-B0024",
+            "Ec74f369a0414b048-B0026",
+            "Ec74f369a0414b048-B0028",
+            "Ec74f369a0414b048-B0029",
+            "Ec74f369a0414b048-B0030",
+            "Ec74f369a0414b048-B0036",
+            "Ec74f369a0414b048-B0037",
+            "Ec74f369a0414b048-B0038",
+            "Ec74f369a0414b048-B0055",
+            "Ec74f369a0414b048-B0056",
+            "Ec74f369a0414b048-B0066"
+          ],
+          "promotion_decision": "pass",
+          "source_content_hash": "07ca56a4afa0ef6544daa7616cbf5fdda4a5e0b08b24aa1c8254df72d5b9e29e"
+        },
+        "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+        "adjudicator_provider": "openrouter",
+        "model_pair": {
+          "adjudicator": {
+            "family": "deepseek",
+            "model": "deepseek/deepseek-v4-pro-0813",
+            "provider": "openrouter"
+          },
+          "independent_families": true,
+          "primary": {
+            "family": "gemini",
+            "model": "gemini-3.8-flash",
+            "provider": "google"
+          },
+          "version": "model-pair-v1"
+        },
+        "outcome": "success",
+        "primary": {
+          "canonical_id": "doi:10.48550/arxiv.2609.19128",
+          "claim_evidence_alignment": "Claims match the findings: SRM execution control is the primary driver of score and success gains, whereas AMM provides smaller complementary improvements that are most stable once execution is gated. Mechanism-level logs and sensitivity analyses directly corroborate the finding that unbounded deliberation degrades performance.",
+          "context_id": "c74f369a0414b048a590874f53b7a3f06a367c053f7895e6e5623eca85d4f5eb",
+          "decision": "pass",
+          "evaluation_assessment": "The evaluation on ScienceWorld across 30 tasks uses macro-averaged final score, task completion success, and step efficiency, providing clean four-way ablations across Baseline, +AMM, +SRM, and Full. The empirical design includes diagnostic logging of gate drops, trigger rates, and sensitivity ablations for memory population and critic call budgets.",
+          "evaluation_independence": {
+            "concern": "none",
+            "corroboration_direction": "supports",
+            "corroboration_summary": "Headline performance is evaluated directly on objective external environment state transitions and task scores in ScienceWorld.",
+            "final_evaluation_signal": "Standard external environment metrics computed by the ScienceWorld simulator (task completion success rate, macro-averaged final task score, and step count).",
+            "independent_corroboration": "present",
+            "optimization_signal": "Deterministic pre-execution admissibility filtering, trajectory stagnation heuristics, and prompt-driven critic repair during runtime execution.",
+            "signal_reuse": "independent"
+          },
+          "evidence_ids": [
+            "Ec74f369a0414b048-B0002",
+            "Ec74f369a0414b048-B0003",
+            "Ec74f369a0414b048-B0007",
+            "Ec74f369a0414b048-B0014",
+            "Ec74f369a0414b048-B0015",
+            "Ec74f369a0414b048-B0016",
+            "Ec74f369a0414b048-B0018",
+            "Ec74f369a0414b048-B0019",
+            "Ec74f369a0414b048-B0020",
+            "Ec74f369a0414b048-B0023",
+            "Ec74f369a0414b048-B0024",
+            "Ec74f369a0414b048-B0026",
+            "Ec74f369a0414b048-B0028",
+            "Ec74f369a0414b048-B0029",
+            "Ec74f369a0414b048-B0030",
+            "Ec74f369a0414b048-B0036",
+            "Ec74f369a0414b048-B0037",
+            "Ec74f369a0414b048-B0038",
+            "Ec74f369a0414b048-B0055",
+            "Ec74f369a0414b048-B0056",
+            "Ec74f369a0414b048-B0066"
+          ],
+          "limitations": "The authors acknowledge evaluation restricted to ScienceWorld, reliance on hand-crafted stagnation rules and deterministic repairs, the use of populated episodic stores rather than lifelong semantic consolidation, and the absence of fine-grained counterfactual prompt tracing.",
+          "method_assessment": "The architecture cleanly separates memory evidence injection from runtime action verification without altering the underlying base action space. SRM enforces pre-execution validity checks (Gate-1) and trajectory stagnation checks that trigger a bounded LLM Critic, while AMM records typed episodic transitions and retrieves them under specific failure or planning triggers.",
+          "quality_rationale": "The study presents a clear, well-controlled systems ablation on an established interactive environment benchmark with sound methodology, comprehensive mechanism logs, and disciplined conclusions that align with the empirical results.",
+          "scoped_contribution": "The paper introduces two modular extensions to the dual-process SwiftSage agent architecture for interactive tasks: an Adaptive Memory Module (AMM) for salience-gated episodic retrieval and a Self-Reflection Module (SRM) for execution-time action gating and bounded critic repair, demonstrating their comparative utility on ScienceWorld.",
+          "source_content_hash": "07ca56a4afa0ef6544daa7616cbf5fdda4a5e0b08b24aa1c8254df72d5b9e29e"
+        },
+        "primary_model": "gemini-3.8-flash",
+        "primary_provider": "google",
+        "provenance_status": "pass"
+      },
+      "rationale": "The study presents a clear, well-controlled systems ablation on an established interactive environment benchmark with sound methodology, comprehensive mechanism logs, and disciplined conclusions that align with the empirical results.",
       "recommendation": "unknown",
-      "rubric_version": null,
-      "source_content_hash": null,
-      "status": "not_assessed",
+      "rubric_version": "scholarly-rubric-v2",
+      "source_content_hash": "07ca56a4afa0ef6544daa7616cbf5fdda4a5e0b08b24aa1c8254df72d5b9e29e",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "Manuscript evidence has not been reviewed."
+      "uncertainty": "The authors acknowledge evaluation restricted to ScienceWorld, reliance on hand-crafted stagnation rules and deterministic repairs, the use of populated episodic stores rather than lifelong semantic consolidation, and the absence of fine-grained counterfactual prompt tracing."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -498,7 +2286,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:57",
+    "last_seen_at": "2026-09-19 18:38:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -609,7 +2397,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -722,7 +2510,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -830,7 +2618,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -941,7 +2729,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1051,7 +2839,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1151,7 +2939,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:18",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1245,7 +3033,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1340,7 +3128,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1434,7 +3222,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1535,7 +3323,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1633,7 +3421,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1731,7 +3519,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1831,7 +3619,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -1933,7 +3721,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2041,7 +3829,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:18",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2141,7 +3929,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2241,7 +4029,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2341,7 +4129,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2440,7 +4228,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2542,7 +4330,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2659,7 +4447,7 @@
     "first_seen_date": "2026-07-09",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2685,36 +4473,62 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": null,
-      "assessment_scope": "metadata_only",
-      "assessment_version": null,
+      "assessed_at": "2026-09-19T18:40:51.121912+00:00",
+      "assessment_scope": "title_and_abstract",
+      "assessment_version": "quality-promotion-v2",
       "assessor_model": null,
-      "assessor_type": null,
+      "assessor_type": "deterministic",
       "combined_rank_score": 0.9,
       "concerns": [],
-      "concise_summary": null,
-      "confidence": "unknown",
-      "coverage": {},
+      "concise_summary": "Manuscript unavailable; no scientific decision.",
+      "confidence": "low",
+      "coverage": {
+        "assessment_input_characters": 413,
+        "extraction_complete": false,
+        "version": "coverage-v1"
+      },
       "curation_note": null,
       "dimension_scores": {},
       "downranked": false,
       "evidence": [],
       "full_text_assessed": false,
       "full_text_url": null,
-      "gate_version": null,
+      "gate_version": "dual-promotion-v3",
       "manual_override": false,
-      "missing_information": [],
+      "missing_information": [
+        "No extractable manuscript text was available."
+      ],
       "overall_quality_score": null,
       "paper_type": "unclear",
       "positive_signals": [],
-      "promotion": {},
-      "rationale": "Scientific quality has not yet been assessed.",
+      "promotion": {
+        "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+        "adjudicator_provider": "openrouter",
+        "model_pair": {
+          "adjudicator": {
+            "family": "deepseek",
+            "model": "deepseek/deepseek-v4-pro-0813",
+            "provider": "openrouter"
+          },
+          "independent_families": true,
+          "primary": {
+            "family": "gemini",
+            "model": "gemini-3.8-flash",
+            "provider": "google"
+          },
+          "version": "model-pair-v1"
+        },
+        "outcome": "manuscript_unavailable",
+        "primary_model": "gemini-3.8-flash",
+        "primary_provider": "google"
+      },
+      "rationale": "Manuscript unavailable; no scientific decision.",
       "recommendation": "unknown",
-      "rubric_version": null,
-      "source_content_hash": null,
-      "status": "not_assessed",
+      "rubric_version": "scholarly-rubric-v2",
+      "source_content_hash": "396af2b42db9c6132a2b7dd2f66256d4383e0296581838a27b4644f4f6273f51",
+      "status": "uncertain",
       "suppressed": false,
-      "uncertainty": "Manuscript evidence has not been reviewed."
+      "uncertainty": "No promotion; review candidates may remain pending indefinitely."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -2779,7 +4593,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:57",
+    "last_seen_at": "2026-09-19 18:38:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2886,7 +4700,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -3884,7 +5698,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -4165,7 +5979,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:18",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -5072,7 +6886,7 @@
     "first_seen_date": "2026-09-12",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -5304,7 +7118,7 @@
     "first_seen_date": "2026-09-11",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -6377,7 +8191,7 @@
     "first_seen_date": "2026-09-12",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -7051,7 +8865,7 @@
     "first_seen_date": "2026-08-20",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -7695,7 +9509,7 @@
     "first_seen_date": "2026-09-10",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -7801,7 +9615,7 @@
     "first_seen_date": "2026-09-12",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -79579,7 +81393,7 @@
     "first_seen_date": "2026-06-26",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:57",
+    "last_seen_at": "2026-09-19 18:38:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 1,
     "latest_revision_date": null,
@@ -79813,7 +81627,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80031,7 +81845,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80153,7 +81967,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:17",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80254,7 +82068,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:18",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80411,7 +82225,7 @@
     "first_seen_date": "2026-06-26",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80516,7 +82330,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80715,7 +82529,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:17",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80877,7 +82691,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:17",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -80980,7 +82794,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81079,7 +82893,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81183,7 +82997,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81279,7 +83093,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81376,7 +83190,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81486,7 +83300,7 @@
     "first_seen_date": "2026-09-11",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:17",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -81689,7 +83503,7 @@
     "first_seen_date": "2026-09-11",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -82578,7 +84392,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -82744,7 +84558,7 @@
     "first_seen_date": "2026-09-11",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -83151,7 +84965,7 @@
     "first_seen_date": "2026-09-11",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:59",
+    "last_seen_at": "2026-09-19 18:37:18",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -83250,7 +85064,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -84031,7 +85845,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -84358,7 +86172,7 @@
     "first_seen_date": "2026-09-10",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:01",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -85289,7 +87103,7 @@
     "first_seen_date": "2026-09-10",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -85485,7 +87299,7 @@
     "first_seen_date": "2026-09-10",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:00",
+    "last_seen_at": "2026-09-19 18:37:19",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -86447,7 +88261,7 @@
     "first_seen_date": "2026-09-12",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:02",
+    "last_seen_at": "2026-09-19 18:37:21",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -87170,7 +88984,7 @@
     "first_seen_date": "2026-09-10",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:58",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -123697,7 +125511,7 @@
     "first_seen_date": "2026-08-25",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:01",
+    "last_seen_at": "2026-09-19 18:37:20",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -248817,7 +250631,7 @@
     "first_seen_date": "2026-09-13",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:34",
+    "last_seen_at": "2026-09-19 18:37:56",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 1,
     "latest_revision_date": null,
@@ -249037,7 +250851,7 @@
     "first_seen_date": "2026-07-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:12",
+    "last_seen_at": "2026-09-19 18:37:31",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 1,
     "latest_revision_date": null,
@@ -249133,7 +250947,7 @@
     "first_seen_date": "2026-07-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:50:12",
+    "last_seen_at": "2026-09-19 18:37:31",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 1,
     "latest_revision_date": null,
@@ -249427,7 +251241,7 @@
     "first_seen_date": "2026-06-26",
     "future_date": true,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:49:57",
+    "last_seen_at": "2026-09-19 18:37:16",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 2,
     "latest_revision_date": null,

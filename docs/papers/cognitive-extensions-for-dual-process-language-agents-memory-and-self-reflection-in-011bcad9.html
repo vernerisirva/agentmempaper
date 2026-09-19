@@ -59,16 +59,349 @@
             <p>Language agents remain brittle in interactive environments, where success requires long-horizon state tracking, valid action execution, and recovery from failed steps. We extend SwiftSage, a dual-process agent that combines a fast action proposer with a slower planner, using two modular cognitive extensions: an Adap...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The study presents a clear, well-controlled systems ablation on an established interactive environment benchmark with sound methodology, comprehensive mechanism logs, and disciplined conclusions that align with the empirical results.</p>
+      <p>The authors acknowledge evaluation restricted to ScienceWorld, reliance on hand-crafted stagnation rules and deterministic repairs, the use of populated episodic stores rather than lifelong semantic consolidation, and the absence of fine-grained counterfactual prompt tracing.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T18:40:51.690947+00:00.</p>
+        <p>Coverage: 44917 of 44917 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Language agents remain brittle in interactive
+environments, where success requires long-
+horizon state tracking, valid action execution,
+and recovery from failed steps. We extend
+SwiftSage, a dual-process agent that combines
+a fast action proposer with a slower planner,
+using two modular cognitive extensions: an
+Adaptive Memory Module (AMM) for salience-
+gated episodic storage and trigger-driven re-
+trieval, and a Self-Reflection Module (SRM)
+for bounded execution-time validation and cor-
+rective intervention. Both modules are im-
+plemented as feature-flagged extensions over
+the same execution substrate, enabling con-
+trolled ablations on ScienceWorld. Across
+four configurations—baseline, baseline+AMM,
+baseline+SRM, and the full system—the full
+system achieves the best mean final score
+(64.62), success rate (43.17%), and successful-
+step efficiency (19.33 steps), while SRM is </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+strongest standalone contributor. The results
+suggest that execution-time control is the dom-
+inant bottleneck in this setting, while episodic
+memory becomes most useful once the runtime
+loop is stabilized.</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ablation study in-
+1
+arXiv:2609.19128v1  [cs.AI]  16 Sep 2026
+terpretable as cooperation between evidence and
+control rather than as an opaque redesign of the
+baseline agent.
+We evaluate the system on ScienceWorld (Wang
+et al., 2022), an interactive text benchmark requir-
+ing agents to perform elementary science tasks
+through grounded sequential actions. The eval-
+uation compares four configurations under a shared
+runtime substrate: baseline, baseline+AMM, base-
+line+SRM, and the full system. The results show
+that the full system achieves the best aggregate per-
+formance, while SRM is the strongest standalone
+extension. AMM alone yields smaller gains, but
+its contribution is more coherent once SRM sta-
+bilizes execution. Overall, the findings support a
+precise claim: in this setting, execution-time con-
+trol is the dominant lever for improving interactive
+language agents, while episodic </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The proposed system preserves the SwiftSage con-
+trol loop and inserts AMM and SRM at precise
+2
+runtime interfaces. At each timestep, the controller
+executes the next buffered action when available;
+otherwise it queries Swift, escalating to Sage un-
+der baseline conditions such as invalid actions, no-
+progress behavior, or the need for deliberate plan-
+ning. AMM can augment selected Swift, Sage,
+and Critic prompts with retrieved memories. SRM
+validates actions before execution and can inject
+bounded corrective actions into the same buffer
+used by Sage.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AMM addresses the absence of persistent experi-
+ence reuse. It has two hook families: a post-step
+write hook and pre-decision retrieval hooks. The
+write hook runs after the environment returns an
+observation and score transition. It receives the
+task, previous state, executed action, resulting ob-
+servation, score change, and recent history, then
+builds a candidate episodic record. This record is
+stored only if a salience gate detects an informative
+transition, such as terminal success, positive score
+change, near-miss progress, explicit invalid-action
+feedback, or an avoidance-worthy failure.
+Stored memories are compact semi-structured
+records, not raw transcripts. Each memory includes
+fields such as task, local state, recent context, exe-
+cuted action, resulting observation, score transition,
+and a type tag. The tag distinguishes success, near-
+miss, and avoidance-oriented memories. </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This rep-
+resentation improves retrieval targeting and makes
+prompt injection safer, because retrieved evidence
+is already concise, typed, and easy to filter or trun-
+cate.
+Retrieval is trigger-driven. T1 corresponds to
+Swift failure: when Swift fails to produce a valid
+action, AMM retrieves related episodes and retries
+Swift with memory-conditioned context. T4 corre-
+sponds to System 2 planning: when the baseline in-
+vokes Sage and memory planning is enabled, AMM
+retrieves success and near-miss episodes for deliber-
+ative planning. T2 and T3 are implemented as stag-
+nation and repeated-invalid-action retrieval/caching
+hooks, but in the evaluated AMM-only configu-
+ration they do not directly modify model inputs.
+This conservative design avoids injecting weakly
+grounded negative evidence into the fast pathway.
+Prompt augmentation is bounded and explicitly
+delimited. Swift receives only a </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>SRM targets execution-time failures: actions may
+be plausible in language but invalid, stale, redun-
+dant, or ineffective in the current environment. It
+consists of Gate–1 validation, post-step stagnation
+detection, and bounded Critic intervention.
+Gate–1 is applied immediately before an action
+reaches the environment. It receives the proposed
+action, current valid-action set, recent state descrip-
+tors, and runtime constraints. It normalizes the
+action, checks admissibility, applies deterministic
+repair when the mismatch is minor and safe, and
+drops the action if it remains invalid or violates
+constraints. Gate–1 is source-agnostic: Swift ac-
+tions, Sage-buffered actions, and Critic-generated
+actions all pass through the same pre-execution
+control surface.
+After each executed step, SRM updates determin-
+istic diagnostics over the recent trajectory. These
+diagnostics track repeated </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>observations, repeated
+actions with no effect, invalid-action loops, exces-
+sive navigation without state diversity, and verb-
+level loops that do not change the effective state.
+When these signals cross a threshold, SRM emits a
+structured stagnation report summarizing the fail-
+ure pattern, actions to avoid, and relevant runtime
+constraints.
+The Critic is invoked only when stagnation is
+detected and safeguards permit a call. Its prompt
+contains the task, current state, recent trajectory,
+stagnation report, runtime constraints, and, in the
+full system, optional AMM evidence. The Critic
+must output a short executable action list. Its output
+is parsed, filtered, and inserted into the same FIFO
+buffer used by Sage; it is never executed directly.
+Buffered Critic actions still pass through Gate–1.
+Calls are bounded by budgets and cooldowns, mak-
+ing SRM a controlled repair mechanism rather </blockquote></details></li><li><strong>Contribution clarity — pages 3–4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>than
+an always-on second planner. This is important
+because the Critic is powerful but risky: if used too
+often, it can interrupt otherwise valid trajectories
+3
+Figure 1: Full-system architecture. SwiftSage remains the action-selection substrate; AMM adds salience-gated
+episodic writing and trigger-driven retrieval; SRM adds Gate–1 validation, stagnation detection, and bounded Critic
+correction before actions reach ScienceWorld.
+or replace local action selection with unnecessary
+deliberation. SRM therefore treats the Critic as a
+last-mile repair mechanism, while Gate–1 provides
+the always-on safeguard.</blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We evaluate on ScienceWorld (Wang et al., 2022),
+using tasks 0–29 and up to 10 natural-language vari-
+ations per task, for up to 271 evaluation episodes
+per configuration. Each episode runs until com-
+4
+Table 1: Aggregate performance across configurations.
+Final is task-level macro-averaged final score; Success is
+macro-averaged task success; Steps@Succ is computed
+only over successful episodes.
+Configuration Final Succ. Steps
+Baseline 51.67 23.99% 24.48
++AMM 53.83 26.94% 24.03
++SRM 64.33 41.33% 19.76
+Full64.62 43.17% 19.33
+pletion or a fixed step budget. All configurations
+use the same environment interface, valid-action
+grounding, one env.step per timestep, Swift/Sage
+arbitration, and action-buffer execution. When
+SRM is enabled, actions additionally pass through
+Gate–1 and stagnation-triggered Critic actions may
+be inserted into the buffer. When AMM is enabled,
+memory writing and </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>trigger-driven retrieval are ac-
+tive.
+AMM-enabled configurations are evaluated with
+a populated memory agent, because the module
+is designed to reuse prior episodes. The earlier
+weaker-memory protocol is treated as a sensitivity
+condition rather than the main architecture-level
+comparison.
+Protocol note.We do not claim a new Science-
+World SOTA; our focus is a controlled ablation
+over a reproduced SwiftSage-style substrate under
+a shared local-model/runtime setting. Differences
+from Lin et al. (Lin et al., 2024) include the local
+Qwen2.5-7B-Instruct-1M Sage/Critic runtime and
+the populated-memory protocol used for AMM-
+enabled configurations.
+We report three primary metrics: final score at
+termination, task success, andSteps@Succ, the
+mean number of steps conditioned on successful
+completion. To avoid overweighting tasks with
+more variations, scores are first aggregated at the
+task </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 shows that the full system obtains the best
+aggregate performance, with a mean final score of
+64.62, success rate of 43.17%, and Steps@Succ of
+19.33. Baseline+SRM is close behind in score,
+reaching 64.33, while baseline+AMM reaches
+53.83 compared with 51.67 for the baseline. Rela-
+tive to the baseline, the full system improves mean
+final score by 25.1%, SRM alone by 24.5%, and
+AMM alone by 4.1%. The central pattern is there-
+fore that SRM accounts for most of the standalone
+improvement, while AMM provides a smaller posi-
+tive aggregate effect.
+The grouped results in Table 2 refine this pic-
+ture. On Short tasks, baseline+SRM performs best,
+suggesting that just-in-time execution filtering is
+especially valuable when trajectories are short and
+mistakes consume a large fraction of the budget.
+On Medium and Long tasks, the full system ob-
+tains the highest grouped score, although on </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>primarily cap-
+tures partial progress rather than only terminal suc-
+cesses. However, memory is used less frequently
+once SRM is enabled: T1 triggers fall from 17.13
+to 12.15, T4 triggers from 19.13 to 11.77, Swift
+injections from 30.81 to 23.03, and Sage injections
+from 19.13 to 11.77. The full system therefore
+writes slightly more experience but needs fewer
+memory-conditioned recovery attempts, consistent
+with SRM reducing the number of unstable trajec-
+tories.
+SRM shows the complementary profile. SRM-
+only records 9.77 stagnation reports and 1.35 effec-
+5
+Table 2: Grouped ScienceWorld results. Values are mean final score. Parentheses show relative change over the
+baseline within each group.
+Group∗LenBaseline +AMM +SRM Full
+Short 11.76 57.74 66.43 (+15.1%)81.50(+41.2%) 80.06 (+38.7%)
+Medium 28.58 45.20 47.16 (+4.3%) 48.42 (+7.1%)49.72(+10.0%)
+Long 94.30 50.93 47.78 (-6.6%) 61.64 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(+21.0%)61.69(+21.1%)
+Overall 49.26 51.67 53.83 (+4.1%) 64.33 (+24.5%)64.62(+25.1%)
+tive Critic calls per episode; the full system records
+9.35 and 1.29. Gate–1 drops are much more fre-
+quent: 20.03 per episode in SRM-only and 17.48
+in the full system, mostly because proposed actions
+are not in the current valid-action set. This implies
+that SRM&#x27;s main contribution is not frequent reflec-
+tive replanning, but continuous filtering of invalid
+or stale actions before they consume environment
+steps.
+Controller usage further supports this interpreta-
+tion. Direct Swift-executed steps increase from
+44.08% in the baseline to 49.16% with AMM,
+57.13% with SRM, and 62.01% in the full system.
+Buffer-executed steps fall from 55.92% to 37.99%,
+and System 2 call rates fall from 24.6 per episode
+in the baseline to 14.1 in the full system. Better
+performance therefore does not come from </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>more
+deliberation. It comes from making execution more
+reliable, so fewer invalid actions reach the environ-
+ment and fewer costly System 2 interventions are
+required.
+Sensitivity analyses reinforce this conclusion.
+Evaluating AMM with populated memory im-
+proves score from 51.47 in a weaker-memory
+regime to 53.83. Increasing the SRM Critic budget
+from three to six calls worsens performance, re-
+ducing score from 64.33 to 52.95. Disabling Swift-
+level T1 memory injection in the full system lowers
+score from 64.62 to 63.33, with the strongest neg-
+ative effect on Long tasks. These results suggest
+that memory is useful but should remain targeted,
+and that reflection must be bounded rather than
+expanded indiscriminately.</blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A first limitation concerns the memory subsystem.
+AMM currently relies on compact semi-structured
+episodic records stored in an external memory
+agent and consumed through bounded prompt in-
+jection. This design is appropriate for controlled
+integration and inspection, but it likely constrains
+the standalone value of memory: stored traces are
+useful as situated evidence, yet their representa-
+tion, retrieval ranking, and conversion into con-
+crete action improvements remain relatively sim-
+ple. Future work should study richer episodic
+formats, stronger retrieval and reranking, consol-
+idation across related traces, and more targeted
+prompt-conditioning strategies for Swift, Sage, and
+the Critic.
+A related limitation is that AMM remains primar-
+ily episodic. The system does not yet implement a
+mature semantic consolidation layer that abstracts
+across episodes into reusable skills, </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>procedures, or
+task-general regularities. From a Complementary
+Learning Systems perspective, the current imple-
+mentation covers the rapid episodic side more than
+the slower semantic side. This helps explain why
+AMM alone is beneficial but modest: the mem-
+ory store can recall concrete past experiences, but
+it does not yet reliably transform repeated experi-
+ences into generalized procedural knowledge.
+A second limitation concerns SRM. The con-
+trol layer is intentionally interpretable and rule-
+bounded, but several choices remain hand-crafted,
+including stagnation thresholds, action-filtering
+rules, focus-related constraints, fixed Critic bud-
+gets, and deterministic repair policies. Gate–1 is
+effective as a conservative safeguard, but its re-
+pairs are shallow when an invalid action cannot
+be cleanly normalized or mapped to an admissible
+alternative. Learned verifiers, </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>confidence-aware es-
+calation, richer affordance models, and adaptive re-
+flective budgets may improve this component while
+preserving the boundedness that proved important
+in the current experiments.
+A third limitation is evaluation scope. The exper-
+iments are restricted to ScienceWorld, a text-based
+simulated science environment, and to the imple-
+mentation choices inherited from the underlying
+SwiftSage-style runtime. Although ScienceWorld
+is well aligned with the target failure modes, the
+results may not transfer directly to other interactive
+environments, multimodal settings, robotic action
+spaces, or different model backbones. In addition,
+AMM-enabled configurations are evaluated with a
+populated memory agent, which is appropriate for
+testing experience reuse but does not fully charac-
+terize cold-start learning, warm-up dynamics, mem-
+ory aging, compaction, or </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A Reproducibility Notes
+The main paper reports the architecture-level findings. This appendix provides implementation details,
+complete tables, and sensitivity checks needed to interpret the reported results. The evaluation uses
+ScienceWorld tasks 0–29 with up to ten natural-language variations per task, yielding up to 271 evaluation
+episodes per configuration. All configurations share the same ScienceWorld interface, valid-action
+grounding, one-env.step-per-timestep execution semantics, Swift/Sage arbitration, and FIFO action-
+buffer execution. Reported metrics are computed over evaluation episodes only and are aggregated
+task-first before macro-averaging across groups.
+Memory initialization and leakage control.AMM is evaluated as an experience-reuse mechanism
+rather than as a cold-start learner. The protocol initializes the memory agent with a warm-up stage of two
+variations per task, </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>i.e., 60 episodes in total; these warm-up episodes are used only to populate memory
+and are excluded from all reported evaluation metrics. The main AMM comparison uses a populated
+memory agent, matching the operating condition of the full system, while the weaker-memory regime
+is reported separately in Table 8. This distinction is central to interpreting AMM: the results measure
+retrieval from an initialized episodic store, not learning from an empty memory. During an episode, the
+online score is determined by ScienceWorld before any post-step AMM write can affect later behavior;
+post-step writes may contribute to later retrieval but do not retroactively affect the score of the transition
+that generated them.
+Runtime constants and model settings.The executable substrate keeps Swift as the fast action
+proposer and Sage as the slow planner. Swift follows the SwiftSage-style Flan-T5-large </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>budget.
+SRM Critic max = 3 64.33 81.50 48.42 61.64 Main SRM comparator.
+Full without Swift T1 memory injection 63.33 79.23 53.88 56.36 Sensitivity to Swift-level AMM recovery.
+Full system 64.62 80.06 49.72 61.69 Main full-system comparator.
+Reading note.The Critic-budget comparison is the strongest warning against unbounded reflection: increasing the maximum
+number of Critic calls from three to six lowers performance in every oracle-length group. The memory-initialization comparison
+shows that AMM benefits from a more mature episodic store, while the T1 ablation indicates that Swift-level memory recovery
+contributes most clearly on Long tasks.
+13</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +440,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +456,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-19</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:34:02</li><li>Last seen by Paper Scout: 2026-09-19 17:49:57</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-19</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:34:02</li><li>Last seen by Paper Scout: 2026-09-19 18:37:16</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2609.19128</li><li>arXiv: 2609.19128</li><li>OpenAlex: W7213516733</li><li>OpenAlex IDs: W7213516733</li><li>arXiv IDs: 2609.19128</li></ul>
           </section>
           <section class="detail-panel">

@@ -59,16 +59,264 @@
             <p>Thermal optimization of 2D CFET inverters requires testing structural proposals against their electrical costs. We examine these research tasks using an AI agent workflow within a supplied electrothermal model. At 12 nm, Astra selects a redistributed source-interconnect geometry, while a coordinating agent proposes...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a rigorous, well-controlled electrothermal modeling study with honest accounting of agent roles, negative initial hypotheses, physical trade-offs, and computational reproducibility checks.</p>
+      <p>The authors clearly state that the findings are purely computational without experimental device fabrication and validation, and cross-model code reproduction failures (e.g., Claude Haiku) are explicitly noted and diagnosed.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-19T18:41:07.806851+00:00.</p>
+        <p>Coverage: 19418 of 19418 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Two-dimensional channels support strong electrostatic con-
+trol and dense complementary field-effect transistor (CFET)
+integration [1]. Stacking n- and p-channel devices concen-
+trates heat within one footprint, where dielectrics and thermal
+boundary resistances hinder its removal [2]–[4]. In an inverter,
+temperature also changes transistor currents and redistributes
+power. Thermal designs must therefore be evaluated under
+circuit operation as well as a prescribed heat load.
+Finding that design requires deciding which geometry to
+test, how to compare candidates fairly, and what to investi-
+gate next. Researchers ordinarily make these decisions when
+using TCAD solvers [5]. AI-scientist frameworks that connect
+hypothesis generation to code execution [6] motivate testing
+whether agents can undertake such tasks in CMOS logic
+research.
+Within a supplied Python model and fixed metal budget, </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>As-
+tra searches interconnect geometries and a coordinating agent
+proposes a via extension. We evaluate the resulting inverter,
+Human input: goal, model, constraints
+GPT-6 Astra
+Propose
+hypothesis
+Plan
+simulations
+Coordinating agent
+Propose
+next design
+Interpret</blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Thermal
+solver
+Inverter
+solver
+T ool calls
 
-        <ul></ul>
+Separate agent reruns: code reproduction
+Fig. 1. Agent workflow within a supplied model. Astra plans the interconnect
+search; the coordinating agent interprets the trend and proposes the via
+extension. Tool calls execute the tests; separate reruns check code consistency.
+distinguish the agents&#x27; contributions through search records,
+and check implementation consistency through reproduction.
+II. METHODOLOGY ANDDEVICEMODEL
+A. Thermal Model and Electrical Loading
+The search uses four MoS 2 sheets above four WSe 2 sheets
+(Lg = 12nm, width 40 nm, heated length 16 nm; Table III).
+Source local interconnects join each tier&#x27;s sheet contacts; their
+widths vary while contact length stays fixed. Channel cross-
+plane, metal and dielectric conductivities are 2, 25 and 1.2
+W m−1K−1.
+We solve anisotropic steady-state heat conduction by finite
+volumes, </blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>including thermal boundary resistance. The bottom
+is fixed at 300 K; the top exchanges heat with a 300-K
+bath (Table III). Fixed-power tests use 20µW, 30% contact
+dissipation andR cm = 5m 2K/GW, with constant conduc-
+tivities and no interconnect Joule heating. Energy balance,
+source normalization and reciprocity are checked. Refining the
+original fixed-power comparison changes its improvement by
+0.004 K; monolayers remain one cell thick.
+To test circuit operation, we instead determine power from
+the inverter currents atV DD = 0.7V . Gate lengths are 8, 12
+and 32 nm; follow-up width/contact scans cover all three. Both
+arXiv:2609.17123v1  [cond-mat.mtrl-sci]  15 Sep 2026
+3
+1
+6
+2
+10
+8
+5
+4
+9
+7
+4 6 8 10 12
+Upper interconnect width (nm)
+−0.4
+−0.2
+0.0
+0.2
+0.4
+Change from baseline (%)
+Rth, fixed volume
+Ion, n, fixed volume
+Rth, fixed wp
+8 12 20 30
+Effective contact length </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(b) Width at fixed position (c) Contact-length sensitivity
+Lg = 12 nm; Lc = 20 nm
+Lg = 12 nm; wn = wp = 8 nm
+Assumed LT = 20 nm
+Fig. 2. Thermal design and electrical cost. (a) Selected device at 20µW,P n/Pp = 2,R cm = 5m 2K/GW. AtL g = 12nm, (b) upper width varies at fixed
+metal volume or fixed lower width; (c) effective contact length varies. Changes are relative tow n =w p = 8nm,L c = 20nm.R th,peak uses fixed 20µW;
+self-heatedI on,n includes metal resistance atV GS =V DS = 0.7V .
+gates share an input, and their interconnected drains form the
+output. We solve
+In(Vin,V out,T n) =I p(VDD −V in,V DD −V out,T p)(1)
+together withT= 300 K +Hp, whereHmaps chan-
+nel/contact powers to channel-average temperatures. The
+charge-sheet current model accounts for finite oxide thick-
+ness [10], [11], mobility proportional toT −1.35 and saturation
+velocity proportional toT −0.5. The n/p </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>width-normalized con-
+tact resistances are 500/800Ωµm per contact. Their voltage
+drops determine contact heating, replacing the prescribed 30%
+fraction; current balance gives total powerP DC =V DDI.
+A follow-up sensitivity adds finite-volume metal conduc-
+tion, voltage drops and Joule heating, assumingρ m =
+2.93×10 −7 Ωm. Effective contact-length scaling uses
+Rc(Lc)/Rc(L0) = tanh(L 0/LT )/tanh(L c/LT )[17], with
+L0 =L T = 20nm and the above reference resistances.
+Injection beneath a top contact is not resolved. Width scans
+compare fixed metal volume with fixed lower width; contact-
+length scans change footprint and metal volume.
+B. Agent Roles and Structural Search
+Astra tests whether widening the hotter upper source in-
+terconnect and moving it inward improves cooling, using
+the requested Ultra setting (Fig. 1). The objectiveJ(d) =
+maxr∈{0.5,1,2} ∆Tmax(d,r)minimizes the worst peak </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rise
+above 300 K over power ratiosr=P n/Pp. All candidates
+preserve the same metal volume, top metal area, heat sources
+and thermal boundaries.
+The coordinating agent identifies the reversed width trend
+and proposes substrate-directed vias. No equivalent Astra
+acknowledgement is documented, so its sweep is distinguished
+from this interpretation. Design families were specified before
+evaluation and candidate results retained; the search was
+adaptive, not blind.</blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>THERMAL PERFORMANCE OF DESIGN STAGES ON A COMMON MESH
+Structure∆T max (K) Reduction (K)
+Baseline 141.63 0.00
+Redistributed interconnect 140.75 0.88
+Substrate-directed path 140.83 0.80
+Combined 139.96 1.67
+n-on-p;P= 20µW,R cm = 5m 2K/GW; 43,493 cells. Metal volume, top
+area, heat sources and boundary conditions are fixed. All four peak atr= 2
+overr= 0.5,1,2.
+III. RESULTS ANDDISCUSSION
+A. Source Interconnects and Heat Flow
+The selected design narrows and repositions the upper
+source interconnect while reallocating the saved metal to the
+lower tier. Peak rise falls by 0.88 K (Table I), contradicting
+the initial widening hypothesis. Width and position change
+together, while semiconductor contacts remain fixed.
+To improve downward heat flow, the coordinating agent
+adds a narrow via directed toward the substrate [Fig. 2(a)].
+With the interconnect change and the same metal budget,
+peak rise </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>falls from 141.63 to 139.96 K. The 1.67-K (1.18%)
+reduction exceeds either separate change and persists under
+refinement.
+The fixed-position control distinguishes narrowing from
+redistribution [Fig. 2(b)]. Changing an 8/8-nm upper/lower
+pair to 4/12 nm reduces thermal resistance by 0.26%, but
+narrowing only the upper interconnect raises it by 0.33%. The
+benefit therefore depends on metal allocation. Contact scaling
+further separates temperature from performance [Fig. 2(c)]:
+shorteningL c from 20 to 8 nm raises thermal resistance
+by 4.2%, yet lowers inverter peak temperature by 6.2 K as
+nFET on-current falls by 17%. Lower temperature alone is
+not evidence of better heat removal.
+0.29 0.31 0.33 0.35
+Vin (V)
+0.0
+0.2
+0.4
+0.6
+Vout (V)
+(a) Voltage transfer characteristic
+Lg
+8 nm
+12 nm
+32 nm
+0.0 0.2 0.4 0.6
+Vin (V)
+0
+1
+2
+3
+PDC (μW)
+(b) DC dissipation
+0.25 0.30 0.35 0.40
+Vin </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>together.
+AtL g = 8nm andV gs =V ds = 0.7V , self-heating lowers
+nFET on-current from 245.5 to 208.6µA/µm (15.0%); the
+pFET loses 11.5% under corresponding bias. Currents use the
+summed sheet width of4×40nm. These unequal responses
+shift the inverter switching voltage (V in =V out) from 0.3211
+to 0.3190 V and reduce the voltage-gain magnitude there from
+83.4 to 52.1 [Fig. 3(a)].
+Near the transition, however, thermal broadening of carrier
+occupation competes with mobility loss, raising peak DC
+power from 3.62 to 3.73µW at 8 nm [Fig. 3(b)]. Temperature
+peaks at a different input voltage:V in = 0.3102V , versus
+0.3163 V for power. There,V out = 0.561V places most of the
+voltage drop across the upper nFET, whose mean temperature
+reaches 340.7 K while the pFET remains at 309.1 K. Thus
+total power alone does not determine the hotspot. Maximum
+temperature decreases from 341.4 to 312.1 K </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>between 8 and
+32 nm [Fig. 3(c)].
+At 12 nm, the combined design lowers maximum inverter
+temperature from 330.75 to 330.41 K. This smaller 0.335-K re-
+duction reflects the baseline&#x27;s 2.97-µW load at its temperature
+maximum. Rescaling the fixed-power source distribution gives
+0.248-K cooling; using the inverter&#x27;s channel/contact fractions
+gives 0.329 K. Self-consistent feedback and the shift in peak
+bias bring this to 0.335 K. Relative to temperature rise, the</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CROSS-AGENT REPRODUCTION OF THE FIXED THERMAL REFERENCE
+CASES
+Model / effort labele T (K)e C (pp) Status
+GPT-6 / Light a 0 (ref.) 0 (ref.) Reference
+GPT-6 Astra / Ultra b 1.34e-12 3.20e-13 Pass
+Claude Fable 5.1 / high 4.26e-13 2.42e-13 Pass
+Claude Opus 5 / high (A) 4.98e-10 2.88e-10 Pass
+Claude Opus 5 (B) 4.26e-13 2.42e-13 Pass
+GPT-5.6 Sol / max 4.98e-10 2.88e-10 Pass
+GPT-5.6 Terra / max† 1.39e-12 4.12e-13 Pass
+GPT-5 / Codex 1.08e-12 8.74e-13 Pass
+Claude Haiku 4.5 104.95 15.16Fail
+Claude Opus 4.8 / middle∗ 4.26e-13 2.42e-13 Pass
+Claude Sonnet 5 / middle∗ 1.08e-12 8.74e-13 Pass
+GPT-5.6 Terra / max∗ 1.08e-12 8.74e-13 Pass
+GPT-5.6 Luna / max∗ 7.96e-13 4.12e-13 Pass
+Kimi / basic high∗ 7.96e-13 4.12e-13 Pass
+Perplexity [Grok 4.6]∗ 1.08e-12 8.74e-13 Pass
+Grok-labelled table‡ 4.59e-04 1.09e-04 Table only
+eT : maximum peak-rise error (four cases);e C: maximum reduction error
+(two resistances). </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and Alternative Designs
+Four fixed thermal cases test code consistency (Table II).
+Passing submissions agree within5×10 −10 K; fresh Ultra
+code agrees within1.34×10 −12 K. Haiku-labelled code fails
+by 104.95 K and 15.16 percentage points owing to indexing
+and resistance-unit errors. Corrections restore agreement; we
+retain the original failure. Supplied model/effort labels do not
+establish a controlled effort comparison.
+The separate Fable 5.1 C4 design uses one sheet per
+tier, doubles interface conductances, introduces AlN, length-
+ens contacts and adds gate metal (Table III). Corrected,
+refined mean thermal resistance falls by 45.19%/40.37% in
+the top/bottom tiers with 26.12% more metal. These ma-
+terial/interface changes extend beyond our search; different
+loads and metrics prevent ranking the agents.
+Cross-implementation checks recover the 1.67255-K reduc-
+tion with the other </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>study&#x27;s matrix assembly, despite shared
+discretization and backend. Neither search has been indepen-
+dently repeated or experimentally validated.
+IV. CONCLUSION
+We used an Astra-based AI scientist workflow to design
+and evaluate 2D CFET thermal structures. At fixed metal
+volume (L g = 12nm,L c = 20nm), the best tested
+design redistributes source-interconnect metal between the
+tiers and introduces a substrate-directed heat-removal path.
+It lowers peak temperature by 1.67 K at 20µW. Including
+metal resistance gives 0.6-K inverter cooling with 2.2% lower
+nFET on-current, revealing the electrical cost of improved
+heat removal. The workflow therefore produced a testable
+structural hypothesis and evaluated its circuit-level trade-off;
+experimental validation remains necessary.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +355,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +371,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:35:51</li><li>Last seen by Paper Scout: 2026-09-19 17:51:44</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:35:51</li><li>Last seen by Paper Scout: 2026-09-19 18:39:05</li></ul>
             <ul><li>arXiv: 2609.17123</li><li>OpenAlex: W7213473479</li><li>OpenAlex IDs: W7213473479</li><li>arXiv IDs: 2609.17123</li></ul>
           </section>
           <section class="detail-panel">

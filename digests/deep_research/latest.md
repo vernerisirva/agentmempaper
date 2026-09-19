@@ -6,9 +6,9 @@ Latest daily digest: [2026-09-19](2026-09-19.md).
 
 ## Run Summary
 
-- **Run ID:** 89
+- **Run ID:** 90
 - **Candidates fetched:** 100
-- **New unique papers:** 93
+- **New unique papers:** 94
 - **Relevant:** 13
 - **Maybe relevant:** 5
 - **Irrelevant:** 82

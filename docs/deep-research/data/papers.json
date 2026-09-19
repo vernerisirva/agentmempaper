@@ -27,7 +27,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -167,7 +167,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -2878,11 +2878,11 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
-    "library_admission": "review",
+    "library_admission": "main",
     "newly_discovered_in_latest_run": false,
     "notified_at": "2026-09-19 17:36:21",
     "notified_date": "2026-09-19",
@@ -2904,36 +2904,1252 @@
     "scholarly_quality": {
       "applied_score_cap": null,
       "applied_score_cap_reason": null,
-      "assessed_at": null,
-      "assessment_scope": "metadata_only",
-      "assessment_version": null,
-      "assessor_model": null,
-      "assessor_type": null,
+      "assessed_at": "2026-09-19T18:41:07.806851+00:00",
+      "assessment_scope": "full_text",
+      "assessment_version": "quality-promotion-v2",
+      "assessor_model": "gemini-3.8-flash",
+      "assessor_type": "hybrid",
       "combined_rank_score": 0.93,
       "concerns": [],
-      "concise_summary": null,
-      "confidence": "unknown",
-      "coverage": {},
+      "concise_summary": "The manuscript presents a rigorous, well-controlled electrothermal modeling study with honest accounting of agent roles, negative initial hypotheses, physical trade-offs, and computational reproducibility checks.",
+      "confidence": "high",
+      "coverage": {
+        "assessment_input_characters": 21863,
+        "assessment_input_sha256": "1a5ae2e42498c30d5e79698169b8e1d8e06713e2eceef43d72864d30e340c1fe",
+        "attempted_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "body_pages_partially_omitted": [],
+        "budget_unit": "characters (no tokenizer estimate)",
+        "canonical_id": "openalex:W7213473479",
+        "character_budget": 180000,
+        "characters_before_extraction_limit": 19588,
+        "configured_max_section_characters": 8000,
+        "eligible_characters": 19418,
+        "evidence_block_count": 42,
+        "evidence_context_characters": 25997,
+        "evidence_context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+        "evidence_context_sha256": "24924c62c69566522e5a1211354666b0068639739cbff6794637e34c244daf3a",
+        "evidence_version": "block-evidence-v2",
+        "excluded_back_matter_characters": 0,
+        "excluded_sections": [],
+        "extracted_characters": 19594,
+        "extracted_page_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "extracted_pages": 4,
+        "extraction_complete": true,
+        "extraction_gap_markers": 0,
+        "extraction_truncated": false,
+        "extractor_version": "bounded-v2",
+        "failure_reasons": [],
+        "format": "PDF",
+        "manuscript_identity": {
+          "method": "exact-title-typography-v1",
+          "source_content_hash": "c6d818eb21fbe06c8fd5a7f8154a1d4a51a4934988b5914a2efb6072a3b3fb01",
+          "source_url": "https://arxiv.org/pdf/2609.17123",
+          "verified": true
+        },
+        "max_extracted_characters": 400000,
+        "max_pages": 80,
+        "missing_page_indices": [],
+        "normalization_version": "canonical-unicode-v2",
+        "omitted_body_characters": 0,
+        "page_unit": "PDF page",
+        "pages_omitted": [],
+        "retained_source_characters": 19588,
+        "scientific_body_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "section_roles_detected": [
+          "appendix",
+          "body",
+          "results"
+        ],
+        "section_roles_omitted": [],
+        "section_roles_represented": [
+          "appendix",
+          "body",
+          "results"
+        ],
+        "sections": [
+          {
+            "heading": "Ai For Science With Gpt-6 Astra: Thermal Design",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "body",
+            "section_index": 0,
+            "source_characters": 1893,
+            "supplied_characters": 1893
+          },
+          {
+            "heading": "Appendix: Introduction",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "appendix",
+            "section_index": 1,
+            "source_characters": 1160,
+            "supplied_characters": 1160
+          },
+          {
+            "heading": "Results",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 1,
+            "role": "results",
+            "section_index": 2,
+            "source_characters": 1568,
+            "supplied_characters": 1568
+          },
+          {
+            "heading": "Results",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "results",
+            "section_index": 3,
+            "source_characters": 414,
+            "supplied_characters": 414
+          },
+          {
+            "heading": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "body",
+            "section_index": 4,
+            "source_characters": 2244,
+            "supplied_characters": 2244
+          },
+          {
+            "heading": "Table I",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "body",
+            "section_index": 5,
+            "source_characters": 7,
+            "supplied_characters": 7
+          },
+          {
+            "heading": "Thermal Performance Of Design Stages On A Common Mesh",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 2,
+            "role": "body",
+            "section_index": 6,
+            "source_characters": 1583,
+            "supplied_characters": 1583
+          },
+          {
+            "heading": "Thermal Performance Of Design Stages On A Common Mesh",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 7,
+            "source_characters": 318,
+            "supplied_characters": 318
+          },
+          {
+            "heading": "S D",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 8,
+            "source_characters": 2246,
+            "supplied_characters": 2246
+          },
+          {
+            "heading": "Table Ii",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 9,
+            "source_characters": 8,
+            "supplied_characters": 8
+          },
+          {
+            "heading": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 3,
+            "role": "body",
+            "section_index": 10,
+            "source_characters": 1555,
+            "supplied_characters": 1555
+          },
+          {
+            "heading": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 11,
+            "source_characters": 1917,
+            "supplied_characters": 1917
+          },
+          {
+            "heading": "Back matter: Acknowledgment",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 12,
+            "source_characters": 115,
+            "supplied_characters": 115
+          },
+          {
+            "heading": "Of This Project Originated In The Eindhoven Semiconductor",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 13,
+            "source_characters": 342,
+            "supplied_characters": 342
+          },
+          {
+            "heading": "Supported By The Technische Universiteit Eindhoven Startup",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 14,
+            "source_characters": 133,
+            "supplied_characters": 133
+          },
+          {
+            "heading": "Unclassified body after references",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 15,
+            "source_characters": 207,
+            "supplied_characters": 207
+          },
+          {
+            "heading": "Table Iii",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 16,
+            "source_characters": 9,
+            "supplied_characters": 9
+          },
+          {
+            "heading": "Device Parameters For The Two Design Studies",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 17,
+            "source_characters": 44,
+            "supplied_characters": 44
+          },
+          {
+            "heading": "Parameter Gpt Study Claude Baseline\u2192C4",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 18,
+            "source_characters": 38,
+            "supplied_characters": 38
+          },
+          {
+            "heading": "Sheets Per Tier (Total)4 (8) 1 (2)",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 19,
+            "source_characters": 103,
+            "supplied_characters": 103
+          },
+          {
+            "heading": "Gate Dielectric (Nm) 1 3 (Hfo 2)",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 20,
+            "source_characters": 32,
+            "supplied_characters": 32
+          },
+          {
+            "heading": "Within-Tier Gap (Nm) 6 Not Applicable",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 21,
+            "source_characters": 37,
+            "supplied_characters": 37
+          },
+          {
+            "heading": "Inter-Tier Gap (Nm) 20 26",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 22,
+            "source_characters": 25,
+            "supplied_characters": 25
+          },
+          {
+            "heading": "Contact Length (Nm) 2020\u219230",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 23,
+            "source_characters": 27,
+            "supplied_characters": 27
+          },
+          {
+            "heading": "Substrate (Nm) 40 (Effective) 1000 (Si)",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 24,
+            "source_characters": 79,
+            "supplied_characters": 79
+          },
+          {
+            "heading": "Sheetk N",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 25,
+            "source_characters": 144,
+            "supplied_characters": 144
+          },
+          {
+            "heading": "Toph(Mw M \u22122K\u22121) 2 0 (Adiabatic)",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 26,
+            "source_characters": 367,
+            "supplied_characters": 367
+          },
+          {
+            "heading": "Thermal Coupling Study For Nsfets And Cfets Considering Ther-",
+            "omission_reason": null,
+            "omitted_characters": 0,
+            "page": 4,
+            "role": "body",
+            "section_index": 27,
+            "source_characters": 2803,
+            "supplied_characters": 2803
+          }
+        ],
+        "selected_characters": 19418,
+        "selected_instead_of_full_text": false,
+        "selected_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "selected_sections": [
+          {
+            "characters": 1893,
+            "heading": "Ai For Science With Gpt-6 Astra: Thermal Design",
+            "page": 1
+          },
+          {
+            "characters": 1160,
+            "heading": "Appendix: Introduction",
+            "page": 1
+          },
+          {
+            "characters": 1568,
+            "heading": "Results",
+            "page": 1
+          },
+          {
+            "characters": 414,
+            "heading": "Results",
+            "page": 2
+          },
+          {
+            "characters": 2244,
+            "heading": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+            "page": 2
+          },
+          {
+            "characters": 7,
+            "heading": "Table I",
+            "page": 2
+          },
+          {
+            "characters": 1583,
+            "heading": "Thermal Performance Of Design Stages On A Common Mesh",
+            "page": 2
+          },
+          {
+            "characters": 318,
+            "heading": "Thermal Performance Of Design Stages On A Common Mesh",
+            "page": 3
+          },
+          {
+            "characters": 2246,
+            "heading": "S D",
+            "page": 3
+          },
+          {
+            "characters": 8,
+            "heading": "Table Ii",
+            "page": 3
+          },
+          {
+            "characters": 1555,
+            "heading": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+            "page": 3
+          },
+          {
+            "characters": 1917,
+            "heading": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+            "page": 4
+          },
+          {
+            "characters": 115,
+            "heading": "Back matter: Acknowledgment",
+            "page": 4
+          },
+          {
+            "characters": 342,
+            "heading": "Of This Project Originated In The Eindhoven Semiconductor",
+            "page": 4
+          },
+          {
+            "characters": 133,
+            "heading": "Supported By The Technische Universiteit Eindhoven Startup",
+            "page": 4
+          },
+          {
+            "characters": 207,
+            "heading": "Unclassified body after references",
+            "page": 4
+          },
+          {
+            "characters": 9,
+            "heading": "Table Iii",
+            "page": 4
+          },
+          {
+            "characters": 44,
+            "heading": "Device Parameters For The Two Design Studies",
+            "page": 4
+          },
+          {
+            "characters": 38,
+            "heading": "Parameter Gpt Study Claude Baseline\u2192C4",
+            "page": 4
+          },
+          {
+            "characters": 103,
+            "heading": "Sheets Per Tier (Total)4 (8) 1 (2)",
+            "page": 4
+          },
+          {
+            "characters": 32,
+            "heading": "Gate Dielectric (Nm) 1 3 (Hfo 2)",
+            "page": 4
+          },
+          {
+            "characters": 37,
+            "heading": "Within-Tier Gap (Nm) 6 Not Applicable",
+            "page": 4
+          },
+          {
+            "characters": 25,
+            "heading": "Inter-Tier Gap (Nm) 20 26",
+            "page": 4
+          },
+          {
+            "characters": 27,
+            "heading": "Contact Length (Nm) 2020\u219230",
+            "page": 4
+          },
+          {
+            "characters": 79,
+            "heading": "Substrate (Nm) 40 (Effective) 1000 (Si)",
+            "page": 4
+          },
+          {
+            "characters": 144,
+            "heading": "Sheetk N",
+            "page": 4
+          },
+          {
+            "characters": 367,
+            "heading": "Toph(Mw M \u22122K\u22121) 2 0 (Adiabatic)",
+            "page": 4
+          },
+          {
+            "characters": 2803,
+            "heading": "Thermal Coupling Study For Nsfets And Cfets Considering Ther-",
+            "page": 4
+          }
+        ],
+        "selected_text_sha256": "1a5ae2e42498c30d5e79698169b8e1d8e06713e2eceef43d72864d30e340c1fe",
+        "selection_chunk_characters": null,
+        "selection_version": "contiguous-balanced-v2",
+        "source_content_hash": "c6d818eb21fbe06c8fd5a7f8154a1d4a51a4934988b5914a2efb6072a3b3fb01",
+        "source_pages": 4,
+        "status": "complete",
+        "structure_version": "page-sections-v2",
+        "successfully_extracted_pages": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "surrogate_code_units": 0,
+        "unreadable_pages": [],
+        "version": "coverage-v2",
+        "warnings": []
+      },
       "curation_note": null,
       "dimension_scores": {},
       "downranked": false,
-      "evidence": [],
-      "full_text_assessed": false,
-      "full_text_url": null,
-      "gate_version": null,
+      "evidence": [
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0004"
+          ],
+          "excerpt": "Two-dimensional channels support strong electrostatic con-\ntrol and dense complementary field-effect transistor (CFET)\nintegration [1]. Stacking n- and p-channel devices concen-\ntrates heat within one footprint, where dielectrics and thermal\nboundary resistances hinder its removal [2]\u2013[4]. In an inverter,\ntemperature also changes transistor currents and redistributes\npower. Thermal designs must therefore be evaluated under\ncircuit operation as well as a prescribed heat load.\nFinding that design requires deciding which geometry to\ntest, how to compare candidates fairly, and what to investi-\ngate next. Researchers ordinarily make these decisions when\nusing TCAD solvers [5]. AI-scientist frameworks that connect\nhypothesis generation to code execution [6] motivate testing\nwhether agents can undertake such tasks in CMOS logic\nresearch.\nWithin a supplied Python model and fixed metal budget, ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Appendix: Introduction",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "620e9dfd5b1eaed67205cd2ffc46ec34e0ee6b2b39cb6e9e07dd4e801be2efd6",
+              "evidence_id": "E7ceb274e0cfefa13-B0004",
+              "pages": [
+                1
+              ],
+              "section": "Appendix: Introduction",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 898,
+                  "page": 1,
+                  "section": "Appendix: Introduction",
+                  "section_index": 1,
+                  "start": 0,
+                  "text": "Two-dimensional channels support strong electrostatic con-\ntrol and dense complementary field-effect transistor (CFET)\nintegration [1]. Stacking n- and p-channel devices concen-\ntrates heat within one footprint, where dielectrics and thermal\nboundary resistances hinder its removal [2]\u2013[4]. In an inverter,\ntemperature also changes transistor currents and redistributes\npower. Thermal designs must therefore be evaluated under\ncircuit operation as well as a prescribed heat load.\nFinding that design requires deciding which geometry to\ntest, how to compare candidates fairly, and what to investi-\ngate next. Researchers ordinarily make these decisions when\nusing TCAD solvers [5]. AI-scientist frameworks that connect\nhypothesis generation to code execution [6] motivate testing\nwhether agents can undertake such tasks in CMOS logic\nresearch.\nWithin a supplied Python model and fixed metal budget, "
+                }
+              ],
+              "text": "Two-dimensional channels support strong electrostatic con-\ntrol and dense complementary field-effect transistor (CFET)\nintegration [1]. Stacking n- and p-channel devices concen-\ntrates heat within one footprint, where dielectrics and thermal\nboundary resistances hinder its removal [2]\u2013[4]. In an inverter,\ntemperature also changes transistor currents and redistributes\npower. Thermal designs must therefore be evaluated under\ncircuit operation as well as a prescribed heat load.\nFinding that design requires deciding which geometry to\ntest, how to compare candidates fairly, and what to investi-\ngate next. Researchers ordinarily make these decisions when\nusing TCAD solvers [5]. AI-scientist frameworks that connect\nhypothesis generation to code execution [6] motivate testing\nwhether agents can undertake such tasks in CMOS logic\nresearch.\nWithin a supplied Python model and fixed metal budget, "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0005"
+          ],
+          "excerpt": "As-\ntra searches interconnect geometries and a coordinating agent\nproposes a via extension. We evaluate the resulting inverter,\nHuman input: goal, model, constraints\nGPT-6 Astra\nPropose\nhypothesis\nPlan\nsimulations\nCoordinating agent\nPropose\nnext design\nInterpret",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Appendix: Introduction",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "3607d26a27731b3051f189d2916cadc5a6b7d999a1093a9b95f679dca4f565a0",
+              "evidence_id": "E7ceb274e0cfefa13-B0005",
+              "pages": [
+                1
+              ],
+              "section": "Appendix: Introduction",
+              "section_role": "appendix",
+              "source_spans": [
+                {
+                  "end": 1160,
+                  "page": 1,
+                  "section": "Appendix: Introduction",
+                  "section_index": 1,
+                  "start": 898,
+                  "text": "As-\ntra searches interconnect geometries and a coordinating agent\nproposes a via extension. We evaluate the resulting inverter,\nHuman input: goal, model, constraints\nGPT-6 Astra\nPropose\nhypothesis\nPlan\nsimulations\nCoordinating agent\nPropose\nnext design\nInterpret"
+                }
+              ],
+              "text": "As-\ntra searches interconnect geometries and a coordinating agent\nproposes a via extension. We evaluate the resulting inverter,\nHuman input: goal, model, constraints\nGPT-6 Astra\nPropose\nhypothesis\nPlan\nsimulations\nCoordinating agent\nPropose\nnext design\nInterpret"
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0006"
+          ],
+          "excerpt": "Thermal\nsolver\nInverter\nsolver\nT ool calls\n\nSeparate agent reruns: code reproduction\nFig. 1. Agent workflow within a supplied model. Astra plans the interconnect\nsearch; the coordinating agent interprets the trend and proposes the via\nextension. Tool calls execute the tests; separate reruns check code consistency.\ndistinguish the agents' contributions through search records,\nand check implementation consistency through reproduction.\nII. METHODOLOGY ANDDEVICEMODEL\nA. Thermal Model and Electrical Loading\nThe search uses four MoS 2 sheets above four WSe 2 sheets\n(Lg = 12nm, width 40 nm, heated length 16 nm; Table III).\nSource local interconnects join each tier's sheet contacts; their\nwidths vary while contact length stays fixed. Channel cross-\nplane, metal and dielectric conductivities are 2, 25 and 1.2\nW m\u22121K\u22121.\nWe solve anisotropic steady-state heat conduction by finite\nvolumes, ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "6c9dcffe44990a70521ac8f67b9aec1c3929d9b289c908bbd531102f04f20757",
+              "evidence_id": "E7ceb274e0cfefa13-B0006",
+              "pages": [
+                1
+              ],
+              "section": "Results",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 891,
+                  "page": 1,
+                  "section": "Results",
+                  "section_index": 2,
+                  "start": 0,
+                  "text": "Thermal\nsolver\nInverter\nsolver\nT ool calls\n\nSeparate agent reruns: code reproduction\nFig. 1. Agent workflow within a supplied model. Astra plans the interconnect\nsearch; the coordinating agent interprets the trend and proposes the via\nextension. Tool calls execute the tests; separate reruns check code consistency.\ndistinguish the agents' contributions through search records,\nand check implementation consistency through reproduction.\nII. METHODOLOGY ANDDEVICEMODEL\nA. Thermal Model and Electrical Loading\nThe search uses four MoS 2 sheets above four WSe 2 sheets\n(Lg = 12nm, width 40 nm, heated length 16 nm; Table III).\nSource local interconnects join each tier's sheet contacts; their\nwidths vary while contact length stays fixed. Channel cross-\nplane, metal and dielectric conductivities are 2, 25 and 1.2\nW m\u22121K\u22121.\nWe solve anisotropic steady-state heat conduction by finite\nvolumes, "
+                }
+              ],
+              "text": "Thermal\nsolver\nInverter\nsolver\nT ool calls\n\nSeparate agent reruns: code reproduction\nFig. 1. Agent workflow within a supplied model. Astra plans the interconnect\nsearch; the coordinating agent interprets the trend and proposes the via\nextension. Tool calls execute the tests; separate reruns check code consistency.\ndistinguish the agents' contributions through search records,\nand check implementation consistency through reproduction.\nII. METHODOLOGY ANDDEVICEMODEL\nA. Thermal Model and Electrical Loading\nThe search uses four MoS 2 sheets above four WSe 2 sheets\n(Lg = 12nm, width 40 nm, heated length 16 nm; Table III).\nSource local interconnects join each tier's sheet contacts; their\nwidths vary while contact length stays fixed. Channel cross-\nplane, metal and dielectric conductivities are 2, 25 and 1.2\nW m\u22121K\u22121.\nWe solve anisotropic steady-state heat conduction by finite\nvolumes, "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0007"
+          ],
+          "excerpt": "including thermal boundary resistance. The bottom\nis fixed at 300 K; the top exchanges heat with a 300-K\nbath (Table III). Fixed-power tests use 20\u00b5W, 30% contact\ndissipation andR cm = 5m 2K/GW, with constant conduc-\ntivities and no interconnect Joule heating. Energy balance,\nsource normalization and reciprocity are checked. Refining the\noriginal fixed-power comparison changes its improvement by\n0.004 K; monolayers remain one cell thick.\nTo test circuit operation, we instead determine power from\nthe inverter currents atV DD = 0.7V . Gate lengths are 8, 12\nand 32 nm; follow-up width/contact scans cover all three. Both\narXiv:2609.17123v1  [cond-mat.mtrl-sci]  15 Sep 2026\n3\n1\n6\n2\n10\n8\n5\n4\n9\n7\n4 6 8 10 12\nUpper interconnect width (nm)\n\u22120.4\n\u22120.2\n0.0\n0.2\n0.4\nChange from baseline (%)\nRth, fixed volume\nIon, n, fixed volume\nRth, fixed wp\n8 12 20 30\nEffective contact length ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 1,
+          "pages": [
+            1,
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Results",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "6bcd2f4d266ef3bfe798fac8e15aa5cdd07b02c06bfe47e51ebcef9fb2394bee",
+              "evidence_id": "E7ceb274e0cfefa13-B0007",
+              "pages": [
+                1,
+                2
+              ],
+              "section": "Results",
+              "section_role": "results",
+              "source_spans": [
+                {
+                  "end": 1568,
+                  "page": 1,
+                  "section": "Results",
+                  "section_index": 2,
+                  "start": 891,
+                  "text": "including thermal boundary resistance. The bottom\nis fixed at 300 K; the top exchanges heat with a 300-K\nbath (Table III). Fixed-power tests use 20\u00b5W, 30% contact\ndissipation andR cm = 5m 2K/GW, with constant conduc-\ntivities and no interconnect Joule heating. Energy balance,\nsource normalization and reciprocity are checked. Refining the\noriginal fixed-power comparison changes its improvement by\n0.004 K; monolayers remain one cell thick.\nTo test circuit operation, we instead determine power from\nthe inverter currents atV DD = 0.7V . Gate lengths are 8, 12\nand 32 nm; follow-up width/contact scans cover all three. Both\narXiv:2609.17123v1  [cond-mat.mtrl-sci]  15 Sep 2026"
+                },
+                {
+                  "end": 199,
+                  "page": 2,
+                  "section": "Results",
+                  "section_index": 3,
+                  "start": 0,
+                  "text": "3\n1\n6\n2\n10\n8\n5\n4\n9\n7\n4 6 8 10 12\nUpper interconnect width (nm)\n\u22120.4\n\u22120.2\n0.0\n0.2\n0.4\nChange from baseline (%)\nRth, fixed volume\nIon, n, fixed volume\nRth, fixed wp\n8 12 20 30\nEffective contact length "
+                }
+              ],
+              "text": "including thermal boundary resistance. The bottom\nis fixed at 300 K; the top exchanges heat with a 300-K\nbath (Table III). Fixed-power tests use 20\u00b5W, 30% contact\ndissipation andR cm = 5m 2K/GW, with constant conduc-\ntivities and no interconnect Joule heating. Energy balance,\nsource normalization and reciprocity are checked. Refining the\noriginal fixed-power comparison changes its improvement by\n0.004 K; monolayers remain one cell thick.\nTo test circuit operation, we instead determine power from\nthe inverter currents atV DD = 0.7V . Gate lengths are 8, 12\nand 32 nm; follow-up width/contact scans cover all three. Both\narXiv:2609.17123v1  [cond-mat.mtrl-sci]  15 Sep 2026\n3\n1\n6\n2\n10\n8\n5\n4\n9\n7\n4 6 8 10 12\nUpper interconnect width (nm)\n\u22120.4\n\u22120.2\n0.0\n0.2\n0.4\nChange from baseline (%)\nRth, fixed volume\nIon, n, fixed volume\nRth, fixed wp\n8 12 20 30\nEffective contact length "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0009"
+          ],
+          "excerpt": "(b) Width at fixed position (c) Contact-length sensitivity\nLg = 12 nm; Lc = 20 nm\nLg = 12 nm; wn = wp = 8 nm\nAssumed LT = 20 nm\nFig. 2. Thermal design and electrical cost. (a) Selected device at 20\u00b5W,P n/Pp = 2,R cm = 5m 2K/GW. AtL g = 12nm, (b) upper width varies at fixed\nmetal volume or fixed lower width; (c) effective contact length varies. Changes are relative tow n =w p = 8nm,L c = 20nm.R th,peak uses fixed 20\u00b5W;\nself-heatedI on,n includes metal resistance atV GS =V DS = 0.7V .\ngates share an input, and their interconnected drains form the\noutput. We solve\nIn(Vin,V out,T n) =I p(VDD \u2212V in,V DD \u2212V out,T p)(1)\ntogether withT= 300 K +Hp, whereHmaps chan-\nnel/contact powers to channel-average temperatures. The\ncharge-sheet current model accounts for finite oxide thick-\nness [10], [11], mobility proportional toT \u22121.35 and saturation\nvelocity proportional toT \u22120.5. The n/p ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "77e0d93994e4a7cb6efbbe9fdcba2de13179434c77de8e59544405a0a6f42461",
+              "evidence_id": "E7ceb274e0cfefa13-B0009",
+              "pages": [
+                2
+              ],
+              "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 885,
+                  "page": 2,
+                  "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+                  "section_index": 4,
+                  "start": 0,
+                  "text": "(b) Width at fixed position (c) Contact-length sensitivity\nLg = 12 nm; Lc = 20 nm\nLg = 12 nm; wn = wp = 8 nm\nAssumed LT = 20 nm\nFig. 2. Thermal design and electrical cost. (a) Selected device at 20\u00b5W,P n/Pp = 2,R cm = 5m 2K/GW. AtL g = 12nm, (b) upper width varies at fixed\nmetal volume or fixed lower width; (c) effective contact length varies. Changes are relative tow n =w p = 8nm,L c = 20nm.R th,peak uses fixed 20\u00b5W;\nself-heatedI on,n includes metal resistance atV GS =V DS = 0.7V .\ngates share an input, and their interconnected drains form the\noutput. We solve\nIn(Vin,V out,T n) =I p(VDD \u2212V in,V DD \u2212V out,T p)(1)\ntogether withT= 300 K +Hp, whereHmaps chan-\nnel/contact powers to channel-average temperatures. The\ncharge-sheet current model accounts for finite oxide thick-\nness [10], [11], mobility proportional toT \u22121.35 and saturation\nvelocity proportional toT \u22120.5. The n/p "
+                }
+              ],
+              "text": "(b) Width at fixed position (c) Contact-length sensitivity\nLg = 12 nm; Lc = 20 nm\nLg = 12 nm; wn = wp = 8 nm\nAssumed LT = 20 nm\nFig. 2. Thermal design and electrical cost. (a) Selected device at 20\u00b5W,P n/Pp = 2,R cm = 5m 2K/GW. AtL g = 12nm, (b) upper width varies at fixed\nmetal volume or fixed lower width; (c) effective contact length varies. Changes are relative tow n =w p = 8nm,L c = 20nm.R th,peak uses fixed 20\u00b5W;\nself-heatedI on,n includes metal resistance atV GS =V DS = 0.7V .\ngates share an input, and their interconnected drains form the\noutput. We solve\nIn(Vin,V out,T n) =I p(VDD \u2212V in,V DD \u2212V out,T p)(1)\ntogether withT= 300 K +Hp, whereHmaps chan-\nnel/contact powers to channel-average temperatures. The\ncharge-sheet current model accounts for finite oxide thick-\nness [10], [11], mobility proportional toT \u22121.35 and saturation\nvelocity proportional toT \u22120.5. The n/p "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0010"
+          ],
+          "excerpt": "width-normalized con-\ntact resistances are 500/800\u03a9\u00b5m per contact. Their voltage\ndrops determine contact heating, replacing the prescribed 30%\nfraction; current balance gives total powerP DC =V DDI.\nA follow-up sensitivity adds finite-volume metal conduc-\ntion, voltage drops and Joule heating, assuming\u03c1 m =\n2.93\u00d710 \u22127 \u03a9m. Effective contact-length scaling uses\nRc(Lc)/Rc(L0) = tanh(L 0/LT )/tanh(L c/LT )[17], with\nL0 =L T = 20nm and the above reference resistances.\nInjection beneath a top contact is not resolved. Width scans\ncompare fixed metal volume with fixed lower width; contact-\nlength scans change footprint and metal volume.\nB. Agent Roles and Structural Search\nAstra tests whether widening the hotter upper source in-\nterconnect and moving it inward improves cooling, using\nthe requested Ultra setting (Fig. 1). The objectiveJ(d) =\nmaxr\u2208{0.5,1,2} \u2206Tmax(d,r)minimizes the worst peak ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "bbad448e3ea7225b0ade2c66db64341aedcfeb810bc33096b12970c4a5c0fa86",
+              "evidence_id": "E7ceb274e0cfefa13-B0010",
+              "pages": [
+                2
+              ],
+              "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1780,
+                  "page": 2,
+                  "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+                  "section_index": 4,
+                  "start": 885,
+                  "text": "width-normalized con-\ntact resistances are 500/800\u03a9\u00b5m per contact. Their voltage\ndrops determine contact heating, replacing the prescribed 30%\nfraction; current balance gives total powerP DC =V DDI.\nA follow-up sensitivity adds finite-volume metal conduc-\ntion, voltage drops and Joule heating, assuming\u03c1 m =\n2.93\u00d710 \u22127 \u03a9m. Effective contact-length scaling uses\nRc(Lc)/Rc(L0) = tanh(L 0/LT )/tanh(L c/LT )[17], with\nL0 =L T = 20nm and the above reference resistances.\nInjection beneath a top contact is not resolved. Width scans\ncompare fixed metal volume with fixed lower width; contact-\nlength scans change footprint and metal volume.\nB. Agent Roles and Structural Search\nAstra tests whether widening the hotter upper source in-\nterconnect and moving it inward improves cooling, using\nthe requested Ultra setting (Fig. 1). The objectiveJ(d) =\nmaxr\u2208{0.5,1,2} \u2206Tmax(d,r)minimizes the worst peak "
+                }
+              ],
+              "text": "width-normalized con-\ntact resistances are 500/800\u03a9\u00b5m per contact. Their voltage\ndrops determine contact heating, replacing the prescribed 30%\nfraction; current balance gives total powerP DC =V DDI.\nA follow-up sensitivity adds finite-volume metal conduc-\ntion, voltage drops and Joule heating, assuming\u03c1 m =\n2.93\u00d710 \u22127 \u03a9m. Effective contact-length scaling uses\nRc(Lc)/Rc(L0) = tanh(L 0/LT )/tanh(L c/LT )[17], with\nL0 =L T = 20nm and the above reference resistances.\nInjection beneath a top contact is not resolved. Width scans\ncompare fixed metal volume with fixed lower width; contact-\nlength scans change footprint and metal volume.\nB. Agent Roles and Structural Search\nAstra tests whether widening the hotter upper source in-\nterconnect and moving it inward improves cooling, using\nthe requested Ultra setting (Fig. 1). The objectiveJ(d) =\nmaxr\u2208{0.5,1,2} \u2206Tmax(d,r)minimizes the worst peak "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0011"
+          ],
+          "excerpt": "rise\nabove 300 K over power ratiosr=P n/Pp. All candidates\npreserve the same metal volume, top metal area, heat sources\nand thermal boundaries.\nThe coordinating agent identifies the reversed width trend\nand proposes substrate-directed vias. No equivalent Astra\nacknowledgement is documented, so its sweep is distinguished\nfrom this interpretation. Design families were specified before\nevaluation and candidate results retained; the search was\nadaptive, not blind.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "5e6277f6f94740a9723183523fb032d5b8cb52d4e49a9fa6fd0c11dc49ea958f",
+              "evidence_id": "E7ceb274e0cfefa13-B0011",
+              "pages": [
+                2
+              ],
+              "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 2244,
+                  "page": 2,
+                  "section": "Gate Dielectric 7 Inter-Tier Dielectric 8 Source Interconnect 9 Source Via 10 Substrate",
+                  "section_index": 4,
+                  "start": 1780,
+                  "text": "rise\nabove 300 K over power ratiosr=P n/Pp. All candidates\npreserve the same metal volume, top metal area, heat sources\nand thermal boundaries.\nThe coordinating agent identifies the reversed width trend\nand proposes substrate-directed vias. No equivalent Astra\nacknowledgement is documented, so its sweep is distinguished\nfrom this interpretation. Design families were specified before\nevaluation and candidate results retained; the search was\nadaptive, not blind."
+                }
+              ],
+              "text": "rise\nabove 300 K over power ratiosr=P n/Pp. All candidates\npreserve the same metal volume, top metal area, heat sources\nand thermal boundaries.\nThe coordinating agent identifies the reversed width trend\nand proposes substrate-directed vias. No equivalent Astra\nacknowledgement is documented, so its sweep is distinguished\nfrom this interpretation. Design families were specified before\nevaluation and candidate results retained; the search was\nadaptive, not blind."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0013"
+          ],
+          "excerpt": "THERMAL PERFORMANCE OF DESIGN STAGES ON A COMMON MESH\nStructure\u2206T max (K) Reduction (K)\nBaseline 141.63 0.00\nRedistributed interconnect 140.75 0.88\nSubstrate-directed path 140.83 0.80\nCombined 139.96 1.67\nn-on-p;P= 20\u00b5W,R cm = 5m 2K/GW; 43,493 cells. Metal volume, top\narea, heat sources and boundary conditions are fixed. All four peak atr= 2\noverr= 0.5,1,2.\nIII. RESULTS ANDDISCUSSION\nA. Source Interconnects and Heat Flow\nThe selected design narrows and repositions the upper\nsource interconnect while reallocating the saved metal to the\nlower tier. Peak rise falls by 0.88 K (Table I), contradicting\nthe initial widening hypothesis. Width and position change\ntogether, while semiconductor contacts remain fixed.\nTo improve downward heat flow, the coordinating agent\nadds a narrow via directed toward the substrate [Fig. 2(a)].\nWith the interconnect change and the same metal budget,\npeak rise ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Thermal Performance Of Design Stages On A Common Mesh",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "09caec6af90f5398b6e044cdec51b843b9acf64c8223e0b098893e928a404be8",
+              "evidence_id": "E7ceb274e0cfefa13-B0013",
+              "pages": [
+                2
+              ],
+              "section": "Thermal Performance Of Design Stages On A Common Mesh",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 897,
+                  "page": 2,
+                  "section": "Thermal Performance Of Design Stages On A Common Mesh",
+                  "section_index": 6,
+                  "start": 0,
+                  "text": "THERMAL PERFORMANCE OF DESIGN STAGES ON A COMMON MESH\nStructure\u2206T max (K) Reduction (K)\nBaseline 141.63 0.00\nRedistributed interconnect 140.75 0.88\nSubstrate-directed path 140.83 0.80\nCombined 139.96 1.67\nn-on-p;P= 20\u00b5W,R cm = 5m 2K/GW; 43,493 cells. Metal volume, top\narea, heat sources and boundary conditions are fixed. All four peak atr= 2\noverr= 0.5,1,2.\nIII. RESULTS ANDDISCUSSION\nA. Source Interconnects and Heat Flow\nThe selected design narrows and repositions the upper\nsource interconnect while reallocating the saved metal to the\nlower tier. Peak rise falls by 0.88 K (Table I), contradicting\nthe initial widening hypothesis. Width and position change\ntogether, while semiconductor contacts remain fixed.\nTo improve downward heat flow, the coordinating agent\nadds a narrow via directed toward the substrate [Fig. 2(a)].\nWith the interconnect change and the same metal budget,\npeak rise "
+                }
+              ],
+              "text": "THERMAL PERFORMANCE OF DESIGN STAGES ON A COMMON MESH\nStructure\u2206T max (K) Reduction (K)\nBaseline 141.63 0.00\nRedistributed interconnect 140.75 0.88\nSubstrate-directed path 140.83 0.80\nCombined 139.96 1.67\nn-on-p;P= 20\u00b5W,R cm = 5m 2K/GW; 43,493 cells. Metal volume, top\narea, heat sources and boundary conditions are fixed. All four peak atr= 2\noverr= 0.5,1,2.\nIII. RESULTS ANDDISCUSSION\nA. Source Interconnects and Heat Flow\nThe selected design narrows and repositions the upper\nsource interconnect while reallocating the saved metal to the\nlower tier. Peak rise falls by 0.88 K (Table I), contradicting\nthe initial widening hypothesis. Width and position change\ntogether, while semiconductor contacts remain fixed.\nTo improve downward heat flow, the coordinating agent\nadds a narrow via directed toward the substrate [Fig. 2(a)].\nWith the interconnect change and the same metal budget,\npeak rise "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0014"
+          ],
+          "excerpt": "falls from 141.63 to 139.96 K. The 1.67-K (1.18%)\nreduction exceeds either separate change and persists under\nrefinement.\nThe fixed-position control distinguishes narrowing from\nredistribution [Fig. 2(b)]. Changing an 8/8-nm upper/lower\npair to 4/12 nm reduces thermal resistance by 0.26%, but\nnarrowing only the upper interconnect raises it by 0.33%. The\nbenefit therefore depends on metal allocation. Contact scaling\nfurther separates temperature from performance [Fig. 2(c)]:\nshorteningL c from 20 to 8 nm raises thermal resistance\nby 4.2%, yet lowers inverter peak temperature by 6.2 K as\nnFET on-current falls by 17%. Lower temperature alone is\nnot evidence of better heat removal.\n0.29 0.31 0.33 0.35\nVin (V)\n0.0\n0.2\n0.4\n0.6\nVout (V)\n(a) Voltage transfer characteristic\nLg\n8 nm\n12 nm\n32 nm\n0.0 0.2 0.4 0.6\nVin (V)\n0\n1\n2\n3\nPDC (\u03bcW)\n(b) DC dissipation\n0.25 0.30 0.35 0.40\nVin ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 2,
+          "pages": [
+            2,
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Thermal Performance Of Design Stages On A Common Mesh",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "a2589311ac0a045f3159fbf54f3eb81428f33224338cc4054a339ce6ec48db28",
+              "evidence_id": "E7ceb274e0cfefa13-B0014",
+              "pages": [
+                2,
+                3
+              ],
+              "section": "Thermal Performance Of Design Stages On A Common Mesh",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1583,
+                  "page": 2,
+                  "section": "Thermal Performance Of Design Stages On A Common Mesh",
+                  "section_index": 6,
+                  "start": 897,
+                  "text": "falls from 141.63 to 139.96 K. The 1.67-K (1.18%)\nreduction exceeds either separate change and persists under\nrefinement.\nThe fixed-position control distinguishes narrowing from\nredistribution [Fig. 2(b)]. Changing an 8/8-nm upper/lower\npair to 4/12 nm reduces thermal resistance by 0.26%, but\nnarrowing only the upper interconnect raises it by 0.33%. The\nbenefit therefore depends on metal allocation. Contact scaling\nfurther separates temperature from performance [Fig. 2(c)]:\nshorteningL c from 20 to 8 nm raises thermal resistance\nby 4.2%, yet lowers inverter peak temperature by 6.2 K as\nnFET on-current falls by 17%. Lower temperature alone is\nnot evidence of better heat removal."
+                },
+                {
+                  "end": 193,
+                  "page": 3,
+                  "section": "Thermal Performance Of Design Stages On A Common Mesh",
+                  "section_index": 7,
+                  "start": 0,
+                  "text": "0.29 0.31 0.33 0.35\nVin (V)\n0.0\n0.2\n0.4\n0.6\nVout (V)\n(a) Voltage transfer characteristic\nLg\n8 nm\n12 nm\n32 nm\n0.0 0.2 0.4 0.6\nVin (V)\n0\n1\n2\n3\nPDC (\u03bcW)\n(b) DC dissipation\n0.25 0.30 0.35 0.40\nVin "
+                }
+              ],
+              "text": "falls from 141.63 to 139.96 K. The 1.67-K (1.18%)\nreduction exceeds either separate change and persists under\nrefinement.\nThe fixed-position control distinguishes narrowing from\nredistribution [Fig. 2(b)]. Changing an 8/8-nm upper/lower\npair to 4/12 nm reduces thermal resistance by 0.26%, but\nnarrowing only the upper interconnect raises it by 0.33%. The\nbenefit therefore depends on metal allocation. Contact scaling\nfurther separates temperature from performance [Fig. 2(c)]:\nshorteningL c from 20 to 8 nm raises thermal resistance\nby 4.2%, yet lowers inverter peak temperature by 6.2 K as\nnFET on-current falls by 17%. Lower temperature alone is\nnot evidence of better heat removal.\n0.29 0.31 0.33 0.35\nVin (V)\n0.0\n0.2\n0.4\n0.6\nVout (V)\n(a) Voltage transfer characteristic\nLg\n8 nm\n12 nm\n32 nm\n0.0 0.2 0.4 0.6\nVin (V)\n0\n1\n2\n3\nPDC (\u03bcW)\n(b) DC dissipation\n0.25 0.30 0.35 0.40\nVin "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0017"
+          ],
+          "excerpt": "together.\nAtL g = 8nm andV gs =V ds = 0.7V , self-heating lowers\nnFET on-current from 245.5 to 208.6\u00b5A/\u00b5m (15.0%); the\npFET loses 11.5% under corresponding bias. Currents use the\nsummed sheet width of4\u00d740nm. These unequal responses\nshift the inverter switching voltage (V in =V out) from 0.3211\nto 0.3190 V and reduce the voltage-gain magnitude there from\n83.4 to 52.1 [Fig. 3(a)].\nNear the transition, however, thermal broadening of carrier\noccupation competes with mobility loss, raising peak DC\npower from 3.62 to 3.73\u00b5W at 8 nm [Fig. 3(b)]. Temperature\npeaks at a different input voltage:V in = 0.3102V , versus\n0.3163 V for power. There,V out = 0.561V places most of the\nvoltage drop across the upper nFET, whose mean temperature\nreaches 340.7 K while the pFET remains at 309.1 K. Thus\ntotal power alone does not determine the hotspot. Maximum\ntemperature decreases from 341.4 to 312.1 K ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "S D",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "8d5df758957da8d9c1a4dc0e902c019556fed8956cdb3efa176e24a1117db53a",
+              "evidence_id": "E7ceb274e0cfefa13-B0017",
+              "pages": [
+                3
+              ],
+              "section": "S D",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1785,
+                  "page": 3,
+                  "section": "S D",
+                  "section_index": 8,
+                  "start": 892,
+                  "text": "together.\nAtL g = 8nm andV gs =V ds = 0.7V , self-heating lowers\nnFET on-current from 245.5 to 208.6\u00b5A/\u00b5m (15.0%); the\npFET loses 11.5% under corresponding bias. Currents use the\nsummed sheet width of4\u00d740nm. These unequal responses\nshift the inverter switching voltage (V in =V out) from 0.3211\nto 0.3190 V and reduce the voltage-gain magnitude there from\n83.4 to 52.1 [Fig. 3(a)].\nNear the transition, however, thermal broadening of carrier\noccupation competes with mobility loss, raising peak DC\npower from 3.62 to 3.73\u00b5W at 8 nm [Fig. 3(b)]. Temperature\npeaks at a different input voltage:V in = 0.3102V , versus\n0.3163 V for power. There,V out = 0.561V places most of the\nvoltage drop across the upper nFET, whose mean temperature\nreaches 340.7 K while the pFET remains at 309.1 K. Thus\ntotal power alone does not determine the hotspot. Maximum\ntemperature decreases from 341.4 to 312.1 K "
+                }
+              ],
+              "text": "together.\nAtL g = 8nm andV gs =V ds = 0.7V , self-heating lowers\nnFET on-current from 245.5 to 208.6\u00b5A/\u00b5m (15.0%); the\npFET loses 11.5% under corresponding bias. Currents use the\nsummed sheet width of4\u00d740nm. These unequal responses\nshift the inverter switching voltage (V in =V out) from 0.3211\nto 0.3190 V and reduce the voltage-gain magnitude there from\n83.4 to 52.1 [Fig. 3(a)].\nNear the transition, however, thermal broadening of carrier\noccupation competes with mobility loss, raising peak DC\npower from 3.62 to 3.73\u00b5W at 8 nm [Fig. 3(b)]. Temperature\npeaks at a different input voltage:V in = 0.3102V , versus\n0.3163 V for power. There,V out = 0.561V places most of the\nvoltage drop across the upper nFET, whose mean temperature\nreaches 340.7 K while the pFET remains at 309.1 K. Thus\ntotal power alone does not determine the hotspot. Maximum\ntemperature decreases from 341.4 to 312.1 K "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0018"
+          ],
+          "excerpt": "between 8 and\n32 nm [Fig. 3(c)].\nAt 12 nm, the combined design lowers maximum inverter\ntemperature from 330.75 to 330.41 K. This smaller 0.335-K re-\nduction reflects the baseline's 2.97-\u00b5W load at its temperature\nmaximum. Rescaling the fixed-power source distribution gives\n0.248-K cooling; using the inverter's channel/contact fractions\ngives 0.329 K. Self-consistent feedback and the shift in peak\nbias bring this to 0.335 K. Relative to temperature rise, the",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "S D",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "6cd74d93016c9884303bdef246a83e6d419b08e8e1f9a5e60b14dfa2389e4585",
+              "evidence_id": "E7ceb274e0cfefa13-B0018",
+              "pages": [
+                3
+              ],
+              "section": "S D",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 2246,
+                  "page": 3,
+                  "section": "S D",
+                  "section_index": 8,
+                  "start": 1785,
+                  "text": "between 8 and\n32 nm [Fig. 3(c)].\nAt 12 nm, the combined design lowers maximum inverter\ntemperature from 330.75 to 330.41 K. This smaller 0.335-K re-\nduction reflects the baseline's 2.97-\u00b5W load at its temperature\nmaximum. Rescaling the fixed-power source distribution gives\n0.248-K cooling; using the inverter's channel/contact fractions\ngives 0.329 K. Self-consistent feedback and the shift in peak\nbias bring this to 0.335 K. Relative to temperature rise, the"
+                }
+              ],
+              "text": "between 8 and\n32 nm [Fig. 3(c)].\nAt 12 nm, the combined design lowers maximum inverter\ntemperature from 330.75 to 330.41 K. This smaller 0.335-K re-\nduction reflects the baseline's 2.97-\u00b5W load at its temperature\nmaximum. Rescaling the fixed-power source distribution gives\n0.248-K cooling; using the inverter's channel/contact fractions\ngives 0.329 K. Self-consistent feedback and the shift in peak\nbias bring this to 0.335 K. Relative to temperature rise, the"
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0020"
+          ],
+          "excerpt": "CROSS-AGENT REPRODUCTION OF THE FIXED THERMAL REFERENCE\nCASES\nModel / effort labele T (K)e C (pp) Status\nGPT-6 / Light a 0 (ref.) 0 (ref.) Reference\nGPT-6 Astra / Ultra b 1.34e-12 3.20e-13 Pass\nClaude Fable 5.1 / high 4.26e-13 2.42e-13 Pass\nClaude Opus 5 / high (A) 4.98e-10 2.88e-10 Pass\nClaude Opus 5 (B) 4.26e-13 2.42e-13 Pass\nGPT-5.6 Sol / max 4.98e-10 2.88e-10 Pass\nGPT-5.6 Terra / max\u2020 1.39e-12 4.12e-13 Pass\nGPT-5 / Codex 1.08e-12 8.74e-13 Pass\nClaude Haiku 4.5 104.95 15.16Fail\nClaude Opus 4.8 / middle\u2217 4.26e-13 2.42e-13 Pass\nClaude Sonnet 5 / middle\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Terra / max\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Luna / max\u2217 7.96e-13 4.12e-13 Pass\nKimi / basic high\u2217 7.96e-13 4.12e-13 Pass\nPerplexity [Grok 4.6]\u2217 1.08e-12 8.74e-13 Pass\nGrok-labelled table\u2021 4.59e-04 1.09e-04 Table only\neT : maximum peak-rise error (four cases);e C: maximum reduction error\n(two resistances). ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 3,
+          "pages": [
+            3
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "b05703eab04086f50e78f58308045edb98fe2c04cec11b39467dfe81b817e10b",
+              "evidence_id": "E7ceb274e0cfefa13-B0020",
+              "pages": [
+                3
+              ],
+              "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 899,
+                  "page": 3,
+                  "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+                  "section_index": 10,
+                  "start": 0,
+                  "text": "CROSS-AGENT REPRODUCTION OF THE FIXED THERMAL REFERENCE\nCASES\nModel / effort labele T (K)e C (pp) Status\nGPT-6 / Light a 0 (ref.) 0 (ref.) Reference\nGPT-6 Astra / Ultra b 1.34e-12 3.20e-13 Pass\nClaude Fable 5.1 / high 4.26e-13 2.42e-13 Pass\nClaude Opus 5 / high (A) 4.98e-10 2.88e-10 Pass\nClaude Opus 5 (B) 4.26e-13 2.42e-13 Pass\nGPT-5.6 Sol / max 4.98e-10 2.88e-10 Pass\nGPT-5.6 Terra / max\u2020 1.39e-12 4.12e-13 Pass\nGPT-5 / Codex 1.08e-12 8.74e-13 Pass\nClaude Haiku 4.5 104.95 15.16Fail\nClaude Opus 4.8 / middle\u2217 4.26e-13 2.42e-13 Pass\nClaude Sonnet 5 / middle\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Terra / max\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Luna / max\u2217 7.96e-13 4.12e-13 Pass\nKimi / basic high\u2217 7.96e-13 4.12e-13 Pass\nPerplexity [Grok 4.6]\u2217 1.08e-12 8.74e-13 Pass\nGrok-labelled table\u2021 4.59e-04 1.09e-04 Table only\neT : maximum peak-rise error (four cases);e C: maximum reduction error\n(two resistances). "
+                }
+              ],
+              "text": "CROSS-AGENT REPRODUCTION OF THE FIXED THERMAL REFERENCE\nCASES\nModel / effort labele T (K)e C (pp) Status\nGPT-6 / Light a 0 (ref.) 0 (ref.) Reference\nGPT-6 Astra / Ultra b 1.34e-12 3.20e-13 Pass\nClaude Fable 5.1 / high 4.26e-13 2.42e-13 Pass\nClaude Opus 5 / high (A) 4.98e-10 2.88e-10 Pass\nClaude Opus 5 (B) 4.26e-13 2.42e-13 Pass\nGPT-5.6 Sol / max 4.98e-10 2.88e-10 Pass\nGPT-5.6 Terra / max\u2020 1.39e-12 4.12e-13 Pass\nGPT-5 / Codex 1.08e-12 8.74e-13 Pass\nClaude Haiku 4.5 104.95 15.16Fail\nClaude Opus 4.8 / middle\u2217 4.26e-13 2.42e-13 Pass\nClaude Sonnet 5 / middle\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Terra / max\u2217 1.08e-12 8.74e-13 Pass\nGPT-5.6 Luna / max\u2217 7.96e-13 4.12e-13 Pass\nKimi / basic high\u2217 7.96e-13 4.12e-13 Pass\nPerplexity [Grok 4.6]\u2217 1.08e-12 8.74e-13 Pass\nGrok-labelled table\u2021 4.59e-04 1.09e-04 Table only\neT : maximum peak-rise error (four cases);e C: maximum reduction error\n(two resistances). "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0022"
+          ],
+          "excerpt": "and Alternative Designs\nFour fixed thermal cases test code consistency (Table II).\nPassing submissions agree within5\u00d710 \u221210 K; fresh Ultra\ncode agrees within1.34\u00d710 \u221212 K. Haiku-labelled code fails\nby 104.95 K and 15.16 percentage points owing to indexing\nand resistance-unit errors. Corrections restore agreement; we\nretain the original failure. Supplied model/effort labels do not\nestablish a controlled effort comparison.\nThe separate Fable 5.1 C4 design uses one sheet per\ntier, doubles interface conductances, introduces AlN, length-\nens contacts and adds gate metal (Table III). Corrected,\nrefined mean thermal resistance falls by 45.19%/40.37% in\nthe top/bottom tiers with 26.12% more metal. These ma-\nterial/interface changes extend beyond our search; different\nloads and metrics prevent ranking the agents.\nCross-implementation checks recover the 1.67255-K reduc-\ntion with the other ",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 4,
+          "pages": [
+            4
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "5cdee28d01f2c6361bc26c10e20ae7bd3bb7fe6910901eefd736cc99f131b556",
+              "evidence_id": "E7ceb274e0cfefa13-B0022",
+              "pages": [
+                4
+              ],
+              "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1136,
+                  "page": 4,
+                  "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+                  "section_index": 11,
+                  "start": 243,
+                  "text": "and Alternative Designs\nFour fixed thermal cases test code consistency (Table II).\nPassing submissions agree within5\u00d710 \u221210 K; fresh Ultra\ncode agrees within1.34\u00d710 \u221212 K. Haiku-labelled code fails\nby 104.95 K and 15.16 percentage points owing to indexing\nand resistance-unit errors. Corrections restore agreement; we\nretain the original failure. Supplied model/effort labels do not\nestablish a controlled effort comparison.\nThe separate Fable 5.1 C4 design uses one sheet per\ntier, doubles interface conductances, introduces AlN, length-\nens contacts and adds gate metal (Table III). Corrected,\nrefined mean thermal resistance falls by 45.19%/40.37% in\nthe top/bottom tiers with 26.12% more metal. These ma-\nterial/interface changes extend beyond our search; different\nloads and metrics prevent ranking the agents.\nCross-implementation checks recover the 1.67255-K reduc-\ntion with the other "
+                }
+              ],
+              "text": "and Alternative Designs\nFour fixed thermal cases test code consistency (Table II).\nPassing submissions agree within5\u00d710 \u221210 K; fresh Ultra\ncode agrees within1.34\u00d710 \u221212 K. Haiku-labelled code fails\nby 104.95 K and 15.16 percentage points owing to indexing\nand resistance-unit errors. Corrections restore agreement; we\nretain the original failure. Supplied model/effort labels do not\nestablish a controlled effort comparison.\nThe separate Fable 5.1 C4 design uses one sheet per\ntier, doubles interface conductances, introduces AlN, length-\nens contacts and adds gate metal (Table III). Corrected,\nrefined mean thermal resistance falls by 45.19%/40.37% in\nthe top/bottom tiers with 26.12% more metal. These ma-\nterial/interface changes extend beyond our search; different\nloads and metrics prevent ranking the agents.\nCross-implementation checks recover the 1.67255-K reduc-\ntion with the other "
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        },
+        {
+          "claim_role": null,
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "dimension": "contribution_clarity",
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0023"
+          ],
+          "excerpt": "study's matrix assembly, despite shared\ndiscretization and backend. Neither search has been indepen-\ndently repeated or experimentally validated.\nIV. CONCLUSION\nWe used an Astra-based AI scientist workflow to design\nand evaluate 2D CFET thermal structures. At fixed metal\nvolume (L g = 12nm,L c = 20nm), the best tested\ndesign redistributes source-interconnect metal between the\ntiers and introduces a substrate-directed heat-removal path.\nIt lowers peak temperature by 1.67 K at 20\u00b5W. Including\nmetal resistance gives 0.6-K inverter cooling with 2.2% lower\nnFET on-current, revealing the electrical cost of improved\nheat removal. The workflow therefore produced a testable\nstructural hypothesis and evaluated its circuit-level trade-off;\nexperimental validation remains necessary.",
+          "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+          "page": 4,
+          "pages": [
+            4
+          ],
+          "paraphrase": "Canonical source cited in the scientific promotion review.",
+          "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+          "signal_type": "positive",
+          "source_blocks": [
+            {
+              "content_hash": "59f471b3b32f12da7ec2f215ccde0d2772620388966bb22bf0a7e8ce9ce29de4",
+              "evidence_id": "E7ceb274e0cfefa13-B0023",
+              "pages": [
+                4
+              ],
+              "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+              "section_role": "body",
+              "source_spans": [
+                {
+                  "end": 1917,
+                  "page": 4,
+                  "section": "Cross-Agent Reproduction Of The Fixed Thermal Reference",
+                  "section_index": 11,
+                  "start": 1136,
+                  "text": "study's matrix assembly, despite shared\ndiscretization and backend. Neither search has been indepen-\ndently repeated or experimentally validated.\nIV. CONCLUSION\nWe used an Astra-based AI scientist workflow to design\nand evaluate 2D CFET thermal structures. At fixed metal\nvolume (L g = 12nm,L c = 20nm), the best tested\ndesign redistributes source-interconnect metal between the\ntiers and introduces a substrate-directed heat-removal path.\nIt lowers peak temperature by 1.67 K at 20\u00b5W. Including\nmetal resistance gives 0.6-K inverter cooling with 2.2% lower\nnFET on-current, revealing the electrical cost of improved\nheat removal. The workflow therefore produced a testable\nstructural hypothesis and evaluated its circuit-level trade-off;\nexperimental validation remains necessary."
+                }
+              ],
+              "text": "study's matrix assembly, despite shared\ndiscretization and backend. Neither search has been indepen-\ndently repeated or experimentally validated.\nIV. CONCLUSION\nWe used an Astra-based AI scientist workflow to design\nand evaluate 2D CFET thermal structures. At fixed metal\nvolume (L g = 12nm,L c = 20nm), the best tested\ndesign redistributes source-interconnect metal between the\ntiers and introduces a substrate-directed heat-removal path.\nIt lowers peak temperature by 1.67 K at 20\u00b5W. Including\nmetal resistance gives 0.6-K inverter cooling with 2.2% lower\nnFET on-current, revealing the electrical cost of improved\nheat removal. The workflow therefore produced a testable\nstructural hypothesis and evaluated its circuit-level trade-off;\nexperimental validation remains necessary."
+            }
+          ],
+          "statement_kind": null,
+          "support_status": null,
+          "support_verification": {}
+        }
+      ],
+      "full_text_assessed": true,
+      "full_text_url": "https://arxiv.org/pdf/2609.17123",
+      "gate_version": "dual-promotion-v3",
       "manual_override": false,
       "missing_information": [],
       "overall_quality_score": null,
-      "paper_type": "unclear",
+      "paper_type": "empirical_research",
       "positive_signals": [],
-      "promotion": {},
-      "rationale": "Scientific quality has not yet been assessed.",
+      "promotion": {
+        "adjudicator": {
+          "blocking_reasons": [],
+          "canonical_id": "openalex:W7213473479",
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "evaluation_independence": {
+            "concern": "none",
+            "corroboration_direction": "supports",
+            "corroboration_summary": "The fixed-power thermal result is corroborated by self-consistent electrothermal inverter simulation, metal-resistance sensitivity, and cross-agent code reproduction with independent implementations.",
+            "final_evaluation_signal": "The headline 1.67-K reduction is established by the finite-volume thermal solver, with circuit-level corroboration from the coupled inverter solver and cross-agent reproduction.",
+            "independent_corroboration": "present",
+            "optimization_signal": "The agent search optimized interconnect geometry against the finite-volume thermal solver objective minimizing worst-case peak temperature rise.",
+            "signal_reuse": "independent"
+          },
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0004",
+            "E7ceb274e0cfefa13-B0005",
+            "E7ceb274e0cfefa13-B0006",
+            "E7ceb274e0cfefa13-B0007",
+            "E7ceb274e0cfefa13-B0009",
+            "E7ceb274e0cfefa13-B0010",
+            "E7ceb274e0cfefa13-B0011",
+            "E7ceb274e0cfefa13-B0013",
+            "E7ceb274e0cfefa13-B0014",
+            "E7ceb274e0cfefa13-B0017",
+            "E7ceb274e0cfefa13-B0018",
+            "E7ceb274e0cfefa13-B0020",
+            "E7ceb274e0cfefa13-B0022",
+            "E7ceb274e0cfefa13-B0023"
+          ],
+          "promotion_decision": "pass",
+          "source_content_hash": "c6d818eb21fbe06c8fd5a7f8154a1d4a51a4934988b5914a2efb6072a3b3fb01"
+        },
+        "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+        "adjudicator_provider": "openrouter",
+        "model_pair": {
+          "adjudicator": {
+            "family": "deepseek",
+            "model": "deepseek/deepseek-v4-pro-0813",
+            "provider": "openrouter"
+          },
+          "independent_families": true,
+          "primary": {
+            "family": "gemini",
+            "model": "gemini-3.8-flash",
+            "provider": "google"
+          },
+          "version": "model-pair-v1"
+        },
+        "outcome": "success",
+        "primary": {
+          "canonical_id": "openalex:W7213473479",
+          "claim_evidence_alignment": "Claims that the proposed interconnect redistribution and via design reduce peak temperature rise (by 1.67 K at 20 uW and 0.335 K under circuit operation) with a quantified ~2% electrical on-current penalty are directly supported by the simulation data.",
+          "context_id": "7ceb274e0cfefa1369e9e09a109856f7117c0a07f093e0c6051fa471fdbf5dfd",
+          "decision": "pass",
+          "evaluation_assessment": "Evaluations rigorously test fixed-power benchmarks, electrothermal inverter DC responses, mesh refinement, and cross-agent code reproduction across multiple models and independent solver implementations.",
+          "evaluation_independence": {
+            "concern": "none",
+            "corroboration_direction": "supports",
+            "corroboration_summary": "Electrothermal inverter DC solving, contact length/resistance trade-off scans, and independent alternative code reproductions corroborated the thermal and electrical performance trade-offs.",
+            "final_evaluation_signal": "The headline outcomes were evaluated using self-consistent electrothermal inverter circuit simulations, metal-resistance trade-off analyses, mesh sensitivity tests, and cross-agent solver reruns.",
+            "independent_corroboration": "present",
+            "optimization_signal": "The agentic structural design loop optimized geometries against a finite-volume thermal solver objective minimizing maximum peak temperature rise under fixed metal volume constraints.",
+            "signal_reuse": "independent"
+          },
+          "evidence_ids": [
+            "E7ceb274e0cfefa13-B0004",
+            "E7ceb274e0cfefa13-B0005",
+            "E7ceb274e0cfefa13-B0006",
+            "E7ceb274e0cfefa13-B0007",
+            "E7ceb274e0cfefa13-B0009",
+            "E7ceb274e0cfefa13-B0010",
+            "E7ceb274e0cfefa13-B0011",
+            "E7ceb274e0cfefa13-B0013",
+            "E7ceb274e0cfefa13-B0014",
+            "E7ceb274e0cfefa13-B0017",
+            "E7ceb274e0cfefa13-B0018",
+            "E7ceb274e0cfefa13-B0020",
+            "E7ceb274e0cfefa13-B0022",
+            "E7ceb274e0cfefa13-B0023"
+          ],
+          "limitations": "The authors clearly state that the findings are purely computational without experimental device fabrication and validation, and cross-model code reproduction failures (e.g., Claude Haiku) are explicitly noted and diagnosed.",
+          "method_assessment": "The methodology combines 3D finite-volume anisotropic steady-state heat conduction modeling with a coupled charge-sheet transistor current solver under constrained metal budgets and fixed volume controls.",
+          "quality_rationale": "The manuscript presents a rigorous, well-controlled electrothermal modeling study with honest accounting of agent roles, negative initial hypotheses, physical trade-offs, and computational reproducibility checks.",
+          "scoped_contribution": "The paper demonstrates an AI-agent-assisted design workflow using GPT-6 Astra and a coordinating agent to propose interconnect redistributions and substrate heat-removal paths for 2D CFET inverters, evaluated via numerical finite-volume electrothermal modeling.",
+          "source_content_hash": "c6d818eb21fbe06c8fd5a7f8154a1d4a51a4934988b5914a2efb6072a3b3fb01"
+        },
+        "primary_model": "gemini-3.8-flash",
+        "primary_provider": "google",
+        "provenance_status": "pass"
+      },
+      "rationale": "The manuscript presents a rigorous, well-controlled electrothermal modeling study with honest accounting of agent roles, negative initial hypotheses, physical trade-offs, and computational reproducibility checks.",
       "recommendation": "unknown",
-      "rubric_version": null,
-      "source_content_hash": null,
-      "status": "not_assessed",
+      "rubric_version": "scholarly-rubric-v2",
+      "source_content_hash": "c6d818eb21fbe06c8fd5a7f8154a1d4a51a4934988b5914a2efb6072a3b3fb01",
+      "status": "pass",
       "suppressed": false,
-      "uncertainty": "Manuscript evidence has not been reviewed."
+      "uncertainty": "The authors clearly state that the findings are purely computational without experimental device fabrication and validation, and cross-model code reproduction failures (e.g., Claude Haiku) are explicitly noted and diagnosed."
     },
     "semantic_scholar_id": null,
     "source": "openalex",
@@ -2987,7 +4203,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:43",
+    "last_seen_at": "2026-09-19 18:39:04",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -3092,7 +4308,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -3193,7 +4409,7 @@
     "first_seen_date": "2026-09-19",
     "future_date": false,
     "is_new": true,
-    "last_seen_at": "2026-09-19 17:51:43",
+    "last_seen_at": "2026-09-19 18:39:03",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -3296,7 +4512,7 @@
     "first_seen_date": "2026-09-15",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -3740,7 +4956,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -6032,7 +7248,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:51:44",
+    "last_seen_at": "2026-09-19 18:39:05",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -7849,7 +9065,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:51:43",
+    "last_seen_at": "2026-09-19 18:39:03",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,
@@ -65963,7 +67179,7 @@
     "first_seen_date": "2026-09-17",
     "future_date": false,
     "is_new": false,
-    "last_seen_at": "2026-09-19 17:51:43",
+    "last_seen_at": "2026-09-19 18:39:03",
     "last_seen_date": "2026-09-19",
     "latest_relevant_date_bucket": 0,
     "latest_revision_date": null,

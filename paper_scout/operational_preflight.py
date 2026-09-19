@@ -32,8 +32,24 @@ BUDGET_VERSION = "operational-budget-v1"
 #: Conservative initial production bounds. One paper per track per scheduled run, three
 #: papers across all tracks. A track with no eligible paper forfeits its slot; its quota
 #: is never transferred to another track, so the normal maximum today is two per day.
+#:
+#: These bound papers that actually reach a model. A candidate rejected by acquisition or
+#: the coverage gate never issues a request and costs nothing, so it is bounded separately
+#: by MAX_ACQUISITION_WALK below rather than consuming a track's assessment slot.
 MAX_PAPERS_PER_TRACK = 1
 MAX_PAPERS_PER_RUN = 3
+
+#: How many candidates one track may try before giving up for this run.
+#:
+#: Selection cannot know whether a manuscript is retrievable without fetching it, and the
+#: head of the ranking is dominated by records with no retrievable or coverage-valid PDF.
+#: Two production runs on 2026-09-19 took the single top candidate per track and reached a
+#: model 0 times out of 4. Batch 6, which walked the same ranking, needed 14 candidates to
+#: find 5 acquirable ones in agent_memory and 20 to find 5 in deep_research — roughly a
+#: quarter to a third. Six attempts per track makes finding one likely without turning a
+#: daily run into an unbounded crawl, and every attempt is recorded, so a permanently dead
+#: manuscript still parks at the retry budget instead of being probed forever.
+MAX_ACQUISITION_WALK = 6
 
 #: Per-run ceiling on *known* OpenRouter spend, in USD. A maximum, not a target.
 DEFAULT_OPENROUTER_RUN_CEILING_USD = 0.30
@@ -122,6 +138,15 @@ def credential_preflight(primary_model: str | None = None,
     return PreflightResult(True, "credentials_present", tuple(roles))
 
 
+#: Reasons from RunBudget.may_assess that end the whole run rather than one track.
+#: Defined beside may_assess so a caller classifying a refusal cannot drift from the
+#: strings it actually returns; the walk imports this rather than repeating the literals.
+RUN_LEVEL_STOP_REASONS = frozenset({"run_paper_limit_reached", "openrouter_ceiling_reached",
+                                    "openrouter_projection_exceeds_ceiling"})
+#: Reasons that end only the track they were raised for.
+TRACK_LEVEL_STOP_REASONS = frozenset({"track_paper_limit_reached"})
+
+
 class CostCeilingExceeded(RuntimeError):
     """Raised when the next paper would carry known spend past the per-run ceiling."""
 
@@ -161,6 +186,17 @@ class RunBudget:
                 raise ValueError(f"{OPENROUTER_CEILING_ENV} must be positive")
         return cls(openrouter_ceiling_usd=ceiling)
 
+    def _stop(self, reason: str) -> None:
+        """Record a run-level stop, enforcing that it really is run-level.
+
+        may_assess returns stopped_reason verbatim and the walk classifies it to decide
+        whether to end the run or one track. That only holds if nothing can park a
+        track-level reason here, so the invariant is checked rather than documented.
+        """
+        if reason in TRACK_LEVEL_STOP_REASONS:
+            raise ValueError(f"track-level reason cannot stop the run: {reason}")
+        self.stopped_reason = reason
+
     @property
     def total_assessed(self) -> int:
         return sum(self.assessed_per_track.values())
@@ -170,7 +206,13 @@ class RunBudget:
         return self.openrouter_ceiling_usd - self.openrouter_spend_usd
 
     def may_assess(self, track: str) -> tuple[bool, str]:
-        """Whether one more paper may be assessed on this track."""
+        """Whether one more paper may be assessed on this track.
+
+        Every refusal reason returned here appears in RUN_LEVEL_STOP_REASONS or
+        TRACK_LEVEL_STOP_REASONS, which is what lets a caller tell "stop the run" from
+        "this track is finished" without matching strings of its own. A stopped_reason
+        recorded earlier is run-level, because it means the ceiling was already hit.
+        """
         if self.stopped_reason:
             return False, self.stopped_reason
         if self.total_assessed >= self.max_per_run:
@@ -197,7 +239,7 @@ class RunBudget:
         if projected_usd < 0:
             raise ValueError("projected cost cannot be negative")
         if self.openrouter_spend_usd + projected_usd > self.openrouter_ceiling_usd:
-            self.stopped_reason = "openrouter_projection_exceeds_ceiling"
+            self._stop("openrouter_projection_exceeds_ceiling")
             raise CostCeilingExceeded(self.stopped_reason)
 
     def record(self, track: str, *, openrouter_usd: float = 0.0, openrouter_calls: int = 0,
@@ -211,7 +253,7 @@ class RunBudget:
         self.gemini_input_tokens += gemini_input_tokens
         self.gemini_output_tokens += gemini_output_tokens
         if self.openrouter_spend_usd >= self.openrouter_ceiling_usd:
-            self.stopped_reason = "openrouter_ceiling_reached"
+            self._stop("openrouter_ceiling_reached")
 
     def to_dict(self) -> dict[str, Any]:
         return {

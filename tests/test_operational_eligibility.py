@@ -675,6 +675,55 @@ class AcquisitionWalk(unittest.TestCase):
         self.assertLessEqual(budget.openrouter_spend_usd, 0.45)
         self.assertLess(len(seen), 3)
 
+    def test_a_nominee_absent_from_the_store_is_counted_and_does_not_consume_the_slot(self):
+        from paper_scout import cli
+        from paper_scout.operational_run import OperationalMetrics, TrackSelection
+        from paper_scout.operational_preflight import RunBudget
+        nominees = [self.nominee("agent_memory", 1, "gone"), self.nominee("agent_memory", 2, "ok")]
+        good = self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02, status="pass")
+        budget, metrics = RunBudget(), OperationalMetrics()
+        summaries = {"agent_memory": TrackSelection("agent_memory")}
+        configs = {"agent_memory": type("C", (), {"sqlite_path": ":memory:",
+                                                  "curation_path": None, "quality": None})()}
+
+        def fake_store(_path):
+            return type("S", (), {"quality_candidates": staticmethod(
+                lambda days=None, paper_id=None: [] if paper_id == "gone"
+                else [(paper_id, object(), "relevant")])})()
+
+        with patch.object(cli, "PaperStore", fake_store), \
+             patch.object(cli, "assess_and_store_candidate", lambda *a, **k: good):
+            cli._assess_selected(nominees, configs, budget, metrics, summaries)
+        # The missing nominee is visible in the audit trail rather than silently dropped.
+        self.assertEqual(metrics.nominees_missing_from_store, 1)
+        self.assertEqual(metrics.papers_walked, 2)
+        self.assertEqual(metrics.papers_attempted, 1)
+        self.assertEqual(budget.assessed_per_track, {"agent_memory": 1})
+        self.assertEqual(summaries["agent_memory"].skipped_before_model[0]["outcome"],
+                         "absent_from_store")
+
+    def test_a_consumed_track_does_not_stop_the_other_tracks(self):
+        nominees = [self.nominee("agent_memory", 1, "a1"), self.nominee("agent_memory", 2, "a2"),
+                    self.nominee("deep_research", 1, "d1")]
+        results = {"a1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "a2": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "d1": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, budget, seen, _ = self.walk(nominees, results)
+        # a2 is skipped because agent_memory is done, but deep_research still runs.
+        self.assertEqual(seen, ["a1", "d1"])
+        self.assertEqual(budget.assessed_per_track, {"agent_memory": 1, "deep_research": 1})
+
+    def test_an_unrecognised_zero_call_outcome_is_not_counted_as_a_failure(self):
+        nominees = [self.nominee("agent_memory", 1, "p1"), self.nominee("agent_memory", 2, "p2")]
+        results = {"p1": self.fake_assessment("something_unrecognised"),
+                   "p2": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, _, seen, _ = self.walk(nominees, results)
+        self.assertEqual(seen, ["p1", "p2"])
+        self.assertEqual(metrics.skipped_before_model, 1)
+        # Gated: an outcome outside TECHNICAL_OUTCOMES must not inflate the failure counters.
+        self.assertEqual(metrics.technical_failures, 0)
+        self.assertEqual(metrics.retry_eligible_failures, 0)
+
     def test_skipped_candidates_are_still_persisted_so_dead_papers_park(self):
         # The walk must not become a silent daily re-probe: a rejected candidate still
         # gets its row, which is what advances it toward retry_budget_exhausted.

@@ -504,6 +504,15 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
         store = PaperStore(config.sqlite_path)
         rows = store.quality_candidates(days=None, paper_id=candidate.canonical_id)
         if not rows:
+            # Nominated from the ranking but absent from the store. Count it, or the walk
+            # audit silently loses a nomination: not walked, not skipped, not failed.
+            metrics.papers_walked += 1
+            metrics.nominees_missing_from_store += 1
+            summary = summaries.get(candidate.track)
+            if summary is not None:
+                summary.skipped_before_model.append(
+                    {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
+                     "outcome": "absent_from_store"})
             continue
         canonical_id, paper, decision = rows[0]
         try:
@@ -549,8 +558,11 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             # nothing, so it does not consume the track's assessment slot; record why and
             # walk on to the next nominee.
             metrics.skipped_before_model += 1
-            metrics.technical_failures += 1
+            # Gate both counters on the same condition. Incrementing technical_failures
+            # unconditionally would count an unrecognised outcome as a failure and
+            # double-report it alongside the specific counters below.
             if outcome in TECHNICAL_OUTCOMES:
+                metrics.technical_failures += 1
                 metrics.retry_eligible_failures += 1
             if outcome == "manuscript_unavailable":
                 metrics.unavailable_manuscripts += 1

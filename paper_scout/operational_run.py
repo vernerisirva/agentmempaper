@@ -15,10 +15,15 @@ Selection is the canonical deterministic eligibility logic, in one place:
     AND within the per-track and per-run paper budget
 
 Manuscript retrievability and the coverage gate are deliberately *not* evaluated here.
-They require network acquisition, they are already enforced inside the promotion gate,
-and a candidate that fails them is a technical outcome rather than a selection error. The
-selector therefore nominates candidates and the gate remains the only thing that decides
-whether a manuscript can actually be assessed.
+They require network acquisition, they are already enforced inside the promotion gate, and
+a candidate that fails them is a technical outcome rather than a selection error.
+
+So this module nominates rather than decides. It offers each track several candidates in
+rank order, and the caller walks them until one actually reaches a model. That split
+matters because the head of the ranking is dominated by records with no retrievable
+manuscript: taking only the top candidate reached a model zero times in four attempts
+across two production runs. The assessment bound is unchanged and is enforced during the
+walk, against papers that actually contact a model.
 """
 from __future__ import annotations
 
@@ -39,7 +44,12 @@ from paper_scout.operational_preflight import (
     PREFLIGHT_VERSION, RunBudget,
 )
 
-OPERATIONAL_RUN_VERSION = "operational-run-v1"
+#: v2 renamed the per-track key "selected" to "nominated" and added
+#: "skipped_before_model", because with the acquisition walk a nomination is no longer the
+#: same thing as an assessment. The version moves with the shape so a consumer keyed on
+#: the old name fails loudly against a declared version rather than silently reading a
+#: field that is no longer there.
+OPERATIONAL_RUN_VERSION = "operational-run-v2"
 ELIGIBLE_RELEVANCE = "relevant"
 
 
@@ -200,6 +210,7 @@ class OperationalMetrics:
     papers_attempted: int = 0
     papers_walked: int = 0
     skipped_before_model: int = 0
+    nominees_missing_from_store: int = 0
     papers_successfully_assessed: int = 0
     promoted: int = 0
     non_promoted: int = 0
@@ -246,6 +257,7 @@ class OperationalMetrics:
                 "papers_walked": self.papers_walked,
                 "papers_attempted": self.papers_attempted,
                 "skipped_before_model": self.skipped_before_model,
+                "nominees_missing_from_store": self.nominees_missing_from_store,
                 "papers_successfully_assessed": self.papers_successfully_assessed,
                 "promoted": self.promoted,
                 "non_promoted": self.non_promoted,

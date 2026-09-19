@@ -2,9 +2,9 @@
 
 - **CI mode:** True
 - **Sources attempted:** 3
-- **Sources succeeded:** 1
-- **Sources failed:** 2
-- **Raw records:** 100
+- **Sources succeeded:** 2
+- **Sources failed:** 1
+- **Raw records:** 200
 - **Candidates fetched:** 100
 - **Unique papers:** 95
 - **State initialized:** True
@@ -34,11 +34,10 @@
 
 ### semantic_scholar
 
-- Status: Failed
-- Queries attempted: 1
-- Raw records: 0
+- Status: Success - zero results
+- Queries attempted: 4
+- Raw records: 100
 - Converted candidates: 0
-- Error: HTTP/API error: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 
 ## Decisions
@@ -63,7 +62,6 @@
 ## Source Failures
 
 - arxiv (HTTP/API error) for `deep research agent`: http error for https://export.arxiv.org/api/query?search_query=all%3Adeep+AND+all%3Aresearch+AND+all%3Aagent&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- semantic_scholar (HTTP/API error) for `deep research agent`: Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 ## Deduplication Examples
 

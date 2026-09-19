@@ -504,6 +504,11 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
             metrics.unknown_cost_calls += 1
             continue
         if assessment is None:
+            # Returned only before any model call: the quality path was disabled for this
+            # paper, or the credential preflight refused it. Nothing was billed, and
+            # reserve() is a pure pre-check that holds no state, so there is no
+            # reservation to release and nothing to charge. This differs deliberately
+            # from the exception path below, where calls may already have been issued.
             metrics.credential_skipped += 1
             continue
         outcome = (assessment.execution or {}).get("outcome")

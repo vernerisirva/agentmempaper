@@ -485,6 +485,43 @@ class CostAttribution(unittest.TestCase):
                                         "cost": 0.0}}])
         self.assertEqual(priced["unknown_cost_calls"], 0)
 
+    def test_reserve_is_a_pure_precheck_and_holds_no_state(self):
+        """Nothing to release on a skip: reserve() only ever checks, never charges.
+
+        This is the semantics the None path in _assess_selected depends on. If reserve()
+        ever starts holding a reservation, that path has to release it.
+        """
+        budget = RunBudget(max_per_track=3, max_per_run=3)
+        budget.reserve("agent_memory")
+        budget.reserve("agent_memory")
+        self.assertEqual(budget.openrouter_spend_usd, 0.0)
+        self.assertEqual(budget.total_assessed, 0)
+        self.assertIsNone(budget.stopped_reason)
+
+    def test_a_skip_before_any_call_charges_nothing(self):
+        budget = RunBudget()
+        budget.reserve("agent_memory")  # then assess_and_store_candidate returns None
+        self.assertEqual(budget.openrouter_spend_usd, 0.0)
+        self.assertTrue(budget.may_assess("agent_memory")[0])
+
+    def test_a_failure_after_calls_may_have_started_charges_the_estimate(self):
+        from paper_scout.operational_preflight import ESTIMATED_OPENROUTER_USD_PER_PAPER
+        budget = RunBudget()
+        budget.reserve("agent_memory")
+        # The exception path in _assess_selected charges this, because the provider may
+        # already have been billed for calls whose receipt never came back.
+        budget.record("agent_memory", openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
+        self.assertAlmostEqual(budget.openrouter_spend_usd, ESTIMATED_OPENROUTER_USD_PER_PAPER)
+        self.assertEqual(budget.total_assessed, 1)
+
+    def test_the_estimate_keeps_a_full_run_under_the_ceiling(self):
+        from paper_scout.operational_preflight import ESTIMATED_OPENROUTER_USD_PER_PAPER
+        budget = RunBudget(max_per_track=1, max_per_run=MAX_PAPERS_PER_RUN)
+        for track in ("agent_memory", "deep_research", "engram"):
+            budget.reserve(track)
+            budget.record(track, openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
+        self.assertLess(budget.openrouter_spend_usd, budget.openrouter_ceiling_usd)
+
     def test_metrics_surface_the_unpriced_counters(self):
         from paper_scout.operational_run import OperationalMetrics
         metrics = OperationalMetrics()

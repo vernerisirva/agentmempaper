@@ -308,8 +308,15 @@ class ProviderContractTest(unittest.TestCase):
         assess = by_name["Bounded scientific assessment"]
         self.assertIn("inputs.run_assessment", assess["if"])
         self.assertEqual(assess["env"]["PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"], "0.30")
-        self.assertLess(steps.index(by_name["Scientific credential preflight"]),
-                        steps.index(assess))
+        preflight = by_name["Scientific credential preflight"]
+        self.assertLess(steps.index(preflight), steps.index(assess))
+
+        # The preflight gates the assessment stage; it must not fail the job. A failed
+        # job skips the if: success() persist step, so a missing secret would cost the
+        # run's discovery as well as its assessment.
+        self.assertIn("steps.preflight.outputs.ok == 'true'", assess["if"])
+        self.assertNotIn("sys.exit(1)", preflight["run"])
+        self.assertIn("::error::", preflight["run"])
 
         # State is restored and verified before anything reads it, and persisted before
         # Pages so a deployment failure cannot strand it.

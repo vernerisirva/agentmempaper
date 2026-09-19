@@ -38,6 +38,15 @@ from paper_scout.runtime_snapshot import (  # noqa: E402
     STATE_PATHS, pack_snapshot, restore_snapshot, snapshot_manifest,
 )
 
+#: Each state path's track name. Derived names are not used: the agent_memory database
+#: lives at data/paper_scout.sqlite3, whose parent directory is "data", so a path-derived
+#: label would publish restore_sha256_data and no consumer keyed on the track would match.
+TRACK_FOR_STATE_PATH = {
+    "data/paper_scout.sqlite3": "agent_memory",
+    "data/deep_research/paper_scout.sqlite3": "deep_research",
+    "data/engram/paper_scout.sqlite3": "engram",
+}
+
 ASSET_NAME = "paper-scout-state.tar.gz"
 DEFAULT_TAG = "paper-scout-runtime-state"
 STATE_REPO_ENV = "PAPER_SCOUT_STATE_REPO"
@@ -151,8 +160,13 @@ def restore(tag: str, allow_initialize: bool, report_path: Path | None) -> int:
     _emit_output("state_restore_manifest_version", str(verification.get("manifest_version", "")))
     _emit_output("state_restore_created_at", str(verification.get("created_at", "")))
     for name, detail in sorted(verification.get("databases", {}).items()):
-        _emit_output(f"restore_sha256_{Path(name).parent.name or 'agent_memory'}", detail["sha256"])
+        _emit_output(f"restore_sha256_{_track_label(name)}", detail["sha256"])
     return 0
+
+
+def _track_label(state_path: str) -> str:
+    """The track a state path belongs to, or a safe slug for an unknown path."""
+    return TRACK_FOR_STATE_PATH.get(state_path) or state_path.replace("/", "_").replace(".", "_")
 
 
 def persist(tag: str, report_path: Path | None) -> int:
@@ -197,7 +211,7 @@ def persist(tag: str, report_path: Path | None) -> int:
                                           indent=2, sort_keys=True) + "\n")
     _emit_output("state_persist_manifest_version", str(manifest["version"]))
     for name in manifest["databases"]:
-        _emit_output(f"persist_sha256_{Path(name).parent.name or 'agent_memory'}", manifest["sha256"][name])
+        _emit_output(f"persist_sha256_{_track_label(name)}", manifest["sha256"][name])
     return 0
 
 

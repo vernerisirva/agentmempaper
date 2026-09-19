@@ -633,6 +633,41 @@ class PrivateDestinationGuards(unittest.TestCase):
         with patch.object(module, "_run", return_value=completed):
             module.assert_private("owner/state", "synthetic")
 
+    def test_explicit_initialize_creates_empty_state_only_when_none_exists(self):
+        """--allow-initialize is the one path that may create empty databases."""
+        module = self.script()
+        private = type("R", (), {"returncode": 0, "stdout": '{"isPrivate": true,'
+                                                            ' "visibility": "PRIVATE"}',
+                                 "stderr": ""})()
+        absent = type("R", (), {"returncode": 1, "stdout": "",
+                                "stderr": "release not found (HTTP 404)"})()
+        with tempfile.TemporaryDirectory() as tmp:
+            cwd = Path.cwd()
+            env = {"PAPER_SCOUT_STATE_REPO": "owner/state",
+                   "PAPER_SCOUT_STATE_TOKEN": "synthetic", "RUNNER_TEMP": tmp}
+            try:
+                import os
+                os.chdir(tmp)
+                with patch.dict("os.environ", env, clear=True), \
+                     patch.object(module, "_run", side_effect=[private, absent]):
+                    self.assertEqual(module.restore("tag", allow_initialize=True,
+                                                    report_path=None), 0)
+                for name in STATE_PATHS:
+                    self.assertTrue(Path(tmp, name).exists(), name)
+            finally:
+                os.chdir(cwd)
+
+    def test_state_hash_outputs_are_labelled_by_track_not_by_directory(self):
+        module = self.script()
+        self.assertEqual(module._track_label("data/paper_scout.sqlite3"), "agent_memory")
+        self.assertEqual(module._track_label("data/deep_research/paper_scout.sqlite3"),
+                         "deep_research")
+        self.assertEqual(module._track_label("data/engram/paper_scout.sqlite3"), "engram")
+        # Every packed database must have a label, or a consumer keyed on the track name
+        # silently reads nothing.
+        for name in STATE_PATHS:
+            self.assertIn(name, module.TRACK_FOR_STATE_PATH)
+
     def test_permission_error_fails_instead_of_claiming_a_new_track(self):
         """A 403 must not be read as "no snapshot yet" and must not initialize state.
 

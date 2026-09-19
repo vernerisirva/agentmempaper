@@ -122,8 +122,10 @@ jobs:
           python -m paper_scout run --track engram --no-llm | tee paper-scout-run-engram.log
 
       # 3. Credential preflight. Reports presence by variable name only and never a
-      #    value. A missing credential skips the stage loudly; it must not reach the gate,
-      #    because the gate would record a technical row against every candidate.
+      #    value. It gates the assessment stage rather than failing the job: a failed job
+      #    would skip the persist step below, so a missing secret would cost a whole day
+      #    of discovery as well as the assessment. The run is still marked loudly with an
+      #    error annotation, and no assessment row is written either way.
       - name: Scientific credential preflight
         id: preflight
         if: ${{ !inputs.deploy_only && inputs.run_assessment }}
@@ -131,14 +133,21 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          python - <<'PY'
-          import json, sys
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
           from paper_scout.operational_preflight import credential_preflight
           result = credential_preflight()
-          print(json.dumps(result.to_dict(), indent=2))
+          detail = json.dumps(result.to_dict(), indent=2)
+          print(f"ok={'true' if result.ok else 'false'}")
+          print(f"reason={result.reason}")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as summary:
+              summary.write(f"### Credential preflight\n\n```json\n{detail}\n```\n")
           if not result.ok:
-              print(f"::error::Scientific assessment cannot run: {result.reason}")
-              sys.exit(1)
+              # Loud, but not fatal: the assessment stage is skipped and durable state is
+              # still snapshotted and persisted at the end of the run.
+              print(f"::error::Scientific assessment stage skipped: {result.reason}."
+                    " No assessment was attempted and no candidate eligibility was consumed.",
+                    file=__import__("sys").stderr)
           PY
 
       # 4. The bounded scientific-assessment stage: at most one paper per track and three
@@ -146,7 +155,7 @@ jobs:
       #    forfeits its slot rather than lending it, so the usual maximum is two per day.
       - name: Bounded scientific assessment
         id: assess
-        if: ${{ !inputs.deploy_only && inputs.run_assessment }}
+        if: ${{ !inputs.deploy_only && inputs.run_assessment && steps.preflight.outputs.ok == 'true' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

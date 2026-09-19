@@ -72,6 +72,7 @@ def run_scout(
     digest_path_override: Path | None = None,
     write_quality_report: bool = True,
     sources: set[str] | None = None,
+    no_llm: bool = False,
 ) -> RunResult:
     active_date = digest_date or date.today().isoformat()
     active_days = days if days is not None else config.days
@@ -148,7 +149,7 @@ def run_scout(
                 if config.quality.enabled and _quality_decision_enabled(config, classification.decision):
                     quality_queue.setdefault(key, (candidate, classification))
 
-        _run_bounded_quality_queue(config, store, quality_queue, quality_stats)
+        _run_bounded_quality_queue(config, store, quality_queue, quality_stats, no_llm=no_llm)
 
         digest_papers = store.get_unnotified_digest_papers(
             exclude_quality_suppressed=config.quality.enabled and config.quality.ranking.behavior == "hide"
@@ -214,6 +215,7 @@ def run_backfill(
     sources: set[str] | None = None,
     report_date: str | None = None,
     fetchers=None,
+    no_llm: bool = False,
 ) -> RunResult:
     active_date = report_date or date.today().isoformat()
     store = PaperStore(config.sqlite_path)
@@ -228,6 +230,7 @@ def run_backfill(
         digest_path_override=report_path,
         write_quality_report=False,
         sources=sources,
+        no_llm=no_llm,
     )
     recovered = max(0, PaperStore(config.sqlite_path).paper_count() - before)
     existing = report_path.read_text(encoding="utf-8")
@@ -264,8 +267,16 @@ def _run_bounded_quality_queue(
     store: PaperStore,
     queue: dict[str, tuple[PaperCandidate, ClassificationResult]],
     stats: QualityRunStats,
+    no_llm: bool = False,
 ) -> None:
-    if not config.quality.enabled or config.quality.mode == "off":
+    """Assess the discovery queue, unless the caller has disabled the scientific path.
+
+    no_llm exists so a discovery run can be run purely as discovery. Operational
+    assessment is bounded to one paper per track per run by its own budget, and this
+    queue's separate max_assessments_per_run limit would otherwise spend far more than
+    that budget allows on the same schedule.
+    """
+    if not config.quality.enabled or config.quality.mode == "off" or no_llm:
         return
     ranked: list[tuple[int, str, PaperCandidate, ClassificationResult]] = []
     for canonical_id, (candidate, classification) in queue.items():
@@ -295,6 +306,7 @@ def _run_bounded_quality_queue(
                 canonical_id,
                 classification,
                 stats=stats,
+                no_llm=no_llm,
                 curation_path=config.curation_path,
             )
         except Exception as exc:  # noqa: BLE001 - assessment must never break discovery or persistence.

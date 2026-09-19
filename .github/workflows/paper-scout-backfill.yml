@@ -1,9 +1,17 @@
 name: Paper Scout Backfill
 
+# The weekly schedule is disabled for the same reason as the daily one: this workflow
+# writes durable state, and exactly one writer may own that state during the
+# operationalization cutover. Re-enable it only after the first operational smoke passes.
 on:
-  schedule:
-    - cron: "40 5 * * 0"
+  # schedule:
+  #   - cron: "40 5 * * 0"
   workflow_dispatch:
+    inputs:
+      allow_state_initialize:
+        description: "FIRST RUN ONLY: create empty state when no private snapshot exists"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -19,19 +27,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          # The immediate parent is the normal one-time migration seed.
-          fetch-depth: 2
-
-      - name: Restore durable Paper Scout state
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: bash .github/scripts/download-paper-scout-state.sh
-
-      - name: Bootstrap Paper Scout state when no durable snapshot exists
-        env:
-          PAPER_SCOUT_STATE_SEED_REF: 026158c36d109669e16b1c008b69d1031a2a357b
-        run: bash .github/scripts/restore-paper-scout-state.sh
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -40,6 +35,18 @@ jobs:
 
       - name: Install validation dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
+
+      - name: Restore private Paper Scout state
+        env:
+          # Scoped to this step only. A fine-grained PAT in a workflow- or job-level env
+          # block is handed to every step, including third-party actions, which is a far
+          # wider blast radius than the transport needs.
+          PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
+          PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
+        run: |
+          python .github/scripts/paper_scout_state.py restore \
+            ${{ inputs.allow_state_initialize && '--allow-initialize' || '' }} \
+            --report "${RUNNER_TEMP}/state-restore.json"
 
       - name: Validate discovery plan
         run: |
@@ -53,10 +60,10 @@ jobs:
           OPENALEX_MAILTO: ${{ secrets.OPENALEX_MAILTO }}
         run: |
           set -o pipefail
-          python -m paper_scout backfill --track agent_memory --days 45 --no-notify | tee paper-scout-backfill-agent-memory.log
+          python -m paper_scout backfill --track agent_memory --days 45 --no-notify --no-llm | tee paper-scout-backfill-agent-memory.log
           python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
           python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
-          python -m paper_scout backfill --track engram --days 45 --no-notify | tee paper-scout-backfill-engram.log
+          python -m paper_scout backfill --track engram --days 45 --no-notify --no-llm | tee paper-scout-backfill-engram.log
           python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
 
       - name: Validate generated schemas, links, and runtime exclusion
@@ -106,9 +113,13 @@ jobs:
         if: ${{ steps.commit-backfill-updates.outcome == 'success' }}
         run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
 
-      - name: Persist durable Paper Scout state
+      - name: Persist private Paper Scout state
         id: persist-backfill-state
         if: ${{ steps.commit-backfill-updates.outcome == 'success' }}
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: bash .github/scripts/upload-paper-scout-state.sh
+          # Scoped to this step only. A fine-grained PAT in a workflow- or job-level env
+          # block is handed to every step, including third-party actions, which is a far
+          # wider blast radius than the transport needs.
+          PAPER_SCOUT_STATE_REPO: ${{ vars.PAPER_SCOUT_STATE_REPO }}
+          PAPER_SCOUT_STATE_TOKEN: ${{ secrets.PAPER_SCOUT_STATE_TOKEN }}
+        run: python .github/scripts/paper_scout_state.py persist --report "${RUNNER_TEMP}/state-persist.json"

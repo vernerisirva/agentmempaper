@@ -16,9 +16,11 @@ a batch committed to.
 """
 from __future__ import annotations
 
+from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 import json
+import logging
 from pathlib import Path
 import sqlite3
 
@@ -27,12 +29,18 @@ from paper_scout.deduplication import (
     normalize_arxiv_id, normalize_doi, normalize_openalex_id, normalize_text,
 )
 from paper_scout.evidence_context import digest
+from paper_scout.operational_eligibility import (
+    EXCLUSION_POLICIES, LEGACY_EXCLUSION_POLICY, OPERATIONAL_EXCLUSION_POLICY,
+    excludes_from_eligibility,
+)
 from paper_scout.promotion_protocol import canonical_json
 from paper_scout.site import (
     _apply_curation, _apply_quality_presentation, _daily_digest_paths, _infer_arxiv_id_from_text,
     _load_curation, _load_library_papers, _mark_new_papers, _merge_dashboard_duplicates,
     _parse_digest, _refresh_rule_classifications, _site_build_time, _sort_latest_relevant,
 )
+
+LOGGER = logging.getLogger(__name__)
 
 POPULATION_VERSION = "batch-population-v1"
 MANIFEST_VERSION = "batch-population-manifest-v1"
@@ -216,13 +224,25 @@ def _table_exists(db: sqlite3.Connection, table: str) -> bool:
 
 
 def excluded_identities(configs: dict[str, ScoutConfig],
-                        roster_paths: tuple[Path, ...] = ()) -> dict[str, tuple[str, str]]:
+                        roster_paths: tuple[Path, ...] = (),
+                        policy: str = LEGACY_EXCLUSION_POLICY) -> dict[str, tuple[str, str]]:
     """Map every excluded identity to the (reason, source) that excluded it.
 
     Assessment rows and suppressions are read from every track, not only the track being
     built, because one manuscript can be discovered by more than one track and must not
     be reassessed under a second canonical id.
+
+    policy selects what an assessment row means. It defaults to the historical
+    ``prior_assessment`` — any row excludes — because the Batch 2-6 manifests were built
+    under it and must keep rebuilding byte-identically; changing this default would
+    silently invalidate a frozen scientific artifact. Daily operation passes
+    ``prior_completed_assessment`` instead, under which only a completed scientific
+    decision excludes and a technical attempt stays retry-eligible. See
+    paper_scout.operational_eligibility.
     """
+    if policy not in EXCLUSION_POLICIES:
+        raise ValueError(f"unknown exclusion policy: {policy}")
+    reason = "prior_assessment" if policy == LEGACY_EXCLUSION_POLICY else "prior_completed_assessment"
     excluded: dict[str, tuple[str, str]] = {}
 
     def record(values, reason, source):
@@ -237,17 +257,39 @@ def excluded_identities(configs: dict[str, ScoutConfig],
         # that silently covered fewer tracks than it claims is the defect this module
         # exists to prevent. Its curation directives still apply.
         if path.exists():
-            with sqlite3.connect(path) as db:
+            with closing(sqlite3.connect(path)) as db:
                 db.row_factory = sqlite3.Row
                 rows = {str(r["canonical_key"]): r
                         for r in db.execute("SELECT * FROM papers").fetchall()}
                 if _table_exists(db, "paper_quality_assessments"):
-                    for row in db.execute(
-                            "SELECT DISTINCT canonical_id FROM paper_quality_assessments").fetchall():
-                        key = str(row["canonical_id"])
+                    stored: dict[str, list[dict]] = {}
+                    # ORDER BY rowid, not id: ordering must not depend on a column
+                    # this query did not previously need. Where id is INTEGER PRIMARY
+                    # KEY it is the rowid, so the order is unchanged.
+                    for row in db.execute("SELECT canonical_id, payload_json"
+                                          " FROM paper_quality_assessments ORDER BY rowid").fetchall():
+                        try:
+                            payload = json.loads(row["payload_json"])
+                        except (TypeError, ValueError):
+                            # An unreadable payload cannot be shown to be a completed
+                            # scientific decision, but it is still a stored row. Keep it
+                            # under the historical policy and let the operational policy
+                            # treat it as no decision, which only makes a paper eligible
+                            # for a retry that re-examines it. Corruption in the
+                            # scientific record is never silent, though: reinterpreting a
+                            # row is exactly the thing an operator needs to know about.
+                            LOGGER.warning(
+                                "Unreadable stored assessment payload; treating it as no "
+                                "scientific decision: track=%s canonical_id=%s",
+                                track, row["canonical_id"])
+                            payload = {}
+                        stored.setdefault(str(row["canonical_id"]), []).append(payload)
+                    for key, payloads in stored.items():
+                        if not excludes_from_eligibility(payloads, policy):
+                            continue
                         paper = rows.get(key)
                         record(_row_identities(paper) if paper is not None else identities(key),
-                               "prior_assessment", f"{track}:paper_quality_assessments")
+                               reason, f"{track}:paper_quality_assessments")
                 if _table_exists(db, "quality_suppressions"):
                     for row in db.execute(
                             "SELECT canonical_key FROM quality_suppressions WHERE active = 1").fetchall():
@@ -322,7 +364,8 @@ def ranked_candidates(config: ScoutConfig, build_time: str) -> tuple[list, str]:
 
 def build_population(configs: dict[str, ScoutConfig], build_time: str,
                      roster_paths: tuple[Path, ...] = (),
-                     exclusion_configs: dict[str, ScoutConfig] | None = None) -> Population:
+                     exclusion_configs: dict[str, ScoutConfig] | None = None,
+                     exclusion_policy: str = LEGACY_EXCLUSION_POLICY) -> Population:
     """Construct the eligible population for every configured track, in selection order.
 
     exclusion_configs is the set of tracks scanned for prior assessments and
@@ -335,7 +378,7 @@ def build_population(configs: dict[str, ScoutConfig], build_time: str,
     # Only an omitted scope defaults; an explicitly empty one is honoured, so a caller
     # whose scope came out empty sees that rather than a silently widened scan.
     exclusion_configs = configs if exclusion_configs is None else exclusion_configs
-    excluded = excluded_identities(exclusion_configs, roster_paths)
+    excluded = excluded_identities(exclusion_configs, roster_paths, exclusion_policy)
     tracks = []
     for track in sorted(configs):
         papers, latest_date = ranked_candidates(configs[track], build_time)
@@ -353,11 +396,13 @@ def build_population(configs: dict[str, ScoutConfig], build_time: str,
                                          reason, identity, source))
         tracks.append(TrackPopulation(track, tuple(eligible), tuple(removed), len(ranked), latest_date))
     return Population(tuple(tracks),
-                      sources=_sources(configs, exclusion_configs, build_time, roster_paths))
+                      sources=_sources(configs, exclusion_configs, build_time, roster_paths,
+                                       exclusion_policy))
 
 
 def _sources(configs: dict[str, ScoutConfig], exclusion_configs: dict[str, ScoutConfig],
-             build_time: str, roster_paths: tuple[Path, ...]) -> dict:
+             build_time: str, roster_paths: tuple[Path, ...],
+             exclusion_policy: str = LEGACY_EXCLUSION_POLICY) -> dict:
     """Every input the construction read, named explicitly so it can be reread.
 
     This block is inside the manifest hash, so pointing a later run at different state,
@@ -368,9 +413,15 @@ def _sources(configs: dict[str, ScoutConfig], exclusion_configs: dict[str, Scout
         return {"state_path": str(config.sqlite_path), "curation_path": str(config.curation_path),
                 "digest_dir": str(config.digest_dir), "relevance_profile": config.relevance_profile}
 
+    # The key is emitted only for a non-legacy policy. It is inside the manifest hash,
+    # so adding it unconditionally would change every frozen manifest's digest and break
+    # the Batch 2-6 reproduction claims for a population that did not actually change.
+    policy_source = ({} if exclusion_policy == LEGACY_EXCLUSION_POLICY
+                     else {"exclusion_policy": exclusion_policy})
     return {
         "build_time": _site_build_time(build_time).isoformat(),
         "relevance": ELIGIBLE_RELEVANCE,
+        **policy_source,
         "date_enrichment": "disabled (offline; network answers are not reproducible)",
         "tracks": {track: track_source(config) for track, config in sorted(configs.items())},
         "exclusion_tracks": {track: track_source(config)
@@ -449,7 +500,11 @@ def verify_manifest(manifest: dict, configs: dict[str, ScoutConfig],
     """
     sources = manifest["sources"]
     rosters = tuple(Path(item["path"]) for item in sources.get("frozen_rosters", []))
-    rebuilt = build_population(configs, sources["build_time"], rosters, exclusion_configs)
+    # A manifest is rebuilt under the policy it was built with. The frozen Batch 2-6
+    # manifests predate the field, and they were built when any stored row excluded, so
+    # an absent field can only mean the historical policy.
+    policy = sources.get("exclusion_policy", LEGACY_EXCLUSION_POLICY)
+    rebuilt = build_population(configs, sources["build_time"], rosters, exclusion_configs, policy)
     rebuilt_manifest = population_manifest(rebuilt, manifest.get("code_sha", ""))
     sources_match = rebuilt_manifest["sources"] == sources
     tracks = {}

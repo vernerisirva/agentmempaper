@@ -107,16 +107,3 @@ class EngramStateTests(unittest.TestCase):
             Path(str(root / STATE_PATHS[2]) + "-wal").write_bytes(b"uncheckpointed")
             with self.assertRaises((ValueError, sqlite3.DatabaseError)):
                 pack_snapshot(root / "snapshot.tar.gz", root)
-
-    def test_download_permission_error_fails_instead_of_claiming_new_track(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            fake = root / "gh"
-            fake.write_text('#!/bin/sh\necho "HTTP 403: unavailable" >&2\nexit 1\n')
-            fake.chmod(0o755)
-            result = subprocess.run(["bash", str(ROOT / ".github/scripts/download-paper-scout-state.sh")],
-                                    cwd=root, env={**os.environ, "RUNNER_TEMP": str(root), "PATH": str(root) + os.pathsep + os.environ["PATH"]},
-                                    capture_output=True, text=True)
-            self.assertNotEqual(result.returncode, 0)
-            self.assertIn("Unable to determine", result.stdout)
-            self.assertFalse((root / "data").exists())

@@ -219,6 +219,11 @@ class OperationalMetrics:
     retry_eligible_failures: int = 0
     unavailable_manuscripts: int = 0
     coverage_failures: int = 0
+    #: Tracks whose walk hit an unusable scientific path -- a disabled quality mode or a
+    #: credential pair the gate refused -- after the walk had already started. It counts
+    #: tracks, not papers, because the condition is run-global. A run-level preflight
+    #: failure leaves it at zero and reports nominees_not_walked instead: the walk never
+    #: began, so nothing was refused during it.
     credential_skipped: int = 0
     gemini_calls: int = 0
     gemini_input_tokens: int = 0
@@ -267,7 +272,9 @@ class OperationalMetrics:
                 "retry_eligible_failures": self.retry_eligible_failures,
                 "unavailable_manuscripts": self.unavailable_manuscripts,
                 "coverage_failures": self.coverage_failures,
-                "credential_skipped_without_row": self.credential_skipped,
+                # Tracks, not papers; zero when the run-level preflight stopped the run
+                # before the walk began. See OperationalMetrics.credential_skipped.
+                "credential_skipped_without_row_tracks": self.credential_skipped,
             },
             "cost": {
                 "gemini_calls": self.gemini_calls,

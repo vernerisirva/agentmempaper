@@ -877,6 +877,22 @@ class AcquisitionWalk(unittest.TestCase):
         self.assertIn(budget.stopped_reason, RUN_LEVEL_STOP_REASONS)
         self.assertIn(budget.may_assess("agent_memory")[1], RUN_LEVEL_STOP_REASONS)
 
+    def test_a_preflight_failure_leaves_the_walk_time_counter_at_zero(self):
+        """credential_skipped counts refusals during the walk, and there was no walk."""
+        from paper_scout.operational_run import OperationalMetrics
+        metrics = OperationalMetrics()
+        metrics.nominees_not_walked = 12        # as the preflight-failure path sets it
+        record = metrics.to_dict()
+        self.assertEqual(record["assessment"]["credential_skipped_without_row_tracks"], 0)
+        self.assertEqual(record["assessment"]["nominees_not_walked"], 12)
+
+    def test_the_walk_time_counter_counts_tracks_not_papers(self):
+        nominees = [self.nominee("t1", 1, "a"), self.nominee("t1", 2, "b"),
+                    self.nominee("t2", 1, "c")]
+        metrics, _, _, _ = self.walk(nominees, {"a": None, "b": None, "c": None})
+        # One refusal per track, not one per nominee.
+        self.assertEqual(metrics.credential_skipped, 2)
+
     def test_skip_outcomes_use_a_stable_vocabulary(self):
         """These strings are grouped across runs, so they must not embed live values."""
         from paper_scout.operational_preflight import (

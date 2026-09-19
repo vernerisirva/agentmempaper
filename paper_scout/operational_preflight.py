@@ -32,8 +32,24 @@ BUDGET_VERSION = "operational-budget-v1"
 #: Conservative initial production bounds. One paper per track per scheduled run, three
 #: papers across all tracks. A track with no eligible paper forfeits its slot; its quota
 #: is never transferred to another track, so the normal maximum today is two per day.
+#:
+#: These bound papers that actually reach a model. A candidate rejected by acquisition or
+#: the coverage gate never issues a request and costs nothing, so it is bounded separately
+#: by MAX_ACQUISITION_WALK below rather than consuming a track's assessment slot.
 MAX_PAPERS_PER_TRACK = 1
 MAX_PAPERS_PER_RUN = 3
+
+#: How many candidates one track may try before giving up for this run.
+#:
+#: Selection cannot know whether a manuscript is retrievable without fetching it, and the
+#: head of the ranking is dominated by records with no retrievable or coverage-valid PDF.
+#: Two production runs on 2026-09-19 took the single top candidate per track and reached a
+#: model 0 times out of 4. Batch 6, which walked the same ranking, needed 14 candidates to
+#: find 5 acquirable ones in agent_memory and 20 to find 5 in deep_research — roughly a
+#: quarter to a third. Six attempts per track makes finding one likely without turning a
+#: daily run into an unbounded crawl, and every attempt is recorded, so a permanently dead
+#: manuscript still parks at the retry budget instead of being probed forever.
+MAX_ACQUISITION_WALK = 6
 
 #: Per-run ceiling on *known* OpenRouter spend, in USD. A maximum, not a target.
 DEFAULT_OPENROUTER_RUN_CEILING_USD = 0.30

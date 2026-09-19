@@ -436,6 +436,8 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
     metrics.assessment_candidates = len(selected)
 
     def finish(code: int) -> int:
+        # Re-serialize after the walk: the summaries gain skipped_before_model during it.
+        metrics.tracks = {track: summary.to_dict() for track, summary in summaries.items()}
         metrics.budget = budget.to_dict()
         record = metrics.to_dict()
         if args.metrics:
@@ -445,7 +447,7 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
         return code
 
     for candidate in selected:
-        print(f"candidate {candidate.track} rank={candidate.rank} {candidate.canonical_id}"
+        print(f"nominee {candidate.track} rank={candidate.rank} {candidate.canonical_id}"
               f" ({candidate.retry.reason})")
     if args.dry_run:
         return finish(0)
@@ -458,7 +460,7 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
         return finish(1)
 
     try:
-        _assess_selected(selected, configs, budget, metrics)
+        _assess_selected(selected, configs, budget, metrics, summaries)
     except Exception as exc:  # noqa: BLE001 - the metrics record must survive any failure.
         logging.getLogger(__name__).warning("Operational assessment run aborted: %s", exc)
         metrics.technical_failures += 1
@@ -466,13 +468,38 @@ def _operational_assess(args: argparse.Namespace, parser: argparse.ArgumentParse
     return finish(0)
 
 
-def _assess_selected(selected, configs, budget, metrics) -> None:
-    """Assess each selected paper, stopping cleanly when the budget says to."""
+def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None:
+    """Walk each track's nominees in rank order until one actually reaches a model.
+
+    Selection cannot tell whether a manuscript is retrievable without fetching it, so a
+    track nominates several candidates and this walk tries them in order. A candidate
+    rejected by acquisition or the coverage gate issues no request, costs nothing, and
+    does not consume the track's assessment slot; the walk moves on. The first candidate
+    that actually contacts a model ends that track for this run, so the frozen bound of
+    one assessed paper per track per run is unchanged.
+
+    Rejections are still persisted, exactly as before. That is deliberate: it is what
+    parks a permanently unavailable manuscript at the retry budget instead of re-probing
+    it every day, and it is why the walk does not grow without limit over time.
+    """
     from paper_scout.operational_eligibility import TECHNICAL_OUTCOMES
     from paper_scout.operational_preflight import (
         ESTIMATED_OPENROUTER_USD_PER_PAPER, CostCeilingExceeded)
 
+    summaries = summaries or {}
+    consumed: set[str] = set()
+
     for candidate in selected:
+        if candidate.track in consumed:
+            # This track already spent its one model-consuming assessment this run.
+            continue
+        allowed, reason = budget.may_assess(candidate.track)
+        if not allowed:
+            if reason in {"run_paper_limit_reached", "openrouter_ceiling_reached"}:
+                print(f"::warning::Stopping the walk: {reason}")
+                return
+            consumed.add(candidate.track)
+            continue
         config = configs[candidate.track]
         store = PaperStore(config.sqlite_path)
         rows = store.quality_candidates(days=None, paper_id=candidate.canonical_id)
@@ -485,7 +512,7 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
         except CostCeilingExceeded as exc:
             print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
             return
-        metrics.papers_attempted += 1
+        metrics.papers_walked += 1
         try:
             assessment = assess_and_store_candidate(
                 config.quality, store, paper, canonical_id,
@@ -494,14 +521,16 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
         except Exception as exc:  # noqa: BLE001 - one paper must not stop the run.
             logging.getLogger(__name__).warning("Operational assessment failed for %s: %s",
                                                 canonical_id, exc)
+            metrics.papers_attempted += 1
             metrics.technical_failures += 1
             metrics.retry_eligible_failures += 1
-            # The reservation is spent and the provider may already have been billed for
-            # calls whose receipt never reached us. Charge the estimate rather than zero,
-            # and count the paper, so the run cannot under-report and over-spend.
+            # A raise can happen after requests were issued, so this is treated as a
+            # model-consuming attempt: charge the estimate rather than zero, and end the
+            # track. Walking on could spend a second paper's worth of unaccounted money.
             budget.record(candidate.track,
                           openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
             metrics.unknown_cost_calls += 1
+            consumed.add(candidate.track)
             continue
         if assessment is None:
             # Returned only before any model call: the quality path was disabled for this
@@ -510,9 +539,33 @@ def _assess_selected(selected, configs, budget, metrics) -> None:
             # reservation to release and nothing to charge. This differs deliberately
             # from the exception path below, where calls may already have been issued.
             metrics.credential_skipped += 1
+            consumed.add(candidate.track)
             continue
         outcome = (assessment.execution or {}).get("outcome")
         usage = _role_usage(assessment)
+        model_calls = usage["gemini_calls"] + usage["openrouter_calls"]
+        if model_calls == 0:
+            # Rejected by acquisition or the coverage gate before any request. It cost
+            # nothing, so it does not consume the track's assessment slot; record why and
+            # walk on to the next nominee.
+            metrics.skipped_before_model += 1
+            metrics.technical_failures += 1
+            if outcome in TECHNICAL_OUTCOMES:
+                metrics.retry_eligible_failures += 1
+            if outcome == "manuscript_unavailable":
+                metrics.unavailable_manuscripts += 1
+            if outcome == "text_coverage_failure":
+                metrics.coverage_failures += 1
+            summary = summaries.get(candidate.track)
+            if summary is not None:
+                summary.skipped_before_model.append(
+                    {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
+                     "outcome": outcome})
+            print(f"  walked past {candidate.track} rank={candidate.rank} "
+                  f"{candidate.canonical_id}: {outcome} (no model call)")
+            continue
+        metrics.papers_attempted += 1
+        consumed.add(candidate.track)
         budget.record(candidate.track, openrouter_usd=usage["openrouter_usd"],
                       openrouter_calls=usage["openrouter_calls"],
                       gemini_calls=usage["gemini_calls"],

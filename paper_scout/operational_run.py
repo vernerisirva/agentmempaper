@@ -35,7 +35,8 @@ from paper_scout.operational_eligibility import (
     OPERATIONAL_POLICY_VERSION, RETRY_POLICY, RetryState, retry_state,
 )
 from paper_scout.operational_preflight import (
-    BUDGET_VERSION, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK, PREFLIGHT_VERSION, RunBudget,
+    BUDGET_VERSION, MAX_ACQUISITION_WALK, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK,
+    PREFLIGHT_VERSION, RunBudget,
 )
 
 OPERATIONAL_RUN_VERSION = "operational-run-v1"
@@ -99,29 +100,40 @@ class TrackSelection:
     already_assessed: int = 0
     retry_blocked: int = 0
     candidates: list[OperationalCandidate] = field(default_factory=list)
+    #: Filled in by the caller after the walk: candidates tried and rejected by
+    #: acquisition or the coverage gate before any model was contacted.
+    skipped_before_model: list[dict] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {"ranked": self.ranked, "high_relevance": self.high_relevance,
                 "suppressed": self.suppressed,
                 "completed_scientific_assessment": self.already_assessed,
                 "retry_blocked": self.retry_blocked,
-                "selected": [c.to_dict() for c in self.candidates]}
+                "nominated": [c.to_dict() for c in self.candidates],
+                "skipped_before_model": self.skipped_before_model}
 
 
 def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: str,
                                   budget: RunBudget | None = None,
                                   now: datetime | None = None,
-                                  assessment_sources: dict[str, Path] | None = None
+                                  assessment_sources: dict[str, Path] | None = None,
+                                  walk_limit: int = MAX_ACQUISITION_WALK
                                   ) -> tuple[list[OperationalCandidate], dict[str, TrackSelection]]:
-    """Choose at most one paper per track, up to the per-run total.
+    """Nominate, in rank order, the candidates each track may try this run.
+
+    This stays pure and offline. It nominates up to ``walk_limit`` candidates per track
+    rather than one, because whether a manuscript can actually be acquired is only
+    knowable by fetching it, and the caller performs that walk. The assessment bound is
+    unchanged and is enforced during the walk: at most ``max_per_track`` papers per track
+    may reach a model, and a candidate rejected before any request is issued costs nothing
+    and does not consume that slot.
 
     Stored assessments are read from *every* configured track, not only the track being
     selected for, because one manuscript can be discovered under more than one track and
     must not be assessed twice under two canonical ids.
 
-    Tracks are walked in sorted order and each contributes at most ``max_per_track``. A
-    track with nothing eligible simply contributes nothing: its slot is never handed to
-    another track, so the usual daily maximum is below the per-run ceiling by design.
+    A track with nothing eligible nominates nothing. Its slot is never handed to another
+    track, so the usual daily maximum stays below the per-run ceiling by design.
     """
     budget = budget or RunBudget()
     now = now or datetime.now(UTC)
@@ -138,15 +150,17 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
 
     selected: list[OperationalCandidate] = []
     summaries: dict[str, TrackSelection] = {}
-    # Selection reserves slots in its own counter. The caller's budget records what was
-    # actually spent, and the two must not be conflated: a selected paper that later
-    # fails acquisition consumed a selection slot but no money and no eligibility.
-    reserved: dict[str, int] = {}
+    # Nomination is not assessment. Each track may nominate up to walk_limit candidates,
+    # but the per-track and per-run assessment bounds are enforced by the caller during
+    # the walk, against papers that actually reach a model.
+    nominated: dict[str, int] = {}
 
     def slot_available(track: str) -> bool:
-        if sum(reserved.values()) >= budget.max_per_run:
+        # A zero assessment bound means nothing may reach a model, so nominating is
+        # pointless; otherwise the only nomination limit is the walk cap.
+        if budget.max_per_track <= 0 or budget.max_per_run <= 0:
             return False
-        return reserved.get(track, 0) < budget.max_per_track
+        return nominated.get(track, 0) < max(0, walk_limit)
 
     for track in sorted(configs):
         summary = TrackSelection(track)
@@ -171,7 +185,7 @@ def select_operational_candidates(configs: dict[str, ScoutConfig], build_time: s
             candidate = OperationalCandidate(paper.canonical_id, track, rank, paper.title, state)
             selected.append(candidate)
             summary.candidates.append(candidate)
-            reserved[track] = reserved.get(track, 0) + 1
+            nominated[track] = nominated.get(track, 0) + 1
     return selected, summaries
 
 
@@ -184,6 +198,8 @@ class OperationalMetrics:
     high_relevance_candidates: int = 0
     assessment_candidates: int = 0
     papers_attempted: int = 0
+    papers_walked: int = 0
+    skipped_before_model: int = 0
     papers_successfully_assessed: int = 0
     promoted: int = 0
     non_promoted: int = 0
@@ -218,7 +234,8 @@ class OperationalMetrics:
             },
             "retry_policy": RETRY_POLICY,
             "limits": {"max_papers_per_track": MAX_PAPERS_PER_TRACK,
-                       "max_papers_per_run": MAX_PAPERS_PER_RUN},
+                       "max_papers_per_run": MAX_PAPERS_PER_RUN,
+                       "max_acquisition_walk_per_track": MAX_ACQUISITION_WALK},
             "started_at": self.started_at,
             "completed_at": datetime.now(UTC).isoformat(),
             "discovery": {"papers_discovered": self.papers_discovered,
@@ -226,7 +243,9 @@ class OperationalMetrics:
             "selection": {"assessment_candidates": self.assessment_candidates,
                           "tracks": self.tracks},
             "assessment": {
+                "papers_walked": self.papers_walked,
                 "papers_attempted": self.papers_attempted,
+                "skipped_before_model": self.skipped_before_model,
                 "papers_successfully_assessed": self.papers_successfully_assessed,
                 "promoted": self.promoted,
                 "non_promoted": self.non_promoted,

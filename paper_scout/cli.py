@@ -489,18 +489,24 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
     summaries = summaries or {}
     consumed: set[str] = set()
 
-    def note_not_walked(candidate, outcome: str) -> None:
-        """Account for a nomination that was never tried, so the record reconciles.
-
-        walked + attempted + not-walked must add up to the nominated list, or the per-run
-        record silently loses candidates and cannot be audited afterwards.
-        """
-        metrics.nominees_not_walked += 1
+    def record_skip(candidate, outcome: str) -> None:
+        """Note in the track summary why a nomination produced no assessment."""
         summary = summaries.get(candidate.track)
         if summary is not None:
             summary.skipped_before_model.append(
                 {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
                  "outcome": outcome})
+
+    def note_not_walked(candidate, outcome: str) -> None:
+        """Account for a nomination that was never tried, so the record reconciles.
+
+        papers_walked + nominees_not_walked must equal the nominated list, or the per-run
+        record silently loses candidates and cannot be audited afterwards. Only use this
+        for a candidate the walk never reached; one that was tried is already counted in
+        papers_walked and needs record_skip alone.
+        """
+        metrics.nominees_not_walked += 1
+        record_skip(candidate, outcome)
 
     for position, candidate in enumerate(selected):
         if candidate.track in consumed:
@@ -525,11 +531,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             # audit silently loses a nomination: not walked, not skipped, not failed.
             metrics.papers_walked += 1
             metrics.nominees_missing_from_store += 1
-            summary = summaries.get(candidate.track)
-            if summary is not None:
-                summary.skipped_before_model.append(
-                    {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
-                     "outcome": "absent_from_store"})
+            record_skip(candidate, "absent_from_store")
             continue
         canonical_id, paper, decision = rows[0]
         try:
@@ -564,10 +566,18 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             # Returned only before any model call: the quality path was disabled for this
             # paper, or the credential preflight refused it. Nothing was billed, and
             # reserve() is a pure pre-check that holds no state, so there is no
-            # reservation to release and nothing to charge. This differs deliberately
-            # from the exception path below, where calls may already have been issued.
+            # reservation to release and nothing to charge.
+            #
+            # The track ends anyway, which looks inconsistent with the walk's rule that a
+            # free rejection does not consume a slot. It is deliberate: both causes of a
+            # None are run-global rather than paper-specific. A disabled quality mode and
+            # an unusable credential pair apply identically to every remaining nominee, so
+            # walking on would re-fetch five more manuscripts only to refuse them all. The
+            # slot is not really spent here — no model ran and the papers stay eligible —
+            # the run simply stops asking a question whose answer cannot change.
             metrics.credential_skipped += 1
             consumed.add(candidate.track)
+            record_skip(candidate, "scientific_path_unavailable")
             continue
         outcome = (assessment.execution or {}).get("outcome")
         usage = _role_usage(assessment)
@@ -587,11 +597,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                 metrics.unavailable_manuscripts += 1
             if outcome == "text_coverage_failure":
                 metrics.coverage_failures += 1
-            summary = summaries.get(candidate.track)
-            if summary is not None:
-                summary.skipped_before_model.append(
-                    {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
-                     "outcome": outcome})
+            record_skip(candidate, outcome)
             print(f"  walked past {candidate.track} rank={candidate.rank} "
                   f"{candidate.canonical_id}: {outcome} (no model call)")
             continue

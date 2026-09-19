@@ -810,6 +810,36 @@ class AcquisitionWalk(unittest.TestCase):
         # Every nomination is accounted for exactly once, even though two compare equal.
         self.assertEqual(metrics.papers_walked + metrics.nominees_not_walked, len(nominees))
 
+    def test_an_unavailable_scientific_path_ends_the_track_without_spending_it(self):
+        """A None return is run-global, so walking on would refuse every nominee too.
+
+        The track stops, but nothing was billed and no paper was consumed: each nominee
+        stays exactly as retry-eligible as before the run.
+        """
+        nominees = [self.nominee("agent_memory", r, f"p{r}") for r in (1, 2, 3)]
+        results = {f"p{r}": None for r in (1, 2, 3)}
+        metrics, budget, seen, summaries = self.walk(nominees, results)
+        self.assertEqual(seen, ["p1"])
+        self.assertEqual(metrics.credential_skipped, 1)
+        # No money, no assessment, and the frozen bound is untouched.
+        self.assertEqual(budget.assessed_per_track, {})
+        self.assertEqual(budget.openrouter_spend_usd, 0.0)
+        self.assertEqual(metrics.papers_attempted, 0)
+        # Still fully accounted for.
+        self.assertEqual(metrics.papers_walked + metrics.nominees_not_walked, len(nominees))
+        outcomes = [e["outcome"] for e in summaries["agent_memory"].skipped_before_model]
+        self.assertEqual(outcomes[0], "scientific_path_unavailable")
+
+    def test_the_metrics_schema_rename_has_no_in_repo_consumer(self):
+        """v2 renamed the per-track key; nothing in the tree reads the old one."""
+        import subprocess
+        root = Path(__file__).resolve().parents[1]
+        hits = subprocess.run(
+            ["grep", "-rn", "--include=*.py", "--include=*.yml", "-e", '\["selected"\]',
+             "-e", "\['selected'\]", str(root / "paper_scout"), str(root / ".github")],
+            capture_output=True, text=True).stdout.strip()
+        self.assertEqual(hits, "", f"a consumer still reads the v1 key: {hits}")
+
     def test_skipped_candidates_are_still_persisted_so_dead_papers_park(self):
         # The walk must not become a silent daily re-probe: a rejected candidate still
         # gets its row, which is what advances it toward retry_budget_exhausted.

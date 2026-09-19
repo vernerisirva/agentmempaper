@@ -502,7 +502,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
                 {"canonical_id": candidate.canonical_id, "rank": candidate.rank,
                  "outcome": outcome})
 
-    for candidate in selected:
+    for position, candidate in enumerate(selected):
         if candidate.track in consumed:
             # This track already spent its one model-consuming assessment this run.
             note_not_walked(candidate, "track_slot_consumed")
@@ -511,7 +511,7 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
         if not allowed:
             if reason in RUN_LEVEL_STOP_REASONS:
                 print(f"::warning::Stopping the walk: {reason}")
-                for remaining in selected[selected.index(candidate):]:
+                for remaining in selected[position:]:
                     note_not_walked(remaining, reason)
                 return
             consumed.add(candidate.track)
@@ -537,6 +537,8 @@ def _assess_selected(selected, configs, budget, metrics, summaries=None) -> None
             budget.reserve(candidate.track)
         except CostCeilingExceeded as exc:
             print(f"::warning::Stopping before {candidate.canonical_id}: {exc}")
+            for remaining in selected[position:]:
+                note_not_walked(remaining, str(exc) or "cost_ceiling_exceeded")
             return
         metrics.papers_walked += 1
         try:

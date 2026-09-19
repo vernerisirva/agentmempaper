@@ -786,6 +786,30 @@ class AcquisitionWalk(unittest.TestCase):
         self.assertEqual(record["assessment"]["skipped_before_model"], 1)
         self.assertEqual(record["version"], "operational-run-v2")
 
+    def test_a_ceiling_stop_also_accounts_for_every_remaining_nomination(self):
+        from paper_scout.operational_preflight import RunBudget
+        budget = RunBudget(max_per_track=1, max_per_run=9)
+        budget.openrouter_spend_usd = 0.28  # one estimate away from the ceiling
+        nominees = [self.nominee("t1", 1, "x1"), self.nominee("t2", 1, "x2"),
+                    self.nominee("t3", 1, "x3")]
+        results = {c: self.fake_assessment("success", gemini=1, openrouter=1, cost=0.01)
+                   for c in ("x1", "x2", "x3")}
+        metrics, _, seen, _ = self.walk(nominees, results, budget=budget)
+        self.assertEqual(seen, [])
+        # The reconciliation invariant must hold on the ceiling path too.
+        self.assertEqual(metrics.papers_walked + metrics.nominees_not_walked, len(nominees))
+
+    def test_duplicate_nominations_do_not_mis_slice_the_not_walked_tail(self):
+        from paper_scout.operational_preflight import RunBudget
+        dup = self.nominee("t1", 1, "same")
+        nominees = [dup, self.nominee("t2", 1, "b"), dup]
+        results = {"same": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02),
+                   "b": self.fake_assessment("success", gemini=1, openrouter=1, cost=0.02)}
+        metrics, _, _, _ = self.walk(nominees, results,
+                                     budget=RunBudget(max_per_track=1, max_per_run=1))
+        # Every nomination is accounted for exactly once, even though two compare equal.
+        self.assertEqual(metrics.papers_walked + metrics.nominees_not_walked, len(nominees))
+
     def test_skipped_candidates_are_still_persisted_so_dead_papers_park(self):
         # The walk must not become a silent daily re-probe: a rejected candidate still
         # gets its row, which is what advances it toward retry_budget_exhausted.

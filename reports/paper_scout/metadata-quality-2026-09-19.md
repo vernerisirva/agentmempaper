@@ -1,14 +1,14 @@
 # Paper Scout Metadata Quality - 2026-09-19
 
-- **Year-only publication dates:** 3
+- **Year-only publication dates:** 2
 - **SSRN/DOI date enrichment warnings:** 3
 - **SSRN/DOI papers still without exact dates:** 0
-- **First-seen sort fallbacks:** 7
-- **Low-confidence date fields:** 2
-- **Highly relevant without exact date:** 2
+- **First-seen sort fallbacks:** 6
+- **Low-confidence date fields:** 1
+- **Highly relevant without exact date:** 1
 - **Biological/cognitive high-relevance risks:** 2
 - **Highly relevant with generic/peripheral reasons:** 0
-- **Future or imprecise source dates:** 4
+- **Future or imprecise source dates:** 3
 - **Persistent-memory reason without explicit memory evidence:** 0
 - **High-scoring agentic-AI papers without explicit memory evidence:** 0
 - **Maybe papers with core memory phrases:** 19
@@ -16,14 +16,12 @@
 ## Year-Only Publication Dates
 
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
-  - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 - **MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation** — maybe, 2026, precision=year, source=semantic_scholar
   - Crossref enrichment failed for 10.48550/arxiv.2603.23234: http error for https://api.crossref.org/works/10.48550%2Farxiv.2603.23234: request failed after 1 attempts: HTTP Error 404: Not Found
 
 ## SSRN/DOI Date Enrichment Warnings
 
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
+- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026-02-02, precision=day, source=arxiv
   - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 - **OpenClaw and Ollama in Agentic AI: Toward Fully Autonomous and Scalable AI Agent Systems** — maybe, 2026-04-15, precision=exact, source=ssrn
   - SSRN enrichment failed for 6584998: http error for https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6584998: request failed after 1 attempts: HTTP Error 403: Forbidden
@@ -37,8 +35,6 @@
 ## First-Seen Sort Fallbacks
 
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
-  - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 - **MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation** — maybe, 2026, precision=year, source=semantic_scholar
   - Crossref enrichment failed for 10.48550/arxiv.2603.23234: http error for https://api.crossref.org/works/10.48550%2Farxiv.2603.23234: request failed after 1 attempts: HTTP Error 404: Not Found
 - **Augmenting Agent Memory With Temporal GraphRAG** — maybe, unknown, precision=unknown, source=unknown
@@ -48,16 +44,12 @@
 
 ## Low-Confidence Date Fields
 
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
-  - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 - **MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation** — maybe, 2026, precision=year, source=semantic_scholar
   - Crossref enrichment failed for 10.48550/arxiv.2603.23234: http error for https://api.crossref.org/works/10.48550%2Farxiv.2603.23234: request failed after 1 attempts: HTTP Error 404: Not Found
 
 ## Highly Relevant Without Exact Date
 
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
-  - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 
 ## Biological/Cognitive High-Relevance Risks
 
@@ -71,8 +63,6 @@
 ## Future Or Imprecise Source Dates
 
 - **Theory-Grounded LLM Societies for Emergent Coordination** — relevant, 2026, precision=year, source=crossref-published-print
-- **ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents** — relevant, 2026, precision=year, source=semantic_scholar
-  - Crossref enrichment failed for 10.48550/arXiv.2602.01869: http error for https://api.crossref.org/works/10.48550%2FarXiv.2602.01869: request failed after 1 attempts: HTTP Error 404: Not Found
 - **MemCollab: Cross-Agent Memory Collaboration via Contrastive Trajectory Distillation** — maybe, 2026, precision=year, source=semantic_scholar
   - Crossref enrichment failed for 10.48550/arxiv.2603.23234: http error for https://api.crossref.org/works/10.48550%2Farxiv.2603.23234: request failed after 1 attempts: HTTP Error 404: Not Found
 - **Write-Time Admission Control for Persistent-Memory Security in LLM Agents** — maybe, 2027-01-01, precision=day, source=openalex

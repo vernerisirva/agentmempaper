@@ -1,12 +1,12 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-19](2026-09-19.md).
+Latest daily digest: [2026-09-20](2026-09-20.md).
 
-# Paper Scout Digest - 2026-09-19
+# Paper Scout Digest - 2026-09-20
 
 ## Run Summary
 
-- **Run ID:** 90
+- **Run ID:** 91
 - **Candidates fetched:** 100
 - **New unique papers:** 94
 - **Relevant:** 13
@@ -26,7 +26,7 @@ Latest daily digest: [2026-09-19](2026-09-19.md).
 - openalex: incomplete discovery window for 'automated literature review'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'deep research agent'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'autonomous research agent'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'AI scientist'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'automated literature review'; single-page record limit reached.
+- semantic_scholar failed for 'AI scientist': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar failed for 'automated literature review': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 No new relevant or maybe-relevant papers found.

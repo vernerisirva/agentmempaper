@@ -1,14 +1,14 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-19](2026-09-19.md).
+Latest daily digest: [2026-09-20](2026-09-20.md).
 
-# Paper Scout Digest - 2026-09-19
+# Paper Scout Digest - 2026-09-20
 
 ## Run Summary
 
-- **Run ID:** 17
+- **Run ID:** 19
 - **Candidates fetched:** 78
-- **New unique papers:** 70
+- **New unique papers:** 72
 - **Relevant:** 0
 - **Maybe relevant:** 0
 - **Irrelevant:** 78
@@ -16,10 +16,10 @@ Latest daily digest: [2026-09-19](2026-09-19.md).
 
 ## Source Warnings
 
-- arxiv failed for 'Engram language model': http error for https://export.arxiv.org/api/query?search_query=all%3AEngram+AND+all%3Alanguage+AND+all%3Amodel&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- arxiv failed for 'conditional memory': http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- arxiv failed for 'n-gram memory transformer': http error for https://export.arxiv.org/api/query?search_query=all%3An+AND+all%3Agram+AND+all%3Amemory+AND+all%3Atransformer&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
-- arxiv failed for 'memory grafting': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
+- arxiv failed for 'all:engram and all:language and all:model': http error for https://export.arxiv.org/api/query?search_query=all%3Aengram+and+all%3Alanguage+and+all%3Amodel&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
+- arxiv failed for 'all:"conditional memory"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
+- arxiv failed for 'all:n and all:gram and all:memory and all:transformer': http error for https://export.arxiv.org/api/query?search_query=all%3An+and+all%3Agram+and+all%3Amemory+and+all%3Atransformer&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
+- arxiv failed for 'all:"memory grafting"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable
 - openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.
 - openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.
 - openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.

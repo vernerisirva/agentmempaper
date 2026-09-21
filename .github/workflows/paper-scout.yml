@@ -147,9 +147,17 @@ jobs:
           python -m paper_scout run --track agent_memory --no-llm | tee paper-scout-run-agent-memory.log
           python -m paper_scout run --track deep_research --no-llm | tee paper-scout-run-deep-research.log
           # Missing seed records only; repeat runs perform no direct-ID requests.
-          python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
+          #
+          # --allow-unresolved because a seed can fail for reasons this repository does not
+          # control: a provider outage, or third-party metadata that resolves the right
+          # identifier to the wrong paper, which the identity check then correctly refuses.
+          # Without it the bootstrap's exit code aborts this step under `set -e`, and the
+          # run loses assessment, the site build and the state persist for every track --
+          # which is exactly what happened on run 35594457409. The failure is still reported
+          # as an error annotation, and the next run retries it.
+          python -m paper_scout ingest-seeds --track engram --allow-unresolved | tee paper-scout-seeds-engram.log
           python -m paper_scout run --track engram --no-llm | tee paper-scout-run-engram.log
-          python -m paper_scout ingest-seeds --track computer_vision | tee paper-scout-seeds-computer-vision.log
+          python -m paper_scout ingest-seeds --track computer_vision --allow-unresolved | tee paper-scout-seeds-computer-vision.log
           python -m paper_scout run --track computer_vision --no-llm | tee paper-scout-run-computer-vision.log
 
       # 3. Credential preflight. Reports presence by variable name only and never a

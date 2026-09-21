@@ -64,7 +64,8 @@ jobs:
           set -o pipefail
           python -m paper_scout backfill --track agent_memory --days 45 --no-notify --no-llm | tee paper-scout-backfill-agent-memory.log
           python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
-          python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
+          # See the daily workflow: an unresolvable seed must not cost the whole run.
+          python -m paper_scout ingest-seeds --track engram --allow-unresolved | tee paper-scout-seeds-engram.log
           python -m paper_scout backfill --track engram --days 45 --no-notify --no-llm | tee paper-scout-backfill-engram.log
           python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
 

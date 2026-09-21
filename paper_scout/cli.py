@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import re
+import sys
 from dataclasses import replace
 from datetime import date
 from pathlib import Path
@@ -112,6 +113,9 @@ def main(argv: list[str] | None = None) -> int:
     _add_track_argument(ingest_parser)
 
     seed_parser = subparsers.add_parser("ingest-seeds", help="Ingest missing declarative seed IDs outside the daily window; no notifications")
+    seed_parser.add_argument("--allow-unresolved", action="store_true",
+                             help="Report unresolved seed IDs loudly but exit 0; for scheduled "
+                                  "runs, where a provider outage must not cost the day's work")
     _add_track_argument(seed_parser)
 
     quality_eval_parser = subparsers.add_parser("evaluate-quality", help="Evaluate deterministic scholarly-quality rules on fixture papers")
@@ -294,7 +298,32 @@ def main(argv: list[str] | None = None) -> int:
         from paper_scout.seeds import ingest_seeds
         report = ingest_seeds(config)
         print(json.dumps(report, indent=2))
-        return 1 if report["unresolved"] else 0
+        if not report["unresolved"]:
+            return 0
+        # A seed can be unresolvable for reasons entirely outside this repository: a
+        # provider outage, or third-party metadata that resolves the right identifier to
+        # the wrong paper. The identity check then refuses it, correctly. In a scheduled
+        # run that must not cost the day's discovery, assessment, site build and state
+        # persist for every track, so the caller can ask for a loud report instead of a
+        # failing exit. Nothing is written either way, and the next run retries.
+        # A workflow annotation is line-oriented, and normalize_arxiv_id does not constrain
+        # an identifier's shape -- it strips prefixes and version suffixes but passes
+        # anything else through, newlines included. The manifest is repo-controlled, so this
+        # is not an external input, but a malformed id would otherwise emit arbitrary
+        # workflow commands. Collapsed and bounded, the same way the credential preflight
+        # step already treats its reason string.
+        # The manifest caps a track at 20 seeds, so the joined identifiers cannot currently
+        # reach this bound -- 20 arXiv ids is about 240 characters. The bound and its marker
+        # exist so that a raised cap degrades visibly instead of dropping ids in silence.
+        collapsed = " ".join(", ".join(str(i) for i in report["unresolved"]).split())
+        identifiers = (collapsed if len(collapsed) <= 400
+                       else collapsed[:400] + " ... (truncated; the JSON report above is complete)")
+        message = f"{config.track_id} seed bootstrap left unresolved IDs: {identifiers}"
+        if args.allow_unresolved:
+            print(f"::error::{message}. Discovery continues; the next run retries them.")
+            return 0
+        print(f"::error::{message}", file=sys.stderr)
+        return 1
 
     if args.command == "ingest-paper":
         try:

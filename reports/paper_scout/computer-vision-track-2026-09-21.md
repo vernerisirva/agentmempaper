@@ -282,7 +282,7 @@ raised silently or otherwise.
 
 ## L. Tests and full validation
 
-**660 tests pass** (608 on `main`; 52 added, 51 of them in
+**662 tests pass** (608 on `main`; 54 added, 53 of them in
 `tests/test_paper_scout_computer_vision.py`). No test issues a paid model call or reaches
 the network.
 
@@ -300,7 +300,10 @@ four-track snapshot, three-track migration, repeat migration, partial-archive an
 corruption failures, and transport labelling; run/track bounds, no quota transfer, the cost
 arithmetic, operational selection and cross-track assessment exclusion; workflow wiring and
 the committed-ceiling/code agreement; and that no track-specific string reached any
-scientific module.
+scientific module. Three of these exist because a check found a real defect rather than
+because the area looked risky: every registered track having idempotency fixtures, every
+seed note matching by title as well as identifier, and the README's slot arithmetic
+matching the planner.
 
 Full sweep, all four tracks:
 
@@ -401,8 +404,46 @@ the planner so it cannot drift again.
 by the rebuild (see above). The rest is three different populations by design, on every
 track: the Run Summary counts what that run fetched (93), the digest body and archive list
 the notification-eligible library including separately ingested seeds (95), and `latest.html`
-lists first-seen-this-run papers minus suppressed and insufficient ones. Reconciling them
-means changing the shared digest, archive and latest formats for all four tracks.
+lists first-seen-this-run papers minus suppressed and insufficient ones (76). Reconciling
+them means changing the shared digest, archive and latest formats for all four tracks.
+
+**Round 3 — `PASS_WITH_NOTES`, zero blocking findings.** Two non-blocking notes, one test
+gap note.
+
+**Note: "the track's `max_assessments_per_run: 5` may exceed the frozen one-per-track
+bound."** A fair reading of a genuinely confusing field, and not a defect. That setting
+bounds the discovery-time queue in `paper_scout run`; the daily workflow runs discovery with
+`--no-llm`, which disables that queue outright, and assesses through `operational-assess`
+under `RunBudget`. The value is inert in the scheduled pipeline, and all four tracks carry 4
+or 5. The config now says so at the field, and
+`test_no_track_config_can_raise_the_daily_assessment_bound` pins both halves — every
+`run --track` line in the discovery step carries `--no-llm`, and the frozen budget is
+1 per track and one slot per track overall. The quota is deliberately *not* forced to 1,
+because that would change what a manual run does for no gain.
+
+**Note: "the dashboard script dereferences absent quality-filter controls and would throw
+`TypeError` on load."** Not correct; the reviewer listed the truncated `index.html` under
+its uncertainties. Every access is already guarded (`qualityMinimum ? … : 0`,
+`!qualityRecommendation || …`, `.filter(Boolean).forEach`, `if (qualityVisibility)`), and
+this is shared pre-existing code that renders the same way on every track. Verified in a
+browser rather than by reading: on `index.html`, `latest.html` and `review.html`, all six
+quality controls are absent, **the console reports no errors on any of the three**, and
+search, sort and the topic filter all work (index: 2 → 2 on "detection", 1 under `yolo`;
+latest: 76 → 26 under `yolo`, 16 on "segmentation").
+
+**Test gap: no pre-run live-smoke for this track.** Deliberate, and now stated in the
+workflow: Engram has none either, and `check_paper_scout_site.py` actively rejects a
+duplicate Engram live smoke. The two existing smokes already exercise every provider this
+repository talks to; a third costs 26 more logical search slots against shared throttling
+for no new signal, and a provider regression breaks those two first, in the same run, before
+the assessment stage.
+
+**Test gap: `paper-scout-checks.yml` does not run `ingest-seeds` for this track.** That
+check is the offline PR gate — it builds every track with `--offline` and makes no network
+request. `ingest-seeds` performs primary-metadata lookups, so it belongs in the daily
+workflow, where it already runs, and not in an offline check.
+
+**Verdict for the merge gate: `PASS_WITH_NOTES`, 0 unresolved blockers.**
 
 ## N. Production smoke
 

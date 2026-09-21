@@ -103,6 +103,12 @@ quality:
     assess_relevant: true
     assess_maybe_relevant: true
     assess_irrelevant: false
+    # Bounds the discovery-time assessment queue in `paper_scout run`, NOT the daily
+    # operational bound. The daily workflow runs discovery with --no-llm, which disables
+    # that queue entirely, and assesses through `operational-assess`, where RunBudget
+    # enforces the frozen 1-per-track / 4-per-run limits. This value therefore has no
+    # effect on the scheduled pipeline; it applies only to a manual `run` without
+    # --no-llm. Matching the other tracks rather than inventing a fourth number.
     max_assessments_per_run: 5
   full_text:
     enabled: true

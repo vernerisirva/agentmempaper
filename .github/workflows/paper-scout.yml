@@ -128,6 +128,11 @@ jobs:
           python -m paper_scout validate-idempotency --track computer_vision | tee idempotency-computer-vision.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_agent_memory_smoke.sqlite3 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-agent-memory.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_deep_research_smoke.sqlite3 python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-deep-research.log
+          # Engram and computer vision have no live-smoke step, by the same reasoning: the
+          # two smokes above already exercise every provider this repository talks to, and
+          # each additional one costs 26 more logical search slots against shared provider
+          # throttling for no new signal. A provider regression that would break the new
+          # tracks breaks these two first, in the same run, before the assessment stage.
 
       # 2. Discovery and metadata only. --no-llm keeps the scientific gate out of this
       #    step entirely, so a discovery run can never write an assessment row.

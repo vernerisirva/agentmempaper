@@ -852,6 +852,31 @@ class WorkflowIntegration(unittest.TestCase):
         self.assertNotIn("OPENROUTER_API_KEY", discovery.get("env", {}))
         self.assertIn(f"run --track {TRACK} --no-llm", discovery["run"])
 
+    def test_no_track_config_can_raise_the_daily_assessment_bound(self):
+        """A track's own assessment quota cannot reach the scheduled pipeline.
+
+        `quality.assessment.max_assessments_per_run` is 4 or 5 on every track, which reads
+        as if a daily run could assess five papers from one track. It cannot: the daily
+        discovery step passes --no-llm, which disables the queue that setting bounds, and
+        the assessment stage goes through `operational-assess`, where RunBudget enforces
+        the frozen limits. Both halves are pinned here, because a discovery step that lost
+        its --no-llm would silently hand a track five adjudications.
+        """
+        from paper_scout.operational_preflight import MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK
+        workflow, _ = self.workflow("paper-scout.yml")
+        discovery = next(step for step in workflow["jobs"]["scout"]["steps"]
+                         if step["name"] == "Run discovery and metadata update")
+        for line in discovery["run"].splitlines():
+            if "paper_scout run --track" in line:
+                self.assertIn("--no-llm", line, f"discovery without --no-llm can assess: {line.strip()}")
+        for track in TRACK_CONFIG_PATHS:
+            quota = load_config(track_id=track, env={}).quality.assessment.max_assessments_per_run
+            self.assertGreater(quota, 0)
+            # Deliberately NOT asserting quota <= 1: the field is inert in the scheduled
+            # pipeline, and forcing it to 1 would change what a manual run does.
+        budget_track, budget_run = MAX_PAPERS_PER_TRACK, MAX_PAPERS_PER_RUN
+        self.assertEqual((budget_track, budget_run), (1, len(TRACKS)))
+
     def test_the_committed_ceiling_matches_the_code(self):
         from paper_scout.operational_preflight import DEFAULT_OPENROUTER_RUN_CEILING_USD
         workflow, _ = self.workflow("paper-scout.yml")

@@ -257,6 +257,275 @@ NEGATED_DEEP_RESEARCH_PATTERNS = [
     r"\bnot (a |about )?(deep research|autonomous research|research[- ]agent) systems?\b",
 ]
 
+# --- Computer vision -------------------------------------------------------------
+#
+# The track's emphasis is object detection, because that is the work the reader does, but
+# the screen has to keep the rest of the field in view and has to stay hostile to the two
+# failure modes a detection-heavy profile invites: a single-family echo chamber, and the
+# flood of domain applications that run an off-the-shelf detector on one private dataset.
+#
+# Three signals do that work and are kept separate on purpose:
+#
+# * COMPUTER_VISION_CONTEXT gates everything. A paper with no visual subject at all is
+#   never a computer-vision paper however many generic systems words it shares with one,
+#   which is what keeps RAG, agent frameworks, recommenders and memory-management work out
+#   without needing a rule per topic.
+# * COMPUTER_VISION_METHOD_PATTERNS is what lifts a domain paper back to core. Domain work
+#   is explicitly not excluded: a medical or remote-sensing paper that contributes a
+#   generally useful method belongs in the library. Only the ones with no method claim are
+#   held back as review candidates.
+# * COMPUTER_VISION_SUPPORTING_TAGS cannot carry a paper on their own. Latency, FLOPs,
+#   benchmarks and synthetic data describe many fields; they are evidence about a vision
+#   paper, not evidence that a paper is one.
+#
+# Nothing here scores scientific quality. These rules decide topic only, and the metric
+# vocabulary below is recognized so that detection papers are found, never so that a
+# reported number is rewarded.
+COMPUTER_VISION_INCLUDE_PATTERNS = {
+    "object-detection": [
+        r"\bobject detect(?:ion|or|ors)\b",
+        r"\b(?:one|single|two)[- ]stage detect(?:or|ors|ion)\b",
+        r"\banchor[- ]free\b",
+        r"\banchor[- ]based detect\w*\b",
+        r"\bregion proposal networks?\b",
+        r"\bdetection heads?\b",
+        r"\blabel assignment\b",
+        r"\bnon[- ]maximum suppression\b",
+        r"\bbounding[- ]box (?:regression|prediction|refinement)\b",
+        r"\bsmall[- ]object detection\b",
+        r"\boriented object detection\b",
+        r"\bopen[- ]vocabulary detect(?:ion|or|ors)\b",
+    ],
+    "yolo": [r"\byolo(?:v\d+|[- ]?x|[- ]?nas|[- ]?world|9000)?\b"],
+    "detr": [
+        r"\bdetr\b",
+        r"\brt[- ]?detr\b",
+        r"\bdeformable detr\b",
+        r"\bend[- ]to[- ]end object detection\b",
+        r"\bquery[- ]based detect(?:ion|or|ors)\b",
+        r"\bset[- ]prediction detect\w*\b",
+    ],
+    "segmentation": [
+        r"\b(?:semantic|instance|panoptic|promptable|referring|open[- ]vocabulary|image|video) segmentation\b",
+        r"\bsegment anything\b",
+        r"\bmask (?:prediction|head|decoder)\b",
+        r"\bsegmentation (?:model|network|method|mask)s?\b",
+    ],
+    "tracking": [
+        r"\bmulti[- ]object tracking\b",
+        r"\btracking[- ]by[- ]detection\b",
+        r"\bvisual object tracking\b",
+        r"\bperson re[- ]identification\b",
+        r"\btrack(?:let|ing) association\b",
+    ],
+    "pose": [
+        r"\b(?:human|hand|body|animal|object|head|6d) pose estimation\b",
+        r"\bpose estimation\b",
+        r"\bkeypoint (?:detection|estimation|localization)\b",
+    ],
+    "vision-transformer": [
+        r"\bvision transformers?\b",
+        r"\bswin transformer\b",
+        r"\bhierarchical vision transformer\b",
+        r"\bvit\b",
+    ],
+    "backbone": [
+        r"\b(?:convolutional|visual|image|vision) backbones?\b",
+        r"\bfeature pyramid networks?\b",
+        r"\bcnn architectures?\b",
+        r"\bconvolutional neural network architectures?\b",
+    ],
+    "visual-representation": [
+        r"\bvisual representation learning\b",
+        r"\bself[- ]supervised (?:visual|vision|image)\w*\b",
+        r"\bimage recognition\b",
+        r"\bimage classification\b",
+        r"\b(?:object|visual|scene) recognition\b",
+        r"\bvisual encoders?\b",
+        r"\bvisual features\b",
+        r"\bvision foundation models?\b",
+        # "foundation models in computer vision" is the same claim written the other way
+        # round, and a visual-pretraining paper often names neither phrase exactly. Both
+        # halves are required, so this cannot match a language-only pretraining paper.
+        r"\bfoundation models?\b[^\n]{0,40}\bcomputer vision\b",
+        r"\bcomputer vision\b[^\n]{0,40}\bfoundation models?\b",
+        r"\b(?:image|visual) pre[- ]?training\b",
+    ],
+    "3d-vision": [
+        r"\b3d (?:object detection|reconstruction|scene understanding|vision)\b",
+        r"\bpoint clouds?\b",
+        r"\bstereo matching\b",
+        r"\bnovel view synthesis\b",
+        r"\bneural rendering\b",
+        r"\bstructure[- ]from[- ]motion\b",
+        r"\bvisual geometry\b",
+    ],
+    "depth": [
+        r"\bdepth estimation\b",
+        r"\bdepth prediction\b",
+        r"\bdisparity estimation\b",
+    ],
+    "vision-language": [
+        r"\bvision[- ]language\b",
+        r"\bvisual question answering\b",
+        r"\bimage[- ]text\b",
+        r"\bvisual instruction tuning\b",
+        r"\bvisual grounding\b",
+    ],
+    "efficient-vision": [
+        r"\breal[- ]time (?:object detection|detection|segmentation|inference|perception|tracking)\b",
+        r"\befficient (?:object detect\w*|detectors?|vision (?:models?|transformers?|architectures?))\b",
+        r"\binference latency\b",
+        r"\bframes per second\b",
+        r"\bfps\b",
+        r"\bflops\b",
+        r"\bquantiz(?:ation|ed|ing)\b",
+        r"\b(?:structured |channel )?pruning\b",
+        r"\bknowledge distillation\b",
+        r"\bthroughput\b",
+    ],
+    "edge-deployment": [
+        r"\bedge (?:device|devices|deployment|inference|computing)\b",
+        r"\bembedded (?:device|devices|vision|deployment|platform)\b",
+        r"\bon[- ]device inference\b",
+        r"\btensorrt\b",
+        r"\bjetson\b",
+    ],
+    "synthetic-data": [
+        r"\bsynthetic (?:data|images?|datasets?|training data)\b",
+        r"\bdomain randomi[sz]ation\b",
+        r"\bsim[- ]to[- ]real\b",
+    ],
+    "benchmark": [
+        r"\b(?:ms[- ])?coco\b",
+        r"\bpascal voc\b",
+        r"\bimagenet\b",
+        r"\b(?:ade20k|cityscapes|lvis|objects365|kitti|nuscenes|mot17|mot20|crowdhuman|visdrone|dota)\b",
+        r"\b(?:detection|segmentation|tracking|vision) benchmarks?\b",
+    ],
+    "metrics": [
+        # Recognized so detection papers are discoverable and so the different averages
+        # stay distinguishable in text. AP50, AP75 and mAP50-95 are separate quantities
+        # and are never treated as the same number; none of them is scored here.
+        r"\bmap\s?50[-– ]?95\b",
+        r"\bap\s?50\b",
+        r"\bap\s?75\b",
+        r"\bmean average precision\b",
+        r"\bmiou\b",
+        r"\bintersection over union\b",
+        r"\bpanoptic quality\b",
+    ],
+}
+
+#: Tags that describe evidence about a paper rather than establishing it is a vision
+#: paper. They never earn a core decision on their own.
+COMPUTER_VISION_SUPPORTING_TAGS = frozenset({
+    "efficient-vision", "edge-deployment", "synthetic-data", "benchmark", "metrics",
+    "vision-language",
+})
+
+#: Any visual subject at all. Everything else is gated on this, so a paper that shares
+#: systems vocabulary with vision work but never looks at an image cannot reach the track.
+COMPUTER_VISION_CONTEXT = [
+    r"\bcomputer vision\b",
+    r"\bvisual\b",
+    r"\bvision\b",
+    r"\bimages?\b",
+    r"\bimagery\b",
+    r"\bvideos?\b",
+    r"\bpixels?\b",
+    r"\bcameras?\b",
+    r"\bdetect(?:ion|or|ors)\b",
+    r"\bsegmentation\b",
+    r"\bbounding box(?:es)?\b",
+    r"\bpoint clouds?\b",
+    r"\bscene understanding\b",
+    r"\bdepth (?:estimation|prediction|map|maps)\b",
+    r"\bstereo\b",
+    r"\boptical flow\b",
+    r"\bpose estimation\b",
+    r"\bkeypoints?\b",
+]
+
+HIGH_CONFIDENCE_COMPUTER_VISION_PATTERNS = {
+    "object detection": r"\bobject detect(?:ion|or|ors)\b",
+    "YOLO / real-time detection": r"\byolo(?:v\d+|[- ]?x|[- ]?nas|[- ]?world|9000)?\b",
+    "DETR-family detection": r"\b(?:rt[- ]?)?detr\b|\bdeformable detr\b|\bend[- ]to[- ]end object detection\b",
+    "detector architecture": r"\b(?:one|single|two)[- ]stage detect(?:or|ors|ion)\b|\banchor[- ]free detect\w*\b|\bregion proposal networks?\b|\bdetection heads?\b|\blabel assignment\b",
+    "segmentation method": r"\b(?:semantic|instance|panoptic|promptable|referring|open[- ]vocabulary|image|video) segmentation\b|\bsegment anything\b",
+    "visual tracking": r"\bmulti[- ]object tracking\b|\btracking[- ]by[- ]detection\b|\bvisual object tracking\b",
+    "pose estimation": r"\b(?:human|hand|body|animal|object|head|6d) pose estimation\b|\bkeypoint (?:detection|estimation|localization)\b",
+    "visual backbone": r"\bvision transformers?\b|\bswin transformer\b|\b(?:convolutional|visual|image|vision) backbones?\b|\bfeature pyramid networks?\b",
+    "visual representation learning": r"\bvisual representation learning\b|\bself[- ]supervised (?:visual|vision|image)\w*\b|\bvision foundation models?\b|\bvisual encoders?\b|\bvisual features\b|\bfoundation models?\b[^\n]{0,40}\bcomputer vision\b|\bcomputer vision\b[^\n]{0,40}\bfoundation models?\b|\b(?:image|visual) pre[- ]?training\b",
+    "3D and depth": r"\bdepth estimation\b|\b3d (?:object detection|reconstruction|scene understanding)\b|\bstereo matching\b|\bnovel view synthesis\b|\bpoint cloud (?:detection|segmentation|registration|completion)\b",
+    "efficient visual inference": r"\breal[- ]time (?:object detection|detection|segmentation|perception|tracking)\b|\befficient (?:object detect\w*|detectors?|vision (?:models?|transformers?|architectures?))\b",
+}
+
+COMPUTER_VISION_EXCLUDE_PATTERNS = {
+    "memory or database systems": r"\b(?:gpu|cuda|database|operating system) memory\b|\bin[- ]memory databases?\b|\bmemory (?:allocator|paging|bandwidth|fragmentation|management)\b",
+    "retrieval-augmented generation": r"\bretrieval[- ]augmented generation\b|\brag (?:system|pipeline|framework)s?\b",
+    "language-agent framework": r"\b(?:llm|language[- ]model|multi)[- ]agent (?:framework|system|architecture|orchestration|workflow)s?\b|\btool[- ]using agents?\b",
+    "recommender system": r"\brecommend(?:er|ation) systems?\b|\bcollaborative filtering\b",
+    "text-only model": r"\btext[- ]only\b|\blanguage[- ]only\b",
+    "image generation only": r"\btext[- ]to[- ]image\b|\bimage synthesis\b|\bgenerative (?:image|diffusion) models?\b",
+}
+
+#: Signals that a paper is adjacent rather than core. An application signal alone holds a
+#: paper at review; combined with a method-contribution signal it does not.
+COMPUTER_VISION_REVIEW_PATTERNS = {
+    # The recurring applied-detection domains. A long list, and deliberately so: the "X-YOLO
+    # for <narrow subject>" paper is the single largest category the cs.CV and OpenAlex
+    # detection queries return, and there is no structural signal that separates it from a
+    # general detector paper -- only its subject. Matching here does not exclude anything;
+    # it asks the paper for a general-method claim before it is treated as a core result.
+    "domain application": r"\b(?:medical|clinical|radiolog\w*|histopatholog\w*|colonoscop\w*|endoscop\w*|x[- ]ray|ct scans?|mri|ultrasound|lesions?|tumou?rs?|cancer|diagnos\w*|remote sensing|satellite|aerial|uav|drone|synthetic aperture radar|\bsar\b|sonar|underwater|marine|benthic|maritime|agricultur\w*|crops?|weed|livestock|cattle|wildlife|fish|insects?|pests?|traffic|pedestrians?|vehicles?|road|driving scenes?|retail|warehouse|industrial|manufacturing|inspection|defect detection|weld\w*|pcb|construction site|mining|surveillance|security screening|assistive)\b",
+    "off-the-shelf model use": r"\b(?:off[- ]the[- ]shelf|pre[- ]?trained|standard|existing|established)\b[^\n]{0,40}\b(?:detectors?|yolo\w*|models?|networks?)\b|\b(?:appl(?:y|ies|ied)|employ(?:s|ed)?|us(?:e|es|ed)|fine[- ]tun\w+)\b[^\n]{0,40}\b(?:yolo\w*|detectors?|faster r[- ]?cnn|mask r[- ]?cnn)\b",
+    "vision-language model": r"\bvision[- ]language models?\b|\bmultimodal large language models?\b|\bvisual instruction tuning\b|\bvisual question answering\b",
+    "robotics perception": r"\brobots?\b|\brobotic\w*\b|\bmanipulation polic\w+\b|\bautonomous driving\b|\bnavigation polic\w+\b|\bslam\b",
+    "synthetic data": r"\bsynthetic (?:data|images?|datasets?|training data)\b|\bsim[- ]to[- ]real\b|\bdomain randomi[sz]ation\b",
+}
+
+#: Review labels that mean "this is an application of vision", as opposed to adjacency of
+#: some other kind. Only these trigger the application downgrade.
+COMPUTER_VISION_APPLICATION_LABELS = frozenset({
+    "domain application", "off-the-shelf model use", "synthetic data", "robotics perception",
+})
+
+#: What a paper has to show for a general contribution. Deliberately about the *shape* of
+#: the claim rather than about any reported number: no minimum AP improvement exists here,
+#: and none should, because a small benchmark gain is not by itself a contribution.
+#:
+#: Only some of these are strong enough to cancel the domain-application downgrade -- see
+#: COMPUTER_VISION_GENERAL_METHOD_LABELS below.
+COMPUTER_VISION_METHOD_PATTERNS = {
+    "proposed architecture": r"\b(?:we|this (?:paper|work|study))\b[^\n]{0,60}\b(?:propose|proposes|introduce|introduces|present|presents)\b[^\n]{0,60}\b(?:architecture|detector|network|backbone|head|module|framework|method|operator|layer)s?\b|\bnovel (?:architecture|detector|backbone|head|module|operator|representation)s?\b",
+    "training or matching method": r"\blabel assignment\b|\bloss (?:function|design|formulation)\b|\b(?:localization|regression|classification|detection|focal|iou|contrastive) loss(?:es)?\b|\bbipartite matching\b|\bmatching (?:strategy|cost)\b|\btraining (?:strategy|recipe|scheme|objective)\b|\bassignment strategy\b",
+    "generality claim": r"\bgeneral(?:i[sz]es?|i[sz]ation|i[sz]able)\b|\bacross (?:multiple |several |diverse )?(?:datasets|domains|benchmarks|backbones|detectors)\b|\bplug[- ]and[- ]play\b|\b(?:model|detector|architecture)[- ]agnostic\b",
+    "controlled analysis": r"\bablation\w*\b",
+}
+
+#: The subset of method signals that answer "is this broadly useful?" rather than merely
+#: "did they build something?". Every application paper says it proposes a framework, and
+#: an ablation shows rigour rather than breadth, so neither cancels the downgrade. A stated
+#: generality claim does, and so does a training, matching or loss contribution, which is a
+#: detector-level technique rather than a dataset-level result -- detection losses and
+#: matching are first-class topics for this track wherever the motivating images came from.
+COMPUTER_VISION_GENERAL_METHOD_LABELS = frozenset({
+    "generality claim", "training or matching method",
+})
+
+#: Only statements about *this* work. "text-only" is deliberately absent: a
+#: vision-language paper routinely writes "unlike text-only language models, we ...", and
+#: a hard negation on that phrase excluded a real open-vocabulary detection paper. It is an
+#: exclude signal instead, where a high-confidence vision hit overrides it.
+NEGATED_COMPUTER_VISION_PATTERNS = [
+    r"\bwithout (?:any )?(?:visual|vision|image|perceptual) (?:input|inputs|component|components|perception|supervision)\b",
+    r"\bdoes not (?:include|study|evaluate|address) (?:visual|vision|image|object detection|computer vision)\b",
+    r"\bno (?:visual|vision|perception) (?:component|contribution)\b",
+    r"\bnot (?:a |about )?(?:computer vision|object detection|vision) (?:paper|system|method|contribution)s?\b",
+    r"\bunrelated to computer vision\b",
+]
+
 
 def classify_with_rules(candidate: PaperCandidate, profile: str = "agent_memory") -> ClassificationResult:
     from paper_scout.config import validate_track
@@ -266,6 +535,8 @@ def classify_with_rules(candidate: PaperCandidate, profile: str = "agent_memory"
         return classify_engram(candidate)
     if profile == "deep_research":
         return _classify_deep_research_with_rules(candidate)
+    if profile == "computer_vision":
+        return _classify_computer_vision_with_rules(candidate)
     evidence = explain_rule_matches(candidate)
     text = evidence["text"]
     exclude_hits = evidence["exclude_hits"]
@@ -451,6 +722,120 @@ def _classify_deep_research_with_rules(candidate: PaperCandidate) -> Classificat
     )
 
 
+def _classify_computer_vision_with_rules(candidate: PaperCandidate) -> ClassificationResult:
+    """Screen one candidate for the computer-vision track.
+
+    The order of the checks is the policy. A denial of visual focus settles the paper; a
+    missing visual subject settles it next, which is what excludes the whole class of
+    generic systems and language work without a rule per topic. Only then do the positive
+    signals run, and the application downgrade sits *after* the high-confidence check on
+    purpose: a domain paper is held at review because it makes no general method claim,
+    never because of the domain it works in.
+    """
+    evidence = explain_rule_matches(candidate, profile="computer_vision")
+    include_tags = list(evidence["include_tags"])
+    high_confidence_hits = list(evidence["high_confidence_hits"])
+    exclude_hits = list(evidence["exclude_hits"])
+    review_hits = list(evidence["review_hits"])
+    method_hits = list(evidence["method_contribution_hits"])
+    negated_vision_focus = bool(evidence["negated_vision_focus_hits"])
+    summary = _summary(candidate.abstract)
+    core_tags = [tag for tag in include_tags if tag not in COMPUTER_VISION_SUPPORTING_TAGS]
+    application_hits = [hit for hit in review_hits if hit in COMPUTER_VISION_APPLICATION_LABELS]
+    general_method_hits = [hit for hit in method_hits if hit in COMPUTER_VISION_GENERAL_METHOD_LABELS]
+    # A core tag establishes a visual subject by itself. Several genuine vision topics --
+    # depth estimation, stereo matching, point clouds, pose -- can be written up without
+    # the words "image", "visual" or "vision" appearing anywhere, so requiring the generic
+    # vocabulary alone would drop them.
+    vision_context = bool(evidence["vision_context_hits"]) or bool(core_tags)
+
+    if negated_vision_focus:
+        return ClassificationResult(
+            score=10,
+            decision="irrelevant",
+            reason="Excluded: explicitly states it makes no visual or computer-vision contribution.",
+            tags=[],
+            abstract_summary=summary,
+        )
+
+    if not vision_context:
+        return ClassificationResult(
+            score=5,
+            decision="irrelevant",
+            reason="Excluded: no visual subject; this is not a computer-vision paper.",
+            tags=["excluded-non-vision"],
+            abstract_summary=summary,
+        )
+
+    if exclude_hits and not high_confidence_hits:
+        if core_tags or review_hits:
+            return ClassificationResult(
+                score=45,
+                decision="maybe",
+                reason="Review candidate: touches vision, but the excluded framing leaves the visual contribution unclear.",
+                tags=include_tags or ["vision-adjacent"],
+                abstract_summary=summary,
+            )
+        return ClassificationResult(
+            score=10,
+            decision="irrelevant",
+            reason="Excluded: not a computer-vision methodological contribution.",
+            tags=["excluded-vision-scope"],
+            abstract_summary=summary,
+        )
+
+    if high_confidence_hits:
+        if application_hits and not general_method_hits:
+            # Domain work is welcome; domain work with no *general* method is a review
+            # candidate. The distinction is the breadth of the claim, not the application
+            # area. "We propose a framework for X-ray bone tumours" is an application;
+            # "this loss generalizes across detectors" is a contribution to the field.
+            return ClassificationResult(
+                score=55,
+                decision="maybe",
+                reason=_computer_vision_application_reason(application_hits),
+                tags=include_tags,
+                abstract_summary=summary,
+            )
+        score = min(100, 86 + len(high_confidence_hits) * 3 + len(core_tags) * 2)
+        return ClassificationResult(
+            score=score,
+            decision="relevant",
+            reason=_computer_vision_reason(high_confidence_hits, include_tags),
+            tags=include_tags,
+            abstract_summary=summary,
+        )
+
+    if core_tags:
+        score = min(78, 42 + len(core_tags) * 9 + len(method_hits) * 4)
+        if application_hits and not general_method_hits:
+            score = min(score, 55)
+        decision = "relevant" if score >= 70 and len(core_tags) >= 3 else "maybe"
+        reason = (
+            _computer_vision_reason([], include_tags)
+            if decision == "relevant"
+            else "Review candidate: vision-related, but the methodological contribution to computer vision is not clear."
+        )
+        return ClassificationResult(score=score, decision=decision, reason=reason, tags=include_tags, abstract_summary=summary)
+
+    if review_hits:
+        return ClassificationResult(
+            score=45,
+            decision="maybe",
+            reason="Review candidate: adjacent to computer vision, but no vision method is clearly studied.",
+            tags=include_tags or ["vision-adjacent"],
+            abstract_summary=summary,
+        )
+
+    return ClassificationResult(
+        score=20,
+        decision="irrelevant",
+        reason="Peripheral candidate: mentions visual data, but studies no computer-vision method.",
+        tags=include_tags,
+        abstract_summary=summary,
+    )
+
+
 def explain_rule_matches(candidate: PaperCandidate, profile: str = "agent_memory") -> dict[str, object]:
     from paper_scout.config import validate_track
     validate_track(profile)
@@ -479,7 +864,36 @@ def explain_rule_matches(candidate: PaperCandidate, profile: str = "agent_memory
             "broad_peripheral_hits": [],
             "negated_memory_focus_hits": [],
             "negated_research_focus_hits": _matches(NEGATED_DEEP_RESEARCH_PATTERNS, text),
+            "negated_vision_focus_hits": [],
             "review_hits": _matches_labeled(DEEP_RESEARCH_REVIEW_PATTERNS, text),
+            "vision_context_hits": [],
+            "method_contribution_hits": [],
+        }
+    if profile == "computer_vision":
+        include_tags = [
+            tag
+            for tag, patterns in COMPUTER_VISION_INCLUDE_PATTERNS.items()
+            if _matches(patterns, text)
+        ]
+        high_confidence_hits = _matches_labeled(HIGH_CONFIDENCE_COMPUTER_VISION_PATTERNS, text)
+        if "YOLO / real-time detection" in high_confidence_hits and "yolo" not in include_tags:
+            # The tag is what the dashboard filters on, so a YOLO paper is always tagged
+            # even when the phrasing only reached the high-confidence pattern.
+            include_tags.append("yolo")
+        return {
+            "text": text,
+            "include_tags": include_tags,
+            "exclude_hits": _matches_labeled(COMPUTER_VISION_EXCLUDE_PATTERNS, text),
+            "biological_memory_hits": [],
+            "agent_context_hits": [],
+            "high_confidence_hits": high_confidence_hits,
+            "broad_peripheral_hits": [],
+            "negated_memory_focus_hits": [],
+            "negated_research_focus_hits": [],
+            "negated_vision_focus_hits": _matches(NEGATED_COMPUTER_VISION_PATTERNS, text),
+            "review_hits": _matches_labeled(COMPUTER_VISION_REVIEW_PATTERNS, text),
+            "vision_context_hits": _matches(COMPUTER_VISION_CONTEXT, text),
+            "method_contribution_hits": _matches_labeled(COMPUTER_VISION_METHOD_PATTERNS, text),
         }
     include_tags = [
         tag
@@ -506,7 +920,10 @@ def explain_rule_matches(candidate: PaperCandidate, profile: str = "agent_memory
         "broad_peripheral_hits": _matches_labeled(BROAD_PERIPHERAL_PATTERNS, text),
         "negated_memory_focus_hits": negated_memory_focus_hits,
         "negated_research_focus_hits": [],
+        "negated_vision_focus_hits": [],
         "review_hits": [],
+        "vision_context_hits": [],
+        "method_contribution_hits": [],
     }
 
 
@@ -572,6 +989,40 @@ def _deep_research_reason(matches: list[str], tags: list[str]) -> str:
     if "research-memory" in tags:
         return "Studies research-agent memory or iterative research state."
     return "Studies autonomous or deep research agents."
+
+
+def _computer_vision_reason(matches: list[str], tags: list[str]) -> str:
+    if "YOLO / real-time detection" in matches or "yolo" in tags:
+        return "Studies YOLO-family or real-time object detection."
+    if "DETR-family detection" in matches or "detr" in tags:
+        return "Studies DETR-family or query-based object detection."
+    if "object detection" in matches or "detector architecture" in matches or "object-detection" in tags:
+        return "Studies object-detection architecture, training, or evaluation."
+    if "segmentation method" in matches or "segmentation" in tags:
+        return "Studies semantic, instance, panoptic, or promptable segmentation."
+    if "visual tracking" in matches or "tracking" in tags:
+        return "Studies multi-object or visual object tracking."
+    if "pose estimation" in matches or "pose" in tags:
+        return "Studies pose estimation or keypoint localization."
+    if "visual backbone" in matches or {"vision-transformer", "backbone"} & set(tags):
+        return "Studies visual backbones or vision-transformer architecture."
+    if "visual representation learning" in matches or "visual-representation" in tags:
+        return "Studies visual representation learning or large visual encoders."
+    if "3D and depth" in matches or {"3d-vision", "depth"} & set(tags):
+        return "Studies 3D vision, depth estimation, or geometric visual understanding."
+    if "efficient visual inference" in matches or "efficient-vision" in tags:
+        return "Studies efficient or real-time visual inference."
+    return "Studies a computer-vision method."
+
+
+def _computer_vision_application_reason(application_hits: list[str]) -> str:
+    if "domain application" in application_hits:
+        return "Review candidate: applies vision models in a specific domain without a clearly general method contribution."
+    if "off-the-shelf model use" in application_hits:
+        return "Review candidate: uses an existing detector or model without a clearly general method contribution."
+    if "robotics perception" in application_hits:
+        return "Review candidate: robotics or driving system where the vision contribution is not clearly the subject."
+    return "Review candidate: synthetic-data or applied use of vision models without a clearly general method contribution."
 
 
 def _summary(abstract: str, max_chars: int = 320) -> str:

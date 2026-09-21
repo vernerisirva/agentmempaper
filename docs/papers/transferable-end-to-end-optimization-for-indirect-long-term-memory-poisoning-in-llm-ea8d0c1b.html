@@ -158,7 +158,7 @@ afterward. These results motivate us to formulate indirect
 memory poisoning as an end-to-end optimization problem,
 as stage-wise improvements may not carry through the com-
 plete write-retrieve-utilize pipeline.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=
-
+
 w(t)
 i r(t)
 i u(t)
@@ -168,7 +168,7 @@ w(t)
 i ,r (t)
 i ,u (t)
 i
-o1/4
+o1/4
 .(4)
 The product rewards performance throughout the complete
 pipeline, while the minimum term places additional pres-
@@ -213,16 +213,16 @@ erator then produces the next candidate from the updated </blockquote></details>
 π(t)
 i =
 n
-
+
 ρ(t)
 i + ¯ρ(t)
-
+
 ∑n
 p=1
-
+
 ρ(t)
 p + ¯ρ(t)
- .(7)
+ .(7)
 Configurations with larger current losses receive greater
 weight, while the additive mean term prevents easier config-
 urations from being ignored. The normalization ensures that
@@ -240,10 +240,10 @@ n
 i=1
 π(t)
 i
-
+
 ℓ(t)
 i,j
-2
+2
 , ¯δ(t) = 1
 3 ∑
 j∈{w,r,u}
@@ -253,15 +253,15 @@ The weight of stagejat iterationtis then
 α(t)
 j =
 3
-
+
 δ(t)
 j + ¯δ(t)
-
+
 ∑k∈{w,r,u}
-
+
 δ(t)
 k + ¯δ(t)
- ,j∈ {w,r,u}.(9)
+ ,j∈ {w,r,u}.(9)
 6
 A stage with consistently large losses across shadow configu-
 rations therefore receives greater optimization pressure. The
@@ -271,23 +271,23 @@ Transfer Lifecycle Score.Using these weights, the lifecycle
 score under configurationibecomes
 F (t)
 i </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>=
-
+
 w(t)
 i
-αw 
+αw
 r(t)
 i
-αr 
+αr
 u(t)
 i
-αu
+αu
 min
 n
 w(t)
 i ,r (t)
 i ,u (t)
 i
-o1/4
+o1/4
 .
 (10)
 The stage weights emphasize difficult stages, while the min-
@@ -299,10 +299,10 @@ J(t) =
 n
 ∏
 i=1
-
+
 F (t)
 i
-πi
+πi
 ·min
 1≤i≤n
 F (t)

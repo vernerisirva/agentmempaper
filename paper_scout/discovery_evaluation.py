@@ -27,6 +27,36 @@ def discovery_fixtures(profile: str = "agent_memory") -> list[DiscoveryFixture]:
     if profile == "deep_research":
         from paper_scout.evaluation import deep_research_fixture_examples
         return [DiscoveryFixture(e.name, e.candidate.title, e.candidate.abstract, None, ("cs.AI",), ("keyword",)) for e in deep_research_fixture_examples()[:4]]
+    if profile == "computer_vision":
+        # Keyword routes cover the detection emphasis; the cs.CV sweep is what has to
+        # reach the rest of the field, so segmentation, tracking, pose and depth are
+        # represented here by fixtures no keyword query would match.
+        return [
+            DiscoveryFixture("cv-yolo-detector", "An Anchor-Free One-Stage Detector with Improved Label Assignment",
+                             "A real-time one-stage object detector with an anchor-free head, compared against YOLO baselines on COCO.",
+                             "1506.02640", ("cs.CV",), ("keyword", "category_sweep", "seed_manifest")),
+            DiscoveryFixture("cv-detr", "Real-Time Detection Transformers with an Efficient Hybrid Encoder",
+                             "A query-based end-to-end object detection architecture evaluated on COCO at matched latency.",
+                             "2304.08069", ("cs.CV",), ("keyword", "category_sweep", "seed_manifest")),
+            DiscoveryFixture("cv-open-vocabulary", "Open-Vocabulary Object Detection with Region-Text Alignment",
+                             "Open-vocabulary object detection aligns region features with text embeddings for unseen categories.",
+                             None, ("cs.CV",), ("keyword", "category_sweep")),
+            DiscoveryFixture("cv-vision-transformer", "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows",
+                             "A hierarchical vision transformer backbone for image recognition and dense prediction.",
+                             "2103.14030", ("cs.CV",), ("keyword", "category_sweep", "seed_manifest")),
+            DiscoveryFixture("cv-segmentation", "Hierarchical Decoders for Semantic Segmentation",
+                             "A decoder for semantic segmentation aggregating multi-scale features, evaluated on ADE20K.",
+                             None, ("cs.CV",), ("category_sweep",)),
+            DiscoveryFixture("cv-tracking", "Association Beyond Confidence for Multi-Object Tracking",
+                             "Tracking-by-detection with a tracklet association method evaluated on MOT17.",
+                             None, ("cs.CV",), ("category_sweep",)),
+            DiscoveryFixture("cv-pose", "Real-Time Human Pose Estimation with a Lightweight Keypoint Head",
+                             "A keypoint detection head for real-time human pose estimation on edge devices.",
+                             None, ("cs.CV",), ("category_sweep",)),
+            DiscoveryFixture("cv-depth", "Scale-Consistent Monocular Depth Estimation",
+                             "A training objective for monocular depth estimation that generalizes across datasets.",
+                             None, ("cs.CV",), ("category_sweep",)),
+        ]
     return [
         DiscoveryFixture(
             "procedural-memory-distillation",

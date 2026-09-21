@@ -44,7 +44,7 @@ LOGGER = logging.getLogger(__name__)
 
 POPULATION_VERSION = "batch-population-v1"
 MANIFEST_VERSION = "batch-population-manifest-v1"
-TRACKS = ("agent_memory", "deep_research", "engram")
+TRACKS = ("agent_memory", "deep_research", "engram", "computer_vision")
 # A short normalized title is not a usable identity, so the dashboard's existing merge
 # policy applies here unchanged: only titles longer than this take part in matching.
 # Nothing fuzzy is added — two titles match only when their normalizations are equal.

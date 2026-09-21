@@ -20,7 +20,7 @@ jobs:
       - name: Offline tests and all-track builds
         run: |
           python -m unittest discover -s tests -p '*.py'
-          for track in agent_memory deep_research engram; do
+          for track in agent_memory deep_research engram computer_vision; do
             python -m paper_scout evaluate-relevance --track "$track"
             python -m paper_scout evaluate-quality --track "$track"
             python -m paper_scout evaluate-discovery --track "$track"

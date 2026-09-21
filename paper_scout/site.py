@@ -283,6 +283,7 @@ def build_site(
             navigation=navigation,
             quality_enabled=active_quality.enabled,
             quality_display=active_quality.display,
+            relevance_profile=relevance_profile,
         ),
         encoding="utf-8",
     )
@@ -290,7 +291,7 @@ def build_site(
         _render_library_page(pending, latest, archive_digests, site_title=site_title,
             site_subtitle="Relevant discoveries awaiting quality review or a stronger topical match.",
             digest_link_prefix=digest_link_prefix, cross_track_label=None, cross_track_href=None,
-            navigation=navigation, review_view=True), encoding="utf-8")
+            navigation=navigation, review_view=True, relevance_profile=relevance_profile), encoding="utf-8")
     (docs_root / "latest.html").write_text(
         _render_latest_discoveries_page(
             [p for p in latest_discoveries if p.quality_status != "insufficient" and not p.quality_suppressed],
@@ -301,6 +302,7 @@ def build_site(
             navigation=navigation,
             quality_enabled=active_quality.enabled,
             quality_display=active_quality.display,
+            relevance_profile=relevance_profile,
         ),
         encoding="utf-8",
     )
@@ -443,6 +445,18 @@ def _digest_quality_count(path: Path) -> int:
         return 0
     match = re.search(r"Likely false positives flagged:\s*(\d+)", path.read_text(encoding="utf-8"))
     return int(match.group(1)) if match else 0
+
+
+#: C0 control characters other than tab, newline and carriage return. Bounded full-text
+#: extraction emits NUL for glyphs pypdf cannot map -- mathematical symbols, mostly -- and
+#: those bytes reach a published page through the quality evidence excerpts. A NUL in an
+#: HTML file makes it non-text: `file` reports "data", Git treats it as binary, and a
+#: browser may stop parsing at the first one. Nothing legitimate in this output needs them.
+CONTROL_CHARACTERS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
+def _strip_control_characters(text: str) -> str:
+    return CONTROL_CHARACTERS.sub("", text)
 
 
 def _redact_secrets(text: str) -> str:
@@ -1066,6 +1080,32 @@ def _relevance_label(paper: LibraryPaper, relevance_profile: str = "agent_memory
     text = " ".join([paper.title, paper.reason, paper.abstract_summary, " ".join(paper.tags)]).lower()
     if relevance_profile == "engram":
         return {"relevant": "Engram / conditional-memory study", "maybe": "Adjacent learned-memory review candidate"}.get(paper.decision, "Peripheral or excluded memory topic")
+    if relevance_profile == "computer_vision":
+        if paper.decision == "maybe":
+            return "Vision-adjacent review candidate"
+        if paper.decision == "irrelevant":
+            return "Peripheral or excluded vision topic"
+        if "yolo" in tags or "yolo" in text:
+            return "YOLO / real-time detection"
+        if "detr" in tags or "detr" in text:
+            return "DETR-family detection"
+        if "object-detection" in tags or "object detect" in text:
+            return "Object detection"
+        if "segmentation" in tags or "segmentation" in text:
+            return "Segmentation"
+        if "tracking" in tags or "tracking" in text:
+            return "Tracking"
+        if "pose" in tags or "pose estimation" in text or "keypoint" in text:
+            return "Pose / keypoints"
+        if {"vision-transformer", "backbone", "visual-representation"} & tags:
+            return "Backbone / visual representation"
+        if {"3d-vision", "depth"} & tags:
+            return "3D / depth"
+        if {"efficient-vision", "edge-deployment"} & tags:
+            return "Efficient / deployment"
+        if "vision-language" in tags:
+            return "Vision-language"
+        return "Computer vision review topic"
     if relevance_profile == "deep_research":
         if paper.decision == "maybe":
             return "Research-adjacent review candidate"
@@ -1469,7 +1509,10 @@ def _write_paper_detail_pages(
             encoding="utf-8",
         )
         (papers_dir / f"{slug}.json").write_text(
-            json.dumps(card, indent=2, sort_keys=True),
+            # json escapes NUL to \u0000 rather than corrupting the file, so this is
+            # data hygiene rather than a correctness fix -- but a sidecar is meant to be
+            # read by other tools, and an unmappable-glyph placeholder is not evidence.
+            _strip_control_characters(json.dumps(card, indent=2, sort_keys=True)),
             encoding="utf-8",
         )
 
@@ -1522,7 +1565,7 @@ def _paper_detail_json(
         "review_status": paper.review_status,
     }
     data["structured_card"] = structured_card
-    data["related_topics"] = related_topics_for_paper(paper)
+    data["related_topics"] = related_topics_for_paper(paper, relevance_profile=relevance_profile)
     data["provenance"] = _paper_provenance(paper, generated_at)
     data["structured_sections"] = {
         "possible_key_claims": [],
@@ -1692,6 +1735,7 @@ def _render_library_page(
     navigation: tuple[tuple[str, str], ...] = (),
     digest_link_prefix: str = "digests",
     review_view: bool = False,
+    relevance_profile: str = "agent_memory",
 ) -> str:
     default_decision = "all" if review_view else "relevant"
     cross_track_link = _cross_track_link(cross_track_label, cross_track_href)
@@ -1715,7 +1759,7 @@ def _render_library_page(
             <p class="hero-line">{_hero_line(papers, latest)}</p>
           </div>
         </header>
-        {_library_controls(default_decision=default_decision, quality_enabled=quality_enabled, show_relevance=review_view)}
+        {_library_controls(default_decision=default_decision, quality_enabled=quality_enabled, show_relevance=review_view, relevance_profile=relevance_profile)}
         <section class="paper-section primary-section" id="paper-library" data-section="library">
           <div class="section-heading">
             <h2>{"Review candidates" if review_view else "High-quality relevant papers"}</h2>
@@ -1750,6 +1794,7 @@ def _render_latest_discoveries_page(
     quality_enabled: bool = False,
     quality_display: QualityDisplayConfig | None = None,
     navigation: tuple[tuple[str, str], ...] = (),
+    relevance_profile: str = "agent_memory",
 ) -> str:
     has_highly_relevant = any(paper.decision == "relevant" for paper in papers)
     if not papers:
@@ -1785,7 +1830,7 @@ def _render_latest_discoveries_page(
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
         {_latest_summary_strip(papers, latest)}
-        {_library_controls(default_decision="all", quality_enabled=quality_enabled)}
+        {_library_controls(default_decision="all", quality_enabled=quality_enabled, relevance_profile=relevance_profile)}
         <section class="paper-section primary-section" id="paper-library" data-section="latest">
           <div class="section-heading">
             <p class="section-kicker">New this run</p>
@@ -1880,6 +1925,46 @@ def _render_about_page(
         else "The scout uses deterministic filters and optional LLM classification. Highly relevant means the paper directly supports autonomous/deep research workflows; review candidates may be useful but need human judgment."
     )
     references = ""
+    if relevance_profile == "computer_vision":
+        tracking_text = (
+            "This library tracks object detection first: the YOLO family, one-stage and anchor-free detectors, "
+            "DETR and its real-time descendants, the R-CNN lineage, open-vocabulary and small-object detection, "
+            "detection losses and label assignment, and detector deployment. Detection is emphasised because it is "
+            "the work these papers are read for; competing detector families are included deliberately so the "
+            "library shows where YOLO differs from the alternatives rather than only where it wins. "
+            "The surrounding field is covered as well: segmentation, tracking, pose and keypoints, visual backbones "
+            "and representation learning, vision-language work where visual methodology is the contribution, 3D and "
+            "depth, and efficient or edge vision."
+        )
+        relevance_text = (
+            "Highly relevant means the paper makes a methodological contribution to computer vision: a detector, "
+            "backbone, segmentation, tracking or pose method, a training or evaluation technique, a foundation "
+            "model, or a substantive efficiency and deployment result. A paper that applies an existing detector to "
+            "one dataset is a review candidate rather than a core paper, and the reason is the absence of a general "
+            "method claim, not the application area: domain work that contributes a broadly useful method is a core "
+            "paper. Vision-language work needs visual methodology or visual evaluation to qualify; accepting images "
+            "is not enough. Relevance is topical only and says nothing about scientific quality."
+        )
+        references = '''<article><h2>How detection metrics are read here</h2>
+            <p>AP50, AP75 and mAP50-95 are different averages over different IoU thresholds and are never treated as
+            the same number. Frames per second is a throughput measure and is not interchangeable with per-image
+            latency; a batched throughput figure and a single-image latency figure describe different things.</p>
+            <p>No deterministic rule rewards a reported number. A small AP gain is not by itself high-quality science:
+            methodological contribution, evaluation breadth, baselines, ablations, efficiency trade-offs, generality,
+            limitations and the fit between claims and evidence are what the scientific assessment weighs, and there is
+            no hard-coded minimum improvement anywhere in it.</p></article>
+            <article><h2>Foundational papers</h2>
+            <p>A small set of foundational detection and vision papers is seeded so the library has anchors: the YOLO
+            lineage, the R-CNN lineage, the DETR line, the Vision Transformer and Swin, Segment Anything and DINOv2.
+            Every identifier was resolved from primary metadata before it was added. Seeds are screened and
+            quality-assessed exactly like any other paper and are marked with a curation note; being seeded does not
+            admit a paper to the main library.</p></article>
+            <article><h2>Coverage</h2>
+            <p>Keyword discovery concentrates on detection; a bounded arXiv cs.CV category sweep carries the rest of
+            the field, and the relevance screen does the topical filtering. Both are bounded per run, so this is a
+            monitored slice of computer vision, not a claim of complete literature coverage. cs.CV is a high-volume
+            category and a single sweep cannot see all of it; truncated windows are reported in source
+            diagnostics.</p></article>'''
     if relevance_profile == "engram":
         tracking_text = "This library tracks Engram and closely related model-integrated conditional memory: learned lookup tables, hashed n-grams, memory readers, transfer, training, capacity scaling and efficient execution. Related mechanisms are not assumed to be identical architectures."
         relevance_text = "Highly relevant papers substantively study these mechanisms. Product-key memories, neural memory layers, model-memory editing and test-time memory need a concrete connection and may remain review candidates. Name collisions, generic RAG and conversation storage are excluded. Negative findings and unsuccessful replications remain eligible; relevance is not an endorsement."
@@ -1959,6 +2044,9 @@ def _structured_card_html(card: dict[str, dict[str, str]], relevance_profile: st
         else
         "Relation to deep research / autonomous research"
         if relevance_profile == "deep_research"
+        else
+        "Relation to computer vision / object detection"
+        if relevance_profile == "computer_vision"
         else "Relation to agentic memory"
     )
     rows = []
@@ -2131,6 +2219,8 @@ def _display_value(value: object) -> str:
 
 
 def _description_for_site(site_title: str) -> str:
+    if site_title == "Computer Vision Paper Library":
+        return "Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision."
     if site_title == "Engram & Conditional Memory Paper Library":
         return "Daily Paper Scout library of Engram-style model memory, learned lookup tables, and transferable memory mechanisms."
     if site_title == "Deep Research Paper Library":
@@ -2139,6 +2229,8 @@ def _description_for_site(site_title: str) -> str:
 
 
 def _description_for_profile(relevance_profile: str) -> str:
+    if relevance_profile == "computer_vision":
+        return _description_for_site("Computer Vision Paper Library")
     if relevance_profile == "engram":
         return _description_for_site("Engram & Conditional Memory Paper Library")
     if relevance_profile == "deep_research":
@@ -2172,7 +2264,11 @@ def _page(
 </body>
 </html>
 """
-    return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+    # Last stop before any page is written, so no generator path can bypass it. Stripped
+    # before splitlines, because splitlines also breaks on vertical tab and form feed --
+    # stripping afterwards would silently turn an unmappable glyph into a line break.
+    cleaned = _strip_control_characters(html)
+    return "\n".join(line.rstrip() for line in cleaned.splitlines()) + "\n"
 
 
 def _summary_strip(digest: ParsedDigest) -> str:
@@ -2267,7 +2363,48 @@ def _controls(sources: list[str]) -> str:
     """
 
 
-def _library_controls(default_decision: str = "all", quality_enabled: bool = False, show_relevance: bool = True) -> str:
+#: Optional per-track topic filter. A track with no entry renders no control, so every
+#: other library's markup is unchanged. Values are screening tags, matched against the
+#: card's data-tags attribute; labels are what the reader sees.
+TOPIC_FILTERS: dict[str, tuple[tuple[str, str], ...]] = {
+    "computer_vision": (
+        ("yolo", "YOLO / real-time detection"),
+        ("object-detection", "Object detection"),
+        ("detr", "DETR family"),
+        ("segmentation", "Segmentation"),
+        ("tracking", "Tracking"),
+        ("pose", "Pose / keypoints"),
+        ("vision-transformer", "Vision transformers"),
+        ("backbone", "Backbones"),
+        ("visual-representation", "Visual representation"),
+        ("vision-language", "Vision-language"),
+        ("3d-vision", "3D vision"),
+        ("depth", "Depth"),
+        ("efficient-vision", "Efficient vision"),
+        ("edge-deployment", "Edge / deployment"),
+    ),
+}
+
+
+def _topic_filter_control(relevance_profile: str) -> str:
+    options = TOPIC_FILTERS.get(relevance_profile, ())
+    if not options:
+        return ""
+    choices = "".join(
+        f'<option value="{escape(value)}">{escape(label)}</option>' for value, label in options
+    )
+    return f'''
+      <label class="select-field topic-filter" for="topic-filter">
+        <span>Topic</span>
+        <select id="topic-filter">
+          <option value="all" selected>All topics</option>
+          {choices}
+        </select>
+      </label>
+    '''
+
+
+def _library_controls(default_decision: str = "all", quality_enabled: bool = False, show_relevance: bool = True, relevance_profile: str = "agent_memory") -> str:
     selected = {
         "all": " selected" if default_decision == "all" else "",
         "relevant": " selected" if default_decision == "relevant" else "",
@@ -2301,6 +2438,7 @@ def _library_controls(default_decision: str = "all", quality_enabled: bool = Fal
         </select>
       </label>
       {relevance_control}
+      {_topic_filter_control(relevance_profile)}
       <label class="toggle-control new-only-filter" for="new-only">
         <input id="new-only" type="checkbox">
         <span>New only</span>
@@ -3378,6 +3516,7 @@ button.active { background: var(--text); border-color: var(--text); color: #fff;
 }
 .toggle-control input { accent-color: var(--accent); }
 .tag-filter { min-width: 12rem; }
+.topic-filter { min-width: 12rem; }
 .tag-filter span { color: var(--faint); }
 .sources { grid-column: 1 / -1; }
 .paper-section { margin-top: 2.2rem; }
@@ -3899,6 +4038,7 @@ FILTER_SCRIPT = """
   const search = document.querySelector('#paper-search');
   const relevanceFilter = document.querySelector('#relevance-filter');
   const newOnly = document.querySelector('#new-only');
+  const topicFilter = document.querySelector('#topic-filter');
   const sortSelect = document.querySelector('#paper-sort');
   const qualityMinimum = document.querySelector('#quality-minimum');
   const qualityRecommendation = document.querySelector('#quality-recommendation');
@@ -3960,6 +4100,8 @@ FILTER_SCRIPT = """
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
       const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      const topic = topicFilter ? topicFilter.value : 'all';
+      const matchesTopic = topic === 'all' || (card.dataset.tags || '').split(' ').includes(topic);
       const qualityKnown = card.dataset.qualityScore !== '';
       const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
       const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
@@ -3967,7 +4109,7 @@ FILTER_SCRIPT = """
       const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
       const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
       const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesTopic && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0 || cards.length === 0;
@@ -3975,6 +4117,7 @@ FILTER_SCRIPT = """
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (newOnly) newOnly.addEventListener('change', update);
+  if (topicFilter) topicFilter.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
   [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
   if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });

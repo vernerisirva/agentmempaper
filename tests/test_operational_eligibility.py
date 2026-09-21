@@ -390,10 +390,30 @@ class ProviderFailureKeepsPapersEligible(unittest.TestCase):
 
 class RunBudgetBounds(unittest.TestCase):
     def test_default_limits_are_the_conservative_initial_policy(self):
+        from paper_scout.batch_population import TRACKS
         budget = RunBudget()
         self.assertEqual(budget.max_per_track, 1)
-        self.assertEqual(budget.max_per_run, 3)
+        # The run ceiling is exactly one slot per track and no transfer between them, so
+        # it moves only when a track is added, never to buy a track a second assessment.
+        self.assertEqual(budget.max_per_run, len(TRACKS))
+        self.assertEqual(budget.max_per_run, 4)
         self.assertEqual(budget.openrouter_ceiling_usd, 0.30)
+
+    def test_four_bounded_assessments_stay_under_the_unchanged_cost_ceiling(self):
+        """The fourth track did not need a higher ceiling, and this is the arithmetic.
+
+        Charges the conservative per-paper estimate rather than the measured rate, because
+        that estimate is also what the exception path charges when a raise happens after
+        requests were issued. Every paper must pass its own pre-spend reservation.
+        """
+        from paper_scout.operational_preflight import ESTIMATED_OPENROUTER_USD_PER_PAPER
+        budget = RunBudget()
+        for index in range(budget.max_per_run):
+            budget.reserve(f"track{index}")  # Raises CostCeilingExceeded if it would not fit.
+            budget.record(f"track{index}", openrouter_usd=ESTIMATED_OPENROUTER_USD_PER_PAPER)
+        self.assertEqual(budget.total_assessed, 4)
+        self.assertLess(budget.openrouter_spend_usd, budget.openrouter_ceiling_usd)
+        self.assertIsNone(budget.stopped_reason)
 
     def test_one_paper_per_track(self):
         budget = RunBudget()
@@ -404,8 +424,8 @@ class RunBudgetBounds(unittest.TestCase):
         self.assertTrue(budget.may_assess("deep_research")[0])
 
     def test_run_total_is_capped(self):
-        budget = RunBudget(max_per_track=3)
-        for track in ("a", "b", "c"):
+        budget = RunBudget(max_per_track=4)
+        for track in ("a", "b", "c", "d"):
             budget.record(track, openrouter_usd=0.01)
         self.assertEqual(budget.may_assess("a")[1], "run_paper_limit_reached")
 

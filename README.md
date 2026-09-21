@@ -14,19 +14,44 @@ The default config in `config/paper_scout.yaml` tracks:
 
 The Engram/Megatron-LM context is treated as research context, not as proof that Engram-style approaches cannot work.
 
-## Three independent libraries
+## Four independent libraries
 
 | Track | Site output | State | Curation |
 | --- | --- | --- | --- |
 | `agent_memory` (default) | `docs/` | `data/paper_scout.sqlite3` | `config/curation.yaml` |
 | `deep_research` | `docs/deep-research/` | `data/deep_research/paper_scout.sqlite3` | `config/curation/deep_research.yaml` |
 | `engram` | `docs/engram/` | `data/engram/paper_scout.sqlite3` | `config/curation/engram.yaml` |
+| `computer_vision` | `docs/computer-vision/` | `data/computer_vision/paper_scout.sqlite3` | `config/curation/computer_vision.yaml` |
 
 Each track has its own relevance, notes, notification history and first-seen timestamps. Bibliographic overlap is allowed. The explicit registry rejects unknown tracks and mismatched config IDs. Existing default commands remain Agentic Memory commands. Navigation derives relative paths for every registered track, including detail pages.
 
 The Engram library concerns memory integrated with language-model computation: conditional memory, learned lookup tables, hashed n-grams, memory readers and gates, frozen-memory transfer, tokenizer-independent addressing, memory grafting, capacity scaling, training, editing and efficient execution. It requires substantive title/abstract evidence and does not require the word “agent”. An Engram mention, generic parametric memory, or a related-work citation alone does not establish relevance. Adjacent neural memory layers, product-key memories, model-memory editing and test-time memory may remain review candidates. Biological engrams, unrelated software, generic RAG/chat history and generic fine-tuning/distillation are excluded. Negative results and memory-table offloading studies are eligible; relevance and methodological quality are separate.
 
 Engram generates the same index, latest, archive, about, JSON/CSV/BibTeX exports, schema and per-paper HTML/JSON cards as the existing libraries. Its intended Pages path after deployment is [the Engram library](https://vernerisirva.github.io/agentmempaper/engram/). The sidecar schema stays `paper-scout-card-v2`; the existing `relation_to_agentic_memory` key has track-appropriate visible wording. Seed curation is explicitly based on primary abstracts, with unsupported architectural/evaluation fields unextracted. Implementation discussions are separate links on About, without automatic GitHub monitoring.
+
+### Computer Vision
+
+The Computer Vision library emphasises object detection because that is the work it is read for: the YOLO family, one-stage and anchor-free detectors, DETR and its real-time descendants, the R-CNN lineage, open-vocabulary and small-object detection, detection losses and label assignment, and detector deployment. Competing detector families are in scope deliberately, so the library shows where YOLO differs from the alternatives rather than only where it wins.
+
+The surrounding field is covered as well: segmentation (semantic, instance, panoptic, promptable), tracking, pose and keypoints, visual backbones and representation learning, vision-language work where visual methodology is the contribution, 3D and depth, and efficient or edge vision.
+
+Relevance and scientific quality remain separate questions, as in every other track. Highly relevant means the paper makes a methodological contribution to computer vision. A paper that applies an existing detector to a single dataset is a review candidate, and the reason is the absence of a general-method claim rather than the application area: a medical, remote-sensing or agricultural paper that contributes a broadly useful method is a core paper. Vision-language work needs visual methodology or visual evaluation to qualify; accepting images is not enough. Generic machine learning with no visual subject, memory-management work, robotics where perception is incidental, and image generation with no perception contribution are excluded.
+
+Only quality-promoted papers enter the main library: high relevance, a Gemini pass, an independent DeepSeek pass, a deterministic integrity and provenance pass, and no suppression. Review candidates stay searchable on `review.html` and are not implied to be weak. Institutional affiliation, venue and prestige are not quality criteria; preprints and repository-only manuscripts remain eligible on manuscript evidence.
+
+Detection metrics are read as the distinct quantities they are. AP50, AP75 and mAP50-95 are different averages over different IoU thresholds, and frames per second is a throughput measure that is not interchangeable with per-image latency. No deterministic rule rewards a reported number, and there is no hard-coded minimum AP improvement anywhere: a small benchmark gain is not by itself high-quality science.
+
+`config/seeds/computer_vision.json` declares sixteen foundational arXiv IDs, every one resolved from primary metadata before being written. They anchor the YOLO lineage, the R-CNN lineage, the DETR line, the Vision Transformer and Swin, Segment Anything and DINOv2. Seeds are screened and quality-assessed like any other paper and carry a curation note identifying the lineage they anchor; being seeded does not admit a paper to the main library.
+
+Keyword discovery concentrates on detection and fills the arXiv budget with five queries plus a bounded `cs.CV` category sweep; the sweep carries the breadth and the relevance screen does the topical filtering. Coverage is therefore a monitored slice of computer vision, not a claim of complete literature coverage, and a truncated sweep window is reported in source diagnostics.
+
+```bash
+python3 -m paper_scout ingest-seeds --track computer_vision
+python3 -m paper_scout run --track computer_vision --no-notify
+python3 -m paper_scout build-site --track computer_vision
+```
+
+The dashboard adds a Topic filter alongside the existing search and sort controls, so YOLO, object detection and the other topics can be isolated without turning the page into a single-subject application. Its intended Pages path is [the Computer Vision library](https://vernerisirva.github.io/agentmempaper/computer-vision/).
 
 ### Engram bootstrap and historical recovery
 
@@ -57,19 +82,19 @@ The daily and weekly workflows bootstrap missing seeds. Weekly Engram backfill u
 | Model calls | 0 by default for relevance and quality; no new provider or required key |
 | Full-text/site enrichment | 0 for Engram by default; rendering uses saved metadata |
 
-Steady-state Engram discovery therefore permits at most 48 HTTP attempts (36 search + 12 metadata) and bootstrap can add at most 24 attempts. Successful no-retry search usually needs 12 requests. Provider throttling is shared by hostname across clients in a process, including arXiv metadata enrichment. The workflows execute tracks sequentially in the existing shared writer-concurrency group; an extra track does not imply a separate account quota. The three normal daily runs use 38 logical search slots combined. The two existing pre-run live-smoke checks add 26 slots; Engram has no duplicate live-smoke step. Quality remains optionally configurable through the existing interfaces; switching to a model-backed mode requires an explicit call budget and the existing provider credentials.
+Steady-state Engram discovery therefore permits at most 48 HTTP attempts (36 search + 12 metadata) and bootstrap can add at most 24 attempts. Successful no-retry search usually needs 12 requests. Provider throttling is shared by hostname across clients in a process, including arXiv metadata enrichment. The workflows execute tracks sequentially in the existing shared writer-concurrency group; an extra track does not imply a separate account quota. The four normal daily runs use 52 logical search slots combined: agent memory 14 (6 arXiv including the category sweep, 4 OpenAlex, 4 Semantic Scholar), deep research 12, Engram 12, and computer vision 14 (6 arXiv including the cs.CV sweep, 4 OpenAlex, 4 Semantic Scholar). The two existing pre-run live-smoke checks add 26 slots; Engram has no duplicate live-smoke step. Quality remains optionally configurable through the existing interfaces; switching to a model-backed mode requires an explicit call budget and the existing provider credentials.
 
 Per-query raw counts, accepted candidates, page limits, truncation, attempts, retries and metadata requests are saved in `reports/paper_scout/engram/discovery-run-<run-id>.json`. These are bounded coverage diagnostics, not estimates of literature recall. Fixed regression results are labeled separately from live retrieval.
 
 ### State compatibility and validation
 
-Durable archives now contain a SHA-256 manifest and all three allowlisted SQLite files. Every member and database is checked before restoration. A valid legacy archive containing exactly the two original databases is accepted and initializes only missing Engram state; existing Engram state is preserved. A corrupt, incomplete or unavailable snapshot fails closed. Missing original state cannot silently become an empty library. State stays outside Git and the public Pages artifact.
+Durable archives contain a SHA-256 manifest and all four allowlisted SQLite files. Every member and database is checked before restoration. An archive that is complete for an earlier generation of the layout is accepted as an upgrade: the two-track archive that predates Engram, and the three-track archive that predates Computer Vision. Each installs and verifies every database it does carry, byte for byte, and initializes only the tracks added since; existing state is never reset. An archive that is missing an established track is a partial archive and still fails closed, as do corrupt and unavailable snapshots. Missing original state cannot silently become an empty library. State stays outside Git and the public Pages artifact.
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -p 'test_paper_scout_*.py'
 python3 -m unittest discover -s tests -p '*.py'
-for track in agent_memory deep_research engram; do
+for track in agent_memory deep_research engram computer_vision; do
   python3 -m paper_scout evaluate-relevance --track "$track"
   python3 -m paper_scout evaluate-discovery --track "$track"
   python3 -m paper_scout evaluate-quality --track "$track"

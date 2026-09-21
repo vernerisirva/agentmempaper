@@ -35,7 +35,8 @@ def isolated(root, track="engram"):
 
 class EngramTests(unittest.TestCase):
     def test_tracks_registered_unknown_rejected_and_defaults_unchanged(self):
-        self.assertEqual(set(TRACK_CONFIG_PATHS), {"agent_memory", "deep_research", "engram"})
+        self.assertEqual(set(TRACK_CONFIG_PATHS),
+                         {"agent_memory", "deep_research", "engram", "computer_vision"})
         self.assertEqual(load_config(env={}).sqlite_path, Path("data/paper_scout.sqlite3"))
         config = load_config(track_id="engram", env={})
         self.assertEqual(config.docs_dir, Path("docs/engram"))
@@ -151,17 +152,32 @@ class EngramTests(unittest.TestCase):
             self.assertEqual((first.new_digest_count, again.new_digest_count, last.new_digest_count), (1, 0, 0))
 
     def test_tracks_can_overlap_with_independent_screening_and_notification(self):
+        """One manuscript, every track, one canonical identity and no shared state.
+
+        Keyed by track rather than by position, so a new track extends the assertion
+        instead of shifting an index onto a different library.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             paper = seed_fixtures()[0]
-            configs = [isolated(root, track) for track in TRACK_CONFIG_PATHS]
-            results = [ingest_candidate(c, paper) for c in configs]
-            self.assertEqual([PaperStore(c.sqlite_path).paper_count() for c in configs], [1, 1, 1])
-            self.assertEqual(results[2][2].decision, "relevant")
-            self.assertNotEqual(results[1][2].decision, "relevant")
-            self.assertEqual(len({r[1] for r in results}), 1)
-            PaperStore(configs[0].sqlite_path).mark_notified([results[0][1]], "2026-09-04")
-            self.assertEqual(PaperStore(configs[2].sqlite_path).get_notified_for_date("2026-09-04"), [])
+            configs = {track: isolated(root, track) for track in TRACK_CONFIG_PATHS}
+            results = {track: ingest_candidate(config, paper) for track, config in configs.items()}
+            self.assertEqual({track: PaperStore(config.sqlite_path).paper_count()
+                              for track, config in configs.items()},
+                             {track: 1 for track in configs})
+            # The same paper is screened independently: relevant to its own track, not to
+            # the deep-research one, and the decision is per track rather than shared.
+            self.assertEqual(results["engram"][2].decision, "relevant")
+            self.assertNotEqual(results["deep_research"][2].decision, "relevant")
+            self.assertEqual(len({result[1] for result in results.values()}), 1)
+            PaperStore(configs["agent_memory"].sqlite_path).mark_notified(
+                [results["agent_memory"][1]], "2026-09-04")
+            for track in configs:
+                if track == "agent_memory":
+                    continue
+                self.assertEqual(
+                    PaperStore(configs[track].sqlite_path).get_notified_for_date("2026-09-04"),
+                    [], f"{track} inherited another track's notification state")
 
     def test_incomplete_window_is_retained_and_not_resolved_by_truncated_response(self):
         with tempfile.TemporaryDirectory() as tmp:

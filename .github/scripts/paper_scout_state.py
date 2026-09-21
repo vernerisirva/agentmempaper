@@ -46,6 +46,7 @@ TRACK_FOR_STATE_PATH = {
     "data/paper_scout.sqlite3": "agent_memory",
     "data/deep_research/paper_scout.sqlite3": "deep_research",
     "data/engram/paper_scout.sqlite3": "engram",
+    "data/computer_vision/paper_scout.sqlite3": "computer_vision",
 }
 
 ASSET_NAME = "paper-scout-state.tar.gz"

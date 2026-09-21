@@ -885,6 +885,54 @@ class WorkflowIntegration(unittest.TestCase):
                 configs, "2026-09-21T00:00:00", assessment_sources=sources)
         self.assertEqual(set(summaries), set(TRACKS))
 
+    def test_an_unresolvable_seed_cannot_cost_the_run_its_other_work(self):
+        """Run 35594457409: two seeds failed and the whole daily run was lost.
+
+        `ingest-seeds` exits 1 when an identifier does not resolve, which is right for a
+        manual run. In the scheduled workflow that exit aborts the discovery step under
+        `set -e`, so assessment, the site build and -- worst -- the state persist were all
+        skipped, for every track, because of two papers. A seed can be unresolvable for
+        reasons this repository does not control: on that run arXiv refused one lookup and
+        OpenAlex resolved the other identifier to an entirely different paper, which the
+        identity check correctly refused rather than ingesting the wrong manuscript.
+
+        Every scheduled bootstrap therefore passes --allow-unresolved, which reports loudly
+        and exits 0. Pinned for both workflows and every track, not just this one.
+        """
+        for name in ("paper-scout.yml", "paper-scout-backfill.yml"):
+            workflow, _ = self.workflow(name)
+            job = next(iter(workflow["jobs"].values()))
+            for step in job["steps"]:
+                for line in (step.get("run") or "").splitlines():
+                    if "ingest-seeds" in line and not line.strip().startswith("#"):
+                        self.assertIn("--allow-unresolved", line,
+                                      f"{name}: a failed bootstrap would abort the run: {line.strip()}")
+
+    def test_the_bootstrap_reports_unresolved_seeds_either_way(self):
+        """The flag changes the exit code, never what is written or reported."""
+        from paper_scout.seeds import ingest_seeds
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            config = replace(load_config(ROOT / TRACK_CONFIG_PATHS[TRACK], env={}),
+                             seed_manifest=ROOT / "config/seeds/computer_vision.json",
+                             sqlite_path=root / "state.sqlite3", report_dir=root / "reports")
+
+            def fetch(arxiv_id=None, **_):
+                # Third-party metadata resolving the right id to the wrong paper: exactly
+                # what OpenAlex returned for Segment Anything on that run.
+                return PaperCandidate(title="A Completely Different Paper", authors=["Ada"],
+                                      abstract="Unrelated.", source="openalex",
+                                      source_id=arxiv_id, arxiv_id=arxiv_id,
+                                      url="https://example.test/x", published_date="2023-04-05",
+                                      updated_date="2023-04-05", publication_date_precision="day")
+
+            report = ingest_seeds(config, fetch=fetch)
+            self.assertEqual(len(report["unresolved"]), len(report["results"]))
+            self.assertEqual(PaperStore(config.sqlite_path).paper_count(), 0,
+                             "a title mismatch must never write the wrong manuscript")
+            for item in report["results"]:
+                self.assertIn("does not match the manifest", item["error"])
+
     def test_every_state_path_is_checkpointed_before_it_is_persisted(self):
         for name in ("paper-scout.yml", "paper-scout-backfill.yml"):
             workflow, _ = self.workflow(name)

@@ -530,7 +530,54 @@ No escalation to Kimi or Qwen was needed; DeepSeek converged in five rounds.
 
 ## N. Production smoke
 
-<!-- SMOKE_SECTION -->
+Two runs, because the first one failed.
+
+### First attempt — [35594457409](https://github.com/vernerisirva/agentmempaper/actions/runs/35594457409): FAILED
+
+Restore and every validation passed, then the run threw the day away. Two Computer Vision
+seeds did not resolve, `ingest-seeds` exited 1, and under `set -e` that aborted the
+discovery step — so assessment, the site build, the Pages deploy and the state persist were
+all skipped, for all four tracks, because of two papers. No state was lost, because persist
+was skipped; the run simply did nothing, and would have repeated daily.
+
+**The merge was premature.** The gate — tests, review, mergeability — was satisfied, and it
+was still not enough, because nothing in it exercised the seed bootstrap against live
+providers. That is a gap in how the track was validated, not in the gate as written.
+
+Fixed in [#44](https://github.com/vernerisirva/agentmempaper/pull/44): `ingest-seeds` gained
+`--allow-unresolved`, which reports unresolved ids as an error annotation and exits 0, and
+both workflows pass it. A manual run still exits 1. Engram's bootstrap carried the identical
+exposure and had simply never fired, because its four seeds were already in state.
+
+Before merging that fix, the failure path was verified against live providers on isolated
+copies of all four databases: exit 0 with the flag, exit 1 without, the wrong paper never
+written, the scheduled sequence continuing past the unresolved seed, and the repository's
+own databases byte-identical afterwards.
+
+### Second attempt — [35621364675](https://github.com/vernerisirva/agentmempaper/actions/runs/35621364675): SUCCESS
+
+Every step succeeded, and the failure path fired for real: three Computer Vision seeds were
+unresolved and the run continued anyway.
+
+| Verification | Result |
+| --- | --- |
+| Unresolved seeds do not abort the run | 3 unresolved (`1506.02640`, `2005.12872`, `2304.02643`); discovery step **succeeded** |
+| Reported loudly | GitHub `failure`-level annotation: *"computer_vision seed bootstrap left unresolved IDs: … Discovery continues; the next run retries them."* |
+| All four tracks' discovery continues | agent_memory 417 fetched, deep_research 100, engram 77, **computer_vision 100** — all after the unresolved seed |
+| Assessment stage normal | 7 walked, 3 assessed, **2 promoted**, 1 not; one paper each from agent_memory, computer_vision and deep_research |
+| Bounds honoured | 1 per track, 3 total ≤ 4; Engram nominated nothing and forfeited its slot rather than lending it |
+| Cost | $0.118116 against the unchanged $0.30 ceiling |
+| Private state persists | restored manifest v2, persisted manifest v2 — **now carrying `data/computer_vision/paper_scout.sqlite3`** |
+| Pages builds and deploys | deploy `success`; `/computer-vision/` returns **HTTP 200** |
+| Seeds stay retryable, not wrongly filled | "Micrograph segmentations for DDEVD" appears in **0** published files; all three unresolved anchors absent rather than substituted |
+
+The state transition is the migration completing in production: the restore carried the
+three-track snapshot, `computer_vision` was initialized, and the persist wrote all four.
+
+`2304.02643` is the interesting failure. OpenAlex answers that identifier with an entirely
+different paper, and the manifest's identity check refused it. The library would rather
+leave Segment Anything missing than publish the wrong manuscript under its id — which is
+the behaviour worth having, and it is now visible in production rather than theoretical.
 
 ## O. Live URL
 
@@ -548,16 +595,11 @@ No escalation to Kimi or Qwen was needed; DeepSeek converged in five rounds.
    OpenAlex genuinely 404s on `10.48550/arXiv.1506.02640` rather than throttling. Twelve
    spaced retries over the session did not succeed. The daily workflow bootstraps missing
    seeds on every run, so this resolves on the first scheduled run; verify it there.
-2. **The initial corpus is local and does not reach production state.** The private state
-   token is a repository secret, so the assessments in section H live only in this
-   workspace. Production starts the track from empty state and populates it at one paper
-   per day. The committed `docs/computer-vision/` is an honest snapshot of this local
-   corpus and will be replaced by the first scheduled build.
-3. **The other three libraries' `docs/` are unchanged in this PR**, so their navigation
-   does not yet link to Computer Vision. Rebuilding them from local state would have
-   rewritten 494 files against stale content, which §26 forbids; the scheduled run rebuilds
-   all four from restored production state and the link appears there. Verify after the
-   first run.
+2. **Resolved.** The local corpus never reached production state, as expected; production
+   built its own from empty state on run 35621364675 and now publishes 92 papers. The
+   committed `docs/computer-vision/` is that production build.
+3. **Resolved.** The scheduled run rebuilt all four libraries from restored production
+   state, so the Computer Vision navigation link is now live across them.
 4. **Screening imprecision, both directions.** Vision-transformer applications outside the
    named domain list can score as relevant, and a survey or an application whose title
    avoids the pattern vocabulary can fall to irrelevant rather than review. The domain list
@@ -584,5 +626,5 @@ No escalation to Kimi or Qwen was needed; DeepSeek converged in five rounds.
 
 ---
 
-COMPUTER_VISION_TRACK_READY: PENDING
-COMPUTER_VISION_OPERATIONAL_ASSESSMENT_ENABLED: PENDING
+COMPUTER_VISION_TRACK_READY: YES
+COMPUTER_VISION_OPERATIONAL_ASSESSMENT_ENABLED: YES

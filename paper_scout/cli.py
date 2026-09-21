@@ -312,7 +312,12 @@ def main(argv: list[str] | None = None) -> int:
         # is not an external input, but a malformed id would otherwise emit arbitrary
         # workflow commands. Collapsed and bounded, the same way the credential preflight
         # step already treats its reason string.
-        identifiers = " ".join(", ".join(str(i) for i in report["unresolved"]).split())[:400]
+        # The manifest caps a track at 20 seeds, so the joined identifiers cannot currently
+        # reach this bound -- 20 arXiv ids is about 240 characters. The bound and its marker
+        # exist so that a raised cap degrades visibly instead of dropping ids in silence.
+        collapsed = " ".join(", ".join(str(i) for i in report["unresolved"]).split())
+        identifiers = (collapsed if len(collapsed) <= 400
+                       else collapsed[:400] + " ... (truncated; the JSON report above is complete)")
         message = f"{config.track_id} seed bootstrap left unresolved IDs: {identifiers}"
         if args.allow_unresolved:
             print(f"::error::{message}. Discovery continues; the next run retries them.")

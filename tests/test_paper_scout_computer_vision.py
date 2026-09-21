@@ -945,7 +945,10 @@ class WorkflowIntegration(unittest.TestCase):
         from unittest.mock import patch
         from paper_scout.cli import main
 
+        calls: list[str] = []
+
         def unresolvable(arxiv_id=None, **_):
+            calls.append(arxiv_id)
             return PaperCandidate(title="A Completely Different Paper", authors=["Ada"],
                                   abstract="Unrelated.", source="openalex", source_id=arxiv_id,
                                   arxiv_id=arxiv_id, url="https://example.test/x",
@@ -962,13 +965,45 @@ class WorkflowIntegration(unittest.TestCase):
                 with patch("paper_scout.cli.load_config", return_value=config), \
                         patch("paper_scout.seeds.fetch_direct_paper", unresolvable), \
                         redirect_stdout(stdout), patch("sys.stderr", new=io.StringIO()) as stderr:
+                    calls.clear()
                     code = main(["ingest-seeds", "--track", TRACK, *flag])
+                # Prove the stub was the thing that ran. seeds.py imports the fetch into
+                # its own namespace, so that is the name patched above -- but a refactor
+                # that moved the binding would otherwise turn this into a silent network
+                # test rather than a failing one.
+                self.assertTrue(calls, "the patched fetch was bypassed; this hit the network")
                 self.assertEqual(code, expected_exit)
                 reported = stdout.getvalue() + stderr.getvalue()
                 self.assertIn("seed bootstrap left unresolved IDs", reported)
                 self.assertIn("::error::", reported, "an unresolved seed must stay loud")
                 # Nothing is written on either path.
                 self.assertEqual(PaperStore(config.sqlite_path).paper_count(), 0)
+
+    def test_a_long_unresolved_list_is_marked_rather_than_silently_cut(self):
+        """The 400-char bound is unreachable at the current 20-seed manifest cap.
+
+        It is still marked, so that raising the cap degrades visibly instead of dropping
+        identifiers from the annotation an operator actually reads.
+        """
+        from unittest.mock import patch
+        from paper_scout.cli import main
+        many = [f"24{index:02d}.0{index:04d}" for index in range(60)]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            report = {"track": TRACK, "checked_at": "2026-09-21T00:00:00+00:00",
+                      "notifications_sent": 0, "unresolved": many,
+                      "results": [{"arxiv_id": i, "status": "unresolved", "error": "x"} for i in many]}
+            config = replace(load_config(ROOT / TRACK_CONFIG_PATHS[TRACK], env={}),
+                             sqlite_path=root / "state.sqlite3", report_dir=root / "reports")
+            stdout = io.StringIO()
+            with patch("paper_scout.cli.load_config", return_value=config), \
+                    patch("paper_scout.seeds.ingest_seeds", return_value=report), \
+                    redirect_stdout(stdout), patch("sys.stderr", new=io.StringIO()):
+                main(["ingest-seeds", "--track", TRACK, "--allow-unresolved"])
+        annotation = next(line for line in stdout.getvalue().splitlines()
+                          if line.startswith("::error::"))
+        self.assertIn("truncated", annotation)
+        self.assertNotIn("\n", annotation)
 
     def test_the_unresolved_annotation_cannot_emit_extra_workflow_commands(self):
         """A workflow annotation is line-oriented and identifiers are not shape-constrained.

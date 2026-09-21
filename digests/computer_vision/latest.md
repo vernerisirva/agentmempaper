@@ -6,7 +6,7 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 
 ## Run Summary
 
-- **Run ID:** 3
+- **Run ID:** 1
 - **Candidates fetched:** 100
 - **New unique papers:** 93
 - **Relevant:** 25
@@ -33,11 +33,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 
 ## Highly Relevant
 
-### [DETRs Beat YOLOs on Real-time Object Detection](https://arxiv.org/abs/2304.08069v3)
+### [DETRs Beat YOLOs on Real-time Object Detection](http://arxiv.org/abs/2304.08069)
 
-- **Authors:** Yian Zhao, Wenyu Lv, Shangliang Xu, Jinman Wei, Guanzhong Wang, Qingqing Dang, et al.
+- **Authors:** Zhao, Yian, Lv, Wenyu, Shangliang Xu, Jinman Wei, Guanzhong Wang, Qingqing Dang, et al.
 - **Date:** 2023-04-17
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (100/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** object-detection, yolo, detr, efficient-vision, benchmark
@@ -53,11 +53,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, detr, segmentation, benchmark
 - **Abstract summary:** We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the t...
 
-### [Mask R-CNN](https://arxiv.org/abs/1703.06870v3)
+### [Mask R-CNN](http://arxiv.org/abs/1703.06870)
 
 - **Authors:** Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick
 - **Date:** 2017-03-20
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (100/100)
 - **Reason:** Studies object-detection architecture, training, or evaluation.
 - **Tags:** object-detection, segmentation, pose, efficient-vision, benchmark
@@ -123,16 +123,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, yolo, efficient-vision, benchmark
 - **Abstract summary:** We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL V...
 
-### [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640v5)
-
-- **Authors:** Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
-- **Date:** 2015-06-08
-- **Source:** arxiv
-- **Relevance:** relevant (99/100)
-- **Reason:** Studies YOLO-family or real-time object detection.
-- **Tags:** object-detection, yolo, efficient-vision
-- **Abstract summary:** We present YOLO, a new approach to object detection. Prior work on object detection repurposes classifiers to perform detection. Instead, we frame object detection as a regression problem to spatially separated bounding boxes and associated class probabilities. A single neural network predicts bounding boxes and cla...
-
 ### [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497v3)
 
 - **Authors:** Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun
@@ -193,6 +183,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, detr
 - **Abstract summary:** No abstract available.
 
+### [Segment Anything](https://arxiv.org/abs/2304.02643v1)
+
+- **Authors:** Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, et al.
+- **Date:** 2023-04-05
+- **Source:** arxiv
+- **Relevance:** relevant (96/100)
+- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
+- **Tags:** segmentation, visual-representation
+- **Abstract summary:** We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and tr...
+
 ### [YOLO-MDIR: a YOLO network based on multidirectional convolution for infrared object detection](https://doi.org/10.1117/12.3121343)
 
 - **Authors:** Z. Zhang, J. Deng, H. Wang, H. Zhang, L. Liu, C. Zhang, et al.
@@ -213,21 +213,21 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, yolo
 - **Abstract summary:** Coupled with vision-based inspection techniques, unmanned aerial vehicles (UAVs) have been extensively applied to power transmission line inspection. UAV images typically cover a wide field of view, they often contain complex backgrounds in power transmission line inspection, which make the accurate detection and lo...
 
-### [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934v1)
+### [YOLOv4: Optimal Speed and Accuracy of Object Detection](http://arxiv.org/abs/2004.10934)
 
 - **Authors:** Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao
 - **Date:** 2020-04-23
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (96/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** object-detection, yolo, efficient-vision, benchmark, metrics
 - **Abstract summary:** There are a huge number of features which are said to improve Convolutional Neural Network (CNN) accuracy. Practical testing of combinations of such features on large datasets, and theoretical justification of the result, is required. Some features operate on certain models exclusively and for certain problems exclu...
 
-### [YOLOX: Exceeding YOLO Series in 2021](https://arxiv.org/abs/2107.08430v2)
+### [YOLOX: Exceeding YOLO Series in 2021](http://arxiv.org/abs/2107.08430)
 
 - **Authors:** Zheng Ge, Songtao Liu, Feng Wang, Zeming Li, Jian Sun
 - **Date:** 2021-07-18
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (96/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** object-detection, yolo, efficient-vision, edge-deployment, benchmark
@@ -253,11 +253,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, efficient-vision
 - **Abstract summary:** Object detection at the edge requires a difficult balance among detection accuracy, deterministic latency, memory bandwidth, and energy consumption. Existing binarized accelerators replace multipliers with XNOR and population-count logic, but many designs use a fixed binary datapath or select precision only at the l...
 
-### [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929v2)
+### [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](http://arxiv.org/abs/2010.11929)
 
 - **Authors:** Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, et al.
 - **Date:** 2020-10-22
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
 - **Tags:** vision-transformer, visual-representation, benchmark
@@ -272,6 +272,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
 - **Tags:** segmentation, visual-representation
 - **Abstract summary:** Medical image segmentation is crucial for early disease diagnosis and precise treatment planning; however, its accuracy remains challenging due to factors such as blurred boundaries and morphological variations. This paper proposes a deep learning segmentation algorithm that integrates a boundary-aware loss function...
+
+### [DINOv2: Learning Robust Visual Features without Supervision](http://arxiv.org/abs/2304.07193)
+
+- **Authors:** Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, et al.
+- **Date:** 2023-04-14
+- **Source:** openalex
+- **Relevance:** relevant (93/100)
+- **Reason:** Studies visual backbones or vision-transformer architecture.
+- **Tags:** vision-transformer, visual-representation
+- **Abstract summary:** The recent breakthroughs in natural language processing for model pretraining on large quantities of data have opened the way for similar foundation models in computer vision. These models could greatly simplify the use of images in any system by producing all-purpose visual features, i.e., features that work across...
 
 ### [Object Surface Defect Segmentation using Vision Transformers and Hybrid Models](https://doi.org/10.63503/acset.109)
 
@@ -373,16 +383,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** vision-transformer
 - **Abstract summary:** With the evolution of deep learning based fake face generation, it has become easier to launch presentation attacks on face based biometric authentication systems.Especially with ability of generative adversarial networks (GAN) to generate fake faces as close to original, it is necessary to design effective techniqu...
 
-### [Segment Anything](https://arxiv.org/abs/2304.02643v1)
-
-- **Authors:** Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, et al.
-- **Date:** 2023-04-05
-- **Source:** arxiv
-- **Relevance:** relevant (91/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation
-- **Abstract summary:** We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and tr...
-
 ### [UAV-LiteDet: A Lightweight Small Object Detection Network for Low-Altitude UAV Scenarios](https://doi.org/10.54254/2755-2721/2026.36918)
 
 - **Authors:** Yining Zhang
@@ -403,11 +403,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** vision-transformer
 - **Abstract summary:** Abstract Copy-move forgery is a common form of image manipulation where a portion of an image is copied and pasted back into the image. This is especially difficult to detect when the forgery has been done on copied areas that have undergone post-processing operations, e.g. rotation, scaling, blurring etc. We propos...
 
-### [YOLOv3: An Incremental Improvement](https://arxiv.org/abs/1804.02767v1)
+### [YOLOv3: An Incremental Improvement](http://arxiv.org/abs/1804.02767)
 
 - **Authors:** Joseph Redmon, Ali Farhadi
 - **Date:** 2018-04-08
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (91/100)
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** yolo
@@ -854,16 +854,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
 - **Tags:** visual-representation
 - **Abstract summary:** The subaquatic environment presents a lot of challenges to image processing and computer vision through light degradation and absorption, light scattering, turbidity, and color distortion. These characteristics effectively eliminate visibility and fidelity in visual perceptual tasks that support the important featur...
-
-### [DINOv2: Learning Robust Visual Features without Supervision](https://arxiv.org/abs/2304.07193v2)
-
-- **Authors:** Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, et al.
-- **Date:** 2023-04-14
-- **Source:** arxiv
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** vision-transformer
-- **Abstract summary:** The recent breakthroughs in natural language processing for model pretraining on large quantities of data have opened the way for similar foundation models in computer vision. These models could greatly simplify the use of images in any system by producing all-purpose visual features, i.e., features that work across...
 
 ### [5G-Driven UAV Intelligence: Real-Time Tile Defect Detection in Mobile Networks](https://doi.org/10.1007/s11036-026-02529-1)
 

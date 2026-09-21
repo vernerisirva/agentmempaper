@@ -466,6 +466,7 @@ COMPUTER_VISION_EXCLUDE_PATTERNS = {
     "retrieval-augmented generation": r"\bretrieval[- ]augmented generation\b|\brag (?:system|pipeline|framework)s?\b",
     "language-agent framework": r"\b(?:llm|language[- ]model|multi)[- ]agent (?:framework|system|architecture|orchestration|workflow)s?\b|\btool[- ]using agents?\b",
     "recommender system": r"\brecommend(?:er|ation) systems?\b|\bcollaborative filtering\b",
+    "text-only model": r"\btext[- ]only\b|\blanguage[- ]only\b",
     "image generation only": r"\btext[- ]to[- ]image\b|\bimage synthesis\b|\bgenerative (?:image|diffusion) models?\b",
 }
 
@@ -513,9 +514,11 @@ COMPUTER_VISION_GENERAL_METHOD_LABELS = frozenset({
     "generality claim", "training or matching method",
 })
 
+#: Only statements about *this* work. "text-only" is deliberately absent: a
+#: vision-language paper routinely writes "unlike text-only language models, we ...", and
+#: a hard negation on that phrase excluded a real open-vocabulary detection paper. It is an
+#: exclude signal instead, where a high-confidence vision hit overrides it.
 NEGATED_COMPUTER_VISION_PATTERNS = [
-    r"\btext[- ]only\b",
-    r"\blanguage[- ]only\b",
     r"\bwithout (?:any )?(?:visual|vision|image|perceptual) (?:input|inputs|component|components|perception|supervision)\b",
     r"\bdoes not (?:include|study|evaluate|address) (?:visual|vision|image|object detection|computer vision)\b",
     r"\bno (?:visual|vision|perception) (?:component|contribution)\b",

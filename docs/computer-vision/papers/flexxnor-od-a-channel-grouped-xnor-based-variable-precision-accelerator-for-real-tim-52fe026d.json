@@ -4,7 +4,7 @@
     "https://doi.org/10.48175/ijarsct-38402",
     "https://openalex.org/W7213344478"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": null,
   "authors": [
     "Budidha Sriman and D. Sateesh"
@@ -15,16 +15,16 @@
   "detail_page": "papers/flexxnor-od-a-channel-grouped-xnor-based-variable-precision-accelerator-for-real-tim-52fe026d.html",
   "doi": "10.48175/ijarsct-38402",
   "effective_sort_date": "2026-09-15",
-  "first_seen_at": "2026-09-21 09:56:38",
+  "first_seen_at": "2026-09-21 10:47:15",
   "first_seen_date": "2026-09-21",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-21 10:03:28",
+  "last_seen_at": "2026-09-21 10:47:15",
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "review",
-  "newly_discovered_in_latest_run": false,
+  "newly_discovered_in_latest_run": true,
   "notified_at": null,
   "notified_date": null,
   "openalex_id": "W7213344478",
@@ -33,9 +33,9 @@
     "curated": false,
     "curation_note": null,
     "date_source": "openalex",
-    "first_seen_at": "2026-09-21 09:56:38",
-    "generated_at": "2026-09-21 10:19:37",
-    "last_seen_at": "2026-09-21 10:03:28",
+    "first_seen_at": "2026-09-21 10:47:15",
+    "generated_at": "2026-09-21 10:53:16",
+    "last_seen_at": "2026-09-21 10:47:15",
     "metadata_sources": [
       "openalex"
     ],
@@ -95,18 +95,19 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-21T10:13:36.495249+00:00",
+    "assessed_at": "2026-09-21T10:49:31.742697+00:00",
     "assessment_scope": "full_text",
     "assessment_version": "quality-promotion-v2",
     "assessor_model": "gemini-3.8-flash",
     "assessor_type": "hybrid",
     "combined_rank_score": 0.94,
     "concerns": [
-      "The accelerator has no functioning synthesized implementation: the testbench was set as the synthesis top, producing zero retained cells and an empty netlist.",
-      "No empirical evaluation exists; FPGA resource, power, frame rate, and detection accuracy tables are filled with TBD placeholders, and the conclusion defers detector training and dataset evaluation to future work.",
-      "The reported power and waveform outputs are preliminary and invalidated by the empty-netlist synthesis and an incomplete transaction trace (start and done both low), so the limited hardware results do not corroborate the architectural claims."
+      "The manuscript contains no completed empirical validation: FPGA implementation metrics and detection accuracy (mAP) results are presented as 'TBD' placeholders.",
+      "The reported synthesis attempt produced zero retained cells because the testbench was used as the synthesis top, yielding 0.0 W dynamic power and an empty device view, so no functioning accelerator was demonstrated.",
+      "The behavioral simulation does not demonstrate an executed accelerator transaction because start and done remain low, and the claimed hardware correctness cannot be verified from the captured waveform.",
+      "Headline performance and storage figures are explicitly labeled as pre-synthesis analytical estimates rather than measured results, leaving the central efficiency claims unsupported."
     ],
-    "concise_summary": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
+    "concise_summary": "Scientific promotion requires meaningful evaluation or empirical validation. Because the RTL implementation was not properly synthesized, verified, or benchmarked, and the experimental tables contain only placeholders, scientific confidence cannot be established.",
     "confidence": "low",
     "coverage": {
       "assessment_input_characters": 54253,
@@ -1474,6 +1475,90 @@
         "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
         "dimension": "contribution_clarity",
         "evidence_ids": [
+          "E533113275e612f60-B0039"
+        ],
+        "excerpt": "Let C_in be the number of input channels, K the kernel dimension, L the number of binary operands processed per PE \ncycle, and B\n\u2093 and B_w the activation and weight precisions. Ignoring pipeline fill and memory st\nalls, the cycles \nrequired for one output\n-\nchannel group and one output pixel are:\n \n\u0000\ngroup\n=\n\u0000\n\u0000\nin\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\nlane\n(\n4\n)\n \nwhere F_lane is the effective lane\n-\nfusion parallelism. For the four\n-\nslice PE, F_lane = 4 in fully independent\n \nbinary \nmode, 2 for paired 2\n-\nbit groups, and 1 when all slices cooperate. The effective binary\n-\npair throughput is:\n \n\u0000\nbit\n=\n\u0000\nclk\n\u00d7\n\u0000\nPE\n\u00d7\n\u0000\n(\n5\n)\n \nFor N_PE = 64, L = 64 aggregate XNOR bits per PE, and f_clk = 200 MHz, T_bit equals 819.2 Gbinary\n-\nMAC/s.\n \nCounting the binary product and accumulation as two operations gives 1.638 TOPS.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cycle And Throughput Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "4be4d76eeeb3a175ee3e0cdae72d8625a58b3b7f6c99ac082482d8638af8c0f0",
+            "evidence_id": "E533113275e612f60-B0039",
+            "pages": [
+              6
+            ],
+            "section": "Cycle And Throughput Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 807,
+                "page": 6,
+                "section": "Cycle And Throughput Model",
+                "section_index": 23,
+                "start": 0,
+                "text": "Let C_in be the number of input channels, K the kernel dimension, L the number of binary operands processed per PE \ncycle, and B\n\u2093 and B_w the activation and weight precisions. Ignoring pipeline fill and memory st\nalls, the cycles \nrequired for one output\n-\nchannel group and one output pixel are:\n \n\u0000\ngroup\n=\n\u0000\n\u0000\nin\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\nlane\n(\n4\n)\n \nwhere F_lane is the effective lane\n-\nfusion parallelism. For the four\n-\nslice PE, F_lane = 4 in fully independent\n \nbinary \nmode, 2 for paired 2\n-\nbit groups, and 1 when all slices cooperate. The effective binary\n-\npair throughput is:\n \n\u0000\nbit\n=\n\u0000\nclk\n\u00d7\n\u0000\nPE\n\u00d7\n\u0000\n(\n5\n)\n \nFor N_PE = 64, L = 64 aggregate XNOR bits per PE, and f_clk = 200 MHz, T_bit equals 819.2 Gbinary\n-\nMAC/s.\n \nCounting the binary product and accumulation as two operations gives 1.638 TOPS."
+              }
+            ],
+            "text": "Let C_in be the number of input channels, K the kernel dimension, L the number of binary operands processed per PE \ncycle, and B\n\u2093 and B_w the activation and weight precisions. Ignoring pipeline fill and memory st\nalls, the cycles \nrequired for one output\n-\nchannel group and one output pixel are:\n \n\u0000\ngroup\n=\n\u0000\n\u0000\nin\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\nlane\n(\n4\n)\n \nwhere F_lane is the effective lane\n-\nfusion parallelism. For the four\n-\nslice PE, F_lane = 4 in fully independent\n \nbinary \nmode, 2 for paired 2\n-\nbit groups, and 1 when all slices cooperate. The effective binary\n-\npair throughput is:\n \n\u0000\nbit\n=\n\u0000\nclk\n\u00d7\n\u0000\nPE\n\u00d7\n\u0000\n(\n5\n)\n \nFor N_PE = 64, L = 64 aggregate XNOR bits per PE, and f_clk = 200 MHz, T_bit equals 819.2 Gbinary\n-\nMAC/s.\n \nCounting the binary product and accumulation as two operations gives 1.638 TOPS."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0041"
+        ],
+        "excerpt": "If p_b is the fraction of weights assigned precision b, the average stored width is:\n \n\u0000\navg\n=\n\u0000\n\u0000\n\u0000\n\u0000\n\u2208\n{\n\u0000\n,\n\u0000\n,\n\u0000\n,\n\u0000\n}\n\u2009\n\u0000\n(\n6\n)\n \nCompression\n\u0000\u0000\u0000\n\u0000\n=\n8\n\u0000\n\u0000\u0000\u0000\n,\n \nCompression\n\u0000\u0000\n\u0000\u0000\n=\n32\n\u0000\n\u0000\u0000\u0000\n(\n7\n)\n \nThe illustrative map used in this paper assigns 60% of parameters to 1 bit, 20% to 2 bits, 12% to 4 bits, and 8% to 8 \nbits. The resulting B_avg is 2.12 bits, corresponding to 3.77\u00d7 compression relative to INT\n8 and 15.1\u00d7 relative to FP32, \nexcluding the small precision metadata.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Storage Model",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "30a2de772e60903bb7ceb0797d7c4c9be1f2fb1db907b1d0bed7576282ba3213",
+            "evidence_id": "E533113275e612f60-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Storage Model",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 484,
+                "page": 7,
+                "section": "Storage Model",
+                "section_index": 25,
+                "start": 0,
+                "text": "If p_b is the fraction of weights assigned precision b, the average stored width is:\n \n\u0000\navg\n=\n\u0000\n\u0000\n\u0000\n\u0000\n\u2208\n{\n\u0000\n,\n\u0000\n,\n\u0000\n,\n\u0000\n}\n\u2009\n\u0000\n(\n6\n)\n \nCompression\n\u0000\u0000\u0000\n\u0000\n=\n8\n\u0000\n\u0000\u0000\u0000\n,\n \nCompression\n\u0000\u0000\n\u0000\u0000\n=\n32\n\u0000\n\u0000\u0000\u0000\n(\n7\n)\n \nThe illustrative map used in this paper assigns 60% of parameters to 1 bit, 20% to 2 bits, 12% to 4 bits, and 8% to 8 \nbits. The resulting B_avg is 2.12 bits, corresponding to 3.77\u00d7 compression relative to INT\n8 and 15.1\u00d7 relative to FP32, \nexcluding the small precision metadata."
+              }
+            ],
+            "text": "If p_b is the fraction of weights assigned precision b, the average stored width is:\n \n\u0000\navg\n=\n\u0000\n\u0000\n\u0000\n\u0000\n\u2208\n{\n\u0000\n,\n\u0000\n,\n\u0000\n,\n\u0000\n}\n\u2009\n\u0000\n(\n6\n)\n \nCompression\n\u0000\u0000\u0000\n\u0000\n=\n8\n\u0000\n\u0000\u0000\u0000\n,\n \nCompression\n\u0000\u0000\n\u0000\u0000\n=\n32\n\u0000\n\u0000\u0000\u0000\n(\n7\n)\n \nThe illustrative map used in this paper assigns 60% of parameters to 1 bit, 20% to 2 bits, 12% to 4 bits, and 8% to 8 \nbits. The resulting B_avg is 2.12 bits, corresponding to 3.77\u00d7 compression relative to INT\n8 and 15.1\u00d7 relative to FP32, \nexcluding the small precision metadata."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
           "E533113275e612f60-B0046"
         ],
         "excerpt": "The source material supplied for this study d\nid not contain completed synthesis, power, or dataset measurements. \nConsequently, this section reports analytical estimates derived from the architecture parameters in Table 1 and \nexplicitly labels them as pre\n-\nsynthesis values. No measured FPGA resource or\n \ndetection\n-\naccuracy result is fabricated.",
@@ -1547,6 +1632,48 @@
               }
             ],
             "text": "ated and that \nthe intended memory\n-\nfetch\n-\ncompute data path is structurally connected. However, the post\n-\nsynthesis screenshots also \nreveal that the testbench appears to have been used as the synthesis top, causing the implemented logic to be removed \nor optim\nized away. Consequently, the supplied power and device\n-\nview values should be reported as preliminary tool \noutputs rather than final hardware results."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0064"
+        ],
+        "excerpt": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n29\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \n \nFigure 3. Device view of the synthesized netlist. No visible accelerator placement is present because the repo\nrted \nsynthesis top contains zero retained cells.\n \nVivado completed the synthesis command without errors or critical warnings. The report records 97 informational \nmessages, 14 warnings, 0 critical warnings, and 0 errors. The synth_design stage required appro\nximately 23 s of CPU \ntime, 1 min 31 s of elapsed time, and a peak ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: J A R S C T",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "fc4a3d567c90b64de46d7d0e1bd21d3c7bf170bb81d16f660826d7f3d6ecdeda",
+            "evidence_id": "E533113275e612f60-B0064",
+            "pages": [
+              11
+            ],
+            "section": "Appendix: J A R S C T",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 11,
+                "section": "Appendix: J A R S C T",
+                "section_index": 44,
+                "start": 0,
+                "text": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n29\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \n \nFigure 3. Device view of the synthesized netlist. No visible accelerator placement is present because the repo\nrted \nsynthesis top contains zero retained cells.\n \nVivado completed the synthesis command without errors or critical warnings. The report records 97 informational \nmessages, 14 warnings, 0 critical warnings, and 0 errors. The synth_design stage required appro\nximately 23 s of CPU \ntime, 1 min 31 s of elapsed time, and a peak "
+              }
+            ],
+            "text": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n29\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \n \nFigure 3. Device view of the synthesized netlist. No visible accelerator placement is present because the repo\nrted \nsynthesis top contains zero retained cells.\n \nVivado completed the synthesis command without errors or critical warnings. The report records 97 informational \nmessages, 14 warnings, 0 critical warnings, and 0 errors. The synth_design stage required appro\nximately 23 s of CPU \ntime, 1 min 31 s of elapsed time, and a peak "
           }
         ],
         "statement_kind": null,
@@ -1768,48 +1895,6 @@
         "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
         "dimension": "contribution_clarity",
         "evidence_ids": [
-          "E533113275e612f60-B0073"
-        ],
-        "excerpt": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity.",
-        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
-        "page": 13,
-        "pages": [
-          13
-        ],
-        "paraphrase": "Canonical source cited in the scientific promotion review.",
-        "section": "Appendix: Conclusion And Future Work",
-        "signal_type": "concern",
-        "source_blocks": [
-          {
-            "content_hash": "a0ac410fd96ea2b2c75b3e9682b34a081a80314715c7e85a61bb2b4b8976c0be",
-            "evidence_id": "E533113275e612f60-B0073",
-            "pages": [
-              13
-            ],
-            "section": "Appendix: Conclusion And Future Work",
-            "section_role": "appendix",
-            "source_spans": [
-              {
-                "end": 1205,
-                "page": 13,
-                "section": "Appendix: Conclusion And Future Work",
-                "section_index": 49,
-                "start": 897,
-                "text": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity."
-              }
-            ],
-            "text": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity."
-          }
-        ],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
-        "dimension": "contribution_clarity",
-        "evidence_ids": [
           "E533113275e612f60-B0099"
         ],
         "excerpt": "ts Template\n \nThe following tables are included so that measured results can be inserted without restructuring the manuscript. \nReplace \"TBD\" only after obtaining Vivado implementation reports, board\n-\nlevel power measurements, and detector \nevaluation outputs.\n \nMetric\n \nProposed FlexXNOR\n-\nOD\n \nMeasurement method\n \nFPGA device\n \nTBD\n \nExact part number\n \nClock frequency\n \nTBD MHz\n \nPost\n-\nroute timing\n \nLUTs / LUTRAM\n \nTBD\n \nVivado utilization report\n \nFlip\n-\nflops\n \nTBD\n \nVivado utilization report",
@@ -1901,31 +1986,35 @@
     "promotion": {
       "adjudicator": {
         "blocking_reasons": [
-          "The accelerator has no functioning synthesized implementation: the testbench was set as the synthesis top, producing zero retained cells and an empty netlist.",
-          "No empirical evaluation exists; FPGA resource, power, frame rate, and detection accuracy tables are filled with TBD placeholders, and the conclusion defers detector training and dataset evaluation to future work.",
-          "The reported power and waveform outputs are preliminary and invalidated by the empty-netlist synthesis and an incomplete transaction trace (start and done both low), so the limited hardware results do not corroborate the architectural claims."
+          "The manuscript contains no completed empirical validation: FPGA implementation metrics and detection accuracy (mAP) results are presented as 'TBD' placeholders.",
+          "The reported synthesis attempt produced zero retained cells because the testbench was used as the synthesis top, yielding 0.0 W dynamic power and an empty device view, so no functioning accelerator was demonstrated.",
+          "The behavioral simulation does not demonstrate an executed accelerator transaction because start and done remain low, and the claimed hardware correctness cannot be verified from the captured waveform.",
+          "Headline performance and storage figures are explicitly labeled as pre-synthesis analytical estimates rather than measured results, leaving the central efficiency claims unsupported."
         ],
         "canonical_id": "doi:10.48175/ijarsct-38402",
         "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
         "evaluation_independence": {
           "concern": "none",
           "corroboration_direction": "not_applicable",
-          "corroboration_summary": "No independent measurement is reported; the manuscript states that synthesis, power, and dataset measurements were not contained in the source material, with results tables left as TBD placeholders.",
-          "final_evaluation_signal": "The headline outcomes are analytical throughput and storage estimates derived from the same architectural parameterization.",
-          "independent_corroboration": "absent",
-          "optimization_signal": "The precision-assignment policy is driven by sensitivity-based detection-loss calibration during training.",
+          "corroboration_summary": "No evaluator-independent measurement is possible because the manuscript contains only analytical estimates and incomplete synthesis or simulation outputs with no dataset-level accuracy or post-route resource results.",
+          "final_evaluation_signal": "Analytical throughput and storage formulas, along with preliminary and largely inactive Vivado synthesis and simulation reports.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Analytical design choices such as channel-group precision assignment and lane-fusion scheduling.",
           "signal_reuse": "not_applicable"
         },
         "evidence_ids": [
           "E533113275e612f60-B0046",
           "E533113275e612f60-B0060",
+          "E533113275e612f60-B0064",
           "E533113275e612f60-B0065",
           "E533113275e612f60-B0066",
           "E533113275e612f60-B0069",
+          "E533113275e612f60-B0071",
           "E533113275e612f60-B0099",
           "E533113275e612f60-B0104",
-          "E533113275e612f60-B0072",
-          "E533113275e612f60-B0073"
+          "E533113275e612f60-B0039",
+          "E533113275e612f60-B0041",
+          "E533113275e612f60-B0072"
         ],
         "promotion_decision": "uncertain",
         "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b"
@@ -1949,17 +2038,17 @@
       "outcome": "success",
       "primary": {
         "canonical_id": "doi:10.48175/ijarsct-38402",
-        "claim_evidence_alignment": "The authors explicitly acknowledge that synthesis, implementation, timing closure, power measurement, and dataset evaluations (e.g., PASCAL VOC/COCO mAP) were not completed and remain future work.",
+        "claim_evidence_alignment": "The paper transparently acknowledges that the presented numerical results are pre-synthesis analytical estimates and template placeholders, but this leaves the substantive empirical claims completely unvalidated.",
         "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
         "decision": "uncertain",
-        "evaluation_assessment": "No empirical evaluation is completed. The manuscript contains only pre-synthesis analytical estimates, a static device power report on an empty netlist, an incomplete behavioral simulation waveform, and templates filled with 'TBD' values for FPGA utilization, frame rate, and detection accuracy.",
+        "evaluation_assessment": "The empirical evaluation is largely absent or filled with placeholder template values ('TBD'). Synthesis yielded zero retained cells and 0.0 W dynamic power, behavioral simulation captured an inactive state without execution, and no object detection accuracy (mAP) or hardware benchmark figures were measured.",
         "evaluation_independence": {
           "concern": "none",
-          "corroboration_direction": "not_applicable",
-          "corroboration_summary": "No empirical measurements or model evaluations are reported in the manuscript; results tables consist of TBD placeholders.",
-          "final_evaluation_signal": "Theoretical peak MAC/TOPS throughput formulas and unpopulated experimental tables.",
-          "independent_corroboration": "not_applicable",
-          "optimization_signal": "Analytical design equations and sensitivity-based precision assignment planning.",
+          "corroboration_direction": "unavailable",
+          "corroboration_summary": "All experimental tables (Table A1 and Table A2) contain 'TBD' placeholders, and no completed synthesis, board measurements, or mAP evaluation were executed.",
+          "final_evaluation_signal": "Vivado synthesis/simulation reports and proposed object detection evaluation templates (PASCAL VOC / COCO mAP and timing metrics).",
+          "independent_corroboration": "absent",
+          "optimization_signal": "Analytical throughput formulas and sensitivity-based channel-group precision assignment.",
           "signal_reuse": "not_applicable"
         },
         "evidence_ids": [
@@ -1972,23 +2061,23 @@
           "E533113275e612f60-B0099",
           "E533113275e612f60-B0104"
         ],
-        "limitations": "The authors candidly state limitations and threats to validity, specifically that empirical validation on datasets and actual FPGA resource/power metrics are completely pending.",
-        "method_assessment": "While the architectural concepts and analytical formulas are described, the hardware implementation is incomplete; the authors note that the synthesis testbench was accidentally set as the top module, optimizing away the logic and leaving an empty netlist.",
-        "quality_rationale": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
-        "scoped_contribution": "The paper proposes FlexXNOR-OD, an FPGA accelerator architecture concept for object detection featuring channel-group variable-precision scheduling and lane-fusible XNOR processing elements.",
+        "limitations": "The authors explicitly disclose that actual synthesis, power measurements, board-level execution, and detector accuracy tests on datasets like COCO or VOC were not completed.",
+        "method_assessment": "The architecture introduces conceptual designs for 16-channel grouped precision and a 64-PE array with 4-slice fusible processing elements. However, the hardware description and implementation are incomplete, as synthesis failed to retain logic due to setting the testbench as the synthesis top.",
+        "quality_rationale": "Scientific promotion requires meaningful evaluation or empirical validation. Because the RTL implementation was not properly synthesized, verified, or benchmarked, and the experimental tables contain only placeholders, scientific confidence cannot be established.",
+        "scoped_contribution": "The paper proposes FlexXNOR-OD, an FPGA accelerator architecture combining channel-grouped precision assignment (1, 2, 4, or 8 bits) with lane-fusible XNOR processing elements for edge object detection.",
         "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b"
       },
       "primary_model": "gemini-3.8-flash",
       "primary_provider": "google",
       "provenance_status": "pass"
     },
-    "rationale": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
+    "rationale": "Scientific promotion requires meaningful evaluation or empirical validation. Because the RTL implementation was not properly synthesized, verified, or benchmarked, and the experimental tables contain only placeholders, scientific confidence cannot be established.",
     "recommendation": "unknown",
     "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b",
     "status": "uncertain",
     "suppressed": false,
-    "uncertainty": "The authors candidly state limitations and threats to validity, specifically that empirical validation on datasets and actual FPGA resource/power metrics are completely pending."
+    "uncertainty": "The authors explicitly disclose that actual synthesis, power measurements, board-level execution, and detector accuracy tests on datasets like COCO or VOC were not completed."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

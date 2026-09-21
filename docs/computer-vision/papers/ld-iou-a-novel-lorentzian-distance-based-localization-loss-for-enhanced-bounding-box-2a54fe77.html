@@ -60,13 +60,13 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality reviewed</h2>
-      <p>The study presents a clear, well-scoped methodological advancement with transparent loss function equations and rigorous empirical validation. The experimental protocol ensures proper baselines with fixed hyperparameters, addresses potential leakage via patient-level splits, and verifies generalizability across multiple detector architectures and an external dataset.</p>
-      <p>The authors acknowledge limitations including primary validation on single-modality X-ray datasets from OAI, the need for evaluation on larger patient-independent cohorts across multi-center clinical settings, and testing on other imaging modalities such as MRI or CT.</p>
+      <p>The manuscript presents a clearly motivated, mathematically sound, and thoroughly benchmarked localization loss. The extensive comparative evaluation against current state-of-the-art IoU variants and diverse model architectures, along with ablation, multi-seed statistical testing, and data leakage checks, demonstrates scientific rigor justifying admission.</p>
+      <p>The authors explicitly address key limitations, noting that initial experiments relied on Kaggle OAI image-level splits, confirming robustness via patient-level splits and external dataset testing, while noting that future work remains needed for larger multi-center cohorts and modalities such as MRI/CT.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: International journal of intelligent engineering and systems. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
         <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-21T10:12:33.165973+00:00.</p>
+        <p>Assessed: 2026-09-21T10:48:30.294449+00:00.</p>
         <p>Coverage: 87788 of 87788 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
         <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Distance Intersection over Union (LD -IoU) localization loss integrated
 into the YOLOv8 framework. B y incorporating the Lorentzian distance into the conventional IoU formulation, the
@@ -76,7 +76,46 @@ outperforms the baseline YOLOv8 and existing IoU -based localization losses. The
 achieved 99.1% precision, 94.2% mAP@0.5:0.95, 99.6% mAP@0.5, and 98.8% recall, while reducing the Box Loss
 from 0.291 to 0.093, corresponding to an approximately 68% relative reduction. Furthermore, the proposed localization
 loss demonstrated faster convergence than the conventional IoU loss, achieving high mAP@0.5 in fewer training
-epochs and providing more eff icient </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(𝑥𝑔, 𝑦𝑔) denote the center
+epochs and providing more eff icient </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+contributions can be listed as follows:
+• A novel Lorentzian Distance Intersection over
+Union (LD-IoU) localization loss is proposed
+to improve bounding -box regression by
+incorporating the Lorentzian distance into the
+conventional IoU formulation, enabling more
+accurate localization and faster optimization
+during training.
+• The proposed LD -IoU is integrated into the
+YOLOv8 framework and extensively
+evaluated on the OAI dataset, achieving 99.6%
+mAP@0.5 and reducing the Box Loss from
+0.291 to 0.093 compared with the conventional
+IoU.
+• Comprehensive experiments demonstrate that
+the proposed LD-IoU consistently outperforms
+IoU, GIoU, DIoU, CIoU, and SIoU while
+exhibiting demonstrating strong generalization
+across one -stage and two -stage object
+detection fr ameworks, producing tighter and
+more accurate bounding boxes.
+The rest of the paper will be presented as </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Experiments performed within this study are
+carried out based on the publicly availabl e Knee
+Osteoarthritis Severity Dataset obtained from the
+Kaggle repository, which is derived from the original
+Osteoarthritis Initiative (OAI) database [23]. The
+Kaggle version provides preprocessed knee X -ray
+images annotated according to the Kellgren –
+Lawrence (KL) grading system and was used
+throughout this study. Since the publicly available
+Kaggle dataset does not provide patient identifiers or
+subject-level metadata, the primary experiments were
+conducted using an image-level partitioning strategy.
+An additional patient-level evaluation using data with
+available patient identifiers was subsequently
+performed to assess the potential risk of patient-level
+data leakage. Therefore, the dataset was divided into
+training, validation, and testing subsets using  an
+approximately </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(𝑥𝑔, 𝑦𝑔) denote the center
 coordinates of the predicted and ground -truth
 bounding boxes, respectively. To evaluate the
 contribution of the Lorentzian distance term alone, an
@@ -124,24 +163,7 @@ dimensions of the smallest enclosing box, it provides
 scale-invariant localization for obj ects of different
 sizes. Moreover, the logarithmic formulation is
 continuous and differentiable, while the constant ε
-guarantees numerical </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The suggested LD -IoU-YOLOv8 algorithm was
-developed through the ap plication of the Ultralytics
-YOLOv8 library, which was based on the PyTorch
-deep learning framework. In order to make a
-comparison unbiased, the baseline YOLOv8 and the
-LD-IoU-YOLOv8 models were trained in equal
-experimental settings. The only difference between
-the models was their loss functions concerning
-localization, while all other aspects were the same.
-OAI Dataset was initially annotated through
-Roboflow platform, and it was subsequently
-preprocessed by resizing all knee X -ray images into
-640 × 640 pixels before training the model. While
-training the model, same value of batch size, learning
-rate, optimizer, and training epochs were used for
-both models in order to prevent any effect from
-training parameters on the result. The detection
-accuracy was calculated by the metrics. The complete </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>localization loss functions
+guarantees numerical </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>localization loss functions
 In order to test the efficacy of the proposed LD -
 IoU loss, some more experiments were done using
 the localization loss function of YOLOv8 with other
@@ -179,40 +201,46 @@ SIoU 97.6 96.8 98.5 91.6 0.118
 EIoU 97.9 97.1 98.8 92.3 0.109
 WIoU 98.2 97.6 99.0 92.8 0.101
 Shape-IoU 98.5 98.0 99.2 93.4 0.097
-LD-IoU (Proposed) 99.1 98.8 99.6 94.2 0.093</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>localization
-performance compared with the baseline YOLOv8
-model, demonstrating the effectiveness of
-incorporating the Lorentzian distance term into the
-localization loss. Furthermore, the proposed LD-IoU
-achieved the best performance by using the
-normalized Lorentzian distance, resulting in more
-accurate and scale-invariant bounding-box regression.
-Particularly, the proposed method allowed us to
-increase Precision up to 99.1% (initi ally 92.7%),
-Recall up to 98.8% (initially 91.6%), mAP@0.5 up to
-99.6% (initially 92.8%) and mAP@0.5:0.95 up to
-94.2% (initially 75.7%), as well as to reduce Box
-Loss from 0.291 to 0.093.</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>IoU across object detection architectures
-Further inve stigations on the generalization
-ability of the proposed LD-IoU localization loss were
-conducted by adopting the loss function in
-representative one -stage and two -stage object
-detection architectures and replacing their existing
-IoU losses. To ensure a fai r and reproducible
-comparison, all evaluated detectors were trained
-under identical experimental conditions. Specifically,
-all YOLO -based detectors employed the Medium
-(M) model architecture (YOLOv5m, YOLOv7,
-YOLOv8m, YOLOv9m, YOLOv10m, and
-YOLOv11m), while the Cascade R -CNN, Mask R -
-CNN, and Faster R -CNN detectors were
-implemented using the standard ResNet -50-FPN
-backbone.
+LD-IoU (Proposed) 99.1 98.8 99.6 94.2 0.093</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In order to assess the impact of LD -IoU loss
+function on the detection performance, an ablation
+study was conducted. This study focused on the
+impact of Lorentzian distance and its normalization
+under identical experimental settings. The following
+three experiments were designed and run under t he
+same experimental settings on the OAI dataset: the
+baseline YOLOv8 model with the default IoU loss,
+the intermediate IoU+LD formulation defined in Eq.
+(7), in which the raw Lorentzian distance term 𝐷𝐿
+was incorporated into the conventional IoU
+regression loss, and our final LD -IoU loss function
+defined in Eq. (1 0), which replaces the raw
+Lorentzian distance with the normalized Lorentzian
+distance 𝐷𝐿𝑁. This comparison was made after 100
+training epochs with the same training and testing
+protocols used. As shown in Table 8, the intermediate
+IoU+LD formulation improved the </blockquote></details></li><li><strong>Contribution clarity — pages 15–16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>https://creativecommons.org/licenses/by-sa/4.0/
+KL
+Grade Input Image YoloV8 (Default IoU) Proposed YoloV8 (LD-IoU)
+KL0
 
+KL1
 
+KL2
 
-Figure. 10 Epoch-wise convergence comparison of different localization loss functions during the 100 -epoch training
-process</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLOv7,
+KL3
+
+KL4
+
+Figure. 9 Qualitative comparison of knee joint localization using the baseline YOLOv8 and the proposed LD-IoU-
+YOLOv8 across the five KL grades
+
+Table 8. Ablation study of the proposed LD-IoU on the OAI dataset after 100 training epochs
+Configuration P (%) R (%) mAP@0.5 (%) Box Loss
+YOLOv8 (Default IoU) 92.7 91.6 92.8 0.291
+YOLOv8 + Raw Lorentzian Distance (IoU+LD, Eq. (7)) 97.8 96.9 98.3 0.134
+Proposed LD-IoU-YOLOv8 (Normalized LD, Eq. (10)) 99.1 98.8 99.6 0.093
+Received:  June 28, 2026.     Revised: August 11, 2026.                                                                                                    498
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>YOLOv7,
 YOLOv8, YOLOv9, YOLOv10, and YOLOv11
 increased from 97.0% to 98.8%, 95.4% to 97.9%,
 92.8% to 99.6%, 93.1% to 98.3%, 95 .6% to 98.9%,
@@ -298,18 +326,30 @@ of 70%, 20%, and 10%. As depicted in Table 13, the
 patient-level splitting strategy yielded 98.3%
 Precision, 98.0% Recall, 98.6% mAP@0.5, and
 92.8% mAP@0.5:0.95 scores. Relative to the image-
-level splitting, </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the drop was just 0.8, 0.8, 1.0, and 1.4
-percentage points, respectively.
-The most noticeable drop was registered in the
-mAP@0.5:0.95 metric, whereas the decrease in
-mAP@0.5 metric was a mere 1.0 percentage point.
-Such slight drops suggest that the suggested LD-IoU-
-YOLOv8 demonstrates high -level detection and
-localization skills under the stricter patient -level
-splitting setting. Additionally, the strict separation of
-patients among the training, validation, and test
-subsets prevents patient-level overlap and eliminates
-patient-level data leakage in this evaluation.</blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despite the superiority of the proposed LD -IoU
+level splitting, </blockquote></details></li><li><strong>Contribution clarity — page 20</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>In order to measure the performance of the
+proposed framework, its performance was compared
+with those of some recent object detection studies
+conducted on the OAI dataset, as presented in Table
+14.
+
+Table 13. Performance of the proposed LD-IoU-YOLOv8 under image-level and patient-level partitioning
+Partition Strategy Precision (%) Recall (%) mAP@0.5 (%) mAP@0.5:0.95 (%)
+Image-level split 99.1 98.8 99.6 94.2
+Patient-level split 98.3 98.0 98.6 92.8
+
+Table 14. Performance Comparison of the Proposed LD-IoU Loss Function with Recent Object Detection Models and
+IoU-Based Localization Loss Functions
+Ref/Year Dataset Model Architecture Localization Loss Precision
+(%)
+Recall
+(%)
+mAP-50
+(%)
+[20] OAI Improved ResNet-18 (ResNet +
+BiLSTM) IoU (Default) 94.83 96.07 N/A
+[22] OAI YOLOv7 + HCGN IoU (Default) 73.9 72.6 N/A
+[30] OAI Hybrid Feature Fusion (LBP + CNNs)
++ YOLOv2 IoU </blockquote></details></li><li><strong>Contribution clarity — page 21</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Despite the superiority of the proposed LD -IoU
 in terms of its ability to perform better localization,
 converge faster, and improve efficiency, this research
 suffers from several drawbacks. To begin with, this
@@ -381,7 +421,7 @@ datasets and </blockquote></details></li></ul>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-20</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 09:56:39</li><li>Last seen by Paper Scout: 2026-09-21 10:03:30</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-20</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 10:47:17</li><li>Last seen by Paper Scout: 2026-09-21 10:47:17</li></ul>
             <ul><li>DOI: 10.22266/ijies2026.1031.24</li><li>OpenAlex: W7213617411</li><li>OpenAlex IDs: W7213617411</li></ul>
           </section>
           <section class="detail-panel">

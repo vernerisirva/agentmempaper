@@ -173,6 +173,25 @@ class RelevanceScreening(unittest.TestCase):
         self.assertNotEqual(matched(efficiency, "the detector reaches 120 fps"),
                             matched(efficiency, "the detector has 8 ms inference latency"))
 
+    def test_contrasting_with_text_only_models_does_not_exclude_a_vision_paper(self):
+        """A vision-language paper writes "unlike text-only models, we ..." routinely.
+
+        Treated as a hard negation this excluded a real open-vocabulary detection paper,
+        so the phrase is an exclude signal that a high-confidence vision hit overrides.
+        """
+        result = classify_with_rules(
+            candidate("Grounding Visual Detection in Vision-Language Models",
+                      "Unlike text-only language models, our vision-language model performs "
+                      "open-vocabulary object detection, and we evaluate visual grounding on "
+                      "COCO with ablations that generalize across backbones."),
+            profile=TRACK)
+        self.assertEqual(result.decision, "relevant")
+        # A paper that really is text-only still has no visual subject to gate on.
+        self.assertEqual(classify_with_rules(
+            candidate("Instruction Tuning for Text-Only Language Models",
+                      "We study text-only instruction tuning for large language models."),
+            profile=TRACK).decision, "irrelevant")
+
     def test_no_reported_number_earns_relevance_on_its_own(self):
         """A benchmark gain is not a contribution, and no threshold is encoded anywhere."""
         result = classify_with_rules(
@@ -295,6 +314,23 @@ class Seeds(unittest.TestCase):
             self.assertEqual(next(i["status"] for i in again["results"]
                                   if i["arxiv_id"] == first["arxiv_id"]), "already_known")
             self.assertNotIn(first["arxiv_id"], calls, "a known seed issued another lookup")
+
+    def test_every_seed_note_matches_by_title_as_well_as_identifier(self):
+        """The canonical key depends on which provider resolved the record.
+
+        An arXiv lookup keys the paper on `arxiv:<id>`; the OpenAlex DOI fallback keys the
+        same paper on `doi:10.48550/arxiv.<id>`. Curation matches on canonical id *or*
+        title, so a note keyed only on the identifier silently detaches whenever the
+        fallback route is taken -- which is exactly what happened when arXiv throttled.
+        """
+        import yaml
+        curation = yaml.safe_load((ROOT / "config/curation/computer_vision.yaml").read_text())
+        overrides = curation["overrides"] or []
+        titles = {paper["expected_title"] for paper in self.manifest()["papers"]}
+        self.assertEqual(len(overrides), len(titles))
+        for rule in overrides:
+            self.assertIn("canonical_id", rule)
+            self.assertIn(rule.get("title"), titles, rule.get("canonical_id"))
 
     def test_seeding_confers_no_library_admission(self):
         """A curation note marks an anchor; it must not fabricate a quality decision."""
@@ -742,6 +778,43 @@ class WorkflowIntegration(unittest.TestCase):
                         f"evaluate-discovery --track {TRACK}",
                         f"validate-idempotency --track {TRACK}"):
             self.assertIn(command, commands)
+
+    def test_the_daily_assessment_stage_covers_every_registered_track(self):
+        """The assessment step names no track, so a new one must reach it automatically.
+
+        Every other stage lists its tracks explicitly, which makes it easy to read the
+        assessment step as having been missed. It has not: `operational-assess` accepts no
+        --track flag and builds its configs from TRACKS. This pins both halves -- the
+        command really does take no narrowing flag, and the selection it performs really
+        does cover every registered track -- so a fifth track cannot be silently left out
+        of the only path that can promote a paper into a main library.
+        """
+        workflow, _ = self.workflow("paper-scout.yml")
+        assess = next(step for step in workflow["jobs"]["scout"]["steps"]
+                      if step["name"] == "Bounded scientific assessment")
+        self.assertIn("operational-assess", assess["run"])
+        self.assertNotIn("--track", assess["run"],
+                         "a --track flag here would narrow the daily assessment to one track")
+
+        from paper_scout.operational_run import select_operational_candidates
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            configs, sources = {}, {}
+            for track in TRACKS:
+                digest_dir = root / track / "digests"
+                digest_dir.mkdir(parents=True)
+                (digest_dir / "2026-09-21.md").write_text(SiteBuild.DIGEST, encoding="utf-8")
+                state = root / track / "state.sqlite3"
+                PaperStore(state)
+                configs[track] = replace(load_config(ROOT / TRACK_CONFIG_PATHS[track], env={}),
+                                         sqlite_path=state, digest_dir=digest_dir,
+                                         docs_dir=root / track / "docs",
+                                         report_dir=root / track / "reports",
+                                         curation_path=root / "missing.yaml")
+                sources[track] = state
+            _, summaries = select_operational_candidates(
+                configs, "2026-09-21T00:00:00", assessment_sources=sources)
+        self.assertEqual(set(summaries), set(TRACKS))
 
     def test_every_state_path_is_checkpointed_before_it_is_persisted(self):
         for name in ("paper-scout.yml", "paper-scout-backfill.yml"):

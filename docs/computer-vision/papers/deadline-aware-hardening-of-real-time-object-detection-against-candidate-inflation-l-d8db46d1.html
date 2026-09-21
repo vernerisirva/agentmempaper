@@ -60,13 +60,13 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality reviewed</h2>
-      <p>This paper presents a methodologically thorough, nuanced, and self-critical systems investigation of adversarial latency in object detection pipelines. The experimental design is well-controlled, artifacts and provenance are documented, and claims strictly adhere to empirical findings without overreach.</p>
-      <p>The authors explicitly detail key limitations, noting that their algorithmic bound does not guarantee worst-case execution time (WCET), depends on session sample counts for tail quantile estimation, and cannot protect upstream pipeline stages like image decoding from format-induced overheads.</p>
+      <p>This work provides a sound, highly transparent, and realistic systems-level evaluation of latency attacks and defenses in real-time object detection, characterized by honest negative findings regarding end-to-end client deadlines and fully documented artifacts.</p>
+      <p>The authors explicitly report threats to validity, noting that K* calibration was conducted over limited sessions, that millisecond timings are target-specific rather than formal WCET bounds, and that bounding suppression work is insufficient by itself to secure the end-to-end serving pipeline.</p>
       <p>Publication: preprint. Source metadata identifies a working manuscript/preprint; peer review is not established.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
         <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-21T10:13:16.560452+00:00.</p>
+        <p>Assessed: 2026-09-21T10:48:47.826513+00:00.</p>
         <p>Coverage: 44928 of 44928 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
         <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Real-time object detectors are usually reported by mean latency o r frame rate. An availability failure,
 however, occurs when a single response misses the application&#x27; s deadline. Candidate-inflation latency
@@ -76,43 +76,97 @@ reduce the severity of such attacks. Reduced severity is not a bo und: work rema
 and prior studies do not jointly report deadline-relative tail la tency and deadline-miss ratio for a
 defended serving path. We therefore admit at most K candidates to NMS. The selection operation
 is standard; new is its use as a deployment-selected bound on a ttacker-controlled work, calibrated
-against a declared deadline. It needs no retraining and no weigh t change, so it applies to </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>replay one identical set of attacked candi-
+against a declared deadline. It needs no retraining and no weigh t change, so it applies to </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>an already
+promoted artifact. Replaying identical attacked candidate arra ys through three suppression backends
+shows the attack to be strongly implementation dependent, ye t under our principal attack budget no
+uncapped backend meets a 30-Hz frame deadline. The bound hold s across two detector geometries
+of differing anchor count, three backends, a second evaluation corpus and a thermally throttled edge
+board, while the runtime&#x27;s shipped candidate ceiling meets th e suppression screen on the GPU backend
+only. The accuracy the bound costs is measured rather than assum ed. Per-stage instrumentation then
+shows that, once candidate handling is bounded, the largest a ttack-associated increment is decode,
+not suppression. Bounding suppression work is necessary for dead line integrity but not sufficient.
+Keywords: real-time object detection, latency attacks, non-maximum suppression, deadline </blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>replay one identical set of attacked candi-
 date arrays through three suppression back-
 ends, which separates what the implementation
 contributes from what the attack does.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>most K candidates to NMS. The selection
 operation is standard; its use as a deployment-
 selected bound on attacker-controlled work is
-not, and we measure the accuracy it costs.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>alongside a timeout,
+not, and we measure the accuracy it costs.</blockquote></details></li><li><strong>Contribution clarity — page 3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>rule that picks K from measured tail latency
+and a stated accuracy tolerance, so a deploy-
+ment with a different frame period can select
+its own.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>[
+16]. Retraining-based defense
+changes the detector itself [ 20]. NMS-free redesign
+deletes the stage [ 21, 22], which does not help an
+already promoted artifact. The fifth role is this
+paper&#x27;s: a bounded-work defense , fixing an upper
+limit on the quantity the attacker controls.
+Our position with respect to EV ADE is
+not a disagreement, and it is the paper&#x27;s cen-
+tral positioning claim. Realistic deployment can
+reduce observed attack severity. Deployment-
+dependent mitigation is not, however, equivalent
+to a declared upper bound on attacker-controlled
+NMS work. A faster backend lowers the constant;
+the count stays the attacker&#x27;s.
+Bounding candidate admission is not an
+unconsidered idea; it is a dismissed one. Phantom
+Sponges raises it and rejects it because limiting
+the candidates passed to NMS &quot;may also serve
+the purposes of the attacker by compromising
+the model&#x27;s integrity&quot; [
+13], </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>alongside a timeout,
 which plainly does serve the attacker by dropping
 the frame. That objection is an empirical claim
 about accuracy, never measured at an operating
 point chosen against a deadline; measuring it is
 one of this paper&#x27;s contributions, and the cost is
-0.00064 AP@[ .50 : .95].</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Figure
-1 shows the testbed and carries its con-
-figuration. The upper row is the online path:
-the client&#x27;s timer defines client scope, and nginx
-spreads requests over two workers, each hold-
-ing one RTX 4090 and running YOLOv8x-P2
-at 1280-pixel input on a TensorRT fp16 serving
-path. The lower row is offline replay, where one
-worker&#x27;s captured pre-NMS candidate arrays feed
-three suppression backends and the edge board,
-so those arms differ only in implementation. The
-served operating point is τ = 0 .30, NMS IoU
-0.65, at most 300 detections and the deployed
-T able 1 Accuracy provenance for the two
-detection sets.
-Set Scoring point AP@[ .50 : .95]
-S wide open 0.3186
-S threshold 0.2793
-S budget 0.3171
-S threshold + budget 0.2793
-R wide open 0.3529
-R threshold 0.313556
-R threshold + capped 0.312913
-cap K = 1024; the graph emits 136 ,000 anchors.
-Attacks use 48 source images at seed 1337, </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The adversary perturbs a submitted image within
+0.00064 AP@[ .50 : .95].</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and
+each served arm is 144 requests. VisDrone2019-
+DET is the trained and evaluated aerial corpus
+[
+23]; BDD100K is an evaluation distribution only,
+the model being neither trained nor adapted on
+it, though attacks are crafted from it for §
+6.2 [24].
+Serving is ONNX Runtime 1.19.2 on TensorRT
+10.2.0; the backend comparison uses torchvision
+0.20.1 with CUDA 12.4 on driver 595.84 over a
+12-core Ryzen 9 9900X at the powersave governor,
+and the edge board runs ONNX Runtime 1.27.0.
+The held-out VisDrone test-dev AP@[ .50 : .95]
+of the deployed detector is 0.2729, against a val-
+idation figure of 0.3540 from the package&#x27;s own
+metrics, both scored COCO-style at confidence
+0.001 with up to 1000 detections per image rather
+than the reference default of 100, since VisDrone
+images routinely carry more than 100 objects.
+Scoring convention and operating point are
+distinct, and the paper needs the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>metrics
+Client-observed latency is the sum
+Li = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,
+(1)
+and the deadline-miss ratio
+DMR(D) = 1
+n
+n∑
+i=1
+1[Li &gt; D ]. (2)
+Unless stated otherwise D = 33 .3 ms, the 30-
+Hz frame period of §1; we report p95 with DMR
+because one percentile hides the mass beyond it.
+The two scopes are numerically equal and logi-
+cally different: De2e applies to the client-observed
+Li of Eq. (
+1), network, queueing and serialization
+included, while Dsupp screens the suppression call
+alone, the scope of every stage figure here. No
+stage allocation is claimed, TNMS ≤ Dsupp being
+necessary for Li ≤ De2e and never sufficient, and
+the gap is not academic: at low load worker p95
+is 28.62 ms against an open-loop client p95 of
+33.48 ms, with a low-load client DMR of 0.0392
+from a separate draw.</blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The adversary perturbs a submitted image within
 an L∞ budget and alters nothing else: not the
 weights, the serving binary, the cap or the server
 configuration. The objective is the candidate
@@ -199,7 +253,59 @@ dation figures, while §
 out, and a cost measured on one population can-
 not be subtracted from an accuracy measured on
 another; so we repeated the sweep on test-dev
-with K fixed </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>served deadline
+with K fixed </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>beforehand, obtaining 0.000188 over
+all 1610 images. The held-out cost is the smaller,
+so the validation figure is the conservative one to
+6
+10
+0
+10
+1
+10
+2
+10
+3
+attacked suppression p95 (ms, log scale)
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+clean AP@[.50:.95]
+K = 64
+K = 256
+deployed: K = 1024
+D
+supp
+ = 33.3 ms
+uncapped clean AP 0.3136
+global Top- K  (deployed)
+per-class Top- K
+per-level Top- K
+no cap: 672 ms, DMR 1.00
+Fig. 3 Accuracy–latency frontier for the candidate bud-
+get.
+quote, and the frontier saturates just above the
+deployed cap.
+For the selection rule below, U0.95 is a one-
+sided 95% Student- t upper confidence bound over
+sessions.
+K ∗ = max
+{
+K : U0.95
+(
+Q0.95(TNMS(K))
+)
+≤ Dsupp
+∧ ∆APK ≤ δA
+}
+,
+(6)
+evaluated over the swept grid. On the deployed
+NumPy path K ∗ = 5 , 120, the limit being a
+Student-t bound over three session p95 values of
+48 images each; a more conservative </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>served deadline
 The cap reduces client-side p95 under attack by
 a factor of 15.10, a median over five independent
 A/B sessions, yet the defended requests still miss
@@ -246,7 +352,25 @@ e2e
 4.6 12.5 worker total 21.12 ms
 14.3 4.7 12.5 worker total 33.52 ms
 26.9 5.1 12.6 worker total 48.94 ms
-decode preprocess inference filter + Top- K NMS </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The anchor grid sets the maximum candidate
+decode preprocess inference filter + Top- K NMS </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>box decode
+Fig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an
+end-to-end percentile: the bars stack worker stages only.
+as the payload grows from 1.41 to 2.28 MB, tak-
+ing worker totals from 21.12 through 33.52 to
+48.94 ms. All candidate handling, the only terms
+the attack can inflate, costs about 2 ms more with
+the cap in place: suppression rises from 0.29 to
+1.87 ms, and filtering plus selection, sharing one
+timer, from 1.76 to 2.15 ms.
+The largest attack-associated increment inside
+the worker is therefore decode and represen-
+tation, not bounded candidate handling; where
+image processing sits in a pipeline is itself a real-
+time design variable [
+27]. This decomposes worker
+medians, not client p95: the attacked arm does
+raise the miss ratio to 1.0, for which no binomial
+limit is quoted, an observed 1.0 admitting </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The anchor grid sets the maximum candidate
 count, so a cap validated on one output tensor
 says little about another. We repeated the capture
 and the sweep on the same detector family with-
@@ -355,7 +479,10 @@ pipeline budget of §
 1 would contain it.
 Suppression cost depends substantially on the
 implementation [15, 16], so the algorithmic candi-
-date bound is the portable result; the </blockquote></details></li></ul>
+date bound is the portable result; the </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>millisecond
+envelope is specific to the platforms measured
+here. Our claim is bounded candidate admission
+plus measured end-to-end validation, not formal</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -410,7 +537,7 @@ date bound is the portable result; the </blockquote></details></li></ul>
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-18</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 09:56:38</li><li>Last seen by Paper Scout: 2026-09-21 10:03:28</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-18</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 10:47:15</li><li>Last seen by Paper Scout: 2026-09-21 10:47:15</li></ul>
             <ul><li>DOI: 10.21203/rs.3.rs-10938635/v1</li><li>OpenAlex: W7213468380</li><li>OpenAlex IDs: W7213468380</li></ul>
           </section>
           <section class="detail-panel">

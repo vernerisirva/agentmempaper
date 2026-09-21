@@ -4,7 +4,7 @@
     "https://doi.org/10.21203/rs.3.rs-10938635/v1",
     "https://openalex.org/W7213468380"
   ],
-  "appeared_in_latest_run": false,
+  "appeared_in_latest_run": true,
   "arxiv_id": null,
   "authors": [
     "Salah Gontara",
@@ -17,16 +17,16 @@
   "detail_page": "papers/deadline-aware-hardening-of-real-time-object-detection-against-candidate-inflation-l-d8db46d1.html",
   "doi": "10.21203/rs.3.rs-10938635/v1",
   "effective_sort_date": "2026-09-17",
-  "first_seen_at": "2026-09-21 09:56:38",
+  "first_seen_at": "2026-09-21 10:47:15",
   "first_seen_date": "2026-09-21",
   "future_date": false,
   "is_new": true,
-  "last_seen_at": "2026-09-21 10:03:28",
+  "last_seen_at": "2026-09-21 10:47:15",
   "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
   "library_admission": "main",
-  "newly_discovered_in_latest_run": false,
+  "newly_discovered_in_latest_run": true,
   "notified_at": null,
   "notified_date": null,
   "openalex_id": "W7213468380",
@@ -35,9 +35,9 @@
     "curated": false,
     "curation_note": null,
     "date_source": "openalex",
-    "first_seen_at": "2026-09-21 09:56:38",
-    "generated_at": "2026-09-21 10:19:37",
-    "last_seen_at": "2026-09-21 10:03:28",
+    "first_seen_at": "2026-09-21 10:47:15",
+    "generated_at": "2026-09-21 10:53:16",
+    "last_seen_at": "2026-09-21 10:47:15",
     "metadata_sources": [
       "openalex"
     ],
@@ -97,14 +97,14 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-21T10:13:16.560452+00:00",
+    "assessed_at": "2026-09-21T10:48:47.826513+00:00",
     "assessment_scope": "full_text",
     "assessment_version": "quality-promotion-v2",
     "assessor_model": "gemini-3.8-flash",
     "assessor_type": "hybrid",
     "combined_rank_score": 0.94,
     "concerns": [],
-    "concise_summary": "This paper presents a methodologically thorough, nuanced, and self-critical systems investigation of adversarial latency in object detection pipelines. The experimental design is well-controlled, artifacts and provenance are documented, and claims strictly adhere to empirical findings without overreach.",
+    "concise_summary": "This work provides a sound, highly transparent, and realistic systems-level evaluation of latency attacks and defenses in real-time object detection, characterized by honest negative findings regarding end-to-end client deadlines and fully documented artifacts.",
     "confidence": "high",
     "coverage": {
       "assessment_input_characters": 47424,
@@ -1149,6 +1149,48 @@
         "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
         "dimension": "contribution_clarity",
         "evidence_ids": [
+          "E559b2776a77bde14-B0004"
+        ],
+        "excerpt": "an already\npromoted artifact. Replaying identical attacked candidate arra ys through three suppression backends\nshows the attack to be strongly implementation dependent, ye t under our principal attack budget no\nuncapped backend meets a 30-Hz frame deadline. The bound hold s across two detector geometries\nof differing anchor count, three backends, a second evaluation corpus and a thermally throttled edge\nboard, while the runtime's shipped candidate ceiling meets th e suppression screen on the GPU backend\nonly. The accuracy the bound costs is measured rather than assum ed. Per-stage instrumentation then\nshows that, once candidate handling is bounded, the largest a ttack-associated increment is decode,\nnot suppression. Bounding suppression work is necessary for dead line integrity but not sufficient.\nKeywords: real-time object detection, latency attacks, non-maximum suppression, deadline ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "d4f2815a48849e7edd79cd739c1fcd82bba561652c29eb4c9e0ac54c6cfb4cab",
+            "evidence_id": "E559b2776a77bde14-B0004",
+            "pages": [
+              2
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1797,
+                "page": 2,
+                "section": "Abstract",
+                "section_index": 2,
+                "start": 898,
+                "text": "an already\npromoted artifact. Replaying identical attacked candidate arra ys through three suppression backends\nshows the attack to be strongly implementation dependent, ye t under our principal attack budget no\nuncapped backend meets a 30-Hz frame deadline. The bound hold s across two detector geometries\nof differing anchor count, three backends, a second evaluation corpus and a thermally throttled edge\nboard, while the runtime's shipped candidate ceiling meets th e suppression screen on the GPU backend\nonly. The accuracy the bound costs is measured rather than assum ed. Per-stage instrumentation then\nshows that, once candidate handling is bounded, the largest a ttack-associated increment is decode,\nnot suppression. Bounding suppression work is necessary for dead line integrity but not sufficient.\nKeywords: real-time object detection, latency attacks, non-maximum suppression, deadline "
+              }
+            ],
+            "text": "an already\npromoted artifact. Replaying identical attacked candidate arra ys through three suppression backends\nshows the attack to be strongly implementation dependent, ye t under our principal attack budget no\nuncapped backend meets a 30-Hz frame deadline. The bound hold s across two detector geometries\nof differing anchor count, three backends, a second evaluation corpus and a thermally throttled edge\nboard, while the runtime's shipped candidate ceiling meets th e suppression screen on the GPU backend\nonly. The accuracy the bound costs is measured rather than assum ed. Per-stage instrumentation then\nshows that, once candidate handling is bounded, the largest a ttack-associated increment is decode,\nnot suppression. Bounding suppression work is necessary for dead line integrity but not sufficient.\nKeywords: real-time object detection, latency attacks, non-maximum suppression, deadline "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
           "E559b2776a77bde14-B0011"
         ],
         "excerpt": "replay one identical set of attacked candi-\ndate arrays through three suppression back-\nends, which separates what the implementation\ncontributes from what the attack does.",
@@ -1233,6 +1275,90 @@
         "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
         "dimension": "contribution_clarity",
         "evidence_ids": [
+          "E559b2776a77bde14-B0013"
+        ],
+        "excerpt": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 3,
+        "pages": [
+          3
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Deadline-Calibrated Selection Of K. We Give A",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b322e1a1cc1ebd0af3c0f684bcd25d45c3ac2a8684a852087dffab177e57f1de",
+            "evidence_id": "E559b2776a77bde14-B0013",
+            "pages": [
+              3
+            ],
+            "section": "Deadline-Calibrated Selection Of K. We Give A",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 145,
+                "page": 3,
+                "section": "Deadline-Calibrated Selection Of K. We Give A",
+                "section_index": 8,
+                "start": 0,
+                "text": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own."
+              }
+            ],
+            "text": "rule that picks K from measured tail latency\nand a stated accuracy tolerance, so a deploy-\nment with a different frame period can select\nits own."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E559b2776a77bde14-B0016"
+        ],
+        "excerpt": "[\n16]. Retraining-based defense\nchanges the detector itself [ 20]. NMS-free redesign\ndeletes the stage [ 21, 22], which does not help an\nalready promoted artifact. The fifth role is this\npaper's: a bounded-work defense , fixing an upper\nlimit on the quantity the attacker controls.\nOur position with respect to EV ADE is\nnot a disagreement, and it is the paper's cen-\ntral positioning claim. Realistic deployment can\nreduce observed attack severity. Deployment-\ndependent mitigation is not, however, equivalent\nto a declared upper bound on attacker-controlled\nNMS work. A faster backend lowers the constant;\nthe count stays the attacker's.\nBounding candidate admission is not an\nunconsidered idea; it is a dismissed one. Phantom\nSponges raises it and rejects it because limiting\nthe candidates passed to NMS \"may also serve\nthe purposes of the attacker by compromising\nthe model's integrity\" [\n13], ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Related Work",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7d3b1d09d8f6dd94816328ff6ecb83e85092a498f39a8e18cc136a8d3480015a",
+            "evidence_id": "E559b2776a77bde14-B0016",
+            "pages": [
+              4
+            ],
+            "section": "Related Work",
+            "section_role": "related",
+            "source_spans": [
+              {
+                "end": 1252,
+                "page": 4,
+                "section": "Related Work",
+                "section_index": 11,
+                "start": 353,
+                "text": "[\n16]. Retraining-based defense\nchanges the detector itself [ 20]. NMS-free redesign\ndeletes the stage [ 21, 22], which does not help an\nalready promoted artifact. The fifth role is this\npaper's: a bounded-work defense , fixing an upper\nlimit on the quantity the attacker controls.\nOur position with respect to EV ADE is\nnot a disagreement, and it is the paper's cen-\ntral positioning claim. Realistic deployment can\nreduce observed attack severity. Deployment-\ndependent mitigation is not, however, equivalent\nto a declared upper bound on attacker-controlled\nNMS work. A faster backend lowers the constant;\nthe count stays the attacker's.\nBounding candidate admission is not an\nunconsidered idea; it is a dismissed one. Phantom\nSponges raises it and rejects it because limiting\nthe candidates passed to NMS \"may also serve\nthe purposes of the attacker by compromising\nthe model's integrity\" [\n13], "
+              }
+            ],
+            "text": "[\n16]. Retraining-based defense\nchanges the detector itself [ 20]. NMS-free redesign\ndeletes the stage [ 21, 22], which does not help an\nalready promoted artifact. The fifth role is this\npaper's: a bounded-work defense , fixing an upper\nlimit on the quantity the attacker controls.\nOur position with respect to EV ADE is\nnot a disagreement, and it is the paper's cen-\ntral positioning claim. Realistic deployment can\nreduce observed attack severity. Deployment-\ndependent mitigation is not, however, equivalent\nto a declared upper bound on attacker-controlled\nNMS work. A faster backend lowers the constant;\nthe count stays the attacker's.\nBounding candidate admission is not an\nunconsidered idea; it is a dismissed one. Phantom\nSponges raises it and rejects it because limiting\nthe candidates passed to NMS \"may also serve\nthe purposes of the attacker by compromising\nthe model's integrity\" [\n13], "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
           "E559b2776a77bde14-B0017"
         ],
         "excerpt": "alongside a timeout,\nwhich plainly does serve the attacker by dropping\nthe frame. That objection is an empirical claim\nabout accuracy, never measured at an operating\npoint chosen against a deadline; measuring it is\none of this paper's contributions, and the cost is\n0.00064 AP@[ .50 : .95].",
@@ -1275,9 +1401,9 @@
         "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
         "dimension": "contribution_clarity",
         "evidence_ids": [
-          "E559b2776a77bde14-B0019"
+          "E559b2776a77bde14-B0020"
         ],
-        "excerpt": "Figure\n1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, ",
+        "excerpt": "and\neach served arm is 144 requests. VisDrone2019-\nDET is the trained and evaluated aerial corpus\n[\n23]; BDD100K is an evaluation distribution only,\nthe model being neither trained nor adapted on\nit, though attacks are crafted from it for \u00a7\n6.2 [24].\nServing is ONNX Runtime 1.19.2 on TensorRT\n10.2.0; the backend comparison uses torchvision\n0.20.1 with CUDA 12.4 on driver 595.84 over a\n12-core Ryzen 9 9900X at the powersave governor,\nand the edge board runs ONNX Runtime 1.27.0.\nThe held-out VisDrone test-dev AP@[ .50 : .95]\nof the deployed detector is 0.2729, against a val-\nidation figure of 0.3540 from the package's own\nmetrics, both scored COCO-style at confidence\n0.001 with up to 1000 detections per image rather\nthan the reference default of 100, since VisDrone\nimages routinely carry more than 100 objects.\nScoring convention and operating point are\ndistinct, and the paper needs the ",
         "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 4,
         "pages": [
@@ -1288,8 +1414,8 @@
         "signal_type": "positive",
         "source_blocks": [
           {
-            "content_hash": "5b0a99aa5b1d579ac530878a0a4c32da89523d4a74892b01a926f835ecad0591",
-            "evidence_id": "E559b2776a77bde14-B0019",
+            "content_hash": "30e469cd6634e68c9da1e79baa0061b1bcf1f6c765548a8b56d27104f5ef0c43",
+            "evidence_id": "E559b2776a77bde14-B0020",
             "pages": [
               4
             ],
@@ -1297,15 +1423,57 @@
             "section_role": "body",
             "source_spans": [
               {
-                "end": 896,
+                "end": 1793,
                 "page": 4,
                 "section": "Measured System",
                 "section_index": 13,
-                "start": 0,
-                "text": "Figure\n1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, "
+                "start": 896,
+                "text": "and\neach served arm is 144 requests. VisDrone2019-\nDET is the trained and evaluated aerial corpus\n[\n23]; BDD100K is an evaluation distribution only,\nthe model being neither trained nor adapted on\nit, though attacks are crafted from it for \u00a7\n6.2 [24].\nServing is ONNX Runtime 1.19.2 on TensorRT\n10.2.0; the backend comparison uses torchvision\n0.20.1 with CUDA 12.4 on driver 595.84 over a\n12-core Ryzen 9 9900X at the powersave governor,\nand the edge board runs ONNX Runtime 1.27.0.\nThe held-out VisDrone test-dev AP@[ .50 : .95]\nof the deployed detector is 0.2729, against a val-\nidation figure of 0.3540 from the package's own\nmetrics, both scored COCO-style at confidence\n0.001 with up to 1000 detections per image rather\nthan the reference default of 100, since VisDrone\nimages routinely carry more than 100 objects.\nScoring convention and operating point are\ndistinct, and the paper needs the "
               }
             ],
-            "text": "Figure\n1 shows the testbed and carries its con-\nfiguration. The upper row is the online path:\nthe client's timer defines client scope, and nginx\nspreads requests over two workers, each hold-\ning one RTX 4090 and running YOLOv8x-P2\nat 1280-pixel input on a TensorRT fp16 serving\npath. The lower row is offline replay, where one\nworker's captured pre-NMS candidate arrays feed\nthree suppression backends and the edge board,\nso those arms differ only in implementation. The\nserved operating point is \u03c4 = 0 .30, NMS IoU\n0.65, at most 300 detections and the deployed\nT able 1 Accuracy provenance for the two\ndetection sets.\nSet Scoring point AP@[ .50 : .95]\nS wide open 0.3186\nS threshold 0.2793\nS budget 0.3171\nS threshold + budget 0.2793\nR wide open 0.3529\nR threshold 0.313556\nR threshold + capped 0.312913\ncap K = 1024; the graph emits 136 ,000 anchors.\nAttacks use 48 source images at seed 1337, "
+            "text": "and\neach served arm is 144 requests. VisDrone2019-\nDET is the trained and evaluated aerial corpus\n[\n23]; BDD100K is an evaluation distribution only,\nthe model being neither trained nor adapted on\nit, though attacks are crafted from it for \u00a7\n6.2 [24].\nServing is ONNX Runtime 1.19.2 on TensorRT\n10.2.0; the backend comparison uses torchvision\n0.20.1 with CUDA 12.4 on driver 595.84 over a\n12-core Ryzen 9 9900X at the powersave governor,\nand the edge board runs ONNX Runtime 1.27.0.\nThe held-out VisDrone test-dev AP@[ .50 : .95]\nof the deployed detector is 0.2729, against a val-\nidation figure of 0.3540 from the package's own\nmetrics, both scored COCO-style at confidence\n0.001 with up to 1000 detections per image rather\nthan the reference default of 100, since VisDrone\nimages routinely carry more than 100 objects.\nScoring convention and operating point are\ndistinct, and the paper needs the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E559b2776a77bde14-B0023"
+        ],
+        "excerpt": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1\nn\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. (\n1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Timing Scopes And Deadline",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "42a8f3da78c0ea2c8111d52c6da4984fbc78876cd9072ff833df4686b795155c",
+            "evidence_id": "E559b2776a77bde14-B0023",
+            "pages": [
+              5
+            ],
+            "section": "Timing Scopes And Deadline",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 815,
+                "page": 5,
+                "section": "Timing Scopes And Deadline",
+                "section_index": 15,
+                "start": 0,
+                "text": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1\nn\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. (\n1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw."
+              }
+            ],
+            "text": "metrics\nClient-observed latency is the sum\nLi = Tnet,i+Tqueue,i+Tdec,i+Tinf,i+Tpost,i+Tser,i,\n(1)\nand the deadline-miss ratio\nDMR(D) = 1\nn\nn\u2211\ni=1\n1[Li > D ]. (2)\nUnless stated otherwise D = 33 .3 ms, the 30-\nHz frame period of \u00a71; we report p95 with DMR\nbecause one percentile hides the mass beyond it.\nThe two scopes are numerically equal and logi-\ncally different: De2e applies to the client-observed\nLi of Eq. (\n1), network, queueing and serialization\nincluded, while Dsupp screens the suppression call\nalone, the scope of every stage figure here. No\nstage allocation is claimed, TNMS \u2264 Dsupp being\nnecessary for Li \u2264 De2e and never sufficient, and\nthe gap is not academic: at low load worker p95\nis 28.62 ms against an open-loop client p95 of\n33.48 ms, with a low-load client DMR of 0.0392\nfrom a separate draw."
           }
         ],
         "statement_kind": null,
@@ -1485,6 +1653,58 @@
         "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
         "dimension": "contribution_clarity",
         "evidence_ids": [
+          "E559b2776a77bde14-B0038"
+        ],
+        "excerpt": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6\n10\n0\n10\n1\n10\n2\n10\n3\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35\nclean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nD\nsupp\n = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top- K  (deployed)\nper-class Top- K\nper-level Top- K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max\n{\nK : U0.95\n(\nQ0.95(TNMS(K))\n)\n\u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Accuracy\u2013Latency Trade-Off",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "87efb9a959333228c5b0fd94150e234f0d132945fac2e667301d02efb0af11c8",
+            "evidence_id": "E559b2776a77bde14-B0038",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Accuracy\u2013Latency Trade-Off",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1030,
+                "page": 7,
+                "section": "Accuracy\u2013Latency Trade-Off",
+                "section_index": 26,
+                "start": 890,
+                "text": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6"
+              },
+              {
+                "end": 746,
+                "page": 8,
+                "section": "Accuracy\u2013Latency Trade-Off",
+                "section_index": 27,
+                "start": 0,
+                "text": "10\n0\n10\n1\n10\n2\n10\n3\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35\nclean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nD\nsupp\n = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top- K  (deployed)\nper-class Top- K\nper-level Top- K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max\n{\nK : U0.95\n(\nQ0.95(TNMS(K))\n)\n\u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative "
+              }
+            ],
+            "text": "beforehand, obtaining 0.000188 over\nall 1610 images. The held-out cost is the smaller,\nso the validation figure is the conservative one to\n6\n10\n0\n10\n1\n10\n2\n10\n3\nattacked suppression p95 (ms, log scale)\n0.10\n0.15\n0.20\n0.25\n0.30\n0.35\nclean AP@[.50:.95]\nK = 64\nK = 256\ndeployed: K = 1024\nD\nsupp\n = 33.3 ms\nuncapped clean AP 0.3136\nglobal Top- K  (deployed)\nper-class Top- K\nper-level Top- K\nno cap: 672 ms, DMR 1.00\nFig. 3 Accuracy\u2013latency frontier for the candidate bud-\nget.\nquote, and the frontier saturates just above the\ndeployed cap.\nFor the selection rule below, U0.95 is a one-\nsided 95% Student- t upper confidence bound over\nsessions.\nK \u2217 = max\n{\nK : U0.95\n(\nQ0.95(TNMS(K))\n)\n\u2264 Dsupp\n\u2227 \u2206APK \u2264 \u03b4A\n}\n,\n(6)\nevaluated over the swept grid. On the deployed\nNumPy path K \u2217 = 5 , 120, the limit being a\nStudent-t bound over three session p95 values of\n48 images each; a more conservative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
           "E559b2776a77bde14-B0041"
         ],
         "excerpt": "served deadline\nThe cap reduces client-side p95 under attack by\na factor of 15.10, a median over five independent\nA/B sessions, yet the defended requests still miss\nDe2e = 33 .3 ms every time. That is no contra-\ndiction: the work bound applies to suppression,\nand TNMS \u2264 Dsupp does not imply Le2e \u2264 De2e.\nNor is the miss attributable to the attack alone.\nAttacked images must be delivered losslessly, since\nre-encoding at the quality this pool serves did\nnot preserve the perturbation, so comparing them\nagainst the JPEG corpus varies two things at once.\nWe therefore re-encoded the same 48 sources into\nthe attacked arm's format and served all three\narms through the same pool at the same cap, in\nten sessions of 144 requests at \u03f5 = 2/255.\nThe adversary turns out not to be necessary for\nthe miss. Clean lossless images reach p95 66.20 ms\nat a deadline-miss ratio of 0.927, against 61.20 ",
@@ -1568,6 +1788,48 @@
               }
             ],
             "text": "ms\nattacked. Those intervals overlap, so that ordering\nis not a ranking. The paired statistic is: taken per\nsource image as attacked minus clean, it puts the\nattacked arm ahead by a median 15.02 ms. The\ntwo need not agree in sign, since one compares\nthe arms' worst requests and the other compares\neach image with itself. The JPEG default reaches\n31.10 ms at 0.0.\nFigure\n5 shows where the time goes; only\nworker stages are stacked, so no bar reaches a\nclient p95. The attacked bar exceeds the clean\nlossless bar almost entirely in decode, which runs\n1.87, 14.34 and 26.88 ms across the three arms\n7\n0 10 20 30 40 50 60\nworker-scope stage median (ms)\nclean, JPEG\n(production default)\nclean, lossless\n(no adversary)\nattacked, lossless\nD\ne2e\n = 33.3 ms\n4.6 12.5 worker total 21.12 ms\n14.3 4.7 12.5 worker total 33.52 ms\n26.9 5.1 12.6 worker total 48.94 ms\ndecode preprocess inference filter + Top- K NMS "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E559b2776a77bde14-B0043"
+        ],
+        "excerpt": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [\n27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Stage-Local Protection Versus",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "63390e5267a981d3589f7102a3a2a3a1859851ec9bddcc54b6070554567da34b",
+            "evidence_id": "E559b2776a77bde14-B0043",
+            "pages": [
+              9
+            ],
+            "section": "Stage-Local Protection Versus",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1197,
+                "page": 9,
+                "section": "Stage-Local Protection Versus",
+                "section_index": 29,
+                "start": 302,
+                "text": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [\n27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting "
+              }
+            ],
+            "text": "box decode\nFig. 5 Worker-scope stage medians for the three matched delivery a rms. The De2e line is a reference threshold, not an\nend-to-end percentile: the bars stack worker stages only.\nas the payload grows from 1.41 to 2.28 MB, tak-\ning worker totals from 21.12 through 33.52 to\n48.94 ms. All candidate handling, the only terms\nthe attack can inflate, costs about 2 ms more with\nthe cap in place: suppression rises from 0.29 to\n1.87 ms, and filtering plus selection, sharing one\ntimer, from 1.76 to 2.15 ms.\nThe largest attack-associated increment inside\nthe worker is therefore decode and represen-\ntation, not bounded candidate handling; where\nimage processing sits in a pipeline is itself a real-\ntime design variable [\n27]. This decomposes worker\nmedians, not client p95: the attacked arm does\nraise the miss ratio to 1.0, for which no binomial\nlimit is quoted, an observed 1.0 admitting "
           }
         ],
         "statement_kind": null,
@@ -1825,6 +2087,48 @@
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E559b2776a77bde14-B0061"
+        ],
+        "excerpt": "millisecond\nenvelope is specific to the platforms measured\nhere. Our claim is bounded candidate admission\nplus measured end-to-end validation, not formal",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Threats To Validity",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "06ca63c5005eec61d6e88b8838c6679dd3f039af158720890b883a86cafbf53b",
+            "evidence_id": "E559b2776a77bde14-B0061",
+            "pages": [
+              11
+            ],
+            "section": "Threats To Validity",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 1039,
+                "page": 11,
+                "section": "Threats To Validity",
+                "section_index": 40,
+                "start": 886,
+                "text": "millisecond\nenvelope is specific to the platforms measured\nhere. Our claim is bounded candidate admission\nplus measured end-to-end validation, not formal"
+              }
+            ],
+            "text": "millisecond\nenvelope is specific to the platforms measured\nhere. Our claim is bounded candidate admission\nplus measured end-to-end validation, not formal"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
       }
     ],
     "full_text_assessed": true,
@@ -1845,30 +2149,37 @@
         "evaluation_independence": {
           "concern": "none",
           "corroboration_direction": "supports",
-          "corroboration_summary": "The defense is validated with held-out accuracy scoring, matched-format controls, multiple independent backends, a second detector geometry, a second corpus, and an edge platform under thermal throttling.",
-          "final_evaluation_signal": "The headline outcomes are established by client-scope end-to-end latency, deadline-miss ratios, worker stage timings, and held-out AP@[.50:.95] on VisDrone test-dev and BDD100K.",
+          "corroboration_summary": "The headline suppression-latency reduction is corroborated by objective wall-clock measurements across three independent backends, a second detector geometry, a second corpus, and an edge board, while the accuracy cost is measured on held-out test-dev data.",
+          "final_evaluation_signal": "Client-observed and stage-isolated p95 wall-clock latency, deadline-miss ratio, and held-out COCO-style AP@[.50:.95] on the exported artifact.",
           "independent_corroboration": "present",
-          "optimization_signal": "The Top-K candidate admission bound and its deadline-calibrated selection rule are tuned against suppression tail latency and clean accuracy tolerance.",
+          "optimization_signal": "Projected gradient ascent on a differentiable surrogate for pre-NMS candidate count, plus a grid-swept calibration rule selecting K from measured tail latency and an accuracy tolerance.",
           "signal_reuse": "independent"
         },
         "evidence_ids": [
           "E559b2776a77bde14-B0003",
+          "E559b2776a77bde14-B0004",
           "E559b2776a77bde14-B0011",
           "E559b2776a77bde14-B0012",
+          "E559b2776a77bde14-B0013",
+          "E559b2776a77bde14-B0016",
           "E559b2776a77bde14-B0017",
-          "E559b2776a77bde14-B0019",
+          "E559b2776a77bde14-B0020",
+          "E559b2776a77bde14-B0023",
           "E559b2776a77bde14-B0024",
           "E559b2776a77bde14-B0031",
           "E559b2776a77bde14-B0034",
           "E559b2776a77bde14-B0037",
+          "E559b2776a77bde14-B0038",
           "E559b2776a77bde14-B0041",
           "E559b2776a77bde14-B0042",
+          "E559b2776a77bde14-B0043",
           "E559b2776a77bde14-B0046",
           "E559b2776a77bde14-B0048",
           "E559b2776a77bde14-B0050",
           "E559b2776a77bde14-B0051",
           "E559b2776a77bde14-B0052",
-          "E559b2776a77bde14-B0060"
+          "E559b2776a77bde14-B0060",
+          "E559b2776a77bde14-B0061"
         ],
         "promotion_decision": "pass",
         "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd"
@@ -1892,55 +2203,62 @@
       "outcome": "success",
       "primary": {
         "canonical_id": "doi:10.21203/rs.3.rs-10938635/v1",
-        "claim_evidence_alignment": "Claims match the experimental evidence closely and conservatively. Rather than claiming a universal defense, the authors show bounded candidate admission bounds pairwise suppression comparisons, precisely quantify the minimal accuracy cost (0.000188 AP held out), and demonstrate that image decoding dominates the remaining attack latency.",
+        "claim_evidence_alignment": "Claims match the reported measurements with exemplary precision: the paper shows bounded admission successfully confines NMS tail latency (e.g., to 4.28 ms at K=1024), while candidly demonstrating that end-to-end deadline integrity fails due to input decoding overhead rather than candidate handling.",
         "context_id": "559b2776a77bde1477676830287fccf843563811bb8c312c4bf7609e6a469d07",
         "decision": "pass",
-        "evaluation_assessment": "Evaluation includes controlled ablation sweeps over candidate budget K, perturbation budgets, backends, and format controls, reporting tail percentiles (p95) and deadline-miss ratios. Crucially, the authors evaluate their own proposed promotion criterion realistically, noting that while K=1024 bounds suppression latency, the deployed pipeline still fails end-to-end deadline requirements under lossless delivery.",
+        "evaluation_assessment": "The empirical evaluation is rigorous and multi-faceted, testing multiple anchor configurations, two vision corpora (VisDrone and BDD100K), thermal throttling on an edge platform (Raspberry Pi 4B), and end-to-end client-observed tail latencies with matched lossless image controls.",
         "evaluation_independence": {
           "concern": "none",
           "corroboration_direction": "supports",
-          "corroboration_summary": "Clean and attacked end-to-end performance was corroborated using independent client-scope timers, held-out validation datasets, multiple independent runtime backends, and decoupled hardware profiling.",
-          "final_evaluation_signal": "Client-observed end-to-end tail latency, worker stage timings, deadline-miss ratios, and held-out detection average precision (AP@[.50:.95]) on VisDrone test-dev and BDD100K.",
+          "corroboration_summary": "Evaluations rely on objective physical clock measurements across three distinct backends, edge hardware, and held-out test datasets.",
+          "final_evaluation_signal": "Client-observed and stage-isolated p95 wall-clock latency, deadline-miss ratio (DMR), and held-out COCO-style AP@[0.50:0.95] across multiple independent suppression runtimes and hardware platforms.",
           "independent_corroboration": "present",
-          "optimization_signal": "Pre-NMS candidate selection thresholding and Top-K filtering calibrated via a selection rule targeting suppression tail latency and clean accuracy tolerance.",
+          "optimization_signal": "Projected gradient ascent on anchor confidence scores for generating adversarial candidate inflation, and an analytical calibration rule over swept candidate grids to determine the admission bound K*.",
           "signal_reuse": "independent"
         },
         "evidence_ids": [
           "E559b2776a77bde14-B0003",
+          "E559b2776a77bde14-B0004",
           "E559b2776a77bde14-B0011",
           "E559b2776a77bde14-B0012",
+          "E559b2776a77bde14-B0013",
+          "E559b2776a77bde14-B0016",
           "E559b2776a77bde14-B0017",
-          "E559b2776a77bde14-B0019",
+          "E559b2776a77bde14-B0020",
+          "E559b2776a77bde14-B0023",
           "E559b2776a77bde14-B0024",
           "E559b2776a77bde14-B0031",
           "E559b2776a77bde14-B0034",
           "E559b2776a77bde14-B0037",
+          "E559b2776a77bde14-B0038",
           "E559b2776a77bde14-B0041",
           "E559b2776a77bde14-B0042",
+          "E559b2776a77bde14-B0043",
           "E559b2776a77bde14-B0046",
           "E559b2776a77bde14-B0048",
           "E559b2776a77bde14-B0050",
           "E559b2776a77bde14-B0051",
           "E559b2776a77bde14-B0052",
-          "E559b2776a77bde14-B0060"
+          "E559b2776a77bde14-B0060",
+          "E559b2776a77bde14-B0061"
         ],
-        "limitations": "The authors explicitly detail key limitations, noting that their algorithmic bound does not guarantee worst-case execution time (WCET), depends on session sample counts for tail quantile estimation, and cannot protect upstream pipeline stages like image decoding from format-induced overheads.",
-        "method_assessment": "The methodology is rigorous and clearly documented, separating client-observed, worker-level, and suppression-specific timing scopes. The authors replay identical attacked candidate arrays across multiple backends (NumPy, torchvision CPU, torchvision CUDA), architectures (server GPUs, Raspberry Pi 4B), detector geometries, and datasets while properly evaluating accuracy trade-offs.",
-        "quality_rationale": "This paper presents a methodologically thorough, nuanced, and self-critical systems investigation of adversarial latency in object detection pipelines. The experimental design is well-controlled, artifacts and provenance are documented, and claims strictly adhere to empirical findings without overreach.",
-        "scoped_contribution": "The paper characterizes candidate-inflation latency attacks on real-time object detection and evaluates bounding candidate admission before non-maximum suppression (Top-K) against declared deadlines. It also demonstrates through end-to-end breakdown that bounding suppression work alone is insufficient for pipeline deadline integrity due to non-suppression overheads like image decoding.",
+        "limitations": "The authors explicitly report threats to validity, noting that K* calibration was conducted over limited sessions, that millisecond timings are target-specific rather than formal WCET bounds, and that bounding suppression work is insufficient by itself to secure the end-to-end serving pipeline.",
+        "method_assessment": "The methodology is thoroughly detailed, implementing a deterministic projected gradient ascent attack targeting pre-NMS anchor expansion, replaying captured arrays across three distinct suppression backends (NumPy CPU, torchvision CPU, and torchvision CUDA), and instrumenting both stage-local and end-to-end client latencies.",
+        "quality_rationale": "This work provides a sound, highly transparent, and realistic systems-level evaluation of latency attacks and defenses in real-time object detection, characterized by honest negative findings regarding end-to-end client deadlines and fully documented artifacts.",
+        "scoped_contribution": "The paper demonstrates that candidate-inflation latency attacks against object detection remain attacker-controlled across backends, and establishes a deployment-calibrated candidate admission bound (K) prior to NMS that strictly limits suppression latency while quantifying its minimal clean accuracy cost.",
         "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd"
       },
       "primary_model": "gemini-3.8-flash",
       "primary_provider": "google",
       "provenance_status": "pass"
     },
-    "rationale": "This paper presents a methodologically thorough, nuanced, and self-critical systems investigation of adversarial latency in object detection pipelines. The experimental design is well-controlled, artifacts and provenance are documented, and claims strictly adhere to empirical findings without overreach.",
+    "rationale": "This work provides a sound, highly transparent, and realistic systems-level evaluation of latency attacks and defenses in real-time object detection, characterized by honest negative findings regarding end-to-end client deadlines and fully documented artifacts.",
     "recommendation": "unknown",
     "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "9000c64f9bacf18d1ba017c3b38abd29f4c81a88b35c1c938e2de37356ce47bd",
     "status": "pass",
     "suppressed": false,
-    "uncertainty": "The authors explicitly detail key limitations, noting that their algorithmic bound does not guarantee worst-case execution time (WCET), depends on session sample counts for tail quantile estimation, and cannot protect upstream pipeline stages like image decoding from format-induced overheads."
+    "uncertainty": "The authors explicitly report threats to validity, noting that K* calibration was conducted over limited sessions, that millisecond timings are target-specific rather than formal WCET bounds, and that bounding suppression work is insufficient by itself to secure the end-to-end serving pipeline."
   },
   "semantic_scholar_id": null,
   "source": "openalex",

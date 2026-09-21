@@ -60,15 +60,28 @@
           </section>
           <section class="detail-panel wide quality-detail-panel">
       <h2>Quality pending</h2>
-      <p>The manuscript presents an exploratory comparison but combines disparate benchmarks into an undifferentiated binary pool without dataset-level disaggregation. In addition, critical architectural specifics for the ViT segmentation head are absent, training regimes vary across compared models, and final reported metrics reflect peak validation checkpoint selection rather than held-out test evaluation, generating substantial scientific uncertainty.</p>
-      <p>The authors acknowledge limitations including hardware intensity, the restriction to binary defect classification, and evaluation confined to controlled benchmark images without real-time latency measurements.</p>
+      <p>The study evaluates standard public architectures on pooled benchmark data without proposing architectural or methodological innovations. Inconsistent training configurations between compared models, conflation of validation checkpoint picking with final testing, lack of cross-run variance, and contradictory reporting of final metrics warrant an uncertain assessment.</p>
+      <p>The authors acknowledge limitations including hardware intensity, dataset scale dependency, restriction to binary segmentation, and absence of real-world inference speed or deployment testing.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: Adroid Conference Series Engineering and Technology. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
         <p>Manuscript evidence assessed: true. Scope: full_text.</p>
         <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
-        <p>Assessed: 2026-09-21T10:13:49.469987+00:00.</p>
+        <p>Assessed: 2026-09-21T10:49:49.844632+00:00.</p>
         <p>Coverage: 39652 of 39652 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Three different benchmark databases were used to ensure diversity in the studied materials, defect categories,
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>unified approach of training and evaluation over three benchmark industrial surface
+defect segmentation datasets, i.e., MVTec AD, NEU Surface Defect Database, and DAGM 2007, where the Dice Coefficient
+and mean Intersection over Union are used as evaluation criteria. It is observed that U -Net performs best in terms of
+maximum mIoU of 0.75 at Epoch 26, ViT attains 0.72 with better generalization behavior at Epoch 41, and TransUNet
+achieves 0.67 at epoch 19.
+Keywords: Surface Defect Segmentation, Vision Transformers, Hybrid CNN -Transformer Models, Industrial
+Quality Inspection, Deep Learning, Dice Coefficient, Mean Intersection over Union (mIoU) .</blockquote></details></li><li><strong>Contribution clarity — pages 1–2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>surface defects. In this experiment,
+ICCCN-2026
+
+
+Proceedings of ICCCN-2026 49 ADROID Conference Series: Engineering and Technology (ACS: ET)
+
+all models were trained with the use of one and the same pre -processing procedure, evaluated on three
+commonly used benchmarks of industrial data, and assessed through the Dice Coefficient and mIoU metrics.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Three different benchmark databases were used to ensure diversity in the studied materials, defect categories,
 and imaging conditions.
 • MVTec Anomaly Detection (AD) Benchmark [4]: Contains 5,354 high -resolution images categorized
 into 15 object and texture classes, including metals, fabrics, leather, and electronic components with
@@ -118,23 +131,7 @@ cases of imbalanced data where the defective areas constitute a tiny fraction of
 Dice = 2𝑇𝑃
 2𝑇𝑃 + 𝐹𝑃 + 𝐹𝑁 (1)
 
-where TP stands for </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>inductive bias based on convolutions, allowing for efficient and reliable learning of local textures even with
-small datasets. On the other hand, ViT performed steadily with Dice scores ranging between 0.50 and 0.56
-throughout the entire training process; the peak overlap achieved by the model is consistent with existing issues
-with transformers at medium dataset sizes. TransUNet demonstrates high variance in Dice during the initial
-training epochs but eventually converges to a peak value of approximately 0.48 Dice in epoch 19.
-ICCCN-2026
-
-
-Proceedings of ICCCN-2026 56 ADROID Conference Series: Engineering and Technology (ACS: ET)
-
-
-
-Fig. 7. Validation Dice Score Comparison — U-Net, ViT, and TransUNet Across Training Epochs
-
-
-C.  Validation mIoU Comparison
-Validation mIoU Curves are shown in Fig 8 below, and we can see that performance -wise, there are significant </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+where TP stands for </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
 demonstrated the maximum gap between validation and train mIoU during early training stages, but it
 drastically decreased after the convergence stage.
 
@@ -149,7 +146,26 @@ Fig. 10; that value was selected as the final model checkpoint for evaluating it
 at epoch 26 (mIoU = 0.75) , TransUNet at epoch 19 (mIoU = 0.67) , and ViT at epoch 41 (mIoU = 0.72) . The
 order of speediness of training of the three models is in line with the specific properties of each model&#x27;s
 learning: CNN of TransUNet learns local features fast, the convolutions of U-Net enable faster learning of
-global patterns, while attention of ViT requires more </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE IV
+global patterns, while attention of ViT requires more </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>training.
+ICCCN-2026
+
+
+Proceedings of ICCCN-2026 58 ADROID Conference Series: Engineering and Technology (ACS: ET)
+
+
+Fig. 10. Best Epoch Identification for Each Model Based on Peak Validation mIoU
+
+
+F. Best Model Performance Summary
+Fig. 11. shows a grouped bar graph of the highest mIoU and Dice scores for each of the models at their optimal
+checkpoints. U-Net performs best in terms of both measures ( mIoU = 0.75, Dice = 0.63 ), while ViT and
+TransUNet are second and third respectively ( ViT: mIoU = 0.72, Dice = 0.56; TransUNet: mIoU = 0.67, Dice
+= 0.52). The overall lower Dice scores compared to the mIoU scores across all models can be attributed to the
+unbalanced distribution of defect pixels in the test data.
+
+
+
+Fig. 11. Best Model Performance Comparison — mIoU and Dice Scores for All Three Architectures</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>TABLE IV
 FINAL PERFORMANCE COMPARISON OF SEGMENTATION MODELS.
 Model Best mIoU Best Dice Convergence
 U-Net (CNN) 0.75 0.63 Fast, mild late overfitting
@@ -162,27 +178,13 @@ values obtained. First, the clear superiority of the U-Net at the present datase
 relevance of convolutional biases in cases when annotated training examples are limited. In the context of
 manufacturing inspections where labeling becomes costly and time -consuming, the greater sample efficiency of
 U-Net is certainly important.
-Second, while the mIoU of 0.72  achieved by the ViT is slightly lower than 0.75 reached by U-Net, the strong </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Even though there have been encouraging findings in this study, certain issues still need to be highlighted.
-Firstly, the effectiveness of the examined models depends on the number and variety of the used data. While a
-mixed dataset taken from different benchmark sources was used for this research, it might not reflect all the
-aspects that can arise in an actual industrial environment, such as novel defects, changing light conditions, and
-rare instances.
-Secondly, Vision Transformers ( ViT) and hybrid methods like TransUNet have relatively high hardware
-requirements. Since they use self -attention, they tend to consume a lot of memory and take longer to train,
-which makes their usage in limited-resource or real-time industrial contexts challenging.
-Thirdly, even though ViTs are generally good at generalizing, they need a significant amount of labeled data for
-training, which </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Innovations and contributions:
-
-• Comparative Controlled Experimental Setup: A precise and replicable three -way comparative analysis of
-U-Net, ViT and TransUNet under consistent experimentation parameters to conduct the first comprehensive
-comparison of these architectures for the problem of industrial surface defect detection.
-• Evaluation on Multiple Datasets: Robust evaluation through three state -of-the-art industrial benchmark
-datasets – MVTec AD, NEU Surface Defect Dataset, and DAGM 2007 dataset.
-• Performance Monitoring: Precise monitoring of training and validation mIoU on an epoch -by-epoch basis
-to identify important distinctions in terms of convergence, overfitting tendencies, and generalization ability
-beyond the mere performance metric.
-• Industrial Implementation Guidelines: Practical recommendations for selecting a suitable architecture
-depending on the </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The present work provides a comparative evaluation of three deep learning frameworks, namely U -Net, Vision
+Second, while the mIoU of 0.72  achieved by the ViT is slightly lower than 0.75 reached by U-Net, the strong </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>is hard and costly to gather in an industrial setting. On the other hand, CNNs show satisfactory
+results with smaller datasets because of their inductive biases, but they find it challenging to model complex
+dependencies in images.
+Further to that, the current research paper is concerned with binary classification, defective or non -defective
+products. As such, it cannot be used when multiple classifications of defective items are required.
+Lastly, the experiments performed were done in a controlled environment. Issues related to the practical use of
+such models like inference speed and hardware limitations have not been discussed here.</blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The present work provides a comparative evaluation of three deep learning frameworks, namely U -Net, Vision
 Transformer (ViT), and TransUNet, in the context of industrial manufacturing applications. The experiments
 were conducted using three datasets with similar settings, which allowed for a reliable architectural comparison
 of the models.
@@ -245,7 +247,7 @@ TransUNet yields lower peak metrics (mIoU: 0.64; Dice: 0.54) under the current c
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 09:56:41</li><li>Last seen by Paper Scout: 2026-09-21 10:03:30</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 10:47:18</li><li>Last seen by Paper Scout: 2026-09-21 10:47:18</li></ul>
             <ul><li>DOI: 10.63503/acset.109</li><li>OpenAlex: W7213342793</li><li>OpenAlex IDs: W7213342793</li></ul>
           </section>
           <section class="detail-panel">

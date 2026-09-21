@@ -233,6 +233,22 @@ class DiscoveryPlan(unittest.TestCase):
                      "representation"):
             self.assertIn(term, text)
 
+    def test_the_documented_slot_budget_matches_the_configured_queries(self):
+        """The README's provider-slot arithmetic is used for rate-limit planning.
+
+        It read "three normal daily runs use 38 logical search slots" until this track was
+        added, which is the kind of number that silently stops describing reality. Pinned
+        against the planner rather than against a literal, so the prose has to be corrected
+        whenever a budget or a track changes.
+        """
+        planned = sum(len(plan_queries(load_config(track_id=track, env={})))
+                      for track in TRACK_CONFIG_PATHS)
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        words = {3: "three", 4: "four", 5: "five", 6: "six"}
+        count = len(TRACK_CONFIG_PATHS)
+        self.assertIn(f"{words.get(count, count)} normal daily runs", readme)
+        self.assertIn(f"{planned} logical search slots", readme)
+
     def test_discovery_fixtures_are_all_reachable(self):
         report = evaluate_discovery(load_config(track_id=TRACK, env={}))
         self.assertEqual(report["missed"], [])

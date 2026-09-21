@@ -363,6 +363,47 @@ four tracks, which is outside this PR's scope.
 identity gap found while resolving the rebuild
 (`test_every_seed_note_matches_by_title_as_well_as_identifier`).
 
+**Round 2 — `CHANGES_REQUIRED`.** Re-run at a 500 KB input budget so source files were not
+crowded out by generated artifacts; 39 of 231 files reached it instead of 12. The round-one
+blocking finding did not recur. One new blocking finding, two non-blocking.
+
+**Blocking: "generated index cards contradict their own quality assessment."** The symptom
+is real — a card badged *Quality reviewed* renders *"Not enough evidence assessed yet"* in
+its expanded pane — **and it is pre-existing, already live, and not introduced here.**
+Counted on `origin/main`'s committed pages:
+
+| Published page (on `main`) | cards with `quality_status="pass"` | of those, showing "Not enough evidence assessed yet" |
+| --- | --- | --- |
+| `docs/index.html` | 21 | **17** |
+| `docs/deep-research/index.html` | 20 | **15** |
+| `docs/engram/index.html` | 6 | 0 |
+
+The cause is in the shared renderer, not in this track. The promotion gate records a
+decision as `quality_status="pass"` with `assessment_scope="full_text"` but leaves the
+legacy numeric `overall_quality_score` and `recommendation` unset; `_paper_quality_summary`
+keys its detail text off those legacy fields and falls back to the no-evidence string when
+they are absent. Cards from the older assessor that do carry a numeric score render
+correctly, which is exactly why Engram shows none.
+
+Fixing it means changing `paper_scout/site.py` for every track and regenerating three other
+libraries' published pages — which §26 forbids this PR from touching and §27 forbids as an
+unrelated refactor. It is therefore **filed as separate work** rather than absorbed here or
+ignored, including the reviewer's suggestion that `check_paper_scout_site.py` should fail
+when a card's rendered quality text disagrees with its sidecar JSON.
+
+**Non-blocking: "README slot budget not updated."** Valid, and mine. The README still said
+*"The three normal daily runs use 38 logical search slots combined"*. Corrected to four runs
+and 52 slots, with the per-track split, and
+`test_the_documented_slot_budget_matches_the_configured_queries` now pins the prose against
+the planner so it cannot drift again.
+
+**Non-blocking: counts across digest, archive and latest.** The rule-version half was fixed
+by the rebuild (see above). The rest is three different populations by design, on every
+track: the Run Summary counts what that run fetched (93), the digest body and archive list
+the notification-eligible library including separately ingested seeds (95), and `latest.html`
+lists first-seen-this-run papers minus suppressed and insufficient ones. Reconciling them
+means changing the shared digest, archive and latest formats for all four tracks.
+
 ## N. Production smoke
 
 <!-- SMOKE_SECTION -->
@@ -403,6 +444,11 @@ identity gap found while resolving the rebuild
    than to this track.
 7. **No live-smoke step** for this track, matching Engram, so provider reachability is
    only exercised by the daily discovery run itself.
+8. **A pre-existing renderer defect is now documented but unfixed** (round-two blocking
+   finding): promoted cards whose assessment carries no legacy numeric score render
+   "Not enough evidence assessed yet". It affects 17 of 21 and 15 of 20 promoted cards on
+   the two largest live libraries today, and it will affect this track's promoted cards
+   identically. Filed as separate work because the fix is in the shared renderer.
 
 ---
 

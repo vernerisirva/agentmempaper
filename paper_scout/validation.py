@@ -29,6 +29,39 @@ def deterministic_candidates(profile: str = "agent_memory") -> list[PaperCandida
         from paper_scout.engram_evaluation import seed_fixtures
         fixtures = seed_fixtures()
         return [fixtures[0], replace(fixtures[0], source="fixture_openalex", source_id="EW1"), fixtures[3]]
+    if profile == "computer_vision":
+        return [
+            PaperCandidate(
+                title="An Anchor-Free One-Stage Detector with Improved Label Assignment",
+                authors=["Ada Lovelace"],
+                abstract="A real-time one-stage object detector with an anchor-free head and a new label assignment strategy, evaluated on COCO.",
+                source="fixture_arxiv",
+                source_id="C1",
+                doi="10.1/anchor-free-detector",
+                url="https://example.test/c1",
+                published_date="2026-06-26",
+            ),
+            PaperCandidate(
+                title="An Anchor-Free One-Stage Detector with Improved Label Assignment",
+                authors=["Ada Lovelace"],
+                abstract="The same detector paper mirrored from another source.",
+                source="fixture_openalex",
+                source_id="CW1",
+                doi="10.1/anchor-free-detector",
+                url="https://example.test/cw1",
+                published_date="2026-06-26",
+            ),
+            PaperCandidate(
+                title="Hierarchical Decoders for Semantic Segmentation",
+                authors=["Grace Hopper"],
+                abstract="A decoder for semantic segmentation that aggregates multi-scale features, evaluated on ADE20K with ablations.",
+                source="fixture_semantic_scholar",
+                source_id="CS1",
+                semantic_scholar_id="CS1",
+                url="https://example.test/cs1",
+                published_date="2026-06-26",
+            ),
+        ]
     if profile == "deep_research":
         return [
             PaperCandidate(
@@ -124,7 +157,9 @@ def validate_idempotency(
         output_dir = report_dir or (root / "reports")
     try:
         config = ScoutConfig(
-            terms=[{"agent_memory": "agent memory", "deep_research": "deep research agent", "engram": "conditional memory"}[relevance_profile]],
+            terms=[{"agent_memory": "agent memory", "deep_research": "deep research agent",
+                    "engram": "conditional memory",
+                    "computer_vision": "object detection"}[relevance_profile]],
             track_id=track_id,
             days=7,
             max_results_per_source=10,

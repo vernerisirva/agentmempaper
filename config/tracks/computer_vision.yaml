@@ -1,0 +1,158 @@
+track:
+  id: "computer_vision"
+  title: "Computer Vision Paper Library"
+  subtitle: "A daily updated library of research in object detection, visual recognition, and modern computer vision."
+  relevance_profile: "computer_vision"
+  seed_manifest: "config/seeds/computer_vision.json"
+
+search:
+  days: 7
+  max_results_per_source: 25
+  terms:
+    - "object detection"
+    - "real-time object detection"
+    - "one-stage object detector"
+    - "anchor-free object detection"
+    - "efficient object detection"
+    - "object detection latency"
+    - "object detector deployment"
+    - "small object detection"
+    - "open-vocabulary object detection"
+    - "oriented object detection"
+    - "YOLO"
+    - "YOLO detector"
+    - "DETR"
+    - "Deformable DETR"
+    - "real-time DETR"
+    - "label assignment detection"
+    - "detection loss function"
+    - "region proposal network"
+    - "semantic segmentation"
+    - "instance segmentation"
+    - "panoptic segmentation"
+    - "promptable segmentation"
+    - "multi-object tracking"
+    - "tracking by detection"
+    - "visual object tracking"
+    - "vision transformer"
+    - "hierarchical vision transformer"
+    - "convolutional backbone"
+    - "visual representation learning"
+    - "self-supervised visual representation"
+    - "visual encoder"
+    - "human pose estimation"
+    - "keypoint detection"
+    - "monocular depth estimation"
+    - "stereo matching"
+    - "point cloud"
+    - "3D reconstruction"
+    - "neural rendering"
+    - "efficient vision model"
+    - "edge inference vision"
+    - "quantization detector"
+    - "knowledge distillation detection"
+
+# Keyword discovery deliberately concentrates on detection, because that is the part of
+# the field the reader works in and the part a category sweep alone ranks poorly. The
+# cs.CV sweep below carries breadth: segmentation, tracking, pose, 3D and efficiency
+# reach the track through it and are filtered by the relevance profile, not by keywords.
+discovery_queries:
+  arxiv:
+    - query: "object detection"
+      mode: all_terms
+    - query: "real-time object detection"
+      mode: phrase
+    - query: "YOLO"
+      mode: phrase
+    - query: "open-vocabulary object detection"
+      mode: all_terms
+    - query: "vision transformer"
+      mode: all_terms
+  openalex:
+    - "real-time object detection"
+    - "YOLO object detector"
+    - "vision transformer image recognition"
+    - "image segmentation deep learning"
+  semantic_scholar:
+    - "real-time object detection"
+    - "YOLO detector"
+    - "open-vocabulary object detection"
+    - "visual representation learning"
+
+# Five keyword queries plus the category sweep fill the arXiv budget exactly; a sixth
+# keyword query would silently displace the sweep, because the planner truncates to the
+# budget after appending it.
+query_budgets:
+  arxiv: 6
+  openalex: 4
+  semantic_scholar: 4
+
+arxiv_sweep:
+  enabled: true
+  categories:
+    - cs.CV
+  days: 10
+  max_results: 300
+
+quality:
+  enabled: true
+  mode: auto
+  assessment:
+    version: "quality-promotion-v2"
+    rubric_version: "scholarly-rubric-v2"
+    assess_relevant: true
+    assess_maybe_relevant: true
+    assess_irrelevant: false
+    max_assessments_per_run: 5
+  full_text:
+    enabled: true
+    cache_dir: "data/cache/full_text/computer_vision"
+    timeout_seconds: 20
+    max_pdf_megabytes: 20
+    max_pages: 80
+    max_extracted_characters: 400000
+    max_prompt_characters: 180000
+    max_section_characters: 8000
+  ranking:
+    behavior: downrank
+    relevance_weight: 0.75
+    quality_weight: 0.25
+    downrank_below: 60
+    weak_below: 55
+    hide_below: 40
+    minimum_confidence_for_hiding: high
+    unknown_quality_is_neutral: true
+  display:
+    show_score: true
+    show_confidence: true
+    show_scope: true
+    show_strengths: 2
+    show_concerns: 3
+    show_evidence: true
+
+state:
+  sqlite_path: "data/computer_vision/paper_scout.sqlite3"
+
+output:
+  digest_dir: "digests/computer_vision"
+  report_dir: "reports/paper_scout/computer_vision"
+  docs_dir: "docs/computer-vision"
+
+curation:
+  path: "config/curation/computer_vision.yaml"
+
+research_context:
+  - "This track supports practical work with YOLO and other real-time object detectors, so detection architecture, training, evaluation and deployment are the highest-priority topics."
+  - "Competing detector families are deliberately in scope: DETR and its real-time descendants, the R-CNN lineage, and other major architectures, so the library does not become a single-family echo chamber."
+  - "Segmentation, tracking, pose, visual backbones and representation learning, 3D and depth, and efficient or edge vision are covered as the surrounding field."
+  - "Vision-language work belongs here when visual methodology is a meaningful contribution or visual perception is what is being evaluated, not merely because a model accepts images."
+  - "A domain-specific paper is in scope when it introduces a broadly useful vision method; applying an off-the-shelf detector to one dataset is a review candidate rather than a core paper."
+  - "Detection metrics are distinct quantities: AP50, AP75 and mAP50-95 are different averages, and frames per second is a throughput measure that is not interchangeable with per-image latency."
+
+exclusions:
+  - "generic machine learning with no substantive vision component"
+  - "GPU or database memory management unrelated to vision methodology"
+  - "robotics or control where perception is incidental"
+  - "general language-model papers that accept images but make no vision contribution"
+  - "image generation alone, with no perception or computer-vision contribution"
+  - "domain applications that only run an off-the-shelf detector without a general method"

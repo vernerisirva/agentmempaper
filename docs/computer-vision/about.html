@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Computer Vision Paper Library</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="index.html">Paper Scout</a>
+            <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a>
+              <a href="index.html">Library</a>
+              <a href="latest.html">Latest run</a>
+              <a href="archive.html">Archive</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
+            </span>
+          </nav>
+          <p class="eyebrow">About</p>
+          <h1>How Paper Scout works</h1>
+          <p class="hero-copy">A daily updated library of research in object detection, visual recognition, and modern computer vision.</p>
+        </header>
+        <section class="about-grid">
+          <article><h2>How detection metrics are read here</h2>
+            <p>AP50, AP75 and mAP50-95 are different averages over different IoU thresholds and are never treated as
+            the same number. Frames per second is a throughput measure and is not interchangeable with per-image
+            latency; a batched throughput figure and a single-image latency figure describe different things.</p>
+            <p>No deterministic rule rewards a reported number. A small AP gain is not by itself high-quality science:
+            methodological contribution, evaluation breadth, baselines, ablations, efficiency trade-offs, generality,
+            limitations and the fit between claims and evidence are what the scientific assessment weighs, and there is
+            no hard-coded minimum improvement anywhere in it.</p></article>
+            <article><h2>Foundational papers</h2>
+            <p>A small set of foundational detection and vision papers is seeded so the library has anchors: the YOLO
+            lineage, the R-CNN lineage, the DETR line, the Vision Transformer and Swin, Segment Anything and DINOv2.
+            Every identifier was resolved from primary metadata before it was added. Seeds are screened and
+            quality-assessed exactly like any other paper and are marked with a curation note; being seeded does not
+            admit a paper to the main library.</p></article>
+            <article><h2>Coverage</h2>
+            <p>Keyword discovery concentrates on detection; a bounded arXiv cs.CV category sweep carries the rest of
+            the field, and the relevance screen does the topical filtering. Both are bounded per run, so this is a
+            monitored slice of computer vision, not a claim of complete literature coverage. cs.CV is a high-volume
+            category and a single sweep cannot see all of it; truncated windows are reported in source
+            diagnostics.</p></article>
+          <article>
+            <h2>What Paper Scout tracks</h2>
+            <p>This library tracks object detection first: the YOLO family, one-stage and anchor-free detectors, DETR and its real-time descendants, the R-CNN lineage, open-vocabulary and small-object detection, detection losses and label assignment, and detector deployment. Detection is emphasised because it is the work these papers are read for; competing detector families are included deliberately so the library shows where YOLO differs from the alternatives rather than only where it wins. The surrounding field is covered as well: segmentation, tracking, pose and keypoints, visual backbones and representation learning, vision-language work where visual methodology is the contribution, 3D and depth, and efficient or edge vision.</p>
+          </article>
+          <article>
+            <h2>Sources</h2>
+            <p>The daily scout queries arXiv, OpenAlex, and Semantic Scholar. Source metadata can disagree, lag, or contain future publication dates from publisher feeds.</p>
+          </article>
+          <article>
+            <h2>Deduplication</h2>
+            <p>Candidate papers are canonicalized by DOI, arXiv ID, Semantic Scholar ID, OpenAlex work ID, then normalized title, first author, and year. The dashboard also collapses duplicate titles while preserving alternate source links.</p>
+          </article>
+          <article>
+            <h2>Relevance screening</h2>
+            <p>Highly relevant means the paper makes a methodological contribution to computer vision: a detector, backbone, segmentation, tracking or pose method, a training or evaluation technique, a foundation model, or a substantive efficiency and deployment result. A paper that applies an existing detector to one dataset is a review candidate rather than a core paper, and the reason is the absence of a general method claim, not the application area: domain work that contributes a broadly useful method is a core paper. Vision-language work needs visual methodology or visual evaluation to qualify; accepting images is not enough. Relevance is topical only and says nothing about scientific quality.</p>
+          </article>
+          <article>
+            <h2>Scholarly-quality assessment</h2>
+            <p>Paper Scout separates topical relevance from scientific-quality assessment. The main library contains only highly relevant, quality-screened papers with a manuscript-based pass. Review candidates retain pending historical papers without implying they are weak.</p>
+            <p>Institutional affiliation, employer, country, author identity and prestige are not quality criteria. Peer review is informative metadata but is not sufficient. Preprints and repository-only manuscripts can pass with adequate methods, evidence, comparisons appropriate to the claims, and limitations. Missing full text leaves quality uncertain.</p>
+            <p>Deterministic text patterns and legacy scores cannot earn pass. Research cards retain concise rationale, limitations, full-text provenance and versioned assessments. Quality screening does not prove scientific correctness.</p>
+          </article>
+          <article>
+            <h2>Manual curation</h2>
+            <p>Optional curation can pin, annotate, override, or hide papers in the static dashboard without deleting anything from SQLite state.</p>
+          </article>
+          <article>
+            <h2>Structured paper cards</h2>
+            <p>The cumulative library links each paper to a structured detail page and sidecar JSON. These static records are meant for human review and future agent workflows; fields are provenance-aware, incomplete extraction is shown as “Not extracted yet”, and the sidecar schema is published at <a href="data/paper-card.schema.json">paper-card.schema.json</a>.</p>
+            <p>Structured cards are generated from title, abstract or summary, metadata, deterministic screening, and curation notes. They do not claim that Paper Scout has deeply read the full paper.</p>
+          </article>
+          <article>
+            <h2>Limitations</h2>
+            <p>Relevance screening can produce false positives or false negatives. Semantic Scholar rate limits may occur. Source metadata can be wrong, and future publication dates may reflect source metadata rather than actual availability.</p>
+          </article>
+        </section>
+
+  </main>
+</body>
+</html>

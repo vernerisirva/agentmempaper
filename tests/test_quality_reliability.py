@@ -296,8 +296,13 @@ class ProviderContractTest(unittest.TestCase):
         self.assertEqual(workflow["on"]["schedule"], [{"cron": "0 4 * * 1-5"}])
         from paper_scout.operational_preflight import (
             DEFAULT_OPENROUTER_RUN_CEILING_USD, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK)
+        from paper_scout.batch_population import TRACKS
         self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
-        self.assertEqual(MAX_PAPERS_PER_RUN, 3)
+        # One slot per track and no transfer between them, so the run ceiling is exactly
+        # the track count. A raise that is not a new track is a policy change, not drift.
+        self.assertEqual(MAX_PAPERS_PER_RUN, len(TRACKS))
+        self.assertEqual(MAX_PAPERS_PER_RUN, 4)
+        # Adding the fourth track did not buy more money. The ceiling is unchanged.
         self.assertEqual(DEFAULT_OPENROUTER_RUN_CEILING_USD, 0.30)
 
         # Discovery must not be able to enter the scientific gate: it neither receives a
@@ -305,7 +310,7 @@ class ProviderContractTest(unittest.TestCase):
         discovery = by_name["Run discovery and metadata update"]
         self.assertNotIn("GEMINI_API_KEY", discovery.get("env", {}))
         self.assertNotIn("OPENROUTER_API_KEY", discovery.get("env", {}))
-        for track in ("agent_memory", "deep_research", "engram"):
+        for track in TRACKS:
             self.assertIn(f"run --track {track} --no-llm", discovery["run"])
 
         # Assessment runs behind the RUN_ASSESSMENT gate and a passing preflight, and

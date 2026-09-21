@@ -28,6 +28,8 @@ def relevance_fixture_examples(profile: str = "agent_memory") -> list[RelevanceE
         return examples
     if profile == "deep_research":
         return deep_research_fixture_examples()
+    if profile == "computer_vision":
+        return computer_vision_fixture_examples()
     relevant = [
         ("long-term memory for LLM agents", "Long-Term Memory for LLM Agents", "Persistent long-term memory for language model agents with retrieval and update policies."),
         ("episodic memory in autonomous agents", "Episodic Memory in Autonomous Agents", "Autonomous LLM agents store episodic memory across multi-step tasks."),
@@ -113,6 +115,98 @@ def deep_research_fixture_examples() -> list[RelevanceExample]:
                 name=name,
                 expected_relevant=False,
                 candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/deep-irrelevant", published_date="2026-01-01"),
+            )
+        )
+    return examples
+
+
+def computer_vision_fixture_examples() -> list[RelevanceExample]:
+    """Pinned distinctions for the computer-vision screen.
+
+    Three groups, and the middle one carries the policy. Core papers are methodological
+    vision contributions. Hard negatives share vocabulary with vision work but have no
+    visual subject at all. The borderline group is where a detection-heavy profile would
+    otherwise overfit: a domain application of an existing detector, a vision-language
+    model, a robotics system and a synthetic-data pipeline are review candidates rather
+    than core papers, because none of them states a general vision method. A domain paper
+    that does state one is a core paper, which the last core example pins directly.
+    """
+    relevant = [
+        ("yolo detector architecture", "An Anchor-Free One-Stage Detector with Improved Label Assignment",
+         "We present a real-time one-stage object detector with an anchor-free head and a new label assignment strategy. On COCO the detector improves mAP50-95 at matched latency, and we report an ablation over the neck design and frames per second on an embedded platform."),
+        ("real-time detr improvement", "Real-Time Detection Transformers with an Efficient Hybrid Encoder",
+         "We propose a query-based end-to-end object detection architecture whose hybrid encoder decouples intra-scale interaction from cross-scale fusion. Experiments on COCO compare against YOLO baselines at matched latency, with ablations on the matching strategy."),
+        ("semantic segmentation method", "Hierarchical Decoders for Semantic Segmentation",
+         "We introduce a decoder for semantic segmentation that aggregates multi-scale features. Results on ADE20K and Cityscapes report mIoU against strong baselines, with an ablation of each component."),
+        ("visual backbone", "A Convolutional Backbone for Dense Visual Prediction",
+         "We propose a convolutional backbone for image recognition and dense prediction. The architecture generalizes across detection and segmentation heads and is evaluated on ImageNet and COCO."),
+        ("multi-object tracking method", "Association Beyond Confidence for Multi-Object Tracking",
+         "We study tracking-by-detection and propose a tracklet association method that generalizes across detectors. Results on MOT17 and MOT20 include ablations over the association cost."),
+        ("self-supervised visual representation", "Self-Supervised Visual Representation Learning at Scale",
+         "We present a self-supervised visual pre-training method that produces a general visual encoder. Frozen features are evaluated on image classification, detection and segmentation across multiple datasets."),
+        ("pose estimation method", "Real-Time Human Pose Estimation with a Lightweight Keypoint Head",
+         "We propose a keypoint detection head for real-time human pose estimation. The method generalizes across backbones, and we report an ablation and latency on edge devices."),
+        ("monocular depth estimation", "Scale-Consistent Monocular Depth Estimation",
+         "We introduce a training objective for monocular depth estimation that generalizes across datasets. Ablations isolate the contribution of each term and we compare against stereo matching baselines."),
+        ("efficient detector deployment", "Quantization-Aware Training for Efficient Object Detectors",
+         "We propose a quantization scheme for efficient object detection that is detector-agnostic. We report mAP50-95, inference latency and throughput on embedded hardware, with an ablation per layer group."),
+        ("domain paper with a general method", "A Scale-Aware Detection Head for Small Lesion Detection",
+         "We propose a novel detection head for small-object detection. Although motivated by medical imaging, the module is plug-and-play and generalizes across detectors and datasets; ablations isolate its contribution."),
+    ]
+    irrelevant = [
+        ("generic rag", "Generic RAG for Question Answering",
+         "A retrieval-augmented generation system retrieves documents from a corpus and answers user questions."),
+        ("generic agent framework", "A Multi-Agent LLM Framework for Tool Use",
+         "A multi-agent language model framework orchestrates tool calls and planning across text-based tasks."),
+        ("gpu database memory", "In-Memory Database Indexing",
+         "Database memory indexing and GPU memory management improve transaction throughput on modern servers."),
+        ("text-only llm", "Instruction Tuning for Text-Only Language Models",
+         "We study text-only instruction tuning for large language models and evaluate on reasoning benchmarks."),
+        ("recommendation system", "Collaborative Filtering for Recommendation",
+         "A recommender system ranks items using collaborative filtering and learned user embeddings."),
+        ("image generation only", "Text-to-Image Diffusion with Improved Sampling",
+         "We improve sampling for text-to-image generative diffusion models and evaluate image synthesis quality."),
+    ]
+    borderline = [
+        ("medical application of standard yolo", "Automated Polyp Detection in Colonoscopy Video Using YOLOv8",
+         "We apply a standard pre-trained YOLOv8 detector to a private colonoscopy dataset and report clinical screening accuracy for our hospital."),
+        ("remote sensing detection application", "Ship Detection in Satellite Imagery with a Fine-Tuned Detector",
+         "We fine-tune an existing detector on remote sensing imagery and report detection accuracy for maritime monitoring."),
+        ("multimodal vlm", "A Vision-Language Model for Document Question Answering",
+         "A multimodal large language model answers questions about document images using visual instruction tuning."),
+        ("robotics with cameras", "Reinforcement Learning for Robot Manipulation from Camera Observations",
+         "A manipulation policy for robots learns from camera observations in simulation and is transferred to hardware."),
+        ("synthetic image generation for detection", "Synthetic Training Images for Warehouse Object Detection",
+         "We generate synthetic data with domain randomization and fine-tune an existing detector for warehouse inventory."),
+    ]
+    examples: list[RelevanceExample] = []
+    for name, title, abstract in relevant:
+        examples.append(
+            RelevanceExample(
+                name=name,
+                expected_relevant=True,
+                candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/cv-relevant", published_date="2026-01-01"),
+                expected_decision="relevant",
+            )
+        )
+    for name, title, abstract in irrelevant:
+        examples.append(
+            RelevanceExample(
+                name=name,
+                expected_relevant=False,
+                candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/cv-irrelevant", published_date="2026-01-01"),
+                expected_decision="irrelevant",
+            )
+        )
+    for name, title, abstract in borderline:
+        # Expected relevant in the precision/recall sense (a review candidate is surfaced,
+        # not discarded) while the exact decision is pinned to "maybe".
+        examples.append(
+            RelevanceExample(
+                name=name,
+                expected_relevant=True,
+                candidate=PaperCandidate(title=title, authors=["Fixture Author"], abstract=abstract, source="fixture", source_id=name, url="https://example.test/cv-borderline", published_date="2026-01-01"),
+                expected_decision="maybe",
             )
         )
     return examples

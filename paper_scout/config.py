@@ -71,6 +71,7 @@ TRACK_CONFIG_PATHS = {
     "agent_memory": Path("config/tracks/agent_memory.yaml"),
     "deep_research": Path("config/tracks/deep_research.yaml"),
     "engram": Path("config/tracks/engram.yaml"),
+    "computer_vision": Path("config/tracks/computer_vision.yaml"),
 }
 
 # Public paths, independent of local build/output overrides.
@@ -78,6 +79,7 @@ TRACK_SITES = {
     "agent_memory": ("Agentic Memory", "."),
     "deep_research": ("Deep Research", "deep-research"),
     "engram": ("Engram", "engram"),
+    "computer_vision": ("Computer Vision", "computer-vision"),
 }
 
 

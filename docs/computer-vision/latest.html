@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latest Paper Scout Run - Computer Vision Paper Library</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="index.html">Paper Scout</a>
+            <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a>
+              <a href="index.html">Library</a>
+              <a href="archive.html">Archive</a>
+              <a href="review.html">Review candidates</a>
+              <a href="about.html">About</a>
+              <a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/computer_vision/latest.md">Markdown digest</a>
+              <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Latest update 2026-09-21</p>
+          <h1>Latest run</h1>
+          <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
+        </header>
+
+    <section class="summary-strip" aria-label="Latest run summary metrics">
+      <div><span>Latest update date</span><strong>2026-09-21</strong></div><div><span>New in latest run</span><strong>0</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Review candidates</span><strong>0</strong></div>
+      <div class="source-summary"><span>Run summary</span><strong>openalex: 100</strong></div>
+    </section>
+
+
+    <section class="reading-controls library-controls" aria-label="Library controls" data-default-decision="all">
+      <label class="search-field" for="paper-search">
+        <span>Search</span>
+        <input id="paper-search" type="search" placeholder="Search papers...">
+      </label>
+      <label class="select-field" for="paper-sort">
+        <span>Sort</span>
+          <select id="paper-sort">
+          <option value="latest-relevant" selected>Latest relevant</option>
+          <option value="score-desc">Screening match</option>
+          <option value="published-desc">Publication date</option>
+          <option value="first-seen-desc">First seen</option>
+          <option value="title-asc">Title</option>
+        </select>
+      </label>
+
+      <label class="select-field relevance-filter" for="relevance-filter">
+        <span>Show</span>
+        <select id="relevance-filter">
+          <option value="relevant">Highly relevant</option>
+          <option value="all" selected>All papers</option>
+          <option value="maybe">Review candidates</option>
+        </select>
+      </label>
+
+
+      <label class="select-field topic-filter" for="topic-filter">
+        <span>Topic</span>
+        <select id="topic-filter">
+          <option value="all" selected>All topics</option>
+          <option value="yolo">YOLO / real-time detection</option><option value="object-detection">Object detection</option><option value="detr">DETR family</option><option value="segmentation">Segmentation</option><option value="tracking">Tracking</option><option value="pose">Pose / keypoints</option><option value="vision-transformer">Vision transformers</option><option value="backbone">Backbones</option><option value="visual-representation">Visual representation</option><option value="vision-language">Vision-language</option><option value="3d-vision">3D vision</option><option value="depth">Depth</option><option value="efficient-vision">Efficient vision</option><option value="edge-deployment">Edge / deployment</option>
+        </select>
+      </label>
+
+      <label class="toggle-control new-only-filter" for="new-only">
+        <input id="new-only" type="checkbox">
+        <span>New only</span>
+      </label>
+
+    </section>
+
+        <section class="paper-section primary-section" id="paper-library" data-section="latest">
+          <div class="section-heading">
+            <p class="section-kicker">New this run</p>
+            <h2>Papers first seen in the latest Paper Scout run.</h2>
+          </div>
+
+          <div class="paper-list" id="paper-list">
+            <p class="empty latest-empty">No new papers were found in the latest run. The cumulative library was refreshed.</p>
+          </div>
+          <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
+        </section>
+        <details class="source-diagnostics"><summary>Source diagnostics <span>Some source queries were rate-limited. Details are available below.</span></summary><ul><li>arxiv failed for &#x27;object detection&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3Aobject+AND+all%3Adetection&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>arxiv failed for &#x27;real-time object detection&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22real-time+object+detection%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>arxiv failed for &#x27;YOLO&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22YOLO%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>arxiv failed for &#x27;open-vocabulary object detection&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3Aopen+AND+all%3Avocabulary+AND+all%3Aobject+AND+all%3Adetection&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>arxiv failed for &#x27;vision transformer&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3Avision+AND+all%3Atransformer&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>arxiv failed for &#x27;cs.CV&#x27;: http error for https://export.arxiv.org/api/query?search_query=cat%3Acs.CV&amp;start=0&amp;max_results=300&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+<li>openalex: incomplete discovery window for &#x27;real-time object detection&#x27;; single-page record limit reached.</li>
+<li>openalex: incomplete discovery window for &#x27;YOLO object detector&#x27;; single-page record limit reached.</li>
+<li>openalex: incomplete discovery window for &#x27;vision transformer image recognition&#x27;; single-page record limit reached.</li>
+<li>openalex: incomplete discovery window for &#x27;image segmentation deep learning&#x27;; single-page record limit reached.</li>
+<li>semantic_scholar failed for &#x27;real-time object detection&#x27;: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.</li>
+<li>semantic_scholar failed for &#x27;YOLO detector&#x27;: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.</li>
+<li>semantic_scholar failed for &#x27;open-vocabulary object detection&#x27;: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.</li>
+<li>semantic_scholar failed for &#x27;visual representation learning&#x27;: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.</li></ul></details>
+        <section class="archive-strip" aria-labelledby="recent-archive-heading">
+          <div>
+            <p class="section-kicker">Context</p>
+            <h2 id="recent-archive-heading">Daily run archive</h2>
+          </div>
+          <div class="archive-links"><a href="https://github.com/vernerisirva/agentmempaper/blob/main/digests/computer_vision/2026-09-21.md">2026-09-21</a></div>
+        </section>
+
+<script>
+(() => {
+  const search = document.querySelector('#paper-search');
+  const relevanceFilter = document.querySelector('#relevance-filter');
+  const newOnly = document.querySelector('#new-only');
+  const topicFilter = document.querySelector('#topic-filter');
+  const sortSelect = document.querySelector('#paper-sort');
+  const qualityMinimum = document.querySelector('#quality-minimum');
+  const qualityRecommendation = document.querySelector('#quality-recommendation');
+  const qualityConfidence = document.querySelector('#quality-confidence');
+  const qualityScope = document.querySelector('#quality-scope');
+  const qualityVisibility = document.querySelector('#quality-visibility');
+  const qualityIncludeUnknown = document.querySelector('#quality-include-unknown');
+  const list = document.querySelector('#paper-list');
+  const cards = Array.from(document.querySelectorAll('.paper-card'));
+  const emptyState = document.querySelector('#no-results');
+  let decision = relevanceFilter ? relevanceFilter.value : 'all';
+  function sortableDate(card, attr) {
+    const value = card.dataset[attr] || '';
+    return /^\d{4}-\d{2}-\d{2}/.test(value) ? value : (card.dataset.firstSeen || '');
+  }
+  function latestRelevantDate(card) {
+    return card.dataset.futureDate === 'true'
+      ? sortableDate(card, 'firstSeen')
+      : sortableDate(card, 'published');
+  }
+  function latestRelevantRank(a, b) {
+    const newness = (a.dataset.isNew === 'true' ? 0 : 1) - (b.dataset.isNew === 'true' ? 0 : 1);
+    if (newness) return newness;
+    const rel = (a.dataset.decision === 'relevant' ? 0 : 1) - (b.dataset.decision === 'relevant' ? 0 : 1);
+    if (rel) return rel;
+    if (!qualityVisibility || qualityVisibility.value === 'configured') {
+      const qualityRank = (a.dataset.qualityDownranked === 'true' ? 1 : 0) - (b.dataset.qualityDownranked === 'true' ? 1 : 0);
+      if (qualityRank) return qualityRank;
+    }
+    const bucket = Number(a.dataset.dateBucket || 1) - Number(b.dataset.dateBucket || 1);
+    if (bucket) return bucket;
+    const date = latestRelevantDate(b).localeCompare(latestRelevantDate(a));
+    if (date) return date;
+    const score = Number(b.dataset.score || 0) - Number(a.dataset.score || 0);
+    if (score) return score;
+    return a.dataset.title.localeCompare(b.dataset.title);
+  }
+  function sortCards() {
+    if (!list || !sortSelect) return;
+    const mode = sortSelect.value || 'latest-relevant';
+    const sorted = [...cards].sort((a, b) => {
+      if (mode === 'latest-relevant') return latestRelevantRank(a, b);
+      if (mode === 'first-seen-desc') return sortableDate(b, 'firstSeen').localeCompare(sortableDate(a, 'firstSeen')) || b.dataset.score - a.dataset.score;
+      if (mode === 'score-desc') return Number(b.dataset.score || 0) - Number(a.dataset.score || 0) || a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'quality-desc') return Number(b.dataset.qualityScore || -1) - Number(a.dataset.qualityScore || -1) || latestRelevantRank(a, b);
+      if (mode === 'combined-desc') return Number(b.dataset.combinedScore || 0) - Number(a.dataset.combinedScore || 0) || latestRelevantRank(a, b);
+      if (mode === 'title-asc') return a.dataset.title.localeCompare(b.dataset.title);
+      if (mode === 'published-desc') return sortableDate(b, 'published').localeCompare(sortableDate(a, 'published')) || b.dataset.score - a.dataset.score;
+      return latestRelevantRank(a, b);
+    });
+    for (const card of sorted) {
+      list.appendChild(card);
+    }
+  }
+  function update() {
+    const query = (search.value || '').toLowerCase();
+    let visibleCount = 0;
+    for (const card of cards) {
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const matchesDecision = decision === 'all' || card.dataset.decision === decision;
+      const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      const topic = topicFilter ? topicFilter.value : 'all';
+      const matchesTopic = topic === 'all' || (card.dataset.tags || '').split(' ').includes(topic);
+      const qualityKnown = card.dataset.qualityScore !== '';
+      const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
+      const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
+      const matchesQualityRecommendation = !qualityRecommendation || qualityRecommendation.value === 'all' || card.dataset.qualityRecommendation === qualityRecommendation.value;
+      const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
+      const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
+      const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesTopic && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
+      if (!card.hidden) visibleCount += 1;
+    }
+    if (emptyState) emptyState.hidden = visibleCount > 0 || cards.length === 0;
+  }
+  if (search) search.addEventListener('input', update);
+  if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
+  if (newOnly) newOnly.addEventListener('change', update);
+  if (topicFilter) topicFilter.addEventListener('change', update);
+  if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
+  [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
+  if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });
+  document.querySelectorAll('.citation-button').forEach(button => {
+    button.addEventListener('click', async () => {
+      const status = button.parentElement.querySelector('.copy-status');
+      const citation = button.dataset.citation || '';
+      try {
+        if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(citation);
+        if (status) status.textContent = 'Copied';
+      } catch (error) {
+        if (status) status.textContent = 'Select citation text from the page source if copying is unavailable.';
+      }
+    });
+  });
+  sortCards();
+  update();
+})();
+</script>
+
+
+  </main>
+</body>
+</html>

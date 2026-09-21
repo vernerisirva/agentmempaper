@@ -12,11 +12,15 @@ name: Paper Scout
 #   FIRST_OPERATIONAL_SMOKE             PASS   run 35461618434, 2 assessed, 2 promoted
 #
 # Bounds are frozen and must not be raised without an explicit operational decision:
-# 1 paper per track per run, 3 per run, $0.30 known OpenRouter spend per run. A track with
-# nothing eligible forfeits its slot rather than lending it, so the usual daily maximum is
-# two. This workflow and the weekly backfill share one concurrency group with
-# cancel-in-progress false and queue max, which is what keeps a single writer on the
-# durable state.
+# 1 paper per track per run, 4 per run, $0.30 known OpenRouter spend per run. The run
+# ceiling went from 3 to 4 on 2026-09-21 only because a fourth track (computer_vision) was
+# added; the per-track quota is unchanged and no track may ever assess more than one paper
+# per run. The cost ceiling was NOT raised: four bounded adjudications cost 4 x $0.0298 =
+# $0.119 at the measured rate, or $0.20 at the conservative per-paper estimate, both under
+# $0.30. A track with nothing eligible forfeits its slot rather than lending it, so the
+# usual daily maximum stays below the ceiling. This workflow and the weekly backfill share
+# one concurrency group with cancel-in-progress false and queue max, which is what keeps a
+# single writer on the durable state.
 on:
   schedule:
     # 04:00 UTC is 06:00 in Europe/Helsinki (UTC+2), weekdays only.
@@ -109,15 +113,19 @@ jobs:
           python -m paper_scout evaluate-relevance --track agent_memory | tee relevance-eval-agent-memory.log
           python -m paper_scout evaluate-relevance --track deep_research | tee relevance-eval-deep-research.log
           python -m paper_scout evaluate-relevance --track engram | tee relevance-eval-engram.log
+          python -m paper_scout evaluate-relevance --track computer_vision | tee relevance-eval-computer-vision.log
           python -m paper_scout evaluate-quality --track agent_memory | tee quality-eval-agent-memory.log
           python -m paper_scout evaluate-quality --track deep_research | tee quality-eval-deep-research.log
           python -m paper_scout evaluate-quality --track engram | tee quality-eval-engram.log
+          python -m paper_scout evaluate-quality --track computer_vision | tee quality-eval-computer-vision.log
           python -m paper_scout evaluate-discovery --track agent_memory | tee discovery-eval-agent-memory.log
           python -m paper_scout evaluate-discovery --track deep_research | tee discovery-eval-deep-research.log
           python -m paper_scout evaluate-discovery --track engram | tee discovery-eval-engram.log
+          python -m paper_scout evaluate-discovery --track computer_vision | tee discovery-eval-computer-vision.log
           python -m paper_scout validate-idempotency --track agent_memory | tee idempotency-agent-memory.log
           python -m paper_scout validate-idempotency --track deep_research | tee idempotency-deep-research.log
           python -m paper_scout validate-idempotency --track engram | tee idempotency-engram.log
+          python -m paper_scout validate-idempotency --track computer_vision | tee idempotency-computer-vision.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_agent_memory_smoke.sqlite3 python -m paper_scout smoke-live --track agent_memory --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-agent-memory.log
           PAPER_SCOUT_STATE_PATH=${{ runner.temp }}/paper_scout_deep_research_smoke.sqlite3 python -m paper_scout smoke-live --track deep_research --days 14 --max-results-per-source 25 --no-notify --ci | tee live-smoke-deep-research.log
 
@@ -136,6 +144,8 @@ jobs:
           # Missing seed records only; repeat runs perform no direct-ID requests.
           python -m paper_scout ingest-seeds --track engram | tee paper-scout-seeds-engram.log
           python -m paper_scout run --track engram --no-llm | tee paper-scout-run-engram.log
+          python -m paper_scout ingest-seeds --track computer_vision | tee paper-scout-seeds-computer-vision.log
+          python -m paper_scout run --track computer_vision --no-llm | tee paper-scout-run-computer-vision.log
 
       # 3. Credential preflight. Reports presence by variable name only and never a
       #    value. It gates the assessment stage rather than failing the job: a failed job
@@ -169,9 +179,10 @@ jobs:
                     file=__import__("sys").stderr)
           PY
 
-      # 4. The bounded scientific-assessment stage: at most one paper per track and three
-      #    per run, under a hard per-run OpenRouter ceiling. A track with nothing eligible
-      #    forfeits its slot rather than lending it, so the usual maximum is two per day.
+      # 4. The bounded scientific-assessment stage: at most one paper per track and four
+      #    per run, under the unchanged per-run OpenRouter ceiling. A track with nothing
+      #    eligible forfeits its slot rather than lending it, so the usual daily maximum
+      #    stays below the ceiling.
       - name: Bounded scientific assessment
         id: assess
         if: ${{ !inputs.deploy_only && env.RUN_ASSESSMENT == 'true' && steps.preflight.outputs.ok == 'true' }}
@@ -192,6 +203,7 @@ jobs:
           python -m paper_scout build-site --track agent_memory | tee paper-scout-build-site-agent-memory.log
           python -m paper_scout build-site --track deep_research | tee paper-scout-build-site-deep-research.log
           python -m paper_scout build-site --track engram | tee paper-scout-build-site-engram.log
+          python -m paper_scout build-site --track computer_vision | tee paper-scout-build-site-computer-vision.log
 
       - name: Validate generated schemas, links, and runtime exclusion
         run: python .github/scripts/check_paper_scout_site.py
@@ -269,7 +281,7 @@ jobs:
       #    never left behind a deployment, and skipped entirely if anything above failed.
       - name: Prepare consistent Paper Scout state snapshot
         if: ${{ success() && !inputs.deploy_only }}
-        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3 data/computer_vision/paper_scout.sqlite3
 
       - name: Persist private Paper Scout state
         id: persist-state

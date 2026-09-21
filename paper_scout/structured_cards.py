@@ -26,9 +26,28 @@ def structured_card_for_paper(paper: Any, relevance_profile: str = "agent_memory
     }
 
 
-def related_topics_for_paper(paper: Any) -> list[str]:
+def related_topics_for_paper(paper: Any, relevance_profile: str = "agent_memory") -> list[str]:
     text = _combined_text(paper)
     topics = set(_tags(paper))
+    if relevance_profile == "computer_vision":
+        # The memory-specific derivations below would mislabel vision papers -- a
+        # detection benchmark is not a memory benchmark -- so this profile derives its
+        # own and returns. Screening tags already carry the rest.
+        if _contains_any(text, ["yolo"]):
+            topics.add("yolo")
+        if _contains_any(text, ["object detection", "object detector", "detection head", "anchor-free", "region proposal"]):
+            topics.add("object-detection")
+        if _contains_any(text, ["detr", "end-to-end object detection"]):
+            topics.add("detr")
+        if _contains_any(text, ["segmentation", "segment anything"]):
+            topics.add("segmentation")
+        if _contains_any(text, ["multi-object tracking", "tracking-by-detection", "visual object tracking"]):
+            topics.add("tracking")
+        if _contains_any(text, ["latency", "throughput", "frames per second", "quantization", "pruning", "knowledge distillation", "edge device"]):
+            topics.add("efficient-vision")
+        if _contains_any(text, ["coco", "imagenet", "ade20k", "cityscapes", "detection benchmark"]):
+            topics.add("vision-benchmark")
+        return sorted(topic for topic in topics if topic)
     if _contains_any(text, ["benchmark", "evaluation", "agentshield", "mgbench", "memprobe"]):
         topics.add("memory-benchmark")
     if _contains_any(text, ["poisoning", "jailbreak", "cross-session", "security", "robustness"]):
@@ -179,6 +198,8 @@ def _research_relevance(paper: Any, relevance_profile: str = "agent_memory") -> 
             return _field("Direct relation to Engram / conditional memory based on title/abstract screening.", "medium", "rule")
         if _is_deep_research_paper(paper, relevance_profile):
             return _field("Directly relevant to autonomous/deep research workflows based on screening evidence.", "medium", "rule")
+        if relevance_profile == "computer_vision":
+            return _field("Directly relevant to computer-vision research based on screening evidence.", "medium", "rule")
         return _field("Directly relevant to agentic-memory research based on screening evidence.", "medium", "rule")
     if getattr(paper, "decision", "") == "maybe":
         return _field("Review candidate", "low", "rule")
@@ -208,6 +229,8 @@ def _classify_method_and_relation(paper: Any, relevance_profile: str = "agent_me
         if decision.decision == "maybe":
             return "Adjacent learned-memory mechanism", "Possible relation to Engram / conditional memory requires review", "abstract" if source_abstract else "metadata"
         return NOT_EXTRACTED, NOT_EXTRACTED, "not_extracted"
+    if relevance_profile == "computer_vision":
+        return _classify_computer_vision_card(paper, text)
     if _is_deep_research_paper(paper, relevance_profile):
         if _contains_any(text, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"]):
             provenance = _keyword_provenance(paper, ["citation", "evidence-grounded", "source-grounded", "literature review", "research report"])
@@ -238,6 +261,49 @@ def _classify_method_and_relation(paper: Any, relevance_profile: str = "agent_me
             ["memory system", "agent-native memory", "memory module", "trustmem", "governed shared memory", "long-term memory", "persistent memory"],
         )
         return "Memory architecture / system", "Studies memory mechanisms or governance for LLM agents", provenance
+    return NOT_EXTRACTED, NOT_EXTRACTED, "not_extracted"
+
+
+def _classify_computer_vision_card(paper: Any, text: str) -> tuple[str, str, str]:
+    """Method type and detection relation for a computer-vision card.
+
+    Ordered so the detector families are named before the broader field: the reader works
+    with YOLO, and "which detector family is this" is the first question a card should
+    answer. Every branch reports only what the screened text actually contains; nothing
+    here infers an architecture, a metric or a result that was not written down.
+    """
+    detection_terms = ["object detection", "object detector", "one-stage detector", "anchor-free",
+                       "region proposal", "detection head", "label assignment"]
+    if _contains_any(text, ["yolo"]):
+        provenance = _keyword_provenance(paper, ["yolo"])
+        return "Real-time / YOLO-family detection", "Directly concerns the YOLO family or real-time single-stage detection", provenance
+    if _contains_any(text, ["detr", "end-to-end object detection", "set prediction"]):
+        provenance = _keyword_provenance(paper, ["detr", "end-to-end object detection", "set prediction"])
+        return "DETR-family detection", "Concerns query-based detection, the main architectural alternative to YOLO-style detectors", provenance
+    if _contains_any(text, detection_terms):
+        provenance = _keyword_provenance(paper, detection_terms)
+        return "Object-detection method", "Concerns object-detection architecture, training, or evaluation", provenance
+    if _contains_any(text, ["segmentation", "segment anything", "mask prediction"]):
+        provenance = _keyword_provenance(paper, ["segmentation", "segment anything", "mask prediction"])
+        return "Segmentation method", "Segmentation task adjacent to detection; shares backbones and dense-prediction evaluation", provenance
+    if _contains_any(text, ["multi-object tracking", "tracking-by-detection", "visual object tracking", "re-identification"]):
+        provenance = _keyword_provenance(paper, ["multi-object tracking", "tracking-by-detection", "visual object tracking", "re-identification"])
+        return "Tracking method", "Tracking consumes detector output, so detector quality and latency propagate into it", provenance
+    if _contains_any(text, ["pose estimation", "keypoint"]):
+        provenance = _keyword_provenance(paper, ["pose estimation", "keypoint"])
+        return "Pose / keypoint method", "Keypoint task that shares detection backbones and real-time constraints", provenance
+    if _contains_any(text, ["vision transformer", "swin transformer", "backbone", "feature pyramid", "representation learning", "visual encoder", "self-supervised"]):
+        provenance = _keyword_provenance(paper, ["vision transformer", "swin transformer", "backbone", "feature pyramid", "representation learning", "visual encoder", "self-supervised"])
+        return "Visual backbone / representation", "Backbone and representation choices feed detectors directly", provenance
+    if _contains_any(text, ["depth estimation", "stereo", "point cloud", "3d reconstruction", "novel view synthesis", "neural rendering"]):
+        provenance = _keyword_provenance(paper, ["depth estimation", "stereo", "point cloud", "3d reconstruction", "novel view synthesis", "neural rendering"])
+        return "3D / geometric vision", "Geometric vision task; relation to 2D detection is indirect", provenance
+    if _contains_any(text, ["quantization", "pruning", "knowledge distillation", "edge device", "tensorrt", "latency", "throughput"]):
+        provenance = _keyword_provenance(paper, ["quantization", "pruning", "knowledge distillation", "edge device", "tensorrt", "latency", "throughput"])
+        return "Efficient / deployment method", "Efficiency and deployment work that bears on running detectors in production", provenance
+    if _contains_any(text, ["vision-language", "visual question answering", "image-text"]):
+        provenance = _keyword_provenance(paper, ["vision-language", "visual question answering", "image-text"])
+        return "Vision-language method", "Multimodal work; relation to detection depends on whether visual perception is the contribution", provenance
     return NOT_EXTRACTED, NOT_EXTRACTED, "not_extracted"
 
 

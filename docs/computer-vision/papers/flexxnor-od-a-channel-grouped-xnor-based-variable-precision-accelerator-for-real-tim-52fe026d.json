@@ -1,0 +1,2050 @@
+{
+  "abstract_summary": "Object detection at the edge requires a difficult balance among detection accuracy, deterministic latency, memory bandwidth, and energy consumption. Existing binarized accelerators replace multipliers with XNOR and population-count logic, but many designs use a fixed binary datapath or select precision only at the l...",
+  "alternate_urls": [
+    "https://doi.org/10.48175/ijarsct-38402",
+    "https://openalex.org/W7213344478"
+  ],
+  "appeared_in_latest_run": false,
+  "arxiv_id": null,
+  "authors": [
+    "Budidha Sriman and D. Sateesh"
+  ],
+  "canonical_id": "doi:10.48175/ijarsct-38402",
+  "citation": "FlexXNOR-OD: A Channel-Grouped XNOR-Based Variable-Precision Accelerator for Real-Time Edge Object Detection. Budidha Sriman and D. Sateesh. 2026-09-15. https://doi.org/10.48175/ijarsct-38402",
+  "detail_json": "papers/flexxnor-od-a-channel-grouped-xnor-based-variable-precision-accelerator-for-real-tim-52fe026d.json",
+  "detail_page": "papers/flexxnor-od-a-channel-grouped-xnor-based-variable-precision-accelerator-for-real-tim-52fe026d.html",
+  "doi": "10.48175/ijarsct-38402",
+  "effective_sort_date": "2026-09-15",
+  "first_seen_at": "2026-09-21 09:56:38",
+  "first_seen_date": "2026-09-21",
+  "future_date": false,
+  "is_new": true,
+  "last_seen_at": "2026-09-21 10:03:28",
+  "last_seen_date": "2026-09-21",
+  "latest_relevant_date_bucket": 0,
+  "latest_revision_date": null,
+  "library_admission": "review",
+  "newly_discovered_in_latest_run": false,
+  "notified_at": null,
+  "notified_date": null,
+  "openalex_id": "W7213344478",
+  "pinned": false,
+  "provenance": {
+    "curated": false,
+    "curation_note": null,
+    "date_source": "openalex",
+    "first_seen_at": "2026-09-21 09:56:38",
+    "generated_at": "2026-09-21 10:19:37",
+    "last_seen_at": "2026-09-21 10:03:28",
+    "metadata_sources": [
+      "openalex"
+    ],
+    "publication_date_confidence": "medium",
+    "publication_date_precision": "day",
+    "publication_date_source": "openalex",
+    "relevance_source": "deterministic screening",
+    "screening_source": "deterministic rules",
+    "source_ids": {
+      "openalex": [
+        "W7213344478"
+      ]
+    }
+  },
+  "publication": {
+    "confidence": "medium",
+    "date": "2026-09-15",
+    "display": "Published 2026-09-15",
+    "latest_revision_date": null,
+    "precision": "day",
+    "publication_date_confidence": "medium",
+    "source": "openalex",
+    "status": "peer_reviewed",
+    "status_evidence": "OpenAlex records a published journal location: International Journal of Advanced Research in Science Communication and Technology. Peer review inferred from venue metadata, not independently verified.",
+    "year": "2026"
+  },
+  "publication_date": "2026-09-15",
+  "publication_date_confidence": "medium",
+  "publication_date_precision": "day",
+  "publication_date_source": "openalex",
+  "publication_status": "peer_reviewed",
+  "publication_status_evidence": "OpenAlex records a published journal location: International Journal of Advanced Research in Science Communication and Technology. Peer review inferred from venue metadata, not independently verified.",
+  "publication_year": "2026",
+  "related_topics": [
+    "efficient-vision",
+    "object-detection"
+  ],
+  "relevance": {
+    "curation_note": null,
+    "decision": "relevant",
+    "public_label": "Highly relevant",
+    "reason": "Studies object-detection architecture, training, or evaluation.",
+    "review_status": null,
+    "score": 94,
+    "tags": [
+      "object-detection",
+      "efficient-vision"
+    ]
+  },
+  "relevance_decision": "relevant",
+  "relevance_label": "Object detection",
+  "relevance_reason": "Studies object-detection architecture, training, or evaluation.",
+  "relevance_score": 94,
+  "research_note": null,
+  "review_status": null,
+  "schema_version": "paper-scout-card-v2",
+  "scholarly_quality": {
+    "applied_score_cap": null,
+    "applied_score_cap_reason": null,
+    "assessed_at": "2026-09-21T10:13:36.495249+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
+    "combined_rank_score": 0.94,
+    "concerns": [
+      "The accelerator has no functioning synthesized implementation: the testbench was set as the synthesis top, producing zero retained cells and an empty netlist.",
+      "No empirical evaluation exists; FPGA resource, power, frame rate, and detection accuracy tables are filled with TBD placeholders, and the conclusion defers detector training and dataset evaluation to future work.",
+      "The reported power and waveform outputs are preliminary and invalidated by the empty-netlist synthesis and an incomplete transaction trace (start and done both low), so the limited hardware results do not corroborate the architectural claims."
+    ],
+    "concise_summary": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
+    "confidence": "low",
+    "coverage": {
+      "assessment_input_characters": 54253,
+      "assessment_input_sha256": "219fb420ed7fd90de3b4fd76de2384bc2985957a940b4022841a51229d90b42e",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48175/ijarsct-38402",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 52291,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 51104,
+      "evidence_block_count": 105,
+      "evidence_context_characters": 63330,
+      "evidence_context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+      "evidence_context_sha256": "78f9dd9e44fb7fedff678773430ff509849e0c606911d4aa44cd337b95e6651a",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 52319,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "extracted_pages": 15,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b",
+        "source_url": "https://doi.org/10.48175/ijarsct-38402",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 52291,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "limitations",
+        "methods",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 0,
+          "source_characters": 822,
+          "supplied_characters": 822
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2048,
+          "supplied_characters": 2048
+        },
+        {
+          "heading": "Appendix: Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "appendix",
+          "section_index": 2,
+          "source_characters": 1011,
+          "supplied_characters": 1011
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "appendix",
+          "section_index": 3,
+          "source_characters": 2416,
+          "supplied_characters": 2416
+        },
+        {
+          "heading": "A 64",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 4,
+          "source_characters": 410,
+          "supplied_characters": 410
+        },
+        {
+          "heading": "Object Detection And Low",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 1270,
+          "supplied_characters": 1270
+        },
+        {
+          "heading": "Fpga Accelerators",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 922,
+          "supplied_characters": 922
+        },
+        {
+          "heading": "International Journal Of Advanced",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 417,
+          "supplied_characters": 417
+        },
+        {
+          "heading": "Identified Gap",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 592,
+          "supplied_characters": 592
+        },
+        {
+          "heading": "Design Objectives",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 538,
+          "supplied_characters": 538
+        },
+        {
+          "heading": "Channel",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 474,
+          "supplied_characters": 474
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "appendix",
+          "section_index": 11,
+          "source_characters": 1110,
+          "supplied_characters": 1110
+        },
+        {
+          "heading": "Od Architecture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 12,
+          "source_characters": 2541,
+          "supplied_characters": 2541
+        },
+        {
+          "heading": "International Journal Of Advanced",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 494,
+          "supplied_characters": 494
+        },
+        {
+          "heading": "Lane",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 672,
+          "supplied_characters": 672
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "appendix",
+          "section_index": 15,
+          "source_characters": 2162,
+          "supplied_characters": 2162
+        },
+        {
+          "heading": "International Journal Of Advanced",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 292,
+          "supplied_characters": 292
+        },
+        {
+          "heading": "Output",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 705,
+          "supplied_characters": 705
+        },
+        {
+          "heading": "Post",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 817,
+          "supplied_characters": 817
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "appendix",
+          "section_index": 19,
+          "source_characters": 3388,
+          "supplied_characters": 3388
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "appendix",
+          "section_index": 20,
+          "source_characters": 890,
+          "supplied_characters": 890
+        },
+        {
+          "heading": "Binary Dot Product",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 436,
+          "supplied_characters": 436
+        },
+        {
+          "heading": "Multi",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 729,
+          "supplied_characters": 729
+        },
+        {
+          "heading": "Cycle And Throughput Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 807,
+          "supplied_characters": 807
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "appendix",
+          "section_index": 24,
+          "source_characters": 453,
+          "supplied_characters": 453
+        },
+        {
+          "heading": "Storage Model",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 484,
+          "supplied_characters": 484
+        },
+        {
+          "heading": "Rtl Organization",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 548,
+          "supplied_characters": 548
+        },
+        {
+          "heading": "Functional Verification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 570,
+          "supplied_characters": 570
+        },
+        {
+          "heading": "Fpga Evaluation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 28,
+          "source_characters": 527,
+          "supplied_characters": 527
+        },
+        {
+          "heading": "Detection Evaluation Protocol",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 29,
+          "source_characters": 694,
+          "supplied_characters": 694
+        },
+        {
+          "heading": "Evaluated Design Point",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 351,
+          "supplied_characters": 351
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "appendix",
+          "section_index": 31,
+          "source_characters": 710,
+          "supplied_characters": 710
+        },
+        {
+          "heading": "G 4",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 63,
+          "supplied_characters": 63
+        },
+        {
+          "heading": "G 8",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 1395,
+          "supplied_characters": 1395
+        },
+        {
+          "heading": "Comparison With Representative Prior Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 98,
+          "supplied_characters": 98
+        },
+        {
+          "heading": "Finn / Finn",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 35,
+          "source_characters": 156,
+          "supplied_characters": 156
+        },
+        {
+          "heading": "Haq [9]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 134,
+          "supplied_characters": 134
+        },
+        {
+          "heading": "Nn2Cam [19]",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 235,
+          "supplied_characters": 235
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 1313,
+          "supplied_characters": 1313
+        },
+        {
+          "heading": "Expected Benefits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 521,
+          "supplied_characters": 521
+        },
+        {
+          "heading": "Limitations And Threats To Validity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 40,
+          "source_characters": 1593,
+          "supplied_characters": 1593
+        },
+        {
+          "heading": "The Available Evidence Confirms That The Accelerator Hierarchy Can Be Elabor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 41,
+          "source_characters": 418,
+          "supplied_characters": 418
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 1566,
+          "supplied_characters": 1566
+        },
+        {
+          "heading": "Synthesis Status And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 145,
+          "supplied_characters": 145
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 1590,
+          "supplied_characters": 1590
+        },
+        {
+          "heading": "Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "results",
+          "section_index": 45,
+          "source_characters": 1140,
+          "supplied_characters": 1140
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 575,
+          "supplied_characters": 575
+        },
+        {
+          "heading": "Behavioral Simulation Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "results",
+          "section_index": 47,
+          "source_characters": 931,
+          "supplied_characters": 931
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 48,
+          "source_characters": 861,
+          "supplied_characters": 861
+        },
+        {
+          "heading": "Appendix: Conclusion And Future Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 1205,
+          "supplied_characters": 1205
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 50,
+          "source_characters": 55,
+          "supplied_characters": 55
+        },
+        {
+          "heading": "Cnn: Towards Rea",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 51,
+          "source_characters": 20,
+          "supplied_characters": 20
+        },
+        {
+          "heading": "Time Object Detection With Region Proposal",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 52,
+          "source_characters": 57,
+          "supplied_characters": 57
+        },
+        {
+          "heading": "Advances In Neural Information Processing Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 53,
+          "source_characters": 382,
+          "supplied_characters": 382
+        },
+        {
+          "heading": "Based Aquatic Plastic Waste Detection Using Underwater",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 54,
+          "supplied_characters": 54
+        },
+        {
+          "heading": "Image Processing And Deep Lear",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 48,
+          "supplied_characters": 48
+        },
+        {
+          "heading": "International Journal Of Aquatic Research And Environmental",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 209,
+          "supplied_characters": 209
+        },
+        {
+          "heading": "Efficient Reconfigurable Accelerator F",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 38,
+          "supplied_characters": 38
+        },
+        {
+          "heading": "Or Deep",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 40,
+          "supplied_characters": 40
+        },
+        {
+          "heading": "Ieee Journal Of Solid",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 59,
+          "source_characters": 23,
+          "supplied_characters": 23
+        },
+        {
+          "heading": "State Circuits",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 60,
+          "source_characters": 164,
+          "supplied_characters": 164
+        },
+        {
+          "heading": "Acm/Sigda International Symposium O",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 61,
+          "source_characters": 35,
+          "supplied_characters": 35
+        },
+        {
+          "heading": "N Field",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 62,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Programmable Gate Arrays",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 63,
+          "source_characters": 148,
+          "supplied_characters": 148
+        },
+        {
+          "heading": "Neural Networks With Weights And Activations Constrained To +1 Or",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 64,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Net: Imagenet Classification Using Binary",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 65,
+          "source_characters": 199,
+          "supplied_characters": 199
+        },
+        {
+          "heading": "Aware Aut",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 66,
+          "source_characters": 9,
+          "supplied_characters": 9
+        },
+        {
+          "heading": "Omated Quantization With Mixed",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 67,
+          "source_characters": 435,
+          "supplied_characters": 435
+        },
+        {
+          "heading": "Ieee/Cvf Cvpr",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 68,
+          "source_characters": 210,
+          "supplied_characters": 210
+        },
+        {
+          "heading": "Time Object Detection Processor With Xnor",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 69,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "Ieee Transactions On Very Large Scale Integration (Vlsi) Systems",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 70,
+          "source_characters": 90,
+          "supplied_characters": 90
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 71,
+          "source_characters": 2403,
+          "supplied_characters": 2403
+        },
+        {
+          "heading": "Acm/Sigda Fpga",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 72,
+          "source_characters": 147,
+          "supplied_characters": 147
+        },
+        {
+          "heading": "Appendix: Experimental Resul",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "appendix",
+          "section_index": 73,
+          "source_characters": 505,
+          "supplied_characters": 505
+        },
+        {
+          "heading": "Bram / Uram",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 74,
+          "source_characters": 108,
+          "supplied_characters": 108
+        },
+        {
+          "heading": "Tbd W",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 75,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Tbd J",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 76,
+          "source_characters": 77,
+          "supplied_characters": 77
+        },
+        {
+          "heading": "Appendix: J A R S C T",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "appendix",
+          "section_index": 77,
+          "source_characters": 547,
+          "supplied_characters": 547
+        },
+        {
+          "heading": "Fp32 / Fp32",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 78,
+          "source_characters": 284,
+          "supplied_characters": 284
+        },
+        {
+          "heading": "Ablation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "results",
+          "section_index": 79,
+          "source_characters": 144,
+          "supplied_characters": 144
+        }
+      ],
+      "selected_characters": 51104,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "selected_sections": [
+        {
+          "characters": 822,
+          "heading": "Appendix: J A R S C T",
+          "page": 1
+        },
+        {
+          "characters": 2048,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 1011,
+          "heading": "Appendix: Introduction",
+          "page": 1
+        },
+        {
+          "characters": 2416,
+          "heading": "Appendix: J A R S C T",
+          "page": 2
+        },
+        {
+          "characters": 410,
+          "heading": "A 64",
+          "page": 2
+        },
+        {
+          "characters": 1270,
+          "heading": "Object Detection And Low",
+          "page": 2
+        },
+        {
+          "characters": 922,
+          "heading": "Fpga Accelerators",
+          "page": 2
+        },
+        {
+          "characters": 417,
+          "heading": "International Journal Of Advanced",
+          "page": 3
+        },
+        {
+          "characters": 592,
+          "heading": "Identified Gap",
+          "page": 3
+        },
+        {
+          "characters": 538,
+          "heading": "Design Objectives",
+          "page": 3
+        },
+        {
+          "characters": 474,
+          "heading": "Channel",
+          "page": 3
+        },
+        {
+          "characters": 1110,
+          "heading": "Appendix: J A R S C T",
+          "page": 3
+        },
+        {
+          "characters": 2541,
+          "heading": "Od Architecture",
+          "page": 3
+        },
+        {
+          "characters": 494,
+          "heading": "International Journal Of Advanced",
+          "page": 4
+        },
+        {
+          "characters": 672,
+          "heading": "Lane",
+          "page": 4
+        },
+        {
+          "characters": 2162,
+          "heading": "Appendix: J A R S C T",
+          "page": 4
+        },
+        {
+          "characters": 292,
+          "heading": "International Journal Of Advanced",
+          "page": 5
+        },
+        {
+          "characters": 705,
+          "heading": "Output",
+          "page": 5
+        },
+        {
+          "characters": 817,
+          "heading": "Post",
+          "page": 5
+        },
+        {
+          "characters": 3388,
+          "heading": "Appendix: J A R S C T",
+          "page": 5
+        },
+        {
+          "characters": 890,
+          "heading": "Appendix: J A R S C T",
+          "page": 6
+        },
+        {
+          "characters": 436,
+          "heading": "Binary Dot Product",
+          "page": 6
+        },
+        {
+          "characters": 729,
+          "heading": "Multi",
+          "page": 6
+        },
+        {
+          "characters": 807,
+          "heading": "Cycle And Throughput Model",
+          "page": 6
+        },
+        {
+          "characters": 453,
+          "heading": "Appendix: J A R S C T",
+          "page": 7
+        },
+        {
+          "characters": 484,
+          "heading": "Storage Model",
+          "page": 7
+        },
+        {
+          "characters": 548,
+          "heading": "Rtl Organization",
+          "page": 7
+        },
+        {
+          "characters": 570,
+          "heading": "Functional Verification",
+          "page": 7
+        },
+        {
+          "characters": 527,
+          "heading": "Fpga Evaluation",
+          "page": 7
+        },
+        {
+          "characters": 694,
+          "heading": "Detection Evaluation Protocol",
+          "page": 7
+        },
+        {
+          "characters": 351,
+          "heading": "Evaluated Design Point",
+          "page": 7
+        },
+        {
+          "characters": 710,
+          "heading": "Appendix: J A R S C T",
+          "page": 8
+        },
+        {
+          "characters": 63,
+          "heading": "G 4",
+          "page": 8
+        },
+        {
+          "characters": 1395,
+          "heading": "G 8",
+          "page": 8
+        },
+        {
+          "characters": 98,
+          "heading": "Comparison With Representative Prior Work",
+          "page": 8
+        },
+        {
+          "characters": 156,
+          "heading": "Finn / Finn",
+          "page": 8
+        },
+        {
+          "characters": 134,
+          "heading": "Haq [9]",
+          "page": 8
+        },
+        {
+          "characters": 235,
+          "heading": "Nn2Cam [19]",
+          "page": 8
+        },
+        {
+          "characters": 1313,
+          "heading": "Appendix: J A R S C T",
+          "page": 9
+        },
+        {
+          "characters": 521,
+          "heading": "Expected Benefits",
+          "page": 9
+        },
+        {
+          "characters": 1593,
+          "heading": "Limitations And Threats To Validity",
+          "page": 9
+        },
+        {
+          "characters": 418,
+          "heading": "The Available Evidence Confirms That The Accelerator Hierarchy Can Be Elabor",
+          "page": 9
+        },
+        {
+          "characters": 1566,
+          "heading": "Appendix: J A R S C T",
+          "page": 10
+        },
+        {
+          "characters": 145,
+          "heading": "Synthesis Status And",
+          "page": 10
+        },
+        {
+          "characters": 1590,
+          "heading": "Appendix: J A R S C T",
+          "page": 11
+        },
+        {
+          "characters": 1140,
+          "heading": "Results",
+          "page": 11
+        },
+        {
+          "characters": 575,
+          "heading": "Appendix: J A R S C T",
+          "page": 12
+        },
+        {
+          "characters": 931,
+          "heading": "Behavioral Simulation Results",
+          "page": 12
+        },
+        {
+          "characters": 861,
+          "heading": "Appendix: J A R S C T",
+          "page": 13
+        },
+        {
+          "characters": 1205,
+          "heading": "Appendix: Conclusion And Future Work",
+          "page": 13
+        },
+        {
+          "characters": 55,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 20,
+          "heading": "Cnn: Towards Rea",
+          "page": 13
+        },
+        {
+          "characters": 57,
+          "heading": "Time Object Detection With Region Proposal",
+          "page": 13
+        },
+        {
+          "characters": 382,
+          "heading": "Advances In Neural Information Processing Systems",
+          "page": 13
+        },
+        {
+          "characters": 54,
+          "heading": "Based Aquatic Plastic Waste Detection Using Underwater",
+          "page": 13
+        },
+        {
+          "characters": 48,
+          "heading": "Image Processing And Deep Lear",
+          "page": 13
+        },
+        {
+          "characters": 209,
+          "heading": "International Journal Of Aquatic Research And Environmental",
+          "page": 13
+        },
+        {
+          "characters": 38,
+          "heading": "Efficient Reconfigurable Accelerator F",
+          "page": 13
+        },
+        {
+          "characters": 40,
+          "heading": "Or Deep",
+          "page": 13
+        },
+        {
+          "characters": 23,
+          "heading": "Ieee Journal Of Solid",
+          "page": 13
+        },
+        {
+          "characters": 164,
+          "heading": "State Circuits",
+          "page": 13
+        },
+        {
+          "characters": 35,
+          "heading": "Acm/Sigda International Symposium O",
+          "page": 13
+        },
+        {
+          "characters": 9,
+          "heading": "N Field",
+          "page": 13
+        },
+        {
+          "characters": 148,
+          "heading": "Programmable Gate Arrays",
+          "page": 13
+        },
+        {
+          "characters": 163,
+          "heading": "Neural Networks With Weights And Activations Constrained To +1 Or",
+          "page": 13
+        },
+        {
+          "characters": 199,
+          "heading": "Net: Imagenet Classification Using Binary",
+          "page": 13
+        },
+        {
+          "characters": 9,
+          "heading": "Aware Aut",
+          "page": 13
+        },
+        {
+          "characters": 435,
+          "heading": "Omated Quantization With Mixed",
+          "page": 13
+        },
+        {
+          "characters": 210,
+          "heading": "Ieee/Cvf Cvpr",
+          "page": 13
+        },
+        {
+          "characters": 88,
+          "heading": "Time Object Detection Processor With Xnor",
+          "page": 13
+        },
+        {
+          "characters": 90,
+          "heading": "Ieee Transactions On Very Large Scale Integration (Vlsi) Systems",
+          "page": 13
+        },
+        {
+          "characters": 2403,
+          "heading": "Appendix: J A R S C T",
+          "page": 14
+        },
+        {
+          "characters": 147,
+          "heading": "Acm/Sigda Fpga",
+          "page": 14
+        },
+        {
+          "characters": 505,
+          "heading": "Appendix: Experimental Resul",
+          "page": 14
+        },
+        {
+          "characters": 108,
+          "heading": "Bram / Uram",
+          "page": 14
+        },
+        {
+          "characters": 174,
+          "heading": "Tbd W",
+          "page": 14
+        },
+        {
+          "characters": 77,
+          "heading": "Tbd J",
+          "page": 14
+        },
+        {
+          "characters": 547,
+          "heading": "Appendix: J A R S C T",
+          "page": 15
+        },
+        {
+          "characters": 284,
+          "heading": "Fp32 / Fp32",
+          "page": 15
+        },
+        {
+          "characters": 144,
+          "heading": "Ablation",
+          "page": 15
+        }
+      ],
+      "selected_text_sha256": "219fb420ed7fd90de3b4fd76de2384bc2985957a940b4022841a51229d90b42e",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b",
+      "source_pages": 15,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
+    "curation_note": null,
+    "dimension_scores": {},
+    "downranked": false,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0046"
+        ],
+        "excerpt": "The source material supplied for this study d\nid not contain completed synthesis, power, or dataset measurements. \nConsequently, this section reports analytical estimates derived from the architecture parameters in Table 1 and \nexplicitly labels them as pre\n-\nsynthesis values. No measured FPGA resource or\n \ndetection\n-\naccuracy result is fabricated.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Evaluated Design Point",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "915b0818c42b4f97192bd7b3b51a85c3e791630485671f986fc8ca1fb8005b04",
+            "evidence_id": "E533113275e612f60-B0046",
+            "pages": [
+              7
+            ],
+            "section": "Evaluated Design Point",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 351,
+                "page": 7,
+                "section": "Evaluated Design Point",
+                "section_index": 30,
+                "start": 0,
+                "text": "The source material supplied for this study d\nid not contain completed synthesis, power, or dataset measurements. \nConsequently, this section reports analytical estimates derived from the architecture parameters in Table 1 and \nexplicitly labels them as pre\n-\nsynthesis values. No measured FPGA resource or\n \ndetection\n-\naccuracy result is fabricated."
+              }
+            ],
+            "text": "The source material supplied for this study d\nid not contain completed synthesis, power, or dataset measurements. \nConsequently, this section reports analytical estimates derived from the architecture parameters in Table 1 and \nexplicitly labels them as pre\n-\nsynthesis values. No measured FPGA resource or\n \ndetection\n-\naccuracy result is fabricated."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0060"
+        ],
+        "excerpt": "ated and that \nthe intended memory\n-\nfetch\n-\ncompute data path is structurally connected. However, the post\n-\nsynthesis screenshots also \nreveal that the testbench appears to have been used as the synthesis top, causing the implemented logic to be removed \nor optim\nized away. Consequently, the supplied power and device\n-\nview values should be reported as preliminary tool \noutputs rather than final hardware results.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Available Evidence Confirms That The Accelerator Hierarchy Can Be Elabor",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "67fa2cab9b764cf365d9063216f8eefdf04087429cf01fe2f9f9184d686acd4f",
+            "evidence_id": "E533113275e612f60-B0060",
+            "pages": [
+              9
+            ],
+            "section": "The Available Evidence Confirms That The Accelerator Hierarchy Can Be Elabor",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 418,
+                "page": 9,
+                "section": "The Available Evidence Confirms That The Accelerator Hierarchy Can Be Elabor",
+                "section_index": 41,
+                "start": 0,
+                "text": "ated and that \nthe intended memory\n-\nfetch\n-\ncompute data path is structurally connected. However, the post\n-\nsynthesis screenshots also \nreveal that the testbench appears to have been used as the synthesis top, causing the implemented logic to be removed \nor optim\nized away. Consequently, the supplied power and device\n-\nview values should be reported as preliminary tool \noutputs rather than final hardware results."
+              }
+            ],
+            "text": "ated and that \nthe intended memory\n-\nfetch\n-\ncompute data path is structurally connected. However, the post\n-\nsynthesis screenshots also \nreveal that the testbench appears to have been used as the synthesis top, causing the implemented logic to be removed \nor optim\nized away. Consequently, the supplied power and device\n-\nview values should be reported as preliminary tool \noutputs rather than final hardware results."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0065"
+        ],
+        "excerpt": "memory usage of about 1,800.09 MB. These values indicate that the source \nset was syntactically accepted and that the synthesis flow itself terminated successfully.\n \nNevertheless, the report\n-\ni\nnstance\n-\narea table lists the top instance with zero cells. The synthesized design path and \ngenerated checkpoint are named tb_xnor_object_detector_top, which strongly suggests that the testbench, rather than \nxnor_object_detector_top, was selected as the syn\nthesis top. Since testbench processes are not synthesizable and \nnormally do not expose retained hardware outputs, Vivado can optimize the design to an empty netlist. The nearly \nempty device view is consistent with this interpretation.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: J A R S C T",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "c6991f45155aa33843a6ef43e5fadf6dca1c880a8951f06e1f259b55476b35ea",
+            "evidence_id": "E533113275e612f60-B0065",
+            "pages": [
+              11
+            ],
+            "section": "Appendix: J A R S C T",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1590,
+                "page": 11,
+                "section": "Appendix: J A R S C T",
+                "section_index": 44,
+                "start": 897,
+                "text": "memory usage of about 1,800.09 MB. These values indicate that the source \nset was syntactically accepted and that the synthesis flow itself terminated successfully.\n \nNevertheless, the report\n-\ni\nnstance\n-\narea table lists the top instance with zero cells. The synthesized design path and \ngenerated checkpoint are named tb_xnor_object_detector_top, which strongly suggests that the testbench, rather than \nxnor_object_detector_top, was selected as the syn\nthesis top. Since testbench processes are not synthesizable and \nnormally do not expose retained hardware outputs, Vivado can optimize the design to an empty netlist. The nearly \nempty device view is consistent with this interpretation."
+              }
+            ],
+            "text": "memory usage of about 1,800.09 MB. These values indicate that the source \nset was syntactically accepted and that the synthesis flow itself terminated successfully.\n \nNevertheless, the report\n-\ni\nnstance\n-\narea table lists the top instance with zero cells. The synthesized design path and \ngenerated checkpoint are named tb_xnor_object_detector_top, which strongly suggests that the testbench, rather than \nxnor_object_detector_top, was selected as the syn\nthesis top. Since testbench processes are not synthesizable and \nnormally do not expose retained hardware outputs, Vivado can optimize the design to an empty netlist. The nearly \nempty device view is consistent with this interpretation."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0066"
+        ],
+        "excerpt": "The post\n-\nsynthesis power summary reports a total on\n-\nchip power of 0.089 W. The complete estimate is assigned to \ndevice\n-\nstatic power, while dynamic power is reported as 0.000 W. The analysis assumes a typical process condition, an \nambient temperatu\nre of 25.0 degrees C, and produces a junction\n-\ntemperature estimate of 25.2 degrees C. The reported \nthermal margin is 59.8 degrees C, corresponding to 24.4 W, and the effective junction\n-\nto\n-\nambient thermal resistance is \n2.4 degrees C/W. The tool labels the c\nonfidence level as high, although no design power budget is specified.\n \nThe 89 mW value should not be presented as the operating power of the XNOR accelerator. A zero dynamic\n-\npower \nestimate is expected when the synthesized netlist contains no active retaine\nd logic or when switching activity is \nunavailable. Therefore, this output represents the static device estimate ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "b73a5a506e96440cebd58d213749f6b87720bb971c72f53c778273d9b7516d20",
+            "evidence_id": "E533113275e612f60-B0066",
+            "pages": [
+              11
+            ],
+            "section": "Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 11,
+                "section": "Results",
+                "section_index": 45,
+                "start": 0,
+                "text": "The post\n-\nsynthesis power summary reports a total on\n-\nchip power of 0.089 W. The complete estimate is assigned to \ndevice\n-\nstatic power, while dynamic power is reported as 0.000 W. The analysis assumes a typical process condition, an \nambient temperatu\nre of 25.0 degrees C, and produces a junction\n-\ntemperature estimate of 25.2 degrees C. The reported \nthermal margin is 59.8 degrees C, corresponding to 24.4 W, and the effective junction\n-\nto\n-\nambient thermal resistance is \n2.4 degrees C/W. The tool labels the c\nonfidence level as high, although no design power budget is specified.\n \nThe 89 mW value should not be presented as the operating power of the XNOR accelerator. A zero dynamic\n-\npower \nestimate is expected when the synthesized netlist contains no active retaine\nd logic or when switching activity is \nunavailable. Therefore, this output represents the static device estimate "
+              }
+            ],
+            "text": "The post\n-\nsynthesis power summary reports a total on\n-\nchip power of 0.089 W. The complete estimate is assigned to \ndevice\n-\nstatic power, while dynamic power is reported as 0.000 W. The analysis assumes a typical process condition, an \nambient temperatu\nre of 25.0 degrees C, and produces a junction\n-\ntemperature estimate of 25.2 degrees C. The reported \nthermal margin is 59.8 degrees C, corresponding to 24.4 W, and the effective junction\n-\nto\n-\nambient thermal resistance is \n2.4 degrees C/W. The tool labels the c\nonfidence level as high, although no design power budget is specified.\n \nThe 89 mW value should not be presented as the operating power of the XNOR accelerator. A zero dynamic\n-\npower \nestimate is expected when the synthesized netlist contains no active retaine\nd logic or when switching activity is \nunavailable. Therefore, this output represents the static device estimate "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0069"
+        ],
+        "excerpt": "The behavi\noral waveform confirms that the major top\n-\nlevel interfaces are present and can be driven in simulation. At \nthe displayed cursor position, reset is deasserted, precision_mode_in is set to 2, maxpool_enable_in is low, and the 12\n-\nbit input, weight, and output\n \naddresses are 0x003, 0x003, and 0x004, respectively. The feature input contains repeated \n0x02 values and the weight input contains repeated 0x03 values across their 512\n-\nbit buses. The processor_output bus is \ndisplayed as all hexadecimal F values.\n \n \nFigure 5. Behavioral simulation waveform showing precision mode 2, 12\n-\nbit addressing, repeated feature and weight \nvectors, and the observed processor\n-\noutput bus.\n \nThe disp\nlayed interval does not demonstrate a completed accelerator transaction because start remains low and done \nremains low across the captured window. The all\n-\nones processor output may ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 12,
+        "pages": [
+          12
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Behavioral Simulation Results",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "94c49841260810614d790c74ef7a7160dec768a19e5dbd4cd01c947bd9171947",
+            "evidence_id": "E533113275e612f60-B0069",
+            "pages": [
+              12
+            ],
+            "section": "Behavioral Simulation Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 892,
+                "page": 12,
+                "section": "Behavioral Simulation Results",
+                "section_index": 47,
+                "start": 0,
+                "text": "The behavi\noral waveform confirms that the major top\n-\nlevel interfaces are present and can be driven in simulation. At \nthe displayed cursor position, reset is deasserted, precision_mode_in is set to 2, maxpool_enable_in is low, and the 12\n-\nbit input, weight, and output\n \naddresses are 0x003, 0x003, and 0x004, respectively. The feature input contains repeated \n0x02 values and the weight input contains repeated 0x03 values across their 512\n-\nbit buses. The processor_output bus is \ndisplayed as all hexadecimal F values.\n \n \nFigure 5. Behavioral simulation waveform showing precision mode 2, 12\n-\nbit addressing, repeated feature and weight \nvectors, and the observed processor\n-\noutput bus.\n \nThe disp\nlayed interval does not demonstrate a completed accelerator transaction because start remains low and done \nremains low across the captured window. The all\n-\nones processor output may "
+              }
+            ],
+            "text": "The behavi\noral waveform confirms that the major top\n-\nlevel interfaces are present and can be driven in simulation. At \nthe displayed cursor position, reset is deasserted, precision_mode_in is set to 2, maxpool_enable_in is low, and the 12\n-\nbit input, weight, and output\n \naddresses are 0x003, 0x003, and 0x004, respectively. The feature input contains repeated \n0x02 values and the weight input contains repeated 0x03 values across their 512\n-\nbit buses. The processor_output bus is \ndisplayed as all hexadecimal F values.\n \n \nFigure 5. Behavioral simulation waveform showing precision mode 2, 12\n-\nbit addressing, repeated feature and weight \nvectors, and the observed processor\n-\noutput bus.\n \nThe disp\nlayed interval does not demonstrate a completed accelerator transaction because start remains low and done \nremains low across the captured window. The all\n-\nones processor output may "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0071"
+        ],
+        "excerpt": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n31\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \ndefault, saturated, signed, or othe\nrwise inactive\n-\nstate value; its numerical correctness cannot be verified from this \nscreenshot alone. A publication\n-\nquality functional trace should include a reset pulse, a visible start assertion, internal or \nreference XNOR\n-\npopcount values, output stabiliz\nation, and a done assertion. The resulting output should then be \ncompared with a software golden model.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: J A R S C T",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6c8dd3f32472e5ec7217f18ea7721262787d0e19b39e2c053254bd7f4149b6dc",
+            "evidence_id": "E533113275e612f60-B0071",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: J A R S C T",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 861,
+                "page": 13,
+                "section": "Appendix: J A R S C T",
+                "section_index": 48,
+                "start": 0,
+                "text": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n31\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \ndefault, saturated, signed, or othe\nrwise inactive\n-\nstate value; its numerical correctness cannot be verified from this \nscreenshot alone. A publication\n-\nquality functional trace should include a reset pulse, a visible start assertion, internal or \nreference XNOR\n-\npopcount values, output stabiliz\nation, and a done assertion. The resulting output should then be \ncompared with a software golden model."
+              }
+            ],
+            "text": "I J A R S C T\n \n \n \n \n \n \n \n \n               \nInternational Journal of Advanced \nResearch in Science\n, Communication and\n \nTechnology\n \n                          \nInternational Open\n-\nAccess, Double\n-\nBlind, Peer\n-\nReviewed, Refereed, Multidisciplinary Online \nJournal\n \nVolume \n6\n, Issue \n2\n, \nSeptember\n \n2026\n \nCopyright to IJAR\nS\nC\nT\n \nDOI: 10.48175/\nIJARSCT\n-\n38\n40\n2\n \n \n \n31\n \nwww.ijarsct.co.in\n \n \n \n \n \nISSN\n: \n2581\n-\n9429\n \nImpact Factor: \n8.2\n \ndefault, saturated, signed, or othe\nrwise inactive\n-\nstate value; its numerical correctness cannot be verified from this \nscreenshot alone. A publication\n-\nquality functional trace should include a reset pulse, a visible start assertion, internal or \nreference XNOR\n-\npopcount values, output stabiliz\nation, and a done assertion. The resulting output should then be \ncompared with a software golden model."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0072"
+        ],
+        "excerpt": "This paper proposed FlexXNOR\n-\nOD, a channel\n-\ngroup variable\n-\nprecision accelerator for real\n-\ntime edge object \ndetection. The architecture combines a 64\n-\nPE output\n-\nstationary array with four\n-\nslice lane\n-\nfusible XNOR proc\nessing \nelements, dual\n-\nbank memories, precision\n-\naware clock gating, and an integrated normalization and activation pipeline. \nUnlike fixed binary designs, the accelerator can protect sensitive channel groups with 2\n-\n, 4\n-\n, or 8\n-\nbit execution while \npreserving h\nigh binary parallelism in the remainder of the detector.\n \nAt the analytical 200\n-\nMHz design point, the compute fabric processes 4096 binary operand pairs per cycle, \ncorresponding to 0.819 Tbinary\n-\nMAC/s. An illustrative average weight width of 2.12 bits provi\ndes 3.77\u00d7 storage \nreduction relative to INT8. These figures are architectural estimates, not post\n-\nsynthesis measurements. Future ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Conclusion And Future Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "6907a18402fe385ebad101ab960593fb93c86ed6979bc6ed0fd77e5d9e1b1d1e",
+            "evidence_id": "E533113275e612f60-B0072",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Conclusion And Future Work",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 897,
+                "page": 13,
+                "section": "Appendix: Conclusion And Future Work",
+                "section_index": 49,
+                "start": 0,
+                "text": "This paper proposed FlexXNOR\n-\nOD, a channel\n-\ngroup variable\n-\nprecision accelerator for real\n-\ntime edge object \ndetection. The architecture combines a 64\n-\nPE output\n-\nstationary array with four\n-\nslice lane\n-\nfusible XNOR proc\nessing \nelements, dual\n-\nbank memories, precision\n-\naware clock gating, and an integrated normalization and activation pipeline. \nUnlike fixed binary designs, the accelerator can protect sensitive channel groups with 2\n-\n, 4\n-\n, or 8\n-\nbit execution while \npreserving h\nigh binary parallelism in the remainder of the detector.\n \nAt the analytical 200\n-\nMHz design point, the compute fabric processes 4096 binary operand pairs per cycle, \ncorresponding to 0.819 Tbinary\n-\nMAC/s. An illustrative average weight width of 2.12 bits provi\ndes 3.77\u00d7 storage \nreduction relative to INT8. These figures are architectural estimates, not post\n-\nsynthesis measurements. Future "
+              }
+            ],
+            "text": "This paper proposed FlexXNOR\n-\nOD, a channel\n-\ngroup variable\n-\nprecision accelerator for real\n-\ntime edge object \ndetection. The architecture combines a 64\n-\nPE output\n-\nstationary array with four\n-\nslice lane\n-\nfusible XNOR proc\nessing \nelements, dual\n-\nbank memories, precision\n-\naware clock gating, and an integrated normalization and activation pipeline. \nUnlike fixed binary designs, the accelerator can protect sensitive channel groups with 2\n-\n, 4\n-\n, or 8\n-\nbit execution while \npreserving h\nigh binary parallelism in the remainder of the detector.\n \nAt the analytical 200\n-\nMHz design point, the compute fabric processes 4096 binary operand pairs per cycle, \ncorresponding to 0.819 Tbinary\n-\nMAC/s. An illustrative average weight width of 2.12 bits provi\ndes 3.77\u00d7 storage \nreduction relative to INT8. These figures are architectural estimates, not post\n-\nsynthesis measurements. Future "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0073"
+        ],
+        "excerpt": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 13,
+        "pages": [
+          13
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Conclusion And Future Work",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "a0ac410fd96ea2b2c75b3e9682b34a081a80314715c7e85a61bb2b4b8976c0be",
+            "evidence_id": "E533113275e612f60-B0073",
+            "pages": [
+              13
+            ],
+            "section": "Appendix: Conclusion And Future Work",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1205,
+                "page": 13,
+                "section": "Appendix: Conclusion And Future Work",
+                "section_index": 49,
+                "start": 897,
+                "text": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity."
+              }
+            ],
+            "text": "work will \ncomplete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison \no\nn PASCAL VOC and COCO. A subsequent extension can add structured zero\n-\nweight support, on\n-\nchip detection \ndecoding, and runtime precision adaptation based on scene complexity."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0099"
+        ],
+        "excerpt": "ts Template\n \nThe following tables are included so that measured results can be inserted without restructuring the manuscript. \nReplace \"TBD\" only after obtaining Vivado implementation reports, board\n-\nlevel power measurements, and detector \nevaluation outputs.\n \nMetric\n \nProposed FlexXNOR\n-\nOD\n \nMeasurement method\n \nFPGA device\n \nTBD\n \nExact part number\n \nClock frequency\n \nTBD MHz\n \nPost\n-\nroute timing\n \nLUTs / LUTRAM\n \nTBD\n \nVivado utilization report\n \nFlip\n-\nflops\n \nTBD\n \nVivado utilization report",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 14,
+        "pages": [
+          14
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Experimental Resul",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "8fc02be241c41746d7dffb7d3c033c8fb8a8e7a65b72b51805e561c8015c770c",
+            "evidence_id": "E533113275e612f60-B0099",
+            "pages": [
+              14
+            ],
+            "section": "Appendix: Experimental Resul",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 505,
+                "page": 14,
+                "section": "Appendix: Experimental Resul",
+                "section_index": 73,
+                "start": 0,
+                "text": "ts Template\n \nThe following tables are included so that measured results can be inserted without restructuring the manuscript. \nReplace \"TBD\" only after obtaining Vivado implementation reports, board\n-\nlevel power measurements, and detector \nevaluation outputs.\n \nMetric\n \nProposed FlexXNOR\n-\nOD\n \nMeasurement method\n \nFPGA device\n \nTBD\n \nExact part number\n \nClock frequency\n \nTBD MHz\n \nPost\n-\nroute timing\n \nLUTs / LUTRAM\n \nTBD\n \nVivado utilization report\n \nFlip\n-\nflops\n \nTBD\n \nVivado utilization report"
+              }
+            ],
+            "text": "ts Template\n \nThe following tables are included so that measured results can be inserted without restructuring the manuscript. \nReplace \"TBD\" only after obtaining Vivado implementation reports, board\n-\nlevel power measurements, and detector \nevaluation outputs.\n \nMetric\n \nProposed FlexXNOR\n-\nOD\n \nMeasurement method\n \nFPGA device\n \nTBD\n \nExact part number\n \nClock frequency\n \nTBD MHz\n \nPost\n-\nroute timing\n \nLUTs / LUTRAM\n \nTBD\n \nVivado utilization report\n \nFlip\n-\nflops\n \nTBD\n \nVivado utilization report"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "E533113275e612f60-B0104"
+        ],
+        "excerpt": "FP32 / FP32\n \nTBD\n \nTBD\n \nTBD\n \nUniform INT8\n \n8 / 8 bits\n \nTBD\n \nTBD\n \nTBD\n \nUniform binary\n \n1 / 1 bit except stem/head\n \nTBD\n \nTBD\n \nTBD\n \nLayer\n-\nwise mixed pre\ncision\n \n1/2/4/8 bits by layer\n \nTBD\n \nTBD\n \nTBD\n \nFlexXNOR\n-\nOD\n \n1/2/4/8 bits by 16\n-\nchannel group\n \nTBD\n \nTBD\n \nTBD",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 15,
+        "pages": [
+          15
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Fp32 / Fp32",
+        "signal_type": "concern",
+        "source_blocks": [
+          {
+            "content_hash": "3a56a5c4df439d91329c0561e5945a8da3742de93ac169d7ec6d40420e833ba0",
+            "evidence_id": "E533113275e612f60-B0104",
+            "pages": [
+              15
+            ],
+            "section": "Fp32 / Fp32",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 284,
+                "page": 15,
+                "section": "Fp32 / Fp32",
+                "section_index": 78,
+                "start": 0,
+                "text": "FP32 / FP32\n \nTBD\n \nTBD\n \nTBD\n \nUniform INT8\n \n8 / 8 bits\n \nTBD\n \nTBD\n \nTBD\n \nUniform binary\n \n1 / 1 bit except stem/head\n \nTBD\n \nTBD\n \nTBD\n \nLayer\n-\nwise mixed pre\ncision\n \n1/2/4/8 bits by layer\n \nTBD\n \nTBD\n \nTBD\n \nFlexXNOR\n-\nOD\n \n1/2/4/8 bits by 16\n-\nchannel group\n \nTBD\n \nTBD\n \nTBD"
+              }
+            ],
+            "text": "FP32 / FP32\n \nTBD\n \nTBD\n \nTBD\n \nUniform INT8\n \n8 / 8 bits\n \nTBD\n \nTBD\n \nTBD\n \nUniform binary\n \n1 / 1 bit except stem/head\n \nTBD\n \nTBD\n \nTBD\n \nLayer\n-\nwise mixed pre\ncision\n \n1/2/4/8 bits by layer\n \nTBD\n \nTBD\n \nTBD\n \nFlexXNOR\n-\nOD\n \n1/2/4/8 bits by 16\n-\nchannel group\n \nTBD\n \nTBD\n \nTBD"
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://doi.org/10.48175/ijarsct-38402",
+    "gate_version": "dual-promotion-v3",
+    "manual_override": false,
+    "missing_information": [],
+    "overall_quality_score": null,
+    "paper_type": "systems_or_application",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [
+          "The accelerator has no functioning synthesized implementation: the testbench was set as the synthesis top, producing zero retained cells and an empty netlist.",
+          "No empirical evaluation exists; FPGA resource, power, frame rate, and detection accuracy tables are filled with TBD placeholders, and the conclusion defers detector training and dataset evaluation to future work.",
+          "The reported power and waveform outputs are preliminary and invalidated by the empty-netlist synthesis and an incomplete transaction trace (start and done both low), so the limited hardware results do not corroborate the architectural claims."
+        ],
+        "canonical_id": "doi:10.48175/ijarsct-38402",
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No independent measurement is reported; the manuscript states that synthesis, power, and dataset measurements were not contained in the source material, with results tables left as TBD placeholders.",
+          "final_evaluation_signal": "The headline outcomes are analytical throughput and storage estimates derived from the same architectural parameterization.",
+          "independent_corroboration": "absent",
+          "optimization_signal": "The precision-assignment policy is driven by sensitivity-based detection-loss calibration during training.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E533113275e612f60-B0046",
+          "E533113275e612f60-B0060",
+          "E533113275e612f60-B0065",
+          "E533113275e612f60-B0066",
+          "E533113275e612f60-B0069",
+          "E533113275e612f60-B0099",
+          "E533113275e612f60-B0104",
+          "E533113275e612f60-B0072",
+          "E533113275e612f60-B0073"
+        ],
+        "promotion_decision": "uncertain",
+        "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48175/ijarsct-38402",
+        "claim_evidence_alignment": "The authors explicitly acknowledge that synthesis, implementation, timing closure, power measurement, and dataset evaluations (e.g., PASCAL VOC/COCO mAP) were not completed and remain future work.",
+        "context_id": "533113275e612f608e128da8a0bcb5cebe2bb807ddf77dd5c1513f6b6882258e",
+        "decision": "uncertain",
+        "evaluation_assessment": "No empirical evaluation is completed. The manuscript contains only pre-synthesis analytical estimates, a static device power report on an empty netlist, an incomplete behavioral simulation waveform, and templates filled with 'TBD' values for FPGA utilization, frame rate, and detection accuracy.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "No empirical measurements or model evaluations are reported in the manuscript; results tables consist of TBD placeholders.",
+          "final_evaluation_signal": "Theoretical peak MAC/TOPS throughput formulas and unpopulated experimental tables.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Analytical design equations and sensitivity-based precision assignment planning.",
+          "signal_reuse": "not_applicable"
+        },
+        "evidence_ids": [
+          "E533113275e612f60-B0046",
+          "E533113275e612f60-B0060",
+          "E533113275e612f60-B0065",
+          "E533113275e612f60-B0066",
+          "E533113275e612f60-B0069",
+          "E533113275e612f60-B0071",
+          "E533113275e612f60-B0099",
+          "E533113275e612f60-B0104"
+        ],
+        "limitations": "The authors candidly state limitations and threats to validity, specifically that empirical validation on datasets and actual FPGA resource/power metrics are completely pending.",
+        "method_assessment": "While the architectural concepts and analytical formulas are described, the hardware implementation is incomplete; the authors note that the synthesis testbench was accidentally set as the top module, optimizing away the logic and leaving an empty netlist.",
+        "quality_rationale": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
+        "scoped_contribution": "The paper proposes FlexXNOR-OD, an FPGA accelerator architecture concept for object detection featuring channel-group variable-precision scheduling and lane-fusible XNOR processing elements.",
+        "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "60fb26f497000e85b424c2b0226c816766e12be3b76fb9d6b4f227bc203fc69b",
+    "status": "uncertain",
+    "suppressed": false,
+    "uncertainty": "The authors candidly state limitations and threats to validity, specifically that empirical validation on datasets and actual FPGA resource/power metrics are completely pending."
+  },
+  "semantic_scholar_id": null,
+  "source": "openalex",
+  "source_id": "W7213344478",
+  "source_ids": {
+    "openalex": [
+      "W7213344478"
+    ]
+  },
+  "source_updated_date": "2026-09-16",
+  "sources": [
+    "openalex"
+  ],
+  "ssrn_id": null,
+  "structured_card": {
+    "evidence_or_evaluation": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "key_contribution": {
+      "confidence": "not_extracted",
+      "provenance": "not_extracted",
+      "value": "Not extracted yet"
+    },
+    "limitations_or_uncertainty": {
+      "confidence": "high",
+      "provenance": "rule",
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
+    },
+    "method_or_system_type": {
+      "confidence": "medium",
+      "provenance": "abstract",
+      "value": "Object-detection method"
+    },
+    "relation_to_agentic_memory": {
+      "confidence": "medium",
+      "provenance": "abstract",
+      "value": "Concerns object-detection architecture, training, or evaluation"
+    },
+    "research_relevance": {
+      "confidence": "medium",
+      "provenance": "rule",
+      "value": "Directly relevant to computer-vision research based on screening evidence."
+    }
+  },
+  "structured_sections": {
+    "evidence_or_evaluation_signals": [],
+    "method_or_system_type": "Object-detection method",
+    "possible_key_claims": [],
+    "relation_to_agentic_memory": "Concerns object-detection architecture, training, or evaluation"
+  },
+  "tags": [
+    "object-detection",
+    "efficient-vision"
+  ],
+  "title": "FlexXNOR-OD: A Channel-Grouped XNOR-Based Variable-Precision Accelerator for Real-Time Edge Object Detection",
+  "url": "https://doi.org/10.48175/ijarsct-38402"
+}

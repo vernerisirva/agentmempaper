@@ -1,0 +1,48 @@
+# Optional curation for the computer vision track. Scholarly-quality override and
+# suppression fields follow the same precedence documented in config/curation.yaml.
+#
+# The notes below are identity-level only: they say which lineage a seeded paper anchors,
+# and nothing about its findings. That is deliberate. A curation note is displayed as a
+# research note with "curation" provenance, so it must not assert anything that was not
+# read from the source. Findings belong to the quality assessment, which these papers go
+# through like any other, or to a later note written after reading the abstract.
+#
+# Marking a paper as foundational does not admit it to the main library. Admission is
+# still high relevance plus a scientific promotion pass, exactly as for every other track.
+
+pinned:
+overrides:
+  - canonical_id: "arxiv:1506.02640"
+    note: "Foundational anchor: the first YOLO paper, origin of the single-stage real-time detection line this track follows."
+  - canonical_id: "arxiv:1612.08242"
+    note: "Foundational anchor: YOLO9000 / YOLOv2, the second iteration of the YOLO family."
+  - canonical_id: "arxiv:1804.02767"
+    note: "Foundational anchor: YOLOv3, the iteration most later YOLO work is measured against."
+  - canonical_id: "arxiv:2004.10934"
+    note: "Foundational anchor: YOLOv4, the point at which the family's training-time techniques were consolidated."
+  - canonical_id: "arxiv:2107.08430"
+    note: "Foundational anchor: YOLOX, the anchor-free branch of the YOLO family."
+  - canonical_id: "arxiv:2207.02696"
+    note: "Foundational anchor: YOLOv7, a widely used reference point for real-time detector comparisons."
+  - canonical_id: "arxiv:1506.01497"
+    note: "Foundational anchor: Faster R-CNN, the two-stage region-proposal lineage YOLO is usually contrasted with."
+  - canonical_id: "arxiv:1703.06870"
+    note: "Foundational anchor: Mask R-CNN, the instance-segmentation extension of the R-CNN lineage."
+  - canonical_id: "arxiv:2005.12872"
+    note: "Foundational anchor: DETR, the set-prediction alternative to anchor-and-NMS detection."
+  - canonical_id: "arxiv:2010.04159"
+    note: "Foundational anchor: Deformable DETR, the convergence and resolution fix for the DETR line."
+  - canonical_id: "arxiv:2203.03605"
+    note: "Foundational anchor: the DINO detector, a widely cited DETR-family reference."
+  - canonical_id: "arxiv:2304.08069"
+    note: "Foundational anchor: RT-DETR, the real-time DETR variant that competes directly with YOLO on the latency/accuracy trade-off."
+  - canonical_id: "arxiv:2010.11929"
+    note: "Foundational anchor: the Vision Transformer, origin of the transformer backbone line in vision."
+  - canonical_id: "arxiv:2103.14030"
+    note: "Foundational anchor: Swin Transformer, the hierarchical vision-transformer backbone used widely for detection and segmentation."
+  - canonical_id: "arxiv:2304.02643"
+    note: "Foundational anchor: Segment Anything, the promptable-segmentation foundation model."
+  - canonical_id: "arxiv:2304.07193"
+    note: "Foundational anchor: DINOv2, a reference self-supervised visual representation model."
+excluded:
+date_overrides:

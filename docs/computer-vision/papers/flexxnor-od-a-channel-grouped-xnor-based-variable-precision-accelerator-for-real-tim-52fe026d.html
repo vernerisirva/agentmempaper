@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlexXNOR-OD: A Channel-Grouped XNOR-Based Variable-Precision Accelerator for Real-Time Edge Object Detection</title>
+  <meta name="description" content="Daily Paper Scout library of object detection, YOLO and real-time detectors, segmentation, tracking, and modern computer vision.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main class="page" id="main-content">
+
+        <header class="archive-hero paper-detail-hero">
+          <nav class="top-nav" aria-label="Primary">
+            <a class="brand" href="../index.html">Library</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory</a> <a href="../../deep-research/index.html">Deep Research</a> <a href="../../engram/index.html">Engram</a>
+              <a href="../index.html">All papers</a>
+              <a href="../about.html">About</a>
+              <a href="../archive.html">Archive</a>
+            </span>
+          </nav>
+          <p class="eyebrow">Structured paper detail</p>
+          <h1>FlexXNOR-OD: A Channel-Grouped XNOR-Based Variable-Precision Accelerator for Real-Time Edge Object Detection</h1>
+          <p class="hero-copy">Budidha Sriman and D. Sateesh</p>
+          <div class="paper-detail-actions">
+            <a class="paper-link" href="https://doi.org/10.48175/ijarsct-38402">Open paper</a>
+            <a class="paper-detail-link" href="flexxnor-od-a-channel-grouped-xnor-based-variable-precision-accelerator-for-real-tim-52fe026d.json">Download paper JSON</a>
+          </div>
+        </header>
+        <section class="paper-detail-layout">
+          <section class="detail-panel">
+            <p class="section-kicker">Authors</p>
+            <p>Budidha Sriman and D. Sateesh</p>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Publication/date metadata</p>
+            <dl class="detail-metadata">
+              <div><dt>Display date</dt><dd>Published 2026-09-15</dd></div>
+              <div><dt>Publication date</dt><dd>2026-09-15</dd></div>
+              <div><dt>Publication year</dt><dd>2026</dd></div>
+              <div><dt>Publication date source</dt><dd>openalex</dd></div>
+              <div><dt>Publication date precision</dt><dd>day</dd></div>
+              <div><dt>Publication date confidence</dt><dd>medium</dd></div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Sources</p>
+            <ul><li>OpenAlex</li></ul>
+            <div class="secondary-links"><a href="https://openalex.org/W7213344478">OpenAlex</a></div>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Why included</p>
+            <p>Studies object-detection architecture, training, or evaluation.</p>
+          </section>
+
+          <section class="detail-panel wide">
+            <p class="section-kicker">Abstract / summary</p>
+            <p>Object detection at the edge requires a difficult balance among detection accuracy, deterministic latency, memory bandwidth, and energy consumption. Existing binarized accelerators replace multipliers with XNOR and population-count logic, but many designs use a fixed binary datapath or select precision only at the l...</p>
+          </section>
+          <section class="detail-panel wide quality-detail-panel">
+      <h2>Quality pending</h2>
+      <p>Because the proposed accelerator lacks a functioning synthesized implementation, functional verification against a golden model, and any empirical detection accuracy or hardware measurements, it remains an unfinished proposal unsuitable for confident promotion.</p>
+      <p>The authors candidly state limitations and threats to validity, specifically that empirical validation on datasets and actual FPGA resource/power metrics are completely pending.</p>
+      <p>Publication: peer reviewed. OpenAlex records a published journal location: International Journal of Advanced Research in Science Communication and Technology. Peer review inferred from venue metadata, not independently verified.</p>
+      <details><summary>Quality evidence and provenance</summary>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-21T10:13:36.495249+00:00.</p>
+        <p>Coverage: 51104 of 51104 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The source material supplied for this study d
+id not contain completed synthesis, power, or dataset measurements.
+Consequently, this section reports analytical estimates derived from the architecture parameters in Table 1 and
+explicitly labels them as pre
+-
+synthesis values. No measured FPGA resource or
+
+detection
+-
+accuracy result is fabricated.</blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ated and that
+the intended memory
+-
+fetch
+-
+compute data path is structurally connected. However, the post
+-
+synthesis screenshots also
+reveal that the testbench appears to have been used as the synthesis top, causing the implemented logic to be removed
+or optim
+ized away. Consequently, the supplied power and device
+-
+view values should be reported as preliminary tool
+outputs rather than final hardware results.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>memory usage of about 1,800.09 MB. These values indicate that the source
+set was syntactically accepted and that the synthesis flow itself terminated successfully.
+
+Nevertheless, the report
+-
+i
+nstance
+-
+area table lists the top instance with zero cells. The synthesized design path and
+generated checkpoint are named tb_xnor_object_detector_top, which strongly suggests that the testbench, rather than
+xnor_object_detector_top, was selected as the syn
+thesis top. Since testbench processes are not synthesizable and
+normally do not expose retained hardware outputs, Vivado can optimize the design to an empty netlist. The nearly
+empty device view is consistent with this interpretation.</blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The post
+-
+synthesis power summary reports a total on
+-
+chip power of 0.089 W. The complete estimate is assigned to
+device
+-
+static power, while dynamic power is reported as 0.000 W. The analysis assumes a typical process condition, an
+ambient temperatu
+re of 25.0 degrees C, and produces a junction
+-
+temperature estimate of 25.2 degrees C. The reported
+thermal margin is 59.8 degrees C, corresponding to 24.4 W, and the effective junction
+-
+to
+-
+ambient thermal resistance is
+2.4 degrees C/W. The tool labels the c
+onfidence level as high, although no design power budget is specified.
+
+The 89 mW value should not be presented as the operating power of the XNOR accelerator. A zero dynamic
+-
+power
+estimate is expected when the synthesized netlist contains no active retaine
+d logic or when switching activity is
+unavailable. Therefore, this output represents the static device estimate </blockquote></details></li><li><strong>Contribution clarity — page 12</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The behavi
+oral waveform confirms that the major top
+-
+level interfaces are present and can be driven in simulation. At
+the displayed cursor position, reset is deasserted, precision_mode_in is set to 2, maxpool_enable_in is low, and the 12
+-
+bit input, weight, and output
+
+addresses are 0x003, 0x003, and 0x004, respectively. The feature input contains repeated
+0x02 values and the weight input contains repeated 0x03 values across their 512
+-
+bit buses. The processor_output bus is
+displayed as all hexadecimal F values.
+
+
+Figure 5. Behavioral simulation waveform showing precision mode 2, 12
+-
+bit addressing, repeated feature and weight
+vectors, and the observed processor
+-
+output bus.
+
+The disp
+layed interval does not demonstrate a completed accelerator transaction because start remains low and done
+remains low across the captured window. The all
+-
+ones processor output may </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>I J A R S C T
+
+
+
+
+
+
+
+
+
+International Journal of Advanced
+Research in Science
+, Communication and
+
+Technology
+
+
+International Open
+-
+Access, Double
+-
+Blind, Peer
+-
+Reviewed, Refereed, Multidisciplinary Online
+Journal
+
+Volume
+6
+, Issue
+2
+,
+September
+
+2026
+
+Copyright to IJAR
+S
+C
+T
+
+DOI: 10.48175/
+IJARSCT
+-
+38
+40
+2
+
+
+
+31
+
+www.ijarsct.co.in
+
+
+
+
+
+ISSN
+:
+2581
+-
+9429
+
+Impact Factor:
+8.2
+
+default, saturated, signed, or othe
+rwise inactive
+-
+state value; its numerical correctness cannot be verified from this
+screenshot alone. A publication
+-
+quality functional trace should include a reset pulse, a visible start assertion, internal or
+reference XNOR
+-
+popcount values, output stabiliz
+ation, and a done assertion. The resulting output should then be
+compared with a software golden model.</blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This paper proposed FlexXNOR
+-
+OD, a channel
+-
+group variable
+-
+precision accelerator for real
+-
+time edge object
+detection. The architecture combines a 64
+-
+PE output
+-
+stationary array with four
+-
+slice lane
+-
+fusible XNOR proc
+essing
+elements, dual
+-
+bank memories, precision
+-
+aware clock gating, and an integrated normalization and activation pipeline.
+Unlike fixed binary designs, the accelerator can protect sensitive channel groups with 2
+-
+, 4
+-
+, or 8
+-
+bit execution while
+preserving h
+igh binary parallelism in the remainder of the detector.
+
+At the analytical 200
+-
+MHz design point, the compute fabric processes 4096 binary operand pairs per cycle,
+corresponding to 0.819 Tbinary
+-
+MAC/s. An illustrative average weight width of 2.12 bits provi
+des 3.77× storage
+reduction relative to INT8. These figures are architectural estimates, not post
+-
+synthesis measurements. Future </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>work will
+complete RTL implementation, timing closure, power measurement, detector training, ablation studies, and comparison
+o
+n PASCAL VOC and COCO. A subsequent extension can add structured zero
+-
+weight support, on
+-
+chip detection
+decoding, and runtime precision adaptation based on scene complexity.</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ts Template
+
+The following tables are included so that measured results can be inserted without restructuring the manuscript.
+Replace &quot;TBD&quot; only after obtaining Vivado implementation reports, board
+-
+level power measurements, and detector
+evaluation outputs.
+
+Metric
+
+Proposed FlexXNOR
+-
+OD
+
+Measurement method
+
+FPGA device
+
+TBD
+
+Exact part number
+
+Clock frequency
+
+TBD MHz
+
+Post
+-
+route timing
+
+LUTs / LUTRAM
+
+TBD
+
+Vivado utilization report
+
+Flip
+-
+flops
+
+TBD
+
+Vivado utilization report</blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FP32 / FP32
+
+TBD
+
+TBD
+
+TBD
+
+Uniform INT8
+
+8 / 8 bits
+
+TBD
+
+TBD
+
+TBD
+
+Uniform binary
+
+1 / 1 bit except stem/head
+
+TBD
+
+TBD
+
+TBD
+
+Layer
+-
+wise mixed pre
+cision
+
+1/2/4/8 bits by layer
+
+TBD
+
+TBD
+
+TBD
+
+FlexXNOR
+-
+OD
+
+1/2/4/8 bits by 16
+-
+channel group
+
+TBD
+
+TBD
+
+TBD</blockquote></details></li></ul>
+      </details>
+      <p>Quality screening does not prove scientific correctness.</p>
+    </section>
+          <section class="detail-panel wide structured-card-panel">
+            <p class="section-kicker">Structured research card</p>
+            <dl class="detail-metadata structured-card-fields">
+            <div>
+              <dt>Research relevance</dt>
+              <dd>Directly relevant to computer-vision research based on screening evidence.</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: rule</dd>
+            </div>
+
+            <div>
+              <dt>Method / system type</dt>
+              <dd>Object-detection method</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Key contribution</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Evidence / evaluation</dt>
+              <dd class="structured-empty">Not extracted yet</dd>
+              <dd class="structured-provenance">Confidence: not_extracted · Provenance: not_extracted</dd>
+            </div>
+
+            <div>
+              <dt>Relation to computer vision / object detection</dt>
+              <dd>Concerns object-detection architecture, training, or evaluation</dd>
+              <dd class="structured-provenance">Confidence: medium · Provenance: abstract</dd>
+            </div>
+
+            <div>
+              <dt>Limitations / uncertainty</dt>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
+              <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
+            </div>
+            </dl>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Review metadata</p>
+            <ul>
+              <li>Decision: Highly relevant</li>
+              <li>Internal screening score: 94/100</li>
+              <li>Screening category: Object detection</li>
+              <li>Tags: object-detection, efficient-vision</li>
+            </ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Provenance</p>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-16</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 09:56:38</li><li>Last seen by Paper Scout: 2026-09-21 10:03:28</li></ul>
+            <ul><li>DOI: 10.48175/ijarsct-38402</li><li>OpenAlex: W7213344478</li><li>OpenAlex IDs: W7213344478</li></ul>
+          </section>
+          <section class="detail-panel">
+            <p class="section-kicker">Exports</p>
+            <p><a href="flexxnor-od-a-channel-grouped-xnor-based-variable-precision-accelerator-for-real-tim-52fe026d.json">Download paper JSON</a></p>
+            <details class="paper-more">
+              <summary>Citation text</summary>
+              <p>FlexXNOR-OD: A Channel-Grouped XNOR-Based Variable-Precision Accelerator for Real-Time Edge Object Detection. Budidha Sriman and D. Sateesh. 2026-09-15. https://doi.org/10.48175/ijarsct-38402</p>
+            </details>
+          </section>
+        </section>
+
+  </main>
+</body>
+</html>

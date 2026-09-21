@@ -29,15 +29,17 @@ from paper_scout.promotion_protocol import MODEL_PROVIDERS, PROVIDERS
 PREFLIGHT_VERSION = "credential-preflight-v1"
 BUDGET_VERSION = "operational-budget-v1"
 
-#: Conservative initial production bounds. One paper per track per scheduled run, three
-#: papers across all tracks. A track with no eligible paper forfeits its slot; its quota
-#: is never transferred to another track, so the normal maximum today is two per day.
+#: Conservative production bounds. One paper per track per scheduled run, and no more
+#: than one per track across all of them: the run ceiling is the track count, so a fourth
+#: track raised it from three to four and nothing else changed. A track with no eligible
+#: paper forfeits its slot; its quota is never transferred to another track, so the normal
+#: daily maximum stays below the ceiling by design.
 #:
 #: These bound papers that actually reach a model. A candidate rejected by acquisition or
 #: the coverage gate never issues a request and costs nothing, so it is bounded separately
 #: by MAX_ACQUISITION_WALK below rather than consuming a track's assessment slot.
 MAX_PAPERS_PER_TRACK = 1
-MAX_PAPERS_PER_RUN = 3
+MAX_PAPERS_PER_RUN = 4
 
 #: How many candidates one track may try before giving up for this run.
 #:
@@ -61,11 +63,18 @@ OPENROUTER_CEILING_ENV = "PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"
 #:
 #: The ceiling is enforced between papers, not inside one. A single paper's calls are
 #: already committed once they are issued, so the guarantee this provides is: the run
-#: never *starts* a paper whose expected cost would carry it past the ceiling. With a
-#: three-paper maximum and this estimate the worst case is far under $0.30, and the
+#: never *starts* a paper whose expected cost would carry it past the ceiling. The
 #: residual exposure is one paper's overrun. Enforcing a true hard cap would require a
 #: provider-side spend limit on the OpenRouter key, which is an account setting rather
 #: than something this process can impose.
+#:
+#: Four papers still fit under $0.30 without adjusting the ceiling, which is why the
+#: fourth track did not change it. At the measured rate a full run spends 4 x $0.0297779
+#: = $0.119. At this deliberately high estimate, which is also what the exception path
+#: charges when a raise happens after requests were issued, a full run spends 4 x $0.05 =
+#: $0.20, and the pre-spend check before the fourth paper sees $0.15 + $0.05 = $0.20,
+#: still under the ceiling. The ceiling binds first at seven papers, so it remains a real
+#: guard rather than a formality.
 ESTIMATED_OPENROUTER_USD_PER_PAPER = 0.05
 
 

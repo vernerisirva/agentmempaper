@@ -113,7 +113,10 @@ jobs:
 
       - name: Prepare consistent Paper Scout state snapshot
         if: ${{ steps.commit-backfill-updates.outcome == 'success' }}
-        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3
+        # Every database in the snapshot has to be checkpointed, including the tracks this
+        # workflow does not backfill: persist packs all of them, and an unflushed WAL on
+        # any one of them refuses the snapshot.
+        run: python .github/scripts/prepare_paper_scout_state.py data/paper_scout.sqlite3 data/deep_research/paper_scout.sqlite3 data/engram/paper_scout.sqlite3 data/computer_vision/paper_scout.sqlite3
 
       - name: Persist private Paper Scout state
         id: persist-backfill-state

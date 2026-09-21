@@ -45,7 +45,9 @@ class EngramStateTests(unittest.TestCase):
                 self.assertEqual(len(store.get_notified_for_date("2026-09-04")), 1)
                 self.assertEqual(len(store.failed_queries(name)), 1)
 
-    def test_older_two_track_snapshot_initializes_only_engram(self):
+    def test_older_two_track_snapshot_initializes_only_the_tracks_it_predates(self):
+        """The pre-checksum two-track archive still restores, and only adds what is new."""
+        added = STATE_PATHS[2:]
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.make_state(root, STATE_PATHS[:2])
@@ -54,14 +56,15 @@ class EngramStateTests(unittest.TestCase):
                 for name in STATE_PATHS[:2]:
                     tar.add(root / name, arcname=name)
             fresh = root / "fresh"
-            self.assertEqual(restore_snapshot(archive, fresh), [STATE_PATHS[2]])
+            self.assertEqual(restore_snapshot(archive, fresh), sorted(added))
             self.assertEqual(self.fingerprint(root, STATE_PATHS[:2]), self.fingerprint(fresh, STATE_PATHS[:2]))
-            self.assertEqual(PaperStore(fresh / STATE_PATHS[2]).paper_count(), 0)
-            # Reusing a legacy snapshot must preserve existing Engram records too.
-            self.make_state(fresh, STATE_PATHS[2:])
-            before = self.fingerprint(fresh, STATE_PATHS[2:])
+            for name in added:
+                self.assertEqual(PaperStore(fresh / name).paper_count(), 0)
+            # Reusing a legacy snapshot must preserve the newer tracks' records too.
+            self.make_state(fresh, added)
+            before = self.fingerprint(fresh, added)
             restore_snapshot(archive, fresh)
-            self.assertEqual(self.fingerprint(fresh, STATE_PATHS[2:]), before)
+            self.assertEqual(self.fingerprint(fresh, added), before)
 
     def test_corrupt_missing_or_unexpected_archive_never_mutates_existing_tracks(self):
         with tempfile.TemporaryDirectory() as tmp:

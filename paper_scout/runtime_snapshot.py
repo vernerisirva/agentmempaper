@@ -30,8 +30,23 @@ STATE_PATHS = (
     "data/paper_scout.sqlite3",
     "data/deep_research/paper_scout.sqlite3",
     "data/engram/paper_scout.sqlite3",
+    "data/computer_vision/paper_scout.sqlite3",
 )
-LEGACY_PATHS = frozenset(STATE_PATHS[:2])
+#: Database sets that a snapshot may legitimately contain instead of the current one,
+#: because they were the complete set when that snapshot was packed. Restoring one is an
+#: upgrade, not a partial archive: every database it does carry is installed and verified
+#: exactly as usual, and only the tracks added since are initialized empty. A set that is
+#: *not* listed here is a partial archive and still fails closed, which is what keeps a
+#: dropped or withheld database from being silently recreated as an empty history.
+#:
+#: Append only. Removing an entry makes an older snapshot unrestorable, and the whole
+#: point of the list is that it never has to be.
+LEGACY_DATABASE_SETS = (
+    frozenset(STATE_PATHS[:2]),  # before the Engram track
+    frozenset(STATE_PATHS[:3]),  # before the Computer Vision track
+)
+#: The one pre-checksum format. A manifest-less archive can only be this set.
+LEGACY_PATHS = LEGACY_DATABASE_SETS[0]
 MANIFEST = "paper-scout-state-manifest.json"
 SNAPSHOT_SCHEMA = "paper-scout-state-snapshot"
 SUPPORTED_MANIFEST_VERSIONS = (1, 2)
@@ -138,18 +153,25 @@ def restore_snapshot(archive: Path, root: Path = Path("."),
                 version = manifest.get("version")
                 if version not in SUPPORTED_MANIFEST_VERSIONS:
                     raise ValueError("incomplete or unsupported snapshot manifest")
-                if set(hashes) != database_names or database_names != set(STATE_PATHS):
+                # The archive must be complete for *some* recognized generation of the
+                # state layout: the current set, or one the databases were packed under
+                # before a track existed. Anything else is a partial archive.
+                known_sets = (set(STATE_PATHS), *(set(legacy) for legacy in LEGACY_DATABASE_SETS))
+                if set(hashes) != database_names or database_names not in known_sets:
                     raise ValueError("incomplete or unsupported snapshot manifest")
                 if version >= 2:
                     # A v2 manifest states its own schema and database list. Both are
                     # checked so a well-formed archive of something else cannot install.
+                    # The list has to agree with the archive's own members rather than
+                    # with today's STATE_PATHS, or a manifest that honestly described an
+                    # older complete set would be rejected for being old.
                     if manifest.get("schema") != SNAPSHOT_SCHEMA:
                         raise ValueError("incomplete or unsupported snapshot manifest")
-                    if list(manifest.get("databases", [])) != list(STATE_PATHS):
+                    if set(manifest.get("databases", [])) != database_names:
                         raise ValueError("incomplete or unsupported snapshot manifest")
             else:
                 # Only the exact known two-track format predates checksums.
-                if database_names != LEGACY_PATHS:
+                if database_names != set(LEGACY_PATHS):
                     raise ValueError("incomplete legacy snapshot")
                 hashes = {}
             for name in sorted(database_names):

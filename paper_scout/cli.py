@@ -306,8 +306,14 @@ def main(argv: list[str] | None = None) -> int:
         # run that must not cost the day's discovery, assessment, site build and state
         # persist for every track, so the caller can ask for a loud report instead of a
         # failing exit. Nothing is written either way, and the next run retries.
-        message = (f"{config.track_id} seed bootstrap left unresolved IDs: "
-                   + ", ".join(report["unresolved"]))
+        # A workflow annotation is line-oriented, and normalize_arxiv_id does not constrain
+        # an identifier's shape -- it strips prefixes and version suffixes but passes
+        # anything else through, newlines included. The manifest is repo-controlled, so this
+        # is not an external input, but a malformed id would otherwise emit arbitrary
+        # workflow commands. Collapsed and bounded, the same way the credential preflight
+        # step already treats its reason string.
+        identifiers = " ".join(", ".join(str(i) for i in report["unresolved"]).split())[:400]
+        message = f"{config.track_id} seed bootstrap left unresolved IDs: {identifiers}"
         if args.allow_unresolved:
             print(f"::error::{message}. Discovery continues; the next run retries them.")
             return 0

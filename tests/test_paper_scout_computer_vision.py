@@ -10,6 +10,7 @@ No test here issues a paid model call or reaches the network.
 """
 from __future__ import annotations
 
+from contextlib import redirect_stdout
 from dataclasses import replace
 import io
 import json
@@ -932,6 +933,79 @@ class WorkflowIntegration(unittest.TestCase):
                              "a title mismatch must never write the wrong manuscript")
             for item in report["results"]:
                 self.assertIn("does not match the manifest", item["error"])
+
+    def test_the_bootstrap_cli_exit_code_depends_only_on_the_flag(self):
+        """The branch the outage fix turns on, exercised through the CLI itself.
+
+        The workflow wiring and the seeds layer are pinned elsewhere; this covers the exit
+        code and the annotation, which is what actually decided whether run 35594457409
+        kept or lost its work. No network: the fetch is replaced, and the unresolved path
+        is reached by a title that disagrees with the manifest.
+        """
+        from unittest.mock import patch
+        from paper_scout.cli import main
+
+        def unresolvable(arxiv_id=None, **_):
+            return PaperCandidate(title="A Completely Different Paper", authors=["Ada"],
+                                  abstract="Unrelated.", source="openalex", source_id=arxiv_id,
+                                  arxiv_id=arxiv_id, url="https://example.test/x",
+                                  published_date="2023-04-05", updated_date="2023-04-05",
+                                  publication_date_precision="day")
+
+        for flag, expected_exit in (([], 1), (["--allow-unresolved"], 0)):
+            with self.subTest(flag=flag or "default"), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                config = replace(load_config(ROOT / TRACK_CONFIG_PATHS[TRACK], env={}),
+                                 seed_manifest=ROOT / "config/seeds/computer_vision.json",
+                                 sqlite_path=root / "state.sqlite3", report_dir=root / "reports")
+                stdout = io.StringIO()
+                with patch("paper_scout.cli.load_config", return_value=config), \
+                        patch("paper_scout.seeds.fetch_direct_paper", unresolvable), \
+                        redirect_stdout(stdout), patch("sys.stderr", new=io.StringIO()) as stderr:
+                    code = main(["ingest-seeds", "--track", TRACK, *flag])
+                self.assertEqual(code, expected_exit)
+                reported = stdout.getvalue() + stderr.getvalue()
+                self.assertIn("seed bootstrap left unresolved IDs", reported)
+                self.assertIn("::error::", reported, "an unresolved seed must stay loud")
+                # Nothing is written on either path.
+                self.assertEqual(PaperStore(config.sqlite_path).paper_count(), 0)
+
+    def test_the_unresolved_annotation_cannot_emit_extra_workflow_commands(self):
+        """A workflow annotation is line-oriented and identifiers are not shape-constrained.
+
+        normalize_arxiv_id strips prefixes and version suffixes but passes anything else
+        through, newlines included. The manifest is repo-controlled so this is not an
+        external input, but a malformed entry would otherwise inject workflow commands.
+        """
+        from unittest.mock import patch
+        from paper_scout.cli import main
+        hostile = "2304.02643\n::set-output name=pwned::yes"
+        manifest = {"track": TRACK,
+                    "papers": [{"arxiv_id": hostile, "expected_title": "Segment Anything"}]}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            seed_path = root / "seeds.json"
+            seed_path.write_text(json.dumps(manifest), encoding="utf-8")
+            config = replace(load_config(ROOT / TRACK_CONFIG_PATHS[TRACK], env={}),
+                             seed_manifest=seed_path, sqlite_path=root / "state.sqlite3",
+                             report_dir=root / "reports")
+            stdout = io.StringIO()
+            with patch("paper_scout.cli.load_config", return_value=config), \
+                    patch("paper_scout.seeds.fetch_direct_paper",
+                          lambda **_: (_ for _ in ()).throw(ValueError("unreachable"))), \
+                    redirect_stdout(stdout), patch("sys.stderr", new=io.StringIO()):
+                main(["ingest-seeds", "--track", TRACK, "--allow-unresolved"])
+        printed = stdout.getvalue()
+        annotation = next(line for line in printed.splitlines() if line.startswith("::error::"))
+        # A workflow command is only interpreted when it begins a line, so the property that
+        # matters is that the injected text cannot start one -- not that it is absent. The
+        # identifier is still reported, which is the point of the annotation.
+        self.assertNotIn("\n", annotation)
+        self.assertIn("pwned::yes", annotation, "the identifier is still reported")
+        self.assertEqual([line for line in printed.splitlines()
+                          if line.lstrip().startswith("::set-output")], [])
+        self.assertEqual(len([line for line in printed.splitlines()
+                              if line.startswith("::")]), 1, printed)
 
     def test_every_state_path_is_checkpointed_before_it_is_persisted(self):
         for name in ("paper-scout.yml", "paper-scout-backfill.yml"):

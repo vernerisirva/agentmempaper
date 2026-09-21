@@ -19,7 +19,15 @@ name: Paper Scout
 # durable state.
 on:
   schedule:
-    - cron: "20 6 * * *"
+    # 04:00 UTC is 06:00 in Europe/Helsinki (UTC+2), weekdays only.
+    #
+    # GitHub runs cron on a best-effort queue and has never started this repository's
+    # scheduled run near its nominal time: with a 06:20 UTC cron, observed starts across
+    # nine runs ranged from 10:50 to 12:52 UTC, a consistent four-to-six hour delay. An
+    # earlier cron moves the queue position earlier but cannot promise an arrival time.
+    # If the run must land by a given hour, trigger it on a self-hosted schedule and use
+    # workflow_dispatch, because this trigger cannot guarantee it.
+    - cron: "0 4 * * 1-5"
   workflow_dispatch:
     inputs:
       deploy_only:
@@ -27,7 +35,7 @@ on:
         type: boolean
         default: false
       run_assessment:
-        description: "Run the bounded scientific-assessment stage (needs both scientific secrets)"
+        description: "Run the bounded scientific-assessment stage (scheduled runs always do)"
         type: boolean
         default: false
       allow_state_initialize:
@@ -48,6 +56,12 @@ concurrency:
 jobs:
   scout:
     runs-on: ubuntu-latest
+    env:
+      # The `inputs` context exists only for workflow_dispatch; on a schedule trigger it
+      # is null, so gating the scientific steps on `inputs.run_assessment` alone silently
+      # skipped them on exactly the runs the schedule exists for. A scheduled run assesses
+      # by default; a manual run still has to ask for it.
+      RUN_ASSESSMENT: ${{ github.event_name == 'schedule' || inputs.run_assessment }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -130,7 +144,7 @@ jobs:
       #    error annotation, and no assessment row is written either way.
       - name: Scientific credential preflight
         id: preflight
-        if: ${{ !inputs.deploy_only && inputs.run_assessment }}
+        if: ${{ !inputs.deploy_only && env.RUN_ASSESSMENT == 'true' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -160,7 +174,7 @@ jobs:
       #    forfeits its slot rather than lending it, so the usual maximum is two per day.
       - name: Bounded scientific assessment
         id: assess
-        if: ${{ !inputs.deploy_only && inputs.run_assessment && steps.preflight.outputs.ok == 'true' }}
+        if: ${{ !inputs.deploy_only && env.RUN_ASSESSMENT == 'true' && steps.preflight.outputs.ok == 'true' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

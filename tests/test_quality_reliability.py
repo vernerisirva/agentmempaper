@@ -292,9 +292,8 @@ class ProviderContractTest(unittest.TestCase):
         steps = workflow["jobs"]["scout"]["steps"]
         by_name = {s["name"]: s for s in steps}
 
-        # The schedule is live as of 2026-09-19. What must not drift are the bounds it
-        # runs under, so those are pinned here instead of the trigger's absence.
-        self.assertEqual(workflow["on"]["schedule"], [{"cron": "20 6 * * *"}])
+        # The schedule is live. What must not drift are the bounds it runs under.
+        self.assertEqual(workflow["on"]["schedule"], [{"cron": "0 4 * * 1-5"}])
         from paper_scout.operational_preflight import (
             DEFAULT_OPENROUTER_RUN_CEILING_USD, MAX_PAPERS_PER_RUN, MAX_PAPERS_PER_TRACK)
         self.assertEqual(MAX_PAPERS_PER_TRACK, 1)
@@ -309,10 +308,10 @@ class ProviderContractTest(unittest.TestCase):
         for track in ("agent_memory", "deep_research", "engram"):
             self.assertIn(f"run --track {track} --no-llm", discovery["run"])
 
-        # Assessment runs only behind an explicit opt-in and a passing preflight, and
+        # Assessment runs behind the RUN_ASSESSMENT gate and a passing preflight, and
         # carries the per-run cost ceiling.
         assess = by_name["Bounded scientific assessment"]
-        self.assertIn("inputs.run_assessment", assess["if"])
+        self.assertIn("env.RUN_ASSESSMENT == 'true'", assess["if"])
         self.assertEqual(assess["env"]["PAPER_SCOUT_OPENROUTER_RUN_CEILING_USD"], "0.30")
         preflight = by_name["Scientific credential preflight"]
         self.assertLess(steps.index(preflight), steps.index(assess))
@@ -321,6 +320,15 @@ class ProviderContractTest(unittest.TestCase):
         # job skips the if: success() persist step, so a missing secret would cost the
         # run's discovery as well as its assessment.
         self.assertIn("steps.preflight.outputs.ok == 'true'", assess["if"])
+
+        # The defect this pins: `inputs` is null on a schedule trigger, so gating the
+        # scientific steps on inputs.run_assessment alone made every scheduled run skip
+        # the assessment it exists to perform. Run 35508285811 did exactly that.
+        gate = workflow["jobs"]["scout"]["env"]["RUN_ASSESSMENT"]
+        self.assertIn("github.event_name == 'schedule'", gate)
+        for step in ("Scientific credential preflight", "Bounded scientific assessment"):
+            self.assertNotIn("inputs.run_assessment", by_name[step]["if"],
+                             f"{step} must not gate on inputs alone; it is null on a schedule")
         self.assertNotIn("sys.exit(1)", preflight["run"])
         self.assertIn("::error::", preflight["run"])
 
@@ -348,6 +356,28 @@ class ProviderContractTest(unittest.TestCase):
                                             "Restore private Paper Scout state"])
         for name in carrying:
             self.assertIn("paper_scout_state.py", by_name[name]["run"])
+
+    def test_a_scheduled_run_would_reach_the_assessment_steps(self):
+        """Evaluate the real gate expression under both trigger shapes.
+
+        On a schedule GitHub supplies no `inputs`, which is precisely what made the
+        deployed gate evaluate false on every scheduled run.
+        """
+        import yaml
+        root = Path(__file__).resolve().parents[1]
+        workflow = yaml.load((root / ".github/workflows/paper-scout.yml").read_text(),
+                             Loader=yaml.BaseLoader)
+        gate = workflow["jobs"]["scout"]["env"]["RUN_ASSESSMENT"]
+
+        def evaluate(event_name, inputs):
+            # A minimal stand-in for the two operands GitHub substitutes.
+            scheduled = "github.event_name == 'schedule'" in gate and event_name == "schedule"
+            asked = "inputs.run_assessment" in gate and bool(inputs.get("run_assessment"))
+            return scheduled or asked
+
+        self.assertTrue(evaluate("schedule", {}), "a scheduled run must assess")
+        self.assertTrue(evaluate("workflow_dispatch", {"run_assessment": True}))
+        self.assertFalse(evaluate("workflow_dispatch", {"run_assessment": False}))
 
     def test_both_scheduled_writers_share_one_concurrency_group(self):
         """Single-writer discipline is what makes two scheduled workflows safe."""

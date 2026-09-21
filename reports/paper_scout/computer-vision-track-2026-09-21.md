@@ -282,7 +282,7 @@ raised silently or otherwise.
 
 ## L. Tests and full validation
 
-**664 tests pass** (608 on `main`; 56 added, 55 of them in
+**666 tests pass** (608 on `main`; 58 added, 57 of them in
 `tests/test_paper_scout_computer_vision.py`). No test issues a paid model call or reaches
 the network.
 
@@ -486,8 +486,47 @@ minutes later, and by the end of the session even `id_list` lookups were refused
 coverage is reported rather than hidden: every failed query is a source warning in the
 digest and in `discovery-run-*.json`, and the run's `coverage_complete` is `false`.
 
-**Verdict for the merge gate: round three `PASS_WITH_NOTES`; round four's single blocker
-found a real defect and it is fixed. Re-review required before merge.**
+**Round 5 — `PASS_WITH_NOTES`, zero blocking findings and zero non-blocking findings.**
+Run on the control-byte fix. Three test-gap notes and one uncertainty.
+
+Two of the three test gaps were already closed and invisible to the reviewer through
+truncation: legacy two-track and three-track restore/upgrade tests exist in
+`test_paper_scout_engram_state.py` and `DurableState` here, and the offline
+`computer_vision` build already runs in `paper-scout-checks.yml`. The third — a headless
+test of the page script with the quality controls absent — is not added: it needs a browser
+dependency this repository does not carry, and the behaviour was verified in a real browser
+instead (round three).
+
+One gap was real and is closed. The new control-byte guard was itself untested: every
+generated file is clean, so "no file contains control bytes" would pass even if the check
+were broken. `test_the_site_check_flags_control_bytes_instead_of_silently_decoding_them`
+now feeds it a corrupt file and asserts the flag, the occurrence count, and that tab,
+newline and carriage return are not flagged.
+
+**The uncertainty was worth checking and is now pinned.** The reviewer asked whether the
+weekly backfill could be asked to snapshot `data/computer_vision/paper_scout.sqlite3` before
+it exists. It cannot, but the reasoning spans two modules, so it is now a test rather than
+an argument: whichever workflow runs first after this merges restores a snapshot that
+predates the track, and `restore_snapshot` initializes the missing database, so the
+subsequent `pack_snapshot` — which verifies every path in `STATE_PATHS` — succeeds.
+`test_restoring_a_legacy_snapshot_leaves_state_that_can_be_persisted` runs that exact
+sequence end to end.
+
+**Verdict for the merge gate: `PASS_WITH_NOTES`, 0 blocking findings, 0 non-blocking
+findings.** Two tests were added afterwards; the product code is unchanged from the reviewed
+commit, so nothing material is unreviewed.
+
+### Convergence
+
+| Round | Verdict | Blocking | Disposition |
+| --- | --- | --- | --- |
+| 1 | `CHANGES_REQUIRED` | 1 | Incorrect — the assessment stage does cover the track; the reviewer's snapshot omitted `cli.py`. Its suggested guard implemented anyway. |
+| 2 | `CHANGES_REQUIRED` | 1 | Real but pre-existing and already live; fixing it changes the shared renderer and three other libraries, so **filed as separate work**. |
+| 3 | `PASS_WITH_NOTES` | 0 | One note valid (README arithmetic, fixed); one incorrect (script guards), disproved in a browser. |
+| 4 | `CHANGES_REQUIRED` | 1 | **Correct.** 42 NUL bytes in a published page, pre-existing across 16 files. Fixed at the choke point, guard added, published pages repaired. |
+| 5 | `PASS_WITH_NOTES` | 0 | No findings. One real test gap closed, one uncertainty converted into a test. |
+
+No escalation to Kimi or Qwen was needed; DeepSeek converged in five rounds.
 
 ## N. Production smoke
 

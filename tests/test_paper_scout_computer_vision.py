@@ -665,6 +665,26 @@ class DurableState(unittest.TestCase):
             self.assertEqual(restore_snapshot(legacy, root=target), [])
             self.assertEqual(self.fingerprint(target, STATE_PATHS[3:]), before)
 
+    def test_restoring_a_legacy_snapshot_leaves_state_that_can_be_persisted(self):
+        """The exact first-run-after-upgrade sequence: restore a three-track snapshot, pack.
+
+        Whichever workflow runs first after this track merges will restore a snapshot that
+        predates it and then persist. `pack_snapshot` verifies every path in STATE_PATHS, so
+        a restore that did not create the new database would fail the persist step and lose
+        the run's work. Pinned end to end rather than inferred from the two halves.
+        """
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            source = self.make_state(tmp / "src")
+            manifest = pack_snapshot(tmp / "state.tar.gz", root=source)
+            legacy = self.three_track_archive(tmp, source, manifest)
+            runner = tmp / "runner"
+            runner.mkdir()
+            self.assertEqual(restore_snapshot(legacy, root=runner),
+                             ["data/computer_vision/paper_scout.sqlite3"])
+            packed = pack_snapshot(tmp / "persist.tar.gz", root=runner)
+            self.assertEqual(list(packed["databases"]), list(STATE_PATHS))
+
     def test_a_snapshot_missing_an_established_track_still_fails_closed(self):
         """Dropping engram while carrying this track is a partial archive, not an upgrade."""
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -872,6 +892,31 @@ class WorkflowIntegration(unittest.TestCase):
             commands = "\n".join(step.get("run", "") for step in job["steps"])
             for path in STATE_PATHS:
                 self.assertIn(path, commands, f"{name} does not checkpoint {path}")
+
+    def test_the_site_check_flags_control_bytes_instead_of_silently_decoding_them(self):
+        """The guard itself, not just its current result.
+
+        Every generated file is clean today, so the assertion that none contains control
+        bytes would pass even if the check were broken. This feeds it a corrupt file.
+        """
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "check_paper_scout_site", ROOT / ".github/scripts/check_paper_scout_site.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "digests").mkdir(parents=True)
+            (root / "reports/paper_scout").mkdir(parents=True)
+            (root / "docs").mkdir(parents=True)
+            (root / "digests" / "corrupt.md").write_bytes(b"a NUL \x00 and a \x0b here\n")
+            (root / "digests" / "clean.md").write_bytes(b"tabs\tand\nnewlines\r\nare fine\n")
+            errors = module.validate_site(root)
+            flagged = [e for e in errors if "control bytes" in e]
+            self.assertEqual(len(flagged), 1, errors)
+            self.assertIn("corrupt.md", flagged[0])
+            self.assertIn("2 occurrences", flagged[0])
+            self.assertNotIn("clean.md", " ".join(errors))
 
     def test_the_pull_request_check_builds_this_track_too(self):
         _, text = self.workflow("paper-scout-checks.yml")

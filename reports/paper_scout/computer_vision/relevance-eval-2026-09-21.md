@@ -128,9 +128,9 @@
 
 - **Expected:** irrelevant
 - **Decision:** irrelevant
-- **Score:** 10
-- **Reason:** Excluded: explicitly states it makes no visual or computer-vision contribution.
-- **Tags:** none
+- **Score:** 5
+- **Reason:** Excluded: no visual subject; this is not a computer-vision paper.
+- **Tags:** excluded-non-vision
 
 ### recommendation system
 

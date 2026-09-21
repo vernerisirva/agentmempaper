@@ -9,10 +9,10 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Run ID:** 1
 - **Candidates fetched:** 100
 - **New unique papers:** 93
-- **Relevant:** 25
-- **Maybe relevant:** 62
-- **Irrelevant:** 13
-- **Source summary:** openalex: 100
+- **Relevant:** 26
+- **Maybe relevant:** 63
+- **Irrelevant:** 11
+- **Source summary:** openalex: 100, semantic_scholar: 0
 
 ## Source Warnings
 
@@ -26,10 +26,10 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - openalex: incomplete discovery window for 'YOLO object detector'; single-page record limit reached.
 - openalex: incomplete discovery window for 'vision transformer image recognition'; single-page record limit reached.
 - openalex: incomplete discovery window for 'image segmentation deep learning'; single-page record limit reached.
-- semantic_scholar failed for 'real-time object detection': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
-- semantic_scholar failed for 'YOLO detector': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
-- semantic_scholar failed for 'open-vocabulary object detection': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
-- semantic_scholar failed for 'visual representation learning': Semantic Scholar returned HTTP 429. Configure SEMANTIC_SCHOLAR_API_KEY for higher rate limits. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'real-time object detection'; single-page record limit reached.
+- semantic_scholar failed for 'YOLO detector': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
+- semantic_scholar: incomplete discovery window for 'open-vocabulary object detection'; single-page record limit reached.
+- semantic_scholar: incomplete discovery window for 'visual representation learning'; single-page record limit reached.
 
 ## Highly Relevant
 
@@ -42,16 +42,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Studies YOLO-family or real-time object detection.
 - **Tags:** object-detection, yolo, detr, efficient-vision, benchmark
 - **Abstract summary:** The YOLO series has become the most popular framework for real-time object detection due to its reasonable trade-off between speed and accuracy. However, we observe that the speed and accuracy of YOLOs are negatively affected by the NMS. Recently, end-to-end Transformer-based detectors (DETRs) have provided an alter...
-
-### [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872v3)
-
-- **Authors:** Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, Sergey Zagoruyko
-- **Date:** 2020-05-26
-- **Source:** arxiv
-- **Relevance:** relevant (100/100)
-- **Reason:** Studies DETR-family or query-based object detection.
-- **Tags:** object-detection, detr, segmentation, benchmark
-- **Abstract summary:** We present a new method that views object detection as a direct set prediction problem. Our approach streamlines the detection pipeline, effectively removing the need for many hand-designed components like a non-maximum suppression procedure or anchor generation that explicitly encode our prior knowledge about the t...
 
 ### [Mask R-CNN](http://arxiv.org/abs/1703.06870)
 
@@ -73,11 +63,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, yolo, backbone, efficient-vision, edge-deployment, metrics
 - **Abstract summary:** Abstract Reliable visual measurement of small objects in unmanned aerial vehicle (UAV) imagery is challenging because targets often have low spatial resolution, dense spatial distribution, partial occlusion and strong background clutter. These factors reduce localisation accuracy and make real-time inference on embe...
 
-### [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030v2)
+### [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](http://arxiv.org/abs/2103.14030)
 
 - **Authors:** Ze Liu, Yutong Lin, Yue Cao, Han Hu, Yixuan Wei, Zheng Zhang, et al.
 - **Date:** 2021-03-25
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (100/100)
 - **Reason:** Studies object-detection architecture, training, or evaluation.
 - **Tags:** object-detection, segmentation, vision-transformer, backbone, visual-representation, benchmark, metrics
@@ -123,11 +113,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, yolo, efficient-vision, benchmark
 - **Abstract summary:** We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL V...
 
-### [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497v3)
+### [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](http://arxiv.org/abs/1506.01497)
 
 - **Authors:** Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun
 - **Date:** 2015-06-04
-- **Source:** arxiv
+- **Source:** openalex
 - **Relevance:** relevant (97/100)
 - **Reason:** Studies object-detection architecture, training, or evaluation.
 - **Tags:** object-detection, efficient-vision, benchmark
@@ -182,16 +172,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Studies DETR-family or query-based object detection.
 - **Tags:** object-detection, detr
 - **Abstract summary:** No abstract available.
-
-### [Segment Anything](https://arxiv.org/abs/2304.02643v1)
-
-- **Authors:** Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, et al.
-- **Date:** 2023-04-05
-- **Source:** arxiv
-- **Relevance:** relevant (96/100)
-- **Reason:** Studies semantic, instance, panoptic, or promptable segmentation.
-- **Tags:** segmentation, visual-representation
-- **Abstract summary:** We introduce the Segment Anything (SA) project: a new task, model, and dataset for image segmentation. Using our efficient model in a data collection loop, we built the largest segmentation dataset to date (by far), with over 1 billion masks on 11M licensed and privacy respecting images. The model is designed and tr...
 
 ### [YOLO-MDIR: a YOLO network based on multidirectional convolution for infrared object detection](https://doi.org/10.1117/12.3121343)
 
@@ -253,11 +233,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, efficient-vision
 - **Abstract summary:** Object detection at the edge requires a difficult balance among detection accuracy, deterministic latency, memory bandwidth, and energy consumption. Existing binarized accelerators replace multipliers with XNOR and population-count logic, but many designs use a fixed binary datapath or select precision only at the l...
 
-### [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](http://arxiv.org/abs/2010.11929)
+### [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929v2)
 
 - **Authors:** Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, et al.
 - **Date:** 2020-10-22
-- **Source:** openalex
+- **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
 - **Tags:** vision-transformer, visual-representation, benchmark
@@ -273,11 +253,11 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** segmentation, visual-representation
 - **Abstract summary:** Medical image segmentation is crucial for early disease diagnosis and precise treatment planning; however, its accuracy remains challenging due to factors such as blurred boundaries and morphological variations. This paper proposes a deep learning segmentation algorithm that integrates a boundary-aware loss function...
 
-### [DINOv2: Learning Robust Visual Features without Supervision](http://arxiv.org/abs/2304.07193)
+### [DINOv2: Learning Robust Visual Features without Supervision](https://arxiv.org/abs/2304.07193v2)
 
 - **Authors:** Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, et al.
 - **Date:** 2023-04-14
-- **Source:** openalex
+- **Source:** arxiv
 - **Relevance:** relevant (93/100)
 - **Reason:** Studies visual backbones or vision-transformer architecture.
 - **Tags:** vision-transformer, visual-representation
@@ -403,6 +383,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** vision-transformer
 - **Abstract summary:** Abstract Copy-move forgery is a common form of image manipulation where a portion of an image is copied and pasted back into the image. This is especially difficult to detect when the forgery has been done on copied areas that have undergone post-processing operations, e.g. rotation, scaling, blurring etc. We propos...
 
+### [YOLO world guides open world video anomaly detection](https://doi.org/10.1038/s41598-026-69765-z)
+
+- **Authors:** Youxi Li, Xiangjun Chen, Liming Wang, Xiaocheng Huang, Qiang Liu
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** relevant (91/100)
+- **Reason:** Studies YOLO-family or real-time object detection.
+- **Tags:** yolo, vision-language
+- **Abstract summary:** Abstract Video anomaly detection is important for safety-critical monitoring, yet deployed systems must recognize anomaly categories absent from training. Existing weakly supervised and vision-language methods emphasize video- or segment-level scores or text–video similarity, limiting object-centric temporal reasoni...
+
 ### [YOLOv3: An Incremental Improvement](http://arxiv.org/abs/1804.02767)
 
 - **Authors:** Joseph Redmon, Ali Farhadi
@@ -435,6 +425,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection
 - **Abstract summary:** This paper presents an autonomous agricultural ground robot for real-time monitoring of plant health and soil moisture in large-scale crop fields.The proposed system integrates a deep learning-based perception subsystem with autonomous navigation and a custom ground control station (GCS) to enable continuous and geo...
 
+### [A segmentation-guided CNN–Vision transformer feature fusion framework for multi-class breast ultrasound image classification](https://doi.org/10.1371/journal.pone.0353628)
+
+- **Authors:** Meiru Wu, Jian Wang
+- **Date:** 2026-09-17
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation, vision-transformer, visual-representation
+- **Abstract summary:** Breast ultrasound (BU) imaging is widely used for detecting breast abnormalities because it is cost-effective, non-invasive, and suitable for dense breast tissue. However, multi-class classification of BU images is considered a challenging task due to low contrast, speckle noise, and overlapping visual patterns betw...
+
 ### [Automated pancreatic cancer pathology image segmentation using deep learning to quantify lymphocyte stroma ratio](https://doi.org/10.1038/s41746-026-03207-y)
 
 - **Authors:** Xiawei Li, Changming Lv, Haozhong Ma, Yongji Sun, Sien Hu, Tianyu Song, et al.
@@ -444,6 +444,26 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** segmentation, vision-transformer
 - **Abstract summary:** Pancreatic ductal adenocarcinoma (PDAC) exhibits profound tumor microenvironment heterogeneity, and conventional prognostic tools often fail to adequately quantify critical features like the lymphocyte-stroma ratio (LSR). Manual assessment of LSR is prone to variability and inefficiency, which limits its clinical ut...
+
+### [Bezier-YOLO enables real-time brain tumor segmentation in multi-plane MRI through boundary-aware parametric contour regression](https://doi.org/10.1038/s41598-026-71696-8)
+
+- **Authors:** Mustafa Yurdakul, Merve Ersoy, Faruk Özger, İshak Paçal
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** yolo, segmentation, efficient-vision
+- **Abstract summary:** Accurate brain-tumor segmentation requires boundary predictions that follow curved, irregular lesion margins while remaining fast enough for practical use. We present Bezier-YOLO, a real-time detection-and-segmentation model that represents each detected tumor as a closed cubic-Bézier contour rather than a box-cente...
+
+### [CEC-YOLO: a floating-debris detection algorithm for complex water-surface environments](https://doi.org/10.3389/fmars.2026.1914553)
+
+- **Authors:** Churuo Zhang, Yan Zhang, Yang Liu, Jiahang Li
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** yolo, efficient-vision, metrics
+- **Abstract summary:** Autonomous water-cleaning vessels rely on accurate real-time perception of floating debris, yet detection in complex water-surface environments remains difficult due to small target size, scale variation, water-surface reflection, and illumination interference. We present CEC-YOLO, a lightweight detection algorithm...
 
 ### [Classification of Brain MRI Images with Vision Transformer: Improving Performance with New Layers and Parameter Optimization](https://doi.org/10.38016/jista.1779498)
 
@@ -505,16 +525,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** object-detection, yolo, efficient-vision, metrics
 - **Abstract summary:** Automated wheat-seed detection and counting play important roles in high-throughput plant phenotyping, seed characterization, and agricultural research. Conventional manual counting is labor-intensive, time-consuming, and susceptible to human error when processing large numbers of seed samples. Recent advances in de...
 
-### [DRerio LogAI: an open-source, GPU-free platform for automated tracking and behavioural analysis of adult zebrafish (Danio rerio)](https://doi.org/10.5281/zenodo.22783436)
-
-- **Authors:** Marco Antônio Sant'Ana Camargos, Percília Cardoso Giaquinto
-- **Date:** 2026-09-15
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** yolo, tracking
-- **Abstract summary:** DRerio LogAI is an open-source desktop platform for automated tracking, closed-loop stimulation and behavioural analysis of adult zebrafish (Danio rerio). It combines YOLOv11 detection, BYTETracker multi-object tracking and Intel OpenVINO inference in an event-driven architecture, and runs GPU-free on integrated gra...
-
 ### [EC-YOLO: a real-time object detection framework for minute bone tumors in X-ray imaging](https://doi.org/10.1038/s41598-026-71477-3)
 
 - **Authors:** Yu Zhang, Lizhu Zhang, Huiqiang Meng
@@ -564,16 +574,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** object-detection, yolo, vision-language, edge-deployment, benchmark
 - **Abstract summary:** Critical infrastructure assets such as bridges, tunnels, dams, and power line networks require timely and scalable inspection. While conventional manual inspection remains costly and hazardous, unmanned aerial vehicle (UAV)-based inspection has emerged as an efficient alternative for monitoring difficult-to-access s...
-
-### [HBB2OBB: Horizontal to Oriented Bounding Box Conversion and Evaluation Tool](https://doi.org/10.5281/zenodo.22817652)
-
-- **Authors:** Róbert Fónod
-- **Date:** 2026-09-17
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** object-detection, yolo, segmentation, benchmark
-- **Abstract summary:** HBB2OBB converts horizontal (axis-aligned) bounding boxes (HBBs) into oriented (rotated) bounding boxes (OBBs) by using existing HBB annotations as prompts for segmentation models from the SAM (Segment Anything Model) family. It targets object detection tasks where objects appear at arbitrary orientations, such as a...
 
 ### [HBB2OBB: Horizontal to Oriented Bounding Box Conversion and Evaluation Tool](https://doi.org/10.5281/zenodo.22774765)
 
@@ -674,6 +674,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: robotics or driving system where the vision contribution is not clearly the subject.
 - **Tags:** object-detection, yolo
 - **Abstract summary:** No abstract available.
+
+### [MaizeEar‐SAM: Zero‐shot maize ear phenotyping](https://doi.org/10.1002/ppj2.70102)
+
+- **Authors:** Hossein Zaremehrjerdi, Lisa Coffey, Talukder Z. Jubery, Huyu Liu, Jon Turkus, Kyle Linders, et al.
+- **Date:** 2026-09-20
+- **Source:** openalex
+- **Relevance:** maybe (55/100)
+- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
+- **Tags:** segmentation
+- **Abstract summary:** Abstract Quantifying the variation in yield component traits of maize ( Zea mays L.), which collectively determine the overall productivity of this globally significant crop, is critical to plant genetics research, plant breeding, and the development of improved agronomic practices. Grain yield per acre is a functio...
 
 ### [Optimization-Oriented Hybrid Visual Perception Architecture for Safety-Aware Pedestrian and Animal Detection in Autonomous Urban Mobility](https://doi.org/10.3390/math14183368)
 
@@ -795,16 +805,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Tags:** visual-representation, vision-language
 - **Abstract summary:** Deep learning (DL) has fundamentally transformed medical imaging, enabling unprecedented advancements in image quality, automated detection, and diagnostic precision. Despite these technical achievements, a significant translational gap persists between algorithmic development and robust clinical deployment. Unlike...
 
-### [WT-STCA-ViT: Window-transform synergistic spectro-temporal channel attention Vision Transformer for robust bearing fault diagnosis](https://doi.org/10.1093/jcde/qwag081)
-
-- **Authors:** Qian Gu, Chaoyang Weng, W. Huang, Baochun Lu
-- **Date:** 2026-09-15
-- **Source:** openalex
-- **Relevance:** maybe (55/100)
-- **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
-- **Tags:** vision-transformer
-- **Abstract summary:** Abstract Reliable bearing fault diagnosis under variable operating conditions and severe noise remains challenging because empirically selected time-frequency front ends may produce degraded representations, while generic attention mechanisms lack explicit sensitivity to fault-related spectral structures. To address...
-
 ### [YOLO-CBNet: A robust attention-enhanced detection framework for underwater fish recognition in aquaculture environments](https://doi.org/10.1371/journal.pone.0341525)
 
 - **Authors:** Mahdi Hamzaoui, Leila Bousbia, Mohamed Ould-Elhassen Aoueileyine, Imen Filali, Ridha Bouallegue
@@ -824,16 +824,6 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: applies vision models in a specific domain without a clearly general method contribution.
 - **Tags:** yolo
 - **Abstract summary:** Weeds are a major hazard to agricultural production and ecology in the hilly areas of Uttarakhand, India. Traditional weed management methods use blanket spraying of herbicides, which is very expensive, polluting, and unrealistic in steep slope areas where machines cannot reach. This study addresses this issue by re...
-
-### [A COMPUTER VISION APPROACH TO MILITARY OBJECT RECOGNITION](https://doi.org/10.68302/std2026.vol3.154)
-
-- **Authors:** Krasimir Slavyanov
-- **Date:** 2026-09-17
-- **Source:** openalex
-- **Relevance:** maybe (51/100)
-- **Reason:** Review candidate: vision-related, but the methodological contribution to computer vision is not clear.
-- **Tags:** visual-representation
-- **Abstract summary:** This research described is focused on computer vision tools implemented for detection of a particular military object (or many objects) in a observed scene, given a reference image(s) of the object(s). An algorithm for detecting a specific object based on finding point correspondences between the reference and the t...
 
 ### [Automated Diagnosis of Ear Disorders from Otoscopic Images using Hybrid Deep Learning and Multi-Stage Segmentation](https://doi.org/10.38094/jastt72771)
 
@@ -874,6 +864,16 @@ Latest daily digest: [2026-09-21](2026-09-21.md).
 - **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
 - **Tags:** vision-adjacent
 - **Abstract summary:** Early detection of pulmonary nodules in CT scans is an important factor in improving the outcome of lung cancer patients. This research introduces an innovative dual deep learning system which combines two-dimensional (2D) and three-dimensional (3D) convolutional neural networks to detect and segment nodules simulta...
+
+### [Computer vision in laparoscopic gastrointestinal surgery: A review of anatomical recognition and clinical navigation](https://doi.org/10.35712/aig.125028)
+
+- **Authors:** Wen Li, Jia-Tong Liu, Lin Chen, Ping Cheng, Kecheng Zhang
+- **Date:** 2026-09-18
+- **Source:** openalex
+- **Relevance:** maybe (45/100)
+- **Reason:** Review candidate: adjacent to computer vision, but no vision method is clearly studied.
+- **Tags:** edge-deployment
+- **Abstract summary:** Laparoscopic surgery is constrained by a two-dimensional visual field and the absence of tactile feedback, which pose challenges for the precise intraoperative identification of critical anatomical structures.Recently, rapid progress in computer vision (CV) has offered a new way to address this clinical limitation.T...
 
 ### [Detection and classification of thyroid diseases using ultrasound images through deep learning techniques](https://doi.org/10.11591/ijece.v16i5.pp2806-2818)
 

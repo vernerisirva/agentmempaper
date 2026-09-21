@@ -14,7 +14,7 @@
         <header class="archive-hero paper-detail-hero">
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="../index.html">Library</a>
-            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a>
+            <span class="nav-links"><a href="../deep-research/index.html">Deep Research</a> <a href="../engram/index.html">Engram</a> <a href="../computer-vision/index.html">Computer Vision</a>
               <a href="../index.html">All papers</a>
               <a href="../about.html">About</a>
               <a href="../archive.html">Archive</a>
@@ -59,16 +59,251 @@
             <p>Recent advancements in large language models have significantly enhanced the capabilities of agents in modeling long-term conversations. Despite these successes, existing approaches typically adopt a static heuristic paradigm, where information is passively archived without adaptive memory valuation. Consequently, t...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The contribution is substantive and well-scoped, with detailed algorithmic mechanisms, ablation studies, latency and token analyses, and independent human evaluation confirming the utility of the co-evolving memory management framework.</p>
+      <p>The authors explicitly note limitations regarding scope, stating that the method focuses on companionship-centric open-domain conversation and personalized alignment rather than strict fact-retrieval, complex math, or standard question answering benchmarks.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
-
-        <ul></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-21T15:58:35.374552+00:00.</p>
+        <p>Coverage: 85731 of 85731 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>interconnected sessions,
+which are subsequently forward-annotated to produce
+high-quality expert data for autonomous test-time adap-
+tation. The core ofICMLconsists of two interactive
+Actor-Critic (Konda and Tsitsiklis, 1999) agents: a
+Planner agent that selectively memorizes high-value
+information, and a Trigger agent that retrieves memory
+based on the utterance. Crucially, these agents co-evolve
+to align memory planning with actual utility through a
+delayed cross-session truth reward mechanism. While
+the Planner makes initial storage decisions, its policy is
+refined only when the Trigger successfully utilizes the
+memory to satisfy user expectations. This feedback loop
+ensures that both agents mutually adapt and converge to-
+ward an optimal collaborative strategy for personalized
+engagement. Experimental results on three long-term
+conversation datasets derived from real human </blockquote></details></li><li><strong>Contribution clarity — pages 2–3</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We approach the long-term conversation task as a se-
+quential decision-making problem, where the agent
+must learn to dynamically manage its memory to maxi-
+mize long-term conversational quality. Our method, as
+shown in Figure 2, consists of three key components:
+(1)Problem Formulation, which rigorously defines the
+interactive memory learning process as a Partially Ob-
+servable Markov Decision Process (POMDP) (Åström,
+1965); (2)Retrospective Session Synthesis, a novel
+data synthesis pipeline for initializing the system with
+Figure 2: Illustration of ourRetrospective Session Synthesis(Left) andICMLframework (Right).
+high-quality expert data to address the cold-start prob-
+lem; and (3) TheICMLframework, comprising collab-
+orative Planner and Trigger agents that continuously
+evolve viaCross-Session Truth Rewards.</blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Planner acts as the proactive gatekeeper of long-
+term memory. Its primary goal is to identify and retain
+high-value memories while filtering out low-value noise.
+State and Policy.At turn k, the Planner receives an
+observationop
+k consisting of the user queryuk.The pol-
+icyπθ(ap
+k|op
+k) outputs a binary distribution over action
+space{0,1}:
+• Save (ap
+k = 1 ):The current interaction is con-
+densed into a memory fragment mnew and ap-
+pended to the external memory.
+• Discard (ap
+k = 0 ):The information is deemed
+redundant or irrelevant and is discarded.
+Proxy Reward.Since the true utility of a memory is
+often unknown at the moment of storage, we employ
+backbone LLMs to provide an immediateproxy reward
+rproxy
+k ∈[0,1] . This judge evaluates the intrinsic in-
+formation value of the turn, providing a dense signal
+to guide the Planner&#x27;s exploration in the early stages.
+Additionally, we </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The Trigger is responsible for contextualizing the gen-
+eration process by retrieving the most relevant infor-
+mation from the dynamic memory. Unlike traditional
+dense retrieval, the Trigger learns a policy to select
+memories that maximize the final response quality.
+State and Policy.The Trigger observes the cur-
+rent query uk, the dialogue history Hk, and a set of
+candidate memoriesMk. The policy πθ(at
+k|ot
+k) out-
+puts a categorical distribution over the memory indices
+{0,1,...,|M k|}. Selecting index 0 implies no memory
+is needed. The selected memory mat
+k
+is then concate-
+nated with the context to generate the final response.
+Quality Reward.To accurately evaluate the agent&#x27;s
+performance, we do not rely on simple heuristics. In-
+stead, we also employ backbone LLMs to score the
+final response based on multiple dimensions, yielding
+a comprehensivequality reward rqual
+k ∈[0,1] . </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>To resolve the delayed verification of memory utility, we
+propose theCross-Session Truth Rewardmechanism.
+It propagates the quality signal from r∗ back to the
+Planner&#x27;s historical storage decisions, aligning mem-
+ory policies with actual utility. We maintain aPending
+Reward Bufferthat stores the Planner&#x27;s latent experi-
+ences (i.e., stored memories waiting to be verified).
+When theTriggeractivates a memory fragmentm i
+at a future turnkfuture to address a user query, we ret-
+rospectively tracemi back to its creation turnkpast. We
+then propagate the obtained quality assessmentrqual
+kfuture
+back to thePlanneras thetruth reward:
+rtruth
+kpast =r proxy
+kpast
++λ·r qual
+kfuture
+·I(mi is triggered),(2)
+whereλ is a weighting factor. This mechanism aligns
+the Planner&#x27;s storage objective with the long-term util-
+ity of the memory. By linking historical planning with
+future retrieval success, the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Backbone Methods CC MSC GC
+B-4 R-L Bert Mauve B-4 R-L Bert Mauve B-4 R-L Bert Mauve
+GPT-4o
+Long Context (128K) 1.79 17.4147.7955.73 1.21 15.1249.1754.36 0.6611.4336.57 25.12
+Mem0 (2025) 1.02 14.57 45.85 46.92 0.69 12.78 45.68 45.61 0.53 9.42 34.08 23.43
+A-Mem (2025) 1.21 15.12 46.01 50.04 0.88 13.07 46.79 50.74 0.61 10.14 35.48 26.23
+MemoryOS (2025) 1.14 15.46 45.73 47.87 0.97 13.86 47.55 46.28 0.69 10.33 35.87 24.58
+MemoryBank (2024) 1.08 15.14 47.27 45.95 1.03 13.74 48.39 45.51 0.64 10.05 35.78 23.32
+LD-Agent (2025) 1.37 15.78 46.42 50.16 1.02 14.05 47.76 48.63 0.72 10.47 35.96 25.94
+THEANINE (2025) 1.27 14.84 45.69 54.23 0.94 13.55 47.42 53.64 0.79 10.23 35.77 28.97
+Llama3-Instruct
+ICML-1B2.31 18.72 47.62 56.63 1.42 15.30 47.99 54.71 1.21 11.09 40.74 34.39
+ICML-3B2.37 18.78 47.6561.66 1.4915.38 48.02 57.39 1.20 11.21 40.80 36.37
+ICML-8B2.31 18.29 47.40 57.76 1.46 15.41 48.04 57.53 </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>3)Qwen-
+3 (1.7B/4B/8B). We compare ourICMLagainst var-
+ious baselines. 1)Long Context: which use all
+the conversation histories. 2)Management-centric
+Consistency
+Coherence
+Engagingness
+Average
+Humanness
+Memorability
+A-Mem
+ICML (Ours)LD-Agent
+Long Context Mem0
+MemoryBank
+MemoryOS
+THEANINE
+0%
+50%
+100%
+(a) GPT-4o evaluation.
+Consistency
+Coherence
+Engagingness
+Average
+Humanness
+Memorability
+A-Mem
+ICML (Ours)LD-Agent
+Long Context Mem0
+MemoryBank
+MemoryOS
+THEANINE
+0%
+50%
+100% (b) Gemini2.5 evaluation.
+Figure 3: LLM cross-evaluation.
+Baselines:
+THEANINE
+MemoryBank
+Mem0
+20% 40% 60% 80% 100% 20% 40% 60% 80%
+Generation Memory
+Ours wins Tie Baseline winsLegends:
+100%
+Long Context
+A-Mem
+N/A
+76% 16% 8%
+80% 14% 6%
+74% 18% 8%
+74% 10% 16%
+70% 20% 10%
+68% 18% 14%LD-Agent
+MemoryOS
+66% 18% 16% 70% 14% 16%
+70% 16% 14%
+72% 10% 18%
+72% 12% 16%
+72% 16% 12%
+76% 16% 8%
+Figure 4: Human evaluation on generation </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>and memory.
+memory agents:Mem0(Chhikara et al., 2025),A-
+Mem(Xu et al., 2025), andMemoryOS(Ong et al.,
+2025). 3)Generation-centric dialogue agents:Mem-
+oryBank(Zhong et al., 2024),LD-Agent(Li et al.,
+2025), andTHEANINE(Ong et al., 2025). More de-
+tails and baselines are shown in Appendix B and C.
+Unless otherwise specified, we employQwen3-8Bfor
+training andGemini2.5as the backbone in the following
+experiments and analyses.
+Evaluation Metrics.We comprehensively evaluate
+ourICMLon three types of metrics. 1)Automatic Met-
+rics.Following Ong et al. (2025), we use BLEU-4 (Pa-
+pineni et al., 2002), ROUGE-L (Lin, 2004), BertScore
+(Zhang et al., 2019), and Mauve (Pillutla et al., 2021) to
+automatically evaluate response generation. 2)Person-
+alized Metrics.Following Xu et al. (2022b) and Jang
+et al. (2023), we introduce LLM-as-a-Judge (Zheng
+et al., 2023) to evaluate response generation on </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Evolving memory surpasses static heuristics.Ta-
+ble 1 shows thatICMLachieves state-of-the-art re-
+sults across all datasets, consistently outperforming
+Datasets Methods B-4 R-L Bert Mauve
+CC
+ICML(Ours) 2.21 18.22 47.82 80.33
+w/o Synthetic Data 2.08 18.15 46.87 79.57
+w/o Planner Agent 2.01 18.01 47.04 78.77
+w/o Trigger Agent 2.10 18.18 46.83 79.91
+w/o Truth Reward 1.95 17.96 47.15 76.19
+w/o Evolution 2.16 18.14 47.31 79.83
+MSC
+ICML(Ours) 1.13 13.97 48.60 66.01
+w/o Synthetic Data 1.01 13.61 45.85 62.56
+w/o Planner Agent 1.05 13.46 45.79 63.54
+w/o Trigger Agent 1.08 13.31 45.44 62.62
+w/o Truth Reward 1.10 13.62 46.00 65.99
+w/o Evolution 1.03 13.86 46.33 61.81
+GC
+ICML(Ours) 1.28 10.64 40.20 59.81
+w/o Synthetic Data1.2810.47 40.18 59.07
+w/o Planner Agent 1.26 10.07 40.09 58.07
+w/o Trigger Agent 1.22 10.25 40.02 58.35
+w/o Truth Reward 0.97 10.35 40.11 58.78
+w/o Evolution 1.16 9.96 40.26 </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our work is dedicated to constructing personal conversa-
+tional assistants capable of self-evolution through deep,
+long-term open-domain interaction. Consequently, our
+evaluation prioritizes open-domain engagement and per-
+sonalized alignment rather than rigid reasoning or strict
+fact-retrieval tasks, such as complex mathematics, cod-
+ing, or standard question answering benchmarks, which
+lie beyond the scope of this companionship-centric goal.
+Furthermore, while we validate our approach within the
+dialogue domain, we propose a novel paradigm for in-
+teractive memory learning. We believe this framework
+offers valuable insights into dynamic information re-
+tention, with the potential to inspire future adaptations
+across broader domains involving complex temporal
+dependencies.</blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>t-tests) for the win rates.
+As shown in Table 9, the Fleiss&#x27; Kappa scores (&gt;0.6 )
+demonstrate a reliable, substantial agreement among the
+evaluators. Furthermore, the win rates of 66.0% and
+70.0% are statistically significant (p&lt;0.01 ) and feature
+narrow confidence intervals. This rigorously validates
+that the observed superiority of ICML in both generation
+quality and memory retrieval is highly significant and
+not attributable to random chance or small sample size
+noise.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +342,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +358,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-17</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-20 11:38:47</li><li>Last seen by Paper Scout: 2026-09-20 11:38:47</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-21</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-20 11:38:47</li><li>Last seen by Paper Scout: 2026-09-21 15:50:28</li></ul>
             <ul><li>arXiv: 2609.17088</li><li>OpenAlex: W7213473565</li><li>OpenAlex IDs: W7213473565</li><li>arXiv IDs: 2609.17088</li></ul>
           </section>
           <section class="detail-panel">

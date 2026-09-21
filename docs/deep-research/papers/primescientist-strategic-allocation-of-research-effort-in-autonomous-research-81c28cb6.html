@@ -14,7 +14,7 @@
         <header class="archive-hero paper-detail-hero">
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="../index.html">Library</a>
-            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a>
+            <span class="nav-links"><a href="../../index.html">Agentic Memory Library</a> <a href="../../engram/index.html">Engram</a> <a href="../../computer-vision/index.html">Computer Vision</a>
               <a href="../index.html">All papers</a>
               <a href="../about.html">About</a>
               <a href="../archive.html">Archive</a>
@@ -59,16 +59,251 @@
             <p>Autonomous research agents aim to automate scientific workflows, from proposing ideas to conducting experiments and analyzing results. Yet current AI and research agents can propose more directions than available resources allow them to pursue. Moreover, each attempt could consume substantial resources, requiring ag...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a conceptually sound and rigorously formulated contribution to autonomous agent research planning. Experimental comparisons and ablations are thorough, well-controlled, and transparently reported across multiple distinct domains, with claims that align directly with the empirical findings.</p>
+      <p>The authors explicitly address limitations regarding the significant token overhead of LLM reflection (up to 38% of budget), evaluation restricted to inference tokens rather than wall-clock or GPU hours, attempt-level granularity preventing intra-attempt reallocation, and variance across stochastic LLM runs.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-21T15:59:42.056899+00:00.</p>
+        <p>Coverage: 101222 of 101222 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Autonomous research agents aim to automate scientific workflows, from proposing ideas
+to conducting experiments and analyzing results. Yet current AI and research agents
+can propose more directions than available resources allow them to pursue. Moreover,
+each attempt could consume substantial resources, requiring agents to reconsider how to
+invest in subsequent research. Thus, deciding how to invest research effort strategically
+should be a defining capability of autonomous research agents. Accordingly, we introduce
+PRIMESCIENTIST , which jointly determines research direction and resource investment
+across successive research attempts. Specifically, we formulate this challenge of strategic
+research effort allocation as a sequential decision problem where remaining resources should
+explicitly guide the research policy. We first introduce an executable plan tree that preserves
+competing </blockquote></details></li><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>plans and their outcomes across attempts. Building on this representation, we
+propose an adaptive MCTS-based allocation policy that balances exploration and exploitation
+using experimental feedback and remaining resources. Comprehensive evaluations across
+AI research, systems and code optimization, and machine learning engineering show that
+strategic allocation improves research quality and sample efficiency together. Across 12
+AI research tasks, PRIMESCIENTIST improves average reward by 10.3% with 50.6% fewer
+research attempts than AutoResearch under the same resource budget. We believe making
+research effort allocation an explicit optimization target establishes effective resource use as
+a core research capability for autonomous agents to drive scientific breakthroughs at scale.1
+(a)
+(b)
+0.0
+0.5
+1.0
+Mean task score
+FIRE-Bench ↑
+0
+15
+30
+0.774
+0.702
+0.315
+0.0
+0.2
+0.4
+0.6
+AutoLab </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Consider a research taskx, a plan-construction operatorG, a coding-agent executorA, a task evaluator
+h, and a resource budgetB &gt;0. The operatorG produces executable plans from the task or revises
+existing plans using accumulated evidence. The executor carries a selected plan through coding,
+debugging, experimentation, and analysis, after which h supplies its empirical outcome. Both
+operations consume resources; their outputs and realized costs may be unknown before completion.
+Definition 1 (Strategic research effort allocation) LetPt denote the available research plans and
+Ht the record of proposals, execution outcomes, and charged costs before decision t. The state
+comprises these plans, their history, and the remaining resources:
+Xt = (x,Pt,Ht,B−U t), U t =
+X
+i&lt;t
+ci,(1)
+withP0 =H 0 =∅ andU0 = 0 . A policy π(·|X t) chooses an action at: construct or revise
+plans throughG, execute a </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>plan tree Tt to make these choices
+explicit and assign effort to complete research plans.
+Each node stores a plan, its recorded outcomes, and branch statistics. A reflector constructs these
+plans; a coding agent executes them. Each plan is a structured Markdown document specifying a
+research question or proposed change and its implementation strategy (Appendix F). An edges→s ′
+records a reflector-generated modification of the parent&#x27;s research strategy. Each modification is
+stored as an executable diff.py together with a description and prior estimate, allowing the child
+plan to be reconstructed from its parent. Recording the modification alongside parent and child
+outcomes makes the development of a research strategy traceable and gives the reflector concrete
+evidence for its next revision. Because a plan is stored independently of the executor&#x27;s conversation,
+a candidate direction can </blockquote></details></li><li><strong>Contribution clarity — pages 5–6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Exploring a new direction produces evidence that can improve later research decisions, while refining
+a promising plan can improve the current result. The balance between these uses of research effort
+5
+depends on both observed outcomes and the resources available to act on further evidence. We
+implement this allocation policy within the Monte Carlo tree search (MCTS) framework [31, 4].
+Selection.An attempt made early can supply evidence for subsequent allocations; as resources are
+consumed, fewer opportunities remain to act on that evidence. TheSelect a planstep in Figure 2 uses
+the remaining-budget ratio to adjust how strongly selection favors high-value branches [33].
+Selection traverses the tree to an eligible node. Starting from the root, the policy samples a childv of
+nodeuwith probability proportional to
+wt(v) =
+(
+Q(v)αt vhas been evaluated,
+Q(u)
+p
+P(v)
+αt
+vis unvisited. </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>(4)
+HereQ(v) denotes empirical branch value andP(v)∈[0,1] the reflector&#x27;s prior for an unvisited
+child. Until a child is evaluated, its weight combines this prior with the parent value Q(u). If
+Q(u) = 0, the implementation uses the prior alone, with a positive floor on sampling weights.
+Selection concentration is controlled by
+αt = min
+ 1
+rt
+,α max
 
-        <ul></ul>
+, r t = B−U t
+B ,(5)
+with αmax = 10 in the reported experiments. With most resources remaining, selection stays
+comparatively dispersed. As resources are consumed, larger exponents concentrate selection on
+higher-value branches. Thus, even with the same observed branch values, different remaining budgets
+induce different allocation distributions. Section 4.3 compares allocation policies with the executor,
+reflector, tree representation, and evaluation procedure held fixed.
+Expansion.The reflector first drafts a root plan from the task </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Benchmarks.Our evaluation spans three complementary areas of autonomous research: AI research,
+systems and code optimization, and machine learning engineering. This breadth tests research
+allocation across experimental design, implementation strategy, and model development.FIRE-
+Bench[ 58] evaluates agents on the rediscovery of well-established AI research findings. Given a
+research question, datasets, and experimental requirements, the agent implements experiments and
+reports conclusions; the benchmark&#x27;s claim-level evaluator, based on RAGChecker [44], compares
+these conclusions with reference findings, and we report F1.AutoLab[ 60] tests performance
+optimization under correctness constraints. We evaluate its eight systems-optimization and puzzle
+6
+Table 2.Systems and code optimization on AutoLab. PRIMESCIENTIST achieves higher overall
+reward with fewer research attempts than </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>AutoResearch. Each configuration uses one GPT-5 search
+with a 1.5M-token budget. The AutoLab columns give the benchmark&#x27;s published baseline.
+PRIMESCIENTISTAutoResearch Single-run Agent AutoLab
+Task Max reward #Attempts Max reward #Attempts Max reward #Attempts Max reward #Attempts
+Gaussian Blur0.5122 10 0.5165 20 0.0000 1 0.1376 1
+Hash Join0.6306 12 0.6376 16 0.6019 1 0.5484 1
+Concurrent KV WAL0.6335 10 0.5946 18 0.4844 1 0.4824 1
+Flash Attention0.3572 11 0.3781 16 0.2029 1 0.2240 1
+FFT (Rust)0.5192 14 0.5317 25 0.5002 1 0.4444 1
+VLIW Scheduler0.5350 9 0.5350 25 0.4620 1 0.5965 1
+Smallest Game Player0.3224 8 0.0000 7 0.0000 1 0.0000 1
+Sha256 Throughput0.3490 6 0.3491 13 0.0106 1 0.0000 1
+Average0.4824 10.0 0.4428 17.5 0.2828 1 0.3042 1
+tasks, using throughput-based rewards for the optimization tasks.MLE-Bench[5] evaluates end-to-end
+machine learning engineering on historical Kaggle </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>competitions. We report the task-specific scores
+and metric directions shown in Table 4. Appendix E describes the tasks across all three benchmarks.
+Evaluation metrics.We report the best task score and the number ofresearch attempts(#Attempts)
+used under the stated inference budget. Task scores follow the benchmark metrics and directions
+described above. One research attempt is a complete executor invocation covering implementation,
+experimentation, and analysis; executing the same plan again counts as another attempt. Assessing
+scores and attempts together measures research sample efficiency. Achieving comparable quality
+with fewer attempts requires fewer complete empirical tests of research directions. Both agents&#x27; input
+and output tokens count toward the budget, including the planning used to select those directions. For
+MLE-Bench, the reported counts cover attempts that produce </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>valid task scores. We compare methods
+under token budgets, without matching elapsed time or CPU/GPU hours. Other costs could enter the
+comparison through a common monetary unit; separate resource budgets remain future work.
+Implementation details.The executor and reflector use GPT-5 through the Codex CLI, with a
+shared token budget B= 1.5×10 6 per task. The primary GPT-5 results report one complete
+search per configuration. The main comparisons also impose limits on research attempts: 25 on
+AutoLab and MLE-Bench, and 30 on FIRE-Bench. Search uses at most m= 3 child proposals
+per expansion, exponent cap αmax = 10 , and pruning threshold δ= 0.05 . A child is excluded
+from subsequent selection if its reward falls more than δ below its parent&#x27;s current branch value
+Q, provided Q &gt;0 ; if all children of a selected node are pruned, reflection can propose further
+variants. On FIRE-Bench, each </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Higher AI research quality with fewer attempts.On FIRE-Bench (Table 3), PRIMESCIENTIST ob-
+tains an average reward of 0.7738, compared with 0.7018 for AutoResearch, while reducing research
+7
+Table 3.AI research on FIRE-Bench. PRIMESCIENTIST achieves higher research quality with
+about half as many attempts as AutoResearch. Results report best F1 from one GPT-5 search per
+configuration (1.5M tokens).#Attemptsincludes both executions per PRIMESCIENTISTplan.
+PRIMESCIENTISTAutoResearch Single-run Agent
+Task Max reward #Attempts Max reward #Attempts Max reward #Attempts
+Activation Control0.3810 10 0.4400 24 0.2220 1
+SECA Hallucination0.6980 16 0.6320 30 0.6320 1
+QuestBench0.6820 16 0.7500 25 0.4000 1
+Learning Order Agreement0.8570 12 0.8570 30 0.8000 1
+LLM Value Consistency0.8890 14 0.7270 30 0.3330 1
+T o CoT or not to CoT0.8570 16 0.7740 27 0.6000 1
+Grokking or Not0.4900 14 0.5000 23 0.0000 </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>1
+Max Suppression0.7740 16 0.7060 25 0.0000 1
+Neural Collapse Losses1.0000 4 1.0000 25 0.0000 1
+CoT Faithfulness Gaps0.8890 16 0.7500 29 0.0000 1
+Lost in The Middle0.7690 14 0.8570 30 0.6450 1
+MCQ Selection Bias1.0000 12 0.4290 26 0.1430 1
+Average0.7738 13.33 0.7018 27.0 0.3146 1
+Table 4.Machine learning engineering on MLE-Bench. PRIMESCIENTIST achieves comparable
+scores with fewer research attempts. Best scores come from one GPT-5 search per configuration
+(1.5M tokens).#Attemptscounts research attempts that return a valid task score.
+PRIMESCIENTISTAutoResearch Single-run Agent
+Task Best score #Attempts Best score #Attempts Best score #Attempts
+APTOS 2019 Blindness(↑) 0.8017 11 0.7922 21 0.1004 1
+NOMAD 2018(↓) 0.0597 15 0.0591 25 0.0637 1
+Plant Pathology 2020(↑) 0.8208 15 0.8149 24 0.5185 1
+Spooky Author ID(↓) 0.3704 13 0.3698 22 0.3767 1
+attempts from 27.0 to 13.33. Across the twelve </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>0.517
+Flash Attention0.357 0.304 0.301 0.341
+Hash Join0.631 0.619 0.625 0.591
+Gaussian Blur0.512 0.394 0.488 0.516
+Average(8 tasks) 0.598 0.551 0.563 0.546
+Table 6.Adapting exploration improves reward over fixed policies. PRIMESCIENTIST adapts the
+sampling exponent to the remaining budget; the alternatives hold it constant. Both agents use GPT-
+5-mini with a shared 1M-token budget. Entries give mean maximum reward (population standard
+deviation) over three independent searches for PRIMESCIENTISTand two per fixed policy.
+Benchmark Task PRIMESCIENTISTRandom(α=0)Fixed(α=3)Greedy(α=10)
+(n=3) (n=2) (n=2) (n=2)
+FIRE-Bench
+Activation Control0.314 (0.010) 0.245 (0.034) 0.203 (0.016) 0.279 (0.045)
+QuestBench0.555 (0.085) 0.664 (0.064) 0.467 (0.005) 0.431 (0.031)
+LLM Value Consistency0.850 (0.108) 0.856 (0.067) 0.656 (0.071) 0.962 (0.038)
+AutoLab
+Concurrent KV WAL0.583 (0.020) 0.369 (0.084) 0.499 </blockquote></details></li><li><strong>Contribution clarity — pages 9–10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FIRE-Bench and four from AutoLab, listed in Table 5.
+Adaptive plan selection improves overall reward.Table 5 reports an average reward of 0.598
+for PRIMESCIENTIST &#x27;s policy, compared with 0.551 forUCT, 0.563 forGreedy, and 0.546 for
+Random. Only the allocation policy changes in this comparison, linking the higher overall reward
+to how research effort is distributed across plans. PRIMESCIENTIST exceedsUCTon seven tasks
+and matches it on the eighth. The gain therefore extends across the evaluated subset, even though
+both policies use the same plan representation and reflector.Randomleads onSECA Hallucination
+andGaussian Blur, showing that the best policy can differ across tasks.
+9
+Table 7.Comparable reward with fewer research attempts on AutoLab.Three independent
+GPT-5-mini searches per configuration (1M tokens each) test consistency. Rewards are mean ±
+population standard </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>deviation;#Attemptsis the mean count. The separateSmallest Game Playerrow
+reports maximum accuracy as mean (range), showing progress below its0.95reward threshold.
+PRIMESCIENTISTAutoResearch
+Task Max reward (mean±std) #Attempts Max reward (mean±std) #Attempts
+Gaussian Blur0.4740±0.0487 25.7 0.4859±0.0145 29.3
+Hash Join0.6259±0.0029 27.0 0.6291±0.0050 36.0
+Concurrent KV WAL0.5830±0.0203 13.0 0.5608±0.0377 25.7
+Flash Attention0.2939±0.0372 17.3 0.2960±0.0113 19.3
+FFT (Rust)0.5002±0.0037 30.7 0.5133±0.0151 41.0
+Sha256 Throughput0.1410±0.1523 16.0 0.1304±0.1540 19.3
+Average(6 tasks) 0.4363 21.6 0.4359 28.4
+Accuracy-gated task (excluded from the average); maximum accuracy: mean (range).
+Smallest Game Player0.926 (0.916–0.940) 12.3 0.918 (0.872–0.944) 22.0
+PrimeScientist (ours)
+Fewer attempts to approach the other method&#x27;s best score
+Research attempts
+Full search (full bar)
+Figure 3:Fewer </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>A Limitations
+Planning under limited resources.The reflector is a full LLM agent, and a reflection call can
+consume tokens on the same order as a coding-agent run. Sharing budget B makes the balance
+between constructing alternatives and executing them explicit. The budget analysis in Appendix D.3
+identifies task-dependent benefits at different budgets; characterizing the point at which further
+planning is preferable to immediate execution remains an open research direction.
+Scope of resource accounting.We measure inference cost in input and output tokens across
+both agents, and experimental effort in complete executor invocations. Each invocation constitutes
+one research attempt; its training workload, runtime, and monetary cost depend on the task and
+execution environment. A shared token budget constrains inference expenditure, while realized
+consumption depends on the completed </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>actions and stopping point. Runtime is measured separately
+in Appendix D.4. Extending this accounting to monetary cost or energy requires the corresponding
+execution measurements, hardware characteristics, and inference pricing.
+Variability across independent searches.Complete research attempts provide task-level evidence
+for branch selection, with the amount of evidence determined by the available budget. On FIRE-
+Bench, each plan is executed twice and the higher score is retained; both invocations count toward
+inference consumption and experimental effort. The two or three independent full-search repetitions
+in the GPT-5-mini setting characterize variability through descriptive means and standard deviations.
+Larger repeated-search panels would enable more precise estimates of small reward differences.
+Statistical significance and backbone effects require separate analysis. The primary </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>GPT-5 setting
+uses a different budget and task coverage.
+Plan-level granularity. PRIMESCIENTIST allocates complete research attempts and receives their
+empirical outcomes after execution. This granularity connects strategic decisions to task-level
+evidence, while leaving decisions within an attempt to the coding agent. Even a narrowly specified
+plan modification requires another complete attempt for evaluation. The current method therefore
+cannot reallocate effort among intermediate implementation decisions during an ongoing execution.</blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +342,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +358,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-19</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:35:51</li><li>Last seen by Paper Scout: 2026-09-20 11:40:27</li></ul>
+            <ul><li>Metadata sources: openalex, arxiv</li><li>Latest revision / source update: 2026-09-19</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-19 17:35:51</li><li>Last seen by Paper Scout: 2026-09-21 15:52:20</li></ul>
             <ul><li>DOI: 10.48550/arxiv.2609.17846</li><li>arXiv: 2609.17846</li><li>OpenAlex: W7213528069</li><li>OpenAlex IDs: W7213528069</li><li>arXiv IDs: 2609.17846</li></ul>
           </section>
           <section class="detail-panel">

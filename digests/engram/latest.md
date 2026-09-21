@@ -1,18 +1,18 @@
 # Latest Paper Scout Digest
 
-Latest daily digest: [2026-09-20](2026-09-20.md).
+Latest daily digest: [2026-09-21](2026-09-21.md).
 
-# Paper Scout Digest - 2026-09-20
+# Paper Scout Digest - 2026-09-21
 
 ## Run Summary
 
-- **Run ID:** 19
-- **Candidates fetched:** 78
-- **New unique papers:** 72
+- **Run ID:** 20
+- **Candidates fetched:** 77
+- **New unique papers:** 71
 - **Relevant:** 0
 - **Maybe relevant:** 0
-- **Irrelevant:** 78
-- **Source summary:** openalex: 76, semantic_scholar: 2
+- **Irrelevant:** 77
+- **Source summary:** openalex: 76, semantic_scholar: 1
 
 ## Source Warnings
 
@@ -26,6 +26,6 @@ Latest daily digest: [2026-09-20](2026-09-20.md).
 - semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.
 - semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.
-- semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached.
+- semantic_scholar failed for 'tokenizer-agnostic Engram': Semantic Scholar returned HTTP 429 despite an API key, likely because query volume was high. The run continued with other sources.
 
 No new relevant or maybe-relevant papers found.

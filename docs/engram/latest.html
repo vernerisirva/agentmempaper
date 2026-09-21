@@ -14,7 +14,7 @@
         <header class="archive-hero">
           <nav class="top-nav" aria-label="Primary">
             <a class="brand" href="index.html">Paper Scout</a>
-            <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a>
+            <span class="nav-links"><a href="../index.html">Agentic Memory</a> <a href="../deep-research/index.html">Deep Research</a> <a href="../computer-vision/index.html">Computer Vision</a>
               <a href="index.html">Library</a>
               <a href="archive.html">Archive</a>
               <a href="review.html">Review candidates</a>
@@ -23,14 +23,14 @@
               <a href="https://github.com/vernerisirva/agentmempaper">GitHub</a>
             </span>
           </nav>
-          <p class="eyebrow">Latest update 2026-09-20</p>
+          <p class="eyebrow">Latest update 2026-09-21</p>
           <h1>Latest run</h1>
           <p class="hero-copy">Papers first seen in the latest Paper Scout run. The main library remains cumulative.</p>
         </header>
 
     <section class="summary-strip" aria-label="Latest run summary metrics">
-      <div><span>Latest update date</span><strong>2026-09-20</strong></div><div><span>New in latest run</span><strong>0</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Review candidates</span><strong>0</strong></div>
-      <div class="source-summary"><span>Run summary</span><strong>openalex: 76, semantic_scholar: 2</strong></div>
+      <div><span>Latest update date</span><strong>2026-09-21</strong></div><div><span>New in latest run</span><strong>0</strong></div><div><span>Highly relevant</span><strong>0</strong></div><div><span>Review candidates</span><strong>0</strong></div>
+      <div class="source-summary"><span>Run summary</span><strong>openalex: 76, semantic_scholar: 1</strong></div>
     </section>
 
 
@@ -59,6 +59,7 @@
         </select>
       </label>
 
+
       <label class="toggle-control new-only-filter" for="new-only">
         <input id="new-only" type="checkbox">
         <span>New only</span>
@@ -77,7 +78,7 @@
           </div>
           <p class="empty no-results" id="no-results" hidden aria-live="polite">No papers match the current search.</p>
         </section>
-        <details class="source-diagnostics"><summary>Source diagnostics <span>Some source diagnostics need review. Details are available below.</span></summary><ul><li>arxiv failed for &#x27;all:engram and all:language and all:model&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3Aengram+and+all%3Alanguage+and+all%3Amodel&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
+        <details class="source-diagnostics"><summary>Source diagnostics <span>Some source queries were rate-limited. Details are available below.</span></summary><ul><li>arxiv failed for &#x27;all:engram and all:language and all:model&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3Aengram+and+all%3Alanguage+and+all%3Amodel&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
 <li>arxiv failed for &#x27;all:&quot;conditional memory&quot;&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
 <li>arxiv failed for &#x27;all:n and all:gram and all:memory and all:transformer&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3An+and+all%3Agram+and+all%3Amemory+and+all%3Atransformer&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
 <li>arxiv failed for &#x27;all:&quot;memory grafting&quot;&#x27;: http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&amp;start=0&amp;max_results=25&amp;sortBy=submittedDate&amp;sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable</li>
@@ -87,7 +88,7 @@
 <li>semantic_scholar: incomplete discovery window for &#x27;Engram&#x27;; single-page record limit reached.</li>
 <li>semantic_scholar: incomplete discovery window for &#x27;conditional memory language model&#x27;; single-page record limit reached.</li>
 <li>semantic_scholar: incomplete discovery window for &#x27;frozen memory reader adaptation&#x27;; single-page record limit reached.</li>
-<li>semantic_scholar: incomplete discovery window for &#x27;tokenizer-agnostic Engram&#x27;; single-page record limit reached.</li></ul></details>
+<li>semantic_scholar failed for &#x27;tokenizer-agnostic Engram&#x27;: Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources.</li></ul></details>
         <section class="archive-strip" aria-labelledby="recent-archive-heading">
           <div>
             <p class="section-kicker">Context</p>
@@ -101,6 +102,7 @@
   const search = document.querySelector('#paper-search');
   const relevanceFilter = document.querySelector('#relevance-filter');
   const newOnly = document.querySelector('#new-only');
+  const topicFilter = document.querySelector('#topic-filter');
   const sortSelect = document.querySelector('#paper-sort');
   const qualityMinimum = document.querySelector('#quality-minimum');
   const qualityRecommendation = document.querySelector('#quality-recommendation');
@@ -162,6 +164,8 @@
       const matchesQuery = !query || card.dataset.search.includes(query);
       const matchesDecision = decision === 'all' || card.dataset.decision === decision;
       const matchesNewOnly = !newOnly || !newOnly.checked || card.dataset.isNew === 'true';
+      const topic = topicFilter ? topicFilter.value : 'all';
+      const matchesTopic = topic === 'all' || (card.dataset.tags || '').split(' ').includes(topic);
       const qualityKnown = card.dataset.qualityScore !== '';
       const minimum = qualityMinimum ? Number(qualityMinimum.value || 0) : 0;
       const matchesQualityMinimum = !qualityKnown ? (!qualityIncludeUnknown || qualityIncludeUnknown.checked) : Number(card.dataset.qualityScore) >= minimum;
@@ -169,7 +173,7 @@
       const matchesQualityConfidence = !qualityConfidence || qualityConfidence.value === 'all' || card.dataset.qualityConfidence === qualityConfidence.value;
       const matchesQualityScope = !qualityScope || qualityScope.value === 'all' || card.dataset.qualityScope === qualityScope.value;
       const matchesQualityVisibility = !qualityVisibility || qualityVisibility.value !== 'hide' || card.dataset.qualityDownranked !== 'true';
-      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
+      card.hidden = !(matchesQuery && matchesDecision && matchesNewOnly && matchesTopic && matchesQualityMinimum && matchesQualityRecommendation && matchesQualityConfidence && matchesQualityScope && matchesQualityVisibility);
       if (!card.hidden) visibleCount += 1;
     }
     if (emptyState) emptyState.hidden = visibleCount > 0 || cards.length === 0;
@@ -177,6 +181,7 @@
   if (search) search.addEventListener('input', update);
   if (relevanceFilter) relevanceFilter.addEventListener('change', () => { decision = relevanceFilter.value || 'all'; update(); });
   if (newOnly) newOnly.addEventListener('change', update);
+  if (topicFilter) topicFilter.addEventListener('change', update);
   if (sortSelect) sortSelect.addEventListener('change', () => { sortCards(); update(); });
   [qualityMinimum, qualityRecommendation, qualityConfidence, qualityScope, qualityIncludeUnknown].filter(Boolean).forEach(control => control.addEventListener('input', update));
   if (qualityVisibility) qualityVisibility.addEventListener('change', () => { sortCards(); update(); });

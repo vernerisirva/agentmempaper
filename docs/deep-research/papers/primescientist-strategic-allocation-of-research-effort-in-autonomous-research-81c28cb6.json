@@ -26,12 +26,12 @@
   "first_seen_at": "2026-09-19 17:35:51",
   "first_seen_date": "2026-09-19",
   "future_date": false,
-  "is_new": true,
-  "last_seen_at": "2026-09-20 11:40:27",
-  "last_seen_date": "2026-09-20",
+  "is_new": false,
+  "last_seen_at": "2026-09-21 15:52:20",
+  "last_seen_date": "2026-09-21",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-19 17:36:21",
   "notified_date": "2026-09-19",
@@ -42,8 +42,8 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-19 17:35:51",
-    "generated_at": "2026-09-20 11:42:16",
-    "last_seen_at": "2026-09-20 11:40:27",
+    "generated_at": "2026-09-21 16:00:39",
+    "last_seen_at": "2026-09-21 15:52:20",
     "metadata_sources": [
       "openalex",
       "arxiv"
@@ -107,36 +107,2128 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": null,
-    "assessment_scope": "metadata_only",
-    "assessment_version": null,
-    "assessor_model": null,
-    "assessor_type": null,
+    "assessed_at": "2026-09-21T15:59:42.056899+00:00",
+    "assessment_scope": "full_text",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.93,
     "concerns": [],
-    "concise_summary": null,
-    "confidence": "unknown",
-    "coverage": {},
+    "concise_summary": "The manuscript presents a conceptually sound and rigorously formulated contribution to autonomous agent research planning. Experimental comparisons and ablations are thorough, well-controlled, and transparently reported across multiple distinct domains, with claims that align directly with the empirical findings.",
+    "confidence": "high",
+    "coverage": {
+      "assessment_input_characters": 104193,
+      "assessment_input_sha256": "dadb58b7a98740995121a85b5b01f3fb245d370461595c6e899a869c650b0a39",
+      "attempted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.17846",
+      "character_budget": 180000,
+      "characters_before_extraction_limit": 102211,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 101222,
+      "evidence_block_count": 137,
+      "evidence_context_characters": 118439,
+      "evidence_context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+      "evidence_context_sha256": "785804f99c98c520724bbb3c6cd62c6b6bfed014b8656e96fbba2d095fb987ab",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
+      "extracted_characters": 102269,
+      "extracted_page_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "extracted_pages": 30,
+      "extraction_complete": true,
+      "extraction_gap_markers": 0,
+      "extraction_truncated": false,
+      "extractor_version": "bounded-v2",
+      "failure_reasons": [],
+      "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "cfd4173bcadaa1a8fc9d5958d6571b2aabe57587fbf05df7547729f2d10f48ea",
+        "source_url": "https://arxiv.org/pdf/2609.17846",
+        "verified": true
+      },
+      "max_extracted_characters": 400000,
+      "max_pages": 80,
+      "missing_page_indices": [],
+      "normalization_version": "canonical-unicode-v2",
+      "omitted_body_characters": 0,
+      "page_unit": "PDF page",
+      "pages_omitted": [],
+      "retained_source_characters": 102211,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "conclusion",
+        "introduction",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Primescientist: Strategic Allocation Of Research",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 256,
+          "supplied_characters": 256
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 2180,
+          "supplied_characters": 2180
+        },
+        {
+          "heading": "Implementation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "methods",
+          "section_index": 2,
+          "source_characters": 735,
+          "supplied_characters": 735
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 4892,
+          "supplied_characters": 4892
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 183,
+          "supplied_characters": 183
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "related",
+          "section_index": 5,
+          "source_characters": 374,
+          "supplied_characters": 374
+        },
+        {
+          "heading": "Method",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "methods",
+          "section_index": 6,
+          "source_characters": 132,
+          "supplied_characters": 132
+        },
+        {
+          "heading": "Aide [27]\u2713\u2013 \u2013 \u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "Mars [6]\u2713\u2013\u2713\u2013 \u2013",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 34,
+          "supplied_characters": 34
+        },
+        {
+          "heading": "Primescientist\u2713 \u2713 \u2713 \u2713 \u2713",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 9,
+          "source_characters": 3971,
+          "supplied_characters": 3971
+        },
+        {
+          "heading": "Primescientist\u2713 \u2713 \u2713 \u2713 \u2713",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 10,
+          "source_characters": 1374,
+          "supplied_characters": 1374
+        },
+        {
+          "heading": "The Strategic Research Effort Allocation Problem",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 11,
+          "source_characters": 2818,
+          "supplied_characters": 2818
+        },
+        {
+          "heading": "Executable Plan Tree For Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 208,
+          "supplied_characters": 208
+        },
+        {
+          "heading": "Executable Plan Tree For Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 3674,
+          "supplied_characters": 3674
+        },
+        {
+          "heading": "Adaptive Mcts-Based Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 202,
+          "supplied_characters": 202
+        },
+        {
+          "heading": "Adaptive Mcts-Based Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 3244,
+          "supplied_characters": 3244
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 16,
+          "source_characters": 759,
+          "supplied_characters": 759
+        },
+        {
+          "heading": "Experimental Setup",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "methods",
+          "section_index": 17,
+          "source_characters": 4379,
+          "supplied_characters": 4379
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 18,
+          "source_characters": 190,
+          "supplied_characters": 190
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "results",
+          "section_index": 19,
+          "source_characters": 3738,
+          "supplied_characters": 3738
+        },
+        {
+          "heading": "Main Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 20,
+          "source_characters": 2171,
+          "supplied_characters": 2171
+        },
+        {
+          "heading": "Effect Of Budget Adaptivity",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 21,
+          "source_characters": 691,
+          "supplied_characters": 691
+        },
+        {
+          "heading": "The Eight-Task Subset Contains Four Tasks From",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 22,
+          "source_characters": 687,
+          "supplied_characters": 687
+        },
+        {
+          "heading": "The Eight-Task Subset Contains Four Tasks From",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 2351,
+          "supplied_characters": 2351
+        },
+        {
+          "heading": "Consistency Across Runs And Tasks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1915,
+          "supplied_characters": 1915
+        },
+        {
+          "heading": "Analysis Of Research Quality Versus Research Effort",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1195,
+          "supplied_characters": 1195
+        },
+        {
+          "heading": "Case Study Of Strategic Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 564,
+          "supplied_characters": 564
+        },
+        {
+          "heading": "Case Study Of Strategic Effort Allocation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 1367,
+          "supplied_characters": 1367
+        },
+        {
+          "heading": "Conclusion",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "conclusion",
+          "section_index": 28,
+          "source_characters": 1234,
+          "supplied_characters": 1234
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 303,
+          "supplied_characters": 303
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 13,
+          "role": "body",
+          "section_index": 30,
+          "source_characters": 4525,
+          "supplied_characters": 4525
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 14,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 4478,
+          "supplied_characters": 4478
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 15,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 4089,
+          "supplied_characters": 4089
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 16,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 4445,
+          "supplied_characters": 4445
+        },
+        {
+          "heading": "Appendix: Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 34,
+          "source_characters": 2334,
+          "supplied_characters": 2334
+        },
+        {
+          "heading": "Appendix: B Broader Impact",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 17,
+          "role": "appendix",
+          "section_index": 35,
+          "source_characters": 1976,
+          "supplied_characters": 1976
+        },
+        {
+          "heading": "Appendix: C Algorithm",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 36,
+          "source_characters": 1660,
+          "supplied_characters": 1660
+        },
+        {
+          "heading": "Appendix: Inference Allocation And Experimental Effort",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 18,
+          "role": "appendix",
+          "section_index": 37,
+          "source_characters": 883,
+          "supplied_characters": 883
+        },
+        {
+          "heading": "Appendix: Inference Allocation And Experimental Effort",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 38,
+          "source_characters": 1052,
+          "supplied_characters": 1052
+        },
+        {
+          "heading": "Appendix: Reward Under Matched Resources",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 19,
+          "role": "appendix",
+          "section_index": 39,
+          "source_characters": 1681,
+          "supplied_characters": 1681
+        },
+        {
+          "heading": "Appendix: Reward Under Matched Resources",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 40,
+          "source_characters": 294,
+          "supplied_characters": 294
+        },
+        {
+          "heading": "Appendix: Sensitivity To The Token Budget",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 41,
+          "source_characters": 1443,
+          "supplied_characters": 1443
+        },
+        {
+          "heading": "Appendix: Elapsed Search Time",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "appendix",
+          "section_index": 42,
+          "source_characters": 938,
+          "supplied_characters": 938
+        },
+        {
+          "heading": "Primescientist12 32 34",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 20,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 47,
+          "supplied_characters": 47
+        },
+        {
+          "heading": "Appendix: E Benchmark Tasks And Evaluation Targets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 21,
+          "role": "appendix",
+          "section_index": 44,
+          "source_characters": 3079,
+          "supplied_characters": 3079
+        },
+        {
+          "heading": "Appendix: E Benchmark Tasks And Evaluation Targets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 22,
+          "role": "appendix",
+          "section_index": 45,
+          "source_characters": 2291,
+          "supplied_characters": 2291
+        },
+        {
+          "heading": "Appendix: F Skill Format",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "appendix",
+          "section_index": 46,
+          "source_characters": 2943,
+          "supplied_characters": 2943
+        },
+        {
+          "heading": "Read Packet.Json For The Score. Read Log_Brief.Log For The Run",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 47,
+          "source_characters": 184,
+          "supplied_characters": 184
+        },
+        {
+          "heading": "Check Other Nodes'Prior.Json / Skill.Md / Packet.Json As Needed To",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 23,
+          "role": "body",
+          "section_index": 48,
+          "source_characters": 88,
+          "supplied_characters": 88
+        },
+        {
+          "heading": "Identify Whether Failure Was Due To A Setup/Runtime Error (Fixable By",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 24,
+          "role": "methods",
+          "section_index": 49,
+          "source_characters": 2570,
+          "supplied_characters": 2570
+        },
+        {
+          "heading": "Appendix: H Example Research Plan And Modification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 40,
+          "supplied_characters": 40
+        },
+        {
+          "heading": "Appendix: Original Plan",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 25,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 2514,
+          "supplied_characters": 2514
+        },
+        {
+          "heading": "Appendix: Original Plan",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 26,
+          "role": "appendix",
+          "section_index": 52,
+          "source_characters": 2635,
+          "supplied_characters": 2635
+        },
+        {
+          "heading": "Appendix: Original Plan",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "appendix",
+          "section_index": 53,
+          "source_characters": 380,
+          "supplied_characters": 380
+        },
+        {
+          "heading": "Environment",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 54,
+          "source_characters": 163,
+          "supplied_characters": 163
+        },
+        {
+          "heading": "Loader",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 55,
+          "source_characters": 265,
+          "supplied_characters": 265
+        },
+        {
+          "heading": "Prompts",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 56,
+          "source_characters": 293,
+          "supplied_characters": 293
+        },
+        {
+          "heading": "Hidden-State Capture",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 57,
+          "source_characters": 724,
+          "supplied_characters": 724
+        },
+        {
+          "heading": "Calibration (Per Model)",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "body",
+          "section_index": 58,
+          "source_characters": 371,
+          "supplied_characters": 371
+        },
+        {
+          "heading": "Evaluation Loop",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 27,
+          "role": "results",
+          "section_index": 59,
+          "source_characters": 761,
+          "supplied_characters": 761
+        },
+        {
+          "heading": "Evaluation Loop",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "results",
+          "section_index": 60,
+          "source_characters": 1774,
+          "supplied_characters": 1774
+        },
+        {
+          "heading": "Appendix: Modification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 28,
+          "role": "appendix",
+          "section_index": 61,
+          "source_characters": 665,
+          "supplied_characters": 665
+        },
+        {
+          "heading": "Appendix: Modification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 29,
+          "role": "appendix",
+          "section_index": 62,
+          "source_characters": 2711,
+          "supplied_characters": 2711
+        },
+        {
+          "heading": "Appendix: Modification",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 30,
+          "role": "appendix",
+          "section_index": 63,
+          "source_characters": 1034,
+          "supplied_characters": 1034
+        }
+      ],
+      "selected_characters": 101222,
+      "selected_instead_of_full_text": false,
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "selected_sections": [
+        {
+          "characters": 256,
+          "heading": "Primescientist: Strategic Allocation Of Research",
+          "page": 1
+        },
+        {
+          "characters": 2180,
+          "heading": "Abstract",
+          "page": 1
+        },
+        {
+          "characters": 735,
+          "heading": "Implementation",
+          "page": 1
+        },
+        {
+          "characters": 4892,
+          "heading": "Introduction",
+          "page": 2
+        },
+        {
+          "characters": 183,
+          "heading": "Related Work",
+          "page": 2
+        },
+        {
+          "characters": 374,
+          "heading": "Related Work",
+          "page": 3
+        },
+        {
+          "characters": 132,
+          "heading": "Method",
+          "page": 3
+        },
+        {
+          "characters": 71,
+          "heading": "Aide [27]\u2713\u2013 \u2013 \u2013 \u2013",
+          "page": 3
+        },
+        {
+          "characters": 34,
+          "heading": "Mars [6]\u2713\u2013\u2713\u2013 \u2013",
+          "page": 3
+        },
+        {
+          "characters": 3971,
+          "heading": "Primescientist\u2713 \u2713 \u2713 \u2713 \u2713",
+          "page": 3
+        },
+        {
+          "characters": 1374,
+          "heading": "Primescientist\u2713 \u2713 \u2713 \u2713 \u2713",
+          "page": 4
+        },
+        {
+          "characters": 2818,
+          "heading": "The Strategic Research Effort Allocation Problem",
+          "page": 4
+        },
+        {
+          "characters": 208,
+          "heading": "Executable Plan Tree For Effort Allocation",
+          "page": 4
+        },
+        {
+          "characters": 3674,
+          "heading": "Executable Plan Tree For Effort Allocation",
+          "page": 5
+        },
+        {
+          "characters": 202,
+          "heading": "Adaptive Mcts-Based Effort Allocation",
+          "page": 5
+        },
+        {
+          "characters": 3244,
+          "heading": "Adaptive Mcts-Based Effort Allocation",
+          "page": 6
+        },
+        {
+          "characters": 759,
+          "heading": "Experimental Setup",
+          "page": 6
+        },
+        {
+          "characters": 4379,
+          "heading": "Experimental Setup",
+          "page": 7
+        },
+        {
+          "characters": 190,
+          "heading": "Main Results",
+          "page": 7
+        },
+        {
+          "characters": 3738,
+          "heading": "Main Results",
+          "page": 8
+        },
+        {
+          "characters": 2171,
+          "heading": "Main Results",
+          "page": 9
+        },
+        {
+          "characters": 691,
+          "heading": "Effect Of Budget Adaptivity",
+          "page": 9
+        },
+        {
+          "characters": 687,
+          "heading": "The Eight-Task Subset Contains Four Tasks From",
+          "page": 9
+        },
+        {
+          "characters": 2351,
+          "heading": "The Eight-Task Subset Contains Four Tasks From",
+          "page": 10
+        },
+        {
+          "characters": 1915,
+          "heading": "Consistency Across Runs And Tasks",
+          "page": 11
+        },
+        {
+          "characters": 1195,
+          "heading": "Analysis Of Research Quality Versus Research Effort",
+          "page": 11
+        },
+        {
+          "characters": 564,
+          "heading": "Case Study Of Strategic Effort Allocation",
+          "page": 11
+        },
+        {
+          "characters": 1367,
+          "heading": "Case Study Of Strategic Effort Allocation",
+          "page": 12
+        },
+        {
+          "characters": 1234,
+          "heading": "Conclusion",
+          "page": 12
+        },
+        {
+          "characters": 303,
+          "heading": "Unclassified body after references",
+          "page": 12
+        },
+        {
+          "characters": 4525,
+          "heading": "Unclassified body after references",
+          "page": 13
+        },
+        {
+          "characters": 4478,
+          "heading": "Unclassified body after references",
+          "page": 14
+        },
+        {
+          "characters": 4089,
+          "heading": "Unclassified body after references",
+          "page": 15
+        },
+        {
+          "characters": 4445,
+          "heading": "Unclassified body after references",
+          "page": 16
+        },
+        {
+          "characters": 2334,
+          "heading": "Appendix: Limitations",
+          "page": 17
+        },
+        {
+          "characters": 1976,
+          "heading": "Appendix: B Broader Impact",
+          "page": 17
+        },
+        {
+          "characters": 1660,
+          "heading": "Appendix: C Algorithm",
+          "page": 18
+        },
+        {
+          "characters": 883,
+          "heading": "Appendix: Inference Allocation And Experimental Effort",
+          "page": 18
+        },
+        {
+          "characters": 1052,
+          "heading": "Appendix: Inference Allocation And Experimental Effort",
+          "page": 19
+        },
+        {
+          "characters": 1681,
+          "heading": "Appendix: Reward Under Matched Resources",
+          "page": 19
+        },
+        {
+          "characters": 294,
+          "heading": "Appendix: Reward Under Matched Resources",
+          "page": 20
+        },
+        {
+          "characters": 1443,
+          "heading": "Appendix: Sensitivity To The Token Budget",
+          "page": 20
+        },
+        {
+          "characters": 938,
+          "heading": "Appendix: Elapsed Search Time",
+          "page": 20
+        },
+        {
+          "characters": 47,
+          "heading": "Primescientist12 32 34",
+          "page": 20
+        },
+        {
+          "characters": 3079,
+          "heading": "Appendix: E Benchmark Tasks And Evaluation Targets",
+          "page": 21
+        },
+        {
+          "characters": 2291,
+          "heading": "Appendix: E Benchmark Tasks And Evaluation Targets",
+          "page": 22
+        },
+        {
+          "characters": 2943,
+          "heading": "Appendix: F Skill Format",
+          "page": 23
+        },
+        {
+          "characters": 184,
+          "heading": "Read Packet.Json For The Score. Read Log_Brief.Log For The Run",
+          "page": 23
+        },
+        {
+          "characters": 88,
+          "heading": "Check Other Nodes'Prior.Json / Skill.Md / Packet.Json As Needed To",
+          "page": 23
+        },
+        {
+          "characters": 2570,
+          "heading": "Identify Whether Failure Was Due To A Setup/Runtime Error (Fixable By",
+          "page": 24
+        },
+        {
+          "characters": 40,
+          "heading": "Appendix: H Example Research Plan And Modification",
+          "page": 25
+        },
+        {
+          "characters": 2514,
+          "heading": "Appendix: Original Plan",
+          "page": 25
+        },
+        {
+          "characters": 2635,
+          "heading": "Appendix: Original Plan",
+          "page": 26
+        },
+        {
+          "characters": 380,
+          "heading": "Appendix: Original Plan",
+          "page": 27
+        },
+        {
+          "characters": 163,
+          "heading": "Environment",
+          "page": 27
+        },
+        {
+          "characters": 265,
+          "heading": "Loader",
+          "page": 27
+        },
+        {
+          "characters": 293,
+          "heading": "Prompts",
+          "page": 27
+        },
+        {
+          "characters": 724,
+          "heading": "Hidden-State Capture",
+          "page": 27
+        },
+        {
+          "characters": 371,
+          "heading": "Calibration (Per Model)",
+          "page": 27
+        },
+        {
+          "characters": 761,
+          "heading": "Evaluation Loop",
+          "page": 27
+        },
+        {
+          "characters": 1774,
+          "heading": "Evaluation Loop",
+          "page": 28
+        },
+        {
+          "characters": 665,
+          "heading": "Appendix: Modification",
+          "page": 28
+        },
+        {
+          "characters": 2711,
+          "heading": "Appendix: Modification",
+          "page": 29
+        },
+        {
+          "characters": 1034,
+          "heading": "Appendix: Modification",
+          "page": 30
+        }
+      ],
+      "selected_text_sha256": "dadb58b7a98740995121a85b5b01f3fb245d370461595c6e899a869c650b0a39",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "cfd4173bcadaa1a8fc9d5958d6571b2aabe57587fbf05df7547729f2d10f48ea",
+      "source_pages": 30,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "surrogate_code_units": 0,
+      "unreadable_pages": [],
+      "version": "coverage-v2",
+      "warnings": []
+    },
     "curation_note": null,
     "dimension_scores": {},
     "downranked": false,
-    "evidence": [],
-    "full_text_assessed": false,
-    "full_text_url": null,
-    "gate_version": null,
+    "evidence": [
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0002"
+        ],
+        "excerpt": "Autonomous research agents aim to automate scientific workflows, from proposing ideas\nto conducting experiments and analyzing results. Yet current AI and research agents\ncan propose more directions than available resources allow them to pursue. Moreover,\neach attempt could consume substantial resources, requiring agents to reconsider how to\ninvest in subsequent research. Thus, deciding how to invest research effort strategically\nshould be a defining capability of autonomous research agents. Accordingly, we introduce\nPRIMESCIENTIST , which jointly determines research direction and resource investment\nacross successive research attempts. Specifically, we formulate this challenge of strategic\nresearch effort allocation as a sequential decision problem where remaining resources should\nexplicitly guide the research policy. We first introduce an executable plan tree that preserves\ncompeting ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4078a9f51af8675a6d4d93944d08187e99e7346a7ff57aee41c977287e71a075",
+            "evidence_id": "Ea9812fd9c0153b50-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 898,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Autonomous research agents aim to automate scientific workflows, from proposing ideas\nto conducting experiments and analyzing results. Yet current AI and research agents\ncan propose more directions than available resources allow them to pursue. Moreover,\neach attempt could consume substantial resources, requiring agents to reconsider how to\ninvest in subsequent research. Thus, deciding how to invest research effort strategically\nshould be a defining capability of autonomous research agents. Accordingly, we introduce\nPRIMESCIENTIST , which jointly determines research direction and resource investment\nacross successive research attempts. Specifically, we formulate this challenge of strategic\nresearch effort allocation as a sequential decision problem where remaining resources should\nexplicitly guide the research policy. We first introduce an executable plan tree that preserves\ncompeting "
+              }
+            ],
+            "text": "Autonomous research agents aim to automate scientific workflows, from proposing ideas\nto conducting experiments and analyzing results. Yet current AI and research agents\ncan propose more directions than available resources allow them to pursue. Moreover,\neach attempt could consume substantial resources, requiring agents to reconsider how to\ninvest in subsequent research. Thus, deciding how to invest research effort strategically\nshould be a defining capability of autonomous research agents. Accordingly, we introduce\nPRIMESCIENTIST , which jointly determines research direction and resource investment\nacross successive research attempts. Specifically, we formulate this challenge of strategic\nresearch effort allocation as a sequential decision problem where remaining resources should\nexplicitly guide the research policy. We first introduce an executable plan tree that preserves\ncompeting "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0003"
+        ],
+        "excerpt": "plans and their outcomes across attempts. Building on this representation, we\npropose an adaptive MCTS-based allocation policy that balances exploration and exploitation\nusing experimental feedback and remaining resources. Comprehensive evaluations across\nAI research, systems and code optimization, and machine learning engineering show that\nstrategic allocation improves research quality and sample efficiency together. Across 12\nAI research tasks, PRIMESCIENTIST improves average reward by 10.3% with 50.6% fewer\nresearch attempts than AutoResearch under the same resource budget. We believe making\nresearch effort allocation an explicit optimization target establishes effective resource use as\na core research capability for autonomous agents to drive scientific breakthroughs at scale.1\n(a)\n(b)\n0.0\n0.5\n1.0\nMean task score\nFIRE-Bench \u2191\n0\n15\n30\n0.774\n0.702\n0.315\n0.0\n0.2\n0.4\n0.6\nAutoLab ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 1,
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Abstract",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "246dc30ccc6c62fbba5dea3962326e860a2c0272d7515a49f8d62d7ce8bdf1b7",
+            "evidence_id": "Ea9812fd9c0153b50-B0003",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 1790,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 898,
+                "text": "plans and their outcomes across attempts. Building on this representation, we\npropose an adaptive MCTS-based allocation policy that balances exploration and exploitation\nusing experimental feedback and remaining resources. Comprehensive evaluations across\nAI research, systems and code optimization, and machine learning engineering show that\nstrategic allocation improves research quality and sample efficiency together. Across 12\nAI research tasks, PRIMESCIENTIST improves average reward by 10.3% with 50.6% fewer\nresearch attempts than AutoResearch under the same resource budget. We believe making\nresearch effort allocation an explicit optimization target establishes effective resource use as\na core research capability for autonomous agents to drive scientific breakthroughs at scale.1\n(a)\n(b)\n0.0\n0.5\n1.0\nMean task score\nFIRE-Bench \u2191\n0\n15\n30\n0.774\n0.702\n0.315\n0.0\n0.2\n0.4\n0.6\nAutoLab "
+              }
+            ],
+            "text": "plans and their outcomes across attempts. Building on this representation, we\npropose an adaptive MCTS-based allocation policy that balances exploration and exploitation\nusing experimental feedback and remaining resources. Comprehensive evaluations across\nAI research, systems and code optimization, and machine learning engineering show that\nstrategic allocation improves research quality and sample efficiency together. Across 12\nAI research tasks, PRIMESCIENTIST improves average reward by 10.3% with 50.6% fewer\nresearch attempts than AutoResearch under the same resource budget. We believe making\nresearch effort allocation an explicit optimization target establishes effective resource use as\na core research capability for autonomous agents to drive scientific breakthroughs at scale.1\n(a)\n(b)\n0.0\n0.5\n1.0\nMean task score\nFIRE-Bench \u2191\n0\n15\n30\n0.774\n0.702\n0.315\n0.0\n0.2\n0.4\n0.6\nAutoLab "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0022"
+        ],
+        "excerpt": "Consider a research taskx, a plan-construction operatorG, a coding-agent executorA, a task evaluator\nh, and a resource budgetB >0. The operatorG produces executable plans from the task or revises\nexisting plans using accumulated evidence. The executor carries a selected plan through coding,\ndebugging, experimentation, and analysis, after which h supplies its empirical outcome. Both\noperations consume resources; their outputs and realized costs may be unknown before completion.\nDefinition 1 (Strategic research effort allocation) LetPt denote the available research plans and\nHt the record of proposals, execution outcomes, and charged costs before decision t. The state\ncomprises these plans, their history, and the remaining resources:\nXt = (x,Pt,Ht,B\u2212U t), U t =\nX\ni<t\nci,(1)\nwithP0 =H 0 =\u2205 andU0 = 0 . A policy \u03c0(\u00b7|X t) chooses an action at: construct or revise\nplans throughG, execute a ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Strategic Research Effort Allocation Problem",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "c1f9b7efca9582f4b15c4056e4d89f2b45ae239e45fe476b99b251a58922f298",
+            "evidence_id": "Ea9812fd9c0153b50-B0022",
+            "pages": [
+              4
+            ],
+            "section": "The Strategic Research Effort Allocation Problem",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 896,
+                "page": 4,
+                "section": "The Strategic Research Effort Allocation Problem",
+                "section_index": 11,
+                "start": 0,
+                "text": "Consider a research taskx, a plan-construction operatorG, a coding-agent executorA, a task evaluator\nh, and a resource budgetB >0. The operatorG produces executable plans from the task or revises\nexisting plans using accumulated evidence. The executor carries a selected plan through coding,\ndebugging, experimentation, and analysis, after which h supplies its empirical outcome. Both\noperations consume resources; their outputs and realized costs may be unknown before completion.\nDefinition 1 (Strategic research effort allocation) LetPt denote the available research plans and\nHt the record of proposals, execution outcomes, and charged costs before decision t. The state\ncomprises these plans, their history, and the remaining resources:\nXt = (x,Pt,Ht,B\u2212U t), U t =\nX\ni<t\nci,(1)\nwithP0 =H 0 =\u2205 andU0 = 0 . A policy \u03c0(\u00b7|X t) chooses an action at: construct or revise\nplans throughG, execute a "
+              }
+            ],
+            "text": "Consider a research taskx, a plan-construction operatorG, a coding-agent executorA, a task evaluator\nh, and a resource budgetB >0. The operatorG produces executable plans from the task or revises\nexisting plans using accumulated evidence. The executor carries a selected plan through coding,\ndebugging, experimentation, and analysis, after which h supplies its empirical outcome. Both\noperations consume resources; their outputs and realized costs may be unknown before completion.\nDefinition 1 (Strategic research effort allocation) LetPt denote the available research plans and\nHt the record of proposals, execution outcomes, and charged costs before decision t. The state\ncomprises these plans, their history, and the remaining resources:\nXt = (x,Pt,Ht,B\u2212U t), U t =\nX\ni<t\nci,(1)\nwithP0 =H 0 =\u2205 andU0 = 0 . A policy \u03c0(\u00b7|X t) chooses an action at: construct or revise\nplans throughG, execute a "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0028"
+        ],
+        "excerpt": "plan tree Tt to make these choices\nexplicit and assign effort to complete research plans.\nEach node stores a plan, its recorded outcomes, and branch statistics. A reflector constructs these\nplans; a coding agent executes them. Each plan is a structured Markdown document specifying a\nresearch question or proposed change and its implementation strategy (Appendix F). An edges\u2192s \u2032\nrecords a reflector-generated modification of the parent's research strategy. Each modification is\nstored as an executable diff.py together with a description and prior estimate, allowing the child\nplan to be reconstructed from its parent. Recording the modification alongside parent and child\noutcomes makes the development of a research strategy traceable and gives the reflector concrete\nevidence for its next revision. Because a plan is stored independently of the executor's conversation,\na candidate direction can ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Executable Plan Tree For Effort Allocation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "76a72e489b8853584f06794982e5dad66314b376b8809d4ed6d8a22261955ed8",
+            "evidence_id": "Ea9812fd9c0153b50-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Executable Plan Tree For Effort Allocation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 2489,
+                "page": 5,
+                "section": "Executable Plan Tree For Effort Allocation",
+                "section_index": 13,
+                "start": 1589,
+                "text": "plan tree Tt to make these choices\nexplicit and assign effort to complete research plans.\nEach node stores a plan, its recorded outcomes, and branch statistics. A reflector constructs these\nplans; a coding agent executes them. Each plan is a structured Markdown document specifying a\nresearch question or proposed change and its implementation strategy (Appendix F). An edges\u2192s \u2032\nrecords a reflector-generated modification of the parent's research strategy. Each modification is\nstored as an executable diff.py together with a description and prior estimate, allowing the child\nplan to be reconstructed from its parent. Recording the modification alongside parent and child\noutcomes makes the development of a research strategy traceable and gives the reflector concrete\nevidence for its next revision. Because a plan is stored independently of the executor's conversation,\na candidate direction can "
+              }
+            ],
+            "text": "plan tree Tt to make these choices\nexplicit and assign effort to complete research plans.\nEach node stores a plan, its recorded outcomes, and branch statistics. A reflector constructs these\nplans; a coding agent executes them. Each plan is a structured Markdown document specifying a\nresearch question or proposed change and its implementation strategy (Appendix F). An edges\u2192s \u2032\nrecords a reflector-generated modification of the parent's research strategy. Each modification is\nstored as an executable diff.py together with a description and prior estimate, allowing the child\nplan to be reconstructed from its parent. Recording the modification alongside parent and child\noutcomes makes the development of a research strategy traceable and gives the reflector concrete\nevidence for its next revision. Because a plan is stored independently of the executor's conversation,\na candidate direction can "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0031"
+        ],
+        "excerpt": "Exploring a new direction produces evidence that can improve later research decisions, while refining\na promising plan can improve the current result. The balance between these uses of research effort\n5\ndepends on both observed outcomes and the resources available to act on further evidence. We\nimplement this allocation policy within the Monte Carlo tree search (MCTS) framework [31, 4].\nSelection.An attempt made early can supply evidence for subsequent allocations; as resources are\nconsumed, fewer opportunities remain to act on that evidence. TheSelect a planstep in Figure 2 uses\nthe remaining-budget ratio to adjust how strongly selection favors high-value branches [33].\nSelection traverses the tree to an eligible node. Starting from the root, the policy samples a childv of\nnodeuwith probability proportional to\nwt(v) =\n(\nQ(v)\u03b1t vhas been evaluated,\u0000\nQ(u)\np\nP(v)\n\u0001\u03b1t\nvis unvisited. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 5,
+        "pages": [
+          5,
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adaptive Mcts-Based Effort Allocation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0e5c06d6ab24db9c0c1fb021ea800bcd6e7c986fc1a1336916913ca20d8ebd6c",
+            "evidence_id": "Ea9812fd9c0153b50-B0031",
+            "pages": [
+              5,
+              6
+            ],
+            "section": "Adaptive Mcts-Based Effort Allocation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 202,
+                "page": 5,
+                "section": "Adaptive Mcts-Based Effort Allocation",
+                "section_index": 14,
+                "start": 0,
+                "text": "Exploring a new direction produces evidence that can improve later research decisions, while refining\na promising plan can improve the current result. The balance between these uses of research effort\n5"
+              },
+              {
+                "end": 690,
+                "page": 6,
+                "section": "Adaptive Mcts-Based Effort Allocation",
+                "section_index": 15,
+                "start": 0,
+                "text": "depends on both observed outcomes and the resources available to act on further evidence. We\nimplement this allocation policy within the Monte Carlo tree search (MCTS) framework [31, 4].\nSelection.An attempt made early can supply evidence for subsequent allocations; as resources are\nconsumed, fewer opportunities remain to act on that evidence. TheSelect a planstep in Figure 2 uses\nthe remaining-budget ratio to adjust how strongly selection favors high-value branches [33].\nSelection traverses the tree to an eligible node. Starting from the root, the policy samples a childv of\nnodeuwith probability proportional to\nwt(v) =\n(\nQ(v)\u03b1t vhas been evaluated,\u0000\nQ(u)\np\nP(v)\n\u0001\u03b1t\nvis unvisited. "
+              }
+            ],
+            "text": "Exploring a new direction produces evidence that can improve later research decisions, while refining\na promising plan can improve the current result. The balance between these uses of research effort\n5\ndepends on both observed outcomes and the resources available to act on further evidence. We\nimplement this allocation policy within the Monte Carlo tree search (MCTS) framework [31, 4].\nSelection.An attempt made early can supply evidence for subsequent allocations; as resources are\nconsumed, fewer opportunities remain to act on that evidence. TheSelect a planstep in Figure 2 uses\nthe remaining-budget ratio to adjust how strongly selection favors high-value branches [33].\nSelection traverses the tree to an eligible node. Starting from the root, the policy samples a childv of\nnodeuwith probability proportional to\nwt(v) =\n(\nQ(v)\u03b1t vhas been evaluated,\u0000\nQ(u)\np\nP(v)\n\u0001\u03b1t\nvis unvisited. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0032"
+        ],
+        "excerpt": "(4)\nHereQ(v) denotes empirical branch value andP(v)\u2208[0,1] the reflector's prior for an unvisited\nchild. Until a child is evaluated, its weight combines this prior with the parent value Q(u). If\nQ(u) = 0, the implementation uses the prior alone, with a positive floor on sampling weights.\nSelection concentration is controlled by\n\u03b1t = min\n\u0012 1\nrt\n,\u03b1 max\n\u0013\n, r t = B\u2212U t\nB ,(5)\nwith \u03b1max = 10 in the reported experiments. With most resources remaining, selection stays\ncomparatively dispersed. As resources are consumed, larger exponents concentrate selection on\nhigher-value branches. Thus, even with the same observed branch values, different remaining budgets\ninduce different allocation distributions. Section 4.3 compares allocation policies with the executor,\nreflector, tree representation, and evaluation procedure held fixed.\nExpansion.The reflector first drafts a root plan from the task ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Adaptive Mcts-Based Effort Allocation",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "1f5e52b2124811874d2dcbf3eb41d72482db8442e1fbca45e15c7437254dacd2",
+            "evidence_id": "Ea9812fd9c0153b50-B0032",
+            "pages": [
+              6
+            ],
+            "section": "Adaptive Mcts-Based Effort Allocation",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1585,
+                "page": 6,
+                "section": "Adaptive Mcts-Based Effort Allocation",
+                "section_index": 15,
+                "start": 690,
+                "text": "(4)\nHereQ(v) denotes empirical branch value andP(v)\u2208[0,1] the reflector's prior for an unvisited\nchild. Until a child is evaluated, its weight combines this prior with the parent value Q(u). If\nQ(u) = 0, the implementation uses the prior alone, with a positive floor on sampling weights.\nSelection concentration is controlled by\n\u03b1t = min\n\u0012 1\nrt\n,\u03b1 max\n\u0013\n, r t = B\u2212U t\nB ,(5)\nwith \u03b1max = 10 in the reported experiments. With most resources remaining, selection stays\ncomparatively dispersed. As resources are consumed, larger exponents concentrate selection on\nhigher-value branches. Thus, even with the same observed branch values, different remaining budgets\ninduce different allocation distributions. Section 4.3 compares allocation policies with the executor,\nreflector, tree representation, and evaluation procedure held fixed.\nExpansion.The reflector first drafts a root plan from the task "
+              }
+            ],
+            "text": "(4)\nHereQ(v) denotes empirical branch value andP(v)\u2208[0,1] the reflector's prior for an unvisited\nchild. Until a child is evaluated, its weight combines this prior with the parent value Q(u). If\nQ(u) = 0, the implementation uses the prior alone, with a positive floor on sampling weights.\nSelection concentration is controlled by\n\u03b1t = min\n\u0012 1\nrt\n,\u03b1 max\n\u0013\n, r t = B\u2212U t\nB ,(5)\nwith \u03b1max = 10 in the reported experiments. With most resources remaining, selection stays\ncomparatively dispersed. As resources are consumed, larger exponents concentrate selection on\nhigher-value branches. Thus, even with the same observed branch values, different remaining budgets\ninduce different allocation distributions. Section 4.3 compares allocation policies with the executor,\nreflector, tree representation, and evaluation procedure held fixed.\nExpansion.The reflector first drafts a root plan from the task "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0035"
+        ],
+        "excerpt": "Benchmarks.Our evaluation spans three complementary areas of autonomous research: AI research,\nsystems and code optimization, and machine learning engineering. This breadth tests research\nallocation across experimental design, implementation strategy, and model development.FIRE-\nBench[ 58] evaluates agents on the rediscovery of well-established AI research findings. Given a\nresearch question, datasets, and experimental requirements, the agent implements experiments and\nreports conclusions; the benchmark's claim-level evaluator, based on RAGChecker [44], compares\nthese conclusions with reference findings, and we report F1.AutoLab[ 60] tests performance\noptimization under correctness constraints. We evaluate its eight systems-optimization and puzzle\n6\nTable 2.Systems and code optimization on AutoLab. PRIMESCIENTIST achieves higher overall\nreward with fewer research attempts than ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4a89761894a2fc5fd85641e196b5e063242a6cd650044f94cffb441921e135eb",
+            "evidence_id": "Ea9812fd9c0153b50-B0035",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 759,
+                "page": 6,
+                "section": "Experimental Setup",
+                "section_index": 16,
+                "start": 0,
+                "text": "Benchmarks.Our evaluation spans three complementary areas of autonomous research: AI research,\nsystems and code optimization, and machine learning engineering. This breadth tests research\nallocation across experimental design, implementation strategy, and model development.FIRE-\nBench[ 58] evaluates agents on the rediscovery of well-established AI research findings. Given a\nresearch question, datasets, and experimental requirements, the agent implements experiments and\nreports conclusions; the benchmark's claim-level evaluator, based on RAGChecker [44], compares\nthese conclusions with reference findings, and we report F1.AutoLab[ 60] tests performance\noptimization under correctness constraints. We evaluate its eight systems-optimization and puzzle\n6"
+              },
+              {
+                "end": 130,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 0,
+                "text": "Table 2.Systems and code optimization on AutoLab. PRIMESCIENTIST achieves higher overall\nreward with fewer research attempts than "
+              }
+            ],
+            "text": "Benchmarks.Our evaluation spans three complementary areas of autonomous research: AI research,\nsystems and code optimization, and machine learning engineering. This breadth tests research\nallocation across experimental design, implementation strategy, and model development.FIRE-\nBench[ 58] evaluates agents on the rediscovery of well-established AI research findings. Given a\nresearch question, datasets, and experimental requirements, the agent implements experiments and\nreports conclusions; the benchmark's claim-level evaluator, based on RAGChecker [44], compares\nthese conclusions with reference findings, and we report F1.AutoLab[ 60] tests performance\noptimization under correctness constraints. We evaluate its eight systems-optimization and puzzle\n6\nTable 2.Systems and code optimization on AutoLab. PRIMESCIENTIST achieves higher overall\nreward with fewer research attempts than "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0036"
+        ],
+        "excerpt": "AutoResearch. Each configuration uses one GPT-5 search\nwith a 1.5M-token budget. The AutoLab columns give the benchmark's published baseline.\nPRIMESCIENTISTAutoResearch Single-run Agent AutoLab\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts Max reward #Attempts\nGaussian Blur0.5122 10 0.5165 20 0.0000 1 0.1376 1\nHash Join0.6306 12 0.6376 16 0.6019 1 0.5484 1\nConcurrent KV WAL0.6335 10 0.5946 18 0.4844 1 0.4824 1\nFlash Attention0.3572 11 0.3781 16 0.2029 1 0.2240 1\nFFT (Rust)0.5192 14 0.5317 25 0.5002 1 0.4444 1\nVLIW Scheduler0.5350 9 0.5350 25 0.4620 1 0.5965 1\nSmallest Game Player0.3224 8 0.0000 7 0.0000 1 0.0000 1\nSha256 Throughput0.3490 6 0.3491 13 0.0106 1 0.0000 1\nAverage0.4824 10.0 0.4428 17.5 0.2828 1 0.3042 1\ntasks, using throughput-based rewards for the optimization tasks.MLE-Bench[5] evaluates end-to-end\nmachine learning engineering on historical Kaggle ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "a7a5932babf66f3d842aaa2a4273e27ba99b632b640e2b76adb33cacb03bfdc0",
+            "evidence_id": "Ea9812fd9c0153b50-B0036",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1026,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 130,
+                "text": "AutoResearch. Each configuration uses one GPT-5 search\nwith a 1.5M-token budget. The AutoLab columns give the benchmark's published baseline.\nPRIMESCIENTISTAutoResearch Single-run Agent AutoLab\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts Max reward #Attempts\nGaussian Blur0.5122 10 0.5165 20 0.0000 1 0.1376 1\nHash Join0.6306 12 0.6376 16 0.6019 1 0.5484 1\nConcurrent KV WAL0.6335 10 0.5946 18 0.4844 1 0.4824 1\nFlash Attention0.3572 11 0.3781 16 0.2029 1 0.2240 1\nFFT (Rust)0.5192 14 0.5317 25 0.5002 1 0.4444 1\nVLIW Scheduler0.5350 9 0.5350 25 0.4620 1 0.5965 1\nSmallest Game Player0.3224 8 0.0000 7 0.0000 1 0.0000 1\nSha256 Throughput0.3490 6 0.3491 13 0.0106 1 0.0000 1\nAverage0.4824 10.0 0.4428 17.5 0.2828 1 0.3042 1\ntasks, using throughput-based rewards for the optimization tasks.MLE-Bench[5] evaluates end-to-end\nmachine learning engineering on historical Kaggle "
+              }
+            ],
+            "text": "AutoResearch. Each configuration uses one GPT-5 search\nwith a 1.5M-token budget. The AutoLab columns give the benchmark's published baseline.\nPRIMESCIENTISTAutoResearch Single-run Agent AutoLab\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts Max reward #Attempts\nGaussian Blur0.5122 10 0.5165 20 0.0000 1 0.1376 1\nHash Join0.6306 12 0.6376 16 0.6019 1 0.5484 1\nConcurrent KV WAL0.6335 10 0.5946 18 0.4844 1 0.4824 1\nFlash Attention0.3572 11 0.3781 16 0.2029 1 0.2240 1\nFFT (Rust)0.5192 14 0.5317 25 0.5002 1 0.4444 1\nVLIW Scheduler0.5350 9 0.5350 25 0.4620 1 0.5965 1\nSmallest Game Player0.3224 8 0.0000 7 0.0000 1 0.0000 1\nSha256 Throughput0.3490 6 0.3491 13 0.0106 1 0.0000 1\nAverage0.4824 10.0 0.4428 17.5 0.2828 1 0.3042 1\ntasks, using throughput-based rewards for the optimization tasks.MLE-Bench[5] evaluates end-to-end\nmachine learning engineering on historical Kaggle "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0037"
+        ],
+        "excerpt": "competitions. We report the task-specific scores\nand metric directions shown in Table 4. Appendix E describes the tasks across all three benchmarks.\nEvaluation metrics.We report the best task score and the number ofresearch attempts(#Attempts)\nused under the stated inference budget. Task scores follow the benchmark metrics and directions\ndescribed above. One research attempt is a complete executor invocation covering implementation,\nexperimentation, and analysis; executing the same plan again counts as another attempt. Assessing\nscores and attempts together measures research sample efficiency. Achieving comparable quality\nwith fewer attempts requires fewer complete empirical tests of research directions. Both agents' input\nand output tokens count toward the budget, including the planning used to select those directions. For\nMLE-Bench, the reported counts cover attempts that produce ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "61f46b2baef98720e44d46f8e1868b6af3675b9452308903242211ea778c70b7",
+            "evidence_id": "Ea9812fd9c0153b50-B0037",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1921,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 1026,
+                "text": "competitions. We report the task-specific scores\nand metric directions shown in Table 4. Appendix E describes the tasks across all three benchmarks.\nEvaluation metrics.We report the best task score and the number ofresearch attempts(#Attempts)\nused under the stated inference budget. Task scores follow the benchmark metrics and directions\ndescribed above. One research attempt is a complete executor invocation covering implementation,\nexperimentation, and analysis; executing the same plan again counts as another attempt. Assessing\nscores and attempts together measures research sample efficiency. Achieving comparable quality\nwith fewer attempts requires fewer complete empirical tests of research directions. Both agents' input\nand output tokens count toward the budget, including the planning used to select those directions. For\nMLE-Bench, the reported counts cover attempts that produce "
+              }
+            ],
+            "text": "competitions. We report the task-specific scores\nand metric directions shown in Table 4. Appendix E describes the tasks across all three benchmarks.\nEvaluation metrics.We report the best task score and the number ofresearch attempts(#Attempts)\nused under the stated inference budget. Task scores follow the benchmark metrics and directions\ndescribed above. One research attempt is a complete executor invocation covering implementation,\nexperimentation, and analysis; executing the same plan again counts as another attempt. Assessing\nscores and attempts together measures research sample efficiency. Achieving comparable quality\nwith fewer attempts requires fewer complete empirical tests of research directions. Both agents' input\nand output tokens count toward the budget, including the planning used to select those directions. For\nMLE-Bench, the reported counts cover attempts that produce "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0038"
+        ],
+        "excerpt": "valid task scores. We compare methods\nunder token budgets, without matching elapsed time or CPU/GPU hours. Other costs could enter the\ncomparison through a common monetary unit; separate resource budgets remain future work.\nImplementation details.The executor and reflector use GPT-5 through the Codex CLI, with a\nshared token budget B= 1.5\u00d710 6 per task. The primary GPT-5 results report one complete\nsearch per configuration. The main comparisons also impose limits on research attempts: 25 on\nAutoLab and MLE-Bench, and 30 on FIRE-Bench. Search uses at most m= 3 child proposals\nper expansion, exponent cap \u03b1max = 10 , and pruning threshold \u03b4= 0.05 . A child is excluded\nfrom subsequent selection if its reward falls more than \u03b4 below its parent's current branch value\nQ, provided Q >0 ; if all children of a selected node are pruned, reflection can propose further\nvariants. On FIRE-Bench, each ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Experimental Setup",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e7ef39776f468ed9d6706f90897dfbe9740df642912f1c38d1b28a48c19b0f08",
+            "evidence_id": "Ea9812fd9c0153b50-B0038",
+            "pages": [
+              7
+            ],
+            "section": "Experimental Setup",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2820,
+                "page": 7,
+                "section": "Experimental Setup",
+                "section_index": 17,
+                "start": 1921,
+                "text": "valid task scores. We compare methods\nunder token budgets, without matching elapsed time or CPU/GPU hours. Other costs could enter the\ncomparison through a common monetary unit; separate resource budgets remain future work.\nImplementation details.The executor and reflector use GPT-5 through the Codex CLI, with a\nshared token budget B= 1.5\u00d710 6 per task. The primary GPT-5 results report one complete\nsearch per configuration. The main comparisons also impose limits on research attempts: 25 on\nAutoLab and MLE-Bench, and 30 on FIRE-Bench. Search uses at most m= 3 child proposals\nper expansion, exponent cap \u03b1max = 10 , and pruning threshold \u03b4= 0.05 . A child is excluded\nfrom subsequent selection if its reward falls more than \u03b4 below its parent's current branch value\nQ, provided Q >0 ; if all children of a selected node are pruned, reflection can propose further\nvariants. On FIRE-Bench, each "
+              }
+            ],
+            "text": "valid task scores. We compare methods\nunder token budgets, without matching elapsed time or CPU/GPU hours. Other costs could enter the\ncomparison through a common monetary unit; separate resource budgets remain future work.\nImplementation details.The executor and reflector use GPT-5 through the Codex CLI, with a\nshared token budget B= 1.5\u00d710 6 per task. The primary GPT-5 results report one complete\nsearch per configuration. The main comparisons also impose limits on research attempts: 25 on\nAutoLab and MLE-Bench, and 30 on FIRE-Bench. Search uses at most m= 3 child proposals\nper expansion, exponent cap \u03b1max = 10 , and pruning threshold \u03b4= 0.05 . A child is excluded\nfrom subsequent selection if its reward falls more than \u03b4 below its parent's current branch value\nQ, provided Q >0 ; if all children of a selected node are pruned, reflection can propose further\nvariants. On FIRE-Bench, each "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0041"
+        ],
+        "excerpt": "Higher AI research quality with fewer attempts.On FIRE-Bench (Table 3), PRIMESCIENTIST ob-\ntains an average reward of 0.7738, compared with 0.7018 for AutoResearch, while reducing research\n7\nTable 3.AI research on FIRE-Bench. PRIMESCIENTIST achieves higher research quality with\nabout half as many attempts as AutoResearch. Results report best F1 from one GPT-5 search per\nconfiguration (1.5M tokens).#Attemptsincludes both executions per PRIMESCIENTISTplan.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts\nActivation Control0.3810 10 0.4400 24 0.2220 1\nSECA Hallucination0.6980 16 0.6320 30 0.6320 1\nQuestBench0.6820 16 0.7500 25 0.4000 1\nLearning Order Agreement0.8570 12 0.8570 30 0.8000 1\nLLM Value Consistency0.8890 14 0.7270 30 0.3330 1\nT o CoT or not to CoT0.8570 16 0.7740 27 0.6000 1\nGrokking or Not0.4900 14 0.5000 23 0.0000 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "6d886060639e847453e3047527213861b36fa8c3ff288d757fbb51790d0ad1c4",
+            "evidence_id": "Ea9812fd9c0153b50-B0041",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 190,
+                "page": 7,
+                "section": "Main Results",
+                "section_index": 18,
+                "start": 0,
+                "text": "Higher AI research quality with fewer attempts.On FIRE-Bench (Table 3), PRIMESCIENTIST ob-\ntains an average reward of 0.7738, compared with 0.7018 for AutoResearch, while reducing research\n7"
+              },
+              {
+                "end": 708,
+                "page": 8,
+                "section": "Main Results",
+                "section_index": 19,
+                "start": 0,
+                "text": "Table 3.AI research on FIRE-Bench. PRIMESCIENTIST achieves higher research quality with\nabout half as many attempts as AutoResearch. Results report best F1 from one GPT-5 search per\nconfiguration (1.5M tokens).#Attemptsincludes both executions per PRIMESCIENTISTplan.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts\nActivation Control0.3810 10 0.4400 24 0.2220 1\nSECA Hallucination0.6980 16 0.6320 30 0.6320 1\nQuestBench0.6820 16 0.7500 25 0.4000 1\nLearning Order Agreement0.8570 12 0.8570 30 0.8000 1\nLLM Value Consistency0.8890 14 0.7270 30 0.3330 1\nT o CoT or not to CoT0.8570 16 0.7740 27 0.6000 1\nGrokking or Not0.4900 14 0.5000 23 0.0000 "
+              }
+            ],
+            "text": "Higher AI research quality with fewer attempts.On FIRE-Bench (Table 3), PRIMESCIENTIST ob-\ntains an average reward of 0.7738, compared with 0.7018 for AutoResearch, while reducing research\n7\nTable 3.AI research on FIRE-Bench. PRIMESCIENTIST achieves higher research quality with\nabout half as many attempts as AutoResearch. Results report best F1 from one GPT-5 search per\nconfiguration (1.5M tokens).#Attemptsincludes both executions per PRIMESCIENTISTplan.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Max reward #Attempts Max reward #Attempts Max reward #Attempts\nActivation Control0.3810 10 0.4400 24 0.2220 1\nSECA Hallucination0.6980 16 0.6320 30 0.6320 1\nQuestBench0.6820 16 0.7500 25 0.4000 1\nLearning Order Agreement0.8570 12 0.8570 30 0.8000 1\nLLM Value Consistency0.8890 14 0.7270 30 0.3330 1\nT o CoT or not to CoT0.8570 16 0.7740 27 0.6000 1\nGrokking or Not0.4900 14 0.5000 23 0.0000 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0042"
+        ],
+        "excerpt": "1\nMax Suppression0.7740 16 0.7060 25 0.0000 1\nNeural Collapse Losses1.0000 4 1.0000 25 0.0000 1\nCoT Faithfulness Gaps0.8890 16 0.7500 29 0.0000 1\nLost in The Middle0.7690 14 0.8570 30 0.6450 1\nMCQ Selection Bias1.0000 12 0.4290 26 0.1430 1\nAverage0.7738 13.33 0.7018 27.0 0.3146 1\nTable 4.Machine learning engineering on MLE-Bench. PRIMESCIENTIST achieves comparable\nscores with fewer research attempts. Best scores come from one GPT-5 search per configuration\n(1.5M tokens).#Attemptscounts research attempts that return a valid task score.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Best score #Attempts Best score #Attempts Best score #Attempts\nAPTOS 2019 Blindness(\u2191) 0.8017 11 0.7922 21 0.1004 1\nNOMAD 2018(\u2193) 0.0597 15 0.0591 25 0.0637 1\nPlant Pathology 2020(\u2191) 0.8208 15 0.8149 24 0.5185 1\nSpooky Author ID(\u2193) 0.3704 13 0.3698 22 0.3767 1\nattempts from 27.0 to 13.33. Across the twelve ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "571b82a7580490575ff9e0f1b0464b17a72329566cf6c31d9168f1858f139678",
+            "evidence_id": "Ea9812fd9c0153b50-B0042",
+            "pages": [
+              8
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1606,
+                "page": 8,
+                "section": "Main Results",
+                "section_index": 19,
+                "start": 708,
+                "text": "1\nMax Suppression0.7740 16 0.7060 25 0.0000 1\nNeural Collapse Losses1.0000 4 1.0000 25 0.0000 1\nCoT Faithfulness Gaps0.8890 16 0.7500 29 0.0000 1\nLost in The Middle0.7690 14 0.8570 30 0.6450 1\nMCQ Selection Bias1.0000 12 0.4290 26 0.1430 1\nAverage0.7738 13.33 0.7018 27.0 0.3146 1\nTable 4.Machine learning engineering on MLE-Bench. PRIMESCIENTIST achieves comparable\nscores with fewer research attempts. Best scores come from one GPT-5 search per configuration\n(1.5M tokens).#Attemptscounts research attempts that return a valid task score.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Best score #Attempts Best score #Attempts Best score #Attempts\nAPTOS 2019 Blindness(\u2191) 0.8017 11 0.7922 21 0.1004 1\nNOMAD 2018(\u2193) 0.0597 15 0.0591 25 0.0637 1\nPlant Pathology 2020(\u2191) 0.8208 15 0.8149 24 0.5185 1\nSpooky Author ID(\u2193) 0.3704 13 0.3698 22 0.3767 1\nattempts from 27.0 to 13.33. Across the twelve "
+              }
+            ],
+            "text": "1\nMax Suppression0.7740 16 0.7060 25 0.0000 1\nNeural Collapse Losses1.0000 4 1.0000 25 0.0000 1\nCoT Faithfulness Gaps0.8890 16 0.7500 29 0.0000 1\nLost in The Middle0.7690 14 0.8570 30 0.6450 1\nMCQ Selection Bias1.0000 12 0.4290 26 0.1430 1\nAverage0.7738 13.33 0.7018 27.0 0.3146 1\nTable 4.Machine learning engineering on MLE-Bench. PRIMESCIENTIST achieves comparable\nscores with fewer research attempts. Best scores come from one GPT-5 search per configuration\n(1.5M tokens).#Attemptscounts research attempts that return a valid task score.\nPRIMESCIENTISTAutoResearch Single-run Agent\nTask Best score #Attempts Best score #Attempts Best score #Attempts\nAPTOS 2019 Blindness(\u2191) 0.8017 11 0.7922 21 0.1004 1\nNOMAD 2018(\u2193) 0.0597 15 0.0591 25 0.0637 1\nPlant Pathology 2020(\u2191) 0.8208 15 0.8149 24 0.5185 1\nSpooky Author ID(\u2193) 0.3704 13 0.3698 22 0.3767 1\nattempts from 27.0 to 13.33. Across the twelve "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0046"
+        ],
+        "excerpt": "0.517\nFlash Attention0.357 0.304 0.301 0.341\nHash Join0.631 0.619 0.625 0.591\nGaussian Blur0.512 0.394 0.488 0.516\nAverage(8 tasks) 0.598 0.551 0.563 0.546\nTable 6.Adapting exploration improves reward over fixed policies. PRIMESCIENTIST adapts the\nsampling exponent to the remaining budget; the alternatives hold it constant. Both agents use GPT-\n5-mini with a shared 1M-token budget. Entries give mean maximum reward (population standard\ndeviation) over three independent searches for PRIMESCIENTISTand two per fixed policy.\nBenchmark Task PRIMESCIENTISTRandom(\u03b1=0)Fixed(\u03b1=3)Greedy(\u03b1=10)\n(n=3) (n=2) (n=2) (n=2)\nFIRE-Bench\nActivation Control0.314 (0.010) 0.245 (0.034) 0.203 (0.016) 0.279 (0.045)\nQuestBench0.555 (0.085) 0.664 (0.064) 0.467 (0.005) 0.431 (0.031)\nLLM Value Consistency0.850 (0.108) 0.856 (0.067) 0.656 (0.071) 0.962 (0.038)\nAutoLab\nConcurrent KV WAL0.583 (0.020) 0.369 (0.084) 0.499 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Main Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7e47b4af91087c24434ca58e3058b53ecab4ffe0064943c84eac732e78c3fa95",
+            "evidence_id": "Ea9812fd9c0153b50-B0046",
+            "pages": [
+              9
+            ],
+            "section": "Main Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1447,
+                "page": 9,
+                "section": "Main Results",
+                "section_index": 20,
+                "start": 547,
+                "text": "0.517\nFlash Attention0.357 0.304 0.301 0.341\nHash Join0.631 0.619 0.625 0.591\nGaussian Blur0.512 0.394 0.488 0.516\nAverage(8 tasks) 0.598 0.551 0.563 0.546\nTable 6.Adapting exploration improves reward over fixed policies. PRIMESCIENTIST adapts the\nsampling exponent to the remaining budget; the alternatives hold it constant. Both agents use GPT-\n5-mini with a shared 1M-token budget. Entries give mean maximum reward (population standard\ndeviation) over three independent searches for PRIMESCIENTISTand two per fixed policy.\nBenchmark Task PRIMESCIENTISTRandom(\u03b1=0)Fixed(\u03b1=3)Greedy(\u03b1=10)\n(n=3) (n=2) (n=2) (n=2)\nFIRE-Bench\nActivation Control0.314 (0.010) 0.245 (0.034) 0.203 (0.016) 0.279 (0.045)\nQuestBench0.555 (0.085) 0.664 (0.064) 0.467 (0.005) 0.431 (0.031)\nLLM Value Consistency0.850 (0.108) 0.856 (0.067) 0.656 (0.071) 0.962 (0.038)\nAutoLab\nConcurrent KV WAL0.583 (0.020) 0.369 (0.084) 0.499 "
+              }
+            ],
+            "text": "0.517\nFlash Attention0.357 0.304 0.301 0.341\nHash Join0.631 0.619 0.625 0.591\nGaussian Blur0.512 0.394 0.488 0.516\nAverage(8 tasks) 0.598 0.551 0.563 0.546\nTable 6.Adapting exploration improves reward over fixed policies. PRIMESCIENTIST adapts the\nsampling exponent to the remaining budget; the alternatives hold it constant. Both agents use GPT-\n5-mini with a shared 1M-token budget. Entries give mean maximum reward (population standard\ndeviation) over three independent searches for PRIMESCIENTISTand two per fixed policy.\nBenchmark Task PRIMESCIENTISTRandom(\u03b1=0)Fixed(\u03b1=3)Greedy(\u03b1=10)\n(n=3) (n=2) (n=2) (n=2)\nFIRE-Bench\nActivation Control0.314 (0.010) 0.245 (0.034) 0.203 (0.016) 0.279 (0.045)\nQuestBench0.555 (0.085) 0.664 (0.064) 0.467 (0.005) 0.431 (0.031)\nLLM Value Consistency0.850 (0.108) 0.856 (0.067) 0.656 (0.071) 0.962 (0.038)\nAutoLab\nConcurrent KV WAL0.583 (0.020) 0.369 (0.084) 0.499 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0049"
+        ],
+        "excerpt": "FIRE-Bench and four from AutoLab, listed in Table 5.\nAdaptive plan selection improves overall reward.Table 5 reports an average reward of 0.598\nfor PRIMESCIENTIST 's policy, compared with 0.551 forUCT, 0.563 forGreedy, and 0.546 for\nRandom. Only the allocation policy changes in this comparison, linking the higher overall reward\nto how research effort is distributed across plans. PRIMESCIENTIST exceedsUCTon seven tasks\nand matches it on the eighth. The gain therefore extends across the evaluated subset, even though\nboth policies use the same plan representation and reflector.Randomleads onSECA Hallucination\nandGaussian Blur, showing that the best policy can differ across tasks.\n9\nTable 7.Comparable reward with fewer research attempts on AutoLab.Three independent\nGPT-5-mini searches per configuration (1M tokens each) test consistency. Rewards are mean \u00b1\npopulation standard ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9,
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Eight-Task Subset Contains Four Tasks From",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "85366146250e1cbc3ae74429aa60b478a293dcadddf0a217297bef241514953c",
+            "evidence_id": "Ea9812fd9c0153b50-B0049",
+            "pages": [
+              9,
+              10
+            ],
+            "section": "The Eight-Task Subset Contains Four Tasks From",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 687,
+                "page": 9,
+                "section": "The Eight-Task Subset Contains Four Tasks From",
+                "section_index": 22,
+                "start": 0,
+                "text": "FIRE-Bench and four from AutoLab, listed in Table 5.\nAdaptive plan selection improves overall reward.Table 5 reports an average reward of 0.598\nfor PRIMESCIENTIST 's policy, compared with 0.551 forUCT, 0.563 forGreedy, and 0.546 for\nRandom. Only the allocation policy changes in this comparison, linking the higher overall reward\nto how research effort is distributed across plans. PRIMESCIENTIST exceedsUCTon seven tasks\nand matches it on the eighth. The gain therefore extends across the evaluated subset, even though\nboth policies use the same plan representation and reflector.Randomleads onSECA Hallucination\nandGaussian Blur, showing that the best policy can differ across tasks.\n9"
+              },
+              {
+                "end": 196,
+                "page": 10,
+                "section": "The Eight-Task Subset Contains Four Tasks From",
+                "section_index": 23,
+                "start": 0,
+                "text": "Table 7.Comparable reward with fewer research attempts on AutoLab.Three independent\nGPT-5-mini searches per configuration (1M tokens each) test consistency. Rewards are mean \u00b1\npopulation standard "
+              }
+            ],
+            "text": "FIRE-Bench and four from AutoLab, listed in Table 5.\nAdaptive plan selection improves overall reward.Table 5 reports an average reward of 0.598\nfor PRIMESCIENTIST 's policy, compared with 0.551 forUCT, 0.563 forGreedy, and 0.546 for\nRandom. Only the allocation policy changes in this comparison, linking the higher overall reward\nto how research effort is distributed across plans. PRIMESCIENTIST exceedsUCTon seven tasks\nand matches it on the eighth. The gain therefore extends across the evaluated subset, even though\nboth policies use the same plan representation and reflector.Randomleads onSECA Hallucination\nandGaussian Blur, showing that the best policy can differ across tasks.\n9\nTable 7.Comparable reward with fewer research attempts on AutoLab.Three independent\nGPT-5-mini searches per configuration (1M tokens each) test consistency. Rewards are mean \u00b1\npopulation standard "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0050"
+        ],
+        "excerpt": "deviation;#Attemptsis the mean count. The separateSmallest Game Playerrow\nreports maximum accuracy as mean (range), showing progress below its0.95reward threshold.\nPRIMESCIENTISTAutoResearch\nTask Max reward (mean\u00b1std) #Attempts Max reward (mean\u00b1std) #Attempts\nGaussian Blur0.4740\u00b10.0487 25.7 0.4859\u00b10.0145 29.3\nHash Join0.6259\u00b10.0029 27.0 0.6291\u00b10.0050 36.0\nConcurrent KV WAL0.5830\u00b10.0203 13.0 0.5608\u00b10.0377 25.7\nFlash Attention0.2939\u00b10.0372 17.3 0.2960\u00b10.0113 19.3\nFFT (Rust)0.5002\u00b10.0037 30.7 0.5133\u00b10.0151 41.0\nSha256 Throughput0.1410\u00b10.1523 16.0 0.1304\u00b10.1540 19.3\nAverage(6 tasks) 0.4363 21.6 0.4359 28.4\nAccuracy-gated task (excluded from the average); maximum accuracy: mean (range).\nSmallest Game Player0.926 (0.916\u20130.940) 12.3 0.918 (0.872\u20130.944) 22.0\nPrimeScientist (ours)\nFewer attempts to approach the other method's best score\nResearch attempts\nFull search (full bar)\nFigure 3:Fewer ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "The Eight-Task Subset Contains Four Tasks From",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5f50fd98899c5b6cc99e647160ff384bac76c91ca7ffd8364df7e18984d2fb8b",
+            "evidence_id": "Ea9812fd9c0153b50-B0050",
+            "pages": [
+              10
+            ],
+            "section": "The Eight-Task Subset Contains Four Tasks From",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1092,
+                "page": 10,
+                "section": "The Eight-Task Subset Contains Four Tasks From",
+                "section_index": 23,
+                "start": 196,
+                "text": "deviation;#Attemptsis the mean count. The separateSmallest Game Playerrow\nreports maximum accuracy as mean (range), showing progress below its0.95reward threshold.\nPRIMESCIENTISTAutoResearch\nTask Max reward (mean\u00b1std) #Attempts Max reward (mean\u00b1std) #Attempts\nGaussian Blur0.4740\u00b10.0487 25.7 0.4859\u00b10.0145 29.3\nHash Join0.6259\u00b10.0029 27.0 0.6291\u00b10.0050 36.0\nConcurrent KV WAL0.5830\u00b10.0203 13.0 0.5608\u00b10.0377 25.7\nFlash Attention0.2939\u00b10.0372 17.3 0.2960\u00b10.0113 19.3\nFFT (Rust)0.5002\u00b10.0037 30.7 0.5133\u00b10.0151 41.0\nSha256 Throughput0.1410\u00b10.1523 16.0 0.1304\u00b10.1540 19.3\nAverage(6 tasks) 0.4363 21.6 0.4359 28.4\nAccuracy-gated task (excluded from the average); maximum accuracy: mean (range).\nSmallest Game Player0.926 (0.916\u20130.940) 12.3 0.918 (0.872\u20130.944) 22.0\nPrimeScientist (ours)\nFewer attempts to approach the other method's best score\nResearch attempts\nFull search (full bar)\nFigure 3:Fewer "
+              }
+            ],
+            "text": "deviation;#Attemptsis the mean count. The separateSmallest Game Playerrow\nreports maximum accuracy as mean (range), showing progress below its0.95reward threshold.\nPRIMESCIENTISTAutoResearch\nTask Max reward (mean\u00b1std) #Attempts Max reward (mean\u00b1std) #Attempts\nGaussian Blur0.4740\u00b10.0487 25.7 0.4859\u00b10.0145 29.3\nHash Join0.6259\u00b10.0029 27.0 0.6291\u00b10.0050 36.0\nConcurrent KV WAL0.5830\u00b10.0203 13.0 0.5608\u00b10.0377 25.7\nFlash Attention0.2939\u00b10.0372 17.3 0.2960\u00b10.0113 19.3\nFFT (Rust)0.5002\u00b10.0037 30.7 0.5133\u00b10.0151 41.0\nSha256 Throughput0.1410\u00b10.1523 16.0 0.1304\u00b10.1540 19.3\nAverage(6 tasks) 0.4363 21.6 0.4359 28.4\nAccuracy-gated task (excluded from the average); maximum accuracy: mean (range).\nSmallest Game Player0.926 (0.916\u20130.940) 12.3 0.918 (0.872\u20130.944) 22.0\nPrimeScientist (ours)\nFewer attempts to approach the other method's best score\nResearch attempts\nFull search (full bar)\nFigure 3:Fewer "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0083"
+        ],
+        "excerpt": "A Limitations\nPlanning under limited resources.The reflector is a full LLM agent, and a reflection call can\nconsume tokens on the same order as a coding-agent run. Sharing budget B makes the balance\nbetween constructing alternatives and executing them explicit. The budget analysis in Appendix D.3\nidentifies task-dependent benefits at different budgets; characterizing the point at which further\nplanning is preferable to immediate execution remains an open research direction.\nScope of resource accounting.We measure inference cost in input and output tokens across\nboth agents, and experimental effort in complete executor invocations. Each invocation constitutes\none research attempt; its training workload, runtime, and monetary cost depend on the task and\nexecution environment. A shared token budget constrains inference expenditure, while realized\nconsumption depends on the completed ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "62bddd852b2f1820fbc98f08e2f1c117239a007a0e004cce5371ef6b92a48485",
+            "evidence_id": "Ea9812fd9c0153b50-B0083",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 893,
+                "page": 17,
+                "section": "Appendix: Limitations",
+                "section_index": 34,
+                "start": 0,
+                "text": "A Limitations\nPlanning under limited resources.The reflector is a full LLM agent, and a reflection call can\nconsume tokens on the same order as a coding-agent run. Sharing budget B makes the balance\nbetween constructing alternatives and executing them explicit. The budget analysis in Appendix D.3\nidentifies task-dependent benefits at different budgets; characterizing the point at which further\nplanning is preferable to immediate execution remains an open research direction.\nScope of resource accounting.We measure inference cost in input and output tokens across\nboth agents, and experimental effort in complete executor invocations. Each invocation constitutes\none research attempt; its training workload, runtime, and monetary cost depend on the task and\nexecution environment. A shared token budget constrains inference expenditure, while realized\nconsumption depends on the completed "
+              }
+            ],
+            "text": "A Limitations\nPlanning under limited resources.The reflector is a full LLM agent, and a reflection call can\nconsume tokens on the same order as a coding-agent run. Sharing budget B makes the balance\nbetween constructing alternatives and executing them explicit. The budget analysis in Appendix D.3\nidentifies task-dependent benefits at different budgets; characterizing the point at which further\nplanning is preferable to immediate execution remains an open research direction.\nScope of resource accounting.We measure inference cost in input and output tokens across\nboth agents, and experimental effort in complete executor invocations. Each invocation constitutes\none research attempt; its training workload, runtime, and monetary cost depend on the task and\nexecution environment. A shared token budget constrains inference expenditure, while realized\nconsumption depends on the completed "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0084"
+        ],
+        "excerpt": "actions and stopping point. Runtime is measured separately\nin Appendix D.4. Extending this accounting to monetary cost or energy requires the corresponding\nexecution measurements, hardware characteristics, and inference pricing.\nVariability across independent searches.Complete research attempts provide task-level evidence\nfor branch selection, with the amount of evidence determined by the available budget. On FIRE-\nBench, each plan is executed twice and the higher score is retained; both invocations count toward\ninference consumption and experimental effort. The two or three independent full-search repetitions\nin the GPT-5-mini setting characterize variability through descriptive means and standard deviations.\nLarger repeated-search panels would enable more precise estimates of small reward differences.\nStatistical significance and backbone effects require separate analysis. The primary ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e461299b3df264d9989cdc92ca7794fa401572a05e933be9918966428654afa4",
+            "evidence_id": "Ea9812fd9c0153b50-B0084",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 1793,
+                "page": 17,
+                "section": "Appendix: Limitations",
+                "section_index": 34,
+                "start": 893,
+                "text": "actions and stopping point. Runtime is measured separately\nin Appendix D.4. Extending this accounting to monetary cost or energy requires the corresponding\nexecution measurements, hardware characteristics, and inference pricing.\nVariability across independent searches.Complete research attempts provide task-level evidence\nfor branch selection, with the amount of evidence determined by the available budget. On FIRE-\nBench, each plan is executed twice and the higher score is retained; both invocations count toward\ninference consumption and experimental effort. The two or three independent full-search repetitions\nin the GPT-5-mini setting characterize variability through descriptive means and standard deviations.\nLarger repeated-search panels would enable more precise estimates of small reward differences.\nStatistical significance and backbone effects require separate analysis. The primary "
+              }
+            ],
+            "text": "actions and stopping point. Runtime is measured separately\nin Appendix D.4. Extending this accounting to monetary cost or energy requires the corresponding\nexecution measurements, hardware characteristics, and inference pricing.\nVariability across independent searches.Complete research attempts provide task-level evidence\nfor branch selection, with the amount of evidence determined by the available budget. On FIRE-\nBench, each plan is executed twice and the higher score is retained; both invocations count toward\ninference consumption and experimental effort. The two or three independent full-search repetitions\nin the GPT-5-mini setting characterize variability through descriptive means and standard deviations.\nLarger repeated-search panels would enable more precise estimates of small reward differences.\nStatistical significance and backbone effects require separate analysis. The primary "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0085"
+        ],
+        "excerpt": "GPT-5 setting\nuses a different budget and task coverage.\nPlan-level granularity. PRIMESCIENTIST allocates complete research attempts and receives their\nempirical outcomes after execution. This granularity connects strategic decisions to task-level\nevidence, while leaving decisions within an attempt to the coding agent. Even a narrowly specified\nplan modification requires another complete attempt for evaluation. The current method therefore\ncannot reallocate effort among intermediate implementation decisions during an ongoing execution.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 17,
+        "pages": [
+          17
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix: Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b77b0b1338e08b7e100e2586df44573c6b4d4b67ba5a4f32062825bc35f6d26d",
+            "evidence_id": "Ea9812fd9c0153b50-B0085",
+            "pages": [
+              17
+            ],
+            "section": "Appendix: Limitations",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2334,
+                "page": 17,
+                "section": "Appendix: Limitations",
+                "section_index": 34,
+                "start": 1793,
+                "text": "GPT-5 setting\nuses a different budget and task coverage.\nPlan-level granularity. PRIMESCIENTIST allocates complete research attempts and receives their\nempirical outcomes after execution. This granularity connects strategic decisions to task-level\nevidence, while leaving decisions within an attempt to the coding agent. Even a narrowly specified\nplan modification requires another complete attempt for evaluation. The current method therefore\ncannot reallocate effort among intermediate implementation decisions during an ongoing execution."
+              }
+            ],
+            "text": "GPT-5 setting\nuses a different budget and task coverage.\nPlan-level granularity. PRIMESCIENTIST allocates complete research attempts and receives their\nempirical outcomes after execution. This granularity connects strategic decisions to task-level\nevidence, while leaving decisions within an attempt to the coding agent. Even a narrowly specified\nplan modification requires another complete attempt for evaluation. The current method therefore\ncannot reallocate effort among intermediate implementation decisions during an ongoing execution."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      }
+    ],
+    "full_text_assessed": true,
+    "full_text_url": "https://arxiv.org/pdf/2609.17846",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [],
+    "missing_information": [
+      "No reproducible review or selection methodology was detected."
+    ],
     "overall_quality_score": null,
-    "paper_type": "unclear",
+    "paper_type": "survey_or_review",
     "positive_signals": [],
-    "promotion": {},
-    "rationale": "Scientific quality has not yet been assessed.",
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.17846",
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "The final outcomes are established by external benchmark evaluators and objective task metrics, not by the MCTS reward signal used to guide search.",
+          "final_evaluation_signal": "Headline outcomes are reported through external benchmark metrics: RAGChecker-based claim-level F1 against reference findings on FIRE-Bench, throughput and correctness-gated rewards on AutoLab, and held-out competition metrics on MLE-Bench.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "The MCTS allocation policy is guided by backpropagated empirical task rewards and the reflector's prior estimates over plan branches.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0002",
+          "Ea9812fd9c0153b50-B0003",
+          "Ea9812fd9c0153b50-B0022",
+          "Ea9812fd9c0153b50-B0028",
+          "Ea9812fd9c0153b50-B0031",
+          "Ea9812fd9c0153b50-B0032",
+          "Ea9812fd9c0153b50-B0035",
+          "Ea9812fd9c0153b50-B0036",
+          "Ea9812fd9c0153b50-B0037",
+          "Ea9812fd9c0153b50-B0038",
+          "Ea9812fd9c0153b50-B0041",
+          "Ea9812fd9c0153b50-B0042",
+          "Ea9812fd9c0153b50-B0046",
+          "Ea9812fd9c0153b50-B0049",
+          "Ea9812fd9c0153b50-B0050",
+          "Ea9812fd9c0153b50-B0083",
+          "Ea9812fd9c0153b50-B0084",
+          "Ea9812fd9c0153b50-B0085"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "cfd4173bcadaa1a8fc9d5958d6571b2aabe57587fbf05df7547729f2d10f48ea"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.17846",
+        "claim_evidence_alignment": "Reported results clearly demonstrate that PrimeScientist achieves higher or comparable task quality while substantially reducing the number of required experimental attempts under matched total token budgets (e.g., 10.3% higher average reward with 50.6% fewer attempts on FIRE-Bench). Ablations isolate the selection policy, showing that adapting exploration to the remaining budget directly improves overall outcomes.",
+        "context_id": "a9812fd9c0153b504fe7197b0a81358f4a59a4c5268af74d412f062bd5139f35",
+        "decision": "pass",
+        "evaluation_assessment": "The system is evaluated across three diverse autonomous research benchmarks: FIRE-Bench (12 scientific insight tasks), AutoLab (8 systems and code optimization tasks), and MLE-Bench (4 competitive ML engineering tasks). The evaluation includes matched token budget comparisons against AutoResearch, single-run baselines, and controlled policy ablations comparing the adaptive rule to UCT, Greedy, Random, and fixed exponents.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "not_applicable",
+          "corroboration_summary": "Final evaluation relies on external objective benchmark ground truth and metric verifiers independent of the agent's internal planning heuristics.",
+          "final_evaluation_signal": "Headline outcomes are established using external benchmark evaluation suites: RAGChecker claim-level F1 against reference findings for FIRE-Bench, throughput/runtime metrics under correctness checks for AutoLab, and held-out competition metrics (e.g., quadratic weighted kappa, RMSLE, ROC AUC) for MLE-Bench.",
+          "independent_corroboration": "not_applicable",
+          "optimization_signal": "Branch selection in MCTS is guided by the reflector's prior and backpropagated empirical task rewards obtained from previous node executions.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ea9812fd9c0153b50-B0002",
+          "Ea9812fd9c0153b50-B0003",
+          "Ea9812fd9c0153b50-B0022",
+          "Ea9812fd9c0153b50-B0028",
+          "Ea9812fd9c0153b50-B0031",
+          "Ea9812fd9c0153b50-B0032",
+          "Ea9812fd9c0153b50-B0035",
+          "Ea9812fd9c0153b50-B0036",
+          "Ea9812fd9c0153b50-B0037",
+          "Ea9812fd9c0153b50-B0038",
+          "Ea9812fd9c0153b50-B0041",
+          "Ea9812fd9c0153b50-B0042",
+          "Ea9812fd9c0153b50-B0046",
+          "Ea9812fd9c0153b50-B0049",
+          "Ea9812fd9c0153b50-B0050",
+          "Ea9812fd9c0153b50-B0083",
+          "Ea9812fd9c0153b50-B0084",
+          "Ea9812fd9c0153b50-B0085"
+        ],
+        "limitations": "The authors explicitly address limitations regarding the significant token overhead of LLM reflection (up to 38% of budget), evaluation restricted to inference tokens rather than wall-clock or GPU hours, attempt-level granularity preventing intra-attempt reallocation, and variance across stochastic LLM runs.",
+        "method_assessment": "The methodology is explicitly formalized, specifying action spaces for plan construction (reflection) and execution under a cumulative shared inference token budget. The adaptive MCTS mechanism modifies selection probability via an exponent determined by remaining resources, paired with structured diff-based plan modifications and parent-reward pruning.",
+        "quality_rationale": "The manuscript presents a conceptually sound and rigorously formulated contribution to autonomous agent research planning. Experimental comparisons and ablations are thorough, well-controlled, and transparently reported across multiple distinct domains, with claims that align directly with the empirical findings.",
+        "scoped_contribution": "The paper introduces PrimeScientist, an autonomous research framework that formalizes strategic research effort allocation as a sequential decision problem under a shared token budget. It combines an executable plan tree representation with an adaptive MCTS-based selection policy where remaining resource ratios dynamically modulate exploration and exploitation across research directions.",
+        "source_content_hash": "cfd4173bcadaa1a8fc9d5958d6571b2aabe57587fbf05df7547729f2d10f48ea"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The manuscript presents a conceptually sound and rigorously formulated contribution to autonomous agent research planning. Experimental comparisons and ablations are thorough, well-controlled, and transparently reported across multiple distinct domains, with claims that align directly with the empirical findings.",
     "recommendation": "unknown",
-    "rubric_version": null,
-    "source_content_hash": null,
-    "status": "not_assessed",
+    "rubric_version": "scholarly-rubric-v2",
+    "source_content_hash": "cfd4173bcadaa1a8fc9d5958d6571b2aabe57587fbf05df7547729f2d10f48ea",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "Manuscript evidence has not been reviewed."
+    "uncertainty": "The authors explicitly address limitations regarding the significant token overhead of LLM reflection (up to 38% of budget), evaluation restricted to inference tokens rather than wall-clock or GPU hours, attempt-level granularity preventing intra-attempt reallocation, and variance across stochastic LLM runs."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
@@ -169,7 +2261,7 @@
     "limitations_or_uncertainty": {
       "confidence": "high",
       "provenance": "rule",
-      "value": "Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed."
+      "value": "Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted."
     },
     "method_or_system_type": {
       "confidence": "medium",

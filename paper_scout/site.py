@@ -447,6 +447,18 @@ def _digest_quality_count(path: Path) -> int:
     return int(match.group(1)) if match else 0
 
 
+#: C0 control characters other than tab, newline and carriage return. Bounded full-text
+#: extraction emits NUL for glyphs pypdf cannot map -- mathematical symbols, mostly -- and
+#: those bytes reach a published page through the quality evidence excerpts. A NUL in an
+#: HTML file makes it non-text: `file` reports "data", Git treats it as binary, and a
+#: browser may stop parsing at the first one. Nothing legitimate in this output needs them.
+CONTROL_CHARACTERS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
+
+def _strip_control_characters(text: str) -> str:
+    return CONTROL_CHARACTERS.sub("", text)
+
+
 def _redact_secrets(text: str) -> str:
     patterns = [
         r"sk-[A-Za-z0-9_-]{20,}",
@@ -1497,7 +1509,10 @@ def _write_paper_detail_pages(
             encoding="utf-8",
         )
         (papers_dir / f"{slug}.json").write_text(
-            json.dumps(card, indent=2, sort_keys=True),
+            # json escapes NUL to \u0000 rather than corrupting the file, so this is
+            # data hygiene rather than a correctness fix -- but a sidecar is meant to be
+            # read by other tools, and an unmappable-glyph placeholder is not evidence.
+            _strip_control_characters(json.dumps(card, indent=2, sort_keys=True)),
             encoding="utf-8",
         )
 
@@ -2249,7 +2264,11 @@ def _page(
 </body>
 </html>
 """
-    return "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
+    # Last stop before any page is written, so no generator path can bypass it. Stripped
+    # before splitlines, because splitlines also breaks on vertical tab and form feed --
+    # stripping afterwards would silently turn an unmappable glyph into a line break.
+    cleaned = _strip_control_characters(html)
+    return "\n".join(line.rstrip() for line in cleaned.splitlines()) + "\n"
 
 
 def _summary_strip(digest: ParsedDigest) -> str:

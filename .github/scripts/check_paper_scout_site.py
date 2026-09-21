@@ -52,6 +52,10 @@ def validate_site(root: Path) -> list[str]:
                 if not target.exists():
                     errors.append(f"broken local link: {path.relative_to(root)} -> {link}")
     forbidden = re.compile(r"(?:\.sqlite3(?:-wal|-shm|-journal|\.restore)?$|\.pdf$|(?:^|/)\.env(?:\.|$)|(?:^|/)(?:cache|__pycache__)/|\.pyc$)", re.I)
+    # A published page must be text. Bounded full-text extraction emits NUL for glyphs it
+    # cannot map, and those reach a page through quality evidence excerpts; a NUL makes the
+    # file binary and a browser may stop parsing at it.
+    control = re.compile(rb"[\x00-\x08\x0b\x0c\x0e-\x1f]")
     secret = re.compile(r"(?<![A-Za-z0-9])(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{30,}|sk-[A-Za-z0-9_-]{20,}|-----BEGIN (?:RSA |OPENSSH )?PRIVATE KEY-----|/Users/[^/\s]+/)")
     for base in (root / "docs", root / "digests", root / "reports/paper_scout"):
         for path in base.rglob("*"):
@@ -59,7 +63,12 @@ def validate_site(root: Path) -> list[str]:
                 continue
             if forbidden.search(str(path.relative_to(root))):
                 errors.append(f"runtime file in generated outputs: {path.relative_to(root)}")
-            text = path.read_text(encoding="utf-8", errors="replace")
+            raw = path.read_bytes()
+            found = control.findall(raw)
+            if found:
+                errors.append(f"control bytes in generated output: {path.relative_to(root)}"
+                              f" ({len(found)} occurrences)")
+            text = raw.decode("utf-8", errors="replace")
             if secret.search(text):
                 errors.append(f"possible secret/private local path: {path.relative_to(root)}")
     return errors

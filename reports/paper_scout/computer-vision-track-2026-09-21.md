@@ -282,7 +282,7 @@ raised silently or otherwise.
 
 ## L. Tests and full validation
 
-**662 tests pass** (608 on `main`; 54 added, 53 of them in
+**664 tests pass** (608 on `main`; 56 added, 55 of them in
 `tests/test_paper_scout_computer_vision.py`). No test issues a paid model call or reaches
 the network.
 
@@ -443,7 +443,51 @@ check is the offline PR gate — it builds every track with `--offline` and make
 request. `ingest-seeds` performs primary-metadata lookups, so it belongs in the daily
 workflow, where it already runs, and not in an offline check.
 
-**Verdict for the merge gate: `PASS_WITH_NOTES`, 0 unresolved blockers.**
+**Round 4 — `CHANGES_REQUIRED`.** Run on the exact merge candidate after round three's
+changes. One blocking finding, and **it was right.**
+
+**Blocking: "a generated HTML detail page is binary."** Confirmed:
+`docs/computer-vision/papers/flexxnor-od-…-52fe026d.html` contained **42 NUL bytes**.
+`file` reported it as `data`, Git treated it as binary, and a browser may stop parsing at
+the first one. The reviewer's guess at the cause was wrong — it is not unsanitized source
+metadata. The NULs come from **bounded PDF full-text extraction**: pypdf emits NUL for
+glyphs it cannot map, mathematical symbols mostly, and those reach a page through the
+scholarly-quality evidence excerpts. The surrounding text on that page is a paper's
+throughput equation.
+
+It is pre-existing and was already published. A scan of all generated output found **16
+affected files across all four tracks** — 10 under `docs/papers/`, 5 under
+`docs/deep-research/papers/`, 1 in this track.
+
+Unlike the round-two renderer finding, this one is fixed here rather than filed, because it
+is output corruption rather than presentation, the fix is one choke point, and it changes no
+visible content:
+
+- `_page()` strips C0 control characters before the line rstrip, so no generator path can
+  bypass it. Stripping *before* `splitlines` matters: that method also breaks on vertical
+  tab and form feed, so stripping afterwards would silently turn an unmappable glyph into a
+  line break.
+- Sidecar JSON is stripped too. `json.dumps` escapes NUL to `\u0000` rather than corrupting
+  the file, so that half is data hygiene rather than a correctness fix.
+- `check_paper_scout_site.py` now fails on control bytes anywhere in generated output, which
+  is the reviewer's suggested guard and covers all four tracks.
+- The 15 already-published pages on the other tracks were repaired by applying exactly the
+  two steps the generator now performs — strip, then rstrip each line — rather than by
+  regenerating them from stale local state. Verified programmatically: every repaired file
+  equals that transformation of its committed version, and the visible text is unchanged.
+
+**Non-blocking: "arXiv discovery failed for every query in the committed run."** True, and
+already section F and limitation 1. The reviewer asks whether the client sends the same
+headers as the existing tracks: it does — same `ArxivFetcher`, same `HttpClient`, same
+`paper-scout/0.1` user agent, same query builder. The failures are rate-based rather than
+query- or track-specific, which an isolated probe showed directly: a bare `cat:cs.CV`
+request from this host succeeded while the identical request through the scout failed
+minutes later, and by the end of the session even `id_list` lookups were refused. Degraded
+coverage is reported rather than hidden: every failed query is a source warning in the
+digest and in `discovery-run-*.json`, and the run's `coverage_complete` is `false`.
+
+**Verdict for the merge gate: round three `PASS_WITH_NOTES`; round four's single blocker
+found a real defect and it is fixed. Re-review required before merge.**
 
 ## N. Production smoke
 
@@ -455,11 +499,16 @@ workflow, where it already runs, and not in an offline check.
 
 ## P. Limitations and backlog
 
-1. **Local discovery was provider-limited.** arXiv returned 406 for every `all:` search
-   from this host and Semantic Scholar 429 without a key, so the initial corpus is
-   OpenAlex-dominated and under-represents arXiv preprints, including the `cs.CV` sweep
-   that carries the track's breadth. The first scheduled run on a GitHub runner is the
-   first real exercise of those paths.
+1. **Local discovery was provider-limited.** arXiv returned 406 for every search from this
+   host — and by the end of the session for `id_list` lookups too — and Semantic Scholar
+   429s without a key, so the initial corpus is OpenAlex-dominated and under-represents
+   arXiv preprints, including the `cs.CV` sweep that carries the track's breadth. The first
+   scheduled run on a GitHub runner is the first real exercise of those paths.
+   **One foundational seed, `1506.02640` (the original YOLO paper), is consequently
+   missing** from the committed corpus: arXiv is the only route that can resolve it, since
+   OpenAlex genuinely 404s on `10.48550/arXiv.1506.02640` rather than throttling. Twelve
+   spaced retries over the session did not succeed. The daily workflow bootstraps missing
+   seeds on every run, so this resolves on the first scheduled run; verify it there.
 2. **The initial corpus is local and does not reach production state.** The private state
    token is a repository secret, so the assessments in section H live only in this
    workspace. Production starts the track from empty state and populates it at one paper
@@ -484,7 +533,10 @@ workflow, where it already runs, and not in an offline check.
    would need manuscript extraction, which is a separate change to the card pipeline rather
    than to this track.
 7. **No live-smoke step** for this track, matching Engram, so provider reachability is
-   only exercised by the daily discovery run itself.
+   only exercised by the daily discovery run itself. Deliberate — the two existing smokes
+   cover every provider this repository talks to, and the workflow now says so — but it
+   does mean a `cs.CV`-specific arXiv regression would first appear as a discovery warning
+   rather than as a pre-run failure.
 8. **A pre-existing renderer defect is now documented but unfixed** (round-two blocking
    finding): promoted cards whose assessment carries no legacy numeric score render
    "Not enough evidence assessed yet". It affects 17 of 21 and 15 of 20 promoted cards on

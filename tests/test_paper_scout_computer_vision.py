@@ -543,6 +543,39 @@ class SiteBuild(unittest.TestCase):
                         continue
                     self.assertFalse(match.startswith("/"), f"{page.name} -> {match}")
 
+    def test_no_generated_page_contains_control_bytes(self):
+        """A published page has to be text.
+
+        Bounded full-text extraction emits NUL for glyphs pypdf cannot map -- mathematical
+        symbols, mostly -- and those reach a page through the quality evidence excerpts. One
+        committed detail page carried 42 of them: `file` reported "data", Git treated it as
+        binary, and a browser may stop parsing at the first one. Sixteen already-published
+        pages across all four tracks were affected.
+        """
+        import re
+        control = re.compile(rb"[\x00-\x08\x0b\x0c\x0e-\x1f]")
+        with tempfile.TemporaryDirectory() as tmp:
+            _, docs_dir = self.build(Path(tmp))
+            for path in docs_dir.rglob("*"):
+                if path.is_file():
+                    self.assertEqual(control.findall(path.read_bytes()), [], path.name)
+        # And every page this repository has already published.
+        for base in (ROOT / "docs", ROOT / "digests", ROOT / "reports/paper_scout"):
+            for path in base.rglob("*"):
+                if path.is_file():
+                    self.assertEqual(control.findall(path.read_bytes()), [],
+                                     str(path.relative_to(ROOT)))
+
+    def test_the_page_renderer_strips_control_characters_it_is_handed(self):
+        """The strip sits at the single choke point every generated page passes through."""
+        from paper_scout.site import _page, _strip_control_characters
+        self.assertEqual(_strip_control_characters("a\x00b\x1fc"), "abc")
+        # Tab, newline and carriage return are legitimate and must survive.
+        self.assertEqual(_strip_control_characters("a\tb\nc\rd"), "a\tb\nc\rd")
+        rendered = _page("Title", "<p>evidence\x00 with \x0bglyphs</p>")
+        self.assertNotIn("\x00", rendered)
+        self.assertIn("evidence with glyphs", rendered)
+
     def test_no_state_or_secret_shaped_value_reaches_the_generated_site(self):
         with tempfile.TemporaryDirectory() as tmp:
             _, docs_dir = self.build(Path(tmp))

@@ -10,8 +10,14 @@ PRIVATE_DURABLE_STATE_READY:          YES  — seeded, verified, clean-restored,
 OPERATIONAL_QUALITY_ASSESSMENT_READY: YES  — two papers assessed and promoted through the full production path
 FIRST_OPERATIONAL_SMOKE:              PASS — run 35461618434
 PUBLIC_STATE_ARCHIVE_REMOVED:         YES  — deleted and confirmed unreachable anonymously
-RECURRING_QUALITY_ASSESSMENT_ENABLED: YES  — daily 06:20 UTC, weekly backfill 05:40 Sunday
+RECURRING_QUALITY_ASSESSMENT_ENABLED: YES  — weekdays 04:00 UTC (06:00 Helsinki); backfill 05:40 Sunday
 ```
+
+> **Correction, 2026-09-21.** The schedule was reported enabled on 2026-09-19, but the
+> scientific steps were gated on `inputs.run_assessment`, and `inputs` is null on a
+> `schedule` trigger. The first scheduled run (35508285811, 2026-09-20) therefore ran
+> discovery, the site and state, and **skipped the assessment entirely**. The cron was on;
+> recurring *assessment* was not. Fixed at `1a76141eb`; see §N.
 
 | Item | Value |
 |---|---|
@@ -430,6 +436,58 @@ nominations from the audit trail, `stopped_reason` was trusted to be run-level w
 anything enforcing it, and writing one test exposed a double-count in the reconciliation
 helper added two rounds earlier.
 
+## N. Correction and schedule change, 2026-09-21
+
+### The schedule was on; the assessment was not
+
+`paper-scout.yml` gated the credential preflight and the bounded assessment on
+`inputs.run_assessment`. The `inputs` context is populated only for `workflow_dispatch`
+and `workflow_call`; on a `schedule` trigger it is null, so the expression was always
+false and every scheduled run skipped both steps.
+
+Run [35508285811](https://github.com/vernerisirva/agentmempaper/actions/runs/35508285811)
+on 2026-09-20 is the evidence — the first unattended run after enablement:
+
+```text
+success  Restore private Paper Scout state
+success  Run discovery and metadata update
+skipped  Scientific credential preflight
+skipped  Bounded scientific assessment
+success  Persist private Paper Scout state
+success  Deploy to GitHub Pages
+```
+
+No `operational-metrics-2026-09-20.json` was written, because the step that writes it
+never ran. The run reported `success`, which is exactly the failure mode recorded two days
+earlier: **a green conclusion is not evidence the scientific path executed.** That lesson
+was written down and then not applied to the enablement itself.
+
+The gate is now a job-level `RUN_ASSESSMENT` computed as
+`github.event_name == 'schedule' || inputs.run_assessment`, so a scheduled run assesses by
+default and a manual run still opts in. Two tests pin it: the steps must not gate on
+`inputs` alone, and the expression is evaluated under both trigger shapes including the
+no-inputs one.
+
+### Schedule moved to weekday mornings
+
+`20 6 * * *` → **`0 4 * * 1-5`**: 06:00 Europe/Helsinki (UTC+2), Monday to Friday. The
+weekly backfill is unchanged at `40 5 * * 0` and never runs the scientific gate.
+
+**GitHub will not honour this precisely.** Scheduled workflows run on a best-effort queue,
+and this repository's runs have never started near their nominal time:
+
+| Nominal | Observed start (UTC) |
+|---|---|
+| 06:20 | 10:50, 11:19, 11:24, 11:35, 11:38, 11:44, 11:46, 11:55, 12:52 |
+
+A consistent four-to-six hour delay across nine runs, all predating this work. An earlier
+cron improves the queue position but cannot promise an arrival time. If a run must land by
+a particular hour, it needs an external trigger against `workflow_dispatch` rather than
+this cron.
+
+Because the cron changed after today's 04:00 UTC slot had passed, **the next scheduled run
+is Tuesday 2026-09-22**.
+
 ---
 
 ```text
@@ -438,5 +496,5 @@ PRIVATE_DURABLE_STATE_READY: YES
 OPERATIONAL_QUALITY_ASSESSMENT_READY: YES
 FIRST_OPERATIONAL_SMOKE: PASS
 PUBLIC_STATE_ARCHIVE_REMOVED: YES
-RECURRING_QUALITY_ASSESSMENT_ENABLED: YES
+RECURRING_QUALITY_ASSESSMENT_ENABLED: YES   (weekdays 04:00 UTC; corrected 2026-09-21, see §N)
 ```

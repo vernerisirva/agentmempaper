@@ -59,16 +59,357 @@
             <p>Deep research agents answer complex questions through iterative loops of searching, reading, and reasoning. Recent work on reasoning-intensive benchmarks such as BrowseComp-Plus shows that well-configured lexical retrieval can surface high-quality evidence, yet agents may still fail to connect documents carrying evi...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Text-pattern signals are available, but scientific substance requires manuscript review.</p>
-      <p>No semantic quality assessment has established methods, evidence and claim alignment.</p>
+      <h2>Quality reviewed</h2>
+      <p>The paper provides an intuitive, well-engineered architectural enhancement to deep-search agents with clear motivation, transparent experimental methodology, strong empirical gains across diverse models, and comprehensive statistical and error analyses.</p>
+      <p>The authors clearly delineate limitations, acknowledging the focus on fixed corpora rather than live web search, the reliance on BM25 for candidate generation, potential anchoring risks on misleading seed documents, and the need for adaptive mechanisms to determine when to trigger the gambit.</p>
       <p>Publication: preprint. arXiv manuscript identifier; no external publication established by the available metadata.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: full_text.</p>
-        <p>Assessor: deterministic. Assessment version: quality-v2. Gate: scientific-gate-v1.</p>
-        <p>Assessed: 2026-09-17T11:50:11+00:00.</p>
-        <p>Coverage: 47311 of 47311 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
-        <ul><li>The contribution is stated explicitly. — page 2</li><li>The available text identifies data or a benchmark used by the work. — page 1</li><li>A baseline or comparison system is described. — page 2</li><li>Quantitative evaluation signals were detected. — page 1</li><li>The work reports an error or qualitative analysis.</li><li>Robustness or statistical analysis is reported. — page 5</li><li>Limitations or threats to validity are acknowledged.</li><li>Code, data, or research artifacts are described as available. — page 1</li></ul>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-22T09:06:28.133581+00:00.</p>
+        <p>Coverage: 53550 of 53550 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 1</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Deep research agents answer complex ques-
+tions through iterative loops of searching, read-
+ing, and reasoning. Recent work on reasoning-
+intensive benchmarks such as BrowseComp-
+Plus shows that well-configured lexical re-
+trieval can surface high-quality evidence, yet
+agents may still fail to connect documents car-
+rying evidence to the gold documents. We iden-
+tify a deep research agent&#x27;s first retrieval move
+as an important design decision for this set-
+ting. We introduceQuestion&#x27;s Gambit, a first-
+move retrieval module that decomposes the
+question into a set of clues, reformulates them
+into complementary searches, consolidates the
+retrieved results, and reranks the candidate pool
+before the agent begins its iterative search-and-
+reasoning process. This produces an opening
+context designed to support both clue aggre-
+gation and final-answer verification. We fur-
+ther evaluate on </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>wasted budget, we introduce Ques-
+tion&#x27;s Gambit, a first-move retrieval module that
+gives deep research agents awarm start. Ques-
+tion&#x27;s Gambit builds a compact opening context
+before iterative search begins. It decomposes the
+question into individual clues, expands each clue
+using corpus-grounded feedback, retrieves a sepa-
+rate candidate list for each clue, and then merges
+and reranks the resulting pool against the full ques-
+tion. The final opening context is gathered clue by
+clue but judged as a whole (Figure 1). The mod-
+ule requires no retraining of the agent or retriever
+and leaves the subsequent search loop unchanged.
+Rather than spending early turns looking for an ini-
+tial foothold, the agent can use its remaining budget
+to fill unresolved evidence gaps.
+This first-move framing distinguishes Question&#x27;s
+Gambit from two nearby alternatives. In-loop plan-
+ning and query </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>three stages. A
+decomposer extracts the clue set from the question,
+separating constraints that a whole-question query
+would otherwise blend together. Each clue is then
+issued to the retriever, and the documents it returns
+serve as context for expanding that clue, so the
+query used for retrieval is grounded in terminology
+the corpus contains rather than in the parametric
+knowledge of the expansion model. Finally, the
+per-clue lists are merged into a deduplicated pool
+and reranked against the original question, and the
+highest-scoring documents form the opening con-
+text. Clues thus serve as retrieval units that broaden
+coverage, not as sub-questions to be answered on
+their own.
+The module runs once, entirely within the
+agent&#x27;s first action, and returns an opening con-
+text O of size k that enters the trajectory as the
+first observation o1. It requires no retraining of
+the agent or the </blockquote></details></li><li><strong>Contribution clarity — pages 4–5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This stage turns each clue into its own search. A
+clue on its own is short and underspecified, so be-
+fore searching we let the corpus show how it is
+actually worded. We issue the raw clueci to the re-
+triever and keep the documents it returns as a feed-
+back setFi. An expansion modelgθ then rewrites
+the clue conditioned on this feedback:
+ˆci∼g θ
+
+ci,Fi
+
+,(4)
+so that the expansion is phrased in terminology
+the corpus uses rather than terminology the model
+invents on its own. The clue, its expansion, and the
+question are then concatenated into a single search
+string, and the retriever returns the candidate list
+for that clue:
+Li =R
+
+ci⊕ˆci⊕q
+
+,(5)
+where⊕ denotes text concatenation. Retrieving
+with the raw clue keeps the specific constraint in
+view, the expansion widens lexical coverage, and
+anchoring withq keeps answer-bearing documents
+accessible. This search string is built by the </blockquote></details></li><li><strong>Contribution clarity — page 5</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>This stage consolidates the per-clue lists into the
+compact set of documents the agent receives as
+its opening context. The lists are merged into one
+pool with duplicates removed,P= Sn
+i=1Li. The
+pool is broad, since every clue contributes its own
+candidates, but merging separate rankings leaves it
+without a meaningful order. A pointwise reranker
+Tϕ therefore scores every document against the
+question,Tϕ(q,d) ford∈P , and sorts the pool by
+that score. The opening contextO is then the top-k
+of the resulting ranking. Since each document&#x27;s
+relevance is judged on its own againstq, the final
+order reflects how well a document serves the ques-
+tion as a whole rather than the clue that surfaced it.
+Before scoring, each candidate&#x27;s retrieval snippet is
+replaced with its document text, since snippets are
+short windows around matched terms and describe
+a document poorly.</blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>each ques-
+Table 1: Performance on BrowseComp-Plus, comparing
+agent baselines with Question&#x27;s Gambit across answer
+quality and recall over evidence and gold documents.
+LLM Retriever Answer Quality Recall
+Acc. Calib. Evi. Gold
+BROWSECOMP-PLUS(Chen et al., 2025)
+o3 bm2550.8 39.1 56.6 61.7
+o3 qwen3-embed-8b66.3 32.7 73.2 76.3
+gpt-5 bm2558.3 13.5 61.7 66.5
+gpt-5 qwen3-embed-8b73.0 9.7 79.0 81.3
+(Meng et al., 2026)
+gpt-oss-20b qwen3-embed-8b42.1 - 57.0 -
+gpt-5.2 qwen3-embed-8b45.1 - 74.7 -
+MEMOBRAIN(Qian et al., 2026)
+GLM-4.6 qwen3-embed-8b55.1 - - -
+DeepResearch-30B-A3B qwen3-embed-8b60.4 - - -
+AGENTIR (Chen et al., 2026)
+gpt-oss-120b-high AgentIR-4B67.0 - 78.1 -
+GLM-4.7 AgentIR-4B64.7 - 79.2 -
+Tongyi-DR AgentIR-4B68.1 - 76.6 -
+PI-SERINI(Hsu et al., 2026)
+deepseek-v4-flash bm2568.1 15.5 94.5 95.7
+deepseek-v4-pro bm2571.4 7.0 91.3 92.5
+gpt-5.4-mini bm2568.1 13.7 91.9 94.1
+gpt-5.5 bm2583.1 </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>15.7 94.7 94.4
+QUESTION&#x27;SGAMBIT
+deepseek-v4-pro bm2576.93.9994.0 95.7
+gpt-5.4-mini bm2579.0 7.90 92.4 94.6
+gpt-5.5 bm2590.57.5896.6 98.1
+tionq into 9.6 clues on average. For each clue ci,
+we retrieve three feedback documents and generate
+the expansion ˆci with MUGI (Zhang et al., 2024),
+using a fixed GPT-4.1 model. The expanded query
+ci⊕ˆci⊕q retrieves the top 1000 documents, after
+which the per-clue lists are unioned, deduplicated,
+and reranked using Cohere Rerank4 Pro (Cohere
+Team, 2025). The top k= 5 documents form
+the opening context. The expansion model and
+reranker are fixed across all agent configurations.
+We integrate Question&#x27;s Gambit into PI-
+SERINI(Hsu et al., 2026) as a single first-move tool.
+After receiving the opening context, the agent pro-
+ceeds through the framework&#x27;s native RETRIEVE,
+PREVIEW, PAGINATE, and READactions, with
+subsequent searches using plain BM25. We </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Table 1 reports answer quality and surfaced-
+document recall on BrowseComp-Plus. Compared
+Table 2: Previewed and behavior recall on BrowseComp-
+Plus.
+LLM Previewed Recall Behavior Recall
+Evi. Gold Evi. Gold
+PI-SERINI(Hsu et al., 2026)
+deepseek-v4-flash67.9 69.9 55.2 60.6
+deepseek-v4-pro60.0 63.0 45.4 50.6
+gpt-5.4-mini60.1 65.4 43.1 52.1
+gpt-5.573.6 72.9 58.9 56.1
+QUESTION&#x27;SGAMBIT
+deepseek-v4-pro70.6 74.8 56.9 64.5
+gpt-5.4-mini68.3 75.1 50.0 61.2
+gpt-5.578.2 85.9 64.1 75.9
+with the matched PI-SERINIconfigurations, which
+use the same BM25 retriever and downstream agent
+loop, Question&#x27;s Gambit consistently improves an-
+swer accuracy across all three agent models. Accu-
+racy increases from 71.4% to 76.9% for DeepSeek-
+v4-pro, from 68.1% to 79.0% for GPT-5.4-mini,
+and from 83.1% to 90.5% for GPT-5.5, correspond-
+ing to absolute gains of 5.5, 10.9, and 7.4 percent-
+age points, respectively. </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The GPT-5.5 configuration
+achieves the highest accuracy reported in the table.
+The accuracy gains are accompanied by substan-
+tially better calibration. Calibration error decreases
+from 7.0 to 3.99 for DeepSeek-v4-pro, from 13.7
+to 7.90 for GPT-5.4-mini, and from 15.7 to 7.58
+for GPT-5.5. All three accuracy improvements are
+statistically significant; Appendix B provides the
+complete significance and repeated-run analysis.
+The benefits also extend beyond the initial re-
+trieval result. Table 2 follows evidence and gold
+documents through the previewed and behavior
+stages defined in Section 4.3. Across all three mod-
+els, Question&#x27;s Gambit improves both evidence and
+gold recall at every stage. For GPT-5.5, surfaced
+gold recall increases from 94.4 to 98.1, previewed
+gold recall from 72.9 to 85.9, and behavior gold re-
+call from 56.1 to 75.9. The widening improvement
+at later stages </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We use MultiHop-RAG as a control benchmark to
+examine whether the first-move module remains ef-
+fective when transferred to a more conventional
+multi-hop question structure. As shown in Ta-
+ble 3, Question&#x27;s Gambit improves GPT-5.4-mini
+accuracy from 76.0% to 77.0% and GPT-5.5 accu-
+Table 3: Accuracy on MultiHop-RAG, comparing PI-
+SERINIwith Question&#x27;s Gambit.
+LLM Retriever Accuracy
+PI-SERINI(Hsu et al., 2026)
+gpt-5.4-mini bm2576.0
+gpt-5.5 bm2581.0
+QUESTION&#x27;SGAMBIT
+gpt-5.4-mini bm2577.0
+gpt-5.5 bm2581.5
+Table 4: Average tool calls on BrowseComp-Plus.
+LLM Total Search Read Browse
+PI-SERINI(Hsu et al., 2026)
+deepseek-v4-pro18.6 14.2 4.3 0.1
+gpt-5.4-mini24.7 20.2 4.2 0.3
+gpt-5.519.3 13.5 5.0 0.8
+Question&#x27;s Gambit (ours)
+deepseek-v4-pro23.9 16.6 6.1 0.1
+gpt-5.4-mini27.0 19.9 5.7 0.3
+gpt-5.522.1 14.5 6.0 0.5
+Note:For Question&#x27;s Gambit, the total includes the initial first-move tool </blockquote></details></li><li><strong>Contribution clarity — pages 7–8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>decrease from 8.34
+to 8.15 for GPT-5.4-mini and from 5.57 to 4.25 for
+GPT-5.5. For GPT-5.5, this reduction also lowers
+total tool use from 10.23 to 9.34 while improving
+Table 5: Average tool calls on MultiHop-RAG.
+LLM Total Search Read Browse
+PI-SERINI(Hsu et al., 2026)
+gpt-5.4-mini11.71 8.34 3.01 0.35
+gpt-5.510.23 5.57 3.58 1.09
+Question&#x27;s Gambit
+gpt-5.4-mini12.74 8.15 3.20 0.42
+gpt-5.59.34 4.25 3.74 0.36
+Note:For Question&#x27;s Gambit, the total includes the initial first-move tool call,
+which is not included in the three in-loop action categories.
+Table 6: Per-question first-move cost for GPT-5.5 on
+BrowseComp-Plus.
+Component Workload Latency Cost
+Clue Decomposition 1 LLM call; 9.6 clues 2–10 s $0.020
+Clue Expansion 9.6 parallel LLM calls 0.9 s/call $0.010
+Per-clue Retrieval 9.6 BM25 calls; depth 1,000&lt;1s —
+Pointwise Reranking 2,500 documents; 25 batches 5–15 s $0.025
+First move, total </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Question&#x27;s Gambit adds a one-time cost before
+the agent loop. Table 6 summarizes this cost over
+the full 830-question GPT-5.5 run. Workloads are
+per-question means, and API costs are rounded es-
+timates; therefore, component costs may not sum
+exactly to the total. The module produces 9.6 clues
+on average and parallelizes their reformulation and
+retrieval, yielding approximately 2,500 candidates
+that are reranked in 25 batches. Its median latency
+is 28.5 seconds, or 29% of the 98-second median
+trajectory, and its estimated $0.05 cost is less than
+10% of the approximately $0.55 total cost per ques-
+tion.
+We further conduct a matched-budget compar-
+ison with PI-SERINIon the 50-question devel-
+opment subset, holding the prompts, judge, and
+T= 900 s budget fixed. On this subset, adding
+the first move increases median end-to-end latency
+from 59 to 88 seconds, with 35 seconds spent on
+the </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>We trace the 79 incorrect GPT-5.5 answers through
+the surfaced→ previewed→ opened or cited→
+answered funnel, assigning each question to the
+earliest stage at which no gold document advances.
+Table 7 shows that candidate-generation failures
+are rare: only three errors (3.8%) occur because
+no gold document is surfaced. Instead, 53 errors
+(67.1%) occur after gold evidence is surfaced but
+before it is opened or cited, including 44 cases in
+which it is never previewed and nine in which it
+is previewed but not subsequently used. In the re-
+maining 23 cases (29.1%), the agent opens or cites
+a gold document but still answers incorrectly, indi-
+cating failures in verification or evidence synthesis.
+The residual bottleneck therefore lies primarily
+in how the agent selects and uses retrieved evi-
+dence, rather than in retrieval coverage itself. This
+interpretation is consistent with the trajectory </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Our evaluation focuses on fixed-corpus deep re-
+search, using the full BrowseComp-Plus bench-
+mark and a 200-question MultiHop-RAG control
+set; generalization to other corpora and live web
+search remains to be studied. We evaluate three
+agent models on BrowseComp-Plus and two on
+MultiHop-RAG, so broader model coverage is an
+exciting path. Moreover, Question&#x27;s Gambit cur-
+rently uses BM25 candidate generation, and its
+behavior with dense, hybrid, or learned retrievers
+may differ. Finally, although our matched compar-
+isons isolate the main first-move component, they
+do not fully characterize anchoring on misleading
+opening evidence. Future work should develop
+adaptive strategies that calibrate or skip the first
+move based on question difficulty, ambiguity, and
+retrieval confidence.</blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>the
+corresponding PI-SERINIbaseline using a two-
+sided, two-proportionz-test. A paired test would
+ordinarily be preferable because both systems an-
+swer the same questions; however, the per-question
+predictions underlying the published PI-SERINI
+results are unavailable. We therefore conduct an
+unpaired test over the two observed proportions,
+withn= 830 for each system. Table 9 reports the
+confidence intervals, absolute improvements, test
+statistics, andp-values for all three agents.
+As shown in Table 9, Question&#x27;s Gambit signif-
+icantly improves accuracy for all three agents at
+α= 0.05 , with absolute gains ranging from 5.5
+to 10.9 percentage points. All three comparisons
+also remain significant after Bonferroni correction
+Table 8: Representative questions from MultiHop-RAG and BrowseComp-Plus, illustrating differences in their
+structure, complexity, and style.
+Type Representative </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>appear across different
+documents.
+Table 9: Statistical comparison of Question&#x27;s Gambit with the corresponding PI-SERINIbaseline on the complete
+BrowseComp-Plus evaluation set. Accuracies, Wilson 95% confidence intervals, and absolute improvements (∆)
+are reported in percentage points. Thep-values are obtained using two-sided, unpaired two-proportionz-tests.
+PI-SERINIQuestion&#x27;s Gambit Comparison
+Agent Acc. 95% CI Acc. 95% CI∆p
+gpt-5.5 83.1 [80.4, 85.5]90.5[88.3, 92.3] +7.49.7×10 −6
+gpt-5.4-mini 68.1 [64.8, 71.2]79.0[76.1, 81.7] +10.94.1×10 −7
+deepseek-v4-pro 71.4 [68.3, 74.4]76.9[73.9, 79.6] +5.51.16×10 −2
+for three tests, which gives a corrected threshold of
+α/3 = 0.0167.
+Repeated-run analysis.To complement the full-
+set significance tests, we evaluate selected configu-
+rations across independent runs on the 50-question
+development set. Two independent runs of the same
+GPT-5 </blockquote></details></li><li><strong>Contribution clarity — page 11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>configuration both achieve 82% accuracy.
+Two independent runs of the complete GPT-5.5
+Question&#x27;s Gambit configuration similarly achieve
+90% and 92%. This consistency indicates that the
+reported performance of these configurations is
+not attributable to a single favorable trajectory and
+provides complementary evidence of run-to-run
+stability.
+Together, the full-set tests establish the statis-
+tical significance of the improvements, while the
+repeated-run results demonstrate that the evaluated
+configurations remain stable across independent
+agent executions.
+C Prompts
+In this section, we provide the full prompts used by
+Question&#x27;s Gambit.
+Deep Search Agent
+You are a deep research agent answering a
+question using only the provided retrieval
+tools. Your job is to retrieve evidence from
+the corpus and answer with citations.
+## How to choose a first move
+Pick the strongest opening move for </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>

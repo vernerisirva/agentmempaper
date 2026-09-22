@@ -59,16 +59,410 @@
             <p>With the evolution of deep learning based fake face generation, it has become easier to launch presentation attacks on face based biometric authentication systems.Especially with ability of generative adversarial networks (GAN) to generate fake faces as close to original, it is necessary to design effective techniqu...</p>
           </section>
           <section class="detail-panel wide quality-detail-panel">
-      <h2>Quality pending</h2>
-      <p>Scientific quality has not yet been assessed.</p>
-      <p>Manuscript evidence has not been reviewed.</p>
+      <h2>Quality reviewed</h2>
+      <p>The manuscript presents a scoped architectural design with complete implementation configurations, rigorous comparative testing across multiple standard benchmark datasets, paired statistical tests, and explicit ablation verification.</p>
+      <p>The authors transparently discuss remaining limitations, such as sensitivity to extreme compression and motion blur, the absence of confidence calibration analysis, and untested generalization to diffusion-based video generation models.</p>
       <p>Publication: peer reviewed. OpenAlex records a published journal location: International journal of intelligent engineering and systems. Peer review inferred from venue metadata, not independently verified.</p>
       <details><summary>Quality evidence and provenance</summary>
-        <p>Manuscript evidence assessed: false. Scope: not assessed.</p>
-        <p>Assessor: none. Assessment version: none. Gate: not assessed.</p>
-        <p>Assessed: not assessed.</p>
+        <p>Manuscript evidence assessed: true. Scope: full_text.</p>
+        <p>Assessor: hybrid. Assessment version: quality-promotion-v2. Gate: dual-promotion-v3.</p>
+        <p>Assessed: 2026-09-22T09:06:12.766491+00:00.</p>
+        <p>Coverage: 88376 of 88376 eligible manuscript characters; omitted body: 0. Extraction complete: True.</p>
+        <ul><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ability to capture long-
+range dependencies for attack detection is restricte d
+[2]. Recently vision transformers (ViT) [3] are
+proposed as an alternative to CNNs. They leverage
+self-attention mechanisms  to capture global
+contextual relationships. ViT is found to perform
+better than CNN variants in many image
+classification tasks. But with its lack strong inductive
+biases it cannot process the local features necessary
+for detecting GAN generated fake samples.
+In this work, a hybrid FAU guided vision
+transformer is proposed for presentation attack
+detection. The proposed hybrid transformer
+integrates both the local feature specialization
+characteristics of CNN and global context handling
+of ViT to obtain effecti ve features for presentation
+attack detection. Following are the contributions of
+this work
+(i) An FAU-guided self -attention mechanism  that
+explicitly </blockquote></details></li><li><strong>Contribution clarity — page 2</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>biases transformer attention toward
+biologically meaningful facial activation regions
+by modifying attention weights using FAU
+masks, enabling simultaneous modeling of local
+spoof traces and long-range facial dependencies.
+(ii) A hierarchical local global temporal
+representation framework that first extracts FAU-
+centric local features through CNNs, then models
+inter-region relationships using a Vision
+Transformer, and finally captures temporal
+consistency of FAU dynamics through LSTM -
+based sequence learning.
+(iii) A unified presentation attack detection
+architecture is proposed. It is capable of jointly
+addressing GAN -generated deepfakes, replay
+attacks, illumination variations, and pose
+variations through FAU -aware spatial -temporal
+reasoning.
+(iv) The proposed framework is experimentally
+compared with a representative set of recent
+deepfake and presentation </blockquote></details></li><li><strong>Contribution clarity — page 4</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The architecture of the proposed hybrid
+transformer for detecting presentation attacks from
+videos is given in Fig . 1. The proposed solution
+jointly considers local textural artifacts, global facial
+inconsistencies and temporal dynamics of facial
+activation units to detect presentation attacks. Tthe
+proposed solution has following four important
+functionalities: FAU region extraction, hybrid feature
+extraction and temporal modeling. Each of the
+functionalities is detailed in below subsections.
+A. FAU region extraction
+The video is processed to extract 𝑚 significant
+frames {𝑆1, 𝑆2, . . 𝑆𝑚  }.  First frame with face detected
+is taken as significant. If the next frame has the
+structural similarity value greater than 0.8 to the
+previous significant frame it is dropped as
+insignificant, else it is made as significant. This
+process is repeated for all the frames in the </blockquote></details></li><li><strong>Contribution clarity — page 6</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>attention has
+following advantages (i) Suppress background and
+non-informative regions (ii) Emphasize biologically
+plausible facial motion zones and (iii) Detect
+abnormal global correlations caused by GAN
+synthesis or replay attacks.
+FAU Guided attention:
+The process of FAU guided attention is detailed
+below.  Let each face image is partitioned into set of
+FAU relevant regions
 
-        <ul></ul>
+𝑅𝐹𝐴𝑈 = {𝑟1, 𝑟2, … 𝑟𝐾} (1)
+
+Each region 𝑟𝑘 is processed by a convolutional
+backbone to extract local feature maps
+
+𝐹𝑘
+𝑙𝑜𝑐𝑎𝑙 = 𝑓𝐶𝑁𝑁(𝑟𝑘) (2)
+
+The local features maps from all the FAU regions
+are projected to a unified spatial feature
+representation as
+
+𝐹𝑙𝑜𝑐𝑎𝑙 = ⋃ 𝐹𝑘
+𝑙𝑜𝑐𝑎𝑙
+𝐾
+𝑘=1
+ (3)
+The feature map is divided into N non
+overlapping patches. The patches are then flattened to
+get patch embeddings
+
+𝑋 = {𝑥1, 𝑥2, … 𝑥𝑁} (4)
+
+To guide attention towards FAU relevant regions,
+abinary mask </blockquote></details></li><li><strong>Contribution clarity — pages 6–7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>FAU intensities were smoothed
+using a moving-average filter over three consecutive
+frames before mask generation.
+Received:  July 3, 2026.     Revised: September 1, 2026.                                                                                                 1469
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: 10.22266/ijies2026.1031.72
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+To give priority to the FAU regions, the attention
+scores are modulated using the FAU mask as
+
+𝐴𝐹𝐴𝑈 = 𝐴 +  𝛾. 𝑀 (7)
+
+where γ  is the weighting factor controlling FAU
+priority. The parameter γ controls the magnitude of
+the attention bias applied to FAU-associated patches.
+When γ  = 0, the formulation reduces to standard </blockquote></details></li><li><strong>Contribution clarity — page 7</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>prediction
+
+C. Temporal modeling
+Capturing the temporal inconsistencies between
+the individual frames is necessary for improving the
+effectiveness of presentation attack detection. The
+sequence of frame level hybrid features
+{𝐹1
+𝑉𝑖𝑇, 𝐹2
+𝑉𝑖𝑇, . . 𝐹𝑇
+𝑉𝑖𝑇}   is given as input to LSTM
+network. LSTM models three important factors of
+temporal evolution of FAU activations,
+synchronization between facial regions and long term
+dependencies across the significant video frames.
+Modeling it facilitates separating gen uine facial
+behavior from presentation attack cases like static
+displays, replayed videos, or GAN -generated
+sequences. The model appears to benefit from facial
+activation information, although further analysis is
+required to establish the exact relationshi p between
+learned representations and underlying facial
+behavior.
+The final hidden state of the LSTM is </blockquote></details></li><li><strong>Contribution clarity — page 8</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Configuration
+Face Detector MTCNN
+Input Resolution 224 × 224
+FAU Extractor OpenFace 2.0
+Number of FAUs 17 Action Units
+FAU Feature
+Dimension 17
+CNN Backbone Adapted ResNet50
+CNN Feature
+Dimension 2048
+ViT Patch Size 16 × 16
+ViT Embedding
+Dimension 768
+Number of
+Transformer
+Layers
+12
+Number of
+Attention Heads 12
+LSTM Hidden
+Units 256
+LSTM Layer 2
+Temporal
+Sequence Length 20 frames
+Dropout 0.3
+Activation
+Function ReLU
+Batch Size 32
+Optimizer Adam
+Learning Rate 1×10⁻⁴
+Weight Decay 1×10⁻⁵
+Epochs 100
+Early Stopping
+Patience 10 epochs
+Loss Function Binary Cross Entropy
+Training
+schedule
+Models were trained for 100 epochs using the Adam optimizer with an initial learning rate of
+1×10⁻⁴. A Reduce-on-Plateau scheduler decreased the learning rate by a factor of 0.1 when
+validation performance stagnated for five consecutive epochs. Early stopp ing with a </blockquote></details></li><li><strong>Contribution clarity — pages 8–9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>The performance analysis of proposed solution is
+conducted against datasets listed in Table 5.
+The FaceForensics++ dataset was evaluated using
+both High Quality (HQ) and Low Quality (LQ)
+compression settings. Experiments were conducted
+Received:  July 3, 2026.     Revised: September 1, 2026.                                                                                                 1471
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: 10.22266/ijies2026.1031.72
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+Table 5. Datasets for experimentation
+Dataset Description
+Faceforensics++[26] Most common set with both real and synthetic videos. The videos are in three qualities of
+original, high (HQ) and low (LQ). The </blockquote></details></li><li><strong>Contribution clarity — page 9</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>HQ and LQ videos are used for experimentation.
+Synthetic data are generated using Deepfakes (DF), FaceSwap(FS), Face -to-
+Face(F2F),andNeuralTextures(NT) algorithms.
+Training set: 60%
+Validation set: 20%
+Testset: 20%
+Split Policy: Stratified 5-fold cross-validation
+Same video identity not shared across train and test folds
+Celeb-DF[27] It has 590 real videos and 5639 fake videos. All the videos are of high quality
+Training set: 60%
+Validation set: 20%
+Testset: 20%
+Split Policy: Subject-disjoint 5-fold cross-validation
+Identities appearing in training are excluded from testing
+DFDC [34] It is a large scale dataset having 119197 videos of 430 actors.
+Training set: 60%
+Validation set: 20%
+Testset: 20%
+Split Policy: Stratified 5-fold cross-validation
+Original class distribution preserved in all folds
+Wilde-DF[28] The dataset has 3805 real faces and 3509 fake faces </blockquote></details></li><li><strong>Contribution clarity — page 10</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>were evaluated under identical experimental
+settings. For each dataset, the same train -validation-
+test partitions were used across all methods. Video
+frames were resized to 224 × 224 pixels and
+normalized using identical preprocessing procedures.
+Significant frame extraction based on structural
+similarity thresholding was applied uniformly to all
+approaches. Hyperparameters were selected using
+validation data only.
+All reproduced baselines were executed using
+their official repositories whenever publicly available.
+Methods without released implementations were
+faithfully reimplemented according to the
+architectural descriptions and training procedures
+reported in the  original publications. Unless
+explicitly required by the original implementation, all
+methods were trained under a unified experimental
+protocol using identical preprocessing, input
+resolution </blockquote></details></li><li><strong>Contribution clarity — pages 10–11</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>spoofing
+OULU-NPU, Replay-Attack,
+SiW
+APCER, BPCER, ACER,
+HTER, FAR, FRR
+Received:  July 3, 2026.     Revised: September 1, 2026.                                                                                                 1473
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: 10.22266/ijies2026.1031.72
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: https://creativecommons.org/licenses/by-sa/4.0/
+using paired two -sided t-tests. The paired
+observations correspond to the performance values
+obtained from the same cross -validation fold under
+identical train -validation-test partitions.
+Consequently, each pair represents two models
+evaluated on exactly the same testing data, th ereby
+satisfying the pairing assumption. For datasets using
+cross-validation, </blockquote></details></li><li><strong>Contribution clarity — pages 12–13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>ACC (%) AUC (%) ACC (%) AUC (%)
+MSMA[15] 94.46 ± 0.88 98.70 ± 0.41 75.95 ± 1.24 89.75 ± 0.93
+M2TR[16] 90.70 ± 1.02 98.52 ± 0.48 76.52 ± 1.17 88.78 ± 0.96
+GeoNet[17] 87.26 ± 1.18 97.78 ± 0.63 77.28 ± 1.08 85.92 ± 1.14
+Hybrid CMNV2 [20] 92.85 ± 0.95 98.35 ± 0.44 79.62 ± 1.02 89.81 ± 0.88
+Deep Feature Fusion GAN Detection [21] 93.54 ± 0.91 98.62 ± 0.39 80.48 ± 0.97 90.32 ± 0.84
+ViT Deepfake Detection [22] 91.86 ± 1.06 98.10 ± 0.52 78.75 ± 1.13 88.94 ± 0.91
+Proposed 96.45 ± 0.63 99.10 ± 0.24 84.24 ± 0.72 92.14 ± 0.53
+Received:  July 3, 2026.     Revised: September 1, 2026.                                                                                                 1475
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: 10.22266/ijies2026.1031.72
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International </blockquote></details></li><li><strong>Contribution clarity — page 13</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>DF F2F FS NT AVG
+DF MSMA [15] 99.68 66.29 30.62 80.62 69.30
+Proposed 99.50 76.67 57.87 85.67 79.93
+F2F MSMA [15] 86.95 99.43 61.58 75.11 80.77
+Proposed 92.56 99.57 69.65 83.32 86.28
+FS MSMA [15] 53.88 73.95 99.67 47.82 68.83
+Proposed 63.25 81.25 99.75 58.67 75.73
+NT MSMA [15] 89.28 65.86 42.42 97.61 73.79
+Proposed 94.35 78.50 57.87 98.67 82.35
+
+This improved generalization performance indicates
+that the proposed solution does not overfit to
+manipulation-specific artifacts, instead, it learns
+manipulation-agnostic cues by jointly modeling local
+FAU-centric micro -patterns, global facial
+relationships, and temporal dynamics. This
+demonstrates the robustness of the proposed solution
+against diverse face manipulation algorithms. Paired
+t-tests performed on the average AUC values showed
+statistically significant improvements over MSMA
+[15] (p &lt; 0.05).
+The cross dataset </blockquote></details></li><li><strong>Contribution clarity — pages 13–14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>
+Table 11. Cross dataset comparison
+Methods Celeb-DF DFDC Wilde-DF
+MSMA [15] 69.43 ± 1.37 67.18 ± 1.52 72.56 ± 1.21
+M2TR[16] 68.58 ± 1.44 67.06 ± 1.48 71.69 ± 1.26
+GeoNet[17] 64.48 ± 1.72 63.60 ± 1.81 72.22 ± 1.33
+Hybrid CMNV2 [20] 71.82 ± 1.18 69.95 ± 1.26 76.43 ± 1.12
+Deep Feature Fusion GAN Detection [21] 72.64 ± 1.11 70.83 ± 1.19 77.18 ± 1.08
+ViT Deepfake Detection [22] 70.92 ± 1.29 69.41 ± 1.34 75.64 ± 1.17
+Proposed 74.67 ± 0.84 75.55 ± 0.79 80.56 ± 0.73
+Received:  July 3, 2026.     Revised: September 1, 2026.                                                                                                 1476
+International Journal of Intelligent Engineering and Systems, Vol.19, No.10, 2026         DOI: 10.22266/ijies2026.1031.72
+
+This article is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+License details: </blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proposed 1.90 ± 0.15 1.70 ± 0.12 1.80 ± 0.11</blockquote></details></li><li><strong>Contribution clarity — page 14</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>Proposed 1.90 ± 0.16 1.60 ± 0.13 1.75 ± 0.12
+
+Table 14. Proposed solution results with 95% confidence
+interval
+Protocol ACER (%) 95% CI
+1 1.80 ± 0.11 1.66 – 1.94
+2 1.45 ± 0.09 1.34 – 1.56
+3 1.45 ± 0.08 1.35 – 1.55
+4 1.75 ± 0.12 1.60 – 1.90
+
+Table 15. Statistical significance
+Comparison Metric p-value
+Proposed vs
+DRL-FAS (P1) ACER 0.004
+Proposed vs
+DRL-FAS (P2) ACER 0.006
+Proposed vs
+DRL-FAS (P3) ACER 0.008
+Proposed vs
+DRL-FAS (P4 ACER 0.002
+
+Table 16. Comparison of error against different datasets
+ SiW dataset
+Solution Accuracy HTER FAR FRR
+Proposed 96.50 ± 0.48 1.22 ± 0.09 1.33 ± 0.11 1.10 ± 0.08
+DRL-FAS [29] 85.50 ± 0.92 2.40 ± 0.18 2.30 ± 0.21 2.50 ± 0.19
+ OULU NPU dataset
+Solution Accuracy HTER FAR FRR
+Proposed 96.20 ± 0.51 1.25 ± 0.10 1.40 ± 0.12 1.10 ± 0.09
+DRL-FAS [29] 85.30 ± 0.95 2.60 ± 0.21 2.50 ± 0.18 2.70 ± 0.23
+ Replay attack dataset
+Solution </blockquote></details></li><li><strong>Contribution clarity — page 15</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>given in Table 20.
+Though the CNN -only model (V1) achieves
+moderate performance by capturing local texture
+
+Table 19. Ablation variants
+Variants Description
+CNN only (V1)
+Local feature extraction using
+CNN without transformer or
+temporal modeling.</blockquote></details></li><li><strong>Contribution clarity — page 16</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>CNN-LSTM transformer
+Method HQ ACC (%) HQ AUC (%) LQ ACC (%) LQ AUC (%)
+Hybrid CNN–LSTM–Transformer [33] 95.18 ± 0.74 98.92 ± 0.31 82.16 ± 0.86 91.26 ± 0.62
+Proposed 96.45 ± 0.63 99.10 ± 0.24 84.24 ± 0.72 92.14 ± 0.53
+
+Table 22. Feature wise difference
+Method type Guidance source Usage Limitation
+Landmark-
+based Facial landmarks Landmark coordinates appended as
+features
+Does not influence attention
+computation
+Region-based Eyes, mouth, nose
+regions Separate region feature extraction Fixed spatial regions, limited global
+interaction
+Attention-
+guided
+Learned attention
+maps Attention learned automatically No biological facial prior
+FAU-based Facial activation
+units
+Auxiliary features or handcrafted
+descriptors
+FAUs not embedded into transformer
+attention
+Proposed Facial activation
+units
+Direct modification of self-
+attention weights
+Joint FAU-aware local-global </blockquote></details></li><li><strong>Contribution clarity — page 17</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>this setting, the model was
+trained using a subset of manipulation categories and
+evaluated on an unseen manipulation type. The
+results for cross-attack-leave-one-out analysis is
+given in Table 23
+The proposed framework maintained competitive
+detection performance across DeepFakes, Face2Face,
+FaceSwap, and NeuralTextures manipulations,
+although a moderate performance reduction was
+observed compared with within -domain evaluation.
+But the observed degradation indicates that complete
+
+
+Figure. 3 FAU-guided attention visualization
+Table 23. Cross-attack-leave-one-out results
+Training attack Average AUC
+DF 79.93
+F2F 86.28
+FS 75.73
+NT 82.35
+
+manipulation invariance has not been achieved and
+exploring it is in scope of future work.
+Failure cases were analyzed to identify conditions
+under which the proposed method remains vulnerable.
+False-negative detections were </blockquote></details></li><li><strong>Contribution clarity — page 18</strong><p>Canonical source cited in the scientific promotion review.</p><p>Assessor’s interpretation: unreviewed. Source integrity verified; scientific judgments are recorded separately.</p><details><summary>Canonical source evidence</summary><blockquote>generality of the findings.
+Although the proposed framework achieves strong
+results on multiple benchmark datasets, the
+evaluation remains limited to the selected public
+datasets and their official protocols. Further
+validation on additional unseen datasets, independent
+laboratories, and more challenging real -world
+conditions would provide a more comprehensive
+assessment of generalization. We agree that cross -
+dataset no-tuning evaluation is an important measure
+of generalization. Due to computational and time
+constraints, these experiments have not been included.
+The current work primarily focuses on classification
+performance and robustness under established
+benchmark protocols, it does not include a dedicated
+confidence calibration a nalysis (e.g., reliability
+diagrams, Expected Calibration Error (ECE), or Brier
+Score).The present study does not include a dedicated </blockquote></details></li></ul>
       </details>
       <p>Quality screening does not prove scientific correctness.</p>
     </section>
@@ -107,7 +501,7 @@
 
             <div>
               <dt>Limitations / uncertainty</dt>
-              <dd>Only title, abstract/summary, metadata, screening rules, and curation were used; full text was not analyzed.</dd>
+              <dd>Structured research-card claims use title, abstract/summary, metadata, screening rules, and curation. A separate scholarly-quality assessment used bounded full-text excerpts, but unsupported claim, method, or evidence fields remain unextracted.</dd>
               <dd class="structured-provenance">Confidence: high · Provenance: rule</dd>
             </div>
             </dl>
@@ -123,7 +517,7 @@
           </section>
           <section class="detail-panel">
             <p class="section-kicker">Provenance</p>
-            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-20</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 15:58:07</li><li>Last seen by Paper Scout: 2026-09-21 15:58:07</li></ul>
+            <ul><li>Metadata sources: openalex</li><li>Latest revision / source update: 2026-09-20</li><li>Publication date source: openalex</li><li>Publication date precision: day</li><li>Publication date confidence: medium</li><li>Relevance source: deterministic screening</li><li>Curation note: unknown</li><li>First seen by Paper Scout: 2026-09-21 15:58:07</li><li>Last seen by Paper Scout: 2026-09-22 09:05:43</li></ul>
             <ul><li>DOI: 10.22266/ijies2026.1031.72</li><li>OpenAlex: W7213662089</li><li>OpenAlex IDs: W7213662089</li></ul>
           </section>
           <section class="detail-panel">

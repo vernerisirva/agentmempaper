@@ -1,14 +1,14 @@
 {
   "digest_quality_warning_count": 0,
-  "latest_run_date": "2026-09-21",
+  "latest_run_date": "2026-09-22",
   "latest_run_summary": {
-    "Candidates fetched": "77",
-    "Irrelevant": "77",
+    "Candidates fetched": "52",
+    "Irrelevant": "52",
     "Maybe relevant": "0",
-    "New unique papers": "71",
+    "New unique papers": "51",
     "Relevant": "0",
-    "Run ID": "20",
-    "Source summary": "openalex: 76, semantic_scholar: 1"
+    "Run ID": "21",
+    "Source summary": "openalex: 50, semantic_scholar: 2"
   },
   "newly_discovered_papers": [],
   "source_diagnostics": [
@@ -16,12 +16,13 @@
     "arxiv failed for 'all:\"conditional memory\"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22conditional+memory%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable",
     "arxiv failed for 'all:n and all:gram and all:memory and all:transformer': http error for https://export.arxiv.org/api/query?search_query=all%3An+and+all%3Agram+and+all%3Amemory+and+all%3Atransformer&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable",
     "arxiv failed for 'all:\"memory grafting\"': http error for https://export.arxiv.org/api/query?search_query=all%3A%22memory+grafting%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending: request failed after 3 attempts: HTTP Error 406: Not Acceptable",
-    "openalex: incomplete discovery window for 'hashed memory language model'; single-page record limit reached.",
+    "openalex failed for 'DeepSeek Engram': http error for https://api.openalex.org/works?search=DeepSeek+Engram&filter=from_publication_date%3A2026-09-12&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
+    "openalex failed for 'hashed memory language model': http error for https://api.openalex.org/works?search=hashed+memory+language+model&filter=from_publication_date%3A2026-09-12&per-page=25: request failed after 3 attempts: HTTP Error 429: Too Many Requests",
     "openalex: incomplete discovery window for 'cross-model memory transfer'; single-page record limit reached.",
     "openalex: incomplete discovery window for 'learned lookup memory language model'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'Engram'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'conditional memory language model'; single-page record limit reached.",
     "semantic_scholar: incomplete discovery window for 'frozen memory reader adaptation'; single-page record limit reached.",
-    "semantic_scholar failed for 'tokenizer-agnostic Engram': Semantic Scholar returned HTTP 429. This can happen when query volume is high, even with an API key. The run continued with other sources."
+    "semantic_scholar: incomplete discovery window for 'tokenizer-agnostic Engram'; single-page record limit reached."
   ]
 }

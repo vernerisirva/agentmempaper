@@ -31,7 +31,7 @@
   "last_seen_date": "2026-09-20",
   "latest_relevant_date_bucket": 0,
   "latest_revision_date": null,
-  "library_admission": "review",
+  "library_admission": "main",
   "newly_discovered_in_latest_run": false,
   "notified_at": "2026-09-17 11:50:11",
   "notified_date": "2026-09-17",
@@ -42,7 +42,7 @@
     "curation_note": null,
     "date_source": "openalex",
     "first_seen_at": "2026-09-17 11:49:21",
-    "generated_at": "2026-09-21 16:00:39",
+    "generated_at": "2026-09-22 09:07:27",
     "last_seen_at": "2026-09-20 11:40:27",
     "metadata_sources": [
       "openalex",
@@ -107,18 +107,18 @@
   "scholarly_quality": {
     "applied_score_cap": null,
     "applied_score_cap_reason": null,
-    "assessed_at": "2026-09-17T11:50:11+00:00",
+    "assessed_at": "2026-09-22T09:06:28.133581+00:00",
     "assessment_scope": "full_text",
-    "assessment_version": "quality-v2",
-    "assessor_model": null,
-    "assessor_type": "deterministic",
+    "assessment_version": "quality-promotion-v2",
+    "assessor_model": "gemini-3.8-flash",
+    "assessor_type": "hybrid",
     "combined_rank_score": 0.91,
     "concerns": [],
-    "concise_summary": "The available evidence suggests a credible contribution with some limitations. Automated score 77/100, medium confidence, based on full text.",
-    "confidence": "medium",
+    "concise_summary": "The paper provides an intuitive, well-engineered architectural enhancement to deep-search agents with clear motivation, transparent experimental methodology, strong empirical gains across diverse models, and comprehensive statistical and error analyses.",
+    "confidence": "high",
     "coverage": {
-      "assessment_input_characters": 48465,
-      "assessment_input_sha256": "27f0b3f15580f0aa9f0551aeac0a5d5830da548bca516f0c6fcad501a7850119",
+      "assessment_input_characters": 55885,
+      "assessment_input_sha256": "e0fe09618291a51457adf643361ec2c97a753f75e741c537c80e13a4a6150cca",
       "attempted_pages": [
         1,
         2,
@@ -133,9 +133,20 @@
         11,
         12
       ],
+      "body_pages_partially_omitted": [],
+      "budget_unit": "characters (no tokenizer estimate)",
+      "canonical_id": "doi:10.48550/arxiv.2609.14412",
+      "character_budget": 180000,
       "characters_before_extraction_limit": 54171,
-      "eligible_characters": 47311,
-      "excluded_back_matter_characters": 6255,
+      "configured_max_section_characters": 8000,
+      "eligible_characters": 53550,
+      "evidence_block_count": 86,
+      "evidence_context_characters": 63742,
+      "evidence_context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+      "evidence_context_sha256": "016ed9199c85a2ce242bcfbef69e72e62c3fef7af96ac3b9a334fd149eddede4",
+      "evidence_version": "block-evidence-v2",
+      "excluded_back_matter_characters": 0,
+      "excluded_sections": [],
       "extracted_characters": 54193,
       "extracted_page_indices": [
         1,
@@ -156,14 +167,578 @@
       "extraction_gap_markers": 0,
       "extraction_truncated": false,
       "extractor_version": "bounded-v2",
+      "failure_reasons": [],
       "format": "PDF",
+      "manuscript_identity": {
+        "method": "exact-title-typography-v1",
+        "source_content_hash": "393675e03bc109004eb9af6bb06c34d6dc1287b6a9e925c7e571402a86b34ed2",
+        "source_url": "https://arxiv.org/pdf/2609.14412",
+        "verified": true
+      },
       "max_extracted_characters": 400000,
       "max_pages": 80,
+      "missing_page_indices": [],
       "normalization_version": "canonical-unicode-v2",
       "omitted_body_characters": 0,
       "page_unit": "PDF page",
+      "pages_omitted": [],
       "retained_source_characters": 54171,
-      "selected_characters": 47311,
+      "scientific_body_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "section_roles_detected": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "section_roles_omitted": [],
+      "section_roles_represented": [
+        "appendix",
+        "body",
+        "introduction",
+        "limitations",
+        "methods",
+        "related",
+        "results"
+      ],
+      "sections": [
+        {
+          "heading": "Question'S Gambit: The First Move Matters In Agentic Deep Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "body",
+          "section_index": 0,
+          "source_characters": 331,
+          "supplied_characters": 331
+        },
+        {
+          "heading": "Abstract",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "abstract",
+          "section_index": 1,
+          "source_characters": 1541,
+          "supplied_characters": 1541
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 1,
+          "role": "introduction",
+          "section_index": 2,
+          "source_characters": 2373,
+          "supplied_characters": 2373
+        },
+        {
+          "heading": "Introduction",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "introduction",
+          "section_index": 3,
+          "source_characters": 3994,
+          "supplied_characters": 3994
+        },
+        {
+          "heading": "Related Work",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 2,
+          "role": "related",
+          "section_index": 4,
+          "source_characters": 673,
+          "supplied_characters": 673
+        },
+        {
+          "heading": "Question'S Gambit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 5,
+          "source_characters": 93,
+          "supplied_characters": 93
+        },
+        {
+          "heading": "Re-Ranking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 6,
+          "source_characters": 32,
+          "supplied_characters": 32
+        },
+        {
+          "heading": "Per-Clue Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 7,
+          "source_characters": 622,
+          "supplied_characters": 622
+        },
+        {
+          "heading": "Question Decomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "body",
+          "section_index": 8,
+          "source_characters": 2482,
+          "supplied_characters": 2482
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 3,
+          "role": "introduction",
+          "section_index": 9,
+          "source_characters": 1308,
+          "supplied_characters": 1308
+        },
+        {
+          "heading": "Problem Formulation",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "introduction",
+          "section_index": 10,
+          "source_characters": 775,
+          "supplied_characters": 775
+        },
+        {
+          "heading": "Question'S Gambit",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 11,
+          "source_characters": 1969,
+          "supplied_characters": 1969
+        },
+        {
+          "heading": "Question Decomposition",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 12,
+          "source_characters": 845,
+          "supplied_characters": 845
+        },
+        {
+          "heading": "Per-Clue Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 4,
+          "role": "body",
+          "section_index": 13,
+          "source_characters": 755,
+          "supplied_characters": 755
+        },
+        {
+          "heading": "Per-Clue Retrieval",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 14,
+          "source_characters": 368,
+          "supplied_characters": 368
+        },
+        {
+          "heading": "Question-Conditioned Reranking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 15,
+          "source_characters": 873,
+          "supplied_characters": 873
+        },
+        {
+          "heading": "Iterative Deep Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 16,
+          "source_characters": 1486,
+          "supplied_characters": 1486
+        },
+        {
+          "heading": "Datasets",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 17,
+          "source_characters": 1158,
+          "supplied_characters": 1158
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 5,
+          "role": "body",
+          "section_index": 18,
+          "source_characters": 519,
+          "supplied_characters": 519
+        },
+        {
+          "heading": "Baselines",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "body",
+          "section_index": 19,
+          "source_characters": 1497,
+          "supplied_characters": 1497
+        },
+        {
+          "heading": "Implementation Details",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "methods",
+          "section_index": 20,
+          "source_characters": 2860,
+          "supplied_characters": 2860
+        },
+        {
+          "heading": "Browsecomp-Plus Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 6,
+          "role": "results",
+          "section_index": 21,
+          "source_characters": 89,
+          "supplied_characters": 89
+        },
+        {
+          "heading": "Browsecomp-Plus Results",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "results",
+          "section_index": 22,
+          "source_characters": 1894,
+          "supplied_characters": 1894
+        },
+        {
+          "heading": "Transfer To Multihop-Rag",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 23,
+          "source_characters": 1295,
+          "supplied_characters": 1295
+        },
+        {
+          "heading": "Tool-Use Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 7,
+          "role": "body",
+          "section_index": 24,
+          "source_characters": 1065,
+          "supplied_characters": 1065
+        },
+        {
+          "heading": "Tool-Use Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 25,
+          "source_characters": 1163,
+          "supplied_characters": 1163
+        },
+        {
+          "heading": "Cost And Latency",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 26,
+          "source_characters": 1352,
+          "supplied_characters": 1352
+        },
+        {
+          "heading": "Thus, Question'S Gambit Incurs A Bounded",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 27,
+          "source_characters": 71,
+          "supplied_characters": 71
+        },
+        {
+          "heading": "Error Analysis",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 28,
+          "source_characters": 1200,
+          "supplied_characters": 1200
+        },
+        {
+          "heading": "Concluding Remarks",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 8,
+          "role": "body",
+          "section_index": 29,
+          "source_characters": 623,
+          "supplied_characters": 623
+        },
+        {
+          "heading": "Limitations",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "limitations",
+          "section_index": 30,
+          "source_characters": 791,
+          "supplied_characters": 791
+        },
+        {
+          "heading": "Unclassified body after references",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 31,
+          "source_characters": 94,
+          "supplied_characters": 94
+        },
+        {
+          "heading": "Ank: Fusing Supervised Fine-Tuning And Reinforce-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 32,
+          "source_characters": 49,
+          "supplied_characters": 49
+        },
+        {
+          "heading": "Ment Learning For Effective And Efficient Text Rerank-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 33,
+          "source_characters": 528,
+          "supplied_characters": 528
+        },
+        {
+          "heading": "Browsecomp-Plus: A More Fair And Transparent Eval-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 34,
+          "source_characters": 294,
+          "supplied_characters": 294
+        },
+        {
+          "heading": "Hop Qa Dataset For Comprehensive Evaluation Of",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 35,
+          "source_characters": 297,
+          "supplied_characters": 297
+        },
+        {
+          "heading": "Rethinking Agentic Search With Pi-Serini: Is Lexical",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 36,
+          "source_characters": 249,
+          "supplied_characters": 249
+        },
+        {
+          "heading": "Deep Research Agents: A Systematic Examination And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 37,
+          "source_characters": 237,
+          "supplied_characters": 237
+        },
+        {
+          "heading": "Information Retrieval Research With Sparse And Dense",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 38,
+          "source_characters": 102,
+          "supplied_characters": 102
+        },
+        {
+          "heading": "National Acm Sigir Conference On Research And",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 39,
+          "source_characters": 538,
+          "supplied_characters": 538
+        },
+        {
+          "heading": "Of The Association For Computational Linguistics:",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 40,
+          "source_characters": 274,
+          "supplied_characters": 274
+        },
+        {
+          "heading": "Mark And Automated Evaluation For Generative Re-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "results",
+          "section_index": 41,
+          "source_characters": 143,
+          "supplied_characters": 143
+        },
+        {
+          "heading": "Obrain: Executive Memory As An Agentic Brain For",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 42,
+          "source_characters": 458,
+          "supplied_characters": 458
+        },
+        {
+          "heading": "Toolformer: Language Models Can Teach Themselves",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 43,
+          "source_characters": 174,
+          "supplied_characters": 174
+        },
+        {
+          "heading": "Rerank Before You Reason: Analyzing Reranking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 44,
+          "source_characters": 45,
+          "supplied_characters": 45
+        },
+        {
+          "heading": "Tradeoffs Through Effective Token Cost In Deep Search",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 45,
+          "source_characters": 223,
+          "supplied_characters": 223
+        },
+        {
+          "heading": "Investigating Large Language Models As Re-Ranking",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "body",
+          "section_index": 46,
+          "source_characters": 97,
+          "supplied_characters": 97
+        },
+        {
+          "heading": "Empirical Methods In Natural Language Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 9,
+          "role": "methods",
+          "section_index": 47,
+          "source_characters": 124,
+          "supplied_characters": 124
+        },
+        {
+          "heading": "Empirical Methods In Natural Language Process-",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "methods",
+          "section_index": 48,
+          "source_characters": 2313,
+          "supplied_characters": 2313
+        },
+        {
+          "heading": "Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 10,
+          "role": "appendix",
+          "section_index": 49,
+          "source_characters": 2519,
+          "supplied_characters": 2519
+        },
+        {
+          "heading": "Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 11,
+          "role": "appendix",
+          "section_index": 50,
+          "source_characters": 4148,
+          "supplied_characters": 4148
+        },
+        {
+          "heading": "Appendix",
+          "omission_reason": null,
+          "omitted_characters": 0,
+          "page": 12,
+          "role": "appendix",
+          "section_index": 51,
+          "source_characters": 4547,
+          "supplied_characters": 4547
+        }
+      ],
+      "selected_characters": 53550,
       "selected_instead_of_full_text": false,
       "selected_pages": [
         1,
@@ -182,7 +757,7 @@
       "selected_sections": [
         {
           "characters": 331,
-          "heading": "Abstract / front matter",
+          "heading": "Question'S Gambit: The First Move Matters In Agentic Deep Search",
           "page": 1
         },
         {
@@ -207,7 +782,7 @@
         },
         {
           "characters": 93,
-          "heading": "Related Work",
+          "heading": "Question'S Gambit",
           "page": 3
         },
         {
@@ -336,6 +911,96 @@
           "page": 9
         },
         {
+          "characters": 94,
+          "heading": "Unclassified body after references",
+          "page": 9
+        },
+        {
+          "characters": 49,
+          "heading": "Ank: Fusing Supervised Fine-Tuning And Reinforce-",
+          "page": 9
+        },
+        {
+          "characters": 528,
+          "heading": "Ment Learning For Effective And Efficient Text Rerank-",
+          "page": 9
+        },
+        {
+          "characters": 294,
+          "heading": "Browsecomp-Plus: A More Fair And Transparent Eval-",
+          "page": 9
+        },
+        {
+          "characters": 297,
+          "heading": "Hop Qa Dataset For Comprehensive Evaluation Of",
+          "page": 9
+        },
+        {
+          "characters": 249,
+          "heading": "Rethinking Agentic Search With Pi-Serini: Is Lexical",
+          "page": 9
+        },
+        {
+          "characters": 237,
+          "heading": "Deep Research Agents: A Systematic Examination And",
+          "page": 9
+        },
+        {
+          "characters": 102,
+          "heading": "Information Retrieval Research With Sparse And Dense",
+          "page": 9
+        },
+        {
+          "characters": 538,
+          "heading": "National Acm Sigir Conference On Research And",
+          "page": 9
+        },
+        {
+          "characters": 274,
+          "heading": "Of The Association For Computational Linguistics:",
+          "page": 9
+        },
+        {
+          "characters": 143,
+          "heading": "Mark And Automated Evaluation For Generative Re-",
+          "page": 9
+        },
+        {
+          "characters": 458,
+          "heading": "Obrain: Executive Memory As An Agentic Brain For",
+          "page": 9
+        },
+        {
+          "characters": 174,
+          "heading": "Toolformer: Language Models Can Teach Themselves",
+          "page": 9
+        },
+        {
+          "characters": 45,
+          "heading": "Rerank Before You Reason: Analyzing Reranking",
+          "page": 9
+        },
+        {
+          "characters": 223,
+          "heading": "Tradeoffs Through Effective Token Cost In Deep Search",
+          "page": 9
+        },
+        {
+          "characters": 97,
+          "heading": "Investigating Large Language Models As Re-Ranking",
+          "page": 9
+        },
+        {
+          "characters": 124,
+          "heading": "Empirical Methods In Natural Language Process-",
+          "page": 9
+        },
+        {
+          "characters": 2313,
+          "heading": "Empirical Methods In Natural Language Process-",
+          "page": 10
+        },
+        {
           "characters": 2519,
           "heading": "Appendix",
           "page": 10
@@ -351,193 +1016,903 @@
           "page": 12
         }
       ],
-      "selection_version": "representative-v1",
+      "selected_text_sha256": "e0fe09618291a51457adf643361ec2c97a753f75e741c537c80e13a4a6150cca",
+      "selection_chunk_characters": null,
+      "selection_version": "contiguous-balanced-v2",
+      "source_content_hash": "393675e03bc109004eb9af6bb06c34d6dc1287b6a9e925c7e571402a86b34ed2",
       "source_pages": 12,
+      "status": "complete",
+      "structure_version": "page-sections-v2",
+      "successfully_extracted_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
       "surrogate_code_units": 0,
       "unreadable_pages": [],
-      "version": "coverage-v1",
-      "warnings": [
-        "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
-      ]
+      "version": "coverage-v2",
+      "warnings": []
     },
     "curation_note": null,
-    "dimension_scores": {
-      "contribution_clarity": 4,
-      "evaluation_or_validation_strength": 4,
-      "evidence_to_claim_alignment": 4,
-      "limitations_and_uncertainty_handling": 4,
-      "methodological_rigor": 4,
-      "presentation_and_precision": 3,
-      "related_work_and_gap_positioning": 3,
-      "reproducibility_and_transparency": 3,
-      "scholarly_novelty_or_value": 4
-    },
+    "dimension_scores": {},
     "downranked": false,
     "evidence": [
       {
         "claim_role": null,
-        "context_id": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
         "dimension": "contribution_clarity",
-        "evidence_ids": [],
-        "excerpt": "i- dence gathering. To reduce this wasted budget, we introduce Ques- tion's Gambit, a first-move retrieval module that gives deep research age",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "pages": [],
-        "paraphrase": "The contribution is stated explicitly.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "re dozens of search and read actions over a large corpus (Huang et al., 2025; Patel et al., 2026; Chen et al., 2025). As these systems m",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0002"
+        ],
+        "excerpt": "Deep research agents answer complex ques-\ntions through iterative loops of searching, read-\ning, and reasoning. Recent work on reasoning-\nintensive benchmarks such as BrowseComp-\nPlus shows that well-configured lexical re-\ntrieval can surface high-quality evidence, yet\nagents may still fail to connect documents car-\nrying evidence to the gold documents. We iden-\ntify a deep research agent's first retrieval move\nas an important design decision for this set-\nting. We introduceQuestion's Gambit, a first-\nmove retrieval module that decomposes the\nquestion into a set of clues, reformulates them\ninto complementary searches, consolidates the\nretrieved results, and reranks the candidate pool\nbefore the agent begins its iterative search-and-\nreasoning process. This produces an opening\ncontext designed to support both clue aggre-\ngation and final-answer verification. We fur-\nther evaluate on ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 1,
-        "pages": [],
-        "paraphrase": "The available text identifies data or a benchmark used by the work.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "wseComp-Plus by integrating it into Pi- Serini, a state-of-the-art agentic deep research framework (Hsu et al., 2026). Holding the underlying retr",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 2,
-        "pages": [],
-        "paraphrase": "A baseline or comparison system is described.",
-        "section": "Introduction",
-        "signal_type": "positive",
-        "source_blocks": [],
-        "statement_kind": null,
-        "support_status": null,
-        "support_verification": {}
-      },
-      {
-        "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": "it improves retrieval recall and downstream agent accuracy over strong baselines, improving answer accu- racy from 83.1% to 90.5% with gpt-5.5 over Pi-Serini, the strongest reporte",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "pages": [],
-        "paraphrase": "Quantitative evaluation signals were detected.",
+        "pages": [
+          1
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
         "section": "Abstract",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "96f7d922da8239acf8ee23b24bc65a0b8212fa96862affe78172a80028d81a06",
+            "evidence_id": "Ef35a4690c883c182-B0002",
+            "pages": [
+              1
+            ],
+            "section": "Abstract",
+            "section_role": "abstract",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 1,
+                "section": "Abstract",
+                "section_index": 1,
+                "start": 0,
+                "text": "Deep research agents answer complex ques-\ntions through iterative loops of searching, read-\ning, and reasoning. Recent work on reasoning-\nintensive benchmarks such as BrowseComp-\nPlus shows that well-configured lexical re-\ntrieval can surface high-quality evidence, yet\nagents may still fail to connect documents car-\nrying evidence to the gold documents. We iden-\ntify a deep research agent's first retrieval move\nas an important design decision for this set-\nting. We introduceQuestion's Gambit, a first-\nmove retrieval module that decomposes the\nquestion into a set of clues, reformulates them\ninto complementary searches, consolidates the\nretrieved results, and reranks the candidate pool\nbefore the agent begins its iterative search-and-\nreasoning process. This produces an opening\ncontext designed to support both clue aggre-\ngation and final-answer verification. We fur-\nther evaluate on "
+              }
+            ],
+            "text": "Deep research agents answer complex ques-\ntions through iterative loops of searching, read-\ning, and reasoning. Recent work on reasoning-\nintensive benchmarks such as BrowseComp-\nPlus shows that well-configured lexical re-\ntrieval can surface high-quality evidence, yet\nagents may still fail to connect documents car-\nrying evidence to the gold documents. We iden-\ntify a deep research agent's first retrieval move\nas an important design decision for this set-\nting. We introduceQuestion's Gambit, a first-\nmove retrieval module that decomposes the\nquestion into a set of clues, reformulates them\ninto complementary searches, consolidates the\nretrieved results, and reranks the candidate pool\nbefore the agent begins its iterative search-and-\nreasoning process. This produces an opening\ncontext designed to support both clue aggre-\ngation and final-answer verification. We fur-\nther evaluate on "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "evaluation_or_validation_strength",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "The work reports an error or qualitative analysis.",
-        "section": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0008"
+        ],
+        "excerpt": "wasted budget, we introduce Ques-\ntion's Gambit, a first-move retrieval module that\ngives deep research agents awarm start. Ques-\ntion's Gambit builds a compact opening context\nbefore iterative search begins. It decomposes the\nquestion into individual clues, expands each clue\nusing corpus-grounded feedback, retrieves a sepa-\nrate candidate list for each clue, and then merges\nand reranks the resulting pool against the full ques-\ntion. The final opening context is gathered clue by\nclue but judged as a whole (Figure 1). The mod-\nule requires no retraining of the agent or retriever\nand leaves the subsequent search loop unchanged.\nRather than spending early turns looking for an ini-\ntial foothold, the agent can use its remaining budget\nto fill unresolved evidence gaps.\nThis first-move framing distinguishes Question's\nGambit from two nearby alternatives. In-loop plan-\nning and query ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 2,
+        "pages": [
+          2
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Introduction",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "571d87c0f502e516c470d1f25774afc6bfb05c2e4349a389b9a0df66254b83a7",
+            "evidence_id": "Ef35a4690c883c182-B0008",
+            "pages": [
+              2
+            ],
+            "section": "Introduction",
+            "section_role": "introduction",
+            "source_spans": [
+              {
+                "end": 2102,
+                "page": 2,
+                "section": "Introduction",
+                "section_index": 3,
+                "start": 1212,
+                "text": "wasted budget, we introduce Ques-\ntion's Gambit, a first-move retrieval module that\ngives deep research agents awarm start. Ques-\ntion's Gambit builds a compact opening context\nbefore iterative search begins. It decomposes the\nquestion into individual clues, expands each clue\nusing corpus-grounded feedback, retrieves a sepa-\nrate candidate list for each clue, and then merges\nand reranks the resulting pool against the full ques-\ntion. The final opening context is gathered clue by\nclue but judged as a whole (Figure 1). The mod-\nule requires no retraining of the agent or retriever\nand leaves the subsequent search loop unchanged.\nRather than spending early turns looking for an ini-\ntial foothold, the agent can use its remaining budget\nto fill unresolved evidence gaps.\nThis first-move framing distinguishes Question's\nGambit from two nearby alternatives. In-loop plan-\nning and query "
+              }
+            ],
+            "text": "wasted budget, we introduce Ques-\ntion's Gambit, a first-move retrieval module that\ngives deep research agents awarm start. Ques-\ntion's Gambit builds a compact opening context\nbefore iterative search begins. It decomposes the\nquestion into individual clues, expands each clue\nusing corpus-grounded feedback, retrieves a sepa-\nrate candidate list for each clue, and then merges\nand reranks the resulting pool against the full ques-\ntion. The final opening context is gathered clue by\nclue but judged as a whole (Figure 1). The mod-\nule requires no retraining of the agent or retriever\nand leaves the subsequent search loop unchanged.\nRather than spending early turns looking for an ini-\ntial foothold, the agent can use its remaining budget\nto fill unresolved evidence gaps.\nThis first-move framing distinguishes Question's\nGambit from two nearby alternatives. In-loop plan-\nning and query "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "methodological_rigor",
-        "evidence_ids": [],
-        "excerpt": "ang, 2024) as a con- trol benchmark to assess its robustness and stabil- ity when transferred to a more conventional multi- hop question str",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0023"
+        ],
+        "excerpt": "three stages. A\ndecomposer extracts the clue set from the question,\nseparating constraints that a whole-question query\nwould otherwise blend together. Each clue is then\nissued to the retriever, and the documents it returns\nserve as context for expanding that clue, so the\nquery used for retrieval is grounded in terminology\nthe corpus contains rather than in the parametric\nknowledge of the expansion model. Finally, the\nper-clue lists are merged into a deduplicated pool\nand reranked against the original question, and the\nhighest-scoring documents form the opening con-\ntext. Clues thus serve as retrieval units that broaden\ncoverage, not as sub-questions to be answered on\ntheir own.\nThe module runs once, entirely within the\nagent's first action, and returns an opening con-\ntext O of size k that enters the trajectory as the\nfirst observation o1. It requires no retraining of\nthe agent or the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Question'S Gambit",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "4c87037e39f6d5aedf06df10746560d3e98c89e516b889391fa3ec20be62015b",
+            "evidence_id": "Ef35a4690c883c182-B0023",
+            "pages": [
+              4
+            ],
+            "section": "Question'S Gambit",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1796,
+                "page": 4,
+                "section": "Question'S Gambit",
+                "section_index": 11,
+                "start": 898,
+                "text": "three stages. A\ndecomposer extracts the clue set from the question,\nseparating constraints that a whole-question query\nwould otherwise blend together. Each clue is then\nissued to the retriever, and the documents it returns\nserve as context for expanding that clue, so the\nquery used for retrieval is grounded in terminology\nthe corpus contains rather than in the parametric\nknowledge of the expansion model. Finally, the\nper-clue lists are merged into a deduplicated pool\nand reranked against the original question, and the\nhighest-scoring documents form the opening con-\ntext. Clues thus serve as retrieval units that broaden\ncoverage, not as sub-questions to be answered on\ntheir own.\nThe module runs once, entirely within the\nagent's first action, and returns an opening con-\ntext O of size k that enters the trajectory as the\nfirst observation o1. It requires no retraining of\nthe agent or the "
+              }
+            ],
+            "text": "three stages. A\ndecomposer extracts the clue set from the question,\nseparating constraints that a whole-question query\nwould otherwise blend together. Each clue is then\nissued to the retriever, and the documents it returns\nserve as context for expanding that clue, so the\nquery used for retrieval is grounded in terminology\nthe corpus contains rather than in the parametric\nknowledge of the expansion model. Finally, the\nper-clue lists are merged into a deduplicated pool\nand reranked against the original question, and the\nhighest-scoring documents form the opening con-\ntext. Clues thus serve as retrieval units that broaden\ncoverage, not as sub-questions to be answered on\ntheir own.\nThe module runs once, entirely within the\nagent's first action, and returns an opening con-\ntext O of size k that enters the trajectory as the\nfirst observation o1. It requires no retraining of\nthe agent or the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0026"
+        ],
+        "excerpt": "This stage turns each clue into its own search. A\nclue on its own is short and underspecified, so be-\nfore searching we let the corpus show how it is\nactually worded. We issue the raw clueci to the re-\ntriever and keep the documents it returns as a feed-\nback setFi. An expansion modelg\u03b8 then rewrites\nthe clue conditioned on this feedback:\n\u02c6ci\u223cg \u03b8\n\u0000\nci,Fi\n\u0001\n,(4)\nso that the expansion is phrased in terminology\nthe corpus uses rather than terminology the model\ninvents on its own. The clue, its expansion, and the\nquestion are then concatenated into a single search\nstring, and the retriever returns the candidate list\nfor that clue:\nLi =R\n\u0000\nci\u2295\u02c6ci\u2295q\n\u0001\n,(5)\nwhere\u2295 denotes text concatenation. Retrieving\nwith the raw clue keeps the specific constraint in\nview, the expansion widens lexical coverage, and\nanchoring withq keeps answer-bearing documents\naccessible. This search string is built by the ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 4,
+        "pages": [
+          4,
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Per-Clue Retrieval",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "cb9396e2352d571a96ac3cab04003b5a79aba3d1418b483a136d1dafe5d793c3",
+            "evidence_id": "Ef35a4690c883c182-B0026",
+            "pages": [
+              4,
+              5
+            ],
+            "section": "Per-Clue Retrieval",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 755,
+                "page": 4,
+                "section": "Per-Clue Retrieval",
+                "section_index": 13,
+                "start": 0,
+                "text": "This stage turns each clue into its own search. A\nclue on its own is short and underspecified, so be-\nfore searching we let the corpus show how it is\nactually worded. We issue the raw clueci to the re-\ntriever and keep the documents it returns as a feed-\nback setFi. An expansion modelg\u03b8 then rewrites\nthe clue conditioned on this feedback:\n\u02c6ci\u223cg \u03b8\n\u0000\nci,Fi\n\u0001\n,(4)\nso that the expansion is phrased in terminology\nthe corpus uses rather than terminology the model\ninvents on its own. The clue, its expansion, and the\nquestion are then concatenated into a single search\nstring, and the retriever returns the candidate list\nfor that clue:\nLi =R\n\u0000\nci\u2295\u02c6ci\u2295q\n\u0001\n,(5)\nwhere\u2295 denotes text concatenation. Retrieving\nwith the raw clue keeps the specific constraint in"
+              },
+              {
+                "end": 143,
+                "page": 5,
+                "section": "Per-Clue Retrieval",
+                "section_index": 14,
+                "start": 0,
+                "text": "view, the expansion widens lexical coverage, and\nanchoring withq keeps answer-bearing documents\naccessible. This search string is built by the "
+              }
+            ],
+            "text": "This stage turns each clue into its own search. A\nclue on its own is short and underspecified, so be-\nfore searching we let the corpus show how it is\nactually worded. We issue the raw clueci to the re-\ntriever and keep the documents it returns as a feed-\nback setFi. An expansion modelg\u03b8 then rewrites\nthe clue conditioned on this feedback:\n\u02c6ci\u223cg \u03b8\n\u0000\nci,Fi\n\u0001\n,(4)\nso that the expansion is phrased in terminology\nthe corpus uses rather than terminology the model\ninvents on its own. The clue, its expansion, and the\nquestion are then concatenated into a single search\nstring, and the retriever returns the candidate list\nfor that clue:\nLi =R\n\u0000\nci\u2295\u02c6ci\u2295q\n\u0001\n,(5)\nwhere\u2295 denotes text concatenation. Retrieving\nwith the raw clue keeps the specific constraint in\nview, the expansion widens lexical coverage, and\nanchoring withq keeps answer-bearing documents\naccessible. This search string is built by the "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0028"
+        ],
+        "excerpt": "This stage consolidates the per-clue lists into the\ncompact set of documents the agent receives as\nits opening context. The lists are merged into one\npool with duplicates removed,P= Sn\ni=1Li. The\npool is broad, since every clue contributes its own\ncandidates, but merging separate rankings leaves it\nwithout a meaningful order. A pointwise reranker\nT\u03d5 therefore scores every document against the\nquestion,T\u03d5(q,d) ford\u2208P , and sorts the pool by\nthat score. The opening contextO is then the top-k\nof the resulting ranking. Since each document's\nrelevance is judged on its own againstq, the final\norder reflects how well a document serves the ques-\ntion as a whole rather than the clue that surfaced it.\nBefore scoring, each candidate's retrieval snippet is\nreplaced with its document text, since snippets are\nshort windows around matched terms and describe\na document poorly.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
         "page": 5,
-        "pages": [],
-        "paraphrase": "Robustness or statistical analysis is reported.",
-        "section": "Datasets",
+        "pages": [
+          5
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Question-Conditioned Reranking",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "fd10d526883348256352c59e6ba1262fe38e213733987b11d19521dd68fc3d37",
+            "evidence_id": "Ef35a4690c883c182-B0028",
+            "pages": [
+              5
+            ],
+            "section": "Question-Conditioned Reranking",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 873,
+                "page": 5,
+                "section": "Question-Conditioned Reranking",
+                "section_index": 15,
+                "start": 0,
+                "text": "This stage consolidates the per-clue lists into the\ncompact set of documents the agent receives as\nits opening context. The lists are merged into one\npool with duplicates removed,P= Sn\ni=1Li. The\npool is broad, since every clue contributes its own\ncandidates, but merging separate rankings leaves it\nwithout a meaningful order. A pointwise reranker\nT\u03d5 therefore scores every document against the\nquestion,T\u03d5(q,d) ford\u2208P , and sorts the pool by\nthat score. The opening contextO is then the top-k\nof the resulting ranking. Since each document's\nrelevance is judged on its own againstq, the final\norder reflects how well a document serves the ques-\ntion as a whole rather than the clue that surfaced it.\nBefore scoring, each candidate's retrieval snippet is\nreplaced with its document text, since snippets are\nshort windows around matched terms and describe\na document poorly."
+              }
+            ],
+            "text": "This stage consolidates the per-clue lists into the\ncompact set of documents the agent receives as\nits opening context. The lists are merged into one\npool with duplicates removed,P= Sn\ni=1Li. The\npool is broad, since every clue contributes its own\ncandidates, but merging separate rankings leaves it\nwithout a meaningful order. A pointwise reranker\nT\u03d5 therefore scores every document against the\nquestion,T\u03d5(q,d) ford\u2208P , and sorts the pool by\nthat score. The opening contextO is then the top-k\nof the resulting ranking. Since each document's\nrelevance is judged on its own againstq, the final\norder reflects how well a document serves the ques-\ntion as a whole rather than the clue that surfaced it.\nBefore scoring, each candidate's retrieval snippet is\nreplaced with its document text, since snippets are\nshort windows around matched terms and describe\na document poorly."
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "limitations_and_uncertainty_handling",
-        "evidence_ids": [],
-        "excerpt": null,
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": null,
-        "pages": [],
-        "paraphrase": "Limitations or threats to validity are acknowledged.",
-        "section": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0037"
+        ],
+        "excerpt": "each ques-\nTable 1: Performance on BrowseComp-Plus, comparing\nagent baselines with Question's Gambit across answer\nquality and recall over evidence and gold documents.\nLLM Retriever Answer Quality Recall\nAcc. Calib. Evi. Gold\nBROWSECOMP-PLUS(Chen et al., 2025)\no3 bm2550.8 39.1 56.6 61.7\no3 qwen3-embed-8b66.3 32.7 73.2 76.3\ngpt-5 bm2558.3 13.5 61.7 66.5\ngpt-5 qwen3-embed-8b73.0 9.7 79.0 81.3\n(Meng et al., 2026)\ngpt-oss-20b qwen3-embed-8b42.1 - 57.0 -\ngpt-5.2 qwen3-embed-8b45.1 - 74.7 -\nMEMOBRAIN(Qian et al., 2026)\nGLM-4.6 qwen3-embed-8b55.1 - - -\nDeepResearch-30B-A3B qwen3-embed-8b60.4 - - -\nAGENTIR (Chen et al., 2026)\ngpt-oss-120b-high AgentIR-4B67.0 - 78.1 -\nGLM-4.7 AgentIR-4B64.7 - 79.2 -\nTongyi-DR AgentIR-4B68.1 - 76.6 -\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash bm2568.1 15.5 94.5 95.7\ndeepseek-v4-pro bm2571.4 7.0 91.3 92.5\ngpt-5.4-mini bm2568.1 13.7 91.9 94.1\ngpt-5.5 bm2583.1 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "fb975443c5c2821bcb62e4758726abf5b63b8cd743747f72744405325c7c989f",
+            "evidence_id": "Ef35a4690c883c182-B0037",
+            "pages": [
+              6
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 1794,
+                "page": 6,
+                "section": "Implementation Details",
+                "section_index": 20,
+                "start": 897,
+                "text": "each ques-\nTable 1: Performance on BrowseComp-Plus, comparing\nagent baselines with Question's Gambit across answer\nquality and recall over evidence and gold documents.\nLLM Retriever Answer Quality Recall\nAcc. Calib. Evi. Gold\nBROWSECOMP-PLUS(Chen et al., 2025)\no3 bm2550.8 39.1 56.6 61.7\no3 qwen3-embed-8b66.3 32.7 73.2 76.3\ngpt-5 bm2558.3 13.5 61.7 66.5\ngpt-5 qwen3-embed-8b73.0 9.7 79.0 81.3\n(Meng et al., 2026)\ngpt-oss-20b qwen3-embed-8b42.1 - 57.0 -\ngpt-5.2 qwen3-embed-8b45.1 - 74.7 -\nMEMOBRAIN(Qian et al., 2026)\nGLM-4.6 qwen3-embed-8b55.1 - - -\nDeepResearch-30B-A3B qwen3-embed-8b60.4 - - -\nAGENTIR (Chen et al., 2026)\ngpt-oss-120b-high AgentIR-4B67.0 - 78.1 -\nGLM-4.7 AgentIR-4B64.7 - 79.2 -\nTongyi-DR AgentIR-4B68.1 - 76.6 -\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash bm2568.1 15.5 94.5 95.7\ndeepseek-v4-pro bm2571.4 7.0 91.3 92.5\ngpt-5.4-mini bm2568.1 13.7 91.9 94.1\ngpt-5.5 bm2583.1 "
+              }
+            ],
+            "text": "each ques-\nTable 1: Performance on BrowseComp-Plus, comparing\nagent baselines with Question's Gambit across answer\nquality and recall over evidence and gold documents.\nLLM Retriever Answer Quality Recall\nAcc. Calib. Evi. Gold\nBROWSECOMP-PLUS(Chen et al., 2025)\no3 bm2550.8 39.1 56.6 61.7\no3 qwen3-embed-8b66.3 32.7 73.2 76.3\ngpt-5 bm2558.3 13.5 61.7 66.5\ngpt-5 qwen3-embed-8b73.0 9.7 79.0 81.3\n(Meng et al., 2026)\ngpt-oss-20b qwen3-embed-8b42.1 - 57.0 -\ngpt-5.2 qwen3-embed-8b45.1 - 74.7 -\nMEMOBRAIN(Qian et al., 2026)\nGLM-4.6 qwen3-embed-8b55.1 - - -\nDeepResearch-30B-A3B qwen3-embed-8b60.4 - - -\nAGENTIR (Chen et al., 2026)\ngpt-oss-120b-high AgentIR-4B67.0 - 78.1 -\nGLM-4.7 AgentIR-4B64.7 - 79.2 -\nTongyi-DR AgentIR-4B68.1 - 76.6 -\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash bm2568.1 15.5 94.5 95.7\ndeepseek-v4-pro bm2571.4 7.0 91.3 92.5\ngpt-5.4-mini bm2568.1 13.7 91.9 94.1\ngpt-5.5 bm2583.1 "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       },
       {
         "claim_role": null,
-        "context_id": null,
-        "dimension": "reproducibility_and_transparency",
-        "evidence_ids": [],
-        "excerpt": "ublished our imple- mentation publicly at https://github.com/ radinhamidi/Question-s-Gambit.",
-        "explanation": "This automated signal is based only on the supplied material and should be checked against the paper.",
-        "page": 1,
-        "pages": [],
-        "paraphrase": "Code, data, or research artifacts are described as available.",
-        "section": "Abstract",
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0038"
+        ],
+        "excerpt": "15.7 94.7 94.4\nQUESTION'SGAMBIT\ndeepseek-v4-pro bm2576.93.9994.0 95.7\ngpt-5.4-mini bm2579.0 7.90 92.4 94.6\ngpt-5.5 bm2590.57.5896.6 98.1\ntionq into 9.6 clues on average. For each clue ci,\nwe retrieve three feedback documents and generate\nthe expansion \u02c6ci with MUGI (Zhang et al., 2024),\nusing a fixed GPT-4.1 model. The expanded query\nci\u2295\u02c6ci\u2295q retrieves the top 1000 documents, after\nwhich the per-clue lists are unioned, deduplicated,\nand reranked using Cohere Rerank4 Pro (Cohere\nTeam, 2025). The top k= 5 documents form\nthe opening context. The expansion model and\nreranker are fixed across all agent configurations.\nWe integrate Question's Gambit into PI-\nSERINI(Hsu et al., 2026) as a single first-move tool.\nAfter receiving the opening context, the agent pro-\nceeds through the framework's native RETRIEVE,\nPREVIEW, PAGINATE, and READactions, with\nsubsequent searches using plain BM25. We ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Implementation Details",
         "signal_type": "positive",
-        "source_blocks": [],
+        "source_blocks": [
+          {
+            "content_hash": "b5a80d69274bffdcee598af62518b59b2e4f6478dc00607b0dde9c91d3cf27f7",
+            "evidence_id": "Ef35a4690c883c182-B0038",
+            "pages": [
+              6
+            ],
+            "section": "Implementation Details",
+            "section_role": "methods",
+            "source_spans": [
+              {
+                "end": 2690,
+                "page": 6,
+                "section": "Implementation Details",
+                "section_index": 20,
+                "start": 1794,
+                "text": "15.7 94.7 94.4\nQUESTION'SGAMBIT\ndeepseek-v4-pro bm2576.93.9994.0 95.7\ngpt-5.4-mini bm2579.0 7.90 92.4 94.6\ngpt-5.5 bm2590.57.5896.6 98.1\ntionq into 9.6 clues on average. For each clue ci,\nwe retrieve three feedback documents and generate\nthe expansion \u02c6ci with MUGI (Zhang et al., 2024),\nusing a fixed GPT-4.1 model. The expanded query\nci\u2295\u02c6ci\u2295q retrieves the top 1000 documents, after\nwhich the per-clue lists are unioned, deduplicated,\nand reranked using Cohere Rerank4 Pro (Cohere\nTeam, 2025). The top k= 5 documents form\nthe opening context. The expansion model and\nreranker are fixed across all agent configurations.\nWe integrate Question's Gambit into PI-\nSERINI(Hsu et al., 2026) as a single first-move tool.\nAfter receiving the opening context, the agent pro-\nceeds through the framework's native RETRIEVE,\nPREVIEW, PAGINATE, and READactions, with\nsubsequent searches using plain BM25. We "
+              }
+            ],
+            "text": "15.7 94.7 94.4\nQUESTION'SGAMBIT\ndeepseek-v4-pro bm2576.93.9994.0 95.7\ngpt-5.4-mini bm2579.0 7.90 92.4 94.6\ngpt-5.5 bm2590.57.5896.6 98.1\ntionq into 9.6 clues on average. For each clue ci,\nwe retrieve three feedback documents and generate\nthe expansion \u02c6ci with MUGI (Zhang et al., 2024),\nusing a fixed GPT-4.1 model. The expanded query\nci\u2295\u02c6ci\u2295q retrieves the top 1000 documents, after\nwhich the per-clue lists are unioned, deduplicated,\nand reranked using Cohere Rerank4 Pro (Cohere\nTeam, 2025). The top k= 5 documents form\nthe opening context. The expansion model and\nreranker are fixed across all agent configurations.\nWe integrate Question's Gambit into PI-\nSERINI(Hsu et al., 2026) as a single first-move tool.\nAfter receiving the opening context, the agent pro-\nceeds through the framework's native RETRIEVE,\nPREVIEW, PAGINATE, and READactions, with\nsubsequent searches using plain BM25. We "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0040"
+        ],
+        "excerpt": "Table 1 reports answer quality and surfaced-\ndocument recall on BrowseComp-Plus. Compared\nTable 2: Previewed and behavior recall on BrowseComp-\nPlus.\nLLM Previewed Recall Behavior Recall\nEvi. Gold Evi. Gold\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash67.9 69.9 55.2 60.6\ndeepseek-v4-pro60.0 63.0 45.4 50.6\ngpt-5.4-mini60.1 65.4 43.1 52.1\ngpt-5.573.6 72.9 58.9 56.1\nQUESTION'SGAMBIT\ndeepseek-v4-pro70.6 74.8 56.9 64.5\ngpt-5.4-mini68.3 75.1 50.0 61.2\ngpt-5.578.2 85.9 64.1 75.9\nwith the matched PI-SERINIconfigurations, which\nuse the same BM25 retriever and downstream agent\nloop, Question's Gambit consistently improves an-\nswer accuracy across all three agent models. Accu-\nracy increases from 71.4% to 76.9% for DeepSeek-\nv4-pro, from 68.1% to 79.0% for GPT-5.4-mini,\nand from 83.1% to 90.5% for GPT-5.5, correspond-\ning to absolute gains of 5.5, 10.9, and 7.4 percent-\nage points, respectively. ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 6,
+        "pages": [
+          6,
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Browsecomp-Plus Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "2aadb87d156062f50d2111c1f0d58feb3f296ac51ec1dba1da5bbd67c565cd68",
+            "evidence_id": "Ef35a4690c883c182-B0040",
+            "pages": [
+              6,
+              7
+            ],
+            "section": "Browsecomp-Plus Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 89,
+                "page": 6,
+                "section": "Browsecomp-Plus Results",
+                "section_index": 21,
+                "start": 0,
+                "text": "Table 1 reports answer quality and surfaced-\ndocument recall on BrowseComp-Plus. Compared"
+              },
+              {
+                "end": 808,
+                "page": 7,
+                "section": "Browsecomp-Plus Results",
+                "section_index": 22,
+                "start": 0,
+                "text": "Table 2: Previewed and behavior recall on BrowseComp-\nPlus.\nLLM Previewed Recall Behavior Recall\nEvi. Gold Evi. Gold\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash67.9 69.9 55.2 60.6\ndeepseek-v4-pro60.0 63.0 45.4 50.6\ngpt-5.4-mini60.1 65.4 43.1 52.1\ngpt-5.573.6 72.9 58.9 56.1\nQUESTION'SGAMBIT\ndeepseek-v4-pro70.6 74.8 56.9 64.5\ngpt-5.4-mini68.3 75.1 50.0 61.2\ngpt-5.578.2 85.9 64.1 75.9\nwith the matched PI-SERINIconfigurations, which\nuse the same BM25 retriever and downstream agent\nloop, Question's Gambit consistently improves an-\nswer accuracy across all three agent models. Accu-\nracy increases from 71.4% to 76.9% for DeepSeek-\nv4-pro, from 68.1% to 79.0% for GPT-5.4-mini,\nand from 83.1% to 90.5% for GPT-5.5, correspond-\ning to absolute gains of 5.5, 10.9, and 7.4 percent-\nage points, respectively. "
+              }
+            ],
+            "text": "Table 1 reports answer quality and surfaced-\ndocument recall on BrowseComp-Plus. Compared\nTable 2: Previewed and behavior recall on BrowseComp-\nPlus.\nLLM Previewed Recall Behavior Recall\nEvi. Gold Evi. Gold\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-flash67.9 69.9 55.2 60.6\ndeepseek-v4-pro60.0 63.0 45.4 50.6\ngpt-5.4-mini60.1 65.4 43.1 52.1\ngpt-5.573.6 72.9 58.9 56.1\nQUESTION'SGAMBIT\ndeepseek-v4-pro70.6 74.8 56.9 64.5\ngpt-5.4-mini68.3 75.1 50.0 61.2\ngpt-5.578.2 85.9 64.1 75.9\nwith the matched PI-SERINIconfigurations, which\nuse the same BM25 retriever and downstream agent\nloop, Question's Gambit consistently improves an-\nswer accuracy across all three agent models. Accu-\nracy increases from 71.4% to 76.9% for DeepSeek-\nv4-pro, from 68.1% to 79.0% for GPT-5.4-mini,\nand from 83.1% to 90.5% for GPT-5.5, correspond-\ning to absolute gains of 5.5, 10.9, and 7.4 percent-\nage points, respectively. "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0041"
+        ],
+        "excerpt": "The GPT-5.5 configuration\nachieves the highest accuracy reported in the table.\nThe accuracy gains are accompanied by substan-\ntially better calibration. Calibration error decreases\nfrom 7.0 to 3.99 for DeepSeek-v4-pro, from 13.7\nto 7.90 for GPT-5.4-mini, and from 15.7 to 7.58\nfor GPT-5.5. All three accuracy improvements are\nstatistically significant; Appendix B provides the\ncomplete significance and repeated-run analysis.\nThe benefits also extend beyond the initial re-\ntrieval result. Table 2 follows evidence and gold\ndocuments through the previewed and behavior\nstages defined in Section 4.3. Across all three mod-\nels, Question's Gambit improves both evidence and\ngold recall at every stage. For GPT-5.5, surfaced\ngold recall increases from 94.4 to 98.1, previewed\ngold recall from 72.9 to 85.9, and behavior gold re-\ncall from 56.1 to 75.9. The widening improvement\nat later stages ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Browsecomp-Plus Results",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "b8831ff2d36f6f9a3e5f8ef95ac6acd5ee4858a14c74ad7dae080e00464a1a32",
+            "evidence_id": "Ef35a4690c883c182-B0041",
+            "pages": [
+              7
+            ],
+            "section": "Browsecomp-Plus Results",
+            "section_role": "results",
+            "source_spans": [
+              {
+                "end": 1699,
+                "page": 7,
+                "section": "Browsecomp-Plus Results",
+                "section_index": 22,
+                "start": 808,
+                "text": "The GPT-5.5 configuration\nachieves the highest accuracy reported in the table.\nThe accuracy gains are accompanied by substan-\ntially better calibration. Calibration error decreases\nfrom 7.0 to 3.99 for DeepSeek-v4-pro, from 13.7\nto 7.90 for GPT-5.4-mini, and from 15.7 to 7.58\nfor GPT-5.5. All three accuracy improvements are\nstatistically significant; Appendix B provides the\ncomplete significance and repeated-run analysis.\nThe benefits also extend beyond the initial re-\ntrieval result. Table 2 follows evidence and gold\ndocuments through the previewed and behavior\nstages defined in Section 4.3. Across all three mod-\nels, Question's Gambit improves both evidence and\ngold recall at every stage. For GPT-5.5, surfaced\ngold recall increases from 94.4 to 98.1, previewed\ngold recall from 72.9 to 85.9, and behavior gold re-\ncall from 56.1 to 75.9. The widening improvement\nat later stages "
+              }
+            ],
+            "text": "The GPT-5.5 configuration\nachieves the highest accuracy reported in the table.\nThe accuracy gains are accompanied by substan-\ntially better calibration. Calibration error decreases\nfrom 7.0 to 3.99 for DeepSeek-v4-pro, from 13.7\nto 7.90 for GPT-5.4-mini, and from 15.7 to 7.58\nfor GPT-5.5. All three accuracy improvements are\nstatistically significant; Appendix B provides the\ncomplete significance and repeated-run analysis.\nThe benefits also extend beyond the initial re-\ntrieval result. Table 2 follows evidence and gold\ndocuments through the previewed and behavior\nstages defined in Section 4.3. Across all three mod-\nels, Question's Gambit improves both evidence and\ngold recall at every stage. For GPT-5.5, surfaced\ngold recall increases from 94.4 to 98.1, previewed\ngold recall from 72.9 to 85.9, and behavior gold re-\ncall from 56.1 to 75.9. The widening improvement\nat later stages "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0043"
+        ],
+        "excerpt": "We use MultiHop-RAG as a control benchmark to\nexamine whether the first-move module remains ef-\nfective when transferred to a more conventional\nmulti-hop question structure. As shown in Ta-\nble 3, Question's Gambit improves GPT-5.4-mini\naccuracy from 76.0% to 77.0% and GPT-5.5 accu-\nTable 3: Accuracy on MultiHop-RAG, comparing PI-\nSERINIwith Question's Gambit.\nLLM Retriever Accuracy\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini bm2576.0\ngpt-5.5 bm2581.0\nQUESTION'SGAMBIT\ngpt-5.4-mini bm2577.0\ngpt-5.5 bm2581.5\nTable 4: Average tool calls on BrowseComp-Plus.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-pro18.6 14.2 4.3 0.1\ngpt-5.4-mini24.7 20.2 4.2 0.3\ngpt-5.519.3 13.5 5.0 0.8\nQuestion's Gambit (ours)\ndeepseek-v4-pro23.9 16.6 6.1 0.1\ngpt-5.4-mini27.0 19.9 5.7 0.3\ngpt-5.522.1 14.5 6.0 0.5\nNote:For Question's Gambit, the total includes the initial first-move tool ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Transfer To Multihop-Rag",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "428ee9d03117aaf076d490e4b6605a5e9f39ac53a48e4ecbd3889f7a8ebe2443",
+            "evidence_id": "Ef35a4690c883c182-B0043",
+            "pages": [
+              7
+            ],
+            "section": "Transfer To Multihop-Rag",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 890,
+                "page": 7,
+                "section": "Transfer To Multihop-Rag",
+                "section_index": 23,
+                "start": 0,
+                "text": "We use MultiHop-RAG as a control benchmark to\nexamine whether the first-move module remains ef-\nfective when transferred to a more conventional\nmulti-hop question structure. As shown in Ta-\nble 3, Question's Gambit improves GPT-5.4-mini\naccuracy from 76.0% to 77.0% and GPT-5.5 accu-\nTable 3: Accuracy on MultiHop-RAG, comparing PI-\nSERINIwith Question's Gambit.\nLLM Retriever Accuracy\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini bm2576.0\ngpt-5.5 bm2581.0\nQUESTION'SGAMBIT\ngpt-5.4-mini bm2577.0\ngpt-5.5 bm2581.5\nTable 4: Average tool calls on BrowseComp-Plus.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-pro18.6 14.2 4.3 0.1\ngpt-5.4-mini24.7 20.2 4.2 0.3\ngpt-5.519.3 13.5 5.0 0.8\nQuestion's Gambit (ours)\ndeepseek-v4-pro23.9 16.6 6.1 0.1\ngpt-5.4-mini27.0 19.9 5.7 0.3\ngpt-5.522.1 14.5 6.0 0.5\nNote:For Question's Gambit, the total includes the initial first-move tool "
+              }
+            ],
+            "text": "We use MultiHop-RAG as a control benchmark to\nexamine whether the first-move module remains ef-\nfective when transferred to a more conventional\nmulti-hop question structure. As shown in Ta-\nble 3, Question's Gambit improves GPT-5.4-mini\naccuracy from 76.0% to 77.0% and GPT-5.5 accu-\nTable 3: Accuracy on MultiHop-RAG, comparing PI-\nSERINIwith Question's Gambit.\nLLM Retriever Accuracy\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini bm2576.0\ngpt-5.5 bm2581.0\nQUESTION'SGAMBIT\ngpt-5.4-mini bm2577.0\ngpt-5.5 bm2581.5\nTable 4: Average tool calls on BrowseComp-Plus.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ndeepseek-v4-pro18.6 14.2 4.3 0.1\ngpt-5.4-mini24.7 20.2 4.2 0.3\ngpt-5.519.3 13.5 5.0 0.8\nQuestion's Gambit (ours)\ndeepseek-v4-pro23.9 16.6 6.1 0.1\ngpt-5.4-mini27.0 19.9 5.7 0.3\ngpt-5.522.1 14.5 6.0 0.5\nNote:For Question's Gambit, the total includes the initial first-move tool "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0046"
+        ],
+        "excerpt": "decrease from 8.34\nto 8.15 for GPT-5.4-mini and from 5.57 to 4.25 for\nGPT-5.5. For GPT-5.5, this reduction also lowers\ntotal tool use from 10.23 to 9.34 while improving\nTable 5: Average tool calls on MultiHop-RAG.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini11.71 8.34 3.01 0.35\ngpt-5.510.23 5.57 3.58 1.09\nQuestion's Gambit\ngpt-5.4-mini12.74 8.15 3.20 0.42\ngpt-5.59.34 4.25 3.74 0.36\nNote:For Question's Gambit, the total includes the initial first-move tool call,\nwhich is not included in the three in-loop action categories.\nTable 6: Per-question first-move cost for GPT-5.5 on\nBrowseComp-Plus.\nComponent Workload Latency Cost\nClue Decomposition 1 LLM call; 9.6 clues 2\u201310 s $0.020\nClue Expansion 9.6 parallel LLM calls 0.9 s/call $0.010\nPer-clue Retrieval 9.6 BM25 calls; depth 1,000<1s \u2014\nPointwise Reranking 2,500 documents; 25 batches 5\u201315 s $0.025\nFirst move, total ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 7,
+        "pages": [
+          7,
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Tool-Use Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "f0fcd193309039582691cbfc6dea6c8823684721e1f16f9454e0f24613d58b55",
+            "evidence_id": "Ef35a4690c883c182-B0046",
+            "pages": [
+              7,
+              8
+            ],
+            "section": "Tool-Use Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 1065,
+                "page": 7,
+                "section": "Tool-Use Analysis",
+                "section_index": 24,
+                "start": 897,
+                "text": "decrease from 8.34\nto 8.15 for GPT-5.4-mini and from 5.57 to 4.25 for\nGPT-5.5. For GPT-5.5, this reduction also lowers\ntotal tool use from 10.23 to 9.34 while improving"
+              },
+              {
+                "end": 729,
+                "page": 8,
+                "section": "Tool-Use Analysis",
+                "section_index": 25,
+                "start": 0,
+                "text": "Table 5: Average tool calls on MultiHop-RAG.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini11.71 8.34 3.01 0.35\ngpt-5.510.23 5.57 3.58 1.09\nQuestion's Gambit\ngpt-5.4-mini12.74 8.15 3.20 0.42\ngpt-5.59.34 4.25 3.74 0.36\nNote:For Question's Gambit, the total includes the initial first-move tool call,\nwhich is not included in the three in-loop action categories.\nTable 6: Per-question first-move cost for GPT-5.5 on\nBrowseComp-Plus.\nComponent Workload Latency Cost\nClue Decomposition 1 LLM call; 9.6 clues 2\u201310 s $0.020\nClue Expansion 9.6 parallel LLM calls 0.9 s/call $0.010\nPer-clue Retrieval 9.6 BM25 calls; depth 1,000<1s \u2014\nPointwise Reranking 2,500 documents; 25 batches 5\u201315 s $0.025\nFirst move, total "
+              }
+            ],
+            "text": "decrease from 8.34\nto 8.15 for GPT-5.4-mini and from 5.57 to 4.25 for\nGPT-5.5. For GPT-5.5, this reduction also lowers\ntotal tool use from 10.23 to 9.34 while improving\nTable 5: Average tool calls on MultiHop-RAG.\nLLM Total Search Read Browse\nPI-SERINI(Hsu et al., 2026)\ngpt-5.4-mini11.71 8.34 3.01 0.35\ngpt-5.510.23 5.57 3.58 1.09\nQuestion's Gambit\ngpt-5.4-mini12.74 8.15 3.20 0.42\ngpt-5.59.34 4.25 3.74 0.36\nNote:For Question's Gambit, the total includes the initial first-move tool call,\nwhich is not included in the three in-loop action categories.\nTable 6: Per-question first-move cost for GPT-5.5 on\nBrowseComp-Plus.\nComponent Workload Latency Cost\nClue Decomposition 1 LLM call; 9.6 clues 2\u201310 s $0.020\nClue Expansion 9.6 parallel LLM calls 0.9 s/call $0.010\nPer-clue Retrieval 9.6 BM25 calls; depth 1,000<1s \u2014\nPointwise Reranking 2,500 documents; 25 batches 5\u201315 s $0.025\nFirst move, total "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0048"
+        ],
+        "excerpt": "Question's Gambit adds a one-time cost before\nthe agent loop. Table 6 summarizes this cost over\nthe full 830-question GPT-5.5 run. Workloads are\nper-question means, and API costs are rounded es-\ntimates; therefore, component costs may not sum\nexactly to the total. The module produces 9.6 clues\non average and parallelizes their reformulation and\nretrieval, yielding approximately 2,500 candidates\nthat are reranked in 25 batches. Its median latency\nis 28.5 seconds, or 29% of the 98-second median\ntrajectory, and its estimated $0.05 cost is less than\n10% of the approximately $0.55 total cost per ques-\ntion.\nWe further conduct a matched-budget compar-\nison with PI-SERINIon the 50-question devel-\nopment subset, holding the prompts, judge, and\nT= 900 s budget fixed. On this subset, adding\nthe first move increases median end-to-end latency\nfrom 59 to 88 seconds, with 35 seconds spent on\nthe ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Cost And Latency",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "5a8290f829b5079a9db0bbea7a31551cd196d2d44cf956f049aefd75a6af350d",
+            "evidence_id": "Ef35a4690c883c182-B0048",
+            "pages": [
+              8
+            ],
+            "section": "Cost And Latency",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 895,
+                "page": 8,
+                "section": "Cost And Latency",
+                "section_index": 26,
+                "start": 0,
+                "text": "Question's Gambit adds a one-time cost before\nthe agent loop. Table 6 summarizes this cost over\nthe full 830-question GPT-5.5 run. Workloads are\nper-question means, and API costs are rounded es-\ntimates; therefore, component costs may not sum\nexactly to the total. The module produces 9.6 clues\non average and parallelizes their reformulation and\nretrieval, yielding approximately 2,500 candidates\nthat are reranked in 25 batches. Its median latency\nis 28.5 seconds, or 29% of the 98-second median\ntrajectory, and its estimated $0.05 cost is less than\n10% of the approximately $0.55 total cost per ques-\ntion.\nWe further conduct a matched-budget compar-\nison with PI-SERINIon the 50-question devel-\nopment subset, holding the prompts, judge, and\nT= 900 s budget fixed. On this subset, adding\nthe first move increases median end-to-end latency\nfrom 59 to 88 seconds, with 35 seconds spent on\nthe "
+              }
+            ],
+            "text": "Question's Gambit adds a one-time cost before\nthe agent loop. Table 6 summarizes this cost over\nthe full 830-question GPT-5.5 run. Workloads are\nper-question means, and API costs are rounded es-\ntimates; therefore, component costs may not sum\nexactly to the total. The module produces 9.6 clues\non average and parallelizes their reformulation and\nretrieval, yielding approximately 2,500 candidates\nthat are reranked in 25 batches. Its median latency\nis 28.5 seconds, or 29% of the 98-second median\ntrajectory, and its estimated $0.05 cost is less than\n10% of the approximately $0.55 total cost per ques-\ntion.\nWe further conduct a matched-budget compar-\nison with PI-SERINIon the 50-question devel-\nopment subset, holding the prompts, judge, and\nT= 900 s budget fixed. On this subset, adding\nthe first move increases median end-to-end latency\nfrom 59 to 88 seconds, with 35 seconds spent on\nthe "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0051"
+        ],
+        "excerpt": "We trace the 79 incorrect GPT-5.5 answers through\nthe surfaced\u2192 previewed\u2192 opened or cited\u2192\nanswered funnel, assigning each question to the\nearliest stage at which no gold document advances.\nTable 7 shows that candidate-generation failures\nare rare: only three errors (3.8%) occur because\nno gold document is surfaced. Instead, 53 errors\n(67.1%) occur after gold evidence is surfaced but\nbefore it is opened or cited, including 44 cases in\nwhich it is never previewed and nine in which it\nis previewed but not subsequently used. In the re-\nmaining 23 cases (29.1%), the agent opens or cites\na gold document but still answers incorrectly, indi-\ncating failures in verification or evidence synthesis.\nThe residual bottleneck therefore lies primarily\nin how the agent selects and uses retrieved evi-\ndence, rather than in retrieval coverage itself. This\ninterpretation is consistent with the trajectory ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 8,
+        "pages": [
+          8
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Error Analysis",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "e88b78545a295bba35fad15b7ee5cf27382b294064a312d21f58a635ad9498c4",
+            "evidence_id": "Ef35a4690c883c182-B0051",
+            "pages": [
+              8
+            ],
+            "section": "Error Analysis",
+            "section_role": "body",
+            "source_spans": [
+              {
+                "end": 900,
+                "page": 8,
+                "section": "Error Analysis",
+                "section_index": 28,
+                "start": 0,
+                "text": "We trace the 79 incorrect GPT-5.5 answers through\nthe surfaced\u2192 previewed\u2192 opened or cited\u2192\nanswered funnel, assigning each question to the\nearliest stage at which no gold document advances.\nTable 7 shows that candidate-generation failures\nare rare: only three errors (3.8%) occur because\nno gold document is surfaced. Instead, 53 errors\n(67.1%) occur after gold evidence is surfaced but\nbefore it is opened or cited, including 44 cases in\nwhich it is never previewed and nine in which it\nis previewed but not subsequently used. In the re-\nmaining 23 cases (29.1%), the agent opens or cites\na gold document but still answers incorrectly, indi-\ncating failures in verification or evidence synthesis.\nThe residual bottleneck therefore lies primarily\nin how the agent selects and uses retrieved evi-\ndence, rather than in retrieval coverage itself. This\ninterpretation is consistent with the trajectory "
+              }
+            ],
+            "text": "We trace the 79 incorrect GPT-5.5 answers through\nthe surfaced\u2192 previewed\u2192 opened or cited\u2192\nanswered funnel, assigning each question to the\nearliest stage at which no gold document advances.\nTable 7 shows that candidate-generation failures\nare rare: only three errors (3.8%) occur because\nno gold document is surfaced. Instead, 53 errors\n(67.1%) occur after gold evidence is surfaced but\nbefore it is opened or cited, including 44 cases in\nwhich it is never previewed and nine in which it\nis previewed but not subsequently used. In the re-\nmaining 23 cases (29.1%), the agent opens or cites\na gold document but still answers incorrectly, indi-\ncating failures in verification or evidence synthesis.\nThe residual bottleneck therefore lies primarily\nin how the agent selects and uses retrieved evi-\ndence, rather than in retrieval coverage itself. This\ninterpretation is consistent with the trajectory "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0054"
+        ],
+        "excerpt": "Our evaluation focuses on fixed-corpus deep re-\nsearch, using the full BrowseComp-Plus bench-\nmark and a 200-question MultiHop-RAG control\nset; generalization to other corpora and live web\nsearch remains to be studied. We evaluate three\nagent models on BrowseComp-Plus and two on\nMultiHop-RAG, so broader model coverage is an\nexciting path. Moreover, Question's Gambit cur-\nrently uses BM25 candidate generation, and its\nbehavior with dense, hybrid, or learned retrievers\nmay differ. Finally, although our matched compar-\nisons isolate the main first-move component, they\ndo not fully characterize anchoring on misleading\nopening evidence. Future work should develop\nadaptive strategies that calibrate or skip the first\nmove based on question difficulty, ambiguity, and\nretrieval confidence.",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 9,
+        "pages": [
+          9
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Limitations",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "3a0d8adc070ca54ba3702332d29db0060307e84a85ea45fc70f09688682269fe",
+            "evidence_id": "Ef35a4690c883c182-B0054",
+            "pages": [
+              9
+            ],
+            "section": "Limitations",
+            "section_role": "limitations",
+            "source_spans": [
+              {
+                "end": 791,
+                "page": 9,
+                "section": "Limitations",
+                "section_index": 30,
+                "start": 0,
+                "text": "Our evaluation focuses on fixed-corpus deep re-\nsearch, using the full BrowseComp-Plus bench-\nmark and a 200-question MultiHop-RAG control\nset; generalization to other corpora and live web\nsearch remains to be studied. We evaluate three\nagent models on BrowseComp-Plus and two on\nMultiHop-RAG, so broader model coverage is an\nexciting path. Moreover, Question's Gambit cur-\nrently uses BM25 candidate generation, and its\nbehavior with dense, hybrid, or learned retrievers\nmay differ. Finally, although our matched compar-\nisons isolate the main first-move component, they\ndo not fully characterize anchoring on misleading\nopening evidence. Future work should develop\nadaptive strategies that calibrate or skip the first\nmove based on question difficulty, ambiguity, and\nretrieval confidence."
+              }
+            ],
+            "text": "Our evaluation focuses on fixed-corpus deep re-\nsearch, using the full BrowseComp-Plus bench-\nmark and a 200-question MultiHop-RAG control\nset; generalization to other corpora and live web\nsearch remains to be studied. We evaluate three\nagent models on BrowseComp-Plus and two on\nMultiHop-RAG, so broader model coverage is an\nexciting path. Moreover, Question's Gambit cur-\nrently uses BM25 candidate generation, and its\nbehavior with dense, hybrid, or learned retrievers\nmay differ. Finally, although our matched compar-\nisons isolate the main first-move component, they\ndo not fully characterize anchoring on misleading\nopening evidence. Future work should develop\nadaptive strategies that calibrate or skip the first\nmove based on question difficulty, ambiguity, and\nretrieval confidence."
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0076"
+        ],
+        "excerpt": "the\ncorresponding PI-SERINIbaseline using a two-\nsided, two-proportionz-test. A paired test would\nordinarily be preferable because both systems an-\nswer the same questions; however, the per-question\npredictions underlying the published PI-SERINI\nresults are unavailable. We therefore conduct an\nunpaired test over the two observed proportions,\nwithn= 830 for each system. Table 9 reports the\nconfidence intervals, absolute improvements, test\nstatistics, andp-values for all three agents.\nAs shown in Table 9, Question's Gambit signif-\nicantly improves accuracy for all three agents at\n\u03b1= 0.05 , with absolute gains ranging from 5.5\nto 10.9 percentage points. All three comparisons\nalso remain significant after Bonferroni correction\nTable 8: Representative questions from MultiHop-RAG and BrowseComp-Plus, illustrating differences in their\nstructure, complexity, and style.\nType Representative ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 10,
+        "pages": [
+          10,
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "96434235f3d26258ebe54a44c7909d871019a66371e82e4228f0ec0b0a3f3308",
+            "evidence_id": "Ef35a4690c883c182-B0076",
+            "pages": [
+              10,
+              11
+            ],
+            "section": "Appendix",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2519,
+                "page": 10,
+                "section": "Appendix",
+                "section_index": 49,
+                "start": 1787,
+                "text": "the\ncorresponding PI-SERINIbaseline using a two-\nsided, two-proportionz-test. A paired test would\nordinarily be preferable because both systems an-\nswer the same questions; however, the per-question\npredictions underlying the published PI-SERINI\nresults are unavailable. We therefore conduct an\nunpaired test over the two observed proportions,\nwithn= 830 for each system. Table 9 reports the\nconfidence intervals, absolute improvements, test\nstatistics, andp-values for all three agents.\nAs shown in Table 9, Question's Gambit signif-\nicantly improves accuracy for all three agents at\n\u03b1= 0.05 , with absolute gains ranging from 5.5\nto 10.9 percentage points. All three comparisons\nalso remain significant after Bonferroni correction"
+              },
+              {
+                "end": 161,
+                "page": 11,
+                "section": "Appendix",
+                "section_index": 50,
+                "start": 0,
+                "text": "Table 8: Representative questions from MultiHop-RAG and BrowseComp-Plus, illustrating differences in their\nstructure, complexity, and style.\nType Representative "
+              }
+            ],
+            "text": "the\ncorresponding PI-SERINIbaseline using a two-\nsided, two-proportionz-test. A paired test would\nordinarily be preferable because both systems an-\nswer the same questions; however, the per-question\npredictions underlying the published PI-SERINI\nresults are unavailable. We therefore conduct an\nunpaired test over the two observed proportions,\nwithn= 830 for each system. Table 9 reports the\nconfidence intervals, absolute improvements, test\nstatistics, andp-values for all three agents.\nAs shown in Table 9, Question's Gambit signif-\nicantly improves accuracy for all three agents at\n\u03b1= 0.05 , with absolute gains ranging from 5.5\nto 10.9 percentage points. All three comparisons\nalso remain significant after Bonferroni correction\nTable 8: Representative questions from MultiHop-RAG and BrowseComp-Plus, illustrating differences in their\nstructure, complexity, and style.\nType Representative "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0079"
+        ],
+        "excerpt": "appear across different\ndocuments.\nTable 9: Statistical comparison of Question's Gambit with the corresponding PI-SERINIbaseline on the complete\nBrowseComp-Plus evaluation set. Accuracies, Wilson 95% confidence intervals, and absolute improvements (\u2206)\nare reported in percentage points. Thep-values are obtained using two-sided, unpaired two-proportionz-tests.\nPI-SERINIQuestion's Gambit Comparison\nAgent Acc. 95% CI Acc. 95% CI\u2206p\ngpt-5.5 83.1 [80.4, 85.5]90.5[88.3, 92.3] +7.49.7\u00d710 \u22126\ngpt-5.4-mini 68.1 [64.8, 71.2]79.0[76.1, 81.7] +10.94.1\u00d710 \u22127\ndeepseek-v4-pro 71.4 [68.3, 74.4]76.9[73.9, 79.6] +5.51.16\u00d710 \u22122\nfor three tests, which gives a corrected threshold of\n\u03b1/3 = 0.0167.\nRepeated-run analysis.To complement the full-\nset significance tests, we evaluate selected configu-\nrations across independent runs on the 50-question\ndevelopment set. Two independent runs of the same\nGPT-5 ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "0b21f96a94b1b8d36c7a41bb3fcf680d38bda5fdf8d7687192e1502188d4867f",
+            "evidence_id": "Ef35a4690c883c182-B0079",
+            "pages": [
+              11
+            ],
+            "section": "Appendix",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 2838,
+                "page": 11,
+                "section": "Appendix",
+                "section_index": 50,
+                "start": 1949,
+                "text": "appear across different\ndocuments.\nTable 9: Statistical comparison of Question's Gambit with the corresponding PI-SERINIbaseline on the complete\nBrowseComp-Plus evaluation set. Accuracies, Wilson 95% confidence intervals, and absolute improvements (\u2206)\nare reported in percentage points. Thep-values are obtained using two-sided, unpaired two-proportionz-tests.\nPI-SERINIQuestion's Gambit Comparison\nAgent Acc. 95% CI Acc. 95% CI\u2206p\ngpt-5.5 83.1 [80.4, 85.5]90.5[88.3, 92.3] +7.49.7\u00d710 \u22126\ngpt-5.4-mini 68.1 [64.8, 71.2]79.0[76.1, 81.7] +10.94.1\u00d710 \u22127\ndeepseek-v4-pro 71.4 [68.3, 74.4]76.9[73.9, 79.6] +5.51.16\u00d710 \u22122\nfor three tests, which gives a corrected threshold of\n\u03b1/3 = 0.0167.\nRepeated-run analysis.To complement the full-\nset significance tests, we evaluate selected configu-\nrations across independent runs on the 50-question\ndevelopment set. Two independent runs of the same\nGPT-5 "
+              }
+            ],
+            "text": "appear across different\ndocuments.\nTable 9: Statistical comparison of Question's Gambit with the corresponding PI-SERINIbaseline on the complete\nBrowseComp-Plus evaluation set. Accuracies, Wilson 95% confidence intervals, and absolute improvements (\u2206)\nare reported in percentage points. Thep-values are obtained using two-sided, unpaired two-proportionz-tests.\nPI-SERINIQuestion's Gambit Comparison\nAgent Acc. 95% CI Acc. 95% CI\u2206p\ngpt-5.5 83.1 [80.4, 85.5]90.5[88.3, 92.3] +7.49.7\u00d710 \u22126\ngpt-5.4-mini 68.1 [64.8, 71.2]79.0[76.1, 81.7] +10.94.1\u00d710 \u22127\ndeepseek-v4-pro 71.4 [68.3, 74.4]76.9[73.9, 79.6] +5.51.16\u00d710 \u22122\nfor three tests, which gives a corrected threshold of\n\u03b1/3 = 0.0167.\nRepeated-run analysis.To complement the full-\nset significance tests, we evaluate selected configu-\nrations across independent runs on the 50-question\ndevelopment set. Two independent runs of the same\nGPT-5 "
+          }
+        ],
+        "statement_kind": null,
+        "support_status": null,
+        "support_verification": {}
+      },
+      {
+        "claim_role": null,
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "dimension": "contribution_clarity",
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0080"
+        ],
+        "excerpt": "configuration both achieve 82% accuracy.\nTwo independent runs of the complete GPT-5.5\nQuestion's Gambit configuration similarly achieve\n90% and 92%. This consistency indicates that the\nreported performance of these configurations is\nnot attributable to a single favorable trajectory and\nprovides complementary evidence of run-to-run\nstability.\nTogether, the full-set tests establish the statis-\ntical significance of the improvements, while the\nrepeated-run results demonstrate that the evaluated\nconfigurations remain stable across independent\nagent executions.\nC Prompts\nIn this section, we provide the full prompts used by\nQuestion's Gambit.\nDeep Search Agent\nYou are a deep research agent answering a\nquestion using only the provided retrieval\ntools. Your job is to retrieve evidence from\nthe corpus and answer with citations.\n## How to choose a first move\nPick the strongest opening move for ",
+        "explanation": "Source integrity verified; scientific judgments are recorded separately.",
+        "page": 11,
+        "pages": [
+          11
+        ],
+        "paraphrase": "Canonical source cited in the scientific promotion review.",
+        "section": "Appendix",
+        "signal_type": "positive",
+        "source_blocks": [
+          {
+            "content_hash": "7b979c1902b2e478663da2112252bc602cf1f994366af3a868086f13845938a5",
+            "evidence_id": "Ef35a4690c883c182-B0080",
+            "pages": [
+              11
+            ],
+            "section": "Appendix",
+            "section_role": "appendix",
+            "source_spans": [
+              {
+                "end": 3735,
+                "page": 11,
+                "section": "Appendix",
+                "section_index": 50,
+                "start": 2838,
+                "text": "configuration both achieve 82% accuracy.\nTwo independent runs of the complete GPT-5.5\nQuestion's Gambit configuration similarly achieve\n90% and 92%. This consistency indicates that the\nreported performance of these configurations is\nnot attributable to a single favorable trajectory and\nprovides complementary evidence of run-to-run\nstability.\nTogether, the full-set tests establish the statis-\ntical significance of the improvements, while the\nrepeated-run results demonstrate that the evaluated\nconfigurations remain stable across independent\nagent executions.\nC Prompts\nIn this section, we provide the full prompts used by\nQuestion's Gambit.\nDeep Search Agent\nYou are a deep research agent answering a\nquestion using only the provided retrieval\ntools. Your job is to retrieve evidence from\nthe corpus and answer with citations.\n## How to choose a first move\nPick the strongest opening move for "
+              }
+            ],
+            "text": "configuration both achieve 82% accuracy.\nTwo independent runs of the complete GPT-5.5\nQuestion's Gambit configuration similarly achieve\n90% and 92%. This consistency indicates that the\nreported performance of these configurations is\nnot attributable to a single favorable trajectory and\nprovides complementary evidence of run-to-run\nstability.\nTogether, the full-set tests establish the statis-\ntical significance of the improvements, while the\nrepeated-run results demonstrate that the evaluated\nconfigurations remain stable across independent\nagent executions.\nC Prompts\nIn this section, we provide the full prompts used by\nQuestion's Gambit.\nDeep Search Agent\nYou are a deep research agent answering a\nquestion using only the provided retrieval\ntools. Your job is to retrieve evidence from\nthe corpus and answer with citations.\n## How to choose a first move\nPick the strongest opening move for "
+          }
+        ],
         "statement_kind": null,
         "support_status": null,
         "support_verification": {}
       }
     ],
-    "full_text_assessed": false,
+    "full_text_assessed": true,
     "full_text_url": "https://arxiv.org/pdf/2609.14412",
-    "gate_version": "scientific-gate-v1",
+    "gate_version": "dual-promotion-v3",
     "manual_override": false,
-    "missing_information": [
-      "References, acknowledgements and other labelled back matter excluded; body and detected appendices retained where budget permits."
-    ],
-    "overall_quality_score": 77,
+    "missing_information": [],
+    "overall_quality_score": null,
     "paper_type": "empirical_research",
-    "positive_signals": [
-      "The contribution is stated explicitly.",
-      "The available text identifies data or a benchmark used by the work.",
-      "A baseline or comparison system is described.",
-      "Quantitative evaluation signals were detected.",
-      "The work reports an error or qualitative analysis.",
-      "Robustness or statistical analysis is reported.",
-      "Limitations or threats to validity are acknowledged.",
-      "Code, data, or research artifacts are described as available."
-    ],
-    "promotion": {},
-    "rationale": "Text-pattern signals are available, but scientific substance requires manuscript review.",
-    "recommendation": "promising",
-    "rubric_version": "scholarly-rubric-v1",
+    "positive_signals": [],
+    "promotion": {
+      "adjudicator": {
+        "blocking_reasons": [],
+        "canonical_id": "doi:10.48550/arxiv.2609.14412",
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline accuracy is measured against fixed benchmark ground-truth answers and human-annotated evidence/gold relevance judgments, which are separate from the retrieval and reranking components.",
+          "final_evaluation_signal": "BrowseComp-Plus and MultiHop-RAG ground-truth answer matching, calibration error, and evidence/gold document recall against human-annotated reference labels.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Fixed prompting heuristics, BM25 retrieval, corpus-grounded query expansion, and an off-the-shelf Cohere Rerank4 Pro reranker, with no task-specific training or reward-driven adaptation loop.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0002",
+          "Ef35a4690c883c182-B0008",
+          "Ef35a4690c883c182-B0023",
+          "Ef35a4690c883c182-B0026",
+          "Ef35a4690c883c182-B0028",
+          "Ef35a4690c883c182-B0037",
+          "Ef35a4690c883c182-B0038",
+          "Ef35a4690c883c182-B0040",
+          "Ef35a4690c883c182-B0041",
+          "Ef35a4690c883c182-B0043",
+          "Ef35a4690c883c182-B0046",
+          "Ef35a4690c883c182-B0048",
+          "Ef35a4690c883c182-B0051",
+          "Ef35a4690c883c182-B0054",
+          "Ef35a4690c883c182-B0076",
+          "Ef35a4690c883c182-B0079",
+          "Ef35a4690c883c182-B0080"
+        ],
+        "promotion_decision": "pass",
+        "source_content_hash": "393675e03bc109004eb9af6bb06c34d6dc1287b6a9e925c7e571402a86b34ed2"
+      },
+      "adjudicator_model": "deepseek/deepseek-v4-pro-0813",
+      "adjudicator_provider": "openrouter",
+      "model_pair": {
+        "adjudicator": {
+          "family": "deepseek",
+          "model": "deepseek/deepseek-v4-pro-0813",
+          "provider": "openrouter"
+        },
+        "independent_families": true,
+        "primary": {
+          "family": "gemini",
+          "model": "gemini-3.8-flash",
+          "provider": "google"
+        },
+        "version": "model-pair-v1"
+      },
+      "outcome": "success",
+      "primary": {
+        "canonical_id": "doi:10.48550/arxiv.2609.14412",
+        "claim_evidence_alignment": "Claims of improved retrieval recall and downstream answer accuracy over the matched Pi-Serini baseline are well-supported by experimental results (e.g., GPT-5.5 accuracy improving from 83.1% to 90.5% with p < 1e-5). Error analysis and trajectory inspections directly substantiate the mechanism of improved gold evidence survival.",
+        "context_id": "f35a4690c883c182405893a989f6ea1c99a12d14c198e7975a2dae0893998a23",
+        "decision": "pass",
+        "evaluation_assessment": "Evaluation is conducted rigorously across 830 queries on BrowseComp-Plus and 200 queries on MultiHop-RAG using three underlying LLMs (GPT-5.5, GPT-5.4-mini, and DeepSeek-v4-pro). The evaluation assesses answer accuracy, calibration error, evidence/gold recall across funnel stages, tool allocation, latency/cost tradeoffs, and provides statistical significance tests (two-proportion z-tests with Bonferroni correction) and repeated-run consistency checks.",
+        "evaluation_independence": {
+          "concern": "none",
+          "corroboration_direction": "supports",
+          "corroboration_summary": "Headline performance is evaluated against frozen benchmark ground truth labels and relevance judgments completely separate from the internal retrieval and reranking models.",
+          "final_evaluation_signal": "Standard benchmark ground-truth exact answer matching, calibration error, and gold/evidence document recall against human-annotated reference labels on BrowseComp-Plus and MultiHop-RAG.",
+          "independent_corroboration": "present",
+          "optimization_signal": "Pretrained models and fixed prompting heuristic rules, including BM25 scoring and off-the-shelf Cohere Rerank4 Pro pointwise cross-encoder scoring, with no task-specific supervised training or reinforcement learning adaptation loop.",
+          "signal_reuse": "independent"
+        },
+        "evidence_ids": [
+          "Ef35a4690c883c182-B0002",
+          "Ef35a4690c883c182-B0008",
+          "Ef35a4690c883c182-B0023",
+          "Ef35a4690c883c182-B0026",
+          "Ef35a4690c883c182-B0028",
+          "Ef35a4690c883c182-B0037",
+          "Ef35a4690c883c182-B0038",
+          "Ef35a4690c883c182-B0040",
+          "Ef35a4690c883c182-B0041",
+          "Ef35a4690c883c182-B0043",
+          "Ef35a4690c883c182-B0046",
+          "Ef35a4690c883c182-B0048",
+          "Ef35a4690c883c182-B0051",
+          "Ef35a4690c883c182-B0054",
+          "Ef35a4690c883c182-B0076",
+          "Ef35a4690c883c182-B0079",
+          "Ef35a4690c883c182-B0080"
+        ],
+        "limitations": "The authors clearly delineate limitations, acknowledging the focus on fixed corpora rather than live web search, the reliance on BM25 for candidate generation, potential anchoring risks on misleading seed documents, and the need for adaptive mechanisms to determine when to trigger the gambit.",
+        "method_assessment": "The methodology is thoroughly described with formal equations and specific implementation parameters. It uses LLM-driven clue decomposition, feedback-grounded expansion via MUGI, BM25 first-stage retrieval, deduplication, and Cohere Rerank4 Pro scoring to produce top-k seed documents without requiring model fine-tuning.",
+        "quality_rationale": "The paper provides an intuitive, well-engineered architectural enhancement to deep-search agents with clear motivation, transparent experimental methodology, strong empirical gains across diverse models, and comprehensive statistical and error analyses.",
+        "scoped_contribution": "The paper introduces Question's Gambit, an opening-move retrieval pipeline for deep research agents answering multi-clue questions. It decomposes questions into atomic clues, retrieves and expands candidate sets per clue using corpus feedback, merges the candidate pool, and pointwise reranks them against the complete question to supply a curated opening context before the iterative agent loop begins.",
+        "source_content_hash": "393675e03bc109004eb9af6bb06c34d6dc1287b6a9e925c7e571402a86b34ed2"
+      },
+      "primary_model": "gemini-3.8-flash",
+      "primary_provider": "google",
+      "provenance_status": "pass"
+    },
+    "rationale": "The paper provides an intuitive, well-engineered architectural enhancement to deep-search agents with clear motivation, transparent experimental methodology, strong empirical gains across diverse models, and comprehensive statistical and error analyses.",
+    "recommendation": "unknown",
+    "rubric_version": "scholarly-rubric-v2",
     "source_content_hash": "393675e03bc109004eb9af6bb06c34d6dc1287b6a9e925c7e571402a86b34ed2",
-    "status": "uncertain",
+    "status": "pass",
     "suppressed": false,
-    "uncertainty": "No semantic quality assessment has established methods, evidence and claim alignment."
+    "uncertainty": "The authors clearly delineate limitations, acknowledging the focus on fixed corpora rather than live web search, the reliance on BM25 for candidate generation, potential anchoring risks on misleading seed documents, and the need for adaptive mechanisms to determine when to trigger the gambit."
   },
   "semantic_scholar_id": null,
   "source": "openalex",
